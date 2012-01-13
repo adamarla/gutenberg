@@ -1,0 +1,22 @@
+\question[4] Find area under the curve $y=x^2$ for $x\in [1,5]$
+
+\ifprintanswers
+  \begin{marginfigure}
+    \begin{tikzpicture}[>=latex] 
+      \drawaxis{-2}{2}{-2}{2} ;
+      \draw[color=black!70,thick] plot[smooth] file{m09_1.table} ;
+	  \labelpt{1.5}{2.25}{$y=x^2$} ;
+	\end{tikzpicture}
+  \end{marginfigure}
+\fi
+
+\begin{solution}[\halfpage]
+  Refer to figure alongside
+
+  \begin{align}
+     A &= \int_1^5 x^2\ud x \\
+	   &= \left[ \dfrac{x^3}{3}\right]_1^5 \\
+	   &= \dfrac{124}{3} \\
+	   &= 41\cdot 33
+  \end{align} 
+\end{solution}
