@@ -1,0 +1,40 @@
+Directory structure for hiero document engine. Schematic with sample file
+names below shows how it is structured and what each directory is for.
+
+4 directories under the top-level folder 'bank'
+keys/	locker/	press/	vault/
+
+Example snapshot of folder contents...
+bank/ (top level folder)
+  |-vault/ (contains question folders by question Id)
+    |-1/ 
+      |-1-answer.jpeg
+      |-1-thumb.jpeg
+      |-figure.gnuplot
+      |-Makefile
+      |-question.tex
+    |-56/ 
+      |-56-answer.jpeg
+      |-56-thumb.jpeg
+      |-figure.gnuplot
+      |-Makefile
+      |-question.tex
+  |-keys/ (contains answer key pdfs by quiz Id)
+    |-1a23.pdf
+    |-2e31.pdf
+    |-ab12.pdf
+  |-press/ (contains question paper pdfs by quiz id)
+    |-a13fR.pdf
+    |-23ghE.pdf
+    |-3d3uv.pdf
+  |-vault/ (contains scanned images by composite scan id)
+    |-1a23.r12.1.jpg
+    |-1a23.r12.2.jpg
+    |-1a23.r12.3.jpg
+    |-55a3.r12.1.jpg
+    |-55a3.r12.2.jpg
+    |-45tg4.r12.1.jpg
+    |-45tg4.r12.2.jpg
+    |-45tg4.r12.3.jpg
+    |-45tg4.r12.4.jpg
+
