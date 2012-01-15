@@ -1,0 +1,24 @@
+
+# Ignore everything, everywhere EXCEPT files written by the user, namely: 
+#	1. question.tex 
+#	2. Any .gnuplot files ( but not generated .table files )
+#	3. Makefiles ( obviously )
+
+*.dvi
+*.ps
+*.aux
+*.log
+*.table
+*.out
+*.tex
+!question.tex
+!shared/*.tex
+
+session/preview/session-*
+session/staging/session-*
+
+#!session/*/README 
+#!session/staging/Makefile
+
+*.swp
+*.pdf
