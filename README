@@ -19,15 +19,26 @@ bank/ (top level folder)
       |-figure.gnuplot
       |-Makefile
       |-question.tex
-  |-keys/ (contains answer key pdfs by quiz Id)
-    |-1a23.pdf
-    |-2e31.pdf
-    |-ab12.pdf
-  |-press/ (contains question paper pdfs by quiz id)
-    |-a13fR.pdf
-    |-23ghE.pdf
-    |-3d3uv.pdf
-  |-vault/ (contains scanned images by composite scan id)
+  |-mint/ (contains answer key, and question pdfs and jpegs by quiz Id)
+    |-1a23/
+      |-questionPaper.pdf
+      |-answerKey.pdf
+      |-page1.jpg
+      |-page2.jpg
+      |-page3.jpg
+    |-2e31/
+      |-questionPaper.pdf
+      |-answerKey.pdf
+      |-page1.jpg
+      |-page2.jpg
+    |-ab12/
+      |-questionPaper.pdf
+      |-answerKey.pdf
+      |-page1.jpg
+      |-page2.jpg
+      |-page3.jpg
+      |-page4.jpg
+  |-locker/ (contains scanned images by composite scanId = quizId.studentId.pageNo)
     |-1a23.r12.1.jpg
     |-1a23.r12.2.jpg
     |-1a23.r12.3.jpg
@@ -37,4 +48,14 @@ bank/ (top level folder)
     |-45tg4.r12.2.jpg
     |-45tg4.r12.3.jpg
     |-45tg4.r12.4.jpg
-
+  |-atm/ (contains directories with randomized file names to browse temp selections)
+    |-1288sfd10adf32/
+      |-1.jpg
+      |-2.jpg
+      |-3.jpg
+      |-4.jpg
+      |-5.jpg
+    |-12s8s4d1511f36/
+      |-1.jpg
+      |-2.jpg
+      |-3.jpg
