@@ -14,8 +14,8 @@
 !question.tex
 !shared/*.tex
 
-session/preview/session-*
-session/staging/session-*
+mint/*
+!mint/Makefile
 
 #!session/*/README 
 #!session/staging/Makefile
