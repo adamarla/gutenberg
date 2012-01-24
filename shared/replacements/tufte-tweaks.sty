@@ -1,0 +1,53 @@
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{tufte-tweaks}[2011/09/01 Tweaks to make tufte-common work with exam.cls] 
+
+% This is to ensure that 'tufte-common' is included before we proceed further
+\RequirePackage{tufte-common} 
+\RequirePackage{booktabs}
+
+\unframedsolutions
+
+\newlength\@tweak@pageheight
+\setlength{\@tweak@pageheight}{\paperheight} 
+\addtolength{\@tweak@pageheight}{-\voffset}
+
+\providecommand{\halfpage}{0.5\textheight} 
+\providecommand{\fullpage}{\textheight} 
+\providecommand{\fewlines}{0.2\textheight} 
+\providecommand{\nolines}{0\paperheight} 
+
+% DocAuthor = (document == question_paper) ? student : teacher
+\newcommand{\DocAuthor}[1]{\renewcommand{\plainauthor}{#1}}
+\newcommand{\School}[1]{\renewcommand{\plainpublisher}{#1}}
+
+%% Insert QR Codes only when generating question papers. There is no need 
+% for them in the answer key. 
+%% Also, when a question is initially written, we simply write \insertQR{}
+% in the text file. This is replaced by a script after the question has 
+% been pushed into the database and a unique code has been generated for it. 
+\providecommand{\insertQR}[1]{
+    \ifprintanswers
+    \else
+      \begin{marginfigure}
+        \begin{pspicture}(0.6in,0.6in) 
+          \psbarcode{#1}{eclevel=Q width=0.6 height=0.6}{qrcode} 
+        \end{pspicture} 
+      \end{marginfigure}
+    \fi 
+}
+
+%% Drawing xy-axis is a common operation for maths questions. 
+%% So, define a macro for it. Note that the following are Tikz commands
+%% Arguments ( in order from 1-4 ) : -X,+X,-Y,+Y 
+\providecommand{\drawaxis}[4]{
+   \draw[<->,color=black!30] (#1,0)--(#2,0) ;
+   \draw[<->,color=black!30] (0,#3)--(0,#4) ;
+   \path[color=black!30] (0,0) node[below right] {O} ;
+}
+
+%% For adding point labels to a diagram, given the coordinate and the label text
+\providecommand{\labelpt}[4][above]{
+   \path (#2,#3) node[#1] {#4} % no semi-colon. Specify that explicitlyi within 
+   %tikzpicture environment - for consistency sake
+} 
