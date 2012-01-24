@@ -3,5 +3,12 @@
 
 TARGET = $(subst dir=,, $(MAKEFLAGS))
 
-makelinks : 
-	echo "Abhinav $(TARGET) $(USER) $(HOME) $(PWD)" > /tmp/HERE
+makelinks : clean
+	@ln -s ../../shared/quiz.mk $(TARGET)/Makefile
+	@ln -s ../../../shared/staging.mk $(TARGET)/staging/Makefile
+	make -C $(TARGET)
+
+clean : 
+	@rm -f $(TARGET)/Makefile
+	@rm -f $(TARGET)/staging/Makefile
+	touch $(TARGET)/staging/*.tex
