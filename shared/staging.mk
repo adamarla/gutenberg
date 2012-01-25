@@ -16,7 +16,7 @@ thumbnail : preview $(THUMBNAILS)
 $(THUMBNAILS) : %-thumbnail.jpeg : %-preview.jpeg
 	@convert $< -resize 120x120 $@
 
-preview : ps $(PREVIEWS)
+preview : ps pdf $(PREVIEWS)
 $(PREVIEWS) : %-preview.jpeg : %.ps
 	@gs -sDEVICE=jpeg -r700 -o $@ $<
 	@convert $@ -resize 600x800 $@
