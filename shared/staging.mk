@@ -10,7 +10,11 @@ DVIPS := /usr/local/texlive/2011/bin/i386-linux/dvips
 export LATEX_ROOT = /usr/local/texlive/2011
 export TEXINPUTS = :$(LATEX_ROOT)/../texmf-local///:$(LATEX_ROOT)
 
-.PHONY : plot dvi ps pdf thumbnail preview
+.PHONY : plot dvi ps pdf thumbnail preview install
+
+install : thumbnail
+	-mkdir ../preview && mv *.jpeg ../preview
+	-mkdir ../downloads && mv *.pdf ../downloads
 
 thumbnail : preview $(THUMBNAILS)
 $(THUMBNAILS) : %-thumbnail.jpeg : %-preview.jpeg
