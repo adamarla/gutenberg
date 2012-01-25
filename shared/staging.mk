@@ -5,6 +5,11 @@ PDF_FILES := $(patsubst %.tex, %.pdf, $(wildcard *.tex))
 PREVIEWS := $(patsubst %.tex, %-preview.jpeg, $(wildcard *.tex))
 THUMBNAILS := $(patsubst %.tex, %-thumbnail.jpeg, $(wildcard *.tex))
 
+DVIPS := /usr/local/texlive/2011/bin/i386-linux/dvips
+
+export LATEX_ROOT = /usr/local/texlive/2011
+export TEXINPUTS = :$(LATEX_ROOT)/../texmf-local///:$(LATEX_ROOT)
+
 .PHONY : plot dvi ps pdf thumbnail preview
 
 thumbnail : preview $(THUMBNAILS)
@@ -22,7 +27,7 @@ $(PDF_FILES) : %.pdf : %.ps
 
 ps : dvi $(PS_FILES)
 $(PS_FILES) : %.ps : %.dvi
-	dvips $<
+	$(DVIPS) $<
 
 dvi : plot $(DVI_FILES) 
 $(DVI_FILES) : %.dvi : %.tex
