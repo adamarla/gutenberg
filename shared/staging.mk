@@ -13,8 +13,8 @@ export TEXINPUTS = :$(LATEX_ROOT)/../texmf-local///:$(LATEX_ROOT)
 .PHONY : plot dvi ps pdf thumbnail preview install
 
 install : thumbnail
-	-mkdir ../preview && mv *.jpeg ../preview
-	-mkdir ../downloads && mv *.pdf ../downloads
+	-mkdir ../preview && mv page-*.jpeg ../preview
+	-mkdir ../downloads && mv answer-key.pdf ../downloads
 
 thumbnail : preview $(THUMBNAILS)
 $(THUMBNAILS) : %-thumbnail.jpeg : %-preview.jpeg
