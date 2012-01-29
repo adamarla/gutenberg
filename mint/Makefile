@@ -1,5 +1,5 @@
 
-.PHONY : Prepare Compile DUMMY 
+.PHONY : Prepare Compile 
 
 # PRINTING_PRESS is an environment variable. Make sure to set it in
 # your /etc/environment so that every user - present & future - sees it 
@@ -23,12 +23,8 @@ endif
 
 ##############################################################################
 
-DUMMY : 
-	@echo "[Gutenberg] : Specify one of 'Prepare' or 'Compile' targets" 
-
-
 Compile : 
-	@echo $(compile)
+	@echo $(msg)
 	@echo $(PRINTING_PRESS)
 	@echo $(QUIZ)
 	@echo $(TEST)
@@ -37,15 +33,16 @@ ifneq ($(compile),"nothing")
 	make -C $(target)/staging
 endif
 
-Prepare : 
+Prepare :  
 ifdef target
-	-mkdir -p $(target)/downloads
-	-mkdir -p $(target)/staging
+	-@mkdir -p $(target)/downloads
+	-@mkdir -p $(target)/staging
+	@echo " PRINTING_PRESS = $(PRINTING_PRESS)"
 	@echo $(msg)
 endif 
 
 ifeq ($(compile),"QUIZ")
-	-mkdir -p $(target)/preview
+	-@mkdir -p $(target)/preview
 	@ln -s $(mkfiles)/answer-key.mk $(target)/staging/Makefile
 	@ln -s $(mkfiles)/test-paper.mk $(target)/staging/.
 else ifeq ($(compile),"TEST-PAPER")
