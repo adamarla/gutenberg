@@ -1,5 +1,5 @@
 
-.PHONY : Prepare Run 
+.PHONY : Prepare Compile 
 
 # PRINTING_PRESS is an environment variable. Make sure to set it in
 # your /etc/environment so that every user - present & future - sees it 
@@ -23,7 +23,7 @@ endif
 
 ##############################################################################
 
-Run : Prepare 
+Compile : Prepare 
 	@echo $(compile)
 	@echo $(PRINTING_PRESS)
 	@echo $(QUIZ)
