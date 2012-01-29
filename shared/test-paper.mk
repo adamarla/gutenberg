@@ -11,7 +11,8 @@ DVIPS := /usr/local/texlive/2011/bin/i386-linux/dvips
 .PHONY : plot dvi ps pdf install-pdfs
 
 install-pdfs : pdf
-	-mkdir ../downloads && mv *.pdf ../downloads
+	-mkdir $(CURDIR)/../downloads 
+	mv $(CURDIR)/*.pdf $(CURDIR)/../downloads/
 
 pdf : ps $(PDF_FILES)
 $(PDF_FILES) : %.pdf : %.ps

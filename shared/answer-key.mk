@@ -5,8 +5,8 @@ THUMBNAILS := $(patsubst %.tex, %-thumbnail.jpeg, $(wildcard *.tex))
 .PHONY : preview thumbnail install
 
 install : thumbnail install-pdfs
-	-mkdir ../preview && mv page-*.jpeg ../preview
-	-mkdir ../downloads && mv answer-key.pdf ../downloads
+	-@mkdir $(CURDIR)/../preview 
+	@mv $(CURDIR)/page-*.jpeg $(CURDIR)/../preview/
 
 thumbnail : preview $(THUMBNAILS)
 $(THUMBNAILS) : %-thumbnail.jpeg : %-preview.jpeg
