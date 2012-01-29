@@ -1,5 +1,5 @@
 
-.PHONY : Prepare Compile 
+.PHONY : Prepare Compile DUMMY 
 
 # PRINTING_PRESS is an environment variable. Make sure to set it in
 # your /etc/environment so that every user - present & future - sees it 
@@ -23,7 +23,11 @@ endif
 
 ##############################################################################
 
-Compile : Prepare 
+DUMMY : 
+	@echo "[Gutenberg] : Specify one of 'Prepare' or 'Compile' targets" 
+
+
+Compile : 
 	@echo $(compile)
 	@echo $(PRINTING_PRESS)
 	@echo $(QUIZ)
