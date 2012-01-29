@@ -1,7 +1,5 @@
 
-.PHONY : MakeLinks Run 
-
-PRINTING_PRESS := $(HOME)/bank
+.PHONY : Prepare Run 
 
 # PRINTING_PRESS is an environment variable. Make sure to set it in
 # your /etc/environment so that every user - present & future - sees it 
@@ -25,7 +23,7 @@ endif
 
 ##############################################################################
 
-Run : MakeLinks 
+Run : Prepare 
 	@echo $(compile)
 	@echo $(PRINTING_PRESS)
 	@echo $(QUIZ)
@@ -35,7 +33,7 @@ ifneq ($(compile),"nothing")
 	make -C $(target)/staging
 endif
 
-MakeLinks : 
+Prepare : 
 ifdef target
 	-mkdir -p $(target)/downloads
 	-mkdir -p $(target)/staging
