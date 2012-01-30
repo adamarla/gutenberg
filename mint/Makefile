@@ -47,5 +47,6 @@ ifeq ($(compile),"QUIZ")
 	@ln -s $(mkfiles)/test-paper.mk $(target)/staging/.
 else ifeq ($(compile),"TEST-PAPER")
 	@ln -s $(mkfiles)/test-paper.mk $(target)/staging/Makefile
+	@ln -s $(target)/../answer-key/staging/*.gnuplot $(target)/staging/.
 endif 
 
