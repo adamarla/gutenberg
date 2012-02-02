@@ -9,11 +9,13 @@ TEST := $(strip $(subst TEST=,,$(MAKEFLAGS)))
 mkfiles := $(PRINTING_PRESS)/shared
 
 ifneq ($(and $(QUIZ), $(TEST)),) # both QUIZ & TEST defined => TEST compilation
-	target := $(PRINTING_PRESS)/mint/$(QUIZ)/$(TEST)
+	parent := $(strip $(PRINTING_PRESS)/mint/$(QUIZ))
+	target := $(parent)/$(TEST)
 	msg := "Initiating TEST-PAPER compilation ---> mint/$(QUIZ)/$(TEST)"
 	compile := "TEST-PAPER"
 else ifneq ($(QUIZ),)
-	target := $(PRINTING_PRESS)/mint/$(QUIZ)/answer-key
+	parent := $(strip $(PRINTING_PRESS)/mint/$(QUIZ))
+	target := $(parent)/answer-key
 	msg := "Initiating Quiz/Answer-Key compilation ---> mint/$(QUIZ)"
 	compile := "QUIZ"
 else
@@ -34,11 +36,12 @@ ifneq ($(compile),"nothing")
 endif
 
 Prepare :  
-ifdef target
-	-@mkdir -p $(target)/downloads
-	-@mkdir -p $(target)/staging
+ifneq ($(target),)
+	mkdir -p $(target)/downloads
+	mkdir -p $(target)/staging
 	@echo " PRINTING_PRESS = $(PRINTING_PRESS)"
-	@echo $(msg)
+	@if !(test -e $(parent)/atm-key) ; then echo `rand --max 999999999` >> $(parent)/atm-key ; fi
+	@ln -s $(parent) $(PRINTING_PRESS)/atm/`cat $(parent)/atm-key`
 endif 
 
 ifeq ($(compile),"QUIZ")
