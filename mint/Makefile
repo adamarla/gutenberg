@@ -41,7 +41,7 @@ ifneq ($(target),)
 	mkdir -p $(target)/staging
 	@echo " PRINTING_PRESS = $(PRINTING_PRESS)"
 	@if !(test -e $(parent)/atm-key) ; then echo `rand --max 999999999` >> $(parent)/atm-key ; fi
-	@ln -s $(parent) $(PRINTING_PRESS)/atm/`cat $(parent)/atm-key`
+	-cd $(PRINTING_PRESS)/atm && ln -s ../mint/$(QUIZ) `cat $(parent)/atm-key`
 endif 
 
 ifeq ($(compile),"QUIZ")
