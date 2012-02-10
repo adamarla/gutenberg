@@ -17,8 +17,12 @@
 mint/*
 !mint/Makefile
 
+vault/*/Makefile
+
 #!session/*/README 
 #!session/staging/Makefile
 
 *.swp
 *.pdf
+*.jpeg
+*.jpg
