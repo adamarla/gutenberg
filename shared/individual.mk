@@ -46,7 +46,7 @@ $(Dvi) : $(Tex)
 	@$(latexCmd) $(Tex)
 
 $(Tex) : $(Scaffolds) question.tex
-	@echo "[stitching]: $@"
+	-@echo "[stitching]: $@" && rm -f $@
 	@for j in preamble printanswers doc_begin ; do cat $(Shared)/$$j.tex >> $@ ; done
 	@cat question.tex >> $@
 	@for j in doc_end ; do cat $(Shared)/$$j.tex >> $@ ; done
