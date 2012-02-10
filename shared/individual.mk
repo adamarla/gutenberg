@@ -11,7 +11,8 @@ Shared := $(Gutenberg)/shared
 
 # Input files - TeX, gnuplots, .sk and the like. Only the answer-key is to be generated 
 Scaffolds := $(wildcard $(Shared)/*.tex)
-Basename := $(notdir $(CURDIR)).tex # 123.tex
+Folder := $(notdir $(CURDIR))
+Basename := $(Folder).tex # 123.tex
 Plots := $(wildcard *.gnuplot)
 
 # Generated files - all share the same basename as the stitched answer TeX 
@@ -52,4 +53,7 @@ $(Tex) : $(Scaffolds) question.tex
 
 plot : $(Plots)
 	@echo "[plotting]: $+" && gnuplot $+
+
+clean :
+	@rm -f $(Folder)* && rm -f *.table
 
