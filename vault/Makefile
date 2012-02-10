@@ -15,4 +15,5 @@ TARGET := $(word 1,$(strip $(MAKECMDGOALS)))
 subdirs clean plot prepare dvi ps pdf jpeg : $(QUESTIONS) ; 
 
 $(QUESTIONS) :
+	@for j in $(QUESTIONS) ; do if !(test -e $$j/Makefile) ; then cd $$j && ln -s ../../shared/individual.mk Makefile && cd .. ; fi ; done
 	$(MAKE) $(TARGET) -C $@
