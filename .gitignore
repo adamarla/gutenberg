@@ -19,8 +19,9 @@ mint/*
 
 vault/*/Makefile
 
-#!session/*/README 
-#!session/staging/Makefile
+atm/
+locker/
+staging/
 
 *.swp
 *.pdf
