@@ -9,8 +9,8 @@ ps2pdfCmd := $(shell which ps2pdf)
 # path to 'dvips'. The issue is only with dvips because of its 
 # non-standard installation path
 ifeq ($(dvipsCmd),)
-	echo " Hard-coding dvips ... "	
-	dvipsCmd := /usr/local/texlive/2011/bin/i386-linux/dvips
+  echo " Hard-coding dvips ... "	
+  dvipsCmd := /usr/local/texlive/2011/bin/i386-linux/dvips
 endif
 
 # Locations ... 
