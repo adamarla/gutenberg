@@ -23,6 +23,9 @@ atm/
 locker/
 staging/
 
+cron-jobs/*
+!cron-jobs/scripts
+
 *.swp
 *.pdf
 *.jpeg
