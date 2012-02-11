@@ -1,8 +1,8 @@
 
 # Executables to call ... 
-dvipsCmd := dvips -q 
-latexCmd := latex
-ps2pdfCmd := ps2pdf
+dvipsCmd := $(shell which dvips)
+latexCmd := $(shell which latex)
+ps2pdfCmd := $(shell which ps2pdf)
 
 # Locations ... 
 
@@ -42,15 +42,15 @@ $(Preview) : $(Pdf)
 	@gs -sDEVICE=jpeg -r700 -o $@ $^
 
 $(Pdf) : $(Ps)
-	@echo "[ps -> pdf]: $@"
+	@echo "[ps -> pdf]: $@ with [ps2pdfCmd] = $(ps2pdfCmd)"
 	@$(ps2pdfCmd) $(Ps)
 
 $(Ps) : $(Dvi)
-	@echo "[dvi -> ps]: $@"
-	@$(dvipsCmd) $(Dvi)
+	@echo "[dvi -> ps]: $@ with [dvips] = $(dvipsCmd)"
+	@$(dvipsCmd) -q $(Dvi)
 
 $(Dvi) : $(Tex) 
-	@echo "[dvi]: $@"
+	@echo "[TeX -> dvi]: $@ with [latex] = $(latexCmd)"
 	@$(latexCmd) $(Tex)
 
 $(Tex) : plot $(Scaffolds) question.tex
