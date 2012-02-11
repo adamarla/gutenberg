@@ -5,7 +5,15 @@ latexCmd := latex
 ps2pdfCmd := ps2pdf
 
 # Locations ... 
-Gutenberg := $(HOME)/gutenberg
+
+# For historical reasons, the parent of vault, mint etc on the 
+# production server was called bank/. But on our local machines, it 
+# was changed to be called 'gutenberg'. The environment variable 
+# - PRODUCTION_SERVER - identifies the machine as such. It does NOT 
+# - in fact, should not - be set on your local machine. Only on the
+# production server
+
+Gutenberg := $(if $(PRODUCTION_SERVER), $(HOME)/bank, $(HOME)/gutenberg)
 Vault := $(Gutenberg)/vault
 Shared := $(Gutenberg)/shared
 
@@ -45,12 +53,13 @@ $(Dvi) : $(Tex)
 	@echo "[dvi]: $@"
 	@$(latexCmd) $(Tex)
 
-$(Tex) : $(Scaffolds) question.tex
+$(Tex) : plot $(Scaffolds) question.tex
 	-@echo "[stitching]: $@" && rm -f $@
 	@for j in preamble printanswers doc_begin ; do cat $(Shared)/$$j.tex >> $@ ; done
 	@cat question.tex >> $@
 	@for j in doc_end ; do cat $(Shared)/$$j.tex >> $@ ; done
 
+PHONY : plot 
 plot : $(Plots)
 	@echo "[plotting]: $+" && gnuplot $+
 
