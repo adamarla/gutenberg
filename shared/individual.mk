@@ -1,17 +1,11 @@
 
+export LATEX_ROOT = /usr/local/texlive/2011
+export TEXINPUTS = :$(LATEX_ROOT)/../texmf-local///:$(LATEX_ROOT)
+
 # Executables to call ... 
-dvipsCmd := $(shell which dvips)
+dvipsCmd := /usr/local/texlive/2011/bin/i386-linux/dvips
 latexCmd := $(shell which latex)
 ps2pdfCmd := $(shell which ps2pdf)
-
-# It seems that /etc/environment is not enough to set $PATH 
-# in the shell that make forks. So, if all else fails, hard-code
-# path to 'dvips'. The issue is only with dvips because of its 
-# non-standard installation path
-ifeq ($(dvipsCmd),)
-  echo " Hard-coding dvips ... "	
-  dvipsCmd := /usr/local/texlive/2011/bin/i386-linux/dvips
-endif
 
 # Locations ... 
 
