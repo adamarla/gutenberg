@@ -8,11 +8,12 @@ ${root:=$HOME/gutenberg}
 target=${root:+$root/cron-jobs/`date +"%d.%B.%Y"`}
 
 # Log file for capturing output of git pull 
-log=`date +"%H-pull"`
+log=`date +"%H-%M-rebuild"`
 
 # Now, create the target folder and write to the log-file
 mkdir -p $target
-cd $root && git pull origin master >> $target/$log
+cd $root/vault && make &> $target/$log
+cd -
 
 #echo $root
 #echo $target
