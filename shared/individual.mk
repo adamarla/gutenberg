@@ -56,15 +56,12 @@ $(Dvi) : $(Tex)
 	@echo "[TeX -> dvi]: $@ with [latex] = $(latexCmd)"
 	@$(latexCmd) $(Tex)
 
-$(Tex) : plot $(Scaffolds) question.tex
+$(Tex) : $(Plots) $(Scaffolds) question.tex
+	@echo "[plotting]: $(Plots)" && gnuplot $(Plots)
 	-@echo "[stitching]: $@" && rm -f $@
 	@for j in preamble printanswers doc_begin ; do cat $(Shared)/$$j.tex >> $@ ; done
 	@cat question.tex >> $@
 	@for j in doc_end ; do cat $(Shared)/$$j.tex >> $@ ; done
-
-PHONY : plot 
-plot : $(Plots)
-	@echo "[plotting]: $+" && gnuplot $+
 
 clean :
 	@rm -f $(Folder)* && rm -f *.table
