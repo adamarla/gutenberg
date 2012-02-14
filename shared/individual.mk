@@ -43,6 +43,7 @@ $(Thumb) : $(Preview)
 $(Preview) : $(Pdf)
 	@echo "[ pdf -> preview ]"
 	@gs -sDEVICE=jpeg -r700 -o $@ $^
+	@convert $@ -resize 600x800 $@
 
 $(Pdf) : $(Ps)
 	@echo "[ps -> pdf]: $@ with [ps2pdfCmd] = $(ps2pdfCmd)"
