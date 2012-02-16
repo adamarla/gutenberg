@@ -9,18 +9,15 @@ target=${root:+$root/cron-jobs/`date +"%d.%B.%Y"`}
 
 # Log file for capturing output of git pull 
 log=`date +"%H-push"`
-#echo "$root/$log" > ~/junk/push-stdout
 
 # Now, create the target folder and write to the log-file
 mkdir -p $target
 touch $target/$log
 cd $root/vault 
-#echo "$root/$log" >> push-stdout
-git add . 
-git commit -m "[cron-git-commit] @ `date +"%H.%M"`" 
-git push origin master 
-cd -
 
-#echo $root
-#echo $target
+echo "[`date +"%M"`]" >> $target/$log
+git add . >> $target/$log
+git commit -m "[cron-git-commit] @ `date +"%H.%M"`" 
+git push origin master >> $target/$log 
+cd -
 
