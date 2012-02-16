@@ -7,12 +7,16 @@ ${root:=$HOME/gutenberg}
 # The new time-stamped folder to create for storing the day's logs
 target=${root:+$root/cron-jobs/`date +"%d.%B.%Y"`}
 
+#echo "$root" > ~/junk/rebuild-stdout
 # Log file for capturing output of git pull 
 log=`date +"%H-%M-rebuild"`
 
 # Now, create the target folder and write to the log-file
 mkdir -p $target
-cd $root/vault && make &> $target/$log
+touch $target/$log
+cd $root/vault
+#echo "$root/$log" >> rebuild-stdout
+make >> $target/$log
 cd -
 
 #echo $root
