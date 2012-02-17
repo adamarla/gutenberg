@@ -12,12 +12,12 @@ log=`date +"%H-push"`
 
 # Now, create the target folder and write to the log-file
 mkdir -p $target
+touch $target/$log
 cd $root/vault 
-git add . 
-git commit -m "[cron-git-commit] @ `date +"%H.%M"`" 
-git push origin master 
-cd -
 
-#echo $root
-#echo $target
+echo "[`date +"%M"`]" >> $target/$log
+git add . >> $target/$log
+git commit -m "[cron-git-commit] @ `date +"%H.%M"`" 
+git push origin master >> $target/$log 
+cd -
 
