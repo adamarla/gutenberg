@@ -31,3 +31,4 @@ cron-jobs/*
 *.jpeg
 !front-desk/previews/yardsticks/*/*.jpeg
 *.jpg
+*.zip
