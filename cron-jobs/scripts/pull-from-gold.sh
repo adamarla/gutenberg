@@ -1,23 +1,27 @@
 #!/bin/bash
 
-# root = PRODUCTION_SERVER.defined? ? $HOME/bank : $HOME/gutenberg
-root=${PRODUCTION_SERVER:+$HOME/bank}
-${root:=$HOME/gutenberg}
+# On local machines, 'root' should be path to the root folder that contains 
+# this script - the one being called
 
-# The new time-stamped folder to create for storing the day's logs
+if [[ $PRODUCTION_SERVER ]] ; then root=$HOME/bank ; else root=$(cd $(dirname $0)/../.. && pwd) ; fi
+
+# Don't do any git operations to your GitHub repo - or any repo - 
+# if this is not a 'live' folder 
+
+if [[ ! -e $root/LIVE ]] ; then 
+  echo "[Exiting]: Git operations not permitted from within '$root'"
+  exit 0
+fi
+
+## The new time-stamped folder to create for storing the day's logs
 target=${root:+$root/cron-jobs/`date +"%d.%B.%Y"`}
-#echo $target >> ~abhinav/junk/pull-stdout
 
 # Log file for capturing output of git pull 
 log=`date +"%H-pull"`
-#echo "$root/$log" >> ~/junk/pull-stdout
 
 # Now, create the target folder and write to the log-file
 mkdir -p $target
 cd $root 
 touch $target/$log
 git pull origin master >> $target/$log
-
-#echo $root
-#echo $target
 

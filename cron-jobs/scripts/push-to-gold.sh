@@ -1,11 +1,17 @@
 #!/bin/bash
 
-if [[ $PRODUCTION_SERVER ]] ; then root=$HOME/bank ; else root=$GUTENBERG_LIVE ; fi
+# On local machines, 'root' should be path to the root folder that contains 
+# this script - the one being called
+
+if [[ $PRODUCTION_SERVER ]] ; then root=$HOME/bank ; else root=$(cd $(dirname $0)/../.. && pwd) ; fi
 
 # Don't do any git operations to your GitHub repo - or any repo - 
 # if this is not a 'live' folder 
 
-if [ ! -e $root/LIVE ] ; then exit 0 ; fi
+if [[ ! -e $root/LIVE ]] ; then 
+  echo "[Exiting]: Git operations not permitted from within '$root'"
+  exit 0 ; 
+fi
 
 # The new time-stamped folder to create for storing the day's logs
 target=${root:+$root/cron-jobs/`date +"%d.%B.%Y"`}
@@ -17,8 +23,6 @@ log=`date +"%H-push"`
 mkdir -p $target
 touch $target/$log
 cd $root/vault 
-
-#echo "[`date +"%M"`]" >> $target/$log
 
 git add . >> $target/$log
 git commit -m "[cron-git-commit] @ `date +"%H.%M"`" 
