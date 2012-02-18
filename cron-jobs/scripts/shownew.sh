@@ -9,8 +9,8 @@ do
   target=$vault/$dir
   if [ ! -d $target ] ; then continue ; fi
 
-  texDiff=`diff $target/question.tex $shared/question.tex | wc -l`
-  plotDiff=`diff $target/figure.gnuplot $shared/figure.gnuplot | wc -l`
+  texDiff=`diff -BE $target/question.tex $shared/question.tex | wc -l`
+  plotDiff=`diff -BE $target/figure.gnuplot $shared/figure.gnuplot | wc -l`
 
   if [ $texDiff -eq 0 ] ; then
     if [ $plotDiff -eq 0 ] ; then 
