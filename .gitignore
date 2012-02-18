@@ -29,4 +29,5 @@ cron-jobs/*
 *.swp
 *.pdf
 *.jpeg
+!front-desk/previews/yardsticks/*/*.jpeg
 *.jpg
