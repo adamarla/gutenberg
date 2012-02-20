@@ -27,11 +27,31 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question[3] For what value of $n$ are the $n^{th}$ terms of the two arithmetic progressions 63, 65, 67 \ldots\quad and 3, 10, 17 \ldots\quad equal?
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
 \begin{solution}
+	The first progression can be expressed as 
+	
+	\begin{align}
+		a_n &= 63 + 2\cdot n, n \geq 1
+	\end{align}
+	
+	Similarly, the second progression can be expressed as
+	
+	\begin{align}
+		b_n &= 3 + 7\cdot n, n \geq 1
+	\end{align}
+	
+	For the $n^{th}$ term of the above two series to be equal 
+	
+	\begin{align}
+		a_n &= b_n \\
+		\Rightarrow 63 + 2\cdot n &= 3 + 7\cdot n \\
+		\Rightarrow 63 - 3 &= 7n - 2n \\
+		\Rightarrow n &= 12	
+	\end{align}
 \end{solution}
