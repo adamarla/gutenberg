@@ -35,6 +35,34 @@ from its hole is the snake caught? Assume that the peacock descends in a straigh
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+  \begin{marginfigure}
+    \figinit{cm}
+    \figpt 1: (0,0)
+    \figpt 2: (5,0)
+    \figpt 3: (5,3)
+    \figpt 4: (3,0)
+    \figpt 5: (1.5,0)
+    \figpt 6: (4.75,0)
+    \figpt 7: (1,0.35)
+    \figpt 8: (3.6,0.35)
+  	\figdrawbegin{}
+    \figdrawline [1,2,3,1]
+    \figdrawline [3,4]
+    \figdrawend
+    \figvisu{\figBoxA}{Figure 1}{%
+      \figwritew 1:A(0.1)
+      \figwritee 3:B(0.1)
+      \figwrites 4:C(0.1)
+      \figwritee 2:D(0.1)
+      \figwritese 5:$x$(0.2)
+      \figwritesw 6:$27-x$(0.2)
+      \figwritee 7:$\alpha$(0.2)
+      \figwritee 8:$2\alpha$(0.2)
+      \psarc{<->}{1}{0}{30}
+      \psarc{<->}(3,0){0.65}{0}{60}
+    }
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
   \marginnote[1cm] {$\angle BCD = 2\alpha$ because $x = BC$}
   \marginnote[0.5cm]{ $x = BC $ because the snake and peacock start at the same time
   from their initial positions, move at the same speed and meet at the same time }
