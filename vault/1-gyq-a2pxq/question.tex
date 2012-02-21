@@ -27,11 +27,40 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question[2] Find the value of $k$, if $x+1$ is a factor of $4x^3+3x^2-4x+k$
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
 \begin{solution}
+	There are two approaches to solving this problem. The first uses the fact
+	that if $(x-a)$ is a factor of some polynomial equation $f(x)$, then $f(a) = 0$.
+	Lets start with that
+	
+	If $(x+1)$ is a factor, then $4x^3+3x^2-4x+k = 0 $ for $x = -1$
+	\begin{align}
+		& \Rightarrow 4\cdot(-1)^3+3\cdot(-1)^2-4\cdot(-1)+k = 0 \\
+		& \Rightarrow k + 3 = 0 \\
+		& \Rightarrow k = -3
+	\end{align}
+	
+	The second solution, on the other hand, uses what it means for something
+	to be a factor of a polynomial
+	
+	So, if $(x+1)$ is a factor of $4x^3+3x^2-4x+k$, then 
+	\begin{align}
+		4x^3+3x^2-4x+k &= (x+1)\cdot(4x+a)\cdot(x+b) \\
+					   &= \underbrace{(4x^2+ax+4x+a)}_\texttt{first two factors}\cdot(x+b) \\
+					   &= 4x^3+(a+4b+4)x^2+(a+4b+ab)x+ab \\
+	\end{align}	 
+	Its the same equation on both sides. So, their coefficients should also be the same
+	\begin{align}
+		\Rightarrow a+4b+4 &= 3 \Rightarrow a + 4b = -1\\
+		            a+4b+ab &= -4 \Rightarrow ab = -3\\
+		            ab &= k \Rightarrow k = -3
+	\end{align}
+	
 \end{solution}
+\marginnote[-3cm]{ Solve for $a$ and $b$, plug their values into (4) and you would know
+all the factors of this expression}
