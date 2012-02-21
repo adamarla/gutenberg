@@ -17,8 +17,6 @@ do
       echo "[*] $dir"
     else echo "[T] $dir"
     fi 
-  elif [ $plotDiff -eq 0 ] ; then
-    echo "[P] $dir"
   fi
 
 done
