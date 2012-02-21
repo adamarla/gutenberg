@@ -4,6 +4,7 @@
 #	2. Any .gnuplot files ( but not generated .table files )
 #	3. Makefiles ( obviously )
 
+*.anx
 *.dvi
 *.ps
 *.aux
