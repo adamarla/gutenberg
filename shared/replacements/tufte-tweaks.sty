@@ -29,10 +29,10 @@
 \providecommand{\insertQR}[1]{
     \ifprintanswers
     \else
-      \begin{marginfigure}
-        \begin{pspicture}(0.6in,0.6in) 
-          \psbarcode{#1}{eclevel=Q width=0.6 height=0.6}{qrcode} 
-        \end{pspicture} 
+      \begin{marginfigure}[0.6in]
+        %\begin{pspicture}(0.6in,0.6in) 
+          \psbarcode{#1}{eclevel=Q width=0.55 height=0.55}{qrcode} 
+        %\end{pspicture} 
       \end{marginfigure}
     \fi 
 }
