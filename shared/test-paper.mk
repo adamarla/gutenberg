@@ -29,3 +29,6 @@ $(DVI_FILES) : %.dvi : %.tex
 plot : *.gnuplot 
 	@gnuplot $^
 
+clean:
+	@rm -f *.log *.out *.aux *.dvi *.ps *.anx
+
