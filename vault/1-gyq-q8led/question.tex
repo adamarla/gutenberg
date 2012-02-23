@@ -27,11 +27,35 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question[4] Ice-cream is stored in a right circular cylinder of height \SI{1}{\meter}
+and radius of \SI{20}{\centi\meter}. A single scoop of ice-cream is a sphere that sits 
+perfectly on a cone at its (the scoop's) diameter. Cones are \SI{12}{\centi\meter} tall and have a diameter of \SI{6}{\centi\meter} at their open end. Assuming that an ice-cream seller starts
+the day with a full cylinder of ice-cream and assuming that he serves only 
+single scoops, how long would it be before he runs out of ice-cream given that 
+he averages 60 cones per hour?
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+  \marginnote[1cm]{ Writing units as you write values is a great habit to have }
 \fi 
 
 \begin{solution}
+	The volume of ice-cream in a single scoop is given by
+	\begin{align}
+		V_{\texttt{single-scoop}} &= \dfrac{4}{3}\pi R^3 \\
+		                 &= \dfrac{4}{3}\pi(\dfrac{D}{2})^3 = \pi\dfrac{D^3}{6} \\
+		                 &= \pi\dfrac{(\SI{6}{\centi\meter})^3}{6} = 36\pi\si{cm^3}
+	\end{align}
+	The volume of ice-cream in the cylinder, on the other hand, is given by
+	\begin{align}
+		V_{\texttt{cylinder}} &= \pi R^2 H \\
+		                      &= \pi(\SI{20}{cm})^2\times\underbrace{\SI{1}{\meter}}_{\texttt{100 cm}} \\
+		                      &= 40,000\pi\si{\centi\meter}^3
+	\end{align} 
+	If $T$ be the time - in hours - that the ice-cream seller needs to empty the cylinder, then
+	\begin{align}
+		T &= \dfrac{40,000\pi\si{cm^3}}{36\pi\si[per-mode=fraction]{cm^3\per scoop}}
+		     \times \dfrac{1}{\SI{60}{scoops\per hour}} \\
+		  &= \SI{18.52}{hours}\approx \SI{18}{\hour}\SI{31}{\minute}
+	\end{align}
 \end{solution}
