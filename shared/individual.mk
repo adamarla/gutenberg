@@ -1,4 +1,5 @@
 
+SHELL := /bin/bash
 export LATEX_ROOT = /usr/local/texlive/2011
 export TEXINPUTS = :$(LATEX_ROOT)/../texmf-local///:$(LATEX_ROOT)
 
@@ -16,7 +17,7 @@ ps2pdfCmd := $(shell which ps2pdf)
 # - in fact, should not - be set on your local machine. Only on the
 # production server
 
-Gutenberg := $(if $(PRODUCTION_SERVER), $(HOME)/bank, $(HOME)/gutenberg)
+Gutenberg := $(if $(PRODUCTION_SERVER), $(HOME)/bank, $(HOME)/workspace/gutenberg-live)
 Vault := $(Gutenberg)/vault
 Shared := $(Gutenberg)/shared
 
@@ -39,6 +40,10 @@ Preview := $(patsubst %.tex, %-answer.jpeg, $(Basename)) # 123-answer.jpeg
 $(Thumb) : $(Preview)
 	@echo "[ preview -> thumbnail ]"
 	@convert $^ -resize 120x120 $@
+ifeq ($(MAKELEVEL),0)
+	@echo "Running atomically"
+	@if [[ ! $$PRODUCTION_SERVER ]] ; then gs $(Pdf) ; fi
+endif
 
 $(Preview) : $(Pdf)
 	@echo "[ pdf -> preview ]"
