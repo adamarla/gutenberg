@@ -27,11 +27,37 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question[3] The angle of elevation of the top of a tower from a point $A$ 
+due south of it is $\alpha$ and $\beta$ from a point $B$ due east of it. If $AB=d$, then prove that the height of the tower - $H$ - is equal to $\dfrac{d}{\sqrt{\cot^2\alpha + \cot^2\beta}}$
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+	\begin{marginfigure}
+		\figinit{cm}
+		\figpt 1:$O$(0,0)
+		\figpt 2:$Y$(0,-3)
+		\figpt 3:$Z$(4,0)
+		\figsetmark{+}
+		\figdrawbegin{}
+			\figdrawline[1,2,3,1]
+		\figdrawend
+		\figvisu{\figBoxA}{Figure}{}
+		\centerline{\box\figBoxA}
+	\end{marginfigure}
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
+	From the adjoining figures, we know the following:
+	\begin{align}
+		\text{Top-view} &: OA^2 + OB^2 = d^2 \\
+		\text{South-side} &: OX = H = OA \times\tan\alpha \Rightarrow OA = H\cdot\cot\alpha \\
+		\text{East-side} &: OX = H = OB \times\tan\beta \Rightarrow OB = H\cdot\cot\beta
+	\end{align}
+	
+	Substituting (2) and (3) in (1), we get
+	\begin{align}
+		(H\cdot\cot\alpha)^2 + (H\cdot\cot\beta)^2 &= d^2 \\
+		\Rightarrow H^2 &= \dfrac{d^2}{\cot^2\alpha + \cot^2\beta} \\
+		\Rightarrow H &= \dfrac{d}{\sqrt{\cot^2\alpha + \cot^2\beta}}
+	\end{align}
 \end{solution}
