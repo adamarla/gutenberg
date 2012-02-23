@@ -27,11 +27,65 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question[5] The mid-points of the sides of a triangle are $(3,4)$, $(4,6)$ and $(5,7)$. Find the coordinates of the vertices of the triangle
 
 \ifprintanswers
+	\begin{marginfigure}
+		\figinit{cm}
+		\figpt 1:$X$(0,1)
+		\figpt 2:$Y$(3,4)
+		\figpt 3:$Z$(4,2)
+		\figpt 4:$A$(1.5,1.5)
+		\figpt 5:$B$(3.5,0.5)
+		\figpt 6:$C$(2,0.5)
+		\figsetmark{+}
+		\figdrawbegin{}
+			\figdrawline[1,2,3,1]
+			\figdrawline[4,5,6,4]
+		\figdrawend
+		\figvisu{\figBoxA}{Figure}{}
+%		\figwritese 1:(0.8)
+%		\figwritese 2:(0.3)
+%		\figwritese 3:(0.8)
+%		\figwritese 4:(0.1)
+%		\figwritese 5:(0.1)
+%		\figwritese 6:(0.1)
+		\centerline{\box\figBoxA}
+	\end{marginfigure}
+
   % stuff to be shown only in the answer key - like explanatory margin figures
+	\marginnote[0.5cm] {This question uses 3 facts}
+	\marginnote[0.2cm] {The line joining mid-points of two sides is parallel to the third side}
+	\marginnote[0.2cm] {Lines that are parallel to each other have the same slope}
+	\marginnote[0.2cm] {The third mid-point lies on the third side (obviously)}
 \fi 
 
 \begin{solution}
+	The equation of the 3 lines joining the 3 mid-points are given by
+	\begin{align}
+		AB &: \dfrac{y-4}{x-3} = \dfrac{6-4}{4-3} \Rightarrow y = 2x - 2 \\
+		BC &: \dfrac{y-6}{x-4} = \dfrac{7-6}{5-4} \Rightarrow y = x + 2 \\
+		CA &: \dfrac{y-4}{x-3} = \dfrac{7-4}{5-3} \Rightarrow 2y = 3x - 1
+	\end{align}
+	
+	The equation for the three sides of the triangle are therefore given by
+	
+	\begin{align}
+		XZ &: \dfrac{y-7}{x-5} = 2 \Rightarrow y = 2x - 3 \\
+		XY &: \dfrac{y-4}{x-3} = 1 \Rightarrow y = x + 1 \\
+		YZ &: \dfrac{y-6}{x-4} = \dfrac{3}{2} \Rightarrow y = \dfrac{3}{2}x
+	\end{align}
+	
+	And the vertices are therefore given by
+	\begin{align}
+		X &: 2x-3 = x + 1 \Rightarrow x = 4, y = 5 \\
+		Y &: \dfrac{3}{2}x = x + 1 \Rightarrow x = 2, y = 3 \\
+		Z &: 2x-3 = \dfrac{3}{2}x \Rightarrow x = 6, y = 9
+	\end{align}
+	The three vertices are therefore $(4,5)$, $(2,3)$ and $(6,9)$
+	
+	
+	
+	
+	
 \end{solution}
