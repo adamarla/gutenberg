@@ -15,6 +15,7 @@ do
   if [ $texDiff -eq 0 ] ; then
     if [ $plotDiff -eq 0 ] ; then 
       echo "[*] $dir"
+      if [ ! -e $vault/$dir/Makefile ] ; then ln -s $shared/individual.mk $vault/$dir/Makefile ; fi
     else echo "[T] $dir"
     fi 
   fi
