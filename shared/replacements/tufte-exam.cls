@@ -23,6 +23,7 @@
 \RequirePackage{pst-barcode} 
 \RequirePackage{tikz} 
 \RequirePackage{auto-pst-pdf} 
+\RequirePackage{siunitx}
 
 \providecommand{\ud}{\, \mathrm{d}}
 %\renewcommand{\solutiontitle}{\noindent{\sc{Solution\\}}\enspace}

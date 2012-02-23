@@ -27,11 +27,49 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question[3] A small aircraft encounters bad weather a third of the way
+into a \SI{600}{\kilo\meter} flight. As a result, it has to slow down by
+\SI{50}{\kilo\meter\per\hour} and it therefore lands 40 minutes later than usual. How
+long does the aircraft take to fly the same route on a normal day?
+
+\texttt{Hint: $1225 = 35^2$}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+  \marginnote[1cm]{If you were mindful of the units, then you would have realized
+  that 40 minutes = $\frac{2}{3}$ hour}
+  \marginnote[0.3cm]{ Lesson: Units can change the whole calculation. So, always write them}
 \fi 
 
 \begin{solution}
+	Let $S$ be the aircraft's speed in \si{km\per hour} and $T$ the time - in hours -
+	the plane ordinarily takes for the 600 km trip
+	
+	Which means
+	\begin{align}
+		T &= \dfrac{\SI{600}{\kilo\meter}}{S}
+	\end{align}
+	
+	On this day, however,
+	\begin{align}
+		T + \dfrac{40 \si{\minute}}{\SI{60}{\minute\per\hour}} &= \dfrac{200}{S} + \dfrac{400}{S-50}
+	\end{align}
+	
+	Using (1) and (2), we get 
+	\begin{align}
+		\dfrac{600}{S} + \dfrac{2}{3} &= \dfrac{200}{S} + \dfrac{400}{S-50} \\
+		\Rightarrow \dfrac{1800+2S}{3S} &= \dfrac{200S-10,000+400S}{S\cdot(S-50)} \\
+		\Rightarrow (1800+2S)\cdot(S-50) &= (1800S - 30,000) \\
+		\Rightarrow 2S^2-100S-60,000 &= 0 \\
+		\Rightarrow S^2-50S-30,000 &= 0 \\
+		\Rightarrow S &= \dfrac{50\pm\sqrt{50^2-4\times-30,000}}{2} \\
+		              &= \dfrac{50\pm\sqrt{122500}}{2}
+	\end{align}
+	Speed can only be positive. And therefore
+	\begin{align}
+		S &= \dfrac{50+350}{2} = \SI{200}{\kilo\meter\per\hour}
+	\end{align}
+	Which means, that on a normal day, the aircraft will take 
+	$\dfrac{\SI{600}{\kilo\meter}}{\SI{200}{\kilo\meter\per\hour}}$ = 3 hours
+	
 \end{solution}
