@@ -27,11 +27,29 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
-
+\question[4] Calculate $2\left(\dfrac{\cos 58^\circ}{\sin 32^\circ}\right) - \sqrt{3} \left(\dfrac{\cos 38^\circ \cos 52^\circ}{\tan 15^\circ \tan 60^\circ \tan 75^\circ}\right)$?
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
-
 \begin{solution}
+  \begin{align}
+    \text{Let}\: &\theta   = 32^\circ \\ 
+         	     &\phi     = 38^\circ \\ 
+                 &\epsilon = 15^\circ 
+  \end{align}
+  Rewriting the expression using (1), (2) and (3), we get \linebreak
+  \begin{align}
+    \text{E} &= 2\left(\dfrac{\cos(\frac{\pi}{2}-\theta)}{\sin \theta}\right) - 
+  	       		 \sqrt{3}
+  	       		 \left(\dfrac{\cos \phi \cos(\frac{\pi}{2}-\phi)}
+  	       			   {\tan \epsilon \tan \frac{\pi}{3} \tan(\frac{\pi}{2}-\epsilon)}
+		   		\right) \\
+    \text{E} &= 2\left(\dfrac{\sin \theta}{\sin \theta}\right) - 
+  	       		 \sqrt{3}
+  	       		 \left(\dfrac{\cos \phi \sec \phi}
+  	       			   {\tan \epsilon \sqrt{3} \cot \epsilon}
+		   		\right) \\
+    \text{E} &= 2 - \sqrt{3}\left(\dfrac{1}{\sqrt{3}}\right) \nonumber \\
+    \text{E} &= 1
+  \end{align}    
 \end{solution}
