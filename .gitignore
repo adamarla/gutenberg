@@ -13,7 +13,8 @@
 *.out
 *.tex
 !question.tex
-!shared/*.tex
+!shared/replacements/*/*.tex
+
 
 mint/*
 !mint/Makefile

@@ -27,11 +27,36 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question[3] Water is leaking from a conical funnel at the rate of \SI{5}{\cubic\centi\metre\per\second}.
+If the radius of the base of the funnel is \SI{5}{\centi\meter} and the funnel's height is 
+\SI{10}{\centi\meter}, find the rate at which water level is dropping when it is 
+\SI{2.5}{\centi\meter} from the top. Assume that the other end of the funnel is a tip
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
+	From the figure alongside, we can see that if 
+	$h$ be the height from the tip of the funnel to the water-level and $r$
+	be the radius at the water-level, then 
+	\begin{align}
+		\dfrac{r}{h} &= \dfrac{R_0}{H} = \dfrac{5}{10} = \dfrac{1}{2} \\
+		\Rightarrow r &= \dfrac{h}{2}
+	\end{align}
+	Also, we have been told that 
+	\begin{align}
+		\dfrac{\ud V}{\ud t} &= \dfrac{\pi}{3}\dfrac{\ud}{\ud t}r^2h = \SI{5}{\cubic\centi\meter\per\second} \\
+		&= \dfrac{\pi}{3}\left[2rh\dfrac{\ud r}{\ud t} + r^2\dfrac{\ud h}{\ud t}\right] \\
+		&= \dfrac{\pi}{3}\left[h^2\cdot\dfrac{1}{2}\dfrac{\ud h}{\ud t} + \dfrac{h^2}{4}\dfrac{\ud h}{\ud t} \right] \\
+		\Rightarrow \dfrac{\pi h^2}{4}\dfrac{\ud h}{\ud t} &= \SI{5}{\cubic\centi\meter\per\second} \\
+		\Rightarrow \dfrac{\ud h}{\ud t} &= \dfrac{\SI{5}{\cubic\centi\meter\per\second}}
+		{\dfrac{\pi h^2}{4}}
+	\end{align}
+	When the water-level is $2.5$ cm from the base, $h = 7.5$ cm. And at that instant
+	\begin{align}
+		\dfrac{\ud h}{\ud t} &= \dfrac{\SI{5}{\cubic\centi\meter\per\second}}
+		{\dfrac{\pi}{4}\cdot(\SI{7.5}{\centi\meter})^2} \\
+		&= \SI{0.028}{\centi\meter\per\second}
+	\end{align}
 \end{solution}
