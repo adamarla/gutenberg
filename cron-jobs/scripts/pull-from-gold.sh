@@ -23,5 +23,5 @@ log=`date +"%H-pull"`
 mkdir -p $target
 cd $root 
 touch $target/$log
-git pull origin master >> $target/$log
+git pull upstream master >> $target/$log
 
