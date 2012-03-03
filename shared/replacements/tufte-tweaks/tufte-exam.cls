@@ -24,6 +24,7 @@
 \RequirePackage{tikz} 
 \RequirePackage{auto-pst-pdf} 
 \RequirePackage{siunitx}
+\RequirePackage{fig4tex}
 
 \providecommand{\ud}{\, \mathrm{d}}
 %\renewcommand{\solutiontitle}{\noindent{\sc{Solution\\}}\enspace}
