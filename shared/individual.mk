@@ -60,7 +60,7 @@ $(Ps) : $(Dvi)
 
 $(Dvi) : $(Tex) 
 	@echo "[TeX -> dvi]: $@ with [latex] = $(latexCmd)"
-	@$(latexCmd) $(Tex)
+	@$(latexCmd) -halt-on-error $(Tex)
 
 $(Tex) : $(Plots) $(Scaffolds) question.tex
 	@echo "[plotting]: $(Plots)" && gnuplot $(Plots)

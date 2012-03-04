@@ -24,7 +24,7 @@ $(PS_FILES) : %.ps : %.dvi
 
 dvi : plot $(DVI_FILES) 
 $(DVI_FILES) : %.dvi : %.tex
-	latex $<
+	latex -halt-on-error $<
 
 plot : *.gnuplot 
 	@gnuplot $^
