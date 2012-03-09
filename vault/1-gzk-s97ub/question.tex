@@ -27,11 +27,40 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question[3] If your aim is to get \texteuro 115 from an initial investment 
+of \texteuro 100 in 18 months, then for how many months would you have to keep
+your money invested in each of the following two banks?
+\begin{table}
+	\begin{tabular}{lcc}
+		\toprule
+		& Bank A & Bank B \\
+		\midrule
+		Interest (annualized) & 10\% & 9\% \\
+		Compounding & half-yearly & monthly \\
+		Time (months) & ? & ? \\
+		\bottomrule
+	\end{tabular}
+\end{table}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
 \begin{solution}
+	For Bank A,
+	\begin{align}
+		\dfrac{\text{\texteuro 115}}{\text{\texteuro 100}} &= \left(1+\dfrac{0.1}{2}\right)^{N_A} \\
+		\Rightarrow N_A &= \dfrac{\log 1.15}{\log 1.05} \\
+		                &= 2.865\text{ half-years} = 2.865\times\text{6 months} \\
+		                &= 17.19\text{ months}
+	\end{align}
+	
+	Similarly, for Bank B,
+	\begin{align}
+		\dfrac{\text{\texteuro 115}}{\text{\texteuro 100}} &= \left(1+\dfrac{0.09}{12}\right)^{N_B} \\
+		\Rightarrow N_B &= \dfrac{\log 1.15}{\log 1.0075} \\
+		                &= 18.705\text{ months}
+	\end{align}
+	
+	
 \end{solution}
