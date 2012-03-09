@@ -27,11 +27,24 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question[3] If an amount is compounded $N$ times a year at the rate of 
+$R\%$ in each period, then what would be the equivalent \textit{annualized}
+compounding rate - $R'$? 
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+  \marginnote{ $R'= N \times R$ is an excellent rule-of-thumb. But its a rule-of-thumb nevertheless } 
 \fi 
 
 \begin{solution}
+	The point to understand is that if you started with a principal 
+	amount $P$ at the beginning of the year, then
+	- at the end of the year - it should make no difference to you if you got $R\%$
+	 $N$ times a year or $R'\%$ once at the end of the year
+	 
+	 In other words
+	 \begin{align}
+	 	P\cdot\left( 1 + \dfrac{R}{100}\right)^N &= P\cdot\left( 1 + \dfrac{R'}{100}\right) \\
+	 	\Rightarrow R' &= 100\cdot\left[ \left( 1+\dfrac{R}{100}\right)^N - 1 \right]
+	 \end{align}
 \end{solution}
