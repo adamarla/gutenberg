@@ -27,11 +27,46 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question[4] Commander Spock - of Star-Trek fame - has some \textit{Vulcan} dollars that he
+would like to invest for a period of one Vulcan year. He has a choice of 2 banks - an Earth-based
+bank and a bank on his home planet Vulcan. The Earth bank offers compounding at the
+rate of 3\% every 6 \textit{Earth} months. The Vulcan bank - on the other hand - offers 6\% compounding
+every 6 \textit{Vulcan} months. Which bank should Commander Spock put his money in given that
+1 Vulcan year = 2 Earth years
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+  \marginnote[-0.5cm]{Note that the \textit{nominal} interest rate offered by banks 
+  is the same - 12\% per Vulcan year}
+  \marginnote[0.5cm] {But in order to do a comparison, one should consider only how 
+  often the compounding happens and at what rate. In other words, one must consider
+  only the \textit{effective} interest rate}
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
+	The number of times the Earth-based bank would compound the amount in one \textit{Vulcan}
+	year is 
+	\begin{align}
+		&= \SI{1}{vulcan-year}\times\SI{2}{earth-years\per vulcan-year}\times
+		\dfrac{\SI{1}{time}}{\frac{1}{2}\text{earth-year}} \\
+		&= 4\text{ times}
+	\end{align}
+	
+	Similarly, the bank on Vulcan will compound the amount
+	\begin{align}
+		&= \SI{1}{vulcan-year}\times\dfrac{\SI{1}{time}}{\frac{1}{2}\text{vulcan-year}} \\
+		&= 2\text{ times}
+	\end{align}
+	And therefore, if $P_0$ be the amount Commander Spock puts in initially, 
+	$P_{\texttt{earth}}$ be the amount he realizes at the end of his investment period with the bank
+	on Earth and $P_{\texttt{vulcan}}$ the amount he realizes on Vulcan, then 
+	
+	\begin{align}
+		\dfrac{P_\texttt{earth}}{P_0} &= \left( 1 + \dfrac{3}{100}\right)^4 \\
+		                       &= 1.1255 \\
+		\dfrac{P_\texttt{vulcan}}{P_0} &= \left( 1 + \dfrac{6}{100}\right)^2 \\
+		                        &= 1.1236
+	\end{align}
+	Clearly, Commander Spock is better off investing his
+	money with the bank on Earth
 \end{solution}
