@@ -27,11 +27,37 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question[4] You can easily calculate that $\dfrac{1}{7}=0.\overline{142857}$. However, can you calculate the values of $\dfrac{2}{7}$, $\dfrac{3}{7}$, $\dfrac{4}{7}$, $\dfrac{5}{7}$, $\dfrac{6}{7}$, without actually doing the long division?
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+  \marginnote[2cm] {Pay particular attention  to the remainders for the long division of $\frac{1}{7}$}
 \fi 
-
 \begin{solution}
+	Let us begin by laying out the long division for $\dfrac{1}{7}$.
+	\begin{align}
+		  & \underline{0.142857}  		\nonumber \\
+		7|& 1.0000000 					\nonumber \\
+		  & \underline{7}		 		\nonumber \\
+		  & \,30	  					\nonumber \\	
+		  & \,\underline{28}	 		\nonumber \\
+		  & \,\,20						\nonumber \\
+		  & \,\,\underline{14} 			\nonumber \\
+		  & \,\,\,60					\nonumber \\
+		  & \,\,\,\underline{56}		\nonumber \\
+		  & \,\,\,\,40					\nonumber \\
+		  & \,\,\,\,\,\underline{35}	\nonumber \\
+		  & \,\,\,\,\,\,50				\nonumber \\
+		  & \,\,\,\,\,\,\underline{49}	\nonumber \\
+		  & \,\,\,\,\,\,\,1				\nonumber
+	\end{align}
+	
+	A careful observation of the remainders shows that long division for any of the listed fractions would have the same set of remainders (and quotient digits), in the same order, only starting at a different point. Therefore,\\
+	\\
+	$\dfrac{2}{7} = 0.\overline{285714}$ \\
+	$\dfrac{3}{7} = 0.\overline{428571}$ \\
+	$\dfrac{4}{7} = 0.\overline{571428}$ \\
+	$\dfrac{5}{7} = 0.\overline{714285}$ \\
+	$\dfrac{6}{7} = 0.\overline{857142}$ 
+
 \end{solution}

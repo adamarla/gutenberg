@@ -27,11 +27,18 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question[3] $\sin x+ \cos x\cdot\cot x=\csc x$.
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
+\fi
 
-\begin{solution}
+\begin{solution}[\halfpage]
+  Let us begin with the Left Hand Side (LHS) since it looks more interesting -
+
+  \begin{align}
+  	LHS	&= \sin x+\cos x\cdot\dfrac{\cos x}{\sin x}	\\
+        &= \sin x+\dfrac{\cos^2 x}{\sin x}			\\
+		&= \dfrac{\sin^2 x+\cos^2 x}{\sin x}		\\
+		&= \csc x
+  \end{align} 
 \end{solution}
