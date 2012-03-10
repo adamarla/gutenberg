@@ -27,11 +27,63 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question[4] The angle of elevation of a hot air baloon, climbing vertically, changes from $\ang{30}$ at 10.00 AM to $\ang{60}$ at 10:10 AM. The point of observation is 300 meters from the point of take off. What is the average upward speed of the baloon? \\
+\textit{(use Speed = Distance/Time)}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
+	\begin{marginfigure}
+  		% 1. Definition of characteristic points
+  		\figinit{pt}
+		%Vertices of the triangle
+		\figpt 1:(0, 0)
+		\figpt 2:(100, 0)
+		\figpt 3:(100, 58)
+		\figpt 4:(100, 173)
+		% 2. Creation of the graphical file
+		\figdrawbegin{}
+			\figdrawline[1,2,3,4,1]
+			\figdrawline[3,1]
+		\figdrawend
+		% 3. Draw the angles
+%		\psarrowcirc 1; 0.5(0, 30)
+%		\psarrowcirc 1; 0.75(0, 60)
+  		% 3. Writing text on the figure
+		\figvisu{\figBoxA} {Figure}
+		{
+			\figwritesw 1:$O$(4)
+			\figwritese 2:$A$(4)
+			\figwritee  3:$B$(4)
+			\figwritene 4:$C$(4)
+		}
+		\centerline{\box\figBoxA}
+	\end{marginfigure}
 \fi 
 
 \begin{solution}
+	Let us suppose the baloon was released at a Point A (see figure) and began climbing. It reached Point B at exactly 10AM and Point C, 10 minutes after that. In order to compute speed we need to find the height that the baloon gained between the two points in time (10.00AM and 10.10AM). \\
+	Since we know the distance OA from the base of the baloon to the point of obervation, we can use $\tan$ ratios:
+	\begin{align}
+		\tan\ang{30} &= \dfrac{AB}{OA}	\\		
+		\tan\ang{60} &= \dfrac{AB+BC}{OA}
+	\end{align}
+	
+	From (1) we get,
+	\begin{align}
+		AB = \dfrac{300}{\sqrt{3}} m
+	\end{align}	
+	
+	Using (2) and (3), we get,
+	\begin{align}
+		\sqrt{3}AB &= \dfrac{AB+BC}{\sqrt{3}}	\\		
+		\Rightarrow 3AB &= AB+BC				\\
+		\Rightarrow 2AB &= BC
+	\end{align}
+
+	Using (3) and (6) therefore, we get,
+	\begin{align}
+		\text{Speed of rise} &= \dfrac{\text{gain in height}}{\text{time elapsed}} \\
+							 &= \dfrac{\frac{600}{\sqrt{3}}(m)}{600(s)}	\\
+							 &= \dfrac{1}{\sqrt{3}}(m/s)
+	\end{align}	
+		
 \end{solution}
