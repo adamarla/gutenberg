@@ -27,11 +27,74 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question[5] Shown alongside is a circle centered at $O$ having radius = $4\sqrt2$.
+The two chords - $AB$ and $CD$ - intersect at $X$. If $X$ divides $AB$ in the ratio $2:1$
+and $CD$ in the ratio $3:1$, then what is $\angle OCD$ given that length of $AB = 3\sqrt3$ units?
+
+
+\begin{marginfigure}
+	\figinit{pt}
+    \figpt 0: (60,0)
+    \figptcirc 1:$A$: 0;50(40)
+    \figptcirc 2:$B$: 0;50(140)
+    \figptcirc 3:$C$: 0;50(200)
+    \figptcirc 4:$D$: 0;50(100)
+    \figvectP 10 [1,2]
+    \figvectP 20 [3,4]
+    \figptinterlines 5:$X$[1,10;3,20]
+    \figptorthoprojline 6:$M$= 0/3,4/
+	\figdrawbegin{}
+		\figdrawcirc 0(50)
+    \figdrawline [1,2]
+    \figdrawline [3,4]
+    \figdrawarccircP 3;10 [0,4]
+    \figset (dash=7)
+    \figdrawline [0,3]
+    \ifprintanswers
+      \figdrawline [0,6]
+    \fi
+	\figdrawend
+  \figvisu{\figBoxA}{}{
+    \figsetmark{$\bullet$}
+    \figwrites 0:$O$(5)
+    \figwriten 1:(5)
+    \figwritew 2:(5)
+    \figwrites 3:(5)
+    \figwriten 4:(5)
+    \ifprintanswers
+      \figwritese 5:(5)
+      \figwritew 6:(5)
+    \fi
+  }
+  \centerline{\box\figBoxA}
+\end{marginfigure}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+  \marginnote[0.5cm]{Whether $\frac{AX}{BX} = \frac{2}{1}$ or $\frac{BX}{AX} = \frac{2}{1}$ is 
+  unimportant. We are only interested in the total length of the chord}
+  \marginnote[0.5cm]{Same goes for chord $CD$ }
 \fi 
 
-\begin{solution}
+\begin{solution}[\fullpage]
+	Here is what we know about intersecting chords in a circle,
+	\begin{align}
+		AX\cdot BX &= CX\cdot DX
+	\end{align}
+	Assuming that $\dfrac{AX}{BX} = \dfrac{2}{1}$ and $\dfrac{CX}{DX} = \dfrac{3}{1}$, we get
+	\begin{align}
+		\dfrac{2}{3}L_{AB}\cdot\dfrac{1}{3}L_{AB} &= \dfrac{3}{4}L_{CD}\cdot\dfrac{1}{4}L_{CD} \\
+		\Rightarrow \dfrac{2}{9}\cdot(3\sqrt{3})^2 &= \dfrac{3}{16}\cdot L_{CD}^2 \\
+		\Rightarrow L_{CD} &= 4\sqrt{2}
+	\end{align}
+	
+	Now, if we drop a perpendicular from $O$ on $CD$ at $M$, then we know that 
+	$CM = MD = \dfrac{4\sqrt2}{2} = 2\sqrt{2}$
+	
+	And therefore, in $\triangle OCM$, 
+	\begin{align}
+		\cos\angle OCM &= \dfrac{CM}{OC} \\
+		               &= \dfrac{2\sqrt{2}}{4\sqrt{2}} = \dfrac{1}{2} \\
+		\Rightarrow \angle OCM &= \cos^{-1}\dfrac{1}{2} = \ang{60}
+	\end{align}
 \end{solution}
