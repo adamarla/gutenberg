@@ -27,11 +27,21 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question[2] Prove the following identity:
+	\begin{align}
+		\left(\dfrac{1+\sin\alpha}{1+\cos\alpha}\right)
+			\left(\dfrac{1+\sec\alpha}{1+\csc\alpha}\right)=\tan\alpha	\nonumber
+	\end{align}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
-
-\begin{solution}
+\begin{solution}[\halfpage]
+	Looks easy enough, let's begin with the Left Hand Side(LHS),
+	\begin{align}
+		\text{LHS} &= \left(\dfrac{1+\sin\alpha}{1+\cos\alpha}\right)
+				 	  \left(\dfrac{1+\frac{1}{\cos\alpha}}{1+\frac{1}{\sin\alpha}}\right)\\
+			  	   &= \dfrac{\sin\alpha}{\cos\alpha}									 \\
+			  	   &= \tan\alpha
+	\end{align}
 \end{solution}
