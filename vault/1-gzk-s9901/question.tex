@@ -27,11 +27,45 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question[2] In the adjoining figure, $O$ is the center of the circle and $\angle BOC = \ang{100}$.
+What is $\angle BDC$ equal to ?
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
-
-\begin{solution}
+\begin{marginfigure}
+	\figinit{pt}
+    \figpt 1: (60,0)
+    \figptcirc 2:$A$: 1;50(70)
+    \figptcirc 3:$B$: 1;50(200)
+    \figptcirc 4:$C$: 1;50(310)
+    \figptcirc 5:$D$: 1;50(250)
+	\figdrawbegin{}
+	\figdrawcirc 1(50)
+    \figdrawline [3,1,4,5,3]
+    \ifprintanswers
+      \figdrawline [3,2,4]
+    \fi
+	\figdrawend
+  \figvisu{\figBoxA}{}{
+    \figsetmark{$\bullet$}
+    \figwrites 1:$O$(5)
+    \figwriten 2:(5)
+    \figwritew 3:(5)
+    \figwritee 4:(5)
+    \figwrites 5:(5)
+  }
+  \centerline{\box\figBoxA}
+\end{marginfigure}
+\begin{solution}[\halfpage]
+	If we pick a point $A$ on the circle's circumfrence, then $ACDB$ is a cyclic 
+	quadrilateral in which,
+	\begin{align}
+		\angle BAC &= \dfrac{1}{2}\cdot\angle BOC = \ang{50}
+	\end{align}
+	Moreover, because it is a cyclic quadrilateral, 
+	\begin{align}
+		\angle BAC + \angle BDC &= \ang{180} \\
+		\Rightarrow \angle BDC &= \ang{180} - \angle BAC = \ang{130}
+	\end{align}
 \end{solution}

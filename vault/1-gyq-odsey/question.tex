@@ -31,25 +31,29 @@
 
 \ifprintanswers
 	\begin{marginfigure}
-		\figinit{cm}
-		\figpt 1:$X$(0,1)
-		\figpt 2:$Y$(3,4)
-		\figpt 3:$Z$(4,2)
-		\figpt 4:$A$(1.5,1.5)
-		\figpt 5:$B$(3.5,0.5)
-		\figpt 6:$C$(2,0.5)
-		\figsetmark{+}
+		\figinit{pt}
+		\figpt 1:(10,0)
+		\figpt 2:(90,0)
+		\figpt 3:(30,60)
+		\figvectP 10 [1,2]
+		\figvectP 20 [2,3]
+		\figvectP 30 [3,1]
+		\figpttra 11:$A(3,4)$= 1/0.5,10/
+		\figpttra 21:$B(4,6)$= 2/0.5,20/
+		\figpttra 31:$C(5,7)$= 3/0.5,30/
 		\figdrawbegin{}
 			\figdrawline[1,2,3,1]
-			\figdrawline[4,5,6,4]
+			\figdrawline[11,21,31,11]
 		\figdrawend
-		\figvisu{\figBoxA}{Figure}{}
-%		\figwritese 1:(0.8)
-%		\figwritese 2:(0.3)
-%		\figwritese 3:(0.8)
-%		\figwritese 4:(0.1)
-%		\figwritese 5:(0.1)
-%		\figwritese 6:(0.1)
+		\figvisu{\figBoxA}{}{
+			\figsetmark{$\bullet$}
+			\figwritew 1:$X$(5)
+			\figwritee 2:$Y$(5)
+			\figwriten 3:$Z$(5)
+			\figwrites 11:(5)
+			\figwritee 21:(5)
+			\figwritew 31:(5)
+		}
 		\centerline{\box\figBoxA}
 	\end{marginfigure}
 

@@ -27,11 +27,49 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question[5] The National Bank of the Shire has a 3-year investment scheme 
+for its residents whereby they get 4\% interest compounded annually in the 
+first year and - if they do not make a withdrawl at the end of the first year - 
+4.5\% interest compounded annually in the next 2 years. However, if they do make
+a withdrawl, then they get the same 4\% for the next 2 years too
+
+Frodo Baggins invests in this scheme. But at the end of the first year, 
+he needed cash in hand and was forced to withdraw 20\% of his original principal amount.
+How much did he lose in the way of interest at the end of the 3-year period because
+of the withdrawl?
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
-\begin{solution}
+\begin{solution}[\fullpage]
+	Had Frodo \textit{not} withdrawn the amount at the end of the first year, he would have
+	 got - at the end of the 3 years,
+	\begin{align}
+		P_1 &= P_0\cdot\left(1+\dfrac{4}{100}\right)\cdot\left(1+\dfrac{4.5}{100}\right)^{2} \\
+		    &= 1.136\cdot P_0
+	\end{align}
+	
+	Which means an interest payment of
+	\begin{align}
+		I_1 &= 1.136 P_0 - P_0 = 0.136 P_0
+	\end{align}
+	
+	But he did. And so, he would now get at the end of the third year
+	\begin{align}
+		P_2 &= \overbrace{(1.04-0.2)\cdot P_0}^{\texttt{new start amount}}\cdot
+		\underbrace{\left( 1 + \dfrac{4}{100}\right)^2}_{\texttt{still getting 4\%}} \\
+		&= 0.9085\cdot P_0
+	\end{align}
+	
+	Which means, that over the 3-years, Frodo earned interest equal to
+	\begin{align}
+		I_2 &= \overbrace{(1.04 - 1)\cdot P_0}^{\texttt{first year}} + 
+		       \overbrace{(0.9085 - 0.84)\cdot P_0}^{\texttt{Years 2 \& 3}} \\
+		    &= 	0.1085\cdot P_0
+	\end{align}
+	
+	Hence, Frodo lost = $(0.136 - 0.1085)\cdot P_0 = 0.0275\cdot P_0$ - or 2.75\% - as interest 
+	payment because of the withdrawl
+	
 \end{solution}
