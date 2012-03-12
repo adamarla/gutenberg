@@ -27,11 +27,22 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question[3] Prove that
+	\begin{align}
+		\dfrac{\tan 2x \tan x}{\tan 2x -\tan x} = \sin 2x \nonumber
+	\end{align}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
+	Start with the Left Hand Side (LHS),
+	\begin{align}
+		\text{LHS} &= \dfrac{\tan 2x \tan x}{\tan 2x -\tan x} \\
+				   &= \left(\dfrac{\sin 2x\sin x}{\cos 2x\cos x}\right)
+				   	  \left(\dfrac{\cos 2x\cos x}{\sin 2x\cos x -\cos 2x\sin x}\right) \\
+				   &= \dfrac{\sin 2x\sin x}{\sin \left(2x - x\right)} \\
+				   &= \sin 2x
+	\end{align}
 \end{solution}

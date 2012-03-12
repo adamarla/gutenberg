@@ -27,11 +27,27 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question[4] Prove that
+	\begin{align}
+		\left(1+\tan \theta\tan 2\theta\right)\sin 2\theta = \tan 2\theta \nonumber
+	\end{align}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+  \marginnote {This is a typical \textit{prove the trigonometric identity} question where one has to keep sight of both sides of the equation to discover the most straightforward path. Often times in such questions we expand too many terms on one side of the equation and get in trouble.}
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
+	Start with the Left Hand Side (LHS),
+	\begin{align}
+		\text{LHS} &= \underbrace{\left(1+\tan \theta\tan 2\theta\right)}\sin 2\theta \\
+				   &\textit{\small{focus on this portion of the equation}} \nonumber \\
+				   &= \left(1+\dfrac{\sin \theta}{\cos \theta}
+				   			  \dfrac{\sin 2\theta}{\cos 2\theta}\right)\sin 2\theta \\
+				   &= \left(\dfrac{\cos 2\theta\cos \theta +\sin 2\theta\sin \theta}
+				   				  {\cos \theta\cos 2\theta}\right)\sin 2\theta	\\
+				   &= \dfrac{\cos \left(2\theta - \theta\right)}
+				   			{\cos \theta\cos 2\theta}\sin 2\theta \\
+				   &= \tan 2\theta
+	\end{align}	
 \end{solution}
