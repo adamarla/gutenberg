@@ -27,11 +27,21 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question[3] Suppose I want to have \$60,000.00 in my account for my children's college education. I expect to earn an average return of 12\%, compounding four times a year. If I deposit \$25,000.00 in my account today, how many years will it take me to meet my goal (\$60,000.00 in my account)?
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+  \marginnote[2.2cm] {\textit{4y} since the interest is compounded 4 times a year}
 \fi 
 
 \begin{solution}
+	Let us suppose it would take \textit{y} years,
+	\begin{align}
+	600000 &= 25000\left(1 + \dfrac{12}{100}\right)^{4y} \\
+	   2.4 &= \left(\dfrac{112}{100}\right)^{4y} \\
+	0.3802 &= 4y \left(\log 112 - 2\right) \\
+		 y &= \dfrac{0.3802}{0.0492} \\
+		 y &= 7.7248
+	\end{align}
+	It will take you 7.7 years to meet your goal. Keep slogging!
 \end{solution}

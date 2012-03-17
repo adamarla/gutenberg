@@ -27,11 +27,20 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question[2] ABC Bank is offering to double your money! They say that if you invest with them, at 6\% interest compounded quarterly, your money will double in no time. But their advertisement fails to mention how long it would actually take! Can you find out?
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
 \begin{solution}
+	Let the time it would take to double your money be n years. It follows that,
+	\begin{align}
+			2P &= P\left(1+\dfrac{6}{100}\right)^\text{4n} \\
+		 	 2 &= \left(\dfrac{106}{100}\right)^\text{4n} \\
+		\log 2 &= 4n\left(\log 106 -2\right) \\
+			 n &= \dfrac{\log 2}{4\left(\log 106 -2\right)} \\
+			 n &= 3.7625
+	\end{align}
+	ABC Bank is therefore offering to double your money in 3.76 years!
 \end{solution}
