@@ -27,20 +27,27 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question[3] ABC Bank is offering to double your money! They say that if you invest with them, at 6\% interest compounded quarterly, your money will double in no time. But their advertisement fails to mention how long it would actually take! Can you find out?
+\question[3] ABC Bank is offering to double your money in no time! They say that if you invest 
+with them, then they will compound your money by 6\% \emph{every} quarter. But their 
+advertisement fails to mention how long it would actually take to double the money. So, 
+how long would it actually take?
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+  \marginnote[2cm]{\emph{Don't} rush to invest with this bank! Most good banks
+  will take longer than 3.76 years to double your money}
+  \marginnote[0.3cm]{This offer, therefore, sounds too good to be true. And if 
+  it sounds too good to be true, then it probably is too good to be true}
 \fi 
 
 \begin{solution}[\halfpage]
-	Let the time it would take to double your money be n years. It follows that,
+  If it takes $N$ years to double an initial amount $P$, then it follows that
+
 	\begin{align}
-			2P &= P\left(1+\dfrac{6}{100}\right)^\text{4n} \\
-		 	 2 &= \left(\dfrac{106}{100}\right)^\text{4n} \\
-		\log 2 &= 4n\left(\log 106 -2\right) \\
-			 n &= \dfrac{\log 2}{4\left(\log 106 -2\right)} \\
-			 n &= 3.7625
+			2P &= P\left(1+\dfrac{6}{100}\right)^{\texttt{4 times per year}\times N\texttt {years}} \\
+		 	 \Rightarrow 2 &= \left(\dfrac{106}{100}\right)^\text{4N} \\
+		\Rightarrow \log 2 &= 4N\cdot\left(\log 106 - \log 100\right) \\
+		\Rightarrow	N &= \dfrac{\log 2}{4\cdot\left(\log 106 - \log 100\right)} \\
+		\Rightarrow N &= 3.76\text{ years}
 	\end{align}
-	ABC Bank is therefore offering to double your money in 3.76 years!
 \end{solution}
