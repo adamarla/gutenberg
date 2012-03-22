@@ -27,18 +27,28 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question[3] Vidya received Rs.75,000 from her grandparents on passing her high school examinations. She decided to place into an account that earns 8.5\% semi-annually while she went to college. How much will Vidya's account have at the end of four years.
+\question[3] Vidya received \texteuro2,000 from her grandparents when she graduated from
+school and entered college. She placed the money in an account that earns
+her 12\% interest(annual) compounded semi-annually. How much will Vidya have when she 
+graduates in 4 years time?
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+  \marginnote[1cm]{
+    \begin{align}
+      A &= \text{\texteuro 2,000}\cdot (1.06)^8 \\
+      \Rightarrow \log A &= \log 2,000 + 8\cdot\log 1.06 \\
+                         &= 3.50347 \\
+      \Rightarrow A &= \text{\texteuro 3,187.7}
+    \end{align}
+  }
 \fi 
 
 \begin{solution}[\halfpage]
+  If $A$ be the amount Vidya has after $4$ years, then
 	\begin{align}
-			 \text{A} &= 75000\left(1 + \dfrac{8.5}{100}\right)^8 \\
-			 \text{A} &= 75000\left(\dfrac{108.5}{100}\right)^8 \\			
-		\log \text{A} &= \log 75000 + 8\left(\log 108.5 - 2\right) \\
-			 \text{A} &= 144012.4	
-	\end{align}
-	Vidya's account shall have Rs.1,44,012.40 at the end of four years of college.
+			 \text{A} &= \text{\texteuro 2,000}\cdot\left(1 + \dfrac{0.12}{2}\right)^{2\times 4} \\
+			          &= \text{\texteuro 2,000}\cdot 1.06^8 \\
+                &= \text{\texteuro 3,187.7}
+  \end{align}
 \end{solution}
