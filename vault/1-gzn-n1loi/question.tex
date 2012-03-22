@@ -27,11 +27,34 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question If the difference between the simple interest earned over one year
+and the compound interest - payed semi-annually - over the same year is \texteuro 180,
+then what is the initial investment amount. The annualized interest rate in both cases is 10\% 
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
 \begin{solution}
+	If $I_1$ be the interest earned from \emph{compounding} in one year, $P_0$ the 
+	initial investment amount and $P_1$ the amount at the end of the first year, then
+	
+	\begin{align}
+		I_1 &= P_1 - P_0 \\ 
+		    &= P_0\cdot\left[ 1+\dfrac{R}{N}\right]^N - P_0 \\
+		    &= P_0\cdot\left[ (1+\dfrac{R}{N})^N - 1 \right]
+	\end{align}
+	where $N$ = number of compounding periods = 2
+	
+	Over the same period, the \emph{simple} interest earned - $I_2$ - is equal to
+	\begin{align}
+		I_2 &= P_0\cdot R\cdot T(=1)
+    \end{align}
+    
+    And therefore, if $I_1-I_2 = \text{\texteuro 180}$, then 
+    \begin{align}
+    	\text{\texteuro 180} &= P_0\cdot\left[ (1+\dfrac{0.1}{2})^2 - 1 - 0.1\right] \\
+    	                     &= 0.0025\cdot P_0 \\
+    	\Rightarrow P_0 &= \text{\texteuro 72,000}
+    \end{align}
 \end{solution}

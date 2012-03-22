@@ -27,11 +27,17 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question At what rate of interest would \texteuro 80,000 amount to \texteuro 88,200 
+in 2 years if compounded annually?
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
 \begin{solution}
+	\begin{align}
+		\text{\texteuro 88,200} &= \text{\texteuro 80,000}\cdot(1 + R)^2 \\
+		\Rightarrow R &= \left[\sqrt{\dfrac{88,200}{80,000}} - 1 \right] \\
+		              &= 0.05 \text{ or 5\%}
+	\end{align}
 \end{solution}
