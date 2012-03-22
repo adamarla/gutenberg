@@ -27,7 +27,10 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question[4] A gentleman buys Bank's cash certificates every year and each year their value exceeds the previous year's purchase value by Rs.300. After 20 years, he finds that the total value of the certificates purchased by him is Rs.83,000. Find the value of the certificates purchased by him in the 13$^{th}$ year.
+\question[4] An amateur investor has \texteuro 83,000 that he would like to invest in the
+stock-market. But rather than invest all the money in one go, he decides to invest 
+a certain amount in the first year and in every subsequent year, \texteuro 300 more than
+in the preceding year. How much money would the investor have invested in the $13^{th}$ year?
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -37,16 +40,23 @@
 \fi 
 
 \begin{solution}[\halfpage]
-	Let the value of the certificate in the first year of purchase be \textit{a}. Applying the formula for the sum of terms of an Arthmetic Progression we get, 
-	\begin{align}
-			   83000 &= \dfrac{20}{2}\left(2\text{a}+19\times 300\right)\\
-			   83000 &= 10\left(2\text{a} + 5700\right) \\
-			\text{a} &= 1300   
-	\end{align}
-	Value of certificate purchased in the n$^{th}$ year,
-	\begin{align}
-		\text{a}_{13}&= 1300 + \left(12\times 300\right) \\
-		\text{a}_{13}&= 4900
-	\end{align}
-	The certificate purchased in the 13$^{th}$ year was worth Rs.4,900.
+  If $A$ be the amount the investor invests in the first year, then over 20 years $(N=20)$, his
+  total investment $(S_N)$ is given by, 
+
+  \begin{align}
+    S_N &= \dfrac{N}{2}\cdot(2A + (N-1)\cdot d)
+  \end{align}
+  where $d=\text{\texteuro 300}$
+
+  \begin{align}
+    \Rightarrow \text{\texteuro 83,000} &= \dfrac{20}{2}\cdot(2A + (20-1)\cdot 300) \\
+    \Rightarrow A &= \text{\texteuro 1,300}
+  \end{align}
+
+  And therefore, the amount the investor invests in the $13^{th}$ year $(=A_{13})$ would be
+  \begin{align}
+    A_{13} &= A + (13-1)\cdot d \\
+           &= \text{\texteuro 1,300} + 12\cdot \text{\texteuro 300} \\
+           &= \text{\texteuro 4,900}
+  \end{align}
 \end{solution}
