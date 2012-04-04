@@ -20,6 +20,7 @@
 % DocAuthor = (document == question_paper) ? student : teacher
 \newcommand{\DocAuthor}[1]{\renewcommand{\plainauthor}{#1}}
 \newcommand{\School}[1]{\renewcommand{\plainpublisher}{#1}}
+\newcommand{\calculator}[1]{\texttt{Calculator}: ${#1}$}
 
 %% Insert QR Codes only when generating question papers. There is no need 
 % for them in the answer key. 
@@ -29,7 +30,7 @@
 \providecommand{\insertQR}[1]{
     \ifprintanswers
     \else
-      \begin{marginfigure}[0.6in]
+      \begin{marginfigure}[0.8in]
         %\begin{pspicture}(0.6in,0.6in) 
           \psbarcode{#1}{eclevel=Q width=0.55 height=0.55}{qrcode} 
         %\end{pspicture} 
