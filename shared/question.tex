@@ -25,9 +25,13 @@
 % 
 %   5. Ensure that there are *no spelling mistakes anywhere*. We are an 
 %      education company. Bad spellings suggest that we ourselves 
-%      don't have any education. And, use American spellings
+%      don't have any education. Also, use American spellings by default
+% 
+%   6. If a question has multiple parts, then first delete lines 40-41
+%   7. If a question does not have parts, then first delete lines 43-69
 
 \question
+\insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -35,3 +39,31 @@
 
 \begin{solution}
 \end{solution}
+
+\begin{parts}
+  \part 
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+  \part 
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+  \part 
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+  \part 
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+  \part 
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+\end{parts}
