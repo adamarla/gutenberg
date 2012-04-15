@@ -35,20 +35,16 @@ Pdf := $(patsubst %.tex, %-answer.pdf, $(Basename)) # 123-answer.pdf
 Thumb := $(patsubst %.tex, %-thumb.jpeg, $(Basename)) # 123-thumb.jpeg
 Preview := $(patsubst %.tex, %-answer.jpeg, $(Basename)) # 123-answer.jpeg
 
-#PHONY : plot prepare dvi ps
+PHONY : preview
 
-$(Thumb) : $(Preview)
-	@echo "[ preview -> thumbnail ]"
-	@convert $^ -resize 120x120 $@
+preview : $(Pdf)
+	@echo "[ pdf -> preview ]"
+	@gs -dNOPAUSE -dBATCH -sDEVICE=jpeg -r700 -sOutputFile=page-%d.jpeg $^
+	@for f in `ls page-*.jpeg`; do convert $$f -resize 600x800 $$f ; done 
 ifeq ($(MAKELEVEL),0)
 	@echo "Running atomically"
 	@if [[ ! $$PRODUCTION_SERVER ]] ; then gs $(Pdf) ; fi
 endif
-
-$(Preview) : $(Pdf)
-	@echo "[ pdf -> preview ]"
-	@gs -sDEVICE=jpeg -r700 -o $@ $^
-	@convert $@ -resize 600x800 $@
 
 $(Pdf) : $(Ps)
 	@echo "[ps -> pdf]: $@ with [ps2pdfCmd] = $(ps2pdfCmd)"
@@ -70,5 +66,5 @@ $(Tex) : $(Plots) $(Scaffolds) question.tex
 	@for j in doc_end ; do cat $(Shared)/$$j.tex >> $@ ; done
 
 clean :
-	@rm -f $(Folder)* && rm -f *.table
+	@rm -f $(Folder)* && rm -f *.table && rm -f *.jpeg
 
