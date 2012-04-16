@@ -12,10 +12,9 @@
 \setlength{\@tweak@pageheight}{\paperheight} 
 \addtolength{\@tweak@pageheight}{-\voffset}
 
-\providecommand{\halfpage}{0.5\textheight} 
-\providecommand{\fullpage}{\textheight} 
-\providecommand{\fewlines}{0.2\textheight} 
-\providecommand{\nolines}{0\paperheight} 
+\providecommand{\mcq}{\stretch{1}} 
+\providecommand{\halfpage}{\stretch{2}}
+\providecommand{\fullpage}{\stretch{4}} 
 
 % DocAuthor = (document == question_paper) ? student : teacher
 \newcommand{\DocAuthor}[1]{\renewcommand{\plainauthor}{#1}}
