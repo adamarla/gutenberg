@@ -30,7 +30,7 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question Let $R$ be the region in the first quadrant enclosed by the graphs
+\question  Let $R$ be the region in the first quadrant enclosed by the graphs
 $f(x) = 8x^3$ and $g(x)=sin(\pi x)$, as shown in the figure
 \insertQR{}
 
@@ -40,9 +40,9 @@ $f(x) = 8x^3$ and $g(x)=sin(\pi x)$, as shown in the figure
 
 
 \begin{parts}
-  \part Write the equation for the line tangent to $f(x)$ at $x=\dfrac{1}{2}$ 
+\part[2] \part Write the equation for the line tangent to $f(x)$ at $x=\dfrac{1}{2}$
   \insertQR{}
-  \begin{solution}
+\begin{solution}[\mcq]
   	The said tangent would be tangent at the point $(\dfrac{1}{2}, f(\dfrac{1}{2}))$.  	
   	Which means, at $\left(\dfrac{1}{2}, 8\cdot\left( \dfrac{1}{2}\right)^3\right)$ = $(1,1)$
   	
@@ -62,9 +62,9 @@ $f(x) = 8x^3$ and $g(x)=sin(\pi x)$, as shown in the figure
   	
   \end{solution}
 
-  \part Find the area of $R$
+\part[3] \part Find the area of $R$
   \insertQR{}
-  \begin{solution}
+\begin{solution}[\halfpage]
   	From the figure, we can see that the curves $f(x)$ and $g(x)$ intersect when $x=\dfrac{1}{2}$
   	
   	And therefore, the area $R$ contained between them is given by
@@ -76,10 +76,11 @@ $f(x) = 8x^3$ and $g(x)=sin(\pi x)$, as shown in the figure
   	\end{align}
   \end{solution}
 
-  \part Write, but do not evaluate, an integral expression for the volume of the solid
+\newpage
+\part[3] \part Write, but do not evaluate, an integral expression for the volume of the solid
   generated when $R$ is rotated about the horizontal line $y=1$
   \insertQR{}
-  \begin{solution}
+\begin{solution}[\halfpage]
   	This is a tricky one because you now have to switch axis. Thus far, we were 
   	expressing $y$ as a function of $x$. But now, we need to travel along the y-axis.
   	And therefore, we need to express $x$ as a function of $y$
