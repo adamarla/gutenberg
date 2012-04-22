@@ -27,11 +27,519 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question[2] In the adjoining figure, $O$ is the center of the circle and $\angle BOC = \ang{100}$.
+What is $\angle BDC$ equal to ?
+
+\ifprintanswers
+  % stuff to be shown only in the answer key - like explanatory margin figures
+\fi 
+\begin{marginfigure}
+	\figinit{pt}
+    \figpt 1: (60,0)
+    \figptcirc 2:$A$: 1;50(70)
+    \figptcirc 3:$B$: 1;50(200)
+    \figptcirc 4:$C$: 1;50(310)
+    \figptcirc 5:$D$: 1;50(250)
+	\figdrawbegin{}
+	\figdrawcirc 1(50)
+    \figdrawline [3,1,4,5,3]
+    \ifprintanswers
+      \figdrawline [3,2,4]
+    \fi
+	\figdrawend
+  \figvisu{\figBoxA}{}{
+    \figsetmark{$\bullet$}
+    \figwrites 1:$O$(5)
+    \figwriten 2:(5)
+    \figwritew 3:(5)
+    \figwritee 4:(5)
+    \figwrites 5:(5)
+  }
+  \centerline{\box\figBoxA}
+\end{marginfigure}
+\begin{solution}[\halfpage]
+	If we pick a point $A$ on the circle's circumfrence, then $ACDB$ is a cyclic 
+	quadrilateral in which,
+	\begin{align}
+		\angle BAC &= \dfrac{1}{2}\cdot\angle BOC = \ang{50}
+	\end{align}
+	Moreover, because it is a cyclic quadrilateral, 
+	\begin{align}
+		\angle BAC + \angle BDC &= \ang{180} \\
+		\Rightarrow \angle BDC &= \ang{180} - \angle BAC = \ang{130}
+	\end{align}
+\end{solution}
+% This is an empty shell file placed for you by the 'examiner' script.
+% You can now fill in the TeX for your question here.
+
+% Now, down to brasstacks. ** Writing good solutions is an Art **. 
+% Eventually, you will find your own style. But here are some thoughts 
+% to get you started: 
+%
+%   1. Write the solution as if you are writing it for your favorite
+%      14-17 year old to help him/her understand. Could be your nephew, 
+%      your niece, a cousin perhaps or probably even you when you 
+%      were that age. Just write for them.
+%
+%   2. Use margin-notes to "talk" to students about the critical insights
+%      in the question. The tone can be - in fact, should be - informal
+%
+%   3. Don't shy away from creating margin-figures you think will help
+%      students understand. Yes, it is a little more work per question. 
+%      But the question & solution will be written only once. Make that
+%      attempt at writing a solution count.
+%
+%   4. At the same time, do not be too verbose. A long solution can
+%      - at first sight - make the student think, "God, that is a lot to know".
+%      Our aim is not to scare students. Rather, our aim should be to 
+%      create many "Aha!" moments everyday in classrooms around the world
+% 
+%   5. Ensure that there are *no spelling mistakes anywhere*. We are an 
+%      education company. Bad spellings suggest that we ourselves 
+%      don't have any education. And, use American spellings
+
+\question[2] A necklace is appraised at \texteuro 6,300. If the value of 
+the necklace has increased 7\% year-on-year, then how much was it worth 
+10 years back?
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
+	\begin{align}
+		P_{\texttt{now}} &= P_{\texttt{10 years back}}\cdot\left( 1 + \dfrac{7}{100}\right)^{10} \\
+		\Rightarrow P_{\texttt{10 years back}} &= \dfrac{\text{\texteuro 6,300}}{(1.07)^{10}} \\
+		&= \text{\texteuro} 3,202.60
+	\end{align}
 \end{solution}
+
+\newpage
+% This is an empty shell file placed for you by the 'examiner' script.
+% You can now fill in the TeX for your question here.
+
+% Now, down to brasstacks. ** Writing good solutions is an Art **. 
+% Eventually, you will find your own style. But here are some thoughts 
+% to get you started: 
+%
+%   1. Write the solution as if you are writing it for your favorite
+%      14-17 year old to help him/her understand. Could be your nephew, 
+%      your niece, a cousin perhaps or probably even you when you 
+%      were that age. Just write for them.
+%
+%   2. Use margin-notes to "talk" to students about the critical insights
+%      in the question. The tone can be - in fact, should be - informal
+%
+%   3. Don't shy away from creating margin-figures you think will help
+%      students understand. Yes, it is a little more work per question. 
+%      But the question & solution will be written only once. Make that
+%      attempt at writing a solution count.
+%
+%   4. At the same time, do not be too verbose. A long solution can
+%      - at first sight - make the student think, "God, that is a lot to know".
+%      Our aim is not to scare students. Rather, our aim should be to 
+%      create many "Aha!" moments everyday in classrooms around the world
+% 
+%   5. Ensure that there are *no spelling mistakes anywhere*. We are an 
+%      education company. Bad spellings suggest that we ourselves 
+%      don't have any education. And, use American spellings
+
+\question[3] If one invests \texteuro 8,000 for a period of 3 years in a scheme
+that offers 10\% per annum compounded annually, then how much interest would
+one earn in the \emph{second} year?
+
+\ifprintanswers
+  % stuff to be shown only in the answer key - like explanatory margin figures
+\fi 
+
+\begin{solution}[\halfpage]
+  If $A_0$ be the initial amount, $A_1$ the amount at the end of the first year
+  and $A_2$ the amount at the end of the second year, then the interest earned 
+  in the second year $(= I_2)$ would be
+  
+  \begin{align}
+  	I_2 &= A_2 - A_1 \\ 
+  	    &= A_0\cdot(1+R)^2 - A_0\cdot(1+R) \\
+  	    &= \text{\texteuro 8,000}\cdot\left[ (1+0.1)^2-(1+0.1)\right] \\
+  	    &= \text{\texteuro 880}
+  \end{align}
+\end{solution}
+% This is an empty shell file placed for you by the 'examiner' script.
+% You can now fill in the TeX for your question here.
+
+% Now, down to brasstacks. ** Writing good solutions is an Art **. 
+% Eventually, you will find your own style. But here are some thoughts 
+% to get you started: 
+%
+%   1. Write the solution as if you are writing it for your favorite
+%      14-17 year old to help him/her understand. Could be your nephew, 
+%      your niece, a cousin perhaps or probably even you when you 
+%      were that age. Just write for them.
+%
+%   2. Use margin-notes to "talk" to students about the critical insights
+%      in the question. The tone can be - in fact, should be - informal
+%
+%   3. Don't shy away from creating margin-figures you think will help
+%      students understand. Yes, it is a little more work per question. 
+%      But the question & solution will be written only once. Make that
+%      attempt at writing a solution count.
+%
+%   4. At the same time, do not be too verbose. A long solution can
+%      - at first sight - make the student think, "God, that is a lot to know".
+%      Our aim is not to scare students. Rather, our aim should be to 
+%      create many "Aha!" moments everyday in classrooms around the world
+% 
+%   5. Ensure that there are *no spelling mistakes anywhere*. We are an 
+%      education company. Bad spellings suggest that we ourselves 
+%      don't have any education. And, use American spellings
+
+\question[3] A bank is offering two investment schemes. The first scheme offers
+7\% compound interest in the first year and - in each subsequent year - 25\% less 
+than what was offered in the previous year. The second scheme offers a constant 5.75\%
+throughout. If you are investing for a 2-year period, which scheme would you choose?
+
+\ifprintanswers
+  % stuff to be shown only in the answer key - like explanatory margin figures
+\fi 
+
+\begin{solution}[\halfpage]
+	The amount in-hand at the end of 2 years with the first scheme is
+	\begin{align}
+		P_1 &= P_0\cdot\underbrace{\left( 1 + \dfrac{7}{100}\right)}_{\texttt{first year}}
+		\cdot\underbrace{\left( 1 + \dfrac{5.25}{100}\right)}_{\texttt{second year}} \\
+		&= 1.126\cdot P_0
+	\end{align}
+	
+	Similarly, with the second scheme, you would get
+	\begin{align}
+		P_2 &= P_0\cdot\left( 1 + \dfrac{5.75}{100}\right)^{2} \\
+		    &= 1.118\cdot P_0
+	\end{align}
+	
+	Clearly, you would be better off going with the first scheme
+\end{solution}
+
+\newpage
+% This is an empty shell file placed for you by the 'examiner' script.
+% You can now fill in the TeX for your question here.
+
+% Now, down to brasstacks. ** Writing good solutions is an Art **. 
+% Eventually, you will find your own style. But here are some thoughts 
+% to get you started: 
+%
+%   1. Write the solution as if you are writing it for your favorite
+%      14-17 year old to help him/her understand. Could be your nephew, 
+%      your niece, a cousin perhaps or probably even you when you 
+%      were that age. Just write for them.
+%
+%   2. Use margin-notes to "talk" to students about the critical insights
+%      in the question. The tone can be - in fact, should be - informal
+%
+%   3. Don't shy away from creating margin-figures you think will help
+%      students understand. Yes, it is a little more work per question. 
+%      But the question & solution will be written only once. Make that
+%      attempt at writing a solution count.
+%
+%   4. At the same time, do not be too verbose. A long solution can
+%      - at first sight - make the student think, "God, that is a lot to know".
+%      Our aim is not to scare students. Rather, our aim should be to 
+%      create many "Aha!" moments everyday in classrooms around the world
+% 
+%   5. Ensure that there are *no spelling mistakes anywhere*. We are an 
+%      education company. Bad spellings suggest that we ourselves 
+%      don't have any education. And, use American spellings
+
+\question[3] In the adjoining figure, $O$ is the center of the circle. Find $\angle BAC$ 
+given that $\angle BOA = \ang{80}$ and $\angle AOC = \ang{120}$
+
+\ifprintanswers
+  % stuff to be shown only in the answer key - like explanatory margin figures
+\fi 
+\begin{marginfigure}
+	\figinit{pt}
+    \figpt 1: (60,0)
+    \figptcirc 2:$A$: 1;50(100)
+    \figptcirc 3:$B$: 1;50(190)
+    \figptcirc 4:$C$: 1;50(340)
+	\figdrawbegin{}
+	\figdrawcirc 1(50)
+    \figdrawline [1,2]
+    \figdrawline [1,3]
+    \figdrawline [1,4]
+    \figdrawarccircP 1;8 [2,3]
+    \figdrawarccircP 1;10 [4,2]
+    \ifprintanswers
+      \figset (dash=4)
+      \figdrawline [3,2,4]
+    \fi
+	\figdrawend
+  \figvisu{\figBoxA}{}{
+    \figsetmark{$\bullet$}
+    \figwrites 1:$O$(5)
+    \figwriten 2:(5)
+    \figwritew 3:(5)
+    \figwritee 4:(5)
+  }
+  \centerline{\box\figBoxA}
+\end{marginfigure}
+\begin{solution}[\halfpage]
+	If we join $A$ with $B$ and $A$ with $C$ as shown, then we get two isoceles 
+	triangles, $\triangle AOB$ and $\triangle AOC$
+	
+	In $\triangle AOB$,
+	\begin{align}
+		\angle OBA = \angle OAB &= \dfrac{1}{2}\cdot(\ang{180}-\angle AOB) \\
+		                        &= \ang{50}
+	\end{align}
+	
+	Similarly, in $\triangle AOC$
+	\begin{align}
+		\angle OAC = \angle OCA &= \dfrac{1}{2}\cdot(\ang{180}-\angle AOC) \\
+		                        &= \ang{40}
+	\end{align}
+	
+	And therefore,
+	\begin{align}
+		\angle BAC &= \angle OAB + \angle OAC \\
+		           &= \ang{50} + \ang{40} = \ang{90}
+	\end{align}
+\end{solution}
+
+\newpage
+% This is an empty shell file placed for you by the 'examiner' script.
+% You can now fill in the TeX for your question here.
+
+% Now, down to brasstacks. ** Writing good solutions is an Art **. 
+% Eventually, you will find your own style. But here are some thoughts 
+% to get you started: 
+%
+%   1. Write the solution as if you are writing it for your favorite
+%      14-17 year old to help him/her understand. Could be your nephew, 
+%      your niece, a cousin perhaps or probably even you when you 
+%      were that age. Just write for them.
+%
+%   2. Use margin-notes to "talk" to students about the critical insights
+%      in the question. The tone can be - in fact, should be - informal
+%
+%   3. Don't shy away from creating margin-figures you think will help
+%      students understand. Yes, it is a little more work per question. 
+%      But the question & solution will be written only once. Make that
+%      attempt at writing a solution count.
+%
+%   4. At the same time, do not be too verbose. A long solution can
+%      - at first sight - make the student think, "God, that is a lot to know".
+%      Our aim is not to scare students. Rather, our aim should be to 
+%      create many "Aha!" moments everyday in classrooms around the world
+% 
+%   5. Ensure that there are *no spelling mistakes anywhere*. We are an 
+%      education company. Bad spellings suggest that we ourselves 
+%      don't have any education. And, use American spellings
+
+\question[3] If the difference between the simple interest earned over one year
+and the compound interest - payed semi-annually - over the same year is \texteuro 180,
+then what is the initial investment amount. The annualized interest rate in both cases is 10\% 
+
+\ifprintanswers
+  % stuff to be shown only in the answer key - like explanatory margin figures
+\fi 
+
+\begin{solution}[\fullpage]
+	If $I_1$ be the interest earned from \emph{compounding} in one year, $P_0$ the 
+	initial investment amount and $P_1$ the amount at the end of the first year, then
+	
+	\begin{align}
+		I_1 &= P_1 - P_0 \\ 
+		    &= P_0\cdot\left[ 1+\dfrac{R}{N}\right]^N - P_0 \\
+		    &= P_0\cdot\left[ (1+\dfrac{R}{N})^N - 1 \right]
+	\end{align}
+	where $N$ = number of compounding periods = 2
+	
+	Over the same period, the \emph{simple} interest earned - $I_2$ - is equal to
+	\begin{align}
+		I_2 &= P_0\cdot R\cdot T(=1)
+    \end{align}
+    
+    And therefore, if $I_1-I_2 = \text{\texteuro 180}$, then 
+    \begin{align}
+    	\text{\texteuro 180} &= P_0\cdot\left[ (1+\dfrac{0.1}{2})^2 - 1 - 0.1\right] \\
+    	                     &= 0.0025\cdot P_0 \\
+    	\Rightarrow P_0 &= \text{\texteuro 72,000}
+    \end{align}
+\end{solution}
+
+\newpage
+% This is an empty shell file placed for you by the 'examiner' script.
+% You can now fill in the TeX for your question here.
+
+% Now, down to brasstacks. ** Writing good solutions is an Art **. 
+% Eventually, you will find your own style. But here are some thoughts 
+% to get you started: 
+%
+%   1. Write the solution as if you are writing it for your favorite
+%      14-17 year old to help him/her understand. Could be your nephew, 
+%      your niece, a cousin perhaps or probably even you when you 
+%      were that age. Just write for them.
+%
+%   2. Use margin-notes to "talk" to students about the critical insights
+%      in the question. The tone can be - in fact, should be - informal
+%
+%   3. Don't shy away from creating margin-figures you think will help
+%      students understand. Yes, it is a little more work per question. 
+%      But the question & solution will be written only once. Make that
+%      attempt at writing a solution count.
+%
+%   4. At the same time, do not be too verbose. A long solution can
+%      - at first sight - make the student think, "God, that is a lot to know".
+%      Our aim is not to scare students. Rather, our aim should be to 
+%      create many "Aha!" moments everyday in classrooms around the world
+% 
+%   5. Ensure that there are *no spelling mistakes anywhere*. We are an 
+%      education company. Bad spellings suggest that we ourselves 
+%      don't have any education. And, use American spellings
+
+\question[4] Commander Spock - of Star-Trek fame - has some \textit{Vulcan} dollars that he
+would like to invest for a period of one Vulcan year. He has a choice of 2 banks - an Earth-based
+bank and a bank on his home planet Vulcan. The Earth bank offers compounding at the
+rate of 3\% every 6 \textit{Earth} months. The Vulcan bank - on the other hand - offers 6\% compounding
+every 6 \textit{Vulcan} months. Which bank should Commander Spock put his money in given that
+1 Vulcan year = 2 Earth years
+
+\ifprintanswers
+  % stuff to be shown only in the answer key - like explanatory margin figures
+  \marginnote[-0.5cm]{Note that the \textit{nominal} interest rate offered by banks 
+  is the same - 12\% per Vulcan year}
+  \marginnote[0.5cm] {But in order to do a comparison, one should consider only how 
+  often the compounding happens and at what rate. In other words, one must consider
+  only the \textit{effective} interest rate}
+\fi 
+
+\begin{solution}[\fullpage]
+	The number of times the Earth-based bank would compound the amount in one \textit{Vulcan}
+	year is 
+	\begin{align}
+		&= \SI{1}{vulcan-year}\times\SI{2}{earth-years\per vulcan-year}\times
+		\dfrac{\SI{1}{time}}{\frac{1}{2}\text{earth-year}} \\
+		&= 4\text{ times}
+	\end{align}
+	
+	Similarly, the bank on Vulcan will compound the amount
+	\begin{align}
+		&= \SI{1}{vulcan-year}\times\dfrac{\SI{1}{time}}{\frac{1}{2}\text{vulcan-year}} \\
+		&= 2\text{ times}
+	\end{align}
+	And therefore, if $P_0$ be the amount Commander Spock puts in initially, 
+	$P_{\texttt{earth}}$ be the amount he realizes at the end of his investment period with the bank
+	on Earth and $P_{\texttt{vulcan}}$ the amount he realizes on Vulcan, then 
+	
+	\begin{align}
+		\dfrac{P_\texttt{earth}}{P_0} &= \left( 1 + \dfrac{3}{100}\right)^4 \\
+		                       &= 1.1255 \\
+		\dfrac{P_\texttt{vulcan}}{P_0} &= \left( 1 + \dfrac{6}{100}\right)^2 \\
+		                        &= 1.1236
+	\end{align}
+	Clearly, Commander Spock is better off investing his
+	money with the bank on Earth
+\end{solution}
+
+\newpage
+% This is an empty shell file placed for you by the 'examiner' script.
+% You can now fill in the TeX for your question here.
+
+% Now, down to brasstacks. ** Writing good solutions is an Art **. 
+% Eventually, you will find your own style. But here are some thoughts 
+% to get you started: 
+%
+%   1. Write the solution as if you are writing it for your favorite
+%      14-17 year old to help him/her understand. Could be your nephew, 
+%      your niece, a cousin perhaps or probably even you when you 
+%      were that age. Just write for them.
+%
+%   2. Use margin-notes to "talk" to students about the critical insights
+%      in the question. The tone can be - in fact, should be - informal
+%
+%   3. Don't shy away from creating margin-figures you think will help
+%      students understand. Yes, it is a little more work per question. 
+%      But the question & solution will be written only once. Make that
+%      attempt at writing a solution count.
+%
+%   4. At the same time, do not be too verbose. A long solution can
+%      - at first sight - make the student think, "God, that is a lot to know".
+%      Our aim is not to scare students. Rather, our aim should be to 
+%      create many "Aha!" moments everyday in classrooms around the world
+% 
+%   5. Ensure that there are *no spelling mistakes anywhere*. We are an 
+%      education company. Bad spellings suggest that we ourselves 
+%      don't have any education. And, use American spellings
+
+\question[6] Shown alongside is a circle centered at $O$ having radius = $4\sqrt2$.
+The two chords - $AB$ and $CD$ - intersect at $X$. If $X$ divides $AB$ in the ratio $2:1$
+and $CD$ in the ratio $3:1$, then what is $\angle OCD$ given that length of $AB = 3\sqrt3$ units?
+
+
+\begin{marginfigure}
+	\figinit{pt}
+    \figpt 0: (60,0)
+    \figptcirc 1:$A$: 0;50(40)
+    \figptcirc 2:$B$: 0;50(140)
+    \figptcirc 3:$C$: 0;50(200)
+    \figptcirc 4:$D$: 0;50(100)
+    \figvectP 10 [1,2]
+    \figvectP 20 [3,4]
+    \figptinterlines 5:$X$[1,10;3,20]
+    \figptorthoprojline 6:$M$= 0/3,4/
+	\figdrawbegin{}
+		\figdrawcirc 0(50)
+    \figdrawline [1,2]
+    \figdrawline [3,4]
+    \figdrawarccircP 3;10 [0,4]
+    \figset (dash=7)
+    \figdrawline [0,3]
+    \ifprintanswers
+      \figdrawline [0,6]
+    \fi
+	\figdrawend
+  \figvisu{\figBoxA}{}{
+    \figsetmark{$\bullet$}
+    \figwrites 0:$O$(5)
+    \figwriten 1:(5)
+    \figwritew 2:(5)
+    \figwrites 3:(5)
+    \figwriten 4:(5)
+    \ifprintanswers
+      \figwritese 5:(5)
+      \figwritew 6:(5)
+    \fi
+  }
+  \centerline{\box\figBoxA}
+\end{marginfigure}
+
+\ifprintanswers
+  % stuff to be shown only in the answer key - like explanatory margin figures
+  \marginnote[0.5cm]{Whether $\frac{AX}{BX} = \frac{2}{1}$ or $\frac{BX}{AX} = \frac{2}{1}$ is 
+  unimportant. We are only interested in the total length of the chord}
+  \marginnote[0.5cm]{Same goes for chord $CD$ }
+\fi 
+
+\begin{solution}[\fullpage]
+	Here is what we know about intersecting chords in a circle,
+	\begin{align}
+		AX\cdot BX &= CX\cdot DX
+	\end{align}
+	Assuming that $\dfrac{AX}{BX} = \dfrac{2}{1}$ and $\dfrac{CX}{DX} = \dfrac{3}{1}$, we get
+	\begin{align}
+		\dfrac{2}{3}L_{AB}\cdot\dfrac{1}{3}L_{AB} &= \dfrac{3}{4}L_{CD}\cdot\dfrac{1}{4}L_{CD} \\
+		\Rightarrow \dfrac{2}{9}\cdot(3\sqrt{3})^2 &= \dfrac{3}{16}\cdot L_{CD}^2 \\
+		\Rightarrow L_{CD} &= 4\sqrt{2}
+	\end{align}
+	
+	Now, if we drop a perpendicular from $O$ on $CD$ at $M$, then we know that 
+	$CM = MD = \dfrac{4\sqrt2}{2} = 2\sqrt{2}$
+	
+	And therefore, in $\triangle OCM$, 
+	\begin{align}
+		\cos\angle OCM &= \dfrac{CM}{OC} \\
+		               &= \dfrac{2\sqrt{2}}{4\sqrt{2}} = \dfrac{1}{2} \\
+		\Rightarrow \angle OCM &= \cos^{-1}\dfrac{1}{2} = \ang{60}
+	\end{align}
+\end{solution}
+

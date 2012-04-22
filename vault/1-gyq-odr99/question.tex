@@ -27,10 +27,25 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question
+\question[4] Using Hero's formula, calculate the area of the triangle 
+shown in the adjoining figure. The length of the sides - in cm - are 
+as shown
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+  \begin{marginfigure}
+    \figinit{cm}
+    \figpt 1: (0,0)
+    \figpt 2: (5,0)
+    \figpt 3: (5,3)
+    \figpt 4: (3,0)
+  	\figdrawbegin{}
+    \figdrawline [1,2,3,1]
+    \figdrawline [3,4]
+    \figdrawend
+    \figvisu{\figBoxA}{Example}{}
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
 \fi 
 
 \begin{solution}
