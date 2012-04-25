@@ -29,11 +29,11 @@
 \providecommand{\insertQR}[1]{
     \ifprintanswers
     \else
-      \begin{marginfigure}
-        %\begin{pspicture}(0.6in,0.6in) 
+      \ifthenelse{\NOT\isempty{#1}}{
+        \begin{marginfigure}
           \psbarcode{#1}{eclevel=Q width=0.6 height=0.6}{qrcode} 
-        %\end{pspicture} 
-      \end{marginfigure}
+        \end{marginfigure}
+      }{}
     \fi 
 }
 
