@@ -35,7 +35,7 @@ Pdf := $(patsubst %.tex, %-answer.pdf, $(Basename)) # 123-answer.pdf
 Thumb := $(patsubst %.tex, %-thumb.jpeg, $(Basename)) # 123-thumb.jpeg
 Preview := $(patsubst %.tex, %-answer.jpeg, $(Basename)) # 123-answer.jpeg
 
-PHONY : preview
+PHONY : preview bc2fig
 
 preview : $(Pdf)
 	@echo "[ pdf -> preview ]"
@@ -58,13 +58,17 @@ $(Dvi) : $(Tex)
 	@echo "[TeX -> dvi]: $@ with [latex] = $(latexCmd)"
 	@$(latexCmd) -halt-on-error $(Tex)
 
-$(Tex) : $(Plots) $(Scaffolds) question.tex
+$(Tex) : bc2fig $(Plots) $(Scaffolds) question.tex
 	@echo "[plotting]: $(Plots)" && gnuplot $(Plots)
 	-@echo "[stitching]: $@" && rm -f $@
 	@for j in preamble printanswers doc_begin ; do cat $(Shared)/$$j.tex >> $@ ; done
 	@cat question.tex >> $@
 	@for j in doc_end ; do cat $(Shared)/$$j.tex >> $@ ; done
 
+bc2fig: 
+	@echo "[bc -> fig]"
+	@if [ -f figure.bc ] ; then bc -l figure.bc > bc_to_fig.tex ; fi 
+
 clean :
-	@rm -f $(Folder)* && rm -f *.table && rm -f *.jpeg
+	@rm -f $(Folder)* && rm -f *.table && rm -f *.jpeg && rm -f bc_to_fig.tex
 
