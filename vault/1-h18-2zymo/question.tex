@@ -30,26 +30,123 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question       Let $R$ be the region in the first quadrant enclosed by the graphs
+\question  Let $R$ be the region in the first quadrant enclosed by the graphs
 $f(x) = 8x^3$ and $g(x)=sin(\pi x)$, as shown in the figure
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
+\fi
+  \begin{marginfigure}
+  % 1. Definition of characteristic points
+\figinit{pt}
+\def\Xmin{0}
+\def\Ymin{0}
+\def\Xmax{79.99999}
+\def\Ymax{99.99999}
+\def\Xori{0}
+\def\Yori{0}
+\figpt0:(\Xori,\Yori)
+% 2. Creation of the graphical file
+\figdrawbegin{}
+\def\Xmaxx{\Xmax} % To customize the position
+\def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
+\figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
+\figdrawaxes 0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+\figpt 100: (25,25)
+\figdrawlineC(
+0 0,
+2.75862 3.75883,
+5.51724 7.50180,
+8.27586 11.21308,
+11.03448 14.87700,
+13.79310 18.47809,
+16.55172 22.00115,
+19.31034 25.43128,
+22.06896 28.75402,
+24.82758 31.95531,
+27.58620 35.02165,
+30.34482 37.94008,
+33.10344 40.69828,
+35.86206 43.28460,
+38.62068 45.68811,
+41.37931 47.89866,
+44.13793 49.90693,
+46.89655 51.70442,
+49.65517 53.28355,
+52.41379 54.63765,
+55.17241 55.76099,
+57.93103 56.64884,
+60.68965 57.29744,
+63.44827 57.70406,
+66.20689 57.86697,
+68.96551 57.78549,
+71.72413 57.45997,
+74.48275 56.89178,
+77.24137 56.08331,
+79.99999 55.03799
+)
+\figdrawlineC(
+0 0,
+2.75862 .00410,
+5.51724 .03280,
+8.27586 .11070,
+11.03448 .26241,
+13.79310 .51252,
+16.55172 .88564,
+19.31034 1.40637,
+22.06896 2.09930,
+24.82758 2.98905,
+27.58620 4.10020,
+30.34482 5.45737,
+33.10344 7.08516,
+35.86206 9.00815,
+38.62068 11.25097,
+41.37931 13.83820,
+44.13793 16.79445,
+46.89655 20.14432,
+49.65517 23.91241,
+52.41379 28.12333,
+55.17241 32.80167,
+57.93103 37.97203,
+60.68965 43.65902,
+63.44827 49.88724,
+66.20689 56.68129,
+68.96551 64.06576,
+71.72413 72.06527,
+74.48275 80.70441,
+77.24137 90.00779,
+79.99999 99.99999
+)
+\figdrawend
+% 3. Writing text on the figure
+\figvisu{\figBoxA}{}{%
+\figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+% Points 1 and 2 are the end points of the arrows
+\figwritee 1:(5pt)     \figwriten 2:(5pt)
+\figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
+% Points 1 and 2 are the first two end points of the axes
+\figwrites 1:$.6$(5pt) \figwritew 2:$1.7$(8pt)
+% Points 3 and 4 are the two other end points of the axes
+\figpttraC 3:=0/\Xmin,0/ \figwrites 3:$0$(5pt) 
+\figpttraC 4:=0/0,\Ymin/ \figwritew 4:$0$(8pt)
+\figwritee 100:$R$(8pt)
+}
+\centerline{\box\figBoxA}
+\end{marginfigure} 
 
 
 \begin{parts}
-\part[2]     Write the equation for the line tangent to $f(x)$ at $x=\dfrac{1}{2}$
-\insertQR{QRC}
+\part[2]     Write the equation for the line tangent to $f(x)$ at $x=\frac{1}{2}$
+\insertQR{}
 \begin{solution}[\halfpage]
-  	The said tangent would be tangent at the point $(\dfrac{1}{2}, f(\dfrac{1}{2}))$.  	
-  	Which means, at $\left(\dfrac{1}{2}, 8\cdot\left( \dfrac{1}{2}\right)^3\right)$ = $(1,1)$
+  	The said tangent would be tangent at the point $(\frac{1}{2}, f(\frac{1}{2}))$.  	
+  	Which means, at $\left(\frac{1}{2}, 8\cdot\left( \frac{1}{2}\right)^3\right)$ 
+  	= $\left(\frac{1}{2},1\right)$
   	
   	Also,
   	\begin{align}
   		\text{Slope of the tangent} &= \dfrac{\ud f(x)}{\ud x} \\
   		&= \dfrac{\ud}{\ud x}8x^3 = 24x^2 \\
-  		&= 24\cdot\left(\dfrac{1}{2}\right)^2 = 6 \text{ when } x=\dfrac{1}{2}
+  		&= 24\cdot\left(\frac{1}{2}\right)^2 = 6 \text{ when } x=\frac{1}{2}
   	\end{align}
   	
   	The equation of the line, therefore, is
@@ -62,7 +159,7 @@ $f(x) = 8x^3$ and $g(x)=sin(\pi x)$, as shown in the figure
   \end{solution}
 
 \part[3]     Find the area of $R$
-\insertQR{QRC}
+\insertQR{}
 \begin{solution}[\halfpage]
   	From the figure, we can see that the curves $f(x)$ and $g(x)$ intersect when $x=\dfrac{1}{2}$
   	
@@ -77,8 +174,8 @@ $f(x) = 8x^3$ and $g(x)=sin(\pi x)$, as shown in the figure
 
 \newpage
 \part[3]     Write, but do not evaluate, an integral expression for the volume of the solid
-\insertQR{QRC}
   generated when $R$ is rotated about the horizontal line $y=1$
+\insertQR{}
 
 \begin{solution}[\halfpage]
   	This is a tricky one because you now have to switch axis. Thus far, we were 
