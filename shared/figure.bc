@@ -122,17 +122,17 @@ define void draw_curve(values[]) {
 }
 
 define void draw_plots() {
-	a[n]
-	b[n]
+	sine = a[n]
+	cubic = b[n]
 
 	for ( j = 0 ; j < n ; j++ ) {
 		x = xstart + j*deltax 
-		a[j] = s(pi * x)
-		b[j] = plot(x)
+		sine[j] = s(pi * x)
+		cubic[j] = plot(x)
 	} 
 
-	draw_curve(a[])
-	draw_curve(b[])
+	draw_curve(sine[])
+	draw_curve(cubic[])
   print "\\figdrawend\n"
 }
 
