@@ -28,6 +28,7 @@ xdim = 80  /* Horizontal dimension of the figure in mm */
 ydim = 100  /* Vertical   dimension of the figure in mm */
 precision = 1     /* Number of significant digits printed (>= 0)*/
 trueorig = 1 /* Equals 1 if the true origin must be used, 0 otherwise. */
+label_axes = 1 /* if 0, then value labels will NOT be placed on axes */
 
 ymin = plot(xstart);
 ymax = ymin;
@@ -143,11 +144,15 @@ define void label_drawing() {
   print "% Points 1 and 2 are the end points of the arrows\n"
   print "\\figwritee 1:(5pt)     \\figwriten 2:(5pt)\n"
   print "\\figptsaxes 1:0(\\Xmin, \\Xmax, \\Ymin, \\Ymax)\n"
-  print "% Points 1 and 2 are the first two end points of the axes\n"
-  print "\\figwrites 1:$",round(precision,xstop),"$(5pt) \\figwritew 2:$",round(precision,ymax),"$(8pt)\n"
-  print "% Points 3 and 4 are the two other end points of the axes\n"
-  print "\\figpttraC 3:=0/\\Xmin,0/ \\figwrites 3:$",round(precision,xstart),"$(5pt) \n"
-  print "\\figpttraC 4:=0/0,\\Ymin/ \\figwritew 4:$",round(precision,ymin),"$(8pt)\n"
+
+  if (label_axes == 1) {
+    print "% Points 1 and 2 are the first two end points of the axes\n"
+    print "\\figwrites 1:$",round(precision,xstop),"$(5pt) \\figwritew 2:$",round(precision,ymax),"$(8pt)\n"
+    print "% Points 3 and 4 are the two other end points of the axes\n"
+    print "\\figpttraC 3:=0/\\Xmin,0/ \\figwrites 3:$",round(precision,xstart),"$(5pt) \n"
+    print "\\figpttraC 4:=0/0,\\Ymin/ \\figwritew 4:$",round(precision,ymin),"$(8pt)\n"
+  }
+
   print "}\n"
   print "\\centerline{\\box\\figBoxA}\n"
 }
