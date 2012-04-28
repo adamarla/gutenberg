@@ -25,13 +25,39 @@
 % 
 %   5. Ensure that there are *no spelling mistakes anywhere*. We are an 
 %      education company. Bad spellings suggest that we ourselves 
-%      don't have any education. And, use American spellings
+%      don't have any education. Also, use American spellings by default
+% 
+%   6. If a question has multiple parts, then first delete lines 40-41
+%   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question After 4 seconds of motion, the speed of a moving particle is $1$ cm/s. 
+Given that the speed of the particle is propotional to square of the time, what is
+the distance travelled by the particle in the first $10$ seconds?
+
+\insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
 \begin{solution}
+  \begin{align}
+     \text{Speed} &= \dfrac{\ud x}{\ud t} \propto t^2 \\
+     \Rightarrow \dfrac{\ud x}{\ud t} &= k\cdot t^2
+  \end{align}
+  And so, if at $t=4$, $\dfrac{\ud x}{\ud t} = 1$, then 
+  \begin{align}
+     \dfrac{\ud x}{\ud t} = 1 &= k\cdot 4^2 \\
+     \Rightarrow k &= \frac{1}{16} \\
+     \therefore \dfrac{\ud x}{\ud t} &= \dfrac{t^2}{16}
+  \end{align}
+  
+  Now that we have an equation for speed, finding the distance covered \textit{upto}
+  a time $t$ is easy
+  \begin{align}
+     \text{Distance covered} &= \int_{0}^{t} \ud x = \int_0^{t}\dfrac{t^2}{16}\ud t \\
+     &= \left[ \dfrac{t^3}{48}\right]_0^{t} = \dfrac{t^3}{48}
+  \end{align}
+  
+  And hence, the distance covered in the first 10 seconds is $ = \dfrac{10^3}{48} = 20\frac{5}{6}cm$
 \end{solution}
