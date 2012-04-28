@@ -6,11 +6,11 @@
 	See methods 'draw_plots' and 'draw_curve'
 */
 
-define plot(x) {
+define p_1(x) {
   return (x^2)
 }
 
-define straight_line(x) {
+define p_2(x) {
   return (2*x+3)
 }
 
@@ -34,7 +34,7 @@ precision = 1     /* Number of significant digits printed (>= 0)*/
 trueorig = 1 /* Equals 1 if the true origin must be used, 0 otherwise. */
 label_axes = 1 /* if 0, then value labels will NOT be placed on axes */
 
-ymin = plot(xstart);
+ymin = p_1(xstart);
 ymax = ymin;
 xscale = 0 ;
 yscale = 0 ;
@@ -47,7 +47,7 @@ yscale = 0 ;
 define void set_scaling_factors() {
   for (i = 0; i < n; i++){
    x = xstart + i*deltax
-   y = plot(x)
+   y = p_1(x)
    if (y<ymin) ymin = y
    if (y>ymax) ymax = y
   }
@@ -132,8 +132,8 @@ define void draw_plots() {
 
 	for ( j = 0 ; j < n ; j++ ) {
 		x = xstart + j*deltax 
-		g[j] = straight_line(x) 
-		h[j] = plot(x)
+		g[j] = p_2(x) 
+		h[j] = p_1(x)
 	} 
 
 	draw_curve(g[])
