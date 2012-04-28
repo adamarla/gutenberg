@@ -7,7 +7,11 @@
 */
 
 define plot(x) {
-  return (8*(x^3))
+  return (x^2)
+}
+
+define straight_line(x) {
+  return (2*x+3)
 }
 
 /* ****************************************************************************
@@ -20,8 +24,8 @@ define plot(x) {
 *******************************************************************************/
 
 pi = 4*a(1)  /* define pi */
-xstart = 0    /* Lower bound of the interval */
-xstop = 0.6     /* Upper bound of the interval */
+xstart = -1.75    /* Lower bound of the interval */
+xstop = 3.5     /* Upper bound of the interval */
 n = 30     /* Number of points to be computed */
 deltax = (xstop-xstart)/(n-1)
 xdim = 80  /* Horizontal dimension of the figure in mm */
@@ -123,17 +127,17 @@ define void draw_curve(values[]) {
 }
 
 define void draw_plots() {
-	sine = a[n]
-	cubic = b[n]
+	g = a[n]
+	h = b[n]
 
 	for ( j = 0 ; j < n ; j++ ) {
 		x = xstart + j*deltax 
-		sine[j] = s(pi * x)
-		cubic[j] = plot(x)
+		g[j] = straight_line(x) 
+		h[j] = plot(x)
 	} 
 
-	draw_curve(sine[])
-	draw_curve(cubic[])
+	draw_curve(g[])
+	draw_curve(h[])
   print "\\figdrawend\n"
 }
 
