@@ -25,32 +25,105 @@
 % 
 %   5. Ensure that there are *no spelling mistakes anywhere*. We are an 
 %      education company. Bad spellings suggest that we ourselves 
-%      don't have any education. And, use American spellings
-\addpoints
+%      don't have any education. Also, use American spellings by default
+% 
+%   6. If a question has multiple parts, then first delete lines 40-41
+%   7. If a question does not have parts, then first delete lines 43-69
 
-\question[3] What is my name?
+\question The circle $x^2+y^2=8$ is divided into two parts by the parabola 
+$y=\frac{x^2}{2}$ - as shown in the figure alongside. Find the areas of both parts - $A$ and $B$
+
+\insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
+\begin{marginfigure}
+	% 1. Definition of characteristic points
+\figinit{pt}
+\def\Xmin{-39.99999}
+\def\Ymin{-31.37254}
+\def\Xmax{39.99999}
+\def\Ymax{48.62745}
+\def\Xori{39.99999}
+\def\Yori{31.37254}
+\figpt0:(\Xori,\Yori)
+\figpt 100: (40,33)
+\figpt 101: (40,45)
+\figpt 102: (40,20)
+% 2. Creation of the graphical file
+\figdrawbegin{}
+\def\Xmaxx{\Xmax} % To customize the position
+\def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
+\figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
+\figdrawaxes 0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+\figdrawcirc 100 (25)
+\figdrawlineC(
+0 79.99999,
+2.75862 73.52404,
+5.51724 67.51066,
+8.27586 61.95985,
+11.03448 56.87160,
+13.79310 52.24592,
+16.55172 48.08281,
+19.31034 44.38227,
+22.06896 41.14429,
+24.82758 38.36888,
+27.58620 36.05604,
+30.34482 34.20577,
+33.10344 32.81807,
+35.86206 31.89293,
+38.62068 31.43037,
+41.37931 31.43037,
+44.13793 31.89293,
+46.89655 32.81807,
+49.65517 34.20577,
+52.41379 36.05604,
+55.17241 38.36888,
+57.93103 41.14429,
+60.68965 44.38227,
+63.44827 48.08281,
+66.20689 52.24592,
+68.96551 56.87160,
+71.72413 61.95985,
+74.48275 67.51066,
+77.24137 73.52404,
+79.99999 79.99999
+)
+\figdrawend
+% 3. Writing text on the figure
+\figvisu{\figBoxA}{}{%
+\figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+% Points 1 and 2 are the end points of the arrows
+\figwritee 1:(5pt)     \figwriten 2:(5pt)
+\figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
+\figwritee 101: $A$(2)
+\figwritee 102: $B$(2)
+}
+\centerline{\box\figBoxA}
+
+\end{marginfigure}
 
 \begin{solution}
-	My name is Abhinav
+  First, the parabola and the circle will intersect at points where
+  \begin{align}
+     x^2 = 2y &= 8-y^2 \\
+     \Rightarrow y^2+2y-8 &= 0 \\
+     \Rightarrow y &= 2, -4
+  \end{align}
+  As is apparent from the figure, only a $y > 0$ makes sense and therefore
+  we will go with $y = 2$
+  
+  For this $y$, $x = \sqrt{8-2^2} = \pm 2$. The area of $A$ can now be calculated
+  \begin{align}
+     A &= 2\cdot\left[ \int_0^2 \sqrt{8-x^2}\ud x - \int_0^2\dfrac{x^2}{2}\ud x\right] \\
+       &= 2\cdot\left[ \left(\dfrac{x}{2}\sqrt{8-x^2}+\dfrac{8}{2}\sin^{-1}\dfrac{x}{\sqrt{8}}\right)_0^2 
+       - \left( \dfrac{x^3}{6}\right)_0^2\right] \\
+       &= 2\cdot\left[ \dfrac{2}{2}\sqrt{4}+4\sin^{-1}\dfrac{2}{2\sqrt{2}} - \dfrac{8}{6}\right] \\
+       &= 2\pi + \frac{4}{3} \\
+    \Rightarrow B &= \pi\cdot R^2 - A \\ 
+                  &= 8\pi - \left( 2\pi + \frac{4}{3}\right) \\
+                  &= 6\pi - \frac{4}{3}
+  \end{align}
+  
 \end{solution}
-\begin{parts}
-	\part[2] Who gave you your name?
-	\begin{solution}
-	    My parents did, who else?
-	    \begin{align}
-	    	\Rightarrow \int_0^2 x^2\ud x &= \dfrac{4}{3}
-	    \end{align}
-	\end{solution}
-	\part[3] What is $\exp^{\iota\pi}$ equal to?
-	\begin{solution}
-		\begin{align}
-			e^{\iota\pi} + 1 &= 0 \\
-			\Rightarrow e^{\iota\pi} &= -1
-		\end{align}
-	\end{solution}
-\end{parts}
-\droptotalpoints
