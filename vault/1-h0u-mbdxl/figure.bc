@@ -7,12 +7,9 @@
 */
 
 define p_1(x) {
-  return (x^2)
+  return (x*(x+2)*e(-1*x))
 }
 
-define p_2(x) {
-  return (2*x+3)
-}
 
 /* ****************************************************************************
   User editable variables that will impact what the plot looks like.
@@ -24,15 +21,15 @@ define p_2(x) {
 *******************************************************************************/
 
 pi = 4*a(1)  /* define pi */
-xstart = -1.75    /* Lower bound of the interval */
-xstop = 3.5     /* Upper bound of the interval */
+xstart = -2.5    /* Lower bound of the interval */
+xstop = 0.5   /* Upper bound of the interval */
 n = 30     /* Number of points to be computed */
 deltax = (xstop-xstart)/(n-1)
 xdim = 80  /* Horizontal dimension of the figure in mm */
-ydim = 100  /* Vertical   dimension of the figure in mm */
+ydim = 80  /* Vertical   dimension of the figure in mm */
 precision = 1     /* Number of significant digits printed (>= 0)*/
 trueorig = 1 /* Equals 1 if the true origin must be used, 0 otherwise. */
-label_axes = 1 /* if 0, then value labels will NOT be placed on axes */
+label_axes = 0 /* if 0, then value labels will NOT be placed on axes */
 
 ymin = p_1(xstart);
 ymax = ymin;
@@ -127,16 +124,13 @@ define void draw_curve(values[]) {
 }
 
 define void draw_plots() {
-	g = a[n]
 	h = b[n]
 
 	for ( j = 0 ; j < n ; j++ ) {
 		x = xstart + j*deltax 
-		g[j] = p_2(x) 
 		h[j] = p_1(x)
 	} 
 
-	draw_curve(g[])
 	draw_curve(h[])
   print "\\figdrawend\n"
 }
