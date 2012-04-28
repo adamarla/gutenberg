@@ -25,13 +25,130 @@
 % 
 %   5. Ensure that there are *no spelling mistakes anywhere*. We are an 
 %      education company. Bad spellings suggest that we ourselves 
-%      don't have any education. And, use American spellings
+%      don't have any education. Also, use American spellings by default
+% 
+%   6. If a question has multiple parts, then first delete lines 40-41
+%   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Compute the area of the figure bounded by the parabolas 
+$y = x^2-6x+10$ and $y=6x-x^2$
+
+\insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
+  \begin{marginfigure}
+% 1. Definition of characteristic points
+\figinit{pt}
+\def\Xmin{-5.33333}
+\def\Ymin{-2.28571}
+\def\Xmax{74.66666}
+\def\Ymax{77.71428}
+\def\Xori{5.33333}
+\def\Yori{2.28571}
+\figpt0:(\Xori,\Yori)
+% 2. Creation of the graphical file
+\figdrawbegin{}
+\def\Xmaxx{\Xmax} % To customize the position
+\def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
+\figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
+\figdrawaxes 0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+\figpt 100: (70,-30)
+\figpt 101: (70, 77)
+\figpt 102: (32, 27)
+\figdrawlineC(
+0 -12.57142,
+2.75862 -4.60132,
+5.51724 2.75726,
+8.27586 9.50433,
+11.03448 15.63988,
+13.79310 21.16392,
+16.55172 26.07643,
+19.31034 30.37744,
+22.06896 34.06692,
+24.82758 37.14489,
+27.58620 39.61134,
+30.34482 41.46628,
+33.10344 42.70969,
+35.86206 43.34160,
+38.62068 43.36198,
+41.37931 42.77085,
+44.13793 41.56820,
+46.89655 39.75403,
+49.65517 37.32835,
+52.41379 34.29114,
+55.17241 30.64243,
+57.93103 26.38219,
+60.68965 21.51044,
+63.44827 16.02717,
+66.20689 9.93239,
+68.96551 3.22609,
+71.72413 -4.09172,
+74.48275 -12.02106,
+77.24137 -20.56191,
+79.99999 -29.71428
+)
+\figdrawlineC(
+0 62.85714,
+2.75862 54.88703,
+5.51724 47.52845,
+8.27586 40.78138,
+11.03448 34.64582,
+13.79310 29.12179,
+16.55172 24.20927,
+19.31034 19.90827,
+22.06896 16.21878,
+24.82758 13.14081,
+27.58620 10.67436,
+30.34482 8.81943,
+33.10344 7.57601,
+35.86206 6.94411,
+38.62068 6.92373,
+41.37931 7.51486,
+44.13793 8.71751,
+46.89655 10.53167,
+49.65517 12.95736,
+52.41379 15.99456,
+55.17241 19.64328,
+57.93103 23.90351,
+60.68965 28.77526,
+63.44827 34.25853,
+66.20689 40.35332,
+68.96551 47.05962,
+71.72413 54.37744,
+74.48275 62.30677,
+77.24137 70.84763,
+79.99999 79.99999
+)
+\figdrawend
+% 3. Writing text on the figure
+\figvisu{\figBoxA}{}{%
+\figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+% Points 1 and 2 are the end points of the arrows
+\figwritee 1:(5pt)     \figwriten 2:(5pt)
+\figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
+\figwrites 100: $y=6x-x^2$(2)
+\figwriten 101: $y=x^2-6x+10$(2)
+\figwritee 102: $R$(1)
+}
+\centerline{\box\figBoxA}
+
+  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	The two parabolas intersect at points where
+	\begin{align}
+	   x^2-6x+10 &= 6x-x^2 \\
+	   \Rightarrow 2x^2 - 12x + 10 &= 0 \\
+	   \Rightarrow x &= 1,5
+	\end{align}
+	
+	The required area $A$ of region $R$ is therefore
+	\begin{align}
+	  A &= \int_1^5 [(6x-x^2) - (x^2 - 6x + 10)] \ud x \\
+	    &= \int_1^5 (12x - 2x^2 -10) \ud x \\
+	    &= \left[ 6x^2 -\dfrac{2}{3}x^3 - 10x\right]_1^5 \\
+	    &= \left( 150 - \frac{250}{3} -50\right) - \left( 6 - \frac{2}{3} - 10\right) \\
+	    &= 104 - \frac{248}{3} = 21\frac{1}{3}
+	\end{align}
 \end{solution}
