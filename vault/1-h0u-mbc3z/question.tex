@@ -30,17 +30,17 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question After 4 seconds of motion, the speed of a moving particle is $1$ cm/s. 
+\question[3] After 4 seconds of motion, the speed of a moving particle is $1$ cm/s. 
 Given that the speed of the particle is propotional to square of the time, what is
 the distance travelled by the particle in the first $10$ seconds?
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
   \begin{align}
      \text{Speed} &= \dfrac{\ud x}{\ud t} \propto t^2 \\
      \Rightarrow \dfrac{\ud x}{\ud t} &= k\cdot t^2
