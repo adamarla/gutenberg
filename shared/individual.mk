@@ -58,14 +58,14 @@ $(Dvi) : $(Tex)
 	@echo "[TeX -> dvi]: $@ with [latex] = $(latexCmd)"
 	@$(latexCmd) -halt-on-error $(Tex)
 
-$(Tex) : bc2fig $(Plots) $(Scaffolds) question.tex
+$(Tex) : bc_to_fig.tex $(Plots) $(Scaffolds) question.tex
 	@echo "[plotting]: $(Plots)" && gnuplot $(Plots)
 	-@echo "[stitching]: $@" && rm -f $@
 	@for j in preamble printanswers doc_begin ; do cat $(Shared)/$$j.tex >> $@ ; done
 	@cat question.tex >> $@
 	@for j in doc_end ; do cat $(Shared)/$$j.tex >> $@ ; done
 
-bc2fig: 
+bc_to_fig.tex: figure.bc 
 	@echo "[bc -> fig]"
 	@if [ -f figure.bc ] ; then bc -l figure.bc > bc_to_fig.tex ; fi 
 
