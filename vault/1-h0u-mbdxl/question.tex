@@ -108,8 +108,12 @@ Find the area contained between it and the $x-axis$.
  
  The required area $A$ of region $R$ is therefore
  \begin{align}
-    A &= \int_{-2}^0 (x^2\cdot e^{-x})\ud x + \int_{-2}^0 (2x\cdot e^{-x})\ud x \\
-    \text{ Setting } -x = z, \text{ we get } \\
+    A &= \int_{-2}^0(x^2+2x)e^{-x}\ud x \\
+      &= \int_{-2}^0 (x^2\cdot e^{-x})\ud x + \int_{-2}^0 (2x\cdot e^{-x})\ud x
+  \end{align}
+  
+  Setting $-x = z$, we get 
+  \begin{align}
     A &= -\int_2^0(z^2\cdot e^z)\ud z + \int_2^0 (2z\cdot e^z)\ud z \\
       &= \int_0^2(z^2\cdot e^z)\ud z + \int_2^0 (2z\cdot e^z)\ud z \\
       &= \underbrace{\left[ e^{z}z^2 - \int e^{z}(2z)\ud z \right]_0^2}_{\texttt{integration by parts}}
