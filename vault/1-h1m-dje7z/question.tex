@@ -30,46 +30,29 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Break up the number 8 into two summands such that the sum of their cubes
+is the least possible
 
 \insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
+\fi
 
 \begin{solution}
+   Basically, we have to minimize $y = x^3 + (8-x)^3$
+   \begin{align}
+      y &= x^3 + (8-x)^3, \text{ then } \\
+      \dydx &= 3x^2 - 3(8-x)^2 \text{ and } \\
+      \dnydxn{2} &= 6x + 6(8-x)
+   \end{align}
+   
+   Now, 
+   \begin{align}
+      \dydx &= 0 \text { when } 3x^2 - 3(8-x)^2 = 0 \\
+      \Rightarrow x^2 &= 64 + x^2 -16x \text{ or } x = 4 \\
+      \text{Also, }\left[\dnydxn{2}\right]_{x=4} &= 48 > 0 \Rightarrow \text{ minima }
+   \end{align}
+   
+   Hence, the required split is $4$ and $4$
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
