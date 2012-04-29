@@ -30,46 +30,60 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Fuel expenditures for a steamship are propotional to the cube of it speed.
+It is known that at a speed of $10$ km/hour, fuel costs are \texteuro 30/hour. Other 
+expenses (independent of speed) amount to \texteuro 480 per hour 
 
 \insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+  \marginnote[1cm]{Keeping track of the units in which values are expressed is always 
+  a good policy. Sometimes, you can crack the logic by just looking at the units} 
 \fi 
 
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part At what speed of the ship will the sum of expenses \textit{per kilometer} of
+  travel be the lowest? 
 
   \insertQR{}
   \begin{solution}
+    Let $F(s)$ and $E(s)$ be the fuel expenditure per hour and total expenditure per hour 
+    - expressed as a function of speed $s$
+    \begin{align}
+        F(s) \propto s^3 \Rightarrow F(s) &= ks^3 \\ 
+        \text{Given that } F(10) = k\cdot 10^3 &= \text{\texteuro 30 per hour} \\
+        \text{ we get } k &= 0.03 \\ 
+        \text{And therefore, } E(s) &= (0.03s^3 + 480)\text{ \texteuro per hour}
+    \end{align}
+    
+    However, we need to express the expenditure in \texteuro per kilometer
+    \begin{align}
+       \dfrac{\text{\texteuro}}{\text{km}} &= \dfrac{\frac{\text{\texteuro}}{\text{hour}}}
+                                                    {\frac{\text{km}}{\text{hour}}} \\
+       \text{which suggests } G(s) &= \dfrac{E(s)}{s} \dfrac{\text{\texteuro}}{\text{km}} \\
+                                   &= 0.03s^2 + \dfrac{480}{s} \\
+       \text{Now, } \dfrac{\ud G(s)}{\ud s} &= 0.06s - \dfrac{480}{s^2} \\
+       \text{And, }\dfrac{\ud^2 G(s)}{\ud s^2} &= 0.06 + \dfrac{960}{s^3} > 0 \Rightarrow \text{ minima }
+    \end{align}
+    
+    And hence, the speed at which total expenditure \textit{ per km } is minimized is the one at which
+    \begin{align}
+       \dfrac{\ud G(s)}{\ud s} = 0.06s - \dfrac{480}{s^2} &= 0 \\
+       \Rightarrow s &= 20 \text{ km per hour }
+    \end{align}
   \end{solution}
 
-  \part 
+  \part What will the total expenditure per hour at that speed be? 
 
   \insertQR{}
   \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
+    The total expenditure per hour at this speed would be
+    \begin{align}
+       E(20) &= 0.03\times 20^3 + 480 \\
+             &= \text{\texteuro 720 per hour}
+    \end{align}
   \end{solution}
 
 \end{parts}
+
