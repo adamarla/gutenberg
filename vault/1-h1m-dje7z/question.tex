@@ -30,16 +30,16 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question Break up the number 8 into two summands such that the sum of their cubes
+\question[2] Break up the number 8 into two summands such that the sum of their cubes
 is the least possible
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi
 
-\begin{solution}
+\begin{solution}[\halfpage]
    Basically, we have to minimize $y = x^3 + (8-x)^3$
    \begin{align}
       y &= x^3 + (8-x)^3, \text{ then } \\
