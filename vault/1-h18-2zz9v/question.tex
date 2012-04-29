@@ -30,34 +30,36 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Find the area of the figure bounded by the $y-axis$ and the curve 
+$x=y^2(y-1)$
+
+\insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
 \begin{solution}
+  You don't have to know what the curve looks like exactly to solve the question. 
+  But you can still infer three facts about the curve immediately
+  \begin{align}
+      x &= \left\lbrace
+              \begin{array}{l c}
+                 0 & \text{when }y=0,1 \\
+                 > 0 & \text{when }y > 1 \\
+                 < 0 & \text{when }y < 1
+              \end{array}\right.
+  \end{align}
+  
+  What this means is that the bulge whose area we have to calculate is 
+  contained between $y=0$ and $y=1$, and that it is entirely in the 
+  negative-$x$ region (so expect the integral to give a negative value)
+  
+  \begin{align}
+     A &= \int_0^1 y^2\cdot(y-1)\ud y = \int_0^1(y^3-y^2)\ud y \\
+       &= \left[ \dfrac{y^4}{4} - \dfrac{y^3}{3}\right]_0^1 \\
+       &= -\dfrac{1}{12}
+  \end{align}
+  
+  The required area is therefore $A = \frac{1}{12}$
 \end{solution}
-
-\begin{parts}
-  \part 
-  \begin{solution}
-  \end{solution}
-
-  \part 
-  \begin{solution}
-  \end{solution}
-
-  \part 
-  \begin{solution}
-  \end{solution}
-
-  \part 
-  \begin{solution}
-  \end{solution}
-
-  \part 
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
