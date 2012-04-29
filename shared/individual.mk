@@ -35,7 +35,7 @@ Pdf := $(patsubst %.tex, %-answer.pdf, $(Basename)) # 123-answer.pdf
 Thumb := $(patsubst %.tex, %-thumb.jpeg, $(Basename)) # 123-thumb.jpeg
 Preview := $(patsubst %.tex, %-answer.jpeg, $(Basename)) # 123-answer.jpeg
 
-PHONY : preview bc2fig
+PHONY : preview 
 
 preview : $(Pdf)
 	@echo "[ pdf -> preview ]"
