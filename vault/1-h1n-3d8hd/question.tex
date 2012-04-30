@@ -30,46 +30,167 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question At what angles do the parabolas $y=x^2$ and $y=x^2$ - \asif - intersect?
+
+\calculator{ \tan^{-1}2 = \ang{63.44}, \tan^{-1}\frac{1}{2} = \ang{26.57}}
 
 \insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
+\begin{marginfigure}
+% 1. Definition of characteristic points
+\figinit{pt}
+\def\Xmin{0}
+\def\Ymin{0}
+\def\Xmax{50.00000}
+\def\Ymax{69.99999}
+\def\Xori{0}
+\def\Yori{0}
+\figpt0:(\Xori,\Yori)
+\figpt 100: (21,17)
+% 2. Creation of the graphical file
+\figdrawbegin{}
+\def\Xmaxx{\Xmax} % To customize the position
+\def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
+\figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
+\figdrawaxes 0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+\figdrawlineC(
+0 0,
+1.72413 .08323,
+3.44827 .33293,
+5.17241 .74910,
+6.89655 1.33174,
+8.62068 2.08085,
+10.34482 2.99643,
+12.06896 4.07847,
+13.79310 5.32699,
+15.51724 6.74197,
+17.24137 8.32342,
+18.96551 10.07134,
+20.68965 11.98573,
+22.41379 14.06658,
+24.13793 16.31391,
+25.86206 18.72770,
+27.58620 21.30796,
+29.31034 24.05469,
+31.03448 26.96789,
+32.75862 30.04756,
+34.48275 33.29369,
+36.20689 36.70630,
+37.93103 40.28537,
+39.65517 44.03091,
+41.37931 47.94292,
+43.10344 52.02140,
+44.82758 56.26634,
+46.55172 60.67776,
+48.27586 65.25564,
+49.99999 69.99999
+)
+\figdrawlineC(
+0 0,
+1.72413 4.59572,
+3.44827 6.49933,
+5.17241 7.96002,
+6.89655 9.19145,
+8.62068 10.27635,
+10.34482 11.25718,
+12.06896 12.15914,
+13.79310 12.99867,
+15.51724 13.78717,
+17.24137 14.53295,
+18.96551 15.24229,
+20.68965 15.92005,
+22.41379 16.57012,
+24.13793 17.19562,
+25.86206 17.79916,
+27.58620 18.38290,
+29.31034 18.94866,
+31.03448 19.49801,
+32.75862 20.03230,
+34.48275 20.55270,
+36.20689 21.06025,
+37.93103 21.55586,
+39.65517 22.04032,
+41.37931 22.51436,
+43.10344 22.97862,
+44.82758 23.43369,
+46.55172 23.88008,
+48.27586 24.31829,
+49.99999 24.74873
+)
+\figdrawlineC(
+0 0,
+1.72413 -4.59572,
+3.44827 -6.49933,
+5.17241 -7.96002,
+6.89655 -9.19145,
+8.62068 -10.27635,
+10.34482 -11.25718,
+12.06896 -12.15914,
+13.79310 -12.99867,
+15.51724 -13.78717,
+17.24137 -14.53295,
+18.96551 -15.24229,
+20.68965 -15.92005,
+22.41379 -16.57012,
+24.13793 -17.19562,
+25.86206 -17.79916,
+27.58620 -18.38290,
+29.31034 -18.94866,
+31.03448 -19.49801,
+32.75862 -20.03230,
+34.48275 -20.55270,
+36.20689 -21.06025,
+37.93103 -21.55586,
+39.65517 -22.04032,
+41.37931 -22.51436,
+43.10344 -22.97862,
+44.82758 -23.43369,
+46.55172 -23.88008,
+48.27586 -24.31829,
+49.99999 -24.74873
+)
+\figdrawend
+% 3. Writing text on the figure
+\figvisu{\figBoxA}{}{%
+\figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+% Points 1 and 2 are the end points of the arrows
+\figwritee 1:(5pt)     \figwriten 2:(5pt)
+\figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
+\figwriten 100:$A$(2)
+}
+\centerline{\box\figBoxA}
+
+
+\end{marginfigure}
 
 \begin{solution}
+	The parabolas intersect at points where, 
+	\begin{align}
+		y = x^2 &= (x^2)^2 = x^4 \\
+		\Rightarrow x^4-x &= 0 \text{ or } x\cdot(x^3-1) = 0 \\
+		\Rightarrow x &= 0,1 \\
+		\Rightarrow y &= 0^2, 1^2 \text{ or } (x,y) = (0,0) \text{ and } (1,1)
+	\end{align}
+	
+	The angles at which the parabolas intersect are the angles at which 
+	the \textit{tangents} of each at the intersection points intersect
+	
+	Hence, at $(x,y) = (0,0)$
+	\begin{align}
+		\left[\dydx\right]_{x=0} = (2x)_{x=0} = 0 &\Rightarrow \psi_1 = \tan^{-1}0 = \ang{0} \\
+		\left[\dydx\right]_{x=0} = (\dfrac{1}{2\sqrt{x}})_{x=0} = \infty &\Rightarrow \psi_2 
+		= \tan^{-1}\infty = \ang{90} \\
+		\therefore\text{ Angle of intersection at origin } &= \psi_2-\psi_1 = \ang{90}
+	\end{align}
+	
+	Similarly, at $(x,y) = (1,1)$
+	\begin{align}
+		\left[\dydx\right]_{x=1} = (2x)_{x=1} = 2 &\Rightarrow \psi_1 = \tan^{-1}2 = \ang{63.44} \\
+		\left[\dydx\right]_{x=1} = (\dfrac{1}{2\sqrt{x}})_{x=1} = \frac{1}{2} &\Rightarrow \psi_2 
+		= \tan^{-1}\frac{1}{2} = \ang{26.57} \\
+		\therefore\text{ Angle of intersection at }(1,1) &= \psi_1-\psi_2 = \ang{36.87}
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
