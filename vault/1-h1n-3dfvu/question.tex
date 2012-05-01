@@ -30,46 +30,94 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question A \SI{160}{\centi\metre} tall man walks away from a source of light 
+mounted on a \SI{6}{\meter} high pole at the rate of \SI{1.1}{\meter\per\second}.
+How fast is the length of his shadow increasing when he is \SI{1}{\meter} away from the pole?
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
+  \begin{marginfigure}
+    % 1. Definition of characteristic points
+\figinit{pt}
+\def\Xmin{0}
+\def\Ymin{0}
+\def\Xmax{80.00000}
+\def\Ymax{79.99999}
+\def\Xori{0}
+\def\Yori{0}
+\figpt0:(\Xori,\Yori)
+% 2. Creation of the graphical file
+\figdrawbegin{}
+\def\Xmaxx{\Xmax} % To customize the position
+\def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
+\figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
+\figdrawaxes 0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+\figpt 100: (80,80)
+\figpt 101: (80,0)
+\figpt 102: (40,40)
+\figpt 103: (40,0)
+\figpt 104: (20,1)
+\figpt 105: (55,1)
+\figdrawline [100,101]
+\figdrawline [102,103]
+\figdrawlineC(
+0 0,
+2.75862 2.75862,
+5.51724 5.51724,
+8.27586 8.27586,
+11.03448 11.03448,
+13.79310 13.79310,
+16.55172 16.55172,
+19.31034 19.31034,
+22.06896 22.06896,
+24.82758 24.82758,
+27.58620 27.58620,
+30.34482 30.34482,
+33.10344 33.10344,
+35.86206 35.86206,
+38.62068 38.62068,
+41.37931 41.37931,
+44.13793 44.13793,
+46.89655 46.89655,
+49.65517 49.65517,
+52.41379 52.41379,
+55.17241 55.17241,
+57.93103 57.93103,
+60.68965 60.68965,
+63.44827 63.44827,
+66.20689 66.20689,
+68.96551 68.96551,
+71.72413 71.72413,
+74.48275 74.48275,
+77.24137 77.24137,
+79.99999 79.99999
+)
+\figdrawend
+% 3. Writing text on the figure
+\figvisu{\figBoxA}{}{%
+\figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+% Points 1 and 2 are the end points of the arrows
+\figwritee 1:(5pt)     \figwriten 2:(5pt)
+\figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
+\figwriten 104:$L$(2)
+\figwriten 105:$x$(2)
+}
+\centerline{\box\figBoxA}
+
+  \end{marginfigure}
+
+\marginnote[0.3cm]{Actually, it makes no difference how far the man is from the
+light source. His shadow will increase in length at the same rate !}
 \fi 
 
 \begin{solution}
+  In the figure alongside,
+  \begin{align}
+    \tan\theta &= \dfrac{1.6}{L} = \dfrac{6}{L+x} \\
+    \Rightarrow L &= \dfrac{1.6}{4.4}x \\
+    \Rightarrow \dfrac{\ud L}{\ud t} &= \dfrac{1.6}{4.4}\times\dfrac{\ud x}{\ud t} \\
+       &= \dfrac{1.6}{4.4}\times\SI{1.1}{\meter\per\second} \\
+       &= \SI{0.4}{\meter\per\second}
+  \end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
