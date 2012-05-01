@@ -116,7 +116,7 @@ Find the area contained between it and the $x-axis$.
   \begin{align}
     A &= -\int_2^0(z^2\cdot e^z)\ud z + \int_2^0 (2z\cdot e^z)\ud z \\
       &= \int_0^2(z^2\cdot e^z)\ud z + \int_2^0 (2z\cdot e^z)\ud z \\
-      &= \underbrace{\left[ e^{z}z^2 - \int e^{z}(2z)\ud z \right]_0^2}_{\texttt{integration by parts}}
+      &= \underbrace{\left[ (e^{z}z^2)_0^2 - \int_0^2 e^{z}(2z)\ud z \right]}_{\texttt{integration by parts}}
       + \int_2^0 (2z\cdot e^z)\ud z \\
       &= \left( e^{z}z^2 \right)_0^2 + 4\cdot\int_2^0 ze^{z}\ud z \\
       &= 4e^4 + 4\cdot\left( e^{z}(z-1)\right)_2^0 \\
