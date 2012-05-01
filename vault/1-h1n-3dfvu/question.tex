@@ -59,6 +59,9 @@ How fast is the length of his shadow increasing when he is \SI{1}{\meter} away f
 \figpt 103: (40,0)
 \figpt 104: (20,1)
 \figpt 105: (55,1)
+\figpt 200: (40,20)
+\figpt 201: (80,40)
+\figpt 300: (10,6)
 \figdrawline [100,101]
 \figdrawline [102,103]
 \figdrawlineC(
@@ -100,8 +103,11 @@ How fast is the length of his shadow increasing when he is \SI{1}{\meter} away f
 % Points 1 and 2 are the end points of the arrows
 \figwritee 1:(5pt)     \figwriten 2:(5pt)
 \figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
-\figwriten 104:$L$(2)
-\figwriten 105:$x$(2)
+\figwrites 104:$L$(4)
+\figwrites 105:$x$(4)
+\figwritee 200: $\SI{1.6}{\meter}$(2)
+\figwritee 201: $\SI{6}{\meter}$(2)
+\figwritee 300: $\theta$(1)
 }
 \centerline{\box\figBoxA}
 
@@ -112,9 +118,11 @@ light source. His shadow will increase in length at the same rate !}
 \fi 
 
 \begin{solution}
-  In the figure alongside,
+  In the figure alongside, $L$ is the length of the shadow and $x$
+  the distance the man is away from the pole
+  
   \begin{align}
-    \tan\theta &= \dfrac{1.6}{L} = \dfrac{6}{L+x} \\
+    \tan\theta &= \dfrac{1.6\si{\meter}}{L} = \dfrac{6\si{\meter}}{L+x} \\
     \Rightarrow L &= \dfrac{1.6}{4.4}x \\
     \Rightarrow \dfrac{\ud L}{\ud t} &= \dfrac{1.6}{4.4}\times\dfrac{\ud x}{\ud t} \\
        &= \dfrac{1.6}{4.4}\times\SI{1.1}{\meter\per\second} \\
