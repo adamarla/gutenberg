@@ -30,18 +30,18 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question Sand is pouring from a pipe at the rate of \SI{12}{\centi\metre^3\per\second}.
+\question[2] Sand is pouring from a pipe at the rate of \SI{12}{\centi\metre^3\per\second}.
 The falling sand forms a cone on the ground in such a way that the height of the
 cone is always one-sixth the radius of the base. How fast is the height of the
 sand cone increasing when its height is \SI{4}{\centi\metre}?
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
   If $V(t)$ be the volume of the sand cone at any given time, then
   \begin{align}
      V(t) &= \dfrac{1}{3}\pi R(t)^2\cdot h(t) \\
