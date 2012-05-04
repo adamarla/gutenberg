@@ -7,11 +7,19 @@
 */
 
 define p_1(x) {
-  return (x^2)
+  print "entering p_1 \n"
+  print "scale ", scale, "\n"
+  print "x=", x, "\n"
+  p_1_ratio = -x/3.00000000
+  print "ratio ", p_1_ration, "\n"
+  p_1_exp = e ^ p_1_ratio
+  print "exponent ", p_1_exp , "\n"
+  print "exiting p_1 \n"
+  return (5*p_1_exp - 3)
 }
 
 define p_2(x) {
-  return (2*x+3)
+  return (0)
 }
 
 /* ****************************************************************************
@@ -24,9 +32,9 @@ define p_2(x) {
 *******************************************************************************/
 
 pi = 4*a(1)  /* define pi */
-xstart = -1.75    /* Lower bound of the interval */
-xstop = 3.5     /* Upper bound of the interval */
-n = 30     /* Number of points to be computed */
+xstart = 0    /* Lower bound of the interval */
+xstop = 4     /* Upper bound of the interval */
+n = 5     /* Number of points to be computed */
 deltax = (xstop-xstart)/(n-1)
 xdim = 80  /* Horizontal dimension of the figure in mm */
 ydim = 100  /* Vertical   dimension of the figure in mm */
@@ -46,11 +54,15 @@ yscale = 0 ;
 
 define void set_scaling_factors() {
   for (i = 0; i < n; i++){
+   print "for i=", i
    x = xstart + i*deltax
+   print "x=", x, "\n"
    y = p_1(x)
+   print "y=", y, "\n"
    if (y<ymin) ymin = y
    if (y>ymax) ymax = y
   }
+  print "set_scaling_factores ", xstop, xstart, ymax, ymin
   xscale = xdim/(xstop-xstart)
   yscale = ydim/(ymax-ymin)
 }
@@ -64,6 +76,7 @@ define format(n,x){
 }
 
 define round(n,x){
+
   auto y, z
   z = 10^(n+1)
   d = 5 

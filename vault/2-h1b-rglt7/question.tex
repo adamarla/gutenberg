@@ -30,34 +30,95 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Let $f$ be a function that is twice differentiable for all real numbers. The table below gives the values of $f$ for selected points in the closed interval $2 \leq x \leq 13$.
+\insertQR{}
+
+\begin{center}
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    $x$ & 2 &3 & 5 & 8 & 13 \\ 
+    \hline
+    $f\left(x\right)$ & 1 & 4 & -2 & 3 & 6 \\ 
+    \hline
+  \end{tabular}
+\end{center}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part Estimate $f'\left(4\right)$. Show the work that leads to your answer.
+  \insertQR{}
   \begin{solution}
+
+    Definition of $\dydx = f'\left(x\right)$ is,
+    \begin{align}
+      f'\left(x\right) &= \dfrac{f\left(x_2\right)-f\left(x_1\right)}{x_2-x_1}
+    \end{align}
+    where $x_1 \rightarrow  x_2$. However, in this scenario since $x_2-x_1 \gg 0$ we can only get an approximation. Therefore,
+    \begin{align}
+      f'\left(x\right) &\approx \dfrac{f\left(5\right)-f\left(3\right)}{5-3} \\
+                       &= -3
+    \end{align}
   \end{solution}
 
-  \part 
+  \part Evaluate $\int_2^{13} \left(3-5f'\left(x\right)\right) \ud x$. Show the work that leads to your answer.
+  \insertQR{}
   \begin{solution}
+    \begin{align}
+      I &= \int_2^{13} \left(3-5'\left(x\right)\right) \ud x \\
+        &= 3\int_2^{13}  \ud x - 5\int_2^{13} f'\left(x\right) \ud x \\
+        &= 3\left[x\right]_2^{13} - 5\left[f\left(x\right)\right]_2^{13} \\
+        &= 3\left(13 - 2\right) - 5\left(f\left(13\right) - f\left(2\right)\right) \\
+        &= 8
+    \end{align}
   \end{solution}
 
-  \part 
+  \part Use a left Riemann sum with subintervals indicated by the data in the table to approximate $\int_2^{13} f\left(x\right) \ud x$. Show the work that leads to your answer.
+  \insertQR{}
   \begin{solution}
+    Left Reimann Sum for a function $f$ over an interval $I\left(1,n\right)$ is defined as,
+    \begin{align}
+      S &= \sum_{i=1}^{n}f\left(x_{i-1}\right)\left(x_i-x_{i-1}\right)
+    \end{align}
+    Applying this for the given function we get,
+    \begin{align}
+      S &= f\left(2\right)\left(3-2\right) + f\left(3\right)\left(5-3\right) + \nonumber \\
+        &\qquad f\left(5\right)\left(8-5\right) + f\left(8\right)\left(13-8\right) \\
+        &= 18
+    \end{align}
+
   \end{solution}
 
-  \part 
+  \part Suppose $f'\left(5\right) = 3$ and $f''\left(x\right) \leq 0$ for all $x$ in the closed interval $5 \leq x \leq 8$. Use the line tangent to the graph of $f$ at $x=5$ to show that $f\left(7\right) \leq 4$. Use the secant line for the graph of $f$ on $5 \leq x \leq 8$ to show that $f\left(7\right) \geq \dfrac{4}{3}$.
+  \insertQR{}
+  \ifprintanswers
+    % stuff to be shown only in the answer key - like explanatory margin figures
+    \marginnote[50pt] {$y-y_1 = m\left(x-x_1\right)$}
+    \marginnote[165pt] {$y-y_1 = \dfrac{y_2 - y_1}{x_2 - x_1}\left(x-x_1\right)$}
+  \fi 
   \begin{solution}
-  \end{solution}
+    The equation for the tangent line at $f'\left(5\right)$ is,
+    \begin{align}
+      y - \left(-2\right) &= 3\left(x - 5\right) \\
+                        y &= 3x - 17
+    \end{align}
+    Since $f''\left(x\right) <0$ in the interval $5\leq x\leq 8$, the slope of the function is steadily decreasing. Therefore the tangent line lies above the function for all $x$ in the interval $5 \leq x \leq 8$. Now, at $x=7$, the tangent line is at $4$, therefore,
+    \begin{align}
+      f\left(7\right) &\leq 4
+    \end{align}
+    The equation for the secant line of the graph in the interval $5 \leq x \leq 8$ is,
+    \begin{align}
+      y-3 &= \dfrac{3-\left(-2\right)}{8-5}\left(x-8\right) \\
+        y &= \dfrac{5}{3}\left(x-8\right)+3
+    \end{align}
+    Since the secant line connecting $(5, f\left(5\right)$ and $\left(8, f\left(8\right)\right)$ lies below the graph of $y=f\left(x\right)$ for all $x$ in the interval $5 \leq x \leq 8$, therefore,
+    \begin{align}
+      f\left(7\right) &\geq \dfrac{5}{3}\left(7-8\right)+3 \\
+                      &= \dfrac{4}{3} 
+    \end{align}
 
-  \part 
-  \begin{solution}
   \end{solution}
 
 \end{parts}

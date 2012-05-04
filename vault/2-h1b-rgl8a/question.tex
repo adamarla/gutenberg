@@ -30,34 +30,103 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question The derivative of a function $f$ is defined by 
+\begin{align}
+  f'(x) = \left\{
+            \begin{array}{l l l}
+              g(x)           & \text{for} & -4 \leq x \leq 0 \\
+              5 e^{-(x/3)}-3 & \text{for} & 0 \leq x \leq 4  \\
+            \end{array} 
+          \right. \nonumber 
+\end{align}
+The graph of the continuous function $f'$, shown in figure alongside, has an x-intercepts at $x=-2$ and $x=3\ln (\dfrac{5}{3})$. The graph of $g$ on $-4 \leq x \leq 0$ is a semicircle, and $f(0)=5$.
+
+\begin{marginfigure}
+\figinit{pt}
+%Origin
+\figpt 0:$O$ (0,0)
+%Curve
+\figpt 13: (-40, 40) 
+%axes
+\figpt 1: (0,40)
+\figpt 2: (30,0)
+\figpt 3: (80,-38)
+\figpt 4: (20, 0)
+\figpt 5: (40, 0)
+\figpt 6: (60, 0)
+\figpt 7: (-20, 0)
+\figpt 8: (-40, 0)
+\figpt 9: (-60, 0)
+\figpt 10: (0, 20)
+\figpt 11: (0, 40)
+\figpt 12: (0, -20)
+\figpt 13: (-40, 40)
+\figpt 14: (65, -25)
+\figpt 15: (-3, 10.6)
+
+\figpt 100: (90,0)
+\figpt 101: (0,60)
+%draw
+\figdrawbegin{}
+\figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
+\figdrawaxes 0(-80,80, -40,60)
+\figdrawarccirc 13;40 (180, 360)
+\figdrawcurve [15,1,2,14,3]
+\figdrawend
+%write
+\figvisu{\figBoxA}{Graph of f'}{
+\figwritesw 0:$O$(5pt)
+\figwritee 100:$x$(5pt)
+\figwriten 101:$y$(5pt)
+\figsetmark{$|$}
+\figwrites 4:$1$(5)
+\figwrites 5:$2$(5)
+\figwrites 6:$3$(5)
+\figwrites 7:$-1$(5)
+\figwrites 8:$-2$(5)
+\figwrites 9:$-3$(5)
+\figsetmark{$-$}
+\figwritew 10:$1$(5)
+\figwritew 11:$ $(5)
+\figwritew 12:$ $(5)
+}
+\centerline{\box\figBoxA}
+\end{marginfigure}
+
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+
+  \part For $-4 < x < 4$, find all values of $x$ at which the graph of $f$ has a point of inflection. Justify your answer.
   \begin{solution}
+    A point of inflection is when the slope of a function changes behavior. It goes either from increasing to decreasing or decreasing to increasing. In this case by looking at the graph of slope $f'(x)$, we can tell that it is decreasing till $x=-2$ and then starts increasing and continues to increase till $x=0$ at which point it starts decreasing again. Therefore the two points of inflection are $x=-2$ and $x=0$.
   \end{solution}
 
-  \part 
+  \part Find $f(-4)$ and $f(4)$.
   \begin{solution}
+    Area under the curve of the derivative of a function represents the change in value of the original function over a given interval. In other words for any function $f(x)$,
+    \begin{align}
+      \int_a^b f'(x)\ud x = f(b) - f(a)
+    \end{align}
+    Consider the portion of the curve from $-4$ to $0$, 
+    \begin{align}
+       \int_{-4}^0 g(x)\ud x &= f(0) - f(-4) \\
+       8-\dfrac{\pi 4}{2}    &= 5 - f(-4) \\
+       f(-4)                 &= 2\pi - 3
+    \end{align}
+    Consider the portion of the curve from $0$ to $-4$, 
+    \begin{align}
+       \int_{0}^{4} (5 e^{-(x/3)}-3)\ud x   &= f(4) - f(0) \\
+       \left[5(-3)e^{-(x/3)}-3x \right]_0^4 &= f(4) - f(0) \\
+       f(4)                                 &= 8 - 15 e^{(-4/3)}
+    \end{align}
   \end{solution}
-
-  \part 
+  \part For $-4 \leq x \leq 4$, find the value of $x$ at which $f$ has an absolute maximum. Justify your answer.
   \begin{solution}
-  \end{solution}
-
-  \part 
-  \begin{solution}
-  \end{solution}
-
-  \part 
-  \begin{solution}
+    $f'(x)$ is decreasing but positive from $x=-4$ to $x=-2$. Thereafter it starts increasing and keeps increasing till $x=0$. After this the slope remains positive till $x=\ln(5/3)$ after which it becomes negative. This means that $f(x)$ is steadily increasing from $x=-4$ till $x=\ln (3/2)$ and only then does it start decreasing. Therefore the absolute maxima of the function in the given range is at $x=\ln(3/2)$.
   \end{solution}
 
 \end{parts}

@@ -29,35 +29,100 @@
 % 
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
+\question  Let $R$ be the region in the first quadrant enclosed by the graphs of $y=2x$ and $y=x^2$, as shown in the figure.
 
-\question
+\begin{marginfigure}
+\figinit{mm}
+%Origin
+\figpt 1:$O$ (0,0)
+%Straight line
+\figpt 2: (20,40)
+\figpt 3: (22,44)
+%axes
+\figpt 4: (10,0)
+\figpt 5: (20,0)
+\figpt 6: (0,10)
+\figpt 7: (0,20)
+\figpt 8: (0,30)
+\figpt 9: (0,40)
+%parabola
+\figpt 10: (10,10)
+\figpt 11: (20.2,44)
+\figpt 12: (-2,0.2)
+\figpt 13: (0.2,0.2)
+
+%draw
+\figdrawbegin{}
+%\figset curve(0.15)
+\figdrawcurve [12,13,10,2,3,11]
+\figdrawline [1,3]
+\figdrawaxes 1(-2,24, -5,45)
+\figdrawend
+%write
+\figvisu{\figBoxA}{Figure}{
+\figwritesw 1:(3)
+\figsetmark{$\bullet$}
+\figwritew 2:$[2, 4]$ (3)
+\figsetmark{$|$}
+\figwrites 4:$1$(3)
+\figwrites 5:$2$(3)
+\figsetmark{$-$}
+\figwritew 6:$1$(3)
+\figwritew 7:$2$(3)
+\figwritew 8:$3$(3)
+\figwritew 9:$4$(3)
+\figsetmark{}
+\figwritee 5:$x$(5)
+\figwriten 9:$y$(6)
+\figwritee 6:$R$(6)
+}
+\centerline{\box\figBoxA}
+\end{marginfigure}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
-  \begin{solution}
-  \end{solution}
+	\part[5] Find the area of $R$.
+\insertQR{}
+	\begin{solution}[\halfpage]
+		R = Area under line ($A_1$) - Area under parabola ($A_2$)
+		\begin{align}
+				\text{A}_1 &= \int_0^2 2x\ud x 					\\
+						   &= 4									
+		\end{align}
+		\begin{align}			
+				\text{A}_2 &= \int_0^2 x^2\ud x 				\\
+						   &= \left[\dfrac{x^3}{3}\right]_0^2	\\
+						   &= \dfrac{8}{3}
+		\end{align}
+		\begin{align}
+				\text{R} &= \text{A}_1 - \text{A}_2				\\
+						 &= \dfrac{4}{3}
+		\end{align}
+	\end{solution}
 
-  \part 
-  \begin{solution}
-  \end{solution}
-
-  \part 
-  \begin{solution}
-  \end{solution}
-
-  \part 
-  \begin{solution}
-  \end{solution}
-
-  \part 
-  \begin{solution}
-  \end{solution}
-
+	\part[5] The region $R$ is the base of a solid. For this solid, at each $x$ the cross section perpendicular to the x-axis has an area $A(x)=\sin{\dfrac{\pi}{2}x}$. Find the volume of the solid.
+\insertQR{}
+	\begin{solution}[\halfpage]
+	    Let Volume of the solid be $V$.
+	    \begin{align}
+	    		\text{V} &= \int \sin \left(\dfrac{\pi}{2}x\right)\ud x							\\
+	    				 &= \left[\dfrac{- \cos \left(\frac{\pi}{2}x\right)}
+	    				 	{\frac{\pi}{2}}\right]_0^2	\\
+	    				 &= \left(-\dfrac{2}{\pi}\cos \pi + \dfrac{2}{\pi}\cos 0\right)			\\
+	    				 &= \dfrac{4}{\pi}
+	    \end{align}
+	\end{solution}
+	
+	\part[3] Another solid has the same base $R$. For this solid, the cross sections perpendicular to the y-axis are squares. Write. but do not evaluate, an integral expression for the volume of the solid.
+\insertQR{}
+\begin{solution}[\halfpage]
+	Cross-sections are squares means height of the solid is equal to the base for any given cross-section. Further, since the areas are perpendicular to the $y$-axis, the integral for Volume $V$ would be with respect to an infinitesimal width of $\ud y$
+		\begin{align}
+				\text{V} = \int_0^2 \left(\frac{y}{2} - \sqrt{y}\right)^2\ud y
+		\end{align}
+	\end{solution}
 \end{parts}
+
