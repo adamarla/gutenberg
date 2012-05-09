@@ -136,10 +136,29 @@
   \part Find the volume of the solid generated when $R$ is revolved about the horizontal line $y=8$.
   \insertQR{}
   \begin{solution}
+    To find the volume of the solid generated let us first consider the volume of a single disk of width $dx$ at a distance $x$ from the $y$ axis.
+    \begin{align}
+      \ud v &= \left(\pi (8 - 4\ln(3-x))^2 - \pi (8 - 6)^2\right) \ud x \\ 
+    \end{align}
+    Adding up the volume of all such disks from $x=0$ to $x=2$, we get,
+    \begin{align}
+      \text{V} &= \int_0^2 \left(\pi (8 - 4\ln(3-x)^2)^2 - \pi (8 - 6)^2\right) \ud x \\
+      \text{V} &= \pi \int_0^2 \left((8 - 4\ln(3-x))^2 - (2)^2\right) \ud x 
+               &= 168.179
+    \end{align}
   \end{solution}
 
-  \part 
+  \part The region $R$ is the base of a solid. For this solid, each cross section perpendicular to the $x-axis$ is a square. Find the volume of the solid.
   \insertQR{}
   \begin{solution}
+    If we divide the solid into many little square discs perpendicular to the $x-axis$ of width $dx$, the volume of each little disk would be,
+    \begin{align}
+      \ud v &= \left(6 - 4\ln(3-x)\right)^2 \ud x
+    \end{align}    
+    Therefore, volume of the entire solid can be obtained by integrating each such disk from $x=0$ to $x=2$ would be, 
+    \begin{align}
+      \text{V} &= \int_0^2 \left(6 - 4\ln(3-x)\right)^2 \ud x \\
+               &= 26.266
+    \end{align}
   \end{solution}
 \end{parts}

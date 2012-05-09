@@ -30,7 +30,7 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question The rate at which people enter an auditorium for a rock concert is modeled by the function $R$ given by $R(t)=1380t^2-675t^3$ for $0 \leq t \leq 2$ hours; $R(t)$ is measured in people per hour. No one is in the auditorium at time $t=0$, when the doors open. The doors close and the concert begins at time $t=2$. 
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -40,24 +40,74 @@
 \end{solution}
 
 \begin{parts}
-  \part 
+  \part How many people are in the auditorium when the concert begins?
+  \insertQR{}
   \begin{solution}
+    To find the total number of people in the auditorium when the concert begins, we need to integrate the Rate function $R(t)$ over time from $t=0$ to $t=2$. 
+    \begin{align}
+      \text{Number of people} &= \int_0^2 R(t)\ud t \\
+									                             &= \int_0^2 1380t^2-675t^3 \ud t \\
+									                             &= \left[1380(\dfrac{t^3}{3})-675(\dfrac{t^4}{4})\right]_0^2 \\
+									                             &= 980
+    \end{align}
   \end{solution}
 
-  \part 
+  \part Find the time when the rate at which people enter the auditorium is a maximum. Justify your answer.
+  \insertQR{}
   \begin{solution}
+    The maxima (or minima) for a function would occur when its time derivative is zero or at the beginning or end of the function range $(0, 2)$. Let us compute the time derivate of $R(t)$ which is $R'(t)$.
+    \begin{align}
+      \text{R'(t)} &= 1380( \dfrac{\ud t^2}{\ud t})-675(\dfrac{\ud t^3}{\ud t}) \\
+      							&= 1380(2t)-675(3t^2)
+    \end{align}
+    To calculate the extrema points, equate $R'(t)$ with zero,
+    \begin{align}
+      & \quad     1380(2t)-675(3t^2) &= 0 \\
+      &\Rightarrow t(2760 - 2025t) &= 0 \\
+      &\Rightarrow t = 0\text{,}\, t = 1.36296
+    \end{align}
+    Let us calculate the function $R(t)$ at $t=0$, $t=1.36296$ and $t=2$ ,
+    \begin{align}      
+       R(0)                  &= 0 \\
+       R(1.36296) &= 854.527 \\
+       R(2)                  &= 120
+    \end{align}
+    The rate was highest at $t=1.36296$ hours.
   \end{solution}
 
-  \part 
+  \part The total wait time for all the people in the auditorium is found by adding the time each person waits, starting at the time the person enters the auditorium and ending when the concert begins. The function $w$ models the total wait time for all the people who enter the auditorium before time $t$. The derivative of $w$ is given by $w'(t)=(2-t)R(t)$. Find $w(2)-w(1)$, the total wait time for those who enter the auditorium after time $t=1$. 
+  \insertQR{}
   \begin{solution}
+    Let us begin by expanding $w'(t)$,
+    \begin{align}
+      w'(t) &= (2-t)R(t) \\
+                  &= (2-t)(1380t^2-675t^3) \\
+                  &= 2760t^2-2730t^3+675t^4
+    \end{align}
+    To compute $w(2)-w(1)$, we can solve the definite integral of $w'(t)$ from $t=1$ to $t=2$. 
+    \begin{align}
+      w(2)-w(1) &= \int_1^2 2760t^2-2730t^3+675t^4 \ud t \\
+                            &= \left[2760(\dfrac{t^3}{3})-2730(\dfrac{t^4}{4})+675(\dfrac{t^5}{5})\right]_1^2 \\
+                            &= 387.5               
+    \end{align}
+    The total wait time for those entering the auditorium after $t=1$ hour is $387.5$ hours.    
   \end{solution}
 
-  \part 
+  \part On average, how long does a person wait in the auditorium for the concert to begin? Consider all people who enter the auditorium after the doors open, and use the model for total wait time from part(c).
+  \insertQR{}
+  \marginnote[5cm]{Borrowing result from part(c) Step 6}
   \begin{solution}
-  \end{solution}
-
-  \part 
-  \begin{solution}
+    To find the average wait time we need to calculate the total wait time and divide it by the total number of people entering the auditorium. Let total wait time for all the people entering the auditorium be $T$.
+    \begin{align}
+      T &= \left[2760(\dfrac{t^3}{3})-2730(\dfrac{t^4}{4})+675(\dfrac{t^5}{5})\right]_0^2 \\
+      	  &= 760
+    \end{align}
+    To find the total number of people who entered the auditorium, we use the result from part(a). Combining these two results, the average wait time would be,
+    \begin{align}
+     T_{avg} &= \dfrac{760}{980} \\
+                        &= 0.77551
+    \end{align}
+   $0.77551$ hours or $46.53$ minutes.
   \end{solution}
 
 \end{parts}
