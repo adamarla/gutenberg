@@ -30,46 +30,123 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question For what value of $x$ are the tangents to the curves $y=x^2$ and 
+$y=x^3$ parallel?
 
 \insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+  % 1. Definition of characteristic points
+  \begin{marginfigure}
+\figinit{pt}
+\def\Xmin{-22.85714}
+\def\Ymin{.01522}
+\def\Xmax{57.14285}
+\def\Ymax{80.01522}
+\def\Xori{22.85714}
+\def\Yori{-.01522}
+\figpt0:(\Xori,\Yori)
+\figpt 100: (0,-6.5)
+\figpt 101: (0, 13)
+% 2. Creation of the graphical file
+\figdrawbegin{}
+\def\Xmaxx{\Xmax} % To customize the position
+\def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
+\figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
+\figdrawaxes 0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+\figdrawlineC(
+0 -6.41644,
+2.75862 -4.36722,
+5.51724 -2.80993,
+8.27586 -1.67704,
+11.03448 -.90103,
+13.79310 -.41439,
+16.55172 -.14960,
+19.31034 -.03913,
+22.06896 -.01548,
+24.82758 -.01112,
+27.58620 .04146,
+30.34482 .20980,
+33.10344 .56140,
+35.86206 1.16379,
+38.62068 2.08448,
+41.37931 3.39099,
+44.13793 5.15084,
+46.89655 7.43155,
+49.65517 10.30063,
+52.41379 13.82561,
+55.17241 18.07401,
+57.93103 23.11333,
+60.68965 29.01112,
+63.44827 35.83487,
+66.20689 43.65211,
+68.96551 52.53035,
+71.72413 62.53713,
+74.48275 73.73995,
+77.24137 86.20633,
+79.99999 100.00380
+)
+\figdrawlineC(
+0 12.78721,
+2.75862 9.88344,
+5.51724 7.35264,
+8.27586 5.19480,
+11.03448 3.40992,
+13.79310 1.99800,
+16.55172 .95904,
+19.31034 .29304,
+22.06896 0,
+24.82758 .07992,
+27.58620 .53280,
+30.34482 1.35864,
+33.10344 2.55744,
+35.86206 4.12920,
+38.62068 6.07392,
+41.37931 8.39160,
+44.13793 11.08225,
+46.89655 14.14585,
+49.65517 17.58241,
+52.41379 21.39194,
+55.17241 25.57442,
+57.93103 30.12987,
+60.68965 35.05827,
+63.44827 40.35964,
+66.20689 46.03396,
+68.96551 52.08125,
+71.72413 58.50149,
+74.48275 65.29470,
+77.24137 72.46087,
+79.99999 79.99999
+)
+\figdrawend
+% 3. Writing text on the figure
+\figvisu{\figBoxA}{}{%
+\figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+% Points 1 and 2 are the end points of the arrows
+\figwritee 1:(5pt)     \figwriten 2:(5pt)
+\figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
+\figwriten 101: $y=x^2$(2)
+\figwrites 100: $y=x^3$(2)
+}
+\centerline{\box\figBoxA}
+\end{marginfigure}
+
 \fi 
 
 \begin{solution}
+	Two lines are parallel if their slopes are equal. And the slopes of the 
+	two tangents in question are given by
+	
+	\begin{align}
+		\dfrac{\ud x^2}{\ud x} &= 2x \\
+		\text{ and } \dfrac{\ud x^3}{\ud x} &= 3x^2 
+	\end{align}
+	
+	Which means, they are parallel when 
+	\begin{align}
+		2x &= 3x^2 \\
+		\Rightarrow x\cdot(3x-2) &= 0 \\
+		\Rightarrow x &= 0, \frac{2}{3}
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
