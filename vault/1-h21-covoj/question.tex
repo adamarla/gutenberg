@@ -25,24 +25,51 @@
 % 
 %   5. Ensure that there are *no spelling mistakes anywhere*. We are an 
 %      education company. Bad spellings suggest that we ourselves 
-%      don't have any education. And, use American spellings
+%      don't have any education. Also, use American spellings by default
+% 
+%   6. If a question has multiple parts, then first delete lines 40-41
+%   7. If a question does not have parts, then first delete lines 43-69
 
-\question[3]  Prove the following identity:
-\insertQR{QRC}
-	\begin{align}
-		\left(\dfrac{1+\sin\alpha}{1+\cos\alpha}\right)
-			\left(\dfrac{1+\sec\alpha}{1+\csc\alpha}\right)=\tan\alpha	\nonumber
-	\end{align}
+\question
+
+\insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
-\begin{solution}[\halfpage]
-	Looks easy enough, let's begin with the Left Hand Side(LHS),
-	\begin{align}
-		\text{LHS} &= \left(\dfrac{1+\sin\alpha}{1+\cos\alpha}\right)
-				 	  \left(\dfrac{1+\frac{1}{\cos\alpha}}{1+\frac{1}{\sin\alpha}}\right)\\
-			  	   &= \dfrac{\sin\alpha}{\cos\alpha}									 \\
-			  	   &= \tan\alpha
-	\end{align}
+
+\begin{solution}
 \end{solution}
+
+\begin{parts}
+  \part 
+
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+  \part 
+
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+  \part 
+
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+  \part 
+
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+  \part 
+
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+\end{parts}
