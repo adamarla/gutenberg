@@ -37,9 +37,9 @@
 \fi 
 
 \begin{parts}
-  \part How many people are in the auditorium when the concert begins?
-  \insertQR{}
-  \begin{solution}
+  \part[2] How many people are in the auditorium when the concert begins?
+  \insertQR{QRC}
+\begin{solution}[\halfpage]
     To find the total number of people in the auditorium when the concert begins, we need to integrate the Rate function $R(t)$ over time from $t=0$ to $t=2$. 
     \begin{align}
       \text{Number of people} &= \int_0^2 R(t)\ud t \\
@@ -49,9 +49,9 @@
     \end{align}
   \end{solution}
 
-  \part Find the time when the rate at which people enter the auditorium is a maximum. Justify your answer.
-  \insertQR{}
-  \begin{solution}
+  \part[2] Find the time when the rate at which people enter the auditorium is a maximum. Justify your answer.
+  \insertQR{QRC}
+\begin{solution}[\halfpage]
     The maxima (or minima) for a function would occur when its time derivative is zero or at the beginning or end of the function range $(0, 2)$. Let us compute the time derivate of $R(t)$ which is $R'(t)$.
     \begin{align}
       \text{R'(t)} &= 1380( \dfrac{\ud t^2}{\ud t})-675(\dfrac{\ud t^3}{\ud t}) \\
@@ -72,9 +72,10 @@
     The rate was highest at $t=1.36296$ hours.
   \end{solution}
 
-  \part The total wait time for all the people in the auditorium is found by adding the time each person waits, starting at the time the person enters the auditorium and ending when the concert begins. The function $w$ models the total wait time for all the people who enter the auditorium before time $t$. The derivative of $w$ is given by $w'(t)=(2-t)R(t)$. Find $w(2)-w(1)$, the total wait time for those who enter the auditorium after time $t=1$. 
-  \insertQR{}
-  \begin{solution}
+\newpage
+  \part[2] The total wait time for all the people in the auditorium is found by adding the time each person waits, starting at the time the person enters the auditorium and ending when the concert begins. The function $w$ models the total wait time for all the people who enter the auditorium before time $t$. The derivative of $w$ is given by $w'(t)=(2-t)R(t)$. Find $w(2)-w(1)$, the total wait time for those who enter the auditorium after time $t=1$. 
+  \insertQR{QRC}
+\begin{solution}[\halfpage]
     Let us begin by expanding $w'(t)$,
     \begin{align}
       w'(t) &= (2-t)R(t) \\
@@ -90,10 +91,10 @@
     The total wait time for those entering the auditorium after $t=1$ hour is $387.5$ hours.    
   \end{solution}
 
-  \part On average, how long does a person wait in the auditorium for the concert to begin? Consider all people who enter the auditorium after the doors open, and use the model for total wait time from part(c).
-  \insertQR{}
+  \part[2] On average, how long does a person wait in the auditorium for the concert to begin? Consider all people who enter the auditorium after the doors open, and use the model for total wait time from part(c).
+  \insertQR{QRC}
   \marginnote[5cm]{Borrowing result from part(c) Step 6}
-  \begin{solution}
+\begin{solution}[\halfpage]
     To find the average wait time we need to calculate the total wait time and divide it by the total number of people entering the auditorium. Let total wait time for all the people entering the auditorium be $T$.
     \begin{align}
       T &= \left[2760(\dfrac{t^3}{3})-2730(\dfrac{t^4}{4})+675(\dfrac{t^5}{5})\right]_0^2 \\
