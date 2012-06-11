@@ -30,7 +30,7 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question[5]
 \begin{fullwidth}
   My friend Fred has two urns - A and B - each containing colored balls. Urn A
   has 30\% brown, 20\% yellow, 20\% red, 10\% green, 10\% orange and 10\% tan 
@@ -41,7 +41,7 @@
   green. What is the probability that the yellow ball was from Urn A?
 \end{fullwidth}
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -62,7 +62,7 @@
   \end{table}
 \fi 
 
-\begin{solution}
+\begin{solution}[\fullpage]
    If $Y$ be the event that a yellow ball is drawn and $G$ the event that a green ball is 
    drawn, then the probability we seek is $P(Y_A \vert YG)$, where $YG$ is the event
    that a yellow and a green ball are drawn and $Y_A$ the event that the yellow ball is 
