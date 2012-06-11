@@ -31,45 +31,38 @@
 %   7. If a question does not have parts, then first delete lines 43-69
 
 \question
+\begin{fullwidth}
+	Suppose there are 2 bowls of cookies. Bowl A has 10 chocolate chip and 30 
+	plain cookies while Bowl B has 20 of each. Fred picks a bowl at random 
+	and from the picked bowl, a cookie at random. The cookie turns out to be 
+	a plain one. What is the probability that Fred picked it out of Bowl A?
+\end{fullwidth}
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
+	\begin{table}
+		\begin{tabular}{ccc}
+		   \toprule
+		   & A & B \\
+		   \midrule
+		   P(picks bowl $X$) & 0.5 & 0.5 \\
+		   P(plain cookie $\vert X$) & $\frac{30}{40} = 0.75$ & $\frac{20}{40} = 0.5$ \\
+		   P(chocolate cookie $\vert X$) & 0.25 & 0.5 \\
+		   \bottomrule
+		\end{tabular}
+	\end{table}
 \fi 
 
 \begin{solution}
+	If $P(A)$ and $P(B)$ be the probabilities that a cookie is picked from bowls A and B respectively,
+	then the probability we need is, 
+	
+	\begin{align}
+		P(A \vert plain) &= \dfrac{P(plain \vert A) \cdot P(A)}{P(plain)} \\
+		  &= \dfrac{P(plain \vert A) \cdot P(A)}{P(plain \vert A)\cdot P(A) + P(plain \vert B)\cdot P(B)} \\
+		  &= \dfrac{0.75 \times 0.5}{0.75\times 0.5 + 0.5\times 0.5} \\
+		  &= 0.6
+	\end{align}
+
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
