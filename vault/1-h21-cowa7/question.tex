@@ -30,7 +30,15 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+
+\question 
+\begin{fullwidth} An insurance company charges younger drivers a higher premium because younger drivers 
+as a group tend to have more accidents. The company has 3 age groups - Group A includes those
+under 25 years old, 22\% of all its policyholders. Group B includes those that are 25-39 years
+old,  43\% of its policyholders. Group C includes those over 40 years old and older. Company 
+records show that in any given \textit{1 year} period, 11\% of its Group A policyholders have 
+an accident. Figures for Groups B and C are 3\% and 2\% respectively
+\end{fullwidth}
 
 \insertQR{}
 
@@ -38,38 +46,45 @@
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part What percentage of the company's policyholders are expected to have an accident during 
+  the next 12 months?
 
   \insertQR{}
+  \ifprintanswers
+  	\begin{table}
+  	  \begin{tabular}{cccc}
+  	     \toprule
+  		 & A & B & C \\
+  		 \midrule
+  		 P($x \in X$) & 0.22 & 0.43 & 0.35 \\
+  		 P(accident $\vert x \in X$) & 0.11 & 0.03 & 0.02 \\
+  		 \bottomrule
+  		\end{tabular}
+  	\end{table}
+  \fi
   \begin{solution}
+  	If $P(E)$ be the probability of an accident occuring in the next 12 months and $P(A)$, $P(B)$
+  	, $P(C)$ the probabilities that a policyholder belongs to Group A, B or C respectively, then
+  	
+  	\begin{align}
+  		P(E) &= P(E \vert A)\cdot P(A) + P(E \vert B)\cdot P(B) + P(E \vert C)\cdot P(C) \\
+  		     &= 0.22 \times 0.11 + 0.43 \times 0.03 + 0.35 \times 0.02 \\
+  		     &= 0.0441 = 4.41\%
+  	\end{align}
   \end{solution}
 
-  \part 
+  \part Suppose Mr. X has just had a car accident. If he is one of the company's policyholders, 
+  then what is the probability that he is under 25?
 
   \insertQR{}
   \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
+      The probability we are seeking is $P(A\vert E)$, which Baye's theorem tells us would be
+      \begin{align}
+         P(A\vert E) &= \dfrac{P(E\vert A)\cdot P(A)}{P(E)} \\
+                     &= \dfrac{0.11 \times 0.22}{0.04} \\
+                     &= 0.55 = 55\%
+      \end{align}
   \end{solution}
 
 \end{parts}
