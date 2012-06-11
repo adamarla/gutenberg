@@ -31,45 +31,57 @@
 %   7. If a question does not have parts, then first delete lines 43-69
 
 \question
+\begin{fullwidth}
+  My friend Fred has two urns - A and B - each containing colored balls. Urn A
+  has 30\% brown, 20\% yellow, 20\% red, 10\% green, 10\% orange and 10\% tan 
+  colored balls. Urn B has 13\% brown, 14\% yellow, 13\% red, 20\% green,
+  16\% orange and 20\% blue balls. 
+  
+  Fred draws one ball each from each of the urns. They turn out to be yellow and
+  green. What is the probability that the yellow ball was from Urn A?
+\end{fullwidth}
 
 \insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+  \begin{table}
+    \begin{tabular}{ccc}
+       \toprule
+       & A & B \\
+       \midrule
+       Brown & 0.3 & 0.13 \\
+       Yellow & 0.2 & 0.14 \\
+       Red & 0.2 & 0.13 \\
+       Green & 0.1 & 0.2 \\
+       Orange & 0.1 & 0.16 \\
+       Tan & 0.1 & 0 \\
+       Blue & 0 & 0.2 \\
+       \bottomrule
+    \end{tabular}
+  \end{table}
 \fi 
 
 \begin{solution}
+   If $Y$ be the event that a yellow ball is drawn and $G$ the event that a green ball is 
+   drawn, then the probability we seek is $P(Y_A \vert YG)$, where $YG$ is the event
+   that a yellow and a green ball are drawn and $Y_A$ the event that the yellow ball is 
+   drawn from Urn A
+   
+   \begin{align}
+      P(Y_A \vert YG) &= \dfrac{P(YG \vert Y_A)\cdot P(Y_A)}{P(YG \vert Y_A)\cdot P(Y_A) + P(YG \vert Y_B)\cdot P(Y_B)}
+   \end{align}
+   
+   Now, $P(YG \vert Y_A) = P(G_B)$. Why? Because the only way to get a green and a yellow ball 
+   \textit{given that} the yellow ball is drawn from Urn A is to draw a green ball from Urn B.
+   
+   Similarly, $P(YG \vert Y_B) = P(G_A)$. And therefore, 
+   
+   \begin{align}
+       P(Y_A \vert YG) &= \dfrac{P(G_B)\cdot P(Y_A)}{P(G_B)\cdot P(Y_A) + P(G_A)\cdot P(Y_B)} \\
+                       &= \dfrac{0.2 \times 0.2}{0.2\times 0.2 + 0.1\times 0.14} \\
+                       &= 0.741 = 74.1\%
+   \end{align}
+   That is an unexpectedly high probability. But it is what it is.
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
