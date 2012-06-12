@@ -32,12 +32,8 @@ Tex := $(patsubst %.tex, %-answer.tex, $(Basename)) # 123-answer.tex
 Dvi := $(patsubst %.tex, %-answer.dvi, $(Basename)) # 123-answer.dvi
 Ps := $(patsubst %.tex, %-answer.ps, $(Basename)) # 123-answer.ps
 Pdf := $(patsubst %.tex, %-answer.pdf, $(Basename)) # 123-answer.pdf
-Thumb := $(patsubst %.tex, %-thumb.jpeg, $(Basename)) # 123-thumb.jpeg
-Preview := $(patsubst %.tex, %-answer.jpeg, $(Basename)) # 123-answer.jpeg
 
-PHONY : preview 
-
-preview : $(Pdf)
+page-1.jpeg : $(Pdf)
 	@echo "[ pdf -> preview ]"
 	@gs -dNOPAUSE -dBATCH -sDEVICE=jpeg -r700 -sOutputFile=page-%d.jpeg $^
 	@for f in `ls page-*.jpeg`; do convert $$f -resize 600x800 $$f ; done 
