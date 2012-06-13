@@ -30,46 +30,43 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question \begin{fullwidth} A couple has two children. Find the probability that both 
+the children are girls if \end{fullwidth}
 
 \insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+  \begin{table}
+  	\begin{tabular}{ccc}
+  	   \toprule
+  	   Combination & First child & Second child \\
+  	   \midrule
+  	   1 & Girl & Girl \\
+  	   2 & Girl & Boy \\
+  	   3 & Boy & Girl \\
+  	   4 & Boy & Boy \\
+  	   \bottomrule
+  	\end{tabular}
+  \end{table}
 \fi 
 
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part Atleast one child is a girl
 
   \insertQR{}
   \begin{solution}
+     Which means that combinations 1,2 and 3 are the only possible outcomes. And of these, 
+     only the first combination is a favorable outcome. Therefore, the required probability
+     is $\dfrac{1}{3}$
   \end{solution}
 
-  \part 
+  \part The older child is a girl 
 
   \insertQR{}
   \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
+     If the first child was a girl, then our set of possible outcomes is down to just
+     the first two. And therefore, the required probability is $\dfrac{1}{2}$
   \end{solution}
 
 \end{parts}
