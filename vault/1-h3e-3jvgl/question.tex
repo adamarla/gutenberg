@@ -30,46 +30,59 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question In the figure alongside, $PQRS$ is the diameter of a circle with radius 6cm.
+The lengths $PQ$, $QR$ and $RS$ are equal. Semi-circles are drawn on $PQ$ and $QS$ as diameters.
+Find the area of the shaded region $A$
 
 \insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
+\begin{marginfigure}
+
+  \figinit{pt}
+    \figpt 100: $O$(45,0)
+    \figpt 101: $P$(0,0)
+    \figpt 102: $Q$(30,0)
+    \figpt 103: $R$(60,0)
+    \figpt 104: $S$(90,0)
+    \figpt 105: $M$(15,0)
+  \figdrawbegin{}
+    %\figdrawcirc 100 (45)
+    \figset (fillmode=yes,color=0.7)
+    \figdrawarccirc 100 ; 45 (0,180)
+    \figdrawarccirc 105 ; 15 (180,360)
+    \figset (fillmode=no)
+    \figdrawarccirc 100 ; 45 (180,360)
+    \figset (fillmode=yes,color=1)
+    \figdrawline [101,102,103,104]
+    \figdrawarccirc 103 ; 30 (0,180)
+  \figdrawend
+  % 3. Writing text on the figure
+  \figvisu{\figBoxA}{}{%
+    \figset write (mark=$\bullet$)
+    \figwrites 100:(2)
+    \figwritew 101:(2)
+    \figwrites 102:(2)
+    \figwrites 103:(2)
+    \figwritee 104:(2)
+  }
+  \centerline{\box\figBoxA}
+
+\end{marginfigure}
 
 \begin{solution}
+	\begin{align}
+		PS &= 2\times OP = \text{12 cm} \\
+		\therefore PQ &= QR = RS \Rightarrow PQ = QR = RS = \text{4 cm}
+	\end{align}
+	
+	And hence, the required area $A$ is
+	\begin{align}
+		A &= \dfrac{1}{2}\pi\dfrac{PS^2}{4} + \dfrac{1}{2}\pi\dfrac{PQ^2}{4} 
+		- \dfrac{1}{2}\pi\dfrac{QS^2}{4} \\
+		&= \dfrac{\pi}{8}\cdot\left( 12^2 + 4^2 - 8^2\right) \\
+		&= 12\pi \text{cm}^2
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
