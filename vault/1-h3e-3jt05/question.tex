@@ -33,27 +33,26 @@
 \question \begin{fullwidth} In a shipment of 100 television sets, 5 are defective. If a person picks 
 \textit{two} sets from this shipment, then \end{fullwidth}
 
-\insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
 \begin{parts}
-  \part What is the probability that \textit{both} sets are defective?
+  \part[1] What is the probability that \textit{both} sets are defective?
 
-  \insertQR{}
-  \begin{solution}
+  \insertQR{QRC}
+\begin{solution}[\mcq]
      \begin{align}
         P(\text{both defective}) &= P(\text{first defective})\cdot P(\text{second defective}) \\
                   &= \dfrac{5}{100} \cdot \dfrac{4}{99} = \dfrac{1}{495}
      \end{align}
   \end{solution}
 
-  \part What is the probability that \textit{just one} set is defective?
+  \part[2] What is the probability that \textit{just one} set is defective?
 
-  \insertQR{}
-  \begin{solution}
+  \insertQR{QRC}
+\begin{solution}[\halfpage]
     \begin{align}
        P(\text{just one defective}) &= 
        \underbrace{\dfrac{95}{100}\cdot\dfrac{5}{99}}_{\text{first ok, second defective}} + 
