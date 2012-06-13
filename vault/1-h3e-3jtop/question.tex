@@ -30,12 +30,12 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question A box has 3 drawers; one contains 2 gold coins, one contains two silver coins
+\question[2] A box has 3 drawers; one contains 2 gold coins, one contains two silver coins
 and one contains one gold and one silver coin. If a drawer is selected randomly 
 and the one coin picked from it turns out to be gold, then what is the probability
 that the coin was picked from the drawer with two gold coins? 
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -51,7 +51,7 @@ that the coin was picked from the drawer with two gold coins?
   \end{table}
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
     The probability we are seeking is $P(A \vert G)$, where $G$ is the event of drawing
     a gold coin
     
