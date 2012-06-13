@@ -30,18 +30,18 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question A school offers two courses to its students - French and Computer Science. 
+\question[2] A school offers two courses to its students - French and Computer Science. 
 15\% of the students take both while 65\% take just the French class. What then is
 the probability that a randomly picked student is taking Computer Science given
 that she is already taking French?
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
    If $P(F)$ be the probability that a students takes French and $P(C)$ the 
    probability that she takes Computer Science, then we are looking to find 
    $P(C \vert F)$, which we know is given by
