@@ -30,12 +30,12 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question There are three boxes: box X has 10 bulbs of which 4 are defective, 
+\question[3] There are three boxes: box X has 10 bulbs of which 4 are defective, 
 box Y has 6 bulbs of which 1 is defective and box Z has 8 bulbs of which 3 are defective. 
 A box is chosen at random and a bulb drawn from it. If the bulb is \textit{not} defective,
 then what is the probability that it came from box Z?
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -51,7 +51,7 @@ then what is the probability that it came from box Z?
   \end{table}
 \fi 
 
-\begin{solution}
+\begin{solution}[\fullpage]
    The probability we are seeking is $\bayesp{Z}{\textoverline{D}}$, where $\overline{D}$ 
    is the event that a bulb is \textit{not} defective
    
