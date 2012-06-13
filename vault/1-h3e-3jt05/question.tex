@@ -30,7 +30,8 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question \begin{fullwidth} In a shipment of 100 television sets, 5 are defective. If a person picks 
+\textit{two} sets from this shipment, then \end{fullwidth}
 
 \insertQR{}
 
@@ -38,38 +39,37 @@
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part What is the probability that \textit{both} sets are defective?
 
   \insertQR{}
   \begin{solution}
+     \begin{align}
+        P(\text{both defective}) &= P(\text{first defective})\cdot P(\text{second defective}) \\
+                  &= \dfrac{5}{100} \cdot \dfrac{4}{99} = \dfrac{1}{495}
+     \end{align}
   \end{solution}
 
-  \part 
+  \part What is the probability that \textit{just one} set is defective?
 
   \insertQR{}
   \begin{solution}
+    \begin{align}
+       P(\text{just one defective}) &= 
+       \underbrace{\dfrac{95}{100}\cdot\dfrac{5}{99}}_{\text{first ok, second defective}} + 
+       \overbrace{\dfrac{5}{100}\cdot\dfrac{95}{99}}^{\text{first defective, second ok}} \\
+       &= \dfrac{19}{198}
+    \end{align}
+    
+    Alternatively, one could also say that,
+    \begin{align}
+       P(\text{none defective}) &+ P(\text{one defective}) + P(\text{both defective}) = 1\\
+       \Rightarrow P(\text{one defective}) &= 1 - P(\text{none defective}) 
+                                                              - P(\text{both defective}) \\
+                       &= 1 - \dfrac{95}{100}\cdot\dfrac{94}{99} - \dfrac{1}{495} \\
+                       &= \dfrac{19}{198}
+    \end{align}
   \end{solution}
 
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
 
 \end{parts}
