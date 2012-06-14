@@ -30,40 +30,46 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question A cyclist covered a distance of 96 km two hours faster than he assumed. Every hour
-he travelled 1 km more than he intended to in 1h 15min. What was his speed?
+\question
 
 \insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{table}
-  	\begin{tabular}{cccc}
-  	    \toprule
-  		& Speed (km/h) & Number of 1-hour periods & Distance covered \\
-  		\midrule
-  		Normally & $s$ & $N$ & 96 \\
-  		Now & $\frac{5}{4}s + 1$ & $N-2$ & 96 \\
-  		\bottomrule
-  	
-  	\end{tabular}
-  \end{table}
 \fi 
 
 \begin{solution}
-	If $s$ be the cyclist's speed on any other day, then this time around he was 
-	travelling at $\left(\dfrac{75\text{ min}}{60\text{ min}}s + 1\right) \text{km/hour} = \left(\dfrac{5}{4}s + 1\right)$.
-	
-	The second insight is that 
-	
-	\begin{align}
-		s\cdot N &= \left( \dfrac{5}{4}s + 1 \right)\cdot (N-2) = 96\text{ km} \\
-		\Rightarrow \dfrac{5}{4}sN - \dfrac{5}{2}s + N - 2 &= 96 \\
-		\dfrac{5}{4}\cdot 96 - \dfrac{5}{2}s + \dfrac{96}{s} - 2 &= 96 \\
-		\Rightarrow 5s^2 - 44s - 192 &= 0 \\
-		\Rightarrow s &= \dfrac{44\pm\sqrt{44^2-4\cdot 5 \cdot (-192)}}{2\cdot 5} \\
-		              &= 12,\, -3.2
-	\end{align}
-	Speed can only be positive and hence the cyclist's normal speed is $s = 12$ km per hour.
-	And this time around, it was $\frac{5}{4}\cdot 12 + 1 = 16$ km per hour
 \end{solution}
+
+\begin{parts}
+  \part 
+
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+  \part 
+
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+  \part 
+
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+  \part 
+
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+  \part 
+
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+\end{parts}

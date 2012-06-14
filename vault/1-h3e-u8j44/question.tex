@@ -30,46 +30,58 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question[3] A 1.5m tall girl is standing some distance from a 30m tall tall building.
+The angle of elevation from her eyes to to the top of the tower changes from $\ang{30}$
+to $\ang{60}$ as she walks towards the building. Find the distance she walked towards the building
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+  \begin{marginfigure}
+    \figinit{pt}
+      \figpt 100: $A$(0,0)
+      \figpt 101: $B$(35,0)
+      \figpt 102: $C$(90,0)
+      \figpt 103: $G$(90,45)
+      \figpt 104: $D$(90,70)
+      \figpt 105: $F$(35,45)
+      \figpt 106: $E$(0,45)
+    \figdrawbegin{}
+      \figdrawline [100,101,102,103,105,106,100]
+      \figdrawline [101,105,104,106]
+      \figdrawline [103,104]
+      \figdrawarccircP 106 ; 12 [105,104] 
+      \figdrawarccircP 105 ; 12 [103,104] 
+    \figdrawend
+    \figvisu{\figBoxA}{}{%
+      \figwrites 100:(2)
+      \figwrites 101:(2)
+      \figwrites 102:(2)
+      \figwritee 103:(2)
+      \figwritee 104:(2)
+      \figwritese 105:(4)
+      \figwritese 106:(2)
+    }
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
+	The situation is \asif. The distance covered by the girl is $EF = EG - FG$, where
+	\begin{align}
+		\tan\angle{DEG} = \tan\ang{30} &= \dfrac{DG}{EG} \\
+		\Rightarrow EG &= \dfrac{DG}{\tan\ang{30}} \\
+		\text{And, }\tan\angle{DFG} = \tan\ang{60} &= \dfrac{DG}{FG} \\
+		\Rightarrow FG &= \dfrac{DG}{\tan\ang{60}}
+	\end{align}
+	
+	Now, $DG =$ (height of the building - girl's height) $= 30 - 1.5 = 28.5m$. And therefore, 
+	
+	\begin{align}
+		EF = EG - EF &= 28.5\cdot\left(\dfrac{1}{\tan\ang{30}} - \dfrac{1}{\tan\ang{60}}\right) \\
+		&= 32.91 \text{ meters}
+	\end{align}
+	
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

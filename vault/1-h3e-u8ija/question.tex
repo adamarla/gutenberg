@@ -30,46 +30,52 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question[2] A tower and a building stand opposite each other. If the angle of elevation
+from the bottom of the tower to the top of the building is $\ang{30}$ and the angle
+of elevation from the bottom of the building to the top of the tower is $\ang{60}$, then
+what is the height of the building given that the tower is 50 meters tall
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+  \begin{marginfigure}
+    \figinit{pt}
+      \figpt 100: $A$(0,0)
+      \figpt 101: $B$(70,0)
+      \figpt 102: $N$(70,50)
+      \figpt 103: $M$(0,25)
+      \figpt 104: $F$(65,45)
+      \figpt 105: $H_{tower} = 50m$(67,25)
+      \figpt 106: $\ang{30}$(55,5)
+      \figpt 107: $\ang{60}$(10,5)
+    \figdrawbegin{}
+      \figdrawline [100,101,102,100]
+      \figdrawline [101,103,100]
+      \figdrawarccircP 100 ; 12 [101,102] 
+      \figdrawarccircP 101 ; 12 [103,100] 
+    \figdrawend
+    \figvisu{\figBoxA}{}{%
+      \figwrites 100:(2)
+      \figwrites 101:(2)
+      \figwritee 102:(2)
+      \figwritew 103:(2)
+      \figwritee 105:(4)
+      \figwritew 106:(2)
+      \figwritee 107:(2)
+    }
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
+	The situation is \asif. And one can see that,
+	
+	\begin{align}
+		AB = \dfrac{BN}{\tan\ang{60}} &= \dfrac{AM}{\tan\ang{30}} \\
+		\Rightarrow \dfrac{AM}{BN} &= \dfrac{\tan\ang{30}}{\tan\ang{60}} \\
+		\Rightarrow AM &= BN\cdot\dfrac{\frac{1}{\sqrt{3}}}{\sqrt{3}} = \dfrac{BN}{3} \\
+		               &= \dfrac{50}{3} = 16\frac{2}{3}\text{ meters}
+	\end{align}
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

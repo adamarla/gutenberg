@@ -30,46 +30,52 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question[2] An aircraft at an altitude of $200$m above a river observes that the angle 
+of depression of two points on opposite banks are $\ang{45}$ and $\ang{60}$ respectively.
+Find, in meters, the width of the river
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+  \begin{marginfigure}
+    \figinit{pt}
+      \figpt 100: $B$(0,0)
+      \figpt 101: $C$(30,0)
+      \figpt 102: $D$(80,0)
+      \figpt 103: $A$(30,60)
+      \figpt 104: $M$(0,60)
+      \figpt 105: $N$(80,60)
+      \figpt 106: $\ang{45}$(39,50) % angle labels
+      \figpt 107: $\ang{60}$(20,48)
+    \figdrawbegin{}
+      \figdrawline [100,103,102,101,100]
+      \figdrawline [103,101]
+      \figdrawline [104,105]
+      \figdrawarccircP 103 ; 10 [102,105] 
+      \figdrawarccircP 103 ; 10 [104,100] 
+      \figdrawarccircP 103 ; 12 [104,100] 
+    \figdrawend
+    \figvisu{\figBoxA}{}{%
+      \figwrites 100:(2)
+      \figwrites 101:(2)
+      \figwrites 102:(2)
+      \figwriten 103:(2)
+      \figwritee 106:(2)
+      \figwritew 107:(2)
+    }
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
+  If the angles of depression are \asif, then $\angle{BAC} = \ang{30}$ and $\angle{DAC} = \ang{45}$.
+  And therefore, the width of the river is, 
+  
+  \begin{align}
+  	BD = BC + CD &= AC\cdot\tan\angle{BAC} + AC\cdot\tan\angle{DAC} \\
+  	  &= \text{200m}\cdot\left( \tan\ang{30} + \tan\ang{45} \right) \\
+  	  &= \text{200m}\cdot\left( \dfrac{1}{\sqrt{3}} + 1\right) \\
+  	  &= 315.47\text{m}
+  \end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
