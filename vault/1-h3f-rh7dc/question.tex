@@ -30,7 +30,12 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Two people started simultaneously towards each other from points $A$ and $B$ which 
+are 50 km apart. They met 5 hours later. After their meeting, the first person, who travelled 
+from $A$ to $B$ decreased his speed by 1km per hour on the way back. The second person, 
+on the other hand, increased his speed by 1 km per hour on the way back. The first person 
+is known to arrive back at $A$ 2 hours \textit{after} the second person arrives back at $B$. What is 
+the first person's \textit{initial} speed?
 
 \insertQR{}
 
@@ -39,37 +44,30 @@
 \fi 
 
 \begin{solution}
+	If $s_1$ and $s_2$ be the speeds of the first and second person respectively and they
+	meet at some point $X$ in the middle, then 
+	
+	\begin{align}
+		\dfrac{AX}{s_1} &= \dfrac{BX}{s_2} = 5\text{ hours} \\
+		\Rightarrow AX &= 5\cdot s_1 \\
+		\text{and, } \dfrac{\overbrace{50-AX}^{BX}}{s_2} = \dfrac{50-5\cdot s_1}{s_2} &= 5 \Rightarrow s_1 + s_2 = 10
+	\end{align}
+	
+	On the way back, 
+	\begin{align}
+		\dfrac{AX}{s_1 - 1} - \dfrac{BX}{s_2 + 1} &= 2\text{ hours} \\
+		\Rightarrow \dfrac{5s_1}{s_1 - 1} - \dfrac{50 - 5s_1}{s_2} &= 2 \\
+		\Rightarrow \dfrac{5s_1}{s_1 - 1} - \dfrac{50 - 5s_1}{10-s_1+1} &= 2 \\
+		(55s_1 - 5s_1^2) - 5\cdot(10-s_1)\cdot(s_1-1) &= 2\cdot(s_1-1)\cdot(11-s_1)
+	\end{align}
+	
+	The above reduces to 
+	\begin{align}
+		2s_1^2 - 24s_1 + 72 &= 0 \\
+		\text{or, }s_1^2 -12s_1 + 36 &= 0 \\
+		\Rightarrow s_1 &= \dfrac{12\pm\sqrt{12^2 - 4\cdot 1 \cdot 36}}{2} \\
+		                &= 6\text{ km per hour}
+	\end{align}
+	
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
