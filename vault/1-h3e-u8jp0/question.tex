@@ -30,10 +30,10 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question A cyclist covered a distance of 96 km two hours faster than he assumed. Every hour
+\question[5] A cyclist covered a distance of 96 km two hours faster than he assumed. Every hour
 he travelled 1 km more than he intended to in 1h 15min. What was his speed?
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -50,7 +50,7 @@ he travelled 1 km more than he intended to in 1h 15min. What was his speed?
   \end{table}
 \fi 
 
-\begin{solution}
+\begin{solution}[\fullpage]
 	If $s$ be the cyclist's speed on any other day, then this time around he was 
 	travelling at $\left(\dfrac{75\text{ min}}{60\text{ min}}s + 1\right) \text{km/hour} = \left(\dfrac{5}{4}s + 1\right)$.
 	
