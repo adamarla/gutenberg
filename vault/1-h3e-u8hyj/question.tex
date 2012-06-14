@@ -30,46 +30,54 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question The angle of elevation of an aircraft flying at an altitude of 1km 
+is $\ang{60}$ initially and $\ang{30}$ 10 seconds later. What is the speed of the
+aircraft in kilometers per hour? The aircraft maintains its altitude for the 10 seconds
 
 \insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+  \begin{marginfigure}
+    \figinit{pt}
+      \figpt 100: $A$(0,0)
+      \figpt 101: $B$(25,0)
+      \figpt 102: $C$(65,0)
+      \figpt 103: $E$(25,45)
+      \figpt 104: $F$(65,45)
+    \figdrawbegin{}
+      \figdrawline [100,101,102,104,103,100]
+      \figdrawline [100,103]
+      \figdrawline [100,104]
+      \figdrawline [103,101]
+      \figdrawarccircP 100 ; 10 [101,103] 
+      \figdrawarccircP 100 ; 12 [101,104] 
+    \figdrawend
+    \figvisu{\figBoxA}{}{%
+      \figwrites 100:(2)
+      \figwrites 101:(2)
+      \figwrites 102:(2)
+      \figwriten 103:(2)
+      \figwriten 104:(2)
+    }
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	The situation is as \asif. And in the 10 seconds, the aircraft covers 
+	a distance given by, 
+	
+	\begin{align}
+		BC = AC - AB &= FC\cdot\dfrac{1}{\tan\angle{FAC}} - EB\cdot\dfrac{1}{\tan\angle{EAB}}
+	\end{align}
+	
+	As the aircraft maintains its altitude, $EB = FC = 1km$. And therefore, 
+	\begin{align}
+		BC &= \text{1 km}\cdot\left(\cot\angle{FAC} - \cot\angle{EAB}\right) \\
+		   &= \text{1 km}\cdot\left(\cot\ang{30} - \cot\ang{60}\right) \\
+		   &= \dfrac{2}{\sqrt{3}}\text{km} \\
+		\Rightarrow \text{Speed} &= \dfrac{\frac{2}{\sqrt{3}}\text{km}}{10\text{s}}\cdot 3600\dfrac{\text{s}}{\text{hour}} \\
+		   &= 415.7\text{ km per hour}
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
