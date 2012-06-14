@@ -30,46 +30,31 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question The sum of the three terms of a geometric progression is $35$ whereas the sum of the squares of its terms is $525$. Find the terms?
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
 \begin{solution}
+  Let the terms of the series of $\dfrac{a}{r}$, $a$ and $ar$. Based on the conditions specified in the question we can construct the following equations,
+  \begin{align}
+    \dfrac{a}{r} + a + ar           &= 35 \\
+    (\dfrac{a}{r})^2 + a^2 + (ar)^2 &= 525
+  \end{align}
+  We can re-write equation (2) from above as follows,
+  \begin{align}
+    a^2(\dfrac{1}{r^2} + 1 + r^2)                            &= 525 \\
+    a^2((\dfrac{1}{r} + 1 + r)^2 - 2(\dfrac{1}{r} + 1 + r))  &= 525 \\
+    (a(\dfrac{1}{r} + 1 + r))^2 - 2a^2(\dfrac{1}{r} + 1 + r) &= 525
+  \end{align}  
+  Using the result from equation (1) in equation (5),
+  \begin{align}
+    35^2 - 2a(35) &= 525 \\
+    a             &= 10
+  \end{align}
+  Replacing this result in equation (1), we get the common ratio as $2$ (or $\dfrac{1}{2}$) and the terms of the series as $5$, $10$ and $20$.
+  
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
