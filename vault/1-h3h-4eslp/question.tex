@@ -30,54 +30,33 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question A 2-digit number id such that the product of its digits is 20. If 9 
+is added to the number, then its digits interchange their places. What is the 
+number? 
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-    \figdrawbegin{}
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
+  % stuff to be shown 
 \fi 
 
 \begin{solution}
+	If $x$ and $y$ be the two digits in the units and tens place respectively, then
+	\begin{align}
+		\text{ Number } &= 10\cdot y + x 
+	\end{align}
+	With the digits interchanged, the \textit{new} number is 
+	\begin{align}
+		\text{New number } &= 10\cdot x + y \\
+		                   &= (10\cdot y + x) + 9 \\
+		   \Rightarrow x - y &= 1
+	\end{align}
+	Given that $xy = 20$, the above reduces to 
+	\begin{align}
+		x - \dfrac{20}{x} &= 1 \\
+		\Rightarrow x^2 - x - 20 &= 0 \\
+		\text{or, } x &= -4, 5 \Rightarrow y = \dfrac{20}{x} = -5, 4
+	\end{align}
+	The two possible numbers - yes, there would be two - are $10\cdot4 + 5 = 45$ 
+	and $10\cdot (-5) + (-4) = -54$
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
