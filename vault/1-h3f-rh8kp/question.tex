@@ -30,11 +30,11 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question Imagine a rectangular field 16 m long and 10 m wide. And now you want
+\question[2] Imagine a rectangular field 16 m long and 10 m wide. And now you want
 to build a tiled walking track - of constant width - around it. But you have enough 
 money to buy only 120 sq. meters of tile. How wide can you make the track then?
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -72,7 +72,7 @@ money to buy only 120 sq. meters of tile. How wide can you make the track then?
   \end{marginfigure}
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
   The situation is \asif. The shaded portion is the walking track and $EFGH$ is the field
 
   Now, if $d$ be the (constant) width of the walking track, then
