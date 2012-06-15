@@ -30,17 +30,17 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question A 2-digit number is such that the product of its digits is 20. If 9 
+\question[2] A 2-digit number is such that the product of its digits is 20. If 9 
 is added to the number, then its digits interchange their places. What is the 
 number? 
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown 
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
 	If $x$ and $y$ be the two digits - in the units and tens places respectively - then
 	\begin{align}
 		\text{ Number } &= 10\cdot y + x 
