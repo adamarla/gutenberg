@@ -30,7 +30,7 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Find the sum of an infinitely decreasing geometric progression if thesum the first three terms is $3$ and the sum of the first three odd terms is $\dfrac{21}{4}$.
 
 \insertQR{}
 
@@ -39,37 +39,23 @@
 \fi 
 
 \begin{solution}
+  Let the progression have initial term $a$ and common ration $r$. From the question statement we know that,
+  \begin{align}
+    a+ar+ar^2   &= 3 \\
+    a+ar^2+ar^4 &= \dfrac{21}{4}
+  \end{align}
+  Rewrite equation (2) as follows,
+  \begin{align}
+    a(1+r^2+r^4)               &= \dfrac{21}{4} \\
+	a((1+r+r^2)^2-2r(1+r+r^2)) &= \dfrac{21}{4}
+  \end{align}
+  Using equation (1) and (4)
+  \begin{align}
+    a((\dfrac{3}{a})^2-2r(\dfrac{3}{a}) &= \dfrac{21}{4} \\
+    \dfrac{3}{a}-2r                     &= \dfrac{7}{4} \\
+    r(1+r+r^2-2r)                       &= 7 \\
+    r                                   &= -\dfrac{1}{2},\dfrac{3}{2}
+  \end{align}
+  Common ratio $\dfrac{3}{2}$ is rejected as it will not result in a converging series. Substituting common ratio $-\dfrac{1}{2}$ in equation (1), we get initial term as $\dfrac{8}{3}$.
+
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

@@ -30,7 +30,7 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question The sum terms of a converging geometric progression is $\dfrac{3}{2}$. The sum of squares of the same series is $\dfrac{1}{8}$. Find the initial term and common ratio of the progression.
 
 \insertQR{}
 
@@ -39,37 +39,26 @@
 \fi 
 
 \begin{solution}
+  The sum of terms of an infinite converging geometric series with first term $a$ and common ration $r$ is given by,
+  \begin{align}
+    S &= \dfrac{a}{1-r}
+  \end{align}
+  Sum of squares of the same series would be,
+  \begin{align}
+    S_{sq} &= \dfrac{a^2}{1-r^2}
+  \end{align}
+  Substituting the given data in the above results we get,
+  \begin{align}
+    \dfrac{3}{2} &= \dfrac{a}{1-r} \\
+    \dfrac{1}{8} &= \dfrac{a^2}{1-r^2}
+  \end{align}  
+  Take square on both sides of equation (3) and divide by equation (4),
+  \begin{align}
+    \dfrac{72}{4} &= \dfrac{a^2}{(1-r)^2}\dfrac{1-r^2}{a^2} \\
+    18            &= \dfrac{1+r}{1-r} \\
+    r             &=1,\dfrac{17}{19}
+  \end{align}
+  Ignoring result $r=1$ we get common ratio $r=\dfrac{17}{19}$ and initial term $a=\dfrac{3}{19}$.
+
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
