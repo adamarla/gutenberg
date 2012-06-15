@@ -30,17 +30,17 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question 300 apples are distributed equally amongst a certain number of students. 
+\question[1] 300 apples are distributed equally amongst a certain number of students. 
 Had there been 10 more students, each would have got one apple less. How many students
 are there? 
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
 	If $N$ be the number of students, then each would get $\dfrac{300}{N}$ apples. 
 	With 10 more students, each would get $\dfrac{300}{N+10}$ apples. And so if, 
 	
