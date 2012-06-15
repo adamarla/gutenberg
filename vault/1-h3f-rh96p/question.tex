@@ -30,7 +30,9 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Two pipes - $A$ and $B$ - when used together can fill a tank in 6 minutes.
+Individually, however, pipe $A$ takes 5 minutes longer than pipe $B$ to fill the same
+tank. Find the times then that each pipe takes individually
 
 \insertQR{}
 
@@ -39,37 +41,18 @@
 \fi 
 
 \begin{solution}
+	If $R_A$ and $R_B$ be the rates - expressed in unit volume/minute - at which the two
+	operate individually and $T_A$ and $T_B$ the times they take to fill the tank, then
+	where is what we know
+	\begin{align}
+		T_A &= \dfrac{V_{tank}}{R_A} \Rightarrow R_A = \dfrac{V_{tank}}{T_A}\\
+		T_B &= \dfrac{V_{tank}}{R_B} \Rightarrow R_B = \dfrac{V_{tank}}{T_B}\\
+		T_A &= T_B + 5\text{ minutes} \\
+		6\text{ minutes} &= \dfrac{V_{tank}}{R_A + R_B} \\
+		\Rightarrow 6 &= \dfrac{V_{tank}}{V_{tank}\cdot\left(\dfrac{1}{T_B + 5} + \dfrac{1}{T_B}\right)} \\
+		\Rightarrow T_B^2 - 7T_B - 30 &= 0 \\
+		\Rightarrow T_B &= -3, 10
+	\end{align}
+	
+	Ignoring $T_B = -3$, we get $T_B = 10\text{ minutes}$ and $T_A = T_B + 5 = 15\text{ minutes}$
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
