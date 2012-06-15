@@ -30,7 +30,9 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question 300 apples are distributed equally amongst a certain number of students. 
+Had there been 10 more students, each would have got one apple less. How many students
+are there? 
 
 \insertQR{}
 
@@ -39,37 +41,13 @@
 \fi 
 
 \begin{solution}
+	If $N$ be the number of students, then each would get $\dfrac{300}{N}$ apples. 
+	With 10 more students, each would get $\dfrac{300}{N+10}$ apples. And so if, 
+	
+	\begin{align}
+		\dfrac{300}{N} - \dfrac{300}{N+10} &= 1 \\
+		\text{then, } N^2 + 10N - 3000 &= 0 \\
+		\Rightarrow N &= 50, -60
+	\end{align}
+	$N = -60$ does not make sense. And therefore $N=50$
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
