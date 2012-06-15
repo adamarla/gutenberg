@@ -30,15 +30,15 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question Differentiate $y = (x^2-3x+3)(x^2+2x-1)$
+\question[1] Differentiate $y = (x^2-3x+3)(x^2+2x-1)$
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
 	\begin{align}
 		\dydx &= (x^2-3x+3)\cdot\dfrac{\ud}{\ud x}(x^2+2x-1) + 
 		         (x^2+2x-1)\dfrac{\ud}{\ud x}(x^2-3x+3) \\
