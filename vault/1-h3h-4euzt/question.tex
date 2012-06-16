@@ -30,54 +30,19 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Evaluate the integral $\int\dfrac{x^2}{x-1}\ud x$
 
 \insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-    \figdrawbegin{}
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	\begin{align}
+		\int\dfrac{x^2}{x-1}\ud x &= \int\dfrac{x^2-1+1}{x-1}\ud x \\
+		&= \int\dfrac{(x-1)\cdot(x+1)}{x-1}\ud x + \int\dfrac{\ud x}{x-1} \\
+		&= \int(x+1)\ud x + \ln(x-1) + C \\
+		&= \dfrac{x^2}{2} + x + \ln(x-1) + C
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
