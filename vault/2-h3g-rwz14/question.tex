@@ -30,7 +30,7 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question A tank of capacity $2400m^3$ is full of water. The rate at which water discharges from the tank is $10m^3/min$ higher than the rate at which it fills. As a result it takes $8min$ more to fill the tank than it takes to empty it. Find the rate at which the tank fills?
 
 \insertQR{}
 
@@ -39,37 +39,28 @@
 \fi 
 
 \begin{solution}
+
+  Let the rate at which the tank fulls be $r_f(m^3/min)$ and the rate at which it empties be $r_e(m^3/min)$. As per the question,
+  \begin{align}
+    r_f(m^3/min) = r_e(m^3/min) - 10(m^3/min)
+  \end{align}
+  
+  Time it takes to empty $t_{empty}$ and time to fill $t_{fill}$ will be,
+  \begin{align}
+    t_{fill(min)}  &= \dfrac{2400(m^3)}{r_f(m^3/min)} \\
+    t_{empty(min)} &= \dfrac{2400(m^3)}{r_e(m^3/min)} \\    
+  \end{align}
+  
+  Since it takes $8min$ less to empty than it takes to fill,
+  \begin{align}
+    t_{fill}(min)                   &= t_{empty}(min)+8(min) \\
+    \dfrac{2400(m^3)}{r_f(m^3/min)} &= 
+    	\dfrac{2400(m^3)}{r_e(m^3/min)}+8(min) \\
+    \dfrac{2400}{r_f}               &= \dfrac{2400}{r_e}+8 \\
+    \dfrac{2400}{r_f}               &= \dfrac{2400}{r_f+10}+8 \\
+    r_f^2 + 10r_f - 3000            &= 0 \\
+    r_f                             &= 50, -60
+  \end{align}
+  Negative value is rejected, rate at which the tank fills is $50(m^3/min)$.
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
