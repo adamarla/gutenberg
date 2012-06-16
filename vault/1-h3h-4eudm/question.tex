@@ -30,54 +30,130 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question A figure bounded by arcs of the parabolas $y=x^2$ and $y^2=x$ rotates
+about the $x-axis$. Compute the volume of the solid thus generated
 
 \insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
   \begin{marginfigure}
-    \figinit{pt}
-    \figdrawbegin{}
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
+% 1. Definition of characteristic points
+\figinit{pt}
+\def\Xmin{0}
+\def\Ymin{0}
+\def\Xmax{60.00000}
+\def\Ymax{79.99999}
+\def\Xori{0}
+\def\Yori{0}
+\figpt0:(\Xori,\Yori)
+\figpt 100:$y^2=x$(60,42)
+\figpt 101:$y=x^2$(60,80)
+\figpt 102:$x_2$(8.3,16)
+\figpt 103:$x_1$(27,16)
+% 2. Creation of the graphical file
+\figdrawbegin{}
+\def\Xmaxx{\Xmax} % To customize the position
+\def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
+\figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
+\figdrawaxes 0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+\figdrawline [102,103]
+\figdrawlineC( % y^2 =x
+0 0,
+2.06896 8.08637,
+4.13793 11.43586,
+6.20689 14.00601,
+8.27586 16.17275,
+10.34482 18.08169,
+12.41379 19.80750,
+14.48275 21.39454,
+16.55172 22.87173,
+18.62068 24.25913,
+20.68965 25.57137,
+22.75862 26.81948,
+24.82758 28.01203,
+26.89655 29.15585,
+28.96551 30.25646,
+31.03448 31.31841,
+33.10344 32.34551,
+35.17241 33.34099,
+37.24137 34.30760,
+39.31034 35.24770,
+41.37931 36.16338,
+43.44827 37.05644,
+45.51724 37.92848,
+47.58620 38.78091,
+49.65517 39.61500,
+51.72413 40.43189,
+53.79310 41.23260,
+55.86206 42.01805,
+57.93103 42.78909,
+59.99999 43.54648
+)
+\figdrawlineC( % y = x^2
+0 0,
+2.06896 .09512,
+4.13793 .38049,
+6.20689 .85612,
+8.27586 1.52199,
+10.34482 2.37812,
+12.41379 3.42449,
+14.48275 4.66111,
+16.55172 6.08799,
+18.62068 7.70511,
+20.68965 9.51248,
+22.75862 11.51010,
+24.82758 13.69797,
+26.89655 16.07609,
+28.96551 18.64447,
+31.03448 21.40309,
+33.10344 24.35196,
+35.17241 27.49108,
+37.24137 30.82045,
+39.31034 34.34007,
+41.37931 38.04994,
+43.44827 41.95005,
+45.51724 46.04042,
+47.58620 50.32104,
+49.65517 54.79191,
+51.72413 59.45303,
+53.79310 64.30439,
+55.86206 69.34601,
+57.93103 74.57788,
+59.99999 79.99999
+)
+\figdrawend
+% 3. Writing text on the figure
+\figvisu{\figBoxA}{}{%
+\figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+% Points 1 and 2 are the end points of the arrows
+\figwritee 1:(5pt)     \figwriten 2:(5pt)
+\figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
+\figwritene 100:(2)
+\figwriten 101:(2)
+\figwritew 102:(2)
+\figwritee 103:(2)
+}
+\centerline{\box\figBoxA}
+
   \end{marginfigure}
 \fi 
 
 \begin{solution}
+	Imagine a thin \textit{horizontal} strip contained between the two 
+	parabolas - \asif. The \text{incremental} volume added by this strip to the total 
+	is given by
+	\begin{align}
+		\ud V &= \underbrace{(x_1-x_2)\ud y}_{\text{cross-section}}\times
+		         \underbrace{2\pi y}_{\text{perimeter}} \\
+		\text{where } x_1 &= \sqrt{y} \\
+		\text{and } x_2 &= y^2
+	\end{align}
+	And therefore, the total volume would be
+	\begin{align}
+		V &= \int_0^1 (\sqrt{y} - y^2)\cdot 2\pi y\ud y \\
+		  &= 2\pi\int_0^1 (y^{\frac{3}{2}} - y^3)\ud y \\
+		  &= 2\pi\left[ \dfrac{2}{5}y^{\frac{5}{2}} - \dfrac{y^4}{4}\right]_0^1 \\
+		  &= \dfrac{3\pi}{10}
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

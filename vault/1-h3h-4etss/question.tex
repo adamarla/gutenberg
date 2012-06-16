@@ -30,54 +30,94 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Compute the volume of the solid obtained by revolving - about the $y-axis$ -
+the figure bounded by the parabola $y=2x-x^2$ and the $x-axis$
 
 \insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
   \begin{marginfigure}
-    \figinit{pt}
-    \figdrawbegin{}
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
+% 1. Definition of characteristic points
+\figinit{pt}
+\def\Xmin{-8.00000}
+\def\Ymin{-25.22999}
+\def\Xmax{72.00000}
+\def\Ymax{44.77000}
+\def\Xori{8.00000}
+\def\Yori{25.22999}
+\figpt0:(\Xori,\Yori)
+\figpt 100:$2,0$(71,24)
+\figpt 101:$0,0$(9,24)
+\figpt 102:$x_0$(47,26)
+\figpt 103:(47,68)
+% 2. Creation of the graphical file
+\figdrawbegin{}
+\def\Xmaxx{\Xmax} % To customize the position
+\def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
+\figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
+\figdrawaxes 0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+\figdrawline [102,103]
+\figdrawlineC(
+0 0,
+2.75862 9.33333,
+5.51724 17.99999,
+8.27586 25.99999,
+11.03448 33.33333,
+13.79310 39.99999,
+16.55172 45.99999,
+19.31034 51.33333,
+22.06896 55.99999,
+24.82758 59.99999,
+27.58620 63.33333,
+30.34482 65.99999,
+33.10344 67.99999,
+35.86206 69.33333,
+38.62068 69.99999,
+41.37931 69.99999,
+44.13793 69.33333,
+46.89655 68.00000,
+49.65517 66.00000,
+52.41379 63.33333,
+55.17241 60.00000,
+57.93103 56.00000,
+60.68965 51.33333,
+63.44827 46.00000,
+66.20689 40.00000,
+68.96551 33.33333,
+71.72413 26.00000,
+74.48275 18.00000,
+77.24137 9.33333,
+79.99999 0
+)
+\figdrawend
+% 3. Writing text on the figure
+\figvisu{\figBoxA}{}{%
+\figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+% Points 1 and 2 are the end points of the arrows
+\figwritee 1:(5pt)     \figwriten 2:(5pt)
+\figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
+\figwritesw 100:(2)
+\figwritese 101:(2)
+\figwrites 102:(2)
+}
+\centerline{\box\figBoxA}
+
   \end{marginfigure}
 \fi 
 
 \begin{solution}
+   Imagine a thin strip at $x = x_0$ that is rotated around the y-axis. The volume 
+   added to the total by this thin strip would be 
+   \begin{align}
+     \ud V &= \underbrace{2\pi\cdot x_0}_{\text{circumference}}\times y_0\ud x
+   \end{align}
+   
+   This suggests that the total volume of the generated solid would be
+   \begin{align}
+   	 V &= \int_0^2 (2\pi\cdot x)\times(2x-x^2)\ud x \\
+   	   &= 2\pi\int_0^2 (2x^2-x^3)\ud x \\
+   	   &= 2\pi\times\left[ \left( \dfrac{2}{3}x^3\right)_0^2 - \left( \dfrac{x^4}{4}\right)_0^2\right] \\
+   	   &= \dfrac{8\pi}{3}
+   \end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
