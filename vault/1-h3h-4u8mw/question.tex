@@ -30,9 +30,9 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question Evaluate $\int x\tan^{-1}x\ud x$
+\question[2] Evaluate $\int x\tan^{-1}x\ud x$
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -40,7 +40,7 @@
   \marginnote[0.5cm]{Let $y=x^2+1 \Rightarrow x\ud x = \dfrac{\ud y}{2}$}
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
 	\begin{align}
 		\int x\tan^{-1}x\ud x &= \tan^{-1}x\int x\ud x - \int\dfrac{\ud}{\ud x}\tan^{-1}x\cdot x\ud x \\
 		&= \dfrac{x^2}{2}\tan^{-1}x - \int \dfrac{x}{x^2+1}\ud x \\
