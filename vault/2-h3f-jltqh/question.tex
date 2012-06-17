@@ -30,7 +30,7 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question The sum of $n$ terms of a sequence is defined by the formula $S_n=2n^2+3n$. Prove that it is an arithmetic progression.
 
 \insertQR{}
 
@@ -39,37 +39,13 @@
 \fi 
 
 \begin{solution}
+  A series is an arithmetic progression if its sum can be expressed in the form $S = \dfrac{n}{2}(2A + (n-1)D$ where $A$ is the initial term, $n$ is the number of terms and $D$ is the common difference. \\
+  Let us consider the given expression $S_n$,
+  \begin{align}
+    S_n &= 2n^2 + 3n \\
+        &= n(2n + 3) \\
+        &= \dfrac{n}{2}(4n + 6 - 4 + 4) \\
+        &= \dfrac{n}{2}(2(5) + (n-1)4)
+  \end{align}
+  Comparing equation (4) with the general form for sum of an arithmetic progression, we can conclude that the given expression represents the sum of a series with initial term $5$ and common difference $4$.
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

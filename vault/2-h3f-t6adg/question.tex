@@ -30,7 +30,7 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Three terms of a series are in arithmetic progression. If $8$ is added to the first term, the three terms now form a geometric progression, whose sum is $26$. Find the terms?
 
 \insertQR{}
 
@@ -39,37 +39,19 @@
 \fi 
 
 \begin{solution}
+  Let the terms of the series be $a-d$, $a$ and $a+d$. \\
+  Using the condition that if $8$ is added to the first term it forms a geometric progression whose sum is $26$ we get,
+  \begin{align}
+    (a-d+8) + a + (a+d) &= 26 \\
+    3a + 8              &= 26 \\
+    a                   &= 6
+  \end{align}  
+  Using the condition that the three terms are in geometric progression,
+  \begin{align}
+    (a-d+8)(a+d) &= a^2 \\
+    (14-d)(6+d)  &= 36 \\
+    d = 12, -4
+  \end{align} 
+  There are two sets of series that satisfy the given conditions. With a common difference of $12$ the progression is ${-6,6,18}$, whereas with a common difference of $-4$, the progression is ${10, 6, 2}$.
+
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

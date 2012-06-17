@@ -30,7 +30,7 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Find the sum of 20 terms of an arithmetic progression if its first term is 2 and seventh term is 20.
 
 \insertQR{}
 
@@ -39,37 +39,18 @@
 \fi 
 
 \begin{solution}
+  Let the progression have a common difference $d$. The seventh term is denoted as $a_7$.
+  \begin{align}
+    a_7 &= 2 + (7-1)d \\
+    20  &= 2 + 6d \\
+    d   &= 3 
+  \end{align}
+  Now that we know the common difference, let us go ahead and calculate the sum of 20 terms using the general formula for summation of an arithmetic progression,
+  \begin{align}
+    S_n    &= \dfrac{n}{2}(2a + (n-1)d) \\
+    S_{20} &= \dfrac{20}{2}(2(2) + (20-1)3) \\
+           &= 610
+  \end{align}
+
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

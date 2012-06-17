@@ -30,7 +30,7 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Two workers working together can complete a job in $12$ days. If the first worker does half the work and then the second worker does the other half the job will be completed in $25$ days. How many days would it take each worker to do the job they worked alone?
 
 \insertQR{}
 
@@ -39,37 +39,27 @@
 \fi 
 
 \begin{solution}
+  Let the time taken for each worker to do the job individually be $t_1$ and $t_2$ days. Therefore the rate at which the two workers work is $\dfrac{1}{t_1}$ and $\dfrac{1}{t_2}$ (job/day). \\
+  Together they can complete a job in $12$ days. So if their effective job rate is the sum of their individual job rates we get,
+  \begin{align}
+	\dfrac{1(job)}{\dfrac{1}{t_1}(job/day)+
+		\dfrac{1}{t_2}(job/day)} &= 12(day) \\
+	\dfrac{t_1t_2}{t_1+t_2}      &= 12
+  \end{align}
+  Also if they each do half the job, the total time it takes them is $25$ days, therefore,
+  \begin{align}
+    \dfrac{0.5(job)}{\dfrac{1}{t_1}(job/day)}+
+    	\dfrac{0.5(job)}{\dfrac{1}{t_1}(job/day)} &= 25(day) \\
+    t_1+t_2                                       &= 50
+  \end{align}
+  Using results (2) and (4) we get,
+  \begin{align}
+    t_1t_2      &= 600 \\
+    t_1(50-t_1) &= 600 \\
+    t_1         &= 20 \\
+    t_2         &= 30
+  \end{align}
+  Working alone the workers would take $20$ and $30$ days each to do the job.
+
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

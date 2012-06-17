@@ -30,7 +30,7 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question A train was delayed by a semaphore for $16min$. It made up for the delay along a section of $80km$, traveling $10km/h$ higher than its scheduled speed. Find the scheduled speed of the train. \textit{A semaphore is the key that allows a train to enter a critical section of track where only one train can go at a time. (Use speed = distance/time)}.
 
 \insertQR{}
 
@@ -39,37 +39,14 @@
 \fi 
 
 \begin{solution}
+  Since the train eventually made up for the delay, we can equate the time it would have taken if it traveled as per schedule with the time it actually took. Let us assume that the scheduled speed of the train is $vkm/h$.
+  \begin{align}
+    T_{scheduled}           &= T_{delay} + T_{catch_up} \\
+    \dfrac{80(km)}{v(km/h)} &= \dfrac{16(min)}{60(min/h)}+\dfrac{80(km)}{v+10(km/h)} \\
+    &\Rightarrow \dfrac{5}{v} = \dfrac{1}{60}+\dfrac{5}{v+10} \\
+    &\Rightarrow v^2+10v-3000 = 0 \\
+    &\Rightarrow v            = 50,-60
+  \end{align}
+  Rejecting the negative value, the scheduled normal speed of the train is $50km/h$.
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

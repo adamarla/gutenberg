@@ -30,7 +30,7 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question The first term of a certain infinitely decreasing geometric progression is $1$ and its sum is $S$. Find the sum of the geometric progression which is formed by the squares of the terms of the initial progression.
 
 \insertQR{}
 
@@ -39,37 +39,21 @@
 \fi 
 
 \begin{solution}
+  The sum of the terms of an infinitely decreasing geometric progression starting with $a$ and having common ratio $r$ is given by,
+  \begin{align}
+	S = \dfrac{a}{1-r}
+  \end{align}
+  In our case initial term is $1$ and common ratio is $r$ therefore,
+  \begin{align}
+                S &= \dfrac{1}{1-r} \\
+    \Rightarrow r &= 1-\dfrac{1}{S}
+  \end{align}
+  The progression of squares of the original geometric progression will effectively have common ration $r^2$. Therefore sum of progression of squares $S_{sq}$ is given by,
+  \begin{align}
+	S_{sq} &= \dfrac{1}{1-r^2} \\
+		   &= \dfrac{1}{1-(1-\dfrac{1}{S})^2} \\
+	       &= \dfrac{S^2}{2S-1}
+  \end{align}
+
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

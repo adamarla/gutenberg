@@ -30,7 +30,7 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Certain numbers appear in both arithmetic progressions $17, 21, ...$ and $16, 21, ...$. Find the sum of the first ten numbers that appear in both progressions.
 
 \insertQR{}
 
@@ -39,37 +39,13 @@
 \fi 
 
 \begin{solution}
-\end{solution}
+  Let us call progression $17, 21, ...$ as A and $16, 21, ...$ as B. Since progression A increases in multiples of 4 and progression B increases by multiples of 5, the next term  they have in common will have a difference of 20 with the previous term, since the lowest common multiple of 4 and 5 is 20. Therefore the series of common terms would go something like $21, 41, 61$ and so on. \\
+  To summarize the first ten terms of this series we use the standard summation formula  
+  \begin{align}
+    S_{n}   &= \dfrac{n}{2}(2(a) + (n-1)d) \\
+    S_{10} &= \dfrac{10}{2}(2(21) + (10-1)20) \\
+    S_{10} &= 5(42+180) \\
+    S_{10} &= 1110
+  \end{align}  
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
+\end{solution} 

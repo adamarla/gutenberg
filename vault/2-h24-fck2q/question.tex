@@ -30,7 +30,12 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Rafael Nadal is poised to meet either Roger Federer or Novak 
+Djokovic in the French Open finals. Nadal's record, on clay, against Federer is 
+$10-2$, which means that Nadal has won 10 of their last 12 matches on clay. Nadal's 
+record against Djokovic - on clay - is $1-6$. Federer and Djokovic have equal chances of
+beating each other in the other semi-final. What is the probability that Nadal will win 
+the French Open? 
 
 \insertQR{}
 
@@ -39,37 +44,14 @@
 \fi 
 
 \begin{solution}
+  Let $P_{W}$ be the probability that Nadal wins the title, 
+$P_{N-Bt-D}$ be the probablity that he beats Djokovic and $P_{N-Bt-F}$  
+be the probability that he wins against Federer, then 
+   
+  \begin{align}
+    P_{W} &= \dfrac{1}{2}(P_{N-Bt-D}) + \dfrac{1}{2}(P_{N-Bt-F}) \\
+   	  &= \dfrac{1}{2}(\dfrac{1}{6}) + \dfrac{1}{2}(\dfrac{5}{6}) \\ 
+   	  &= \dfrac{1}{2}
+  \end{align}
+  Therefore Nadal has a $50\%$ chance of winning the French Open.     
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

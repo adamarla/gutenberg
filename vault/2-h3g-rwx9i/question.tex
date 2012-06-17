@@ -30,7 +30,7 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Three masons working together need $a$ hours to make a stone wall. The first of them, working alone can make the wall twice as fast as the third mason and three times as fast as the second mason. How long would each take to complete the wall on their own.
 
 \insertQR{}
 
@@ -39,37 +39,24 @@
 \fi 
 
 \begin{solution}
+  Let the three masons take $a_1$, $a_2$ and $a_3$ hours individually to complete the wall. The rate at which each mason works is $\dfrac{1}{a_1}$, $\dfrac{1}{a_2}$ and $\dfrac{1}{a_3}$ Wall/hr respectively. Together they work at an effective rate of,
+  \begin{align}
+	R_{eff} = \dfrac{1}{a_1} + \dfrac{1}{a_2} + \dfrac{1}{a_3} (Wall/hr)
+  \end{align}
+  
+  Therefore the time it would take them to complete the wall working together is,
+  \begin{align}
+    a &= \dfrac{1(Wall)}{R_{eff}(Wall/hr)} \\
+      &= \dfrac{1}{\dfrac{1}{a_1} + \dfrac{1}{a_2} + \dfrac{1}{a_3}}(hr)
+  \end{align}  
+  
+  Substituting the given conditions about relative speeds of work into equation (3) we get,
+  \begin{align}
+    a &= \dfrac{1}{\dfrac{1}{a_1} + \dfrac{1}{3a_1} + \dfrac{1}{2a_1}} \\
+    a &= \dfrac{6}{11}a_1
+  \end{align}
+  
+  The three masons can complete the job solo in $\dfrac{11}{6}a$, $\dfrac{11}{2}a$ and $\dfrac{11}{3}a$ hours respectively.
+  
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
