@@ -30,54 +30,65 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Chords $AB$ and $CD$ are of lengths 5cm and 11cm respectively. They are also 
+parallel to each other. If the distance between them (the chords) is 3cm, then what is 
+the radius of the circle? 
 
 \insertQR{}
 
-\ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
   \begin{marginfigure}
     \figinit{pt}
+      \figpt 100: $O$(50,50)
+      \figpt 200: (95,50) % ref. pt 
+      \figptrot 101: $D$= 200 /100,20/
+      \figptrot 102: $B$= 200 /100,50/
+      \figptrot 103: $C$= 200 /100,160/
+      \figptrot 104: $A$= 200 /100,130/
+      \figptorthoprojline 300:$M$= 100 /102,104/
+      \figptorthoprojline 301:$N$= 100 /101,103/
     \figdrawbegin{}
+      \figdrawcirc 100(45)
+      \figdrawline [101,103]
+      \figdrawline [102,104]
+      \figdrawaltitude 5 [100,102,104]
+      \figdrawaltitude 5 [100,101,103]
+      \ifprintanswers
+        \figset (dash=5)
+        \figdrawline [100,101]
+        \figdrawline [100,102]
+      \fi
     \figdrawend
     \figvisu{\figBoxA}{}{%
+      \figset write(mark=$\bullet$)
+      \figwrites 100:(2)
+      \figwritee 101:(3)
+      \figwritee 102:(3)
+      \figwritew 103:(3)
+      \figwritew 104:(3)
+      \figwritene 300:(3)
+      \figwritene 301:(3)
     }
     \centerline{\box\figBoxA}
   \end{marginfigure}
-\fi 
 
 \begin{solution}
+	Here is what we know,
+	\begin{align}
+		MN &= 3cm \\
+		OB^2 &= OM^2 + MB^2 \\
+		OD^2 &= ON^2 + ND^2 \\
+		OB = OD &= \text{ Radius } \\
+		MB &= \frac{1}{2}AB = 2.5cm \\
+		ND &= \frac{1}{2}CD = 5.5cm
+	\end{align}
+	And therefore, 
+	\begin{align}
+		OM^2 + MB^2 = (ON + 3)^2 + 2.5^2 &= ON^2 + 5.5^2 \\
+		\Rightarrow (ON+3)^2 - ON^2 &= 30.25 - 6.25 = 24 \\
+		\Rightarrow (2ON + 3)\cdot 3 &= 24 \Rightarrow ON = 2.5cm \\
+		\therefore OD = \text{ Radius } &= \sqrt{ON^2 + ND^2} \\ 
+		&= \sqrt{2.5^2 + 5.5^2} = 6.04cm
+	\end{align}
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
