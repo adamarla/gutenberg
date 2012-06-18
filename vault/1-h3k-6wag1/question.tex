@@ -30,7 +30,8 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question $AB$ and $CD$ are two \textit{equal} chords of a circle whose center is $O$ - \asif. 
+$OM\perp AB$ and $ON\perp CD$. Prove that $\angle OMN = \angle ONM$
 
 \insertQR{}
 
@@ -38,46 +39,38 @@
   % stuff to be shown only in the answer key - like explanatory margin figures
   \begin{marginfigure}
     \figinit{pt}
+    	\figpt 100: $O$(50,50)
+    	\figpt 200:(95,50) % reference pt that is rotated
+    	\figptrot 101:$A$= 200 /100,80/
+    	\figptrot 102:$C$= 200 /100,100/
+    	\figptrot 103:$B$= 200 /100,190/
+    	\figptrot 104:$D$= 200 /100,350/
+    	\figptorthoprojline 300:$M$= 100 /101,103/
+    	\figptorthoprojline 301:$N$= 100 /102,104/
     \figdrawbegin{}
+    	\figdrawcirc 100(45)
+      \figdrawline [101,103] 
+      \figdrawline [102,104] 
+      \figdrawaltitude 5 [100,101,103]
+      \figdrawaltitude 5 [100,102,104]
+      \figdrawline [300,301]
     \figdrawend
     \figvisu{\figBoxA}{}{%
+    	\figset write(mark=$\bullet$)
+    	\figwrites 100:(2)
+    	\figwriten 101:(3)
+    	\figwriten 102:(3)
+    	\figwritew 103:(3)
+    	\figwritee 104:(3)
+    	\figwriten 300:(3)
+    	\figwriten 301:(3)
     }
     \centerline{\box\figBoxA}
   \end{marginfigure}
 \fi 
 
 \begin{solution}
+  Chords of the same length are equidistant from the center. Which means, $OM = ON \Rightarrow \bigtriangleup OMN$ 
+  is an isoceles triangle. And therefore $\angle OMN = \angle ONM$
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
