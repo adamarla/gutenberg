@@ -39,26 +39,23 @@
 \fi 
 
 \begin{solution}
-
-  Let the rate at which the tank fulls be $r_f(m^3/min)$ and the rate at which it empties be $r_e(m^3/min)$. As per the question,
+  If $t_f(min)$ is the time it takes to fill the tank at rate $r_f(m^3/min)$ and $t_e(min)$ is the time it takes to empty the tank at rate $r_e(m^3/min)$, then as per the question,
   \begin{align}
-    r_f(m^3/min) = r_e(m^3/min) - 10(m^3/min)
+    r_f(m^3/min) &= r_e(m^3/min) - 10(m^3/min) \\
+    t_f(min)     &= t_e(min)+8(min)
   \end{align}
   
-  Time it takes to empty $t_{empty}$ and time to fill $t_{fill}$ will be,
+  We know that $(rate=volume/time)$. Substituting $times$ with the corresponding $rates$ in equation (2) we get,
   \begin{align}
-    t_{fill(min)}  &= \dfrac{2400(m^3)}{r_f(m^3/min)} \\
-    t_{empty(min)} &= \dfrac{2400(m^3)}{r_e(m^3/min)} \\    
-  \end{align}
-  
-  Since it takes $8min$ less to empty than it takes to fill,
-  \begin{align}
-    t_{fill}(min)                   &= t_{empty}(min)+8(min) \\
     \dfrac{2400(m^3)}{r_f(m^3/min)} &= 
-    	\dfrac{2400(m^3)}{r_e(m^3/min)}+8(min) \\
-    \dfrac{2400}{r_f}               &= \dfrac{2400}{r_e}+8 \\
+    	\dfrac{2400(m^3)}{r_e(m^3/min)}+8(min) 
+  \end{align}
+  
+  Combining equations (1) and (3),
+  \begin{align}      
     \dfrac{2400}{r_f}               &= \dfrac{2400}{r_f+10}+8 \\
     r_f^2 + 10r_f - 3000            &= 0 \\
+    r_f^2 + 60r_f -50r_f - 3000     &= 0 \\
     r_f                             &= 50, -60
   \end{align}
   Negative value is rejected, rate at which the tank fills is $50(m^3/min)$.

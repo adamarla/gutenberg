@@ -39,27 +39,40 @@
 \fi 
 
 \begin{solution}
-  Let the time taken for each worker to do the job individually be $t_1$ and $t_2$ days. Therefore the rate at which the two workers work is $\dfrac{1}{t_1}$ and $\dfrac{1}{t_2}$ (job/day). \\
-  Together they can complete a job in $12$ days. So if their effective job rate is the sum of their individual job rates we get,
+  \begin{tabular}{ll}  
+    Let time it takes for first worker to do the job alone  &= $t_1$ \\
+    Let time it takes for second worker to do the job alone &= $t_2$ \\
+    Effective job rate for first worker               &= $\frac{1}{t_1}$ \\
+    Effective job rate for second worker              &= $\frac{1}{t_2}$ \\
+    Effective combined job rate working together      &= $\frac{1}{t_1}+\frac{1}{t_2}$
+  \end{tabular} 
+
+  Working together on the job they complete a job in $12$ days,
   \begin{align}
-	\dfrac{1(job)}{\dfrac{1}{t_1}(job/day)+
-		\dfrac{1}{t_2}(job/day)} &= 12(day) \\
-	\dfrac{t_1t_2}{t_1+t_2}      &= 12
+	\dfrac{1(job)}
+		{\left(\dfrac{1}{t_1}+\dfrac{1}{t_2}\right)(job/day)} &= 12(day) \\
+	\dfrac{t_1t_2}{t_1+t_2}                                   &= 12
   \end{align}
-  Also if they each do half the job, the total time it takes them is $25$ days, therefore,
+  
+  Dividing the job in two halves they complete it in $25$ days,
   \begin{align}
     \dfrac{0.5(job)}{\dfrac{1}{t_1}(job/day)}+
     	\dfrac{0.5(job)}{\dfrac{1}{t_1}(job/day)} &= 25(day) \\
     t_1+t_2                                       &= 50
   \end{align}
+  
   Using results (2) and (4) we get,
   \begin{align}
-    t_1t_2      &= 600 \\
-    t_1(50-t_1) &= 600 \\
-    t_1         &= 20 \\
-    t_2         &= 30
+	\dfrac{t_1(50-t_1)}{t_1+(50-t_1)} &= 12 \\
+    50t_1-t_1^2                     &= 600 \\
+    t_1^2-50t_1+600                 &= 0 \\     
+    t_1^2-30t_1-20t_1+600           &= 0 \\     
+    t_1(t_1-30)-20(t_1-30)          &= 0 \\
+    (t_1-20)(t_1-30)                &= 0 \\
+    t_1                             &= 20 \\
+    t_2                             &= 30
   \end{align}
-  Working alone the workers would take $20$ and $30$ days each to do the job.
+  Working alone the workers would take $20$ and $30$ days respectively to do the job.
 
 \end{solution}
 
