@@ -30,15 +30,15 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question Find four numbers between 4 and 40 such that an arithmetic progression results.
+\question[3] Find four numbers between 4 and 40 such that an arithmetic progression results.
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
   We need to form a series such that the first term is 4 and the sixth term is 40. Applying the forumla for the $n_{th}$ term of an arithmetic progression $a_n = a + (n-1)d$ where $a$ is the first term and $d$ is the common differnce we get,
   \begin{align}
     a_6 &= 4 + (6-1)d \\
