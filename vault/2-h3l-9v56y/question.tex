@@ -30,57 +30,19 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question In how many ways can $10$ identical presents be distributed among $6$ children so that each child gets at least one present?
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
+  % stuff to be shown only in the answer key - like explanatory margin \fi 
 
 \begin{solution}
+  Since presents are identical and each child must get at least one $6$ out of the $10$ presents can only be distributed in one way. \\
+  To distribute the remaining $4$ identical presents among $6$ children, let the $6$ children be represented as $6-1=5$ partitions. We can count the number of arrangements of $4$ identical objects (presents) among $5$ partitions by doing,
+  \begin{align}
+    N &= \dfrac{(4+5)!}{4!5!} \nonumber \\
+      &= 126  \nonumber
+  \end{align}
+  Thus, the presents can be distributed in $126$ different ways.
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
