@@ -30,57 +30,30 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question How many different mixed-gender comittees of 3 people can be chosen from a group of $5$ men and $5$ women.
 
 \insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+  Total number of all $3$ member comittees that can be chosen from a group of $10$
+  \begin{align}
+    N_{total} = C^{10}_3 \nonumber
+  \end{align}
+  Total number of $3$ member male only comittees that can be chosen is
+  \begin{align}
+    N_{male} = C^{5}_3 \nonumber
+  \end{align}
+  By symmetry, same is the case for number of female only comittees $N_{female}$.
+  
+  Therefore number of mixed gender comittees is,
+  \begin{align}
+    N_{mixed} &= N_{total} - (N_{male}+N_{female}) \nonumber \\
+              &= C^{10}_3 - 2(C^5_3) \nonumber \\
+              &= 80 \nonumber
+  \end{align}
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

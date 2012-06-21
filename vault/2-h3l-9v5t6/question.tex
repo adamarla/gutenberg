@@ -30,57 +30,43 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question How many distinct ways can the faces of a cube be numbered $1$ through $6$ such that each face gets a unique number and no two cubes look the same in any orientation.
 
 \insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+  First solution: \\
+  Let us begin by numbering the bottom face of the cube $1$. \\
+  Number of options to number the top face,
+  \begin{align}
+     N_{top} = 5 \nonumber
+  \end{align}
+  The remaining $4$ numbers would occupy the four vertical faces of the cube which have no reference point. Therefore number of options is,
+  \begin{align}
+     N_{vertical} = 3! \nonumber
+  \end{align}
+  Therefore the total number of unique configurations is,
+  \begin{align}
+    N_{unique} &= N_{top} \times N_{vertical} \nonumber \\
+               &= 5 \times 3! = 30 \nonumber 
+  \end{align}
+  Alternate solution:\\
+  Maximum ways in which the cube can be numbered is 
+  \begin{align}
+    N_{maximum} = 6! \nonumber
+  \end{align}
+  Number of orientations possible for any given configuration of the cube,
+  \begin{align}
+    N_{orientations} = 24 \quad\text{(four with each number as top face)} \nonumber
+  \end{align}
+  Therefore factoring those out of the maximum we get,
+  \begin{align}
+    N_{unique} &= \dfrac{N_{maximum}}{N_{orientations}} \nonumber \\
+               &= \dfrac{6!}{24} = 30 \nonumber
+  \end{align}   
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

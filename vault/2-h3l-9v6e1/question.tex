@@ -30,57 +30,31 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question How many ways can $4$ boys and $4$ girls sit alternating around a circular table (Boy-Girl-Boy...)?
 
 \insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+  The only way to satisfy this condition is to seat the girls (or boys) in four alternating seats leaving a gap between each one, and then seating the others in those gaps. \\
+  Number of ways we can seat the $4$ girls on four seats around the circular table is,
+  \begin{align}
+    N_{girls} = 3!
+  \end{align}
+  Now the table is no longer without reference as each spot on the table has a unique position. Therefore, number of ways we can seat the four boys in these four spots is,
+  \begin{align}
+    N_{boys} = 4!
+  \end{align}
+
+  Therefore total number of ways $N$, in which they can all be arranged is,
+    \begin{align}
+      N &= N_{girls} \times N_{boys} \nonumber \\
+        &= 3! \times 4! \nonumber \\
+        &= 144
+    \end{align}
+
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
