@@ -30,15 +30,15 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question How many ways can $4$ boys and $4$ girls sit alternating around a circular table (Boy-Girl-Boy...)?
+\question[4] How many ways can $4$ boys and $4$ girls sit alternating around a circular table (Boy-Girl-Boy...)?
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
   The only way to satisfy this condition is to seat the girls (or boys) in four alternating seats leaving a gap between each one, and then seating the others in those gaps. \\
   Number of ways we can seat the $4$ girls on four seats around the circular table is,
   \begin{align}
