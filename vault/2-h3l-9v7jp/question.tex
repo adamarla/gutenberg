@@ -30,15 +30,15 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question How many ways can eight people sit in a circle if Alice and Bob must sit next to each other?
+\question[3] How many ways can eight people sit in a circle if Alice and Bob must sit next to each other?
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
   One way to think about the problem is, let Alice and Bob together be effectively one person(Alice-Bob or Bob-Alice). \\
   Now, number of ways we can arrange $7$ people in a circle = $6!$ \\
   Number of ways Alice and Bob can sit next to each other = $2$. \\
