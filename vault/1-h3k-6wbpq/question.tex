@@ -30,57 +30,24 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question If it takes 366 persons to be 100 percent sure that at least two in the group
+have the same birthday, then how many would it take to be 50 percent sure? Assume a non-leap year
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+   If $B$ be the event that \textit{someone} in the group has the same birthday as me,
+   $\overline{B}$ the event that \textit{no one} in the group has the same
+   birthday as me and $N$ the number of people in the group (including me), then 
+   \begin{align}
+     P(B) = 1 - P(\overline{B}) &= 0.5 \\
+     \Rightarrow P(B) = P(\overline{B}) &= 0.5 \\
+     \text{where } P(\overline{B}) &= \left(\dfrac{364}{365}\right)^N \\
+     \Rightarrow \left(\dfrac{364}{365}\right)^N &= 0.5 \\
+     \text{or } N &= \dfrac{\log 0.5}{\log\left(\dfrac{364}{365}\right)} \\
+       &= 253
+   \end{align} 
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
