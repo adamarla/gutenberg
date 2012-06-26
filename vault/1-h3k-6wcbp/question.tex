@@ -30,7 +30,11 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Two men - $M$ and $N$ - are playing a rather dangerous game. They are taking
+turns firing at each other from a revolver that has 2 bullets with space for six (6). 
+The revolver's bullet chamber is circular and the bullets are in \textit{adjacent} chambers.
+$M$ took the first shot and it was blank. Now its $N's$ turn. Should $N$ fire the gun as-is
+or should he rotate the chamber first? 
 
 \insertQR{}
 
@@ -38,49 +42,52 @@
   % stuff to be shown only in the answer key - like explanatory margin figures
   \begin{marginfigure}
     \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
+      \figpt 100: (50,50)
+      \figptcirc 200 :$A$: 100; 50(0)
+      \figptcirc 201 :$B$: 100; 50(60)
+      \figptcirc 202 :$C$: 100; 50(120)
+      \figptcirc 203 :$D$: 100; 50(180)
+      \figptcirc 204 :$E$: 100; 50(240)
+      \figptcirc 205 :$F$: 100; 50(300)
     \figdrawbegin{}
-      \figdrawline [100,101]
+      \figdrawcirc 200 (5)
+      \figdrawcirc 201 (5)
+      \figdrawcirc 202 (5)
+      \figdrawcirc 203 (5)
+      \figset (fillmode=yes)
+      \figdrawcirc 204 (5)
+      \figdrawcirc 205 (5)
     \figdrawend
     \figvisu{\figBoxA}{}{%
+      \figwritee 200:(7)
+      \figwritee 201:(7)
+      \figwritee 202:(7)
+      \figwritee 203:(7)
+      \figwritee 204:(7)
+      \figwritee 205:(7)
     }
     \centerline{\box\figBoxA}
   \end{marginfigure}
 \fi 
 
 \begin{solution}
+	The two men obviously don't like each other. Otherwise they wouldn't be playing such 
+	a dangerous game. Be that as it may, it is obvious that $N$ would want to fire a bullet - and not a 
+	blank - at $M$ when his turn comes
+	
+	The question for $N$ then is - is the probability that there is a bullet in the current
+	chamber higher if he rotates the chamber or if he sticks with the chamber he got when $M$
+	passed him the gun. The situation is \asif where chambers $E$ and $F$ have the bullets whilst 
+	others are blank. Lets assume that the chamber rotates clockwise after each shot
+	
+	And so, if $X$ be the event that the first shot is blank and $Y$ the event the second
+	is blank, then we are seeking $\bayesp{\textoverline{Y}}{X} = \dfrac{1}{4}$. Why? Because 
+	only if $M$ fired chamber $A$ (a blank) could the next shot - $F$ - be a non-blank. And $A$ 
+	is one of \text{four} blank chambers
+	
+	If, however, $N$ were to rotate the chamber, then his probability of firing a \textit{non-blank} 
+	chamber would be $\dfrac{1}{3}$ which is more than $\dfrac{1}{4}$
+	
+	And so, $N$ should rotate the chamber before firing
+	
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
