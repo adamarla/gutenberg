@@ -30,7 +30,8 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question[4] The sum of $n$ terms of a sequence is defined by the formula $S_n=2n^2+3n$. Prove that it is an arithmetic progression.
+\question[4] If the sum of the first $n$ terms of a series is given by 
+$S_n = 2n^2+3n$, then prove that it is an arithmetic progression
 
 \insertQR{QRC}
 
@@ -39,13 +40,15 @@
 \fi 
 
 \begin{solution}[\halfpage]
-  A series is an arithmetic progression if its sum can be expressed in the form $S = \dfrac{n}{2}(2A + (n-1)D$ where $A$ is the initial term, $n$ is the number of terms and $D$ is the common difference. \\
-  Let us consider the given expression $S_n$,
+  If the series is an arithmetic progression, then its $(n+1)^{th}$ term should be 
+  of the form $k_{n+1} = \underbrace{a}_{\texttt{known}} + n\times\underbrace{d}_{\texttt{known}}$
+  
+  Moreover,
   \begin{align}
-    S_n &= 2n^2 + 3n \\
-        &= n(2n + 3) \\
-        &= \dfrac{n}{2}(4n + 6 - 4 + 4) \\
-        &= \dfrac{n}{2}(2(5) + (n-1)4)
+     k_{n+1} &= S_{n+1} - S_n \\
+        \Rightarrow k_{n+1} &= 2\cdot(n+1)^2 + 3\cdot(n+1) - 2n^2 - 3n \\
+        &= 5 + 4n
   \end{align}
-  Comparing equation (4) with the general form for sum of an arithmetic progression, we can conclude that the given expression represents the sum of a series with initial term $5$ and common difference $4$.
+  As $k_{n+1}$ is of the required form, the given series is an arithmetic progression
+  
 \end{solution}
