@@ -39,37 +39,37 @@
 \begin{parts}
   \part[2] How many people are in the auditorium when the concert begins?
   \insertQR{QRC}
-\begin{solution}[\halfpage]
-    To find the total number of people in the auditorium when the concert begins, we need to integrate the Rate function $R(t)$ over time from $t=0$ to $t=2$. 
+\begin{solution}[\halfpage] 
+    The function we have been given $R(t)$ is actually $\dfrac{\ud}{\ud t}N(t)$, where
+    $N(t)$ is the number of people inside the auditorium at any given time $t$. And therefore,
     \begin{align}
-      \text{Number of people} &= \int_0^2 R(t)\ud t \\
-									                             &= \int_0^2 1380t^2-675t^3 \ud t \\
-									                             &= \left[1380(\dfrac{t^3}{3})-675(\dfrac{t^4}{4})\right]_0^2 \\
-									                             &= 980
+      \text{N(2)} &= \int_0^2 R(t)\ud t \\
+            &= \int_0^2 1380t^2-675t^3 \ud t \\
+			&= \left[1380(\dfrac{t^3}{3})-675(\dfrac{t^4}{4})\right]_0^2 \\
+			&= 980
     \end{align}
   \end{solution}
 
-  \part[2] Find the time when the rate at which people enter the auditorium is a maximum. Justify your answer.
+  \part[2] Find the time when the rate at which people enter the auditorium is maximum. Justify your answer
   \insertQR{QRC}
 \begin{solution}[\halfpage]
-    The maxima (or minima) for a function would occur when its time derivative is zero or at the beginning or end of the function range $(0, 2)$. Let us compute the time derivate of $R(t)$ which is $R'(t)$.
+    The rate at which people enter - $R(t)$ - itself changes with time. And it is maximum 
+    or minimum - when 
     \begin{align}
-      \text{R'(t)} &= 1380( \dfrac{\ud t^2}{\ud t})-675(\dfrac{\ud t^3}{\ud t}) \\
-      							&= 1380(2t)-675(3t^2)
+        \dfrac{\ud}{\ud t}R(t) = \dfrac{\ud}{\ud t}(1380t^2-675t^3) &= 0 \\
+        \Rightarrow 2760t - 2025t^2 = t\cdot(2760 - 2025t) &= 0 \\
+        \text{that is, when } t = 0, 1.363 \text{ hours} 
     \end{align}
-    To calculate the extrema points, equate $R'(t)$ with zero,
+    
+    Moreover,
     \begin{align}
-      & \quad     1380(2t)-675(3t^2) &= 0 \\
-      &\Rightarrow t(2760 - 2025t) &= 0 \\
-      &\Rightarrow t = 0\text{,}\, t = 1.36296
+       \dfrac{\ud^2}{\ud t^2}(2760t - 2025t^2) &= 2760 - 4050t \\
+                                   &> 0 \text{ when } t= 0 \Rightarrow \text{ minima } \\
+                                   &< 0 \text { when } t = 1.363 \Rightarrow \text{ maxima }
     \end{align}
-    Let us calculate the function $R(t)$ at $t=0$, $t=1.36296$ and $t=2$ ,
-    \begin{align}      
-       R(0)                  &= 0 \\
-       R(1.36296) &= 854.527 \\
-       R(2)                  &= 120
-    \end{align}
-    The rate was highest at $t=1.36296$ hours.
+    Hence, the rate at which people enter the auditorium is \textit{lowest} when $t=0$ and
+    \textit{highest} when $t=1.363$ hours
+   
   \end{solution}
 
 \newpage
@@ -93,7 +93,9 @@
 
   \part[2] On average, how long does a person wait in the auditorium for the concert to begin? Consider all people who enter the auditorium after the doors open, and use the model for total wait time from part(c).
   \insertQR{QRC}
-  \marginnote[5cm]{Borrowing result from part(c) Step 6}
+  \ifprintanswers
+     \marginnote[5cm]{Borrowing result from part(c) Step 6}
+  \fi
 \begin{solution}[\halfpage]
     To find the average wait time we need to calculate the total wait time and divide it by the total number of people entering the auditorium. Let total wait time for all the people entering the auditorium be $T$.
     \begin{align}
