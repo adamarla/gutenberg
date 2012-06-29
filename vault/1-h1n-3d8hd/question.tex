@@ -30,7 +30,7 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question[3] At what angles do the parabolas $y=x^2$ and $y=x^2$ - \asif - intersect?
+\question[3] At what angles do the parabolas $y=x^2$ and $y^2=x$ - \asif - intersect?
 
 \calculator{ \sin^{-1}\frac{2}{\sqrt{5}} = \ang{63.44}, \sin^{-1}\frac{1}{\sqrt{5}} = \ang{26.57}}
 
@@ -50,6 +50,8 @@
 \def\Yori{0}
 \figpt0:(\Xori,\Yori)
 \figpt 100: (21,17)
+\figpt 101:$y=x^2$(50,70)
+\figpt 102:$y^2=x$(50,25)
 % 2. Creation of the graphical file
 \figdrawbegin{}
 \def\Xmaxx{\Xmax} % To customize the position
@@ -160,6 +162,8 @@
 \figwritee 1:(5pt)     \figwriten 2:(5pt)
 \figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
 \figwriten 100:$A$(2)
+\figwriten 101:(2)
+\figwritee 102:(2)
 }
 \centerline{\box\figBoxA}
 
