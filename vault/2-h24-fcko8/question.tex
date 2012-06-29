@@ -30,30 +30,26 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question[4] Three numbers form an arithmetic progression. The sum of the numbers is equal to 3 and the sum of their cubes is equal to 4. Find the numbers.
+\question[4] Three numbers form an arithmetic progression. The sum of the numbers is equal to 3 and 
+the sum of their cubes is equal to 4. Find the numbers
 
 \insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+  \marginnote[3cm] {Setting $a=1$ in $(2)$}
 \fi 
 
 \begin{solution}[\fullpage]
-  Let the numbers be $a-d$, $a$ and $a+d$.
-  
-  Using the first condition (sum of the numbers equals 3), we get,
+  Let the numbers be $a-d$, $a$ and $a+d$. And here is what we know 
   \begin{align}
-    (a-d) + a + (a+d) &= 3 \\
-                             a &= 1
+     (a-d) + a + (a + d) &= 3 \Rightarrow a = 1 \\
+     (1-d)^3 + 1^3 + (1+d)^3 &= 4 \\
+     \underbrace{(1-3d+3d^2-d^3)}_{(1-d)^3} + 1 +
+            \underbrace{(1+3d+3d^2+d^3)}_{(1+d)^3} &= 4 \\
+     \Rightarrow d &= \dfrac{1}{\sqrt{6}}
   \end{align}
   
-  Using this result along with the second condition (sum of cubes equals 4), we get,
-  \begin{align}
-    (1-d)^3 + 1^3 + (1+d)^3 &= 4 \\
-                         2(1 + 3d^2) &= 4 \\
-                                    6d^2 &= 2 \\
-                                          d &= \dfrac{1}{\sqrt{6}}
-  \end{align}
-  
-  The numbers are $1-\dfrac{1}{\sqrt{6}}$, $1$, $1+\dfrac{1}{\sqrt{6}}$.
+  The numbers, therefore, are $\left(1-\frac{1}{\sqrt{6}}\right)$, $1$ and 
+  $\left(1+\frac{1}{\sqrt{6}}\right)$
 \end{solution}
