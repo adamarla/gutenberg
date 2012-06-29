@@ -30,7 +30,8 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question[3] Find four numbers between 4 and 40 such that an arithmetic progression results.
+\question[3] Build an arithmetic progression with a total of 6 terms such
+that the first term is 4 and the last term is 40
 
 \insertQR{QRC}
 
@@ -39,12 +40,17 @@
 \fi 
 
 \begin{solution}[\halfpage]
-  We need to form a series such that the first term is 4 and the sixth term is 40. Applying the forumla for the $n_{th}$ term of an arithmetic progression $a_n = a + (n-1)d$ where $a$ is the first term and $d$ is the common differnce we get,
+  Given $a_1 = 4$ and $a_6 = 40$, we need to find $a_2$, $a_3$, $a_4$ and $a_5$. Now,
   \begin{align}
-    a_6 &= 4 + (6-1)d \\
-    40  &= 4 + 5d \\
-    d   &= 7.2
-  \end{align}  
-  The sequence is 4, 11.2, 18.4, 25.6, 32.8, 40.
+     a_6 &= a_1 + (6-1)\cdot d \\
+     \text{or } 40 &= 4 + 5d \Rightarrow d = 7.2
+  \end{align}
+  And therefore, 
+  \begin{align}
+     a_2 &= 4 + 7.2 = 11.2 \\
+     a_3 &= 4 + (3-1)\cdot 7.2 = 18.4 \\
+     a_4 &= 4 + (4-1)\cdot 7.2 = 25.6 \\
+     a_5 &= 4 + (5-1)\cdot 7.2 = 32.8
+  \end{align}
 
 \end{solution}
