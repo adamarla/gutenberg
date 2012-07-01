@@ -30,57 +30,24 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Find the range over which the inequality $\sqrt{(x+14)} < x+2$ holds
 
 \insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
+  \marginnote[2cm]{Only the \textit{positive} roots are considered in this type of question}
 \fi 
 
 \begin{solution}
+  If $\sqrt{(x+14)} > x + 2$ then
+	\begin{align}
+	   x + 14 > 0 &\Rightarrow x > -14 \\
+	   x + 2 > 0 &\Rightarrow x > -2 \\
+	   \text{Moreover, } x + 14 < (x+2)^2 &= x^2+4x+4 \\
+	   \Rightarrow x^2+3x-10 = (x-2)\cdot(x+5) &> 0 \\
+	   \Rightarrow x > 2 \text{ or } x < -5 
+	\end{align}
+	As $x$ has to be $> -2$, $x$ cannot be $< -5$. And therefore, the only feasible solution is 
+	$x > 2$
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
