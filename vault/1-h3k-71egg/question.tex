@@ -30,57 +30,25 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
-
+\question Without using a calculator, find the value of
+$(\sin\ang{12}\times\sin\ang{48}\times\sin\ang{54})$
 \insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
+  \marginnote[4cm]{Using the identity, $\sin(3\alpha) = 4\sin\alpha\cdot
+  \sin(\frac{\pi}{3}-\alpha)\cdot\sin(\frac{\pi}{3}+\alpha)$}
 \fi 
 
 \begin{solution}
+    \begin{align}
+       \sin\ang{12}\cdot\sin\ang{48}\cdot\sin\ang{54} &= 
+       \dfrac{4\cdot\sin\overbrace{\ang{72}}^{60+12}}
+       {4\cdot\sin\ang{72}}\times\sin\ang{12}\cdot
+       \sin\overbrace{\ang{48}}^{60-12}\cdot
+       \sin\overbrace{\ang{54}}^{\text{we'll see}} \\
+       &= \sin\ang{36}\times\dfrac{\sin\ang{54}}{4\cdot\sin\ang{72}} \\
+       &= \dfrac{\sin\ang{36}\times\sin(\ang{90}-\ang{36})}{4\times 2\sin\ang{36}\cos\ang{36}} \\
+       &= \dfrac{1}{8}
+    \end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

@@ -30,57 +30,24 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question If $x^{2x}-2x^{x}\cot y - 1 = 0$, then what is $y'(1)$?
 
 \insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	\begin{align}
+	  \text{If } x^{2x}-2x^{x}\cot y - 1 &= 0 \\
+	  \text{then } \cot y &= \dfrac{1}{2}\left[x^{x}-\dfrac{1}{x^{x}} \right] = 0 \text{ when } x=1 \\
+	  \Rightarrow -\csc^2 y\dydx &= \dfrac{1}{2}\left[x\cdot x^{x-1} + \dfrac{x}{x^{x+1}}\right] \\
+	  \Rightarrow -(1 + \cot^2 y)\dydx &= \dfrac{1}{2}\left[x\cdot x^{x-1} + \dfrac{x}{x^{x+1}}\right] \\
+	\end{align}
+	Plugging in $x=1$ in the above equation, we get
+	\begin{align}
+		-(1+0)\dydx &= \dfrac{1}{2}(1 + 1) = 1 \\
+		\Rightarrow \dydx &= -1 \text{ when } x = 1
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
