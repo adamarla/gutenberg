@@ -30,57 +30,24 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question If $\text{cosec }\theta - \sin\theta = a$ and $\sec\theta - \cos\theta = b$, then 
+find the value of $a^{\frac{2}{3}}\cdot b^{\frac{2}{3}}\cdot(a^{\frac{2}{3}}+b^{\frac{2}{3}})$
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	\begin{align}
+		\text{cosec }\theta - \sin\theta &= \dfrac{1}{\sin\theta} - \sin\theta = a \\
+		\Rightarrow \dfrac{\cos^2\theta}{\sin\theta} &= a \\
+		\text{Similarly, }\sec\theta - \cos\theta &= \dfrac{1}{\cos\theta} - \cos\theta = b \\
+		\Rightarrow \dfrac{\sin^2\theta}{\cos\theta} &= b \\
+		\therefore (a\cdot b)^{\frac{2}{3}}\cdot(a^{\frac{2}{3}} + b^{\frac{2}{3}}) &= 
+		\cos^{\frac{2}{3}}\theta\cdot\sin^{\frac{2}{3}}\theta\times
+		\left[ \dfrac{\cos^{\frac{4}{3}}\theta}{\sin^{\frac{2}{3}}\theta} + 
+		\dfrac{\sin^{\frac{4}{3}}\theta}{\cos^{\frac{2}{3}}\theta}\right] \\
+		&= \cos^2\theta + \sin^2\theta = 1
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
