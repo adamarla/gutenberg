@@ -30,57 +30,20 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question If $f(x) = 3x^2-4x$, then find the intervals in which it is \textit{increasing} 
+and \textit{decreasing}
 
 \insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+   $f(x)$ is increasing when $\dfrac{\ud}{\ud x}f(x) > 0$ and decreasing otherwise. Which means,
+   \begin{align}
+   	   \text{Increasing when }\dfrac{\ud}{\ud x}(3x^2-4x) = (6x-4) > 0 &\Rightarrow x > \frac{2}{3} \\
+   	   \text{and decreasing when } (6x-4) < 0 &\Rightarrow x < \frac{2}{3}
+   \end{align}
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
