@@ -30,57 +30,18 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Find $A$ if $\tan^{-1} \frac{2}{11} + \cot^{-1}\frac{24}{7} = \tan^{-1} A$
 
 \insertQR{}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	\begin{align}
+	    \tan^{-1}\frac{2}{11} + \cot^{-1}\frac{24}{7} &= \tan^{-1}\frac{2}{11} + \tan^{-1}\frac{7}{24} \\
+	      &= \tan^{-1}\left(\dfrac{\frac{2}{11} + \frac{7}{24}}{1-\frac{2}{11}\cdot\frac{7}{24}}\right) \\
+	      &= \tan^{-1}\left(\dfrac{125}{150}\right) = \tan^{-1}\left(\dfrac{1}{2}\right)
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
