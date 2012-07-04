@@ -30,10 +30,10 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question Find the inverse of the one-to-one function
+\question[2] Find the inverse of the one-to-one function
 $f:\Re-\{-5\}\rightarrow \Re-\{2\}$ defined by $f(x)=\dfrac{2x-1}{x+5}$
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
 	\marginnote{$\Re-\{-5\}$ means all real numbers \textit{except} -5. Similarly, $\Re-\{-5,7\}$ means
@@ -41,7 +41,7 @@ $f:\Re-\{-5\}\rightarrow \Re-\{2\}$ defined by $f(x)=\dfrac{2x-1}{x+5}$
 	\marginnote[1cm]{If $f(x) = y$, then $f^{-1}(y) = x$. This is the definition of an inverse function }
 \fi 
 
-\begin{solution}
+\begin{solution}[\mcq]
 	\begin{align}
 		\text{If } y &= f(x) = \dfrac{2x-1}{x+5} \\
 		\text{then } x &= \dfrac{5y+1}{2-y} = f^{-1}(y)
