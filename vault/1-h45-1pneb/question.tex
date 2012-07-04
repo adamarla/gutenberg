@@ -30,57 +30,35 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Find the inverse of the one-to-one function
+$f:\Re-\{-5\}\rightarrow \Re-\{2\}$ defined by $f(x)=\dfrac{2x-1}{x+5}$
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
+	\marginnote{$\Re-\{-5\}$ means all real numbers \textit{except} -5. Similarly, $\Re-\{-5,7\}$ means
+	all real numbers \textit{except} -5 and 7. Getting the picture?}
+	\marginnote[1cm]{If $f(x) = y$, then $f^{-1}(y) = x$. This is the definition of an inverse function }
 \fi 
 
 \begin{solution}
+	\begin{align}
+		\text{If } y &= f(x) = \dfrac{2x-1}{x+5} \\
+		\text{then } x &= \dfrac{5y+1}{2-y} = f^{-1}(y)
+	\end{align}
+	In $y = f(x)$, $y$ is the dependent variable and $x$ the independent variable. 
+	And the convention is to write the \textit{independent} variable as $x$ and the 
+	dependent variable as $y$
+	
+	So, we could also write (2) as $f^{-1}(x) = \dfrac{5x+1}{2-x}$. But remember that 
+	the $x$ here \textit{is not} the same as the $x$ in (1). We are just following a naming
+	convention here
+	
+	Alternately, we could use the fact that $f \circ f^{-1}(y) = y$ (or $f \circ f^{-1}(x) = x$, if 
+	we follow the naming convention)
+	
+	\begin{align}
+		\Rightarrow \dfrac{2f^{-1}(x)-1}{f^{-1}(x)+5} &= x \\
+		\Rightarrow f^{-1}(x) &= \dfrac{5x+1}{2-x}
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
