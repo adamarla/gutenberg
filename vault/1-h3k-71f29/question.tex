@@ -30,15 +30,15 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question What are the maximum and minimum values of the function $f(\theta) = \sin^4\theta + \cos^4\theta$?
+\question[3] What are the maximum and minimum values of the function $f(\theta) = \sin^4\theta + \cos^4\theta$?
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
-\begin{solution}
+\begin{solution}[\fullpage]
   The \textit{extrema} - that is, maxima or minima - will happen at points where,
   \begin{align}
      \dfrac{\ud}{\ud\theta}f(\theta) = 4\sin^3\theta\cos\theta - 4\cos^3\theta\sin\theta &= 0\\
