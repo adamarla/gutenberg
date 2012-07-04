@@ -30,57 +30,43 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Find the value of the determinant 
+$\left|
+  \begin{array}{ccc}
+    1 & a & a^2-bc \\
+    1 & b & b^2-ca \\
+    1 & c & c^2-ab
+  \end{array}
+\right|
+$
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+    \begin{fullwidth}
+    Let the required value be $D$
+	\begin{align}
+	  D &= 1\cdot\left|
+	    \begin{array}{cc}
+	      b & b^2-ca \\
+	      c & c^2-ab
+	    \end{array}
+	  \right| - a\cdot \left|
+	    \begin{array}{cc}
+	      1 & c^2-ab \\
+	      1 & b^2-ca
+	    \end{array}
+	  \right| + (a^2-bc)\cdot\left|
+	    \begin{array}{cc}
+	      1 & b \\
+	      1 & c
+	    \end{array}
+	  \right| \\
+	  &= b(c^2-ab) - c(b^2-ca) -a\cdot(c^2-ab-b^2+ca) + (a^2-bc)\cdot(c-b) \\
+	  &= bc^2-ab^2-b^2c+c^2a-c^2a+a^2b+ab^2-a^2c+a^2c-a^2b-bc^2+b^2c = 0
+	\end{align}
+	\end{fullwidth}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
