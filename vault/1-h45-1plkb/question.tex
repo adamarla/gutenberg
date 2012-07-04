@@ -30,15 +30,15 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question Find $A$ if $\tan^{-1} \frac{2}{11} + \cot^{-1}\frac{24}{7} = \tan^{-1} A$
+\question[1] Find $A$ if $\tan^{-1} \frac{2}{11} + \cot^{-1}\frac{24}{7} = \tan^{-1} A$
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
 	\begin{align}
 	    \tan^{-1}\frac{2}{11} + \cot^{-1}\frac{24}{7} &= \tan^{-1}\frac{2}{11} + \tan^{-1}\frac{7}{24} \\
 	      &= \tan^{-1}\left(\dfrac{\frac{2}{11} + \frac{7}{24}}{1-\frac{2}{11}\cdot\frac{7}{24}}\right) \\
