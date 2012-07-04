@@ -30,19 +30,19 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question Find the inverse of the matrix $A = \left[
+\question[2] Find the inverse of the matrix $A = \left[
  \begin{array}{cc}
    a & b \\
    c & \dfrac{1+bc}{a}
  \end{array}
 \right]$
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
 	\begin{align}
 		|A| &= a\cdot\dfrac{1+bc}{a} - b\cdot c = 1 \\
 		A^{-1} &= \dfrac{\text{adj}(A)}{|A|} \\

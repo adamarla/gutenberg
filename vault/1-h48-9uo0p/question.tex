@@ -30,7 +30,7 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question If $A = \left[ \begin{array}{cc} 
+\question[2] If $A = \left[ \begin{array}{cc} 
 1 & 2 \\ 
 3 & 0
 \end{array}\right]$ and 
@@ -39,12 +39,12 @@ $B = \left[ \begin{array}{cc}
 1 & 6
 \end{array} \right]$, then what is $(AB)^{T}$?
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
 	\begin{align}
 	   AB &= \left[ \begin{array}{cc} 1 & 2 \\ 3 & 0\end{array} \right]\cdot
 	         \left[ \begin{array}{cc} 3 & 4 \\ 1 & 6 \end{array}\right] \\
