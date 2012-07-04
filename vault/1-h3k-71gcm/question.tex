@@ -30,16 +30,16 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question If $f(x) = 3x^2-4x$, then find the intervals in which it is \textit{increasing} 
+\question[1] If $f(x) = 3x^2-4x$, then find the intervals in which it is \textit{increasing} 
 and \textit{decreasing}
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
-\begin{solution}
+\begin{solution}[\mcq]
    $f(x)$ is increasing when $\dfrac{\ud}{\ud x}f(x) > 0$ and decreasing otherwise. Which means,
    \begin{align}
    	   \text{Increasing when }\dfrac{\ud}{\ud x}(3x^2-4x) = (6x-4) > 0 &\Rightarrow x > \frac{2}{3} \\
