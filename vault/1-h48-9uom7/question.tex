@@ -30,57 +30,27 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Find the inverse of the matrix $A = \left[
+ \begin{array}{cc}
+   a & b \\
+   c & \dfrac{1+bc}{a}
+ \end{array}
+\right]$
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	\begin{align}
+		|A| &= a\cdot\dfrac{1+bc}{a} - b\cdot c = 1 \\
+		A^{-1} &= \dfrac{\text{adj}(A)}{|A|} \\
+		       &= \dfrac{1}{1}\left[
+		         \begin{array}{cc}
+		           \dfrac{1+bc}{a} & -b \\
+		           -c & a
+		         \end{array}
+		       \right]
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
