@@ -30,57 +30,45 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question If $A = \left[ 
+  \begin{array}{ccc}
+    2 & 0 & 0 \\
+    2 & 2 & 0 \\
+    2 & 2 & 2
+  \end{array}
+\right]$, then what is adj(adj $A$)?
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+  \begin{align}
+    |A| &= 2\cdot\left| \begin{array}{cc}
+      2 & 0 \\
+      2 & 2
+    \end{array}\right| - 0\cdot\left| \begin{array}{cc}
+      2 & 0 \\
+      2 & 2
+    \end{array}\right| + 0\cdot\left| \begin{array}{cc}
+      2 & 2 \\
+      2 & 2
+    \end{array}\right| = 8 \\
+    \Rightarrow \text{adj(adj $A$)} &= |A|^{N-2}\cdot A, \text{where } N = 3 \\
+            &= 8^{(3-2)}\left[
+              \begin{array}{ccc}
+                2 & 0 & 0 \\
+                2 & 2 & 0 \\
+                2 & 2 & 2
+              \end{array}
+            \right] \\
+            &= 16\left[
+              \begin{array}{ccc}
+                1 & 0 & 0 \\
+                1 & 1 & 0 \\
+                1 & 1 & 1
+              \end{array}
+            \right]
+  \end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
