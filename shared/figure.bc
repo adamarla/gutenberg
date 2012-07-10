@@ -32,10 +32,10 @@ xdim = 80  /* Horizontal dimension of the figure in mm */
 ydim = 100  /* Vertical   dimension of the figure in mm */
 precision = 1     /* Number of significant digits printed (>= 0)*/
 trueorig = 1 /* Equals 1 if the true origin must be used, 0 otherwise. */
-label_axes = 1 /* if 0, then value labels will NOT be placed on axes */
+label_axes = 0 /* if 0, then value labels will NOT be placed on axes */
 
 ymin = p_1(xstart);
-ymax = ymin;
+ymax = ymin; /* Change this to force extension of the y-axis */ 
 xscale = 0 ;
 yscale = 0 ;
 
