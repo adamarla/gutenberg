@@ -31,70 +31,113 @@
 %   7. If a question does not have parts, then first delete lines 43-69
 
 
-\question In the adjoining figure, $R$ is the region in the first quadrant bounded by the graph of  $y =4\ln (3-x)$, the horizontal line $y=6$, and the vertical line $x=2$. Answer the following questions based on this information. \textit{(hint $\ln 3$ = 1.0986)}
+\question In the adjoining figure, $R$ is the region in the first quadrant bounded by the graph of  
+$y =4\ln (3-x)$, the horizontal line $y=6$, and the vertical line $x=2$. Answer the following questions 
+based on this information 
+
+\calculator{\ln 3 = 1.0986}
 
 \begin{marginfigure}
+% 1. Definition of characteristic points
 \figinit{pt}
-%Origin
-\figpt 1:$O$ (0,0)
-%Straight line
-\figpt 2: (0,60)
-\figpt 3: (20,0)
-\figpt 4:(20,60)
-%axes
-\figpt 10: (100,0)
-\figpt 11: (0,100)
-%region
-\figpt 14: (10,35)
-%draw
+\def\Xmin{0}
+\def\Ymin{-11.29448}
+\def\Xmax{79.99999}
+\def\Ymax{68.70551}
+\def\Xori{0}
+\def\Yori{11.29448}
+\figpt0:(\Xori,\Yori)
+\figpt 100:$y=6$(80,71)
+\figpt 101:$y=4\cdot\ln[3-x]$(80,0)
+\figpt 102:(70,14)
+\figpt 103:$x=2$(70,81)
+\figpt 104:$R$(38,50)
+% 2. Creation of the graphical file
 \figdrawbegin{}
-%\figdrawcurve [5,6,7,8]
+\def\Xmaxx{\Xmax} % To customize the position
+\def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
+\figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
+\figdrawaxes 0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
 \figdrawlineC(
-0 43.99999,
-.68965 43.06855,
-1.37931 42.11492,
-2.06896 41.13803,
-2.75862 40.13671,
-3.44827 39.10972,
-4.13793 38.05570,
-4.82758 36.97318,
-5.51724 35.86060,
-6.20689 34.71622,
-6.89655 33.53818,
-7.58620 32.32443,
-8.27586 31.07275,
-8.96551 29.78069,
-9.65517 28.44555,
-10.34482 27.06436,
-11.03448 25.63383,
-11.72413 24.15031,
-12.41379 22.60971,
-13.10344 21.00748,
-13.79310 19.33846,
-14.48275 17.59686,
-15.17241 15.77607,
-15.86206 13.86854,
-16.55172 11.86560,
-17.24137 9.75719,
-17.93103 7.53159,
-18.62068 5.17499,
-19.31034 2.67102,
-20.00000 0
+0 70.18492,
+2.75862 70.18492,
+5.51724 70.18492,
+8.27586 70.18492,
+11.03448 70.18492,
+13.79310 70.18492,
+16.55172 70.18492,
+19.31034 70.18492,
+22.06896 70.18492,
+24.82758 70.18492,
+27.58620 70.18492,
+30.34482 70.18492,
+33.10344 70.18492,
+35.86206 70.18492,
+38.62068 70.18492,
+41.37931 70.18492,
+44.13793 70.18492,
+46.89655 70.18492,
+49.65517 70.18492,
+52.41379 70.18492,
+55.17241 70.18492,
+57.93103 70.18492,
+60.68965 70.18492,
+63.44827 70.18492,
+66.20689 70.18492,
+68.96551 70.18492,
+71.72413 70.18492,
+74.48275 70.18492,
+77.24137 70.18492,
+79.99999 70.18492
 )
-\figdrawline [2,4]
-\figdrawline [3,4]
-\figdrawaxes 1(-20,100, -20,100)
+\figdrawlineC(
+0 54.42632,
+2.75862 53.39761,
+5.51724 52.34121,
+8.27586 51.25561,
+11.03448 50.13912,
+13.79310 48.98996,
+16.55172 47.80614,
+19.31034 46.58552,
+22.06896 45.32572,
+24.82758 44.02416,
+27.58620 42.67796,
+30.34482 41.28395,
+33.10344 39.83863,
+35.86206 38.33805,
+38.62068 36.77783,
+41.37931 35.15304,
+44.13793 33.45808,
+46.89655 31.68664,
+49.65517 29.83148,
+52.41379 27.88429,
+55.17241 25.83546,
+57.93103 23.67380,
+60.68965 21.38614,
+63.44827 18.95690,
+66.20689 16.36737,
+68.96551 13.59490,
+71.72413 10.61167,
+74.48275 7.38298,
+77.24137 3.86478,
+79.99999 0
+)
+\figdrawline [102,103]
 \figdrawend
-%write
-\figvisu{\figBoxA}{Figure}{
-\figwritesw 1:(3)
-\figwritew 2:$[0, 6]$ (3)
-\figwrites 3:$[2, 0]$ (3)
-\figwritee 10:$x$(3)
-\figwriten 11:$y$(3)
-\figwritene 14:$R$(0)
+% 3. Writing text on the figure
+\figvisu{\figBoxA}{}{%
+\figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+% Points 1 and 2 are the end points of the arrows
+\figwritee 1:(5pt)     \figwriten 2:(5pt)
+\figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
+\figwritee 100:(2)
+\figwrites 101:(3)
+\figwriten 103:(2)
+\figwritee 104:(2)
 }
 \centerline{\box\figBoxA}
+
+
 \end{marginfigure}
 
 
@@ -102,36 +145,16 @@
   \part[3] Find the area of $R$
   \insertQR{QRC}
 \begin{solution}[\fullpage]
+	\begin{align}
+	    R &= \int_0^2 6-4\cdot\ln(3-x)\ud x \\
+	      &= 6\left[ x\right]_0^2 - 
+	      4\cdot\underbrace{\left[ x\cdot\ln(3-x) - \int\dfrac{-x}{3-x}\ud x\right]_0^2}_{\textit{integration by parts}} \\
+	     &= 6\left[ x\right]_0^2 - 4\cdot\left[ x\cdot\ln(3-x) - (x + 3\ln(3-x))\right]_0^2 \\
+	     &= 6\left[ x\right]_0^2 - 4\cdot\left[(x-3)\cdot\ln (3-x) - x \right]_0^2 \\
+	     &= 12 - 4\cdot(3\ln 3 - 2) = 6.8167
+	\end{align}
 
-    Let area of region $R$ be $A$.
-
-    \begin{align}
-      \text{A}  &= \int_0^2 (6-4\ln(3-x)) \ud x \\
-    \end{align}
-
-    Using integration by parts technique,
-
-    \begin{align}
-      f(x)g(x) = \int f'(x)g(x) + \int f(x)g'(x) \nonumber
-    \end{align}
-
-    For $\ln(3-x)$ term we get, \\
-
-    \begin{align}
-      I &= \int \ln(3-x) \ud x \\
-        &= \ln(3-x) x - \int \dfrac{-x}{(3-x)} \ud x \\
-        &= (3-x)(1-\ln \left(3-x\right))
-    \end{align}
-
-    Combining the results we get,
-
-    \begin{align}
-      \text{A} &= \left[6x - 4\left(3-x\right)\left(1-\ln\left(3-x\right)\right)\right]_0^2 \\ 
-               &= 12 - 4 (3\ln 3 -2) \\
-	       &= 6.8167
-    \end{align}
-
-  \end{solution}
+\end{solution}
 
 \newpage
   \part[3] Find the volume of the solid generated when $R$ is revolved about the horizontal line $y=8$.
