@@ -29,7 +29,7 @@
 % 
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
-
+\noprintanswers
 
 \question In the adjoining figure, $R$ is the region in the first quadrant bounded by the graph of  
 $y =4\ln (3-x)$, the horizontal line $y=6$, and the vertical line $x=2$. Answer the following questions 
@@ -37,11 +37,6 @@ based on this information
 
 \calculator{\ln 3 = 1.0986}
 
-
-
-\begin{parts}
-  \part[3] Find the area of $R$
-  \insertQR{QRC}
 \begin{marginfigure}
 % 1. Definition of characteristic points
 \figinit{pt}
@@ -144,6 +139,10 @@ based on this information
 
 
 \end{marginfigure}
+
+\begin{parts}
+  \part[3] Find the area of $R$
+  \insertQR[-50pt]{QRC}
 \begin{solution}[\halfpage]
 	\begin{align}
 	    R &= \int_0^2 6-4\cdot\ln(3-x)\ud x \\
