@@ -32,12 +32,12 @@
 %% Also, when a question is initially written, we simply write \insertQR{}
 % in the text file. This is replaced by a script after the question has 
 % been pushed into the database and a unique code has been generated for it. 
-\providecommand{\insertQR}[1]{
+\providecommand{\insertQR}[2][0pt]{
     \ifprintanswers
     \else
-      \ifthenelse{\NOT\isempty{#1}}{
+      \ifthenelse{\NOT\isempty{#2}}{
         \begin{marginfigure}
-          \psbarcode{#1}{eclevel=Q width=0.6 height=0.6}{qrcode} 
+          \psbarcode[transy=#1,transx=0.8\marginparwidth]{#2}{eclevel=Q width=0.6 height=0.6}{qrcode} 
         \end{marginfigure}
       }{}
     \fi 
