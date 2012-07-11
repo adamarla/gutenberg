@@ -20,6 +20,20 @@ So, we have no latitude there
 However, within gradians, we will always have xyz of the form g-*.sty - where the 'g' prefix 
 is for gradians. Hence, g-trig.sty or g-complex.sty 
 
+\newcommand naming convention
+------------------------------
+
+1. Write commands in camel-case. Example: \fSumOfCos - not \f_sum_of_cos
+2. If command is for typesetting expressions of the form LHS = RHS, then 
+   a. Write 2 commands - one for typesetting the whole expression ( LHS = RHS )
+      and the other for typesetting just the RHS 
+
+   b. Command for typesetting the full expression *** must start with *** 'f'
+      Example: \fSumOfCos
+
+   c. Command for typesetting just the RHS expression *** must start with *** 'e'.
+      Example: \eSumOfCos
+
 Things to do after writing a NEW .sty file
 -------------------------------------------
 1. Include it by adding a \RequirePackage{g-whatever} command in tufte-exam.cls 
