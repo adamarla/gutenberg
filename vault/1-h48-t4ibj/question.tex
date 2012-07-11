@@ -30,57 +30,23 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Prove that $\sin^8\theta - \cos^8\theta = (\sin^2\theta - \cos^2\theta)\cdot(1-2\sin^2\theta\cos^2\theta)$
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+   \begin{fullwidth}
+   \begin{align}
+      \underbrace{\sin^8\theta - \cos^8\theta}_{a^2-b^2} &= 
+      \underbrace{(\sin^4\theta - \cos^4\theta)\cdot(\sin^4\theta + \cos^4\theta)}_{(a-b)\cdot(a+b)} \\
+      &= (\sin^2\theta - \cos^2\theta)\cdot\underbrace{(\sin^2\theta + \cos^2\theta)}_{=1}\cdot
+         \underbrace{(\sin^4\theta + \cos^4\theta)}_{a^2+b^2 = (a+b)^2 - 2ab} \\
+      &= (\sin^2\theta - \cos^2\theta)\cdot\left[\underbrace{(\sin^2\theta + \cos^2\theta)^2}_{=1} -
+         2\sin^2\theta\cos^2\theta\right] \\
+      &= (\sin^2\theta - \cos^2\theta)\cdot(1-2\sin^2\theta\cos^2\theta)
+   \end{align}
+   \end{fullwidth}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
