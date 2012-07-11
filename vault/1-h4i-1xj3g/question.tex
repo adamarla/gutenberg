@@ -30,57 +30,30 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question The angles of a triangle are in arithmetic progression and the ratio of 
+the number of \textit{degrees} of the \textit{smallest} angle to the number of 
+\textit{radians} of the \textit{largest} angle is $\frac{60}{\pi}$. Find the angles 
+of the triangle - in degrees 
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
+  \marginnote[4cm]{You can also write (1) as $\dfrac{a}{a+2d} = \dfrac{A_D}{\frac{180}{\pi}\cdot C_R}$. 
+  The key is to remember that when taking ratios, both the values must have the same units }
 \fi 
 
 \begin{solution}
+   Let the three angles be $A=a$, $B=a+d$ and $C=a+2d$ - either all in degrees or all in radians. 
+   Moreover, let $A_D$ be the \textit{number of degrees} in $\angle A$ and $C_R$ the
+   \textit{number of radians} in $\angle C$
+   
+   And so, 
+   \begin{align}
+       \dfrac{a}{a+2d} &= \overbrace{\dfrac{\frac{\pi}{180}\times A_D}{C_R}}^{\texttt{everything in radians}} \\
+       \text{where } \dfrac{A_D}{C_R} &= \dfrac{60}{\pi} \\
+       \Rightarrow \dfrac{a}{a+2d} &= \dfrac{\pi}{180}\cdot\dfrac{60}{\pi} = \dfrac{1}{3} \\
+       \Rightarrow a &= d 
+   \end{align}
+   And therefore, $A=a$, $B = 2a$ and $C = 3a$. Given that $ A+B+C = \ang{180}$, we get 
+   $A = \ang{30}$, $B=\ang{60}$ and $C=\ang{90}$
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
