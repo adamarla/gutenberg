@@ -44,12 +44,28 @@
   \cos #1 + \cos #2 = \eSumOfCos{#1}{#2}
 }
 
+% cos A - cos B
+\newcommand{\eDiffOfCos}[2]{
+  2\sin\dfrac{#1 + #2}{2}\sin\dfrac{#2-#1}{2}
+}
+\newcommand{\fDiffOfCos}[2]{
+  \cos #1 - \cos #2 = \eDiffOfCos{#1}{#2}
+}
+
 % sin A + sin B
 \newcommand{\eSumOfSin}[2]{
   2\sin\dfrac{#1 + #2}{2}\cos\dfrac{#1-#2}{2}
 }
 \newcommand{\fSumOfSin}[2]{
   \sin #1 + \sin #2 = \eSumOfSin{#1}{#2}
+}
+
+% sin A - sin B
+\newcommand{\eDiffOfSin}[2]{
+  2\cos\dfrac{#1 + #2}{2}\sin\dfrac{#1-#2}{2}
+}
+\newcommand{\fDiffOfSin}[2]{
+  \sin #1 - \sin #2 = \eDiffOfSin{#1}{#2}
 }
 
 % tan (A+B)
