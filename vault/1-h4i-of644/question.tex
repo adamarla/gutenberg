@@ -30,57 +30,22 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Prove that $2\cos\dfrac{\pi}{13}\cos\dfrac{9\pi}{13} + \cos\dfrac{3\pi}{13} + \cos\dfrac{5\pi}{13} = 0$
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+   \begin{fullwidth}
+     \begin{align}
+        2\cos\dfrac{\pi}{13}\cos\dfrac{9\pi}{13} &+ \cos\dfrac{3\pi}{13} + \cos\dfrac{5\pi}{13}
+        = 2\cos\dfrac{\pi}{13}\cos\dfrac{9\pi}{13} + 
+        2\cos\dfrac{\dfrac{3\pi + 5\pi}{2\times 13}}{2}\cos\dfrac{5\pi-3\pi}{2\times 13} \\
+        &= 2\cos\dfrac{\pi}{13}\cdot\left[ \cos\dfrac{4\pi}{13} + \cos\dfrac{9\pi}{13} \right] \\
+        &= 2\cos\dfrac{\pi}{13}\cdot\left[ 2\cos\overbrace{\dfrac{13\pi}{2\times 13}}^{\frac{\pi}{2}}\cos\dfrac{5\pi}{2\times 13}\right] \\
+        &= 0
+     \end{align}
+   \end{fullwidth}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
