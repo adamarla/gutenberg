@@ -30,57 +30,26 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Prove that $\dfrac{\sin(A-B)}{\cos A\cos B} + \dfrac{\sin(B-C)}{\cos B\cos C} 
++ \dfrac{\sin(C-A)}{\cos C\cos A} = 0$
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+  \begin{fullwidth}
+    \begin{align}
+      \text{LHS} &= \dfrac{\cos C\sin(A-B) + \cos A\sin(B-C) + 
+        \cos B\sin(C-A)}{\cos A\cos B\cos C} \\
+      \text{where }\cos C\sin(A-B) &= \cos C\cdot(\eSinOfDiff{A}{B}) \\
+           &= \sin A\cos B\cos C - \sin B\cos A\cos C \\
+       \cos A\sin(B-C) &= \cos A\cdot(\eSinOfDiff{B}{C}) \\
+          &= \sin B\cos A\cos B - \sin C\cos A\cos B \\
+       \cos B\sin(C-A) &= \cos B\cdot(\eSinOfDiff{C}{A}) \\
+          &= \sin C\cos A\cos B - \sin A\cos B\cos C
+    \end{align}
+    Everything in the (3), (5) and (7) cancels out giving $0$
+  \end{fullwidth}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
