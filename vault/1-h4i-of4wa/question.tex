@@ -30,57 +30,28 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Prove that $\sin\dfrac{\theta}{2}\sin\dfrac{7\theta}{2} + 
+\sin\dfrac{3\theta}{2}\sin\dfrac{11\theta}{2} = \sin 2\theta\cdot\sin 5\theta$
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+  \begin{fullwidth}
+  \begin{align}
+      \sin\dfrac{\theta}{2}\sin\dfrac{7\theta}{2} &+ \sin\dfrac{3\theta}{2}\sin\dfrac{11\theta}{2}
+      = \dfrac{1}{2}\cdot\left[ 2\cdot\sin\dfrac{\theta}{2}\sin\dfrac{7\theta}{2} + 
+         2\cdot\sin\dfrac{3\theta}{2}\sin\dfrac{11\theta}{2} \right] \\
+       &= \dfrac{1}{2}\left[ \left\lbrace \cos\left( \dfrac{\theta}{2} + \dfrac{7\theta}{2}\right) 
+           - \cos\left( \dfrac{7\theta}{2} - \dfrac{\theta}{2}\right)\right\rbrace
+           + \left\lbrace \cos\left( \dfrac{3\theta}{2} + \dfrac{11\theta}{2}\right) 
+           - \cos\left( \dfrac{3\theta}{2} - \dfrac{11\theta}{2}\right)\right\rbrace
+           \right] \\
+       &= \dfrac{1}{2}\left[ (\cos 4\theta - \cos 3\theta) + ( \cos 7\theta - \cos 4\theta)\right] \\
+       &= \dfrac{1}{2}\cdot 2\cdot\sin\left( \dfrac{7\theta + 3\theta}{2}\right)\sin\left( \dfrac{7\theta - 3\theta}{2}\right) \\
+       &= \sin 5\theta\cdot\sin 2\theta
+  \end{align}
+  \end{fullwidth}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
