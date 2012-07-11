@@ -30,14 +30,14 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question If $\tan\alpha = \dfrac{5}{6}$ and $\tan\beta = \dfrac{1}{11}$, then what is $(\alpha + \beta)$?
+\question[1] If $\tan\alpha = \dfrac{5}{6}$ and $\tan\beta = \dfrac{1}{11}$, then what is $(\alpha + \beta)$?
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
 \fi 
 
-\begin{solution}
+\begin{solution}[\mcq]
    \begin{align}
       \tan(\alpha + \beta) &= \dfrac{\tan\alpha + \tan\beta}{1-\tan\alpha\cdot\tan\beta} \\
           &= \dfrac{\frac{5}{6} + \frac{1}{11}}{1-\frac{5}{6}\cdot\frac{1}{11}} = 1 \\
