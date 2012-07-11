@@ -25,6 +25,7 @@
 \RequirePackage{auto-pst-pdf} 
 \RequirePackage{siunitx}
 \RequirePackage{fig4tex}
+\RequirePackage{g-trig}
 
 \providecommand{\ud}{\, \mathrm{d}}
 %\renewcommand{\solutiontitle}{\noindent{\sc{Solution\\}}\enspace}

@@ -1,0 +1,13 @@
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{g-trig}[2011/09/01 Commands internal to gradians.com for typesetting trigonomteric functions] 
+
+% Math-mode only 
+
+\newcommand{\eSumOfCos}[2]{
+  2\cos\dfrac{#1 + #2}{2}\cos\dfrac{#1-#2}{2}
+}
+
+\newcommand{\fSumOfCos}[2]{
+  \cos #1 + \cos #2 = \eSumOfCos{#1}{#2}
+}
