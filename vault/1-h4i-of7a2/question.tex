@@ -38,17 +38,15 @@
 \fi 
 
 \begin{solution}
-   \begin{fullwidth}
    \begin{align}
       \tan\dfrac{A}{2} &= \tan\left( A - \dfrac{A}{2}\right) = \dfrac{\tan A - \tan\dfrac{A}{2}}{1 + \tan A\tan\dfrac{A}{2}} \\
        \Rightarrow 1 + \tan A\cdot\tan\dfrac{A}{2} &= \dfrac{\tan A-\tan\dfrac{A}{2}}{\tan\dfrac{A}{2}} \\
          &= \tan A\cdot\cot\dfrac{A}{2} - 1 \\
-      \text{which also means, } 1 + \tan A\tan\dfrac{A}{2} &= 
+      \Rightarrow 1 + \tan A\tan\dfrac{A}{2} &= 
       \dfrac{\sin A}{\cos A}\cdot\dfrac{\cos\dfrac{A}{2}}{\sin\dfrac{A}{2}} - 1 \\
-      &= \dfrac{\eSinOfSum{\frac{A}{2}}{\frac{A}{2}}}{\eCosOfSum{\frac{A}{2}}{\frac{A}{2}}}\cdot
+      &= \dfrac{\eSinTwoX{\frac{A}{2}}}{\eCosTwoX{\frac{A}{2}}}\cdot
       \dfrac{\cos\dfrac{A}{2}}{\sin\dfrac{A}{2}} - 1 \\
-      &= \dfrac{\cos^2 \dfrac{A}{2} + \sin^2 \dfrac{A}{2}}{\eCosOfSum{\dfrac{A}{2}}{\dfrac{A}{2}}} \\
+      &= \dfrac{\cos^2 \dfrac{A}{2} + \sin^2 \dfrac{A}{2}}{\eCosTwoX{\dfrac{A}{2}}} \\
       &= \dfrac{1}{\cos A} = \sec A
    \end{align}
-   \end{fullwidth}
 \end{solution}
