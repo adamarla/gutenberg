@@ -11,7 +11,12 @@
 \newcommand{\fSinOfSum}[2]{
   \sin(#1 + #2) = \eSinOfSum{#1}{#2}
 }
-
+\newcommand{\eSinTwoX}[1]{
+  2\cdot\sin #1\cdot\cos #1
+}
+\newcommand{\fSinTwoX}[1]{
+  \sin 2#1 = \eSinTwoX{#1}
+}
 % sin(a-b)
 \newcommand{\eSinOfDiff}[2]{
   \sin #1\cdot\cos #2 - \cos #1\cdot\sin #2
@@ -27,7 +32,12 @@
 \newcommand{\fCosOfSum}[2]{
   \cos(#1 + #2) = \eCosOfSum{#1}{#2}
 }
-
+\newcommand{\eCosTwoX}[1]{
+  \cos^{2} #1 - \sin^{2} #1
+}
+\newcommand{\fCosTwoX}[1]{
+  \cos 2#1 = \eCosTwoX{#1}
+}
 % cos(a-b)
 \newcommand{\eCosOfDiff}[2]{
   \cos #1\cdot\cos #2 + \sin #1\cdot\sin #2
