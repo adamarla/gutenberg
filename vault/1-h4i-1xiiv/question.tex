@@ -30,18 +30,23 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question[1] Prove that $\sqrt{\dfrac{1-\sin A}{1+\sin A}} = \sec A - \tan A$
+\question[2] The radius of a carriage wheel is \SI{50}{\centi\meter}, and in $\frac{1}{9}$th of 
+a second it turns through $\ang{80}$ about its center, which is fixed. How many kilometers 
+does a point on the rim of the wheel travel in one hour?
 
 \insertQR{QRC}
 
 \ifprintanswers
+  \marginnote[1cm]{The question is a breeze if one is mindful of the units}
 \fi 
 
 \begin{solution}[\mcq]
-   \begin{align}
-      \sqrt{\dfrac{1-\sin A}{1+\sin A}} &= 
-      \sqrt{\dfrac{(1-\sin A)\cdot(1-\sin A)}{\underbrace{(1+\sin A)\cdot(1-\sin A)}_{\cos^2 A}}} \\
-      &= \dfrac{1-\sin A}{\cos A} \\
-      &= \sec A - \tan A
-   \end{align}
+    If $S$ be the speed of the carriage, then
+	\begin{align}
+	    S &= \dfrac{\frac{\ang{80}}{\ang{360}}\times\overbrace{\SI{50}{\centi\meter}}^{\text{0.5 m}}
+	         \times2\pi}{\frac{1}{9}\si{\second}}
+	         \times 3600\frac{\text{s}}{\text{hour}}
+	         \times\dfrac{1}{1000}\frac{\text{km}}{\text{meter}} \\
+	      &= 7.2\pi\si{\kilo\meter\per\hour} = \SI{22.62}{\kilo\meter\per\hour}
+	\end{align}
 \end{solution}

@@ -30,18 +30,27 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question[1] Prove that $\sqrt{\dfrac{1-\sin A}{1+\sin A}} = \sec A - \tan A$
+\question[2] Prove that $\dfrac{\sin(A-B)}{\cos A\cos B} + \dfrac{\sin(B-C)}{\cos B\cos C} 
++ \dfrac{\sin(C-A)}{\cos C\cos A} = 0$
 
 \insertQR{QRC}
 
 \ifprintanswers
 \fi 
 
-\begin{solution}[\mcq]
-   \begin{align}
-      \sqrt{\dfrac{1-\sin A}{1+\sin A}} &= 
-      \sqrt{\dfrac{(1-\sin A)\cdot(1-\sin A)}{\underbrace{(1+\sin A)\cdot(1-\sin A)}_{\cos^2 A}}} \\
-      &= \dfrac{1-\sin A}{\cos A} \\
-      &= \sec A - \tan A
-   \end{align}
+\begin{solution}[\halfpage]
+  \begin{fullwidth}
+    \begin{align}
+      \text{LHS} &= \dfrac{\cos C\sin(A-B) + \cos A\sin(B-C) + 
+        \cos B\sin(C-A)}{\cos A\cos B\cos C} \\
+      \text{where }\cos C\sin(A-B) &= \cos C\cdot(\eSinOfDiff{A}{B}) \\
+           &= \sin A\cos B\cos C - \sin B\cos A\cos C \\
+       \cos A\sin(B-C) &= \cos A\cdot(\eSinOfDiff{B}{C}) \\
+          &= \sin B\cos A\cos B - \sin C\cos A\cos B \\
+       \cos B\sin(C-A) &= \cos B\cdot(\eSinOfDiff{C}{A}) \\
+          &= \sin C\cos A\cos B - \sin A\cos B\cos C
+    \end{align}
+
+    Terms in (3), (5) and (7) will cancel each other out on adding - giving $0$ 
+  \end{fullwidth}
 \end{solution}

@@ -30,18 +30,29 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question[1] Prove that $\sqrt{\dfrac{1-\sin A}{1+\sin A}} = \sec A - \tan A$
+\question[4] Prove that $\dfrac{\sin A\sin 2A + \sin 3A\sin 6A + \sin 4A\sin 13A}
+{\sin A\cos 2A + \sin 3A\cos 6A + \sin 4A\cos 13A} = \tan 9A$
 
 \insertQR{QRC}
 
 \ifprintanswers
 \fi 
 
-\begin{solution}[\mcq]
-   \begin{align}
-      \sqrt{\dfrac{1-\sin A}{1+\sin A}} &= 
-      \sqrt{\dfrac{(1-\sin A)\cdot(1-\sin A)}{\underbrace{(1+\sin A)\cdot(1-\sin A)}_{\cos^2 A}}} \\
-      &= \dfrac{1-\sin A}{\cos A} \\
-      &= \sec A - \tan A
-   \end{align}
+\begin{solution}[\fullpage]
+   Let the LHS be $= X$. Multiply and divide $X$ with $2$ so that, 
+   \begin{fullwidth}
+   	  \begin{align}
+   	      X &= \dfrac{2\sin A\sin 2A + 2\sin 3A\sin 6A + 2\sin 4A\sin 13A}
+{2\sin A\cos 2A + 2\sin 3A\cos 6A + 2\sin 4A\cos 13A} \\
+            &= \dfrac{(\cos\dfrac{3A}{2} - \cos\dfrac{A}{2}) + 
+            (\cos\dfrac{9A}{2} - \cos\dfrac{3A}{2}) + 
+            (\cos\dfrac{17A}{2} - \cos\dfrac{9A}{2})}
+                     {(\sin 3A - \sin A) + 
+                     (\sin 9A - \sin 3A) + 
+                     (\sin 17A - \sin 9A)} \\
+            &= \dfrac{\cos\dfrac{17A}{2} - \cos\dfrac{A}{2}}{\sin 17A - \sin A} \\
+            &= \dfrac{2\cdot\sin 9A\sin 8A}{2\cdot\cos 9A\sin 8A} \\
+            &= \tan 9A
+   	  \end{align}
+   \end{fullwidth}
 \end{solution}

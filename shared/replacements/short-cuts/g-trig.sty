@@ -1,0 +1,96 @@
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{g-trig}[2011/09/01 Commands internal to gradians.com for typesetting trigonomteric functions] 
+
+% Math-mode only 
+
+% sin(a+b)
+\newcommand{\eSinOfSum}[2]{
+  \sin #1\cdot\cos #2 + \cos #1\cdot\sin #2
+}
+\newcommand{\fSinOfSum}[2]{
+  \sin(#1 + #2) = \eSinOfSum{#1}{#2}
+}
+\newcommand{\eSinTwoX}[1]{
+  2\cdot\sin #1\cdot\cos #1
+}
+\newcommand{\fSinTwoX}[1]{
+  \sin 2#1 = \eSinTwoX{#1}
+}
+% sin(a-b)
+\newcommand{\eSinOfDiff}[2]{
+  \sin #1\cdot\cos #2 - \cos #1\cdot\sin #2
+}
+\newcommand{\fSinOfDiff}[2]{
+  \sin(#1 - #2) = \eSinOfDiff{#1}{#2}
+}
+
+% cos(a+b)
+\newcommand{\eCosOfSum}[2]{
+  \cos #1\cdot\cos #2 - \sin #1\cdot\sin #2
+}
+\newcommand{\fCosOfSum}[2]{
+  \cos(#1 + #2) = \eCosOfSum{#1}{#2}
+}
+\newcommand{\eCosTwoX}[1]{
+  \cos^{2} #1 - \sin^{2} #1
+}
+\newcommand{\fCosTwoX}[1]{
+  \cos 2#1 = \eCosTwoX{#1}
+}
+% cos(a-b)
+\newcommand{\eCosOfDiff}[2]{
+  \cos #1\cdot\cos #2 + \sin #1\cdot\sin #2
+}
+\newcommand{\fCosOfDiff}[2]{
+  \cos(#1 - #2) = \eCosOfDiff{#1}{#2}
+}
+
+% cos A + cos B
+\newcommand{\eSumOfCos}[2]{
+  2\cos\dfrac{#1 + #2}{2}\cos\dfrac{#1-#2}{2}
+}
+\newcommand{\fSumOfCos}[2]{
+  \cos #1 + \cos #2 = \eSumOfCos{#1}{#2}
+}
+
+% cos A - cos B
+\newcommand{\eDiffOfCos}[2]{
+  2\sin\dfrac{#1 + #2}{2}\sin\dfrac{#2-#1}{2}
+}
+\newcommand{\fDiffOfCos}[2]{
+  \cos #1 - \cos #2 = \eDiffOfCos{#1}{#2}
+}
+
+% sin A + sin B
+\newcommand{\eSumOfSin}[2]{
+  2\sin\dfrac{#1 + #2}{2}\cos\dfrac{#1-#2}{2}
+}
+\newcommand{\fSumOfSin}[2]{
+  \sin #1 + \sin #2 = \eSumOfSin{#1}{#2}
+}
+
+% sin A - sin B
+\newcommand{\eDiffOfSin}[2]{
+  2\cos\dfrac{#1 + #2}{2}\sin\dfrac{#1-#2}{2}
+}
+\newcommand{\fDiffOfSin}[2]{
+  \sin #1 - \sin #2 = \eDiffOfSin{#1}{#2}
+}
+
+% tan (A+B)
+\newcommand{\eTanOfSum}[2]{
+  \dfrac{\tan #1 + \tan #2}{1-\tan #1\cdot\tan #2}
+}
+\newcommand{\fTanOfSum}[2]{
+  \tan(#1 + #2) = \eTanOfSum{#1}{#2}
+}
+
+% tan (A-B)
+\newcommand{\eTanOfDiff}[2]{
+  \dfrac{\tan #1 - \tan #2}{1+\tan #1\cdot\tan #2}
+}
+\newcommand{\fTanOfDiff}[2]{
+  \tan(#1 - #2) = \eTanOfDiff{#1}{#2}
+}
+

@@ -30,57 +30,17 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question[1] Prove that $\sec^4\theta - \sec^2\theta = \tan^4\theta + \tan^2\theta$
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
+\fi
 
-\begin{solution}
+\begin{solution}[\mcq]
+   \begin{align}
+      \sec^4\theta - \sec^2\theta &= \sec^2\theta\cdot\underbrace{(\sec^2\theta - 1)}_{\tan^2\theta} \\
+      &= (1+\tan^2\theta)\cdot\tan^2\theta \\
+      &= \tan^4\theta + \tan^2\theta
+   \end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

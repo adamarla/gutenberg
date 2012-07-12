@@ -30,18 +30,22 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question[1] Prove that $\sqrt{\dfrac{1-\sin A}{1+\sin A}} = \sec A - \tan A$
+\question[4] Prove that $2\cos\dfrac{\pi}{13}\cos\dfrac{9\pi}{13} + \cos\dfrac{3\pi}{13} + \cos\dfrac{5\pi}{13} = 0$
 
 \insertQR{QRC}
 
 \ifprintanswers
 \fi 
 
-\begin{solution}[\mcq]
-   \begin{align}
-      \sqrt{\dfrac{1-\sin A}{1+\sin A}} &= 
-      \sqrt{\dfrac{(1-\sin A)\cdot(1-\sin A)}{\underbrace{(1+\sin A)\cdot(1-\sin A)}_{\cos^2 A}}} \\
-      &= \dfrac{1-\sin A}{\cos A} \\
-      &= \sec A - \tan A
-   \end{align}
+\begin{solution}[\halfpage]
+   \begin{fullwidth}
+     \begin{align}
+        2\cos\dfrac{\pi}{13}\cos\dfrac{9\pi}{13} &+ \overbrace{\cos\dfrac{3\pi}{13} + \cos\dfrac{5\pi}{13}}^{\cos A + \cos B}
+        = 2\cos\dfrac{\pi}{13}\cos\dfrac{9\pi}{13} + 
+        2\cos\dfrac{3\pi + 5\pi}{2\cdot 13}\cos\dfrac{5\pi-3\pi}{2\cdot 13} \\
+        &= 2\cos\dfrac{\pi}{13}\cdot\left[ \cos\dfrac{4\pi}{13} + \cos\dfrac{9\pi}{13} \right] \\
+        &= 2\cos\dfrac{\pi}{13}\cdot\left[ 2\overbrace{\cos\dfrac{13\pi}{2\cdot 13}}^{\cos\frac{\pi}{2} = 0}\cos\dfrac{5\pi}{2\cdot 13}\right] \\
+        &= 0
+     \end{align}
+   \end{fullwidth}
 \end{solution}

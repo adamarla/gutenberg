@@ -30,7 +30,7 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question[1] Prove that $\sqrt{\dfrac{1-\sin A}{1+\sin A}} = \sec A - \tan A$
+\question[1] If $\tan\alpha = \dfrac{5}{6}$ and $\tan\beta = \dfrac{1}{11}$, then what is $(\alpha + \beta)$?
 
 \insertQR{QRC}
 
@@ -39,9 +39,8 @@
 
 \begin{solution}[\mcq]
    \begin{align}
-      \sqrt{\dfrac{1-\sin A}{1+\sin A}} &= 
-      \sqrt{\dfrac{(1-\sin A)\cdot(1-\sin A)}{\underbrace{(1+\sin A)\cdot(1-\sin A)}_{\cos^2 A}}} \\
-      &= \dfrac{1-\sin A}{\cos A} \\
-      &= \sec A - \tan A
+      \tan(\alpha + \beta) &= \dfrac{\tan\alpha + \tan\beta}{1-\tan\alpha\cdot\tan\beta} \\
+          &= \dfrac{\frac{5}{6} + \frac{1}{11}}{1-\frac{5}{6}\cdot\frac{1}{11}} = 1 \\
+          \Rightarrow \alpha + \beta &= \tan^{-1} 1 = \dfrac{\pi}{4}
    \end{align}
 \end{solution}

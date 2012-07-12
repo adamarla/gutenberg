@@ -30,18 +30,23 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question[1] Prove that $\sqrt{\dfrac{1-\sin A}{1+\sin A}} = \sec A - \tan A$
+\question[4] Prove that $1+\tan A\tan \dfrac{A}{2} = \tan A\cot\dfrac{A}{2} - 1 = \sec A$
 
 \insertQR{QRC}
 
 \ifprintanswers
 \fi 
 
-\begin{solution}[\mcq]
+\begin{solution}[\fullpage]
    \begin{align}
-      \sqrt{\dfrac{1-\sin A}{1+\sin A}} &= 
-      \sqrt{\dfrac{(1-\sin A)\cdot(1-\sin A)}{\underbrace{(1+\sin A)\cdot(1-\sin A)}_{\cos^2 A}}} \\
-      &= \dfrac{1-\sin A}{\cos A} \\
-      &= \sec A - \tan A
+      \tan\dfrac{A}{2} &= \tan\left( A - \dfrac{A}{2}\right) = \dfrac{\tan A - \tan\dfrac{A}{2}}{1 + \tan A\tan\dfrac{A}{2}} \\
+       \Rightarrow 1 + \tan A\cdot\tan\dfrac{A}{2} &= \dfrac{\tan A-\tan\dfrac{A}{2}}{\tan\dfrac{A}{2}} \\
+         &= \tan A\cdot\cot\dfrac{A}{2} - 1 \\
+      \Rightarrow 1 + \tan A\tan\dfrac{A}{2} &= 
+      \dfrac{\sin A}{\cos A}\cdot\dfrac{\cos\frac{A}{2}}{\sin\frac{A}{2}} - 1 \\
+      &= \dfrac{\eSinTwoX{\frac{A}{2}}}{\eCosTwoX{\frac{A}{2}}}\cdot
+      \dfrac{\cos\frac{A}{2}}{\sin\frac{A}{2}} - 1 \\
+      &= \dfrac{\cos^2 \frac{A}{2} + \sin^2 \frac{A}{2}}{\eCosTwoX{\frac{A}{2}}} \\
+      &= \dfrac{1}{\cos A} = \sec A
    \end{align}
 \end{solution}

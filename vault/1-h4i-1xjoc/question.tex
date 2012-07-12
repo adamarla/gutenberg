@@ -30,18 +30,39 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question[1] Prove that $\sqrt{\dfrac{1-\sin A}{1+\sin A}} = \sec A - \tan A$
+\question[3] The angles of a triangle are in arithmetic progression and the ratio of 
+the number of \textit{radians} in the \textit{smallest} angle to the number of 
+\textit{degrees} of the \textit{mean} angle is $\frac{1}{120}$. Find the angles 
+of the triangle - in radians 
 
 \insertQR{QRC}
 
 \ifprintanswers
 \fi 
 
-\begin{solution}[\mcq]
+\begin{solution}[\halfpage]
+  \begin{fullwidth}
+   Let the three angles be $A=a$, $B=a+d$ and $C=a+2d$ - either all in degrees or all in radians. 
+   Moreover, let $A_R$ be the \textit{number of radians} in $\angle A$ and $B_D$ the
+   \textit{number of degrees} in (mean) $\angle B$
+   
+   And so, 
    \begin{align}
-      \sqrt{\dfrac{1-\sin A}{1+\sin A}} &= 
-      \sqrt{\dfrac{(1-\sin A)\cdot(1-\sin A)}{\underbrace{(1+\sin A)\cdot(1-\sin A)}_{\cos^2 A}}} \\
-      &= \dfrac{1-\sin A}{\cos A} \\
-      &= \sec A - \tan A
+       \dfrac{a}{a+d} &= \overbrace{\dfrac{A_R}{\frac{\pi}{180}\cdot B_D}}^{\texttt{everything in radians}} \\
+       \text{where } \dfrac{A_R}{B_D} &= \dfrac{1}{120} \\
+       \Rightarrow \dfrac{a}{a+d} &= \dfrac{180}{\pi}\cdot\dfrac{1}{120} = \dfrac{3}{2\pi} \\
+       \Rightarrow d &= \left( \dfrac{2\pi}{3}-1\right)\cdot a 
    \end{align}
+   The three angles, therefore, are 
+   \begin{align}
+      A &= a \\
+      B &= a + d = a\cdot\left(1 + \dfrac{2\pi}{3} - 1 \right) = \dfrac{2\pi}{3}a\\
+      C &= a + 2d = a\cdot\left( 1 + \dfrac{4\pi}{3} - 2\right) = \left( \dfrac{4\pi}{3} - 1\right) \\
+      \text{Moreover, if } A + B + C &= \pi \text{ then } 
+      a\cdot\left[1 + \dfrac{2\pi}{3} + \dfrac{4\pi}{3} - 1 \right] = \pi \\
+      \Rightarrow A = a &= \dfrac{1}{2} \\
+      B &= \dfrac{2\pi}{3}a = \dfrac{\pi}{3} \\
+      C &= \left(\dfrac{2\pi}{3} - \dfrac{1}{2} \right)
+   \end{align}
+ \end{fullwidth}
 \end{solution}

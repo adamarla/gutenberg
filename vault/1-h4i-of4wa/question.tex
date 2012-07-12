@@ -30,18 +30,28 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question[1] Prove that $\sqrt{\dfrac{1-\sin A}{1+\sin A}} = \sec A - \tan A$
+\question[3] Prove that $\sin\dfrac{\theta}{2}\sin\dfrac{7\theta}{2} + 
+\sin\dfrac{3\theta}{2}\sin\dfrac{11\theta}{2} = \sin 2\theta\cdot\sin 5\theta$
 
 \insertQR{QRC}
 
 \ifprintanswers
 \fi 
 
-\begin{solution}[\mcq]
-   \begin{align}
-      \sqrt{\dfrac{1-\sin A}{1+\sin A}} &= 
-      \sqrt{\dfrac{(1-\sin A)\cdot(1-\sin A)}{\underbrace{(1+\sin A)\cdot(1-\sin A)}_{\cos^2 A}}} \\
-      &= \dfrac{1-\sin A}{\cos A} \\
-      &= \sec A - \tan A
-   \end{align}
+\begin{solution}[\halfpage]
+  \begin{fullwidth}
+  \begin{align}
+      \sin\dfrac{\theta}{2}\sin\dfrac{7\theta}{2} &+ \sin\dfrac{3\theta}{2}\sin\dfrac{11\theta}{2}
+      = \dfrac{1}{2}\cdot\left[ 2\cdot\sin\dfrac{\theta}{2}\sin\dfrac{7\theta}{2} + 
+         2\cdot\sin\dfrac{3\theta}{2}\sin\dfrac{11\theta}{2} \right] \\
+       &= \dfrac{1}{2}\left[ \left\lbrace \cos\left( \dfrac{\theta}{2} + \dfrac{7\theta}{2}\right) 
+           - \cos\left( \dfrac{7\theta}{2} - \dfrac{\theta}{2}\right)\right\rbrace
+           + \left\lbrace \cos\left( \dfrac{3\theta}{2} + \dfrac{11\theta}{2}\right) 
+           - \cos\left( \dfrac{3\theta}{2} - \dfrac{11\theta}{2}\right)\right\rbrace
+           \right] \\
+       &= \dfrac{1}{2}\left[ (\cos 4\theta - \cos 3\theta) + ( \cos 7\theta - \cos 4\theta)\right] \\
+       &= \dfrac{1}{2}\cdot 2\cdot\sin\left( \dfrac{7\theta + 3\theta}{2}\right)\sin\left( \dfrac{7\theta - 3\theta}{2}\right) \\
+       &= \sin 5\theta\cdot\sin 2\theta
+  \end{align}
+  \end{fullwidth}
 \end{solution}
