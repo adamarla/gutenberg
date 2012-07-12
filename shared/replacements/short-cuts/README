@@ -34,6 +34,9 @@ is for gradians. Hence, g-trig.sty or g-complex.sty
    c. Command for typesetting just the RHS expression *** must start with *** 'e'.
       Example: \eSumOfCos
 
+3. And yes, user-defined macro names CANNOT have numbers in their names. So, \fCos2x is invalid but
+   \fCosTwoX is valid 
+
 Things to do after writing a NEW .sty file
 -------------------------------------------
 1. Include it by adding a \RequirePackage{g-whatever} command in tufte-exam.cls 
