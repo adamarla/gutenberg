@@ -44,8 +44,6 @@ $(Dvi) : $(Tex)
 	@echo "[TeX -> dvi]: $@ with [latex] = $(latexCmd)"
 	@$(latexCmd) -halt-on-error $(Tex)
 
-$(Tex) : suggestion.tex
-
 clean :
 	@rm -f $(Folder)* && rm -f *.table && rm -f *.jpeg
 
