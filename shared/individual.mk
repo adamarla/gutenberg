@@ -11,7 +11,7 @@
 ifdef TOMCAT_PRDN
   Gutenberg := /home/gutenberg/bank
 else ifdef PRODUCTION_SERVER
-	Gutenberg := /home/gutenberg/bank
+  Gutenberg := /home/gutenberg/bank
 else
   Gutenberg := /home/abhinav/workspace/gutenberg-live
 endif 
