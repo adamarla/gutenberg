@@ -27,7 +27,11 @@
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. And, use American spellings
 
-\question[3]  Adya needs Rs.4,00,000 in in order to pay for travel expenses in order to play in tournaments overseas. She found a bank that pays 5\% interest compounded quarterly. How much does she need to raise in sponsorships so that she can participate in a tournament 2 years down the road.
+\question[3]  Adya needs \texteuro{25,000} in order to pay for travel expenses in order to 
+play in tournaments overseas. She found a bank that pays 5\% interest compounded quarterly. 
+How much does she need to raise in sponsorships so that she can participate in a 
+tournament 2 years down the road
+
 \insertQR{QRC}
 
 \ifprintanswers
@@ -36,14 +40,13 @@
 \fi 
 
 \begin{solution}[\halfpage]
+  \textit{Calculations below have been done using a log table}
 
-	Say the amount Adya needs to raise is Rs.A,
+  If $P$ be the amount Adya needs to raise now, then 
 	\begin{align}
-			   400000 &= A\left(1+\dfrac{5}{100}\right)^8 \\
-		4 \times 10^5 &= A\left(\dfrac{105}{100}\right)^8 \\
-		   \log 4 + 5 &= \log A + 8\left(\log 21 -\log 20\right) \\
-		       	 5.43 &= \log A \\
-		    	 	A &= \text{Rs.}2,69,153
+			   25,000 &= P\left(1+\dfrac{5}{100}\right)^{4\text{ compoundings per year}\times 2\text{ years}} \\
+         \Rightarrow \log P &= \log 25,000 - 8\cdot\log 1.05 = 4.23 \\
+         \Rightarrow P &= 10^{4.23} = \text{\texteuro{16,982.44}}
 	\end{align}
 
 \end{solution}

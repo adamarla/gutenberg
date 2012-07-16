@@ -1,26 +1,27 @@
 
-SHELL := /bin/bash
-export LATEX_ROOT = /usr/local/texlive/2011
-export TEXINPUTS = :$(LATEX_ROOT)/../texmf-local///:$(LATEX_ROOT)
+# Only environment variables defined in /etc/init.d/tomcat6 are visible
+# to Tomcat. And variables like $(HOME) are re-defined (obviously) when 
+# Tomcat comes into play. And yet, we need $(Gutenberg) to be set to 
+# Gutenberg's home on the production machine and to the user's local 
+# copy of the bank on a local machine - irrespective of whether its Tomcat
+# or a user invoking the Makefiles. Hence, we define 2 variables - TOMCAT_PRDN 
+# and PRODUCTION_SERVER - on the production server only - in /etc/init.d/tomcat6
+# /etc/environment respectively
 
-# Executables to call ... 
-dvipsCmd := /usr/local/texlive/2011/bin/i386-linux/dvips
-latexCmd := $(shell which latex)
-ps2pdfCmd := $(shell which ps2pdf)
+ifdef TOMCAT_PRDN
+  Gutenberg := /home/gutenberg/bank
+else ifdef PRODUCTION_SERVER
+	Gutenberg := /home/gutenberg/bank
+else
+  Gutenberg := /home/abhinav/workspace/gutenberg-live
+endif 
 
-# Locations ... 
+include $(join $(Gutenberg), /shared/environment.mk)
 
-# For historical reasons, the parent of vault, mint etc on the 
-# production server was called bank/. But on our local machines, it 
-# was changed to be called 'gutenberg'. The environment variable 
-# - PRODUCTION_SERVER - identifies the machine as such. It does NOT 
-# - in fact, should not - be set on your local machine. Only on the
-# production server
-
-Gutenberg := $(if $(PRODUCTION_SERVER), $(HOME)/bank, $(HOME)/workspace/gutenberg-live)
+.PHONY: clean
 
 # Input files - TeX, gnuplots, .sk and the like. Only the answer-key is to be generated 
-Folder    := $(notdir $(CURDIR))
+#Folder    := $(notdir $(CURDIR))
 
 # Generated files - all share the same basename as the stitched answer TeX 
 Tex     := suggestion.tex
@@ -29,23 +30,19 @@ Ps      := suggestion.ps
 Pdf     := suggestion.pdf
 Thumb   := suggestion.jpeg
 
-page-1.jpeg : $(Pdf)
-	@echo "[Pdf -> preview]"
-
 $(Pdf) : $(Ps)
-	@echo "[ps -> pdf]: $@ with [ps2pdfCmd] = $(ps2pdfCmd)"
-	@$(ps2pdfCmd) $(Ps) $(Pdf)
+	@echo "[ps -> pdf]: $@ with [ps2pdf] = $(ps2pdf)"
+	@$(ps2pdf) $(Ps) $(Pdf)
 
 $(Ps) : $(Dvi)
-	@echo "[dvi -> ps]: $@ with [dvips] = $(dvipsCmd)"
-	@$(dvipsCmd) -q $(Dvi)
+	@echo "[dvi -> ps]: $@ with [dvips] = $(dvips)"
+	@$(dvips) -q $(Dvi)
 
 $(Dvi) : $(Tex) 
-	@echo "[TeX -> dvi]: $@ with [latex] = $(latexCmd)"
-	@$(latexCmd) -halt-on-error $(Tex)
-
-$(Tex) : suggestion.tex
+	@echo "[TeX -> dvi]: $@ with [latex] = $(latex)" 
+	@echo "[GUTENBERG_LIVE]: $(Gutenberg), [PATH]=$(PATH)"
+	@$(latex) -halt-on-error $(Tex)
 
 clean :
-	@rm -f $(Folder)* && rm -f *.table && rm -f *.jpeg
+	@rm -f suggestion* 
 
