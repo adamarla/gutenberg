@@ -1,19 +1,10 @@
 
-# Only environment variables defined in /etc/init.d/tomcat6 are visible
-# to Tomcat. And variables like $(HOME) are re-defined (obviously) when 
-# Tomcat comes into play. And yet, we need $(Gutenberg) to be set to 
-# Gutenberg's home on the production machine and to the user's local 
-# copy of the bank on a local machine - irrespective of whether its Tomcat
-# or a user invoking the Makefiles. Hence, we define 2 variables - TOMCAT_PRDN 
-# and PRODUCTION_SERVER - on the production server only - in /etc/init.d/tomcat6
-# /etc/environment respectively
+# /opt/gutenberg/PRODUCTION_SERVER is a zero size file on Linode only !!
 
-ifdef TOMCAT_PRDN
-  Gutenberg := /home/gutenberg/bank
-else ifdef PRODUCTION_SERVER
-  Gutenberg := /home/gutenberg/bank
-else
+ifeq ($(realpath /opt/gutenberg/PRODUCTION_SERVER),)
   Gutenberg := /home/abhinav/workspace/gutenberg-live
+else
+  Gutenberg := /home/gutenberg/bank
 endif 
 
 include $(join $(Gutenberg), /shared/environment.mk)
