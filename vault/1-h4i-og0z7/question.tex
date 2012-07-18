@@ -29,58 +29,39 @@
 % 
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
+\question Prove that $\sin^4\dfrac{\pi}{8} + \sin^4\dfrac{3\pi}{8} + \sin^4\dfrac{5\pi}{8} + \sin^4\dfrac{7\pi}{8} = \dfrac{3}{2}$
 
-\question
-
-\insertQR{}
+\insertQR[-30pt]{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+  \begin{fullwidth}
+    Using the fact that $\sin^2\theta = \dfrac{1-\cos 2\theta}{2}$,  we can re-write the above as
+    \begin{align}
+       &\dfrac{1}{2^2}\cdot\left[\left( 1-\cos\dfrac{\pi}{4}\right)^2 + 
+       \left( 1-\cos\dfrac{3\pi}{4}\right)^2
+       + \left( 1-\cos\dfrac{5\pi}{4}\right)^2 + 
+       \left( 1-\cos\dfrac{7\pi}{4}\right)^2\right] \\
+       &= \dfrac{1}{4}\cdot\left( 1 + \cos^2\dfrac{\pi}{4} - 2\cos\dfrac{\pi}{4}\right) +
+          \dfrac{1}{4}\left( 1 + \cos^2\dfrac{3\pi}{4} - 2\cos\dfrac{3\pi}{4}\right) + \nonumber \\
+       & \dfrac{1}{4}\left( 1 + \cos^2\dfrac{5\pi}{4} - 2\cos\dfrac{5\pi}{4}\right) + 
+          \dfrac{1}{4}\left( 1 + \cos^2\dfrac{7\pi}{4} - 2\cos\dfrac{7\pi}{4}\right) 
+    \end{align}
+    Now, $\cos(n\pi \pm \theta) = (-1)^{n}\cos\theta$. And so, if you noticed that,
+    \begin{align}
+    	\dfrac{3\pi}{4} &= \pi - \frac{\pi}{4} \\
+    	\dfrac{5\pi}{4} &= \pi + \frac{\pi}{4} \\
+    	\dfrac{7\pi}{4} &= 2\pi - \frac{\pi}{4}
+    \end{align}
+    , then the expression can be re-written as 
+    \begin{align}
+       &= \dfrac{1}{4}\cdot\left( 1 + \cos^2\dfrac{\pi}{4} - 2\cos\dfrac{\pi}{4}\right) +
+          \dfrac{1}{4}\left( 1 + \cos^2\dfrac{\pi}{4} + 2\cos\dfrac{\pi}{4}\right) + \nonumber \\
+       & \dfrac{1}{4}\left( 1 + \cos^2\dfrac{\pi}{4} + 2\cos\dfrac{\pi}{4}\right) + 
+          \dfrac{1}{4}\left( 1 + \cos^2\dfrac{\pi}{4} - 2\cos\dfrac{\pi}{4}\right) \\
+       &= \dfrac{1}{4}\cdot\left[ 4 + 4\cdot\dfrac{1}{(\sqrt{2})^2}\right] = \dfrac{3}{2} 
+    \end{align}
+  \end{fullwidth}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
