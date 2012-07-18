@@ -29,58 +29,23 @@
 % 
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
+\question If $\cos]alpha = \frac{3}{5}$ and $\cos\beta = \frac{4}{5}$, then find the 
+value of $\cos\dfrac{\alpha-\beta}{2}$ given that both $\alpha$ and $\beta$ are positive
+acute angles
 
-\question
-
-\insertQR{}
+\insertQR[-20pt]{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+  %\begin{fullwidth}
+	\begin{align}
+	   \cos\alpha = \dfrac{3}{5} \Rightarrow \sin\alpha = \sqrt{1-\cos^2\alpha} &= \dfrac{4}{5} \\
+	   \cos\beta = \dfrac{4}{5} \Rightarrow \sin\beta = \sqrt{1-\cos^2\beta} &= \dfrac{3}{5} \\
+	   \therefore \fCosOfDiff{\alpha}{\beta} &= \dfrac{24}{25} \\
+	   \Rightarrow 2\cdot\cos^2\left( \dfrac{\alpha-\beta}{2}\right) - 1 &= \dfrac{24}{25} \\
+	   \text{ or } \cos\left(\alpha-\beta \right) &= \dfrac{7}{5\sqrt2}
+	\end{align}
+  %\end{fullwidth}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
