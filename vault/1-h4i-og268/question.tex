@@ -30,57 +30,20 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question For what $x$ is $\dfrac{6x-5}{4x+1} < 0$ ?
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	\begin{align}
+	   \dfrac{6x-5}{4x+1} &= \dfrac{6}{4}\cdot\underbrace{\left(\dfrac{x-\frac{5}{6}}{x+\frac{1}{4}}\right)}_{\text{focus on this}} < 0 \\
+	   \Rightarrow  & \begin{cases}
+	   	x > \frac{5}{6} \text{ and } x < \frac{-1}{4} \text{ or, } \\
+	   	x > \frac{-1}{4} \text{ and } x < \frac{5}{6}
+	   \end{cases}	   
+	\end{align}
+	Only the second constraint makes sense. And so, $x \in \left(\frac{-1}{4}, \frac{5}{6} \right)$
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
