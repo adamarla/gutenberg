@@ -30,8 +30,11 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
-
+\question Prove the following identity
+\begin{align}
+  \dfrac{\cot\theta+\tan\theta}{1+\tan2\theta\tan\theta} 
+    = 2\cot2\theta \nonumber
+\end{align}
 \insertQR{}
 
 \ifprintanswers
@@ -50,37 +53,16 @@
 \fi 
 
 \begin{solution}
+  Expand Left Hand Side (L.H.S.) as follows,
+  \begin{align}
+    \text{L.H.S} &= \dfrac{\dfrac{1}{\tan\theta}+\tan\theta}
+    				  {1+\dfrac{2\tan^2\theta}{1-\tan^2\theta}} \\
+    			 &= \dfrac{\dfrac{1+\tan^2\theta}{\tan\theta}}
+    			      {\dfrac{1-\tan^2\theta+2\tan^2\theta}
+    			      {1-\tan^\theta}} \\
+    			 &= \dfrac{1-\tan^2\theta}{\tan\theta} \\
+    			 &= \dfrac{2}{\tan2\theta} \\
+    			 &= 2\cot2\theta
+  \end{align}
+
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
