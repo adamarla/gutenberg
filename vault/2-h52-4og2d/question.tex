@@ -30,7 +30,11 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Prove the following identity
+\begin{align}
+  \dfrac{1-\cos2\theta+\sin2\theta}
+    {1+\cos2\theta+\sin2\theta} = \tan\theta
+\end{align}
 
 \insertQR{}
 
@@ -50,37 +54,14 @@
 \fi 
 
 \begin{solution}
+  Expand the Left Hand Side (L.H.S),
+  \begin{align}
+    \text{L.H.S} &= \dfrac{1-\cos^2\theta+\sin^2\theta+
+                            2\sin\theta\cos\theta}
+                          {1+\cos^2\theta-\sin^2\theta+
+                            2\sin\theta\cos\theta} \\
+                 &= \dfrac{2\sin^2\theta+2\sin\theta\cos\theta}
+                            {2\cos^2\theta+2\sin\theta\cos\theta} \\
+                 &= \tan\theta
+  \end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

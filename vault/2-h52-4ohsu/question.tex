@@ -30,7 +30,12 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Prove the following identity
+\begin{align}
+  \dfrac{\sin(\pi - \alpha)}{\sin\alpha - 
+  	\cos\alpha\tan\dfrac{\alpha}{2}}
+  	+ \cos(\pi - \alpha) = 1 \nonumber
+\end{align}
 
 \insertQR{}
 
@@ -50,37 +55,22 @@
 \fi 
 
 \begin{solution}
+  Substitute the values for $\sin(\pi - \alpha)$ and $\cos(\pi - \alpha)$ 
+  in the Left Hand Side(L.H.S) of the equation,
+  \begin{align}
+    \text{L.H.S} &= \dfrac{\sin\alpha}{\sin\alpha -
+    				  \cos\alpha\tan\dfrac{\alpha}{2}}
+					  - \cos\alpha \\
+    &\textit{(substitute $\dfrac{\alpha}{2}$ with $\theta$)} \nonumber \\
+				 &= \dfrac{\sin 2\theta}{\sin 2\theta - 
+				 	  \cos 2\theta\tan\theta} + \cos 2\theta \\	
+				 &= \dfrac{2\sin\theta\cos\theta}{2\sin\theta\cos\theta - 
+				 	  \cos 2\theta\dfrac{\sin\theta}{\cos\theta}} 
+				 	  - \cos 2\theta \\ 				
+				 &= \dfrac{2\cos ^2\theta}{2\cos^2\theta - 
+				 	  \cos 2\theta} - \cos 2\theta \\
+				 &= \dfrac{2\cos^2\theta}{\cos^2\theta + \sin^2\theta} -
+				 	  \cos^2\theta + \sin^2\theta \\
+				 &= 1	  				
+  \end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

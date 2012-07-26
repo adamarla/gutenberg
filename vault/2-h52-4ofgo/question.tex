@@ -30,7 +30,11 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Prove the following identity
+\begin{align}
+  \dfrac{\sin\theta + \sin 3\theta + \sin 5\theta}
+  	{\cos \theta + \cos 3\theta + \cos 5\theta} = \tan 3\theta \nonumber
+\end{align}
 
 \insertQR{}
 
@@ -50,37 +54,16 @@
 \fi 
 
 \begin{solution}
+  Let us rewrite the Left Hand Side (L.H.S) as follows,
+  \begin{align}
+    \text{L.H.S} &= \dfrac{\sin(3\theta - 2\theta ) + \sin 3\theta + 
+    						\sin (3\theta + 2\theta)}
+  						  {\cos (3\theta - 2\theta) + \cos 3\theta + 
+  							\cos (3\theta + 2\theta)} \\
+				 &= \dfrac{2\sin 3\theta \cos 2\theta + \sin 3\theta}
+				  		  {2\cos 3\theta \cos 2\theta + \cos 3\theta} \\
+				 &= \dfrac{2\sin 3\theta(\cos 2\theta + 1)}
+				  		  {2\cos 3\theta(\cos 2\theta + 1)} \\
+				 &= \tan 3\theta
+  \end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
