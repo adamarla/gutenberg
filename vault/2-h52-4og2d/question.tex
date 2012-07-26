@@ -30,13 +30,13 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question Prove the following identity
+\question[2] Prove the following identity
 \begin{align}
   \dfrac{1-\cos2\theta+\sin2\theta}
     {1+\cos2\theta+\sin2\theta} = \tan\theta
 \end{align}
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -53,7 +53,7 @@
   \end{marginfigure}
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
   Expand the Left Hand Side (L.H.S),
   \begin{align}
     \text{L.H.S} &= \dfrac{1-\cos^2\theta+\sin^2\theta+
