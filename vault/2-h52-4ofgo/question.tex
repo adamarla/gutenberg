@@ -30,13 +30,13 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question Prove the following identity
+\question[3] Prove the following identity
 \begin{align}
   \dfrac{\sin\theta + \sin 3\theta + \sin 5\theta}
   	{\cos \theta + \cos 3\theta + \cos 5\theta} = \tan 3\theta \nonumber
 \end{align}
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -53,7 +53,7 @@
   \end{marginfigure}
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
   Let us rewrite the Left Hand Side (L.H.S) as follows,
   \begin{align}
     \text{L.H.S} &= \dfrac{\sin(3\theta - 2\theta ) + \sin 3\theta + 
