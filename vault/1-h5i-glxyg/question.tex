@@ -30,57 +30,24 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question If $\sin x= \dfrac{3}{5}$ and $\cos y = -\dfrac{12}{13}$, then find the values 
+of $\sin(x+y)$ and $\sin 2x$ given that both $x$ and $y$ lie in the second quadrant
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	\begin{fullwidth}
+	\begin{align}
+		\sin x = \dfrac{3}{5} \text{ when } x \in \left( \frac{\pi}{2}, \pi\right) 
+		\Rightarrow \cos x = \sqrt{1 - \sin^2 x} = -\dfrac{4}{5} \\
+		\cos y = -\dfrac{12}{13} \text{ when } y \in \left( \frac{\pi}{2}, \pi\right)
+		\Rightarrow \sin y = \sqrt{1-\cos^2 y} = \dfrac{5}{13} \\
+		\text{And so, }\sin (x+y) = \eSinOfSum{x}{y} \nonumber \\
+			= \dfrac{3}{5}\cdot\dfrac{-12}{13} + \dfrac{-4}{5}\cdot\dfrac{5}{13} = \dfrac{-56}{65} \\
+	    \text{and } \sin 2x = 2\sin x\cos x = 2\cdot\dfrac{3}{5}\cdot\dfrac{-4}{5} = -\dfrac{24}{25}
+	\end{align}
+	\end{fullwidth}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

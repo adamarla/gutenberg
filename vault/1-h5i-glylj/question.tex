@@ -30,57 +30,27 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Prove that $\dfrac{\cos{8A}\cos{5A}-\cos{12A}\cos{9A}}{\sin{8A}\cos{5A}+\cos{12A}\sin{9A}} = \tan{4A}$
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	Given that,
+	\begin{fullwidth}
+	\begin{align}
+		\fProdOfCos{x}{y} \\
+		\fProdSinCos{x}{y}
+     \end{align}
+     , one can \textit{re-write} the above expression as 
+     \begin{align}
+     & \dfrac{\frac{1}{2}\cdot\left[\eProdOfCos{8A}{5A}\right]-\frac{1}{2}\cdot\left[\eProdOfCos{12A}{9A}\right]}
+     	{\frac{1}{2}\cdot\left[\eProdSinCos{8A}{5A}\right] + \frac{1}{2}\cdot\left[\eProdSinCos{9A}{12A}\right]} \\
+     	&= \dfrac{\cos 13A - \cos 21A}{\sin 13A + \sin 21A} \\
+     	&= \dfrac{\eDiffOfCos{13A}{21A}}{\eSumOfSin{13A}{21A}} \\
+     	&= \dfrac{\sin 4A}{\cos 4A} = \tan 4A
+     \end{align}
+     \end{fullwidth}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
