@@ -30,57 +30,21 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Prove that $\tan\left(\dfrac{\pi}{4} + \theta\right) + 
+\tan\left(\dfrac{\pi}{4} - \theta\right) = \dfrac{2\sec^2\theta}{1-\tan^2\theta}$
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	\begin{fullwidth}
+	\begin{align}
+		\tan\left(\dfrac{\pi}{4} + \theta\right) &+ \tan\left(\dfrac{\pi}{4} - \theta\right) = 
+		\eTanOfSum{\frac{\pi}{4}}{\theta} + \eTanOfDiff{\frac{\pi}{4}}{\theta} \\
+		&= \dfrac{(1+\tan\theta)^2 + (1-\tan\theta)^2}{1-\tan^2\theta} \\
+		&= \dfrac{2\cdot(1 + \tan^2\theta)}{1-\tan^2\theta} = \dfrac{2\sec^2\theta}{1-\tan^2\theta}
+	\end{align}
+	\end{fullwidth}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
