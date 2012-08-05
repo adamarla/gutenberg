@@ -30,57 +30,19 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Without using a calculator, find the value of $\tan\dfrac{\pi}{8}$
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	\begin{align}
+		\tan\dfrac{\pi}{4} = \tan \left(2\cdot\dfrac{\pi}{8}\right) &= \dfrac{2\tan\dfrac{\pi}{8}}{1-\tan^2\dfrac{\pi}{8}} \\
+		\Rightarrow \tan^2\dfrac{\pi}{8} + 2\tan\dfrac{\pi}{8} - 1 &= 0 \\
+		\Rightarrow\tan\dfrac{\pi}{8} = \dfrac{-2 \pm \sqrt{4 - 4\cdot(-1)}}{2} &= (\sqrt{2}-1)\text{ or }-(\sqrt{2}+1)
+	\end{align}
+	As $\tan\theta > 0 \,\forall \,\theta \in (0,\dfrac{\pi}{2})$, $\tan\dfrac{\pi}{8}$ can only be equal to
+	$\sqrt{2}-1$
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
