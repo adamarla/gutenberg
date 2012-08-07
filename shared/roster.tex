@@ -1,18 +1,21 @@
-\documentclass[12pt,a4paper,justified]{tufte-exam}
-\School{school}
+\documentclass{tufte-handout}
+\usepackage{booktabs}
 \fancyfoot[C]{\copyright\, www.gradians.com} 
-\DocAuthor{group}
 
 \begin{document}
-  \begin{large}
-	\begin{fullwidth}  
-      Default password: \textbf{passwd} (School Postal Code).
-      \textit{Don't forget to change it!} \\  
-    \end{fullwidth}
-  \end{large}
-  
-\begin{tabular}{l l l l}
-  Name & Id & Name & Id \\
-  \hline
-\end{tabular}
+  \begin{fullwidth}
+    \begin{table}
+      \begin{tabular}{ccc}
+        school-sektion-password
+      \end{tabular}
+    \end{table}
+
+    \begin{table}
+      \begin{tabular}{llcll}
+        \toprule
+          \textsc{Student} & \textsc{Login} & \hspace{2cm} & \textsc{Student} & \textsc{Login} \\
+        \midrule
+      \end{tabular}
+    \end{table}
+  \end{fullwidth}
 \end{document}
