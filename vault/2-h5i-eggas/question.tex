@@ -30,7 +30,7 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Prove that $\left( \sin 3x + \sin x\right)\cdot \sin x + \left(\cos 3x - \cos x \right)\cdot\cos x = 0 $
 
 \insertQR{}
 
@@ -50,37 +50,15 @@
 \fi 
 
 \begin{solution}
+	\begin{align}
+	    \text{We know that}\quad
+		\fSumOfSin{3x}{x} \nonumber \\
+		\Rightarrow (\sin 3x + \sin x)\sin x 
+			= 2\sin{2x}\cdot\cos{x}\cdot\sin{x}\\
+	    \text{Similarly,}\quad
+		\fDiffOfCos{3x}{x} \nonumber \\
+		\Rightarrow (\cos 3x-\cos x)\cdot\cos x 
+			= 2\sin{2x}\cdot(-\sin x)\cdot\cos x
+	\end{align}
+	Add (1) and (2) to get the original equation.
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
