@@ -30,57 +30,25 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question For what value(s) of $x$ is $2\cos^2 x + 3\sin x = 0$ ?
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	\begin{fullwidth}
+	\begin{align}
+		2\cos^2 x + 3\sin x &= 2\cdot(1-\sin^2 x) + 3 \sin x = 0 \\
+		&\Rightarrow 2\sin^2 x - 3\sin x - 2 = 0 \\
+		&\Rightarrow \sin x = \dfrac{3 \pm \sqrt{3^2 - 4\cdot 2 \cdot (-2)}}{2\cdot2} = 2 \text{ or } -\dfrac{1}{2}
+	\end{align}
+	$\sin x > 1$ is not possible. Hence, the only feasible solution is $\sin x = -\dfrac{1}{2}$
+	
+	\begin{align}
+		\text{And so, if } \sin x = -\dfrac{1}{2}, \text{ then } x &= n\pi + (-1)^n\cdot\left(-\dfrac{\pi}{6}\right) \\
+		    &= n\pi + (-1)^{n+1}\left( \dfrac{\pi}{6}\right)
+	\end{align}
+	\end{fullwidth}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
