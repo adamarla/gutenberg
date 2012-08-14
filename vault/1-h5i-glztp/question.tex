@@ -46,19 +46,19 @@
        &= \dfrac{1}{4}\cdot\left(\dfrac{\sqrt{3}}{2} \right)^2 = \dfrac{3}{16}
     \end{align}
     
-    Alternatively, you can use the fact that $\fProdOfSin{a}{b}$ to re-write the above expression as
+    Alternatively, you can start by using the fact that $\fProdOfSin{a}{b}$ to re-write the above expression as
     \begin{align}
-    	&\dfrac{\sin\ang{60}}{2}\cdot\left[ \eProdOfSin{\ang{20}}{\ang{80}}\right]\cdot\sin\ang{40} \\
-    	&= \dfrac{\sqrt{3}}{4}\cdot\left[ \cos\ang{60}\sin\ang{40} - \cos\ang{100}\sin\ang{40}\right] \\
-    	&= \dfrac{\sqrt{3}}{4\times 2}\cdot\left[ \underbrace{\eProdCosSin{\ang{60}}{\ang{40}}}_{2\cos{\ang{60}}\sin{\ang{40}}} - 
-       \left\lbrace\underbrace{\eProdCosSin{\ang{100}}{\ang{40}}}_{2\cos{\ang{100}}\sin{\ang{40}}}\right\rbrace\right] \\
-    	&= \dfrac{\sqrt{3}}{8}\cdot\left[ \sin\ang{100}-\sin\ang{20}-\sin\ang{140} + \sin\ang{60} \right] \\
-    	&= \dfrac{\sqrt{3}}{8}\cdot\left[ \eDiffOfSin{\ang{100}}{\ang{140}} - \sin\ang{20} + \dfrac{\sqrt{3}}{2} \right]\\
-    	&= \dfrac{\sqrt{3}}{8}\cdot\left[ -\sin\ang{20}\cdot(2\cos{(\ang{90} + \ang{30})} + 1) 
-    	+ \dfrac{\sqrt{3}}{2} \right] \\
-    	&= \dfrac{\sqrt{3}}{8}\cdot\left[ -\sin\ang{20}\cdot\underbrace{(-2\sin\ang{30} + 1)}_{ = 0 } 
-    	+ \dfrac{\sqrt{3}}{2} \right] \\
-    	&= \dfrac{3}{16}
+    	&\sin\ang{60}\cdot\dfrac{1}{2}\cdot \underbrace{2\sin\ang{20}\sin\ang{40}}_{\fProdOfSin{a}{b}}\cdot\sin\ang{80} \\
+    	&= \dfrac{\sqrt{3}}{4}\cdot(\cos\ang{20}-\underbrace{\cos\ang{60}}_{= \frac{1}{2}})\cdot\sin\ang{80} \\
+    	&= \dfrac{\sqrt{3}}{4}\cdot\left(\dfrac{1}{2}\cdot \underbrace{2\cos\ang{20}\sin\ang{80}}
+    	_{\eProdCosSin{a}{b}} - \dfrac{1}{2}\sin\ang{80}\right)
+    \end{align}
+    
+    Now, $ \ang{100} = \ang{180}-\ang{80}$ and therefore $\sin\ang{100} = \sin(\ang{180}-\ang{80}) = \sin\ang{80}$
+    \begin{align}
+    	&= \dfrac{\sqrt{3}}{4}\cdot\left( \dfrac{1}{2}\cdot(\sin\ang{100} - \sin(\ang{-60}))
+    	-\dfrac{1}{2}\sin\ang{80}\right) \\
+    	&= \dfrac{\sqrt{3}}{4}\cdot\dfrac{\sin\ang{60}}{2} = \dfrac{3}{16}
     \end{align}
     \end{fullwidth}
 \end{solution}
