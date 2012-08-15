@@ -1,4 +1,0 @@
-file only placed since git would not otherwise include an empty directory into
-the repo. The directory containing this file is crucial to the correct
-functioning of documentMaster (printing-press)
-
