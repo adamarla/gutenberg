@@ -29,36 +29,26 @@
 % 
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
-\question[4] Prove that $(\sin\ang{20}\times\sin\ang{40}\times\sin\ang{60}\times\sin\ang{80}) = \dfrac{3}{16}$
-\insertQR[-20pt]{QRC}
+
+\question[3] For what value(s) of $x$ is $2\cos^2 x + 3\sin x = 0$ ?
+
+\insertQR{QRC}
 
 \ifprintanswers
 \fi 
 
 \begin{solution}[\halfpage]
 	\begin{fullwidth}
-    \begin{align}
-       \sin\ang{20}\cdot\sin\ang{40}&\cdot\sin\ang{60}\cdot\sin\ang{80} = 
-       \dfrac{1}{4}\times\overbrace{(4\cdot\sin\ang{20}\cdot\sin\ang{40}\cdot\sin\ang{80})}
-       ^{\sin 3\theta = 4\sin\theta\cdot\sin\left( \frac{\pi}{3} - \theta\right)\cdot\sin\left(\frac{\pi}{3} +
-        \theta\right)}\cdot\sin\ang{60} \\
-       &= \dfrac{1}{4}\cdot\sin\ang{60}\cdot\sin\ang{60} \\
-       &= \dfrac{1}{4}\cdot\left(\dfrac{\sqrt{3}}{2} \right)^2 = \dfrac{3}{16}
-    \end{align}
-    
-    Alternatively, you can start by using the fact that $\fProdOfSin{a}{b}$ to re-write the above expression as
-    \begin{align}
-    	&\sin\ang{60}\cdot\dfrac{1}{2}\cdot \underbrace{2\sin\ang{20}\sin\ang{40}}_{\fProdOfSin{a}{b}}\cdot\sin\ang{80} \\
-    	&= \dfrac{\sqrt{3}}{4}\cdot(\cos\ang{20}-\underbrace{\cos\ang{60}}_{= \frac{1}{2}})\cdot\sin\ang{80} \\
-    	&= \dfrac{\sqrt{3}}{4}\cdot\left(\dfrac{1}{2}\cdot \underbrace{2\cos\ang{20}\sin\ang{80}}
-    	_{\eProdCosSin{a}{b}} - \dfrac{1}{2}\sin\ang{80}\right)
-    \end{align}
-    
-    Now, $ \ang{100} = \ang{180}-\ang{80}$ and therefore $\sin\ang{100} = \sin(\ang{180}-\ang{80}) = \sin\ang{80}$
-    \begin{align}
-    	&= \dfrac{\sqrt{3}}{4}\cdot\left( \dfrac{1}{2}\cdot(\sin\ang{100} - \sin(\ang{-60}))
-    	-\dfrac{1}{2}\sin\ang{80}\right) \\
-    	&= \dfrac{\sqrt{3}}{4}\cdot\dfrac{\sin\ang{60}}{2} = \dfrac{3}{16}
-    \end{align}
-    \end{fullwidth}
+	\begin{align}
+		2\cos^2 x + 3\sin x &= 2\cdot(1-\sin^2 x) + 3 \sin x = 0 \\
+		&\Rightarrow 2\sin^2 x - 3\sin x - 2 = 0 \\
+		&\Rightarrow \sin x = \dfrac{3 \pm \sqrt{3^2 - 4\cdot 2 \cdot (-2)}}{2\cdot2} = 2 \text{ or } -\dfrac{1}{2}
+	\end{align}
+	$\sin x > 1$ is not possible. Hence, the only feasible solution is $\sin x = -\dfrac{1}{2}$
+	
+	\begin{align}
+		\text{And so, if } \sin x = -\dfrac{1}{2}, \text{ then } x &= n\pi + (-1)^n\cdot\left(-\dfrac{\pi}{6}\right) \\
+		    &= n\pi + (-1)^{n+1}\left( \dfrac{\pi}{6}\right)
+	\end{align}
+	\end{fullwidth}
 \end{solution}
