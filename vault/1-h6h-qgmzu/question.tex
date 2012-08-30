@@ -30,57 +30,29 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question If the $m^{th}$ term of an A.P is $\frac{1}{n}$ and the $n^{th}$ term is $\frac{1}{m}$, 
+then prove that the sum of the first $mn$ terms is $\dfrac{1+mn}{2}$, given that $m \neq n$
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	\begin{align}
+		\fTermOfAP{m} &= \frac{1}{n} \\
+		\fTermOfAP{n} &= \frac{1}{m} \\
+		\Rightarrow T_m - T_n = (m-n)\cdot d &= \frac{1}{n}-\frac{1}{m} = \dfrac{m-n}{mn} \\
+		\Rightarrow d &= \dfrac{1}{mn}
+	\end{align}
+	And so,
+	\begin{align}
+		\fTermOfAP{m} &= a + (m-1)\cdot\dfrac{1}{mn} = \dfrac{1}{n} \\
+		\Rightarrow amn + m - 1 &= mn \text{ or } a = \dfrac{1}{mn}
+	\end{align}
+	The sum of the first $mn$ terms therefore is,
+	\begin{align}
+		&\fSumOfAP{mn} = \dfrac{mn}{2}\cdot\left[ \dfrac{2}{mn} + (mn-1)\cdot\dfrac{1}{mn}\right] \\
+		&= \dfrac{mn}{2}\cdot\left[ \dfrac{2 + mn - 1}{mn} \right] = \dfrac{1+mn}{2} 
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

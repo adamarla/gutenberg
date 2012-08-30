@@ -30,57 +30,36 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question The sixth term of an arithmetic progression is 3 and the common difference is greater than 0.5. 
+At what value of common difference is the \textit{product} of the \textit{first}, \textit{fourth} and \textit{fifth}
+terms the greatest?
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	If the sixth term is 3 and the common difference is - say - $b$, then 
+	\begin{align}
+		\text{ Fifth term } &= 3-b \\
+		\text{ Fourth term } &= 3-2b \\
+		\text{ First term } &= 3-5b \\
+		\Rightarrow \text{Product} = P &= (3-b)\cdot(3-2b)\cdot(3-5b) \\
+		&= (9-21b+10b^2)\cdot(3-b) = (27-72b+51b^2-10b^3)
+	\end{align}
+	
+	Now its a simple case of finding the maxima of $P$
+	\begin{align}
+		\dfrac{\ud P}{\ud b} &= -72 + 102b - 30b^2 = 0 \\
+		\Rightarrow 10b^2 - 34b + 24 &= 0 \text{ or } (b-1)\cdot(10b-24) = 0 \\
+		\Rightarrow b = 1,\, \frac{24}{10} = \frac{12}{5}
+	\end{align}
+	Also, note that for a maxima
+	\begin{align}
+		\dfrac{\ud^2 P}{\ud b^2} &= 102 - 60b < 0 \\
+		\Rightarrow b > \frac{102}{60} = \frac{17}{10}
+	\end{align}
+	As $b = 1$ does \textit{not} satisfy the condition for maxima, $b = \dfrac{12}{5}$ is 
+	the only acceptable solution
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

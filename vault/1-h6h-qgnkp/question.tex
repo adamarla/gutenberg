@@ -30,57 +30,20 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question The sum $S_n$ of the first $n$ terms of an arithmetic progression is defined by
+the formula $S_n = 4n^2-3n \forall n$. What are the first three terms of the progression? 
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	\begin{align}
+		\underbrace{S_{n+1}-S_{n}}_{\text{(n+1)-th term}} &= 4\cdot(n+1)^2-3\cdot(n+1) - (4n^2-3n) \\
+		\Rightarrow a + n\cdot d &= 4n^2+8n+4-3n-3-4n^2+3n = 1 + 8n \\
+		\Rightarrow a = 1 \text{ and } d = 8
+	\end{align}
+	And therefore, the first three terms of the progression are $(1,9,17)$
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
