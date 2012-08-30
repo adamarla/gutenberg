@@ -30,57 +30,26 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question The ratio of sums of the first $m$ and $n$ terms of an A.P. is $\dfrac{m^2}{n^2}$.
+Prove that the ratio of the $m^{th}$ and $n^{th}$ terms is $\dfrac{2m-1}{2n-1}$
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	\begin{align}
+		\dfrac{S_m}{S_n} &= \dfrac{\eSumOfAP{m}}{\eSumOfAP{n}} = \dfrac{m^2}{n^2} \\
+		\Rightarrow mn^2\cdot(2a + (m-1)d) &= m^2n\cdot(2a + (n-1)d) \\
+		2amn^2 + m^2n^2d - mn^2d &= 2am^2n + m^2n^2d - m^2nd \\
+		\Rightarrow 2amn\cdot(n-m) &= mnd\cdot(n-m) \\
+		\Rightarrow 2a &= d 
+	\end{align}
+	Now, if $T_m$ and $T_n$ be the $m^{th}$ and $n^{th}$ terms respectively, then 
+	\begin{align}
+		\dfrac{T_m}{T_n} &= \dfrac{\eTermOfAP{m}}{\eTermOfAP{n}} \\
+		&= \dfrac{a\cdot(1 + (m-1)\cdot 2)}{a\cdot(1 + (n-1)\cdot 2)} \\
+		&= \dfrac{2m-1}{2n-1}
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
