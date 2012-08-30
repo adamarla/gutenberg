@@ -3,20 +3,39 @@
 \ProvidesPackage{g-seq}[2011/09/01 Commands internal to gradians.com for typesetting sequences & series] 
 
 % Math-mode only 
+% Each command takes one mandatory and one optional (default = 0) argument
+% If the 1st arguement (default) is = 0, then the terms of the series are written w/o a subsscript
+% If its non-zero, then terms are written with first argument subscript
 
 % Sum of AP
-\newcommand{\fSumOfAP}[1] {
-  S_{#1} = \dfrac{#1}{2}\cdot\left( 2a + (#1 - 1)\cdot d\right)
+\newcommand{\fSumOfAP}[2][0] {
+  \ifthenelse{#1 = 0}{
+    S_{#2} = \dfrac{#2}{2}\cdot\left( 2a + (#2 - 1)\cdot d\right)
+  }{
+    S_{#2} = \dfrac{#2}{2}\cdot\left( 2a_{#1} + (#2 - 1)\cdot d_{#1}\right)
+  }
 } 
-\newcommand{\eSumOfAP}[1] {
-  \dfrac{#1}{2}\cdot\left( 2a + (#1 - 1)\cdot d\right)
+\newcommand{\eSumOfAP}[2][0] {
+  \ifthenelse{#1 = 0}{
+    \dfrac{#2}{2}\cdot\left( 2a + (#2 - 1)\cdot d\right)
+  }{
+    \dfrac{#2}{2}\cdot\left( 2a_{#1} + (#2 - 1)\cdot d_{#1}\right)
+  }
 } 
 
 % Term of an AP
-\newcommand{\fTermOfAP}[1] {
-  T_{#1} = a + (#1 - 1)\cdot d
+\newcommand{\fTermOfAP}[2][0] {
+  \ifthenelse{#1 = 0}{
+    T_{#2} = a + (#2 - 1)\cdot d
+  }{
+    T_{#2} = a_{#1} + (#2 - 1)\cdot d_{#1}
+  }
 }
-\newcommand{\eTermOfAP}[1] {
-  a + (#1 - 1)\cdot d
+\newcommand{\eTermOfAP}[2][0] {
+  \ifthenelse{#1 = 0}{
+    a + (#2 - 1)\cdot d
+  }{
+    a_{#1} + (#2 - 1)\cdot d_{#1}
+  }
 }
 
