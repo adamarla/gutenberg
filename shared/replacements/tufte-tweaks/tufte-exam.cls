@@ -26,6 +26,7 @@
 \RequirePackage{siunitx}
 \RequirePackage{fig4tex}
 \RequirePackage{g-trig}
+\RequirePackage{g-seq}
 
 \providecommand{\ud}{\, \mathrm{d}}
 %\renewcommand{\solutiontitle}{\noindent{\sc{Solution\\}}\enspace}
