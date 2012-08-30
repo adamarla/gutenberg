@@ -30,57 +30,25 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question If the product of three numbers in geometric progression is $216$ and 
+their sum is $19$, then what are the three numbers? 
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	Let the three numbers be $\dfrac{a}{r}$, $a$ and $ar$. And so, 
+	\begin{align}
+		\dfrac{a}{r}\cdot a \cdot ar &= 216 \Rightarrow a^3 = 216 \Rightarrow a = 6
+	\end{align}
+	The three numbers, therefore, are $\dfrac{6}{r}$, $6$ and $6r$. Moreover, 
+	\begin{align}
+		\dfrac{6}{r} + 6 + 6r &= 19 \Rightarrow 6r^2-13r + 6 = 0 \\
+		\Rightarrow r &= \dfrac{13 \pm \sqrt{13^2-4\cdot 6\cdot 6}}{2\times 6} = \frac{18}{12} \text{ or } \frac{8}{12} \\
+		&= \frac{3}{2} \text{ or } \frac{2}{3}
+	\end{align}
+	
+	The numbers could therefore be either $(4,6,9)$ if $r = \frac{3}{2}$ or $(9,6,4)$ if $r=\frac{2}{3}$
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
