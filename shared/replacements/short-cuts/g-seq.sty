@@ -39,3 +39,26 @@
   }
 }
 
+% Summation n
+\newcommand{\eSumOfN}[1]{
+  \dfrac{#1\cdot(#1+1)}{2}
+}
+\newcommand{\fSumOfN}[1]{
+  S_{#1} = \eSumOfN{#1}
+}
+
+% Summation n^2
+\newcommand{\eSumOfNSquare}[1]{
+  \dfrac{1}{6}\cdot\left[ #1 \cdot(#1 + 1)\cdot(2#1 + 1) \right]
+}
+\newcommand{\fSumOfNSquare}[1]{
+  S_{#1} = \eSumOfNSquare{#1}
+}
+% Summation n^3
+\newcommand{\eSumOfNCube}[1]{
+  \left( \dfrac{#1\cdot(#1 +1)}{2} \right)^2
+}
+\newcommand{\fSumOfNCube}[1]{
+  S_{#1} = \eSumOfNCube{#1}
+}
+
