@@ -30,57 +30,38 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question For the series $1 + \dfrac{1}{1+2} + \dfrac{1}{1+2+3} + \dfrac{1}{1+2+3+4}\ldots$
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part Find an expression for the sum of the first $n$ terms
 
   \insertQR{}
   \begin{solution}
+  	\begin{align}
+  		S_n &= 1 + \dfrac{1}{1+2} + \dfrac{1}{\underbrace{1+2+3}_{\text{Sum of first $k$ integers}}} + \dfrac{1}{1+2+3+4}\ldots \\
+  		&= \sum_{k=1}^{n}\dfrac{1}{\eSumOfN{k}} = 2\cdot\sum_{k=1}^{n}\dfrac{1}{k\cdot(k+1)} \\
+  		&= 2\cdot\sum_{k=1}^{n}\dfrac{k+1-k}{k\cdot(k+1)} \\
+  		&= 2\cdot\left[ \sum_{k=1}^{n}\dfrac{1}{k} - \sum_{k=1}^{n}\dfrac{1}{k+1} \right] \\
+  		&= 2\cdot\left[ 1 + \underbrace{\sum_{k=2}^{n}\dfrac{1}{k} - \sum_{k=1}^{n-1}\dfrac{1}{k+1}}
+  		_{\text{= 0. Convinced?}}- \dfrac{1}{n+1}\right] \\
+  		&= \dfrac{2n}{n+1}
+  	\end{align}
   \end{solution}
 
-  \part 
+  \part The sum if the same series went upto infinity
 
   \insertQR{}
   \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
+  	The above expression for $S_n$ can be re-written as
+  	\begin{align}
+  		S_n &= \dfrac{2}{1+\frac{1}{n}} \\
+  		\Rightarrow\text{ that when } n &= \infty, \text{ then } S_n = 2
+  	\end{align}
   \end{solution}
 
 \end{parts}
