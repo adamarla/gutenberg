@@ -32,16 +32,15 @@
 
 \question For the series $1 + \dfrac{1}{1+2} + \dfrac{1}{1+2+3} + \dfrac{1}{1+2+3+4}\ldots$
 
-\insertQR{}
 
 \ifprintanswers
 \fi 
 
 \begin{parts}
-  \part Find an expression for the sum of the first $n$ terms
+  \part[3] Find an expression for the sum of the first $n$ terms
 
-  \insertQR{}
-  \begin{solution}
+  \insertQR{QRC}
+\begin{solution}[\halfpage]
   	\begin{align}
   		S_n &= 1 + \dfrac{1}{1+2} + \dfrac{1}{\underbrace{1+2+3}_{\text{Sum of first $k$ integers}}} + \dfrac{1}{1+2+3+4}\ldots \\
   		&= \sum_{k=1}^{n}\dfrac{1}{\eSumOfN{k}} = 2\cdot\sum_{k=1}^{n}\dfrac{1}{k\cdot(k+1)} \\
@@ -53,10 +52,10 @@
   	\end{align}
   \end{solution}
 
-  \part The sum if the same series went upto infinity
+  \part[1] The sum if the same series went upto infinity
 
-  \insertQR{}
-  \begin{solution}
+  \insertQR{QRC}
+\begin{solution}[\mcq]
   	The above expression for $S_n$ can be re-written as
   	\begin{align}
   		S_n &= \dfrac{2}{1+\frac{1}{n}} \\
