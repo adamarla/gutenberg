@@ -30,15 +30,15 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question Find the sum of the infinite series $\frac{1}{5}+\frac{1}{7}+\frac{1}{5^2} + \frac{1}{7^2}
+\question[2] Find the sum of the infinite series $\frac{1}{5}+\frac{1}{7}+\frac{1}{5^2} + \frac{1}{7^2}
 + \frac{1}{5^3} + \frac{1}{7^3} \ldots$
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
 	\begin{align}
 		S &= \frac{1}{5}+\frac{1}{7}+\frac{1}{5^2} + \frac{1}{7^2} + \frac{1}{5^3} + \frac{1}{7^3} \ldots \\
 		  &= \underbrace{\frac{1}{5} + \frac{1}{5^2} + \frac{1}{5^3}\ldots}_{\text{one geometric progression}}
