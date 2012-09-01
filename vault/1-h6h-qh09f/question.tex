@@ -30,10 +30,10 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question Evaluate the expression for the sum of the first $n$ terms of the 
+\question[4] Evaluate the expression for the sum of the first $n$ terms of the 
 series $1 + 5 + 11 + 19 + 29 \ldots$
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
 	\marginnote{We chose to call the first term $a_1$ in this question. Which means, $k$ ran from $1$ to $n$}
@@ -42,7 +42,7 @@ series $1 + 5 + 11 + 19 + 29 \ldots$
 	does not change the unerlying math}
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
 	If you figured out that the $k^{th}$ term of the series - $a_k = k^2 + (k-1),\, k \geq 1$, then
 	you have won more than half the battle. Because then, the sum of the first $n$ terms - $S_n$ -
 	is given by
