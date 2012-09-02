@@ -30,57 +30,33 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question The sum of the first four terms of a geometric progression is 30 and the 
+sum of the \textit{next} four terms is 480. Find the sum of the first twelve terms
+
+\calculator{2^{10} = 1024}
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	\begin{align}
+		\eSumOfGP{r}{4} &= 30 \\
+		\underbrace{\overbrace{\eSumOfGP{r}{8}}^{\text{first 8 terms}} 
+		- \eSumOfGP{r}{4}}_{\text{next 4 terms}} &= 480 \\
+		\Rightarrow \eSumOfGP{r}{8} &= 480 + 30 = 510 \\
+		\Rightarrow \dfrac{\eSumOfGP{r}{8}}{\eSumOfGP{r}{4}} &= 
+		\dfrac{r^8-1}{r^4-1} = \dfrac{510}{30} = 17
+	\end{align}
+	Let $r^4 =x$ so that
+	\begin{align}
+		\dfrac{r^8-1}{r^4-1} &= \dfrac{x^2-1}{x-1} = 17 \\
+		\Rightarrow x &= r^4 = 16 \Rightarrow r = 2 \\
+		\text{which means } a &= \dfrac{30\cdot(r-1)}{(r^4-1)} = 2
+	\end{align}
+	Now we are in a position to calculate the sum of the first twelve terms
+	\begin{align}
+		S_{12} &= \eSumOfGP[2]{2}{12} = \dfrac{2\cdot(1-4096)}{-1} = 8190
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
