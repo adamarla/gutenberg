@@ -62,7 +62,7 @@
   S_{#1} = \eSumOfCubes{#1}
 }
 
-% Sum of first n terms of GP 
-\newcommand{\eSumOfGP}[2]{
-  \dfrac{a\cdot\left(1-#1^{#2}\right)}{\left( 1 - #1 \right)}
+% Sum of first n terms of GP. 1st arg = initial term, 2nd = common ratio, 3rd = n
+\newcommand{\eSumOfGP}[3][a]{
+  \dfrac{#1\cdot\left(1-#2^{#3}\right)}{\left( 1 - #2 \right)}
 }
