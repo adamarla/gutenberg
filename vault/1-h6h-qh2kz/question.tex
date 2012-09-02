@@ -39,7 +39,6 @@ $3.12 + 5.22 + 7.32 + 9.42 + \ldots$
 \fi 
 
 \begin{solution}[\halfpage]
-	First, do we agree that
 	\begin{align}
 		3.12 &= 3 + 0.12 = 3 + \frac{12}{100} = 3 + \frac{6}{50} \\
 		5.22 &= 5 + 0.22 = 5 + \frac{22}{100} = 5 + \frac{11}{50} \\
@@ -52,7 +51,7 @@ $3.12 + 5.22 + 7.32 + 9.42 + \ldots$
 	
 	The sum of the first $n$ terms therefore is
 	\begin{align}
-		S_n &= \dfrac{21}{20}\sum_{k=0}^{n}k + \dfrac{51}{50}\sum_{k=0}^{n}1 \\
+		S_n &= \dfrac{21}{20}\sum_{k=1}^{n}k + \dfrac{51}{50}\sum_{k=1}^{n}1 \\
 		&= \dfrac{21}{20}\eSumOfN{n} + \dfrac{51}{50}n \\
 		&= \dfrac{n}{10}\cdot\left[ \dfrac{21}{4}\cdot(n+1) + \dfrac{51}{5}\right] \\
 		&= \dfrac{n}{200}\cdot(105n + 309)
