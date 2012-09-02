@@ -30,57 +30,20 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question The sequence ${b_n}, \, n \geq 1$ is a geometric progression with $\dfrac{b_4}{b_6} = \dfrac{1}{4}$
+and $b_2 + b_5 = 216$. Find $b_1$
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	The terms of the sequence are of the form $b_n = b_1r^{n-1}$. And so, 
+	\begin{align}
+		\dfrac{b_4}{b_6} &= \dfrac{b_1r^3}{b_1r^5} = \dfrac{1}{r^2} = \dfrac{1}{4} \Rightarrow r = \pm 2 \\
+		b_2 + b_5 = b_1r+b_1r^4 &= b_1r\cdot(1 + r^3) = 216 \\
+		\Rightarrow \text{ when } r = 2 \text{ then } b_1 &= \dfrac{216}{2\times 9} = 12 \\
+		\text{ And when } r = -2 \text{ then } b_1 &= \dfrac{216}{-2\times -7} = \dfrac{108}{7}
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
