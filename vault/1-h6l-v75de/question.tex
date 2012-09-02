@@ -30,35 +30,57 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-% \left( 1 + r + \frac{1}{r} \right)
-% \left( 1 + r^2 + \frac{1}{r^2} \right)
+\question
 
-\question[4] The sum of three numbers in geometric progression in $21$ and the sum of their
-squares is $189$. Find the numbers
-
-\insertQR{QRC}
+\insertQR{}
 
 \ifprintanswers
-	\marginnote[5.5cm]{ $(a^2+b^2+c^2) = (a+b+c)^2 - 2\cdot(ab+bc+ca)$ }
-\fi
+  % stuff to be shown only in the answer key - like explanatory margin figures
+  \begin{marginfigure}
+    \figinit{pt}
+      \figpt 100:(0,0)
+      \figpt 101:(0,0)
+    \figdrawbegin{}
+      \figdrawline [100,101]
+    \figdrawend
+    \figvisu{\figBoxA}{}{%
+    }
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
+\fi 
 
-\begin{solution}[\fullpage]
-	Let the three numbers be $a$, $\frac{a}{r}$ and $ar$. And so, given that
-	
-	\begin{align}
-		a\cdot\left( 1 + r + \frac{1}{r} \right) &= 21 \\
-		a^2\cdot\left( 1 + r^2 + \frac{1}{r^2} \right) &= 189
-	\end{align}
-	, we can infer 
-	\begin{align}
-		&a^2\cdot\left[ \left( 1 + r + \frac{1}{r} \right)^2 - 
-		2\cdot\left( r\cdot1 + 1\cdot\frac{1}{r} + r\cdot\frac{1}{r} \right)\right] = 189 \\
-		&\Rightarrow (21)^2 - 2a^2\cdot\left( 1 + r + \frac{1}{r} \right) = 189 \\
-		&\Rightarrow a^2\cdot\left( 1 + r + \frac{1}{r} \right) = \dfrac{441-189}{2} = 126 \\
-		&\Rightarrow \dfrac{a^2\cdot\left( 1 + r + \frac{1}{r} \right)}
-		{a\cdot\left( 1 + r + \frac{1}{r} \right)} = a = \dfrac{126}{21} = 6 \\
-		&\Rightarrow \left( 1 + r + \frac{1}{r} \right) = \dfrac{21}{6} \\
-		&\text{ or, } 2r^2 - 5r + 2 = 0 \Rightarrow r = 2, \frac{1}{2}
-	\end{align}
-	Hence, the three numbers are either $(12,6,3)$ if $r=\frac{1}{2}$ or $(3,6,12)$ if $r=2$
+\begin{solution}
 \end{solution}
+
+\begin{parts}
+  \part 
+
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+  \part 
+
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+  \part 
+
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+  \part 
+
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+  \part 
+
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+\end{parts}
