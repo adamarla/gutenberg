@@ -30,57 +30,43 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question A computer was given several problems in succession to solve. The time it took 
+to solve each successive problem was the same number of times smaller than it took
+to solve the preceding problem. How many problems was the computer given \text{if} it 
+spent 63.5 minutes to solve all problems except the first, 127 min to solve all except
+the last and 31.5 min to solve all except the first two?
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
+	\marginnote[3cm]{ $r \in (0,1)$ because each successive problem took \text{less} time than the preceding one}
 \fi 
 
 \begin{solution}
+	The times the computer took to solve each problem form a geometric sequence. Let 
+	that sequence be $\lbrace a, ar, ar^2 \ldots ar^{n-1}\rbrace$ where $r \in (0,1)$ and $n$
+	is what we have to find out
+	
+	Now,
+	\begin{align}
+		\eSumOfGP{r}{n} - a &= 63.5 \\
+		\eSumOfGP{r}{n} - ar^{n-1} &= 127 \\
+		\eSumOfGP{r}{n} - (a + ar) &= 31.5 \\
+		\Rightarrow \underbrace{\eSumOfGP{r}{n} - a}_{=63.5} - ar &= 31.5 \\
+		\Rightarrow ar &= 32\text{ min }
+	\end{align}
+	Morever, 
+	\begin{align}
+		\dfrac{\eSumOfGP{r}{n} - ar^{n-1}}{\eSumOfGP{r}{n} - a} &= \frac{127}{63.5} = 2 \\
+		\Rightarrow \dfrac{(1-r^n) - r^{n-1}\cdot(1-r)}{(1-r^n) - (1-r)} &= 2  \\
+		\dfrac{1-r^n-r^{n-1}+r^n}{r\cdot(1-r^{n-1})} &= 2 \Rightarrow \dfrac{1}{r} = 2 
+		\text{ or } r = \frac{1}{2} \\
+		\text{And so, if } ar = 32 &\text{ and } r = \frac{1}{2}, \text{ then } a = 64 = 2^6
+	\end{align}
+	We now know enough to find the number of problems given. Lets substitute (8) and (9) in (2)
+	\begin{align}
+		\eSumOfGP[2^6]{\frac{1}{2}}{n}-\dfrac{2^6}{2^{n-1}} &= 127 \\
+		\Rightarrow 2^7-127 = 2\cdot 2^{7-n} &= 2^{8-n} \\
+		\Rightarrow 2^{8-n} &= 1 \text{ or } 8-n = 0 \text{ or } n = 8
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
