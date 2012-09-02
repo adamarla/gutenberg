@@ -30,57 +30,36 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question The ratio of the sum of the cubes of the terms of an infinitely decreasing 
+geometric progression to the sum of the squares of its terms is 12:13. The sum of the 
+first two terms of the progression is equal to $\frac{4}{3}$. Find the progression
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+   If $s = \lbrace a, ar, ar^2 \ldots\rbrace$ be the original sequence, then the sequence
+   resulting from taking the cube and squares of the terms are
+   
+   $s_2 = \lbrace a^2, a^2r^2,a^2r^4 \ldots \rbrace$ and $ s_3 = \lbrace a^3, a^3r^3, a^3r^6 \ldots \rbrace$.
+   These are themselves geometric progressions, \textit{but} with different first terms and common ratios
+   
+   Now, if $S_3$ be the sum of $s_3$ and $S_2$ the sum of $s_2$, then
+   \begin{align}
+   		\dfrac{S_3}{S_2} &= \dfrac{\frac{a^3}{1-r^3}}{\frac{a^2}{1-r^2}} = \dfrac{12}{13} \\
+   		\Rightarrow \dfrac{a\cdot(1-r)\cdot(1+r)}{a\cdot(1-r)\cdot(1+r+r^2)} &= \dfrac{12}{13} \\
+   		\text{ or, } \dfrac{a\cdot(1+r)}{1+r+r^2} &= \dfrac{12}{13} \\
+   		\text{Also, } \underbrace{a\cdot(1+r)}_{\text{sum of first two terms}} &= \dfrac{4}{3} \\
+   		\text{ And so, } \dfrac{\frac{4}{3}}{1+r+r^2} &= \dfrac{12}{13} \\
+   		\Rightarrow 9r^2 + 9r - 4 &= 0 \Rightarrow r = \frac{1}{3}, -3
+   \end{align}
+   The sequence can be infinitely decreasing if $r = \frac{1}{3}$
+   
+   And therefore 
+   \begin{align}
+   	a\cdot(1+r) &= \dfrac{4}{3} \Rightarrow a = 1
+   \end{align}
+   Hence, the sequence is $\lbrace 1, \frac{1}{3}, \frac{1}{9}, \frac{1}{27} \ldots\rbrace$
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
