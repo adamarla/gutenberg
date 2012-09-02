@@ -30,19 +30,19 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question A computer was given several problems in succession to solve. The time it took 
+\question[5] A computer was given several problems in succession to solve. The time it took 
 to solve each successive problem was the same number of times smaller than it took
 to solve the preceding problem. How many problems was the computer given \text{if} it 
 spent 63.5 minutes to solve all problems except the first, 127 min to solve all except
 the last and 31.5 min to solve all except the first two?
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
 	\marginnote[3cm]{ $r \in (0,1)$ because each successive problem took \text{less} time than the preceding one}
 \fi 
 
-\begin{solution}
+\begin{solution}[\fullpage]
 	The times the computer took to solve each problem form a geometric sequence. Let 
 	that sequence be $\lbrace a, ar, ar^2 \ldots ar^{n-1}\rbrace$ where $r \in (0,1)$ and $n$
 	is what we have to find out
