@@ -30,57 +30,21 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Find the expression for the sum of the first $n$ terms of the series 
+$4^2 + 7^2 + 10^2 + 13^2 \ldots$
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	Each term in the series - $a_n$ - is of the form $(3n+1)^2$. Therefore, the required sum is
+	\begin{align}
+		S_n &= \sum_{k=1}^{n}(3n+1)^2 = \sum_{k=1}^{n}9n^2+6n+1 \\
+		&= 9\cdot\sum_{k=1}^{n}n^2 + 6\cdot\sum_{k=1}^{n}n + \sum_{k=1}^{n}1 \\
+		&= 9\cdot\eSumOfSquares{n} + 6\cdot\eSumOfN{n} + n \\
+		&= \dfrac{n}{2}\cdot\left[ 3\cdot(n+1)\cdot(2n+1) + 6\cdot(n+1) + 2\right] \\
+		&= \dfrac{n}{2}\cdot\left[ 6n^2 + 15n + 11\right]
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
