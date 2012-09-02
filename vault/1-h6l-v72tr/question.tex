@@ -30,57 +30,25 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
-
+\question Find four numbers forming a geometric progression in which the sum of the 
+extreme terms is 112 and the sum of the middle terms is 48
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	Let the four numbers be $\dfrac{a}{r^2}, \dfrac{a}{r}, a$ and $ar$. Now, we are told that
+	\begin{align}
+		\dfrac{a}{r^2} + ar = 112 \Rightarrow &a\cdot\left( \dfrac{r^3+1}{r^2}\right) = 112 \\
+		\dfrac{a}{r} + a = 48 &\Rightarrow a\cdot\left( \dfrac{r+1}{r}\right) = 48 \\
+		\therefore \dfrac{a\cdot\left( \dfrac{r^3+1}{r^2}\right)}
+		{a\cdot\left( \dfrac{r+1}{r}\right)} &= \dfrac{112}{48} = \dfrac{7}{3} \\
+		\Rightarrow \dfrac{(1+r)^3 - 3r^2 - 3r}{r\cdot(1+r)} &= \dfrac{7}{3} \\
+		\Rightarrow 3\cdot\lbrace (r+1)^2 - 3r\rbrace &= 7r \\
+		\Rightarrow 3r^2-10r+3 = 0 \text{ or } r = \frac{1}{3}, 3
+		\text{Using } r &= \frac{1}{3}, \text{ we get } a = 12
+	\end{align}
+	
+	Hence, the three numbers are (using $r=\frac{1}{3}$) - $(108, 36, 12, 4)$
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
