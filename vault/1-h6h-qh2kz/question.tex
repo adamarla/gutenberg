@@ -30,57 +30,31 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Find an expression for the sum of the first $n$ terms of the series 
+$3.12 + 5.22 + 7.32 + 9.42 + \ldots$
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	First, do we agree that
+	\begin{align}
+		3.12 &= 3 + 0.12 = 3 + \frac{12}{100} = 3 + \frac{6}{50} \\
+		5.22 &= 5 + 0.22 = 5 + \frac{22}{100} = 5 + \frac{11}{50} \\
+		7.12 &= 7 + 0.32 = 3 + \frac{32}{100} = 7 + \frac{16}{50} \\
+		9.12 &= 9 + 0.42 = 3 + \frac{42}{100} = 9 + \frac{21}{50}
+	\end{align}
+	
+	Looks like we are onto something. Looks like the $nth$ term of the series
+	is given by $a_n = (2n+1) + \frac{5n+1}{50} = \dfrac{21}{20}n + \dfrac{51}{50}\, \forall n \geq 1$
+	
+	The sum of the first $n$ terms therefore is
+	\begin{align}
+		S_n &= \dfrac{21}{20}\sum_{k=0}^{n}k + \dfrac{51}{50}\sum_{k=0}^{n}1 \\
+		&= \dfrac{21}{20}\eSumOfN{n} + \dfrac{51}{50}n \\
+		&= \dfrac{n}{10}\cdot\left[ \dfrac{21}{4}\cdot(n+1) + \dfrac{51}{5}\right] \\
+		&= \dfrac{n}{200}\cdot(105n + 309)
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
