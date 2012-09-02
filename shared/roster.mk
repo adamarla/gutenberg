@@ -2,7 +2,7 @@
 # /opt/gutenberg/PRODUCTION_SERVER is a zero size file on Linode only !!
 
 ifeq ($(realpath /opt/gutenberg/PRODUCTION_SERVER),)
-  Gutenberg := /home/adamarla/work/gutenberg
+  Gutenberg := ~/workspace/gutenberg-live
 else
   Gutenberg := /home/gutenberg/bank
 endif 
