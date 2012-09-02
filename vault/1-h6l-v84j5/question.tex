@@ -30,15 +30,15 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question The sum of an infinite geometric progression is 243 and the sum of
+\question[2] The sum of an infinite geometric progression is 243 and the sum of
 its first five terms is 275. Find the progression
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
 	\begin{align}
 		\dfrac{a}{1-r} &= 243 \\
 		\eSumOfGP{r}{5} &= 275 \Rightarrow 243\cdot(1-r^5) = 275 \\
