@@ -30,15 +30,15 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question Find an expression for the sum of the first $n$ terms of the series 
+\question[2] Find an expression for the sum of the first $n$ terms of the series 
 $\dfrac{3}{4} + \dfrac{5}{36} + \ldots + \dfrac{2n+1}{n^2\cdot(n+1)^2} + \ldots$
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
 	\begin{align}
 		S_n &= \sum_{k=1}^{n}\dfrac{2n+1}{n^2\cdot(n+1)^2} = 
 		\sum_{k=1}^{n}\dfrac{(n+1)^2 - n^2}{n^2\cdot(n+1)^2} \\
