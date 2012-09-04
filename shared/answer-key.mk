@@ -5,7 +5,6 @@ PREVIEWS := $(patsubst %.tex, %-preview.jpeg, $(wildcard *.tex))
 .PHONY : preview install
 
 install : preview install-pdfs
-	-@mkdir $(CURDIR)/../preview 
 	@mv $(CURDIR)/page-*.jpeg $(CURDIR)/../preview/
 
 preview : pdf 

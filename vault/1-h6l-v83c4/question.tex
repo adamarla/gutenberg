@@ -30,15 +30,15 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question Find the expression for the sum of the first $n$ terms of the series 
+\question[3] Find the expression for the sum of the first $n$ terms of the series 
 $4^2 + 7^2 + 10^2 + 13^2 \ldots$
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
 	Each term in the series - $a_n$ - is of the form $(3n+1)^2$. Therefore, the required sum is
 	\begin{align}
 		S_n &= \sum_{k=1}^{n}(3n+1)^2 = \sum_{k=1}^{n}9n^2+6n+1 \\

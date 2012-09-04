@@ -30,17 +30,17 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question The sum of the first four terms of a geometric progression is 30 and the 
+\question[4] The sum of the first four terms of a geometric progression is 30 and the 
 sum of the \textit{next} four terms is 480. Find the sum of the first twelve terms
 
 \calculator{2^{10} = 1024}
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
 \fi 
 
-\begin{solution}
+\begin{solution}[\fullpage]
 	\begin{align}
 		\eSumOfGP{r}{4} &= 30 \\
 		\underbrace{\overbrace{\eSumOfGP{r}{8}}^{\text{first 8 terms}} 
