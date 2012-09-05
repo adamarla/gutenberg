@@ -30,15 +30,15 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question Find an expression for the sum of the first $n$ terms of the series 
+\question[3] Find an expression for the sum of the first $n$ terms of the series 
 $1^2 + (1^2+2^2) + (1^2+2^2+3^2) + \ldots$
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
 	\begin{align}
 		S_n &= \sum_{k=1}^{n}\underbrace{\eSumOfSquares{n}}_{\text{sum of squares}} \\
 		&= \dfrac{1}{6}\cdot\sum_{k=1}^{n}(2n^3+3n^2+n) \\
