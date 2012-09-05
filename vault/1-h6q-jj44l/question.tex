@@ -30,57 +30,24 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Find an expression for the sum of the first $n$ terms of the series 
+$1\cdot 2\cdot 5 + 2\cdot 3\cdot 6 + 3\cdot 4\cdot 7 + 4\cdot 5\cdot 8 + \ldots $
 
 \insertQR{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	If you look for a pattern in the terms in the above series, then you will soon realize
+	that each term is of the form $a_n = n\cdot(n+1)\cdot(n+4)$. And therefore, the sum of 
+	the first $n$ terms is given by
+	\begin{align}
+		S_n &= \sum_{k=1}^{n}\lbrace n\cdot(n+1)\cdot(n+4)\rbrace \\
+		&= \sum_{k=1}^{n}(n^3+5n^2+4n) = \sum_{k=1}^{n}n^3 + 5\cdot\sum_{k=1}^{n}n^2 + 4\cdot\sum_{k=1}^{n}n \\
+		&= \eSumOfCubes{n} + 5\cdot\eSumOfSquares{n} + 4\cdot\eSumOfN{n} \\
+		&= \dfrac{n\cdot(n+1)}{2}\cdot\left[ \dfrac{n\cdot(n+1)}{2} + \dfrac{5}{3}\cdot(2n+1) + 4\right] \\
+		&= \dfrac{n\cdot(n+1)}{12}\cdot\lbrace 3n\cdot(n+1) + 10\cdot(2n+1) + 24\rbrace \\
+		&= \dfrac{n\cdot(n+1)}{12}\cdot(3n^2 + 23n + 34)
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
