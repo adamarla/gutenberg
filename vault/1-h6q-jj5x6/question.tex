@@ -29,58 +29,22 @@
 % 
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
+\question Find an expression for the sum of the first $n$ terms of the series 
+$\dfrac{2}{3} + \dfrac{2}{15} + \dfrac{2}{35} + \ldots + \dfrac{2}{4n^2-1}$
 
-\question
-
-\insertQR{}
+\insertQR[-20pt]{}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+\begin{fullwidth}
+	\begin{align}
+		S_n &= \sum_{k=1}^{n}\dfrac{2}{4k^2-1} = \sum_{k=1}^{n}\dfrac{(2k+1) - (2k-1)}{(2k+1)\cdot(2k-1)} \\
+		&= \sum_{k=1}^{n}\dfrac{1}{2k-1} - \sum_{k=1}^{n}\dfrac{1}{2k+1} \\
+		&= \left( 1 + \frac{1}{3} + \frac{1}{5} + \ldots + \frac{1}{2n-1}\right) 
+		- \left( \frac{1}{3} + \frac{1}{5} + \ldots + \frac{1}{2n-1} + \frac{1}{2n+1}\right) \\
+		&= 1-\dfrac{1}{2n+1} = \dfrac{2n}{2n+1}
+	\end{align}
+\end{fullwidth}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
