@@ -29,15 +29,15 @@
 % 
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
-\question Find an expression for the sum of the first $n$ terms of the series 
+\question[3] Find an expression for the sum of the first $n$ terms of the series 
 $\dfrac{2}{3} + \dfrac{2}{15} + \dfrac{2}{35} + \ldots + \dfrac{2}{4n^2-1}$
 
-\insertQR[-20pt]{}
+\insertQR[-20pt]{QRC}
 
 \ifprintanswers
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
 \begin{fullwidth}
 	\begin{align}
 		S_n &= \sum_{k=1}^{n}\dfrac{2}{4k^2-1} = \sum_{k=1}^{n}\dfrac{(2k+1) - (2k-1)}{(2k+1)\cdot(2k-1)} \\
