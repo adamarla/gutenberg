@@ -30,16 +30,16 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 % \noprintanswers
-% \setcounter{diceroll}{3}
+% \setcounter{rolldice}{3}
 
-\ifnumequal{\value{diceroll}}{0}{
+\ifnumequal{\value{rolldice}}{0}{
   \renewcommand{\vbone}{2}
   \renewcommand{\vbtwo}{\dfrac{2}{3}}
   \renewcommand{\vbthree}{\dfrac{8\pi}{3}}
   \renewcommand{\vbfour}{}
   \renewcommand{\vbfive}{}
 }{
-  \ifnumodd{\value{diceroll}}{
+  \ifnumodd{\value{rolldice}}{
     \renewcommand{\vbone}{3}
     \renewcommand{\vbtwo}{\dfrac{3}{3}}
     \renewcommand{\vbthree}{\dfrac{27\pi}{2}}

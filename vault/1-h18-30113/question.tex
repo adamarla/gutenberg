@@ -30,7 +30,7 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\ifnumequal{\value{diceroll}}{0}{
+\ifnumequal{\value{rolldice}}{0}{
   \renewcommand{\vbone}{3}
   \renewcommand{\vbtwo}{4}
   \renewcommand{\vbthree}{2}
@@ -38,7 +38,7 @@
   \renewcommand{\vbfive}{3}
   \renewcommand{\vbsix}{14}
 }{
-  \ifnumequal{\value{diceroll}}{1}{
+  \ifnumequal{\value{rolldice}}{1}{
     \renewcommand{\vbone}{2}
     \renewcommand{\vbtwo}{3}
     \renewcommand{\vbthree}{7}
@@ -46,7 +46,7 @@
     \renewcommand{\vbfive}{4}
     \renewcommand{\vbsix}{33\frac{1}{3}}
   }{
-    \ifnumequal{\value{diceroll}}{2}{
+    \ifnumequal{\value{rolldice}}{2}{
       \renewcommand{\vbone}{3}
       \renewcommand{\vbtwo}{5}
       \renewcommand{\vbthree}{4}
