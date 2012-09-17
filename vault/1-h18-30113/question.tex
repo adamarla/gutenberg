@@ -30,8 +30,42 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question[2] Find the area of the figure bounded by the parabola $y=x^2-4x+5$,
-the $x-axis$ and the straight lines $x=3$ and $x=5$
+\ifnumequal{\value{diceroll}}{0}{
+  \renewcommand{\vbone}{3}
+  \renewcommand{\vbtwo}{4}
+  \renewcommand{\vbthree}{2}
+  \renewcommand{\vbfour}{1}
+  \renewcommand{\vbfive}{3}
+  \renewcommand{\vbsix}{14}
+}{
+  \ifnumequal{\value{diceroll}}{1}{
+    \renewcommand{\vbone}{2}
+    \renewcommand{\vbtwo}{3}
+    \renewcommand{\vbthree}{7}
+    \renewcommand{\vbfour}{2}
+    \renewcommand{\vbfive}{4}
+    \renewcommand{\vbsix}{33\frac{1}{3}}
+  }{
+    \ifnumequal{\value{diceroll}}{2}{
+      \renewcommand{\vbone}{3}
+      \renewcommand{\vbtwo}{5}
+      \renewcommand{\vbthree}{4}
+      \renewcommand{\vbfour}{3}
+      \renewcommand{\vbfive}{5}
+      \renewcommand{\vbsix}{33\frac{1}{3}}
+    }{
+      \renewcommand{\vbone}{3}
+      \renewcommand{\vbtwo}{2}
+      \renewcommand{\vbthree}{2}
+      \renewcommand{\vbfour}{1}
+      \renewcommand{\vbfive}{4}
+      \renewcommand{\vbsix}{54}
+    }
+  }
+} 
+
+\question[2] Find the area of the figure bounded by the parabola $y=\vbone x^2 - \vbtwo x + \vbthree$
+the $x-axis$ and the straight lines $x=\vbfour$ and $x=\vbfive$
 
 \insertQR{QRC}
 
@@ -108,9 +142,8 @@ the $x-axis$ and the straight lines $x=3$ and $x=5$
 \begin{solution}[\halfpage]
   The required area $A$ - of region $R$ - \asif - is
   \begin{align}
-    A &= \int_3^5 (x^2-4x+5)\ud x \\
-      &= \left[ \dfrac{x^3}{3}-2x^2+5x\right]_3^5 \\
-      &= \left(\dfrac{125}{3}-50+25\right) - \left(9-18+15\right) \\
-      &= \dfrac{32}{3} = 10\frac{2}{3}
+    A &= \int_{\vbfour}^{\vbfive} (\vbone x^2-\vbtwo x+\vbthree)\ud x \\
+      &= \left[ \vbone\cdot\dfrac{x^3}{3}-\dfrac{\vbtwo}{2}x^2+\vbthree x\right]_{\vbfour}^{\vbfive} \\
+      &= \vbsix
   \end{align}
 \end{solution}

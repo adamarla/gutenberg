@@ -30,10 +30,23 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
+\ifnumodd{\value{diceroll}}{
+  \renewcommand{\vbone}{30}
+  \renewcommand{\vbtwo}{0.03}
+  \renewcommand{\vbthree}{20}
+  \renewcommand{\vbfour}{0.06}
+}{
+  \renewcommand{\vbone}{240}
+  \renewcommand{\vbtwo}{0.24}
+  \renewcommand{\vbthree}{10}
+  \renewcommand{\vbfour}{0.48}
+}
+
 \question Fuel expenditures for a steamship are propotional to the cube of it speed.
-It is known that at a speed of $10$ km/hour, fuel costs are \texteuro 30/hour. Other 
+It is known that at a speed of $10$ km/hour, fuel costs are \texteuro \vbone /hour. Other 
 expenses (independent of speed) amount to \texteuro 480 per hour 
 
+\watchout
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -51,9 +64,9 @@ expenses (independent of speed) amount to \texteuro 480 per hour
     - expressed as a function of speed $s$
     \begin{align}
         F(s) \propto s^3 \Rightarrow F(s) &= ks^3 \\ 
-        \text{Given that } F(10) = k\cdot 10^3 &= \text{\texteuro 30 per hour} \\
-        \text{ we get } k &= 0.03 \\ 
-        \text{And therefore, } E(s) &= (0.03s^3 + 480)\text{ \texteuro per hour}
+        \text{Given that } F(\vbthree) = k\cdot 10^3 &= \text{\texteuro \vbone per hour} \\
+        \text{ we get } k &= \vbtwo \\ 
+        \text{And therefore, } E(s) &= (\vbtwo s^3 + 480)\text{ \texteuro per hour}
     \end{align}
     
     However, we need to express the expenditure in \texteuro per kilometer
@@ -61,15 +74,15 @@ expenses (independent of speed) amount to \texteuro 480 per hour
        \dfrac{\text{\texteuro}}{\text{km}} &= \dfrac{\frac{\text{\texteuro}}{\text{hour}}}
                                                     {\frac{\text{km}}{\text{hour}}} \\
        \text{which suggests } G(s) &= \dfrac{E(s)}{s} \dfrac{\text{\texteuro}}{\text{km}} \\
-                                   &= 0.03s^2 + \dfrac{480}{s} \\
-       \text{Now, } \dfrac{\ud G(s)}{\ud s} &= 0.06s - \dfrac{480}{s^2} \\
-       \text{And, }\dfrac{\ud^2 G(s)}{\ud s^2} &= 0.06 + \dfrac{960}{s^3} > 0 \Rightarrow \text{ minima }
+                                   &= \vbtwo s^2 + \dfrac{480}{s} \\
+       \text{Now, } \dfrac{\ud G(s)}{\ud s} &= \vbfour s - \dfrac{480}{s^2} \\
+       \text{And, }\dfrac{\ud^2 G(s)}{\ud s^2} &= \vbfour  + \dfrac{960}{s^3} > 0 \Rightarrow \text{ minima }
     \end{align}
     
     And hence, the speed at which total expenditure \textit{ per km } is minimized is the one at which
     \begin{align}
-       \dfrac{\ud G(s)}{\ud s} = 0.06s - \dfrac{480}{s^2} &= 0 \\
-       \Rightarrow s &= 20 \text{ km per hour }
+       \dfrac{\ud G(s)}{\ud s} = \vbfour s - \dfrac{480}{s^2} &= 0 \\
+       \Rightarrow s &= \vbthree \text{ km per hour }
     \end{align}
   \end{solution}
 
@@ -79,7 +92,7 @@ expenses (independent of speed) amount to \texteuro 480 per hour
 \begin{solution}[\mcq]
     The total expenditure per hour at this speed would be
     \begin{align}
-       E(20) &= 0.03\times 20^3 + 480 \\
+       E(20) &= \vbtwo\times \vbthree^3 + 480 \\
              &= \text{\texteuro 720 per hour}
     \end{align}
   \end{solution}
