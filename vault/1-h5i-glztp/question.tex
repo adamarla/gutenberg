@@ -29,7 +29,31 @@
 % 
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
-\question[4] Prove that $(\sin\ang{20}\times\sin\ang{40}\times\sin\ang{60}\times\sin\ang{80}) = \dfrac{3}{16}$
+
+\ifnumodd{\value{diceroll}}{
+  % equations
+  % variables 
+  \renewcommand{\vbone}{10}
+  \renewcommand{\vbtwo}{50}
+  \renewcommand{\vbthree}{30}
+  \renewcommand{\vbfour}{70}
+  \renewcommand{\vbfive}{\dfrac{1}{16}}
+  \renewcommand{\vbsix}{\dfrac{1}{2}}
+  \renewcommand{\vbseven}{110}
+}{
+    % equations
+    % variables 
+    \renewcommand{\vbone}{20}
+    \renewcommand{\vbtwo}{40}
+    \renewcommand{\vbthree}{60}
+    \renewcommand{\vbfour}{80}
+    \renewcommand{\vbfive}{\dfrac{3}{16}}
+    \renewcommand{\vbsix}{\dfrac{\sqrt{3}}{2}}
+    \renewcommand{\vbseven}{100}
+}
+
+\question[4] Prove that $(\sin\ang{\vbone}\times\sin\ang{\vbtwo}\times\sin\ang{\vbthree}\times\sin\ang{\vbfour}) 
+= \vbfive$
 \insertQR[-20pt]{QRC}
 
 \ifprintanswers
@@ -38,27 +62,28 @@
 \begin{solution}[\halfpage]
 	\begin{fullwidth}
     \begin{align}
-       \sin\ang{20}\cdot\sin\ang{40}&\cdot\sin\ang{60}\cdot\sin\ang{80} = 
-       \dfrac{1}{4}\times\overbrace{(4\cdot\sin\ang{20}\cdot\sin\ang{40}\cdot\sin\ang{80})}
+       \sin\ang{\vbone}\cdot\sin\ang{\vbtwo}&\cdot\sin\ang{\vbthree}\cdot\sin\ang{\vbfour} = 
+       \dfrac{1}{4}\times\overbrace{(4\cdot\sin\ang{\vbone}\cdot\sin\ang{\vbtwo}\cdot\sin\ang{\vbfour})}
        ^{\sin 3\theta = 4\sin\theta\cdot\sin\left( \frac{\pi}{3} - \theta\right)\cdot\sin\left(\frac{\pi}{3} +
-        \theta\right)}\cdot\sin\ang{60} \\
-       &= \dfrac{1}{4}\cdot\sin\ang{60}\cdot\sin\ang{60} \\
-       &= \dfrac{1}{4}\cdot\left(\dfrac{\sqrt{3}}{2} \right)^2 = \dfrac{3}{16}
+        \theta\right)}\cdot\sin\ang{\vbthree} \\
+       &= \dfrac{1}{4}\cdot\sin\ang{\vbthree}\cdot\sin\ang{\vbthree} \\
+       &= \dfrac{1}{4}\cdot\left(\vbsix \right)^2 = \vbfive
     \end{align}
     
     Alternatively, you can start by using the fact that $\fProdOfSin{a}{b}$ to re-write the above expression as
     \begin{align}
-    	&\sin\ang{60}\cdot\dfrac{1}{2}\cdot \underbrace{2\sin\ang{20}\sin\ang{40}}_{\fProdOfSin{a}{b}}\cdot\sin\ang{80} \\
-    	&= \dfrac{\sqrt{3}}{4}\cdot(\cos\ang{20}-\underbrace{\cos\ang{60}}_{= \frac{1}{2}})\cdot\sin\ang{80} \\
-    	&= \dfrac{\sqrt{3}}{4}\cdot\left(\dfrac{1}{2}\cdot \underbrace{2\cos\ang{20}\sin\ang{80}}
-    	_{\eProdCosSin{a}{b}} - \dfrac{1}{2}\sin\ang{80}\right)
+    	&\sin\ang{\vbthree}\cdot\dfrac{1}{2}\cdot \underbrace{2\sin\ang{\vbone}\sin\ang{\vbtwo}}_{\fProdOfSin{a}{b}}\cdot\sin\ang{\vbfour} \\
+    	&= \dfrac{\sqrt{3}}{4}\cdot(\cos\ang{\vbone}-\underbrace{\cos\ang{\vbthree}}_{= \frac{1}{2}})\cdot\sin\ang{\vbfour} \\
+    	&= \dfrac{\sqrt{3}}{4}\cdot\left(\dfrac{1}{2}\cdot \underbrace{2\cos\ang{\vbone}\sin\ang{\vbfour}}
+    	_{\eProdCosSin{a}{b}} - \dfrac{1}{2}\sin\ang{\vbfour}\right)
     \end{align}
     
-    Now, $ \ang{100} = \ang{180}-\ang{80}$ and therefore $\sin\ang{100} = \sin(\ang{180}-\ang{80}) = \sin\ang{80}$
+    Now, $ \ang{\vbseven} = \ang{180}-\ang{\vbfour}$ and therefore $\sin\ang{\vbseven} =
+     \sin(\ang{180}-\ang{\vbfour}) = \sin\ang{\vbfour}$
     \begin{align}
-    	&= \dfrac{\sqrt{3}}{4}\cdot\left( \dfrac{1}{2}\cdot(\sin\ang{100} - \sin(\ang{-60}))
-    	-\dfrac{1}{2}\sin\ang{80}\right) \\
-    	&= \dfrac{\sqrt{3}}{4}\cdot\dfrac{\sin\ang{60}}{2} = \dfrac{3}{16}
+    	&= \dfrac{\sqrt{3}}{4}\cdot\left( \dfrac{1}{2}\cdot(\sin\ang{\vbseven} - \sin(\ang{-\vbthree}))
+    	-\dfrac{1}{2}\sin\ang{\vbfour}\right) \\
+    	&= \dfrac{\sqrt{3}}{4}\cdot\dfrac{\sin\ang{\vbthree}}{2} = \vbfive
     \end{align}
     \end{fullwidth}
 \end{solution}
