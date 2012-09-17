@@ -29,10 +29,35 @@
 % 
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
+% \noprintanswers
+% \setcounter{diceroll}{3}
+
+\ifnumequal{\value{diceroll}}{0}{
+  \renewcommand{\vbone}{2}
+  \renewcommand{\vbtwo}{\dfrac{2}{3}}
+  \renewcommand{\vbthree}{\dfrac{8\pi}{3}}
+  \renewcommand{\vbfour}{}
+  \renewcommand{\vbfive}{}
+}{
+  \ifnumodd{\value{diceroll}}{
+    \renewcommand{\vbone}{3}
+    \renewcommand{\vbtwo}{\dfrac{3}{3}}
+    \renewcommand{\vbthree}{\dfrac{27\pi}{2}}
+    \renewcommand{\vbfour}{}
+    \renewcommand{\vbfive}{}
+  }{
+    \renewcommand{\vbone}{4}
+    \renewcommand{\vbtwo}{\dfrac{4}{3}}
+    \renewcommand{\vbthree}{\dfrac{128\pi}{3}}
+    \renewcommand{\vbfour}{}
+    \renewcommand{\vbfive}{}
+  }
+}
 
 \question[4] Compute the volume of the solid obtained by revolving - about the $y-axis$ -
-the figure bounded by the parabola $y=2x-x^2$ and the $x-axis$
+the figure bounded by the parabola $y=\vbone x-x^2$ and the $x-axis$
 
+\watchout
 \insertQR{QRC}
 
 \ifprintanswers
@@ -47,7 +72,7 @@ the figure bounded by the parabola $y=2x-x^2$ and the $x-axis$
 \def\Xori{8.00000}
 \def\Yori{25.22999}
 \figpt0:(\Xori,\Yori)
-\figpt 100:$2,0$(71,24)
+\figpt 100:$\vbone,0$(71,24)
 \figpt 101:$0,0$(9,24)
 \figpt 102:$x_0$(47,26)
 \figpt 103:(47,68)
@@ -115,9 +140,9 @@ the figure bounded by the parabola $y=2x-x^2$ and the $x-axis$
    
    This suggests that the total volume of the generated solid would be
    \begin{align}
-   	 V &= \int_0^2 (2\pi\cdot x)\times(2x-x^2)\ud x \\
-   	   &= 2\pi\int_0^2 (2x^2-x^3)\ud x \\
-   	   &= 2\pi\times\left[ \left( \dfrac{2}{3}x^3\right)_0^2 - \left( \dfrac{x^4}{4}\right)_0^2\right] \\
-   	   &= \dfrac{8\pi}{3}
+   	 V &= \int_0^{\vbone} (2\pi\cdot x)\times(\vbone x-x^2)\ud x \\
+   	   &= 2\pi\int_0^{\vbone} (\vbone x^2-x^3)\ud x \\
+   	   &= 2\pi\times\left[ \left( \vbtwo x^3\right)_0^{\vbone} - \left( \dfrac{x^4}{4}\right)_0^{\vbone}\right] \\
+   	   &= \vbthree
    \end{align}
 \end{solution}

@@ -30,9 +30,40 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question[2] Break up the number 8 into two summands such that the sum of their cubes
+\ifnumequal{\value{diceroll}}{0}{
+  \renewcommand{\vbone}{8}
+  \renewcommand{\vbtwo}{4}
+  \renewcommand{\vbthree}{16}
+  \renewcommand{\vbfour}{64}
+  \renewcommand{\vbfive}{48}
+}{
+  \ifnumequal{\value{diceroll}}{1}{
+    \renewcommand{\vbone}{10}
+    \renewcommand{\vbtwo}{5}
+    \renewcommand{\vbthree}{20}
+    \renewcommand{\vbfour}{100}
+    \renewcommand{\vbfive}{60}
+  }{
+    \ifnumequal{\value{diceroll}}{2}{
+      \renewcommand{\vbone}{6}
+      \renewcommand{\vbtwo}{3}
+      \renewcommand{\vbthree}{12}
+      \renewcommand{\vbfour}{36}
+      \renewcommand{\vbfive}{36}
+    }{
+      \renewcommand{\vbone}{12}
+      \renewcommand{\vbtwo}{6}
+      \renewcommand{\vbthree}{24}
+      \renewcommand{\vbfour}{144}
+      \renewcommand{\vbfive}{72}
+    }
+  }
+}
+
+\question[2] Break up the number $\vbone$ into two summands such that the sum of their cubes
 is the least possible
 
+\watchout 
 \insertQR{QRC}
 
 \ifprintanswers
@@ -40,19 +71,19 @@ is the least possible
 \fi
 
 \begin{solution}[\halfpage]
-   Basically, we have to minimize $y = x^3 + (8-x)^3$
+   Basically, we have to minimize $y = x^3 + (\vbone-x)^3$
    \begin{align}
-      y &= x^3 + (8-x)^3, \text{ then } \\
-      \dydx &= 3x^2 - 3(8-x)^2 \text{ and } \\
-      \dnydxn{2} &= 6x + 6(8-x)
+      y &= x^3 + (\vbone -x)^3, \text{ then } \\
+      \dydx &= 3x^2 - 3(\vbone - x)^2 \text{ and } \\
+      \dnydxn{2} &= 6x + 6(\vbone-x)
    \end{align}
    
    Now, 
    \begin{align}
-      \dydx &= 0 \text { when } 3x^2 - 3(8-x)^2 = 0 \\
-      \Rightarrow x^2 &= 64 + x^2 -16x \text{ or } x = 4 \\
-      \text{Also, }\left[\dnydxn{2}\right]_{x=4} &= 48 > 0 \Rightarrow \text{ minima }
+      \dydx &= 0 \text { when } 3x^2 - 3(\vbone - x)^2 = 0 \\
+      \Rightarrow x^2 &= \vbfour + x^2 - \vbthree x \text{ or } x = \vbtwo \\
+      \text{Also, }\left[\dnydxn{2}\right]_{x=\vbtwo} &= \vbfive > 0 \Rightarrow \text{ minima }
    \end{align}
    
-   Hence, the required split is $4$ and $4$
+   Hence, the required split is $\vbtwo$ and $\vbtwo$
 \end{solution}
