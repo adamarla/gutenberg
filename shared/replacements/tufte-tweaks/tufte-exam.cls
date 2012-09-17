@@ -27,6 +27,7 @@
 \RequirePackage{fig4tex}
 \RequirePackage{g-trig}
 \RequirePackage{g-seq}
+\RequirePackage{etoolbox}
 
 \providecommand{\ud}{\, \mathrm{d}}
 %\renewcommand{\solutiontitle}{\noindent{\sc{Solution\\}}\enspace}
