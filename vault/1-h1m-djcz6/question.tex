@@ -30,9 +30,37 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question[3] Using second derivative, find the points of maxima and minima for $y=x^2(a-x)^2$
+% \setcounter{diceroll}{2}
+
+\ifnumequal{\value{diceroll}}{0}{
+  \renewcommand{\vbone}{3}
+  \renewcommand{\vbtwo}{6}
+  \renewcommand{\vbthree}{9}
+  \renewcommand{\vbfour}{18}
+  \renewcommand{\vbfive}{54}
+  \renewcommand{\vbsix}{18}
+}{
+  \ifnumodd{\value{diceroll}}{
+    \renewcommand{\vbone}{2}
+    \renewcommand{\vbtwo}{4}
+    \renewcommand{\vbthree}{6}
+    \renewcommand{\vbfour}{12}
+    \renewcommand{\vbfive}{24}
+    \renewcommand{\vbsix}{8}
+  }{
+    \renewcommand{\vbone}{1}
+    \renewcommand{\vbtwo}{2}
+    \renewcommand{\vbthree}{3}
+    \renewcommand{\vbfour}{6}
+    \renewcommand{\vbfive}{6}
+    \renewcommand{\vbsix}{2}
+  }
+}
+
+\question[3] Using second derivative, find the points of maxima and minima for $y=x^2(a-\vbone x)^2$
 
 \insertQR{QRC}
+\watchout
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -40,25 +68,25 @@
 
 \begin{solution}[\fullpage]
   \begin{align}
-     y &= x^2\cdot(a-x)^2 \\
-     \Rightarrow \ln y &= 2\cdot \left[\ln x + \ln (a-x)\right] \\
-     \Rightarrow \dfrac{1}{y}\dfrac{\ud y}{\ud x} &= 2\left[ \dfrac{1}{x} - \dfrac{1}{a-x}\right] \\
-     \Rightarrow \dfrac{\ud y}{\ud x} &= 2\left[ \dfrac{1}{x} - \dfrac{1}{a-x}\right]
-                                         \cdot x^2\cdot (a-x)^2 \\
-                                      &= 2\cdot(a-2x)\cdot x \cdot (a-x)
+     y &= x^2\cdot(a-\vbone x)^2 \\
+     \Rightarrow \ln y &= 2\cdot \left[\ln x + \ln (a-\vbone x)\right] \\
+     \Rightarrow \dfrac{1}{y}\dfrac{\ud y}{\ud x} &= 2\left[ \dfrac{1}{x} - \dfrac{\vbone}{a-\vbone x}\right] \\
+     \Rightarrow \dfrac{\ud y}{\ud x} &= 2\left[ \dfrac{1}{x} - \dfrac{\vbone}{a-\vbone x}\right]
+                                         \cdot x^2\cdot (a-\vbone x)^2 \\
+                                      &= 2\cdot(a-\vbtwo x)\cdot x \cdot (a-\vbone x)
   \end{align}
-  As a first step, we can say that the extrema are at $x=\frac{a}{2}$, $x=0$ and $x=a$.
+  As a first step, we can say that the extrema are at $x=\dfrac{a}{\vbtwo}$, $x=0$ and $x=\dfrac{a}{\vbone}$.
   To classify them as maxima or minima, we need to calculate the second derivative
   
   \begin{align}
-     \dfrac{\ud y}{\ud x} &= 2(a-2x)x(a-x) \\
-            &= 2\cdot(a^2x - 3ax^2 + 2x^3) \\
-     \Rightarrow \dfrac{\ud^2 y}{\ud x^2} &= 2\cdot(a^2 - 6ax + 6x^2) \\
+     \dfrac{\ud y}{\ud x} &= 2(a-\vbtwo x)x(a-\vbone x) \\
+            &= 2\cdot(a^2x - \vbthree ax^2 + \vbsix x^3) \\
+     \Rightarrow \dfrac{\ud^2 y}{\ud x^2} &= 2\cdot(a^2 - \vbfour ax + \vbfive x^2) \\
      &= \left\lbrace
         \begin{array}{l l}
           2a^2 & \text{ when } x = 0 \Rightarrow \text{ minima } \\
-          \frac{-a^2}{2} & \text{ when } x = \frac{a}{2} \Rightarrow \text{ maxima } \\
-          2a^2 & \text{ when } x = a \Rightarrow \text{ minima }
+          \frac{-a^2}{2} & \text{ when } x = \frac{a}{\vbtwo} \Rightarrow \text{ maxima } \\
+          2a^2 & \text{ when } x = \dfrac{a}{\vbone} \Rightarrow \text{ minima }
         \end{array}\right.
   \end{align}
   
