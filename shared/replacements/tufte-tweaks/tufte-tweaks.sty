@@ -16,6 +16,11 @@
 \newcommand{\eqnthree}{}
 \newcommand{\eqnfour}{}
 \newcommand{\eqnfive}{}
+\newcommand{\eqnsix}{}
+\newcommand{\eqnseven}{}
+\newcommand{\eqneight}{}
+\newcommand{\eqnnine}{}
+\newcommand{\eqnten}{}
 % Commands for variable, well, variables 
 \newcommand{\varone}{}
 \newcommand{\vartwo}{}
@@ -23,9 +28,15 @@
 \newcommand{\varfour}{}
 \newcommand{\varfive}{}
 \newcommand{\varsix}{}
-% Compulsory disclaimer to be added to the answer key for variable questions
-\newcommand{\vardisclaimer}{\texttt{You might have answered a version of this question with slightly different values and equations. That's ok. The underlying solution stays the same - even if the values change slightly}}
 
+% Compulsory disclaimer to be added to the answer key for variable questions
+\newcommand{\variationsDisclaimer}[1][0pt]{
+  \ifprintanswers
+    \marginnote[#1]{You might have answered a question with slightly different values and/or 
+    equations. That's ok. The underlying mathematics stays the same }
+  \else
+  \fi
+}
 
 \newlength\@tweak@pageheight
 \setlength{\@tweak@pageheight}{\paperheight} 
@@ -54,7 +65,7 @@
 \providecommand{\insertQR}[2][0pt]{
     \ifprintanswers
     \else
-      \ifthenelse{\NOT\isempty{#2}}{
+      \notblank{#2}{
         \begin{marginfigure}
           \psbarcode[transy=#1,transx=0.4\marginparwidth]{#2}{eclevel=Q width=0.7 height=0.7}{qrcode} 
         \end{marginfigure}
