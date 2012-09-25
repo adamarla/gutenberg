@@ -9,14 +9,14 @@
 
 % Sum of AP
 \newcommand{\fSumOfAP}[2][0] {
-  \ifthenelse{#1 = 0}{
+  \ifnumequal{#1}{0}{
     S_{#2} = \dfrac{#2}{2}\cdot\left( 2a + (#2 - 1)\cdot d\right)
   }{
     S_{#2} = \dfrac{#2}{2}\cdot\left( 2a_{#1} + (#2 - 1)\cdot d_{#1}\right)
   }
 } 
 \newcommand{\eSumOfAP}[2][0] {
-  \ifthenelse{#1 = 0}{
+  \ifnumequal{#1}{0}{
     \dfrac{#2}{2}\cdot\left( 2a + (#2 - 1)\cdot d\right)
   }{
     \dfrac{#2}{2}\cdot\left( 2a_{#1} + (#2 - 1)\cdot d_{#1}\right)
@@ -25,14 +25,14 @@
 
 % Term of an AP
 \newcommand{\fTermOfAP}[2][0] {
-  \ifthenelse{#1 = 0}{
+  \ifnumequal{#1}{0}{
     T_{#2} = a + (#2 - 1)\cdot d
   }{
     T_{#2} = a_{#1} + (#2 - 1)\cdot d_{#1}
   }
 }
 \newcommand{\eTermOfAP}[2][0] {
-  \ifthenelse{#1 = 0}{
+  \ifnumequal{#1}{0}{
     a + (#2 - 1)\cdot d
   }{
     a_{#1} + (#2 - 1)\cdot d_{#1}
