@@ -30,9 +30,9 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{diceroll}{0}
+% \setcounter{rolldice}{0}
 
-\ifnumequal{\value{diceroll}}{0}{
+\ifnumequal{\value{rolldice}}{0}{
   % variables 
   \renewcommand{\vbone}{}
   \renewcommand{\vbtwo}{}
@@ -45,7 +45,7 @@
   \renewcommand{\vbnine}{}
   \renewcommand{\vbten}{}
 }{
-  \ifnumequal{\value{diceroll}}{1}{
+  \ifnumequal{\value{rolldice}}{1}{
     % variables 
     \renewcommand{\vbone}{}
     \renewcommand{\vbtwo}{}
@@ -58,7 +58,7 @@
     \renewcommand{\vbnine}{}
     \renewcommand{\vbten}{}
   }{
-    \ifnumequal{\value{diceroll}}{2}{
+    \ifnumequal{\value{rolldice}}{2}{
       % variables 
       \renewcommand{\vbone}{}
       \renewcommand{\vbtwo}{}

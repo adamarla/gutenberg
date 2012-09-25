@@ -1,0 +1,29 @@
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{g-trig}[2011/09/01 Wrappers for common methods in fp package - tweaked for use internally] 
+\RequirePackage{fp}
+
+\newcommand{\gcalcadd}[3]{ % #1 = (#2 + #3).round(2)
+  \FPadd{#1}{#2}{#3}
+  \FPround{#1}{#1}{2}
+}
+
+\newcommand{\gcalcsub}[3]{ % #1 = (#2 - #3).round(2)
+  \FPsub{#1}{#2}{#3}
+  \FPround{#1}{#1}{2}
+}
+
+\newcommand{\gcalcmult}[3]{ % #1 = (#2 * #3).round(2)
+  \FPmul{#1}{#2}{#3}
+  \FPround{#1}{#1}{2}
+}
+
+\newcommand{\gcalcdiv}[3]{ % #1 = (#2 / #3).round(2)
+  \FPdiv{#1}{#2}{#3}
+  \FPround{#1}{#1}{2}
+}
+
+\newcommand{\gcalcexpr}[2]{ %1 = eval(#2).round(2)
+  \FPeval{#1}{#2}
+  \FPround{#1}{#1}{2}
+}

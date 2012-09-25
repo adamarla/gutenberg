@@ -27,6 +27,7 @@
 \RequirePackage{fig4tex}
 \RequirePackage{g-trig}
 \RequirePackage{g-seq}
+\RequirePackage{g-calculator}
 \RequirePackage{etoolbox}
 
 \providecommand{\ud}{\, \mathrm{d}}
