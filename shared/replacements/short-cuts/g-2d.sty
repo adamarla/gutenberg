@@ -1,0 +1,19 @@
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{g-2d}[2011/09/01 Commands internal to gradians.com for 2D coordinate geometry] 
+
+\newcommand{\eSlope}[2] {
+  \dfrac{y_{#2} - y_{#1}}{x_{#2} - x_{#1}}
+} 
+
+\newcommand{\fSlope}[2] {
+  m_{#1} = \eSlope{#1}{#2}
+} 
+
+\newcommand{\eAngleOfIntersection}[2] {
+  \dfrac{m_{#1} - m_{#2}}{1 + m_{#1}\cdot m_{#2}} 
+} 
+
+\newcommand{\fAngleOfIntersection}[2] {
+  \tan\theta_{#1} = \eAngleOfIntersection{#1}{#2}
+} 
