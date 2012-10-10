@@ -30,114 +30,54 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+% \setcounter{rolldice}{2}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{3}
+  \renewcommand{\vbtwo}{4}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{1}
+    \renewcommand{\vbtwo}{-2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{2}
+      \renewcommand{\vbtwo}{3}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{-4}
+      \renewcommand{\vbtwo}{2}
+  }
   }
 }
 
-\question
+\gcalcexpr[0]{\vbthree}{\vbone + \vbtwo}
+
+\question Find the equation of the straight line that cuts off equal $x$ and $y$ intercepts 
+and passes through the point $(\vbone, \vbtwo)$
 
 \insertQR{}
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+   If $Ax + By + C = 0$ be the equation of the line, then the $x$ and $y$ intercepts are given by
+   \begin{align}
+   	  x_{\text{int}} &= -\dfrac{C}{A} \\ 
+   	  y_{\text{int}} &= -\dfrac{C}{B} \\
+   \end{align}
+   Which means that if they are equal, then $A = B \Rightarrow$ equation of the line is $Ax + Ay + C = 0$. 
+   Now, if this line also passes through $(\vbone, \vbtwo)$, then 
+   \begin{align}
+      \vbone\cdot A + \vbtwo\cdot A + C &= 0 \Rightarrow C = -(\vbthree\cdot A) \\
+      \Rightarrow Ax + Ay - (\vbthree\cdot A) &= 0 \\
+      \text{ or } x + y - (\vbthree) &= 0
+   \end{align}
+   
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

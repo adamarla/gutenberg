@@ -23,7 +23,11 @@
   \FPround{#1}{#1}{2}
 }
 
-\newcommand{\gcalcexpr}[2]{ %1 = eval(#2).round(2)
-  \FPeval{#1}{#2}
-  \FPround{#1}{#1}{2}
+% Arguments: 
+  % #1 (optional) = precision
+  % #2 (reqd) = variable holding the result 
+  % #3 (reqd) = expression
+\newcommand{\gcalcexpr}[3][2] { % #2 = eval(#3).round(#1)
+  \FPeval{#2}{(#3)}
+  \FPround{#2}{#2}{#1}
 }
