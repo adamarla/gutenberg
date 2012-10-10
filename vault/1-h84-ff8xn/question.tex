@@ -30,114 +30,74 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+%\setcounter{rolldice}{0}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{2}
+  \renewcommand{\vbtwo}{3}
+  \renewcommand{\vbthree}{3}
+  \renewcommand{\vbfour}{-1}
+  \renewcommand{\vbfive}{5}
+  \renewcommand{\vbsix}{2}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{1.5}
+    \renewcommand{\vbtwo}{4}
+    \renewcommand{\vbthree}{3}
+    \renewcommand{\vbfour}{1}
+    \renewcommand{\vbfive}{5}
+    \renewcommand{\vbsix}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{1}
+      \renewcommand{\vbtwo}{4}
+      \renewcommand{\vbthree}{1.5}
+      \renewcommand{\vbfour}{2}
+      \renewcommand{\vbfive}{3}
+      \renewcommand{\vbsix}{7}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{4}
+      \renewcommand{\vbtwo}{2}
+      \renewcommand{\vbthree}{2}
+      \renewcommand{\vbfour}{6}
+      \renewcommand{\vbfive}{4}
+      \renewcommand{\vbsix}{5}
+    }
   }
 }
 
-\question
+\gcalcexpr[2]{\vbseven}{\vbfour - \vbtwo}
+\gcalcexpr[2]{\vbeight}{ \vbthree - \vbone}
+\gcalcexpr[0]{\vbnine}{(\vbseven / \vbeight) }
+\gcalcexpr[2]{\vbten}{ (-1 / \vbnine )}
+
+% reuse \vbeight
+\gcalcexpr[2]{\vbeight}{\vbsix - (\vbten * \vbfive)}
+
+\question Find the equation of the line that passes through $(\vbfive,\vbsix)$ and 
+is perpendicular to the line joining the points $(\vbone,\vbtwo)$ and $(\vbthree, \vbfour)$
 
 \insertQR{}
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	For the line passing through $(\vbone, \vbtwo)$ and $(\vbthree, \vbfour)$, the slope is given by 
+	\begin{align}
+		& \fSlope{1}{2} = \dfrac{\vbfour - \vbtwo}{\vbthree - \vbone} = \vbnine \\
+		& \Rightarrow m_2 = \text{ slope of the perpendicular line } = \dfrac{-1}{m_1} = \vbten
+	\end{align}
+	
+	And hence, the equation of the line passing through $(\vbfive,\vbsix)$ and with slope $= \vbten$, is
+	\begin{align}
+		\dfrac{y-\vbsix}{x-\vbfive} &= \vbten \\
+		\text{ or } y &= \vbten\cdot x + \vbeight
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

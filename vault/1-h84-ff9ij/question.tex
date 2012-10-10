@@ -29,115 +29,69 @@
 %   7. Create versions of the question when possible. Use commands defined in 
 %      tufte-tweaks.sty to do so. Its easier than you think
 
-% \noprintanswers
-% \setcounter{rolldice}{0}
+%\noprintanswers
+%\setcounter{rolldice}{4}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{2}
+  \renewcommand{\vbtwo}{1}
+  \renewcommand{\vbthree}{5}
+  \renewcommand{\vbfour}{7}
+  \renewcommand{\vbseven}{-\sqrt{3}}
+  \renewcommand{\vbeight}{120}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{2\sqrt{11}}
+    \renewcommand{\vbtwo}{5}
+    \renewcommand{\vbthree}{5}
+    \renewcommand{\vbfour}{11}
+    \renewcommand{\vbseven}{\dfrac{1}{\sqrt{3}}}
+    \renewcommand{\vbeight}{30}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{\sqrt{23}}
+      \renewcommand{\vbtwo}{4}
+      \renewcommand{\vbthree}{2}
+      \renewcommand{\vbfour}{3}
+      \renewcommand{\vbseven}{\dfrac{1}{\sqrt{3}}}
+      \renewcommand{\vbeight}{30}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{\sqrt{7}}
+      \renewcommand{\vbtwo}{2}
+      \renewcommand{\vbthree}{2}
+      \renewcommand{\vbfour}{4}
+      \renewcommand{\vbseven}{\sqrt{3}}
+      \renewcommand{\vbeight}{60}
+      }
   }
 }
 
-\question
+\renewcommand{\vbfive}{(\vbone - \vbtwo\cdot\sqrt{3})}
+\renewcommand{\vbsix}{(\vbone + \vbtwo\cdot\sqrt{3})}
+\gcalcexpr[0]{\vbnine}{180-\vbeight}
 
-\insertQR{}
+\question Find the angle at which the two lines $y=\vbfive\cdot(x + \vbthree)$ and 
+$y=\vbsix\cdot(x - \vbfour)$ intersect
+
+\insertQR[-15pt]{}
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
+
 \fi 
 
 \begin{solution}
+	The equations of the two lines can be re-written as 
+	\begin{align}
+		y &= \overbrace{\vbfive\cdot x}^{m_1} + \overbrace{\vbfive\cdot \vbthree}^{\text{not important}} \\
+		y &= \underbrace{\vbsix\cdot x}_{m_2} - \vbsix\cdot \vbfour \\
+		\Rightarrow & \fAngleOfIntersection{1}{2} = \dfrac{\vbfive - \vbsix}{1 + \vbfive\cdot\vbsix} \\
+		&= \vbseven \\ 
+		\Rightarrow \theta_1 &= \ang{\vbeight} \text{ or } \ang{\vbnine}
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
