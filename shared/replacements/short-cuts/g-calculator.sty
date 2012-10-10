@@ -27,7 +27,7 @@
   % #1 (optional) = precision
   % #2 (reqd) = variable holding the result 
   % #3 (reqd) = expression
-\newcommand{\gcalcexpr}[3][2]{ %1 = eval(#2).round(#3)
-  \FPeval{#2}{#3}
+\newcommand{\gcalcexpr}[3][2] { % #2 = eval(#3).round(#1)
+  \FPeval{#2}{(#3)}
   \FPround{#2}{#2}{#1}
 }
