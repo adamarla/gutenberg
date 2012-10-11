@@ -30,62 +30,67 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+% \setcounter{rolldice}{1}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
+  \renewcommand{\vbone}{1}
+  \renewcommand{\vbtwo}{3}
+  \renewcommand{\vbthree}{3}
+  \renewcommand{\vbfour}{5}
+  \renewcommand{\vbfive}{1} % original slope
+  \renewcommand{\vbsix}{45} % original angle 
+  \renewcommand{\vbseven}{\sqrt{3}} % new slope 
+  \renewcommand{\vbeight}{1.73} 
+  \renewcommand{\vbnine}{1} % value of vbone as a real number
   \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
+    \renewcommand{\vbone}{\sqrt{3}}
+    \renewcommand{\vbtwo}{3}
+    \renewcommand{\vbthree}{2\sqrt{3}}
+    \renewcommand{\vbfour}{4}
+    \renewcommand{\vbfive}{\dfrac{1}{\sqrt{3}}}
+    \renewcommand{\vbsix}{30}
+    \renewcommand{\vbseven}{1}
+    \renewcommand{\vbeight}{1}
+    \renewcommand{\vbnine}{1.73}
     \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
+      \renewcommand{\vbone}{5}
+      \renewcommand{\vbtwo}{7}
+      \renewcommand{\vbthree}{2}
+      \renewcommand{\vbfour}{4}
+      \renewcommand{\vbfive}{1}
+      \renewcommand{\vbsix}{45}
+      \renewcommand{\vbseven}{\sqrt{3}}
+      \renewcommand{\vbeight}{1.73}
+      \renewcommand{\vbnine}{5}
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
+      \renewcommand{\vbone}{\sqrt{3}}
+      \renewcommand{\vbtwo}{5}
+      \renewcommand{\vbthree}{2\sqrt{3}}
+      \renewcommand{\vbfour}{6}
+      \renewcommand{\vbfive}{\dfrac{1}{\sqrt{3}}}
+      \renewcommand{\vbsix}{30}
+      \renewcommand{\vbseven}{1}
+      \renewcommand{\vbeight}{1}
+      \renewcommand{\vbnine}{1.73}
       \renewcommand{\vbten}{}
+     }
   }
 }
 
-\question
+\gcalcexpr[2]{\vbeight}{\vbtwo - (\vbeight * \vbnine)}
+
+\question If the line joining the points $A = (\vbone, \vbtwo)$ and $B = (\vbthree, \vbfour)$ 
+\ is rotated \textit{counter-clockwise} about $A$ by $\ang{15}$, then what is the equation 
+of the resulting new line ?
 
 \insertQR{}
 
@@ -107,37 +112,16 @@
 \fi 
 
 \begin{solution}
+    First, the slope of $AB$ is given by 
+    \begin{align}
+        m &= \tan\theta = \dfrac{\vbfour - \vbtwo}{\vbthree - \vbone} = \vbfive \\
+        \Rightarrow \theta &= \ang{\vbsix}
+    \end{align}
+    The slope of the \textit{new} line would therefore be $ = \tan(\theta + \ang{15}) = \vbseven$. Its equation
+    , therefore, would be 
+    \begin{align}
+      \fEqnSlope &= \vbseven \text{ where } (x_1, y_1) = A = (\vbone, \vbtwo) \\
+      \Rightarrow y &= \vbseven\cdot x + (\vbtwo - \vbone\cdot\vbseven) \\
+      &= \vbseven\cdot x + \vbeight
+    \end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
