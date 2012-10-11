@@ -18,7 +18,31 @@
   \tan\theta_{#1} = \eAngleOfIntersection{#1}{#2}
 } 
 
-% 1st argument = x-intercept, 2nd argument = y-intercept
-\newcommand{\fEqnSlopeIntercept}[2]{ 
-  \dfrac{x}{#1} + \dfrac{y}{#2} = 1
+% x/a_#1 + y/b_#1 = 1
+\newcommand{\fEqnIntercepts}[1][1]{ 
+  \dfrac{x}{a_#1} + \dfrac{y}{b_#1} = 1
+} 
+
+\newcommand{\fEqnStandardLine}[1][1] {
+  A_{#1}\cdot x + B_{#1}\cdot y + C_{#1} = 0
+} 
+
+\newcommand{\fEqnSlopeIntercept}[1][1] {
+  y = m_{#1}\cdot x + C_{#1}
+} 
+
+% Expression for distance between point (x_m,y_m) and line L_n (A_n x+B_n y+C_n)
+\newcommand{\eDistanceToLine}[2] {
+  \dfrac{\vert\, A_{#2}\cdot x_{#1} + B_{#2}\cdot y_{#1} + C_{#2}\, \vert}{\sqrt{A_{#2}^2 + B_{#2}^2}}
+} 
+\newcommand{\fDistanceToLine}[2] {
+  D_{#1} = \eDistanceToLine{#1}{#2}
+} 
+
+% Distance between two parallel lines with slope = m_i and constants C_j and C_k
+\newcommand{\eDistanceParallel}[3][1] {
+  \dfrac{\vert\, C_{#2} - C_{#3} \,\vert}{\sqrt{1 + m_{#1}^2}}
+} 
+\newcommand{\fDistanceParallel}[3][1] {
+  D_{#2,#3} = \eDistanceParallel[#1]{#2}{#3}
 } 
