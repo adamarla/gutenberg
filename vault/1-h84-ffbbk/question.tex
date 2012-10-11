@@ -34,110 +34,77 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{5} % a1
+  \renewcommand{\vbtwo}{6} % b1
+  \renewcommand{\vbthree}{1} % c1
+  \renewcommand{\vbfour}{3} %a2
+  \renewcommand{\vbfive}{5} % c2
+  \renewcommand{\vbsix}{3} % k = b1/b2
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{3}
+    \renewcommand{\vbtwo}{4}
+    \renewcommand{\vbthree}{7}
+    \renewcommand{\vbfour}{4}
+    \renewcommand{\vbfive}{5}
+    \renewcommand{\vbsix}{2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{4}
+      \renewcommand{\vbtwo}{7}
+      \renewcommand{\vbthree}{11}
+      \renewcommand{\vbfour}{2}
+      \renewcommand{\vbfive}{13}
+      \renewcommand{\vbsix}{1}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{5}
+      \renewcommand{\vbtwo}{8}
+      \renewcommand{\vbthree}{7}
+      \renewcommand{\vbfour}{3}
+      \renewcommand{\vbfive}{9}
+      \renewcommand{\vbsix}{2}
+    }
   }
 }
 
-\question
+\gcalcexpr[0]{\vbseven}{\vbtwo / \vbsix} % b2
+\gcalcexpr[2]{\vbeight}{(\vbsix * \vbfive - \vbthree)/(\vbone - \vbsix * \vbfour)} % x of intersection
+\gcalcexpr[2]{\vbnine}{-(\vbthree + \vbone * \vbeight)/\vbtwo}
+
+\question Find the equation of the straight line that passes through the point of intersection of 
+$\vbone x + \vbtwo y + \vbthree = 0$ and $\vbfour x + \vbseven y + \vbfive = 0$ \textit{and} is 
+perpendicular to the line $3x-5y+11 = 0$
 
 \insertQR{}
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	First, we must find that point of intersection. The two lines will intersect at an $x$ where
+	\begin{align}
+	    \vbone x + \vbtwo y + \vbthree &= 0 \text{ or } \vbtwo y = -(\vbone x + \vbthree) \\
+	    \vbfour x + \vbseven y + \vbfive &= 0 \text { or } \vbseven y = -(\vbfour x + \vbfive) \\
+	    \Rightarrow \dfrac{\vbone x + \vbthree}{\vbfour x + \vbfive} &= \vbsix \text{ or } x = \vbeight \\
+	    \text{ which means that } y &= \dfrac{-(\vbthree + \vbone\cdot\vbeight)}{\vbtwo} = \vbnine
+	\end{align}
+	So, the point of intersection is at $(\vbeight, \vbnine)$
+	
+	Now, the slope of the line \textit{ perpendicular } to 
+	$3x - 5y + 11 = 0 \Rightarrow y = \dfrac{3}{5}x + \dfrac{11}{5}$ is $-\dfrac{5}{3}$. And so, its equation
+	would be 
+	
+	\gcalcexpr[2]{\vbten}{5*\vbeight + 3*\vbnine}
+	
+	\begin{align}
+		\dfrac{y - \vbnine}{x - \vbeight} &= -\dfrac{5}{3} \\
+		\Rightarrow 3y - 3\times\vbnine &= -5x + 5\times\vbeight \\
+		\text{ or } 3y + 5x + \vbten &= 0
+	\end{align}
+	
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
