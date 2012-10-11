@@ -30,114 +30,83 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+% \setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{1} % x 
+  \renewcommand{\vbtwo}{3} % y = 3x
+  \renewcommand{\vbthree}{3} % p
+  \renewcommand{\vbfour}{4} % q 
+  \renewcommand{\vbfive}{5} % d 
+  \renewcommand{\vbeight}{1}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
-  }{
+    \renewcommand{\vbone}{2}
+    \renewcommand{\vbtwo}{6}
+    \renewcommand{\vbthree}{5}
+    \renewcommand{\vbfour}{12}
+    \renewcommand{\vbfive}{26}
+    \renewcommand{\vbeight}{2}
+    }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{2}
+      \renewcommand{\vbtwo}{6}
+      \renewcommand{\vbthree}{4}
+      \renewcommand{\vbfour}{3}
+      \renewcommand{\vbfive}{10}
+      \renewcommand{\vbeight}{2}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{1}
+      \renewcommand{\vbtwo}{3}
+      \renewcommand{\vbthree}{12}
+      \renewcommand{\vbfour}{5}
+      \renewcommand{\vbfive}{13}
+      \renewcommand{\vbeight}{1}
+    }
   }
 }
 
-\question
+\renewcommand{\vbsix}{\dfrac{\vbthree}{\vbfour}}
+\gcalcexpr[0]{\vbseven}{(3*\vbfour - \vbthree)*\vbone}
+\gcalcexpr[0]{\vbnine}{(\vbfive / \vbeight) + \vbone}
+\gcalcexpr[0]{\vbten}{\vbone - (\vbfive / \vbeight)}
+
+\question If a line that passes through a point $A = (\vbone, \vbtwo)$ has slope equal to $\vbsix$, then 
+find the points on it that are $\vbfive$ units away from $A$
 
 \insertQR{}
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	The equation of the given line would be
+	\begin{align}
+		\dfrac{y-\vbtwo}{x-\vbone} &= \vbsix \Rightarrow y = \vbsix\cdot x + \dfrac{\vbseven}{\vbfour}
+	\end{align}
+	Moreover, any point that is $\vbfive$ units away from $A$ would satisy 
+	the following condition 
+	\begin{align}
+		(x - \vbone)^2 + (y-\vbtwo)^2 &= (\vbfive)^2 
+	\end{align}
+	And if this point also happens to be on the line, then 
+	\begin{align}
+		(x-\vbone)^2 + \left[ \left( \vbsix\cdot x + \dfrac{\vbseven}{\vbfour}\right) - \vbtwo \right]^2 &= \vbfive^2 \\
+		\Rightarrow (x - \vbone)^2\cdot\left[ 1 + \left( \vbsix \right)^2\right] &= \vbfive^2 \\
+		\Rightarrow x - \vbone &= \pm\dfrac{\vbfive}{\vbeight} \\
+		\text{ or } x &= \vbnine, \vbten
+	\end{align}
+	
+	\gcalcexpr{\vbfive}{\vbthree / \vbfour} % slope 
+	\gcalcexpr[2]{\vbtwo}{(\vbfive * \vbnine) + (3-\vbfive)*\vbone} % y_1
+    \gcalcexpr[2]{\vbthree}{(\vbfive * \vbten) + (3-\vbfive)*\vbone} % y_2
+    
+    Plug these values of $x$ into the equation for the line - $(1)$ - and you will 
+    get the required coordinates -  $(\vbnine, \vbtwo)$ and $(\vbten, \vbthree)$
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
