@@ -30,7 +30,11 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question
+\question Without resorting to a calculator or tables, verify
+\begin{align}
+  \dfrac{1}{\cos 290^\circ}+\dfrac{1}{\sqrt{3}\sin 250^\circ} 
+    = \dfrac{4}{\sqrt{3}} \nonumber
+\end{align}
 
 \insertQR{}
 
@@ -49,38 +53,31 @@
   \end{marginfigure}
 \fi 
 
+
 \begin{solution}
+  \begin{align}     
+    290^\circ &= \left(\dfrac{3\pi}{2}+\dfrac{\pi}{9}\right) 
+      \text{radians} \\
+    250^\circ &= \left(\dfrac{3\pi}{2}-\dfrac{\pi}{9}\right) 
+      \text{radians}
+  \end{align}
+  Therefore Left Hand Side (L.H.S) may be rewritten as,
+  \begin{align}
+    \text{L.H.S} &= \dfrac{1}{\cos(\dfrac{3\pi}{2}+\dfrac{\pi}{9})}+
+      				  \dfrac{1}{\sqrt{3}
+      				    \sin(\dfrac{3\pi}{2}-\dfrac{\pi}{9})} \\
+      		     &= \dfrac{1}{\sin\dfrac{\pi}{9}}-
+      				  \dfrac{1}{\sqrt{3}\cos\dfrac{\pi}{9}} \\
+      		     &= \dfrac{\sqrt{3}\cos\dfrac{\pi}{9}-\sin\dfrac{\pi}{9}}
+      		              {\sqrt{3}\cos\dfrac{\pi}{9}\sin\dfrac{\pi}{9}} \\
+      		     &= \dfrac{4}{\sqrt{3}}\left(
+      		          \dfrac{\dfrac{\sqrt{3}}{2}\cos\dfrac{\pi}{9}-
+      		                         \dfrac{1}{2}\sin\dfrac{\pi}{9}}
+            		               {2\cos\dfrac{\pi}{9}
+            		                 \sin\dfrac{\pi}{9}}\right) \\
+      		     &= \dfrac{4}{\sqrt{3}}\left(
+      		          \dfrac{\sin(\dfrac{\pi}{3}-\dfrac{\pi}{9})}
+      		                {\sin\dfrac{2\pi}{9}}\right) \\
+      		     &= \dfrac{4}{\sqrt{3}}
+  \end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
