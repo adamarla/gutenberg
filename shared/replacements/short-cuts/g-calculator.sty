@@ -31,3 +31,16 @@
   \FPeval{#2}{(#3)}
   \FPround{#2}{#2}{#1}
 }
+
+\newcommand{\gcalcSumOfSquares}[4][2] { % #2 = #3^2 + #4^2 to #1 precision
+  \FPpow\tmp#3{2}
+  \FPpow\tmpp#4{2}
+  \FPadd{#2}{\tmp}{\tmpp}
+  \FPround{#2}{#2}{#1}
+} 
+
+\newcommand{\gcalcHypotenuse}[4][2] { % #2 = sqrt(#3^2 + #4^2) to #1 precision
+  \gcalcSumOfSquares{#2}{#3}{#4}
+  \FPpow{#2}{#2}{0.5}
+  \FPround{#2}{#2}{#1}
+} 
