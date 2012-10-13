@@ -30,10 +30,10 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question Without resorting to calculator or tables calculate \\
+\question[4] Without resorting to calculator or tables calculate \\
 $\tan20^\circ\tan40^\circ\tan80^\circ$.
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -50,7 +50,7 @@ $\tan20^\circ\tan40^\circ\tan80^\circ$.
   \end{marginfigure}
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
   Let $20^\circ=\theta$. We can rewrite the expression as,
   \begin{align}
     P &= \tan\theta\tan(\dfrac{2\pi}{3}-\theta)
