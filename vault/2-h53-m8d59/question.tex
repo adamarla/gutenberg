@@ -5,10 +5,9 @@
 % Eventually, you will find your own style. But here are some thoughts 
 % to get you started: 
 %
-%   1. Write the solution as if you are writing it for your favorite
-%      14-17 year old to help him/her understand. Could be your nephew, 
-%      your niece, a cousin perhaps or probably even you when you 
-%      were that age. Just write for them.
+%   1. Write to be understood - but be crisp. Your own solution should not take 
+%      more space than you will give to the student. Hence, if you take more than 
+%      a half-page to write a solution, then give the student a full-page and so on...
 %
 %   2. Use margin-notes to "talk" to students about the critical insights
 %      in the question. The tone can be - in fact, should be - informal
@@ -17,22 +16,74 @@
 %      students understand. Yes, it is a little more work per question. 
 %      But the question & solution will be written only once. Make that
 %      attempt at writing a solution count.
-%
-%   4. At the same time, do not be too verbose. A long solution can
-%      - at first sight - make the student think, "God, that is a lot to know".
-%      Our aim is not to scare students. Rather, our aim should be to 
-%      create many "Aha!" moments everyday in classrooms around the world
+%      
+%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
 % 
-%   5. Ensure that there are *no spelling mistakes anywhere*. We are an 
+%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. Also, use American spellings by default
 % 
-%   6. If a question has multiple parts, then first delete lines 40-41
-%   7. If a question does not have parts, then first delete lines 43-69
+%   5. If a question has multiple parts, then first delete lines 40-41
+%   6. If a question does not have parts, then first delete lines 43-69
+%   
+%   7. Create versions of the question when possible. Use commands defined in 
+%      tufte-tweaks.sty to do so. Its easier than you think
 
-\question
+% \noprintanswers
+% \setcounter{rolldice}{0}
+
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{-1}
+  \renewcommand{\vbtwo}{2}
+  \renewcommand{\vbthree}{}
+  \renewcommand{\vbfour}{}
+  \renewcommand{\vbfive}{15}
+  \renewcommand{\vbsix}{6}
+  \renewcommand{\vbseven}{-8}
+  \renewcommand{\vbeight}{11}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vbone}{2}
+    \renewcommand{\vbtwo}{0}
+    \renewcommand{\vbthree}{}
+    \renewcommand{\vbfour}{}
+    \renewcommand{\vbfive}{15}
+    \renewcommand{\vbsix}{8}
+    \renewcommand{\vbseven}{-6}
+    \renewcommand{\vbeight}{13}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vbone}{7}
+      \renewcommand{\vbtwo}{2}
+      \renewcommand{\vbthree}{}
+      \renewcommand{\vbfour}{-}
+      \renewcommand{\vbfive}{-9}
+      \renewcommand{\vbsix}{3}
+      \renewcommand{\vbseven}{4}
+      \renewcommand{\vbeight}{11}
+    }{
+      % variables 
+      \renewcommand{\vbone}{5}
+      \renewcommand{\vbtwo}{0}
+      \renewcommand{\vbthree}{}
+      \renewcommand{\vbfour}{-}
+      \renewcommand{\vbfive}{-9}
+      \renewcommand{\vbsix}{4}
+      \renewcommand{\vbseven}{-3}
+      \renewcommand{\vbeight}{13}
+    }
+  }
+}
+
+\question Find the distance of the point $(\vbone, \vbtwo)$ from the line $\vbthree x + \vbfour y = \vbfive$ measured parallel to the line $\vbsix x \vbseven y + \vbeight = 0$.
+
 
 \insertQR{}
+
+\watchout
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -50,37 +101,25 @@
 \fi 
 
 \begin{solution}
+  Let the point from which distance is to be measured be $x_{1}$, $y_{1}$.
+  Since this point lies on the line $\vbthree x + \vbfour y = \vbfive$, it 
+  must satisfy its equation. Therefore,
+  \begin{align}
+  	\vbthree x_{1} + \vbfour y_{1} = \vbfive  	
+  \end{align}  
+  Since the line connecting the two points is parallel to, $\vbsix x 
+  \vbseven y + \vbeight = 0$, its slope must be the same. Therefore,
+  \begin{align}
+  	\dfrac{y_{1}-(\vbtwo)}{x_{1}-(\vbone)} = \dfrac{3}{4}
+  \end{align}
+  Solving for $x_{1}$ and $y_{1}$ using (1) and (2) we get,
+  \begin{align}
+  	x_{1} = 7 \text{,} y_{1} = 8 \nonumber
+  \end{align}
+  Therefore distance between the two points as calculated using
+  distance formula equals,
+  \begin{align}
+  	\text{D} &= \sqrt{(8-2)^2+(7-(-1))^2} \nonumber \\
+  			 &= 100 \nonumber
+  \end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
