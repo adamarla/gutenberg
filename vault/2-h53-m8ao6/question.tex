@@ -5,10 +5,9 @@
 % Eventually, you will find your own style. But here are some thoughts 
 % to get you started: 
 %
-%   1. Write the solution as if you are writing it for your favorite
-%      14-17 year old to help him/her understand. Could be your nephew, 
-%      your niece, a cousin perhaps or probably even you when you 
-%      were that age. Just write for them.
+%   1. Write to be understood - but be crisp. Your own solution should not take 
+%      more space than you will give to the student. Hence, if you take more than 
+%      a half-page to write a solution, then give the student a full-page and so on...
 %
 %   2. Use margin-notes to "talk" to students about the critical insights
 %      in the question. The tone can be - in fact, should be - informal
@@ -17,70 +16,112 @@
 %      students understand. Yes, it is a little more work per question. 
 %      But the question & solution will be written only once. Make that
 %      attempt at writing a solution count.
-%
-%   4. At the same time, do not be too verbose. A long solution can
-%      - at first sight - make the student think, "God, that is a lot to know".
-%      Our aim is not to scare students. Rather, our aim should be to 
-%      create many "Aha!" moments everyday in classrooms around the world
+%      
+%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
 % 
-%   5. Ensure that there are *no spelling mistakes anywhere*. We are an 
+%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. Also, use American spellings by default
 % 
-%   6. If a question has multiple parts, then first delete lines 40-41
-%   7. If a question does not have parts, then first delete lines 43-69
+%   5. If a question has multiple parts, then first delete lines 40-41
+%   6. If a question does not have parts, then first delete lines 43-69
+%   
+%   7. Create versions of the question when possible. Use commands defined in 
+%      tufte-tweaks.sty to do so. Its easier than you think
 
-\question
+% \noprintanswers
+% \setcounter{rolldice}{0}
+
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{-1}
+  \renewcommand{\vbtwo}{0}
+  \renewcommand{\vbthree}{7}
+  \renewcommand{\vbfour}{2}
+  \renewcommand{\vbfive}{5}
+  \renewcommand{\vbsix}{-2}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vbone}{1}
+    \renewcommand{\vbtwo}{0}
+    \renewcommand{\vbthree}{-7}
+    \renewcommand{\vbfour}{2}
+    \renewcommand{\vbfive}{-5}
+    \renewcommand{\vbsix}{-2}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vbone}{-1}
+      \renewcommand{\vbtwo}{0}
+      \renewcommand{\vbthree}{7}
+      \renewcommand{\vbfour}{-2}
+      \renewcommand{\vbfive}{5}
+      \renewcommand{\vbsix}{2}
+    }{
+      % variables 
+      \renewcommand{\vbone}{1}
+      \renewcommand{\vbtwo}{0}
+      \renewcommand{\vbthree}{-7}
+      \renewcommand{\vbfour}{-2}
+      \renewcommand{\vbfive}{-5}
+      \renewcommand{\vbsix}{2}
+    }
+  }
+}
+
+\question Show that the perpendicular bisectors of the sides of a triangle with vertices $(\vbone , \vbtwo )$, $(\vbthree , -\vbfour)$ and $(\vbfive , \vbsix )$ are concurrent .Also find the coordinates of the point of concurrence.
 
 \insertQR{}
+
+\watchout
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
   \begin{marginfigure}
     \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
+      \figpt 10: (-10, 0)
+      \figpt 20: (70, 20)
+      \figpt 30: (50, -20)
     \figdrawbegin{}
-      \figdrawline [100,101]
+      \figdrawline [10, 20]
+      \figdrawline [20, 30]
+      \figdrawline [30, 10]
     \figdrawend
     \figvisu{\figBoxA}{}{%
+      \figwritesw 10:$-1, 0$(5pt)
+      \figwritene 20:$7, 2$(5pt)
+      \figwritese 30:$5, -2$(5pt)
     }
     \centerline{\box\figBoxA}
   \end{marginfigure}
 \fi 
 
 \begin{solution}
+  Let us begin by finding the equations for the perpendicular bisectors 
+  of the three lines. This can be done with the Slope-Point form.
+  For the perpendicular of the line joining $(\vbone, \vbtwo)$ and 
+  $(\vbthree, \vbfour)$, the calculations look like this  
+  \begin{align}
+	\text{Slope} &= -\dfrac{\vbthree - (\vbone)}
+	    				   {\vbfour - \vbtwo} = -4  	   \nonumber \\
+    \text{Point} &= \dfrac{\vbone+\vbthree}{2}\text{,}
+    				\dfrac{\vbtwo+\vbfour}{2} = 3\text{,}1 \nonumber \\ 
+    \text{Line}  &\Rightarrow y = -4x + 13
+  \end{align}
+  Similar, equations for perpendicular bisectors of other two lines are
+  \begin{align}
+  	y &= -\frac{1}{2}x + 3 \\
+  	y &= 3x - 7
+  \end{align}
+  Solving (2) and (3) we get $x=\dfrac{20}{7}$, $y=\dfrac{11}{7}$.
+  Concurrence means all three perpendicular bisectors pass through a point.
+  Substituting $x$ and $y$ in (1) verifies concurrence.
+  \begin{align}
+  	\text{LHS} &= y + 4x \nonumber \\
+  			   &= \dfrac{11}{7} + 4\dfrac{20}{7} \nonumber \\
+  			   &= 13 = \text{RHS} \nonumber
+  \end{align}
+  Perpendicular bisectors are concurrent through 
+  $(\dfrac{20}{7}, \dfrac{11}{7})$.
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
