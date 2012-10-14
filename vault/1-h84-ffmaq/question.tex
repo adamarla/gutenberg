@@ -29,115 +29,71 @@
 %   7. Create versions of the question when possible. Use commands defined in 
 %      tufte-tweaks.sty to do so. Its easier than you think
 
-% \noprintanswers
-% \setcounter{rolldice}{0}
+ %\noprintanswers
+ %\setcounter{rolldice}{0}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{2}
+  \renewcommand{\vbtwo}{3}
+  \renewcommand{\vbfour}{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{3} % passing - x
+    \renewcommand{\vbtwo}{4} % passing - y
+    \renewcommand{\vbfour}{3} % distance
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{4}
+      \renewcommand{\vbtwo}{7}
+      \renewcommand{\vbfour}{4} % k
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{1}
+      \renewcommand{\vbtwo}{2}
+      \renewcommand{\vbfour}{2}
+     }
   }
 }
 
-\question
+\gcalcexpr[0]{\vbthree}{(\vbone + \vbtwo) / (2-\vbtwo + \vbone)}
+\gcalcexpr[0]{\vbseven}{(\vbthree - \vbtwo) / (\vbtwo - \vbone)}
+\gcalcexpr[0]{\vbeight}{\vbseven + 1}
+\gcalcexpr[0]{\vbfive}{\vbseven + \vbfour} % from-x
+\gcalcexpr[0]{\vbsix}{\vbeight - \vbfour} % from-y
+\gcalcexpr[0]{\vbnine}{\vbthree - \vbeight}
+\gcalcexpr[0]{\vbten}{\vbeight + \vbseven}
+
+\question Find the equation of the straight lines that pass through the \textit{intersection} of lines 
+$x-y+1 = 0$ and $\vbone x - \vbtwo y + \vbthree = 0$ and is at a distance of 
+$\vbfour\sqrt{2}$ units from $(\vbfive, \vbsix)$
 
 \insertQR{}
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
+
 \fi 
 
 \begin{solution}
+	The two given lines would intersect when
+	\begin{align}
+		y &= x + 1 = \dfrac{\vbone}{\vbtwo}x + \dfrac{\vbthree}{\vbtwo} \\
+		\Rightarrow x &= \vbseven \text{ and } y = \vbeight
+	\end{align}
+	Any line that passes through $(\vbseven, \vbeight)$ will satify the equation
+	\begin{align}
+		\dfrac{y-\vbeight}{x-\vbseven} &= m \text{ (as yet unknown) } \\
+		\Rightarrow mx - y + (\vbeight - \vbseven \cdot m) &= 0
+	\end{align}
+	And the distance of $(\vbfive, \vbsix)$ from it would be given by 
+	\begin{align}
+		\dfrac{\vert\, \vbfive m - \vbsix + (\vbeight - \vbseven\cdot m)\,\vert}{\sqrt{1 + m^2}} &= d = \vbfour\sqrt{2}\\
+		\Rightarrow \vbfour^2\cdot(m+1)^2 &= \vbfour^2\cdot 2\cdot(1 + m^2) \\
+		\Rightarrow m &= -1 
+	\end{align}
+	Hence, the line is $-x-y-\vbten = 0$
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
