@@ -28,116 +28,78 @@
 %   
 %   7. Create versions of the question when possible. Use commands defined in 
 %      tufte-tweaks.sty to do so. Its easier than you think
-
 % \noprintanswers
 % \setcounter{rolldice}{0}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{2}
+  \renewcommand{\vbtwo}{-3}
+  \renewcommand{\vbthree}{4}
+  \renewcommand{\vbfour}{2}
+  \renewcommand{\vbfive}{4}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{3}
+    \renewcommand{\vbtwo}{4}
+    \renewcommand{\vbthree}{5}
+    \renewcommand{\vbfour}{7}
+    \renewcommand{\vbfive}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{-1}
+      \renewcommand{\vbtwo}{-1}
+      \renewcommand{\vbthree}{2}
+      \renewcommand{\vbfour}{5}
+      \renewcommand{\vbfive}{4}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{0}
+      \renewcommand{\vbtwo}{-1}
+      \renewcommand{\vbthree}{2}
+      \renewcommand{\vbfour}{4}
+      \renewcommand{\vbfive}{5}
+     }
   }
 }
 
-\question
+\gcalcexpr[2]{\vbsix}{(\vbfour - \vbtwo)/(\vbthree - \vbone)}
+\gcalcexpr[2]{\vbseven}{-1/\vbsix}
+\gcalcexpr[2]{\vbeight}{-\vbfive * \vbseven}
 
-\insertQR{}
+\question Find the equation of the line that has $x$-intercept of $\vbfive$ units and is perpendicular
+to the line joining points $(\vbone, \vbtwo)$ and $(\vbthree, \vbfour)$
+
+\insertQR[-20pt]{}
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	The slope of the line joining $(\vbone, \vbtwo)$ and $(\vbthree, \vbfour)$ is,
+	\begin{align}
+		m &= \dfrac{\vbfour-\vbtwo}{\vbthree-\vbone} = \vbsix
+	\end{align}
+	And so, the slope of the required line - which is perpendicular to the above line - is 
+	\begin{align}
+		m\cdot m_{\perp} &= -1 \Rightarrow m_{\perp} = \vbseven
+	\end{align}
+	Now, given the standard equation of the line $Ax + By + C = 0$, we know the following
+	\begin{align}
+		x_{\text{intercept}} &= \dfrac{-C}{A} \text{ and } y_{\text{intercept}} = \dfrac{-C}{B} \\
+		\Rightarrow \dfrac{y_{\text{intercept}}}{x_{\text{intercept}}} &= \dfrac{A}{B} \\
+		\text{Moreover, the slope } m &= \dfrac{-A}{B} = -\dfrac{y_{\text{intercept}}}{x_{\text{intercept}}}
+	\end{align}
+    We now know enough to find the y-intercept of the required line, which really is
+    \begin{align}
+    	y_{\text{intercept}} &= -m_{\perp}\cdot x_{\text{intercept}} = \vbeight
+    \end{align}
+    And so, the equation of the required line is 
+    \begin{align}
+    	\dfrac{x}{\vbfive} + \dfrac{y}{\vbeight} &= 1
+    \end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
