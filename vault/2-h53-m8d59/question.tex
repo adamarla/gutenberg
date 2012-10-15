@@ -31,28 +31,27 @@
 
 % \noprintanswers
 % \setcounter{rolldice}{0}
-
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
   \renewcommand{\vbone}{-1}
   \renewcommand{\vbtwo}{2}
   \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
+  \renewcommand{\vbfour}{+}
   \renewcommand{\vbfive}{15}
   \renewcommand{\vbsix}{6}
   \renewcommand{\vbseven}{-8}
-  \renewcommand{\vbeight}{11}
+  \renewcommand{\vbeight}{+11}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
     \renewcommand{\vbone}{2}
     \renewcommand{\vbtwo}{0}
     \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
+    \renewcommand{\vbfour}{+}
     \renewcommand{\vbfive}{15}
     \renewcommand{\vbsix}{8}
     \renewcommand{\vbseven}{-6}
-    \renewcommand{\vbeight}{13}
+    \renewcommand{\vbeight}{+13}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
@@ -62,8 +61,8 @@
       \renewcommand{\vbfour}{-}
       \renewcommand{\vbfive}{-9}
       \renewcommand{\vbsix}{3}
-      \renewcommand{\vbseven}{4}
-      \renewcommand{\vbeight}{11}
+      \renewcommand{\vbseven}{+4}
+      \renewcommand{\vbeight}{+11}
     }{
       % variables 
       \renewcommand{\vbone}{5}
@@ -73,12 +72,14 @@
       \renewcommand{\vbfive}{-9}
       \renewcommand{\vbsix}{4}
       \renewcommand{\vbseven}{-3}
-      \renewcommand{\vbeight}{13}
+      \renewcommand{\vbeight}{+13}
     }
   }
 }
 
-\question[3] Find the distance of the point $(\vbone, \vbtwo)$ from the line $\vbthree x + \vbfour y = \vbfive$ measured parallel to the line $\vbsix x \vbseven y + \vbeight = 0$.
+\question Find the distance of the point $(\vbone, \vbtwo)$ from the line 
+$\vbthree x \vbfour y = \vbfive$ measured parallel to the line 
+$\vbsix x \vbseven y \vbeight = 0$.
 
 
 \insertQR{QRC}
