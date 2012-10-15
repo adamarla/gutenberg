@@ -1,7 +1,11 @@
 
 # /opt/gutenberg/PRODUCTION_SERVER is a zero size file on Linode only !!
 
-Gutenberg := /opt/gutenberg/bank
+ifeq ($(realpath /opt/gutenberg/PRODUCTION_SERVER),)
+  Gutenberg := /home/abhinav/workspace/gutenberg-live
+else
+  Gutenberg := /home/gutenberg/bank
+endif
 
 include $(join $(strip $(Gutenberg)), /shared/environment.mk)
 
