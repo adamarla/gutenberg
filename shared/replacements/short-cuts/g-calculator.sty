@@ -33,8 +33,10 @@
 }
 
 \newcommand{\gcalcSumOfSquares}[4][2] { % #2 = #3^2 + #4^2 to #1 precision
-  \FPpow\tmp#3{2}
-  \FPpow\tmpp#4{2}
+  % \FPpow uses logs and then anti-logs to calculate power. Which means, it gets stumped 
+  % when calculating squares of negative numbers because their logs are not defined
+  \gcalcexpr[2]{\tmp}{#3 * #3}
+  \gcalcexpr[2]{\tmpp}{#4 * #4}
   \FPadd{#2}{\tmp}{\tmpp}
   \FPround{#2}{#2}{#1}
 } 
