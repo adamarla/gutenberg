@@ -29,6 +29,7 @@
 \RequirePackage{g-seq}
 \RequirePackage{g-calculator}
 \RequirePackage{g-2d}
+\RequirePackage{g-comb}
 \RequirePackage{etoolbox}
 
 \providecommand{\ud}{\, \mathrm{d}}
