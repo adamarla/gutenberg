@@ -30,15 +30,15 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+% \setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
+  \renewcommand{\vbone}{8}
+  \renewcommand{\vbtwo}{4}
   \renewcommand{\vbthree}{}
   \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
+  \renewcommand{\vbfive}{240}
   \renewcommand{\vbsix}{}
   \renewcommand{\vbseven}{}
   \renewcommand{\vbeight}{}
@@ -47,11 +47,11 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
+    \renewcommand{\vbone}{10}
+    \renewcommand{\vbtwo}{5}
     \renewcommand{\vbthree}{}
     \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
+    \renewcommand{\vbfive}{4200}
     \renewcommand{\vbsix}{}
     \renewcommand{\vbseven}{}
     \renewcommand{\vbeight}{}
@@ -60,11 +60,11 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
+      \renewcommand{\vbone}{11}
+      \renewcommand{\vbtwo}{6}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
+      \renewcommand{\vbfive}{40,320}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
       \renewcommand{\vbeight}{}
@@ -72,11 +72,11 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
+      \renewcommand{\vbone}{9}
+      \renewcommand{\vbtwo}{3}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
+      \renewcommand{\vbfive}{90}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
       \renewcommand{\vbeight}{}
@@ -85,60 +85,26 @@
     }
   }
 }
+\gcalcexpr[0]{\vbthree}{\vbtwo - 1}
+\gcalcexpr[0]{\vbfour}{\vbone - 3}
 
-\question
+\question There are $\vbone$ persons ( lets call them $P_1, P_2 \ldots P_{\vbone}$ ) of whom $\vbtwo$ must be arranged
+in a line. However, $P_1$ must \textit{always} be present in the line whereas $P_4$ and $P_5$ must \textit{never} be. How many such arrangements are possible?
 
 \insertQR{}
 
-\watchout
+\watchout[-30pt]
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	One out of $\vbtwo$ places in the line is always taken by $P_1$. Hence, its now a question of picking
+	$\vbthree$ other people from amongst the $\vbfour$ remaining ( after excluding $P_4$ and $P_5$ ). Moreover,
+	the order in which individuals stand in the line is important. Hence, 
+	\begin{align}
+		N_{\texttt{total}} &= \encr\vbfour\vbthree\cdot \vbtwo\,! \\
+		&= \fncr\vbfour\vbthree\cdot \vbtwo\,! \\
+		&= \vbfive
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
