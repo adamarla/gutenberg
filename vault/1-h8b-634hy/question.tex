@@ -30,115 +30,84 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+% \setcounter{rolldice}{1}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
+  \renewcommand{\vbone}{8}
+  \renewcommand{\vbtwo}{2}
+  \renewcommand{\vbthree}{3}
+  \renewcommand{\vbfour}{1}
+  \renewcommand{\vbfive}{4}
   \renewcommand{\vbsix}{}
   \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
+  \renewcommand{\vbeight}{1440}
   \renewcommand{\vbnine}{}
   \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
+    \renewcommand{\vbone}{7}
+    \renewcommand{\vbtwo}{3}
+    \renewcommand{\vbthree}{2}
+    \renewcommand{\vbfour}{2}
+    \renewcommand{\vbfive}{6}
     \renewcommand{\vbsix}{}
     \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
+    \renewcommand{\vbeight}{720}
     \renewcommand{\vbnine}{}
     \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
+      \renewcommand{\vbone}{9}
+      \renewcommand{\vbtwo}{4}
+      \renewcommand{\vbthree}{3}
+      \renewcommand{\vbfour}{3}
+      \renewcommand{\vbfive}{8}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
+      \renewcommand{\vbeight}{21,600}
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
+      \renewcommand{\vbone}{8}
+      \renewcommand{\vbtwo}{4}
+      \renewcommand{\vbthree}{2}
+      \renewcommand{\vbfour}{3}
+      \renewcommand{\vbfive}{8}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
+      \renewcommand{\vbeight}{4,320}
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }
   }
 }
 
-\question
+\gcalcexpr[0]{\vbsix}{\vbfive - \vbfour + 1}
+\gcalcexpr[0]{\vbseven}{\vbone - \vbtwo}
 
-\insertQR{}
 
-\watchout
+\question There are $\vbone$ chairs in a room - numbered $1$ to $\vbone$ - for the $\vbtwo$ women and $\vbthree$ men present.
+If the women get to choose first from amongst chairs numbered $\vbfour$ to $\vbfive$, and then the men 
+from the remaining, then find the total number of ways in which they can be seated
+
+\insertQR[10pt]{}
+
+\watchout[-45pt]
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	The total number of chairs available to the ladies to choose from is $\vbfive - \vbfour + 1 = \vbsix$.
+	And once they have picked, the men can pick from amongst $\vbone - \vbtwo = \vbseven$ chairs. Hence,
+	the total number of arrangements possible is
+	\begin{align}
+		N_{\texttt{total}} &= \enpr{\vbsix}{\vbtwo} \times \enpr{\vbseven}{\vbthree} \\
+		&= \fnpr{\vbsix}{\vbtwo} \cdot \fnpr\vbseven\vbthree \\
+		&= \vbeight
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
