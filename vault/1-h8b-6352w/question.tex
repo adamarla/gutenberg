@@ -29,116 +29,98 @@
 %   7. Create versions of the question when possible. Use commands defined in 
 %      tufte-tweaks.sty to do so. Its easier than you think
 
-% \noprintanswers
-% \setcounter{rolldice}{0}
+%\noprintanswers
+%\setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
+  \renewcommand{\vbone}{7} % attempt
+  \renewcommand{\vbtwo}{12} % total
+  \renewcommand{\vbthree}{6} % per group
+  \renewcommand{\vbfour}{5} % atmost 
   \renewcommand{\vbfive}{}
   \renewcommand{\vbsix}{}
   \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
+  \renewcommand{\vbeight}{780} % n-ways 
   \renewcommand{\vbnine}{}
   \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
+    \renewcommand{\vbone}{5}
+    \renewcommand{\vbtwo}{10}
+    \renewcommand{\vbthree}{5}
+    \renewcommand{\vbfour}{4}
     \renewcommand{\vbfive}{}
     \renewcommand{\vbsix}{}
     \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
+    \renewcommand{\vbeight}{250}
     \renewcommand{\vbnine}{}
     \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
+      \renewcommand{\vbone}{9}
+      \renewcommand{\vbtwo}{14}
+      \renewcommand{\vbthree}{7}
+      \renewcommand{\vbfour}{6}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
+      \renewcommand{\vbeight}{1,960}
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
+      \renewcommand{\vbone}{7}
+      \renewcommand{\vbtwo}{14}
+      \renewcommand{\vbthree}{7}
+      \renewcommand{\vbfour}{5}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
+      \renewcommand{\vbeight}{3,332}
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }
   }
 }
 
-\question
+\gcalcexpr[0]{\vbfive}{\vbone - \vbfour} % min 
+\gcalcexpr[0]{\vbsix}{\vbfour - 1 }
+\gcalcexpr[0]{\vbseven}{\vbone - \vbsix}
 
-\insertQR{}
+\question In an examination, a candidate is required to answer $\vbone$ out of $\vbtwo$ questions. The
+questions are divided into two sections - each section having $\vbthree$ questions. However, the candidate can attempt
+\textit{atmost} $\vbfour$ questions from each section. In how many different ways can the candidate attempt the $\vbone$
+questions ?
 
-\watchout
+\insertQR[10pt]{}
+
+\watchout[-40pt]
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
+	\begin{table}
+		\begin{tabular}{cccccccc}
+		   \toprule
+		   	  $A_1$ & $B_1$ & $A_2$ & $B_2$ & $A_3$ & $B_3$ & $A_4$ & $B_4$ \\
+		   \midrule
+		      \vbfour & \vbfive & \vbsix & \vbseven & \vbseven & \vbsix & \vbfive & \vbfour \\
+		   \bottomrule
+		\end{tabular}
+	\end{table}
 \fi 
 
 \begin{solution}
+	If the two sections be A and B, then there are \textit{four} possible ways in which 
+	the candidate could pick $\vbone$ questions given the constraints - as shown in the table above
+	
+	The total number of ways, therefore, are
+	\begin{align}
+		N_{\texttt{total}} &= \encr\vbthree\vbfour\cdot\encr\vbthree\vbfive + 
+		     \encr\vbthree\vbsix\cdot\encr\vbthree\vbseven + \encr\vbthree\vbseven\cdot\encr\vbthree\vbsix + 
+		     \encr\vbthree\vbfive\cdot\encr\vbthree\vbfour \\
+		&= 2\cdot\left( \encr\vbthree\vbfour\cdot\encr\vbthree\vbfive + \encr\vbthree\vbsix\cdot\encr\vbthree\vbseven \right) \\
+		&= \vbeight
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

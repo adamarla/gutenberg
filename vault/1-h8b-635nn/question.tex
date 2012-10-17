@@ -30,16 +30,16 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+% \setcounter{rolldice}{1}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
+  \renewcommand{\vbone}{5} % required
+  \renewcommand{\vbtwo}{9} % total 
   \renewcommand{\vbthree}{}
   \renewcommand{\vbfour}{}
   \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
+  \renewcommand{\vbsix}{91}
   \renewcommand{\vbseven}{}
   \renewcommand{\vbeight}{}
   \renewcommand{\vbnine}{}
@@ -47,12 +47,12 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
+    \renewcommand{\vbone}{6}
+    \renewcommand{\vbtwo}{8}
     \renewcommand{\vbthree}{}
     \renewcommand{\vbfour}{}
     \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
+    \renewcommand{\vbsix}{22}
     \renewcommand{\vbseven}{}
     \renewcommand{\vbeight}{}
     \renewcommand{\vbnine}{}
@@ -60,24 +60,24 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
+      \renewcommand{\vbone}{7}
+      \renewcommand{\vbtwo}{11}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
       \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
+      \renewcommand{\vbsix}{246}
       \renewcommand{\vbseven}{}
       \renewcommand{\vbeight}{}
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
+      \renewcommand{\vbone}{4}
+      \renewcommand{\vbtwo}{7}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
       \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
+      \renewcommand{\vbsix}{25}
       \renewcommand{\vbseven}{}
       \renewcommand{\vbeight}{}
       \renewcommand{\vbnine}{}
@@ -86,59 +86,29 @@
   }
 }
 
-\question
+\gcalcexpr[0]{\vbthree}{\vbtwo - 2}
+\gcalcexpr[0]{\vbfour}{\vbtwo - 1}
+\gcalcexpr[0]{\vbfive}{\vbone - 2}
+
+\question A committee of $\vbone$ persons needs to be formed from amongst $\vbtwo$ people. However, 
+if Mr. Laurel is picked for the committee, then Mr. Hardy must be too. In how many 
+ways can the committee be formed?
 
 \insertQR{}
 
-\watchout
+\watchout[-30pt]
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	If Mr. Laurel is picked - and therefore also Mr. Hardy - then we need to pick $\vbfive$ more individuals 
+	from amongst $\vbthree$ persons
+	
+	And if Mr. Laurel is \textit{not} picked, then we need to pick $\vbone$ individuals from amongst $\vbfour$ individuals. Hence,
+	\begin{align}
+		N_{\texttt{total}} &= \encr\vbthree\vbfive + \encr\vbfour\vbone \\
+		&= \fncr\vbthree\vbfive + \fncr\vbfour\vbone \\
+		&= \vbsix
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
