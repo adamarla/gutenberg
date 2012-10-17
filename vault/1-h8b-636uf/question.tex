@@ -88,17 +88,17 @@
 \gcalcexpr[0]{\vbthree}{\vbtwo - 1}
 \gcalcexpr[0]{\vbfour}{\vbone - 3}
 
-\question There are $\vbone$ persons ( lets call them $P_1, P_2 \ldots P_{\vbone}$ ) of whom $\vbtwo$ must be arranged
+\question[2] There are $\vbone$ persons ( lets call them $P_1, P_2 \ldots P_{\vbone}$ ) of whom $\vbtwo$ must be arranged
 in a line. However, $P_1$ must \textit{always} be present in the line whereas $P_4$ and $P_5$ must \textit{never} be. How many such arrangements are possible?
 
-\insertQR{}
+\insertQR{QRC}
 
 \watchout[-30pt]
 
 \ifprintanswers
 \fi 
 
-\begin{solution}
+\begin{solution}[\mcq]
 	One out of $\vbtwo$ places in the line is always taken by $P_1$. Hence, its now a question of picking
 	$\vbthree$ other people from amongst the $\vbfour$ remaining ( after excluding $P_4$ and $P_5$ ). Moreover,
 	the order in which individuals stand in the line is important. Hence, 
