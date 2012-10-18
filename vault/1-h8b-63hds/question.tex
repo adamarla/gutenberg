@@ -30,14 +30,14 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+% \setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
+  \renewcommand{\vbone}{5}
+  \renewcommand{\vbtwo}{3}
+  \renewcommand{\vbthree}{7}
+  \renewcommand{\vbfour}{1}
   \renewcommand{\vbfive}{}
   \renewcommand{\vbsix}{}
   \renewcommand{\vbseven}{}
@@ -47,10 +47,10 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
+    \renewcommand{\vbone}{4}
+    \renewcommand{\vbtwo}{1}
+    \renewcommand{\vbthree}{2}
+    \renewcommand{\vbfour}{6}
     \renewcommand{\vbfive}{}
     \renewcommand{\vbsix}{}
     \renewcommand{\vbseven}{}
@@ -60,10 +60,10 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
+      \renewcommand{\vbone}{6}
+      \renewcommand{\vbtwo}{7}
+      \renewcommand{\vbthree}{3}
+      \renewcommand{\vbfour}{4}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
@@ -72,10 +72,10 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
+      \renewcommand{\vbone}{9}
+      \renewcommand{\vbtwo}{7}
+      \renewcommand{\vbthree}{2}
+      \renewcommand{\vbfour}{5}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
@@ -86,59 +86,23 @@
   }
 }
 
-\question
+\question In a certain city, all telephone numbers have six digits - with the first two digits
+always being either $\vbone\vbtwo$ or $\vbone\vbthree$ or $\vbone\vbfour$ or $\vbfour\vbthree$ or 
+$\vbfour\vbone$. Given this, how many telephone numbers have all six digits distinct?
 
-\insertQR{}
+\insertQR{ab}
 
-\watchout
+\watchout[-20pt]
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	There are 5 combinations for the first two numbers - each using two distinct digits. Hence, 
+	for the whole telephone number to have all digits different, the next \textit{four} digits 
+	must be anything other than the first two
+	\begin{align}
+		\Rightarrow N_{\texttt{total}} &= 5 \times \underbrace{(8 \times 7 \times 6 \times 5 )}_{\texttt{\# distinct combinations}}
+		 = 8,400
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
