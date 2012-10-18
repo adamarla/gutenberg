@@ -30,115 +30,71 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+% \setcounter{rolldice}{1}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{9}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{8}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{10}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{11}
     }
   }
 }
 
-\question
+\gcalcexpr[0]{\vbtwo}{((\vbone + 2) * (\vbone + 1)) / 2}
+\gcalcexpr[0]{\vbthree}{\vbone - 2}
+\gcalcexpr[0]{\vbfour}{3 * (\vbone - 1)}
+\gcalcexpr[0]{\vbfive}{\vbfour + 3}
+
+\question $\vbone$ oranges have to be distributed amongst 3 children. If a child gets an orange, then 
+she gets a whole orange - not half or a third or a quarter
 
 \insertQR{}
 
-\watchout
+\watchout[-30pt]
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part In how many ways then can the $\vbone$ oranges be distributed?  
 
   \insertQR{}
   \begin{solution}
+  	When its a question of distributing $N$ things amongst $M$ people, imagine the $N$ things lined
+  	up with $M-1$ partitions between them. The first person gets whatever is on the left of the 
+  	first partition, the second what is between the first and the second partition and so on. The number 
+  	of distinct distributions then is the number of distinct permutations of $N+M-1$ items where $N$
+  	are of one kind and $M-1$ of the other
+  	\begin{align}
+  		N_{\texttt{ways}} &= \dfrac{(\vbone + 3 - 1)\,!}{\vbone\,!\cdot (3-1)\,!} = \vbtwo
+  	\end{align}
   \end{solution}
 
-  \part 
+  \part How many of these ways are grossly unfair - meaning, one or more children do not get any oranges?
 
   \insertQR{}
   \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
+  	If two of the children do not get anything, then the third child must get everything. As there are only
+  	3 children, there can be only 3 ways in which this can happen
+  	
+  	However, if only one of the three is left out, then the $\vbone$ oranges are distributed amongst the other two. 
+  	Moreover, each of the other two gets \textit{atleast} one orange. So, it comes down to distributing 
+  	$\vbthree$ oranges amonst two children
+  	
+  	\begin{align}
+  		N_{\texttt{unfair}} &= 3\times\dfrac{(\vbthree + 2 - 1)\,!}{\vbthree\,!\cdot(2-1)\,!} = \vbfour
+  	\end{align}
+  	Hence, there are $\vbfour + 3 = \vbfive$ grossly unfair ways of distributing the $\vbone$ oranges
   \end{solution}
 
 \end{parts}
