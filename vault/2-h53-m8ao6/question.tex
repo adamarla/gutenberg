@@ -30,7 +30,7 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+% \setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -40,6 +40,8 @@
   \renewcommand{\vbfour}{2}
   \renewcommand{\vbfive}{5}
   \renewcommand{\vbsix}{-2}
+  \renewcommand{\vbseven}{\frac{20}{7}}
+  \renewcommand{\vbeight}{\frac{11}{7}}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
@@ -49,6 +51,8 @@
     \renewcommand{\vbfour}{2}
     \renewcommand{\vbfive}{-5}
     \renewcommand{\vbsix}{-2}
+    \renewcommand{\vbseven}{-\frac{20}{7}}
+    \renewcommand{\vbeight}{\frac{11}{7}}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
@@ -58,6 +62,8 @@
       \renewcommand{\vbfour}{-2}
       \renewcommand{\vbfive}{5}
       \renewcommand{\vbsix}{2}
+      \renewcommand{\vbseven}{\frac{20}{7}}
+      \renewcommand{\vbeight}{-\frac{11}{7}}
     }{
       % variables 
       \renewcommand{\vbone}{1}
@@ -66,65 +72,102 @@
       \renewcommand{\vbfour}{-2}
       \renewcommand{\vbfive}{-5}
       \renewcommand{\vbsix}{2}
+      \renewcommand{\vbseven}{-\frac{20}{7}}
+      \renewcommand{\vbeight}{-\frac{11}{7}}
     }
   }
 }
 
-\question[3] Show that the perpendicular bisectors of the sides of a triangle 
-with vertices $(\vbone , \vbtwo )$, $(\vbthree , \vbfour)$ and 
-$(\vbfive , \vbsix )$ are concurrent .Also find the coordinates of the point 
-of concurrence.
+\gcalcexpr[0]{\mxone}{(\vbone + \vbthree) / 2}
+\gcalcexpr[0]{\myone}{(\vbtwo + \vbfour) / 2}
+\gcalcexpr[0]{\mxtwo}{(\vbthree + \vbfive) / 2}
+\gcalcexpr[0]{\mytwo}{(\vbfour + \vbsix) / 2}
+\gcalcexpr[0]{\mxthree}{(\vbone + \vbfive) / 2}
+\gcalcexpr[0]{\mythree}{(\vbtwo + \vbsix) / 2}
 
-\insertQR{QRC}
+\gcalcexpr[0]{\mab}{-(\vbthree - \vbone)/(\vbfour - \vbtwo)}
+\gcalcexpr[2]{\mbc}{-(\vbfive - \vbthree)/(\vbsix - \vbfour) }
+\gcalcexpr[0]{\mca}{-(\vbone - \vbfive)/(\vbtwo - \vbsix)} 
+
+\gcalcexpr[0]{\cone}{\myone - (\mab * \mxone)}
+\gcalcexpr[0]{\ctwo}{\mytwo - (\mbc * \mxtwo)}
+\gcalcexpr[0]{\cthree}{\mythree - (\mca * \mxthree)}
+
+\question[3] A triangle has vertices $A = (\vbone, \vbtwo)$, $B = (\vbthree, \vbfour)$ and 
+$C = (\vbfive, \vbsix)$ - \asif. $X$, $Y$ and $Z$ are the mid-points of the three sides 
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
   \begin{marginfigure}
     \figinit{pt}
-      \figpt 10: (-10, 0)
-      \figpt 20: (70, 20)
-      \figpt 30: (50, -20)
+      \figpt 10:$A$(-10, 0)
+      \figpt 20:$B$(70, 20)
+      \figpt 30:$C$(50, -20)
+      \figpt 11: $X$(30,10)
+      \figpt 21: $Y$(60,0)
+      \figpt 31: $Z$(20,-10)
     \figdrawbegin{}
       \figdrawline [10, 20]
       \figdrawline [20, 30]
       \figdrawline [30, 10]
     \figdrawend
     \figvisu{\figBoxA}{}{%
-      \figwritesw 10:$-1, 0$(5pt)
-      \figwritene 20:$7, 2$(5pt)
-      \figwritese 30:$5, -2$(5pt)
+      \figwritesw 10:(5pt)
+      \figwritene 20:(5pt)
+      \figwritese 30:(5pt)
+      \figset write(mark=$\bullet$)
+      \figwriten 11:(4)
+      \figwritee 21:(4)
+      \figwrites 31:(4)
     }
     \centerline{\box\figBoxA}
   \end{marginfigure}
-\fi 
 
-\begin{solution}[\halfpage]
-  Let us begin by finding the equations for the perpendicular bisectors 
-  of the three lines. This can be done with the Slope-Point form.
-  For the perpendicular of the line joining $(\vbone, \vbtwo)$ and 
-  $(\vbthree, \vbfour)$, the calculations look like this  
-  \begin{align}
-	\text{Slope} &= -\dfrac{\vbthree - (\vbone)}
-	    				   {\vbfour - \vbtwo} = -4  	   \nonumber \\
-    \text{Point} &= \dfrac{\vbone+\vbthree}{2}\text{,}
-    				\dfrac{\vbtwo+\vbfour}{2} = 3\text{,}1 \nonumber \\ 
-    \text{Line}  &\Rightarrow y = -4x + 13
-  \end{align}
-  Similar, equations for perpendicular bisectors of other two lines are
-  \begin{align}
-  	y &= -\frac{1}{2}x + 3 \\
-  	y &= 3x - 7
-  \end{align}
-  Solving (2) and (3) we get $x=\dfrac{20}{7}$, $y=\dfrac{11}{7}$.
-  Concurrence means all three perpendicular bisectors pass through a point.
-  Substituting $x$ and $y$ in (1) verifies concurrence.
-  \begin{align}
-  	\text{LHS} &= y + 4x \nonumber \\
-  			   &= \dfrac{11}{7} + 4\dfrac{20}{7} \nonumber \\
-  			   &= 13 = \text{RHS} \nonumber
-  \end{align}
-  Perpendicular bisectors are concurrent through 
-  $(\dfrac{20}{7}, \dfrac{11}{7})$.
-\end{solution}
+\begin{parts}
+	\part Find the coordinates of the mid-points $X$, $Y$ and $Z$
+	
+	\insertQR{abc}
+	\begin{solution}
+		The mid-point of a line-segment joining two points $(x_1, y_1)$ and $(x_2, y_2)$ is given 
+		by $\left( \frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)$
+		
+		And so, the coordinates of $X$, $Y$ and $Z$ would be 
+		\begin{align}
+			X &= \left( \frac{\vbone + \vbthree}{2}, \frac{\vbtwo + \vbfour}{2} \right) = (\mxone, \myone) \\
+			Y &= \left( \frac{\vbthree + \vbfive}{2}, \frac{\vbfour + \vbsix}{2} \right) = (\mxtwo, \mytwo) \\
+			Z &= \left( \frac{\vbone + \vbfive}{2}, \frac{\vbtwo + \vbsix}{2} \right) = (\mxthree, \mythree)
+		\end{align}
+	\end{solution}
+	
+	\part Find the equations of the \textit{perpendicular} bisectors of the three sides of the triangle
+	
+	\insertQR{}
+	\begin{solution}
+		If $AB_\perp$, $BC_\perp$ and $CA_\perp$ be the perpendicular bisectors of $AB$, $BC$ and $CA$ respectively, then 
+		their slopes are given by
+		\begin{align}
+			m_{AB,\perp} &= -\frac{1}{m_{AB}} = -\dfrac{\vbthree - \vbone}{\vbfour - \vbtwo} = \mab \\
+			m_{BC,\perp} &= -\frac{1}{m_{BC}} = -\dfrac{\vbfive - \vbthree}{\vbsix - \vbfour} = \mbc \\
+			m_{CA,\perp} &= -\frac{1}{m_{CA}} = -\dfrac{\vbone - \vbfive}{\vbtwo - \vbsix} = \mca
+		\end{align}
+		And their equations, therefore, would be 
+		\begin{align}
+			AB_\perp &= \dfrac{y-\myone}{x-\mxone} = \mab \Rightarrow y = \mab x + \cone \\
+			BC_\perp &= \dfrac{y-\mytwo}{x-\mxtwo} = \mbc \Rightarrow y = \mbc x + \ctwo \\
+			CA_\perp &= \dfrac{y-\mythree}{x-\mxthree} = \mca \Rightarrow y = \mca x + \cthree					
+		\end{align}
+	\end{solution}
+	
+	\part Are the perpendicular bisectors concurrent? If yes, then find their point of intersection
+	
+	\insertQR{}
+	\begin{solution}
+		$AB_\perp$ and $BC_\perp$ intersect when $ y = \mab x + \cone = \mbc x + \ctwo \Rightarrow x = \vbseven$ 
+		and $y = \vbeight$
+		
+		$(\vbseven, \vbeight)$ also satisfies the equation of $CA_\perp$. You can check this by plugging in 
+		$(x,y) = (\vbseven, \vbeight)$ into the equation for $CA_\perp$. Which means that \textit{all three} 
+		perpendicular bisectors intersect at one point \textit{and} that point is $(\vbseven, \vbeight)$
+	\end{solution}
+\end{parts}
+
