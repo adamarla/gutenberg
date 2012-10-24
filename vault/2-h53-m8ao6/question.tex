@@ -29,8 +29,8 @@
 %   7. Create versions of the question when possible. Use commands defined in 
 %      tufte-tweaks.sty to do so. Its easier than you think
 
-% \noprintanswers
-% \setcounter{rolldice}{3}
+%\noprintanswers
+%\setcounter{rolldice}{1}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -93,12 +93,11 @@
 \gcalcexpr[0]{\ctwo}{\mytwo - (\mbc * \mxtwo)}
 \gcalcexpr[0]{\cthree}{\mythree - (\mca * \mxthree)}
 
-\question[3] A triangle has vertices $A = (\vbone, \vbtwo)$, $B = (\vbthree, \vbfour)$ and 
+\question A triangle has vertices $A = (\vbone, \vbtwo)$, $B = (\vbthree, \vbfour)$ and 
 $C = (\vbfive, \vbsix)$ - \asif. $X$, $Y$ and $Z$ are the mid-points of the three sides 
 
-\watchout
 
-  \begin{marginfigure}
+  \begin{marginfigure}[-47pt]
     \figinit{pt}
       \figpt 10:$A$(-10, 0)
       \figpt 20:$B$(70, 20)
@@ -123,10 +122,11 @@ $C = (\vbfive, \vbsix)$ - \asif. $X$, $Y$ and $Z$ are the mid-points of the thre
     \centerline{\box\figBoxA}
   \end{marginfigure}
 
+\watchout
 \begin{parts}
 	\part[1] Find the coordinates of the mid-points $X$, $Y$ and $Z$
 	
-	\insertQR{abc}
+	\insertQR[-30pt]{QRC}
 \begin{solution}[\mcq]
 		The mid-point of a line-segment joining two points $(x_1, y_1)$ and $(x_2, y_2)$ is given 
 		by $\left( \frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)$
@@ -141,7 +141,7 @@ $C = (\vbfive, \vbsix)$ - \asif. $X$, $Y$ and $Z$ are the mid-points of the thre
 	
 	\part[3] Find the equations of the \textit{perpendicular} bisectors of the three sides of the triangle
 	
-	\insertQR{QRC}
+	\insertQR[-15pt]{QRC}
 \begin{solution}[\halfpage]
 		If $AB_\perp$, $BC_\perp$ and $CA_\perp$ be the perpendicular bisectors of $AB$, $BC$ and $CA$ respectively, then 
 		their slopes are given by
@@ -160,7 +160,7 @@ $C = (\vbfive, \vbsix)$ - \asif. $X$, $Y$ and $Z$ are the mid-points of the thre
 	
 	\part[2] Are the perpendicular bisectors concurrent? If yes, then find their point of intersection
 	
-	\insertQR{QRC}
+	\insertQR[-15pt]{QRC}
 \begin{solution}[\mcq]
 		$AB_\perp$ and $BC_\perp$ intersect when $ y = \mab x + \cone = \mbc x + \ctwo \Rightarrow x = \vbseven$ 
 		and $y = \vbeight$
