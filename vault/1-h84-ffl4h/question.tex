@@ -30,7 +30,7 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
  %\noprintanswers
- %\setcounter{rolldice}{2}
+ %\setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -63,9 +63,9 @@
 }
 
 \gcalcHypotenuse[0]{\vbfive}{\vbone}{\vbtwo}
-\gcalcexpr[2]{\vbsix}{\vbfour * \vbfive / \vbtwo }
-\gcalcexpr[2]{\vbseven}{\vbthree - \vbsix}
-\gcalcexpr[2]{\vbeight}{\vbsix + \vbthree}
+\gcalcexpr[0]{\vbsix}{\vbfour * \vbfive }
+\gcalcexpr[0]{\vbseven}{\vbthree - \vbsix}
+\gcalcexpr[0]{\vbeight}{\vbsix + \vbthree}
 
 \question[3] Find the equation of the straight lines parallel to $\vbone x - \vbtwo y + \vbthree = 0$ 
 and at a distance of $\vbfour$ units from it
@@ -79,10 +79,10 @@ and at a distance of $\vbfour$ units from it
 
 \begin{solution}[\halfpage]
 	The distance between two parallel lines - $Ax + By + C_1 = 0$ and $Ax+By+C_2 = 0$ is given by 
-	$d = \dfrac{\vert C_1 - C_2 \vert}{\sqrt{1 + m^2}}$. Note that there would be \textit{two} such lines, 
+	$d = \dfrac{\vert C_1 - C_2 \vert}{\sqrt{A^2+ B^2}}$. Note that there would be \textit{two} such lines, 
 	one on either side of the original line. So,
 	\begin{align}
-		\vbfour &= \dfrac{\vert \vbthree - C_2 \vert}{\sqrt{1 + \left( \frac{\vbone}{\vbtwo}\right)^2}} \\
+		\vbfour &= \dfrac{\vert \vbthree - C_2 \vert}{\sqrt{\vbone^2 + \vbtwo^2}} \\
 		\Rightarrow \vbthree - C_2 &= \vbsix, \text{ for when } C_2 < \vbthree \\
 		\text{ and } C_2 - \vbthree &= \vbsix, \text{ for when } C_2 > \vbthree
 	\end{align}
