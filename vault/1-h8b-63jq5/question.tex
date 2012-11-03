@@ -29,16 +29,16 @@
 %   7. Create versions of the question when possible. Use commands defined in 
 %      tufte-tweaks.sty to do so. Its easier than you think
 
-% \noprintanswers
-% \setcounter{rolldice}{0}
+ %\noprintanswers
+ %\setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
+  \renewcommand{\vbone}{9}
+  \renewcommand{\vbtwo}{3}
+  \renewcommand{\vbthree}{55}
+  \renewcommand{\vbfour}{28}
+  \renewcommand{\vbfive}{1680}
   \renewcommand{\vbsix}{}
   \renewcommand{\vbseven}{}
   \renewcommand{\vbeight}{}
@@ -47,11 +47,11 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
+    \renewcommand{\vbone}{8}
+    \renewcommand{\vbtwo}{2}
+    \renewcommand{\vbthree}{9}
+    \renewcommand{\vbfour}{7}
+    \renewcommand{\vbfive}{70}
     \renewcommand{\vbsix}{}
     \renewcommand{\vbseven}{}
     \renewcommand{\vbeight}{}
@@ -60,11 +60,11 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
+      \renewcommand{\vbone}{12}
+      \renewcommand{\vbtwo}{3}
+      \renewcommand{\vbthree}{91}
+      \renewcommand{\vbfour}{55}
+      \renewcommand{\vbfive}{11,550}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
       \renewcommand{\vbeight}{}
@@ -72,11 +72,11 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
+      \renewcommand{\vbone}{10}
+      \renewcommand{\vbtwo}{2}
+      \renewcommand{\vbthree}{11}
+      \renewcommand{\vbfour}{9}
+      \renewcommand{\vbfive}{252}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
       \renewcommand{\vbeight}{}
@@ -86,59 +86,68 @@
   }
 }
 
-\question
+\gcalcexpr[0]{\tmp}{\vbone - \vbtwo}
+\gcalcexpr[0]{\per}{\vbone / \vbtwo}
+\gcalcexpr[0]{\tp}{\vbone - \per}
+\gcalcexpr[0]{\tq}{\tp - \per}
+
+\question Socrates wants to invite $\vbone$ other famous philosophers to his house for a discussion.
+We don't know what the discussion would be about because we haven't been invited. But we know that Socrates 
+has $\vbtwo$ messengers he can use to deliver the invitations. The invitations are \textit{not} personalized - 
+that is, any of the guests can be given any of the invitations
 
 \insertQR{}
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
+ 
 \fi 
 
-\begin{solution}
-\end{solution}
-
-\begin{parts}
-  \part 
+\begin{parts} 
+  \part In how many ways can the invitations be delivered if its ok to \textit{not} use one or more of the messengers? 
 
   \insertQR{}
   \begin{solution}
+     As the invitations are \textit{not} personalized, the problem is the same as the one about the numbers of ways 
+     in which $N$ items can be distributed amongst $M$ individuals 
+     \begin{align}
+     	N &= \eDistNAmongstM{N}{M} \\
+        \text{ which in this case} &= \eDistNAmongstM{\vbone}{\vbtwo} = \vbthree
+     \end{align}
   \end{solution}
 
-  \part 
+  \part In how many ways can the invitations be delivered if \textit{all} messengers must be used - that is, each messenger
+  must carry \textit{atleast} one invitation?
 
   \insertQR{}
   \begin{solution}
+    First, give one invitation to each of the messengers so that they are all used. Now, its a question of 
+    distributing the remaining $\vbone - \vbtwo = \tmp$ messages amongst the $\vbtwo$ messengers
+    \begin{align}
+     	N &= \eDistNAmongstM{\tmp}{\vbtwo} = \vbfour
+    \end{align}
   \end{solution}
 
-  \part 
+  \part Now assume that the invitations are personalized - that is, an invitation for $A$ cannot be given to $B$. 
+  In how many ways can the invitations be delivered if each messenger delivers an \textit{equal} number of 
+  invitations?
 
   \insertQR{}
   \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
+  	Each messenger has to deliver $\per$ invitations. Let the first messenger therefore pick $\per$ from $\vbone$, 
+  	the next $\per$ from the remaining and so on \ldots 
+  	\begin{align}
+  		\ifnumequal\vbtwo{4}{ % # messengers = 4
+  			N &= \encr\vbone\per \cdot \encr\tp\per \cdot \encr\tq\per \cdot \encr\per\per = \vbfive
+  		}{
+  			\ifnumequal\vbtwo{3} { % # messengers = 3
+  				N &= \encr\vbone\per \cdot \encr\tp\per \cdot \encr\per\per = \vbfive
+  			}{ % number of messengers = 2
+  			  N &= \encr\vbone\per \cdot \encr\tp\per = \vbfive
+  			}
+  		}
+  	\end{align}
   \end{solution}
 
 \end{parts}
