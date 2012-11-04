@@ -89,17 +89,17 @@
 \ifthenelse{\vbone > \vbtwo}{\gcalcexpr[0]\nmin\vbtwo}{\gcalcexpr[0]\nmin\vbone}
 \ifthenelse{\vbone > \vbtwo}{\gcalcexpr[0]\nmax\vbone}{\gcalcexpr[0]\nmax\vbtwo}
 
-\question $\vbone$ boys and $\vbtwo$ girls need to stand in a line so that, as far as possible, they alternate 
+\question[2] $\vbone$ boys and $\vbtwo$ girls need to stand in a line so that, as far as possible, they alternate 
 and when they can't, the remaining students line up randomly. In how many ways can they stand?
 
-\insertQR{}
+\insertQR{QRC}
 
 \watchout
 
 \ifprintanswers
 \fi 
 
-\begin{solution}
+\begin{solution}[\mcq]
 	As there are $\vbone$ boys and $\vbtwo$ girls, they can stand alternately only till such time that there 
 	are \vbfour remaining to join the line. The remaining $\nremaining$ \vbthree must then stand in some 
 	random order
