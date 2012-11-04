@@ -30,55 +30,55 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+% \setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
+  \renewcommand{\vbone}{NEWSPAPER }
+  \renewcommand{\vbtwo}{odd }
+  \renewcommand{\vbthree}{9} % word-length
+  \renewcommand{\vbfour}{3} % # of vowels
+  \renewcommand{\vbfive}{10,800} % answer
+  \renewcommand{\vbsix}{2!}
+  \renewcommand{\vbseven}{2!}
   \renewcommand{\vbeight}{}
   \renewcommand{\vbnine}{}
   \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
+    \renewcommand{\vbone}{AIRCRAFT }
+    \renewcommand{\vbtwo}{even }
+    \renewcommand{\vbthree}{8}
+    \renewcommand{\vbfour}{3}
+    \renewcommand{\vbfive}{720}
+    \renewcommand{\vbsix}{2!}
+    \renewcommand{\vbseven}{2!}
     \renewcommand{\vbeight}{}
     \renewcommand{\vbnine}{}
     \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
+      \renewcommand{\vbone}{TASMANIA }
+      \renewcommand{\vbtwo}{odd }
+      \renewcommand{\vbthree}{8}
+      \renewcommand{\vbfour}{4}
+      \renewcommand{\vbfive}{96}
+      \renewcommand{\vbsix}{3!}
+      \renewcommand{\vbseven}{1!}
       \renewcommand{\vbeight}{}
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
+      \renewcommand{\vbone}{LOPSIDED }
+      \renewcommand{\vbtwo}{even }
+      \renewcommand{\vbthree}{8}
+      \renewcommand{\vbfour}{3}
+      \renewcommand{\vbfive}{1440}
+      \renewcommand{\vbsix}{1!}
+      \renewcommand{\vbseven}{2!}
       \renewcommand{\vbeight}{}
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
@@ -86,59 +86,40 @@
   }
 }
 
-\question
+\gcalcexpr[0]\con{\vbthree - \vbfour}
+\ifthenelse{\equal{\vbtwo}{odd }}{
+	\gcalcexpr[0]\ntype{\vbthree / 2}
+}{
+  \ifthenelse{\isodd{\vbthree}}{
+  	\gcalcexpr[0]\ntype{(\vbthree - 1) / 2}
+  }{
+  	\gcalcexpr[0]\ntype{\vbthree / 2}
+  }
+}
 
-\insertQR{}
+\question How many words - with or without meaning - can be formed from the characters in the word 
+\vbone such that the vowels are in the \vbtwo places
+
+\insertQR{abc}
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	The whole word is $\vbthree$ characters long and it has $\vbfour$ vowels. The remaining $\con$ characters 
+	are obviously consonants
+	
+	Now, with $\vbthree$ characters, the word has $\ntype$ \vbtwo positions for the vowels
+	Moreover, even though there are $\vbfour$ vowels, some of them are the same and therefore some permutations of them 
+	would actually result in the same word. Same goes for consonants 
+	
+	We will leave it you to count the duplicate vowels and consonants - if any. But bearing the above in mind, 
+	the required number of distinct words is
+	
+	\begin{align}
+		N &= \underbrace{\encr\ntype\vbfour\cdot\dfrac{\vbfour !}{\vbsix}}_{\texttt{distinct permutations of vowels}}
+		\times \overbrace{\dfrac{\con !}{\vbseven}}^{\texttt{\ldots and of consonants}} = \vbfive
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
