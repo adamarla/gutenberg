@@ -38,12 +38,6 @@
   \renewcommand{\vbtwo}{5}
   \renewcommand{\vbthree}{4}
   \renewcommand{\vbfour}{216}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
@@ -51,12 +45,6 @@
     \renewcommand{\vbtwo}{7}
     \renewcommand{\vbthree}{3}
     \renewcommand{\vbfour}{192}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
@@ -64,24 +52,12 @@
       \renewcommand{\vbtwo}{8}
       \renewcommand{\vbthree}{2}
       \renewcommand{\vbfour}{168}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
     }{
       % variables 
       \renewcommand{\vbone}{9000}
       \renewcommand{\vbtwo}{9}
       \renewcommand{\vbthree}{1}
       \renewcommand{\vbfour}{144}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
     }
   }
 }
@@ -97,7 +73,9 @@
 \fi 
 
 \begin{solution}[\mcq]
-	A 4-digit number greater than $\vbone$ must start with at least a $\vbtwo \Rightarrow \vbthree$ possible starting digits.
+	Given that only the five digits provided can be used, a 4-digit number greater than $\vbone$ must start 
+  with at least a $\vbtwo \Rightarrow \vbthree$ possible starting digits
+
 	A 5-digit number, on the other hand, is guaranteed to be greater than $\vbone$
 	\begin{align}
 		N_{\texttt{total}} &= N_{\texttt{4-digit}} + N_{\texttt{5-digit}} \\
