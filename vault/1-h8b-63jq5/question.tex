@@ -30,7 +30,7 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
  %\noprintanswers
- %\setcounter{rolldice}{3}
+\setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -39,11 +39,6 @@
   \renewcommand{\vbthree}{55}
   \renewcommand{\vbfour}{28}
   \renewcommand{\vbfive}{1680}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
@@ -52,11 +47,6 @@
     \renewcommand{\vbthree}{9}
     \renewcommand{\vbfour}{7}
     \renewcommand{\vbfive}{70}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
@@ -64,12 +54,7 @@
       \renewcommand{\vbtwo}{3}
       \renewcommand{\vbthree}{91}
       \renewcommand{\vbfour}{55}
-      \renewcommand{\vbfive}{11,550}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbfive}{34,650}
     }{
       % variables 
       \renewcommand{\vbone}{10}
@@ -77,11 +62,6 @@
       \renewcommand{\vbthree}{11}
       \renewcommand{\vbfour}{9}
       \renewcommand{\vbfive}{252}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
     }
   }
 }
@@ -91,12 +71,9 @@
 \gcalcexpr[0]{\tp}{\vbone - \per}
 \gcalcexpr[0]{\tq}{\tp - \per}
 
-\question Socrates wants to invite $\vbone$ other famous philosophers to his house for a discussion.
-We don't know what the discussion would be about because we haven't been invited. But we know that Socrates 
-has $\vbtwo$ messengers he can use to deliver the invitations. The invitations are \textit{not} personalized - 
-that is, any of the guests can be given any of the invitations
-
-\insertQR{}
+\question A man wants to invite $\vbone$ friends for a get-together at his place and he has 
+$\vbtwo$ messengers he can use to deliver the invitations. The invitations are \textit{not}
+personalized - that is, any one of the invited people can receive any of the invitation cards
 
 \watchout
 
