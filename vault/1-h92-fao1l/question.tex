@@ -30,15 +30,15 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+% \setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
+  \renewcommand{\vbone}{5} % # boys
+  \renewcommand{\vbtwo}{3} % # girls
+  \renewcommand{\vbthree}{boys } % remaining
+  \renewcommand{\vbfour}{girls }
+  \renewcommand{\vbfive}{1440}
   \renewcommand{\vbsix}{}
   \renewcommand{\vbseven}{}
   \renewcommand{\vbeight}{}
@@ -47,11 +47,11 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
+    \renewcommand{\vbone}{3}
+    \renewcommand{\vbtwo}{6}
+    \renewcommand{\vbthree}{girls }
+    \renewcommand{\vbfour}{boys }
+    \renewcommand{\vbfive}{8640}
     \renewcommand{\vbsix}{}
     \renewcommand{\vbseven}{}
     \renewcommand{\vbeight}{}
@@ -60,11 +60,11 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
+      \renewcommand{\vbone}{6}
+      \renewcommand{\vbtwo}{4}
+      \renewcommand{\vbthree}{boys }
+      \renewcommand{\vbfour}{girls }
+      \renewcommand{\vbfive}{34,560}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
       \renewcommand{\vbeight}{}
@@ -72,11 +72,11 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
+      \renewcommand{\vbone}{3}
+      \renewcommand{\vbtwo}{7}
+      \renewcommand{\vbthree}{girls }
+      \renewcommand{\vbfour}{boys }
+      \renewcommand{\vbfive}{60,480}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
       \renewcommand{\vbeight}{}
@@ -85,60 +85,30 @@
     }
   }
 }
+\ifthenelse{\vbone > \vbtwo}{\gcalcexpr[0]\nremaining{\vbone - \vbtwo}}{\gcalcexpr[0]\nremaining{\vbtwo - \vbone}}
+\ifthenelse{\vbone > \vbtwo}{\gcalcexpr[0]\nmin\vbtwo}{\gcalcexpr[0]\nmin\vbone}
+\ifthenelse{\vbone > \vbtwo}{\gcalcexpr[0]\nmax\vbone}{\gcalcexpr[0]\nmax\vbtwo}
 
-\question
+\question $\vbone$ boys and $\vbtwo$ girls need to stand in a line so that, as far as possible, they alternate 
+and when they can't, the remaining students line up randomly. In how many ways can they stand?
 
 \insertQR{}
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	As there are $\vbone$ boys and $\vbtwo$ girls, they can stand alternately only till such time that there 
+	are \vbfour remaining to join the line. The remaining $\nremaining$ \vbthree must then stand in some 
+	random order
+	
+	Also, the line can start with either a boy or a girl. Given this, the number of possible ways for them 
+	to stand in a line is 
+	
+	\begin{align}
+		N &= 2\times\underbrace{\left[ \encr\nmax\nmin\cdot\nmin !\cdot\nmin !\right]}_{\texttt{when alternating}}
+		\times \overbrace{\nremaining !}^{\texttt{remaining}} = \vbfive
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
