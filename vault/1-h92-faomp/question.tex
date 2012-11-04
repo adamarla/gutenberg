@@ -30,55 +30,55 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+% \setcounter{rolldice}{1}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
+  \renewcommand{\vbone}{SUCCESS }
+  \renewcommand{\vbtwo}{S } % do not begin with
+  \renewcommand{\vbthree}{C } % end with
+  \renewcommand{\vbfour}{3} % no-begin count 
+  \renewcommand{\vbfive}{2} % end count
+  \renewcommand{\vbsix}{7} % word-length
+  \renewcommand{\vbseven}{60}
   \renewcommand{\vbeight}{}
   \renewcommand{\vbnine}{}
   \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
+    \renewcommand{\vbone}{ALBATROSS }
+    \renewcommand{\vbtwo}{A }
+    \renewcommand{\vbthree}{S }
+    \renewcommand{\vbfour}{2}
+    \renewcommand{\vbfive}{2}
+    \renewcommand{\vbsix}{9}
+    \renewcommand{\vbseven}{15,120}
     \renewcommand{\vbeight}{}
     \renewcommand{\vbnine}{}
     \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
+      \renewcommand{\vbone}{DAMASCUS }
+      \renewcommand{\vbtwo}{S }
+      \renewcommand{\vbthree}{A }
+      \renewcommand{\vbfour}{2}
+      \renewcommand{\vbfive}{2}
+      \renewcommand{\vbsix}{8}
+      \renewcommand{\vbseven}{1800}
       \renewcommand{\vbeight}{}
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
+      \renewcommand{\vbone}{PROPERTY }
+      \renewcommand{\vbtwo}{P }
+      \renewcommand{\vbthree}{R }
+      \renewcommand{\vbfour}{2}
+      \renewcommand{\vbfive}{2}
+      \renewcommand{\vbsix}{8}
+      \renewcommand{\vbseven}{1800}
       \renewcommand{\vbeight}{}
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
@@ -86,59 +86,36 @@
   }
 }
 
-\question
+\gcalcexpr[0]\thfirst{\vbsix - 1}
+\gcalcexpr[0]\nfirst{\vbsix - 1 - \vbfour}
+\gcalcexpr[0]\nsecond{\vbsix - 2}
 
-\insertQR{}
+\question How many \textit{distinct} words can be made by jumbling \vbone so that none of the words
+begins with a \vbtwo but all end with a \vbthree
 
-\watchout
+\insertQR[-20pt]{abc}
+
+\watchout[-10pt]
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
+  \marginnote[20pt]{We start out by treating all characters as different - even if they are actually the same. Later on we 
+  will adjust the answer to account for the "same-ness" of characters}
 \fi 
 
 \begin{solution}
+	The word is $\vbsix$ characters long - with $\vbfour$ \vbtwo 's and $\vbfive$ \vbthree 's. We therefore have $\vbfive$
+	 options for the \textit{last} character
+	 
+	 Once we fix the last character, we would ordinarily have $\thfirst$ options for the first character. 
+	 But we cannot use the $\vbfour$ \vbtwo 's. And so, we are down to $\nfirst$ options for the first character
+	 
+	 For the middle characters, however, there are no constraints. The remaining $\nsecond = (\vbsix - 2)$ characters 
+	 can some in any permutation
+	 
+	 Moreover, given that we have more than one occurrence of the \vbtwo and \vbthree, we must discount 
+	 permutations that are essentially the same word. And so, the number of distinct words is 
+	 
+	 \begin{align}
+	 	N &= \dfrac{\nfirst \times \nsecond ! \times \vbfive}{\vbfour ! \times \vbfive !} = \vbseven
+	 \end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
