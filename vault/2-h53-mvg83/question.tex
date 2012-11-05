@@ -5,10 +5,9 @@
 % Eventually, you will find your own style. But here are some thoughts 
 % to get you started: 
 %
-%   1. Write the solution as if you are writing it for your favorite
-%      14-17 year old to help him/her understand. Could be your nephew, 
-%      your niece, a cousin perhaps or probably even you when you 
-%      were that age. Just write for them.
+%   1. Write to be understood - but be crisp. Your own solution should not take 
+%      more space than you will give to the student. Hence, if you take more than 
+%      a half-page to write a solution, then give the student a full-page and so on...
 %
 %   2. Use margin-notes to "talk" to students about the critical insights
 %      in the question. The tone can be - in fact, should be - informal
@@ -17,22 +16,86 @@
 %      students understand. Yes, it is a little more work per question. 
 %      But the question & solution will be written only once. Make that
 %      attempt at writing a solution count.
-%
-%   4. At the same time, do not be too verbose. A long solution can
-%      - at first sight - make the student think, "God, that is a lot to know".
-%      Our aim is not to scare students. Rather, our aim should be to 
-%      create many "Aha!" moments everyday in classrooms around the world
+%      
+%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
 % 
-%   5. Ensure that there are *no spelling mistakes anywhere*. We are an 
+%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. Also, use American spellings by default
 % 
-%   6. If a question has multiple parts, then first delete lines 40-41
-%   7. If a question does not have parts, then first delete lines 43-69
+%   5. If a question has multiple parts, then first delete lines 40-41
+%   6. If a question does not have parts, then first delete lines 43-69
+%   
+%   7. Create versions of the question when possible. Use commands defined in 
+%      tufte-tweaks.sty to do so. Its easier than you think
 
-\question
+% \noprintanswers
+% \setcounter{rolldice}{0}
+
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{0}
+  \renewcommand{\vbtwo}{1}
+  \renewcommand{\vbthree}{4}
+  \renewcommand{\vbfour}{7}
+  \renewcommand{\vbfive}{350}
+  \renewcommand{\vbsix}{1}
+  \renewcommand{\vbseven}{odd}
+  \renewcommand{\vbeight}{2}
+  \renewcommand{\vbnine}{}
+  \renewcommand{\vbten}{}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vbone}{2}
+    \renewcommand{\vbtwo}{0}
+    \renewcommand{\vbthree}{4}
+    \renewcommand{\vbfour}{9}
+    \renewcommand{\vbfive}{500}
+    \renewcommand{\vbsix}{2}
+    \renewcommand{\vbseven}{even}
+    \renewcommand{\vbeight}{3}
+    \renewcommand{\vbnine}{}
+    \renewcommand{\vbten}{}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vbone}{1}
+      \renewcommand{\vbtwo}{3}
+      \renewcommand{\vbthree}{0}
+      \renewcommand{\vbfour}{8}
+      \renewcommand{\vbfive}{495}
+      \renewcommand{\vbsix}{1}
+      \renewcommand{\vbseven}{odd}
+      \renewcommand{\vbeight}{2}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }{
+      % variables 
+      \renewcommand{\vbone}{5}
+      \renewcommand{\vbtwo}{2}
+      \renewcommand{\vbthree}{6}
+      \renewcommand{\vbfour}{0}
+      \renewcommand{\vbfive}{700}
+      \renewcommand{\vbsix}{3}
+      \renewcommand{\vbseven}{even}
+      \renewcommand{\vbeight}{3}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }
+  }
+}
+
+\gcalcexpr[0]{\total}{\vbeight * \vbsix}
+\gcalcexpr[0]{\total}{\total * 4}
+
+\question Find how many $\vbseven$ numbers less than $\vbfive$ can be 
+ formed using the digits $\vbone$, $\vbtwo$, $\vbthree$, $\vbfour$ if
+ repetition of digits is allowed.
 
 \insertQR{}
+
+\watchout
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -50,37 +113,19 @@
 \fi 
 
 \begin{solution}
+  Since we are considering 3 digit numbers, let us count the ways in which
+  we can fill the units, tens and hundreds places. Multiplying each of these
+  will give us the total number of combinations we are looking for. \\
+  Number of ways we can fill,
+  \begin{align}
+    &\text{units place}    &= \vbeight \\
+    &\text{tens place}     &= 4 \\
+    &\text{hundreds place} &= \vbsix
+  \end{align}
+  \begin{align}
+    \text{Total Combinations} &= \vbeight\times 4\times \vbsix \\
+                              &= \total
+  \end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
+  \end{questions} 
+\end{document}

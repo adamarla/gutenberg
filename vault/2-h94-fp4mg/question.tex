@@ -34,12 +34,12 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
+  \renewcommand{\vbone}{3}
+  \renewcommand{\vbtwo}{3}
+  \renewcommand{\vbthree}{120}
+  \renewcommand{\vbfour}{21}
+  \renewcommand{\vbfive}{99}
+  \renewcommand{\vbsix}{7}
   \renewcommand{\vbseven}{}
   \renewcommand{\vbeight}{}
   \renewcommand{\vbnine}{}
@@ -47,12 +47,12 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
+    \renewcommand{\vbone}{4}
+    \renewcommand{\vbtwo}{4}
+    \renewcommand{\vbthree}{5040}
+    \renewcommand{\vbfour}{138}
+    \renewcommand{\vbfive}{4902}
+    \renewcommand{\vbsix}{21}
     \renewcommand{\vbseven}{}
     \renewcommand{\vbeight}{}
     \renewcommand{\vbnine}{}
@@ -60,24 +60,24 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
+      \renewcommand{\vbone}{4}
+      \renewcommand{\vbtwo}{3}
+      \renewcommand{\vbthree}{720}
+      \renewcommand{\vbfour}{93}
+      \renewcommand{\vbfive}{627}
+      \renewcommand{\vbsix}{12}
       \renewcommand{\vbseven}{}
       \renewcommand{\vbeight}{}
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
+      \renewcommand{\vbone}{3}
+      \renewcommand{\vbtwo}{4}
+      \renewcommand{\vbthree}{720}
+      \renewcommand{\vbfour}{26}
+      \renewcommand{\vbfive}{694}
+      \renewcommand{\vbsix}{14}
       \renewcommand{\vbseven}{}
       \renewcommand{\vbeight}{}
       \renewcommand{\vbnine}{}
@@ -86,7 +86,8 @@
   }
 }
 
-\question
+\question Find the number of ways in which $\vbone$ rings can be worn on
+$\vbtwo$ fingers given that -
 
 \insertQR{}
 
@@ -107,38 +108,118 @@
   \end{marginfigure}
 \fi 
 
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part All of the rings are identical
 
   \insertQR{}
   \begin{solution}
+  Let us consider cases as shown here. The numbers in the columns
+  indicate number of rings on a finger,\\
+  \ifnumequal{\value{rolldice}}{0}{
+    \begin{tabular}{cccc}
+      \textit{Finger}&\textit{Finger}&\textit{Finger}
+        &\textit{Permutations}\\
+      3&0&0&$\encr{3}{1}$ \\
+      2&1&0&$\encr{3}{2}$ \\
+      1&1&1&$\encr{3}{3}$ \\
+    \end{tabular}\\    
+  }{
+    \ifnumequal{\value{rolldice}}{1}{
+      \begin{tabular}{ccccccccc}
+	    \textit{Finger}&\textit{Finger}&\textit{Finger}
+	      &\textit{Finger}&\textit{Permutations}\\
+	    4&0&0&0&$\encr{4}{1}$ \\
+	    3&1&0&0&$\encr{4}{2}$ \\
+	    2&2&0&0&$\encr{4}{2}$ \\
+	    2&1&1&0&$\encr{4}{3}$ \\
+	    1&1&1&1&$\encr{4}{4}$ \\
+	  \end{tabular}\\    
+	}{
+	  \ifnumequal{\value{rolldice}}{2}{
+	    \begin{tabular}{cccc}
+	      \textit{Finger}&\textit{Finger}&\textit{Finger}
+	        &\textit{Permutations}\\
+	      4&0&0&$\encr{3}{1}$ \\
+	      3&1&0&$\encr{3}{2}$ \\
+	      2&2&0&$\encr{3}{2}$ \\
+	      2&1&1&$\encr{3}{1}$ \\
+	    \end{tabular}\\
+      }{
+	    \begin{tabular}{ccccc}
+	      \textit{Finger}&\textit{Finger}&\textit{Finger}
+	        &\textit{Finger}&\textit{Permutations}\\
+          3&0&0&0&$\encr{4}{1}$ \\
+          2&1&0&0&$\encr{4}{2}$ \\
+          1&1&1&0&$\encr{4}{3}$ \\
+	    \end{tabular}\\
+      }
+    }    
+  }
+  The total number of combinations, which is the sum of combinations 
+  for each of these individual cases equals $\vbsix$.
+  \end{solution}
+  
+  \part Each ring is distinct and the order in which it is worn on a 
+  finger matters.
+
+  \insertQR{}
+  \begin{solution}
+  Since the order in which the rings go on the finger matters, the total
+  number of permutations would be given by,
+  \begin{align}
+    (\vbone + \vbtwo -1)! = \vbthree \nonumber
+  \end{align}
   \end{solution}
 
-  \part 
+  \part Each ring is distinct but the order in which it goes on the 
+  finger does \underline{not} matter.
 
   \insertQR{}
   \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
+  To obtain this, from the total permutations in part b), remove the 
+  cases where the rings are only re-ordered on a particular finger. We 
+  can borrow from the cases created in part a) in order to do this\\
+  \ifnumequal{\value{rolldice}}{0}{
+    \begin{tabular}{cccc}
+      \textit{Finger}&\textit{Finger}&\textit{Finger}
+                     &\textit{Permutations}\\
+      3&0&0&$(3!-1)\times\encr{3}{1}$ \\
+      2&1&0&$(2!-1)\times\encr{3}{2}$ \\
+    \end{tabular}\\    
+  }{
+    \ifnumequal{\value{rolldice}}{1}{
+      \begin{tabular}{ccccc}
+	    \textit{Finger}&\textit{Finger}&\textit{Finger}
+	                   &\textit{Finger}&\textit{Permutations}\\
+	    4&0&0&0&$(4!-1)\times\encr{4}{1}$ \\
+	    3&1&0&0&$(3!-1)\times\encr{4}{2}$ \\
+	    2&2&0&0&$2\times(2!-1)\times\encr{4}{2}$ \\
+	    2&1&1&0&$(2!-1)\times\encr{4}{3}$ \\
+	  \end{tabular}\\
+    }{
+      \ifnumequal{\value{rolldice}}{2}{
+        \begin{tabular}{cccc}
+          \textit{Finger}&\textit{Finger}&\textit{Finger}
+                         &\textit{Permutations}\\
+	      4&0&0&$(4!-1)\times\encr{3}{1}$ \\
+	      3&1&0&$(3!-1)\times\encr{3}{2}$ \\
+	      2&2&0&$2\times(2!-1)\times\encr{3}{2}$ \\
+	      2&1&1&$(2!-1)\times\encr{3}{1}$ \\
+	    \end{tabular}\\  
+      }{
+        \begin{tabular}{ccccc}
+          \textit{Finger}&\textit{Finger}&\textit{Finger}
+	                     &\textit{Finger}&\textit{Permutations}\\
+	      3&0&0&0&$(3!-1)\times\encr{4}{1}$ \\
+	      2&1&0&0&$(2!-1)\times\encr{4}{2}$ \\
+	    \end{tabular}\\  
+      }
+    }
+  }
+  Adding all these and subtracting from the result in part b) we get,
+  \begin{align}  
+    \vbthree - \vbfour = \vbfive
+  \end{align}
   \end{solution}
 
 \end{parts}

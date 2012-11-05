@@ -5,10 +5,9 @@
 % Eventually, you will find your own style. But here are some thoughts 
 % to get you started: 
 %
-%   1. Write the solution as if you are writing it for your favorite
-%      14-17 year old to help him/her understand. Could be your nephew, 
-%      your niece, a cousin perhaps or probably even you when you 
-%      were that age. Just write for them.
+%   1. Write to be understood - but be crisp. Your own solution should not take 
+%      more space than you will give to the student. Hence, if you take more than 
+%      a half-page to write a solution, then give the student a full-page and so on...
 %
 %   2. Use margin-notes to "talk" to students about the critical insights
 %      in the question. The tone can be - in fact, should be - informal
@@ -17,22 +16,85 @@
 %      students understand. Yes, it is a little more work per question. 
 %      But the question & solution will be written only once. Make that
 %      attempt at writing a solution count.
-%
-%   4. At the same time, do not be too verbose. A long solution can
-%      - at first sight - make the student think, "God, that is a lot to know".
-%      Our aim is not to scare students. Rather, our aim should be to 
-%      create many "Aha!" moments everyday in classrooms around the world
+%      
+%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
 % 
-%   5. Ensure that there are *no spelling mistakes anywhere*. We are an 
+%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. Also, use American spellings by default
 % 
-%   6. If a question has multiple parts, then first delete lines 40-41
-%   7. If a question does not have parts, then first delete lines 43-69
+%   5. If a question has multiple parts, then first delete lines 40-41
+%   6. If a question does not have parts, then first delete lines 43-69
+%   
+%   7. Create versions of the question when possible. Use commands defined in 
+%      tufte-tweaks.sty to do so. Its easier than you think
 
-\question
+% \noprintanswers
+% \setcounter{rolldice}{0}
+
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{5}
+  \renewcommand{\vbtwo}{4}
+  \renewcommand{\vbthree}{15}
+  \renewcommand{\vbfour}{4}
+  \renewcommand{\vbfive}{6}
+  \renewcommand{\vbsix}{4}
+  \renewcommand{\vbseven}{1}
+  \renewcommand{\vbeight}{}
+  \renewcommand{\vbnine}{}
+  \renewcommand{\vbten}{}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vbone}{5}
+    \renewcommand{\vbtwo}{3}
+    \renewcommand{\vbthree}{7}
+    \renewcommand{\vbfour}{3}
+    \renewcommand{\vbfive}{3}
+    \renewcommand{\vbsix}{1}
+    \renewcommand{\vbseven}{}
+    \renewcommand{\vbeight}{}
+    \renewcommand{\vbnine}{}
+    \renewcommand{\vbten}{}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vbone}{4}
+      \renewcommand{\vbtwo}{4}
+      \renewcommand{\vbthree}{15}
+      \renewcommand{\vbfour}{4}
+      \renewcommand{\vbfive}{6}
+      \renewcommand{\vbsix}{4}
+      \renewcommand{\vbseven}{1}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }{
+      % variables 
+      \renewcommand{\vbone}{4}
+      \renewcommand{\vbtwo}{3}
+      \renewcommand{\vbthree}{7}
+      \renewcommand{\vbfour}{3}
+      \renewcommand{\vbfive}{3}
+      \renewcommand{\vbsix}{1}
+      \renewcommand{\vbseven}{}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }
+  }
+}
+
+\gcalcexpr[0]{\total}{\vbone * \vbthree}
+
+\question There are $\vbone$ multiple-choice type questions in an assignment. 
+Each question presents $\vbtwo$ possible options. How many unique answer combinations are possible for the assignment, provided each question has at
+least one correct option.
 
 \insertQR{}
+
+\watchout
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -50,37 +112,40 @@
 \fi 
 
 \begin{solution}
+  The total number of combinations can be found by multiplying the number of
+  correct answer options for a particular question, with the number of
+  questions. Since each question can have at least one correct option we
+  would count the combinations using cases as follows:
+  
+  \begin{align}
+    \text{Exactly 1 correct option}  
+    	\Rightarrow& \encr{\vbtwo}{1} = \vbfour \\
+    \text{Exactly 2 correct options} 
+    	\Rightarrow& \encr{\vbtwo}{2} = \vbfive \\
+    \ifnumequal{\value{rolldice}}{0} {
+      \text{Exactly 3 correct options} 
+        \Rightarrow& \encr{\vbtwo}{3} = \vbsix \\
+      \text{All 4 correct options}     
+        \Rightarrow& \encr{\vbtwo}{4} = \vbseven
+    } {
+      \ifnumequal{\value{rolldice}}{1} {
+        \text{All 3 correct options}     
+          \Rightarrow& \encr{\vbtwo}{3} = \vbsix
+      } {
+        \ifnumequal{\value{rolldice}}{2} {
+	      \text{Exactly 3 correct options}
+	        \Rightarrow& \encr{\vbtwo}{3} = \vbsix \\
+    	  \text{All 4 correct options}     
+    	    \Rightarrow& \encr{\vbtwo}{4} = \vbseven
+        } {
+          \text{All 3 correct options}     
+            \Rightarrow& \encr{\vbtwo}{3} = \vbsix
+        }
+      }
+    }
+  \end{align}
+  \begin{align}
+  	\text{Total options} &= \vbthree\times\vbone \\
+  						 &= \total
+  \end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}

@@ -34,10 +34,10 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
+  \renewcommand{\vbone}{12}
+  \renewcommand{\vbtwo}{three}
+  \renewcommand{\vbthree}{3}
+  \renewcommand{\vbfour}{207900}
   \renewcommand{\vbfive}{}
   \renewcommand{\vbsix}{}
   \renewcommand{\vbseven}{}
@@ -47,10 +47,10 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
+    \renewcommand{\vbone}{12}
+    \renewcommand{\vbtwo}{four}
+    \renewcommand{\vbthree}{4}
+    \renewcommand{\vbfour}{443520}
     \renewcommand{\vbfive}{}
     \renewcommand{\vbsix}{}
     \renewcommand{\vbseven}{}
@@ -60,10 +60,10 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
+      \renewcommand{\vbone}{15}
+      \renewcommand{\vbtwo}{three}
+      \renewcommand{\vbthree}{3}
+      \renewcommand{\vbfour}{756756}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
@@ -72,10 +72,10 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
+      \renewcommand{\vbone}{15}
+      \renewcommand{\vbtwo}{five}
+      \renewcommand{\vbthree}{5}
+      \renewcommand{\vbfour}{8408400}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
@@ -86,7 +86,15 @@
   }
 }
 
-\question
+\gcalcexpr[0]{\setSize}{\vbone / \vbthree}
+\gcalcexpr[0]{\second}{\vbone - \setSize}
+\gcalcexpr[0]{\third}{\second - \setSize}
+\gcalcexpr[0]{\fourth}{\third - \setSize}
+\gcalcexpr[0]{\fifth}{\fourth - \setSize}
+
+\question In how many ways could we distribute $\vbone$ distinct items among
+$\vbtwo$ people such that each person gets the same number of items and all
+the items get distributed.
 
 \insertQR{}
 
@@ -108,37 +116,41 @@
 \fi 
 
 \begin{solution}
+  In order to distribute the items such that each person gets the same number,
+  we need to create $\vbtwo$ sets of $\setSize$ items each. Number of ways in
+  which we can do this is
+  \begin{align}
+    \encr{\vbone}{\setSize}\times
+    \encr{\second}{\setSize}\times
+    \encr{\third}{\setSize}
+    \ifnumequal{\value{rolldice}}{1}{
+  	  \times\encr{\fourth}{\setSize}
+    }{
+      \ifnumequal{\value{rolldice}}{3}{
+ 	    \times\encr{\fourth}{\setSize}
+        \times\encr{\fifth}{\setSize}
+      }{
+      }
+    }
+  \end{align}
+  The number of ways in which we can distribute three sets of equal size
+  ($\setSize$) among $\vbtwo$ people is $\vbthree!$ Therefore the total 
+  number of distributions is
+  \begin{align}
+    &\vbthree!\times
+      \encr{\vbone}{\setSize}\times
+      \encr{\second}{\setSize}\times
+      \encr{\third}{\setSize}
+    \ifnumequal{\value{rolldice}}{1}{
+      \times\encr{\fourth}{\setSize}
+    }{
+      \ifnumequal{\value{rolldice}}{3}{
+        \times\encr{\fourth}{\setSize}
+        \times\encr{\fifth}{\setSize}
+      }{
+      }
+    }
+    \\
+    =\quad&\vbfour
+  \end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
