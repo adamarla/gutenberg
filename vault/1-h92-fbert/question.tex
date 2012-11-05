@@ -30,115 +30,62 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+% \setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{even}
+  \renewcommand{\vbtwo}{1,7,6,8,4,3}
+  \renewcommand{\vbthree}{3} % # odd 
+  \renewcommand{\vbfour}{3} % # even
+  \renewcommand{\vbsix}{360}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{odd}
+    \renewcommand{\vbtwo}{5,8,3,2,4,1,9}
+    \renewcommand{\vbthree}{4}
+    \renewcommand{\vbfour}{3}
+    \renewcommand{\vbsix}{2880}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{even}
+      \renewcommand{\vbtwo}{7,8,3,4,1,6}
+      \renewcommand{\vbthree}{3}
+      \renewcommand{\vbfour}{3}
+      \renewcommand{\vbsix}{360}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{odd}
+      \renewcommand{\vbtwo}{2,5,7,9,3,4}
+      \renewcommand{\vbthree}{4}
+      \renewcommand{\vbfour}{2}
+      \renewcommand{\vbsix}{480}
     }
   }
 }
 
-\question
+\gcalcexpr[0]\tp{\vbthree + \vbfour}
+\ifthenelse{\equal\vbone{odd}}{\renewcommand{\vbfive}{\vbthree}}{\renewcommand{\vbfive}{\vbfour}}
+
+\question How many \textit{\vbone} numbers can be formed using $\lbrace \vbtwo \rbrace$. All digits 
+must be used and no digit repeats
 
 \insertQR{}
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	There are a total of $\tp$ digits available - of which $\vbthree$ are odd and $\vbfour$ are even. 
+	To form an \textit{\vbone} number, it must end with one of the $\vbfive$ \vbone digits. The other 
+	digits can be in any order
+	
+	And therefore
+	\begin{align}
+		N &= (\tp - 1)!\times\vbfive = \vbsix
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
