@@ -69,17 +69,17 @@
 \gcalcexpr[0]\tp{\vbthree + \vbfour}
 \ifthenelse{\equal\vbone{odd}}{\renewcommand{\vbfive}{\vbthree}}{\renewcommand{\vbfive}{\vbfour}}
 
-\question How many \textit{\vbone} numbers can be formed using $\lbrace \vbtwo \rbrace$. All digits 
+\question[1] How many \textit{\vbone} numbers can be formed using $\lbrace \vbtwo \rbrace$. All digits 
 must be used and no digit repeats
 
-\insertQR{}
+\insertQR{QRC}
 
 \watchout
 
 \ifprintanswers
 \fi 
 
-\begin{solution}
+\begin{solution}[\mcq]
 	There are a total of $\tp$ digits available - of which $\vbthree$ are odd and $\vbfour$ are even. 
 	To form an \textit{\vbone} number, it must end with one of the $\vbfive$ \vbone digits. The other 
 	digits can be in any order
