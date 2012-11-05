@@ -36,7 +36,7 @@
   % variables 
   \renewcommand{\vbone}{5}
   \renewcommand{\vbtwo}{3}
-  \renewcommand{\vbthree}{55}
+  \renewcommand{\vbthree}{50}
   \renewcommand{\vbfour}{}
   \renewcommand{\vbfive}{}
   \renewcommand{\vbsix}{}
@@ -49,7 +49,7 @@
     % variables 
     \renewcommand{\vbone}{4}
     \renewcommand{\vbtwo}{3}
-    \renewcommand{\vbthree}{41}
+    \renewcommand{\vbthree}{30}
     \renewcommand{\vbfour}{}
     \renewcommand{\vbfive}{}
     \renewcommand{\vbsix}{}
@@ -62,7 +62,7 @@
       % variables 
       \renewcommand{\vbone}{3}
       \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{29}
+      \renewcommand{\vbthree}{16}
       \renewcommand{\vbfour}{}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
@@ -74,7 +74,7 @@
       % variables 
       \renewcommand{\vbone}{3}
       \renewcommand{\vbtwo}{4}
-      \renewcommand{\vbthree}{209}
+      \renewcommand{\vbthree}{31}
       \renewcommand{\vbfour}{}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
@@ -90,7 +90,9 @@
 \gcalcexpr[0]{\sumtwo}{\vbone + 1}
 
 \question In how many ways can $\vbone$ boys and $\vbtwo$ girls sit so that
-not all the girls are sitting together.
+not all the girls are sitting together \textit{(Any two arrangements are
+considered  identical as long as the places occupied by boys or by the girls
+are same in both)}.
 
 \insertQR{}
 
@@ -117,6 +119,6 @@ not all the girls are sitting together.
   where all the girls sit together. 
   \begin{align}
   	\text{Number of arrangements} &= \sumone!-\sumtwo! \\
-  								  &= \vbthree\times\sumtwo!
+  								  &= \vbthree
   \end{align}
 \end{solution}
