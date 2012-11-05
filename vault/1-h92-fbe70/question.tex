@@ -30,115 +30,119 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+% \setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{1,5,6,7}
+  \renewcommand{\vbtwo}{5671}
+  \renewcommand{\vbthree}{1} % units
+  \renewcommand{\vbfour}{7} % tens
+  \renewcommand{\vbfive}{6} % hundreds
+  \renewcommand{\vbsix}{5} % thousands
+  \renewcommand{\vbseven}{6,7} % guaranteed > (thousands) 
+  \renewcommand{\vbeight}{7} % hundreds
+  \renewcommand{\vbnine}{7} % tens
+  \renewcommand{\vbten}{5,6,7} % units
+  \gcalcexpr[0]\nth{2}
+  \gcalcexpr[0]\nh{1}
+  \gcalcexpr[0]\nten{1}
+  \gcalcexpr[0]\nu{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{2,4,7,9}
+    \renewcommand{\vbtwo}{4792}
+    \renewcommand{\vbthree}{2}
+    \renewcommand{\vbfour}{9}
+    \renewcommand{\vbfive}{7}
+    \renewcommand{\vbsix}{4}
+    \renewcommand{\vbseven}{7,9}
+    \renewcommand{\vbeight}{9}
+    \renewcommand{\vbnine}{9}
+    \renewcommand{\vbten}{4,7,9}
+    \gcalcexpr[0]\nth{2}
+    \gcalcexpr[0]\nh{1}
+    \gcalcexpr[0]\nten{1}
+    \gcalcexpr[0]\nu{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{3,4,6,7}
+      \renewcommand{\vbtwo}{6473}
+      \renewcommand{\vbthree}{3}
+      \renewcommand{\vbfour}{7}
+      \renewcommand{\vbfive}{4}
+      \renewcommand{\vbsix}{6}
+      \renewcommand{\vbseven}{7}
+      \renewcommand{\vbeight}{6,7}
+      \renewcommand{\vbnine}{7}
+      \renewcommand{\vbten}{4,6,7}
+      \gcalcexpr[0]\nth{1}
+      \gcalcexpr[0]\nh{2}
+      \gcalcexpr[0]\nten{1}
+      \gcalcexpr[0]\nu{3}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{2,5,6,9}
+      \renewcommand{\vbtwo}{6592}
+      \renewcommand{\vbthree}{2}
+      \renewcommand{\vbfour}{9}
+      \renewcommand{\vbfive}{5}
+      \renewcommand{\vbsix}{6}
+      \renewcommand{\vbseven}{9}
+      \renewcommand{\vbeight}{6,9}
+      \renewcommand{\vbnine}{9}
+      \renewcommand{\vbten}{5,6,9}
+      \gcalcexpr[0]\nth{1}
+  	  \gcalcexpr[0]\nh{2}
+  	  \gcalcexpr[0]\nten{1}
+  	  \gcalcexpr[0]\nu{3}
     }
   }
 }
 
-\question
+\gcalcexpr[0]\tp{\nth * 4 * 4 * 4}
+\gcalcexpr[0]\tq{\nh * 4 * 4}
+\gcalcexpr[0]\tr{\nten * \nu}
+\gcalcexpr[0]\ngreater{\tp + \tq + \tr}
+\gcalcexpr[0]\nlessequal{256 - \ngreater}
+\gcalcexpr[0]\nreqd{136 + \nlessequal}
+
+\question How many numbers $\leq \vbtwo$ can be formed using $\vbone$ if the digits are allowed to repeat?
 
 \insertQR{}
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
-\begin{solution}
+\begin{solution} 
+	Any one-, two- or three-digit number made using digits from $A=\lbrace \vbone \rbrace$ 
+	is guaranteed to be $\leq \vbtwo$. They are also easy to count
+	\begin{align}
+		N_{\texttt{< 4-digits}} &= N_1 + N_2 + N_3 \\ 
+		 &= 4 + \encr{4}{2}\cdot 2^2 + \encr{4}{3}\cdot 3^3 = 136
+	\end{align}
+	
+	It is when counting the 4-digit numbers that one has to be careful. But here is what we know about what 
+	would make a 4-digit number $ > \vbtwo$ (strictly greater)
+	
+	
+	\begin{tabular}{ccccc}
+		\toprule
+		Thousand & Hundreds & Tens & Units & \# possibilities \\
+		\midrule
+		$\lbrace\vbseven\rbrace$ & 4 & 4 & 4 & \tp \\ % thousands
+		$\lbrace\vbsix\rbrace$ & $\lbrace\vbeight\rbrace$ & 4 & 4 & \tq \\ % hundreds
+		$\lbrace\vbsix\rbrace$ & $\lbrace\vbfive\rbrace$ & $\lbrace\vbnine\rbrace$ & $\lbrace\vbten\rbrace$ & \tr \\ % tens 
+	    \bottomrule
+	\end{tabular}
+	
+	This means that there are $\ngreater (= \tp + \tq + \tr)$ 4-digit numbers $ > \vbtwo$ that can be formed from 
+	$A = \lbrace\vbone\rbrace$. And hence, there are $\nlessequal( = 4^4 - \ngreater)$ numbers that are $ \leq \vbtwo$
+	
+	So, in total, there are $\nreqd (= \nlessequal + 136)$ numbers that meet our initial criterion
+	
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
