@@ -97,11 +97,11 @@
 \fi 
 
 \begin{parts}
-  \part \vbtwo is \textit{never} included and none of the other characters can repeat? You might want to 
+  \part[2] \vbtwo is \textit{never} included and none of the other characters can repeat? You might want to 
   think about the number of \textit{distinct} characters in \vbone
 
-  \insertQR{}
-  \begin{solution}
+  \insertQR{QRC}
+\begin{solution}[\mcq]
     The word has $\vbfour$ characters - with \vbsix occuring twice. And hence, there are $\vbfive$ \textit{distinct}
     characters in the word
     
@@ -112,9 +112,9 @@
     \end{align}
   \end{solution}
 
-  \part \vbtwo is \textit{always} included \textit{but} none of the included characters repeat
-  \insertQR{}
-  \begin{solution}
+  \part[1] \vbtwo is \textit{always} included \textit{but} none of the included characters repeat
+  \insertQR{QRC}
+\begin{solution}[\mcq]
   	If one slot is booked for \vbtwo, then there are $\tq$ slots left to fill using the $\tp$ distinct characters
   	
   	The required number of ways then is
@@ -123,11 +123,11 @@
   	\end{align}
   \end{solution}
 
-  \part \vbtwo is \textit{never} included \textit{but} the other characters - if included - can repeat.
+  \part[1] \vbtwo is \textit{never} included \textit{but} the other characters - if included - can repeat.
   \ifnumequal{\value{rolldice}}{0}{\texttt{Calculator: $6^4 = 1296$ and $7^4 = 2401$}}{}
 
-  \insertQR{}
-  \begin{solution}
+  \insertQR{QRC}
+\begin{solution}[\mcq]
   	This is easy. From the $\vbfive$ distinct characters, we always have to ignore one - \vbtwo. 
   	And given that any of the remaining $\tp$ can repeat, the required number of ways is 
   	\begin{align}
@@ -135,10 +135,10 @@
   	\end{align}
   \end{solution}
 
-  \part \vbtwo is \textit{always} included \textit{and} the any of the included characters can repeat
+  \part[3] \vbtwo is \textit{always} included \textit{and} the any of the included characters can repeat
 
-  \insertQR{}
-  \begin{solution}
+  \insertQR{QRC}
+\begin{solution}[\mcq]
   	Think of it like this. If, from all possible $\vbthree$-letter words made using $\vbfive$ distinct 
   	characters - with repetition - one were to remove all the words in part (c), then the remaining 
   	words would always have the character \vbtwo
