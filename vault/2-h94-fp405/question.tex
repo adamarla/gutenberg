@@ -34,59 +34,42 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{All 4 cards are of the same suit}
+  \renewcommand{\vbtwo}{All 4 cards have the same number}
+  \renewcommand{\vbthree}{All 4 cards are in succession}
+  \renewcommand{\vbfour}{All 4 cards are in different suits}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{All 4 cards have the same number}
+    \renewcommand{\vbtwo}{All 4 cards are of the same suit}
+    \renewcommand{\vbthree}{All 4 cards belong to different suits}
+    \renewcommand{\vbfour}{All 4 cards are in succession}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{All 4 cards belong to different suits}
+      \renewcommand{\vbtwo}{All 4 cards are in succession}
+      \renewcommand{\vbthree}{All 4 cards are of the same suit}
+      \renewcommand{\vbfour}{All 4 cards have the same number}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{All 4 cards are in succession}
+      \renewcommand{\vbtwo}{All 4 cards belong to different suits}
+      \renewcommand{\vbthree}{All 4 cards have the same number}
+      \renewcommand{\vbfour}{All 4 cards are of the same suit}
     }
   }
 }
 
-\question
+\renewcommand{\vbfive}{$\encr{13}{4}=2860$}%same suit
+\renewcommand{\vbsix}{$13$}%same number
+\renewcommand{\vbseven}{$52\times39\times26\times13=13^4\times24$}%diff
+\renewcommand{\vbeight}{$52\times8\times8\times8$}%succession
+
+\question In how any ways can you choose 4 cards from a complete deck of
+ 52 cards such that (consider the cards to be in continuation Ace follows
+ King):
 
 \insertQR{}
 
@@ -107,38 +90,81 @@
   \end{marginfigure}
 \fi 
 
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part \vbone
 
   \insertQR{}
   \begin{solution}
+	\ifnumequal{\value{rolldice}}{0}{
+	  \vbfive
+	}{
+	  \ifnumequal{\value{rolldice}}{1}{
+	    \vbsix
+	  }{
+	    \ifnumequal{\value{rolldice}}{2}{
+	      \vbseven
+	    }{
+	      \vbeight
+	    }
+	  }
+	}  
   \end{solution}
 
-  \part 
+  \part \vbtwo
 
   \insertQR{}
   \begin{solution}
+	\ifnumequal{\value{rolldice}}{0}{
+	  \vbsix
+	}{
+	  \ifnumequal{\value{rolldice}}{1}{
+	    \vbfive
+	  }{
+	    \ifnumequal{\value{rolldice}}{2}{
+	      \vbeight
+	    }{
+	      \vbseven
+	    }
+	  }
+	}  
   \end{solution}
 
-  \part 
+  \part \vbthree
 
   \insertQR{}
   \begin{solution}
+	\ifnumequal{\value{rolldice}}{0}{
+	  \vbeight
+	}{
+	  \ifnumequal{\value{rolldice}}{1}{
+	    \vbseven
+	  }{
+	    \ifnumequal{\value{rolldice}}{2}{
+	      \vbfive
+	    }{
+	      \vbsix
+	    }
+	  }
+	}  
   \end{solution}
 
-  \part 
+  \part \vbfour
 
   \insertQR{}
   \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
+	\ifnumequal{\value{rolldice}}{0}{
+	  \vbseven
+	}{
+	  \ifnumequal{\value{rolldice}}{1}{
+	    \vbeight
+	  }{
+	    \ifnumequal{\value{rolldice}}{2}{
+	      \vbsix
+	    }{
+	      \vbfive
+	    }
+	  }
+	}  
   \end{solution}
 
 \end{parts}

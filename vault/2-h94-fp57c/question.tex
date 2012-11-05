@@ -34,9 +34,9 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
+  \renewcommand{\vbone}{Heptagon}
+  \renewcommand{\vbtwo}{7}
+  \renewcommand{\vbthree}{14}
   \renewcommand{\vbfour}{}
   \renewcommand{\vbfive}{}
   \renewcommand{\vbsix}{}
@@ -47,9 +47,9 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
+    \renewcommand{\vbone}{Decagon}
+    \renewcommand{\vbtwo}{10}
+    \renewcommand{\vbthree}{35}
     \renewcommand{\vbfour}{}
     \renewcommand{\vbfive}{}
     \renewcommand{\vbsix}{}
@@ -60,9 +60,9 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
+      \renewcommand{\vbone}{Octagon}
+      \renewcommand{\vbtwo}{8}
+      \renewcommand{\vbthree}{20}
       \renewcommand{\vbfour}{}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
@@ -72,9 +72,9 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
+      \renewcommand{\vbone}{Nonagon}
+      \renewcommand{\vbtwo}{9}
+      \renewcommand{\vbthree}{27}
       \renewcommand{\vbfour}{}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
@@ -86,7 +86,7 @@
   }
 }
 
-\question
+\question How many diagonals does a $\vbone$ ($\vbtwo$ sided figure) have?
 
 \insertQR{}
 
@@ -108,37 +108,11 @@
 \fi 
 
 \begin{solution}
+  To compute the diagonal we subtract the number of sides of the polygon from
+  the total number of edges (lines connecting a pair of points taken together)
+  \begin{align}
+     &\encr{\vbtwo}{2}-\vbtwo \\
+    =\quad&\vbthree
+  \end{align}
+
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
