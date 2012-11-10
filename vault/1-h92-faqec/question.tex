@@ -29,116 +29,106 @@
 %   7. Create versions of the question when possible. Use commands defined in 
 %      tufte-tweaks.sty to do so. Its easier than you think
 
-% \noprintanswers
-% \setcounter{rolldice}{0}
+%\noprintanswers
+%\setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{12}
+  \renewcommand{\vbtwo}{5}
+  \renewcommand{\vbthree}{210} % triangles
+  \renewcommand{\vbfour}{546} % pentagons
+  \renewcommand{\vbfive}{420} % quadrilaterals
+  \renewcommand{\vbsix}{66} % lines
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{11}
+    \renewcommand{\vbtwo}{6}
+    \renewcommand{\vbthree}{145}
+    \renewcommand{\vbfour}{180}
+    \renewcommand{\vbfive}{215}
+    \renewcommand{\vbsix}{55}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{9}
+      \renewcommand{\vbtwo}{3}
+      \renewcommand{\vbthree}{83}
+      \renewcommand{\vbfour}{111}
+      \renewcommand{\vbfive}{120}
+      \renewcommand{\vbsix}{36}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{10}
+      \renewcommand{\vbtwo}{4}
+      \renewcommand{\vbthree}{116}
+      \renewcommand{\vbfour}{186}
+	  \renewcommand{\vbfive}{185}
+      \renewcommand{\vbsix}{45}
     }
   }
 }
 
-\question
+\gcalcexpr[0]\tmp{\vbone - \vbtwo}
 
-\insertQR{}
+\question There are $\vbone$ points in a plane of which $\vbtwo$ points are in a straight line and except these $\vbtwo$
+, no three of the others are in a straight line. Given this, find the number of
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
-\begin{solution}
-\end{solution}
 
 \begin{parts}
-  \part 
+  \part[1] \textit{Triangles} that can be formed 
 
-  \insertQR{}
-  \begin{solution}
+  \insertQR{QRC}
+\begin{solution}[\mcq]
+  	 We have two sets of points - set $A$ has the $\vbtwo$ collinear points and set $B$ has 
+  	 the $\tmp$ non-collinear points
+  	 
+  	 A triangle can be formed either by picking 3 points from $B$ or 2 from $B$ and one from $A$ or 
+  	 one from $B$ and two from $A$
+  	 \begin{align}
+  	 	N_{\delta} &= \encr\tmp{3} + \encr\tmp{2}\cdot\vbtwo + \tmp\cdot\encr\vbtwo{2} \\
+  	 	&= \vbthree
+  	 \end{align}
   \end{solution}
 
-  \part 
+  \part[1] \textit{Pentagons} that can be formed
 
-  \insertQR{}
-  \begin{solution}
+  \insertQR{QRC}
+\begin{solution}[\mcq]
+  	\begin{align}
+  		\ifthenelse{\tmp > 5}{ 
+  			N &= \encr\tmp{5} + \encr\tmp{4}\cdot\vbtwo + \encr\tmp{3}\cdot\encr\vbtwo{2} \\
+  			&= \vbfour
+  		}{ 
+  		   N &= \encr\tmp{4}\cdot\vbtwo + \encr\tmp{3}\cdot\encr\vbtwo{2} \\
+  		   &= \vbfour
+  		} 
+  	\end{align}
   \end{solution}
 
-  \part 
+  \part[1] \textit{Quadrilaterals} that can be formed
 
-  \insertQR{}
-  \begin{solution}
+  \insertQR{QRC}
+\begin{solution}[\mcq]
+  	\begin{align}
+  		N &= \encr\tmp{4} + \encr\tmp{3}\cdot\vbtwo + \encr\tmp{2}\cdot\encr\vbtwo{2} \\
+  		&= \vbfive
+  	\end{align}
   \end{solution}
 
-  \part 
+  \part[1] \text{Line segments} that can be formed
 
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
+  \insertQR{QRC}
+\begin{solution}[\mcq]
+  	\begin{align}
+  		N &= \encr\vbone{2} = \vbsix
+  	\end{align}
   \end{solution}
 
 \end{parts}

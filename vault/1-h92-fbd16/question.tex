@@ -29,116 +29,123 @@
 %   7. Create versions of the question when possible. Use commands defined in 
 %      tufte-tweaks.sty to do so. Its easier than you think
 
-% \noprintanswers
-% \setcounter{rolldice}{0}
+%\noprintanswers
+%\setcounter{rolldice}{0}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{POSITRON } % word
+  \renewcommand{\vbtwo}{S } % pivot
+  \renewcommand{\vbthree}{5} % # of characters in target word 
+  \renewcommand{\vbfour}{8} % length of original 
+  \renewcommand{\vbfive}{7} % # distinct characters in original
+  \renewcommand{\vbsix}{O } % repeating character
+  \renewcommand{\vbseven}{720} % part a 
+  \renewcommand{\vbeight}{1800} % part b
+  \renewcommand{\vbnine}{7776} % part c
+  \renewcommand{\vbten}{9031} % part d
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{NUCLEUS }
+    \renewcommand{\vbtwo}{E }
+    \renewcommand{\vbthree}{4}
+    \renewcommand{\vbfour}{7}
+    \renewcommand{\vbfive}{6}
+    \renewcommand{\vbsix}{U }
+    \renewcommand{\vbseven}{120}
+    \renewcommand{\vbeight}{240}
+    \renewcommand{\vbnine}{625}
+    \renewcommand{\vbten}{671}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{QUASAR }
+      \renewcommand{\vbtwo}{R }
+      \renewcommand{\vbthree}{4}
+      \renewcommand{\vbfour}{6}
+      \renewcommand{\vbfive}{5}
+      \renewcommand{\vbsix}{A }
+      \renewcommand{\vbseven}{24}
+      \renewcommand{\vbeight}{96}
+      \renewcommand{\vbnine}{256}
+      \renewcommand{\vbten}{369}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{GALAXY }
+      \renewcommand{\vbtwo}{X }
+      \renewcommand{\vbthree}{4}
+      \renewcommand{\vbfour}{6}
+      \renewcommand{\vbfive}{5}
+      \renewcommand{\vbsix}{A }
+      \renewcommand{\vbseven}{24}
+      \renewcommand{\vbeight}{96}
+      \renewcommand{\vbnine}{256}
+      \renewcommand{\vbten}{369}
     }
   }
 }
 
-\question
+\gcalcexpr[0]\tp{\vbfive - 1}
+\gcalcexpr[0]\tq{\vbthree - 1}
 
-\insertQR{}
+\question How many $\vbthree$-letter words can be formed from \vbone if
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part[2] \vbtwo is \textit{never} included and none of the other characters can repeat? You might want to 
+  think about the number of \textit{distinct} characters in \vbone
 
-  \insertQR{}
-  \begin{solution}
+  \insertQR{QRC}
+\begin{solution}[\mcq]
+    The word has $\vbfour$ characters - with \vbsix occuring twice. And hence, there are $\vbfive$ \textit{distinct}
+    characters in the word
+    
+    If, however, \vbtwo can never occur, then we have $\tp$ characters left to work with. And, as neither 
+    can occur more than once, the required number of ways is 
+    \begin{align}
+    	N &= \encr\tp\vbthree\cdot\vbthree ! = \vbseven
+    \end{align}
   \end{solution}
 
-  \part 
-
-  \insertQR{}
-  \begin{solution}
+  \part[1] \vbtwo is \textit{always} included \textit{but} none of the included characters repeat
+  \insertQR{QRC}
+\begin{solution}[\mcq]
+  	If one slot is booked for \vbtwo, then there are $\tq$ slots left to fill using the $\tp$ distinct characters
+  	
+  	The required number of ways then is
+  	\begin{align}
+  		N &= \vbthree \times \encr\tp\tq\cdot\tq ! = \vbeight
+  	\end{align}
   \end{solution}
 
-  \part 
+  \part[1] \vbtwo is \textit{never} included \textit{but} the other characters - if included - can repeat.
+  \ifnumequal{\value{rolldice}}{0}{\texttt{Calculator: $6^4 = 1296$ and $7^4 = 2401$}}{}
 
-  \insertQR{}
-  \begin{solution}
+  \insertQR{QRC}
+\begin{solution}[\mcq]
+  	This is easy. From the $\vbfive$ distinct characters, we always have to ignore one - \vbtwo. 
+  	And given that any of the remaining $\tp$ can repeat, the required number of ways is 
+  	\begin{align}
+  		N &= \tp^\vbthree = \vbnine
+  	\end{align}
   \end{solution}
 
-  \part 
+  \part[3] \vbtwo is \textit{always} included \textit{and} the any of the included characters can repeat
 
-  \insertQR{}
-  \begin{solution}
+  \insertQR{QRC}
+\begin{solution}[\mcq]
+  	Think of it like this. If, from all possible $\vbthree$-letter words made using $\vbfive$ distinct 
+  	characters - with repetition - one were to remove all the words in part (c), then the remaining 
+  	words would always have the character \vbtwo
+  	\begin{align}
+  		N &= \vbfive^\vbthree - \tp^\vbthree = \vbten
+  	\end{align}
   \end{solution}
 
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
 
 \end{parts}

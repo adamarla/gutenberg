@@ -30,115 +30,70 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+% \setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{5} % country A > B 
+  \renewcommand{\vbtwo}{3} % country B
+  \renewcommand{\vbthree}{14,400}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{7}
+    \renewcommand{\vbtwo}{4}
+    \renewcommand{\vbthree}{8,467,200}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{9}
+      \renewcommand{\vbtwo}{4}
+      \renewcommand{\vbthree}{\text{close to 2 billion ways}}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{6}
+      \renewcommand{\vbtwo}{3}
+      \renewcommand{\vbthree}{151,200}
     }
   }
 }
 
-\question
+\gcalcexpr[0]\midslots{\vbtwo - 1}
+\gcalcexpr[0]\totalslots{\vbtwo + 1}
+\gcalcexpr[0]\remainingA{\vbone - \vbtwo + 1}
+\gcalcexpr[0]\tmp{\vbone + 1}
 
-\insertQR{}
+\question[5] At an international conference, there are $\vbone$ representatives of country A and $\vbtwo$ representatives 
+of country B. In how many ways can they be seated along a table so that no two representatives of country $B$ 
+are sitting together? You can leave your answer at the final expression
+
+\insertQR[10pt]{abc}
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
-\begin{solution}
+\begin{solution}[\halfpage]
+	\begin{fullwidth}
+	First, let the $\vbtwo$ representatives of country B sit down. Between them, there are $\midslots$ empty 
+	slots where if we were to place a representative of country A, then no two of B would be sitting 
+	together. The number of ways to do this are 
+	
+	\begin{align}
+		N_1 &= \encr\vbone\midslots\times\midslots ! \times\vbtwo !
+	\end{align}
+	We still have $\remainingA$ representatives of country A to seat. But they can sit anywhere - 
+	in the $\midslots$ slots between or in extreme left and extreme right slots. In short, there are 
+	$\totalslots = (\midslots + 2)$ slots for them to be in 
+	
+	This is just like the problem of distributing $N$ things amonst $M$ people. In this case, we 
+	have to dsitribute $\remainingA$ amongst $\totalslots$. And the formula for that is
+	\begin{align}
+		N_2 &= \eDistNAmongstM\remainingA\totalslots\times\remainingA !
+	\end{align}
+	The required answer, therefore, is 
+	\begin{align}
+		N_{\texttt{total}} &= N_1 \times N_2 \\ 
+		&= \fncr\vbone\midslots\times\midslots ! \times\vbtwo ! \times \eDistNAmongstM\remainingA\totalslots\times\remainingA ! \\
+		&= \dfrac{\vbone ! \times \tmp !}{\remainingA !} = \vbthree
+	\end{align}
+	\end{fullwidth}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
