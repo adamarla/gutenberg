@@ -30,43 +30,70 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question[4] How many distinct ways can the faces of a cube be numbered $1$ through $6$ such that each face gets a unique number and no two cubes look the same in any orientation.
+\question[4] In how many ways can the six faces of a cube be coloured - using six different colours - 
+so that no two cubes that have been coloured differently look the same no matter how you hold them?
+\texttt{Hint:} Unroll the cube and lay its faces flat out on a table
 
 \insertQR{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+  \begin{marginfigure}
+    \figinit{pt}
+      \figpt 100:(20,0)
+      \figpt 101:(40,0)
+      \figpt 102:(40,20)
+      \figpt 103:(40,40)
+      \figpt 104:(60,40)
+      \figpt 105:(60,60)
+      \figpt 106:(40,60)
+      \figpt 107:(40,80)
+      \figpt 108:(20,80) 
+      \figpt 109:(20,60)
+      \figpt 110:(0,60)
+      \figpt 111:(0,40)
+      \figpt 112:(20,40)
+      \figpt 113:(20,20)
+      \figpt 200:$1$(30,70)
+      \figpt 201:$2$(50,50)
+      \figpt 202:$3$(30,30)
+      \figpt 203:$4$(10,50)
+    \figdrawbegin{}
+      \figdrawline[100,101,102,103,104,105,106,107,108,109,110,111,112,113,100]
+      \figset (dash=8)
+      \figdrawline[103,106,109,112,103]
+      \figset (fillmode=yes, color=0.7)
+      \figdrawline[100,101,102,113,100]
+    \figdrawend
+    \figvisu{\figBoxA}{}{%
+      \figwriten 200:(0)
+      \figwritee 201:(0)
+      \figwrites 202:(0)
+      \figwritew 203:(0)
+    }
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
+  
+  \marginnote[10pt]{These $30$ cubes are called MacMohan cubes after the British mathematician Percy Alexander MacMohan}
 \fi 
 
 \begin{solution}[\halfpage]
-  First solution: \\
-  Let us begin by numbering the bottom face of the cube $1$. \\
-  Number of options to number the top face,
-  \begin{align}
-     N_{top} = 5 \nonumber
-  \end{align}
-  The remaining $4$ numbers would occupy the four vertical faces of the cube which have no reference point. Therefore number of options is,
-  \begin{align}
-     N_{vertical} = 3! \nonumber
-  \end{align}
-  Therefore the total number of unique configurations is,
-  \begin{align}
-    N_{unique} &= N_{top} \times N_{vertical} \nonumber \\
-               &= 5 \times 3! = 30 \nonumber 
-  \end{align}
-  Alternate solution:\\
-  Maximum ways in which the cube can be numbered is 
-  \begin{align}
-    N_{maximum} = 6! \nonumber
-  \end{align}
-  Number of orientations possible for any given configuration of the cube,
-  \begin{align}
-    N_{orientations} = 24 \quad\text{(four with each number as top face)} \nonumber
-  \end{align}
-  Therefore factoring those out of the maximum we get,
-  \begin{align}
-    N_{unique} &= \dfrac{N_{maximum}}{N_{orientations}} \nonumber \\
-               &= \dfrac{6!}{24} = 30 \nonumber
-  \end{align}   
+	Unroll the cube - \asif. Faces $1,2,3$ and $4$ are the vertical faces. The coloured face is the top face
+	
+	Its easiest to first think of the \textit{distinct} permutations in which the vertical faces can be 
+	coloured. And remember, 
+	\begin{itemize}\itemsep0pt
+		\item Because the cube can be held in the hand and rotated, we should be looking 
+		for the number of distinct \textit{circular} permutations possible for faces $1,2,3$ and $4$ \\
+		\item Each face can be the top-, bottom- or some other face - depending on how the cube held. In other words, 
+		each face can be called six different things - even though nothing has changed
+	\end{itemize}		
+	
+	
+	Given the above, we get 
+	\begin{align}
+		N_{\texttt{total}} &= \dfrac{N_{\texttt{sides}} \times N_{\texttt{top-face}}}{6} \\
+		&= \dfrac{1}{6}\cdot\left[ \encr{6}{4}\cdot (4-1)! \times 2 \text{ (remaining colours)}\right] = 30
+	\end{align}
 \end{solution}
 
