@@ -30,7 +30,7 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question[4] How many different mixed-gender comittees of 3 people can be chosen from a group of $5$ men and $5$ women.
+\question[4] How many different mixed-gender committees of 3 people can be chosen from a group of $5$ men and $5$ women.
 
 \insertQR{QRC}
 
@@ -39,17 +39,17 @@
 \fi 
 
 \begin{solution}[\halfpage]
-  Total number of all $3$ member comittees that can be chosen from a group of $10$
+  Total number of all $3$ member committees that can be chosen from a group of $10$
   \begin{align}
     N_{total} = C^{10}_3 \nonumber
   \end{align}
-  Total number of $3$ member male only comittees that can be chosen is
+  Total number of $3$ member male only committees that can be chosen is
   \begin{align}
     N_{male} = C^{5}_3 \nonumber
   \end{align}
-  By symmetry, same is the case for number of female only comittees $N_{female}$.
+  By symmetry, same is the case for number of female only committees $N_{female}$.
   
-  Therefore number of mixed gender comittees is,
+  Therefore number of mixed gender committees is,
   \begin{align}
     N_{mixed} &= N_{total} - (N_{male}+N_{female}) \nonumber \\
               &= C^{10}_3 - 2(C^5_3) \nonumber \\
