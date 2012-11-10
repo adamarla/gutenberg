@@ -36,26 +36,26 @@
   % variables 
   \renewcommand{\vbone}{All 4 cards are of the same suit}
   \renewcommand{\vbtwo}{All 4 cards have the same number}
-  \renewcommand{\vbthree}{All 4 cards are in succession}
-  \renewcommand{\vbfour}{All 4 cards are in different suits}
+  \renewcommand{\vbthree}{All 4 cards are in succession and of the same suit}
+  \renewcommand{\vbfour}{All 4 cards are face cards (Jack, Queen, King)}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
     \renewcommand{\vbone}{All 4 cards have the same number}
     \renewcommand{\vbtwo}{All 4 cards are of the same suit}
-    \renewcommand{\vbthree}{All 4 cards belong to different suits}
-    \renewcommand{\vbfour}{All 4 cards are in succession}
+    \renewcommand{\vbthree}{All 4 cards are face cards (Jack, Queen, King)}
+    \renewcommand{\vbfour}{All 4 cards are in succession and of the same suit}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{All 4 cards belong to different suits}
-      \renewcommand{\vbtwo}{All 4 cards are in succession}
+      \renewcommand{\vbone}{All 4 cards are face cards (Jack, Queen, King)}
+      \renewcommand{\vbtwo}{All 4 cards are in succession and of the same suit}
       \renewcommand{\vbthree}{All 4 cards are of the same suit}
       \renewcommand{\vbfour}{All 4 cards have the same number}
     }{
       % variables 
-      \renewcommand{\vbone}{All 4 cards are in succession}
-      \renewcommand{\vbtwo}{All 4 cards belong to different suits}
+      \renewcommand{\vbone}{All 4 cards are in succession and of the same suit}
+      \renewcommand{\vbtwo}{All 4 cards are face cards (Jack, Queen, King)}
       \renewcommand{\vbthree}{All 4 cards have the same number}
       \renewcommand{\vbfour}{All 4 cards are of the same suit}
     }
@@ -64,8 +64,8 @@
 
 \renewcommand{\vbfive}{$\encr{13}{4}=2860$}%same suit
 \renewcommand{\vbsix}{$13$}%same number
-\renewcommand{\vbseven}{$52\times39\times26\times13=13^4\times24$}%diff
-\renewcommand{\vbeight}{$52\times8\times8\times8$}%succession
+\renewcommand{\vbseven}{$\encr{12}{4}=495$}%face cards
+\renewcommand{\vbeight}{$52\times2\times2\times2s=416$}%succession
 
 \question In how any ways can you choose 4 cards from a complete deck of
  52 cards such that (consider the cards to be in continuation Ace follows
