@@ -29,116 +29,67 @@
 %   7. Create versions of the question when possible. Use commands defined in 
 %      tufte-tweaks.sty to do so. Its easier than you think
 
-% \noprintanswers
-% \setcounter{rolldice}{0}
+%\noprintanswers
+%\setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{\dfrac{2}{3}}
+  \renewcommand{\vbtwo}{\dfrac{3}{2}}
+  \renewcommand{\vbthree}{6}
+  \renewcommand{\vbfour}{-2}
+  \renewcommand{\vbfive}{\dfrac{135}{4}}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{\dfrac{4}{7}}
+    \renewcommand{\vbtwo}{\dfrac{7}{4}}
+    \renewcommand{\vbthree}{7}
+    \renewcommand{\vbfour}{-3}
+    \renewcommand{\vbfive}{-\dfrac{7203}{64}}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{\dfrac{3}{5}}
+      \renewcommand{\vbtwo}{\dfrac{5}{3}}
+      \renewcommand{\vbthree}{5}
+      \renewcommand{\vbfour}{-1}
+      \renewcommand{\vbfive}{-\dfrac{50}{3}}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{\dfrac{5}{7}}
+      \renewcommand{\vbtwo}{\dfrac{7}{5}}
+      \renewcommand{\vbthree}{6}
+      \renewcommand{\vbfour}{-2}
+      \renewcommand{\vbfive}{\dfrac{147}{5}}
     }
   }
 }
 
-\question
+\gcalcexpr[0]\tp{(\vbthree + \vbfour) / 2}
 
-\insertQR{}
+\question What is the \textit{coefficient} of $x^{\vbfour}$ in $\left( \vbone x - \vbtwo\cdot\dfrac{1}{x} \right)^{\vbthree}$ ?
+
+\insertQR[-30pt]{}
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	The $m^{\text{th}}$ term in the expansion is of the form 
+	\begin{align}
+	   a_m &= \encr{\vbthree}{m}\cdot\left( \vbone x \right)^{m}\cdot\left( -\vbtwo\cdot\dfrac{1}{x}\right)^{\vbthree - m} \\
+	   &= \encr{\vbthree}{m}\cdot\left(\vbone\right)^{m}\cdot\left( -\vbtwo \right)^{\vbthree - m}\times\dfrac{x^m}{x^{\vbthree - m}}
+	\end{align}
+	We will get a $x^{\vbfour}$ term when 
+	\begin{align}
+		\dfrac{x^m}{x^{\vbthree - m}} &= x^{\vbfour} \Rightarrow 2m - \vbthree = \vbfour \Rightarrow m = \tp
+	\end{align}
+	And the \textit{coefficient} then would be 
+	\begin{align}
+		C_{\tp} &= \encr{\vbthree}{\tp}\cdot\left(\vbone\right)^{\tp}\cdot\left( -\vbtwo \right)^{\vbthree - \tp} \\
+		&= \vbfive
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
