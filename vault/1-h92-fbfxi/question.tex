@@ -54,16 +54,16 @@
   }
 }
 
-\question Find the sum of the first $\vbone$ terms of the series $\dfrac{1^3}{1} + \dfrac{1^3+2^3}{1+3} + \dfrac{1^3+2^3+3^3}{1+3+5}\ldots$
+\question[4] Find the sum of the first $\vbone$ terms of the series $\dfrac{1^3}{1} + \dfrac{1^3+2^3}{1+3} + \dfrac{1^3+2^3+3^3}{1+3+5}\ldots$
 
-\insertQR{}
+\insertQR{QRC}
 
 \watchout
 
 \ifprintanswers
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
 	The $n^{\text{th}}$ term of the series is of the form $a_n = \dfrac{\sum_{k=1}^{n}k^3}{\sum_{k=1}^{n}(2k-1)}
 	= \dfrac{\eSumOfCubes{n}}{n^2} = \dfrac{1}{4}\cdot(n+1)^2$
 	
