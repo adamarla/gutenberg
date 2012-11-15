@@ -29,116 +29,62 @@
 %   7. Create versions of the question when possible. Use commands defined in 
 %      tufte-tweaks.sty to do so. Its easier than you think
 
-% \noprintanswers
-% \setcounter{rolldice}{0}
+%\noprintanswers
+%\setcounter{rolldice}{2}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{1} % p
+  \renewcommand{\vbtwo}{3} % q 
+  \renewcommand{\vbthree}{5} % r 
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{6}
+    \renewcommand{\vbtwo}{14}
+    \renewcommand{\vbthree}{21}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{20}
+      \renewcommand{\vbtwo}{35}
+      \renewcommand{\vbthree}{42}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{5}
+      \renewcommand{\vbtwo}{10}
+      \renewcommand{\vbthree}{14}
     }
   }
 }
 
-\question
+\gcalcexpr[0]\tp{\vbone + \vbtwo}
+\gcalcexpr[0]\tq{\vbtwo + \vbthree}
+\gcalcexpr[2]\tr{\tq / \tp}
+\gcalcexpr[0]\ts{(\tr * \vbone + \vbthree) / (\vbtwo - \tr * \vbone)}
 
-\insertQR{}
+\question If some \textit{consecutive} coefficients in the expansion of $(1+x)^n$ are in the 
+ratio $\vbone:\vbtwo:\vbthree$, then find $n$
+
+\insertQR[-15pt]{}
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	Let the $(m-1)^{\text{th}}$, $m^{\text{th}}$ and $(m+1)^{\text{th}}$ terms be in the given ratio
+	\begin{align}
+		\dfrac{\encr{n}{m-1}}{\encr{n}{m}} &= \dfrac{\vbone}{\vbtwo} \\
+		\Rightarrow \dfrac{\fncr{n}{m-1}}{\fncr{n}{m}} &= \dfrac{\vbone}{\vbtwo} \\
+		\Rightarrow \dfrac{m}{n-m+1} &= \dfrac{\vbone}{\vbtwo} \Rightarrow \tp\cdot m = \vbone\cdot(n+1)
+	\end{align}
+	Similarly,
+	\begin{align}
+		\dfrac{\encr{n}{m}}{\encr{n}{m+1}} &= \dfrac{\vbtwo}{\vbthree} \Rightarrow \dfrac{m+1}{n-m} = \dfrac{\vbtwo}{\vbthree} \\
+		\Rightarrow \tq\cdot m &= \vbtwo\cdot n - \vbthree \\
+		\text{And therefore, } \dfrac{\tq\cdot m}{\tp\cdot m} &= \dfrac{\vbtwo\cdot n - \vbthree}{\vbone\cdot(n+1)} \\
+		\Rightarrow n &= \ts
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
