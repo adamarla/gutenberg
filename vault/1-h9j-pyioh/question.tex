@@ -30,115 +30,73 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+ \setcounter{rolldice}{1}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{2}
+  \renewcommand{\vbtwo}{3}
+  \renewcommand{\vbthree}{6}
+  \renewcommand{\vbfive}{4}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{4}
+    \renewcommand{\vbtwo}{5}
+    \renewcommand{\vbthree}{7}
+    \renewcommand{\vbfive}{4}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
       \renewcommand{\vbone}{}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbfive}{•}
     }{
       % variables 
       \renewcommand{\vbone}{}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbfive}{•}
     }
   }
 }
 
-\question
+\renewcommand{\vbfour}{\dfrac{\vbtwo}{\vbone}}
+\gcalcexpr[0]\tp{\vbthree + 1}
+\gcalcexpr[0]\tq{(\vbtwo * \vbtwo)}
+\gcalcexpr[0]\tr{(\vbone * \vbone)}
+\gcalcexpr[0]\ts{\tq + \tr}
+\gcalcexpr[0]\tt{\tp * \tq}
+
+\question Find the largest term (numerically) in the expansion of  
+if $x = \dfrac{\vbtwo}{\vbone}$
 
 \insertQR{}
 
-\watchout
+\watchout$(\vbone + \vbtwo x)^\vbthree$
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	If $T_n$ be the $n^{\text{th}}$ term and $T_{n+1}$ be the $(n+1)^{\text{th}}$ term - $n \in\aleph$ - then
+	the terms keep on increasing as along as $\dfrac{T_{n+1}}{T_n} \geq 1$
+	
+	And if we re-write $(\vbone + \vbtwo x)^\vbthree$ as $\vbone^\vbthree\cdot\left(\vbfour x + 1\right)^\vbthree$, then
+	\begin{align}
+		\dfrac{T_{n+1}}{T_n} &= \dfrac
+		{\vbone^\vbthree\cdot\encr\vbthree{n}\cdot\left( \vbfour\cdot x\right)^{n}}
+		{\vbone^\vbthree\cdot\encr\vbthree{n-1}\cdot\left( \vbfour\cdot x\right)^{n-1}} \\
+		&= \dfrac{\fncr\vbthree{n}}{\fncr\vbthree{(n-1)}}\cdot\left( \vbfour \right)^{-1}\cdot\dfrac{1}{x} \\
+		&= \dfrac{\tp - n}{n}\cdot\left( \vbfour x \right)
+	\end{align}	 
+	When $x = \vbfour$, then 
+	\begin{align}
+		\dfrac{T_{n+1}}{T_n} &= \dfrac{\tp -n}{n}\cdot\dfrac{\tq}{\tr} \\
+		\text{And therefore, if } \dfrac{T_{n+1}}{T_n} \geq 1 &\Rightarrow n \leq \dfrac{\tt}{\ts}
+	\end{align}
+	But as $n \in \aleph,\, n = \vbfive$ is the only sensible answer and $T_{\vbfive}$ the greatest term. Moreover, 
+	$T_{\vbfive} =
+	 \vbone^{\vbthree}\cdot\encr\vbthree\vbfive\cdot\left(\vbfour\right)^{\vbfive}\left(\vbfour\right)^{\vbfive}$
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
