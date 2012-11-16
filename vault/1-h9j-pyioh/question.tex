@@ -29,15 +29,16 @@
 %   7. Create versions of the question when possible. Use commands defined in 
 %      tufte-tweaks.sty to do so. Its easier than you think
 
-% \noprintanswers
- \setcounter{rolldice}{1}
+%\noprintanswers
+%\setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
   \renewcommand{\vbone}{2}
   \renewcommand{\vbtwo}{3}
-  \renewcommand{\vbthree}{6}
-  \renewcommand{\vbfive}{4}
+  \renewcommand{\vbthree}{9}
+  \renewcommand{\vbfive}{6} % reqd. n. Greatest = n + 1
+  \renewcommand{\vbsix}{\dfrac{7\cdot 3^{13}}{2}} % reduced expression
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
@@ -45,19 +46,22 @@
     \renewcommand{\vbtwo}{5}
     \renewcommand{\vbthree}{7}
     \renewcommand{\vbfive}{4}
+    \renewcommand{\vbsix}{\dfrac{7\cdot 5^9}{4}} % reduced expression
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfive}{•}
+      \renewcommand{\vbone}{2}
+      \renewcommand{\vbtwo}{5}
+      \renewcommand{\vbthree}{8}
+      \renewcommand{\vbfive}{7}
+      \renewcommand{\vbsix}{\dfrac{5^{14}}{8}} % reduced expression
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfive}{•}
+      \renewcommand{\vbone}{4}
+      \renewcommand{\vbtwo}{3}
+      \renewcommand{\vbthree}{7}
+      \renewcommand{\vbfive}{2}
+      \renewcommand{\vbsix}{7\cdot 4^3 \cdot 3^5}
     }
   }
 }
@@ -68,13 +72,15 @@
 \gcalcexpr[0]\tr{(\vbone * \vbone)}
 \gcalcexpr[0]\ts{\tq + \tr}
 \gcalcexpr[0]\tt{\tp * \tq}
+\gcalcexpr[0]\tg{\vbfive + 1} % greatest term
+\gcalcexpr[0]\tu{\tg - 1} % = \vbfive
 
-\question Find the largest term (numerically) in the expansion of  
-if $x = \dfrac{\vbtwo}{\vbone}$
+\question Find the largest term (numerically) in the expansion of $(\vbone + \vbtwo x)^{\vbthree}$ if 
+$x = \frac{\vbtwo}{\vbone}$
 
-\insertQR{}
+\insertQR[-15pt]{}
 
-\watchout$(\vbone + \vbtwo x)^\vbthree$
+\watchout
 
 \ifprintanswers
 \fi 
@@ -88,7 +94,7 @@ if $x = \dfrac{\vbtwo}{\vbone}$
 		\dfrac{T_{n+1}}{T_n} &= \dfrac
 		{\vbone^\vbthree\cdot\encr\vbthree{n}\cdot\left( \vbfour\cdot x\right)^{n}}
 		{\vbone^\vbthree\cdot\encr\vbthree{n-1}\cdot\left( \vbfour\cdot x\right)^{n-1}} \\
-		&= \dfrac{\fncr\vbthree{n}}{\fncr\vbthree{(n-1)}}\cdot\left( \vbfour \right)^{-1}\cdot\dfrac{1}{x} \\
+		&= \dfrac{\fncr\vbthree{n}}{\fncr\vbthree{(n-1)}}\cdot\left( \vbfour x \right) \\
 		&= \dfrac{\tp - n}{n}\cdot\left( \vbfour x \right)
 	\end{align}	 
 	When $x = \vbfour$, then 
@@ -96,7 +102,8 @@ if $x = \dfrac{\vbtwo}{\vbone}$
 		\dfrac{T_{n+1}}{T_n} &= \dfrac{\tp -n}{n}\cdot\dfrac{\tq}{\tr} \\
 		\text{And therefore, if } \dfrac{T_{n+1}}{T_n} \geq 1 &\Rightarrow n \leq \dfrac{\tt}{\ts}
 	\end{align}
-	But as $n \in \aleph,\, n = \vbfive$ is the only sensible answer and $T_{\vbfive}$ the greatest term. Moreover, 
-	$T_{\vbfive} =
-	 \vbone^{\vbthree}\cdot\encr\vbthree\vbfive\cdot\left(\vbfour\right)^{\vbfive}\left(\vbfour\right)^{\vbfive}$
+	But as $n \in \aleph,\, n = \vbfive$ is the only sensible answer and $T_{\tg}$ the greatest term. Moreover, 
+	$T_{\tg} = \vbone^{\vbthree}\cdot\encr\vbthree\tu\cdot\left( \vbfour\cdot\dfrac{\vbtwo}{\vbone} \right)^{\tu}
+  = \vbsix$
 \end{solution}
+
