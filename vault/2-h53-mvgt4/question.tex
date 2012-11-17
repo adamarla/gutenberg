@@ -38,12 +38,6 @@
   \renewcommand{\vbtwo}{6!}
   \renewcommand{\vbthree}{2!}
   \renewcommand{\vbfour}{360}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
@@ -51,12 +45,6 @@
     \renewcommand{\vbtwo}{6!}
     \renewcommand{\vbthree}{2!}
     \renewcommand{\vbfour}{360}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
@@ -64,24 +52,12 @@
       \renewcommand{\vbtwo}{5!}
       \renewcommand{\vbthree}{2!}
       \renewcommand{\vbfour}{60}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
     }{
       % variables 
       \renewcommand{\vbone}{OODLE}
       \renewcommand{\vbtwo}{5!}
       \renewcommand{\vbthree}{2!}
       \renewcommand{\vbfour}{60}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
     }
   }
 }
@@ -95,29 +71,13 @@ using the letters of the word $\vbone$.
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
-<<<<<<< HEAD
 \begin{solution}
-  Since the word $\vbone$ has repetition of letters, we can calculate the
-  total number of permutations of the word and divide by the number of
-  permutations of the repeated letters to factor out the repetition.
-  Therefore in this case the result would be:
+  Once of the letters (which?) in $\vbone$ appears twice. Hence, the number of \textit{distinct} words 
+  that can be formed from the letters is 
   \begin{align}
-  	\text{Number of words} &= \dfrac{\vbtwo}{\vbthree} \\
-  						   &= \vbfour
+  	\text{N} &= \dfrac{\vbtwo}{\vbthree} = \vbfour
   \end{align}
 
 \end{solution}
