@@ -30,102 +30,70 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+% \setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{0}
-  \renewcommand{\vbtwo}{1}
-  \renewcommand{\vbthree}{4}
-  \renewcommand{\vbfour}{7}
-  \renewcommand{\vbfive}{350}
-  \renewcommand{\vbsix}{1}
-  \renewcommand{\vbseven}{odd}
-  \renewcommand{\vbeight}{2}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{odd} % type 
+  \renewcommand{\vbtwo}{0,1,4,7} % available 
+  \renewcommand{\vbthree}{350} % less than 
+  \renewcommand{\vbfour}{1,7} % units 
+  \renewcommand{\vbfive}{0,1,4,7} % tens 
+  \renewcommand{\vbsix}{1} % hundreds 
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{2}
-    \renewcommand{\vbtwo}{0}
-    \renewcommand{\vbthree}{4}
-    \renewcommand{\vbfour}{9}
-    \renewcommand{\vbfive}{500}
-    \renewcommand{\vbsix}{2}
-    \renewcommand{\vbseven}{even}
-    \renewcommand{\vbeight}{3}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{even}
+    \renewcommand{\vbtwo}{3,6,8,9}
+    \renewcommand{\vbthree}{500}
+    \renewcommand{\vbfour}{6,8}
+    \renewcommand{\vbfive}{3,6,8,9}
+    \renewcommand{\vbsix}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{1}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{0}
-      \renewcommand{\vbfour}{8}
-      \renewcommand{\vbfive}{495}
-      \renewcommand{\vbsix}{1}
-      \renewcommand{\vbseven}{odd}
-      \renewcommand{\vbeight}{2}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{odd}
+      \renewcommand{\vbtwo}{2,5,7,8}
+      \renewcommand{\vbthree}{495}
+      \renewcommand{\vbfour}{5,7}
+      \renewcommand{\vbfive}{2,5,7,8}
+      \renewcommand{\vbsix}{2}
     }{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{2}
-      \renewcommand{\vbthree}{6}
-      \renewcommand{\vbfour}{0}
-      \renewcommand{\vbfive}{700}
-      \renewcommand{\vbsix}{3}
-      \renewcommand{\vbseven}{even}
-      \renewcommand{\vbeight}{3}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{even}
+      \renewcommand{\vbtwo}{6,7,8,9}
+      \renewcommand{\vbthree}{700}
+      \renewcommand{\vbfour}{6,8}
+      \renewcommand{\vbfive}{6,7,8,9}
+      \renewcommand{\vbsix}{6}
     }
   }
 }
 
-\gcalcexpr[0]{\total}{\vbeight * \vbsix}
-\gcalcexpr[0]{\total}{\total * 4}
+\question[2] How many 3-digit $\vbone$ numbers less than $\vbthree$ can be 
+ formed using the digits $\vbtwo$ - if repetition of digits is allowed
 
-\question[2] Find how many $\vbseven$ numbers less than $\vbfive$ can be 
- formed using the digits $\vbone$, $\vbtwo$, $\vbthree$, $\vbfour$ if
- repetition of digits is allowed.
-
-\insertQR{QRC}
+\insertQR[-15pt]{QRC}
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
+   \begin{table}
+		\begin{tabular}{ccc}
+			\toprule
+			Units & Tens & Hundreds \\
+			\midrule
+			$\vbfour$ & $\vbfive$ & $\vbsix$ \\
+			\bottomrule
+		\end{tabular}
+	\end{table}
 \fi 
 
 \begin{solution}[\mcq]
-  Since we are considering 3 digit numbers, let us count the ways in which
-  we can fill the units, tens and hundreds places. Multiplying each of these
-  will give us the total number of combinations we are looking for. \\
-  Number of ways we can fill,
-  \begin{align}
-    &\text{units place}    &= \vbeight \\
-    &\text{tens place}     &= 4 \\
-    &\text{hundreds place} &= \vbsix
-  \end{align}
-  \begin{align}
-    \text{Total Combinations} &= \vbeight\times 4\times \vbsix \\
-                              &= \total
-  \end{align}
+	The table above summarizes the digits that can appear in the units, tens and hundreds 
+	places - with repetition - to form a number that meets our criterion 
+	
+	The answer, therefore, is - $ N = 2 \times 4 \times 1 = 8$
+	
+	
 \end{solution}
-  \end{questions} 
-\end{document}
