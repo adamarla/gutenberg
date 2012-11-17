@@ -40,12 +40,23 @@
 
 \begin{solution}[\halfpage]
   First solution: \\
-  Let us begin by numbering the bottom face of the cube $1$. \\
-  Number of options to number the top face,
+  A cube without any numbers has no point of reference on it. By picking
+  any number for say the face it is resting on, we give it a point of
+  reference. Let us begin by numbering the bottom face of the cube $1$ 
+  (we can pick any of the numbers and it won't affect the counting). \\
+  By doing this, the \textit{top} face is uniquely identified as the face
+  opposite the bottom, whereas the four side faces are symmetrical.
+  Next let us count the number of ways we can number the top face,
   \begin{align}
      N_{top} = 5 \nonumber
   \end{align}
-  The remaining $4$ numbers would occupy the four vertical faces of the cube which have no reference point. Therefore number of options is,
+  The remaining $4$ numbers would occupy the four vertical faces of the cube.
+  These four faces are in a kind of circular symmetry. For counting the number
+  of ways in which objects can be arranged in a circle, we must begin by 
+  fixing the position of any one object as the reference point.
+  By doing so we reduce a circular permutation to a linear permutation of the
+  remaining objects in the remaining places. Therefore the number of ways we
+  can arrange the remaining 4 numbers on the vertical faces is,
   \begin{align}
      N_{vertical} = 3! \nonumber
   \end{align}
