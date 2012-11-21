@@ -30,9 +30,52 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question[4] Find the sum of the infinite series $1 + \frac{4}{5} + \frac{7}{5^2} + \frac{10}{5^3}\ldots$
 
-\insertQR{QRC}
+%\setcounter{rolldice}{3}
+%\noprintanswers
+
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{5} %m
+  \renewcommand{\vbtwo}{3} %n
+  \renewcommand{\vbthree}{4} % first-numerator
+  \renewcommand{\vbfour}{7} % 2nd numert
+  \renewcommand{\vbfive}{10} % 3rd numertr
+}{
+	\ifnumequal{\value{rolldice}}{1}{
+		\renewcommand{\vbone}{7}
+    \renewcommand{\vbtwo}{2}
+  	\renewcommand{\vbthree}{3}
+  	\renewcommand{\vbfour}{5}
+  	\renewcommand{\vbfive}{7}
+	}{
+	  \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\vbone}{9}
+      \renewcommand{\vbtwo}{4}
+      \renewcommand{\vbthree}{5}
+      \renewcommand{\vbfour}{9}
+      \renewcommand{\vbfive}{13}
+	  }{
+      \renewcommand{\vbone}{9}
+      \renewcommand{\vbtwo}{5}
+      \renewcommand{\vbthree}{6}
+      \renewcommand{\vbfour}{11}
+      \renewcommand{\vbfive}{16}
+	  }
+	}
+}
+
+\gcalcexpr[0]\tp{\vbone - 1}
+\gcalcexpr[0]\tq{\vbone + \vbtwo - 1}
+\gcalcexpr[0]\tr{\vbone * \tq}
+\gcalcexpr[0]\ts{\tp * \tp }
+
+
+\question[4] Find the sum of the infinite series $1 + \frac{\vbthree}{\vbone} + \frac{\vbfour}{\vbone^2} + 
+\frac{\vbfive}{\vbone^3}\ldots$
+
+\watchout
+\insertQR[-25pt]{QRC}
 
 \ifprintanswers
 \fi 
@@ -40,14 +83,15 @@
 \begin{solution}[\halfpage]
 	If $S$ be the required sum, then
 	\begin{align}
-		S &= 1 + \frac{4}{5} + \frac{7}{5^2} + \frac{10}{5^3}\ldots = \sum_{k=0}^{\infty}\dfrac{3k+1}{5^k} \\
-		\Rightarrow\dfrac{S}{5} &= \sum_{k=0}^{\infty}\dfrac{3k+1}{5^{k+1}} \\
-		\Rightarrow \underbrace{S - \dfrac{S}{5}}_{= \frac{4S}{5}} &= \underbrace{1 + \sum_{m=1}^{\infty}\dfrac{3m+1}{5^m}}
-		_{\text{first term}}- \sum_{k=0}^{\infty}\dfrac{3k+1}{5^{k+1}} \\
-		&= 1 + \sum_{k=0}^{\infty}\dfrac{3(k+1)+1}{5^{k+1}}-\sum_{k=0}^{\infty}\dfrac{3k+1}{5^{k+1}} \\
-		&= 1 + \sum_{k=0}^{\infty}\dfrac{3}{5^{k+1}} \\
-		&= 1 + 3\cdot\left( \dfrac{1}{5} + \dfrac{1}{5^2} + \dfrac{1}{5^3}\ldots \right) \\
-		&= 1 + 3\cdot\dfrac{\frac{1}{5}}{1-\frac{1}{5}} = 1 + \dfrac{3}{4} = \dfrac{7}{4} \\
-		\Rightarrow S &= \dfrac{5}{4}\cdot\dfrac{7}{4} = \dfrac{35}{16}
+		S &= 1 + \frac{\vbthree}{\vbone} + \frac{7}{\vbone^2} + \frac{10}{\vbone^3}\ldots = 
+      \sum_{k=0}^{\infty}\dfrac{\vbtwo k+1}{\vbone^k} \\
+		\Rightarrow\dfrac{S}{\vbone} &= \sum_{k=0}^{\infty}\dfrac{\vbtwo k+1}{\vbone^{k+1}} \\
+		\Rightarrow \underbrace{S - \dfrac{S}{\vbone}}_{= \frac{\tp S}{\vbone}} &= \underbrace{1 + \sum_{m=1}^{\infty}\dfrac{\vbtwo m+1}{\vbone^m}}
+		_{\text{first term}}- \sum_{k=0}^{\infty}\dfrac{\vbtwo k+1}{\vbone^{k+1}} \\
+		&= 1 + \sum_{k=0}^{\infty}\dfrac{\vbtwo (k+1)+1}{\vbone^{k+1}}-\sum_{k=0}^{\infty}\dfrac{\vbtwo k+1}{\vbone^{k+1}} \\
+		&= 1 + \sum_{k=0}^{\infty}\dfrac{\vbtwo }{\vbone^{k+1}} \\
+		&= 1 + \vbtwo\cdot\left( \dfrac{1}{\vbone} + \dfrac{1}{\vbone^2} + \dfrac{1}{\vbone^3}\ldots \right) \\
+		&= 1 + \vbtwo\cdot\dfrac{\frac{1}{\vbone}}{1-\frac{1}{\vbone}} = 1 + \dfrac{\vbtwo}{\tp } = \dfrac{\tq}{\tp } \\
+		\Rightarrow S &= \dfrac{\vbone}{\tp }\cdot\dfrac{\tq}{\tp } = \dfrac{\tr}{\ts}
 	\end{align}
 \end{solution}
