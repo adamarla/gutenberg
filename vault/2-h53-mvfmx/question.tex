@@ -86,11 +86,14 @@
   }
 }
 
-\gcalcexpr[0]{\total}{\vbone * \vbthree}
+\gcalcexpr[0]{\total}{\vbthree ^ \vbone}
+\gcalcexpr[0]{\hint}{\vbthree ^ 3}
 
 \question[3] There are $\vbone$ multiple-choice type questions in an assignment. 
-Each question presents $\vbtwo$ possible options. How many unique answer combinations are possible for the assignment, provided each question has at
-least one correct option.
+Each question presents $\vbtwo$ possible options. How many unique answer 
+combinations are possible for the assignment, provided each question has 
+\textbf{at least} one correct option.\\
+\textit{Calculation hint: $\vbthree^3=\hint$}
 
 \insertQR{QRC}
 
@@ -145,7 +148,7 @@ least one correct option.
     }
   \end{align}
   \begin{align}
-  	\text{Total combinations} &= \vbthree\times\vbone \\
+  	\text{Total combinations} &= \vbthree ^ \vbone \\
   						      &= \total
   \end{align}
 \end{solution}
