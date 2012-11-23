@@ -30,28 +30,59 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question[4] Evaluate the expression for the sum of the first $n$ terms of the 
-series $1 + 5 + 11 + 19 + 29 \ldots$
+%\noprintanswers
+%\setcounter{rolldice}{3}
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{2} %p
+  \renewcommand{\vbtwo}{3} %q
+}{
+	\ifnumequal{\value{rolldice}}{1}{
+		\renewcommand{\vbone}{3}
+    \renewcommand{\vbtwo}{7}
+	}{
+	  \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\vbone}{2}
+      \renewcommand{\vbtwo}{5}
+	  }{
+      \renewcommand{\vbone}{3}
+      \renewcommand{\vbtwo}{5}
+	  }
+	}
+}
+
+% variables for question text
+\gcalcexpr[0]\af{1-\vbone + \vbtwo}
+\gcalcexpr[0]\as{4-(2*\vbone)+\vbtwo}
+\gcalcexpr[0]\at{9-(3*\vbone)+\vbtwo}
+\gcalcexpr[0]\afo{16-(4*\vbone)+\vbtwo}
+
+% variables for solution
+\gcalcexpr[0]\tp{3 * \vbone}
+\gcalcexpr[0]\tq{6 * \vbtwo}
+\gcalcexpr[0]\tr{3 * (\vbone - 1)}
+\gcalcexpr[0]\ts{\tq - \tp + 1}
+
+\question[4] Evaluate the expression for the sum of the first $n$ terms of the 
+series $\af + \as + \at + \afo \ldots$. \texttt{Hint:} Each term in the series is 
+of the form $a_k = k^2 - qk + r, \, k \geq 1$ and $q,r \in\aleph$
+
+\watchout
 \insertQR{QRC}
 
 \ifprintanswers
-	\marginnote{We chose to call the first term $a_1$ in this question. Which means, $k$ ran from $1$ to $n$}
-	\marginnote[5pt]{But in a lot of scientific literature, the convention is to call the first term $a_0$. Had we chosen to do that, then $k$ would have run from $0$ to $(n-1)$ - not $n$ (because we still want only $n$ terms) \textit{and} $a_k = (k+1)^2+k$} 
-	\marginnote[5pt]{The result would be the same in both cases - obviously - because how you index terms
-	does not change the unerlying math}
 \fi 
 
 \begin{solution}[\halfpage]
-	If you figured out that the $k^{th}$ term of the series - $a_k = k^2 + (k-1),\, k \geq 1$, then
-	you have won more than half the battle. Because then, the sum of the first $n$ terms - $S_n$ -
-	is given by
+  You were given a hint! And so we can tell you straight up that $a_k = k^2 - \vbone k + \vbtwo,\, k \geq 1$
 	
 	\begin{align}
-		S_n &= \sum_{k=1}^{n}a_k = \sum_{k=1}^{n}\lbrace k^2 + (k-1)\rbrace \\
-		&= \sum_{k=1}^{n}k^2 + \sum_{k=1}^{n}k - \sum_{k=1}^{n}1 \\
-		&= \eSumOfSquares{n} + \eSumOfN{n} - n \\
-		&= \dfrac{n}{6}\cdot(2n^2+3n+1 + 3n+3 - 6) = \dfrac{n}{6}\cdot(2n^2+6n-2) \\
-		&= \dfrac{n}{3}\cdot(n^2+3n-1)
+		S_n &= \sum_{k=1}^{n}a_k = \sum_{k=1}^{n}\lbrace k^2 - \vbone k + \vbtwo \rbrace \\
+		&= \sum_{k=1}^{n}k^2 - \vbone\cdot\sum_{k=1}^{n}k + \vbtwo\cdot\sum_{k=1}^{n}1 \\
+		&= \eSumOfSquares{n} - \vbone\cdot\eSumOfN{n} + \vbtwo\cdot n \\
+    &= \dfrac{n}{6}\lbrace (n+1)\cdot(2n+1) - \tp\cdot(n+1) + \tq \rbrace \\
+    &= \dfrac{n}{6}\left[ \lbrace (n+1)\cdot(2n + 1 - \tp)\rbrace + \tq \right] \\
+    &= \dfrac{n}{6}\left( 2n^2 - \tr n + \ts \right)
 	\end{align}
 \end{solution}

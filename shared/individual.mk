@@ -1,11 +1,7 @@
 
 # /opt/gutenberg/PRODUCTION_SERVER is a zero size file on Linode only !!
 
-ifeq ($(realpath /opt/gutenberg/PRODUCTION_SERVER),)
-  Gutenberg := /home/abhinav/workspace/gutenberg-live
-else
-  Gutenberg := /home/gutenberg/bank
-endif
+Gutenberg := /opt/gutenberg/bank
 
 include $(join $(strip $(Gutenberg)), /shared/environment.mk)
 
@@ -29,7 +25,6 @@ page-1.jpeg : $(Pdf)
 	@for f in `ls page-*.jpeg`; do convert $$f -resize 600x800 $$f ; done 
 ifeq ($(MAKELEVEL),0)
 	@echo "Running atomically"
-	@if [[ ! $$PRODUCTION_SERVER ]] ; then gs $(Pdf) ; fi
 endif
 
 $(Pdf) : $(Ps)

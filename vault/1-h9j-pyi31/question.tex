@@ -30,38 +30,47 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 %\noprintanswers
-%\setcounter{rolldice}{1}
+%\setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{16}
-  \renewcommand{\vbtwo}{37}
+  \renewcommand{\vbone}{\dfrac{2}{3}}
+  \renewcommand{\vbtwo}{\dfrac{3}{2}}
+  \renewcommand{\vbthree}{6}
+  \renewcommand{\vbfour}{-2}
+  \renewcommand{\vbfive}{\dfrac{135}{4}}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{12}
-    \renewcommand{\vbtwo}{29}
+    \renewcommand{\vbone}{\dfrac{4}{7}}
+    \renewcommand{\vbtwo}{\dfrac{7}{4}}
+    \renewcommand{\vbthree}{7}
+    \renewcommand{\vbfour}{-3}
+    \renewcommand{\vbfive}{-\dfrac{7203}{64}}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{17}
-      \renewcommand{\vbtwo}{44}
+      \renewcommand{\vbone}{\dfrac{3}{5}}
+      \renewcommand{\vbtwo}{\dfrac{5}{3}}
+      \renewcommand{\vbthree}{5}
+      \renewcommand{\vbfour}{-1}
+      \renewcommand{\vbfive}{-\dfrac{50}{3}}
     }{
       % variables 
-      \renewcommand{\vbone}{19}
-      \renewcommand{\vbtwo}{25}
+      \renewcommand{\vbone}{\dfrac{5}{7}}
+      \renewcommand{\vbtwo}{\dfrac{7}{5}}
+      \renewcommand{\vbthree}{6}
+      \renewcommand{\vbfour}{-2}
+      \renewcommand{\vbfive}{\dfrac{147}{5}}
     }
   }
 }
 
-\gcalcexpr[0]\tp{\vbone - 1}
-\gcalcexpr[0]\tq{\vbtwo - 1}
-\gcalcexpr[0]\tr{\vbtwo - \vbone}
+\gcalcexpr[0]\tp{(\vbthree + \vbfour) / 2}
 
-\question[3] The first, $\vbone^\text{th}$ and $\vbtwo^\text{th}$ terms of an arithmetic progression are also 
-\textit{successive} terms of a geometric progression. Find the common ratio of the geometric progression
+\question[3] What is the \textit{coefficient} of $x^{\vbfour}$ in $\left( \vbone x - \vbtwo\cdot\dfrac{1}{x} \right)^{\vbthree}$ ?
 
-\insertQR[-10pt]{QRC}
+\insertQR[-30pt]{QRC}
 
 \watchout
 
@@ -69,19 +78,19 @@
 \fi 
 
 \begin{solution}[\halfpage]
-	Here is what we know 
+  If the terms in the expansion are $a_0, a_1, a_2 \ldots$, then the $m^{\text{th}}$ term 
+  in the expansion is of the form 
 	\begin{align}
-		a &= b \\
-		a + \tp\cdot d &= b\cdot r \\
-		a + \tq\cdot d &= b\cdot r^2 
+	   a_m &= \encr{\vbthree}{m}\cdot\left( \vbone x \right)^{m}\cdot\left( -\vbtwo\cdot\dfrac{1}{x}\right)^{\vbthree - m} \\
+	   &= \encr{\vbthree}{m}\cdot\left(\vbone\right)^{m}\cdot\left( -\vbtwo \right)^{\vbthree - m}\times\dfrac{x^m}{x^{\vbthree - m}}
 	\end{align}
-	
-	From this, we can infer 
+	We will get a $x^{\vbfour}$ term when 
 	\begin{align}
-		(a + \tp\cdot d) - a &= b\cdot r - b = b\cdot(r-1) \\
-		(a + \tq\cdot d) - a &= b\cdot r^2 - b = b\cdot(r^2-1) \\ 
-		&= \underbrace{b\cdot(r-1)}_{\tp\cdot d}\cdot(r+1) \\
-		\Rightarrow \tq\cdot d &= \tp\cdot d \cdot (r + 1) \\ 
-		\Rightarrow r &= \dfrac{\tr}{\tp}
+		\dfrac{x^m}{x^{\vbthree - m}} &= x^{\vbfour} \Rightarrow 2m - \vbthree = \vbfour \Rightarrow m = \tp
+	\end{align}
+	And the \textit{coefficient} then would be 
+	\begin{align}
+		C_{\tp} &= \encr{\vbthree}{\tp}\cdot\left(\vbone\right)^{\tp}\cdot\left( -\vbtwo \right)^{\vbthree - \tp} \\
+		&= \vbfive
 	\end{align}
 \end{solution}

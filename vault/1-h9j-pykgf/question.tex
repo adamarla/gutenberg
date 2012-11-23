@@ -34,9 +34,9 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{5}
-  \renewcommand{\vbtwo}{3}
-  \renewcommand{\vbthree}{50}
+  \renewcommand{\vbone}{}
+  \renewcommand{\vbtwo}{}
+  \renewcommand{\vbthree}{}
   \renewcommand{\vbfour}{}
   \renewcommand{\vbfive}{}
   \renewcommand{\vbsix}{}
@@ -47,9 +47,9 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{4}
-    \renewcommand{\vbtwo}{3}
-    \renewcommand{\vbthree}{30}
+    \renewcommand{\vbone}{}
+    \renewcommand{\vbtwo}{}
+    \renewcommand{\vbthree}{}
     \renewcommand{\vbfour}{}
     \renewcommand{\vbfive}{}
     \renewcommand{\vbsix}{}
@@ -60,9 +60,9 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{3}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{16}
+      \renewcommand{\vbone}{}
+      \renewcommand{\vbtwo}{}
+      \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
@@ -72,9 +72,9 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{3}
-      \renewcommand{\vbtwo}{4}
-      \renewcommand{\vbthree}{31}
+      \renewcommand{\vbone}{}
+      \renewcommand{\vbtwo}{}
+      \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
@@ -86,15 +86,9 @@
   }
 }
 
-\gcalcexpr[0]{\sumone}{\vbone + \vbtwo}
-\gcalcexpr[0]{\sumtwo}{\vbone + 1}
+\question
 
-\question[2] In how many ways can $\vbone$ boys and $\vbtwo$ girls sit so that
-not all the girls are sitting together \textit{(Any two arrangements are
-considered  identical as long as the places occupied by boys or by the girls
-are same in both)}.
-
-\insertQR{QRC}
+\insertQR{}
 
 \watchout
 
@@ -113,12 +107,38 @@ are same in both)}.
   \end{marginfigure}
 \fi 
 
-\begin{solution}[\mcq]
-  First we compute the total number of permutations of seating arrangements
-  with no restriction. Next we subtract from this the number of permutations 
-  where all the girls sit together. 
-  \begin{align}
-  	\text{Number of arrangements} &= \sumone!-\sumtwo! \\
-  								  &= \vbthree
-  \end{align}
+\begin{solution}
 \end{solution}
+
+\begin{parts}
+  \part 
+
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+  \part 
+
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+  \part 
+
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+  \part 
+
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+  \part 
+
+  \insertQR{}
+  \begin{solution}
+  \end{solution}
+
+\end{parts}

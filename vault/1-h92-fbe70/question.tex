@@ -30,7 +30,7 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{3}
+% \setcounter{rolldice}{1}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -107,7 +107,7 @@
 \gcalcexpr[0]\tr{\nten * \nu}
 \gcalcexpr[0]\ngreater{\tp + \tq + \tr}
 \gcalcexpr[0]\nlessequal{256 - \ngreater}
-\gcalcexpr[0]\nreqd{136 + \nlessequal}
+\gcalcexpr[0]\nreqd{84 + \nlessequal}
 
 \question[5] How many numbers $\leq \vbtwo$ can be formed using $\vbone$ if the digits are allowed to repeat?
 
@@ -123,7 +123,7 @@
 	is guaranteed to be $\leq \vbtwo$. They are also easy to count
 	\begin{align}
 		N_{\texttt{< 4-digits}} &= N_1 + N_2 + N_3 \\ 
-		 &= 4 + \encr{4}{2}\cdot 2^2 + \encr{4}{3}\cdot 3^3 = 136
+		 &= 4 + 4^2 + 4^3 = 84
 	\end{align}
 	
 	It is when counting the 4-digit numbers that one has to be careful. But here is what we know about what 
@@ -143,6 +143,6 @@
 	This means that there are $\ngreater (= \tp + \tq + \tr)$ 4-digit numbers $ > \vbtwo$ that can be formed from 
 	$A = \lbrace\vbone\rbrace$. And hence, there are $\nlessequal( = 4^4 - \ngreater)$ numbers that are $ \leq \vbtwo$
 	
-	So, in total, there are $\nreqd (= \nlessequal + 136)$ numbers that meet our initial criterion
+	So, in total, there are $\nreqd (= \nlessequal + 84)$ numbers that meet our initial criterion
 	
 \end{solution}

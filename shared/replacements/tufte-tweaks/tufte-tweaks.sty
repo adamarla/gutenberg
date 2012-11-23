@@ -25,7 +25,7 @@
 % Compulsory disclaimer to be added to the answer key for variable questions
 \newcommand{\watchout}[1][0pt]{
   \ifprintanswers
-    \marginnote[#1]{This question has multiple versions. But the underlying mathematics stays the same}
+    \marginnote[#1]{\sc{\textcolor{red}{This question has multiple versions}}}
   \else
   \fi
 }
@@ -63,6 +63,13 @@
         \end{marginfigure}
       }{}
     \fi 
+}
+
+\newcommand\nextpg{
+  \ifprintanswers
+  \else
+    \newpage
+  \fi
 }
 
 \newcommand{\dydx}{\dfrac{\ud y}{\ud x}}
