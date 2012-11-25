@@ -30,65 +30,36 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
- \setcounter{rolldice}{0}
+% \setcounter{rolldice}{0}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
   \renewcommand{\vbone}{5} % required
   \renewcommand{\vbtwo}{9} % total 
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{91}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbthree}{91}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
     \renewcommand{\vbone}{6}
     \renewcommand{\vbtwo}{8}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{13}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbthree}{13}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
       \renewcommand{\vbone}{7}
       \renewcommand{\vbtwo}{11}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{204}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbthree}{204}
     }{
       % variables 
       \renewcommand{\vbone}{4}
       \renewcommand{\vbtwo}{7}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{25}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbthree}{25}
     }
   }
 }
 
-\gcalcexpr[0]{\vbthree}{\vbtwo - 2}
-\gcalcexpr[0]{\vbfour}{\vbtwo - 1}
-\gcalcexpr[0]{\vbfive}{\vbone - 1}
+\gcalcexpr[0]{\tp}{\vbtwo - 2} 
+\gcalcexpr[0]{\tq}{\vbone - 1} 
 
 \question[2] A committee of $\vbone$ persons needs to be formed from amongst $\vbtwo$ people. However, 
 Mr. X and Ms. Y do not like each other. And so, if one is picked, then the other cannot be. In how many 
@@ -102,14 +73,15 @@ ways then can the committee be formed?
 \fi 
 
 \begin{solution}[\mcq]
-	If Mr. X is picked, then Ms. Y is out of consideration and so $\vbfive$ out of $\vbthree$ 
+	If Mr. X is picked, then Ms. Y is out of consideration $\Rightarrow$ $\tq$ out of $\tp$ 
 	will remain to be picked. Same goes for if Ms. Y is picked first
+
+  And then there are committees in which neither Mr. X \textit{nor} Ms. Y are members $\Rightarrow$ 
+  $\vbone$ out of $\tp$ need to be picked
 	
-	And if Mr. X is \textit{not} picked, then $\vbone$ out of $\vbfour$ will need to be picked. This will 
-	include all the ways in which Ms. Y is picked - or Mr. X is picked if Ms. Y is not picked. Hence
 	\begin{align}
-		N_{\texttt{total}} &= \encr\vbthree\vbfive + \encr\vbfour\vbone \\
-		&= \fncr\vbthree\vbfive + \fncr\vbfour\vbone \\
-		&= \vbsix
+		N_{\texttt{total}} &= \overbrace{2\times\encr\tp\tq}^{\texttt{either picked}} + 
+    \overbrace{\encr\tp\vbone}^{\texttt{neither picked}} \\
+		&= \vbthree
 	\end{align}
 \end{solution}
