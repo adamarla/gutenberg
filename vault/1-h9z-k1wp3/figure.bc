@@ -7,7 +7,7 @@
 */
 
 define p_1(x) {
-  return (x^2)
+  return (-3*x + 3)
 }
 
 define p_2(x) {
@@ -24,8 +24,8 @@ define p_2(x) {
 *******************************************************************************/
 
 pi = 4*a(1)  /* define pi */
-xstart = -1.75    /* Lower bound of the interval */
-xstop = 3.5     /* Upper bound of the interval */
+xstart = -0.5    /* Lower bound of the interval */
+xstop = 2    /* Upper bound of the interval */
 n = 30     /* Number of points to be computed */
 deltax = (xstop-xstart)/(n-1)
 xdim = 80  /* Horizontal dimension of the figure in mm */
@@ -127,16 +127,13 @@ define void draw_curve(values[]) {
 }
 
 define void draw_plots() {
-	g = a[n]
 	h = b[n]
 
 	for ( j = 0 ; j < n ; j++ ) {
 		x = xstart + j*deltax 
-		g[j] = p_2(x) 
 		h[j] = p_1(x)
 	} 
 
-	draw_curve(g[])
 	draw_curve(h[])
   print "\\figdrawend\n"
 }
