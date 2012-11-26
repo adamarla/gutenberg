@@ -31,6 +31,7 @@
 
 % \noprintanswers
 % \setcounter{rolldice}{1}
+ %\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -119,3 +120,24 @@ begins with a \vbtwo but all end with a \vbthree
 	 	N &= \dfrac{\nfirst \times \nsecond ! \times \vbfive}{\vbfour ! \times \vbfive !} = \vbseven
 	 \end{align}
 \end{solution}
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule
+        \# allowed characters (start) & \# allowed (middle) \\
+        \# allowed characters (end) & \\
+        Distinct permutations & \\
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule
+         SUCCESS & 60 \\
+         ALBATROSS & 15,120 \\
+         DAMASCUS & 1800 \\
+         PROPERTY & 1800 \\
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi
