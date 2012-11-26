@@ -29,8 +29,9 @@
 %   7. Create versions of the question when possible. Use commands defined in 
 %      tufte-tweaks.sty to do so. Its easier than you think
 
-% \noprintanswers
-% \setcounter{rolldice}{0}
+%\noprintanswers
+%\setcounter{rolldice}{3}
+%\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -156,6 +157,7 @@ $\frac{AN}{AM} = \frac{\vbthree}{\vbfour}$. Find the equation of the line
 
 \begin{solution}[\halfpage]
 	First, drop perpendiculars from $A$ on the axes to get points $J(0,\vbtwo)$ and $K(-\vbone,0)$. 
+  The other points in the figure are $M = (m,0)$ and $N = (0,n)$
 	
 	Now, $\bigtriangleup NAJ$ and $\bigtriangleup NMO$ are similar. Which means, 
 	\begin{align}
@@ -173,3 +175,23 @@ $\frac{AN}{AM} = \frac{\vbthree}{\vbfour}$. Find the equation of the line
 	\end{align}
 	
 \end{solution}
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+        Drop perpendiculars to get similar triangles & \\
+        Get a second point using ratio of sides of similar triangles & Expressed the ratio \\
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+        $A = (-5,4)$ & $5y - 60 = 8x$ \\
+        $A = (-2,7)$ & $2y - 20 = 3x$ \\
+        $A = (-7,10)$ & $7y - 126 = 8x$ \\
+        $A = (-5,9)$ & $5y-80=7x$ \\
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi
