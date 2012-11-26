@@ -8,6 +8,13 @@
 
 \unframedsolutions
 
+% Boolean to enable / disable creation of rubric
+% Rubric is for *** graders only *** and is a quick checklist that *complements* the answer key
+\newboolean{rubric}
+\setboolean{rubric}{false}
+\newcommand\printrubric{\setboolean{rubric}{true}}
+\newcommand\noprintrubric{\setboolean{rubric}{false}}
+
 % Commands and counters to make variations of questions 
 \newcounter{rolldice}
 % Commands for variable, well, variables 
