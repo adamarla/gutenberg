@@ -47,41 +47,37 @@
   \FPround{#2}{#2}{#1}
 } 
 
+\newcommand{\gWriteFrac}[2]{ % #1 = num, #2 = denom
+  \FRACTIONSIMPLIFY{#1}{#2}\tmp\tmq
+  \ifthenelse{\tmq = -1}{
+    \gcalcexpr[0]\tmp{\tmp * -1}
+    \tmp
+  }{ 
+    \ifthenelse{\tmq = 1}{\tmp}{\frac{\tmp}{\tmq}}
+  }
+}
+
 \newcommand{\gFracAdd}[4] { % a/b + c/d
   \gcalcexpr[0]\tp{(#1 * #4) + (#2 * #3)}
   \gcalcexpr[0]\tq{#2 * #4}
-  \FRACTIONSIMPLIFY\tp\tq\tp\tq
-  \dfrac{\tp}{\tq}
+  \gWriteFrac\tp\tq
 } 
 
 \newcommand{\gFracSubtract}[4]{
   \gcalcexpr[0]\tp{(#1 * #4) - (#2 * #3)}
   \gcalcexpr[0]\tq{#2 * #4}
-  \FRACTIONSIMPLIFY\tp\tq\tp\tq
-  \dfrac{\tp}{\tq}
+  \gWriteFrac\tp\tq
 }
 
 \newcommand{\gFracMult}[4]{
   \gcalcexpr[0]\tp{#1 * #3}
   \gcalcexpr[0]\tq{#2 * #4}
-  \FRACTIONSIMPLIFY\tp\tq\tp\tq
-  \dfrac{\tp}{\tq}
+  \gWriteFrac\tp\tq
 }
 
 \newcommand{\gFracDivide}[4]{ % (a/b) / (c/d) = ad/bc
   \gcalcexpr[0]\tp{#1 * #4}
   \gcalcexpr[0]\tq{#2 * #3}
-  \FRACTIONSIMPLIFY\tp\tq\tp\tq
-  \dfrac{\tp}{\tq}
-}
-
-\newcommand{\gWriteFrac}[2]{ % #1 = num, #2 = denom
-  \FRACTIONSIMPLIFY{#1}{#2}\tp\tq
-  \ifthenelse{\tq = -1}{
-    \gcalcexpr[0]\tp{\tp * -1}
-    \tp
-  }{ 
-    \ifthenelse{\tq = 1}{\tp}{\frac{\tp}{\tq}}
-  }
+  \gWriteFrac\tp\tq
 }
 
