@@ -32,6 +32,7 @@
 \RequirePackage{g-comb}
 \RequirePackage{etoolbox}
 \RequirePackage{xcolor}
+\RequirePackage{calculator}
 
 \providecommand{\ud}{\, \mathrm{d}}
 %\renewcommand{\solutiontitle}{\noindent{\sc{Solution\\}}\enspace}
