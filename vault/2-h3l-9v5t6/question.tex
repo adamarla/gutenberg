@@ -30,12 +30,52 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question[4] How many distinct ways can the faces of a cube be numbered $1$ through $6$ such that each face gets a unique number and no two cubes look the same in any orientation.
+%\noprintanswers
+\question[6] How many distinct ways can the faces of a cube be numbered $1$ 
+through $6$ such that each face gets a unique number and no two cubes look 
+the same in any orientation.
 
-\insertQR{QRC}
+\insertQR[15pt]{QRC}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
+  \begin{marginfigure}
+    \figinit{pt}
+      \figpt 100:(20,0)
+      \figpt 101:(40,0)
+      \figpt 102:(40,20)
+      \figpt 103:(40,40)
+      \figpt 104:(60,40)
+      \figpt 105:(60,60)
+      \figpt 106:(40,60)
+      \figpt 107:(40,80)
+      \figpt 108:(20,80) 
+      \figpt 109:(20,60)
+      \figpt 110:(0,60)
+      \figpt 111:(0,40)
+      \figpt 112:(20,40)
+      \figpt 113:(20,20)
+      \figpt 200:$1$(30,70)
+      \figpt 201:$2$(50,50)
+      \figpt 202:$3$(30,30)
+      \figpt 203:$4$(10,50)
+    \figdrawbegin{}
+      \figdrawline[100,101,102,103,104,105,106,107,108,109,110,111,112,113,100]
+      \figset (dash=8)
+      \figdrawline[103,106,109,112,103]
+      \figset (fillmode=yes, color=0.7)
+      \figdrawline[100,101,102,113,100]
+    \figdrawend
+    \figvisu{\figBoxA}{}{%
+      \figwriten 200:(0)
+      \figwritee 201:(0)
+      \figwrites 202:(0)
+      \figwritew 203:(0)
+    }
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
+  
+  \marginnote[10pt]{These $30$ cubes are called MacMohan cubes after the British mathematician Percy Alexander MacMohan}
 \fi 
 
 \begin{solution}[\halfpage]
@@ -43,24 +83,28 @@
   A cube without any numbers has no point of reference on it. By picking
   any number for say the face it is resting on, we give it a point of
   reference. Let us begin by numbering the bottom face of the cube $1$ 
-  (we can pick any of the numbers and it won't affect the counting). \\
-  By doing this, the \textit{top} face is uniquely identified as the face
-  opposite the bottom, whereas the four side faces are symmetrical.
-  Next let us count the number of ways we can number the top face,
+  (we could have pick any number and it would not affect the counting). \\
+  In doing this, the \textit{top} face is uniquely identified as the face
+  opposite the bottom, whereas the four side faces are symmetrical and
+  interchangeable. In other words, simply by rotating the cube about a
+  vertical axis that goes through the top and bottom faces, we can get
+  any of the other remaining numbers appear on any of the side faces.
+  Now, let us count the number of ways we can number the top face,
   \begin{align}
      N_{top} = 5 \nonumber
   \end{align}
-  The remaining $4$ numbers would occupy the four vertical faces of the cube.
-  These four faces are in a kind of circular symmetry. For counting the number
-  of ways in which objects can be arranged in a circle, we must begin by 
+  The remaining $4$ numbers would occupy the four vertical faces.
+  These four faces are in a kind of circular symmetry. For counting the 
+  ways in which objects can be arranged in a circle, we must begin by 
   fixing the position of any one object as the reference point.
-  By doing so we reduce a circular permutation to a linear permutation of the
-  remaining objects in the remaining places. Therefore the number of ways we
-  can arrange the remaining 4 numbers on the vertical faces is,
+  By doing so we reduce a circular permutation to a linear permutation
+  of the remaining objects. Therefore the number of ways we can arrange
+  the remaining 4 numbers on the vertical faces is,
   \begin{align}
      N_{vertical} = 3! \nonumber
   \end{align}
-  Therefore the total number of unique configurations is,
+  Therefore the total number of unique configurations of the cube, \\
+  which can be established by multiplying each of these,
   \begin{align}
     N_{unique} &= N_{top} \times N_{vertical} \nonumber \\
                &= 5 \times 3! = 30 \nonumber 

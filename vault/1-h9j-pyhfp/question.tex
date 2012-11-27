@@ -30,38 +30,43 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 %\noprintanswers
-%\setcounter{rolldice}{1}
+%\setcounter{rolldice}{2}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{16}
-  \renewcommand{\vbtwo}{37}
+  \renewcommand{\vbone}{1} % p
+  \renewcommand{\vbtwo}{3} % q 
+  \renewcommand{\vbthree}{5} % r 
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{12}
-    \renewcommand{\vbtwo}{29}
+    \renewcommand{\vbone}{6}
+    \renewcommand{\vbtwo}{14}
+    \renewcommand{\vbthree}{21}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{17}
-      \renewcommand{\vbtwo}{44}
+      \renewcommand{\vbone}{20}
+      \renewcommand{\vbtwo}{35}
+      \renewcommand{\vbthree}{42}
     }{
       % variables 
-      \renewcommand{\vbone}{19}
-      \renewcommand{\vbtwo}{25}
+      \renewcommand{\vbone}{5}
+      \renewcommand{\vbtwo}{10}
+      \renewcommand{\vbthree}{14}
     }
   }
 }
 
-\gcalcexpr[0]\tp{\vbone - 1}
-\gcalcexpr[0]\tq{\vbtwo - 1}
-\gcalcexpr[0]\tr{\vbtwo - \vbone}
+\gcalcexpr[0]\tp{\vbone + \vbtwo}
+\gcalcexpr[0]\tq{\vbtwo + \vbthree}
+\gcalcexpr[2]\tr{\tq / \tp}
+\gcalcexpr[0]\ts{(\tr * \vbone + \vbthree) / (\vbtwo - \tr * \vbone)}
 
-\question[3] The first, $\vbone^\text{th}$ and $\vbtwo^\text{th}$ terms of an arithmetic progression are also 
-\textit{successive} terms of a geometric progression. Find the common ratio of the geometric progression
+\question[4] If some \textit{consecutive} coefficients in the expansion of $(1+x)^n$ are in the 
+ratio $\vbone:\vbtwo:\vbthree$, then find $n$
 
-\insertQR[-10pt]{QRC}
+\insertQR[-15pt]{QRC}
 
 \watchout
 
@@ -69,19 +74,17 @@
 \fi 
 
 \begin{solution}[\halfpage]
-	Here is what we know 
+	Let the $(m-1)^{\text{th}}$, $m^{\text{th}}$ and $(m+1)^{\text{th}}$ terms be in the given ratio
 	\begin{align}
-		a &= b \\
-		a + \tp\cdot d &= b\cdot r \\
-		a + \tq\cdot d &= b\cdot r^2 
+		\dfrac{\encr{n}{m-1}}{\encr{n}{m}} &= \dfrac{\vbone}{\vbtwo} \\
+		\Rightarrow \dfrac{\fncr{n}{m-1}}{\fncr{n}{m}} &= \dfrac{\vbone}{\vbtwo} \\
+		\Rightarrow \dfrac{m}{n-m+1} &= \dfrac{\vbone}{\vbtwo} \Rightarrow \tp\cdot m = \vbone\cdot(n+1)
 	\end{align}
-	
-	From this, we can infer 
+	Similarly,
 	\begin{align}
-		(a + \tp\cdot d) - a &= b\cdot r - b = b\cdot(r-1) \\
-		(a + \tq\cdot d) - a &= b\cdot r^2 - b = b\cdot(r^2-1) \\ 
-		&= \underbrace{b\cdot(r-1)}_{\tp\cdot d}\cdot(r+1) \\
-		\Rightarrow \tq\cdot d &= \tp\cdot d \cdot (r + 1) \\ 
-		\Rightarrow r &= \dfrac{\tr}{\tp}
+		\dfrac{\encr{n}{m}}{\encr{n}{m+1}} &= \dfrac{\vbtwo}{\vbthree} \Rightarrow \dfrac{m+1}{n-m} = \dfrac{\vbtwo}{\vbthree} \\
+		\Rightarrow \tq\cdot m &= \vbtwo\cdot n - \vbthree \\
+		\text{And therefore, } \dfrac{\tq\cdot m}{\tp\cdot m} &= \dfrac{\vbtwo\cdot n - \vbthree}{\vbone\cdot(n+1)} \\
+		\Rightarrow n &= \ts
 	\end{align}
 \end{solution}
