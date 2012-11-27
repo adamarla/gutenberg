@@ -8,6 +8,13 @@
 
 \unframedsolutions
 
+% \newif to enable / disable creation of rubric
+% Rubric is for *** graders only *** and is a quick checklist that *complements* the answer key
+\newif\ifprintrubric
+\printrubricfalse
+\newcommand\printrubric\printrubrictrue
+\newcommand\noprintrubric\printrubricfalse
+
 % Commands and counters to make variations of questions 
 \newcounter{rolldice}
 % Commands for variable, well, variables 
@@ -63,6 +70,13 @@
         \end{marginfigure}
       }{}
     \fi 
+}
+
+\newcommand\nextpg{
+  \ifprintanswers
+  \else
+    \newpage
+  \fi
 }
 
 \newcommand{\dydx}{\dfrac{\ud y}{\ud x}}

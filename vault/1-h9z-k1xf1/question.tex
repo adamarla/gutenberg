@@ -1,0 +1,194 @@
+% This is an empty shell file placed for you by the 'examiner' script.
+% You can now fill in the TeX for your question here.
+
+% Now, down to brasstacks. ** Writing good solutions is an Art **. 
+% Eventually, you will find your own style. But here are some thoughts 
+% to get you started: 
+%
+%   1. Write to be understood - but be crisp. Your own solution should not take 
+%      more space than you will give to the student. Hence, if you take more than 
+%      a half-page to write a solution, then give the student a full-page and so on...
+%
+%   2. Use margin-notes to "talk" to students about the critical insights
+%      in the question. The tone can be - in fact, should be - informal
+%
+%   3. Don't shy away from creating margin-figures you think will help
+%      students understand. Yes, it is a little more work per question. 
+%      But the question & solution will be written only once. Make that
+%      attempt at writing a solution count.
+%      
+%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
+% 
+%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
+%      education company. Bad spellings suggest that we ourselves 
+%      don't have any education. Also, use American spellings by default
+% 
+%   5. If a question has multiple parts, then first delete lines 40-41
+%   6. If a question does not have parts, then first delete lines 43-69
+%   
+%   7. Create versions of the question when possible. Use commands defined in 
+%      tufte-tweaks.sty to do so. Its easier than you think
+
+% \noprintanswers
+% \setcounter{rolldice}{2}
+% \printrubric
+
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{\frac{1}{\sqrt{3}}} % tan \vbfour 
+  \renewcommand{\vbtwo}{\sqrt{3}} % 1/ \vbone 
+  \renewcommand{\vbthree}{8\sqrt{3}}
+  \renewcommand{\vbfour}{30} % angle of \perp with x-axis
+  \renewcommand{\vbfive}{4} %m 
+  \renewcommand{\vbsix}{4\sqrt{3}} %n 
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vbone}{\sqrt{3}}
+    \renewcommand{\vbtwo}{\dfrac{1}{\sqrt{3}}}
+    \renewcommand{\vbthree}{\dfrac{8}{\sqrt{3}}}
+    \renewcommand{\vbfour}{60}
+    \renewcommand{\vbfive}{4}
+    \renewcommand{\vbsix}{\frac{4}{\sqrt{3}}}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vbone}{\frac{1}{\sqrt{3}}}
+      \renewcommand{\vbtwo}{\sqrt{3}}
+      \renewcommand{\vbthree}{32\sqrt{3}}
+      \renewcommand{\vbfour}{30} 
+      \renewcommand{\vbfive}{8}
+      \renewcommand{\vbsix}{8\sqrt{3}}
+    }{
+      % variables 
+      \renewcommand{\vbone}{\sqrt{3}}
+      \renewcommand{\vbtwo}{\dfrac{1}{\sqrt{3}}}
+      \renewcommand{\vbthree}{\dfrac{32}{\sqrt{3}}}
+      \renewcommand{\vbfour}{60}
+      \renewcommand{\vbfive}{8}
+      \renewcommand{\vbsix}{\frac{8}{\sqrt{3}}}
+    }
+  }
+}
+
+\question[4] If the perpendicular from the origin to a line $L_1$ makes an angle of $\ang{\vbfour}$ 
+with the $x$-axis and the triangle formed by $L_1$ and the axes has an area of $\vbthree$ units,
+then find the equation of $L_1$
+
+\insertQR{QRC}
+
+\watchout
+
+\ifprintanswers
+	\begin{marginfigure}
+		% 1. Definition of characteristic points
+\figinit{pt}
+\def\Xmin{-13.33333}
+\def\Ymin{-13.33333}
+\def\Xmax{66.66666}
+\def\Ymax{66.66666}
+\def\Xori{13.33333}
+\def\Yori{13.33333}
+\figpt0:(\Xori,\Yori)
+\figpt 100: $M$(66.2,13.8)
+\figpt 101: $N$(13.5,66)
+\figpt 102: $L_1$(80,0)
+\figptorthoprojline 200 :$K$= 0 /100, 101/
+% 2. Creation of the graphical file
+\figdrawbegin{}
+\def\Xmaxx{\Xmax} % To customize the position
+\def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
+\figdrawline [0,200]
+\figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
+\figdrawaxes 0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+\figdrawlineC(
+0 79.99999, % y = 3.75
+2.75862 77.24137, % y = 3.59
+5.51724 74.48275, % y = 3.43
+8.27586 71.72413, % y = 3.28
+11.03448 68.96551, % y = 3.12
+13.79310 66.20689, % y = 2.97
+16.55172 63.44827, % y = 2.81
+19.31034 60.68965, % y = 2.66
+22.06896 57.93103, % y = 2.50
+24.82758 55.17241, % y = 2.35
+27.58620 52.41379, % y = 2.19
+30.34482 49.65517, % y = 2.04
+33.10344 46.89655, % y = 1.88
+35.86206 44.13793, % y = 1.73
+38.62068 41.37931, % y = 1.57
+41.37931 38.62068, % y = 1.42
+44.13793 35.86206, % y = 1.26
+46.89655 33.10344, % y = 1.11
+49.65517 30.34482, % y = .95
+52.41379 27.58620, % y = .80
+55.17241 24.82758, % y = .64
+57.93103 22.06896, % y = .49
+60.68965 19.31034, % y = .33
+63.44827 16.55172, % y = .18
+66.20689 13.79310, % y = .02
+68.96551 11.03448, % y = -.12
+71.72413 8.27586, % y = -.28
+74.48275 5.51724, % y = -.43
+77.24137 2.75862, % y = -.59
+79.99999 0
+)
+\figdrawend
+% 3. Writing text on the figure
+\figvisu{\figBoxA}{}{%
+\figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+% Points 1 and 2 are the end points of the arrows
+\figwritee 1:(5pt)     \figwriten 2:(5pt)
+\figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
+\figwrites 102:(1)
+\figset write(mark=$\bullet$)
+\figwritesw 100:(2)
+\figwritene 101:(2)
+\figwritesw 0:$O$(2)
+\figwritene 200:(2)
+}
+\centerline{\box\figBoxA}
+
+	\end{marginfigure}
+\fi 
+
+\begin{solution}[\halfpage]
+	The situation is \asif. $OK \perp L_1 \Rightarrow$ slope of $L_1 = -\dfrac{1}{\tan\ang{\vbfour}} = -\vbtwo$
+	
+	Now, if $M = (m,0)$ and $N = (0,n)$, then looking at $L_1$
+	\begin{align}
+		\dfrac{n-0}{0-m} &= -\vbtwo \Rightarrow n = \vbtwo m
+	\end{align}
+	Moreover, the area of $\triangle OMN$ is 
+	\begin{align}
+		\dfrac{1}{2}m\cdot n &= \dfrac{1}{2}\vbtwo m\cdot m = \vbthree \\
+		\Rightarrow m &= \pm\vbfive \text{ and } \therefore n = \pm\vbsix
+	\end{align}
+	There would be \textit{two} lines that meet our criterion. And their equations would be 
+	\begin{align}
+		\dfrac{x}{\vbfive} + \dfrac{y}{\vbsix} &= 1 \\
+		\text{ and } -\dfrac{x}{\vbfive} - \dfrac{y}{\vbsix} &= 1
+    \end{align}
+\end{solution}
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+        Slope of $L_1$ & \\
+        Area of $\triangle$ in terms of intercepts & \\
+        Relationship b/w intercepts & \\
+        That there are 2 valid lines & \\
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+        $\ang{30}$ and $8\sqrt{3}$ & $\sqrt{3}x + y \pm 4 = 0$ \\
+        $\ang{60}$ and $\frac{8}{\sqrt{3}}$ & $x + \sqrt{3}y \pm 4 = 0$ \\
+        $\ang{30}$ and $32\sqrt{3}$ & $\sqrt{3}x + y \pm 8 = 0$ \\
+        $\ang{60}$ and $\frac{32}{\sqrt{3}}$ & $x + \sqrt{3}y \pm 8 = 0$ \\
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi
