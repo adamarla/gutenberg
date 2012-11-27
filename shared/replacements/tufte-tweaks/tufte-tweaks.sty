@@ -37,6 +37,14 @@
   \fi
 }
 
+\newcommand{\gsign}[1]{
+  \ifthenelse{#1 > 0}{
+    \ifthenelse{#1 = 1}{+}{+#1}
+  }{
+    \ifthenelse{#1 = -1}{-}{#1}
+  }
+}
+
 \newlength\@tweak@pageheight
 \setlength{\@tweak@pageheight}{\paperheight} 
 \addtolength{\@tweak@pageheight}{-\voffset}
