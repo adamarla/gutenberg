@@ -49,11 +49,15 @@
 
 \newcommand{\gWriteFrac}[2]{ % #1 = num, #2 = denom
   \FRACTIONSIMPLIFY{#1}{#2}\tmp\tmq
-  \ifthenelse{\tmq = -1}{
-    \gcalcexpr[0]\tmp{\tmp * -1}
+  % After simplification, any negative sign is on the numerator only => \tmq > 0
+  \ifthenelse{\tmq = 1}{
     \tmp
-  }{ 
-    \ifthenelse{\tmq = 1}{\tmp}{\frac{\tmp}{\tmq}}
+  }{
+    \ifthenelse{\tmp < 0}{
+      \frac\tmp\tmq
+    }{
+      \frac\tmp\tmq
+    } 
   }
 }
 
@@ -71,7 +75,7 @@
   \COPY\tq{#6}
 }
 
-\newcommand{\gFracMult}[6]{ % #1/#2 x #3/#4 = #5/#6
+\newcommand{\gFracMultiply}[6]{ % #1/#2 x #3/#4 = #5/#6
   \gcalcexpr[0]\tp{#1 * #3}
   \gcalcexpr[0]\tq{#2 * #4}
   \COPY\tp{#5}
