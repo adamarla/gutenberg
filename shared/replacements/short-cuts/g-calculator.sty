@@ -64,40 +64,45 @@
 
 \newcommand\FRACADD\gFracAdd
 \newcommand{\gFracAdd}[6] { % (#1)/(#2) + (#3)/(#4) = #5/#6
-  \gcalcexpr[0]\tp{((#1) * (#4)) + ((#2) * ((#3)))}
-  \gcalcexpr[0]\tq{((#2) * (#4))}
-  \COPY\tp{#5}
-  \COPY\tq{#6}
+  \gcalcexpr[0]\tmp{((#1) * (#4)) + ((#2) * ((#3)))}
+  \gcalcexpr[0]\tmq{((#2) * (#4))}
+  \FRACTIONSIMPLIFY\tmp\tmq\tmr\tms
+  \COPY\tmr{#5}
+  \COPY\tms{#6}
 } 
 
 \newcommand\FRACMINUS\gFracSubtract
 \newcommand{\gFracSubtract}[6]{ % (#1)/(#2) - (#3)/(#4) = #5/#6
-  \gcalcexpr[0]\tp{((#1) * (#4)) - ((#2) * (#3))}
-  \gcalcexpr[0]\tq{((#2) * (#4))}
-  \COPY\tp{#5}
-  \COPY\tq{#6}
+  \gcalcexpr[0]\tmp{((#1) * (#4)) - ((#2) * (#3))}
+  \gcalcexpr[0]\tmq{((#2) * (#4))}
+  \FRACTIONSIMPLIFY\tmp\tmq\tmr\tms
+  \COPY\tmr{#5}
+  \COPY\tms{#6}
 }
 
 \newcommand\FRACMULT\gFracMultiply
 \newcommand{\gFracMultiply}[6]{ % (#1)/(#2) x (#3)/(#4) = #5/#6
-  \gcalcexpr[0]\tp{((#1) * (#3))}
-  \gcalcexpr[0]\tq{((#2) * (#4))}
-  \COPY\tp{#5}
-  \COPY\tq{#6}
+  \gcalcexpr[0]\tmp{((#1) * (#3))}
+  \gcalcexpr[0]\tmq{((#2) * (#4))}
+  \FRACTIONSIMPLIFY\tmp\tmq\tmr\tms
+  \COPY\tmr{#5}
+  \COPY\tms{#6}
 }
 
 \newcommand\FRACDIV\gFracDivide
 \newcommand{\gFracDivide}[6]{ % ((#1)/(#2)) / ((#3)/(#4)) = #5/#6
-  \gcalcexpr[0]\tp{((#1) * (#4))}
-  \gcalcexpr[0]\tq{((#2) * (#3))}
-  \COPY\tp{#5}
-  \COPY\tq{#6}
+  \gcalcexpr[0]\tmp{((#1) * (#4))}
+  \gcalcexpr[0]\tmq{((#2) * (#3))}
+  \FRACTIONSIMPLIFY\tmp\tmq\tmr\tms
+  \COPY\tmr{#5}
+  \COPY\tms{#6}
 }
 
 \newcommand{\FRACL}[6]{ % Calculates (#1)x + (#2) for a fraction (#3)/(#4). Result = #5/#6 ( (#1), (#2) integers )
-  \FRACMULT{(#1)}{1}{(#3)}{(#4)}\tp\tq
-  \FRACADD\tp\tq{(#2)}{1}\tp\tq
-  \COPY\tp{#5}
-  \COPY\tq{#6}
+  \FRACMULT{(#1)}{1}{(#3)}{(#4)}\tmp\tmq
+  \FRACADD\tmp\tmq{(#2)}{1}\tmp\tmq
+  \FRACTIONSIMPLIFY\tmp\tmq\tmr\tms
+  \COPY\tmr{#5}
+  \COPY\tms{#6}
 } 
 
