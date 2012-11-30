@@ -25,6 +25,7 @@ page-1.jpeg : $(Pdf)
 	@for f in `ls page-*.jpeg`; do convert $$f -resize 600x800 $$f ; done 
 ifeq ($(MAKELEVEL),0)
 	@echo "Running atomically"
+	@if [[ ! $$PRODUCTION_SERVER ]] ; then gs $(Pdf) ; fi
 endif
 
 $(Pdf) : $(Ps)
