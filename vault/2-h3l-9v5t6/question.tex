@@ -32,8 +32,8 @@
 
 %\noprintanswers
 
-\question[6] In how many ways can the six faces of a cube be coloured - using six different colours - 
-so that no two cubes that have been coloured differently look the same no matter how you hold them?
+\question[6] In how many ways can the six faces of a cube be numbered - using 1 through 6 
+so that no two cubes that have been numbered differently look the same in any orientation?
 \texttt{Hint:} Unroll the cube and lay its faces flat out on a table
 
 \insertQR[15pt]{QRC}
@@ -80,22 +80,45 @@ so that no two cubes that have been coloured differently look the same no matter
 \fi 
 
 \begin{solution}[\halfpage]
-	Unroll the cube - \asif. Faces $1,2,3$ and $4$ are the vertical faces. The coloured face is the top face
-	
-	Its easiest to first think of the \textit{distinct} permutations in which the vertical faces can be 
-	coloured. And remember, 
-	\begin{itemize}\itemsep0pt
-		\item Because the cube can be held in the hand and rotated, we should be looking 
-		for the number of distinct \textit{circular} permutations possible for faces $1,2,3$ and $4$ \\
-		\item Each face can be the top-, bottom- or some other face - depending on how the cube held. In other words, 
-		each face can be called six different things - even though nothing has changed
-	\end{itemize}		
-	
-	
-	Given the above, we get 
-	\begin{align}
-		N_{\texttt{total}} &= \dfrac{N_{\texttt{sides}} \times N_{\texttt{top-face}}}{6} \\
-		&= \dfrac{1}{6}\cdot\left[ \encr{6}{4}\cdot (4-1)! \times 2 \text{ (remaining colours)}\right] = 30
-	\end{align}
+  First solution: \\
+  A cube without any numbers has no point of reference on it. By picking
+  any number for say the face it is resting on, we give it a point of
+  reference. Let us begin by numbering the bottom face of the cube $1$ 
+  (we can pick any of the numbers and it won't affect the counting). \\
+  By doing this, the \textit{top} face is uniquely identified as the face
+  opposite the bottom, whereas the four side faces are symmetrical.
+  Next let us count the number of ways we can number the top face,
+  \begin{align}
+     N_{top} = 5 \nonumber
+  \end{align}
+  The remaining $4$ numbers would occupy the four vertical faces of the cube.
+  These four faces are in a kind of circular symmetry. For counting the number
+  of ways in which objects can be arranged in a circle, we must begin by 
+  fixing the position of any one object as the reference point.
+  By doing so we reduce a circular permutation to a linear permutation of the
+  remaining objects in the remaining places. Therefore the number of ways we
+  can arrange the remaining 4 numbers on the vertical faces is,
+  \begin{align}
+     N_{vertical} = 3! \nonumber
+  \end{align}
+  Therefore the total number of unique configurations is,
+  \begin{align}
+    N_{unique} &= N_{top} \times N_{vertical} \nonumber \\
+               &= 5 \times 3! = 30 \nonumber 
+  \end{align}
+  Alternate solution:\\
+  Maximum ways in which the cube can be numbered is 
+  \begin{align}
+    N_{maximum} = 6! \nonumber
+  \end{align}
+  Number of orientations possible for any given configuration of the cube,
+  \begin{align}
+    N_{orientations} = 24 \quad\text{(four with each number as top face)} \nonumber
+  \end{align}
+  Therefore factoring those out of the maximum we get,
+  \begin{align}
+    N_{unique} &= \dfrac{N_{maximum}}{N_{orientations}} \nonumber \\
+               &= \dfrac{6!}{24} = 30 \nonumber
+  \end{align}   
 \end{solution}
 
