@@ -30,6 +30,8 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
+\printrubric
+
 \question[4] Find an expression for the sum of the first $n$ terms of the series 
 $\dfrac{1}{1\cdot 2\cdot 3} + \dfrac{1}{2\cdot 3\cdot 4} + \dfrac{1}{3\cdot 4\cdot 5} + \ldots$
 
@@ -60,3 +62,20 @@ $\dfrac{1}{1\cdot 2\cdot 3} + \dfrac{1}{2\cdot 3\cdot 4} + \dfrac{1}{3\cdot 4\cd
 	\end{align}
 	\end{fullwidth}
 \end{solution}
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+        $a_n = \dfrac{1}{n\cdot(n+1)\cdot(n+2)}$ & \\
+        Break expression into partial sums & \\ 
+        Middle terms cancel out & \\
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi
