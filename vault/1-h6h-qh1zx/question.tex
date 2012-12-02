@@ -31,7 +31,8 @@
 %   7. If a question does not have parts, then first delete lines 43-69
 
 
-%\setcounter{rolldice}{3}
+%\printrubric
+%\setcounter{rolldice}{2}
 %\noprintanswers
 
 \ifnumequal{\value{rolldice}}{0}{
@@ -92,6 +93,27 @@
 		&= 1 + \sum_{k=0}^{\infty}\dfrac{\vbtwo }{\vbone^{k+1}} \\
 		&= 1 + \vbtwo\cdot\left( \dfrac{1}{\vbone} + \dfrac{1}{\vbone^2} + \dfrac{1}{\vbone^3}\ldots \right) \\
 		&= 1 + \vbtwo\cdot\dfrac{\frac{1}{\vbone}}{1-\frac{1}{\vbone}} = 1 + \dfrac{\vbtwo}{\tp } = \dfrac{\tq}{\tp } \\
-		\Rightarrow S &= \dfrac{\vbone}{\tp }\cdot\dfrac{\tq}{\tp } = \dfrac{\tr}{\ts}
+		\Rightarrow S &= \dfrac{\vbone}{\tp }\cdot\dfrac{\tq}{\tp } = \WRITEFRAC{\tr}{\ts}
 	\end{align}
 \end{solution}
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+        Divide original expression of sum to get a new series & \\
+        Subtract the new series from the original & \\
+        Resulting series is reduceable & \\
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+        $S = 1 + \frac{4}{5} + \frac{7}{5^2}\ldots$ & $35/16$ \\
+        $S = 1 + \frac{3}{7} + \frac{5}{7^2}\ldots$ & $14/9$ \\
+        $S = 1 + \frac{5}{9} + \frac{9}{9^2}\ldots$ & $27/16$ \\
+        $S = 1 + \frac{6}{9} + \frac{11}{9^2}\ldots$ & $117/64$ \\
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi
