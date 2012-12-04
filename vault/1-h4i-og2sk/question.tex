@@ -30,10 +30,45 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question[3] Find three numbers in geometric progression whose sum is $52$ and the
-sum of whose products - taken in pairs - is $624$
+%\noprintanswers
+% \setcounter{rolldice}{3}
+% \printrubric
 
-\insertQR{QRC}
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{52}
+  \renewcommand{\vbtwo}{624}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vbone}{38}
+    \renewcommand{\vbtwo}{456}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vbone}{37}
+      \renewcommand{\vbtwo}{444}
+    }{
+      % variables 
+      \renewcommand{\vbone}{42}
+      \renewcommand{\vbtwo}{336}
+    }
+  }
+}
+
+\DIVIDE\vbtwo\vbone\vbthree
+\SQUARE\vbone\tp
+\SUBTRACT\vbtwo\tp\tq
+\FRACTIONSIMPLIFY\tq\vbtwo\tr\ts
+\QUADEQNROOTS\ts\tr\ts\dnm\fnm\snm
+\FRACDIV{\vbthree}{1}\fnm\dnm\anm\adnm
+\FRACMULT{\vbthree}{1}\fnm\dnm\bnm\bdnm
+
+\question[3] Find three numbers in geometric progression whose sum is $\vbone$ and the
+sum of whose products - taken in pairs - is $\vbtwo$
+
+\insertQR[-15pt]{QRC}
+\watchout
 
 \ifprintanswers
 \fi 
@@ -41,15 +76,37 @@ sum of whose products - taken in pairs - is $624$
 \begin{solution}[\halfpage]
 	Let the three numbers be $\dfrac{a}{r}$, $a$ and $ar$
 	\begin{align}
-		\dfrac{a}{r} + a + ar &= 52 \\
+		\dfrac{a}{r} + a + ar &= \vbone \\
 		\text{And, } \left( \dfrac{a}{r}\cdot a\right) + \left( a\cdot ar\right) + 
-		\left( \dfrac{a}{r}\cdot ar\right) &= 624 \\
+		\left( \dfrac{a}{r}\cdot ar\right) &= \vbtwo \\
 		\Rightarrow \dfrac{a^2\cdot\left( \frac{1}{r} + r + 1 \right)}{a\cdot\left( \frac{1}{r} + r + 1\right)}
-		&= \dfrac{624}{52} \Rightarrow a = 12 \\
-		\text{Hence, } 12\cdot\left( \dfrac{1}{r} + r + 1 \right) &= 52 \Rightarrow 3r^2-10r + 3 = 0 \\
-		\Rightarrow r = \frac{1}{3}, 3
+		&= \dfrac{\vbtwo}{\vbone} \Rightarrow a = \vbthree \\
+		\text{Hence, } \vbthree\cdot\left( \dfrac{1}{r} + r + 1 \right) &= \vbone 
+    \Rightarrow \ts r^2\gsign\tr r + \ts = 0 \\
+    \Rightarrow r &= \WRITEFRAC\fnm\dnm,\,\WRITEFRAC\snm\dnm
 	\end{align}
 	
-	Hence, the three numbers are either $(36,12,4)$ if $r=\frac{1}{3}$ or $(4,12,36)$ if $r=3$
+	Hence, the three numbers are either 
+    $\left( \WRITEFRAC\anm\adnm, \vbthree, \WRITEFRAC\bnm\bdnm \right)$ if $r=\WRITEFRAC\fnm\dnm$ or 
+    $\left( \WRITEFRAC\bnm\bdnm, \vbthree, \WRITEFRAC\anm\adnm \right)$ if $r=\WRITEFRAC\snm\dnm$
 \end{solution}
 
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+        Divide the given sums to get first term - $a$ & Sums expressed properly \\
+         & A quadratic equation formed - and then solved - properly \\ 
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+        $(52,624)$ & $(36,12,4)$ \\
+        $(38,456)$ & $(18,12,8)$ \\
+        $(37,444)$ & $(16,12,9)$ \\
+        $(42,336)$ & $(32,8,2)$ \\
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi
