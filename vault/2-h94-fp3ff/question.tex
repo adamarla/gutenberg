@@ -86,59 +86,141 @@
   }
 }
 
-\question
+\question The figure alongside shows the graph of $f'$, the derivative of a
+function $f$. The domain of $f$ is the set of all Real numbers $x$ such that
+$-3<x<5$.
 
-\insertQR{}
-
-\watchout
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
+  \begin{marginfigure}[-40pt]
     \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
+      \figpt 10:(0,0)
+      \figpt 15:(-35,10)
+      \figpt 20:(-30,10)
+      \figpt 30:(-20,0)
+      \figpt 40:(-10,-20)
+      \figpt 50:(0,-10)
+      \figpt 60:(10,0)
+      \figpt 61:(12,-1)
+      \figpt 70:(30,-30)
+      \figpt 80:(40,0)
+      \figpt 90:(50,10)
+      \figpt 95:(55,10)
+      % extremeties
+      \def\Xmax{60}
+      \def\Ymax{40}
+      \def\Xmin{-60}
+      \def\Ymin{-40}
+      % pts for numbering the axes (5, 10, 15...)
+      \figpt 201:$\tiny\text{-3}$(-30,0)
+      \figpt 202:$\tiny\text{-2}$(-20,0)
+      \figpt 203:$\tiny\text{-1}$(-10,0)
+      \figpt 204:$\tiny\text{O}$(0,0)
+      \figpt 205:$\tiny\text{1}$(10,0)
+      \figpt 206:$\tiny\text{2}$(20,0)
+      \figpt 207:$\tiny\text{3}$(30,0)
+      \figpt 208:$\tiny\text{4}$(40,0)
+      \figpt 209:$\tiny\text{5}$(50,0)
+      % label graph
+      \figpt 100:(60,0)
+      \figpt 101:(0,40)
+      \figpt 102:(0,-60)
     \figdrawbegin{}
-      \figdrawline [100,101]
+      \figdrawcurve [15,20,30,40,50,61,70,80,90,95]
+      \figset arrowhead(length=4, fillmode=yes)
+      \figdrawaxes 10(\Xmin, \Xmax, \Ymin, \Ymax)
+      \figset(dash=5)
+      \figdrawline [201,20]
+      \figdrawline [203,40]
+      \figdrawline [207,70]
+      \figdrawline [209,90]
     \figdrawend
     \figvisu{\figBoxA}{}{%
+      \figwritee 100:$\text{x}$(2pt)
+      \figwriten 101:$\text{f'(x)}$(2pt)
+      \figwrites 201,202,203,204,205,206,207,208,209 :(2pt)
+      \figwritec[102] {\textit{y = f'(x)}}
+    }
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
+\ifprintanswers
+  % stuff to be shown only in the answer key - like explanatory margin figures
+  \begin{marginfigure}[200pt]
+    \figinit{pt}
+      \figpt 0:(0,0)
+      \figpt 50:(20,20)%arc center      
+      \figpt 60:(20,-20)%arc center      
+      % extremeties
+      \def\Xmax{50}
+      \def\Ymax{30}
+      \def\Xmin{-10}
+      \def\Ymin{-25}
+      % pts for numbering the axes (5, 10, 15...)
+      \figpt 204:$\tiny\text{0}$(0,0)
+      \figpt 205:$\tiny\text{1}$(20,0)
+      \figpt 206:$\tiny\text{2}$(40,0)
+      % label graph
+      \figpt 100:(\Xmax,0)
+      \figpt 101:(0,\Ymax)
+      \figpt 102:(0,-40)
+    \figdrawbegin{}
+      \figdrawarccirc 50 ; 20 (180,270)
+      \figdrawarccirc 60 ; 20 (0,90)
+      \figset arrowhead(length=4, fillmode=yes)
+      \figdrawaxes 0(\Xmin, \Xmax, \Ymin, \Ymax)
+    \figdrawend
+    \figvisu{\figBoxA}{}{%
+      \figwritee 100:$\text{x}$(2pt)
+      \figwriten 101:$\text{f(x)}$(2pt)
+      \figwritese 204,205,206 :(2pt)
+      \figwritec[102] {\textit{y = f(x)}}
     }
     \centerline{\box\figBoxA}
   \end{marginfigure}
 \fi 
 
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part For what values of $x$ does $f$ have a relative maximum? Why?
 
-  \insertQR{}
+  \insertQR[-40pt]{}
   \begin{solution}
+    For a function to have a relative maximum, it's first derivative must go
+    from positive to negative. In this case $f'(x)$ goes from positive to 
+    negative at $x=-2$. \\
+    This means the function $f$ is increasing to the left of $x=-2$ and 
+    decreasing to the right of $x=-2$.
   \end{solution}
 
-  \part 
+  \part For what values of $x$ does $f$ have a relative minimum? Why?
 
   \insertQR{}
   \begin{solution}
+    Similar logic. A relative minimum occurs when the first derivative goes from
+    negative to positive. In this case $f'(x)$ goes from negative to positive
+    at $x=4$.
+    Therefore function $f$ is decreasing to the left of $x=4$ and increasing
+    to the right of $x=4$.
   \end{solution}
 
-  \part 
+  \part On what intervals is the graph of $f$ concave upwards. Use $f'$ to
+  justify your answer.
 
   \insertQR{}
   \begin{solution}
+    For the function $f$ to concave upwards, it's first derivative (or rate of 
+    change) must be increasing. In the given graph $f'$ is increasing in the
+    intervals $(-1,1)$ and $(3,5)$.
   \end{solution}
 
-  \part 
+  \part Suppose that $f(1)=0$. Draw a sketch that shows the general shape of the
+  graph of the function $f$ on the open interval $0<x<2$.
 
   \insertQR{}
   \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
+    See adjacent figure. The first derivative of $f$ is negative but increasing
+    from $0$ to $1$. This means $f$ is concave but with decreasing concavity. 
+    Following this is a point of inflection at $x=1$ where $f'$ is zero after
+    which it continues to be negative which means the slope of $f$ is still
+    negative but this time it is decreasing due to which $f$ is decreasing at 
+    an ever greater rate as $x$ increases.
   \end{solution}
 
 \end{parts}
