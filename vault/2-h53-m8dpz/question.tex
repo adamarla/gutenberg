@@ -29,26 +29,32 @@
 %   7. Create versions of the question when possible. Use commands defined in 
 %      tufte-tweaks.sty to do so. Its easier than you think
 
+%\printrubric
 % \noprintanswers
-% \setcounter{rolldice}{0}
+%\setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{+}
+  \renewcommand{\vbone}{2}
+  \renewcommand{\vbtwo}{-3}
   \renewcommand{\vbthree}{3}
-  \renewcommand{\vbfour}{2}
+  \renewcommand{\vbfour}{4}
   \renewcommand{\vbfive}{-3}
   \renewcommand{\vbsix}{1}
+  \renewcommand{\vbseven}{5}
+  \renewcommand{\vbeight}{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{2}
-    \renewcommand{\vbtwo}{-}
-    \renewcommand{\vbthree}{3}
-    \renewcommand{\vbfour}{3}
-    \renewcommand{\vbfive}{-5}
-    \renewcommand{\vbsix}{1}
+    \renewcommand{\vbone}{3}
+    \renewcommand{\vbtwo}{2}
+    \renewcommand{\vbthree}{2}
+    \renewcommand{\vbfour}{7}
+    \renewcommand{\vbfive}{2}
+    \renewcommand{\vbsix}{9}
+    \renewcommand{\vbsix}{-5}
+    \renewcommand{\vbseven}{-4}
+    \renewcommand{\vbeight}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
@@ -58,57 +64,85 @@
       \renewcommand{\vbfour}{8}
       \renewcommand{\vbfive}{-15}
       \renewcommand{\vbsix}{1}
+      \renewcommand{\vbseven}{-3}
+      \renewcommand{\vbeight}{3}
     }{
       % variables 
-      \renewcommand{\vbone}{-}
-      \renewcommand{\vbtwo}{+5}
-      \renewcommand{\vbthree}{3}
-      \renewcommand{\vbfour}{6}
-      \renewcommand{\vbfive}{-11}
+      \renewcommand{\vbone}{2}
+      \renewcommand{\vbtwo}{8}
+      \renewcommand{\vbthree}{5}
+      \renewcommand{\vbfour}{3}
+      \renewcommand{\vbfive}{7}
       \renewcommand{\vbsix}{1}
+      \renewcommand{\vbseven}{4}
+      \renewcommand{\vbeight}{3}
     }
   }
 }
 
-\question[2] The straight line $bx-ay = ab$ passes through the intersection of the lines $\vbone x \vbtwo y =\vbthree$ and $\vbfour x\vbfive y =\vbsix$ 
-and is parallel to the line $y=x-6$. Find $a$ and $b$.
+\FRACMINUS\vbfour\vbfive\vbone\vbtwo\tp\tq
+\FRACMINUS\vbsix\vbfive\vbthree\vbtwo\tr\ts
+\FRACDIV\tr\ts\tp\tq\ixn\ixd % x-intersect 
+\FRACL{-\vbone}{\vbthree}\ixn\ixd\iyn\iyd
+\FRACDIV\iyn\iyd\vbtwo{1}\iyn\iyd
+\MULTIPLY\ixn\iyd\tp
+\MULTIPLY{\ixd}\iyn\tq
+\MULTIPLY\ixd\iyd\tr
+\MULTIPLY\vbseven\tp\ga
+\MULTIPLY\tr\vbseven\gb
+\SUBTRACT\ga\tq\aq
+\FRACDIV\vbseven{1}\aq\gb\bq\cq
+
+
+\question[2] If the straight line $L_1: bx - ay = ab$ passes through the point of intersection of 
+$L_2: \gsign\vbone x \gsign\vbtwo y = \vbthree$ and $L_3: \gsign\vbfour x \gsign\vbfive y = \vbsix$ 
+\textit{and} is parallel to $L_4: y = \gsign\vbseven x - \vbeight$, then find $a$ and $b$
 
 \insertQR{QRC}
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
-
 \begin{solution}[\halfpage]
-  Slope of line equals $1$, therefore
-  \begin{align}
-               ay &= bx-ab 				\nonumber \\
-  	\Rightarrow y &= \dfrac{b}{a}x - 1  \nonumber \\
-  	\Rightarrow b &= a
-  \end{align}
-  Intersection point through which the line passes is,
-  \begin{align}  
-    2(3-y) - 3y   &= 1 \nonumber \\    			
-    \Rightarrow y &= 1\text{, }x = 2 
-  \end{align}
-  Using (1) and (2) we get,
-  \begin{align}
-    a2-a1=a^2 \nonumber \\
-    a=b=1 \nonumber
-  \end{align}
+	\begin{align}
+		bx - ay &= ab \Rightarrow y = \dfrac{b}{a}x -b \\
+		\text{And }\therefore L_1 \parallel L_4 &\Rightarrow \dfrac{b}{a} = \vbseven 
+	\end{align}
+	Now, $L_2$ and $L_3$ intersect when 
+	\begin{align}
+		y &= \underbrace{\WRITEFRAC{-\vbone}\vbtwo x  + \WRITEFRAC\vbthree\vbtwo}_{L_2} 
+		 = \underbrace{\WRITEFRAC{-\vbfour}\vbfive x + \WRITEFRAC\vbsix\vbfive}_{L_3} \\
+		 \Rightarrow x &= \WRITEFRAC\ixn\ixd \text{ and } y = \WRITEFRAC\iyn\iyd
+	\end{align}
+	And as $L_1$ passes through this point of intersection 
+	$ = M\left( \WRITEFRAC\ixn\ixd,\,\WRITEFRAC\iyn\iyd\right)$, 
+	\begin{align}
+		\left(\WRITEFRAC\ixn\ixd b\right) - \left( \WRITEFRAC\iyn\iyd a \right)&= ab \\
+		\Rightarrow (\tp b) - (\tq a) &= \gsign\tr ab \\
+		\text{And given that } \dfrac{b}{a} &= \vbseven, \text{ the above becomes } \\
+		(\ga a) - (\tq a) &= (\gb a^2) \Rightarrow a = \WRITEFRAC\aq\gb \\
+		\therefore b &= \frac{\vbseven}{a} = \WRITEFRAC\bq\cq
+	\end{align}
 \end{solution}
 
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+        $\frac{b}{a} = $ slope of $L_4$ & Correctly finds intersection of $L_2$ and $L_3$ \\
+         & Uses slope of $L_4$ to find $a$ and $b$ \\
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+        $L_4: 5x- 8$ & $a=-\frac{2}{3}$ and $b = -\frac{15}{2}$ \\ 
+        $L_4: -4x-3$ & $a= -\frac{27}{32}$ and $b = \frac{128}{27}$ \\ 
+        $L_4: -3x-3$ & $a=\frac{7}{3}$ and $b = -\frac{9}{7}$ \\ 
+        $L_4: 4x-3$ & $a=-\frac{121}{40}$ and $b = -\frac{160}{121}$ \\ 
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi
