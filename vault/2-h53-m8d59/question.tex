@@ -29,98 +29,108 @@
 %   7. Create versions of the question when possible. Use commands defined in 
 %      tufte-tweaks.sty to do so. Its easier than you think
 
-% \noprintanswers
-% \setcounter{rolldice}{0}
+%\noprintanswers
+%\setcounter{rolldice}{1}
+%\printrubric
+
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
   \renewcommand{\vbone}{-1}
   \renewcommand{\vbtwo}{2}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{+}
+  \renewcommand{\vbthree}{1}
+  \renewcommand{\vbfour}{1}
   \renewcommand{\vbfive}{15}
   \renewcommand{\vbsix}{6}
   \renewcommand{\vbseven}{-8}
-  \renewcommand{\vbeight}{+11}
+  \renewcommand{\vbeight}{11}
+  \renewcommand{\vbnine}{10}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{2}
-    \renewcommand{\vbtwo}{0}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{+}
+    \renewcommand{\vbone}{-31}
+    \renewcommand{\vbtwo}{-44}
+    \renewcommand{\vbthree}{1}
+    \renewcommand{\vbfour}{-1}
     \renewcommand{\vbfive}{15}
     \renewcommand{\vbsix}{8}
     \renewcommand{\vbseven}{-6}
-    \renewcommand{\vbeight}{+13}
+    \renewcommand{\vbeight}{13}
+    \renewcommand{\vbnine}{10}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
       \renewcommand{\vbone}{7}
       \renewcommand{\vbtwo}{2}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{-}
+      \renewcommand{\vbthree}{1}
+      \renewcommand{\vbfour}{-1}
       \renewcommand{\vbfive}{-9}
       \renewcommand{\vbsix}{3}
-      \renewcommand{\vbseven}{+4}
-      \renewcommand{\vbeight}{+11}
+      \renewcommand{\vbseven}{4}
+      \renewcommand{\vbeight}{11}
+      \renewcommand{\vbnine}{10}
     }{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{0}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{-}
+      \renewcommand{\vbone}{39}
+      \renewcommand{\vbtwo}{50}
+      \renewcommand{\vbthree}{1}
+      \renewcommand{\vbfour}{-1}
       \renewcommand{\vbfive}{-9}
       \renewcommand{\vbsix}{4}
       \renewcommand{\vbseven}{-3}
-      \renewcommand{\vbeight}{+13}
+      \renewcommand{\vbeight}{13}
+      \renewcommand{\vbnine}{10}
     }
   }
 }
 
-\question Find the distance of the point $(\vbone, \vbtwo)$ from the line 
-$\vbthree x \vbfour y = \vbfive$ measured parallel to the line 
-$\vbsix x \vbseven y \vbeight = 0$.
+\FRACTIONSIMPLIFY{-\vbsix}\vbseven\n\d
+\gcalcexpr[0]\c{(\n * \vbone) - (\d * \vbtwo)}
+\SOLVELINEARSYSTEM(\vbthree,\vbfour ; \n, -\d)(\vbfive,\c)(\p,\q)
 
+\question Find the distance of the point $A = (\vbone, \vbtwo)$ from the line 
+$L_1: \gsign\vbthree x \gsign\vbfour y = \vbfive$ measured parallel to the line 
+$L_2: \gsign\vbsix x \gsign\vbseven y \gsign\vbeight = 0$.
 
-\insertQR{QRC}
+\insertQR[-10pt]{QRC}
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}[\halfpage]
-  Let the point from which distance is to be measured be $x_{1}$, $y_{1}$.
-  Since this point lies on the line $\vbthree x + \vbfour y = \vbfive$, it 
-  must satisfy its equation. Therefore,
+   There is a point - lets say $B$ - on $L_1$ that when joined with $A$ forms a line parallel to $L_2$. 
+   We need to find the distance between $A$ and $B$. Simple $\ldots$
+  
+  Now, the point $B = (m,n)$ satisfies the following two conditions
   \begin{align}
-  	\vbthree x_{1} + \vbfour y_{1} = \vbfive  	
-  \end{align}  
-  Since the line connecting the two points is parallel to, $\vbsix x 
-  \vbseven y + \vbeight = 0$, its slope must be the same. Therefore,
-  \begin{align}
-  	\dfrac{y_{1}-(\vbtwo)}{x_{1}-(\vbone)} = \dfrac{3}{4}
+  	\gsign\vbthree m \gsign\vbfour n &= \vbfive \because \text{ its on } L_1 \\
+  	\dfrac{\vbtwo - n}{\vbone - m} &= \dfrac{\n}{\d} \because AB \parallel L_2 \\
+  	\Rightarrow \n m - \d n &= \c
   \end{align}
-  Solving for $x_{1}$ and $y_{1}$ using (1) and (2) we get,
+  Solving (1) and (3), we get $B = (m,n) = (\p,\q)$. Now we know everything to calculate the distance 
+  between $A$ and $B$
   \begin{align}
-  	x_{1} = 7 \text{,} y_{1} = 8 \nonumber
-  \end{align}
-  Therefore distance between the two points as calculated using
-  distance formula equals,
-  \begin{align}
-  	\text{D} &= \sqrt{(8-2)^2+(7-(-1))^2} \nonumber \\
-  			 &= 100 \nonumber
+    D &= \sqrt{(\p - \vbone)^2 + (\q - \vbtwo)^2} = \vbnine
   \end{align}
 \end{solution}
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+        There is a pt $B$ on $L_1$ such that $AB \parallel L_2$ & \\
+        Slope of $AB = $ slope of $L_2$ & \\
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+        $A = (-1,2)$ & $10$\\
+        $A = (-31,-44)$ & $10$\\
+        $A = (7,2)$ & $10$\\
+        $A = (39,50)$ & $10$\\
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi
