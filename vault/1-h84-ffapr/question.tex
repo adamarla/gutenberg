@@ -29,8 +29,9 @@
 %   7. Create versions of the question when possible. Use commands defined in 
 %      tufte-tweaks.sty to do so. Its easier than you think
 
-% \noprintanswers
-% \setcounter{rolldice}{3}
+%\noprintanswers
+%\setcounter{rolldice}{3}
+%\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -45,9 +46,9 @@
     % variables 
     \renewcommand{\vbone}{2}
     \renewcommand{\vbtwo}{6}
-    \renewcommand{\vbthree}{5}
-    \renewcommand{\vbfour}{12}
-    \renewcommand{\vbfive}{26}
+    \renewcommand{\vbthree}{3}
+    \renewcommand{\vbfour}{4}
+    \renewcommand{\vbfive}{15}
     \renewcommand{\vbeight}{2}
     }{
     \ifnumequal{\value{rolldice}}{2}{
@@ -70,12 +71,26 @@
   }
 }
 
-\renewcommand{\vbsix}{\dfrac{\vbthree}{\vbfour}}
-\gcalcexpr[0]{\vbseven}{(3*\vbfour - \vbthree)*\vbone}
-\gcalcexpr[0]{\vbnine}{(\vbfive / \vbeight) + \vbone}
-\gcalcexpr[0]{\vbten}{\vbone - (\vbfive / \vbeight)}
+\FRACMULT\vbthree\vbfour\vbone{1}\p\q
+\FRACMINUS\vbtwo{1}\p\q\n\m
+\SQUARE\vbfour\a
+\SQUARE\vbfive\b
+\SQUARE\vbthree\c
+\MULTIPLY\a\b\d
+\ADD\a\c\e
+\DIVIDE\d\e\f
+\SQUAREROOT\f\g
+\SUBTRACT\vbone\g\h
+\ADD\vbone\g\j
 
-\question[4] If a line that passes through a point $A = (\vbone, \vbtwo)$ has slope equal to $\vbsix$, then 
+\FRACMULT\vbthree\vbfour\h{1}\k\l
+\FRACMULT\vbthree\vbfour\j{1}\y\z
+\FRACADD\k\l\n\m\aa\ab
+\FRACADD\y\z\n\m\ba\bb
+
+\renewcommand{\vbsix}{\dfrac{\vbthree}{\vbfour}}
+
+\question[4] If a line that passes through a point $A = (\vbone, \vbtwo)$ has slope equal to $\dfrac\vbthree\vbfour$, then 
 find the points on it that are $\vbfive$ units away from $A$
 
 \insertQR{QRC}
@@ -86,9 +101,9 @@ find the points on it that are $\vbfive$ units away from $A$
 \fi 
 
 \begin{solution}[\halfpage]
-	The equation of the given line would be
+	The equation of the given line would be 
 	\begin{align}
-		\dfrac{y-\vbtwo}{x-\vbone} &= \vbsix \Rightarrow y = \vbsix\cdot x + \dfrac{\vbseven}{\vbfour}
+		\dfrac{y-\vbtwo}{x-\vbone} &= \vbsix \Rightarrow y = \dfrac\vbthree\vbfour\cdot x + \WRITEFRAC\n\m
 	\end{align}
 	Moreover, any point that is $\vbfive$ units away from $A$ would satisy 
 	the following condition 
@@ -97,16 +112,34 @@ find the points on it that are $\vbfive$ units away from $A$
 	\end{align}
 	And if this point also happens to be on the line, then 
 	\begin{align}
-		(x-\vbone)^2 + \left[ \left( \vbsix\cdot x + \dfrac{\vbseven}{\vbfour}\right) - \vbtwo \right]^2 &= \vbfive^2 \\
+		(x-\vbone)^2 + \left[ \left( \vbsix\cdot x + \dfrac\n\m\right) - \vbtwo \right]^2 &= \vbfive^2 \\
 		\Rightarrow (x - \vbone)^2\cdot\left[ 1 + \left( \vbsix \right)^2\right] &= \vbfive^2 \\
-		\Rightarrow x - \vbone &= \pm\dfrac{\vbfive}{\vbeight} \\
-		\text{ or } x &= \vbnine, \vbten
+    \Rightarrow (x - \vbone)^2 &= \f  \\ 
+    \Rightarrow x &=  \h,\,\j
 	\end{align}
 	
-	\gcalcexpr{\vbfive}{\vbthree / \vbfour} % slope 
-	\gcalcexpr[2]{\vbtwo}{(\vbfive * \vbnine) + (3-\vbfive)*\vbone} % y_1
-    \gcalcexpr[2]{\vbthree}{(\vbfive * \vbten) + (3-\vbfive)*\vbone} % y_2
     
-    Plug these values of $x$ into the equation for the line - $(1)$ - and you will 
-    get the required coordinates -  $(\vbnine, \vbtwo)$ and $(\vbten, \vbthree)$
+  Plug these values of $x$ into the equation for the line - $(1)$ - and you will 
+  get the required coordinates -  $(\h,\WRITEFRAC\aa\ab)$ and $(\j,\WRITEFRAC\ba\bb)$
 \end{solution}
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+        There are two(2) points - one each on either side of the line & 
+        Inferred equation of line passing through given point \\
+        & Used formula for distance between points \\
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+        $A = (1,3)$, 5 units & $(-3,0)$ and $(5,6)$ \\
+        $A = (2,6)$, 10 units & $(-4,-2)$ and $(8,14)$ \\
+        $A = (2,6)$, 15 units  & $(-10,-3)$ and $(14,15)$ \\
+        $A = (1,3)$, 13 units & $(-4,-9)$ and $(6,15)$ \\
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi
