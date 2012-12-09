@@ -29,8 +29,9 @@
 %   7. Create versions of the question when possible. Use commands defined in 
 %      tufte-tweaks.sty to do so. Its easier than you think
 
- %\noprintanswers
- %\setcounter{rolldice}{3}
+%\printrubric
+%\noprintanswers
+%\setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -93,3 +94,22 @@ and at a distance of $\vbfour$ units from it
 	
 	Hence, the two lines are $\vbone x - \vbtwo y + \vbseven = 0$ and $\vbone x - \vbtwo y + \vbeight = 0$
 \end{solution}
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+        Two lines satisfy the condition & Used formula for distance b/w parallel lines \\
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+        $5x - 12y + 26 = 0$ & $5x - 12y - 26 = 0$ and $5x - 12y + 78 = 0$ \\
+        $6x - 8y + 11 = 0$ & $6x - 8y - 49 = 0$ and $6x - 8y + 71 = 0$ \\
+        $3x - 4y + 12 = 0$ & $3x - 4y-18 =0$ and $3x - 4y+42 = 0$ \\
+        $12x - 5y + 14 = 0$ & $12x - 5y - 77 = 0$ and $12x - 5y + 105 = 0$ \\
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi
