@@ -45,6 +45,14 @@
   }
 }
 
+\newcommand{\invgsign}[1]{
+  \ifthenelse{#1 > 0}{
+    \ifthenelse{#1 = 1}{-}{-#1}
+  }{
+    \ifthenelse{#1 = -1}{+}{-\left( #1 \right)}
+  }
+}
+
 \newlength\@tweak@pageheight
 \setlength{\@tweak@pageheight}{\paperheight} 
 \addtolength{\@tweak@pageheight}{-\voffset}
