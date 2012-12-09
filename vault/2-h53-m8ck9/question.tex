@@ -31,7 +31,7 @@
 
 %\printrubric
 %\noprintanswers
-%\setcounter{rolldice}{0}
+%\setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -79,7 +79,7 @@
 \SUBTRACT\vbtwo\rb\n
 \SUBTRACT\vbone\ra\d
 \FRACTIONSIMPLIFY\n\d\an\ad
-\gcalcexpr[0]\c{(\n * \vbone) - (\d * \vbtwo)}
+\gcalcexpr[0]\c{(\an * \vbone) - (\ad * \vbtwo)}
 
 
 \question[4] The segment of a line between two other lines $L_1 = \vbthree x - y + \vbfive = 0$ and $L_2 = \vbfour x -y + \vbsix = 0$ is bisected at the point $(\vbone, \vbtwo)$. Find the equation of the line
@@ -111,7 +111,7 @@
 	And a line that passes through both $(\vbone, \vbtwo)$ and $(\ra,\rb)$ has the equation
 	\begin{align}
 		\dfrac{y - \vbtwo}{x - \vbone} &= \WRITEFRAC\n\d \\ 
-		\Rightarrow \ad y &= \an x - \c 
+		\Rightarrow \ad y &= \an x \invgsign\c 
 	\end{align}
 \end{solution}
 
@@ -126,10 +126,10 @@
   		\toprule % final numerical answers for the various versions
         \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
   		\midrule % ***** Numerical answers (below) **********
-        $(1,5)$ & $y = 3x - 2$ \\
-        $(2,5)$ & $2y = 7x + 24$ \\
-        $(4,7)$ & $3y = 4x - 10$\\
-        $(3,-5)$ & $ 41y = 100x + 505$\\
+        $(1,5)$ & $y = 3x + 2$ \\
+        $(2,5)$ & $2y = 7x - 4$ \\
+        $(4,7)$ & $3y = 4x + 5$\\
+        $(3,-5)$ & $ 41y = 100x - 505$\\
   		\bottomrule
   	\end{tabular}
   \end{table}
