@@ -31,69 +31,148 @@
 
  %\noprintanswers
  %\setcounter{rolldice}{0}
+ %\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{2}
-  \renewcommand{\vbtwo}{3}
-  \renewcommand{\vbfour}{3}
+  \renewcommand{\vbone}{2}   %y = 2
+  \renewcommand{\vbtwo}{1}    %coeff x
+  \renewcommand{\vbthree}{-4}%coeff y
+  \renewcommand{\vbfour}{-4}  %coeff const
+  \renewcommand{\vbfive}{4}  %4sqrt(2) dist
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{3} % passing - x
-    \renewcommand{\vbtwo}{4} % passing - y
-    \renewcommand{\vbfour}{3} % distance
+    \renewcommand{\vbone}{1} 
+    \renewcommand{\vbtwo}{2} 
+    \renewcommand{\vbthree}{-3}
+    \renewcommand{\vbfour}{3} 
+    \renewcommand{\vbfive}{3} 
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
       \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{7}
-      \renewcommand{\vbfour}{4} % k
+      \renewcommand{\vbtwo}{3}
+      \renewcommand{\vbthree}{-2}
+      \renewcommand{\vbfour}{-2}
+      \renewcommand{\vbfive}{4}
     }{
       % variables 
-      \renewcommand{\vbone}{1}
+      \renewcommand{\vbone}{3}
       \renewcommand{\vbtwo}{2}
-      \renewcommand{\vbfour}{2}
+      \renewcommand{\vbthree}{-1}
+      \renewcommand{\vbfour}{-1}
+      \renewcommand{\vbfive}{3}
      }
   }
 }
 
-\gcalcexpr[0]{\vbthree}{(\vbone + \vbtwo) / (2-\vbtwo + \vbone)}
-\gcalcexpr[0]{\vbseven}{(\vbthree - \vbtwo) / (\vbtwo - \vbone)}
-\gcalcexpr[0]{\vbeight}{\vbseven + 1}
-\gcalcexpr[0]{\vbfive}{\vbseven + \vbfour} % from-x
-\gcalcexpr[0]{\vbsix}{\vbeight - \vbfour} % from-y
-\gcalcexpr[0]{\vbnine}{\vbthree - \vbeight}
-\gcalcexpr[0]{\vbten}{\vbeight - \vbseven}
+\SOLVELINEARSYSTEM(0, 1; \vbtwo, \vbthree)(\vbone,\vbfour)(\p,\q)
+\gcalcexpr[0]{\vbseven}{(\vbfive - 1) * 10}
+\gcalcexpr[0]{\vbpreal}{\p * 10}
+\gcalcexpr[0]{\vbqreal}{\q * 10}
+\gcalcexpr[0]{\pplusq}{\p + \q}
+\gcalcexpr[0]{\cthree}{(\vbfive^2 * 2) - 2}
+\gcalcexpr[0]{\afive}{\p - 1} % coeff a eqn 5
+\gcalcexpr[0]{\bfive}{\q - 1} 
+\gcalcexpr[0]{\asix}{\p + 1}  % coeff a eqn 6
+\gcalcexpr[0]{\bsix}{\q + 1}
+\gcalcexpr[0]{\csix}{\cthree - \pplusq}
+\gcalcexpr[0]{\a}{-1 + \vbfive}
+\gcalcexpr[0]{\b}{-1 + \vbfive}
+\gcalcexpr[0]{\c}{2 * \a}
+\gcalcexpr[0]{\midpt}{(\vbseven - 10)/2}
 
-\question[4] Find the equation of the straight lines that pass through the \textit{intersection} of lines 
-$x-y+1 = 0$ and $\vbone x - \vbtwo y + \vbthree = 0$ and is at a distance of 
-$\vbfour\sqrt{2}$ units from $(\vbfive, \vbsix)$
+\question[4] Find the equation of a straight line that passes
+ through the \textit{intersection} of lines $y=\vbone$ and 
+ $\vbtwo x \vbthree y = \vbfour$ and is at a distance of $\vbfive\sqrt{2}$
+ units from $(-1, -1)$.
 
 \insertQR{QRC}
 
 \watchout
 
 \ifprintanswers
-
+  % stuff to be shown only in the answer key - like explanatory margin figures
+  \begin{marginfigure}[+40 pt]
+    \figinit{pt}
+      \figpt 100:(-10,-10)
+      \figpt 101:(\vbpreal,\vbqreal)
+      \figpt 102:(\vbseven,\vbseven)
+      \figpt 103:(\midpt, \midpt)
+    \figdrawbegin{}
+      \figdrawline [100,101]
+      \figdrawline [101,102]
+      \figdrawaltitude 5[100,102,101]
+    \figdrawend
+    \figvisu{\figBoxA}{}{%
+      \figwritesw 100: ${(-1,-1)}$(2 pt)
+      \figwritese 101: ${(\p,\q)}$(2 pt)
+      \figwritene 102: ${(a,b)}$(2 pt)
+      \figwritenw 103: $\vbfive\sqrt{2}$(2 pt)
+    }
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
+  \marginnote[275 pt]{Though the equation is of quadratic form and will have
+  two roots, we can choose any one of the roots since the question asks for
+  a (one) straight line only}
 \fi 
 
 \begin{solution}[\halfpage]
-	The two given lines would intersect when
+	Let us begin by finding the intersection point of the given lines,
 	\begin{align}
-		y &= x + 1 = \dfrac{\vbone}{\vbtwo}x + \dfrac{\vbthree}{\vbtwo} \\
-		\Rightarrow x &= \vbseven \text{ and } y = \vbeight
-	\end{align}
-	Any line that passes through $(\vbseven, \vbeight)$ will satify the equation
+		y &= \vbone \nonumber \\
+		\vbtwo x \vbthree y &= \vbfour \nonumber \\
+		\Rightarrow x       &= \p \text{ and } y = \q
+	\end{align}	
+	Let the coordinates of the point where the perpendicular from $(-1,-1)$
+	meets the line in question, be $(a,b)$ \textit{(see figure)}.\\
+	$(a,b)$ is $\vbfive\sqrt{2}$ units away from $(-1,-1)$. Using the standard
+	formula for distance between two points,
 	\begin{align}
-		\dfrac{y-\vbeight}{x-\vbseven} &= m \text{ (as yet unknown) } \\
-		\Rightarrow mx - y + (\vbeight - \vbseven \cdot m) &= 0
+	  \sqrt{(b+1)^2+(a+1)^2}&=\vbfive\sqrt{2} \\
+	  \Rightarrow a^2 + b^2 &= -2a -2b + \cthree
 	\end{align}
-	And the distance of $(\vbfive, \vbsix)$ from it would be given by 
+	Also, the line joining $(a,b)$ with $(-1,-1)$ is perpendicular to the 
+	line joining $(a,b)$ with $(\p,\q)$, therefore the product of their
+	slopes is $-1$,
 	\begin{align}
-		\dfrac{\vert\, \vbfive m - \vbsix + (\vbeight - \vbseven\cdot m)\,\vert}{\sqrt{1 + m^2}} &= d = \vbfour\sqrt{2}\\
-		\Rightarrow \vbfour^2\cdot(m+1)^2 &= \vbfour^2\cdot 2\cdot(1 + m^2) \\
-		\Rightarrow m &= 1 
+	  \left(\dfrac{b-\q}{a-\p}\right)\times
+	    \left(\dfrac{b+1}{a+1}\right)&=-1 \\
+	  \Rightarrow a^2 + b^2          &= \afive a +\bfive b +\pplusq
 	\end{align}
-	Hence, the line is $x-y+\vbten = 0$
+	Using equations (3) and (5) we get,
+	\begin{align}
+	  \asix a + \bsix b=\csix
+	\end{align}
+	Substitute result (6) in equation (2) or (4). Solve for $a$ and $b$ to
+	get,
+	\begin{align}
+	  a=\a \text{, }b=\b
+	\end{align}
+	Therefore, equation of the line joining $(\p,\q)$ and $(\a,\b)$ is,
+	\begin{align}
+	  y-\q &=\dfrac{\a-\q}{\b-\p}(x-\p) \\
+	  x + y&=\c
+	\end{align}	
 \end{solution}
+\ifprintrubric
+  \begin{table}
+        \begin{tabular}{ p{5cm}p{5cm} }
+                \toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+                  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\
+                \midrule % ***** Insights & formulations ******
+        Intersection point of two lines & \\
+        Distance between $(-1,-1)$ and $(a,b)$ equals given value & \\
+        Product of slopes of the two line segments is $-1$  & \\
+                \toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+                \midrule % ***** Numerical answers (below) **********
+        $y=2$, $4\sqrt{2}$, $x-4y+4=0$  & $(3,3)$, $x+y=6$ \\
+        $y=1$, $3\sqrt{2}$, $2x-3y-3=0$ & $(2,2)$, $x+y=4$ \\
+        $y=4$, $4\sqrt{2}$, $3x-2y+2=0$ & $(3,3)$, $x+y=6$ \\
+        $y=2$, $3\sqrt{2}$, $2x-y+1=0$  & $(2,2)$, $x+y=4$ \\
+                \bottomrule
+        \end{tabular}
+  \end{table}
+\fi
