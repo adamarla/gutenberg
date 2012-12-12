@@ -94,36 +94,36 @@ $-3<x<5$.
   \begin{marginfigure}
     \figinit{pt}
       \figpt 10:(0,0)
-      \figpt 15:(-35,10)
-      \figpt 20:(-30,10)
-      \figpt 30:(-20,0)
-      \figpt 40:(-10,-20)
-      \figpt 50:(0,-10)
-      \figpt 60:(10,0)
-      \figpt 61:(12,-1)
-      \figpt 70:(30,-30)
-      \figpt 80:(40,0)
-      \figpt 90:(50,10)
-      \figpt 95:(55,10)
+      \figpt 15:(-70,20)
+      \figpt 20:(-60,20)
+      \figpt 30:(-40,0)
+      \figpt 40:(-20,-40)
+      \figpt 50:(0,-20)
+      \figpt 60:(20,0)
+      \figpt 61:(24,-2)
+      \figpt 70:(60,-60)
+      \figpt 80:(80,0)
+      \figpt 90:(100,20)
+      \figpt 95:(110,20)
       % extremeties
-      \def\Xmax{60}
-      \def\Ymax{40}
-      \def\Xmin{-60}
-      \def\Ymin{-40}
+      \def\Xmax{120}
+      \def\Ymax{60}
+      \def\Xmin{-70}
+      \def\Ymin{-80}
       % pts for numbering the axes (5, 10, 15...)
-      \figpt 201:$\tiny\text{-3}$(-30,0)
-      \figpt 202:$\tiny\text{-2}$(-20,0)
-      \figpt 203:$\tiny\text{-1}$(-10,0)
+      \figpt 201:$\tiny\text{-3}$(-60,0)
+      \figpt 202:$\tiny\text{-2}$(-40,0)
+      \figpt 203:$\tiny\text{-1}$(-20,0)
       \figpt 204:$\tiny\text{O}$(0,0)
-      \figpt 205:$\tiny\text{1}$(10,0)
-      \figpt 206:$\tiny\text{2}$(20,0)
-      \figpt 207:$\tiny\text{3}$(30,0)
-      \figpt 208:$\tiny\text{4}$(40,0)
-      \figpt 209:$\tiny\text{5}$(50,0)
+      \figpt 205:$\tiny\text{1}$(20,0)
+      \figpt 206:$\tiny\text{2}$(40,0)
+      \figpt 207:$\tiny\text{3}$(60,0)
+      \figpt 208:$\tiny\text{4}$(80,0)
+      \figpt 209:$\tiny\text{5}$(100,0)
       % label graph
-      \figpt 100:(60,0)
-      \figpt 101:(0,40)
-      \figpt 102:(0,-60)
+      \figpt 100:(\Xmax,0)
+      \figpt 101:(0,\Ymax)
+      \figpt 102:(0,\Ymin)
     \figdrawbegin{}
       \figdrawcurve [15,20,30,40,50,61,70,80,90,95]
       \figset arrowhead(length=4, fillmode=yes)
@@ -135,10 +135,10 @@ $-3<x<5$.
       \figdrawline [209,90]
     \figdrawend
     \figvisu{\figBoxA}{}{%
-      \figwritee 100:$\text{x}$(2pt)
-      \figwriten 101:$\text{f'(x)}$(2pt)
-      \figwrites 201,202,203,204,205,206,207,208,209 :(2pt)
-      \figwritec[102] {\textit{y = f'(x)}}
+      \figwritee 100: $x$(2 pt)
+      \figwriten 101: $\text{f'(x)}$(2 pt)
+      \figwrites 201,202,203,204,205,206,207,208,209 :(2 pt)
+      \figwrites 102: $\large\text{y = f'(x)}$(10 pt)
     }
     \centerline{\box\figBoxA}
   \end{marginfigure}
@@ -180,18 +180,18 @@ $-3<x<5$.
   \end{solution}  
     \figinit{pt}
       \figpt 0:(0,0)
-      \figpt 50:(20,20)%arc center      
-      \figpt 60:(20,-20)%arc center
+      \figpt 50:(40,40)%arc center      
+      \figpt 60:(40,-40)%arc center
       % extremeties
-      \def\Xmax{60}
-      \def\Ymax{40}
-      \def\Xmin{-20}
-      \def\Ymin{-40}
+      \def\Xmax{120}
+      \def\Ymax{80}
+      \def\Xmin{-40}
+      \def\Ymin{-80}
       % pts for numbering the axes (5, 10, 15...) and graph
       \figpt 203:$\tiny\text{-1}$(\Xmin,0)
       \figpt 204:$\tiny\text{0}$(0,0)
-      \figpt 205:$\tiny\text{1}$(20,0)
-      \figpt 206:$\tiny\text{2}$(40,0)
+      \figpt 205:$\tiny\text{1}$(40,0)
+      \figpt 206:$\tiny\text{2}$(80,0)
       \figpt 207:$\tiny\text{3}$(\Xmax,0)
       \figpt 208:$\tiny\text{-2}$(0,\Ymin)
       \figpt 209:$\tiny\text{2}$(0,\Ymax)
@@ -199,12 +199,12 @@ $-3<x<5$.
       \figpt 211:$\tiny\text{2}$(\Xmax,\Ymin)
       \figpt 212:$\tiny\text{2}$(\Xmax,\Ymax)
       \figpt 213:$\tiny\text{2}$(\Xmin,\Ymax)
-      \figpt 214:(20,\Ymin) %label
+      \figpt 214:(40,\Ymin) %label
     \figdrawbegin{}
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-      \figdrawarccirc 50 ; 20 (180,270)
-      \figdrawarccirc 60 ; 20 (0,90)
+      \figdrawarccirc 50 ; 40 (180,270)
+      \figdrawarccirc 60 ; 40 (0,90)
 \fi  
       \figset arrowhead(length=4, fillmode=yes)
       \figdrawaxes 0(\Xmin, \Xmax, \Ymin, \Ymax)
@@ -215,7 +215,7 @@ $-3<x<5$.
       \figwritee 207:$\text{x}$(2 pt)
       \figwriten 209:$\text{f(x)}$(2 pt)
       \figwritese 203,204,205,206,207 :(2 pt)
-      \figwrites 214:{\textit{y = f(x)}}(5 pt)
+      \figwrites 214:{\large\text{y = f(x)}}(10 pt)
     }
     \centerline{\box\figBoxA}
 
