@@ -87,59 +87,58 @@
   }
 }
 
-\question
-
+\question The radius r of a sphere is increasing at a constant rate of 
+ $0.04$ centimetres per second. \textit{note: The Volume $V$ of a sphere with
+ radius $r$ is given by $\dfrac{4}{3}\pi r^3$.}
 \insertQR{}
 
-\watchout
-
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part At the time when the radius of the sphere is 10 centimetres, what is 
+  the rate of  increase of its volume?
 
-  \insertQR{}
   \begin{solution}
+    Rate of increase of volume $\dfrac{\ud V}{\ud t}$ is given by,
+    \begin{align}
+      &\dfrac{\ud V}{\ud t} = \dfrac{4\pi}{3}\cdot3r^2\cdot\dfrac{\ud r}{\ud t} 
+                            = 4\pi r^2\dfrac{\ud r}{\ud t} \\
+      &\dfrac{\ud V}{\ud t} \vert_{r=10} = 4\pi (100)(0.04) = 16\pi
+    \end{align}
+    $V$ is changing at the rate of $16\pi (cm^3/sec)$ when $r=10(cm)$.
   \end{solution}
 
-  \part 
+  \part At the time when the volume of the sphere is $36\pi$ cubic centimetres,
+  what is the rate of increase of the area of a cross section through the center 
+  of the sphere?
 
-  \insertQR{}
   \begin{solution}
+    When $Volume$ is $36\pi (cm^3)$,
+    \begin{align}
+      \dfrac{4}{3}\pi r^3 = 36\pi \Rightarrow r^3 = 27 \Rightarrow r=3      
+    \end{align}
+    Rate of increase of area $\dfrac{\ud A}{\ud t}$ is given by,
+    \begin{align}
+      &\dfrac{\ud A}{\ud t} = \pi\cdot\dfrac{\ud r^2}{\ud t} 
+                            = 2\pi r\dfrac{\ud r}{\ud t} \\
+      &\dfrac{\ud A}{\ud t} \vert_{r=3} = 2\pi(3)(0.04) = 0.24\pi
+    \end{align}
+    $A$ is changing at the rate of $0.24\pi (cm^2/sec)$ when $r=3(cm)$.
   \end{solution}
 
-  \part 
+  \part At the time when the volume and the radius of the sphere are increasing 
+  at the same \textit{numerical} rate, what is the radius?
 
-  \insertQR{}
   \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
+    To find $r$ when $\dfrac{\ud V}{\ud t}$ and $\dfrac{\ud r}{\ud t}$ are 
+    numerically equal
+    \begin{align}
+      &4\pi r^2\cdot\dfrac{\ud r}{\ud t} = \dfrac{\ud r}{\ud t} \\
+      &4\pi r^2 = 1 \Rightarrow r=\sqrt{\dfrac{1}{4\pi}}
+    \end{align}
+    $r$ equals $\sqrt{\dfrac{1}{4\pi}}(cm)$ when $\dfrac{\ud V}{\ud t}$ and
+    $\dfrac{\ud r}{\ud t}$ are numerically equal.
   \end{solution}
 
 \end{parts}
