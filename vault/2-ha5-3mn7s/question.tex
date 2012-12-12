@@ -87,11 +87,9 @@
   }
 }
 
-\question
+\question Consider the curve given by $xy^2-x^3y=6$.
 
 \insertQR{}
-
-\watchout
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -108,45 +106,55 @@
   \end{marginfigure}
 \fi 
 
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part Show that $\dydx = \dfrac{3x^2y-y^2}{2xy-x^3}$.
 
-  \insertQR{}
   \begin{solution}
+    \begin{align}
+                  &xy^2-x^3y=6 \\
+      \Rightarrow &x(2y)\dydx+y^2\cdot 1-\left[x^3\dydx +y(3x^2)\right]=0 \\
+      \Rightarrow &\dydx = \dfrac{3x^2y-y^2}{2xy-x^3}    
+    \end{align}
   \end{solution}
 
-  \part 
+  \part Find all the points on the curve whose \textit{x-coordinate} is $1$ and 
+  write an equation for the tangent line at each of these points.
 
-  \insertQR{}
   \begin{solution}
+    Substitute $x=1$ in the equation of the curve,
+    \begin{align}
+      &y^2-y=6 \Rightarrow y=3 \text{ or } y=-2
+    \end{align}
+    To find the equation for the tangent line we need the $derivative$ (slope)
+    of the function at these two points.
+    \begin{align}
+      \dydx {\displaystyle\vert}_{(1,3)} &=0 \Rightarrow y=3\\ 
+      \dydx {\displaystyle\vert}_{(1,-2)}&=2 \Rightarrow y+2=2(x-1) \\
+                                         &\quad\quad\Rightarrow y=2x-4)
+    \end{align}
   \end{solution}
 
-  \part 
-
-  \insertQR{}
+  \part Find the \textit{x-coordinate} of each point on the curve where the tangent
+  line is vertical.
   \begin{solution}
+    The tangent is vertical when $\dfrac{\ud x}{\ud y}$ is $0$. Therefore,
+    \begin{align}
+                  &\dfrac{2xy-x^3}{3x^2y-y^2}=0 \\
+      \Rightarrow &2xy-x^3=0 \textit{ (and $3x^2y-y^2\neq 0$)} \\
+      \Rightarrow &2xy-x^3=0 \Rightarrow x(2y-x^2)=0 \\
+      \Rightarrow &x=0 \text{ or } y=\dfrac{1}{2}x^2
+    \end{align}
+    $x=0$ rejected, therefore using $y =\dfrac{1}{2}x^2$
+    \begin{align}
+                  &\dfrac{1}{4}x^5-\dfrac{1}{2}x^5=6 \\
+      \Rightarrow &x^5 =-24 \Rightarrow x=\sqrt[5]{-24}
+    \end{align}
   \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
 \end{parts}
 
 \ifprintrubric
   \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
+  	\begin{tabular}{ p{5cm}p{5cm}
   		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
   		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
   		\midrule % ***** Insights & formulations ******
