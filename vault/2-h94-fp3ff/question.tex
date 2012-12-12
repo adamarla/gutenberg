@@ -89,8 +89,9 @@
 \question The figure alongside shows the graph of $f'$, the derivative of a
 function $f$. The domain of $f$ is the set of all Real numbers $x$ such that
 $-3<x<5$.
+  \insertQR{QRC}
 
-  \begin{marginfigure}[-40pt]
+  \begin{marginfigure}
     \figinit{pt}
       \figpt 10:(0,0)
       \figpt 15:(-35,10)
@@ -141,46 +142,10 @@ $-3<x<5$.
     }
     \centerline{\box\figBoxA}
   \end{marginfigure}
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}[200pt]
-    \figinit{pt}
-      \figpt 0:(0,0)
-      \figpt 50:(20,20)%arc center      
-      \figpt 60:(20,-20)%arc center      
-      % extremeties
-      \def\Xmax{50}
-      \def\Ymax{30}
-      \def\Xmin{-10}
-      \def\Ymin{-25}
-      % pts for numbering the axes (5, 10, 15...)
-      \figpt 204:$\tiny\text{0}$(0,0)
-      \figpt 205:$\tiny\text{1}$(20,0)
-      \figpt 206:$\tiny\text{2}$(40,0)
-      % label graph
-      \figpt 100:(\Xmax,0)
-      \figpt 101:(0,\Ymax)
-      \figpt 102:(0,-40)
-    \figdrawbegin{}
-      \figdrawarccirc 50 ; 20 (180,270)
-      \figdrawarccirc 60 ; 20 (0,90)
-      \figset arrowhead(length=4, fillmode=yes)
-      \figdrawaxes 0(\Xmin, \Xmax, \Ymin, \Ymax)
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-      \figwritee 100:$\text{x}$(2pt)
-      \figwriten 101:$\text{f(x)}$(2pt)
-      \figwritese 204,205,206 :(2pt)
-      \figwritec[102] {\textit{y = f(x)}}
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
 
 \begin{parts}
   \part[2] For what values of $x$ does $f$ have a relative maximum? Why?
 
-  \insertQR[-40pt]{QRC}
 \begin{solution}[\mcq]
     For a function to have a relative maximum, it's first derivative must go
     from positive to negative. In this case $f'(x)$ goes from positive to 
@@ -191,7 +156,6 @@ $-3<x<5$.
 
   \part[2] For what values of $x$ does $f$ have a relative minimum? Why?
 
-  \insertQR{QRC}
 \begin{solution}[\mcq]
     Similar logic. A relative minimum occurs when the first derivative goes from
     negative to positive. In this case $f'(x)$ goes from negative to positive
@@ -203,7 +167,6 @@ $-3<x<5$.
   \part[3] On what intervals is the graph of $f$ concave upwards. Use $f'$ to
   justify your answer.
 
-  \insertQR{QRC}
 \begin{solution}[\mcq]
     For the function $f$ to concave upwards, it's first derivative (or rate of 
     change) must be increasing. In the given graph $f'$ is increasing in the
@@ -211,16 +174,49 @@ $-3<x<5$.
   \end{solution}
 
   \part[3] Suppose that $f(1)=0$. Draw a sketch that shows the general shape of the
-  graph of the function $f$ on the open interval $0<x<2$.
-
-  \insertQR{QRC}
-\begin{solution}[\mcq]
-    See adjacent figure. The first derivative of $f$ is negative but increasing
-    from $0$ to $1$. This means $f$ is concave but with decreasing concavity. 
-    Following this is a point of inflection at $x=1$ where $f'$ is zero after
-    which it continues to be negative which means the slope of $f$ is still
-    negative but this time it is decreasing due to which $f$ is decreasing at 
-    an ever greater rate as $x$ increases.
-  \end{solution}
+  graph of the function $f$ on the open interval $0<x<2$. \\  
+  
+  \begin{solution}
+  \end{solution}  
+    \figinit{pt}
+      \figpt 0:(0,0)
+      \figpt 50:(20,20)%arc center      
+      \figpt 60:(20,-20)%arc center
+      % extremeties
+      \def\Xmax{60}
+      \def\Ymax{40}
+      \def\Xmin{-20}
+      \def\Ymin{-40}
+      % pts for numbering the axes (5, 10, 15...) and graph
+      \figpt 203:$\tiny\text{-1}$(\Xmin,0)
+      \figpt 204:$\tiny\text{0}$(0,0)
+      \figpt 205:$\tiny\text{1}$(20,0)
+      \figpt 206:$\tiny\text{2}$(40,0)
+      \figpt 207:$\tiny\text{3}$(\Xmax,0)
+      \figpt 208:$\tiny\text{-2}$(0,\Ymin)
+      \figpt 209:$\tiny\text{2}$(0,\Ymax)
+      \figpt 210:$\tiny\text{2}$(\Xmin,\Ymin)
+      \figpt 211:$\tiny\text{2}$(\Xmax,\Ymin)
+      \figpt 212:$\tiny\text{2}$(\Xmax,\Ymax)
+      \figpt 213:$\tiny\text{2}$(\Xmin,\Ymax)
+      \figpt 214:(20,\Ymin) %label
+    \figdrawbegin{}
+\ifprintanswers
+  % stuff to be shown only in the answer key - like explanatory margin figures
+      \figdrawarccirc 50 ; 20 (180,270)
+      \figdrawarccirc 60 ; 20 (0,90)
+\fi  
+      \figset arrowhead(length=4, fillmode=yes)
+      \figdrawaxes 0(\Xmin, \Xmax, \Ymin, \Ymax)
+      \figset general(dash=5)
+      \figdrawmesh 4,4 [210,211,212,213]
+    \figdrawend
+    \figvisu{\figBoxA}{}{%
+      \figwritee 207:$\text{x}$(2 pt)
+      \figwriten 209:$\text{f(x)}$(2 pt)
+      \figwritese 203,204,205,206,207 :(2 pt)
+      \figwrites 214:{\textit{y = f(x)}}(5 pt)
+    }
+    \centerline{\box\figBoxA}
 
 \end{parts}
