@@ -29,120 +29,82 @@
 %   7. Create versions of the question when possible. Use commands defined in 
 %      tufte-tweaks.sty to do so. Its easier than you think
 
-% \noprintanswers
-% \setcounter{rolldice}{0}
-% \printrubric
+%\noprintanswers
+%\setcounter{rolldice}{3}
+%\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{1}
+  \renewcommand{\vbtwo}{1}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{4}
+    \renewcommand{\vbtwo}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{9}
+      \renewcommand{\vbtwo}{5}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{1}
+      \renewcommand{\vbtwo}{9}
     }
   }
 }
 
-\question
+\MULTIPLY{2}{\vbtwo}{\m}
+\SQUARE{\vbtwo}{\n}
+\gcalcexpr[0]\p{-(\vbone - \n)}
 
-\insertQR{}
+\question Suppose $f(x) = \sqrt{x^2 - \vbone} = (g \circ h)(x)$. If $h(x) = (x + \vbtwo)$, 
+then find $g(x)$. The notation $(g\circ h)(x)$ means $g(h(x))$
+
+\insertQR[-15pt]{}
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	The question boils down to finding $g(x)$ so that $g(x+\vbtwo) = \sqrt{x^2-\vbone}$. And the key 
+	is to understand that $g(x)$ has to bring to the table whatever $h(x)$ does \textit{not} - like 
+	a square root and $x^2$ term 
+	
+	Given that $x^2$ is the highest power term of $x$ in $f(x)$, we can safely guess that 
+	$g(x)$ is of the form 
+	
+	\begin{align}
+		g(x + \vbtwo) &= \sqrt{A\cdot\underbrace{(x + \vbtwo)^2}_{\texttt{will give } x^2} 
+		+ B\cdot(x + \vbtwo) + C}
+	\end{align}			
+	
+	
+	And so,
+	\begin{align}
+		\sqrt{x^2 - \vbone} &= \sqrt{A\cdot(x + \vbtwo)^2 + B\cdot(x + \vbtwo) + C} \\ 
+		 &= \sqrt{A\cdot(x^2 + \m\cdot x + \n) + B\cdot(x + \vbtwo) + C} \\
+		 &= \sqrt{A\cdot x^2 + (\m A + B)\cdot x + (\n\cdot A + \vbtwo B + C)}
+	\end{align}
+	
+	Now its a simple question of comparing \textit{coefficients of x} on both sides. 
+	Which means, if 
+	\begin{align}
+		\underbrace{\sqrt{x^2 - \vbone}}_{f(x)} &= 
+		\underbrace{\sqrt{A\cdot x^2 + (\m A + B)\cdot x + (\n\cdot A + \vbtwo B + C)}}_{(g\circ h)(x)} \\
+		\text{then } A &= 1 \\
+		\m A + B &= 0 \Rightarrow B = -\m \\
+		\text{and } \n\cdot A + \vbtwo B + C &= -\vbone \Rightarrow C = \p
+	\end{align}
+	
+	Hence, $g(x + \vbtwo)$ = $\sqrt{(x+\vbtwo)^2 -\m\cdot(x + \vbtwo) + \p}$. Or, generally speaking, 
+	$g(x) = \sqrt{x^2 - \m x + \p}$
+	
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}
@@ -150,9 +112,14 @@
   		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
   		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
   		\midrule % ***** Insights & formulations ******
+  			$g(x + m) = \sqrt{A\cdot(x + m)^2 + B\cdot(x + m) + C}$ & \\
   		\toprule % final numerical answers for the various versions
         \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
   		\midrule % ***** Numerical answers (below) **********
+  			$h(x) = x + 1$ & $g(x) = \sqrt{x^2-2x} $\\
+  			$h(x) = x + 3$ & $g(x) = \sqrt{x^2-6x+5}$\\
+  			$h(x) = x + 5$ & $g(x) = \sqrt{x^2-10x+16}$\\
+  			$h(x) = x + 9$ & $g(x) = \sqrt{x^2-18x+80}$\\
   		\bottomrule
   	\end{tabular}
   \end{table}
