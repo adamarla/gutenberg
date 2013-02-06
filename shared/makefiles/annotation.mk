@@ -15,7 +15,7 @@ clean: annotation
 	@rm annotation.*
 
 annotation : png
-	convert annotation.png -resize 600x800 -transparent white overlay.png
+	convert annotation.png -resize 660x880 -transparent white overlay.png
 
 png : pdf 
 	gs -dNOPAUSE -dBATCH -sDEVICE=pngalpha -r700 -sOutputFile=annotation.png annotation.pdf
