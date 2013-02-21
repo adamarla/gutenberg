@@ -15,5 +15,5 @@ log=`date +"%H-receive"`
 mkdir -p $target
 cd $root 
 touch $target/$log
-curl http://www.gradians.com/examiner/update_workset >> $target/$log
+curl http://www.gradians.com/receive/scan >> $target/$log
 
