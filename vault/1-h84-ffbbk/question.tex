@@ -1,36 +1,7 @@
-% This is an empty shell file placed for you by the 'examiner' script.
-% You can now fill in the TeX for your question here.
-
-% Now, down to brasstacks. ** Writing good solutions is an Art **. 
-% Eventually, you will find your own style. But here are some thoughts 
-% to get you started: 
-%
-%   1. Write to be understood - but be crisp. Your own solution should not take 
-%      more space than you will give to the student. Hence, if you take more than 
-%      a half-page to write a solution, then give the student a full-page and so on...
-%
-%   2. Use margin-notes to "talk" to students about the critical insights
-%      in the question. The tone can be - in fact, should be - informal
-%
-%   3. Don't shy away from creating margin-figures you think will help
-%      students understand. Yes, it is a little more work per question. 
-%      But the question & solution will be written only once. Make that
-%      attempt at writing a solution count.
-%      
-%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
-% 
-%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
-%      education company. Bad spellings suggest that we ourselves 
-%      don't have any education. Also, use American spellings by default
-% 
-%   5. If a question has multiple parts, then first delete lines 40-41
-%   6. If a question does not have parts, then first delete lines 43-69
-%   
-%   7. Create versions of the question when possible. Use commands defined in 
-%      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+%\setcounter{rolldice}{3}
+%\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -70,9 +41,20 @@
   }
 }
 
-\gcalcexpr[0]{\vbseven}{\vbtwo / \vbsix} % b2
-\gcalcexpr[2]{\vbeight}{(\vbsix * \vbfive - \vbthree)/(\vbone - \vbsix * \vbfour)} % x of intersection
-\gcalcexpr[2]{\vbnine}{-(\vbthree + \vbone * \vbeight)/\vbtwo}
+\EXPR[0]{\vbseven}{\vbtwo / \vbsix} % b2
+\MULTIPLY\vbthree\vbfour\p
+\MULTIPLY\vbfour\vbtwo\q
+\MULTIPLY\vbseven\vbone\j
+\MULTIPLY\vbfive\vbone\k
+\MULTIPLY\vbseven\vbthree\m
+\MULTIPLY\vbfive\vbtwo\n
+
+\SUBTRACT\j\q\a
+\SUBTRACT\p\k\b
+\SUBTRACT\m\n\d
+\FRACTIONSIMPLIFY\b\a\bb\aa
+\FRACTIONSIMPLIFY\d\a\cc\dd
+\FRACMULT\cc\dd{-1}{1}\ee\ff
 
 \question[4] Find the equation of the straight line that passes through the point of intersection of 
 $\vbone x + \vbtwo y + \vbthree = 0$ and $\vbfour x + \vbseven y + \vbfive = 0$ \textit{and} is 
@@ -88,23 +70,42 @@ perpendicular to the line $3x-5y+11 = 0$
 \begin{solution}[\halfpage]
 	First, we must find that point of intersection. The two lines will intersect at an $x$ where
 	\begin{align}
-	    \vbone x + \vbtwo y + \vbthree &= 0 \text{ or } \vbtwo y = -(\vbone x + \vbthree) \\
-	    \vbfour x + \vbseven y + \vbfive &= 0 \text { or } \vbseven y = -(\vbfour x + \vbfive) \\
-	    \Rightarrow \dfrac{\vbone x + \vbthree}{\vbfour x + \vbfive} &= \vbsix \text{ or } x = \vbeight \\
-	    \text{ which means that } y &= \dfrac{-(\vbthree + \vbone\cdot\vbeight)}{\vbtwo} = \vbnine
+	    \vbone x + \vbtwo y + \vbthree &= 0 \text{ and } \\
+	    \vbfour x + \vbseven y + \vbfive &= 0 \\ 
+      \Rightarrow (x,y) &= (\WRITEFRAC\ee\ff,\WRITEFRAC\bb\aa) 
 	\end{align}
-	So, the point of intersection is at $(\vbeight, \vbnine)$
 	
 	Now, the slope of the line \textit{ perpendicular } to 
-	$3x - 5y + 11 = 0 \Rightarrow y = \dfrac{3}{5}x + \dfrac{11}{5}$ is $-\dfrac{5}{3}$. And so, its equation
+	$3x - 5y + 11 = 0 \Rightarrow y = \frac{3}{5}x + \frac{11}{5}$ is $-\frac{5}{3}$. And so, its equation
 	would be 
-	
-	\gcalcexpr[2]{\vbten}{5*\vbeight + 3*\vbnine}
-	
+
+  \FRACMULT\bb\aa{-3}{1}\jj\kk
+  \FRACMULT\ee\ff{-5}{1}\mm\nn
+  \FRACADD\jj\kk\mm\nn\y\z
+
 	\begin{align}
-		\dfrac{y - \vbnine}{x - \vbeight} &= -\dfrac{5}{3} \\
-		\Rightarrow 3y - 3\times\vbnine &= -5x + 5\times\vbeight \\
-		\text{ or } 3y + 5x + \vbten &= 0
+		\dfrac{y - \WRITEFRAC\bb\aa}{x - \WRITEFRAC\ee\ff} &= -\dfrac{5}{3} \\
+		\Rightarrow 3y - 3\times\WRITEFRAC\bb\aa &= -5x + 5\times\WRITEFRAC\ee\ff \\
+		\text{ or } 3y + 5x + \WRITEFRAC\y\z &= 0
 	\end{align}
 	
 \end{solution}
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+        $m_\perp = -\dfrac{5}{3}$ & \\
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+        $5x+6y+1 = 0$ & $3y+5x+\frac{37}{4} = 0$ \\
+        $3x+4y+7 = 0$ & $3y+5x+\frac{69}{10} = 0$ \\
+        $4x+7y+11 = 0$ & $3y+5x+\frac{10}{7}=0$ \\
+        $5x+8y+7 = 0$ & $3y+5x+37=0$ \\
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi
