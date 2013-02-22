@@ -36,7 +36,7 @@
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
   \renewcommand{\vbone}{1} % x-avg
-  \renewcommand{\vbtwo}{5} % y-avg
+  \renewcommand{\vbtwo}{6} % y-avg
   \renewcommand{\vbthree}{2} % m-1
   \renewcommand{\vbfour}{3} % m-2
   \renewcommand{\vbfive}{4} % c-1
@@ -74,12 +74,12 @@
 
 \MULTIPLY\vbone{2}\va
 \MULTIPLY\vbtwo{2}\vb
-\gcalcexpr[0]\vc{\vb - (\vbfour * \va) - \vbsix}
+\EXPR[0]\vc{\vb - (\vbfour * \va) - \vbsix}
 \SOLVELINEARSYSTEM(\vbthree, -1 ; -\vbfour, 1)(-\vbfive, \vc)(\ra,\rb)
 \SUBTRACT\vbtwo\rb\n
 \SUBTRACT\vbone\ra\d
 \FRACTIONSIMPLIFY\n\d\an\ad
-\gcalcexpr[0]\c{(\an * \vbone) - (\ad * \vbtwo)}
+\EXPR[0]\c{(\an * \vbone) - (\ad * \vbtwo)}
 
 
 \question[4] The segment of a line between two other lines $L_1 = \vbthree x - y + \vbfive = 0$ and $L_2 = \vbfour x -y + \vbsix = 0$ is bisected at the point $(\vbone, \vbtwo)$. Find the equation of the line
@@ -126,7 +126,7 @@
   		\toprule % final numerical answers for the various versions
         \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
   		\midrule % ***** Numerical answers (below) **********
-        $(1,5)$ & $y = 3x + 2$ \\
+        $(1,6)$ & $y = 2x+4$ \\
         $(2,5)$ & $2y = 7x - 4$ \\
         $(4,7)$ & $3y = 4x + 5$\\
         $(3,-5)$ & $ 41y = 100x - 505$\\
