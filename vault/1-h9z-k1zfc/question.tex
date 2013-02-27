@@ -1,148 +1,73 @@
-% This is an empty shell file placed for you by the 'examiner' script.
-% You can now fill in the TeX for your question here.
 
-% Now, down to brasstacks. ** Writing good solutions is an Art **. 
-% Eventually, you will find your own style. But here are some thoughts 
-% to get you started: 
-%
-%   1. Write to be understood - but be crisp. Your own solution should not take 
-%      more space than you will give to the student. Hence, if you take more than 
-%      a half-page to write a solution, then give the student a full-page and so on...
-%
-%   2. Use margin-notes to "talk" to students about the critical insights
-%      in the question. The tone can be - in fact, should be - informal
-%
-%   3. Don't shy away from creating margin-figures you think will help
-%      students understand. Yes, it is a little more work per question. 
-%      But the question & solution will be written only once. Make that
-%      attempt at writing a solution count.
-%      
-%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
-% 
-%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
-%      education company. Bad spellings suggest that we ourselves 
-%      don't have any education. Also, use American spellings by default
-% 
-%   5. If a question has multiple parts, then first delete lines 40-41
-%   6. If a question does not have parts, then first delete lines 43-69
-%   
-%   7. Create versions of the question when possible. Use commands defined in 
-%      tufte-tweaks.sty to do so. Its easier than you think
-
-% \noprintanswers
-% \setcounter{rolldice}{0}
-% \printrubric
+%\noprintanswers
+%\setcounter{rolldice}{3}
+%\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{99}
+  \renewcommand{\vbtwo}{9}
+  \renewcommand{\vbthree}{1}
+  \renewcommand{\vbfour}{600}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{95}
+    \renewcommand{\vbtwo}{4}
+    \renewcommand{\vbthree}{3}
+    \renewcommand{\vbfour}{250}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{97}
+      \renewcommand{\vbtwo}{3}
+      \renewcommand{\vbthree}{1}
+      \renewcommand{\vbfour}{750}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{98}
+      \renewcommand{\vbtwo}{7}
+      \renewcommand{\vbthree}{3}
+      \renewcommand{\vbfour}{400}
     }
   }
 }
 
-\question
+\EXPR[0]\p{(10 * \vbone * \vbthree)}
+\EXPR[0]\q{(\vbtwo * (\vbfour - \vbthree))}
+\EXPR[0]\r{\p + \q}
 
-\insertQR{}
+\question The standard procedure for detecting tuberculosis (TB) involves 
+taking a chest X-ray of the person. The probability of detecting TB in a person actually 
+suffering from it is $\frac{\vbone}{100}$. However, the probability of a healthy person 
+diagnosed to have TB is $\frac{\vbtwo}{1000}$. In a certain city, $\vbthree$ in $\vbfour$ people suffers
+from TB. A person is selected at random and is diagnosed to have TB. What is the probability
+that the person actually has TB?  
+
+\insertQR[30pt]{}
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	Let event $X =$ X-ray says person has TB and event $T=$ person actually has TB. Given these 
+	definitions, here is what we know
+	\begin{align}
+		P(X\vert T) &= \dfrac{\vbone}{100} \\
+		P(T) &= \dfrac{\vbthree}{\vbfour} \\
+		P(X\vert{T'}) &= \dfrac{\vbtwo}{1000}
+	\end{align}
+	What we need to find is $P(T\vert X)$. Now, from Baye's theorem, we have 
+	\begin{align}
+		P(T\vert X) &= \dfrac{P(X\vert T)\cdot P(T)}{P(X\vert\,T')\cdot P(T') + P(X\vert T)\cdot P(T)} \\
+		&= \dfrac{\frac{\vbone}{100}\cdot\frac{\vbthree}{\vbfour}}
+		   {\frac{\vbtwo}{1000}\cdot\left(1-\frac{\vbthree}{\vbfour}\right) + \frac{\vbone}{100}\cdot\frac{\vbthree}{\vbfour}} \\
+		&= \WRITEFRAC\p\r
+	\end{align}
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}
@@ -150,9 +75,17 @@
   		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
   		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
   		\midrule % ***** Insights & formulations ******
+        Event $X=$ X-ray \textit{says} person has TB & 
+        Recognized that $P(X\vert\, T),\,P(T)$ and $P(X\vert\,T')$ have been given\\ 
+        Event $T=$ Person \textit{actually} has TB & \\
+        Need to find $P(T\vert\,X)$ & \\
   		\toprule % final numerical answers for the various versions
         \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
   		\midrule % ***** Numerical answers (below) **********
+        $P(X\vert\,T) = \frac{99}{100}$ & $\dfrac{110}{709}$ \\
+        $P(X\vert\,T) = \frac{95}{100}$ & $\qquad\dfrac{75}{101}$ \\
+        $P(X\vert\,T) = \frac{97}{100}$ & $\dfrac{970}{3217}$ \\
+        $P(X\vert\,T) = \frac{98}{100}$ & $\qquad\dfrac{420}{817}$ \\
   		\bottomrule
   	\end{tabular}
   \end{table}
