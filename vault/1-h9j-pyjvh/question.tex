@@ -1,84 +1,55 @@
-% This is an empty shell file placed for you by the 'examiner' script.
-% You can now fill in the TeX for your question here.
 
-% Now, down to brasstacks. ** Writing good solutions is an Art **. 
-% Eventually, you will find your own style. But here are some thoughts 
-% to get you started: 
-%
-%   1. Write to be understood - but be crisp. Your own solution should not take 
-%      more space than you will give to the student. Hence, if you take more than 
-%      a half-page to write a solution, then give the student a full-page and so on...
-%
-%   2. Use margin-notes to "talk" to students about the critical insights
-%      in the question. The tone can be - in fact, should be - informal
-%
-%   3. Don't shy away from creating margin-figures you think will help
-%      students understand. Yes, it is a little more work per question. 
-%      But the question & solution will be written only once. Make that
-%      attempt at writing a solution count.
-%      
-%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
-% 
-%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
-%      education company. Bad spellings suggest that we ourselves 
-%      don't have any education. Also, use American spellings by default
-% 
-%   5. If a question has multiple parts, then first delete lines 40-41
-%   6. If a question does not have parts, then first delete lines 43-69
-%   
-%   7. Create versions of the question when possible. Use commands defined in 
-%      tufte-tweaks.sty to do so. Its easier than you think
-
-% \noprintanswers
-% \setcounter{rolldice}{0}
+%\printrubric
+%\noprintanswers
+%\setcounter{rolldice}{0}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
+  \renewcommand{\vbone}{ARLINGTON}
+  \renewcommand{\vbtwo}{TORONTO}
+  \renewcommand{\vbthree}{9}
+  \renewcommand{\vbfour}{7}
+  \renewcommand{\vbfive}{ON} % common
+  \renewcommand{\vbsix}{1}
+  \renewcommand{\vbseven}{1}
   \renewcommand{\vbeight}{}
   \renewcommand{\vbnine}{}
   \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
+    \renewcommand{\vbone}{ISTANBUL}
+    \renewcommand{\vbtwo}{MILAN}
+    \renewcommand{\vbthree}{8}
+    \renewcommand{\vbfour}{5}
+    \renewcommand{\vbfive}{AN}
+    \renewcommand{\vbsix}{1}
+    \renewcommand{\vbseven}{1}
     \renewcommand{\vbeight}{}
     \renewcommand{\vbnine}{}
     \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
+      \renewcommand{\vbone}{CASABLANCA}
+      \renewcommand{\vbtwo}{CARACAS}
+      \renewcommand{\vbthree}{10}
+      \renewcommand{\vbfour}{7}
+      \renewcommand{\vbfive}{CA}
+      \renewcommand{\vbsix}{2}
+      \renewcommand{\vbseven}{2}
       \renewcommand{\vbeight}{}
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
+      \renewcommand{\vbone}{MUMBAI}
+      \renewcommand{\vbtwo}{SHANGHAI}
+      \renewcommand{\vbthree}{6}
+      \renewcommand{\vbfour}{8}
+      \renewcommand{\vbfive}{AI}
+      \renewcommand{\vbsix}{1}
+      \renewcommand{\vbseven}{1}
       \renewcommand{\vbeight}{}
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
@@ -86,59 +57,65 @@
   }
 }
 
-\question
+\SUBTRACT\vbthree{1}\p
+\SUBTRACT\vbfour{1}\q
+\FRACADD\vbsix\p\vbseven\q\m\n
+\FRACDIV\vbsix\p\m\n\r\s
+
+\question A letter is known to have come either from $\vbone$ or from $\vbtwo$. 
+But on the envelope, only two consecutive letters - $\vbfive$ - are visible. 
+What is the probability that the letter came from $\vbone$? 
 
 \insertQR{}
 
-\watchout
+\watchout[-40pt]
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
+  \marginnote[10cm]{ Surprised? Intuitively, one might think that the answer 
+  is $\frac{1}{2}$. But intuition is an unreliable guide when calculating 
+  probabilities. Place your trust only in Maths}
 \fi 
 
 \begin{solution}
+Let $C_1$ be the event that the letter comes from $\vbone$ and $C_2$ 
+the event that it comes from $\vbtwo$. Also, let $V$ be the event that 
+the \textit{visible} pair of characters is $\vbfive$
+
+Now, here is the catch. You have to count the \textbf{number of pairs} of characters 
+that result if one goes from left-to-right along a city name. And here is the second catch. 
+If the city's name is $N$ characters long, then there are $N-1$ such pairs - the last such 
+pair being made up of the second last \& last characters
+
+Hence, we can very quickly write 
+\begin{align}
+  P(V\vert\,C_1) &= \WRITEFRAC\vbsix\p \\ 
+  P(V\vert\,C_2) &= \WRITEFRAC\vbseven\q \\ 
+  P(C_1) = P(C_2) &= \dfrac{1}{2}
+\end{align}
+  The required probability, $P(C_1\vert\,V)$ is therefore
+  \begin{align}
+    P(C_1\vert\,V) &= \dfrac{P(V\vert\,C_1)\cdot P(C_1)}{P(V\vert\,C_1)\cdot P(C_1) + P(V\vert\,C_2)\cdot P(C_2)} \\
+    &= \dfrac{\WRITEFRAC\vbsix\p\times\frac{1}{2}}
+        {\frac{1}{2}\cdot\left( \WRITEFRAC\vbsix\p + \WRITEFRAC\vbseven\q \right)} = \WRITEFRAC\r\s
+  \end{align}
+  
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+        Count the number of pairs of characters going left-to-right in city's name & \\
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+        ARLINGTON \& TORONTO & $\dfrac{1}{2}$ \\
+        ISTANBUL \& MILAN & $\qquad\dfrac{4}{11}$ \\
+        CASABLANCA \& CARACAS & $\dfrac{2}{5}$ \\
+        MUMBAI \& SHANGHAI & $\qquad\dfrac{7}{12}$ \\
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi
