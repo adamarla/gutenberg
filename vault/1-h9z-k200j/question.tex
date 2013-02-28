@@ -1,148 +1,73 @@
-% This is an empty shell file placed for you by the 'examiner' script.
-% You can now fill in the TeX for your question here.
 
-% Now, down to brasstacks. ** Writing good solutions is an Art **. 
-% Eventually, you will find your own style. But here are some thoughts 
-% to get you started: 
-%
-%   1. Write to be understood - but be crisp. Your own solution should not take 
-%      more space than you will give to the student. Hence, if you take more than 
-%      a half-page to write a solution, then give the student a full-page and so on...
-%
-%   2. Use margin-notes to "talk" to students about the critical insights
-%      in the question. The tone can be - in fact, should be - informal
-%
-%   3. Don't shy away from creating margin-figures you think will help
-%      students understand. Yes, it is a little more work per question. 
-%      But the question & solution will be written only once. Make that
-%      attempt at writing a solution count.
-%      
-%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
-% 
-%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
-%      education company. Bad spellings suggest that we ourselves 
-%      don't have any education. Also, use American spellings by default
-% 
-%   5. If a question has multiple parts, then first delete lines 40-41
-%   6. If a question does not have parts, then first delete lines 43-69
-%   
-%   7. Create versions of the question when possible. Use commands defined in 
-%      tufte-tweaks.sty to do so. Its easier than you think
-
-% \noprintanswers
-% \setcounter{rolldice}{0}
-% \printrubric
+%\noprintanswers
+%\setcounter{rolldice}{3}
+%\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{3}
+  \renewcommand{\vbtwo}{4}
+  \renewcommand{\vbthree}{4}
+  \renewcommand{\vbfour}{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{7}
+    \renewcommand{\vbtwo}{4}
+    \renewcommand{\vbthree}{5}
+    \renewcommand{\vbfour}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{5}
+      \renewcommand{\vbtwo}{9}
+      \renewcommand{\vbthree}{4}
+      \renewcommand{\vbfour}{6}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{4}
+      \renewcommand{\vbtwo}{7}
+      \renewcommand{\vbthree}{6}
+      \renewcommand{\vbfour}{5}
     }
   }
 }
 
-\question
+\ADD\vbone\vbtwo\p
+\ADD\vbthree\vbfour\q
+\MULTIPLY\vbthree{2}\r
+\FRACADD\vbone\p\r\q\s\t
+\FRACMULT\s\t{1}{3}\u\v
 
-\insertQR{}
+\question There are two bags - I and II - with black and white balls. Bag I contains $\vbone$ black 
+and $\vbtwo$ white balls whereas bag II contains $\vbthree$ black and $\vbfour$ white balls. A die
+is now thrown. If it shows up $1$ or $3$, then a ball is picked from bag I; otherwise a ball is picked
+from bag II. What is the probability of picking a black ball?
 
-\watchout
+\insertQR[10pt]{}
+
+\watchout[-50pt]
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	If $I =$ event that a ball is picked from bag I, $II=$ event that ball is picked from bag II
+	and $B =$ a black ball is drawn, then we have been given the following
+	\begin{align}
+		P(I) &= \dfrac{2}{6} = \dfrac{1}{3} \\
+		P(II) &= \dfrac{4}{6} = \dfrac{2}{3} \\
+		P(B\vert\,I) &= \dfrac{\vbone}{\vbone+\vbtwo} = \WRITEFRAC\vbone\p \\
+		P(B\vert\,II) &= \dfrac{\vbthree}{\vbthree+\vbfour} = \WRITEFRAC\vbthree\q
+	\end{align}
+	$\therefore P(B) = $ probability that a black ball is (eventually) drawn is
+	\begin{align}
+		P(B) &= P(I)\cdot P(B\vert\,I) + P(II)\cdot P(B\vert\, II) \\
+		&= \dfrac{1}{3}\cdot\WRITEFRAC\vbone\p + \dfrac{2}{3}\cdot\WRITEFRAC\vbthree\q \\
+		&= \WRITEFRAC\u\v
+	\end{align}
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}
@@ -150,9 +75,14 @@
   		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
   		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
   		\midrule % ***** Insights & formulations ******
+  		$P(B) = P(I)\cdot P(B\vert\,I) + P(II)\cdot P(B\vert\, II)$ & \\
   		\toprule % final numerical answers for the various versions
         \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
   		\midrule % ***** Numerical answers (below) **********
+        $I=$ (3 black, 4 white) & $\dfrac{11}{21}$ \\
+        $I=$ (7 black, 4 white) & $\qquad\dfrac{83}{132}$ \\
+        $I=$ (5 black, 9 white) & $\dfrac{27}{70}$ \\
+        $I=$ (4 black, 7 white) & $\qquad\dfrac{16}{33}$ \\
   		\bottomrule
   	\end{tabular}
   \end{table}
