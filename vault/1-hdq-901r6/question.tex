@@ -3,7 +3,7 @@
 % \setcounter{rolldice}{0}
 % \printrubric
 
-\question Calculate the following limit using L'Hospital's Rule ($\ln = \log_e$)
+\question[2] Calculate the following limit using L'Hospital's Rule ($\ln = \log_e$)
 $$\lim_{x\rightarrow 0^+}\dfrac{\ln\sin x}{\ln x}$$
 
 \insertQR{qrc}
@@ -11,7 +11,7 @@ $$\lim_{x\rightarrow 0^+}\dfrac{\ln\sin x}{\ln x}$$
 \ifprintanswers
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
   If $f(x) = \ln\sin x$ and $g(x) = \ln x$, then by L'Hospital's Rule
   \begin{align}
     \lim_{x\to 0^+}\dfrac{\ln\sin x}{\ln x} &= \lim_{x\to 0^+}\dfrac{f'(x)}{g'(x)} \\
