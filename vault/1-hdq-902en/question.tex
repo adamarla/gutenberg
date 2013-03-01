@@ -1,148 +1,56 @@
-% This is an empty shell file placed for you by the 'examiner' script.
-% You can now fill in the TeX for your question here.
 
-% Now, down to brasstacks. ** Writing good solutions is an Art **. 
-% Eventually, you will find your own style. But here are some thoughts 
-% to get you started: 
-%
-%   1. Write to be understood - but be crisp. Your own solution should not take 
-%      more space than you will give to the student. Hence, if you take more than 
-%      a half-page to write a solution, then give the student a full-page and so on...
-%
-%   2. Use margin-notes to "talk" to students about the critical insights
-%      in the question. The tone can be - in fact, should be - informal
-%
-%   3. Don't shy away from creating margin-figures you think will help
-%      students understand. Yes, it is a little more work per question. 
-%      But the question & solution will be written only once. Make that
-%      attempt at writing a solution count.
-%      
-%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
-% 
-%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
-%      education company. Bad spellings suggest that we ourselves 
-%      don't have any education. Also, use American spellings by default
-% 
-%   5. If a question has multiple parts, then first delete lines 40-41
-%   6. If a question does not have parts, then first delete lines 43-69
-%   
-%   7. Create versions of the question when possible. Use commands defined in 
-%      tufte-tweaks.sty to do so. Its easier than you think
-
-% \noprintanswers
-% \setcounter{rolldice}{0}
-% \printrubric
+%\noprintanswers
+%\setcounter{rolldice}{3}
+%\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{4}
+  \renewcommand{\vbtwo}{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{3}
+    \renewcommand{\vbtwo}{7}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{5}
+      \renewcommand{\vbtwo}{4}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{2}
+      \renewcommand{\vbtwo}{5}
     }
   }
 }
 
-\question
+\POWER\vbone{2}\a
+\POWER\vbone{3}\b
+\MULTIPLY\vbtwo{3}\c
+\MULTIPLY\vbtwo{6}\d
+\SUBTRACT\vbone\b\p
 
-\insertQR{}
+\question Evaluate $\limit{x}{0}\dfrac{\sin\vbone x - \vbone\sin x}{\vbtwo x^3}$ using L'Hospital's Rule 
+
+\insertQR[-20pt]{}
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+  The trick in this question is that you have to apply L'Hospital's Rule multiple times.
+
+  \begin{align}
+    \limit{x}{0}\dfrac{\sin\vbone x - \vbone\sin x}{\vbtwo x^3} &= 
+      \limit{x}{0}\dfrac{\vbone\cos\vbone x - \vbone\cos x}{ \c x^2} \\
+      &= \limit{x}{0}\dfrac{-\a\sin\vbone x + \vbone\sin x}{ \d x } \\
+      &= \limit{x}{0}\dfrac{-\b\cos\vbone x + \vbone\cos x}{\d} = \WRITEFRAC\p\d
+  \end{align}
+
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}
@@ -150,9 +58,14 @@
   		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
   		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
   		\midrule % ***** Insights & formulations ******
+        L'Hospital's Rule has to be applied multiple times & \\
   		\toprule % final numerical answers for the various versions
         \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
   		\midrule % ***** Numerical answers (below) **********
+        $\dfrac{\sin 4x - 4\sin x}{3x^3}$ & $-\dfrac{10}{3}$ \\
+        $\dfrac{\sin 3x - 3\sin x}{7x^3}$ & $\qquad-\dfrac{4}{7}$ \\
+        $\dfrac{\sin 5x - 5\sin x}{2x^3}$ & $-5$ \\
+        $\dfrac{\sin 2x - 2\sin x}{5x^3}$ & $\qquad-\dfrac{1}{5}$ \\
   		\bottomrule
   	\end{tabular}
   \end{table}
