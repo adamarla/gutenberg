@@ -3,16 +3,16 @@
 % \setcounter{rolldice}{0}
 % \printrubric
 
-\question Evaluate $\limit{x}{\infty}\left( 1-\frac{1}{x}\right)^x$ using L'Hospital's Rule.
+\question[4] Evaluate $\limit{x}{\infty}\left( 1-\frac{1}{x}\right)^x$ using L'Hospital's Rule.
 \texttt{Hint:} $e^{\ln X} = X$. And therefore, $\limit{x}{\infty}f(x) = \limit{x}{\infty}e^{\ln f(x)} 
 = e^{\limit{x}{\infty}\ln f(x)}$
 
-\insertQR{}
+\insertQR{QRC}
 
 \ifprintanswers
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
   You have been given a hint. So, lets use it to re-write the original limit 
   \begin{align}
     \limit{x}{\infty}\left( 1-\frac{1}{x} \right)^x &= e^{\limit{x}{\infty}\ln\left( 1-\frac{1}{x} \right)^x}
