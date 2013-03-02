@@ -1,148 +1,85 @@
-% This is an empty shell file placed for you by the 'examiner' script.
-% You can now fill in the TeX for your question here.
 
-% Now, down to brasstacks. ** Writing good solutions is an Art **. 
-% Eventually, you will find your own style. But here are some thoughts 
-% to get you started: 
-%
-%   1. Write to be understood - but be crisp. Your own solution should not take 
-%      more space than you will give to the student. Hence, if you take more than 
-%      a half-page to write a solution, then give the student a full-page and so on...
-%
-%   2. Use margin-notes to "talk" to students about the critical insights
-%      in the question. The tone can be - in fact, should be - informal
-%
-%   3. Don't shy away from creating margin-figures you think will help
-%      students understand. Yes, it is a little more work per question. 
-%      But the question & solution will be written only once. Make that
-%      attempt at writing a solution count.
-%      
-%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
-% 
-%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
-%      education company. Bad spellings suggest that we ourselves 
-%      don't have any education. Also, use American spellings by default
-% 
-%   5. If a question has multiple parts, then first delete lines 40-41
-%   6. If a question does not have parts, then first delete lines 43-69
-%   
-%   7. Create versions of the question when possible. Use commands defined in 
-%      tufte-tweaks.sty to do so. Its easier than you think
-
-% \noprintanswers
-% \setcounter{rolldice}{0}
-% \printrubric
+%\noprintanswers
+%\setcounter{rolldice}{3}
+%\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{23}
+  \renewcommand{\vbtwo}{2}
+  \renewcommand{\vbthree}{10}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{25}
+    \renewcommand{\vbtwo}{1}
+    \renewcommand{\vbthree}{25}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{30}
+      \renewcommand{\vbtwo}{2}
+      \renewcommand{\vbthree}{12}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{27}
+      \renewcommand{\vbtwo}{3}
+      \renewcommand{\vbthree}{10}
     }
   }
 }
 
-\question
+\POWER\vbone{2}\p
+\POWER\vbtwo{2}\q
+\POWER\vbthree{2}\r
+\MULTIPLY\vbone\vbtwo\m
+\MULTIPLY\q\r\n
+\ADD\p\n\j
 
-\insertQR{}
+\question A balloon is released at eye-level $\vbone$ meters before you. You watch it rise, 
+tracking it with your eyes. The balloon rises vertically at a rate of $\vbtwo\frac{m}{s}$.
+After $\vbthree$ seconds, how fast is your neck tilting back (in radians per second)? Draw
+an explanatory diagram for full credit
 
-\watchout
+\insertQR[10pt]{}
+
+\watchout[-40pt]
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
   \begin{marginfigure}
     \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
+      \figpt 100:$A$(0,0)
+      \figpt 101:$B$(70,0)
+      \figpt 102:$C$(70,40)
+      \figpt 103:$\theta$(15,5)
     \figdrawbegin{}
-      \figdrawline [100,101]
+      \figdrawline [100,101, 102, 100]
     \figdrawend
     \figvisu{\figBoxA}{}{%
+      \figwritesw 100:(2)
+      \figwritese 101:(2)
+      \figwritee 102:(2)
+      \figwritee 103:(2)
     }
     \centerline{\box\figBoxA}
   \end{marginfigure}
 \fi 
 
 \begin{solution}
+  The situation is \asif. At any point in time, your head is tilted up an angle $\angle CAB = \theta$
+  - if $A$ is the eye-level
+
+  \begin{align}
+    \tan\theta(T) &= \dfrac{BC}{AB} = \dfrac{\vbtwo\cdot T}{\vbone} \text{ where 'T' is time } \\
+    \Rightarrow \sec^2\theta\cdot\dfrac{d\theta}{dt} &= \dfrac{\vbtwo}{\vbone} \\
+    \Rightarrow \dfrac{d\theta}{dt} &= \dfrac{\vbtwo}{\vbone\cdot (1+\tan^2\theta)} = \dfrac\m{\p + \q T^2}
+  \end{align}
+  And so, when $T=\vbthree$ seconds, then 
+  \begin{align}
+    \dfrac{d\theta}{dt} &= \dfrac\m{\p+\q\cdot\vbthree^2} = \WRITEFRAC\m\j \dfrac{\text{radians}}{\text{sec}}
+  \end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}
@@ -150,9 +87,14 @@
   		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
   		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
   		\midrule % ***** Insights & formulations ******
+        $\tan\theta = \dfrac{BC (t)}{AB}$ & $\sec^2\theta = 1 + \tan^2\theta$ \\
   		\toprule % final numerical answers for the various versions
         \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
   		\midrule % ***** Numerical answers (below) **********
+        $AB=23$ & $\dfrac{46}{929}$ \\
+        $AB=25$ & $\qquad\dfrac{1}{50}$ \\
+        $AB=27$ & $\dfrac{9}{181}$ \\
+        $AB=30$ & $\qquad\dfrac{5}{123}$ \\
   		\bottomrule
   	\end{tabular}
   \end{table}
