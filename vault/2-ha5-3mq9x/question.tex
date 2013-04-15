@@ -1,4 +1,4 @@
-% This is an empty shell file placed for you by the 'examiner' script.
+% Thi is an empty shell file placed for you by the 'examiner' script.
 % You can now fill in the TeX for your question here.
 
 % Now, down to brasstacks. ** Writing good solutions is an Art **. 
@@ -87,61 +87,89 @@
   }
 }
 
-\question
+\question There is no snow on Janet's driveway when snow begins to fall at midnight.
+From midnight to $9$ A.M., snow accumulates on the driveway at a rate modeled by
+$f(t) = 7te^{\cos t}$ cubic feet per hour, where $t$ is measured in hours since midnight.
+Janet starts removing snow at $6$ A.M. $(t=6)$. The rate $g(t)$ in cubic feet per hour
+at which Janet removes the snow from the driveway at time $t$ hours after midnight is
+modelled by \\
+\textit{Use of calculator is permitted for this questions}
+\begin{align}
+  g(t) = \left\{
+  \begin{tabular}{cc}
+    $0$   &$\text{for }0 \leq \text{t} < 6$ \\
+    $125$ &$\text{for }6 \leq \text{t} < 7$ \\ 
+    $108$ &$\text{for }7 \leq \text{t} \leq 9$
+  \end{tabular} \nonumber 
+  \right.
+\end{align}
 
 \insertQR{}
 
-\watchout
+%\watchout
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
-
-  \insertQR{}
+  \part How many cubic feet of snow have accumulated on the driveway by $6$ A.M.?
   \begin{solution}
+    To find volume $V$ of snow accumulated we integrate rate function $f(t)$ over time
+    from $t=0$ to $t=6$.
+    \begin{align}
+      \text{V} = \int_0^6 f(t)\ud t = 142.274
+    \end{align}  
   \end{solution}
 
-  \part 
-
-  \insertQR{}
+  \part Find the rate of change of the Volume of snow on the driveway at $8$ A.M.?
   \begin{solution}
+    To find rate of change of Volume of snow we subtract rate at which snow is being 
+    cleared from the rate at which snow is falling,
+    \begin{align}
+      f(8) - g(8) = -59.58 \textit{ (cubic feet per hour)} \nonumber
+    \end{align}
+    This implies that the snow is being cleared faster than it is falling!
   \end{solution}
 
-  \part 
-
-  \insertQR{}
+  \part Let $h(t)$ represent the total amount of snow in cubic feet that Janet has
+  removed from the driveway at time $t$ hours after midnight. Express $h$ as a piecewise
+  defined function with domain $0 \leq t \leq 9$.
   \begin{solution}
+    Let us define $h$ as a piecewise function with domains that align with the given 
+    model.\\
+    For $0 < t \leq 6$,
+    \begin{align}
+      h(t) = h(0) + \int_0^t g(s)\ud s = 0 + \int_0^t 0\ud s = 0
+    \end{align}
+    For $6 < t \leq 7$,
+    \begin{align}
+      h(t) = h(6) + \int_6^t g(s)\ud s = 0 + \int_6^t 125 \ud s = 125(t - 6)
+    \end{align}
+    For $7 < t \leq 9$,
+    \begin{align}
+      h(t) = h(7) + \int_7^t g(s)\ud s = 125 + \int_6^t 108 \ud s = 125 + 108(t - 7)
+    \end{align}
+    Therefore,
+    \begin{align}
+      h(t) = \left\{
+      \begin{tabular}{ll}
+        $0$            &for $0 \leq t \leq 6$ \\
+        $125(t-6)$     &for $6 < t \leq 7$ \\
+        $125+108(t-7)$ &for $7 < t \leq 9$
+      \end{tabular}
+      \right.
+    \end{align}
   \end{solution}
 
-  \part 
-
-  \insertQR{}
+  \part How many cubic feet of snow are on the driveway at $9$ A.M.?
   \begin{solution}
+    Amount A, in \textit{cubic feet} of snow on the driveway $A$ at $9$ A.M.,
+    \begin{align}
+      \text{A} &= \int_0^9 f(t)\ud t - h(9) \\ \nonumber
+               &= 367.334 - 341 = 26.334 \textit{ (cubic feet)}
+    \end{align}
   \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
 \end{parts}
 
 \ifprintrubric

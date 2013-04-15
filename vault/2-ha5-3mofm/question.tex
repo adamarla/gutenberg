@@ -87,61 +87,82 @@
   }
 }
 
-\question
+\question A zoo sponsored a special one day contest to name a new baby elephant.
+Zoo visitors deposited entries in a special box between noon $(t=0)$ and $8$ P.M.
+$(t=8)$. The number of entries in the box $t$ hours after noon is modeled a
+differentiable function $E(t)$ for $0 \leq t \leq 8$. Value of $E(t)$, in hundreds
+of entries at various times are shown in the table below.\\
+\textit{Use of calculator is permitted for this questions}
+\begin{table}
+  \begin{tabular}{|c|c|c|c|c|c|}
+    \hline
+    $t$(hours) &0 &2 &5 &7 &8 \\ \hline
+    $E(t)$(hundreds of entries) &0 &4 &13 &21 &23 \\
+    \hline
+  \end{tabular}
+\end{table}
 
 \insertQR{}
 
-\watchout
+%\watchout
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
-
-  \insertQR{}
+  \part Use the data in the table to approximate the rate, in hundreds of entries 
+  per hour, at which entries were being deposited at $t=6$. Show the computation
+  that lead to your answer.  
   \begin{solution}
+    We can approximate the rate $R$ at $t=6$ using the data provided as follows:
+    \begin{align}
+      R = \dfrac{E(7)-E(5)}{7-5} = \dfrac{8}{2} = 4 \nonumber
+    \end{align}
   \end{solution}
 
-  \part 
-
-  \insertQR{}
+  \part Use a trapezoidal sum with the four subintervals given by the table to
+  approximate the value of $\dfrac{1}{8}\int_0^8 E(t)\ud t$. Using the correct
+  units explain the meaning $\dfrac{1}{8}\int_0^8 E(t)\ud t$ in terms of the 
+  number of entries.
   \begin{solution}
+    \begin{align}
+      \dfrac{1}{8}\int_0^8 E(t)\ud t &= \dfrac{1}{8}\left( 
+        2\dfrac{E(0)+E(2)}{2}+3\dfrac{E(2)+E(5)}{2}+
+        2\dfrac{E(5)+E(7)}{2}+\dfrac{E(7)+E(8)}{2}\right) \nonumber \\
+        &= 10.687 \nonumber
+    \end{align}
+    $\dfrac{1}{8}\int_0^8 E(t)\ud t$ gives the average number of hundreds of entries 
+    in the box between noon and $8$ P.M.
   \end{solution}
 
-  \part 
-
-  \insertQR{}
+  \part At $8$ P.M., volunteers began to process the entries. They processed the 
+  entries at a rate modeled by the function $P$. Where $P(t) = t^3 - 30t^2 + 298t - 976$
+  hundreds of entries per hour for $8 \leq t \leq 12$. According to the model, how many 
+  entries had not yet been processed by midnight $(t=23)$?
   \begin{solution}
+    Let $T$ be the total number of entries processed. Then,
+    \begin{align}
+      T &= \int_8^{12} P(t) \ud t \nonumber \\
+        &= \int_8^{12} t^3 - 30t^2 + 298t - 976 \nonumber \\
+        &= \left[\dfrac{t^4}{4} - 30\dfrac{t^3}{3} + 298\dfrac{t^2}{2} - 976t \right]_8^{12} \nonumber \\
+        &= 16 \nonumber
+    \end{align}
+    The number of hundreds of entries yet to be processed is $23-16=7$
   \end{solution}
 
-  \part 
-
-  \insertQR{}
+  \part According to the model from part(c), at what time were the entries being processed
+  the most quickly. Justify your answer.
   \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
+    To calculate this, we first need to find the extrema (maxima/minima) points of the functon
+    and then calculate its value at each of them and the domain extremes $0, 8$.
+    \begin{align}
+      P'(t) = 3t^2 - 60t + 298 \nonumber
+    \end{align}
+    $P'(t) = 0$ at $t=9.183503$ and $t=10.816497$. Therefore candidate values for $P_{max}$ are
+    {$0$, $5.088662$, $2.911338$ and $8$}. Entries are being processed most quickly at time $t=12$
+    at the rate $8$ hundred entries per hour.
+  \end{solution}  
 \end{parts}
 
 \ifprintrubric
