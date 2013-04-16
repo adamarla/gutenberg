@@ -73,7 +73,7 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vone}{}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -87,61 +87,124 @@
   }
 }
 
-\question
+\question The function $g$ is defined and differentiable on the closed interval $[-7,5]$ and satisfied
+$g(0) = 5$. The graph of $y=g'(x)$, the derivative of $g$, consists of a semicircle and three line
+segments, \asif.
 
 \insertQR{}
 
-\watchout
+%\watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
+%\ifprintanswers
   \begin{marginfigure}
     \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
+      \figpt 10:(0,0)
+      \figpt 20:(-70,-10)
+      \figpt 30:(-20,0)
+      \figpt 40:(20,0)
+      \figpt 50:(30,30)
+      \figpt 60:(50,-10)
+      % extremeties
+      \def\Xmax{60}
+      \def\Ymax{40}
+      \def\Xmin{-80}
+      \def\Ymin{-20}
+      % pts for numbering the axes (5, 10, 15...)
+      \figpt 200:$ $(-80,0)
+      \figpt 201:$ $(-70,0)
+      \figpt 202:$ $(-60,0)
+      \figpt 203:$ $(-50,0)
+      \figpt 204:$ $(-40,0)
+      \figpt 205:$ $(-30,0)
+      \figpt 206:$ $(-20,0)
+      \figpt 207:$ $(-10,0)
+      \figpt 208:$\tiny\text{O}$(0,0)
+      \figpt 209:$1$(10,0)
+      \figpt 210:$ $(20,0)
+      \figpt 211:$ $(30,0)
+      \figpt 212:$ $(40,0)
+      \figpt 213:$ $(50,0)
+      \figpt 214:$ $(0,-20)
+      \figpt 215:$ $(0,-10)
+      \figpt 216:$1$(0,10)
+      \figpt 217:$ $(0,20)
+      \figpt 218:$ $(0,30)
+      % label graph
+      \figpt 100:(\Xmax,0)
+      \figpt 101:(0,\Ymax)
+      \figpt 102:(0,\Ymin)
     \figdrawbegin{}
-      \figdrawline [100,101]
+      \figset arrowhead(length=4, fillmode=yes)
+      \figdrawaxes 10(\Xmin, \Xmax, \Ymin, \Ymax)
+      \figdrawline [20,30]
+      \figdrawarccirc 10 ; 20 (0,180)
+      \figdrawline [40,50]
+      \figdrawline [50,60]
     \figdrawend
     \figvisu{\figBoxA}{}{%
+      \figwritee 100: $x$(2 pt)
+      \figsetmark{$\tiny\text{|}$}
+      \figwrites 200,201,202,203,205,206,207,209,210,211,212,213 :(2 pt)
+      \figwritesw 204: (2 pt)
+      \figsetmark{$\tiny\text{-}$}
+      \figwritew 214,215,216,217,218 :(2 pt)
+      \figsetmark{$\bullet$}
+      \figwrites 20:$\text{(-7,-1)}$(2 pt)
+      \figwriten 50:$\text{(3,3)}$(2 pt)
+      \figwrites 60:$\text{(5,-1)}$(2 pt)
+      \figwrites 102: $\text{Graph of g'}$(10 pt)
     }
     \centerline{\box\figBoxA}
   \end{marginfigure}
-\fi 
-
-\begin{solution}
-\end{solution}
+%\fi
 
 \begin{parts}
-  \part 
-
-  \insertQR{}
+  \part Find $g(3)$ and $g(-2)$.
   \begin{solution}
+    $g(x)$ can be found by calculating area under the curve $g'(x)$.
+    \begin{align}
+      g(3) &= g(0) + \int_0^3 g'(x)\ud x \\ 
+           &= 5 + \dfrac{\pi\times 2^2}{4}+\dfrac{3}{2} \\
+           &= \dfrac{13}{2}+\pi
+    \end{align}
+    \begin{align}
+      g(-2) &= g(0) + \int_{0}^{-2} g'(x)\ud x \\ 
+           &= 5 - \dfrac{\pi\times 2^2}{4} \\
+           &= 5-\pi
+    \end{align}
   \end{solution}
 
-  \part 
-
-  \insertQR{}
+  \part Find the $x$-coordinate of each point of inflection of the graph of $y=g(x)$ on the interval
+  $-7 < x < 5$. Explain your reasoning.
   \begin{solution}
+    Points of inflection occur when $g'(x)$ goes from increasing to decreasing or decreasing to
+    increasing. Examining the graph of $g'(x)$, the inflection points are $x=0$ (increasing to 
+    decreasing), $x=2$ (decreasing to increasing) and $x=3$ (increasing to decreasing).
   \end{solution}
 
-  \part 
-
-  \insertQR{}
+  \part The function $h$ is defined by $h(x)=g(x)-\frac{1}{2}x^2$. Find the $x$-coordinate of each 
+  critical point of $h$, where $-7 < x < 5$, and classify each critical point as the location of a
+  relative minimum, relative maximum, or neither a minimum, nor a maximum. Explain your reasoning.
   \begin{solution}
+    To find the critical points, we first need to find $f'(x)$.
+    \begin{align}
+      f'(x) &= g'(x) - \dfrac{\ud}{\ud x}1/2 x^2 \\
+            &= g'(x) - x 
+    \end{align}
+    At critical points, $f'(x)=0$, therefore $g'(x)=x$.
+    In the interval $-2 \leq x \leq 2$,
+    \begin{align}
+      g'(x)=\sqrt{4-x^2}=x \Rightarrow x=\sqrt{2}
+    \end{align}
+    From an inspection of the Graph of $g'(x)$, we can see that the only other time $g'(x)=x$ in
+    the interval $-7 < x < 5$ is when $x=3$. Since
+    \begin{align}
+      h'(x) = g'(x) - x > 0 \quad\text{for}\quad 0 \leq x < \sqrt{2} \\
+      h'(x) = g'(x) - x \leq 0 \quad\text{for}\quad \sqrt{2} \leq x < 5
+    \end{align}
+    Therefore $h$ has a relative maximum at $x=\sqrt{2}$ and neither a maximum nor a minimum at 
+    $x=3$.
   \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
 \end{parts}
 
 \ifprintrubric
