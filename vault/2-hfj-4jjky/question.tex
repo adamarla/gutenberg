@@ -87,59 +87,96 @@
   }
 }
 
-\question
+\question Let $R$ be the region in the first quadrant enclosed by the graphs $f(x)=8x^3$ and 
+$g(x)= \sin(\pi x)$ as shown in the adjoining figure.	
 
 \insertQR{}
 
-\watchout
+%\watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
+%\ifprintanswers
   \begin{marginfigure}
     \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
+      \figpt 1:(-10,-10)
+      \figpt 2:(-10,0)
+      \figpt 10:(0,0)
+      \figpt 20:(20,5)
+      \figpt 30:(30,20)
+      \figpt 40:(40,60)
+      \figpt 50:(20,32)
+      \figpt 60:(40,48)
+      \figpt 70:(50,38)
+      \figpt 80:(60,20)
+      \figpt 90:(50,90)
+      % extremeties
+      \def\Xmax{100}
+      \def\Ymax{80}
+      \def\Xmin{-100}
+      \def\Ymin{-40}
+      % pts for numbering the axes (5, 10, 15...)
+      \figpt 204:$\tiny\text{O}$(0,0)
+      \figpt 205:$\tiny\text{1}$(0,48)
+      \figpt 206:$\tiny\text{R}$(15,20)
+      % label graph
+      \figpt 100:(\Xmax,0)
+      \figpt 101:(0,\Ymax)
+      \figpt 102:(0,\Ymin)
     \figdrawbegin{}
-      \figdrawline [100,101]
+      \figset arrowhead(length=4, fillmode=yes)
+      \figdrawaxes 10(\Xmin, \Xmax, \Ymin, \Ymax)
+      \figdrawcurve [1,10,50,60,70,80]
+      \figdrawcurve [2,10,20,30,40,90]
     \figdrawend
     \figvisu{\figBoxA}{}{%
+      \figwritee 100: $x$(2 pt)
+      \figwritesw 204: (2 pt)
+      \figwritee	206: $R$(1 pt)
+      \figsetmark {$-$}
+      \figwritew 205: $1$(2 pt)
     }
     \centerline{\box\figBoxA}
   \end{marginfigure}
-\fi 
-
-\begin{solution}
-\end{solution}
+%\fi 
 
 \begin{parts}
-  \part 
+  \part Write an equation for the line tangent to the graph of $f$ at $x=\dfrac{1}{2}$.
 
   \insertQR{}
   \begin{solution}
+    \begin{align}
+      f(x) = 8x^3 \Rightarrow f(\dfrac{1}{2}) = 1 
+    \end{align}    
+    To find the tangent at a we must first find the derivative of $f(x)$ to get slope.
+    \begin{align}
+      f'(x) = 24x^2 \Rightarrow f'(\dfrac{1}{2}) = 6 
+    \end{align}    
+    Therefore equation of the tangent at $x=\dfrac{1}{2}$ is
+    \begin{align}
+      y=1+6(x-\dfrac{1}{2}) 
+    \end{align}
   \end{solution}
 
-  \part 
-
-  \insertQR{}
+  \part Find the area of $R$.
   \begin{solution}
+    Let the area of $R$ be $A_R$. Since $R$ extends from $x=0$ to $x=\dfrac{1}{2}$ area 
+    can be calculated as follows,
+    \begin{align}
+      A_R &= \int_0^{1/2} (g(x)-f(x))\ud x \\ \nonumber
+          &= \int_0^{1/2} (\sin(\pi x)-8x^3)\ud x \\ \nonumber
+          &= \left[-\dfrac{1}{\pi}\cos(\pi x)-2x^4\right]_0^{1/2} \\ \nonumber
+          &= -\dfrac{1}{8}+\dfrac{1}{\pi} \nonumber
+    \end{align}
   \end{solution}
 
-  \part 
-
-  \insertQR{}
+  \part Write, but do not, an integral expression for the volume of the solid generated
+  when $R$ is rotated about the horizontal line $y=1$.
   \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
+    Let Volume of generated solid be $V$. To calculate the volume $V$ we must sum up the
+    areas of all the discs of thickness $\ud x$ from $x=0$ to $x=1/2$. The area $dA$ of each
+    disc being the $\pi((1-f(x))^2-(1-g(x))^2)\ud x$. Therefore expression for Volume is,
+    \begin{align}
+      V = \pi((1-8x^3)^2-(1-\sin(\pi x))^2)\ud x \\ \nonumber 
+    \end{align}
   \end{solution}
 
 \end{parts}
