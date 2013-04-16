@@ -102,17 +102,6 @@ $B(0)=20$.
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{parts}
@@ -147,6 +136,8 @@ $B(0)=20$.
       \figpt 60:(160,100)
       \figpt 200:(0,20)
       \figpt 201:(0,90)
+      \figpt 202:(60,0)
+      \figpt 203:(0,40)
     \figdrawbegin{}
       \figdrawline [100,101]
       \figdrawline [102,103]
@@ -157,6 +148,9 @@ $B(0)=20$.
       \figsetmark {$-$}
       \figwritew 200: $20$(2 pt)
       \figwritew 201: $100$(2 pt)
+      \figsetmark {}
+      \figwrites 202: $\text{Time(days)}$(10 pt)
+      \figwritew 203: $\text{Weight(grams)}$(10 pt)
     }
     \centerline{\box\figBoxA}
   \end{marginfigure}
