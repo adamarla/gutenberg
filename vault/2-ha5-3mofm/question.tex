@@ -102,7 +102,7 @@ of entries at various times are shown in the table below.\\
   \end{tabular}
 \end{table}
 
-\insertQR{}
+\insertQR{QRC}
 
 %\watchout
 
@@ -111,21 +111,21 @@ of entries at various times are shown in the table below.\\
 \fi 
 
 \begin{parts}
-  \part Use the data in the table to approximate the rate, in hundreds of entries 
+  \part[1] Use the data in the table to approximate the rate, in hundreds of entries 
   per hour, at which entries were being deposited at $t=6$. Show the computation
   that lead to your answer.  
-  \begin{solution}
+\begin{solution}[\mcq]
     We can approximate the rate $R$ at $t=6$ using the data provided as follows:
     \begin{align}
       R = \dfrac{E(7)-E(5)}{7-5} = \dfrac{8}{2} = 4 \nonumber
     \end{align}
   \end{solution}
 
-  \part Use a trapezoidal sum with the four subintervals given by the table to
+  \part[3] Use a trapezoidal sum with the four subintervals given by the table to
   approximate the value of $\dfrac{1}{8}\int_0^8 E(t)\ud t$. Using the correct
   units explain the meaning $\dfrac{1}{8}\int_0^8 E(t)\ud t$ in terms of the 
   number of entries.
-  \begin{solution}
+\begin{solution}[\mcq]
     \begin{align}
       \dfrac{1}{8}\int_0^8 E(t)\ud t &= \dfrac{1}{8}\left( 
         2\dfrac{E(0)+E(2)}{2}+3\dfrac{E(2)+E(5)}{2}+
@@ -136,11 +136,11 @@ of entries at various times are shown in the table below.\\
     in the box between noon and $8$ P.M.
   \end{solution}
 
-  \part At $8$ P.M., volunteers began to process the entries. They processed the 
+  \part[2] At $8$ P.M., volunteers began to process the entries. They processed the 
   entries at a rate modeled by the function $P$. Where $P(t) = t^3 - 30t^2 + 298t - 976$
   hundreds of entries per hour for $8 \leq t \leq 12$. According to the model, how many 
   entries had not yet been processed by midnight $(t=4)$?
-  \begin{solution}
+  \begin{solution}[\mcq]
     Let $T$ be the total number of entries processed. Then,
     \begin{align}
       T &= \int_8^{12} P(t) \ud t \nonumber \\
@@ -151,9 +151,9 @@ of entries at various times are shown in the table below.\\
     The number of hundreds of entries yet to be processed is $23-16=7$
   \end{solution}
 
-  \part According to the model from part(c), at what time were the entries being processed
+  \part[3] According to the model from part(c), at what time were the entries being processed
   the most quickly. Justify your answer.
-  \begin{solution}
+\begin{solution}[\mcq]
     To calculate this, we first need to find the extrema (maxima/minima) points of the functon
     and then calculate its value at each of them and the domain extremes $0, 8$.
     \begin{align}

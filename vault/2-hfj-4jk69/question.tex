@@ -96,7 +96,7 @@ time $t$ days after it is first weighed, then
 \end{align}
 Let $y=B(t)$ be the solution to the differential equation above with initial condition
 $B(0)=20$. 
-\insertQR{}
+\insertQR{QRC}
 
 %\watchout
 
@@ -105,9 +105,9 @@ $B(0)=20$.
 \fi 
 
 \begin{parts}
-  \part Is the bird gaining weight faster when it weighs $40$ grams or when it weights
+  \part[2] Is the bird gaining weight faster when it weighs $40$ grams or when it weights
   $70$ grams? Explain your reasoning.
-  \begin{solution}
+\begin{solution}[\mcq]
     We can use the rate of weight gain expression to calculate this.
     \begin{align}
       \dfrac{\ud B}{\ud t}|_{B=40} = \dfrac{1}{5}(60) = 12 
@@ -119,7 +119,7 @@ $B(0)=20$.
     it weighed $40$ grams.
   \end{solution}
 
-  \part Find $\dfrac{\ud^2 B}{\ud t^2}$ in terms of $B$. Use $\dfrac{\ud^2 B}{\ud t^2}$ to 
+  \part[2] Find $\dfrac{\ud^2 B}{\ud t^2}$ in terms of $B$. Use $\dfrac{\ud^2 B}{\ud t^2}$ to 
   explain why the graph of $B$ cannot resemble the adjoining graph.
   \begin{marginfigure}
     \figinit{pt}
@@ -154,7 +154,7 @@ $B(0)=20$.
     }
     \centerline{\box\figBoxA}
   \end{marginfigure}
-  \begin{solution}
+\begin{solution}[\mcq]
     Let us first determine $\dfrac{\ud^2 B}{\ud t^2}$ in terms of $B$,
     \begin{align}
       \dfrac{\ud^2 B}{\ud t^2} &= -\dfrac{1}{5}\dfrac{\ud B}{\ud t} \\ 
@@ -166,9 +166,9 @@ $B(0)=20$.
     concave up. Therefore this cannot resemble the graph of $B$.
   \end{solution}
 
-  \part Use the separation of variables to find $y=B(t)$, the particular solution to the
+  \part[5] Use the separation of variables to find $y=B(t)$, the particular solution to the
   differential equation with initial condition $B(0)=20$.
-  \begin{solution}
+\begin{solution}[\halfpage]
     \begin{align}
       \dfrac{\ud B}{\ud t}       &= \dfrac{1}{5}(100-B) \\ 
       \dfrac{\ud B}{(100-B)}     &= \dfrac{1}{5}\ud t \\
