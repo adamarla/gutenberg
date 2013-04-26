@@ -10,7 +10,7 @@ ps2pdf := $(shell which ps2pdf)
 
 # Locations 
 Vault := $(Gutenberg)/vault
-Shared := $(Gutenberg)/shared
+Shared := $(Gutenberg)/shared/templates
 
 
 
