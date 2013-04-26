@@ -84,7 +84,16 @@
         \begin{marginfigure}
           \psbarcode[transy=#1,transx=0.4\marginparwidth]{#2}{eclevel=Q width=0.7 height=0.7}{qrcode} 
         \end{marginfigure}
-      }{}
+        \ifstrequal{#2}{0}{}
+        {
+          \begin{textblock}{600}(520,05)
+            {#2}
+          \end{textblock}
+          \begin{textblock}{600}(0,785)
+            {#2}
+          \end{textblock}
+        }
+      }
     \fi 
 }
 
