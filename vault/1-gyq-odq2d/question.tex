@@ -1,39 +1,48 @@
-% This is an empty shell file placed for you by the 'examiner' script.
-% You can now fill in the TeX for your question here.
 
-% Now, down to brasstacks. ** Writing good solutions is an Art **. 
-% Eventually, you will find your own style. But here are some thoughts 
-% to get you started: 
-%
-%   1. Write the solution as if you are writing it for your favorite
-%      14-17 year old to help him/her understand. Could be your nephew, 
-%      your niece, a cousin perhaps or probably even you when you 
-%      were that age. Just write for them.
-%
-%   2. Use margin-notes to "talk" to students about the critical insights
-%      in the question. The tone can be - in fact, should be - informal
-%
-%   3. Don't shy away from creating margin-figures you think will help
-%      students understand. Yes, it is a little more work per question. 
-%      But the question & solution will be written only once. Make that
-%      attempt at writing a solution count.
-%
-%   4. At the same time, do not be too verbose. A long solution can
-%      - at first sight - make the student think, "God, that is a lot to know".
-%      Our aim is not to scare students. Rather, our aim should be to 
-%      create many "Aha!" moments everyday in classrooms around the world
-% 
-%   5. Ensure that there are *no spelling mistakes anywhere*. We are an 
-%      education company. Bad spellings suggest that we ourselves 
-%      don't have any education. And, use American spellings
+% \noprintanswers
+%\setcounter{rolldice}{1}
+% \printrubric
 
-\question[4]  A peacock - a hungry peacock - is sitting on top of a pillar 9 meters high.
-A snake emerges from a hole 27 meters from the base of the pillar and starts moving 
-towards the pole. Seeing the snake, the peacock pounces on it. If the speed at which 
-the peacock comes down is the same at which the snake is crawling, then at what distance
-from its hole is the snake caught? Assume that the peacock descends in a straight line                          
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{9}
+  \renewcommand{\vbtwo}{27}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vbone}{10}
+    \renewcommand{\vbtwo}{50}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vbone}{12}
+      \renewcommand{\vbtwo}{36}
+    }{
+      % variables 
+      \renewcommand{\vbone}{8}
+      \renewcommand{\vbtwo}{32}
+    }
+  }
+}
 
-\insertQR{QRC}
+\FRACTIONSIMPLIFY\vbone\vbtwo\a\b %\tan\alpha
+\FRACMULT{2}{1}\a\b\c\d % 2\tan\alpha
+\FRACMULT\a\b\a\b\e\f %\tan^{2}\alpha
+\FRACMINUS{1}{1}\e\f\x\y % 1- \tan^2\alpha
+\FRACDIV\c\d\x\y\m\n
+
+\FRACMULT\n\m\vbone{1}\j\k
+\FRACMINUS\vbtwo{1}\j\k\ansx\ansy
+
+\question[4] Snake eagles are predatory birds that hunt, well, snakes. 
+Brave birds - and one such bird is perched on a tree $\vbone$ meters high when 
+a snake emerges from a hole $\vbtwo$ meters from the base of the tree and starts moving 
+towards it. Seeing the snake, the eagle pounces on it. If the speed at which 
+the eagle comes down is the same at which the snake is crawling, then at what distance
+from its hole is the snake caught? Assume that the snake descends in a straight line                          
+
+\insertQR[30pt]{QRC}
+\watchout[-70pt]
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -57,7 +66,7 @@ from its hole is the snake caught? Assume that the peacock descends in a straigh
       \figwrites 4:C(0.1)
       \figwritee 2:D(0.1)
       \figwritese 5:$x$(0.2)
-      \figwritesw 6:$27-x$(0.2)
+      \figwritesw 6:$\vbtwo-x$(0.2)
       \figwritee 7:$\alpha$(0.2)
       \figwritee 8:$2\alpha$(0.2)
       \psarc{<->}{1}{0}{30}
@@ -68,8 +77,8 @@ from its hole is the snake caught? Assume that the peacock descends in a straigh
   \marginnote[1cm] {$\angle BCD = 2\alpha$ because $x = BC$}
   \marginnote[0.5cm]{ $x = BC $ because the snake and peacock start at the same time
   from their initial positions, move at the same speed and meet at the same time }
-  \marginnote[1cm] { That said, the snake surely didn't want to 'meet' the peacock }
 \fi 
+
 
 \begin{solution}[\fullpage]
 	In the figure alongside, let $x$ be the distance the snake travels before
@@ -77,19 +86,37 @@ from its hole is the snake caught? Assume that the peacock descends in a straigh
 	
 	Now, right upfront we know at least the following:
 	\begin{align}
-		\tan\alpha &= \dfrac{9}{27} = \dfrac{1}{3} \\
+		\tan\alpha &= \dfrac\vbone\vbtwo = \dfrac\a\b \\
 		\angle BCD &= 2\cdot\alpha \\
 	    \Rightarrow \tan\angle BCD &= \tan 2\alpha = \dfrac{2\tan\alpha}{1-\tan^2\alpha}
-	                               = \dfrac{9}{27-x}
+	                               = \dfrac\vbone{\vbtwo - x}
 	\end{align}
 	Solving (3), we get 
 	\begin{align}
-		\tan\angle BCD &= \dfrac{9}{27-x} = \dfrac{2\cdot\frac{1}{3}}{1-(\frac{1}{3})^2} \\
-		\Rightarrow \dfrac{9}{27-x} &= \dfrac{3}{4} \\
-		\Rightarrow x &= 15
+		\tan\angle BCD &= \dfrac{\vbone}{\vbtwo-x} = \dfrac{2\cdot\frac\a\b}{1-(\frac\a\b)^2} \\
+		\Rightarrow \dfrac{\vbone}{\vbtwo-x} &= \dfrac\m\n \\
+		\Rightarrow x &= \WRITEFRAC\ansx\ansy
 	\end{align}
 	
-	So, the snake goes 15 meters before it is caught!
-	
-	
+	So, the snake goes $\WRITEFRAC\ansx\ansy$ meters before it is caught!
 \end{solution}
+
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+        $\angle{BCD} = 2\times\alpha$ & Applied $\tan 2\alpha = \dfrac{2\tan\alpha}{1-\tan^2\alpha}$ \\
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+        Tree height = 8m & $x=17$ \\
+        Tree height = 9m & $x=15$ \\
+        Tree height = 10m & $x=26$ \\
+        Tree height = 12m & $x=20$ \\
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi
