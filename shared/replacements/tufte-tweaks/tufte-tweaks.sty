@@ -86,11 +86,14 @@
         \end{marginfigure}
         \ifstrequal{#2}{0}{}
         {
-          \begin{textblock}{600}(480,05)
-            {#2}
+          \StrLeft{#2}{4}[\left]
+          \StrMid{#2}{5}{8}[\middle]
+          \StrRight{#2}{3}[\right]
+          \begin{textblock}{600}(410,12)
+            \huge \left -\middle -\right 
           \end{textblock}
-          \begin{textblock}{600}(120,785)
-            {#2}
+          \begin{textblock}{600}(20,770)
+            \huge \left -\middle -\right 
           \end{textblock}
         }
       }
