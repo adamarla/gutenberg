@@ -17,4 +17,4 @@ cd $root
 touch $target/$log
 cd /home/gutenberg/ScanbotSS
 java -cp ScanbotSS.jar:core.jar:javase.jar:itextpdf-5.4.1.jar gutenberg.collect.Driver backup >> $target/$log
-curl http://www.gradians.com/receive/scans >> $target/$log
+curl http://www.gradians.com/distribute/scans >> $target/$log
