@@ -9,11 +9,11 @@ if [[ $PRODUCTION_SERVER ]] ; then root=$HOME/bank ; else root=$(cd $(dirname $0
 target=${root:+$root/cron-jobs/`date +"%d.%B.%Y"`}
 
 # Log file for capturing output of curl command 
-log=`date +"%H-receive"`
+log=`date +"%H-%M-receiveSugg"`
 
 # Now, create the target folder and write to the log-file
 mkdir -p $target
 cd $root 
 touch $target/$log
 cd /home/gutenberg/Suggestionbot
-java -cp SuggestionbotSS.jar gutenberg.collect.Driver backup >> $target/$log
+java -cp Suggestionbot.jar gutenberg.collect.Driver >> $target/$log
