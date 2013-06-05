@@ -1,148 +1,79 @@
-% This is an empty shell file placed for you by the 'examiner' script.
-% You can now fill in the TeX for your question here.
-
-% Now, down to brasstacks. ** Writing good solutions is an Art **. 
-% Eventually, you will find your own style. But here are some thoughts 
-% to get you started: 
-%
-%   1. Write to be understood - but be crisp. Your own solution should not take 
-%      more space than you will give to the student. Hence, if you take more than 
-%      a half-page to write a solution, then give the student a full-page and so on...
-%
-%   2. Use margin-notes to "talk" to students about the critical insights
-%      in the question. The tone can be - in fact, should be - informal
-%
-%   3. Don't shy away from creating margin-figures you think will help
-%      students understand. Yes, it is a little more work per question. 
-%      But the question & solution will be written only once. Make that
-%      attempt at writing a solution count.
-%      
-%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
-% 
-%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
-%      education company. Bad spellings suggest that we ourselves 
-%      don't have any education. Also, use American spellings by default
-% 
-%   5. If a question has multiple parts, then first delete lines 40-41
-%   6. If a question does not have parts, then first delete lines 43-69
-%   
-%   7. Create versions of the question when possible. Use commands defined in 
-%      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
-% \printrubric
+%\setcounter{rolldice}{2}
+%\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{1}
+  \renewcommand{\vbtwo}{3}
+  \renewcommand{\vbthree}{6}
+  \renewcommand{\vbfour}{3}
+  \renewcommand{\vbfive}{1} % lambda
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{4}
+    \renewcommand{\vbtwo}{4}
+    \renewcommand{\vbthree}{9}
+    \renewcommand{\vbfour}{1}
+    \renewcommand{\vbfive}{\frac{7}{3\sqrt{2}}}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{3}
+      \renewcommand{\vbtwo}{3}
+      \renewcommand{\vbthree}{8}
+      \renewcommand{\vbfour}{1}
+      \renewcommand{\vbfive}{\frac{\sqrt{23}}{3}}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{1}
+      \renewcommand{\vbtwo}{2}
+      \renewcommand{\vbthree}{3}
+      \renewcommand{\vbfour}{2}
+      \renewcommand{\vbfive}{\frac{2}{\sqrt{21}}}
     }
   }
 }
 
-\question
+\SQUARE\vbone\a
+\SQUARE\vbtwo\b
+\SQUARE\vbthree\c
+\ADD\a\b\d
+\SQUARE\vbfour\e
+\ADD\e{17}\f
 
-\insertQR{}
+\question Find the equation of the plane that passes through the intersection of 
+planes $P_1: \vbone x + \vbtwo y + \vbthree = 0$ and $P_2: \vbfour x - y - 4z = 0$ 
+and is at a distance of 1 unit from the origin
+
+\insertQR[-10pt]{QRC}
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}
+	For all the infinite planes that pass through the intersection of $P_1$ and $P_2$, the 
+	following would be true
+	\begin{align}
+		(\vbone x + \vbtwo y + \vbthree) &+ \lambda\cdot(\vbfour x -y -4z) = 0 \\
+		(\vbone + \vbfour\lambda)x &+ (\vbtwo - \lambda)y - 4\lambda z + \vbthree = 0
+	\end{align}
+	However, if one or more of these planes are also to be $1$ unit distance from the 
+	origin, then the following should also hold true
+	\begin{align}
+		\dfrac{\vbthree}{\sqrt{(\vbone + \vbfour\lambda)^2 + (\vbtwo - \lambda)^2 + 16\lambda^{2}}} &= 1 \\
+		\Rightarrow \f\lambda^{2} + \d &= \vbthree^{2} = \c \\
+		\text{or, } \lambda &= \vbfive
+	\end{align}
+	
+	Finding $\lambda$ was the key step. You can plug it into (1) and get a reduced expression 
+	for the equation of the plane
+	 
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}
@@ -150,9 +81,15 @@
   		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
   		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
   		\midrule % ***** Insights & formulations ******
+  			Correctly wrote equation for family of planes & Applied formula 
+  			for distance of a point from a plane to narrow down \\
   		\toprule % final numerical answers for the various versions
         \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
   		\midrule % ***** Numerical answers (below) **********
+  			$P_1: x + 3y + 6 = 0$ & $\lambda = 1$ \\
+  			$P_1: 4x + 4y + 9 = 0$ & $\lambda = \frac{7}{3\sqrt{2}}$ \\
+  			$P_1: 3x + 3y + 8 = 0$ & $\lambda = \frac{\sqrt{23}}{3}$ \\
+  			$P_1: x + 2y + 3 = 0$ & $\lambda = \frac{2}{\sqrt{21}}$ \\
   		\bottomrule
   	\end{tabular}
   \end{table}
