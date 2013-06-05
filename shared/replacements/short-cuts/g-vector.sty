@@ -2,7 +2,7 @@
 \NeedsTeXFormat{LaTeX2e}[1994/06/01]
 \ProvidesPackage{g-vector}[2011/09/01 Commands internal to gradians.com for vectors]
 
-\newcommand{\abhinav}[3] { % if arguments are [a,b,c] then ai + bj + ck
+\newcommand{\WRITEVEC}[3] { % if arguments are [a,b,c] then ai + bj + ck
    \ifnumequal{#1}{0}{}{
 		\ifnumgreater{#1}{0}{ +{#1}\hat{i} }{ {#1}\hat{i} }
    }
@@ -14,6 +14,8 @@
    }
 }
 
-
+\newcommand{\WRITEVECGENERAL}[3] { % if arguments are [a,b,c] then ai + bj + ck
+  {#1}\hat{i} + {#2}\hat{j} + {#3}\hat{k}
+}
 
 
