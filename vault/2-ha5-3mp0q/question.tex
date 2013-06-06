@@ -35,11 +35,11 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
+  \renewcommand{\vbone}{3}
+  \renewcommand{\vbtwo}{5}
+  \renewcommand{\vbthree}{2}
+  \renewcommand{\vbfour}{3}
+  \renewcommand{\vbfive}{7}
   \renewcommand{\vbsix}{}
   \renewcommand{\vbseven}{}
   \renewcommand{\vbeight}{}
@@ -48,11 +48,11 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
+    \renewcommand{\vbone}{4}
+    \renewcommand{\vbtwo}{7}
+    \renewcommand{\vbthree}{3}
+    \renewcommand{\vbfour}{\dfrac{4}{3}}
+    \renewcommand{\vbfive}{\dfrac{-2}{9}}
     \renewcommand{\vbsix}{}
     \renewcommand{\vbseven}{}
     \renewcommand{\vbeight}{}
@@ -61,11 +61,11 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
+      \renewcommand{\vbone}{5}
+      \renewcommand{\vbtwo}{21}
+      \renewcommand{\vbthree}{2}
+      \renewcommand{\vbfour}{5}
+      \renewcommand{\vbfive}{23}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
       \renewcommand{\vbeight}{}
@@ -73,11 +73,11 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
+      \renewcommand{\vbone}{2}
+      \renewcommand{\vbtwo}{3}
+      \renewcommand{\vbthree}{1}
+      \renewcommand{\vbfour}{4}
+      \renewcommand{\vbfive}{14}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
       \renewcommand{\vbeight}{}
@@ -87,7 +87,8 @@
   }
 }
 
-\question
+\question If $a=\dfrac{\vbone+\sqrt{\vbtwo}}{\vbthree}$, then find the value of
+$a^2+\dfrac{1}{a^2}$.
 
 \insertQR{}
 
@@ -109,40 +110,22 @@
 \fi 
 
 \begin{solution}
+
+  \begin{align}
+    a^2 + \dfrac{1}{a^2} &= (a + \dfrac{1}{a})^2 - 2 
+  \end{align}
+  Let us compute $(a+\dfrac{1}{a})$ first,
+  \begin{align}
+    a+\dfrac{1}{a} &= \dfrac{\vbone + \sqrt{\vbtwo}}{\vbthree} + \dfrac{\vbthree}{\vbone + \sqrt{\vbtwo}} \\   
+                   &= \vbfour
+  \end{align}
+  Therefore, 
+  \begin{align}
+    (a+\dfrac{1}{a})^2 - 2 &= (\vbfour)^2 - 2 \\
+                           &= \vbfive
+  \end{align}
+
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}
