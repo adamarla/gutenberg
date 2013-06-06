@@ -90,28 +90,21 @@ needs to be true,
 \end{align}
 We can find this out by computing the dot product of each of the above two pairs of vectors above and verifying 
 that \textbf{any one} of them is equal to zero. In this case,
+\begin{align}
 \ifnumequal{\value{rolldice}}{0}{
-\begin{align}
   \vec{BC}\cdot\vec{CA} = 0
-\end{align}
 }{
-\begin{align}
   \ifnumequal{\value{rolldice}}{1}{
     \vec{AB}\cdot\vec{BC} = 0
-\end{align}
   }{
-\begin{align}
     \ifnumequal{\value{rolldice}}{2}{
       \vec{CA}\cdot \vec{AB} = 0
-\end{align}
     }{
-\begin{align}
       \vec{AB}\cdot{BC} = 0
-\end{align}
     }
   }
 }    
-
+\end{align}
 
 \end{solution}
 
