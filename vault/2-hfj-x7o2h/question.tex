@@ -35,59 +35,64 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{3}
+  \renewcommand{\vbtwo}{2}
+  \renewcommand{\vbthree}{1.732}
+  \renewcommand{\vbfour}{1.414}
+  \renewcommand{\vbfive}{4}
+  \renewcommand{\vbsix}{3}
+  \renewcommand{\vbseven}{21}
+  \renewcommand{\vbeight}{2}
+  \renewcommand{\vbnine}{19}
+  \renewcommand{\vbten}{2.063}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{3}
+    \renewcommand{\vbtwo}{2}
+    \renewcommand{\vbthree}{1.732}
+    \renewcommand{\vbfour}{1.414}
+    \renewcommand{\vbfive}{5}
+    \renewcommand{\vbsix}{3}
+    \renewcommand{\vbseven}{24}
+    \renewcommand{\vbeight}{4}
+    \renewcommand{\vbnine}{19}
+    \renewcommand{\vbten}{2.485}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{3}
+      \renewcommand{\vbtwo}{2}
+      \renewcommand{\vbthree}{1.732}
+      \renewcommand{\vbfour}{1.414}
+      \renewcommand{\vbfive}{5}
+      \renewcommand{\vbsix}{4}
+      \renewcommand{\vbseven}{27}
+      \renewcommand{\vbeight}{2}
+      \renewcommand{\vbnine}{19}
+      \renewcommand{\vbten}{2.61}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{3}
+      \renewcommand{\vbtwo}{2}
+      \renewcommand{\vbthree}{1.732}
+      \renewcommand{\vbfour}{1.414}
+      \renewcommand{\vbfive}{5}
+      \renewcommand{\vbsix}{2}
+      \renewcommand{\vbseven}{21}
+      \renewcommand{\vbeight}{6}
+      \renewcommand{\vbnine}{19}
+      \renewcommand{\vbten}{2.36}
     }
   }
 }
 
-\question
+\question If $\sqrt{\vbone} = \vbthree$ and $\sqrt{\vbtwo}=\vbfour$, 
+then find the value of 
+\begin{align}
+  \dfrac{\vbfive}{\vbone\sqrt{\vbone}-\vbtwo\sqrt{\vbtwo}}+
+    \dfrac{\vbsix}{\vbone\sqrt{\vbone}+\vbtwo\sqrt{\vbtwo}} \nonumber
+\end{align}
 
 \insertQR{}
 
@@ -109,40 +114,16 @@
 \fi 
 
 \begin{solution}
+  \begin{align}
+      &\dfrac{\vbfive}{\vbone\sqrt{\vbone}-\vbtwo\sqrt{\vbtwo}}+
+        \dfrac{\vbsix}{\vbone\sqrt{\vbone}+\vbtwo\sqrt{\vbtwo}} \\
+    = &\dfrac{\vbfive (\vbone\sqrt{\vbone}+\vbtwo\sqrt{\vbtwo}) +
+         \vbsix (\vbone\sqrt{\vbone}-\vbtwo\sqrt{\vbtwo})}
+         {(\vbone\sqrt{\vbone})^2 - (\vbtwo\sqrt{\vbtwo})^2} \\
+    = &\dfrac{\vbseven\sqrt{\vbone} + \vbeight\sqrt{\vbtwo}}{\vbnine} \\
+    = &\vbten
+  \end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}
