@@ -1,0 +1,187 @@
+% Thi is an empty shell file placed for you by the 'examiner' script.
+% You can now fill in the TeX for your question here.
+
+% Now, down to brasstacks. ** Writing good solutions is an Art **. 
+% Eventually, you will find your own style. But here are some thoughts 
+% to get you started: 
+%
+%   1. Write to be understood - but be crisp. Your own solution should not take 
+%      more space than you will give to the student. Hence, if you take more than 
+%      a half-page to write a solution, then give the student a full-page and so on...
+%
+%   2. Use margin-notes to "talk" to students about the critical insights
+%      in the question. The tone can be - in fact, should be - informal
+%
+%   3. Don't shy away from creating margin-figures you think will help
+%      students understand. Yes, it is a little more work per question. 
+%      But the question & solution will be written only once. Make that
+%      attempt at writing a solution count.
+%      
+%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
+% 
+%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
+%      education company. Bad spellings suggest that we ourselves 
+%      don't have any education. Also, use American spellings by default
+% 
+%   5. If a question has multiple parts, then first delete lines 40-41
+%   6. If a question does not have parts, then first delete lines 43-69
+%   
+%   7. Create versions of the question when possible. Use commands defined in 
+%      tufte-tweaks.sty to do so. Its easier than you think
+
+% \noprintanswers
+% \setcounter{rolldice}{0}
+% \printrubric
+
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{}
+  \renewcommand{\vbtwo}{}
+  \renewcommand{\vbthree}{}
+  \renewcommand{\vbfour}{}
+  \renewcommand{\vbfive}{}
+  \renewcommand{\vbsix}{}
+  \renewcommand{\vbseven}{}
+  \renewcommand{\vbeight}{}
+  \renewcommand{\vbnine}{}
+  \renewcommand{\vbten}{}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vbone}{}
+    \renewcommand{\vbtwo}{}
+    \renewcommand{\vbthree}{}
+    \renewcommand{\vbfour}{}
+    \renewcommand{\vbfive}{}
+    \renewcommand{\vbsix}{}
+    \renewcommand{\vbseven}{}
+    \renewcommand{\vbeight}{}
+    \renewcommand{\vbnine}{}
+    \renewcommand{\vbten}{}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vbone}{}
+      \renewcommand{\vbtwo}{}
+      \renewcommand{\vbthree}{}
+      \renewcommand{\vbfour}{}
+      \renewcommand{\vbfive}{}
+      \renewcommand{\vbsix}{}
+      \renewcommand{\vbseven}{}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }{
+      % variables 
+      \renewcommand{\vbone}{}
+      \renewcommand{\vbtwo}{}
+      \renewcommand{\vbthree}{}
+      \renewcommand{\vbfour}{}
+      \renewcommand{\vbfive}{}
+      \renewcommand{\vbsix}{}
+      \renewcommand{\vbseven}{}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }
+  }
+}
+
+\question There is no snow on Janet's driveway when snow begins to fall at midnight.
+From midnight to $9$ A.M., snow accumulates on the driveway at a rate modeled by
+$f(t) = 7te^{\cos t}$ cubic feet per hour, where $t$ is measured in hours since midnight.
+Janet starts removing snow at $6$ A.M. $(t=6)$. The rate $g(t)$ in cubic feet per hour
+at which Janet removes the snow from the driveway at time $t$ hours after midnight is
+modelled by \\
+\textit{Use of calculator is permitted for this questions}
+\begin{align}
+  g(t) = \left\{
+  \begin{tabular}{cc}
+    $0$   &$\text{for }0 \leq \text{t} < 6$ \\
+    $125$ &$\text{for }6 \leq \text{t} < 7$ \\ 
+    $108$ &$\text{for }7 \leq \text{t} \leq 9$
+  \end{tabular} \nonumber 
+  \right.
+\end{align}
+
+\insertQR{QRC}
+
+%\watchout
+
+\ifprintanswers
+  % stuff to be shown only in the answer key - like explanatory margin figures
+\fi 
+
+\begin{parts}
+  \part[2] How many cubic feet of snow have accumulated on the driveway by $6$ A.M.?
+\begin{solution}[\mcq]
+    To find volume $V$ of snow accumulated we integrate rate function $f(t)$ over time
+    from $t=0$ to $t=6$.
+    \begin{align}
+      \text{V} = \int_0^6 f(t)\ud t = 142.274
+    \end{align}  
+  \end{solution}
+
+  \part[1] Find the rate of change of the Volume of snow on the driveway at $8$ A.M.?
+\begin{solution}[\mcq]
+    To find rate of change of Volume of snow we subtract rate at which snow is being 
+    cleared from the rate at which snow is falling,
+    \begin{align}
+      f(8) - g(8) = -59.58 \textit{ (cubic feet per hour)} \nonumber
+    \end{align}
+    This implies that the snow is being cleared faster than it is falling!
+  \end{solution}
+
+  \part[3] Let $h(t)$ represent the total amount of snow in cubic feet that Janet has
+  removed from the driveway at time $t$ hours after midnight. Express $h$ as a piecewise
+  defined function with domain $0 \leq t \leq 9$.
+\begin{solution}[\mcq]
+    Let us define $h$ as a piecewise function with domains that align with the given 
+    model.\\
+    For $0 < t \leq 6$,
+    \begin{align}
+      h(t) = h(0) + \int_0^t g(s)\ud s = 0 + \int_0^t 0\ud s = 0
+    \end{align}
+    For $6 < t \leq 7$,
+    \begin{align}
+      h(t) = h(6) + \int_6^t g(s)\ud s = 0 + \int_6^t 125 \ud s = 125(t - 6)
+    \end{align}
+    For $7 < t \leq 9$,
+    \begin{align}
+      h(t) = h(7) + \int_7^t g(s)\ud s = 125 + \int_6^t 108 \ud s = 125 + 108(t - 7)
+    \end{align}
+    Therefore,
+    \begin{align}
+      h(t) = \left\{
+      \begin{tabular}{ll}
+        $0$            &for $0 \leq t \leq 6$ \\
+        $125(t-6)$     &for $6 < t \leq 7$ \\
+        $125+108(t-7)$ &for $7 < t \leq 9$
+      \end{tabular}
+      \right.
+    \end{align}
+  \end{solution}
+
+  \part[3] How many cubic feet of snow are on the driveway at $9$ A.M.?
+\begin{solution}[\mcq]
+    Amount A, in \textit{cubic feet} of snow on the driveway $A$ at $9$ A.M.,
+    \begin{align}
+      \text{A} &= \int_0^9 f(t)\ud t - h(9) \\ \nonumber
+               &= 367.334 - 341 = 26.334 \textit{ (cubic feet)}
+    \end{align}
+  \end{solution}
+\end{parts}
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi

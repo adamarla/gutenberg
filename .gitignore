@@ -14,6 +14,8 @@
 *.tex
 !question.tex
 !shared/replacements/*/*.tex
+!shared/*.tex
+!shared/templates/*.tex
 
 
 mint/*

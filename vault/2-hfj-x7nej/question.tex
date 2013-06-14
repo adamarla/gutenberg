@@ -1,0 +1,114 @@
+
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{3}
+  \renewcommand{\vbtwo}{2}
+  \renewcommand{\vbthree}{10}
+  \renewcommand{\vbfour}{98}
+  \renewcommand{\vbfive}{}
+  \renewcommand{\vbsix}{}
+  \renewcommand{\vbseven}{}
+  \renewcommand{\vbeight}{}
+  \renewcommand{\vbnine}{}
+  \renewcommand{\vbten}{}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vbone}{4}
+    \renewcommand{\vbtwo}{3}
+    \renewcommand{\vbthree}{14}
+    \renewcommand{\vbfour}{194}
+    \renewcommand{\vbfive}{}
+    \renewcommand{\vbsix}{}
+    \renewcommand{\vbseven}{}
+    \renewcommand{\vbeight}{}
+    \renewcommand{\vbnine}{}
+    \renewcommand{\vbten}{}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vbone}{5}
+      \renewcommand{\vbtwo}{3}
+      \renewcommand{\vbthree}{8}
+      \renewcommand{\vbfour}{62}
+      \renewcommand{\vbfive}{}
+      \renewcommand{\vbsix}{}
+      \renewcommand{\vbseven}{}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }{
+      % variables 
+      \renewcommand{\vbone}{4}
+      \renewcommand{\vbtwo}{2}
+      \renewcommand{\vbthree}{6}
+      \renewcommand{\vbfour}{34}
+      \renewcommand{\vbfive}{}
+      \renewcommand{\vbsix}{}
+      \renewcommand{\vbseven}{}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }
+  }
+}
+
+\question[2] If $x = \dfrac{\sqrt{\vbone}+\sqrt{\vbtwo}}{\sqrt{\vbone}-\sqrt{\vbtwo}}$
+and $y = \dfrac{\sqrt{\vbone}-\sqrt{\vbtwo}}{\sqrt{\vbone}+\sqrt{\vbtwo}}$, then find
+the value of $x^2+y^2$
+
+\insertQR{}
+
+\watchout
+
+\ifprintanswers
+  % stuff to be shown only in the answer key - like explanatory margin figures
+  \begin{marginfigure}
+    \figinit{pt}
+      \figpt 100:(0,0)
+      \figpt 101:(0,0)
+    \figdrawbegin{}
+      \figdrawline [100,101]
+    \figdrawend
+    \figvisu{\figBoxA}{}{%
+    }
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
+\fi 
+
+\begin{solution}[\halfpage]
+  \begin{align}
+    x^2+y^2=(x+y)^2 - 2xy
+  \end{align}
+  Let us calculate $x+y$ and $xy$.
+  \begin{align}
+    x + y &= \dfrac{\sqrt{\vbone}+\sqrt{\vbtwo}}{\sqrt{\vbone}-\sqrt{\vbtwo}} +
+      \dfrac{\sqrt{\vbone}-\sqrt{\vbtwo}}{\sqrt{\vbone}+\sqrt{\vbtwo}} \\ \nonumber
+          &= \vbthree
+  \end{align}
+  \begin{align}
+    \text{xy} &= \dfrac{\sqrt{\vbone}+\sqrt{\vbtwo}}{\sqrt{\vbone}-\sqrt{\vbtwo}} \times
+      \dfrac{\sqrt{\vbone}-\sqrt{\vbtwo}}{\sqrt{\vbone}+\sqrt{\vbtwo}} \\ \nonumber
+          &= 1
+  \end{align}
+  From equations (1), (2) and (3), we get,
+  \begin{align}
+    x^2 + y^2 &= (\vbthree)^2 - 2 \\ \nonumber
+              &= \vbfour
+  \end{align}
+  
+\end{solution}
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi

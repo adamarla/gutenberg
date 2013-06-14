@@ -1,0 +1,90 @@
+
+% \noprintanswers
+% \setcounter{rolldice}{0}
+% \printrubric
+
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{5}
+  \renewcommand{\vbtwo}{3}
+  \renewcommand{\vbthree}{7}
+  \renewcommand{\vbfour}{2}
+  \renewcommand{\vbfive}{\sqrt{62}}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vbone}{8}
+    \renewcommand{\vbtwo}{2}
+    \renewcommand{\vbthree}{6}
+    \renewcommand{\vbfour}{3}
+    \renewcommand{\vbfive}{7}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vbone}{3}
+      \renewcommand{\vbtwo}{8}
+      \renewcommand{\vbthree}{5}
+      \renewcommand{\vbfour}{6}
+      \renewcommand{\vbfive}{5\sqrt{5}}
+    }{
+      % variables 
+      \renewcommand{\vbone}{2}
+      \renewcommand{\vbtwo}{6}
+      \renewcommand{\vbthree}{7}
+      \renewcommand{\vbfour}{8}
+      \renewcommand{\vbfive}{\sqrt{149}}
+    }
+  }
+}
+
+\question[1] Find the projection of $\vec{a}$ on $\vec{b}$ if $\vec{a}\cdot\vec{b} = \vbone$ 
+and $\vec{b} = \vbtwo\hat{i} + \vbthree\hat{j} + \vbfour\hat{k}$ 
+
+\insertQR[-25pt]{qrc}
+
+\watchout
+
+\ifprintanswers
+  % stuff to be shown only in the answer key - like explanatory margin figures
+  \begin{marginfigure}
+    \figinit{pt}
+      \figpt 100:(0,0)
+      \figpt 101:(0,0)
+    \figdrawbegin{}
+      \figdrawline [100,101]
+    \figdrawend
+    \figvisu{\figBoxA}{}{%
+    }
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
+\fi 
+
+\begin{solution}[\mcq]
+	The projection of $\vec{a}$ on $\vec{b}$ is $\vert\vec{a}\vert\cos\theta$, where $\theta$ 
+	is the angle between the two vectors
+	
+	Now, \begin{align}
+		\vec{a}\cdot\vec{b} &= \vert\vec{a}\vert\times\vert\vec{b}\vert\times\cos\theta = \vbone \\
+		\Rightarrow \underbrace{\vert\vec{a}\vert\cos\theta}_{\text{projection}} 
+		&= \dfrac{\vbone}{\vert\vec{b}\vert} = \dfrac{\vbone}{\vbfive} 
+	\end{align}
+\end{solution}
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+        	Projection = $\vert\vec{a}\vert\cos\theta$ & \\ 
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+  			$\vec{a}\cdot\vec{b} = 2$ & $\frac{2}{\sqrt{149}}$ \\ 
+  			$\vec{a}\cdot\vec{b} = 3$ & $\frac{3}{5\sqrt{5}}$ \\ 
+  			$\vec{a}\cdot\vec{b} = 5$ & $\frac{5}{\sqrt{62}}$ \\ 
+  			$\vec{a}\cdot\vec{b} = 8$ & $\frac{8}{7}$ \\ 
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi

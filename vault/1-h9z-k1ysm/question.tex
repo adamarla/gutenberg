@@ -29,120 +29,71 @@
 %   7. Create versions of the question when possible. Use commands defined in 
 %      tufte-tweaks.sty to do so. Its easier than you think
 
-% \noprintanswers
-% \setcounter{rolldice}{0}
-% \printrubric
+%\noprintanswers
+%\setcounter{rolldice}{3}
+%\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{1}
+  \renewcommand{\vbtwo}{2}
+  \renewcommand{\vbthree}{4}
+  \renewcommand{\vbfour}{6}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{3}
+    \renewcommand{\vbtwo}{7}
+    \renewcommand{\vbthree}{2}
+    \renewcommand{\vbfour}{4}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{2}
+      \renewcommand{\vbtwo}{6}
+      \renewcommand{\vbthree}{5}
+      \renewcommand{\vbfour}{9}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{5}
+      \renewcommand{\vbtwo}{4}
+      \renewcommand{\vbthree}{3}
+      \renewcommand{\vbfour}{7}
     }
   }
 }
 
-\question
+\SQUARE\vbtwo\tp
+\gcalcexpr[0]\tq{\vbfour * \tp}
+\ADD\tq\vbthree\tr
+\MULTIPLY\vbtwo{2}\ts
 
-\insertQR{}
+\question[3] Given two functions - $f(x)$ and $g(x)$ - find $f'(x)$ given that 
+$g(\vbone) = \vbtwo$, $\left.\dfrac{d}{dx} f(x)g(x)\right\vert_{x=\vbone} = \vbthree$ and 
+$\dfrac{d}{dx}\left.\dfrac{f(x)}{g(x)}\right\vert_{x=\vbone} = \vbfour$
+
+\insertQR[-10pt]{QRC}
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
+	We know that, 
+	\begin{align}
+		\text{(Product Rule) }\dfrac{d}{dx} f\cdot g &= f'g + g'f \\
+		\text{(Quotient Rule) }\dfrac{d}{dx}\dfrac{f}{g} &= \dfrac{gf' - g'f}{g^2}
+	\end{align}
+	
+	And therefore, when $x=\vbone$, the following would hold 
+	\begin{align}
+		\vbtwo\cdot f' + g'f &= \vbthree \Rightarrow g'f = \vbthree - \vbtwo\cdot f' \\
+		\dfrac{\vbtwo\cdot f' - g'f }{\vbtwo^2} &= \vbfour \Rightarrow g'f = \vbtwo\cdot f' - \tq \\
+		\Rightarrow \vbthree - \vbtwo\cdot f' &= \vbtwo\cdot f' - \tq \\
+		\text{ or } f'(x) &= \WRITEFRAC\tr\ts
+	\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}
@@ -150,9 +101,14 @@
   		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
   		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
   		\midrule % ***** Insights & formulations ******
+  			& Identified and applied product \& quotient rules \\
   		\toprule % final numerical answers for the various versions
         \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
   		\midrule % ***** Numerical answers (below) **********
+  			$g(1) = 2$ & $f'(x) = 7$ \\ 
+  			$g(3) = 7$ & $f'(x) = \frac{99}{7}$ \\ 
+  			$g(2) = 6$ & $f'(x) = \frac{329}{12}$ \\ 
+  			$g(5) = 4$ & $f'(x) = \frac{115}{8}$ \\ 
   		\bottomrule
   	\end{tabular}
   \end{table}

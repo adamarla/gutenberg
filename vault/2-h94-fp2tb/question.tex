@@ -86,59 +86,155 @@
   }
 }
 
-\question
+\question The graph of the velocity $v(t)$, in $ft/sec$, of a car travelling 
+on a straight road, for $0\leq 50\leq$ is shown above. A table of values for
+$v(t)$, at $5$ second intervals of time $t$, is shown below the graph.
 
-\insertQR{}
+\insertQR{QRC}
 
-\watchout
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
   \begin{marginfigure}
     \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
+      % the curve
+      \figpt 0:$O$(0,0)
+      \figpt 101:(5,12)
+      \figpt 102:(10,20)
+      \figpt 103:(15,30)
+      \figpt 104:(20,55)
+      \figpt 105:(25,70)
+      \figpt 106:(30,78)
+      \figpt 107:(35,81)
+      \figpt 108:(40,75)
+      \figpt 109:(45,60)
+      \figpt 110:(50,72)
+      % extremeties
+      \def\Xmax{80}
+      \def\Ymax{100}
+      \def\XmaxGrid{70}
+      \def\YmaxGrid{90}
+      \figpt 10:$\textit{t}$(\Xmax,0)
+      \figpt 20:$\textit{v(t)}$(0,\Ymax)
+      \figpt 30:(\XmaxGrid,0)
+      \figpt 40:(0,\YmaxGrid)
+      \figpt 50:(\XmaxGrid,\YmaxGrid)
+      % pts for legend
+      \figpt 60:(35,-10) 
+      \figpt 70:(-20,40)
+      \figpt 80:(-20,30)
+      % pts for numbering the axes (5, 10, 15...)
+      \figpt 201:$\tiny\text{10}$(10,0)
+      \figpt 202:$\tiny\text{20}$(20,0)
+      \figpt 203:$\tiny\text{30}$(30,0)
+      \figpt 204:$\tiny\text{40}$(40,0)
+      \figpt 205:$\tiny\text{50}$(50,0)
+      \figpt 206:$\tiny\text{60}$(60,0)
+      \figpt 207:$\tiny\text{10}$(0,20)
+      \figpt 208:$\tiny\text{20}$(0,40)
+      \figpt 209:$\tiny\text{30}$(0,60)
+      \figpt 210:$\tiny\text{40}$(0,80)
     \figdrawbegin{}
-      \figdrawline [100,101]
+      \figdrawline [0,101]
+      \figdrawline [101,102]
+      \figdrawline [102,103]
+      \figdrawline [103,104]
+      \figdrawline [104,105]
+      \figdrawline [105,106]
+      \figdrawline [106,107]
+      \figdrawline [107,108]
+      \figdrawline [108,109]
+      \figdrawline [109,110]
+      \figdrawmesh 14,9 [0, 30, 50, 40]
+      \figset arrowhead(length=4, fillmode=yes)
+      \figdrawaxes 0(0, \Xmax, 0, \Ymax)
     \figdrawend
     \figvisu{\figBoxA}{}{%
+      \figwritee 10:(5pt)
+      \figwriten 20:(5pt)
+      \figwrites 201,202,203,204,205,206 :(2pt)
+      \figwritew 207,208,209,210 :(2pt)
+      \figset write(mark=$\bullet$)
+      \figwritep[101,102,103,104,105,106,107,108,109,110]
+      \figwritec[60]{\scriptsize\textit{Time (sec)}}
+      \figwritec[70]{\scriptsize\textit{Velocity}}
+      \figwritec[80]{\scriptsize\textit{(ft/sec)}}
     }
     \centerline{\box\figBoxA}
   \end{marginfigure}
+  \begin{marginfigure}[10pt]
+    \hfill{\begin{tabular}{|c|c|}
+      \hline
+      \textit{t (sec)}&\textit{v(t) (ft/sec)} \\
+      \hline
+      0&0   \\
+      5&12  \\
+      10&20 \\
+      15&30 \\
+      20&55 \\
+      25&70 \\
+      30&78 \\
+      35&81 \\
+      40&75 \\
+      45&60 \\
+      50&72 \\
+      \hline
+    \end{tabular}}
+  \end{marginfigure}
+\ifprintanswers
+  % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part[2] During what intervals of time is the acceleration of the car positive?
+  Give a reason for your answer.
 
-  \insertQR{}
-  \begin{solution}
+\begin{solution}[\mcq]
+    The acceleration is positive in the intervals where the change of
+    velocity is positive, in other words the velocity is increasing. This 
+    happens in the time ranges:
+    \begin{align}
+         (0,35)&\Rightarrow 0\textit{(ft/sec)}\text{ to }81\textit{(ft/sec)} \\
+         (45,50)&\Rightarrow 60\textit{(ft/sec)}\text{ to }72\textit{(ft/sec)} 
+    \end{align}
   \end{solution}
 
-  \part 
+  \part[2] Find the average acceleration of the car, in $ft/sec^2$ over the 
+  interval $0\leq 50$.
 
-  \insertQR{}
-  \begin{solution}
+\begin{solution}[\mcq]
+    Average acceleration is give by,
+    \begin{align}
+      \bar{a}_{\text{avg}} &= \dfrac{v(t_2) - v(t_1)}{t_2-t_1} \\
+                           &= \dfrac{v(50) - v(0)}{50 - 0} \\
+                           &= \dfrac{72}{50}\text{ft/sec}^2
+    \end{align}  
   \end{solution}
 
-  \part 
+  \part[2] Find one approximation for the acceleration of the car in $ft/sec^2$ at
+  $t=40\text{sec}$. Show the computations you used to arrive at your answer.
 
-  \insertQR{}
-  \begin{solution}
+\begin{solution}[\mcq]
+    A fair approximation for the acceleration at $t=40$(sec) could be made 
+    using any one of the following time intervals $(35,40), (40, 45), 
+    (35, 45)$. \\
+    Let us approximate the value for acceleration using each of the three
+    intervals.
+    \begin{align}
+      \bar{a}_\textit{35-40} 
+              &= \dfrac{v(40)-v(35)}{40-35}\dfrac{(ft/sec)}{(sec)} \\
+              &= \dfrac{75-81}{5}\dfrac{(ft/sec)}{(sec)} = 
+                 \dfrac{-6}{5}(ft/sec^2)
+    \end{align}
+    \begin{align}
+      \bar{a}_\textit{40-45} 
+              &= \dfrac{v(45)-v(40)}{45-40}\dfrac{(ft/sec)}{(sec)} \\
+              &= \dfrac{60-75}{5}\dfrac{(ft/sec)}{(sec)} = 
+                 -3\text{(ft/sec$^2$)}
+    \end{align}
+    \begin{align}
+      \bar{a}_\textit{35-45} 
+              &= \dfrac{v(45)-v(35)}{45-35}\dfrac{(ft/sec)}{(sec)} \\
+              &= \dfrac{60-81}{10}\dfrac{(ft/sec)}{(sec)} = 
+                 \dfrac{-21}{10}\text{(ft/sec$^2$)}
+    \end{align}
   \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
 \end{parts}
+

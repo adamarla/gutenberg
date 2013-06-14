@@ -1,6 +1,9 @@
 
 # /opt/gutenberg/PRODUCTION_SERVER is a zero size file on Linode only !!
 
+# On your local machine, create a folder in opt/ called gutenberg and within 
+# /opt/gutenberg a soft-link to your local copy of the bank/ 
+
 Gutenberg := /opt/gutenberg/bank
 
 include $(join $(Gutenberg), /shared/environment.mk)

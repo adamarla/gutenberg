@@ -37,6 +37,22 @@
   \fi
 }
 
+\newcommand{\gsign}[1]{
+  \ifthenelse{#1 > 0}{
+    \ifthenelse{#1 = 1}{+}{+#1}
+  }{
+    \ifthenelse{#1 = -1}{-}{#1}
+  }
+}
+
+\newcommand{\invgsign}[1]{
+  \ifthenelse{#1 > 0}{
+    \ifthenelse{#1 = 1}{-}{-#1}
+  }{
+    \ifthenelse{#1 = -1}{+}{-\left( #1 \right)}
+  }
+}
+
 \newlength\@tweak@pageheight
 \setlength{\@tweak@pageheight}{\paperheight} 
 \addtolength{\@tweak@pageheight}{-\voffset}
@@ -68,7 +84,16 @@
         \begin{marginfigure}
           \psbarcode[transy=#1,transx=0.4\marginparwidth]{#2}{eclevel=Q width=0.7 height=0.7}{qrcode} 
         \end{marginfigure}
-      }{}
+        \ifstrequal{#2}{0}{}
+        {
+          \begin{textblock}{600}(410,12)
+            {\LARGE\fontfamily{ccr}\selectfont{\StrLeft{#2}{4} -\StrMid{#2}{5}{8} -\StrRight{#2}{3}}}
+          \end{textblock}
+          \begin{textblock}{600}(20,770)
+            {\LARGE\fontfamily{ccr}\selectfont{\StrLeft{#2}{4} -\StrMid{#2}{5}{8} -\StrRight{#2}{3}}}
+          \end{textblock}
+        }
+      }
     \fi 
 }
 
@@ -96,4 +121,23 @@
 \providecommand{\labelpt}[4][above]{
    \path (#2,#3) node[#1] {#4} % no semi-colon. Specify that explicitlyi within 
    %tikzpicture environment - for consistency sake
-} 
+}
+
+\def\alphnum@alph#1{%
+  \ifcase#1%
+    @%
+  \or 1\or 2\or 3\or 4\or 5\or 6\or 7\or 8\or 9%
+  \or a\or b\or c\or d\or e\or f\or g\or h\or i\or j\or k\or l\or m%
+  \or n\or o\or p\or q\or r\or s\or t\or u\or v\or w\or x\or y\or z%
+  \else
+    @%
+  \fi
+}
+
+\usepackage{alphalph}
+\newalphalph\alphnum\alphnum@alph{35}
+
+\providecommand{\thealphnumpage}{
+  \alphnum{\thepage}
+}
+

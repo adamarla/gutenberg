@@ -5,10 +5,9 @@
 % Eventually, you will find your own style. But here are some thoughts 
 % to get you started: 
 %
-%   1. Write the solution as if you are writing it for your favorite
-%      14-17 year old to help him/her understand. Could be your nephew, 
-%      your niece, a cousin perhaps or probably even you when you 
-%      were that age. Just write for them.
+%   1. Write to be understood - but be crisp. Your own solution should not take 
+%      more space than you will give to the student. Hence, if you take more than 
+%      a half-page to write a solution, then give the student a full-page and so on...
 %
 %   2. Use margin-notes to "talk" to students about the critical insights
 %      in the question. The tone can be - in fact, should be - informal
@@ -17,70 +16,222 @@
 %      students understand. Yes, it is a little more work per question. 
 %      But the question & solution will be written only once. Make that
 %      attempt at writing a solution count.
-%
-%   4. At the same time, do not be too verbose. A long solution can
-%      - at first sight - make the student think, "God, that is a lot to know".
-%      Our aim is not to scare students. Rather, our aim should be to 
-%      create many "Aha!" moments everyday in classrooms around the world
+%      
+%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
 % 
-%   5. Ensure that there are *no spelling mistakes anywhere*. We are an 
+%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
 %      education company. Bad spellings suggest that we ourselves 
 %      don't have any education. Also, use American spellings by default
 % 
-%   6. If a question has multiple parts, then first delete lines 40-41
-%   7. If a question does not have parts, then first delete lines 43-69
+%   5. If a question has multiple parts, then first delete lines 40-41
+%   6. If a question does not have parts, then first delete lines 43-69
+%   
+%   7. Create versions of the question when possible. Use commands defined in 
+%      tufte-tweaks.sty to do so. Its easier than you think
 
-\question
+ %\noprintanswers
+% \setcounter{rolldice}{3}
+% \printrubric
 
-\insertQR{}
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{4} %a1
+  \renewcommand{\vbtwo}{7} %b1
+  \renewcommand{\vbthree}{1} %c1
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vbone}{3}
+    \renewcommand{\vbtwo}{5}
+    \renewcommand{\vbthree}{6}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vbone}{1}
+      \renewcommand{\vbtwo}{3}
+      \renewcommand{\vbthree}{1}
+    }{
+      % variables 
+      \renewcommand{\vbone}{5}
+      \renewcommand{\vbtwo}{1}
+      \renewcommand{\vbthree}{3}
+    }
+  }
+}
 
-\ifprintanswers
+%%%%%%% Vertices 
+
+%%% A 
+\FRACMINUS\vbone{3}\vbtwo{3}\pax\qax
+\FRACL{-1}{\vbone}\pax\qax\pay\qay
+
+%%% B
+\FRACMULT\vbone{1}{7}{9}\tp\tq
+\FRACMINUS\tp\tq\vbthree{9}\pbx\qbx
+\FRACL{-1}\vbone\pbx\qbx\pby\qby
+
+%%% C
+\FRACMULT\vbtwo{1}{7}{12}\tp\tq
+\FRACMINUS\vbthree{12}\tp\tq\pcx\qcx
+\FRACL{2}{\vbtwo}\pcx\qcx\pcy\qcy
+
+%%%% Mid-points 
+
+%% X 
+\FRACADD\pax\qax\pbx\qbx\tp\tq
+\FRACDIV\tp\tq{2}{1}\pxx\qxx % X_x
+\FRACADD\pay\qay\pby\qby\tp\tq
+\FRACDIV\tp\tq{2}{1}\pxy\qxy % X_y
+
+%% Y 
+\FRACADD\pax\qax\pcx\qcx\tp\tq
+\FRACDIV\tp\tq{2}{1}\pyx\qyx % Y_x
+\FRACADD\pay\qay\pcy\qcy\tp\tq
+\FRACDIV\tp\tq{2}{1}\pyy\qyy % Y_y
+
+%% Z 
+\FRACADD\pbx\qbx\pcx\qcx\tp\tq
+\FRACDIV\tp\tq{2}{1}\pzx\qzx % Z_x
+\FRACADD\pby\qby\pcy\qcy\tp\tq
+\FRACDIV\tp\tq{2}{1}\pzy\qzy % Z_y
+
+%%% perpendicular constants
+%%P_1
+\FRACMINUS\pxy\qxy\pxx\qxx\mx\nx
+%% P_2
+\FRACMULT\pyx\qyx{-1}{2}\tp\tq
+\FRACMINUS\pyy\qyy\tp\tq\my\ny
+%% P_3
+\FRACMULT\pzx\qzx{-7}{2}\tp\tq
+\FRACMINUS\pzy\qzy\tp\tq\mz\nz
+
+%%%% Circumcenter 
+\FRACMINUS\my\ny\mx\nx\ansxp\ansxq
+\FRACMULT\ansxp\ansxq{2}{3}\ansxp\ansxq
+\FRACADD\ansxp\ansxq\mx\nx\ansyp\ansyq
+
+\question Three lines - $L_1: x + y = \vbone$, $L_2: 2x - y + \vbtwo = 0$  
+and $L_3: 2x - 7y + \vbthree = 0$ intersect at points $A,\, B$ and $C$ - \asif - to form 
+a triangle. The mid-points of the sides - also shown - are $X,\,Y$ and $Z$
+
+
+\watchout
+
+%\ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
   \begin{marginfigure}
     \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
+      \figpt 10:$B$(-10, 0)
+      \figpt 20:$A$(70, 20)
+      \figpt 30:$C$(50, -20)
+      \figpt 11: $X$(30,10)
+      \figpt 12: $L_1$(30,10)
+      \figpt 21: $Y$(60,0)
+      \figpt 22: $L_2$(60,0)
+      \figpt 31: $Z$(20,-10)
+      \figpt 32: $L_3$(20,-10)
     \figdrawbegin{}
-      \figdrawline [100,101]
+      \figdrawline [10, 20]
+      \figdrawline [20, 30]
+      \figdrawline [30, 10]
     \figdrawend
     \figvisu{\figBoxA}{}{%
+      \figwritesw 10:(5pt)
+      \figwritene 20:(5pt)
+      \figwritese 30:(5pt)
+      \figwritese 12:(3)
+      \figwritew 22:(3)
+      \figwritene 32:(3)
+      \figset write(mark=$\bullet$)
+      \figwritenw 11:(4)
+      \figwritee 21:(2)
+      \figwritesw 31:(4)
     }
     \centerline{\box\figBoxA}
   \end{marginfigure}
-\fi 
-
-\begin{solution}
-\end{solution}
+%\fi 
 
 \begin{parts}
-  \part 
+  \part[4] Find the coordinates of the vertices of the triangle 
 
-  \insertQR{}
-  \begin{solution}
+  \insertQR{QRC}
+\begin{solution}[\halfpage]
+    This is simple. Take two lines at a time and solve first for $x$ and then for $y$. Which means, that if 
+    \begin{align}
+      L_1: y &= \vbone - x\;(m_1 = -1) \\
+      L_2: y &= 2x + \vbtwo\;(m_2 = 2)\\
+      L_3: y &= \frac{2}{7}x + \frac{\vbthree}{7}\;(m_3 = \frac{2}{7})
+    \end{align}
+    , then solving $L_1$ and $L_2$ gives 
+    $A = \left( \WRITEFRAC\pax\qax,\,\WRITEFRAC\pay\qay \right)$,
+     solving $L_1$ and $L_3$ gives  
+    $B = \left( \WRITEFRAC\pbx\qbx,\,\WRITEFRAC\pby\qby \right)$ and 
+     solving $L_2$ and $L_3$ gives 
+    $C = \left( \WRITEFRAC\pcx\qcx,\,\WRITEFRAC\pcy\qcy \right)$,
   \end{solution}
 
-  \part 
+  \part[2] Find the coordinates of the \textit{mid-points} of the sides of the triangle
 
-  \insertQR{}
-  \begin{solution}
+  \insertQR{QRC}
+\begin{solution}[\mcq]
+  	A point $J$ in the middle of two other points - $M = (x_m, y_m)$ and $N = (x_n, y_n)$ has coordinates  
+  	$\left( \frac{x_m + x_n}{2}, \frac{y_m + y_m}{2}\right)$
+
+  	Given this, its easy to find coordinates of $X$, $Y$ and $Z$
+  	\begin{align}
+      X &= \left( \frac{x_A + x_b}{2},\,\frac{y_A + y_B}{2}\right) 
+      = \left( \WRITEFRAC\pxx\qxx ,\,\WRITEFRAC\pxy\qxy \right) \\
+      Y &= \left( \frac{x_A + x_C}{2},\,\frac{y_A + y_C}{2}\right) 
+      = \left( \WRITEFRAC\pyx\qyx,\,\WRITEFRAC\pyy\qyy \right)  \\
+      Z &= \left( \frac{x_B + x_C}{2},\,\frac{y_B + y_C}{2}\right)
+      = \left( \WRITEFRAC\pzx\qzx,\,\WRITEFRAC\pzy\qzy \right)
+  	\end{align}
   \end{solution}
 
-  \part 
+\nextpg
+  \part[3] Find the \textit{circumcenter} of the triangle
 
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
+  \insertQR{QRC}
+\begin{solution}[\halfpage]
+  	The circumcenter of a triangle is the points where the \textit{perpendicular} bisectors 
+  	of its sides intersect
+  	
+  	Now, we know the slopes of the sides from part (a). And we can therefore write equations for 
+    the perpendiculars ( lets call them $P_1,\, P_2$ and $P_3$ )
+    \begin{align}
+    	P_1: \dfrac{y-\WRITEFRAC\pxy\qxy}{x-\WRITEFRAC\pxx\qxx} &= 1 
+    	\Rightarrow y = x + \WRITEFRAC\mx\nx \\
+    	P_2: \dfrac{y-\WRITEFRAC\pyy\qyy}{x-\WRITEFRAC\pyx\qyx} &= -\frac{1}{2} 
+    	\Rightarrow y = -\frac{x}{2} + \WRITEFRAC\my\ny \\
+    	P_3: \dfrac{y-\WRITEFRAC\pzy\qzy}{x-\WRITEFRAC\pzx\qzx} &= -\frac{7}{2} 
+    	\Rightarrow y = -\frac{7}{2}x + \WRITEFRAC\mz\nz
+    \end{align}
+    Solving any two of the above - say $P_1$ and $P_2$ - will give the circumcenter 
+    $O = \left( \WRITEFRAC\ansxp\ansxq,\,\WRITEFRAC\ansyp\ansyq \right)$
+    
+    To close the solution, you should confirm that $O$ also lies on the third line - 
+    in this case $P_3$. If it does, then $O$ is your point. If not, then you have made a mistake somewhere!
   \end{solution}
 
 \end{parts}
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{6cm}p{4cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+          Vertices where lines intersect & \\ 
+          Mid-point coordinates are averages & \\
+          Slopes of perpendicular bisectors & Knows what a circumcenter is \\
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+          $x+y = 1$ & $\left( -\frac{11}{18},\,\frac{7}{18}\right)$ \\
+          $x+y = 3$ & $\left( -\frac{41}{72},\,\frac{103}{72}\right)$ \\
+          $x+y = 4$ & $\left( -\frac{5}{6},\,\frac{7}{6}\right)$ \\
+          $x+y = 5$ & $\left( \frac{77}{54},\,\frac{83}{54}\right)$ \\
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi

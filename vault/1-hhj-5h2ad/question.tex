@@ -1,0 +1,124 @@
+
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{11}
+  \renewcommand{\vbtwo}{2}
+  \renewcommand{\vbthree}{8}
+  \renewcommand{\vbfour}{10}
+  \renewcommand{\vbfive}{4}
+  \renewcommand{\vbsix}{11}
+  \renewcommand{\vbseven}{-1}
+  \renewcommand{\vbeight}{1}
+  \renewcommand{\vbnine}{2}
+  \renewcommand{\vbten}{3}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vbone}{2}
+    \renewcommand{\vbtwo}{2}
+    \renewcommand{\vbthree}{8}
+    \renewcommand{\vbfour}{4}
+    \renewcommand{\vbfive}{3}
+    \renewcommand{\vbsix}{2}
+    \renewcommand{\vbseven}{-1}
+    \renewcommand{\vbeight}{-2}
+    \renewcommand{\vbnine}{1}
+    \renewcommand{\vbten}{-6}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vbone}{1}
+      \renewcommand{\vbtwo}{3}
+      \renewcommand{\vbthree}{8}
+      \renewcommand{\vbfour}{2}
+      \renewcommand{\vbfive}{3}
+      \renewcommand{\vbsix}{5}
+      \renewcommand{\vbseven}{2}
+      \renewcommand{\vbeight}{5}
+      \renewcommand{\vbnine}{-9}
+      \renewcommand{\vbten}{13}
+  }{
+      % variables 
+      \renewcommand{\vbone}{4}
+      \renewcommand{\vbtwo}{4}
+      \renewcommand{\vbthree}{1}
+      \renewcommand{\vbfour}{1}
+      \renewcommand{\vbfive}{2}
+      \renewcommand{\vbsix}{2}
+      \renewcommand{\vbseven}{-2}
+      \renewcommand{\vbeight}{2}
+      \renewcommand{\vbnine}{-2}
+      \renewcommand{\vbten}{3}
+    }
+  }
+}
+
+\question[3] Find the length and the foot of the perpendicular drawn from the point $(2,-1,5)$ 
+to the line $\dfrac{x - \vbone}{\vbfour} = \dfrac{y + \vbtwo}{-\vbfive} = \dfrac{z+\vbthree}{-\vbsix}$
+
+\insertQR{}
+
+\watchout
+
+\ifprintanswers
+  % stuff to be shown only in the answer key - like explanatory margin figures
+  \begin{marginfigure}
+    \figinit{pt}
+      \figpt 100:(0,0)
+      \figpt 101:(0,0)
+    \figdrawbegin{}
+      \figdrawline [100,101]
+    \figdrawend
+    \figvisu{\figBoxA}{}{%
+    }
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
+\fi 
+
+\begin{solution}[\fullpage]
+  Let the foot of the perpendicular drawn from point $P(2,-1,5)$ to the above line be $Q$.
+  Let us express the equation of the line as,
+  \begin{align}
+    \dfrac{x - \vbone}{\vbfour} = \dfrac{y + \vbtwo}{-\vbfive} = \dfrac{z+\vbthree}{-\vbsix} = \lambda
+  \end{align}
+  Since the point $Q$ lies on the line, it's co-ordinates can be of the form,
+  \begin{align}
+    (\vbfour \lambda + \vbone \text{,} -\vbfive \lambda - \vbtwo \text{,} -\vbsix \lambda - \vbthree)
+  \end{align}
+  Since the point $Q$ is the foot of the perpendicular therefore, the \textbf{dot} product of the two
+  would be zero.
+  \begin{align}
+    &(\vbfour \lambda + \vbone - 2)(\vbfour) + (\vbfive \lambda + \vbtwo + 1)(\vbfive) + (\vbsix \lambda - 5)(\vbsix) \\
+    &\Rightarrow \lambda = \vbseven
+  \end{align}
+  Therefore we get the coordinates as $(\vbeight, \vbnine, \vbten)$.  
+  \ifnumequal{\value{rolldice}}{0}{
+    Using the formula for distance, we get, length of the perpendicular as $\sqrt{14}$.
+  }{
+    \ifnumequal{\value{rolldice}}{1}{
+    Using the formula for distance, we get, length of the perpendicular as $\sqrt{141}$.
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      Using the formula for distance, we get, length of the perpendicular as $\sqrt{14}$.
+  }{
+     Using the formula for distance, we get, length of the perpendicular as $\sqrt{141}$.
+    }
+  }
+}
+  
+  
+\end{solution}
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi

@@ -1,0 +1,140 @@
+
+%\noprintanswers
+%\setcounter{rolldice}{3}
+%\printrubric
+
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{30}
+  \renewcommand{\vbtwo}{40}
+  \renewcommand{\vbthree}{3}
+  \renewcommand{\vbfour}{50}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vbone}{60}
+    \renewcommand{\vbtwo}{80}
+    \renewcommand{\vbthree}{5}
+    \renewcommand{\vbfour}{100}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vbone}{80}
+      \renewcommand{\vbtwo}{60}
+      \renewcommand{\vbthree}{4}
+      \renewcommand{\vbfour}{100}
+    }{
+      % variables 
+      \renewcommand{\vbone}{40}
+      \renewcommand{\vbtwo}{30}
+      \renewcommand{\vbthree}{10}
+      \renewcommand{\vbfour}{50}
+    }
+  }
+}
+
+\question[4] $A$, $B$ and $C$ are three trains on three separate tracks $T_1, T_2$ and $T_3$
+- \asif. $T_2\parallel T_3$ and $T_1\perp$ to both $T_2$ and $T_3$. Train $A$ has developed engine 
+trouble and is therefore being towed towards $M$ by train $B$ using an iron chain welded to the 
+the two trains. But when $B$ is $\vbone$ meters from $N$ (and $\vbtwo$ meters from $M$), it too
+develops engine problems. So now, train $B$ is attached to train $C$ in much the same manner 
+as $A$ is to $B$ and train $C$ now starts pulling $B$ towards $N$. The question for you then is
+- if $C$ is moving at a speed of $\vbthree$ meters per second and the two chains ($AB$ and $BC$)
+are $\vbfour$ meters long, then how fast is $A$ moving towards $M$?
+
+\insertQR[4cm]{qrc}
+
+\watchout[-5cm]
+
+  \begin{marginfigure}[-4cm]
+    \figinit{pt}
+      \figpt 100:(0,80) % line 1
+      \figpt 101:$A$(30,80)
+      \figpt 102:$M$(70,80)
+      \figpt 103:$T_2$(85,80)
+      \figpt 104:$T_1$(70,95) % line 2
+      \figpt 105:$B$(70,40)
+      \figpt 106:$N$(70,10)
+      \figpt 107:(70,0)
+      \figpt 108:$T_3$(85,10) % line 3
+      \figpt 109:$C$(30,10)
+      \figpt 110:(0,10)
+    \figdrawbegin{}
+      \figdrawline [100,101,102,103]
+      \figdrawline [104,105,106,107]
+      \figdrawline [108,109,110]
+      \figdrawline [101,105,109]
+    \figdrawend
+    \figvisu{\figBoxA}{}{%
+      \figwriten 104:(3)
+      \figwritee 103:(3)
+      \figwritee 108:(3)
+      \figset write(mark=$\bullet$)
+      \figwrites 101:(3)
+      \figwritese 102:(3)
+      \figwritee 105:(3)
+      \figwritene 106:(3)
+      \figwrites 109:(3)
+    }
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
+
+
+\ADD\vbone\vbtwo\p
+
+\POWER\vbfour{2}\l % L^2
+\POWER\vbone{2}\bns
+\POWER\vbtwo{2}\bms
+
+\SUBTRACT\l\bns\cn
+\SUBTRACT\l\bms\am
+\SQRT\cn\q
+\SQRT\am\r
+
+\FRACMULT\vbone\q\r\vbtwo\a\b
+\FRACMULT\b\a\vbthree{1}\e\f
+
+\begin{solution}[\fullpage]
+  The facts of the case are as follows
+  \begin{align}
+    BM +BN &= \p  \\
+    \Rightarrow \dfrac{d}{dt}BM + \dfrac{d}{dt}BN &= 0 \nonumber\\
+      \Rightarrow \dfrac{d}{dt}BM &= -\dfrac{d}{dt}BN \\
+    AM^2 + BM^2 &= \vbfour^2 \\
+    \Rightarrow 2AM\dfrac{d}{dt}AM + 2BM\dfrac{d}{dt}BM &= 0 \nonumber\\
+    \Rightarrow \dfrac{d}{dt}AM &= -\WRITEFRAC\vbtwo\r\times\dfrac{d}{dt}BM \\
+    CN^2 + BN^2 &= \vbfour^2 \\
+    \Rightarrow 2CN\dfrac{d}{dt}CN + 2BN\dfrac{d}{dt}BN &= 0 \nonumber\\
+    \Rightarrow \dfrac{d}{dt}CN &= -\WRITEFRAC\vbone\q\times\dfrac{d}{dt}BN \\
+      &= \WRITEFRAC\vbone\q\times\dfrac{d}{dt}BM \to (2) \nonumber\\
+      &= \WRITEFRAC\vbone\q\times\left(-\WRITEFRAC\r\vbtwo\dfrac{d}{dt}AM\right)\to (4) \nonumber 
+  \end{align}
+
+  Now, you would have recognized $\dfrac{d}{dt}CN$ as $C's$ speed and $\dfrac{d}{dt}AM$ as $A's$ speed. 
+
+  \begin{align}
+    \dfrac{d}{dt}AM &= -\WRITEFRAC\b\a\dfrac{d}{dt}CN = -\WRITEFRAC\e\f
+  \end{align}
+  Hence, $A$ is being pulled at a speed of $\WRITEFRAC\e\f$ meters per second. The negative 
+  sign is because $A$ moves in opposite direction to $C$
+\end{solution}
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+        Applied Pythgoras on the two right-angled triangles & \\
+        And from that, inferred relationship between train speeds & \\
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+        C's speed = 3 & A's speed = $\dfrac{16}{3}$ \\
+        C's speed = 4 & A's speed = $\dfrac{9}{4}$ \\
+        C's speed = 5 & $\qquad$ A's speed = $\dfrac{80}{9}$ \\
+        C's speed = 10 & $\qquad$ A's speed = $\dfrac{45}{8}$ \\
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi

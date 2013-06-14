@@ -1,0 +1,81 @@
+%\noprintanswers
+%\setcounter{rolldice}{0}
+%\printrubric
+
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{13}
+  \renewcommand{\vbtwo}{11}
+  \renewcommand{\vbthree}{4}
+  \renewcommand{\vbfour}{3}
+  \renewcommand{\vbfive}{eight}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vbone}{12}
+    \renewcommand{\vbtwo}{9}
+    \renewcommand{\vbthree}{2}
+    \renewcommand{\vbfour}{3}
+    \renewcommand{\vbfive}{second}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vbone}{11}
+      \renewcommand{\vbtwo}{13}
+      \renewcommand{\vbthree}{4}
+      \renewcommand{\vbfour}{3}
+      \renewcommand{\vbfive}{seventh}
+    }{
+      % variables 
+      \renewcommand{\vbone}{10}
+      \renewcommand{\vbtwo}{12}
+      \renewcommand{\vbthree}{5}
+      \renewcommand{\vbfour}{3}
+      \renewcommand{\vbfive}{third}
+    }
+  }
+}
+
+\EXPR[0]\p{(\vbtwo - (\vbthree + \vbfour))}
+\SUBTRACT\vbone{2}\q
+
+\question[3] In a $\vbone-$storey building, $\vbtwo$ people enter an elevator. 
+It is known that they will leave the elevator in groups of 
+$\vbthree$, $\vbfour$ and $\p$ at different storeys. In how many ways can they do 
+so if the elevator does not stop at the $\vbfive$ storey?
+
+\insertQR{QRC}
+
+\watchout[-1cm]
+
+\ifprintanswers
+\fi 
+
+\begin{solution}[\mcq]
+  Right upfront, we know that two floors are off-limits from consideration - the $\vbfive$ floor
+  and the floor at which everyone got on the elevator. 
+
+  Which means, the 3-groups have a choice of $\q$ floors. And therefore they could get off 
+  in $\encr\q{3}\times 3! = \enpr\q{3}$ ways
+\end{solution}
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+        All floors - except two - are valid for getting off & \\
+        $\Rightarrow$ if there are $N$ total floors, then there are $N-2$ valid floors & \\
+        & Each person knows what floor they will off on. So, no need to make groups by permuting persons \\ 
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+        12-storey & $\enpr{10}{3} = 720$\\
+        13-storey & $\enpr{11}{3} = 990$\\
+        11-storey & $\enpr{9}{3} = 504$\\
+        10-storey & $\enpr{8}{3} = 336$\\
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi

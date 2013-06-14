@@ -28,8 +28,10 @@
 %   
 %   7. Create versions of the question when possible. Use commands defined in 
 %      tufte-tweaks.sty to do so. Its easier than you think
-% \noprintanswers
-% \setcounter{rolldice}{0}
+
+\printrubric
+%\noprintanswers
+%\setcounter{rolldice}{0}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -65,14 +67,16 @@
   }
 }
 
-\gcalcexpr[2]{\vbsix}{(\vbfour - \vbtwo)/(\vbthree - \vbone)}
-\gcalcexpr[2]{\vbseven}{-1/\vbsix}
-\gcalcexpr[2]{\vbeight}{-\vbfive * \vbseven}
+\SUBTRACT\vbfour\vbtwo\aa
+\SUBTRACT\vbthree\vbone\ab
+\FRACTIONSIMPLIFY\aa\ab\ma\mb
+\FRACDIV{-1}{1}\ma\mb\pa\pb
+\MULTIPLY{-\vbfive}\pa\c
 
 \question[4] Find the equation of the line that has $x$-intercept of $\vbfive$ units and is perpendicular
 to the line joining points $(\vbone, \vbtwo)$ and $(\vbthree, \vbfour)$
 
-\insertQR[-20pt]{QRC}
+\insertQR[-5pt]{QRC}
 
 \watchout
 
@@ -82,24 +86,37 @@ to the line joining points $(\vbone, \vbtwo)$ and $(\vbthree, \vbfour)$
 \begin{solution}[\halfpage]
 	The slope of the line joining $(\vbone, \vbtwo)$ and $(\vbthree, \vbfour)$ is,
 	\begin{align}
-		m &= \dfrac{\vbfour-\vbtwo}{\vbthree-\vbone} = \vbsix
+		m &= \dfrac{\vbfour-\vbtwo}{\vbthree-\vbone} = \WRITEFRAC\ma\mb
 	\end{align}
 	And so, the slope of the required line - which is perpendicular to the above line - is 
 	\begin{align}
-		m\cdot m_{\perp} &= -1 \Rightarrow m_{\perp} = \vbseven
+		m\cdot m_{\perp} &= -1 \Rightarrow m_{\perp} = \WRITEFRAC\pa\pb
 	\end{align}
-	Now, given the standard equation of the line $Ax + By + C = 0$, we know the following
-	\begin{align}
-		x_{\text{intercept}} &= \dfrac{-C}{A} \text{ and } y_{\text{intercept}} = \dfrac{-C}{B} \\
-		\Rightarrow \dfrac{y_{\text{intercept}}}{x_{\text{intercept}}} &= \dfrac{A}{B} \\
-		\text{Moreover, the slope } m &= \dfrac{-A}{B} = -\dfrac{y_{\text{intercept}}}{x_{\text{intercept}}}
-	\end{align}
-    We now know enough to find the y-intercept of the required line, which really is
-    \begin{align}
-    	y_{\text{intercept}} &= -m_{\perp}\cdot x_{\text{intercept}} = \vbeight
-    \end{align}
-    And so, the equation of the required line is 
-    \begin{align}
-    	\dfrac{x}{\vbfive} + \dfrac{y}{\vbeight} &= 1
-    \end{align}
+  Now, if the $x$-intercept is $\vbfive$ units, then it means the required line passes through $(\vbfive,0)$
+
+  In which case,
+  \begin{align}
+    \dfrac{y - 0}{x - \vbfive} &= \WRITEFRAC\pa\pb \\
+    \Rightarrow \pb y &= \pa x \gsign\c
+  \end{align}
 \end{solution}
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+        Required line passes through a point $(a,0)$ & \\
+        Inferred the slope of the perpendicular & \\ 
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+        $(2,-3)$ and $(4,2)$ & $2x + 5y = 8$ \\
+        $(3,4)$ and $(5,7)$ & $2x + 3y = 6$ \\
+        $(-1,-1)$ and $(2,5)$ & $ x + 2y = 4$\\
+        $(0,-1)$ and $(2,4)$ & $2x + 5y = 10$\\
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi

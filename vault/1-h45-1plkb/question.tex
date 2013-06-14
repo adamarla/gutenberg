@@ -30,9 +30,49 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question[1] Find $A$ if $\tan^{-1} \frac{2}{11} + \cot^{-1}\frac{24}{7} = \tan^{-1} A$
+%\noprintanswers
+%\setcounter{rolldice}{0}
+%\printrubric
 
-\insertQR{QRC}
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{2}
+  \renewcommand{\vbtwo}{11}
+  \renewcommand{\vbthree}{12}
+  \renewcommand{\vbfour}{7}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vbone}{-3}
+    \renewcommand{\vbtwo}{8}
+    \renewcommand{\vbthree}{5}
+    \renewcommand{\vbfour}{11}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vbone}{9}
+      \renewcommand{\vbtwo}{4}
+      \renewcommand{\vbthree}{7}
+      \renewcommand{\vbfour}{-13}
+    }{
+      % variables 
+      \renewcommand{\vbone}{-6}
+      \renewcommand{\vbtwo}{7}
+      \renewcommand{\vbthree}{5}
+      \renewcommand{\vbfour}{14}
+    }
+  }
+}
+
+\FRACADD\vbone\vbtwo\vbfour\vbthree\tp\tq
+\FRACMULT\vbone\vbtwo\vbfour\vbthree\tr\ts
+\FRACMINUS{1}{1}\tr\ts\ta\tb
+\FRACDIV\tp\tq\ta\tb\tx\ty
+
+\question[1] Find $A$ if $\tan^{-1} \dfrac{\vbone}{\vbtwo} + \cot^{-1}\dfrac{\vbthree}{\vbfour} = \tan^{-1} A$
+
+\insertQR[-20pt]{QRC}
+\watchout
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -40,8 +80,30 @@
 
 \begin{solution}[\halfpage]
 	\begin{align}
-	    \tan^{-1}\frac{2}{11} + \cot^{-1}\frac{24}{7} &= \tan^{-1}\frac{2}{11} + \tan^{-1}\frac{7}{24} \\
-	      &= \tan^{-1}\left(\dfrac{\frac{2}{11} + \frac{7}{24}}{1-\frac{2}{11}\cdot\frac{7}{24}}\right) \\
-	      &= \tan^{-1}\left(\dfrac{125}{150}\right) = \tan^{-1}\left(\dfrac{1}{2}\right)
+	    \tan^{-1}\frac{\vbone}{\vbtwo} + \cot^{-1}\frac{\vbthree}{\vbfour} &= 
+      \tan^{-1}\frac{\vbone}{\vbtwo} + \tan^{-1}\frac{\vbfour}{\vbthree} \\
+	    &= \tan^{-1}\left(\dfrac{\frac{\vbone}{\vbtwo} + 
+      \frac{\vbfour}{\vbthree}}{1-\frac{\vbone}{\vbtwo}\cdot\frac{\vbfour}{\vbthree}}\right) \\
+	    &= \tan^{-1}\left(\dfrac\tx\ty\right) \\
+      &\Rightarrow A = \WRITEFRAC\tx\ty 
 	\end{align}
 \end{solution}
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+        $\cot^{-1}\dfrac{x}{y} = \tan^{-1}\dfrac{y}{x}$ & $\tan^{-1}a + \tan^{-1}b = \tan^{-1}\dfrac{a+b}{1-ab}$\\
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+        $\tan^{-1}\frac{2}{11} + \cot^{-1}\frac{12}{7}$ & $A=\frac{101}{118}$ \\     
+        $\tan^{-1}\frac{-3}{8} + \cot^{-1}\frac{5}{11}$ & $A=1$ \\     
+        $\tan^{-1}\frac{9}{4} + \cot^{-1}\frac{7}{-13}$ & $A=\frac{11}{145}$ \\     
+        $\tan^{-1}\frac{-6}{7} + \cot^{-1}\frac{5}{14}$ & $A=\frac{4}{7}$ \\     
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi

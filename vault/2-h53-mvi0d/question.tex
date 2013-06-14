@@ -36,7 +36,7 @@
   % variables 
   \renewcommand{\vbone}{5}
   \renewcommand{\vbtwo}{3}
-  \renewcommand{\vbthree}{50}
+  \renewcommand{\vbthree}{56}
   \renewcommand{\vbfour}{}
   \renewcommand{\vbfive}{}
   \renewcommand{\vbsix}{}
@@ -49,7 +49,7 @@
     % variables 
     \renewcommand{\vbone}{4}
     \renewcommand{\vbtwo}{3}
-    \renewcommand{\vbthree}{30}
+    \renewcommand{\vbthree}{35}
     \renewcommand{\vbfour}{}
     \renewcommand{\vbfive}{}
     \renewcommand{\vbsix}{}
@@ -62,7 +62,7 @@
       % variables 
       \renewcommand{\vbone}{3}
       \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{16}
+      \renewcommand{\vbthree}{20}
       \renewcommand{\vbfour}{}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
@@ -74,7 +74,7 @@
       % variables 
       \renewcommand{\vbone}{3}
       \renewcommand{\vbtwo}{4}
-      \renewcommand{\vbthree}{31}
+      \renewcommand{\vbthree}{35}
       \renewcommand{\vbfour}{}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
@@ -86,13 +86,10 @@
   }
 }
 
-\gcalcexpr[0]{\sumone}{\vbone + \vbtwo}
-\gcalcexpr[0]{\sumtwo}{\vbone + 1}
-
-\question[2] In how many ways can $\vbone$ boys and $\vbtwo$ girls sit so that
-not all the girls are sitting together \textit{(Any two arrangements are
-considered  identical as long as the places occupied by boys or by the girls
-are same in both)}.
+\gcalcexpr[0]{\vbfour}{\vbone+1}
+\gcalcexpr[0]{\ans}{\vbthree-\vbfour}
+\question[3] In how many ways can $\vbone$ chairs and $\vbtwo$ vases sit so that
+not all the vases are sitting together.
 
 \insertQR{QRC}
 
@@ -116,9 +113,13 @@ are same in both)}.
 \begin{solution}[\mcq]
   First we compute the total number of permutations of seating arrangements
   with no restriction. Next we subtract from this the number of permutations 
-  where all the girls sit together. 
+  where all the vases sit together. 
   \begin{align}
-  	\text{Number of arrangements} &= \sumone!-\sumtwo! \\
-  								  &= \vbthree
+        \text{N}_{\text{no restriction}} 
+            &= \dfrac{(\vbone+\vbtwo)!}{\vbone!\times\vbtwo!} \\
+  	\text{N}_{\text{vases together}} 
+            &= \dfrac{(\vbone+1)!}{\vbone!} \\ 
+        \text{N}_{\text{difference}}     
+            &= \vbthree - \vbfour = \ans 
   \end{align}
 \end{solution}

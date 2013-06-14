@@ -31,6 +31,7 @@
   \FPeval{#2}{(#3)}
   \FPround{#2}{#2}{#1}
 }
+\newcommand\EXPR\gcalcexpr
 
 \newcommand{\gcalcSumOfSquares}[4][2] { % #2 = #3^2 + #4^2 to #1 precision
   % \FPpow uses logs and then anti-logs to calculate power. Which means, it gets stumped 
@@ -46,3 +47,78 @@
   \FPpow{#2}{#2}{0.5}
   \FPround{#2}{#2}{#1}
 } 
+
+\newcommand\WRITEFRAC\gWriteFrac % alias
+\newcommand{\gWriteFrac}[2]{ % #1 = num, #2 = denom
+  \FRACTIONSIMPLIFY{#1}{#2}\tmp\tmq
+  % After simplification, any negative sign is on the numerator only => \tmq > 0
+  \ifthenelse{\tmq = 1}{
+    \tmp
+  }{
+    \ifthenelse{\tmp < 0}{
+      \frac\tmp\tmq
+    }{
+      \frac\tmp\tmq
+    } 
+  }
+}
+
+\newcommand\FRACADD\gFracAdd
+\newcommand{\gFracAdd}[6] { % (#1)/(#2) + (#3)/(#4) = #5/#6
+  \gcalcexpr[0]\tmp{((#1) * (#4)) + ((#2) * ((#3)))}
+  \gcalcexpr[0]\tmq{((#2) * (#4))}
+  \FRACTIONSIMPLIFY\tmp\tmq\tmr\tms
+  \COPY\tmr{#5}
+  \COPY\tms{#6}
+} 
+
+\newcommand\FRACMINUS\gFracSubtract
+\newcommand{\gFracSubtract}[6]{ % (#1)/(#2) - (#3)/(#4) = #5/#6
+  \gcalcexpr[0]\tmp{((#1) * (#4)) - ((#2) * (#3))}
+  \gcalcexpr[0]\tmq{((#2) * (#4))}
+  \FRACTIONSIMPLIFY\tmp\tmq\tmr\tms
+  \COPY\tmr{#5}
+  \COPY\tms{#6}
+}
+
+\newcommand\FRACMULT\gFracMultiply
+\newcommand{\gFracMultiply}[6]{ % (#1)/(#2) x (#3)/(#4) = #5/#6
+  \gcalcexpr[0]\tmp{((#1) * (#3))}
+  \gcalcexpr[0]\tmq{((#2) * (#4))}
+  \FRACTIONSIMPLIFY\tmp\tmq\tmr\tms
+  \COPY\tmr{#5}
+  \COPY\tms{#6}
+}
+
+\newcommand\FRACDIV\gFracDivide
+\newcommand{\gFracDivide}[6]{ % ((#1)/(#2)) / ((#3)/(#4)) = #5/#6
+  \gcalcexpr[0]\tmp{((#1) * (#4))}
+  \gcalcexpr[0]\tmq{((#2) * (#3))}
+  \FRACTIONSIMPLIFY\tmp\tmq\tmr\tms
+  \COPY\tmr{#5}
+  \COPY\tms{#6}
+}
+
+\newcommand{\FRACL}[6]{ % Calculates (#1)x + (#2) for a fraction (#3)/(#4). Result = #5/#6 ( (#1), (#2) integers )
+  \FRACMULT{(#1)}{1}{(#3)}{(#4)}\tmp\tmq
+  \FRACADD\tmp\tmq{(#2)}{1}\tmp\tmq
+  \FRACTIONSIMPLIFY\tmp\tmq\tmr\tms
+  \COPY\tmr{#5}
+  \COPY\tms{#6}
+} 
+
+\newcommand{\QUADEQNBITS}[5] { % returns just sqrt(b2 - 4ac) and the denominator - 2a
+  \MULTIPLY{#1}{2}{#4} % 2a 
+  \SQUARE{#2}\bsq % b^2 
+  \MULTIPLY{#1}{#3}\fac % ac 
+  \MULTIPLY\fac{4}\fac % 4ac 
+  \SUBTRACT\bsq\fac\secarg % b^2 - 4ac 
+  \SQUAREROOT\secarg{#5}
+} 
+
+\newcommand{\QUADEQNROOTS}[6] { % #1 x^2 + #2 x + #3 = #4/#6 and #5/#6
+  \QUADEQNBITS{#1}{#2}{#3}{#4}{#5}
+  \ADD{-#2}{#5}{#6}
+  \SUBTRACT{-#2}{#5}{#5}
+} 
+

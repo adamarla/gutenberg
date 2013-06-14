@@ -1,0 +1,89 @@
+
+%\noprintanswers
+%\setcounter{rolldice}{2}
+%\printrubric
+
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{4}
+  \renewcommand{\vbtwo}{7}
+  \renewcommand{\vbthree}{10}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vbone}{6}
+    \renewcommand{\vbtwo}{10}
+    \renewcommand{\vbthree}{30}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vbone}{6}
+      \renewcommand{\vbtwo}{8}
+      \renewcommand\vbthree{20}
+    }{
+      % variables 
+      \renewcommand{\vbone}{8}
+      \renewcommand{\vbtwo}{12}
+      \renewcommand{\vbthree}{25}
+    }
+  }
+}
+
+\FRACTIONSIMPLIFY\vbone{100}\p\q
+\FRACTIONSIMPLIFY\vbtwo{100}\r\s
+\FRACTIONSIMPLIFY\vbthree{100}\m\n
+\FRACMINUS{1}{1}\m\n\a\b
+
+\FRACMULT\p\q\m\n\k\j
+\FRACMULT\r\s\a\b\y\z
+\FRACDIV\y\z\k\j\tp\tq
+\ADD\tp\tq\tr
+
+\question[3] If $\vbone$\% of the people with blood group $O$ are left-handed and $\vbtwo$\% 
+of those with other blood groups are left-handed, then what is the probability that a left-handed
+person selected at random has blood group $O$ given that overall $\vbthree$\% of people have 
+blood group $O$?
+
+
+\insertQR[5pt]{QRC}
+
+\watchout[-40pt]
+
+\ifprintanswers
+\fi 
+
+\begin{solution}[\halfpage]
+  If $L =$ event that a person is left-handed and $O=$ event that a person has blood group $O$,
+  then we have been told the following
+  \begin{align}
+    P(L\vert\,O) &= \WRITEFRAC\p\q \\
+    P(L\vert\,O') &= \WRITEFRAC\r\s \\
+    P(O) &= \WRITEFRAC\m\n \Rightarrow P(O') = \WRITEFRAC\a\b
+  \end{align}
+  What we need is $P(O\vert\,L)$ - which can be found using Baye's theorem
+  \begin{align}
+    P(O\vert\,L) &= \dfrac{P(L\vert\,O)\cdot P(O)}{P(L\vert\,O)\cdot P(O) + P(L\vert\,O')\cdot P(O')} \\
+       &= \dfrac{\frac\p\q\cdot\frac\m\n}{\frac\p\q\cdot\frac\m\n + \frac\r\s\cdot\frac\a\b} \\
+       &= \WRITEFRAC\tq\tr 
+  \end{align}
+\end{solution}
+
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+        Correctly identified $P(L\vert\,O)$, $P(L\vert\, O')$ and $P(O)$ & \\
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+        $P(O) = 10\%$ & $\dfrac{4}{67}$ \\
+        $P(O) = 30\%$ & $\qquad\dfrac{9}{44}$ \\
+        $P(O) = 20\%$ & $\dfrac{3}{19}$ \\
+        $P(O) = 25\%$ & $\qquad\dfrac{2}{11}$ \\
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi

@@ -29,21 +29,18 @@
 %   7. Create versions of the question when possible. Use commands defined in 
 %      tufte-tweaks.sty to do so. Its easier than you think
 
+%\printrubric
 %\noprintanswers
-% \setcounter{rolldice}{3}
+%\setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
   \renewcommand{\vbone}{1} % x-avg
-  \renewcommand{\vbtwo}{5} % y-avg
+  \renewcommand{\vbtwo}{6} % y-avg
   \renewcommand{\vbthree}{2} % m-1
   \renewcommand{\vbfour}{3} % m-2
   \renewcommand{\vbfive}{4} % c-1
   \renewcommand{\vbsix}{2} % c-2
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
@@ -53,10 +50,6 @@
     \renewcommand{\vbfour}{4}
     \renewcommand{\vbfive}{5}
     \renewcommand{\vbsix}{3}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
@@ -66,10 +59,6 @@
       \renewcommand{\vbfour}{2}
       \renewcommand{\vbfive}{5}
       \renewcommand{\vbsix}{3}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
     }{
       % variables 
       \renewcommand{\vbone}{3}
@@ -78,21 +67,20 @@
       \renewcommand{\vbfour}{3}
       \renewcommand{\vbfive}{7}
       \renewcommand{\vbsix}{9}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
     }
   }
 }
 
-\gcalcexpr[0]{\tmp}{2 * \vbone}
-\gcalcexpr[0]{\tmpp}{2 * \vbtwo}
-\gcalcexpr[0]{\vbseven}{(2*(\vbone * \vbfour - \vbtwo)-(\vbfive + \vbsix))/(\vbfour - \vbthree)} % a
-\gcalcexpr[0]{\vbeight}{\vbthree * \vbseven + \vbfive} % b
-\gcalcexpr[0]{\vbnine}{\vbtwo - \vbeight} % p
-\gcalcexpr[0]{\vbten}{\vbone - \vbseven} % q
-\gcalcexpr[0]{\tmppp}{\vbten * \vbtwo - \vbnine * \vbone}
+
+\MULTIPLY\vbone{2}\va
+\MULTIPLY\vbtwo{2}\vb
+\EXPR[0]\vc{\vb - (\vbfour * \va) - \vbsix}
+\SOLVELINEARSYSTEM(\vbthree, -1 ; -\vbfour, 1)(-\vbfive, \vc)(\ra,\rb)
+\SUBTRACT\vbtwo\rb\n
+\SUBTRACT\vbone\ra\d
+\FRACTIONSIMPLIFY\n\d\an\ad
+\EXPR[0]\c{(\an * \vbone) - (\ad * \vbtwo)}
+
 
 \question[4] The segment of a line between two other lines $L_1 = \vbthree x - y + \vbfive = 0$ and $L_2 = \vbfour x -y + \vbsix = 0$ is bisected at the point $(\vbone, \vbtwo)$. Find the equation of the line
 
@@ -107,21 +95,42 @@
 \begin{solution}[\halfpage]
 	If the required line intersects $L_1$ at $(a,b)$ and $L_2$ at $(c,d)$, then 
 	\begin{align}
-		\dfrac{a + c}{2} &= \vbone \Rightarrow c = \tmp - a \\
-		\dfrac{b + d}{2} &= \vbtwo \Rightarrow d = \tmpp - b
+		\dfrac{a + c}{2} &= \vbone \Rightarrow c = \va - a \\
+		\dfrac{b + d}{2} &= \vbtwo \Rightarrow d = \vb - b
 	\end{align}
 	Moreover, as $(c,d)$ lies on $L_2$ and $(a,b)$ lies on $L_1$
 	\begin{align}
-		\vbfour\cdot(\tmp - a) - (\tmpp - b) + \vbsix &= 0 \\
-		\vbthree\cdot a - b + \vbfive &= 0 
+		L_1: \vbthree\cdot a - b &= -\vbfive \\
+		L_2: \vbfour\cdot(\va - a) - (\vb - b) + \vbsix &= 0 \Rightarrow 
+    -\vbfour a + b = \vc
 	\end{align}
 	Solving the two equations, we get 
 	\begin{align}
-		a &= \vbseven \text{ and } b = \vbeight
+		a &= \ra \text{ and } b = \rb
 	\end{align}
-	And a line that passes through both $(\vbone, \vbtwo)$ and $(\vbseven, \vbeight)$ has the equation
+	And a line that passes through both $(\vbone, \vbtwo)$ and $(\ra,\rb)$ has the equation
 	\begin{align}
-		\dfrac{y - \vbtwo}{x - \vbone} &= \dfrac{\vbnine}{\vbten}\\
-		\Rightarrow \vbten y - \vbnine x - \tmppp &= 0
+		\dfrac{y - \vbtwo}{x - \vbone} &= \WRITEFRAC\n\d \\ 
+		\Rightarrow \ad y &= \an x \invgsign\c 
 	\end{align}
 \end{solution}
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+        Mid-point coordinates in terms of $(a,b)$ and $(c,d)$ & \\ 
+        $(a,b)$ and $(c,d)$ satisfy $L_1$ and $L_2$ respectively & \\
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+        $(1,6)$ & $y = 2x+4$ \\
+        $(2,5)$ & $2y = 7x - 4$ \\
+        $(4,7)$ & $3y = 4x + 5$\\
+        $(3,-5)$ & $ 41y = 100x - 505$\\
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi

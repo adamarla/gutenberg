@@ -31,9 +31,10 @@
 %   7. If a question does not have parts, then first delete lines 43-69
 
 %\noprintanswers
-\question[6] How many distinct ways can the faces of a cube be numbered $1$ 
-through $6$ such that each face gets a unique number and no two cubes look 
-the same in any orientation.
+
+\question[6] In how many ways can the six faces of a cube be numbered - using 1 through 6 
+so that no two cubes that have been numbered differently look the same in any orientation?
+\texttt{Hint:} Unroll the cube and lay its faces flat out on a table
 
 \insertQR[15pt]{QRC}
 
@@ -83,6 +84,7 @@ the same in any orientation.
   A cube without any numbers has no point of reference on it. By picking
   any number for say the face it is resting on, we give it a point of
   reference. Let us begin by numbering the bottom face of the cube $1$ 
+<<<<<<< HEAD
   (we could have pick any number and it would not affect the counting). \\
   In doing this, the \textit{top} face is uniquely identified as the face
   opposite the bottom, whereas the four side faces are symmetrical and
@@ -105,6 +107,26 @@ the same in any orientation.
   \end{align}
   Therefore the total number of unique configurations of the cube, \\
   which can be established by multiplying each of these,
+=======
+  (we can pick any of the numbers and it won't affect the counting). \\
+  By doing this, the \textit{top} face is uniquely identified as the face
+  opposite the bottom, whereas the four side faces are symmetrical.
+  Next let us count the number of ways we can number the top face,
+  \begin{align}
+     N_{top} = 5 \nonumber
+  \end{align}
+  The remaining $4$ numbers would occupy the four vertical faces of the cube.
+  These four faces are in a kind of circular symmetry. For counting the number
+  of ways in which objects can be arranged in a circle, we must begin by 
+  fixing the position of any one object as the reference point.
+  By doing so we reduce a circular permutation to a linear permutation of the
+  remaining objects in the remaining places. Therefore the number of ways we
+  can arrange the remaining 4 numbers on the vertical faces is,
+  \begin{align}
+     N_{vertical} = 3! \nonumber
+  \end{align}
+  Therefore the total number of unique configurations is,
+>>>>>>> upstream/master
   \begin{align}
     N_{unique} &= N_{top} \times N_{vertical} \nonumber \\
                &= 5 \times 3! = 30 \nonumber 

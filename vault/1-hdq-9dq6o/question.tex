@@ -1,0 +1,28 @@
+
+% \noprintanswers
+% \setcounter{rolldice}{0}
+% \printrubric
+
+
+\question[3] If the slope of tangents to a curve $C$ at any \textit{non-origin} point is given 
+by $y+\dfrac{y}{x}$, then find the equation of $C$
+
+\insertQR[-15pt]{QRC}
+
+\watchout
+
+\ifprintanswers
+\fi 
+
+\begin{solution}[\halfpage]
+  In effect, we have been told that for a $C: y = f(x)$ 
+  \begin{align}
+    \dfrac{dy}{dx} &= y + \dfrac{y}{x} \\
+    \Rightarrow \dfrac{dy}{y} &= \left(1 + \dfrac{1}{x}\right)\cdot dx \\
+    \ln y &= x + \ln x + D\text{(constant)} \Rightarrow \ln\left(\dfrac{y}{x}\right) = x + D \\
+    \Rightarrow y &= x\cdot e^{x}\cdot e^{D} = kx\cdot e^{x}, \text{ where } k = e^D
+  \end{align}
+\end{solution}
+
+\ifprintrubric
+\fi

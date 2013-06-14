@@ -1,0 +1,223 @@
+% This is an empty shell file placed for you by the 'examiner' script.
+% You can now fill in the TeX for your question here.
+
+% Now, down to brasstacks. ** Writing good solutions is an Art **. 
+% Eventually, you will find your own style. But here are some thoughts 
+% to get you started: 
+%
+%   1. Write to be understood - but be crisp. Your own solution should not take 
+%      more space than you will give to the student. Hence, if you take more than 
+%      a half-page to write a solution, then give the student a full-page and so on...
+%
+%   2. Use margin-notes to "talk" to students about the critical insights
+%      in the question. The tone can be - in fact, should be - informal
+%
+%   3. Don't shy away from creating margin-figures you think will help
+%      students understand. Yes, it is a little more work per question. 
+%      But the question & solution will be written only once. Make that
+%      attempt at writing a solution count.
+%      
+%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
+% 
+%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
+%      education company. Bad spellings suggest that we ourselves 
+%      don't have any education. Also, use American spellings by default
+% 
+%   5. If a question has multiple parts, then first delete lines 40-41
+%   6. If a question does not have parts, then first delete lines 43-69
+%   
+%   7. Create versions of the question when possible. Use commands defined in 
+%      tufte-tweaks.sty to do so. Its easier than you think
+
+% \noprintanswers
+% \setcounter{rolldice}{0}
+% \printrubric
+
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{}
+  \renewcommand{\vbtwo}{}
+  \renewcommand{\vbthree}{}
+  \renewcommand{\vbfour}{}
+  \renewcommand{\vbfive}{}
+  \renewcommand{\vbsix}{}
+  \renewcommand{\vbseven}{}
+  \renewcommand{\vbeight}{}
+  \renewcommand{\vbnine}{}
+  \renewcommand{\vbten}{}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vbone}{}
+    \renewcommand{\vbtwo}{}
+    \renewcommand{\vbthree}{}
+    \renewcommand{\vbfour}{}
+    \renewcommand{\vbfive}{}
+    \renewcommand{\vbsix}{}
+    \renewcommand{\vbseven}{}
+    \renewcommand{\vbeight}{}
+    \renewcommand{\vbnine}{}
+    \renewcommand{\vbten}{}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vbone}{}
+      \renewcommand{\vbtwo}{}
+      \renewcommand{\vbthree}{}
+      \renewcommand{\vbfour}{}
+      \renewcommand{\vbfive}{}
+      \renewcommand{\vbsix}{}
+      \renewcommand{\vbseven}{}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }{
+      % variables 
+      \renewcommand{\vbone}{}
+      \renewcommand{\vbtwo}{}
+      \renewcommand{\vbthree}{}
+      \renewcommand{\vbfour}{}
+      \renewcommand{\vbfive}{}
+      \renewcommand{\vbsix}{}
+      \renewcommand{\vbseven}{}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }
+  }
+}
+
+\question Let $f$ be a continuous function defined on $[-4,3]$ whose graph,
+consisting of three line segments and a semi-circle centered at the origin,
+is given in the figure shown. Let $g$ be the function given by $g(x) = 
+\int_1^x f(t)\ud t$.
+
+\insertQR{QRC}
+
+\watchout
+
+%\ifprintanswers
+  \begin{marginfigure}
+    \figinit{pt}
+      \figpt 10:(0,0)
+      \figpt 20:(-80,20)
+      \figpt 30:(-40,60)
+      \figpt 40:(-20,0)
+      \figpt 50:(0,-20)
+      \figpt 60:(20,0)
+      \figpt 70:(60,-20)
+      % extremeties
+      \def\Xmax{100}
+      \def\Ymax{80}
+      \def\Xmin{-100}
+      \def\Ymin{-40}
+      % pts for numbering the axes (5, 10, 15...)
+      \figpt 200:$\tiny\text{-4}$(-80,0)
+      \figpt 201:$\tiny\text{-3}$(-60,0)
+      \figpt 202:$\tiny\text{-2}$(-40,0)
+      \figpt 203:$\tiny\text{-1}$(-20,0)
+      \figpt 204:$\tiny\text{O}$(0,0)
+      \figpt 205:$\tiny\text{1}$(20,0)
+      \figpt 206:$\tiny\text{2}$(40,0)
+      \figpt 207:$\tiny\text{3}$(60,0)
+      \figpt 208:$\tiny\text{4}$(80,0)
+      \figpt 209:$\tiny\text{5}$(100,0)
+      \figpt 210:$\tiny\text{-2}$(0,-40)
+      \figpt 211:$\tiny\text{-1}$(0,-20)
+      \figpt 212:$\tiny\text{1}$(0,20)
+      \figpt 213:$\tiny\text{2}$(0,40)
+      \figpt 214:$\tiny\text{3}$(0,60)
+      % label graph
+      \figpt 100:(\Xmax,0)
+      \figpt 101:(0,\Ymax)
+      \figpt 102:(0,\Ymin)
+    \figdrawbegin{}
+      \figset arrowhead(length=4, fillmode=yes)
+      \figdrawaxes 10(\Xmin, \Xmax, \Ymin, \Ymax)
+      \figdrawline [20,30]
+      \figdrawarccirc 10 ; 20 (180, 360)
+      \figdrawline [30,40]
+      \figdrawline [60,70]
+    \figdrawend
+    \figvisu{\figBoxA}{}{%
+      \figwritee 100: $x$(2 pt)
+      \figsetmark{$\tiny\text{|}$}
+      \figwrites 200,201,202,203,205,206,207,208,209 :(2 pt)
+      \figwritesw 204: (2 pt)
+      \figsetmark{$\tiny\text{-}$}
+      \figwrites 210,211,212,213,214 :(2 pt)
+      \figsetmark{}
+      \figwritew 20:$\text{(-4,1)}$(2 pt)
+      \figwritee 30:$\text{(-2,3)}$(2 pt)
+      \figwriten 60:$\text{(1,0)}$(2 pt)
+      \figwrites 70:$\text{(3,-1)}$(2 pt)
+      \figwrites 102: $\text{Graph of f}$(10 pt)
+    }
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
+%\fi 
+
+\begin{parts}
+  \part[3] Find the values of $g(2)$ and $g(-2)$.
+\begin{solution}[\mcq]
+    $g(x)$ is the area under the curve $f$ in the
+    said interval. Therefore,
+    \begin{align}
+      g(2) &= \int_1^2 f(t)\ud t = -\dfrac{1}{2}(1)(\dfrac{1}{2}) = -\dfrac{1}{4}
+    \end{align}
+    \begin{align}
+      g(-2) &= \int_1^{-2} f(t)\ud t = -\int_{-2}^1f(t)\ud t \nonumber \\
+            &= -\left(\dfrac{3}{2} - \dfrac{\pi}{2}\right) = \dfrac{\pi}{2} - \dfrac{3}{2}
+    \end{align}
+  \end{solution}
+
+  \part[2] For $g'(-3)$ and $g"(-3)$, find the value if it exists, 
+  or state that it does not exist.
+\begin{solution}[\mcq]
+    $g'(x)$ = $f(x)$ and $g"(x) = f'(x)$. Therefore, from a simple
+    examination of the graph shown in the figure,
+    \begin{align}
+      g'(-3) = f(-3) = 2 \nonumber
+    \end{align}
+    \begin{align}
+      g"(-3) = f'(-3) = 1 \nonumber
+    \end{align}
+  \end{solution}
+
+  \part[3] Find the $x-coordinate$ of each point at which the graph of $g$ has
+  a horizontal tangent line. For each of these points, determine whether $g$ 
+  has a relative maximum, a relative minimum, or neither a maximum nor a 
+  minimum at that point. Justify your answers.
+  
+\begin{solution}[\mcq]
+    The graph of $g$ would have a tangent where $g'(x) = f(x) = 0$. This 
+    occurs at $x=-1$ and $x=1$. \\
+    $g'(x)$ changes sign from positive to negative at $x = -1$. Therefore
+    $g$ has a relative maximum at $x=-1$. \\  
+    $g'(x)$ does not change sign at $x=1$. Therefore, $g$ has neither a 
+    relative maximum nor a relative minimum at $x=1$.   
+  \end{solution}
+
+  \part[2] For $-4 \leq 3$, find all values of $x$ for which the graph of $g$ 
+  has a point of inflection. Explain your reasoning.
+\begin{solution}[\mcq]
+    A point of inflection occurs when the second derivative of the function 
+    changes sign. For the graph of $g$, $g"(x) = f'(x)$ which changes sign
+    at $x=-2$, $x=0$ and $x=1$.  
+  \end{solution}
+
+\end{parts}
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi

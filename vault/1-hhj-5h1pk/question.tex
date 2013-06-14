@@ -1,0 +1,123 @@
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{2}
+  \renewcommand{\vbtwo}{-1}
+  \renewcommand{\vbthree}{+1}
+  \renewcommand{\vbfour}{1}
+  \renewcommand{\vbfive}{-3}
+  \renewcommand{\vbsix}{-5}
+  \renewcommand{\vbseven}{3}
+  \renewcommand{\vbeight}{-4}
+  \renewcommand{\vbnine}{-4}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vbone}{8}
+    \renewcommand{\vbtwo}{+10}
+    \renewcommand{\vbthree}{+12}
+    \renewcommand{\vbfour}{1}
+    \renewcommand{\vbfive}{-3}
+    \renewcommand{\vbsix}{-5}
+    \renewcommand{\vbseven}{3}
+    \renewcommand{\vbeight}{-4}
+    \renewcommand{\vbnine}{-4}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vbone}{2}
+      \renewcommand{\vbtwo}{-1}
+      \renewcommand{\vbthree}{+1}
+      \renewcommand{\vbfour}{11}
+      \renewcommand{\vbfive}{+2}
+      \renewcommand{\vbsix}{+1}
+      \renewcommand{\vbseven}{3}
+      \renewcommand{\vbeight}{-4}
+      \renewcommand{\vbnine}{-4}
+    }{
+      % variables 
+      \renewcommand{\vbone}{2}
+      \renewcommand{\vbtwo}{-1}
+      \renewcommand{\vbthree}{+1}
+      \renewcommand{\vbfour}{1}
+      \renewcommand{\vbfive}{-3}
+      \renewcommand{\vbsix}{-5}
+      \renewcommand{\vbseven}{3}
+      \renewcommand{\vbeight}{-4}
+      \renewcommand{\vbnine}{-4}
+    }
+  }
+}
+
+\question[3] Show that the position vectors $\vbone\hat{i} \vbtwo\hat{j} \vbthree\hat{k}$,
+$\vbfour\hat{i} \vbfive\hat{j} \vbsix\hat{k}$ and 
+$\vbseven\hat{i} \vbeight\hat{j} \vbnine\hat{k}$ form the vertices of a right angled 
+triangle.
+
+\insertQR{}
+
+\watchout
+
+\ifprintanswers
+  % stuff to be shown only in the answer key - like explanatory margin figures
+  \begin{marginfigure}
+    \figinit{pt}
+      \figpt 100:(0,0)
+      \figpt 101:(0,0)
+    \figdrawbegin{}
+      \figdrawline [100,101]
+    \figdrawend
+    \figvisu{\figBoxA}{}{%
+    }
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
+\fi 
+
+\begin{solution}[\fullpage]
+Let $A$, $B$ and $C$ be the position vectors. The vectors 
+representing the sides of the triangle are $\vec{AB}$, $\vec{BC}$
+and $\vec{CA}$.
+\begin{align}
+  \vec{AB} &= (\vbone - \vbfour)\hat{i} + (\vbtwo - (\vbfive))\hat{j} + (\vbthree - (\vbsix))\hat{k} \\
+  \vec{BC} &= (\vbfour - \vbseven)\hat{i} + (\vbfive - (\vbeight))\hat{j} + (\vbsix - (\vbnine))\hat{k} \\
+  \vec{CA} &= (\vbseven - \vbone)\hat{i} + (\vbeight - (\vbtwo))\hat{j} + (\vbnine - (\vbthree))\hat{k}
+\end{align}
+For the triangle to be right angled, one of the following conditions
+needs to be true,
+\begin{align}
+  \vec{AB} \perp \vec{BC} \\
+  \vec{BC} \perp \vec{CA} \\
+  \vec{CA} \perp \vec{AB}
+\end{align}
+We can find this out by computing the dot product of each of the above two pairs of vectors above and verifying 
+that \textbf{any one} of them is equal to zero. In this case,
+\begin{align}
+\ifnumequal{\value{rolldice}}{0}{
+  \vec{BC}\cdot\vec{CA} = 0
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \vec{AB}\cdot\vec{BC} = 0
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \vec{CA}\cdot \vec{AB} = 0
+    }{
+      \vec{AB}\cdot{BC} = 0
+    }
+  }
+}    
+\end{align}
+
+\end{solution}
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi

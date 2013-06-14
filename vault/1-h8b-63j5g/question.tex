@@ -30,16 +30,17 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 %\noprintanswers
-%\setcounter{rolldice}{1}
+%\setcounter{rolldice}{3}
+%\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
   \renewcommand{\vbone}{-1}
-  \renewcommand{\vbtwo}{0}
+  \renewcommand{\vbtwo}{0} % A 
   \renewcommand{\vbthree}{7}
-  \renewcommand{\vbfour}{2}
+  \renewcommand{\vbfour}{2} % B
   \renewcommand{\vbfive}{5}
-  \renewcommand{\vbsix}{-2}
+  \renewcommand{\vbsix}{-2} %C
   \renewcommand{\vbseven}{\frac{20}{7}}
   \renewcommand{\vbeight}{\frac{11}{7}}
 }{
@@ -78,20 +79,20 @@
   }
 }
 
-\gcalcexpr[0]{\mxone}{(\vbone + \vbthree) / 2}
-\gcalcexpr[0]{\myone}{(\vbtwo + \vbfour) / 2}
-\gcalcexpr[0]{\mxtwo}{(\vbthree + \vbfive) / 2}
-\gcalcexpr[0]{\mytwo}{(\vbfour + \vbsix) / 2}
-\gcalcexpr[0]{\mxthree}{(\vbone + \vbfive) / 2}
-\gcalcexpr[0]{\mythree}{(\vbtwo + \vbsix) / 2}
+\EXPR[0]\xone{(\vbone + \vbthree)/2}
+\EXPR[0]\xtwo{(\vbfive + \vbthree)/2}
+\EXPR[0]\xthree{(\vbone + \vbfive)/2}
+\EXPR[0]\yone{(\vbtwo + \vbfour)/2}
+\EXPR[0]\ytwo{(\vbfour + \vbsix)/2}
+\EXPR[0]\ythree{(\vbtwo + \vbsix)/2}
 
-\gcalcexpr[0]{\mab}{-(\vbthree - \vbone)/(\vbfour - \vbtwo)}
-\gcalcexpr[2]{\mbc}{-(\vbfive - \vbthree)/(\vbsix - \vbfour) }
-\gcalcexpr[0]{\mca}{-(\vbone - \vbfive)/(\vbtwo - \vbsix)} 
-
-\gcalcexpr[0]{\cone}{\myone - (\mab * \mxone)}
-\gcalcexpr[0]{\ctwo}{\mytwo - (\mbc * \mxtwo)}
-\gcalcexpr[0]{\cthree}{\mythree - (\mca * \mxthree)}
+\EXPR[0]{\mab}{-(\vbthree - \vbone)/(\vbfour - \vbtwo)}
+\EXPR[2]{\mbc}{-(\vbfive - \vbthree)/(\vbsix - \vbfour) }
+\EXPR[0]{\mca}{-(\vbone - \vbfive)/(\vbtwo - \vbsix)} 
+%
+\EXPR[0]{\cone}{\yone - (\mab * \xone)}
+\EXPR[0]{\ctwo}{\ytwo - (\mbc * \xtwo)}
+\EXPR[0]{\cthree}{\ythree - (\mca * \xthree)}
 
 \question A triangle has vertices $A = (\vbone, \vbtwo)$, $B = (\vbthree, \vbfour)$ and 
 $C = (\vbfive, \vbsix)$ - \asif. $X$, $Y$ and $Z$ are the mid-points of the three sides 
@@ -133,9 +134,9 @@ $C = (\vbfive, \vbsix)$ - \asif. $X$, $Y$ and $Z$ are the mid-points of the thre
 		
 		And so, the coordinates of $X$, $Y$ and $Z$ would be 
 		\begin{align}
-			X &= \left( \frac{\vbone + \vbthree}{2}, \frac{\vbtwo + \vbfour}{2} \right) = (\mxone, \myone) \\
-			Y &= \left( \frac{\vbthree + \vbfive}{2}, \frac{\vbfour + \vbsix}{2} \right) = (\mxtwo, \mytwo) \\
-			Z &= \left( \frac{\vbone + \vbfive}{2}, \frac{\vbtwo + \vbsix}{2} \right) = (\mxthree, \mythree)
+			X &= \left( \frac{\vbone + \vbthree}{2}, \frac{\vbtwo + \vbfour}{2} \right) = (\xone, \yone) \\
+			Y &= \left( \frac{\vbthree + \vbfive}{2}, \frac{\vbfour + \vbsix}{2} \right) = (\xtwo, \ytwo) \\
+			Z &= \left( \frac{\vbone + \vbfive}{2}, \frac{\vbtwo + \vbsix}{2} \right) = (\xthree, \ythree)
 		\end{align}
 	\end{solution}
 	
@@ -152,9 +153,9 @@ $C = (\vbfive, \vbsix)$ - \asif. $X$, $Y$ and $Z$ are the mid-points of the thre
 		\end{align}
 		And their equations, therefore, would be 
 		\begin{align}
-			AB_\perp &= \dfrac{y-\myone}{x-\mxone} = \mab \Rightarrow y = \mab x + \cone \\
-			BC_\perp &= \dfrac{y-\mytwo}{x-\mxtwo} = \mbc \Rightarrow y = \mbc x + \ctwo \\
-			CA_\perp &= \dfrac{y-\mythree}{x-\mxthree} = \mca \Rightarrow y = \mca x + \cthree					
+			AB_\perp &= \dfrac{y-\yone}{x-\xone} = \mab \Rightarrow y = \mab x + \cone \\
+			BC_\perp &= \dfrac{y-\ytwo}{x-\xtwo} = \mbc \Rightarrow y = \mbc x + \ctwo \\
+			CA_\perp &= \dfrac{y-\ythree}{x-\xthree} = \mca \Rightarrow y = \mca x + \cthree					
 		\end{align}
 	\end{solution}
 	
@@ -171,3 +172,34 @@ $C = (\vbfive, \vbsix)$ - \asif. $X$, $Y$ and $Z$ are the mid-points of the thre
 	\end{solution}
 \end{parts}
 
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
+  		\midrule % ***** Insights & formulations ******
+        Mid-point corrdinates are average of end-point coordinates & \\
+        Perpendicular bisector does \textit{not} have to pass through opposite vertex & \\
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+        $A=(-1,0)$ and $B=(7,2)$ & $AB_\perp : y=-4x+13$ \\
+                           & $BC_\perp : y=-0.5x+3$ \\
+                           & $CA_\perp : y=3x-7$ \\
+                           & \textbf{Part C}: Point = $\left( \frac{20}{7}, \frac{11}{7} \right)$ \\
+        $A=(1,0)$ and $B=(-7,2)$ & $AB_\perp : y=4x+13$ \\
+                           & $BC_\perp : y=0.5x+3$ \\
+                           & $CA_\perp : y=-3x-7$ \\
+                           & \textbf{Part C}: Point = $\left( \frac{-20}{7}, \frac{11}{7} \right)$ \\
+        $A=(-1,0)$ and $B=(7,-2)$ & $AB_\perp : y=4x-13$ \\
+                           & $BC_\perp : y=0.5x-3$ \\
+                           & $CA_\perp : y=-3x+7$ \\
+                           & \textbf{Part C}: Point = $\left( \frac{20}{7}, -\frac{11}{7} \right)$ \\
+        $A=(1,0)$ and $B=(-7,-2)$ & $AB_\perp : y=-4x-13$ \\
+                           & $BC_\perp : y=-0.5x-3$ \\
+                           & $CA_\perp : y=3x+7$ \\
+                           & \textbf{Part C}: Point = $\left( -\frac{20}{7}, -\frac{11}{7} \right)$ \\
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi

@@ -86,59 +86,138 @@
   }
 }
 
-\question
+\question The figure alongside shows the graph of $f'$, the derivative of a
+function $f$. The domain of $f$ is the set of all Real numbers $x$ such that
+$-3<x<5$.
 
-\insertQR{}
+\insertQR{QRC}
 
-\watchout
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
   \begin{marginfigure}
     \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
+      \figpt 10:(0,0)
+      \figpt 15:(-70,20)
+      \figpt 20:(-60,20)
+      \figpt 30:(-40,0)
+      \figpt 40:(-20,-40)
+      \figpt 50:(0,-20)
+      \figpt 60:(20,0)
+      \figpt 61:(24,-2)
+      \figpt 70:(60,-60)
+      \figpt 80:(80,0)
+      \figpt 90:(100,20)
+      \figpt 95:(110,20)
+      % extremeties
+      \def\Xmax{120}
+      \def\Ymax{60}
+      \def\Xmin{-70}
+      \def\Ymin{-80}
+      % pts for numbering the axes (5, 10, 15...)
+      \figpt 201:$\tiny\text{-3}$(-60,0)
+      \figpt 202:$\tiny\text{-2}$(-40,0)
+      \figpt 203:$\tiny\text{-1}$(-20,0)
+      \figpt 204:$\tiny\text{O}$(0,0)
+      \figpt 205:$\tiny\text{1}$(20,0)
+      \figpt 206:$\tiny\text{2}$(40,0)
+      \figpt 207:$\tiny\text{3}$(60,0)
+      \figpt 208:$\tiny\text{4}$(80,0)
+      \figpt 209:$\tiny\text{5}$(100,0)
+      % label graph
+      \figpt 100:(\Xmax,0)
+      \figpt 101:(0,\Ymax)
+      \figpt 102:(0,\Ymin)
     \figdrawbegin{}
-      \figdrawline [100,101]
+      \figdrawcurve [15,20,30,40,50,61,70,80,90,95]
+      \figset arrowhead(length=4, fillmode=yes)
+      \figdrawaxes 10(\Xmin, \Xmax, \Ymin, \Ymax)
+      \figset(dash=5)
+      \figdrawline [201,20]
+      \figdrawline [203,40]
+      \figdrawline [207,70]
+      \figdrawline [209,90]
     \figdrawend
     \figvisu{\figBoxA}{}{%
+      \figwritee 100: $x$(2 pt)
+      \figwriten 101: $\text{f'(x)}$(2 pt)
+      \figwrites 201,202,203,204,205,206,207,208,209 :(2 pt)
+      \figwrites 102: $\large\text{y = f'(x)}$(10 pt)
     }
     \centerline{\box\figBoxA}
   \end{marginfigure}
-\fi 
-
-\begin{solution}
-\end{solution}
 
 \begin{parts}
-  \part 
+  \part[2] For what values of $x$ does $f$ have a relative maximum? Why?
 
-  \insertQR{}
-  \begin{solution}
+\begin{solution}[\mcq]
+    For a function to have a relative maximum, it's first derivative must go
+    from positive to negative. In this case $f'(x)$ goes from positive to 
+    negative at $x=-2$. \\
+    This means the function $f$ is increasing to the left of $x=-2$ and 
+    decreasing to the right of $x=-2$.
   \end{solution}
 
-  \part 
+  \part[2] For what values of $x$ does $f$ have a relative minimum? Why?
 
-  \insertQR{}
-  \begin{solution}
+\begin{solution}[\mcq]
+    Similar logic. A relative minimum occurs when the first derivative goes from
+    negative to positive. In this case $f'(x)$ goes from negative to positive
+    at $x=4$.
+    Therefore function $f$ is decreasing to the left of $x=4$ and increasing
+    to the right of $x=4$.
   \end{solution}
 
-  \part 
+  \part[2] On what intervals is the graph of $f$ concave upwards. Use $f'$ to
+  justify your answer.
 
-  \insertQR{}
-  \begin{solution}
+\begin{solution}[\mcq]
+    For the function $f$ to concave upwards, it's first derivative (or rate of 
+    change) must be increasing. In the given graph $f'$ is increasing in the
+    intervals $(-1,1)$ and $(3,5)$.
   \end{solution}
 
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
+  \part[2] Suppose that $f(1)=0$. Draw a sketch that shows the general shape of the
+  graph of the function $f$ on the open interval $0<x<2$. \\  
+  
+\begin{solution}
+  \end{solution}  
+    \figinit{pt}
+      \figpt 0:(0,0)
+      \figpt 50:(40,40)%arc center      
+      \figpt 60:(40,-40)%arc center
+      % extremeties
+      \def\Xmax{120}
+      \def\Ymax{80}
+      \def\Xmin{-40}
+      \def\Ymin{-80}
+      % pts for numbering the axes (5, 10, 15...) and graph
+      \figpt 203:$\tiny\text{-1}$(\Xmin,0)
+      \figpt 204:$\tiny\text{0}$(0,0)
+      \figpt 205:$\tiny\text{1}$(40,0)
+      \figpt 206:$\tiny\text{2}$(80,0)
+      \figpt 207:$\tiny\text{3}$(\Xmax,0)
+      \figpt 208:$\tiny\text{-2}$(0,\Ymin)
+      \figpt 209:$\tiny\text{2}$(0,\Ymax)
+      \figpt 210:$\tiny\text{2}$(\Xmin,\Ymin)
+      \figpt 211:$\tiny\text{2}$(\Xmax,\Ymin)
+      \figpt 212:$\tiny\text{2}$(\Xmax,\Ymax)
+      \figpt 213:$\tiny\text{2}$(\Xmin,\Ymax)
+      \figpt 214:(40,\Ymin) %label
+    \figdrawbegin{}
+\ifprintanswers
+  % stuff to be shown only in the answer key - like explanatory margin figures
+      \figdrawarccirc 50 ; 40 (180,270)
+      \figdrawarccirc 60 ; 40 (0,90)
+\fi  
+      \figset arrowhead(length=4, fillmode=yes)
+      \figdrawaxes 0(\Xmin, \Xmax, \Ymin, \Ymax)
+      \figset general(dash=5)
+      \figdrawmesh 4,4 [210,211,212,213]
+    \figdrawend
+    \figvisu{\figBoxA}{}{%
+      \figwritee 207:$\text{x}$(2 pt)
+      \figwriten 209:$\text{f(x)}$(2 pt)
+      \figwritese 203,204,205,206,207 :(2 pt)
+      \figwrites 214:{\large\text{y = f(x)}}(10 pt)
+    }
+    \centerline{\box\figBoxA}
 
 \end{parts}
