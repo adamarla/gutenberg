@@ -1,0 +1,82 @@
+
+%\noprintanswers
+%\setcounter{rolldice}{3}
+%\printrubric
+
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{5}
+  \renewcommand{\vbtwo}{169}
+  \renewcommand{\vbthree}{10}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vbone}{8}
+    \renewcommand{\vbtwo}{225}
+    \renewcommand{\vbthree}{14}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vbone}{6}
+      \renewcommand{\vbtwo}{121}
+      \renewcommand{\vbthree}{10}
+    }{
+      % variables 
+      \renewcommand{\vbone}{7}
+      \renewcommand{\vbtwo}{225}
+      \renewcommand{\vbthree}{13}
+    }
+  }
+}
+
+\EXPR[0]\a{(2 * \vbone) - 3}
+\SQUARE\a\b
+\SUBTRACT\vbone{1}\i
+\SUBTRACT\vbone{2}\j
+\MULTIPLY\i\j\c
+\EXPR[0]\d{(\c + ((\vbtwo - \b)/4))}
+\SUBTRACT\vbone{2}\z
+\SUBTRACT\c\d\m
+
+\SQRT\vbtwo\dsc
+\SUBTRACT\a\dsc\p
+\ADD\a\dsc\q
+\MULTIPLY\p{-1}\r
+
+\question[3] Find the \textit{smallest} valid $N$ for which $\enpr{N}{\vbone}\geq \d\cdot\enpr{N}{\z}$
+
+\insertQR[-20pt]{qrc}
+
+\watchout
+
+\ifprintanswers
+\fi 
+
+\begin{solution}[\halfpage]
+	\begin{align}
+		&\enpr{N}\vbone\geq\d\cdot\enpr{N}\z \Rightarrow \fnpr{N}\vbone\geq\d\cdot\fnpr{N}\z \\
+		&\Rightarrow \dfrac{(N-\j)\cdot(N-\i)\cdot(N-\vbone)!}{(N-\vbone)!}\geq\d \\
+		&\Rightarrow N^2 - \a N\m\geq 0 \text{ or } \left(N + \WRITEFRAC\r{2}\right)\cdot\left(N - \WRITEFRAC\q{2}\right)\geq 0
+	\end{align}
+	For the above to be true, either $N\leq\WRITEFRAC\p{2}$ or $N\geq\WRITEFRAC\q{2}$. But then, $N\geq\vbone$ 
+	and $N$ has to be an integer. And therefore, $N=\vbthree$ is the only valid solution
+\end{solution}
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Look for the following}} & \\ 
+  		\midrule % ***** Insights & formulations ******
+  			$N$ is an integer & $N > 0$ \\
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+  			$\enpr{N}{5}\geq 42\cdot\enpr{N}{3}$ & $N = 10$ \\
+  			$\enpr{N}{6}\geq 30\cdot\enpr{N}{4}$ & $N = 10$ \\
+  			$\enpr{N}{7}\geq 56\cdot\enpr{N}{5}$ & $N = 13$ \\
+  			$\enpr{N}{8}\geq 56\cdot\enpr{N}{6}$ & $N = 14$ \\
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi

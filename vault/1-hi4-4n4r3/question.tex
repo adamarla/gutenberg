@@ -1,0 +1,71 @@
+
+%\noprintanswers
+%\setcounter{rolldice}{3}
+%\printrubric
+
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{4}
+  \renewcommand{\vbtwo}{5}
+  \renewcommand{\vbthree}{3}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vbone}{6}
+    \renewcommand{\vbtwo}{7}
+    \renewcommand{\vbthree}{4}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vbone}{4}
+      \renewcommand{\vbtwo}{9}
+      \renewcommand{\vbthree}{5}
+    }{
+      % variables 
+      \renewcommand{\vbone}{5}
+      \renewcommand{\vbtwo}{8}
+      \renewcommand{\vbthree}{3}
+    }
+  }
+}
+
+\ADD\vbone{1}\a
+\SUBTRACT\vbtwo\vbthree\b
+\MULTIPLY\vbone\vbtwo\c
+\DIVIDE\c\b\ans
+
+\question[1] Find $N$ if $\dfrac{\enpr{N}\vbone}{\enpr{N-1}\vbone} = \dfrac{\vbtwo}{\vbthree}$
+
+\insertQR[-20pt]{}
+
+\watchout
+
+\ifprintanswers
+\fi 
+
+\begin{solution}[\mcq]
+	\begin{align}
+		\dfrac{\enpr{N}\vbone}{\enpr{N-1}\vbone} &= \fnpr{N}\vbone\times\overbrace{\dfrac{(N-1-\vbone)!}{(N-1)!}}^{(N-\a)!} \\
+		&= \dfrac{N}{N-\vbone} \\
+		\text{ And }\therefore \dfrac{N}{N-\vbone} &= \dfrac{\vbtwo}{\vbthree} \Rightarrow N = \ans
+	\end{align}
+\end{solution}
+
+\ifprintrubric
+  \begin{table}
+  	\begin{tabular}{ p{5cm}p{5cm} }
+  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
+  		  \sc{\textcolor{blue}{Look for the following}} \\ 
+  		\midrule % ***** Insights & formulations ******
+        Not much. Must apply formula for $\enpr{N}{M}$ correctly & \\
+  		\toprule % final numerical answers for the various versions
+        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
+  		\midrule % ***** Numerical answers (below) **********
+        Ratio = $\frac{5}{3}$ & $N=10$ \\
+        Ratio = $\frac{7}{4}$ & $N=14$ \\
+        Ratio = $\frac{9}{5}$ & $N=9$ \\
+        Ratio = $\frac{8}{3}$ & $N=8$ \\
+  		\bottomrule
+  	\end{tabular}
+  \end{table}
+\fi
