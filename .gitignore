@@ -19,9 +19,10 @@
 
 
 mint/*
+
+Makefile
 !mint/Makefile
 
-vault/*/Makefile
 
 atm/
 locker/
