@@ -73,9 +73,11 @@ using the letters of the word $\vbone$.
 \ifprintanswers
 \fi 
 
-\begin{solution}[\mcq]
-  Once of the letters (which?) in $\vbone$ appears twice. Hence, the number of \textit{distinct} words 
-  that can be formed from the letters is 
+\begin{solution}
+  Since the word $\vbone$ has repetition of letters, we can calculate the
+  total number of permutations of the word and divide by the number of
+  permutations of the repeated letters to factor out the repetition.
+  Therefore in this case the result would be:
   \begin{align}
   	\text{N} &= \dfrac{\vbtwo}{\vbthree} = \vbfour
   \end{align}

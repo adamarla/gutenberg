@@ -16,5 +16,5 @@ mkdir -p $target
 cd $root 
 touch $target/$log
 cd /home/gutenberg/ScanbotSS
-java -cp ScanbotSS.jar:core.jar:javase.jar:itextpdf-5.4.1.jar gutenberg.collect.Driver backup >> $target/$log
+java -cp ScanbotSS.jar:core.jar:javase.jar gutenberg.collect.Driver >> $target/$log
 curl http://www.gradians.com/distribute/scans >> $target/$log
