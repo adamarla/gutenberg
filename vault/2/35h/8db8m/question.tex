@@ -50,18 +50,34 @@ $\tan20^\circ\tan40^\circ\tan80^\circ$.
   \end{marginfigure}
 \fi 
 
+\marginnote[200pt]
+           {$\tan 3\theta = \tan (\theta + 2\theta) \\
+            = \dfrac{\tan\theta +\tan 2\theta}
+                    {1 -\tan\theta\tan 2\theta} \\
+            = \dfrac{\tan\theta(1 - \tan ^2\theta) + 2\tan \theta}
+                    {(1 - \tan ^2\theta) - 2\tan ^2 \theta} \\
+            = \dfrac{3\tan\theta-\tan^3\theta}
+                    {1 - 3\tan^2\theta}$}
+
 \begin{solution}[\halfpage]
-  Let $20^\circ=\theta$. We can rewrite the expression as,
+  Let $20^\circ=\theta$. Then $40^\circ$ can be written as $60^\circ -\theta$ and $80^\circ$ can be written as $60^\circ +\theta$. Now, we can rewrite the expression as,
   \begin{align}
-    P &= \tan\theta\tan(\dfrac{2\pi}{3}-\theta)
-    	   \tan(\dfrac{2\pi}{3}+\theta) \\
+    P &= \tan\theta\tan(\dfrac{\pi}{3}-\theta)
+    	   \tan(\dfrac{\pi}{3}+\theta) \\
       &= \tan\theta
-           \left(\dfrac{tan^2(\dfrac{2\pi}{3})-\tan^2\theta}
-                       {1-\tan^2(\dfrac{2\pi}{3})\tan^2\theta}\right) \\
+           \left(\dfrac{tan(\dfrac{\pi}{3})-\tan\theta}
+                       {1+\tan(\dfrac{\pi}{3})\tan\theta}\right)
+           \left(\dfrac{tan(\dfrac{\pi}{3})+\tan\theta}
+                       {1-\tan(\dfrac{\pi}{3})\tan\theta}\right) \\
+      &= \tan\theta
+           \left(\dfrac{tan^2(\dfrac{\pi}{3})-\tan^2\theta}
+                       {1-\tan^2(\dfrac{\pi}{3})\tan^2\theta}\right) \\
+      &= \tan\theta
+           \left(\dfrac{3-\tan^2\theta}
+                       {1-3\tan^2\theta}\right) \\
       &= \dfrac{3\tan\theta-\tan^3\theta}{1-3\tan^2\theta} \\
-      &= \tan3\theta \\
+      &= \tan 3\theta \\
       &= \sqrt{3}
   \end{align}
-    
   
 \end{solution}
