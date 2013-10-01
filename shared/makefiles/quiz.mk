@@ -12,10 +12,8 @@ PDF_FILES := $(patsubst %.tex, %.pdf, $(wildcard *.tex))
 .PHONY : plot dvi ps pdf install-pdfs clean
 
 preview : pdf
-	@if [ -d ../preview ] ; then \
 	gs -dNOPAUSE -dBATCH -sDEVICE=jpeg -r700 -sOutputFile=page-%d.jpeg $(PDF_FILES) ; \
 	for f in `ls *.jpeg`; do convert $$f -resize 600x800 $$f ; done \
-	fi
 
 pdf : ps $(PDF_FILES)
 $(PDF_FILES) : %.pdf : %.ps
