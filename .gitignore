@@ -28,6 +28,8 @@ atm/
 locker/
 staging/
 
+minthril/*-*/
+
 cron-jobs/*
 !cron-jobs/scripts
 
