@@ -19,5 +19,5 @@ download.dvi : download.tex
 	latex -halt-on-error $<
 
 download.tex : blueprint
-	@. $$MINTHRIL/scripts/compile.sh
+	@. ../../scripts/compile.sh
 	create_tex_from_blueprint $@
