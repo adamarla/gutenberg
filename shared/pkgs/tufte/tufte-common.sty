@@ -1102,9 +1102,9 @@
 \fancyhf{} % clear header and footer fields
 \ifthenelse{\boolean{@tufte@twoside}}
   {\fancyhead[LE]{\thepage\quad\smallcaps{\newlinetospace{\plainauthor}}}%
-    \fancyhead[RO]{\smallcaps{\newlinetospace{\plaintitle}}\quad\thepage}}
+    \fancyhead[RO]{\smallcaps{\newlinetospace{\plaintitle}}\quad\thepage}}{}
   %{\fancyhead[RE,RO]{\smallcaps{\newlinetospace{\plaintitle}}\quad\thepage}}
-  {\fancyhead[RE,RO]{\sc{\newlinetospace{\plainpublisher}}\quad$\vert$\quad\sc{\newlinetospace{\plainauthor}}\hfil\thepage}}
+  %{\fancyhead[RE,RO]{\sc{\newlinetospace{\plainpublisher}}\quad$\vert$\quad\sc{\newlinetospace{\plainauthor}}\hfil\thepage}}
 
 % The `plain' page style is used on chapter opening pages.
 % In Tufte's /Beautiful Evidence/ he never puts page numbers at the

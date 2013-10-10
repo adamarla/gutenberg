@@ -67,17 +67,20 @@
   \ifprintanswers
   \else
     % Write the QR Code in the top-right and bottom-left corners 
-    \begin{textblock}{600}(410,12)
-      % {\LARGE\fontfamily{ccr}\selectfont{\StrLeft{#2}{4} -\StrMid{#2}{5}{8} -\StrRight{#2}{3}}}
-      {\LARGE\fontfamily{ccr}\selectfont{\baseQR-\thepage}}
-    \end{textblock}
-    \begin{textblock}{600}(20,770)
-      % {\LARGE\fontfamily{ccr}\selectfont{\StrLeft{#2}{4} -\StrMid{#2}{5}{8} -\StrRight{#2}{3}}}
-      {\LARGE\fontfamily{ccr}\selectfont{\baseQR-\thepage}}
-    \end{textblock}
-
+    \fancyhead[RO,RE]{\LARGE\fontfamily{cmss}\selectfont{\baseQR-\thepage}}
+    \fancyfoot[LO,LE]{\LARGE\fontfamily{cmss}\selectfont{\baseQR-\thepage}}
     \ifcancelspace
     \else\newpage\fi
   \fi
 }
+
+\providecommand\setAuthor[1]{
+  \fancyhead[LO,LE]{\Large\fontfamily{cmss}\selectfont{#1}}
+}
+\providecommand\DocAuthor[1]{\setAuthor{#1}}
+
+\providecommand\setDocumentTitle[1]{
+  \fancyhead[CO,CE]{\Large\fontfamily{cmss}\selectfont{#1}}
+}
+\providecommand\School[1]{\setDocumentTitle{#1}}
 
