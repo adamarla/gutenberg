@@ -39,5 +39,45 @@
 \providecommand{\ud}{\, \mathrm{d}}
 %\renewcommand{\solutiontitle}{\noindent{\sc{Solution\\}}\enspace}
 
+%% Commands to control layout
 
-%%%%%%%%%%%%%%%%%%%  Borrowed Tweaks from Exam Class %%%%%%%%%%%%
+\providecommand{\mcq}{\stretch{1}} 
+\providecommand{\halfpage}{\stretch{2}}
+\providecommand{\fullpage}{\stretch{4}} 
+
+\providecommand\baseQR{}
+\providecommand\setbaseQR[1]{
+  \renewcommand\baseQR{#1}
+}
+
+\providecommand\embedQR[1][0pt] {
+  \ifprintanswers
+  \else
+    \ifcancelspace
+    \else
+      \begin{marginfigure}
+        \psbarcode[transy=#1,transx=0.4\marginparwidth]{\baseQR-\thepage-\thequestion}{eclevel=Q width=0.7 height=0.7}{qrcode} 
+      \end{marginfigure}
+    \fi
+
+  \fi
+}
+
+\newcommand\nextpg{
+  \ifprintanswers
+  \else
+    % Write the QR Code in the top-right and bottom-left corners 
+    \begin{textblock}{600}(410,12)
+      % {\LARGE\fontfamily{ccr}\selectfont{\StrLeft{#2}{4} -\StrMid{#2}{5}{8} -\StrRight{#2}{3}}}
+      {\LARGE\fontfamily{ccr}\selectfont{\baseQR-\thepage}}
+    \end{textblock}
+    \begin{textblock}{600}(20,770)
+      % {\LARGE\fontfamily{ccr}\selectfont{\StrLeft{#2}{4} -\StrMid{#2}{5}{8} -\StrRight{#2}{3}}}
+      {\LARGE\fontfamily{ccr}\selectfont{\baseQR-\thepage}}
+    \end{textblock}
+
+    \ifcancelspace
+    \else\newpage\fi
+  \fi
+}
+
