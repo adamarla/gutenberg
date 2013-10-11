@@ -32,6 +32,7 @@ download.tex : blueprint
 	set_base_qrcode $@
 ifeq ($(target),solution)
 	set_printanswers $@
+	rename_parent_folder 
 else ifeq ($(target),full)
 	unset_printanswers $@
 	unset_cancelspace $@

@@ -37,30 +37,6 @@ function create_tex_from_blueprint {
 }
 
 
-function obfuscate {
-  # Obfuscate the name of the parent folder to be of the form [quiz-id]-[sha1sum of document.tex]
-  # Argument : $1 = download.tex
-
-  sum=$(sha1sum $1)
-  j=${sum:0:7}
-  uid=${j~~} # Uppercase $j
-
-  # Write the base QR Code in the file 
-  sed -i "4i %setbaseQR{$uid}" $1
-  sed -i -e "s/^%setbaseQR/\\\\setbaseQR/" $1
-
-  # Then, rename containing folder
-  parent_folder=$(dirname `pwd`)
-
-  m=$(basename $parent_folder)
-  db_id=${m%-*} # remove longest substring match from back of string
-
-  if [ "$db_id" == "$m" ] ; then 
-    # if folder never re-named before
-    rename_x_to_y $parent_folder "$db_id-$uid"
-  fi
-}
-
 function insert_preamble {
   echo "\documentclass[12pt,a4paper,justified]{tufte-exam}" >> $1
   echo "\\fancyfoot[C]{\\copyright\\,Gradians.com}" >> $1
@@ -74,13 +50,15 @@ function insert_preamble {
   echo "\\begin{questions}" >> $1 
 }
 
-function rename_x_to_y {
-  # If $1 = /a/b/c/d and $2 = z, re-naming means /a/b/c/d -> /a/b/c/z
-  # Only the last bit is changed
-  echo "Renaming $1 -> $2"
-  if [ -e $1 ] ; then 
-    x=$(dirname $1)
-    mv $1 $x/$2
+function rename_parent_folder {
+  parent=$(basename $(dirname `pwd`))
+  db_id=${parent%-*} # parent folder is either = a number (initially) or number-uid (eventually)
+
+  # echo "++++++++++ Here with $parent -> $db_id"
+  if [ "$parent" == "$db_id" ] ; then # never re-named before
+    uid=$(grep -m 1 setbaseQR download.tex | cut -d '{' -f 2 | cut -d '}' -f 1)
+    # echo " +++++++++ Renaming $db_id -> $db_id-$uid"
+    (cd ../.. ; mv $db_id $db_id-$uid)
   fi
 }
 
