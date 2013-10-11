@@ -2,9 +2,9 @@
 
 function create_tex_from_blueprint {
   in_production=false
+  if [ -e $1 ] ; then echo "[download.tex] -> Already present. Not re-creating" ; return 0 ; fi
   echo "Creating document.tex from blueprint ..."
   if [ -e /opt/gutenberg/PRODUCTION_SERVER ] ; then in_production=true ; newgrp typesetter ; fi
-  if [ -e $1 ] ; then rm -f $1 ; fi
 
   insert_preamble $1
 
@@ -12,6 +12,7 @@ function create_tex_from_blueprint {
     if [ $line == "\nextpg" ] ; then 
       echo "$line"  >> $1
     else
+      echo "\\setcounter{rolldice}{$[ $RANDOM % 4 ]}" >> $1
       cat $VAULT/$line/question.tex >> $1
     fi
   done
@@ -32,10 +33,9 @@ function create_tex_from_blueprint {
   # 3. Replace all \insertQR commands with \embedQR
   sed -i -e 's/{qrc}//i' -e 's/insertQR/embedQR/' $1
 
-  obfuscate $1
-
   if [ $in_production == "true" ] ; then exit ; fi
 }
+
 
 function obfuscate {
   # Obfuscate the name of the parent folder to be of the form [quiz-id]-[sha1sum of document.tex]
@@ -63,10 +63,12 @@ function obfuscate {
 
 function insert_preamble {
   echo "\documentclass[12pt,a4paper,justified]{tufte-exam}" >> $1
-  echo "\usepackage[absolute]{textpos}" >> $1
-  echo "\usepackage{xstring}" >> $1
   echo "\\fancyfoot[C]{\\copyright\\,Gradians.com}" >> $1
-  echo "\TPGrid{600}{800}" >> $1
+
+  title=$(grep title blueprint | tail -1 | sed -e 's/title://')
+  author=$(grep author blueprint | tail -1 | sed -e 's/author://')
+  echo "\\setAuthor{$author}" >> $1
+  echo "\\setDocumentTitle{$title}" >> $1
 
   echo "\\begin{document}" >> $1
   echo "\\begin{questions}" >> $1 
@@ -81,3 +83,41 @@ function rename_x_to_y {
     mv $1 $x/$2
   fi
 }
+
+function set_base_qrcode {
+  # $1 = download.tex
+  n=$(grep -c setbaseQR $1)
+  if [ $n -eq 0 ] ; then 
+    sum=$(sha1sum $1)
+    j=${sum:0:7}
+    uid=${j~~} # Uppercase $j
+    sed -i "4i \\\\\\setbaseQR{$uid}" $1 
+  fi
+}
+
+function set_printanswers {
+  # $1 = download.tex
+  sed -i '4i \\\\printanswers' $1
+}
+
+function unset_printanswers { 
+  # $1 = download.tex
+  line=$(grep -m 1 -n '\\printanswers' $1 | head -1 | sed -e 's/:.*//')
+  if [ $line ] ; then
+    sed -i "$line d" $1
+  fi
+} 
+
+function set_cancelspace {
+  # $1 = download.tex
+  sed -i '4i \\\cancelspace' $1
+}
+
+function unset_cancelspace { 
+  # $1 = download.tex
+  line=$(grep -m 1 -n '\\cancelspace' $1 | head -1 | sed -e 's/:.*//')
+  if [ $line ] ; then
+    sed -i "$line d" $1
+  fi
+} 
+
