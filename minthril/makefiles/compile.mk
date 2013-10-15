@@ -31,7 +31,6 @@ endif
 download.tex : blueprint
 ifeq ($(production),)
 	newgrp typesetter
-	export VAULT=/home/gutenberg/bank/vault
 endif
 	@. shell-script 
 	create_tex_from_blueprint $@

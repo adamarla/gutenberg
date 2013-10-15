@@ -5,6 +5,10 @@ function create_tex_from_blueprint {
   if [ -e $1 ] ; then echo "[download.tex] -> Already present. Not re-creating" ; return 0 ; fi
   echo "Creating document.tex from blueprint ..."
 
+  if [ -e /opt/gutenberg/PRODUCTION_SERVER ] ; then
+    VAULT=/home/gutenberg/bank/vault
+  fi
+
   insert_preamble $1
 
   for line in `grep -v ":" blueprint` ; do 
