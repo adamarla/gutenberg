@@ -2,6 +2,8 @@ SHELL = /bin/bash
 .ONESHELL:
 .PHONY : clean 
 
+production := $(wildcard /opt/gutenberg/PRODUCTION_SERVER)
+
 page-1.jpeg : download.pdf 
 	if [ ! -e ../$(target) ] ; then mkdir ../$(target) ; fi
 ifneq ($(target),abridged)
@@ -27,8 +29,16 @@ else ifeq ($(target),abridged)
 endif
 
 download.tex : blueprint
+ifeq ($(production),)
+	echo "Changing primary group"
+	newgrp typesetter
+endif
 	@. shell-script 
 	create_tex_from_blueprint $@
+ifeq ($(production),)
+	echo "Back to original group"
+	exit
+endif
 ifeq ($(target),solution)
 	set_printanswers $@
 	rename_parent_folder 

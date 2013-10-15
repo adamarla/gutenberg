@@ -4,11 +4,6 @@ function create_tex_from_blueprint {
   in_production=false
   if [ -e $1 ] ; then echo "[download.tex] -> Already present. Not re-creating" ; return 0 ; fi
   echo "Creating document.tex from blueprint ..."
-  if [ -e /opt/gutenberg/PRODUCTION_SERVER ] ; then 
-    in_production=true 
-    newgrp typesetter
-    VAULT=/home/gutenberg/bank/vault
-  fi
 
   insert_preamble $1
 
@@ -45,8 +40,6 @@ function create_tex_from_blueprint {
     uid=${j~~} # Uppercase $j
     sed -i "4i \\\\\\setbaseQR{$uid}" $1 
   fi
-
-  if [ $in_production == "true" ] ; then exit ; fi
 }
 
 
