@@ -37,6 +37,15 @@ function create_tex_from_blueprint {
   # 3. Replace all \insertQR commands with \embedQR
   sed -i -e 's/{qrc}//i' -e 's/insertQR/embedQR/' $1
 
+  # 4. Set the SHA1SUM as the baseQRCode
+  n=$(grep -c setbaseQR $1)
+  if [ $n -eq 0 ] ; then 
+    sum=$(sha1sum $1)
+    j=${sum:0:7}
+    uid=${j~~} # Uppercase $j
+    sed -i "4i \\\\\\setbaseQR{$uid}" $1 
+  fi
+
   if [ $in_production == "true" ] ; then exit ; fi
 }
 

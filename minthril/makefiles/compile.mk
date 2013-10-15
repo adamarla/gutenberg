@@ -29,7 +29,6 @@ endif
 download.tex : blueprint
 	@. shell-script 
 	create_tex_from_blueprint $@
-	set_base_qrcode $@
 ifeq ($(target),solution)
 	set_printanswers $@
 	rename_parent_folder 
