@@ -18,9 +18,9 @@ touch $target/$log
 cd /home/gutenberg/ScanbotSS
 if [ $1 == "heroku" ]
 then
-  java -cp ScanbotSS.jar:core.jar:javase.jar gutenberg.collect.Driver -u www.gradians.com -d scantray >> $target/$log
+  java -cp ScanbotSS.jar:core.jar:javase.jar:commons-cli-1.2.jar gutenberg.collect.Driver -u www.gradians.com -d scantray >> $target/$log
 else
-  java -cp ScanbotSS.jar:core.jar:javase.jar gutenberg.collect.Driver -u 109.74.201.62 -d scanashtray >> $target/$log
+  java -cp ScanbotSS.jar:core.jar:javase.jar:commons-cli-1.2.jar gutenberg.collect.Driver -u 109.74.201.62 -d scanashtray >> $target/$log
 fi
 curl http://www.gradians.com/distribute/scans >> $target/$log
 
