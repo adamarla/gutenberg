@@ -35,7 +35,7 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
+  \renewcommand{\vbone}{1}
   \renewcommand{\vbtwo}{}
   \renewcommand{\vbthree}{}
   \renewcommand{\vbfour}{}
@@ -48,7 +48,7 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
+    \renewcommand{\vbone}{2}
     \renewcommand{\vbtwo}{}
     \renewcommand{\vbthree}{}
     \renewcommand{\vbfour}{}
@@ -61,7 +61,7 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{3}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -73,7 +73,7 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{4}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -87,7 +87,9 @@
   }
 }
 
-\question
+\POWER\vbone{2}\p
+
+\question Find : $\lim_{x \to \vbone} \left(\sec (\dfrac{\Pi x}{2}) \times \log x \right) $
 
 \insertQR{}
 
@@ -109,40 +111,16 @@
 \fi 
 
 \begin{solution}
+Rearranging the given function, \\
+$\Rightarrow \lim_{x\to 1} \dfrac{\log x}{ \cos (\dfrac{\pi x}{2}) }$\\
+Now the limit is in $\frac{0}{0}$ form.\\
+Thus, using L-Hospital\\
+Differentiating both numerator and denominator\\ 
+\begin{align}
+&\Rightarrow \lim_{x \to 1}  \dfrac{\dfrac{1}{x}}{-\sin (\dfrac{\pi x}{2}) \times \dfrac{\pi}{2}}\\
+&\Rightarrow \dfrac{-2}{\pi}
+\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

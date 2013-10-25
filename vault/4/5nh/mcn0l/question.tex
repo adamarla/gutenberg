@@ -35,8 +35,8 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
+  \renewcommand{\vbone}{33}
+  \renewcommand{\vbtwo}{29}
   \renewcommand{\vbthree}{}
   \renewcommand{\vbfour}{}
   \renewcommand{\vbfive}{}
@@ -48,8 +48,8 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
+    \renewcommand{\vbone}{30}
+    \renewcommand{\vbtwo}{26}
     \renewcommand{\vbthree}{}
     \renewcommand{\vbfour}{}
     \renewcommand{\vbfive}{}
@@ -61,8 +61,8 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
+      \renewcommand{\vbone}{18}
+      \renewcommand{\vbtwo}{14}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
       \renewcommand{\vbfive}{}
@@ -73,8 +73,8 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
+      \renewcommand{\vbone}{24}
+      \renewcommand{\vbtwo}{20}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
       \renewcommand{\vbfive}{}
@@ -86,9 +86,14 @@
     }
   }
 }
+\DIVIDE\vbone{3}\k
+\SQUARE{\k}\l
+\gcalcexpr[0]\m{\l-\k-\vbtwo} 
+\SQUAREROOT{\m}\n
+\ADD{\k}{\n}{\pl} 
+\SUBTRACT{\k}{\n}{\mi}
 
-\question
-
+\question The sum of first three terms of an Arithmetic Progression is $\vbone$ if the product of first and the third term, exceeds the second term by $\vbtwo$, Find the Progression.  
 \insertQR{}
 
 \watchout
@@ -109,40 +114,20 @@
 \fi 
 
 \begin{solution}
+Lets assume the terms of AP are : $a-d, a, a+d $\\
+Adding them up\\
+$\Rightarrow$  3a = $\vbone \Rightarrow$ a = $\k$\\
+\begin{align}
+(a+d)(a-d) - a &= \vbtwo\\ % Storing a^2 in l
+d^{2} = a^{2} - a - \vbtwo \Rightarrow d^{2} &= \m\\ % m= l-k-\vbtwo
+\Rightarrow d &= \pm \n  %n is square root of m.
+\end{align}
+Thus, AP becomes:
+\begin{align}
+    \underbrace{ \mi, \k, \pl \cdots}_{d=9}\quad\text{OR}\quad\quad\underbrace{ \pl, \k, \mi \cdots  }_{d=-9}
+\end{align}
+
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}
