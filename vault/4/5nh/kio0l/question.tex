@@ -30,15 +30,15 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+ \setcounter{rolldice}{2}
 % \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
+  \renewcommand{\vbone}{\frac{15}{16}}
+  \renewcommand{\vbtwo}{\frac{17}{16}}
+  \renewcommand{\vbthree}{\frac{1}{16}}
+  \renewcommand{\vbfour}{16}
   \renewcommand{\vbfive}{}
   \renewcommand{\vbsix}{}
   \renewcommand{\vbseven}{}
@@ -48,10 +48,10 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
+    \renewcommand{\vbone}{\frac{14}{15}}
+    \renewcommand{\vbtwo}{\frac{16}{15}}
+    \renewcommand{\vbthree}{\frac{1}{15}}
+    \renewcommand{\vbfour}{15}
     \renewcommand{\vbfive}{}
     \renewcommand{\vbsix}{}
     \renewcommand{\vbseven}{}
@@ -61,10 +61,10 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
+      \renewcommand{\vbone}{\frac{12}{13}}
+      \renewcommand{\vbtwo}{\frac{14}{13}}
+      \renewcommand{\vbthree}{\frac{1}{13}}
+      \renewcommand{\vbfour}{13}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
@@ -87,7 +87,7 @@
   }
 }
 
-\question
+\question $\int \dfrac{dx}{(x+3)^{\vbone}(x-4)^{\vbtwo}}$
 
 \insertQR{}
 
@@ -109,40 +109,22 @@
 \fi 
 
 \begin{solution}
+\begin{align}
+I &=  \int \dfrac{dx}{(x+3)^{\vbone}(x-4)^{\vbtwo}}\\
+&\Rightarrow \int \dfrac{dx}{(\dfrac{x+3}{x-4})^{\vbone}(x-4)^{2}}
+\end{align}
+ Now putting, t = $\dfrac{x+3}{x-4}$\\
+ We get, dt = $\dfrac{-7}{(x-4)^{2}}$ dx\\  
+\\
+\begin{align}
+              I &= \dfrac{-1}{7} \int t ^{\vbone} dt \\
+  \Rightarrow I &= \dfrac{-\vbfour}{7} t^{\vbthree} + C 
+\end{align}
+Replacing t,
+\begin{align}
+&\Rightarrow \dfrac{-16}{7} \left(\dfrac{x+3}{x-4} \right)^ {\vbthree} + C
+\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}
