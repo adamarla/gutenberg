@@ -30,14 +30,14 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+%\setcounter{rolldice}{2}
 % \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
+  \renewcommand{\vbone}{6}
+  \renewcommand{\vbtwo}{20}
+  \renewcommand{\vbthree}{38760}
   \renewcommand{\vbfour}{}
   \renewcommand{\vbfive}{}
   \renewcommand{\vbsix}{}
@@ -48,9 +48,9 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
+    \renewcommand{\vbone}{4}
+    \renewcommand{\vbtwo}{10}
+    \renewcommand{\vbthree}{210}
     \renewcommand{\vbfour}{}
     \renewcommand{\vbfive}{}
     \renewcommand{\vbsix}{}
@@ -61,9 +61,9 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
+      \renewcommand{\vbone}{4}
+      \renewcommand{\vbtwo}{11}
+      \renewcommand{\vbthree}{330}
       \renewcommand{\vbfour}{}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
@@ -87,7 +87,8 @@
   }
 }
 
-\question
+\question In a lottery a person chooses $\vbone$ numbers out of $1$ to $\vbtwo$, he wins the lottery if the chosen numbers match the $\vbone$
+numbers already fixed by the lottery committee, What is the probability of him winning?   
 
 \insertQR{}
 
@@ -109,40 +110,13 @@
 \fi 
 
 \begin{solution}
+The number of ways in which $\vbone$ numbers are chosen from $\vbtwo$ numbers are:
+ $^{\vbtwo}{C}_{\vbone}$ \\   \\
+\quad  As the order of these $\vbone$ numbers are not important \\  \\
+The total possible combinations are $^{\vbtwo}{C}_{\vbone} \times 1 $\\
+Out of these only one combination is the winning combination.\\
+Hence, the probability of winning is $\dfrac{1}{^{\vbtwo}{C}_{\vbone}} = \dfrac{1}{\vbthree}$
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

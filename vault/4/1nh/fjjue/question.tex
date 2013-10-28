@@ -87,7 +87,7 @@
   }
 }
 
-\question
+\question Find $\lim_{x\to 1}\frac{\left(\sqrt{(x^2-1)}+ \sqrt{x-1}\right)}{\sqrt{x^2-1}}$ 
 
 \insertQR{}
 
@@ -109,40 +109,18 @@
 \fi 
 
 \begin{solution}
+Given limit is of the form : $\frac{0}{0}$\\
+By simply expanding the given expression we get can get this into determinate form. 
+Hence we do  not to apply the L-Hospital rule.
+\begin{align}
+&\Rightarrow \lim_{x\to 1}\frac{\left(\sqrt{(x^2-1)}+ \sqrt{x-1}\right)} {\sqrt{x^2-1}} \\
+&= \lim_{x\to 1}\frac{\sqrt{(x-1)(x+1)} + \sqrt{x-1}}{\sqrt{(x-1)(x+1)}} \\
+&= \lim_{x\to 1}\frac{\sqrt{(x+1)} + 1 }{\sqrt{(x+1)}} \\
+&= \dfrac{\sqrt{2}+1}{\sqrt{2}} 
+\end{align}
 \end{solution}
 
-\begin{parts}
-  \part 
 
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

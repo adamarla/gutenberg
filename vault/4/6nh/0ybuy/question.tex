@@ -30,13 +30,13 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+%\setcounter{rolldice}{0}
 % \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
+  \renewcommand{\vbone}{7}
+  \renewcommand{\vbtwo}{-3}
   \renewcommand{\vbthree}{}
   \renewcommand{\vbfour}{}
   \renewcommand{\vbfive}{}
@@ -48,8 +48,8 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
+    \renewcommand{\vbone}{13}
+    \renewcommand{\vbtwo}{3}
     \renewcommand{\vbthree}{}
     \renewcommand{\vbfour}{}
     \renewcommand{\vbfive}{}
@@ -61,8 +61,8 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
+      \renewcommand{\vbone}{26}
+      \renewcommand{\vbtwo}{6}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
       \renewcommand{\vbfive}{}
@@ -73,8 +73,8 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
+      \renewcommand{\vbone}{23}
+      \renewcommand{\vbtwo}{13}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
       \renewcommand{\vbfive}{}
@@ -86,8 +86,12 @@
     }
   }
 }
-
-\question
+\SUBTRACT\vbtwo\vbone\k
+\DIVIDE\k{10}\l
+\MULTIPLY\l{9}\n 
+\gcalcexpr[0]\m {(\vbone - \n)/2}  
+\gcalcexpr[0]\o {\m+\n}
+\question If the sum of third and eighth term of an Arithmetic progression is $\vbone$. And the sum of seventh and fourteenth term is $\vbtwo$. Find the tenth term. 
 
 \insertQR{}
 
@@ -109,40 +113,25 @@
 \fi 
 
 \begin{solution}
+Say a, is the first term and d is the common difference.\\
+Hence, the terms of the AP are:\\
+\begin{align}
+{a}_{3} = a + 2d ;\quad {a}_{8} &= a + 7d \\
+{a}_{7} = a + 6d ;\quad {a}_{14} &= a + 14d\\
+\text{Now}, {a}_{3} + {a}_{8} &= \vbone\\
+\quad {a}_{7} + {a}_{14} &= \vbtwo
+\end{align}
+Subtracting, we get\\
+\begin{align}
+(2{a} + 19d) - (2{a} +  9d) = \k \\
+\Rightarrow d &= \l \\
+\end{align}
+Using this value of d in the above equation, value of a is calculated.   
+\begin{align}
+a = \lbrace (\vbone - 9\times d)/ 2 \rbrace = \m 
+\end{align}
+Thus, the tenth term : ${a}_{10} = a + 9d = \o $\\
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

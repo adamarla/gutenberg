@@ -87,7 +87,8 @@
   }
 }
 
-\question
+\question Find Limit \\
+$\lim_{x \to -1} \dfrac{x+1}{\sqrt{x^2+3}-2}$
 
 \insertQR{}
 
@@ -109,40 +110,15 @@
 \fi 
 
 \begin{solution}
+Rationalizing,\\
+
+\begin{align}
+&\Rightarrow \lim_{x\to -1} \dfrac{x+1}{\sqrt{x^2+3}-2} \times \lbrace \dfrac{\sqrt{x^2+3}+2}{\sqrt{x^2+3}+2}\rbrace \\
+&\Rightarrow \lim_{x\to -1}\dfrac{(x+1)(\sqrt{x^2+3}+2)} {x^2 -1}\\
+&\Rightarrow \lim_{x\to -1} \dfrac{(x+1)(\sqrt{x^2+3}+2)} {(x -1)(x+1)}\\
+ &\Rightarrow -2
+\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}
