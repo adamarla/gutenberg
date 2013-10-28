@@ -30,7 +30,7 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+%\setcounter{rolldice}{2}
 % \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
@@ -114,15 +114,21 @@
 \fi 
 
 \begin{solution}
-Lets assume the terms of AP are : $a-d, a, a+d $\\
-Adding them up\\
+Assuming the terms of the progression to be : $a-d, a, a+d $\\
+Adding the terms,\\
 $\Rightarrow$  3a = $\vbone \Rightarrow$ a = $\k$\\
 \begin{align}
 (a+d)(a-d) - a &= \vbtwo\\ % Storing a^2 in l
-d^{2} = a^{2} - a - \vbtwo \Rightarrow d^{2} &= \m\\ % m= l-k-\vbtwo
+\Rightarrow {a}^2 - {d}^2 - a &= \vbtwo 
+%d^{2} &= a^{2} - a - \vbtwo 
+\end{align}
+Substituting, a = $\k$\\
+\begin{align}  
+d^{2} &= {\k}^2 - {\k} - \vbtwo\\ 
+\Rightarrow d^{2} &= \m\\ % m= l-k-\vbtwo
 \Rightarrow d &= \pm \n  %n is square root of m.
 \end{align}
-Thus, AP becomes:
+Thus the progression becomes:
 \begin{align}
     \underbrace{ \mi, \k, \pl \cdots}_{d=9}\quad\text{OR}\quad\quad\underbrace{ \pl, \k, \mi \cdots  }_{d=-9}
 \end{align}
