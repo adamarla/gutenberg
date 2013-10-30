@@ -2,8 +2,8 @@
 
 function create_tex_from_blueprint {
   in_production=false
-  if [ -e $1 ] ; then echo "[download.tex] -> Already present. Not re-creating" ; return 0 ; fi
-  echo "Creating document.tex from blueprint ..."
+  if [ -e $1 ] ; then echo "[$1] -> Already present. Not re-creating" ; return 0 ; fi
+  echo "Creating $1 from blueprint ..."
 
   if [ -e /opt/gutenberg/PRODUCTION_SERVER ] ; then
     VAULT=/home/gutenberg/bank/vault
@@ -73,7 +73,7 @@ function rename_parent_folder {
 }
 
 function set_base_qrcode {
-  # $1 = download.tex
+  # $1 = Target TeX File
   n=$(grep -c setbaseQR $1)
   if [ $n -eq 0 ] ; then 
     sum=$(sha1sum $1)
@@ -84,12 +84,12 @@ function set_base_qrcode {
 }
 
 function set_printanswers {
-  # $1 = download.tex
+  # $1 = Target TeX File
   sed -i '4i \\\\printanswers' $1
 }
 
 function unset_printanswers { 
-  # $1 = download.tex
+  # $1 = Target TeX File
   line=$(grep -m 1 -n '\\printanswers' $1 | head -1 | sed -e 's/:.*//')
   if [ $line ] ; then
     sed -i "$line d" $1
@@ -97,15 +97,52 @@ function unset_printanswers {
 } 
 
 function set_cancelspace {
-  # $1 = download.tex
+  # $1 = Target TeX File
   sed -i '4i \\\cancelspace' $1
 }
 
 function unset_cancelspace { 
-  # $1 = download.tex
+  # $1 = Target TeX File
   line=$(grep -m 1 -n '\\cancelspace' $1 | head -1 | sed -e 's/:.*//')
   if [ $line ] ; then
     sed -i "$line d" $1
   fi
 } 
 
+
+### Vault Specific
+
+function create_blueprint_in_vault {
+  if [ -e blueprint ] ; then return 0 ; fi
+  rel_path=$(pwd | sed -e 's/.*\/vault\///')
+
+  echo "author: Gradians.com" >> blueprint
+  echo "title: Question Preview" >> blueprint
+  echo $rel_path >> blueprint
+}
+
+function unset_question_version {
+	# $1 = Target TeX file 
+  line=$(grep -m 1 -n 'rolldice' $1 | head -1 | sed -e 's/:.*//')
+	if [ $line ] ; then 
+		sed -i "$line d" $1
+	fi
+}
+
+function set_question_version {
+	# $1 = Target TeX file 
+	# $2 = version - a number in [0,3]
+
+	unset_question_version $1
+	sed -i "4i \\\\\\setcounter{rolldice}{$2}" $1
+}
+
+function compile_question_tex {
+	# $1 = Source TeX file
+	base=$(ls $1 | sed -e 's/\..*//') # preview.tex -> preview | abhinav.tex -> abhinav
+	latex -halt-on-error $base.tex
+	dvips -q $base.dvi
+	ps2pdf $base.ps
+	gs -dNOPAUSE -dBATCH -sDEVICE=jpeg -r700 -sOutputFile=page-%d.jpeg $base.pdf
+	for f in `ls page-*.jpeg` ; do convert $f -resize 600x800 $f ; done
+}

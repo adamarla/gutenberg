@@ -17,6 +17,9 @@
 !shared/*.tex
 !shared/templates/*.tex
 
+blueprint
+compilation_finished
+shell-script
 
 mint/*
 
@@ -28,7 +31,7 @@ atm/
 locker/
 staging/
 
-minthril/*-*/
+minthril/*
 
 cron-jobs/*
 !cron-jobs/scripts
