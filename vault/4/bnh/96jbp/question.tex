@@ -1,4 +1,3 @@
-
 % This is an empty shell file placed for you by the 'examiner' script.
 % You can now fill in the TeX for your question here.
 
@@ -88,7 +87,7 @@
   }
 }
 
-\question Evaluate : $\int (\sqrt{3} \sin x - \cos x ) dx $ 
+\question How many 5 digit telephone numbers can be constructed using the digits 0-9 each number starts with 67 and no digit appears more than once?
 
 \insertQR{}
 
@@ -110,20 +109,10 @@
 \fi 
 
 \begin{solution}
-$\int (\sqrt{3} \sin x - \cos x ) dx $\\
-\begin{align}
-&\Rightarrow \sqrt{3} \int \sin x dx - \int \cos x dx \\
-&\Rightarrow - \sqrt{3} \cos x  - \sin x + C\\
-\end{align}
-This is in the form A sin x $+$ B cos x \\
-Thus for further simplification we multiply and divide by $\sqrt{A^2 + B^2}$\\
-\begin{align}
-&\Rightarrow -2 \lbrace  \dfrac{\sqrt{3}}{2} \cos x + \dfrac{1}{2} \sin x \rbrace + C\\
-&\Rightarrow -2 \lbrace  \cos (\dfrac{\Pi}{6}) \cos x + \sin (\dfrac{\Pi}{6}) \sin x \rbrace + C
-\end{align}
-This is in the form : cos X cos Y $+$ sin X sin Y \\
-Thus becomes cos $(X-Y)$\\
-$\Rightarrow -2 \cos (x- \dfrac{\Pi}{6}) + C$
+The first two digits are fixed as 6 and 7 and no digit repeats itself. \\ 
+Thus, the three digits are to be chosen from remaining of the 8 digits.\\ \\
+We can pick the units place from the 8 digits in 8 ways. Now this can't be repeated so have to pick the tens place from 7 digits in 7 ways and the hundredth from 6 digits in 6 ways.\\
+Thus, using multiplication method the number of ways are : $8\times 7 \times 6 = 336$      
 \end{solution}
 
 
