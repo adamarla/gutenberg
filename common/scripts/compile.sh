@@ -122,27 +122,27 @@ function create_blueprint_in_vault {
 }
 
 function unset_question_version {
-	# $1 = Target TeX file 
+  # $1 = Target TeX file 
   line=$(grep -m 1 -n 'rolldice' $1 | head -1 | sed -e 's/:.*//')
-	if [ $line ] ; then 
-		sed -i "$line d" $1
-	fi
+  if [ $line ] ; then 
+    sed -i "$line d" $1
+  fi
 }
 
 function set_question_version {
-	# $1 = Target TeX file 
-	# $2 = version - a number in [0,3]
+  # $1 = Target TeX file 
+  # $2 = version - a number in [0,3]
 
-	unset_question_version $1
-	sed -i "4i \\\\\\setcounter{rolldice}{$2}" $1
+  unset_question_version $1
+  sed -i "4i \\\\\\setcounter{rolldice}{$2}" $1
 }
 
 function compile_question_tex {
-	# $1 = Source TeX file
-	base=$(ls $1 | sed -e 's/\..*//') # preview.tex -> preview | abhinav.tex -> abhinav
-	latex -halt-on-error $base.tex
-	dvips -q $base.dvi
-	ps2pdf $base.ps
-	gs -dNOPAUSE -dBATCH -sDEVICE=jpeg -r700 -sOutputFile=page-%d.jpeg $base.pdf
-	for f in `ls page-*.jpeg` ; do convert $f -resize 600x800 $f ; done
+  # $1 = Source TeX file
+  base=$(ls $1 | sed -e 's/\..*//') # preview.tex -> preview | abhinav.tex -> abhinav
+  latex -halt-on-error $base.tex
+  dvips -q $base.dvi
+  ps2pdf $base.ps
+  gs -dNOPAUSE -dBATCH -sDEVICE=jpeg -r700 -sOutputFile=page-%d.jpeg $base.pdf
+  for f in `ls page-*.jpeg` ; do convert $f -resize 600x800 $f ; done
 }
