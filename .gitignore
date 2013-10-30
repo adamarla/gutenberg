@@ -17,6 +17,9 @@
 !shared/*.tex
 !shared/templates/*.tex
 
+blueprint
+compilation_finished
+shell-script
 
 mint/*
 
