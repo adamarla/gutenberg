@@ -46,17 +46,17 @@ function rewire {
   parent=$(dirname $PWD/$target) 
   cd $parent
 
-	if [ "$1" == "vault" ] ; then
-		cd vault 
-		for j in */ */*/ ; do
-			for k in `ls -d $j` ; do
-				echo "[deleting]: $k/Makefile"
-				rm -f $k/Makefile
-				ln -s $parent/shared/makefiles/divedown-vault.mk $k/Makefile
-		  done
-		done
-		cd -
-	fi
+  if [ "$1" == "vault" ] ; then
+    cd vault 
+    for j in */ */*/ ; do
+      for k in `ls -d $j` ; do
+        echo "[deleting]: $k/Makefile"
+        rm -f $k/Makefile
+        ln -s $parent/shared/makefiles/divedown-vault.mk $k/Makefile
+      done
+    done
+    cd -
+  fi
 }
 
 function empty_slots {
