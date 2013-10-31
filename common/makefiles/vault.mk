@@ -30,4 +30,6 @@ ifneq ($(version),)
 endif
 
 clean : 
-	rm -f preview* compilation_finished
+	@base=$$(basename `pwd`)
+	rm -f preview* compilation_finished $$base*
+	rm -rf 0 1 2 3
