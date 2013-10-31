@@ -1,3 +1,5 @@
+
+.ONESHELL:
 subdirs := $(wildcard */) # individual question folder have names like 678_45
 
 # 'divedown' is the default target. And we want 
@@ -12,4 +14,9 @@ TARGET := $(word 1,$(strip $(MAKECMDGOALS)))
 divedown : $(subdirs) ; 
 
 $(subdirs) :
-	$(MAKE) $(TARGET) -C $@
+	$(MAKE) -C $@
+
+clean : 
+	@for d in `ls -d */` ; do 
+		$(MAKE) -C $$d clean
+	done
