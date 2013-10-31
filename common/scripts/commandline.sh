@@ -32,11 +32,11 @@ function connect_with_common {
     
     cd $f
       if [ "$1" == "vault" ] ; then 
-        ln -s ../../../../$parent/common/makefiles/vault.mk Makefile 
+        ln -s $parent/common/makefiles/vault.mk Makefile 
       else 
-        ln -s ../../../../$parent/common/makefiles/compile.mk Makefile 
+        ln -s $parent/common/makefiles/compile.mk Makefile 
       fi
-      ln -s ../../../../$parent/common/scripts/compile.sh shell-script 
+      ln -s $parent/common/scripts/compile.sh shell-script 
     cd -
   done
 }
