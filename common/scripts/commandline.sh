@@ -13,7 +13,7 @@ function connect_with_common {
     return 0
   fi
 
-  parent=$(dirname $target)
+  parent=$(dirname $PWD/$target) 
   cd $parent
 
   for f in `ls -d $target/*/*/*` ; do
@@ -29,6 +29,34 @@ function connect_with_common {
       ln -s ../../../../$parent/common/scripts/compile.sh shell-script 
     cd -
   done
+}
+
+function rewire {
+  if [ -z "$1" ] ; then 
+    echo "[Error]: Specify a target ( vault | minthril )"
+    return 0
+  fi
+
+  target=$(find . -name $1)
+  if [ -z "$target" ] ; then 
+    echo "[Warning]: $1/ not in hierarchy"
+    return 0
+  fi
+
+  parent=$(dirname $PWD/$target) 
+  cd $parent
+
+	if [ "$1" == "vault" ] ; then
+		cd vault 
+		for j in */ */*/ ; do
+			for k in `ls -d $j` ; do
+				echo "[deleting]: $k/Makefile"
+				rm -f $k/Makefile
+				ln -s $parent/shared/makefiles/divedown-vault.mk $k/Makefile
+		  done
+		done
+		cd -
+	fi
 }
 
 function empty_slots {
