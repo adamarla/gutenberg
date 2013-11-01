@@ -35,10 +35,10 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
+  \renewcommand{\vbone}{n}
+  \renewcommand{\vbtwo}{105}
+  \renewcommand{\vbthree}{\dfrac{n\cdot(n-1)}{2}}
+  \renewcommand{\vbfour}{15}
   \renewcommand{\vbfive}{}
   \renewcommand{\vbsix}{}
   \renewcommand{\vbseven}{}
@@ -48,10 +48,10 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
+    \renewcommand{\vbone}{15}
+    \renewcommand{\vbtwo}{n}
+    \renewcommand{\vbthree}{\dfrac{15\cdot 14}{2}}
+    \renewcommand{\vbfour}{105}
     \renewcommand{\vbfive}{}
     \renewcommand{\vbsix}{}
     \renewcommand{\vbseven}{}
@@ -61,10 +61,10 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
+      \renewcommand{\vbone}{12}
+      \renewcommand{\vbtwo}{n}
+      \renewcommand{\vbthree}{\dfrac{12\cdot 11}{2}}
+      \renewcommand{\vbfour}{66}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
@@ -73,10 +73,10 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
+      \renewcommand{\vbone}{n}
+      \renewcommand{\vbtwo}{66}
+      \renewcommand{\vbthree}{\dfrac{n\cdot (n-1)}{2}}
+      \renewcommand{\vbfour}{12}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
@@ -87,7 +87,7 @@
   }
 }
 
-\question
+\question There are $\vbone$ stations in a railways line. The number of kinds of ticket printed are $\vbtwo$. Find n   
 
 \insertQR{}
 
@@ -109,40 +109,13 @@
 \fi 
 
 \begin{solution}
+One ticket will be printed for travelling from one particular station to other. Thus, the total number of tickets will be every possible combination of 2 stations from 
+$\vbone$ stations. \\
+$\therefore$ Total possible tickets will be $^{\vbone}C_{2} = \vbtwo$\\ 
+$\Rightarrow \vbthree = \vbtwo$\\
+$\Rightarrow n = \vbfour$
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

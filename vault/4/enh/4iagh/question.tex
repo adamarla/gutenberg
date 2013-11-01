@@ -35,9 +35,9 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
+  \renewcommand{\vbone}{3}
+  \renewcommand{\vbtwo}{4}
+  \renewcommand{\vbthree}{64}
   \renewcommand{\vbfour}{}
   \renewcommand{\vbfive}{}
   \renewcommand{\vbsix}{}
@@ -48,9 +48,9 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
+    \renewcommand{\vbone}{3}
+    \renewcommand{\vbtwo}{5}
+    \renewcommand{\vbthree}{125}
     \renewcommand{\vbfour}{}
     \renewcommand{\vbfive}{}
     \renewcommand{\vbsix}{}
@@ -61,9 +61,9 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
+      \renewcommand{\vbone}{4}
+      \renewcommand{\vbtwo}{5}
+      \renewcommand{\vbthree}{625}
       \renewcommand{\vbfour}{}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
@@ -73,9 +73,9 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
+      \renewcommand{\vbone}{2}
+      \renewcommand{\vbtwo}{3}
+      \renewcommand{\vbthree}{9}
       \renewcommand{\vbfour}{}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
@@ -87,7 +87,7 @@
   }
 }
 
-\question
+\question In how many ways can $\vbone$ letters addressed to different people be posted in $\vbtwo$ postboxes?
 
 \insertQR{}
 
@@ -109,40 +109,12 @@
 \fi 
 
 \begin{solution}
+Each letter can be posted in $\vbtwo$ post boxes. First into $\vbtwo$, second into $\vbtwo$ and so on...\\
+Thus the total ways of posting these letters are $\underbrace{\vbtwo \times \vbtwo \cdots}_{\vbone \text{times}}$\\
+\begin{align}
+\Rightarrow {\vbtwo}^{\vbone} = {\vbthree}
+\end{align}  
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

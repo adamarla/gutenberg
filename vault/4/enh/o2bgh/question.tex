@@ -35,39 +35,39 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
+  \renewcommand{\vbone}{4}
+  \renewcommand{\vbtwo}{\text{FAILURE}}
+  \renewcommand{\vbthree}{\text{F}}
+  \renewcommand{\vbfour}{3}
+  \renewcommand{\vbfive}{6}
+  \renewcommand{\vbsix}{480}
+  \renewcommand{\vbseven}{360}
   \renewcommand{\vbeight}{}
   \renewcommand{\vbnine}{}
   \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
+    \renewcommand{\vbone}{4}
+    \renewcommand{\vbtwo}{\text{CERTAIN}}
+    \renewcommand{\vbthree}{\text{T}}
+    \renewcommand{\vbfour}{3}
+    \renewcommand{\vbfive}{6}
+    \renewcommand{\vbsix}{480}
+    \renewcommand{\vbseven}{360}
     \renewcommand{\vbeight}{}
     \renewcommand{\vbnine}{}
     \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
+      \renewcommand{\vbone}{3}
+      \renewcommand{\vbtwo}{\text{PICTURE}}
+      \renewcommand{\vbthree}{\text{P}}
+      \renewcommand{\vbfour}{2}
+      \renewcommand{\vbfive}{6}
+      \renewcommand{\vbsix}{90}
+      \renewcommand{\vbseven}{120}
       \renewcommand{\vbeight}{}
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
@@ -87,7 +87,7 @@
   }
 }
 
-\question
+\question How many $\vbone$ letter words can be formed using "$\vbtwo$" 
 
 \insertQR{}
 
@@ -108,39 +108,32 @@
   \end{marginfigure}
 \fi 
 
-\begin{solution}
-\end{solution}
 
 \begin{parts}
-  \part 
+  \part "$\vbthree$" is included in each word
 
   \insertQR{}
   \begin{solution}
+  When one letter is fixed as $\vbthree$. We choose $\vbfour$ letters from the remaining letters of $\vbtwo$ other than "$\vbthree$".\\
+  And we arrange these letters in $\vbone !$ ways.\\
+  Total number of words when "$\vbthree$" is included in each word 
+  \begin{align}
+  \Rightarrow ^{7}C_{\vbone} \times {\vbone}!  = \vbsix
+  \end{align}
   \end{solution}
 
-  \part 
+  \part "$\vbthree$" is not included in each word
 
   \insertQR{}
   \begin{solution}
+  We choose $\vbone$ letters from the remaining letters of $\vbtwo$ other than "$\vbthree$".\\
+  And we arrange these letters in $\vbone !$ ways.\\
+  Total number of words when "$\vbthree$" is not included in any word 
+  \begin{align}
+  \Rightarrow ^{\vbfive}C_{\vbone} \times {\vbone}! = \vbseven
+  \end{align}
   \end{solution}
 
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
 
 \end{parts}
 
