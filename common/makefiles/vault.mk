@@ -12,8 +12,9 @@ compilation_finished : preview.tex
 	done
 	touch $@
 
-preview.tex : blueprint 
+preview.tex : blueprint question.tex
 	@. shell-script 
+	rm -f $@
 	create_tex_from_blueprint $@
 	set_printanswers $@
 
