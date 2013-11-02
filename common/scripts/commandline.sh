@@ -178,3 +178,14 @@ function versioning_status {
 
   cd -
 }
+
+function clean_tex {
+  # 1. Remove any LaTeX comments 
+  sed -i '/^%/d' $1
+
+  # 2.  Remove any unused \renewcommand\vb* variables
+  b=$(grep -m 1 -n "rolldice" $1 | sed -e 's/:.*//')
+  e=$(grep -m 1 -n "\\\\question" $1 | sed -e 's/:.*//')
+
+  sed -i -e '/renewcommand.*{}/d' $1
+}
