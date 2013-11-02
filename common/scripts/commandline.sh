@@ -69,6 +69,42 @@ function rewire {
   fi
 }
 
+function __create_gold_files { 
+  # To be called from within empty_slots | __is_empty_slot ONLY
+  cd $VAULT
+  if [ ! -e gold.1 ] ; then 
+    __snapshot ../shared/question.tex gold.1 greedy
+  fi 
+
+  if [ ! -e gold.2 ] ; then 
+    __snapshot ../shared/question.tex gold.2
+  fi
+}
+
+function __is_empty_slot {
+  # $1 = relative path from $VAULT to a question slot
+  # To be called from within empty_slots | next_slot ONLY 
+
+  local ret="false"
+
+  __create_gold_files
+  __snapshot $1/question.tex tmp.1 greedy
+  __snapshot $1/question.tex tmp.2 
+
+  for j in 1 2 ; do 
+    a=$(sha1sum gold.$j)
+    b=$(sha1sum tmp.$j)
+    x=${a:0:15}
+    y=${b:0:15}
+
+    if [ "$x" == "$y" ] ; then 
+      ret="true"
+      break
+    fi
+  done
+  echo $ret
+}
+
 function empty_slots {
   if [ -z $VAULT ] ; then 
     echo "[Error]: Define \$VAULT environment variable in .bashrc"
@@ -76,8 +112,7 @@ function empty_slots {
   fi
 
   cd $VAULT
-  snapshot ../shared/question.tex gold.1 greedy
-  snapshot ../shared/question.tex gold.2
+  __create_gold_files
 
   if [ -z $1 ] ; then 
     folders=$(ls -d */*/*/)
@@ -86,26 +121,37 @@ function empty_slots {
   fi
 
   for f in $folders ; do 
-    snapshot $f/question.tex tmp.1 greedy
-    snapshot $f/question.tex tmp.2 
-
-    for j in 1 2 ; do 
-      a=$(sha1sum gold.$j)
-      b=$(sha1sum tmp.$j)
-      x=${a:0:15}
-      y=${b:0:15}
-
-      if [ "$x" == "$y" ] ; then 
-        d=$(echo $f | sed -e 's/vault\///')
-        echo $d
-        break
-      fi
-    done
+    local empty=$(__is_empty_slot $f)
+    if [ "$empty" == "true" ] ; then echo $f ; fi
   done
-
 }
 
-function snapshot {
+function next_slot {
+  if [ -z $VAULT ] ; then 
+    echo -e "$COL_RED[Error]: Define \$VAULT$COL_RESET environment variable in .bashrc"
+    return 0
+  else
+    if [ -z $1 ] ; then 
+      echo -e "$COL_RED[Error]:$COL_RESET Provide a user-id"
+      return 0
+    fi
+  fi
+
+  cd $VAULT
+  __create_gold_files
+
+  folders=$(ls -d $1/*/*/)
+  for f in $folders ; do 
+    local empty=$(__is_empty_slot $f)
+    if [ "$empty" == "true" ] ; then 
+      echo -e "Switching to $COL_BLUE$f$COL_RESET"
+      cd $f
+      break
+    fi
+  done 
+}
+
+function __snapshot {
   # $1 = input file 
   # $2 = snapshot output
   # $3 = mode ( greedy | non-greedy (default) )
