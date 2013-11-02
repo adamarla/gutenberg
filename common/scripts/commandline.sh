@@ -75,16 +75,14 @@ function empty_slots {
     return 0
   fi
 
-  parent=$(dirname $VAULT)
-  cd $parent
-
-  snapshot shared/question.tex gold.1 greedy
-  snapshot shared/question.tex gold.2
+  cd $VAULT
+  snapshot ../shared/question.tex gold.1 greedy
+  snapshot ../shared/question.tex gold.2
 
   if [ -z $1 ] ; then 
-    folders=$(ls -d vault/*/*/*/)
+    folders=$(ls -d */*/*/)
   else
-    folders=$(ls -d vault/$1/*/*/)
+    folders=$(ls -d $1/*/*/)
   fi
 
   for f in $folders ; do 
