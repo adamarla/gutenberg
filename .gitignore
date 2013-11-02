@@ -20,6 +20,9 @@
 blueprint
 compilation_finished
 shell-script
+gold.*
+tmp.*
+*.bak
 
 mint/*
 
