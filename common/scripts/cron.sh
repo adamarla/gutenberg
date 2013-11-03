@@ -42,3 +42,17 @@ function rebuild_vault {
   done
   cd -
 }
+
+function age_in_hours {
+	# $1 = file or folder 
+	local a=$(stat -c %Y $1)
+	local b=$(date +%s)
+	local c=$((($b-$a)/3600))
+	echo $c
+}
+
+function age_in_days {
+	local d=$(age_in_hours $1)
+	local e=$(( $d / 24 ))
+	echo $e
+}
