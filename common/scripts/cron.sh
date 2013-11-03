@@ -77,9 +77,7 @@ function clean_logs {
     local days=$(age_in_days $f)
 
     if [ $days -gt $1 ] ; then 
-      echo -e "$COL_RED$f$COL_RESET"
-    else 
-      echo -e "$COL_BLUE$f$COL_RESET"
+      rm -rf $f
     fi
   done 
   cd -
