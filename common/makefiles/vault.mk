@@ -1,6 +1,7 @@
 
 SHELL = /bin/bash
 .ONESHELL:
+.DELETE_ON_ERROR:
 .PHONY : clean install 
 
 compilation_finished : preview.tex
@@ -8,6 +9,9 @@ compilation_finished : preview.tex
 	for version in 0 1 2 3 ; do 
 		set_question_version $< $$version
 		compile_question_tex $<
+ifneq ($(logfile),)
+		echo "..... compiled version $$version" >> $(logfile)
+endif
 		$(MAKE) install version=$$version
 	done
 	touch $@

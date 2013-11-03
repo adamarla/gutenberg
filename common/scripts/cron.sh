@@ -21,7 +21,24 @@ function rebuild_vault {
       return 0
     fi
   fi
+
+  # Create area for log-file
+  logd=$VAULT/../cron-jobs/$(date +"%d.%B.%Y")
+  logf=$logd/$(date +"%H-%M-rebuild")
+  
+  mkdir -p $logd 
+
   cd $VAULT 
-  make
+  for f in `ls -d */*/*/` ; do 
+    echo "[$f]" >> $logf 
+    if [ -e $f/old.mk ] ; then 
+      echo ".... Calling old.mk" >> $logf
+      make -C $f -f old.mk 
+    fi
+    if [ -e $f/Makefile ] ; then
+      echo ".. Creating versions" >> $logf
+      make -C $f logfile=$logf 
+    fi 
+  done
   cd -
 }
