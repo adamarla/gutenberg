@@ -35,11 +35,11 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
+  \renewcommand{\vbone}{3}
+  \renewcommand{\vbtwo}{559}
+  \renewcommand{\vbthree}{12}
+  \renewcommand{\vbfour}{3}
+  \renewcommand{\vbfive}{3}
   \renewcommand{\vbsix}{}
   \renewcommand{\vbseven}{}
   \renewcommand{\vbeight}{}
@@ -48,11 +48,11 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
+    \renewcommand{\vbone}{3}
+    \renewcommand{\vbtwo}{376}
+    \renewcommand{\vbthree}{10}
+    \renewcommand{\vbfour}{4}
+    \renewcommand{\vbfive}{2}
     \renewcommand{\vbsix}{}
     \renewcommand{\vbseven}{}
     \renewcommand{\vbeight}{}
@@ -61,11 +61,11 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
+      \renewcommand{\vbone}{4}
+      \renewcommand{\vbtwo}{681}
+      \renewcommand{\vbthree}{10}
+      \renewcommand{\vbfour}{4}
+      \renewcommand{\vbfive}{2}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
       \renewcommand{\vbeight}{}
@@ -87,7 +87,7 @@
   }
 }
 
-\question
+\question The sum of coefficients of first three terms of the expansion $\left( x- \dfrac{\vbone}{x^{2}} \right) ^{m} (m \in \mathbb{N})$ is $\vbtwo$. Find the term of expansion containing $x^{\vbfour}$.
 
 \insertQR{}
 
@@ -109,40 +109,30 @@
 \fi 
 
 \begin{solution}
+Let $a_{1}, a_{2},a_{3}$ be the coefficient of the first, second and third term of the expansion. \\
+	\begin{align}
+	a_{1} &= 1 \\ 
+	a_{2} &= -\encr{m}{1} \cdot \vbone \\
+	a_{3} &= \encr{m}{2} \cdot \vbone^{2} 
+	\end{align}    
+Now adding these gives $\vbtwo$\\
+\begin{align}
+\therefore \quad &a_{1} + a_{2} + a_{3} = \vbtwo \\
+&\Rightarrow 1 - m\cdot\vbone + \dfrac{m(m-1)}{2} \cdot \vbone^{2} = \vbtwo \\
+&\Rightarrow m^{2}\vbone^{2} - m(2\cdot \vbone + \vbone^{2}) + 2 - 2\cdot \vbtwo = 0 
+\end{align}
+Solving the quadratic for m, we get the value of m$ = \vbthree$ \\ 
+Now , to find the coefficient of the term containing $x^{\vbfour}$ we first find the coefficient of x in $(r+1)^{th}$ term and then equate it to $\vbfour$. \\
+\begin{align}
+T_{r+1} &= \encr{m}{r} \cdot x^{m-r} \cdot {\dfrac{-\vbone}{x^{2}}}^{r} \\
+&= {-\vbone}^{r} \lbrace \encr{m}{r} \cdot x^{m-3r} \rbrace \\
+\Rightarrow m - 3r &=\vbfour 
+\end{align} 
+Now we put the value of r in ${T}_{r+1}$\\
+$\Rightarrow T_{r+1} = \encr{\vbthree}{\vbfive} \cdot x^{\vbthree-\vbfive} \cdot {\left(\dfrac{-\vbone}{x^{2}}\right)}^{\vbthree}$ \\
+Therefore the coefficient of $x^{\vbfour}$ in $T_{r+1} = \encr{\vbthree}{\vbfive} \cdot (-\vbone)^{\vbthree}$
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}
