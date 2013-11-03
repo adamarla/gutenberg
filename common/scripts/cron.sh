@@ -73,6 +73,7 @@ function clean_logs {
 
   cd $logd 
   for f in `ls -d */` ; do 
+    if [ "$f" == "scripts" ] ; then continue ; fi
     local days=$(age_in_days $f)
 
     if [ $days -gt $1 ] ; then 
