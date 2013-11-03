@@ -31,14 +31,14 @@ function rebuild_vault {
   cd $VAULT 
   for f in `ls -d */*/*/` ; do 
     echo "[$f]" >> $logf 
-    if [ -e $f/old.mk ] ; then 
-      echo ".... Calling old.mk" >> $logf
-      make -C $f -f old.mk 
-    fi
-#    if [ -e $f/Makefile ] ; then
-#      echo ".. Creating versions" >> $logf
-#      make -C $f logfile=$logf 
-#    fi 
+#    if [ -e $f/old.mk ] ; then 
+#      echo ".... Calling old.mk" >> $logf
+#      make -C $f -f old.mk 
+#    fi
+    if [ -e $f/Makefile ] ; then
+      echo ".. Creating versions" >> $logf
+      make -C $f logfile=$logf 
+    fi 
   done
   cd -
 }
