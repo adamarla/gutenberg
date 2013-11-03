@@ -1,5 +1,6 @@
 SHELL = /bin/bash
 .ONESHELL:
+.DELETE_ON_ERROR:
 .PHONY : clean 
 
 production := $(wildcard /opt/gutenberg/PRODUCTION_SERVER)

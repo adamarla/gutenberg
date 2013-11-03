@@ -1,6 +1,7 @@
 
 SHELL = /bin/bash
 .ONESHELL:
+.DELETE_ON_ERROR:
 .PHONY : clean install 
 
 compilation_finished : preview.tex
