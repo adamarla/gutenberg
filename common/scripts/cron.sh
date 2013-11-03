@@ -58,6 +58,8 @@ function age_in_days {
 }
 
 function clean_logs { 
+  # $1 = threshold age (in days). Log folders older than this should be deleted
+
   if [ -e /opt/gutenberg/PRODUCTION_SERVER ] ; then
     VAULT=/home/gutenberg/bank/vault
   else
@@ -73,7 +75,7 @@ function clean_logs {
   for f in `ls -d */` ; do 
     local days=$(age_in_days $f)
 
-    if [ $days -gt 60 ] ; then 
+    if [ $days -gt $1 ] ; then 
       echo -e "$COL_RED$f$COL_RESET"
     else 
       echo -e "$COL_BLUE$f$COL_RESET"
