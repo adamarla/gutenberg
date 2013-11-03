@@ -44,15 +44,42 @@ function rebuild_vault {
 }
 
 function age_in_hours {
-	# $1 = file or folder 
-	local a=$(stat -c %Y $1)
-	local b=$(date +%s)
-	local c=$((($b-$a)/3600))
-	echo $c
+  # $1 = file or folder 
+  local a=$(stat -c %Y $1)
+  local b=$(date +%s)
+  local c=$((($b-$a)/3600))
+  echo $c
 }
 
 function age_in_days {
-	local d=$(age_in_hours $1)
-	local e=$(( $d / 24 ))
-	echo $e
+  local d=$(age_in_hours $1)
+  local e=$(( $d / 24 ))
+  echo $e
+}
+
+function clean_logs { 
+  # $1 = threshold age (in days). Log folders older than this should be deleted
+
+  if [ -e /opt/gutenberg/PRODUCTION_SERVER ] ; then
+    VAULT=/home/gutenberg/bank/vault
+  else
+    if [ -z $VAULT ] ; then 
+      echo -e "$COL_RED Environment variable VAULT not defined $COL_RESET. Define it, then continue"
+      return 0
+    fi
+  fi
+
+  logd=$VAULT/../cron-jobs
+
+  cd $logd 
+  for f in `ls -d */` ; do 
+    local days=$(age_in_days $f)
+
+    if [ $days -gt $1 ] ; then 
+      echo -e "$COL_RED$f$COL_RESET"
+    else 
+      echo -e "$COL_BLUE$f$COL_RESET"
+    fi
+  done 
+  cd -
 }
