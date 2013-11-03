@@ -87,7 +87,7 @@
   }
 }
 
-\question
+\question $\int \log x dx$
 
 \insertQR{}
 
@@ -109,40 +109,19 @@
 \fi 
 
 \begin{solution}
+\begin{align}
+\text{I} = \int \log x dx = \int 1\cdot \log x dx \\
+\end{align}
+Using integration by parts\\
+When,
+\begin{align}
+I &= \int f(x)\cdot g(x) dx \\
+ &= f(x)\int g(x) dx - \int \lbrace \dfrac{d}{dx} f(x) \cdot \int g(x)dx \rbrace dx\\
+I &= \log x \int 1\cdot dx - \int \lbrace \dfrac{d}{dx} \log x \cdot \int 1\cdot dx  \rbrace dx\\
+&= x \log x - \int \lbrace \dfrac{1}{x} \cdot x \rbrace dx\\
+&= x \log x - x + C
+\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

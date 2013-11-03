@@ -35,7 +35,7 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
+  \renewcommand{\vbone}{1}
   \renewcommand{\vbtwo}{}
   \renewcommand{\vbthree}{}
   \renewcommand{\vbfour}{}
@@ -48,7 +48,7 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
+    \renewcommand{\vbone}{2}
     \renewcommand{\vbtwo}{}
     \renewcommand{\vbthree}{}
     \renewcommand{\vbfour}{}
@@ -61,7 +61,7 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{3}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -73,7 +73,7 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{4}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -87,8 +87,10 @@
   }
 }
 
-\question
+\POWER\vbone{2}\p
+\providecommand\e{ (1+x)^{\frac{1}{m}} - (1-x)^{\frac{1}{m}} }
 
+\question Find the limit $\limit{x}{\vbone}\dfrac{\sqrt[m]{1+x} - \sqrt[m]{1-x}}{\sqrt[n]{1+x} - \sqrt[n]{1-x}}$, $m\neq n$
 \insertQR{}
 
 \watchout
@@ -109,40 +111,18 @@
 \fi 
 
 \begin{solution}
+	When $x=1$, both the numerator and the denominator are equal to $0$ - irrespective of what $m$ and $n$ are. 
+	Which means, the whole expression is of the form $\dfrac{0}{0}$ - which is an inderminate form.
+
+	Thus, L'Hospital's Rule can be applied. 
+\begin{align}
+&\Rightarrow \limit{x}{1}\dfrac{ \dfrac{d}{dx} \left[  \e \right] }{2} \\
+&\Rightarrow \limit{x}{1}\dfrac{\dfrac{d}{dx}\sqrt[m]{1+x} - \sqrt[m]{1-x}} {\dfrac{d}{dx} \sqrt[n]{1+x} - \sqrt[n]{1-x}}\\
+&\Rightarrow \limit{x}{1} \dfrac{\dfrac{1}{m} \times (1) - \dfrac{1}{m} \times (-1)}{\dfrac{1}{n}\times (1) - \dfrac{1}{n}\times(-1)}\\
+&\Rightarrow \dfrac{n}{m}
+\end{align}
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

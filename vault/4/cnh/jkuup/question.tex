@@ -35,8 +35,8 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
+  \renewcommand{\vbone}{10}
+  \renewcommand{\vbtwo}{4}
   \renewcommand{\vbthree}{}
   \renewcommand{\vbfour}{}
   \renewcommand{\vbfive}{}
@@ -48,8 +48,8 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
+    \renewcommand{\vbone}{9}
+    \renewcommand{\vbtwo}{3}
     \renewcommand{\vbthree}{}
     \renewcommand{\vbfour}{}
     \renewcommand{\vbfive}{}
@@ -61,8 +61,8 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
+      \renewcommand{\vbone}{9}
+      \renewcommand{\vbtwo}{4}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
       \renewcommand{\vbfive}{}
@@ -73,8 +73,8 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
+      \renewcommand{\vbone}{10}
+      \renewcommand{\vbtwo}{5}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
       \renewcommand{\vbfive}{}
@@ -86,8 +86,9 @@
     }
   }
 }
-
-\question
+\SUBTRACT\vbone{1}\k
+\SUBTRACT\k\vbtwo\l
+\question In how many of the permutations of $\vbone$ things taken $\vbtwo$ at a time, will one thing never occur.
 
 \insertQR{}
 
@@ -109,40 +110,10 @@
 \fi 
 
 \begin{solution}
+For one thing to never occur we simply count the number of permutations of $(\vbone - 1)$ things taken $\vbtwo$ at a time.\\
+$\therefore \quad$ Number of permutations $= {^{\k}}{P}_{\vbtwo} = \dfrac{\k!}{\l!}$ 
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

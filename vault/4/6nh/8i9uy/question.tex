@@ -30,12 +30,12 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+%\setcounter{rolldice}{1}
 % \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
+  \renewcommand{\vbone}{\text{ASSASSINATION}}
   \renewcommand{\vbtwo}{}
   \renewcommand{\vbthree}{}
   \renewcommand{\vbfour}{}
@@ -48,7 +48,7 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
+    \renewcommand{\vbone}{\text{EDUCATION}}
     \renewcommand{\vbtwo}{}
     \renewcommand{\vbthree}{}
     \renewcommand{\vbfour}{}
@@ -61,7 +61,7 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{\text{MISSISSIPPI}}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -87,7 +87,7 @@
   }
 }
 
-\question
+\question  If one letter is chosen from the word "$\vbone$", find the probability that it is a vowel. 
 
 \insertQR{}
 
@@ -109,40 +109,25 @@
 \fi 
 
 \begin{solution}
+\ifnumequal{\value{rolldice}}{0}{
+The number of letters in the word "ASSASSINATION" : $13$\\
+Number of vowels : 6\\
+Thus,\\
+\text{The Probability of getting a vowel is} $\dfrac{6}{13}$\\
+}\\
+\ifnumequal{\value{rolldice}}{1}{
+The number of letters in the word "EDUCATION" : $9$\\
+Number of vowels : $5$\\
+Thus, \\
+The Probability of getting a vowel is $\dfrac{5}{9}$
+}\\
+\ifnumequal{\value{rolldice}}{2}{
+The number of letters in the word "MISSISSIPPI" : $11$\\
+Number of vowels : $4$\\
+Thus, \\
+The Probability of getting a vowel is $\dfrac{4}{11}$
+}\\
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

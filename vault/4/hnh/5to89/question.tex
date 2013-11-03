@@ -35,7 +35,7 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
+  \renewcommand{\vbone}{7}
   \renewcommand{\vbtwo}{}
   \renewcommand{\vbthree}{}
   \renewcommand{\vbfour}{}
@@ -48,7 +48,7 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
+    \renewcommand{\vbone}{8}
     \renewcommand{\vbtwo}{}
     \renewcommand{\vbthree}{}
     \renewcommand{\vbfour}{}
@@ -61,7 +61,7 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{6}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -73,7 +73,7 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{9}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -86,8 +86,8 @@
     }
   }
 }
-
-\question
+\ADD\vbone{1}\k
+\question Prove that $\Sigma_{r=1}^{n+1} \left(\vbone\right)^{r-1} \left(\encr{n}{r-1}\right) = {\k}^{n}$
 
 \insertQR{}
 
@@ -109,40 +109,24 @@
 \fi 
 
 \begin{solution}
+To begin with, we write $\k^{n}$ as $\left( 1 + \vbone  \right) ^ {n}$ \\
+Now using binomial expansion for $\left( 1 + \vbone  \right) ^ {n}$\\ 
+	\begin{align}
+\Rightarrow ^{n}{C}_{0} \cdot (1)^{n} \cdot (\vbone)^{0} + ^{n}{C}_{1}\cdot (1)^{n-1} \cdot (\vbone)^{1} + \cdots + ^{n}C_{n}\cdot (1)^{0} \cdot (\vbone)^{n} 
+	\end{align}
+The $r^{th}$ term is \\
+	\begin{align}
+{T}_{r} = ^{n}{C}_{r-1} \cdot (1)^{n-r+1} \cdot (\vbone)^{r-1} 
+	\end{align} 
+The expansion is basically the summation of the $r^{th}$ term from $r=1$ to $n+1$\\
+	\begin{align}
+\left(1 + \vbone \right)^{n}= \Sigma_{r=1}{^{n+1}} \lbrace {T}_{r} \rbrace &= \Sigma _{r=1} ^{n+1} \lbrace ^{n}{C}_{n-1} \cdot (1)^{n-r+1}\cdot (\vbone)^{r-1}\rbrace 
+	\end{align}
+	\begin{align}
+\Rightarrow \k^{n} &= \Sigma_{r=1} ^{n+1} \left( \encr{n}{r-1} \right) (\vbone)^{r-1}
+	\end{align}
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

@@ -87,7 +87,7 @@
   }
 }
 
-\question
+\question $\int \cot x $ dx
 
 \insertQR{}
 
@@ -109,40 +109,23 @@
 \fi 
 
 \begin{solution}
+$\int \cot x $ dx
+\begin{align}
+\int \left( \dfrac{\cos x}{\sin x} \right) \cdot dx
+\end{align}
+Now, we put sin x = t;\\
+Thus,
+\begin{align}
+dt &= (\cos x)  dx\\
+\text {Substituting},
+&\Rightarrow \int \dfrac{dt}{t}\\ 
+&\Rightarrow \log |t| + C
+\end{align}
+Now replacing t,
+\begin{align}
+&\Rightarrow \log |\sin x| + C
+\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

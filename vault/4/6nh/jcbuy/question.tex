@@ -35,51 +35,51 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
+  \renewcommand{\vbone}{\dfrac{3}{2}}
+  \renewcommand{\vbtwo}{2}
+  \renewcommand{\vbthree}{\dfrac{1}{4}}
+  \renewcommand{\vbfour}{\dfrac{3}{4}}
+  \renewcommand{\vbfive}{\dfrac{5}{4}}
+  \renewcommand{\vbsix}{\dfrac{5}{4}}
+  \renewcommand{\vbseven}{1}
   \renewcommand{\vbeight}{}
   \renewcommand{\vbnine}{}
   \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
+    \renewcommand{\vbone}{\dfrac{5}{2}}
+    \renewcommand{\vbtwo}{1}
+    \renewcommand{\vbthree}{\dfrac{3}{2}}
+    \renewcommand{\vbfour}{\dfrac{3}{4}}
+    \renewcommand{\vbfive}{1}
+    \renewcommand{\vbsix}{\dfrac{1}{4}}
+    \renewcommand{\vbseven}{\dfrac{1}{4}}
     \renewcommand{\vbeight}{}
     \renewcommand{\vbnine}{}
     \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
+      \renewcommand{\vbone}{\dfrac{6}{7}}
+      \renewcommand{\vbtwo}{2}
+      \renewcommand{\vbthree}{\dfrac{5}{7}}
+      \renewcommand{\vbfour}{\dfrac{3}{7}}
+      \renewcommand{\vbfive}{\dfrac{1}{7}}
+      \renewcommand{\vbsix}{\dfrac{11}{7}}
+      \renewcommand{\vbseven}{11}
       \renewcommand{\vbeight}{}
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
+      \renewcommand{\vbone}{\dfrac{5}{3}}
+      \renewcommand{\vbtwo}{\dfrac{2}{3}}
+      \renewcommand{\vbthree}{1}
+      \renewcommand{\vbfour}{\dfrac{1}{3}}
+      \renewcommand{\vbfive}{\dfrac{2}{3}}
+      \renewcommand{\vbsix}{\dfrac{1}{3}}
+      \renewcommand{\vbseven}{\dfrac{1}{2}}
       \renewcommand{\vbeight}{}
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
@@ -87,7 +87,7 @@
   }
 }
 
-\question
+\question Solve ${\vbone} x - \vbtwo \geq {\vbthree} x - \vbfour$
 
 \insertQR{}
 
@@ -109,40 +109,14 @@
 \fi 
 
 \begin{solution}
+\begin{align}
+\vbone x - \vbtwo \geq \vbthree x - \vbfour \\
+\left( \vbone - \vbthree \right) x \geq \left( \vbtwo - \vbfour \right)\\ 
+\vbfive x \geq \vbsix \\
+\text{Thus,} \quad \quad
+x \geq \vbseven
+\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

@@ -87,7 +87,7 @@
   }
 }
 
-\question
+\question $\int x^2 \sin x dx $
 
 \insertQR{}
 
@@ -109,40 +109,25 @@
 \fi 
 
 \begin{solution}
+Using integration by parts,
+\begin{align}
+I &= \int x^2 \sin x dx\\
+&= x^2 \int \sin x - \int \lbrace (2x)\times (-\cos x) \rbrace dx \\
+&= -x^2 \cos x + \int (2x \cos x) dx\\
+\end{align} 
+For the second part i.e $\int (2x \cos x) dx$\\
+We again use integration by parts
+\begin{align}
+G &= \int (2x \cos x) dx\\
+&= 2x \int \cos x dx - \int (2)\cdot \cos x dx \\
+&= 2x \cos x - 2 (-\sin x ) + C\\
+&= 2x \cos x + 2 \sin x + C  
+\end{align}  
+Thus, I becomes:
+\begin{align}
+-x^{2}\cos x + 2x \cos x + 2 \sin x + C 
+\end{align} 
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

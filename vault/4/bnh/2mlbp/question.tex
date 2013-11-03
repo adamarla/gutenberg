@@ -87,7 +87,8 @@
   }
 }
 
-\question
+
+\question How many 3-digit even numbers can be formed from digits 1-6 if the digits can be repeated?
 
 \insertQR{}
 
@@ -109,40 +110,17 @@
 \fi 
 
 \begin{solution}
+Since, the number is even. The units place can only be filled by the digits {2},{4} or {6}.
+\\
+Thus, we have $^{3}C_{1}$ ways of choosing one out of these three numbers.\\
+And as the digits can be repeated the digits at tens and hundredth place can be filled by any of these six numbers. \\
+They can be chosen in $^{6}C_{1}$ ways each. \\
+Thus, the total number of ways are \\
+\begin{align}
+^{6}{C}_{1} \times ^{6}{C}_{1} \times ^{3}{C}_{1} = 6 \times 6 \times 3 = 108
+\end{align}
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

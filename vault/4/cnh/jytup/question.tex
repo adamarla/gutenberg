@@ -48,7 +48,7 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
+    \renewcommand{\vbone}{\text{MADHUBANI}}
     \renewcommand{\vbtwo}{}
     \renewcommand{\vbthree}{}
     \renewcommand{\vbfour}{}
@@ -87,11 +87,11 @@
   }
 }
 
-\question
+\question How many permutations of the letters of the word "\vbone" do not begin with M but end with I.
 
 \insertQR{}
 
-\watchout
+%\watchout
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -109,40 +109,13 @@
 \fi 
 
 \begin{solution}
+Lets count the number of words that end with \textit{I}.\\
+For this, \textit{I} is fixed at the end. Other 8 letters can be rearranged in $\frac{8!}{2!}$ ways.\\
+Now we find the words that start with \textit{M} and end with \textit{I}. So, \textit{M} and \textit{I} are fixed at the start and the end and other 7 letters are rearranged in $\frac{7!}{2!}$ ways.\\ \\
+Thus, the number of words that do not start with \textit{M} and end with \textit{I} can be found by subtracting this from the total words that have \textit{I} at the end. \\ \\                                                                                            
+$\therefore$ the number of words that do not start with \textit{M} and end with \textit{I} $=\frac{8!}{2!} - \frac{7!}{2!}  =  \frac{7\cdot7!}{2}$
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

@@ -35,8 +35,8 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
+  \renewcommand{\vbone}{24}
+  \renewcommand{\vbtwo}{12}
   \renewcommand{\vbthree}{}
   \renewcommand{\vbfour}{}
   \renewcommand{\vbfive}{}
@@ -44,12 +44,12 @@
   \renewcommand{\vbseven}{}
   \renewcommand{\vbeight}{}
   \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbten}{} 
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
+    \renewcommand{\vbone}{36}
+    \renewcommand{\vbtwo}{10}
     \renewcommand{\vbthree}{}
     \renewcommand{\vbfour}{}
     \renewcommand{\vbfive}{}
@@ -61,8 +61,8 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
+      \renewcommand{\vbone}{16}
+      \renewcommand{\vbtwo}{5}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
       \renewcommand{\vbfive}{}
@@ -86,8 +86,11 @@
     }
   }
 }
+\DIVIDE\vbone{4}\k
+\MULTIPLY\k{19}\m
+\gcalcexpr[0] \l {(\vbtwo + \m)} 
 
-\question
+\question Find the arithmetic progression whose 7th term is $\vbone$ less than the 11th term. And the first term is $\vbtwo$
 
 \insertQR{}
 
@@ -109,40 +112,21 @@
 \fi 
 
 \begin{solution}
+The seventh and eleventh terms are \\
+\begin{align}
+\text{a}_{7} &= \vbtwo + 6\cdot d \text\quad \\
+\text{a}_{11} &= \vbtwo + 10\cdot d
+\end{align}
+where, d is the common difference \\
+Hence,    \\  
+\begin{align}
+\quad a_{11} - a_{7} = 4d &= \vbone\\s
+\Rightarrow d &= \k  \\
+\text{Thus, the 20th term is}\quad & : \l  % l = \vbtwo + 19 *\k
+\end{align}
+
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

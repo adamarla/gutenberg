@@ -1,3 +1,4 @@
+
 % This is an empty shell file placed for you by the 'examiner' script.
 % You can now fill in the TeX for your question here.
 
@@ -87,7 +88,7 @@
   }
 }
 
-\question
+\question Evaluate : $\int (\sqrt{3} \sin x - \cos x ) dx $ 
 
 \insertQR{}
 
@@ -109,40 +110,22 @@
 \fi 
 
 \begin{solution}
+$\int (\sqrt{3} \sin x - \cos x ) dx $\\
+\begin{align}
+&\Rightarrow \sqrt{3} \int \sin x dx - \int \cos x dx \\
+&\Rightarrow - \sqrt{3} \cos x  - \sin x + C\\
+\end{align}
+This is in the form A sin x $+$ B cos x \\
+Thus for further simplification we multiply and divide by $\sqrt{A^2 + B^2}$\\
+\begin{align}
+&\Rightarrow -2 \lbrace  \dfrac{\sqrt{3}}{2} \cos x + \dfrac{1}{2} \sin x \rbrace + C\\
+&\Rightarrow -2 \lbrace  \cos (\dfrac{\Pi}{6}) \cos x + \sin (\dfrac{\Pi}{6}) \sin x \rbrace + C
+\end{align}
+This is in the form : cos X cos Y $+$ sin X sin Y \\
+Thus becomes cos $(X-Y)$\\
+$\Rightarrow -2 \cos (x- \dfrac{\Pi}{6}) + C$
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}
