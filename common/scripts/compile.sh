@@ -154,10 +154,25 @@ function set_question_version {
 
 function compile_question_tex {
   # $1 = Source TeX file
+  # $2 = Log file (optional)
+
   base=$(ls $1 | sed -e 's/\..*//') # preview.tex -> preview | abhinav.tex -> abhinav
   latex -halt-on-error $base.tex
-  dvips -q $base.dvi
-  ps2pdf $base.ps
-  gs -dNOPAUSE -dBATCH -sDEVICE=jpeg -r700 -sOutputFile=page-%d.jpeg $base.pdf
-  for f in `ls page-*.jpeg` ; do convert $f -resize 600x800 $f ; done
+
+  if [ -e $base.dvi ] ; then 
+    dvips -q $base.dvi
+    if [ -e $base.ps ] ; then 
+      ps2pdf $base.ps
+      if [ -e $base.pdf ] ; then 
+        gs -dNOPAUSE -dBATCH -sDEVICE=jpeg -r700 -sOutputFile=pg-%d.jpg $base.pdf
+        for f in `ls pg-*.jpg` ; do convert $f -resize 600x800 $f ; done
+      else
+        if [ ! -z $2 ] ; then echo ".... [ps -> pdf] -> failed" >> $2 ; fi
+      fi
+    else
+      if [ ! -z $2 ] ; then echo ".... [dvi -> ps] -> failed" >> $2 ; fi
+    fi
+  else
+    if [ ! -z $2 ] ; then echo ".... [TeX -> dvi] -> failed" >> $2 ; fi
+  fi
 }

@@ -23,6 +23,7 @@ shell-script
 gold.*
 tmp.*
 *.bak
+old.mk
 
 mint/*
 
