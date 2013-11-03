@@ -37,7 +37,7 @@ function rebuild_vault {
     fi
     if [ -e $f/Makefile ] ; then
       echo ".. Creating versions" >> $logf
-      make -C $f >> $logf 
+      make -C $f logfile=$logf 
     fi 
   done
   cd -
