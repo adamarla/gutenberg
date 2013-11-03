@@ -35,10 +35,10 @@ function rebuild_vault {
       echo ".... Calling old.mk" >> $logf
       make -C $f -f old.mk 
     fi
-    if [ -e $f/Makefile ] ; then
-      echo ".. Creating versions" >> $logf
-      make -C $f logfile=$logf 
-    fi 
+#    if [ -e $f/Makefile ] ; then
+#      echo ".. Creating versions" >> $logf
+#      make -C $f logfile=$logf 
+#    fi 
   done
   cd -
 }
