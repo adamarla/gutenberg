@@ -30,9 +30,9 @@ function rebuild_vault {
   cd $VAULT 
 
   echo "[Environment]" >> $logf 
-  echo "--- [latex]: $(which latex)"
-  echo "--- [dvips]: $(which dvips)"
-  echo "--- [ps2pdf]: $(which ps2pdf)"
+  echo "--- [latex]: $(which latex)" >> $logf 
+  echo "--- [dvips]: $(which dvips)" >> $logf
+  echo "--- [ps2pdf]: $(which ps2pdf)" >> $logf
 
   for f in `ls -d */*/*/` ; do 
     echo "[$f]" >> $logf 
