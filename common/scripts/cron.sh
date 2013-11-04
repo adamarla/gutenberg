@@ -29,6 +29,8 @@ function rebuild_vault {
   mkdir -p $logd 
 
   cd $VAULT 
+  let done=0
+
   for f in `ls -d */*/*/` ; do 
     echo "[$f]" >> $logf 
     if [ -e $f/old.mk ] ; then 
@@ -39,6 +41,8 @@ function rebuild_vault {
       echo ".. Creating versions" >> $logf
       make -C $f logfile=$logf 
     fi 
+    let done=$done+1
+    if [ $done -gt 3 ] ; then break ; fi
   done
   cd -
 }
