@@ -190,22 +190,22 @@ function versioning_status {
   fi
 
   # For some reason, the SHA1SUMs of preview.pdf are different even 
-  # though the SHA1SUMs of the corresponding page-1.jpeg are the same
+  # though the SHA1SUMs of the corresponding pg-1.jpg are the same
   # Must be something specific to PDFs
 
   for f in $folders ; do 
     if [ ! -d $f/0 ] ; then continue ; fi 
-    if [ ! -e $f/0/page-1.jpeg ] ; then continue ; fi
+    if [ ! -e $f/0/pg-1.jpg ] ; then continue ; fi
 
-    a=$(sha1sum $f/0/page-1.jpeg)
+    a=$(sha1sum $f/0/pg-1.jpg)
     ref=${a:0:15}
     let count=0
 
     for j in 1 2 3 ; do 
       if [ ! -d $f/$j ] ; then continue ; fi 
-      if [ ! -e $f/$j/page-1.jpeg ] ; then continue ; fi 
+      if [ ! -e $f/$j/pg-1.jpg ] ; then continue ; fi 
 
-      b=$(sha1sum $f/$j/page-1.jpeg)
+      b=$(sha1sum $f/$j/pg-1.jpg)
       cmp=${b:0:15}
 
       if [ "$ref" != "$cmp" ] ; then 
