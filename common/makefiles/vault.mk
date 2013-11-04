@@ -10,7 +10,7 @@ compilation_finished : preview.tex
 		set_question_version $< $$version
 		compile_question_tex $< $(logfile)
 ifneq ($(logfile),)
-		echo "..... compiled version $$version" >> $(logfile)
+		echo "------ [$$version] -> Done" >> $(logfile)
 endif
 		$(MAKE) install version=$$version
 	done
