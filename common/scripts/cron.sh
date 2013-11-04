@@ -27,22 +27,23 @@ function rebuild_vault {
   logf=$logd/$(date +"%H-%M-rebuild")
   
   mkdir -p $logd 
-
   cd $VAULT 
-  let done=0
+
+  echo "[Environment]" >> $logf 
+  echo "--- [latex]: $(which latex)"
+  echo "--- [dvips]: $(which dvips)"
+  echo "--- [ps2pdf]: $(which ps2pdf)"
 
   for f in `ls -d */*/*/` ; do 
     echo "[$f]" >> $logf 
-    if [ -e $f/old.mk ] ; then 
-      echo ".... Calling old.mk" >> $logf
-      make -C $f -f old.mk 
-    fi
+#    if [ -e $f/old.mk ] ; then 
+#      echo ".... Calling old.mk" >> $logf
+#      make -C $f -f old.mk 
+#    fi
     if [ -e $f/Makefile ] ; then
-      echo ".. Creating versions" >> $logf
+      echo "--- (Creating Versions)" >> $logf
       make -C $f logfile=$logf 
     fi 
-    let done=$done+1
-    if [ $done -gt 3 ] ; then break ; fi
   done
   cd -
 }
