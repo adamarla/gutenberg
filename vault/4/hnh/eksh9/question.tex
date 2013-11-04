@@ -35,7 +35,7 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
+  \renewcommand{\vbone}{7}
   \renewcommand{\vbtwo}{}
   \renewcommand{\vbthree}{}
   \renewcommand{\vbfour}{}
@@ -48,7 +48,7 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
+    \renewcommand{\vbone}{8}
     \renewcommand{\vbtwo}{}
     \renewcommand{\vbthree}{}
     \renewcommand{\vbfour}{}
@@ -61,7 +61,7 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{6}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -73,7 +73,7 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{9}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -86,8 +86,8 @@
     }
   }
 }
-
-\question
+\SUBTRACT\vbone{2}\k
+\question If a $\vbone$ digit numbers is being formed by using the digits $\lbrace1,2,3\rbrace$
 
 \insertQR{}
 
@@ -108,40 +108,22 @@
   \end{marginfigure}
 \fi 
 
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part How many numbers can be formed without any restrictions.
 
   \insertQR{}
   \begin{solution}
+  Every place can be filled by any these three numbers. Thus $3^\vbone = \k$ numbers can be formed.
   \end{solution}
 
-  \part 
+  \part How many numbers can be formed when the digit 2 occurs only twice.
 
   \insertQR{}
   \begin{solution}
+   Since the digit 2 should occur only twice, we can select any two places form the $\vbone$ digit number and put 2 there. \\
+   In $\encr\vbone{2}$ ways. Rest of the places can be filled by any of the digits $1$ or $3$ in $2^{\k}$ ways. \\
+   $\therefore$ in all we have $\encr\vbone{2} \times 2^{\k}$ ways.   
   \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
 \end{parts}
 
 \ifprintrubric
