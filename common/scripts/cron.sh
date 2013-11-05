@@ -11,6 +11,16 @@ COL_BLUE=$ESC_SEQ"34;01m"
 COL_MAGENTA=$ESC_SEQ"35;01m"
 COL_CYAN=$ESC_SEQ"36;01m"
 
+function logdir { 
+	local d=$(date +"%d.%B.%Y")
+	echo $d
+}
+
+function logfile {
+	local f=$(date +"%H-%M")-$1
+	echo $f
+}
+
 function rebuild_vault { 
 
   if [ -e /opt/gutenberg/PRODUCTION_SERVER ] ; then
@@ -27,8 +37,8 @@ function rebuild_vault {
   touch $VAULT/.cron-lock
 
   # Create area for log-file
-  logd=$VAULT/../cron-jobs/$(date +"%d.%B.%Y")
-  logf=$logd/$(date +"%H-%M-rebuild")
+  logd=$VAULT/../cron-jobs/$(logdir)
+  logf=$logd/$(logfile rebuild)
   
   mkdir -p $logd 
   cd $VAULT 
