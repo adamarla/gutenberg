@@ -18,7 +18,13 @@ function logdir {
 }
 
 function logfile {
-  local f=$(date +"%H-%M")-$1
+  local f
+
+  if [ -z $2 ] ; then 
+    f=$(date +"%H-%M")-$1
+  else 
+    f=$(date +"%H")-$1
+  fi
   echo $f
 }
 
@@ -86,7 +92,7 @@ function pull_from_gold {
 function push_to_gold { 
   local v=$(get_vault_root)
   local logd=$(logdir)
-  local logf=$logd/$(logfile pull)
+  local logf=$logd/$(logfile push)
 
   cd $v
   git add . >> $logf
