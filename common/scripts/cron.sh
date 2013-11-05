@@ -22,6 +22,10 @@ function rebuild_vault {
     fi
   fi
 
+  # Cron-job already running. No need to start a new one
+  if [ -e $VAULT/.cron-lock ] ; then return 0 ; fi
+  touch $VAULT/.cron-lock
+
   # Create area for log-file
   logd=$VAULT/../cron-jobs/$(date +"%d.%B.%Y")
   logf=$logd/$(date +"%H-%M-rebuild")
@@ -45,7 +49,9 @@ function rebuild_vault {
       make -C $f logfile=$logf 
     fi 
   done
+
   cd -
+  rm -f $VAULT/.cron-lock
 }
 
 function age_in_hours {
