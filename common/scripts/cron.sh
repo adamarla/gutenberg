@@ -11,37 +11,44 @@ COL_BLUE=$ESC_SEQ"34;01m"
 COL_MAGENTA=$ESC_SEQ"35;01m"
 COL_CYAN=$ESC_SEQ"36;01m"
 
-function logdir { 
-	local d=$(date +"%d.%B.%Y")
-	echo $d
+function logdir {
+  local d=$(date +"%d.%B.%Y")
+  local e=$(dirname $(get_vault_root))/cron-jobs/$d
+  echo $e
 }
 
 function logfile {
-	local f=$(date +"%H-%M")-$1
-	echo $f
+  local f=$(date +"%H-%M")-$1
+  echo $f
+}
+
+function get_vault_root { 
+  local r
+  if [ -e /opt/gutenberg/PRODUCTION_SERVER ] ; then 
+    r=/home/gutenberg/bank/vault
+  else
+    r=$VAULT
+  fi
+  echo $r
 }
 
 function rebuild_vault { 
-
-  if [ -e /opt/gutenberg/PRODUCTION_SERVER ] ; then
-    VAULT=/home/gutenberg/bank/vault
-  else
-    if [ -z $VAULT ] ; then 
-      echo -e "$COL_RED Environment variable VAULT not defined $COL_RESET. Define it, then continue"
-      return 0
-    fi
+  local vault=$(get_vault_root)
+  if [ -z $vault ] ; then
+    echo "[ERROR]: VAULT not defined"
+    return 0
   fi
 
   # Cron-job already running. No need to start a new one
-  if [ -e $VAULT/.cron-lock ] ; then return 0 ; fi
-  touch $VAULT/.cron-lock
+  if [ -e $vault/.block-cron ] ; then return 0 ; fi
+  touch $vault/.block-cron
 
   # Create area for log-file
-  logd=$VAULT/../cron-jobs/$(logdir)
-  logf=$logd/$(logfile rebuild)
+  local logd=$(logdir)
+  local logf=$logd/$(logfile rebuild)
   
   mkdir -p $logd 
-  cd $VAULT 
+  cd $vault 
 
   echo "[Environment]" >> $logf 
   echo "--- [latex]: $(which latex)" >> $logf 
@@ -61,7 +68,61 @@ function rebuild_vault {
   done
 
   cd -
-  rm -f $VAULT/.cron-lock
+  rm -f $vault/.block-cron
+}
+
+function pull_from_gold {
+  local v=$(get_vault_root)
+  d=$(dirname $v)
+  local logd=$(logdir)
+  local logf=$logd/$(logfile pull)
+
+  mkdir -p $logd 
+  cd $d
+  git pull upstream master >> $logf 
+  cd -
+}
+
+function push_to_gold { 
+  local v=$(get_vault_root)
+  local logd=$(logdir)
+  local logf=$logd/$(logfile pull)
+
+  cd $v
+  git add . >> $logf
+  git commit -m "[cron-git-commit] @ `date +"%H.%M"`" 
+  git push origin master >> $logf 
+  cd -
+}
+
+function receive_scans {
+  if [ ! -e /opt/gutenberg/PRODUCTION_SERVER ] ; then return 0 ; fi
+
+  local logf=$(logdir)/$(logfile receive-scans)
+
+  cd /home/gutenberg/ScanbotSS
+  if [ $1 == "heroku" ] ; then
+    java -cp ScanbotSS.jar:core.jar:javase.jar:commons-cli-1.2.jar gutenberg.collect.Driver -u www.gradians.com -d scantray >> $logf 
+  else
+    java -cp ScanbotSS.jar:core.jar:javase.jar:commons-cli-1.2.jar gutenberg.collect.Driver -u 109.74.201.62 -d scanashtray >> $logf
+  fi
+  curl http://www.gradians.com/distribute/scans >> $logf
+}
+
+function receive_suggestions { 
+  if [ ! -e /opt/gutenberg/PRODUCTION_SERVER ] ; then return 0 ; fi
+
+  local logf=$(logdir)/$(logfile receive-sg)
+  cd /home/gutenberg/Suggestionbot
+  java -cp Suggestionbot.jar gutenberg.collect.Driver >> $logf
+}
+
+function run_scanbot { 
+  if [ ! -e /opt/gutenberg/PRODUCTION_SERVER ] ; then return 0 ; fi
+
+  local logf=$(logdir)/$(logfile scanbot) 
+  cd /home/gutenberg/ScanbotSS
+  java -cp ScanbotSS.jar:core.jar:javase.jar:itextpdf-5.4.1.jar gutenberg.collect.Driver backup >> $logf
 }
 
 function age_in_hours {
@@ -81,16 +142,12 @@ function age_in_days {
 function clean_logs { 
   # $1 = threshold age (in days). Log folders older than this should be deleted
 
-  if [ -e /opt/gutenberg/PRODUCTION_SERVER ] ; then
-    VAULT=/home/gutenberg/bank/vault
-  else
-    if [ -z $VAULT ] ; then 
-      echo -e "$COL_RED Environment variable VAULT not defined $COL_RESET. Define it, then continue"
-      return 0
-    fi
+  local vault=$(get_vault_root)
+  if [ -z $vault ] ; then 
+    return 0
   fi
 
-  logd=$VAULT/../cron-jobs
+  local logd=$vault/../cron-jobs
 
   cd $logd 
   for f in `ls -d */` ; do 
