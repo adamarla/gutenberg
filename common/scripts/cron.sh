@@ -92,7 +92,7 @@ function pull_from_gold {
 function push_to_gold { 
   local v=$(get_vault_root)
   local logd=$(logdir)
-  local logf=$logd/$(logfile push)
+  local logf=$logd/$(logfile push true)
 
   cd $v
   git add . >> $logf
