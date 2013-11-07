@@ -58,8 +58,13 @@
       \begin{marginfigure}
         \psbarcode[transy=#1,transx=0.4\marginparwidth]{\baseQR-\thepage-\thequestion}{eclevel=Q width=0.7 height=0.7}{qrcode} 
       \end{marginfigure}
-    \fi
 
+      \ifdefempty\baseQR{}{
+        % Write the QR Code in the top-right and bottom-left corners 
+        \fancyhead[RO,RE]{\LARGE\fontfamily{cmss}\selectfont{\baseQR-\thepage}}
+        \fancyfoot[LO,LE]{\LARGE\fontfamily{cmss}\selectfont{\baseQR-\thepage}}
+      }
+    \fi
   \fi
 }
 
@@ -94,11 +99,6 @@
 \newcommand\nextpg{
   \ifprintanswers
   \else
-    \ifdefempty\baseQR{}{ % false
-      % Write the QR Code in the top-right and bottom-left corners 
-      \fancyhead[RO,RE]{\LARGE\fontfamily{cmss}\selectfont{\baseQR-\thepage}}
-      \fancyfoot[LO,LE]{\LARGE\fontfamily{cmss}\selectfont{\baseQR-\thepage}}
-    }
     \ifcancelspace
     \else\newpage\fi
   \fi
