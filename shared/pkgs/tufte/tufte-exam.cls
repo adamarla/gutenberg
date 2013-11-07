@@ -63,6 +63,27 @@
   \fi
 }
 
+% [Deprecated] - sort of. In minthril at least, we use \embedQR
+\providecommand{\insertQR}[2][0pt]{
+    \ifprintanswers
+    \else
+      \notblank{#2}{
+        \begin{marginfigure}
+          \psbarcode[transy=#1,transx=0.4\marginparwidth]{#2}{eclevel=Q width=0.7 height=0.7}{qrcode} 
+        \end{marginfigure}
+        \ifstrequal{#2}{0}{}
+        {
+          \setbaseQR{\StrLeft{#2}{4}-\StrMid{#2}{5}{7}-\StrRight{#2}{3}}
+%          \begin{textblock}{600}(410,12)
+%            {\LARGE\fontfamily{ccr}\selectfont{\StrLeft{#2}{4} -\StrMid{#2}{5}{8} -\StrRight{#2}{3}}}
+%          \end{textblock}
+%          \begin{textblock}{600}(20,770)
+%            {\LARGE\fontfamily{ccr}\selectfont{\StrLeft{#2}{4} -\StrMid{#2}{5}{8} -\StrRight{#2}{3}}}
+%          \end{textblock}
+        }
+      }
+    \fi 
+}
 \newcommand\nextpg{
   \ifprintanswers
   \else
