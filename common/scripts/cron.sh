@@ -166,3 +166,25 @@ function clean_logs {
   done 
   cd -
 }
+
+function update_usr_local {
+  if [[ $EUID != 0 ]] ; then return 0 ; fi # not root
+
+  local tex_local
+  local pkgs=$(dirname $(get_vault_root))/shared/pkgs
+
+  if [ -e /opt/gutenberg/PRODUCTION_SERVER ] ; then 
+    tex_local=/usr/local/texlive/texmf-local
+  else
+    if [ ! -z $LATEX_ROOT ] ; then 
+      tex_local=$(dirname $LATEX_ROOT)/texmf-local
+    else
+      echo "[ERROR]: \$LATEX_ROOT environment variable not defined"
+      return 0
+    fi 
+  fi
+
+  echo -e "[Copying]: $COL_BLUE$pkgs$COL_RESET -> $COL_RED$tex_local/tex/latex$COL_RESET"
+  # find $tex_local -name "ls-R" | xargs rm -f 
+  # cp -rf $pkgs $tex_local/tex/latex
+}
