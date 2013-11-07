@@ -10,9 +10,7 @@
   \dfrac{#1!}{(#1-#2)\,!}
 }
 
-\newcommand{\encr}[2]{
-  ^{#1}C_{\,#2}
-} 
+\newcommand{\encr}[2]{\binom{#1}{#2}}
 
 \newcommand{\fncr}[2]{
   \dfrac{#1!}{#2\,!\cdot(#1-#2)\,!}
@@ -26,7 +24,7 @@
 % Expression for coefficient of (#4+1)-th term in expansion of (#1x + #2)^#3
 % No sanity checks. #1, #2 and #3 can be integers and/or variable names
 \newcommand\binomCoeff[4] {
-  \encr{#3}{#4}\cdot \left(#1\right)^{#3-#4}\cdot\left(#2\right)^{#4}
+  \binom{#3}{#4}\cdot \left(#1\right)^{#3-#4}\cdot\left(#2\right)^{#4}
 }
 
 \newcommand\binomExpr[4] {
