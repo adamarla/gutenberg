@@ -30,7 +30,7 @@
 %   6. If a question has multiple parts, then first delete lines 40-41
 %   7. If a question does not have parts, then first delete lines 43-69
 
-\question[4] Two workers working together can complete a job in $12$ days. If the first worker does half the work and then the second worker does the other half the job will be completed in $25$ days. How many days would it take each worker to do the job they worked alone?
+\question[4] Two workers working together can complete a job in $12$ days. If the first worker completes half the work and then the second worker takes over, the job will be completed in $25$ days. How many days would it take each worker to do the job if they worked alone?
 
 \insertQR{QRC}
 
@@ -39,37 +39,37 @@
 \fi 
 
 \begin{solution}[\fullpage]
-  Let the time it takes the two worker to do the job alone be $t_1$ days and $t_2$ days respectively. Then,
+  Let the time it takes the two worker to do the entire job by themselves be $t_1$ days and $t_2$ days respectively. If you think of a job as a unit of work, then you can describe the speed of doing work as follows,
   \begin{align}
-    \text{Job rate for first worker}  &= \frac{1}{t_1}(job/day) \nonumber \\
-    \text{Job rate for second worker} &= \frac{1}{t_1}(job/day) \nonumber \\
-    \text{Effective rate when both work together}     
-    					&= \frac{1}{t_1}+\frac{1}{t_2}(job/day)
+    \text{Speed of first worker}  &= \frac{1}{t_1}(jobs/day) \\
+    \text{Speed of second worker} &= \frac{1}{t_2}(jobs/day) \\
+    \text{Effective speed when both work together}     
+    				  &= \left(\frac{1}{t_1}+\frac{1}{t_2}\right)(jobs/day)
   \end{align}
   
-  Working together they complete a job in $12$ days,
+  Now, working together they complete a job as a whole in $12$ days, therefore,
   \begin{align}
 	\dfrac{1(job)}
-		{\left(\dfrac{1}{t_1}+\dfrac{1}{t_2}\right)(job/day)} &= 12(day) \\
-	\Rightarrow \dfrac{t_1t_2}{t_1+t_2}                       &= 12
+	      {\left(\dfrac{1}{t_1}+\dfrac{1}{t_2}\right)(jobs/day)} &= 12(days) \\
+	\Rightarrow \dfrac{t_1t_2}{t_1+t_2}                          &= 12
   \end{align}
   
-  Dividing the job in two halves they complete it in $25$ days,
+  Dividing the job into two halves, where each worker completes one half and the second one starts only after the first one finishes, they take $25$ days, therefore,
   \begin{align}
-    \dfrac{0.5(job)}{\dfrac{1}{t_1}(job/day)}+
-    	\dfrac{0.5(job)}{\dfrac{1}{t_1}(job/day)} &= 25(day) \\
-    \Rightarrow t_1+t_2                           &= 50
+    \dfrac{\frac{1}{2}(job)}{\dfrac{1}{t_1}(jobs/day)}+
+    	\dfrac{\frac{1}{2}(job)}{\dfrac{1}{t_1}(jobs/day)} &= 25(days) \\
+    \Rightarrow t_1+t_2                                    &= 50
   \end{align}
   
-  Using results (3) and (4) we get,
+  Using results (5) and (7), we get,
   \begin{align}
-	\dfrac{t_1(50-t_1)}{t_1+(50-t_1)} &= 12 \\
-    50t_1-t_1^2                     &= 600 \\
-    t_1^2-50t_1+600                 &= 0 \\     
-    t_1                             &= 20 \\
-    t_2                             &= 30
+    \dfrac{t_1(50-t_1)}{t_1+(50-t_1)} &= 12 \\
+    50t_1-t_1^2                       &= 600 \\
+    t_1^2-50t_1+600                   &= 0 \\     
+    t_1                               &= 20 \\
+    t_2                               &= 30
   \end{align}
-  Working alone the workers would take $20$ and $30$ days respectively to do the job.
+  Therefore, working by themselves, the workers would take $20$ and $30$ days respectively to complete the job.
 
 \end{solution}
 

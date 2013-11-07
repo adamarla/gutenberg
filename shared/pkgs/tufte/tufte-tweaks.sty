@@ -65,30 +65,6 @@
 \newcommand{\bayesf}[2]{P(\textit{#1} \,\vert\, \textit{#2})\cdot P(\textit{#2})} 
 \newcommand{\bayesp}[2]{P(\textit{#1} \,\vert\, \textit{#2})}
 
-%% Insert QR Codes only when generating question papers. There is no need 
-% for them in the answer key. 
-%% Also, when a question is initially written, we simply write \insertQR{}
-% in the text file. This is replaced by a script after the question has 
-% been pushed into the database and a unique code has been generated for it. 
-\providecommand{\insertQR}[2][0pt]{
-    \ifprintanswers
-    \else
-      \notblank{#2}{
-        \begin{marginfigure}
-          \psbarcode[transy=#1,transx=0.4\marginparwidth]{#2}{eclevel=Q width=0.7 height=0.7}{qrcode} 
-        \end{marginfigure}
-        \ifstrequal{#2}{0}{}
-        {
-          \begin{textblock}{600}(410,12)
-            {\LARGE\fontfamily{ccr}\selectfont{\StrLeft{#2}{4} -\StrMid{#2}{5}{8} -\StrRight{#2}{3}}}
-          \end{textblock}
-          \begin{textblock}{600}(20,770)
-            {\LARGE\fontfamily{ccr}\selectfont{\StrLeft{#2}{4} -\StrMid{#2}{5}{8} -\StrRight{#2}{3}}}
-          \end{textblock}
-        }
-      }
-    \fi 
-}
 
 \newcommand{\dydx}{\dfrac{\ud y}{\ud x}}
 \newcommand{\dnydxn}[1]{\dfrac{\ud^{#1} y}{\ud x^{#1}}}

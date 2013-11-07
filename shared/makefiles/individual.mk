@@ -25,10 +25,6 @@ page-1.jpeg : $(Pdf)
 	@echo "[ pdf -> preview ]"
 	@gs -dNOPAUSE -dBATCH -sDEVICE=jpeg -r700 -sOutputFile=page-%d.jpeg $^
 	@for f in `ls page-*.jpeg`; do convert $$f -resize 600x800 $$f ; done 
-ifeq ($(MAKELEVEL),0)
-	@echo "Running atomically"
-	@if [[ ! $$PRODUCTION_SERVER ]] ; then gs $(Pdf) ; fi
-endif
 
 $(Pdf) : $(Ps)
 	@echo "[ps -> pdf]: $@ with [ps2pdf] = $(ps2pdf)"

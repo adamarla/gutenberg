@@ -58,17 +58,47 @@
       \begin{marginfigure}
         \psbarcode[transy=#1,transx=0.4\marginparwidth]{\baseQR-\thepage-\thequestion}{eclevel=Q width=0.7 height=0.7}{qrcode} 
       \end{marginfigure}
-    \fi
 
+      \ifdefempty\baseQR{}{
+        % Write the QR Code in the top-right and bottom-left corners 
+        \fancyhead[RO,RE]{\LARGE\fontfamily{cmss}\selectfont{\baseQR-\thepage}}
+        \fancyfoot[LO,LE]{\LARGE\fontfamily{cmss}\selectfont{\baseQR-\thepage}}
+      }
+    \fi
   \fi
 }
 
+% [Deprecated] - sort of. 
+% \insertQR takes 2 arguments whereas \embedQR takes one. The former needs  
+% the QR code to specified explicitly whereas the latter gets it from blueprint
+%
+% In minthril at least, we use \baseQR and leave it to \embedQR and 
+% \nextpg to embed the QR code information
+% 
+% But for backward compatibility reasons, we retain \insertQR
+% And \insertQR works with \currQR like \embedQR works with \baseQR 
+
+\providecommand\currQR{}
+\providecommand{\insertQR}[2][0pt]{
+    \ifprintanswers
+    \else
+      \notblank{#2}{
+        \begin{marginfigure}
+          \psbarcode[transy=#1,transx=0.4\marginparwidth]{#2}{eclevel=Q width=0.7 height=0.7}{qrcode} 
+        \end{marginfigure}
+        \ifstrequal{#2}{0}{}{
+          \renewcommand\currQR{\StrLeft{#2}{4}-\StrMid{#2}{5}{8}-\StrRight{#2}{3}}
+
+          % Write the QR Code in the top-right and bottom-left corners 
+          \fancyhead[RO,RE]{\LARGE\fontfamily{cmss}\selectfont{\currQR}}
+          \fancyfoot[LO,LE]{\LARGE\fontfamily{cmss}\selectfont{\currQR}}
+        }
+      }
+    \fi 
+}
 \newcommand\nextpg{
   \ifprintanswers
   \else
-    % Write the QR Code in the top-right and bottom-left corners 
-    \fancyhead[RO,RE]{\LARGE\fontfamily{cmss}\selectfont{\baseQR-\thepage}}
-    \fancyfoot[LO,LE]{\LARGE\fontfamily{cmss}\selectfont{\baseQR-\thepage}}
     \ifcancelspace
     \else\newpage\fi
   \fi
