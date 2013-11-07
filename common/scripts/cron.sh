@@ -184,7 +184,8 @@ function update_usr_local {
     fi 
   fi
 
-  echo -e "[Copying]: $COL_BLUE$pkgs$COL_RESET -> $COL_RED$tex_local/tex/latex$COL_RESET"
-  # find $tex_local -name "ls-R" | xargs rm -f 
-  # cp -rf $pkgs $tex_local/tex/latex
+  # echo -e "[Copying]: $COL_BLUE$pkgs$COL_RESET -> $COL_RED$tex_local/tex/latex$COL_RESET"
+  cp -rf $pkgs $tex_local/tex/latex
+  cd $tex_local 
+  mktexlsr .
 }
