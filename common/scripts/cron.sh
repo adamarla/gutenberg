@@ -184,8 +184,10 @@ function update_usr_local {
     fi 
   fi
 
+  local logf=$(logdir)/$(logfile usr-local)
+
   # echo -e "[Copying]: $COL_BLUE$pkgs$COL_RESET -> $COL_RED$tex_local/tex/latex$COL_RESET"
-  cp -rf $pkgs $tex_local/tex/latex
+  cp -rfv $pkgs $tex_local/tex/latex >> $logf
   cd $tex_local 
-  mktexlsr .
+  mktexlsr . >> $logf
 }
