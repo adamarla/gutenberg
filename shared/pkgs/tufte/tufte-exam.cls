@@ -85,8 +85,8 @@
           \renewcommand\currQR{\StrLeft{#2}{4}-\StrMid{#2}{5}{8}-\StrRight{#2}{3}}
 
           % Write the QR Code in the top-right and bottom-left corners 
-          \fancyhead[RO,RE]{\LARGE\fontfamily{cmss}\selectfont{\currQR\thepage}}
-          \fancyfoot[LO,LE]{\LARGE\fontfamily{cmss}\selectfont{\currQR\thepage}}
+          \fancyhead[RO,RE]{\LARGE\fontfamily{cmss}\selectfont{\currQR}}
+          \fancyfoot[LO,LE]{\LARGE\fontfamily{cmss}\selectfont{\currQR}}
         }
       }
     \fi 
