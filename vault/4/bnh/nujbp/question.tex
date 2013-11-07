@@ -35,8 +35,8 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
+  \renewcommand{\vbone}{\sqrt{2}}
+  \renewcommand{\vbtwo}{22}
   \renewcommand{\vbthree}{}
   \renewcommand{\vbfour}{}
   \renewcommand{\vbfive}{}
@@ -48,8 +48,8 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
+    \renewcommand{\vbone}{\sqrt{3}}
+    \renewcommand{\vbtwo}{19}
     \renewcommand{\vbthree}{}
     \renewcommand{\vbfour}{}
     \renewcommand{\vbfive}{}
@@ -86,8 +86,9 @@
     }
   }
 }
-
-\question
+\SUBTRACT{51}\vbtwo\l
+\SUBTRACT\vbtwo{1}\k 
+\question Find the term of the expansion $(a+b)^{50}$ which is greatest in absolute value if $\dfrac{a}{b} = \vbone$ where $\left[ r \in \mathbb{N} \right]$.
 
 \insertQR{}
 
@@ -109,40 +110,35 @@
 \fi 
 
 \begin{solution}
+Suppose the general term $T_{r}$ is the greatest term then it can said that $|\dfrac{T_{r}}{T_{r+1}}| \geq 1$ \\ 
+and also $|\dfrac{T_{r}}{T_{r-1}}| \geq 1$.\\
+Expanding these terms : 
+\begin{align}
+{T}_{r} &= \encr{50}{r-1} \cdot a^{51-r} \cdot b^{r-1} \\ 
+{T}_{r+1} &= \encr{50}{r} \cdot a^{50-r} \cdot b^{r} \\
+{T}_{r-1} &= \encr{50}{r-2} \cdot a^{52-r} \cdot b^{r-2} \\
+\nonumber \\
+\dfrac{T_{r}}{T_{r+1}} &\geq 1 \\
+\dfrac{\encr{50}{r-1} \cdot a^{51-r} \cdot b^{r-1}}{\encr{50}{r} \cdot a^{50-r} \cdot b^{r}} &\geq 1 \\
+\dfrac{r}{51-r} \cdot \dfrac{a}{b} &\geq 1 \\
+\dfrac{r}{51-r} \cdot \vbone &\geq 1 \\
+\Rightarrow r \geq \dfrac{51}{1+\vbone} \\
+\nonumber \\
+\dfrac{T_{r}}{T_{r-1}} &\geq 1 \\
+\dfrac{\encr{50}{r-1} \cdot a^{51-r} \cdot b^{r-1}}{\encr{50}{r-2} \cdot a^{52-r} \cdot b^{r-2}} &\geq 1 \\
+\dfrac{52-r}{r-1} \cdot \dfrac{b}{a} &\geq 1 \\
+\dfrac{52-r}{r-1} \cdot &\geq \vbone \\
+\Rightarrow r \leq \dfrac{52+\vbone}{1+\vbone} \\
+\end{align}  
+Now as r is a natural number by solving the two inequalities we get r = $\vbtwo$. \\
+Thus, the greatest term by absolute value is 
+\begin{align}
+T_{\vbtwo} &=\encr{50}{\vbtwo- 1} \cdot a^{51-\vbtwo} \cdot b^{\vbtwo- 1}  \\
+&=\encr{50}{\vbtwo- 1} \cdot \left({\dfrac{a}{b}}\right)^{51-\vbtwo} \cdot b^{50} \\
+&=\encr{50}{\k} \cdot \left({\vbone}\right)^{\l} \cdot b^{50}  
+\end{align}
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

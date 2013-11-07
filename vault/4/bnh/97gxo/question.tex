@@ -87,11 +87,11 @@
   }
 }
 
-\question
+\question Find the sum of the series \\ $\encr{n}{0} - 3\cdot \encr{n}{1} +5\cdot \encr{n}{2} + \cdots + (-1)^{n}(2n+1)\encr{n}{n}$
 
 \insertQR{}
 
-\watchout
+%\watchout
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -109,40 +109,31 @@
 \fi 
 
 \begin{solution}
+In questions like these, where the series of a binomial coefficient is present. We first write the expansion of $(1+x)^n$  \\
+\begin{align}
+(1+x)^n = \encr{n}{0} + \encr{n}{1} \cdot x  + \encr{n}{2} \cdot x^2 + \cdots + \encr{n}{n} \cdot x^n  
+\end{align} 
+Observe, that in the original series the coefficients are alternately positive and negative. To achieve that we put -x in place of x,\\
+the expansion now becomes
+\begin{align}
+(1-x)^n = \encr{n}{0} - \encr{n}{1}\cdot x + \encr{n}{2}\cdot x^2 - \cdots + \left((-1)^{n}\right) \encr{n}{n}\cdot  x^{n}
+\end{align}  
+Notice the last term in the series it has a power of $2n+1$ whereas in our expansion of $(1-x)^{n}$ it is $n$. Therefore, we put $x^2$ in place of $x$ in the above expansion and multiply the complete series by $x$.
+\begin{align}
+x(1-x^2)^n =   \encr{n}{0}\cdot x - \encr{n}{1}\cdot x^3  + \encr{n}{2} \cdot x^{5} - \cdots + \left((-1)^{n}\right) \encr{n}{n} \cdot x^{2n+1} 
+\end{align}  
+Differentiating both sides with respect to x.
+\begin{align}
+&\Rightarrow (1-x^2)^n-2nx^2(1-x^2)^{n-1} \nonumber \\
+&= \encr{n}{0} - 3\cdot \encr{n}{1}\cdot  x^2  + 5\cdot \encr{n}{2}\cdot x^4  - \cdots +  \left((-1)^{n} (2n+1)\right) \encr{n}{n} \cdot  x^{2n} 
+\end{align}  
+Put $x =1$ in the above series so that it becomes the same as the series in the question.
+\begin{align}
+\therefore 0 = \encr{n}{0} - 3\cdot \encr{n}{1} + 5\cdot \encr{n}{2} - \cdots + (-1)^{n} (2n+1) \cdot \encr{n}{n} 
+\end{align} 
+Thus, the sum of the series asked in the question is zero.
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}
