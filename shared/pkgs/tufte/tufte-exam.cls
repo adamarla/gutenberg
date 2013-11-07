@@ -82,7 +82,7 @@
           \psbarcode[transy=#1,transx=0.4\marginparwidth]{#2}{eclevel=Q width=0.7 height=0.7}{qrcode} 
         \end{marginfigure}
         \ifstrequal{#2}{0}{}{
-          \renewcommand\currQR{\StrLeft{#2}{4}-\StrMid{#2}{5}{7}-\StrRight{#2}{3}}
+          \renewcommand\currQR{\StrLeft{#2}{4}-\StrMid{#2}{5}{8}-\StrRight{#2}{3}}
 
           % Write the QR Code in the top-right and bottom-left corners 
           \fancyhead[RO,RE]{\LARGE\fontfamily{cmss}\selectfont{\currQR\thepage}}
