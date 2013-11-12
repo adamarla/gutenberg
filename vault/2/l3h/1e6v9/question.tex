@@ -22,9 +22,11 @@
 
 \gcalcexpr[0]\final{\vbthree * \vbtwo}
 
-\question[4] How many ways can $4$ boys and $4$ girls sit alternating around a circular table (Boy-Girl-Boy...)?
+\question[4] How many ways can $\vbone$ boys and $\vbone$ girls sit alternating around a circular table (Boy-Girl-Boy...)?
 
 \insertQR{QRC}
+
+\watchout
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -32,7 +34,7 @@
 \fi 
 
 \begin{solution}[\halfpage]
-  The only way to satisfy this condition is to seat the girls (or boys) in four alternating seats leaving a gap between each one, and then seating the others in those gaps. Number of ways we can seat the $4$ girls on around the circular table such that there is one empty spot between them is,
+  The only way to satisfy this condition is to seat the girls (or boys) in alternating seats leaving a gap between each one, and then seating the others in those gaps. Number of ways we can seat the $\vbone$ girls on around the circular table such that there is one empty spot between them is,
   \begin{align}
     N_{girls} = (\vbone-1)! = \vbtwo 
   \end{align}
