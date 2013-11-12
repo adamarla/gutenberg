@@ -87,7 +87,7 @@
   }
 }
 
-\question
+\question If $x + \textit{i} y = \dfrac{a+\textit{i} b}{a - \textit{i}b}$ , prove that $x^{2} + y^{2} = 1$ \\ 
 
 \insertQR{}
 
@@ -109,40 +109,20 @@
 \fi 
 
 \begin{solution}
+Rationalizing the term on the right hand side 
+\begin{align}
+\Rightarrow \dfrac{a+\textit{i} b}{a - \textit{i}b} &= \dfrac{a+\textit{i} b}{a - \textit{i}b} \times \dfrac{a+\textit{i} b}
+{a + \textit{i}b} \\
+&= \dfrac{a^2 - b^2 + 2\cdot a \cdot b \textit{i}}{a^2 + b^2} \\	
+x + \textit{i}y &= \dfrac{a^2 - b^2}{a^2 + b^2} + \dfrac{2\cdot a \cdot b \textit{i}}{a^2 + b^2} \\
+\Rightarrow x &= \dfrac{a^2 - b^2}{a^2 + b^2} \quad \text{and} \quad	
+y = \dfrac{2\cdot a \cdot b}{a^2 + b^2} \\
+x^2 + y^2 &= \left(\dfrac{a^2 - b^2}{a^2 + b^2}\right)^2 +  \left(\dfrac{2\cdot a \cdot b}{a^2 + b^2}\right)^2	\\
+&= \dfrac{({a^2 - b^2})^2 + ({2\cdot a \cdot b})^2}{({a^2 + b^2})^2} 	 \\
+&= \dfrac{({a^2 + b^2})^2}{({a^2 + b^2})^2} = 1 
+\end{align}
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

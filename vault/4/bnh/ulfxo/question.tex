@@ -1,6 +1,5 @@
 % This is an empty shell file placed for you by the 'examiner' script.
 % You can now fill in the TeX for your question here.
-
 % Now, down to brasstacks. ** Writing good solutions is an Art **. 
 % Eventually, you will find your own style. But here are some thoughts 
 % to get you started: 
@@ -30,12 +29,12 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+ \setcounter{rolldice}{1}
 % \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
+  \renewcommand{\vbone}{\dfrac{1}{1+\textit{i}}}
   \renewcommand{\vbtwo}{}
   \renewcommand{\vbthree}{}
   \renewcommand{\vbfour}{}
@@ -48,7 +47,7 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
+    \renewcommand{\vbone}{\dfrac{1}{1-\textit{i}}}
     \renewcommand{\vbtwo}{}
     \renewcommand{\vbthree}{}
     \renewcommand{\vbfour}{}
@@ -87,7 +86,7 @@
   }
 }
 
-\question
+\question Find the modulus and argument of the complex number $\vbone$
 
 \insertQR{}
 
@@ -108,41 +107,49 @@
   \end{marginfigure}
 \fi 
 
-\begin{solution}
+\begin{solution} 
+To find modulus and argument we convert the function in polar form i.e $r\left( \cos \theta + \textit{i} \sin \theta \right)$ where r is the modulus and $\theta$ is the argument.
+\ifnumequal{\value{rolldice}}{0}{
+$\dfrac{1}{1+\textit{i}}$ \\
+By rationalizing this expression, 
+\begin{align}
+\dfrac{1}{1+\textit{i}} \times \dfrac{1 - \textit{i}}{1-\textit{i}}\\
+&= \dfrac{1 - \textit{i}}{2} \\
+&= \dfrac{1}{2} - \dfrac{\textit{i}}{2}
+\end{align}
+Now, this is in the form of $a + b \textit{i}$ \\
+To convert this in polar form, we put  
+\begin{align}
+r \cos \theta = \dfrac{1}{2} \\
+r \sin \theta = -\dfrac{1}{2} \\
+\Rightarrow r = \sqrt{\dfrac{1}{2}^{2} + {-\dfrac{1}{2}}^{2}} = \dfrac{1}{\sqrt{2}} 
+\end{align}
+Plugging this value of r in equations 4 and 5, we get $\theta = -\dfrac{\pi}{4}$
+Thus, modulus $(r) = \dfrac{1}{\sqrt{2}}$ and Argument$(\theta) = -\dfrac{\pi}{4}$
+}
+
+
+\ifnumequal{\value{rolldice}}{1}{
+$\dfrac{1}{1-\textit{i}}$ \\
+By rationalizing this expression, 
+\begin{align}
+\dfrac{1}{1-\textit{i}} \times \dfrac{1 + \textit{i}}{1+\textit{i}} \\
+&= \dfrac{1 + \textit{i}}{2}  \\
+&= \dfrac{1}{2} + \dfrac{\textit{i}}{2}
+\end{align}
+Now, this is in the form of $a + b \textit{i}$ \\
+To convert this in polar form, we put  
+\begin{align}
+r \cos \theta = \dfrac{1}{2}\\
+r \sin \theta = \dfrac{1}{2} \\
+\Rightarrow r = \sqrt{\dfrac{1}{2}^{2} + {\dfrac{1}{2}}^{2}} = \dfrac{1}{\sqrt{2}} 
+\end{align}
+Plugging this value of r in equations 4 and 5, we get $\theta = \dfrac{\pi}{4}$ \\
+Thus, modulus $(r) = \dfrac{1}{\sqrt{2}}$ and Argument$(\theta) = \dfrac{\pi}{4}$
+}
+
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}
