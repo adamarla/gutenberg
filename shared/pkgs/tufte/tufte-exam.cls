@@ -84,3 +84,22 @@
 }
 \providecommand\School[1]{\setDocumentTitle{#1}}
 
+\newcommand{\versnum}{0}
+\newcommand{\versionS}
+
+\providecommand\resetVersionS[1] {
+  \renewcommand{\versionS}{#1}
+  \StrLeft{#1}{1}[\version]
+  \setcounter{rolldice}{\version}
+}
+
+\providecommand\setVersionS[1] {
+  \StrLen{#1}[\numques]
+  \ifthenelse{\numques = \thequestion}{}
+  {
+    \gcalcexpr[0]\versindex{\thequestion + 1}
+    \StrMid{#1}{\versindex}{\versindex}[\versnum]
+    \setcounter{rolldice}{\versnum}
+  }
+}
+
