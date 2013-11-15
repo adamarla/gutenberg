@@ -172,19 +172,9 @@ function update_usr_local {
 
   local tex_local
   local pkgs=$(dirname $(get_vault_root))/shared/pkgs
-
-  if [ -e /opt/gutenberg/PRODUCTION_SERVER ] ; then 
-    tex_local=/usr/local/texlive/texmf-local
-  else
-    if [ ! -z $LATEX_ROOT ] ; then 
-      tex_local=$(dirname $LATEX_ROOT)/texmf-local
-    else
-      echo "[ERROR]: \$LATEX_ROOT environment variable not defined"
-      return 0
-    fi 
-  fi
-
   local logf=$(logdir)/$(logfile usr-local)
+
+  tex_local=/usr/local/texlive/texmf-local
 
   # echo -e "[Copying]: $COL_BLUE$pkgs$COL_RESET -> $COL_RED$tex_local/tex/latex$COL_RESET"
   cp -rfv $pkgs $tex_local/tex/latex >> $logf
