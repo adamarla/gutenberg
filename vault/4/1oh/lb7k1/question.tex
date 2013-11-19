@@ -35,7 +35,7 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
+  \renewcommand{\vbone}{5}
   \renewcommand{\vbtwo}{}
   \renewcommand{\vbthree}{}
   \renewcommand{\vbfour}{}
@@ -48,7 +48,7 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
+    \renewcommand{\vbone}{3}
     \renewcommand{\vbtwo}{}
     \renewcommand{\vbthree}{}
     \renewcommand{\vbfour}{}
@@ -61,7 +61,7 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{7}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -73,7 +73,7 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{6}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -86,8 +86,13 @@
     }
   }
 }
-
-\question
+\newcommand{\ltzero}{\lim_{x \to 0}}
+\newcommand{\q}{\vbone ^x - 1}
+\renewcommand{\m}{\log_{\vbone} \left( 1 + x\right)}
+\question Evaluate the limit : 
+\begin{align}
+\ltzero \dfrac{\q}{\m} \notag 
+\end{align}
 
 \insertQR{}
 
@@ -109,40 +114,18 @@
 \fi 
 
 \begin{solution}
+\begin{align}
+\ltzero \dfrac{\q}{\m} = \ltzero \dfrac{\q}{x} \times \dfrac{1}{\dfrac{\m}{x}} \\
+\end{align}
+We use the property,
+\begin{align}
+\left[ \ltzero \dfrac{(a^x - 1)}{x} = \ln a \right] \text{and} \left[ \ltzero \dfrac{\log_{a}(1+x)}{x} = \log_{a}(e) \right] \notag
+\end{align}
+To get,
+\begin{align}
+\dfrac{\ln \vbone}{\log_{\vbone}(e)} = \left(\ln \vbone\right)^{2} \qquad \because \left[ \log_{a} e = \dfrac{1}{\log_{e} a} \right]
+\end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

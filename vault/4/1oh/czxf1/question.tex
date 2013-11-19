@@ -30,12 +30,12 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+% \setcounter{rolldice}{2}
 % \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
+  \renewcommand{\vbone}{2}
   \renewcommand{\vbtwo}{}
   \renewcommand{\vbthree}{}
   \renewcommand{\vbfour}{}
@@ -48,7 +48,7 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
+    \renewcommand{\vbone}{3}
     \renewcommand{\vbtwo}{}
     \renewcommand{\vbthree}{}
     \renewcommand{\vbfour}{}
@@ -61,7 +61,7 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{5}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -73,7 +73,7 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{7}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -86,8 +86,11 @@
     }
   }
 }
-
-\question
+\newcommand{\ltinf}{\lim_{x \to \infty}}
+\question Evaluate limit 
+\begin{align}
+\ltinf e^x \sin (\vbone e^{-x}) \notag
+\end{align}
 
 \insertQR{}
 
@@ -109,40 +112,17 @@
 \fi 
 
 \begin{solution}
+\begin{align}
+\ltinf e^x \sin (\vbone e^{-x}) &= \ltinf \dfrac{\sin {\vbone e^{-x}}}{\vbone e^{-x}} \times \vbone \\
+\end{align}
+Lets say $t = e^{-x}$ \\
+Thus, when x $\rightarrow \infty $, t $\rightarrow 0$ \\
+Replacing x by t, we get 
+\begin{align}
+\lim_{t \to 0}  {\dfrac{\sin{\vbone t}}{\vbone t} \times \vbone} = \vbone 
+\end{align} 
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

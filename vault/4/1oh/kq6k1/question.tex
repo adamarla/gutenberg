@@ -30,12 +30,12 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+% \setcounter{rolldice}{2}
 % \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
+  \renewcommand{\vbone}{3}
   \renewcommand{\vbtwo}{}
   \renewcommand{\vbthree}{}
   \renewcommand{\vbfour}{}
@@ -48,7 +48,7 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
+    \renewcommand{\vbone}{5}
     \renewcommand{\vbtwo}{}
     \renewcommand{\vbthree}{}
     \renewcommand{\vbfour}{}
@@ -61,7 +61,7 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{7}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -73,7 +73,7 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{9}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -86,8 +86,11 @@
     }
   }
 }
-
-\question
+\newcommand{\ltpi}{\lim_{x \to \frac{\pi}{2}}}
+\question Evaluate the limit: 
+\begin{align}
+\ltpi \dfrac{\vbone^{\cot x} - \vbone^{\cos x}}{\cot x - \cos x} \qquad ,a > 0   \notag
+\end{align}
 
 \insertQR{}
 
@@ -109,40 +112,24 @@
 \fi 
 
 \begin{solution}
+\begin{align}
+\ltpi  \dfrac{\vbone^{\cos x}\cdot\left(\vbone^{\cot x - \cos x} -1 \right)}{\cot x - \cos x}  
+\end{align}
+Now say, $t = \cot x - \cos x \quad$ then at\\
+$x \rightarrow \frac{\pi}{2}, \quad t \rightarrow 0 $ \\
+Also , 
+\begin{align}
+\vbone^{\cos x} = 1 \notag \\
+&\Rightarrow \lim_{t \to 0} \dfrac{\vbone^{t} -1}{t} \\
+\end{align}	
+Now, we use the property,  
+\begin{align}
+\left[ \lim_{x \to 0} \dfrac{(a^x - 1)}{x} = \ln a \right] \notag \\
+\notag \\
+= \ln \left( \vbone \right)   
+\end{align}
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

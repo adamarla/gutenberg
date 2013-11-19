@@ -30,12 +30,12 @@
 %      tufte-tweaks.sty to do so. Its easier than you think
 
 % \noprintanswers
-% \setcounter{rolldice}{0}
+% \setcounter{rolldice}{2}
 % \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
+  \renewcommand{\vbone}{2}
   \renewcommand{\vbtwo}{}
   \renewcommand{\vbthree}{}
   \renewcommand{\vbfour}{}
@@ -48,7 +48,7 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
+    \renewcommand{\vbone}{3}
     \renewcommand{\vbtwo}{}
     \renewcommand{\vbthree}{}
     \renewcommand{\vbfour}{}
@@ -61,7 +61,7 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{5}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -73,7 +73,7 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{7}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -86,8 +86,13 @@
     }
   }
 }
-
-\question
+\newcommand{\ltzero}{\lim_{x \to 0}}
+\newcommand{\q}{x \cdot \left( \vbone^{x} -1\right)}
+\renewcommand{\l}{2\cdot {\sin \left( \frac{x}{2}\right)}^{2}}
+\question Find the limit:  
+\begin{align}
+\ltzero \dfrac{\q}{{1-\cos x}} \notag
+\end{align}
 
 \insertQR{}
 
@@ -109,40 +114,21 @@
 \fi 
 
 \begin{solution}
+\begin{align}
+\ltzero \dfrac{\q}{{1-\cos x}} = \ltzero \dfrac{\q}{\l} \\
+\ltzero \dfrac{(\vbone^{x} -1)}{x} \times \dfrac{1}{\dfrac{\l}{{\dfrac{x}{2}}^{2}}} \times 4  \\
+\end{align}
+We use the property,
+\begin{align}
+\left[ \ltzero \dfrac{(a^x - 1)}{x} = \ln a \right] \text{and} \left[ \ltzero \dfrac{\sin x}{x} = 1 \right] \notag
+\end{align}
+To get,
+\begin{align}	
+\left( \ln{\vbone} \right) \times 1 \times 2 \\
+\Rightarrow 2\cdot \ln{\vbone}
+\end{align}
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}
