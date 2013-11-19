@@ -35,7 +35,7 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
+  \renewcommand{\vbone}{k}
   \renewcommand{\vbtwo}{}
   \renewcommand{\vbthree}{}
   \renewcommand{\vbfour}{}
@@ -48,7 +48,7 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
+    \renewcommand{\vbone}{l}
     \renewcommand{\vbtwo}{}
     \renewcommand{\vbthree}{}
     \renewcommand{\vbfour}{}
@@ -61,7 +61,7 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{m}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -73,7 +73,7 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{n}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -87,7 +87,10 @@
   }
 }
 
-\question
+\question Evaluate 
+\begin{align}
+\lim_{x \to \infty} \sqrt{x^2 + \vbone x} - \sqrt{x^2 - \vbone x} \notag
+\end{align} 
 
 \insertQR{}
 
@@ -109,40 +112,19 @@
 \fi 
 
 \begin{solution}
+We start by rationalizing the expression
+\begin{align}
+&\lim_{x \to \infty} \sqrt{x^2 + \vbone x} - \sqrt{x^2 - \vbone x} \times \dfrac{\sqrt{x^2 + \vbone x} + \sqrt{x^2 - \vbone x}}{\sqrt{x^2 + \vbone x} + \sqrt{x^2 - \vbone x}} \\
+&= \lim_{x \to \infty} \dfrac{2 \cdot \vbone x}{\sqrt{x^2 + \vbone x} + \sqrt{x^2 - \vbone x}} 
+\end{align}
+Diving the numerator and denominator by $x$ we get, 
+\begin{align}
+&\lim_{x \to \infty}  \dfrac{2\vbone}{{\sqrt{1+ \dfrac{\vbone}{x}}} + {\sqrt{1- \dfrac{\vbone}{x}}}} \\
+&=  \dfrac{2\cdot {\vbone}}{2} \\
+&= \vbone
+\end{align} 
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

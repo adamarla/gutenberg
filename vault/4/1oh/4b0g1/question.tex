@@ -35,10 +35,10 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
+  \renewcommand{\vbone}{2007}
+  \renewcommand{\vbtwo}{2006}
+  \renewcommand{\vbthree}{2005}
+  \renewcommand{\vbfour}{669}
   \renewcommand{\vbfive}{}
   \renewcommand{\vbsix}{}
   \renewcommand{\vbseven}{}
@@ -48,10 +48,10 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
+    \renewcommand{\vbone}{2004}
+    \renewcommand{\vbtwo}{2003}
+    \renewcommand{\vbthree}{2002}
+    \renewcommand{\vbfour}{668}
     \renewcommand{\vbfive}{}
     \renewcommand{\vbsix}{}
     \renewcommand{\vbseven}{}
@@ -61,10 +61,10 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
+      \renewcommand{\vbone}{2001}
+      \renewcommand{\vbtwo}{2000}
+      \renewcommand{\vbthree}{1999}
+      \renewcommand{\vbfour}{667}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
@@ -73,10 +73,10 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
+      \renewcommand{\vbone}{2010}
+      \renewcommand{\vbtwo}{2009}
+      \renewcommand{\vbthree}{2008}
+      \renewcommand{\vbfour}{670}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
@@ -87,7 +87,7 @@
   }
 }
 
-\question
+\question Evaluate limit : $\lim_{x\to \infty} \dfrac{(x+1)^{\vbone} + (x+2)^{\vbone}+ \cdots + (x+\vbone)^{\vbone}}{(x+\vbtwo)^{\vbone} + (x+\vbone)^{\vbone} + (x+\vbthree)^{\vbone}} $ 
 
 \insertQR{}
 
@@ -109,40 +109,17 @@
 \fi 
 
 \begin{solution}
+Divide both numerator and denominator of the equation by $x^{\vbone}$ \\
+\begin{align}
+\lim_{x\to \infty} \dfrac{\left(1 + \frac{1}{x}\right)^{\vbone} + \left(1 + \frac{2}{x}\right)^{\vbone} + \cdots + \left(1 + \frac{\vbone}{x}\right)^{\vbone}}{\left(1 + \frac{\vbtwo}{x}\right)^{\vbone} + \left(1 + \frac{\vbone}{x}\right)^{\vbone} + \left(1 + \frac{\vbthree}{x}\right)^{\vbone}} 
+\end{align} 
+\begin{align}
+&=  \dfrac{\overbrace{1 + 1 + \cdots + 1}^{\vbone \quad  \text{times}}}{1 + 1 + 1} \\
+&= \dfrac{\vbone}{3} = \vbfour 
+\end{align}
 \end{solution}
 
-\begin{parts}
-  \part 
 
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}
