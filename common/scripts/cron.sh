@@ -109,10 +109,11 @@ function receive_scans {
   cd /home/gutenberg/ScanbotSS
   if [ $1 == "heroku" ] ; then
     java -cp ScanbotSS.jar:core.jar:javase.jar:commons-cli-1.2.jar gutenberg.collect.Driver -u www.gradians.com -d scantray >> $logf 
+    curl http://www.gradians.com/distribute/scans >> $logf
   else
-    java -cp ScanbotSS.jar:core.jar:javase.jar:commons-cli-1.2.jar gutenberg.collect.Driver -u 109.74.201.62 -d scanashtray >> $logf
+    java -cp ScanbotSS.jar:core.jar:javase.jar:commons-cli-1.2.jar gutenberg.collect.Driver -u 109.74.201.62 -d scan-ashtray >> $logf
+    curl http://109.74.201.62/distribute/scans >> $logf
   fi
-  curl http://www.gradians.com/distribute/scans >> $logf
 }
 
 function receive_suggestions { 
@@ -121,14 +122,6 @@ function receive_suggestions {
   local logf=$(logdir)/$(logfile receive-sg)
   cd /home/gutenberg/Suggestionbot
   java -cp Suggestionbot.jar gutenberg.collect.Driver >> $logf
-}
-
-function run_scanbot { 
-  if [ ! -e /opt/gutenberg/PRODUCTION_SERVER ] ; then return 0 ; fi
-
-  local logf=$(logdir)/$(logfile scanbot) 
-  cd /home/gutenberg/ScanbotSS
-  java -cp ScanbotSS.jar:core.jar:javase.jar:itextpdf-5.4.1.jar gutenberg.collect.Driver backup >> $logf
 }
 
 function age_in_hours {
