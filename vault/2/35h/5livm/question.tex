@@ -38,8 +38,8 @@
   \renewcommand{\vbtwo}{top}
   \renewcommand{\vbthree}{bottom}
   \renewcommand{\vbfour}{5!}
-  \renewcommand{\vbfive}{7}
-  \renewcommand{\vbsix}{113}
+  \renewcommand{\vbfive}{6}
+  \renewcommand{\vbsix}{114}
   \renewcommand{\vbseven}{}
   \renewcommand{\vbeight}{}
   \renewcommand{\vbnine}{}
@@ -51,8 +51,8 @@
     \renewcommand{\vbtwo}{top}
     \renewcommand{\vbthree}{bottom}
     \renewcommand{\vbfour}{5!}
-    \renewcommand{\vbfive}{49}
-    \renewcommand{\vbsix}{71}
+    \renewcommand{\vbfive}{55}
+    \renewcommand{\vbsix}{65}
     \renewcommand{\vbseven}{}
     \renewcommand{\vbeight}{}
     \renewcommand{\vbnine}{}
@@ -121,12 +121,12 @@ would $\vbone$ be ranked starting from the $\vbtwo$.
     &\textit{Pattern} &\textit{Combinations} \\
     \ifnumequal{\value{rolldice}}{0}{
       &\text{W R ? ? ?} &\Rightarrow 3! \\
-      &\text{W O R D L} &\Rightarrow 1 \\
       &\text{W O R L D} 
     }{
       \ifnumequal{\value{rolldice}}{1}{
         &\text{L ? ? ? ?} &\Rightarrow 4! \\
         &\text{O ? ? ? ?} &\Rightarrow 4! \\
+        &\text{G O ? ? ?} &\Rightarrow 3! \\
         &\text{G L O E B} &\Rightarrow 1 \\
         &\text{G L O B E}
       }{
@@ -152,7 +152,7 @@ would $\vbone$ be ranked starting from the $\vbtwo$.
   Subtracting from all possible combinations we get a rank of
   \begin{align}
 	\text{Rank} &= \vbfour - \vbfive \\
-		        &= \vbsix
+		    &= \vbsix
   \end{align}
 
 \end{solution}
