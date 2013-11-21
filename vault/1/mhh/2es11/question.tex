@@ -13,31 +13,31 @@
     \renewcommand{\vbone}{4}
     \renewcommand{\vbtwo}{3}
     \renewcommand{\vbthree}{8}
-    \renewcommand{\vbfour}{\dfrac{56}{81}}
+    \renewcommand{\vbfour}{\dfrac{56}{9}}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
       \renewcommand{\vbone}{5}
       \renewcommand{\vbtwo}{2}
       \renewcommand{\vbthree}{8}
-      \renewcommand{\vbfour}{\dfrac{35}{128}}
+      \renewcommand{\vbfour}{70}
     }{
       % variables 
       \renewcommand{\vbone}{4}
       \renewcommand{\vbtwo}{3}
       \renewcommand{\vbthree}{7}
-      \renewcommand{\vbfour}{\dfrac{35}{243}}
+      \renewcommand{\vbfour}{\dfrac{35}{3}}
     }
   }
 }
 
 \SUBTRACT\vbone{1}\p
 \SUBTRACT\vbthree\p\q
-\MULTIPLY\p{3}\a
-\MULTIPLY\q{2}\b
+\MULTIPLY\q{3}\a
+\MULTIPLY\p{2}\b
 
 \SUBTRACT\a\b\x
-\SUBTRACT\q\a\y
+\SUBTRACT\p\q\y
 
 \question[3] What will be the $\vbone^{th}$ term in the expansion of 
 $\left( \dfrac{x^3}\vbtwo - \dfrac\vbtwo{x^2} \right)^{\vbthree}$?
@@ -51,20 +51,19 @@ $\left( \dfrac{x^3}\vbtwo - \dfrac\vbtwo{x^2} \right)^{\vbthree}$?
 \fi 
 
 \begin{solution}[\halfpage]
-  The general form of a term - $T_m$ - in the binomial expansion of 
+  The general form of a term - $T_{m+1}$ - in the binomial expansion of 
   $\left( \dfrac{x^3}\vbtwo - \dfrac\vbtwo{x^2} \right)^{\vbthree}$ is given by 
 
   \begin{align}
-    T_m  &= \encr\vbthree{m}\cdot\left( \dfrac{x^3}\vbtwo\right)^{m}\cdot\left( -\dfrac\vbtwo{x^2} \right)^{\vbthree - m}
+    T_{m+1} &= \encr\vbthree{m}\cdot\left( \dfrac{x^3}\vbtwo\right)^{\vbthree-m}\cdot\left( -\dfrac\vbtwo{x^2} \right)^{m}
     , \text{where } m \in [0,\vbthree]
   \end{align}
-
-  Which means, that if the first term is $T_0$, then the $\vbone^{th}$ term is $T_{\p}$. And, 
+  The $\vbone^{th}$ term will be $T_{\p+1}$. Therefore,
   \begin{align}
-    T_{\p} &= \encr\vbthree\p\cdot
-    \left( \dfrac{x^3}\vbtwo \right)^{\p} \cdot
-    \left( -\dfrac\vbtwo{x^2}\right)^{\q} \\
-    &= \encr\vbthree\p\cdot\dfrac{x^{\a}}{x^{\b}}\times\dfrac{\vbtwo^{\q}}{\vbtwo^{\a}}
+    T_{\p+1} &= \encr\vbthree\p\cdot
+    \left( \dfrac{x^3}\vbtwo \right)^{\q} \cdot
+    \left( -\dfrac\vbtwo{x^2}\right)^{\p} \\
+    &= \encr\vbthree\p\cdot\dfrac{x^{\a}}{x^{\b}}\times\dfrac{\vbtwo^{\p}}{\vbtwo^{\q}}
     \times (-1)^{\q} \\
     &= \encr\vbthree\p\cdot x^{\x}\cdot\vbtwo^{\y} = \vbfour\cdot x^{\x}
   \end{align}
