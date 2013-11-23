@@ -35,7 +35,7 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
+  \renewcommand{\vbone}{2007}
   \renewcommand{\vbtwo}{}
   \renewcommand{\vbthree}{}
   \renewcommand{\vbfour}{}
@@ -48,7 +48,7 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
+    \renewcommand{\vbone}{2009}
     \renewcommand{\vbtwo}{}
     \renewcommand{\vbthree}{}
     \renewcommand{\vbfour}{}
@@ -61,7 +61,7 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{2011}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -73,7 +73,7 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{2013}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -86,8 +86,11 @@
     }
   }
 }
-
-\question
+\newcommand{\ltinf}{\lim_{x \to \infty}}
+\question Evaluate the limit: 
+\begin{align}
+\lim_{x \to \infty} \sqrt{x} \left( \sqrt{x - \vbone} - \sqrt{x} \right) \notag
+\end{align}
 
 \insertQR{}
 
@@ -109,40 +112,14 @@
 \fi 
 
 \begin{solution}
+\begin{align}
+&\Rightarrow \ltinf \sqrt{x} \left( \sqrt{x - \vbone} - \sqrt{x} \right) \times \dfrac {\left( \sqrt{x - \vbone} + \sqrt{x} \right)}{\left( \sqrt{x - \vbone} + \sqrt{x} \right)} \\
+&= \ltinf \dfrac{\sqrt{x} \cdot \vbone} {\sqrt{x -\vbone} + \sqrt{x}} \\
+&= \ltinf \dfrac{-\vbone}{\sqrt{1-\dfrac{\vbone}{x}} + 1} \\ 
+&= \dfrac{-\vbone}{2}
+\end{align}
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

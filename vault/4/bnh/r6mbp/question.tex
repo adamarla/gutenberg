@@ -35,40 +35,40 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
+  \renewcommand{\vbone}{3}
+  \renewcommand{\vbtwo}{2}
+  \renewcommand{\vbthree}{12}
+  \renewcommand{\vbfour}{5}
+  \renewcommand{\vbfive}{\dfrac{63}{25}}
+  \renewcommand{\vbsix}{\dfrac{16}{25}}
+  \renewcommand{\vbseven}{2}
+  \renewcommand{\vbeight}{3}
   \renewcommand{\vbnine}{}
   \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
+    \renewcommand{\vbone}{2}
+    \renewcommand{\vbtwo}{3}
+    \renewcommand{\vbthree}{12}
+    \renewcommand{\vbfour}{-5}
+    \renewcommand{\vbfive}{\dfrac{33}{25}}
+    \renewcommand{\vbsix}{\dfrac{56}{25}}
+    \renewcommand{\vbseven}{3}
+    \renewcommand{\vbeight}{2}
     \renewcommand{\vbnine}{}
     \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
+      \renewcommand{\vbone}{3}
+      \renewcommand{\vbtwo}{4}
+      \renewcommand{\vbthree}{18}
+      \renewcommand{\vbfour}{1}
+      \renewcommand{\vbfive}{3}
+      \renewcommand{\vbsix}{2}
+      \renewcommand{\vbseven}{4}
+      \renewcommand{\vbeight}{3}
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }{
@@ -87,7 +87,10 @@
   }
 }
 
-\question
+\question  Find the conjugate of 
+\begin{align}
+\dfrac{(\vbone-\vbtwo \textit{i})(\vbseven +\vbeight \textit{i})}{(1+2\textit{i})(2-\textit{i})} 
+\end{align}
 
 \insertQR{}
 
@@ -109,40 +112,17 @@
 \fi 
 
 \begin{solution}
+Conjugate of a complex number $z = a + b\textit{i}$ is $\overline{z} = a - b\textit{i} $ \\
+So we convert the above in the form of $z = a + b\textit{i}$ \\ 
+	\begin{align}
+  		\dfrac{(\vbone-\vbtwo \textit{i})(\vbseven + \vbeight \textit{i})}{(1+2\textit{i})(2-\textit{i})} \\
+		&= \dfrac{\vbthree + \vbfour \textit{i} }{4 + 3 \textit{i}} \\
+		&= \dfrac{\vbthree + \vbfour \textit{i}}{4 + 3 \textit{i}} \times \dfrac{4 - 3 \textit{i}}{4 - 3 \textit{i}} \\
+		&= \vbfive - \vbsix \textit{i}  \\
+		\therefore \overline{z} &= \vbfive + \vbsix \textit{i} 
+	\end{align}
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

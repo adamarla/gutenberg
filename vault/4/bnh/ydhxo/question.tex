@@ -35,12 +35,12 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
+  \renewcommand{\vbone}{2}
+  \renewcommand{\vbtwo}{9}
+  \renewcommand{\vbthree}{3+\dfrac{4{x}}{3}}
+  \renewcommand{\vbfour}{\dfrac{10}{12}}
+  \renewcommand{\vbfive}{\dfrac{21}{4}}
+  \renewcommand{\vbsix}{\dfrac{63}{10}}
   \renewcommand{\vbseven}{}
   \renewcommand{\vbeight}{}
   \renewcommand{\vbnine}{}
@@ -48,12 +48,12 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
+    \renewcommand{\vbone}{1}
+    \renewcommand{\vbtwo}{6}
+    \renewcommand{\vbthree}{3+\dfrac{4{x}}{3}}
+    \renewcommand{\vbfour}{\dfrac{13}{12}}
+    \renewcommand{\vbfive}{\dfrac{9}{4}}
+    \renewcommand{\vbsix}{\dfrac{27}{13}}
     \renewcommand{\vbseven}{}
     \renewcommand{\vbeight}{}
     \renewcommand{\vbnine}{}
@@ -61,24 +61,24 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
+      \renewcommand{\vbone}{3}
+      \renewcommand{\vbtwo}{5}
+      \renewcommand{\vbthree}{3+\dfrac{4{x}}{3}}
+      \renewcommand{\vbfour}{\dfrac{7}{12}}
+      \renewcommand{\vbfive}{\dfrac{5}{4}}
+      \renewcommand{\vbsix}{\dfrac{15}{7}}
       \renewcommand{\vbseven}{}
       \renewcommand{\vbeight}{}
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
+      \renewcommand{\vbone}{3}
+      \renewcommand{\vbtwo}{7}
+      \renewcommand{\vbthree}{3+\dfrac{4{x}}{3}}
+      \renewcommand{\vbfour}{\dfrac{7}{12}}
+      \renewcommand{\vbfive}{\dfrac{13}{4}}
+      \renewcommand{\vbsix}{\dfrac{39}{7}}
       \renewcommand{\vbseven}{}
       \renewcommand{\vbeight}{}
       \renewcommand{\vbnine}{}
@@ -87,7 +87,8 @@
   }
 }
 
-\question
+\question Solve the inequality : \\
+  $\quad  \dfrac{\vbone x - 3}{4} + \vbtwo  \geq \vbthree$
 
 \insertQR{}
 
@@ -109,40 +110,14 @@
 \fi 
 
 \begin{solution}
+\begin{align}
+\dfrac{\vbone x}{4} - \dfrac{3}{4} + \vbtwo &\geq \vbthree \\
+ \dfrac{4}{3}-\dfrac{\vbone}{4} \cdot x &\leq \vbtwo - 3 - \dfrac{3}{4} \\
+\vbfour x &\leq \vbfive \\
+ \therefore \quad \quad  x &\leq \vbsix 
+\end{align}
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

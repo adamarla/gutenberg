@@ -1,3 +1,4 @@
+%BT
 % This is an empty shell file placed for you by the 'examiner' script.
 % You can now fill in the TeX for your question here.
 
@@ -87,11 +88,12 @@
   }
 }
 
-\question
+\question Find the sum of the series \\
+$1^2 \cdot \encr{n}{1} + 2^2 \cdot \encr{n}{1} + \cdots + n^2 \cdot \encr{n}{n} $
 
 \insertQR{}
 
-\watchout
+%\watchout
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -109,40 +111,29 @@
 \fi 
 
 \begin{solution}
+As this is a series of binomial coefficients. Start by writing the expansion of $(1+x)^n$ \\
+\begin{align}
+(1+x)^{n} = \encr{n}{0} + \encr{n}{1} \cdot x + \encr{n}{2} \cdot {x}^{2} + \cdots + \encr{n}{n} \cdot {x}^{n}  
+\end{align}  
+Differentiating both sides with respect to x : \\
+\begin{align}
+n(1+x)^{n-1} =  \encr{n}{1} + 2 \cdot \encr{n}{2} \cdot x + \cdots + n \cdot \encr{n}{n} \cdot {x}^{n-1}
+\end{align}  
+Multiplying both sides by x again : \\
+\begin{align}
+nx(1+x)^{n-1} =  \encr{n}{1} \cdot x + 2 \cdot \encr{n}{2} \cdot x^2 + \cdots + n \cdot \encr{n}{n} \cdot {x}^{n}
+\end{align}
+Differentiating both sides with respect to x : \\
+\begin{align}
+n(1+x)^{n-1} + n(n-1)x(1+x)^{n-2} =  \encr{n}{1} + 2^2 \cdot \encr{n}{2} \cdot x + \cdots + n^2 \cdot \encr{n}{n} \cdot {x}^{n-1}
+\end{align}
+Now put $x=1$ on both side to get the required series. 
+\begin{align}
+n(2)^{n-1} + n(n-1)(2)^{n-2} &=  \encr{n}{1} + 2^2 \cdot \encr{n}{2}  + \cdots + n^2 \cdot \encr{n}{n} \\
+\therefore \quad (n^2 + n)\cdot 2 ^{n-2} &= \encr{n}{1} + 2^2 \cdot \encr{n}{2}  + \cdots + n^2 \cdot \encr{n}{n}
+\end{align} 
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

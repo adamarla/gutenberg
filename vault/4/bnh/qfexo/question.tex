@@ -35,10 +35,10 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
+  \renewcommand{\vbone}{1}
+  \renewcommand{\vbtwo}{\sqrt{3}}
+  \renewcommand{\vbthree}{2}
+  \renewcommand{\vbfour}{\frac{\pi}{3}}
   \renewcommand{\vbfive}{}
   \renewcommand{\vbsix}{}
   \renewcommand{\vbseven}{}
@@ -48,10 +48,10 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
+    \renewcommand{\vbone}{\sqrt{3}}
+    \renewcommand{\vbtwo}{1}
+    \renewcommand{\vbthree}{2}
+    \renewcommand{\vbfour}{\frac{\pi}{6}}
     \renewcommand{\vbfive}{}
     \renewcommand{\vbsix}{}
     \renewcommand{\vbseven}{}
@@ -61,10 +61,10 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
+      \renewcommand{\vbone}{1}
+      \renewcommand{\vbtwo}{1}
+      \renewcommand{\vbthree}{\sqrt{2}}
+      \renewcommand{\vbfour}{\frac{\pi}{4}}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
@@ -87,7 +87,7 @@
   }
 }
 
-\question
+\question Convert the complex number $z =\vbone+\vbtwo i$ to polar form \\ $\left[ r(\cos \theta + i \sin \theta) \right] $ 
 
 \insertQR{}
 
@@ -109,40 +109,22 @@
 \fi 
 
 \begin{solution}
+\begin{align}
+z = \vbone + \vbtwo i \\
+\vbone = r \cos \theta  \quad \vbtwo = r \sin \theta 
+\end{align}
+Squaring and adding
+\begin{align}
+r^{2} &= (\vbone)^{2} + (\vbtwo)^{2}  \\
+\Rightarrow r &= \vbthree \\
+\cos \theta = \dfrac{\vbone}{\vbthree} \\ 
+\sin \theta = \dfrac{\vbtwo}{\vbthree} \\
+\Rightarrow \theta = \vbfour 
+\end{align} 
+Thus, \\
+In polar form $z = \vbthree \left( \cos \vbfour + i \sin \vbfour \right)$ 
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

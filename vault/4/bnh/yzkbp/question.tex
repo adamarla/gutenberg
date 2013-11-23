@@ -35,10 +35,10 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
+  \renewcommand{\vbone}{4}
+  \renewcommand{\vbtwo}{9}
+  \renewcommand{\vbthree}{2}
+  \renewcommand{\vbfour}{3}
   \renewcommand{\vbfive}{}
   \renewcommand{\vbsix}{}
   \renewcommand{\vbseven}{}
@@ -48,10 +48,10 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
+    \renewcommand{\vbone}{9}
+    \renewcommand{\vbtwo}{4}
+    \renewcommand{\vbthree}{3}
+    \renewcommand{\vbfour}{2}
     \renewcommand{\vbfive}{}
     \renewcommand{\vbsix}{}
     \renewcommand{\vbseven}{}
@@ -61,10 +61,10 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
+      \renewcommand{\vbone}{4}
+      \renewcommand{\vbtwo}{16}
+      \renewcommand{\vbthree}{2}
+      \renewcommand{\vbfour}{4}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
@@ -73,10 +73,10 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
+      \renewcommand{\vbone}{16}
+      \renewcommand{\vbtwo}{9}
+      \renewcommand{\vbthree}{4}
+      \renewcommand{\vbfour}{3}
       \renewcommand{\vbfive}{}
       \renewcommand{\vbsix}{}
       \renewcommand{\vbseven}{}
@@ -87,7 +87,8 @@
   }
 }
 
-\question
+\question Solve the the quadratic $ \vbone x^{2} + \vbtwo = 0 $  \\
+ Use $ {i}^{2} = -1 $   
 
 \insertQR{}
 
@@ -109,40 +110,13 @@
 \fi 
 
 \begin{solution}
+\begin{align}
+\vbone x - \vbtwo \textit{i}^{2} &= 0 \\
+(\vbthree x  - \vbfour \textit{i})(\vbthree x  + \vbfour \textit{i}) &= 0 \\
+\Rightarrow x &= \pm \dfrac{\vbfour \textit{i}}{\vbthree} 
+\end{align}
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

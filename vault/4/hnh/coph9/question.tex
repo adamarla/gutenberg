@@ -35,7 +35,7 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
+  \renewcommand{\vbone}{4}
   \renewcommand{\vbtwo}{}
   \renewcommand{\vbthree}{}
   \renewcommand{\vbfour}{}
@@ -48,7 +48,7 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
+    \renewcommand{\vbone}{5}
     \renewcommand{\vbtwo}{}
     \renewcommand{\vbthree}{}
     \renewcommand{\vbfour}{}
@@ -61,7 +61,7 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{7}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -73,7 +73,7 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{6}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -86,8 +86,10 @@
     }
   }
 }
-
-\question
+\SUBTRACT\vbone{2}\k
+\POWER{5}{\k}\m
+\MULTIPLY\m{5}\l
+\question How many $\vbone$-digit numbers which are divisible by four can be formed by using the the digits $\lbrace1,2,3,4,5\rbrace$?
 
 \insertQR{}
 
@@ -108,41 +110,15 @@
   \end{marginfigure}
 \fi 
 
+
 \begin{solution}
+For the number to be divisible by $4$ the last two digits should be divisible by $4$.\\
+By using the given digits $\lbrace1,2,3,4,5\rbrace$ we find that a number will be divisible by $4$ if it ends with 
+${12},{24},{32},{44}$ and ${52}$.\\ Therefore for the last two digits we have five choices.\\
+\\
+Since repetition is allowed every other place can be filled by any of the five digits in $5$ ways each.\\
+Thus, the total number of ways is $5^{\k} \times 5 = \l$   
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
 \ifprintrubric
   \begin{table}

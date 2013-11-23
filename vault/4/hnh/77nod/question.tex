@@ -35,7 +35,7 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
+  \renewcommand{\vbone}{40}
   \renewcommand{\vbtwo}{}
   \renewcommand{\vbthree}{}
   \renewcommand{\vbfour}{}
@@ -48,7 +48,7 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
+    \renewcommand{\vbone}{45}
     \renewcommand{\vbtwo}{}
     \renewcommand{\vbthree}{}
     \renewcommand{\vbfour}{}
@@ -61,7 +61,7 @@
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{50}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -73,7 +73,7 @@
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{60}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
       \renewcommand{\vbfour}{}
@@ -86,8 +86,9 @@
     }
   }
 }
-
-\question
+\SUBTRACT\vbone{1}\k
+\MULTIPLY\vbone\k\l
+\question There are $\vbone$ doctors in a surgical department. In how many ways they can be arranged to form the following teams 
 
 \insertQR{}
 
@@ -108,40 +109,24 @@
   \end{marginfigure}
 \fi 
 
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part  A surgeon and an assistant 
 
   \insertQR{}
   \begin{solution}
+  First we select a surgeon from the $\vbone$ available doctors in $\encr{\vbone}{1}$ ways.\\
+  From among the rest we select an assistant in $\encr{\k}{1}$ ways.\\
+  Thus total number of arrangements are $\encr{\vbone}{1} \cdot \encr{\k}{1} = \l$ ways. 
   \end{solution}
 
-  \part 
+  \part A surgeon and four assistants 
 
   \insertQR{}
   \begin{solution}
+  First we select a surgeon from the $\vbone$ available doctors in $\encr{\vbone}{1}$ ways.\\
+  From among the rest we select four assistants $\encr{\k}{4}$ ways.\\
+  Thus total number of arrangements are \\ $\encr{\vbone}{1} \cdot \encr{\k}{4} = \vbone \cdot \encr{\k}{4}$ ways.
   \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
 \end{parts}
 
 \ifprintrubric
