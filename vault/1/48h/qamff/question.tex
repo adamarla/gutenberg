@@ -1,33 +1,4 @@
-% This is an empty shell file placed for you by the 'examiner' script.
-% You can now fill in the TeX for your question here.
 
-% Now, down to brasstacks. ** Writing good solutions is an Art **. 
-% Eventually, you will find your own style. But here are some thoughts 
-% to get you started: 
-%
-%   1. Write to be understood - but be crisp. Your own solution should not take 
-%      more space than you will give to the student. Hence, if you take more than 
-%      a half-page to write a solution, then give the student a full-page and so on...
-%
-%   2. Use margin-notes to "talk" to students about the critical insights
-%      in the question. The tone can be - in fact, should be - informal
-%
-%   3. Don't shy away from creating margin-figures you think will help
-%      students understand. Yes, it is a little more work per question. 
-%      But the question & solution will be written only once. Make that
-%      attempt at writing a solution count.
-%      
-%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
-% 
-%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
-%      education company. Bad spellings suggest that we ourselves 
-%      don't have any education. Also, use American spellings by default
-% 
-%   5. If a question has multiple parts, then first delete lines 40-41
-%   6. If a question does not have parts, then first delete lines 43-69
-%   
-%   7. Create versions of the question when possible. Use commands defined in 
-%      tufte-tweaks.sty to do so. Its easier than you think
 
  %\noprintanswers
  %\setcounter{rolldice}{0}
@@ -67,25 +38,34 @@
   }
 }
 
+\MULTIPLY\vbthree{-1}\a
 \SOLVELINEARSYSTEM(0, 1; \vbtwo, \vbthree)(\vbone,\vbfour)(\p,\q)
-\gcalcexpr[0]{\vbseven}{(\vbfive - 1) * 10}
-\gcalcexpr[0]{\vbpreal}{\p * 10}
-\gcalcexpr[0]{\vbqreal}{\q * 10}
-\gcalcexpr[0]{\pplusq}{\p + \q}
-\gcalcexpr[0]{\cthree}{(\vbfive^2 * 2) - 2}
-\gcalcexpr[0]{\afive}{\p - 1} % coeff a eqn 5
-\gcalcexpr[0]{\bfive}{\q - 1} 
-\gcalcexpr[0]{\asix}{\p + 1}  % coeff a eqn 6
-\gcalcexpr[0]{\bsix}{\q + 1}
-\gcalcexpr[0]{\csix}{\cthree - \pplusq}
-\gcalcexpr[0]{\a}{-1 + \vbfive}
-\gcalcexpr[0]{\b}{-1 + \vbfive}
-\gcalcexpr[0]{\c}{2 * \a}
-\gcalcexpr[0]{\midpt}{(\vbseven - 10)/2}
 
-\question[4] Find the equation of a straight line that passes
- through the \textit{intersection} of lines $y=\vbone$ and 
- $\vbtwo x \vbthree y = \vbfour$ and is at a distance of $\vbfive\sqrt{2}$
+\ADD\p{1}\j
+\SQUARE\j\jj
+
+\ADD\q{1}\k
+\SQUARE\k\kk
+
+\SQUARE\vbfive\c
+\MULTIPLY\c{2}\d
+
+\SUBTRACT\d\jj\aa
+\MULTIPLY\j\k\x
+\MULTIPLY\x{2}\bb
+\SUBTRACT\d\kk\cc
+
+\gcalcexpr[0]\disc{(\bb^2 - 4*\aa*\cc)^{0.5}}
+\MULTIPLY\bb{-1}\mbb
+\MULTIPLY\aa{2}\dnm
+
+\ADD\mbb\disc\f
+\SUBTRACT\mbb\disc\g
+
+
+\question[4] Find the equation of a straight lines that pass
+ through the intersection of lines $L_1: y=\vbone$ and 
+ $L_2: \vbtwo x \vbthree y = \vbfour$ and are at a distance of $\vbfive\sqrt{2}$
  units from $(-1, -1)$.
 
 \insertQR{QRC}
@@ -96,83 +76,69 @@
   % stuff to be shown only in the answer key - like explanatory margin figures
   \begin{marginfigure}[+40 pt]
     \figinit{pt}
-      \figpt 100:(-10,-10)
-      \figpt 101:(\vbpreal,\vbqreal)
-      \figpt 102:(\vbseven,\vbseven)
-      \figpt 103:(\midpt, \midpt)
+      \figpt 100:(0,20)
+      \figpt 101:$R_1$(90,50)
+      \figpt 102:(0,40)
+      \figpt 103:$R_2$(90,15)
+      \figvectP 201[100,101]
+      \figvectP 203[102,103]
+      \figptinterlines 151:$A$[101,201;103,203] % pt of intersection
+      \figpt 300:$B$ (90,33)
+      \figptorthoprojline 251:$X$=300/100,101/
+      \figptorthoprojline 253:$Y$=300/102,103/
     \figdrawbegin{}
       \figdrawline [100,101]
-      \figdrawline [101,102]
-      \figdrawaltitude 5[100,102,101]
+      \figdrawline [102,103]
+      %\figdrawline [300, 251]
+      %\figdrawline [300, 253]
+      \figdrawaltitude 5 [300,101,100]
+      \figdrawaltitude 5 [300, 103, 102]
+      %\figdrawaltitude 5[100,102,101]
     \figdrawend
     \figvisu{\figBoxA}{}{%
-      \figwritesw 100: ${(-1,-1)}$(2 pt)
-      \figwritese 101: ${(\p,\q)}$(2 pt)
-      \figwritene 102: ${(a,b)}$(2 pt)
-      \figwritenw 103: $\vbfive\sqrt{2}$(2 pt)
+      \figwritene 101:(2 pt)
+      \figsetmark{$\bullet$}
+      \figwriten 151:(4 pt)
+      \figwritee 300:(2 pt)
+      \figsetmark{}
+      \figwritese 103:(2 pt)
+      \figwritenw 251:(2 pt)
+      \figwritesw 253:(2 pt)
     }
     \centerline{\box\figBoxA}
   \end{marginfigure}
-  \marginnote[275 pt]{Though the equation is of quadratic form and will have
-  two roots, we can choose any one of the roots since the question asks for
-  a (one) straight line only}
 \fi 
 
 \begin{solution}[\fullpage]
-	Let us begin by finding the intersection point of the given lines,
-	\begin{align}
-		y &= \vbone \nonumber \\
-		\vbtwo x \vbthree y &= \vbfour \nonumber \\
-		\Rightarrow x       &= \p \text{ and } y = \q
-	\end{align}	
-	Let the coordinates of the point where the perpendicular from $(-1,-1)$
-	meets the line in question, be $(a,b)$ \textit{(see figure)}.\\
-	$(a,b)$ is $\vbfive\sqrt{2}$ units away from $(-1,-1)$. Using the standard
-	formula for distance between two points,
-	\begin{align}
-	  \sqrt{(b+1)^2+(a+1)^2}&=\vbfive\sqrt{2} \\
-	  \Rightarrow a^2 + b^2 &= -2a -2b + \cthree
-	\end{align}
-	Also, the line joining $(a,b)$ with $(-1,-1)$ is perpendicular to the 
-	line joining $(a,b)$ with $(\p,\q)$, therefore the product of their
-	slopes is $-1$,
-	\begin{align}
-	  \left(\dfrac{b-\q}{a-\p}\right)\times
-	    \left(\dfrac{b+1}{a+1}\right)&=-1 \\
-	  \Rightarrow a^2 + b^2          &= \afive a +\bfive b +\pplusq
-	\end{align}
-	Using equations (3) and (5) we get,
-	\begin{align}
-	  \asix a + \bsix b=\csix
-	\end{align}
-	Substitute result (6) in equation (2) or (4). Solve for $a$ and $b$ to
-	get,
-	\begin{align}
-	  a=\a \text{, }b=\b
-	\end{align}
-	Therefore, equation of the line joining $(\p,\q)$ and $(\a,\b)$ is,
-	\begin{align}
-	  y-\q &=\dfrac{\a-\q}{\b-\p}(x-\p) \\
-	  x + y&=\c
-	\end{align}	
+  Let $R_1$ and $R_2$ be the two required lines. They pass through $A$ - which is the 
+  point of intersection of $L_1$ and $L_2$ (not shown). The distance of $R_1$ and $R_2$ from 
+  $B = (-1,-1)$ is $\vbfive\sqrt{2}$ units
+  
+  Now, lines $L_1$ and $L_2$ intersect when 
+  \begin{align}
+    y &= \vbone \text{ and, } \\
+    \a y &= \vbtwo x - \vbfour
+  \end{align}
+  Solving the above equations gives us $A = (\p,\q)$
+
+  The equation of any line passing through $A$ - like $R_1$ and $R_2$ - is given by 
+  \begin{align}
+    \dfrac{y-\q}{x-\p} &= m \\ 
+    \implies \underbrace{mx - y + (\q - \p m) = 0}_{Ax + By + C = 0}    
+  \end{align}
+  
+  Moreover, the distance of any such line from $B = (-1,-1)$ will be given by 
+  \begin{align}
+    D &= \dfrac{\vert Ax_B + By_B + C\vert}{\sqrt{A^2+B^2}} \\
+      &= \dfrac{\vert -\j m + \k \vert }{\sqrt{m^2 + 1}} \\
+      \implies D^2 &= \dfrac{(\j m - \k)^2}{m^2 + 1} = \d \\
+      \implies \aa m^2 + \bb m + \cc &= 0 \text{ or } m = \WRITEFRAC\f\dnm, \WRITEFRAC\g\dnm 
+  \end{align}
+
+  So, we know that $R_1$ and $R_2$ pass through $A = (\p,\q)$ and that they have slopes 
+  given by $(8)$ 
+
+  It is now a simple case of plugging the values of $m$ we found in $(8)$ into $(3)$ 
+  to get \textbf{equations} for the two lines. We leave this as an exercise
 \end{solution}
-\ifprintrubric
-  \begin{table}
-        \begin{tabular}{ p{5cm}p{5cm} }
-                \toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-                  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\
-                \midrule % ***** Insights & formulations ******
-        Intersection point of two lines & \\
-        Distance between $(-1,-1)$ and $(a,b)$ equals given value & \\
-        Product of slopes of the two line segments is $-1$  & \\
-                \toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-                \midrule % ***** Numerical answers (below) **********
-        $y=2$, $4\sqrt{2}$, $x-4y+4=0$  & $(3,3)$, $x+y=6$ \\
-        $y=1$, $3\sqrt{2}$, $2x-3y-3=0$ & $(2,2)$, $x+y=4$ \\
-        $y=4$, $4\sqrt{2}$, $3x-2y+2=0$ & $(3,3)$, $x+y=6$ \\
-        $y=2$, $3\sqrt{2}$, $2x-y+1=0$  & $(2,2)$, $x+y=4$ \\
-                \bottomrule
-        \end{tabular}
-  \end{table}
-\fi
+
