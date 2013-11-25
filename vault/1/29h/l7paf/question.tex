@@ -27,13 +27,8 @@
   }
 }
 
-\gcalcexpr[0]\midslots{\vbtwo - 1}
-\gcalcexpr[0]\totalslots{\vbtwo + 1}
-\gcalcexpr[0]\remainingA{\vbone - \vbtwo + 1}
-\gcalcexpr[0]\tmp{\vbone + 1}
-
-\SUBTRACT\vbtwo{1}\a
-\ADD\a{2}\nr
+\SUBTRACT\vbone{1}\a
+\ADD\a{2}\b
 
 \question[5] At an international conference, there are $\vbone$ representatives of country A and $\vbtwo$ representatives 
 of country B. In how many ways can they be seated along a table so that no two representatives of country $B$ 
@@ -44,26 +39,18 @@ are sitting together? You can leave your answer at the final expression
 \watchout[-30pt]
 
 \begin{solution}[\halfpage]
-	First, let the $\vbtwo$ representatives of country B sit down. Between them, there are $\midslots$ empty 
-	slots where if we were to place a representative of country A, then no two of B would be sitting 
-	together. The number of ways to do this are 
-	
-	\begin{align}
-		N_1 &= \encr\vbone\midslots\times\midslots ! \times\vbtwo !
-	\end{align}
-	We still have $\remainingA$ representatives of country A to seat. But they can sit anywhere - 
-	in the $\midslots$ slots between or in extreme left and extreme right slots. In short, there are 
-	$\totalslots = (\midslots + 2)$ slots for them to be in 
-	
-	This is just like the problem of distributing $N$ things amonst $M$ people. In this case, we 
-	have to dsitribute $\remainingA$ amongst $\totalslots$. And the formula for that is
-	\begin{align}
-		N_2 &= \eDistNAmongstM\remainingA\totalslots\times\remainingA !
-	\end{align}
-	The required answer, therefore, is 
-	\begin{align}
-		N_{\texttt{total}} &= N_1 \times N_2 \\ 
-		&= \fncr\vbone\midslots\times\midslots ! \times\vbtwo ! \times \eDistNAmongstM\remainingA\totalslots\times\remainingA ! \\
-		&= \dfrac{\vbone ! \times \tmp !}{\remainingA !} = \vbthree
-	\end{align}
+   First, let us place $\vbone$ chairs - $A_1\rightarrow A_{\vbone}$ - for country A's delegates
+
+   On the \textbf{left} of $A_1$, \textbf{right} of $A_{\vbone}$ and between any two $A_j$, 
+   let us place \textbf{one} chair for delegates of country B. The total number of such chairs is 
+   $\vbone - 1 + 2 = \b$, and let us call them $B_1\rightarrow B_{\b}$
+
+   Now, if delegates from country A sit in the chairs $A_1\rightarrow A_{\vbone}$ and those from 
+   B in $B_1\rightarrow B_{\b}$, then no two of B would be sitting together
+
+   \begin{align}
+     N &= \vbone ! \times\binom\b\vbtwo\times\vbtwo ! = \vbthree
+   \end{align}
+
 \end{solution}
+
