@@ -17,23 +17,23 @@
     % variables 
     \renewcommand{\vbone}{positive}
     \renewcommand{\vbtwo}{negative}
-    \renewcommand{\vbthree}{4}
-    \renewcommand{\vbfour}{-4}
-    \renewcommand{\vbfive}{-4}
-    \renewcommand{\vbsix}{+4}
+    \renewcommand{\vbthree}{3}
+    \renewcommand{\vbfour}{-3}
+    \renewcommand{\vbfive}{-3}
+    \renewcommand{\vbsix}{+3}
     \renewcommand{\vbseven}{-}
-    \renewcommand{\vbeight}{-4}
+    \renewcommand{\vbeight}{-3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
       \renewcommand{\vbone}{negative}
       \renewcommand{\vbtwo}{positive}
-      \renewcommand{\vbthree}{-4}
-      \renewcommand{\vbfour}{4}
-      \renewcommand{\vbfive}{+4}
-      \renewcommand{\vbsix}{-4}
+      \renewcommand{\vbthree}{-3}
+      \renewcommand{\vbfour}{3}
+      \renewcommand{\vbfive}{+3}
+      \renewcommand{\vbsix}{-3}
       \renewcommand{\vbseven}{-}
-      \renewcommand{\vbeight}{+4}
+      \renewcommand{\vbeight}{+3}
     }{
       % variables 
       \renewcommand{\vbone}{negative}
@@ -50,12 +50,44 @@
 \ABSVALUE\vbthree\r
 \SQUARE\vbthree\rsq
 
-\question A circle touches the $\vbone$ x-axis and $\vbtwo$ y-axis 
-at a distance of $\r$ units from the origin.
+\question A circle with center at point $C$ touches the $\vbone$ x-axis 
+at point $A$ and the $\vbtwo$ y-axis at point $B$. Points $A$ and $B$ are 
+both $\r$ units from the origin.
 
 \insertQR{}
 
 \watchout
+
+\ifprintanswers  
+  \MULTIPLY\vbthree{10}\xcept
+  \MULTIPLY\vbfour{10}\ycept
+  \MULTIPLY\r{10}\RAD
+  % stuff to be shown only in the answer key - like explanatory margin figures
+  \begin{marginfigure}
+    \figinit{pt}
+      \def\min{-60}
+      \def\max{60}      
+      \figpt 100:(0,0)
+      \figpt 101:(\xcept,0)
+      \figpt 102:(0,\ycept)
+      \figpt 103:(\xcept, \ycept)
+    \figdrawbegin{}
+      %\figdrawaxes 100(\min, \max, \min, \max)
+      \drawAxes {100} \min \max \min \max
+      \figdrawcirc 103(\RAD)
+      \figdrawline [101,102]
+    \figdrawend
+    \figvisu{\figBoxA}{}{%
+      \figwritese 100:$O$(2pt)      
+      \figwrites 101:$A$(2pt)
+      \figwritew 102:$B$(2pt)
+      \figset write(mark=$\bullet$)      
+      \figwrites 103:$C\text{($\xcept$, $\ycept$)}$(2pt)
+    }
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
+\fi 
+
 
 \begin{parts}
 
@@ -64,7 +96,7 @@ at a distance of $\r$ units from the origin.
   The general equation of a circle with its center at $(a, b)$ 
   and radius $r$ is,
   \begin{align}
-                &(x-a)^2 + (y-b)^2 = r^2 \\
+                &(x-a)^2 + (y-b)^2 = r^2
   \end{align}
   Our circle touches the x and y axes therefore it's radius is
   $\r$ units and its center is at $(\vbthree,\vbfour)$. The equation
@@ -75,7 +107,7 @@ at a distance of $\r$ units from the origin.
 \end{solution}
 
 \part Find the equation of the line that passes through the points
-of contact of the circle and the x and y axes?
+$A$ and $B$?
 
 \begin{solution}
   The line passing through the points of contact $(\vbthree,0)$
