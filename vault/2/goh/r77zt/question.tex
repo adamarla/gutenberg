@@ -1,93 +1,71 @@
-% This is an empty shell file placed for you by the 'examiner' script.
-% You can now fill in the TeX for your question here.
-
-% Now, down to brasstacks. ** Writing good solutions is an Art **. 
-% Eventually, you will find your own style. But here are some thoughts 
-% to get you started: 
-%
-%   1. Write to be understood - but be crisp. Your own solution should not take 
-%      more space than you will give to the student. Hence, if you take more than 
-%      a half-page to write a solution, then give the student a full-page and so on...
-%
-%   2. Use margin-notes to "talk" to students about the critical insights
-%      in the question. The tone can be - in fact, should be - informal
-%
-%   3. Don't shy away from creating margin-figures you think will help
-%      students understand. Yes, it is a little more work per question. 
-%      But the question & solution will be written only once. Make that
-%      attempt at writing a solution count.
-%      
-%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
-% 
-%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
-%      education company. Bad spellings suggest that we ourselves 
-%      don't have any education. Also, use American spellings by default
-% 
-%   5. If a question has multiple parts, then first delete lines 40-41
-%   6. If a question does not have parts, then first delete lines 43-69
-%   
-%   7. Create versions of the question when possible. Use commands defined in 
-%      tufte-tweaks.sty to do so. Its easier than you think
-
 % \noprintanswers
 % \setcounter{rolldice}{0}
 % \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{2}
+  \renewcommand{\vbtwo}{1}
+  \renewcommand{\vbthree}{1}
+  \renewcommand{\vbfour}{2}
+  \renewcommand{\vbfive}{5}
+  \renewcommand{\vbsix}{1}
+  \renewcommand{\vbseven}{3}
+  \renewcommand{\vbeight}{3}
+  \renewcommand{\vbnine}{6}
+  \renewcommand{\vbten}{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{3}
+    \renewcommand{\vbtwo}{2}
+    \renewcommand{\vbthree}{2}
+    \renewcommand{\vbfour}{2}
+    \renewcommand{\vbfive}{4}
+    \renewcommand{\vbsix}{1}
+    \renewcommand{\vbseven}{4}
+    \renewcommand{\vbeight}{3}
+    \renewcommand{\vbnine}{5}
+    \renewcommand{\vbten}{2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{3}
+      \renewcommand{\vbtwo}{2}
+      \renewcommand{\vbthree}{4}
+      \renewcommand{\vbfour}{2}
+      \renewcommand{\vbfive}{5}
+      \renewcommand{\vbsix}{1}
+      \renewcommand{\vbseven}{9}
+      \renewcommand{\vbeight}{1}
+      \renewcommand{\vbnine}{8}
+      \renewcommand{\vbten}{1}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{2}
+      \renewcommand{\vbtwo}{1}
+      \renewcommand{\vbthree}{1}
+      \renewcommand{\vbfour}{2}
+      \renewcommand{\vbfive}{3}
+      \renewcommand{\vbsix}{1}
+      \renewcommand{\vbseven}{7}
+      \renewcommand{\vbeight}{1}
+      \renewcommand{\vbnine}{6}
+      \renewcommand{\vbten}{1}
     }
   }
 }
 
-\question
+\ADD\vbnine{0}\a
+\ADD\vbten{0}\b
+\SUBTRACT\vbfour\a\distx
+\SUBTRACT\vbfive\b\disty
+\gcalcexpr[0]\rsq{(\distx * \distx) + (\disty * \disty)}
+\gcalcexpr[0]\tp{(\vbone * \vbfive) + (\vbtwo * \vbfour)}
+
+\question The line $l_1(\vbone x -\vbtwo y =-\vbthree)$ touches a circle 
+with center $O$ at point $P(\vbfour, \vbfive)$. Point $O$ lies on the line
+$l_2(\vbsix x-\vbseven y =-\vbeight)$. What is the equation of the circle?
 
 \insertQR{}
 
@@ -98,62 +76,49 @@
   \begin{marginfigure}
     \figinit{pt}
       \figpt 100:(0,0)
-      \figpt 101:(0,0)
+      \figpt 101:(-20,20)
+      \figpt 102:(-40,0)
+      \figpt 103:(0,40)
+      \figpt 104:(-30,-10)
+      \figpt 105:(30,10)
     \figdrawbegin{}
-      \figdrawline [100,101]
+      \figdrawaltitude 5 [100,102,103]
+      \figdrawcirc 100 (28)
+      \figdrawline [102,103]
+      \figdrawline [104,105]
     \figdrawend
     \figvisu{\figBoxA}{}{%
+      \figwritese 100:$O\text{($a$,$b$)}$(2pt)
+      \figwritenw 101:$P\text{($\vbfour$, $\vbfive$)}$(2pt)
+      \figwritesw 102:$l_1$(3pt)
+      \figwritesw 104:$l_2$(3pt)
     }
     \centerline{\box\figBoxA}
   \end{marginfigure}
 \fi 
 
 \begin{solution}
+  Let the co-ordinates of the center of the circle $O$ be $(a,b)$
+  and it's radius be $r$. Since $l_1$ touches the circle at $P$ 
+  therefore $OP \perp l_1$,
+  \begin{align}
+    \left(\dfrac{b-\vbfive}{a-\vbfour}\right)\cdot
+      \left(\dfrac{\vbone}{\vbtwo}\right)&=-1 \\
+                     \vbtwo a + \vbone b &= \tp
+  \end{align}
+  Since $(a,b)$ lies on $l_2$,
+  \begin{align}
+    \vbsix a -\vbseven b = -\vbeight
+  \end{align}
+  Using equations (2) and (3) we get $a=\a$ and $b=\b$. Now
+  we can use distance formula to get $r$, the distance
+  between $O$ and $P$.
+  \begin{align}
+    r^2 &= (\vbfour-\a)^2+(\vbfive-\b)^2 \\
+        &= \rsq
+  \end{align}
+  Therefore, equation of the circle is,
+  \begin{align}
+    (x-\a^2)+(y-\b^2)=\rsq
+  \end{align}  
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
-
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi
