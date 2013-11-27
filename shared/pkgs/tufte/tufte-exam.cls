@@ -133,3 +133,11 @@
   }
 }
 
+\providecommand\drawAxes[5] {
+  % Wrapper call for \figdrawaxes - with some pre-settings and re-settings
+  \figset arrowhead(fillmode=yes,length=6,angle=15)
+  \figset general(color=0.7)
+  \figdrawaxes #1(#2,#3,#4,#5)
+  \figreset{general}
+}
+
