@@ -1,159 +1,177 @@
-% This is an empty shell file placed for you by the 'examiner' script.
-% You can now fill in the TeX for your question here.
 
-% Now, down to brasstacks. ** Writing good solutions is an Art **. 
-% Eventually, you will find your own style. But here are some thoughts 
-% to get you started: 
-%
-%   1. Write to be understood - but be crisp. Your own solution should not take 
-%      more space than you will give to the student. Hence, if you take more than 
-%      a half-page to write a solution, then give the student a full-page and so on...
-%
-%   2. Use margin-notes to "talk" to students about the critical insights
-%      in the question. The tone can be - in fact, should be - informal
-%
-%   3. Don't shy away from creating margin-figures you think will help
-%      students understand. Yes, it is a little more work per question. 
-%      But the question & solution will be written only once. Make that
-%      attempt at writing a solution count.
-%      
-%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
-% 
-%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
-%      education company. Bad spellings suggest that we ourselves 
-%      don't have any education. Also, use American spellings by default
-% 
-%   5. If a question has multiple parts, then first delete lines 40-41
-%   6. If a question does not have parts, then first delete lines 43-69
-%   
-%   7. Create versions of the question when possible. Use commands defined in 
-%      tufte-tweaks.sty to do so. Its easier than you think
-
-% \noprintanswers
-% \setcounter{rolldice}{0}
-% \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{4}
+  \renewcommand{\vbtwo}{5}
+  \renewcommand{\vbthree}{20}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{6}
+    \renewcommand{\vbtwo}{3}
+    \renewcommand{\vbthree}{11}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{5}
+      \renewcommand{\vbtwo}{7}
+      \renewcommand{\vbthree}{8}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{8}
+      \renewcommand{\vbtwo}{3}
+      \renewcommand{\vbthree}{9}
     }
   }
 }
 
-\question
+\SQUARE\vbone\aa
+\SQUARE\vbtwo\bb
+\SQUARE\vbthree\cc
 
-\insertQR{}
+\MIN\vbone\vbtwo\da
+\MAX\vbone\vbtwo\db
+
+\SQUARE\da\daa
+\SQUARE\db\dbb
+\FRACMINUS{1}{1}\daa\dbb\j\k
+\SQRT\j\p
+\SQRT\k\q
+\DIVIDE\p\q\e
+\MULTIPLY\e\vbthree\nf
+\DIVIDE\nf\da\tempf
+\ROUND[2]\tempf\f
+
+\renewcommand\vbfour{\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2}}
+\renewcommand\vbfive{\dfrac{x^2}{b^2} + \dfrac{y^2}{a^2}}
+
+\ifnumodd{\value{rolldice}}{ % vertical
+  \renewcommand\vbsix\vbfive
+  \renewcommand\vbseven{A}
+  \renewcommand\vbeight{\left(0, \pm a\right)}
+  \renewcommand\vbnine{\left(0, \pm\frac\vbthree\da\right)}
+  \renewcommand\vbten{\left(0, \pm ae\right)}
+  \providecommand\vbeleven{\left(0,\pm\f \right)}
+}{
+  \renewcommand\vbsix\vbfour
+  \renewcommand\vbseven{B}
+  \renewcommand\vbeight{\left(\pm a, 0\right)}
+  \renewcommand\vbnine{\left(\pm\frac\vbthree\da, 0\right)}
+  \renewcommand\vbten{\left(\pm ae, 0\right)}
+  \providecommand\vbeleven{\left(\pm\f,0\right)}
+}
+
+\question One of the two ellipses shown alongside - $A$ and $B$ - has the 
+equation $\aa x^2 + \bb y^2 = \cc$
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
+\begin{marginfigure}
+  \figinit{pt}
+    \def\Xori{45}
+    \def\Yori{45}
+    \def\rxa{30} % A:x-radius
+    \def\rya{40} % A:y-radius
+    \def\rxb{40} % B:x-radius
+    \def\ryb{30} % B:y-radius
+    \def\Xmin{0}
+    \def\Xmax{60}
+    \def\Ymin{0}
+    \def\Ymax{60}
+    \figpt 100:$C$(\Xori,\Yori) % center of ellipse
+    \ifnumodd{\value{rolldice}}{
+      \figptell 101:$V_2$: 100;\rxa,\rya (90,0)
+      \figptell 102:$V_1$: 100;\rxa,\rya (270,0)
+    }{
+      \figptell 101:$V_2$: 100;\rxb,\ryb (0,0)
+      \figptell 102:$V_1$: 100;\rxb,\ryb (180,0)
     }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
-\begin{solution}
-\end{solution}
+    \figptell 500:$A$: 100;\rxa,\rya (60,0)
+    \figptell 501:$B$: 100;\rxb,\ryb (23,0)
+    \figvectP 200 [100,101]
+    \figvectP 201 [100,102]
+    \figpttra 103:$F_2$= 100 /0.6,200/
+    \figpttra 104:$F_1$= 100 /0.6,201/
+  \figdrawbegin{}
+    %\figset arrowhead(fillmode=yes,angle=15,length=6)
+    %\figset general(color=0.7)
+    %\figdrawaxes 100(-\Xmax,\Xmax,-\Ymax,\Ymax)
+    \drawAxes{100}{-\Xmax}\Xmax{-\Ymax}\Ymax
+    %\figreset{general}
+    \figdrawarcell 100;\rxa,\rya (0,360,0)
+    \figdrawarcell 100;\rxb,\ryb (0,360,0)
+  \figdrawend
+  \figvisu{\figBoxA}{}{%
+    \figsetmark{$\bullet$}
+    \figwritese 100:(3)
+    \ifprintanswers
+      \ifnumodd{\value{rolldice}}{
+        \figwritene 101:(3)
+        \figwritese 102:(3)
+        \figwritew 103:(3)
+        \figwritew 104:(3)
+      }{
+        \figwritese 101:(3)
+        \figwritesw 102:(3)
+        \figwritenw 103:(3)
+        \figwritene 104:(3)
+      }
+    \fi
+    \figsetmark{}
+    \figwritene 500:(3)
+    \figwritene 501:(3)
+  }
+  \centerline{\box\figBoxA}
+\end{marginfigure}
 
 \begin{parts}
-  \part 
+  \part For which of the two ellipses is the equation for - $A$ or $B$? Justify your answer
 
   \insertQR{}
   \begin{solution}
+    The given equation can be re-written as 
+    \begin{align}
+      \aa x^2 + \bb y^2 = \cc &\implies 
+      \dfrac{x^2}{\left( \dfrac{\vbthree}{\vbone}\right)^2} + 
+      \dfrac{y^2}{\left( \dfrac\vbthree\vbtwo \right)^2} = 1
+    \end{align}
+    
+    Now, in both the standard forms of an ellipse
+    \begin{align}
+      \vbfour = 1 &\implies \text{horizontally aligned} \\
+      \text{ and } \vbfive = 1 &\implies\text{ vertically aligned }
+    \end{align}
+    it is understood that $a \geq b$
+    
+    Hence $a = \max\left(\frac{\vbthree}{\vbone},\frac{\vbthree}{\vbtwo}\right) = \frac{\vbthree}{\da}$ and $b=\min\left(\frac{\vbthree}{\vbone},\frac{\vbthree}{\vbtwo}\right) = \frac{\vbthree}{\db}$
+
+    This means that the original equation is of the form $\vbsix = 1\implies\vbseven$
   \end{solution}
 
-  \part 
-
-  \insertQR{}
+  \part Mark the vertices of the ellipse and find their coordinates. Call the vertices $V_1$ and $V_2$
   \begin{solution}
+    The vertices of ellipse $\vbseven$ are simply $\vbeight = \vbnine$. These are the points where the ellipse 
+    makes the sharpest turns 
   \end{solution}
 
-  \part 
+  \part Find the eccentricity of the ellipse $(e)$ 
 
   \insertQR{}
   \begin{solution}
+    \begin{align}
+      b^2 &= a^2\cdot (1-e^2) \implies e = \sqrt{1-\frac{b^2}{a^2}} \\
+      &= \sqrt{\dfrac{\j}{\k}} = \e
+    \end{align}
   \end{solution}
 
-  \part 
+
+  \part Mark the foci and find their coordinates. Call the foci $F_1$ and $F_2$
 
   \insertQR{}
   \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
+    The foci of the ellipse would be $\vbten = \vbeleven$
   \end{solution}
 
 \end{parts}
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi
