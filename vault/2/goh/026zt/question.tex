@@ -1,93 +1,40 @@
-% This is an empty shell file placed for you by the 'examiner' script.
-% You can now fill in the TeX for your question here.
 
-% Now, down to brasstacks. ** Writing good solutions is an Art **. 
-% Eventually, you will find your own style. But here are some thoughts 
-% to get you started: 
-%
-%   1. Write to be understood - but be crisp. Your own solution should not take 
-%      more space than you will give to the student. Hence, if you take more than 
-%      a half-page to write a solution, then give the student a full-page and so on...
-%
-%   2. Use margin-notes to "talk" to students about the critical insights
-%      in the question. The tone can be - in fact, should be - informal
-%
-%   3. Don't shy away from creating margin-figures you think will help
-%      students understand. Yes, it is a little more work per question. 
-%      But the question & solution will be written only once. Make that
-%      attempt at writing a solution count.
-%      
-%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
-% 
-%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
-%      education company. Bad spellings suggest that we ourselves 
-%      don't have any education. Also, use American spellings by default
-% 
-%   5. If a question has multiple parts, then first delete lines 40-41
-%   6. If a question does not have parts, then first delete lines 43-69
-%   
-%   7. Create versions of the question when possible. Use commands defined in 
-%      tufte-tweaks.sty to do so. Its easier than you think
 
-% \noprintanswers
-% \setcounter{rolldice}{0}
-% \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{-4} % open left  
+  \renewcommand{\vbthree}{y^2 = \vbtwo x}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{3} % open up
+    \renewcommand{\vbthree}{y = \vbtwo x^2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{-5} %open left
+      \renewcommand{\vbthree}{y^2 = \vbtwo x}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{-6} %open down
+      \renewcommand{\vbthree}{y = \vbtwo x^2}
     }
   }
 }
 
-\question
+\ifnumodd{\value{rolldice}}{
+  \renewcommand\vbfour{x^2 = 4py}
+  \renewcommand\vbfive{ F = (0,\vbone) }
+}{
+  \renewcommand\vbfour{y^2 = 4px}
+  \renewcommand\vbfive{ F = (\vbone, 0) }
+}
+
+\MULTIPLY\vbone{4}\vbtwo
+\ABSVALUE\vbtwo\vbsix
+
+\question Given the equation $\vbthree$ of a parabola
 
 \insertQR{}
 
@@ -95,65 +42,76 @@
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
+  \begin{marginfigure}[20pt]
     \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
+      \def\Xori{49}
+      \def\Yori{45}
+      \figpt 1:$O$(\Xori,\Yori)
+      \figpt 2:(55,55)
+      \figpt 3:(55,35)
+      \figpt 4:(100,75)
+      \figpt 5:$A$(100,15)
+      \figptscontrol 10[4,2,3,5]
+      \ifprintanswers
+        \ifnumodd{\value{rolldice}}{ % x = 4y^2
+          \ifnumequal{\value{rolldice}}{1}{ % y = 4x^2
+            \figpt 20:(40,49)
+            \figpt 21:(58,49)
+            \figpt 22:(15,90)
+            \figpt 23:(75,90)
+          }{ % y = -4x^2
+            \figpt 20:(40,40)
+            \figpt 21:(58,40)
+            \figpt 22:(20,5)
+            \figpt 23:(85,5)
+          }
+        }{
+          \figpt 20:(43,35)
+          \figpt 21:(43,55)
+          \figpt 22:(0,15)
+          \figpt 23:(0,75)
+        }
+        \figptscontrol 30[22,20,21,23]
+      \fi
     \figdrawbegin{}
-      \figdrawline [100,101]
+      \figdrawBezier 1[4,10,11,5]
+      \ifprintanswers
+        \figdrawBezier 1[22,30,31,23]
+      \fi
+      \drawAxes{1}{-5}{60}{-5}{60}
     \figdrawend
     \figvisu{\figBoxA}{}{%
+      \figwritesw 1:(3)
+      \figwritese 5:(3)
+      \ifprintanswers
+        \figwritew 22:$B$(2) 
+      \fi
     }
     \centerline{\box\figBoxA}
   \end{marginfigure}
 \fi 
 
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part Can the figure shown alongside be its plot? If not, then draw the correct plot
 
-  \insertQR{}
   \begin{solution}
+    The given equation - $\vbthree$ - is of the form $\vbfour$, where $p = \vbone$. 
+    Hence, the curve cannot look like $A$ but should look like $B$
   \end{solution}
 
-  \part 
+  \part Find coordinates of the focus($F$) and the vertex ($V$). Mark both in the corrected plot 
 
-  \insertQR{}
   \begin{solution}
+    The vertex of the parabola is simply at $(0,0)$
+
+    And given the form of the equation - $\vbfour$ - the focus is $\vbfive$
   \end{solution}
 
-  \part 
+  \part Find the length of the latus rectum of the parabola 
 
-  \insertQR{}
   \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
+    The length of the latus rectum is simply $= \vert 4\times\vbone\vert = \vbsix$
   \end{solution}
 
 \end{parts}
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi
