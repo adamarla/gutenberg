@@ -39,6 +39,7 @@
 
 %% Counters 
 \newcounter{currSubpart}
+\newcounter{numQuestions}
 
 %% Utility macros
 \providecommand{\ud}{\, \mathrm{d}}
@@ -110,12 +111,22 @@
     \fi 
 }
 
+%% Macros pertaining to question versioning
+\providecommand\storeVersions[1]{
+  %% Ref: http://tex.stackexchange.com/questions/80154/get-n-th-element-of-a-list-with-etoolbox-or-not
+  \stepcounter{numQuestions}
+  \expandafter\def\csname version\thenumQuestions\endcsname{#1}
+}
+
 %% Macros to set student or teacher name 
 \providecommand\setAuthor[2]{
   \setcounter{question}{0}
   \setcounter{page}{1}
   \setcounter{currSubpart}{0}
-  \resetVersionS{#2}
+
+  % store new list of versions to use for this particular student / teacher / whoever
+  \setcounter{numQuestions}{0}
+  \forcsvlist\storeVersions{#2}
   \fancyhead[LO,LE]{\Large\fontfamily{cmss}\selectfont{#1}}
 }
 \providecommand\DocAuthor[2]{\setAuthor{#1}{#2}}
@@ -127,24 +138,24 @@
 
 
 %% Macros to pick question versions 
-\newcommand{\versnum}{0}
-\newcommand{\versionS}
-
-\providecommand\resetVersionS[1] {
-  \renewcommand{\versionS}{#1}
-  \StrLeft{#1}{1}[\version]
-  \setcounter{rolldice}{\version}
-}
-
-\providecommand\setVersionS[1] {
-  \StrLen{#1}[\numques]
-  \ifthenelse{\numques = \thequestion}{}
-  {
-    \ADD\thequestion{1}\versindex
-    \StrMid{#1}{\versindex}{\versindex}[\versnum]
-    \setcounter{rolldice}{\versnum}
-  }
-}
+%\newcommand{\versnum}{0}
+%\newcommand{\versionS}
+%
+%\providecommand\resetVersionS[1] {
+%  \renewcommand{\versionS}{#1}
+%  \StrLeft{#1}{1}[\version]
+%  \setcounter{rolldice}{\version}
+%}
+%
+%\providecommand\setVersionS[1] {
+%  \StrLen{#1}[\numques]
+%  \ifthenelse{\numques = \thequestion}{}
+%  {
+%    \ADD\thequestion{1}\versindex
+%    \StrMid{#1}{\versindex}{\versindex}[\versnum]
+%    \setcounter{rolldice}{\versnum}
+%  }
+%}
 
 
 %% Callbacks  
@@ -164,11 +175,13 @@
 }
 
 \AfterEndEnvironment{solution}{
-  \setVersionS{\versionS}
   \stepcounter{currSubpart} % remember, currSubpart is 0-indexed => value of currSubpart now is for the next subpart
   \xifinlist{\thecurrSubpart}\pageBreaks{\nextpg}{}
+  \setcounter{rolldice}{\csname version\thequestion\endcsname}
+  %Current Version: \therolldice 
 }
 
 \AfterEndEnvironment{parts}{
-  \setVersionS{\versionS}
+  \setcounter{rolldice}{\csname version\thequestion\endcsname}
+  %Current Version: \therolldice 
 }
