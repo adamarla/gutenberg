@@ -32,19 +32,32 @@
 \RequirePackage{g-comb}
 \RequirePackage{etoolbox}
 \RequirePackage{xcolor}
+\RequirePackage{xstring}
 \RequirePackage{calculator}
 \RequirePackage{g-calculus}
 \RequirePackage{g-vector}
 
+%% Counters 
+\newcounter{currSubpart}
+
+%% Utility macros
 \providecommand{\ud}{\, \mathrm{d}}
-%\renewcommand{\solutiontitle}{\noindent{\sc{Solution\\}}\enspace}
+\providecommand\drawAxes[5] {
+  % Wrapper call for \figdrawaxes - with some pre-settings and re-settings
+  \figset arrowhead(fillmode=yes,length=6,angle=15)
+  \figset general(color=0.7)
+  \figdrawaxes #1(#2,#3,#4,#5)
+  \figreset{general}
+}
 
-%% Commands to control layout
 
+%% Macros that define space left for solutions 
 \providecommand{\mcq}{\stretch{1}} 
 \providecommand{\halfpage}{\stretch{2}}
 \providecommand{\fullpage}{\stretch{4}} 
 
+
+%% Macros related to QR codes
 \providecommand\baseQR{}
 \providecommand\setbaseQR[1]{
   \renewcommand\baseQR{#1}
@@ -87,33 +100,33 @@
           \psbarcode[transy=#1,transx=0.4\marginparwidth]{#2}{eclevel=Q width=0.7 height=0.7}{qrcode} 
         \end{marginfigure}
         \ifstrequal{#2}{0}{}{
-          \renewcommand\currQR{\StrLeft{#2}{4}-\StrMid{#2}{5}{8}-\StrRight{#2}{3}}
-
-          % Write the QR Code in the top-right and bottom-left corners 
-          \fancyhead[RO,RE]{\LARGE\fontfamily{cmss}\selectfont{\currQR}}
-          \fancyfoot[LO,LE]{\LARGE\fontfamily{cmss}\selectfont{\currQR}}
+          \ifstrequal{#2}{\currQR}{}{
+            \renewcommand\currQR{#2}
+            \fancyhead[RO,RE]{\LARGE\fontfamily{cmss}\selectfont{\StrLeft{#2}{4}-\StrMid{#2}{5}{8}-\StrRight{#2}{3}}}
+            \fancyfoot[LO,LE]{\LARGE\fontfamily{cmss}\selectfont{\StrLeft{#2}{4}-\StrMid{#2}{5}{8}-\StrRight{#2}{3}}}
+          }
         }
       }
     \fi 
 }
-\newcommand\nextpg{
-  \ifprintanswers
-  \else
-    \ifcancelspace
-    \else\newpage\fi
-  \fi
-}
 
-\providecommand\setAuthor[1]{
+%% Macros to set student or teacher name 
+\providecommand\setAuthor[2]{
+  \setcounter{question}{0}
+  \setcounter{page}{1}
+  \setcounter{currSubpart}{0}
+  \resetVersionS{#2}
   \fancyhead[LO,LE]{\Large\fontfamily{cmss}\selectfont{#1}}
 }
-\providecommand\DocAuthor[1]{\setAuthor{#1}}
+\providecommand\DocAuthor[2]{\setAuthor{#1}{#2}}
 
 \providecommand\setDocumentTitle[1]{
   \fancyhead[CO,CE]{\Large\fontfamily{cmss}\selectfont{#1}}
 }
 \providecommand\School[1]{\setDocumentTitle{#1}}
 
+
+%% Macros to pick question versions 
 \newcommand{\versnum}{0}
 \newcommand{\versionS}
 
@@ -127,17 +140,35 @@
   \StrLen{#1}[\numques]
   \ifthenelse{\numques = \thequestion}{}
   {
-    \gcalcexpr[0]\versindex{\thequestion + 1}
+    \ADD\thequestion{1}\versindex
     \StrMid{#1}{\versindex}{\versindex}[\versnum]
     \setcounter{rolldice}{\versnum}
   }
 }
 
-\providecommand\drawAxes[5] {
-  % Wrapper call for \figdrawaxes - with some pre-settings and re-settings
-  \figset arrowhead(fillmode=yes,length=6,angle=15)
-  \figset general(color=0.7)
-  \figdrawaxes #1(#2,#3,#4,#5)
-  \figreset{general}
+
+%% Callbacks  
+
+\providecommand\pageBreaks{}
+\providecommand\setPageBreaks[1]{
+  \renewcommand\pageBreaks{}
+  \forcsvlist{\listadd\pageBreaks}{#1}
 }
 
+\newcommand\nextpg{
+  \ifprintanswers
+  \else
+    \ifcancelspace
+    \else\newpage\fi
+  \fi
+}
+
+\AfterEndEnvironment{solution}{
+  \setVersionS{\versionS}
+  \stepcounter{currSubpart} % remember, currSubpart is 0-indexed => value of currSubpart now is for the next subpart
+  \xifinlist{\thecurrSubpart}\pageBreaks{\nextpg}{}
+}
+
+\AfterEndEnvironment{parts}{
+  \setVersionS{\versionS}
+}
