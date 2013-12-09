@@ -30,7 +30,7 @@ function create_tex_from_blueprint {
     if [ $line == "\nextpg" ] ; then 
       echo "$line"  >> $1
     else
-      echo "\\setcounter{rolldice}{$[ $RANDOM % 4 ]}" >> $1
+      # echo "\\setcounter{rolldice}{$[ $RANDOM % 4 ]}" >> $1
       cat $VAULT/$line/question.tex >> $1
     fi
   done
@@ -68,7 +68,7 @@ function insert_preamble {
 
   title=$(grep title blueprint | tail -1 | sed -e 's/title://')
   author=$(grep author blueprint | tail -1 | sed -e 's/author://')
-  echo "\\setAuthor{$author}" >> $1
+  echo "\\setAuthor[]{$author}" >> $1
   echo "\\setDocumentTitle{$title}" >> $1
 
   echo "\\begin{document}" >> $1
@@ -136,20 +136,14 @@ function create_blueprint_in_vault {
   echo $rel_path >> blueprint
 }
 
-function unset_question_version {
-  # $1 = Target TeX file 
-  line=$(grep -m 1 -n 'rolldice' $1 | head -1 | sed -e 's/:.*//')
-  if [ $line ] ; then 
-    sed -i "$line d" $1
-  fi
-}
-
 function set_question_version {
   # $1 = Target TeX file 
   # $2 = version - a number in [0,3]
 
-  unset_question_version $1
-  sed -i "4i \\\\\\setcounter{rolldice}{$2}" $1
+  line=$(grep -m 1 -n 'setAuthor' $1 | sed -e 's/:.*//')
+  if [ $line ] ; then 
+    sed -i -e "$line s/setAuthor\[.*\]/setAuthor[$2]/" $1
+  fi
 }
 
 function compile_question_tex {
