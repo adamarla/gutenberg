@@ -127,7 +127,6 @@
 \providecommand{\DocAuthor}[2][]{\setAuthor[#1]{#2}}
 
 \providecommand\documentTitle{}
-
 \providecommand\setDocumentTitle[1]{
   \renewcommand\documentTitle{#1}
 }
@@ -204,9 +203,9 @@
     \ifnumgreater{\thepage}{1}{ 
       \nextpg
       \mbox{}
-      \insertQR[-50pt]{0}
-      \fancyfoot[C]{\LARGE\fontfamily{cmss}\selectfont{For Rough Work Only}}
-      \fancyhead[C]{\LARGE\fontfamily{cmss}\selectfont{Do not submit!}}
+      \insertQR[-30pt]{0}
+      \fancyhead[C]{\LARGE\fontfamily{cmss}\selectfont{For Rough Work Only}}
+      \fancyfoot[C]{\LARGE\fontfamily{cmss}\selectfont{Will not be graded}}
       \nextpg 
     }{}
   }
