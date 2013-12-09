@@ -100,12 +100,11 @@
         \begin{marginfigure}
           \psbarcode[transy=#1,transx=0.4\marginparwidth]{#2}{eclevel=Q width=0.7 height=0.7}{qrcode} 
         \end{marginfigure}
-        \ifstrequal{#2}{0}{}{
-          \ifstrequal{#2}{\currQR}{}{
-            \renewcommand\currQR{#2}
-            \fancyhead[RO,RE]{\LARGE\fontfamily{cmss}\selectfont{\StrLeft{#2}{4}-\StrMid{#2}{5}{8}-\StrRight{#2}{3}}}
-            \fancyfoot[LO,LE]{\LARGE\fontfamily{cmss}\selectfont{\StrLeft{#2}{4}-\StrMid{#2}{5}{8}-\StrRight{#2}{3}}}
-          }
+
+        \ifstrequal{#2}{\currQR}{}{
+          \renewcommand\currQR{#2} % #2 could be equal to zero
+          \fancyhead[RO,RE]{\LARGE\fontfamily{cmss}\selectfont{\StrLeft{#2}{4}-\StrMid{#2}{5}{8}-\StrRight{#2}{3}}}
+          \fancyfoot[LO,LE]{\LARGE\fontfamily{cmss}\selectfont{\StrLeft{#2}{4}-\StrMid{#2}{5}{8}-\StrRight{#2}{3}}}
         }
       }
     \fi 
@@ -120,18 +119,17 @@
 
 %% Macros to set student or teacher name 
 \providecommand{\setAuthor}[2][]{
-  \setcounter{question}{0}
-  \setcounter{page}{1}
-  \setcounter{currSubpart}{0}
-  \setcounter{numQuestions}{0}
+
   \notblank{#1}{\forcsvlist\storeVersions{#1}}{}
   \fancyhead[LO,LE]{\Large\fontfamily{cmss}\selectfont{#2}}
 }
 
 \providecommand{\DocAuthor}[2][]{\setAuthor[#1]{#2}}
 
+\providecommand\documentTitle{}
+
 \providecommand\setDocumentTitle[1]{
-  \fancyhead[CO,CE]{\Large\fontfamily{cmss}\selectfont{#1}}
+  \renewcommand\documentTitle{#1}
 }
 \providecommand\School[1]{\setDocumentTitle{#1}}
 
@@ -174,8 +172,8 @@
 }
 
 \AfterEndEnvironment{solution}{
-  \stepcounter{currSubpart} % remember, currSubpart is 0-indexed => value of currSubpart now is for the next subpart
   \xifinlist{\thecurrSubpart}\pageBreaks{\nextpg}{}
+  \stepcounter{currSubpart} % Move onto next subpart 
   \ifcsmacro{version\thequestion}{
     \setcounter{rolldice}{\csname version\thequestion\endcsname}
   }{
@@ -191,4 +189,25 @@
     \setcounter{rolldice}{0}
   }
   %Current Version: \therolldice % keep for debugging
+}
+
+\BeforeBeginEnvironment{questions}{
+  \setcounter{page}{1}
+  \setcounter{currSubpart}{1} % the breaks returned by Rails is 1-indexed
+  \fancyhead[C]{\Large\fontfamily{cmss}\selectfont\documentTitle}
+  \fancyfoot[C]{\Large\fontfamily{cmss}\selectfont{\copyright\, www.gradians.com}}
+}
+
+\AfterEndEnvironment{questions}{
+  \setcounter{numQuestions}{0}
+  \ifnumodd{\thepage}{
+    \ifnumgreater{\thepage}{1}{ 
+      \nextpg
+      \mbox{}
+      \insertQR[-50pt]{0}
+      \fancyfoot[C]{\LARGE\fontfamily{cmss}\selectfont{For Rough Work Only}}
+      \fancyhead[C]{\LARGE\fontfamily{cmss}\selectfont{Do not submit!}}
+      \nextpg 
+    }{}
+  }
 }
