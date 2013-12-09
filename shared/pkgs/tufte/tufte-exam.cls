@@ -119,17 +119,16 @@
 }
 
 %% Macros to set student or teacher name 
-\providecommand\setAuthor[2]{
+\providecommand{\setAuthor}[2][]{
   \setcounter{question}{0}
   \setcounter{page}{1}
   \setcounter{currSubpart}{0}
-
-  % store new list of versions to use for this particular student / teacher / whoever
   \setcounter{numQuestions}{0}
-  \forcsvlist\storeVersions{#2}
-  \fancyhead[LO,LE]{\Large\fontfamily{cmss}\selectfont{#1}}
+  \notblank{#1}{\forcsvlist\storeVersions{#1}}{}
+  \fancyhead[LO,LE]{\Large\fontfamily{cmss}\selectfont{#2}}
 }
-\providecommand\DocAuthor[2]{\setAuthor{#1}{#2}}
+
+\providecommand{\DocAuthor}[2][]{\setAuthor[#1]{#2}}
 
 \providecommand\setDocumentTitle[1]{
   \fancyhead[CO,CE]{\Large\fontfamily{cmss}\selectfont{#1}}
@@ -177,11 +176,19 @@
 \AfterEndEnvironment{solution}{
   \stepcounter{currSubpart} % remember, currSubpart is 0-indexed => value of currSubpart now is for the next subpart
   \xifinlist{\thecurrSubpart}\pageBreaks{\nextpg}{}
-  \setcounter{rolldice}{\csname version\thequestion\endcsname}
-  %Current Version: \therolldice 
+  \ifcsmacro{version\thequestion}{
+    \setcounter{rolldice}{\csname version\thequestion\endcsname}
+  }{
+    \setcounter{rolldice}{0}
+  }
+  %Current Version: \therolldice % keep for debugging
 }
 
 \AfterEndEnvironment{parts}{
-  \setcounter{rolldice}{\csname version\thequestion\endcsname}
-  %Current Version: \therolldice 
+  \ifcsmacro{version\thequestion}{
+    \setcounter{rolldice}{\csname version\thequestion\endcsname}
+  }{
+    \setcounter{rolldice}{0}
+  }
+  %Current Version: \therolldice % keep for debugging
 }
