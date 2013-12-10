@@ -106,7 +106,7 @@
           \fancyhead[RO,RE]{\LARGE\fontfamily{cmss}\selectfont{\StrLeft{#2}{4}-\StrMid{#2}{5}{8}-\StrRight{#2}{3}}}
           \fancyfoot[LO,LE]{\LARGE\fontfamily{cmss}\selectfont{\StrLeft{#2}{4}-\StrMid{#2}{5}{8}-\StrRight{#2}{3}}}
         }
-      }
+      }{}
     \fi 
 }
 
