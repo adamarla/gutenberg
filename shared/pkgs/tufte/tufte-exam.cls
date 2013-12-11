@@ -206,7 +206,7 @@
       \insertQR[-30pt]{0}
       \fancyhead[C]{\LARGE\fontfamily{cmss}\selectfont{For Rough Work Only}}
       \fancyfoot[C]{\LARGE\fontfamily{cmss}\selectfont{Will not be graded}}
-      \nextpg 
     }{}
+    \nextpg 
   }{}
 }
