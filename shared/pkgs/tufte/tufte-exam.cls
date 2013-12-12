@@ -192,7 +192,7 @@
 
 \BeforeBeginEnvironment{questions}{
   \setcounter{page}{1}
-  \setcounter{currSubpart}{1} % the breaks returned by Rails is 1-indexed
+  \setcounter{currSubpart}{0} % the breaks returned by Rails are 0-indexed
   \fancyhead[C]{\Large\fontfamily{cmss}\selectfont\documentTitle}
   \fancyfoot[C]{\Large\fontfamily{cmss}\selectfont{\copyright\, www.gradians.com}}
 }
