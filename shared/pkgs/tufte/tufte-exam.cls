@@ -119,8 +119,10 @@
 
 %% Macros to set student or teacher name 
 \providecommand{\setAuthor}[2][]{
-
-  \notblank{#1}{\forcsvlist\storeVersions{#1}}{}
+  \notblank{#1}{
+    \forcsvlist\storeVersions{#1}
+    \setcounter{rolldice}{\csname version1\endcsname} % set version for Q1
+  }{}
   \fancyhead[LO,LE]{\Large\fontfamily{cmss}\selectfont{#2}}
 }
 
@@ -162,6 +164,12 @@
   \forcsvlist{\listadd\pageBreaks}{#1}
 }
 
+\providecommand\versionTriggers{}
+\providecommand\setVersionTriggers[1]{
+  \renewcommand\versionTriggers{}
+  \forcsvlist{\listadd\versionTriggers}{#1}
+}
+
 \newcommand\nextpg{
   \ifprintanswers
   \else
@@ -172,23 +180,25 @@
 
 \AfterEndEnvironment{solution}{
   \xifinlist{\thecurrSubpart}\pageBreaks{\nextpg}{}
+  \xifinlist{\thecurrSubpart}\versionTriggers{
+    \ADD{\value{question}}{1}\nq
+    \ifcsmacro{version\nq}{
+      \setcounter{rolldice}{\csname version\nq\endcsname }
+    }
+    % \setcounter{rolldice}{\csname version\j\endcsname}
+  }{}
+
   \stepcounter{currSubpart} % Move onto next subpart 
-  \ifcsmacro{version\thequestion}{
-    \setcounter{rolldice}{\csname version\thequestion\endcsname}
-  }{
-    \setcounter{rolldice}{0}
-  }
-  %Current Version: \therolldice % keep for debugging
 }
 
-\AfterEndEnvironment{parts}{
-  \ifcsmacro{version\thequestion}{
-    \setcounter{rolldice}{\csname version\thequestion\endcsname}
-  }{
-    \setcounter{rolldice}{0}
-  }
-  %Current Version: \therolldice % keep for debugging
-}
+%\AfterEndEnvironment{parts}{
+%  \ifcsmacro{version\thequestion}{
+%    \setcounter{rolldice}{\csname version\thequestion\endcsname}
+%  }{
+%    \setcounter{rolldice}{0}
+%  }
+%  %Current Version: \therolldice % keep for debugging
+%}
 
 \BeforeBeginEnvironment{questions}{
   \setcounter{page}{1}
