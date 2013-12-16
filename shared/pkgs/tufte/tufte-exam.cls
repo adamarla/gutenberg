@@ -69,7 +69,6 @@
 }
 
 \providecommand\embedQR[1][0pt] {
-  %\renewcommand\qrcText{\baseQR\thepage}
   \ifprintanswers
   \else
     \ifcancelspace
@@ -86,23 +85,14 @@
 
       \ifdefempty\baseQR{}{
         % Write the QR Code in the top-right and bottom-left corners 
-        \fancyhead[R]{\LARGE\fontfamily{cmss}\selectfont{\baseQR-\thepage}}
-        \fancyfoot[R]{\LARGE\fontfamily{cmss}\selectfont{\baseQR-\thepage}}
+        \fancyhead[R]{\LARGE\fontfamily{cmss}\selectfont{\baseQR\thepage}}
+        \fancyfoot[R]{\LARGE\fontfamily{cmss}\selectfont{\baseQR\thepage}}
       }
     \fi % if cancelspace
   \fi % ifprintanswers 
 }
 
-% [Deprecated] - sort of. 
-% \insertQR takes 2 arguments whereas \embedQR takes one. The former needs  
-% the QR code to specified explicitly whereas the latter gets it from blueprint
-%
-% In minthril at least, we use \baseQR and leave it to \embedQR and 
-% \nextpg to embed the QR code information
-% 
-% But for backward compatibility reasons, we retain \insertQR
-% And \insertQR works with \currQR like \embedQR works with \baseQR 
-
+% [Deprecated]  
 \providecommand\currQR{}
 \providecommand{\insertQR}[2][0pt]{}
 
