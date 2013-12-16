@@ -32,19 +32,37 @@
 \RequirePackage{g-comb}
 \RequirePackage{etoolbox}
 \RequirePackage{xcolor}
+\RequirePackage{xstring}
 \RequirePackage{calculator}
 \RequirePackage{g-calculus}
 \RequirePackage{g-vector}
 
+%% Counters 
+\newcounter{currSubpart}
+\newcounter{numQuestions}
+
+%% Booleans 
+\newbool{onNewPage}
+\booltrue{onNewPage}
+
+%% Utility macros
 \providecommand{\ud}{\, \mathrm{d}}
-%\renewcommand{\solutiontitle}{\noindent{\sc{Solution\\}}\enspace}
+\providecommand\drawAxes[5] {
+  % Wrapper call for \figdrawaxes - with some pre-settings and re-settings
+  \figset arrowhead(fillmode=yes,length=6,angle=15)
+  \figset general(color=0.7)
+  \figdrawaxes #1(#2,#3,#4,#5)
+  \figreset{general}
+}
 
-%% Commands to control layout
 
+%% Macros that define space left for solutions 
 \providecommand{\mcq}{\stretch{1}} 
 \providecommand{\halfpage}{\stretch{2}}
 \providecommand{\fullpage}{\stretch{4}} 
 
+
+%% Macros related to QR codes
 \providecommand\baseQR{}
 \providecommand\setbaseQR[1]{
   \renewcommand\baseQR{#1}
@@ -55,89 +73,138 @@
   \else
     \ifcancelspace
     \else
-      \begin{marginfigure}
-        \psbarcode[transy=#1,transx=0.4\marginparwidth]{\baseQR-\thepage-\thequestion}{eclevel=Q width=0.7 height=0.7}{qrcode} 
-      \end{marginfigure}
+      \ifbool{onNewPage}{
+        \fancyfoot[L]{
+          \psbarcode[transx=-30pt, transy=-15pt]{\baseQR\thepage}{eclevel=Q width=0.7 height=0.7}{qrcode} 
+        }
+      }{
+        \begin{marginfigure}[#1]
+          \psbarcode[transx=0.4\marginparwidth]{\baseQR\thepage}{eclevel=Q width=0.7 height=0.7}{qrcode} 
+        \end{marginfigure}
+      }
 
       \ifdefempty\baseQR{}{
         % Write the QR Code in the top-right and bottom-left corners 
-        \fancyhead[RO,RE]{\LARGE\fontfamily{cmss}\selectfont{\baseQR-\thepage}}
-        \fancyfoot[LO,LE]{\LARGE\fontfamily{cmss}\selectfont{\baseQR-\thepage}}
+        \fancyhead[R]{\LARGE\fontfamily{cmss}\selectfont{\baseQR\thepage}}
+        \fancyfoot[R]{\LARGE\fontfamily{cmss}\selectfont{\baseQR\thepage}}
       }
-    \fi
-  \fi
+    \fi % if cancelspace
+  \fi % ifprintanswers 
 }
 
-% [Deprecated] - sort of. 
-% \insertQR takes 2 arguments whereas \embedQR takes one. The former needs  
-% the QR code to specified explicitly whereas the latter gets it from blueprint
-%
-% In minthril at least, we use \baseQR and leave it to \embedQR and 
-% \nextpg to embed the QR code information
-% 
-% But for backward compatibility reasons, we retain \insertQR
-% And \insertQR works with \currQR like \embedQR works with \baseQR 
-
+% [Deprecated]  
 \providecommand\currQR{}
-\providecommand{\insertQR}[2][0pt]{
-    \ifprintanswers
-    \else
-      \notblank{#2}{
-        \begin{marginfigure}
-          \psbarcode[transy=#1,transx=0.4\marginparwidth]{#2}{eclevel=Q width=0.7 height=0.7}{qrcode} 
-        \end{marginfigure}
-        \ifstrequal{#2}{0}{}{
-          \renewcommand\currQR{\StrLeft{#2}{4}-\StrMid{#2}{5}{8}-\StrRight{#2}{3}}
+\providecommand{\insertQR}[2][0pt]{}
 
-          % Write the QR Code in the top-right and bottom-left corners 
-          \fancyhead[RO,RE]{\LARGE\fontfamily{cmss}\selectfont{\currQR}}
-          \fancyfoot[LO,LE]{\LARGE\fontfamily{cmss}\selectfont{\currQR}}
-        }
-      }
-    \fi 
+%% Macros pertaining to question versioning
+\providecommand\storeVersions[1]{
+  %% Ref: http://tex.stackexchange.com/questions/80154/get-n-th-element-of-a-list-with-etoolbox-or-not
+  \stepcounter{numQuestions}
+  \expandafter\def\csname version\thenumQuestions\endcsname{#1}
 }
+
+%% Macros to set student or teacher name 
+\providecommand{\setAuthor}[3][]{
+  \notblank{#1}{
+    \forcsvlist\storeVersions{#1}
+    \setcounter{rolldice}{\csname version1\endcsname} % set version for Q1
+  }{}
+  \fancyhead[LO,LE]{\Large\fontfamily{cmss}\selectfont{#2}}
+  \setbaseQR{#3}
+}
+
+\providecommand{\DocAuthor}[2][]{\setAuthor[#1]{#2}}
+
+\providecommand\documentTitle{}
+\providecommand\setDocumentTitle[1]{
+  \renewcommand\documentTitle{#1}
+}
+\providecommand\School[1]{\setDocumentTitle{#1}}
+
+
+%% Macros to pick question versions 
+%\newcommand{\versnum}{0}
+%\newcommand{\versionS}
+%
+%\providecommand\resetVersionS[1] {
+%  \renewcommand{\versionS}{#1}
+%  \StrLeft{#1}{1}[\version]
+%  \setcounter{rolldice}{\version}
+%}
+%
+%\providecommand\setVersionS[1] {
+%  \StrLen{#1}[\numques]
+%  \ifthenelse{\numques = \thequestion}{}
+%  {
+%    \ADD\thequestion{1}\versindex
+%    \StrMid{#1}{\versindex}{\versindex}[\versnum]
+%    \setcounter{rolldice}{\versnum}
+%  }
+%}
+
+
+%% Callbacks  
+
+\providecommand\pageBreaks{}
+\providecommand\setPageBreaks[1]{
+  \renewcommand\pageBreaks{}
+  \forcsvlist{\listadd\pageBreaks}{#1}
+}
+
+\providecommand\versionTriggers{}
+\providecommand\setVersionTriggers[1]{
+  \renewcommand\versionTriggers{}
+  \forcsvlist{\listadd\versionTriggers}{#1}
+}
+
 \newcommand\nextpg{
   \ifprintanswers
   \else
     \ifcancelspace
-    \else\newpage\fi
+    \else\booltrue{onNewPage}\newpage\fi
   \fi
 }
 
-\providecommand\setAuthor[1]{
-  \fancyhead[LO,LE]{\Large\fontfamily{cmss}\selectfont{#1}}
-}
-\providecommand\DocAuthor[1]{\setAuthor{#1}}
+\BeforeBeginEnvironment{solution}{\embedQR}
 
-\providecommand\setDocumentTitle[1]{
-  \fancyhead[CO,CE]{\Large\fontfamily{cmss}\selectfont{#1}}
-}
-\providecommand\School[1]{\setDocumentTitle{#1}}
+\AfterEndEnvironment{solution}{
+  \boolfalse{onNewPage}
+  \xifinlist{\thecurrSubpart}\pageBreaks{\nextpg}{}
+  \xifinlist{\thecurrSubpart}\versionTriggers{
+    \ADD{\value{question}}{1}\nq
+    \ifcsmacro{version\nq}{
+      \setcounter{rolldice}{\csname version\nq\endcsname }
+    }
+    % \setcounter{rolldice}{\csname version\j\endcsname}
+  }{}
 
-\newcommand{\versnum}{0}
-\newcommand{\versionS}
-
-\providecommand\resetVersionS[1] {
-  \renewcommand{\versionS}{#1}
-  \StrLeft{#1}{1}[\version]
-  \setcounter{rolldice}{\version}
+  \stepcounter{currSubpart} % Move onto next subpart 
 }
 
-\providecommand\setVersionS[1] {
-  \StrLen{#1}[\numques]
-  \ifthenelse{\numques = \thequestion}{}
-  {
-    \gcalcexpr[0]\versindex{\thequestion + 1}
-    \StrMid{#1}{\versindex}{\versindex}[\versnum]
-    \setcounter{rolldice}{\versnum}
-  }
+%\AfterEndEnvironment{parts}{
+%  \ifcsmacro{version\thequestion}{
+%    \setcounter{rolldice}{\csname version\thequestion\endcsname}
+%  }{
+%    \setcounter{rolldice}{0}
+%  }
+%  %Current Version: \therolldice % keep for debugging
+%}
+
+\BeforeBeginEnvironment{questions}{
+  \setcounter{page}{1}
+  \setcounter{currSubpart}{0} % the breaks returned by Rails are 0-indexed
+  \fancyhead[C]{\Large\fontfamily{cmss}\selectfont\documentTitle}
+  \fancyfoot[C]{\Large\fontfamily{cmss}\selectfont{\copyright\, www.gradians.com}}
 }
 
-\providecommand\drawAxes[5] {
-  % Wrapper call for \figdrawaxes - with some pre-settings and re-settings
-  \figset arrowhead(fillmode=yes,length=6,angle=15)
-  \figset general(color=0.7)
-  \figdrawaxes #1(#2,#3,#4,#5)
-  \figreset{general}
+\AfterEndEnvironment{questions}{
+  \setcounter{numQuestions}{0}
+  \ifnumodd{\thepage}{
+    \nextpg
+    \mbox{}
+    \insertQR[-30pt]{0}
+    \fancyhead[C]{\LARGE\fontfamily{cmss}\selectfont{For Rough Work Only}}
+    \fancyfoot[C]{\LARGE\fontfamily{cmss}\selectfont{Will not be graded}}
+  }{}
+  \nextpg 
 }
-
