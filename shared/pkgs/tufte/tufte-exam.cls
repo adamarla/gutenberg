@@ -41,6 +41,10 @@
 \newcounter{currSubpart}
 \newcounter{numQuestions}
 
+%% Booleans 
+\newbool{onNewPage}
+\booltrue{onNewPage}
+
 %% Utility macros
 \providecommand{\ud}{\, \mathrm{d}}
 \providecommand\drawAxes[5] {
@@ -69,46 +73,28 @@
   \else
     \ifcancelspace
     \else
-      \begin{marginfigure}
-        \psbarcode[transy=#1,transx=0.4\marginparwidth]{\baseQR-\thepage-\thequestion}{eclevel=Q width=0.7 height=0.7}{qrcode} 
-      \end{marginfigure}
+      \ifbool{onNewPage}{
+        \fancyfoot[L]{
+          \psbarcode[transx=-30pt, transy=-15pt]{\baseQR\thepage}{eclevel=Q width=0.7 height=0.7}{qrcode} 
+        }
+      }{
+        \begin{marginfigure}[#1]
+          \psbarcode[transx=0.4\marginparwidth]{\baseQR\thepage}{eclevel=Q width=0.7 height=0.7}{qrcode} 
+        \end{marginfigure}
+      }
 
       \ifdefempty\baseQR{}{
         % Write the QR Code in the top-right and bottom-left corners 
-        \fancyhead[RO,RE]{\LARGE\fontfamily{cmss}\selectfont{\baseQR-\thepage}}
-        \fancyfoot[LO,LE]{\LARGE\fontfamily{cmss}\selectfont{\baseQR-\thepage}}
+        \fancyhead[R]{\LARGE\fontfamily{cmss}\selectfont{\baseQR\thepage}}
+        \fancyfoot[R]{\LARGE\fontfamily{cmss}\selectfont{\baseQR\thepage}}
       }
-    \fi
-  \fi
+    \fi % if cancelspace
+  \fi % ifprintanswers 
 }
 
-% [Deprecated] - sort of. 
-% \insertQR takes 2 arguments whereas \embedQR takes one. The former needs  
-% the QR code to specified explicitly whereas the latter gets it from blueprint
-%
-% In minthril at least, we use \baseQR and leave it to \embedQR and 
-% \nextpg to embed the QR code information
-% 
-% But for backward compatibility reasons, we retain \insertQR
-% And \insertQR works with \currQR like \embedQR works with \baseQR 
-
+% [Deprecated]  
 \providecommand\currQR{}
-\providecommand{\insertQR}[2][0pt]{
-    \ifprintanswers
-    \else
-      \notblank{#2}{
-        \begin{marginfigure}
-          \psbarcode[transy=#1,transx=0.4\marginparwidth]{#2}{eclevel=Q width=0.7 height=0.7}{qrcode} 
-        \end{marginfigure}
-
-        \ifstrequal{#2}{\currQR}{}{
-          \renewcommand\currQR{#2} % #2 could be equal to zero
-          \fancyhead[RO,RE]{\LARGE\fontfamily{cmss}\selectfont{\StrLeft{#2}{4}-\StrMid{#2}{5}{8}-\StrRight{#2}{3}}}
-          \fancyfoot[LO,LE]{\LARGE\fontfamily{cmss}\selectfont{\StrLeft{#2}{4}-\StrMid{#2}{5}{8}-\StrRight{#2}{3}}}
-        }
-      }{}
-    \fi 
-}
+\providecommand{\insertQR}[2][0pt]{}
 
 %% Macros pertaining to question versioning
 \providecommand\storeVersions[1]{
@@ -118,12 +104,13 @@
 }
 
 %% Macros to set student or teacher name 
-\providecommand{\setAuthor}[2][]{
+\providecommand{\setAuthor}[3][]{
   \notblank{#1}{
     \forcsvlist\storeVersions{#1}
     \setcounter{rolldice}{\csname version1\endcsname} % set version for Q1
   }{}
   \fancyhead[LO,LE]{\Large\fontfamily{cmss}\selectfont{#2}}
+  \setbaseQR{#3}
 }
 
 \providecommand{\DocAuthor}[2][]{\setAuthor[#1]{#2}}
@@ -174,11 +161,14 @@
   \ifprintanswers
   \else
     \ifcancelspace
-    \else\newpage\fi
+    \else\booltrue{onNewPage}\newpage\fi
   \fi
 }
 
+\BeforeBeginEnvironment{solution}{\embedQR}
+
 \AfterEndEnvironment{solution}{
+  \boolfalse{onNewPage}
   \xifinlist{\thecurrSubpart}\pageBreaks{\nextpg}{}
   \xifinlist{\thecurrSubpart}\versionTriggers{
     \ADD{\value{question}}{1}\nq
