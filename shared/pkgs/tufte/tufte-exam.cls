@@ -122,28 +122,7 @@
 \providecommand\School[1]{\setDocumentTitle{#1}}
 
 
-%% Macros to pick question versions 
-%\newcommand{\versnum}{0}
-%\newcommand{\versionS}
-%
-%\providecommand\resetVersionS[1] {
-%  \renewcommand{\versionS}{#1}
-%  \StrLeft{#1}{1}[\version]
-%  \setcounter{rolldice}{\version}
-%}
-%
-%\providecommand\setVersionS[1] {
-%  \StrLen{#1}[\numques]
-%  \ifthenelse{\numques = \thequestion}{}
-%  {
-%    \ADD\thequestion{1}\versindex
-%    \StrMid{#1}{\versindex}{\versindex}[\versnum]
-%    \setcounter{rolldice}{\versnum}
-%  }
-%}
-
-
-%% Callbacks  
+%% [Callbacks]
 
 \providecommand\pageBreaks{}
 \providecommand\setPageBreaks[1]{
@@ -181,15 +160,6 @@
   \stepcounter{currSubpart} % Move onto next subpart 
 }
 
-%\AfterEndEnvironment{parts}{
-%  \ifcsmacro{version\thequestion}{
-%    \setcounter{rolldice}{\csname version\thequestion\endcsname}
-%  }{
-%    \setcounter{rolldice}{0}
-%  }
-%  %Current Version: \therolldice % keep for debugging
-%}
-
 \BeforeBeginEnvironment{questions}{
   \setcounter{page}{1}
   \setcounter{currSubpart}{0} % the breaks returned by Rails are 0-indexed
@@ -202,7 +172,8 @@
   \ifnumodd{\thepage}{
     \nextpg
     \mbox{}
-    \insertQR[-30pt]{0}
+    \setbaseQR{0}
+    \embedQR
     \fancyhead[C]{\LARGE\fontfamily{cmss}\selectfont{For Rough Work Only}}
     \fancyfoot[C]{\LARGE\fontfamily{cmss}\selectfont{Will not be graded}}
   }{}
