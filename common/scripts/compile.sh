@@ -68,7 +68,7 @@ function insert_preamble {
 
   title=$(grep title blueprint | tail -1 | sed -e 's/title://')
   author=$(grep author blueprint | tail -1 | sed -e 's/author://')
-  echo "\\setAuthor[]{$author}" >> $1
+  echo "\\setAuthor[]{$author}{}" >> $1
   echo "\\setDocumentTitle{$title}" >> $1
 
   echo "\\begin{document}" >> $1

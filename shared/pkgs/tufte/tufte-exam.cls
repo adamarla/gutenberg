@@ -110,10 +110,10 @@
     \setcounter{rolldice}{\csname version1\endcsname} % set version for Q1
   }{}
   \fancyhead[LO,LE]{\Large\fontfamily{cmss}\selectfont{#2}}
-  \setbaseQR{#3}
+  \notblank{#3}{\setbaseQR{#3}}{\setbaseQR{Preview}}
 }
 
-\providecommand{\DocAuthor}[2][]{\setAuthor[#1]{#2}}
+\providecommand{\DocAuthor}[2][]{\setAuthor[#1]{#2}{}}
 
 \providecommand\documentTitle{}
 \providecommand\setDocumentTitle[1]{
