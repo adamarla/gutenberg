@@ -85,8 +85,8 @@
 
       \ifdefempty\baseQR{}{
         % Write the QR Code in the top-right and bottom-left corners 
-        \fancyhead[R]{\LARGE\fontfamily{cmss}\selectfont{\baseQR\thepage}}
-        \fancyfoot[R]{\LARGE\fontfamily{cmss}\selectfont{\baseQR\thepage}}
+        \fancyhead[R]{\Large\fontfamily{cmss}\selectfont{\baseQR\thepage}}
+        \fancyfoot[R]{\Large\fontfamily{cmss}\selectfont{\baseQR\thepage}}
       }
     \fi % if cancelspace
   \fi % ifprintanswers 
@@ -104,12 +104,13 @@
 }
 
 %% Macros to set student or teacher name 
+% Usage: \setAuthor[1,2,3]{Ms. Slokham}{CHOCOLATE}
 \providecommand{\setAuthor}[3][]{
   \notblank{#1}{
     \forcsvlist\storeVersions{#1}
     \setcounter{rolldice}{\csname version1\endcsname} % set version for Q1
   }{}
-  \fancyhead[LO,LE]{\Large\fontfamily{cmss}\selectfont{#2}}
+  \fancyhead[LO,LE]{\Large\fontfamily{cmss}\selectfont{\uppercase{#2}}}
   \notblank{#3}{\setbaseQR{#3}}{\setbaseQR{Preview}}
 }
 
@@ -165,17 +166,23 @@
   \setcounter{currSubpart}{0} % the breaks returned by Rails are 0-indexed
   \fancyhead[C]{\Large\fontfamily{cmss}\selectfont\documentTitle}
   \fancyfoot[C]{\Large\fontfamily{cmss}\selectfont{\copyright\, www.gradians.com}}
+  \marksnotpoints
+  %\pagestyle{fancy}
+  \renewcommand\headrulewidth{0.4pt}
 }
 
 \AfterEndEnvironment{questions}{
   \setcounter{numQuestions}{0}
-  \ifnumodd{\thepage}{
-    \nextpg
-    \mbox{}
-    \setbaseQR{0}
-    \embedQR
-    \fancyhead[C]{\LARGE\fontfamily{cmss}\selectfont{For Rough Work Only}}
-    \fancyfoot[C]{\LARGE\fontfamily{cmss}\selectfont{Will not be graded}}
-  }{}
-  \nextpg 
+  \ifprintanswers
+  \else
+    \ifnumodd{\thepage}{
+      \nextpg
+      \mbox{}
+      \setbaseQR{0}
+      \embedQR
+      \fancyhead[C]{\Large\fontfamily{cmss}\selectfont{For Rough Work Only}}
+      \fancyfoot[C]{\Large\fontfamily{cmss}\selectfont{Will not be graded}}
+    }{}
+    \nextpg 
+  \fi % \ifprintanswers
 }
