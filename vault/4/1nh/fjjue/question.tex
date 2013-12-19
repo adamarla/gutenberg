@@ -1,54 +1,4 @@
 
-<<<<<<< HEAD
-
-
-\ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
-}{
-  \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
-  }{
-    \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
-    }{
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
-=======
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -64,48 +14,17 @@
     }{
       % variables 
       \renewcommand{\vbone}{5}
->>>>>>> b522d18472a6ac8941d0010c7d5e3e533e79be60
     }
   }
 }
 
-<<<<<<< HEAD
-\question[1] Find $\lim_{x\to 1}\frac{\left(\sqrt{(x^2-1)}+ \sqrt{x-1}\right)}{\sqrt{x^2-1}}$ 
-=======
 \SQUARE\vbone\vbtwo
 \MULTIPLY\vbone{2}\vbthree
->>>>>>> b522d18472a6ac8941d0010c7d5e3e533e79be60
 
 \question[1] Evaluate the following limit \[ \lim_{x\to\vbone}\dfrac{\sqrt{x^2 -\vbtwo} + \sqrt{x-\vbone}}{\sqrt{x^2-\vbtwo}}\]
 
 \watchout
 
-<<<<<<< HEAD
-\ifprintanswers
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
-\begin{solution}[\mcq]
-Given limit is of the form : $\frac{0}{0}$\\
-By simply expanding the given expression we get can get this into determinate form. 
-Hence we do  not to apply the L-Hospital rule.
-\begin{align}
-&\Rightarrow \lim_{x\to 1}\frac{\left(\sqrt{(x^2-1)}+ \sqrt{x-1}\right)} {\sqrt{x^2-1}} \\
-&= \lim_{x\to 1}\frac{\sqrt{(x-1)(x+1)} + \sqrt{x-1}}{\sqrt{(x-1)(x+1)}} \\
-&= \lim_{x\to 1}\frac{\sqrt{(x+1)} + 1 }{\sqrt{(x+1)}} \\
-&= \dfrac{\sqrt{2}+1}{\sqrt{2}} 
-\end{align}
-=======
 \begin{solution}[\mcq]
   \begin{align}
     \lim_{x\to\vbone}\dfrac{\sqrt{x^2-\vbtwo} + \sqrt{x-\vbone}}{\sqrt{x^2-\vbtwo}} &= 
@@ -113,6 +32,5 @@ Hence we do  not to apply the L-Hospital rule.
     &= \lim_{x\to\vbone}\dfrac{\sqrt{x+\vbone} + 1}{\sqrt{x + \vbone}} 
     = 1 + \frac{1}{\sqrt\vbthree}
   \end{align}
->>>>>>> b522d18472a6ac8941d0010c7d5e3e533e79be60
 \end{solution}
 
