@@ -2,18 +2,14 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{2}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{4}
     }{
-      % variables 
       \renewcommand{\vbone}{5}
     }
   }
@@ -23,11 +19,11 @@
 \SQUARE\vbtwo\vbfour
 \MULTIPLY\vbfour{3}\vbfive
 
-\question Evaluate the limit \[\lim_{x\to -\vbone}\left(\dfrac{\frac{1}{x} + \frac{1}{\vbone}}{x^3+\vbthree} \right) \]
+\question[2] Evaluate the limit \[\lim_{x\to -\vbone}\left(\dfrac{\frac{1}{x} + \frac{1}{\vbone}}{x^3+\vbthree} \right) \]
 
 \watchout
 
-\begin{solution}
+\begin{solution}[\mcq]
   Simply plugging in $x=-\vbone$ wouldn't cut it because then we get an expression of $\frac{0}{0}$ form. So, we need to change how the expression looks 
   \begin{align}
     \lim_{x\to -\vbone}\left( \dfrac{\frac{1}{x} + \frac{1}{\vbone}}{x^3 + \vbthree}\right) &=
