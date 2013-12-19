@@ -1,24 +1,20 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{2}
   \renewcommand{\vbtwo}{5}
   \renewcommand{\vbthree}{7}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{3}
     \renewcommand{\vbtwo}{3}
     \renewcommand{\vbthree}{5}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{2}
       \renewcommand{\vbtwo}{2}
       \renewcommand{\vbthree}{9}
     }{
-      % variables 
       \renewcommand{\vbone}{3}
       \renewcommand{\vbtwo}{2}
       \renewcommand{\vbthree}{6}
@@ -32,11 +28,11 @@
 \POWER\vbone\c\d
 \MULTIPLY\vbthree\d\e
 
-\question Evaluate the following limit \[ \lim_{x\to \vbone}\left(\dfrac{x^\vbtwo-\a}{x^\vbthree-\b}\right)\]
+\question[4] Evaluate the following limit \[ \lim_{x\to \vbone}\left(\dfrac{x^\vbtwo-\a}{x^\vbthree-\b}\right)\]
 
 \watchout[-45pt]
 
-\begin{solution}
+\begin{solution}[\halfpage]
   The easiest way to find this limit is to use the fact 
   \[\lim_{x\to a}\left( \dfrac{x^n-a^n}{x-a}\right) = na^{n-1}\]
   
