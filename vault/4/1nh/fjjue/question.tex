@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 
 
 \ifnumequal{\value{rolldice}}{0}{
@@ -47,16 +48,39 @@
       \renewcommand{\vbeight}{}
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
+=======
+
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{7}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vbone}{3}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vbone}{4}
+    }{
+      % variables 
+      \renewcommand{\vbone}{5}
+>>>>>>> b522d18472a6ac8941d0010c7d5e3e533e79be60
     }
   }
 }
 
+<<<<<<< HEAD
 \question[1] Find $\lim_{x\to 1}\frac{\left(\sqrt{(x^2-1)}+ \sqrt{x-1}\right)}{\sqrt{x^2-1}}$ 
+=======
+\SQUARE\vbone\vbtwo
+\MULTIPLY\vbone{2}\vbthree
+>>>>>>> b522d18472a6ac8941d0010c7d5e3e533e79be60
 
-\insertQR{}
+\question[1] Evaluate the following limit \[ \lim_{x\to\vbone}\dfrac{\sqrt{x^2 -\vbtwo} + \sqrt{x-\vbone}}{\sqrt{x^2-\vbtwo}}\]
 
 \watchout
 
+<<<<<<< HEAD
 \ifprintanswers
   \begin{marginfigure}
     \figinit{pt}
@@ -81,20 +105,14 @@ Hence we do  not to apply the L-Hospital rule.
 &= \lim_{x\to 1}\frac{\sqrt{(x+1)} + 1 }{\sqrt{(x+1)}} \\
 &= \dfrac{\sqrt{2}+1}{\sqrt{2}} 
 \end{align}
+=======
+\begin{solution}[\mcq]
+  \begin{align}
+    \lim_{x\to\vbone}\dfrac{\sqrt{x^2-\vbtwo} + \sqrt{x-\vbone}}{\sqrt{x^2-\vbtwo}} &= 
+    \lim_{x\to\vbone}\dfrac{\sqrt{x-\vbone}\cdot (\sqrt{x+\vbone} + 1)}{\sqrt{x-\vbone}\cdot\sqrt{x + \vbone}} \\
+    &= \lim_{x\to\vbone}\dfrac{\sqrt{x+\vbone} + 1}{\sqrt{x + \vbone}} 
+    = 1 + \frac{1}{\sqrt\vbthree}
+  \end{align}
+>>>>>>> b522d18472a6ac8941d0010c7d5e3e533e79be60
 \end{solution}
 
-
-
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi
