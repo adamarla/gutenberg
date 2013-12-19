@@ -2,18 +2,14 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{57}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{63}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{101}
     }{
-      % variables 
       \renewcommand{\vbone}{79}
     }
   }
@@ -21,7 +17,7 @@
 
 \SUBTRACT\vbone{1}\vbtwo
 
-\question Differentiate $y=\cos^2(x^{\vbone})$ with respect to $x$
+\question[3] Differentiate $y=\cos^2(x^{\vbone})$ with respect to $x$
 
 \insertQR{}
 
@@ -30,7 +26,7 @@
 \ifprintanswers
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
   If $z = \cos(x^{\vbone})$, then $y = z^2$ and \textbf{chain-rule} tells us that 
   \begin{align}
     \dydx &= \dfrac{\mathrm{d}}{\mathrm{d}z}z^2\cdot\dydx[z] \\
