@@ -2,28 +2,24 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{3}
   \renewcommand{\vbtwo}{5}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{5}
     \renewcommand{\vbtwo}{7}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{11}
       \renewcommand{\vbtwo}{3}
     }{
-      % variables 
       \renewcommand{\vbone}{9}
       \renewcommand{\vbtwo}{13}
     }
   }
 }
 
-\question Differentiate $y = \vbone \tan\sqrt{\vbtwo x}$ with respect to $x$
+\question[3] Differentiate $y = \vbone \tan\sqrt{\vbtwo x}$ with respect to $x$
 
 \insertQR{}
 
@@ -32,7 +28,7 @@
 \ifprintanswers
 \fi 
 
-\begin{solution}
+\begin{solution}[\mcq]
   If $z=\sqrt{\vbtwo x}$, then \textbf{chain-rule} tells us that 
   \begin{align}
     \dydx &= \dfrac{\mathrm{d}}{\mathrm{d}z}y\times\dydx[z] \\
