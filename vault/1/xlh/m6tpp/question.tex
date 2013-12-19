@@ -1,17 +1,13 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{5}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{7}
     }{
-      % variables 
       \renewcommand{\vbone}{9}
     }
   }
@@ -19,10 +15,10 @@
 
 \MULTIPLY\vbone{2}\vbtwo
 
-\question Evaluate the following limit \[ \lim_{x\to\frac\pi{2}}\left(\dfrac{\tan\vbtwo x}{x-\frac{\pi}{2}}\right)\]
+\question[4] Evaluate the following limit \[ \lim_{x\to\frac\pi{2}}\left(\dfrac{\tan\vbtwo x}{x-\frac{\pi}{2}}\right)\]
 \texttt{Hint:}$\lim_{x\to 0}\dfrac{\tan N\theta}{N\theta} = ?$
 
-\begin{solution}
+\begin{solution}[\halfpage]
   Lets start by setting $\theta = x - \frac{\pi}{2}$ so that,
   \begin{align}
     \lim_{x\to\frac\pi{2}}\left( \dfrac{\tan\vbtwo x}{x-\frac\pi{2}}\right) &= 
