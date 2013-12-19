@@ -1,17 +1,13 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{1}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{3}
     }{
-      % variables 
       \renewcommand{\vbone}{4}
     }
   }
@@ -21,12 +17,12 @@
 \POWER\vbone{3}\vbthree
 \MULTIPLY\vbtwo{3}\vbfour
 
-\question Does the following limit exist? If yes, then what? If not, then why not?
+\question[4] Does the following limit exist? If yes, then what? If not, then why not?
 \[ \lim_{x\to\vbone}\left[ \dfrac{x^3-\vbthree}{(x-\vbone)^2}\right]\]
 
 \watchout[-40pt]
 
-\begin{solution}
+\begin{solution}[\halfpage]
   In of itself, the expression is of the form $\frac{0}{0}$ for $x=\vbone$ - which cannot be determined. So, lets try to get it to be something that can be determined. Might not be possible - but lets try anyway
   
   \begin{align}
