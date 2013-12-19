@@ -2,33 +2,29 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{5}
   \renewcommand{\vbtwo}{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{7}
     \renewcommand{\vbtwo}{5}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{9}
       \renewcommand{\vbtwo}{7}
     }{
-      % variables 
       \renewcommand{\vbone}{11}
       \renewcommand{\vbtwo}{13}
     }
   }
 }
 
-\question Evaluate the following limit \[ \lim_{x\to 0}\dfrac{\sin\vbone x}{\vbtwo x}\]
+\question[4] Evaluate the following limit \[ \lim_{x\to 0}\dfrac{\sin\vbone x}{\vbtwo x}\]
 \texttt{Hint:}$\lim_{x\to 0}\frac{\sin Ax}{Ax} = ?$
 
 \watchout[-40pt]
 
-\begin{solution}
+\begin{solution}[\mcq]
   Consider the following
   \begin{align}
     \lim_{x\to 0}\dfrac{\sin\vbone x}{\vbtwo x} &= \lim_{x\to 0}\dfrac{\sin\vbone x}{\vbone x}\times\dfrac{\vbone}{\vbtwo} \\
