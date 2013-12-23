@@ -2,27 +2,23 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{1}
   \renewcommand{\vbtwo}{2}
   \renewcommand{\vbthree}{3}
   \renewcommand{\vbsix}{\dfrac{1}{12}}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{3}
     \renewcommand{\vbtwo}{2}
     \renewcommand{\vbthree}{4}
     \renewcommand{\vbsix}{\dfrac{1}{32}}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{5}
       \renewcommand{\vbtwo}{3}
       \renewcommand{\vbthree}{3}
       \renewcommand{\vbsix}{\dfrac{1}{27}}
     }{
-      % variables 
       \renewcommand{\vbone}{7}
       \renewcommand{\vbtwo}{2}
       \renewcommand{\vbthree}{5}
@@ -36,12 +32,12 @@
 \SUBTRACT\vbfour\vbone\vbfive
 \FRACMINUS{1}{\vbthree}{1}{1}\b\c
 
-\question Evaluate the following limit \[ \lim_{x\to\vbfour}\dfrac{\sqrt[\vbthree]{x-\vbone}-\vbtwo}{x-\vbfour}\]
+\question[4] Evaluate the following limit \[ \lim_{x\to\vbfour}\dfrac{\sqrt[\vbthree]{x-\vbone}-\vbtwo}{x-\vbfour}\]
 \texttt{Hint:}$\vbtwo^? + \vbone = \vbfour$
 
 \watchout[-40pt]
 
-\begin{solution}
+\begin{solution}[\halfpage]
   Half the battle is won if you figured out that $\vbtwo = \sqrt[\vbthree]{\vbfour - \vbone}$. 
   Which means 
   \begin{align}
