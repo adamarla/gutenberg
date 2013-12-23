@@ -1,31 +1,27 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{5}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{7}
     }{
-      % variables 
       \renewcommand{\vbone}{9}
     }
   }
 }
 
-\question Find the following limit \[\lim_{x\to\frac{\pi}{2}}\dfrac{\vbone \sin x\cos x}{\pi - 2x}\]
+\question[3] Find the following limit \[\lim_{x\to\frac{\pi}{2}}\dfrac{\vbone \sin x\cos x}{\pi - 2x}\]
 
 \watchout[-40pt]
 
 \ifprintanswers
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
   \begin{align}
     \lim_{x\to\frac{\pi}{2}}\dfrac{\vbone \sin x\cos x}{\pi - 2x} &=
     \lim_{x\to\frac{\pi}{2}}\dfrac{\frac{\vbone}{2}\cdot 2\sin x\cos x}{\pi - 2x} \\
