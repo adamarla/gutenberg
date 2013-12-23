@@ -1,6 +1,5 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{1}
   \renewcommand{\vbtwo}{2}
   \renewcommand{\vbthree}{\dfrac{n\cdot(n-1)}{2}}
@@ -8,7 +7,6 @@
   \renewcommand{\vbfive}{\dfrac{1}{2}}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{2}
     \renewcommand{\vbtwo}{3}
     \renewcommand{\vbthree}{\dfrac{1}{6}\cdot n\cdot(n-1)\cdot(2n-1)}
@@ -16,14 +14,12 @@
     \renewcommand{\vbfive}{\dfrac{1}{3}}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{3}
       \renewcommand{\vbtwo}{4}
       \renewcommand{\vbthree}{\left[ \dfrac{n\cdot(n-1)}{2}\right]^2}
       \renewcommand{\vbfour}{n^4\cdot\left[ \dfrac{1\cdot\left(1-\frac{1}{n} \right)}{2}\right]^2}
       \renewcommand{\vbfive}{\dfrac{1}{4}}
     }{
-      % variables 
       \renewcommand{\vbone}{2}
       \renewcommand{\vbtwo}{3}
       \renewcommand{\vbthree}{\dfrac{1}{6}\cdot n\cdot(n-1)\cdot(2n-1)}
@@ -33,13 +29,13 @@
   }
 }
 
-\question Find the following limit 
+\question[3] Find the following limit 
 \[ \lim_{n\to\infty}\left( \frac{1^\vbone}{n^\vbtwo} + \frac{2^\vbone}{n^\vbtwo} + \ldots
 + \frac{(n-1)^\vbone}{n^\vbtwo}\right)\]
 
 \watchout[-40pt]
 
-\begin{solution}
+\begin{solution}[\halfpage]
   The above expression can be re-written as 
   \begin{align}
     &\lim_{n\to\infty}\left( \frac{1^\vbone}{n^\vbtwo} + \frac{2^\vbone}{n^\vbtwo} + \ldots
