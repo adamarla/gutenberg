@@ -36,6 +36,9 @@
 \texttt{Hint:}$\vbtwo^? + \vbone = \vbfour$
 
 \watchout[-40pt]
+\ifprintanswers
+  \marginnote[5cm]{Using the standard result \[ \lim_{x\to a}\dfrac{x^n-a^n}{x-a} = n\cdot a^{n-1}\]}
+\fi
 
 \begin{solution}[\halfpage]
   Half the battle is won if you figured out that $\vbtwo = \sqrt[\vbthree]{\vbfour - \vbone}$. 
@@ -45,7 +48,7 @@
     \lim_{x\to\vbfour}\dfrac{\sqrt[\vbthree]{x-\vbone}-\sqrt[\vbthree]{\vbfour-\vbone}}
     {(x-\vbone)-(\vbfour-\vbone)}
   \end{align}
-  Now, if we define $\bar{x}=x-1$ and $A=\vbfour-\vbone = \vbfive$, then the above limit 
+  Now, if we define $\bar{x}=x-\vbone$ and $A=\vbfour-\vbone = \vbfive$, then the above limit 
   becomes 
   \begin{align}
     \lim_{\bar{x}\to\vbfive}\dfrac{\sqrt[\vbthree]{\bar{x}}-\sqrt[\vbthree]{A}}{\bar{x}-A}
