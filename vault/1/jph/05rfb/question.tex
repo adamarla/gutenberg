@@ -2,21 +2,17 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{7}
   \renewcommand{\vbtwo}{2}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{6}
     \renewcommand{\vbtwo}{7}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{5}
       \renewcommand{\vbtwo}{4}
     }{
-      % variables 
       \renewcommand{\vbone}{9}
       \renewcommand{\vbtwo}{4}
     }
@@ -28,11 +24,11 @@
 \ADD\vbfour\vbtwo\vbfive
 \DIVIDE\vbfive{2}\vbsix
 
-\question Find the following limit \[ \lim_{x\to 0}\dfrac{\sin\vbfour x - \sin\vbtwo x}{\sin\vbone x}\]
+\question[2] Find the following limit \[ \lim_{x\to 0}\dfrac{\sin\vbfour x - \sin\vbtwo x}{\sin\vbone x}\]
 
 \watchout[-40pt]
 
-\begin{solution}
+\begin{solution}[\mcq]
   \begin{align}
     \lim_{x\to 0}\dfrac{\sin\vbfour x - \sin\vbtwo x}{\sin\vbone x} &=
     \lim_{x\to 0}\dfrac{\eDiffOfSin{\vbfour x}{\vbtwo x}}{\sin\vbone x} \\
