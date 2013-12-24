@@ -1,159 +1,94 @@
-% This is an empty shell file placed for you by the 'examiner' script.
-% You can now fill in the TeX for your question here.
 
-% Now, down to brasstacks. ** Writing good solutions is an Art **. 
-% Eventually, you will find your own style. But here are some thoughts 
-% to get you started: 
-%
-%   1. Write to be understood - but be crisp. Your own solution should not take 
-%      more space than you will give to the student. Hence, if you take more than 
-%      a half-page to write a solution, then give the student a full-page and so on...
-%
-%   2. Use margin-notes to "talk" to students about the critical insights
-%      in the question. The tone can be - in fact, should be - informal
-%
-%   3. Don't shy away from creating margin-figures you think will help
-%      students understand. Yes, it is a little more work per question. 
-%      But the question & solution will be written only once. Make that
-%      attempt at writing a solution count.
-%      
-%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
-% 
-%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
-%      education company. Bad spellings suggest that we ourselves 
-%      don't have any education. Also, use American spellings by default
-% 
-%   5. If a question has multiple parts, then first delete lines 40-41
-%   6. If a question does not have parts, then first delete lines 43-69
-%   
-%   7. Create versions of the question when possible. Use commands defined in 
-%      tufte-tweaks.sty to do so. Its easier than you think
-
-% \noprintanswers
-% \setcounter{rolldice}{0}
-% \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{1}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{3}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{4}
     }
   }
 }
 
-\question
+\SQUARE\vbone\vbtwo
+\MULTIPLY\vbone{2}\vbthree
+\MULTIPLY\vbtwo{4}\vbfour
+\MULTIPLY\vbthree{2}\vbfive
 
-\insertQR{}
+\question The figure alongside shows a \textbf{fixed circle} $C_1$ with equation $(x-\vbone)^2 + y^2 = \vbtwo$ and a
+\textbf{shrinking circle} $C_2$ with radius $r$ centered at the origin. $P$ is the point $(0,r)$, $Q$ is 
+the upper point of intersection of the two circles and $R$ is where the line $PQ$ intersects the $x-$axis. What 
+happens to $R$ as $C_2$ shrinks, that is, as $r\to 0^+$?
+\watchout[-45pt]
 
-\watchout
-
-\ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
+  \begin{marginfigure}[-20pt]
     \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
+      \def\radA{33} %C_1
+      \def\radB{20} %C_2
+      \figpt 1: (0,0) 
+      \figpt 2: (\radB,0)
+      \figpt 10:$P$(0,\radA)
+      \figptsintercirc 50 [1,\radA;2,\radB]
+      \figvectP 99 [1,2]
+      \figvectP 100 [10,51]
+      \figptinterlines 60:$R$ [1,99;10,100]
+      \figptcirc 70 :$C_1$: 2;\radB (225)
+      \figptcirc 71 :$C_2$: 1;\radA (225)
     \figdrawbegin{}
-      \figdrawline [100,101]
+      \drawAxes{1}{-55}{85}{-55}{55}
+      \figdrawcirc 1(\radA)
+      \figdrawcirc 2(\radB)
+      \figdrawline [10,60]
     \figdrawend
     \figvisu{\figBoxA}{}{%
+      \figwritene 70:(3)
+      \figwritene 71:(3)
+      \figset write(mark=$\bullet$)
+      \figwritene 51:$Q$(3)
+      \figwritenw 10:(3)
+      \figwrites 60:(3)
     }
     \centerline{\box\figBoxA}
   \end{marginfigure}
-\fi 
 
 \begin{solution}
+  The equation of circle $C_2$ is simply $x^2 + y^2 = r^2$.
+  And therefore, $Q$ would be a point where 
+  \begin{align}
+    y_Q^2 &= \vbtwo - (x_Q-\vbone)^2 = r^2 - x_Q^2 \\
+    \implies \vbtwo - (x_Q^2 - \vbthree x + \vbtwo) &= r^2 - x_Q^2 \text{ or } x_Q = \dfrac{r^2} {\vbthree} \\
+    \text{ and }y_Q = \sqrt{r^2 - x_Q^2} &= \sqrt{r^2 - \left( \dfrac{r^2}{\vbthree}\right)^2}
+    = \dfrac{r}{\vbthree}\cdot\sqrt{\vbfour - r^2}
+  \end{align}
+  
+  Next, we find the \textbf{equation of line PQ}
+  \begin{align}
+    \dfrac{y-r}{x-0} &= \dfrac{y_Q-y_P}{x_Q-x_P} = 
+    \dfrac{\frac{r}{\vbthree}\cdot\sqrt{\vbfour-r^2}-r}{\frac{r^2}{\vbthree} - 0}
+  \end{align}
+  And as $R$ lies on $PQ$ and given that $R=(x_R,0)$, the \textbf{coordinates of R} would be 
+  \begin{align}
+    \dfrac{0-r}{x_R-0} &= \dfrac{\frac{r}{\vbthree}\cdot\sqrt{\vbfour-r^2}-r}{\frac{r^2}{\vbthree}} \\
+    \implies x_R &= \dfrac{r^2}{\vbthree - \sqrt{\vbfour - r^2}}
+  \end{align}
+  Notice that point $R$ exists only if radius of $C_2\leq 2\times$ radius of $C_1$.
+  
+  That aside, what we need to find is \[ \lim_{r\to 0^+} x_R\] - which, in its current form, 
+  is of the $\frac{0}{0}$ type
+  \begin{align}
+    \lim_{r\to 0^+}x_R &= \lim_{r\to 0^+}\dfrac{r^2}{\vbthree - \sqrt{\vbfour - r^2}} \\
+    &= \lim_{r\to 0+}\dfrac{r^2}{\vbthree - \sqrt{\vbfour - r^2}}\times
+    \dfrac{\vbthree + \sqrt{\vbfour - r^2}}{\vbthree + \sqrt{\vbfour - r^2}} \\
+ i   &= \lim_{r\to 0+}(\vbthree + \sqrt{\vbfour - r^2}) = \vbfive
+  \end{align}
+  Which means, that as $C_2$ shrinks to zero, $R\to (\vbfive, 0)$
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
-
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi
