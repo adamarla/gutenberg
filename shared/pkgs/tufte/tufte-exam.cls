@@ -42,8 +42,11 @@
 \newcounter{numQuestions}
 
 %% Booleans 
-\newbool{onNewPage}
-\booltrue{onNewPage}
+\newbool{bottomLeftQR}
+\booltrue{bottomLeftQR}
+
+\newbool{bottomLeftTaken}
+\boolfalse{bottomLeftTaken}
 
 %% Utility macros
 \providecommand{\ud}{\, \mathrm{d}}
@@ -73,11 +76,14 @@
   \else
     \ifcancelspace
     \else
-      \ifbool{onNewPage}{
-        \fancyfoot[L]{
-          \psbarcode[transx=-30pt, transy=-15pt]{\baseQR\thepage}{eclevel=Q width=0.7 height=0.7}{qrcode} 
+      \ifbool{bottomLeftQR}{
+        \ifbool{bottomLeftTaken}{}{
+          \fancyfoot[L]{
+            \psbarcode[transx=-30pt, transy=-15pt]{\baseQR\thepage}{eclevel=Q width=0.7 height=0.7}{qrcode} 
+          }
+          \setbool{bottomLeftTaken}{true}
         }
-      }{
+      }{ % no QR in bottom-left => insert QR right there
         \begin{marginfigure}[#1]
           \psbarcode[transx=0.4\marginparwidth]{\baseQR\thepage}{eclevel=Q width=0.7 height=0.7}{qrcode} 
         \end{marginfigure}
@@ -141,14 +147,14 @@
   \ifprintanswers
   \else
     \ifcancelspace
-    \else\booltrue{onNewPage}\newpage\fi
+    \else\booltrue{bottomLeftQR}\boolfalse{bottomLeftTaken}\newpage\fi
   \fi
 }
 
 \BeforeBeginEnvironment{solution}{\embedQR}
 
 \AfterEndEnvironment{solution}{
-  \boolfalse{onNewPage}
+  \setbool{bottomLeftQR}{false}
   \xifinlist{\thecurrSubpart}\pageBreaks{\nextpg}{}
   \xifinlist{\thecurrSubpart}\versionTriggers{
     \ADD{\value{question}}{1}\nq
@@ -185,4 +191,12 @@
     }{}
     \nextpg 
   \fi % \ifprintanswers
+}
+
+\AtBeginEnvironment{marginfigure}{
+  % This next bit of code is really needed when making worksheets only. 
+  % If the marginfigure is rendered within \ifprintanswers, then this code will NOT be triggered
+  % However, if a margin figure is unconditionally rendered, then this code 
+  % should trigger 
+  \setbool{bottomLeftQR}{true}
 }
