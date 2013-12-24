@@ -1,18 +1,14 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{1}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{3}
     }{
-      % variables 
       \renewcommand{\vbone}{4}
     }
   }
@@ -23,13 +19,12 @@
 \MULTIPLY\vbtwo{4}\vbfour
 \MULTIPLY\vbthree{2}\vbfive
 
-\question The figure alongside shows a \textbf{fixed circle} $C_1$ with equation $(x-\vbone)^2 + y^2 = \vbtwo$ and a
+\question[4] The figure alongside shows a \textbf{fixed circle} $C_1$ with equation $(x-\vbone)^2 + y^2 = \vbtwo$ and a
 \textbf{shrinking circle} $C_2$ with radius $r$ centered at the origin. $P$ is the point $(0,r)$, $Q$ is 
 the upper point of intersection of the two circles and $R$ is where the line $PQ$ intersects the $x-$axis. What 
 happens to $R$ as $C_2$ shrinks, that is, as $r\to 0^+$?
 \watchout[-45pt]
 
-  % stuff to be shown only in the answer key - like explanatory margin figures
   \begin{marginfigure}[-20pt]
     \figinit{pt}
       \def\radA{33} %C_1
@@ -60,7 +55,7 @@ happens to $R$ as $C_2$ shrinks, that is, as $r\to 0^+$?
     \centerline{\box\figBoxA}
   \end{marginfigure}
 
-\begin{solution}
+\begin{solution}[\fullpage]
   The equation of circle $C_2$ is simply $x^2 + y^2 = r^2$.
   And therefore, $Q$ would be a point where 
   \begin{align}
