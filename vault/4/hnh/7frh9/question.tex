@@ -4,12 +4,6 @@
   \renewcommand{\vbtwo}{559}
   \renewcommand{\vbthree}{12}
   \renewcommand{\vbfour}{3}
-  \renewcommand{\vbfive}{3}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
@@ -17,12 +11,6 @@
     \renewcommand{\vbtwo}{376}
     \renewcommand{\vbthree}{10}
     \renewcommand{\vbfour}{4}
-    \renewcommand{\vbfive}{2}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
@@ -30,72 +18,63 @@
       \renewcommand{\vbtwo}{681}
       \renewcommand{\vbthree}{10}
       \renewcommand{\vbfour}{4}
-      \renewcommand{\vbfive}{2}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
     }{
       % variables 
       \renewcommand{\vbone}{3}
       \renewcommand{\vbtwo}{229}
       \renewcommand{\vbthree}{8}
       \renewcommand{\vbfour}{2}
-      \renewcommand{\vbfive}{3}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
-      \marginnote{Errata: An earlier version of this question asked for the term in the expansion containing $x^3$. If you solved that version and discovered the error, you received full credit}
     }
   }
 }
 
-\question[5] The sum of coefficients of first three terms of the expansion $\left( x- \dfrac{\vbone}{x^{2}} \right) ^{m} (m \in \mathbb{N})$ is $\vbtwo$. Find the term of expansion containing $x^{\vbfour}$.
+\SQUARE\vbone\a
+\EXPR[0]\b{(\a + 2*\vbone)}
+\EXPR[0]\c{(2*(\vbtwo - 1))}
+\SUBTRACT\vbthree\vbfour\d
+\DIVIDE\d{3}\vbfive
 
-\insertQR{}
+\question[5] The sum of coefficients of first three terms of the expansion 
+$\left( x- \dfrac{\vbone}{x^{2}} \right) ^{m},\, m \in \mathbb{N}$ is $\vbtwo$. 
+Given this, what will be the term containing $x^{\vbfour}$?
+\watchout[-30pt]
+\marginnote{
 
-\watchout
+	$\sqrt{4489} = 67$
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
+	$\sqrt{1849}=43$
+
+	$\sqrt{3025}=55$
+
+	$\sqrt{1369}=37$
+}
 
 \begin{solution}[\fullpage]
-Let $a_{1}, a_{2},a_{3}$ be the coefficient of the first, second and third term of the expansion. \\
+If $a_{1}, a_{2},a_{3}$ be the coefficients of the first, second and third terms respectively, then 
 	\begin{align}
-	a_{1} &= 1 \\ 
-	a_{2} &= -\encr{m}{1} \cdot \vbone \\
-	a_{3} &= \encr{m}{2} \cdot \vbone^{2} 
-	\end{align}    
-Now adding these gives $\vbtwo$\\
+		a_{1} &= \binom{m}{0} = 1 \\ 
+		a_{2} &= -\binom{m}{1} \cdot \vbone \\
+		a_{3} &= \binom{m}{2} \cdot \vbone^{2}  \\ 
+		\text{And if } a_1 + a_2 + a_3 &= \vbtwo \nonumber\\
+		\text{then }1 - \vbone m + \dfrac\a{2}\cdot m\cdot (m-1) &= \vbtwo \\
+		\implies \a m^2 - \b m - \c &= 0 
+	\end{align}
+
+The only $m\in\mathbb{N}$ that satisfies the above is $m=\vbthree$. Which means, 
+the original binomial expression is $\left( x - \dfrac\vbone{x^2} \right)^{\vbthree}$
+
+\textbf{Find the term containing $x^\vbfour$}
+
+If $T_{r+1}$ be the $(r+1)^{th}$ term in the expansion, $r\in [0,\vbthree]$, then 
 \begin{align}
-\therefore \quad &a_{1} + a_{2} + a_{3} = \vbtwo \\
-&\Rightarrow 1 - m\cdot\vbone + \dfrac{m(m-1)}{2} \cdot \vbone^{2} = \vbtwo \\
-&\Rightarrow m^{2}\vbone^{2} - m(2\cdot \vbone + \vbone^{2}) + 2 - 2\cdot \vbtwo = 0 
+	T_{r+1} = \binom\vbthree{r}x^{\vbthree - r}\cdot\left( -\dfrac\vbone{x^2} \right)^{r}
+	        &= (-\vbone)^r\binom\vbthree{r}\cdot x^{\vbthree-r-2r} \\
+  \text{And so, }x^{\vbthree -r - 2r} = x^{\vbthree - 3r} &= x^{\vbfour} \implies r = \vbfive
 \end{align}
-Solving the quadratic for m, we get the value of m$ = \vbthree$ \\ 
-Now , to find the coefficient of the term containing $x^{\vbfour}$ we first find the coefficient of x in $(r+1)^{th}$ term and then equate it to $\vbfour$. \\
+
+Hence, the term we are looking for is 
 \begin{align}
-T_{r+1} &= \encr{m}{r} \cdot x^{m-r} \cdot {\dfrac{-\vbone}{x^{2}}}^{r} \\
-&= {-\vbone}^{r} \lbrace \encr{m}{r} \cdot x^{m-3r} \rbrace \\
-\Rightarrow m - 3r &=\vbfour 
-\end{align} 
-Now we put the value of r in ${T}_{r+1}$\\
-$\Rightarrow T_{r+1} = \encr{\vbthree}{\vbfive} \cdot x^{\vbthree-\vbfive} \cdot {\left(\dfrac{-\vbone}{x^{2}}\right)}^{\vbfive}$ \\
-Therefore the coefficient of $x^{\vbfour}$ in $T_{r+1} = \encr{\vbthree}{\vbfive} \cdot (-\vbone)^{\vbfive}$
+	T_{\vbfive + 1} &= (-\vbone)^\vbfive\binom\vbthree\vbfive\cdot x^\vbfour
+\end{align}
 \end{solution}
 
