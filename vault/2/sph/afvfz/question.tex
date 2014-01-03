@@ -1,51 +1,51 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
+  \renewcommand{\vbone}{2}
   \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
+  \renewcommand{\vbthree}{-}
+  \renewcommand{\vbfour}{+}
+  \renewcommand{\vbfive}{1}
+  \renewcommand{\vbsix}{3}
+  \renewcommand{\vbseven}{-\dfrac{4}{3\sqrt{3}}}
   \renewcommand{\vbeight}{}
   \renewcommand{\vbnine}{}
   \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
+    \renewcommand{\vbone}{2}
+    \renewcommand{\vbtwo}{-}
+    \renewcommand{\vbthree}{+}
+    \renewcommand{\vbfour}{-}
+    \renewcommand{\vbfive}{3}
+    \renewcommand{\vbsix}{1}
+    \renewcommand{\vbseven}{-\dfrac{4\sqrt{3}}{3}}
     \renewcommand{\vbeight}{}
     \renewcommand{\vbnine}{}
     \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
+      \renewcommand{\vbone}{3}
       \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
+      \renewcommand{\vbthree}{-}
+      \renewcommand{\vbfour}{+}
+      \renewcommand{\vbfive}{1}
+      \renewcommand{\vbsix}{2}
+      \renewcommand{\vbseven}{-\dfrac{9}{8\sqrt{2}}}
       \renewcommand{\vbeight}{}
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
+      \renewcommand{\vbone}{3}
+      \renewcommand{\vbtwo}{-}
+      \renewcommand{\vbthree}{+}
+      \renewcommand{\vbfour}{-}
+      \renewcommand{\vbfive}{2}
+      \renewcommand{\vbsix}{1}
+      \renewcommand{\vbseven}{-\dfrac{9\sqrt{2}}{8}}
       \renewcommand{\vbeight}{}
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
@@ -53,10 +53,13 @@
   }
 }
 
-\question If $y=\dfrac{\sqrt{1-x}}{\sqrt{1+x}}$, prove that
-$(1-x^2)\dfrac{dy}{dx}+y=0$.
+\SQUARE{\vbone}\sq
 
-\insertQR{}
+\question If $y=\dfrac{\sqrt{1-x}}{\sqrt{1+x}}$, prove that
+$(1-x^2)\dfrac{dy}{dx}+y=0$. \\
+Find $\dfrac{dy}{dx}$ for $x=\vbtwo\frac{1}{\vbone}$.
+
+\watchout
 
 \begin{solution}
   \begin{align}
@@ -71,6 +74,15 @@ $(1-x^2)\dfrac{dy}{dx}+y=0$.
                             \cdot\dfrac{\sqrt{1-x}}{\sqrt{1-x}} \\
             &\dfrac{dy}{dx}=\dfrac{-1}{(1-x^2)}\cdot y \\
     (1-x^2) &\dfrac{dy}{dx}+y=0
+  \end{align}
+  For $x=\vbone$,
+  \begin{align}
+    \left(1-{\dfrac{1}{\vbone}}^2\right)\dfrac{dy}{dx} +
+      \dfrac{\sqrt{1\vbthree\frac{1}{\vbone}}}
+            {\sqrt{1\vbfour\frac{1}{\vbone}}}&=0 \\
+    \left(1-\dfrac{1}{\sq}\right)
+      \dfrac{dy}{dx}+\sqrt{\dfrac{\vbfive}{\vbsix}} &=0 \\
+      \dfrac{dy}{dx}&=\vbseven
   \end{align}
 \end{solution}
 
