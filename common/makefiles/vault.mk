@@ -4,27 +4,37 @@ SHELL = /bin/bash
 .DELETE_ON_ERROR:
 .PHONY : clean install 
 
+LATEX_ROOT := $(shell ls -d /usr/local/texlive/20*)
+export PATH := $(LATEX_ROOT)/bin/i386-linux:$(PATH)
+
 compilation_finished : preview.tex
 	@. shell-script 
-	for version in 0 1 2 3 ; do 
-		set_question_version $< $$version
-		compile_question_tex $< $(logfile)
+	mode=$$(get_mode)
+	if [ $$mode == "vault" ] ; then 
+		for version in 0 1 2 3 ; do 
+			set_question_version $< $$version
+			compile_question_tex $< $(logfile)
 ifneq ($(logfile),)
-		echo "------ [$$version] -> Done" >> $(logfile)
+			echo "------ [$$version] -> Done" >> $(logfile)
 endif
 		$(MAKE) install version=$$version
-	done
-	touch $@
+		done
+		touch $@
+	else
+		compile_question_tex $< $(logfile)
+	fi
 
-preview.tex : blueprint question.tex
+preview.tex : skel 
 	@. shell-script 
-	rm -f $@
-	create_tex_from_blueprint $@
-	set_printanswers $@
+	create_tex_from_skel $@
+
+skel : blueprint
+	@. shell-script
+	create_skeleton
 
 blueprint : 
 	@. ./shell-script
-	create_blueprint_in_vault
+	if [ $$(in_vault) == true ] ; then create_blueprint_in_vault ; fi
 
 install :
 ifneq ($(version),)

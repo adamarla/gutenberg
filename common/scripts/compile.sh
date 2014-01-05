@@ -10,106 +10,110 @@ COL_BLUE=$ESC_SEQ"34;01m"
 COL_MAGENTA=$ESC_SEQ"35;01m"
 COL_CYAN=$ESC_SEQ"36;01m"
 
-function create_tex_from_blueprint {
-  in_production=false
-  if [ -e $1 ] ; then echo "[$1] -> Already present. Not re-creating" ; return 0 ; fi
-  echo "Creating $1 from blueprint ..."
 
-  if [ -e /opt/gutenberg/PRODUCTION_SERVER ] ; then
-    VAULT=/home/gutenberg/bank/vault
+source $(dirname $(readlink -e shell-script))/blueprint.sh
+
+function in_vault {
+  if [[ $(pwd) =~ /vault/ ]] ; then 
+    echo true
   else
-    if [ -z $VAULT ] ; then 
-      echo -e "$COL_RED Environment variable VAULT not defined $COL_RESET. Define it, then continue"
-      return 0
-    fi
+    echo false
   fi
+}
 
-  insert_preamble $1
-
-  for line in `grep -v ":" blueprint` ; do 
-    if [ $line == "\nextpg" ] ; then 
-      echo "$line"  >> $1
+function get_bank_path {
+  if [ -e /opt/gutenberg/PRODUCTION_SERVER ] ; then
+    echo "/home/gutenberg/bank"
+  else
+    if [ -z $BANK ]  ; then
+      b=$(grep -m 1 bank /opt/gutenberg/config | sed -e 's/bank: //')
+      echo $b
     else
-      # echo "\\setcounter{rolldice}{$[ $RANDOM % 4 ]}" >> $1
-      cat $VAULT/$line/question.tex >> $1
+      echo $BANK
     fi
+  fi
+}
+
+function create_skeleton {
+  # TeX files are created in many contexts - but always in the following order
+  # question -> quiz -> worksheet -> exam
+  # The TeX for each stage requires TeX from the immediately preceding stage. 
+  # The skel file is the TeX from the preceding stage that can be 
+  # blindly copied / concatenated to create the TeX for this stage 
+
+  if [ -e skel ] ; then rm -f skel ; fi
+  import=$(get_import_folders)
+  mode=$(get_mode)
+  bank=$(get_bank_path)
+
+
+  if [ $mode == "vault" -o $mode == "quiz" ] ; then 
+    src="vault"
+    file="question.tex"
+  else
+    src="mint"
+    file="skel"
+  fi
+
+  for f in $import ; do
+    p=$src/$f
+    echo "... [importing]: $p"
+    cat -s $bank/$p/$file >> skel
   done
+  clean_tex skel 
 
-  # Close the document once questions have been inserted
-  echo "\\end{questions}" >> $1
-  echo "\\end{document}" >> $1 
+  # Add details to skel as needed depending on $mode
+  if [ $mode == "quiz" ] ; then 
+    open_questions skel
+    sed -i "1i \\\\\\setDocumentTitle{$(get_title)}" skel 
+    sed -i "1i \\\\\\setPageBreaks{$(get_page_breaks)}" skel 
+  else
+    if [ $mode == "worksheet" ] ; then 
+      sed -i "1i \\\\\\setAuthor[$(get_versions)]{$(get_author)}{$(get_response_ids)}" skel 
+      sed -i "1i \\\\\\noprintanswers" skel
+    fi
+  fi 
+}
 
-  # 1. Remove any LaTeX comments inherited from question.tex's. 
-  sed -i '/^%/d' $1
 
-  # 2. Then, write creation time of the file as a comment. 
-  # Bit of an overkill. But ensures that Sha1sum will never be the same 
-  # even in the rare case that everything about two files is the same
-  created_on=$(date +"%B %d, %Y at %T")
-  sed -i "1i % Created on $created_on" $1
+function create_tex_from_skel { 
+  mode=$(get_mode)
+  bank=$(get_bank_path)
 
-  # 3. Replace all \insertQR commands with \embedQR
-  sed -i -e 's/{qrc}//i' -e 's/insertQR/embedQR/' $1
+  if [ -z $1 ] ; then file=preview.tex ; else file=$1 ; fi
+  cat -s skel > $file
 
-  # 4. Set the SHA1SUM as the baseQRCode
-  n=$(grep -c setbaseQR $1)
-  if [ $n -eq 0 ] ; then 
-    sum=$(sha1sum $1)
-    j=${sum:0:7}
-    uid=${j~~} # Uppercase $j
-    sed -i "4i \\\\\\setbaseQR{$uid}" $1 
+  if [ $mode == "vault" ] ; then open_questions $file ; fi
+  open_document $file
+  if [ $mode == "vault" ] ; then 
+    sed -i "1i \\\\\\setDocumentTitle{Question Preview}" $file
+    sed -i "1i \\\\\\setAuthor[]{Gradians.com}{}" $file
+    sed -i "1i \\\\\\printanswers" $file
+  else 
+    if [ $mode == "quiz" ] ; then 
+      sed -i "1i \\\\\\printanswers" $file
+      sed -i "1i \\\\\\setAuthor[]{$(get_author)}{}" $file
+    fi
   fi
+
+  open_file $file
 }
 
-
-function insert_preamble {
-  echo "\documentclass[12pt,a4paper,justified]{tufte-exam}" >> $1
-  echo "\\fancyfoot[C]{\\copyright\\,Gradians.com}" >> $1
-
-  title=$(grep title blueprint | tail -1 | sed -e 's/title://')
-  author=$(grep author blueprint | tail -1 | sed -e 's/author://')
-  echo "\\setAuthor[]{$author}{}" >> $1
-  echo "\\setDocumentTitle{$title}" >> $1
-
-  echo "\\begin{document}" >> $1
-  echo "\\begin{questions}" >> $1 
+function open_questions {
+  sed -i "1i \\\\\\begin{questions}" $1 
+  sed -i "$ a \\\\\\end{questions}" $1 
 }
 
-function rename_parent_folder {
-  parent=$(basename $(dirname `pwd`))
-  db_id=${parent%-*} # parent folder is either = a number (initially) or number-uid (eventually)
-
-  # echo "++++++++++ Here with $parent -> $db_id"
-  if [ "$parent" == "$db_id" ] ; then # never re-named before
-    uid=$(grep -m 1 setbaseQR download.tex | cut -d '{' -f 2 | cut -d '}' -f 1)
-    # echo " +++++++++ Renaming $db_id -> $db_id-$uid"
-    (cd ../.. ; mv $db_id $db_id-$uid)
-  fi
+function open_document { 
+  sed -i "1i \\\\\\begin{document}" $1
+  sed -i "$ a \\\\\\end{document}" $1
 }
 
-function set_base_qrcode {
-  # $1 = Target TeX File
-  n=$(grep -c setbaseQR $1)
-  if [ $n -eq 0 ] ; then 
-    sum=$(sha1sum $1)
-    j=${sum:0:7}
-    uid=${j~~} # Uppercase $j
-    sed -i "4i \\\\\\setbaseQR{$uid}" $1 
-  fi
+function open_file {
+  # Note that TeX is being written in the reverse order
+  sed -i "1i \\\\\\fancyfoot[C]{\\\\copyright\\,Gradians.com}" $1
+  sed -i "1i \\\\\\documentclass[12pt,a4paper,justified]{tufte-exam}" $1
 }
-
-function set_printanswers {
-  # $1 = Target TeX File
-  sed -i '4i \\\\printanswers' $1
-}
-
-function unset_printanswers { 
-  # $1 = Target TeX File
-  line=$(grep -m 1 -n '\\printanswers' $1 | head -1 | sed -e 's/:.*//')
-  if [ $line ] ; then
-    sed -i "$line d" $1
-  fi
-} 
 
 function set_cancelspace {
   # $1 = Target TeX File
@@ -133,7 +137,8 @@ function create_blueprint_in_vault {
 
   echo "author: Gradians.com" >> blueprint
   echo "title: Question Preview" >> blueprint
-  echo $rel_path >> blueprint
+  echo "mode: vault" >> blueprint 
+  echo "import: $rel_path" >> blueprint
 }
 
 function set_question_version {
@@ -151,13 +156,14 @@ function compile_question_tex {
   # $2 = Log file (optional)
 
   base=$(ls $1 | sed -e 's/\..*//') # preview.tex -> preview | abhinav.tex -> abhinav
-  latex -halt-on-error $base.tex
+  mode=$(get_mode)
 
+  latex -halt-on-error $base.tex
   if [ -e $base.dvi ] ; then 
     dvips -q $base.dvi
     if [ -e $base.ps ] ; then 
       ps2pdf $base.ps
-      if [ -e $base.pdf ] ; then 
+      if [ -e $base.pdf -a $mode == "vault" ] ; then 
         gs -dNOPAUSE -dBATCH -sDEVICE=jpeg -r700 -sOutputFile=pg-%d.jpg $base.pdf
         for f in `ls pg-*.jpg` ; do convert $f -resize 600x800 $f ; done
       else
@@ -169,4 +175,15 @@ function compile_question_tex {
   else
     if [ ! -z $2 ] ; then echo ".... [TeX -> dvi] -> failed" >> $2 ; fi
   fi
+}
+
+function clean_tex {
+  # 1. Remove any LaTeX comments 
+  sed -i '/^%/d' $1
+
+  # 2.  Remove any unused \renewcommand\vb* variables
+  b=$(grep -m 1 -n "rolldice" $1 | sed -e 's/:.*//')
+  e=$(grep -m 1 -n "\\\\question" $1 | sed -e 's/:.*//')
+
+  sed -i -e '/renewcommand.*{}/d' $1
 }
