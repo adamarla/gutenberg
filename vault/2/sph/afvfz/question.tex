@@ -1,6 +1,5 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{2}
   \renewcommand{\vbtwo}{}
   \renewcommand{\vbthree}{-}
@@ -13,7 +12,6 @@
   \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{2}
     \renewcommand{\vbtwo}{-}
     \renewcommand{\vbthree}{+}
@@ -26,7 +24,6 @@
     \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{3}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{-}
@@ -38,7 +35,6 @@
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }{
-      % variables 
       \renewcommand{\vbone}{3}
       \renewcommand{\vbtwo}{-}
       \renewcommand{\vbthree}{+}
@@ -55,13 +51,13 @@
 
 \SQUARE{\vbone}\sq
 
-\question If $y=\dfrac{\sqrt{1-x}}{\sqrt{1+x}}$, prove that
+\question[4] If $y=\dfrac{\sqrt{1-x}}{\sqrt{1+x}}$, prove that
 $(1-x^2)\dfrac{dy}{dx}+y=0$. \\
 Find $\dfrac{dy}{dx}$ for $x=\vbtwo\frac{1}{\vbone}$.
 
 \watchout
 
-\begin{solution}
+\begin{solution}[\fullpage]
   \begin{align}
     y  &=\dfrac{\sqrt{1-x}}{\sqrt{1+x}} \\
     y^2&=\dfrac{1-x}{1+x}
