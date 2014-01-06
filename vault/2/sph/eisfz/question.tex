@@ -1,6 +1,5 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{}
   \renewcommand{\vbtwo}{}
   \renewcommand{\vbthree}{}
@@ -13,7 +12,6 @@
   \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{}
     \renewcommand{\vbtwo}{}
     \renewcommand{\vbthree}{}
@@ -26,7 +24,6 @@
     \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
@@ -38,7 +35,6 @@
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }{
-      % variables 
       \renewcommand{\vbone}{}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
@@ -53,10 +49,10 @@
   }
 }
 
-\question If $y=\dfrac{e^x - e^{-x}}{e^x + e^{-x}}$, prove that 
+\question[3] If $y=\dfrac{e^x - e^{-x}}{e^x + e^{-x}}$, prove that 
 $\dfrac{dy}{dx}=\dfrac{4}{\left(e^x + e^{-x}\right)^2}$.
 
-\begin{solution}
+\begin{solution}[\mcq]
   Use \textit{Quotient Rule},
   \begin{align}
       \dfrac{dy}{dx}&=\dfrac{(e^x + e^{-x})(e^x + e^{-x})-
