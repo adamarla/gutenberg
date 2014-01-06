@@ -1,6 +1,5 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{\sin}
   \renewcommand{\vbtwo}{\cos}
   \renewcommand{\vbthree}{\cos}
@@ -13,7 +12,6 @@
   \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{\cos}
     \renewcommand{\vbtwo}{\sin}
     \renewcommand{\vbthree}{-\sin}
@@ -26,7 +24,6 @@
     \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{\sin}
       \renewcommand{\vbtwo}{\sin}
       \renewcommand{\vbthree}{\cos}
@@ -38,7 +35,6 @@
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }{
-      % variables 
       \renewcommand{\vbone}{\cos}
       \renewcommand{\vbtwo}{\cos}
       \renewcommand{\vbthree}{-\sin}
@@ -53,14 +49,14 @@
   }
 }
 
-\question Differentiate $y=\vbone(e^x\vbtwo x)$ with respect to $x$.
+\question[3] Differentiate $y=\vbone(e^x\vbtwo x)$ with respect to $x$.
 
 \insertQR{}
 
 \watchout
 
 
-\begin{solution}
+\begin{solution}[\mcq]
   Set $h=e^x\vbtwo x$ and use \textit{Chain Rule},
   \begin{align}
     \dfrac{y}{x} &= \dfrac{dy}{dh}\cdot\dfrac{dh}{dx}
