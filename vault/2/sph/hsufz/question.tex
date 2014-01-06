@@ -1,6 +1,5 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{\cos}
   \renewcommand{\vbtwo}{-}
   \renewcommand{\vbthree}{+}
@@ -13,7 +12,6 @@
   \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{\cos}
     \renewcommand{\vbtwo}{+}
     \renewcommand{\vbthree}{-}
@@ -26,7 +24,6 @@
     \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{\sin}
       \renewcommand{\vbtwo}{-}
       \renewcommand{\vbthree}{+}
@@ -38,7 +35,6 @@
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }{
-      % variables 
       \renewcommand{\vbone}{\sin}
       \renewcommand{\vbtwo}{+}
       \renewcommand{\vbthree}{-}
@@ -53,12 +49,12 @@
   }
 }
 
-\question Differentiate $y=\sqrt{\dfrac{1\vbtwo\vbone x}{1\vbthree\vbone x}}$ 
+\question[3] Differentiate $y=\sqrt{\dfrac{1\vbtwo\vbone x}{1\vbthree\vbone x}}$ 
 with respect to $x$.
 
 \watchout
 
-\begin{solution}
+\begin{solution}[\halfpage]
   Rationalize the expression to get rid of the square root.
   \begin{align}
     y&=\sqrt{\dfrac{1\vbtwo\vbone x}{1\vbthree\vbone x}}

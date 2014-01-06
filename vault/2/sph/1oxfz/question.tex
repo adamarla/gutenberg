@@ -1,6 +1,5 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{}
   \renewcommand{\vbtwo}{}
   \renewcommand{\vbthree}{}
@@ -13,7 +12,6 @@
   \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{}
     \renewcommand{\vbtwo}{}
     \renewcommand{\vbthree}{}
@@ -26,7 +24,6 @@
     \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
@@ -38,7 +35,6 @@
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }{
-      % variables 
       \renewcommand{\vbone}{}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
@@ -53,9 +49,9 @@
   }
 }
 
-\question If $y=x\sqrt{x^2+1}$, find $\dfrac{dy}{dx}$.
+\question[2] If $y=x\sqrt{x^2+1}$, find $\dfrac{dy}{dx}$.
 
-\begin{solution}
+\begin{solution}[\mcq]
   Use \textit{Product Rule},
   \begin{align}
     \dfrac{dy}{dx}&=x\dfrac{d}{dx}\sqrt{x^2+1}+\sqrt{x^2+1}\dfrac{d}{dx}x \\
