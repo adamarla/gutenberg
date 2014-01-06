@@ -1,6 +1,5 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{\cos}
   \renewcommand{\vbtwo}{\sin}
   \renewcommand{\vbthree}{ax}
@@ -13,7 +12,6 @@
   \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{\sin}
     \renewcommand{\vbtwo}{\cos}
     \renewcommand{\vbthree}{ax}
@@ -26,7 +24,6 @@
     \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{\cos}
       \renewcommand{\vbtwo}{\sin}
       \renewcommand{\vbthree}{a}
@@ -38,7 +35,6 @@
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }{
-      % variables 
       \renewcommand{\vbone}{\sin}
       \renewcommand{\vbtwo}{\cos}
       \renewcommand{\vbthree}{a}
@@ -53,11 +49,11 @@
   }
 }
 
-\question Differentiate $y=\vbone(\vbtwo\sqrt{\vbthree+\vbfour})$ with respect to $x$.
+\question[4] Differentiate $y=\vbone(\vbtwo\sqrt{\vbthree+\vbfour})$ with respect to $x$.
 
 \watchout
 
-\begin{solution}
+\begin{solution}[\halfpage]
   Set $f=\sqrt{\vbthree+\vbfour}$, $g=\vbtwo f$ and use \textit{Chain Rule},
   \begin{align}
     \dfrac{dy}{dx} &= \dfrac{dy}{dg}\cdot\dfrac{dg}{df}\cdot\dfrac{df}{dx}

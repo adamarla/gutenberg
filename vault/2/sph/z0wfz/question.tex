@@ -1,6 +1,5 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{\pi}
   \renewcommand{\vbtwo}{-\pi}
   \renewcommand{\vbthree}{}
@@ -13,7 +12,6 @@
   \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{\pi/2}
     \renewcommand{\vbtwo}{1}
     \renewcommand{\vbthree}{}
@@ -26,7 +24,6 @@
     \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{0}
       \renewcommand{\vbtwo}{0}
       \renewcommand{\vbthree}{}
@@ -38,7 +35,6 @@
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }{
-      % variables 
       \renewcommand{\vbone}{3\pi/2}
       \renewcommand{\vbtwo}{-1}
       \renewcommand{\vbthree}{}
@@ -53,14 +49,14 @@
   }
 }
 
-\question Differentiate $y=x\sin x$ with respect to $x$ and 
+\question[2] Differentiate $y=x\sin x$ with respect to $x$ and 
 find it's value for $x=\vbone$.
 
 \insertQR{}
 
 \watchout
 
-\begin{solution}
+\begin{solution}[\mcq]
   Simple application of $Product Rule$.
   \begin{align}
     y' &= x \dydx[\sin x] + \sin x\dydx[x] \\
