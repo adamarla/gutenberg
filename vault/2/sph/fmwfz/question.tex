@@ -1,6 +1,5 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{3}
   \renewcommand{\vbtwo}{2}
   \renewcommand{\vbthree}{}
@@ -13,7 +12,6 @@
   \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{4}
     \renewcommand{\vbtwo}{3}
     \renewcommand{\vbthree}{}
@@ -26,7 +24,6 @@
     \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{2}
       \renewcommand{\vbtwo}{1}
       \renewcommand{\vbthree}{}
@@ -38,7 +35,6 @@
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }{
-      % variables 
       \renewcommand{\vbone}{5}
       \renewcommand{\vbtwo}{4}
       \renewcommand{\vbthree}{}
@@ -53,11 +49,11 @@
   }
 }
 
-\question Differentiate $y=e^{(x+\vbone\ln x)}$ with respect to $x$.
+\question[3] Differentiate $y=e^{(x+\vbone\ln x)}$ with respect to $x$.
 
 \watchout
 
-\begin{solution}
+\begin{solution}[\mcq]
   First reduce the expression,
   \begin{align}
     y&=e^{(x+\vbone\ln x)} \\
