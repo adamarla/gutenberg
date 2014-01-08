@@ -60,6 +60,7 @@ function create_skeleton {
     echo "... [importing]: $p"
     cat -s $bank/$p/$file >> skel
   done
+
   clean_tex skel 
 
   # Add details to skel as needed depending on $mode
@@ -67,6 +68,12 @@ function create_skeleton {
     open_questions skel
     sed -i "1i \\\\\\setDocumentTitle{$(get_title)}" skel 
     sed -i "1i \\\\\\setPageBreaks{$(get_page_breaks)}" skel 
+    # Replace any \begin{solution} and \end{solution} with 
+    # \begin{explanation} and \end{explanation}. The latter is 
+    # our own environment and it ensures that a solution gets 
+    # a half-page in case nothing is specified ( probably due to 
+    # incorrect question tagging)
+    sed -i -e 's/{solution}/{explanation}/g' skel
   else
     if [ $mode == "worksheet" ] ; then 
       sed -i "1i \\\\\\setAuthor[$(get_versions)]{$(get_author)}{$(get_response_ids)}" skel 
@@ -151,30 +158,35 @@ function set_question_version {
   fi
 }
 
-function compile_question_tex {
+function compile_tex {
   # $1 = Source TeX file
   # $2 = Log file (optional)
 
-  base=$(ls $1 | sed -e 's/\..*//') # preview.tex -> preview | abhinav.tex -> abhinav
+  stem=$(ls $1 | sed -e 's/\..*//') # preview.tex -> preview | abhinav.tex -> abhinav
   mode=$(get_mode)
 
-  latex -halt-on-error $base.tex
-  if [ -e $base.dvi ] ; then 
-    dvips -q $base.dvi
-    if [ -e $base.ps ] ; then 
-      ps2pdf $base.ps
-      if [ -e $base.pdf -a $mode == "vault" ] ; then 
-        gs -dNOPAUSE -dBATCH -sDEVICE=jpeg -r700 -sOutputFile=pg-%d.jpg $base.pdf
-        for f in `ls pg-*.jpg` ; do convert $f -resize 600x800 $f ; done
+  latex -halt-on-error $stem.tex
+  if [ -e $stem.dvi ] ; then 
+    dvips -q $stem.dvi
+    if [ -e $stem.ps ] ; then 
+      ps2pdf $stem.ps
+      if [ -e $stem.pdf ] ; then
+        if [ $mode == "vault" -o $mode == "quiz" ] ; then create_jpegs $stem.pdf ; fi
       else
-        if [ ! -z $2 ] ; then echo ".... [ps -> pdf] -> failed" >> $2 ; fi
+        if [ ! -z $2 ] ; then echo "(compile.sh: 169) - PS -> PDF failed" >> $2 ; fi
       fi
     else
-      if [ ! -z $2 ] ; then echo ".... [dvi -> ps] -> failed" >> $2 ; fi
+      if [ ! -z $2 ] ; then echo "(compile.sh: 172) - DVI -> PS failed" ; fi
     fi
   else
-    if [ ! -z $2 ] ; then echo ".... [TeX -> dvi] -> failed" >> $2 ; fi
+    if [ ! -z $2 ] ; then echo "(compile.sh: 175) - TeX -> DVI failed" ; fi
   fi
+}
+
+function create_jpegs {
+  # $1 = pdf file in current folder
+  gs -dNOPAUSE -dBATCH -sDEVICE=jpeg -r700 -sOutputFile=pg-%d.jpg $1 
+  for f in `ls pg-*.jpg` ; do convert $f -resize 600x800 $f ; done
 }
 
 function clean_tex {
