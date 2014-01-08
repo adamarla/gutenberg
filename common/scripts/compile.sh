@@ -198,4 +198,11 @@ function clean_tex {
   e=$(grep -m 1 -n "\\\\question" $1 | sed -e 's/:.*//')
 
   sed -i -e '/renewcommand.*{}/d' $1
+  # 3. Remove any fullwidth environments. Noticing problems with them 
+  #    Ideally, should diagnose the problem and fix it. But feeling lazy
+  sed -i '/{fullwidth}/d' $1
+
+  # Remove any \insertQR. The command is defunct. And moreover, \embedQR 
+  # is inserted anyways by TeX callbacks 
+  sed -i '/insertQR/d' $1
 }
