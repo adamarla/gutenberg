@@ -108,10 +108,10 @@ function receive_scans {
 
   cd /home/gutenberg/ScanbotSS
   if [ $1 == "heroku" ] ; then
-    java -cp ScanbotSS.jar:core.jar:javase.jar:commons-cli-1.2.jar gutenberg.collect.Driver -u www.gradians.com -d scantray >> $logf 
+    java -jar ScanbotSS.jar -u www.gradians.com -d scantray >> $logf 
     curl http://www.gradians.com/distribute/scans >> $logf
   else
-    java -cp ScanbotSS.jar:core.jar:javase.jar:commons-cli-1.2.jar gutenberg.collect.Driver -u 109.74.201.62 -d scan-ashtray >> $logf
+    java -jar ScanbotSS.jar -u 109.74.201.62 -d scan-ashtray >> $logf
     curl http://109.74.201.62/distribute/scans >> $logf
   fi
 }
