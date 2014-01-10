@@ -106,8 +106,7 @@
         }
       }{ % no QR in bottom-left => insert QR right there
         \begin{marginfigure}[#1]
-          \psbarcode[transx=0.4\marginparwidth]
-          {\baseQR}{eclevel=Q width=0.7 height=0.7}{qrcode} 
+          \psbarcode[transx=0.4\marginparwidth]{\baseQR}{eclevel=Q width=0.7 height=0.7}{qrcode} 
         \end{marginfigure}
       }
 
@@ -118,6 +117,8 @@
       }
     \fi % if cancelspace
   \fi % ifprintanswers 
+
+  \setbool{bottomLeftQR}{false}
 }
 
 % [Deprecated]  
@@ -176,10 +177,15 @@
 
 \newcommand\nextpg{
   \ifcancelspace
-  \else\booltrue{bottomLeftQR}\boolfalse{bottomLeftTaken}\newpage\fi
+  \else
+    \booltrue{bottomLeftQR}
+    \boolfalse{bottomLeftTaken}
+    \newpage
+  \fi
 }
 
 \BeforeBeginEnvironment{explanation}{\embedQR}
+
 
 \AfterEndEnvironment{explanation}{
   \setbool{bottomLeftQR}{false}
@@ -223,7 +229,7 @@
 }
 
 
-\AtBeginEnvironment{marginfigure}{
+\BeforeBeginEnvironment{marginfigure}{
   % This next bit of code is really needed when making worksheets only. 
   % If the marginfigure is rendered within \ifprintanswers, then this code will NOT be triggered
   % However, if a margin figure is unconditionally rendered, then this code 
