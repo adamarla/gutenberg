@@ -39,7 +39,7 @@
 \RequirePackage{pst-barcode} 
 \RequirePackage{tikz} 
 \RequirePackage{auto-pst-pdf} 
-%\RequirePackage{siunitx}
+\RequirePackage{siunitx}
 \RequirePackage{fig4tex}
 \RequirePackage{g-trig}
 \RequirePackage{g-seq}
