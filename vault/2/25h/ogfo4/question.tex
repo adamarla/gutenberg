@@ -1,26 +1,10 @@
 
-
 \question[3] Prove the following identity
 \begin{align}
   \dfrac{\sin\theta + \sin 3\theta + \sin 5\theta}
   	{\cos \theta + \cos 3\theta + \cos 5\theta} = \tan 3\theta \nonumber
 \end{align}
 
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
 
 \begin{solution}[\halfpage]
   Let us rewrite the Left Hand Side (L.H.S) as follows,
@@ -31,8 +15,8 @@
   							\cos (3\theta + 2\theta)} \\
 				 &= \dfrac{2\sin 3\theta \cos 2\theta + \sin 3\theta}
 				  		  {2\cos 3\theta \cos 2\theta + \cos 3\theta} \\
-				 &= \dfrac{2\sin 3\theta(\cos 2\theta + 1)}
-				  		  {2\cos 3\theta(\cos 2\theta + 1)} \\
+				 &= \dfrac{\sin 3\theta(2\cos 2\theta + 1)}
+				  		  {\cos 3\theta(2\cos 2\theta + 1)} \\
 				 &= \tan 3\theta
   \end{align}
 \end{solution}

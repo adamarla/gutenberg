@@ -2,26 +2,22 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
     }{
-      % variables 
     }
   }
 }
 
-\question Evaluate the following limit \[ \lim_{x\to 0}\dfrac{\sqrt{1-\cos x^2}}{1-\cos x}\]
+\question[5] Evaluate the following limit \[ \lim_{x\to 0}\dfrac{\sqrt{1-\cos x^2}}{1-\cos x}\]
 Remember, $\cos x^2\neq\cos^2 x$. \texttt{Hint:} $\lim_{f(x)\to 0}\dfrac{\sin f(x)}{f(x)} = ?$
 
 \ifprintanswers
 \fi
 
-\begin{solution}
+\begin{solution}[\halfpage]
   \begin{align}
     \lim_{x\to 0}\dfrac{\sqrt{1-\cos x^2}}{1-\cos x} &=
     \lim_{x\to 0}\underbrace{\dfrac{\sqrt{2\cdot\sin^2\left(\dfrac{x^2}{2}\right)}}{2\sin^2\dfrac{x}{2}}}_{2\sin^2\theta = 1-\cos 2\theta} \\
