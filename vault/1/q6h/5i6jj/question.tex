@@ -1,37 +1,6 @@
-% This is an empty shell file placed for you by the 'examiner' script.
-% You can now fill in the TeX for your question here.
 
-% Now, down to brasstacks. ** Writing good solutions is an Art **. 
-% Eventually, you will find your own style. But here are some thoughts 
-% to get you started: 
-%
-%   1. Write to be understood - but be crisp. Your own solution should not take 
-%      more space than you will give to the student. Hence, if you take more than 
-%      a half-page to write a solution, then give the student a full-page and so on...
-%
-%   2. Use margin-notes to "talk" to students about the critical insights
-%      in the question. The tone can be - in fact, should be - informal
-%
-%   3. Don't shy away from creating margin-figures you think will help
-%      students understand. Yes, it is a little more work per question. 
-%      But the question & solution will be written only once. Make that
-%      attempt at writing a solution count.
-%      
-%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
-% 
-%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
-%      education company. Bad spellings suggest that we ourselves 
-%      don't have any education. Also, use American spellings by default
-% 
-%   5. If a question has multiple parts, then first delete lines 40-41
-%   6. If a question does not have parts, then first delete lines 43-69
-%   
-%   7. Create versions of the question when possible. Use commands defined in 
-%      tufte-tweaks.sty to do so. Its easier than you think
 
  %\noprintanswers
-% \setcounter{rolldice}{3}
-% \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -59,53 +28,40 @@
   }
 }
 
-%%%%%%% Vertices 
 
-%%% A 
 \FRACMINUS\vbone{3}\vbtwo{3}\pax\qax
 \FRACL{-1}{\vbone}\pax\qax\pay\qay
 
-%%% B
 \FRACMULT\vbone{1}{7}{9}\tp\tq
 \FRACMINUS\tp\tq\vbthree{9}\pbx\qbx
 \FRACL{-1}\vbone\pbx\qbx\pby\qby
 
-%%% C
 \FRACMULT\vbtwo{1}{7}{12}\tp\tq
 \FRACMINUS\vbthree{12}\tp\tq\pcx\qcx
 \FRACL{2}{\vbtwo}\pcx\qcx\pcy\qcy
 
-%%%% Mid-points 
 
-%% X 
 \FRACADD\pax\qax\pbx\qbx\tp\tq
 \FRACDIV\tp\tq{2}{1}\pxx\qxx % X_x
 \FRACADD\pay\qay\pby\qby\tp\tq
 \FRACDIV\tp\tq{2}{1}\pxy\qxy % X_y
 
-%% Y 
 \FRACADD\pax\qax\pcx\qcx\tp\tq
 \FRACDIV\tp\tq{2}{1}\pyx\qyx % Y_x
 \FRACADD\pay\qay\pcy\qcy\tp\tq
 \FRACDIV\tp\tq{2}{1}\pyy\qyy % Y_y
 
-%% Z 
 \FRACADD\pbx\qbx\pcx\qcx\tp\tq
 \FRACDIV\tp\tq{2}{1}\pzx\qzx % Z_x
 \FRACADD\pby\qby\pcy\qcy\tp\tq
 \FRACDIV\tp\tq{2}{1}\pzy\qzy % Z_y
 
-%%% perpendicular constants
-%%P_1
 \FRACMINUS\pxy\qxy\pxx\qxx\mx\nx
-%% P_2
 \FRACMULT\pyx\qyx{-1}{2}\tp\tq
 \FRACMINUS\pyy\qyy\tp\tq\my\ny
-%% P_3
 \FRACMULT\pzx\qzx{-7}{2}\tp\tq
 \FRACMINUS\pzy\qzy\tp\tq\mz\nz
 
-%%%% Circumcenter 
 \FRACMINUS\my\ny\mx\nx\ansxp\ansxq
 \FRACMULT\ansxp\ansxq{2}{3}\ansxp\ansxq
 \FRACADD\ansxp\ansxq\mx\nx\ansyp\ansyq
@@ -117,7 +73,6 @@ a triangle. The mid-points of the sides - also shown - are $X,\,Y$ and $Z$
 
 \watchout
 
-%\ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
   \begin{marginfigure}
     \figinit{pt}
@@ -149,12 +104,10 @@ a triangle. The mid-points of the sides - also shown - are $X,\,Y$ and $Z$
     }
     \centerline{\box\figBoxA}
   \end{marginfigure}
-%\fi 
 
 \begin{parts}
   \part[4] Find the coordinates of the vertices of the triangle 
 
-  \insertQR{QRC}
 \begin{solution}[\halfpage]
     This is simple. Take two lines at a time and solve first for $x$ and then for $y$. Which means, that if 
     \begin{align}
@@ -172,7 +125,6 @@ a triangle. The mid-points of the sides - also shown - are $X,\,Y$ and $Z$
 
   \part[2] Find the coordinates of the \textit{mid-points} of the sides of the triangle
 
-  \insertQR{QRC}
 \begin{solution}[\mcq]
   	A point $J$ in the middle of two other points - $M = (x_m, y_m)$ and $N = (x_n, y_n)$ has coordinates  
   	$\left( \frac{x_m + x_n}{2}, \frac{y_m + y_m}{2}\right)$
@@ -190,7 +142,6 @@ a triangle. The mid-points of the sides - also shown - are $X,\,Y$ and $Z$
 
   \part[3] Find the \textit{circumcenter} of the triangle
 
-  \insertQR{QRC}
 \begin{solution}[\halfpage]
   	The circumcenter of a triangle is the points where the \textit{perpendicular} bisectors 
   	of its sides intersect
@@ -214,23 +165,3 @@ a triangle. The mid-points of the sides - also shown - are $X,\,Y$ and $Z$
 
 \end{parts}
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{6cm}p{4cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-          Vertices where lines intersect & \\ 
-          Mid-point coordinates are averages & \\
-          Slopes of perpendicular bisectors & Knows what a circumcenter is \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-          $x+y = 1$ & $\left( -\frac{11}{18},\,\frac{7}{18}\right)$ \\
-          $x+y = 3$ & $\left( -\frac{41}{72},\,\frac{103}{72}\right)$ \\
-          $x+y = 4$ & $\left( -\frac{5}{6},\,\frac{7}{6}\right)$ \\
-          $x+y = 5$ & $\left( \frac{77}{54},\,\frac{83}{54}\right)$ \\
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi

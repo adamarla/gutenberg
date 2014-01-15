@@ -1,37 +1,5 @@
-% This is an empty shell file placed for you by the 'examiner' script.
-% You can now fill in the TeX for your question here.
 
-% Now, down to brasstacks. ** Writing good solutions is an Art **. 
-% Eventually, you will find your own style. But here are some thoughts 
-% to get you started: 
-%
-%   1. Write to be understood - but be crisp. Your own solution should not take 
-%      more space than you will give to the student. Hence, if you take more than 
-%      a half-page to write a solution, then give the student a full-page and so on...
-%
-%   2. Use margin-notes to "talk" to students about the critical insights
-%      in the question. The tone can be - in fact, should be - informal
-%
-%   3. Don't shy away from creating margin-figures you think will help
-%      students understand. Yes, it is a little more work per question. 
-%      But the question & solution will be written only once. Make that
-%      attempt at writing a solution count.
-%      
-%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
-% 
-%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
-%      education company. Bad spellings suggest that we ourselves 
-%      don't have any education. Also, use American spellings by default
-% 
-%   5. If a question has multiple parts, then first delete lines 40-41
-%   6. If a question does not have parts, then first delete lines 43-69
-%   
-%   7. Create versions of the question when possible. Use commands defined in 
-%      tufte-tweaks.sty to do so. Its easier than you think
 
-%\noprintanswers
-%\setcounter{rolldice}{3}
-%\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -89,7 +57,6 @@
 \EXPR[0]{\mab}{-(\vbthree - \vbone)/(\vbfour - \vbtwo)}
 \EXPR[2]{\mbc}{-(\vbfive - \vbthree)/(\vbsix - \vbfour) }
 \EXPR[0]{\mca}{-(\vbone - \vbfive)/(\vbtwo - \vbsix)} 
-%
 \EXPR[0]{\cone}{\yone - (\mab * \xone)}
 \EXPR[0]{\ctwo}{\ytwo - (\mbc * \xtwo)}
 \EXPR[0]{\cthree}{\ythree - (\mca * \xthree)}
@@ -127,7 +94,6 @@ $C = (\vbfive, \vbsix)$ - \asif. $X$, $Y$ and $Z$ are the mid-points of the thre
 \begin{parts}
 	\part[1] Find the coordinates of the mid-points $X$, $Y$ and $Z$
 	
-	\insertQR[-30pt]{QRC}
 \begin{solution}[\mcq]
 		The mid-point of a line-segment joining two points $(x_1, y_1)$ and $(x_2, y_2)$ is given 
 		by $\left( \frac{x_1 + x_2}{2}, \frac{y_1 + y_2}{2}\right)$
@@ -142,7 +108,6 @@ $C = (\vbfive, \vbsix)$ - \asif. $X$, $Y$ and $Z$ are the mid-points of the thre
 	
 	\part[3] Find the equations of the \textit{perpendicular} bisectors of the three sides of the triangle
 	
-	\insertQR[-15pt]{QRC}
 \begin{solution}[\halfpage]
 		If $AB_\perp$, $BC_\perp$ and $CA_\perp$ be the perpendicular bisectors of $AB$, $BC$ and $CA$ respectively, then 
 		their slopes are given by
@@ -161,7 +126,6 @@ $C = (\vbfive, \vbsix)$ - \asif. $X$, $Y$ and $Z$ are the mid-points of the thre
 	
 	\part[2] Are the perpendicular bisectors concurrent? If yes, then find their point of intersection
 	
-	\insertQR[-15pt]{QRC}
 \begin{solution}[\mcq]
 		$AB_\perp$ and $BC_\perp$ intersect when $ y = \mab x + \cone = \mbc x + \ctwo \Rightarrow x = \vbseven$ 
 		and $y = \vbeight$
@@ -172,34 +136,3 @@ $C = (\vbfive, \vbsix)$ - \asif. $X$, $Y$ and $Z$ are the mid-points of the thre
 	\end{solution}
 \end{parts}
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-        Mid-point corrdinates are average of end-point coordinates & \\
-        Perpendicular bisector does \textit{not} have to pass through opposite vertex & \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-        $A=(-1,0)$ and $B=(7,2)$ & $AB_\perp : y=-4x+13$ \\
-                           & $BC_\perp : y=-0.5x+3$ \\
-                           & $CA_\perp : y=3x-7$ \\
-                           & \textbf{Part C}: Point = $\left( \frac{20}{7}, \frac{11}{7} \right)$ \\
-        $A=(1,0)$ and $B=(-7,2)$ & $AB_\perp : y=4x+13$ \\
-                           & $BC_\perp : y=0.5x+3$ \\
-                           & $CA_\perp : y=-3x-7$ \\
-                           & \textbf{Part C}: Point = $\left( \frac{-20}{7}, \frac{11}{7} \right)$ \\
-        $A=(-1,0)$ and $B=(7,-2)$ & $AB_\perp : y=4x-13$ \\
-                           & $BC_\perp : y=0.5x-3$ \\
-                           & $CA_\perp : y=-3x+7$ \\
-                           & \textbf{Part C}: Point = $\left( \frac{20}{7}, -\frac{11}{7} \right)$ \\
-        $A=(1,0)$ and $B=(-7,-2)$ & $AB_\perp : y=-4x-13$ \\
-                           & $BC_\perp : y=-0.5x-3$ \\
-                           & $CA_\perp : y=3x+7$ \\
-                           & \textbf{Part C}: Point = $\left( -\frac{20}{7}, -\frac{11}{7} \right)$ \\
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi

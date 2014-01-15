@@ -1,7 +1,4 @@
 
-% \noprintanswers
-%\setcounter{rolldice}{2}
-% \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -39,7 +36,6 @@
 \question[1] For what value of $p$ would the vectors $\vec{a} = \WRITEVEC{\vbone}{\vbtwo}{\vbthree}$ and 
 $\vec{b} = \WRITEVECGENERAL{\vbfour}{p}{\vbfive}$ be parallel?
 
-\insertQR[-15pt]{}
 
 \watchout
 
@@ -56,21 +52,3 @@ $\vec{b} = \WRITEVECGENERAL{\vbfour}{p}{\vbfive}$ be parallel?
 	\end{align}
 \end{solution}
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-  			Correctly stated relationship between coefficients of parallel vectors \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-  			$\vec{a} = 3\hat{i} + 2\hat{j} + 9\hat{k}$ & $p = \frac{2}{3}$ \\
-  			$\vec{a} = 7\hat{i} + 4\hat{j} + 7\hat{k}$ & $p = \frac{12}{7}$ \\
-  			$\vec{a} = 4\hat{i} + 5\hat{j} + 6\hat{k}$ & $p = \frac{15}{4}$ \\
-  			$\vec{a} = 5\hat{i} + 3\hat{j} + 5\hat{k}$ & $p = \frac{18}{5}$ \\
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi

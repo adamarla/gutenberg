@@ -1,7 +1,5 @@
 
-% \noprintanswers
  %\setcounter{rolldice}{1}
-% \printrubric
 
 \renewcommand{\vbthree}{(\lambda + 2)^2 + 40}
 \ifnumequal{\value{rolldice}}{0}{
@@ -39,7 +37,6 @@
 \textit{unit} vector along the sum of $\vec{A} = \WRITEVEC{2}{4}{-5}$ and $\vec{B} =\WRITEVECGENERAL{\lambda}{2}{3}$ is $1$. 
 Find the value of $\lambda$
 
-\insertQR{iabhinav}
 
 \watchout
 
@@ -65,21 +62,3 @@ Find the value of $\lambda$
 	\end{align}
 \end{solution}
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-  			$\vec{a}\cdot\vec{b} = a_1\cdot b_1 + a_2\cdot b_2 + a_3\cdot b_3$ & \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-  			$\vec{V} = \hat{i} + \hat{j} + \hat{k}$ & $\lambda = 1$ \\
-  			$\vec{V} = \hat{i} + 2\hat{j} + 3\hat{k}$ & $\lambda = -\frac{5}{3}$ \\
-  			$\vec{V} = \hat{i} + 5\hat{j} + 4\hat{k}$ & $\lambda = -\frac{133}{11}$ \\
-  			$\vec{V} = \hat{i} + 3\hat{j} + 8\hat{k}$ & $\lambda = 7$ \\
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi

@@ -1,7 +1,4 @@
 
-%\noprintanswers
-%\setcounter{rolldice}{3}
-%\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -45,7 +42,6 @@
 
 \question[3] Find the \textit{smallest} valid $N$ for which $\enpr{N}{\vbone}\geq \d\cdot\enpr{N}{\z}$
 
-\insertQR[-20pt]{qrc}
 
 \watchout
 
@@ -62,21 +58,3 @@
 	and $N$ has to be an integer. And therefore, $N=\vbthree$ is the only valid solution
 \end{solution}
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Look for the following}} & \\ 
-  		\midrule % ***** Insights & formulations ******
-  			$N$ is an integer & $N > 0$ \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-  			$\enpr{N}{5}\geq 42\cdot\enpr{N}{3}$ & $N = 10$ \\
-  			$\enpr{N}{6}\geq 30\cdot\enpr{N}{4}$ & $N = 10$ \\
-  			$\enpr{N}{7}\geq 56\cdot\enpr{N}{5}$ & $N = 13$ \\
-  			$\enpr{N}{8}\geq 56\cdot\enpr{N}{6}$ & $N = 14$ \\
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi

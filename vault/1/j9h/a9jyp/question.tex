@@ -1,7 +1,4 @@
 
-%\noprintanswers
-%\setcounter{rolldice}{0}
-%\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -42,7 +39,6 @@ $A = \lbrace(x,y) : x + y = \vbone\rbrace$ and $B = \lbrace x : x\neq\vbtwo\rbra
 where $x$ and $y$ are what one gets for the first and second die respectively, 
 then are the two events $A$ and $B$ independent?
 
-\insertQR{qrc}
 
 \watchout
 
@@ -65,21 +61,3 @@ then are the two events $A$ and $B$ independent?
   	events $A$ and $B$ are \textit{not} independent
 \end{solution}
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-        Need to compare $P(A\vert\,B)$ and $P(A)$ & \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-        $A=\lbrace(x,y): x+y=11 \rbrace$ & $P(A\vert\,B)=\dfrac{1}{30}\neq P(A)\Rightarrow$ not independent \\
-        $A=\lbrace(x,y): x+y=10\rbrace$ & $P(A\vert\,B)=\dfrac{1}{15}\neq P(A)\Rightarrow$ not independent \\
-        $A=\lbrace(x,y): x+y=9 \rbrace$ & $P(A\vert\,B)=\dfrac{1}{10}\neq P(A)\Rightarrow$ not independent \\
-        $A=\lbrace(x,y): x+y=8 \rbrace$ & $P(A\vert\,B)=\dfrac{2}{15}\neq P(A)\Rightarrow$ not independent \\
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi

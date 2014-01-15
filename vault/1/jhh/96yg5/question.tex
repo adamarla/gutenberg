@@ -1,7 +1,4 @@
 
-% \noprintanswers
-% \setcounter{rolldice}{1}
-% \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -26,7 +23,6 @@
 
 \question[1] Find $\vert\,\vec{x}\vert$ if for a unit vector $\hat{a}$, $(\vec{x}-\hat{a})\cdot(\vec{x} + \hat{a}) = \vbone$
 
-\insertQR[-25pt]{qrc}
 
 \watchout
 
@@ -42,21 +38,3 @@
 	\end{align}
 \end{solution}
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Look for the following}} \\ 
-  		\midrule % ***** Insights & formulations ******
-  		   	$\vec{x}\cdot\vec{x} = \vert\vec{x}\vert\ ^2$ & $\vert\hat{a}\vert = 1$ \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-        	$(\vec{x} - \hat{a})\cdot(\vec{x} + \hat{a}) = 8$ & $3$ \\
-        	$(\vec{x} - \hat{a})\cdot(\vec{x} + \hat{a}) = 15$ & $4$ \\
-        	$(\vec{x} - \hat{a})\cdot(\vec{x} + \hat{a}) = 24$ & $5$ \\
-        	$(\vec{x} - \hat{a})\cdot(\vec{x} + \hat{a}) = 35$ & $6$ \\
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi

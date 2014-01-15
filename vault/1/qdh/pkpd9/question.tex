@@ -1,7 +1,4 @@
 
-%\noprintanswers
-%\setcounter{rolldice}{2}
-%\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -45,7 +42,6 @@ person selected at random has blood group $O$ given that overall $\vbthree$\% of
 blood group $O$?
 
 
-\insertQR[5pt]{QRC}
 
 \watchout[-40pt]
 
@@ -69,21 +65,3 @@ blood group $O$?
 \end{solution}
 
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-        Correctly identified $P(L\vert\,O)$, $P(L\vert\, O')$ and $P(O)$ & \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-        $P(O) = 10\%$ & $\dfrac{4}{67}$ \\
-        $P(O) = 30\%$ & $\qquad\dfrac{9}{44}$ \\
-        $P(O) = 20\%$ & $\dfrac{3}{19}$ \\
-        $P(O) = 25\%$ & $\qquad\dfrac{2}{11}$ \\
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi
