@@ -1,0 +1,81 @@
+
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\vbone}{\cos}
+  \renewcommand{\vbtwo}{\sin}
+  \renewcommand{\vbthree}{ax}
+  \renewcommand{\vbfour}{b}
+  \renewcommand{\vbfive}{-\sin}
+  \renewcommand{\vbsix}{\cos}
+  \renewcommand{\vbseven}{a}
+  \renewcommand{\vbeight}{}
+  \renewcommand{\vbnine}{}
+  \renewcommand{\vbten}{}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\vbone}{\sin}
+    \renewcommand{\vbtwo}{\cos}
+    \renewcommand{\vbthree}{ax}
+    \renewcommand{\vbfour}{b}
+    \renewcommand{\vbfive}{\cos}
+    \renewcommand{\vbsix}{-\sin}
+    \renewcommand{\vbseven}{a}
+    \renewcommand{\vbeight}{}
+    \renewcommand{\vbnine}{}
+    \renewcommand{\vbten}{}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\vbone}{\cos}
+      \renewcommand{\vbtwo}{\sin}
+      \renewcommand{\vbthree}{a}
+      \renewcommand{\vbfour}{bx}
+      \renewcommand{\vbfive}{-\sin}
+      \renewcommand{\vbsix}{\cos}
+      \renewcommand{\vbseven}{b}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }{
+      \renewcommand{\vbone}{\sin}
+      \renewcommand{\vbtwo}{\cos}
+      \renewcommand{\vbthree}{a}
+      \renewcommand{\vbfour}{bx}
+      \renewcommand{\vbfive}{\cos}
+      \renewcommand{\vbsix}{-\sin}
+      \renewcommand{\vbseven}{b}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }
+  }
+}
+
+\question[4] Differentiate $y=\vbone(\vbtwo\sqrt{\vbthree+\vbfour})$ with respect to $x$.
+
+\watchout
+
+\begin{solution}[\halfpage]
+  Set $f=\sqrt{\vbthree+\vbfour}$, $g=\vbtwo f$ and use \textit{Chain Rule},
+  \begin{align}
+    \dfrac{dy}{dx} &= \dfrac{dy}{dg}\cdot\dfrac{dg}{df}\cdot\dfrac{df}{dx}
+  \end{align}
+  Differentiate each component of the chain,
+  \begin{align}
+    \dfrac{dy}{dg}=\dfrac{d}{dg} \vbone g
+                 &=\vbfive g \\
+                 &=\vbfive(\vbtwo f) \\
+                 &=\vbfive(\vbtwo \sqrt{\vbthree+\vbfour}) \\
+    \dfrac{dg}{df}=\dfrac{d}{df} \vbtwo f
+                 &=\vbsix f \\
+                 &=\vbsix \sqrt{\vbthree+\vbfour} \\
+    \dfrac{df}{dx}=\dfrac{d}{dx}f=\sqrt{\vbthree+\vbfour}
+                 &=\dfrac{1}{2\sqrt{\vbthree+\vbfour}}\cdot \vbseven \\
+                 &=\dfrac{\vbseven}{2\sqrt{\vbthree+\vbfour}}
+  \end{align}
+  Multiply (4), (6) and (8) to get final result,
+  \begin{align}
+    \dfrac{dy}{dx}=\vbfive(\vbtwo \sqrt{\vbthree+\vbfour})\cdot 
+                   (\vbsix \sqrt{\vbthree+\vbfour})\cdot
+                   \dfrac{\vbseven}{2\sqrt{\vbthree+\vbfour}}
+  \end{align}
+\end{solution}
+

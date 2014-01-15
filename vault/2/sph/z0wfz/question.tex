@@ -1,0 +1,70 @@
+
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\vbone}{\pi}
+  \renewcommand{\vbtwo}{-\pi}
+  \renewcommand{\vbthree}{}
+  \renewcommand{\vbfour}{}
+  \renewcommand{\vbfive}{}
+  \renewcommand{\vbsix}{}
+  \renewcommand{\vbseven}{}
+  \renewcommand{\vbeight}{}
+  \renewcommand{\vbnine}{}
+  \renewcommand{\vbten}{}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\vbone}{\pi/2}
+    \renewcommand{\vbtwo}{1}
+    \renewcommand{\vbthree}{}
+    \renewcommand{\vbfour}{}
+    \renewcommand{\vbfive}{}
+    \renewcommand{\vbsix}{}
+    \renewcommand{\vbseven}{}
+    \renewcommand{\vbeight}{}
+    \renewcommand{\vbnine}{}
+    \renewcommand{\vbten}{}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\vbone}{0}
+      \renewcommand{\vbtwo}{0}
+      \renewcommand{\vbthree}{}
+      \renewcommand{\vbfour}{}
+      \renewcommand{\vbfive}{}
+      \renewcommand{\vbsix}{}
+      \renewcommand{\vbseven}{}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }{
+      \renewcommand{\vbone}{3\pi/2}
+      \renewcommand{\vbtwo}{-1}
+      \renewcommand{\vbthree}{}
+      \renewcommand{\vbfour}{}
+      \renewcommand{\vbfive}{}
+      \renewcommand{\vbsix}{}
+      \renewcommand{\vbseven}{}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }
+  }
+}
+
+\question[2] Differentiate $y=x\sin x$ with respect to $x$ and 
+find it's value for $x=\vbone$.
+
+\insertQR{}
+
+\watchout
+
+\begin{solution}[\mcq]
+  Simple application of $Product Rule$.
+  \begin{align}
+    y' &= x \dydx[\sin x] + \sin x\dydx[x] \\
+       &= x\cos x + \sin x
+  \end{align}
+  To find the value of $y'$ for $x=\vbone$ we simply substitute,
+  \begin{align}
+    y'= \vbtwo
+  \end{align}
+\end{solution}
+

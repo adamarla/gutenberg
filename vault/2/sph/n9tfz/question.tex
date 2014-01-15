@@ -1,0 +1,78 @@
+
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\vbone}{\sin}
+  \renewcommand{\vbtwo}{\cos}
+  \renewcommand{\vbthree}{\cos}
+  \renewcommand{\vbfour}{-\sin}
+  \renewcommand{\vbfive}{}
+  \renewcommand{\vbsix}{}
+  \renewcommand{\vbseven}{}
+  \renewcommand{\vbeight}{}
+  \renewcommand{\vbnine}{}
+  \renewcommand{\vbten}{}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\vbone}{\cos}
+    \renewcommand{\vbtwo}{\sin}
+    \renewcommand{\vbthree}{-\sin}
+    \renewcommand{\vbfour}{\cos}
+    \renewcommand{\vbfive}{}
+    \renewcommand{\vbsix}{}
+    \renewcommand{\vbseven}{}
+    \renewcommand{\vbeight}{}
+    \renewcommand{\vbnine}{}
+    \renewcommand{\vbten}{}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\vbone}{\sin}
+      \renewcommand{\vbtwo}{\sin}
+      \renewcommand{\vbthree}{\cos}
+      \renewcommand{\vbfour}{\cos}
+      \renewcommand{\vbfive}{}
+      \renewcommand{\vbsix}{}
+      \renewcommand{\vbseven}{}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }{
+      \renewcommand{\vbone}{\cos}
+      \renewcommand{\vbtwo}{\cos}
+      \renewcommand{\vbthree}{-\sin}
+      \renewcommand{\vbfour}{-\sin}
+      \renewcommand{\vbfive}{}
+      \renewcommand{\vbsix}{}
+      \renewcommand{\vbseven}{}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }
+  }
+}
+
+\question[3] Differentiate $y=\vbone(e^x\vbtwo x)$ with respect to $x$.
+
+\insertQR{}
+
+\watchout
+
+
+\begin{solution}[\mcq]
+  Set $h=e^x\vbtwo x$ and use \textit{Chain Rule},
+  \begin{align}
+    \dfrac{y}{x} &= \dfrac{dy}{dh}\cdot\dfrac{dh}{dx}
+  \end{align}
+  Differentiate each component of the chain,
+  \begin{align}
+    \dfrac{dy}{dh}=\dfrac{d}{dh} \vbone h
+                 &= \vbthree h \\
+                 &= \vbthree(e^x\vbtwo x) \\
+    \dfrac{dh}{dx}=\dfrac{d}{dx}e^x\vbtwo x
+                 &= e^x(\vbfour x) + \vbtwo x(e^x)\\
+                 &= e^x(\vbfour x+ \vbtwo x)
+  \end{align}
+  Multiply (3) and (5) to get final result,
+  \begin{align}
+    \dfrac{dy}{dx} = \vbthree(e^x\vbtwo x)\cdot e^x(\vbfour x+ \vbtwo x)
+  \end{align}
+\end{solution}
+

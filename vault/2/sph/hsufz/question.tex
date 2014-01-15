@@ -1,0 +1,75 @@
+
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\vbone}{\cos}
+  \renewcommand{\vbtwo}{-}
+  \renewcommand{\vbthree}{+}
+  \renewcommand{\vbfour}{\sin}
+  \renewcommand{\vbfive}{}
+  \renewcommand{\vbsix}{+}
+  \renewcommand{\vbseven}{}
+  \renewcommand{\vbeight}{}
+  \renewcommand{\vbnine}{}
+  \renewcommand{\vbten}{}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\vbone}{\cos}
+    \renewcommand{\vbtwo}{+}
+    \renewcommand{\vbthree}{-}
+    \renewcommand{\vbfour}{\sin}
+    \renewcommand{\vbfive}{-}
+    \renewcommand{\vbsix}{-}
+    \renewcommand{\vbseven}{}
+    \renewcommand{\vbeight}{}
+    \renewcommand{\vbnine}{}
+    \renewcommand{\vbten}{}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\vbone}{\sin}
+      \renewcommand{\vbtwo}{-}
+      \renewcommand{\vbthree}{+}
+      \renewcommand{\vbfour}{\cos}
+      \renewcommand{\vbfive}{-}
+      \renewcommand{\vbsix}{-}
+      \renewcommand{\vbseven}{-}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }{
+      \renewcommand{\vbone}{\sin}
+      \renewcommand{\vbtwo}{+}
+      \renewcommand{\vbthree}{-}
+      \renewcommand{\vbfour}{\cos}
+      \renewcommand{\vbfive}{}
+      \renewcommand{\vbsix}{+}
+      \renewcommand{\vbseven}{-}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }
+  }
+}
+
+\question[3] Differentiate $y=\sqrt{\dfrac{1\vbtwo\vbone x}{1\vbthree\vbone x}}$ 
+with respect to $x$.
+
+\watchout
+
+\begin{solution}[\halfpage]
+  Rationalize the expression to get rid of the square root.
+  \begin{align}
+    y&=\sqrt{\dfrac{1\vbtwo\vbone x}{1\vbthree\vbone x}}
+      =\sqrt{\dfrac{(1\vbtwo\vbone x)}{(1\vbthree\vbone x)}
+             \dfrac{(1\vbtwo\vbone x)}{(1\vbtwo\vbone x)}} \\
+     &=\sqrt{\dfrac{(1\vbtwo\vbone x)^2}{\vbfour^2 x}} \\
+     &=\dfrac{(1\vbtwo\vbone x)}{\vbfour x}
+  \end{align}
+  Now apply \textit{Quotient Rule} to expression in (3),
+  \begin{align}
+    \dfrac{dy}{dx}&=\dfrac{\vbfour x(\vbfive\vbfour x)-(1\vbtwo\vbone x)(\vbseven\vbone x)}
+                          {\vbfour^2 x} \\
+                  &=\dfrac{\vbfive\vbfour^2 x -\vbone x \vbsix\vbone^2 x}{\vbfour^2 x}
+                   =\dfrac{\vbfive 1-\vbone x}{1-\vbone^2 x} \\
+                  &=\dfrac{\vbfive 1}{1\vbsix\vbone x}
+  \end{align}
+
+\end{solution}

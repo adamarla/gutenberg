@@ -1,0 +1,66 @@
+
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\vbone}{}
+  \renewcommand{\vbtwo}{}
+  \renewcommand{\vbthree}{}
+  \renewcommand{\vbfour}{}
+  \renewcommand{\vbfive}{}
+  \renewcommand{\vbsix}{}
+  \renewcommand{\vbseven}{}
+  \renewcommand{\vbeight}{}
+  \renewcommand{\vbnine}{}
+  \renewcommand{\vbten}{}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\vbone}{}
+    \renewcommand{\vbtwo}{}
+    \renewcommand{\vbthree}{}
+    \renewcommand{\vbfour}{}
+    \renewcommand{\vbfive}{}
+    \renewcommand{\vbsix}{}
+    \renewcommand{\vbseven}{}
+    \renewcommand{\vbeight}{}
+    \renewcommand{\vbnine}{}
+    \renewcommand{\vbten}{}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\vbone}{}
+      \renewcommand{\vbtwo}{}
+      \renewcommand{\vbthree}{}
+      \renewcommand{\vbfour}{}
+      \renewcommand{\vbfive}{}
+      \renewcommand{\vbsix}{}
+      \renewcommand{\vbseven}{}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }{
+      \renewcommand{\vbone}{}
+      \renewcommand{\vbtwo}{}
+      \renewcommand{\vbthree}{}
+      \renewcommand{\vbfour}{}
+      \renewcommand{\vbfive}{}
+      \renewcommand{\vbsix}{}
+      \renewcommand{\vbseven}{}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }
+  }
+}
+
+\question[3] If $y=\dfrac{e^x - e^{-x}}{e^x + e^{-x}}$, prove that 
+$\dfrac{dy}{dx}=\dfrac{4}{\left(e^x + e^{-x}\right)^2}$.
+
+\begin{solution}[\mcq]
+  Use \textit{Quotient Rule},
+  \begin{align}
+      \dfrac{dy}{dx}&=\dfrac{(e^x + e^{-x})(e^x + e^{-x})-
+                             (e^x - e^{-x})(e^x - e^{-x})}
+                            {(e^x + e^{-x})^2} \\
+                    &={e^{2x}+1+1+e^{-2x}-e^{2x}+1+1-e^{-2x}}
+                            {(e^x + e^{-x})^2} \\
+                    &=\dfrac{4}{(e^x + e^{-x})^2}
+  \end{align}
+\end{solution}
+

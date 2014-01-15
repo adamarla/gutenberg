@@ -1,0 +1,69 @@
+
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\vbone}{3}
+  \renewcommand{\vbtwo}{2}
+  \renewcommand{\vbthree}{}
+  \renewcommand{\vbfour}{}
+  \renewcommand{\vbfive}{}
+  \renewcommand{\vbsix}{}
+  \renewcommand{\vbseven}{}
+  \renewcommand{\vbeight}{}
+  \renewcommand{\vbnine}{}
+  \renewcommand{\vbten}{}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\vbone}{4}
+    \renewcommand{\vbtwo}{3}
+    \renewcommand{\vbthree}{}
+    \renewcommand{\vbfour}{}
+    \renewcommand{\vbfive}{}
+    \renewcommand{\vbsix}{}
+    \renewcommand{\vbseven}{}
+    \renewcommand{\vbeight}{}
+    \renewcommand{\vbnine}{}
+    \renewcommand{\vbten}{}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\vbone}{2}
+      \renewcommand{\vbtwo}{1}
+      \renewcommand{\vbthree}{}
+      \renewcommand{\vbfour}{}
+      \renewcommand{\vbfive}{}
+      \renewcommand{\vbsix}{}
+      \renewcommand{\vbseven}{}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }{
+      \renewcommand{\vbone}{5}
+      \renewcommand{\vbtwo}{4}
+      \renewcommand{\vbthree}{}
+      \renewcommand{\vbfour}{}
+      \renewcommand{\vbfive}{}
+      \renewcommand{\vbsix}{}
+      \renewcommand{\vbseven}{}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }
+  }
+}
+
+\question[3] Differentiate $y=e^{(x+\vbone\ln x)}$ with respect to $x$.
+
+\watchout
+
+\begin{solution}[\mcq]
+  First reduce the expression,
+  \begin{align}
+    y&=e^{(x+\vbone\ln x)} \\
+     &=e^x\cdot (e^{\ln x})^\vbone \\
+     &=e^x\cdot x^\vbone
+  \end{align}
+  Now apply \textit{Product Rule} to (3),
+  \begin{align}
+    \dfrac{dy}{dx}&=e^x\cdot \vbone x^\vbtwo + x^\vbone\cdot e^x \\
+                  &=x^\vbtwo e^x(\vbone + x)
+  \end{align}
+
+\end{solution}

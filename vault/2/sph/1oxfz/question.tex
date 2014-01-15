@@ -1,0 +1,62 @@
+
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\vbone}{}
+  \renewcommand{\vbtwo}{}
+  \renewcommand{\vbthree}{}
+  \renewcommand{\vbfour}{}
+  \renewcommand{\vbfive}{}
+  \renewcommand{\vbsix}{}
+  \renewcommand{\vbseven}{}
+  \renewcommand{\vbeight}{}
+  \renewcommand{\vbnine}{}
+  \renewcommand{\vbten}{}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\vbone}{}
+    \renewcommand{\vbtwo}{}
+    \renewcommand{\vbthree}{}
+    \renewcommand{\vbfour}{}
+    \renewcommand{\vbfive}{}
+    \renewcommand{\vbsix}{}
+    \renewcommand{\vbseven}{}
+    \renewcommand{\vbeight}{}
+    \renewcommand{\vbnine}{}
+    \renewcommand{\vbten}{}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\vbone}{}
+      \renewcommand{\vbtwo}{}
+      \renewcommand{\vbthree}{}
+      \renewcommand{\vbfour}{}
+      \renewcommand{\vbfive}{}
+      \renewcommand{\vbsix}{}
+      \renewcommand{\vbseven}{}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }{
+      \renewcommand{\vbone}{}
+      \renewcommand{\vbtwo}{}
+      \renewcommand{\vbthree}{}
+      \renewcommand{\vbfour}{}
+      \renewcommand{\vbfive}{}
+      \renewcommand{\vbsix}{}
+      \renewcommand{\vbseven}{}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
+    }
+  }
+}
+
+\question[2] If $y=x\sqrt{x^2+1}$, find $\dfrac{dy}{dx}$.
+
+\begin{solution}[\mcq]
+  Use \textit{Product Rule},
+  \begin{align}
+    \dfrac{dy}{dx}&=x\dfrac{d}{dx}\sqrt{x^2+1}+\sqrt{x^2+1}\dfrac{d}{dx}x \\
+                  &=x\dfrac{1}{2\sqrt{x^2+1}}\cdot 2x +\sqrt{x^2+1} \\
+                  &=\dfrac{2x^2+1}{\sqrt{x^2+1}}
+  \end{align}
+\end{solution}
+
