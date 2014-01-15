@@ -32,13 +32,15 @@ $(STEM).tex : skel
 	@. shell-script 
 	create_tex_from_skel $@
 
-skel : blueprint
+skel : blueprint question.tex
 	@. shell-script
 	create_skeleton
 
 blueprint : 
 	@. ./shell-script
 	if [ $$(in_vault) == true ] ; then create_blueprint_in_vault ; fi
+
+question.tex: 
 
 install :
 ifneq ($(version),)
