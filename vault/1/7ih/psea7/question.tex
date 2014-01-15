@@ -1,7 +1,4 @@
 
-% \noprintanswers
-% \setcounter{rolldice}{3}
-% \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -23,7 +20,6 @@
 
 \question[1] Differentiate $y = \sin\vbone x\cdot e^{(ax + b)}$ with respect to $x$
 
-\insertQR[-25pt]{qrc}
 
 \watchout
 
@@ -42,21 +38,3 @@
 	\end{align}
 \end{solution}
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Look for the following}} &  \\ 
-  		\midrule % ***** Insights & formulations ******
-        Correct application of the Chain Rule & \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-        $y = \sin 3x\cdot e^{(ax+b)}$ & $e^{(ax+b)}\cdot\left[ a\sin 3x + 3\cos 3x\right]$ \\
-        $y = \sin 4x\cdot e^{(ax+b)}$ & $e^{(ax+b)}\cdot\left[ a\sin 4x + 4\cos 4x\right]$ \\
-        $y = \sin 5x\cdot e^{(ax+b)}$ & $e^{(ax+b)}\cdot\left[ a\sin 5x + 5\cos 5x\right]$ \\
-        $y = \sin 6x\cdot e^{(ax+b)}$ & $e^{(ax+b)}\cdot\left[ a\sin 6x + 6\cos 6x\right]$ \\
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi

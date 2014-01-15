@@ -1,7 +1,4 @@
 
-% \noprintanswers
-%\setcounter{rolldice}{1}
-% \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -41,7 +38,6 @@ towards it. Seeing the snake, the eagle pounces on it. If the speed at which
 the eagle comes down is the same at which the snake is crawling, then at what distance
 from its hole is the snake caught? Assume that the snake descends in a straight line                          
 
-\insertQR[30pt]{QRC}
 \watchout[-70pt]
 
 \ifprintanswers
@@ -102,21 +98,3 @@ from its hole is the snake caught? Assume that the snake descends in a straight 
 \end{solution}
 
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-        $\angle{BCD} = 2\times\alpha$ & Applied $\tan 2\alpha = \dfrac{2\tan\alpha}{1-\tan^2\alpha}$ \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-        Tree height = 8m & $x=17$ \\
-        Tree height = 9m & $x=15$ \\
-        Tree height = 10m & $x=26$ \\
-        Tree height = 12m & $x=20$ \\
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi

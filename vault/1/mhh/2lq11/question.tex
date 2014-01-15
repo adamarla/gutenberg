@@ -1,6 +1,4 @@
 
-% \noprintanswers
-% \setcounter{rolldice}{3}
  % \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
@@ -39,7 +37,6 @@
 
 \question[3] If $a = \vbone + \vbtwo\cdot\sqrt{\vbthree}$ and $b = \frac{1}{a}$, then what is the value of $a^2 + b^2$?
 
-\insertQR[-25pt]{qrc}
 
 \watchout
 
@@ -56,21 +53,3 @@
 	\end{align}
 \end{solution}
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Look for the following}} &  \\ 
-  		\midrule % ***** Insights & formulations ******
-  			Got a simplified expression for $b$ using rationalization &  Recognized that $a^2+b^2 = (a+b)^2 - 2ab$ \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-  			$a = 5 + 2\sqrt{6}$ & $98$ \\
-  			$a = 7 + 4\sqrt{3}$ & $194$ \\
-  			$a = 3 + 2\sqrt{2}$ & $34$ \\
-  			$a = 9 + 4\sqrt{5}$ & $322$ \\
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi

@@ -1,7 +1,4 @@
 
-%\noprintanswers
-%\setcounter{rolldice}{0}
-%\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -39,7 +36,6 @@
 
 \question[3] Evaluate $$\int\dfrac{x\,dx}{(\vbone x - \vbtwo)\cdot (\vbthree x + \vbfour)}$$
 
-\insertQR{qr}
 
 \watchout
 
@@ -68,21 +64,3 @@
 \end{solution}
 
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-        Reduced original expression into partial sums & \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-        $\int\dfrac{x\,dx}{(2x-3)\cdot(7x+3)}$ & $\dfrac{1}{18}\ln\vert 2x-3\vert + \dfrac{1}{63}\ln\vert 7x + 3\vert$\\
-        $\int\dfrac{x\,dx}{(3x-4)\cdot(2x+7)}$ & $\dfrac{4}{87}\ln\vert 3x-4\vert + \dfrac{7}{58}\ln\vert4x+7\vert$\\
-        $\int\dfrac{x\,dx}{(2x-5)\cdot(4x+3)}$ & $\dfrac{5}{52}\ln\vert 2x-5\vert + \dfrac{3}{104}\ln\vert 4x+3\vert$\\
-        $\int\dfrac{x\,dx}{(3x-7)\cdot(2x+9)}$ & $\dfrac{7}{123}\ln\vert 3x-7\vert + \dfrac{9}{82}\ln\vert 2x + 9\vert$\\
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi

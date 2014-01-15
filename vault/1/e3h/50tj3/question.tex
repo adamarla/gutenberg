@@ -1,7 +1,4 @@
 
-%\noprintanswers
-%\setcounter{rolldice}{3}
-%\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -61,7 +58,6 @@ two (2) sets from this shipment, then
 \begin{parts}
   \part[1] What is the probability that \textit{both} sets are defective?
 
-  \insertQR[-20pt]{QRC}
 \begin{solution}[\mcq]
      \begin{align}
         P(\text{both defective}) &= P(\text{first defective})\cdot P(\text{second defective}) \\
@@ -71,7 +67,6 @@ two (2) sets from this shipment, then
 
   \part[2] What is the probability of \textit{just one} set being defective?
 
-  \insertQR[-10pt]{QRC}
 \begin{solution}[\halfpage]
     \begin{align}
        P(\text{just one defective}) &= 
@@ -89,21 +84,3 @@ two (2) sets from this shipment, then
   \end{solution}
 \end{parts}
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Things to look for}} & \\ 
-  		\midrule % ***** Insights & formulations ******
-        Realized that TV sets are picked without replacement & \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-        5 defective per 100 & (a) = $\frac{1}{495}$, (b) = $\frac{19}{198}$ \\
-        6 defective per 90 & (a) = $\frac{1}{267}$, (b) = $\frac{56}{445}$ \\
-        7 defective per 84 & (a) = $\frac{1}{166}$, (b) = $\frac{77}{498}$ \\
-        8 defective per 104 & (a) = $\frac{7}{1339}$, (b) = $\frac{192}{1339}$ \\
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi

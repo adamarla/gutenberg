@@ -1,7 +1,4 @@
 
-%\noprintanswers
-%\setcounter{rolldice}{3}
-%\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -44,7 +41,6 @@ and $\vbtwo$ white balls whereas bag II contains $\vbthree$ black and $\vbfour$ 
 is now thrown. If it shows up $1$ or $3$, then a ball is picked from bag I; otherwise a ball is picked
 from bag II. What is the probability of picking a black ball?
 
-\insertQR[10pt]{QRC}
 
 \watchout[-50pt]
 
@@ -69,21 +65,3 @@ from bag II. What is the probability of picking a black ball?
 \end{solution}
 
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-  		$P(B) = P(I)\cdot P(B\vert\,I) + P(II)\cdot P(B\vert\, II)$ & \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-        $I=$ (3 black, 4 white) & $\dfrac{11}{21}$ \\
-        $I=$ (7 black, 4 white) & $\qquad\dfrac{83}{132}$ \\
-        $I=$ (5 black, 9 white) & $\dfrac{27}{70}$ \\
-        $I=$ (4 black, 7 white) & $\qquad\dfrac{16}{33}$ \\
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi

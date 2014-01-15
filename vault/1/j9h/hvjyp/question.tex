@@ -1,7 +1,4 @@
 
-%\printrubric
-%\noprintanswers
-%\setcounter{rolldice}{0}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -12,9 +9,6 @@
   \renewcommand{\vbfive}{ON} % common
   \renewcommand{\vbsix}{1}
   \renewcommand{\vbseven}{1}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
@@ -25,9 +19,6 @@
     \renewcommand{\vbfive}{AN}
     \renewcommand{\vbsix}{1}
     \renewcommand{\vbseven}{1}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
@@ -38,9 +29,6 @@
       \renewcommand{\vbfive}{CA}
       \renewcommand{\vbsix}{2}
       \renewcommand{\vbseven}{2}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
     }{
       % variables 
       \renewcommand{\vbone}{MUMBAI}
@@ -50,9 +38,6 @@
       \renewcommand{\vbfive}{AI}
       \renewcommand{\vbsix}{1}
       \renewcommand{\vbseven}{1}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
     }
   }
 }
@@ -66,7 +51,6 @@
 But on the envelope, only two consecutive letters - $\vbfive$ - are visible. 
 What is the probability that the letter came from $\vbone$? 
 
-\insertQR{QRC}
 
 \watchout[-40pt]
 
@@ -101,21 +85,3 @@ Hence, we can very quickly write
   
 \end{solution}
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-        Count the number of pairs of characters going left-to-right in city's name & \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-        ARLINGTON \& TORONTO & $\dfrac{1}{2}$ \\
-        ISTANBUL \& MILAN & $\qquad\dfrac{4}{11}$ \\
-        CASABLANCA \& CARACAS & $\dfrac{2}{5}$ \\
-        MUMBAI \& SHANGHAI & $\qquad\dfrac{7}{12}$ \\
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi

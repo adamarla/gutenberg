@@ -1,7 +1,4 @@
 
-%\noprintanswers
-%\setcounter{rolldice}{0}
-%\printrubric
 
 \ifnumodd{\value{rolldice}}{
   % variables 
@@ -20,7 +17,6 @@
 
 \question If $S=\overbrace{(\vbone + \vbtwo)^6}^{A} + \overbrace{(\vbone - \vbtwo)^6}^{B}$, then
 
-\insertQR{}
 
 \watchout
 
@@ -30,7 +26,6 @@
 \begin{parts}
   \part[1] Write the binomial expansion of $A$ and then reduce it to get the value of $A$
 
-  \insertQR{}
 \begin{solution}[\mcq]
   	\begin{align}
   		A &= \sum_{k=0}^{6}\binom{6}{k}(\vbone)^{6-k}\cdot(\vbtwo)^{k} \\
@@ -47,7 +42,6 @@
 
   \part[2] Do the same for $B$
 
-  \insertQR[-15pt]{}
 \begin{solution}[\mcq]
   	If you have done (a), then this shouldn't be too much trouble either. However, do note that 
   	\begin{align}
@@ -63,7 +57,6 @@
 
   \part[1] Calculate $S$ using the expressions found in parts (a) and (b)
 
-  \insertQR[-15pt]{}
 \begin{solution}[\mcq]
   	\begin{align}
   		S &= \vbthree + \vbfour = \vbfive
@@ -72,19 +65,3 @@
 
 \end{parts}
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Look for the following}} & \\ 
-  		\midrule % ***** Insights & formulations ******
-        Wrote the correct binomial expansions for $A$ and $B$ & Was mindful of powers of $(-1)$ in $B$ \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-        $S = (\sqrt{3} + \sqrt{2})^6$ & $A = 485 + 198\sqrt{6}, B = 485-198\sqrt{6}, S = 970$ \\
-        $S = (\sqrt{5} + \sqrt{2})^6$ & $A = 1183 + 374\sqrt{10}, B = 1183-374\sqrt{10}, S = 2366$ \\
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi

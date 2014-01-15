@@ -1,7 +1,4 @@
 
-%\printrubric
-%\noprintanswers
-%\setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -35,7 +32,6 @@ both sides whereas the rest of the coins are fair. A coin is picked up at random
 from the bag and tossed. If the probability that the toss results in a head is $\frac\vbone\vbtwo$, 
 then determine the value of $n$
 
-\insertQR[10pt]{qrc}
 
 \watchout[-30pt]
 
@@ -53,21 +49,3 @@ then determine the value of $n$
   \end{align} 
 \end{solution}
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-        & $P(H) = \frac{n}{2n+1} + \frac{n+1}{2n+1}\cdot\frac{1}{2}$ \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-        $P(H) = \frac{19}{26}$ & $n=6$ \\
-        $\qquad P(H) = \frac{31}{42}$ & $n=10$ \\
-        $P(H) = \frac{7}{10}$ & $n=2$ \\
-        $\qquad P(H) = \frac{13}{18}$ & $n=4$ \\
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi

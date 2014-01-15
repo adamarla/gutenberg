@@ -1,7 +1,4 @@
 
-% \noprintanswers
-% \setcounter{rolldice}{0}
-% \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -78,9 +75,7 @@ an accident. Figures for Groups B and C are \vbfour\% and \vbfive\% respectively
   \part[2] What percentage of the company's policyholders are expected to have an accident during 
   the next 12 months?
 
-  \insertQR[-20pt]{QRC}
   \ifprintanswers
-  	\begin{table}
   	  \begin{tabular}{cccc}
   	     \toprule
   		 & A & B & C \\
@@ -91,7 +86,6 @@ an accident. Figures for Groups B and C are \vbfour\% and \vbfive\% respectively
                                      $\WRITEFRAC\vbfive{100}$ \\
   		 \bottomrule
   		\end{tabular}
-  	\end{table}
   \fi
 \begin{solution}[\mcq]
   	If $P(E)$ be the probability of an accident occuring in the next 12 months and $P(A)$, $P(B)$
@@ -114,7 +108,6 @@ an accident. Figures for Groups B and C are \vbfour\% and \vbfive\% respectively
   \part[2] Suppose Mr. X has just had a car accident. If he is one of the company's policyholders, 
   then what is the probability that he is under 25?
 
-  \insertQR{QRC}
 \begin{solution}[\halfpage]
       The probability we are seeking is $P(A\vert E)$, which Baye's theorem tells us would be
       \begin{align}
@@ -126,25 +119,3 @@ an accident. Figures for Groups B and C are \vbfour\% and \vbfive\% respectively
 
 \end{parts}
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-          $P(C) = 1 - P(A) - P(B)$ & Correctly applied Baye's formula in both parts \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-          $P(A) = 15\%$ & $P(\text{accident}) = 4.74\%$ \\ 
-                        & $P(A\vert\text{accident}) = \frac{30}{79}$ \\
-          $P(A) = 18\%$ & $P(\text{accident}) = 10.19\%$ \\ 
-                        & $P(A\vert\text{accident}) = \frac{720}{1019}$ \\
-          $P(A) = 22\%$ & $P(\text{accident}) = 4.41\%$ \\ 
-                        & $P(A\vert\text{accident}) = \frac{232}{441}$ \\
-          $P(A) = 24\%$ & $P(\text{accident}) = 6.5\%$ \\ 
-                        & $P(A\vert\text{accident}) = \frac{192}{325}$ \\
-  		\midrule % ***** Numerical answers (below) **********
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi
