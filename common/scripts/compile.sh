@@ -60,6 +60,10 @@ function create_skeleton {
     echo "... [importing]: $p"
     cat -s $bank/$p/$file >> skel
   done
+  kpse=$(kpsepath tex | sed -e 's/:/\n/g')
+  echo "-------------- TeX SEARCH PATH ----"
+  echo $kpse
+  echo "-------------- END ----------------" 
 
   clean_tex skel 
 
