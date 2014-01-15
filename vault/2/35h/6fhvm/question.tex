@@ -1,19 +1,15 @@
 
-% \noprintanswers
-% \setcounter{rolldice}{0}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
   \renewcommand{\vbone}{LATE}
   \renewcommand{\vbtwo}{A}
-  \renewcommand{\vbthree}{}
   \renewcommand{\vbfour}{E}
   \renewcommand{\vbfive}{L}
   \renewcommand{\vbsix}{LAET}
   \renewcommand{\vbseven}{14}
   \renewcommand{\vbeight}{2}
   \renewcommand{\vbnine}{12}
-  \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
@@ -26,7 +22,6 @@
     \renewcommand{\vbseven}{20}
     \renewcommand{\vbeight}{3}
     \renewcommand{\vbnine}{18}
-    \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
@@ -39,7 +34,6 @@
       \renewcommand{\vbseven}{22}
       \renewcommand{\vbeight}{3}
       \renewcommand{\vbnine}{18}
-      \renewcommand{\vbten}{}
     }{
       % variables 
       \renewcommand{\vbone}{YEAR}
@@ -51,7 +45,6 @@
       \renewcommand{\vbseven}{21}
       \renewcommand{\vbeight}{3}
       \renewcommand{\vbnine}{18}
-      \renewcommand{\vbten}{}
     }
   }
 }
@@ -61,7 +54,6 @@
  the word $\vbone$.
 
 
-\insertQR{QRC}
 
 \watchout
 
