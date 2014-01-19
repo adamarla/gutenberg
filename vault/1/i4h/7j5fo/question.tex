@@ -1,5 +1,4 @@
 
-
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
   \renewcommand{\vbone}{1}
@@ -11,21 +10,48 @@
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
+    \renewcommand{\vbone}{3}
+    \renewcommand{\vbtwo}{4}
+    \renewcommand{\vbthree}{5}
+    \renewcommand{\vbfour}{12}
+    \renewcommand{\vbfive}{4}
+    \renewcommand{\vbsix}{21}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
+      \renewcommand{\vbone}{4}
+      \renewcommand{\vbtwo}{7}
+      \renewcommand{\vbthree}{4}
+      \renewcommand{\vbfour}{15}
+      \renewcommand{\vbfive}{7}
+      \renewcommand{\vbsix}{26}
     }{
       % variables 
+      \renewcommand{\vbone}{5}
+      \renewcommand{\vbtwo}{2}
+      \renewcommand{\vbthree}{3}
+      \renewcommand{\vbfour}{10}
+      \renewcommand{\vbfive}{8}
+      \renewcommand{\vbsix}{21}
     }
   }
 }
 
-\SUBTRACT\vbone\vbtwo\a
-\ADD\vbone\vbtwo\b
-\SUBTRACT\vbthree\vbfour\c
-\ADD\vbthree\vbfour\d
-\SUBTRACT\vbfive\vbsix\e
-\ADD\vbfive\vbsix\f
+\MAX\vbone\vbtwo\a
+\MIN\vbone\vbtwo\b
+\MAX\vbthree\vbfour\c
+\MIN\vbthree\vbfour\d
+\MAX\vbfive\vbsix\e
+\MIN\vbfive\vbsix\f
+
+\SUBTRACT\a\b\g
+\ADD\a\b\h
+\SUBTRACT\c\d\k
+\ADD\c\d\m
+\SUBTRACT\e\f\p
+\ADD\e\f\q
+
+\ADD\q\g\r
 
 \question[4] For what value of $M$ would the following hold?
 \[ \dfrac{\sin\vbone A\sin\vbtwo A + \sin\vbthree A\sin\vbfour A + \sin\vbfive A\sin\vbsix A}
@@ -39,8 +65,11 @@
   \end{align}
   We can re-write given expression as 
   \begin{align}
-    \dfrac{(\cos\a A - \cos\b A) + (\cos\c A - \cos\d A) + (\cos\e A -\cos\f A }
-    {(\sin\b A-\sin\a A) + (\sin\d A - \sin\c A) + (\sin\f A - \sin\e A)}
+    &\dfrac{(\cos\g A - \cos\h A) + (\cos\k A - \cos\m A) + (\cos\p A - \cos\q A)}
+    {(\sin\h A - \sin\g A) + (\sin\m A - \sin\k A) + (\sin\q A - \sin\p A)} \nonumber\\
+    &= \dfrac{\cos\g A - \cos\q A}{\sin\q A - \sin\g A}  \\
+    &= \dfrac{\eDiffOfCos{\g A}{\q A}}{\eDiffOfSin{\q A}{\g A}} \\
+    &= \tan\WRITEFRAC\r{2} A \implies M = \WRITEFRAC\r{2}
   \end{align}
 \end{explanation}
 
