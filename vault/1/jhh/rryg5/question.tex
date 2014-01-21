@@ -1,7 +1,4 @@
 
-% \noprintanswers
-% \setcounter{rolldice}{0}
-% \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -40,7 +37,6 @@
 \question[1] Find the projection of $\vec{a}$ on $\vec{b}$ if $\vec{a}\cdot\vec{b} = \vbone$ 
 and $\vec{b} = \vbtwo\hat{i} + \vbthree\hat{j} + \vbfour\hat{k}$ 
 
-\insertQR[-25pt]{qrc}
 
 \watchout
 
@@ -70,21 +66,3 @@ and $\vec{b} = \vbtwo\hat{i} + \vbthree\hat{j} + \vbfour\hat{k}$
 	\end{align}
 \end{solution}
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-        	Projection = $\vert\vec{a}\vert\cos\theta$ & \\ 
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-  			$\vec{a}\cdot\vec{b} = 2$ & $\frac{2}{\sqrt{149}}$ \\ 
-  			$\vec{a}\cdot\vec{b} = 3$ & $\frac{3}{5\sqrt{5}}$ \\ 
-  			$\vec{a}\cdot\vec{b} = 5$ & $\frac{5}{\sqrt{62}}$ \\ 
-  			$\vec{a}\cdot\vec{b} = 8$ & $\frac{8}{7}$ \\ 
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi

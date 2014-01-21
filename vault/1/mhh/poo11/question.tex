@@ -1,7 +1,5 @@
 
-% \noprintanswers
  %\setcounter{rolldice}{2}
-% \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -59,7 +57,6 @@
 
 \question[4] Express $\vbone + \vbtwo + \vbthree$ in the form $\frac{p}{q}$, where $q\neq 0$
 
-\insertQR[-20pt]{}
 
 \watchout
 
@@ -79,21 +76,3 @@
 	
 \end{solution}
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-  			Took care of the carry when adding the infinitely recurring decimals & \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-  			$0.6 + 0.\overline{7} + 0.4\overline{7}$ & $\frac{167}{90}$ \\ 
-  			$0.7 + 0.\overline{5} + 0.3\overline{8}$ & $\quad\frac{74}{45}$ \\ 
-  			$0.5 + 0.\overline{4} + 0.7\overline{9}$ & $\frac{157}{90}$ \\ 
-  			$0.4 + 0.\overline{6} + 0.5\overline{5}$ & $\quad\frac{73}{45}$ \\ 
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi

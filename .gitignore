@@ -12,6 +12,9 @@
 *.table
 *.out
 *.tex
+skel
+compiled
+
 !question.tex
 !shared/replacements/*/*.tex
 !shared/*.tex

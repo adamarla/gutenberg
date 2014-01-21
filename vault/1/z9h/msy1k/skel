@@ -1,6 +1,4 @@
 
-
-
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
   \renewcommand{\vbone}{1}
@@ -40,7 +38,6 @@
 $g(\vbone) = \vbtwo$, $\left.\dfrac{d}{dx} f(x)g(x)\right\vert_{x=\vbone} = \vbthree$ and 
 $\dfrac{d}{dx}\left.\dfrac{f(x)}{g(x)}\right\vert_{x=\vbone} = \vbfour$
 
-
 \watchout
 
 \ifprintanswers
@@ -62,19 +59,3 @@ $\dfrac{d}{dx}\left.\dfrac{f(x)}{g(x)}\right\vert_{x=\vbone} = \vbfour$
 	\end{align}
 \end{solution}
 
-\ifprintrubric
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-  			& Identified and applied product \& quotient rules \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-  			$g(1) = 2$ & $f'(x) = 7$ \\ 
-  			$g(3) = 7$ & $f'(x) = \frac{99}{7}$ \\ 
-  			$g(2) = 6$ & $f'(x) = \frac{329}{12}$ \\ 
-  			$g(5) = 4$ & $f'(x) = \frac{115}{8}$ \\ 
-  		\bottomrule
-  	\end{tabular}
-\fi

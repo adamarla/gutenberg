@@ -1,7 +1,4 @@
 
-%\noprintanswers
-%\setcounter{rolldice}{3}
-%\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -33,7 +30,6 @@
 
 \question[3] Evaluate $\limit{x}{0}\dfrac{\sin\vbone x - \vbone\sin x}{\vbtwo x^3}$ using L'Hospital's Rule 
 
-\insertQR[-20pt]{QRC}
 
 \watchout
 
@@ -52,21 +48,3 @@
 
 \end{solution}
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-        L'Hospital's Rule has to be applied multiple times & \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-        $\dfrac{\sin 4x - 4\sin x}{3x^3}$ & $-\dfrac{10}{3}$ \\
-        $\dfrac{\sin 3x - 3\sin x}{7x^3}$ & $\qquad-\dfrac{4}{7}$ \\
-        $\dfrac{\sin 5x - 5\sin x}{2x^3}$ & $-5$ \\
-        $\dfrac{\sin 2x - 2\sin x}{5x^3}$ & $\qquad-\dfrac{1}{5}$ \\
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi

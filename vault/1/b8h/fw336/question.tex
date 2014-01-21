@@ -1,6 +1,3 @@
-%\noprintanswers
-%\setcounter{rolldice}{3}
-%\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -44,14 +41,12 @@
 \FRACMINUS{1}{1}\vbsix{36}\r\s % B'
 \FRACMULT\p\q\r\s\m\n
 \FRACMULT\m\n\vbfour{36}\a\b
-% \MULTIPLY\vbfour\m\a
 
 \question[3] $A$ and $B$ take turns to throw a pair of dice. $A$ wins if he gets a 
 total of $\vbone$ in a throw. $B$ wins if she gets a total of $\vbtwo$. 
 The game ends as soon as one person wins. If $A$  starts the game, what is the probability
 that $A$ wins in the third throw (over $A$ and $B$) of the pair of dice?
 
-\insertQR[10pt]{qrc}
 
 \watchout[-40pt]
 
@@ -73,21 +68,3 @@ that $A$ wins in the third throw (over $A$ and $B$) of the pair of dice?
   \end{align}
 \end{solution}
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-        Individual rolls by $A$ and $B$ are independent & Correctly listed favourable outcomes \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-        $A$ wins on $9$ & $\dfrac{64}{729}$ \\ 
-        $A$ wins on $6$ & $\qquad\dfrac{775}{7776}$ \\ 
-        $A$ wins on $7$ & $\dfrac{10}{81}$ \\ 
-        $A$ wins on $5$ & $\qquad\dfrac{64}{729}$ \\ 
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi

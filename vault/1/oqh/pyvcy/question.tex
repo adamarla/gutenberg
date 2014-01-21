@@ -1,0 +1,81 @@
+
+
+
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\vbone}{56}
+  \renewcommand{\vbtwo}{84}
+  \renewcommand{\vbthree}{112}
+  \renewcommand{\vbfour}{2}
+  \renewcommand{\vbfive}{1.75} % log\vbone
+  \renewcommand{\vbsix}{1.92} % log\vbtwo
+  \renewcommand{\vbseven}{2.05} % log\vbthree
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\vbone}{24}
+    \renewcommand{\vbtwo}{37}
+    \renewcommand{\vbthree}{156}
+    \renewcommand{\vbfour}{3}
+    \renewcommand{\vbfive}{1.38}
+    \renewcommand{\vbsix}{1.57}
+    \renewcommand{\vbseven}{2.19}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\vbone}{45}
+      \renewcommand{\vbtwo}{67}
+      \renewcommand{\vbthree}{93}
+      \renewcommand{\vbfour}{2}
+      \renewcommand{\vbfive}{1.65}
+      \renewcommand{\vbsix}{1.83}
+      \renewcommand{\vbseven}{1.97}
+    }{
+      \renewcommand{\vbone}{41}
+      \renewcommand{\vbtwo}{103}
+      \renewcommand{\vbthree}{173}
+      \renewcommand{\vbfour}{3}
+      \renewcommand{\vbfive}{1.61}
+      \renewcommand{\vbsix}{2.01}
+      \renewcommand{\vbseven}{2.24}
+    }
+  }
+}
+
+\POWER\vbfour{1}\a
+\POWER\vbfour{2}\b
+\POWER\vbfour{3}\c
+
+\EXPR[2]\f{(\vbsix / (2*\vbfive))}
+\EXPR[2]\g{(\vbseven / (3*\vbfive))}
+
+\question[3] Without using a calculator, arrange the following in \textbf{descending order}
+(largest first, smallest last). \texttt{Hint:} $\log_a b = \dfrac{\log_c b}{\log_c a}$
+\[ \log_{\a}\vbone, \log_{\b}\vbtwo \text{ and } \log_{\c}\vbthree \]
+
+\watchout[-50pt]
+\marginnote[-40pt]{
+
+  $\log_{10}\vbone = \vbfive$
+  
+  $\log_{10}\vbtwo = \vbsix$
+  
+  $\log_{10}\vbthree = \vbseven$
+}
+
+\begin{solution}[\halfpage]
+  We have been given a hint. So, lets use it 
+  \begin{align}
+    T_1 = \log_\a \vbone &= \dfrac{\log_{10}\vbone}{\log_{10}\a} \\
+    T_2 = \log_\b \vbtwo &= \dfrac{\log_{10}\vbtwo}{\log_{10}\vbfour^2} 
+    = \dfrac{\log_{10}\vbtwo}{2\log_{10}\vbfour} \\
+    T_3 = \log_{\c}\vbthree &= \dfrac{\log_{10}\vbthree}{\log_{10}\vbfour^3} 
+    = \dfrac{\log_{10}\vbthree}{3\log_{10}\vbfour}
+  \end{align}
+  Moreover, 
+  \begin{align}
+    \dfrac{T_2}{T_1} &= \dfrac{\log_{10}\vbtwo}{2\times\log_{10}\vbone}
+    = \dfrac{\vbsix}{2\times\vbfive} = \f < 1 \\
+     \dfrac{T_3}{T_1} &= \dfrac{\log_{10}\vbthree}{3\times\log_{10}\vbone}
+    = \dfrac{\vbseven}{3\times\vbfive} = \g < \dfrac{T_2}{T_1}
+  \end{align}
+  The above suggests that $T_1 > T_2 > T_3 \implies \log_\a\vbone > \log_\b\vbtwo > \log_{\c}\vbthree$
+\end{solution}
+

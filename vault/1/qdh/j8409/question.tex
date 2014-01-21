@@ -1,7 +1,4 @@
 
-%\noprintanswers
-%\setcounter{rolldice}{3}
-%\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -42,7 +39,6 @@ as $A$ is to $B$ and train $C$ now starts pulling $B$ towards $N$. The question 
 - if $C$ is moving at a speed of $\vbthree$ meters per second and the two chains ($AB$ and $BC$)
 are $\vbfour$ meters long, then how fast is $A$ moving towards $M$?
 
-\insertQR[4cm]{qrc}
 
 \watchout[-5cm]
 
@@ -119,22 +115,3 @@ are $\vbfour$ meters long, then how fast is $A$ moving towards $M$?
   sign is because $A$ moves in opposite direction to $C$
 \end{solution}
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-        Applied Pythgoras on the two right-angled triangles & \\
-        And from that, inferred relationship between train speeds & \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-        C's speed = 3 & A's speed = $\dfrac{16}{3}$ \\
-        C's speed = 4 & A's speed = $\dfrac{9}{4}$ \\
-        C's speed = 5 & $\qquad$ A's speed = $\dfrac{80}{9}$ \\
-        C's speed = 10 & $\qquad$ A's speed = $\dfrac{45}{8}$ \\
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi

@@ -232,4 +232,27 @@ function clean_tex {
   e=$(grep -m 1 -n "\\\\question" $1 | sed -e 's/:.*//')
 
   sed -i -e '/renewcommand.*{}/d' $1
+
+  # Remove any printrubic 
+  line=$(grep -m 1 -n '^\\ifprintrubric' $1 | sed -e 's/:.*//')
+  closures=$(grep -n '\\fi' $1 | sed -e 's/:.*//')
+  if [ ! -z $line ] ; then 
+    for c in $closures ; do
+      if [ $c -lt $line ] ; then continue ; fi
+      echo "$line --> $c"
+      sed -i -e "$line,$c d" $1
+      break
+    done
+  fi
+
+  # 3. Remove any fullwidth and table environments. Noticing problems with them 
+  #    Ideally, should diagnose the problem and fix it. But feeling lazy
+  for j in fullwidth table ; do 
+    sed -i "/{$j}/d" $1
+  done
+
+  # Remove any \insertQR. The command is defunct. And moreover, \embedQR 
+  # is inserted anyways by TeX callbacks 
+  sed -i '/insertQR/d' $1
+  if [[ $(pwd) =~ /vault/ ]] ; then git add $1 ; fi
 }

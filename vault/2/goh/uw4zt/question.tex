@@ -1,6 +1,3 @@
-% \noprintanswers
-% \setcounter{rolldice}{0}
-% \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -10,7 +7,6 @@
   \renewcommand{\vbfour}{3}
   \renewcommand{\vbfive}{-3}
   \renewcommand{\vbsix}{-3}
-  \renewcommand{\vbseven}{}
   \renewcommand{\vbeight}{+3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
@@ -42,7 +38,6 @@
       \renewcommand{\vbfour}{-3}
       \renewcommand{\vbfive}{+3}
       \renewcommand{\vbsix}{+3}
-      \renewcommand{\vbseven}{}
       \renewcommand{\vbeight}{-3}
     }
   }
@@ -54,7 +49,6 @@
 at point $A$ and the $\vbtwo$ y-axis at point $B$. Points $A$ and $B$ are 
 both $\r$ units from the origin.
 
-\insertQR{}
 
 \watchout
 

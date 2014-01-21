@@ -1,7 +1,4 @@
 
-%\noprintanswers
-%\setcounter{rolldice}{3}
-%\printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
@@ -45,7 +42,6 @@ In a certain city, $\vbthree$ in $\vbfour$ people suffers from TB. A person is
 selected at random and is diagnosed with the disease. What is the probability
 that the person actually has TB?  
 
-\insertQR[30pt]{QRC}
 
 \watchout[-80pt]
 
@@ -71,24 +67,3 @@ that the person actually has TB?
 \end{solution}
 
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-        Event $X=$ X-ray \textit{says} person has TB & 
-        Recognized that $P(X\vert\, T),\,P(T)$ and $P(X\vert\,T')$ have been given\\ 
-        Event $T=$ Person \textit{actually} has TB & \\
-        Need to find $P(T\vert\,X)$ & \\
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-        $P(X\vert\,T) = \frac{99}{100}$ & $\dfrac{110}{709}$ \\
-        $P(X\vert\,T) = \frac{95}{100}$ & $\qquad\dfrac{75}{101}$ \\
-        $P(X\vert\,T) = \frac{97}{100}$ & $\dfrac{970}{3217}$ \\
-        $P(X\vert\,T) = \frac{98}{100}$ & $\qquad\dfrac{420}{817}$ \\
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi
