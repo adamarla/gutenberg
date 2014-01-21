@@ -1,6 +1,5 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{John}
   \renewcommand{\vbtwo}{Stephan}
   \renewcommand{\vbthree}{Ivan}
@@ -13,7 +12,6 @@
   \renewcommand{\vbten}{4}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{Ivan}
     \renewcommand{\vbtwo}{John}
     \renewcommand{\vbthree}{Stephan}
@@ -26,7 +24,6 @@
     \renewcommand{\vbten}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{Boris}
       \renewcommand{\vbtwo}{Ivan}
       \renewcommand{\vbthree}{John}
@@ -38,7 +35,6 @@
       \renewcommand{\vbnine}{3}
       \renewcommand{\vbten}{4}
     }{
-      % variables 
       \renewcommand{\vbone}{Stephan}
       \renewcommand{\vbtwo}{Boris}
       \renewcommand{\vbthree}{John}
@@ -66,10 +62,10 @@ $\vbsix$ chances are $\vbeight$ times that of $\vbone$.
 \watchout
 
 \begin{parts}
-  \part Determine the probability of each of those players individually
+  \part[2] Determine the probability of each of those players individually
   winning the $Wimbledon$ tennis championship.
 
-  \begin{solution}
+\begin{solution}[\mcq]
     If the chances of $\vbone$ winning is $x$, then the probabilities 
     for each of them winning are,
     \begin{align}
@@ -80,8 +76,8 @@ $\vbsix$ chances are $\vbeight$ times that of $\vbone$.
     \end{align}
   \end{solution}
 
-  \part Find the probability that $\vbone$ will lose the championship.
-  \begin{solution}
+  \part[1] Find the probability that $\vbone$ will lose the championship.
+\begin{solution}[\mcq]
     Probability that $\vbone$ will lose is complement of his probability
     to win. Therefore,
     \begin{align}
@@ -90,9 +86,9 @@ $\vbsix$ chances are $\vbeight$ times that of $\vbone$.
     \end{align}    
   \end{solution}
 
-  \part Find the probability of $\vbthree$ or $\vbfour$ winning the 
+  \part[1] Find the probability of $\vbthree$ or $\vbfour$ winning the 
   championship.
-  \begin{solution}
+\begin{solution}[\mcq]
     Union of probabilities of $\vbthree$ or $\vbfour$ winning,
     \begin{align}
       P &= P_{\vbthree} + P_{\vbfour} \\
