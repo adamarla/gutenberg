@@ -2,27 +2,23 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{5}
   \renewcommand{\vbtwo}{3}
   \renewcommand{\vbthree}{1}
   \renewcommand{\vbfour}{2}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{7}
     \renewcommand{\vbtwo}{2}
     \renewcommand{\vbthree}{2}
     \renewcommand{\vbfour}{7}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{3}
       \renewcommand{\vbtwo}{11}
       \renewcommand{\vbthree}{4}
       \renewcommand{\vbfour}{3}
     }{
-      % variables 
       \renewcommand{\vbone}{9}
       \renewcommand{\vbtwo}{2}
       \renewcommand{\vbthree}{5}
@@ -36,14 +32,14 @@
 \def\logtwo{0.301}
 \EXPR[3]\a{ ((\vbone - (\vbone + \vbfour)*\logtwo) / (\vbtwo + (\vbthree - \vbtwo)*\logtwo)) }
 
-\question Using logarithms, solve the following equation for $x$.
+\question[2] Using logarithms, solve the following equation for $x$.
 \texttt{Hint:} $\log_{10}5 = \log_{10}\frac{10}{2} = 1 - \log_{10} 2$
 \[ 5^{\vbone - \vbtwo x} = 2^{\vbthree x + \vbfour}\]
 
 \watchout[-40pt]
 \marginnote[-10pt]{ $\log_{10}2 = 0.301$ }
 
-\begin{solution}
+\begin{solution}[\mcq]
   \begin{align}
     5^{\vbone -\vbtwo x} &= 2^{\vbthree x + \vbfour} \implies 
     (\vbone - \vbtwo x)\cdot\log_{10} 5 = (\vbthree x + \vbfour)\cdot\log_{10} 2 \\
