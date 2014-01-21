@@ -1,67 +1,100 @@
 
-
-
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
+  \renewcommand{\vbone}{John}
+  \renewcommand{\vbtwo}{Stephan}
+  \renewcommand{\vbthree}{Ivan}
+  \renewcommand{\vbfour}{Boris}
+  \renewcommand{\vbfive}{Ivan's}
+  \renewcommand{\vbsix}{Boris'}
+  \renewcommand{\vbseven}{twice}
+  \renewcommand{\vbeight}{four}
+  \renewcommand{\vbnine}{2}
+  \renewcommand{\vbten}{4}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
+    \renewcommand{\vbone}{Ivan}
+    \renewcommand{\vbtwo}{John}
+    \renewcommand{\vbthree}{Stephan}
+    \renewcommand{\vbfour}{Boris}
+    \renewcommand{\vbfive}{Stephan's}
+    \renewcommand{\vbsix}{Boris'}
+    \renewcommand{\vbseven}{twice}
+    \renewcommand{\vbeight}{three}
+    \renewcommand{\vbnine}{2}
+    \renewcommand{\vbten}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
+      \renewcommand{\vbone}{Boris}
+      \renewcommand{\vbtwo}{Ivan}
+      \renewcommand{\vbthree}{John}
+      \renewcommand{\vbfour}{Stephan}
+      \renewcommand{\vbfive}{John's}
+      \renewcommand{\vbsix}{Stephan's}
+      \renewcommand{\vbseven}{thrice}
+      \renewcommand{\vbeight}{four}
+      \renewcommand{\vbnine}{3}
+      \renewcommand{\vbten}{4}
     }{
-      % variables 
+      \renewcommand{\vbone}{Stephan}
+      \renewcommand{\vbtwo}{Boris}
+      \renewcommand{\vbthree}{John}
+      \renewcommand{\vbfour}{Ivan}
+      \renewcommand{\vbfive}{John's}
+      \renewcommand{\vbsix}{Ivan's}
+      \renewcommand{\vbseven}{thrice}
+      \renewcommand{\vbeight}{two}
+      \renewcommand{\vbnine}{3}
+      \renewcommand{\vbten}{2}
     }
   }
 }
+\ADD\vbnine\vbten\a
+\ADD\a{2}\b
+\SUBTRACT\b{1}\c
 
-\question
+\question One and only one of the following four people $John$, $Boris$, 
+$Ivan$ or $Stephan$ will win the upcoming $Wimbledon$ tennis championship 
+next month. You are told that the chances of $\vbone$ winning are the 
+same as $\vbtwo$. $\vbfive$ chances are $\vbseven$ that of $\vbone$. 
+$\vbsix$ chances are $\vbeight$ times that of $\vbone$.
 
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part[2] Determine the probability of each of those players individually
+  winning the $Wimbledon$ tennis championship.
 
-  \begin{solution}
+\begin{solution}[\mcq]
+    If the chances of $\vbone$ winning is $x$, then the probabilities 
+    for each of them winning are,
+    \begin{align}
+      P_{\vbone}   &= \dfrac{x}{x+x+2x+4x} = \dfrac{1}{\b} \\
+      P_{\vbtwo}   &= \dfrac{x}{x+x+2x+4x} = \dfrac{1}{\b} \\
+      P_{\vbthree} &= \dfrac{2x}{x+x+2x+4x} = \dfrac{\vbnine}{\b} \\
+      P_{\vbfour}  &= \dfrac{4x}{x+x+2x+4x} = \dfrac{\vbten}{\b}
+    \end{align}
   \end{solution}
 
-  \part 
-
-  \begin{solution}
+  \part[1] Find the probability that $\vbone$ will lose the championship.
+\begin{solution}[\mcq]
+    Probability that $\vbone$ will lose is complement of his probability
+    to win. Therefore,
+    \begin{align}
+      P &= 1 - P_{\vbone} \\
+        &= \dfrac{\c}{\b}
+    \end{align}    
   \end{solution}
 
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
+  \part[1] Find the probability of $\vbthree$ or $\vbfour$ winning the 
+  championship.
+\begin{solution}[\mcq]
+    Union of probabilities of $\vbthree$ or $\vbfour$ winning,
+    \begin{align}
+      P &= P_{\vbthree} + P_{\vbfour} \\
+        &= \dfrac{\vbnine}{\b} + \dfrac{\vbten}{\b} \\
+        &= \dfrac{\a}{\b}
+    \end{align}
   \end{solution}
 
 \end{parts}

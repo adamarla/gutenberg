@@ -1,68 +1,77 @@
-
-
-
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
+  \renewcommand{\vbone}{0.87}
+  \renewcommand{\vbtwo}{0.36}
+  \renewcommand{\vbthree}{0.30}
+  \renewcommand{\vbfour}{}
+  \renewcommand{\vbfive}{}
+  \renewcommand{\vbsix}{}
+  \renewcommand{\vbseven}{}
+  \renewcommand{\vbeight}{}
+  \renewcommand{\vbnine}{}
+  \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
+    \renewcommand{\vbone}{0.78}
+    \renewcommand{\vbtwo}{0.36}
+    \renewcommand{\vbthree}{0.30}
+    \renewcommand{\vbfour}{}
+    \renewcommand{\vbfive}{}
+    \renewcommand{\vbsix}{}
+    \renewcommand{\vbseven}{}
+    \renewcommand{\vbeight}{}
+    \renewcommand{\vbnine}{}
+    \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
+      \renewcommand{\vbone}{0.87}
+      \renewcommand{\vbtwo}{0.63}
+      \renewcommand{\vbthree}{0.50}
+      \renewcommand{\vbfour}{}
+      \renewcommand{\vbfive}{}
+      \renewcommand{\vbsix}{}
+      \renewcommand{\vbseven}{}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
     }{
-      % variables 
+      \renewcommand{\vbone}{0.78}
+      \renewcommand{\vbtwo}{0.36}
+      \renewcommand{\vbthree}{0.30}
+      \renewcommand{\vbfour}{}
+      \renewcommand{\vbfive}{}
+      \renewcommand{\vbsix}{}
+      \renewcommand{\vbseven}{}
+      \renewcommand{\vbeight}{}
+      \renewcommand{\vbnine}{}
+      \renewcommand{\vbten}{}
     }
   }
 }
 
-\question
+\ADD\vbone\vbtwo\t
+\SUBTRACT\t\vbthree\s
+
+\question[2] In a large metropolitan area the probabilities that a family 
+(randomly chosen for a sample survey) owns a car, a motorcycle or both
+kinds of vehicles are $\vbone$, $\vbtwo$ and $\vbthree$. What is the
+probability that a family owns a vehicle of any sort assuming the only
+kinds of vehicles are cars and motorcycles.
 
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
-\begin{solution}
+\begin{solution}[\mcq]
+  \begin{tabular}{ll}
+    $P_{car}$    &- Probability a family owns a car \\
+    $P_{mcycle}$ &- Probability a family owns a motorcycle \\
+    $P_{both}$   &- Probability a family owns both a car and a motorcycle\\
+  \end{tabular}
+  \begin{align}
+    P_{any} &= P_{car} + P{mcycle} - P_{both} \\
+            &= \vbone +\vbtwo - \vbthree \\
+            &= \s
+  \end{align}
+  There is a $\s$ probability that a family has at least one vehicle.
+	
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 

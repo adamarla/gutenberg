@@ -2,7 +2,6 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{56}
   \renewcommand{\vbtwo}{84}
   \renewcommand{\vbthree}{112}
@@ -12,7 +11,6 @@
   \renewcommand{\vbseven}{2.05} % log\vbthree
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{24}
     \renewcommand{\vbtwo}{37}
     \renewcommand{\vbthree}{156}
@@ -22,7 +20,6 @@
     \renewcommand{\vbseven}{2.19}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{45}
       \renewcommand{\vbtwo}{67}
       \renewcommand{\vbthree}{93}
@@ -31,7 +28,6 @@
       \renewcommand{\vbsix}{1.83}
       \renewcommand{\vbseven}{1.97}
     }{
-      % variables 
       \renewcommand{\vbone}{41}
       \renewcommand{\vbtwo}{103}
       \renewcommand{\vbthree}{173}
@@ -50,14 +46,14 @@
 \EXPR[2]\f{(\vbsix / (2*\vbfive))}
 \EXPR[2]\g{(\vbseven / (3*\vbfive))}
 
-\question Without using a calculator, arrange the following in \textbf{descending order}
+\question[3] Without using a calculator, arrange the following in \textbf{descending order}
 (largest first, smallest last). \texttt{Hint:} $\log_a b = \dfrac{\log_c b}{\log_c a}$.
 ($\log_{10}\vbone=\vbfive,\,\log_{10}\vbtwo=\vbsix,\,\log_{10}\vbthree=\vbseven$)
 \[ \log_{\a}\vbone, \log_{\b}\vbtwo \text{ and } \log_{\c}\vbthree \]
 
 \watchout[-50pt]
 
-\begin{solution}
+\begin{solution}[\halfpage]
   We have been given a hint. So, lets use it 
   \begin{align}
     T_1 = \log_\a \vbone &= \dfrac{\log_{10}\vbone}{\log_{10}\a} \\
