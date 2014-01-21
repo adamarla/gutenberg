@@ -1,6 +1,5 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{Eight}
   \renewcommand{\vbtwo}{{A, B, C, D, E, F, G, H}}
   \renewcommand{\vbthree}{eight}
@@ -13,7 +12,6 @@
   \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{Six}
     \renewcommand{\vbtwo}{{A, B, C, D, E, F}}
     \renewcommand{\vbthree}{six}
@@ -26,7 +24,6 @@
     \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{Seven}
       \renewcommand{\vbtwo}{{A, B, C, D, E, F, G}}
       \renewcommand{\vbthree}{seven}
@@ -38,7 +35,6 @@
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }{
-      % variables 
       \renewcommand{\vbone}{Five}
       \renewcommand{\vbtwo}{{A, B, C, D, E}}
       \renewcommand{\vbthree}{five}
@@ -57,7 +53,7 @@
 \SUBTRACT\vbfour{1}\n
 \SUBTRACT\vbfour{2}\r
 
-\question $\vbone$ students $\vbtwo$ are to be randomly assigned to 
+\question[3] $\vbone$ students $\vbtwo$ are to be randomly assigned to 
 $\vbthree$ desks placed in a row. $B$ has a secret crush on $C$. 
 What is the probability $P_{sad}$, that they do $NOT$ get to sit 
 next to each other?
@@ -65,7 +61,7 @@ next to each other?
 
 \watchout
 
-\begin{solution}
+\begin{solution}[\halfpage]
   To find the likelihood of $B$ not getting to sit next to $C$, simply
   find the probability $P_{happy}$ that they do get to sit next to each 
   other, and then find it's complement.\\
