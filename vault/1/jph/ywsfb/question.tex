@@ -1,6 +1,5 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{2} %a
   \renewcommand{\vbtwo}{3} %b 
   \renewcommand{\vbthree}{5} %c 
@@ -8,7 +7,6 @@
   \renewcommand{\vbfive}{5} %e
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{3}
     \renewcommand{\vbtwo}{4}
     \renewcommand{\vbthree}{3}
@@ -16,14 +14,12 @@
     \renewcommand{\vbfive}{7}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{5}
       \renewcommand{\vbtwo}{7}
       \renewcommand{\vbthree}{3}
       \renewcommand{\vbfour}{2}
       \renewcommand{\vbfive}{9}
     }{
-      % variables 
       \renewcommand{\vbone}{4}
       \renewcommand{\vbtwo}{5}
       \renewcommand{\vbthree}{3}
@@ -39,12 +35,12 @@
 \FRACADD\vbthree{1}\vbfour\vbfive\p\q
 \FRACDIV\p\q\m\n\k\l
   
-\question Find the logarithm of $\c\sqrt[\vbfive]{\d}$ to base $\vbone\sqrt[\vbtwo]{\vbone}$. 
+\question[4] Find the logarithm of $\c\sqrt[\vbfive]{\d}$ to base $\vbone\sqrt[\vbtwo]{\vbone}$. 
 \texttt{Hint:} Start with the basic definition - that is - think about $\log_a b = c\implies ?^?=?$
 
 \watchout
 
-\begin{solution}
+\begin{solution}[\halfpage]
   What we need to find is
   \[ \log_{\vbone\sqrt[\vbtwo]{\vbone}} \c\sqrt[\vbfive]{\d} = ?\]
   
