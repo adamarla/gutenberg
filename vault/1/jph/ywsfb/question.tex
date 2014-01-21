@@ -1,68 +1,64 @@
 
-
-
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
+  \renewcommand{\vbone}{2} %a
+  \renewcommand{\vbtwo}{3} %b 
+  \renewcommand{\vbthree}{5} %c 
+  \renewcommand{\vbfour}{2} %d 
+  \renewcommand{\vbfive}{5} %e
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
+    \renewcommand{\vbone}{3}
+    \renewcommand{\vbtwo}{4}
+    \renewcommand{\vbthree}{3}
+    \renewcommand{\vbfour}{4}
+    \renewcommand{\vbfive}{7}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
+      \renewcommand{\vbone}{5}
+      \renewcommand{\vbtwo}{7}
+      \renewcommand{\vbthree}{3}
+      \renewcommand{\vbfour}{2}
+      \renewcommand{\vbfive}{9}
     }{
       % variables 
+      \renewcommand{\vbone}{4}
+      \renewcommand{\vbtwo}{5}
+      \renewcommand{\vbthree}{3}
+      \renewcommand{\vbfour}{2}
+      \renewcommand{\vbfive}{11}
     }
   }
 }
 
-\question
-
+\POWER\vbone\vbthree\c
+\POWER\vbone\vbfour\d
+\FRACADD{1}{1}{1}\vbtwo\m\n
+\FRACADD\vbthree{1}\vbfour\vbfive\p\q
+\FRACDIV\p\q\m\n\k\l
+  
+\question Find the logarithm of $\c\sqrt[\vbfive]{\d}$ to base $\vbone\sqrt[\vbtwo]{\vbone}$. 
+\texttt{Hint:} Start with the basic definition - that is - think about $\log_a b = c\implies ?^?=?$
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}
+  What we need to find is
+  \[ \log_{\vbone\sqrt[\vbtwo]{\vbone}} \c\sqrt[\vbfive]{\d} = ?\]
+  
+  In other words,
+  \begin{align}
+    \log_{\vbone\sqrt[\vbtwo]{\vbone}} \c\sqrt[\vbfive]{\d} = N &\implies 
+    (\vbone\sqrt[\vbtwo]{\vbone})^N = \c\sqrt[\vbfive]{\d} \\
+    \implies \left( \vbone\cdot\vbone^{\frac{1}{\vbtwo}}\right)^N
+    &= \vbone^\vbthree\cdot\vbone^{\frac{\vbfour}{\vbfive}} 
+    \text{ or } \left( \vbone^{1+\frac{1}{\vbtwo}}\right)^N = 
+    \left( \vbone^{\vbthree + \frac{\vbfour}{\vbfive}}\right) \\
+    \text{ And }\therefore \left(1 + \dfrac{1}{\vbtwo}\right)\cdot N &= 
+    \vbthree + \dfrac{\vbfour}{\vbfive} \implies N = \WRITEFRAC\k\l
+  \end{align}
+  And therefore, the logarithm we are looking for is $N=\dfrac\k\l$
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
