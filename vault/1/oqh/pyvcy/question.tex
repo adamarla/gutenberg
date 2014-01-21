@@ -1,159 +1,85 @@
-% This is an empty shell file placed for you by the 'examiner' script.
-% You can now fill in the TeX for your question here.
 
-% Now, down to brasstacks. ** Writing good solutions is an Art **. 
-% Eventually, you will find your own style. But here are some thoughts 
-% to get you started: 
-%
-%   1. Write to be understood - but be crisp. Your own solution should not take 
-%      more space than you will give to the student. Hence, if you take more than 
-%      a half-page to write a solution, then give the student a full-page and so on...
-%
-%   2. Use margin-notes to "talk" to students about the critical insights
-%      in the question. The tone can be - in fact, should be - informal
-%
-%   3. Don't shy away from creating margin-figures you think will help
-%      students understand. Yes, it is a little more work per question. 
-%      But the question & solution will be written only once. Make that
-%      attempt at writing a solution count.
-%      
-%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
-% 
-%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
-%      education company. Bad spellings suggest that we ourselves 
-%      don't have any education. Also, use American spellings by default
-% 
-%   5. If a question has multiple parts, then first delete lines 40-41
-%   6. If a question does not have parts, then first delete lines 43-69
-%   
-%   7. Create versions of the question when possible. Use commands defined in 
-%      tufte-tweaks.sty to do so. Its easier than you think
 
-% \noprintanswers
-% \setcounter{rolldice}{0}
-% \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{56}
+  \renewcommand{\vbtwo}{84}
+  \renewcommand{\vbthree}{112}
+  \renewcommand{\vbfour}{2}
+  \renewcommand{\vbfive}{1.75} % log\vbone
+  \renewcommand{\vbsix}{1.92} % log\vbtwo
+  \renewcommand{\vbseven}{2.05} % log\vbthree
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{24}
+    \renewcommand{\vbtwo}{37}
+    \renewcommand{\vbthree}{156}
+    \renewcommand{\vbfour}{3}
+    \renewcommand{\vbfive}{1.38}
+    \renewcommand{\vbsix}{1.57}
+    \renewcommand{\vbseven}{2.19}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{45}
+      \renewcommand{\vbtwo}{67}
+      \renewcommand{\vbthree}{93}
+      \renewcommand{\vbfour}{2}
+      \renewcommand{\vbfive}{1.65}
+      \renewcommand{\vbsix}{1.83}
+      \renewcommand{\vbseven}{1.97}
     }{
       % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{41}
+      \renewcommand{\vbtwo}{103}
+      \renewcommand{\vbthree}{173}
+      \renewcommand{\vbfour}{3}
+      \renewcommand{\vbfive}{1.61}
+      \renewcommand{\vbsix}{2.01}
+      \renewcommand{\vbseven}{2.24}
     }
   }
 }
 
-\question
+\POWER\vbfour{1}\a
+\POWER\vbfour{2}\b
+\POWER\vbfour{3}\c
 
-\insertQR{}
+\EXPR[2]\f{(\vbsix / (2*\vbfive))}
+\EXPR[2]\g{(\vbseven / (3*\vbfive))}
 
-\watchout
+\question Without using a calculator, arrange the following in \textbf{descending order}
+(largest first, smallest last). \texttt{Hint:} $\log_a b = \dfrac{\log_c b}{\log_c a}$
+\[ \log_{\a}\vbone, \log_{\b}\vbtwo \text{ and } \log_{\c}\vbthree \]
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
+\watchout[-50pt]
+\marginnote[-40pt]{
+
+  $\log_{10}\vbone = \vbfive$
+  
+  $\log_{10}\vbtwo = \vbsix$
+  
+  $\log_{10}\vbthree = \vbseven$
+}
 
 \begin{solution}
+  We have been given a hint. So, lets use it 
+  \begin{align}
+    T_1 = \log_\a \vbone &= \dfrac{\log_{10}\vbone}{\log_{10}\a} \\
+    T_2 = \log_\b \vbtwo &= \dfrac{\log_{10}\vbtwo}{\log_{10}\vbfour^2} 
+    = \dfrac{\log_{10}\vbtwo}{2\log_{10}\vbfour} \\
+    T_3 = \log_{\c}\vbthree &= \dfrac{\log_{10}\vbthree}{\log_{10}\vbfour^3} 
+    = \dfrac{\log_{10}\vbthree}{3\log_{10}\vbfour}
+  \end{align}
+  Moreover, 
+  \begin{align}
+    \dfrac{T_2}{T_1} &= \dfrac{\log_{10}\vbtwo}{2\times\log_{10}\vbone}
+    = \dfrac{\vbsix}{2\times\vbfive} = \f < 1 \\
+     \dfrac{T_3}{T_1} &= \dfrac{\log_{10}\vbthree}{3\times\log_{10}\vbone}
+    = \dfrac{\vbseven}{3\times\vbfive} = \g < \dfrac{T_2}{T_1}
+  \end{align}
+  The above suggests that $T_1 > T_2 > T_3 \implies \log_\a\vbone > \log_\b\vbtwo > \log_{\c}\vbthree$
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
-
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi
