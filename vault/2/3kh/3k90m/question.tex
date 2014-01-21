@@ -1,68 +1,38 @@
 
+\question One urn contains two $Black$ balls (labelled $B_1$ and $B_2$) and a
+$White$ ball (labelled $W$). A second urn contains two $White$ balls (labelled
+$W_1$ and $W_2$) and a $Black$ ball (labelled $B$). One of the urns is chosen
+at random and a ball is picked from it. Then without replacing that ball
+another ball is picked from the same urn.
 
-
-\ifnumequal{\value{rolldice}}{0}{
-  % variables 
-}{
-  \ifnumequal{\value{rolldice}}{1}{
-    % variables 
-  }{
-    \ifnumequal{\value{rolldice}}{2}{
-      % variables 
-    }{
-      % variables 
-    }
-  }
-}
-
-\question
-
+\begin{parts}
+  \part Write the sample space showing all possible outcomes. \\
+  \textit{Note: ($B_1$, $B_2$) and ($B_2$, $B_1$) are distinct outcomes}
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
-\begin{solution}
-\end{solution}
-
-\begin{parts}
-  \part 
-
   \begin{solution}
+    Sample space of solutions:
+    \begin{align}
+      S=B_1B_2,B_1W,B_2B_1,B_2W,WB_1,WB_2,\nonumber\\
+        W_1W_2,W_1B,W_2W_1,W_2B,BW_1,BW_2\nonumber
+    \end{align}
   \end{solution}
-
-  \part 
+  
+  \part What is the probability that two $Black$ balls are chosen?
 
   \begin{solution}
+    \begin{align}
+      P_{2black} = \dfrac{2}{12} = \dfrac{1}{6} \nonumber
+    \end{align}
   \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
+  
+  \part What is the probability that two balls of opposite color are chosen?
 
   \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
+    \begin{align}
+      P_{opp} = \dfrac{8}{12} = \dfrac{2}{3} \nonumber
+    \end{align}
   \end{solution}
 
 \end{parts}
-

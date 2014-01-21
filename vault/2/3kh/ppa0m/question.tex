@@ -1,67 +1,105 @@
-
-
-
-\ifnumequal{\value{rolldice}}{0}{
-  % variables 
-}{
-  \ifnumequal{\value{rolldice}}{1}{
-    % variables 
-  }{
-    \ifnumequal{\value{rolldice}}{2}{
-      % variables 
-    }{
-      % variables 
-    }
-  }
-}
-
-\question
-
+\question If the letters of the word $ASSASSINATION$ are arranged at 
+random. Find the probability that,
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part Four $Ss$ come consecutively in a word.
 
   \begin{solution}
+    Let the number of arrangements possible with all
+    4 $Ss$ together be $N_{SSSS}$.
+    \begin{align}
+      N_{SSSS} &= \dfrac{10!}{3!2!2!}
+    \end{align}
+    Total number of arrangements of the word,
+    \begin{align}
+      N_{total} &= \dfrac{13!}{4!3!2!2!}
+    \end{align}
+    Probability that 4 $Ss$ come together,
+    \begin{align}
+      P_{SSSS} &= \dfrac{N_{SSSS}}{N_{total}} \\
+               &= \dfrac{2}{143}
+    \end{align}
   \end{solution}
 
-  \part 
+  \part All the $Is$ and $Ns$ are together \\
+  \textit{e.g. ASSASSININATO, IINNASSASSATO}
 
   \begin{solution}
+    Let the number of arrangements possible with the $Ns$
+    and $Is$ together be $N_{NI}$,
+    \begin{align}
+      N_{NI} &= \overbrace{\dfrac{10!}{4!3!}}^\text{rest of the letters}
+                \times
+                \underbrace{\dfrac{4!}{2!2!}}_\text{Ns and Is only}
+    \end{align}
+    Probability that $Ns$ and $Is$ come together,
+    \begin{align}
+      P_{NI} &= \dfrac{N_{NI}}{N_{total}} \\
+             &= \dfrac{2}{143}
+    \end{align}
   \end{solution}
 
-  \part 
+  \part All $As$ do not come together.(Includes cases
+  where 2$As$ are together and the third is not)
 
   \begin{solution}
+    To find the probability for all $As$ to not be together,
+    find the probability that all $As$ are together and find
+    it's complement.\\
+    Let the number of arrangements with all $As$ together be
+    $N_{AAA}$.
+    \begin{align}
+      N_{AAA} &= \dfrac{11!}{4!2!2!}
+    \end{align}
+    Probability that all $As$ are together,
+    \begin{align}
+      P_{AAA} &= \dfrac{N_{AAA}}{N_{total}} \\
+              &= \dfrac{1}{26}
+    \end{align}
+    Therefore, probability that not all $As$ are together,
+    \begin{align}
+      P'_{AAA} &= 1 - P_{AAA} \\
+               &= \dfrac{25}{26}
+    \end{align}
   \end{solution}
 
-  \part 
+  \part No two $As$ come together. In other words each $A$ in
+  the word never has another $A$ adjacent to it.(Does $not$ include
+  cases where 2$As$ are together and the third is not)
 
   \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
+    Let probability that exactly two $As$ occur together in a
+    word be $P_{AA}$ and $none$ of the $As$ occur together in
+    a word be $P_A$. Using this notation and $P_{AAA}$ from c) 
+    we can declare that,
+    \begin{align}
+      P_{AAA} + P_{AA} + P_{A} = 1
+    \end{align}
+    We already know $P_{AAA}$ from c). Next let us find
+    $P_{AA}$. The two $As$ may occur on the edge (beginning 
+    or end) of the word, or somewhere in the middle. Each of 
+    these need to be counted separately ($N_{edge}$, 
+    $N_{middle}$).
+    \begin{align}
+      N_{AA} &= N_{edge} + N_{middle} \\
+             &= \dfrac{10\times 2\times 10!}{4!2!2!} +
+                \dfrac{10\times 9\times 10!}{4!2!2!} \\
+             &= \dfrac{10\times 11!}{4!2!2!}   
+    \end{align}
+    Therefore, probability that exactly two $As$ are together,
+    \begin{align}
+      P_{AA} &= \dfrac{N_{AA}}{N_{total}} \\
+             &= \dfrac{5}{13}
+    \end{align}
+    Therefore, probability that each of the three $As$ are by
+    themselves,
+    \begin{align}
+      P_{A} &= 1 - P_{AAA} - P{AA} \\
+            &= 1 - \dfrac{1}{26} - \dfrac{5}{13} \\
+            &= \dfrac{15}{26}
+    \end{align}  
   \end{solution}
 
 \end{parts}
