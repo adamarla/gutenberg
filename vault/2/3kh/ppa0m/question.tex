@@ -1,106 +1,227 @@
-\question If the letters of the word $ASSASSINATION$ are arranged at 
+\newcommand{\vblven}{}
+\newcommand{\vbtwlv}{}
+\newcommand{\vbthrtn}{}
+\newcommand{\vbfrtn}{}
+\newcommand{\vbfftn}{}
+\newcommand{\vbsxtn}{}
+\newcommand{\vbsvntn}{}
+\newcommand{\vbeghtn}{}
+\newcommand{\vbnntn}{}
+\newcommand{\vbtwnty}{}
+\newcommand{\vbtone}{}
+\newcommand{\vbttwo}{}
+
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vbone}{ASSASSINATION}
+  \renewcommand{\vbtwo}{S}
+  \renewcommand{\vbthree}{SSSS}
+  \renewcommand{\vbfour}{AAA}
+  \renewcommand{\vbfive}{AA}
+  \renewcommand{\vbsix}{A}
+  \renewcommand{\vbseven}{I,N}
+  \renewcommand{\vbeight}{ASSASS\textbf{ININ}ATO}
+  \renewcommand{\vbnine}{13}
+  \renewcommand{\vbten}{4!3!2!2!}
+  \renewcommand{\vblven}{3!2!2!}
+  \renewcommand{\vbtwlv}{\dfrac{2}{143}}
+  \renewcommand{\vbthrtn}{\dfrac{2}{143}}
+  \renewcommand{\vbfrtn}{\textbf{AA}SSASSINTION}
+  \renewcommand{\vbfftn}{4!2!2!}
+  \renewcommand{\vbsxtn}{\dfrac{1}{26}}
+  \renewcommand{\vbsvntn}{\dfrac{25}{26}}
+  \renewcommand{\vbeghtn}{\dfrac{5}{13}}
+  \renewcommand{\vbnntn}{\dfrac{15}{26}}
+  \renewcommand{\vbtwnty}{\dfrac{4!}{2!2!}}
+  \renewcommand{\vbtone}{4!3!}
+  \renewcommand{\vbttwo}{10}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vbone}{OSTEOPOROSIS}
+    \renewcommand{\vbtwo}{O}
+    \renewcommand{\vbthree}{OOOO}
+    \renewcommand{\vbfour}{SSS}
+    \renewcommand{\vbfive}{SS}
+    \renewcommand{\vbsix}{S}
+    \renewcommand{\vbseven}{E,P,R}
+    \renewcommand{\vbeight}{OST\textbf{EPR}OSOIOS}
+    \renewcommand{\vbnine}{12}
+    \renewcommand{\vbten}{4!3!}
+    \renewcommand{\vblven}{3!}
+    \renewcommand{\vbtwlv}{\dfrac{1}{55}}
+    \renewcommand{\vbthrtn}{\dfrac{1}{22}}
+    \renewcommand{\vbfrtn}{O\textbf{SS}TEOPOROIS}
+    \renewcommand{\vbfftn}{4!}
+    \renewcommand{\vbsxtn}{\dfrac{1}{22}}
+    \renewcommand{\vbsvntn}{\dfrac{21}{22}}
+    \renewcommand{\vbeghtn}{\dfrac{9}{22}}
+    \renewcommand{\vbnntn}{\dfrac{6}{11}}
+    \renewcommand{\vbtwnty}{3!}
+    \renewcommand{\vbtone}{4!3!}
+    \renewcommand{\vbttwo}{10}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vbone}{INATTENTIVITY}
+      \renewcommand{\vbtwo}{T}
+      \renewcommand{\vbthree}{TTTT}
+      \renewcommand{\vbfour}{III}
+      \renewcommand{\vbfive}{II}
+      \renewcommand{\vbsix}{I}
+      \renewcommand{\vbseven}{E,N,V}
+      \renewcommand{\vbeight}{ATT\textbf{ENNV}TTIIIY}
+      \renewcommand{\vbnine}{13}
+      \renewcommand{\vbten}{4!3!2!}
+      \renewcommand{\vblven}{3!2!}
+      \renewcommand{\vbtwlv}{\dfrac{2}{143}}
+      \renewcommand{\vbthrtn}{\dfrac{2}{143}}
+      \renewcommand{\vbfrtn}{\textbf{II}NATTENTVITY}
+      \renewcommand{\vbfftn}{4!2!}
+      \renewcommand{\vbsxtn}{\dfrac{1}{26}}
+      \renewcommand{\vbsvntn}{\dfrac{25}{26}}
+      \renewcommand{\vbeghtn}{\dfrac{5}{13}}
+      \renewcommand{\vbnntn}{\dfrac{15}{26}}
+      \renewcommand{\vbtwnty}{\dfrac{4!}{2!}}
+      \renewcommand{\vbtone}{4!3!}
+      \renewcommand{\vbttwo}{10}
+    }{
+      % variables 
+      \renewcommand{\vbone}{MISSISSIPPY}
+      \renewcommand{\vbtwo}{S}
+      \renewcommand{\vbthree}{SSSS}
+      \renewcommand{\vbfour}{III}
+      \renewcommand{\vbfive}{II}
+      \renewcommand{\vbsix}{I}
+      \renewcommand{\vbseven}{M,P,Y}
+      \renewcommand{\vbeight}{ISSI\textbf{MPPY}ISS}
+      \renewcommand{\vbnine}{11}
+      \renewcommand{\vbten}{4!3!2!}
+      \renewcommand{\vblven}{3!2!}
+      \renewcommand{\vbtwlv}{\dfrac{4}{165}}
+      \renewcommand{\vbthrtn}{\dfrac{4}{165}}
+      \renewcommand{\vbfrtn}{M\textbf{II}SSISIPPY}
+      \renewcommand{\vbfftn}{4!2!}
+      \renewcommand{\vbsxtn}{\dfrac{3}{55}}
+      \renewcommand{\vbsvntn}{\dfrac{52}{55}}
+      \renewcommand{\vbeghtn}{\dfrac{12}{55}}
+      \renewcommand{\vbnntn}{\dfrac{40}{55}}
+      \renewcommand{\vbtwnty}{\dfrac{4!}{2!}}
+      \renewcommand{\vbtone}{4!3!}
+      \renewcommand{\vbttwo}{8}
+    }
+  }
+}
+\SUBTRACT\vbnine{3}\a
+\SUBTRACT\vbnine{2}\b
+\SUBTRACT\vbnine{4}\c
+
+\question If the letters of the word $\vbone$ are arranged at 
 random. Find the probability that,
 
-\watchout
-
 \begin{parts}
-  \part[2] Four $Ss$ come consecutively in a word.
+  \part All $\vbtwo$s come consecutively in a word.
 
 \begin{solution}[\mcq]
     Let the number of arrangements possible with all
-    4 $Ss$ together be $N_{SSSS}$.
+    4 $\vbtwo$s together be $N_{\vbthree}$.
     \begin{align}
-      N_{SSSS} &= \dfrac{10!}{3!2!2!}
+      N_{\vbthree} &= \dfrac{\a!}{\vblven}
     \end{align}
     Total number of arrangements of the word,
     \begin{align}
-      N_{total} &= \dfrac{13!}{4!3!2!2!}
+      N_{total} &= \dfrac{\vbnine!}{\vbten}
     \end{align}
-    Probability that 4 $Ss$ come together,
+    Probability that 4 $\vbtwo$s come together,
     \begin{align}
-      P_{SSSS} &= \dfrac{N_{SSSS}}{N_{total}} \\
-               &= \dfrac{2}{143}
+      P_{\vbthree} &= \dfrac{N_{\vbthree}}{N_{total}} \\
+                   &= \dfrac{\a!}{\vblven}\times\dfrac{\vbten}{\vbnine!} 
+                    = \vbtwlv
     \end{align}
   \end{solution}
 
-  \part[3] All the $Is$ and $Ns$ are together \\
-  \textit{e.g. ASSASSININATO, IINNASSASSATO}
+  \part All the $\vbseven$ are together \textit{e.g. \vbeight}
 
-\begin{solution}[\mcq]
-    Let the number of arrangements possible with the $Ns$
-    and $Is$ together be $N_{NI}$,
-    \begin{align}
-      N_{NI} &= \overbrace{\dfrac{10!}{4!3!}}^\text{rest of the letters}
-                \times
-                \underbrace{\dfrac{4!}{2!2!}}_\text{Ns and Is only}
+  \begin{solution}
+    Let the number of arrangements possible with the $\vbseven$
+    together be $N_{\vbseven}$. We will calculate this by finding
+    the number of arrangements of $\vbseven$ in of themselves and
+    multiply this by the number of arrangements of the rest of the
+    letters but with the $\vbseven$ treated as a single letter,
+    \begin{align}      
+      N_{\vbseven} &= \underbrace{\vbtwnty}_\text{\vbseven only}\times
+                      \overbrace{\dfrac{\vbttwo!}{\vbtone}}^\text{rest of the letters}
     \end{align}
-    Probability that $Ns$ and $Is$ come together,
+    Probability that $\vbseven$ come together,
     \begin{align}
-      P_{NI} &= \dfrac{N_{NI}}{N_{total}} \\
-             &= \dfrac{2}{143}
+      P_{\vbseven} &= \dfrac{N_{\vbseven}}{N_{total}} \\
+                   &= \vbtwnty\times\dfrac{\a!}{\vbtone}
+                      \times\dfrac{\vbten}{\vbnine!}
+                    = \vbthrtn
     \end{align}
   \end{solution}
 
-  \part[2] All $As$ do not come together.(Includes cases
-  where 2$As$ are together and the third is not)
+  \part Not all $\vbsix$ come together. \textit{(includes cases
+  where two $\vbsix$ are together but the third is not e.g.\vbfrtn)}
 
-\begin{solution}[\mcq]
-    To find the probability for all $As$ to not be together,
-    find the probability that all $As$ are together and find
+  \begin{solution}
+    To find the probability that all $\vbsix$ are not together,
+    find the probability that all $\vbsix$ are together and take
     it's complement.\\
-    Let the number of arrangements with all $As$ together be
-    $N_{AAA}$.
+    Let the number of arrangements with all $\vbsix$ together be
+    $N_{\vbfour}$.
     \begin{align}
-      N_{AAA} &= \dfrac{11!}{4!2!2!}
+      N_{\vbfour} &= \dfrac{\b}{\vbfftn}
     \end{align}
-    Probability that all $As$ are together,
+    Probability that all $\vbsix$ are together,
     \begin{align}
-      P_{AAA} &= \dfrac{N_{AAA}}{N_{total}} \\
-              &= \dfrac{1}{26}
+      P_{\vbfour} &= \dfrac{N_{\vbfour}}{N_{total}} \\
+                  &= \dfrac{\b}{\vbfftn}\times\dfrac{\vbten}{\vbnine!}
+                   = \vbsxtn
     \end{align}
-    Therefore, probability that not all $As$ are together,
+    Therefore, probability that not all $\vbsix$ are together,
     \begin{align}
-      P'_{AAA} &= 1 - P_{AAA} \\
-               &= \dfrac{25}{26}
+      P'_{\vbfour} &= 1 - P_{\vbfour} \\
+                   &= \vbsvntn
     \end{align}
   \end{solution}
 
-  \part[4] No two $As$ come together. In other words each $A$ in
-  the word never has another $A$ adjacent to it.(Does $not$ include
-  cases where 2$As$ are together and the third is not)
+  \part No two $\vbsix$ come together i.e. no $\vbsix$ in the word 
+  has another $\vbsix$ adjacent to it.\textit{e.g. \vbone}
 
-\begin{solution}[\halfpage]
-    Let probability that exactly two $As$ occur together in a
-    word be $P_{AA}$ and $none$ of the $As$ occur together in
-    a word be $P_A$. Using this notation and $P_{AAA}$ from c) 
-    we can declare that,
+  \begin{solution}
+    Let probability that exactly two $\vbsix$ occur together in a
+    word be $P_{\vbfive}$ and $none$ of the $\vbsix$ occur together 
+    in a word be $P_\vbsix$. Using this notation and $P_{\vbfour}$ 
+    from c) we can declare that,
     \begin{align}
-      P_{AAA} + P_{AA} + P_{A} = 1
+      P_{\vbfour} + P_{\vbfive} + P_{\vbsix} = 1
     \end{align}
-    We already know $P_{AAA}$ from c). Next let us find
-    $P_{AA}$. The two $As$ may occur on the edge (beginning 
-    or end) of the word, or somewhere in the middle. Each of 
-    these need to be counted separately ($N_{edge}$, 
+    We already know $P_{\vbfour}$ from c). Next let us find
+    $P_{\vbfive}$. The two $\vbsix$ may occur on the edge 
+    (beginning or end) of the word, or somewhere in the middle. 
+    Each of these need to be counted separately ($N_{edge}$, 
     $N_{middle}$).
     \begin{align}
-      N_{AA} &= N_{edge} + N_{middle} \\
-             &= \dfrac{10\times 2\times 10!}{4!2!2!} +
-                \dfrac{10\times 9\times 10!}{4!2!2!} \\
-             &= \dfrac{10\times 11!}{4!2!2!}   
+      N_{\vbfive} &= N_{edge} + N_{middle} \\
+                  &= \dfrac{\a\times 2\times \a!}{\vbfftn} +
+                     \dfrac{\a\times \c\times \a!}{\vbfftn} \\
+                  &= \dfrac{\a\times \b!}{\vbfftn}
     \end{align}
-    Therefore, probability that exactly two $As$ are together,
+    Therefore, probability that exactly two $\vbsix$ are together,
     \begin{align}
-      P_{AA} &= \dfrac{N_{AA}}{N_{total}} \\
-             &= \dfrac{5}{13}
+      P_{\vbfive} &= \dfrac{N_{\vbfive}}{N_{total}} \\
+                  &= \dfrac{\a\times \b!}{\vbfftn}
+                     \times\dfrac{\vbten}{\vbnine!}
+                   = \vbeghtn
     \end{align}
-    Therefore, probability that each of the three $As$ are by
+    Therefore, probability that each of the three $\vbsix$ are by
     themselves,
     \begin{align}
-      P_{A} &= 1 - P_{AAA} - P{AA} \\
-            &= 1 - \dfrac{1}{26} - \dfrac{5}{13} \\
-            &= \dfrac{15}{26}
+      P_{\vbsix} &= 1 - P_{\vbfour} - P{\vbfive} \\
+                 &= 1 - \vbsxtn - \vbeghtn \\
+                 &= \vbnntn
     \end{align}  
   \end{solution}
 
 \end{parts}
-
