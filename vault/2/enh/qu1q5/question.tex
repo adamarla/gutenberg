@@ -1,5 +1,4 @@
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{0.87}
   \renewcommand{\vbtwo}{0.36}
   \renewcommand{\vbthree}{0.30}
@@ -12,7 +11,6 @@
   \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{0.78}
     \renewcommand{\vbtwo}{0.36}
     \renewcommand{\vbthree}{0.30}
@@ -25,7 +23,6 @@
     \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{0.87}
       \renewcommand{\vbtwo}{0.63}
       \renewcommand{\vbthree}{0.50}
@@ -37,7 +34,6 @@
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }{
-      % variables 
       \renewcommand{\vbone}{0.78}
       \renewcommand{\vbtwo}{0.36}
       \renewcommand{\vbthree}{0.30}
@@ -55,7 +51,7 @@
 \ADD\vbone\vbtwo\t
 \SUBTRACT\t\vbthree\s
 
-\question In a large metropolitan area the probabilities that a family 
+\question[2] In a large metropolitan area the probabilities that a family 
 (randomly chosen for a sample survey) owns a car, a motorcycle or both
 kinds of vehicles are $\vbone$, $\vbtwo$ and $\vbthree$. What is the
 probability that a family owns a vehicle of any sort assuming the only
@@ -64,7 +60,7 @@ kinds of vehicles are cars and motorcycles.
 
 \watchout
 
-\begin{solution}
+\begin{solution}[\mcq]
   \begin{tabular}{ll}
     $P_{car}$    &- Probability a family owns a car \\
     $P_{mcycle}$ &- Probability a family owns a motorcycle \\

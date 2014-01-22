@@ -1,159 +1,81 @@
-% This is an empty shell file placed for you by the 'examiner' script.
-% You can now fill in the TeX for your question here.
-
-% Now, down to brasstacks. ** Writing good solutions is an Art **. 
-% Eventually, you will find your own style. But here are some thoughts 
-% to get you started: 
-%
-%   1. Write to be understood - but be crisp. Your own solution should not take 
-%      more space than you will give to the student. Hence, if you take more than 
-%      a half-page to write a solution, then give the student a full-page and so on...
-%
-%   2. Use margin-notes to "talk" to students about the critical insights
-%      in the question. The tone can be - in fact, should be - informal
-%
-%   3. Don't shy away from creating margin-figures you think will help
-%      students understand. Yes, it is a little more work per question. 
-%      But the question & solution will be written only once. Make that
-%      attempt at writing a solution count.
-%      
-%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
-% 
-%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
-%      education company. Bad spellings suggest that we ourselves 
-%      don't have any education. Also, use American spellings by default
-% 
-%   5. If a question has multiple parts, then first delete lines 40-41
-%   6. If a question does not have parts, then first delete lines 43-69
-%   
-%   7. Create versions of the question when possible. Use commands defined in 
-%      tufte-tweaks.sty to do so. Its easier than you think
-
-% \noprintanswers
-% \setcounter{rolldice}{0}
-% \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\vbone}{7}
+  \renewcommand{\vbtwo}{1}
+  \renewcommand{\vbthree}{5}
+  \renewcommand{\vbfour}{3}
+  \renewcommand{\vbfive}{16}
+  \renewcommand{\vbsix}{0.845}
+  \renewcommand{\vbseven}{0.699}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\vbone}{3}
+    \renewcommand{\vbtwo}{3}
+    \renewcommand{\vbthree}{7}
+    \renewcommand{\vbfour}{2}
+    \renewcommand{\vbfive}{18}
+    \renewcommand{\vbsix}{0.477}
+    \renewcommand{\vbseven}{0.845}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{2}
+      \renewcommand{\vbtwo}{7}
+      \renewcommand{\vbthree}{9}
+      \renewcommand{\vbfour}{2}
+      \renewcommand{\vbfive}{17}
+      \renewcommand{\vbsix}{0.301}
+      \renewcommand{\vbseven}{0.954}
     }{
-      % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\vbone}{5}
+      \renewcommand{\vbtwo}{4}
+      \renewcommand{\vbthree}{3}
+      \renewcommand{\vbfour}{2}
+      \renewcommand{\vbfive}{21}
+      \renewcommand{\vbsix}{0.699}
+      \renewcommand{\vbseven}{0.477}
     }
   }
 }
 
-\question
+\POWER\vbone\vbtwo\m
+\POWER\vbthree\vbfour\n
+\MULTIPLY\m\n\p
+\EXPR[2]\q{(\vbfive * (\vbtwo * \vbsix + \vbfour * \vbseven ) )}
+\FLOOR\q\a
+\ADD\a{1}\b
 
-\insertQR{}
+\question Given a number $N = \p^{\vbfive}$
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part[2] Find $\log_{10} N$ ($\log_{10}\vbone=\vbsix,\,\log_{10}\vbthree=\vbseven$)
 
-  \insertQR{}
-  \begin{solution}
+\begin{solution}[\mcq]
+    \begin{align}
+      \log_{10} N &= \log_{10} \p^{\vbfive} = \vbfive\cdot\log_{10}\p \\
+      &= \vbfive\cdot\log_{10}(\vbone^\vbtwo\times\vbthree^\vbfour) \\
+      &= \vbfive\cdot (\vbtwo\cdot\log_{10}\vbone + \vbfour\cdot\log_{10}\vbthree) = \q
+    \end{align}
   \end{solution}
 
-  \part 
+  \part[1] How many digits would there be in an \textbf{integer} M that lies between $10^{k}$ and $10^{k+1},\,k\in\mathbb{N}$? Your answer should be in terms of $k$
 
-  \insertQR{}
-  \begin{solution}
+\begin{solution}[\mcq]
+    There are \textbf{k+1} digits in an \textbf{integer} that lies between $10^k$ and $10^{k+1}$.
+    
+    Think about integers that lie between $10^0 = 1$ and $10^1 = 10$. Or, for that matter
+    between $10^2 = 100$ and $10^3 = 1000$.  
   \end{solution}
 
-  \part 
+  \part[2] Using your answers for part (a) and (b), how many digits do you think there are in  $\p^{\vbfive}$? 
 
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
+\begin{solution}[\mcq]
+    In part (a), we found $\log_{10}\p^{\vbfive} = \q\implies 10^{\q} = \p^{\vbfive}$.
+    
+    It also means that $\p^{\vbfive} \in [10^{\a}, 10^{\b}]$. And from 
+    part (b), we know that $N$ would therefore have $\b$ digits
   \end{solution}
 
 \end{parts}
 
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi
