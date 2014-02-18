@@ -15,54 +15,33 @@
   }
 }
 
-\question
+\question Integrate the following
+\begin{align}
+    \int \left(\dfrac{\tan^{-1}x}{x}-\dfrac{\ln x}{1+x^2}\right)\dfrac{1}{(\tan^{-1}x)^2}dx \nonumber
+\end{align}
 
-
-\watchout
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
 
 \begin{solution}
+  \begin{align}
+    I &= \int \left(\dfrac{\tan^{-1}x}{x}-\dfrac{\ln x}{1+x^2}\right)\dfrac{1}{(\tan^{-1}x)^2}dx \\
+      &= \int \left(\dfrac{\tan^{-1}x}{x}\cdot\dfrac{1}{(\tan^{-1}x)^2}-
+                    \dfrac{\ln x}{1+x^2}\cdot\dfrac{1}{(\tan^{-1}x)^2}\right)dx \\
+      &= \int \left(\dfrac{1}{x\tan^{-1}x}-\dfrac{\ln x}{(1+x^2)(\tan^{-1}x)^2}\right)dx \\
+      &= \int \left(\dfrac{1+x^2}{x\tan^{-1}x}-\dfrac{\ln x}{(\tan^{-1}x)^2}\right)
+              \cdot\dfrac{1}{1+x^2}dx \\
+      &\text{Let}\quad x=\tan t\Rightarrow\tan^{-1}x=t\Rightarrow \dfrac{1}{1+x^2}dx=dt \nonumber \\
+      &= \int \dfrac{1+\tan^2 t}{t\tan t}-\dfrac{\ln (\tan t)}{t^2}dt \\
+      &= \underbrace{\int\dfrac{1+\tan^2 t}{t\tan t}dt}_{I_1}-
+         \underbrace{\int\dfrac{\ln (\tan t)}{t^2}dt}_{I_2} \\
+    I_2 &= \int\dfrac{\ln (\tan t)}{t^2}dt 
+         = \int\underbrace{\dfrac{\ln (\tan t)}{1}}_{f_1}\cdot\underbrace{\dfrac{1}{t^2}}_{f_2}dt \\
+        &\text{Using integration by parts} \nonumber \\
+    I_2 &= \ln(\tan t)\cdot\dfrac{t^{-1}}{-1} - 
+           \int \dfrac{1}{\tan t}\cdot\sec^{2}t\cdot\dfrac{t^{-1}}{-1}dt \\
+        &= -\dfrac{\ln(\tan t)}{t} + \int \dfrac{\sec^{2}t}{t\tan t}dt \\
+        &\text{Substitute back into equation in step (6)} \nonumber \\
+    I &= \int\dfrac{1+\tan^2 t}{t\tan t}dt + \dfrac{\ln(\tan t)}{t} - \int \dfrac{\sec^{2}t}{t\tan t}dt \\
+      &= \int\dfrac{\sec^2 t}{t\tan t}dt + \dfrac{\ln(\tan t)}{t} - \int \dfrac{\sec^{2}t}{t\tan t}dt \\
+      &= \dfrac{\ln(\tan t)}{t} = \dfrac{\ln x}{\tan^{-1}x}
+  \end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
-
