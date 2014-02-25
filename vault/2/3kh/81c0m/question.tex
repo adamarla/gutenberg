@@ -2,15 +2,11 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
     }{
-      % variables 
     }
   }
 }
@@ -26,10 +22,10 @@ pid (Project Id) uniquely identifies a Research Project. Now write the
 algebraic expressions for the following queries.
 
 \begin{parts}
-  \part Find the first and last names of students who work on 
+  \part[1] Find the first and last names of students who work on 
   projects in the \textit{Graphics} Lab.
 
-  \begin{solution}
+\begin{solution}[\mcq]
     \begin{align}
       \prod_{firstname, lastname}\text{GradStudent}(\bowtie\prod_{gsid}(\text{WorksOn}\bowtie\prod_{pid}(\sigma_{lab="Graphics"}\text{ResearchProject}))) \nonumber
     \end{align}
@@ -44,10 +40,10 @@ algebraic expressions for the following queries.
     \end{align}
   \end{solution}
 
-  \part Find the gsid of Graduate Students who work either in
+  \part[1] Find the gsid of Graduate Students who work either in
   the \textit{Graphics} lab or in the \text{Databases} lab. 
 
-  \begin{solution}
+\begin{solution}[\mcq]
     \begin{align}
       \prod_{gsid}\text{WorksOn}\bowtie\prod_{pid}\sigma_{lab="Graphics" \vee lab="Databases"}\text{ResearchProject} \nonumber
     \end{align}
