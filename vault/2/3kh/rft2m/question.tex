@@ -1,20 +1,8 @@
-
-
-
-\ifnumequal{\value{rolldice}}{0}{
-}{
-  \ifnumequal{\value{rolldice}}{1}{
-  }{
-    \ifnumequal{\value{rolldice}}{2}{
-    }{
-    }
-  }
-}
-
 \question Consider a database of social groups that allows people to become
 members of a group: a person can be a member of several groups and each group
 maintains a list of pictures that are accessible to all members. In addition
 to the groups, the database also maintains a list of friends. The schema is\\
+\\
 \begin{tabular}{ll}
   Table   &(field1, field2,...) \\
   \hline
@@ -23,7 +11,7 @@ to the groups, the database also maintains a list of friends. The schema is\\
   \texttt{Friend}  &(personName1, personName2) \\
   \hline
 \end{tabular}\\
-\small{* indicates field is a primary key}\\
+\small{* indicates field is a primary key} \\
 \normalsize
 \texttt{Picture} stores for each picture the name of the group that owns the 
 picture. The \texttt{Friend} table is symmetrical, i.e. if X is friends with 
