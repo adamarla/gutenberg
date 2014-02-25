@@ -2,15 +2,11 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
     }{
-      % variables 
     }
   }
 }
@@ -29,7 +25,6 @@ Compute the following and show your steps and justification as you do so.
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
   \begin{marginfigure}
     \figinit{pt}
       \figpt 100:(0,0)
@@ -44,9 +39,9 @@ Compute the following and show your steps and justification as you do so.
 \fi 
 
 \begin{parts}
-  \part $\{A,B\}^+$
+  \part[2] $\{A,B\}^+$
 
-  \begin{solution}
+\begin{solution}[\mcq]
     \begin{align}
       \text{Trivially, }\Rightarrow
         &\{A,B\}^+\rightarrow\{A,B\} \nonumber\\
@@ -59,17 +54,15 @@ Compute the following and show your steps and justification as you do so.
     \end{align}
   \end{solution}
 
-  \part Is $\{A,B\}^+$ a candidate key?
+  \part[1] Is $\{A,B\}^+$ a candidate key?
 
-  \begin{solution}
+\begin{solution}[\mcq]
     Yes. Since $\{A,B\}^+$ covers the entire relation $R$, therefore 
     $AB$ is a candidate key.
   \end{solution}
 
-  \part Convert the relation $R$ into $2$NF.
-  % a table is in 2NF if and only if it is in 1NF and every non-prime attribute 
-  % of the table is dependent on the whole of a candidate key.
-  \begin{solution}
+  \part[2] Convert the relation $R$ into $2$NF.
+\begin{solution}[\mcq]
     To normalize, we separate the attributes which are dependent on part of
     the key i.e. either $A$ or $B$, and place them into relations $R_1$ and
     $R_2$.
