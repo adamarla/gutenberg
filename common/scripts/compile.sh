@@ -189,8 +189,8 @@ function compile_tex {
 
 function create_jpegs {
   # $1 = pdf file in current folder
-  gs -dNOPAUSE -dBATCH -sDEVICE=jpeg -r150 -sOutputFile=pg-%d.jpg $1 
-  # for f in `ls pg-*.jpg` ; do convert $f -resize 600x800 $f ; done
+  gs -dNOPAUSE -dBATCH -sDEVICE=jpeg -r300 -sOutputFile=pg-%d.jpg $1 
+  for f in `ls pg-*.jpg` ; do convert $f -resize 600x800 $f ; done
 }
 
 function clean_tex {
