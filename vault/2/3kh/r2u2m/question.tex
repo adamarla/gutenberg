@@ -9,14 +9,14 @@ complete the query on the right, so that it is equivalent to the one on
 the left. 
 
 \begin{parts}
-  \part   
+  \part[1]   
   \begin{tabular}{ll|ll}
     SELECT &$R.B$                     &SELECT &\underline{\hspace{20pt}} \\
     FROM   &$R$                       &FROM   &\underline{\hspace{20pt}} \\
     INNER JOIN &$S$ ON $(R.A = S.A)$; &WHERE  &\underline{\hspace{20pt}} IN \underline{\hspace{20pt}};\\
   \end{tabular}\\
 
-  \begin{solution}
+\begin{solution}[\mcq]
     The query on the left is a normal join operation. The equivalent form
     on the right would be\\
     \begin{tabular}{ll}
@@ -26,14 +26,14 @@ the left.
     \end{tabular}
   \end{solution}
 
-  \part 
+  \part[1] 
   \begin{tabular}{ll|ll}
     SELECT &$A$        &SELECT &\underline{\hspace{20pt}} \\
     FROM   &$R$        &FROM   &\underline{\hspace{20pt}};\\
     GROUP BY &$(A,B)$; &       &\\
   \end{tabular}\\
 
-  \begin{solution}
+\begin{solution}[\mcq]
     The query on the left is simply a listing of $A$ from $R$,\\
     \begin{tabular}{ll}
       SELECT &$R.A$ \\
@@ -41,14 +41,14 @@ the left.
     \end{tabular}
   \end{solution}
 
-  \part 
+  \part[1] 
   \begin{tabular}{ll|ll}
     SELECT &MIN$(B)$ AS $B$ &SELECT &$R.B$ \\
     FROM   &$R$;            &FROM   &$R$ \\
            &                &WHERE  &\underline{\hspace{20pt}} <= ALL \underline{\hspace{20pt}};\\
   \end{tabular}\\
 
-  \begin{solution}
+\begin{solution}[\mcq]
     To find the minimum $B$, perform a comparison with the entire set,\\
     \begin{tabular}{ll}
       SELECT &$R.B$ \\
