@@ -13,10 +13,10 @@ pid (Project Id) uniquely identifies a Research Project. Now write the
 algebraic expressions for the following queries.
 
 \begin{parts}
-  \part[1] Find the first and last names of students who work on 
+  \part[2] Find the first and last names of students who work on 
   projects in the \textit{Graphics} Lab.
 
-  \begin{solution}
+\begin{solution}[\halfpage]
     Begin with a select on \texttt{ResearchProject} for \textit{Graphics}
     projects. Project the \textit{pid} from the selection and join with 
     \texttt{WorksOn} to get the \textit{gsid} and finally project from 
@@ -26,10 +26,10 @@ algebraic expressions for the following queries.
     \end{align}
   \end{solution}
 
-  \part[1] Find the gsid of Graduate Students who work either in
+  \part[2] Find the gsid of Graduate Students who work either in
   the \textit{Graphics} lab or in the \text{Databases} lab. 
 
-  \begin{solution}
+\begin{solution}[\halfpage]
     Select on \texttt{ResearchProject} and join with \texttt{WorksOn} to get
     \textit{gsid}. Since names are not required, we do not need 
     \texttt{GradStudent}.
