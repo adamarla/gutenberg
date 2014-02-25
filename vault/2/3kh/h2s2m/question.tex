@@ -15,8 +15,16 @@
   }
 }
 
-\question
-
+\question Consider the universal relation $R=\{A,B,C,D,E,F,G,H,I\}$ and
+the set of functional dependencies,
+\begin{align}
+  \{\{A,B\}\rightarrow \{C\},
+  \{A\}\rightarrow\{D,E\},
+  \{B\}\rightarrow\{F\},
+  \{F\}\rightarrow\{G,H\},
+  \{D\}\rightarrow\{I,J\}\} \nonumber
+\end{align}
+Compute the following and show your steps and justification as you do so.
 
 \watchout
 
@@ -35,33 +43,49 @@
   \end{marginfigure}
 \fi 
 
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part $\{A,B\}^+$
 
   \begin{solution}
+    \begin{align}
+      \text{Trivially, }\Rightarrow
+        &\{A,B\}^+\rightarrow\{A,B\} \nonumber\\
+      \{A\}\rightarrow\{D,E\},\{B\}\rightarrow\{F\} \Rightarrow
+        &\{A,B\}^+\rightarrow\{A,B,D,E,F\} \nonumber\\
+      \{A,B\}\rightarrow\{C\}\Rightarrow   
+        &\{A,B\}^+\rightarrow\{A,B,C,D,E,F\} \nonumber\\
+      \{F\}\rightarrow\{G,H\},\{D\}\rightarrow\{I,J\}
+        &\{A,B\}^+\rightarrow\{A,B,C,D,E,F,G,H,I,J\} \nonumber
+    \end{align}
   \end{solution}
 
-  \part 
+  \part Is $\{A,B\}^+$ a candidate key?
 
   \begin{solution}
+    Yes. Since $\{A,B\}^+$ covers the entire relation $R$, therefore 
+    $AB$ is a candidate key.
   \end{solution}
 
-  \part 
-
+  \part Convert the relation $R$ into $2$NF.
+  % a table is in 2NF if and only if it is in 1NF and every non-prime attribute 
+  % of the table is dependent on the whole of a candidate key.
   \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
+    To normalize, we separate the attributes which are dependent on part of
+    the key i.e. either $A$ or $B$, and place them into relations $R_1$ and
+    $R_2$.
+    \begin{align}
+      \{A\}^+ &= \{\overline{A},D,E,I,J\} \\
+      \{B\}^+ &= \{\overline{B},F,G,H\}
+    \end{align}
+    The remaining part forms relation $R_3$ for which the candidate key is 
+    $A$ and $B$ taken together forms a separate relation $R_3$. Therefore the
+    $2$NF form would contain,
+    \begin{align}
+      R_1 &= \{\overline{A},D,E,I,J\} \\
+      R_2 &= \{\overline{B},F,G,H\} \\
+      R_3 &= \{\overline{A,B},C\}
+    \end{align}
+    
   \end{solution}
 
 \end{parts}

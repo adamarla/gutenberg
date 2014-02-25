@@ -1,67 +1,58 @@
 
 
-
-\ifnumequal{\value{rolldice}}{0}{
-  % variables 
-}{
-  \ifnumequal{\value{rolldice}}{1}{
-    % variables 
-  }{
-    \ifnumequal{\value{rolldice}}{2}{
-      % variables 
-    }{
-      % variables 
-    }
-  }
-}
-
-\question
-
-
-\watchout
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
-\begin{solution}
-\end{solution}
+\question We perform a decomposition to normalize a single schema to be of
+certain normal forms. For such a decomposition to be \textit{equivalent} 
+to the original schema, it is desirable that it be lossless. To examine this 
+let us consider the original schema $R(A, B, C)$, which we then decompose into 
+$R_1(A, B)$ and $R_2(A, C)$.
 
 \begin{parts}
-  \part 
+  \part Will this decomposition always be lossless? Answer \textit{yes} or 
+  \textit{no} and briefly explain why (marks will be awarded only if both the
+  answer and the justification are correct).
 
   \begin{solution}
+    No. \\
+    Unless $A\rightarrow B$ or $A\rightarrow C$ is satisfied in the original
+    relation, $R_1$ \textit{join} $R_2$ may result in entries that were not 
+    originally present in $R$.
   \end{solution}
 
-  \part 
+  \part Give an example instance for $R$ and demonstrate its decomposition as
+  evidence to support your answer to part (a) of this question.
 
   \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
+    Consider that $R$ looks like this,
+    \begin{align}
+      \begin{tabular}{ccc}      
+        A &B &C \\
+        \hline
+        1 &2 &3 \\
+        1 &4 &5 \\
+      \end{tabular} \nonumber
+    \end{align}
+    Decomposition of $R$ into $R_1$ and $R_2$ would look like this,
+    \begin{align}
+      \begin{tabular}{cc|cc}
+        A &B &A &C \\
+        \hline
+        1 &2 &1 &3 \\
+        1 &4 &1 &5 \\ 
+      \end{tabular} \nonumber
+    \end{align}
+    Performing $R_1 \bowtie R_2$ would result in this,
+    \begin{align}
+      \begin{tabular}{ccc}
+        A &B &C \\
+        \hline
+        1 &2 &3 \\
+        1 &4 &5 \\
+        1 &2 &5 \\
+        1 &4 &3 \\
+      \end{tabular}\nonumber    
+    \end{align}
+    The \textit{join} generates extra records that did not exist in 
+    the original $R$. Therefore this was not a lossless operation.
   \end{solution}
 
 \end{parts}
