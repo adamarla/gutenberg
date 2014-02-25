@@ -3,66 +3,66 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
+  \newcommand{\szntpls}{10}
+  \newcommand{\sznpairs}{30}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
+    \newcommand{\szntpls}{10}
+    \newcommand{\sznpairs}{60}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
+      \newcommand{\szntpls}{20}
+      \newcommand{\sznpairs}{30}
     }{
       % variables 
+      \newcommand{\szntpls}{20}
+      \newcommand{\sznpairs}{60}
     }
   }
 }
 
-\question
+\gcalcexpr[0]{\denseblks}{ 300000 / \sznpairs}
+\gcalcexpr[0]{\sparsblks}{ 300000 / \szntpls / \sznpairs}
 
+\question Suppose we have a relation has $300,000$ tuples. A block can hold
+$\szntpls$ tuples or $\sznpairs$ key-pointer pairs. The index is built on the
+key field of the relation (thus no duplicate search keys) and the file is
+sorted according to key. Answer the questions that follow about the space
+required for each index (just the index, not the actual data).
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part How many blocks are required for a \textit{dense} index of this 
+  relation.
 
   \begin{solution}
+    A dense index indicates that each tuple has it's own key-pointer,
+    therefore,
+    \begin{align}
+      \text{blocks} &= \dfrac{\text{no. of tuples}}
+                             {\text{key-pointers per block}} \\
+                    &= \dfrac{300000}{\sznpairs} = \denseblks
+    \end{align}
   \end{solution}
 
-  \part 
+  \part How many blocks are required for a \textit{sparse} index of this 
+  relation.
 
   \begin{solution}
+    A sparse index requires that there be only one key-pointer per
+    \textit{block} of tuples, therefore,
+    \begin{align}
+      \text{blocks} &= \dfrac{\text{no. of tuples}}
+                             {\text{tuples per block}}
+                             \times\dfrac{1}{\text{key-pointers per block}} \\
+                    &= \dfrac{300000}{\szntpls}\times
+                       \dfrac{1}{\sznpairs} = \sparsblks
+    \end{align}
   \end{solution}
 
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
 
 \end{parts}
 

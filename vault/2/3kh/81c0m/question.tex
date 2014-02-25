@@ -15,53 +15,51 @@
   }
 }
 
-\question
-
-
-\watchout
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
-\begin{solution}
-\end{solution}
+\question Consider the following relational schema,\\
+\begin{tabular}{ll}
+  GradStudent     &(gsid, firstname, lastname, birthdate, address) \\
+  WorksOn         &(gsid, pid, hours) \\
+  ResearchProject &(pid, pname, lab)
+\end{tabular}
+where gsid (Grad Student Id) uniquely identifies a Graduate Student and
+pid (Project Id) uniquely identifies a Research Project. Now write the 
+algebraic expressions for the following queries.
 
 \begin{parts}
-  \part 
+  \part Find the first and last names of students who work on 
+  projects in the \textit{Graphics} Lab.
 
   \begin{solution}
+    \begin{align}
+      \prod_{firstname, lastname}\text{GradStudent}(\bowtie\prod_{gsid}(\text{WorksOn}\bowtie\prod_{pid}(\sigma_{lab="Graphics"}\text{ResearchProject}))) \nonumber
+    \end{align}
+    \begin{align}  
+      \pi_{firstname, lastname}\text{GradStudent}(\bowtie\pi_{gsid}(\text{WorksOn}\bowtie\pi_{pid}(\sigma_{lab="Graphics"}\text{ResearchProject}))) \nonumber
+    \end{align}
+    \begin{align}    
+      \prod_{firstname, lastname}(\prod_{gsid}(\prod_{pid}(\sigma_{lab="Graphics"}\text{ResearchProject})\bowtie\text{WorksOn})\bowtie\text{GradStudent}) \nonumber
+    \end{align}
+    \begin{align}    
+      \pi_{firstname, lastname}(\pi_{gsid}(\pi_{pid}(\sigma_{lab="Graphics"}\text{ResearchProject})\bowtie\text{WorksOn})\bowtie\text{GradStudent}) \nonumber
+    \end{align}
   \end{solution}
 
-  \part 
+  \part Find the gsid of Graduate Students who work either in
+  the \textit{Graphics} lab or in the \text{Databases} lab. 
 
   \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
+    \begin{align}
+      \prod_{gsid}\text{WorksOn}\bowtie\prod_{pid}\sigma_{lab="Graphics" \vee lab="Databases"}\text{ResearchProject} \nonumber
+    \end{align}
+    \begin{align}
+      \prod_{gsid}((\prod_{pid}\sigma_{lab="Graphics" \vee lab="Databases"}\text{ResearchProject})\bowtie\text{WorksOn}) \nonumber
+    \end{align}
+    \begin{align}
+      \pi_{gsid}\text{WorksOn}\bowtie\pi_{pid}\sigma_{lab="Graphics" \vee lab="Databases"}\text{ResearchProject} \nonumber
+    \end{align}
+    \begin{align}
+      \pi_{gsid}((\pi_{pid}\sigma_{lab="Graphics" \vee lab="Databases"}\text{ResearchProject})\bowtie\text{WorksOn}) \nonumber
+    \end{align}
   \end{solution}
 
 \end{parts}

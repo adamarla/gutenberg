@@ -1,67 +1,55 @@
 
 
-
-\ifnumequal{\value{rolldice}}{0}{
-  % variables 
-}{
-  \ifnumequal{\value{rolldice}}{1}{
-    % variables 
-  }{
-    \ifnumequal{\value{rolldice}}{2}{
-      % variables 
-    }{
-      % variables 
-    }
-  }
-}
-
-\question
-
-
-\watchout
+\question Consider the following scenario: A \texttt{film} has a name 
+and a release date. A \texttt{studio} has a numeric id, a name and an 
+address. A \text{director} has a Social Security Number (SSN) and a name. 
+An \texttt{actor} has an SSN and a name. A \texttt{character} in a 
+\texttt{film} has a name and a role. A \texttt{film} is produced by one 
+\texttt{studio}, directed by a single \texttt{director} and has an 
+\texttt{actor} playing each \texttt{character} in it.
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
+  \marginnote {This is a diagram}
 
-\begin{solution}
-\end{solution}
+\fi
 
 \begin{parts}
-  \part 
+  \part Is there a weak entity type in this schema? If yes, then show
+  this weak entity type and justify why.
 
   \begin{solution}
+    By definition a weak entity type cannot be identified uniquely by
+    it's attributes alone, it relies on a foreign key which in turn is
+    the primary key of a related entity.\\
+    In our scenario, \texttt{character} is a weak entity. It belongs to 
+    a film and to be uniquely identified, it must be referenced through 
+    the \texttt{film} to which it belongs.\\
+    \texttt{character} - belongs - \texttt{film}
   \end{solution}
 
-  \part 
+  \part Is there a partial participation constraint in the schema? If
+  yes, then show the constraint and justify why.
 
   \begin{solution}
+    Partial participation constraints are those where the entity need
+    not always participate in a relationship.\\
+    In our scenario, \texttt{director} can exist without her having 
+    directed a \texttt{film}, a \texttt{studio} can exist without it 
+    having produced a \texttt{film} and an \texttt{actor} can exist
+    without having played a \texttt{character}.\\
+    \texttt{director} - directed, \texttt{studio} - produced, 
+    \texttt{actor} - played
   \end{solution}
 
-  \part 
+  \part Is there a total participation constraint in the schema? If there
+  is, show this constraint and justify why.
 
   \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
+    There is a total participation constraint on a \texttt{film} in that
+    it must exist for it to be directed and produced. There is also a total
+    participation constraint on a \texttt{character} since it must be played.\\
+    \texttt{film} - directed, \texttt{film} - produced, 
+    \texttt{character} - played
   \end{solution}
 
 \end{parts}
