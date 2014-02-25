@@ -184,7 +184,10 @@
   \fi
 }
 
-\BeforeBeginEnvironment{explanation}{\embedQR}
+\BeforeBeginEnvironment{explanation}{
+  \embedQR
+  \setcounter{equation}{0}
+}
 
 
 \AfterEndEnvironment{explanation}{

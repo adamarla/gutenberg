@@ -1,6 +1,7 @@
 
 
 \question[3] If $x^{2x}-2x^{x}\cot y - 1 = 0$, then what is $y'(1)$?
+\texttt{Hint:}$\dfrac{d}{dx}x^{Nx}\neq Nx\times x^{Nx-1}$
 
 
 \ifprintanswers
@@ -8,15 +9,34 @@
 \fi 
 
 \begin{solution}[\halfpage]
+  The hint suggests that we need to think about $\dfrac{dz}{dx}$ when $z=x^{Nx}$. So, lets work that out first 
+  \begin{align}
+    z = x^{Nx} &\implies \ln z = Nx\times\ln x \\
+    \implies \dfrac{1}{z}\dfrac{dz}{dx} &= N\cdot\left[ x\cdot\dfrac{d}{dx}\ln x + \ln x\cdot\dfrac{d}{dx}x\right] \\
+    \implies \dfrac{dz}{dx} &= Nx^{Nx}\cdot(1+\ln x)
+  \end{align}
+  
+  Now, coming back to the original equation
 	\begin{align}
-	  \text{If } x^{2x}-2x^{x}\cot y - 1 &= 0 \\
-	  \text{then } \cot y &= \dfrac{1}{2}\left[x^{x}-\dfrac{1}{x^{x}} \right] = 0 \text{ when } x=1 \\
-	  \Rightarrow -\csc^2 y\dydx &= \dfrac{1}{2}\left[x\cdot x^{x-1} + \dfrac{x}{x^{x+1}}\right] \\
-	  \Rightarrow -(1 + \cot^2 y)\dydx &= \dfrac{1}{2}\left[x\cdot x^{x-1} + \dfrac{x}{x^{x+1}}\right] \\
+	  x^{2x}-2x^{x}\cot y - 1 &= 0 \implies
+	  \cot y = \dfrac{1}{2}\left[x^{x}-\dfrac{1}{x^{x}} \right] \\
+	  &= \dfrac{1}{2}\cdot(x^x-x^{-x}) \\
+	  \implies\cot y &= 0 \text{ when } x = 1
 	\end{align}
-	Plugging in $x=1$ in the above equation, we get
+	
+	Bearing (3) in mind, we get 
 	\begin{align}
-		-(1+0)\dydx &= \dfrac{1}{2}(1 + 1) = 1 \\
-		\Rightarrow \dydx &= -1 \text{ when } x = 1
+	  \dfrac{d}{dx}\cot y &= \dfrac{1}{2}\dfrac{d}{dx}(x^x-x^{-x}) \\
+	  \implies -\csc^2 y\dfrac{dy}{dx} &= -(1+\cot^2 y)\dfrac{dy}{dx} \nonumber\\ 
+	  &= \dfrac{1}{2}\left[ \underbrace{(1+\ln x)\cdot x^x}_{\frac{d}{dx}x^x} + 
+	  \underbrace{(1+\ln x)\cdot x^{-x}}_{\frac{d}{dx}x^{-x}}\right] \\
+	  &= \dfrac{(1+\ln x)}{2}\cdot\left(x^x + \dfrac{1}{x^x}\right)
 	\end{align}
+	
+	And therefore, when $x=1$, then 
+	\begin{align}
+	  \underbrace{-(1+\cot^2 y)}_{\cot y = 0\text{ when } x=1}\dfrac{dy}{dx} &= 
+	  \dfrac{1+0}{2}\cdot (1+1) \\
+	  \implies \dfrac{dy}{dx} &= -1 \text{ when } x=1
+	\end{align}	
 \end{solution}

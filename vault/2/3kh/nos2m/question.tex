@@ -2,21 +2,17 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \newcommand{\szntpls}{10}
   \newcommand{\sznpairs}{30}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \newcommand{\szntpls}{10}
     \newcommand{\sznpairs}{60}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \newcommand{\szntpls}{20}
       \newcommand{\sznpairs}{30}
     }{
-      % variables 
       \newcommand{\szntpls}{20}
       \newcommand{\sznpairs}{60}
     }
@@ -35,10 +31,10 @@ required for each index (just the index, not the actual data).
 \watchout
 
 \begin{parts}
-  \part How many blocks are required for a \textit{dense} index of this 
+  \part[1] How many blocks are required for a \textit{dense} index of this 
   relation.
 
-  \begin{solution}
+\begin{solution}[\mcq]
     A dense index indicates that each tuple has it's own key-pointer,
     therefore,
     \begin{align}
@@ -48,10 +44,10 @@ required for each index (just the index, not the actual data).
     \end{align}
   \end{solution}
 
-  \part How many blocks are required for a \textit{sparse} index of this 
+  \part[2] How many blocks are required for a \textit{sparse} index of this 
   relation.
 
-  \begin{solution}
+\begin{solution}[\mcq]
     A sparse index requires that there be only one key-pointer per
     \textit{block} of tuples, therefore,
     \begin{align}

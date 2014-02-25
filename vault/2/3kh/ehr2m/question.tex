@@ -7,10 +7,10 @@ An \texttt{actor} has an SSN and a name. A \texttt{character} in a
 \texttt{actor} playing each \texttt{character} in it.
 
 \begin{parts}
-  \part Is there a weak entity type in this schema? If yes, then show
+  \part[1] Is there a weak entity type in this schema? If yes, then show
   this weak entity type and justify why.
 
-  \begin{solution}
+\begin{solution}[\mcq]
     By definition a weak entity type cannot be identified uniquely by
     it's attributes alone, it relies on a foreign key which in turn is
     the primary key of a related entity.\\
@@ -20,10 +20,10 @@ An \texttt{actor} has an SSN and a name. A \texttt{character} in a
     \texttt{character} - belongs - \texttt{film}
   \end{solution}
 
-  \part Is there a partial participation constraint in the schema? If
+  \part[1] Is there a partial participation constraint in the schema? If
   yes, then show the constraint and justify why.
 
-  \begin{solution}
+\begin{solution}[\mcq]
     Partial participation constraints are those where the entity need
     not always participate in a relationship.\\
     In our scenario, \texttt{director} can exist without her having 
@@ -34,10 +34,10 @@ An \texttt{actor} has an SSN and a name. A \texttt{character} in a
     \texttt{actor} - played
   \end{solution}
 
-  \part Is there a total participation constraint in the schema? If there
+  \part[1] Is there a total participation constraint in the schema? If there
   is, show this constraint and justify why.
 
-  \begin{solution}
+\begin{solution}[\mcq]
     There is a total participation constraint on a \texttt{film} in that
     it must exist for it to be directed and produced. There is also a total
     participation constraint on a \texttt{character} since it must be played.\\
