@@ -1,16 +1,3 @@
-
-
-
-\ifnumequal{\value{rolldice}}{0}{
-}{
-  \ifnumequal{\value{rolldice}}{1}{
-  }{
-    \ifnumequal{\value{rolldice}}{2}{
-    }{
-    }
-  }
-}
-
 \question Consider the universal relation $R=\{A,B,C,D,E,F,G,H,I\}$ and
 the set of functional dependencies,
 \begin{align}
@@ -21,22 +8,6 @@ the set of functional dependencies,
   \{D\}\rightarrow\{I,J\}\} \nonumber
 \end{align}
 Compute the following and show your steps and justification as you do so.
-
-\watchout
-
-\ifprintanswers
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
 
 \begin{parts}
   \part[2] $\{A,B\}^+$
