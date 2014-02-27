@@ -19,13 +19,13 @@ Y then Y is also friends with X. Every person is a member of at least one
 group. Given this, please answer the following:
 
 \begin{parts}
-  \part[2] Write an SQL query that computes for every person the total number of
+  \part[5] Write an SQL query that computes for every person the total number of
   pictures that they can access through their group memberships. That is, a
   person X can access a picture Y if X is a member of some group Z and the group
   Z owns the \texttt{Picture} Y. The query should return sets like this 
   ('Fred' $12$,'Joe' $7$, 'Sue' $0$, 'Rick' $9$,...)
   
-\begin{solution}[\halfpage]
+\begin{solution}[\fullpage]
     Since the query is person centric, we can start with \texttt{Member} and
     \textit{join} with \texttt{Picture} on the common column groupName. In order 
     not to lose those members who do cannot have access to any pictures, we 
@@ -38,11 +38,11 @@ group. Given this, please answer the following:
     \end{tabular}
   \end{solution}
 
-  \part[2] A cool person is one that has at least $40$ friends. Write an SQL query 
+  \part[5] A cool person is one that has at least $40$ friends. Write an SQL query 
   that returns all the cool people in the database. You need to turn in an 
   SQL query that computes a list of names.
 
-\begin{solution}[\halfpage]
+\begin{solution}[\fullpage]
     For this we need to group \texttt{Friend} by personName and select only those
     groups that have a count $> 40$.\\
     \begin{tabular}{ll}
