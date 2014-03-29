@@ -2,7 +2,6 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \newcommand{\va}{A}
   \newcommand{\vb}{B}
   \newcommand{\vc}{C}
@@ -17,7 +16,6 @@
   \newcommand{\vl}{S}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \newcommand{\va}{Z}
     \newcommand{\vb}{Y}
     \newcommand{\vc}{X}
@@ -32,7 +30,6 @@
     \newcommand{\vl}{P}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \newcommand{\va}{P}
       \newcommand{\vb}{Q}
       \newcommand{\vc}{R}
@@ -46,7 +43,6 @@
       \newcommand{\vk}{C}
       \newcommand{\vl}{D}
     }{
-      % variables 
       \newcommand{\va}{G}
       \newcommand{\vb}{H}
       \newcommand{\vc}{I}
@@ -63,7 +59,7 @@
   }
 }
 
-\question Consider the following transaction database.
+\question[5] Consider the following transaction database.
 \\
 \begin{tabular}{ll}
   \textbf{$T_1$} & $\va,\vb,\vc,\vd,\ve$ \nonumber \\
@@ -78,7 +74,7 @@ indicates cardinality of a particular step. Assume minimum support $2$.
 
 \watchout
 
-\begin{solution}
+\begin{solution}[\fullpage]
   Begin by constructing the \texttt{1-itemstep},
   \begin{align}
     C_1\quad &

@@ -2,7 +2,6 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \newcommand{\va}{A}
   \newcommand{\vb}{B}
   \newcommand{\vc}{C}
@@ -10,7 +9,6 @@
   \newcommand{\ve}{E}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \newcommand{\va}{K}
     \newcommand{\vb}{L}
     \newcommand{\vc}{M}
@@ -18,14 +16,12 @@
     \newcommand{\ve}{O}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \newcommand{\va}{P}
       \newcommand{\vb}{Q}
       \newcommand{\vc}{R}
       \newcommand{\vd}{S}
       \newcommand{\ve}{T}
     }{
-      % variables 
       \newcommand{\va}{H}
       \newcommand{\vb}{I}
       \newcommand{\vc}{J}
@@ -56,18 +52,18 @@
 \watchout
 
 \begin{parts}
-  \part Calculate the maximum number of (size) \texttt{3-itemsets} that can
+  \part[3] Calculate the maximum number of (size) \texttt{3-itemsets} that can
   be derived from this dataset.
 
-  \begin{solution}
+\begin{solution}[\halfpage]
     Since there are $10$ transactions the maximum possible number of 
     \texttt{3-itemsets} is $^{10}C_3 = 5$.
   \end{solution}
 
-  \part Find a pair of items say $X$ and $Y$ such that the rules 
+  \part[3] Find a pair of items say $X$ and $Y$ such that the rules 
   $X \Rightarrow Y$ and $Y \Rightarrow X$ have the same \textit{confidence}.
 
-  \begin{solution}
+\begin{solution}[\halfpage]
     For a pair of items taken together to have the same \textit{confidence},
     they need to have equal \textit{support} in the dataset. Let us begin by 
     computing the \textit{support} for each item,
