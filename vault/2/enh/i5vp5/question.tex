@@ -3,65 +3,83 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
+  \newcommand{\va}{A}
+  \newcommand{\vb}{B}
+  \newcommand{\vc}{C}
+  \newcommand{\vd}{D}
+  \newcommand{\ve}{E}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
+    \newcommand{\va}{K}
+    \newcommand{\vb}{L}
+    \newcommand{\vc}{M}
+    \newcommand{\vd}{N}
+    \newcommand{\ve}{O}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
+      \newcommand{\va}{P}
+      \newcommand{\vb}{Q}
+      \newcommand{\vc}{R}
+      \newcommand{\vd}{S}
+      \newcommand{\ve}{T}
     }{
       % variables 
+      \newcommand{\va}{H}
+      \newcommand{\vb}{I}
+      \newcommand{\vc}{J}
+      \newcommand{\vd}{K}
+      \newcommand{\ve}{L}
     }
   }
 }
 
-\question
-
-
+\question Consider the following dataset of market based transactions.\\
+\begin{tabular}{|c|l|}
+  \hline
+  Transaction Id &Items Bought \\
+  \hline
+  $1$  &$\{\va,\vb,\vd,\ve\}$ \\ 
+  $2$  &$\{\vb,\vc,\vd\}$ \\ 
+  $3$  &$\{\va,\vb,\vd,\ve\}$ \\ 
+  $4$  &$\{\va,\vc,\vd,\ve\}$ \\ 
+  $5$  &$\{\vb,\vc,\vd,\ve\}$ \\ 
+  $6$  &$\{\vb,\vd,\ve\}$ \\
+  $7$  &$\{\vc,\vd\}$ \\ 
+  $8$  &$\{\va,\vb,\vc\}$ \\ 
+  $9$  &$\{\va,\vd,\ve\}$ \\ 
+  $10$ &$\{\vb,\vd\}$ \\ 
+  \hline  
+\end{tabular}
+\\
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part Calculate the maximum number of (size) \texttt{3-itemsets} that can
+  be derived from this dataset.
 
   \begin{solution}
+    Since there are $10$ transactions the maximum possible number of 
+    \texttt{3-itemsets} is $^{10}C_3 = 5$.
   \end{solution}
 
-  \part 
+  \part Find a pair of items say $X$ and $Y$ such that the rules 
+  $X \Rightarrow Y$ and $Y \Rightarrow X$ have the same \textit{confidence}.
 
   \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
+    For a pair of items taken together to have the same \textit{confidence},
+    they need to have equal \textit{support} in the dataset. Let us begin by 
+    computing the \textit{support} for each item,
+    \begin{align}
+      \textit{supp(\va)} &= \frac{5}{10} = \textbf{0.5} \nonumber \\
+      \textit{supp(\vb)} &= \frac{7}{10} = 0.7 \nonumber \\
+      \textit{supp(\vc)} &= \frac{5}{10} = \textbf{0.5} \nonumber \\
+      \textit{supp(\vd)} &= \frac{8}{10} = 0.8 \nonumber \\
+      \textit{supp(\ve)} &= \frac{6}{10} = 0.6 \nonumber      
+    \end{align}
+    Therefore, as can be seen clearly, items $\va$ and $\vc$ have the same 
+    confidence with respect to each other.    
   \end{solution}
 
 \end{parts}
