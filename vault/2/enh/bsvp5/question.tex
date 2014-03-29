@@ -2,7 +2,6 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \newcommand{\va}{a}
   \newcommand{\vb}{b}
   \newcommand{\vc}{c}
@@ -11,7 +10,6 @@
   \newcommand{\vf}{f}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \newcommand{\va}{p}
     \newcommand{\vb}{q}
     \newcommand{\vc}{r}
@@ -20,7 +18,6 @@
     \newcommand{\vf}{u}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \newcommand{\va}{m}
       \newcommand{\vb}{n}
       \newcommand{\vc}{o}
@@ -28,7 +25,6 @@
       \newcommand{\ve}{q}
       \newcommand{\vf}{r}
     }{
-      % variables 
       \newcommand{\va}{h}
       \newcommand{\vb}{i}
       \newcommand{\vc}{j}
@@ -39,7 +35,7 @@
   }
 }
 
-\question Assume the \texttt{Apriori} algorithm identified the following
+\question[4] Assume the \texttt{Apriori} algorithm identified the following
 seven \texttt{4-itemsets} that satisfy a user given support threshold.
 \begin{align}
     L_4 = \{\va\vb\vc\vd, \va\vb\vc\ve, \va\vb\vc\vf, \va\vc\vd\ve, 
@@ -50,7 +46,7 @@ algorithm (justify your answer).
 
 \watchout
 
-\begin{solution}
+\begin{solution}[\fullpage]
   The following candidate \texttt{5-itemsets} are formed by performing a
   self-join on $L$.
   \begin{align}
