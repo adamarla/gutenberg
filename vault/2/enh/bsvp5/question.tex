@@ -2,35 +2,35 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  \newcommand{\va}{a}
-  \newcommand{\vb}{b}
-  \newcommand{\vc}{c}
-  \newcommand{\vd}{d}
-  \newcommand{\ve}{e}
-  \newcommand{\vf}{f}
+  \renewcommand{\va}{a}
+  \renewcommand{\vb}{b}
+  \renewcommand{\vc}{c}
+  \renewcommand{\vd}{d}
+  \renewcommand{\ve}{e}
+  \renewcommand{\vf}{f}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \newcommand{\va}{p}
-    \newcommand{\vb}{q}
-    \newcommand{\vc}{r}
-    \newcommand{\vd}{s}
-    \newcommand{\ve}{t}
-    \newcommand{\vf}{u}
+    \renewcommand{\va}{p}
+    \renewcommand{\vb}{q}
+    \renewcommand{\vc}{r}
+    \renewcommand{\vd}{s}
+    \renewcommand{\ve}{t}
+    \renewcommand{\vf}{u}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \newcommand{\va}{m}
-      \newcommand{\vb}{n}
-      \newcommand{\vc}{o}
-      \newcommand{\vd}{p}
-      \newcommand{\ve}{q}
-      \newcommand{\vf}{r}
+      \renewcommand{\va}{m}
+      \renewcommand{\vb}{n}
+      \renewcommand{\vc}{o}
+      \renewcommand{\vd}{p}
+      \renewcommand{\ve}{q}
+      \renewcommand{\vf}{r}
     }{
-      \newcommand{\va}{h}
-      \newcommand{\vb}{i}
-      \newcommand{\vc}{j}
-      \newcommand{\vd}{k}
-      \newcommand{\ve}{l}
-      \newcommand{\vf}{m}
+      \renewcommand{\va}{h}
+      \renewcommand{\vb}{i}
+      \renewcommand{\vc}{j}
+      \renewcommand{\vd}{k}
+      \renewcommand{\ve}{l}
+      \renewcommand{\vf}{m}
     }
   }
 }
