@@ -3,66 +3,72 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
+  \newcommand{\va}{a}
+  \newcommand{\vb}{b}
+  \newcommand{\vc}{c}
+  \newcommand{\vd}{d}
+  \newcommand{\ve}{e}
+  \newcommand{\vf}{f}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
+    \newcommand{\va}{p}
+    \newcommand{\vb}{q}
+    \newcommand{\vc}{r}
+    \newcommand{\vd}{s}
+    \newcommand{\ve}{t}
+    \newcommand{\vf}{u}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
+      \newcommand{\va}{m}
+      \newcommand{\vb}{n}
+      \newcommand{\vc}{o}
+      \newcommand{\vd}{p}
+      \newcommand{\ve}{q}
+      \newcommand{\vf}{r}
     }{
       % variables 
+      \newcommand{\va}{h}
+      \newcommand{\vb}{i}
+      \newcommand{\vc}{j}
+      \newcommand{\vd}{k}
+      \newcommand{\ve}{l}
+      \newcommand{\vf}{m}
     }
   }
 }
 
-\question
-
+\question Assume the \texttt{Apriori} algorithm identified the following
+seven \texttt{4-itemsets} that satisfy a user given support threshold.
+\begin{align}
+    L_4 = \{\va\vb\vc\vd, \va\vb\vc\ve, \va\vb\vc\vf, \va\vc\vd\ve, 
+          \va\vd\ve\vf, \vb\vc\vd\ve, \vb\vc\ve\vf\} \nonumber
+\end{align}
+List the candidate \texttt{5-itemsets} created by the \texttt{Apriori} 
+algorithm (justify your answer).
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}
+  The following candidate \texttt{5-itemsets} are formed by performing a
+  self-join on $L$.
+  \begin{align}
+    C_5 = \{\overbrace{\va\vb\vc\vd\ve}^{A}, \overbrace{\va\vb\vc\vd\vf}^{B}, 
+          \overbrace{\va\vb\vc\ve\vf}^{C}\} \nonumber  
+  \end{align}
+  Now let us apply the \texttt{Apriori} property that \textbf{subsets of a frequent
+  itemset must also be frequent}. The \texttt{4-itemsets} subsets of $A$, $B$ and $C$
+  are,
+  \begin{align}
+    A_4 &= \{\va\vb\vc\vd, \va\vb\vc\ve, \textbf{\va\vb\vd\ve}, 
+             \va\vc\vd\ve, \vb\vc\vd\ve \} \nonumber \\
+    B_4 &= \{\va\vb\vc\vd, \va\vb\vc\vf, \textbf{\va\vb\vd\vf}, 
+             \textbf{\va\vc\vd\vf}, \textbf{\vb\vc\vd\vf\}} \nonumber \\
+    C_4 &= \{\va\vb\vc\ve, \va\vb\vc\vf, \textbf{\va\vb\ve\vf}, 
+             \textbf{\va\vc\ve\vf}, \vb\vc\ve\vf \} \nonumber
+  \end{align}
+  Since each of the candidate itemsets have \textbf{subsets that are NOT frequent},
+  they are are all pruned. Therefore there are no valid \texttt{5-itemsets} for this
+  dataset for the specified support threshold.
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
-

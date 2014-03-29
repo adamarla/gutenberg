@@ -3,66 +3,139 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
+  \newcommand{\va}{A}
+  \newcommand{\vb}{B}
+  \newcommand{\vc}{C}
+  \newcommand{\vd}{D}
+  \newcommand{\ve}{E}
+  \newcommand{\vf}{F}
+  \newcommand{\vg}{G}
+  \newcommand{\vh}{H}
+  \newcommand{\vi}{P}
+  \newcommand{\vj}{J}
+  \newcommand{\vk}{K}
+  \newcommand{\vl}{S}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
+    \newcommand{\va}{Z}
+    \newcommand{\vb}{Y}
+    \newcommand{\vc}{X}
+    \newcommand{\vd}{W}
+    \newcommand{\ve}{V}
+    \newcommand{\vf}{U}
+    \newcommand{\vg}{A}
+    \newcommand{\vh}{K}
+    \newcommand{\vi}{L}
+    \newcommand{\vj}{G}
+    \newcommand{\vk}{T}
+    \newcommand{\vl}{P}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
+      \newcommand{\va}{P}
+      \newcommand{\vb}{Q}
+      \newcommand{\vc}{R}
+      \newcommand{\vd}{S}
+      \newcommand{\ve}{T}
+      \newcommand{\vf}{L}
+      \newcommand{\vg}{M}
+      \newcommand{\vh}{N}
+      \newcommand{\vi}{A}
+      \newcommand{\vj}{F}
+      \newcommand{\vk}{C}
+      \newcommand{\vl}{D}
     }{
       % variables 
+      \newcommand{\va}{G}
+      \newcommand{\vb}{H}
+      \newcommand{\vc}{I}
+      \newcommand{\vd}{J}
+      \newcommand{\ve}{A}
+      \newcommand{\vf}{B}
+      \newcommand{\vg}{C}
+      \newcommand{\vh}{F}
+      \newcommand{\vi}{R}
+      \newcommand{\vj}{T}
+      \newcommand{\vk}{Q}
+      \newcommand{\vl}{R}
     }
   }
 }
 
-\question
-
+\question Consider the following transaction database.
+\\
+\begin{tabular}{ll}
+  \textbf{$T_1$} & $\va,\vb,\vc,\vd,\ve$ \nonumber \\
+  \textbf{$T_2$} & $\va,\vb,\vd,\vj$ \nonumber \\
+  \textbf{$T_3$} & $\vb,\vf,\vk,\vl$ \nonumber \\
+  \textbf{$T_4$} & $\vd,\vg,\vh,\vi$ \nonumber
+\end{tabular}
+\\
+Apply the \textit{Apriori} algorithm and compute the final frequent
+itemsets it finds. Show $L_k$ and $C_k$ after each step where $k$ 
+indicates cardinality of a particular step. Assume minimum support $2$.
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}
+  Begin by constructing the \texttt{1-itemstep},
+  \begin{align}
+    C_1\quad &
+    \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+      \hline
+      \va & \vb & \vc & \vd & \ve & \vf & \vg & \vh & \vi & \vj & \vk & \vl \\
+      \hline
+      2   & 3   & 1   & 3   & 1   & 1   & 1   & 1   & 1   & 1   & 1   & 1 \\
+      \hline
+    \end{tabular} \nonumber \\
+    L_1\quad &
+    \begin{tabular}{|c|c|c|}
+      \hline
+      \va & \vb & \vd \\
+      \hline
+      2   & 3   & 3 \\
+      \hline
+    \end{tabular} \nonumber
+  \end{align}
+  Join of $L_1$ with itself for \texttt{2-itemstep},
+  \begin{align}
+    C_2\quad &
+    \begin{tabular}{|c|c|c|}
+      \hline
+      \va,\vb & \va,\vd & \vb,\vd \\
+      \hline
+      2       & 2       & 2 \\
+      \hline
+    \end{tabular} \nonumber \\
+    L_2\quad &
+    \begin{tabular}{|c|c|c|}
+      \hline
+      \va,\vb & \va,\vd & \vb,\vd \\
+      \hline
+      2       & 2       & 2 \\
+      \hline
+    \end{tabular} \nonumber
+  \end{align}
+  Join of $L_2$ with itself for \texttt{3-itemstep},
+  \begin{align}
+    C_3\quad &
+    \begin{tabular}{|c|}
+      \hline
+      \va,\vb,\vd \\
+      \hline
+      2 \\
+      \hline
+    \end{tabular} \nonumber \\
+    C_3\quad &
+    \begin{tabular}{|c|}
+      \hline
+      \va,\vb,\vd \\
+      \hline
+      2 \\
+      \hline
+    \end{tabular} \nonumber
+  \end{align}
+  There are no further steps since there is only one \texttt{3-itemstep} 
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
