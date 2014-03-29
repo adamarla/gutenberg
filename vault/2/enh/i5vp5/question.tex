@@ -2,31 +2,31 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  \newcommand{\va}{A}
-  \newcommand{\vb}{B}
-  \newcommand{\vc}{C}
-  \newcommand{\vd}{D}
-  \newcommand{\ve}{E}
+  \renewcommand{\va}{A}
+  \renewcommand{\vb}{B}
+  \renewcommand{\vc}{C}
+  \renewcommand{\vd}{D}
+  \renewcommand{\ve}{E}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \newcommand{\va}{K}
-    \newcommand{\vb}{L}
-    \newcommand{\vc}{M}
-    \newcommand{\vd}{N}
-    \newcommand{\ve}{O}
+    \renewcommand{\va}{K}
+    \renewcommand{\vb}{L}
+    \renewcommand{\vc}{M}
+    \renewcommand{\vd}{N}
+    \renewcommand{\ve}{O}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \newcommand{\va}{P}
-      \newcommand{\vb}{Q}
-      \newcommand{\vc}{R}
-      \newcommand{\vd}{S}
-      \newcommand{\ve}{T}
+      \renewcommand{\va}{P}
+      \renewcommand{\vb}{Q}
+      \renewcommand{\vc}{R}
+      \renewcommand{\vd}{S}
+      \renewcommand{\ve}{T}
     }{
-      \newcommand{\va}{H}
-      \newcommand{\vb}{I}
-      \newcommand{\vc}{J}
-      \newcommand{\vd}{K}
-      \newcommand{\ve}{L}
+      \renewcommand{\va}{H}
+      \renewcommand{\vb}{I}
+      \renewcommand{\vc}{J}
+      \renewcommand{\vd}{K}
+      \renewcommand{\ve}{L}
     }
   }
 }
