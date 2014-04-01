@@ -1,4 +1,4 @@
-
+% extendable hashing
 
 
 \ifnumequal{\value{rolldice}}{0}{
@@ -15,54 +15,20 @@
   }
 }
 
-\question
+\question Suppose that we are using extendable hashing on a file that contains 
+records with the following search-key values:
+\begin{align}
+  3, 8, 11, 14, 15, 16, 17, 19, 20, 33, 43, 48
+\end{align}
 
+Show the final \textit{extendable hash structure} for this file if the hash function is 
+$h(x) = x mod 7$ $(Example H(8) = 1 = 00001)$, and buckets can hold $3$ records each. 
+You need to use the suffix (for example, $01$ is the $2$ bit suffix in $00001$) for 
+inserting records in the buckets. The records are inserted in the order: 
+\begin{align}
+  3, 8, 11, 14, 15, 16, 17, 19, 20, 33, 43, 48
+\end{align}
 
-\watchout
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
 
 \begin{solution}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
-

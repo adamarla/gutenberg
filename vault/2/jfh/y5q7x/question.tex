@@ -1,65 +1,83 @@
-
+% transaction locking
 
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
+  \renewcommand{\va}{A}
+  \renewcommand{\vb}{B}
+  \renewcommand{\vc}{C}
+  \renewcommand{\vd}{D}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
+    \renewcommand{\va}{L}
+    \renewcommand{\vb}{M}
+    \renewcommand{\vc}{N}
+    \renewcommand{\vd}{O}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
+      \renewcommand{\va}{P}
+      \renewcommand{\vb}{Q}
+      \renewcommand{\vc}{R}
+      \renewcommand{\vd}{S}
     }{
       % variables 
+      \renewcommand{\va}{H}
+      \renewcommand{\vb}{I}
+      \renewcommand{\vc}{J}
+      \renewcommand{\vd}{K}
     }
   }
 }
 
-\question
-
-
+\question Below is a schedule of four transactions ($T_1$, $T_2$, 
+$T_3$, $T_4$) with their events listed in chronological order. 
+Assume that when a transactions requests -\\
 \watchout
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
-\begin{solution}
-\end{solution}
+\begin{tabular}{ll}
+an Exclusive lock $X(?)$ &$\Rightarrow$ it performs a \texttt{read} followed by a \texttt{write} \\
+a  Shared lock $S(?)$    &$\Rightarrow$ it performs a \texttt{read} \\
+an Unlock $U(?)$         &$\Rightarrow$ it releases the \texttt{lock} \\
+\end{tabular}
+\\
+\begin{tabular}{|c|c|c|c|c||c|c|c|c|c|}
+  \hline
+  Event & $T_1$ & $T_2$ & $T_3$ & $T_4$ &Event & $T_1$ & $T_2$ & $T_3$ & $T_4$ \\
+  \hline
+  $1$   & -     & $S(A)$& -     & -     &$13$  & -     & -     & $U(B)$& -     \\
+  $2$   & -     & -     & -     & $S(A)$&$14$  & $X(B)$& -     & -     & -     \\
+  $3$   & -     & $X(B)$& -     & -     &$15$  & -     & -     & $U(D)$& -     \\
+  $4$   & -     & $S(C)$& -     & -     &$16$  & -     & -     & $U(A)$& -     \\
+  $5$   & $S(A)$& -     & -     & -     &$17$  & $U(B)$& -     & -     & -     \\
+  $6$   & -     & -     & -     & $U(A)$&$18$  & -     & -     & -     & $S(D)$\\
+  $7$   & -     & -     & $S(A)$& -     &$19$  & $U(C)$& -     & -     & -     \\
+  $8$   & -     & $U(B)$& -     & -     &$20$  & -     & -     & -     & $S(C)$\\
+  $9$   & -     & -     & $S(B)$& -     &$21$  & $U(A)$& -     & -     & -     \\
+  $10$  & -     & -     & $X(D)$& -     &$22$  & -     & $U(A)$& -     & -     \\
+  $11$  & -     & $U(C)$& -     & -     &$23$  & -     & -     & -     & $U(D)$\\
+  $12$  & $X(C)$& -     & -     & -     &$24$  & -     & -     & -     & $U(C)$\\
+  \hline
+\end{tabular}
+\\
 
 \begin{parts}
-  \part 
+  \part Determine whether the schedule is serializable 
+  \textit{(yes or no)} and justify your answer.
 
   \begin{solution}
   \end{solution}
 
-  \part 
+  \part If it is serializable, provide an equivalent serial schedule.
+  Justify your answer by showing intermediary steps. If it is not 
+  serializable, show how \texttt{Two Phase Locking} would have prevented 
+  the schedule.
 
   \begin{solution}
   \end{solution}
 
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
+  \part Does the schedule follow \texttt{Two-Phase Locking} protocol?
+  Answer \textit{yes or no} and justify your answer.
 
   \begin{solution}
   \end{solution}
