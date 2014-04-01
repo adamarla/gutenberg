@@ -1,28 +1,23 @@
-% transaction locking
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\va}{A}
   \renewcommand{\vb}{B}
   \renewcommand{\vc}{C}
   \renewcommand{\vd}{D}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\va}{L}
     \renewcommand{\vb}{M}
     \renewcommand{\vc}{N}
     \renewcommand{\vd}{O}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\va}{P}
       \renewcommand{\vb}{Q}
       \renewcommand{\vc}{R}
       \renewcommand{\vd}{S}
     }{
-      % variables 
       \renewcommand{\va}{H}
       \renewcommand{\vb}{I}
       \renewcommand{\vc}{J}
@@ -62,24 +57,24 @@ an Unlock $U(?)$         &$\Rightarrow$ it releases the \texttt{lock} \\
 \\
 
 \begin{parts}
-  \part Determine whether the schedule is serializable 
+  \part[3] Determine whether the schedule is serializable 
   \textit{(yes or no)} and justify your answer.
 
-  \begin{solution}
+\begin{solution}[\fullpage]
   \end{solution}
 
-  \part If it is serializable, provide an equivalent serial schedule.
+  \part[3] If it is serializable, provide an equivalent serial schedule.
   Justify your answer by showing intermediary steps. If it is not 
   serializable, show how \texttt{Two Phase Locking} would have prevented 
   the schedule.
 
-  \begin{solution}
+\begin{solution}[\halfpage]
   \end{solution}
 
-  \part Does the schedule follow \texttt{Two-Phase Locking} protocol?
+  \part[3] Does the schedule follow \texttt{Two-Phase Locking} protocol?
   Answer \textit{yes or no} and justify your answer.
 
-  \begin{solution}
+\begin{solution}[\halfpage]
   \end{solution}
 
 \end{parts}
