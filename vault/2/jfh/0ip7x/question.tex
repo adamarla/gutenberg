@@ -15,54 +15,25 @@
   }
 }
 
-\question
-
-
-\watchout
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
-\begin{solution}
-\end{solution}
+\question Consider the following transactions:
+\begin{align}
+  T1: read(A,t); t:=t+2; write(A,t); read(B,t); t:=t*3; write(B,t) \nonumber \\
+  T2: read(B,s); s:=s*2; write(B,s); read(A,s); s:=s+3; write(A,s) \nonumber
+\end{align}
 
 \begin{parts}
-  \part 
+  \part Give an example of a schedule (interleaved transactions) which gives the same 
+  outcome as a serial schedule but is not conflict serializable (justify your answer)
 
   \begin{solution}
   \end{solution}
 
-  \part 
+  \part Give an example of a schedule (interleaved transactions) which results in 
+  database inconsistency (non-serializable) – justify your answer
 
   \begin{solution}
   \end{solution}
 
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \begin{solution}
-  \end{solution}
 
 \end{parts}
 
