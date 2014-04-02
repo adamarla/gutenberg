@@ -1,5 +1,4 @@
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{}
   \renewcommand{\vbtwo}{}
   \renewcommand{\vbthree}{}
@@ -12,7 +11,6 @@
   \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{}
     \renewcommand{\vbtwo}{}
     \renewcommand{\vbthree}{}
@@ -25,7 +23,6 @@
     \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
@@ -37,7 +34,6 @@
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }{
-      % variables 
       \renewcommand{\vbone}{}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
@@ -52,7 +48,7 @@
   }
 }
 
-\question Suppose that you want to index fixed-length records, each $256$ bytes long. 
+\question[3] Suppose that you want to index fixed-length records, each $256$ bytes long. 
 The key of each record is $4$ bytes long. Records are stored on disk so that they do 
 not cross page boundaries. If you use a three-level $B+$ tree to index this file, with 
 the records themselves occupying the third level of the tree (records are in the node 
@@ -60,6 +56,6 @@ of the tree), then what is the maximum number of records that you can index if t
 tree pointers are $4$ bytes long and the $B+$ tree nodes are $4096$ bytes long?
 
 
-\begin{solution}
+\begin{solution}[\fullpage]
 \end{solution}
 

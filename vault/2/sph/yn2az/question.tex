@@ -1,6 +1,5 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{}
   \renewcommand{\vbtwo}{}
   \renewcommand{\vbthree}{}
@@ -13,7 +12,6 @@
   \renewcommand{\vbten}{}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{}
     \renewcommand{\vbtwo}{}
     \renewcommand{\vbthree}{}
@@ -26,7 +24,6 @@
     \renewcommand{\vbten}{}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
@@ -38,7 +35,6 @@
       \renewcommand{\vbnine}{}
       \renewcommand{\vbten}{}
     }{
-      % variables 
       \renewcommand{\vbone}{}
       \renewcommand{\vbtwo}{}
       \renewcommand{\vbthree}{}
@@ -65,14 +61,14 @@ could mean \textit{increment by $1$}, \textit{increment by 10},
 anything.
 
 \begin{parts}
-  \part How many interleavings of these transactions are conflict-serializable?
+  \part[4] How many interleavings of these transactions are conflict-serializable?
 
-  \begin{solution}
+\begin{solution}[\fullpage]
   \end{solution}
 
-  \part If the order of the increments in $T2$ are reversed, how many interleavings are conflict serializable?
+  \part[4] If the order of the increments in $T2$ are reversed, how many interleavings are conflict serializable?
 
-  \begin{solution}
+\begin{solution}[\fullpage]
   \end{solution}
   
 \end{parts}
