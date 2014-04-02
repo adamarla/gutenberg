@@ -40,18 +40,18 @@ an Unlock $U(?)$         &$\Rightarrow$ it releases the \texttt{lock} \\
   \hline
   Event & $T_1$ & $T_2$ & $T_3$ & $T_4$ &Event & $T_1$ & $T_2$ & $T_3$ & $T_4$ \\
   \hline
-  $1$   & -     & $S(A)$& -     & -     &$13$  & -     & -     & $U(B)$& -     \\
-  $2$   & -     & -     & -     & $S(A)$&$14$  & $X(B)$& -     & -     & -     \\
-  $3$   & -     & $X(B)$& -     & -     &$15$  & -     & -     & $U(D)$& -     \\
-  $4$   & -     & $S(C)$& -     & -     &$16$  & -     & -     & $U(A)$& -     \\
-  $5$   & $S(A)$& -     & -     & -     &$17$  & $U(B)$& -     & -     & -     \\
-  $6$   & -     & -     & -     & $U(A)$&$18$  & -     & -     & -     & $S(D)$\\
-  $7$   & -     & -     & $S(A)$& -     &$19$  & $U(C)$& -     & -     & -     \\
-  $8$   & -     & $U(B)$& -     & -     &$20$  & -     & -     & -     & $S(C)$\\
-  $9$   & -     & -     & $S(B)$& -     &$21$  & $U(A)$& -     & -     & -     \\
-  $10$  & -     & -     & $X(D)$& -     &$22$  & -     & $U(A)$& -     & -     \\
-  $11$  & -     & $U(C)$& -     & -     &$23$  & -     & -     & -     & $U(D)$\\
-  $12$  & $X(C)$& -     & -     & -     &$24$  & -     & -     & -     & $U(C)$\\
+  $1$   & -       & $S(\va)$& -       & -       &$13$  & -       & -       & $U(\vb)$& -       \\
+  $2$   & -       & -       & -       & $S(\va)$&$14$  & $X(\vb)$& -       & -       & -       \\
+  $3$   & -       & $X(\vb)$& -       & -       &$15$  & -       & -       & $U(\vd)$& -       \\
+  $4$   & -       & $S(\vc)$& -       & -       &$16$  & -       & -       & $U(\va)$& -       \\
+  $5$   & $S(\va)$& -       & -       & -       &$17$  & $U(\vb)$& -       & -       & -       \\
+  $6$   & -       & -       & -       & $U(\va)$&$18$  & -       & -       & -       & $S(\vd)$\\
+  $7$   & -       & -       & $S(\va)$& -       &$19$  & $U(\vc)$& -       & -       & -       \\
+  $8$   & -       & $U(\vb)$& -       & -       &$20$  & -       & -       & -       & $S(\vc)$\\
+  $9$   & -       & -       & $S(\vb)$& -       &$21$  & $U(\va)$& -       & -       & -       \\
+  $10$  & -       & -       & $X(\vd)$& -       &$22$  & -       & $U(\va)$& -       & -       \\
+  $11$  & -       & $U(\vc)$& -       & -       &$23$  & -       & -       & -       & $U(\vd)$\\
+  $12$  & $X(\vc)$& -       & -       & -       &$24$  & -       & -       & -       & $U(\vc)$\\
   \hline
 \end{tabular}
 \\
@@ -60,7 +60,36 @@ an Unlock $U(?)$         &$\Rightarrow$ it releases the \texttt{lock} \\
   \part[3] Determine whether the schedule is serializable 
   \textit{(yes or no)} and justify your answer.
 
-\begin{solution}[\fullpage]
+  \begin{solution}[\fullpage]
+    To determine serializability, we must examine each request for
+    an Exclusive lock in relation with the reads before and after
+    that resource.\\
+    Consider resource $\va$:
+    \begin{align}
+      \text{No exclusive locks requested therefore no constraints} \nonumber
+    \end{align}     
+    Consider resource $\vb$:
+    \begin{align}
+      T_2(E=3\,\texttt{write}) &\rightarrow T_3(E=9\,\texttt{read}) \\
+      T_2(E=3\,\texttt{write}) &\rightarrow T_1(E=14\,\texttt{read,write}) \\
+      T_3(E=9\,\texttt{read})  &\rightarrow T_1(E=14\,\texttt{read,write}) 
+    \end{align}
+    Consider resource $\vc$:
+    \begin{align}
+      T_2(E=4\,\texttt{read})        &\rightarrow T_1 (E=12\,\texttt{read,write}) \\
+      T_1(E=12\,\texttt{read,write}) &\rightarrow T_4 (E=20\,\texttt{read}) \\
+    \end{align}
+    Consider resource $\vd$:
+    \begin{align}
+      T_3(E=10\,\texttt{read,write}) &\rightarrow T_4 (E=18\,\texttt{read})
+    \end{align}
+    Given the constraints above, precedence graph is as shown:
+    \begin{align}
+      T_1\longleftarrow  &T_2 \nonumber \\
+      \downarrow\quad\nwarrow &\downarrow \nonumber \\
+      T_4\longleftarrow  &T_3 \nonumber
+    \end{align}
+    The schedule is serializable since the graph does not have any cycles.
   \end{solution}
 
   \part[3] If it is serializable, provide an equivalent serial schedule.
@@ -68,13 +97,24 @@ an Unlock $U(?)$         &$\Rightarrow$ it releases the \texttt{lock} \\
   serializable, show how \texttt{Two Phase Locking} would have prevented 
   the schedule.
 
-\begin{solution}[\halfpage]
+  \begin{solution}[\halfpage]
+    One equivalent serial schedule is:
+    \begin{align}
+      T_2 \longrightarrow T_3 \longrightarrow T_1 \longrightarrow T_4
+    \end{align}
   \end{solution}
 
   \part[3] Does the schedule follow \texttt{Two-Phase Locking} protocol?
   Answer \textit{yes or no} and justify your answer.
 
-\begin{solution}[\halfpage]
+  \begin{solution}[\halfpage]
+    For a schedule to follow \texttt{Two-Phase Locking} protocol, it must
+    have a clear separation between \textit{acquisition} phase, where it 
+    acquires locks followed and \textit{release} phase where it releases 
+    locks.\\
+    In the given schedule $T_4$ acquires locks on $\vd(E=18)$ and then again
+    on $\vc(E=20)$ after it releases it's lock on $\va(E=6)$. Therefore it 
+    does not follow the \texttt{Two-Phase Locking} protocol.
   \end{solution}
 
 \end{parts}
