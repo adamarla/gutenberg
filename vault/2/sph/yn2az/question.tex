@@ -1,74 +1,105 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\va}{A}
+  \renewcommand{\vb}{B}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\va}{P}
+    \renewcommand{\vb}{Q}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\va}{L}
+      \renewcommand{\vb}{M}
     }{
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\va}{G}
+      \renewcommand{\vb}{H}
     }
   }
 }
 
 \question Consider the following two transactions:
 \begin{align}
-  T1: r_1(A)\quad r_1(B)\quad inc_1(A)\quad inc_1(B) \nonumber \\
-  T2: r_2(A)\quad r_2(B)\quad inc_2(A)\quad inc_2(B) \nonumber 
+  T1:\;r_1(\va)\; r_1(\vb)\; inc_1(\va)\; inc_1(\vb) \nonumber \\
+  T2:\;r_2(\va)\; r_2(\vb)\; inc_2(\va)\; inc_2(\vb) \nonumber 
 \end{align}
-where $inc_1(A)$ refers to an increment of $A$ by transaction $1$ and so on. 
-Notice that the quantity of the increment is unknown. For example, $inc_1(A)$ 
-could mean \textit{increment by $1$}, \textit{increment by 10}, 
-\text{increment by $B$}, or something else. In other words, you cannot assume 
-anything.
+where $r_1(\va)$ indicates a read of $\va$ by transaction $T_1$ and 
+$inc_1(\va)$ refers to an increment of $\va$ by transaction $T_1$ 
+and so on.\\
+Notice that the quantity of the increment is unknown. For example, 
+$inc_1(\va)$ could mean increment of $\va$ by $1$, by $10$, by $x$, 
+or by any other quantity. In other words, you cannot assume anything.
 
-\begin{parts}
-  \part[4] How many interleavings of these transactions are conflict-serializable?
+  \begin{parts}
+  \part[4] How many \textit{interleavings} of these transactions 
+  are conflict-serializable?
 
-\begin{solution}[\fullpage]
+  \begin{solution}[\fullpage]
+    Apart from the trivial schedules $T_1\rightarrow T_2$ and
+    $T_2\rightarrow T_1$, the following possible schedules are
+    conflict serializable.\\
+    \begin{align}
+      &\text{Schedule 1} 
+      &\text{Schedule 2} \nonumber\\
+      &\begin{tabular}{|c|c|}
+        \hline
+        T1 & T2 \\
+        \hline
+        $r_1(\va)$ & - \\
+        $r_1(\vb)$ & - \\
+        $inc_1(\va)$ & - \\
+        - & $r_2(\va)$ \\
+        $inc_1(\vb)$ & - \\
+        - & $r_2(\vb)$ \\
+        - & $inc_2(\va)$ \\
+        - & $inc_2(\vb)$ \\
+        \hline
+      \end{tabular}
+      &\begin{tabular}{|c|c|}
+        \hline
+        T1 & T2 \\
+        \hline
+        - & $r_2(\va)$ \\
+        - & $r_2(\vb)$ \\
+        - & $inc_2(\va)$ \\
+        $r_1(\va)$ & - \\
+        - & $inc_2(\vb)$ \\
+        $r_1(\vb)$ & - \\
+        $inc_1(\va)$ & - \\
+        $inc_1(\vb)$ & - \\
+        \hline
+      \end{tabular} \nonumber
+    \end{align}    
   \end{solution}
 
-  \part[4] If the order of the increments in $T2$ are reversed, how many interleavings are conflict serializable?
+  \part[4] If the order of the increments in $T_2$ are reversed, 
+  how many \textit{interleavings} now are conflict serializable?
 
-\begin{solution}[\fullpage]
+  \begin{solution}[\fullpage]
+    If the order of increments in $T_2$ are reversed, it looks
+    like this:
+    \begin{align}
+      T2:\;r_2(\va)\; r_2(\vb)\; inc_2(\vb)\; inc_2(\va) \nonumber 
+    \end{align}
+    Apart from the trivial schedules $T_1\rightarrow T_2$ and
+    $T_2\rightarrow T_1$, there is only the following possible 
+    schedule which is conflict serializable.\\
+    \begin{align}
+      &\text{Schedule} \nonumber \\ 
+      &\begin{tabular}{|c|c|}
+        \hline
+        T1 & T2 \\
+        \hline
+        $r_1(\va)$ & - \\
+        $r_1(\vb)$ & - \\
+        $inc_1(\va)$ & - \\
+        - & $r_2(\va)$ \\
+        $inc_1(\vb)$ & - \\
+        - & $r_2(\vb)$ \\
+        - & $inc_2(\vb)$ \\
+        - & $inc_2(\va)$ \\
+        \hline
+      \end{tabular} \nonumber
+    \end{align}    
   \end{solution}
   
 \end{parts}
