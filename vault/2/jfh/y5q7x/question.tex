@@ -1,4 +1,5 @@
 
+\usetikzlibrary{arrows}
 
 \ifnumequal{\value{rolldice}}{0}{
   \renewcommand{\va}{A}
@@ -83,13 +84,24 @@ an Unlock $U(?)$         &$\Rightarrow$ it releases the \texttt{lock} \\
     \begin{align}
       T_3(E=10\,\texttt{read,write}) &\rightarrow T_4 (E=18\,\texttt{read})
     \end{align}
-    Given the constraints above, precedence graph is as shown:
-    \begin{align}
-      T_1\longleftarrow  &T_2 \nonumber \\
-      \downarrow\quad\nwarrow &\downarrow \nonumber \\
-      T_4\longleftarrow  &T_3 \nonumber
-    \end{align}
-    The schedule is serializable since the graph does not have any cycles.
+    Given the constraints above, precedence graph would be as shown\\
+    \begin{center}
+    \begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=50pt, thick,main node/.style={circle,draw}]
+      \node[main node] (1) {$T_1$};
+      \node[main node] (2) [ right of=1] {$T_2$};
+      \node[main node] (3) [ below of=2] {$T_3$};
+      \node[main node] (4) [ below of=1] {$T_4$};
+      
+      \path[every node/.style={font=\sffamily\small}]
+        (1) edge node [left] {} (4)
+        (2) edge node [right] {} (1)
+        (2) edge node [right] {} (3)
+        (3) edge node [right] {} (4)
+        (3) edge node [left] {} (1);
+      
+    \end{tikzpicture}
+    \end{center}
+    Since the graph does not contain any cycles, the schedule is serializable.
   \end{solution}
 
   \part[3] If it is serializable, provide an equivalent serial schedule.
