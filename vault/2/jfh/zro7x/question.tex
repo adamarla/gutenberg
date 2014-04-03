@@ -1,29 +1,79 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\va}{3}
+  \renewcommand{\vb}{14}
 }{
   \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\va}{3}
+    \renewcommand{\vb}{7}
   }{
     \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\va}{10}
+      \renewcommand{\vb}{14}
     }{
+      \renewcommand{\va}{10}
+      \renewcommand{\vb}{7}
     }
   }
 }
 
-\question[5] Suppose that we are using extendable hashing on a file that contains 
-records with the following search-key values:
+\question[5] Suppose that we are using \textit{extendable hashing} 
+on a file that contains records with the following search-key values:
 \begin{align}
-  3, 8, 11, 14, 15, 16, 17, 19, 20, 33, 43, 48
+  \va, 8, 11, \vb, 15, 16, 17, 19, 20, 33, 43, 48 \nonumber
 \end{align}
-
-Show the final \textit{extendable hash structure} for this file if the hash function is 
-$h(x) = x mod 7$ $(Example H(8) = 1 = 00001)$, and buckets can hold $3$ records each. 
-You need to use the suffix (for example, $01$ is the $2$ bit suffix in $00001$) for 
-inserting records in the buckets. The records are inserted in the order: 
-\begin{align}
-  3, 8, 11, 14, 15, 16, 17, 19, 20, 33, 43, 48
-\end{align}
-
+Show the final extendable hash structure for this file, if the hash 
+function is $H(x) = x\,\text{mod}(7)$, e.g. $(H(8) = 1 = 00001)$. A bucket
+can hold a maximum of $3$ records. \\
+You need to use the suffix (for example, $01$ is the $2$ bit suffix 
+of $00001$) for inserting records in the buckets. The records are 
+inserted in increasing order.
 
 \begin{solution}[\fullpage]
+  Let us begin by computing and writing the hash for the search 
+  key-values in binary:
+  \begin{align}
+    H(\mathbf{\va}) &= 3 = 0011 \quad H(08) = 1 = 0001 \quad H(11) = 4 = 0100 \nonumber \\
+    H(\mathbf{\vb}) &= 0 = 0000 \quad H(15) = 1 = 0001 \quad H(16) = 2 = 0010 \nonumber \\
+    H(17) &= 3 = 0011 \quad H(19) = 5 = 0101 \quad H(20) = 6 = 0110 \nonumber \\
+    H(33) &= 5 = 0101 \quad H(43) = 1 = 0001 \quad H(48) = 6 = 0110 \nonumber        
+  \end{align}  
+  Start inserting key-values based on a $1$-bit suffix in the order given
+  above (left to right, top to bottom). The order does not really affect
+  the final outcome, it is only being set to aid explanation. 
+  \begin{align}
+    \begin{tabular}{|c|c|}
+      \hline
+      $\mathbf{0}$ & $\mathbf{1}$ \\
+      \hline
+      $11,14,16$ & $3,8,15$ \\
+      \hline
+    \end{tabular}\nonumber
+  \end{align}
+  $17$ forces us into $2$-bit suffixes since $\mathbf{1}$ will overflow. 
+  Note that $17$ only requires us to split $\mathbf{1}$ into $\mathbf{01}$ and
+  $\mathbf{11}$. But eventually $20$ will require us to split $\mathbf{0}$ as
+  well.
+  \begin{align}
+    \begin{tabular}{|c|c|c|c|}
+      \hline
+      $\mathbf{00}$ & $\mathbf{10}$ & $\mathbf{01}$ & $\mathbf{11}$ \\
+      \hline 
+      $11,\vb$ & $16,20$ & $8,15,19$ & $\va,33$ \\
+      \hline
+    \end{tabular}\nonumber  
+  \end{align}
+  $33$ causes $\mathbf{01}$ to overflow and forces us into $3$-bit suffixes
+  and the following final structure.
+  \begin{align}
+    \begin{tabular}{|c|c|c|c|c|}
+      \hline
+      $\mathbf{000,100}$ & $\mathbf{010,110}$ & $\mathbf{001}$ & $\mathbf{101}$ & $\mathbf{011,111}$ \\
+      \hline 
+      $11,\vb$ & $16,20,48$ & $8,15,43$ & $19,33$ & $\va,33$ \\
+      \hline
+    \end{tabular}\nonumber
+  \end{align}
+
 \end{solution}
