@@ -11,38 +11,17 @@
   }
 }
 
-\question[5] Consider the following B+ tree with degree $d = 2$.
-\\
-\begin{tabular}{|c|c|c|c|c|c|c|c|c|}
-  \hline
-      & 7 &  & 25 &  & 35 &  &  &   \\
-  \hline
-\end{tabular}
-\begin{align}
- \nonumber
-\end{align}
-\begin{tabular}{|c|c|c|c|}
-    3  & 4  & 5  & 6 
-\end{tabular}
-\begin{tabular}{c|c|c|c|}
-    \quad  8 & 10  & 17  & 19 
-\end{tabular}
-\begin{tabular}{c|c|c|c|}
-    \quad  28 & 33  &   &   
-\end{tabular}
-\begin{tabular}{c|c|c|c|}
-    \quad  42 & 52 &  &  
-\end{tabular}
-\nonumber \\
-Draw the $B+$ Tree after inserting $34$, $2$ and $15$ (draw only one B+ tree 
-after $3$ insertions). Draw the $B+$ Tree after deleting $28$ and $8$ (the 
-deletion happens after the $3$ insertions of $34$, $2$ and $15$). Draw only 
-one $B+$ tree after deleting $8$. Maintain at least $50$\% occupancy at each 
-step. In the diagram above we have not shown pointers in the leaf nodes for 
-simplicity but remember that the leaf nodes are linked lists. Root node can 
-have $1$ to $2$d keys.
-
+\question[4] Suppose you want to index fixed length records,
+each $256$ bytes long. They key of each record being $4$ bytes
+long. Records are stored on disk so that they do not cross
+page boundaries. If you use a \textit{three-level} $B^{+}$ tree 
+to index this file, with the records themselves occupying the 
+third level of the tree (records are in the node of the tree), 
+then what is the maximum number of records you can index. The 
+$B^{+}$ tree pointers are $4096$ bytes long?
 
 \begin{solution}[\fullpage]
+
+
 \end{solution}
 
