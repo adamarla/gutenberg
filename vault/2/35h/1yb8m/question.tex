@@ -1,52 +1,57 @@
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\va}{20}
+  \renewcommand{\vb}{\dfrac{\pi}{9}}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\va}{30}
+    \renewcommand{\vb}{\dfrac{\pi}{6}}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\va}{10}
+      \renewcommand{\vb}{\dfrac{\pi}{18}}
+    }{
+      \renewcommand{\va}{15}
+      \renewcommand{\vb}{\dfrac{\pi}{12}}
+    }
+  }
+}
 
+\ADD{270}\va\p
+\SUBTRACT{270}\va\q
 
 \question[5] Without resorting to a calculator or tables, verify
 \begin{align}
-  \dfrac{1}{\cos 290^\circ}+\dfrac{1}{\sqrt{3}\sin 250^\circ} 
+  \dfrac{1}{\cos \p^\circ}+\dfrac{1}{\sqrt{3}\sin \q^\circ} 
     = \dfrac{4}{\sqrt{3}} \nonumber
 \end{align}
 
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
-
 \begin{solution}[\fullpage]
-  \begin{align}     
-    290^\circ &= \left(\dfrac{3\pi}{2}+\dfrac{\pi}{9}\right) 
+  \begin{align}
+    \p^\circ &= \left(\dfrac{3\pi}{2}+\vb\right) 
       \text{radians} \\
-    250^\circ &= \left(\dfrac{3\pi}{2}-\dfrac{\pi}{9}\right) 
+    \q^\circ &= \left(\dfrac{3\pi}{2}-\vb\right) 
       \text{radians}
   \end{align}
   Therefore Left Hand Side (L.H.S) may be rewritten as,
   \begin{align}
-    \text{L.H.S} &= \dfrac{1}{\cos(\dfrac{3\pi}{2}+\dfrac{\pi}{9})}+
+    \text{L.H.S} &= \dfrac{1}{\cos(\dfrac{3\pi}{2}+\vb)}+
       				  \dfrac{1}{\sqrt{3}
-      				    \sin(\dfrac{3\pi}{2}-\dfrac{\pi}{9})} \\
-      		     &= \dfrac{1}{\sin\dfrac{\pi}{9}}-
-      				  \dfrac{1}{\sqrt{3}\cos\dfrac{\pi}{9}} \\
-      		     &= \dfrac{\sqrt{3}\cos\dfrac{\pi}{9}-\sin\dfrac{\pi}{9}}
-      		              {\sqrt{3}\cos\dfrac{\pi}{9}\sin\dfrac{\pi}{9}} \\
+      				    \sin(\dfrac{3\pi}{2}-\vb)} \\
+      		     &= \dfrac{1}{\sin\vb}-
+      				  \dfrac{1}{\sqrt{3}\cos\vb} \\
+      		     &= \dfrac{\sqrt{3}\cos\vb-\sin\vb}
+      		              {\sqrt{3}\cos\vb\sin\vb} \\
+      		     &= \dfrac{2\left(\dfrac{\sqrt{3}}{2}\cos\vb-
+      		                  \dfrac{1}{2}\sin\vb\right)}
+            		        {\dfrac{\sqrt{3}}{2}\left(2\cos\vb
+            		            \sin\vb\right)} \\
       		     &= \dfrac{4}{\sqrt{3}}\left(
-      		          \dfrac{\dfrac{\sqrt{3}}{2}\cos\dfrac{\pi}{9}-
-      		                         \dfrac{1}{2}\sin\dfrac{\pi}{9}}
-            		               {2\cos\dfrac{\pi}{9}
-            		                 \sin\dfrac{\pi}{9}}\right) \\
+      		          \dfrac{\sin \dfrac{\pi}{3}\cos\vb-
+      		                 \cos \dfrac{\pi}{3}\sin\vb}
+            		          {2\cos\vb\sin\vb}\right) \\
       		     &= \dfrac{4}{\sqrt{3}}\left(
-      		          \dfrac{\sin(\dfrac{\pi}{3}-\dfrac{\pi}{9})}
-      		                {\sin\dfrac{2\pi}{9}}\right) \\
+      		          \dfrac{\sin(\dfrac{\pi}{3}-\vb)}
+      		                {\sin 2(\vb)}\right) \\
       		     &= \dfrac{4}{\sqrt{3}}
   \end{align}
 \end{solution}
