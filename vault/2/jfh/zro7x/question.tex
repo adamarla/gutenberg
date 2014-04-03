@@ -45,11 +45,11 @@ inserted in the order in which they appear.
   above (left to right, top to bottom). The order does not really affect
   the final outcome, it is only being set to aid explanation. 
   \begin{align}
-    \begin{tabular}{|c|c|}
+    \begin{tabular}{|c|c|c|}
       \hline
-      $\mathbf{0}$ & $\mathbf{1}$ \\
+      \textbf{Hash Suffix$(1)$} & $\mathbf{0}$ & $\mathbf{1}$ \\
       \hline
-      $11,14,16$ & $3,8,15$ \\
+      Buckets & $11,14,16$ & $3,8,15$ \\
       \hline
     \end{tabular}\nonumber
   \end{align}
@@ -58,22 +58,23 @@ inserted in the order in which they appear.
   $\mathbf{11}$. But eventually $20$ will require us to split $\mathbf{0}$ as
   well.
   \begin{align}
-    \begin{tabular}{|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|}
       \hline
-      $\mathbf{00}$ & $\mathbf{10}$ & $\mathbf{01}$ & $\mathbf{11}$ \\
+      \textbf{Hash Suffix$(2)$} & $\mathbf{00}$ & $\mathbf{10}$ & $\mathbf{01}$ & $\mathbf{11}$ \\
       \hline 
-      $11,\vb$ & $16,20$ & $8,15,19$ & $\va,33$ \\
+      Buckets & $11,\vb$ & $16,20$ & $8,15,19$ & $\va,33$ \\
       \hline
     \end{tabular}\nonumber  
   \end{align}
   $33$ causes $\mathbf{01}$ to overflow and forces us into $3$-bit suffixes
   and the following final structure.
   \begin{align}
-    \begin{tabular}{|c|c|c|c|c|}
+    \begin{tabular}{|c|c|c|c|c|c|}
       \hline
-      $\mathbf{000,100}$ & $\mathbf{010,110}$ & $\mathbf{001}$ & $\mathbf{101}$ & $\mathbf{011,111}$ \\
+      \textbf{Hash Suffix$(3)$} & $\mathbf{000,100}(2)$ & $\mathbf{010,110}(2)$ & 
+          $\mathbf{001}(3)$ & $\mathbf{101}(3)$ & $\mathbf{011,111}(2)$ \\
       \hline 
-      $11,\vb$ & $16,20,48$ & $8,15,43$ & $19,33$ & $\va,33$ \\
+      Buckets & $11,\vb$ & $16,20,48$ & $8,15,43$ & $19,33$ & $\va,33$ \\
       \hline
     \end{tabular}\nonumber
   \end{align}
