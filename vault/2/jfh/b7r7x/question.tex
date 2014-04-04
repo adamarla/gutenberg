@@ -2,26 +2,81 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\va}{4096}
+  \renewcommand{\vb}{256}
+  \renewcommand{\vc}{31}
 }{
   \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\va}{2048}
+    \renewcommand{\vb}{512}
+    \renewcommand{\vc}{28}
   }{
     \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\va}{4096}
+      \renewcommand{\vb}{512}
+      \renewcommand{\vc}{30}
     }{
+      \renewcommand{\va}{2048}
+      \renewcommand{\vb}{256}
+      \renewcommand{\vc}{27}
     }
   }
 }
 
+\ADD\va{4}\p
+\DIVIDE\p{8}\q
+\FLOOR\q\r
+\DIVIDE\va\vb\s
+
 \question[4] Suppose you want to index fixed length records,
-each $256$ bytes long. They key of each record being $4$ bytes
+each $\vb$ bytes long. The key of each record being $4$ bytes
 long. Records are stored on disk so that they do not cross
 page boundaries. If you use a \textit{three-level} $B^{+}$ tree 
 to index this file, with the records themselves occupying the 
 third level of the tree (records are in the node of the tree), 
 then what is the maximum number of records you can index. The 
-$B^{+}$ tree pointers are $4096$ bytes long?
+$B^{+}$ tree pointers are $4$ bytes long and the $B^{+}$ tree
+nodes are $\va$ bytes long?
 
 \begin{solution}[\fullpage]
-
-
+  
+  A three level $B^{+}$ tree would have the following types
+  of nodes:
+  \begin{align}
+    \textbf{Root Level}\rightarrow\textbf{Level I}
+      \rightarrow\textbf{Level II}
+      \rightarrow\textbf{Level III}\,\text{(leaf level)} \nonumber
+  \end{align}
+  
+  To calculate the maximum number of records that can be
+  indexed, we need to calculate storage at each level.\\
+  \textbf{Level III} is where we store the actual data record,
+  therefore,
+  \begin{align}
+    \text{Size of a node}        &= \mathbf{\va}\text{(bytes)} \\
+    \text{Size of a data record} &= \mathbf{\vb}\text{(bytes)} \\
+    \text{Records per node}      &= \dfrac{\va}{\vb} = \s\text{(records/node)}
+  \end{align}
+  \textbf{Level II} has pointers to Level III nodes. Let there 
+  be $n-1$ keys and $n$ tree pointers at each node, then,
+  \begin{align}
+    \text{Size of a key}          &= 4\text{(bytes)} \\
+    \text{Size of a tree pointer} &= 4\text{(bytes)} \\
+    4(n-1) + 4n                   &= \va \\
+                                n &= \left\lfloor{\dfrac{\p}{8}}\right\rfloor 
+                                   = \r\text{(pointers/node)}
+  \end{align}
+  \textbf{Level I} has pointers to Level II nodes and \textbf{Root Level}
+  has pointers to Level I nodes. However, nodes at each of these levels 
+  would contain the same number of pointers as a Level II node. Therefore,
+  \begin{align}
+    \text{Max Indexable Rec} &= \text{(Root Level pointers)} \nonumber \\
+                             &\quad\times\text{(Level I pointers)} \nonumber \\
+                             &\quad\times\text{(Level II pointers)} \nonumber \\
+                             &\quad\times\text{(Level III records)} \\
+                             &= \r\times \r\times \r\times \s \\
+                             &= \r^{3}\times \s = 2^{\vc} \text{(records)}
+  \end{align}
+  Using the given $B^{+}$ tree you can index a maximum of $\mathbf{2^{\vc}}$ records.
 \end{solution}
 
