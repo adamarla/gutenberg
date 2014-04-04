@@ -4,7 +4,6 @@
 \usetikzlibrary{shapes} 
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{34}
   \renewcommand{\vbtwo}{2}
   \renewcommand{\vbthree}{15}
@@ -12,7 +11,6 @@
   \renewcommand{\vbfive}{28}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{40}
     \renewcommand{\vbtwo}{1}
     \renewcommand{\vbthree}{12}
@@ -20,14 +18,12 @@
     \renewcommand{\vbfive}{31}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{36}
       \renewcommand{\vbtwo}{2}
       \renewcommand{\vbthree}{13}
       \renewcommand{\vbfour}{8}
       \renewcommand{\vbfive}{29}
     }{
-      % variables 
       \renewcommand{\vbone}{37}
       \renewcommand{\vbtwo}{1}
       \renewcommand{\vbthree}{16}
@@ -45,7 +41,6 @@ and maintain a fill-factor/occupancy of $\geq 50\%$. Root node can have $k$ keys
 
 \watchout
 
-  % stuff to be shown only in the answer key - like explanatory margin figures
   \begin{tikzpicture}[>= stealth, ->, level distance=10mm]
     \tikzstyle{bplus}=[rectangle split, rectangle split horizontal, draw]
     \tikzstyle{every node}=[bplus]
@@ -58,9 +53,9 @@ and maintain a fill-factor/occupancy of $\geq 50\%$. Root node can have $k$ keys
   \end{tikzpicture}
 
 \begin{parts}
-  \part What will the $B^{+}$ tree look like after inserting $\mathbf{\vbone, \vbtwo}$ and $\mathbf\vbthree$ - in that order?
+  \part[2] What will the $B^{+}$ tree look like after inserting $\mathbf{\vbone, \vbtwo}$ and $\mathbf\vbthree$ - in that order?
 
-  \begin{solution}
+\begin{solution}[\halfpage]
     \begin{align}
       &D+\vbone\longrightarrow\text{ no problem } \\
       &\underbrace{B+\vbtwo}_{\texttt{overflow}} \longrightarrow \underbrace{(B_1, B_2)}_{\texttt{split}} 
@@ -88,10 +83,10 @@ and maintain a fill-factor/occupancy of $\geq 50\%$. Root node can have $k$ keys
       };
   \end{tikzpicture}
 
-  \part If $\mathbf{\vbfive}$ and $\mathbf{\vbfour}$ are now removed from the tree - in that order - 
+  \part[2] If $\mathbf{\vbfive}$ and $\mathbf{\vbfour}$ are now removed from the tree - in that order - 
   \textbf{after} the insertions done in part (a), then what will the $B^{+}$ tree look like?
 
-  \begin{solution}
+\begin{solution}[\halfpage]
     \begin{align}
       &D-\vbfive\longrightarrow\text{ no problem } \\
       &\underbrace{C_1-\vbfour}_{\texttt{underflow}}\longrightarrow(B_2+C_1) + \text{ move 7 to }A_2 \text{ and copy 4 to }B_2
