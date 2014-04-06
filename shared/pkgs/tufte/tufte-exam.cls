@@ -72,6 +72,21 @@
 \providecommand{\halfpage}{\stretch{2}}
 \providecommand{\fullpage}{\stretch{4}} 
 
+%% A special environment for rendering any large tables and graphs 
+%% that may be part of the question. Ideally, render any such data AFTER 
+%% the solution text and take care of \thepage as it (\thepage) controls QR code insertion
+
+\newcounter{pgregister}
+\newenvironment{attachment}{
+  \setcounter{pgregister}{\thepage}
+  \nextpg
+  \setbaseQR{Attachment}
+  \embedQR
+}{
+  \nextpg
+  \setcounter{page}{\thepgregister}
+}
+
 %% Environment Re-definitions
 \newenvironment{explanation}[1][\halfpage]{\begin{solution}[#1]}{\end{solution}}
 
