@@ -4,10 +4,10 @@ loan approvals as a function of several explanatory variables. The scale factors
 probit are 0.0883 and 0.166 respectively 
 
 \begin{parts}
-  \part How much more likely is a married white male to be approved for a loan compared 
+  \part[2] How much more likely is a married white male to be approved for a loan compared 
   to an unmarried-nonwhite male? Compare the values from all three models
 
-  \begin{solution}
+\begin{solution}[\halfpage]
     The coefficient on \texttt{male} does not matter (why?).  For the \textbf{linear model}, being white 
     is associated with a 12.9\% advantage over non-whites, and being married is associated with a 
     4.6\% increase in approval rate. Thus the net impact is an approximately $\mathbf{17.5\%} (=12.9\% + 4.6\%)$ 
@@ -19,25 +19,25 @@ probit are 0.0883 and 0.166 respectively
     Similarly for \textbf{Logit} we get $0.0883\times(0.938+0.503) = .1272 \text{, that is, } \textbf{12.72\%}$
   \end{solution}
 
-  \part What do you think is the rationale behind using \textit{unemployment rate in applicant's industry}
+  \part[2] What do you think is the rationale behind using \textit{unemployment rate in applicant's industry}
   rather than employment status? Is it statistically significant?
 
-  \begin{solution}
+\begin{solution}[\halfpage]
     In most cases, unemployed people will not be seeking a home loan. So employment status is not that useful. 
     But the nature of ones job is a relevant factor. One measure of job stability is the unemployment rate in that 
     field.  Banks may be wary of extending loans to people in industries with high unemployment rates
   \end{solution}
 
-  \part Do any of the coefficients have unexpected signs? Are they statistically significant? 
+  \part[2] Do any of the coefficients have unexpected signs? Are they statistically significant? 
 
-  \begin{solution}
+\begin{solution}[\mcq]
     I would have imagined some type of discrimination against female borrowers. 
     So the negative sign on \emph{male} is unexpected. However, the effect is not significant at all.
   \end{solution}
 
-  \part How many variables have \textit{not} been reported in the model? 
+  \part[2] How many variables have \textit{not} been reported in the model? 
 
-  \begin{solution}
+\begin{solution}[\mcq]
     Use the degrees of freedom, note that the constant term has also not been mentioned
     \[df = n-k-1 \implies k = 1971-1955 -1 = 15\]
     
@@ -79,7 +79,6 @@ probit are 0.0883 and 0.166 respectively
    \texttt{Prior bankruptcy} & -0.242 & -0.779 & -1.341 \\ 
     & (0.028) & (0.127) & (0.217) \\ 
     & & & \\ 
-  %\hline \\[-1.8ex] 
   \midrule
   Observations & \multicolumn{1}{c}{1,971} & \multicolumn{1}{c}{1,971} & \multicolumn{1}{c}{1,971} \\ 
   R$^{2}$ & \multicolumn{1}{c}{0.166} &  &  \\ 
