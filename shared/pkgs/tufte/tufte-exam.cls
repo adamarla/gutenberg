@@ -56,16 +56,15 @@
 %% Counters 
 \newcounter{currSubpart}
 \newcounter{numQuestions}
-% 'numQR' tracks 'numpage' counter exactly. But we have it still to
-% keep things clean & distinct
-\newcounter{numQR} 
+\newcounter{questionPg} % counter for pages that have questions
+\newcounter{worksheetPg} % counter for all pages in the worksheet - incl. those with attachments
 
 %% Booleans 
-\newbool{bottomLeftQR}
-\booltrue{bottomLeftQR}
+\newbool{qrcInMargin}
+\boolfalse{qrcInMargin}
 
-\newbool{bottomLeftTaken}
-\boolfalse{bottomLeftTaken}
+\newbool{normalflow}
+\booltrue{normalflow}
 
 %% Macros that define space left for explanations 
 \providecommand{\mcq}{\stretch{1}} 
@@ -76,15 +75,13 @@
 %% that may be part of the question. Ideally, render any such data AFTER 
 %% the solution text and take care of \thepage as it (\thepage) controls QR code insertion
 
-\newcounter{pgregister}
 \newenvironment{attachment}{
-  \setcounter{pgregister}{\thepage}
-  \nextpg
-  \setbaseQR{Attachment}
-  \embedQR
+  \setbool{normalflow}{false}
+  \setbool{qrcInMargin}{false}
+  \pagebreak
 }{
-  \nextpg
-  \setcounter{page}{\thepgregister}
+  \nextpg 
+  \setbool{normalflow}{true}
 }
 
 %% Environment Re-definitions
@@ -106,34 +103,33 @@
   \renewcommand\baseQR{#1}
 }
 
-\providecommand\embedQR[1][0pt] {
+\providecommand\marginQR[1][0pt] {
   \ifprintanswers
   \else
     \ifcancelspace
     \else
-      \ifbool{bottomLeftQR}{
-        \ifbool{bottomLeftTaken}{}{
-          \fancyfoot[L]{
-            \psbarcode[transx=-30pt, transy=-15pt]
-            {\baseQR}{eclevel=Q width=0.7 height=0.7}{qrcode} 
-          }
-          \setbool{bottomLeftTaken}{true}
-        }
-      }{ % no QR in bottom-left => insert QR right there
+      \ifbool{qrcInMargin}{
         \begin{marginfigure}[#1]
           \psbarcode[transx=0.4\marginparwidth]{\baseQR}{eclevel=Q width=0.7 height=0.7}{qrcode} 
         \end{marginfigure}
-      }
+      }{}
+    \fi
+  \fi
+}
 
-      \ifdefempty\baseQR{}{
-        % Write the QR Code in the top-right and bottom-left corners 
-        \fancyhead[R]{\Large\fontfamily{cmss}\selectfont{\baseQR}}
-        \fancyfoot[R]{\Large\fontfamily{cmss}\selectfont{\baseQR}}
+\providecommand\bottomQR[1][\baseQR] {
+  \ifprintanswers
+  \else
+    \ifcancelspace 
+    \else
+      % Write the QR Code in the top-right and bottom-left corners 
+      \fancyfoot[L]{
+        \psbarcode[transx=-30pt, transy=-15pt]{#1}{eclevel=Q width=0.7 height=0.7}{qrcode} 
       }
-    \fi % if cancelspace
-  \fi % ifprintanswers 
-
-  \setbool{bottomLeftQR}{false}
+      \fancyhead[R]{\Large\fontfamily{cmss}\selectfont{#1}}
+      \fancyfoot[R]{\Large\fontfamily{cmss}\selectfont{$\thequestionPg\,\vert\,\thepage$}}
+    \fi
+  \fi
 }
 
 % [Deprecated]  
@@ -143,8 +139,8 @@
 %% Ref: http://tex.stackexchange.com/questions/80154/get-n-th-element-of-a-list-with-etoolbox-or-not
 
 \providecommand\storePerPageQR[1]{
-  \stepcounter{numQR}
-  \expandafter\def\csname qr\thenumQR\endcsname{#1}
+  \expandafter\def\csname qr\thequestionPg\endcsname{#1}
+  \stepcounter{questionPg}
 }
 
 %% Macros pertaining to question versioning
@@ -162,7 +158,7 @@
   }{}
   \fancyhead[LO,LE]{\Large\fontfamily{cmss}\selectfont{\uppercase{#2}}}
   \notblank{#3}{
-    \setcounter{numQR}{0}
+    \setcounter{questionPg}{1}
     \forcsvlist\storePerPageQR{#3}
   }{\setbaseQR{Preview}}
 }
@@ -193,20 +189,25 @@
 \newcommand\nextpg{
   \ifcancelspace
   \else
-    \booltrue{bottomLeftQR}
-    \boolfalse{bottomLeftTaken}
-    \newpage
-  \fi
+    \ifprintanswers
+    \else
+      \ifbool{normalflow}{\bottomQR}{\bottomQR[Attachment]}
+      \pagebreak
+      \setbool{qrcInMargin}{false}
+      \stepcounter{worksheetPg}
+      \ifbool{normalflow}{\stepcounter{questionPg}}{}
+    \fi % ifprintanswers
+  \fi % ifcancelspace
 }
 
 \BeforeBeginEnvironment{explanation}{
-  \embedQR
+  \setbaseQR{\csname qr\thequestionPg\endcsname}
+  \marginQR
   \setcounter{equation}{0}
 }
 
-
 \AfterEndEnvironment{explanation}{
-  \setbool{bottomLeftQR}{false}
+  \setbool{qrcInMargin}{true}
   \xifinlist{\thecurrSubpart}\pageBreaks{\nextpg}{}
   \xifinlist{\thecurrSubpart}\versionTriggers{
     \ADD{\value{question}}{1}\nq
@@ -215,30 +216,32 @@
     }
     % \setcounter{rolldice}{\csname version\j\endcsname}
   }{}
-
   \stepcounter{currSubpart} % Move onto next subpart 
 }
 
 \BeforeBeginEnvironment{questions}{
-  \setcounter{page}{1}
+  %\setcounter{page}{1}
+  \setcounter{questionPg}{1}
+  \setcounter{worksheetPg}{1}
   \setcounter{currSubpart}{0} % the breaks returned by Rails are 0-indexed
+  \setbool{normalflow}{true}
+
   \fancyhead[C]{\Large\fontfamily{cmss}\selectfont\documentTitle}
   \fancyfoot[C]{\Large\fontfamily{cmss}\selectfont{\copyright\, www.gradians.com}}
   \marksnotpoints
   %\pagestyle{fancy}
   \renewcommand\headrulewidth{0.4pt}
-  \setbaseQR{\csname qr\thepage\endcsname}
+  \setbaseQR{\csname qr\thequestionPg\endcsname}
 }
 
 \AfterEndEnvironment{questions}{
   \setcounter{numQuestions}{0}
   \ifprintanswers
   \else
-    \ifnumodd{\thepage}{
+    \ifnumodd{\theworksheetPg}{ % has to be \theworksheetPg only as it tracks the *absolute* # of pages
       \nextpg
       \mbox{}
-      \setbaseQR{0}
-      \embedQR
+      \bottomQR[0]
       \fancyhead[C]{\Large\fontfamily{cmss}\selectfont{For Rough Work Only}}
       \fancyfoot[C]{\Large\fontfamily{cmss}\selectfont{Will not be graded}}
     }{}
@@ -252,5 +255,5 @@
   % If the marginfigure is rendered within \ifprintanswers, then this code will NOT be triggered
   % However, if a margin figure is unconditionally rendered, then this code 
   % should trigger 
-  \setbool{bottomLeftQR}{true}
+  \setbool{qrcInMargin}{false}
 }
