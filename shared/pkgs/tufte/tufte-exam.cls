@@ -17,7 +17,7 @@
 % and / or 'tufte-common.sty'. Not a battle I want fight now
 
 \RequirePackage{savesym}
-\LoadClassWithOptions{exam} 
+\LoadClass[justified,a4paper]{exam} 
 \savesymbol{fullwidth}
 \savesymbol{lhead}
 \savesymbol{chead}
@@ -65,6 +65,18 @@
 
 \newbool{normalflow}
 \booltrue{normalflow}
+
+\newbool{invault}
+\boolfalse{invault}
+\providecommand\compilevault{\setbool{invault}{true}}
+\providecommand\nocompilevault{\setbool{invault}{false}}
+
+\newbool{trimjpg}
+\boolfalse{trimjpg}
+\providecommand\zealouscrop{\setbool{trimjpg}{true}}
+\providecommand\nozealouscrop{\setbool{trimjpg}{false}}
+
+%% If .. else 
 
 %% Macros that define space left for explanations 
 \providecommand{\mcq}{\stretch{1}} 
@@ -226,12 +238,19 @@
   \setcounter{currSubpart}{0} % the breaks returned by Rails are 0-indexed
   \setbool{normalflow}{true}
 
-  \fancyhead[C]{\Large\fontfamily{cmss}\selectfont\documentTitle}
-  \fancyfoot[C]{\Large\fontfamily{cmss}\selectfont{\copyright\, www.gradians.com}}
+  \fontfamily{lmss}\selectfont\Large
+  \fancyhead[C]{\Large\fontfamily{lmss}\selectfont{\documentTitle}}
+
+  \ifbool{invault}{\qformat{}}{\noqformat} % suppress question numbering in vault/ else default behaviour
+  \ifbool{trimjpg}{}{\fancyfoot[C]{\copyright\, www.gradians.com}}
+
   \marksnotpoints
   %\pagestyle{fancy}
   \renewcommand\headrulewidth{0.4pt}
   \setbaseQR{\csname qr\thequestionPg\endcsname}
+  \renewcommand\solutiontitle{}
+  \SolutionEmphasis{\normalsize}
+  \shadedsolutions
 }
 
 \AfterEndEnvironment{questions}{
@@ -242,8 +261,11 @@
       \nextpg
       \mbox{}
       \bottomQR[0]
-      \fancyhead[C]{\Large\fontfamily{cmss}\selectfont{For Rough Work Only}}
-      \fancyfoot[C]{\Large\fontfamily{cmss}\selectfont{Will not be graded}}
+
+      \ifbool{invault}{}{
+        \fancyhead[C]{\Large\fontfamily{cmss}\selectfont{For Rough Work Only}}
+        \fancyfoot[C]{\Large\fontfamily{cmss}\selectfont{Will not be graded}}
+      }
     }{}
     \nextpg 
   \fi % \ifprintanswers

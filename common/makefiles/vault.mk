@@ -17,11 +17,27 @@ compiled : $(STEM).tex
 	if [ $$mode == "vault" ] ; then 
 		for version in 0 1 2 3 ; do 
 			set_question_version $< $$version
-			compile_tex $< $(logfile)
+			set_unset_flag compilevault $< set 
+			set_unset_flag zealouscrop $< unset 
+			for type in trim notrim full ; do 
+				if [ $$type == "full" ] ; then
+					set_unset_flag printanswers $< set
+					set_unset_flag cancelspace $< unset
+				else 
+					set_unset_flag printanswers $< unset
+					set_unset_flag cancelspace $< set
+					if [ $$type == "trim" ] ; then 
+						set_unset_flag zealouscrop $< set
+				  else
+						set_unset_flag zealouscrop $< unset
+					fi
+				fi 
+				compile_tex $< $(logfile)
+				$(MAKE) install version=$$version type=$$type
+			done
 ifneq ($(logfile),)
 			echo "------ [$$version] -> Done" >> $(logfile)
 endif
-		$(MAKE) install version=$$version
 		done
 	else
 		compile_tex $< $(logfile)
@@ -46,8 +62,13 @@ install :
 ifneq ($(version),)
 	@echo "[Installing]: version $(version)"
 	mkdir -p $(version)
+ifneq ($(type),full)
+	convert -trim pg-1.jpg $(type).jpg
+	mv $(type).jpg $(version)/
+else
 	mv pg-*.jpg $(version)
 	mv $(STEM).pdf $(version)
+endif
 endif
 
 clean : 
