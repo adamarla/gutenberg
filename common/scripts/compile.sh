@@ -122,23 +122,33 @@ function open_document {
 
 function open_file {
   # Note that TeX is being written in the reverse order
-  sed -i "1i \\\\\\fancyfoot[C]{\\\\copyright\\,Gradians.com}" $1
-  sed -i "1i \\\\\\documentclass[12pt,a4paper,justified]{tufte-exam}" $1
+  sed -i "1i \\\\\\documentclass{tufte-exam}" $1
 }
 
-function set_cancelspace {
-  # $1 = Target TeX File
-  sed -i '4i \\\cancelspace' $1
-}
 
-function unset_cancelspace { 
-  # $1 = Target TeX File
-  line=$(grep -m 1 -n '\\cancelspace' $1 | head -1 | sed -e 's/:.*//')
-  if [ $line ] ; then
-    sed -i "$line d" $1
+function set_unset_flag { 
+  # $1 = TeX flag like cancelspace, printanswers etc. 
+  # $2 = TeX file 
+  # $3 = set | unset 
+  # Flags are set **before** \begin{document}. Hence, limit algo to just this range, ie. [1, $begin]
+
+  begin=$(grep -m 1 -n begin $2 | head -1 | sed -e 's/:.*//')
+  line=$(head -$begin $2 | grep -m 1 -n $1 | sed -e 's/:.*//')
+
+  if [ $line ] ; then 
+    if [ $3 == "set" ] ; then 
+      sed -i "$line s/.*/\\\\$1/" $2 # \\\\$1 => [ \printanswers | \cancelspace ]
+    else
+      sed -i "$line s/.*/\\\\no$1/" $2 # \\\\no$1 => [ \noprintanswers | \nocancelspace ]
+    fi
+  else # no prior occurrence of flag. Hence, add it now  
+    if [ $3 == "set" ] ; then 
+      sed -i "$begin i \\\\\\$1" $2
+    else 
+      sed -i "$begin i \\\\\\no$1" $2
+    fi
   fi
 } 
-
 
 ### Vault Specific
 
