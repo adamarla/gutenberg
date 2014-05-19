@@ -79,9 +79,12 @@ function create_skeleton {
     # incorrect question tagging)
     sed -i -e 's/{solution}/{explanation}/g' skel
   else
-    if [ $mode == "worksheet" ] ; then 
+    if [[ $mode =~ worksheet ]] ; then 
       sed -i "1i \\\\\\setAuthor[$(get_versions)]{$(get_author)}{$(get_response_ids)}" skel 
-      sed -i "1i \\\\\\noprintanswers" skel
+      set_unset_flag printanswers skel unset
+      if [[ $mode =~ abridged ]] ; then 
+        set_unset_flag cancelspace skel set
+      fi 
     fi
   fi 
 }
