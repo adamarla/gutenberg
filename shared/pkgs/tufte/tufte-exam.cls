@@ -238,8 +238,8 @@
   \setcounter{currSubpart}{0} % the breaks returned by Rails are 0-indexed
   \setbool{normalflow}{true}
 
-  \fontfamily{lmss}\selectfont\Large
-  \fancyhead[C]{\Large\fontfamily{lmss}\selectfont{\documentTitle}}
+  \fontfamily{cmss}\selectfont\Large
+  \fancyhead[C]{\Large\fontfamily{cmss}\selectfont{\documentTitle}}
 
   \ifbool{invault}{\qformat{}}{\noqformat} % suppress question numbering in vault/ else default behaviour
   \ifbool{trimjpg}{}{\fancyfoot[C]{\copyright\, www.gradians.com}}
@@ -263,8 +263,11 @@
       \bottomQR[0]
 
       \ifbool{invault}{}{
-        \fancyhead[C]{\Large\fontfamily{cmss}\selectfont{For Rough Work Only}}
-        \fancyfoot[C]{\Large\fontfamily{cmss}\selectfont{Will not be graded}}
+        \ifcancelspace % => takehome worksheet compilation
+        \else % => in-class worksheet compilation
+          \fancyhead[C]{\Large\fontfamily{cmss}\selectfont{For Rough Work Only}}
+          \fancyfoot[C]{\Large\fontfamily{cmss}\selectfont{Will not be graded}}
+        \fi
       }
     }{}
     \nextpg 
