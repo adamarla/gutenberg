@@ -1,3 +1,11 @@
+% printanswers        cancelspace         implies           QR-code?
+% ------------        -----------         --------          --------
+%  false               false        worksheet / exam         yes
+%  false               true         abridged worksheet       no
+%  true                false             quiz                no
+%  true                true            non-sense             -
+% 
+
 % This class merges the functionality of exam.cls with the look
 % and feel of tufte-handout. The former (exam.cls) has all the 
 % functionality we need. The latter provides the layout that is 
