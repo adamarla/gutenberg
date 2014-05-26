@@ -1,3 +1,11 @@
+% printanswers        cancelspace         implies           QR-code?
+% ------------        -----------         --------          --------
+%  false               false        worksheet / exam         yes
+%  false               true         abridged worksheet       no
+%  true                false             quiz                no
+%  true                true            non-sense             -
+% 
+
 % This class merges the functionality of exam.cls with the look
 % and feel of tufte-handout. The former (exam.cls) has all the 
 % functionality we need. The latter provides the layout that is 
@@ -116,32 +124,20 @@
 }
 
 \providecommand\marginQR[1][0pt] {
-  \ifprintanswers
-  \else
-    \ifcancelspace
-    \else
-      \ifbool{qrcInMargin}{
-        \begin{marginfigure}[#1]
-          \psbarcode[transx=0.4\marginparwidth]{\baseQR}{eclevel=Q width=0.7 height=0.7}{qrcode} 
-        \end{marginfigure}
-      }{}
-    \fi
-  \fi
+  \ifbool{qrcInMargin}{
+    \begin{marginfigure}[#1]
+      \psbarcode[transx=0.4\marginparwidth]{\baseQR}{eclevel=Q width=0.7 height=0.7}{qrcode} 
+    \end{marginfigure}
+  }{}
 }
 
 \providecommand\bottomQR[1][\baseQR] {
-  \ifprintanswers
-  \else
-    \ifcancelspace 
-    \else
-      % Write the QR Code in the top-right and bottom-left corners 
-      \fancyfoot[L]{
-        \psbarcode[transx=-30pt, transy=-15pt]{#1}{eclevel=Q width=0.7 height=0.7}{qrcode} 
-      }
-      \fancyhead[R]{\Large\fontfamily{cmss}\selectfont{#1}}
-      \fancyfoot[R]{\Large\fontfamily{cmss}\selectfont{$\thequestionPg\,\vert\,\thepage$}}
-    \fi
-  \fi
+  % Write the QR Code in the top-right and bottom-left corners 
+  \fancyfoot[L]{
+    \psbarcode[transx=-30pt, transy=-15pt]{#1}{eclevel=Q width=0.7 height=0.7}{qrcode} 
+  }
+  \fancyhead[R]{\Large\fontfamily{cmss}\selectfont{#1}}
+  \fancyfoot[R]{\Large\fontfamily{cmss}\selectfont{$\thequestionPg\,\vert\,\thepage$}}
 }
 
 % [Deprecated]  
@@ -213,8 +209,14 @@
 }
 
 \BeforeBeginEnvironment{explanation}{
-  \setbaseQR{\csname qr\thequestionPg\endcsname}
-  \marginQR
+  \ifprintanswers
+  \else % worksheet or exam
+    \ifcancelspace % abridged worksheet 
+    \else
+      \setbaseQR{\csname qr\thequestionPg\endcsname}
+      \marginQR
+    \fi
+  \fi
   \setcounter{equation}{0}
 }
 
@@ -238,8 +240,8 @@
   \setcounter{currSubpart}{0} % the breaks returned by Rails are 0-indexed
   \setbool{normalflow}{true}
 
-  \fontfamily{lmss}\selectfont\Large
-  \fancyhead[C]{\Large\fontfamily{lmss}\selectfont{\documentTitle}}
+  \fontfamily{cmss}\selectfont\Large
+  \fancyhead[C]{\Large\fontfamily{cmss}\selectfont{\documentTitle}}
 
   \ifbool{invault}{\qformat{}}{\noqformat} % suppress question numbering in vault/ else default behaviour
   \ifbool{trimjpg}{}{\fancyfoot[C]{\copyright\, www.gradians.com}}
@@ -257,16 +259,22 @@
   \setcounter{numQuestions}{0}
   \ifprintanswers
   \else
-    \ifnumodd{\theworksheetPg}{ % has to be \theworksheetPg only as it tracks the *absolute* # of pages
-      \nextpg
-      \mbox{}
-      \bottomQR[0]
+    \ifcancelspace % abridged worksheet
+    \else % full worksheet or exam
+      \ifnumodd{\theworksheetPg}{ % has to be \theworksheetPg only as it tracks the *absolute* # of pages
+        \nextpg
+        \mbox{}
+        \bottomQR[0]
 
-      \ifbool{invault}{}{
-        \fancyhead[C]{\Large\fontfamily{cmss}\selectfont{For Rough Work Only}}
-        \fancyfoot[C]{\Large\fontfamily{cmss}\selectfont{Will not be graded}}
-      }
-    }{}
+        \ifbool{invault}{}{
+          \ifcancelspace % => takehome worksheet compilation
+          \else % => in-class worksheet compilation
+            \fancyhead[C]{\Large\fontfamily{cmss}\selectfont{For Rough Work Only}}
+            \fancyfoot[C]{\Large\fontfamily{cmss}\selectfont{Will not be graded}}
+          \fi
+        }
+      }{} % ifnumodd
+    \fi
     \nextpg 
   \fi % \ifprintanswers
 }
