@@ -60,6 +60,7 @@
 \RequirePackage{calculator}
 \RequirePackage{g-calculus}
 \RequirePackage{g-vector}
+\RequirePackage{venndiagram}
 
 %% Counters 
 \newcounter{currSubpart}
