@@ -1,7 +1,5 @@
 
-
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{A}
   \renewcommand{\vbtwo}{B}
   \renewcommand{\vbthree}{C}
@@ -10,7 +8,6 @@
   \renewcommand\vc\vbone
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{D}
     \renewcommand{\vbtwo}{E}
     \renewcommand{\vbthree}{F}
@@ -19,7 +16,6 @@
     \renewcommand\vc\vbthree
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{P}
       \renewcommand{\vbtwo}{Q}
       \renewcommand{\vbthree}{R}
@@ -27,7 +23,6 @@
       \renewcommand\vb\vbthree
       \renewcommand\vc\vbone
     }{
-      % variables 
       \renewcommand{\vbone}{X}
       \renewcommand{\vbtwo}{Y}
       \renewcommand{\vbthree}{Z}
@@ -38,19 +33,18 @@
   }
 }
 
-\question Identify the set represented by the shaded region in the figure alongside using \textbf{only} 
+\question[2] Identify the set represented by the shaded region in the figure alongside using \textbf{only} 
 set notation symbols $\cup$ (union), $\cap$ (intersection) and $'$ (complement)
 
 \watchout[-40pt]
 
-  % stuff to be shown only in the answer key - like explanatory margin figures
   \begin{marginfigure}
     \begin{venndiagram3sets}[labelA=$\vbone$,labelB=$\vbtwo$,labelC=$\vbthree$,labelNotABC=$U$]
       \ifnumodd{\value{rolldice}}{\fillACapBNotC}{\fillBCapCNotA}
     \end{venndiagram3sets}
   \end{marginfigure}
 
-\begin{solution}
+\begin{solution}[\mcq]
   What we need is \textbf{almost} like $\va\cap\vb$ - but not quite. We need to exclude $\va\cap\vb\cap\vc$ from it
 
   If $S$ be the required set, then for every $x\in S$, $x\in(\va\cap\vb)$. But note that $x\notin\vc\implies x\in\vc '$.
