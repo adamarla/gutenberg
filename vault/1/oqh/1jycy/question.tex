@@ -1,20 +1,16 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{-2}
   \renewcommand{\vbtwo}{-5}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{-3}
     \renewcommand{\vbtwo}{-7}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{-4}
       \renewcommand{\vbtwo}{-9}
     }{
-      % variables 
       \renewcommand{\vbone}{-5}
       \renewcommand{\vbtwo}{-6}
     }
@@ -28,13 +24,13 @@
 \MULTIPLY\vbone{-1}\p
 \MULTIPLY\vbtwo{-1}\q
 
-\question What would the \textbf{equivalent roster form} of the following set be? The roster form is one 
+\question[3] What would the \textbf{equivalent roster form} of the following set be? The roster form is one 
 in which all elements are listed individually  - for example - $C = \lbrace a,b,c\ldots z\rbrace$
 \[ C = \lbrace x\,:\, x^2 + \c x + \b = 0, x\in\mathbb{N}\rbrace  \]
 
 \watchout[-50pt]
 
-\begin{solution}
+\begin{solution}[\mcq]
   First, lets find the $x$ that satisfy the quadratic equation
   \begin{align}
     x^2 + \c x + \b &= 0 \implies (x + \p)\cdot (x + \q) = 0 \\
