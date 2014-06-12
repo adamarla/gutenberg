@@ -1,6 +1,5 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\vbone}{10000}
   \renewcommand{\vbtwo}{40}
   \renewcommand{\vbthree}{20}
@@ -11,7 +10,6 @@
   \renewcommand{\vbeight}{2}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\vbone}{12000}
     \renewcommand{\vbtwo}{30}
     \renewcommand{\vbthree}{20}
@@ -22,7 +20,6 @@
     \renewcommand{\vbeight}{2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\vbone}{9000}
       \renewcommand{\vbtwo}{20}
       \renewcommand{\vbthree}{35}
@@ -32,7 +29,6 @@
       \renewcommand{\vbseven}{3}
       \renewcommand{\vbeight}{1}
     }{
-      % variables 
       \renewcommand{\vbone}{8000}
       \renewcommand{\vbtwo}{20}
       \renewcommand{\vbthree}{30}
@@ -66,17 +62,16 @@ three newspapers, then
 \watchout[-50pt]
 
 \begin{parts}
-  \part How many families buy newspaper $A$ only? Identify the set in a Venn diagram
+  \part[3] How many families buy newspaper $A$ only? Identify the set in a Venn diagram
 
   \ifprintanswers
-    % stuff to be shown only in the answer key - like explanatory margin figures
     \begin{marginfigure}
       \begin{venndiagram3sets}
         \fillOnlyA
       \end{venndiagram3sets}
     \end{marginfigure}
   \fi 
-  \begin{solution}
+\begin{solution}[\halfpage]
     First, let us take stock of what we know 
     \begin{align}
       n(A) = \a, n(B) &= \b, n(C) = \c \\
@@ -92,17 +87,16 @@ three newspapers, then
     \end{align}
   \end{solution}
 
-  \part And how many do not buy any? Identify the set in a Venn diagram  
+  \part[2] And how many do not buy any? Identify the set in a Venn diagram  
 
   \ifprintanswers
-    % stuff to be shown only in the answer key - like explanatory margin figures
     \begin{marginfigure}[50pt]
       \begin{venndiagram3sets}
         \fillNotABC
       \end{venndiagram3sets}
     \end{marginfigure}
   \fi 
-  \begin{solution}
+\begin{solution}[\halfpage]
     The shaded region in the figure alongside represents families that do not buy any newspaper. 
     In set notation form, it is the set $A\cup B\cup C)'$
     \begin{align}
