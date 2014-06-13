@@ -1,6 +1,7 @@
 
-
-
+\question A family has two children. We know that the older child is 7-years old while 
+the younger one is 4-years old. But we don't know whether they are both girls or both boys 
+or a boy and a girl. Given this, what is the probability of $\ldots$
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -17,19 +18,23 @@
 \fi 
 
 \begin{parts}
-  \part[1] Atleast one child is a girl
+  \part[1] $\ldots$ the older child being a girl?
 
-\begin{solution}[\mcq]
-     Which means that combinations 1,2 and 3 are the only possible outcomes. And of these, 
-     only the first combination is a favorable outcome. Therefore, the required probability
-     is $\dfrac{1}{3}$
-  \end{solution}
-
-  \part[1] The older child is a girl 
-
-\begin{solution}[\mcq]
+  \begin{solution}[\mcq]
      If the first child was a girl, then our set of possible outcomes is down to just
      the first two. And therefore, the required probability is $\dfrac{1}{2}$
+  \end{solution}
+
+  \part[1] $\ldots$ both the children being girls if we come to know that the family has atleast one girl child?
+
+  \begin{solution}[\mcq]
+    The above table lists all possible ways of having two children. 
+
+    Of these, combinations \#1, \#2 and \#3 represent the case where the family has atleast 
+    one girl child. 
+
+    And of these three, only combination \#1 represents the case where the family has two girls. 
+    Hence, the required probability is simply $\dfrac{1}{3}$
   \end{solution}
 
 \end{parts}
