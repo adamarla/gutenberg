@@ -1,6 +1,5 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand\vm{37}
   \renewcommand\vp{24}
   \renewcommand\vc{43}
@@ -10,7 +9,6 @@
   \renewcommand\vt{50}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand\vm{24}
     \renewcommand\vp{30}
     \renewcommand\vc{15}
@@ -20,7 +18,6 @@
     \renewcommand\vt{70}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand\vm{42}
       \renewcommand\vp{29}
       \renewcommand\vc{32}
@@ -29,7 +26,6 @@
       \renewcommand\vz{17} % physics and chemistry
       \renewcommand\vt{85}
     }{
-      % variables 
       \renewcommand\vm{41}
       \renewcommand\vp{37}
       \renewcommand\vc{23}
@@ -43,7 +39,7 @@
 
 \EXPR[0]\va{\vt-\vm-\vp-\vc + (\vx+\vy+\vz)}
 
-\question Of the $\vt$ students taking examinations in Mathematics, Physics amd Chemistry 
+\question[4] Of the $\vt$ students taking examinations in Mathematics, Physics amd Chemistry 
 - each passed in \textbf{atleast} one of the subjects. Moreover, $\vm$ passed in 
 Mathematics, $\vp$ in Physics and $\vc$ in Chemistry. \textbf{At most}, $\vx$ passed in 
 Maths and Physics, (at most) $\vy$ in Maths and Chemistry and (at most) $\vz$ in Physics 
@@ -56,7 +52,7 @@ What then is the maximum possible number of students who could've passed in all 
 \ifprintanswers
 \fi 
 
-\begin{solution}
+\begin{solution}[\fullpage]
   If $M$, $P$ and $C$ be the sets of students passing in Maths, Physics and 
   Chemistry respectively, then here is what we know 
   \begin{align}
