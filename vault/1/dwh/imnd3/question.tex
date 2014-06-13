@@ -1,6 +1,5 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand\va{1}
   \renewcommand\vd{3} % common difference 
   \renewcommand\ve{4}
@@ -9,7 +8,6 @@
   \renewcommand\vh{7}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand\va{3}
     \renewcommand\vd{4} % common difference 
     \renewcommand\ve{3}
@@ -18,7 +16,6 @@
     \renewcommand\vh{2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand\va{5}
       \renewcommand\vd{3} % common difference 
       \renewcommand\ve{4}
@@ -26,7 +23,6 @@
       \renewcommand\vg{6}
       \renewcommand\vh{7}
     }{
-      % variables 
       \renewcommand\va{7}
       \renewcommand\vd{4} % common difference 
       \renewcommand\ve{4}
@@ -61,27 +57,27 @@
 \fi 
 
 \begin{parts}
-  \part $A = \lbrace x : x=\ve n, n\in X \rbrace$ 
+  \part[1] $A = \lbrace x : x=\ve n, n\in X \rbrace$ 
 
-  \begin{solution}
+\begin{solution}[\mcq]
     $A = \lbrace\vi,\vj,\vk\rbrace$
   \end{solution}
 
-  \part $B = \lbrace x : x=n + \vf, n \in X \rbrace$ 
+  \part[1] $B = \lbrace x : x=n + \vf, n \in X \rbrace$ 
 
-  \begin{solution}
+\begin{solution}[\mcq]
     $B = \lbrace\vl,\vm,\vn\rbrace$
   \end{solution}
 
-  \part $C=\lbrace x : x=\frac{n}{\vg}, n \in X \rbrace$
+  \part[1] $C=\lbrace x : x=\frac{n}{\vg}, n \in X \rbrace$
 
-  \begin{solution}
+\begin{solution}[\mcq]
     $C=\lbrace\WRITEFRAC\va\vg,\WRITEFRAC\vb\vg,\WRITEFRAC\vc\vg\rbrace$
   \end{solution}
 
-  \part $D = \lbrace x: x=n-\vh, n \in X \rbrace$
+  \part[1] $D = \lbrace x: x=n-\vh, n \in X \rbrace$
 
-  \begin{solution}
+\begin{solution}[\mcq]
     $D=\lbrace\vo,\vp,\vq\rbrace$
   \end{solution}
 
