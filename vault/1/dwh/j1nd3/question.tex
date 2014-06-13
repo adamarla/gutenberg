@@ -1,6 +1,5 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand\ve{15}
   \renewcommand\vm{12}
   \renewcommand\vs{8}
@@ -11,7 +10,6 @@
   \renewcommand\vp{4} % all subjects 
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand\ve{45}
     \renewcommand\vm{22}
     \renewcommand\vs{19}
@@ -22,7 +20,6 @@
     \renewcommand\vp{8} % all subjects 
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand\ve{22}
       \renewcommand\vm{37}
       \renewcommand\vs{45}
@@ -32,7 +29,6 @@
       \renewcommand\vz{8} % english and science 
       \renewcommand\vp{13} % all subjects 
     }{
-      % variables 
       \renewcommand\ve{45}
       \renewcommand\vm{34}
       \renewcommand\vs{39}
@@ -70,8 +66,8 @@ Given this, find how many students passed in $\ldots$
       \end{venndiagram3sets}
     \end{marginfigure}
   \fi 
-  \part $\ldots$ English or Maths or both - but not Science?
-  \begin{solution}
+  \part[3] $\ldots$ English or Maths or both - but not Science?
+\begin{solution}[\halfpage]
     The students we are looking for are in the shaded region in figure (a). 
     And the shaded set (set $A$) is \textbf{almost} equal to $E\cup M$ - but not quite 
 
@@ -93,9 +89,9 @@ Given this, find how many students passed in $\ldots$
       \end{venndiagram3sets}
     \end{marginfigure}
   \fi 
-  \part $\ldots$ Maths and Science - but not English?
+  \part[1] $\ldots$ Maths and Science - but not English?
 
-  \begin{solution}
+\begin{solution}[\mcq]
     The number of students in the shaded area iin figure (b) is what we need. It is \textbf{almost} like 
     $M\cap S$ - but not quite. Instead, the required set - $B$ - is 
     \begin{align}
@@ -111,9 +107,9 @@ Given this, find how many students passed in $\ldots$
       \end{venndiagram3sets}
     \end{marginfigure}
   \fi 
-  \part $\ldots$ Maths only?
+  \part[2] $\ldots$ Maths only?
 
-  \begin{solution}
+\begin{solution}[\mcq]
     The shaded bit -set $C$ - in figure (c) is what we need. And we can see 
     that 
     \begin{align}
@@ -132,9 +128,9 @@ Given this, find how many students passed in $\ldots$
       \end{venndiagram3sets}
     \end{marginfigure}
   \fi 
-  \part $\ldots$ in more than one subject? 
+  \part[3] $\ldots$ in more than one subject? 
 
-  \begin{solution}
+\begin{solution}[\halfpage]
     The shaded portion in figure (d) is what we need. And it is \textbf{almost} like 
     $(M\cap E) + (M\cap S) + (E\cap S)$ - but not quite
 
