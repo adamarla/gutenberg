@@ -1,32 +1,28 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand\va{A}
   \renewcommand\vb{B}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand\va{C}
     \renewcommand\vb{D}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand\va{M}
       \renewcommand\vb{N}
     }{
-      % variables 
       \renewcommand\va{X}
       \renewcommand\vb{Y}
     }
   }
 }
 
-\question Which of the set operations - $\cap$ (intersection), $\cup$ (union) or $-$ (minus) - would make 
+\question[3] Which of the set operations - $\cap$ (intersection), $\cup$ (union) or $-$ (minus) - would make 
 the following true? Replace the ? with one of the symbols
 \[ \va\cup(\vb-\va) = \va\underline{\text{   ?   }}\vb\]
 \watchout
 
-\begin{solution}
+\begin{solution}[\mcq]
   \begin{align}
     \va\cup(\vb-\va) &= \va\cup\overbrace{(\vb\cap\va ')}^{\vb-\va} \\
            &= (\va\cup\vb)\cap(\va\cup\va ') 
