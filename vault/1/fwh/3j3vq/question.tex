@@ -1,71 +1,93 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
+  \renewcommand\va{4}
+  \renewcommand\vb{2}
+  \renewcommand\vc{3}
+  \renewcommand\vg{9}
+  \renewcommand\vh{2}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
+    \renewcommand\va{3}
+    \renewcommand\vb{7}
+    \renewcommand\vc{9}
+    \renewcommand\vg{3}
+    \renewcommand\vh{7}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
+      \renewcommand\va{5}
+      \renewcommand\vb{3}
+      \renewcommand\vc{7}
+      \renewcommand\vg{7}
+      \renewcommand\vh{4}
     }{
       % variables 
+      \renewcommand\va{7}
+      \renewcommand\vb{2}
+      \renewcommand\vc{5}
+      \renewcommand\vg{5}
+      \renewcommand\vh{3}
     }
   }
 }
 
-\question
+\EXPR[0]\vd{\vb + (\va*\vc)}
+\MULTIPLY\va\vb\ve
+\EXPR[0]\vm{\vg + (\vh*\va)}
+\MULTIPLY\va\vg\vn
 
-\insertQR{}
+\question Given $U=$ universal set = $\lbrace x : x > 2, x < 6, x\in\mathbb{Q}\rbrace$, 
+$A=\lbrace x : \vc x^2 - \vd x + \ve = 0, x \in \mathbb{Q} \rbrace$ 
+and $B=\lbrace \vh x^2 - \vm x + \vn = 0, x\in\mathbb{Q} \rbrace$, answer the following questions
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part $\mathbb{Q}$ is the set of what - integers, real numbers, natural numbers or rational numbers?
 
-  \insertQR{}
   \begin{solution}
+    Rational numbers. The $\mathbb{Q}$ comes from the Italian word \textit{quoziente} - which means quotient
   \end{solution}
 
-  \part 
+  \part $A\cup B=?$
 
-  \insertQR{}
   \begin{solution}
+    If we solve the two quadratic equations given in the question, then we get 
+    \begin{align}
+      \vc x^2-\vd x +\ve = 0 &\implies (x-\va)\cdot(x-\frac\vb\vc)= 0 \nonumber\\
+      &\implies x = \va,\frac\vb\vc \\
+      \vh x^2-\vm x +\vn = 0 &\implies (x-\va)\cdot(x-\frac\vg\vh)= 0 \nonumber\\
+      &\implies x = \va,\frac\vg\vh
+    \end{align}
+    As all values of $x$ - $\va,\frac\vb\vc,\frac\vg\vh$ - $\in\mathbb{Q}$, we can finally say that 
+    $A = \lbrace \va,\frac\vb\vc\rbrace$ and $B=\lbrace \va,\frac\vg\vh\rbrace$
+
+    And therefore, 
+    \begin{align}
+      A\cup B &= \lbrace\va, \frac\vb\vc,\frac\vg\vh \rbrace
+    \end{align}
   \end{solution}
 
-  \part 
+  \part $A\cap B=?$
 
-  \insertQR{}
   \begin{solution}
+    Simple. $A\cap B = \lbrace\va\rbrace$
   \end{solution}
 
-  \part 
+  \part $A-B=?$
 
-  \insertQR{}
   \begin{solution}
+    $A-B=\lbrace x : x\in A, x\notin B \rbrace\implies A-B = \lbrace\frac\vb\vc\rbrace$
   \end{solution}
 
-  \part 
+  \part $B\cap A'=?$
 
-  \insertQR{}
   \begin{solution}
+    $B\cap A'$ is simply another way of writing $B-A$. 
+
+    And $B-A=\lbrace x:x\in B, x\notin A \rbrace = \lbrace\frac\vg\vh\rbrace$
   \end{solution}
 
 \end{parts}
