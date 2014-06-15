@@ -1,23 +1,19 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand\va{A}
   \renewcommand\vb{B}
   \renewcommand\vc{C}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand\va{F}
     \renewcommand\vb{G}
     \renewcommand\vc{H}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand\va{P}
       \renewcommand\vb{Q}
       \renewcommand\vc{R}
     }{
-      % variables 
       \renewcommand\va{X}
       \renewcommand\vb{Y}
       \renewcommand\vc{Z}
@@ -25,7 +21,7 @@
   }
 }
 
-\question For the following to be true
+\question[4] For the following to be true
 \[ (\va-\vb)\cap(\vc-\vb) = \va-(\vb\underline{\text{   ?    }}\vc ')\]
 , the $?$ should be replaced with which of $\cup$, $\cap$ or $-$ (minus)? 
 
@@ -39,7 +35,7 @@
 
 \watchout
 
-\begin{solution}
+\begin{solution}[\halfpage]
   \begin{align}
     (\va-\vb)\cap(\vc-\vb) &= \overbrace{(\va\cap\vb ')\cap(\vc\cap\vb ')}^{J-K=J\cap K'} \\
     &= \va\cap(\vb '\cap \vb')\cap\vc \\
