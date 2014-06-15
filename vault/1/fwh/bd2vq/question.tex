@@ -13,59 +13,69 @@
   }
 }
 
-\question
+\question This question is about our Solar System. If $S$ = \{Mercury, Venus, Mars\} = 
+set of planets smaller than the Earth, $G =$\{Jupiter, Saturn, Uranus, Neptune\} = set of gas planets,
+$M=$\{Mars, Jupiter, Saturn, Uranus, Neptune\} = planets with > 1 moon, $N=$\{Jupiter, Saturn, Uranus, Neptune\} 
+= planets with > 10 moons and $E=$\{Venus, Uranus\} = planets that rotate from east-to-west, then how 
+would you express the following in set notation \textbf{and} what would they evaluate to
+
+\textit{Pluto is now no longer considered a planet}
 
 \insertQR{}
 
-\watchout
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part Planets that rotate from west-to-east and are gas planets?  
 
   \insertQR{}
   \begin{solution}
+    What we are looking for is $E'\cap G$
+    \begin{align}
+      &\lbrace\text{Mercury, Earth, Mars,Jupiter, Saturn, Neptune}\rbrace \nonumber\\ 
+      &\cap\lbrace\text{Jupiter, Saturn, Uranus, Neptune}\rbrace=\lbrace\text{Jupiter, Saturn, Neptune}\rbrace
+    \end{align}
   \end{solution}
 
-  \part 
+  \part Planets that have more than one moon - but are smaller than the Earth?  
 
   \insertQR{}
   \begin{solution}
+    $M\cap S$. 
+    \begin{align}
+      &\lbrace\text{Mars, Jupiter, Saturn, Uranus, Neptune}\rbrace\nonumber \\
+      &\cap\lbrace\text{Mercury, Venus, Mars}\rbrace = \lbrace\text{Mars}\rbrace
+    \end{align}
   \end{solution}
 
-  \part 
+  \part Planets that have greater than 10 moons - but are not gas planets?
 
   \insertQR{}
   \begin{solution}
+    $N\cap G'$ 
+    \begin{align}
+      &\lbrace\text{Jupiter, Saturn, Uranus, Neptune}\rbrace\nonumber \\
+      &\cap\lbrace\text{Mercury, Venus, Earth, Mars}\rbrace = \phi 
+    \end{align}
   \end{solution}
 
-  \part 
+  \part Gas planets that rotate from east to west?  
 
   \insertQR{}
   \begin{solution}
+    $E\cap G$
+    \begin{align}
+      &\lbrace\text{Venus, Uranus}\rbrace \nonumber\\ 
+      &\cap\lbrace\text{Jupiter, Saturn, Uranus, Neptune}\rbrace = \lbrace\text{Uranus}\rbrace
+    \end{align}
   \end{solution}
 
-  \part 
+  \part Planets larger than the Earth?
 
   \insertQR{}
   \begin{solution}
+    $S' = \mathbb{U}-S$
+    \begin{align}
+      =\lbrace\text{Jupiter, Saturn, Uranus, Neptune}\rbrace
+    \end{align}
   \end{solution}
 
 \end{parts}
