@@ -1,61 +1,59 @@
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\va}{7}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\va}{5}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\va}{9}
     }{
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\va}{3}
     }
   }
 }
 
-\question[3] Suppose that you want to index fixed-length records, each $256$ bytes long. 
-The key of each record is $4$ bytes long. Records are stored on disk so that they do 
-not cross page boundaries. If you use a three-level $B+$ tree to index this file, with 
-the records themselves occupying the third level of the tree (records are in the node 
-of the tree), then what is the maximum number of records that you can index if the $B+$ 
-tree pointers are $4$ bytes long and the $B+$ tree nodes are $4096$ bytes long?
+\question Find the domain and range of the following 
+function assuming $x, f(x) \in \mathbf{R}$.
+\begin{align}
+  f(x) = \va\sqrt{x-x^2}
+\end{align}
 
+\begin{solution}
+  To find domain of $f(x)$, we must find all values of $x$ for
+  which $(x-x^2)$ is positive, since $f(x) \in \mathbf{R}$.
+  \begin{align}
+    x-x^2 \geq 0 \\
+    \Rightarrow \underbrace{(x)}_{T_1}\cdot\underbrace{(1-x)}_{T_2} \geq 0    
+  \end{align}
+  For the relation in $(2)$ to hold, both $T_1$ and $T_2$ must either
+  be simultaneously \textit{positive} or \textit{negative}.\\
+  Assuming $T_1$ and $T_2$ are both \textit{positive},
+  \begin{align}
+                &x \geq 0 \text{ and } 1 - x \geq 0 \\
+    \Rightarrow &x \geq 0 \text{ and } 1 \geq x \\
+    \Rightarrow &\mathbf{0 \leq x \leq 1}
+  \end{align}
+  Assuming $T_1$ and $T_2$ are both \textit{negative},
+  \begin{align}
+                &x \leq 0 \text{ and } 1 - x \leq 0 \\
+    \Rightarrow &x \leq 0 \text{ and } 1 \leq x \text{not possible}
+  \end{align}
+  
+  From the above analysis we can see that only valid condition is 
+  from statement $(5)$. Therefore domain of $f(x)$ is $\mathbf{[0,1]}$.\\
+  
+  The range of $f(x)$ is dependent on the product of $T_1$ and $T_2$. 
+  A few calculations show how the $T_1\cdot T_2$ changes with $x$,
+  \begin{align}
+    x=0          &\Rightarrow T_1\cdot T_2=\mathbf{0} \\
+    x=\frac{1}{4}&\Rightarrow T_1\cdot T_2=\dfrac{3}{16} \\
+    x=\frac{1}{2}&\Rightarrow T_1\cdot T_2=\mathbf{\dfrac{1}{4}} \\
+    x=\frac{3}{4}&\Rightarrow T_1\cdot T_2=\dfrac{3}{16} \\
+    x=1          &\Rightarrow T_1\cdot T_2=\mathbf{0}
+  \end{align}
+  For all values of $x$ in the domain, the product of $x$ and $(1-x)$ 
+  is highest at $x=\dfrac{1}{2}$ and lowest at $x=0,1$. Therefore, the
+  range of $f(x)$ is $\mathbf{\left[0, \dfrac{\va}{2}\right]}$.
 
-\begin{solution}[\fullpage]
 \end{solution}
 
