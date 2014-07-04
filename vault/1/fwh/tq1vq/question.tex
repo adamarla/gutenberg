@@ -1,72 +1,75 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
+  \renewcommand\va{2}
+  \renewcommand\vb{3}
+  \renewcommand\vc{(1,5),(3,7)}
+  \renewcommand\vd{1,3}
+  \renewcommand\vr{5,7}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
+    \renewcommand\va{3}
+    \renewcommand\vb{4}
+    \renewcommand\vc{(1,7),(2,8),(4,13)}
+    \renewcommand\vd{1,2,4}
+    \renewcommand\vr{7,8,13}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
+      \renewcommand\va{4}
+      \renewcommand\vb{3}
+      \renewcommand\vc{(1,7),(3,13)}
+      \renewcommand\vd{1,3}
+      \renewcommand\vr{7,13}
     }{
       % variables 
+      \renewcommand\va{3}
+      \renewcommand\vb{5}
+      \renewcommand\vc{(1,8),(5,16)}
+      \renewcommand\vd{1,5}
+      \renewcommand\vr{8,16}
     }
   }
 }
 
-\question
+\providecommand\tqvqfn[1]{
+  \MULTIPLY\va{#1}\vx
+  \FRACADD\vx{1}\vb{#1}\vy\vz
+  \left(#1,\WRITEFRAC\vy\vz \right),
+}
 
-\insertQR{}
+\question Given the following relation \textbf{R}
+\[ R = \lbrace (x,y) : y=\va x + \frac\vb{x} ; x,y\in\mathbb{N}\text{ and } x < 6 \rbrace \]
+
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part Write the relation in roster form - that is - as a set of ordered-pairs $R=\lbrace (a,b),(c,d)\ldots\rbrace$
 
-  \insertQR{}
   \begin{solution}
+    %\forcsvlist\tqvqwrt{1,2,3,4,5,6}
+    Had there been no constraint on $y$, then $R$ would have been 
+    \[
+      \left\{ \forcsvlist\tqvqfn{1,2,3,4,5,6} \right\}
+    \]
+    But there is a constraint on $y$ - namely, $y\in\mathbb{N}$. And hence, 
+    \[
+      R = \left\{ \vc \right\}
+    \]
   \end{solution}
 
-  \part 
+  \part What will be the domain of the relation? 
 
-  \insertQR{}
   \begin{solution}
+    The domain of $R$ is $=\lbrace \vd \rbrace$
   \end{solution}
 
-  \part 
+  \part $\ldots$ and what will be its range? 
 
-  \insertQR{}
   \begin{solution}
+    And the range is $= \lbrace \vr \rbrace$
   \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
 \end{parts}
 
