@@ -9,7 +9,7 @@
     \renewcommand\va{3}
     \renewcommand\vc{5}
     \renewcommand\vd{3}
-    \renewcommand\vk{3}
+    \renewcommand\vk{2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       \renewcommand\va{3}
@@ -27,18 +27,13 @@
 
 \POWER\vk{2}\vm
 \POWER\vd{2}\vn
-\SUBTRACT\vn\vm\vo
+\SUBTRACT\vm\vn\vo
 \MULTIPLY\va{4}\vp
-\FRACADD{1}{1}\vo\vp\vx\vy % b = vx / vy
+\FRACADD{\vc}{1}\vo\vp\vx\vy % b = vx / vy
 \MULTIPLY\vd{-1}\ve
 \ADD\ve\vk\vf
 \SUBTRACT\ve\vk\vg
 \MULTIPLY\va{2}\vh % roots = vf/vh, vg/vh
-
-\FRACMULT\vd{1}\vf\vh\p\q
-\FRACMINUS\vc{1}\p\q\a\b
-\FRACMULT\vd{1}\vg\vh\r\s
-\FRACMINUS\vc{1}\r\s\c\d
 
 \question Given two functions 
 \[
@@ -59,28 +54,14 @@
     Hence, the domain is $\left\{ \WRITEFRAC\vf\vh, \WRITEFRAC\vg\vh \right\}$
   \end{solution}
   
-  \part What would this same domain of equality be if $f(x) = f:\mathbb{R}\rightarrow\mathbb{N}$ (instead of 
-  $f:\mathbb{R}\rightarrow\mathbb{R}$) and $g(x)=g:\mathbb{R}\rightarrow\mathbb{N}$ (instead of 
-  $g:\mathbb{R}\rightarrow\mathbb{R}$)? Provide justification for credit.
+  \part What would the same "domain of equality" be if $f(x) = f:\mathbb{N}\rightarrow\mathbb{R}$ (instead of 
+  $f:\mathbb{R}\rightarrow\mathbb{R}$) and $g(x)=g:\mathbb{N}\rightarrow\mathbb{R}$ (instead of 
+  $g:\mathbb{R}\rightarrow\mathbb{R}$). Provide justification for credit.
   \begin{solution}
-    In part (a), when we said that $f(x) = f:\mathbb{R}\rightarrow\mathbb{R}$, what we were 
-    saying was that $x\in\mathbb{R}$ and $f(x)\in\mathbb{R}$. Same for $g(x)$. 
+    As neither of the two $x$'s we found in part (a) $\in\mathbb{N}$, there is no $x\in\mathbb{N}$ for which 
+    $f(x) = g(x)$.
 
-    Now, we are saying that $x\in\mathbb{R}$ \textbf{but} $f(x)$ and $g(x)\in\mathbb{N}$.
-
-    Which means, we must find $f(x)$ ($ = g(x)$) for the domain we found in part (a) and see if 
-    the either of the values $\in\mathbb{N}$
-
-    \begin{align}
-      f\left(\WRITEFRAC\vf\vh\right) &= g\left(\WRITEFRAC\vf\vh\right) = \WRITEFRAC\a\b \\
-      f\left(\WRITEFRAC\vg\vh\right) &= g\left(\WRITEFRAC\vg\vh\right) = \WRITEFRAC\c\d
-    \end{align}
-    As $f(x)$ and $g(x)\notin\mathbb{N}$ for either of the $x$ we found in part (a), all that we 
-    can say is that $x=\WRITEFRAC\vf\vh,\WRITEFRAC\vg\vh$ \textbf{cannot even be} in the domain of 
-    $f:\mathbb{R}\rightarrow\mathbb{N}$ or $g:\mathbb{R}\rightarrow\mathbb{N}$. 
-
-    And as $f(x)=g(x)$ \textbf{for only those two values} of $x$, the domain of equality 
-    for $f:\mathbb{R}\rightarrow\mathbb{N}$ and $g:\mathbb{R}\rightarrow\mathbb{N}$ is empty = $\phi$ 
+    Hence, in this case, the domain for which the two functions are equal is $=\lbrace\rbrace=\phi$
   \end{solution}
 
 \end{parts}
