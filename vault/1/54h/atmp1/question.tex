@@ -1,21 +1,87 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand\va{2}
+  \renewcommand\vc{1}
+  \renewcommand\vd{3}
+  \renewcommand\vk{2}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\va{3}
+    \renewcommand\vc{5}
+    \renewcommand\vd{3}
+    \renewcommand\vk{3}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\va{3}
+      \renewcommand\vc{2}
+      \renewcommand\vd{3}
+      \renewcommand\vk{2}
+    }{
+      \renewcommand\va{5}
+      \renewcommand\vc{4}
+      \renewcommand\vd{3}
+      \renewcommand\vk{2}
+    }
+  }
+}
 
-\question[3] The total number of \textit{bijective} functions from set A to itself 
-when A contains 106 elements is 
+\POWER\vk{2}\vm
+\POWER\vd{2}\vn
+\SUBTRACT\vn\vm\vo
+\MULTIPLY\va{4}\vp
+\FRACADD{1}{1}\vo\vp\vx\vy % b = vx / vy
+\MULTIPLY\vd{-1}\ve
+\ADD\ve\vk\vf
+\SUBTRACT\ve\vk\vg
+\MULTIPLY\va{2}\vh % roots = vf/vh, vg/vh
 
+\FRACMULT\vd{1}\vf\vh\p\q
+\FRACMINUS\vc{1}\p\q\a\b
+\FRACMULT\vd{1}\vg\vh\r\s
+\FRACMINUS\vc{1}\r\s\c\d
 
-\ifprintanswers
-	\marginnote{The question sounds way more complicated than it actually is. Basically
-	we need to count the number of \textit{one-to-one} functions $f(x)$ that are 
-	of the form $f:A\rightarrow A$}
-	\marginnote[0.5cm]{One possible $f(x)$ could be $f(a_n) = a_n$ where $a_n \in A$. Another could be
-	$f(a_n) = a_{n+1}$}
-\fi 
+\question Given two functions 
+\[
+  f:\mathbb{R}\rightarrow\mathbb{R} = \va x^2 -\frac\vx\vy \text{ and }
+  g:\mathbb{R}\rightarrow\mathbb{R} = \vc-\vd x 
+\]
 
-\begin{checkboxes}
-	\choice {$106$}
-	\choice {$106^2$}
-	\CorrectChoice {$106!$}
-	\choice {$2^{106}$}
-\end{checkboxes}
+\begin{parts}
+  \part Find the domain for which the two functions are equal
+  \begin{solution}
+    The two functions would be equal when 
+    \begin{align}
+      \va x^2 -\frac\vx\vy &= \vc-\vd x \\
+      \implies \va x^2 +\vd x -\left( \frac\vx\vy - \vc\right) &= 0 \\
+      \implies x &= \WRITEFRAC\vf\vh, \WRITEFRAC\vg\vh
+    \end{align}
+
+    Hence, the domain is $\left\{ \WRITEFRAC\vf\vh, \WRITEFRAC\vg\vh \right\}$
+  \end{solution}
+  
+  \part What would this same domain of equality be if $f(x) = f:\mathbb{R}\rightarrow\mathbb{N}$ (instead of 
+  $f:\mathbb{R}\rightarrow\mathbb{R}$) and $g(x)=g:\mathbb{R}\rightarrow\mathbb{N}$ (instead of 
+  $g:\mathbb{R}\rightarrow\mathbb{R}$)? Provide justification for credit.
+  \begin{solution}
+    In part (a), when we said that $f(x) = f:\mathbb{R}\rightarrow\mathbb{R}$, what we were 
+    saying was that $x\in\mathbb{R}$ and $f(x)\in\mathbb{R}$. Same for $g(x)$. 
+
+    Now, we are saying that $x\in\mathbb{R}$ \textbf{but} $f(x)$ and $g(x)\in\mathbb{N}$.
+
+    Which means, we must find $f(x)$ ($ = g(x)$) for the domain we found in part (a) and see if 
+    the either of the values $\in\mathbb{N}$
+
+    \begin{align}
+      f\left(\WRITEFRAC\vf\vh\right) &= g\left(\WRITEFRAC\vf\vh\right) = \WRITEFRAC\a\b \\
+      f\left(\WRITEFRAC\vg\vh\right) &= g\left(\WRITEFRAC\vg\vh\right) = \WRITEFRAC\c\d
+    \end{align}
+    As $f(x)$ and $g(x)\notin\mathbb{N}$ for either of the $x$ we found in part (a), all that we 
+    can say is that $x=\WRITEFRAC\vf\vh,\WRITEFRAC\vg\vh$ \textbf{cannot even be} in the domain of 
+    $f:\mathbb{R}\rightarrow\mathbb{N}$ or $g:\mathbb{R}\rightarrow\mathbb{N}$. 
+
+    And as $f(x)=g(x)$ \textbf{for only those two values} of $x$, the domain of equality 
+    for $f:\mathbb{R}\rightarrow\mathbb{N}$ and $g:\mathbb{R}\rightarrow\mathbb{N}$ is empty = $\phi$ 
+  \end{solution}
+
+\end{parts}
 
