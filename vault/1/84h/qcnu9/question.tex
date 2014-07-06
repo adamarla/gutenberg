@@ -1,15 +1,94 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{3}
+  \renewcommand{\vb}{2}
+  \renewcommand{\vc}{7}
+  \renewcommand{\vd}{4}
+  \renewcommand{\ve}{6}
+  \renewcommand{\vf}{0,1,2}
+  \renewcommand{\vg}{3,4,5,6,7}
+  \renewcommand{\vh}{4,6}
+  \renewcommand{\vi}{3,5,7}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\va}{2}
+    \renewcommand{\vb}{1}
+    \renewcommand{\vc}{5}
+    \renewcommand{\vd}{3}
+    \renewcommand{\ve}{5}
+    \renewcommand{\vf}{0,1} % = A
+    \renewcommand{\vg}{2,3,4,5} % = B
+    \renewcommand{\vh}{3,5} % B \cap C
+    \renewcommand{\vi}{2,4} % B - C 
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\va}{3}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{6}
+      \renewcommand{\vd}{5}
+      \renewcommand{\ve}{7}
+      \renewcommand{\vf}{0,1,2}
+      \renewcommand{\vg}{4,5,6}
+      \renewcommand{\vh}{5}
+      \renewcommand{\vi}{4,6}
+    }{
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{2}
+      \renewcommand{\vc}{6}
+      \renewcommand{\vd}{4}
+      \renewcommand{\ve}{5}
+      \renewcommand{\vf}{0,1}
+      \renewcommand{\vg}{3,4,5,6}
+      \renewcommand{\vh}{4,5}
+      \renewcommand{\vi}{3,6}
+    }
+  }
+}
 
-\question[2] If a relation $A$ between $x$ and $y$, $x,y \in\Re$ is defined if and only if 
-$x-y+\sqrt{2}$ is an irrational number, then $A$ is 
+\providecommand\qcnuwrt[1] { 
+  (\vz,#1),
+} 
 
+\providecommand\qcnucaploop[1]{
+  \renewcommand\vz{#1}
+  \expandafter\forcsvlist\expandafter\qcnuwrt\expandafter{\vh}
+}
 
-\ifprintanswers
-\fi 
+\providecommand\qcnuminuslp[1]{
+  \renewcommand\vz{#1}
+  \expandafter\forcsvlist\expandafter\qcnuwrt\expandafter{\vi}
+}
 
-\begin{checkboxes}
-	\choice{an equivalence relation}
-	\choice{a symmetric relation}
-	\choice{a transitive relation}
-	\CorrectChoice{none of these}
-\end{checkboxes}
+\question If $A = \{ x:x\in\mathbb{W}, x < \va\}, B = \{ x:x\in\mathbb{N}, \vb<x\leq\vc\}$ and 
+$C=\{\vd,\ve\}$, then find the following given that $\mathbb{W}$ is the set of whole numbers
+
+\watchout
+
+\begin{parts}
+  \part $A\times (B\cap C)$
+
+  \begin{explanation}
+    As per the definitions of $A,B$ and $C$, 
+    \begin{align}
+      A &= \{ \vf \} \\
+      B &= \{ \vg \} \text{ and } \\
+      C &= \{ \vd,\ve \} \\
+      \implies (B\cap C) &= \{ \vh \} \\
+      \text{ and }\therefore A\times (B\cap C) &= \{\expandafter\forcsvlist\expandafter\qcnucaploop\expandafter{\vf} \}
+    \end{align}
+  \end{explanation}
+
+  \part $A\times(B - C)$
+
+  \begin{explanation}
+    Using the same sets $A,B$ and $C$, we get 
+    \begin{align}
+      B - C &= \{ \vi \} \\
+      \text{ and }\therefore A\times (B\cup C) &=
+      \{ \expandafter\forcsvlist\expandafter\qcnuminuslp\expandafter{\vf} \}
+    \end{align}
+  \end{explanation}
+
+\end{parts}
+
