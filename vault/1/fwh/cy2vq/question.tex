@@ -1,23 +1,19 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand\va{5}
   \renewcommand\vb{2}
   \renewcommand\ve{1,2}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand\va{7}
     \renewcommand\vb{3}
     \renewcommand\ve{1,2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand\va{9}
       \renewcommand\vb{2}
       \renewcommand\ve{1,2,3,4}
     }{
-      % variables 
       \renewcommand\va{11}
       \renewcommand\vb{3}
       \renewcommand\ve{1,2,3}
@@ -33,10 +29,10 @@
 \watchout
 
 \begin{parts}
-  \part $\ldots$ find the domain 
+  \part[2] $\ldots$ find the domain 
 
   \insertQR{}
-  \begin{solution}
+\begin{solution}[\mcq]
     For $f(x) = \sqrt{\va x -\vb x^2} = \sqrt{x\cdot(\va - \vb x)}\in\mathbb{R}$ (in other words, for $f(x)$ 
     to be a real number), $x\cdot(\va - \vb x)\geq 0$. 
 
@@ -50,11 +46,11 @@
     Hence, the domain of $f(x)$ can only be $\left[ 0, \frac\va\vb \right]$
   \end{solution}
 
-  \part $\ldots$ find the domain \textbf{if} $f:\mathbb{N}\rightarrow\mathbb{R}$ \textbf{instead of} 
+  \part[2] $\ldots$ find the domain \textbf{if} $f:\mathbb{N}\rightarrow\mathbb{R}$ \textbf{instead of} 
    $f:\mathbb{R}\rightarrow\mathbb{R}$
 
   \insertQR{}
-  \begin{solution}
+\begin{solution}[\mcq]
     In part (a) $x$ in $f(x)$ was a real number. Now, we are saying that it can only be a natural number. 
 
     And hence, we are looking for $\left\{ x:x\in\mathbb{N}, x\geq 0, x\leq\frac\va\vb\right\}\implies x\in\left\{ \ve \right\}$. 
