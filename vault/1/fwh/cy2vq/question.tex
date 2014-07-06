@@ -1,71 +1,65 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
+  \renewcommand\va{5}
+  \renewcommand\vb{2}
+  \renewcommand\ve{1,2}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
+    \renewcommand\va{7}
+    \renewcommand\vb{3}
+    \renewcommand\ve{1,2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
+      \renewcommand\va{9}
+      \renewcommand\vb{2}
+      \renewcommand\ve{1,2,3,4}
     }{
       % variables 
+      \renewcommand\va{11}
+      \renewcommand\vb{3}
+      \renewcommand\ve{1,2,3}
     }
   }
 }
 
-\question
-
-\insertQR{}
+\question For the following function$\ldots$
+\[
+  f:\mathbb{R}\rightarrow\mathbb{R} = \sqrt{\va x -\vb x^2}
+\]
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
-\begin{solution}
-\end{solution}
-
 \begin{parts}
-  \part 
+  \part $\ldots$ find the domain 
 
   \insertQR{}
   \begin{solution}
+    For $f(x) = \sqrt{\va x -\vb x^2} = \sqrt{x\cdot(\va - \vb x)}\in\mathbb{R}$ (in other words, for $f(x)$ 
+    to be a real number), $x\cdot(\va - \vb x)\geq 0$. 
+
+    Which means, that either 
+    \begin{align}
+      &x\geq 0\textbf{ and }(\va-\vb x)\geq 0 \implies x\geq 0 \text{ and } x\leq\frac\va\vb \\
+      &\textbf{ OR } x\leq 0 \textbf{ and } (\va-\vb x)\leq 0 \nonumber\\
+      &\text{ not possible as } (\va -\vb x)\geq 0\text{ when } x \leq 0
+    \end{align}
+
+    Hence, the domain of $f(x)$ can only be $\left[ 0, \frac\va\vb \right]$
   \end{solution}
 
-  \part 
+  \part $\ldots$ find the domain \textbf{if} $f:\mathbb{N}\rightarrow\mathbb{R}$ \textbf{instead of} 
+   $f:\mathbb{R}\rightarrow\mathbb{R}$
 
   \insertQR{}
   \begin{solution}
-  \end{solution}
+    In part (a) $x$ in $f(x)$ was a real number. Now, we are saying that it can only be a natural number. 
 
-  \part 
+    And hence, we are looking for $\left\{ x:x\in\mathbb{N}, x\geq 0, x\leq\frac\va\vb\right\}\implies x\in\left\{ \ve \right\}$. 
 
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
+    The domain for $f:\mathbb{N}\rightarrow\mathbb{R}$ is therefore $\left\{ \ve \right\}$
   \end{solution}
 
 \end{parts}
