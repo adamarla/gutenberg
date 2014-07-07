@@ -1,28 +1,24 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\va}{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\va}{5}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\va}{2}
     }{
-      % variables 
       \renewcommand{\va}{9}
     }
   }
 }
 
-\question If $x = \va + \dfrac{f(x)}{\va + \frac{f(x)}{\va + ...}}$. What
+\question[3] If $x = \va + \dfrac{f(x)}{\va + \frac{f(x)}{\va + ...}}$. What
 is the domain of $f(x)$ for the range $f(x) < 0$.
 
 \watchout
 
-\begin{solution}
+\begin{solution}[\halfpage]
   To begin with, let us express $f(x)$ in terms of $x$. We can re-write
   the given equation as,
   
