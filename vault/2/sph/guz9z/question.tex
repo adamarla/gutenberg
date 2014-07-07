@@ -1,21 +1,17 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\va}{1}
   \renewcommand{\vb}{2}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\va}{3}
     \renewcommand{\vb}{4}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\va}{1}
       \renewcommand{\vb}{3}
     }{
-      % variables 
       \renewcommand{\va}{2}
       \renewcommand{\vb}{4}
     }
@@ -24,13 +20,13 @@
 \ADD\va\vb\mt
 \MULTIPLY\va\vb\lt
 
-\question The real-valued function $f(x) = \sqrt{x^2-\mt x+\lt}$ has
+\question[3] The real-valued function $f(x) = \sqrt{x^2-\mt x+\lt}$ has
 the following domain $\{x : x \leq a,\, x \geq b\}$. What are the 
 values of $a$ and $b$?
 
 \watchout
 
-\begin{solution}
+\begin{solution}[\halfpage]
 
   \begin{align}
     f(x) = \sqrt{\underbrace{ x^2 -\mt x + \lt}_{exp}}
