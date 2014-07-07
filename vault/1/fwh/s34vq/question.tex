@@ -1,26 +1,22 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand\va{3}
   \renewcommand\vb{4}
   \renewcommand\vc{7}
   \renewcommand\vd{2}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand\va{2}
     \renewcommand\vb{5}
     \renewcommand\vc{8}
     \renewcommand\vd{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand\va{3}
       \renewcommand\vb{7}
       \renewcommand\vc{9}
       \renewcommand\vd{2}
     }{
-      % variables 
       \renewcommand\va{4}
       \renewcommand\vb{11}
       \renewcommand\vc{13}
@@ -29,14 +25,14 @@
   }
 }
 
-\question Find the domain for the following function 
+\question[2] Find the domain for the following function 
 \[
   f:\mathbb{R}\rightarrow\mathbb{R} = \sqrt{\va x - \vb} + \sqrt{\vc - \vd x}
 \]
 
 \watchout
 
-\begin{solution}
+\begin{solution}[\mcq]
   For $f(x)\in\mathbb{R}$, the following conditions must be true \textbf{simultaneosuly}
   \begin{align}
     \va x - \vb \geq 0 &\implies x\geq\frac\vb\va \\
