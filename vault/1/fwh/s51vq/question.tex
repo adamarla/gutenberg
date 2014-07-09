@@ -1,72 +1,51 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
+  \renewcommand\va{2}
+  \renewcommand\vb{7}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
+    \renewcommand\va{3}
+    \renewcommand\vb{8}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
+      \renewcommand\va{4}
+      \renewcommand\vb{9}
     }{
       % variables 
+      \renewcommand\va{5}
+      \renewcommand\vb{11}
     }
   }
 }
 
-\question
+\ADD\va\vb\vc
+\MULTIPLY\va\vb\vd
+\ADD\va{1}\vx
+\ADD\vb{1}\vy
 
-\insertQR{}
+\question If $\lfloor x\rfloor$ is the greatest integer function, then for what values of $x$ would 
+the following hold 
+  \[
+    \lfloor x\rfloor^2-\vc\lfloor x\rfloor + \vd = 0
+  \]
+  Do not assume that the above is true for one or two values of $x$. The above is true for infinite values of $x$.
+
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}
+  Let $\lfloor x\rfloor = z$. Which means,
+  \begin{align}
+    z^2 -\vc z + \vd &= 0 \implies (z-\va)\cdot (z-\vb) = 0 \\
+    \implies z = \lfloor x\rfloor &= \va, \vb \\
+    \text{ Now, } \lfloor x\rfloor &= \va \implies \va\leq x <\vx \implies x\in [\va,\vx) \\
+    \text{ and, } \lfloor x\rfloor &= \vb \implies \vb\leq x <\vy \implies x\in [\vb,\vy)
+  \end{align}
+
+  And therefore, $x\in [\va,\vx)\cup [\vb,\vy)$
+
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
