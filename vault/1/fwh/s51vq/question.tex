@@ -1,20 +1,16 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand\va{2}
   \renewcommand\vb{7}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand\va{3}
     \renewcommand\vb{8}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand\va{4}
       \renewcommand\vb{9}
     }{
-      % variables 
       \renewcommand\va{5}
       \renewcommand\vb{11}
     }
@@ -26,7 +22,7 @@
 \ADD\va{1}\vx
 \ADD\vb{1}\vy
 
-\question If $\lfloor x\rfloor$ is the greatest integer function, then for what values of $x$ would 
+\question[4] If $\lfloor x\rfloor$ is the greatest integer function, then for what values of $x$ would 
 the following hold 
   \[
     \lfloor x\rfloor^2-\vc\lfloor x\rfloor + \vd = 0
@@ -36,7 +32,7 @@ the following hold
 
 \watchout
 
-\begin{solution}
+\begin{solution}[\halfpage]
   Let $\lfloor x\rfloor = z$. Which means,
   \begin{align}
     z^2 -\vc z + \vd &= 0 \implies (z-\va)\cdot (z-\vb) = 0 \\
