@@ -77,9 +77,11 @@
 
 \newbool{invault}
 \boolfalse{invault}
+
 \providecommand\compilevault{\setbool{invault}{true}}
 \providecommand\nocompilevault{\setbool{invault}{false}}
 
+% trim and notrim.jpg for mobile phones
 \newbool{trimjpg}
 \boolfalse{trimjpg}
 \providecommand\zealouscrop{\setbool{trimjpg}{true}}
@@ -241,10 +243,15 @@
   \setcounter{currSubpart}{0} % the breaks returned by Rails are 0-indexed
   \setbool{normalflow}{true}
 
-  \fontfamily{cmss}\selectfont\Large
   \fancyhead[C]{\Large\fontfamily{cmss}\selectfont{\documentTitle}}
 
-  \ifbool{invault}{\qformat{}}{\noqformat} % suppress question numbering in vault/ else default behaviour
+  \ifbool{invault}{
+    \qformat{}
+    \fontfamily{cmss}\selectfont\LARGE
+  }{
+    \noqformat % suppress question numbering in vault/ else default behaviour
+    \fontfamily{cmss}\selectfont\Large
+  } 
   \ifbool{trimjpg}{}{\fancyfoot[C]{\copyright\, www.gradians.com}}
 
   \marksnotpoints
