@@ -1,31 +1,35 @@
 
 
-\question[4] Evaluate $\limit{x}{\infty}\left( 1-\frac{1}{x}\right)^x$ using L'Hospital's Rule.
-\texttt{Hint:} $e^{\ln X} = X$. And therefore, $\limit{x}{\infty}f(x) = \limit{x}{\infty}e^{\ln f(x)} 
-= e^{\limit{x}{\infty}\ln f(x)}$
-
+\question[4] Evaluate the following limit using L'Hospital's Rule
+\[\limit{x}{\infty}\left( 1-\frac{1}{x}\right)^x\] 
 
 \ifprintanswers
 \fi 
 
 \begin{solution}[\halfpage]
-  You have been given a hint. So, lets use it to re-write the original limit 
+  Given that,  
+  \begin{align}
+    f(x) &= e^{\ln f(x)} \\
+    \limit{x}{\infty} f(x) &= \limit{x}{\infty} e^{\ln f(x)} = e^{\limit{x}{\infty}\ln f(x)}
+  \end{align} 
+
+  we can re-write the original expression as 
   \begin{align}
     \limit{x}{\infty}\left( 1-\frac{1}{x} \right)^x &= e^{\limit{x}{\infty}\ln\left( 1-\frac{1}{x} \right)^x}
   \end{align}
-  Now, 
+
+  which gives us 
   \begin{align}
     \limit{x}{\infty}\ln\left( 1-\frac{1}{x} \right)^x &= \limit{x}{\infty}x\cdot\ln\left( 1-\frac{1}{x}\right) \\
     &= \limit{x}{\infty}\dfrac{\ln\left(1-\frac{1}{x}\right)}{\frac{1}{x}}
   \end{align}
+
   Applying L'Hospital's Rule to the last equation, we get 
   \begin{align}
     \limit{x}{\infty}\dfrac{\ln\left(1-\frac{1}{x}\right)}{\frac{1}{x}} 
-    &= \limit{x}{\infty}\dfrac{\frac{1}{\left( 1-\frac{1}{x}\right)}\cdot\frac{1}{x^2}}{-\frac{1}{x^2}}
-    &= \limit{x}{\infty}-\dfrac{1}{\left( 1-\frac{1}{x}\right)} = -1
-  \end{align}
-  Back to (1), and we get 
-  \begin{align}
+    &= \limit{x}{\infty}\dfrac{\frac{1}{\left( 1-\frac{1}{x}\right)}\cdot\frac{1}{x^2}}{-\frac{1}{x^2}} \\
+    &= \limit{x}{\infty}-\dfrac{1}{\left( 1-\frac{1}{x}\right)} = -1 \\
+    \implies 
     \limit{x}{\infty}\left( 1-\frac{1}{x} \right)^x 
     &= e^{\limit{x}{\infty}\ln\left( 1-\frac{1}{x} \right)^x} = e^{-1} = \dfrac{1}{e}
   \end{align}
