@@ -1,52 +1,26 @@
 
+\renewcommand\va{60}
+\DIVIDE\va{3}\vb
+\SUBTRACT\va\vb\vc
+\ADD\va\vb\vd
 
-\question[4] Without resorting to calculator or tables calculate \\
-$\tan20^\circ\tan40^\circ\tan80^\circ$.
-
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
-\marginnote[200pt]
-           {$\tan 3\theta = \tan (\theta + 2\theta) \\
-            = \dfrac{\tan\theta +\tan 2\theta}
-                    {1 -\tan\theta\tan 2\theta} \\
-            = \dfrac{\tan\theta(1 - \tan ^2\theta) + 2\tan \theta}
-                    {(1 - \tan ^2\theta) - 2\tan ^2 \theta} \\
-            = \dfrac{3\tan\theta-\tan^3\theta}
-                    {1 - 3\tan^2\theta}$}
+\question[4] Without using a calculator or tables, find the value of the following
+\[ \tan\vb^\circ\cdot\tan\vc^\circ\cdot\tan\vd^\circ \]
 
 \begin{solution}[\halfpage]
-  Let $20^\circ=\theta$. Then $40^\circ$ can be written as $60^\circ -\theta$ and $80^\circ$ can be written as $60^\circ +\theta$. Now, we can rewrite the expression as,
+  If we let $\theta=\vb^\circ$, then note that 
   \begin{align}
-    P &= \tan\theta\tan(\dfrac{\pi}{3}-\theta)
-    	   \tan(\dfrac{\pi}{3}+\theta) \\
-      &= \tan\theta
-           \left(\dfrac{tan(\dfrac{\pi}{3})-\tan\theta}
-                       {1+\tan(\dfrac{\pi}{3})\tan\theta}\right)
-           \left(\dfrac{tan(\dfrac{\pi}{3})+\tan\theta}
-                       {1-\tan(\dfrac{\pi}{3})\tan\theta}\right) \\
-      &= \tan\theta
-           \left(\dfrac{tan^2(\dfrac{\pi}{3})-\tan^2\theta}
-                       {1-\tan^2(\dfrac{\pi}{3})\tan^2\theta}\right) \\
-      &= \tan\theta
-           \left(\dfrac{3-\tan^2\theta}
-                       {1-3\tan^2\theta}\right) \\
-      &= \dfrac{3\tan\theta-\tan^3\theta}{1-3\tan^2\theta} \\
-      &= \tan 3\theta \\
-      &= \sqrt{3}
+    \vc^\circ &= \va^\circ-\theta \\
+    \vd^\circ &= \va^\circ+\theta
+  \end{align}
+  And therefore, the original expression can be re-written as 
+  \begin{align}
+    &\tan\theta\cdot\tan(\va^\circ-\theta)\cdot\tan(\va^\circ+\theta) \\
+    &=\tan\theta\cdot\eTanOfDiff{\va^\circ}{\theta}\cdot\eTanOfSum{\va^\circ}{\theta} \\
+    &= \tan\theta\cdot\left[ \dfrac{\tan^2\va^\circ-\tan^2\theta}{1-\tan^2\va^\circ\cdot\tan^2\theta} \right] \\
+    &= \tan\theta\cdot\left( \dfrac{3-\tan^2\theta}{1-3\tan^2\theta}\right) 
+    = \underbrace{\dfrac{3\tan\theta-\tan^3\theta}{1-3\tan^2\theta}}_{=\tan 3\theta} \\
+    &= \tan{60^\circ}=\sqrt{3}
   \end{align}
   
 \end{solution}
