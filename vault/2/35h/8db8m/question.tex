@@ -1,26 +1,55 @@
 
-\renewcommand\va{60}
-\DIVIDE\va{3}\vb
-\SUBTRACT\va\vb\vc
-\ADD\va\vb\vd
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand\va{20}
+  \renewcommand\vg{1.732}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand\va{13}
+    \renewcommand\vg{0.809}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand\va{11}
+      \renewcommand\vg{0.649}
+    }{
+      % variables 
+      \renewcommand\va{18}
+      \renewcommand\vg{1.376}
+    }
+  }
+}
+\SUBTRACT{60}\va\vc
+\ADD{60}\va\vd
+\MULTIPLY{3}{\va}\vf
 
-\question[4] Without using a calculator or tables, find the value of the following
-\[ \tan\vb^\circ\cdot\tan\vc^\circ\cdot\tan\vd^\circ \]
+\question[4] Using just the values provide alongside, find the value of  
+\[ \tan\va^\circ\cdot\tan\vc^\circ\cdot\tan\vd^\circ \]
 
+\marginnote[-2cm]{
+  \\$\tan 27^\circ=0.5095$ \\
+  $\tan 33^\circ=0.649$ \\
+  $\tan 39^\circ=0.809$ \\
+  $\tan 54^\circ=1.376$ \\
+  $\tan 60^\circ=1.732$ \\ 
+  $\tan 64^\circ=2.05$ 
+}
+
+\watchout
 \begin{solution}[\halfpage]
-  If we let $\theta=\vb^\circ$, then note that 
+  If we let $\theta=\va^\circ$, then note that 
   \begin{align}
-    \vc^\circ &= \va^\circ-\theta \\
-    \vd^\circ &= \va^\circ+\theta
+    \vc^\circ &= 60^\circ-\theta \\
+    \vd^\circ &= 60^\circ+\theta
   \end{align}
   And therefore, the original expression can be re-written as 
   \begin{align}
-    &\tan\theta\cdot\tan(\va^\circ-\theta)\cdot\tan(\va^\circ+\theta) \\
-    &=\tan\theta\cdot\eTanOfDiff{\va^\circ}{\theta}\cdot\eTanOfSum{\va^\circ}{\theta} \\
-    &= \tan\theta\cdot\left[ \dfrac{\tan^2\va^\circ-\tan^2\theta}{1-\tan^2\va^\circ\cdot\tan^2\theta} \right] \\
+    &\tan\theta\cdot\tan(60^\circ-\theta)\cdot\tan(60^\circ+\theta) \\
+    &=\tan\theta\cdot\eTanOfDiff{60^\circ}{\theta}\cdot\eTanOfSum{60^\circ}{\theta} \\
+    &= \tan\theta\cdot\left[ \dfrac{\tan^260^\circ-\tan^2\theta}{1-\tan^260^\circ\cdot\tan^2\theta} \right] \\
     &= \tan\theta\cdot\left( \dfrac{3-\tan^2\theta}{1-3\tan^2\theta}\right) 
     = \underbrace{\dfrac{3\tan\theta-\tan^3\theta}{1-3\tan^2\theta}}_{=\tan 3\theta} \\
-    &= \tan{60^\circ}=\sqrt{3}
+    &= \tan{\vf^\circ}=\vg
   \end{align}
-  
 \end{solution}
