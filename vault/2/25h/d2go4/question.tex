@@ -1,36 +1,15 @@
 
 
-\question[2] Prove the following identity
-\begin{align}
-  \dfrac{1-\cos2\theta+\sin2\theta}
-    {1+\cos2\theta+\sin2\theta} = \tan\theta
-\end{align}
-
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
+\question[2] Prove the following 
+  \[ \dfrac{1-\cos 2\theta + \sin 2\theta}{1+\cos 2\theta + \sin 2\theta} = \tan\theta \]
 
 \begin{solution}[\halfpage]
-  Expand the Left Hand Side (L.H.S),
   \begin{align}
-    \text{L.H.S} &= \dfrac{1-\cos^2\theta+\sin^2\theta+
-                            2\sin\theta\cos\theta}
-                          {1+\cos^2\theta-\sin^2\theta+
-                            2\sin\theta\cos\theta} \\
-                 &= \dfrac{2\sin^2\theta+2\sin\theta\cos\theta}
-                            {2\cos^2\theta+2\sin\theta\cos\theta} \\
-                 &= \tan\theta
+    \dfrac{\overbrace{1-\cos 2\theta}^{=2\sin^2\theta} + \sin 2\theta}
+    {\underbrace{1+\cos 2\theta}_{2\cos^2\theta} + \sin 2\theta} &= 
+    \dfrac{2\sin^2\theta + 2\sin\theta\cos\theta}{2\cos^2\theta + 2\sin\theta\cos\theta} \\
+    &= \dfrac{2\sin\theta\cdot (\sin\theta + \cos\theta )}
+    {2\cos\theta\cdot (\cos\theta + \sin\theta)} \\
+    &= \tan\theta
   \end{align}
 \end{solution}
