@@ -1,72 +1,20 @@
 
-\ifnumequal{\value{rolldice}}{0}{
-  % variables 
-}{
-  \ifnumequal{\value{rolldice}}{1}{
-    % variables 
-  }{
-    \ifnumequal{\value{rolldice}}{2}{
-      % variables 
-    }{
-      % variables 
-    }
-  }
-}
-
-\question
+\question Using mathematical induction, show that $x^n-1$ is divisible by $x-1$ for all $n\in\mathbb{N}$
 
 \insertQR{}
 
-\watchout
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}
+  In plain English, we have to prove - or disprove - that the whole family of polynomials
+  - $x-1, x^2-1, x^3-1,\ldots, (x^{100}-1),\ldots$ is divisible by $x-1$. Now,
+
+  \begin{align}
+    \dfrac{x^n-1}{x-1} &= \dfrac{x^n - x^{n-1} + x^{n-1} - 1}{x-1} \\
+                       &= \dfrac{x^{n-1}\cdot (x-1) + (x^{n-1} - 1)}{x - 1} \\
+                       &= x^{n-1} + \dfrac{x^{n-1} - 1}{x-1}
+  \end{align}
+  
+  Which means, that \textbf{if} $(x^{n-1}-1)$ is divisible by $(x-1)$, \textbf{then} so is $(x^n-1)$. 
+  And it is easy to see that $(x^n-1)$ is divisible by $x-1$ for $n=1$. Which means, it must 
+  also be so for $n=2$ and therefore $n=3$ and so on. Hence proved.
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
