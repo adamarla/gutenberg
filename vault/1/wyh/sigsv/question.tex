@@ -1,72 +1,22 @@
 
-\ifnumequal{\value{rolldice}}{0}{
-  % variables 
-}{
-  \ifnumequal{\value{rolldice}}{1}{
-    % variables 
-  }{
-    \ifnumequal{\value{rolldice}}{2}{
-      % variables 
-    }{
-      % variables 
-    }
-  }
-}
-
-\question
+\question Prove - or disprove - the following proposition using mathematical induction 
+\[ x^{2n} - 1 \text{ is divisible by } x + 1,\, x\neq -1 \]
 
 \insertQR{}
 
-\watchout
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}
+  \textbf{If} $x^{2n}-1$ is divisible by $x-1$, \textbf{then} for the proposition to be 
+  true, it must also hold for $n+1$. 
+
+  \begin{align}
+    \dfrac{x^{2\cdot(n+1)}-1}{x+1} &= \overbrace{\dfrac{x^2\cdot x^{2n} - x^2 + x^2 - 1}{x+1}}^{\text{adding and subtracting $x^2$}} \\
+    &= \dfrac{x^2\cdot (x^{2n} - 1)}{x+1} + \underbrace{x-1}_{\frac{x^2-1}{x+1}}
+  \end{align}
+
+  As $(x^{2n}-1)$ is \textbf{assumed to be} divisible by $x+1$, 
+  \[ \dfrac{x^{2\cdot (n+1)} - 1}{x + 1} = x^2\cdot\underbrace{\dfrac{x^{2n}-1}{x+1}}_{Q(x)} + (x-1) = P(x)\]
+  where $Q(x)$ and $P(x)$ are some polynomials in $x\implies$ divisibility.
+
+  Moreover, for $n=1$, we can see that $x^{2\cdot 1}-1$ is divisible by $x+1$. Which means, 
+  the same would also be true for $n=2,3,4,\ldots,\infty$. Hence proved.
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
-
