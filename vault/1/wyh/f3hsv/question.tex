@@ -1,72 +1,29 @@
 
-\ifnumequal{\value{rolldice}}{0}{
-  % variables 
-}{
-  \ifnumequal{\value{rolldice}}{1}{
-    % variables 
-  }{
-    \ifnumequal{\value{rolldice}}{2}{
-      % variables 
-    }{
-      % variables 
-    }
-  }
-}
-
-\question
+\question Prove - or disprove - the following proposition using mathematical induction 
+\[ 2^n > n^2, n\geq 5, n\in\mathbb{N} \]
 
 \insertQR{}
 
-\watchout
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}
+  We can see that the proposition is true for $n=5 (2^5 > 5^2)$ and even for 
+  $n=6 (2^6 > 6^2)$. Hence, looks like the proposition could be true. 
+
+  But to be sure, we must prove that \textbf{if} $2^n > n^2, n\geq 5$, \textbf{then}
+  \begin{align}
+    2^{n+1} &> (n+1)^2\implies 2\cdot 2^n > (n^2 + 2n + 1) \\
+    2\cdot 2^n &> n^2\cdot\left[ 1 + \frac{2}{n} + \frac{1}{n^2} \right]
+  \end{align}
+
+  Now, we are assuming that $2^n > n^2$. \textbf{But} if $\left(1 + \frac{2}{n} + \frac{1}{n^2} \right) > 2$, 
+  \textbf{then it might happen that} $2\cdot 2^n < (n+1)^2$ for some $n$. 
+
+  \textbf{However,} if we can prove that $\left( 1 + \frac{2}{n} + \frac{1}{n^2}\right) < 2$ 
+  for all $n\geq 5$, then $2\cdot 2^n \nless(n+1)^2\implies 2^{n+1} > (n+1)^2$.
+
+  Turns out $\left( 1 + \frac{2}{n} + \frac{1}{n^2} \right)\rightarrow 1 < 2$ as $n$ increases.  
+  And even for $n=5,\, \left( 1 + \frac{2}{5} + \frac{1}{25}\right) < 2$. 
+
+  Hence, we can safely say that if $2^n > n^2$, then 
+  \[ 2^{n+1} = 2\cdot 2^n > n^2\cdot\left( 1 + \frac{2}{n} + \frac{1}{n^2}\right) = (n+1)^2 \]
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
