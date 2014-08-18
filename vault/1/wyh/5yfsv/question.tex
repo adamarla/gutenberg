@@ -1,72 +1,26 @@
 
-\ifnumequal{\value{rolldice}}{0}{
-  % variables 
-}{
-  \ifnumequal{\value{rolldice}}{1}{
-    % variables 
-  }{
-    \ifnumequal{\value{rolldice}}{2}{
-      % variables 
-    }{
-      % variables 
-    }
-  }
-}
-
-\question
+\question Prove - or disprove - the following proposition using mathematical induction
+\[ 1^2 + 3^2 + 5^2 + \cdots + (2n-1)^2 = \dfrac{1}{3}(4n^3-n) \]
 
 \insertQR{}
 
-\watchout
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}
+  \textbf{If} the proposition is true for all $n$, \textbf{then} the following should also 
+  be true
+  \begin{align}
+    &\underbrace{1^2+3^2+5^2+\cdots+(2n-1)^2}_{\frac{1}{3}(4n^3-n)} +
+    \lbrace 2\cdot(n+1)-1\rbrace^2 = \dfrac{1}{3}\left[4\cdot(n+1)^3-(n+1) \right] \\
+    &\implies \dfrac{1}{3}\left[ (4n^3-n) + 3\cdot\underbrace{(4n^2+4n+1)}_{(2n+1)^2} \right] = 
+    \dfrac{1}{3}\left[ 4\cdot (n^3+3n^2+3n+1) - n - 1\right] \\
+    &\dfrac{1}{3}\left[ 4n^3-n +12n^2+12n+3\right] =
+    \dfrac{1}{3}\left[ 4n^3 + 12n^2 + 12n + 4 -n - 1\right] \\
+    &\dfrac{1}{3}\left[ 4n^3+12n^2+11n + 3\right] = \dfrac{1}{3}\left[ 4n^3 + 12n^2 +11n + 3\right]
+  \end{align}
+
+  What we have proven is that if the proposition is true for $n$, then it is also 
+  true for $n+1$. 
+
+  Also, note that the proposition is true for $n=1\implies$ it is also true for $n=2, n=3$ 
+  and so on. Hence proved.
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
