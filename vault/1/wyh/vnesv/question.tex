@@ -1,72 +1,50 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
+  \renewcommand\va{7}
+  \renewcommand\vb{2}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
+    \renewcommand\va{5}
+    \renewcommand\vb{2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
+      \renewcommand\va{8}
+      \renewcommand\vb{3}
     }{
       % variables 
+      \renewcommand\va{9}
+      \renewcommand\vb{7}
     }
   }
 }
 
-\question
+\SUBTRACT\va\vb\vc
+
+\question Using mathematical induction, prove the following proposition
+\[ \va^n-\vb^n,\,n\in\mathbb{N} \text{ is a multiple of }\vc \]
 
 \insertQR{}
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}
+  It is easy to easy to see that the proposition is true for $n=1$. 
+  So, \textbf{let us assume} that it is true for some $n\implies\va^n-\vb^n=\vc m$.
+
+  Now, 
+  \begin{align}
+    \va^{n+1} - \vb^{n+1} &= (\vb + \vc)\cdot\va^n - \vb\cdot\vb^n \\
+    \implies\dfrac{\va^{n+1}-\vb^{n+1}}{\vc} &= \dfrac{\vc\cdot\va^n + \vb\cdot (\va^n - \vb^n)}{\vc} \\
+    &= \va^n +\vb\cdot\underbrace{\dfrac{\va^n-\vb^n}{\vc}}_{= m}
+  \end{align}
+
+  What the last equation says is \textbf{ that if} $\va^n-\vb^n$ is a multiple of $\vc$, then 
+  so is $\va^{n+1}-\vb^{n+1}$. 
+
+  And we have already seen that the proposition is true for $n=1$. It must therefore also 
+  be true for $n=2,3,\ldots,\infty$. Hence proved.
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
