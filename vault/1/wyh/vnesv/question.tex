@@ -1,20 +1,16 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand\va{7}
   \renewcommand\vb{2}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand\va{5}
     \renewcommand\vb{2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand\va{8}
       \renewcommand\vb{3}
     }{
-      % variables 
       \renewcommand\va{9}
       \renewcommand\vb{7}
     }
@@ -23,14 +19,14 @@
 
 \SUBTRACT\va\vb\vc
 
-\question Using mathematical induction, prove the following proposition
+\question[4] Using mathematical induction, prove the following proposition
 \[ \va^n-\vb^n,\,n\in\mathbb{N} \text{ is a multiple of }\vc \]
 
 \insertQR{}
 
 \watchout
 
-\begin{solution}
+\begin{solution}[\halfpage]
   It is easy to easy to see that the proposition is true for $n=1$. 
   So, \textbf{let us assume} that it is true for some $n\implies\va^n-\vb^n=\vc m$.
 
