@@ -5,31 +5,21 @@
 \insertQR{}
 
 \begin{solution}
-  Let $\frac{y}{x}=k$ so that $x-y = x\cdot(1-k)$ and $x^n-y^n=x^n\cdot (1-k^n)$.
+  It is easy to see that the proposition is true for $n=1$. So, let us assume 
+  that it is true for some $n\neq 1\implies (x^n-y^n) = (x-y)\cdot Q(x,y)$ - where
+  $(Q(x,y)$ is some polynomial is $x,y$.
 
-  Now, \textbf{if} $x^n-y^n$ is divisible by $x-y$, then 
+  Also, $x = y + (x-y)$. Which means, that 
   \begin{align}
-    \dfrac{x^n-y^n}{x-y} &= \dfrac{x^n\cdot(1-k^n)}{x(1-k)} = \dfrac{x^{n-1}\cdot(1-k^n)}{1-k} = Q(x)
-  \end{align}
-  , where $Q(x) = $ some polynomial in $x$. 
-  
-  In other words, if $Q(x)$ exists, then  $1-k^n$ is divisible by $1-k$. And that in turn implies 
-  that $x^n-y^n$ is divisible by $x-y$.
-
-  Hence, if we can prove that 
-  \[ 1-k^{n+1} \text{ is divisible by } 1-k \]
-  then we would have proven 
-  \[ \dfrac{x^{n+1} - y^{n+1}}{x-y} = \dfrac{x^n\cdot(1-k^{n+1})}{1-k} = P(x)\implies\text{ divisiblity }\]
-  where $P(x)$ is another polynomial - like $Q(x)$. Now, 
-  \begin{align}
-    \dfrac{1-k^{n+1}}{1-k} &= \dfrac{1-k + k - k^{n+1}}{1-k} \\
-      &= 1 + \dfrac{k\cdot (1-k^n)}{1-k}
+    \dfrac{x^{n+1}-y^{n+1}}{x-y} &= 
+    \dfrac{(y+(x-y))\cdot x^n - y\cdot y^n}{x-y} \\
+    &= x^n + y\cdot\underbrace{\left[ \dfrac{x^n-y^n}{x-y} \right]}_{=Q(x,y)}
   \end{align}
 
-  And \textbf{ because we assumed } that $1-k^n$ is divisible by $1-k$, \textbf{ then so would } $1-k^{n+1}$ be. 
-  \textbf{Morever,} we can see that $1-k^n$ is divisible by $1-k$ for $n=1\implies 1-k^n$ is also 
-  divisible by $1-k$ for $n=2,3,4,\ldots,\infty$. 
+  What the last equation says is \textbf{ that if }, $x^n-y^n$ is a multiple of $x-y$,
+  \textbf{ then so is} $x^{n+1}-y^{n+1}$.
 
-  And as $k=\frac{y}{x}$, the fact that $1-k^n$ is divisible by $1-k\implies x^n-y^n$ is divisible by $x-y$.
+  And given that the proposition is true for $n=1$, it must also be true 
+  for $n=2,3,4,\ldots,\infty$. Hence proved.
 \end{solution}
 
