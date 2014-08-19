@@ -1,72 +1,60 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
+  \renewcommand{\va}{5}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
+    \renewcommand{\va}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
+      \renewcommand{\va}{1}
     }{
       % variables 
+      \renewcommand{\va}{7}
     }
   }
 }
 
-\question
-
-\insertQR{}
+\question Solve the equation $z^2=\va \overline{z}$, where $z=x+iy$.
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}
+  Use the given condition,
+  \begin{align}
+    (x+iy)^2     &= \va(x-iy) \\
+    x^2-y^2+i2xy &= \va x-i\va y
+  \end{align}
+  Now compare the real and imaginary parts,
+  \begin{align}
+    x^2-y^2 &= \va x \\
+    2xy     &= -\va y
+  \end{align}
+  By solving equation (4) we get two conditions,
+  \begin{align}
+    2xy+\va y &= 0 \\
+    y(2x+\va) &= 0 \\
+    \Rightarrow y=0\;\text{OR}\; x &=-\dfrac{\va}{2}
+  \end{align}
+  Substitute first condition $y=0$ in equation (3),
+  \begin{align}
+    x^2-\va x &= 0\\
+    x(x-\va)  &= 0\\
+    \Rightarrow x=0\;\text{OR}\; x&=\va
+  \end{align}
+  Substitute second condition $x=-\dfrac{\va}{2}$ in equation (3),
+  \begin{align}
+    \left(\dfrac{\va}{2}\right)^2-y^2 &=-\va\left(\dfrac{\va}{2}\right)\\
+    y &=\pm\left(\dfrac{\sqrt{3}}{2}\right)\va
+  \end{align}
+  Combining the results from (7), (10) and (12), the solutions of
+  the given equation are:
+  \begin{align}
+    0+i0,\,\va+i0,\,
+    -\dfrac{\va}{2}+i\left(\dfrac{\sqrt{3}}{2}\right)\va,\,
+    -\dfrac{\va}{2}+i\left(\dfrac{\sqrt{3}}{2}\right)\va
+  \end{align}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
