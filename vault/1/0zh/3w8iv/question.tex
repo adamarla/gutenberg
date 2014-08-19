@@ -1,72 +1,52 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
+  \renewcommand{\va}{13}
+  \renewcommand{\vb}{24}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
+    \renewcommand{\va}{19}
+    \renewcommand{\vb}{36}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
+      \renewcommand{\va}{25}
+      \renewcommand{\vb}{48}
     }{
       % variables 
+      \renewcommand{\va}{31}
+      \renewcommand{\vb}{60}
     }
   }
 }
 
-\question
+\DIVIDE\vb{12}\vc
+\MULTIPLY{7}\vc\vd
 
-\insertQR{}
+\question Prove - or disprove - the following proposition using mathematical induction 
+\[ S(n) = \sum_{k=1}^n\dfrac{1}{n + k} > \dfrac\va\vb,\,n > 1,\, n\in\mathbb{N} \]
 
 \watchout
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
+\insertQR{}
 
 \begin{solution}
+  First, let us see whether the proposition is true for $n=2$.
+  \begin{align}
+    S(n) &= \dfrac{1}{2+1} + \dfrac{1}{2+2} = \dfrac{7}{12} = \dfrac\vd\vb > \dfrac\va\vb
+  \end{align}
+
+  It is and therefore \textbf{let us assume} that it also true for some $n\implies S(n) > \frac\va\vb$. 
+  Now, 
+  \begin{align}
+    S(n+1) &= \sum_{k=1}^{n+1}\dfrac{1}{(n+1) + k} \\ 
+           &= \underbrace{\dfrac{1}{n+2} + \dfrac{1}{n+3} + \ldots + \dfrac{1}{2n}}_{= S(n) - \frac{1}{n+1}} 
+           + \dfrac{1}{2n+1} + \dfrac{1}{2n + 2 } \\
+           &= S(n) + \dfrac{1}{2n+1} + \dfrac{1}{2\cdot (n+1)} - \dfrac{1}{n+1} \\
+           &= S(n) + \underbrace{\dfrac{1}{2\cdot(n+1)\cdot(2n+1)}}_{ > 0\text{ for } n\in\mathbb{N}}
+  \end{align}
+
+  Hence, if $S(n) > \frac\va\vb$, then so is $S(n+1)$. And as $S(2) > \frac\va\vb$, then so 
+  must $S(3), S(4),\ldots$. Hence proved.
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 
