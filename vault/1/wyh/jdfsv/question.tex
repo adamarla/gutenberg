@@ -1,72 +1,25 @@
 
-\ifnumequal{\value{rolldice}}{0}{
-  % variables 
-}{
-  \ifnumequal{\value{rolldice}}{1}{
-    % variables 
-  }{
-    \ifnumequal{\value{rolldice}}{2}{
-      % variables 
-    }{
-      % variables 
-    }
-  }
-}
-
-\question
+\question[4] Prove - or disprove - the following proposition
+\[ x^n - y^n \text{ is divisible by } x - y,\, x\neq y\]
 
 \insertQR{}
 
-\watchout
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}
+  It is easy to see that the proposition is true for $n=1$. So, let us assume 
+  that it is true for some $n\neq 1\implies (x^n-y^n) = (x-y)\cdot Q(x,y)$ - where
+  $(Q(x,y)$ is some polynomial is $x,y$.
+
+  Also, $x = y + (x-y)$. Which means, that 
+  \begin{align}
+    \dfrac{x^{n+1}-y^{n+1}}{x-y} &= 
+    \dfrac{(y+(x-y))\cdot x^n - y\cdot y^n}{x-y} \\
+    &= x^n + y\cdot\underbrace{\left[ \dfrac{x^n-y^n}{x-y} \right]}_{=Q(x,y)}
+  \end{align}
+
+  What the last equation says is \textbf{ that if }, $x^n-y^n$ is a multiple of $x-y$,
+  \textbf{ then so is} $x^{n+1}-y^{n+1}$.
+
+  And given that the proposition is true for $n=1$, it must also be true 
+  for $n=2,3,4,\ldots,\infty$. Hence proved.
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 

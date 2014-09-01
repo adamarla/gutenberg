@@ -1,0 +1,25 @@
+
+\question[4] Prove that the following equality holds for $n\in\mathbb{N}$ 
+\[ P(n) = \left(1-\frac{4}{1} \right)\cdot\left( 1-\frac{4}{9}\right)\cdot
+\left( 1-\frac{4}{25} \right)\cdots\left(1-\frac{4}{(2n-1)^2}\right) = \dfrac{1+2n}{1-2n}\] 
+
+\insertQR{}
+
+\begin{solution}[\halfpage]
+  The equality holds for $n=1$ as
+  \[ \left( 1-\frac{4}{2\times 1 - 1}\right) = -3 = \frac{1+2\times 1}{1-2\times 1} \]
+  
+  Hence, \textbf{let us assume} that $P(n) = \frac{1+2n}{1-2n}$ for some $n$. Which means, 
+  \begin{align}
+    P(n+1) &= \left( 1-\frac{4}{1} \right)\cdots\left(1-\frac{4}{(2n-1)^2} \right)\cdot\left( 1-\frac{4}{(2\cdot(n+1) - 1)^2} \right) \\
+           &= P(n)\cdot\left( 1-\frac{4}{(2n+1)^2}\right) \\
+           &= \dfrac{1+2n}{1-2n}\cdot\dfrac{4n^2+4n+1-4}{(2n+1)^2} \\
+           &= \overbrace{\dfrac{(2n+3)\cdot(2n-1)}{(1-2n)\cdot (2n+1)}}^{= 4n^2+4n-3} \\
+           &= -\dfrac{2n+3}{2n+1} = \underbrace{\dfrac{2\cdot(n+1) + 1}{1-2\cdot(n+1)}}_{P(j)\text{ if } j=n+1 }
+  \end{align}
+
+  What the above equations show is that if $P(n) = \frac{1+2n}{1-2n}$, then $P(n+1)$ can be got 
+  using the same formula using $j=n+1$. 
+
+  And as the equality holds for $n=1$, it must also hold for $n=2,3,4,\ldots,\infty$. Hence proved.
+\end{solution}

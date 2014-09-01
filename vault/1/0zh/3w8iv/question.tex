@@ -1,0 +1,48 @@
+
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\va}{13}
+  \renewcommand{\vb}{24}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\va}{19}
+    \renewcommand{\vb}{36}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\va}{25}
+      \renewcommand{\vb}{48}
+    }{
+      \renewcommand{\va}{31}
+      \renewcommand{\vb}{60}
+    }
+  }
+}
+
+\DIVIDE\vb{12}\vc
+\MULTIPLY{7}\vc\vd
+
+\question[4] Prove - or disprove - the following proposition using mathematical induction 
+\[ S(n) = \sum_{k=1}^n\dfrac{1}{n + k} > \dfrac\va\vb,\,n > 1,\, n\in\mathbb{N} \]
+
+\watchout
+\insertQR{}
+
+\begin{solution}[\halfpage]
+  First, let us see whether the proposition is true for $n=2$.
+  \begin{align}
+    S(n) &= \dfrac{1}{2+1} + \dfrac{1}{2+2} = \dfrac{7}{12} = \dfrac\vd\vb > \dfrac\va\vb
+  \end{align}
+
+  It is and therefore \textbf{let us assume} that it also true for some $n\implies S(n) > \frac\va\vb$. 
+  Now, 
+  \begin{align}
+    S(n+1) &= \sum_{k=1}^{n+1}\dfrac{1}{(n+1) + k} \\ 
+           &= \underbrace{\dfrac{1}{n+2} + \dfrac{1}{n+3} + \ldots + \dfrac{1}{2n}}_{= S(n) - \frac{1}{n+1}} 
+           + \dfrac{1}{2n+1} + \dfrac{1}{2n + 2 } \\
+           &= S(n) + \dfrac{1}{2n+1} + \dfrac{1}{2\cdot (n+1)} - \dfrac{1}{n+1} \\
+           &= S(n) + \underbrace{\dfrac{1}{2\cdot(n+1)\cdot(2n+1)}}_{ > 0\text{ for } n\in\mathbb{N}}
+  \end{align}
+
+  Hence, if $S(n) > \frac\va\vb$, then so is $S(n+1)$. And as $S(2) > \frac\va\vb$, then so 
+  must $S(3), S(4),\ldots$. Hence proved.
+\end{solution}
+

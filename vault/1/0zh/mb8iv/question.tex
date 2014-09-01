@@ -1,0 +1,33 @@
+
+\question[4] Show that the following is a natural number for all $n\in\mathbb{N}$
+  \[ \frac{n^5}{5} + \frac{n^3}{3} + \frac{7n}{15} \]
+
+\insertQR{}
+
+\begin{solution}[\fullpage]
+  If $P(n) = \frac{n^5}{5} + \frac{n^3}{3} + \frac{7n}{15}$, then it can be re-written as 
+  \[ P(n) = \frac{3n^5 + 5n^3 + 7n}{15} \]
+
+  And the fact that $P(n)\in\mathbb{N}$ is \textbf{just another way of saying} that 
+  \[ 3n^5 + 5n^3 + 7n \text{ is a multiple of } 15 \]
+
+  For $n=1$, the proposition is true - that is - $P(1)=\frac{15}{15} = 1\in\mathbb{N}$. 
+  So, let us assume that $3n^5+5n^3+7n$ is a multiple of $15$ for some $n$. 
+
+  Now,
+  \begin{align}
+    3\cdot (n+1)^5 &+ 5\cdot (n+1)^3 + 7\cdot (n+1) = \nonumber \\
+    & 3\cdot\left[ n^5 + 5n^4 + 10n^3 + 10n^2 + 5n + 1 \right] \nonumber \\ 
+    &+ 5\cdot\left[ n^3+3n^2+3n+ 1 \right] + 7\cdot\left[ n + 1\right] \\
+    &= \underbrace{(3n^5 + 5n^3 + 7n)}_{= 15k} \nonumber \\
+    &+ (15n^4 + 30n^3 + 30n^2 + 15n + 3) \nonumber \\
+    &+ (15n^2 + 15n + 5) + 7 \\
+    &= 15k + \underbrace{15\cdot ( n^4 + 2n^3 + 3n^2 + 2n + 1)}_{= 15j } \\
+    &= 15\cdot (j + k)\implies\text{ multiple of } 15  \\
+    &\implies P(n+1) = \frac{3\cdot(n+1)^5 + 5\cdot(n+1)^3 + 7\cdot(n+1)}{15}\in\mathbb{N}
+  \end{align} 
+
+  So, we have shown that if $P(n)\in\mathbb{N}$, then so is $P(n+1)$. And as $P(1)\in\mathbb{N}$, 
+  then so would $P(2), P(3),\ldots$. Hence proved.
+\end{solution}
+
