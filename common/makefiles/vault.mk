@@ -63,8 +63,7 @@ ifneq ($(version),)
 	@echo "[Installing]: version $(version)"
 	mkdir -p $(version)
 ifneq ($(type),full)
-	convert -trim pg-1.jpg $(type).jpg
-	mv $(type).jpg $(version)/
+	mv pg-1.jpg $(version)/$(type).jpg
 else
 	mv pg-*.jpg $(version)
 	mv $(STEM).pdf $(version)
