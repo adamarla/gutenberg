@@ -3,65 +3,56 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{\frac{15}{16}}
-  \renewcommand{\vbtwo}{\frac{17}{16}}
-  \renewcommand{\vbthree}{\frac{1}{16}}
-  \renewcommand{\vbfour}{16}
+  \renewcommand\va{15}
+  \renewcommand\vb{16}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{\frac{14}{15}}
-    \renewcommand{\vbtwo}{\frac{16}{15}}
-    \renewcommand{\vbthree}{\frac{1}{15}}
-    \renewcommand{\vbfour}{15}
+    \renewcommand\va{4}
+    \renewcommand\vb{7}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{\frac{12}{13}}
-      \renewcommand{\vbtwo}{\frac{14}{13}}
-      \renewcommand{\vbthree}{\frac{1}{13}}
-      \renewcommand{\vbfour}{13}
+      \renewcommand\va{3}
+      \renewcommand\vb{5}
     }{
       % variables 
+      \renewcommand\va{7}
+      \renewcommand\vb{11}
     }
   }
 }
 
-\question[5] $\int \dfrac{dx}{(x+3)^{\vbone}(x-4)^{\vbtwo}}$
+\FRACMINUS{2}{1}\va\vb\vc\vd
+\FRACMINUS{1}{1}\va\vb\ve\vf
+\FRACDIV{-1}{7}\ve\vf\vg\vh
+
+\question[5] Evaluate the following integral 
+    \[ \int\dfrac{dx}{(x+3)^{\frac\va\vb}\cdot (x-4)^{\frac\vc\vd}}\]
 
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}[\fullpage]
-\begin{align}
-I &=  \int \dfrac{dx}{(x+3)^{\vbone}(x-4)^{\vbtwo}}\\
-&\Rightarrow \int \dfrac{dx}{(\dfrac{x+3}{x-4})^{\vbone}(x-4)^{2}}
-\end{align}
- Now putting, t = $\dfrac{x+3}{x-4}$\\
- We get, dt = $\dfrac{-7}{(x-4)^{2}}$ dx\\  
-\\
-\begin{align}
-              I &= \dfrac{-1}{7} \int t ^{\vbone} dt \\
-  \Rightarrow I &= \dfrac{-\vbfour}{7} t^{\vbthree} + C 
-\end{align}
-Replacing t,
-\begin{align}
-&\Rightarrow \dfrac{-16}{7} \left(\dfrac{x+3}{x-4} \right)^ {\vbthree} + C
-\end{align}
+  Notice that $\frac\va\vb + \frac\vc\vd = 2$ (an integer). The sum of two fractions can be anything. 
+  But when it is an integer, perhaps something interesting is happening. So, let us work with this new fact. 
+
+  Rewriting the above integral as follows
+  \begin{align}
+    \int\dfrac{dx}{(x+3)^{\frac\va\vb}\cdot (x-4)^{\frac\vc\vd}} &= 
+    \int\dfrac{dx}{\left( \dfrac{x+3}{x-4} \right)^{\frac\va\vb}\cdot (x-4)^2}
+  \end{align}
+
+  Now, if we let $z=\dfrac{x+3}{x-4}$, then 
+  $\dfrac{d}{dx} z = \underbrace{\dfrac{(x-4)-(x+3)}{(x-4)^2}}_{\texttt{Quotient Rule}} = \dfrac{-7}{(x-4)^2}$
+
+  And therefore, our original integral can be re-written as 
+  \begin{align}
+    \int\dfrac{dx}{\left( \dfrac{x+3}{x-4} \right)^{\frac\va\vb}\cdot (x-4)^2} &= 
+    -\dfrac{1}{7}\int\dfrac{dz}{z^{\frac\va\vb}} = -\dfrac{1}{7}\int z^{-\frac\va\vb} dz \\
+    &= -\dfrac{1}{7}\cdot\left( \dfrac{z^{1-\frac\va\vb}}{1-\frac\va\vb}\right) + C \\
+    &= -\dfrac\vg\vh z^\frac\ve\vf + C  \\
+    &= -\dfrac\vg\vh\left( \dfrac{x+3}{x-4} \right)^\frac\ve\vf + C 
+  \end{align}
 \end{solution}
 
