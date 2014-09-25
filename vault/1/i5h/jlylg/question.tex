@@ -1,11 +1,43 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand\va{8}
+  \renewcommand\vb{5}
+  \renewcommand\vc{12}
+  \renewcommand\vd{9}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand\va{7}
+    \renewcommand\vb{2}
+    \renewcommand\vc{11}
+    \renewcommand\vd{6}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand\va{13}
+      \renewcommand\vb{9}
+      \renewcommand\vc{7}
+      \renewcommand\vd{3}
+    }{
+      % variables 
+      \renewcommand\va{15}
+      \renewcommand\vb{6}
+      \renewcommand\vc{21}
+      \renewcommand\vd{12}
+    }
+  }
+}
 
-\question[4] Prove that $\dfrac{\cos{8A}\cos{5A}-\cos{12A}\cos{9A}}{\sin{8A}\cos{5A}+\cos{12A}\sin{9A}} = \tan{4A}$
+\ADD\va\vb\ve
+\ADD\vc\vd\vf
+\SUBTRACT\vf\ve\vg
+\ABSVALUE\vg\vh
+\DIVIDE\vh{2}\vi
 
-
-\ifprintanswers
-\fi 
-
+\question[4] For what value of $N$ would the following hold 
+  \[\dfrac{\cos{\va A}\cos{\vb A}-\cos{\vc A}\cos{\vd A}}{\sin{\va A}\cos{\vb A}+\cos{\vc A}\sin{\vd A}} = \tan{\textbf{N}A}\]
+\watchout
 \begin{solution}[\halfpage]
 	Given that,
 	\begin{align}
@@ -13,11 +45,13 @@
 		\fProdSinCos{x}{y}
      \end{align}
      , one can \textit{re-write} the above expression as 
+   \[\dfrac{\frac{1}{2}\cdot\left[\eProdOfCos{\va A}{\vb A}\right]-\frac{1}{2}\cdot\left[\eProdOfCos{\vc A}{\vd A}\right]}
+     	{\frac{1}{2}\cdot\left[\eProdSinCos{\va A}{\vb A}\right] + \frac{1}{2}\cdot\left[\eProdSinCos{\vd A}{\vc A}\right]}\]
+
      \begin{align}
-     & \dfrac{\frac{1}{2}\cdot\left[\eProdOfCos{8A}{5A}\right]-\frac{1}{2}\cdot\left[\eProdOfCos{12A}{9A}\right]}
-     	{\frac{1}{2}\cdot\left[\eProdSinCos{8A}{5A}\right] + \frac{1}{2}\cdot\left[\eProdSinCos{9A}{12A}\right]} \\
-     	&= \dfrac{\cos 13A - \cos 21A}{\sin 13A + \sin 21A} \\
-     	&= \dfrac{\eDiffOfCos{13A}{21A}}{\eSumOfSin{13A}{21A}} \\
-     	&= \dfrac{\sin 4A}{\cos 4A} = \tan 4A
+     	&= \dfrac{\cos \ve A - \cos \vf A}{\sin \ve A + \sin \vf A} \\
+     	&= \dfrac{\eDiffOfCos{\ve A}{\vf A}}{\eSumOfSin{\ve A}{\vf A}} \\
+     	&= \dfrac{\sin \vi A}{\cos \vi A} = \tan \vi A
      \end{align}
+     Hence, $N = \vi$.
 \end{solution}
