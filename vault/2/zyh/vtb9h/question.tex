@@ -1,27 +1,23 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\va}{5}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\va}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\va}{1}
     }{
-      % variables 
       \renewcommand{\va}{7}
     }
   }
 }
 
-\question Solve the equation $z^2=\va \overline{z}$, where $z=x+iy$.
+\question[3] Solve the equation $z^2=\va \overline{z}$, where $z=x+iy$.
 
 \watchout
 
-\begin{solution}
+\begin{solution}[\fullpage]
   Use the given condition,
   \begin{align}
     (x+iy)^2     &= \va(x-iy) \\
