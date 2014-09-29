@@ -1,28 +1,24 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables
   \renewcommand{\va}{5}   
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\va}{3}   
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\va}{4}   
     }{
-      % variables 
       \renewcommand{\va}{7}   
     }
   }
 }
 
-\question If $z$ is a complex number such that $\dfrac{z-\va}{z+\va}$ 
+\question[4] If $z$ is a complex number such that $\dfrac{z-\va}{z+\va}$ 
 is purely imaginary $(z\neq - \va)$, then find $|z|$.
 
 \watchout
 
-\begin{solution}
+\begin{solution}[\fullpage]
   Let $z=x+iy$ where $x,y\in \mathbb{R}$. Then,
   \begin{align}
     \dfrac{z-\va}{z+\va} &= \dfrac{x+iy-\va}{x+iy+\va}\\
