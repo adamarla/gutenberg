@@ -1,32 +1,27 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand{\va}{m}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand{\va}{n}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand{\va}{a}
     }{
-      % variables 
       \renewcommand{\va}{b}
     }
   }
 }
 
-\question Prove that expression $E(\va) = \va^3+3\va^2+5\va+3$ 
+\question[3] Prove that expression $E(\va) = \va^3+3\va^2+5\va+3$ 
 is divisible by $3$ for any $\va\in\mathbb{N}$.
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
 \fi
 
-\begin{solution}
+\begin{solution}[\fullpage]
   For $\va=1$, the given expression appears as follows,
   \begin{align}
     E(1) &= 1^3 + 3\times 1^2 + 5\times 1 + 3 \\
