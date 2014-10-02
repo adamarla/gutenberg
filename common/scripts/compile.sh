@@ -37,6 +37,15 @@ function linode_server {
   fi
 } 
 
+function pdf_span { 
+  # call after make install. Assumes 0/document.pdf has been generated 
+  n=$(pdfinfo $(pwd)/0/document.pdf | grep Pages | sed -e 's/Pages:\s*//')
+  if [ -e $(pwd)/codex.cdx ]; then 
+    n=$(( n-1 )) # \begin{codex} adds an extra page of its own
+  fi
+  echo $n
+}
+
 function get_bank_path {
   if [ -e /opt/gutenberg/PRODUCTION_SERVER ] ; then
     echo "/home/gutenberg/bank"
