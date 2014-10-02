@@ -46,6 +46,11 @@ function pdf_span {
   echo $n
 }
 
+function relative_path { 
+  rp=$(pwd | sed -e 's/.*\/vault\///')
+  echo $rp
+} 
+
 function get_bank_path {
   if [ -e /opt/gutenberg/PRODUCTION_SERVER ] ; then
     echo "/home/gutenberg/bank"
@@ -182,12 +187,12 @@ function set_unset_flag {
 
 function create_blueprint_in_vault {
   if [ -e blueprint ] ; then return 0 ; fi
-  rel_path=$(pwd | sed -e 's/.*\/vault\///')
+  rp=$(relative_path)
 
   echo "author: Gradians.com" >> blueprint
   echo "title: Question Preview" >> blueprint
   echo "mode: vault" >> blueprint 
-  echo "import: $rel_path" >> blueprint
+  echo "import: $rp" >> blueprint
 }
 
 function set_question_version {
