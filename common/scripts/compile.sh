@@ -21,6 +21,22 @@ function in_vault {
   fi
 }
 
+function rails_server { 
+  if [ -e /opt/gutenberg/PRODUCTION_SERVER ] ; then
+    echo "www.gradians.com"
+  else
+    echo "http://localhost:3000"
+  fi
+} 
+
+function linode_server { 
+  if [ -e /opt/gutenberg/PRODUCTION_SERVER ] ; then
+    echo "http://109.74.201.62"
+  else
+    echo "http://localhost:8080"
+  fi
+} 
+
 function get_bank_path {
   if [ -e /opt/gutenberg/PRODUCTION_SERVER ] ; then
     echo "/home/gutenberg/bank"
@@ -100,8 +116,8 @@ function create_tex_from_skel {
   if [ $mode == "vault" ] ; then open_questions $file ; fi
   open_document $file
   if [ $mode == "vault" ] ; then 
-    sed -i "1i \\\\\\setDocumentTitle{Question Preview}" $file
-    sed -i "1i \\\\\\setAuthor[]{Gradians.com}{}" $file
+    #sed -i "1i \\\\\\setDocumentTitle{Question Preview}" $file
+    #sed -i "1i \\\\\\setAuthor[]{Gradians.com}{}" $file
     sed -i "1i \\\\\\printanswers" $file
   else 
     if [ $mode == "quiz" ] ; then 
