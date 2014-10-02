@@ -236,6 +236,17 @@ function create_jpegs {
   for f in `ls pg-*.jpg` ; do convert -trim $f -resize 600x800 $f ; done
 }
 
+function create_codex {
+  # $1 = version number = [0,3]
+  # To be called only as part of `make install version=N`.
+  # Assumes that pg-*.jpg have already been moved to the respective version folder
+  if [ -e $(pwd)/codex.cdx ] ; then 
+    n=$(pdfinfo $(pwd)/$1/document.pdf | grep Pages | sed -e 's/Pages:\s*//')
+    convert -trim $(pwd)/$1/pg-$n.jpg -resize 600x800 $(pwd)/$1/codex.jpg
+		#echo $n
+  fi
+} 
+
 function clean_tex {
   # 1. Remove any LaTeX comments 
   sed -i '/^%/d' $1
