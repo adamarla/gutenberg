@@ -39,7 +39,7 @@ ifneq ($(logfile),)
 			echo "------ [$$version] -> Done" >> $(logfile)
 endif
 		done
-		curl $$(rails_server)/update/span?q=$$(relative_path)\&n=$$(pdf_span)
+		curl --globoff $$(rails_server)/update/on_make?q=$$(relative_path)\&n=$$(pdf_span)\&$$(codex_params)
 	else
 		compile_tex $< $(logfile)
 	fi

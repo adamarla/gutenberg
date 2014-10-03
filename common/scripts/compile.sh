@@ -46,6 +46,21 @@ function pdf_span {
   echo $n
 }
 
+function codex_params { 
+  # call after make install. Assumes 0/document.pdf has been generated 
+  if [ -e $(pwd)/codex.cdx ]; then 
+    p=""
+    for j in 0 1 2 3 ; do 
+      x=$(sha1sum $j/codex.jpg)
+      y=${x:0:7}
+      p+="codex[$j]=$y&"
+    done 
+    echo $p
+  else
+    echo "codex=blank"
+  fi
+}
+
 function relative_path { 
   rp=$(pwd | sed -e 's/.*\/vault\///')
   echo $rp
