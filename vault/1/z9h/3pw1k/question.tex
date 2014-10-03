@@ -1,48 +1,46 @@
 
 
-
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{4}
-  \renewcommand{\vbtwo}{5}
-  \renewcommand{\vbthree}{3}
-  \renewcommand{\vbfour}{-3} % 1st soln
-  \renewcommand{\vbfive}{5} % 2nd soln
+  \renewcommand\va{4}
+  \renewcommand\vb{5}
+  \renewcommand\vc{3}
+  \renewcommand\vd{-3} % 1st soln
+  \renewcommand\ve{5} % 2nd soln
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{3}
-    \renewcommand{\vbtwo}{6}
-    \renewcommand{\vbthree}{2}
-    \renewcommand{\vbfour}{-4}
-    \renewcommand{\vbfive}{3}
+    \renewcommand\va{3}
+    \renewcommand\vb{6}
+    \renewcommand\vc{2}
+    \renewcommand\vd{-4}
+    \renewcommand\ve{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{2}
-      \renewcommand{\vbthree}{4}
-      \renewcommand{\vbfour}{-1}
-      \renewcommand{\vbfive}{8}
+      \renewcommand\va{5}
+      \renewcommand\vb{2}
+      \renewcommand\vc{4}
+      \renewcommand\vd{-1}
+      \renewcommand\ve{8}
     }{
       % variables 
-      \renewcommand{\vbone}{6}
-      \renewcommand{\vbtwo}{4}
-      \renewcommand{\vbthree}{4}
-      \renewcommand{\vbfour}{-2}
-      \renewcommand{\vbfive}{8}
+      \renewcommand\va{6}
+      \renewcommand\vb{4}
+      \renewcommand\vc{4}
+      \renewcommand\vd{-2}
+      \renewcommand\ve{8}
     }
   }
 }
 
-\question[3] Find the equation of the line - or lines - that pass through $A = (\vbone, -\vbtwo)$ 
-and for which $ON - OM = \vbthree$ - \asif
-
+\question[3] Find the equation of the lines that pass through $A = (\va, -\vb)$ 
+and for which $ON - OM = \vc$ - \asif
 
 \watchout[-10pt]
 
 \begin{marginfigure}
-  % 1. Definition of characteristic points
+  % 1. Definition of characteristic poinvq
 \figinit{pt}
 \def\Xmin{-16.00000}
 \def\Ymin{-31.99999}
@@ -106,26 +104,48 @@ and for which $ON - OM = \vbthree$ - \asif
 
 \end{marginfigure} 
 
-\gcalcexpr[0]\tp{\vbone - \vbtwo + \vbthree} 
-\gcalcexpr[0]\tq{\vbtwo * \vbthree}
-\gcalcexpr[0]\tr{\vbfour - \vbthree} % L1 x-intercept
-\gcalcexpr[0]\ts{\vbfive - \vbthree} % L2 x-intercept
+\ADD\vb\vc\vm
+\SUBTRACT\vm\va\vn
+\MULTIPLY\vb\vc\vo
+\SUBTRACT\vd\vc\vp
+\SUBTRACT\ve\vc\vq
+
+\LCM\vp\vd\vf
+\DIVIDE\vf\vp\vg
+\DIVIDE\vf\vd\vh
+\LCM\vq\ve\vi
+\DIVIDE\vi\vq\vj
+\DIVIDE\vi\ve\vk
 
 \begin{solution}[\halfpage]
-	If $ON = n$, then $OM = n - \vbthree$, and 
+	If $ON = y-$intercept $=n$ and $OM = x-$intercept =$n - \vc$,
+	then the equation of a line with these intercepts would be 
+
 	\begin{align}
-		\dfrac{x}{n-\vbthree} + \dfrac{y}{n} &= 1
+		\dfrac{x}{n-\vc} + \dfrac{y}{n} &= 1
 	\end{align}
-	And as the line passes through $A = (\vbone, -\vbtwo)$, 
+
+	Moreover, as the line passes through $A = (\va, -\vb)$,
+	the following would also be true
 	\begin{align}
-		\dfrac{\vbone}{n-\vbthree}-\dfrac{\vbtwo}{n} &= 1 \\
-		\Rightarrow n^2 - \tp n - \tq &= 0 \\
-		\Rightarrow n &= \vbfour,\, \vbfive
+		\dfrac{\va}{n-\vc}-\dfrac{\vb}{n} &= 1 \\
+		\Rightarrow n^2 + \vn n - \vo &= 0 \\
+		\Rightarrow n &= \vd,\, \ve
 	\end{align}
-	There would be two lines and their equations would be 
+
+	As there are two distinct values of $n = y-$intercept, 
+	there would be two distinct lines given by 
 	\begin{align}
-		\dfrac{x}{\tr} + \dfrac{y}{\vbfour} &= 1 \\
-		\dfrac{x}{\ts} + \dfrac{y}{\vbfive} &= 1
+		\frac{x}{\vp} + \frac{y}{\vd} &= 1 \Rightarrow \vg x + \vh y = \vf \\
+		\frac{x}{\vq} + \frac{y}{\ve} &= 1 \Rightarrow \vj x + \vk y = \vi
 	\end{align}
 \end{solution}
 
+\ifprintanswers
+  \begin{codex}
+    \begin{tabularx}{\textwidth}{X c X}
+      $L_1: \vg x + \vh y = \vf$ & \qquad &  
+      $L_2: \vj x + \vk y = \vi$ \\
+    \end{tabularx}
+  \end{codex}
+\fi
