@@ -14,7 +14,9 @@
 *.tex
 skel
 compiled
+codex.cdx
 
+!vault/common/instruction.tex
 !question.tex
 !shared/replacements/*/*.tex
 !shared/*.tex
@@ -49,3 +51,4 @@ cron-jobs/*
 !front-desk/previews/yardsticks/*/*.jpeg
 *.jpg
 *.zip
+!vault/common/hwi.jpeg

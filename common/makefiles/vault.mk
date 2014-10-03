@@ -39,6 +39,7 @@ ifneq ($(logfile),)
 			echo "------ [$$version] -> Done" >> $(logfile)
 endif
 		done
+		curl $$(rails_server)/update/span?q=$$(relative_path)\&n=$$(pdf_span)
 	else
 		compile_tex $< $(logfile)
 	fi
@@ -65,11 +66,13 @@ ifneq ($(version),)
 ifneq ($(type),full)
 	mv pg-1.jpg $(version)/$(type).jpg
 else
+	@. shell-script 
 	mv pg-*.jpg $(version)
 	mv $(STEM).pdf $(version)
+	create_codex $(version)
 endif
 endif
 
 clean : 
-	rm -f $(STEM)* pg-* skel compiled
+	rm -f $(STEM)* pg-* skel compiled codex.cdx
 	rm -rf 0 1 2 3

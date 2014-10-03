@@ -21,6 +21,36 @@ function in_vault {
   fi
 }
 
+function rails_server { 
+  if [ -e /opt/gutenberg/PRODUCTION_SERVER ] ; then
+    echo "www.gradians.com"
+  else
+    echo "http://localhost:3000"
+  fi
+} 
+
+function linode_server { 
+  if [ -e /opt/gutenberg/PRODUCTION_SERVER ] ; then
+    echo "http://109.74.201.62"
+  else
+    echo "http://localhost:8080"
+  fi
+} 
+
+function pdf_span { 
+  # call after make install. Assumes 0/document.pdf has been generated 
+  n=$(pdfinfo $(pwd)/0/document.pdf | grep Pages | sed -e 's/Pages:\s*//')
+  if [ -e $(pwd)/codex.cdx ]; then 
+    n=$(( n-1 )) # \begin{codex} adds an extra page of its own
+  fi
+  echo $n
+}
+
+function relative_path { 
+  rp=$(pwd | sed -e 's/.*\/vault\///')
+  echo $rp
+} 
+
 function get_bank_path {
   if [ -e /opt/gutenberg/PRODUCTION_SERVER ] ; then
     echo "/home/gutenberg/bank"
@@ -100,8 +130,8 @@ function create_tex_from_skel {
   if [ $mode == "vault" ] ; then open_questions $file ; fi
   open_document $file
   if [ $mode == "vault" ] ; then 
-    sed -i "1i \\\\\\setDocumentTitle{Question Preview}" $file
-    sed -i "1i \\\\\\setAuthor[]{Gradians.com}{}" $file
+    #sed -i "1i \\\\\\setDocumentTitle{Question Preview}" $file
+    sed -i "1i \\\\\\setAuthor[]{}{}" $file
     sed -i "1i \\\\\\printanswers" $file
   else 
     if [ $mode == "quiz" ] ; then 
@@ -157,12 +187,12 @@ function set_unset_flag {
 
 function create_blueprint_in_vault {
   if [ -e blueprint ] ; then return 0 ; fi
-  rel_path=$(pwd | sed -e 's/.*\/vault\///')
+  rp=$(relative_path)
 
   echo "author: Gradians.com" >> blueprint
   echo "title: Question Preview" >> blueprint
   echo "mode: vault" >> blueprint 
-  echo "import: $rel_path" >> blueprint
+  echo "import: $rp" >> blueprint
 }
 
 function set_question_version {
@@ -205,6 +235,17 @@ function create_jpegs {
   gs -dNOPAUSE -dBATCH -sDEVICE=jpeg -r300 -sOutputFile=pg-%d.jpg $1 
   for f in `ls pg-*.jpg` ; do convert -trim $f -resize 600x800 $f ; done
 }
+
+function create_codex {
+  # $1 = version number = [0,3]
+  # To be called only as part of `make install version=N`.
+  # Assumes that pg-*.jpg have already been moved to the respective version folder
+  if [ -e $(pwd)/codex.cdx ] ; then 
+    n=$(pdfinfo $(pwd)/$1/document.pdf | grep Pages | sed -e 's/Pages:\s*//')
+    convert -trim $(pwd)/$1/pg-$n.jpg -resize 600x800 $(pwd)/$1/codex.jpg
+		#echo $n
+  fi
+} 
 
 function clean_tex {
   # 1. Remove any LaTeX comments 
