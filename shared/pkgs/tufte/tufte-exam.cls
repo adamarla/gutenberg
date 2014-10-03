@@ -61,6 +61,8 @@
 \RequirePackage{g-calculus}
 \RequirePackage{g-vector}
 \RequirePackage{venndiagram}
+\RequirePackage{newfile} % for creating .codex from within codex environment 
+\RequirePackage{tabularx}
 
 %% Counters 
 \newcounter{currSubpart}
@@ -107,8 +109,19 @@
   \setbool{normalflow}{true}
 }
 
-%% Environment Re-definitions
+%% Environment Definitions and Re-definitions  
 \newenvironment{explanation}[1][\halfpage]{\begin{solution}[#1]}{\end{solution}}
+
+\newenvironment{codex}{
+  \ifbool{invault}{
+    \fancyfoot{}
+    \newpage
+    \newoutputstream{cdx}
+    \openoutputfile{codex.cdx}{cdx}
+    \closeoutputstream{cdx}
+  }{}
+  \fontfamily{cmss}\selectfont\LARGE
+}{}
 
 %% Utility macros
 \providecommand{\ud}{\, \mathrm{d}}
@@ -262,6 +275,7 @@
   \SolutionEmphasis{\normalsize}
   \shadedsolutions
 }
+
 
 \AfterEndEnvironment{questions}{
   \setcounter{numQuestions}{0}
