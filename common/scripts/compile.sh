@@ -131,7 +131,7 @@ function create_tex_from_skel {
   open_document $file
   if [ $mode == "vault" ] ; then 
     #sed -i "1i \\\\\\setDocumentTitle{Question Preview}" $file
-    #sed -i "1i \\\\\\setAuthor[]{Gradians.com}{}" $file
+    sed -i "1i \\\\\\setAuthor[]{}{}" $file
     sed -i "1i \\\\\\printanswers" $file
   else 
     if [ $mode == "quiz" ] ; then 
