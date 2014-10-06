@@ -1,54 +1,47 @@
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{5}
-  \renewcommand{\vbtwo}{2}
-  \renewcommand{\vbthree}{3}
-  \renewcommand{\vbfour}{240}
-  \renewcommand{\vbfive}{720}
-  \renewcommand{\vbsix}{1080}
-  \renewcommand{\vbseven}{40}
-  \renewcommand{\vbeight}{\dfrac{6400}{3}}
+  \renewcommand{\vj}{240}
+  \renewcommand{\vk}{720}
+  \renewcommand{\vl}{1080}
+  \renewcommand\vx{2}
+  \renewcommand\vy{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{5}
-    \renewcommand{\vbtwo}{1}
-    \renewcommand{\vbthree}{3}
-    \renewcommand{\vbfour}{15}
-    \renewcommand{\vbfive}{90}
-    \renewcommand{\vbsix}{270}
-    \renewcommand{\vbseven}{\dfrac{5}{4}}
-    \renewcommand{\vbeight}{\dfrac{25}{12}}
+    \renewcommand{\vj}{15}
+    \renewcommand{\vk}{90}
+    \renewcommand{\vl}{270}
+    \renewcommand\vx{1}
+    \renewcommand\vy{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{6}
-      \renewcommand{\vbtwo}{2}
-      \renewcommand{\vbthree}{3}
-      \renewcommand{\vbfour}{576}
-      \renewcommand{\vbfive}{2160}
-      \renewcommand{\vbsix}{4320}
-      \renewcommand{\vbseven}{\dfrac{384}{5}}
-      \renewcommand{\vbeight}{\dfrac{384\times 96}{5}}
+      \renewcommand{\vj}{576}
+      \renewcommand{\vk}{2160}
+      \renewcommand{\vl}{4320}
+      \renewcommand\vx{2}
+      \renewcommand\vy{3}
     }{
       % variables 
-      \renewcommand{\vbone}{6}
-      \renewcommand{\vbtwo}{1}
-      \renewcommand{\vbthree}{3}
-      \renewcommand{\vbfour}{18}
-      \renewcommand{\vbfive}{135}
-      \renewcommand{\vbsix}{540}
-      \renewcommand{\vbseven}{\dfrac{6}{5}}
-      \renewcommand{\vbeight}{\dfrac{9}{5}}
+      \renewcommand{\vj}{18}
+      \renewcommand{\vk}{135}
+      \renewcommand{\vl}{540}
+      \renewcommand\vx{1}
+      \renewcommand\vy{3}
     }
   }
 }
-\gcalcexpr[0]{\b}{(\vbfour * \vbfour * \vbfour)/(\vbsix * 2)}
+
+\DIVIDE\vk\vj\va
+\DIVIDE\vl\vk\vb
+\MULTIPLY\va{2}\vc
+\MULTIPLY\vb{3}\vd 
+\EXPR[0]\vn{(\vd - 2*\vc)/(\vd -\vc)}
+\SUBTRACT\vn{1}\vm
 
 \question[4] If the $2^{nd}$, $3^{rd}$ and $4^{th}$ terms in the expansion of 
-$(a+b)^n$ are $\vbfour$, $\vbfive$ and $\vbsix$ respectively, find the values
+$(a+b)^n$ are $\vj$, $\vk$ and $\vl$ respectively, find the values
 of $a$, $b$ and $n$.
-
 
 \watchout
 
@@ -57,35 +50,31 @@ of $a$, $b$ and $n$.
 \fi 
 
 \begin{solution}[\fullpage]
-  The expansion of the $r+1^{th}$ term $T_{r+1} = ^nC_r a^{n-r}b^r$, 
-  therefore,
+  If the $(r+1)^{th}$ term in the exapansion of $(a+b)^n$ is given by 
+  \[ T_{r+1} = \binom{n}{r} a^{n-r}\cdot b^r \]
+  then the second $(r=1)$, third $(r=2)$ and fourth $(r=3)$ terms would be 
   \begin{align}
-    T_2 = ^nC_1 a^{n-1} b   &= \vbfour \\
-    T_3 = ^nC_2 a^{n-2} b^2 &= \vbfive \\
-    T_4 = ^nC_3 a^{n-3} b^3 &= \vbsix
+    T_1 &= \binom{n}{1}a^{n-1} b = \vj\\
+    T_2 &= \binom{n}{2}a^{n-2} b^2 = \vk \\
+    T_3 &= \binom{n}{3}a^{n-3}\cdot b^3 = \vl \\
+    \implies\dfrac{T_2}{T_1} &= \dfrac{\frac{n\cdot(n-1)}{2} a^{n-2}\cdot b^2}{n\cdot a^{n-1}\cdot b} \nonumber\\
+          &= \left( \dfrac{n-1}{2} \right)\cdot\dfrac{b}{a} = \va \nonumber \\
+          &\implies \dfrac{b}{a} = \dfrac\vc{n-1} \\
+    \implies\dfrac{T_3}{T_2} &= \dfrac{\frac{n\cdot (n-1) \cdot(n-2)}{6} a^{n-3}\cdot b^3}{\frac{n\cdot(n-1)}{2} a^{n-2}\cdot b^2}\nonumber \\
+                  &=\left( \dfrac{n-2}{3} \right)\cdot\dfrac{b}{a} = \vb\nonumber \\
+                  &\implies \dfrac{b}{a} =  \dfrac\vd{n-2} 
   \end{align}
-  Take square of equation (1) and divide by equation (2),
+  What we have from (4) and (5) is that 
   \begin{align}
-    \dfrac{n}{n-1}\cdot a^n = \vbseven
-  \end{align}
-  Take cube of equation (1) and divide by equation (3),
-  \begin{align}
-    \dfrac{n^2}{(n-1)(n-2)}\cdot a^{2n} = \vbeight
-  \end{align}
-  Take square of equation (4) and divide it by equation (5)
-  to eliminate $a$ and get the value of $n$,
-  \begin{align}
-    \dfrac{n-2}{n-1} &= \dfrac{({\vbseven})^2}{\vbeight} \\
-                   n &= \vbone
-  \end{align}
-  Substitute $n$ in equation (4) to get $a$,
-  \begin{align}
-    \dfrac{\vbone}{\vbone -1} a^n &= \vbseven \\
-                              a   &= \vbtwo 
-  \end{align}
-  Substitute $a$ and $n$ in equation (1) to get $b$,
-  \begin{align}
-      ^5C_1 \vbtwo^{5-1} b &= \vbfour \\
-                         b &= \vbthree
+    \dfrac{b}{a} &= \dfrac\vc{n-1} = \dfrac\vd{n-2} \implies n = \vn \\
+    \text{ And therefore, }\dfrac{b}{a} &= \dfrac\vc{\vn-1} \\ 
+    \implies T_1 &= \vj = \binom\vn{1}\cdot a^{\vn-1}\cdot\left(\dfrac\vc\vm a\right) \\
+    \implies a = \vx\text{ and } b = \vy
   \end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $a=\vx, b=\vy, n=\vn$
+  \end{codex}
+\fi
