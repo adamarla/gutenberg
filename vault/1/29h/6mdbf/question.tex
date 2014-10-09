@@ -3,46 +3,57 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{6}
-  \renewcommand{\vbtwo}{30,240}
+  \renewcommand{\va}{6}
+  \renewcommand{\vb}{30,240}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{7}
-    \renewcommand{\vbtwo}{2,540,160}
+    \renewcommand{\va}{7}
+    \renewcommand{\vb}{282,240}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{25,200}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{3600}
     }{
       % variables 
-      \renewcommand{\vbone}{8}
-      \renewcommand{\vbtwo}{29,030,400}
+      \renewcommand{\va}{8}
+      \renewcommand{\vb}{2,903,040}
     }
   }
 }
 
-\gcalcexpr[0]\tp{\vbone + 2}
-\gcalcexpr[0]\tq{\tp - 1}
-\gcalcexpr[0]\tr{\tp - 2}
+\ADD\va{2}\vm
+\SUBTRACT\vm{1}\vn
 
-\question[3] At a buffet, guests get one type of soup and one type of dessert (or sweet-dish) alongwith $\vbone$ other 
-main-course dishes. In how many ways can the buffet table be laid if the soup and the dessert should \textit{never} be
-placed together? 
-
+\question[3] At a buffet, guests get one type of soup and one type of dessert along with $\va$ other 
+main-course dishes. In how many ways can the buffet table be laid if the soup and the 
+dessert should \textit{never} be placed together? 
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\mcq]
-  Including the soup and the dessert, there are a total of $\tp = (\vbone + 2)$ dishes. The number of ways, therefore, 
-  of laying the table in which the dessert and the soup are not placed together is 
+  In all, $\vm$ distinct items ($\va$ main + soup + dessert)  must be laid 
+  out on the buffet table.
+
+  Any layout in which the soup and the dessert are together is invalid. 
+  All other layouts are valid. Which means,
+  \[ N_{valid} = N_{all} - N_{invalid} \]
+
+  To count the \textbf{invalid} layouts, let us bundle the soup and the dessert together and see them as one unit. 
+  With this new unit, there would now be $M = (\vm - 2) + 1 = \vn$ distinct items to lay on the table. 
+
+  And hence, 
   \begin{align}
-  	N &= N_{\texttt{all possible ways}} - N_{\texttt{soup \& dessert together}} \\
-  	  &= \tp ! - 2!\cdot\left( \tp - 2 + 1\right) ! = \tp ! - 2!\cdot\tq ! = \tq !\cdot(\tp - 2) \\
-  	  &= \tp!\cdot\tr = \vbtwo
+    N_{all} &= \vm ! \\
+    N_{invalid} &= \vn ! \times 2! \\
+    \implies N_{valid} &= \vm !- \vn !\times 2! = \vn !\cdot (\vm - 2) \nonumber\\
+                       &= \vb
   \end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $N = \vn !\cdot \va = \vb$
+  \end{codex}
+\fi 
