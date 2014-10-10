@@ -4,26 +4,35 @@
 
 \insertQR{}
 
-\begin{solution}[\halfpage]
-  We can see that the proposition is true for $n=5 (2^5 > 5^2)$ and even for 
-  $n=6 (2^6 > 6^2)$. Hence, looks like the proposition could be true. 
+\FRACADD{1}{1}{2}{5}\va\vb
+\FRACADD\va\vb{1}{25}\vc\vd
 
-  But to be sure, we must prove that \textbf{if} $2^n > n^2, n\geq 5$, \textbf{then}
+\begin{solution}[\halfpage]
+  If we assume that  $2^n > n^2$ for some $n\geq 5$, then for the proposition to be true
   \begin{align}
     2^{n+1} &> (n+1)^2\implies 2\cdot 2^n > (n^2 + 2n + 1) \\
-    2\cdot 2^n &> n^2\cdot\left[ 1 + \frac{2}{n} + \frac{1}{n^2} \right]
+    \implies 2\cdot 2^n &> n^2\cdot\left[ 1 + \frac{2}{n} + \frac{1}{n^2} \right]
   \end{align}
 
-  Now, we are assuming that $2^n > n^2$. \textbf{But} if $\left(1 + \frac{2}{n} + \frac{1}{n^2} \right) > 2$, 
-  \textbf{then it might happen that} $2\cdot 2^n < (n+1)^2$ for some $n$. 
+  Lets focus on the new term 
+  \[\left[ 1+\frac{2}{n}+\frac{1}{n^2} \right]\]
 
-  \textbf{However,} if we can prove that $\left( 1 + \frac{2}{n} + \frac{1}{n^2}\right) < 2$ 
-  for all $n\geq 5$, then $2\cdot 2^n \nless(n+1)^2\implies 2^{n+1} > (n+1)^2$.
+  Notice that as $n$ increases, the value of this term decreases. 
 
-  Turns out $\left( 1 + \frac{2}{n} + \frac{1}{n^2} \right)\rightarrow 1 < 2$ as $n$ increases.  
-  And even for $n=5,\, \left( 1 + \frac{2}{5} + \frac{1}{25}\right) < 2$. 
+  Conversely, the largest value will be for the smallest $n$. 
 
-  Hence, we can safely say that if $2^n > n^2$, then 
-  \[ 2^{n+1} = 2\cdot 2^n > n^2\cdot\left( 1 + \frac{2}{n} + \frac{1}{n^2}\right) = (n+1)^2 \]
+  The smallest $n$ we are considering is $n=5$ for which the value of 
+  this term is $\dfrac\vc\vd < 2$.
+
+  And as we are \textbf{assuming} $2^n > n^2$ and as we have \textbf{just shown}
+  \[ 2 > \left[ 1 + \frac{2}{n} + \frac{1}{n^2} \right] \]
+  therefore we can now say that if $2^n > n^2$ for some $n\geq 5$, then
+  \[ \underbrace{2\cdot 2^n > n^2\cdot\left[ 1 + \frac{2}{n} + \frac{1}{n^2} \right]}
+  _{a\cdot b > c\cdot d\text{ if } a > c\text{ and } b > d }\]
+  \[\implies 2^{n+1} > (n+1)^2\]
+
+  Hence, if the proposition is true for some $n$, then it is also true for $n+1$. 
+  And for $n=5$, it is true $(2^5>5^2)\implies$ it is also true for $n=6,7,\ldots\infty$.
+  
 \end{solution}
 
