@@ -1,8 +1,30 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand\va{2}
+  \renewcommand\vb{5}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\va{3}
+    \renewcommand\vb{11}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\va{7}
+      \renewcommand\vb{4}
+    }{
+      \renewcommand\va{4}
+      \renewcommand\vb{15}
+    }
+  }
+}
 
-\question[2] For what value of $x$ are the tangents to the curves $y=x^2$ and 
-$y=x^3$ parallel?
 
+\question[2] For what value of $x$ are the tangents to the curves $y=\va x^2$ and 
+$y=\vb x^3$ parallel?
+
+\watchout
+
+\MULTIPLY\va{2}\vc
+\MULTIPLY\vb{3}\vd
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -92,8 +114,8 @@ $y=x^3$ parallel?
 \figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
 \figwritee 1:(5pt)     \figwriten 2:(5pt)
 \figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
-\figwriten 101: $y=x^2$(2)
-\figwrites 100: $y=x^3$(2)
+\figwriten 101: $y=\va x^2$(2)
+\figwrites 100: $y=\vb x^3$(2)
 }
 \centerline{\box\figBoxA}
 \end{marginfigure}
@@ -105,14 +127,19 @@ $y=x^3$ parallel?
 	two tangents in question are given by
 	
 	\begin{align}
-		\dfrac{\ud x^2}{\ud x} &= 2x \\
-		\text{ and } \dfrac{\ud x^3}{\ud x} &= 3x^2 
+		\dfrac{d}{dx}\va x^2 &= \vc x \\
+		\text{ and } \dfrac{d}{dx}\vb x^3 &= \vd x^2 
 	\end{align}
 	
 	Which means, they are parallel when 
 	\begin{align}
-		2x &= 3x^2 \\
-		\Rightarrow x\cdot(3x-2) &= 0 \\
-		\Rightarrow x &= 0, \frac{2}{3}
+		\vc x &= \vd x^2 \implies x\cdot (\vd x - \vc) = 0 \\
+		\implies x &= 0, \WRITEFRAC\vc\vd
 	\end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $x = 0,\,\WRITEFRAC\vc\vd$
+  \end{codex}
+\fi
