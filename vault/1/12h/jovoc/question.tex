@@ -1,10 +1,38 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand\va{10}
+  \renewcommand\vb{30}
+  \renewcommand\vc{20}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\va{14}
+    \renewcommand\vb{10}
+    \renewcommand\vc{15}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\va{7}
+      \renewcommand\vb{23}
+      \renewcommand\vc{18}
+    }{
+      \renewcommand\va{12}
+      \renewcommand\vb{15}
+      \renewcommand\vc{25}
+    }
+  }
+}
 
-\question[3] Suppose there are 2 bowls of cookies. Bowl A has 10 chocolate chip and 30 
-	plain cookies while Bowl B has 20 of each. Fred picks a bowl at random 
-	and from the picked bowl, a cookie at random. The cookie turns out to be 
-	a plain one. What is the probability that Fred picked it out of Bowl A?
+\question[3] Suppose there are 2 bowls of cookies. Bowl A has $\va$ choco-chip and $\vb$ 
+	hazelnut cookies while Bowl B has $\vc$ of each. Fred picks a bowl at random 
+	and from the picked bowl, a cookie at random. If the cookie turns out to be 
+	hazelnut, then what is the probability that it was picked from Bowl A?
 
+\watchout
+
+\ADD\va\vb\vd
+\FRACTIONSIMPLIFY\va\vd\vm\vn
+\FRACTIONSIMPLIFY\vb\vd\vp\vq
+\FRACADD\vp\vq{1}{2}\vj\vk
+\FRACDIV\vp\vq\vj\vk\vx\vy
 
 \ifprintanswers
 		\begin{tabular}{ccc}
@@ -12,21 +40,28 @@
 		   & A & B \\
 		   \midrule
 		   P(picks bowl $X$) & 0.5 & 0.5 \\
-		   P(plain cookie $\vert X$) & $\frac{30}{40} = 0.75$ & $\frac{20}{40} = 0.5$ \\
-		   P(chocolate cookie $\vert X$) & 0.25 & 0.5 \\
+		   P($H\vert X$) & $\frac\vp\vq$ & $\frac{1}{2}$ \\
+		   P($C\vert X$) & $\frac\vm\vn$ & $\frac{1}{2}$ \\
 		   \bottomrule
 		\end{tabular}
 \fi 
 
 \begin{solution}[\halfpage]
-	If $P(A)$ and $P(B)$ be the probabilities that a cookie is picked from bowls A and B respectively,
-	then the probability we need is, 
-	
+  If $A=$ event that a cookie is picked from bowl $A$, $B=$ event that a cookie 
+  is picked from bowl $B$ and $H=$ event that a hazelnut cookie is picked, then
+  what we need is 
+  \[ P(A\vert H) \]
+
 	\begin{align}
-		P(A \vert plain) &= \dfrac{P(plain \vert A) \cdot P(A)}{P(plain)} \\
-		  &= \dfrac{P(plain \vert A) \cdot P(A)}{P(plain \vert A)\cdot P(A) + P(plain \vert B)\cdot P(B)} \\
-		  &= \dfrac{0.75 \times 0.5}{0.75\times 0.5 + 0.5\times 0.5} \\
-		  &= 0.6
+		P(A \vert H) &= \dfrac{P(H \vert A) \cdot P(A)}{P(H)} \\
+		  &= \dfrac{P(H \vert A) \cdot P(A)}{P(H \vert A)\cdot P(A) + P(H \vert B)\cdot P(B)} \\
+      &= \dfrac{\frac\vp\vq\cdot\frac{1}{2}}{\frac\vp\vq\cdot\frac{1}{2}+\frac{1}{2}\cdot\frac{1}{2}} = \dfrac\vx\vy
 	\end{align}
 
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $P(A\vert H) = \dfrac\vx\vy$
+  \end{codex}
+\fi
