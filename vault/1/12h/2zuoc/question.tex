@@ -1,14 +1,72 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand\va{19}
+  \renewcommand\vb{10}
+  \renewcommand\vc{2}
+  \renewcommand\vd{18}
+  \renewcommand\ve{13}
+  \renewcommand\vf{38}
+  \renewcommand\vu{14}
+  \renewcommand\vv{6}
+  \renewcommand\vw{14}
+  \renewcommand\vx{20}
+  \renewcommand\vy{17}
+  \renewcommand\vz{29}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\va{15}
+    \renewcommand\vb{20}
+    \renewcommand\vc{14}
+    \renewcommand\vd{8}
+    \renewcommand\ve{15}
+    \renewcommand\vf{28}
+    \renewcommand\vu{16}
+    \renewcommand\vv{14}
+    \renewcommand\vw{17}
+    \renewcommand\vx{12}
+    \renewcommand\vy{12}
+    \renewcommand\vz{29}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\va{17}
+      \renewcommand\vb{8}
+      \renewcommand\vc{18}
+      \renewcommand\vd{18}
+      \renewcommand\ve{9}
+      \renewcommand\vf{30}
+      \renewcommand\vu{2}
+      \renewcommand\vv{10}
+      \renewcommand\vw{13}
+      \renewcommand\vx{10}
+      \renewcommand\vy{0}
+      \renewcommand\vz{65}
+    }{
+      \renewcommand\va{5}
+      \renewcommand\vb{4}
+      \renewcommand\vc{5}
+      \renewcommand\vd{18}
+      \renewcommand\ve{19}
+      \renewcommand\vf{49}
+      \renewcommand\vu{10}
+      \renewcommand\vv{10}
+      \renewcommand\vw{11}
+      \renewcommand\vx{16}
+      \renewcommand\vy{14}
+      \renewcommand\vz{39}
+    }
+  }
+}
 
 \question[5]
   My friend Fred has two urns - A and B - each containing colored balls. Urn A
-  has 30\% brown, 20\% yellow, 20\% red, 10\% green, 10\% orange and 10\% tan 
-  colored balls. Urn B has 13\% brown, 14\% yellow, 13\% red, 20\% green,
-  16\% orange and 20\% blue balls. 
+  has $\va\%$ brown, $\vb\%$ yellow, $\vc\%$ red, $\vd\%$ green, $\ve\%$ orange and $\vf\%$ tan 
+  colored balls. Urn B has $\vu\%$ brown, $\vv$\% yellow, $\vw$\% red, $\vx\%$ green,
+  $\vy\%$ orange and $\vz\%$ blue balls. 
   
   Fred draws one ball each from each of the urns. They turn out to be yellow and
   green. What is the probability that the yellow ball was from Urn A?
 
+\watchout
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -16,16 +74,26 @@
        \toprule
        & A & B \\
        \midrule
-       Brown & 0.3 & 0.13 \\
-       Yellow & 0.2 & 0.14 \\
-       Red & 0.2 & 0.13 \\
-       Green & 0.1 & 0.2 \\
-       Orange & 0.1 & 0.16 \\
-       Tan & 0.1 & 0 \\
-       Blue & 0 & 0.2 \\
+       Brown & $\va\%$ & $\vu\%$ \\
+       Yellow & $\vb\%$ & $\vv\%$ \\
+       Red & $\vc\%$ & $\vw\%$ \\
+       Green & $\vd\%$ & $\vx\%$ \\
+       Orange & $\ve\%$ & $\vy\%$ \\ 
+       Tan & $\vf\%$ & 0 \\
+       Blue & 0 & $\vz\%$\\
        \bottomrule
     \end{tabular}
 \fi 
+
+\FRACTIONSIMPLIFY\vd{100}\a\b % G_A
+\FRACTIONSIMPLIFY\vx{100}\c\d % G_B
+\FRACTIONSIMPLIFY\vb{100}\e\f % Y_A
+\FRACTIONSIMPLIFY\vv{100}\g\h % Y_B
+\FRACMULT\c\d\e\f\p\q
+\FRACMULT\a\b\g\h\r\s
+\FRACDIV\r\s\p\q\m\n
+\FRACADD\m\n{1}{1}\vj\vk
+\FRACDIV{1}{1}\vj\vk\vl\vm
 
 \begin{solution}[\fullpage]
    If $Y$ be the event that a yellow ball is drawn and $G$ the event that a green ball is 
@@ -44,9 +112,13 @@
    
    \begin{align}
        P(Y_A \vert YG) &= \dfrac{P(G_B)\cdot P(Y_A)}{P(G_B)\cdot P(Y_A) + P(G_A)\cdot P(Y_B)} \\
-                       &= \dfrac{0.2 \times 0.2}{0.2\times 0.2 + 0.1\times 0.14} \\
-                       &= 0.741 = 74.1\%
+                       &= \dfrac{\frac\vx{100}\cdot\frac\vb{100}}{\frac\vx{100}\cdot\frac\vb{100}+\frac\vd{100}\cdot\frac\vv{100}} 
+                       = \dfrac\vl\vm 
    \end{align}
-   That is an unexpectedly high probability. But it is what it is.
 \end{solution}
 
+\ifprintanswers
+  \begin{codex}
+    $P_{\text{reqd}} = \dfrac\vl\vm$
+  \end{codex}
+\fi

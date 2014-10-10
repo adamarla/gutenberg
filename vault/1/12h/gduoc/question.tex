@@ -1,31 +1,61 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand\vb{15}
+  \renewcommand\vf{65}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\vb{17}
+    \renewcommand\vf{54}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\vb{8}
+      \renewcommand\vf{34}
+    }{
+      \renewcommand\vb{12}
+      \renewcommand\vf{29}
+    }
+  }
+}
 
-\question[2] A school offers two courses to its students - French and Computer Science. 
-15\% of the students take both while 65\% take just the French class. What then is
+\ADD\vb\vf\vx
+\DIVIDE\vb\vx\vp
+\MULTIPLY\vp{100}\vq
+\ROUND[2]\vq\vr
+
+\question[2] A school offers just two courses to its students - French and Computer Science. 
+If $\vb$\% of the students take both while $\vf$\% take just French, then what is
 the probability that a randomly picked student is taking Computer Science given
 that she is already taking French?
 
-
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
+  \begin{marginfigure}
+    \begin{venndiagram2sets}[labelA=$F$,labelB=$C$,labelOnlyA=$\vf\%$, labelAB=$\vb\%$]
+      \fillA
+    \end{venndiagram2sets}
+  \end{marginfigure}
+\fi
+
+\watchout
 
 \begin{solution}[\halfpage]
-   If $P(F)$ be the probability that a students takes French and $P(C)$ the 
-   probability that she takes Computer Science, then we are looking to find 
-   $P(C \vert F)$, which we know is given by
-   
-   \begin{align}
-      P(C \vert F) &= \dfrac{P(C \cap F)}{P(F)}
-   \end{align}
-   
-   But the number of students taking French is made up of two kinds of students - 
-   those taking just French and those studying both. Which means, 
-   
-   \begin{align}
-       P(F) &= \dfrac{N_{\texttt{French-only}} + N_{\texttt{Both}}}{N_{\texttt{Total}}} \\ 
-            &= \dfrac{N_{\texttt{French-only}}}{N_{\texttt{Total}}} + \dfrac{N_{\texttt{Both}}}{N_{\texttt{Total}}} \\
-            &= 65\% + 15\% = 80\% = 0.8 \\
-      \text{And therefore, } P(C\vert F) &= \dfrac{P(C \cap F)}{P(F)} = \dfrac{0.15}{0.8} = \dfrac{3}{16}
-   \end{align}
+  In the Venn diagram alongside, $F$ is the set of students taking French and $C$ is 
+  the set of students Computer Science.
+
+  Now, if $P(F)$ be the probability that a student takes French, then 
+  \begin{align}
+    P(F) &= P(\text{only French}) + P(\text{both}) \\
+         &= \vf\% + \vb\% = \vx\%
+  \end{align}
+
+  What we are looking for, however, is $P(C\vert F)$. And this is given by
+  \begin{align}
+    P(C\vert F) &= \dfrac{P(C\cap F)}{P(F)} = \dfrac{\vb\%}{\vx\%} = \vr\% 
+  \end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $P(C\vert F) = \WRITEFRAC\vb\vx = \vr\%$
+  \end{codex}
+\fi 
+

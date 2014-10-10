@@ -2,68 +2,68 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{22}
-  \renewcommand{\vbtwo}{43}
-  \renewcommand{\vbthree}{11}
-  \renewcommand{\vbfour}{3}
-  \renewcommand{\vbfive}{2}
-  \renewcommand{\vbsix}{441}
-  \renewcommand{\vbseven}{10000}
-  \renewcommand{\vbeight}{4.41}
-  \renewcommand{\vbnine}{242}
-  \renewcommand{\vbten}{441}
+  \renewcommand{\va}{22}
+  \renewcommand{\vb}{43}
+  \renewcommand{\vc}{11}
+  \renewcommand{\vd}{3}
+  \renewcommand{\ve}{2}
+  \renewcommand{\vf}{441}
+  \renewcommand{\vg}{10000}
+  \renewcommand{\vh}{4.41}
+  \renewcommand{\vi}{242}
+  \renewcommand{\vj}{441}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{15}
-    \renewcommand{\vbtwo}{39}
-    \renewcommand{\vbthree}{12}
-    \renewcommand{\vbfour}{4}
-    \renewcommand{\vbfive}{3}
-    \renewcommand{\vbsix}{237}
-    \renewcommand{\vbseven}{5000}
-    \renewcommand{\vbeight}{4.74}
-    \renewcommand{\vbnine}{30}
-    \renewcommand{\vbten}{79}
+    \renewcommand{\va}{15}
+    \renewcommand{\vb}{39}
+    \renewcommand{\vc}{12}
+    \renewcommand{\vd}{4}
+    \renewcommand{\ve}{3}
+    \renewcommand{\vf}{237}
+    \renewcommand{\vg}{5000}
+    \renewcommand{\vh}{4.74}
+    \renewcommand{\vi}{30}
+    \renewcommand{\vj}{79}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{18}
-      \renewcommand{\vbtwo}{45}
-      \renewcommand{\vbthree}{16}
-      \renewcommand{\vbfour}{5}
-      \renewcommand{\vbfive}{2}
-      \renewcommand{\vbsix}{1019}
-      \renewcommand{\vbseven}{10000}
-      \renewcommand{\vbeight}{10.19}
-      \renewcommand{\vbnine}{720}
-      \renewcommand{\vbten}{1019}
+      \renewcommand{\va}{18}
+      \renewcommand{\vb}{45}
+      \renewcommand{\vc}{16}
+      \renewcommand{\vd}{5}
+      \renewcommand{\ve}{2}
+      \renewcommand{\vf}{1019}
+      \renewcommand{\vg}{10000}
+      \renewcommand{\vh}{10.19}
+      \renewcommand{\vi}{720}
+      \renewcommand{\vj}{1019}
     }{
       % variables 
-      \renewcommand{\vbone}{24}
-      \renewcommand{\vbtwo}{38}
-      \renewcommand{\vbthree}{16}
-      \renewcommand{\vbfour}{4}
-      \renewcommand{\vbfive}{3}
-      \renewcommand{\vbsix}{13}
-      \renewcommand{\vbseven}{200}
-      \renewcommand{\vbeight}{6.5}
-      \renewcommand{\vbnine}{192}
-      \renewcommand{\vbten}{325}
+      \renewcommand{\va}{24}
+      \renewcommand{\vb}{38}
+      \renewcommand{\vc}{16}
+      \renewcommand{\vd}{4}
+      \renewcommand{\ve}{3}
+      \renewcommand{\vf}{13}
+      \renewcommand{\vg}{200}
+      \renewcommand{\vh}{6.5}
+      \renewcommand{\vi}{192}
+      \renewcommand{\vj}{325}
     }
   }
 }
 
-\FRACADD\vbone{100}\vbtwo{100}\a\b
+\FRACADD\va{100}\vb{100}\a\b
 \FRACMINUS{1}{1}\a\b\c\d
 
 \question 
 An insurance company charges younger drivers a higher premium because younger drivers 
 as a group tend to have more accidents. The company has 3 age groups - Group A includes those
-under 25 years of age, \vbone\% of all its policyholders. Group B includes those that are 25-39 years
-old,  \vbtwo\% of its policyholders. Group C includes those over 40. Company 
-records show that in any given \textit{1 year} period, \vbthree\% of its Group A policyholders have 
-an accident. Figures for Groups B and C are \vbfour\% and \vbfive\% respectively
+under 25 years of age, \va\% of all its policyholders. Group B includes those that are 25-39 years
+old,  \vb\% of its policyholders. Group C includes those over 40. Company 
+records show that in any given \textit{1 year} period, \vc\% of its Group A policyholders have 
+an accident. Figures for Groups B and C are \vd\% and \ve\% respectively
 
 \watchout[-80pt]
 
@@ -80,10 +80,10 @@ an accident. Figures for Groups B and C are \vbfour\% and \vbfive\% respectively
   	     \toprule
   		 & A & B & C \\
   		 \midrule
-  		 P($x \in X$) & $\WRITEFRAC\vbone{100}$ & $\WRITEFRAC\vbtwo{100}$ & $\WRITEFRAC\c\d$ \\
-  		 P(accident $\vert x \in X$) & $\WRITEFRAC\vbthree{100}$ & 
-                                     $\WRITEFRAC\vbfour{100}$ & 
-                                     $\WRITEFRAC\vbfive{100}$ \\
+  		 P($x \in X$) & $\WRITEFRAC\va{100}$ & $\WRITEFRAC\vb{100}$ & $\WRITEFRAC\c\d$ \\
+  		 P(accident $\vert x \in X$) & $\WRITEFRAC\vc{100}$ & 
+                                     $\WRITEFRAC\vd{100}$ & 
+                                     $\WRITEFRAC\ve{100}$ \\
   		 \bottomrule
   		\end{tabular}
   \fi
@@ -92,16 +92,16 @@ an accident. Figures for Groups B and C are \vbfour\% and \vbfive\% respectively
   	, $P(C)$ the probabilities that a policyholder belongs to Group A, B or C respectively, then
   	
   	\begin{align}
-      P(C) &= 1 - \left( \dfrac\vbone{100} + \dfrac\vbtwo{100} \right) = \dfrac\c\d
+      P(C) &= 1 - \left( \dfrac\va{100} + \dfrac\vb{100} \right) = \dfrac\c\d
   	\end{align}
 
     And therefore, 
   	\begin{align}
   		P(E) &= P(E \vert A)\cdot P(A) + P(E \vert B)\cdot P(B) + P(E \vert C)\cdot P(C) \\
-           &= \WRITEFRAC\vbthree{100}\times\WRITEFRAC\vbone{100} + 
-              \WRITEFRAC\vbfour{100}\times\WRITEFRAC\vbtwo{100} + 
-              \WRITEFRAC\vbfive{100}\times\dfrac\c\d \\
-           &= \dfrac\vbsix\vbseven = \vbeight\%
+           &= \WRITEFRAC\vc{100}\times\WRITEFRAC\va{100} + 
+              \WRITEFRAC\vd{100}\times\WRITEFRAC\vb{100} + 
+              \WRITEFRAC\ve{100}\times\dfrac\c\d \\
+           &= \dfrac\vf\vg = \vh\%
   	\end{align}
   \end{solution}
 
@@ -112,10 +112,15 @@ an accident. Figures for Groups B and C are \vbfour\% and \vbfive\% respectively
       The probability we are seeking is $P(A\vert E)$, which Baye's theorem tells us would be
       \begin{align}
          P(A\vert E) &= \dfrac{P(E\vert A)\cdot P(A)}{P(E)} \\
-                     &= \left(\dfrac{\WRITEFRAC\vbthree{100} \times \WRITEFRAC\vbone{100} }{\frac\vbsix\vbseven}\right) \\
-                     &= \dfrac\vbnine\vbten 
+                     &= \left(\dfrac{\WRITEFRAC\vc{100} \times \WRITEFRAC\va{100} }{\frac\vf\vg}\right) = \dfrac\vi\vj 
       \end{align}
   \end{solution}
 
 \end{parts}
+
+\ifprintanswers
+  \begin{codex}
+    $(a)\quad\vh\%\qquad(b)\quad\dfrac\vi\vj$
+  \end{codex}
+\fi
 
