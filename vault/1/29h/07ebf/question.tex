@@ -3,114 +3,118 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{1,5,6,7}
-  \renewcommand{\vbtwo}{5671}
-  \renewcommand{\vbthree}{1} % units
-  \renewcommand{\vbfour}{7} % tens
-  \renewcommand{\vbfive}{6} % hundreds
-  \renewcommand{\vbsix}{5} % thousands
-  \renewcommand{\vbseven}{6,7} % guaranteed > (thousands) 
-  \renewcommand{\vbeight}{7} % hundreds
-  \renewcommand{\vbnine}{7} % tens
-  \renewcommand{\vbten}{5,6,7} % units
-  \gcalcexpr[0]\nth{2}
-  \gcalcexpr[0]\nh{1}
-  \gcalcexpr[0]\nten{1}
-  \gcalcexpr[0]\nu{3}
+  \renewcommand{\va}{2695}
+  \renewcommand{\vb}{(2)}
+  \renewcommand\vc{(2,5)}
+  \renewcommand\vd{(2,5,6,9)}
+  \renewcommand\ve{(2,5,6,9)}
+  \renewcommand\vp{32}
+  \renewcommand\vf{(2)}
+  \renewcommand\vg{(6)}
+  \renewcommand\vh{(2,5,6)}
+  \renewcommand\vi{(2,5,6,9)}
+  \renewcommand\vq{12}
+  \renewcommand\vj{(2)}
+  \renewcommand\vk{(6)}
+  \renewcommand\vl{(9)}
+  \renewcommand\vm{(2)}
+  \renewcommand\vr{1}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{2,4,7,9}
-    \renewcommand{\vbtwo}{4792}
-    \renewcommand{\vbthree}{2}
-    \renewcommand{\vbfour}{9}
-    \renewcommand{\vbfive}{7}
-    \renewcommand{\vbsix}{4}
-    \renewcommand{\vbseven}{7,9}
-    \renewcommand{\vbeight}{9}
-    \renewcommand{\vbnine}{9}
-    \renewcommand{\vbten}{4,7,9}
-    \gcalcexpr[0]\nth{2}
-    \gcalcexpr[0]\nh{1}
-    \gcalcexpr[0]\nten{1}
-    \gcalcexpr[0]\nu{3}
+    \renewcommand{\va}{5296}
+    \renewcommand{\vb}{(2)}
+    \renewcommand{\vc}{(2,5,6,9)}
+    \renewcommand{\vd}{(2,5,6,9)}
+    \renewcommand{\ve}{(2,5,6,9)}
+    \renewcommand{\vf}{(5)}
+    \renewcommand{\vg}{(2)}
+    \renewcommand{\vh}{(2,5,6)}
+    \renewcommand{\vi}{(2,5,6,9)}
+    \renewcommand\vj{(5)}
+    \renewcommand\vk{(2)}
+    \renewcommand\vl{(9)}
+    \renewcommand\vm{(2,5)}
+    \renewcommand\vp{64}
+    \renewcommand\vq{12}
+    \renewcommand\vr{2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{3,4,6,7}
-      \renewcommand{\vbtwo}{6473}
-      \renewcommand{\vbthree}{3}
-      \renewcommand{\vbfour}{7}
-      \renewcommand{\vbfive}{4}
-      \renewcommand{\vbsix}{6}
-      \renewcommand{\vbseven}{7}
-      \renewcommand{\vbeight}{6,7}
-      \renewcommand{\vbnine}{7}
-      \renewcommand{\vbten}{4,6,7}
-      \gcalcexpr[0]\nth{1}
-      \gcalcexpr[0]\nh{2}
-      \gcalcexpr[0]\nten{1}
-      \gcalcexpr[0]\nu{3}
+      \renewcommand{\va}{6259}
+      \renewcommand{\vb}{(2,5)}
+      \renewcommand{\vc}{(2,5,6,9)}
+      \renewcommand{\vd}{(2,5,6,9)}
+      \renewcommand{\ve}{(2,5,6,9)}
+      \renewcommand{\vf}{(6)}
+      \renewcommand{\vg}{(2)}
+      \renewcommand{\vh}{(2)}
+      \renewcommand{\vi}{(2,5,6,9)}
+      \renewcommand{\vj}{(6)}
+      \renewcommand\vk{(2)}
+      \renewcommand\vl{(5)}
+      \renewcommand\vm{(2,5,6)}
+      \renewcommand\vp{128}
+      \renewcommand\vq{4}
+      \renewcommand\vr{3}
     }{
       % variables 
-      \renewcommand{\vbone}{2,5,6,9}
-      \renewcommand{\vbtwo}{6592}
-      \renewcommand{\vbthree}{2}
-      \renewcommand{\vbfour}{9}
-      \renewcommand{\vbfive}{5}
-      \renewcommand{\vbsix}{6}
-      \renewcommand{\vbseven}{9}
-      \renewcommand{\vbeight}{6,9}
-      \renewcommand{\vbnine}{9}
-      \renewcommand{\vbten}{5,6,9}
-      \gcalcexpr[0]\nth{1}
-  	  \gcalcexpr[0]\nh{2}
-  	  \gcalcexpr[0]\nten{1}
-  	  \gcalcexpr[0]\nu{3}
+      \renewcommand{\va}{9265}
+      \renewcommand{\vb}{(2,5,6)}
+      \renewcommand{\vc}{(2,5,6,9)}
+      \renewcommand{\vd}{(2,5,6,9)}
+      \renewcommand{\ve}{(2,5,6,9)}
+      \renewcommand{\vf}{(9)}
+      \renewcommand{\vg}{(2)}
+      \renewcommand{\vh}{(2,5)}
+      \renewcommand{\vi}{(2,5,6,9)}
+      \renewcommand{\vj}{(9)}
+      \renewcommand\vk{(2)}
+      \renewcommand\vl{(6)}
+      \renewcommand\vm{(2)}
+      \renewcommand\vp{192}
+      \renewcommand\vq{8}
+      \renewcommand\vr{1}
     }
   }
 }
 
-\gcalcexpr[0]\tp{\nth * 4 * 4 * 4}
-\gcalcexpr[0]\tq{\nh * 4 * 4}
-\gcalcexpr[0]\tr{\nten * \nu}
-\gcalcexpr[0]\ngreater{\tp + \tq + \tr}
-\gcalcexpr[0]\nlessequal{256 - \ngreater}
-\gcalcexpr[0]\nreqd{84 + \nlessequal}
+\ADD\vp\vq\a
+\ADD\a\vr\vx
+\ADD\vx{84}\vz
 
-\question[5] How many numbers $\leq \vbtwo$ can be formed using $\vbone$ if the digits are allowed to repeat?
-
+\question[5] How many numbers $< \va$ can be formed using some or all of the digits $2,5,6,9$ 
+if the digits are allowed to repeat?
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\halfpage]
-	Any one-, two- or three-digit number made using digits from $A=\lbrace \vbone \rbrace$ 
-	is guaranteed to be $\leq \vbtwo$. They are also easy to count
+	Any one-, two- or three-digit number made using digits from $2,5,6,9$ 
+	is guaranteed to be $\leq \va$. They are also easy to count
 	\begin{align}
 		N_{\texttt{< 4-digits}} &= N_1 + N_2 + N_3 \\ 
 		 &= 4 + 4^2 + 4^3 = 84
 	\end{align}
 	
-	It is when counting the 4-digit numbers that one has to be careful. But here is what we know about what 
-	would make a 4-digit number $ > \vbtwo$ (strictly greater)
-	
-	
+	It is when counting the 4-digit numbers that one has to be careful. 
+  
+  Refer to the table below.
+
 	\begin{tabular}{ccccc}
 		\toprule
 		Thousand & Hundreds & Tens & Units & \# possibilities \\
 		\midrule
-		$\lbrace\vbseven\rbrace$ & 4 & 4 & 4 & \tp \\ % thousands
-		$\lbrace\vbsix\rbrace$ & $\lbrace\vbeight\rbrace$ & 4 & 4 & \tq \\ % hundreds
-		$\lbrace\vbsix\rbrace$ & $\lbrace\vbfive\rbrace$ & $\lbrace\vbnine\rbrace$ & $\lbrace\vbten\rbrace$ & \tr \\ % tens 
-	    \bottomrule
+      $\vb$ & $\vc$ & $\vd$ & $\ve$ & $\vp$ \\
+      $\vf$ & $\vg$ & $\vh$ & $\vi$ & $\vq$ \\
+      $\vj$ & $\vk$ & $\vl$ & $\vm$ & $\vr$ \\
+    \bottomrule
 	\end{tabular}
-	
-	This means that there are $\ngreater (= \tp + \tq + \tr)$ 4-digit numbers $ > \vbtwo$ that can be formed from 
-	$A = \lbrace\vbone\rbrace$. And hence, there are $\nlessequal( = 4^4 - \ngreater)$ numbers that are $ \leq \vbtwo$
-	
-	So, in total, there are $\nreqd (= \nlessequal + 84)$ numbers that meet our initial criterion
-	
+
+  Hence, the number of numbers $<\va$ that can be formed is $\vx + 84 = \vz$.	
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\vz$
+  \end{codex}
+\fi
