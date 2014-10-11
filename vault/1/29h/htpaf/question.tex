@@ -3,48 +3,51 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{5}
-  \renewcommand{\vbtwo}{10}
-  \renewcommand{\vbthree}{5}
+  \renewcommand{\va}{5}
+  \renewcommand{\vb}{10}
+  \renewcommand{\vc}{5}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{7}
-    \renewcommand{\vbtwo}{15}
-    \renewcommand{\vbthree}{6}
+    \renewcommand{\va}{7}
+    \renewcommand{\vb}{15}
+    \renewcommand{\vc}{6}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{10}
-      \renewcommand{\vbtwo}{21}
-      \renewcommand{\vbthree}{7}
+      \renewcommand{\va}{10}
+      \renewcommand{\vb}{21}
+      \renewcommand{\vc}{7}
     }{
       % variables 
-      \renewcommand{\vbone}{6}
-      \renewcommand{\vbtwo}{45}
-      \renewcommand{\vbthree}{9}
+      \renewcommand{\va}{6}
+      \renewcommand{\vb}{45}
+      \renewcommand{\vc}{9}
     }
   }
 }
 
-\gcalcexpr[0]\tmp{2 * \vbtwo}
+\MULTIPLY\vb{2}\vd
 
-\question[2] A city's metro network has $\vbone$ lines. On one of these lines, there are $\vbtwo$ 
-possible \textit{fares} that can be charged - depending on which two stations one is going between.
+\question[2] A city's metro network has $\va$ lines. On one of these lines, there are $\vb$ 
+possible fares that can be charged - depending on which two stations one is going between.
+The fare from $A\to B$ is the same as the fare from $B\to A$.
  How many stations are there on this line? 
-
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\mcq]
-   It is reasonable to assume that the fare between $A$ and $B$ is the same as that 
-   between $B$ and $A$. And hence, if there be $N$ stations on the line, then
+   If there be $N$ stations on the line, then
    \begin{align}
-   		N_{\texttt{fares}} &= \encr{N}{2} = \vbtwo \\
-   		\Rightarrow \fncr{N}{2} &= \vbtwo \text{ or } N\cdot(N-1) = \tmp \\
-   		\Rightarrow N &= \vbthree
+   		N_{\texttt{fares}} &= \encr{N}{2} = \vb \\
+   		\implies \fncr{N}{2} &= \vb \text{ or } N\cdot(N-1) = \vd \\
+   		\implies N &= \vc
    \end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\vc$
+  \end{codex}
+\fi 
+
