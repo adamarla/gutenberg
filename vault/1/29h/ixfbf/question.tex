@@ -3,28 +3,33 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{10}
-  \renewcommand{\vbtwo}{126.25}
+  \renewcommand{\va}{10}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{15}
-    \renewcommand{\vbtwo}{373.75}
+    \renewcommand{\va}{15}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{19}
-      \renewcommand{\vbtwo}{717.25}
+      \renewcommand{\va}{17}
     }{
       % variables 
-      \renewcommand{\vbone}{16}
-      \renewcommand{\vbtwo}{446}
+      \renewcommand{\va}{13}
     }
   }
 }
 
-\question[4] Find the sum of the first $\vbone$ terms of the series $\dfrac{1^3}{1} + \dfrac{1^3+2^3}{1+3} + \dfrac{1^3+2^3+3^3}{1+3+5}\ldots$
+\SQUARE\va\vc
+\MULTIPLY\vc{2}\vd
+\MULTIPLY\va{9}\ve
+\ADD\vd\ve\vf
+\ADD\vf{13}\vg
+\DIVIDE\vg{24}\vh
+\MULTIPLY\vh\va\vi
+\ROUND[2]\vi\vj
 
+\question[4] Find the sum of the first $\va$ terms of the series 
+\[\dfrac{1^3}{1} + \dfrac{1^3+2^3}{1+3} + \dfrac{1^3+2^3+3^3}{1+3+5}\ldots\]
 
 \watchout
 
@@ -32,14 +37,22 @@
 \fi 
 
 \begin{solution}[\halfpage]
-	The $n^{\text{th}}$ term of the series is of the form $a_n = \dfrac{\sum_{k=1}^{n}k^3}{\sum_{k=1}^{n}(2k-1)}
-	= \dfrac{\eSumOfCubes{n}}{n^2} = \dfrac{1}{4}\cdot(n+1)^2$
+	The $n^{\text{th}}$ term of the series is of the form 
+  \[ a_n = \dfrac{\sum_{k=1}^{n}k^3}{\sum_{k=1}^{n}(2k-1)}
+	= \dfrac{\eSumOfCubes{n}}{n^2} = \dfrac{1}{4}\cdot(n+1)^2 \]
 	
-	Hence, the sum of the first $M$ terms of the series ($M$ could be anything) would be given by 
+	Hence, the sum of the first $M$ terms would be  
 	\begin{align}
-		S_n &= \sum_{n=1}^{M}a_n = \dfrac{1}{4}\cdot\left[ \sum_{n=1}^{M}n^2 + 2\cdot\sum_{n=1}^{M}n + \sum_{n=1}^{M}1 \right] \\
+		S_M &= \sum_{n=1}^{M}a_n = \dfrac{1}{4}\cdot\left[ \sum_{n=1}^{M}n^2 + 2\cdot\sum_{n=1}^{M}n + \sum_{n=1}^{M}1 \right] \\
 		&= \dfrac{1}{4}\cdot\left[ \eSumOfSquares{M} + 2\eSumOfN{M} + M \right] \\ 
 		&= \dfrac{M}{24}\cdot(2M^2 + 9M + 13)
 	\end{align}
-	For $M=\vbone$, $S_{\vbone} = \vbtwo$
+
+	For $M=\va$, $S_{\va} = \vj$
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\vj$
+  \end{codex}
+\fi
