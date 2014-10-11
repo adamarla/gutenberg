@@ -3,31 +3,30 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{3}
-  \renewcommand{\vbtwo}{4}
+  \renewcommand{\va}{3}
+  \renewcommand{\vb}{4}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{1}
-    \renewcommand{\vbtwo}{-2}
+    \renewcommand{\va}{1}
+    \renewcommand{\vb}{-2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{2}
-      \renewcommand{\vbtwo}{3}
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{3}
     }{
       % variables 
-      \renewcommand{\vbone}{-4}
-      \renewcommand{\vbtwo}{2}
+      \renewcommand{\va}{-4}
+      \renewcommand{\vb}{2}
   }
   }
 }
 
-\gcalcexpr[0]{\vbthree}{\vbone + \vbtwo}
+\ADD\va\vb\vc
 
 \question[4] Find the equation of the straight line that cuts off equal $x$ and $y$ intercepts 
-and passes through the point $(\vbone, \vbtwo)$
-
+and passes through the point $(\va, \vb)$
 
 \watchout
 
@@ -40,13 +39,18 @@ and passes through the point $(\vbone, \vbtwo)$
    	  x_{\text{int}} &= -\dfrac{C}{A} \\ 
    	  y_{\text{int}} &= -\dfrac{C}{B} \\
    \end{align}
-   Which means that if they are equal, then $A = B \Rightarrow$ equation of the line is $Ax + Ay + C = 0$. 
-   Now, if this line also passes through $(\vbone, \vbtwo)$, then 
+   Which means that if they are equal, then $A = B \implies$ equation of the line is $Ax + Ay + C = 0$. 
+   Now, if this line also passes through $(\va, \vb)$, then 
    \begin{align}
-      \vbone\cdot A + \vbtwo\cdot A + C &= 0 \Rightarrow C = -(\vbthree\cdot A) \\
-      \Rightarrow Ax + Ay - (\vbthree\cdot A) &= 0 \\
-      \text{ or } x + y &= \vbthree
+      \va\cdot A + \vb\cdot A + C &= 0 \implies C = -(\vc\cdot A) \\
+      \implies Ax + Ay - (\vc\cdot A) &= 0 \\
+      \text{ or } x + y &= \vc
    \end{align}
-   
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $x+y=\vc$
+  \end{codex}
+\fi
 

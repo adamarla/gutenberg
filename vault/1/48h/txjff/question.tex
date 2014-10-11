@@ -3,39 +3,49 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{1} % a 
-  \renewcommand{\vbtwo}{2} % b
-  \renewcommand{\vbthree}{5} % m
-  \renewcommand{\vbfour}{3} % n
+  \renewcommand{\va}{1} % a 
+  \renewcommand{\vb}{2} % b
+  \renewcommand{\vc}{5} % m
+  \renewcommand{\vd}{3} % n
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{2}
-    \renewcommand{\vbtwo}{3}
-    \renewcommand{\vbthree}{7}
-    \renewcommand{\vbfour}{11}
+    \renewcommand{\va}{2}
+    \renewcommand{\vb}{3}
+    \renewcommand{\vc}{7}
+    \renewcommand{\vd}{11}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{9}
-      \renewcommand{\vbtwo}{1}
-      \renewcommand{\vbthree}{11}
-      \renewcommand{\vbfour}{16}
+      \renewcommand{\va}{9}
+      \renewcommand{\vb}{1}
+      \renewcommand{\vc}{11}
+      \renewcommand{\vd}{16}
     }{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{8}
-      \renewcommand{\vbthree}{9}
-      \renewcommand{\vbfour}{17}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{8}
+      \renewcommand{\vc}{9}
+      \renewcommand{\vd}{17}
     }
   }
 }
 
-\gcalcexpr[0]{\vbfive}{\vbfour * \vbone + \vbthree * \vbtwo}
-\gcalcexpr[0]{\vbsix}{\vbtwo + \vbfour}
+\SUBTRACT{0}\vb\ve
+\SUBTRACT{0}\vd\vf
+\MULTIPLY\ve{-\vc}\vg
+\MULTIPLY\vf{-\va}\vh
+\SUBTRACT\ve\vf\vi
+\SUBTRACT\vh\vg\vj
 
-\question[3] A ray of light coming from a point $A = (\vbone, \vbtwo)$ is reflected at a point $B$ \textit{on the x-axis} 
-before passing through a point $C = (\vbthree, \vbfour)$ - \asif. Find the coordinates of point $B$. The angle at which light
+
+%\MULTIPLY\vd\va\vp
+%\MULTIPLY\vc\vb\vq
+%\ADD\vp\vq\ve
+%\ADD\vb\vd\vf
+
+\question[3] A ray of light coming from a point $A = (\va, \vb)$ is reflected at a point $B$ \textit{on the x-axis} 
+before passing through a point $C = (\vc, \vd)$ - \asif. Find the coordinates of point $B$. The angle at which light
 hits $B$ - and reflected back - is $\theta$
 
 
@@ -126,17 +136,25 @@ hits $B$ - and reflected back - is $\theta$
 
 
 \begin{solution}[\halfpage]
-	The slop of the incoming beam of light - $AB$ - is $\tan\angle{MBA} = \tan (\pi-\theta) = -\tan\theta$ 
-	and of the reflected beam - $BC$ - is $\tan\angle{MBC} = \tan\theta$
+	The slope of the \textbf{incoming} beam of light $AB$ is 
+  \[\tan\angle{MBA} = \tan (\pi-\theta) = -\tan\theta\]
 	
-	Also, note that as $B$ is on the x-axis, its coordinates are of the form $(x,0)$
+  The slope of the \textbf{reflected} beam $BC$ is 
+  \[ \tan\angle{MBC} = \tan\theta = -\tan\angle{MBA} \]
+	
+  The light hits a point $B = (x,0)$ on the $x-$axis. And therefore, 
 	
 	\begin{align}
-		\Rightarrow \underbrace{\dfrac{0-\vbtwo}{x-\vbone}}_{\tan\angle{MBA}} &= 
-		-\underbrace{\dfrac{0-\vbfour}{x-\vbthree}}_{\tan\angle{MBC}} \\
-		\Rightarrow \vbtwo\cdot(x-\vbthree) &= -\vbfour\cdot x + \vbfour\cdot\vbone \\
-		\Rightarrow x &= \dfrac{\vbfive}{\vbsix}
+		\underbrace{\dfrac{0-\vb}{x-\va}}_{\tan\angle{MBA}} &= 
+		-\underbrace{\dfrac{0-\vd}{x-\vc}}_{\tan\angle{MBC}} \\
+		\implies \ve\cdot(x-\vc) &= \vf\cdot(x -\va) \\
+		\implies x &= \WRITEFRAC\vj\vi 
 	\end{align}
-	Hence, the light hits the flat surface at $B = (\dfrac{\vbfive}{\vbsix}, 0)$
-	
+	Hence, the light hits the flat surface at $B = \left(\WRITEFRAC\vj\vi, 0\right)$.
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\left(\WRITEFRAC\vj\vi,0 \right)$
+  \end{codex}
+\fi

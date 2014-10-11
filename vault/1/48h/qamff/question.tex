@@ -6,40 +6,40 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{2}   %y = 2
-  \renewcommand{\vbtwo}{1}    %coeff x
-  \renewcommand{\vbthree}{-4}%coeff y
-  \renewcommand{\vbfour}{-4}  %coeff const
-  \renewcommand{\vbfive}{4}  %4sqrt(2) dist
+  \renewcommand{\va}{2}   %y = 2
+  \renewcommand{\vb}{1}    %coeff x
+  \renewcommand{\vc}{-4}%coeff y
+  \renewcommand{\vd}{-4}  %coeff const
+  \renewcommand{\ve}{4}  %4sqrt(2) dist
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{1} 
-    \renewcommand{\vbtwo}{2} 
-    \renewcommand{\vbthree}{-3}
-    \renewcommand{\vbfour}{3} 
-    \renewcommand{\vbfive}{3} 
+    \renewcommand{\va}{1} 
+    \renewcommand{\vb}{2} 
+    \renewcommand{\vc}{-3}
+    \renewcommand{\vd}{3} 
+    \renewcommand{\ve}{3} 
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{-2}
-      \renewcommand{\vbfour}{-2}
-      \renewcommand{\vbfive}{4}
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{-2}
+      \renewcommand{\vd}{-2}
+      \renewcommand{\ve}{4}
     }{
       % variables 
-      \renewcommand{\vbone}{3}
-      \renewcommand{\vbtwo}{2}
-      \renewcommand{\vbthree}{-1}
-      \renewcommand{\vbfour}{-1}
-      \renewcommand{\vbfive}{3}
+      \renewcommand{\va}{3}
+      \renewcommand{\vb}{2}
+      \renewcommand{\vc}{-1}
+      \renewcommand{\vd}{-1}
+      \renewcommand{\ve}{3}
      }
   }
 }
 
-\MULTIPLY\vbthree{-1}\a
-\SOLVELINEARSYSTEM(0, 1; \vbtwo, \vbthree)(\vbone,\vbfour)(\p,\q)
+\MULTIPLY\vc{-1}\a
+\SOLVELINEARSYSTEM(0, 1; \vb, \vc)(\va,\vd)(\p,\q)
 
 \ADD\p{1}\j
 \SQUARE\j\jj
@@ -47,7 +47,7 @@
 \ADD\q{1}\k
 \SQUARE\k\kk
 
-\SQUARE\vbfive\c
+\SQUARE\ve\c
 \MULTIPLY\c{2}\d
 
 \SUBTRACT\d\jj\aa
@@ -64,8 +64,8 @@
 
 
 \question[4] Find the equations of the straight lines that pass
- through the intersection of lines $L_1: y=\vbone$ and 
- $L_2: \vbtwo x \vbthree y = \vbfour$ and are at a distance of $\vbfive\sqrt{2}$
+ through the intersection of lines $L_1: y=\va$ and 
+ $L_2: \vb x \vc y = \vd$ and are at a distance of $\ve\sqrt{2}$
  units from $(-1, -1)$.
 
 
@@ -111,12 +111,12 @@
 \begin{solution}[\fullpage]
   Let $R_1$ and $R_2$ be the two required lines. They pass through $A$ - which is the 
   point of intersection of $L_1$ and $L_2$ (not shown). The distance of $R_1$ and $R_2$ from 
-  $B = (-1,-1)$ is $\vbfive\sqrt{2}$ units
+  $B = (-1,-1)$ is $\ve\sqrt{2}$ units
   
   Now, lines $L_1$ and $L_2$ intersect when 
   \begin{align}
-    y &= \vbone \text{ and, } \\
-    \a y &= \vbtwo x - \vbfour
+    y &= \va \text{ and, } \\
+    \a y &= \vb x - \vd
   \end{align}
   Solving the above equations gives us $A = (\p,\q)$
 
@@ -135,9 +135,18 @@
   \end{align}
 
   So, we know that $R_1$ and $R_2$ pass through $A = (\p,\q)$ and that they have slopes 
-  given by $(8)$ 
+  given by $(8)$.
 
-  It is now a simple case of plugging the values of $m$ we found in $(8)$ into $(3)$ 
-  to get \textbf{equations} for the two lines. We leave this as an exercise
+  Plugging in the values of $m$ we found in $(8)$ into $(3)$ gives us the two lines.
+  \begin{align}
+    \dfrac{y-\q}{x-\p} &= \WRITEFRAC\f\dnm \text{ and } \\
+    \dfrac{y-\q}{x-\p} &= \WRITEFRAC\g\dnm 
+  \end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $L_1: \dfrac{y-\q}{x-\p} = \WRITEFRAC\f\dnm\qquad L_2: \dfrac{y-\q}{x-\p} = \WRITEFRAC\g\dnm$
+  \end{codex}
+\fi
 
