@@ -3,62 +3,67 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{5}
-  \renewcommand{\vbtwo}{12}
-  \renewcommand{\vbthree}{26}
-  \renewcommand{\vbfour}{4}
+  \renewcommand{\va}{5}
+  \renewcommand{\vb}{12}
+  \renewcommand{\vc}{26}
+  \renewcommand{\vd}{4}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{6}
-    \renewcommand{\vbtwo}{8}
-    \renewcommand{\vbthree}{11}
-    \renewcommand{\vbfour}{6}
+    \renewcommand{\va}{6}
+    \renewcommand{\vb}{8}
+    \renewcommand{\vc}{11}
+    \renewcommand{\vd}{6}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{3}
-      \renewcommand{\vbtwo}{4}
-      \renewcommand{\vbthree}{12}
-      \renewcommand{\vbfour}{6}
+      \renewcommand{\va}{3}
+      \renewcommand{\vb}{4}
+      \renewcommand{\vc}{12}
+      \renewcommand{\vd}{6}
     }{
       % variables 
-      \renewcommand{\vbone}{12}
-      \renewcommand{\vbtwo}{5}
-      \renewcommand{\vbthree}{14}
-      \renewcommand{\vbfour}{7}
+      \renewcommand{\va}{12}
+      \renewcommand{\vb}{5}
+      \renewcommand{\vc}{14}
+      \renewcommand{\vd}{7}
      }
   }
 }
 
-\gcalcHypotenuse[0]{\vbfive}{\vbone}{\vbtwo}
-\gcalcexpr[0]{\vbsix}{\vbfour * \vbfive }
-\gcalcexpr[0]{\vbseven}{\vbthree - \vbsix}
-\gcalcexpr[0]{\vbeight}{\vbsix + \vbthree}
+\gcalcHypotenuse[0]{\ve}{\va}{\vb}
+\MULTIPLY\vd\ve\vf
+\SUBTRACT\vc\vf\vg
+\ADD\vc\vf\vh
 
-\question[3] Find the equation of the straight lines parallel to $\vbone x - \vbtwo y + \vbthree = 0$ 
-and at a distance of $\vbfour$ units from it
-
+\question[3] Find the equation of the straight line(s) parallel to $\va x - \vb y + \vc = 0$ 
+and at a distance of $\vd$ units from it.
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\halfpage]
 	The distance between two parallel lines - $Ax + By + C_1 = 0$ and $Ax+By+C_2 = 0$ is given by 
-	$d = \dfrac{\vert C_1 - C_2 \vert}{\sqrt{A^2+ B^2}}$. Note that there would be \textit{two} such lines, 
+	\[ d = \dfrac{\vert C_1 - C_2 \vert}{\sqrt{A^2+ B^2}}\]
+  
+  Note that there would be \textit{two} such lines, 
 	one on either side of the original line. So,
 	\begin{align}
-		\vbfour &= \dfrac{\vert \vbthree - C_2 \vert}{\sqrt{\vbone^2 + \vbtwo^2}} \\
-		\Rightarrow \vbthree - C_2 &= \vbsix, \text{ for when } C_2 < \vbthree \\
-		\text{ and } C_2 - \vbthree &= \vbsix, \text{ for when } C_2 > \vbthree
+		\vd &= \dfrac{\vert \vc - C_2 \vert}{\sqrt{\va^2 + \vb^2}} \\
+		\implies \vc - C_2 &= \vf, \text{ for when } C_2 < \vc \\
+		\text{ and } C_2 - \vc &= \vf, \text{ for when } C_2 > \vc
 	\end{align}
 	Solving (2) and (3) above, we get 
 	\begin{align}
-		C_2 &= \vbseven \text{ and } C_2 = \vbeight
+		C_2 &= \vg \text{ and } C_2 = \vh
 	\end{align}
 	
-	Hence, the two lines are $\vbone x - \vbtwo y + \vbseven = 0$ and $\vbone x - \vbtwo y + \vbeight = 0$
+	Hence, the two lines are 
+  \[\va x - \vb y + \vg = 0\] 
+  \[\va x - \vb y + \vh = 0\]
 \end{solution}
 
+\ifprintanswers
+  \begin{codex}
+    $\va x -\vb y + \vg = 0\text{ and } \va x - \vb y + \vh = 0$
+  \end{codex}
+\fi
