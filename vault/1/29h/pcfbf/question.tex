@@ -1,55 +1,57 @@
 
 
-
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{16}
-  \renewcommand{\vbtwo}{37}
+  \renewcommand{\va}{16}
+  \renewcommand{\vb}{37}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{12}
-    \renewcommand{\vbtwo}{29}
+    \renewcommand{\va}{12}
+    \renewcommand{\vb}{29}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{17}
-      \renewcommand{\vbtwo}{44}
+      \renewcommand{\va}{17}
+      \renewcommand{\vb}{44}
     }{
       % variables 
-      \renewcommand{\vbone}{19}
-      \renewcommand{\vbtwo}{25}
+      \renewcommand{\va}{19}
+      \renewcommand{\vb}{25}
     }
   }
 }
 
-\gcalcexpr[0]\tp{\vbone - 1}
-\gcalcexpr[0]\tq{\vbtwo - 1}
-\gcalcexpr[0]\tr{\vbtwo - \vbone}
+\SUBTRACT\va{1}\vc
+\SUBTRACT\vb{1}\vd
+\SUBTRACT\vb\va\ve
+\FRACTIONSIMPLIFY\ve\vc\vx\vy
 
-\question[3] The first, $\vbone^\text{th}$ and $\vbtwo^\text{th}$ terms of an arithmetic progression are also 
-\textit{successive} terms of a geometric progression. Find the common ratio of the geometric progression
-
+\question[3] The first, $\va^\text{th}$ and $\vb^\text{th}$ terms of an arithmetic progression are also 
+\textit{successive} terms of a geometric progression. Find the common ratio of the geometric progression.
 
 \watchout
-
-\ifprintanswers
-\fi 
 
 \begin{solution}[\halfpage]
 	Here is what we know 
 	\begin{align}
 		a &= b \\
-		a + \tp\cdot d &= b\cdot r \\
-		a + \tq\cdot d &= b\cdot r^2 
+		a + \vc\cdot d &= b\cdot r \\
+		a + \vd\cdot d &= b\cdot r^2 
 	\end{align}
 	
 	From this, we can infer 
 	\begin{align}
-		(a + \tp\cdot d) - a &= b\cdot r - b = b\cdot(r-1) \\
-		(a + \tq\cdot d) - a &= b\cdot r^2 - b = b\cdot(r^2-1) \\ 
-		&= \underbrace{b\cdot(r-1)}_{\tp\cdot d}\cdot(r+1) \\
-		\Rightarrow \tq\cdot d &= \tp\cdot d \cdot (r + 1) \\ 
-		\Rightarrow r &= \dfrac{\tr}{\tp}
+		(a + \vc\cdot d) - a &= b\cdot r - b = b\cdot(r-1) \\
+		(a + \vd\cdot d) - a &= b\cdot r^2 - b = b\cdot(r^2-1) \\ 
+		&= \underbrace{b\cdot(r-1)}_{\vc\cdot d}\cdot(r+1) \\
+		\implies \vd\cdot d &= \vc\cdot d \cdot (r + 1) \\ 
+		\implies r &= \frac\vx\vy 
 	\end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\dfrac\vx\vy$
+  \end{codex}
+\fi
