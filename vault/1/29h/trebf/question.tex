@@ -3,57 +3,61 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{even}
-  \renewcommand{\vbtwo}{1,7,6,8,4,3}
-  \renewcommand{\vbthree}{3} % # odd 
-  \renewcommand{\vbfour}{3} % # even
-  \renewcommand{\vbsix}{360}
+  \renewcommand{\va}{even }
+  \renewcommand{\vb}{1,7,6,8,4,3}
+  \renewcommand{\vc}{3} % # odd 
+  \renewcommand{\vd}{3} % # even
+  \renewcommand{\ve}{360}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{odd}
-    \renewcommand{\vbtwo}{5,8,3,2,4,1,9}
-    \renewcommand{\vbthree}{4}
-    \renewcommand{\vbfour}{3}
-    \renewcommand{\vbsix}{2880}
+    \renewcommand{\va}{odd }
+    \renewcommand{\vb}{5,8,3,2,4,1,9}
+    \renewcommand{\vc}{4}
+    \renewcommand{\vd}{3}
+    \renewcommand{\ve}{2880}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{even}
-      \renewcommand{\vbtwo}{7,8,3,4,1,6}
-      \renewcommand{\vbthree}{3}
-      \renewcommand{\vbfour}{3}
-      \renewcommand{\vbsix}{360}
+      \renewcommand{\va}{even }
+      \renewcommand{\vb}{7,8,3,4,1,6,2,9}
+      \renewcommand{\vc}{4}
+      \renewcommand{\vd}{4}
+      \renewcommand{\ve}{20,160}
     }{
       % variables 
-      \renewcommand{\vbone}{odd}
-      \renewcommand{\vbtwo}{2,5,7,9,3,4}
-      \renewcommand{\vbthree}{4}
-      \renewcommand{\vbfour}{2}
-      \renewcommand{\vbsix}{480}
+      \renewcommand{\va}{odd }
+      \renewcommand{\vb}{2,5,7,9,3,4}
+      \renewcommand{\vc}{4}
+      \renewcommand{\vd}{2}
+      \renewcommand{\ve}{480}
     }
   }
 }
 
-\gcalcexpr[0]\tp{\vbthree + \vbfour}
-\ifthenelse{\equal\vbone{odd}}{\renewcommand{\vbfive}{\vbthree}}{\renewcommand{\vbfive}{\vbfour}}
+\ADD\vc\vd\vt
+\ifthenelse{\equal\va{odd }}{
+  \ADD\vc{0}\vx
+}{
+  \ADD\vd{0}\vx
+}
 
-\question[1] How many \textit{\vbone} numbers can be formed using $\lbrace \vbtwo \rbrace$. All digits 
-must be used and no digit repeats
-
+\question[1] How many \textit{\va} numbers can be formed using $\lbrace \vb \rbrace$. All digits 
+must be used and no digit repeats.
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\mcq]
-	There are a total of $\tp$ digits available - of which $\vbthree$ are odd and $\vbfour$ are even. 
-	To form an \textit{\vbone} number, it must end with one of the $\vbfive$ \vbone digits. The other 
-	digits can be in any order
+	There are a total of $\vt$ digits available - of which $\vc$ are odd and $\vd$ are even. 
+	To form an \textit{\va} number, it must end with one of the $\vx$ \va digits. The other 
+	digits can be in any order.
 	
 	And therefore
-	\begin{align}
-		N &= (\tp - 1)!\times\vbfive = \vbsix
-	\end{align}
+  \[ N = (\vt - 1)!\times\vx = \ve \]
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\ve$
+  \end{codex}
+\fi
