@@ -3,66 +3,61 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{12}
-  \renewcommand{\vbtwo}{5}
-  \renewcommand{\vbthree}{210} % triangles
-  \renewcommand{\vbfour}{546} % pentagons
-  \renewcommand{\vbfive}{420} % quadrilaterals
-  \renewcommand{\vbsix}{66} % lines
+  \renewcommand{\va}{12}
+  \renewcommand{\vb}{5}
+  \renewcommand{\vc}{210} % triangles
+  \renewcommand{\vd}{546} % pentagons
+  \renewcommand{\ve}{420} % quadrilaterals
+  \renewcommand{\vf}{66} % lines
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{11}
-    \renewcommand{\vbtwo}{6}
-    \renewcommand{\vbthree}{145}
-    \renewcommand{\vbfour}{180}
-    \renewcommand{\vbfive}{215}
-    \renewcommand{\vbsix}{55}
+    \renewcommand{\va}{11}
+    \renewcommand{\vb}{6}
+    \renewcommand{\vc}{145}
+    \renewcommand{\vd}{180}
+    \renewcommand{\ve}{215}
+    \renewcommand{\vf}{55}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{9}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{83}
-      \renewcommand{\vbfour}{111}
-      \renewcommand{\vbfive}{120}
-      \renewcommand{\vbsix}{36}
+      \renewcommand{\va}{9}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{83}
+      \renewcommand{\vd}{111}
+      \renewcommand{\ve}{120}
+      \renewcommand{\vf}{36}
     }{
       % variables 
-      \renewcommand{\vbone}{10}
-      \renewcommand{\vbtwo}{4}
-      \renewcommand{\vbthree}{116}
-      \renewcommand{\vbfour}{186}
-	  \renewcommand{\vbfive}{185}
-      \renewcommand{\vbsix}{45}
+      \renewcommand{\va}{10}
+      \renewcommand{\vb}{4}
+      \renewcommand{\vc}{116}
+      \renewcommand{\vd}{186}
+      \renewcommand{\ve}{185}
+      \renewcommand{\vf}{45}
     }
   }
 }
 
-\gcalcexpr[0]\tmp{\vbone - \vbtwo}
+\SUBTRACT\va\vb\vz
 
-\question There are $\vbone$ points in a plane of which $\vbtwo$ points are in a straight line 
-and except these $\vbtwo$, no three of the others are in a straight line. A line-segment between two points
+\question There are $\va$ points in a plane of which $\vb$ points are in a straight line 
+and except these $\vb$, no three of the others are in a straight line. A line-segment between two points
 can pass through other points. Given this, find the number of
 
 \watchout
-
-\ifprintanswers
-\fi 
-
 
 \begin{parts}
   \part[1] \textbf{Triangles} that can be formed 
 
 \begin{solution}[\mcq]
-  	 We have two sets of points - set $A$ has the $\vbtwo$ collinear points and set $B$ has 
-  	 the $\tmp$ non-collinear points
+  	 We have two sets of points - set $A$ has the $\vb$ collinear points and set $B$ has 
+  	 the $\vz$ non-collinear points
   	 
   	 A triangle can be formed either by picking 3 points from $B$ or 2 from $B$ and one from $A$ or 
   	 one from $B$ and two from $A$
   	 \begin{align}
-  	 	N_{\delta} &= \encr\tmp{3} + \encr\tmp{2}\cdot\vbtwo + \tmp\cdot\encr\vbtwo{2} \\
-  	 	&= \vbthree
+  	 	N_{\delta} &= \binom\vz{3} + \binom\vz{2}\cdot\vb + \vz\cdot\binom\vb{2} = \vc
   	 \end{align}
   \end{solution}
 
@@ -70,12 +65,10 @@ can pass through other points. Given this, find the number of
 
 \begin{solution}[\mcq]
   	\begin{align}
-  		\ifthenelse{\tmp > 5}{ 
-  			N &= \encr\tmp{5} + \encr\tmp{4}\cdot\vbtwo + \encr\tmp{3}\cdot\encr\vbtwo{2} \\
-  			&= \vbfour
+  		\ifthenelse{\vz > 5}{ 
+  			N &= \binom\vz{5} + \binom\vz{4}\cdot\vb + \binom\vz{3}\cdot\binom\vb{2} = \vd 
   		}{ 
-  		   N &= \encr\tmp{4}\cdot\vbtwo + \encr\tmp{3}\cdot\encr\vbtwo{2} \\
-  		   &= \vbfour
+  		   N &= \binom\vz{4}\cdot\vb + \binom\vz{3}\cdot\binom\vb{2} = \vd
   		} 
   	\end{align}
   \end{solution}
@@ -84,8 +77,7 @@ can pass through other points. Given this, find the number of
 
 \begin{solution}[\mcq]
   	\begin{align}
-  		N &= \encr\tmp{4} + \encr\tmp{3}\cdot\vbtwo + \encr\tmp{2}\cdot\encr\vbtwo{2} \\
-  		&= \vbfive
+  		N &= \binom\vz{4} + \binom\vz{3}\cdot\vb + \binom\vz{2}\cdot\binom\vb{2} = \ve
   	\end{align}
   \end{solution}
 
@@ -93,8 +85,14 @@ can pass through other points. Given this, find the number of
 
 \begin{solution}[\mcq]
   	\begin{align}
-  		N &= \encr\vbone{2} = \vbsix
+  		N &= \binom\va{2} = \vf
   	\end{align}
   \end{solution}
 
 \end{parts}
+
+\ifprintanswers
+  \begin{codex}
+    $(a)\,\vc\quad (b)\,\vd\quad (c)\,\ve\quad (d)\,\vf$
+  \end{codex}
+\fi
