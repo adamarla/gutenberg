@@ -3,79 +3,88 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{NEWSPAPER }
-  \renewcommand{\vbtwo}{odd }
-  \renewcommand{\vbthree}{9} % word-length
-  \renewcommand{\vbfour}{3} % # of vowels
-  \renewcommand{\vbfive}{10,800} % answer
-  \renewcommand{\vbsix}{2!}
-  \renewcommand{\vbseven}{2!}
+  \renewcommand{\va}{NEWSPAPER }
+  \renewcommand{\vb}{odd }
+  \renewcommand{\vc}{9} % word-length
+  \renewcommand{\vd}{3} % # of vowels
+  \renewcommand{\ve}{10,800} % answer
+  \renewcommand{\vf}{2!}
+  \renewcommand{\vg}{2!}
+  \renewcommand\vh{E repeats}
+  \renewcommand\vi{P repeats}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{AIRCRAFT }
-    \renewcommand{\vbtwo}{even }
-    \renewcommand{\vbthree}{8}
-    \renewcommand{\vbfour}{3}
-    \renewcommand{\vbfive}{720}
-    \renewcommand{\vbsix}{2!}
-    \renewcommand{\vbseven}{2!}
+    \renewcommand{\va}{AIRCRAFT }
+    \renewcommand{\vb}{even }
+    \renewcommand{\vc}{8}
+    \renewcommand{\vd}{3}
+    \renewcommand{\ve}{720}
+    \renewcommand{\vf}{2!}
+    \renewcommand{\vg}{2!}
+    \renewcommand\vh{A repeats}
+    \renewcommand\vi{R repeats}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{TASMANIA }
-      \renewcommand{\vbtwo}{odd }
-      \renewcommand{\vbthree}{8}
-      \renewcommand{\vbfour}{4}
-      \renewcommand{\vbfive}{96}
-      \renewcommand{\vbsix}{3!}
-      \renewcommand{\vbseven}{1!}
+      \renewcommand{\va}{TASMANIA }
+      \renewcommand{\vb}{odd }
+      \renewcommand{\vc}{8}
+      \renewcommand{\vd}{4}
+      \renewcommand{\ve}{480}
+      \renewcommand{\vf}{3!}
+      \renewcommand{\vg}{1!}
+      \renewcommand\vh{A repeats}
+      \renewcommand\vi{all distinct}
     }{
       % variables 
-      \renewcommand{\vbone}{LOPSIDED }
-      \renewcommand{\vbtwo}{even }
-      \renewcommand{\vbthree}{8}
-      \renewcommand{\vbfour}{3}
-      \renewcommand{\vbfive}{1440}
-      \renewcommand{\vbsix}{1!}
-      \renewcommand{\vbseven}{2!}
+      \renewcommand{\va}{LOPSIDED }
+      \renewcommand{\vb}{even }
+      \renewcommand{\vc}{8}
+      \renewcommand{\vd}{3}
+      \renewcommand{\ve}{1440}
+      \renewcommand{\vf}{1!}
+      \renewcommand{\vg}{2!}
+      \renewcommand\vh{distinct vowels}
+      \renewcommand\vi{D repeats}
     }
   }
 }
 
-\gcalcexpr[0]\con{\vbthree - \vbfour}
-\ifthenelse{\equal{\vbtwo}{odd }}{
-	\gcalcexpr[0]\ntype{\vbthree / 2}
+\SUBTRACT\vc\vd\vx 
+\DIVIDE\vc{2}\vy
+\ifdefstring\vb{odd }{
+  \FLOOR\vy\vj
+  \ADD\vj{1}\vz
 }{
-  \ifthenelse{\isodd{\vbthree}}{
-  	\gcalcexpr[0]\ntype{(\vbthree - 1) / 2}
-  }{
-  	\gcalcexpr[0]\ntype{\vbthree / 2}
-  }
+  \FLOOR\vy\vz
 }
 
 \question[2] How many words - with or without meaning - can be formed from the characters in the word 
-\vbone such that the vowels are in the \vbtwo places
-
+\va such that the vowels are in the \vb positions?
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\mcq]
-	The whole word is $\vbthree$ characters long and it has $\vbfour$ vowels. The remaining $\con$ characters 
-	are obviously consonants
+	The whole word is $\vc$ characters long and has $\vd$ vowels (total). The remaining $\vx$ characters 
+	are obviously consonants.
+
+  If we see any $\vc$-character word as a series of positions $( P_1\to P_{\vc})$, then 
+  the word will have $\vz$ \vb positions for vowels. 
 	
-	Now, with $\vbthree$ characters, the word has $\ntype$ \vbtwo positions for the vowels
-	Moreover, even though there are $\vbfour$ vowels, some of them are the same and therefore some permutations of them 
-	would actually result in the same word. Same goes for consonants 
+  But some characaters (vowels and consonants) occur more than once. And hence, 
+  some permutations of them will result in the same word. 
+
+  We therefore need to count the number of \textbf{distinct} permutations - not all permutations.
 	
-	We will leave it you to count the duplicate vowels and consonants - if any. But bearing the above in mind, 
-	the required number of distinct words is
-	
-	\begin{align}
-		N &= \underbrace{\encr\ntype\vbfour\cdot\dfrac{\vbfour !}{\vbsix}}_{\texttt{distinct permutations of vowels}}
-		\times \overbrace{\dfrac{\con !}{\vbseven}}^{\texttt{\ldots and of consonants}} = \vbfive
-	\end{align}
+  \[ N = \overbrace{\binom\vz\vd}^{\vd \text{ slots for vowels}}
+        \times\underbrace{\dfrac{\vd !}{\vf}}_{\text{\vh}} 
+        \times\overbrace{\dfrac{\vx !}{\vg}}^{\text{\vi}}  = \ve \]
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\ve$
+  \end{codex}
+\fi
+
