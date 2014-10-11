@@ -3,42 +3,43 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{5}
-  \renewcommand{\vbtwo}{4}
-  \renewcommand{\vbthree}{2}
-  \renewcommand{\vbfour}{1}
+  \renewcommand{\va}{5}
+  \renewcommand{\vb}{4}
+  \renewcommand{\vc}{2}
+  \renewcommand{\vd}{1}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{2}
-    \renewcommand{\vbtwo}{7}
-    \renewcommand{\vbthree}{3}
-    \renewcommand{\vbfour}{7}
+    \renewcommand{\va}{2}
+    \renewcommand{\vb}{7}
+    \renewcommand{\vc}{3}
+    \renewcommand{\vd}{7}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{7}
-      \renewcommand{\vbtwo}{10}
-      \renewcommand{\vbthree}{4}
-      \renewcommand{\vbfour}{5}
+      \renewcommand{\va}{7}
+      \renewcommand{\vb}{10}
+      \renewcommand{\vc}{4}
+      \renewcommand{\vd}{5}
     }{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{9}
-      \renewcommand{\vbthree}{7}
-      \renewcommand{\vbfour}{9}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{9}
+      \renewcommand{\vc}{7}
+      \renewcommand{\vd}{9}
     }
   }
 }
 
-\gcalcexpr[0]{\vbfive}{\vbtwo * (\vbthree + \vbfour)}
-\gcalcexpr[0]{\vbsix}{-\vbone*(\vbthree + \vbfour)} % numerator of m
-\gcalcexpr[0]{\vbseven}{\vbthree + \vbfour}
-\gcalcexpr[0]{\vbeight}{\vbfive / \vbfour } % vbfive = n  guaranteed by us to be an integer
+\EXPR[0]{\ve}{\vb * (\vc + \vd)}
+\EXPR[0]{\vf}{-\va*(\vc + \vd)} % numerator of m
+\EXPR[0]{\vg}{\vc + \vd}
+\EXPR[0]{\vh}{\ve / \vd } % ve = n  guaranteed by us to be an integer
+\SUBTRACT\vh\vb\vi
+\MULTIPLY\vh\va\vj
 
-\question[5] The intercept of a line - \asif - is divided by the point $(-\vbone, \vbtwo)$ so that 
-$\frac{AN}{AM} = \frac{\vbthree}{\vbfour}$. Find the equation of the line 
-
+\question[5] The intercept of the line in the figure alongside is divided by the point $(-\va, \vb)$ so that 
+$\frac{AN}{AM} = \frac{\vc}{\vd}$. Find the equation of the line.
 
 \watchout
 
@@ -119,23 +120,25 @@ $\frac{AN}{AM} = \frac{\vbthree}{\vbfour}$. Find the equation of the line
 
 
 \begin{solution}[\halfpage]
-	First, drop perpendiculars from $A$ on the axes to get points $J(0,\vbtwo)$ and $K(-\vbone,0)$. 
+	First, drop perpendiculars from $A$ on the axes to get points $J(0,\vb)$ and $K(-\va,0)$. 
   The other points in the figure are $M = (m,0)$ and $N = (0,n)$
 	
 	Now, $\bigtriangleup NAJ$ and $\bigtriangleup NMO$ are similar. Which means, 
 	\begin{align}
-		\dfrac{NJ}{NO} &= \dfrac{NA}{NM} \Rightarrow \dfrac{n-\vbtwo}{n} = \dfrac{\vbthree}{\vbseven} \\
-		\Rightarrow n &= \dfrac{\vbfive}{\vbfour} = \vbeight \text{ or, in other words } N = (0, \vbeight)
+		\dfrac{NJ}{NO} &= \dfrac{NA}{NM} \implies \dfrac{n-\vb}{n} = \dfrac{\vc}{\vg} \\
+		\implies n &= \dfrac{\ve}{\vd} = \vh \text{ or, in other words } N = (0, \vh)
 	\end{align}
-	
-	\gcalcexpr[0]{\vbnine}{\vbeight - \vbtwo}
-	\gcalcexpr[0]{\vbten}{\vbeight * \vbone }
 	
 	We now have two points on a line. And that is enough to calculate its equation
 	\begin{align}
-		\dfrac{y-\vbeight}{x} &= \dfrac{\vbeight - \vbtwo}{0 + \vbone} \\
-		\Rightarrow \vbone\cdot y - \vbten &= \vbnine\cdot x
+		\dfrac{y-\vh}{x} &= \dfrac{\vh - \vb}{0 + \va} \\
+		\implies \va y - \vj &= \vi x
 	\end{align}
 	
 \end{solution}
 
+\ifprintanswers
+  \begin{codex}
+    $\vi x-\va y + \vj = 0$
+  \end{codex}
+\fi

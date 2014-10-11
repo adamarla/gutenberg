@@ -3,142 +3,82 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{2}
-  \renewcommand{\vbtwo}{3}
+  \renewcommand{\va}{2}
+  \renewcommand{\vb}{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{3}
-    \renewcommand{\vbtwo}{7}
+    \renewcommand{\va}{3}
+    \renewcommand{\vb}{7}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{6}
-      \renewcommand{\vbtwo}{9}
+      \renewcommand{\va}{6}
+      \renewcommand{\vb}{9}
     }{
       % variables 
-      \renewcommand{\vbone}{13}
-      \renewcommand{\vbtwo}{15}
+      \renewcommand{\va}{13}
+      \renewcommand{\vb}{15}
     }
   }
 }
 
-\gcalcexpr[0]{\vbthree}{\vbtwo - \vbone}
-\gcalcexpr[0]{\vbfour}{\vbtwo + \vbone}
+\SUBTRACT\vb\va\vc
 
-\question[2] Find the equation of the line - or lines - that are equally inclined to both the $x$ and $y$ axes 
-and pass through the point $(\vbone, \vbtwo)$
-
+\question[2] Find the equation of the line that is equally inclined to both the 
+$x$ and $y$ axes (\asif) and passes through the point $(\va, \vb)$.
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-  % 1. Definition of characteristic points
-\figinit{pt}
-\def\Xmin{-39.99999}
-\def\Ymin{-22.22222}
-\def\Xmax{39.99999}
-\def\Ymax{57.77777}
-\def\Xori{39.99999}
-\def\Yori{22.22222}
-\figpt 100:$\theta$(76,22)
-\figpt 101:$\theta$(42,57)
-\figpt 102:$\psi$(27,27)
-\figpt 103:$\psi$(40,40)
-\figpt0:(\Xori,\Yori)
-\figdrawbegin{}
-\def\Xmaxx{\Xmax} % To customize the position
-\def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
-\drawAxes{0}\Xmin\Xmaxx\Ymin\Ymaxx
-\figdrawlineC(
-0 97.77777, % y = 8.50
-2.75862 95.01915, % y = 8.18
-5.51724 92.26053, % y = 7.87
-8.27586 89.50191, % y = 7.56
-11.03448 86.74329, % y = 7.25
-13.79310 83.98467, % y = 6.94
-16.55172 81.22605, % y = 6.63
-19.31034 78.46743, % y = 6.32
-22.06896 75.70881, % y = 6.01
-24.82758 72.95019, % y = 5.70
-27.58620 70.19157, % y = 5.39
-30.34482 67.43295, % y = 5.08
-33.10344 64.67432, % y = 4.77
-35.86206 61.91570, % y = 4.46
-38.62068 59.15708, % y = 4.15
-41.37931 56.39846, % y = 3.84
-44.13793 53.63984, % y = 3.53
-46.89655 50.88122, % y = 3.22
-49.65517 48.12260, % y = 2.91
-52.41379 45.36398, % y = 2.60
-55.17241 42.60536, % y = 2.29
-57.93103 39.84674, % y = 1.98
-60.68965 37.08812, % y = 1.67
-63.44827 34.32950, % y = 1.36
-66.20689 31.57088, % y = 1.05
-68.96551 28.81226, % y = .74
-71.72413 26.05363, % y = .43
-74.48275 23.29501, % y = .12
-77.24137 20.53639, % y = -.18
-79.99999 17.77777
-)
-\figdrawlineC(
-0 0, % y = -2.50
-2.75862 2.75862, % y = -2.18
-5.51724 5.51724, % y = -1.87
-8.27586 8.27586, % y = -1.56
-11.03448 11.03448, % y = -1.25
-13.79310 13.79310, % y = -.94
-16.55172 16.55172, % y = -.63
-19.31034 19.31034, % y = -.32
-22.06896 22.06896, % y = -.01
-24.82758 24.82758, % y = .29
-27.58620 27.58620, % y = .60
-30.34482 30.34482, % y = .91
-33.10344 33.10344, % y = 1.22
-35.86206 35.86206, % y = 1.53
-38.62068 38.62068, % y = 1.84
-41.37931 41.37931, % y = 2.15
-44.13793 44.13793, % y = 2.46
-46.89655 46.89655, % y = 2.77
-49.65517 49.65517, % y = 3.08
-52.41379 52.41379, % y = 3.39
-55.17241 55.17241, % y = 3.70
-57.93103 57.93103, % y = 4.01
-60.68965 60.68965, % y = 4.32
-63.44827 63.44827, % y = 4.63
-66.20689 66.20689, % y = 4.94
-68.96551 68.96551, % y = 5.25
-71.72413 71.72413, % y = 5.56
-74.48275 74.48275, % y = 5.87
-77.24137 77.24137, % y = 6.18
-79.99999 79.99999
-)
-\figdrawend
-\figvisu{\figBoxA}{}{%
-\figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
-\figwritee 1:(5pt)     \figwriten 2:(5pt)
-\figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
-\figwriten 100:(4)
-\figwritene 101:(2)
-\figwritee 102:(2)
-\figwrites 103:(2)
-}
-\centerline{\box\figBoxA}
-
-  \end{marginfigure}
-\fi 
+\begin{marginfigure}
+  \figinit{pt}
+    \def\xmin{-40}
+    \def\xmax{40}
+    \def\ymin{-50}
+    \def\ymax{50}
+    \def\rotangle{45}
+    \figpt 0:(0,0)
+    \figpt 1: (-40,-10)
+    \figpt 2: (30,60)
+    \figpt 10: (\xmin, 0)
+    \figpt 11: (\xmax, 0)
+    \figpt 20: (0,\ymin)
+    \figpt 21: (0,\ymax)
+    \figvectP 100 [10,11] % x-axis
+    \figvectP 101 [20,21] % y-axis
+    \figvectP 102 [1,2]
+    \figptinterlines 200 :$A$[1,102;10,100]
+    \figptinterlines 201 :$B$[1,102;20,101]
+    \figpt 300:$\theta$(-20,7)
+    \figpt 301:$\theta$(7,41)
+  \figdrawbegin{}
+    \drawAxes{0}\xmin\xmax\ymin\ymax
+    \figdrawline [1,2]
+    \figset arrowhead(fillmode=yes)
+    \figdrawarrowhead [1,2]
+    \figdrawarrowhead [2,1]
+    \figset arrowhead(length=4) 
+    \figdrawarrowcirc 200 ; 10(0,45)
+    \figdrawarrowcircP 201 ; 10 [2,21]
+  \figdrawend
+  \figvisu{\figBoxA}{}{%
+    \figwritee 300:(3)
+    \figwriten 301:(3)
+  }
+  \centerline{\box\figBoxA}
+\end{marginfigure}
 
 \begin{solution}[\halfpage]
-	The situation is \asif. There are two lines that form equal angles with both the $x$ and $y$ axes. One angle ,
-    however, is acute and the other obtuse
-    
-    Now, its easy to prove that $\psi = \frac{\pi}{4}$ and $\theta = \frac{3\pi}{4}$. Hence, the slopes of the 
-    required lines are $+1$ and $-1$
+    It is easy to see from the diagram that $\theta=45^\circ$. Which means, that the slope of the 
+    required line is $m=1$.
+
     \begin{align}
-    	\Rightarrow \dfrac{y-\vbtwo}{x-\vbone} &= 1 \Rightarrow y = x + \vbthree\\
-    	\text{ and } \dfrac{y-\vbtwo}{x-\vbone} &= -1 \Rightarrow y = -x + \vbfour
+    	\implies \dfrac{y-\vb}{x-\va} &= 1 \implies y = x + \vc
     \end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $L_1: y = x + \vc$
+  \end{codex}
+\fi
