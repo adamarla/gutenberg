@@ -4,68 +4,70 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{2}
-  \renewcommand{\vbtwo}{-3}
-  \renewcommand{\vbthree}{4}
-  \renewcommand{\vbfour}{2}
-  \renewcommand{\vbfive}{4}
+  \renewcommand{\va}{2}
+  \renewcommand{\vb}{-3}
+  \renewcommand{\vc}{4}
+  \renewcommand{\vd}{2}
+  \renewcommand{\ve}{4}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{3}
-    \renewcommand{\vbtwo}{4}
-    \renewcommand{\vbthree}{5}
-    \renewcommand{\vbfour}{7}
-    \renewcommand{\vbfive}{3}
+    \renewcommand{\va}{3}
+    \renewcommand{\vb}{4}
+    \renewcommand{\vc}{5}
+    \renewcommand{\vd}{7}
+    \renewcommand{\ve}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{-1}
-      \renewcommand{\vbtwo}{-1}
-      \renewcommand{\vbthree}{2}
-      \renewcommand{\vbfour}{5}
-      \renewcommand{\vbfive}{4}
+      \renewcommand{\va}{-1}
+      \renewcommand{\vb}{-1}
+      \renewcommand{\vc}{2}
+      \renewcommand{\vd}{5}
+      \renewcommand{\ve}{4}
     }{
       % variables 
-      \renewcommand{\vbone}{0}
-      \renewcommand{\vbtwo}{-1}
-      \renewcommand{\vbthree}{2}
-      \renewcommand{\vbfour}{4}
-      \renewcommand{\vbfive}{5}
+      \renewcommand{\va}{0}
+      \renewcommand{\vb}{-1}
+      \renewcommand{\vc}{2}
+      \renewcommand{\vd}{4}
+      \renewcommand{\ve}{5}
      }
   }
 }
 
-\SUBTRACT\vbfour\vbtwo\aa
-\SUBTRACT\vbthree\vbone\ab
+\SUBTRACT\vd\vb\aa
+\SUBTRACT\vc\va\ab
 \FRACTIONSIMPLIFY\aa\ab\ma\mb
 \FRACDIV{-1}{1}\ma\mb\pa\pb
-\MULTIPLY{-\vbfive}\pa\c
+\MULTIPLY{-\ve}\pa\c
 
-\question[4] Find the equation of the line that has $x$-intercept of $\vbfive$ units and is perpendicular
-to the line joining points $(\vbone, \vbtwo)$ and $(\vbthree, \vbfour)$
-
+\question[4] Find the equation of the line that has $x$-intercept of $\ve$ units and is perpendicular
+to the line joining points $(\va, \vb)$ and $(\vc, \vd)$
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\halfpage]
-	The slope of the line joining $(\vbone, \vbtwo)$ and $(\vbthree, \vbfour)$ is,
+	The slope of the line joining $(\va, \vb)$ and $(\vc, \vd)$ is,
 	\begin{align}
-		m &= \dfrac{\vbfour-\vbtwo}{\vbthree-\vbone} = \WRITEFRAC\ma\mb
+		m &= \dfrac{\vd-\vb}{\vc-\va} = \WRITEFRAC\ma\mb
 	\end{align}
 	And so, the slope of the required line - which is perpendicular to the above line - is 
 	\begin{align}
-		m\cdot m_{\perp} &= -1 \Rightarrow m_{\perp} = \WRITEFRAC\pa\pb
+		m\cdot m_{\perp} &= -1 \implies m_{\perp} = \WRITEFRAC\pa\pb
 	\end{align}
-  Now, if the $x$-intercept is $\vbfive$ units, then it means the required line passes through $(\vbfive,0)$
+  Now, if the $x$-intercept is $\ve$ units, then it means the required line passes through $(\ve,0)$
 
   In which case,
   \begin{align}
-    \dfrac{y - 0}{x - \vbfive} &= \WRITEFRAC\pa\pb \\
-    \Rightarrow \pb y &= \pa x \gsign\c
+    \dfrac{y - 0}{x - \ve} &= \WRITEFRAC\pa\pb \\
+    \implies \pb y &= \pa x \gsign\c
   \end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\pb y = \pa x \gsign\c$
+  \end{codex}
+\fi
 

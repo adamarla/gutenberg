@@ -3,89 +3,78 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{1}
-  \renewcommand{\vbtwo}{3}
-  \renewcommand{\vbthree}{3}
-  \renewcommand{\vbfour}{5}
-  \renewcommand{\vbfive}{1} % original slope
-  \renewcommand{\vbsix}{45} % original angle 
-  \renewcommand{\vbseven}{\sqrt{3}} % new slope 
-  \renewcommand{\vbeight}{1.73} 
-  \renewcommand{\vbnine}{1} % value of vbone as a real number
+  \renewcommand{\va}{1}
+  \renewcommand{\vb}{2}
+  \renewcommand{\vc}{3}
+  \renewcommand{\vd}{5}
+  \renewcommand\vx{56.31}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{\sqrt{3}}
-    \renewcommand{\vbtwo}{3}
-    \renewcommand{\vbthree}{2\sqrt{3}}
-    \renewcommand{\vbfour}{4}
-    \renewcommand{\vbfive}{\dfrac{1}{\sqrt{3}}}
-    \renewcommand{\vbsix}{30}
-    \renewcommand{\vbseven}{1}
-    \renewcommand{\vbeight}{1}
-    \renewcommand{\vbnine}{1.73}
+    \renewcommand{\va}{3}
+    \renewcommand{\vb}{6}
+    \renewcommand{\vc}{7}
+    \renewcommand{\vd}{9}
+    \renewcommand\vx{36.9}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{7}
-      \renewcommand{\vbthree}{2}
-      \renewcommand{\vbfour}{4}
-      \renewcommand{\vbfive}{1}
-      \renewcommand{\vbsix}{45}
-      \renewcommand{\vbseven}{\sqrt{3}}
-      \renewcommand{\vbeight}{1.73}
-      \renewcommand{\vbnine}{5}
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{7}
+      \renewcommand{\vc}{5}
+      \renewcommand{\vd}{9}
+      \renewcommand\vx{33.82}
     }{
       % variables 
-      \renewcommand{\vbone}{\sqrt{3}}
-      \renewcommand{\vbtwo}{5}
-      \renewcommand{\vbthree}{2\sqrt{3}}
-      \renewcommand{\vbfour}{6}
-      \renewcommand{\vbfive}{\dfrac{1}{\sqrt{3}}}
-      \renewcommand{\vbsix}{30}
-      \renewcommand{\vbseven}{1}
-      \renewcommand{\vbeight}{1}
-      \renewcommand{\vbnine}{1.73}
+      \renewcommand{\va}{3}
+      \renewcommand{\vb}{8}
+      \renewcommand{\vc}{5}
+      \renewcommand{\vd}{13}
+      \renewcommand\vx{68.2}
      }
   }
 }
 
-\gcalcexpr[2]{\vbeight}{\vbtwo - (\vbeight * \vbnine)}
+\SUBTRACT\vd\vb\ve
+\SUBTRACT\vc\va\vf
+\EXPR[2]\vm{\ve / \vf}
+\ADD\vx{15}\vy
+\DEGREESTAN\vy\vw
+\ROUND[2]\vw\vz
 
-\question[3] If the line joining the points $A = (\vbone, \vbtwo)$ and $B = (\vbthree, \vbfour)$ 
+\MULTIPLY\vz{-\va}\vp
+\ADD\vp\vb\vq
+
+\question[3] If the line joining the points $A = (\va, \vb)$ and $B = (\vc, \vd)$ 
 \ is rotated \textit{counter-clockwise} about $A$ by $\ang{15}$, then what is the equation 
-of the resulting new line ?
+of the resulting new line ? 
 
+$\tan\ang\vx=\vm,\,\tan\ang\vy=\vz$
 
 \watchout
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
 
 \begin{solution}[\halfpage]
     First, the slope of $AB$ is given by 
     \begin{align}
-        m &= \tan\theta = \dfrac{\vbfour - \vbtwo}{\vbthree - \vbone} = \vbfive \\
-        \Rightarrow \theta &= \ang{\vbsix}
+        m &= \tan\theta = \dfrac{\vd - \vb}{\vc - \va} = \vm \\
+        \implies \theta &= \ang\vx
     \end{align}
-    The slope of the \textit{new} line would therefore be $ = \tan(\theta + \ang{15}) = \vbseven$. Its equation
-    , therefore, would be 
+
+    The slope of the \textit{new} line would therefore be 
+    \[ m_2 = \tan(\theta + \ang{15}) = \tan\ang\vy = \vz \] 
+    
+    Also, as the \textbf{new} line came about because of rotation around $A$, the new 
+    line also passes through $A$. 
+    
+    And hence, its equation would be
     \begin{align}
-      \fEqnSlope &= \vbseven \text{ where } (x_1, y_1) = A = (\vbone, \vbtwo) \\
-      \Rightarrow y &= \vbseven\cdot x + (\vbtwo - \vbone\cdot\vbseven) \\
-      &= \vbseven\cdot x + \vbeight
+      \dfrac{y-\vb}{x-\va} &= \vz  \\
+      \implies y &= \vz x + \vq
     \end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $y = \vz x + \vq$
+  \end{codex}
+\fi
