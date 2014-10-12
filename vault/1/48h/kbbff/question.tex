@@ -2,60 +2,77 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{5} % a1
-  \renewcommand{\vbtwo}{6} % b1
-  \renewcommand{\vbthree}{1} % c1
-  \renewcommand{\vbfour}{3} %a2
-  \renewcommand{\vbfive}{5} % c2
-  \renewcommand{\vbsix}{3} % k = b1/b2
+  \renewcommand{\va}{5} % a1
+  \renewcommand{\vb}{6} % b1
+  \renewcommand{\vc}{1} % c1
+  \renewcommand{\vd}{3} %a2
+  \renewcommand{\ve}{5} % c2
+  \renewcommand{\vf}{3} % k = b1/b2
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{3}
-    \renewcommand{\vbtwo}{4}
-    \renewcommand{\vbthree}{7}
-    \renewcommand{\vbfour}{4}
-    \renewcommand{\vbfive}{5}
-    \renewcommand{\vbsix}{2}
+    \renewcommand{\va}{3}
+    \renewcommand{\vb}{4}
+    \renewcommand{\vc}{7}
+    \renewcommand{\vd}{4}
+    \renewcommand{\ve}{5}
+    \renewcommand{\vf}{2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{7}
-      \renewcommand{\vbthree}{11}
-      \renewcommand{\vbfour}{2}
-      \renewcommand{\vbfive}{13}
-      \renewcommand{\vbsix}{1}
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{7}
+      \renewcommand{\vc}{11}
+      \renewcommand{\vd}{2}
+      \renewcommand{\ve}{13}
+      \renewcommand{\vf}{1}
     }{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{8}
-      \renewcommand{\vbthree}{7}
-      \renewcommand{\vbfour}{3}
-      \renewcommand{\vbfive}{9}
-      \renewcommand{\vbsix}{2}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{8}
+      \renewcommand{\vc}{7}
+      \renewcommand{\vd}{3}
+      \renewcommand{\ve}{9}
+      \renewcommand{\vf}{2}
     }
   }
 }
 
-\EXPR[0]{\vbseven}{\vbtwo / \vbsix} % b2
-\MULTIPLY\vbthree\vbfour\p
-\MULTIPLY\vbfour\vbtwo\q
-\MULTIPLY\vbseven\vbone\j
-\MULTIPLY\vbfive\vbone\k
-\MULTIPLY\vbseven\vbthree\m
-\MULTIPLY\vbfive\vbtwo\n
+%\MULTIPLY\vc\vd\p
+%\MULTIPLY\vd\vb\q
+%\MULTIPLY\vg\va\j
+%\MULTIPLY\ve\va\k
+%\MULTIPLY\vg\vc\m
+%\MULTIPLY\ve\vb\n
+%
+%\SUBTRACT\j\q\a
+%\SUBTRACT\p\k\b
+%\SUBTRACT\m\n\d
+%\FRACTIONSIMPLIFY\b\a\bb\aa
+%\FRACTIONSIMPLIFY\d\a\cc\dd
+%\FRACMULT\cc\dd{-1}{1}\ee\ff
+%
+%\FRACMULT\bb\aa{-3}{1}\jj\kk
+%\FRACMULT\ee\ff{-5}{1}\mm\nn
+%\FRACADD\jj\kk\mm\nn\y\z
 
-\SUBTRACT\j\q\a
-\SUBTRACT\p\k\b
-\SUBTRACT\m\n\d
-\FRACTIONSIMPLIFY\b\a\bb\aa
-\FRACTIONSIMPLIFY\d\a\cc\dd
-\FRACMULT\cc\dd{-1}{1}\ee\ff
+\EXPR[0]{\vg}{\vb / \vf} % b2
+\FRACTIONSIMPLIFY\vb\vg\vp\vq
+\EXPR[0]\vw{\vp*\ve-\vq*\vc}
+\EXPR[0]\vx{\vq*\va-\vp*\vd}
+\FRACMULT\va{-1}\vw\vx\vr\vs
+\FRACMINUS\vr\vs\vc{1}\vt\vu
+\FRACDIV\vt\vu\vb{1}\vy\vz % y 
+
+\FRACMULT{3}{1}\vy\vz\vj\vk
+\FRACMULT{-5}{1}\vw\vx\vl\vm
+\FRACMINUS\vj\vk\vl\vm\vn\vo
 
 \question[4] Find the equation of the straight line that passes through the point of intersection of 
-$\vbone x + \vbtwo y + \vbthree = 0$ and $\vbfour x + \vbseven y + \vbfive = 0$ \textit{and} is 
-perpendicular to the line $3x-5y+11 = 0$
+\[ L_1: \va x + \vb y + \vc = 0 \text{ and } \]
+\[ L_2: \vd x + \vg y + \ve = 0 \] 
+
+and is perpendicular to the line $3x-5y+11 = 0$
 
 \watchout
 
@@ -63,26 +80,26 @@ perpendicular to the line $3x-5y+11 = 0$
 \fi 
 
 \begin{solution}[\halfpage]
-	First, we must find that point of intersection. The two lines will intersect at an $x$ where
+  $L_1$ and $L_2$ intersect when 
 	\begin{align}
-	    \vbone x + \vbtwo y + \vbthree &= 0 \text{ and } \\
-	    \vbfour x + \vbseven y + \vbfive &= 0 \\ 
-      \Rightarrow (x,y) &= (\WRITEFRAC\ee\ff,\WRITEFRAC\bb\aa) 
+      -\vb y &= \va x + \vc \text{ and } -\vg y = \vd x + \ve \\
+      \implies \va x + \vc &= \WRITEFRAC\vb\vg\cdot (\vd x + \ve) \\
+      \text{which gives } x &= \WRITEFRAC\vw\vx\text{ and } y = \WRITEFRAC\vy\vz
 	\end{align}
 	
-	Now, the slope of the line \textit{ perpendicular } to 
-	$3x - 5y + 11 = 0 \Rightarrow y = \frac{3}{5}x + \frac{11}{5}$ is $-\frac{5}{3}$. And so, its equation
-	would be 
+  The slope of $3x-5y+11=0$ is $m=\frac{3}{5}\implies m_\perp = -\frac{1}{m}=-\frac{5}{3}$.
 
-  \FRACMULT\bb\aa{-3}{1}\jj\kk
-  \FRACMULT\ee\ff{-5}{1}\mm\nn
-  \FRACADD\jj\kk\mm\nn\y\z
-
+  And hence, the equation of the required line is 
 	\begin{align}
-		\dfrac{y - \WRITEFRAC\bb\aa}{x - \WRITEFRAC\ee\ff} &= -\dfrac{5}{3} \\
-		\Rightarrow 3y - 3\times\WRITEFRAC\bb\aa &= -5x + 5\times\WRITEFRAC\ee\ff \\
-		\text{ or } 3y + 5x + \WRITEFRAC\y\z &= 0
+		\dfrac{y - \WRITEFRAC\vy\vz}{x - \WRITEFRAC\vw\vx} &= m_\perp = -\dfrac{5}{3} \\
+		\implies 3y - \left(\WRITEFRAC\vj\vk\right) &= -5x-\left(\WRITEFRAC\vl\vm\right) \\
+		\text{ or } 3y + 5x &= \WRITEFRAC\vn\vo 
 	\end{align}
-	
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+		$3y + 5x = \WRITEFRAC\vn\vo$
+  \end{codex}
+\fi
 
