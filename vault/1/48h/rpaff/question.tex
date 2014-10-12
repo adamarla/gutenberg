@@ -3,63 +3,63 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{1} % x 
-  \renewcommand{\vbtwo}{3} % y = 3x
-  \renewcommand{\vbthree}{3} % p
-  \renewcommand{\vbfour}{4} % q 
-  \renewcommand{\vbfive}{5} % d 
-  \renewcommand{\vbeight}{1}
+  \renewcommand{\va}{1} % x 
+  \renewcommand{\vb}{3} % y = 3x
+  \renewcommand{\vc}{3} % p
+  \renewcommand{\vd}{4} % q 
+  \renewcommand{\ve}{5} % d 
+  \renewcommand{\vh}{1}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{2}
-    \renewcommand{\vbtwo}{6}
-    \renewcommand{\vbthree}{3}
-    \renewcommand{\vbfour}{4}
-    \renewcommand{\vbfive}{15}
-    \renewcommand{\vbeight}{2}
+    \renewcommand{\va}{2}
+    \renewcommand{\vb}{6}
+    \renewcommand{\vc}{3}
+    \renewcommand{\vd}{4}
+    \renewcommand{\ve}{15}
+    \renewcommand{\vh}{2}
     }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{2}
-      \renewcommand{\vbtwo}{6}
-      \renewcommand{\vbthree}{4}
-      \renewcommand{\vbfour}{3}
-      \renewcommand{\vbfive}{10}
-      \renewcommand{\vbeight}{2}
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{6}
+      \renewcommand{\vc}{4}
+      \renewcommand{\vd}{3}
+      \renewcommand{\ve}{10}
+      \renewcommand{\vh}{2}
     }{
       % variables 
-      \renewcommand{\vbone}{1}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{12}
-      \renewcommand{\vbfour}{5}
-      \renewcommand{\vbfive}{13}
-      \renewcommand{\vbeight}{1}
+      \renewcommand{\va}{1}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{12}
+      \renewcommand{\vd}{5}
+      \renewcommand{\ve}{13}
+      \renewcommand{\vh}{1}
     }
   }
 }
 
-\FRACMULT\vbthree\vbfour\vbone{1}\p\q
-\FRACMINUS\vbtwo{1}\p\q\n\m
-\SQUARE\vbfour\a
-\SQUARE\vbfive\b
-\SQUARE\vbthree\c
+\FRACMULT\vc\vd\va{1}\p\q
+\FRACMINUS\vb{1}\p\q\n\m
+\SQUARE\vd\a
+\SQUARE\ve\b
+\SQUARE\vc\c
 \MULTIPLY\a\b\d
 \ADD\a\c\e
 \DIVIDE\d\e\f
 \SQUAREROOT\f\g
-\SUBTRACT\vbone\g\h
-\ADD\vbone\g\j
+\SUBTRACT\va\g\h
+\ADD\va\g\j
 
-\FRACMULT\vbthree\vbfour\h{1}\k\l
-\FRACMULT\vbthree\vbfour\j{1}\y\z
+\FRACMULT\vc\vd\h{1}\k\l
+\FRACMULT\vc\vd\j{1}\y\z
 \FRACADD\k\l\n\m\aa\ab
 \FRACADD\y\z\n\m\ba\bb
 
-\renewcommand{\vbsix}{\dfrac{\vbthree}{\vbfour}}
+\renewcommand{\vf}{\dfrac{\vc}{\vd}}
 
-\question[4] If a line that passes through a point $A = (\vbone, \vbtwo)$ has slope equal to $\dfrac\vbthree\vbfour$, then 
-find the points on it that are $\vbfive$ units away from $A$
+\question[4] If a line that passes through a point $A = (\va, \vb)$ has slope equal to $\frac\vc\vd$, 
+then find the points \textbf{on it} that are $\ve$ units away from $A$.
 
 \watchout
 
@@ -69,19 +69,17 @@ find the points on it that are $\vbfive$ units away from $A$
 \begin{solution}[\halfpage]
 	The equation of the given line would be 
 	\begin{align}
-		\dfrac{y-\vbtwo}{x-\vbone} &= \vbsix \Rightarrow y = \dfrac\vbthree\vbfour\cdot x + \WRITEFRAC\n\m
+		\dfrac{y-\vb}{x-\va} &= \vf \implies y = \dfrac\vc\vd\cdot x + \WRITEFRAC\n\m
 	\end{align}
-	Moreover, any point that is $\vbfive$ units away from $A$ would satisy 
-	the following condition 
-	\begin{align}
-		(x - \vbone)^2 + (y-\vbtwo)^2 &= (\vbfive)^2 
-	\end{align}
+	Moreover, any point  $(x,y)$ that is $\ve$ units away from $A$ would also satisy 
+    \[ (x - \va)^2 + (y-\vb)^2 = (\ve)^2  \]
+
 	And if this point also happens to be on the line, then 
 	\begin{align}
-		(x-\vbone)^2 + \left[ \left( \vbsix\cdot x + \dfrac\n\m\right) - \vbtwo \right]^2 &= \vbfive^2 \\
-		\Rightarrow (x - \vbone)^2\cdot\left[ 1 + \left( \vbsix \right)^2\right] &= \vbfive^2 \\
-    \Rightarrow (x - \vbone)^2 &= \f  \\ 
-    \Rightarrow x &=  \h,\,\j
+		(x-\va)^2 + \left[ \left( \vf\cdot x + \dfrac\n\m\right) - \vb \right]^2 &= \ve^2 \\
+		\implies (x - \va)^2\cdot\left[ 1 + \left( \vf \right)^2\right] &= \ve^2 \\
+    \implies (x - \va)^2 &= \f  \\ 
+    \implies x &=  \h,\,\j
 	\end{align}
 	
     
@@ -89,3 +87,8 @@ find the points on it that are $\vbfive$ units away from $A$
   get the required coordinates -  $(\h,\WRITEFRAC\aa\ab)$ and $(\j,\WRITEFRAC\ba\bb)$
 \end{solution}
 
+\ifprintanswers
+  \begin{codex}
+    $\left(\h,\WRITEFRAC\aa\ab\right)\text{ and }\left(\j,\WRITEFRAC\ba\bb\right)$
+  \end{codex}
+\fi
