@@ -3,64 +3,87 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{2}
-  \renewcommand{\vbtwo}{1}
-  \renewcommand{\vbthree}{5}
-  \renewcommand{\vbfour}{7}
-  \renewcommand{\vbseven}{-\sqrt{3}}
-  \renewcommand{\vbeight}{120}
+  \renewcommand{\va}{1}
+  \renewcommand{\vb}{2}
+  \renewcommand{\vc}{3}
+  \renewcommand{\vd}{4}
+  \renewcommand\ve{7}
+  \renewcommand\vf{3}
+  \renewcommand\vz{10.30}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{2\sqrt{11}}
-    \renewcommand{\vbtwo}{5}
-    \renewcommand{\vbthree}{5}
-    \renewcommand{\vbfour}{11}
-    \renewcommand{\vbseven}{\dfrac{1}{\sqrt{3}}}
-    \renewcommand{\vbeight}{30}
+    \renewcommand{\va}{4}
+    \renewcommand{\vb}{5}
+    \renewcommand{\vc}{2}
+    \renewcommand{\vd}{7}
+    \renewcommand\ve{3}
+    \renewcommand\vf{5}
+    \renewcommand\vz{22.71}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{\sqrt{23}}
-      \renewcommand{\vbtwo}{4}
-      \renewcommand{\vbthree}{2}
-      \renewcommand{\vbfour}{3}
-      \renewcommand{\vbseven}{\dfrac{1}{\sqrt{3}}}
-      \renewcommand{\vbeight}{30}
+      \renewcommand{\va}{9}
+      \renewcommand{\vb}{5}
+      \renewcommand{\vc}{7}
+      \renewcommand{\vd}{3}
+      \renewcommand\ve{7}
+      \renewcommand\vf{4}
+      \renewcommand\vz{5.86}
     }{
       % variables 
-      \renewcommand{\vbone}{\sqrt{7}}
-      \renewcommand{\vbtwo}{2}
-      \renewcommand{\vbthree}{2}
-      \renewcommand{\vbfour}{4}
-      \renewcommand{\vbseven}{\sqrt{3}}
-      \renewcommand{\vbeight}{60}
-      }
+      \renewcommand{\va}{11}
+      \renewcommand{\vb}{7}
+      \renewcommand{\vc}{5}
+      \renewcommand{\vd}{13}
+      \renewcommand\ve{4}
+      \renewcommand\vf{6}
+      \renewcommand\vz{36.49}
+    }
   }
 }
 
-\renewcommand{\vbfive}{(\vbone - \vbtwo\cdot\sqrt{3})}
-\renewcommand{\vbsix}{(\vbone + \vbtwo\cdot\sqrt{3})}
-\gcalcexpr[0]{\vbnine}{180-\vbeight}
+\MULTIPLY\ve\va\vj
+\MULTIPLY\vf\vc\vk
+\FRACMINUS\va\vb\vc\vd\vp\vq
+\FRACMULT\va\vb\vc\vd\vr\vs
+\FRACADD{1}{1}\vr\vs\vt\vu
+\FRACDIV\vp\vq\vt\vu\vv\vw
+\ABSVALUE\vv\vx
 
-\question[3] Find the angle at which the two lines $y=\vbfive\cdot(x + \vbthree)$ and 
-$y=\vbsix\cdot(x - \vbfour)$ intersect
+\question[3] Find the angle at which the following two lines intersect.  
+  \[ L_1: \vb y = \va\cdot(x-\ve) \]
+  \[ L_2: \vd y = \vc\cdot(x-\vf) \]
 
-
+\marginnote[-60pt]{ 
+  \begin{tabular}{c c}
+    $\tan\ang{10.30}=2/11$ & $\tan\ang{36.49}=54/73$ \\
+    $\tan\ang{22.71}=18/43$ & $\tan\ang{5.86}=4/39$ \\
+  \end{tabular} 
+} 
 \watchout
-
-\ifprintanswers
-
-\fi 
 
 \begin{solution}[\halfpage]
 	The equations of the two lines can be re-written as 
-	\begin{align}
-		y &= \overbrace{\vbfive\cdot x}^{m_1} + \overbrace{\vbfive\cdot \vbthree}^{\text{not important}} \\
-		y &= \underbrace{\vbsix\cdot x}_{m_2} - \vbsix\cdot \vbfour \\
-		\Rightarrow & \fAngleOfIntersection{1}{2} = \dfrac{\vbfive - \vbsix}{1 + \vbfive\cdot\vbsix} \\
-		&= \vbseven \\ 
-		\Rightarrow \theta_1 &= \ang{\vbeight} \text{ or } \ang{\vbnine}
-	\end{align}
+  \begin{align}
+    y &= \frac\va\vb\cdot(x-\ve) = \frac\va\vb x - \frac\vj\vb \\
+    y &= \frac\vc\vd\cdot(x-\vf) = \frac\vc\vd x - \frac\vk\vd
+  \end{align}
+  which gives us the slopes of the two lines as 
+  \[ m_1 = \tan\theta_1 = \frac\va\vb\text{ and } m_2 = \tan\theta_2 = \frac\vc\vd \]
+  where $\theta_1$ and $\theta_2$ are the angles the two lines make with the $x-$axis.
+
+  The \textbf{acute angle of intersection} - $\beta$ - is given by 
+  \begin{align}
+    \tan\beta &= \vert \tan (\theta_1 - \theta_2 ) \vert = \vert \dfrac{m_1 - m_2}{1+m_1\cdot m_2} \vert \\
+              &= \vert \dfrac{\frac\va\vb - \frac\vc\vd}{1+\frac\va\vb\cdot\frac\vc\vd} \vert = \frac\vx\vw \\
+              \implies\beta &=\tan^{-1}\frac\vx\vw = \ang\vz
+  \end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\ang\vz$
+  \end{codex}
+\fi
 
