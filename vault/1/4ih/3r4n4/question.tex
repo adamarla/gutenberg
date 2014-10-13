@@ -2,37 +2,36 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{4}
-  \renewcommand{\vbtwo}{5}
-  \renewcommand{\vbthree}{3}
+  \renewcommand{\va}{4}
+  \renewcommand{\vb}{5}
+  \renewcommand{\vc}{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{6}
-    \renewcommand{\vbtwo}{7}
-    \renewcommand{\vbthree}{4}
+    \renewcommand{\va}{6}
+    \renewcommand{\vb}{7}
+    \renewcommand{\vc}{4}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{9}
-      \renewcommand{\vbthree}{5}
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{9}
+      \renewcommand{\vc}{5}
     }{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{8}
-      \renewcommand{\vbthree}{3}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{8}
+      \renewcommand{\vc}{3}
     }
   }
 }
 
-\ADD\vbone{1}\a
-\SUBTRACT\vbtwo\vbthree\b
-\MULTIPLY\vbone\vbtwo\c
+\ADD\va{1}\a
+\SUBTRACT\vb\vc\b
+\MULTIPLY\va\vb\c
 \DIVIDE\c\b\ans
 
-\question[1] Find $N$ if $\dfrac{\enpr{N}\vbone}{\enpr{N-1}\vbone} = \dfrac{\vbtwo}{\vbthree}$
-
+\question[1] Find $N$ if $\dfrac{\enpr{N}\va}{\enpr{N-1}\va} = \dfrac{\vb}{\vc}$
 
 \watchout
 
@@ -41,9 +40,15 @@
 
 \begin{solution}[\mcq]
 	\begin{align}
-		\dfrac{\enpr{N}\vbone}{\enpr{N-1}\vbone} &= \fnpr{N}\vbone\times\overbrace{\dfrac{(N-1-\vbone)!}{(N-1)!}}^{(N-\a)!} \\
-		&= \dfrac{N}{N-\vbone} \\
-		\text{ And }\therefore \dfrac{N}{N-\vbone} &= \dfrac{\vbtwo}{\vbthree} \Rightarrow N = \ans
+		\dfrac{\enpr{N}\va}{\enpr{N-1}\va} &= \fnpr{N}\va\times\overbrace{\dfrac{(N-1-\va)!}{(N-1)!}}^{(N-\a)!} \\
+		&= \dfrac{N}{N-\va} \\
+		\text{ And }\therefore \dfrac{N}{N-\va} &= \dfrac{\vb}{\vc} \implies N = \ans
 	\end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\ans$
+  \end{codex}
+\fi
 

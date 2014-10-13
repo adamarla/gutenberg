@@ -3,54 +3,55 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{9}
-  \renewcommand{\vbtwo}{6}
-  \renewcommand{\vbthree}{84}
+  \renewcommand{\va}{9}
+  \renewcommand{\vb}{6}
+  \renewcommand{\vc}{84}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{8}
-    \renewcommand{\vbtwo}{4}
-    \renewcommand{\vbthree}{70}
+    \renewcommand{\va}{8}
+    \renewcommand{\vb}{4}
+    \renewcommand{\vc}{70}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{10}
-      \renewcommand{\vbtwo}{7}
-      \renewcommand{\vbthree}{120}
+      \renewcommand{\va}{10}
+      \renewcommand{\vb}{7}
+      \renewcommand{\vc}{120}
     }{
       % variables 
-      \renewcommand{\vbone}{7}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{35}
+      \renewcommand{\va}{7}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{35}
     }
   }
 }
 
-\SUBTRACT\vbone\vbtwo\p
+\SUBTRACT\va\vb\p
 
-\question[3] What is the coefficient of $x^{\vbtwo} y^{\p}$ in the expansion of $(x + y)^{\vbone}$?
-
+\question[3] What is the coefficient of $x^{\vb} y^{\p}$ in the expansion of $(x + y)^{\va}$?
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\halfpage]
-  The general form of a term in the expansion of $(x+y)^{\vbone}$ is 
+  The general form of a term in the expansion of $(x+y)^{\va}$ is 
   \begin{align}
-    a_m &= \encr\vbone{m}\cdot x^{m}\cdot y^{\vbone - m}, \text{where } m \in [0,\vbone]
+    a_m &= \encr\va{m}\cdot x^{m}\cdot y^{\va - m}, \text{where } m \in [0,\va]
   \end{align}
 
-  What we need is $m=\vbtwo$ so that $x^m = x^{\vbtwo}$. Which means, that 
+  What we need is $m=\vb$ so that $x^m = x^{\vb}$. Which means, that 
   \begin{align}
-    a_{\vbtwo} &= \encr\vbone\vbtwo\cdot x^{\vbtwo}\cdot y^{\p}
+    a_{\vb} &= \encr\va\vb\cdot x^{\vb}\cdot y^{\p}
   \end{align}
 
   And therefore, the required coefficient is simply
   \begin{align}
-     = \encr\vbone\vbtwo  &= \fncr\vbone\vbtwo = \vbthree
+     = \encr\va\vb  &= \fncr\va\vb = \vc
   \end{align}
 \end{solution}
 
+\ifprintanswers
+  \begin{codex}
+    $\vc$
+  \end{codex}
+\fi 

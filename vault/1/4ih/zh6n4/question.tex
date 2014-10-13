@@ -1,67 +1,89 @@
 
-
-\ifnumodd{\value{rolldice}}{
+\ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{\sqrt{3}}
-  \renewcommand{\vbtwo}{\sqrt{2}}
-  \renewcommand{\vbthree}{485 + 198\sqrt{6}}
-  \renewcommand{\vbfour}{485-198\sqrt{6}}
-  \renewcommand{\vbfive}{970}
+  \renewcommand{\va}{3}
+  \renewcommand{\vb}{2}
+  \renewcommand\vj{485}
+  \renewcommand\vk{198}
 }{
-    \renewcommand{\vbone}{\sqrt{5}}
-    \renewcommand{\vbtwo}{\sqrt{2}}
-    \renewcommand{\vbthree}{1183 + 374\sqrt{10}}
-    \renewcommand{\vbfour}{1183-374\sqrt{10}}
-    \renewcommand{\vbfive}{2366}
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{5}
+    \renewcommand{\vb}{2}
+    \renewcommand\vj{1183}
+    \renewcommand\vk{374}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{3}
+      \renewcommand\vj{1351}
+      \renewcommand\vk{390}
+    }{
+      % variables 
+      \renewcommand{\va}{6}
+      \renewcommand{\vb}{2}
+      \renewcommand\vj{1664}
+      \renewcommand\vk{480}
+    }
+  }
 }
 
-\question If $S=\overbrace{(\vbone + \vbtwo)^6}^{A} + \overbrace{(\vbone - \vbtwo)^6}^{B}$, then
+\renewcommand\vx{\sqrt\va}
+\renewcommand\vy{\sqrt\vb}
+\renewcommand\vz{\sqrt{\va\cdot\vb}}
+\MULTIPLY\va\vb\vc % a*b 
+\MULTIPLY\vj{2}\vl
 
+\question If $S=\overbrace{(\sqrt\va + \sqrt\vb)^6}^{A} + \overbrace{(\sqrt\va - \sqrt\vb)^6}^{B}$, then
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{parts}
-  \part[1] Write the binomial expansion of $A$ and then reduce it to get the value of $A$
+  \part[1] Find the value of $A$. 
 
 \begin{solution}[\mcq]
   	\begin{align}
-  		A &= \sum_{k=0}^{6}\binom{6}{k}(\vbone)^{6-k}\cdot(\vbtwo)^{k} \\
-  		&= \binom{6}{0}(\vbone)^{6} + \binom{6}{1}(\vbone)^{5}(\vbtwo) + \binom{6}{2}(\vbone)^4(\vbtwo)^2 \nonumber\\
-  		&+ \binom{6}{3}(\vbone)^3(\vbtwo)^3 + \binom{6}{4}(\vbone)^2(\vbtwo)^4 \nonumber\\
-  		&+ \binom{6}{5}(\vbone)(\vbtwo)^5 + \binom{6}{6}(\vbtwo)^6
+  		A &= \sum_{k=0}^{6}\binom{6}{k}(\vx)^{6-k}\cdot(\vy)^{k} \\
+  		&= \binom{6}{0}(\vx)^{6} + \binom{6}{1}(\vx)^{5}(\vy) + \binom{6}{2}(\vx)^4(\vy)^2 \nonumber\\
+  		&+ \binom{6}{3}(\vx)^3(\vy)^3 + \binom{6}{4}(\vx)^2(\vy)^4 \nonumber\\
+  		&+ \binom{6}{5}(\vx)(\vy)^5 + \binom{6}{6}(\vy)^6
   	\end{align}
     Calculate the individual terms in (2). And if you do the calculations correctly, 
     then you should get 
     \begin{align}
-    	A &= \vbthree
+    	A &= \vj + \vk\sqrt\vc
     \end{align}
   \end{solution}
 
-  \part[2] Do the same for $B$
+  \part[2] Find the value of $B$. 
 
 \begin{solution}[\mcq]
   	If you have done (a), then this shouldn't be too much trouble either. However, do note that 
   	\begin{align}
-  		B &= \sum_{k=0}^{6}\binom{6}{k}(\vbone)^{6-k}\cdot\overbrace{(-\vbtwo)^k} \nonumber\\
-  		&= \sum_{k=0}^{6}\binom{6}{k}(\vbone)^{6-k}\cdot(\vbtwo)^k\cdot(-1)^k \\
-       \Rightarrow B &= \binom{6}{0}(\vbone)^{6} - \binom{6}{1}(\vbone)^{5}(\vbtwo) + 
-       \binom{6}{2}(\vbone)^4(\vbtwo)^2 \nonumber\\
-  		&- \binom{6}{3}(\vbone)^3(\vbtwo)^3 + \binom{6}{4}(\vbone)^2(\vbtwo)^4 \nonumber\\
-  		&- \binom{6}{5}(\vbone)(\vbtwo)^5 + \binom{6}{6}(\vbtwo)^6 \\
-  		&= \vbfour
+  		B &= \sum_{k=0}^{6}\binom{6}{k}(\vx)^{6-k}\cdot\overbrace{(-\vy)^k} \nonumber\\
+  		&= \sum_{k=0}^{6}\binom{6}{k}(\vx)^{6-k}\cdot(\vy)^k\cdot(-1)^k \\
+       \implies B &= \binom{6}{0}(\vx)^{6} - \binom{6}{1}(\vx)^{5}(\vy) + 
+       \binom{6}{2}(\vx)^4(\vy)^2 \nonumber\\
+  		&- \binom{6}{3}(\vx)^3(\vy)^3 + \binom{6}{4}(\vx)^2(\vy)^4 \nonumber\\
+  		&- \binom{6}{5}(\vx)(\vy)^5 + \binom{6}{6}(\vy)^6 \\
+  		&= \vj-\vk\sqrt\vc
   	\end{align}
   \end{solution}
 
-  \part[1] Calculate $S$ using the expressions found in parts (a) and (b)
+  \part[1] Find the value of $S$ using the values found in parts (a) and (b). 
 
 \begin{solution}[\mcq]
   	\begin{align}
-  		S &= \vbthree + \vbfour = \vbfive
+  		S &= (\vj + \vk\sqrt\vc) + (\vj-\vk\sqrt\vc) = \vl
   	\end{align}
   \end{solution}
 
 \end{parts}
+
+\ifprintanswers
+  \begin{codex}
+    $(a)\,\vj+\vk\sqrt\vc\quad (b)\,\vj-\vk\sqrt\vc\quad (c)\,\vl$
+  \end{codex}
+\fi 
 
