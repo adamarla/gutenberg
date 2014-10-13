@@ -3,72 +3,78 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{2}
-  \renewcommand{\vbtwo}{4}
-  \renewcommand{\vbthree}{5}
-  \renewcommand{\vbfour}{10}
+  \renewcommand{\va}{2}
+  \renewcommand{\vb}{4}
+  \renewcommand{\vc}{5}
+  \renewcommand{\vd}{10}
+  \renewcommand{\vg}{45}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{5}
-    \renewcommand{\vbtwo}{3}
-    \renewcommand{\vbthree}{2}
-    \renewcommand{\vbfour}{9}
+    \renewcommand{\va}{5}
+    \renewcommand{\vb}{3}
+    \renewcommand{\vc}{2}
+    \renewcommand{\vd}{9}
+    \renewcommand{\vg}{126}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{2}
-      \renewcommand{\vbtwo}{1}
-      \renewcommand{\vbthree}{3}
-      \renewcommand{\vbfour}{11}
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{1}
+      \renewcommand{\vc}{3}
+      \renewcommand{\vd}{11}
+      \renewcommand{\vg}{462}
     }{
       % variables 
-      \renewcommand{\vbone}{3}
-      \renewcommand{\vbtwo}{2}
-      \renewcommand{\vbthree}{4}
-      \renewcommand{\vbfour}{8}
+      \renewcommand{\va}{3}
+      \renewcommand{\vb}{2}
+      \renewcommand{\vc}{4}
+      \renewcommand{\vd}{8}
+      \renewcommand{\vg}{56}
     }
   }
 }
 
-\SUBTRACT\vbthree{1}\p
-\ADD\vbone\vbtwo\a
-\SUBTRACT\vbfour\p\b
+\SUBTRACT\vc{1}\p
+\ADD\va\vb\a
+\SUBTRACT\vd\p\b
 \DIVIDE\b\a\c
+\MULTIPLY\c\va\ve
+\SUBTRACT\vd\ve\vf
 
-\question[3] In the expansion of $(1+x)^{\vbfour}$, for what value of $m$ are 
-the \textit{coefficients} of the $(\vbone m + 1)$th and $(\vbtwo m + \vbthree)$th terms equal?
-
+\question[3] In the expansion of $(1+x)^{\vd}$, for what value of $m$ are 
+the \textit{coefficients} of the $(\va m + 1)$th and $(\vb m + \vc)$th terms equal?
+Also, find the value of the said coefficient.
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\halfpage]
-  In the expansion of $(1+x)^{\vbfour}$, where $m \in [0,\vbfour]$, $T_m$ is the $(m+1)$th term and its 
-  value is given by
+  If $K_j$ be the  \textbf{coefficient} of the $(j+1)$-th term in the expansion of $(1+x)^{\vd}$, then
+  \[ K_j = \binom\vd{j},\, 0\leq j\leq\vd \] 
+  
+  In our case, these coefficients are  
   \begin{align}
-    T_m &= \encr\vbfour{m}\cdot 1^{m}\cdot x^{\vbfour - m}
+    K_{\va m} &= \binom\vd{\va m} \\
+    K_{\vb m + \p} &= \binom\vd{\vb m + \p}
   \end{align}
   
-  But we are interested only in the coefficients. And therefore, if $K_m$ be the coefficient of the $(m+1)$th term, then $K_m = \encr\vbfour{m}$
+  Moreover, we are looking for two \textbf{distinct terms} that have the \textbf{same coefficient}. Which means, 
+   \[ \va m \neq \vb m + \p \]
   
-  What we want is $\underbrace{K_{\vbone m}}_{\texttt{(\vbone m + 1)th}} = 
-  \underbrace{K_{\vbtwo m + \p}}_{\texttt{(\vbtwo m + \vbthree)th}} \Rightarrow
-  \encr\vbfour{\vbone m} = \encr\vbfour{\vbtwo m + \p}$
-  
-  
-  And obviously, we are looking for two $distinct$ terms 
-  $\Rightarrow \vbone m \neq \vbtwo m + \p$
-  
-  The other option is $\vbone m = \vbfour - (\vbtwo m + \p)$ because we know that 
-  $\encr{N}{p} = \encr{N}{N-p}$
-  
-  Given this, 
+  Hence, using the fact that 
+  \[ \binom{N}{p} = \binom{N}{N-p} \]
+  we get  
   \begin{align}
-    \vbone m &= \vbfour - (\vbtwo m + \p) \\
-    \Rightarrow m &= \dfrac{\vbfour - \p}{\vbone + \vbtwo} = \c
+    \va m &= \vd - (\vb m + \p) \implies m = \dfrac{\vd - \p}{\va + \vb} = \c
   \end{align}
+
+  And the value of the said coefficient is 
+  \[ \binom\vd\ve = \binom\vd\vf = \vg \] 
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $m=\c,\,\text{coefficient} =\vg$
+  \end{codex}
+\fi 
 
