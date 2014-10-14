@@ -2,39 +2,42 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{5}
+  \renewcommand{\va}{5}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{3}
+    \renewcommand{\va}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{4}
+      \renewcommand{\va}{4}
     }{
       % variables 
-      \renewcommand{\vbone}{6}
+      \renewcommand{\va}{6}
     }
   }
 }
 
-\question[1] Differentiate $y = \sin\vbone x\cdot e^{(ax + b)}$ with respect to $x$
-
+\question[1] Differentiate the following with respect to $x$
+\[y = \sin\va x\cdot e^{(ax + b)}\]
 
 \watchout
-
-\ifprintanswers
-\fi 
 
 \begin{solution}[\mcq]
 	This question requires only the application of the Chain Rule 
 	\begin{align}
-		y &= \sin\vbone x\cdot e^{(ax + b)} \nonumber\\
-	   \Rightarrow \dfrac{dy}{dx} &= \sin\vbone x\cdot\dfrac{d}{dx}e^{(ax + b)} 
-	   + \left(\dfrac{d}{dx}\sin\vbone x\right)\cdot e^{(ax + b)} \\
-	   &= \sin\vbone x\cdot\left( a\cdot e^{(ax + b)}\right) + 
-	   \left( \vbone\cdot\cos\vbone x\right)\cdot e^{(ax+b)} \\
-	   &= e^{(ax+b)}\cdot\left[ a\cdot\sin\vbone x + \vbone\cdot\cos\vbone x\right]
+		y &= \sin\va x\cdot e^{(ax + b)} \nonumber\\
+	   \implies \dfrac{dy}{dx} &= \sin\va x\cdot\dfrac{d}{dx}e^{(ax + b)} 
+	   + \left(\dfrac{d}{dx}\sin\va x\right)\cdot e^{(ax + b)} \\
+	   &= \sin\va x\cdot\left( a\cdot e^{(ax + b)}\right) + 
+	   \left( \va\cdot\cos\va x\right)\cdot e^{(ax+b)} \\
+	   &= e^{(ax+b)}\cdot\left[ a\cdot\sin\va x + \va\cdot\cos\va x\right]
 	\end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+	   $e^{(ax+b)}\cdot\left[ a\cdot\sin\va x + \va\cdot\cos\va x\right]$
+  \end{codex}
+\fi 
 
