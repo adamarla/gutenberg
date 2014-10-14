@@ -8,6 +8,27 @@
 \FRACADD\va\vb{1}{25}\vc\vd
 
 \begin{solution}[\halfpage]
+  \textbf{Below are two ways of proving the proposition}
+
+  \textbf{Method \#1}
+
+  If we assume that $2^n > n^2$, then 
+  \begin{align}
+    2\cdot 2^n &> 2\cdot n^2 \implies 2^{n+1} > n^2 + n^2 \\
+    \text{or } 2^{n+1} &> (n^2 + 2n + 1) + (n^2 - 2n - 1) \\
+     &> (n+1)^2 + (n^2 - 2n - 1) 
+  \end{align}
+
+  Note now that,
+    \[\text{If } a > b + c, \text{ then } a > b \text{ if } a,b,c > 0 \]
+
+  And as $n^2 - 2n - 1 > 0$ for $n\geq 5$, therefore 
+    \[ 2^{n+1} > (n+1)^2 + (n^2-2n-1) \implies 2^{n+1} > (n+1)^2 \] 
+
+  Moreover, $2^n > n^2$ for $n=5$. Which means the proposition is also true for $n=6,7,8,\ldots\infty$.
+
+  \textbf{Method \#2}
+
   If we assume that  $2^n > n^2$ for some $n\geq 5$, then for the proposition to be true
   \begin{align}
     2^{n+1} &> (n+1)^2\implies 2\cdot 2^n > (n^2 + 2n + 1) \\
