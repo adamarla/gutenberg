@@ -3,55 +3,55 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{2}
-  \renewcommand{\vbtwo}{11}
-  \renewcommand{\vbthree}{12}
-  \renewcommand{\vbfour}{7}
+  \renewcommand{\va}{2}
+  \renewcommand{\vb}{11}
+  \renewcommand{\vc}{12}
+  \renewcommand{\vd}{7}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{-3}
-    \renewcommand{\vbtwo}{8}
-    \renewcommand{\vbthree}{5}
-    \renewcommand{\vbfour}{11}
+    \renewcommand{\va}{-3}
+    \renewcommand{\vb}{8}
+    \renewcommand{\vc}{5}
+    \renewcommand{\vd}{11}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{9}
-      \renewcommand{\vbtwo}{4}
-      \renewcommand{\vbthree}{7}
-      \renewcommand{\vbfour}{-13}
+      \renewcommand{\va}{9}
+      \renewcommand{\vb}{4}
+      \renewcommand{\vc}{7}
+      \renewcommand{\vd}{-13}
     }{
       % variables 
-      \renewcommand{\vbone}{-6}
-      \renewcommand{\vbtwo}{7}
-      \renewcommand{\vbthree}{5}
-      \renewcommand{\vbfour}{14}
+      \renewcommand{\va}{-6}
+      \renewcommand{\vb}{7}
+      \renewcommand{\vc}{5}
+      \renewcommand{\vd}{14}
     }
   }
 }
 
-\FRACADD\vbone\vbtwo\vbfour\vbthree\tp\tq
-\FRACMULT\vbone\vbtwo\vbfour\vbthree\tr\ts
-\FRACMINUS{1}{1}\tr\ts\ta\tb
-\FRACDIV\tp\tq\ta\tb\tx\ty
+\FRACADD\va\vb\vd\vc\ve\vf
+\FRACMULT\va\vb\vd\vc\vg\vh
+\FRACMINUS{1}{1}\vg\vh\vi\vj
+\FRACDIV\ve\vf\vi\vj\vk\vl
 
-\question[1] Find $A$ if $\tan^{-1} \dfrac{\vbone}{\vbtwo} + \cot^{-1}\dfrac{\vbthree}{\vbfour} = \tan^{-1} A$
+\question[1] Find $A$ if $\tan^{-1} \dfrac{\va}{\vb} + \cot^{-1}\dfrac{\vc}{\vd} = \tan^{-1} A$
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
-
 \begin{solution}[\halfpage]
 	\begin{align}
-	    \tan^{-1}\frac{\vbone}{\vbtwo} + \cot^{-1}\frac{\vbthree}{\vbfour} &= 
-      \tan^{-1}\frac{\vbone}{\vbtwo} + \tan^{-1}\frac{\vbfour}{\vbthree} \\
-	    &= \tan^{-1}\left(\dfrac{\frac{\vbone}{\vbtwo} + 
-      \frac{\vbfour}{\vbthree}}{1-\frac{\vbone}{\vbtwo}\cdot\frac{\vbfour}{\vbthree}}\right) \\
-	    &= \tan^{-1}\left(\dfrac\tx\ty\right) \\
-      &\Rightarrow A = \WRITEFRAC\tx\ty 
+      A &= \tan(\tan^{-1} A) = \tan(\tan^{-1}\frac\va\vb + \cot^{-1}\frac\vc\vd) \\ 
+        &= \tan(\tan^{-1}\frac\va\vb + \tan^{-1}\frac\vd\vc) \\
+        &= \dfrac{\tan(\tan^{-1}\frac\va\vb)+\tan(\tan^{-1}\frac\vd\vc)}
+        {1-\tan(\tan^{-1}\frac\va\vb)\cdot\tan(\tan^{-1}\frac\vd\vc)} \\
+        &= \dfrac{\frac\va\vb + \frac\vd\vc}{1-\frac\va\vb\cdot\frac\vd\vc} = \WRITEFRAC\vk\vl
 	\end{align}
 \end{solution}
 
+\ifprintanswers
+  \begin{codex}
+    $\WRITEFRAC\vk\vl$
+  \end{codex}
+\fi 

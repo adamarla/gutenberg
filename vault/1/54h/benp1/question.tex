@@ -1,33 +1,59 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand\va{2}
+  \renewcommand\vb{5}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\va{4}
+    \renewcommand\vb{7}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\va{3}
+      \renewcommand\vb{2}
+    }{
+      \renewcommand\va{5}
+      \renewcommand\vb{9}
+    }
+  }
+}
+
 
 \question[2] Find the inverse of the one-to-one function
-$f:\Re-\{-5\}\rightarrow \Re-\{2\}$ defined by $f(x)=\dfrac{2x-1}{x+5}$
+\[ f:\mathbb{R}-\{-\vb\}\to \mathbb{R}-\{\va\} =\dfrac{\va x-1}{x+\vb }\]
+\[\mathbb{R}-\lbrace X\rbrace\text{ means all real numbers except } X \]
 
-
-\ifprintanswers
-	\marginnote{$\Re-\{-5\}$ means all real numbers \textit{except} -5. Similarly, $\Re-\{-5,7\}$ means
-	all real numbers \textit{except} -5 and 7. Getting the picture?}
-	\marginnote[1cm]{If $f(x) = y$, then $f^{-1}(y) = x$. This is the definition of an inverse function }
-\fi 
+\watchout
 
 \begin{solution}[\mcq]
+  \textbf{Method \#1}
+
 	\begin{align}
-		\text{If } y &= f(x) = \dfrac{2x-1}{x+5} \\
-		\text{then } x &= \dfrac{5y+1}{2-y} = f^{-1}(y)
+		\text{If } y &= f(x) = \dfrac{\va x-1}{x+\vb} \\
+		\text{then } yx + \vb y &= \va x - 1 \implies x = \dfrac{\vb y + 1}{\va - y} 
 	\end{align}
-	In $y = f(x)$, $y$ is the dependent variable and $x$ the independent variable. 
-	And the convention is to write the \textit{independent} variable as $x$ and the 
-	dependent variable as $y$
+
+	In iany function $y = f(x)$, $y$ is the dependent variable and $x$ the independent variable. 
 	
-	So, we could also write (2) as $f^{-1}(x) = \dfrac{5x+1}{2-x}$. But remember that 
-	the $x$ here \textit{is not} the same as the $x$ in (1). We are just following a naming
-	convention here
+  The \textbf{convention} is to write the \textit{independent} variable as $x$ and the 
+	dependent variable as $y$.
 	
-	Alternately, we could use the fact that $f \circ f^{-1}(y) = y$ (or $f \circ f^{-1}(x) = x$, if 
-	we follow the naming convention)
+	So, we could also write (2) as $f^{-1}(x) = \dfrac{\vb x+1}{\va-x}$. But remember, this $x$ 
+	\textit{is not} the same as the $x$ in (1). We are just following a naming
+	convention here.
 	
+  \textbf{Method \#2}
+
+	Alternately, we could use the fact that 
+  \[ f \circ f^{-1}(x) = x \]
 	\begin{align}
-		\Rightarrow \dfrac{2f^{-1}(x)-1}{f^{-1}(x)+5} &= x \\
-		\Rightarrow f^{-1}(x) &= \dfrac{5x+1}{2-x}
+		\implies \dfrac{\va f^{-1}(x)-1}{f^{-1}(x)+\vb} &= x \\
+		\implies f^{-1}(x) &= \dfrac{\vb x + 1}{\va - x }
 	\end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\dfrac{\vb x + 1}{\va -x}$
+  \end{codex}
+\fi 
+
