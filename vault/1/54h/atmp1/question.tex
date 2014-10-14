@@ -6,7 +6,7 @@
   \renewcommand\vk{2}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand\va{3}
+    \renewcommand\va{4}
     \renewcommand\vc{5}
     \renewcommand\vd{3}
     \renewcommand\vk{2}
@@ -66,3 +66,8 @@
 
 \end{parts}
 
+\ifprintanswers
+  \begin{codex}
+    $(a)\,\left\{ \WRITEFRAC\vf\vh, \WRITEFRAC\vg\vh \right\}\quad (b)\,\phi$
+  \end{codex}
+\fi
