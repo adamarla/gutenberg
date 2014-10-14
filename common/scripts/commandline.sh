@@ -11,6 +11,18 @@ COL_BLUE=$ESC_SEQ"34;01m"
 COL_MAGENTA=$ESC_SEQ"35;01m"
 COL_CYAN=$ESC_SEQ"36;01m"
 
+function change_latex_variables { 
+  q=$(find . -name question.tex)
+  declare -A v=( ['vbone']='va' ['vbtwo']='vb' ['vbthree']='vc' ['vbfour']='vd' ['vbfive']='ve' ['vbsix']='vf' ['vbseven']='vg' ['vbeight']='vh' ['vbnine']='vi' ['vbten']='vj' ['Rightarrow']='implies' )
+  for f in $q ; do 
+    echo "-- $f"
+    for k in "${!v[@]}" ; do 
+      echo ".... $k -> ${v[$k]}"
+      sed -i "s/$k/${v[$k]}/g" $f
+    done
+  done
+} 
+
 function connect_with_common { 
   if [ -z "$1" ] ; then 
     echo "[Error]: Specify a target ( vault | minthril )"
