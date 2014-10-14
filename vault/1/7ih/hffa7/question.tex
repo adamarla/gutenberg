@@ -3,41 +3,47 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{2}
-  \renewcommand{\vbtwo}{3}
-  \renewcommand{\vbthree}{9}
-  \renewcommand{\vbfour}{20}
+  \renewcommand{\va}{2}
+  \renewcommand{\vb}{3}
+  \renewcommand{\vc}{9}
+  \renewcommand{\vd}{20}
+  \renewcommand\ve{10}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{3}
-    \renewcommand{\vbtwo}{2}
-    \renewcommand{\vbthree}{7}
-    \renewcommand{\vbfour}{15}
+    \renewcommand{\va}{3}
+    \renewcommand{\vb}{2}
+    \renewcommand{\vc}{7}
+    \renewcommand{\vd}{15}
+    \renewcommand\ve{10}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{9}
-      \renewcommand{\vbfour}{16}
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{9}
+      \renewcommand{\vd}{16}
+      \renewcommand\ve{15}
     }{
       % variables 
-      \renewcommand{\vbone}{2}
-      \renewcommand{\vbtwo}{5}
-      \renewcommand{\vbthree}{9}
-      \renewcommand{\vbfour}{18}
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{5}
+      \renewcommand{\vc}{9}
+      \renewcommand{\vd}{18}
+      \renewcommand\ve{8}
     }
   }
 }
 
-\ADD\vbone\vbtwo\p
-\MULTIPLY\vbfour\vbtwo\q
-\ADD\vbthree\q\r
+\MULTIPLY\vb\vd\vi
+\ADD\vc\vi\vj 
+\ADD\va\vb\vk 
+\ADD\ve\vi\vl
+\DIVIDE\vl\vk\vn
+\SUBTRACT\vd\vn\vo
 
-\question[3] What is the coefficient of $x^{\vbthree}$ in the expansion of 
-$\left( 2x^{\vbone} - \dfrac{1}{x^{\vbtwo}}\right)^{\vbfour}$? Could be a trick question
-
+\question[3] What are the coefficients of $x^{\vc}$ and $x^{\ve}$ in 
+\[\left( 2x^{\va} - \dfrac{1}{x^{\vb}}\right)^{\vd}\]
 
 \watchout
 
@@ -45,23 +51,36 @@ $\left( 2x^{\vbone} - \dfrac{1}{x^{\vbtwo}}\right)^{\vbfour}$? Could be a trick 
 \fi 
 
 \begin{solution}[\halfpage]
-  Given general form of a term - $T_m$ - in the expansion of 
-  $\left( 2x^{\vbone} - \dfrac{1}{x^{\vbtwo}}\right)^{\vbfour}$ 
+  All terms in the expansion would be of the form 
   \begin{align}
-    T_m &= \encr\vbfour{m}\cdot(2x^{\vbone})^{m}\cdot\left(\dfrac{1}{x^{\vbtwo}}\right)^{\vbfour - m}
-    , m \in\mathbb{Z}, m\in [0,\vbfour]
+    T_m &= \binom\vd{m}\cdot(2x^{\va})^{m}\cdot\left(\dfrac{1}{x^{\vb}}\right)^{\vd - m}
+    , m \in\mathbb{Z}, 0\leq m\leq\vd
   \end{align}
   
-  , the $x$ term in $T_m$ would be 
+  And for there to be a $x^{\vc}$ term, 
   \begin{align}
-    &= \dfrac{x^{\vbone m}}{x^{\vbtwo\cdot(\vbfour - m)}} = x^{\p m - \q}
+    \dfrac{x^{\va m}}{x^{\vb\cdot(\vd - m)}} &= x^{\vk m - \vi} = x^{\vc} \\
+    \implies \vk m - \vi &= \vc\text{ or } m = \WRITEFRAC\vj\vk
   \end{align}
-  For there to be $x^{\vbthree}$ term,
+
+  As $m\notin\mathbb{Z}$ (not an integer),  this value of the $m$ makes no sense. 
+  And hence, there cannot be a $x^\vc$ term$\implies$ coefficient of $x^\vc=0$.
+
+  However, for $x^{\ve}$
   \begin{align}
-    \p m - \q &= \vbthree\Rightarrow m = \WRITEFRAC\r\p
+    \dfrac{x^{\va n}}{x^{\vb\cdot(\vd - n)}} &= x^{\vk n - \vi} = x^{\ve} \\
+    \implies \vk n - \vi &= \ve\text{ or } n = \vn 
   \end{align}
-  But $m\in\mathbb{Z}$. And as $m = \WRITEFRAC\r\p \notin\mathbb{Z}$, 
-  $x^{\vbthree}$ cannot appear in the expansion
+
+  This value of $n$ makes sense because $n\in\mathbb{Z}$ and $n\leq\vd$. Hence,
+  there would be a $x^{\ve}$ term with coefficient 
+  \[ K_{\ve} = \binom\vd\vn 2^{\vn}(-1)^{\vo} \]
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $0\text{ and } ^{\vd}C_{\vn}\cdot 2^{\vn}\cdot(-1)^{\vo}\text{ respectively }$
+  \end{codex}
+\fi
 
 
