@@ -1,8 +1,48 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\va}{-2}
+  \renewcommand{\vb}{3}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\va}{-2}
+    \renewcommand{\vb}{5}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\va}{-1}
+      \renewcommand{\vb}{5}
+    }{
+      \renewcommand{\va}{-2}
+      \renewcommand{\vb}{6}
+    }
+  }
+} 
+
+\ADD\va\vb\vc
+\MULTIPLY\vb{-\va}\vd
+\SQUARE\va\ve
+\SQUARE\vb\vf
+\MULTIPLY\ve\va\vx
+\MULTIPLY\vf\vb\vy
+\FRACTIONSIMPLIFY\vc{2}\vp\vq
+
+\FRACMULT\vp\vq\vf{1}\vg\vh
+\MULTIPLY\vd\vb\vi
+
+\FRACMULT\vp\vq\ve{1}\vj\vk
+\MULTIPLY\vd\va\vl
+
+\FRACADD\vg\vh\vi{1}\a\b
+\FRACMINUS\a\b\vy{3}\c\d
+
+\FRACADD\vj\vk\vl{1}\e\f
+\FRACMINUS\e\f\vx{3}\g\h
+
+\FRACMINUS\c\d\g\h\vm\vn
 
 \question[3] Compute the area of the parabolic segment cut by the straight line 
-$y=2x + 3$ off the parabola $y=x^2$
+$y=\vc x + \vd$ off the parabola $y=x^2$
 
+\watchout
 
 \ifprintanswers
   \begin{marginfigure}
@@ -92,8 +132,8 @@ $y=2x + 3$ off the parabola $y=x^2$
 \figwritee 1:(5pt)     \figwriten 2:(5pt)
 \figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
 \figwritee 100: $R$(4)
-\figwritew 101: ${(-1,1)}$(4)
-\figwritee 102: ${(3,9)}$(4)
+\figwritew 101: ${(\va,\ve)}$(4)
+\figwritee 102: ${(\vb,\vf)}$(4)
 }
 \centerline{\box\figBoxA}
 
@@ -103,16 +143,21 @@ $y=2x + 3$ off the parabola $y=x^2$
 \begin{solution}[\halfpage]
    The two curves intersect at points where
    \begin{align}
-      x^2 &= 2x +3 \\
-      \Rightarrow x^2 - 2x - 3 &= 0 \\
-      \Rightarrow x &= -1, 3 
+      x^2 &= \vc x +\vd\implies x^2 - \vc x - \vd = 0 \\
+      \text{or } x &= \va,\vb
    \end{align}
    
-   And therefore, the required area - of region $R$ - is 
+   And therefore, the area $(A)$ of region $R$ (see figure) is 
    \begin{align}
-     Area(R) &= \int_{-1}^3 (2x+3-x^2)\ud x \\
-             &= \left[ x^2+3x-\dfrac{x^3}{3} \right]_{-1}^3 \\
-             &= \left( 9 + 27 -9 \right) - \left( 1-3+\dfrac{1}{3}\right) \\
-             &= 10\frac{2}{3}
+     A &= \int_{\va}^\vb (\vc x+\vd-x^2)\ud x \\
+       &= \left[ \WRITEFRAC\vp\vq x^2+\vd x-\dfrac{x^3}{3} \right]_{\va}^\vb \\
+       &= \left( \WRITEFRAC\vg\vh + \vi - \dfrac\vy{3} \right) 
+       - \left( \WRITEFRAC\vj\vk + \vl - \dfrac\vx{3} \right) = \WRITEFRAC\vm\vn
    \end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\WRITEFRAC\vm\vn$
+  \end{codex}
+\fi
