@@ -1,13 +1,28 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\va}{10}
+  \renewcommand{\vb}{6}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\va}{8}
+    \renewcommand{\vb}{10}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\va}{12}
+      \renewcommand{\vb}{10}
+    }{
+      \renewcommand{\va}{14}
+      \renewcommand{\vb}{8}
+    }
+  }
+} 
 
-\question[3] Compute the area of parabolic area $R$ - as shown in the adjoining 
-figure - with base $a = 10cm$ and altitude $h=6cm$. The base is perpendicular 
-to the axis of the parabola
+\question[3] Compute the area contained \textbf{within} the parabola (see figure) if 
+the parabola's base $=a=\va$ cm and its height $=h=\vb$ cm. The base is perpendicular to the 
+axis of the parabola. 
 
+\watchout 
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
 \begin{marginfigure}
 \figinit{pt}
 \def\Xmin{-35.00000}
@@ -76,20 +91,39 @@ to the axis of the parabola
 
 \end{marginfigure}
 
+\DIVIDE\va{2}\vc
+\SQUARE\vc\vd
+\MULTIPLY\vd\vc\ve 
+
+\FRACTIONSIMPLIFY\vb\vd\vp\vq
+\MULTIPLY\vq{3}\vr
+
+\MULTIPLY\vb\vc\vi
+\FRACMULT\vp\vr\ve{1}\vj\vk
+\FRACMINUS\vi{1}\vj\vk\vl\vm
+\FRACMULT\vl\vm{2}{1}\vn\vo
+
 \begin{solution}[\halfpage]
-   Given that the parabola is symmetrical about the $y-axis$, we know that it has been 
-   plotted between $\left( \frac{-a}{2}, \frac{a}{2}\right)$ or $(-5,5)$
-   
-   Also, if the equation of the parabola be $y = ax^2$, where $a$ is an as yet unknown constant, 
-   then given that $y(5) = 6 = a\cdot(5^2)$, we get $a = \frac{6}{25}$
-   
-   This gives us the equation of the parabola - which is $y = \dfrac{6}{25}x^2$
-   
-   The required area $A$ of region $R$ is therefore
-   \begin{align}
-   	  A &= Area(rectangle) - Area(\textit{under the parabola}) \\
-   	    &= 10\times6 - \int_{-5}^5 \dfrac{6}{25}x^2 \ud x \\
-   	    &= 60 -  \dfrac{6}{25}\left[ \dfrac{x^3}{3}\right]_{-5}^5 \\
-   	    &= 40\text{ }cm^2
-   \end{align}
+  As the parabola is symmetrical about the $y$-axis, it spans from $x=-\vc$ to $x=\vc$.
+
+  Moreover, this parabola is of the form 
+    \[ y = k\cdot x^2 \]
+
+  And in particular 
+    \[ \vb = k\cdot \vc^2 \implies k = \WRITEFRAC\vp\vq \] 
+
+  The required area $(A)$ is therefore 
+  \begin{align}
+    A &= \overbrace{\int_{-\vc}^{\vc}\vb\cdot dx}^{\text{area under }y=\vb} 
+    - \underbrace{\int_{-\vc}^{\vc}\WRITEFRAC\vp\vq\cdot x^2\cdot dx}_{\text{area under parabola}} \\
+    &= \underbrace{2\cdot\left[ \vb x - \WRITEFRAC\vp\vr\cdot x^3 \right]_0^{\vc}}_{\text{symmetrical about y-axis}} 
+    = \WRITEFRAC\vn\vo\text{ cm}^2
+  \end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\WRITEFRAC\vn\vo\text{ cm}^2$ 
+  \end{codex}
+\fi
+
