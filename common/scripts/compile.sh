@@ -248,7 +248,7 @@ function compile_tex {
 function create_jpegs {
   # $1 = pdf file in current folder
   gs -dNOPAUSE -dBATCH -sDEVICE=jpeg -r300 -sOutputFile=pg-%d.jpg $1 
-  for f in `ls pg-*.jpg` ; do convert -trim $f -resize 600x800 $f ; done
+  for f in `ls pg-*.jpg` ; do convert $f -resize 600x800 -chop 40x30 $f ; done
 }
 
 function create_codex {
@@ -257,8 +257,8 @@ function create_codex {
   # Assumes that pg-*.jpg have already been moved to the respective version folder
   if [ -e $(pwd)/codex.cdx ] ; then 
     n=$(pdfinfo $(pwd)/$1/document.pdf | grep Pages | sed -e 's/Pages:\s*//')
-    convert -trim $(pwd)/$1/pg-$n.jpg -resize 600x800 $(pwd)/$1/codex.jpg
-		#echo $n
+    convert -trim $(pwd)/$1/pg-$n.jpg $(pwd)/$1/codex.jpg
+    #echo $n
   fi
 } 
 
