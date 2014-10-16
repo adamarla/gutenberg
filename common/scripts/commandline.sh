@@ -20,6 +20,7 @@ function change_latex_variables {
       echo ".... $k -> ${v[$k]}"
       sed -i "s/$k/${v[$k]}/g" $f
     done
+    sed -i -e '$a\\\\ifprintanswers\\begin\{codex\}\\end\{codex\}\\fi' $f
   done
 } 
 
