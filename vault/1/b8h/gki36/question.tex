@@ -3,47 +3,46 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{9}
+  \renewcommand{\va}{9}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{8}
+    \renewcommand{\va}{8}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{10}
+      \renewcommand{\va}{10}
     }{
       % variables 
-      \renewcommand{\vbone}{11}
+      \renewcommand{\va}{11}
     }
   }
 }
 
-\gcalcexpr[0]{\vbtwo}{((\vbone + 2) * (\vbone + 1)) / 2}
-\gcalcexpr[0]{\vbthree}{\vbone - 2}
-\gcalcexpr[0]{\vbfour}{3 * (\vbone - 1)}
-\gcalcexpr[0]{\vbfive}{\vbfour + 3}
+\EXPR[0]{\vb}{((\va + 2) * (\va + 1)) / 2}
+\SUBTRACT\va{2}\vc
+\EXPR[0]{\vd}{3 * (\va - 1)}
+\ADD\vd{3}\ve
 
-\question $\vbone$ oranges have to be distributed amongst 3 children. If a child gets an orange, then 
-she gets a whole orange - not half or a third or a quarter
-
+\question $\va$ oranges have to be distributed amongst 3 children. If a child gets an orange, then 
+she gets a whole orange - not half or a third or a quarter.
 
 \watchout[-30pt]
 
-\ifprintanswers
-\fi 
-
 \begin{parts}
-  \part[2] In how many ways then can the $\vbone$ oranges be distributed?  
+  \part[2] In how many ways then can the $\va$ oranges be distributed?  
 
 \begin{solution}[\mcq]
   	When its a question of distributing $N$ things amongst $M$ people, imagine the $N$ things lined
-  	up with $M-1$ partitions between them. The first person gets whatever is on the left of the 
-  	first partition, the second what is between the first and the second partition and so on. The number 
-  	of distinct distributions then is the number of distinct permutations of $N+M-1$ items where $N$
-  	are of one kind and $M-1$ of the other
+  	up with $M-1$ partitions between them. 
+    
+    The first person gets whatever is on the left of the first partition, the second 
+    what is between the first and the second partition and so on. 
+    
+    The number of distinct distributions then is the number of \textbf{distinct} permutations 
+    of $N+M-1$ items where $N$ are of one kind and $M-1$ of the other
   	\begin{align}
-  		N_{\texttt{ways}} &= \dfrac{(\vbone + 3 - 1)\,!}{\vbone\,!\cdot (3-1)\,!} = \vbtwo
+  		N_{\texttt{ways}} &= \dfrac{(\va + 3 - 1)\,!}{\va\,!\cdot (3-1)\,!} = \vb
   	\end{align}
   \end{solution}
 
@@ -51,16 +50,22 @@ she gets a whole orange - not half or a third or a quarter
 
 \begin{solution}[\mcq]
   	If two of the children do not get anything, then the third child must get everything. As there are only
-  	3 children, there can be only 3 ways in which this can happen
+  	3 children, there can be only 3 ways in which this can happen.
   	
-  	However, if only one of the three is left out, then the $\vbone$ oranges are distributed amongst the other two. 
+  	However, if only one of the three is left out, then the $\va$ oranges are distributed amongst the other two. 
   	Moreover, each of the other two gets \textit{atleast} one orange. So, it comes down to distributing 
-  	$\vbthree$ oranges amonst two children
+  	$\vc$ oranges amonst two children
   	
   	\begin{align}
-  		N_{\texttt{unfair}} &= 3\times\dfrac{(\vbthree + 2 - 1)\,!}{\vbthree\,!\cdot(2-1)\,!} = \vbfour
+  		N_{\texttt{unfair}} &= 3\times\dfrac{(\vc + 2 - 1)\,!}{\vc\,!\cdot(2-1)\,!} = \vd
   	\end{align}
-  	Hence, there are $\vbfour + 3 = \vbfive$ grossly unfair ways of distributing the $\vbone$ oranges
+  	Hence, there are $\vd + 3 = \ve$ grossly unfair ways of distributing the $\va$ oranges.
   \end{solution}
-
 \end{parts}
+
+\ifprintanswers
+  \begin{codex}
+    $(a)\,\vb\quad (b)\,\ve$
+  \end{codex}
+\fi 
+

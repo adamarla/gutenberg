@@ -3,45 +3,45 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{7} % attempt
-  \renewcommand{\vbtwo}{12} % total
-  \renewcommand{\vbthree}{6} % per group
-  \renewcommand{\vbfour}{5} % atmost 
-  \renewcommand{\vbeight}{780} % n-ways 
+  \renewcommand{\va}{7} % attempt
+  \renewcommand{\vb}{12} % total
+  \renewcommand{\vc}{6} % per group
+  \renewcommand{\vd}{5} % atmost 
+  \renewcommand{\vh}{780} % n-ways 
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{5}
-    \renewcommand{\vbtwo}{10}
-    \renewcommand{\vbthree}{5}
-    \renewcommand{\vbfour}{4}
-    \renewcommand{\vbeight}{250}
+    \renewcommand{\va}{5}
+    \renewcommand{\vb}{10}
+    \renewcommand{\vc}{5}
+    \renewcommand{\vd}{4}
+    \renewcommand{\vh}{250}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{9}
-      \renewcommand{\vbtwo}{14}
-      \renewcommand{\vbthree}{7}
-      \renewcommand{\vbfour}{6}
-      \renewcommand{\vbeight}{1,960}
+      \renewcommand{\va}{9}
+      \renewcommand{\vb}{14}
+      \renewcommand{\vc}{7}
+      \renewcommand{\vd}{6}
+      \renewcommand{\vh}{1,960}
     }{
       % variables 
-      \renewcommand{\vbone}{7}
-      \renewcommand{\vbtwo}{14}
-      \renewcommand{\vbthree}{7}
-      \renewcommand{\vbfour}{5}
-      \renewcommand{\vbeight}{3,332}
+      \renewcommand{\va}{7}
+      \renewcommand{\vb}{14}
+      \renewcommand{\vc}{7}
+      \renewcommand{\vd}{5}
+      \renewcommand{\vh}{3,332}
     }
   }
 }
 
-\gcalcexpr[0]{\vbfive}{\vbone - \vbfour} % min 
-\gcalcexpr[0]{\vbsix}{\vbfour - 1 }
-\gcalcexpr[0]{\vbseven}{\vbone - \vbsix}
+\SUBTRACT\va\vd\ve 
+\SUBTRACT\vd{1}\vf
+\SUBTRACT\va\vf\vg
 
-\question[2] In an examination, a candidate is required to answer $\vbone$ out of $\vbtwo$ questions. The
-questions are divided into two sections - each section having $\vbthree$ questions. However, the candidate can attempt
-\textit{atmost} $\vbfour$ questions from each section. In how many different ways can the candidate attempt the $\vbone$
+\question[2] In an examination, a candidate is required to answer $\va$ out of $\vb$ questions. The
+questions are divided into two sections - each section having $\vc$ questions. However, the candidate can attempt
+\textit{atmost} $\vd$ questions from each section. In how many different ways can the candidate attempt the $\va$
 questions ?
 
 
@@ -52,21 +52,26 @@ questions ?
 		   \toprule
 		   	  $A_1$ & $B_1$ & $A_2$ & $B_2$ & $A_3$ & $B_3$ & $A_4$ & $B_4$ \\
 		   \midrule
-		      \vbfour & \vbfive & \vbsix & \vbseven & \vbseven & \vbsix & \vbfive & \vbfour \\
+		      \vd & \ve & \vf & \vg & \vg & \vf & \ve & \vd \\
 		   \bottomrule
 		\end{tabular}
 \fi 
 
 \begin{solution}[\halfpage]
 	If the two sections be A and B, then there are \textit{four} possible ways in which 
-	the candidate could pick $\vbone$ questions given the constraints - as shown in the table above
+	the candidate could pick $\va$ questions given the constraints - as shown in the table above
 	
 	The total number of ways, therefore, are
 	\begin{align}
-		N_{\texttt{total}} &= \encr\vbthree\vbfour\cdot\encr\vbthree\vbfive + 
-		     \encr\vbthree\vbsix\cdot\encr\vbthree\vbseven + \encr\vbthree\vbseven\cdot\encr\vbthree\vbsix + 
-		     \encr\vbthree\vbfive\cdot\encr\vbthree\vbfour \\
-		&= 2\cdot\left( \encr\vbthree\vbfour\cdot\encr\vbthree\vbfive + \encr\vbthree\vbsix\cdot\encr\vbthree\vbseven \right) \\
-		&= \vbeight
+		N_{\texttt{total}} &= \binom\vc\vd\cdot\binom\vc\ve + 
+		     \binom\vc\vf\cdot\binom\vc\vg + \binom\vc\vg\cdot\binom\vc\vf + 
+		     \binom\vc\ve\cdot\binom\vc\vd \\
+		&= 2\cdot\left[ \binom\vc\vd\cdot\binom\vc\ve + \binom\vc\vf\cdot\binom\vc\vg \right] = \vh
 	\end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\vh$
+  \end{codex}
+\fi

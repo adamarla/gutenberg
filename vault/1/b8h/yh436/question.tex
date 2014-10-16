@@ -3,63 +3,65 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{8}
-  \renewcommand{\vbtwo}{2}
-  \renewcommand{\vbthree}{3}
-  \renewcommand{\vbfour}{1}
-  \renewcommand{\vbfive}{4}
-  \renewcommand{\vbeight}{1440}
+  \renewcommand{\va}{8}
+  \renewcommand{\vb}{2}
+  \renewcommand{\vc}{3}
+  \renewcommand{\vd}{1}
+  \renewcommand{\ve}{4}
+  \renewcommand{\vh}{1,440}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{7}
-    \renewcommand{\vbtwo}{3}
-    \renewcommand{\vbthree}{2}
-    \renewcommand{\vbfour}{2}
-    \renewcommand{\vbfive}{6}
-    \renewcommand{\vbeight}{720}
+    \renewcommand{\va}{7}
+    \renewcommand{\vb}{3}
+    \renewcommand{\vc}{2}
+    \renewcommand{\vd}{2}
+    \renewcommand{\ve}{6}
+    \renewcommand{\vh}{720}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{9}
-      \renewcommand{\vbtwo}{4}
-      \renewcommand{\vbthree}{3}
-      \renewcommand{\vbfour}{3}
-      \renewcommand{\vbfive}{8}
-      \renewcommand{\vbeight}{21,600}
+      \renewcommand{\va}{9}
+      \renewcommand{\vb}{4}
+      \renewcommand{\vc}{3}
+      \renewcommand{\vd}{3}
+      \renewcommand{\ve}{8}
+      \renewcommand{\vh}{21,600}
     }{
       % variables 
-      \renewcommand{\vbone}{8}
-      \renewcommand{\vbtwo}{4}
-      \renewcommand{\vbthree}{2}
-      \renewcommand{\vbfour}{3}
-      \renewcommand{\vbfive}{8}
-      \renewcommand{\vbeight}{4,320}
+      \renewcommand{\va}{8}
+      \renewcommand{\vb}{4}
+      \renewcommand{\vc}{2}
+      \renewcommand{\vd}{3}
+      \renewcommand{\ve}{8}
+      \renewcommand{\vh}{4,320}
     }
   }
 }
 
-\gcalcexpr[0]{\vbsix}{\vbfive - \vbfour + 1}
-\gcalcexpr[0]{\vbseven}{\vbone - \vbtwo}
+\gcalcexpr[0]{\vf}{\ve - \vd + 1}
+\SUBTRACT\va\vb\vg
 
-
-\question[2] There are $\vbone$ chairs in a room - numbered $1$ to $\vbone$ - for the $\vbtwo$ women and $\vbthree$ men present.
-If the women get to choose first from amongst chairs numbered $\vbfour$ to $\vbfive$, and then the men 
+\question[2] There are $\va$ chairs in a room - numbered $1$ to $\va$ - for the $\vb$ women and $\vc$ men present.
+If the women get to choose first from amongst chairs numbered $\vd$ to $\ve$, and then the men 
 from the remaining, then find the total number of ways in which they can be seated
 
 
 \watchout[-45pt]
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\mcq]
-	The total number of chairs available to the ladies to choose from is $\vbfive - \vbfour + 1 = \vbsix$.
-	And once they have picked, the men can pick from amongst $\vbone - \vbtwo = \vbseven$ chairs. Hence,
+	The total number of chairs available to the ladies to choose from is $\ve - \vd + 1 = \vf$.
+	And once they have picked, the men can pick from amongst $\va - \vb = \vg$ chairs. Hence,
 	the total number of arrangements possible is
 	\begin{align}
-		N_{\texttt{total}} &= \enpr{\vbsix}{\vbtwo} \times \enpr{\vbseven}{\vbthree} \\
-		&= \fnpr{\vbsix}{\vbtwo} \cdot \fnpr\vbseven\vbthree \\
-		&= \vbeight
+		N_{\texttt{total}} &= \enpr{\vf}{\vb} \times \enpr{\vg}{\vc} \\
+		&= \fnpr{\vf}{\vb} \cdot \fnpr\vg\vc = \vh
 	\end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\vh$
+  \end{codex}
+\fi 
+

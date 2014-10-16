@@ -1,70 +1,72 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{9}
-  \renewcommand{\vbtwo}{5}
-  \renewcommand{\vbthree}{(3,6),(4,5),(5,4),(6,3)}
-  \renewcommand{\vbfour}{4}
-  \renewcommand{\vbfive}{(1,4),(2,3),(3,2),(4,1)}
-  \renewcommand{\vbsix}{4}
+  \renewcommand{\va}{9}
+  \renewcommand{\vb}{6}
+  \renewcommand{\vc}{(3,6),(4,5),(5,4),(6,3)}
+  \renewcommand{\vd}{4}
+  \renewcommand{\ve}{(1,5),(2,4),(3,3),(4,2),(5,1)} %valid ways B
+  \renewcommand{\vf}{5}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{6}
-    \renewcommand{\vbtwo}{7}
-    \renewcommand{\vbthree}{(1,5),(2,4),(3,3),(4,2),(5,1)} %valid ways B
-    \renewcommand{\vbfour}{5}
-    \renewcommand{\vbfive}{(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)}
-    \renewcommand{\vbsix}{6}
+    \renewcommand{\va}{6}
+    \renewcommand{\vb}{7}
+    \renewcommand{\vc}{(1,5),(2,4),(3,3),(4,2),(5,1)} %valid ways B
+    \renewcommand{\vd}{5}
+    \renewcommand{\ve}{(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)}
+    \renewcommand{\vf}{6}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{7}
-      \renewcommand{\vbtwo}{9}
-      \renewcommand{\vbthree}{(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)}
-      \renewcommand{\vbfour}{6}
-      \renewcommand{\vbfive}{(3,6),(4,5),(5,4),(6,3)}
-      \renewcommand{\vbsix}{4}
+      \renewcommand{\va}{7}
+      \renewcommand{\vb}{9}
+      \renewcommand{\vc}{(1,6),(2,5),(3,4),(4,3),(5,2),(6,1)}
+      \renewcommand{\vd}{6}
+      \renewcommand{\ve}{(3,6),(4,5),(5,4),(6,3)}
+      \renewcommand{\vf}{4}
     }{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{9}
-      \renewcommand{\vbthree}{(1,4),(2,3),(3,2),(4,1)}
-      \renewcommand{\vbfour}{4}
-      \renewcommand{\vbfive}{(3,6),(4,5),(5,4),(6,3)}
-      \renewcommand{\vbsix}{4}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{9}
+      \renewcommand{\vc}{(1,4),(2,3),(3,2),(4,1)}
+      \renewcommand{\vd}{4}
+      \renewcommand{\ve}{(3,6),(4,5),(5,4),(6,3)}
+      \renewcommand{\vf}{4}
     }
   }
 }
 
-\FRACMINUS{1}{1}\vbfour{36}\p\q % A'
-\FRACMINUS{1}{1}\vbsix{36}\r\s % B'
+\FRACMINUS{1}{1}\vd{36}\p\q % A'
+\FRACMINUS{1}{1}\vf{36}\r\s % B'
 \FRACMULT\p\q\r\s\m\n
-\FRACMULT\m\n\vbfour{36}\a\b
+\FRACMULT\m\n\vd{36}\a\b
 
 \question[3] $A$ and $B$ take turns to throw a pair of dice. $A$ wins if he gets a 
-total of $\vbone$ in a throw. $B$ wins if she gets a total of $\vbtwo$. 
+total of $\va$ in a throw. $B$ wins if she gets a total of $\vb$. 
 The game ends as soon as one person wins. If $A$  starts the game, what is the probability
 that $A$ wins in the third throw (over $A$ and $B$) of the pair of dice?
 
-
 \watchout[-40pt]
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\halfpage]
-  If $W_A$ be the event that $A$ gets a $\vbone$ in a given roll of dice and therefore wins, 
-  then $W_A$ happens if values on the dice are in $\lbrace \vbthree \rbrace\Rightarrow\vbfour$ ways 
+  If $W_A$ be the event that $A$ gets a $\va$ in a given roll of dice (and hence wins), then
+    \[ W_A = \lbrace\vc\rbrace\implies P(W_A)=\dfrac\vd{36}=\WRITEFRAC\vd{36} \] 
 
   Similarly, if $W_B$ be the event that $B$ wins after rolling the dice, then 
-  $B$ can happen if $(x,y)\in\lbrace\vbfive\rbrace\Rightarrow\vbsix$ ways
+    \[ W_B = \lbrace\ve\rbrace\implies P(W_B) = \dfrac\vf{36}=\WRITEFRAC\vf{36} \] 
 
-  Therefore, the probability of $A$ winning in the third throw is
+  The probability, therefore,  of $A$ winning in the third throw is
   \begin{align}
-    P(W_A'\bigcap W_B'\bigcap W_A) &= P(W_A')\cdot P(W_B')\cdot P(W_C') \\
-      &= \left( 1-\WRITEFRAC\vbfour{36}\right)\cdot\left(1-\WRITEFRAC\vbsix{36}\right)\cdot\WRITEFRAC\vbfour{36} \\
-      &= \WRITEFRAC\p\q\cdot\WRITEFRAC\r\s\cdot\WRITEFRAC\vbfour{36} = \dfrac\a\b
+    P(W_A'\cap W_B'\cap W_A) &= P(W_A')\cdot P(W_B')\cdot P(W_C') \\
+      &= \left( 1-\WRITEFRAC\vd{36}\right)\cdot\left(1-\WRITEFRAC\vf{36}\right)\cdot\WRITEFRAC\vd{36} \\
+      &= \WRITEFRAC\p\q\cdot\WRITEFRAC\r\s\cdot\WRITEFRAC\vd{36} = \dfrac\a\b
   \end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\dfrac\a\b$
+  \end{codex}
+\fi 
 

@@ -1,37 +1,47 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{5}
-  \renewcommand{\vbtwo}{3}
-  \renewcommand{\vbthree}{7}
-  \renewcommand{\vbfour}{1}
+  \renewcommand{\va}{5}
+  \renewcommand{\vb}{3}
+  \renewcommand{\vc}{7}
+  \renewcommand{\vd}{1}
+  \renewcommand\ve{6}
+  \renewcommand\vg{8400}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{4}
-    \renewcommand{\vbtwo}{1}
-    \renewcommand{\vbthree}{2}
-    \renewcommand{\vbfour}{6}
+    \renewcommand{\va}{4}
+    \renewcommand{\vb}{1}
+    \renewcommand{\vc}{2}
+    \renewcommand{\vd}{6}
+    \renewcommand\ve{7}
+    \renewcommand\vg{33,600}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{6}
-      \renewcommand{\vbtwo}{7}
-      \renewcommand{\vbthree}{3}
-      \renewcommand{\vbfour}{4}
+      \renewcommand{\va}{6}
+      \renewcommand{\vb}{7}
+      \renewcommand{\vc}{3}
+      \renewcommand{\vd}{4}
+      \renewcommand\ve{8}
+      \renewcommand\vg{100,800}
     }{
       % variables 
-      \renewcommand{\vbone}{9}
-      \renewcommand{\vbtwo}{7}
-      \renewcommand{\vbthree}{2}
-      \renewcommand{\vbfour}{5}
+      \renewcommand{\va}{9}
+      \renewcommand{\vb}{7}
+      \renewcommand{\vc}{2}
+      \renewcommand{\vd}{5}
+      \renewcommand\ve{9}
+      \renewcommand\vg{201,600}
     }
   }
 }
 
-\question[2] In a certain city, all telephone numbers have six digits - with the first two digits
-always being either $\vbone\vbtwo$ or $\vbone\vbthree$ or $\vbone\vbfour$ or $\vbfour\vbthree$ or 
-$\vbfour\vbone$. Given this, how many telephone numbers have all six digits distinct?
+\SUBTRACT\ve{2}\vf
+
+\question[2] In a certain city, all telephone numbers have $\ve$ digits. The first two digits
+are always either $\va\vb$ or $\va\vc$ or $\va\vd$ or $\vd\vc$ or 
+$\vd\va$. Given this, how many telephone numbers have all $\ve$ digits distinct?
 
 
 \watchout[-20pt]
@@ -40,11 +50,16 @@ $\vbfour\vbone$. Given this, how many telephone numbers have all six digits dist
 \fi 
 
 \begin{solution}[\mcq]
-	There are 5 combinations for the first two numbers - each using two distinct digits. Hence, 
-	for the whole telephone number to have all digits different, the next \textit{four} digits 
-	must be anything other than the first two
-	\begin{align}
-		\Rightarrow N_{\texttt{total}} &= 5 \times \underbrace{(8 \times 7 \times 6 \times 5 )}_{\texttt{\# distinct combinations}}
-		 = 8,400
-	\end{align}
+  For each combination of the first two digits, we need another $\ve-2=\vf$ digits (from the remaining eight) 
+  for the resulting phone number to have all digits distinct. 
+
+  And doing so will give us 
+    \[ 5\times\binom{8}\vf\times\vf! = \vg\text{ possible numbers}\] 
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\vg$
+  \end{codex}
+\fi
+
