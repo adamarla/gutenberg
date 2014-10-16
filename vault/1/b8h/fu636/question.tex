@@ -1,50 +1,52 @@
 
-
-
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{8}
-  \renewcommand{\vbtwo}{4}
-  \renewcommand{\vbfive}{240}
+  \renewcommand{\va}{8}
+  \renewcommand{\vb}{4}
+  \renewcommand{\ve}{240}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{10}
-    \renewcommand{\vbtwo}{5}
-    \renewcommand{\vbfive}{4200}
+    \renewcommand{\va}{10}
+    \renewcommand{\vb}{5}
+    \renewcommand{\ve}{4200}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{11}
-      \renewcommand{\vbtwo}{6}
-      \renewcommand{\vbfive}{40,320}
+      \renewcommand{\va}{11}
+      \renewcommand{\vb}{6}
+      \renewcommand{\ve}{40,320}
     }{
       % variables 
-      \renewcommand{\vbone}{9}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbfive}{90}
+      \renewcommand{\va}{9}
+      \renewcommand{\vb}{3}
+      \renewcommand{\ve}{90}
     }
   }
 }
-\gcalcexpr[0]{\vbthree}{\vbtwo - 1}
-\gcalcexpr[0]{\vbfour}{\vbone - 3}
 
-\question[2] There are $\vbone$ persons ( lets call them $P_1, P_2 \ldots P_{\vbone}$ ) of whom $\vbtwo$ must be arranged
-in a line. However, $P_1$ must \textit{always} be present in the line whereas $P_4$ and $P_5$ must \textit{never} be. How many such arrangements are possible?
+\SUBTRACT\vb{1}\vc 
+\SUBTRACT\va{3}\vd
 
+\question[2] There are $\va$ persons $(P_1\to P_{\va})$ of whom $\vb$ must be arranged
+in a line. However, $P_1$ must \textit{always} be present in the line whereas $P_4$ and $P_5$ must \textit{never} be. 
+How many such arrangements are possible?
 
 \watchout[-30pt]
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\mcq]
-	One out of $\vbtwo$ places in the line is always taken by $P_1$. Hence, its now a question of picking
-	$\vbthree$ other people from amongst the $\vbfour$ remaining ( after excluding $P_4$ and $P_5$ ). Moreover,
+	One out of $\vb$ places in the line is always taken by $P_1$. Hence, its now a question of picking
+	$\vc$ other people from amongst the $\vd$ remaining ( after excluding $P_4$ and $P_5$ ). Moreover,
 	the order in which individuals stand in the line is important. Hence, 
 	\begin{align}
-		N_{\texttt{total}} &= \encr\vbfour\vbthree\cdot \vbtwo\,! \\
-		&= \fncr\vbfour\vbthree\cdot \vbtwo\,! \\
-		&= \vbfive
+		N_{\texttt{total}} &= \encr\vd\vc\cdot \vb\,! \\
+		&= \fncr\vd\vc\cdot \vb\,! = \ve
 	\end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\ve$
+  \end{codex}
+\fi 
+

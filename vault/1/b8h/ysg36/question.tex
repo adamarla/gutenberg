@@ -3,51 +3,54 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{4000}
-  \renewcommand{\vbtwo}{5}
-  \renewcommand{\vbthree}{4}
-  \renewcommand{\vbfour}{216}
+  \renewcommand{\va}{4000}
+  \renewcommand{\vb}{5}
+  \renewcommand{\vc}{4}
+  \renewcommand{\vd}{216}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{6000}
-    \renewcommand{\vbtwo}{7}
-    \renewcommand{\vbthree}{3}
-    \renewcommand{\vbfour}{192}
+    \renewcommand{\va}{6000}
+    \renewcommand{\vb}{7}
+    \renewcommand{\vc}{3}
+    \renewcommand{\vd}{192}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{8000}
-      \renewcommand{\vbtwo}{8}
-      \renewcommand{\vbthree}{2}
-      \renewcommand{\vbfour}{168}
+      \renewcommand{\va}{8000}
+      \renewcommand{\vb}{8}
+      \renewcommand{\vc}{2}
+      \renewcommand{\vd}{168}
     }{
       % variables 
-      \renewcommand{\vbone}{9000}
-      \renewcommand{\vbtwo}{9}
-      \renewcommand{\vbthree}{1}
-      \renewcommand{\vbfour}{144}
+      \renewcommand{\va}{9000}
+      \renewcommand{\vb}{9}
+      \renewcommand{\vc}{1}
+      \renewcommand{\vd}{144}
     }
   }
 }
 
-\question[2] Find the number of integers greater than $\vbone$ that can be formed with the digits 3,5,7,8 and 9 - with
- no digits repeated
+\question[2] Find the number of integers greater than $\va$ that can be formed with the digits 3,5,7,8 and 9 - with
+ no digits repeated.
 
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\mcq]
-	Given that only the five digits provided can be used, a 4-digit number greater than $\vbone$ must start 
-  with at least a $\vbtwo \Rightarrow \vbthree$ possible starting digits
+	Given that only the five digits provided can be used, a 4-digit number greater than $\va$ must start 
+  with at least a $\vb \implies \vc$ possible starting digits
 
-	A 5-digit number, on the other hand, is guaranteed to be greater than $\vbone$
+	A 5-digit number, on the other hand, is guaranteed to be greater than $\va$
 	\begin{align}
 		N_{\texttt{total}} &= N_{\texttt{4-digit}} + N_{\texttt{5-digit}} \\
-		   &= \vbthree\cdot 4\cdot 3 \cdot 2 + 5\,! \\
-		   &= \vbfour
+		   &= \vc\cdot 4\cdot 3 \cdot 2 + 5\,! = \vd
 	\end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\vd$
+  \end{codex}
+\fi 
+

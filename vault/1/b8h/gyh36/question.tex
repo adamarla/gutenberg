@@ -1,57 +1,58 @@
 
-
-
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{4}
-  \renewcommand{\vbtwo}{7}
-  \renewcommand{\vbthree}{2}
-  \renewcommand{\vbfour}{5}
-  \renewcommand{\vbseven}{10}
+  \renewcommand{\va}{4}
+  \renewcommand{\vb}{7}
+  \renewcommand{\vc}{2}
+  \renewcommand{\vd}{5}
+  \renewcommand{\vg}{10}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{5}
-    \renewcommand{\vbtwo}{8}
-    \renewcommand{\vbthree}{3}
-    \renewcommand{\vbfour}{5}
-    \renewcommand{\vbseven}{20}
+    \renewcommand{\va}{5}
+    \renewcommand{\vb}{8}
+    \renewcommand{\vc}{3}
+    \renewcommand{\vd}{5}
+    \renewcommand{\vg}{20}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{9}
-      \renewcommand{\vbthree}{3}
-      \renewcommand{\vbfour}{7}
-      \renewcommand{\vbseven}{35}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{9}
+      \renewcommand{\vc}{3}
+      \renewcommand{\vd}{7}
+      \renewcommand{\vg}{35}
     }{
       % variables 
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{5}
-      \renewcommand{\vbthree}{1}
-      \renewcommand{\vbfour}{2}
-      \renewcommand{\vbseven}{3}
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{5}
+      \renewcommand{\vc}{1}
+      \renewcommand{\vd}{2}
+      \renewcommand{\vg}{3}
     }
   }
 }
 
-\gcalcexpr[0]{\vbfive}{\vbtwo - 2}
-\gcalcexpr[0]{\vbsix}{\vbone - 2}
+\gcalcexpr[0]{\ve}{\vb - 2}
+\gcalcexpr[0]{\vf}{\va - 2}
 
-\question[1] In an examination, a student has to answer $\vbone$ out of $\vbtwo$ questions. Questions $\vbthree$ 
-and $\vbfour$, however, are compulsory. In how many ways then can the student make the choice of $\vbone$ questions 
+\question[1] In an examination, a student has to answer $\va$ out of $\vb$ questions. Questions $\vc$ 
+and $\vd$, however, are compulsory. In how many ways then can the student make the choice of $\va$ questions 
 to attempt?
-
 
 \watchout[-20pt]
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\mcq]
-	With two out of $\vbtwo$ questions fixed, the student has to choose another $\vbsix$ questions 
-	from the remaining $\vbfive$. Hence
+	With two out of $\vb$ questions fixed, the student has to choose another $\vf$ questions 
+	from the remaining $\ve$. Hence
 	\begin{align}
-		N_{\texttt{total}} &= \encr\vbfive\vbsix = \fncr\vbfive\vbsix = \vbseven
+		N_{\texttt{total}} &= \encr\ve\vf = \fncr\ve\vf = \vg
 	\end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\vg$
+  \end{codex}
+\fi 
+

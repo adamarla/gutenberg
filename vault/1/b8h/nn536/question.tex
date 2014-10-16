@@ -3,52 +3,55 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{5} % required
-  \renewcommand{\vbtwo}{9} % total 
-  \renewcommand{\vbsix}{91}
+  \renewcommand{\va}{5} % required
+  \renewcommand{\vb}{9} % total 
+  \renewcommand{\vf}{91}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{6}
-    \renewcommand{\vbtwo}{8}
-    \renewcommand{\vbsix}{22}
+    \renewcommand{\va}{6}
+    \renewcommand{\vb}{8}
+    \renewcommand{\vf}{22}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{7}
-      \renewcommand{\vbtwo}{11}
-      \renewcommand{\vbsix}{246}
+      \renewcommand{\va}{7}
+      \renewcommand{\vb}{11}
+      \renewcommand{\vf}{246}
     }{
       % variables 
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{7}
-      \renewcommand{\vbsix}{25}
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{7}
+      \renewcommand{\vf}{25}
     }
   }
 }
 
-\gcalcexpr[0]{\vbthree}{\vbtwo - 2}
-\gcalcexpr[0]{\vbfour}{\vbtwo - 1}
-\gcalcexpr[0]{\vbfive}{\vbone - 2}
+\SUBTRACT\vb{2}\vc
+\SUBTRACT\vb{1}\vd 
+\SUBTRACT\va{2}\ve
 
-\question[2] A committee of $\vbone$ persons needs to be formed from amongst $\vbtwo$ people. However, 
+\question[2] A committee of $\va$ persons needs to be formed from amongst $\vb$ people. However, 
 if Mr. Laurel is picked for the committee, then Mr. Hardy must be too. In how many 
 ways can the committee be formed?
 
 
 \watchout[-30pt]
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\mcq]
-	If Mr. Laurel is picked - and therefore also Mr. Hardy - then we need to pick $\vbfive$ more individuals 
-	from amongst $\vbthree$ persons
+	If Mr. Laurel is picked - and therefore also Mr. Hardy - then we need to pick $\ve$ more individuals 
+	from amongst $\vc$ persons
 	
-	And if Mr. Laurel is \textit{not} picked, then we need to pick $\vbone$ individuals from amongst $\vbfour$ individuals. Hence,
+	And if Mr. Laurel is \textit{not} picked, then we need to pick $\va$ individuals from amongst $\vd$ individuals. Hence,
 	\begin{align}
-		N_{\texttt{total}} &= \encr\vbthree\vbfive + \encr\vbfour\vbone \\
-		&= \fncr\vbthree\vbfive + \fncr\vbfour\vbone \\
-		&= \vbsix
+		N_{\texttt{total}} &= \encr\vc\ve + \encr\vd\va \\
+		&= \fncr\vc\ve + \fncr\vd\va = \vf \\
 	\end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\vf$
+  \end{codex}
+\fi 
+

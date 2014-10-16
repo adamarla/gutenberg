@@ -3,53 +3,55 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{5} % required
-  \renewcommand{\vbtwo}{9} % total 
-  \renewcommand{\vbthree}{91}
+  \renewcommand{\va}{5} % required
+  \renewcommand{\vb}{9} % total 
+  \renewcommand{\vc}{91}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{6}
-    \renewcommand{\vbtwo}{8}
-    \renewcommand{\vbthree}{13}
+    \renewcommand{\va}{6}
+    \renewcommand{\vb}{8}
+    \renewcommand{\vc}{13}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{7}
-      \renewcommand{\vbtwo}{11}
-      \renewcommand{\vbthree}{204}
+      \renewcommand{\va}{7}
+      \renewcommand{\vb}{11}
+      \renewcommand{\vc}{204}
     }{
       % variables 
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{7}
-      \renewcommand{\vbthree}{25}
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{7}
+      \renewcommand{\vc}{25}
     }
   }
 }
 
-\gcalcexpr[0]{\tp}{\vbtwo - 2} 
-\gcalcexpr[0]{\tq}{\vbone - 1} 
+\SUBTRACT\vb{2}\vd
+\SUBTRACT\va{1}\ve
 
-\question[2] A committee of $\vbone$ persons needs to be formed from amongst $\vbtwo$ people. However, 
+\question[2] A committee of $\va$ persons needs to be formed from amongst $\vb$ people. However, 
 Mr. X and Ms. Y do not like each other. And so, if one is picked, then the other cannot be. In how many 
 ways then can the committee be formed?
 
-
 \watchout[-30pt]
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\mcq]
-	If Mr. X is picked, then Ms. Y is out of consideration $\Rightarrow$ $\tq$ out of $\tp$ 
+	If Mr. X is picked, then Ms. Y is out of consideration $\implies$ $\ve$ out of $\vd$ 
 	will remain to be picked. Same goes for if Ms. Y is picked first
 
-  And then there are committees in which neither Mr. X \textit{nor} Ms. Y are members $\Rightarrow$ 
-  $\vbone$ out of $\tp$ need to be picked
+  And then there are committees in which neither Mr. X \textit{nor} Ms. Y are members $\implies$ 
+  $\va$ out of $\vd$ need to be picked
 	
 	\begin{align}
-		N_{\texttt{total}} &= \overbrace{2\times\encr\tp\tq}^{\texttt{either picked}} + 
-    \overbrace{\encr\tp\vbone}^{\texttt{neither picked}} \\
-		&= \vbthree
+		N_{\texttt{total}} &= \overbrace{2\times\binom\vd\ve}^{\texttt{either picked}} + 
+    \overbrace{\binom\vd\va}^{\texttt{neither picked}} = \vc
 	\end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\vc$
+  \end{codex}
+\fi 
+

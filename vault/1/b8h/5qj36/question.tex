@@ -1,56 +1,51 @@
 
 
  %\noprintanswers
-\setcounter{rolldice}{3}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{9}
-  \renewcommand{\vbtwo}{3}
-  \renewcommand{\vbthree}{55}
-  \renewcommand{\vbfour}{28}
-  \renewcommand{\vbfive}{1680}
+  \renewcommand{\va}{9}
+  \renewcommand{\vb}{3}
+  \renewcommand{\vc}{55}
+  \renewcommand{\vd}{28}
+  \renewcommand{\ve}{1680}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{8}
-    \renewcommand{\vbtwo}{2}
-    \renewcommand{\vbthree}{9}
-    \renewcommand{\vbfour}{7}
-    \renewcommand{\vbfive}{70}
+    \renewcommand{\va}{8}
+    \renewcommand{\vb}{2}
+    \renewcommand{\vc}{9}
+    \renewcommand{\vd}{7}
+    \renewcommand{\ve}{70}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{12}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{91}
-      \renewcommand{\vbfour}{55}
-      \renewcommand{\vbfive}{34,650}
+      \renewcommand{\va}{12}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{91}
+      \renewcommand{\vd}{55}
+      \renewcommand{\ve}{34,650}
     }{
       % variables 
-      \renewcommand{\vbone}{10}
-      \renewcommand{\vbtwo}{2}
-      \renewcommand{\vbthree}{11}
-      \renewcommand{\vbfour}{9}
-      \renewcommand{\vbfive}{252}
+      \renewcommand{\va}{10}
+      \renewcommand{\vb}{2}
+      \renewcommand{\vc}{11}
+      \renewcommand{\vd}{9}
+      \renewcommand{\ve}{252}
     }
   }
 }
 
-\gcalcexpr[0]{\tmp}{\vbone - \vbtwo}
-\gcalcexpr[0]{\per}{\vbone / \vbtwo}
-\gcalcexpr[0]{\tp}{\vbone - \per}
-\gcalcexpr[0]{\tq}{\tp - \per}
+\SUBTRACT\va\vb\vf
+\DIVIDE\va\vb\vg
+\SUBTRACT\va\vg\vh
+\SUBTRACT\vh\vg\vi
 
-\question A man wants to invite $\vbone$ friends for a get-together at his place and he has 
-$\vbtwo$ messengers he can use to deliver the invitations. The invitations are \textit{not}
-personalized - that is, any one of the invited people can receive any of the invitation cards
+\question A man wants to invite $\va$ friends for a get-together at his place and he has 
+$\vb$ messengers he can use to deliver the invitations. The invitations are \textit{not}
+personalized - that is, any of the invited individuals can receive any of the invitation cards.
 
 \watchout
-
-\ifprintanswers
- 
-\fi 
 
 \begin{parts} 
   \part[2] In how many ways can the invitations be delivered if its ok to \textit{not} use one or more of the messengers? 
@@ -60,7 +55,7 @@ personalized - that is, any one of the invited people can receive any of the inv
      in which $N$ items can be distributed amongst $M$ individuals 
      \begin{align}
      	N &= \eDistNAmongstM{N}{M} \\
-        \text{ which in this case} &= \eDistNAmongstM{\vbone}{\vbtwo} = \vbthree
+        \text{ which in this case} &= \eDistNAmongstM{\va}{\vb} = \vc
      \end{align}
   \end{solution}
 
@@ -69,9 +64,9 @@ personalized - that is, any one of the invited people can receive any of the inv
 
 \begin{solution}[\mcq]
     First, give one invitation to each of the messengers so that they are all used. Now, its a question of 
-    distributing the remaining $\vbone - \vbtwo = \tmp$ messages amongst the $\vbtwo$ messengers
+    distributing the remaining $\va - \vb = \vf$ messages amongst the $\vb$ messengers
     \begin{align}
-     	N &= \eDistNAmongstM{\tmp}{\vbtwo} = \vbfour
+     	N &= \eDistNAmongstM{\vf}{\vb} = \vd
     \end{align}
   \end{solution}
 
@@ -80,19 +75,25 @@ personalized - that is, any one of the invited people can receive any of the inv
   invitations?
 
 \begin{solution}[\mcq]
-  	Each messenger has to deliver $\per$ invitations. Let the first messenger therefore pick $\per$ from $\vbone$, 
-  	the next $\per$ from the remaining and so on \ldots 
+  	Each messenger has to deliver $\vg$ invitations. Let the first messenger therefore pick $\vg$ from $\va$, 
+  	the next $\vg$ from the remaining and so on \ldots 
   	\begin{align}
-  		\ifnumequal\vbtwo{4}{ % # messengers = 4
-  			N &= \encr\vbone\per \cdot \encr\tp\per \cdot \encr\tq\per \cdot \encr\per\per = \vbfive
+  		\ifnumequal\vb{4}{ % # messengers = 4
+  			N &= \binom\va\vg \cdot \binom\vh\vg \cdot \binom\vi\vg \cdot \binom\vg\vg = \ve
   		}{
-  			\ifnumequal\vbtwo{3} { % # messengers = 3
-  				N &= \encr\vbone\per \cdot \encr\tp\per \cdot \encr\per\per = \vbfive
+  			\ifnumequal\vb{3} { % # messengers = 3
+  				N &= \binom\va\vg \cdot \binom\vh\vg \cdot \binom\vg\vg = \ve
   			}{ % number of messengers = 2
-  			  N &= \encr\vbone\per \cdot \encr\tp\per = \vbfive
+  			  N &= \binom\va\vg \cdot \binom\vh\vg = \ve
   			}
   		}
   	\end{align}
   \end{solution}
-
 \end{parts}
+
+\ifprintanswers
+  \begin{codex}
+    $(a)\,\vc\quad (b)\,\vd\quad (c)\,\ve$
+  \end{codex}
+\fi 
+
