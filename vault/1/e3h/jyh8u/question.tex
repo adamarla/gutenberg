@@ -1,9 +1,56 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{39} % initial angle 
+  \renewcommand{\vb}{25} % final angle  
+  \renewcommand{\vh}{1} % Height
+  \renewcommand\vt{10} % seconds later
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{43}
+    \renewcommand{\vb}{27}
+    \renewcommand{\vh}{1.5} % Height 
+    \renewcommand\vt{15} % seconds later
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{54}
+      \renewcommand{\vb}{35}
+      \renewcommand{\vh}{2.5} % Height 
+      \renewcommand\vt{20} % seconds later
+    }{
+      % variables 
+      \renewcommand{\va}{51}
+      \renewcommand{\vb}{22}
+      \renewcommand{\vh}{2} % Height 
+      \renewcommand\vt{25} % seconds later
+    }
+  }
+}
 
-\question[3] To a person on the ground, the angle of elevation of an aircraft flying at an altitude of 1km 
-is $\ang{60}$ initially and $\ang{30}$ 10 seconds later. What is the speed of the
-aircraft in kilometers per hour? The aircraft maintains its altitude for the 10 seconds
+\DEGREESCOT\va\vm
+\DEGREESCOT\vb\vn
+\ROUND[2]\vm\vx
+\ROUND[2]\vn\vy
+\SUBTRACT\vn\vm\vz
+\MULTIPLY\vh\vz\vd % distance travelled in \vt seconds 
+\ROUND[3]\vd\vj
+\MULTIPLY\vj{3600}\ve
+\ROUND[2]\ve\vf
+\DIVIDE\ve\vt\vr
+\ROUND[2]\vr\vs
 
+\question[3] To a person on the ground, the angle of elevation of an aircraft flying at an altitude of $\vh$ km 
+is $\ang\va$ initially and $\vt$ seconds later $\ang\vb$. What is the speed of the
+aircraft in kilometers per hour? The aircraft maintains its altitude for the $\vt$ seconds.
+
+\watchout
+\marginnote[-70pt]{
+  \begin{tabular}{c c}
+    $\cot\ang\va=\vx$ & $\cot\ang\vb=\vy$ 
+  \end{tabular}
+}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -34,19 +81,18 @@ aircraft in kilometers per hour? The aircraft maintains its altitude for the 10 
 \fi 
 
 \begin{solution}[\halfpage]
-	The situation is as \asif. And in the 10 seconds, the aircraft covers 
+	The situation is as \asif. And in the $\vt$ seconds, the aircraft covers 
 	a distance given by, 
 	
 	\begin{align}
 		BC = AC - AB &= FC\cdot\dfrac{1}{\tan\angle{FAC}} - EB\cdot\dfrac{1}{\tan\angle{EAB}}
 	\end{align}
 	
-	As the aircraft maintains its altitude, $EB = FC = 1km$. And therefore, 
+	As the aircraft maintains its altitude, $EB = FC = \vh$ km. And therefore, 
 	\begin{align}
-		BC &= \text{1 km}\cdot\left(\cot\angle{FAC} - \cot\angle{EAB}\right) \\
-		   &= \text{1 km}\cdot\left(\cot\ang{30} - \cot\ang{60}\right) \\
-		   &= \dfrac{2}{\sqrt{3}}\text{km} \\
-		\Rightarrow \text{Speed} &= \dfrac{\frac{2}{\sqrt{3}}\text{km}}{10\text{s}}\cdot 3600\dfrac{\text{s}}{\text{hour}} \\
-		   &= 415.7\text{ km per hour}
+    BC &= \vh\text{ km}\cdot(\cot\angle{FAC}-\cot\angle{EAB}) \\
+      &= \vh\text{ km}\cdot(\vy-\vx) = \vj\text{ km} \\
+      \implies\text{Speed } &= \dfrac{\vj\text{ km}}{\vt\text{ seconds}}\times 3600\text{ s/hour} = \vs\text{ km/hour}
 	\end{align}
 \end{solution}
+\ifprintanswers\begin{codex}$\vs$ km/hour\end{codex}\fi

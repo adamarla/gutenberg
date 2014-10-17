@@ -1,10 +1,57 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\va}{10} 
+  \renewcommand{\vb}{4} 
+  \renewcommand{\vm}{6} 
+  \renewcommand{\vn}{1} 
+  \renewcommand{\vx}{8} 
+  \renewcommand{\vy}{3} 
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\va}{12} 
+    \renewcommand{\vb}{5} 
+    \renewcommand{\vm}{7} 
+    \renewcommand{\vn}{3} 
+    \renewcommand{\vx}{9} 
+    \renewcommand{\vy}{2} 
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\va}{11} 
+      \renewcommand{\vb}{3} 
+      \renewcommand{\vm}{10} 
+      \renewcommand{\vn}{2} 
+      \renewcommand{\vx}{8} 
+      \renewcommand{\vy}{2} 
+    }{
+      \renewcommand{\va}{14} 
+      \renewcommand{\vb}{4} 
+      \renewcommand{\vm}{11} 
+      \renewcommand{\vn}{4} 
+      \renewcommand{\vx}{10} 
+      \renewcommand{\vy}{3} 
+    }
+  }
+}
 
-\question[3] There are three boxes: box X has 10 bulbs of which 4 are defective, 
-box Y has 6 bulbs of which 1 is defective and box Z has 8 bulbs of which 3 are defective. 
-A box is chosen at random and a bulb drawn from it. If the bulb is \textit{not} defective,
-then what is the probability that it came from box Z?
+\FRACTIONSIMPLIFY\va\vb\a\b
+\FRACMINUS{1}{1}\b\a\d\c
 
+\FRACTIONSIMPLIFY\vm\vn\m\n
+\FRACMINUS{1}{1}\n\m\q\p
+
+\FRACTIONSIMPLIFY\vx\vy\x\y
+\FRACMINUS{1}{1}\y\x\w\v
+
+\FRACADD\d\c\q\p\vp\vq
+\FRACADD\vp\vq\w\v\vr\vs
+\FRACDIV\w\v\vr\vs\vt\vu
+
+\question[3] There are three boxes: Box X has $\va$ bulbs of which $\vb$ are defective, 
+Box Y has $\vm$ bulbs of which $\vn$ is/are defective and Box Z has $\vx$ bulbs of which $\vy$ are defective. 
+A box is chosen at random and a bulb drawn from it. If the bulb is \textbf{not} defective,
+then what is the probability that it came from Box Z?
+
+\watchout
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -12,8 +59,8 @@ then what is the probability that it came from box Z?
       \toprule
       D = bulb is defective & X & Y & Z \\
       \midrule
-      $P(D\,\vert\, box)$ & $\frac{4}{10}$ & $\frac{1}{6}$ & $\frac{3}{8}$ \\
-      $P(\overline{D}\,\vert\, box)$ & $\frac{6}{10}$ & $\frac{5}{6}$ & $\frac{5}{8}$ \\
+      $P(D\,\vert\, box)$ & $\frac\b\a$ & $\frac\n\m$ & $\frac\y\x$ \\
+      $P(\overline{D}\,\vert\, box)$ & $\frac\d\c$ & $\frac\q\p$ & $\frac\w\v$ \\
       \bottomrule
     \end{tabular}
 \fi 
@@ -25,9 +72,9 @@ then what is the probability that it came from box Z?
    \begin{align}
       \bayesp{Z}{\textoverline{D}} &= \dfrac{\bayesf{\textoverline{D}}{Z}}
       {\bayesf{\textoverline{D}}{X} + \bayesf{\textoverline{D}}{Y} + \bayesf{\textoverline{D}}{Z}} \\
-      &= \dfrac{\frac{5}{8}\cdot\frac{1}{3}}{\frac{1}{3}\cdot\left(\frac{5}{8} +
-      \frac{3}{5} + \frac{5}{6}\right)} \\
-      &= \dfrac{150}{494} = \dfrac{75}{247}
+      &= \dfrac{\frac\w\v\cdot\frac{1}{3}}{\frac{1}{3}\cdot\left(\frac\w\v +
+      \frac\q\p + \frac\d\c\right)} = \dfrac\vt\vu 
    \end{align}
-   
 \end{solution}
+
+\ifprintanswers\begin{codex}$\dfrac\vt\vu$\end{codex}\fi

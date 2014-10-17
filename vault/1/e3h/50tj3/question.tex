@@ -2,51 +2,51 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{5}
-  \renewcommand{\vbtwo}{100}
-  \renewcommand{\vbthree}{19}
-  \renewcommand{\vbfour}{198}
+  \renewcommand{\va}{5}
+  \renewcommand{\vb}{100}
+  \renewcommand{\vc}{19}
+  \renewcommand{\vd}{198}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{6}
-    \renewcommand{\vbtwo}{90}
-    \renewcommand{\vbthree}{56}
-    \renewcommand{\vbfour}{445}
+    \renewcommand{\va}{6}
+    \renewcommand{\vb}{90}
+    \renewcommand{\vc}{56}
+    \renewcommand{\vd}{445}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{7}
-      \renewcommand{\vbtwo}{84}
-      \renewcommand{\vbthree}{77}
-      \renewcommand{\vbfour}{498}
+      \renewcommand{\va}{7}
+      \renewcommand{\vb}{84}
+      \renewcommand{\vc}{77}
+      \renewcommand{\vd}{498}
     }{
       % variables 
-      \renewcommand{\vbone}{8}
-      \renewcommand{\vbtwo}{104}
-      \renewcommand{\vbthree}{192}
-      \renewcommand{\vbfour}{1339}
+      \renewcommand{\va}{8}
+      \renewcommand{\vb}{104}
+      \renewcommand{\vc}{192}
+      \renewcommand{\vd}{1339}
     }
   }
 }
 
-\FRACTIONSIMPLIFY\vbone\vbtwo\a\b
+\FRACTIONSIMPLIFY\va\vb\a\b
 
-\SUBTRACT\vbone{1}\c
-\SUBTRACT\vbtwo{1}\d
-\SUBTRACT\vbtwo\vbone\x
+\SUBTRACT\va{1}\c
+\SUBTRACT\vb{1}\d
+\SUBTRACT\vb\va\x
 \SUBTRACT\x{1}\y
 
 \FRACMULT\a\b\c\d\e\f
 
-\FRACMINUS{1}{1}\vbone\vbtwo\g\h
+\FRACMINUS{1}{1}\va\vb\g\h
 \FRACMINUS{1}{1}\c\d\i\j
 
-\FRACMULT\g\h\vbone\d\k\l
+\FRACMULT\g\h\va\d\k\l
 \FRACMULT\a\b\i\j\m\n
 
 
-\question In a shipment of $\vbtwo$ television sets, $\vbone$ are defective. If a person picks 
+\question In a shipment of $\vb$ television sets, $\va$ are defective. If a person picks 
 two (2) sets from this shipment, then
 
 \watchout
@@ -61,7 +61,7 @@ two (2) sets from this shipment, then
 \begin{solution}[\mcq]
      \begin{align}
         P(\text{both defective}) &= P(\text{first defective})\cdot P(\text{second defective}) \\
-                  &= \dfrac\vbone\vbtwo \times \dfrac\c\d = \dfrac\e\f 
+                  &= \dfrac\va\vb \times \dfrac\c\d = \dfrac\e\f 
      \end{align}
   \end{solution}
 
@@ -70,17 +70,21 @@ two (2) sets from this shipment, then
 \begin{solution}[\halfpage]
     \begin{align}
        P(\text{just one defective}) &= 
-       \overbrace{\left( 1 - \dfrac\vbone\vbtwo \right)\times\dfrac\vbone\d}^{\text{first ok, second defective}}\nonumber \\
-       &+ \underbrace{\dfrac\vbone\vbtwo \times \left( 1-\dfrac\c\d \right)}_{\text{first defective, second ok}} \\
-       &= \dfrac\k\l + \dfrac\m\n = \dfrac\vbthree\vbfour
+       \overbrace{\left( 1 - \dfrac\va\vb \right)\times\dfrac\va\d}^{\text{first ok, second defective}}\nonumber \\
+       &+ \underbrace{\dfrac\va\vb \times \left( 1-\dfrac\c\d \right)}_{\text{first defective, second ok}} \\
+       &= \dfrac\k\l + \dfrac\m\n = \dfrac\vc\vd
     \end{align}
     
     Alternatively, one could also say that,
     \begin{align}
        P(\text{one defective}) &= 1 - P(\text{none defective}) - P(\text{both defective}) \\
-                       &= 1 - \dfrac\x\vbtwo\times\dfrac\y\d - \dfrac\e\f \\
-                       &= \dfrac\vbthree\vbfour
+                       &= 1 - \dfrac\x\vb\times\dfrac\y\d - \dfrac\e\f = \dfrac\vc\vd
     \end{align}
   \end{solution}
 \end{parts}
 
+\ifprintanswers
+  \begin{codex}
+    $(a)\,\dfrac\e\f\qquad (b)\,\dfrac\vc\vd$
+  \end{codex}
+\fi

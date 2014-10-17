@@ -1,8 +1,46 @@
 
-\question[3] An 1.5m tall girl is standing some distance from a 30m tall building.
-The angle of elevation from her eyes to the top of the tower changes from $\ang{30}$
-to $\ang{60}$ as she walks towards the building. Find the distance she walked towards the building
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{37} % initial angle 
+  \renewcommand{\vb}{53} % final angle  
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{27}
+    \renewcommand{\vb}{47}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{15}
+      \renewcommand{\vb}{35}
+    }{
+      % variables 
+      \renewcommand{\va}{22}
+      \renewcommand{\vb}{51}
+    }
+  }
+}
 
+\DEGREESCOT\va\vc
+\DEGREESCOT\vb\vd
+\ROUND[2]\vc\ve
+\ROUND[2]\vd\vf
+
+\SUBTRACT\ve\vf\vg
+\MULTIPLY\vg{28.5}\vh
+\ROUND[2]\vh\vi
+
+\question[3] An 1.5m tall girl is standing some distance from a 30m tall building.
+The angle of elevation from her eyes to the top of the tower changes from $\ang\va$
+to $\ang\vb$ as she walks towards the building. Find the distance she walked towards the building.
+
+\watchout 
+
+\marginnote[-50pt]{
+  \begin{tabular}{c c}
+    $\cot\ang\va=\ve$ & $\cot\ang\vb=\vf$ 
+  \end{tabular}
+}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -38,18 +76,17 @@ to $\ang{60}$ as she walks towards the building. Find the distance she walked to
 \begin{solution}[\halfpage]
 	The situation is \asif. The distance covered by the girl is $EF = EG - FG$, where
 	\begin{align}
-		\tan\angle{DEG} = \tan\ang{30} &= \dfrac{DG}{EG} \\
-		\Rightarrow EG &= \dfrac{DG}{\tan\ang{30}} \\
-		\text{And, }\tan\angle{DFG} = \tan\ang{60} &= \dfrac{DG}{FG} \\
-		\Rightarrow FG &= \dfrac{DG}{\tan\ang{60}}
+		\tan\angle{DEG} = \tan\ang\va &= \dfrac{DG}{EG} \\
+		\implies EG &= \dfrac{DG}{\tan\ang\va} \\
+		\text{And, }\tan\angle{DFG} = \tan\ang\vb &= \dfrac{DG}{FG} \\
+		\implies FG &= \dfrac{DG}{\tan\ang\vb}
 	\end{align}
 	
 	Now, $DG =$ (height of the building - girl's height) $= 30 - 1.5 = 28.5m$. And therefore, 
 	
 	\begin{align}
-		EF = EG - EF &= 28.5\cdot\left(\dfrac{1}{\tan\ang{30}} - \dfrac{1}{\tan\ang{60}}\right) \\
-		&= 32.91 \text{ meters}
+		EF = EG - EF &= 28.5\cdot\left(\dfrac{1}{\tan\ang\va} - \dfrac{1}{\tan\ang\vb}\right) = \vi\text{ meters}
 	\end{align}
-	
 \end{solution}
 
+\ifprintanswers\begin{codex}$\vi$ meters\end{codex}\fi

@@ -1,10 +1,41 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\va}{10} 
+  \renewcommand{\vn}{5} 
+  \renewcommand{\vx}{8} 
+  \renewcommand{\vy}{3} 
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\va}{12} 
+    \renewcommand{\vn}{3} 
+    \renewcommand{\vx}{9} 
+    \renewcommand{\vy}{2} 
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\va}{11} 
+      \renewcommand{\vn}{2} 
+      \renewcommand{\vx}{8} 
+      \renewcommand{\vy}{2} 
+    }{
+      \renewcommand{\va}{14} 
+      \renewcommand{\vn}{4} 
+      \renewcommand{\vx}{10} 
+      \renewcommand{\vy}{3} 
+    }
+  }
+}
 
-\question[2] A box has 3 drawers; one contains 2 gold coins, one contains two silver coins
-and one contains one gold and one silver coin. If a drawer is selected randomly 
-and the one coin picked from it turns out to be gold, then what is the probability
-that the coin was picked from the drawer with two gold coins? 
+\ADD\vx\vy\vz
+\FRACTIONSIMPLIFY\vx\vz\p\q
+\FRACADD{1}{1}\p\q\m\n
 
+\question[2] A box has 3 drawers - $A,B$ and $C$. $A$ contains $\va$ gold coins, 
+$B$ contains $\vn$ silver coins
+and $C$ contains $\vx$ gold and $\vy$ silver coins. 
+If a drawer is selected randomly and the one coin picked from it turns out to be gold, 
+then what is the probability that the coin was picked from the drawer $A$?
+
+\watchout
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -12,21 +43,22 @@ that the coin was picked from the drawer with two gold coins?
        \toprule
        Drawer & A & B & C \\
        \midrule
-       N( gold coins ) & 2 & 0 & 1 \\
-       $P(\text{gold coin} \vert \text{drawer})$ & 1 & 0 & 0.5 \\
+       N( gold coins ) & $\va$ & 0 & $\vx$ \\
+       $P( G\vert\text{drawer})$ & 1 & 0 & $\frac\p\q$ \\
        \bottomrule
     \end{tabular}
 \fi 
 
 \begin{solution}[\halfpage]
     The probability we are seeking is $P(A \vert G)$, where $G$ is the event of drawing
-    a gold coin
+    a gold coin.
     
     Now, 
     \begin{align}
        \bayesp{A}{G} &= \dfrac{\bayesf{G}{A}}{\bayesf{G}{A} + \bayesf{G}{B} + \bayesf{G}{C}} \\
           &= \dfrac{1\cdot\frac{1}{3}}{1\cdot\frac{1}{3} + 0\cdot\frac{1}{3} 
-          + \frac{1}{2}\cdot\frac{1}{3}} \\
-          &= \dfrac{2}{3}
+          + \frac\p\q\cdot\frac{1}{3}} =\dfrac\n\m
     \end{align}
 \end{solution}
+
+\ifprintanswers\begin{codex}$\dfrac\n\m$\end{codex}\fi
