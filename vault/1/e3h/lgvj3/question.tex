@@ -1,9 +1,36 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{6} % initial angle 
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{9}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{3}
+    }{
+      % variables 
+      \renewcommand{\va}{12}
+    }
+  }
+}
 
-\question[3] In the figure alongside, $PQRS$ is the diameter of a circle with radius 6cm.
+\MULTIPLY\va{2}\vd
+\DIVIDE\vd{3}\vp
+\MULTIPLY\vp{2}\vq
+
+\SQUARE\vd\vx
+\SQUARE\vp\vy
+\SQUARE\vq\vz
+\EXPR[0]\vm{\vx+\vy-\vz}
+
+\question[3] In the figure alongside, $PQRS$ is the diameter of a circle with radius $\va$ cm.
 The lengths $PQ$, $QR$ and $RS$ are equal. Semi-circles are drawn on $PQ$ and $QS$ as diameters.
-Find the area of the shaded region
+Find the area of the shaded region.
 
+\watchout
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -43,15 +70,16 @@ Find the area of the shaded region
 
 \begin{solution}[\halfpage]
 	\begin{align}
-		PS &= 2\times OP = \text{12 cm} \\
-		\therefore PQ &= QR = RS \Rightarrow PQ = QR = RS = \text{4 cm}
+		PS &= 2\times OP = \vd\text{ cm} \\ 
+		\therefore PQ &= QR = RS \implies PQ = QR = RS = \vp\text{ cm}
 	\end{align}
 	
 	And hence, the required area $A$ is
 	\begin{align}
-		A &= \dfrac{1}{2}\pi\dfrac{PS^2}{4} + \dfrac{1}{2}\pi\dfrac{PQ^2}{4} 
-		- \dfrac{1}{2}\pi\dfrac{QS^2}{4} \\
-		&= \dfrac{\pi}{8}\cdot\left( 12^2 + 4^2 - 8^2\right) \\
-		&= 12\pi \text{cm}^2
+		A &= \dfrac{1}{2}\pi\dfrac{PS^2}{4} 
+		- \dfrac{1}{2}\pi\dfrac{QS^2}{4} 
+    + \dfrac{1}{2}\pi\dfrac{PQ^2}{4} \\ 
+		&= \dfrac{\pi}{8}\cdot\left( \vd^2 - \vq^2 + \vp^2\right) = \WRITEFRAC\vm{8}\pi\text{ cm}^2
 	\end{align}
 \end{solution}
+\ifprintanswers\begin{codex}$\WRITEFRAC\vm{8}\pi$ cm$^2$\end{codex}\fi

@@ -1,8 +1,54 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{10} % assumed speed 
+  \renewcommand{\vb}{12} % actual speed
+  \renewcommand\vz{-\frac{60}{11}} % negative spped - to be ignored
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{12}
+    \renewcommand{\vb}{16}
+    \renewcommand\vz{-\frac{16}{5}} % negative spped - to be ignored
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{10}
+      \renewcommand{\vb}{15}
+      \renewcommand\vz{-\frac{15}{7}} % negative spped - to be ignored
+    }{
+      % variables 
+      \renewcommand{\va}{12}
+      \renewcommand{\vb}{14}
+      \renewcommand\vz{-\frac{84}{13}} % negative spped - to be ignored
+    }
+  }
+}
 
-\question[5] A cyclist covered a distance of 96 km two hours faster than he assumed. Every hour
-he travelled 1 km more than he intended to in 1h 15min. What was his speed?
+\LCM\va\vb\vc
+\MULTIPLY\vc{2}\vd % distance 
+\ADD\vd{2}\ve 
+\SUBTRACT\vb{1}\a
+\FRACTIONSIMPLIFY\a\va\vp\vq
+\FRACMULT\vp\vq{2}{1}\vr\vs
+\FRACMULT\vp\vq\vd{1}\k\m % \m = 1, \k is what we need 
+\SUBTRACT\k\ve\c 
+\FRACMULT\a\va{60}{1}\vt\b % \b = 1 guaranteed
 
+\MULTIPLY\vd\vs\d % constant in quadratic 
+\MULTIPLY\c\vs\b % x-term coefficient in quadratic
+
+\question[5] A cyclist covered a distance of $\vd$ km two hours faster than he assumed. Every hour
+he travelled 1 km more than he intended to in $\vt$ minutes. What was his speed?
+
+\watchout
+
+\marginnote[-70pt] {
+  \begin{tabular}{c c} 
+    $\sqrt{12996}=114$ & $\sqrt{28900}=170$ \\
+    $\sqrt{5776}=76$ & $\sqrt{57600}=240$ \\
+  \end{tabular}
+} 
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -10,27 +56,30 @@ he travelled 1 km more than he intended to in 1h 15min. What was his speed?
   	    \toprule
   		& Speed (km/h) & Number of 1-hour periods & Distance covered \\
   		\midrule
-  		Normally & $s$ & $N$ & 96 \\
-  		Now & $\frac{5}{4}s + 1$ & $N-2$ & 96 \\
+  		Assumed & $s$ & $N$ & $\vd$ \\
+  		Actual & $\frac\vp\vq s + 1$ & $N-2$ & $\vd$ \\
   		\bottomrule
-  	
   	\end{tabular}
 \fi 
 
 \begin{solution}[\fullpage]
 	If $s$ be the cyclist's speed on any other day, then this time around he was 
-	travelling at $\left(\dfrac{75\text{ min}}{60\text{ min}}s + 1\right) \text{km/hour} = \left(\dfrac{5}{4}s + 1\right)$.
+	travelling at 
+  \[ \left(\dfrac{\vt\text{ min}}{60\text{ min}}s + 1\right) \text{km/hour} = \left(\dfrac\vp\vq s + 1\right) \]
 	
 	The second insight is that 
+		\[ s\cdot N = \left( \dfrac\vp\vq s + 1 \right)\cdot (N-2) = \vd\text{ km} \]
 	
+  Which means,
 	\begin{align}
-		s\cdot N &= \left( \dfrac{5}{4}s + 1 \right)\cdot (N-2) = 96\text{ km} \\
-		\Rightarrow \dfrac{5}{4}sN - \dfrac{5}{2}s + N - 2 &= 96 \\
-		\dfrac{5}{4}\cdot 96 - \dfrac{5}{2}s + \dfrac{96}{s} - 2 &= 96 \\
-		\Rightarrow 5s^2 - 44s - 192 &= 0 \\
-		\Rightarrow s &= \dfrac{44\pm\sqrt{44^2-4\cdot 5 \cdot (-192)}}{2\cdot 5} \\
-		              &= 12,\, -3.2
+		\dfrac\vp\vq sN - \dfrac\vr\vs s + (N - 2) &= \vd \\
+		\underbrace{\dfrac\vp\vq\cdot \vd}_{s\cdot N=\vd} - \dfrac\vr\vs s + \underbrace{\dfrac{\vd}{s}}_{s\cdot N=\vd} - 2 &= \vd \\
+    \dfrac\vr\vs s - \dfrac\vd{s} = \c\implies \vr s^2 - \b s -\d &= 0  \\
+    \text{or } s &= \vz,\va
 	\end{align}
-	Speed can only be positive and hence the cyclist's normal speed is $s = 12$ km per hour.
-	And this time around, it was $\frac{5}{4}\cdot 12 + 1 = 16$ km per hour
+
+  As speed can only be positive, the cyclist's \textbf{assumed} speed is $s = \va$ km per hour.
+  \textbf{But his actual speed} was $\frac\vp\vq\cdot\va + 1 = \vb$ km per hour.
 \end{solution}
+
+\ifprintanswers\begin{codex}$\vb$ km/h\end{codex}\fi

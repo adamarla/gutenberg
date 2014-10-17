@@ -1,9 +1,50 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{25} % initial angle 
+  \renewcommand{\vb}{39} % final angle  
+  \renewcommand{\vh}{200} % Height 
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{27}
+    \renewcommand{\vb}{43}
+    \renewcommand{\vh}{250} % Height 
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{42}
+      \renewcommand{\vb}{35}
+      \renewcommand{\vh}{300} % Height 
+    }{
+      % variables 
+      \renewcommand{\va}{22}
+      \renewcommand{\vb}{51}
+      \renewcommand{\vh}{350} % Height 
+    }
+  }
+}
 
-\question[2] An aircraft at an altitude of $200$m above a river observes that the angle 
-of depression of two points on opposite banks are $\ang{45}$ and $\ang{60}$ respectively.
-Find, in meters, the width of the river
+\SUBTRACT{90}\va\vc
+\SUBTRACT{90}\vb\vd
+\DEGREESTAN\vc\vm
+\DEGREESTAN\vd\vn
+\ROUND[2]\vm\vx
+\ROUND[2]\vn\vy
+\ADD\vx\vy\vz
+\MULTIPLY\vh\vz\vv
+\ROUND[2]\vv\vw
 
+\question[2] An aircraft at an altitude of $\vh$m above a river observes that the angle 
+of depression of two points on opposite banks are $\ang\va$ and $\ang\vb$ respectively.
+Find the width of the river (in meters).
+
+\watchout
+\marginnote[-70pt]{
+  \begin{tabular}{c c}
+    $\tan\ang\vc=\vx$ & $\tan\ang\vd=\vy$ 
+  \end{tabular}
+}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -15,8 +56,8 @@ Find, in meters, the width of the river
       \figpt 103: $A$(30,60)
       \figpt 104: $M$(0,60)
       \figpt 105: $N$(80,60)
-      \figpt 106: $\ang{45}$(39,50) % angle labels
-      \figpt 107: $\ang{60}$(20,48)
+      \figpt 106: $\ang\va$(39,50) % angle labels
+      \figpt 107: $\ang\vb$(20,48)
     \figdrawbegin{}
       \figdrawline [100,103,102,101,100]
       \figdrawline [103,101]
@@ -38,13 +79,18 @@ Find, in meters, the width of the river
 \fi 
 
 \begin{solution}[\halfpage]
-  If the angles of depression are \asif, then $\angle{BAC} = \ang{30}$ and $\angle{DAC} = \ang{45}$.
-  And therefore, the width of the river is, 
-  
+  If the angles of depression are \asif, then 
+    \begin{align}
+      \angle{BAC} &= \ang{90} - \ang\vb=\ang\vd \\
+      \angle{DAC} &= \ang{90} - \ang\va = \ang\vc
+    \end{align}
+
+  The width of the river is would therefore be
   \begin{align}
   	BD = BC + CD &= AC\cdot\tan\angle{BAC} + AC\cdot\tan\angle{DAC} \\
-  	  &= \text{200m}\cdot\left( \tan\ang{30} + \tan\ang{45} \right) \\
-  	  &= \text{200m}\cdot\left( \dfrac{1}{\sqrt{3}} + 1\right) \\
-  	  &= 315.47\text{m}
+  	  &= \vh\text{ meters}\cdot\left( \tan\ang\vc + \tan\ang\vd \right) \\
+  	  &= \vh\text{ meters}\cdot(\vy + \vx) = \vw
   \end{align}
 \end{solution}
+
+\ifprintanswers\begin{codex}$\vw$ meters\end{codex}\fi

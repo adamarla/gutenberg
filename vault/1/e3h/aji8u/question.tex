@@ -1,9 +1,55 @@
 
-\question[2] A tower and a building stand opposite each other. If the angle of elevation
-from the bottom of the tower to the top of the building is $\ang{30}$ and the angle
-of elevation from the bottom of the building to the top of the tower is $\ang{60}$, then
-what is the height of the building given that the tower is 50 meters tall
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{37} % initial angle 
+  \renewcommand{\vb}{53} % final angle  
+  \renewcommand{\vh}{50} % Height 
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{27}
+    \renewcommand{\vb}{43}
+    \renewcommand{\vh}{60} % Height 
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{15}
+      \renewcommand{\vb}{35}
+      \renewcommand{\vh}{95} % Height 
+    }{
+      % variables 
+      \renewcommand{\va}{22}
+      \renewcommand{\vb}{51}
+      \renewcommand{\vh}{80} % Height 
+    }
+  }
+}
 
+\DEGREESCOT\va\vc
+\DEGREESCOT\vb\vd
+\DEGREESTAN\va\vx
+\DEGREESTAN\vb\vy
+
+\MULTIPLY\vc\vy\vm %cot A tan B
+\MULTIPLY\vd\vx\vn% tan A cot B 
+
+\ROUND[2]\vm\vj
+\ROUND[2]\vn\vk
+\MULTIPLY\vh\vk\vl
+\ROUND[2]\vl\vz
+
+\question[2] A tower and a building stand opposite each other. If the angle of elevation
+from the bottom of the tower to the top of the building is $\ang\va$ and the angle
+of elevation from the bottom of the building to the top of the tower is $\ang\vb$, then
+what is the height of the building given that the tower is $\vh$ meters tall.
+
+\watchout
+
+\marginnote[-80pt]{
+  \begin{tabular}{c c}
+    $\cot\ang\va\cdot\tan\ang\vb=\vj$ & $\tan\ang\va\cdot\cot\ang\vb=\vk$
+  \end{tabular}
+}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -11,12 +57,12 @@ what is the height of the building given that the tower is 50 meters tall
     \figinit{pt}
       \figpt 100: $A$(0,0)
       \figpt 101: $B$(70,0)
-      \figpt 102: $N$(70,50)
-      \figpt 103: $M$(0,25)
+      \figpt 102: $N$(70,70)
+      \figpt 103: $M$(0,45)
       \figpt 104: $F$(65,45)
-      \figpt 105: $H_{tower} = 50m$(67,25)
-      \figpt 106: $\ang{30}$(55,5)
-      \figpt 107: $\ang{60}$(10,5)
+      \figpt 105: $H_{\text{tower}} = \vh m$(67,25)
+      \figpt 106: $\ang\va$(55,5)
+      \figpt 107: $\ang\vb$(10,5)
     \figdrawbegin{}
       \figdrawline [100,101,102,100]
       \figdrawline [101,103,100]
@@ -40,10 +86,9 @@ what is the height of the building given that the tower is 50 meters tall
 	The situation is \asif. And one can see that,
 	
 	\begin{align}
-		AB = \dfrac{BN}{\tan\ang{60}} &= \dfrac{AM}{\tan\ang{30}} \\
-		\Rightarrow \dfrac{AM}{BN} &= \dfrac{\tan\ang{30}}{\tan\ang{60}} \\
-		\Rightarrow AM &= BN\cdot\dfrac{\frac{1}{\sqrt{3}}}{\sqrt{3}} = \dfrac{BN}{3} \\
-		               &= \dfrac{50}{3} = 16\frac{2}{3}\text{ meters}
+		AB = \dfrac{BN}{\tan\ang\vb} &= \dfrac{AM}{\tan\ang\va} \implies AM = BN\cdot\dfrac{\tan\ang\va}{\tan\ang\vb} \\
+		\text{or } AM &= BN\times\vk = \vh\times\vk = \vz\text{ meters}
 	\end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}$\vz$ meters\end{codex}\fi
