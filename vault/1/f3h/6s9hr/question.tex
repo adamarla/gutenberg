@@ -1,22 +1,47 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{22} 
+  \renewcommand\vd{6}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{30}
+    \renewcommand\vd{4}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{35}
+      \renewcommand\vd{7}
+    }{
+      % variables 
+      \renewcommand{\va}{28}
+      \renewcommand\vd{4}
+    }
+  }
+}
 
-\question[1] 300 apples are distributed equally amongst a certain number of students. 
-Had there been 10 more students, each would have got one apple less. How many students
+\ADD\va\vd\vx
+\LCM\va\vx\vn
+\ADD{-\va}{-\vd}\vb
+\MULTIPLY\vn\vd\vm
+
+\question[1] $\vn$ apples are distributed equally amongst a certain number of students. 
+Had there been $\vd$ more students, each would have got one apple less. How many students
 are there? 
 
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
+\watchout 
 
 \begin{solution}[\halfpage]
-	If $N$ be the number of students, then each would get $\dfrac{300}{N}$ apples. 
-	With 10 more students, each would get $\dfrac{300}{N+10}$ apples. And so if, 
+	If $N$ be the number of students, then each would get $\dfrac\vn{N}$ apples. 
+
+	With $\vd$ more students, each would get $\dfrac\vn{N+\vd}$ apples. And so, 
 	
 	\begin{align}
-		\dfrac{300}{N} - \dfrac{300}{N+10} &= 1 \\
-		\text{then, } N^2 + 10N - 3000 &= 0 \\
-		\Rightarrow N &= 50, -60
+		\dfrac\vn{N} - \dfrac\vn{N+\vd} &= 1 \implies N^2 + \vd N - \vm = 0 \\
+		\implies N &= \va,\vb
 	\end{align}
-	$N = -60$ does not make sense. And therefore $N=50$
+	$N = \vb$ does not make sense. And therefore $N=\va$
 \end{solution}
+
+\ifprintanswers\begin{codex}$\va$\end{codex}\fi

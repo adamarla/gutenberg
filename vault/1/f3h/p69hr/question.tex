@@ -1,27 +1,63 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vb}{7} 
+  \renewcommand\vx{-\frac{60}{19}}
+  \renewcommand\vd{5}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vb}{6} 
+    \renewcommand\vx{-\frac{5}{2}}
+    \renewcommand\vd{4}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vb}{8} 
+      \renewcommand\vx{-\frac{9}{17}}
+      \renewcommand\vd{1}
+    }{
+      % variables 
+      \renewcommand{\vb}{5} 
+      \renewcommand\vx{-\frac{7}{6}}
+      \renewcommand\vd{2}
+    }
+  }
+}
 
-\question[4] Two pipes - $A$ and $B$ - when used together can fill a tank in 6 minutes.
-Individually, however, pipe $A$ takes 5 minutes longer than pipe $B$ to fill the same
-tank. Find the times then that each pipe takes individually
+\ADD\vb\vd\va
+\FRACADD{1}\va{1}\vb\p\q
+\EXPR[0]\r{2*\q-\vd*\p}
+\MULTIPLY\vd\q\s
 
+\question[4] Two pipes - $A$ and $B$ - when used together can fill a tank in $\WRITEFRAC\q\p$ minutes.
+Individually, however, pipe $A$ takes $\vd$ minute(s) longer than pipe $B$ to fill the same
+tank. Find the time pipe $A$ would take to fill the tank on its own. 
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
+\watchout
+
+\marginnote[-50pt]{ 
+  \begin{tabular}{c c}
+    $\sqrt{1369}=37$ & $\sqrt{289}=17$ \\
+    $\sqrt{37,249}=193$ & $73^2=5329$ \\
+    $\sqrt{21,025}=145$ & $127^2=16,129$
+  \end{tabular}
+} 
 
 \begin{solution}[\fullpage]
-	If $R_A$ and $R_B$ be the rates - expressed in unit volume/minute - at which the two
-	operate individually and $T_A$ and $T_B$ the times they take to fill the tank, then
-	where is what we know
+	If $R_A$, $R_B$ be the rates (unit volume/minute) at which $A$ and $B$ fill individually
+	and $T_A$, $T_B$ the times they take to fill a tank (individually), then we know
 	\begin{align}
-		T_A &= \dfrac{V_{tank}}{R_A} \Rightarrow R_A = \dfrac{V_{tank}}{T_A}\\
-		T_B &= \dfrac{V_{tank}}{R_B} \Rightarrow R_B = \dfrac{V_{tank}}{T_B}\\
-		T_A &= T_B + 5\text{ minutes} \\
-		6\text{ minutes} &= \dfrac{V_{tank}}{R_A + R_B} \\
-		\Rightarrow 6 &= \dfrac{V_{tank}}{V_{tank}\cdot\left(\dfrac{1}{T_B + 5} + \dfrac{1}{T_B}\right)} \\
-		\Rightarrow T_B^2 - 7T_B - 30 &= 0 \\
-		\Rightarrow T_B &= -3, 10
+		T_A &= \dfrac{V}{R_A} \implies R_A = \dfrac{V}{T_A}\\
+		T_B &= \dfrac{V}{R_B} \implies R_B = \dfrac{V}{T_B}\\
+		T_A &= T_B + \vd\text{ minutes} \\
+		\dfrac\q\p\text{ minutes} &= \dfrac{V}{R_A + R_B} \\
+		\implies\dfrac\q\p &= \dfrac{V}{V\cdot\left(\dfrac{1}{T_B + \vd} + \dfrac{1}{T_B}\right)} \\
+		\implies \p T_B^2 - \r T_B - \s &= 0\implies T_B = \vx,\vb
 	\end{align}
 	
-	Ignoring $T_B = -3$, we get $T_B = 10\text{ minutes}$ and $T_A = T_B + 5 = 15\text{ minutes}$
+	Ignoring $T_B = \vx$, we get 
+  \[ T_B = \vb\text{ minutes} \implies T_A = T_B + \vd = \va\text{ minutes} \]
 \end{solution}
+
+\ifprintanswers\begin{codex}$T_A=\va\text{ minutes}$\end{codex}\fi
