@@ -257,7 +257,8 @@ function create_codex {
   # Assumes that pg-*.jpg have already been moved to the respective version folder
   if [ -e $(pwd)/codex.cdx ] ; then 
     n=$(pdfinfo $(pwd)/$1/document.pdf | grep Pages | sed -e 's/Pages:\s*//')
-    convert -trim $(pwd)/$1/pg-$n.jpg $(pwd)/$1/codex.jpg
+    convert -chop 10x20 -trim $(pwd)/$1/pg-$n.jpg $(pwd)/$1/codex.png
+    convert $(pwd)/$1/codex.png -fuzz 10% -transparent white $(pwd)/$1/codex.png
     #echo $n
   fi
 } 
