@@ -51,7 +51,7 @@ function codex_params {
   if [ -e $(pwd)/codex.cdx ]; then 
     p=""
     for j in 0 1 2 3 ; do 
-      x=$(sha1sum $j/codex.jpg)
+      x=$(sha1sum $j/codex.png)
       y=${x:0:7}
       p+="codex[$j]=$y&"
     done 
