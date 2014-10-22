@@ -1,41 +1,58 @@
 
-
-\ifnumodd{\value{rolldice}}{
+\ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{8}
-  \renewcommand{\vbthree}{1}
-  \renewcommand{\vbfour}{ }
-  \renewcommand{\vbfive}{1}
-  \renewcommand{\vbsix}{\sqrt{2}}
+  \renewcommand\va{3}
+  \renewcommand\vb{4}
+  \renewcommand\vz{36.9}
 }{
-    \renewcommand{\vbone}{12}
-    \renewcommand{\vbthree}{\dfrac{1}{\sqrt{3}}}
-    \renewcommand{\vbfour}{\sqrt{3}}
-    \renewcommand{\vbfive}{\sqrt{3}}
-    \renewcommand{\vbsix}{2}
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand\va{4}
+    \renewcommand\vb{3}
+    \renewcommand\vz{53.1}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand\va{12}
+      \renewcommand\vb{5}
+      \renewcommand\vz{67.4}
+    }{
+      % variables 
+      \renewcommand\va{5}
+      \renewcommand\vb{12}
+      \renewcommand\vz{22.6}
+    }
+  }
 }
 
-\DIVIDE\vbone{2}\vbtwo
+\DIVIDE\vz{2}\vy
+\MULTIPLY\vb{2}\vc
+\SQUARE\va\vm
+\SQUARE\vb\vn
+\ADD\vm\vn\vo
+\SQRT\vo\vp
 
-\question[3] Without using a calculator, find the value of $\tan\frac{\pi}{\vbone}$
+\ADD{-\vb}\vp\vq
+\SUBTRACT{-\vb}\vp\vr
+\FRACTIONSIMPLIFY\vq\va\vs\vt
+
+\question[3] Without using a calculator, find the value of $\tan\ang\vy$ given that $\tan^{-1}\frac\va\vb=\ang\vz$
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\halfpage]
-  We know the value of $\tan\frac\pi\vbtwo$. And furthermore, $\frac\pi\vbtwo = 2\times\frac\pi\vbone$
-	\begin{align}
-		\therefore\tan\frac{\pi}{\vbtwo} = \tan \left(2\cdot\frac{\pi}{\vbone}\right) &= \frac{2\tan\frac{\pi}{\vbone}}{1-\tan^2\frac{\pi}{\vbone}} = \vbthree \\
+  Half the battle is won if you realized that 
+  \[ \ang\vz = 2\times \ang\vy\]
+
+  Hence, if we let $\tan\ang\vy=x$, then 
+  \begin{align}
+    \tan\ang\vz &= \dfrac\va\vb = \underbrace{\dfrac{2\tan\ang\vy}{1-\tan^2\ang\vy} = \dfrac{2x}{1-x^2}}_{\tan 2\theta=\dfrac{2\tan\theta}{1-\tan^2\theta}} \\
+    \implies \va x^2 +\vc x -\va &= 0\text{ or } x = \WRITEFRAC\vq\va,\WRITEFRAC\vr\va
   \end{align}
 
-  Now, if we let $\tan\frac\pi\vbone = x$, then 
-  \begin{align}
-    \dfrac{2x}{1-x^2} &= \vbthree \Rightarrow
-		x^2 + 2\times\vbfour x - 1 = 0 \\
-    \text{ or } x &= -\vbfive \pm \vbsix 
-	\end{align}
-	As $\tan\theta > 0 \,\forall \,\theta \in (0,\frac{\pi}{2})$, $\tan\frac\pi\vbone$ can only be equal to
-	$\vbsix - \vbfive$
+  But $\tan\ang\vy > 0$ as the angle lies in the first quadrant. 
+
+  Hence, the only acceptable answer is $\tan\ang\vy=\dfrac\vs\vt$
 \end{solution}
+
+\ifprintanswers\begin{codex}$\dfrac\vs\vt$\end{codex}\fi

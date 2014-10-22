@@ -1,15 +1,39 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand\va{7}
+  \renewcommand\vb{4}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand\va{9}
+    \renewcommand\vb{4}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand\va{12}
+      \renewcommand\vb{5}
+    }{
+      % variables 
+      \renewcommand\va{13}
+      \renewcommand\vb{4}
+    }
+  }
+}
 
-\question[1] Prove that $\dfrac{\cos 7\theta + \cos 5\theta}{\sin 7\theta - \sin 5\theta} = \cot\theta$
+\SUBTRACT\va\vb\vc
+\FRACTIONSIMPLIFY\vc{2}\vd\ve
 
+\question[1] For the following to be true, $N=?$
+  \[ \dfrac{\cos\va\theta + \cos\vb\theta}{\sin\va\theta - \sin\vb\theta} = \cot N\theta \]
 
-\ifprintanswers
-\fi 
+\watchout
 
 \begin{solution}[\mcq]
 	\begin{align}
-		\dfrac{\cos 7\theta + \cos 5\theta}{\sin 7\theta - \sin 5\theta} &= 
-		\dfrac{\eSumOfCos{7\theta}{5\theta}}{\eDiffOfSin{7\theta}{5\theta}} \\
-		&= \dfrac{\cos\theta}{\sin\theta} = \cot\theta
+    \dfrac{\cos\va\theta + \cos\vb\theta}{\sin\va\theta - \sin\vb\theta} &= 
+    \dfrac{\eSumOfCos{\va\theta}{\vb\theta}}{\eDiffOfSin{\va\theta}{\vb\theta}} \\
+    &= \cot\dfrac\vd\ve\theta\implies N=\dfrac\vd\ve
 	\end{align}
 \end{solution}
+\ifprintanswers\begin{codex}$\dfrac\vd\ve$\end{codex}\fi
