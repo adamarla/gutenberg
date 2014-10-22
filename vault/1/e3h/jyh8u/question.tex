@@ -46,28 +46,29 @@ is $\ang\va$ initially and $\vt$ seconds later $\ang\vb$. What is the speed of t
 aircraft in kilometers per hour? The aircraft maintains its altitude for the $\vt$ seconds.
 
 \watchout
-\marginnote[-70pt]{
+
+\begin{calcaid}
   \begin{tabular}{c c}
     $\cot\ang\va=\vx$ & $\cot\ang\vb=\vy$ 
   \end{tabular}
-}
+\end{calcaid}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
+  \begin{marginfigure}[-100pt]
     \figinit{pt}
       \figpt 100: $A$(0,0)
-      \figpt 101: $B$(25,0)
-      \figpt 102: $C$(65,0)
-      \figpt 103: $E$(25,45)
-      \figpt 104: $F$(65,45)
+      \figpt 101: $B$(40,0)
+      \figpt 102: $C$(90,0)
+      \figpt 103: $E$(40,70)
+      \figpt 104: $F$(90,70)
     \figdrawbegin{}
       \figdrawline [100,101,102,104,103,100]
       \figdrawline [100,103]
       \figdrawline [100,104]
       \figdrawline [103,101]
-      \figdrawarccircP 100 ; 10 [101,103] 
-      \figdrawarccircP 100 ; 12 [101,104] 
+      \figdrawarccircP 100 ; 14 [101,103] 
+      \figdrawarccircP 100 ; 16 [101,104] 
     \figdrawend
     \figvisu{\figBoxA}{}{%
       \figwrites 100:(2)
