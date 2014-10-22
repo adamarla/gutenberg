@@ -1,21 +1,47 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand\vx{7}
+  \renewcommand\vp{80}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand\vx{6}
+    \renewcommand\vp{88}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand\vx{5}
+      \renewcommand\vp{96}
+    }{
+      % variables 
+      \renewcommand\vx{4}
+      \renewcommand\vp{85}
+    }
+  }
+}
 
-\question[2] A metal sphere of diameter 42 cm is melted and drawn into a wire of diameter 28 cm.
-What would be the length of the drawn wire if 20\% of the metal was lost during the melting process?
+\SUBTRACT{100}\vp\vl
+\MULTIPLY\vx{6}\vs
+\MULTIPLY\vx{4}\vw
+\FRACTIONSIMPLIFY\vp{100}\va\vb
+\FRACMULT\va\vb{16}{24}\vc\vd
+\FRACMULT\vc\vd{27}{2}\ve\vf
+\FRACMULT\ve\vf\vx{1}\vg\vh
 
+\question[2] A metal sphere of diameter $\vs$ cm is melted and drawn into a wire of diameter $\vw$ cm.
+What would be the length of the drawn wire if $\vl$\% of the metal was lost during the melting process?
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
+\watchout
 
 \begin{solution}[\halfpage]
   \begin{align}
     \text{Metal available after melting} &= \text{Volume of drawn wire} \\
-    \Rightarrow 0.8\times\dfrac{4}{3}\pi\left(\dfrac{D_{sphere}}{2}\right)^3 &= 
-    	\pi\left(\dfrac{D_{wire}}{2}\right)^2\cdot L_{wire} \\
-    \Rightarrow L_{wire} &= \dfrac{1.6}{3}\times\dfrac{D_{sphere}^3}{D_{wire}^2} \\
-                         &= \dfrac{1.6}{3}\times\dfrac{(42\text{cm})^3}{(28\text{cm})^2} \\
-                         &= 50.4\text{ cm}
+    \implies \left( 1-\dfrac\vl{100} \right)&\times\dfrac{4}{3}\pi\left(\dfrac{D_{\text{sphere}}}{2}\right)^3 = 
+    	\pi\left(\dfrac{D_{\text{wire}}}{2}\right)^2\cdot L_{\text{wire}} \\
+    \implies L_{\text{wire}} &= \dfrac\vp{100}\times\dfrac{16}{24}\times\dfrac{(\vs\text{ cm})^3}{(\vw\text{ cm})^2} \\
+    &=\WRITEFRAC\vg\vh\text{ cm}
   \end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}$\dfrac\vg\vh\text{ cm}$\end{codex}\fi

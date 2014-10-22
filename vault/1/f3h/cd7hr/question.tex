@@ -1,42 +1,63 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vd}{98} 
+  \renewcommand\vt{7}
+  \renewcommand\vs{8}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vd}{32}
+    \renewcommand\vt{4}
+    \renewcommand\vs{5}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vd}{72}
+      \renewcommand\vt{6}
+      \renewcommand\vs{7}
+    }{
+      % variables 
+      \renewcommand{\vd}{50}
+      \renewcommand\vt{5}
+      \renewcommand\vs{6}
+    }
+  }
+}
+
+\DIVIDE\vd\vt\va
+\ADD\va{1}\vb
+\EXPR[0]\vj{\vt*\vb - \vd - \vt -2*\vb-2}
+\EXPR[0]\vk{\vd + 2*\vb}
 
 \question[5] Two people started simultaneously towards each other from points $A$ and $B$ which 
-are 50 km apart. They met 5 hours later. After their meeting, the first person, who travelled 
-from $A$ to $B$ decreased his speed by 1km per hour on the way back. The second person, 
-on the other hand, increased his speed by 1 km per hour on the way back. The first person 
-is known to arrive back at $A$ 2 hours \textit{after} the second person arrives back at $B$. What is 
-the first person's \textit{initial} speed?
+are $\vd$ km apart. They met $\vt$ hours later. After their meeting, the first person, who travelled 
+from $A$ to $B$ decreased his speed by 1 km/h on the way back. The second person, 
+on the other hand, increased his speed by 1 km/h on the way back. The first person 
+is known to arrive back at $A$ two(2) hours \textbf{after} the second person arrives back at $B$. What is 
+the \textbf{first person's initial speed?}
 
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
+\watchout
 
 \begin{solution}[\fullpage]
 	If $s_1$ and $s_2$ be the speeds of the first and second person respectively and they
 	meet at some point $X$ in the middle, then 
 	
 	\begin{align}
-		\dfrac{AX}{s_1} &= \dfrac{BX}{s_2} = 5\text{ hours} \\
-		\Rightarrow AX &= 5\cdot s_1 \\
-		\text{and, } \dfrac{\overbrace{50-AX}^{BX}}{s_2} = \dfrac{50-5\cdot s_1}{s_2} &= 5 \Rightarrow s_1 + s_2 = 10
+		\dfrac{AX}{s_1} &= \dfrac{BX}{s_2} = \vt\text{ hours} \\
+		\implies AX &= \vt\cdot s_1 \\
+		\text{and, } \dfrac{\overbrace{\vd-AX}^{BX}}{s_2} = \dfrac{\vd-\vt\cdot s_1}{s_2} &= \vt \implies s_1 + s_2 = \va
 	\end{align}
 	
 	On the way back, 
 	\begin{align}
 		\dfrac{AX}{s_1 - 1} - \dfrac{BX}{s_2 + 1} &= 2\text{ hours} \\
-		\Rightarrow \dfrac{5s_1}{s_1 - 1} - \dfrac{50 - 5s_1}{s_2} &= 2 \\
-		\Rightarrow \dfrac{5s_1}{s_1 - 1} - \dfrac{50 - 5s_1}{10-s_1+1} &= 2 \\
-		(55s_1 - 5s_1^2) - 5\cdot(10-s_1)\cdot(s_1-1) &= 2\cdot(s_1-1)\cdot(11-s_1)
-	\end{align}
-	
-	The above reduces to 
-	\begin{align}
-		2s_1^2 - 24s_1 + 72 &= 0 \\
-		\text{or, }s_1^2 -12s_1 + 36 &= 0 \\
-		\Rightarrow s_1 &= \dfrac{12\pm\sqrt{12^2 - 4\cdot 1 \cdot 36}}{2} \\
-		                &= 6\text{ km per hour}
+		\implies \dfrac{\vt s_1}{s_1 - 1} - \dfrac{\vd - \vt s_1}{s_2 + 1} &= 2 \\
+		\implies \dfrac{\vt s_1}{s_1 - 1} - \dfrac{\vd - \vt s_1}{\va-s_1+1} &= 2 \\
+    \implies 2s_1^2 + \vj s_1 + \vk &= 0 \\
+    \implies 2\cdot(s_1 - \vs)^2 &= 0\implies s_1 = \vs\text{ km/h}
 	\end{align}
 	
 \end{solution}
 
+\ifprintanswers\begin{codex}$\vs$ km/hour\end{codex}\fi
