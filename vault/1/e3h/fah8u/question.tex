@@ -35,6 +35,11 @@
 \MULTIPLY\vh\vz\vv
 \ROUND[2]\vv\vw
 
+\DEGREESTAN\va\a
+\DEGREESTAN\vb\b
+\ROUND[2]\a\aa
+\ROUND[2]\b\bb
+
 \question[2] An aircraft at an altitude of $\vh$m above a river observes that the angle 
 of depression of two points on opposite banks are $\ang\va$ and $\ang\vb$ respectively.
 Find the width of the river (in meters).
@@ -42,14 +47,14 @@ Find the width of the river (in meters).
 \watchout
 
 \begin{calcaid}
-  \begin{tabular}{c c}
-    $\tan\ang\vc=\vx$ & $\tan\ang\vd=\vy$ 
+  \begin{tabular}{c c c c}
+    $\tan\ang\va=\aa$ & $\tan\ang\vb=\bb$ & $\tan\ang\vc=\vx$ & $\tan\ang\vd=\vy$ 
   \end{tabular}
-\begin{calcaid}
+\end{calcaid}
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
+  \begin{marginfigure}[-70pt]
     \figinit{pt}
       \figpt 100: $B$(0,0)
       \figpt 101: $C$(30,0)
