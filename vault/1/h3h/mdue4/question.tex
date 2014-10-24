@@ -1,7 +1,27 @@
 
-\question[5] A figure bounded by arcs of the parabolas $y=x^2$ and $y^2=x$ rotates
-about the $x-axis$. Compute the volume of the solid thus generated
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand\va{2}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\va{3}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\va{4}
+    }{
+      \renewcommand\va{6}
+    }
+  }
+}
 
+\SQUARE\va\vb
+\MULTIPLY\vb\va\vc % va^3
+\MULTIPLY\vc{10}\vd
+\FRACTIONSIMPLIFY{3}\vd\vp\vq
+
+\question[5] A figure bounded by arcs of the parabolas $y=\va x^2$ and $\va y^2=x$ rotates
+about the $x-axis$. Compute the volume of the solid thus generated.
+
+\watchout
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -14,8 +34,8 @@ about the $x-axis$. Compute the volume of the solid thus generated
 \def\Xori{0}
 \def\Yori{0}
 \figpt0:(\Xori,\Yori)
-\figpt 100:$y^2=x$(60,42)
-\figpt 101:$y=x^2$(60,80)
+\figpt 100:$\va y^2=x$(60,42)
+\figpt 101:$y=\va x^2$(60,80)
 \figpt 102:$x_2$(8.3,16)
 \figpt 103:$x_1$(27,16)
 \figdrawbegin{}
@@ -104,20 +124,32 @@ about the $x-axis$. Compute the volume of the solid thus generated
 \fi 
 
 \begin{solution}[\fullpage]
-	Imagine a thin \textit{horizontal} strip contained between the two 
-	parabolas - \asif. The \text{incremental} volume added by this strip to the total 
-	is given by
+  What we have are two parabolas (see figure) that intersect in the first quadrant. 
+  It is the region between the two curves that is rotated about the $x-$axis to get the solid.
+  
+  When the two curves intersect, then 
+  \begin{align}
+    y &= \va x^2 \implies x^2 = \dfrac{y}\va \\
+    \va y^2 &= x \implies x^2 = \vb y^4 \\
+    \implies \vb y^4 &= \dfrac{y}\va \text{ or } y\cdot (\vc y^3-1) = 0 \implies y = 0, \dfrac{1}\va
+  \end{align}
+
+  At any given $y,\, 0\leq y\leq\frac{1}\va$, imagine a thin strip like $x_1\to x_2$. When
+  this strip is rotated about the $x-$axis, it will form a \textbf{hollow cylinder}. 
+
+  The volume of that hollow cyclinder would be 
 	\begin{align}
 		\ud V &= \underbrace{(x_1-x_2)\ud y}_{\text{cross-section}}\times
 		         \underbrace{2\pi y}_{\text{perimeter}} \\
-		\text{where } x_1 &= \sqrt{y} \\
-		\text{and } x_2 &= y^2
+		\text{where } x_1 &= \sqrt{\frac{y}\va} \text{ and } x_2 = \va y^2
 	\end{align}
+
 	And therefore, the total volume would be
 	\begin{align}
-		V &= \int_0^1 (\sqrt{y} - y^2)\cdot 2\pi y\ud y \\
-		  &= 2\pi\int_0^1 (y^{\frac{3}{2}} - y^3)\ud y \\
-		  &= 2\pi\left[ \dfrac{2}{5}y^{\frac{5}{2}} - \dfrac{y^4}{4}\right]_0^1 \\
-		  &= \dfrac{3\pi}{10}
+		V &= \int_0^{\frac{1}\va} (\sqrt{\frac{y}\va} - \va y^2)\cdot 2\pi y\ud y \\
+		  &= 2\pi\int_0^{\frac{1}\va}\left(\dfrac{y^{\frac{3}{2}}}{\sqrt\va} - \va y^3 \right) dy \\ 
+		  &= 2\pi\left[ \dfrac{2y^{\frac{5}{2}}}{5\sqrt\va} - \dfrac\va{4} y^4\right]_0^{\frac{1}\va} = \dfrac{\vp\pi}\vq
 	\end{align}
 \end{solution}
+
+\ifprintanswers\begin{codex}$\dfrac{\vp\pi}\vq$\end{codex}\fi
