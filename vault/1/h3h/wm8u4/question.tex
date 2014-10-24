@@ -1,18 +1,54 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand\va{6}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\va{4}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\va{8}
+    }{
+      \renewcommand\va{10}
+    }
+  }
+}
 
-\question[2] Evaluate $\int x\tan^{-1}x\ud x$
+\DIVIDE\va{2}\vb
 
+\question[2] Evaluate the following 
+  \[ \int \va x\tan^{-1}x\ud x \]
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \marginnote[2.25cm]{Integration by parts}
-  \marginnote[0.5cm]{Let $y=x^2+1 \Rightarrow x\ud x = \dfrac{\ud y}{2}$}
-\fi 
+\watchout
 
 \begin{solution}[\halfpage]
-	\begin{align}
-		\int x\tan^{-1}x\ud x &= \tan^{-1}x\int x\ud x - \int\dfrac{\ud}{\ud x}\tan^{-1}x\cdot x\ud x \\
-		&= \dfrac{x^2}{2}\tan^{-1}x - \int \dfrac{x}{x^2+1}\ud x \\
-		&= \dfrac{x^2}{2}\tan^{-1}x - \dfrac{1}{2}\ln(x^2+1) + C 
-	\end{align}
+  If $f(x)$ and $g(x)$ be two functions, then 
+  \begin{align}
+    \dfrac{d}{dx}f(x)\cdot g(x) &= f'(x)\cdot g(x) + f(x)\cdot g'(x) \\
+    \implies f(x)\cdot g(x) &= \int f'(x)\cdot g(x) dx + \int f(x)\cdot g'(x) dx
+  \end{align} 
+
+  Now, if we let 
+  \begin{align}
+    f(x) &= \dfrac{x^2}{2}\implies f'(x) = \dfrac{2x}{2} = x \\
+    \text{and } g(x) &= \tan^{-1} x
+  \end{align}
+
+  then it would also be true that 
+  \begin{align}
+    \dfrac{\va x^2}{2}\cdot\tan^{-1}x &= \overbrace{\int \va x\cdot\tan^{-1} x dx}^{\text{what we need}} 
+          + \int\dfrac{\va x^2}{2}\cdot\dfrac{d}{dx}\tan^{-1}x dx \\
+    \implies \int \va x\cdot\tan^{-1}x dx &= \vb x^2\cdot\tan^{-1}x - \vb\int\dfrac{x^2}{1+x^2} dx \\
+        &= \vb x^2\cdot\tan^{-1}x 
+          -\vb\int\dfrac{x^2+1-1}{x^2 + 1} dx \\
+        &= \vb x^2\cdot\tan^{-1}x 
+        - \vb\left[ \int dx - \int\dfrac{1}{1+x^2} dx \right] \\
+        &= \vb x^2\cdot\tan^{-1} x -\vb\cdot(x-\tan^{-1}x) + C \\
+        &= \vb\left[ (x^2+1)\tan^{-1}x -x \right] + C 
+  \end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\vb\left[ (x^2+1)\tan^{-1}x -x \right] + C$
+  \end{codex}
+\fi
