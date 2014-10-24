@@ -1,14 +1,25 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand\va{3}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\va{6}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\va{9}
+    }{
+      \renewcommand\va{18}
+    }
+  }
+}
 
-\question[2] Find the derivative of $\int_2^{e^x}\dfrac{\ln z}{z}\ud z$ with respect to $x$
+\question[2] Differentiate the following with respect to $x$
+\[ f(x) = \int_2^{e^x}\dfrac{\va\ln z}{z}\ud z\] 
 
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
+\watchout
 
 \begin{solution}[\halfpage]
-	Let $\ln z = y$. Which means, 
+  If $\ln z = y$, then
 	\begin{align}
 		\dfrac{\ud z}{z} &= \ud y \\
 		y &= \ln 2 \text{ when } z = 2 \\
@@ -16,10 +27,10 @@
 	\end{align}
 	And therefore,
 	\begin{align}
-		f(x) = \int_2^{e^x}\dfrac{\ln z}{z}\ud z &= \int_{\ln 2}^{x} y \ud y \\
-		&= \left[ \dfrac{y^2}{2}\right]_{\ln 2}^{x} \\
-		&= \dfrac{x^2}{2} - \dfrac{(\ln 2)^2}{2} \\
-		\Rightarrow \dfrac{\ud}{\ud x}f(x) &= x
+		f(x) = \int_2^{e^x}\dfrac{\va\ln z}{z}\ud z &= \va\cdot\int_{\ln 2}^{x} y \ud y \\
+		\va\cdot\left[ \dfrac{y^2}{2}\right]_{\ln 2}^{x} &= \va\cdot\left[\dfrac{x^2}{2} - \dfrac{(\ln 2)^2}{2}\right] \\
+		\implies \dfrac{d}{dx}f(x) &= \va x
 	\end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}$\va x$\end{codex}\fi

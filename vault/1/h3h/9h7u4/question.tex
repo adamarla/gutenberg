@@ -1,18 +1,39 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand\va{2}
+  \renewcommand\vd{3}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\va{2}
+    \renewcommand\vd{5}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\va{2}
+      \renewcommand\vd{7}
+    }{
+      \renewcommand\va{2}
+      \renewcommand\vd{9}
+    }
+  }
+}
 
-\question[2] Evaluate the integral $\int\dfrac{x^2+5}{x^2+2}\ud x$
+\ADD\va\vd\vb
 
+\question[2] Evaluate the following integral 
+\[ \int\dfrac{x^2+\vb}{x^2+\va}\ud x\]
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \marginnote[2cm]{Using the standard result $\int\dfrac{\ud x}{x^2+a^2} = 
-  \dfrac{1}{a}\tan^{-1}\dfrac{x}{a} + C$}
-\fi 
+\watchout
 
 \begin{solution}[\halfpage]
 	\begin{align}
-		\int\dfrac{x^2+5}{x^2+2}\ud x &= \int\dfrac{(x^2+2)+3}{x^2+2}\ud x \\
-		&= \int\ud x + 3\int\dfrac{\ud x}{x^2+2} \\
-		&= x + \dfrac{3}{\sqrt{2}}\tan^{-1}\dfrac{x}{\sqrt{2}} + C
+		\int\dfrac{x^2+\vb}{x^2+\va}\ud x &= \int\dfrac{(x^2+\va)+\vd}{x^2+\va}\ud x \\
+		&= \int\ud x + \vd\int\dfrac{\ud x}{x^2+\va} \\ 
+    &= x + \underbrace{\dfrac\vd{\sqrt\va}\tan^{-1}\dfrac{x}{\sqrt\va}}_{\int\dfrac{dx}{x^2+a^2}=\dfrac{1}{a}\tan^{-1}\dfrac{x}{a}+A} + C
 	\end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $x+\dfrac\vd{\sqrt\va}\tan^{-1}\dfrac{x}{\sqrt\va}+C$
+  \end{codex}
+\fi

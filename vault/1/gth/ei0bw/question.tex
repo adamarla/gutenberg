@@ -4,31 +4,31 @@
 \usetikzlibrary{shapes} 
 
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{34}
-  \renewcommand{\vbtwo}{2}
-  \renewcommand{\vbthree}{15}
-  \renewcommand{\vbfour}{8}
-  \renewcommand{\vbfive}{28}
+  \renewcommand{\va}{34}
+  \renewcommand{\vb}{2}
+  \renewcommand{\vc}{15}
+  \renewcommand{\vd}{8}
+  \renewcommand{\ve}{28}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{40}
-    \renewcommand{\vbtwo}{1}
-    \renewcommand{\vbthree}{12}
-    \renewcommand{\vbfour}{9}
-    \renewcommand{\vbfive}{31}
+    \renewcommand{\va}{40}
+    \renewcommand{\vb}{1}
+    \renewcommand{\vc}{12}
+    \renewcommand{\vd}{9}
+    \renewcommand{\ve}{31}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{36}
-      \renewcommand{\vbtwo}{2}
-      \renewcommand{\vbthree}{13}
-      \renewcommand{\vbfour}{8}
-      \renewcommand{\vbfive}{29}
+      \renewcommand{\va}{36}
+      \renewcommand{\vb}{2}
+      \renewcommand{\vc}{13}
+      \renewcommand{\vd}{8}
+      \renewcommand{\ve}{29}
     }{
-      \renewcommand{\vbone}{37}
-      \renewcommand{\vbtwo}{1}
-      \renewcommand{\vbthree}{16}
-      \renewcommand{\vbfour}{9}
-      \renewcommand{\vbfive}{32}
+      \renewcommand{\va}{37}
+      \renewcommand{\vb}{1}
+      \renewcommand{\vc}{16}
+      \renewcommand{\vd}{9}
+      \renewcommand{\ve}{32}
     }
   }
 }
@@ -47,21 +47,21 @@ and maintain a fill-factor/occupancy of $\geq 50\%$. Root node can have $k$ keys
     \tikzstyle{level 1}=[sibling distance=30mm]
     \node[label=90:$A$]{7\nodepart{two} 25\nodepart{three} 35}
       child {node[label=270:$B$] {3 \nodepart{two} 4\nodepart{three} 5\nodepart{four} 6}}
-      child {node[label=270:$C$] {\vbfour\nodepart{two} 10\nodepart{three} 17\nodepart{four} 19}}
-      child {node[label=270:$D$] {\vbfive\nodepart{two} 33}}
+      child {node[label=270:$C$] {\vd\nodepart{two} 10\nodepart{three} 17\nodepart{four} 19}}
+      child {node[label=270:$D$] {\ve\nodepart{two} 33}}
       child {node[label=270:$E$] {42 \nodepart{two} 51}} ;
   \end{tikzpicture}
 
 \begin{parts}
-  \part[2] What will the $B^{+}$ tree look like after inserting $\mathbf{\vbone, \vbtwo}$ and $\mathbf\vbthree$ - in that order?
+  \part[2] What will the $B^{+}$ tree look like after inserting $\mathbf{\va, \vb}$ and $\mathbf\vc$ - in that order?
 
 \begin{solution}[\halfpage]
     \begin{align}
-      &D+\vbone\longrightarrow\text{ no problem } \\
-      &\underbrace{B+\vbtwo}_{\texttt{overflow}} \longrightarrow \underbrace{(B_1, B_2)}_{\texttt{split}} 
+      &D+\va\longrightarrow\text{ no problem } \\
+      &\underbrace{B+\vb}_{\texttt{overflow}} \longrightarrow \underbrace{(B_1, B_2)}_{\texttt{split}} 
       + \underbrace{(A+4)}_{\texttt{4 added to A}} \\
-      &\underbrace{C + \vbthree}_{\texttt{overflow}}\longrightarrow
-      \underbrace{(C_1, C_2)}_{\texttt{split}} + \underbrace{(A+\vbthree)}_{\texttt{overflow}}\longrightarrow
+      &\underbrace{C + \vc}_{\texttt{overflow}}\longrightarrow
+      \underbrace{(C_1, C_2)}_{\texttt{split}} + \underbrace{(A+\vc)}_{\texttt{overflow}}\longrightarrow
       \underbrace{(C_1, C_2)}_{\texttt{split}} + \underbrace{A\longrightarrow(A_1, A_2, A_3)}_{\texttt{split}}
     \end{align}
   \end{solution}
@@ -70,26 +70,26 @@ and maintain a fill-factor/occupancy of $\geq 50\%$. Root node can have $k$ keys
     \tikzstyle{every node}=[bplus]
     \tikzstyle{level 1}=[sibling distance=70mm]
     \tikzstyle{level 2}=[sibling distance=20mm]
-    \node[label=90:$A_1$]{\vbthree}
+    \node[label=90:$A_1$]{\vc}
       child {node[label=180:$A_2$] {4\nodepart{two} 7}
-        child {node[label=270:$B_1$] {\vbtwo\nodepart{two} 3}}
+        child {node[label=270:$B_1$] {\vb\nodepart{two} 3}}
         child {node[label=270:$B_2$] {5\nodepart{two} 6}}
-        child {node[label=270:$C_1$] {\vbfour\nodepart{two} 10}}
+        child {node[label=270:$C_1$] {\vd\nodepart{two} 10}}
       }
       child {node[label=180:$A_3$] {25\nodepart{two} 35}
         child {node[label=270:$C_2$] {17\nodepart{two} 19}}
-        child {node[label=270:$D$] {\vbfive\nodepart{two} 33\nodepart{three} \vbone}}
+        child {node[label=270:$D$] {\ve\nodepart{two} 33\nodepart{three} \va}}
         child {node[label=270:$E$] {42 \nodepart{two} 51}}
       };
   \end{tikzpicture}
 
-  \part[2] If $\mathbf{\vbfive}$ and $\mathbf{\vbfour}$ are now removed from the tree - in that order - 
+  \part[2] If $\mathbf{\ve}$ and $\mathbf{\vd}$ are now removed from the tree - in that order - 
   \textbf{after} the insertions done in part (a), then what will the $B^{+}$ tree look like?
 
 \begin{solution}[\halfpage]
     \begin{align}
-      &D-\vbfive\longrightarrow\text{ no problem } \\
-      &\underbrace{C_1-\vbfour}_{\texttt{underflow}}\longrightarrow(B_2+C_1) + \text{ move 7 to }A_2 \text{ and copy 4 to }B_2
+      &D-\ve\longrightarrow\text{ no problem } \\
+      &\underbrace{C_1-\vd}_{\texttt{underflow}}\longrightarrow(B_2+C_1) + \text{ move 7 to }A_2 \text{ and copy 4 to }B_2
     \end{align}
   \end{solution}
   \begin{tikzpicture}[>= stealth, ->, level distance=10mm]
@@ -97,18 +97,19 @@ and maintain a fill-factor/occupancy of $\geq 50\%$. Root node can have $k$ keys
     \tikzstyle{every node}=[bplus]
     \tikzstyle{level 1}=[sibling distance=70mm]
     \tikzstyle{level 2}=[sibling distance=20mm]
-    \node[label=90:$A_1$]{\vbthree}
+    \node[label=90:$A_1$]{\vc}
       child {node[label=180:$A_2$] {4\nodepart{two} 6}
-        child {node[label=270:$B_1$] {\vbtwo\nodepart{two} 3}}
+        child {node[label=270:$B_1$] {\vb\nodepart{two} 3}}
         child {node[label=270:$B_2$] {4\nodepart{two} 5}}
         child {node[label=270:$C_1$] {7\nodepart{two} 10}}
       }
       child {node[label=180:$A_3$] {25\nodepart{two} 35}
         child {node[label=270:$C_2$] {17\nodepart{two} 19}}
-        child {node[label=270:$D$] {33\nodepart{two} \vbone}}
+        child {node[label=270:$D$] {33\nodepart{two} \va}}
         child {node[label=270:$E$] {42 \nodepart{two} 51}}
       };
   \end{tikzpicture}
 
 \end{parts}
 
+\ifprintanswers\begin{codex}\end{codex}\fi
