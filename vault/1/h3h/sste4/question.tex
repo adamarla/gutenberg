@@ -1,23 +1,23 @@
 
-
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{2}
-  \renewcommand{\vbtwo}{\dfrac{2}{3}}
-  \renewcommand{\vbthree}{\dfrac{8\pi}{3}}
+  \renewcommand\va{2}
 }{
-  \ifnumodd{\value{rolldice}}{
-    \renewcommand{\vbone}{3}
-    \renewcommand{\vbtwo}{\dfrac{3}{3}}
-    \renewcommand{\vbthree}{\dfrac{27\pi}{2}}
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\va{3}
   }{
-    \renewcommand{\vbone}{4}
-    \renewcommand{\vbtwo}{\dfrac{4}{3}}
-    \renewcommand{\vbthree}{\dfrac{128\pi}{3}}
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\va{4}
+    }{
+      \renewcommand\va{5}
+    }
   }
 }
 
+\POWER\va{4}\vb
+\FRACTIONSIMPLIFY\vb{6}\vp\vq
+
 \question[4] Compute the volume of the solid obtained by revolving - about the $y-axis$ -
-the figure bounded by the parabola $y=\vbone x-x^2$ and the $x-axis$
+the figure bounded by the parabola $y=\va x-x^2$ and the $x-axis$
 
 \watchout
 
@@ -32,7 +32,7 @@ the figure bounded by the parabola $y=\vbone x-x^2$ and the $x-axis$
 \def\Xori{8.00000}
 \def\Yori{25.22999}
 \figpt0:(\Xori,\Yori)
-\figpt 100:$\vbone,0$(71,24)
+\figpt 100:$\va,0$(71,24)
 \figpt 101:$0,0$(9,24)
 \figpt 102:$x_0$(47,26)
 \figpt 103:(47,68)
@@ -89,17 +89,22 @@ the figure bounded by the parabola $y=\vbone x-x^2$ and the $x-axis$
 \fi 
 
 \begin{solution}[\halfpage]
-   Imagine a thin strip at $x = x_0$ that is rotated around the y-axis. The volume 
-   added to the total by this thin strip would be 
+   The parabola (see figure) will cut the $x-$ axis at points where 
+   \[ \va x - x^2 = 0\implies x\cdot (\va - x) = 0 \implies x = 0,\va \]
+
+   Now, \textbf{imagine a thin strip at $x = x_0$}. When this strip is rotated about the $y-$axis, 
+   then it will form a \textbf{hollow cylinder}. And the volume of this cylinder will be 
+
    \begin{align}
-     \ud V &= \underbrace{2\pi\cdot x_0}_{\text{circumference}}\times y_0\ud x
+     \ud V &= \underbrace{2\pi\cdot x_0}_{\text{circumference}}\times\underbrace{y_0\ud x}_{\text{cross-sectional area}}
    \end{align}
    
-   This suggests that the total volume of the generated solid would be
+   The total volume of the required solid would therefore be 
    \begin{align}
-   	 V &= \int_0^{\vbone} (2\pi\cdot x)\times(\vbone x-x^2)\ud x \\
-   	   &= 2\pi\int_0^{\vbone} (\vbone x^2-x^3)\ud x \\
-   	   &= 2\pi\times\left[ \left( \vbtwo x^3\right)_0^{\vbone} - \left( \dfrac{x^4}{4}\right)_0^{\vbone}\right] \\
-   	   &= \vbthree
+   	 V &= \int_0^{\va} (2\pi\cdot x)\times(\va x-x^2)\ud x \\
+   	   &= 2\pi\int_0^{\va} (\va x^2-x^3)\ud x \\
+   	   &= 2\pi\times\left[\dfrac{\va}{3}x^3-\dfrac{x^4}{4}\right]_{0}^{\va} = \dfrac{\vp\pi}{\vq}
    \end{align}
 \end{solution}
+
+\ifprintanswers\begin{codex}$\dfrac{\vp\pi}\vq$\end{codex}\fi

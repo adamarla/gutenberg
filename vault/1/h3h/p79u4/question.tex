@@ -1,29 +1,54 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand\va{6}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\va{3}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\va{4}
+    }{
+      \renewcommand\va{5}
+    }
+  }
+}
 
-\question[2] Find the derivative of $\int_{x^2}^1 \ln z\ud z$ with respect to $x$
+\SUBTRACT\va{1}\vb
+\SQUARE\va\vc
 
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
+\question[2] Differentiate the following with respect to $x$
+\[ f(x) = \int_{x^\va}^1 \ln z\ud z \] 
+
+\watchout
 
 \begin{solution}[\halfpage]
-	Let,
-	\begin{align}
-		u(z) &= \ln z \\
-		\text{and } v(z) &= z \text{ so that } v'(z) = 1 \\
-	\end{align}
-	And so,
-	\begin{align}
-		\int\ln z\ud z &= \int u(z)\cdot v'(z)\ud z \\
-		&= \underbrace{u(z)v(z) - \int u'(z)v(z)\ud z}_{\text{integration by parts}} \\
-		&= z\ln z - \int\dfrac{1}{z}\cdot z\ud z \\
-		&= z\cdot(\ln z - 1) + C \\
-		\Rightarrow \int_{x^2}^1\ln z \ud z &= \left[ z\cdot(\ln z - 1)\right]_{x^2}^1 \\
-		&= x^2 - 2x^2\ln x
-	\end{align}
-	Which means that the required derivative is 
-	\begin{align}
-		\dfrac{\ud}{\ud x}(x^2-2x^2\ln x) &= -4x\ln x
-	\end{align}
+  Let $z=e^y$ so that 
+  \begin{align}
+    \ln z &= \ln e^y = y \text{ and } dz = e^y\cdot dy \\
+    \implies\int \ln z\cdot dz &= \int y\cdot e^y\cdot dy
+  \end{align}
+
+  Now, if 
+  \begin{align}
+    g(y) &= y \text{ and } h(y) = e^y\implies h'(y) = e^y 
+  \end{align} 
+
+  then the last integral boils down to 
+  \begin{align}
+    \int y\cdot e^y dy &= \int g(y)\cdot h'(y)\cdot dy \\
+    &= \underbrace{g(y)\cdot h(y)-\int g'(y)\cdot h(y)\cdot dy}_{\text{integration by parts}} \\
+    &= y\cdot e^y - \int\dfrac{d}{dy}y\cdot e^y\cdot dy = y\cdot e^y - e^y + C \\
+    &= \ln z\cdot z - z + C 
+  \end{align} 
+
+  Hence, 
+  \begin{align}
+    f(x) = \int_{x^\va}^1 \ln z\cdot dz &= \left[ z\cdot\ln z - z \right]_{x^\va}^1 
+    = \overbrace{x^\va - x^\va\cdot\va \ln x - 1}^{\ln x^a = a\ln x} \\
+    \implies \dfrac{d}{dx}f(x) &= \va x^\vb - \va\cdot\underbrace{\left( \dfrac{x^\va}{x} - \va\cdot x^\vb\cdot\ln x \right)}_{\text{Chain Rule}} \\
+    &= \vc x^\vb\cdot\ln x
+  \end{align}
 \end{solution}
+
+\ifprintanswers\begin{codex}$\vc x^\vb\cdot\ln x$\end{codex}\fi
