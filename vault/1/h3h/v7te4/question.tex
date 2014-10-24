@@ -1,18 +1,62 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand\va{6}
+  \renewcommand\vb{5}
+  \renewcommand\vc{4}
+  \renewcommand\vd{5}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\va{7}
+    \renewcommand\vb{4}
+    \renewcommand\vc{6}
+    \renewcommand\vd{5}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\va{9}
+      \renewcommand\vb{2}
+      \renewcommand\vc{4}
+      \renewcommand\vd{5}
+    }{
+      \renewcommand\va{11}
+      \renewcommand\vb{8}
+      \renewcommand\vc{3}
+      \renewcommand\vd{5}
+    }
+  }
+}
 
-\question[1] Differentiate $y = (x^2-3x+3)(x^2+2x-1)$
+\MULTIPLY\va\vc\ve
+\MULTIPLY\va\vd\vf
+\MULTIPLY\vb\vc\vg
+\MULTIPLY\vb\vd\vh
 
+\SUBTRACT\vf\vg\vm
+\MULTIPLY\ve{4}\vx
+\MULTIPLY\vm{2}\vy
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
+\MULTIPLY\va{2}\vj
+\MULTIPLY\vc{2}\vk
+
+\question[1] Differentiate the following 
+  \[ y = (\va x^2 + \vb)\cdot(\vc x^2 -\vd) \]
+
 
 \begin{solution}[\halfpage]
+  \textbf{Method 1: Multiply, then differentiate}
+
 	\begin{align}
-		\dydx &= (x^2-3x+3)\cdot\dfrac{\ud}{\ud x}(x^2+2x-1) + 
-		         (x^2+2x-1)\dfrac{\ud}{\ud x}(x^2-3x+3) \\
-		      &= (x^2-3x+3)\cdot(2x+2) + (x^2+2x-1)\cdot(2x-3) \\
-		      &= 2x^3-6x^2+6x+2x^2-6x+6+2x^3+4x^2-2x-3x^2-6x+3 \\
-		      &= 4x^3-3x^2-8x+9
+    y = (\va x^2+\vb)\cdot (\vc x^2 - \vd) &= \ve x^4 -\vf x^2 + \vg x^2 -\vh \\
+    & = \ve x^4 - \vm x^2 - \vh \\
+    \implies \dfrac{d}{dx}y &= \dfrac{d}{dx}(\ve x^4 - \vm x^2 - \vh ) \\
+      &= \vx x^3 - \vy x
 	\end{align}
+
+  \textbf{Method 2: Chain Rule} 
+  \begin{align}
+    \dfrac{d}{dx} y &= (\va x^2 + \vb)\cdot\dfrac{d}{dx}(\vc x^2 - \vd) + (\vc x^2 - \vd)\dfrac{d}{dx}(\va x^2 + \vb) \\
+     &= (\va x^2 + \vb)\cdot\vk x + (\vc x^2-\vd)\cdot \vj x \\
+     &= \vx x^3-\vy x
+  \end{align}
 \end{solution}
+
+\ifprintanswers\begin{codex}$\vx x^3-\vy x$\end{codex}\fi

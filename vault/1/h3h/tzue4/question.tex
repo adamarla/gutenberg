@@ -1,17 +1,35 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand\va{2}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\va{3}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\va{4}
+    }{
+      \renewcommand\va{5}
+    }
+  }
+}
 
-\question[2] Evaluate the integral $\int\dfrac{x^2}{x-1}\ud x$
+\SQUARE\va\vb
 
+\question[2] Evaluate the following integral 
+  \[ \int\dfrac{x^2}{x-\va}\ud x \]
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
+\watchout
 
 \begin{solution}[\halfpage]
 	\begin{align}
-		\int\dfrac{x^2}{x-1}\ud x &= \int\dfrac{x^2-1+1}{x-1}\ud x \\
-		&= \int\dfrac{(x-1)\cdot(x+1)}{x-1}\ud x + \int\dfrac{\ud x}{x-1} \\
-		&= \int(x+1)\ud x + \ln(x-1) + C \\
-		&= \dfrac{x^2}{2} + x + \ln(x-1) + C
+    \dfrac{x^2}{x-\va} &= \dfrac{x^2-\vb+\vb}{x-\va} = \dfrac{(x-\va)\cdot(x+\va)}{x-\va} + \dfrac\vb{x-\va} \\
+    \implies\int\dfrac{x^2}{x-\va} &= \int (x+\va)\cdot dx + \vb\cdot\int\dfrac{dx}{x-\va} \\
+    &= \dfrac{x^2}{2} + \va x + \vb\cdot\ln (x-\va) + C 
 	\end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\dfrac{x^2}{2} + \va x + \vb\cdot\ln (x-\va) + C$
+  \end{codex}
+\fi
