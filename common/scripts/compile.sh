@@ -251,6 +251,17 @@ function create_jpegs {
   for f in `ls pg-*.jpg` ; do convert $f -resize 600x800 -chop 40x30 $f ; done
 }
 
+function mobile_pngs { 
+  # $1 = version
+  # Makefile calls this function only AFTER ensuring presence of trim.jpg
+  f=$(pwd)/$1
+  black=$f/mobile.black.png
+  white=$f/mobile.white.png
+  convert -chop 0x30 -trim $f/trim.jpg $black 
+  convert $black -fuzz 10% -transparent white $black
+  convert -negate $black $white
+}
+
 function create_codex {
   # $1 = version number = [0,3]
   # To be called only as part of `make install version=N`.
