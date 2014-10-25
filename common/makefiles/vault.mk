@@ -65,6 +65,10 @@ ifneq ($(version),)
 	mkdir -p $(version)
 ifneq ($(type),full)
 	mv pg-1.jpg $(version)/$(type).jpg
+ifeq ($(type),trim)
+	@. shell-script 
+	mobile_pngs $(version)
+endif
 else
 	@. shell-script 
 	mv pg-*.jpg $(version)
