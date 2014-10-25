@@ -3,40 +3,36 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{4}
-  \renewcommand{\vbtwo}{3}
-  \renewcommand{\vbthree}{0.09}
-  \renewcommand{\vbfour}{0.04}
+  \renewcommand{\va}{3.12}
+  \renewcommand{\vd}{2.1}
 }{
 	\ifnumequal{\value{rolldice}}{1}{
-		\renewcommand{\vbone}{3}
-    \renewcommand{\vbtwo}{2}
-  	\renewcommand{\vbthree}{0.12}
-  	\renewcommand{\vbfour}{0.10}
+		\renewcommand{\va}{4.09}
+  	\renewcommand{\vd}{3.04}
 	}{
 	  \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{0.07}
-      \renewcommand{\vbfour}{0.08}
+      \renewcommand{\va}{5.07}
+      \renewcommand{\vd}{3.08}
 	  }{
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{5}
-      \renewcommand{\vbthree}{0.06}
-      \renewcommand{\vbfour}{0.08}
+      \renewcommand{\va}{6.11}
+      \renewcommand{\vd}{2.45}
 	  }
 	}
 }
 
-\gcalcexpr{\vbfive}{\vbone + \vbthree}
-\gcalcexpr{\vbsix}{\vbfive + \vbtwo + \vbfour}
-\gcalcexpr{\vbseven}{2*(\vbone + \vbthree) - (\vbtwo + \vbfour)}
-\gcalcexpr{\vbeight}{\vbtwo + \vbfour}
-\gcalcexpr{\vbnine}{\vbsix + \vbtwo + \vbfour}
-\gcalcexpr{\vbten}{\vbnine + \vbtwo + \vbfour}
+\ADD\va\vd\vx
+\ADD\vx\vd\vy
+\ADD\vy\vd\vz
+\ROUND[2]\vx\vb
+\ROUND[2]\vy\vc
+\ROUND[2]\vz\ve
+
+\MULTIPLY\va{2}\vm
+\SUBTRACT\vm\vd\vn
+\ROUND[2]\vn\vo
 
 \question[4] Find an expression for the sum of the first $n$ terms of the series 
-$\vbfive + \vbsix + \vbnine + \vbten \ldots$
+\[ \va + \vb + \vc + \ve + \ldots \] 
 
 \watchout
 
@@ -44,16 +40,26 @@ $\vbfive + \vbsix + \vbnine + \vbten \ldots$
 \fi 
 
 \begin{solution}[\halfpage]
-  If you split each term in the series into its integer and fractional parts - for example - 
-  $\vbfive = \vbone + \vbthree$, then you will notice that the $n^{th}$ term of the series
-  is of the form $a_n = \underbrace{\vbone + (n-1)\cdot\vbtwo}_{\text{one A.P}} + 
-  \underbrace{\vbthree + (n-1)\cdot\vbfour}_{\text{second A.P}} $
-	
-	The sum of the first $n$ terms therefore is
-	\begin{align}
-		S_n &= \sum_{k=1}^{n}(\vbone + (n-1)\cdot\vbtwo) + \sum_{k=1}^{n}(\vbthree + (n-1)\cdot\vbfour) \\
-		&= \underbrace{\eSumOfAP[1]{n}}_{a_1=\vbone, d_1=\vbtwo} + \underbrace{\eSumOfAP[2]{n}}_{a_2=\vbthree, d_2=\vbfour} \\
-		&= \dfrac{n}{2}\cdot\left[ \lbrace 2\cdot(\vbone + \vbthree) - (\vbtwo + \vbfour)\rbrace + n\cdot(\vbtwo + \vbfour) \right] \\
-		&= \dfrac{n}{2}\cdot\left( \vbseven + \vbeight\cdot n\right)
-	\end{align}
+   Note that 
+   \begin{align}
+    \vb - \va &= \vc - \vb = \ve - \vc = \vd
+   \end{align}
+
+  And so, what we have is an \textbf{arithmetic progression} where 
+  \begin{align}
+    a &= \va\text{ and } d = \vd 
+  \end{align}
+
+  Hence, the sum of the first $n$ terms is simply 
+  \begin{align}
+    S_n &= \dfrac{n}{2}\cdot [ 2a + (n-1)\cdot d ] = 
+    \dfrac{n}{2}\left( \vo + \vd n \right) 
+  \end{align}
+
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\dfrac{n}{2}\left( \vo + \vd n \right)$
+  \end{codex}
+\fi

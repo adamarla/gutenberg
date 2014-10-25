@@ -3,51 +3,87 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{2} %p
-  \renewcommand{\vbtwo}{3} %q
+  \renewcommand{\va}{2} %p
+  \renewcommand{\vb}{3} %q
+  \renewcommand\vj{2}
+  \renewcommand\vk{3}
+  \renewcommand\vu{sum of first $n-2+1=n-1$ odd numbers}
 }{
 	\ifnumequal{\value{rolldice}}{1}{
-		\renewcommand{\vbone}{3}
-    \renewcommand{\vbtwo}{7}
+		\renewcommand{\va}{3}
+    \renewcommand{\vb}{7}
+    \renewcommand\vj{2}
+    \renewcommand\vk{4}
+    \renewcommand\vu{sum of first $n-2+1=n-1$ odd numbers}
 	}{
 	  \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{2}
-      \renewcommand{\vbtwo}{5}
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{5}
+      \renewcommand\vj{2}
+      \renewcommand\vk{3}
+      \renewcommand\vu{sum of first $n-2+1=n-1$ odd numbers}
 	  }{
-      \renewcommand{\vbone}{3}
-      \renewcommand{\vbtwo}{5}
+      \renewcommand{\va}{3}
+      \renewcommand{\vb}{5}
+      \renewcommand\vj{2}
+      \renewcommand\vk{4}
+      \renewcommand\vu{sum of first $n-2+1=n-1$ odd numbers}
 	  }
 	}
 }
 
-\gcalcexpr[0]\af{1-\vbone + \vbtwo}
-\gcalcexpr[0]\as{4-(2*\vbone)+\vbtwo}
-\gcalcexpr[0]\at{9-(3*\vbone)+\vbtwo}
-\gcalcexpr[0]\afo{16-(4*\vbone)+\vbtwo}
+\EXPR[0]\af{1-\va + \vb}
+\EXPR[0]\as{4-(2*\va)+\vb}
+\EXPR[0]\at{9-(3*\va)+\vb}
+\EXPR[0]\afo{16-(4*\va)+\vb}
 
-\gcalcexpr[0]\tp{3 * \vbone}
-\gcalcexpr[0]\tq{6 * \vbtwo}
-\gcalcexpr[0]\tr{3 * (\vbone - 1)}
-\gcalcexpr[0]\ts{\tq - \tp + 1}
+\EXPR[0]\tp{3 * \va}
+\EXPR[0]\tq{6 * \vb}
+\EXPR[0]\tr{3 * (\va - 1)}
+\EXPR[0]\ts{\tq - \tp + 1}
+
+\SUBTRACT\as\af\df
+\SUBTRACT\at\as\ds
+\SUBTRACT\afo\at\dt
 
 \question[4] Evaluate the expression for the sum of the first $n$ terms of the 
-series $\af + \as + \at + \afo \ldots$. \texttt{Hint:} Each term in the series is 
-of the form $a_k = k^2 - qk + r, \, k \geq 1$ and $q,r \in\aleph$
+series 
+\[ \af + \as + \at + \afo \ldots \]
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\halfpage]
-  You were given a hint! And so we can tell you straight up that $a_k = k^2 - \vbone k + \vbtwo,\, k \geq 1$
-	
+  Before we can calculate $S_n=\sum a_n$, weneed an expression for $a_n$. 
+
+  Note that
+  \begin{align}
+    a_2 - a_1 &= \as-\af=\df \\
+    a_3 - a_2 &= \at-\as=\ds \\
+    a_4-a_3 &= \afo-\at = \dt \\
+    a_n - a_{n-1} &= \vj n - \vk,\, n > 1 \\
+  \end{align}
+
+  If we \textbf{add the differences}, then we get 
+  \begin{align}
+    \sum_{k=2}^n (a_k - a_{k-1}) &= (a_n-a_{n-1}) + (a_{n-1}-a_{n-2}) + \ldots + (a_3-a_2) + (a_2-a_1)  \\
+     &= a_n-a_1 = \sum_{k=2}^n (\vj k - \vk) \\
+     \implies a_n &= \af + \vj\sum_{k=2}^n k -\vk\sum_{k=2}^n 1 \\
+                  &= \af + 2\left[ \dfrac{n\cdot (n+1)}{2} - 1\right] - \vk\cdot( n - 1) \\
+                  &= n^2-\va n + \vb
+  \end{align}
+  
+  And therefore,
 	\begin{align}
-		S_n &= \sum_{k=1}^{n}a_k = \sum_{k=1}^{n}\lbrace k^2 - \vbone k + \vbtwo \rbrace \\
-		&= \sum_{k=1}^{n}k^2 - \vbone\cdot\sum_{k=1}^{n}k + \vbtwo\cdot\sum_{k=1}^{n}1 \\
-		&= \eSumOfSquares{n} - \vbone\cdot\eSumOfN{n} + \vbtwo\cdot n \\
+		S_n &= \sum_{k=1}^{n}a_k = \sum_{k=1}^{n}\lbrace k^2 - \va k + \vb \rbrace \\
+		&= \sum_{k=1}^{n}k^2 - \va\cdot\sum_{k=1}^{n}k + \vb\cdot\sum_{k=1}^{n}1 \\
+		&= \eSumOfSquares{n} - \va\cdot\eSumOfN{n} + \vb\cdot n \\
     &= \dfrac{n}{6}\lbrace (n+1)\cdot(2n+1) - \tp\cdot(n+1) + \tq \rbrace \\
     &= \dfrac{n}{6}\left[ \lbrace (n+1)\cdot(2n + 1 - \tp)\rbrace + \tq \right] \\
     &= \dfrac{n}{6}\left( 2n^2 - \tr n + \ts \right)
 	\end{align}
 \end{solution}
+\ifprintanswers
+  \begin{codex}
+    $\dfrac{n}{6}\left( 2n^2 - \tr n + \ts \right)$
+  \end{codex}
+\fi

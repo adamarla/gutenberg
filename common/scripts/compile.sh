@@ -51,7 +51,7 @@ function codex_params {
   if [ -e $(pwd)/codex.cdx ]; then 
     p=""
     for j in 0 1 2 3 ; do 
-      x=$(sha1sum $j/codex.png)
+      x=$(sha1sum $j/codex.jpg)
       y=${x:0:7}
       p+="codex[$j]=$y&"
     done 
@@ -255,10 +255,13 @@ function create_codex {
   # $1 = version number = [0,3]
   # To be called only as part of `make install version=N`.
   # Assumes that pg-*.jpg have already been moved to the respective version folder
+  jpg=$(pwd)/$1/codex.jpg 
+  png=$(pwd)/$1/codex.png
   if [ -e $(pwd)/codex.cdx ] ; then 
     n=$(pdfinfo $(pwd)/$1/document.pdf | grep Pages | sed -e 's/Pages:\s*//')
-    convert -chop 10x20 -trim $(pwd)/$1/pg-$n.jpg $(pwd)/$1/codex.png
-    convert $(pwd)/$1/codex.png -fuzz 10% -transparent white $(pwd)/$1/codex.png
+    convert -chop 10x20 -trim $(pwd)/$1/pg-$n.jpg $jpg 
+    convert $jpg $png
+    convert $png -fuzz 10% -transparent white $png 
     #echo $n
   fi
 } 
