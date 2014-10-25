@@ -4,62 +4,60 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{5} %m
-  \renewcommand{\vbtwo}{3} %n
-  \renewcommand{\vbthree}{4} % first-numerator
-  \renewcommand{\vbfour}{7} % 2nd numert
-  \renewcommand{\vbfive}{10} % 3rd numertr
+  \renewcommand{\va}{5} %m
+  \renewcommand{\vb}{3} %n
+  \renewcommand{\vc}{4} % first-numerator
+  \renewcommand{\vd}{7} % 2nd numert
+  \renewcommand{\ve}{10} % 3rd numertr
 }{
 	\ifnumequal{\value{rolldice}}{1}{
-		\renewcommand{\vbone}{7}
-    \renewcommand{\vbtwo}{2}
-  	\renewcommand{\vbthree}{3}
-  	\renewcommand{\vbfour}{5}
-  	\renewcommand{\vbfive}{7}
+		\renewcommand{\va}{7}
+    \renewcommand{\vb}{2}
+  	\renewcommand{\vc}{3}
+  	\renewcommand{\vd}{5}
+  	\renewcommand{\ve}{7}
 	}{
 	  \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{9}
-      \renewcommand{\vbtwo}{4}
-      \renewcommand{\vbthree}{5}
-      \renewcommand{\vbfour}{9}
-      \renewcommand{\vbfive}{13}
+      \renewcommand{\va}{9}
+      \renewcommand{\vb}{4}
+      \renewcommand{\vc}{5}
+      \renewcommand{\vd}{9}
+      \renewcommand{\ve}{13}
 	  }{
-      \renewcommand{\vbone}{9}
-      \renewcommand{\vbtwo}{5}
-      \renewcommand{\vbthree}{6}
-      \renewcommand{\vbfour}{11}
-      \renewcommand{\vbfive}{16}
+      \renewcommand{\va}{9}
+      \renewcommand{\vb}{5}
+      \renewcommand{\vc}{6}
+      \renewcommand{\vd}{11}
+      \renewcommand{\ve}{16}
 	  }
 	}
 }
 
-\gcalcexpr[0]\tp{\vbone - 1}
-\gcalcexpr[0]\tq{\vbone + \vbtwo - 1}
-\gcalcexpr[0]\tr{\vbone * \tq}
-\gcalcexpr[0]\ts{\tp * \tp }
+\SUBTRACT\va{1}\vp 
+\ADD\vp\vb\vq 
+\MULTIPLY\va\vq\vr
+\SQUARE\vp\vs
+\FRACTIONSIMPLIFY\vr\vs\vx\vy
 
-
-\question[4] Find the sum of the infinite series $1 + \frac{\vbthree}{\vbone} + \frac{\vbfour}{\vbone^2} + 
-\frac{\vbfive}{\vbone^3}\ldots$
+\question[4] Find the sum of the infinite series 
+\[ 1 + \frac{\vc}{\va} + \frac{\vd}{\va^2} + \frac{\ve}{\va^3}\ldots \]
 
 \watchout
-
-\ifprintanswers
-\fi 
 
 \begin{solution}[\halfpage]
 	If $S$ be the required sum, then
 	\begin{align}
-		S &= 1 + \frac{\vbthree}{\vbone} + \frac{7}{\vbone^2} + \frac{10}{\vbone^3}\ldots = 
-      \sum_{k=0}^{\infty}\dfrac{\vbtwo k+1}{\vbone^k} \\
-		\Rightarrow\dfrac{S}{\vbone} &= \sum_{k=0}^{\infty}\dfrac{\vbtwo k+1}{\vbone^{k+1}} \\
-		\Rightarrow \underbrace{S - \dfrac{S}{\vbone}}_{= \frac{\tp S}{\vbone}} &= \underbrace{1 + \sum_{m=1}^{\infty}\dfrac{\vbtwo m+1}{\vbone^m}}
-		_{\text{first term}}- \sum_{k=0}^{\infty}\dfrac{\vbtwo k+1}{\vbone^{k+1}} \\
-		&= 1 + \sum_{k=0}^{\infty}\dfrac{\vbtwo (k+1)+1}{\vbone^{k+1}}-\sum_{k=0}^{\infty}\dfrac{\vbtwo k+1}{\vbone^{k+1}} \\
-		&= 1 + \sum_{k=0}^{\infty}\dfrac{\vbtwo }{\vbone^{k+1}} \\
-		&= 1 + \vbtwo\cdot\left( \dfrac{1}{\vbone} + \dfrac{1}{\vbone^2} + \dfrac{1}{\vbone^3}\ldots \right) \\
-		&= 1 + \vbtwo\cdot\dfrac{\frac{1}{\vbone}}{1-\frac{1}{\vbone}} = 1 + \dfrac{\vbtwo}{\tp } = \dfrac{\tq}{\tp } \\
-		\Rightarrow S &= \dfrac{\vbone}{\tp }\cdot\dfrac{\tq}{\tp } = \WRITEFRAC{\tr}{\ts}
+		S &= 1 + \frac{\vc}{\va} + \frac{7}{\va^2} + \frac{10}{\va^3}\ldots = 
+      \sum_{k=0}^{\infty}\dfrac{\vb k+1}{\va^k} \\
+		\implies\dfrac{S}{\va} &= \sum_{k=0}^{\infty}\dfrac{\vb k+1}{\va^{k+1}} \\
+		\implies \underbrace{S - \dfrac{S}{\va}}_{= \frac{\vp S}{\va}} &= \underbrace{1 + \sum_{m=1}^{\infty}\dfrac{\vb m+1}{\va^m}}
+		_{\text{first term}}- \sum_{k=0}^{\infty}\dfrac{\vb k+1}{\va^{k+1}} \\
+		&= 1 + \sum_{k=0}^{\infty}\dfrac{\vb (k+1)+1}{\va^{k+1}}-\sum_{k=0}^{\infty}\dfrac{\vb k+1}{\va^{k+1}} \\
+		&= 1 + \sum_{k=0}^{\infty}\dfrac{\vb }{\va^{k+1}} \\
+		&= 1 + \vb\cdot\left( \dfrac{1}{\va} + \dfrac{1}{\va^2} + \dfrac{1}{\va^3}\ldots \right) \\
+		&= 1 + \vb\cdot\dfrac{\frac{1}{\va}}{1-\frac{1}{\va}} = 1 + \dfrac{\vb}{\vp } = \dfrac{\vq}{\vp } \\
+		\implies S &= \dfrac{\va}{\vp }\cdot\dfrac{\vq}{\vp } = \dfrac\vx\vy
 	\end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}$\dfrac\vx\vy$\end{codex}\fi

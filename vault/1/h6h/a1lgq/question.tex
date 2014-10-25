@@ -2,39 +2,41 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{13}
-  \renewcommand{\vbtwo}{7}
-  \renewcommand{\vbthree}{4}
-  \renewcommand{\vbfour}{11}
+  \renewcommand{\va}{13}
+  \renewcommand{\vb}{7}
+  \renewcommand{\vc}{4}
+  \renewcommand{\vd}{11}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{4}
-    \renewcommand{\vbtwo}{9}
-    \renewcommand{\vbthree}{17}
-    \renewcommand{\vbfour}{3}
+    \renewcommand{\va}{4}
+    \renewcommand{\vb}{9}
+    \renewcommand{\vc}{17}
+    \renewcommand{\vd}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{8}
-      \renewcommand{\vbthree}{10}
-      \renewcommand{\vbfour}{17}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{8}
+      \renewcommand{\vc}{10}
+      \renewcommand{\vd}{17}
     }{
       % variables 
-      \renewcommand{\vbone}{7}
-      \renewcommand{\vbtwo}{17}
-      \renewcommand{\vbthree}{3}
-      \renewcommand{\vbfour}{11}
+      \renewcommand{\va}{7}
+      \renewcommand{\vb}{17}
+      \renewcommand{\vc}{3}
+      \renewcommand{\vd}{11}
     }
   }
 }
 
-\FRACMULT\vbthree\vbfour{2}{1}\a\b
-\FRACADD\vbone\vbtwo\vbthree\vbfour\c\d
+\FRACMULT\vc\vd{2}{1}\a\b
+\FRACADD\va\vb\vc\vd\c\d
 
-\question[2] If the sum of the first $n$ terms of an arithmetic progression is 
-$\dfrac{\vbone}{\vbtwo} n + \dfrac{\vbthree}{\vbfour} n^2$, then what is the common difference? 
+\question[2] If the sum of the first $n$ terms of an arithmetic progression is given by  
+\[ S(n) = \dfrac{\va}{\vb} n + \dfrac{\vc}{\vd} n^2 \] 
+then what is the common difference? 
+
 \watchout
 
 \ifprintanswers
@@ -44,15 +46,16 @@ $\dfrac{\vbone}{\vbtwo} n + \dfrac{\vbthree}{\vbfour} n^2$, then what is the com
   If $S_n$ be the sum of the first $n$ terms, then the $n^{th} term = a_n$ is simply 
   $S_{n+1} - S_n$
 	\begin{align}
-	  a_n &= \left[\dfrac{\vbone}{\vbtwo}\cdot(n+1) + \dfrac{\vbthree}{\vbfour}\cdot (n+1)^2 \right] - 
-	    \left( \dfrac{\vbone}{\vbtwo} n + \dfrac{\vbthree}{\vbfour} n^2\right) \\
-	    &= \left( \dfrac{\vbone}{\vbtwo} + \dfrac{\vbthree}{\vbfour}\right)
-	       + 2\cdot\dfrac{\vbthree}{\vbfour} n \\
+	  a_n &= \left[\dfrac{\va}{\vb}\cdot(n+1) + \dfrac{\vc}{\vd}\cdot (n+1)^2 \right] - 
+	    \left( \dfrac{\va}{\vb} n + \dfrac{\vc}{\vd} n^2\right) \\
+	    &= \left( \dfrac{\va}{\vb} + \dfrac{\vc}{\vd}\right)
+	       + 2\cdot\dfrac{\vc}{\vd} n \\
 	     &= \WRITEFRAC\c\d + \WRITEFRAC\a\b n = a + n\cdot d
 	\end{align}
 	On comparing the terms in the last equation, we can see that 
 	\begin{align}
-	  a &= \WRITEFRAC\c\d \text{ and, } \\
-	  d &= \WRITEFRAC\a\b
+	  a &= \WRITEFRAC\c\d \text{ and } d = \WRITEFRAC\a\b
 	\end{align}
 \end{solution}
+
+\ifprintanswers\begin{codex}$\dfrac\a\b$\end{codex}\fi
