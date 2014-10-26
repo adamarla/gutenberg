@@ -55,11 +55,13 @@
   \ifthenelse{\tmq = 1}{
     \tmp
   }{
-    \ifthenelse{\tmp < 0}{
-      \frac\tmp\tmq
+    \INTEGERQUOTIENT\tmp\tmq\quo
+    \ifthenelse{\quo = 0}{
+      \dfrac\tmp\tmq
     }{
-      \frac\tmp\tmq
-    } 
+      \MODULO\tmp\tmq\remd
+      \ifthenelse{\remd = 0}{\quo}{\quo\frac\remd\tmq}
+    }
   }
 }
 
