@@ -1,34 +1,69 @@
 
+\renewcommand\vk{5}
 
-\question[4] The sixth term of an arithmetic progression is 3 and the common difference is greater than 0.5. 
-At what value of common difference is the \textit{product} of the \textit{first}, \textit{fourth} and \textit{fifth}
-terms the greatest?
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{3} %p
+  \renewcommand{\vx}{144} %p
+  \renewcommand{\vy}{60} %p
+}{
+	\ifnumequal{\value{rolldice}}{1}{
+		\renewcommand{\va}{4}
+    \renewcommand{\vx}{192} %p
+    \renewcommand{\vy}{80} %p
+	}{
+	  \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\va}{7}
+      \renewcommand{\vx}{336} %p
+      \renewcommand{\vy}{140} %p
+	  }{
+      \renewcommand{\va}{9}
+      \renewcommand{\vx}{432} %p
+      \renewcommand{\vy}{180} %p
+	  }
+	}
+}
 
+\SQUARE\va\vb
+\MULTIPLY\vb\va\b
+\MULTIPLY\vb{8}\vc
+\MULTIPLY\va{17}\vd
+\MULTIPLY\vd{2}\ve
 
-\ifprintanswers
-\fi 
+\question[4] If the \textbf{sixth} term of an arithmetic progression is $\va$ and the common difference 
+is $\beta$, then for what value of $\beta$ is the \textbf{product} of the 
+\textit{first}, \textit{fourth} and \textit{fifth} terms the \textbf{greatest}? 
+You will need calculus to solve this problem.
+
+\begin{calcaid}
+  \begin{tabular}{c c c c}
+    $238^2=56664$ & $98^2=9604$ & $306^2=93636$ & $126^2=15876$ \\
+    $102^2=10404$ & $42^2=1764$ & $136^2=18496$ & $56^2=3136$
+  \end{tabular}
+\end{calcaid}
+
+\watchout
 
 \begin{solution}[\fullpage]
-	If the sixth term is 3 and the common difference is - say - $b$, then 
+	If the sixth term $=a_6 = \va$, then  
+  \[ a_5 = \va-\beta\qquad a_4 = \va-2\beta\qquad a_1 = \va-\vk\beta \] 
 	\begin{align}
-		\text{ Fifth term } &= 3-b \\
-		\text{ Fourth term } &= 3-2b \\
-		\text{ First term } &= 3-5b \\
-		\Rightarrow \text{Product} = P &= (3-b)\cdot(3-2b)\cdot(3-5b) \\
-		&= (9-21b+10b^2)\cdot(3-b) = (27-72b+51b^2-10b^3)
+		\implies \text{Product} = P &= a_5\cdot a_4\cdot a_1 \\ 
+    &= (\va-\beta)\cdot(\va-2\beta)\cdot(\va-5\beta) \\
+    &= a^3-\vc\beta + \vd\beta^2 -10\beta^3 \\
+    \therefore\dfrac{dP}{d\beta} &= -\vc + \ve\beta - 30\beta^2
 	\end{align}
 	
-	Now its a simple case of finding the maxima of $P$
-	\begin{align}
-		\dfrac{\ud P}{\ud b} &= -72 + 102b - 30b^2 = 0 \\
-		\Rightarrow 10b^2 - 34b + 24 &= 0 \text{ or } (b-1)\cdot(10b-24) = 0 \\
-		\Rightarrow b = 1,\, \frac{24}{10} = \frac{12}{5}
-	\end{align}
-	Also, note that for a maxima
-	\begin{align}
-		\dfrac{\ud^2 P}{\ud b^2} &= 102 - 60b < 0 \\
-		\Rightarrow b > \frac{102}{60} = \frac{17}{10}
-	\end{align}
-	As $b = 1$ does \textit{not} satisfy the condition for maxima, $b = \dfrac{12}{5}$ is 
-	the only acceptable solution
+  \textbf{Extreme values of $P$} occur when 
+  \begin{align}
+    \dfrac{dP}{d\beta} &= -\vc + \ve\beta - 30\beta^2 = 0 \implies\beta = \WRITEFRAC\vx{60},\WRITEFRAC\vy{60}
+  \end{align}
+  Moreover, a \textbf{maxima occurs when}
+  \begin{align}
+    \dfrac{d^2}{d\beta^2}P &= \ve-60\beta < 0 \implies\beta > \WRITEFRAC\ve{60}
+  \end{align}
+
+  Therefore, only when $\beta=\WRITEFRAC\vx{60}$ would the product of the first, fourth 
+  and fifth terms be maximum.
 \end{solution}
+\ifprintanswers\begin{codex}$\WRITEFRAC\vx{60}$\end{codex}\fi
