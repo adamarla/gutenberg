@@ -7,7 +7,6 @@
   \renewcommand{\vb}{2}
   \renewcommand{\vc}{3}
   \renewcommand{\vd}{5}
-  \renewcommand\vx{56.31}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
@@ -15,7 +14,6 @@
     \renewcommand{\vb}{6}
     \renewcommand{\vc}{7}
     \renewcommand{\vd}{9}
-    \renewcommand\vx{36.9}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
@@ -23,14 +21,12 @@
       \renewcommand{\vb}{7}
       \renewcommand{\vc}{5}
       \renewcommand{\vd}{9}
-      \renewcommand\vx{33.82}
     }{
       % variables 
       \renewcommand{\va}{3}
       \renewcommand{\vb}{8}
       \renewcommand{\vc}{5}
       \renewcommand{\vd}{13}
-      \renewcommand\vx{68.2}
      }
   }
 }
@@ -38,30 +34,36 @@
 \SUBTRACT\vd\vb\ve
 \SUBTRACT\vc\va\vf
 \EXPR[2]\vm{\ve / \vf}
-\ADD\vx{15}\vy
-\DEGREESTAN\vy\vw
-\ROUND[2]\vw\vz
+
+\DEGREESTAN{15}\p
+\ROUND[2]\p\q
+
+\ADD\vm\q\r
+\MULTIPLY\vm\q\s
+\SUBTRACT{1}\s\t
+\EXPR[2]\vz{\r / \t}
 
 \MULTIPLY\vz{-\va}\vp
-\ADD\vp\vb\vq
+\EXPR[2]\vq{\vp + \vb}
 
 \question[3] If the line joining the points $A = (\va, \vb)$ and $B = (\vc, \vd)$ 
 \ is rotated \textit{counter-clockwise} about $A$ by $\ang{15}$, then what is the equation 
 of the resulting new line ? 
 
-$\tan\ang\vx=\vm,\,\tan\ang\vy=\vz$
+\begin{calcaid}
+  $\tan\ang{15}=\q$
+\end{calcaid}
 
 \watchout
 
 \begin{solution}[\halfpage]
     First, the slope of $AB$ is given by 
     \begin{align}
-        m &= \tan\theta = \dfrac{\vd - \vb}{\vc - \va} = \vm \\
-        \implies \theta &= \ang\vx
+        m &= \tan\theta = \dfrac{\vd - \vb}{\vc - \va} = \vm
     \end{align}
 
     The slope of the \textit{new} line would therefore be 
-    \[ m_2 = \tan(\theta + \ang{15}) = \tan\ang\vy = \vz \] 
+    \[ m_2 = \tan(\theta + \ang{15}) = \dfrac{\tan\theta + \tan\ang{15}}{1-\tan\theta\cdot\tan\ang{15}} = \vz \] 
     
     Also, as the \textbf{new} line came about because of rotation around $A$, the new 
     line also passes through $A$. 

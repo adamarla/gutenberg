@@ -1,30 +1,86 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\va}{5}
+  \renewcommand{\vp}{1}
+  \renewcommand{\vq}{4}
+  \renewcommand{\vr}{19}
+  \renewcommand\vm{3}
+  \renewcommand\vn{21}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\va}{5}
+    \renewcommand{\vp}{5}
+    \renewcommand{\vq}{9}
+    \renewcommand{\vr}{20}
+    \renewcommand\vm{3}
+    \renewcommand\vn{18}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\va}{5}
+      \renewcommand{\vp}{2}
+      \renewcommand{\vq}{5}
+      \renewcommand{\vr}{13}
+      \renewcommand\vm{2}
+      \renewcommand\vn{13}
+    }{
+      \renewcommand{\va}{5}
+      \renewcommand{\vp}{3}
+      \renewcommand{\vq}{7}
+      \renewcommand{\vr}{17}
+      \renewcommand\vm{2}
+      \renewcommand\vn{16}
+    }
+  }
+}
 
-\question[4] Three numbers in an A.P add upto $15$. If, however, $1$ is added to the first number,
-$4$ to the second and $19$ to the third, then the results are in geometric progression. What are 
+\MULTIPLY\va{3}\vs
+\ADD\va\vp\vb
+\ADD\va\vq\vc
+\ADD\va\vr\vd
+
+\SQUARE\vc\vx
+\SUBTRACT\vd\vb\vy
+\MULTIPLY\vb\vd\vw
+\SUBTRACT\vx\vw\vz
+
+\SUBTRACT\va\vm\m
+\ADD\va\vm\n
+\ADD\va\vn\p
+\SUBTRACT\va\vn\q
+
+\question[4] Three numbers in an A.P add upto $\vs$. If, however, $\vp$ is added to the first number,
+$\vq$ to the second and $\vr$ to the third, then the results are in geometric progression. What are 
 the original three numbers?
 
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-
-\fi 
+\watchout
 
 \begin{solution}[\halfpage]
 	Let the three numbers be $a-d$, $a$ and $a+d$. And so,
 	\begin{align}
-		(a-d) + a + (a+d) &= 15 \Rightarrow a = 5
+		(a-d) + a + (a+d) &= \vs \implies a = \va
 	\end{align}
-	Hence, the 3 numbers are $5-d$, $5$ and $5+d$. Adding 1,4 and 19 to them respectively therefore gives us
-	$6-d$, $9$ and $24+d$ - which are in geometric progression
+	Hence, the 3 numbers are $\va-d$, $\va$ and $\va+d$. 
+  
+  Adding $\vp$,$\vq$ and $\vr$ to them respectively therefore gives us
+	\[ \vb-d, \vc \text{ and } \vd+d \]
+  which are in geometric progression
+
 	\begin{align}
-		\Rightarrow 6-d &= \dfrac{9}{r} \\
-		24+d &= 9r \\
-		\Rightarrow (6-d) + (24+d) &= 30 = 9\cdot\left( r + \dfrac{1}{r}\right) \\
-		\Rightarrow 3r^2 - 10r + 1 &= 0 \text{ or } r = 3, \dfrac{1}{3} \\
-		\text{ If } r = 3, \text{ then } 24 + d &= 27 \Rightarrow d = 3 \\
-		\text{ If } r = \frac{1}{3}, \text{ then } 24 + d &= 3 \Rightarrow d = -21
+    \implies\dfrac\vc{\vb-d} &= \dfrac{\vd + d}{\vc} \\ 
+    \implies d^2+\vy d + \vz &= 0 \text{ or } (d-\vm)\cdot(d + \vn) = 0 \\
+    \implies d&=\vm,-\vn
 	\end{align}
-	
-	Which means, the original terms are either $(2,5,8) \text{ if } d = 3$ or $(26,5,-16) \text{ if } d = \frac{1}{3}$.	
+
+  Hence, the original three numbers are 
+
+  \begin{tabular}{c c c c}
+    $d=\vm$ & $\m$ & $\va$ & $\n$ \\ 
+    $d=-\vn$ & $\p$ & $\va$ & $\q$ \\ 
+  \end{tabular} 
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $(\m,\va,\n)\text{ and }(\p,\va,\q)$
+  \end{codex}
+\fi

@@ -1,18 +1,42 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\va}{11}
+  \renewcommand{\vb}{7}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\va}{12}
+    \renewcommand{\vb}{43}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{21}
+    }{
+      \renewcommand{\va}{9}
+      \renewcommand{\vb}{13}
+    }
+  }
+}
 
-\question[2] Find the sum of the infinite series $\frac{1}{5}+\frac{1}{7}+\frac{1}{5^2} + \frac{1}{7^2}
-+ \frac{1}{5^3} + \frac{1}{7^3} \ldots$
+\FRACMINUS{1}{1}{1}\va\vc\vd
+\FRACDIV{1}\va\vc\vd\ve\vf
 
+\FRACMINUS{1}{1}{1}\vb\vg\vh
+\FRACDIV{1}\vb\vg\vh\vi\vj
 
-\ifprintanswers
-\fi 
+\FRACADD\ve\vf\vi\vj\vx\vy
+
+\question[2] Find the sum of the infinite series 
+\[S_\infty = \frac{1}{\va}+\frac{1}{\vb}+\frac{1}{\va^2} + \frac{1}{\vb^2} + \frac{1}{\va^3} + \frac{1}{\vb^3} \ldots\]
+
+\watchout
 
 \begin{solution}[\halfpage]
 	\begin{align}
-		S &= \frac{1}{5}+\frac{1}{7}+\frac{1}{5^2} + \frac{1}{7^2} + \frac{1}{5^3} + \frac{1}{7^3} \ldots \\
-		  &= \underbrace{\frac{1}{5} + \frac{1}{5^2} + \frac{1}{5^3}\ldots}_{\text{one geometric progression}}
-		  + \underbrace{\frac{1}{7} + \frac{1}{7^2} + \frac{1}{7^3}\ldots}_{\text{and another}} \\
-		  &= \dfrac{\frac{1}{5}}{1-\frac{1}{5}} + \dfrac{\frac{1}{7}}{1-\frac{1}{7}} \\
-		  &= \dfrac{1}{4} + \dfrac{1}{6} = \dfrac{5}{12}
+		S_\infty &= \frac{1}{\va}+\frac{1}{\vb}+\frac{1}{\va^2} + \frac{1}{\vb^2} + \frac{1}{\va^3} + \frac{1}{\vb^3} \ldots \\
+		  &= \underbrace{\frac{1}{\va} + \frac{1}{\va^2} + \frac{1}{\va^3}\ldots}_{\text{one geometric progression}}
+		  + \underbrace{\frac{1}{\vb} + \frac{1}{\vb^2} + \frac{1}{\vb^3}\ldots}_{\text{and another}} \\
+		  &= \dfrac{\frac{1}{\va}}{1-\frac{1}{\va}} + \dfrac{\frac{1}{\vb}}{1-\frac{1}{\vb}} = 
+      \WRITEFRAC\ve\vf + \WRITEFRAC\vi\vj = \WRITEFRAC\vx\vy
 	\end{align}
 \end{solution}
+\ifprintanswers\begin{codex}$\WRITEFRAC\vx\vy$\end{codex}\fi
