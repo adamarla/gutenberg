@@ -1,10 +1,6 @@
 
-
-\question For the series $1 + \dfrac{1}{1+2} + \dfrac{1}{1+2+3} + \dfrac{1}{1+2+3+4}\ldots$
-
-
-\ifprintanswers
-\fi 
+\question Given the series 
+\[ 1 + \dfrac{1}{1+2} + \dfrac{1}{1+2+3} + \dfrac{1}{1+2+3+4}\ldots \]
 
 \begin{parts}
   \part[3] Find an expression for the sum of the first $n$ terms
@@ -21,14 +17,20 @@
   	\end{align}
   \end{solution}
 
-  \part[1] The sum if the same series went upto infinity
+  \part[1] The sum of the series if $n=\infty$ 
 
 \begin{solution}[\mcq]
-  	The above expression for $S_n$ can be re-written as
-  	\begin{align}
-  		S_n &= \dfrac{2}{1+\frac{1}{n}} \\
-  		\Rightarrow\text{ that when } n &= \infty, \text{ then } S_n = 2
-  	\end{align}
-  \end{solution}
+  \begin{align}
+    S_n &= \dfrac{2n}{n+1} = \dfrac{2}{1+\frac{1}{n}} \\
+    \implies S_\infty &= \dfrac{2}{1+0} = 2
+  \end{align}
+\end{solution}
 
 \end{parts}
+\ifprintanswers
+  \begin{codex}
+    \begin{tabular}{c c}
+      $(a)\quad\dfrac{2n}{n+1}$ & $(b)\, 2$
+    \end{tabular} 
+  \end{codex}
+\fi
