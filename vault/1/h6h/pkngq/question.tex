@@ -1,17 +1,46 @@
 
-\question[2] The sum $S_n$ of the first $n$ terms of an arithmetic progression is defined by
-the formula $S_n = 4n^2-3n \,\forall n \geq 1$. What are the first three terms of the progression? 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{5} %p
+  \renewcommand{\vb}{3} %p
+}{
+	\ifnumequal{\value{rolldice}}{1}{
+		\renewcommand{\va}{6}
+    \renewcommand{\vb}{2} %p
+	}{
+	  \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\va}{7}
+      \renewcommand{\vb}{3} %p
+	  }{
+      \renewcommand{\va}{9}
+      \renewcommand{\vb}{4} %p
+	  }
+	}
+}
 
+\MULTIPLY\va{2}\vc
+\SUBTRACT\va\vb\vd
 
-\ifprintanswers
-\fi 
+\ADD\vd\vc\ve
+\ADD\ve\vc\vf
+
+\question[2] The sum of the first $n$ terms of an arithmetic progression is given by 
+\[ S_n = \va n^2 - \vb n,\, n \geq 1 \]
+What are the first three terms of the progression? 
+
+\watchout
 
 \begin{solution}[\halfpage]
-	\begin{align}
-		\underbrace{S_{n+1}-S_{n}}_{\text{(n+1)-th term}} &= 4\cdot(n+1)^2-3\cdot(n+1) - (4n^2-3n) \\
-		\Rightarrow a + n\cdot d &= 4n^2+8n+4-3n-3-4n^2+3n = 1 + 8n \\
-		\Rightarrow a = 1 \text{ and } d = 8
-	\end{align}
-	And therefore, the first three terms of the progression are $(1,9,17)$
+  If $a_k$ be the $k-$th term in the progression, then 
+  \begin{align}
+    a_{n+1} &= S_{n+1} - S_n = \left[ \va (n+1)^2 - \vb (n+1) \right] - \left[ \va n - \vb n\right] \\
+     &= (\va n^2 + \vc n + \va -\vb n - \vb) - (\va n^2 - \vb n) \\ 
+     &= \underbrace{\vd + \vc\cdot n}_{ = a + n\cdot d}\implies a = \vd,\, d = \vc
+  \end{align}
+
+  Therefore, the first three terms are 
+  \[ a_1 = \vd\qquad a_2 = a_1 + d = \ve\qquad a_3 = a_1 + 2\cdot d = \vf \] 
+
 \end{solution}
 
+\ifprintanswers\begin{codex}$\vd,\,\ve\text{ and }\vf$\end{codex}\fi
