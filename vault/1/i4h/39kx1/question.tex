@@ -1,23 +1,18 @@
 
 
-\question[2] Prove that $\dfrac{\sin(A-B)}{\cos A\cos B} + \dfrac{\sin(B-C)}{\cos B\cos C} 
-+ \dfrac{\sin(C-A)}{\cos C\cos A} = 0$
-
-
-\ifprintanswers
-\fi 
+\question[2] What is the value of  
+\[ \dfrac{\sin(A-B)}{\cos A\cos B} + \dfrac{\sin(B-C)}{\cos B\cos C} + \dfrac{\sin(C-A)}{\cos C\cos A} \]
 
 \begin{solution}[\halfpage]
-    \begin{align}
-      \text{LHS} &= \dfrac{\cos C\sin(A-B) + \cos A\sin(B-C) + 
-        \cos B\sin(C-A)}{\cos A\cos B\cos C} \\
-      \text{where }\cos C\sin(A-B) &= \cos C\cdot(\eSinOfDiff{A}{B}) \\
-           &= \sin A\cos B\cos C - \sin B\cos A\cos C \\
-       \cos A\sin(B-C) &= \cos A\cdot(\eSinOfDiff{B}{C}) \\
-          &= \sin B\cos A\cos B - \sin C\cos A\cos B \\
-       \cos B\sin(C-A) &= \cos B\cdot(\eSinOfDiff{C}{A}) \\
-          &= \sin C\cos A\cos B - \sin A\cos B\cos C
-    \end{align}
-
-    Terms in (3), (5) and (7) will cancel each other out on adding - giving $0$ 
+  \begin{align}
+     & \dfrac{\sin(A-B)}{\cos A\cos B} + \dfrac{\sin(B-C)}{\cos B\cos C} + \dfrac{\sin(C-A)}{\cos C\cos A}\nonumber\\
+     &= \dfrac{\eSinOfDiff{A}{B}}{\cos A\cos B} \nonumber\\
+     &+ \dfrac{\eSinOfDiff{B}{C}}{\cos B\cos C} \nonumber\\
+     &+ \dfrac{\eSinOfDiff{C}{A}}{\cos C\cos A} \\ 
+     &= \left(\dfrac{\sin A}{\cos A} - \dfrac{\sin B}{\cos B} \right) 
+     + \left(\dfrac{\sin B}{\cos B } - \dfrac{\sin C}{\cos C} \right) 
+     + \left(\dfrac{\sin C }{\cos C } - \dfrac{\sin A}{\cos A} \right) \\
+     &= (\tan A - \tan B) + (\tan B - \tan C) + (\tan C - \tan A) = 0
+  \end{align}
 \end{solution}
+\ifprintanswers\begin{codex}$0$\end{codex}\fi
