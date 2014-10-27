@@ -1,15 +1,60 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{5}
+  \renewcommand{\vb}{6}
+  \renewcommand{\vc}{3}
+  \renewcommand{\vd}{7}
+  \renewcommand\ve{63}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{9}
+    \renewcommand{\vb}{8}
+    \renewcommand{\vc}{5}
+    \renewcommand{\vd}{11}
+    \renewcommand\ve{72.8}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{7}
+      \renewcommand{\vc}{17}
+      \renewcommand{\vd}{10}
+      \renewcommand\ve{89.3}
+    }{
+      % variables 
+      \renewcommand{\va}{6}
+      \renewcommand{\vb}{7}
+      \renewcommand{\vc}{9}
+      \renewcommand{\vd}{10}
+      \renewcommand\ve{82.6}
+    }
+  }
+}
 
-\question[1] If $\tan\alpha = \dfrac{5}{6}$ and $\tan\beta = \dfrac{1}{11}$, then what is $(\alpha + \beta)$?
+\FRACADD\va\vb\vc\vd\vp\vq
+\FRACMULT\va\vb\vc\vd\vr\vs
+\FRACMINUS{1}{1}\vr\vs\vt\vu
+\FRACDIV\vp\vq\vt\vu\vx\vy
 
+\question[1] What is $\alpha+ \beta$ equal to (in degrees) if 
+\[ \tan\alpha=\dfrac\va\vb\qquad\tan\beta=\dfrac\vc\vd \]
 
-\ifprintanswers
-\fi 
+\watchout
+
+\begin{calcaid}
+  \begin{tabular}{c c c c}
+    $\tan\ang{63}=\dfrac{53}{27}$ & $\tan\ang{89.3}=\dfrac{159}{2}$ & $\tan\ang{82.6}=\dfrac{123}{16}$ & $\tan\ang{72.8}=\dfrac{139}{43}$
+  \end{tabular}
+\end{calcaid}
 
 \begin{solution}[\mcq]
-   \begin{align}
-      \tan(\alpha + \beta) &= \dfrac{\tan\alpha + \tan\beta}{1-\tan\alpha\cdot\tan\beta} \\
-          &= \dfrac{\frac{5}{6} + \frac{1}{11}}{1-\frac{5}{6}\cdot\frac{1}{11}} = 1 \\
-          \Rightarrow \alpha + \beta &= \tan^{-1} 1 = \dfrac{\pi}{4}
-   \end{align}
+  \begin{align}
+    \tan(\alpha + \beta) &= \eTanOfSum\alpha\beta \\
+    &= \dfrac{\frac\va\vb + \frac\vc\vd}{1-\frac\va\vb\cdot\frac\vc\vd} = \dfrac\vx\vy \\
+    \implies \alpha+\beta &= \tan^{-1}\dfrac\vx\vy = \ang\ve
+  \end{align}
 \end{solution}
+
+\ifprintanswers\begin{codex}$\ang\ve$\end{codex}\fi
