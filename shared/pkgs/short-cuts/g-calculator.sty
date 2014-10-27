@@ -124,3 +124,8 @@
   \SUBTRACT{-#2}{#5}{#5}
 } 
 
+\newcommand{\CEIL}[2]{
+  \FLOOR{#1}\tmp
+  \ADD\tmp{1}{#2}
+}
+

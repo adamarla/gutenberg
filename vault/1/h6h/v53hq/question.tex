@@ -1,21 +1,61 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{5} %p
+  \renewcommand{\vb}{3} %p
+  \renewcommand\vo{99,090}
+}{
+	\ifnumequal{\value{rolldice}}{1}{
+		\renewcommand{\va}{6}
+    \renewcommand{\vb}{2} %p
+    \renewcommand\vo{82,650}
+	}{
+	  \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\va}{7}
+      \renewcommand{\vb}{3} %p
+      \renewcommand\vo{70,821}
+	  }{
+      \renewcommand{\va}{9}
+      \renewcommand{\vb}{4} %p
+      \renewcommand\vo{54,850}
+	  }
+	}
+}
 
-\question[4] Find the sum of all \text{three digit} natural numbers which leave a 
-remainder 2 when divided by 3
+\SUBTRACT{99}\vb\vc
+\SUBTRACT{1000}\vb\vd
 
+\DIVIDE\vc\va\vp
+\DIVIDE\vd\va\vq
 
-\ifprintanswers
-\fi 
+\FLOOR\vp\vx
+\CEIL\vp\vy
+\FLOOR\vq\vz
+
+\question[4] Find the sum of all \textbf{three-digit} natural numbers which leave a 
+remainder $\vb$ when divided by $\va$.
+
+\watchout
 
 \begin{solution}[\halfpage]
-	The first such number is $101 = 3\times 33 + 2$. The last such number is $998 = 3\times 332 + 2$
-	What does this mean? It means that to find the required sum, we should ignore the first $32$ such numbers
-	and any number after the $332^{nd}$ one
-	
-	\begin{align}
-		S &= S_{332} - S_{32} \\
-		&= \sum_{k=32}^{332}(3n + 2) = \left[ 3\eSumOfN{n} + 2n \right]_{32}^{332} \\
-		&= \left[ \dfrac{n}{2}\cdot(3n+7)\right]_{32}^{332} \\
-		&= \dfrac{332}{2}\times 1003 - \dfrac{32}{2}\times 103 = 164,850
-	\end{align}
+  The numbers we are looking for are of the form 
+  \[ T_k = \va k + \vb,\,k\in\mathbb{N} \] 
+
+  Moreover, to be a 3-digits number, the following must also hold
+  \begin{align}
+    \va k + \vb &> 99 \implies k > \WRITEFRAC\vc\va  \\
+    \va k + \vb &< 1000 \implies k < \WRITEFRAC\vd\va 
+  \end{align} 
+
+  Remember that $k\in\mathbb{N}$. And therefore, the \textbf{required sum} is 
+  \begin{align}
+    S &= \sum_{k=\vy}^{\vz}(\va k + \vb) = 
+    \overbrace{\sum_{k=1}^{\vz} (\va k + \vb) - \sum_{k=1}^{\vx} (\va k + \vb)}^{\text{important stuff}} \\
+     &= \va\cdot\left[ \sum_{k=1}^{\vz} k - \sum_{k=1}^{\vx} k \right] 
+      + \vb\cdot\left[ \sum_{k=1}^{\vz} 1 - \sum_{k=1}^{\vx} 1 \right] \\
+     &= \va\cdot\left[ \dfrac{\vz\cdot (\vz + 1)}{2} - \dfrac{\vx\cdot(\vx + 1)}{2}\right] + \vb\cdot (\vz - \vx) \\
+     &= \vo
+  \end{align}
+
 \end{solution}
+\ifprintanswers\begin{codex}$\vo$\end{codex}\fi
