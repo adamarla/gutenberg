@@ -1,23 +1,63 @@
 
+\renewcommand{\va}{6}
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vb}{19}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vb}{43}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vb}{21}
+    }{
+      % variables 
+      \renewcommand{\vb}{26}
+    }
+  }
+}
 
-\question[3] If the product of three numbers in geometric progression is $216$ and 
-their sum is $19$, then what are the three numbers? 
+\SQUARE\va\vp
+\MULTIPLY\vp\va\vc
 
+\SUBTRACT\vb\va\vd
+\SQUARE\vd\ve
 
-\ifprintanswers
-\fi 
+\MULTIPLY\vp{4}\vz
+\SUBTRACT\ve\vz\vr
+
+\SQRT\vr\vt
+%\ROUND[0]\vu\vt
+
+\MULTIPLY\va{2}\vw
+\ADD\vd\vt\vx
+\SUBTRACT\vd\vt\vy
+
+\FRACDIV\va{1}\vx\vw\p\q
+\FRACMULT\va{1}\vx\vw\r\s
+
+\question[3] If the product of three numbers in geometric progression is $\vc$ and 
+their sum is $\vb$, then what are the three numbers? 
+
+\watchout
 
 \begin{solution}[\halfpage]
 	Let the three numbers be $\dfrac{a}{r}$, $a$ and $ar$. And so, 
 	\begin{align}
-		\dfrac{a}{r}\cdot a \cdot ar &= 216 \Rightarrow a^3 = 216 \Rightarrow a = 6
+		\dfrac{a}{r}\cdot a \cdot ar &= \vc \implies a^3 = \vc \implies a = \va
 	\end{align}
-	The three numbers, therefore, are $\dfrac{6}{r}$, $6$ and $6r$. Moreover, 
+
+	The three numbers, therefore, are $\dfrac{\va}{r}$, $\va$ and $\va r$. Moreover, 
+
 	\begin{align}
-		\dfrac{6}{r} + 6 + 6r &= 19 \Rightarrow 6r^2-13r + 6 = 0 \\
-		\Rightarrow r &= \dfrac{13 \pm \sqrt{13^2-4\cdot 6\cdot 6}}{2\times 6} = \frac{18}{12} \text{ or } \frac{8}{12} \\
-		&= \frac{3}{2} \text{ or } \frac{2}{3}
+		\dfrac{\va}{r} + \va + \va r &= \vb \implies \va r^2-\vd r + \va = 0 \\
+		\implies r &= \dfrac{\vd\pm\sqrt{\vd^2-4\cdot \va\cdot \va}}{2\times \va} = 
+    \WRITEFRAC\vx\vw\text{ or }\WRITEFRAC\vy\vw
 	\end{align}
-	
-	The numbers could therefore be either $(4,6,9)$ if $r = \frac{3}{2}$ or $(9,6,4)$ if $r=\frac{2}{3}$
+
+  And hence, the numbers are $\p,\,\va,\,\r ( r=\WRITEFRAC\vx\vw )$ or 
+  $\r,\,\va,\,\p (r=\WRITEFRAC\vy\vw)$
 \end{solution}
+
+\ifprintanswers\begin{codex}$\p,\,\va\text{ and } \r$\end{codex}\fi
