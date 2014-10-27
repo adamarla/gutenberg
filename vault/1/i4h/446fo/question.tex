@@ -2,59 +2,57 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-	\renewcommand{\vbone}{13}
-	\renewcommand{\vbtwo}{9}
-	\renewcommand{\vbthree}{5}
-	\renewcommand{\vbfour}{3}
-	\renewcommand{\vbfive}{1}
-	\renewcommand{\vbsix}{4}
+	\renewcommand{\va}{13}
+	\renewcommand{\vb}{9}
+	\renewcommand{\vc}{5}
+	\renewcommand{\vd}{3}
+	\renewcommand{\ve}{1}
+	\renewcommand{\vf}{4}
 }{
 	\ifnumequal{\value{rolldice}}{1}{
-		\renewcommand{\vbone}{15}
-		\renewcommand{\vbtwo}{7}
-		\renewcommand{\vbthree}{11}
-		\renewcommand{\vbfour}{5}
-		\renewcommand{\vbfive}{3}
-		\renewcommand{\vbsix}{8}
+		\renewcommand{\va}{15}
+		\renewcommand{\vb}{7}
+		\renewcommand{\vc}{11}
+		\renewcommand{\vd}{5}
+		\renewcommand{\ve}{3}
+		\renewcommand{\vf}{8}
 	}{
 		\ifnumequal{\value{rolldice}}{2}{
-		\renewcommand{\vbone}{11}
-		\renewcommand{\vbtwo}{6}
-		\renewcommand{\vbthree}{7}
-		\renewcommand{\vbfour}{3}
-		\renewcommand{\vbfive}{2}
-		\renewcommand{\vbsix}{5}
+		\renewcommand{\va}{11}
+		\renewcommand{\vb}{6}
+		\renewcommand{\vc}{7}
+		\renewcommand{\vd}{3}
+		\renewcommand{\ve}{2}
+		\renewcommand{\vf}{5}
 	}{
-		\renewcommand{\vbone}{17}
-		\renewcommand{\vbtwo}{10}
-		\renewcommand{\vbthree}{9}
-		\renewcommand{\vbfour}{5}
-		\renewcommand{\vbfive}{2}
-		\renewcommand{\vbsix}{7}
+		\renewcommand{\va}{17}
+		\renewcommand{\vb}{10}
+		\renewcommand{\vc}{9}
+		\renewcommand{\vd}{5}
+		\renewcommand{\ve}{2}
+		\renewcommand{\vf}{7}
 	}
   }
 }
 
 
-\question[4] Prove that $2\cos\dfrac{\vbfive\pi}{\vbone}\cos\dfrac{\vbtwo\pi}{\vbone} + 
-\cos\dfrac{\vbthree\pi}{\vbone} + \cos\dfrac{\vbfour\pi}{\vbone} = 0 $
+\question[4] What is the value of the following  
+\[ 2\cos\dfrac{\ve\pi}{\va}\cos\dfrac{\vb\pi}{\va} + \cos\dfrac{\vc\pi}{\va} + \cos\dfrac{\vd\pi}{\va} \]
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\halfpage]
      \begin{align}
-     	&2\cos\dfrac{\vbfive\pi}{\vbone}\cos\dfrac{\vbtwo\pi}{\vbone} + 
-     	\cos\dfrac{\vbthree\pi}{\vbone} + \cos\dfrac{\vbfour\pi}{\vbone} \nonumber \\
-     	&= 2\cos\dfrac{\vbfive\pi}{\vbone}\cos\dfrac{\vbtwo\pi}{\vbone} + 
-     	\eSumOfCos{\frac{\vbthree\pi}{\vbone}}{\frac{\vbfour\pi}{\vbone}} \\
-     	&= 2\cos\dfrac{\vbfive\pi}{\vbone}\cdot\left[ \cos\dfrac{\vbtwo\pi}{\vbone} + \cos\dfrac{\vbsix\pi}{\vbone}\right] \\
-     	&= 2\cos\dfrac{\vbfive\pi}{\vbone}\cdot\left[ \eSumOfCos{\frac{\vbtwo\pi}{\vbone}}{\frac{\vbsix\pi}{\vbone}} \right] \\
-     	&= 2\cos\dfrac{\vbfive\pi}{\vbone}\cdot
-     	\left( 2\cdot\underbrace{\cos\dfrac{\vbone\pi}{2\cdot\vbone}}_{\cos\frac{\pi}{2} = 0}
-     	\cos\dfrac{\vbtwo\pi-\vbsix\pi}{2\cdot\vbone}\right) \\
-        &= 0
+     	&2\cos\dfrac{\ve\pi}{\va}\cos\dfrac{\vb\pi}{\va} + 
+     	\cos\dfrac{\vc\pi}{\va} + \cos\dfrac{\vd\pi}{\va} \nonumber \\
+     	&= 2\cos\dfrac{\ve\pi}{\va}\cos\dfrac{\vb\pi}{\va} + 
+     	\eSumOfCos{\frac{\vc\pi}{\va}}{\frac{\vd\pi}{\va}} \\
+     	&= 2\cos\dfrac{\ve\pi}{\va}\cdot\left[ \cos\dfrac{\vb\pi}{\va} + \cos\dfrac{\vf\pi}{\va}\right] \\
+     	&= 2\cos\dfrac{\ve\pi}{\va}\cdot\left[ \eSumOfCos{\frac{\vb\pi}{\va}}{\frac{\vf\pi}{\va}} \right] \\
+     	&= 2\cos\dfrac{\ve\pi}{\va}\cdot
+     	\left( 2\cdot\underbrace{\cos\dfrac{\va\pi}{2\cdot\va}}_{\cos\frac{\pi}{2} = 0}
+     	\cos\dfrac{\vb\pi-\vf\pi}{2\cdot\va}\right) = 0 
      \end{align}
 \end{solution}
+
+\ifprintanswers\begin{codex}$0$\end{codex}\fi
