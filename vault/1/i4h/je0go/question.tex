@@ -1,18 +1,65 @@
 
-\question[3] If $\cos\alpha = \frac{3}{5}$ and $\cos\beta = \frac{4}{5}$, then find the 
-value of $\cos\dfrac{\alpha-\beta}{2}$ given that both $\alpha$ and $\beta$ are positive
-acute angles
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{3}
+  \renewcommand{\vb}{4}
+  \renewcommand{\vc}{5}
+  \renewcommand{\ve}{\dfrac{7}{5\sqrt{2}}}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{5}
+    \renewcommand{\vb}{12}
+    \renewcommand{\vc}{13}
+    \renewcommand{\ve}{\dfrac{17}{13\sqrt{2}}}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{8}
+      \renewcommand{\vb}{15}
+      \renewcommand{\vc}{17}
+      \renewcommand{\ve}{\dfrac{23}{17\sqrt{2}}}
+    }{
+      % variables 
+      \renewcommand{\va}{7}
+      \renewcommand{\vb}{24}
+      \renewcommand{\vc}{25}
+      \renewcommand{\ve}{\dfrac{31}{25\sqrt{2}}}
+    }
+  }
+}
 
+\FRACMULT\va\vc\vb\vc\vm\vn
+\FRACMULT\vm\vn{2}{1}\vp\vq
+\FRACADD\vp\vq{1}{1}\vr\vs
+\FRACDIV\vr\vs{2}{1}\vt\vu
 
-\ifprintanswers
-\fi 
+\question[3] If $\cos\alpha = \frac\va\vc$ and $\cos\beta = \frac\vb\vc$, then 
+\[ \cos\dfrac{\alpha-\beta}{2} = ? \] 
+given that both $\alpha$ and $\beta$ are positive acute angles.
+
+\watchout 
+
+\begin{calcaid}
+  \begin{tabular}{c c c} 
+    $23^2=529$ & $31^2=961$ & $17^2=289$
+  \end{tabular}
+\end{calcaid}
 
 \begin{solution}[\halfpage]
+   \textbf{Insight \#1: $\sin\alpha>0$ and $\sin\beta>0$}
 	\begin{align}
-	   \cos\alpha = \dfrac{3}{5} \Rightarrow \sin\alpha = \sqrt{1-\cos^2\alpha} &= \dfrac{4}{5} \\
-	   \cos\beta = \dfrac{4}{5} \Rightarrow \sin\beta = \sqrt{1-\cos^2\beta} &= \dfrac{3}{5} \\
-	   \therefore \fCosOfDiff{\alpha}{\beta} &= \dfrac{24}{25} \\
-	   \Rightarrow 2\cdot\cos^2\left( \dfrac{\alpha-\beta}{2}\right) - 1 &= \dfrac{24}{25} \\
-	   \text{ or } \cos\left(\alpha-\beta \right) &= \dfrac{7}{5\sqrt2}
-	\end{align}
+	   \cos\alpha = \dfrac\va\vc \implies \sin\alpha = \sqrt{1-\cos^2\alpha} &= \dfrac\vb\vc \\
+	   \cos\beta = \dfrac\vb\vc \implies \sin\beta = \sqrt{1-\cos^2\beta} &= \dfrac\va\vc \\
+   \end{align}
+   \textbf{Insight \#2: Find $\cos(\alpha - \beta)$}
+   \[ \fCosOfDiff{\alpha}{\beta} = \dfrac\vp\vq \] 
+   \textbf{Insight \#3: Relationship between $\cos 2\theta$ and $\cos\theta$} 
+   \begin{align}
+	   \implies 2\cdot\cos^2\left( \dfrac{\alpha-\beta}{2}\right) - 1 &= \dfrac\vp\vq  \\
+     \implies\cos^2\left(\dfrac{\alpha-\beta}{2}\right) &= \dfrac\vt\vu \\
+     \implies\cos\left( \dfrac{\alpha-\beta}{2}\right) &= \ve
+   \end{align}
+
 \end{solution}
+\ifprintanswers\begin{codex}$\ve$\end{codex}\fi

@@ -1,18 +1,51 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{90}
+  \renewcommand{\vb}{3}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{60}
+    \renewcommand{\vb}{4}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{110}
+      \renewcommand{\vb}{3}
+    }{
+      % variables 
+      \renewcommand{\va}{80}
+      \renewcommand{\vb}{4}
+    }
+  }
+}
 
-\question[2] The wheel of a railway carriage is 90 cm in diameter and makes 3 revolutions 
-in a second. How fast is the train going - in kilometers per hour?
+\MULTIPLY\va\vb\vc
+\FRACTIONSIMPLIFY\vc{875}\vx\vy
+\FRACMULT\vx\vy{99}{1}\vp\vq
 
+\question[2] The wheel of a railway carriage is $\va$ cm in diameter and makes $\vb$ revolutions 
+per second. How fast is the train going - in kilometers per hour? Use $\pi=\frac{22}{7}$.
 
-\ifprintanswers
-\fi
+\watchout
 
 \begin{solution}[\mcq]
-   In one revolution of the wheel, the train moves forward a distance equal to the wheel's \textit{circumference}.
-   And so, the train's speed - $S$ - is
-   \begin{align}
-      S &= \dfrac{3\times\pi\cdot 0.9\text{ meters}}{1\text{ second }}\times 3600\frac{\text{seconds}}{\text{hour}}
-          \times\dfrac{1}{1000}\frac{\text{km}}{\text{meter}} \\
-        &= 9.72\pi\frac{\text{km}}{\text{hour}} = 30.54\frac{\text{km}}{\text{hour}}
-   \end{align}
+  With every revolution of the wheel, the train moves forward a distance equal to the wheel's \textbf{circumference}.
+
+  Which means, the train's speed is 
+  \[ S = \vb\dfrac{\text{rev}}{\text{sec}} \times\va\pi\dfrac{\text{cm}}{\text{rev}} = \vc\pi\dfrac{\text{cm}}{\text{sec}} \]
+
+  Expressed in \textbf{kilometers per hour}, that is 
+  \begin{align}
+    S &= \vc\cdot\dfrac{22}{7}\dfrac{\text{cm}}{\text{sec}}\times 3600\dfrac{\text{sec}}{\text{hour}}\times\dfrac{1}{10^5}\dfrac{\text{km}}{\text{cm}}
+      = \WRITEFRAC\vp\vq\text{ km/hour}
+  \end{align} 
+
+
 \end{solution}
+\ifprintanswers
+  \begin{codex}
+    $\WRITEFRAC\vp\vq\text{ km/hour}$
+  \end{codex}
+\fi
