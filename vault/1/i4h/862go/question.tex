@@ -1,18 +1,60 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{6}
+  \renewcommand{\vb}{16}
+  \renewcommand{\vc}{4}
+  \renewcommand{\vd}{30}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{9}
+    \renewcommand{\vb}{21}
+    \renewcommand{\vc}{15}
+    \renewcommand{\vd}{9}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{9}
+      \renewcommand{\vb}{5}
+      \renewcommand{\vc}{6}
+      \renewcommand{\vd}{14}
+    }{
+      % variables 
+      \renewcommand{\va}{14}
+      \renewcommand{\vb}{8}
+      \renewcommand{\vc}{6}
+      \renewcommand{\vd}{7}
+    }
+  }
+}
 
-\question[3] For what $x$ is $\dfrac{6x-5}{4x+1} < 0$ ?
+\FRACTIONSIMPLIFY\vb\va\vp\vq
+\FRACTIONSIMPLIFY\vd\vc\vr\vs
 
+\question[3] For what $x$ is $\dfrac{\va x-\vb}{\vc x+\vd} < 0$ ?
 
-\ifprintanswers
-\fi 
+\watchout
 
 \begin{solution}[\mcq]
-	\begin{align}
-	   \dfrac{6x-5}{4x+1} &= \dfrac{6}{4}\cdot\underbrace{\left(\dfrac{x-\frac{5}{6}}{x+\frac{1}{4}}\right)}_{\text{focus on this}} < 0 \\
-	   \Rightarrow  & \begin{cases}
-	   	x > \frac{5}{6} \text{ and } x < \frac{-1}{4} \text{ or, } \\
-	   	x > \frac{-1}{4} \text{ and } x < \frac{5}{6}
-	   \end{cases}	   
-	\end{align}
-	Only the second constraint makes sense. And so, $x \in \left(\frac{-1}{4}, \frac{5}{6} \right)$
+  \begin{align}
+    \dfrac{\va x - \vb}{\vc  x + \vd } &= 
+    \dfrac\va\vc\cdot\overbrace{\left(\dfrac{x-\frac\vp\vq}{x+\frac\vr\vs}\right)}^{\text{focus on this}} < 0
+    \implies\left(\dfrac{x-\frac\vp\vq}{x+\frac\vr\vs}\right) < 0
+  \end{align}
+  \textbf{Case \#1}
+  \[ x-\dfrac\vp\vq > 0 \text{ and } x+\dfrac\vr\vs < 0\implies x>\dfrac\vp\vq\text{ and }x<-\dfrac\vr\vs \]
+  \textbf{Case \#2}
+  \[ x-\dfrac\vp\vq < 0 \text{ and } x+\dfrac\vr\vs > 0\implies x<\dfrac\vp\vq\text{ and }x>-\dfrac\vr\vs \]
+
+  Only the second case makes sense. It is not possible for $x$ to be $>\dfrac\vp\vq$\textbf{ and simultaneously } be $<-\dfrac\vr\vs$.
+
+  Hence, 
+  $x\in\left( -\dfrac\vr\vs, \dfrac\vp\vq \right)$
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $x\in\left( -\dfrac\vr\vs, \dfrac\vp\vq \right)$
+  \end{codex}
+\fi

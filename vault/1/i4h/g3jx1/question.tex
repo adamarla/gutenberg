@@ -1,28 +1,66 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{15}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{30}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{45}
+    }{
+      % variables 
+      \renewcommand{\va}{60}
+    }
+  }
+}
+
+\FRACTIONSIMPLIFY\va{180}\vp\vq
+\MULTIPLY\vp{2}\vr
+\SUBTRACT\vq\vp\vs
+\FRACTIONSIMPLIFY\vr\vs\vx\vy
+\FRACADD\vy\vx{1}{1}\vm\vn
+\FRACMULT\vn\vm{60}{1}\vi\vj
+
+\FRACMULT\vy\vx{2}{1}\vt\vu
+\FRACADD\vt\vu{1}{1}\vv\vw
+\FRACMULT\vv\vw\vi\vj\p\q
 
 \question[3] The angles of a triangle are in arithmetic progression and the ratio of 
 the number of \textit{degrees} of the \textit{smallest} angle to the number of 
-\textit{radians} of the \textit{largest} angle is $\frac{60}{\pi}$. Find the angles 
+\textit{radians} of the \textit{largest} angle is $\frac\va\pi$. Find the angles 
 of the triangle - in degrees 
 
-
-\ifprintanswers
-  \marginnote[4cm]{You can also write (1) as $\dfrac{a}{a+2d} = \dfrac{A_D}{\frac{180}{\pi}\cdot C_R}$. 
-  The key is to remember that when taking ratios, both the values must have the same units }
-\fi 
+\watchout
 
 \begin{solution}[\halfpage]
-   Let the three angles be $A=a$, $B=a+d$ and $C=a+2d$ - either all in degrees or all in radians. 
-   Moreover, let $A_D$ be the \textit{number of degrees} in $\angle A$ and $C_R$ the
-   \textit{number of radians} in $\angle C$
-   
-   And so, 
-   \begin{align}
-       \dfrac{a}{a+2d} &= \overbrace{\dfrac{\frac{\pi}{180}\times A_D}{C_R}}^{\texttt{everything in radians}} \\
-       \text{where } \dfrac{A_D}{C_R} &= \dfrac{60}{\pi} \\
-       \Rightarrow \dfrac{a}{a+2d} &= \dfrac{\pi}{180}\cdot\dfrac{60}{\pi} = \dfrac{1}{3} \\
-       \Rightarrow a &= d 
-   \end{align}
-   And therefore, $A=a$, $B = 2a$ and $C = 3a$. Given that $ A+B+C = \ang{180}$, we get 
-   $A = \ang{30}$, $B=\ang{60}$ and $C=\ang{90}$
+  \textbf{Insight \#1}
+  
+  If $\theta_D$ is the measure of an angle \textbf{in degrees} and $\theta_R$ the measure 
+  of the same angle \textbf{in radians}, then 
+  \[ \theta_R = \pi\cdot\dfrac{\theta_D}{180}\text{ and }\theta_D = \dfrac{180}\pi\cdot\theta_R \]
+
+  Hence, if the three angles be $A,B$ and $C,\,(A < B < C)$, then 
+  \[ A = a\qquad B = a+d\qquad C = a + 2d \] 
+  Moreover
+  \begin{align}
+    \dfrac{A_D}{C_R} &= \dfrac{A_D}{\frac\pi{180}\cdot C_D} = \dfrac\va\pi\implies\dfrac{A_D}{C_D}=\dfrac\vp\vq \\
+    \implies \dfrac{a}{a+2d} &= \dfrac\vp\vq\implies a = \WRITEFRAC\vx\vy\cdot d\implies d = \WRITEFRAC\vy\vx\cdot a 
+  \end{align} 
+
+  And as 
+  \begin{align}
+    a + (a+d) + (a+2d) &=\ang{180}\implies (a+d) = B = \ang{60} \\
+    \text{also } a+d &=\ang{60}\implies a\cdot\left(1 + \WRITEFRAC\vy\vx\right) = \ang{60} \\
+    &\implies a = \WRITEFRAC\vi\vj^\circ = A \\
+    \therefore C = a + 2d &= \WRITEFRAC\vi\vj\cdot\left( 1+2\times\WRITEFRAC\vy\vx \right) = \WRITEFRAC\p\q^\circ
+  \end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\WRITEFRAC\vi\vj^\circ,\,\ang{60}\text{ and }\WRITEFRAC\p\q^\circ$
+  \end{codex}
+\fi

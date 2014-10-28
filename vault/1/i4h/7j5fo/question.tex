@@ -1,48 +1,48 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{1}
-  \renewcommand{\vbtwo}{2}
-  \renewcommand{\vbthree}{3}
-  \renewcommand{\vbfour}{6}
-  \renewcommand{\vbfive}{4}
-  \renewcommand{\vbsix}{13}
+  \renewcommand{\va}{1}
+  \renewcommand{\vb}{2}
+  \renewcommand{\vc}{3}
+  \renewcommand{\vd}{6}
+  \renewcommand{\ve}{4}
+  \renewcommand{\vf}{13}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{3}
-    \renewcommand{\vbtwo}{4}
-    \renewcommand{\vbthree}{5}
-    \renewcommand{\vbfour}{12}
-    \renewcommand{\vbfive}{4}
-    \renewcommand{\vbsix}{21}
+    \renewcommand{\va}{3}
+    \renewcommand{\vb}{4}
+    \renewcommand{\vc}{5}
+    \renewcommand{\vd}{12}
+    \renewcommand{\ve}{4}
+    \renewcommand{\vf}{21}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{7}
-      \renewcommand{\vbthree}{4}
-      \renewcommand{\vbfour}{15}
-      \renewcommand{\vbfive}{7}
-      \renewcommand{\vbsix}{26}
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{7}
+      \renewcommand{\vc}{4}
+      \renewcommand{\vd}{15}
+      \renewcommand{\ve}{7}
+      \renewcommand{\vf}{26}
     }{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{2}
-      \renewcommand{\vbthree}{3}
-      \renewcommand{\vbfour}{10}
-      \renewcommand{\vbfive}{8}
-      \renewcommand{\vbsix}{21}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{2}
+      \renewcommand{\vc}{3}
+      \renewcommand{\vd}{10}
+      \renewcommand{\ve}{8}
+      \renewcommand{\vf}{21}
     }
   }
 }
 
-\MAX\vbone\vbtwo\a
-\MIN\vbone\vbtwo\b
-\MAX\vbthree\vbfour\c
-\MIN\vbthree\vbfour\d
-\MAX\vbfive\vbsix\e
-\MIN\vbfive\vbsix\f
+\MAX\va\vb\a
+\MIN\va\vb\b
+\MAX\vc\vd\c
+\MIN\vc\vd\d
+\MAX\ve\vf\e
+\MIN\ve\vf\f
 
 \SUBTRACT\a\b\g
 \ADD\a\b\h
@@ -54,8 +54,8 @@
 \ADD\q\g\r
 
 \question[4] For what value of $M$ would the following hold?
-\[ \dfrac{\sin\vbone A\sin\vbtwo A + \sin\vbthree A\sin\vbfour A + \sin\vbfive A\sin\vbsix A}
-{\sin\vbone A\cos\vbtwo A + \sin\vbthree A\cos\vbfour A + \sin\vbfive A\cos\vbsix A} = \tan\textbf{M}A\]
+\[ \dfrac{\sin\va A\sin\vb A + \sin\vc A\sin\vd A + \sin\ve A\sin\vf A}
+{\sin\va A\cos\vb A + \sin\vc A\cos\vd A + \sin\ve A\cos\vf A} = \tan\textbf{M}A\]
 
 \watchout
 
@@ -75,3 +75,4 @@
   \end{align}
 \end{explanation}
 
+\ifprintanswers\begin{codex}$\WRITEFRAC\r{2}$\end{codex}\fi
