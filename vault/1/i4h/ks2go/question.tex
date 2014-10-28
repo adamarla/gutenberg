@@ -3,36 +3,36 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{52}
-  \renewcommand{\vbtwo}{624}
+  \renewcommand{\va}{52}
+  \renewcommand{\vb}{624}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{38}
-    \renewcommand{\vbtwo}{456}
+    \renewcommand{\va}{38}
+    \renewcommand{\vb}{456}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{37}
-      \renewcommand{\vbtwo}{444}
+      \renewcommand{\va}{37}
+      \renewcommand{\vb}{444}
     }{
       % variables 
-      \renewcommand{\vbone}{42}
-      \renewcommand{\vbtwo}{336}
+      \renewcommand{\va}{42}
+      \renewcommand{\vb}{336}
     }
   }
 }
 
-\DIVIDE\vbtwo\vbone\vbthree
-\SQUARE\vbone\tp
-\SUBTRACT\vbtwo\tp\tq
-\FRACTIONSIMPLIFY\tq\vbtwo\tr\ts
+\DIVIDE\vb\va\vc
+\SQUARE\va\tp
+\SUBTRACT\vb\tp\tq
+\FRACTIONSIMPLIFY\tq\vb\tr\ts
 \QUADEQNROOTS\ts\tr\ts\dnm\fnm\snm
-\FRACDIV{\vbthree}{1}\fnm\dnm\anm\adnm
-\FRACMULT{\vbthree}{1}\fnm\dnm\bnm\bdnm
+\FRACDIV{\vc}{1}\fnm\dnm\anm\adnm
+\FRACMULT{\vc}{1}\fnm\dnm\bnm\bdnm
 
-\question[3] Find three numbers in geometric progression whose sum is $\vbone$ and the
-sum of whose products - taken in pairs - is $\vbtwo$
+\question[3] Find three numbers in geometric progression whose sum is $\va$ and the
+sum of whose products - taken in pairs - is $\vb$.
 
 \watchout
 
@@ -42,18 +42,19 @@ sum of whose products - taken in pairs - is $\vbtwo$
 \begin{solution}[\halfpage]
 	Let the three numbers be $\dfrac{a}{r}$, $a$ and $ar$
 	\begin{align}
-		\dfrac{a}{r} + a + ar &= \vbone \\
+		\dfrac{a}{r} + a + ar &= \va \\
 		\text{And, } \left( \dfrac{a}{r}\cdot a\right) + \left( a\cdot ar\right) + 
-		\left( \dfrac{a}{r}\cdot ar\right) &= \vbtwo \\
-		\Rightarrow \dfrac{a^2\cdot\left( \frac{1}{r} + r + 1 \right)}{a\cdot\left( \frac{1}{r} + r + 1\right)}
-		&= \dfrac{\vbtwo}{\vbone} \Rightarrow a = \vbthree \\
-		\text{Hence, } \vbthree\cdot\left( \dfrac{1}{r} + r + 1 \right) &= \vbone 
-    \Rightarrow \ts r^2\gsign\tr r + \ts = 0 \\
-    \Rightarrow r &= \WRITEFRAC\fnm\dnm,\,\WRITEFRAC\snm\dnm
+		\left( \dfrac{a}{r}\cdot ar\right) &= \vb \\
+		\implies \dfrac{a^2\cdot\left( \frac{1}{r} + r + 1 \right)}{a\cdot\left( \frac{1}{r} + r + 1\right)}
+		&= \dfrac{\vb}{\va} \implies a = \vc \\
+		\text{Hence, } \vc\cdot\left( \dfrac{1}{r} + r + 1 \right) &= \va 
+    \implies \ts r^2\gsign\tr r + \ts = 0 \\
+    \implies r &= \WRITEFRAC\fnm\dnm,\,\WRITEFRAC\snm\dnm
 	\end{align}
 	
 	Hence, the three numbers are either 
-    $\left( \WRITEFRAC\anm\adnm, \vbthree, \WRITEFRAC\bnm\bdnm \right)$ if $r=\WRITEFRAC\fnm\dnm$ or 
-    $\left( \WRITEFRAC\bnm\bdnm, \vbthree, \WRITEFRAC\anm\adnm \right)$ if $r=\WRITEFRAC\snm\dnm$
+    \[ \left( \WRITEFRAC\anm\adnm, \vc, \WRITEFRAC\bnm\bdnm \right)\text{ if } r=\WRITEFRAC\fnm\dnm \textbf{ OR } \]
+    \[\left( \WRITEFRAC\bnm\bdnm, \vc, \WRITEFRAC\anm\adnm \right)\text{ if }r=\WRITEFRAC\snm\dnm \]
 \end{solution}
 
+\ifprintanswers\begin{codex}$\WRITEFRAC\anm\adnm,\,\vc\text{ and }\WRITEFRAC\bnm\bdnm$\end{codex}\fi
