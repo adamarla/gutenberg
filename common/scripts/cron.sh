@@ -138,7 +138,7 @@ function age_in_days {
   echo $e
 }
 
-function clean_logs { 
+function cleanup_logs { 
   # $1 = threshold age (in days). Log folders older than this should be deleted
 
   local vault=$(get_vault_root)
