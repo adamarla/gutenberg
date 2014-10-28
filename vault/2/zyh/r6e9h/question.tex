@@ -1,72 +1,41 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
+  \renewcommand{\va}{5}   
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
+    \renewcommand{\va}{3}   
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
+      \renewcommand{\va}{4}   
     }{
-      % variables 
+      \renewcommand{\va}{7}   
     }
   }
 }
 
-\question
-
-\insertQR{}
+\question[4] If $z$ is a complex number such that $\dfrac{z-\va}{z+\va}$ 
+is purely imaginary $(z\neq - \va)$, then find $|z|$.
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
+\begin{solution}[\fullpage]
+  Let $z=x+iy$ where $x,y\in \mathbb{R}$. Then,
+  \begin{align}
+    \dfrac{z-\va}{z+\va} &= \dfrac{x+iy-\va}{x+iy+\va}\\
+                         &= \dfrac{(x-\va)+iy}{(x+\va)+iy}\\
+                         &= \left[\dfrac{(x-\va)+iy}{(x+\va)+iy}\right]
+                            \left[\dfrac{(x+\va)-iy}{(x+\va)-iy}\right]\\
+                         &= \dfrac{(x^2+y^2-\va^2)+i(2\cdot\va y)}{(x+\va)^2+y^2}\\
+                         &= \underbrace{\dfrac{(x^2+y^2-\va^2)}{(x+\va)^2+y^2}}_{\text{Real}} +
+                            \underbrace{\dfrac{i(2\cdot\va y)}{(x+\va)^2+y^2}}_{\text{Imaginary}}
+  \end{align}
+  Since the above number is purely imaginary, the real part must 
+  equal zero. That would mean,
+  \begin{align}
+    x^2+y^2-\va^2 &= 0\\
+    \underbrace{x^2+y^2}_{|z|^2}&= \va^2\\
+    |z| &= \va
+  \end{align}
 
-\begin{solution}
 \end{solution}
-
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
 

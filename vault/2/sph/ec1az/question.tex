@@ -1,159 +1,48 @@
-% This is an empty shell file placed for you by the 'examiner' script.
-% You can now fill in the TeX for your question here.
-
-% Now, down to brasstacks. ** Writing good solutions is an Art **. 
-% Eventually, you will find your own style. But here are some thoughts 
-% to get you started: 
-%
-%   1. Write to be understood - but be crisp. Your own solution should not take 
-%      more space than you will give to the student. Hence, if you take more than 
-%      a half-page to write a solution, then give the student a full-page and so on...
-%
-%   2. Use margin-notes to "talk" to students about the critical insights
-%      in the question. The tone can be - in fact, should be - informal
-%
-%   3. Don't shy away from creating margin-figures you think will help
-%      students understand. Yes, it is a little more work per question. 
-%      But the question & solution will be written only once. Make that
-%      attempt at writing a solution count.
-%      
-%      3b. Use bc_to_fig.tex. Its an easier way to generate plots & graphs 
-% 
-%   4. Ensure that there are *no spelling mistakes anywhere*. We are an 
-%      education company. Bad spellings suggest that we ourselves 
-%      don't have any education. Also, use American spellings by default
-% 
-%   5. If a question has multiple parts, then first delete lines 40-41
-%   6. If a question does not have parts, then first delete lines 43-69
-%   
-%   7. Create versions of the question when possible. Use commands defined in 
-%      tufte-tweaks.sty to do so. Its easier than you think
-
-% \noprintanswers
-% \setcounter{rolldice}{0}
-% \printrubric
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
-  \renewcommand{\vbone}{}
-  \renewcommand{\vbtwo}{}
-  \renewcommand{\vbthree}{}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\va}{m}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
-    \renewcommand{\vbone}{}
-    \renewcommand{\vbtwo}{}
-    \renewcommand{\vbthree}{}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\va}{n}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\va}{a}
     }{
-      % variables 
-      \renewcommand{\vbone}{}
-      \renewcommand{\vbtwo}{}
-      \renewcommand{\vbthree}{}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\va}{b}
     }
   }
 }
 
-\question
-
-\insertQR{}
+\question[3] Prove that expression $E(\va) = \va^3+3\va^2+5\va+3$ 
+is divisible by $3$ for any $\va\in\mathbb{N}$.
 
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
+\fi
 
-\begin{solution}
+\begin{solution}[\fullpage]
+  For $\va=1$, the given expression appears as follows,
+  \begin{align}
+    E(1) &= 1^3 + 3\times 1^2 + 5\times 1 + 3 \\
+         &= 12
+  \end{align}
+  which we know to be divisible by $3$.\\
+  Now let us assume $E(\va)$ is divisible by $3$ for some 
+  $\va=k$. This implies,
+  \begin{align}
+    E(k) = k^3+3k^2+5k+3 = 3\times C
+  \end{align}
+  where $C$ is some integer.\\
+  To prove that $E(\va)$ is divisible by $3$ for $\va=k+1$.
+  \begin{align}
+    E(k+1) &= (k+1)^3+2(k+1)^2+5(k+1)+3 \\
+           &= k^3+3k^2+3k+1+3k^2+3+6k+5k+5+3 \\
+           &= (k^3+3k^2+5k+3)+(3k^2+9k+9) \\
+           &= (3\times C)+3(k^2+3k+3) \\
+           &= 3\times (C+k^2+3k+3)
+  \end{align}
+  Therefore, by the Principle of Mathematical Induction, $E(\va)$ is divisible by $3$.
+  
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
-
-\ifprintrubric
-  \begin{table}
-  	\begin{tabular}{ p{5cm}p{5cm} }
-  		\toprule % in brief (4-6 words), what should a grader be looking for for insights & formulations
-  		  \sc{\textcolor{blue}{Insight}} & \sc{\textcolor{blue}{Formulation}} \\ 
-  		\midrule % ***** Insights & formulations ******
-  		\toprule % final numerical answers for the various versions
-        \sc{\textcolor{blue}{If question has $\ldots$}} & \sc{\textcolor{blue}{Final answer}} \\
-  		\midrule % ***** Numerical answers (below) **********
-  		\bottomrule
-  	\end{tabular}
-  \end{table}
-\fi
