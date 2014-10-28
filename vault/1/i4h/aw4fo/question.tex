@@ -2,47 +2,48 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{1}
-  \renewcommand{\vbtwo}{7}
-  \renewcommand{\vbthree}{3}
+  \renewcommand{\va}{1}
+  \renewcommand{\vb}{7}
+  \renewcommand{\vc}{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{3}
-    \renewcommand{\vbtwo}{7}
-    \renewcommand{\vbthree}{5}
+    \renewcommand{\va}{3}
+    \renewcommand{\vb}{7}
+    \renewcommand{\vc}{5}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{9}
-      \renewcommand{\vbtwo}{5}
-      \renewcommand{\vbthree}{7}
+      \renewcommand{\va}{9}
+      \renewcommand{\vb}{5}
+      \renewcommand{\vc}{7}
     }{
       % variables 
-      \renewcommand{\vbone}{7}
-      \renewcommand{\vbtwo}{5}
-      \renewcommand{\vbthree}{3}
+      \renewcommand{\va}{11}
+      \renewcommand{\vb}{5}
+      \renewcommand{\vc}{3}
     }
   }
 }
 
-\ADD\vbone\vbtwo\a
-\ADD\a\vbthree\vbfour
+\ADD\va\vb\a
+\ADD\a\vc\vd
 
-\FRACADD\vbone{2}\vbtwo{2}\p\d
-\FRACMINUS\vbone{2}\vbtwo{2}\b\d
+\FRACADD\va{2}\vb{2}\p\d
+\FRACMINUS\va{2}\vb{2}\b\d
 \ABSVALUE\b\q
 
-\FRACADD\vbthree{2}\vbfour{2}\r\d
-\FRACMINUS\vbthree{2}\vbfour{2}\c\d
+\FRACADD\vc{2}\vd{2}\r\d
+\FRACMINUS\vc{2}\vd{2}\c\d
 \ABSVALUE\c\s
 
-\FRACADD\r{2}\q{2}\j\d
+\FRACADD\r{2}\q{2}\vz\d
 \FRACMINUS\r{2}\q{2}\k\d
 \ABSVALUE\k\m
 
-\question[3] Prove that $\sin\dfrac{\vbone\theta}{2}\sin\dfrac{\vbtwo\theta}{2} + 
-\sin\dfrac{\vbthree\theta}{2}\sin\dfrac{\vbfour\theta}{2} = \sin\j\theta\cdot\sin\m\theta$
+\question[3] For what value of $N$ would the following hold? 
+\[ \sin\dfrac{\va\theta}{2}\sin\dfrac{\vb\theta}{2} + 
+\sin\dfrac{\vc\theta}{2}\sin\dfrac{\vd\theta}{2} = \sin N\theta\cdot\sin\m\theta \]
 
 \watchout
 
@@ -51,17 +52,22 @@
 
 \begin{solution}[\halfpage]
   \begin{align}
-      \sin\dfrac{\vbone\theta}{2}\sin\dfrac{\vbtwo\theta}{2} &+ \sin\dfrac{\vbthree\theta}{2}\sin\dfrac{\vbfour\theta}{2}
-      = \dfrac{1}{2}\cdot\left[ 2\cdot\sin\dfrac{\vbone\theta}{2}\sin\dfrac{\vbtwo\theta}{2} + 
-         2\cdot\sin\dfrac{\vbthree\theta}{2}\sin\dfrac{\vbfour\theta}{2} \right] \\
-       &= \dfrac{1}{2}\left[ \left\lbrace \cos\left( \dfrac{\vbone\theta}{2} + \dfrac{\vbtwo\theta}{2}\right) 
-           - \cos\left( \dfrac{\vbtwo\theta}{2} - \dfrac{\vbone\theta}{2}\right)\right\rbrace
-           + \left\lbrace \cos\left( \dfrac{\vbthree\theta}{2} + \dfrac{\vbfour\theta}{2}\right) 
-           - \cos\left( \dfrac{\vbthree\theta}{2} - \dfrac{\vbfour\theta}{2}\right)\right\rbrace
-           \right] \\
-       &= \dfrac{1}{2}\left[ (\cos \p\theta - \cos\q\theta) + ( \cos\r\theta - \cos\s\theta)\right] = 
-       \dfrac{1}{2}\left( \cos\r\theta - \cos\q\theta \right) \\
+      &\sin\dfrac{\va\theta}{2}\sin\dfrac{\vb\theta}{2} + \sin\dfrac{\vc\theta}{2}\sin\dfrac{\vd\theta}{2} \nonumber\\
+      &= \dfrac{1}{2}\cdot\left[ 2\cdot\sin\dfrac{\va\theta}{2}\sin\dfrac{\vb\theta}{2} + 
+         2\cdot\sin\dfrac{\vc\theta}{2}\sin\dfrac{\vd\theta}{2} \right] \\
+       &= \dfrac{1}{2}\overbrace{\left[ \cos\left( \dfrac{\va\theta}{2} + \dfrac{\vb\theta}{2}\right)
+           - \cos\left( \dfrac{\vb\theta}{2} - \dfrac{\va\theta}{2}\right)\right]}
+           ^{2\sin A\sin B=\cos\dfrac{A+B}{2}-\cos\dfrac{B-A}{2}}\nonumber\\
+       &+ \dfrac{1}{2}\left[ \cos\left( \dfrac{\vc\theta}{2} + \dfrac{\vd\theta}{2}\right) 
+           - \cos\left( \dfrac{\vc\theta}{2} - \dfrac{\vd\theta}{2}\right)\right] \\
+       &= \dfrac{1}{2}\left[ (\cos \p\theta - \cos\q\theta) + ( \cos\r\theta - \cos\s\theta)\right] \\ 
+       &= \dfrac{1}{2}\left( \cos\r\theta - \cos\q\theta \right) \\
        &= \dfrac{1}{2}\cdot 2\cdot\sin\left( \dfrac{\r\theta + \q\theta}{2}\right)\sin\left( \dfrac{\r\theta - \q\theta}{2}\right) \\
-       &= \sin\j\theta\cdot\sin\m\theta
+       &= \sin\vz\theta\cdot\sin\m\theta \implies N = \vz
   \end{align}
 \end{solution}
+\ifprintanswers
+  \begin{codex}
+    $\vz$
+  \end{codex}
+\fi

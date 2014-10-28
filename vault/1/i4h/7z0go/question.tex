@@ -1,34 +1,36 @@
 
-\question[4] Prove that $\sin^4\dfrac{\pi}{8} + \sin^4\dfrac{3\pi}{8} + \sin^4\dfrac{5\pi}{8} + \sin^4\dfrac{7\pi}{8} = \dfrac{3}{2}$
-
-
-\ifprintanswers
-\fi 
+\question[4] Without using a calculator, find the value of 
+\[ A = \sin^4\dfrac{\pi}{8} + \sin^4\dfrac{3\pi}{8} + \sin^4\dfrac{5\pi}{8} + \sin^4\dfrac{7\pi}{8} \]
 
 \begin{solution}[\fullpage]
-    Using the fact that $\sin^2\theta = \dfrac{1-\cos 2\theta}{2}$,  we can re-write the above as
+    \textbf{Insight \#1}
     \begin{align}
-       &\dfrac{1}{2^2}\cdot\left[\left( 1-\cos\dfrac{\pi}{4}\right)^2 + 
-       \left( 1-\cos\dfrac{3\pi}{4}\right)^2
-       + \left( 1-\cos\dfrac{5\pi}{4}\right)^2 + 
-       \left( 1-\cos\dfrac{7\pi}{4}\right)^2\right] \\
-       &= \dfrac{1}{4}\cdot\left( 1 + \cos^2\dfrac{\pi}{4} - 2\cos\dfrac{\pi}{4}\right) +
-          \dfrac{1}{4}\left( 1 + \cos^2\dfrac{3\pi}{4} - 2\cos\dfrac{3\pi}{4}\right) + \nonumber \\
-       & \dfrac{1}{4}\left( 1 + \cos^2\dfrac{5\pi}{4} - 2\cos\dfrac{5\pi}{4}\right) + 
-          \dfrac{1}{4}\left( 1 + \cos^2\dfrac{7\pi}{4} - 2\cos\dfrac{7\pi}{4}\right) 
+      \dfrac{7\pi}{8} &= \pi-\dfrac\pi{8} \implies\sin\dfrac{7\pi}{8}=\sin\left(\pi-\dfrac\pi{8} \right) = \sin\dfrac\pi{8} \\
+      \dfrac{5\pi}{8} &= \pi-\dfrac{3\pi}{8} \implies\sin\dfrac{5\pi}{8}=\sin\left(\pi-\dfrac{3\pi}{8} \right) = \sin\dfrac{3\pi}{8}
     \end{align}
-    Now, $\cos(n\pi \pm \theta) = (-1)^{n}\cos\theta$. And so, if you noticed that,
+
+    Hence, the original expression can be re-written as 
     \begin{align}
-    	\dfrac{3\pi}{4} &= \pi - \frac{\pi}{4} \\
-    	\dfrac{5\pi}{4} &= \pi + \frac{\pi}{4} \\
-    	\dfrac{7\pi}{4} &= 2\pi - \frac{\pi}{4}
+      A &= 2\cdot\left[ \sin^4\dfrac\pi{8} + \sin^4\dfrac{3\pi}{8} \right] 
     \end{align}
-    , then the expression can be re-written as 
+    \textbf{Insight \#2}
+    \[ \dfrac{3\pi}{8} = \dfrac\pi{2} - \dfrac\pi{8} \implies \sin\dfrac{3\pi}{8} = \sin\left(\dfrac\pi{2}-\dfrac\pi{8} \right) = \cos\dfrac\pi{8} \]
+    And therefore
     \begin{align}
-       &= \dfrac{1}{4}\cdot\left( 1 + \cos^2\dfrac{\pi}{4} - 2\cos\dfrac{\pi}{4}\right) +
-          \dfrac{1}{4}\left( 1 + \cos^2\dfrac{\pi}{4} + 2\cos\dfrac{\pi}{4}\right) + \nonumber \\
-       & \dfrac{1}{4}\left( 1 + \cos^2\dfrac{\pi}{4} + 2\cos\dfrac{\pi}{4}\right) + 
-          \dfrac{1}{4}\left( 1 + \cos^2\dfrac{\pi}{4} - 2\cos\dfrac{\pi}{4}\right) \\
-       &= \dfrac{1}{4}\cdot\left[ 4 + 4\cdot\dfrac{1}{(\sqrt{2})^2}\right] = \dfrac{3}{2} 
+      A &= 2\cdot\left[ \sin^4\dfrac\pi{8} + \sin^4\dfrac{3\pi}{8} \right] 
+         = 2\cdot\left[ \sin^4\dfrac\pi{8} + \cos^4\dfrac{\pi}{8} \right]  \\
+        &= 2\cdot\overbrace{\left[ \left(\sin^2\dfrac\pi{8}+\cos^2\dfrac\pi{8}\right)^2 
+           - 2\sin^2\dfrac\pi{8}\cdot\cos^2\dfrac\pi{8}\right]}^{a^2+b^2=(a+b)^2-2ab} \\
+        &= 2\cdot\left[ 1 - 2\sin^2\dfrac\pi{8}\cdot\cos^2\dfrac\pi{8}\right]
+    \end{align}
+    \textbf{Insight \#3}
+    \[ \dfrac\pi{4} = 2\cdot\dfrac\pi{8} \] 
+
+    \begin{align}
+        A  &= 2\cdot\left[ 1 - 2\sin^2\dfrac\pi{8}\cdot\cos^2\dfrac\pi{8}\right] \\
+           &= 2\cdot\left[1 - 2\cdot\dfrac{1-\cos\frac\pi{4}}{2}\cdot\dfrac{1+\cos\frac\pi{4}}{2} \right] \\
+           &= 2\cdot\left[ 1-\dfrac{1}{2}\cdot\left( 1+\dfrac{1}{\sqrt{2}} \right)\cdot\left( 1-\dfrac{1}{\sqrt{2}} \right) \right] = \dfrac{3}{2}
     \end{align}
 \end{solution}
+
+\ifprintanswers\begin{codex}$\dfrac{3}{2}$\end{codex}\fi
