@@ -12,6 +12,7 @@
 *.table
 *.out
 *.tex
+*.png
 skel
 compiled
 codex.cdx
