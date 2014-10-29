@@ -1,21 +1,55 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{49}
+  \renewcommand{\vb}{9}
+  \renewcommand{\vc}{60}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{35}
+    \renewcommand{\vb}{10}
+    \renewcommand{\vc}{90}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{42}
+      \renewcommand{\vb}{12}
+      \renewcommand{\vc}{45}
+    }{
+      % variables 
+      \renewcommand{\va}{56}
+      \renewcommand{\vb}{8}
+      \renewcommand{\vc}{30}
+    }
+  }
+}
 
-\question[2] The radius of a carriage wheel is \SI{50}{\centi\meter}, and in $\frac{1}{9}$th of 
-a second it turns through $\ang{80}$ about its center, which is fixed. How many kilometers 
-does a point on the rim of the wheel travel in one hour?
+\FRACTIONSIMPLIFY\vc{360}\vd\ve
+\FRACMULT\vd\ve{44}{7}\vf\vg
+\FRACMULT\vf\vg\va{1}\vh\vi
+\FRACDIV\vh\vi{1}\vb\vv\vw
+\FRACMULT\vv\vw{9}{250}\vx\vy
 
 
-\ifprintanswers
-  \marginnote[1cm]{The question is a breeze if one is mindful of the units}
-\fi 
+\question[2] The radius of a carriage wheel is $\va$ cm and in $\frac{1}\vb$th of 
+a second it turns through $\ang\vc$ about its center, which is fixed. How fast is the 
+carriage moving (in km/hour) if the carriage is moving on level ground? Use $\pi=\frac{22}{7}$.
+
+\watchout
 
 \begin{solution}[\mcq]
-    If $S$ be the speed of the carriage, then
-	\begin{align}
-	    S &= \dfrac{\frac{\ang{80}}{\ang{360}}\times\overbrace{\SI{50}{\centi\meter}}^{\text{0.5 m}}
-	         \times2\pi}{\frac{1}{9}\si{\second}}
-	         \times 3600\frac{\text{s}}{\text{hour}}
-	         \times\dfrac{1}{1000}\frac{\text{km}}{\text{meter}} \\
-	      &= 7.2\pi\si{\kilo\meter\per\hour} = \SI{22.62}{\kilo\meter\per\hour}
-	\end{align}
+  \textbf{Insight \#1: Distance moved = length of arc (in time $T$)} 
+
+  In $\frac{1}\vb$ seconds, the carriage will move forward a distance 
+  \begin{align}
+    D &= \dfrac{\ang\vc}{\ang{360}}\times(2\cdot\dfrac{22}{7}\cdot\va\text{ cm}) = \WRITEFRAC\vh\vi\text{ cm}
+  \end{align} 
+
+  And therefore, its speed $S$ would be 
+  \begin{align}
+    S &= \dfrac{\WRITEFRAC\vh\vi\text{ cm}}{\frac{1}\vb\text{ s}}\times 3600\text{ s/hr}\times\dfrac{1}{10^5}\text{ km/cm}
+       = \WRITEFRAC\vx\vy\text{ km/hr}
+  \end{align}
 \end{solution}
+\ifprintanswers\begin{codex}$\WRITEFRAC\vx\vy\text{ km/hr}$\end{codex}\fi
