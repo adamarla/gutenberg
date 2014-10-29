@@ -1,20 +1,72 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{3}
+  \renewcommand{\vb}{4}
+  \renewcommand{\vc}{5}
+  \renewcommand\vd{7}
+  \renewcommand\ve{24}
+  \renewcommand\vf{25}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{5}
+    \renewcommand{\vb}{12}
+    \renewcommand{\vc}{13}
+    \renewcommand\vd{3}
+    \renewcommand\ve{4}
+    \renewcommand\vf{5}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{8}
+      \renewcommand{\vb}{15}
+      \renewcommand{\vc}{17}
+      \renewcommand\vd{3}
+      \renewcommand\ve{4}
+      \renewcommand\vf{5}
+    }{
+      % variables 
+      \renewcommand{\va}{3}
+      \renewcommand{\vb}{4}
+      \renewcommand{\vc}{5}
+      \renewcommand\vd{5}
+      \renewcommand\ve{12}
+      \renewcommand\vf{13}
+    }
+  }
+}
 
-\question[4] If $\sin x= \dfrac{3}{5}$ and $\cos y = -\dfrac{12}{13}$, then find the values 
-of $\sin(x+y)$ and $\sin 2x$ given that both $x$ and $y$ lie in the second quadrant
+\FRACMULT\va\vc{-\ve}\vf\a\b
+\FRACMULT\vd\vf{-\vb}\vc\c\d
+\FRACADD\a\b\c\d\vm\vn
 
+\FRACMULT\va\vc{-\vb}\vc\e\f
+\FRACMULT\e\f{2}{1}\vx\vy
 
-\ifprintanswers
-\fi 
+\question[4] If $\sin x= \frac\va\vc$ and $\cos y = -\frac\ve\vf$, then find the values 
+of $\sin(x+y)$ and $\sin 2x$ given that both $x$ and $y$ lie in the second quadrant.
+
+\watchout
 
 \begin{solution}[\halfpage]
-	\begin{align}
-		\sin x = \dfrac{3}{5} \text{ when } x \in \left( \frac{\pi}{2}, \pi\right) 
-		\Rightarrow \cos x = \sqrt{1 - \sin^2 x} = -\dfrac{4}{5} \\
-		\cos y = -\dfrac{12}{13} \text{ when } y \in \left( \frac{\pi}{2}, \pi\right)
-		\Rightarrow \sin y = \sqrt{1-\cos^2 y} = \dfrac{5}{13} \\
-		\text{And so, }\sin (x+y) = \eSinOfSum{x}{y} \nonumber \\
-			= \dfrac{3}{5}\cdot\dfrac{-12}{13} + \dfrac{-4}{5}\cdot\dfrac{5}{13} = \dfrac{-56}{65} \\
-	    \text{and } \sin 2x = 2\sin x\cos x = 2\cdot\dfrac{3}{5}\cdot\dfrac{-4}{5} = -\dfrac{24}{25}
-	\end{align}
+  \textbf{Insight \#1: $\cos x < 0$ as $x\in\left(\frac\pi{2},\pi\right)$ }
+  
+  \[ \cos x = \sqrt{1-\sin^2 x} = -\sqrt{1-\left(\dfrac\va\vc\right)^2} = -\dfrac\vb\vc \]
+  \textbf{Insight \#2: $\sin y > 0$ as $y\in\left(\frac\pi{2},\pi\right)$ }
+
+  \[ \sin y = \sqrt{1-\cos^2 y} = \sqrt{1-\left(\dfrac\ve\vf\right)^2} = \dfrac\vd\vf \]
+  And therefore, 
+  \begin{align}
+    \sin(x+y) &= \sin x\cos y + \cos x\sin y \nonumber \\ 
+    &= \dfrac\va\vc\cdot\dfrac{-\ve}\vf + \dfrac{-\vb}\vc\cdot\dfrac\vd\vf = \WRITEFRAC[false]\vm\vn \\
+    \text{and }\sin 2x &= 2\sin x\cos x \nonumber\\
+    &= 2\cdot\dfrac\va\vc\cdot\dfrac{-\vb}\vc =\WRITEFRAC[false]\vx\vy
+  \end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\sin (x+y) = \WRITEFRAC[false]\vm\vn\qquad\sin 2x=\WRITEFRAC[false]\vx\vy$
+  \end{codex}
+\fi
