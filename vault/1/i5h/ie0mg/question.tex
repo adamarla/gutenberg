@@ -1,31 +1,77 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{21}
+  \renewcommand{\vb}{189}
+  \renewcommand\vx{2}
+  \renewcommand\vy{1}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{39}
+    \renewcommand{\vb}{741}
+    \renewcommand\vx{2}
+    \renewcommand\vy{5}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{19}
+      \renewcommand{\vb}{133}
+      \renewcommand\vx{2}
+      \renewcommand\vy{3}
+    }{
+      % variables 
+      \renewcommand{\va}{38}
+      \renewcommand{\vb}{532}
+      \renewcommand\vx{2}
+      \renewcommand\vy{3}
+    }
+  }
+}
 
+\SQUARE\va\vc
+\EXPR[0]\vd{(\vc-\vb)/2}
+\DIVIDE\vd\va\ve
 
-\question[4] The sum of three numbers in geometric progression in $21$ and the sum of their
-squares is $189$. Find the numbers
+\FRACTIONSIMPLIFY\va\ve\vp\vq
+\SUBTRACT\vp\vq\vm
 
+\FRACMULT\ve{1}\vx\vy\vi\vj
+\FRACDIV\ve{1}\vx\vy\vk\vl
 
-\ifprintanswers
-	\marginnote[5.5cm]{ $(a^2+b^2+c^2) = (a+b+c)^2 - 2\cdot(ab+bc+ca)$ }
-\fi
+\question[4] The sum of three numbers in geometric progression in $\va$ and the sum of their
+squares is $\vb$. Find the numbers.
+
+\watchout
 
 \begin{solution}[\fullpage]
 	Let the three numbers be $a$, $\frac{a}{r}$ and $ar$. And so, given that
 	
 	\begin{align}
-		a\cdot\left( 1 + r + \frac{1}{r} \right) &= 21 \\
-		a^2\cdot\left( 1 + r^2 + \frac{1}{r^2} \right) &= 189
+		a\cdot\left( 1 + r + \frac{1}{r} \right) &= \va \\
+		a^2\cdot\left( 1 + r^2 + \frac{1}{r^2} \right) &= \vb
 	\end{align}
 	, we can infer 
 	\begin{align}
-		&a^2\cdot\left[ \left( 1 + r + \frac{1}{r} \right)^2 - 
-		2\cdot\left( r\cdot1 + 1\cdot\frac{1}{r} + r\cdot\frac{1}{r} \right)\right] = 189 \\
-		&\Rightarrow (21)^2 - 2a^2\cdot\left( 1 + r + \frac{1}{r} \right) = 189 \\
-		&\Rightarrow a^2\cdot\left( 1 + r + \frac{1}{r} \right) = \dfrac{441-189}{2} = 126 \\
-		&\Rightarrow \dfrac{a^2\cdot\left( 1 + r + \frac{1}{r} \right)}
-		{a\cdot\left( 1 + r + \frac{1}{r} \right)} = a = \dfrac{126}{21} = 6 \\
-		&\Rightarrow \left( 1 + r + \frac{1}{r} \right) = \dfrac{21}{6} \\
-		&\text{ or, } 2r^2 - 5r + 2 = 0 \Rightarrow r = 2, \frac{1}{2}
+		&a^2\cdot\overbrace{\left[ \left( 1 + r + \frac{1}{r} \right)^2 - 
+		2\cdot\left( r\cdot1 + 1\cdot\frac{1}{r} + r\cdot\frac{1}{r} \right)\right]}
+    ^{a^2+b^2+c^2 = (a+b+c)^2-2\cdot(ab+bc+ca)}= \vb \\
+		&\implies (\va)^2 - 2a^2\cdot\left( 1 + r + \frac{1}{r} \right) = \vb \\
+		&\implies a^2\cdot\left( 1 + r + \frac{1}{r} \right) = \dfrac{\vc-\vb}{2} = \vd \\
+		&\implies \dfrac{a^2\cdot\left( 1 + r + \frac{1}{r} \right)}
+		{a\cdot\left( 1 + r + \frac{1}{r} \right)} = a = \dfrac{\vd}{\va} = \ve \\
+		&\implies \left( 1 + r + \frac{1}{r} \right) = \dfrac\va\ve = \WRITEFRAC[false]\vp\vq \\
+		&\text{ or, } \vq r^2 - \vm r + \vq = 0 \implies r =
+    \WRITEFRAC[false]\vx\vy,\, 
+    \WRITEFRAC[false]\vy\vx 
 	\end{align}
-	Hence, the three numbers are either $(12,6,3)$ if $r=\frac{1}{2}$ or $(3,6,12)$ if $r=2$
+
+  With either value of $r$, the numbers we get are 
+  \[ \vi,\,\ve\text{ and } \vk \]
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\vi,\,\ve\text{ and }\vk$
+  \end{codex}
+\fi
