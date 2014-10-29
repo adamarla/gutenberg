@@ -4,14 +4,14 @@
   \renewcommand\va{8}
   \renewcommand\vb{5}
   \renewcommand\vc{12}
-  \renewcommand\vd{9}
+  \renewcommand\vd{9} % N = 4
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
     \renewcommand\va{7}
     \renewcommand\vb{2}
-    \renewcommand\vc{11}
-    \renewcommand\vd{6}
+    \renewcommand\vc{14}
+    \renewcommand\vd{9}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
@@ -23,8 +23,8 @@
       % variables 
       \renewcommand\va{15}
       \renewcommand\vb{6}
-      \renewcommand\vc{21}
-      \renewcommand\vd{12}
+      \renewcommand\vc{20}
+      \renewcommand\vd{11} % N= 5
     }
   }
 }
@@ -39,14 +39,15 @@
   \[\dfrac{\cos{\va A}\cos{\vb A}-\cos{\vc A}\cos{\vd A}}{\sin{\va A}\cos{\vb A}+\cos{\vc A}\sin{\vd A}} = \tan{\textbf{N}A}\]
 \watchout
 \begin{solution}[\halfpage]
-	Given that,
+  \textbf{Insights \#1 and \#2}
 	\begin{align}
 		\fProdOfCos{x}{y} \\
 		\fProdSinCos{x}{y}
-     \end{align}
-     , one can \textit{re-write} the above expression as 
-   \[\dfrac{\frac{1}{2}\cdot\left[\eProdOfCos{\va A}{\vb A}\right]-\frac{1}{2}\cdot\left[\eProdOfCos{\vc A}{\vd A}\right]}
-     	{\frac{1}{2}\cdot\left[\eProdSinCos{\va A}{\vb A}\right] + \frac{1}{2}\cdot\left[\eProdSinCos{\vd A}{\vc A}\right]}\]
+   \end{align}
+
+    Therefore, the original expression can be re-written as
+    \[ \dfrac{2}{2}\left[\dfrac{\eProdOfCos{\va A}{\vb A} - \lbrace\eProdOfCos{\vc A}{\vd A}\rbrace}
+    {\eProdSinCos{\va A}{\vb A} + \lbrace\eProdSinCos{\vd A}{\vc A}\rbrace} \right] \]
 
      \begin{align}
      	&= \dfrac{\cos \ve A - \cos \vf A}{\sin \ve A + \sin \vf A} \\
@@ -55,3 +56,4 @@
      \end{align}
      Hence, $N = \vi$.
 \end{solution}
+\ifprintanswers\begin{codex}$\vi$\end{codex}\fi

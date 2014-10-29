@@ -1,7 +1,7 @@
 
 
-\question[3] Prove that $\tan\left(\dfrac{\pi}{4} + \theta\right) + 
-\tan\left(\dfrac{\pi}{4} - \theta\right) = 2\sec 2\theta$
+\question[3] For what value of $N$ would the following hold? 
+\[ \tan\left(\dfrac{\pi}{4} + \theta\right) + \tan\left(\dfrac{\pi}{4} - \theta\right) = 2\sec N\theta \]
 
 
 \ifprintanswers
@@ -9,10 +9,12 @@
 
 \begin{solution}[\halfpage]
 	\begin{align}
-		\tan\left(\dfrac{\pi}{4} + \theta\right) &+ \tan\left(\dfrac{\pi}{4} - \theta\right) = 
-		\eTanOfSum{\frac{\pi}{4}}{\theta} + \eTanOfDiff{\frac{\pi}{4}}{\theta} \\
-		&= \dfrac{(1+\tan\theta)^2 + (1-\tan\theta)^2}{1-\tan^2\theta} \\
+    \tan\left(\dfrac\pi{4}+\theta\right) &= \eTanOfSum{\frac\pi{4}}{\theta} \\
+    \tan\left(\dfrac\pi{4}-\theta\right) &= \eTanOfDiff{\frac\pi{4}}{\theta} \\
+		\therefore S &= \tan\left( \dfrac\pi{4}+\theta\right) + \tan\left( \dfrac\pi{4}+\theta\right) \\
+    &= \dfrac{(1+\tan\theta)^2 + (1-\tan\theta)^2}{1-\tan^2\theta} \\
 		&= \dfrac{2\cdot(1 + \tan^2\theta)}{1-\tan^2\theta} = \dfrac{2\sec^2\theta}{1-\tan^2\theta} \\
     &= \dfrac{2}{\underbrace{\cos^2\theta - \sin^2\theta}_{ = \cos 2\theta}} = 2\sec 2\theta
 	\end{align}
 \end{solution}
+\ifprintanswers\begin{codex}$2$\end{codex}\fi
