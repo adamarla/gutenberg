@@ -3,75 +3,77 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{2}
-  \renewcommand{\vbtwo}{3}
-  \renewcommand{\vbthree}{9}
-  \renewcommand{\vbfive}{6} % reqd. n. Greatest = n + 1
-  \renewcommand{\vbsix}{\dfrac{7\cdot 3^{13}}{2}} % reduced expression
+  \renewcommand{\va}{2}
+  \renewcommand{\vb}{3}
+  \renewcommand{\vc}{9}
+  \renewcommand{\ve}{6} % reqd. n. Greatest = n + 1
+  \renewcommand{\vf}{\dfrac{7\cdot 3^{13}}{2}} % reduced expression
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{4}
-    \renewcommand{\vbtwo}{5}
-    \renewcommand{\vbthree}{7}
-    \renewcommand{\vbfive}{4}
-    \renewcommand{\vbsix}{\dfrac{7\cdot 5^9}{4}} % reduced expression
+    \renewcommand{\va}{4}
+    \renewcommand{\vb}{5}
+    \renewcommand{\vc}{7}
+    \renewcommand{\ve}{4}
+    \renewcommand{\vf}{\dfrac{7\cdot 5^9}{4}} % reduced expression
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{2}
-      \renewcommand{\vbtwo}{5}
-      \renewcommand{\vbthree}{8}
-      \renewcommand{\vbfive}{7}
-      \renewcommand{\vbsix}{\dfrac{5^{14}}{8}} % reduced expression
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{5}
+      \renewcommand{\vc}{8}
+      \renewcommand{\ve}{7}
+      \renewcommand{\vf}{\dfrac{5^{14}}{8}} % reduced expression
     }{
       % variables 
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{7}
-      \renewcommand{\vbfive}{2}
-      \renewcommand{\vbsix}{7\cdot 4^3 \cdot 3^5}
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{7}
+      \renewcommand{\ve}{2}
+      \renewcommand{\vf}{7\cdot 4^3 \cdot 3^5}
     }
   }
 }
 
-\renewcommand{\vbfour}{\dfrac{\vbtwo}{\vbone}}
-\gcalcexpr[0]\tp{\vbthree + 1}
-\gcalcexpr[0]\tq{(\vbtwo * \vbtwo)}
-\gcalcexpr[0]\tr{(\vbone * \vbone)}
-\gcalcexpr[0]\ts{\tq + \tr}
-\gcalcexpr[0]\tt{\tp * \tq}
-\gcalcexpr[0]\tg{\vbfive + 1} % greatest term
-\gcalcexpr[0]\tu{\tg - 1} % = \vbfive
+\renewcommand{\vd}{\dfrac{\vb}{\va}}
 
-\question[5] Find the largest term (numerically) in the expansion of $(\vbone + \vbtwo x)^{\vbthree}$ if 
-$x = \frac{\vbtwo}{\vbone}$
+\ADD\vc{1}\tp
+\SQUARE\vb\tq
+\SQUARE\va\tr
+\ADD\tq\tr\ts
+\MULTIPLY\tp\tq\vz
+\ADD\ve{1}\tg
 
+\question[5] What would be the largest term numerically in the expansion of $(\va + \vb x)^{\vc}$ if 
+$x = \frac{\vb}{\va}$
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\fullpage]
-	If $T_n$ be the $n^{\text{th}}$ term and $T_{n+1}$ be the $(n+1)^{\text{th}}$ term - $n \in\aleph$ - then
-	the terms keep on increasing as along as $\dfrac{T_{n+1}}{T_n} \geq 1$
+  \textbf{Insight \#1}
+
+	If $T_n$ be the $n^{\text{th}}$ term and $T_{n+1}$ be the $(n+1)^{\text{th}}$ term, then
+	the terms \textbf{keep increasing as along as} $\dfrac{T_{n+1}}{T_n} \geq 1$
 	
-	And if we re-write $(\vbone + \vbtwo x)^\vbthree$ as $\vbone^\vbthree\cdot\left(\vbfour x + 1\right)^\vbthree$, then
+	And hence, if we re-write $(\va + \vb x)^\vc$ as $\va^\vc\cdot\left(\vd x + 1\right)^\vc$, then
 	\begin{align}
 		\dfrac{T_{n+1}}{T_n} &= \dfrac
-		{\vbone^\vbthree\cdot\encr\vbthree{n}\cdot\left( \vbfour\cdot x\right)^{n}}
-		{\vbone^\vbthree\cdot\encr\vbthree{n-1}\cdot\left( \vbfour\cdot x\right)^{n-1}} \\
-		&= \dfrac{\fncr\vbthree{n}}{\fncr\vbthree{(n-1)}}\cdot\left( \vbfour x \right) \\
-		&= \dfrac{\tp - n}{n}\cdot\left( \vbfour x \right)
+		{\va^\vc\cdot\encr\vc{n}\cdot\left( \vd\cdot x\right)^{n}}
+		{\va^\vc\cdot\encr\vc{n-1}\cdot\left( \vd\cdot x\right)^{n-1}} \\
+		&= \dfrac{\fncr\vc{n}}{\fncr\vc{(n-1)}}\cdot\left( \vd x \right) \\
+		&= \dfrac{\tp - n}{n}\cdot\left( \vd x \right)
 	\end{align}	 
-	When $x = \vbfour$, then 
+	When $x = \vd$, then 
 	\begin{align}
 		\dfrac{T_{n+1}}{T_n} &= \dfrac{\tp -n}{n}\cdot\dfrac{\tq}{\tr} \\
-		\text{And therefore, if } \dfrac{T_{n+1}}{T_n} \geq 1 &\Rightarrow n \leq \dfrac{\tt}{\ts}
+		\text{And }\therefore \dfrac{T_{n+1}}{T_n} \geq 1 &\implies
+		\dfrac{\tp -n}{n}\cdot\dfrac{\tq}{\tr} \geq 1 \implies
+    n \leq \WRITEFRAC\vz\ts 
 	\end{align}
-	But as $n \in \aleph,\, n = \vbfive$ is the only sensible answer and $T_{\tg}$ the greatest term. Moreover, 
-	$T_{\tg} = \vbone^{\vbthree}\cdot\encr\vbthree\tu\cdot\left( \vbfour\cdot\dfrac{\vbtwo}{\vbone} \right)^{\tu}
-  = \vbsix$
+  What the last equation says is that $T_{n+1}\geq T_n,\forall\, n\leq\ve, n\in\mathbb{N}\implies T_{\tg}$ 
+  is the greatest term. And 
+	\[ T_{\tg} = \va^{\vc}\cdot\encr\vc\ve\cdot\left( \vd\cdot\dfrac{\vb}{\va} \right)^{\ve}
+  = \vf \]
 \end{solution}
 
+\ifprintanswers\begin{codex}$\vf$\end{codex}\fi

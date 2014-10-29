@@ -2,34 +2,34 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{19}
-  \renewcommand{\vbtwo}{26}
+  \renewcommand{\va}{19}
+  \renewcommand{\vb}{26}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{31}
-    \renewcommand{\vbtwo}{42}
+    \renewcommand{\va}{31}
+    \renewcommand{\vb}{42}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{7}
-      \renewcommand{\vbtwo}{10}
+      \renewcommand{\va}{7}
+      \renewcommand{\vb}{10}
     }{
       % variables 
-      \renewcommand{\vbone}{13}
-      \renewcommand{\vbtwo}{18}
+      \renewcommand{\va}{13}
+      \renewcommand{\vb}{18}
     }
   }
 }
 
-\DIVIDE\vbtwo{2}\k
+\DIVIDE\vb{2}\k
 \MULTIPLY\k{3}\m
-\MULTIPLY\vbone{2}\n
-\EXPR[0]\j{(\vbone - \k)/(\m-\n)}
+\MULTIPLY\va{2}\n
+\EXPR[0]\j{(\va - \k)/(\m-\n)}
 
 \question[2] A bag contains $2n+1$ coins. It is known that $n$ of these coins have a head on 
 both sides whereas the rest of the coins are fair. A coin is picked up at random 
-from the bag and tossed. If the probability that the toss results in a head is $\frac\vbone\vbtwo$, 
+from the bag and tossed. If the probability that the toss results in a head is $\frac\va\vb$, 
 then determine the value of $n$
 
 
@@ -44,8 +44,9 @@ then determine the value of $n$
   \begin{align}
     P(H) &= \underbrace{\dfrac{n}{2n+1}\times 1}_{\text{heads from an unfair coin}} 
             + \underbrace{\dfrac{n+1}{2n+1}\times\dfrac{1}{2}}_{\text{heads from a fair coin}}
-            = \dfrac\vbone\vbtwo \\
-          &\Rightarrow \m n + \k = \n n + \vbone \text{ or } n = \j
+            = \dfrac\va\vb \\
+          &\implies \m n + \k = \n n + \va \text{ or } n = \j
   \end{align} 
 \end{solution}
 
+\ifprintanswers\begin{codex}$\j$\end{codex}\fi

@@ -3,57 +3,53 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{1} % p
-  \renewcommand{\vbtwo}{3} % q 
-  \renewcommand{\vbthree}{5} % r 
+  \renewcommand{\va}{1} % p
+  \renewcommand{\vb}{3} % q 
+  \renewcommand{\vc}{5} % r 
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{6}
-    \renewcommand{\vbtwo}{14}
-    \renewcommand{\vbthree}{21}
+    \renewcommand{\va}{6}
+    \renewcommand{\vb}{14}
+    \renewcommand{\vc}{21}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{20}
-      \renewcommand{\vbtwo}{35}
-      \renewcommand{\vbthree}{42}
+      \renewcommand{\va}{20}
+      \renewcommand{\vb}{35}
+      \renewcommand{\vc}{42}
     }{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{10}
-      \renewcommand{\vbthree}{14}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{10}
+      \renewcommand{\vc}{14}
     }
   }
 }
 
-\gcalcexpr[0]\tp{\vbone + \vbtwo}
-\gcalcexpr[0]\tq{\vbtwo + \vbthree}
-\gcalcexpr[2]\tr{\tq / \tp}
-\gcalcexpr[0]\ts{(\tr * \vbone + \vbthree) / (\vbtwo - \tr * \vbone)}
+\ADD\va\vb\tp
+\ADD\vb\vc\tq
+\EXPR[2]\tr{\tq / \tp}
+\EXPR[0]\ts{(\tr * \va + \vc) / (\vb - \tr * \va)}
 
-\question[4] If some \textit{consecutive} coefficients in the expansion of $(1+x)^n$ are in the 
-ratio $\vbone:\vbtwo:\vbthree$, then find $n$
-
+\question[4] If some \textbf{consecutive} coefficients in the expansion of $(1+x)^n$ are in the 
+ratio $\va:\vb:\vc$, then find $n$.
 
 \watchout
-
-\ifprintanswers
-\fi 
 
 \begin{solution}[\halfpage]
 	Let the $(m-1)^{\text{th}}$, $m^{\text{th}}$ and $(m+1)^{\text{th}}$ terms be in the given ratio
 	\begin{align}
-		\dfrac{\encr{n}{m-1}}{\encr{n}{m}} &= \dfrac{\vbone}{\vbtwo} \\
-		\Rightarrow \dfrac{\fncr{n}{m-1}}{\fncr{n}{m}} &= \dfrac{\vbone}{\vbtwo} \\
-		\Rightarrow \dfrac{m}{n-m+1} &= \dfrac{\vbone}{\vbtwo} \Rightarrow \tp\cdot m = \vbone\cdot(n+1)
+		\dfrac{\encr{n}{m-1}}{\encr{n}{m}} &= \dfrac{\va}{\vb} \\
+		\implies \dfrac{\fncr{n}{m-1}}{\fncr{n}{m}} &= \dfrac{\va}{\vb} \\
+		\implies \dfrac{m}{n-m+1} &= \dfrac{\va}{\vb} \implies \tp\cdot m = \va\cdot(n+1)
 	\end{align}
 	Similarly,
 	\begin{align}
-		\dfrac{\encr{n}{m}}{\encr{n}{m+1}} &= \dfrac{\vbtwo}{\vbthree} \Rightarrow \dfrac{m+1}{n-m} = \dfrac{\vbtwo}{\vbthree} \\
-		\Rightarrow \tq\cdot m &= \vbtwo\cdot n - \vbthree \\
-		\text{And therefore, } \dfrac{\tq\cdot m}{\tp\cdot m} &= \dfrac{\vbtwo\cdot n - \vbthree}{\vbone\cdot(n+1)} \\
-		\Rightarrow n &= \ts
+		\dfrac{\encr{n}{m}}{\encr{n}{m+1}} &= \dfrac{\vb}{\vc} \implies \dfrac{m+1}{n-m} = \dfrac{\vb}{\vc} \\
+		\implies \tq\cdot m &= \vb\cdot n - \vc \\
+		\text{And therefore, } \dfrac{\tq\cdot m}{\tp\cdot m} &= \dfrac{\vb\cdot n - \vc}{\va\cdot(n+1)}\implies n = \ts
 	\end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}$\ts$\end{codex}\fi

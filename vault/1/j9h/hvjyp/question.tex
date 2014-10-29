@@ -2,86 +2,86 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{ARLINGTON}
-  \renewcommand{\vbtwo}{TORONTO}
-  \renewcommand{\vbthree}{9}
-  \renewcommand{\vbfour}{7}
-  \renewcommand{\vbfive}{ON} % common
-  \renewcommand{\vbsix}{1}
-  \renewcommand{\vbseven}{1}
+  \renewcommand{\va}{ARLINGTON}
+  \renewcommand{\vb}{TORONTO}
+  \renewcommand{\vc}{9}
+  \renewcommand{\vd}{7}
+  \renewcommand{\ve}{ON} % common
+  \renewcommand{\vf}{1}
+  \renewcommand{\vg}{1}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{ISTANBUL}
-    \renewcommand{\vbtwo}{MILAN}
-    \renewcommand{\vbthree}{8}
-    \renewcommand{\vbfour}{5}
-    \renewcommand{\vbfive}{AN}
-    \renewcommand{\vbsix}{1}
-    \renewcommand{\vbseven}{1}
+    \renewcommand{\va}{ISTANBUL}
+    \renewcommand{\vb}{MILAN}
+    \renewcommand{\vc}{8}
+    \renewcommand{\vd}{5}
+    \renewcommand{\ve}{AN}
+    \renewcommand{\vf}{1}
+    \renewcommand{\vg}{1}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{CASABLANCA}
-      \renewcommand{\vbtwo}{CARACAS}
-      \renewcommand{\vbthree}{10}
-      \renewcommand{\vbfour}{7}
-      \renewcommand{\vbfive}{CA}
-      \renewcommand{\vbsix}{2}
-      \renewcommand{\vbseven}{2}
+      \renewcommand{\va}{CASABLANCA}
+      \renewcommand{\vb}{CARACAS}
+      \renewcommand{\vc}{10}
+      \renewcommand{\vd}{7}
+      \renewcommand{\ve}{CA}
+      \renewcommand{\vf}{2}
+      \renewcommand{\vg}{2}
     }{
       % variables 
-      \renewcommand{\vbone}{MUMBAI}
-      \renewcommand{\vbtwo}{SHANGHAI}
-      \renewcommand{\vbthree}{6}
-      \renewcommand{\vbfour}{8}
-      \renewcommand{\vbfive}{AI}
-      \renewcommand{\vbsix}{1}
-      \renewcommand{\vbseven}{1}
+      \renewcommand{\va}{MUMBAI}
+      \renewcommand{\vb}{SHANGHAI}
+      \renewcommand{\vc}{6}
+      \renewcommand{\vd}{8}
+      \renewcommand{\ve}{AI}
+      \renewcommand{\vf}{1}
+      \renewcommand{\vg}{1}
     }
   }
 }
 
-\SUBTRACT\vbthree{1}\p
-\SUBTRACT\vbfour{1}\q
-\FRACADD\vbsix\p\vbseven\q\m\n
-\FRACDIV\vbsix\p\m\n\r\s
+\SUBTRACT\vc{1}\p
+\SUBTRACT\vd{1}\q
+\FRACADD\vf\p\vg\q\m\n
+\FRACDIV\vf\p\m\n\r\s
 
-\question[4] A letter is known to have come either from $\vbone$ or from $\vbtwo$. 
-But on the envelope, only two consecutive letters - $\vbfive$ - are visible. 
-What is the probability that the letter came from $\vbone$? 
-
+\question[4] A letter is known to have come either from $\va$ or from $\vb$. 
+But on the envelope, only two consecutive letters - $\ve$ - are visible. 
+What is the probability that the letter came from $\va$? 
 
 \watchout[-40pt]
 
-\ifprintanswers
-  \marginnote[10cm]{ Surprised? Intuitively, one might think that the answer 
-  is $\frac{1}{2}$. But intuition is an unreliable guide when calculating 
-  probabilities. Place your trust only in Maths}
-\fi 
-
 \begin{solution}[\halfpage]
-Let $C_1$ be the event that the letter comes from $\vbone$ and $C_2$ 
-the event that it comes from $\vbtwo$. Also, let $V$ be the event that 
-the \textit{visible} pair of characters is $\vbfive$
+Let $E_1$ be the event that the letter came from $\va$ and $E_2$ 
+the event that it came from $\vb$. 
 
-Now, here is the catch. You have to count the \textbf{number of pairs} of characters 
-that result if one goes from left-to-right along a city name. And here is the second catch. 
-If the city's name is $N$ characters long, then there are $N-1$ such pairs - the last such 
-pair being made up of the second last \& last characters
+Also, let $V$ be the event that 
+the \textit{visible} pair of characters is $\ve$
+
+\textbf{Insight \#1: Number of adjacent character pairs}
+
+If a word is $N$ characters long $(C_1C_2C_3\ldots C_N)$, then going from left-to-right, 
+one could make the following pairs of adjacent characters 
+\[ C_1C_2,\,C_2C_3,\,C_3C_4\ldots C_{N-1}C_N \] 
+It is one of these pairs that is now visible. 
+
+How many such pairs are there in an $N-$letter word? Convince yourself that it is $N-1$ pairs.
 
 Hence, we can very quickly write 
 \begin{align}
-  P(V\vert\,C_1) &= \WRITEFRAC\vbsix\p \\ 
-  P(V\vert\,C_2) &= \WRITEFRAC\vbseven\q \\ 
-  P(C_1) = P(C_2) &= \dfrac{1}{2}
+  P(V\vert\,E_1) &= \WRITEFRAC\vf\p \\ 
+  P(V\vert\,E_2) &= \WRITEFRAC\vg\q \\ 
+  P(E_1) = P(E_2) &= \dfrac{1}{2}
 \end{align}
-  The required probability, $P(C_1\vert\,V)$ is therefore
+  The required probability, $P(E_1\vert\,V)$ is therefore
   \begin{align}
-    P(C_1\vert\,V) &= \dfrac{P(V\vert\,C_1)\cdot P(C_1)}{P(V\vert\,C_1)\cdot P(C_1) + P(V\vert\,C_2)\cdot P(C_2)} \\
-    &= \dfrac{\WRITEFRAC\vbsix\p\times\frac{1}{2}}
-        {\frac{1}{2}\cdot\left( \WRITEFRAC\vbsix\p + \WRITEFRAC\vbseven\q \right)} = \WRITEFRAC\r\s
+    P(E_1\vert\,V) &= \dfrac{P(V\vert\,E_1)\cdot P(E_1)}{P(V\vert\,E_1)\cdot P(E_1) + P(V\vert\,E_2)\cdot P(E_2)} \\
+    &= \dfrac{\WRITEFRAC\vf\p\times\frac{1}{2}}
+        {\frac{1}{2}\cdot\left( \WRITEFRAC\vf\p + \WRITEFRAC\vg\q \right)} = \WRITEFRAC\r\s
   \end{align}
   
 \end{solution}
 
+\ifprintanswers\begin{codex}$\WRITEFRAC\r\s$\end{codex}\fi
