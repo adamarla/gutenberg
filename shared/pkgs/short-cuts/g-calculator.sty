@@ -49,20 +49,18 @@
 } 
 
 \newcommand\WRITEFRAC\gWriteFrac % alias
-\newcommand{\gWriteFrac}[2]{ % #1 = num, #2 = denom
-  \FRACTIONSIMPLIFY{#1}{#2}\tmp\tmq
+\newcommand{\gWriteFrac}[3][true]{ % #1 = num, #2 = denom
+  \FRACTIONSIMPLIFY{#2}{#3}\tmp\tmq
   % After simplification, any negative sign is on the numerator only => \tmq > 0
-  \ifthenelse{\tmq = 1}{
-    \tmp
-  }{
+  \ifnumcomp\tmq{=}{1}{\tmp}{
     \INTEGERQUOTIENT\tmp\tmq\quo
-    \ifthenelse{\quo = 0}{
-      \dfrac\tmp\tmq
-    }{
-      \MODULO\tmp\tmq\remd
-      \ifthenelse{\remd = 0}{\quo}{\quo\frac\remd\tmq}
+    \ifnumcomp\quo{=}{0}{\dfrac\tmp\tmq}{
+      \ifstrequal{#1}{true}{
+        \MODULO\tmp\tmq\remd
+        \ifnumcomp\remd{=}{0}{\quo}{\quo\frac\remd\tmq}
+      }{\dfrac\tmp\tmq}
     }
-  }
+  } 
 }
 
 \newcommand\FRACADD\gFracAdd
