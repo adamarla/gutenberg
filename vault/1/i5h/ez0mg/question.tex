@@ -1,24 +1,22 @@
 
 
-\question[3] The ratio of sums of the first $m$ and $n$ terms of an A.P. is $\dfrac{m^2}{n^2}$.
-Prove that the ratio of the $m^{th}$ and $n^{th}$ terms is $\dfrac{2m-1}{2n-1}$
-
-
-\ifprintanswers
-\fi 
+\question[3] If the ratio of sums of the first $m$ and $n$ terms of an 
+arithmetic progression is $\dfrac{m^2}{n^2}$, then what is the ratio 
+of the $m^{th}$ and $n^{th}$ terms $(m\neq n)$?
 
 \begin{solution}[\halfpage]
 	\begin{align}
 		\dfrac{S_m}{S_n} &= \dfrac{\eSumOfAP{m}}{\eSumOfAP{n}} = \dfrac{m^2}{n^2} \\
-		\Rightarrow mn^2\cdot(2a + (m-1)d) &= m^2n\cdot(2a + (n-1)d) \\
+		\implies mn^2\cdot(2a + (m-1)d) &= m^2n\cdot(2a + (n-1)d) \\
 		2amn^2 + m^2n^2d - mn^2d &= 2am^2n + m^2n^2d - m^2nd \\
-		\Rightarrow 2amn\cdot(n-m) &= mnd\cdot(n-m) \\
-		\Rightarrow 2a &= d 
+		\implies 2amn\cdot(n-m) &= mnd\cdot(n-m) \\
+		\implies 2a &= d 
 	\end{align}
 	Now, if $T_m$ and $T_n$ be the $m^{th}$ and $n^{th}$ terms respectively, then 
 	\begin{align}
-		\dfrac{T_m}{T_n} &= \dfrac{\eTermOfAP{m}}{\eTermOfAP{n}} \\
-		&= \dfrac{a\cdot(1 + (m-1)\cdot 2)}{a\cdot(1 + (n-1)\cdot 2)} \\
-		&= \dfrac{2m-1}{2n-1}
+		\dfrac{T_m}{T_n} &= \dfrac{\eTermOfAP{m}}{\eTermOfAP{n}} = \dfrac{a + (m-1)\cdot 2a}{a + (n-1)\cdot 2a}\\
+		&= \dfrac{a\cdot\left[1 + (m-1)\cdot 2\right]}{a\cdot\left[1 + (n-1)\cdot 2\right]} 
+		= \dfrac{2m-1}{2n-1}
 	\end{align}
 \end{solution}
+\ifprintanswers\begin{codex}$\dfrac{2m-1}{2n-1}$\end{codex}\fi
