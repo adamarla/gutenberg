@@ -2,62 +2,71 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{11}
-  \renewcommand{\vbtwo}{5}
-  \renewcommand{\vbthree}{(5,6),(6,5)}
-  \renewcommand{\vbfour}{2} % total ways to add upto \vbone
-  \renewcommand{\vbfive}{1} % ways that also satisy B
+  \renewcommand{\va}{11}
+  \renewcommand{\vb}{5}
+  \renewcommand{\vc}{(5,6),(6,5)}
+  \renewcommand{\vd}{2} % total ways to add upto \va
+  \renewcommand{\ve}{1} % ways that also satisy B
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{10}
-    \renewcommand{\vbtwo}{4}
-    \renewcommand{\vbthree}{(4,6),(5,5),(6,4)}
-    \renewcommand{\vbfour}{3}
-    \renewcommand{\vbfive}{2}
+    \renewcommand{\va}{10}
+    \renewcommand{\vb}{4}
+    \renewcommand{\vc}{(4,6),(5,5),(6,4)}
+    \renewcommand{\vd}{3}
+    \renewcommand{\ve}{2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{9}
-      \renewcommand{\vbtwo}{6}
-      \renewcommand{\vbthree}{(3,6),(4,5),(5,4),(6,3)}
-      \renewcommand{\vbfour}{4}
-      \renewcommand{\vbfive}{3}
+      \renewcommand{\va}{9}
+      \renewcommand{\vb}{6}
+      \renewcommand{\vc}{(3,6),(4,5),(5,4),(6,3)}
+      \renewcommand{\vd}{4}
+      \renewcommand{\ve}{3}
     }{
       % variables 
-      \renewcommand{\vbone}{8}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{(2,6),(3,5),(4,4),(5,3),(6,2)}
-      \renewcommand{\vbfour}{5}
-      \renewcommand{\vbfive}{4}
+      \renewcommand{\va}{8}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{(2,6),(3,5),(4,4),(5,3),(6,2)}
+      \renewcommand{\vd}{5}
+      \renewcommand{\ve}{4}
     }
   }
 }
 
 \question[4] Two dice are tossed. If $A$ and $B$ be two events such that
-$A = \lbrace(x,y) : x + y = \vbone\rbrace$ and $B = \lbrace x : x\neq\vbtwo\rbrace$, 
+\[ A = \lbrace(x,y) : x + y = \va\rbrace\text{ and } B = \lbrace x : x\neq\vb\rbrace \]
 where $x$ and $y$ are what one gets for the first and second die respectively, 
-then are the two events $A$ and $B$ independent?
-
+then are the two events - $A$ and $B$ - independent?
 
 \watchout
 
-\ifprintanswers
-\fi 
+
+\FRACMULT\vd{36}\ve\vd\vm\vn
+\FRACDIV\vm\vn{5}{6}\vx\vy
 
 \begin{solution}[\halfpage]
+  The two events will be independent if 
+  \[ P(A\vert\, B) = P(A)\text{ or alternatively } P(B\vert\, A) = P(B) \] 
+
+  If we prove (or disprove) \textbf{either} of the above two equalities, then 
+  we would have proven (or disprove) independence. 
+
+  Now,
 	\begin{align}
-  		P(A\vert\,B) &= \dfrac{P(B\vert\,A)\cdot P(A)}{P(B)}
+  	  P(A\vert\,B) &= \dfrac{P(B\vert\,A)\cdot P(A)}{P(B)} \\
+      \text{where } P(A) &= \dfrac\vd{36} = \WRITEFRAC\vd{36}\text{ and } P(B) = \WRITEFRAC\vb{6}
+   \end{align}
+
+  	If we ignore outcomes in $(x,y)\in\lbrace\vc\rbrace$ where $x=\vb$, then the \textbf{event} $B\vert\, A$ 
+    can happen in 
+      \[ \ve\text{ way(s) }\implies P(B\vert\, A) = \dfrac{N(B\vert\, A)}{N(A)} = \WRITEFRAC\ve\vd \] 
+  	And therefore, 
+    \begin{align}
+  		P(A\vert\, B) &= \dfrac{\WRITEFRAC\ve\vd\times\WRITEFRAC\vd{36}}{\dfrac{5}{6}} = \WRITEFRAC\vx\vy
   	\end{align}
-  	Now, $A$ will happen if $(x,y) \in\lbrace\vbthree\rbrace \Rightarrow\vbfour$ ways.
-  	If you ignore outcomes in $(x,y)\in\lbrace\vbthree\rbrace$ where $x=\vbtwo$, then you can see 
-  	that $P(B\vert\,A) = \WRITEFRAC\vbfive\vbfour$
-  	
-  	And so, \begin{align}
-  		P(A\vert\, B) &= \dfrac{\WRITEFRAC\vbfive\vbfour\times\WRITEFRAC\vbfour{36}}{\frac{5}{6}} \\
-  		&= \WRITEFRAC\vbfive{30}
-  	\end{align}
-  	As $P(A\vert\,B) = \WRITEFRAC\vbfive{30}\neq \WRITEFRAC\vbfour{36} = P(A)$, 
-  	events $A$ and $B$ are \textit{not} independent
+  	As $P(A\vert\,B) = \WRITEFRAC\vx\vy\neq \WRITEFRAC\vd{36} = P(A)$, 
+  	events $A$ and $B$ are \textbf{not} independent
 \end{solution}
 
+\ifprintanswers\begin{codex}Not independent\end{codex}\fi

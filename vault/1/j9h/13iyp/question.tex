@@ -3,63 +3,62 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{\dfrac{2}{3}}
-  \renewcommand{\vbtwo}{\dfrac{3}{2}}
-  \renewcommand{\vbthree}{6}
-  \renewcommand{\vbfour}{-2}
-  \renewcommand{\vbfive}{\dfrac{135}{4}}
+  \renewcommand{\va}{\dfrac{2}{3}}
+  \renewcommand{\vb}{\dfrac{3}{2}}
+  \renewcommand{\vc}{6}
+  \renewcommand{\vd}{2}
+  \renewcommand{\ve}{\dfrac{135}{4}}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{\dfrac{4}{7}}
-    \renewcommand{\vbtwo}{\dfrac{7}{4}}
-    \renewcommand{\vbthree}{7}
-    \renewcommand{\vbfour}{-3}
-    \renewcommand{\vbfive}{-\dfrac{7203}{64}}
+    \renewcommand{\va}{\dfrac{4}{7}}
+    \renewcommand{\vb}{\dfrac{7}{4}}
+    \renewcommand{\vc}{7}
+    \renewcommand{\vd}{3}
+    \renewcommand{\ve}{-\dfrac{7203}{64}}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{\dfrac{3}{5}}
-      \renewcommand{\vbtwo}{\dfrac{5}{3}}
-      \renewcommand{\vbthree}{5}
-      \renewcommand{\vbfour}{-1}
-      \renewcommand{\vbfive}{-\dfrac{50}{3}}
+      \renewcommand{\va}{\dfrac{3}{5}}
+      \renewcommand{\vb}{\dfrac{5}{3}}
+      \renewcommand{\vc}{5}
+      \renewcommand{\vd}{1}
+      \renewcommand{\ve}{-\dfrac{50}{3}}
     }{
       % variables 
-      \renewcommand{\vbone}{\dfrac{5}{7}}
-      \renewcommand{\vbtwo}{\dfrac{7}{5}}
-      \renewcommand{\vbthree}{6}
-      \renewcommand{\vbfour}{-2}
-      \renewcommand{\vbfive}{\dfrac{147}{5}}
+      \renewcommand{\va}{\dfrac{5}{7}}
+      \renewcommand{\vb}{\dfrac{7}{5}}
+      \renewcommand{\vc}{6}
+      \renewcommand{\vd}{2}
+      \renewcommand{\ve}{\dfrac{147}{5}}
     }
   }
 }
 
-\gcalcexpr[0]\tp{(\vbthree + \vbfour) / 2}
+\SUBTRACT\vc\vd\vx
+\DIVIDE\vx{2}\vy
 
-\question[3] What is the \textit{coefficient} of $x^{\vbfour}$ in $\left( \vbone x - \vbtwo\cdot\dfrac{1}{x} \right)^{\vbthree}$ ?
+\question[3] What is the coefficient of $\dfrac{1}{x^\vd}$ in 
+  \[ \left( \va x - \vb\cdot\dfrac{1}{x} \right)^{\vc} \] 
 
 
 \watchout
-
-\ifprintanswers
-\fi 
 
 \begin{solution}[\halfpage]
   If the terms in the expansion are $T_0, T_1, T_2 \ldots$, then the $m^{\text{th}}$ term 
   in the expansion is of the form 
 	\begin{align}
-	   T_m &= \encr{\vbthree}{m}\cdot\left( \vbone x \right)^{m}\cdot\left( -\vbtwo\cdot\dfrac{1}{x}\right)^{\vbthree - m} \\
-	   &= \encr{\vbthree}{m}\cdot\left(\vbone\right)^{m}\cdot\left( -\vbtwo \right)^{\vbthree - m}\times\dfrac{x^m}{x^{\vbthree - m}}
+	   T_m &= \encr{\vc}{m}\cdot\left( \va x \right)^{m}\cdot\left( -\vb\cdot\dfrac{1}{x}\right)^{\vc - m} \\
+	   &= \encr{\vc}{m}\cdot\left(\va\right)^{m}\cdot\left( -\vb \right)^{\vc - m}\times\dfrac{x^m}{x^{\vc - m}}
 	\end{align}
-	We will get a $x^{\vbfour}$ term when 
+	We will get a $\dfrac{1}{x^{\vd}}$ term when 
 	\begin{align}
-		\dfrac{x^m}{x^{\vbthree - m}} &= x^{m-\vbthree + m} = x^{\vbfour} \Rightarrow 2m - \vbthree = \vbfour \Rightarrow m = \tp
+		\dfrac{x^m}{x^{\vc - m}} &= x^{m-\vc + m} = \dfrac{1}{x^\vd} \implies 2m - \vc = -\vd \implies m = \vy
 	\end{align}
 	And the \textit{coefficient} then would be 
 	\begin{align}
-		C_{\tp} &= \encr{\vbthree}{\tp}\cdot\left(\vbone\right)^{\tp}\cdot\left( -\vbtwo \right)^{\vbthree - \tp} \\
-		&= \vbfive
+		C_{\vy} &= \encr{\vc}{\vy}\cdot\left(\va\right)^{\vy}\cdot\left( -\vb \right)^{\vc - \vy} = \ve
 	\end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}$\ve$\end{codex}\fi
