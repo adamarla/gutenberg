@@ -1,58 +1,69 @@
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{2}
-  \renewcommand{\vbtwo}{-1}
-  \renewcommand{\vbthree}{+1}
-  \renewcommand{\vbfour}{1}
-  \renewcommand{\vbfive}{-3}
-  \renewcommand{\vbsix}{-5}
-  \renewcommand{\vbseven}{3}
-  \renewcommand{\vbeight}{-4}
-  \renewcommand{\vbnine}{-4}
+  \renewcommand{\va}{2}
+  \renewcommand{\vb}{-1}
+  \renewcommand{\vc}{1}
+  \renewcommand{\vd}{1}
+  \renewcommand{\ve}{-3}
+  \renewcommand{\vf}{-5}
+  \renewcommand{\vg}{3}
+  \renewcommand{\vh}{-4}
+  \renewcommand{\vi}{-4}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{8}
-    \renewcommand{\vbtwo}{+10}
-    \renewcommand{\vbthree}{+12}
-    \renewcommand{\vbfour}{1}
-    \renewcommand{\vbfive}{-3}
-    \renewcommand{\vbsix}{-5}
-    \renewcommand{\vbseven}{3}
-    \renewcommand{\vbeight}{-4}
-    \renewcommand{\vbnine}{-4}
+    \renewcommand{\va}{8}
+    \renewcommand{\vb}{10}
+    \renewcommand{\vc}{-6}
+    \renewcommand{\vd}{1}
+    \renewcommand{\ve}{-3}
+    \renewcommand{\vf}{-5}
+    \renewcommand{\vg}{3}
+    \renewcommand{\vh}{-4}
+    \renewcommand{\vi}{-4}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{2}
-      \renewcommand{\vbtwo}{-1}
-      \renewcommand{\vbthree}{+1}
-      \renewcommand{\vbfour}{11}
-      \renewcommand{\vbfive}{+2}
-      \renewcommand{\vbsix}{+1}
-      \renewcommand{\vbseven}{3}
-      \renewcommand{\vbeight}{-4}
-      \renewcommand{\vbnine}{-4}
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{-1}
+      \renewcommand{\vc}{1}
+      \renewcommand{\vd}{11}
+      \renewcommand{\ve}{2}
+      \renewcommand{\vf}{1}
+      \renewcommand{\vg}{3}
+      \renewcommand{\vh}{-4}
+      \renewcommand{\vi}{-4}
     }{
       % variables 
-      \renewcommand{\vbone}{2}
-      \renewcommand{\vbtwo}{-1}
-      \renewcommand{\vbthree}{+1}
-      \renewcommand{\vbfour}{1}
-      \renewcommand{\vbfive}{-3}
-      \renewcommand{\vbsix}{-5}
-      \renewcommand{\vbseven}{3}
-      \renewcommand{\vbeight}{-4}
-      \renewcommand{\vbnine}{-4}
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{-1}
+      \renewcommand{\vc}{1}
+      \renewcommand{\vd}{1}
+      \renewcommand{\ve}{-3}
+      \renewcommand{\vf}{-5}
+      \renewcommand{\vg}{3}
+      \renewcommand{\vh}{-4}
+      \renewcommand{\vi}{-4}
     }
   }
 }
 
-\question[3] Show that the position vectors $\vbone\hat{i} \vbtwo\hat{j} \vbthree\hat{k}$,
-$\vbfour\hat{i} \vbfive\hat{j} \vbsix\hat{k}$ and 
-$\vbseven\hat{i} \vbeight\hat{j} \vbnine\hat{k}$ form the vertices of a right angled 
-triangle.
+\VECTORSUB(\vd,\ve,\vf)(\va,\vb,\vc)(\a,\b,\c)
+\VECTORSUB(\vg,\vh,\vi)(\vd,\ve,\vf)(\d,\e,\f)
+\VECTORSUB(\va,\vb,\vc)(\vg,\vh,\vi)(\g,\h,\k)
 
+\SCALARPRODUCT(\a,\b,\c)(\d,\e,\f)\vx
+\SCALARPRODUCT(\d,\e,\f)(\g,\h,\k)\vy
+\SCALARPRODUCT(\a,\b,\c)(\g,\h,\k)\vz
+% \VECTORSUB\vd\ve\vf\va\vb\vc\a\b\c
+% \VECTORSUB\vd\ve\vf\va\vb\vc\a\b\c
+
+\question[3] The \textbf{position vectors} of three points in space 
+are given by 
+\[ \vec{A} = \WRITEVECTOR\va\vb\vc,\,\vec{B} = \WRITEVECTOR\vd\ve\vf 
+\text{ and }\vec{C} = \WRITEVECTOR\vg\vh\vi \] 
+What is the \textbf{largest} angle (in degrees) in the triangle formed by joining 
+these three points?
 
 \watchout
 
@@ -72,38 +83,31 @@ triangle.
 \fi 
 
 \begin{solution}[\fullpage]
-Let $A$, $B$ and $C$ be the position vectors. The vectors 
-representing the sides of the triangle are $\vec{AB}$, $\vec{BC}$
-and $\vec{CA}$.
+\textbf{Step \#1: Find the sides of the triangle}
+
+To know the angles between sides of the triangle, we must first know what the 
+sides are. 
 \begin{align}
-  \vec{AB} &= (\vbone - \vbfour)\hat{i} + (\vbtwo - (\vbfive))\hat{j} + (\vbthree - (\vbsix))\hat{k} \\
-  \vec{BC} &= (\vbfour - \vbseven)\hat{i} + (\vbfive - (\vbeight))\hat{j} + (\vbsix - (\vbnine))\hat{k} \\
-  \vec{CA} &= (\vbseven - \vbone)\hat{i} + (\vbeight - (\vbtwo))\hat{j} + (\vbnine - (\vbthree))\hat{k}
-\end{align}
-For the triangle to be right angled, one of the following conditions
-needs to be true,
-\begin{align}
-  \vec{AB} \perp \vec{BC} \\
-  \vec{BC} \perp \vec{CA} \\
-  \vec{CA} \perp \vec{AB}
-\end{align}
-We can find this out by computing the dot product of each of the above two pairs of vectors above and verifying 
-that \textbf{any one} of them is equal to zero. In this case,
-\begin{align}
-\ifnumequal{\value{rolldice}}{0}{
-  \vec{BC}\cdot\vec{CA} = 0
-}{
-  \ifnumequal{\value{rolldice}}{1}{
-    \vec{AB}\cdot\vec{BC} = 0
-  }{
-    \ifnumequal{\value{rolldice}}{2}{
-      \vec{CA}\cdot \vec{AB} = 0
-    }{
-      \vec{AB}\cdot{BC} = 0
-    }
-  }
-}    
+  \vec{AB} &= \vec{B}-\vec{A} = \WRITEVECTOR\a\b\c \\
+  \vec{BC} &= \vec{C}-\vec{B} = \WRITEVECTOR\d\e\f \\
+  \vec{CA} &= \vec{A}-\vec{C} = \WRITEVECTOR\g\h\k 
 \end{align}
 
+\textbf{Step \#2: Calculate the dot-products}
+\begin{align}
+  \vec{AB}\cdot\vec{BC} &= (\WRITEVECTOR\a\b\c)\cdot(\WRITEVECTOR\d\e\f) = \vx \\
+  \vec{BC}\cdot\vec{CA} &= (\WRITEVECTOR\d\e\f)\cdot(\WRITEVECTOR\g\h\k) = \vy \\
+  \vec{CA}\cdot\vec{AB} &= (\WRITEVECTOR\g\h\k)\cdot(\WRITEVECTOR\a\b\c) = \vz 
+\end{align}
+
+\textbf{Step \#3: Compare the dot-product values} 
+
+Did you notice that one of the dot-products $=0\implies$ those two vectors (and the sides they represent) 
+are at $\ang{90}$ to each other. 
+
+Moreover, if a triangle has one angle $=\ang{90}$, then the two other angles have to be $<\ang{90}$. 
+
+Hence, the largest angle is $\ang{90}$.
 \end{solution}
 
+\ifprintanswers\begin{codex}$\ang{90}$\end{codex}\fi
