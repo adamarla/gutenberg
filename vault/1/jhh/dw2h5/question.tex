@@ -3,79 +3,75 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{4} %a
-  \renewcommand{\vbtwo}{5} % b
-  \renewcommand{\vbthree}{5} %c
-  \renewcommand{\vbfour}{2} %d
-  \renewcommand{\vbfive}{9} % N
-  \renewcommand{\vbsix}{4}
-  \renewcommand{\vbseven}{10,500}
+  \renewcommand{\va}{4} %a
+  \renewcommand{\vb}{5} % b
+  \renewcommand{\vc}{5} %c
+  \renewcommand{\vd}{2} %d
+  \renewcommand{\ve}{9} % N
+  \renewcommand{\vf}{4}
+  \renewcommand{\vg}{10,500}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{3}
-    \renewcommand{\vbtwo}{4}
-    \renewcommand{\vbthree}{2}
-    \renewcommand{\vbfour}{3}
-    \renewcommand{\vbfive}{10}
-    \renewcommand{\vbsix}{5}
-    \renewcommand{\vbseven}{\dfrac{35}{6}}
+    \renewcommand{\va}{3}
+    \renewcommand{\vb}{4}
+    \renewcommand{\vc}{2}
+    \renewcommand{\vd}{3}
+    \renewcommand{\ve}{10}
+    \renewcommand{\vf}{5}
+    \renewcommand{\vg}{\dfrac{35}{6}}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{2}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{3}
-      \renewcommand{\vbfour}{4}
-      \renewcommand{\vbfive}{9}
-      \renewcommand{\vbsix}{4}
-      \renewcommand{\vbseven}{\dfrac{567}{128}}
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{3}
+      \renewcommand{\vd}{4}
+      \renewcommand{\ve}{9}
+      \renewcommand{\vf}{4}
+      \renewcommand{\vg}{\dfrac{567}{128}}
     }{
       % variables 
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{3}
-      \renewcommand{\vbfour}{2}
-      \renewcommand{\vbfive}{8}
-      \renewcommand{\vbsix}{3}
-      \renewcommand{\vbseven}{567}
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{3}
+      \renewcommand{\vd}{2}
+      \renewcommand{\ve}{8}
+      \renewcommand{\vf}{3}
+      \renewcommand{\vg}{567}
     }
   }
 }
 
-\ADD\vbfive{1}\t % total # of terms
-\SUBTRACT\t\vbsix\k % desired term
-\SUBTRACT\vbfive\k\a
+\ADD\ve{1}\t % total # of terms
+\SUBTRACT\t\vf\k % desired term
+\SUBTRACT\ve\k\a
 \SUBTRACT\a\k\b
 
-\question[3] If $\left( \dfrac{\vbone x}{\vbtwo} - \dfrac{\vbthree}{\vbfour x}\right)^{\vbfive}$ is expanded 
-so that the power of $x$ is highest in the first term and lowest in the last, then what 
-would the $\vbsix$th term from the end be?
-
+\question[3] What would the $\vf^{\text{th}}$ term \textbf{from the end} be if the following 
+is expanded so that the highest powers of $x$ are written first and the lowest last? 
+ \[ \left( \dfrac{\va x}{\vb} - \dfrac{\vc}{\vd x}\right)^{\ve} \]
 
 \watchout
-
-\ifprintanswers
-\fi 
 
 \begin{solution}[\halfpage]
   For the first term to have the highest power of $x$ and the last to have the lowest, 
   we would expand the expression as follows
   \begin{align}
-    \left( \dfrac{\vbone x}{\vbtwo} - \dfrac{\vbthree}{\vbfour x}\right)^{\vbfive}
-    &= \sum_{k=0}^{n}\binom{n}{k}\left(\dfrac{\vbone x}{\vbtwo}\right)^{n-k}\cdot
-    \left( -\dfrac{\vbthree}{\vbfour x}\right)^{k}
+    \left( \dfrac{\va x}{\vb} - \dfrac{\vc}{\vd x}\right)^{\ve}
+    &= \sum_{k=0}^{n}\binom{n}{k}\left(\dfrac{\va x}{\vb}\right)^{n-k}\cdot
+    \left( -\dfrac{\vc}{\vd x}\right)^{k}
   \end{align}
   
   Moreover, there would be $\t$ terms in the expansion. And if the terms go from 
-  $T_0\rightarrow T_{\vbfive}$, then the $\vbsix$th term from the end would 
+  $T_0\rightarrow T_{\ve}$, then the $\vf$th term from the end would 
   be $T_{\k}$
   
   \begin{align}
-    T_{\k} &= \binom\vbfive\k
-    \left(\dfrac{\vbone x}{\vbtwo}\right)^{\vbfive - \k}\times
-    \left(\dfrac{\vbthree}{\vbfour x}\right)^{\k}\times (-1)^{\k} \\
-    &= \vbseven\cdot x^{\b}
+    T_{\k} &= \binom\ve\k
+    \left(\dfrac{\va x}{\vb}\right)^{\ve - \k}\times
+    \left(\dfrac{\vc}{\vd x}\right)^{\k}\times (-1)^{\k} = \vg\cdot x^{\b}
   \end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}$\vg\cdot x^{\b}$\end{codex}\fi
