@@ -18,4 +18,20 @@
   {#1}\hat{i} + {#2}\hat{j} + {#3}\hat{k}
 }
 
+\newcommand\RENDERCOMPONENT[2]{ % #1 = value, #2 = one of i,j or k
+  \ifnumcomp{#1}{>}{0}{
+    \ABSVALUE{#1}\abs
+    \ifnumcomp\abs{=}{1}{+\hat{#2}}{+{#1}\hat{#2}}
+  }{
+    \ifnumcomp{#1}{=}{0}{}{
+      \ABSVALUE{#1}\abs
+      \ifnumcomp\abs{=}{1}{-\hat{#2}}{{#1}\hat{#2}}
+    }
+  }
+} 
+
+\newcommand\WRITEVECTOR[3]{ % writes a properly formatted vector
+  \RENDERCOMPONENT{#1}{i}\RENDERCOMPONENT{#2}{j}\RENDERCOMPONENT{#3}{k}
+}
+
 
