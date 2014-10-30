@@ -1,31 +1,31 @@
 
  %\setcounter{rolldice}{1}
 
-\renewcommand{\vbthree}{(\lambda + 2)^2 + 40}
+\renewcommand{\vc}{(\lambda + 2)^2 + 40}
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{1}
-  \renewcommand{\vbtwo}{1}
+  \renewcommand{\va}{1}
+  \renewcommand{\vb}{1}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{2}
-    \renewcommand{\vbtwo}{3}
+    \renewcommand{\va}{2}
+    \renewcommand{\vb}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{4}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{4}
     }{
       % variables 
-      \renewcommand{\vbone}{3}
-      \renewcommand{\vbtwo}{8}
+      \renewcommand{\va}{3}
+      \renewcommand{\vb}{8}
     }
   }
 }
 
-\MULTIPLY\vbone{6}\a
-\MULTIPLY\vbtwo{2}\b
+\MULTIPLY\va{6}\a
+\MULTIPLY\vb{2}\b
 \SUBTRACT\a\b\c
 \ADD\c{2}\d
 \MULTIPLY\d{2}\e
@@ -33,9 +33,11 @@
 \SUBTRACT{44}\f\n
 \SUBTRACT\e{4}\d
 
-\question[2] The scalar product of the vector $\vec{V} = \hat{i} + \vbone\hat{j} + \vbtwo\hat{k}$ with the 
-\textit{unit} vector along the sum of $\vec{A} = \WRITEVEC{2}{4}{-5}$ and $\vec{B} =\WRITEVECGENERAL{\lambda}{2}{3}$ is $1$. 
-Find the value of $\lambda$
+\question[2] The scalar product of the vector 
+\[ \vec{V} = \hat{i} + \va\hat{j} + \vb\hat{k} \] 
+and the unit vector along the sum of 
+\[ \vec{A} = \WRITEVEC{2}{4}{-5}\text{ and }\vec{B} =\WRITEVECGENERAL{\lambda}{2}{3}\] 
+is $1$. Find the value of $\lambda$.
 
 
 \watchout
@@ -49,16 +51,17 @@ Find the value of $\lambda$
 	\end{align}
 	And therefore, the unit vector along $\vec{A} + \vec{B}$ would be 
 	\begin{align}
-		= \dfrac{\lambda + 2}{\sqrt{\vbthree}}\hat{i} + \dfrac{6}{\sqrt{\vbthree}}\hat{j} 
-		- \dfrac{2}{\sqrt{\vbthree}} \hat{k}
+		= \dfrac{\lambda + 2}{\sqrt{\vc}}\hat{i} + \dfrac{6}{\sqrt{\vc}}\hat{j} 
+		- \dfrac{2}{\sqrt{\vc}} \hat{k}
 	\end{align}
 	Now, if the dot product of $\vec{V}$ and the unit vector is $1$, then 
 	\begin{align}
-		\dfrac{\lambda + 2}{\sqrt{\vbthree}}\times{1} &+ \dfrac{6}{\sqrt{\vbthree}}\times\vbone
-		- \dfrac{2}{\sqrt{\vbthree}}\times\vbtwo = 1 \\
-		\Rightarrow (\lambda + 2) + \c &= \sqrt{\vbthree} \\
-		\Rightarrow \lambda^{2} + \e\lambda + \f &= \lambda^{2} + 4\lambda + 44 \\
-		\Rightarrow \lambda &= \WRITEFRAC\n\d
+		\dfrac{\lambda + 2}{\sqrt{\vc}}\times{1} &+ \dfrac{6}{\sqrt{\vc}}\times\va
+		- \dfrac{2}{\sqrt{\vc}}\times\vb = 1 \\
+		\implies (\lambda + 2) + \c &= \sqrt{\vc} \\
+		\implies \lambda^{2} + \e\lambda + \f &= \lambda^{2} + 4\lambda + 44 \\
+		\implies \lambda &= \WRITEFRAC\n\d
 	\end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}$\WRITEFRAC\n\d$\end{codex}\fi

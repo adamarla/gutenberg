@@ -2,39 +2,37 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{15}
+  \renewcommand{\va}{15}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{24}
+    \renewcommand{\va}{24}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{8}
+      \renewcommand{\va}{8}
     }{
       % variables 
-      \renewcommand{\vbone}{35}
+      \renewcommand{\va}{35}
     }
   }
 }
 
-\ADD\vbone{1}\a
+\ADD\va{1}\a
 \SQUAREROOT\a\b
 
-\question[1] Find $\vert\,\vec{x}\vert$ if for a unit vector $\hat{a}$, $(\vec{x}-\hat{a})\cdot(\vec{x} + \hat{a}) = \vbone$
-
+\question[1] Find $\vert\,\vec{x}\vert$ if for a unit vector $\hat{b}$ 
+\[ (\vec{x}-\hat{b})\cdot(\vec{x} + \hat{b}) = \va \]
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\mcq]
 	\begin{align}
-		(\vec{x} - \hat{a})\cdot(\vec{x} + \hat{a}) &= 
-		\vec{x}\cdot\vec{x} + \vec{x}\cdot\hat{a} - \vec{x}\cdot\hat{a} - \hat{a}\cdot\hat{a} \\
-		&= \vert\vec{x}\vert ^2 - \vert\hat{a}\vert ^2 = \vbone \text{ (given)} \\
-		\Rightarrow \vert\vec{x}\vert ^2 &= \a \Rightarrow \vert\vec{x}\vert = \b
+		(\vec{x} - \hat{b})\cdot(\vec{x} + \hat{b}) &= 
+		\vec{x}\cdot\vec{x} + \vec{x}\cdot\hat{b} - \vec{x}\cdot\hat{b} - \hat{b}\cdot\hat{b} \\
+		&= \vert\vec{x}\vert ^2 - \vert\hat{b}\vert ^2 = \va \text{ (given)} \\
+		\implies \vert\vec{x}\vert ^2 &= \a \implies \vert\vec{x}\vert = \b
 	\end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}$\b$\end{codex}\fi
