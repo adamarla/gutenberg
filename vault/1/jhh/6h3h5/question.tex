@@ -1,50 +1,45 @@
 
 
-
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{2}
-  \renewcommand{\vbtwo}{3}
+  \renewcommand{\va}{2}
+  \renewcommand{\vb}{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{3}
-    \renewcommand{\vbtwo}{2}
+    \renewcommand{\va}{3}
+    \renewcommand{\vb}{2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{2}
-      \renewcommand{\vbtwo}{4}
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{4}
     }{
       % variables 
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{2}
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{2}
     }
   }
 }
 
-\POWER\vbone\vbtwo\a
+\POWER\va\vb\a
 \SUBTRACT\a{1}\b % 
 \POWER\b{2}\c
 
-\question[4] Prove that $(\vbone^\vbtwo)^{n} - \b n - 1$ is a multiple of 
-$\c\quad\forall n\in\mathbb{N}, n\geq 2$
-
+\question[4] Prove that $(\va^\vb)^{n} - \b n - 1$
+is a multiple of $\c$ for $n\geq 2,\,n\in\mathbb{N}$.
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\halfpage]
   \begin{align}
-   (\vbone^\vbtwo)^{n} - \b n - 1 &= \underbrace{(1 + \b)^{n}}_{(1+x)^n} - \b n - 1 \\
+   (\va^\vb)^{n} - \b n - 1 &= \underbrace{(1 + \b)^{n}}_{(1+x)^n} - \b n - 1 \\
    &= \overbrace{\left[\sum_{k=0}^{n}\binom{n}{k} \b^{k}\right]}- \b n - 1 \\
    &= \left[\underbrace{1 + \b n}_{\texttt{First two terms}} 
    + \sum_{k=2}^{n} \binom{n}{k}\b^{k}\right] - \b n - 1 \\
    &= \b^{2}\cdot\sum_{k=2}^{n} \binom{n}{k} \b^{k-2} = \c\cdot\sum_{k=2}^{n} \binom{n}{k} \b^{k-2}
   \end{align}
   
-  In short, we have shown that $(\vbone^\vbtwo)^{n} - \b n - 1 =  \c\times\texttt{something} \Rightarrow$ multiple of $\c$
+  In short, we have shown that $(\va^\vb)^{n} - \b n - 1 =  \c\times\texttt{something} \implies$ multiple of $\c$
 \end{solution}
 
