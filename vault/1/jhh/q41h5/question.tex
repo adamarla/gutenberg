@@ -2,44 +2,44 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{\dfrac{1}{4}}
-  \renewcommand{\vbtwo}{\dfrac{1}{4}}
-  \renewcommand{\vbthree}{\dfrac{3}{4}}
-  \renewcommand{\vbfour}{1}
-  \renewcommand{\vbfive}{3}
-  \renewcommand{\vbsix}{7}
+  \renewcommand{\va}{\dfrac{1}{4}}
+  \renewcommand{\vb}{\dfrac{1}{4}}
+  \renewcommand{\vc}{\dfrac{3}{4}}
+  \renewcommand{\vd}{1}
+  \renewcommand{\ve}{3}
+  \renewcommand{\vf}{7}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{1}
-    \renewcommand{\vbtwo}{5}
-    \renewcommand{\vbthree}{10}
-    \renewcommand{\vbfour}{5}
-    \renewcommand{\vbfive}{2}
-    \renewcommand{\vbsix}{11}
+    \renewcommand{\va}{1}
+    \renewcommand{\vb}{5}
+    \renewcommand{\vc}{10}
+    \renewcommand{\vd}{5}
+    \renewcommand{\ve}{2}
+    \renewcommand{\vf}{11}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{\dfrac{1}{2}}
-      \renewcommand{\vbtwo}{1}
-      \renewcommand{\vbthree}{3}
-      \renewcommand{\vbfour}{2}
-      \renewcommand{\vbfive}{3}
-      \renewcommand{\vbsix}{8}
+      \renewcommand{\va}{\dfrac{1}{2}}
+      \renewcommand{\vb}{1}
+      \renewcommand{\vc}{3}
+      \renewcommand{\vd}{2}
+      \renewcommand{\ve}{3}
+      \renewcommand{\vf}{8}
     }{
       % variables 
-      \renewcommand{\vbone}{\dfrac{-1}{3}}
-      \renewcommand{\vbtwo}{-1}
-      \renewcommand{\vbthree}{-5}
-      \renewcommand{\vbfour}{3}
-      \renewcommand{\vbfive}{5}
-      \renewcommand{\vbsix}{12}
+      \renewcommand{\va}{\dfrac{-1}{3}}
+      \renewcommand{\vb}{-1}
+      \renewcommand{\vc}{-5}
+      \renewcommand{\vd}{3}
+      \renewcommand{\ve}{5}
+      \renewcommand{\vf}{12}
     }
   }
 }
 
-\question[2] Let $\vec{a}=\vbfour\hat{i}-\hat{j}$, $\vec{b}=\vbfive\hat{j}-\hat{k}$ 
-and $\vec{c}=\vbsix\hat{i}-\hat{k}$. Find a vector $\vec{d}$ which is perpendicular
+\question[2] Let $\vec{a}=\vd\hat{i}-\hat{j}$, $\vec{b}=\ve\hat{j}-\hat{k}$ 
+and $\vec{c}=\vf\hat{i}-\hat{k}$. Find a vector $\vec{d}$ which is perpendicular
 to both $\vec{a}$ and $\vec{b}$ such that $\vec{c}\cdot\vec{d}=1$.
 
 
@@ -61,18 +61,21 @@ to both $\vec{a}$ and $\vec{b}$ such that $\vec{c}\cdot\vec{d}=1$.
 \fi 
 
 \begin{solution}[\halfpage]
-Let $\vec{d}= l\hat{i}+m\hat{j}+n\hat{k}$. \\
+Let \[ \vec{d}= w\hat{i}+x\hat{j}+y\hat{k} \]
 Since $\vec{d}$ is perpendicular to $\vec{a}$ and $\vec{b}$ 
-and $\vec{c}\cdot\vec{d}=0$ therefore,
+and $\vec{c}\cdot\vec{d}=1$ therefore,
 \begin{align}
-  \vec{a}\cdot\vec{d}&=0 \Rightarrow \vbfour\cdot\text{l} + (-1)\cdot\text{m} = 0 \\
-  \vec{b}\cdot\vec{d}&=0 \Rightarrow \vbfive\cdot\text{m} + (-1)\cdot\text{n} = 0 \\
-  \vec{c}\cdot\vec{d}&=1 \Rightarrow \vbsix\cdot\text{l} + (-1)\cdot\text{n} = 1 
+  \vec{a}\cdot\vec{d}&=0 \implies \vd\cdot\text{w} + (-1)\cdot\text{x} = 0 \\
+  \vec{b}\cdot\vec{d}&=0 \implies \ve\cdot\text{x} + (-1)\cdot\text{y} = 0 \\
+  \vec{c}\cdot\vec{d}&=1 \implies \vf\cdot\text{w} + (-1)\cdot\text{y} = 1 
 \end{align}
-From equations (1), (2) and (3),
-\begin{align}
-  \vec{d}=\vbone\hat{i} + \vbtwo\hat{j} + \vbthree\hat{k} 
-\end{align}
+On solving (1), (2) and (3), we get 
+\[ w = \va,\, x = \vb,\text{ and } y = \vc \implies \vec{d} = \va\hat{i}+\vb\hat{j}+\vc\hat{k} \] 
 
 \end{solution}
 
+\ifprintanswers
+  \begin{codex}
+    $\vec{d}=\va\hat{i} + \vb\hat{j} + \vc\hat{k}$
+  \end{codex}
+\fi

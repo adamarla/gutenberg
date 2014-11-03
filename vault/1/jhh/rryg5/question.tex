@@ -2,41 +2,40 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{5}
-  \renewcommand{\vbtwo}{3}
-  \renewcommand{\vbthree}{7}
-  \renewcommand{\vbfour}{2}
-  \renewcommand{\vbfive}{\sqrt{62}}
+  \renewcommand{\va}{5}
+  \renewcommand{\vb}{3}
+  \renewcommand{\vc}{7}
+  \renewcommand{\vd}{2}
+  \renewcommand{\ve}{\sqrt{62}}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{8}
-    \renewcommand{\vbtwo}{2}
-    \renewcommand{\vbthree}{6}
-    \renewcommand{\vbfour}{3}
-    \renewcommand{\vbfive}{7}
+    \renewcommand{\va}{8}
+    \renewcommand{\vb}{2}
+    \renewcommand{\vc}{6}
+    \renewcommand{\vd}{3}
+    \renewcommand{\ve}{7}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{3}
-      \renewcommand{\vbtwo}{8}
-      \renewcommand{\vbthree}{5}
-      \renewcommand{\vbfour}{6}
-      \renewcommand{\vbfive}{5\sqrt{5}}
+      \renewcommand{\va}{3}
+      \renewcommand{\vb}{8}
+      \renewcommand{\vc}{5}
+      \renewcommand{\vd}{6}
+      \renewcommand{\ve}{5\sqrt{5}}
     }{
       % variables 
-      \renewcommand{\vbone}{2}
-      \renewcommand{\vbtwo}{6}
-      \renewcommand{\vbthree}{7}
-      \renewcommand{\vbfour}{8}
-      \renewcommand{\vbfive}{\sqrt{149}}
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{6}
+      \renewcommand{\vc}{7}
+      \renewcommand{\vd}{8}
+      \renewcommand{\ve}{\sqrt{149}}
     }
   }
 }
 
-\question[1] Find the projection of $\vec{a}$ on $\vec{b}$ if $\vec{a}\cdot\vec{b} = \vbone$ 
-and $\vec{b} = \vbtwo\hat{i} + \vbthree\hat{j} + \vbfour\hat{k}$ 
-
+\question[1] Find the projection of $\vec{a}$ on $\vec{b}$ if 
+\[ \vec{b} = \vb\hat{i} + \vc\hat{j} + \vd\hat{k} \text{ and } \vec{a}\cdot\vec{b} = \va \] 
 
 \watchout
 
@@ -56,13 +55,15 @@ and $\vec{b} = \vbtwo\hat{i} + \vbthree\hat{j} + \vbfour\hat{k}$
 \fi 
 
 \begin{solution}[\mcq]
-	The projection of $\vec{a}$ on $\vec{b}$ is $\vert\vec{a}\vert\cos\theta$, where $\theta$ 
-	is the angle between the two vectors
+	The projection of $\vec{a}$ \textbf{on} $\vec{b}$ is 
+  \[ \vert\vec{a}\vert\cos\theta \text{ where }\theta
+	\text{ is the angle between the two vectors. } \]
 	
-	Now, \begin{align}
-		\vec{a}\cdot\vec{b} &= \vert\vec{a}\vert\times\vert\vec{b}\vert\times\cos\theta = \vbone \\
-		\Rightarrow \underbrace{\vert\vec{a}\vert\cos\theta}_{\text{projection}} 
-		&= \dfrac{\vbone}{\vert\vec{b}\vert} = \dfrac{\vbone}{\vbfive} 
+	Moreover, \begin{align}
+		\vec{a}\cdot\vec{b} &= \vert\vec{a}\vert\times\vert\vec{b}\vert\times\cos\theta = \va \\
+		\implies \underbrace{\vert\vec{a}\vert\cos\theta}_{\text{projection}} 
+		&= \dfrac{\va}{\vert\vec{b}\vert} = \dfrac{\va}{\ve} 
 	\end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}$\dfrac\va\ve$\end{codex}\fi
