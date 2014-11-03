@@ -1,38 +1,36 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{3}
+  \renewcommand{\va}{4}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{5}
+    \renewcommand{\va}{5}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{7}
+      \renewcommand{\va}{6}
     }{
-      \renewcommand{\vbone}{9}
+      \renewcommand{\va}{9}
     }
   }
 }
 
-\question[3] Find the following limit \[\lim_{x\to\frac{\pi}{2}}\dfrac{\vbone \sin x\cos x}{\pi - 2x}\]
+\question[3] Find the following limit \[\lim_{x\to\frac{\pi}{2}}\dfrac{\va \sin x\cos x}{\pi - 2x}\]
 
 \watchout[-40pt]
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\halfpage]
   \begin{align}
-    \lim_{x\to\frac{\pi}{2}}\dfrac{\vbone \sin x\cos x}{\pi - 2x} &=
-    \lim_{x\to\frac{\pi}{2}}\dfrac{\frac{\vbone}{2}\cdot 2\sin x\cos x}{\pi - 2x} \\
-    &= \dfrac{\vbone}{2}\cdot\lim_{x\to\frac{\pi}{2}}\dfrac{\sin 2x}{\pi-2x} =
-    \dfrac{\vbone}{2}\cdot\lim_{x\to\frac{\pi}{2}}\overbrace{\dfrac{\sin (\pi-2x)}{\pi-2x}}^{\sin(\pi-\theta) = \sin\theta}
+    \lim_{x\to\frac{\pi}{2}}\dfrac{\va \sin x\cos x}{\pi - 2x} &=
+    \lim_{x\to\frac{\pi}{2}}\dfrac{\frac{\va}{2}\cdot 2\sin x\cos x}{\pi - 2x} \\
+    &= \dfrac{\va}{2}\cdot\lim_{x\to\frac{\pi}{2}}\dfrac{\sin 2x}{\pi-2x} =
+    \dfrac{\va}{2}\cdot\lim_{x\to\frac{\pi}{2}}\overbrace{\dfrac{\sin (\pi-2x)}{\pi-2x}}^{\sin(\pi-\theta) = \sin\theta}
   \end{align}
   
   If we now set $\alpha = \pi - 2x$, then as $x\to\frac\pi{2},\, \alpha\to 0$. Which means, 
   the above limit would turn to 
   \begin{align}
-    &\dfrac{\vbone}{2}\cdot\underbrace{\lim_{\alpha\to 0}\dfrac{\sin\alpha}{\alpha}}
-    _{= 1} = \dfrac{\vbone}{2}
+    &\dfrac{\va}{2}\cdot\underbrace{\lim_{\alpha\to 0}\dfrac{\sin\alpha}{\alpha}}
+    _{= 1} = \WRITEFRAC\va{2}
   \end{align}
 \end{solution}
+\ifprintanswers\begin{codex}$\WRITEFRAC\va{2}$\end{codex}\fi

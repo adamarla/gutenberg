@@ -2,57 +2,56 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{1}
-  \renewcommand{\vbtwo}{2}
-  \renewcommand{\vbthree}{3}
-  \renewcommand{\vbsix}{\dfrac{1}{12}}
+  \renewcommand{\va}{1}
+  \renewcommand{\vb}{2}
+  \renewcommand{\vc}{3}
+  \renewcommand{\vf}{\dfrac{1}{12}}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{3}
-    \renewcommand{\vbtwo}{2}
-    \renewcommand{\vbthree}{4}
-    \renewcommand{\vbsix}{\dfrac{1}{32}}
+    \renewcommand{\va}{3}
+    \renewcommand{\vb}{2}
+    \renewcommand{\vc}{4}
+    \renewcommand{\vf}{\dfrac{1}{32}}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{3}
-      \renewcommand{\vbsix}{\dfrac{1}{27}}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{3}
+      \renewcommand{\vf}{\dfrac{1}{27}}
     }{
-      \renewcommand{\vbone}{7}
-      \renewcommand{\vbtwo}{2}
-      \renewcommand{\vbthree}{5}
-      \renewcommand{\vbsix}{\dfrac{1}{80}}
+      \renewcommand{\va}{7}
+      \renewcommand{\vb}{2}
+      \renewcommand{\vc}{5}
+      \renewcommand{\vf}{\dfrac{1}{80}}
     }
   }
 }
 
-\POWER\vbtwo\vbthree\a
-\ADD\a\vbone\vbfour
-\SUBTRACT\vbfour\vbone\vbfive
-\FRACMINUS{1}{\vbthree}{1}{1}\b\c
+\POWER\vb\vc\a
+\ADD\a\va\vd
+\SUBTRACT\vd\va\ve
+\FRACMINUS{1}{\vc}{1}{1}\b\c
 
-\question[4] Evaluate the following limit \[ \lim_{x\to\vbfour}\dfrac{\sqrt[\vbthree]{x-\vbone}-\vbtwo}{x-\vbfour}\]
+\question[4] Evaluate the following limit \[ \lim_{x\to\vd}\dfrac{\sqrt[\vc]{x-\va}-\vb}{x-\vd}\]
 
 \watchout[-40pt]
-\ifprintanswers
-  \marginnote[5cm]{Using the standard result \[ \lim_{x\to a}\dfrac{x^n-a^n}{x-a} = n\cdot a^{n-1}\]}
-\fi
 
 \begin{solution}[\halfpage]
-  Half the battle is won if you figured out that $\vbtwo = \sqrt[\vbthree]{\vbfour - \vbone}$. 
+  Half the battle is won if you figured out that \[ \vb = \sqrt[\vc]\ve = \sqrt[\vc]{\vd - \va} \] 
   Which means 
   \begin{align}
-    \lim_{x\to\vbfour}\dfrac{\sqrt[\vbthree]{x-\vbone}-\vbtwo}{x-\vbfour} &=
-    \lim_{x\to\vbfour}\dfrac{\sqrt[\vbthree]{x-\vbone}-\sqrt[\vbthree]{\vbfour-\vbone}}
-    {(x-\vbone)-(\vbfour-\vbone)}
+    \lim_{x\to\vd}\dfrac{\sqrt[\vc]{x-\va}-\vb}{x-\vd} &=
+    \lim_{x\to\vd}\dfrac{\sqrt[\vc]{x-\va}-\sqrt[\vc]{\vd-\va}}
+    {(x-\va)-(\vd-\va)}
   \end{align}
-  Now, if we define $\bar{x}=x-\vbone$ and $A=\vbfour-\vbone = \vbfive$, then the above limit 
-  becomes 
+  If we now define 
+    \[ z=x-\va\implies z\to\ve\text{ as }x\to\vd\text{ and } A=\vd-\va = \ve \] 
+  then the above limits becomes  
   \begin{align}
-    \lim_{\bar{x}\to\vbfive}\dfrac{\sqrt[\vbthree]{\bar{x}}-\sqrt[\vbthree]{A}}{\bar{x}-A}
-    &= \dfrac{1}{\vbthree}\cdot A^{\frac{1}{\vbthree}-1} \\
-    &= \dfrac{1}{\vbthree}\cdot\vbfive^{\WRITEFRAC\b\c} = \vbsix
+    \lim_{z\to\ve}\dfrac{\sqrt[\vc]{z}-\sqrt[\vc]{A}}{z-A}
+    &= \dfrac{1}{\vc}\cdot A^{\frac{1}{\vc}-1} \\
+    &= \dfrac{1}{\vc}\cdot\ve^{\WRITEFRAC[false]\b\c} = \vf
   \end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}$\vf$\end{codex}\fi

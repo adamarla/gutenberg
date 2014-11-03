@@ -1,60 +1,60 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{2} %a
-  \renewcommand{\vbtwo}{3} %b 
-  \renewcommand{\vbthree}{5} %c 
-  \renewcommand{\vbfour}{2} %d 
-  \renewcommand{\vbfive}{5} %e
+  \renewcommand{\va}{2} %a
+  \renewcommand{\vb}{3} %b 
+  \renewcommand{\vc}{5} %c 
+  \renewcommand{\vd}{2} %d 
+  \renewcommand{\ve}{5} %e
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{3}
-    \renewcommand{\vbtwo}{4}
-    \renewcommand{\vbthree}{3}
-    \renewcommand{\vbfour}{4}
-    \renewcommand{\vbfive}{7}
+    \renewcommand{\va}{3}
+    \renewcommand{\vb}{4}
+    \renewcommand{\vc}{3}
+    \renewcommand{\vd}{4}
+    \renewcommand{\ve}{7}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{7}
-      \renewcommand{\vbthree}{3}
-      \renewcommand{\vbfour}{2}
-      \renewcommand{\vbfive}{9}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{7}
+      \renewcommand{\vc}{3}
+      \renewcommand{\vd}{2}
+      \renewcommand{\ve}{9}
     }{
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{5}
-      \renewcommand{\vbthree}{3}
-      \renewcommand{\vbfour}{2}
-      \renewcommand{\vbfive}{11}
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{5}
+      \renewcommand{\vc}{3}
+      \renewcommand{\vd}{2}
+      \renewcommand{\ve}{11}
     }
   }
 }
 
-\POWER\vbone\vbthree\c
-\POWER\vbone\vbfour\d
-\FRACADD{1}{1}{1}\vbtwo\m\n
-\FRACADD\vbthree{1}\vbfour\vbfive\p\q
+\POWER\va\vc\c
+\POWER\va\vd\d
+\FRACADD{1}{1}{1}\vb\m\n
+\FRACADD\vc{1}\vd\ve\p\q
 \FRACDIV\p\q\m\n\k\l
   
-\question[4] Find the logarithm of $\c\sqrt[\vbfive]{\d}$ to base $\vbone\sqrt[\vbtwo]{\vbone}$. 
-\texttt{Hint:} Start with the basic definition - that is - think about $\log_a b = c\implies ?^?=?$
+\question[4] Find the logarithm of $\c\sqrt[\ve]{\d}$ to base $\va\sqrt[\vb]{\va}$. 
 
 \watchout
 
 \begin{solution}[\halfpage]
   What we need to find is
-  \[ \log_{\vbone\sqrt[\vbtwo]{\vbone}} \c\sqrt[\vbfive]{\d} = ?\]
+  \[ \log_{\va\sqrt[\vb]{\va}} \c\sqrt[\ve]{\d} = ?\]
   
   In other words,
   \begin{align}
-    \log_{\vbone\sqrt[\vbtwo]{\vbone}} \c\sqrt[\vbfive]{\d} = N &\implies 
-    (\vbone\sqrt[\vbtwo]{\vbone})^N = \c\sqrt[\vbfive]{\d} \\
-    \implies \left( \vbone\cdot\vbone^{\frac{1}{\vbtwo}}\right)^N
-    &= \vbone^\vbthree\cdot\vbone^{\frac{\vbfour}{\vbfive}} 
-    \text{ or } \left( \vbone^{1+\frac{1}{\vbtwo}}\right)^N = 
-    \left( \vbone^{\vbthree + \frac{\vbfour}{\vbfive}}\right) \\
-    \text{ And }\therefore \left(1 + \dfrac{1}{\vbtwo}\right)\cdot N &= 
-    \vbthree + \dfrac{\vbfour}{\vbfive} \implies N = \WRITEFRAC\k\l
+    \log_{\va\sqrt[\vb]{\va}} \c\sqrt[\ve]{\d} = N &\implies 
+    (\va\sqrt[\vb]{\va})^N = \c\sqrt[\ve]{\d} \\
+    \implies \left( \va\cdot\va^{\frac{1}{\vb}}\right)^N
+    &= \va^\vc\cdot\va^{\frac{\vd}{\ve}} 
+    \text{ or } \left( \va^{1+\frac{1}{\vb}}\right)^N = 
+    \left( \va^{\vc + \frac{\vd}{\ve}}\right) \\
+    \text{ And }\therefore \left(1 + \dfrac{1}{\vb}\right)\cdot N &= 
+    \vc + \dfrac{\vd}{\ve} \implies N = \WRITEFRAC\k\l
   \end{align}
-  And therefore, the logarithm we are looking for is $N=\dfrac\k\l$
+  And therefore, the logarithm we are looking for is $N=\WRITEFRAC\k\l$
 \end{solution}
 
+\ifprintanswers\begin{codex}$\WRITEFRAC\k\l$\end{codex}\fi
