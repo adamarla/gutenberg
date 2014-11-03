@@ -1,87 +1,95 @@
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{1}
+  \renewcommand{\va}{1}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{2}
+    \renewcommand{\va}{2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{3}
+      \renewcommand{\va}{3}
     }{
-      \renewcommand{\vbone}{4}
+      \renewcommand{\va}{4}
     }
   }
 }
 
-\SQUARE\vbone\vbtwo
-\MULTIPLY\vbone{2}\vbthree
-\MULTIPLY\vbtwo{4}\vbfour
-\MULTIPLY\vbthree{2}\vbfive
+\SQUARE\va\vb
+\MULTIPLY\va{2}\vc
+\MULTIPLY\vb{4}\vd
+\MULTIPLY\vc{2}\ve
 
-\question[4] The figure alongside shows a \textbf{fixed circle} $C_1$ with equation $(x-\vbone)^2 + y^2 = \vbtwo$ and a
+\question[4] The figure below shows a \textbf{fixed circle} $C_1$ with equation $(x-\va)^2 + y^2 = \vb$ and a
 \textbf{shrinking circle} $C_2$ with radius $r$ centered at the origin. $P$ is the point $(0,r)$, $Q$ is 
 the upper point of intersection of the two circles and $R$ is where the line $PQ$ intersects the $x-$axis. What 
 happens to $R$ as $C_2$ shrinks, that is, as $r\to 0^+$?
+
 \watchout[-45pt]
 
+\figinit{pt}
+  \def\radA{33} %C_1
+  \def\radB{20} %C_2
+  \figpt 1: (0,0) 
+  \figpt 2: (\radB,0)
+  \figpt 10:$P$(0,\radA)
+  \figptsintercirc 50 [1,\radA;2,\radB]
+  \figvectP 99 [1,2]
+  \figvectP 100 [10,51]
+  \figptinterlines 60:$R$ [1,99;10,100]
+  \figptcirc 70 :$C_1$: 2;\radB (225)
+  \figptcirc 71 :$C_2$: 1;\radA (225)
+\figdrawbegin{}
+  \drawAxes{1}{-55}{85}{-55}{55}
+  \figdrawcirc 1(\radA)
+  \figdrawcirc 2(\radB)
+  \figdrawline [10,60]
+\figdrawend
+\figvisu{\figBoxA}{}{%
+  \figwritene 70:(3)
+  \figwritene 71:(3)
+  \figset write(mark=$\bullet$)
+  \figwritene 51:$Q$(3)
+  \figwritenw 10:(3)
+  \figwrites 60:(3)
+}
+
+\ifprintanswers
   \begin{marginfigure}[-20pt]
-    \figinit{pt}
-      \def\radA{33} %C_1
-      \def\radB{20} %C_2
-      \figpt 1: (0,0) 
-      \figpt 2: (\radB,0)
-      \figpt 10:$P$(0,\radA)
-      \figptsintercirc 50 [1,\radA;2,\radB]
-      \figvectP 99 [1,2]
-      \figvectP 100 [10,51]
-      \figptinterlines 60:$R$ [1,99;10,100]
-      \figptcirc 70 :$C_1$: 2;\radB (225)
-      \figptcirc 71 :$C_2$: 1;\radA (225)
-    \figdrawbegin{}
-      \drawAxes{1}{-55}{85}{-55}{55}
-      \figdrawcirc 1(\radA)
-      \figdrawcirc 2(\radB)
-      \figdrawline [10,60]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-      \figwritene 70:(3)
-      \figwritene 71:(3)
-      \figset write(mark=$\bullet$)
-      \figwritene 51:$Q$(3)
-      \figwritenw 10:(3)
-      \figwrites 60:(3)
-    }
     \centerline{\box\figBoxA}
   \end{marginfigure}
+\else
+  \vspace{1cm}
+  \centerline{\box\figBoxA}
+\fi
 
 \begin{solution}[\fullpage]
   The equation of circle $C_2$ is simply $x^2 + y^2 = r^2$.
   And therefore, $Q$ would be a point where 
   \begin{align}
-    y_Q^2 &= \vbtwo - (x_Q-\vbone)^2 = r^2 - x_Q^2 \\
-    \implies \vbtwo - (x_Q^2 - \vbthree x + \vbtwo) &= r^2 - x_Q^2 \text{ or } x_Q = \dfrac{r^2} {\vbthree} \\
-    \text{ and }y_Q = \sqrt{r^2 - x_Q^2} &= \sqrt{r^2 - \left( \dfrac{r^2}{\vbthree}\right)^2}
-    = \dfrac{r}{\vbthree}\cdot\sqrt{\vbfour - r^2}
+    y_Q^2 &= \vb - (x_Q-\va)^2 = r^2 - x_Q^2 \\
+    \implies \vb - (x_Q^2 - \vc x + \vb) &= r^2 - x_Q^2 \text{ or } x_Q = \dfrac{r^2} {\vc} \\
+    \text{ and }y_Q = \sqrt{r^2 - x_Q^2} &= \sqrt{r^2 - \left( \dfrac{r^2}{\vc}\right)^2}
+    = \dfrac{r}{\vc}\cdot\sqrt{\vd - r^2}
   \end{align}
   
   Next, we find the \textbf{equation of line PQ}
   \begin{align}
     \dfrac{y-r}{x-0} &= \dfrac{y_Q-y_P}{x_Q-x_P} = 
-    \dfrac{\frac{r}{\vbthree}\cdot\sqrt{\vbfour-r^2}-r}{\frac{r^2}{\vbthree} - 0}
+    \dfrac{\frac{r}{\vc}\cdot\sqrt{\vd-r^2}-r}{\frac{r^2}{\vc} - 0}
   \end{align}
   And as $R$ lies on $PQ$ and given that $R=(x_R,0)$, the \textbf{coordinates of R} would be 
   \begin{align}
-    \dfrac{0-r}{x_R-0} &= \dfrac{\frac{r}{\vbthree}\cdot\sqrt{\vbfour-r^2}-r}{\frac{r^2}{\vbthree}} \\
-    \implies x_R &= \dfrac{r^2}{\vbthree - \sqrt{\vbfour - r^2}}
+    \dfrac{0-r}{x_R-0} &= \dfrac{\frac{r}{\vc}\cdot\sqrt{\vd-r^2}-r}{\frac{r^2}{\vc}} \\
+    \implies x_R &= \dfrac{r^2}{\vc - \sqrt{\vd - r^2}}
   \end{align}
   Notice that point $R$ exists only if radius of $C_2\leq 2\times$ radius of $C_1$.
   
   That aside, what we need to find is \[ \lim_{r\to 0^+} x_R\] - which, in its current form, 
   is of the $\frac{0}{0}$ type
   \begin{align}
-    \lim_{r\to 0^+}x_R &= \lim_{r\to 0^+}\dfrac{r^2}{\vbthree - \sqrt{\vbfour - r^2}} \\
-    &= \lim_{r\to 0+}\dfrac{r^2}{\vbthree - \sqrt{\vbfour - r^2}}\times
-    \dfrac{\vbthree + \sqrt{\vbfour - r^2}}{\vbthree + \sqrt{\vbfour - r^2}} \\
- i   &= \lim_{r\to 0+}(\vbthree + \sqrt{\vbfour - r^2}) = \vbfive
+    \lim_{r\to 0^+}x_R &= \lim_{r\to 0^+}\dfrac{r^2}{\vc - \sqrt{\vd - r^2}} \\
+    &= \lim_{r\to 0+}\dfrac{r^2}{\vc - \sqrt{\vd - r^2}}\times
+    \dfrac{\vc + \sqrt{\vd - r^2}}{\vc + \sqrt{\vd - r^2}} \\
+    &= \lim_{r\to 0+}(\vc + \sqrt{\vd - r^2}) = \ve
   \end{align}
-  Which means, that as $C_2$ shrinks to zero, $R\to (\vbfive, 0)$
+  Which means, that as $C_2$ shrinks to zero, $R\to (\ve, 0)$
 \end{solution}
+\ifprintanswers\begin{codex}$R\to(\ve,0)$\end{codex}\fi

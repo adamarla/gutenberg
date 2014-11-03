@@ -2,39 +2,39 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{3}
-  \renewcommand{\vbtwo}{2}
-  \renewcommand{\vbthree}{9}
-  \renewcommand{\vbfour}{1}
+  \renewcommand{\va}{3}
+  \renewcommand{\vb}{2}
+  \renewcommand{\vc}{9}
+  \renewcommand{\vd}{1}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{7}
-    \renewcommand{\vbtwo}{4}
-    \renewcommand{\vbthree}{7}
-    \renewcommand{\vbfour}{3}
+    \renewcommand{\va}{7}
+    \renewcommand{\vb}{4}
+    \renewcommand{\vc}{7}
+    \renewcommand{\vd}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{5}
-      \renewcommand{\vbthree}{6}
-      \renewcommand{\vbfour}{3}
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{5}
+      \renewcommand{\vc}{6}
+      \renewcommand{\vd}{3}
     }{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{5}
-      \renewcommand{\vbfour}{6}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{5}
+      \renewcommand{\vd}{6}
     }
   }
 }
 
-\FRACMULT\vbfour\vbone\vbthree{1}\vbfive\a
-\FRACMULT\vbfour\vbone\vbtwo{1}\p\q
+\FRACMULT\vd\va\vc{1}\ve\a
+\FRACMULT\vd\va\vb{1}\p\q
 
-\question[1] For what value of $p$ would the vectors $\vec{a} = \WRITEVEC{\vbone}{\vbtwo}{\vbthree}$ and 
-$\vec{b} = \WRITEVECGENERAL{\vbfour}{p}{\vbfive}$ be parallel?
+\question[1] For what value of $p$ would the vectors $\vec{a} = \WRITEVECTOR{\va}{\vb}{\vc}$ and 
+$\vec{b} = \WRITEVECGENERAL{\vd}{p}{\ve}$ be parallel?
 
 
 \watchout
@@ -47,8 +47,8 @@ $\vec{b} = \WRITEVECGENERAL{\vbfour}{p}{\vbfive}$ be parallel?
 	to be parallel to each other, 
 	\begin{align}
 		\dfrac{a_1}{b_1} &= \dfrac{a_2}{b_2} = \dfrac{a_3}{b_3} \\
-		\Rightarrow \dfrac{\vbone}{\vbfour} &= \dfrac{\vbtwo}{p} = \dfrac{\vbthree}{\vbfive} \\
-		\Rightarrow p &= \dfrac{\p}{\q}
+		\implies \dfrac{\va}{\vd} &= \dfrac{\vb}{p} = \dfrac{\vc}{\ve} \implies p = \dfrac{\p}{\q}
 	\end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}$\dfrac\p\q$\end{codex}\fi

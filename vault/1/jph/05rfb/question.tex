@@ -2,37 +2,44 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{7}
-  \renewcommand{\vbtwo}{2}
+  \renewcommand{\va}{7}
+  \renewcommand{\vb}{2}
+  \renewcommand{\vj}{8}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{6}
-    \renewcommand{\vbtwo}{7}
+    \renewcommand{\va}{6}
+    \renewcommand{\vb}{7}
+    \renewcommand{\vj}{6}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{4}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{4}
+      \renewcommand{\vj}{4}
     }{
-      \renewcommand{\vbone}{9}
-      \renewcommand{\vbtwo}{4}
+      \renewcommand{\va}{9}
+      \renewcommand{\vb}{4}
+      \renewcommand{\vj}{12}
     }
   }
 }
 
-\MULTIPLY\vbone{2}\vbthree
-\ADD\vbthree\vbtwo\vbfour
-\ADD\vbfour\vbtwo\vbfive
-\DIVIDE\vbfive{2}\vbsix
+\MULTIPLY\va{2}\vc
+\ADD\vc\vb\vd
+\ADD\vd\vb\ve
+\DIVIDE\ve{2}\vf
 
-\question[2] Find the following limit \[ \lim_{x\to 0}\dfrac{\sin\vbfour x - \sin\vbtwo x}{\sin\vbone x}\]
+\question[2] Find the following limit \[ \lim_{x\to 0}\dfrac{\sin\vd x - \sin\vb x}{\vj\sin\va x}\]
 
 \watchout[-40pt]
 
 \begin{solution}[\mcq]
   \begin{align}
-    \lim_{x\to 0}\dfrac{\sin\vbfour x - \sin\vbtwo x}{\sin\vbone x} &=
-    \lim_{x\to 0}\dfrac{\eDiffOfSin{\vbfour x}{\vbtwo x}}{\sin\vbone x} \\
-    &= \lim_{x\to 0}\dfrac{2\cos\vbsix x\cdot\sin\vbone x}{\sin\vbone x} = 2
+    \lim_{x\to 0}\dfrac{\sin\vd x - \sin\vb x}{\vj\sin\va x} &=
+    \dfrac{1}\vj\cdot\lim_{x\to 0}\overbrace{\dfrac{\eDiffOfSin{\vd x}{\vb x}}{\sin\va x}}^{
+      \fDiffOfSin{A}{B}
+    }\\
+    &= \dfrac{1}\vj\cdot\lim_{x\to 0}\dfrac{2\cos\vf x\cdot\sin\va x}{\sin\va x} = \dfrac{2}\vj = \WRITEFRAC{2}\vj
   \end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}$\WRITEFRAC{2}\vj$\end{codex}\fi
