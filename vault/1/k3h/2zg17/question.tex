@@ -1,22 +1,65 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{14}
+  \renewcommand{\vb}{2}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{11}
+    \renewcommand{\vb}{5}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{12}
+      \renewcommand{\vb}{6}
+    }{
+      % variables 
+      \renewcommand{\va}{17}
+      \renewcommand{\vb}{5}
+    }
+  }
+}
 
-\question[3] Find the range over which the inequality $\sqrt{(x+14)} < x+2$ holds
+\MULTIPLY\vb{2}\vc
+\SUBTRACT\vc{1}\vd
+\SQUARE\vb\ve
+\SUBTRACT\ve\va\vf
 
+\SQUARE\vd\vw
+\EXPR\vx{\vw - 4*\vf}
+\SQUAREROOT\vx\vy
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \marginnote[2cm]{Only the \textit{positive} roots are considered in this type of question}
-\fi 
+\ADD{-\vd}\vy\vm
+\SUBTRACT{-\vd}\vy\vn
+\DIVIDE\vm{2}\vp
+\DIVIDE\vn{2}\vq
+\MULTIPLY\vp{-1}\vr
+\MULTIPLY\vq{-1}\vs
+
+\question[3] For what values of $x$ would the following hold?
+\[ \sqrt{x+\va} < x+\vb \]
+
+\watchout
 
 \begin{solution}[\halfpage]
-  If $\sqrt{(x+14)} < x + 2$ then
+  \textbf{Insigh \#1: $x+\va\nless 0$}
+
+  Because if it is, then $\sqrt{x+\va}\notin\mathbb{R}$. And therefore, 
+  \[ x + \va\geq 0\implies x\geq -\va \] 
+  \textbf{Insigh \#2: $x+\vb > 0$}
+
+  The \textbf{square root function} is defined to mean the positive square root. Which means, if
+  \[ x + \vb > \sqrt{x + \va}\text{ and } \sqrt{x + \va} > 0\text{ then } x + \vb > 0 \implies x > -\vb \]
+  Moreover, for the inequality to hold 
 	\begin{align}
-	   x + 14 > 0 &\Rightarrow x > -14 \\
-	   x + 2 > 0 &\Rightarrow x > -2 \\
-	   \text{Moreover, if } (x + 14) < (x+2)^2 &= x^2+4x+4 \\
-	   \text{then } x^2+3x-10 = (x-2)\cdot(x+5) &> 0 \\
-	   \Rightarrow x > 2 \text{ or } x < -5 
+    x + \va < (x+\vb)^2 &\implies x + \va < x^2 + \vc x + \ve \\
+    \implies \startpoly\WRITEPOLYTERM{1}{2}\WRITEPOLYTERM{\vd}{1}\WRITEPOLYTERM{\vf}{0} &> 0 \text{ or } 
+    \startpoly\left(\WRITEPOLYTERM{1}{1}\WRITEPOLYTERM\vr{0}\right)\cdot
+    \startpoly\left(\WRITEPOLYTERM{1}{1}\WRITEPOLYTERM\vs{0}\right) > 0 \\
+    \implies x &> \vp\text{ or } x < \vq
 	\end{align}
-	As $x$ has to be $> -2$, $x$ cannot be $< -5$. And therefore, the only feasible solution is 
-	$x > 2$
+
+  But $x\nless\vq$ because $x > -\vb$. Hence, the \textbf{only acceptable answer} is $x > \vp$.
 \end{solution}
+\ifprintanswers\begin{codex}$x>\vp$\end{codex}\fi
