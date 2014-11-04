@@ -1,19 +1,55 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{1}
+  \renewcommand{\vb}{2}
+  \renewcommand{\vc}{1}
+  \renewcommand{\vd}{3}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{3}
+    \renewcommand{\vb}{5}
+    \renewcommand{\vc}{1}
+    \renewcommand{\vd}{4}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{5}
+      \renewcommand{\vc}{3}
+      \renewcommand{\vd}{4}
+    }{
+      % variables 
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{7}
+      \renewcommand{\vc}{3}
+      \renewcommand{\vd}{8}
+    }
+  }
+}
 
-\question[2] If $\tan A = \frac{1}{2}$ and $\tan B = \frac{1}{3}$, then find the value
-of $\tan (2A+B)$?
+\FRACPOWER\va\vb{2}\ve\vf
+\FRACMINUS{1}{1}\ve\vf\vx\vy
+\FRACMULT\va\vb{2}{1}\vg\vh
+\FRACDIV\vg\vh\vx\vy\vp\vq
 
+\FRACADD\vp\vq\vc\vd\a\b
+\FRACMULT\vp\vq\vc\vd\c\d
+\FRACMINUS{1}{1}\c\d\e\f
+\FRACDIV\a\b\e\f\vj\vk
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
+\question[2] Find the value of $\tan (2A+B)$ if 
+ \[ \tan A = \frac\va\vb\text{ and }\tan B = \frac\vc\vd \]
+
+\watchout
 
 \begin{solution}[\halfpage]
 	\begin{align}
 		\tan(2A+B) &= \dfrac{\tan 2A + \tan B}{1-\tan 2A\tan B} \\
-		\text{where } \tan 2A &= \dfrac{2\tan A}{1-\tan^2 A} \\
-		    &= \dfrac{2\times \frac{1}{2}}{1-\left(\frac{1}{2}\right)^2} = \frac{4}{3} \\
-		 \Rightarrow \tan(2A+B) &= \dfrac{\frac{4}{3} + \frac{1}{3}}{1-\frac{4}{3}\cdot\frac{1}{3}} \\
-		 &= 3
+		\text{where } \tan 2A &= \dfrac{2\tan A}{1-\tan^2 A} = 
+    \dfrac{2\times \frac\va\vb}{1-\left(\frac\va\vb\right)^2} = \dfrac\vp\vq \\
+		 \implies \tan(2A+B) &= \dfrac{\frac\vp\vq + \frac\vc\vd}{1-\frac\vp\vq\cdot\frac\vc\vd} = \WRITEFRAC\vj\vk
 	\end{align}
 \end{solution}
+\ifprintanswers\begin{codex}$\WRITEFRAC\vj\vk$\end{codex}\fi
