@@ -1,63 +1,115 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{8}
+  \renewcommand{\vb}{12}
+  \renewcommand{\vc}{4}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{6}
+    \renewcommand{\vb}{10}
+    \renewcommand{\vc}{2}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{6}
+      \renewcommand{\vb}{8}
+      \renewcommand{\vc}{1}
+    }{
+      % variables 
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{12}
+      \renewcommand{\vc}{4}
+    }
+  }
+}
 
-\question[3] Chords $AB$ and $CD$ are of lengths 5cm and 11cm respectively. They are also 
-parallel to each other. If the distance between them (the chords) is 3cm, then what is 
+\DIVIDE\va{2}\vp
+\DIVIDE\vb{2}\vq
+\SQUARE\vp\vj
+\SQUARE\vq\vk
+\SUBTRACT\vk\vj\vl
+
+\EXPR[2]\vz{(\vl - (\vc * \vc))/(2*\vc)}
+\SQUARE\vz\vx
+\ADD\vx\vk\vw
+\SQUAREROOT\vw\vv
+\ROUND[2]\vv\vu
+
+\question[3] Chords $AB$ and $CD$ (see figure) are of lengths $\va$ cm and $\vb$ cm respectively. They are also 
+parallel to each other. If the distance between them (the chords) is $\vc$ cm, then what is 
 the radius of the circle? 
 
+\watchout
+
+\begin{calcaid}
+  \begin{tabular}{c c c c}
+    $\sqrt{36.25}=6.02$ & $\sqrt{34}=5.83$ & $\sqrt{40}=6.32$
+  \end{tabular}
+\end{calcaid}
 
   % stuff to be shown only in the answer key - like explanatory margin figures
+\figinit{pt}
+  \large
+  \figpt 100: $O$(50,50)
+  \figpt 200: (95,50) % ref. pt 
+  \figptrot 101: $D$= 200 /100,20/
+  \figptrot 102: $B$= 200 /100,50/
+  \figptrot 103: $C$= 200 /100,160/
+  \figptrot 104: $A$= 200 /100,130/
+  \figptorthoprojline 300:$M$= 100 /102,104/
+  \figptorthoprojline 301:$N$= 100 /101,103/
+\figdrawbegin{}
+  \figdrawcirc 100(45)
+  \figdrawline [101,103]
+  \figdrawline [102,104]
+  \figdrawaltitude 5 [100,102,104]
+  \figdrawaltitude 5 [100,101,103]
+  \ifprintanswers
+    \figset (dash=5)
+    \figdrawline [100,101]
+    \figdrawline [100,102]
+  \fi
+\figdrawend
+\figvisu{\figBoxA}{}{%
+  \figset write(mark=$\bullet$)
+  \figwrites 100:(3)
+  \figwritee 101:(3)
+  \figwritene 102:(3)
+  \figwritew 103:(4)
+  \figwritenw 104:(4)
+  \figwriten 300:(3)
+  \figwritene 301:(4)
+}
+
+\ifprintanswers
   \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100: $O$(50,50)
-      \figpt 200: (95,50) % ref. pt 
-      \figptrot 101: $D$= 200 /100,20/
-      \figptrot 102: $B$= 200 /100,50/
-      \figptrot 103: $C$= 200 /100,160/
-      \figptrot 104: $A$= 200 /100,130/
-      \figptorthoprojline 300:$M$= 100 /102,104/
-      \figptorthoprojline 301:$N$= 100 /101,103/
-    \figdrawbegin{}
-      \figdrawcirc 100(45)
-      \figdrawline [101,103]
-      \figdrawline [102,104]
-      \figdrawaltitude 5 [100,102,104]
-      \figdrawaltitude 5 [100,101,103]
-      \ifprintanswers
-        \figset (dash=5)
-        \figdrawline [100,101]
-        \figdrawline [100,102]
-      \fi
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-      \figset write(mark=$\bullet$)
-      \figwrites 100:(2)
-      \figwritee 101:(3)
-      \figwritee 102:(3)
-      \figwritew 103:(3)
-      \figwritew 104:(3)
-      \figwritene 300:(3)
-      \figwritene 301:(3)
-    }
     \centerline{\box\figBoxA}
   \end{marginfigure}
+\else
+  \vspace{1cm}
+  \centerline{\box\figBoxA}
+\fi
 
 \begin{solution}[\halfpage]
 	Here is what we know,
 	\begin{align}
-		MN &= 3cm \\
+		MN &= \vc\text{ cm} \\
 		OB^2 &= OM^2 + MB^2 \\
 		OD^2 &= ON^2 + ND^2 \\
 		OB = OD &= \text{ Radius } \\
-		MB &= \frac{1}{2}AB = 2.5cm \\
-		ND &= \frac{1}{2}CD = 5.5cm
+		MB &= \frac{1}{2}AB = \vp\text{ cm} \\
+		ND &= \frac{1}{2}CD = \vq\text{ cm}
 	\end{align}
 	And therefore, 
 	\begin{align}
-		OM^2 + MB^2 = (ON + 3)^2 + 2.5^2 &= ON^2 + 5.5^2 \\
-		\Rightarrow (ON+3)^2 - ON^2 &= 30.25 - 6.25 = 24 \\
-		\Rightarrow \underbrace{(2\cdot ON + 3)\cdot 3}_{a^2-b^2 = (a-b)(a+b)} &= 24 \Rightarrow ON = 2.5cm \\
+		OM^2 + MB^2 = (ON + \vc)^2 + \vp^2 &= ON^2 + \vq^2 \\
+		\implies (ON+3)^2 - ON^2 &= \vk - \vj = \vl \\
+		\implies \underbrace{(2\cdot ON + \vc)\cdot \vc}_{a^2-b^2 = (a-b)(a+b)} &= \vl \implies ON = \vz\text{ cm} \\
 		\therefore OD = \text{ Radius } &= \sqrt{ON^2 + ND^2} \\ 
-		&= \sqrt{2.5^2 + 5.5^2} = 6.04cm
+		&= \sqrt{\vz^2 + \vq^2} = \vu\text{ cm} 
 	\end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}$\vu\text{ cm}$\end{codex}\fi

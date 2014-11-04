@@ -1,18 +1,44 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{14}
+  \renewcommand{\vb}{4}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{26}
+    \renewcommand{\vb}{6}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{8}
+      \renewcommand{\vb}{56}
+    }{
+      % variables 
+      \renewcommand{\va}{10}
+      \renewcommand{\vb}{22}
+    }
+  }
+}
 
-\question[1] If $f(x) = 3x^2-4x$, then find the intervals in which it is \textit{increasing} 
-and \textit{decreasing}
+\MULTIPLY\va{2}\vc
 
+\question[1] If $f(x) = \va x^2-\vb x$, then find the intervals in which it is \textit{increasing} 
+and \textit{decreasing}.
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
+\watchout
 
 \begin{solution}[\mcq]
-   $f(x)$ is increasing when $\dfrac{\ud}{\ud x}f(x) > 0$ and decreasing otherwise. Which means,
-   \begin{align}
-   	   \text{Increasing when }\dfrac{\ud}{\ud x}(3x^2-4x) = (6x-4) > 0 &\Rightarrow x > \frac{2}{3} \\
-   	   \text{and decreasing when } (6x-4) < 0 &\Rightarrow x < \frac{2}{3}
-   \end{align}
+  A function is increasing when 
+  \[ \dfrac{d}{dx} f(x) > 0 \] 
+  And decreasing when 
+  \[ \dfrac{d}{dx} f(x) < 0 \] 
+  Which means, 
+  \begin{align}
+    \dfrac{d}{dx} f(x) &= \dfrac{d}{dx}(\va x^2 - \vb) = \vc x - \vb \\
+    \text{(increasing) }\vc x - \vb &> 0 \implies x > \WRITEFRAC\vb\vc \\
+    \text{(decreasing) }\vc x - \vb &< 0 \implies x < \WRITEFRAC\vb\vc
+  \end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}Increasing: $x>\WRITEFRAC\vb\vc$. Decreasing: $x < \WRITEFRAC\vb\vc$\end{codex}\fi

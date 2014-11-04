@@ -1,6 +1,6 @@
 
-
-\question[3] What are the maximum and minimum values of the function $f(\theta) = \sin^4\theta + \cos^4\theta$?
+\question[3] What are the maximum and minimum values of the following function?
+  \[ f(\theta) = \sin^4\theta + \cos^4\theta \]
 
 
 \ifprintanswers
@@ -8,17 +8,20 @@
 \fi 
 
 \begin{solution}[\fullpage]
-  The \textit{extrema} - that is, maxima or minima - will happen at points where,
+  The \textbf{extrema} - that is, maxima or minima - will happen at points where,
   \begin{align}
      \dfrac{\ud}{\ud\theta}f(\theta) = 4\sin^3\theta\cos\theta - 4\cos^3\theta\sin\theta &= 0\\
-        \Rightarrow 4\sin\theta\cos\theta\cdot(\sin^2\theta - \cos^2\theta) &= 0 \\
-        \text{which will happen when } \sin\theta = 0 \Rightarrow \theta &= n\pi \\
-              \cos\theta = 0 \Rightarrow \theta &= (2n+1)\frac{\pi}{2} \\
-        \text{or, when } \sin^2\theta = \cos^2\theta \Rightarrow \theta &= (2n+1)\frac{\pi}{4}
+        \implies 4\sin\theta\cos\theta\cdot(\sin^2\theta - \cos^2\theta) &= 0 \\
+        \text{which will happen when } \sin\theta = 0 \implies \theta &= n\pi \\
+              \cos\theta = 0 \implies \theta &= (2n+1)\frac{\pi}{2} \\
+        \text{or, when } \sin^2\theta = \cos^2\theta \implies \theta &= (2n+1)\frac{\pi}{4}
   \end{align}
-  We only need to find the extreme values, \textit{not} where they occur. And so, if we take $\theta$s
-  conforming to the above - like $\theta = 0$, $\theta = \frac{\pi}{4}$ and $\theta = \frac{\pi}{2}$, then
-  that should be enough to tell us what the extreme values are
+  \textbf{We only need to find the extreme values}, not where they occur.
+  
+  And so, if we take $\theta$s conforming to (3),(4) and (5), then
+  that should be enough to tell us what the extreme values are. 
+  
+  For $n=0$, we therefore get $\theta=0, \theta=\dfrac\pi{4}$ and $\theta=\dfrac\pi{2}$.
   
   \begin{align}
      f(0) = f(\frac{\pi}{2}) &= 1 \\
@@ -26,3 +29,4 @@
   \end{align}
   The maximum value is therefore $1$ and the minimum is $\frac{1}{2}$
 \end{solution}
+\ifprintanswers\begin{codex}Maximum = $1$ and Minimum = $\dfrac{1}{2}$\end{codex}\fi
