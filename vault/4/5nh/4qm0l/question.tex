@@ -1,56 +1,66 @@
 
 
-
-
-\ifnumequal{\value{rolldice}}{0}{
-  % variables 
+\ifnumodd{\value{rolldice}}{
+  \renewcommand\va{3}
+  \renewcommand\vb{1}
+  \renewcommand\vc{\sqrt{3}}
+  \renewcommand\vd{ }
+  \renewcommand\vx{\sqrt{3}}
+  \renewcommand\vy{1}
+  \renewcommand\vz{6}
 }{
-  \ifnumequal{\value{rolldice}}{1}{
-    % variables 
-  }{
-    \ifnumequal{\value{rolldice}}{2}{
-      % variables 
-    }{
-      % variables 
-    }
-  }
+  \renewcommand\va{1}
+  \renewcommand\vb{3}
+  \renewcommand\vc{ }
+  \renewcommand\vd{\sqrt{3}}
+  \renewcommand\vx{1}
+  \renewcommand\vy{\sqrt{3}}
+  \renewcommand\vz{3}
 }
 
-\question[4] Evaluate : $\int (\sqrt{3} \sin x - \cos x ) dx $ 
+%\ifnumequal{\value{rolldice}}{0}{
+%}{
+%  \ifnumequal{\value{rolldice}}{1}{
+%    \renewcommand\va{1}
+%    \renewcommand\vb{3}
+%    \renewcommand\vc{}
+%  }{
+%    \ifnumequal{\value{rolldice}}{2}{
+%      \renewcommand\va{1}
+%      \renewcommand\vb{1}
+%      \renewcommand\vc{}
+%    }{
+%      \renewcommand\va{3}
+%      \renewcommand\vb{1}
+%      \renewcommand\vc{}
+%    }
+%  }
+%}
 
+\question[4] What are the values of $A$ and $B$ if 
+  \[ \int(\vc\sin x - \vd\cos x)\ud x = A\cos\left(x-B\right) + C \]
+Hint: $\cos (x-y) = \eCosOfDiff{x}{y}$
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}[\halfpage]
-$\int (\sqrt{3} \sin x - \cos x ) dx $\\
-\begin{align}
-&\Rightarrow \sqrt{3} \int \sin x dx - \int \cos x dx \\
-&\Rightarrow - \sqrt{3} \cos x  - \sin x + C\\
-\end{align}
-This is in the form A sin x $+$ B cos x \\
-Thus for further simplification we multiply and divide by $\sqrt{A^2 + B^2}$\\
-\begin{align}
-&\Rightarrow -2 \lbrace  \dfrac{\sqrt{3}}{2} \cos x + \dfrac{1}{2} \sin x \rbrace + C\\
-&\Rightarrow -2 \lbrace  \cos (\dfrac{\Pi}{6}) \cos x + \sin (\dfrac{\Pi}{6}) \sin x \rbrace + C
-\end{align}
-This is in the form : cos X cos Y $+$ sin X sin Y \\
-Thus becomes cos $(X-Y)$\\
-$\Rightarrow -2 \cos (x- \dfrac{\Pi}{6}) + C$
+  \begin{align}
+    \int (\vc\sin x - \vd\cos x) \ud x &= -\vc\cos x - \vd\sin x + C \\
+    &= \underbrace{-2\cdot\left( \dfrac{\vc\cos x}{\sqrt{\va + \vb}} + \dfrac{\vd\sin x}{\sqrt{\va + \vb}} \right)}
+    _{\text{Multiply and divide by }\sqrt{1^2+\sqrt{3}^2}}+ C  \\
+    &= -2\cdot\left(\dfrac\vx{2}\cdot\cos x + \dfrac\vy{2}\cdot\sin x \right) + C 
+  \end{align}
+
+  \textbf{Insight \#1: $\cos\frac\pi\vz=\frac\vx{2}$ and $\sin\frac\pi\vz=\frac\vy{2}$}
+
+  Which means, 
+  \begin{align}
+    -2\cdot\left(\dfrac\vx{2}\cdot\cos x + \dfrac\vy{2}\cdot\sin x \right) &= 
+    -2\cdot\left( \cos\frac\pi\vz\cos x + \sin\frac\pi\vz\sin x \right) \\
+    &= -2\cos\left( x - \frac\pi\vz \right) 
+  \end{align}
+  And hence, 
+  \[ \int (\vc\sin x - \vd\cos x) \ud x = -2\cos\left( x - \frac\pi\vz \right) + C \implies A = -2\text{ and } B = \dfrac\pi\vz \]
 \end{solution}
 
-
+\ifprintanswers\begin{codex}$A=-2\text{ and } B = \dfrac\pi\vz$\end{codex}\fi

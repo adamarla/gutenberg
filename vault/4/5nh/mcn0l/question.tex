@@ -3,55 +3,61 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{33}
-  \renewcommand{\vbtwo}{29}
+  \renewcommand{\va}{33}
+  \renewcommand{\vb}{29}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{30}
-    \renewcommand{\vbtwo}{26}
+    \renewcommand{\va}{30}
+    \renewcommand{\vb}{26}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{18}
-      \renewcommand{\vbtwo}{14}
+      \renewcommand{\va}{18}
+      \renewcommand{\vb}{14}
     }{
       % variables 
-      \renewcommand{\vbone}{24}
-      \renewcommand{\vbtwo}{20}
+      \renewcommand{\va}{24}
+      \renewcommand{\vb}{20}
     }
   }
 }
-\DIVIDE\vbone{3}\k
-\SQUARE{\k}\l
-\gcalcexpr[0]\m{\l-\k-\vbtwo} 
-\SQUAREROOT{\m}\n
-\ADD{\k}{\n}{\pl} 
-\SUBTRACT{\k}{\n}{\mi}
+\DIVIDE\va{3}\vc
+\SQUARE\vc\vd
+\EXPR[0]\ve{\vd-\vc-\vb}
+\SQUAREROOT\ve\vf
+\ADD\vc\vb\vg
 
-\question The sum of the first three terms of an arithmetic progression is $\vbone$. 
-If the product of first and the third term exceeds the second term by $\vbtwo$, then find the progression 
+\ADD\vc\vf\vp
+\SUBTRACT\vc\vf\vq
+
+\question The sum of the first three terms of an arithmetic progression is $\va$. 
+If the product of first and the third term exceeds the second term by $\vb$, 
+then find the progression (first term and common difference).
 
 \watchout
 
 \begin{solution}
-Assuming the terms of the progression to be : $a-d, a, a+d $\\
-Adding the terms,\\
-$\Rightarrow$  3a = $\vbone \Rightarrow$ a = $\k$\\
-\begin{align}
-(a+d)(a-d) - a &= \vbtwo\\ % Storing a^2 in l
-\Rightarrow {a}^2 - {d}^2 - a &= \vbtwo 
-\end{align}
-Substituting, a = $\k$\\
-\begin{align}  
-d^{2} &= {\k}^2 - {\k} - \vbtwo\\ 
-\Rightarrow d^{2} &= \m\\ % m= l-k-\vbtwo
-\Rightarrow d &= \pm \n  %n is square root of m.
-\end{align}
-Thus the progression becomes:
-\begin{align}
-    \underbrace{ \mi, \k, \pl \cdots}_{d=9}\quad\text{OR}\quad\quad\underbrace{ \pl, \k, \mi \cdots  }_{d=-9}
-\end{align}
+  If the first three terms be $a-d,a$ and $a+d$, then 
+  \[ (a-d) + a + (a+d) = \va\implies 3a = \va \implies a = \vc \]
+  Also,
+  \begin{align}
+    (a-d)\cdot (a+d) &= a + \vb\implies\vd-d^2 = \vg \\
+    \implies d^2 &= \ve\implies d = \pm\vf
+  \end{align}
+  Hence, we have \textbf{two possible projections}
 
+  \begin{tabular}{c c}
+    \toprule
+      $a=\vc\text{ and }d=\vf$ & $a=\vc\text{ and }d=-\vf$  \\
+    \midrule
+      $\vq,\vc,\vp\ldots$ & $\vp,\vc,\vq\ldots$ \\ 
+    \bottomrule
+  \end{tabular}
 \end{solution}
 
+\ifprintanswers
+  \begin{codex}
+    $(\vq,\vc,\vp\ldots)\text{ and }(\vp,\vc,\vq\ldots)$
+  \end{codex}
+\fi

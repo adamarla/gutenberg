@@ -3,61 +3,41 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{24}
-  \renewcommand{\vbtwo}{12}
+  \renewcommand{\va}{24}
+  \renewcommand{\vb}{12}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{36}
-    \renewcommand{\vbtwo}{10}
+    \renewcommand{\va}{36}
+    \renewcommand{\vb}{10}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{16}
-      \renewcommand{\vbtwo}{5}
+      \renewcommand{\va}{16}
+      \renewcommand{\vb}{5}
     }{
       % variables 
+      \renewcommand{\va}{8}
+      \renewcommand{\vb}{5}
     }
   }
 }
-\DIVIDE\vbone{4}\k
-\MULTIPLY\k{19}\m
-\gcalcexpr[0] \l {(\vbtwo + \m)} 
+\DIVIDE\va{4}\vc
+\MULTIPLY\vc{19}\ve
+\ADD\vb\ve\vf
 
-\question[4] Find the arithmetic progression whose 7th term is $\vbone$ less than the 11th term. And the first term is $\vbtwo$
-
+\question[4] If the first term $(a_1)$ of an arithmetic progression is $\vb$ \textbf{and} 
+the seventh term $(a_7)$ is $\va$ less than the the eleventh term $(a_{11})$, then 
+what is the twentieth term $(a_{20})$? 
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}[\halfpage]
-The seventh and eleventh terms are \\
-\begin{align}
-\text{a}_{7} &= \vbtwo + 6\cdot d \text\quad \\
-\text{a}_{11} &= \vbtwo + 10\cdot d
-\end{align}
-where, d is the common difference \\
-Hence,    \\  
-\begin{align}
-\quad a_{11} - a_{7} = 4d &= \vbone\\s
-\Rightarrow d &= \k  \\
-\text{Thus, the 20th term is}\quad & : \l  % l = \vbtwo + 19 *\k
-\end{align}
-
+  \begin{align}
+    a_7 = a_1 + (7-1)\cdot d &\text{ and } a_{11} = a_1 + (11-1)\cdot d \\
+    \implies a_{11}-a_7 &= 10d - 6d = \va\implies d = \vc \\
+    \text{Hence, } a_{20} &= a_1 + (20-1)\cdot d = \vb + 19\cdot\vc = \vf
+  \end{align}
 \end{solution}
 
-
+\ifprintanswers\begin{codex}$\vf$\end{codex}\fi

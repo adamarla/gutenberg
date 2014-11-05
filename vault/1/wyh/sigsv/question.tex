@@ -5,18 +5,24 @@
 \insertQR{}
 
 \begin{solution}[\halfpage]
-  \textbf{If} $x^{2n}-1$ is divisible by $x-1$, \textbf{then} for the proposition to be 
-  true, it must also hold for $n+1$. 
+  \textbf{Insight \#1: Meaning of divisibility of polynomials}
 
+  If a polynomial $A(x)$ is divisible by another polynomial $B(x)$, then it means 
+  \[ A(x) = B(x)\cdot C(x)\text{ where } C(x) = \text{ another polynomial in }x \] 
+  We can see that the proposition is true for $n=1$
+  \[ x^{2n} - 1 = \underbrace{x^2 - 1}_{A(x)} = \underbrace{(x+1)}_{B(x)}\cdot\underbrace{(x-1)}_{C(x)} \] 
+
+  \textbf{Hence, if} $x^{2n}-1$ is divisible by $x+1$, that is 
+  \[ x^{2n}-1 = P(x)\cdot (x+1) \] 
+  
+  then, 
   \begin{align}
     \dfrac{x^{2\cdot(n+1)}-1}{x+1} &= \overbrace{\dfrac{x^2\cdot x^{2n} - x^2 + x^2 - 1}{x+1}}^{\text{adding and subtracting $x^2$}} \\
-    &= \dfrac{x^2\cdot (x^{2n} - 1)}{x+1} + \underbrace{x-1}_{\frac{x^2-1}{x+1}}
+    &= \underbrace{x^2\cdot\underbrace{\dfrac{(x^{2n} - 1)}{x+1}}_{P(x)} + \underbrace{x-1}_{\frac{x^2-1}{x+1}}}_{\text{Another polynomial}}
   \end{align}
 
-  As $(x^{2n}-1)$ is \textbf{assumed to be} divisible by $x+1$, 
-  \[ \dfrac{x^{2\cdot (n+1)} - 1}{x + 1} = x^2\cdot\underbrace{\dfrac{x^{2n}-1}{x+1}}_{Q(x)} + (x-1) = P(x)\]
-  where $Q(x)$ and $P(x)$ are some polynomials in $x\implies$ divisibility.
+  In short, we have shown that 
+  \[ \dfrac{x^{2n}-1}{x+1} = P(x)\implies\dfrac{x^{2\cdot(n+1)}-1}{x+1} = x^2\cdot P(x) + (x-1) = Q(x) \]
+  And as the proposition is true for $n=1$, it is also true for $n=2,3,4,\ldots\infty$.
 
-  Moreover, for $n=1$, we can see that $x^{2\cdot 1}-1$ is divisible by $x+1$. Which means, 
-  the same would also be true for $n=2,3,4,\ldots,\infty$. Hence proved.
 \end{solution}
