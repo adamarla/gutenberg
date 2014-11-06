@@ -46,21 +46,6 @@ would $\vbone$ be ranked starting from the $\vbtwo$.
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}[\halfpage]
   Since $\vbone$ would be closer to the $\vbthree$ than the $\vbtwo$, 
   we can attempt to compute its rank from the $\vbthree$ and subtract 
@@ -108,3 +93,5 @@ would $\vbone$ be ranked starting from the $\vbtwo$.
   \end{align}
 
 \end{solution}
+
+\ifprintanswers\begin{codex}$\vbsix$\end{codex}\fi
