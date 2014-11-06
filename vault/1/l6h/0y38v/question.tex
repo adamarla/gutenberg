@@ -2,43 +2,49 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{2}
+  \renewcommand{\va}{2}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{4}
+    \renewcommand{\va}{4}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{3}
+      \renewcommand{\va}{3}
     }{
       % variables 
-      \renewcommand{\vbone}{5}
+      \renewcommand{\va}{5}
     }
   }
 }
 
-\ADD\vbone{1}\vbtwo
-\ADD\vbone{2}\vbthree
-\ADD\vbone{3}\vbfour
-\ADD\vbone{4}\vbfive
+\ADD\va{1}\vb
+\ADD\va{2}\vc
+\ADD\va{3}\vd
+\ADD\va{4}\ve
 
 \question[3] Find an expression for the sum of the first $n$ terms of the series 
-$\dfrac{1}{\vbtwo\cdot\vbthree} + \dfrac{1}{\vbthree\cdot\vbfour} + \dfrac{1}{\vbfour\cdot\vbfive}\ldots$
+ \[ \dfrac{1}{\vb\cdot\vc} + \dfrac{1}{\vc\cdot\vd} + \dfrac{1}{\vd\cdot\ve}\ldots \]
 
-
-\ifprintanswers
-\fi 
+\watchout
 
 \begin{solution}[\halfpage]
-	 $a_n = \dfrac{1}{(n+\vbone)\cdot(n+\vbtwo)},\, n \geq 1, n\in\mathbb{N}$ in the above series. 
+	 $a_n = \dfrac{1}{(n+\va)\cdot(n+\vb)},\, n \geq 1, n\in\mathbb{N}$ in the above series. 
+
 	 The sum of the first $n$ terms, therefore, is given by 
 	 \begin{align}
-	 	S_n &= \sum_{k=1}^{n}\dfrac{1}{(k+\vbone)\cdot(k+\vbtwo)} =
-	 	  \sum_{k=1}^{n}\dfrac{k+\vbtwo - (k+\vbone)}{(k+\vbone)\cdot(k+\vbtwo)} \\
-	 	&= \sum_{k=1}^{n}\dfrac{1}{k+\vbone} - \sum_{k=1}^{n}\dfrac{1}{k+\vbtwo} \\
-	 	&= \left( \frac{1}{\vbtwo} + \frac{1}{\vbthree} + \frac{1}{\vbfour} + \ldots + \frac{1}{n+\vbone}\right) - 
-	 	\left( \frac{1}{\vbthree} + \frac{1}{\vbfour} + \ldots + \frac{1}{n+\vbone} + \frac{1}{n+\vbtwo}\right) \\
-	 	&= \dfrac{1}{\vbtwo} - \dfrac{1}{n+\vbtwo} = \dfrac{n}{\vbtwo\cdot(n+\vbtwo)}
+	 	S_n &= \sum_{k=1}^{n}\dfrac{1}{(k+\va)\cdot(k+\vb)} =
+	 	  \sum_{k=1}^{n}\dfrac{k+\vb - (k+\va)}{(k+\va)\cdot(k+\vb)} \\
+	 	&= \sum_{k=1}^{n}\dfrac{1}{k+\va} - \sum_{k=1}^{n}\dfrac{1}{k+\vb} \\
+	 	&= \underbrace{\left( \frac{1}{\vb} + \frac{1}{\vc} + \frac{1}{\vd} + \ldots + \frac{1}{n+\va}\right) - 
+	 	\left( \frac{1}{\vc} + \frac{1}{\vd} + \ldots + \frac{1}{n+\va} + \frac{1}{n+\vb}\right)}_{\text{middle terms cancel out}} \\
+	 	&= \dfrac{1}{\vb} - \dfrac{1}{n+\vb} = 
+    \dfrac{n}{\vb\cdot(n+\vb)}
 	 \end{align}
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\dfrac{n}{\vb\cdot(n+\vb)}$
+  \end{codex}
+\fi

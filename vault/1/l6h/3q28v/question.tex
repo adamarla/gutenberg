@@ -1,22 +1,74 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{2}
+  \renewcommand\vb{8}
+  \renewcommand\vc{2}
+  \renewcommand\vd{5}
+  \renewcommand\vm{38}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{2}
+    \renewcommand\vb{7}
+    \renewcommand\vc{3}
+    \renewcommand\vd{7}
+    \renewcommand\vm{42}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{3}
+      \renewcommand\vb{6}
+      \renewcommand\vc{4}
+      \renewcommand\vd{3}
+      \renewcommand\vm{45}
+    }{
+      % variables 
+      \renewcommand{\va}{4}
+      \renewcommand\vb{9}
+      \renewcommand\vc{2}
+      \renewcommand\vd{9}
+      \renewcommand\vm{72}
+    }
+  }
+}
 
-\question[2] For what values of $x$ would $2x$, $x-8$ and $2x+5$ be successive terms 
+\MULTIPLY\vb{2}\ve
+\MULTIPLY\va\vc\vf
+\MULTIPLY\va\vd\vg
+\SQUARE\vb\vh
+
+\SUBTRACT\vf{1}\vi
+\ADD\vg\ve\vj
+\MULTIPLY\vi{2}\vn
+
+\ADD{-\vj}\vm\vx
+\SUBTRACT{-\vj}\vm\vy
+
+\question[2] For what values of $x$ would $\va x$, $x-\vb$ and $\vc x+ \vd$ be successive terms 
 of a geometric progression?
 
-\calculator{1444 = 38^2}
+\watchout
 
-
-\ifprintanswers
-\fi 
+\begin{calcaid}
+  \begin{tabular}{c c c c}
+    $38^2=1444$ & $42^2=1764$ & $45^2=2025$ & $72^2=5184$ 
+  \end{tabular}
+\end{calcaid}
 
 \begin{solution}[\halfpage]
-	If $2x$, $x-8$ and $2x+5$ are to be successive terms of a geometric progression, then
+	If $\va x$, $x-\vb$ and $2x+\vd$ are to be successive terms of a geometric progression, then
 	\begin{align}
-		(x - 8)^2 &= (2x+5)\cdot 2x \\
-		\Rightarrow x^2-16x + 64 &= 4x^2 + 10x \text{ or } 3x^2+26x-64 = 0 \\
-		\Rightarrow x &= \dfrac{-26 \pm \sqrt{26^2-4\cdot 3\cdot(-64)}}{2\times 3} \\
-		&=  \dfrac{-26 \pm 38}{6} = 2, -\frac{64}{6} = -\frac{32}{3}
+		(x - \vb)^2 &= (\vc x+\vd)\cdot \va x \\
+		\implies x^2-\ve x + \vh &= \vf x^2 + \vg x \text{ or } \vi x^2+\vj x- \vh = 0 \\
+		\implies x &= \dfrac{-\vj \pm \sqrt{\vj^2-4\cdot \vi\cdot(-\vh)}}{2\times \vi} \\
+		&=  \dfrac{-\vj \pm \vm}\vn\implies x = 
+    \WRITEFRAC[false]\vx\vn, \WRITEFRAC[false]\vy\vn 
 	\end{align}
-	
-	Answer: $x=2$ or $x=-\frac{32}{3}$
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\WRITEFRAC[false]\vx\vn\text{ and }\WRITEFRAC[false]\vy\vn$
+  \end{codex}
+\fi
