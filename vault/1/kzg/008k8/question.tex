@@ -1,28 +1,71 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{20}
+  \renewcommand{\vb}{16}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{10}
+    \renewcommand{\vb}{8}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{12}
+      \renewcommand{\vb}{10}
+    }{
+      % variables 
+      \renewcommand{\va}{16}
+      \renewcommand{\vb}{12}
+    }
+  }
+}
 
-\question[3]   A bank is offering two investment schemes. The first scheme offers
-7\% compound interest in the first year and - in each subsequent year - 25\% less 
-than what was offered in the previous year. The second scheme offers a constant 5.75\%
-throughout. If you are investing for a 2-year period, which scheme would you choose?
+\MULTIPLY\va{0.75}\vc
+\EXPR[2]\vj{ 1 + (\va/100)}
+\EXPR[2]\vk{ 1 + (\vc/100)}
+\EXPR[2]\vl{ 1 + (\vb/100)}
 
+\MULTIPLY\vj\vk\vm
+\SQUARE\vl\vn
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
+\ROUND[3]\vm\vx
+\ROUND[3]\vn\vy
+\EXPR[1]\vp{(\vx - 1)*100}
+\EXPR[1]\vq{(\vy - 1)*100}
+
+\question[3]   A bank offers two investment schemes. In \textbf{Scheme \#1}, 
+money is compounded at $\va\%$ in the first year and at 25\% lesser rate in 
+the second year. \textbf{Scheme \#2} offers a constant $\vb\%$ in both years. 
+What are the returns of the two schemes and which would you choose? 
+
+\watchout
 
 \begin{solution}[\fullpage]
-	The amount in-hand at the end of 2 years with the first scheme is
-	\begin{align}
-		P_1 &= P_0\cdot\underbrace{\left( 1 + \dfrac{7}{100}\right)}_{\texttt{first year}}
-		\cdot\underbrace{\left( 1 + \dfrac{5.25}{100}\right)}_{\texttt{second year}} \\
-		&= 1.126\cdot P_0
-	\end{align}
-	
-	Similarly, with the second scheme, you would get
-	\begin{align}
-		P_2 &= P_0\cdot\left( 1 + \dfrac{5.75}{100}\right)^{2} \\
-		    &= 1.118\cdot P_0
-	\end{align}
-	
-	Clearly, you would be better off going with the first scheme
+  \begin{tabular}{c c c}
+    \toprule
+      & Year 1 & Year 2 \\
+    \midrule
+      Scheme \#1 & $\va\%$ & $\vc\%$ \\
+      Scheme \#2 & $\vb\%$ & $\vb\%$ \\
+    \bottomrule
+  \end{tabular}
+
+  If $P_0$ be the amount put in at the beginning of Year 1 and $P_2$ the amount one gets 
+  at the end of Year 2, then 
+
+  \textbf{Scheme \#1}
+		\[ P_2 = P_0\cdot\underbrace{\left( 1 + \dfrac\va{100}\right)}_{\texttt{first year}}
+		\cdot\underbrace{\left( 1 + \dfrac\vc{100} \right)}_{\texttt{second year}} = \vx P_0 \implies\vp\%\text{ return}\]  
+
+  \textbf{Scheme \#2}
+		\[ P_2 = P_0\cdot\underbrace{\left( 1 + \dfrac\vb{100}\right)}_{\texttt{first year}}
+		\cdot\underbrace{\left( 1 + \dfrac\vb{100} \right)}_{\texttt{second year}} = \vy P_0\implies\vq\%\text{ return}\]  
 \end{solution}
+
+Clearly, it is better to invest in \textbf{Scheme \#1} due to its higher returns.
+\ifprintanswers
+  \begin{codex}
+    Scheme \#1 $(\vp\%\text{ versus }\vq\%)$
+  \end{codex}
+\fi

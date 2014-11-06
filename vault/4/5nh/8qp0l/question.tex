@@ -1,56 +1,17 @@
 
-
-
-\ifnumequal{\value{rolldice}}{0}{
-  % variables 
-}{
-  \ifnumequal{\value{rolldice}}{1}{
-    % variables 
-  }{
-    \ifnumequal{\value{rolldice}}{2}{
-      % variables 
-    }{
-      % variables 
-    }
-  }
-}
-
-\question[3] $\int \cot x $ dx
-
-
-\watchout
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
+\question[3] Evaluate the following integral 
+  \[ \int\cot x\ud x \]
 
 \begin{solution}[\halfpage]
-$\int \cot x $ dx
-\begin{align}
-\int \left( \dfrac{\cos x}{\sin x} \right) \cdot dx
-\end{align}
-Now, we put sin x = t;\\
-Thus,
-\begin{align}
-dt &= (\cos x)  dx\\
-\text {Substituting},
-&\Rightarrow \int \dfrac{dt}{t}\\ 
-&\Rightarrow \log |t| + C
-\end{align}
-Now replacing t,
-\begin{align}
-&\Rightarrow \log |\sin x| + C
-\end{align}
+  \begin{align}
+    \int\cot x\ud x &= \int\dfrac{\cos x}{\sin x}\ud x
+  \end{align}
+  If we now let $z = \sin x$, then 
+  \[ \ud z = \cos x\ud x \]
+  Which means, 
+  \begin{align}
+    \int\dfrac{\cos x}{\sin x}\ud x &= \int\dfrac{\ud z}{z} = \ln\vert z\vert + C = \ln\vert\sin x\vert + C
+  \end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}$\ln\vert\sin x\vert + C$\end{codex}\fi

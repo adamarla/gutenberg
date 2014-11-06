@@ -2,51 +2,42 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
+  \renewcommand\va{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
+    \renewcommand\va{4}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
+      \renewcommand\va{5}
     }{
-      % variables 
+      \renewcommand\va{6}
     }
   }
 }
 
-\question[5] $\int \dfrac{dx}{2\sqrt{x}(x+1)}$ 
-
+\question[5] Evaluate the following integral
+  \[ \int\dfrac{\ud x}{\va\sqrt{x}\cdot (x+1) }\] 
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}[\halfpage]
-Put x = $t^2$\\
-\begin{align}
-&\Rightarrow dx = (2t) dt  \\
-&\Rightarrow \dfrac{(2t) dt}{2t(t^2+1)}\\
-&\Rightarrow \dfrac{dt}{t^2+1}\\
-&\Rightarrow \tan ^ {-1} t + C 
-\end{align}
-Now replacing t,\\
-\begin{align}
-\tan ^ {-1} \sqrt{x} +C
-\end{align}
+  If we let $x=t^2$, then 
+  \[ \sqrt{x} = t\text{ and } \ud x = 2t\ud t \] 
+
+  And therefore, 
+  \begin{align}
+    \int\dfrac{\ud x}{\va\sqrt{x}\cdot (x+1)} &= 
+    \int\dfrac{2t\ud t}{\va t\cdot (t^2 + 1)} \\
+    &= \int\dfrac{2t\ud t}{\frac\va{2}\cdot 2t\cdot(t^2+1)} 
+    = \WRITEFRAC{2}\va\int\dfrac{2t\ud t}{2t\cdot (t^2+1)} \\
+    &= \WRITEFRAC{2}\va\int\dfrac{\ud t}{t^2 + 1} = \WRITEFRAC{2}\va\tan^{-1}t + C  \\
+    &=\WRITEFRAC{2}\va\tan^{-1}\sqrt{x} + C
+  \end{align}
 \end{solution}
 
 
+\ifprintanswers
+  \begin{codex}
+    $\WRITEFRAC{2}\va\tan^{-1}\sqrt{x} + C$
+  \end{codex}
+\fi
