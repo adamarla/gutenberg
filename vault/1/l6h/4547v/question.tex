@@ -1,27 +1,69 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{4}
+  \renewcommand\vp{64}
+  \renewcommand\vs{14}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{6}
+    \renewcommand\vp{216}
+    \renewcommand\vs{26}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{4}
+      \renewcommand\vp{64}
+      \renewcommand\vs{21}
+    }{
+      % variables 
+      \renewcommand{\va}{8}
+      \renewcommand\vp{512}
+      \renewcommand\vs{28}
+    }
+  }
+}
 
-\question[3] The sum of the first three terms of an \text{increasing} geometric progression 
-is 13 and their product is 27. Find the sum of the first five terms of the progression
+\FRACTIONSIMPLIFY\vs\va\vb\vc
+\FRACMINUS\vb\vc{1}{1}\vd\ve
 
+\MULTIPLY\ve{2}\vw
+\EXPR[0]\vx{ \vd*\vd-4*\ve*\ve }
+\SQRT\vx\vv
+\ADD\vd\vv\vy
+\SUBTRACT\vd\vv\vz
 
-\ifprintanswers
-\fi 
+\FRACTIONSIMPLIFY\vy\vw\p\q
+
+\DIVIDE\va\p\vj
+\POWER\p{5}\vk
+\EXPR[0]\vm{ (\vj*(\vk-1))/(\p- 1)}
+
+\question[3] The sum of the first three terms of an \textbf{increasing} geometric progression 
+is $\vs$ and their product is $\vp$. Find the sum of the first five terms of the progression.
+
+\watchout
 
 \begin{solution}[\halfpage]
-	The first three terms would be $\dfrac{a_2}{r}$, $a_2$ and $a_2r$, where $a_2$ is the second term
+	If the first three terms be $\dfrac{a}{r}$, $a$ and $ar$, then 
+  \[ \dfrac{a}{r}\cdot a \cdot ar = \vp \implies a^3 = \vp \implies a = \sqrt[3]\vp = \va \] 
+  Moreover, 
 	\begin{align}
-		\dfrac{a_2}{r}\cdot a_2\cdot a_2r &= 27 \Rightarrow a_2^3 = 27 \Rightarrow a_2 = 3 \\
-		\text{Also }, \dfrac{a_2}{r} + a_2 + a_2r &= 13 \Rightarrow r + \dfrac{1}{r} = \dfrac{13}{3} - 1 \\
-		\Rightarrow 3r^2 - 10r + 3 &= 0 \text{ or } r = \frac{1}{3}, 3
+		\dfrac{a}{r} + a + ar &= a\cdot\left(\dfrac{1}{r} + 1 + r \right) = \vs \\ 
+    \implies r + \dfrac{1}{r} &= \dfrac\vb\vc - 1 = \dfrac\vd\ve \\
+    \implies \ve r^2 - \vd r + \ve &= 0\implies r = \dfrac{\vd\pm\sqrt{\vx}}\vw = 
+    \WRITEFRAC[false]\vz\vw, \WRITEFRAC\p\q 
 	\end{align}
 	
-	With $r=\frac{1}{3}$, the sequence cannot be increasing - as is required. Hence, $r = 3$ is the only
-	acceptable solution
-	
-	The sequence, therefore, is $\lbrace 1,3,9,27,81\ldots\rbrace$. And the sum of the first 
-	5 terms is
+  \textbf{Insight: Increasing geometric progression $\implies r > 1$}
+
+   And hence, $r = \p$ is the only acceptable solution. Also, remember that the \textbf{first term} is 
+   $\dfrac{a}{r} = \vj$.
+
+   The sum of the first five terms - $S_5$ - is therefore 
 	\begin{align}
-		S_5 &= \dfrac{a_1\cdot(r^5 - 1)}{r-1} = \dfrac{1\cdot(3^5 - 1)}{2} = 121
+		S_5 &= \dfrac{\vj\cdot(r^5 - 1)}{r-1} = \dfrac{\vj \cdot(\p^5 - 1)}{\p - 1} = \vm
 	\end{align}
-	
 \end{solution}
+\ifprintanswers\begin{codex}$\vm$\end{codex}\fi
