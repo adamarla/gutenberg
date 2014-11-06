@@ -1,35 +1,44 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\va}{3}
+  \renewcommand{\vb}{2}
+  \renewcommand{\vc}{5}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\va}{4}
+    \renewcommand{\vb}{3}
+    \renewcommand{\vc}{7}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{4}
+      \renewcommand{\vb}{9}
+    }{
+      \renewcommand{\va}{6}
+      \renewcommand{\vb}{5}
+      \renewcommand{\vb}{11}
+    }
+  }
+}
 
-\question[3] Prove the following identity
+\question[3] Find the value of $M$ for which the following identity is true.
 \begin{align}
-  \dfrac{\sin\theta+\sin5\theta}{\cos\theta+\cos5\theta} 
-    = \tan3\theta \nonumber
+  \dfrac{\sin\theta+\sin \vb\theta}{\cos\theta+\cos \vb\theta} 
+    = \tan M\theta \nonumber
 \end{align}
 
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
+\watchout
 
 \begin{solution}[\halfpage]
   Rewrite the Left Hand Side (L.H.S) as follows,
   \begin{align}
-    \text{L.H.S} &= \dfrac{\sin(3\theta-2\theta)+\sin(3\theta+2\theta)}
-                      {\cos(3\theta-2\theta)+\cos(3\theta+2\theta)} \\
-                 &= \dfrac{2\sin3\theta\cos2\theta}
-                      {2\cos3\theta\cos2\theta} \\
-                 &= \tan3\theta
+    \text{L.H.S} &= \dfrac{\sin(\va\theta-\vb\theta)+\sin(\va\theta+\vb\theta)}
+                      {\cos(\va\theta-\vb\theta)+\cos(\va\theta+\vb\theta)} \\
+                 &= \dfrac{2\sin \va\theta\cos \vb\theta}
+                      {2\cos \va\theta\cos \vb\theta} \\
+                 &= \tan vc\theta
   \end{align}
-
+  Therefore, the identity is true for $M=\vc$.
 \end{solution}
+
+\ifprintanswers\begin{codex}$M=\vc$\end{codex}\fi
