@@ -1,21 +1,41 @@
 
-\question[3] Prove the following identity
-\begin{align}
-  \dfrac{\sin\theta + \sin 3\theta + \sin 5\theta}
-  	{\cos \theta + \cos 3\theta + \cos 5\theta} = \tan 3\theta \nonumber
-\end{align}
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\va}{3}
+  \renewcommand{\vb}{5}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\va}{5}
+    \renewcommand{\vb}{7}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\va}{7}
+      \renewcommand{\vb}{9}
+    }{
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{7}
+    }
+  }
+}
+\SUBTRACT\vb\va\d
+
+\question[3] If $\dfrac{\sin\theta + \sin \va\theta + \sin \vb\theta}
+  	{\cos \theta + \cos \va\theta + \cos \vb\theta} = \tan M\theta $, then
+  	find the value of $M$.
 
 \begin{solution}[\halfpage]
   Let us rewrite the Left Hand Side (L.H.S) as follows,
   \begin{align}
-    \text{L.H.S} &= \dfrac{\sin(3\theta - 2\theta ) + \sin 3\theta + 
-    						\sin (3\theta + 2\theta)}
-  						  {\cos (3\theta - 2\theta) + \cos 3\theta + 
-  							\cos (3\theta + 2\theta)} \\
-				 &= \dfrac{2\sin 3\theta \cos 2\theta + \sin 3\theta}
-				  		  {2\cos 3\theta \cos 2\theta + \cos 3\theta} \\
-				 &= \dfrac{\sin 3\theta(2\cos 2\theta + 1)}
-				  		  {\cos 3\theta(2\cos 2\theta + 1)} \\
-				 &= \tan 3\theta
+    \text{L.H.S} &= \dfrac{\sin(\va\theta - \d\theta ) + \sin \va\theta + 
+    						\sin (\va\theta + \d\theta)}
+  						  {\cos (\va\theta - \d\theta) + \cos \va\theta + 
+  							\cos (\va\theta + \d\theta)} \\
+				 &= \dfrac{2\sin \va\theta \cos \d\theta + \sin \va\theta}
+				  		  {2\cos \va\theta \cos \d\theta + \cos \va\theta} \\
+				 &= \dfrac{\sin \va\theta(2\cos \d\theta + 1)}
+				  		  {\cos \va\theta(2\cos \d\theta + 1)} \\
+				 &= \tan \va\theta
   \end{align}
+  Therefore $M=\va$
 \end{solution}
+
+\ifprintanswers\begin{codex}$M=\va$\end{codex}\fi
