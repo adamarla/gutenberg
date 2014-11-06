@@ -2,28 +2,27 @@
 \ifnumequal{\value{rolldice}}{0}{
   \renewcommand{\va}{3}
   \renewcommand{\vb}{2}
-  \renewcommand{\vc}{5}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     \renewcommand{\va}{4}
     \renewcommand{\vb}{3}
-    \renewcommand{\vc}{7}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       \renewcommand{\va}{5}
       \renewcommand{\vb}{4}
-      \renewcommand{\vc}{9}
     }{
       \renewcommand{\va}{6}
       \renewcommand{\vb}{5}
-      \renewcommand{\vc}{11}
     }
   }
 }
 
+\ADD\va\vb\s
+\SUBTRACT\va\vb\d
+
 \question[3] Find the value of $M$ for which the following identity is true.
 \begin{align}
-  \dfrac{\sin\theta+\sin \vb\theta}{\cos\theta+\cos \vb\theta} 
+  \dfrac{\sin\theta+\sin \s\theta}{\cos\theta+\cos \s\theta} 
     = \tan M\theta \nonumber
 \end{align}
 
@@ -36,9 +35,9 @@
                       {\cos(\va\theta-\vb\theta)+\cos(\va\theta+\vb\theta)} \\
                  &= \dfrac{2\sin \va\theta\cos \vb\theta}
                       {2\cos \va\theta\cos \vb\theta} \\
-                 &= \tan \vc\theta
+                 &= \tan \va\theta
   \end{align}
-  Therefore, the identity is true for $M=\vc$.
+  Therefore, the identity is true for $M=\va$.
 \end{solution}
 
-\ifprintanswers\begin{codex}$M=\vc$\end{codex}\fi
+\ifprintanswers\begin{codex}$M=\va$\end{codex}\fi
