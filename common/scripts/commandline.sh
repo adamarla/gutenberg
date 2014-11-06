@@ -24,6 +24,25 @@ function change_latex_variables {
   done
 } 
 
+function list_missing_pngs { 
+  vault # alias for switching to vault/
+  find . -name codex.jpg > jpg 
+  find . -name codex.png > png  
+
+  jpg=$(cat jpg | sed -e 's/[0,1,2,3]\/codex.jpg//g' | sort -u)
+  png=$(cat png | sed -e 's/[0,1,2,3]\/codex.png//g'| sort -u)
+  for j in $jpg ; do 
+    present=false
+    for p in $png ; do 
+      if [ $p == $j ] ; then 
+        present=true
+        break
+      fi
+    done
+    if [ $present == 'false' ] ; then echo $j ; fi
+  done
+}
+
 function connect_with_common { 
   if [ -z "$1" ] ; then 
     echo "[Error]: Specify a target ( vault | minthril )"
