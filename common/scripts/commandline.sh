@@ -24,6 +24,31 @@ function change_latex_variables {
   done
 } 
 
+function list_missing_pngs { 
+  cd $VAULT 
+  for d in `ls -d */` ; do 
+    if [ $d == "common/" -o $d == "3/" ] ; then 
+      echo " ----------------> Ignoring $d"
+      continue ; 
+    else
+      echo "................. Processing $d" 
+    fi
+    jpg=$(find $d -name codex.jpg | xargs dirname | xargs dirname | sort -u)
+    png=$(find $d -name codex.png | xargs dirname | xargs dirname | sort -u)
+
+    for j in $jpg ; do 
+      present=false
+      for p in $png ; do 
+        if [ $p == $j ] ; then 
+          present=true
+          break
+        fi
+      done
+      if [ $present == 'false' ] ; then echo $j ; fi
+    done
+  done 
+}
+
 function connect_with_common { 
   if [ -z "$1" ] ; then 
     echo "[Error]: Specify a target ( vault | minthril )"
