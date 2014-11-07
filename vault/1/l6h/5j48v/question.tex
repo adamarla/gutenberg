@@ -1,18 +1,55 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\vs}{243}
+  \renewcommand\vf{275}
+  \renewcommand\vn{5}
+  \renewcommand\vj{-2}
+  \renewcommand\vk{3}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\vs}{729}
+    \renewcommand\vf{633}
+    \renewcommand\vn{5}
+    \renewcommand\vj{2}
+    \renewcommand\vk{3}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\vs}{512}
+      \renewcommand\vf{350}
+      \renewcommand\vn{4}
+      \renewcommand\vj{3}
+      \renewcommand\vk{4}
+    }{
+      % variables 
+      \renewcommand{\vs}{486}
+      \renewcommand\vf{390}
+      \renewcommand\vn{4}
+      \renewcommand\vj{2}
+      \renewcommand\vk{3}
+    }
+  }
+}
 
-\question[2] The sum of an infinite geometric progression is 243 and the sum of
-its first five terms is 275. Find the progression
+\FRACMINUS{1}{1}\vf\vs\vp\vq
+\FRACMINUS{1}{1}\vj\vk\vx\vy
+\FRACMULT\vx\vy\vs{1}\va\vb
 
+\question[2] The sum of an infinite geometric series is $\vs$ and the sum of
+its first $\vn$ terms is $\vf$. What is the first term $(a)$ and the 
+common ratio $(r)$ of the progression?
 
-\ifprintanswers
-\fi 
+\watchout
 
 \begin{solution}[\halfpage]
+  If $S_\infty$ be the sum to infinity and $S_\vn$ the sum of the first $\vn$ terms, then 
 	\begin{align}
-		\dfrac{a}{1-r} &= 243 \\
-		\eSumOfGP{r}{5} &= 275 \Rightarrow 243\cdot(1-r^5) = 275 \\
-		\Rightarrow r^5 &= 1 - \dfrac{275}{243} = -\dfrac{32}{243} \\
-		\therefore r &= -\dfrac{2}{3} \\
-		\text{ and } \dfrac{a}{1-\left(-\frac{2}{3}\right)} &= 243 \Rightarrow a = \dfrac{5\times 243}{3} = 405
+		S_\infty &= \dfrac{a}{1-r} = \vs \\
+		S_\vn = \eSumOfGP{r}{\vn} &= \underbrace{\left[ \dfrac{a}{1-r}\right]}_{S_\infty}\cdot (1-r^\vn) = \vf \\
+    \implies (1-r^\vn) &= \dfrac\vf\vs\text{ or } r^\vn = 1-\dfrac\vf\vs = \dfrac\vp\vq \\
+    \implies r &= \dfrac\vj\vk\text{ and } a = S_\infty\cdot (1-r) = \va
 	\end{align}
 \end{solution}
+\ifprintanswers\begin{codex}$a=\va\text{ and }r = \dfrac\vj\vk$\end{codex}\fi

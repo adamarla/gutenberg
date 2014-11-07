@@ -1,19 +1,55 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{2}
+  \renewcommand\vb{1}
+  \renewcommand\vz{\dfrac{n}{3}\cdot (4n^2 + 12n + 11)}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{3}
+    \renewcommand\vb{1}
+    \renewcommand\vz{\dfrac{n}{2}\cdot (6n^2+15n+11)}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{2}
+      \renewcommand\vb{3}
+      \renewcommand\vz{\dfrac{n}{3}\cdot (4n^2 + 24n + 47)}
+    }{
+      % variables 
+      \renewcommand{\va}{3}
+      \renewcommand\vb{2}
+      \renewcommand\vz{\dfrac{n}{2}\cdot (6n^2 + 21n + 23)}
+    }
+  }
+}
+
+\EXPR[0]\ve{\va + \vb}
+\EXPR[0]\vf{\va*2 + \vb}
+\EXPR[0]\vg{\va*3 + \vb}
+\EXPR[0]\vh{\va*4 + \vb}
+
+\SQUARE\va\vp
+\EXPR[0]\vq{2*\va*\vb}
+\SQUARE\vb\vr
 
 \question[3] Find the expression for the sum of the first $n$ terms of the series 
-$4^2 + 7^2 + 10^2 + 13^2 \ldots$
+ \[ \ve^2 + \vf^2 + \vg^2 + \vh^2 \ldots \]
 
-
-\ifprintanswers
-\fi 
+\watchout
 
 \begin{solution}[\halfpage]
-	Each term in the series - $a_n$ - is of the form $(3n+1)^2$. Therefore, the required sum is
+	Each term in the series - $a_k$ - is of the form
+  \[ a_k = \va k + \vb,\, k\geq 1,\, k\in\mathbb{N} \]
+  Hence, the sum of the first $n$ terms will be 
 	\begin{align}
-		S_n &= \sum_{k=1}^{n}(3n+1)^2 = \sum_{k=1}^{n}9n^2+6n+1 \\
-		&= 9\cdot\sum_{k=1}^{n}n^2 + 6\cdot\sum_{k=1}^{n}n + \sum_{k=1}^{n}1 \\
-		&= 9\cdot\eSumOfSquares{n} + 6\cdot\eSumOfN{n} + n \\
-		&= \dfrac{n}{2}\cdot\left[ 3\cdot(n+1)\cdot(2n+1) + 6\cdot(n+1) + 2\right] \\
-		&= \dfrac{n}{2}\cdot\left[ 6n^2 + 15n + 11\right]
+		S_n &= \sum_{k=1}^{n}(\va k + \vb)^2 = \sum_{k=1}^{n} (\vp k^2 + \vq k + \vr)\\
+		&= \vp\cdot\sum_{k=1}^{n}k^2 + \vq\cdot\sum_{k=1}^{n}k + \vr\cdot\sum_{k=1}^{n}1 \\
+		&= \vp\cdot\eSumOfSquares{n} + \vq\cdot\eSumOfN{n} + \vr\cdot n \\
+    &= n\cdot\left[ \WRITEFRAC[false]\vp{6}\cdot (n+1)\cdot (2n+1) 
+    + \WRITEFRAC[false]\vq{2}\cdot (n+1) + \vr \right]\\
+    &= \vz
 	\end{align}
 \end{solution}
+\ifprintanswers\begin{codex}$\vz$\end{codex}\fi
