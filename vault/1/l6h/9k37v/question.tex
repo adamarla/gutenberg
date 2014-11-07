@@ -1,18 +1,61 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand\vj{1}
+  \renewcommand\vk{2}
+  \renewcommand\vi{63}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand\vj{1}
+    \renewcommand\vk{2}
+    \renewcommand\vi{189}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand\vj{1}
+      \renewcommand\vk{3}
+      \renewcommand\vi{364}
+    }{
+      % variables 
+      \renewcommand\vj{1}
+      \renewcommand\vk{3}
+      \renewcommand\vi{728}
+    }
+  }
+}
 
-\question[3] The sequence ${b_n}, \, n \geq 1$ is a geometric progression with $\dfrac{b_4}{b_6} = \dfrac{1}{4}$
-and $b_2 + b_5 = 216$. Find $b_1$
+\FRACPOWER\vj\vk{2}\vp\vq
+\FRACPOWER\vj\vk{3}\vr\vs
 
+\FRACADD{1}{1}\vr\vs\p\q
+\FRACMINUS{1}{1}\vr\vs\r\s
+\FRACMULT\vj\vk\p\q\x\y
+\FRACMULT{-\vj}\vk\r\s\v\w
 
-\ifprintanswers
-\fi 
+\DIVIDE\vi\x\a
+\MULTIPLY\a\y\vm
+
+\DIVIDE\vi\v\b
+\MULTIPLY\b\w\vx
+
+\question[3] If the ratio of the fourth and sixth terms of a geometric progression $ = \frac{b_4}{b_6} = \frac\vp\vq$ and 
+the sum of the second and fifth terms, $b_2 + b_5 = \vi$, then what is the first term $(b_1)$?
+
+\watchout
 
 \begin{solution}[\halfpage]
-	The terms of the sequence are of the form $b_n = b_1r^{n-1}$. And so, 
+  If $b_1$ is the first term and $r$ the common ratio, then 
+  \[ b_4 = b_1\cdot r^3 \text{ and } b_6 = b_1\cdot r^5 \implies \dfrac{b_4}{b_6} = \dfrac{1}{r^2} 
+  = \dfrac\vp\vq \implies r = \pm\dfrac\vj\vk \] 
+
+  Moreover, 
+   \[ b_2 + b_5 = \vs\implies b_1\cdot (r + r^4 ) = \vi\implies b_1 = \dfrac\vi{r\cdot (1+r^3)}\] 
 	\begin{align}
-		\dfrac{b_4}{b_6} &= \dfrac{b_1r^3}{b_1r^5} = \dfrac{1}{r^2} = \dfrac{1}{4} \Rightarrow r = \pm 2 \\
-		b_2 + b_5 = b_1r+b_1r^4 &= b_1r\cdot(1 + r^3) = 216 \\
-		\Rightarrow \text{ when } r = 2 \text{ then } b_1 &= \dfrac{216}{2\times 9} = 12 \\
-		\text{ And when } r = -2 \text{ then } b_1 &= \dfrac{216}{-2\times -7} = \dfrac{108}{7}
+    \text{when }r &= \dfrac\vj\vk\text{ then } b_1 = \dfrac\vi{\dfrac\vj\vk\cdot(1 + \dfrac\vr\vs)}
+    \implies b_1 = \vm \\ 
+    \text{when }r &= -\dfrac\vj\vk\text{ then } b_1 = \dfrac\vi{-\dfrac\vj\vk\cdot(1 - \dfrac\vr\vs)}
+    \implies b_1 = \vx
 	\end{align}
 \end{solution}
+\ifprintanswers\begin{codex}$\vm\text{ or }\vx$\end{codex}\fi
