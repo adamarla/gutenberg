@@ -1,34 +1,61 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand\vc{4}
+  \renewcommand\vd{3}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand\vc{5}
+    \renewcommand\vd{7}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand\vc{11}
+      \renewcommand\vd{7}
+    }{
+      % variables 
+      \renewcommand\vc{9}
+      \renewcommand\vd{4}
+    }
+  }
+}
 
-\question[3] The ratio of the sum of the cubes of the terms of an infinitely decreasing 
-geometric progression to the sum of the squares of its terms is 12:13. The sum of the 
-first two terms of the progression is equal to $\frac{4}{3}$. Find the progression
+\FRACDIV\vc\vd{13}{9}\va\vb
+\FRACDIV\vc\vd{4}{3}\vx\vy
 
+\question[3] The ratio of the sum of the cubes of the terms of an \textbf{infinitely decreasing}
+geometric progression to the sum of the squares of its terms is $\va:\vb$. The sum of the 
+first two terms of the progression is $\frac\vc\vd$. What is the first term $(a)$ of the progression?
 
-\ifprintanswers
-\fi 
+\watchout
 
 \begin{solution}[\halfpage]
-   If $\chi = \lbrace a, ar, ar^2 \ldots\rbrace$ be the original sequence, then the sequence
-   resulting from taking the cube and squares of the terms are
-   
-   $\chi_2 = \lbrace a^2, a^2r^2,a^2r^4 \ldots \rbrace$ and $ \chi_3 = \lbrace a^3, a^3r^3, a^3r^6 \ldots \rbrace$.
-   These are themselves geometric progressions, \textit{but} with different first terms and common ratios
-   
-   Now, if $S_3$ be the sum of $\chi_3$ and $S_2$ the sum of $\chi_2$, then
+  If the original progression be $G$
+  \[ G = \lbrace a,ar,ar^2,ar^3\ldots \rbrace \]
+  then the sequence of cubic terms would be 
+  \[ G_3 = \underbrace{\lbrace a^3, a^3r^3,a^3r^6\ldots \rbrace}_{\text{first term}=a^3,\text{ common ratio}=r^3}
+  \implies S_3^\infty = \dfrac{a^3}{1-r^3} \]
+  and the sequence of square terms would be 
+  \[ G_2 = \underbrace{\lbrace a^2, a^2r^2,a^2r^4\ldots \rbrace}_{\text{first term}=a^2,\text{ common ratio}=r^2}
+  \implies S_2^\infty = \dfrac{a^2}{1-r^2} \]
+  And therefore, 
    \begin{align}
-   		\dfrac{S_3}{S_2} &= \dfrac{\frac{a^3}{1-r^3}}{\frac{a^2}{1-r^2}} = \dfrac{12}{13} \\
-   		\Rightarrow \dfrac{a\cdot(1-r)\cdot(1+r)}{a\cdot(1-r)\cdot(1+r+r^2)} &= \dfrac{12}{13} \\
-   		\text{ or, } \dfrac{a\cdot(1+r)}{1+r+r^2} &= \dfrac{12}{13} \\
-   		\text{Also, } \underbrace{a\cdot(1+r)}_{\text{sum of first two terms}} &= \dfrac{4}{3} \\
-   		\text{ And so, } \dfrac{\frac{4}{3}}{1+r+r^2} &= \dfrac{12}{13} \\
-   		\Rightarrow 9r^2 + 9r - 4 &= 0 \Rightarrow r = \frac{1}{3},-\frac{4}{3}
+   		\dfrac{S_3^\infty}{S_2^\infty} = \dfrac{\frac{a^3}{1-r^3}}{\frac{a^2}{1-r^2}} = \dfrac\va\vb
+   		\implies &\dfrac{a\cdot(1-r)\cdot(1+r)}{a\cdot(1-r)\cdot(1+r+r^2)} = \dfrac\va\vb \\
+   		\implies\dfrac{a\cdot(1+r)}{1+r+r^2} &= \dfrac\va\vb 
    \end{align}
-   The sequence can be infinitely decreasing \textbf{only if} $r = \frac{1}{3}$
-   
+   Moreover, the sum of the first two terms in $G = a + ar = a\cdot (1+r) = \frac\vc\vd$. Hence, 
+   \begin{align}
+   		\dfrac{S_3^\infty}{S_2^\infty} = \dfrac{a\cdot (1+r)}{1+r+r^2} &= \dfrac{\frac\vc\vd}{1+r+r^2} = \dfrac\va\vb \\
+      \implies 9 r^2 + 9 r - 4 &= 0\implies r = \frac{1}{3}\text{ or } -\frac{4}{3}
+   \end{align}
+   \textbf{Insight \#1: Infinitely decreasing $\implies 0 < r < 1$}
+
+   And hence, only $r=\frac{1}{3}$ makes sense.
    And therefore 
    \begin{align}
-   	a\cdot(1+r) &= \dfrac{4}{3} \Rightarrow a = 1
+   	a\cdot(1+r) &= \dfrac\vc\vd \implies a = \WRITEFRAC\vx\vy
    \end{align}
-   Hence, the sequence is $\lbrace 1, \frac{1}{3}, \frac{1}{9}, \frac{1}{27} \ldots\rbrace$
 \end{solution}
+\ifprintanswers\begin{codex}$\WRITEFRAC\vx\vy$\end{codex}\fi
