@@ -258,8 +258,9 @@ function mobile_pngs {
   black=$f/mobile.black.png
   white=$f/mobile.white.png
   convert -chop 0x30 -trim $f/trim.jpg $black 
-  convert $black -fuzz 10% -transparent white $black
-  convert -negate $black $white
+  convert -negate $black $white 
+  convert $black -fuzz 20% -transparent white $black
+  convert $white -fuzz 20% -transparent black $white
 }
 
 function create_codex {
