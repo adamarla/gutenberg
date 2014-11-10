@@ -32,41 +32,43 @@ Find the area of the shaded region.
 
 \watchout
 
+\figinit{pt}
+  \figpt 100: $O$(45,0)
+  \figpt 101: $P$(0,0)
+  \figpt 102: $Q$(30,0)
+  \figpt 103: $R$(60,0)
+  \figpt 104: $S$(90,0)
+  \figpt 105: $M$(15,0)
+\figdrawbegin{}
+  %\figdrawcirc 100 (45)
+  \figset (fillmode=yes,color=0.7)
+  \figdrawarccirc 100 ; 45 (0,180)
+  \figdrawarccirc 105 ; 15 (180,360)
+  \figset (fillmode=no)
+  \figdrawarccirc 100 ; 45 (180,360)
+  \figset (fillmode=yes,color=1)
+  \figdrawline [101,102,103,104]
+  \figdrawarccirc 103 ; 30 (0,180)
+\figdrawend
+% 3. Writing text on the figure
+\figvisu{\figBoxA}{}{%
+  \Large
+  \figset write (mark=$\bullet$)
+  \figwrites 100:(2)
+  \figwritew 101:(2)
+  \figwrites 102:(2)
+  \figwrites 103:(2)
+  \figwritee 104:(2)
+}
+
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
-\begin{marginfigure}
-
-  \figinit{pt}
-    \figpt 100: $O$(45,0)
-    \figpt 101: $P$(0,0)
-    \figpt 102: $Q$(30,0)
-    \figpt 103: $R$(60,0)
-    \figpt 104: $S$(90,0)
-    \figpt 105: $M$(15,0)
-  \figdrawbegin{}
-    %\figdrawcirc 100 (45)
-    \figset (fillmode=yes,color=0.7)
-    \figdrawarccirc 100 ; 45 (0,180)
-    \figdrawarccirc 105 ; 15 (180,360)
-    \figset (fillmode=no)
-    \figdrawarccirc 100 ; 45 (180,360)
-    \figset (fillmode=yes,color=1)
-    \figdrawline [101,102,103,104]
-    \figdrawarccirc 103 ; 30 (0,180)
-  \figdrawend
-  % 3. Writing text on the figure
-  \figvisu{\figBoxA}{}{%
-    \figset write (mark=$\bullet$)
-    \figwrites 100:(2)
-    \figwritew 101:(2)
-    \figwrites 102:(2)
-    \figwrites 103:(2)
-    \figwritee 104:(2)
-  }
+  \begin{marginfigure}
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
+\else
+  \vspace{1cm}
   \centerline{\box\figBoxA}
-
-\end{marginfigure}
+\fi
 
 \begin{solution}[\halfpage]
 	\begin{align}
