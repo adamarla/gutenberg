@@ -1,8 +1,57 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand\va{6}
+  \renewcommand\vb{10}
+  \renewcommand\vc{6}
+  \renewcommand\vx{1}
+  \renewcommand\vy{5}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\va{3}
+    \renewcommand\vb{8}
+    \renewcommand\vc{7}
+    \renewcommand\vx{1}
+    \renewcommand\vy{4}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\va{4}
+      \renewcommand\vb{12}
+      \renewcommand\vc{6}
+      \renewcommand\vx{2}
+      \renewcommand\vy{3}
+    }{
+      \renewcommand\va{5}
+      \renewcommand\vb{16}
+      \renewcommand\vc{7}
+      \renewcommand\vx{2}
+      \renewcommand\vy{4}
+    }
+  }
+}
 
-\question[3] Compute the area of the figure bounded by the parabolas 
-$y = x^2-6x+10$ and $y=6x-x^2$
+\ADD\va\vc\vd 
+\DIVIDE\vd{2}\ve
+\DIVIDE\vb{2}\vf 
 
+\SQUARE\vy\a
+\MULTIPLY\a\vy\b
+\MULTIPLY\a\ve\c
+\FRACMULT{2}{3}\b{1}\d\e
+\MULTIPLY\vb\vy\f
+
+\SQUARE\vx\m
+\MULTIPLY\m\vx\n
+\MULTIPLY\m\ve\o
+\FRACMULT{2}{3}\n{1}\p\q
+\MULTIPLY\vb\vx\r
+
+\EXPR[0]\vp{\c-\f-\o+\r}
+\FRACMINUS\p\q\d\e\vq\vr
+\FRACADD\vp{1}\vq\vr\vm\vn
+
+\question[3] Find the area bounded by the parabolas 
+\[ y = x^2-\va x+\vb\text{ and }y=\vc x-x^2 \]
+\watchout
 
 \ifprintanswers
   \begin{marginfigure}
@@ -91,8 +140,8 @@ $y = x^2-6x+10$ and $y=6x-x^2$
 \figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
 \figwritee 1:(5pt)     \figwriten 2:(5pt)
 \figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
-\figwrites 100: $y=6x-x^2$(2)
-\figwriten 101: $y=x^2-6x+10$(2)
+\figwrites 100: $y=\vc x-x^2$(2)
+\figwriten 101: $y=x^2-\va x+\vb$(2)
 \figwritee 102: $R$(1)
 }
 \centerline{\box\figBoxA}
@@ -101,19 +150,18 @@ $y = x^2-6x+10$ and $y=6x-x^2$
 \fi 
 
 \begin{solution}[\fullpage]
-	The two parabolas intersect at points where
-	\begin{align}
-	   x^2-6x+10 &= 6x-x^2 \\
-	   \Rightarrow 2x^2 - 12x + 10 &= 0 \\
-	   \Rightarrow x &= 1,5
-	\end{align}
+	The two parabolas intersect at points when 
+  \begin{align}
+    x^2-\va x + \vb &= \vc x - x^2 \implies 2x^2 - \vd x + \vb = 0 \\ 
+    \implies x^2-\ve x + \vf &= 0 \implies x=\vx,\vy 
+  \end{align}
 	
 	The required area $A$ of region $R$ is therefore
 	\begin{align}
-	  A &= \int_1^5 [(6x-x^2) - (x^2 - 6x + 10)] \ud x \\
-	    &= \int_1^5 (12x - 2x^2 -10) \ud x \\
-	    &= \left[ 6x^2 -\dfrac{2}{3}x^3 - 10x\right]_1^5 \\
-	    &= \left( 150 - \frac{250}{3} -50\right) - \left( 6 - \frac{2}{3} - 10\right) \\
-	    &= 104 - \frac{248}{3} = 21\frac{1}{3}
+	  A &= \int_\vx^\vy\left[ (\vc x-x^2) - (x^2-\va x + \vb)\right]\ud x \\
+	    &= \int_\vx^\vy (\vd x - 2x^2 - \vb) \ud x = \left[ \ve x^2 -\dfrac{2}{3}x^3 - \vb x\right]_\vx^\vy \\
+      &= \left(\c - \dfrac\d\e - \f\right) - \left( \o-\dfrac\p\q - \r\right) = \WRITEFRAC\vm\vn
 	\end{align}
 \end{solution}
+
+\ifprintanswers\begin{codex}$\WRITEFRAC\vm\vn$\end{codex}\fi
