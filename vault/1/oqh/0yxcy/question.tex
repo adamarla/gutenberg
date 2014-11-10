@@ -1,35 +1,24 @@
 
+\renewcommand{\va}{A}
+\renewcommand{\vb}{B}
+\renewcommand{\vc}{C}
+
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{A}
-  \renewcommand{\vbtwo}{B}
-  \renewcommand{\vbthree}{C}
-  \renewcommand\va\vbtwo
-  \renewcommand\vb\vbthree
-  \renewcommand\vc\vbone
+  \renewcommand\vd\va
+  \renewcommand\ve\vb
+  \renewcommand\vf\vc
+  \renewcommand\vx\fillACapBNotC
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{D}
-    \renewcommand{\vbtwo}{E}
-    \renewcommand{\vbthree}{F}
-    \renewcommand\va\vbone
-    \renewcommand\vb\vbtwo
-    \renewcommand\vc\vbthree
+    \renewcommand\vd\vb
+    \renewcommand\ve\vc
+    \renewcommand\vf\va
+    \renewcommand\vx\fillBCapCNotA
   }{
-    \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{P}
-      \renewcommand{\vbtwo}{Q}
-      \renewcommand{\vbthree}{R}
-      \renewcommand\va\vbtwo
-      \renewcommand\vb\vbthree
-      \renewcommand\vc\vbone
-    }{
-      \renewcommand{\vbone}{X}
-      \renewcommand{\vbtwo}{Y}
-      \renewcommand{\vbthree}{Z}
-      \renewcommand\va\vbone
-      \renewcommand\vb\vbtwo
-      \renewcommand\vc\vbthree
-    }
+    \renewcommand\vd\va
+    \renewcommand\ve\vc
+    \renewcommand\vf\vb
+    \renewcommand\vx\fillACapCNotB
   }
 }
 
@@ -38,19 +27,31 @@ set notation symbols $\cup$ (union), $\cap$ (intersection) and $'$ (complement)
 
 \watchout[-40pt]
 
+\ifprintanswers
   \begin{marginfigure}
-    \begin{venndiagram3sets}[labelA=$\vbone$,labelB=$\vbtwo$,labelC=$\vbthree$,labelNotABC=$U$]
-      \ifnumodd{\value{rolldice}}{\fillACapBNotC}{\fillBCapCNotA}
+    \begin{venndiagram3sets}[labelA=$\va$,labelB=$\vb$,labelC=$\vc$,labelNotABC=$U$]
+      \vx
     \end{venndiagram3sets}
   \end{marginfigure}
+\else
+  \vspace{1cm}
+  \begin{venndiagram3sets}[labelA=$\va$,labelB=$\vb$,labelC=$\vc$,labelNotABC=$U$]
+    \vx
+  \end{venndiagram3sets}
+\fi
 
 \begin{solution}[\mcq]
-  What we need is \textbf{almost} like $\va\cap\vb$ - but not quite. We need to exclude $\va\cap\vb\cap\vc$ from it
+  What we need is \textbf{almost} like $\vd\cap\ve$ - but not quite.
 
-  If $S$ be the required set (the shaded portion, that is), then $\forall x\in S$, $x\in(\va\cap\vb)$
-  but $x\notin (\va\cap \vb\cap \vc)\implies x\notin\vc\implies x\in \vc'$. 
+  \textbf{Insight \#1: An element in the shaded region $\notin\vf\implies\in\vf'$}
 
-  So, the set $S=\lbrace x:x\in (\va\cap\vb), x\in\vc'\rbrace$. And what could that be written as? 
-  How about $S=(\va\cap\vb)\cap\vc'$
+  And so, if the shaded region be set $S$, then 
+  \[ S=\lbrace x:x\in (\vd\cap\ve), x\in\vf'\rbrace \] 
+  \textbf{Insight \#2: If $x\in X\text{ and } x\in Y\text{ then } x\in (X\cap Y)$}
+
+  And therefore, if 
+  \[ x\in S \implies x\in (\vd\cap\ve)\text{ and }x\in\vf'\text{, then }x\in (\vd\cap\ve\cap\vf') \]
 \end{solution}
+
+\ifprintanswers\begin{codex}$\vd\cap\ve\cap\vf '$\end{codex}\fi
 

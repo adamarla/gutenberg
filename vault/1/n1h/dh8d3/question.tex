@@ -1,14 +1,13 @@
 
 
-\question[3] At what angles do the parabolas $y=x^2$ and $y^2=x$ - \asif - intersect?
+\question[3] At what angles do the parabolas $y=x^2$ and $y^2=x$ (see figure) intersect?
 
-\calculator{ \sin^{-1}\frac{2}{\sqrt{5}} = \ang{63.44}, \sin^{-1}\frac{1}{\sqrt{5}} = \ang{26.57}}
+\begin{calcaid}
+  \begin{tabular}{c c c c}
+    $\sin^{-1}\frac{2}{\sqrt{5}} = \ang{63.44}$ & $\sin^{-1}\frac{1}{\sqrt{5}} = \ang{26.57}$
+  \end{tabular}
+\end{calcaid}
 
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
-\begin{marginfigure}
 \figinit{pt}
 \def\Xmin{0}
 \def\Ymin{0}
@@ -123,17 +122,23 @@
 )
 \figdrawend
 \figvisu{\figBoxA}{}{%
+\Large
 \figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
 \figwritee 1:(5pt)     \figwriten 2:(5pt)
 \figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
-\figwriten 100:$A$(2)
+\figwriten 100:$A$(3)
 \figwriten 101:(2)
 \figwritee 102:(2)
 }
-\centerline{\box\figBoxA}
 
-
-\end{marginfigure}
+\ifprintanswers
+  \begin{marginfigure}
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
+\else
+  \vspace{1cm}
+  \centerline{\box\figBoxA}
+\fi
 
 \begin{solution}[\fullpage]
 	The parabolas intersect at points where, 

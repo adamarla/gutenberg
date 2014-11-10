@@ -35,12 +35,10 @@
 }
 
 \question[3] Find the equation of the lines that pass through $A = (\va, -\vb)$ 
-and for which $ON - OM = \vc$ - \asif
+and for which $ON - OM = \vc$ (see figure). 
 
 \watchout[-10pt]
 
-\begin{marginfigure}
-  % 1. Definition of characteristic poinvq
 \figinit{pt}
 \def\Xmin{-16.00000}
 \def\Ymin{-31.99999}
@@ -100,9 +98,16 @@ and for which $ON - OM = \vc$ - \asif
 \figwritene 102:(2)
 \figwritesw 0:$O$(2)
 }
-\centerline{\box\figBoxA}
 
-\end{marginfigure} 
+\ifprintanswers
+  \begin{marginfigure}
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
+\else
+  \vspace{1cm}
+  \centerline{\box\figBoxA}
+\fi 
+
 
 \ADD\vb\vc\vm
 \SUBTRACT\vm\va\vn

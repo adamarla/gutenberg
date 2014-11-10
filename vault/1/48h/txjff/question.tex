@@ -39,20 +39,12 @@
 \SUBTRACT\vh\vg\vj
 
 
-%\MULTIPLY\vd\va\vp
-%\MULTIPLY\vc\vb\vq
-%\ADD\vp\vq\ve
-%\ADD\vb\vd\vf
-
 \question[3] A ray of light coming from a point $A = (\va, \vb)$ is reflected at a point $B$ \textit{on the x-axis} 
-before passing through a point $C = (\vc, \vd)$ - \asif. Find the coordinates of point $B$. The angle at which light
-hits $B$ - and reflected back - is $\theta$
-
+before passing through a point $C = (\vc, \vd)$ (see figure). Find the coordinates of point $B$. The angle at which light
+hits $B$ - and is reflected back - is $\theta$
 
 \watchout
 
-  \begin{marginfigure}
-  % 1. Definition of characteristic points
 \figinit{pt}
 \def\Xmin{0}
 \def\Ymin{1.57894}
@@ -129,11 +121,16 @@ hits $B$ - and reflected back - is $\theta$
 \figwrites 102:(4)
 \figwrites 105:(4)
 }
-\centerline{\box\figBoxA}
 
 
+\ifprintanswers
+  \begin{marginfigure}
+    \centerline{\box\figBoxA}
   \end{marginfigure}
-
+\else
+  \vspace{1cm}
+  \centerline{\box\figBoxA}
+\fi
 
 \begin{solution}[\halfpage]
 	The slope of the \textbf{incoming} beam of light $AB$ is 
