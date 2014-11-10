@@ -1,14 +1,9 @@
 
 
 \question[4] The circle $x^2+y^2=8$ is divided into two parts by the parabola 
-$y=\frac{x^2}{2}$ - as shown in the figure alongside. Find the areas of both parts - $A$ and $B$
+$y=\frac{x^2}{2}$ (see figure). Find the areas of both parts $A$ and $B$. 
 
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
-\begin{marginfigure}
-	% 1. Definition of characteristic points
 \figinit{pt}
 \def\Xmin{-39.99999}
 \def\Ymin{-31.37254}
@@ -63,12 +58,19 @@ $y=\frac{x^2}{2}$ - as shown in the figure alongside. Find the areas of both par
 \figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
 \figwritee 1:(5pt)     \figwriten 2:(5pt)
 \figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
+\Large
 \figwritee 101: $A$(2)
 \figwritee 102: $B$(2)
 }
-\centerline{\box\figBoxA}
 
-\end{marginfigure}
+\ifprintanswers
+  \begin{marginfigure}
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
+\else
+  \vspace{1cm}
+  \centerline{\box\figBoxA}
+\fi
 
 \begin{solution}[\fullpage]
   First, the parabola and the circle will intersect at points where
@@ -91,5 +93,6 @@ $y=\frac{x^2}{2}$ - as shown in the figure alongside. Find the areas of both par
                   &= 8\pi - \left( 2\pi + \frac{4}{3}\right) \\
                   &= 6\pi - \frac{4}{3}
   \end{align}
-  
 \end{solution}
+
+\ifprintanswers\begin{codex}$6\pi-\dfrac{4}{3}$\end{codex}\fi
