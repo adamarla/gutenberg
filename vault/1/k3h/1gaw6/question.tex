@@ -1,44 +1,70 @@
 
-\question[1] $AB$ and $CD$ are two \textit{equal} chords of a circle whose center is $O$ - \asif. 
-$OM\perp AB$ and $ON\perp CD$. Prove that $\angle OMN = \angle ONM$
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{17}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{34}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{51}
+    }{
+      % variables 
+      \renewcommand{\va}{68}
+    }
+  }
+}
 
+\question[1] $AB$ and $CD$ are two \textit{equal} chords of a circle whose center is $O$ - \asif. 
+$OM\perp AB$ and $ON\perp CD$. If $\angle OMN = \ang\va$, then what is $\angle ONM = ?$
+
+\watchout
+
+\figinit{pt}
+  \figpt 100: $O$(50,50)
+  \figpt 200:(95,50) % reference pt that is rotated
+  \figptrot 101:$A$= 200 /100,80/
+  \figptrot 102:$C$= 200 /100,100/
+  \figptrot 103:$B$= 200 /100,190/
+  \figptrot 104:$D$= 200 /100,350/
+  \figptorthoprojline 300:$M$= 100 /101,103/
+  \figptorthoprojline 301:$N$= 100 /102,104/
+\figdrawbegin{}
+  \figdrawcirc 100(45)
+  \figdrawline [101,103] 
+  \figdrawline [102,104] 
+  \figdrawaltitude 5 [100,101,103]
+  \figdrawaltitude 5 [100,102,104]
+  \figdrawline [300,301]
+\figdrawend
+\figvisu{\figBoxA}{}{%
+  \figset write(mark=$\bullet$)
+  \figwrites 100:(2)
+  \figwriten 101:(3)
+  \figwriten 102:(3)
+  \figwritew 103:(3)
+  \figwritee 104:(3)
+  \figwriten 300:(3)
+  \figwriten 301:(3)
+}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
   \begin{marginfigure}
-    \figinit{pt}
-    	\figpt 100: $O$(50,50)
-    	\figpt 200:(95,50) % reference pt that is rotated
-    	\figptrot 101:$A$= 200 /100,80/
-    	\figptrot 102:$C$= 200 /100,100/
-    	\figptrot 103:$B$= 200 /100,190/
-    	\figptrot 104:$D$= 200 /100,350/
-    	\figptorthoprojline 300:$M$= 100 /101,103/
-    	\figptorthoprojline 301:$N$= 100 /102,104/
-    \figdrawbegin{}
-    	\figdrawcirc 100(45)
-      \figdrawline [101,103] 
-      \figdrawline [102,104] 
-      \figdrawaltitude 5 [100,101,103]
-      \figdrawaltitude 5 [100,102,104]
-      \figdrawline [300,301]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    	\figset write(mark=$\bullet$)
-    	\figwrites 100:(2)
-    	\figwriten 101:(3)
-    	\figwriten 102:(3)
-    	\figwritew 103:(3)
-    	\figwritee 104:(3)
-    	\figwriten 300:(3)
-    	\figwriten 301:(3)
-    }
     \centerline{\box\figBoxA}
   \end{marginfigure}
+\else
+  \vspace{1cm}
+  \centerline{\box\figBoxA}
+\fi
+
 
 \begin{solution}[\mcq]
-  Chords of the same length are equidistant from the center. Which means, $OM = ON \Rightarrow \bigtriangleup OMN$ 
-  is an isoceles triangle. And therefore $\angle OMN = \angle ONM$
+  Chords of the same length are equidistant from the center. Which means, 
+   \[ OM = ON \implies \bigtriangleup OMN \text{ is an isoceles triangle} \] 
+  Hence
+    \[ \angle OMN = \angle ONM = \ang\va \]
 \end{solution}
 
+\ifprintanswers\begin{codex}$\ang\va$\end{codex}\fi

@@ -26,47 +26,53 @@
 \SUBTRACT\vb\va\vc
 
 \question[2] Find the equation of the line that is equally inclined to both the 
-$x$ and $y$ axes (\asif) and passes through the point $(\va, \vb)$.
+$x$ and $y$ axes (see figure) and passes through the point $(\va, \vb)$.
 
 \watchout
 
-\begin{marginfigure}
-  \figinit{pt}
-    \def\xmin{-40}
-    \def\xmax{40}
-    \def\ymin{-50}
-    \def\ymax{50}
-    \def\rotangle{45}
-    \figpt 0:(0,0)
-    \figpt 1: (-40,-10)
-    \figpt 2: (30,60)
-    \figpt 10: (\xmin, 0)
-    \figpt 11: (\xmax, 0)
-    \figpt 20: (0,\ymin)
-    \figpt 21: (0,\ymax)
-    \figvectP 100 [10,11] % x-axis
-    \figvectP 101 [20,21] % y-axis
-    \figvectP 102 [1,2]
-    \figptinterlines 200 :$A$[1,102;10,100]
-    \figptinterlines 201 :$B$[1,102;20,101]
-    \figpt 300:$\theta$(-20,7)
-    \figpt 301:$\theta$(7,41)
-  \figdrawbegin{}
-    \drawAxes{0}\xmin\xmax\ymin\ymax
-    \figdrawline [1,2]
-    \figset arrowhead(fillmode=yes)
-    \figdrawarrowhead [1,2]
-    \figdrawarrowhead [2,1]
-    \figset arrowhead(length=4) 
-    \figdrawarrowcirc 200 ; 10(0,45)
-    \figdrawarrowcircP 201 ; 10 [2,21]
-  \figdrawend
-  \figvisu{\figBoxA}{}{%
-    \figwritee 300:(3)
-    \figwriten 301:(3)
-  }
+\figinit{pt}
+  \def\xmin{-40}
+  \def\xmax{40}
+  \def\ymin{-50}
+  \def\ymax{50}
+  \def\rotangle{45}
+  \figpt 0:(0,0)
+  \figpt 1: (-40,-10)
+  \figpt 2: (30,60)
+  \figpt 10: (\xmin, 0)
+  \figpt 11: (\xmax, 0)
+  \figpt 20: (0,\ymin)
+  \figpt 21: (0,\ymax)
+  \figvectP 100 [10,11] % x-axis
+  \figvectP 101 [20,21] % y-axis
+  \figvectP 102 [1,2]
+  \figptinterlines 200 :$A$[1,102;10,100]
+  \figptinterlines 201 :$B$[1,102;20,101]
+  \figpt 300:$\theta$(-20,7)
+  \figpt 301:$\theta$(7,41)
+\figdrawbegin{}
+  \drawAxes{0}\xmin\xmax\ymin\ymax
+  \figdrawline [1,2]
+  \figset arrowhead(fillmode=yes)
+  \figdrawarrowhead [1,2]
+  \figdrawarrowhead [2,1]
+  \figset arrowhead(length=4) 
+  \figdrawarrowcirc 200 ; 10(0,45)
+  \figdrawarrowcircP 201 ; 10 [2,21]
+\figdrawend
+\figvisu{\figBoxA}{}{%
+  \figwritee 300:(3)
+  \figwriten 301:(3)
+}
+
+\ifprintanswers
+  \begin{marginfigure}
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
+\else
+  \vspace{1cm}
   \centerline{\box\figBoxA}
-\end{marginfigure}
+\fi
 
 \begin{solution}[\halfpage]
     It is easy to see from the diagram that $\theta=45^\circ$. Which means, that the slope of the 

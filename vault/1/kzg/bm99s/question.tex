@@ -1,62 +1,94 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand\va{80}
+  \renewcommand\vb{120}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\va{64}
+    \renewcommand\vb{84}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\va{78}
+      \renewcommand\vb{54}
+    }{
+      \renewcommand\va{94}
+      \renewcommand\vb{78}
+    }
+  }
+}
+
+\ADD\va\vb\vc 
+\SUBTRACT{360}\vc\vd
+\DIVIDE\vd{2}\ve
+\EXPR[0]\vx{(180-\va)/2}
+\EXPR[0]\vy{(180-\vb)/2}
+\ADD\vx\vy\vz
 
 \question[3]  In the adjoining figure, $O$ is the center of the circle. Find $\angle BAC$
-given that $\angle BOA = \ang{80}$ and $\angle AOC = \ang{120}$
+given that $\angle BOA = \ang\va$ and $\angle AOC = \ang{120}$
 
+\watchout
+
+\figinit{pt}
+  \figpt 1: (60,0)
+  \figptcirc 2:$A$: 1;50(100)
+  \figptcirc 3:$B$: 1;50(190)
+  \figptcirc 4:$C$: 1;50(340)
+\figdrawbegin{}
+\figdrawcirc 1(50)
+  \figdrawline [1,2]
+  \figdrawline [1,3]
+  \figdrawline [1,4]
+  \figdrawarccircP 1;8 [2,3]
+  \figdrawarccircP 1;10 [4,2]
+  \ifprintanswers
+    \figset (dash=4)
+    \figdrawline [3,2,4]
+  \fi
+\figdrawend
+\figvisu{\figBoxA}{}{
+  \figsetmark{$\bullet$}
+  \figwrites 1:$O$(5)
+  \figwriten 2:(5)
+  \figwritew 3:(5)
+  \figwritee 4:(5)
+}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
-\begin{marginfigure}
-	\figinit{pt}
-    \figpt 1: (60,0)
-    \figptcirc 2:$A$: 1;50(100)
-    \figptcirc 3:$B$: 1;50(190)
-    \figptcirc 4:$C$: 1;50(340)
-	\figdrawbegin{}
-	\figdrawcirc 1(50)
-    \figdrawline [1,2]
-    \figdrawline [1,3]
-    \figdrawline [1,4]
-    \figdrawarccircP 1;8 [2,3]
-    \figdrawarccircP 1;10 [4,2]
-    \ifprintanswers
-      \figset (dash=4)
-      \figdrawline [3,2,4]
-    \fi
-	\figdrawend
-  \figvisu{\figBoxA}{}{
-    \figsetmark{$\bullet$}
-    \figwrites 1:$O$(5)
-    \figwriten 2:(5)
-    \figwritew 3:(5)
-    \figwritee 4:(5)
-  }
+  \begin{marginfigure}
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
+\else
+  \vspace{1cm}
   \centerline{\box\figBoxA}
-\end{marginfigure}
+\fi
+
 \begin{solution}[\halfpage]
-  For the short solution, one should note that $\angle BAC = \dfrac{1}{2}\angle BOC$,
-  where $\angle BOC = \ang{360} - \angle BOA - \angle AOC = \ang{160} \Rightarrow \angle BAC = \ang{80}$
+  \textbf{Method \#1}
+
+  Note that 
+  \[ \angle BAC = \dfrac{1}{2}\angle BOC \]
+  Moreover, 
+  \[ \angle BOC = \ang{360} - (\angle BOA + \angle AOC) \implies \angle BOC = \ang{360}-\ang\vc = \ang\vd \]
+  And therefore, 
+  \[ \angle BAC = \dfrac{1}{2}\ang\vd = \ang\ve \]
+  \textbf{Method \#2}
 
 	Alternatively, if we join $A$ with $B$ and $A$ with $C$ as shown, then we get two isoceles 
 	triangles, $\triangle AOB$ and $\triangle AOC$
 	
 	In $\triangle AOB$,
 	\begin{align}
-		\angle OBA = \angle OAB &= \dfrac{1}{2}\cdot(\ang{180}-\angle AOB) \\
-		                        &= \ang{50}
+		\angle OBA = \angle OAB &= \dfrac{1}{2}\cdot(\ang{180}-\angle AOB) = \ang\vx
 	\end{align}
-	
 	Similarly, in $\triangle AOC$
 	\begin{align}
-		\angle OAC = \angle OCA &= \dfrac{1}{2}\cdot(\ang{180}-\angle AOC) \\
-		                        &= \ang{30}
+		\angle OAC = \angle OCA &= \dfrac{1}{2}\cdot(\ang{180}-\angle AOC) = \ang\vy
 	\end{align}
-	
 	And therefore,
 	\begin{align}
-		\angle BAC &= \angle OAB + \angle OAC \\
-		           &= \ang{50} + \ang{30} = \ang{80}
+		\angle BAC &= \angle OAB + \angle OAC = \ang\vx + \ang\vy = \ang\vz
 	\end{align}
-
 \end{solution}
+
+\ifprintanswers\begin{codex}$\ang\vz$\end{codex}\fi

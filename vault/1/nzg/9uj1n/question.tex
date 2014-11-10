@@ -4,50 +4,48 @@
 The two chords - $AB$ and $CD$ - intersect at $X$. If $X$ divides $AB$ in the ratio $2:1$
 and $CD$ in the ratio $3:1$, then what is $\angle OCD$ given that length of $AB = 3\sqrt3$ units?
 
-
-\begin{marginfigure}
-	\figinit{pt}
-    \figpt 0: (60,0)
-    \figptcirc 1:$A$: 0;50(40)
-    \figptcirc 2:$B$: 0;50(140)
-    \figptcirc 3:$C$: 0;50(200)
-    \figptcirc 4:$D$: 0;50(100)
-    \figvectP 10 [1,2]
-    \figvectP 20 [3,4]
-    \figptinterlines 5:$X$[1,10;3,20]
-    \figptorthoprojline 6:$M$= 0/3,4/
-	\figdrawbegin{}
-		\figdrawcirc 0(50)
-    \figdrawline [1,2]
-    \figdrawline [3,4]
-    \figdrawarccircP 3;10 [0,4]
-    \figset (dash=7)
-    \figdrawline [0,3]
-    \ifprintanswers
-      \figdrawline [0,6]
-    \fi
-	\figdrawend
-  \figvisu{\figBoxA}{}{
-    \figsetmark{$\bullet$}
-    \figwrites 0:$O$(5)
-    \figwriten 1:(5)
-    \figwritew 2:(5)
-    \figwrites 3:(5)
-    \figwriten 4:(5)
-    \ifprintanswers
-      \figwritese 5:(5)
-      \figwritew 6:(5)
-    \fi
-  }
-  \centerline{\box\figBoxA}
-\end{marginfigure}
+\figinit{pt}
+  \figpt 0: (60,0)
+  \figptcirc 1:$A$: 0;50(40)
+  \figptcirc 2:$B$: 0;50(140)
+  \figptcirc 3:$C$: 0;50(200)
+  \figptcirc 4:$D$: 0;50(100)
+  \figvectP 10 [1,2]
+  \figvectP 20 [3,4]
+  \figptinterlines 5:$X$[1,10;3,20]
+  \figptorthoprojline 6:$M$= 0/3,4/
+\figdrawbegin{}
+  \figdrawcirc 0(50)
+  \figdrawline [1,2]
+  \figdrawline [3,4]
+  \figdrawarccircP 3;10 [0,4]
+  \figset (dash=7)
+  \figdrawline [0,3]
+  \ifprintanswers
+    \figdrawline [0,6]
+  \fi
+\figdrawend
+\figvisu{\figBoxA}{}{
+  \figsetmark{$\bullet$}
+  \figwrites 0:$O$(5)
+  \figwriten 1:(5)
+  \figwritew 2:(5)
+  \figwrites 3:(5)
+  \figwriten 4:(5)
+  \figwritese 5:(5)
+  \ifprintanswers
+    \figwritew 6:(5)
+  \fi
+}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \marginnote[0.5cm]{Whether $\frac{AX}{BX} = \frac{2}{1}$ or $\frac{BX}{AX} = \frac{2}{1}$ is 
-  unimportant. We are only interested in the total length of the chord}
-  \marginnote[0.5cm]{Same goes for chord $CD$ }
-\fi 
+  \begin{marginfigure}
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
+\else
+  \vspace{1cm}
+  \centerline{\box\figBoxA}
+\fi
 
 \begin{solution}[\fullpage]
 	Here is what we know about intersecting chords in a circle,

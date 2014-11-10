@@ -3,41 +3,45 @@
 \question[2] Two circles intersect at points $A$ and $B$ - \asif. If $AP$ and $AQ$ be their 
 respective diameters, then prove that $PBQ$ is a line
 
+\figinit{pt}
+  \figpt 100: $C_1$(40,40)
+  \figpt 101: $C_2$(85,40)
+  \figpt 102: (70,40) % right extreme of C_1
+  \figpt 103: (40,70) % top extreme of C_1
+  \figpt 104: (50,40) % left C_2
+  \figpt 105: (85,75)
+  \figptsintercirc 200 [100,30;101,35] % 201 is the other point
+  \figptsinterlinellP 300 [100,102,103 ; 201,100] % 301 is the other point
+  \figptsinterlinellP 310 [101,104,105 ; 201,101] % 311 is the other point
+\figdrawbegin{}
+  \figdrawcirc 100(30)
+  \figdrawcirc 101(35)
+  \figdrawline [201,301]
+  \figdrawline [201,311]
+  \figdrawline [301,311]
+  \ifprintanswers
+    \figset (dash=5)
+    \figdrawline [201,200]
+  \fi
+\figdrawend
+\figvisu{\figBoxA}{}{%
+  \figset write(mark=$\bullet$)
+  \figwritew 100:(2)
+  \figwritee 101:(1)
+  \figwrites 200:$B$(3) 
+  \figwriten 201:$A$(3) 
+  \figwrites 301:$P$(3)
+  \figwrites 311:$Q$(3)
+}
 
-  % stuff to be shown only in the answer key - like explanatory margin figures
+\ifprintanswers
   \begin{marginfigure}
-    \figinit{pt}
-    	\figpt 100: $C_1$(40,40)
-    	\figpt 101: $C_2$(85,40)
-      \figpt 102: (70,40) % right extreme of C_1
-      \figpt 103: (40,70) % top extreme of C_1
-      \figpt 104: (50,40) % left C_2
-      \figpt 105: (85,75)
-      \figptsintercirc 200 [100,30;101,35] % 201 is the other point
-      \figptsinterlinellP 300 [100,102,103 ; 201,100] % 301 is the other point
-      \figptsinterlinellP 310 [101,104,105 ; 201,101] % 311 is the other point
-    \figdrawbegin{}
-      \figdrawcirc 100(30)
-      \figdrawcirc 101(35)
-      \figdrawline [201,301]
-      \figdrawline [201,311]
-      \figdrawline [301,311]
-      \ifprintanswers
-        \figset (dash=5)
-        \figdrawline [201,200]
-      \fi
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-      \figset write(mark=$\bullet$)
-      \figwritew 100:(2)
-      \figwritee 101:(1)
-      \figwrites 200:$B$(3) 
-      \figwriten 201:$A$(3) 
-      \figwrites 301:$P$(3)
-      \figwrites 311:$Q$(3)
-    }
     \centerline{\box\figBoxA}
-  \end{marginfigure} 
+  \end{marginfigure}
+\else
+  \vspace{1cm}
+  \centerline{\box\figBoxA}
+\fi
 
 \begin{solution}[\halfpage]
 	If $AP$ and $AQ$ are diameters, then 

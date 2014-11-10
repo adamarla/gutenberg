@@ -38,12 +38,11 @@
 \SUBTRACT\vh\vb\vi
 \MULTIPLY\vh\va\vj
 
-\question[5] The intercept of the line in the figure alongside is divided by the point $(-\va, \vb)$ so that 
-$\frac{AN}{AM} = \frac{\vc}{\vd}$. Find the equation of the line.
+\question[5] The intercept of a line is divided by a point $A= (-\va, \vb)$ so that 
+$\frac{AN}{AM} = \frac{\vc}{\vd}$ (see figure). What is the equation of the line? 
 
 \watchout
 
-  \begin{marginfigure}
 \figinit{pt}
 \def\Xmin{-72.72727}
 \def\Ymin{-18.18181}
@@ -114,10 +113,15 @@ $\frac{AN}{AM} = \frac{\vc}{\vd}$. Find the equation of the line.
   \figwrites 104:(2)
 \fi
 }
-\centerline{\box\figBoxA}
 
+\ifprintanswers
+  \begin{marginfigure}
+    \centerline{\box\figBoxA}
   \end{marginfigure}
-
+\else
+  \vspace{1cm}
+  \centerline{\box\figBoxA}
+\fi
 
 \begin{solution}[\halfpage]
 	First, drop perpendiculars from $A$ on the axes to get points $J(0,\vb)$ and $K(-\va,0)$. 

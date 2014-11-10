@@ -62,35 +62,43 @@
 \EXPR[0]{\cthree}{\ythree - (\mca * \xthree)}
 
 \question A triangle has vertices $A = (\va, \vb)$, $B = (\vc, \vd)$ and 
-$C = (\ve, \vf)$ (see figure). $X$, $Y$ and $Z$ are the mid-points of the three sides 
+$C = (\ve, \vf)$ (see figure). $X$, $Y$ and $Z$ are the mid-points of the three sides.
 
+\figinit{pt}
+  \figpt 10:$A$(-10, 0)
+  \figpt 20:$B$(70, 20)
+  \figpt 30:$C$(50, -20)
+  \figpt 11: $X$(30,10)
+  \figpt 21: $Y$(60,0)
+  \figpt 31: $Z$(20,-10)
+\figdrawbegin{}
+  \figdrawline [10, 20]
+  \figdrawline [20, 30]
+  \figdrawline [30, 10]
+\figdrawend
+\figvisu{\figBoxA}{}{%
+  \Large
+  \figwritesw 10:(5pt)
+  \figwritene 20:(5pt)
+  \figwritese 30:(5pt)
+  \figset write(mark=$\bullet$)
+  \figwriten 11:(4)
+  \figwritee 21:(4)
+  \figwrites 31:(4)
+}
 
-  \begin{marginfigure}[-47pt]
-    \figinit{pt}
-      \figpt 10:$A$(-10, 0)
-      \figpt 20:$B$(70, 20)
-      \figpt 30:$C$(50, -20)
-      \figpt 11: $X$(30,10)
-      \figpt 21: $Y$(60,0)
-      \figpt 31: $Z$(20,-10)
-    \figdrawbegin{}
-      \figdrawline [10, 20]
-      \figdrawline [20, 30]
-      \figdrawline [30, 10]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-      \figwritesw 10:(5pt)
-      \figwritene 20:(5pt)
-      \figwritese 30:(5pt)
-      \figset write(mark=$\bullet$)
-      \figwriten 11:(4)
-      \figwritee 21:(4)
-      \figwrites 31:(4)
-    }
+\ifprintanswers
+  \begin{marginfigure}
     \centerline{\box\figBoxA}
   \end{marginfigure}
+\else
+  \vspace{1cm}
+  \centerline{\box\figBoxA}
+  \vspace{1cm}
+\fi
 
 \watchout
+
 \begin{parts}
 	\part[1] Find the coordinates of the mid-points $X$, $Y$ and $Z$
 	

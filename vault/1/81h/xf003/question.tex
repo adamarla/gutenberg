@@ -23,7 +23,6 @@ axis of the parabola.
 
 \watchout 
 
-\begin{marginfigure}
 \figinit{pt}
 \def\Xmin{-35.00000}
 \def\Ymin{-10.00000}
@@ -87,9 +86,16 @@ axis of the parabola.
 \figwriten 103: $a$(4)
 \figwritee 104: $h$(2)
 }
-\centerline{\box\figBoxA}
 
-\end{marginfigure}
+\ifprintanswers
+  \begin{marginfigure}
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
+\else
+  \vspace{1cm}
+  \centerline{\box\figBoxA}
+\fi
+
 
 \DIVIDE\va{2}\vc
 \SQUARE\vc\vd

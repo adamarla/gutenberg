@@ -3,11 +3,7 @@
 \question  Let $R$ be the region in the first quadrant enclosed by the graphs
 $f(x) = 8x^3$ and $g(x)=\sin(\pi x)$, as shown in the figure
 
-\ifprintanswers
-\fi
-  \begin{marginfigure}
-  \def\GraphLegend{$A = \left( \frac{1}{2}, 1 \right)$}
-  % 1. Definition of characteristic points
+\def\GraphLegend{$A = \left( \frac{1}{2}, 1 \right)$}
 \figinit{pt}
 \def\Xmin{0}
 \def\Ymin{0}
@@ -98,9 +94,16 @@ $f(x) = 8x^3$ and $g(x)=\sin(\pi x)$, as shown in the figure
 \figwritee 100:$R$(8pt)
 \figwriten 101:$A$(8pt)
 }
-\centerline{\box\figBoxA}
-\end{marginfigure} 
 
+\ifprintanswers
+  \begin{marginfigure}
+    \centerline{\box\figBoxA}
+  \end{marginfigure}
+\else
+  \vspace{1cm}
+  \centerline{\box\figBoxA}
+  \vspace{1cm}
+\fi
 
 \begin{parts}
 \part[3]     Write the equation for the line tangent to $f(x)$ at $x=\frac{1}{2}$
