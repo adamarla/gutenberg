@@ -233,7 +233,7 @@ function compile_tex {
     if [ -e $stem.ps ] ; then 
       ps2pdf $stem.ps
       if [ -e $stem.pdf ] ; then
-        if [ $mode == "vault" -o $mode == "quiz" ] ; then create_jpegs $stem.pdf ; fi
+        if [ $mode == "vault" -o $mode == "quiz" ] ; then create_imgs $stem.pdf png ; fi
       else
         if [ ! -z $2 ] ; then echo "(compile.sh: 169) - PS -> PDF failed" >> $2 ; fi
       fi
@@ -245,36 +245,38 @@ function compile_tex {
   fi
 }
 
-function create_jpegs {
+function create_imgs {
   # $1 = pdf file in current folder
-  gs -dNOPAUSE -dBATCH -sDEVICE=jpeg -r300 -sOutputFile=pg-%d.jpg $1 
-  for f in `ls pg-*.jpg` ; do convert $f -resize 600x800 -chop 40x30 $f ; done
+  # $2 = format [ jpeg (default) | png ]
+  if [ $2 == "png" ] ; then 
+    extn='png'
+    fmt='png16'
+  else
+    extn='jpg'
+    fmt='jpeg'
+  fi
+  gs -dNOPAUSE -dBATCH -sDEVICE=$fmt -r300 -sOutputFile=pg-%d.$extn $1 
+  for f in `ls pg-*.$extn` ; do convert $f -resize 600x800 -chop 40x60 $f ; done
 }
 
 function mobile_pngs { 
   # $1 = version
-  # Makefile calls this function only AFTER ensuring presence of trim.jpg
+  # Makefile calls this function only AFTER ensuring presence of question.png
   f=$(pwd)/$1
   black=$f/mobile.black.png
-  white=$f/mobile.white.png
-  convert -chop 0x30 -trim $f/trim.jpg $black 
-  convert -negate $black $white 
-  convert $black -fuzz 20% -transparent white $black
-  convert $white -fuzz 20% -transparent black $white
+  convert -trim  $f/question.png $black
 }
 
 function create_codex {
   # $1 = version number = [0,3]
   # To be called only as part of `make install version=N`.
-  # Assumes that pg-*.jpg have already been moved to the respective version folder
+  # Assumes that pg-*.png have already been moved to the respective version folder
   jpg=$(pwd)/$1/codex.jpg 
   png=$(pwd)/$1/codex.png
   if [ -e $(pwd)/codex.cdx ] ; then 
     n=$(pdfinfo $(pwd)/$1/document.pdf | grep Pages | sed -e 's/Pages:\s*//')
-    convert -chop 10x20 -trim $(pwd)/$1/pg-$n.jpg $jpg 
-    convert $jpg $png
-    convert $png -fuzz 10% -transparent white $png 
-    #echo $n
+    convert -trim $(pwd)/$1/pg-$n.png $png
+    convert $png $jpg
   fi
 } 
 

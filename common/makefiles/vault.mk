@@ -18,19 +18,14 @@ compiled : $(STEM).tex
 		for version in 0 1 2 3 ; do 
 			set_question_version $< $$version
 			set_unset_flag compilevault $< set 
-			set_unset_flag zealouscrop $< unset 
-			for type in trim notrim full ; do 
-				if [ $$type == "full" ] ; then
+			set_unset_flag zealouscrop $< set 
+			for type in question solution ; do 
+				if [ $$type == "solution" ] ; then 
 					set_unset_flag printanswers $< set
 					set_unset_flag cancelspace $< unset
-				else 
+				else
 					set_unset_flag printanswers $< unset
 					set_unset_flag cancelspace $< set
-					if [ $$type == "trim" ] ; then 
-						set_unset_flag zealouscrop $< set
-				  else
-						set_unset_flag zealouscrop $< unset
-					fi
 				fi 
 				compile_tex $< $(logfile)
 				$(MAKE) install version=$$version type=$$type
@@ -63,19 +58,16 @@ install :
 ifneq ($(version),)
 	@echo "[Installing]: version $(version)"
 	mkdir -p $(version)
-ifneq ($(type),full)
-	mv pg-1.jpg $(version)/$(type).jpg
-ifeq ($(type),trim)
 	@. shell-script 
+ifeq ($(type),question)
+	mv pg-1.png $(version)/$(type).png
 	mobile_pngs $(version)
-endif
 else
-	@. shell-script 
-	mv pg-*.jpg $(version)
+	mv pg-*.png $(version)
 	mv $(STEM).pdf $(version)
 	create_codex $(version)
 endif
-endif
+endif 
 
 clean : 
 	rm -f $(STEM)* pg-* skel compiled codex.cdx
