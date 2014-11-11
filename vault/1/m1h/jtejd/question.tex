@@ -1,43 +1,45 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{18}
+  \renewcommand{\va}{18}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{20}
+    \renewcommand{\va}{21}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{24}
+      \renewcommand{\va}{24}
     }{
-      \renewcommand{\vbone}{30}
+      \renewcommand{\va}{30}
     }
   }
 }
 
-\question[3] A right conical funnel with a slant height of $\vbone$ cm must be made. What should 
+\DIVIDE\va{3}\vb
+
+\question[3] A right conical funnel with a slant height of $\va$ cm must be made. What should 
 be its height for it to have the greatest possible volume?
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\halfpage]
    If $L$ be the slant height of the funnel and $V$ its volume, then 
    \begin{align}
-       L^2 &= h^2 + R^2 \Rightarrow R^2 = L^2 - h^2 \\ 
+       L^2 &= h^2 + R^2 \implies R^2 = L^2 - h^2 \\ 
        V &= \dfrac{\pi}{3}\cdot R^2\cdot h = \dfrac{\pi}{3}\cdot(L^2 - h^2)\cdot h
    \end{align}
    where $R$ is the radius of the cone's base and $h$ the cone's height
    
    And so, 
    \begin{align}
-      \dfrac{\ud V}{\ud h} &= \dfrac{\pi}{3}\cdot\dfrac{\ud}{\ud h}(L^2-h^2)\cdot h \\
-             &= \dfrac{\pi}{3}(L^2 - 3h^2) \\
-      \Rightarrow\text{ A maxima or a minima when } h &= \sqrt{\dfrac{\vbone^2}{3}} = \dfrac{\vbone}{\sqrt{3}} \\
-      \text{Also }\dfrac{\ud^2 V}{\ud h^2} &= -2\pi\cdot h < 0 \Rightarrow \text{ maxima }
+      \dfrac{\ud V}{\ud h} &= \dfrac{\pi}{3}\cdot\dfrac{\ud}{\ud h}(L^2-h^2)\cdot h 
+      = \dfrac{\pi}{3}(L^2 - 3h^2) \\
+      \dfrac{\ud V}{\ud h} &= 0\implies 3h^2 = L^2 \implies h = \dfrac{L}{\sqrt{3}}
+      = \dfrac\va{\sqrt{3}} = \vb\sqrt{3} \\
+      \text{Also }\dfrac{\ud^2 V}{\ud h^2} &= -2\pi\cdot h < 0 \implies \text{ maxima at }
+      h = \vb\sqrt{3}
    \end{align}
-   
-   The funnel would therefore have the greatest volume if its height is $\frac{\vbone}{\sqrt{3}}$ cm
+   The funnel would therefore have the greatest volume when 
+   \[ h = \vb\sqrt{3}\text{ cm} \] 
    
 \end{solution}
+\ifprintanswers\begin{codex}$\vb\sqrt{3}$ cm\end{codex}\fi

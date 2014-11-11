@@ -1,32 +1,27 @@
 
-
-
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{3}
-  \renewcommand{\vbtwo}{6}
-  \renewcommand{\vbthree}{9}
-  \renewcommand{\vbfour}{18}
-  \renewcommand{\vbfive}{54}
-  \renewcommand{\vbsix}{18}
+  \renewcommand\vb{2}
 }{
-  \ifnumodd{\value{rolldice}}{
-    \renewcommand{\vbone}{2}
-    \renewcommand{\vbtwo}{4}
-    \renewcommand{\vbthree}{6}
-    \renewcommand{\vbfour}{12}
-    \renewcommand{\vbfive}{24}
-    \renewcommand{\vbsix}{8}
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\vb{4}
   }{
-    \renewcommand{\vbone}{1}
-    \renewcommand{\vbtwo}{2}
-    \renewcommand{\vbthree}{3}
-    \renewcommand{\vbfour}{6}
-    \renewcommand{\vbfive}{6}
-    \renewcommand{\vbsix}{2}
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\vb{6}
+    }{
+      \renewcommand\vb{8}
+    }
   }
 }
 
-\question[3] Using second derivative, find the points of maxima and minima for $y=x^2(a-\vbone x)^2$
+\MULTIPLY\vb{2}\vc
+\MULTIPLY\vb{3}\vd
+\MULTIPLY\vd{2}\vm
+\SQUARE\vb\ve
+\MULTIPLY\ve{2}\vf
+\MULTIPLY\vf{3}\vn
+
+\question[3] Using second derivative, find the points of maxima and minima for 
+  \[ y=x^2(a-\vb x)^2 \]
 
 \watchout
 
@@ -36,26 +31,31 @@
 
 \begin{solution}[\fullpage]
   \begin{align}
-     y &= x^2\cdot(a-\vbone x)^2 \\
-     \Rightarrow \ln y &= 2\cdot \left[\ln x + \ln (a-\vbone x)\right] \\
-     \Rightarrow \dfrac{1}{y}\dfrac{\ud y}{\ud x} &= 2\left[ \dfrac{1}{x} - \dfrac{\vbone}{a-\vbone x}\right] \\
-     \Rightarrow \dfrac{\ud y}{\ud x} &= 2\left[ \dfrac{1}{x} - \dfrac{\vbone}{a-\vbone x}\right]
-                                         \cdot x^2\cdot (a-\vbone x)^2 \\
-                                      &= 2\cdot(a-\vbtwo x)\cdot x \cdot (a-\vbone x)
+     y &= x^2\cdot(a-\vb x)^2 \\
+     \implies \ln y &= 2\cdot \left[\ln x + \ln (a-\vb x)\right] \\
+     \implies \dfrac{1}{y}\dfrac{\ud y}{\ud x} &= 2\left[ \dfrac{1}{x} - \dfrac{\vb}{a-\vb x}\right] \\
+     \implies \dfrac{\ud y}{\ud x} &= 2\left[ \dfrac{1}{x} - \dfrac{\vb}{a-\vb x}\right]
+                                         \cdot \overbrace{x^2\cdot (a-\vb x)^2}^{y} \\
+                                      &= 2\cdot(a-\vb x)\cdot x \cdot (a-\vc x)
   \end{align}
-  As a first step, we can say that the extrema are at $x=\dfrac{a}{\vbtwo}$, $x=0$ and $x=\dfrac{a}{\vbone}$.
-  To classify them as maxima or minima, we need to calculate the second derivative
+  \textbf{Step\#1: Extrema when $\dfrac{\ud y}{\ud x} = 0$}
+
+  \[ \dfrac{\ud y}{\ud x} = 2\cdot(a-\vb x)\cdot x \cdot (a-\vc x)
+  \implies\underbrace{ x=0,\,x=\dfrac{a}\vb,\,x=\dfrac{a}\vc}_{\text{extreme points}} \]
+
+  \textbf{Step \#2: $\dfrac{\ud^2 y}{\ud x^2} > 0$ or $<0$?} 
   
   \begin{align}
-     \dfrac{\ud y}{\ud x} &= 2(a-\vbtwo x)x(a-\vbone x) \\
-            &= 2\cdot(a^2x - \vbthree ax^2 + \vbsix x^3) \\
-     \Rightarrow \dfrac{\ud^2 y}{\ud x^2} &= 2\cdot(a^2 - \vbfour ax + \vbfive x^2) \\
+     \dfrac{\ud y}{\ud x} &= 2(a-\vb x)x(a-\vc x) 
+            = 2\cdot(a^2x - \vd ax^2 + \vf x^3) \\
+     \implies \dfrac{\ud^2 y}{\ud x^2} &= 2\cdot(a^2 - \vm ax + \vn x^2) \\
      &= \left\lbrace
         \begin{array}{l l}
-          2a^2 & \text{ when } x = 0 \Rightarrow \text{ minima } \\
-          \frac{-a^2}{2} & \text{ when } x = \frac{a}{\vbtwo} \Rightarrow \text{ maxima } \\
-          2a^2 & \text{ when } x = \dfrac{a}{\vbone} \Rightarrow \text{ minima }
+          2a^2 & \text{ when } x = 0 \implies \text{ minima } \\
+          -a^2 & \text{ when } x = \frac{a}{\vc} \implies \text{ maxima } \\
+          2a^2 & \text{ when } x = \frac{a}{\vb} \implies \text{ minima }
         \end{array}\right.
   \end{align}
   
 \end{solution}
+\ifprintanswers\begin{codex}(minima) $x=0,\dfrac{a}\vb$, (maxima) $x=\dfrac{a}\vc$ \end{codex}\fi
