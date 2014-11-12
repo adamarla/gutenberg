@@ -3,53 +3,66 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{2} %a
-  \renewcommand{\vbtwo}{1} %b
+  \renewcommand{\va}{5} 
+  \renewcommand{\vd}{4} 
+  \renewcommand\vz{\dfrac{n}{3}\cdot (2n^2 + 6n + 7)}
 }{
 	\ifnumequal{\value{rolldice}}{1}{
-		\renewcommand{\vbone}{1}
-    \renewcommand{\vbtwo}{3}
+		\renewcommand{\va}{4}
+    \renewcommand{\vd}{2}
+    \renewcommand\vz{\dfrac{n}{3}\cdot (n^2+3n+8)}
 	}{
 	  \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{1}
-      \renewcommand{\vbtwo}{2}
+      \renewcommand{\va}{3}
+      \renewcommand{\vd}{2}
+      \renewcommand\vz{\dfrac{n}{3}\cdot (n^2+3n+5)}
 	  }{
-      \renewcommand{\vbone}{2}
-      \renewcommand{\vbtwo}{2}
+      \renewcommand{\va}{6}
+      \renewcommand{\vd}{2}
+      \renewcommand\vz{\dfrac{n}{3}\cdot (n^2+3n+14)}
 	  }
 	}
 }
 
-\gcalcexpr[0]\af{\vbone * (\vbtwo + 1) + 1}
-\gcalcexpr[0]\as{(\vbone * 2)*((\vbtwo * 2) + 1) + 1}
-\gcalcexpr[0]\at{(\vbone * 3)*((\vbtwo * 3) + 1) + 1}
-\gcalcexpr[0]\afo{(\vbone * 4)*((\vbtwo * 4) + 1) + 1}
+\DIVIDE\vd{2}\ve
+\SUBTRACT\va\vd\vf % a_n = \ve n^2 + \ve n + \vf 
 
-\gcalcexpr[0]\tn{\vbone * \vbtwo}
-\gcalcexpr[0]\tp{6 / \vbone}
-\gcalcexpr[0]\tq{2 * \vbtwo}
-\gcalcexpr[0]\tr{3 * \vbtwo} 
-\gcalcexpr[0]\ts{3 * (\vbtwo + 1)}
-\gcalcexpr[0]\tu{\tp+ \vbtwo + 3}
+\EXPR[0]\vi{6*\ve + \vf}
+\EXPR[0]\vj{12*\ve + \vf}
+\EXPR[0]\vk{20*\ve + \vf}
 
 \question[3] Find an expression for the sum of the first $n$ terms of the series 
-$\af + \as + \at + \afo + \ldots$. \texttt{Hint:} Each term in the series is of the 
-form $T_k = ak\cdot(bk + 1) + 1,\, k \geq 1$ and $a,b \in\aleph$
+\[ \va + \vi + \vj + \vk + \ldots \]
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\halfpage]
-  If you found out that $(a,b) = (\vbone, \vbtwo)$, then you are on your way. The sum of the 
-  first $n$ terms is given by
-	\begin{align}
-		S_n &= \sum_{k=1}^{n}\left(\vbone n\cdot(\vbtwo n+1)+1\right) = \sum_{k=1}^{n}(\tn n^2+\vbone n + 1) \\
-		&= \tn\cdot\sum_{k=1}^{n}n^2 + \vbone\cdot\sum_{k=1}^{n}n + \sum_{k=1}^{n}1 \\
-		&= \tn\cdot\eSumOfSquares{n} + \vbone\cdot\eSumOfN{n} + n \\
-		&= \dfrac{\vbone n}{6}\cdot\left[ \vbtwo\cdot(n+1)\cdot(2n+1) + 3\cdot(n+1) + \tp \right] \\
-		&= \dfrac{\vbone n}{6}\cdot\left( \tq n^2 + \tr n + \vbtwo + 3n + 3 + \tp \right) \\
-		&= \dfrac{\vbone n}{6}\cdot\left( \tq n^2 + \ts n + \tu \right)
-	\end{align}
+  \textbf{Step \#1: Finding an expression for $a_n$ in terms of $n$}
+
+  If we think of the above series as 
+  \[ S = a_1 + a_2 + a_3 + a_4 \ldots \]
+  then notice that 
+  \begin{align}
+    a_2 - a_1 &= \vi-\va = \vd\times 2 \\ 
+    a_3 - a_2 &= \vj-\vi = \vd\times 3 \\ 
+    a_4 - a_3 &= \vk-\vj = \vd\times 4 \\ 
+    \implies a_n - a_{n-1} &= \vd\times n
+  \end{align}
+  Which means, 
+  \[ \overbrace{(a_n-a_{n-1}) + (a_{n-1} + a_{n-2})\ldots + (a_2-a_1)}^{\text{middle terms cancel out}} = a_n - a_1 \]
+  And therefore, 
+  \begin{align}
+    a_n - a_1 &= \sum_{k=2}^n \vd k = \vd\cdot\left[ \sum_{k=1}^n k - 1 \right] = 
+    \vd\cdot\left[ \dfrac{n\cdot(n+1)}{2} - 1 \right] \\
+    \implies a_n &= a_1 + \vd\cdot\left[ \dfrac{n\cdot(n+1)}{2} - 1 \right] = \ve n^2 + \ve n + \vf 
+  \end{align}
+  \textbf{We can now find the required expression for $\sum_{k=1}^n a_n$}
+  \begin{align}
+    S_n &= \sum_{k=1}^n a_n = \sum_{k=1}^n (\ve n^2 + \ve n + \vf) \\ 
+    &= \ve\cdot\sum_{k=1}^n n^2 + \ve\cdot\sum_{k=1}^n n + \vf\cdot\sum_{k=1}^n 1 \\ 
+    &= \ve\cdot\eSumOfSquares{n} + \ve\cdot\eSumOfN{n} + \vf n \\
+    &= \underbrace{\vz}_{\text{on simplification}}
+  \end{align}
 \end{solution}
+
+\ifprintanswers\begin{codex}$\vz$\end{codex}\fi
