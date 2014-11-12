@@ -1,58 +1,55 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{8}
-  \renewcommand{\vbtwo}{4}
-  \renewcommand{\vbthree}{16}
-  \renewcommand{\vbfour}{64}
-  \renewcommand{\vbfive}{48}
+  \renewcommand{\va}{8}
+  \renewcommand{\vb}{4}
+  \renewcommand{\vc}{16}
+  \renewcommand{\vd}{64}
+  \renewcommand{\ve}{48}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{10}
-    \renewcommand{\vbtwo}{5}
-    \renewcommand{\vbthree}{20}
-    \renewcommand{\vbfour}{100}
-    \renewcommand{\vbfive}{60}
+    \renewcommand{\va}{10}
+    \renewcommand{\vb}{5}
+    \renewcommand{\vc}{20}
+    \renewcommand{\vd}{100}
+    \renewcommand{\ve}{60}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{6}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{12}
-      \renewcommand{\vbfour}{36}
-      \renewcommand{\vbfive}{36}
+      \renewcommand{\va}{6}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{12}
+      \renewcommand{\vd}{36}
+      \renewcommand{\ve}{36}
     }{
-      \renewcommand{\vbone}{12}
-      \renewcommand{\vbtwo}{6}
-      \renewcommand{\vbthree}{24}
-      \renewcommand{\vbfour}{144}
-      \renewcommand{\vbfive}{72}
+      \renewcommand{\va}{12}
+      \renewcommand{\vb}{6}
+      \renewcommand{\vc}{24}
+      \renewcommand{\vd}{144}
+      \renewcommand{\ve}{72}
     }
   }
 }
 
-\question[2] Break up the number $\vbone$ into two summands such that the sum of their cubes
-is the least possible
+\question[2] Break up the number $\va$ into two summands such that the sum of their cubes
+is the least possible.
 
 \watchout 
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi
-
 \begin{solution}[\halfpage]
-   Basically, we have to minimize $y = x^3 + (\vbone-x)^3$
+   Basically, we have to minimize $y = x^3 + (\va-x)^3$
    \begin{align}
-      y &= x^3 + (\vbone -x)^3, \text{ then } \\
-      \dydx &= 3x^2 - 3(\vbone - x)^2 \text{ and } \\
-      \dnydxn{2} &= 6x + 6(\vbone-x)
+      y &= x^3 + (\va -x)^3, \text{ then } \\
+      \dydx &= 3x^2 - 3(\va - x)^2 \text{ and } \\
+      \dnydxn{2} &= 6x + 6(\va-x)
    \end{align}
    
    Now, 
    \begin{align}
-      \dydx &= 0 \text { when } 3x^2 - 3(\vbone - x)^2 = 0 \\
-      \Rightarrow x^2 &= \vbfour + x^2 - \vbthree x \text{ or } x = \vbtwo \\
-      \text{Also, }\left[\dnydxn{2}\right]_{x=\vbtwo} &= \vbfive > 0 \Rightarrow \text{ minima }
+      \dydx &= 0 \text { when } 3x^2 - 3(\va - x)^2 = 0 \\
+      \implies x^2 &= \vd + x^2 - \vc x \text{ or } x = \vb \\
+      \text{Also, }\left[\dnydxn{2}\right]_{x=\vb} &= \ve > 0 \implies \text{ minima }
    \end{align}
    
-   Hence, the required split is $\vbtwo$ and $\vbtwo$
+   Hence, the required split is $\vb$ and $\vb$
 \end{solution}
+\ifprintanswers\begin{codex}Each summand = $\dfrac{N}{2}$\end{codex}\fi

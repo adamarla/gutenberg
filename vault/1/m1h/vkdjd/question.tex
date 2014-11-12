@@ -1,33 +1,47 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\va}{2}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+      \renewcommand{\va}{4}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\va}{6}
+    }{
+      \renewcommand{\va}{8}
+    }
+  }
+}
 
-\question[3] Using second derivatives, find the $x$ at which the function 
-$y = \dfrac{x}{\ln x}$ has its extreme value. Also, state whether the extreme 
-value is a maxima or a minima? 
+\question[3] What is the minimum value of the following function? 
+\[ y = \dfrac{x}{\ln x^\va } \]
 
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
+\watchout
 
 \begin{solution}[\fullpage]
 	\begin{align}
-	   y &= \dfrac{x}{\ln x} \\
-	   \Rightarrow \dfrac{\ud y}{\ud x} &= \dfrac{1}{\ln x}\dfrac{\ud}{\ud x}x 
-	             + x\dfrac{\ud}{\ud x}\dfrac{1}{\ln x} \\
-       &= \dfrac{1}{\ln x} + x\cdot\left[ -\dfrac{1}{(\ln x)^2} \cdot\dfrac{\ud}{\ud x}\ln x\right] \\
-       &= \dfrac{1}{\ln x} + x\cdot\left[ -\dfrac{1}{(\ln x)^2} \cdot\dfrac{1}{x}\right] \\
-	     &= \dfrac{1}{(\ln x)^2}\cdot(\ln x - 1) \\
-	     \Rightarrow \text{ an extrema when } \ln x &= 1 \text{ or } x = e
+	   y &= \dfrac{x}{\ln x^\va} = \dfrac{x}{\va\cdot\ln x} \\
+	   \implies \dfrac{\ud y}{\ud x} &= 
+      \dfrac{1}\va\cdot\left[ \dfrac{1}{\ln x}\dfrac{\ud}{\ud x}x + 
+      x\cdot\dfrac{\ud}{\ud x}\dfrac{1}{\ln x} \right] \\
+      &= \dfrac{1}\va\cdot\left[ \dfrac{1}{\ln x} - \dfrac{x}{(\ln x)^2}\cdot\dfrac{1}{x} \right]
+      = \dfrac{1}{\va\cdot\ln x}\cdot\left( 1 - \dfrac{1}{\ln x} \right) 
 	\end{align}
-	
-	To know whether $x=e$ is a maxima or a minima, we need to find the second derivative
-	
-	\begin{align}
-	   \dfrac{\ud y}{\ud x} &= \dfrac{1}{\ln x} - \dfrac{1}{(\ln x)^2} \\
-	   \Rightarrow \dfrac{\ud^2 y}{\ud x^2} &= \dfrac{-1}{(\ln x)^2}\cdot\dfrac{1}{x}
-	                                        + \dfrac{2}{(\ln x)^3}\cdot\dfrac{1}{x} \\
-	               &= \dfrac{1}{x\cdot(\ln x)^2}\left[ \dfrac{2}{\ln x} - 1\right] \\
-	               &= \dfrac{1}{e} \text{ when } x = e \\
-	               \Rightarrow \text{ minima at } x = e \text{ with } y_{min} = e
-	\end{align}
+  \textbf{Extreme values} occur when 
+  \[ \dfrac{\ud y}{\ud x} = 0 \implies 1-\dfrac{1}{\ln x} = 0 \implies \ln x = 1\implies x = e \] 
+  Moreover, 
+  \begin{align}
+    \dfrac{\ud^2 y}{\ud x^2} &= \dfrac{1}\va\cdot
+    \left[ -\dfrac{1}{(\ln x)^2}\cdot\dfrac{1}{x} + \dfrac{2}{(\ln x)^3}\cdot\dfrac{1}{x} \right] \\
+    &= \dfrac{1}{\va\cdot x\cdot (\ln x)^2}\cdot\left( \dfrac{2}{\ln x} - 1 \right)  \\
+    &= \dfrac{1}{\va e}\text{ when } x = e 
+  \end{align}
+  As $\dfrac{\ud^2 y}{\ud x^2} > 0$, we have a minima 
+  \[ y_{\text{min}} = \dfrac{e}{\va\ln e} = \dfrac{e}{\va}\text{ at } x = e \]
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $y_{\text{min}} = \dfrac{e}{\va}\text{ at } x = e$
+  \end{codex}
+\fi
