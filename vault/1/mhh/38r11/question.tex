@@ -2,46 +2,50 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{7}
-  \renewcommand{\vbtwo}{5}
+  \renewcommand{\va}{7}
+  \renewcommand{\vb}{5}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{6}
-    \renewcommand{\vbtwo}{3}
+    \renewcommand{\va}{6}
+    \renewcommand{\vb}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{7}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{7}
     }{
       % variables 
-      \renewcommand{\vbone}{7}
-      \renewcommand{\vbtwo}{3}
+      \renewcommand{\va}{7}
+      \renewcommand{\vb}{3}
     }
   }
 }
 
-\renewcommand{\vbthree}{\vbone + \sqrt{\vbtwo}}
-\renewcommand{\vbfour}{\vbone - \sqrt{\vbtwo}}
-\SQUARE\vbone\a
-\SUBTRACT\a\vbtwo\b
-\MULTIPLY\vbone{4}\c
+\renewcommand{\vc}{\va + \sqrt{\vb}}
+\renewcommand{\vd}{\va - \sqrt{\vb}}
+\SQUARE\va\a
+\SUBTRACT\a\vb\b
+\MULTIPLY\va{4}\c
 \FRACTIONSIMPLIFY\c\b\p\q
 
-\question[3] If $\dfrac{\vbthree}{\vbfour} - \dfrac{\vbfour}{\vbthree} = a + b\cdot\sqrt{\vbtwo}$, then what 
-are the values of $a$ and $b$?
+\question[3] What are the values of $a$ and $b$ if 
+\[ \dfrac{\vc}{\vd} - \dfrac{\vd}{\vc} = a + b\cdot\sqrt{\vb} \]
 
 
 \watchout
 
 \begin{solution}[\halfpage]
 	\begin{align}
-		\dfrac{\vbthree}{\vbfour} &- \dfrac{\vbfour}{\vbthree} = \dfrac{(\vbthree)^2 - (\vbfour)^2}{\vbone^{2}-\vbtwo} \\
-		&= \dfrac{(\vbone^2 + 2\cdot\vbone\cdot\sqrt{\vbtwo} + \vbtwo) - 
-		(\vbone^2 - 2\cdot\vbone\cdot\sqrt{\vbtwo} + \vbtwo)}{\b} \\
-		&= \dfrac{\p}{\q}\cdot\sqrt{\vbtwo}
+		\dfrac{\vc}{\vd} &- \dfrac{\vd}{\vc} = \dfrac{(\vc)^2 - (\vd)^2}{\va^{2}-\vb} \\
+		&= \dfrac{(\va^2 + 2\cdot\va\cdot\sqrt{\vb} + \vb) - 
+		(\va^2 - 2\cdot\va\cdot\sqrt{\vb} + \vb)}{\b} \\
+		&= \dfrac{\p}{\q}\cdot\sqrt{\vb}
 	\end{align}
-	On comparing (3) with the expression $a + b\cdot\sqrt{\vbtwo}$, we can see that $a=0$ and $b = \frac{\p}{\q}$
+	On comparing this with the form $a + b\cdot\sqrt{\vb}$, we can see that 
+  \[ a=0\text{ and } b = \frac{\p}{\q} \]
 \end{solution}
 
+\ifprintanswers\begin{codex}
+$a=0\text{ and } b=\dfrac\p\q$ 
+\end{codex}\fi

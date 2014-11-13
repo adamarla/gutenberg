@@ -3,70 +3,66 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{4}
-  \renewcommand{\vbtwo}{2}
-  \renewcommand{\vbthree}{9}
-  \renewcommand{\vbfour}{-\dfrac{21}{2}}
+  \renewcommand{\va}{4}
+  \renewcommand{\vb}{2}
+  \renewcommand{\vc}{9}
+  \renewcommand{\vd}{-\dfrac{21}{2}}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{4}
-    \renewcommand{\vbtwo}{3}
-    \renewcommand{\vbthree}{8}
-    \renewcommand{\vbfour}{-\dfrac{56}{9}}
+    \renewcommand{\va}{4}
+    \renewcommand{\vb}{3}
+    \renewcommand{\vc}{8}
+    \renewcommand{\vd}{-\dfrac{56}{9}}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{2}
-      \renewcommand{\vbthree}{8}
-      \renewcommand{\vbfour}{70}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{2}
+      \renewcommand{\vc}{8}
+      \renewcommand{\vd}{70}
     }{
       % variables 
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{7}
-      \renewcommand{\vbfour}{-\dfrac{35}{3}}
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{7}
+      \renewcommand{\vd}{-\dfrac{35}{3}}
     }
   }
 }
 
-\SUBTRACT\vbone{1}\p
-\SUBTRACT\vbthree\p\q
+\SUBTRACT\va{1}\p
+\SUBTRACT\vc\p\q
 \MULTIPLY\q{3}\a
 \MULTIPLY\p{2}\b
 
 \SUBTRACT\a\b\x
 \SUBTRACT\p\q\y
 
-\question[3] What will be the $\vbone^{th}$ term in the expansion of 
-$\left( \dfrac{x^3}\vbtwo - \dfrac\vbtwo{x^2} \right)^{\vbthree}$ if  
-the higher powers of $x$ are written before the lower powers in the expansion
-
-
+\question[3] What will be the $\va-$th term in the expansion of 
+ \[ \left( \dfrac{x^3}\vb - \dfrac\vb{x^2} \right)^{\vc} \] 
+ if the higher powers of $x$ are written before the lower powers in the expansion.
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\halfpage]
-  The general form of a term - $T_{m+1}$ - in the binomial expansion of 
-  $\left( \dfrac{x^3}\vbtwo - \dfrac\vbtwo{x^2} \right)^{\vbthree}$ is given by 
-
+  Every term in the required expansion will be of the form 
+  \[ T_{m+1} = \binom\vc{m}\cdot\left( \dfrac{x^3}\vb\right)^{\vc-m}\cdot\left( -\dfrac\vb{x^2} \right)^{m}, m\text{ goes from }0\to\vc\]
+  \textbf{Alternately,} you could say that the general term is
+  \[ T_{m+1} = \binom\vc{m}\cdot\left( \dfrac{x^3}\vb\right)^{m}\cdot\left( -\dfrac\vb{x^2} \right)^{\vc-m} \]
+  \textbf{But then,} $m$ would have to go from $\vc\to 0$. Either is fine as long as you know \textbf{which values of }$m$ 
+  will give higher powers of $x$. 
+  
+  However, we will use the first form. And the $\va-$th term will be
   \begin{align}
-    T_{m+1} &= \encr\vbthree{m}\cdot\left( \dfrac{x^3}\vbtwo\right)^{\vbthree-m}\cdot\left( -\dfrac\vbtwo{x^2} \right)^{m}
-    , \text{where } m \in [0,\vbthree]
-  \end{align}
-  The $\vbone^{th}$ term will be $T_{\p+1}$. Therefore,
-  \begin{align}
-    T_{\p+1} &= \encr\vbthree\p\cdot
-    \left( \dfrac{x^3}\vbtwo \right)^{\q} \cdot
-    \left( -\dfrac\vbtwo{x^2}\right)^{\p} \\
-    &= \encr\vbthree\p\cdot\dfrac{x^{\a}}{x^{\b}}\times\dfrac{\vbtwo^{\p}}{\vbtwo^{\q}}
+    T_{\p+1} &= \binom\vc\p\cdot
+    \left( \dfrac{x^3}\vb \right)^{\q} \cdot
+    \left( -\dfrac\vb{x^2}\right)^{\p} \\
+    &= \binom\vc\p\cdot\dfrac{x^{\a}}{x^{\b}}\times\dfrac{\vb^{\p}}{\vb^{\q}}
     \times (-1)^{\p} \\
-    &= \encr\vbthree\p\cdot x^{\x}\cdot\vbtwo^{\y} = \vbfour\cdot x^{\x}
+    &= \binom\vc\p\cdot x^{\x}\cdot\vb^{\y} = \vd\cdot x^{\x}
   \end{align}
 
 \end{solution}
 
+\ifprintanswers\begin{codex}$\vd\cdot x^{\x}$\end{codex}\fi
