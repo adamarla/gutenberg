@@ -1,21 +1,24 @@
 
 
-\question[3] For what value(s) of $x$ is $2\cos^2 x + 3\sin x = 0$ ?
-
-
-\ifprintanswers
-\fi 
+\question[3] For what value(s) of $x$ is the following true? 
+\[ 2\cos^2 x + 3\sin x = 0 \]
 
 \begin{solution}[\halfpage]
 	\begin{align}
-		2\cos^2 x + 3\sin x &= 2\cdot(1-\sin^2 x) + 3 \sin x = 0 \\
-		&\Rightarrow 2\sin^2 x - 3\sin x - 2 = 0 \\
-		&\Rightarrow \sin x = \dfrac{3 \pm \sqrt{3^2 - 4\cdot 2 \cdot (-2)}}{2\cdot2} = 2 \text{ or } -\dfrac{1}{2}
+		2\cos^2 x + 3\sin x = 0 \implies 2\cdot(1-\sin^2 x) &+ 3 \sin x = 0 \\
+		\implies 2\sin^2 x - 3\sin x - 2 &= 0 \\
+    \implies 2\sin^2 x - 4\sin x + \sin x - 2 &= 0 \\
+    \implies (2\sin x + 1)\cdot (\sin x - 2) &= 0\\
+    \implies \sin x &= -\dfrac{1}{2}\text{ or } 2
 	\end{align}
-	$\sin x > 1$ is not possible. Hence, the only feasible solution is $\sin x = -\dfrac{1}{2}$
+
+  But $-1\leq \sin x \leq 1\implies \sin x = -\frac{1}{2}$. 
+
+  \textbf{The first }$x\in\underbrace{\left[-\frac\pi{2},\frac\pi{2} \right]}_{\text{domain}}$ 
+  for which $\sin x = -\frac{1}{2}$ is $x=-\frac\pi{6}$.
 	
-	\begin{align}
-		\text{And so, if } \sin x = -\dfrac{1}{2}, \text{ then } x &= n\pi + (-1)^n\cdot\left(-\dfrac{\pi}{6}\right) \\
-		    &= n\pi + (-1)^{n+1}\left( \dfrac{\pi}{6}\right)
-	\end{align}
+  The other angles (and there are infinite of them) are given by 
+  \[ x = n\pi + (-1)^n\left( -\dfrac\pi{6}\right) = n\pi + (-1)^{n+1}\dfrac\pi{6} \] 
 \end{solution}
+
+\ifprintanswers\begin{codex}$n\pi + (-1)^{n+1}\dfrac\pi{6}$\end{codex}\fi
