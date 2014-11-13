@@ -3,53 +3,54 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{5}
-  \renewcommand{\vbtwo}{2}
-  \renewcommand{\vbthree}{6}
+  \renewcommand{\va}{5}
+  \renewcommand{\vb}{2}
+  \renewcommand{\vc}{6}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{7}
-    \renewcommand{\vbtwo}{4}
-    \renewcommand{\vbthree}{3}
+    \renewcommand{\va}{7}
+    \renewcommand{\vb}{4}
+    \renewcommand{\vc}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{3}
-      \renewcommand{\vbtwo}{2}
-      \renewcommand{\vbthree}{2}
+      \renewcommand{\va}{3}
+      \renewcommand{\vb}{2}
+      \renewcommand{\vc}{2}
     }{
       % variables 
-      \renewcommand{\vbone}{9}
-      \renewcommand{\vbtwo}{4}
-      \renewcommand{\vbthree}{5}
+      \renewcommand{\va}{9}
+      \renewcommand{\vb}{4}
+      \renewcommand{\vc}{5}
     }
   }
 }
 
-\renewcommand{\vbfour}{\vbone + \vbtwo\cdot\sqrt{\vbthree}}
-\renewcommand{\vbfive}{\vbone - \vbtwo\cdot\sqrt{\vbthree}}
-\POWER\vbone{2}\a
-\EXPR[0]{\b}{(\vbtwo * \vbtwo * \vbthree)}
-\ADD\vbone\vbone\c
+\renewcommand{\vd}{\va + \vb\cdot\sqrt{\vc}}
+\renewcommand{\ve}{\va - \vb\cdot\sqrt{\vc}}
+\POWER\va{2}\a
+\EXPR[0]{\b}{(\vb * \vb * \vc)}
+\ADD\va\va\c
 \SQUARE\c\d
 \SUBTRACT\d{2}\ans
 
-\question[3] If $a = \vbone + \vbtwo\cdot\sqrt{\vbthree}$ and $b = \frac{1}{a}$, then what is the value of $a^2 + b^2$?
-
+\question[3] What is the value of $a^2+b^2$ if, 
+  \[ a = \va + \vb\cdot\sqrt{\vc}\text{ and } b = \frac{1}{a} \]
 
 \watchout
 
 \begin{solution}[\halfpage]
 	\begin{align}
-		b = \dfrac{1}{a} &= \dfrac{1}{\vbfour} = \dfrac{1}{\vbfour}\times\dfrac{\vbfive}{\vbfive} \\
-		&= \dfrac{\vbfive}{\a-\b} = \vbfive
+		b = \dfrac{1}{a} &= \dfrac{1}{\vd} = \dfrac{1}{\vd}\times\dfrac{\ve}{\ve} \\
+		&= \dfrac{\ve}{\a-\b} = \ve
 	\end{align}
 	Moreover, \begin{align}
 		a^2 + b^2 &= (a+b)^2 - 2ab \\
-		\text{where } (a+b) &= (\vbfour) + (\vbfive) = \c \\
-		\text{and } a\cdot b &= (\vbfour)\cdot (\vbfive) = 1 \\
-		\Rightarrow a^2 + b^2 &= \c^{2} - 2 = \ans
+		\text{where } (a+b) &= (\vd) + (\ve) = \c \\
+		\text{and } a\cdot b &= (\vd)\cdot (\ve) = 1 \\
+		\implies a^2 + b^2 &= \c^{2} - 2 = \ans
 	\end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}$\ans$\end{codex}\fi

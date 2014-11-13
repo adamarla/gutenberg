@@ -3,74 +3,74 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{6}
-  \renewcommand{\vbtwo}{6} % even power 
-  \renewcommand{\vbthree}{9} % odd power
-  \renewcommand{\vbfour}{-20} % even coefficient 
-  \renewcommand{\vbfive}{-15} % odd coefficient
+  \renewcommand{\va}{6}
+  \renewcommand{\vb}{6} % even power 
+  \renewcommand{\vc}{9} % odd power
+  \renewcommand{\vd}{-20} % even coefficient 
+  \renewcommand{\ve}{-15} % odd coefficient
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{7}
-    \renewcommand{\vbtwo}{4}
-    \renewcommand{\vbthree}{7}
-    \renewcommand{\vbfour}{21}
-    \renewcommand{\vbfive}{35}
+    \renewcommand{\va}{7}
+    \renewcommand{\vb}{4}
+    \renewcommand{\vc}{7}
+    \renewcommand{\vd}{21}
+    \renewcommand{\ve}{35}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{4}
-      \renewcommand{\vbthree}{9}
-      \renewcommand{\vbfour}{10}
-      \renewcommand{\vbfive}{-5}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{4}
+      \renewcommand{\vc}{9}
+      \renewcommand{\vd}{10}
+      \renewcommand{\ve}{-5}
     }{
       % variables 
-      \renewcommand{\vbone}{8}
-      \renewcommand{\vbtwo}{8}
-      \renewcommand{\vbthree}{5}
-      \renewcommand{\vbfour}{70}
-      \renewcommand{\vbfive}{-28}
+      \renewcommand{\va}{8}
+      \renewcommand{\vb}{8}
+      \renewcommand{\vc}{5}
+      \renewcommand{\vd}{70}
+      \renewcommand{\ve}{-28}
     }
   }
 }
 
-\ADD\vbone{1}\a
-\DIVIDE\vbtwo{2}\k
-\INTEGERDIVISION\vbthree{2}\m\n 
+\ADD\va{1}\a
+\DIVIDE\vb{2}\k
+\INTEGERDIVISION\vc{2}\m\n 
 
-\question[4] Find the \textit{coefficients} of $x^{\vbtwo}$ and $x^{\vbthree}$ in the expansion of $(1+x)^{\vbone}\cdot(1-x)^{\a}$
-
+\question[4] What are the \textbf{coefficients} of $x^{\vb}$ and $x^{\vc}$ in the expansion of 
+  \[ (1+x)^{\va}\cdot(1-x)^{\a} \]
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\halfpage]
   \begin{align}
-    (1+x)^\vbone\cdot (1-x)^{\a} &= 
-    (1+x)^{\vbone}\cdot (1-x)^{\vbone} \cdot (1-x) \nonumber\\
-    &= \left[ (1+x)\cdot (1-x) \right]^{\vbone}\cdot (1-x) \nonumber\\
-    &= (1-x^2)^{\vbone}\cdot (1-x) \\
+    (1+x)^\va\cdot (1-x)^{\a} &= 
+    (1+x)^{\va}\cdot (1-x)^{\va} \cdot (1-x) \nonumber\\
+    &= \left[ (1+x)\cdot (1-x) \right]^{\va}\cdot (1-x) \nonumber\\
+    &= (1-x^2)^{\va}\cdot (1-x) \\
     &= \underbrace{
-    \left[ \sum_{k=0}^{\vbone}\binom\vbone{k} (-1)^{k}\cdot (x^2)^{k} \right]
+    \left[ \sum_{k=0}^{\va}\binom\va{k} (-1)^{k}\cdot (x^2)^{k} \right]
     }_{\texttt{A}}\cdot \underbrace{(1-x)}_{\texttt{B}}
   \end{align}
   
-  Now, we can see that only even powers of $x$ can come from $A$ - terms like $x^2$, $x^4$. 
-  If that even term is multiplied with the $x$ in $(1-x)$, then we can get an odd power of $x$
+  \textbf{Question \#1: A term from $A\times (1-x)=?$}
+
+  If $A_k$ be the $k-$th term in $A$, then 
+   \[ A_k\times (1-x) = \overbrace{\underbrace{\binom\va{k}(-1)^k}_{C_k} x^{2k}}^{A_k}\times (1-x) = C_k\cdot x^{2k}-C_k\cdot x^{2k+1} \]
   
-    Hence, in order to get a $x^{\vbtwo}$ term 
+    Hence, in order to get a $x^{\vb}$ term 
     \begin{align}
-      x^{2k} &= x^{\vbtwo} \Rightarrow k = \k \\
-      \Rightarrow T_{\k} &= \binom\vbone\k (-1)^{\k} x^{\vbtwo} \text{ or } K_{\k} = \vbfour
+      x^{2k} &= x^{\vb} \implies k = \k \\
+      \implies A_{\k} &= \binom\va\k (-1)^{\k} x^{\vb} \text{ or } C_{\k} = \vd
     \end{align}
     
-    And, to get $x^{\vbthree}$
+    And, to get $x^{\vc}$
     \begin{align}
-      x^{2k + 1} &= x^{\vbthree} \Rightarrow k = \m \\
-      \Rightarrow T_{\m} &= \binom\vbone\m (-1)^{\m + 1} x^{\vbthree} \text{ or } K_{\m} = \vbfive
+      x^{2k + 1} &= x^{\vc} \implies k = \m \\
+      \implies A_{\m} &= \binom\va\m (-1)^{\m + 1} x^{\vc} \text{ or } C_{\m} = \ve
     \end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}$\vd$ and $\ve$ respectively\end{codex}\fi

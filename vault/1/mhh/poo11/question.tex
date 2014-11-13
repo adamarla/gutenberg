@@ -3,76 +3,73 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{0.6}
-  \renewcommand{\vbtwo}{0.\overline{7}}
-  \renewcommand{\vbthree}{0.4\overline{7}}
-  \renewcommand{\vbfour}{0.7777\ldots}
-  \renewcommand{\vbfive}{0.4777\ldots}
-  \renewcommand{\vbsix}{1.8555\ldots 4}
-  \renewcommand{\vbseven}{18.\overline{5}}
-  \renewcommand{\vbeight}{185.\overline{5}}
-  \renewcommand{\vbnine}{167}
-  \renewcommand{\vbten}{1.8\overline{5}}
+  \renewcommand{\va}{0.6}
+  \renewcommand{\vb}{0.\overline{7}}
+  \renewcommand{\vc}{0.4\overline{7}}
+  \renewcommand{\vd}{0.7777\ldots}
+  \renewcommand{\ve}{0.4777\ldots}
+  \renewcommand{\vf}{1.8555\ldots 4}
+  \renewcommand{\vg}{18.\overline{5}}
+  \renewcommand{\vh}{185.\overline{5}}
+  \renewcommand{\vi}{167}
+  \renewcommand{\vj}{1.8\overline{5}}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{0.7}
-    \renewcommand{\vbtwo}{0.\overline{5}}
-    \renewcommand{\vbthree}{0.3\overline{8}}
-    \renewcommand{\vbfour}{0.5555\ldots}
-    \renewcommand{\vbfive}{0.3888\ldots}
-    \renewcommand{\vbsix}{1.6444\ldots 3}
-    \renewcommand{\vbseven}{16.\overline{4}}
-    \renewcommand{\vbeight}{164.\overline{4}}
-    \renewcommand{\vbnine}{148}
-    \renewcommand{\vbten}{1.6\overline{4}}
+    \renewcommand{\va}{0.7}
+    \renewcommand{\vb}{0.\overline{5}}
+    \renewcommand{\vc}{0.3\overline{8}}
+    \renewcommand{\vd}{0.5555\ldots}
+    \renewcommand{\ve}{0.3888\ldots}
+    \renewcommand{\vf}{1.6444\ldots 3}
+    \renewcommand{\vg}{16.\overline{4}}
+    \renewcommand{\vh}{164.\overline{4}}
+    \renewcommand{\vi}{148}
+    \renewcommand{\vj}{1.6\overline{4}}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{0.5}
-      \renewcommand{\vbtwo}{0.\overline{4}}
-      \renewcommand{\vbthree}{0.7\overline{9}}
-      \renewcommand{\vbfour}{0.4444\ldots}
-      \renewcommand{\vbfive}{0.7999\ldots}
-      \renewcommand{\vbsix}{1.7444\ldots 3}
-      \renewcommand{\vbseven}{17.\overline{4}}
-      \renewcommand{\vbeight}{174.\overline{4}}
-      \renewcommand{\vbnine}{157}
-      \renewcommand{\vbten}{1.7\overline{4}}
+      \renewcommand{\va}{0.5}
+      \renewcommand{\vb}{0.\overline{4}}
+      \renewcommand{\vc}{0.7\overline{9}}
+      \renewcommand{\vd}{0.4444\ldots}
+      \renewcommand{\ve}{0.7999\ldots}
+      \renewcommand{\vf}{1.7444\ldots 3}
+      \renewcommand{\vg}{17.\overline{4}}
+      \renewcommand{\vh}{174.\overline{4}}
+      \renewcommand{\vi}{157}
+      \renewcommand{\vj}{1.7\overline{4}}
     }{
       % variables 
-      \renewcommand{\vbone}{0.4}
-      \renewcommand{\vbtwo}{0.\overline{6}}
-      \renewcommand{\vbthree}{0.5\overline{5}}
-      \renewcommand{\vbfour}{0.6666\ldots}
-      \renewcommand{\vbfive}{0.5555}
-      \renewcommand{\vbsix}{1.6222\ldots 1}
-      \renewcommand{\vbseven}{16.\overline{2}}
-      \renewcommand{\vbeight}{162.\overline{2}}
-      \renewcommand{\vbnine}{146}
-      \renewcommand{\vbten}{1.6\overline{2}}
+      \renewcommand{\va}{0.4}
+      \renewcommand{\vb}{0.\overline{6}}
+      \renewcommand{\vc}{0.5\overline{5}}
+      \renewcommand{\vd}{0.6666\ldots}
+      \renewcommand{\ve}{0.5555}
+      \renewcommand{\vf}{1.6222\ldots 1}
+      \renewcommand{\vg}{16.\overline{2}}
+      \renewcommand{\vh}{162.\overline{2}}
+      \renewcommand{\vi}{146}
+      \renewcommand{\vj}{1.6\overline{2}}
     }
   }
 }
 
-\question[4] Express $\vbone + \vbtwo + \vbthree$ in the form $\frac{p}{q}$, where $q\neq 0$
-
+\question[4] Express $\va + \vb + \vc$ in the form $\frac{p}{q}$, where $q\neq 0$.
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\halfpage]
 	\begin{align}
-		S = \vbone + \vbtwo + \vbthree &= \vbone \nonumber\\
-								& + \vbfour \nonumber\\
-								& + \vbfive \\
-								&= \vbsix = \vbten \\
-		\Rightarrow 10S &=  \vbseven \\
-		\text{and } 100S &= \vbeight \\
-		\therefore 100S - 10S = \vbnine \Rightarrow S = \WRITEFRAC\vbnine{90}
+		S = \va + \vb + \vc &= \va \nonumber\\
+								& + \vd \nonumber\\
+								& + \ve \\
+								&= \vf = \vj \\
+		\implies 10S &=  \vg \\
+		\text{and } 100S &= \vh \\
+		\therefore 100S - 10S = \vi \implies S = \WRITEFRAC[false]\vi{90}
 	\end{align}
 	
 \end{solution}
 
+\ifprintanswers\begin{codex}$\WRITEFRAC[false]\vi{90}$\end{codex}\fi
