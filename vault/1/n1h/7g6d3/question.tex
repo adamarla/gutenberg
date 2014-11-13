@@ -1,10 +1,41 @@
 
-\question[3] A torpedo boat is anchored $9$ km away from the \textit{nearest} point
-on the shore. A messenger must be sent from the torpedo boat to a camp that is 
-$15km$ away - along the shore - from that nearest point on the shore. If a messenger
-can walk at $5$ km per hour and row at $4$ km per hour, then where on the shore must
+\renewcommand\vw{5}
+\renewcommand\vr{3} 
+\renewcommand\vd{15}
+
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand\vs{9}
+  \renewcommand\vr{4}
+  \renewcommand\vx{12}
+  \renewcommand\vm{}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\vs{8}
+    \renewcommand\vx{6}
+    \renewcommand\vm{\dfrac{47}{1500}}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\vs{10}
+      \renewcommand\vx{7.5}
+      \renewcommand\vm{}
+    }{
+      \renewcommand\vs{9}
+      \renewcommand\vx{6.75}
+      \renewcommand\vm{}
+    }
+  }
+}
+
+\SQUARE\vs\vy
+\SUBTRACT\vd\vx\vz
+
+\question[3] A torpedo boat is anchored $\vs$ km away from the nearest point $(A)$
+on a shore. A messenger must be sent from the torpedo boat to a camp that is 
+$\vd$ km away from $A$ along the shore. If a messenger
+can walk at $\vw$ km per hour and row at $\vr$ km per hour, then where on the shore must
 he land in order to reach the camp in the shortest possible time? 
 
+\watchout
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -29,31 +60,42 @@ he land in order to reach the camp in the shortest possible time?
       \figdrawline [104,106]
   	\figdrawend
   	\figvisu{\figBoxA}{}{
-      \figwrites 104:$\text{Boat}$(2)
-      \figwritee 105:$\text{Nearest Pt}$(2)
-      \figwritee 106:$\text{Camp}$(2)
-      \figwritee 107:$\text{Landing Pt}$(2)
-      \figwrites 200:$9\textit{ km}$(1)
-      \figwritee 201:$x\textit{ km}$(1)
-      \figwritee 202:$15-x\textit{ km}$(1)
+      \fontfamily{cmss}\selectfont\normalsize
+      \figwrites 104:$\textbf{Boat}$(2)
+      \figwritee 105:$\textbf{Nearest Pt (A)}$(2)
+      \figwritee 106:$\textbf{Camp}$(2)
+      \figwritee 107:$\textbf{Landing Pt}$(2)
+      \figwrites 200:$\vs\text{ km}$(1)
+      \figwritee 201:$x\text{ km}$(1)
+      \figwritee 202:$\vd-x\text{ km}$(1)
   	}
   	\centerline{\box\figBoxA}
   \end{marginfigure}
 \fi 
 
 \begin{solution}[\fullpage]
-   If $T$ be the total time it takes row to the landing point - \asif - 
-   and then walk from the landing point to the camp, then
+  The situation is as shown in the figure alongside. 
+
+ \textbf{Step \#1: Find the extreme point(s)} 
+
+ If $T$ be the total time it takes row to the landing point  
+ and then walk from the landing point to the camp, then
    \begin{align}
-       T &= \dfrac{\sqrt{(9^2+x^2)}}{4} + \dfrac{15-x}{5} \\
-       \Rightarrow \dfrac{\ud T}{\ud x} &= \left( \dfrac{1}{4}\cdot\dfrac{1}{2}\cdot\dfrac{2x}{\sqrt{x^2+81}}\right) - \dfrac{1}{5} \\
-       \Rightarrow \dfrac{\ud T}{\ud x} &= 0\text{ when } \dfrac{x}{\sqrt{x^2+81}} = \dfrac{4}{5}
-       \text{ or } x = 12 \\
-       \text{Also, }\dfrac{\ud^2 T}{\ud x^2} &= \dfrac{1}{4\cdot(x^2+81)^{\frac{1}{2}}} 
-                         - \dfrac{x}{4}\times\dfrac{1}{2}\times\dfrac{1}{(x^2+81)^{\frac{3}{2}}} \\
-                         &= \dfrac{1}{4\cdot(x^2+81)^{\frac{3}{2}}}\times(x^2-x+81) \\
-                         &> 0 \text{ for } x = 12 \Rightarrow \text{ minima }
+       T &= \dfrac{\sqrt{(\vs^2+x^2)}}{\vr} + \dfrac{\vd-x}{\vw} \\
+       \implies \dfrac{\ud T}{\ud x} &= \left( \dfrac{1}{\vr}\cdot\dfrac{1}{2}\cdot\dfrac{2x}{\sqrt{x^2+\vy}}\right) - \dfrac{1}{\vw} \\
+       \implies \dfrac{\ud T}{\ud x} &= 0\text{ when } \dfrac{x}{\sqrt{x^2+\vy}} = \dfrac{\vr}{\vw}
+       \text{ or } x = \vx\text{ km} 
    \end{align}
+   \textbf{Step \#2: Is it a maxima or a minima?}
    
-   Hence, the messenger should land $3(= 15 -12)$ km from the camp
+   To answer that, we need to find the second derivative.
+   \begin{align}
+     \dfrac{\ud^2 T}{\ud x^2} &= \dfrac{1}{\vr\cdot(x^2+\vy)^{\frac{1}{2}}} 
+                 - \dfrac{x}{\vr}\times\dfrac{1}{2}\times\dfrac{1}{(x^2+\vy)^{\frac{3}{2}}} \\
+                         &= \dfrac{1}{\vr\cdot(x^2+\vy)^{\frac{3}{2}}}\times(x^2-x+\vy) \\
+     \left[\dfrac{\ud^2 T}{\ud x^2}\right]_{x=\vx} &> \underbrace{0\implies\text{ minima }}_{\vx^2-\vx + \vy > 0}
+   \end{align}
+   Hence, the messenger should land 
+    \[ \vx\text{ km from } A\implies\vz\text{ km from the camp} \] 
 \end{solution}
+\ifprintanswers\begin{codex}$\vz$ km from the camp\end{codex}\fi
