@@ -3,45 +3,78 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{2} %p
+  \renewcommand{\va}{2} %p
+  \renewcommand{\vb}{1} %p
+  \renewcommand\vz{\dfrac{n}{3}\cdot(4n^2+6n-1)}
 }{
 	\ifnumequal{\value{rolldice}}{1}{
-		\renewcommand{\vbone}{3}
+		\renewcommand{\va}{3}
+    \renewcommand{\vb}{1} %p
+    \renewcommand\vz{\dfrac{n}{2}\cdot(6n^2+9n+1)}
 	}{
 	  \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{1}
+      \renewcommand{\va}{3}
+      \renewcommand{\vb}{2} %p
+      \renewcommand\vz{\dfrac{n}{2}\cdot(6n^2+9n-5)}
 	  }{
-      \renewcommand{\vbone}{2}
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{3} %p
+      \renewcommand\vz{\dfrac{n}{3}\cdot(4n^2+6n-25)}
 	  }
 	}
 }
 
-\gcalcexpr[0]\tp{\vbone * \vbone}
-\gcalcexpr[0]\tq{2 * \tp}
-\gcalcexpr[0]\tr{3 * \tp}
-\gcalcexpr[0]\ts{\tp - 6}
+\SQUARE\va\vc
+\SQUARE\vb\vd
+\MULTIPLY\vc{2}\ve
 
-\gcalcexpr[0]\af{\tp -1}
-\gcalcexpr[0]\as{4*\tp - 1}
-\gcalcexpr[0]\at{9*\tp - 1}
-\gcalcexpr[0]\afo{16*\tp - 1}
+\EXPR[0]\a{\vc-\vd}
+\EXPR[0]\b{4*\vc-\vd}
+\EXPR[0]\c{9*\vc-\vd}
+\EXPR[0]\d{16*\vc-\vd}
+
+\SUBTRACT\b\a\w
+\SUBTRACT\c\b\x
+\SUBTRACT\d\c\y
+
+\SUBTRACT\ve\vc\vj
+\SUBTRACT\vj\a\vk
 
 \question[3] Find an expression for the sum of the first $n$ terms of the series 
-$\af + \as + \at + \afo + \ldots$. \texttt{Hint:} Each term in the series is of the 
-form $a_k = (pk-1)\cdot(qk+1),\, k \geq 1$ and $p,q \in\aleph$
+  \[ \a + \b + \c + \d + \ldots \] 
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\halfpage]
-	The $k^{th}$ term of the series is of the form $a_k = (\vbone k-1)\cdot(\vbone k+1),\, k \geq 1$
-	Hence, the sum of the first $n$ terms s given by
-	\begin{align}
-		S_n &= \sum_{k=1}^{n}(\vbone k-1)\cdot(\vbone k+1) = \sum_{k=1}^{n}(\tp k^2-1) \\
-		&= \tp\cdot\sum_{k=1}^{n}k^2 - \sum_{k=1}^{n}1 \\
-		&= \tp\cdot\eSumOfSquares{n} - n \\
-		&= \dfrac{n}{6}\cdot\left[\tp\cdot(2n^2 + 3n + 1) - 6\right] = \dfrac{n}{6}\left[ \tq n^2 + \tr n + \ts \right] 
-	\end{align}
+  \textbf{Step \#1: Finding an expression for $a_n$ - the $n-$th term}
+  
+  If we see the series as 
+  \[ S = a_1 + a_2 + a_3 + a_4 + \ldots \]
+  then notice that 
+  \begin{align}
+    a_2 - a_1 &= \w = \vc\cdot (1+2) \\
+    a_3 - a_2 &= \x = \vc\cdot (3+2) \\
+    a_4 - a_3 &= \y = \vc\cdot (4+3) \\
+    \implies a_n - a_{n-1} &= \vc\cdot (n + n-1) = \vc\cdot (2n-1)
+  \end{align}
+  And therefore, 
+  \[ \underbrace{(a_n-a_{n-1}) + (a_{n-1}-a_{n-2}) + \ldots + (a_2-a_1)}_{\text{middle terms cancel out}}
+   = a_n-a_1 \]
+   \begin{align}
+      a_n - a_1 &= \sum_{k=2}^n (\ve n - \vc) = 
+      \left[ \sum_{k=1}^n(\ve n - \vc) - \underbrace{(8-4)}_{k=1}\right] \\
+      &= \ve\sum_{k=1}^n n - \vc\sum_{k=1}^n 1 - \vj \\
+      \implies a_n &= \left[\ve\eSumOfN{n} - \vc n \right] - (\vj-\a) 
+      = \underbrace{(\vc n^2 - \vd)}_{\text{on simplification}}
+   \end{align}
+
+  \textbf{Step \#2: Add up the $a_n$} 
+
+  \begin{align}
+    S &= \sum_{k=1}^n a_n = \sum_{k=1}^n (\vc n^2 - \vd) 
+      = \vc \sum_{k=1}^n n^2 - \vd\sum_{k=1}^n 1 \\
+      &= \vc\eSumOfSquares{n} - \vd n = \vz
+  \end{align}
 \end{solution}
+
+\ifprintanswers\begin{codex}$\vz$\end{codex}\fi
