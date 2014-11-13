@@ -16,26 +16,20 @@
     }
   }
 }
-\SUBTRACT\vb\va\d
+\SUBTRACT\vb\va\vd
 
-\question[3] If $\dfrac{\sin\theta + \sin \va\theta + \sin \vb\theta}
-  	{\cos \theta + \cos \va\theta + \cos \vb\theta} = \tan M\theta $, then
-  	find the value of $M$.
+\question[3] For what value of $M$ would the following be true? 
+ \[ \dfrac{\sin\theta + \sin \va\theta + \sin \vb\theta}
+  	{\cos \theta + \cos \va\theta + \cos \vb\theta} = \tan M\theta \]
 
 \begin{solution}[\halfpage]
-  Let us rewrite the Left Hand Side (L.H.S) as follows,
   \begin{align}
-    \text{L.H.S} &= \dfrac{\sin(\va\theta - \d\theta ) + \sin \va\theta + 
-    						\sin (\va\theta + \d\theta)}
-  						  {\cos (\va\theta - \d\theta) + \cos \va\theta + 
-  							\cos (\va\theta + \d\theta)} \\
-				 &= \dfrac{2\sin \va\theta \cos \d\theta + \sin \va\theta}
-				  		  {2\cos \va\theta \cos \d\theta + \cos \va\theta} \\
-				 &= \dfrac{\sin \va\theta(2\cos \d\theta + 1)}
-				  		  {\cos \va\theta(2\cos \d\theta + 1)} \\
-				 &= \tan \va\theta
+    &\dfrac{\sin\theta + \sin\va\theta + \sin\vb\theta}{\cos\theta + \cos\va\theta + \cos\vb\theta} = 
+    \dfrac{(\sin\theta + \sin\vb\theta) + \sin\va\theta}{(\cos\theta + \cos\vb\theta) + \cos\va\theta} \\
+    &= \dfrac{\left[ \eSumOfSin\theta{\vb\theta} \right] + \sin\va\theta}{\left[ \eSumOfCos\theta{\vb\theta}\right] + \cos\va\theta} \\
+    &= \dfrac{2\sin\va\theta\cos\vd\theta + \sin\va\theta}{2\cos\va\theta\cos\vd\theta + \cos\va\theta} \\
+    &= \dfrac{\sin\va\theta\cdot (2\cos\vd\theta + 1)}{\cos\va\theta\cdot (2\cos\vd\theta + 1)} = \tan\va\theta\implies M = \va
   \end{align}
-  Therefore $M=\va$
 \end{solution}
 
-\ifprintanswers\begin{codex}$M=\va$\end{codex}\fi
+\ifprintanswers\begin{codex}$\va$\end{codex}\fi
