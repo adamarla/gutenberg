@@ -1,11 +1,29 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand\vp{4}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\vp{2}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\vp{3}
+    }{
+      \renewcommand\vp{4}
+    }
+  }
+}
 
-\question For a parabola $y^2=2px$ and a point $A$ on its axis, 
+\MULTIPLY\vp{2}\vq
+\ADD\vq\vp\va
 
+\question For a parabola $y^2=2px$ and a point $A$ on its axis (does not have to be the focus), 
+
+\watchout
 
 \ifprintanswers
-  \begin{marginfigure}
+  %\begin{marginfigure}
   % 1. Definition of characteristic points
+\vspace{0.75cm}
 \figinit{pt}
 \def\Xmin{0}
 \def\Ymin{0}
@@ -88,29 +106,30 @@
 )
 \figdrawend
 \figvisu{\figBoxA}{}{%
+\fontfamily{cmss}\selectfont\normalsize
 \figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
 \figwritee 1:(5pt)     \figwriten 2:(5pt)
 \figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
-\figwrites 100: $A{(a,0)}$(2)
-\figwritee 101: ${(x_{min}, y_{min})}$(2)
+\figwrites 100: $\text{A(a,0)}$(3)
+\figwritenw 101: $\text{B}$(3)
 }
 \centerline{\box\figBoxA}
 
 
-  \end{marginfigure}
+  %\end{marginfigure}
 \fi 
 
 \begin{parts}
-  \part[3] What is the $x-$coordinate of the point \textit{on the parabola} closest to $A$?
+  \part[3] What is the $x-$coordinate of the point \textbf{on the parabola} closest to $A$?
 
 \begin{solution}[\halfpage]
-  	If $G$ be the distance between point $(x,y)$ on the parabola and $A$, then 
+  	If $G$ be the distance between point $B (x,y)$ on the parabola and $A (a,0)$ (see figure), then 
   	\begin{align}
   	   G &= \sqrt{(x-a)^2 + y^2} \\
-  	   \Rightarrow G^2 &= (x-a)^2 + y^2 = (x-a)^2 + 2px \\
+  	   \implies G^2 &= (x-a)^2 + y^2 = (x-a)^2 + 2px \\
   	   \text{And }\therefore \dfrac{\ud G^2}{\ud x} &= 2\cdot(x-a) + 2p \\
   	   &= 0 \text{ when } x = (a-p) \\
-  	   \text{Also, }\dfrac{\ud^2}{\ud x^2}G^2 &= 2 > 0 \Rightarrow \text{ minima }
+  	   \text{Also, }\dfrac{\ud^2}{\ud x^2}G^2 &= 2 > 0 \implies \text{ minima }
   	\end{align}
   	
   	$x_{min}=(a-p)$ is an answer - but it is not the whole answer. If $a < p$, then the above
@@ -125,11 +144,21 @@
   	\end{align}
   \end{solution}
 
-  \part[1] Using the result in part (a), find the point on parabola $y^2=4x$ closest to the point $(6,0)$ 
+  \part[1] Using the result in part (a), find the point on parabola $y^2=\vq x$ closest to the point $(\va,0)$ 
 
 \begin{solution}[\mcq]
-  	In this case $p = 2$ and $a = 6$. Therefore, $x_{min} = a-p = 6-2 = 4$ and the 
-  	closest points are $(x_{min},\sqrt{4\times x_{min}}) = (4, \sqrt{4\times 4})= (4,4)$ and $(4,-4)$
+  We need values for $a$ and $p$ that we used in part (a). 
+  \begin{align}
+    y^2 &=  \vq x = 2px \implies p = \vp \\
+    a &= \va \implies a-p = \va - \vp = \vq
+  \end{align}
+  Hence, the closest points are 
+  \[ \left(a-p,\, \sqrt{\vq\cdot (a-p)}\right) = \left(\vq,\,\sqrt{\vq\cdot\vq}\right) = (\vq,-\vq)\text{ and }(\vq,\vq) \]
   \end{solution}
-
 \end{parts}
+
+\ifprintanswers
+  \begin{codex}
+    $(a)\, (a-p)\text{ if } a > p\text{ else } 0\qquad (b)\, (\vq,-\vq)\text{ and }(\vq,\vq)$ 
+  \end{codex}
+\fi
