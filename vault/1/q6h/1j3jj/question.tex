@@ -1,19 +1,21 @@
 
 
 \question[3] Find an expression for the sum of the first $n$ terms of the series 
-$1^2 + (1^2+2^2) + (1^2+2^2+3^2) + \ldots$
-
-
-\ifprintanswers
-\fi 
+\[ 1^2 + (1^2+2^2) + (1^2+2^2+3^2) + \ldots \]
 
 \begin{solution}[\halfpage]
+  If $a_n$ be the $n-$th term in the series, then notice that 
+  \[ a_n = \sum_{k=1}^n k^2 = \eSumOfSquares{n} \]
+  But what we need is 
+  \[ S_n = \sum_{k=1}^n a_k \]
+  And therefore, 
 	\begin{align}
-		S_n &= \sum_{k=1}^{n}\underbrace{\eSumOfSquares{k}}_{\text{sum of squares}} \\
-		&= \dfrac{1}{6}\cdot\sum_{k=1}^{n}(2k^3+3k^2+k) = 
-    \dfrac{1}{6}\cdot\left[ 2\sum_{k=1}^{n} k^3 + 3\sum_{k=1}^{n} k^2 + \sum_{k=1}^{n} k \right] \\
+		S_n &= \sum_{k=1}^n a_k = \sum_{k=1}^{n} \eSumOfSquares{k} \\
+		&= \dfrac{1}{6}\cdot\sum_{k=1}^{n}(2k^3+3k^2+k) \\ 
+    &= \dfrac{1}{6}\cdot\left[ 2\sum_{k=1}^{n} k^3 + 3\sum_{k=1}^{n} k^2 + \sum_{k=1}^{n} k \right] \\
 		&= \dfrac{1}{6}\cdot\left[ 2\cdot\eSumOfCubes{n} + 3\cdot\eSumOfSquares{n} + \eSumOfN{n}\right] \\
-		&= \dfrac{n\cdot(n+1)}{12}\cdot\lbrace\underbrace{n\cdot(n+1) + 2n + 1 + 1}_{=(n+1)\cdot(n+2)}\rbrace \\
+		&= \dfrac{n\cdot(n+1)}{12}\cdot\left[ \underbrace{n\cdot(n+1) + 2n + 1 + 1}_{=(n+1)\cdot(n+2)}\right]\\
 		&= \dfrac{n\cdot(n+1)^2\cdot(n+2)}{12}
 	\end{align}
 \end{solution}
+\ifprintanswers\begin{codex}$\dfrac{n\cdot (n+1)^2\cdot (n+2)}{12}$\end{codex}\fi

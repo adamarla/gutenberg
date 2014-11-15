@@ -1,22 +1,64 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+	\renewcommand\va{1}
+	\renewcommand\vb{4}
+	\renewcommand\vw{1\cdot 2\cdot 5}
+	\renewcommand\vx{2\cdot 3\cdot 6}
+	\renewcommand\vy{3\cdot 4\cdot 7}
+	\renewcommand\vz{4\cdot 5\cdot 8}
+}{
+	\ifnumequal{\value{rolldice}}{1}{
+		\renewcommand\va{2}
+		\renewcommand\vb{3}
+		\renewcommand\vw{1\cdot 3\cdot 4}
+		\renewcommand\vx{2\cdot 4\cdot 5}
+		\renewcommand\vy{3\cdot 5\cdot 6}
+		\renewcommand\vz{4\cdot 6\cdot 7}
+	}{
+		\ifnumequal{\value{rolldice}}{2}{
+			\renewcommand\va{1}
+			\renewcommand\vb{3}
+			\renewcommand\vw{1\cdot 2\cdot 4}
+			\renewcommand\vx{2\cdot 3\cdot 5}
+			\renewcommand\vy{3\cdot 4\cdot 6}
+			\renewcommand\vz{4\cdot 5\cdot 7}
+		}{
+			\renewcommand\va{2}
+			\renewcommand\vb{5}
+			\renewcommand\vw{1\cdot 3\cdot 6}
+			\renewcommand\vx{2\cdot 4\cdot 7}
+			\renewcommand\vy{3\cdot 5\cdot 8}
+			\renewcommand\vz{4\cdot 6\cdot 9}
+		}
+	}
+}
+\ADD\va\vb\vc
+\MULTIPLY\va\vb\vd
+
+\EXPR[0]\vp{ 4*\vc + 3 }
+\EXPR[0]\vq{ 2*\vc + 6*\vd } 
 
 \question[4] Find an expression for the sum of the first $n$ terms of the series 
-$1\cdot 2\cdot 5 + 2\cdot 3\cdot 6 + 3\cdot 4\cdot 7 + 4\cdot 5\cdot 8 + \ldots $
+\[ \vw + \vx + \vy + \vz + \ldots \]
 
-
-\ifprintanswers
-\fi 
+\watchout
 
 \begin{solution}[\halfpage]
-	If you look for a pattern in the terms in the above series, then you will soon realize
-	that each term is of the form $a_n = n\cdot(n+1)\cdot(n+4)$. And therefore, the sum of 
-	the first $n$ terms is given by
+	If you look carefully at each term in the series, then you will notice that each term \textbf{fits the pattern}
+	\[ a_n = n\cdot (n+\va)\cdot (n+\vb)\implies a_n = n^3 + \vc n^2 + \vd n \]
+
+	The sum of the first $n$ terms of the series is therefore 
 	\begin{align}
-		S_n &= \sum_{k=1}^{n}\lbrace n\cdot(n+1)\cdot(n+4)\rbrace \\
-		&= \sum_{k=1}^{n}(n^3+5n^2+4n) = \sum_{k=1}^{n}n^3 + 5\cdot\sum_{k=1}^{n}n^2 + 4\cdot\sum_{k=1}^{n}n \\
-		&= \eSumOfCubes{n} + 5\cdot\eSumOfSquares{n} + 4\cdot\eSumOfN{n} \\
-		&= \dfrac{n\cdot(n+1)}{2}\cdot\left[ \dfrac{n\cdot(n+1)}{2} + \dfrac{5}{3}\cdot(2n+1) + 4\right] \\
-		&= \dfrac{n\cdot(n+1)}{12}\cdot\lbrace 3n\cdot(n+1) + 10\cdot(2n+1) + 24\rbrace \\
-		&= \dfrac{n\cdot(n+1)}{12}\cdot(3n^2 + 23n + 34)
+		S_n &= \sum_{k=1}^n a_k = \sum_{k=1}^n (k^3 + \vc k^2 + \vd k ) \\
+		    &= \sum_{k=1}^n k^3 
+		    + \vc\cdot\sum_{k=1}^n k^2 
+		    + \vd\cdot\sum_{k=1}^n k \\
+				&= \underbrace{\eSumOfCubes{n}}_{\sum k^3} + \underbrace{\vc\cdot\eSumOfSquares{n}}_{\sum k^2} 
+				+ \underbrace{\vd\cdot\eSumOfN{n}}_{\sum k} \\
+				&= n\cdot (n+1)\cdot\left[ 
+					\dfrac{n\cdot (n+1)}{4} + \dfrac\vc{6}\cdot (2n+1) + \dfrac\vd{2}
+				\right] \\
+				&= \dfrac{n\cdot (n+1)}{12}\cdot (3n^2 + \vp n + \vq)
 	\end{align}
 \end{solution}
+\ifprintanswers\begin{codex}$\dfrac{n\cdot (n+1)}{12}\cdot (3n^2 + \vp n + \vq)$\end{codex}\fi
