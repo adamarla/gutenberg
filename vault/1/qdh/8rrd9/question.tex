@@ -2,38 +2,37 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{3}
-  \renewcommand{\vbtwo}{5}
+  \renewcommand{\va}{3}
+  \renewcommand{\vb}{5}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{5}
-    \renewcommand{\vbtwo}{7}
+    \renewcommand{\va}{5}
+    \renewcommand{\vb}{7}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{11}
-      \renewcommand{\vbtwo}{3}
+      \renewcommand{\va}{11}
+      \renewcommand{\vb}{3}
     }{
-      \renewcommand{\vbone}{9}
-      \renewcommand{\vbtwo}{13}
+      \renewcommand{\va}{9}
+      \renewcommand{\vb}{13}
     }
   }
 }
 
-\question[3] Differentiate $y = \vbone \tan\sqrt{\vbtwo x}$ with respect to $x$
-
+\question[3] Differentiate $y = \va \tan\sqrt{\vb x}$ with respect to $x$.
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\mcq]
-  If $z=\sqrt{\vbtwo x}$, then \textbf{chain-rule} tells us that 
+  If $z=\sqrt{\vb x}$, then \textbf{chain-rule} tells us that 
   \begin{align}
     \dydx &= \dfrac{\mathrm{d}}{\mathrm{d}z}y\times\dydx[z] \\
-    \implies \dydx &= \vbone\sec^2{\sqrt{\vbtwo x}}\cdot\dydx[\sqrt{\vbtwo x}] \\
-    &= \vbone\sec^2{\sqrt{\vbtwo x}}\cdot\left( \dfrac{\sqrt\vbtwo}{2} \cdot\dfrac{1}{\sqrt{x}}\right)\\
-    &= \dfrac{\vbone\sqrt{\vbtwo}}{2}\left(\dfrac{\sec^2 {\sqrt{\vbtwo x}}}{\sqrt{x}}\right)
+    \implies \dydx &= \va\sec^2{\sqrt{\vb x}}\cdot\dydx[\sqrt{\vb x}] \\
+    &= \va\sec^2{\sqrt{\vb x}}\cdot\left( \dfrac{\sqrt\vb}{2} \cdot\dfrac{1}{\sqrt{x}}\right)\\
+    &= \dfrac{\va\sqrt{\vb}}{2}\left(\dfrac{\sec^2 {\sqrt{\vb x}}}{\sqrt{x}}\right)
   \end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}
+   $\dfrac{\va\sqrt{\vb}}{2}\left(\dfrac{\sec^2 {\sqrt{\vb x}}}{\sqrt{x}}\right)$
+\end{codex}\fi
