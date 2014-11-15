@@ -47,6 +47,7 @@ $(STEM).tex : skel
 skel : blueprint question.tex
 	@. shell-script
 	create_skeleton
+	rm -f codex.cdx
 
 blueprint : 
 	@. ./shell-script
