@@ -256,7 +256,7 @@ function create_imgs {
     fmt='jpeg'
   fi
   gs -dNOPAUSE -dBATCH -sDEVICE=$fmt -r300 -sOutputFile=pg-%d.$extn $1 
-  for f in `ls pg-*.$extn` ; do convert $f -resize 600x800 -chop 40x60 $f ; done
+  for f in `ls pg-*.$extn` ; do convert $f -resize 600x800 -chop 40x60 -trim $f ; done
 }
 
 function mobile_pngs { 
