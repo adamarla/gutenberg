@@ -1,55 +1,54 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{2}
-  \renewcommand{\vbtwo}{4}
-  \renewcommand{\vbthree}{5}
+  \renewcommand{\va}{2}
+  \renewcommand{\vb}{4}
+  \renewcommand{\vc}{5}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{7}
-    \renewcommand{\vbtwo}{3}
-    \renewcommand{\vbthree}{8}
+    \renewcommand{\va}{7}
+    \renewcommand{\vb}{3}
+    \renewcommand{\vc}{8}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{3}
-      \renewcommand{\vbtwo}{9}
-      \renewcommand{\vbthree}{11}
+      \renewcommand{\va}{3}
+      \renewcommand{\vb}{9}
+      \renewcommand{\vc}{11}
     }{
       % variables 
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{13}
-      \renewcommand{\vbthree}{5}
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{13}
+      \renewcommand{\vc}{5}
     }
   }
 }
 
 \question[3] If the slope of tangents to a curve $C$ at any \textbf{non-origin} point is given by 
-$\vbone y + \dfrac{\vbtwo y}{\vbthree x}$ then find the equation of $C$
-
+\[\va y + \dfrac{\vb y}{\vc x} \]then find the equation of $C$
 
 \watchout
-
-\ifprintanswers
-\fi 
 
 \begin{solution}[\halfpage]
   In effect, we have been told that for a curve $C: y = f(x)$ 
   \begin{align}
-    \dfrac{dy}{dx} &= \vbone y + \dfrac{\vbtwo y}{\vbthree x} 
-    = y\cdot\left(\vbone + \dfrac{\vbtwo}{\vbthree x} \right), (x,y)\neq(0,0) \\
-    \Rightarrow \dfrac{dy}{y} &= \left(\vbone + \dfrac{\vbtwo}{\vbthree x}\right)\cdot dx \\
-    \Rightarrow\int\dfrac{dy}{y} = \ln y &= \int \left(\vbone + \dfrac{\vbtwo}{\vbthree x}\right)\cdot dx =  \vbone x + \WRITEFRAC\vbtwo\vbthree\ln x + D \\
-    \therefore y &= e^{\vbone x + \WRITEFRAC\vbtwo\vbthree\ln x + D} \\
-    \text{or, } y &= k\cdot e^{\vbone x}\cdot e^{\WRITEFRAC\vbtwo\vbthree\ln x}, \text{ where } k = e^D
+    \dfrac{dy}{dx} &= \va y + \dfrac{\vb y}{\vc x} 
+    = y\cdot\left(\va + \dfrac{\vb}{\vc x} \right), (x,y)\neq(0,0) \\
+    \implies \dfrac{dy}{y} &= \left(\va + \dfrac{\vb}{\vc x}\right)\cdot dx \\
+    \implies\int\dfrac{dy}{y} = \ln y &= \int \left(\va + \dfrac{\vb}{\vc x}\right)\cdot dx =  \va x + \WRITEFRAC\vb\vc\ln x + D \\
+    \therefore y &= e^{\va x + \frac\vb\vc\ln x + D} = e^{\va x}\cdot e^{\frac\vb\vc\ln x}\cdot e^{D} \\
+    \text{or, } y &= k\cdot e^{\va x}\cdot e^{\frac\vb\vc\ln x}, \text{ where } k = e^D
   \end{align}
   
-  Now, $e^{\ln x} = x \implies (e^{\ln x})^{\WRITEFRAC\vbtwo\vbthree} = x^{\WRITEFRAC\vbtwo\vbthree}$
+  Now, $e^{\ln x} = x \implies (e^{\ln x})^{\frac\vb\vc} = x^{\frac\vb\vc}$
   
   And therefore, our final answer is simply
   \begin{align}
-    y &= k\cdot e^{\vbone x}\cdot x^{\WRITEFRAC\vbtwo\vbthree}
+    y &= k\cdot e^{\va x}\cdot x^{\frac\vb\vc}
   \end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}
+	$y = k\cdot e^{\va x}\cdot x^{\frac\vb\vc}$
+\end{codex}\fi
