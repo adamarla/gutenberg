@@ -2,34 +2,37 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{5}
-  \renewcommand{\vbtwo}{3}
+  \renewcommand{\va}{5}
+  \renewcommand{\vb}{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{7}
-    \renewcommand{\vbtwo}{5}
+    \renewcommand{\va}{7}
+    \renewcommand{\vb}{5}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{9}
-      \renewcommand{\vbtwo}{7}
+      \renewcommand{\va}{9}
+      \renewcommand{\vb}{7}
     }{
-      \renewcommand{\vbone}{11}
-      \renewcommand{\vbtwo}{13}
+      \renewcommand{\va}{11}
+      \renewcommand{\vb}{13}
     }
   }
 }
 
-\question[4] Evaluate the following limit \[ \lim_{x\to 0}\dfrac{\sin\vbone x}{\vbtwo x}\]
+\question[4] Evaluate the following limit 
+\[ \lim_{x\to 0}\dfrac{\sin\va x}{\vb x}\]
 
 \watchout[-40pt]
 
 \begin{solution}[\mcq]
-  Consider the following
+	Given that
+	\[ \lim_{x\to 0}\dfrac{\sin Ax}{Bx} = 1\text{ only if } A = B \] 
+	we can rewrite the above limit as 
   \begin{align}
-    \lim_{x\to 0}\dfrac{\sin\vbone x}{\vbtwo x} &= \lim_{x\to 0}\dfrac{\sin\vbone x}{\vbone x}\times\dfrac{\vbone}{\vbtwo} \\
-    &= \dfrac\vbone\vbtwo\cdot
-    \underbrace{\lim_{z\to 0}\dfrac{\sin z}{z}}_{=1},\,\text{ where } z = \vbone x \\
-    &= \dfrac\vbone\vbtwo
+    \lim_{x\to 0}\dfrac{\sin\va x}{\vb x} &= 
+    \lim_{x\to 0}\dfrac{\sin\va x}{\va x\cdot\frac\vb\va} = 
+		\lim_{x\to 0}\dfrac{\sin\va x}{\va x}\times\dfrac{\va}{\vb} = \dfrac\va\vb
   \end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}$\dfrac\va\vb$\end{codex}\fi

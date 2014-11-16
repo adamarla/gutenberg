@@ -2,44 +2,43 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{57}
+  \renewcommand{\va}{63}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{63}
+    \renewcommand{\va}{64}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{101}
+      \renewcommand{\va}{65}
     }{
-      \renewcommand{\vbone}{79}
+      \renewcommand{\va}{66}
     }
   }
 }
 
-\SUBTRACT\vbone{1}\vbtwo
+\SUBTRACT\va{1}\vb
 
-\question[3] Differentiate $y=\cos^2(x^{\vbone})$ with respect to $x$
-
+\question[3] Differentiate $y=\cos^2(x^{\va})$ with respect to $x$.
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\halfpage]
-  If $z = \cos(x^{\vbone})$, then $y = z^2$ and \textbf{chain-rule} tells us that 
+  If $z = \cos(x^{\va})$, then $y = z^2$ and \textbf{chain-rule} tells us that 
   \begin{align}
     \dydx &= \dfrac{\mathrm{d}}{\mathrm{d}z}z^2\cdot\dydx[z] \\
-    &= 2z\cdot\dydx[\cos(x^{\vbone})] \\
-    &= \underbrace{(2\cos x^{\vbone})\cdot(-\sin x^{\vbone})}_{2\sin\theta\cos\theta = \sin 2\theta}\cdot\vbone\cdot x^{\vbtwo} \\
-    &= -\vbone\cdot x^{\vbtwo}\cdot\sin (2x^{\vbone})
+    &= 2z\cdot\dydx[\cos(x^{\va})] \\
+    &= \underbrace{(2\cos x^{\va})\cdot(-\sin x^{\va})}_{2\sin\theta\cos\theta = \sin 2\theta}\cdot\va\cdot x^{\vb} \\
+    &= -\va\cdot x^{\vb}\cdot\sin (2x^{\va})
   \end{align}
   \textbf{Alternatively,} one could also say that given $\cos^2 x = \dfrac{\cos 2x + 1}{2}$,
   \begin{align}
-    \dydx &= \dydx[\left( \dfrac{\cos 2x^{\vbone} + 1}{2}\right)] 
-    = \dfrac{1}{2}\dydx[\cos 2x^{\vbone}] \\
-    &= \dfrac{1}{2}\cdot (-\sin 2x^{\vbone} )\cdot\dydx[2x^{\vbone}] \\
-    &= \dfrac{1}{2}\cdot (-\sin 2x^{\vbone} )\cdot (2\cdot\vbone\cdot x^{\vbtwo}) \\
-    &= -\vbone\cdot x^{\vbtwo}\cdot\sin (2x^{\vbone})
+    \dydx &= \dydx[\left( \dfrac{\cos 2x^{\va} + 1}{2}\right)] 
+    = \dfrac{1}{2}\dydx[\cos 2x^{\va}] \\
+    &= \dfrac{1}{2}\cdot (-\sin 2x^{\va} )\cdot\dydx[2x^{\va}] \\
+    &= \dfrac{1}{2}\cdot (-\sin 2x^{\va} )\cdot (2\cdot\va\cdot x^{\vb}) \\
+    &= -\va\cdot x^{\vb}\cdot\sin (2x^{\va})
   \end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}
+ $-\va\cdot x^{\vb}\cdot\sin (2x^{\va})$
+\end{codex}\fi
