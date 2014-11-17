@@ -1,118 +1,121 @@
 
 
-\question[3] Compute the area of the figure contained between the curve 
-$y = \dfrac{1}{1+x^2}$ and the parabola $y=\dfrac{x^2}{2}$
+\question[3] Compute the area of the figure contained between the curves
+\[ y = \dfrac{1}{1+x^2}\text{ and } y=\dfrac{x^2}{2} \]
 
 
 \ifprintanswers
-  \begin{marginfigure}
-  % 1. Definition of characteristic points
-\figinit{pt}
-\def\Xmin{-39.99999}
-\def\Ymin{-31.99999}
-\def\Xmax{39.99999}
-\def\Ymax{47.99999}
-\def\Xori{39.99999}
-\def\Yori{31.99999}
-\figpt0:(\Xori,\Yori)
-\figpt 100: (42,56)
-\figdrawbegin{}
-\def\Xmaxx{\Xmax} % To customize the position
-\def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
-\figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
-\figdrawaxes 0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
-\figdrawlineC(
-0 45.12820,
-2.75862 46.46152,
-5.51724 47.96736,
-8.27586 49.66531,
-11.03448 51.57325,
-13.79310 53.70431,
-16.55172 56.06214,
-19.31034 58.63400,
-22.06896 61.38191,
-24.82758 64.23235,
-27.58620 67.06735,
-30.34482 69.72159,
-33.10344 71.99182,
-35.86206 73.66347,
-38.62068 74.55282,
-41.37931 74.55282,
-44.13793 73.66347,
-46.89655 71.99182,
-49.65517 69.72159,
-52.41379 67.06735,
-55.17241 64.23235,
-57.93103 61.38191,
-60.68965 58.63400,
-63.44827 56.06214,
-66.20689 53.70431,
-68.96551 51.57325,
-71.72413 49.66531,
-74.48275 47.96736,
-77.24137 46.46152,
-79.99999 45.12820
-)
-\figdrawlineC(
-0 79.99999,
-2.75862 73.60760,
-5.51724 67.67181,
-8.27586 62.19262,
-11.03448 57.17003,
-13.79310 52.60404,
-16.55172 48.49464,
-19.31034 44.84185,
-22.06896 41.64565,
-24.82758 38.90606,
-27.58620 36.62306,
-30.34482 34.79667,
-33.10344 33.42687,
-35.86206 32.51367,
-38.62068 32.05707,
-41.37931 32.05707,
-44.13793 32.51367,
-46.89655 33.42687,
-49.65517 34.79667,
-52.41379 36.62306,
-55.17241 38.90606,
-57.93103 41.64565,
-60.68965 44.84185,
-63.44827 48.49464,
-66.20689 52.60404,
-68.96551 57.17003,
-71.72413 62.19262,
-74.48275 67.67181,
-77.24137 73.60760,
-79.99999 79.99999
-)
-\figdrawend
-\figvisu{\figBoxA}{}{%
-\figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
-\figwritee 1:(5pt)     \figwriten 2:(5pt)
-\figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
-\figwritee 100:$R$(2)
-}
+\vspace{0.7cm}
+	\figinit{pt}
+	\def\Xmin{-39.99999}
+	\def\Ymin{-20}
+	\def\Xmax{39.99999}
+	\def\Ymax{55}
+	\def\Xori{39.99999}
+	\def\Yori{31.99999}
+	\figpt0:(\Xori,\Yori)
+	\figpt 100: (42,56)
+	\figpt 101: $y=\dfrac{x^2}{2}$(80,80)
+	\figpt 102: $y=\dfrac{1}{1+x^2}$(80,45)
+	\figdrawbegin{}
+	\def\Xmaxx{\Xmax} % To customize the position
+	\def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
+	\figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
+	\figdrawaxes 0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+	\figdrawlineC(
+	0 45.12820,
+	2.75862 46.46152,
+	5.51724 47.96736,
+	8.27586 49.66531,
+	11.03448 51.57325,
+	13.79310 53.70431,
+	16.55172 56.06214,
+	19.31034 58.63400,
+	22.06896 61.38191,
+	24.82758 64.23235,
+	27.58620 67.06735,
+	30.34482 69.72159,
+	33.10344 71.99182,
+	35.86206 73.66347,
+	38.62068 74.55282,
+	41.37931 74.55282,
+	44.13793 73.66347,
+	46.89655 71.99182,
+	49.65517 69.72159,
+	52.41379 67.06735,
+	55.17241 64.23235,
+	57.93103 61.38191,
+	60.68965 58.63400,
+	63.44827 56.06214,
+	66.20689 53.70431,
+	68.96551 51.57325,
+	71.72413 49.66531,
+	74.48275 47.96736,
+	77.24137 46.46152,
+	79.99999 45.12820
+	)
+	\figdrawlineC(
+	0 79.99999,
+	2.75862 73.60760,
+	5.51724 67.67181,
+	8.27586 62.19262,
+	11.03448 57.17003,
+	13.79310 52.60404,
+	16.55172 48.49464,
+	19.31034 44.84185,
+	22.06896 41.64565,
+	24.82758 38.90606,
+	27.58620 36.62306,
+	30.34482 34.79667,
+	33.10344 33.42687,
+	35.86206 32.51367,
+	38.62068 32.05707,
+	41.37931 32.05707,
+	44.13793 32.51367,
+	46.89655 33.42687,
+	49.65517 34.79667,
+	52.41379 36.62306,
+	55.17241 38.90606,
+	57.93103 41.64565,
+	60.68965 44.84185,
+	63.44827 48.49464,
+	66.20689 52.60404,
+	68.96551 57.17003,
+	71.72413 62.19262,
+	74.48275 67.67181,
+	77.24137 73.60760,
+	79.99999 79.99999
+	)
+	\figdrawend
+	\figvisu{\figBoxA}{}{%
+	\fontfamily{cmss}\selectfont\large
+	\figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+	\figwritee 1:(5pt)     \figwriten 2:(5pt)
+	\figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
+	\figwritee 100:$A$(2)
+	\figwritee 101:(2)
+	\figwritee 102:(2)
+	}
 \centerline{\box\figBoxA}
-
-  \end{marginfigure}
-\fi 
+\fi
 
 \begin{solution}[\fullpage]
-  The two curves will intersect at points where 
+	The two curves are as shown in the figure above. And they intersect when
   \begin{align}
      \dfrac{1}{1+x^2} &= \dfrac{x^2}{2} \\
-     \Rightarrow x^4+x^2-2 &= 0 \\
+     \implies x^4+x^2-2 &= 0 \\
      \text{Setting } z = x^2, \text{ we get }
      z^2+z-2 &= 0 \\
-     \Rightarrow z = 1, -2
+     \implies z = 1, -2
   \end{align}
-  As $z = x^2$, it has to be > 0. And therefore, we go with $z = 1 \Rightarrow x = \pm 1$
-  
-  Given how symmetrical everything is, we can evaluate the area $A$ of the said
-  region $R$ as,
+  As $z = x^2$, it has to be > 0. And therefore, 
+	\[ z = 1 \implies x = \pm 1 \]
+	The required area $=A$ therefore is 
   \begin{align}
-     A &= 2\cdot\left[ \int_0^1 \dfrac{1}{1+x^2}\ud x - \int_0^1\dfrac{x^2}{2}\ud x\right] \\
+     A &= 2\cdot\left[ \int_{-1}^1 \dfrac{1}{1+x^2}\ud x - \int_{-1}^1\dfrac{x^2}{2}\ud x\right] \\
+       &= \underbrace{2\cdot\left[ \int_0^1 \dfrac{1}{1+x^2}\ud x - \int_0^1\dfrac{x^2}{2}\ud x\right]}_{\text{due to symmetry}} \\
      &= 2\cdot\left[ \left( \tan^{-1} x\right)_0^1 - \left( \dfrac{x^3}{6}\right)_0^1\right] \\
      &= \dfrac{\pi}{2} - \dfrac{1}{3} 
   \end{align}
 \end{solution}
+\ifprintanswers\begin{codex}$\dfrac\pi{2}-\dfrac{1}{3}$\end{codex}\fi
