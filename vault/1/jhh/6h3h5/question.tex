@@ -32,6 +32,7 @@ is a multiple of $\c$ for $n\geq 2,\,n\in\mathbb{N}$.
 \watchout
 
 \begin{solution}[\halfpage]
+	\textbf{Method \#1: Using just binomial theorem}
   \begin{align}
    (\va^\vb)^{n} - \b n - 1 &= \underbrace{(1 + \b)^{n}}_{(1+x)^n} - \b n - 1 \\
    &= \overbrace{\left[\sum_{k=0}^{n}\binom{n}{k} \b^{k}\right]}- \b n - 1 \\
@@ -40,6 +41,34 @@ is a multiple of $\c$ for $n\geq 2,\,n\in\mathbb{N}$.
    &= \b^{2}\cdot\sum_{k=2}^{n} \binom{n}{k} \b^{k-2} = \c\cdot\sum_{k=2}^{n} \binom{n}{k} \b^{k-2}
   \end{align}
   
-  In short, we have shown that $(\va^\vb)^{n} - \b n - 1 =  \c\times\texttt{something} \implies$ multiple of $\c$
+  In short, we have shown that 
+	\[ (\va^\vb)^{n} - \b n - 1 =  \c\times\text{something} \implies\text{ multiple of } \c \]
+	\textbf{Method \#2: Using binomial theorem \& mathematical induction} 
+
+	If $P(n) = \a^n-\b n - 1$, then we can see that for $n=2$
+	\[ P(2) = \a^2 - 2\cdot\b - 1\text{ is a multiple of } \c \]
+	Hence, lets assume that 
+	\[ P(n) = \c\times N \implies P(n)\text{ is a multiple of } \c \]
+	\begin{align}
+		\therefore P(n+1) &= \a^{n+1} - \b\cdot (n+1) - 1 \nonumber\\
+		&= (\b + 1)\cdot\a^n - \b\cdot n - \b - 1 \\
+		&= (\b\cdot\a^n - \b) + \underbrace{(\a^n - \b\cdot n - 1)}_{P(n) = \c N} \\
+		&= \b\cdot (\a^n-1) + \c N
+	\end{align}
+	Now, \textbf{if we can prove that }
+	\[ \a^n - 1 = \b X \]
+	then 
+	\begin{align}
+		\b\cdot(\a^n - 1) &= \b\times \b X\implies\text{ multiple of }\c \\
+		\implies P(n+1) &= \c N + \b\cdot(\a^n - 1) = \c\cdot (N + X)
+	\end{align}
+	Therefore, let us focus on $\a^n-1$
+	\begin{align}
+		\a^n - 1 &= (1+\b)^n - 1 = \left[ 1 + \sum_{k=1}^n\binom{n}{k}\b^k \right] - 1 \\
+		&= \sum_{k=1}^n\binom{n}{k}\b^k = \b\cdot\sum_{k=1}^n\binom{n}{k}\b^{k-1}\implies\text{ multiple of }\b
+	\end{align}
+	\textbf{Recap}
+	\[ \a^n-1=\b X\implies\b\cdot(\a^n-1)=\c Y\implies P(n+1)=\c Z \]
+	And as $P(2)$ is a multiple of $\c$, therefore so is $P(3),P(4)\ldots\infty$.
 \end{solution}
 
