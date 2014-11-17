@@ -1,39 +1,33 @@
 
 
-\question[2]  In the adjoining figure, $AD \perp BC$. Prove that $AB^2+CD^2=BD^2+AC^2$
+\question[2]  In the adjoining figure, $AD \perp BC$. Prove that $AB^2+CD^2=BD^2+AC^2$.
 
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
-
-\begin{marginfigure}
-	\figinit{cm}
-	\figpt 1: (0,0)
-	\figpt 2: (4,0)
-	\figpt 3: (5.5,3)
-	\figptorthoprojline 12:$D$= 2/1,3/
-	\figdrawbegin{}
-		\figdrawline [1,2,3,1]
-		\figdrawaltitude 0.2 [2,1,3]
-	\figdrawend
-	\figvisu{\figBoxA}{Example}{}
-	\figwritenw 1:$B$(0.1)
-	\figwriten 2:$A$(0.1)
-	\figwriten 3:$C$(0.2)
-	\figwriten 12:$D$(0.8)
-	\centerline{\box\figBoxA}
-\end{marginfigure}
+\figinit{pt}
+\figpt 1: (0,0)
+\figpt 2: (70,0)
+\figpt 3: (95,40)
+\figptorthoprojline 12:$D$= 2/1,3/
+\figdrawbegin{}
+  \figdrawline [1,2,3,1]
+  \figdrawaltitude 0.2 [2,1,3]
+\figdrawend
+\figvisu{\figBoxA}{}{
+\figwritenw 1:$B$(2)
+\figwritese 2:$A$(2)
+\figwriten 3:$C$(3)
+\figwriten 12:$D$(3)
+}
+\vspace{0.5cm}
+\centerline{\box\figBoxA}
 
 \begin{solution}[\halfpage]
 	$\bigtriangleup ABD$ and $\bigtriangleup ACD$ are both right-angled triangles
 	
-	And therefore, the following hold for them	
+	And therefore, the following holds for them	
 	\begin{align}
-		BD^2 + AD^2 &= AB^2 \Rightarrow AD^2 = AB^2-BD^2 \\
-		CD^2 + AD^2 &= AC^2 \Rightarrow AD^2 = AC^2 - CD^2 \\
-		\Rightarrow AB^2-BD^2 &= AC^2-CD^2 \\
-		\Rightarrow AB^2+CD^2 &= AC^2 + BD^2
+		BD^2 + AD^2 &= AB^2 \implies AD^2 = AB^2-BD^2 \\
+		CD^2 + AD^2 &= AC^2 \implies AD^2 = AC^2 - CD^2 \\
+		\implies AB^2-BD^2 &= AC^2-CD^2 \\
+		\implies AB^2+CD^2 &= AC^2 + BD^2
 	\end{align}
-	
 \end{solution}

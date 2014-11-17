@@ -2,42 +2,38 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{5}
-  \renewcommand{\vbtwo}{12}
+  \renewcommand{\va}{5}
+  \renewcommand{\vb}{12}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{7}
-    \renewcommand{\vbtwo}{3}
+    \renewcommand{\va}{7}
+    \renewcommand{\vb}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{8}
-      \renewcommand{\vbtwo}{17}
+      \renewcommand{\va}{8}
+      \renewcommand{\vb}{17}
     }{
       % variables 
-      \renewcommand{\vbone}{3}
-      \renewcommand{\vbtwo}{14}
+      \renewcommand{\va}{3}
+      \renewcommand{\vb}{14}
     }
   }
 }
 
-\FRACADD\vbone\vbtwo{1}{1}\vbthree\vbfour
+\FRACADD\va\vb{1}{1}\vc\vd
 
-\question[1]  If $\tan A = \frac\vbone\vbtwo$ then find the value of
-$(\sin A + \cos A)\times\sec A$
+\question[1]  If $\tan A = \frac\va\vb$ then find the value of
+\[ (\sin A + \cos A)\times\sec A \]
 
 \watchout
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
 
 \begin{solution}[\mcq]
 	\begin{align}
 		(\sin A + \cos A)\cdot\sec A &= (\sin A + \cos A)\cdot\dfrac{1}{\cos A} \\
-		                             &= (\tan A + 1) \\
-		                             &= \dfrac\vbone\vbtwo + 1 \\
-		                             &= \dfrac\vbthree\vbfour
+		                             &= \dfrac{\sin A}{\cos A} + \dfrac{\cos A}{\cos A} = (\tan A + 1) \\
+		                             &= \dfrac\va\vb + 1 = \dfrac\vc\vd
 	\end{align}
 \end{solution}
+\ifprintanswers\begin{codex}$\dfrac\vc\vd$\end{codex}\fi
