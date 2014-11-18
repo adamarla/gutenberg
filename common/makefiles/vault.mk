@@ -61,7 +61,7 @@ ifneq ($(version),)
 	mkdir -p $(version)
 	@. shell-script 
 ifeq ($(type),question)
-	#mv pg-1.png $(version)/$(type).png
+	mv pg-1.png $(version)/$(type).png
 	mv $(STEM).pdf $(version)/question.pdf
 	mobile_pngs $(version)
 else
