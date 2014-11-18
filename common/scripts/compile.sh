@@ -264,7 +264,9 @@ function mobile_pngs {
   # Makefile calls this function only AFTER ensuring presence of question.png
   f=$(pwd)/$1
   black=$f/mobile.black.png
-  convert -trim  $f/question.png $black
+  gs -dNOPAUSE -dBATCH -sDEVICE=png16 -r600 -sOutputFile=$f/question.png $f/question.pdf
+  convert -trim  $f/question.png $f/question.png 
+  convert -chop 0x100 -trim $f/question.png $black
 }
 
 function create_codex {
