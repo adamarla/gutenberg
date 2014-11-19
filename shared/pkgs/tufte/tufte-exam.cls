@@ -274,7 +274,7 @@
   \renewcommand\headrulewidth{0.4pt}
   \setbaseQR{\csname qr\thequestionPg\endcsname}
   \renewcommand\solutiontitle{}
-  \SolutionEmphasis{\normalsize}
+  \SolutionEmphasis{\Large}
   \shadedsolutions
 }
 
