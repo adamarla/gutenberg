@@ -35,73 +35,71 @@
 } 
 
 \question[2] Find the area of the figure bounded by the parabola $y=\va x^2 - \vb x + \vc$
-the $x-axis$ and the straight lines $x=\vd$ and $x=\ve$
+the $x-axis$ and the straight lines $x=\vd$ and $x=\ve$.
 
 
 \ifprintanswers
-  \begin{marginfigure}
-\figinit{pt}
-\def\Xmin{-6.77966}
-\def\Ymin{-4.32654}
-\def\Xmax{73.22033}
-\def\Ymax{108.68282}
-\def\Xori{6.77966}
-\def\Yori{-8.68282}
-\figpt0:(\Xori,\Yori)
-\figpt 200: (45,\Yori)
-\figpt 201: (45, 7)
-\figpt 202: (71,\Yori)
-\figpt 203: (71,62)
-\figpt 204: (60,-1)
-\figdrawbegin{}
-\def\Xmaxx{\Xmax} % To customize the position
-\def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
-\figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
-\figdrawaxes 0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
-\figdrawline [200,201]
-\figdrawline [202,203]
-\figdrawlineC(
-0 54.05208,
-2.75862 45.60796,
-5.51724 37.88016,
-8.27586 30.86869,
-11.03448 24.57354,
-13.79310 18.99471,
-16.55172 14.13221,
-19.31034 9.98603,
-22.06896 6.55618,
-24.82758 3.84265,
-27.58620 1.84544,
-30.34482 .56456,
-33.10344 0,
-35.86206 .15176,
-38.62068 1.01985,
-41.37931 2.60426,
-44.13793 4.90499,
-46.89655 7.92205,
-49.65517 11.65543,
-52.41379 16.10514,
-55.17241 21.27117,
-57.93103 27.15352,
-60.68965 33.75220,
-63.44827 41.06720,
-66.20689 49.09852,
-68.96551 57.84617,
-71.72413 67.31014,
-74.48275 77.49043,
-77.24137 88.38705,
-79.99999 99.99999
-)
-\figdrawend
-\figvisu{\figBoxA}{}{%
-\figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
-\figwritee 1:(5pt)     \figwriten 2:(5pt)
-\figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
-\figwriten 204:$R$(2)
-}
-\centerline{\box\figBoxA}
-
-  \end{marginfigure}
+  \figinit{pt}
+  \def\Xmin{-6.77966}
+  \def\Ymin{-4.32654}
+  \def\Xmax{73.22033}
+  \def\Ymax{108.68282}
+  \def\Xori{6.77966}
+  \def\Yori{-8.68282}
+  \figpt0:(\Xori,\Yori)
+  \figpt 200: (45,\Yori)
+  \figpt 201: (45, 7)
+  \figpt 202: (71,\Yori)
+  \figpt 203: (71,62)
+  \figpt 204: (60,-1)
+  \figdrawbegin{}
+  \def\Xmaxx{\Xmax} % To customize the position
+  \def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
+  \figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
+  \figdrawaxes 0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+  \figdrawline [200,201]
+  \figdrawline [202,203]
+  \figdrawlineC(
+  0 54.05208,
+  2.75862 45.60796,
+  5.51724 37.88016,
+  8.27586 30.86869,
+  11.03448 24.57354,
+  13.79310 18.99471,
+  16.55172 14.13221,
+  19.31034 9.98603,
+  22.06896 6.55618,
+  24.82758 3.84265,
+  27.58620 1.84544,
+  30.34482 .56456,
+  33.10344 0,
+  35.86206 .15176,
+  38.62068 1.01985,
+  41.37931 2.60426,
+  44.13793 4.90499,
+  46.89655 7.92205,
+  49.65517 11.65543,
+  52.41379 16.10514,
+  55.17241 21.27117,
+  57.93103 27.15352,
+  60.68965 33.75220,
+  63.44827 41.06720,
+  66.20689 49.09852,
+  68.96551 57.84617,
+  71.72413 67.31014,
+  74.48275 77.49043,
+  77.24137 88.38705,
+  79.99999 99.99999
+  )
+  \figdrawend
+  \figvisu{\figBoxA}{}{%
+  \figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+  \figwritee 1:(5pt)     \figwriten 2:(5pt)
+  \figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
+  \figwriten 204:$R$(2)
+  }
+  \vspace{0.7cm}
+  \centerline{\box\figBoxA}
 \fi 
 
 \begin{solution}[\halfpage]
