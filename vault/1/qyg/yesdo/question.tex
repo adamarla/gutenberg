@@ -1,68 +1,142 @@
 
-
-\question[5]   The mid-points of the sides of a triangle are $(3,4)$, $(4,6)$ and $(5,7)$. Find the coordinates of the vertices of the triangle
-
-\ifprintanswers
-	\begin{marginfigure}
-		\figinit{pt}
-		\figpt 1:(10,0)
-		\figpt 2:(90,0)
-		\figpt 3:(30,60)
-		\figvectP 10 [1,2]
-		\figvectP 20 [2,3]
-		\figvectP 30 [3,1]
-		\figpttra 11:$A(3,4)$= 1/0.5,10/
-		\figpttra 21:$B(4,6)$= 2/0.5,20/
-		\figpttra 31:$C(5,7)$= 3/0.5,30/
-		\figdrawbegin{}
-			\figdrawline[1,2,3,1]
-			\figdrawline[11,21,31,11]
-		\figdrawend
-		\figvisu{\figBoxA}{}{
-			\figsetmark{$\bullet$}
-			\figwritew 1:$X$(5)
-			\figwritee 2:$Y$(5)
-			\figwriten 3:$Z$(5)
-			\figwrites 11:(5)
-			\figwritee 21:(5)
-			\figwritew 31:(5)
+\ifnumequal{\value{rolldice}}{0}{
+	\renewcommand\va{3}
+	\renewcommand\vb{4}
+	\renewcommand\vc{4}
+	\renewcommand\vd{6}
+	\renewcommand\ve{5}
+	\renewcommand\vf{7}
+  \renewcommand\vx{(4,5)}
+  \renewcommand\vy{(2,3)}
+  \renewcommand\vz{(6,9)}
+}{
+	\ifnumequal{\value{rolldice}}{1}{
+		\renewcommand\va{2}
+		\renewcommand\vb{5}
+		\renewcommand\vc{6}
+		\renewcommand\vd{7}
+		\renewcommand\ve{5}
+		\renewcommand\vf{7}
+    \renewcommand\vx{(1,5)}
+    \renewcommand\vy{(3,5)}
+    \renewcommand\vz{(9,9)}
+	}{
+		\ifnumequal{\value{rolldice}}{2}{
+			\renewcommand\va{4}
+			\renewcommand\vb{7}
+			\renewcommand\vc{8}
+			\renewcommand\vd{2}
+			\renewcommand\ve{7}
+			\renewcommand\vf{5}
+      \renewcommand\vx{(3,10)}
+      \renewcommand\vy{(5,4)}
+      \renewcommand\vz{(11,0)}
+		}{
+			\renewcommand\va{5}
+			\renewcommand\vb{4}
+			\renewcommand\vc{7}
+			\renewcommand\vd{9}
+			\renewcommand\ve{6}
+			\renewcommand\vf{4}
+      \renewcommand\vx{(4,-1)}
+      \renewcommand\vy{(6,9)}
+      \renewcommand\vz{(8,9)}
 		}
-		\centerline{\box\figBoxA}
-	\end{marginfigure}
+	}
+}
 
-  % stuff to be shown only in the answer key - like explanatory margin figures
-	\marginnote[0.5cm] {This question uses 3 facts}
-	\marginnote[0.2cm] {The line joining mid-points of two sides is parallel to the third side}
-	\marginnote[0.2cm] {Lines that are parallel to each other have the same slope}
-	\marginnote[0.2cm] {The third mid-point lies on the third side (obviously)}
-\fi 
+\question[5]   The mid-points of the sides of a triangle are 
+\[ A = (\va,\vb),\, B=(\vc,\vd)\text{ and }C=(\ve,\vf) \] 
+What are the coordinates of the vertices - $X,Y$ and $Z$?
+
+\watchout
+
+\vspace{0.7cm}
+\figinit{pt}
+\figpt 1:(0,0)
+\figpt 2:(90,0)
+\figpt 3:(30,60)
+\figvectP 10 [1,2]
+\figvectP 20 [2,3]
+\figvectP 30 [3,1]
+\figpttra 11:$A(\va,\vb)$= 1/0.5,10/
+\figpttra 21:$B(\vc,\vd)$= 2/0.5,20/
+\figpttra 31:$C(\ve,\vf)$= 3/0.5,30/
+\figdrawbegin{}
+	\figdrawline[1,2,3,1]
+	\ifprintanswers\figdrawline[11,21,31,11]\fi
+\figdrawend
+\figvisu{\figBoxA}{}{
+	\figsetmark{$\bullet$}
+	\figwritew 1:$X$(5)
+	\figwritee 2:$Y$(5)
+	\figwriten 3:$Z$(5)
+	\figwrites 11:(5)
+	\figwritee 21:(5)
+	\figwritew 31:(5)
+}
+\centerline{\box\figBoxA}
+
+% AB 
+\LINESLOPE\va\vb\vc\vd\a\b
+\LINEINTERCEPT\va\vb\a\b\c\d
+
+%BC
+\LINESLOPE\vc\vd\ve\vf\m\n
+\LINEINTERCEPT\ve\vf\m\n\e\f
+
+%CA
+\LINESLOPE\va\vb\ve\vf\o\p
+\LINEINTERCEPT\va\vb\o\p\g\h
+
+%XZ
+\LINEINTERCEPT\ve\vf\a\b\aa\bb
+%XY
+\LINEINTERCEPT\va\vb\m\n\mm\nn
+%YZ
+\LINEINTERCEPT\vc\vd\o\p\oo\pp
 
 \begin{solution}[\fullpage]
-	The equation of the 3 lines joining the 3 mid-points are given by
+	\textbf{Insight \#1: Line joining two mid-points $\parallel$ third side}
+
 	\begin{align}
-		AB &: \dfrac{y-4}{x-3} = \dfrac{6-4}{4-3} \Rightarrow y = 2x - 2 \\
-		BC &: \dfrac{y-6}{x-4} = \dfrac{7-6}{5-4} \Rightarrow y = x + 2 \\
-		CA &: \dfrac{y-4}{x-3} = \dfrac{7-4}{5-3} \Rightarrow 2y = 3x - 1
+		AB &: \dfrac{y-\vb}{x-\va} = \dfrac{\vd-\vb}{\vc-\va}  = \WRITEFRAC\a\b \implies y = \WRITELINE\a\b\c\d  \\
+		CA &: \dfrac{y-\vf}{x-\ve} = \dfrac{\vf-\vb}{\ve-\va}  = \WRITEFRAC[false]\o\p\implies y = \WRITELINE\o\p\g\h \\
+    BC &: \dfrac{y-\vf}{x-\ve} = \dfrac{\vf-\vd}{\ve-\vc} = \WRITEFRAC\m\n\implies y = \WRITELINE\m\n\e\f \\
+	\end{align}
+	\textbf{Insight \#2: Parallel lines have the same slope} 
+
+  And therefore, the \textbf{slopes} of the \textbf{sides of the triangle} will be 
+  \begin{align}
+    m_{XZ} &= m_{AB} = \WRITEFRAC[false]\a\b \\
+    m_{XY} &= m_{BC} = \WRITEFRAC[false]\m\n \\
+    m_{YZ} &= m_{AC} = \WRITEFRAC[false]\o\p
+  \end{align}
+
+  \textbf{Insight \#3: Each mid-point lies on some side}
+
+  And therefore, given the slope of a side and the mid-point through which it passes, 
+  we can easily find the \textbf{equation of the sides}.
+	
+	\begin{align}
+		XZ &: \dfrac{y-\vf}{x-\ve} = \WRITEFRAC[false]\a\b \implies y = \WRITELINE\a\b\aa\bb \\
+		XY &: \dfrac{y-\vb}{x-\va} = \WRITEFRAC[false]\m\n \implies y = \WRITELINE\m\n\mm\nn \\
+		YZ &: \dfrac{y-\vd}{x-\vc} = \WRITEFRAC[false]\o\p \implies y = \WRITELINE\o\p\oo\pp
 	\end{align}
 	
-	The equation for the three sides of the triangle are therefore given by
-	
-	\begin{align}
-		XZ &: \dfrac{y-7}{x-5} = 2 \Rightarrow y = 2x - 3 \\
-		XY &: \dfrac{y-4}{x-3} = 1 \Rightarrow y = x + 1 \\
-		YZ &: \dfrac{y-6}{x-4} = \dfrac{3}{2} \Rightarrow y = \dfrac{3}{2}x
-	\end{align}
-	
-	And the vertices are therefore given by
-	\begin{align}
-		X &: 2x-3 = x + 1 \Rightarrow x = 4, y = 5 \\
-		Y &: \dfrac{3}{2}x = x + 1 \Rightarrow x = 2, y = 3 \\
-		Z &: 2x-3 = \dfrac{3}{2}x \Rightarrow x = 6, y = 9
-	\end{align}
-	The three vertices are therefore $(4,5)$, $(2,3)$ and $(6,9)$
-	
-	
-	
-	
-	
+	\textbf{Insight \#4: Vertices are where the sides intersect}
+
+  \begin{tabular}{c c c c}
+    \toprule
+      Vertex & Eqn \#1 & Eqn \#2 & Coordinates \\
+    \midrule
+      X & $y=\WRITELINE\a\b\aa\bb$ & $y=\WRITELINE\m\n\mm\nn$ & $\vx$\\
+      Y & $y=\WRITELINE\o\p\oo\pp$ & $y=\WRITELINE\m\n\mm\nn$ & $\vy$\\
+      Z & $y=\WRITELINE\a\b\aa\bb$ & $y=\WRITELINE\o\p\oo\pp$ & $\vz$\\
+    \bottomrule
+  \end{tabular}
 \end{solution}
+
+\ifprintanswers\begin{codex}
+  $X=\vx\qquad Y=\vy\qquad Z = \vz$
+\end{codex}\fi
