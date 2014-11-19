@@ -68,7 +68,6 @@
 % Write #1/#2 x + #3/#4 as a clean polynomial
 \newcommand\coeff@x{}
 \newcommand\WRITELINE[4]{
-  \ifnumequal{#1}{0}{\renewcommand\coeff@x{0}}{}
   \ifnumequal{#1}{#2}{
     \renewcommand\coeff@x{1}
   }{
@@ -78,6 +77,7 @@
       \renewcommand\coeff@x{100}
     }
   }
+  \ifnumequal{#1}{0}{\renewcommand\coeff@x{0}}{}
   \ifnumequal\coeff@x{0}{
     \WRITEFRAC[false]{#3}{#4}
   }{
