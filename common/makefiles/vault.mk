@@ -47,6 +47,7 @@ $(STEM).tex : skel
 skel : blueprint question.tex
 	@. shell-script
 	create_skeleton
+	rm -f codex.cdx
 
 blueprint : 
 	@. ./shell-script
@@ -61,6 +62,7 @@ ifneq ($(version),)
 	@. shell-script 
 ifeq ($(type),question)
 	mv pg-1.png $(version)/$(type).png
+	mv $(STEM).pdf $(version)/question.pdf
 	mobile_pngs $(version)
 else
 	mv pg-*.png $(version)

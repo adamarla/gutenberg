@@ -256,7 +256,7 @@ function create_imgs {
     fmt='jpeg'
   fi
   gs -dNOPAUSE -dBATCH -sDEVICE=$fmt -r300 -sOutputFile=pg-%d.$extn $1 
-  for f in `ls pg-*.$extn` ; do convert $f -resize 600x800 -chop 40x60 $f ; done
+  for f in `ls pg-*.$extn` ; do convert $f -resize 600x800 -chop 40x60 -trim $f ; done
 }
 
 function mobile_pngs { 
@@ -264,7 +264,10 @@ function mobile_pngs {
   # Makefile calls this function only AFTER ensuring presence of question.png
   f=$(pwd)/$1
   black=$f/mobile.black.png
-  convert -trim  $f/question.png $black
+  convert -trim $f/question.png $black
+  #gs -dNOPAUSE -dBATCH -sDEVICE=png16 -r600 -sOutputFile=$f/question.png $f/question.pdf
+  #convert -trim  $f/question.png $f/question.png 
+  #convert -chop 0x100 -trim $f/question.png $black
 }
 
 function create_codex {

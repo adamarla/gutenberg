@@ -1,20 +1,16 @@
 
 
-\question[2]  Prove that $(1+\cot A+\tan A)(\sin A-\cos A)=(\sin A\tan A-\cot A\cos A)$.
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures  
-  \marginnote[2cm] {Note: There is nothing of significance in this question other than knowing the relationships between different trigonometric ratios}
-\fi 
+\question[2]  Prove the following  
+\[ (1+\cot A+\tan A)(\sin A-\cos A)=(\sin A\tan A-\cot A\cos A) \]
 
 \begin{solution}[\halfpage]
-  Let us begin by expanding the left hand side (LHS) of the equation and try to prove it equal to the right hand side.
-  
   \begin{align}
-    \text{LHS}  &= (1+\cot A+\tan A)(\sin A-\cos A) \\
-	   	&= \sin A+\cos A+\tan A\sin A- \nonumber \\
-		&\quad\quad \cos A-\cot A\cos A-\sin A \\
-		&= (\sin A\tan A-\cot A\cos A)
+     &(1+\cot A+\tan A)(\sin A-\cos A) = \nonumber\\
+		 &\left( 1+\dfrac{\cos A}{\sin A} + \dfrac{\sin A}{\cos A}\right)\cdot (\sin A - \cos A) \\
+		 &= \left( \sin A + \sin A\cdot\dfrac{\cos A}{\sin A} + \sin A\cdot\dfrac{\sin A}{\cos A}\right) \nonumber\\
+		 &-\cos A - \cos A\cdot\dfrac{\cos A}{\sin A} - \cos A\cdot\dfrac{\sin A}{\cos A} \\
+		 &= \sin A + \cos A + \sin A\cdot\tan A - \cos A - \cos A\cdot\cot A - \sin A \\
+		 &= \sin A\cdot\tan A - \cos A\cdot \cot A
   \end{align}
 
 \end{solution}

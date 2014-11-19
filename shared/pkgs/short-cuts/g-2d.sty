@@ -51,3 +51,45 @@
 \newcommand{\fDistanceParallel}[3][1] {
   D_{#2,#3} = \eDistanceParallel[#1]{#2}{#3}
 } 
+
+% Slope = (#5/#6) for a line joining (#1,#2) and (#3,#4)
+\newcommand\LINESLOPE[6]{
+  \SUBTRACT{#4}{#2}\tmy
+  \SUBTRACT{#3}{#1}\tmx
+  \FRACTIONSIMPLIFY\tmy\tmx{#5}{#6}
+}
+
+% Gets the intercept for (y-#2)/(x-#1) = #3/#4 when expressed in y = mx + C form 
+\newcommand\LINEINTERCEPT[6]{
+  \EXPR[0]\tmc{ #4*#2-#3*#1 }
+  \FRACTIONSIMPLIFY{\tmc}{#4}{#5}{#6}
+}
+
+% Write #1/#2 x + #3/#4 as a clean polynomial
+\newcommand\coeff@x{}
+\newcommand\WRITELINE[4]{
+  \ifnumequal{#1}{0}{\renewcommand\coeff@x{0}}{}
+  \ifnumequal{#1}{#2}{
+    \renewcommand\coeff@x{1}
+  }{
+    \ifnumequal{#1}{-#2}{
+      \renewcommand\coeff@x{-1}
+   }{
+      \renewcommand\coeff@x{100}
+    }
+  }
+  \ifnumequal\coeff@x{0}{
+    \WRITEFRAC[false]{#3}{#4}
+  }{
+    \ifnumequal\coeff@x{100}{
+      \WRITEFRAC[false]{#1}{#2} x
+    }{
+      \ifnumequal\coeff@x{1}{x}{-x}
+    }
+    \ifnumcomp{#3}{<}{0}{
+      \ABSVALUE{#3}\tmo 
+      -\WRITEFRAC[false]\tmo{#4}
+    }{+\WRITEFRAC[false]{#3}{#4}}
+  }
+}
+

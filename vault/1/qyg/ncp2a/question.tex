@@ -2,52 +2,50 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{3}
-  \renewcommand{\vbtwo}{6}
-  \renewcommand{\vbthree}{-2}
-  \renewcommand{\vbfour}{-3}
-  \renewcommand{\vbfive}{4}
+  \renewcommand{\va}{3}
+  \renewcommand{\vb}{6}
+  \renewcommand{\vc}{-2}
+  \renewcommand{\vd}{-3}
+  \renewcommand{\ve}{4}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{4}
-    \renewcommand{\vbtwo}{3}
-    \renewcommand{\vbthree}{5}
-    \renewcommand{\vbfour}{7}
-    \renewcommand{\vbfive}{8}
+    \renewcommand{\va}{4}
+    \renewcommand{\vb}{3}
+    \renewcommand{\vc}{5}
+    \renewcommand{\vd}{7}
+    \renewcommand{\ve}{8}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{2}
-      \renewcommand{\vbtwo}{5}
-      \renewcommand{\vbthree}{3}
-      \renewcommand{\vbfour}{7}
-      \renewcommand{\vbfive}{9}
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{5}
+      \renewcommand{\vc}{3}
+      \renewcommand{\vd}{7}
+      \renewcommand{\ve}{9}
     }{
       % variables 
-      \renewcommand{\vbone}{7}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{4}
-      \renewcommand{\vbfour}{7}
-      \renewcommand{\vbfive}{-3}
+      \renewcommand{\va}{7}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{4}
+      \renewcommand{\vd}{7}
+      \renewcommand{\ve}{-3}
     }
   }
 }
 
-\SUBTRACT\vbthree\vbone\a
-\SUBTRACT\vbtwo\vbfour\b
-\SUBTRACT\vbthree\vbfive\c
+\SUBTRACT\vc\va\a
+\SUBTRACT\vb\vd\b
+\SUBTRACT\vc\ve\c
 \MULTIPLY\a\b\m
 \FRACTIONSIMPLIFY\m\c\p\q
-\FRACMINUS\vbtwo{1}\p\q\j\k
+\FRACMINUS\vb{1}\p\q\j\k
 
-\question[2]  Find the value of $k$ if the points $(k, \vbone)$, $(\vbtwo, \vbthree)$ and $(\vbfour, \vbfive)$ are collinear
+\question[2]  Find the value of $k$ for which the points 
+\[ A=(k, \va),\, B=(\vb, \vc)\text{ and }C=(\vd, \ve)\] 
+are collinear.
 
 \watchout
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
 
 \begin{solution}[\mcq]
 	The slope of a line does \emph{not} change depending on which two points were
@@ -57,10 +55,11 @@
 	
 	Given this, the following would hold true
 	\begin{align}
-	  \dfrac{\vbthree - (\vbone)}{\vbtwo - k} &= 
-	  \dfrac{\vbthree - \vbfive}{\vbtwo - \vbfour}\\
-	  \Rightarrow \vbtwo - k &= \dfrac{(\vbthree - \vbone)\cdot(\vbtwo - \vbfour)}{\vbthree - \vbfive} = \WRITEFRAC\p\q \\
-	  \text{ or, } k &= \vbtwo - \dfrac{\p}{\q} = \dfrac{\j}{\k}
+	  \dfrac{\vc - (\va)}{\vb - k} &= 
+	  \dfrac{\vc - \ve}{\vb - \vd}\\
+	  \implies \vb - k &= \dfrac{(\vc - \va)\cdot(\vb - \vd)}{\vc - \ve} = \WRITEFRAC\p\q \\
+	  \text{ or, } k &= \vb - \dfrac{\p}{\q} = \WRITEFRAC[false]{\j}{\k}
 	\end{align}
-	
 \end{solution}
+
+\ifprintanswers\begin{codex}$\WRITEFRAC[false]\j\k$\end{codex}\fi

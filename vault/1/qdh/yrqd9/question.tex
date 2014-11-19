@@ -2,65 +2,63 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{2}
-  \renewcommand{\vbtwo}{3}
-  \renewcommand{\vbthree}{7}
-  \renewcommand{\vbfour}{3}
+  \renewcommand{\va}{2}
+  \renewcommand{\vb}{3}
+  \renewcommand{\vc}{7}
+  \renewcommand{\vd}{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{3}
-    \renewcommand{\vbtwo}{4}
-    \renewcommand{\vbthree}{2}
-    \renewcommand{\vbfour}{7}
+    \renewcommand{\va}{3}
+    \renewcommand{\vb}{4}
+    \renewcommand{\vc}{2}
+    \renewcommand{\vd}{7}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{2}
-      \renewcommand{\vbtwo}{5}
-      \renewcommand{\vbthree}{4}
-      \renewcommand{\vbfour}{3}
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{5}
+      \renewcommand{\vc}{4}
+      \renewcommand{\vd}{3}
     }{
       % variables 
-      \renewcommand{\vbone}{3}
-      \renewcommand{\vbtwo}{7}
-      \renewcommand{\vbthree}{2}
-      \renewcommand{\vbfour}{9}
+      \renewcommand{\va}{3}
+      \renewcommand{\vb}{7}
+      \renewcommand{\vc}{2}
+      \renewcommand{\vd}{9}
     }
   }
 }
 
-\EXPR[0]{\p}{(\vbtwo * \vbthree) + (\vbfour * \vbone)}
-\MULTIPLY\vbone\p\q
-\MULTIPLY\vbthree\p\r
+\EXPR[0]{\p}{(\vb * \vc) + (\vd * \va)}
+\MULTIPLY\va\p\q
+\MULTIPLY\vc\p\r
 
-\question[3] Evaluate $$\int\dfrac{x\,dx}{(\vbone x - \vbtwo)\cdot (\vbthree x + \vbfour)}$$
-
+\question[3] Evaluate the following \[ \int\dfrac{x\ud x}{(\va x - \vb)\cdot (\vc x + \vd)} \]
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\halfpage]
   \begin{align}
-    \dfrac{x}{(\vbone x - \vbtwo)\cdot (\vbthree x + \vbfour)} &= 
-    \dfrac{A}{\vbone x - \vbtwo} + \dfrac{B}{\vbthree x + \vbfour} \\
-    \Rightarrow x &= A\cdot (\vbthree x + \vbfour) + B\cdot (\vbone x - \vbtwo) \\
-                &= (\vbthree A + \vbone B)x + (\vbfour A - \vbtwo B)
+    \dfrac{x}{(\va x - \vb)\cdot (\vc x + \vd)} &= 
+    \dfrac{A}{\va x - \vb} + \dfrac{B}{\vc x + \vd} \\
+    \implies x &= A\cdot (\vc x + \vd) + B\cdot (\va x - \vb) \\
+                &= (\vc A + \va B)x + (\vd A - \vb B)
   \end{align}
   Comparing coefficients on both sides, we get 
   \begin{align}
-    \vbfour A - \vbtwo B &= 0 \Rightarrow B = \WRITEFRAC\vbfour\vbtwo A \\
-    \vbthree A + \WRITEFRAC\vbfour\vbtwo A\cdot\vbone &= 1 
-    \Rightarrow A = \WRITEFRAC\vbtwo\p \text{ and } B = \WRITEFRAC\vbfour\p
+    \vd A - \vb B &= 0 \implies B = \WRITEFRAC\vd\vb A \\
+    \vc A + \WRITEFRAC\vd\vb A\cdot\va &= 1 
+    \implies A = \WRITEFRAC\vb\p \text{ and } B = \WRITEFRAC\vd\p
   \end{align}
   And therefore
   \begin{align}
-    \int\dfrac{x\,dx}{(\vbone x - \vbtwo)\cdot (\vbthree x + \vbfour)} &= 
-    \WRITEFRAC\vbtwo\p\int\dfrac{dx}{\vbone x - \vbtwo} + \WRITEFRAC\vbfour\p\int\dfrac{dx}{\vbthree x + \vbfour} \\
-    &= \WRITEFRAC\vbtwo\q\ln\vert\vbone x - \vbtwo\vert + \WRITEFRAC\vbfour\r\ln\vert\vbthree x + \vbfour\vert + C
+    \int\dfrac{x\ud x}{(\va x - \vb)\cdot (\vc x + \vd)} &= 
+    \WRITEFRAC\vb\p\int\dfrac{\ud x}{\va x - \vb} + \WRITEFRAC\vd\p\int\dfrac{\ud x}{\vc x + \vd} \\
+    &= \WRITEFRAC\vb\q\ln\vert\va x - \vb\vert + \WRITEFRAC\vd\r\ln\vert\vc x + \vd\vert + C
   \end{align}
 \end{solution}
 
-
+\ifprintanswers\begin{codex}
+	$\WRITEFRAC\vb\q\ln\vert\va x - \vb\vert + \WRITEFRAC\vd\r\ln\vert\vc x + \vd\vert + C$
+\end{codex}\fi

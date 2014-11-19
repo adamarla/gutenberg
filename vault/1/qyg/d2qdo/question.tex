@@ -2,47 +2,46 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{9}
-  \renewcommand{\vbtwo}{27}
+  \renewcommand{\va}{9}
+  \renewcommand{\vb}{27}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{10}
-    \renewcommand{\vbtwo}{50}
+    \renewcommand{\va}{10}
+    \renewcommand{\vb}{50}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{12}
-      \renewcommand{\vbtwo}{36}
+      \renewcommand{\va}{12}
+      \renewcommand{\vb}{36}
     }{
       % variables 
-      \renewcommand{\vbone}{8}
-      \renewcommand{\vbtwo}{32}
+      \renewcommand{\va}{8}
+      \renewcommand{\vb}{32}
     }
   }
 }
 
-\FRACTIONSIMPLIFY\vbone\vbtwo\a\b %\tan\alpha
+\FRACTIONSIMPLIFY\va\vb\a\b %\tan\alpha
 \FRACMULT{2}{1}\a\b\c\d % 2\tan\alpha
 \FRACMULT\a\b\a\b\e\f %\tan^{2}\alpha
 \FRACMINUS{1}{1}\e\f\x\y % 1- \tan^2\alpha
 \FRACDIV\c\d\x\y\m\n
 
-\FRACMULT\n\m\vbone{1}\j\k
-\FRACMINUS\vbtwo{1}\j\k\ansx\ansy
+\FRACMULT\n\m\va{1}\j\k
+\FRACMINUS\vb{1}\j\k\ansx\ansy
 
-\question[4] Snake eagles are predatory birds that hunt, well, snakes. 
-Brave birds - and one such bird is perched on a tree $\vbone$ meters high when 
-a snake emerges from a hole $\vbtwo$ meters from the base of the tree and starts moving 
-towards it. Seeing the snake, the eagle pounces on it. If the speed at which 
-the eagle comes down is the same at which the snake is crawling, then at what distance
-from its hole is the snake caught? Assume that the snake descends in a straight line                          
+\question[4] An eagle is perched on a tree $\va$ meters high. A snake emerges 
+from a hole $\vb$ meters from the base of the tree and starts moving 
+towards the tree. Seeing the snake, the eagle pounces on it. If the eagle can descend 
+only in a straight line and only as fast as the snake is crawling, then how far from 
+the hole is the snake caught?
 
 \watchout[-70pt]
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
+		\vspace{0.75cm}
     \figinit{cm}
     \figpt 1: (0,0)
     \figpt 2: (5,0)
@@ -57,44 +56,46 @@ from its hole is the snake caught? Assume that the snake descends in a straight 
     \figdrawline [3,4]
     \figdrawend
     \figvisu{\figBoxA}{Figure 1}{%
+			\large
       \figwritew 1:A(0.1)
       \figwritee 3:B(0.1)
       \figwrites 4:C(0.1)
       \figwritee 2:D(0.1)
       \figwritese 5:$x$(0.2)
-      \figwritesw 6:$\vbtwo-x$(0.2)
+      \figwritesw 6:$\vb-x$(0.2)
       \figwritee 7:$\alpha$(0.2)
       \figwritee 8:$2\alpha$(0.2)
       \psarc{<->}{1}{0}{30}
       \psarc{<->}(3,0){0.65}{0}{60}
     }
     \centerline{\box\figBoxA}
-  \end{marginfigure}
-  \marginnote[1cm] {$\angle BCD = 2\alpha$ because $x = BC$}
-  \marginnote[0.5cm]{ $x = BC $ because the snake and peacock start at the same time
-  from their initial positions, move at the same speed and meet at the same time }
 \fi 
 
 
 \begin{solution}[\fullpage]
-	In the figure alongside, let $x$ be the distance the snake travels before
-	it is caught
+	The situation is as shown in the figure. The snake starts at $A$. 
+	And the eagle descends from $B$ and catches the snake at $C$. 
 	
-	Now, right upfront we know at least the following:
+	Now, 
 	\begin{align}
-		\tan\alpha &= \dfrac\vbone\vbtwo = \dfrac\a\b \\
-		\angle BCD &= 2\cdot\alpha \\
-	    \Rightarrow \tan\angle BCD &= \tan 2\alpha = \dfrac{2\tan\alpha}{1-\tan^2\alpha}
-	                               = \dfrac\vbone{\vbtwo - x}
+		\tan\alpha &= \dfrac\va\vb = \dfrac\a\b 
 	\end{align}
-	Solving (3), we get 
+	Morever, because both the snake and the eagle move at the \textbf{same speed} and 
+	for the \textbf{same time},
 	\begin{align}
-		\tan\angle BCD &= \dfrac{\vbone}{\vbtwo-x} = \dfrac{2\cdot\frac\a\b}{1-(\frac\a\b)^2} \\
-		\Rightarrow \dfrac{\vbone}{\vbtwo-x} &= \dfrac\m\n \\
-		\Rightarrow x &= \WRITEFRAC\ansx\ansy
+		AC = BC&\implies \angle BAC=\angle ABC=\alpha \\
+		\implies\angle BCD &= \underbrace{\angle ABC + \angle BAC = 2\alpha}_{\text{exterior angle = sum of interior angles}} \\
+	   \therefore\tan\angle BCD &= \tan 2\alpha = \dfrac{2\tan\alpha}{1-\tan^2\alpha}
+	                               = \dfrac\va{\vb - x}
+	\end{align}
+	Solving (4), we get 
+	\begin{align}
+		\tan\angle BCD &= \dfrac{\va}{\vb-x} = \dfrac{2\cdot\frac\a\b}{1-(\frac\a\b)^2} \\
+		\implies \dfrac{\va}{\vb-x} &= \dfrac\m\n\implies x = \WRITEFRAC\ansx\ansy
 	\end{align}
 	
 	So, the snake goes $\WRITEFRAC\ansx\ansy$ meters before it is caught!
 \end{solution}
 
 
+\ifprintanswers\begin{codex}$\WRITEFRAC\ansx\ansy$ meters\end{codex}\fi

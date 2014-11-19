@@ -96,7 +96,7 @@
 \providecommand{\halfpage}{\stretch{2}}
 \providecommand{\fullpage}{\stretch{4}} 
 
-\newenvironment{calcaid}{\color{black}\Large}{}
+\newenvironment{calcaid}{\vspace{0.5cm}\color{blue}\Large}{}
 
 %% A special environment for rendering any large tables and graphs 
 %% that may be part of the question. Ideally, render any such data AFTER 

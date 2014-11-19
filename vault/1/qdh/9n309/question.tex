@@ -2,53 +2,52 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{23}
-  \renewcommand{\vbtwo}{2}
-  \renewcommand{\vbthree}{10}
+  \renewcommand{\va}{23}
+  \renewcommand{\vb}{2}
+  \renewcommand{\vc}{10}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{25}
-    \renewcommand{\vbtwo}{1}
-    \renewcommand{\vbthree}{25}
+    \renewcommand{\va}{25}
+    \renewcommand{\vb}{1}
+    \renewcommand{\vc}{25}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{30}
-      \renewcommand{\vbtwo}{2}
-      \renewcommand{\vbthree}{12}
+      \renewcommand{\va}{30}
+      \renewcommand{\vb}{2}
+      \renewcommand{\vc}{12}
     }{
       % variables 
-      \renewcommand{\vbone}{27}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{10}
+      \renewcommand{\va}{27}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{10}
     }
   }
 }
 
-\POWER\vbone{2}\p
-\POWER\vbtwo{2}\q
-\POWER\vbthree{2}\r
-\MULTIPLY\vbone\vbtwo\m
+\POWER\va{2}\p
+\POWER\vb{2}\q
+\POWER\vc{2}\r
+\MULTIPLY\va\vb\m
 \MULTIPLY\q\r\n
 \ADD\p\n\j
 
-\question[3] A balloon is released at eye-level $\vbone$ meters before you. You watch it rise, 
-tracking it with your eyes. The balloon rises vertically at a rate of $\vbtwo\frac{m}{s}$.
-After $\vbthree$ seconds, how fast is your neck tilting back (in radians per second)? Draw
-an explanatory diagram for full credit
-
+\question[3] A balloon is released at eye-level $\va$ meters before you. You watch it rise, 
+tracking it with your eyes. The balloon rises vertically at a rate of $\vb\frac{m}{s}$.
+After $\vc$ seconds, how fast is your neck tilting back (in radians per second)? 
 
 \watchout[-40pt]
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
+		\vspace{0.75cm}
+		%\fontfamily{cmss}\selecfont\large
     \figinit{pt}
       \figpt 100:$A$(0,0)
-      \figpt 101:$B$(70,0)
-      \figpt 102:$C$(70,40)
-      \figpt 103:$\theta$(15,5)
+      \figpt 101:$B$(90,0)
+      \figpt 102:$C$(90,50)
+      \figpt 103:$\theta$(20,7)
     \figdrawbegin{}
       \figdrawline [100,101, 102, 100]
     \figdrawend
@@ -59,21 +58,23 @@ an explanatory diagram for full credit
       \figwritee 103:(2)
     }
     \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}[\halfpage]
-  The situation is \asif. At any point in time, your head is tilted up an angle $\angle CAB = \theta$
-  - if $A$ is the eye-level
+	If you are standing at $A$ (see figure) and the balloon is released from $B$, then 
+	\[ AB = \va\text{ meters and }\angle CAB = \theta = \text{ tilt required to see the balloon} \] 
 
+	Now, at any given time $T$
   \begin{align}
-    \tan\theta(T) &= \dfrac{BC}{AB} = \dfrac{\vbtwo\cdot T}{\vbone} \text{ where 'T' is time } \\
-    \Rightarrow \sec^2\theta\cdot\dfrac{d\theta}{dt} &= \dfrac{\vbtwo}{\vbone} \\
-    \Rightarrow \dfrac{d\theta}{dt} &= \dfrac{\vbtwo}{\vbone\cdot (1+\tan^2\theta)} = \dfrac\m{\p + \q T^2}
+    \tan\theta &= \dfrac{BC}{AB} = \dfrac{\vb T\text{ m/s}}{\va\text{ m}}  
+    \implies \sec^2\theta\cdot\dfrac{d\theta}{dT} = \dfrac{\vb}{\va} \\
+    \implies \dfrac{d\theta}{dT} &= \dfrac{\vb}{\va\cdot\underbrace{(1+\tan^2\theta)}_{\sec^2\theta = 1+\tan^2\theta}} 
+		= \dfrac\m{\p + \q T^2}
   \end{align}
-  And so, when $T=\vbthree$ seconds, then 
+  And so, when $T=\vc$ seconds, then 
   \begin{align}
-    \dfrac{d\theta}{dt} &= \dfrac\m{\p+\q\cdot\vbthree^2} = \WRITEFRAC\m\j \dfrac{\text{radians}}{\text{sec}}
+    \dfrac{d\theta}{dT} &= \dfrac\m{\p+\q\cdot\vc^2} = \WRITEFRAC\m\j\text{ radians/s}
   \end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}$\WRITEFRAC\m\j\text{ radians/s}$\end{codex}\fi
