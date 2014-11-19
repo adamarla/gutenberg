@@ -1,37 +1,23 @@
 
 
-\question[3] Prove the following identity
-\begin{align}
-  \dfrac{\cot\theta+\tan\theta}{1+\tan2\theta\tan\theta} 
-    = 2\cot2\theta \nonumber
-\end{align}
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
+\question[3] Find $M$ if
+  \[\dfrac{\cot\theta+\tan\theta}{1+\tan2\theta\tan\theta} 
+    = M\cot2\theta \nonumber\]
 
 \begin{solution}[\halfpage]
   Expand Left Hand Side (L.H.S.) as follows,
   \begin{align}
-    \text{L.H.S} &= \dfrac{\dfrac{1}{\tan\theta}+\tan\theta}
-    				  {1+\dfrac{2\tan^2\theta}{1-\tan^2\theta}} \\
-    			 &= \dfrac{\dfrac{1+\tan^2\theta}{\tan\theta}}
-    			      {\dfrac{1-\tan^2\theta+2\tan^2\theta}
-    			      {1-\tan^\theta}} \\
-    			 &= \dfrac{1-\tan^2\theta}{\tan\theta} \\
-    			 &= \dfrac{2}{\tan2\theta} \\
-    			 &= 2\cot2\theta
+    \text{L.H.S}
+      &= \dfrac{\dfrac{1}{\tan\theta}+\tan\theta}
+    		         {1+\dfrac{2\tan^2\theta}{1-\tan^2\theta}} \\
+      &= \dfrac{(1+\tan^2\theta)(1-\tan^2\theta)}
+    		         {\tan\theta(1-\tan^2\theta+2\tan^2\theta)} \\
+    		&= \dfrac{1-\tan^2\theta}{\tan\theta}
+    		 = \dfrac{2(\cos^2\theta-\sin^2\theta)}
+    		         {2\cos\theta\sin\theta} \\
+    		&= \dfrac{2\cos 2\theta}{\sin 2\theta}
+    		 = 2\cot2\theta
   \end{align}
-
+  Therefore $M=2$
 \end{solution}
+\ifprintanswers\begin{codex}$M=2$\end{codex}\fi
