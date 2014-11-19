@@ -1,35 +1,94 @@
+\renewcommand\vi{2} % slope of intersecting line 
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand\va{1}
+  \renewcommand\vb{3}
+  \renewcommand\vp{3}
+  \renewcommand\vq{4}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\va{2}
+    \renewcommand\vb{3}
+    \renewcommand\vp{3}
+    \renewcommand\vq{5}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\va{3}
+      \renewcommand\vb{2}
+      \renewcommand\vp{4}
+      \renewcommand\vq{5}
+    }{
+      \renewcommand\va{2}
+      \renewcommand\vb{5}
+      \renewcommand\vp{2}
+      \renewcommand\vq{7}
+    }
+  }
+}
 
-\question[5]   Find the ratio in which the line $3x+y-9=0$ divides the line segment
-joining the points $(1,3)$ and $(2,7)$
+\ADD\vp\vq\vr
+\ADD\va\vr\vc
+\ADD\vb\vr\vd
+% point of intersection 
+\ADD\va\vp\vm
+\ADD\vb\vp\vn
 
+\LINESLOPE\va\vb\vc\vd\m\n
+\LINEINTERCEPT\va\vb\m\n\c\d
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
+% intersecting line 
+\LINEINTERCEPT\vm\vn{2}{1}\a\b
+
+\question[5] Find the ratio in which the line 
+\[y=\WRITELINE{2}{1}\a\b \]
+divides the line segment joining the points 
+\[A = (\va,\vb)\text{ and }B = (\vc,\vd) \]
+
+\watchout
+
+\vspace{0.7cm}
+\figinit{pt}
+\figpt 1: (0,0)
+\figpt 2: (65,75)
+\figpt 7:(0,45)
+\figpt 8:(50,0)
+\figvectP 50 [1,2]
+\figvectP 57 [7,8]
+\figptinterlines 19:[1,50;7,57]
+	\figdrawbegin{}
+    \figdrawline [1,2]
+    \figdrawline [7,8]
+  \figdrawend
+	\figvisu{\figBoxA}{}{%
+    \large
+    \figset write(mark=$\bullet$)
+    \figwritew 1:$A$(4)
+    \figwritee 2:$B$(3)
+    \figwritee 19:$X$(4)
+	}
+  \centerline{\box\figBoxA}
 
 \begin{solution}[\fullpage]
-	Equation of the line joining $(1,3)$ and $(2,7)$ - $L_1$ - is given by 
+  \textbf{Step \#1: Find the point where $AB$ is divided}
+
+  For that, we first need the \textbf{equation of} $AB$, which is simply 
+  \begin{align}
+    \dfrac{y-\vb}{x-\va} &= \dfrac{\vd-\vb}{\vc-\va} \implies y = \WRITELINE\m\n\c\d
+  \end{align}
+
+	The two lines intersect at a point $X$ where
 	\begin{align}
-		\dfrac{y-7}{x-2} &= \dfrac{7-3}{2-1} = 4 \\
-		\Rightarrow y &= 4x - 1
+    y &= \WRITELINE\m\n\c\d = \WRITELINE{2}{1}\a\b \\
+    \implies x &= \vm, y = \vn \implies X = \left(\vm,\vn\right)
 	\end{align}
-	The two lines intersect at a point - $C$ - for which
-	\begin{align}
-		y = 4x - 1 &= 9-3x \Rightarrow x = \dfrac{10}{7} \\
-		\therefore y &= 4\cdot\dfrac{10}{7}-1 = \dfrac{33}{7}
-	\end{align}
-	Now, we are ready to calculate what is asked. We first need the length
-	of the given segment and then the distance from one of its end-points to
-	the point of intersection we just calculated 
-	
-	\begin{align}
-		\texttt{$L_1$} &= \sqrt{(7-3)^2+(2-1)^2} = \sqrt{17} \\
-		\texttt{AC} &= \sqrt{(\dfrac{33}{7}-3)^2+(\dfrac{10}{7}-1)^2} \\
-		&= \sqrt{\dfrac{153}{7^2}} = \dfrac{3}{7}\sqrt{17} \\
-		\therefore\dfrac{\texttt{AC}}{L_1} &= \dfrac{3}{7} \\
-		\Rightarrow\dfrac{\texttt{BC}}{\texttt{AC}} &= \dfrac{(1-\frac{3}{7})\cdot L_1}{\frac{3}{7}\cdot L_1}\\
-		&= \dfrac{4}{3}
-	\end{align}
-	
+  Now, if $AB$ is divided at $X$ in the ratio $\dfrac{p}{q}$, that is, 
+  \[ \dfrac{AX}{BX} = \dfrac{p}{q}\]
+  then it follows that 
+  \begin{align}
+    \dfrac{AX}{AB} &= \dfrac{AX}{AX + BX} = \dfrac{p}{p+q} = \dfrac{x_X-x_A}{x_B-x_A} = \dfrac{y_X-y_A}{y_B - y_A} \\
+    \implies \dfrac{AX}{AB} &= \dfrac{\vm-\va}{\vc-\va} = \dfrac{\vn-\vb}{\vd-\vb} = \WRITEFRAC\vp\vr \\
+    \implies\dfrac{BX}{AB} &= 1-\dfrac{AX}{AB} = 1-\dfrac\vp\vr = \dfrac\vq\vr \\
+    \implies\underbrace{\dfrac{AX}{BX}}_{\text{required}} &= \dfrac{\frac\vp\vr}{\frac\vq\vr} = \dfrac\vp\vq
+  \end{align}
 \end{solution}
+\ifprintanswers\begin{codex}$\dfrac\vp\vq$\end{codex}\fi
