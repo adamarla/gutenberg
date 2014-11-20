@@ -28,80 +28,76 @@ How fast is the length of his shadow increasing when he is $1$ meter away from t
 \watchout
 
 \ifprintanswers
-%  \begin{marginfigure}
-    % 1. Definition of characteristic points
-\vspace{0.5cm}
-\figinit{pt}
-\def\Xmin{0}
-\def\Ymin{0}
-\def\Xmax{80.00000}
-\def\Ymax{79.99999}
-\def\Xori{0}
-\def\Yori{0}
-\figpt0:(\Xori,\Yori)
-\figdrawbegin{}
-\def\Xmaxx{\Xmax} % To customize the position
-\def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
-\figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
-\figdrawaxes 0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
-\figpt 100: (80,80)
-\figpt 101: (80,0)
-\figpt 102: (40,40)
-\figpt 103: (40,0)
-\figpt 104: (20,1)
-\figpt 105: (55,1)
-\figpt 200: (40,20)
-\figpt 201: (80,40)
-\figpt 300: (10,6)
-\figdrawline [100,101]
-\figdrawline [102,103]
-\figdrawlineC(
-0 0,
-2.75862 2.75862,
-5.51724 5.51724,
-8.27586 8.27586,
-11.03448 11.03448,
-13.79310 13.79310,
-16.55172 16.55172,
-19.31034 19.31034,
-22.06896 22.06896,
-24.82758 24.82758,
-27.58620 27.58620,
-30.34482 30.34482,
-33.10344 33.10344,
-35.86206 35.86206,
-38.62068 38.62068,
-41.37931 41.37931,
-44.13793 44.13793,
-46.89655 46.89655,
-49.65517 49.65517,
-52.41379 52.41379,
-55.17241 55.17241,
-57.93103 57.93103,
-60.68965 60.68965,
-63.44827 63.44827,
-66.20689 66.20689,
-68.96551 68.96551,
-71.72413 71.72413,
-74.48275 74.48275,
-77.24137 77.24137,
-79.99999 79.99999
-)
-\figdrawend
-\figvisu{\figBoxA}{}{%
-\fontfamily{cmss}\selectfont\normalsize
-\figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
-\figwritee 1:(5pt)     \figwriten 2:(5pt)
-\figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
-\figwrites 104:$L$(4)
-\figwrites 105:$x$(4)
-\figwritee 200: $\vm\text{ cm}$(2)
-\figwritee 201: $\vp\text{ m}$(2)
-\figwritee 300: $\theta$(1)
-}
-\centerline{\box\figBoxA}
-
-%  \end{marginfigure}
+  \vspace{0.5cm}
+  \figinit{pt}
+  \def\Xmin{0}
+  \def\Ymin{0}
+  \def\Xmax{80.00000}
+  \def\Ymax{79.99999}
+  \def\Xori{0}
+  \def\Yori{0}
+  \figpt0:(\Xori,\Yori)
+  \figdrawbegin{}
+  \def\Xmaxx{\Xmax} % To customize the position
+  \def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
+  \figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
+  \figdrawaxes 0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+  \figpt 100: (80,80)
+  \figpt 101: (80,0)
+  \figpt 102: (40,40)
+  \figpt 103: (40,0)
+  \figpt 104: (20,1)
+  \figpt 105: (55,1)
+  \figpt 200: (40,20)
+  \figpt 201: (80,40)
+  \figpt 300: (10,6)
+  \figdrawline [100,101]
+  \figdrawline [102,103]
+  \figdrawlineC(
+  0 0,
+  2.75862 2.75862,
+  5.51724 5.51724,
+  8.27586 8.27586,
+  11.03448 11.03448,
+  13.79310 13.79310,
+  16.55172 16.55172,
+  19.31034 19.31034,
+  22.06896 22.06896,
+  24.82758 24.82758,
+  27.58620 27.58620,
+  30.34482 30.34482,
+  33.10344 33.10344,
+  35.86206 35.86206,
+  38.62068 38.62068,
+  41.37931 41.37931,
+  44.13793 44.13793,
+  46.89655 46.89655,
+  49.65517 49.65517,
+  52.41379 52.41379,
+  55.17241 55.17241,
+  57.93103 57.93103,
+  60.68965 60.68965,
+  63.44827 63.44827,
+  66.20689 66.20689,
+  68.96551 68.96551,
+  71.72413 71.72413,
+  74.48275 74.48275,
+  77.24137 77.24137,
+  79.99999 79.99999
+  )
+  \figdrawend
+  \figvisu{\figBoxA}{}{%
+  \fontfamily{cmss}\selectfont\normalsize
+  \figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+  \figwritee 1:(5pt)     \figwriten 2:(5pt)
+  \figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
+  \figwrites 104:$L$(4)
+  \figwrites 105:$x$(4)
+  \figwritee 200: $\vm\text{ cm}$(2)
+  \figwritee 201: $\vp\text{ m}$(2)
+  \figwritee 300: $\theta$(1)
+  }
+  \centerline{\box\figBoxA}
 \fi
 
 \DIVIDE\vm{100}\vn
@@ -119,8 +115,8 @@ How fast is the length of his shadow increasing when he is $1$ meter away from t
   \begin{align}
       \tan\theta &= \dfrac{\vp\text{ m}}{L+x} = \dfrac{\vm\text{ cm}}{L} \\
       \implies L &= \dfrac{\vm\text{ cm}}{\vd\text{ m}}\cdot x = \dfrac\vn\vd\cdot x \\
-      \implies \dfrac{\ud L}{\ud t} &= \dfrac\vn\vd\times\underbrace{\dfrac{\ud x}{\ud t}}_{\text{walking speed}}
-      = \dfrac\vn\vd\times \vw\text{ m/s} = \vs\text{ m/s}
+      \implies \dfrac{\ud L}{\ud t} &= \dfrac\vn\vd\times\underbrace{\dfrac{\ud x}{\ud t}}_{\text{walking speed}} \\
+      &= \dfrac\vn\vd\times \vw\text{ m/s} = \vs\text{ m/s}
   \end{align}
 \end{solution}
 
