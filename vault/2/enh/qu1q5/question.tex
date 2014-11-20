@@ -1,59 +1,31 @@
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{0.87}
-  \renewcommand{\vbtwo}{0.36}
-  \renewcommand{\vbthree}{0.30}
-  \renewcommand{\vbfour}{}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\va}{0.87}
+  \renewcommand{\vb}{0.36}
+  \renewcommand{\vc}{0.30}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{0.78}
-    \renewcommand{\vbtwo}{0.36}
-    \renewcommand{\vbthree}{0.30}
-    \renewcommand{\vbfour}{}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\va}{0.78}
+    \renewcommand{\vb}{0.36}
+    \renewcommand{\vc}{0.30}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{0.87}
-      \renewcommand{\vbtwo}{0.63}
-      \renewcommand{\vbthree}{0.50}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\va}{0.87}
+      \renewcommand{\vb}{0.63}
+      \renewcommand{\vc}{0.50}
     }{
-      \renewcommand{\vbone}{0.78}
-      \renewcommand{\vbtwo}{0.36}
-      \renewcommand{\vbthree}{0.30}
-      \renewcommand{\vbfour}{}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\va}{0.78}
+      \renewcommand{\vb}{0.36}
+      \renewcommand{\vc}{0.30}
     }
   }
 }
 
-\ADD\vbone\vbtwo\t
-\SUBTRACT\t\vbthree\s
+\ADD\va\vb\t
+\SUBTRACT\t\vc\s
 
 \question[2] In a large metropolitan area the probabilities that a family 
 (randomly chosen for a sample survey) owns a car, a motorcycle or both
-kinds of vehicles are $\vbone$, $\vbtwo$ and $\vbthree$. What is the
+kinds of vehicles are $\va$, $\vb$ and $\vc$. What is the
 probability that a family owns a vehicle of any sort assuming the only
 kinds of vehicles are cars and motorcycles.
 
@@ -68,10 +40,13 @@ kinds of vehicles are cars and motorcycles.
   \end{tabular}
   \begin{align}
     P_{any} &= P_{car} + P{mcycle} - P_{both} \\
-            &= \vbone +\vbtwo - \vbthree \\
+            &= \va +\vb - \vc \\
             &= \s
   \end{align}
   There is a $\s$ probability that a family has at least one vehicle.
 	
 \end{solution}
 
+\ifprintanswers\begin{codex}
+  $P_{\text{vehicle ownership}} = \s$
+\end{codex}\fi
