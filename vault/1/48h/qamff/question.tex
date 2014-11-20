@@ -68,44 +68,41 @@
  $L_2: \vb x \vc y = \vd$ and are at a distance of $\ve\sqrt{2}$
  units from $(-1, -1)$.
 
-
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}[+40 pt]
-    \figinit{pt}
-      \figpt 100:(0,20)
-      \figpt 101:$R_1$(90,50)
-      \figpt 102:(0,40)
-      \figpt 103:$R_2$(90,15)
-      \figvectP 201[100,101]
-      \figvectP 203[102,103]
-      \figptinterlines 151:$A$[101,201;103,203] % pt of intersection
-      \figpt 300:$B$ (90,33)
-      \figptorthoprojline 251:$X$=300/100,101/
-      \figptorthoprojline 253:$Y$=300/102,103/
-    \figdrawbegin{}
-      \figdrawline [100,101]
-      \figdrawline [102,103]
-      %\figdrawline [300, 251]
-      %\figdrawline [300, 253]
-      \figdrawaltitude 5 [300,101,100]
-      \figdrawaltitude 5 [300, 103, 102]
-      %\figdrawaltitude 5[100,102,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-      \figwritene 101:(2 pt)
-      \figsetmark{$\bullet$}
-      \figwriten 151:(4 pt)
-      \figwritee 300:(2 pt)
-      \figsetmark{}
-      \figwritese 103:(2 pt)
-      \figwritenw 251:(2 pt)
-      \figwritesw 253:(2 pt)
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
+  \vspace{0.7cm}
+  \figinit{pt}
+    \figpt 100:(0,20)
+    \figpt 101:$R_1$(90,50)
+    \figpt 102:(0,40)
+    \figpt 103:$R_2$(90,15)
+    \figvectP 201[100,101]
+    \figvectP 203[102,103]
+    \figptinterlines 151:$A$[101,201;103,203] % pt of intersection
+    \figpt 300:$B$ (90,33)
+    \figptorthoprojline 251:$X$=300/100,101/
+    \figptorthoprojline 253:$Y$=300/102,103/
+  \figdrawbegin{}
+    \figdrawline [100,101]
+    \figdrawline [102,103]
+    %\figdrawline [300, 251]
+    %\figdrawline [300, 253]
+    \figdrawaltitude 5 [300,101,100]
+    \figdrawaltitude 5 [300, 103, 102]
+    %\figdrawaltitude 5[100,102,101]
+  \figdrawend
+  \figvisu{\figBoxA}{}{%
+    \figwritene 101:(2 pt)
+    \figsetmark{$\bullet$}
+    \figwriten 151:(4 pt)
+    \figwritee 300:(2 pt)
+    \figsetmark{}
+    \figwritese 103:(2 pt)
+    \figwritenw 251:(2 pt)
+    \figwritesw 253:(2 pt)
+  }
+  \centerline{\box\figBoxA}
 \fi 
 
 \begin{solution}[\fullpage]
@@ -131,7 +128,7 @@
     D &= \dfrac{\vert Ax_B + By_B + C\vert}{\sqrt{A^2+B^2}} \\
       &= \dfrac{\vert -\j m + \k \vert }{\sqrt{m^2 + 1}} \\
       \implies D^2 &= \dfrac{(\j m - \k)^2}{m^2 + 1} = \d \\
-      \implies \aa m^2 + \bb m + \cc &= 0 \text{ or } m = \WRITEFRAC\f\dnm, \WRITEFRAC\g\dnm 
+      \implies \aa m^2 + \bb m + \cc &= 0 \text{ or } m = \WRITEFRAC[false]\f\dnm, \WRITEFRAC[false]\g\dnm 
   \end{align}
 
   So, we know that $R_1$ and $R_2$ pass through $A = (\p,\q)$ and that they have slopes 
@@ -139,14 +136,14 @@
 
   Plugging in the values of $m$ we found in $(8)$ into $(3)$ gives us the two lines.
   \begin{align}
-    \dfrac{y-\q}{x-\p} &= \WRITEFRAC\f\dnm \text{ and } \\
-    \dfrac{y-\q}{x-\p} &= \WRITEFRAC\g\dnm 
+    \dfrac{y-\q}{x-\p} &= \WRITEFRAC[false]\f\dnm \text{ and } \\
+    \dfrac{y-\q}{x-\p} &= \WRITEFRAC[false]\g\dnm 
   \end{align}
 \end{solution}
 
 \ifprintanswers
   \begin{codex}
-    $L_1: \dfrac{y-\q}{x-\p} = \WRITEFRAC\f\dnm\qquad L_2: \dfrac{y-\q}{x-\p} = \WRITEFRAC\g\dnm$
+    $L_1: \dfrac{y-\q}{x-\p} = \WRITEFRAC[false]\f\dnm\qquad L_2: \dfrac{y-\q}{x-\p} = \WRITEFRAC[false]\g\dnm$
   \end{codex}
 \fi
 

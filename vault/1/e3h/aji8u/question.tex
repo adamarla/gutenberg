@@ -53,41 +53,41 @@ what is the height of the building given that the tower is $\vh$ meters tall.
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}[-200pt]
-    \figinit{pt}
-      \figpt 100: $A$(0,0)
-      \figpt 101: $B$(70,0)
-      \figpt 102: $N$(70,70)
-      \figpt 103: $M$(0,45)
-      \figpt 104: $F$(65,45)
-      \figpt 105: $H_{\text{tower}} = \vh m$(67,25)
-      \figpt 106: $\ang\va$(55,5)
-      \figpt 107: $\ang\vb$(10,5)
-    \figdrawbegin{}
-      \figdrawline [100,101,102,100]
-      \figdrawline [101,103,100]
-      \figdrawarccircP 100 ; 12 [101,102] 
-      \figdrawarccircP 101 ; 12 [103,100] 
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-      \figwrites 100:(2)
-      \figwrites 101:(2)
-      \figwritee 102:(2)
-      \figwritew 103:(2)
-      \figwritee 105:(4)
-      \figwritew 106:(2)
-      \figwritee 107:(2)
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
+  \vspace{0.7cm}
+  \figinit{pt}
+    \figpt 100: $A$(0,0)
+    \figpt 101: $B$(100,0)
+    \figpt 102: $N$(100,70)
+    \figpt 103: $M$(0,45)
+    \figpt 105: $H_{\text{tower}} = \vh\text{m}$(100,25)
+    \figpt 106: $\ang\va$(77,7)
+    \figpt 107: $\ang\vb$(11,7)
+  \figdrawbegin{}
+    \figdrawline [100,101,102,100]
+    \figdrawline [101,103,100]
+    \figdrawarccircP 100 ; 12 [101,102] 
+    \figdrawarccircP 101 ; 12 [103,100] 
+  \figdrawend
+  \figvisu{\figBoxA}{}{%
+    \fontfamily{cmss}\selectfont\Large
+    \figwrites 100:(2)
+    \figwrites 101:(2)
+    \figwritee 102:(2)
+    \figwritew 103:(2)
+    \figwritee 105:(4)
+    \figwritew 106:(2)
+    \figwritee 107:(2)
+  }
+  \centerline{\box\figBoxA}
 \fi 
 
 \begin{solution}[\halfpage]
 	The situation is \asif. And one can see that,
 	
 	\begin{align}
-		AB = \dfrac{BN}{\tan\ang\vb} &= \dfrac{AM}{\tan\ang\va} \implies AM = BN\cdot\dfrac{\tan\ang\va}{\tan\ang\vb} \\
-		\text{or } AM &= BN\times\vk = \vh\times\vk = \vz\text{ meters}
+		AB = \dfrac{BN}{\tan\ang\vb} &= \dfrac{AM}{\tan\ang\va} \\
+    \implies AM &= BN\cdot\dfrac{\tan\ang\va}{\tan\ang\vb} \\
+		\text{or } AM = BN\times\vk &= \vh\times\vk = \vz\text{ meters}
 	\end{align}
 \end{solution}
 
