@@ -1,62 +1,62 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{John}
-  \renewcommand{\vbtwo}{Stephan}
-  \renewcommand{\vbthree}{Ivan}
-  \renewcommand{\vbfour}{Boris}
-  \renewcommand{\vbfive}{Ivan's}
-  \renewcommand{\vbsix}{Boris'}
-  \renewcommand{\vbseven}{twice}
-  \renewcommand{\vbeight}{four}
-  \renewcommand{\vbnine}{2}
-  \renewcommand{\vbten}{4}
+  \renewcommand{\va}{John}
+  \renewcommand{\vb}{Stephan}
+  \renewcommand{\vc}{Ivan}
+  \renewcommand{\vd}{Boris}
+  \renewcommand{\ve}{Ivan's}
+  \renewcommand{\vf}{Boris'}
+  \renewcommand{\vg}{twice}
+  \renewcommand{\vh}{four}
+  \renewcommand{\vi}{2}
+  \renewcommand{\vj}{4}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{Ivan}
-    \renewcommand{\vbtwo}{John}
-    \renewcommand{\vbthree}{Stephan}
-    \renewcommand{\vbfour}{Boris}
-    \renewcommand{\vbfive}{Stephan's}
-    \renewcommand{\vbsix}{Boris'}
-    \renewcommand{\vbseven}{twice}
-    \renewcommand{\vbeight}{three}
-    \renewcommand{\vbnine}{2}
-    \renewcommand{\vbten}{3}
+    \renewcommand{\va}{Ivan}
+    \renewcommand{\vb}{John}
+    \renewcommand{\vc}{Stephan}
+    \renewcommand{\vd}{Boris}
+    \renewcommand{\ve}{Stephan's}
+    \renewcommand{\vf}{Boris'}
+    \renewcommand{\vg}{twice}
+    \renewcommand{\vh}{three}
+    \renewcommand{\vi}{2}
+    \renewcommand{\vj}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{Boris}
-      \renewcommand{\vbtwo}{Ivan}
-      \renewcommand{\vbthree}{John}
-      \renewcommand{\vbfour}{Stephan}
-      \renewcommand{\vbfive}{John's}
-      \renewcommand{\vbsix}{Stephan's}
-      \renewcommand{\vbseven}{thrice}
-      \renewcommand{\vbeight}{four}
-      \renewcommand{\vbnine}{3}
-      \renewcommand{\vbten}{4}
+      \renewcommand{\va}{Boris}
+      \renewcommand{\vb}{Ivan}
+      \renewcommand{\vc}{John}
+      \renewcommand{\vd}{Stephan}
+      \renewcommand{\ve}{John's}
+      \renewcommand{\vf}{Stephan's}
+      \renewcommand{\vg}{thrice}
+      \renewcommand{\vh}{four}
+      \renewcommand{\vi}{3}
+      \renewcommand{\vj}{4}
     }{
-      \renewcommand{\vbone}{Stephan}
-      \renewcommand{\vbtwo}{Boris}
-      \renewcommand{\vbthree}{John}
-      \renewcommand{\vbfour}{Ivan}
-      \renewcommand{\vbfive}{John's}
-      \renewcommand{\vbsix}{Ivan's}
-      \renewcommand{\vbseven}{thrice}
-      \renewcommand{\vbeight}{two}
-      \renewcommand{\vbnine}{3}
-      \renewcommand{\vbten}{2}
+      \renewcommand{\va}{Stephan}
+      \renewcommand{\vb}{Boris}
+      \renewcommand{\vc}{John}
+      \renewcommand{\vd}{Ivan}
+      \renewcommand{\ve}{John's}
+      \renewcommand{\vf}{Ivan's}
+      \renewcommand{\vg}{thrice}
+      \renewcommand{\vh}{two}
+      \renewcommand{\vi}{3}
+      \renewcommand{\vj}{2}
     }
   }
 }
-\ADD\vbnine\vbten\a
+\ADD\vi\vj\a
 \ADD\a{2}\b
 \SUBTRACT\b{1}\c
 
 \question One and only one of the following four people $John$, $Boris$, 
 $Ivan$ or $Stephan$ will win the upcoming $Wimbledon$ tennis championship 
-next month. You are told that the chances of $\vbone$ winning are the 
-same as $\vbtwo$. $\vbfive$ chances are $\vbseven$ that of $\vbone$. 
-$\vbsix$ chances are $\vbeight$ times that of $\vbone$.
+next month. You are told that the chances of $\va$ winning are the 
+same as $\vb$. $\ve$ chances are $\vg$ that of $\va$. 
+$\vf$ chances are $\vh$ times that of $\va$.
 
 
 \watchout
@@ -66,36 +66,43 @@ $\vbsix$ chances are $\vbeight$ times that of $\vbone$.
   winning the $Wimbledon$ tennis championship.
 
 \begin{solution}[\mcq]
-    If the chances of $\vbone$ winning is $x$, then the probabilities 
+    If the chances of $\va$ winning is $x$, then the probabilities 
     for each of them winning are,
     \begin{align}
-      P_{\vbone}   &= \dfrac{x}{x+x+2x+4x} = \dfrac{1}{\b} \\
-      P_{\vbtwo}   &= \dfrac{x}{x+x+2x+4x} = \dfrac{1}{\b} \\
-      P_{\vbthree} &= \dfrac{2x}{x+x+2x+4x} = \dfrac{\vbnine}{\b} \\
-      P_{\vbfour}  &= \dfrac{4x}{x+x+2x+4x} = \dfrac{\vbten}{\b}
+      P_{\va}   &= \dfrac{x}{x+x+2x+4x} = \dfrac{1}{\b} \\
+      P_{\vb}   &= \dfrac{x}{x+x+2x+4x} = \dfrac{1}{\b} \\
+      P_{\vc} &= \dfrac{2x}{x+x+2x+4x} = \dfrac{\vi}{\b} \\
+      P_{\vd}  &= \dfrac{4x}{x+x+2x+4x} = \dfrac{\vj}{\b}
     \end{align}
   \end{solution}
 
-  \part[1] Find the probability that $\vbone$ will lose the championship.
+  \part[1] Find the probability that $\va$ will lose the championship.
 \begin{solution}[\mcq]
-    Probability that $\vbone$ will lose is complement of his probability
+    Probability that $\va$ will lose is complement of his probability
     to win. Therefore,
     \begin{align}
-      P &= 1 - P_{\vbone} \\
+      P &= 1 - P_{\va} \\
         &= \dfrac{\c}{\b}
     \end{align}    
   \end{solution}
 
-  \part[1] Find the probability of $\vbthree$ or $\vbfour$ winning the 
+  \part[1] Find the probability of $\vc$ or $\vd$ winning the 
   championship.
 \begin{solution}[\mcq]
-    Union of probabilities of $\vbthree$ or $\vbfour$ winning,
+    Union of probabilities of $\vc$ or $\vd$ winning,
     \begin{align}
-      P &= P_{\vbthree} + P_{\vbfour} \\
-        &= \dfrac{\vbnine}{\b} + \dfrac{\vbten}{\b} \\
+      P &= P_{\vc} + P_{\vd} \\
+        &= \dfrac{\vi}{\b} + \dfrac{\vj}{\b} \\
         &= \dfrac{\a}{\b}
     \end{align}
   \end{solution}
 
 \end{parts}
 
+\ifprintanswers
+  \begin{codex}
+    (a) $P_{I}=\frac{1}{\b}$ $P_{J}=\frac{1}{\b}$ $P_{S}=\frac{\vi}{\b}$ $P_{B}=\frac{\vj}{\b}$ \\
+    (b) $P_{\va\, losing}=\frac{\c}{\b}$ \\
+    (c) $P_{\vc\, or\, \vd\, winning}=\frac{\a}{\b}$
+  \end{codex}
+\fi

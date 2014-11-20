@@ -1,6 +1,4 @@
 
-
-
 \ifnumequal{\value{rolldice}}{0}{
 }{
   \ifnumequal{\value{rolldice}}{1}{
@@ -11,11 +9,8 @@
   }
 }
 
-\question[5] Integrate the following
-\begin{align}
-    \int \left(\dfrac{\tan^{-1}x}{x}-\dfrac{\ln x}{1+x^2}\right)\dfrac{1}{(\tan^{-1}x)^2}dx \nonumber
-\end{align}
-
+\question[5] Find $f(x)$ such that,
+    \[\int \left(\dfrac{\tan^{-1}x}{x}-\dfrac{\ln x}{1+x^2}\right)\dfrac{1}{(\tan^{-1}x)^2}dx = \dfrac{f(x)}{\tan^{-1}x}+C\]
 
 \begin{solution}[\fullpage]
   \begin{align}
@@ -25,7 +20,7 @@
       &= \int \left(\dfrac{1}{x\tan^{-1}x}-\dfrac{\ln x}{(1+x^2)(\tan^{-1}x)^2}\right)dx \\
       &= \int \left(\dfrac{1+x^2}{x\tan^{-1}x}-\dfrac{\ln x}{(\tan^{-1}x)^2}\right)
               \cdot\dfrac{1}{1+x^2}dx \\
-      &\text{Let}\quad x=\tan t\Rightarrow\tan^{-1}x=t\Rightarrow \dfrac{1}{1+x^2}dx=dt \nonumber \\
+      &\text{Let}\quad x=\tan t\implies\tan^{-1}x=t\implies \dfrac{1}{1+x^2}dx=dt \nonumber \\
       &= \int \dfrac{1+\tan^2 t}{t\tan t}-\dfrac{\ln (\tan t)}{t^2}dt \\
       &= \underbrace{\int\dfrac{1+\tan^2 t}{t\tan t}dt}_{I_1}-
          \underbrace{\int\dfrac{\ln (\tan t)}{t^2}dt}_{I_2} \\
@@ -34,10 +29,12 @@
         &\text{Using integration by parts} \nonumber \\
     I_2 &= \ln(\tan t)\cdot\dfrac{t^{-1}}{-1} - 
            \int \dfrac{1}{\tan t}\cdot\sec^{2}t\cdot\dfrac{t^{-1}}{-1}dt \\
-        &= -\dfrac{\ln(\tan t)}{t} + \int \dfrac{\sec^{2}t}{t\tan t}dt \\
+        &= -\dfrac{\ln(\tan t)}{t} + C + \int \dfrac{\sec^{2}t}{t\tan t}dt \\
         &\text{Substitute back into equation in step (6)} \nonumber \\
-    I &= \int\dfrac{1+\tan^2 t}{t\tan t}dt + \dfrac{\ln(\tan t)}{t} - \int \dfrac{\sec^{2}t}{t\tan t}dt \\
-      &= \int\dfrac{\sec^2 t}{t\tan t}dt + \dfrac{\ln(\tan t)}{t} - \int \dfrac{\sec^{2}t}{t\tan t}dt \\
-      &= \dfrac{\ln(\tan t)}{t} = \dfrac{\ln x}{\tan^{-1}x}
+    I &= \int\dfrac{1+\tan^2 t}{t\tan t}dt + \dfrac{\ln(\tan t)}{t} - \int \dfrac{\sec^{2}t}{t\tan t}dt + C \\
+      &= \int\dfrac{\sec^2 t}{t\tan t}dt + \dfrac{\ln(\tan t)}{t} - \int \dfrac{\sec^{2}t}{t\tan t}dt + C \\
+      &= \dfrac{\ln(\tan t)}{t} = \dfrac{\ln x}{\tan^{-1}x} + C
   \end{align}
+  Therefore $f(x)=\ln x$
 \end{solution}
+\ifprintanswers\begin{codex}$f(x)=\ln x$\end{codex}\fi
