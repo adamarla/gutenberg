@@ -54,112 +54,113 @@
 \watchout
 
 \ifprintanswers
-  \begin{marginfigure}
-\figinit{pt}
-\def\Xmin{-5.33333}
-\def\Ymin{-2.28571}
-\def\Xmax{74.66666}
-\def\Ymax{77.71428}
-\def\Xori{5.33333}
-\def\Yori{2.28571}
-\figpt0:(\Xori,\Yori)
-\figdrawbegin{}
-\def\Xmaxx{\Xmax} % To customize the position
-\def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
-\figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
-\figdrawaxes 0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
-\figpt 100: (70,-30)
-\figpt 101: (70, 77)
-\figpt 102: (32, 27)
-\figdrawlineC(
-0 -12.57142,
-2.75862 -4.60132,
-5.51724 2.75726,
-8.27586 9.50433,
-11.03448 15.63988,
-13.79310 21.16392,
-16.55172 26.07643,
-19.31034 30.37744,
-22.06896 34.06692,
-24.82758 37.14489,
-27.58620 39.61134,
-30.34482 41.46628,
-33.10344 42.70969,
-35.86206 43.34160,
-38.62068 43.36198,
-41.37931 42.77085,
-44.13793 41.56820,
-46.89655 39.75403,
-49.65517 37.32835,
-52.41379 34.29114,
-55.17241 30.64243,
-57.93103 26.38219,
-60.68965 21.51044,
-63.44827 16.02717,
-66.20689 9.93239,
-68.96551 3.22609,
-71.72413 -4.09172,
-74.48275 -12.02106,
-77.24137 -20.56191,
-79.99999 -29.71428
-)
-\figdrawlineC(
-0 62.85714,
-2.75862 54.88703,
-5.51724 47.52845,
-8.27586 40.78138,
-11.03448 34.64582,
-13.79310 29.12179,
-16.55172 24.20927,
-19.31034 19.90827,
-22.06896 16.21878,
-24.82758 13.14081,
-27.58620 10.67436,
-30.34482 8.81943,
-33.10344 7.57601,
-35.86206 6.94411,
-38.62068 6.92373,
-41.37931 7.51486,
-44.13793 8.71751,
-46.89655 10.53167,
-49.65517 12.95736,
-52.41379 15.99456,
-55.17241 19.64328,
-57.93103 23.90351,
-60.68965 28.77526,
-63.44827 34.25853,
-66.20689 40.35332,
-68.96551 47.05962,
-71.72413 54.37744,
-74.48275 62.30677,
-77.24137 70.84763,
-79.99999 79.99999
-)
-\figdrawend
-\figvisu{\figBoxA}{}{%
-\figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
-\figwritee 1:(5pt)     \figwriten 2:(5pt)
-\figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
-\figwrites 100: $y=\vc x-x^2$(2)
-\figwriten 101: $y=x^2-\va x+\vb$(2)
-\figwritee 102: $R$(1)
-}
-\centerline{\box\figBoxA}
-
-  \end{marginfigure}
+  \vspace{0.7cm}
+  \figinit{pt}
+  \def\Xmin{-5.33333}
+  \def\Ymin{-2.28571}
+  \def\Xmax{74.66666}
+  \def\Ymax{77.71428}
+  \def\Xori{5.33333}
+  \def\Yori{2.28571}
+  \figpt0:(\Xori,\Yori)
+  \figdrawbegin{}
+  \def\Xmaxx{\Xmax} % To customize the position
+  \def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
+  \figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
+  \figdrawaxes 0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+  \figpt 100: (70,-30)
+  \figpt 101: (70, 77)
+  \figpt 102: (32, 27)
+  \figdrawlineC(
+  0 -12.57142,
+  2.75862 -4.60132,
+  5.51724 2.75726,
+  8.27586 9.50433,
+  11.03448 15.63988,
+  13.79310 21.16392,
+  16.55172 26.07643,
+  19.31034 30.37744,
+  22.06896 34.06692,
+  24.82758 37.14489,
+  27.58620 39.61134,
+  30.34482 41.46628,
+  33.10344 42.70969,
+  35.86206 43.34160,
+  38.62068 43.36198,
+  41.37931 42.77085,
+  44.13793 41.56820,
+  46.89655 39.75403,
+  49.65517 37.32835,
+  52.41379 34.29114,
+  55.17241 30.64243,
+  57.93103 26.38219,
+  60.68965 21.51044,
+  63.44827 16.02717,
+  66.20689 9.93239,
+  68.96551 3.22609,
+  71.72413 -4.09172,
+  74.48275 -12.02106,
+  77.24137 -20.56191,
+  79.99999 -29.71428
+  )
+  \figdrawlineC(
+  0 62.85714,
+  2.75862 54.88703,
+  5.51724 47.52845,
+  8.27586 40.78138,
+  11.03448 34.64582,
+  13.79310 29.12179,
+  16.55172 24.20927,
+  19.31034 19.90827,
+  22.06896 16.21878,
+  24.82758 13.14081,
+  27.58620 10.67436,
+  30.34482 8.81943,
+  33.10344 7.57601,
+  35.86206 6.94411,
+  38.62068 6.92373,
+  41.37931 7.51486,
+  44.13793 8.71751,
+  46.89655 10.53167,
+  49.65517 12.95736,
+  52.41379 15.99456,
+  55.17241 19.64328,
+  57.93103 23.90351,
+  60.68965 28.77526,
+  63.44827 34.25853,
+  66.20689 40.35332,
+  68.96551 47.05962,
+  71.72413 54.37744,
+  74.48275 62.30677,
+  77.24137 70.84763,
+  79.99999 79.99999
+  )
+  \figdrawend
+  \figvisu{\figBoxA}{}{%
+  \Large
+  \figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+  \figwritee 1:(5pt)     \figwriten 2:(5pt)
+  \figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
+  \figwrites 100: $y=\vc x-x^2$(2)
+  \figwriten 101: $y=x^2-\va x+\vb$(2)
+  \figwritee 102: $R$(1)
+  }
+  \centerline{\box\figBoxA}
 \fi 
 
 \begin{solution}[\fullpage]
 	The two parabolas intersect at points when 
   \begin{align}
-    x^2-\va x + \vb &= \vc x - x^2 \implies 2x^2 - \vd x + \vb = 0 \\ 
+    x^2-\va x + \vb &= \vc x - x^2 \\
+    \implies 2x^2 - \vd x + \vb &= 0 \\ 
     \implies x^2-\ve x + \vf &= 0 \implies x=\vx,\vy 
   \end{align}
 	
 	The required area $A$ of region $R$ is therefore
 	\begin{align}
 	  A &= \int_\vx^\vy\left[ (\vc x-x^2) - (x^2-\va x + \vb)\right]\ud x \\
-	    &= \int_\vx^\vy (\vd x - 2x^2 - \vb) \ud x = \left[ \ve x^2 -\dfrac{2}{3}x^3 - \vb x\right]_\vx^\vy \\
+	    &= \int_\vx^\vy (\vd x - 2x^2 - \vb) \ud x \\
+      &= \left[ \ve x^2 -\dfrac{2}{3}x^3 - \vb x\right]_\vx^\vy \\
       &= \left(\c - \dfrac\d\e - \f\right) - \left( \o-\dfrac\p\q - \r\right) = \WRITEFRAC\vm\vn
 	\end{align}
 \end{solution}

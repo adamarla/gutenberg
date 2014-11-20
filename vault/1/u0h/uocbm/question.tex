@@ -1,123 +1,170 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand\va{2}
+  \renewcommand\vx{3}
+  \renewcommand\vz{\dfrac{23}{8}}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\va{4}
+    \renewcommand\vx{3}
+    \renewcommand\vz{\dfrac{35}{4}}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\va{4}
+      \renewcommand\vx{4}
+      \renewcommand\vz{\dfrac{40}{3}}
+    }{
+      \renewcommand\va{2}
+      \renewcommand\vx{4}
+      \renewcommand\vz{5}
+    }
+  }
+}
+\SQUARE\va\vs
+\DIVIDE\vs{2}\vb
+\SQUARE\vx\vw
+\EXPR[0]\vy{\vw - \va*\vx + \vb}
 
-\question[4] Compute the area contained between the parabola $y=x^2-2x+2$, the
-tangent to it at point $(3,5)$ and the $x$ and $y$ axes
+\EXPR[0]\vm{2*\vx-\va}
+\FRACDIV\vm{1}{2}{1}\vj\vk
+\LINEINTERCEPT\vx\vy\vm{1}\a\b
+\FRACMULT\a\b{-1}{1}\c\d
 
+\FRACDIV\a\b{-\vm}{1}\ve\vf
+\DIVIDE\va{2}\vg
+
+\question[4] Compute the area contained between the parabola $y=x^2-\va x+\vb$, the
+tangent to it at point $A=(\vx,\vy)$ and the $x$ and $y$ axes.
+
+\watchout
 
 \ifprintanswers
-  \begin{marginfigure}
-\figinit{pt}
-\def\Xmin{-10.00000}
-\def\Ymin{-5.58139}
-\def\Xmax{80.00000}
-\def\Ymax{74.41860}
-\def\Xori{0}
-\def\Yori{5.58139}
-\figpt0:(\Xori,\Yori)
-\figpt 100: (10,10)
-\figpt 101: (20,20)
-\figdrawbegin{}
-\def\Xmaxx{\Xmax} % To customize the position
-\def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
-\figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
-\figdrawaxes 0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
-\figdrawline[100,101]
-\figdrawarrow[100,101]
-\figdrawlineC(
-0 -46.51162,
-2.75862 -42.40577,
-5.51724 -38.29991,
-8.27586 -34.19406,
-11.03448 -30.08821,
-13.79310 -25.98235,
-16.55172 -21.87650,
-19.31034 -17.77064,
-22.06896 -13.66479,
-24.82758 -9.55894,
-27.58620 -5.45308,
-30.34482 -1.34723,
-33.10344 2.75862,
-35.86206 6.86447,
-38.62068 10.97032,
-41.37931 15.07618,
-44.13793 19.18203,
-46.89655 23.28789,
-49.65517 27.39374,
-52.41379 31.49959,
-55.17241 35.60545,
-57.93103 39.71130,
-60.68965 43.81716,
-63.44827 47.92301,
-66.20689 52.02886,
-68.96551 56.13472,
-71.72413 60.24057,
-74.48275 64.34643,
-77.24137 68.45228,
-79.99999 72.55813
-)
-\figdrawlineC(
-0 20.46511,
-2.75862 18.55377,
-5.51724 16.92558,
-8.27586 15.58056,
-11.03448 14.51870,
-13.79310 13.74001,
-16.55172 13.24447,
-19.31034 13.03210,
-22.06896 13.10289,
-24.82758 13.45684,
-27.58620 14.09396,
-30.34482 15.01424,
-33.10344 16.21768,
-35.86206 17.70428,
-38.62068 19.47404,
-41.37931 21.52697,
-44.13793 23.86306,
-46.89655 26.48231,
-49.65517 29.38473,
-52.41379 32.57030,
-55.17241 36.03904,
-57.93103 39.79094,
-60.68965 43.82601,
-63.44827 48.14423,
-66.20689 52.74562,
-68.96551 57.63017,
-71.72413 62.79788,
-74.48275 68.24876,
-77.24137 73.98280,
-79.99999 79.99999
-)
-\figdrawend
-\figvisu{\figBoxA}{}{%
-\figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
-\figwritee 1:(5pt)     \figwriten 2:(5pt)
-\figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
-\figwriten 101: $R$(2)
-}
-\centerline{\box\figBoxA}
-
-  \end{marginfigure}
+  \figinit{pt}
+  \def\Xmin{-10.00000}
+  \def\Ymin{-5.58139}
+  \def\Xmax{80.00000}
+  \def\Ymax{74.41860}
+  \def\Xori{0}
+  \def\Yori{5.58139}
+  \figpt0:(\Xori,\Yori)
+  \figpt 100: (10,10)
+  \figpt 101: (20,20)
+  \figpt 11: $y=x^2-\va x + \vb$(80,80)
+  \figpt 12: $\text{Tangent}$(0,-47)
+  \figpt 20: $A$(60.7,43.8)
+  \figpt 21: (60.7,0)
+  \figpt 22: $B$(33.2,4)
+  \figdrawbegin{}
+  \def\Xmaxx{\Xmax} % To customize the position
+  \def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
+  \figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
+  \figdrawaxes 0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+  %\figdrawline[100,101]
+  %\figdrawarrow[100,101]
+  \ifprintanswers
+    \figset general(dash=5)
+      \figdrawline [20,21]
+  \fi
+  \figset general(dash=8)
+    \figdrawlineC(
+    0 -46.51162,
+    2.75862 -42.40577,
+    5.51724 -38.29991,
+    8.27586 -34.19406,
+    11.03448 -30.08821,
+    13.79310 -25.98235,
+    16.55172 -21.87650,
+    19.31034 -17.77064,
+    22.06896 -13.66479,
+    24.82758 -9.55894,
+    27.58620 -5.45308,
+    30.34482 -1.34723,
+    33.10344 2.75862,
+    35.86206 6.86447,
+    38.62068 10.97032,
+    41.37931 15.07618,
+    44.13793 19.18203,
+    46.89655 23.28789,
+    49.65517 27.39374,
+    52.41379 31.49959,
+    55.17241 35.60545,
+    57.93103 39.71130,
+    60.68965 43.81716,
+    63.44827 47.92301,
+    66.20689 52.02886,
+    68.96551 56.13472,
+    71.72413 60.24057,
+    74.48275 64.34643,
+    77.24137 68.45228,
+    79.99999 72.55813
+    )
+  \figset general(dash=1)
+    \figdrawlineC(
+    0 20.46511,
+    2.75862 18.55377,
+    5.51724 16.92558,
+    8.27586 15.58056,
+    11.03448 14.51870,
+    13.79310 13.74001,
+    16.55172 13.24447,
+    19.31034 13.03210,
+    22.06896 13.10289,
+    24.82758 13.45684,
+    27.58620 14.09396,
+    30.34482 15.01424,
+    33.10344 16.21768,
+    35.86206 17.70428,
+    38.62068 19.47404,
+    41.37931 21.52697,
+    44.13793 23.86306,
+    46.89655 26.48231,
+    49.65517 29.38473,
+    52.41379 32.57030,
+    55.17241 36.03904,
+    57.93103 39.79094,
+    60.68965 43.82601,
+    63.44827 48.14423,
+    66.20689 52.74562,
+    68.96551 57.63017,
+    71.72413 62.79788,
+    74.48275 68.24876,
+    77.24137 73.98280,
+    79.99999 79.99999
+    )
+  \figdrawend
+  \figvisu{\figBoxA}{}{%
+    \large
+    \figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+    \figwritee 1:(5pt)     \figwriten 2:(5pt)
+    \figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
+    %\figwriten 101: $R$(2)
+    \figwriten 11:(3)
+    \figwrites 12:(3)
+    \figset write(mark=$\bullet$)
+    \figwritee 20:(2)
+    \ifprintanswers\figwritese 22:(2)\fi
+  }
+  \vspace{0.7cm}
+  \centerline{\box\figBoxA}
 \fi 
 
 \begin{solution}[\fullpage]
-   First, lets find the equation for the tangent to the parabola at $(3,5)$
+   First, lets find the equation for the tangent to the parabola at $(\vx,\vy)$
    \begin{align}
-      \text{Slope} &= \dfrac{\ud}{\ud x}(x^2-2x+2) \\
-                   &= (2x-2) \\
-                   &= 4 \text{ when } x = 3
+      \text{Slope} &= \dfrac{\ud}{\ud x}(x^2-\va x + \vb) \\
+                   &= (2x-\va) = \vm \text{ when } x = \vx
    \end{align}
    The equation of the tangent, therefore, would be 
+   \[ \dfrac{y-\vy}{x-\vx} = \vm\implies y = \WRITELINE\vm{1}\a\b \]
+   This tangent will cut the $x-$axis at $B$ so that 
+   \[ y = \WRITELINE\vm{1}\a\b = 0 \implies x = \WRITEFRAC[false]\ve\vf \] 
+   The area we are seeking is therefore simply 
    \begin{align}
-       \dfrac{y-5}{x-3} &= 4 \\
-       \Rightarrow y &= 4x - 7
-   \end{align}
-   And note that the tangent cuts the $x-axis$ when $y = 4x - 7 = 0 \Rightarrow x = \frac{7}{4}$
-   
-   Therefore, the required area $A$ of region $R$ is given by
-   \begin{align}
-      A &= \int_0^3 (x^2-2x+2)\ud x - \int_{\frac{7}{4}}^3 (4x - 7) \ud x \\
-        &= \left[ \dfrac{x^3}{3}-x^2+2x\right]_0^3 - \left[ 2x^2-7x \right]_{\frac{7}{4}}^3 \\
-        &= \left[(9-9+6)-0 \right] - \left[(18-21)-(2\cdot\frac{49}{16}-\frac{49}{4}) \right] \\
-        &= \frac{23}{8} = 2\frac{7}{8}
+      R &= \underbrace{\text{Area under parabola}}_{0\to A} - \underbrace{\text{Area under tangent}}_{B\to A} \\
+        &= \int_0^{\vx}(x^2-\va x+\vb)\ud x - \int_{\frac\ve\vf}^{\vx}(\WRITELINE\vm{1}\a\b)\ud x \\
+        &= \left[\dfrac{x^3}{3}-\vg x^2 + \vb x \right]_0^{\vx} - 
+        \left[ \WRITEFRAC[false]\vj\vk x^2-\WRITEFRAC[false]\c\d x\right]_{\frac\ve\vf}^{\vx} = \vz\text{ sq.units}
    \end{align}
 \end{solution}
+
+\ifprintanswers\begin{codex}$\vz$ sq.units\end{codex}\fi

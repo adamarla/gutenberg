@@ -6,53 +6,55 @@ money to buy only 120 sq. meters of tile. How wide can you make the track then?
 
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100: $A$(0,0)
-      \figpt 101: $B$(90,0)
-      \figpt 102: $C$(90,60)
-      \figpt 103: $D$(0,60)
-      \figpt 104: $E$(15,15)
-      \figpt 105: $F$(75,15)
-      \figpt 106: $G$(75,45)
-      \figpt 107: $H$(15,45)
-      \figpt 204: (0,15)
-      \figpt 205: (90,15)
-      \figpt 206: (90,45)
-      \figpt 207: (0,45)
-    \figdrawbegin{}
-      \figset (fillmode=yes,color=0.7)
-      \figdrawline [100,101,102,103,100]
-      \figset (fillmode=yes,color=1)
-      \figdrawline [104,105,106,107,104]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-      \figwrites 100:(2)
-      \figwrites 101:(2)
-      \figwritene 104:(1)
-      \figwritenw 105:(1)
-      \figwriten 102:(2)
-      \figwriten 103:(2)
-      \figwritesw 106:(1)
-      \figwritese 107:(1)
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
+  \figinit{pt}
+    \figpt 100: $A$(0,0)
+    \figpt 101: $B$(90,0)
+    \figpt 102: $C$(90,60)
+    \figpt 103: $D$(0,60)
+    \figpt 104: $E$(15,15)
+    \figpt 105: $F$(75,15)
+    \figpt 106: $G$(75,45)
+    \figpt 107: $H$(15,45)
+    \figpt 204: (0,15)
+    \figpt 205: (90,15)
+    \figpt 206: (90,45)
+    \figpt 207: (0,45)
+  \figdrawbegin{}
+    \figset (fillmode=yes,color=0.7)
+    \figdrawline [100,101,102,103,100]
+    \figset (fillmode=yes,color=1)
+    \figdrawline [104,105,106,107,104]
+  \figdrawend
+  \figvisu{\figBoxA}{}{%
+    \large
+    \figwrites 100:(2)
+    \figwrites 101:(2)
+    \figwritene 104:(1)
+    \figwritenw 105:(1)
+    \figwriten 102:(2)
+    \figwriten 103:(2)
+    \figwritesw 106:(1)
+    \figwritese 107:(1)
+  }
+  \vspace{0.7cm}
+  \centerline{\box\figBoxA}
 \fi 
 
 \begin{solution}[\halfpage]
-  The situation is \asif. The shaded portion is the walking track and $EFGH$ is the field
+  The situation is as shown in the figure. 
+  
+  The shaded portion is the walking track and $EFGH$ is the field.
 
   Now, if $d$ be the (constant) width of the walking track, then
   \begin{align}
   	2\times\left[\underbrace{(16+2d)\cdot d}_{\text{along the length}} + 
   	\underbrace{10\cdot d}_{\text{side strips}} \right] &= 120 \\
-  	\Rightarrow 16d + 2d^2 + 10d &= 60 \\
-  	\Rightarrow d^2 + 13d - 30 &= 0 \\
-  	\Rightarrow d &= 2, -15
+  	\implies 16d + 2d^2 + 10d &= 60 \\
+  	\implies d^2 + 13d - 30 &= 0 \\
+  	\implies d &= 2, -15
   \end{align}
   
   As the walking track  can be only of a positive width, only $d = 2$ makes sense. 
 \end{solution}
 
+\ifprintanswers\begin{codex}\end{codex}\fi
