@@ -170,7 +170,7 @@ function open_document {
 
 function open_file {
   # Note that TeX is being written in the reverse order
-  sed -i "1i \\\\\\documentclass{tufte-exam}" $1
+  sed -i "1i \\\\\\documentclass[justified]{tufte-exam}" $1
 }
 
 

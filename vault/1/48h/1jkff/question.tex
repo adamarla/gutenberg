@@ -100,28 +100,23 @@ $\frac{AN}{AM} = \frac{\vc}{\vd}$ (see figure). What is the equation of the line
 \fi
 \figdrawend
 \figvisu{\figBoxA}{}{%
+\large
 \figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
 \figwritee 1:(5pt)     \figwriten 2:(5pt)
 \figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
 \figset write(mark=$\bullet$)
 \figwritese 100:(3)
 \figwritese 101:(3)
-\figwritese 0: $O$(3)
+\figwritesw 0: $O$(3)
 \figwritese 102:(3)
 \ifprintanswers
-  \figwritee 103:(2)
-  \figwrites 104:(2)
+  \figwritee 103:(3)
+  \figwrites 104:(3)
 \fi
 }
 
-\ifprintanswers
-  \begin{marginfigure}
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\else
-  \vspace{1cm}
-  \centerline{\box\figBoxA}
-\fi
+\vspace{0.7cm}
+\centerline{\box\figBoxA}
 
 \begin{solution}[\halfpage]
 	First, drop perpendiculars from $A$ on the axes to get points $J(0,\vb)$ and $K(-\va,0)$. 

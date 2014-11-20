@@ -3,135 +3,145 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{\frac{1}{\sqrt{3}}} % tan \vbfour 
-  \renewcommand{\vbtwo}{\sqrt{3}} % 1/ \vbone 
-  \renewcommand{\vbthree}{8\sqrt{3}}
-  \renewcommand{\vbfour}{30} % angle of \perp with x-axis
-  \renewcommand{\vbfive}{4} %m 
-  \renewcommand{\vbsix}{4\sqrt{3}} %n 
+  \renewcommand{\va}{\frac{1}{\sqrt{3}}} % tan \vd 
+  \renewcommand{\vb}{\sqrt{3}} % 1/ \va 
+  \renewcommand{\vc}{8\sqrt{3}}
+  \renewcommand{\vd}{30} % angle of \perp with x-axis
+  \renewcommand{\ve}{4} %m 
+  \renewcommand{\vf}{4\sqrt{3}} %n 
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{\sqrt{3}}
-    \renewcommand{\vbtwo}{\dfrac{1}{\sqrt{3}}}
-    \renewcommand{\vbthree}{\dfrac{8}{\sqrt{3}}}
-    \renewcommand{\vbfour}{60}
-    \renewcommand{\vbfive}{4}
-    \renewcommand{\vbsix}{\frac{4}{\sqrt{3}}}
+    \renewcommand{\va}{\sqrt{3}}
+    \renewcommand{\vb}{\dfrac{1}{\sqrt{3}}}
+    \renewcommand{\vc}{\dfrac{8}{\sqrt{3}}}
+    \renewcommand{\vd}{60}
+    \renewcommand{\ve}{4}
+    \renewcommand{\vf}{\frac{4}{\sqrt{3}}}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{\frac{1}{\sqrt{3}}}
-      \renewcommand{\vbtwo}{\sqrt{3}}
-      \renewcommand{\vbthree}{32\sqrt{3}}
-      \renewcommand{\vbfour}{30} 
-      \renewcommand{\vbfive}{8}
-      \renewcommand{\vbsix}{8\sqrt{3}}
+      \renewcommand{\va}{\frac{1}{\sqrt{3}}}
+      \renewcommand{\vb}{\sqrt{3}}
+      \renewcommand{\vc}{32\sqrt{3}}
+      \renewcommand{\vd}{30} 
+      \renewcommand{\ve}{8}
+      \renewcommand{\vf}{8\sqrt{3}}
     }{
       % variables 
-      \renewcommand{\vbone}{\sqrt{3}}
-      \renewcommand{\vbtwo}{\dfrac{1}{\sqrt{3}}}
-      \renewcommand{\vbthree}{\dfrac{32}{\sqrt{3}}}
-      \renewcommand{\vbfour}{60}
-      \renewcommand{\vbfive}{8}
-      \renewcommand{\vbsix}{\frac{8}{\sqrt{3}}}
+      \renewcommand{\va}{\sqrt{3}}
+      \renewcommand{\vb}{\dfrac{1}{\sqrt{3}}}
+      \renewcommand{\vc}{\dfrac{32}{\sqrt{3}}}
+      \renewcommand{\vd}{60}
+      \renewcommand{\ve}{8}
+      \renewcommand{\vf}{\frac{8}{\sqrt{3}}}
     }
   }
 }
 
-\question[4] If the perpendicular from the origin to a line $L_1$ makes an angle of $\ang{\vbfour}$ 
-with the $x$-axis and the triangle formed by $L_1$ and the axes has an area of $\vbthree$ units,
-then find the equation of $L_1$
-
+\question[4] If the perpendicular from the origin to a line $L_1$ makes an angle of $\ang{\vd}$ 
+with the $x$-axis and the triangle formed by $L_1$ and the axes has an area of $\vc$ units,
+then find the equation of $L_1$.
 
 \watchout
 
 \ifprintanswers
-	\begin{marginfigure}
-		% 1. Definition of characteristic points
-\figinit{pt}
-\def\Xmin{-13.33333}
-\def\Ymin{-13.33333}
-\def\Xmax{66.66666}
-\def\Ymax{66.66666}
-\def\Xori{13.33333}
-\def\Yori{13.33333}
-\figpt0:(\Xori,\Yori)
-\figpt 100: $M$(66.2,13.8)
-\figpt 101: $N$(13.5,66)
-\figpt 102: $L_1$(80,0)
-\figptorthoprojline 200 :$K$= 0 /100, 101/
-\figdrawbegin{}
-\def\Xmaxx{\Xmax} % To customize the position
-\def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
-\figdrawline [0,200]
-\figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
-\figdrawaxes 0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
-\figdrawlineC(
-0 79.99999, % y = 3.75
-2.75862 77.24137, % y = 3.59
-5.51724 74.48275, % y = 3.43
-8.27586 71.72413, % y = 3.28
-11.03448 68.96551, % y = 3.12
-13.79310 66.20689, % y = 2.97
-16.55172 63.44827, % y = 2.81
-19.31034 60.68965, % y = 2.66
-22.06896 57.93103, % y = 2.50
-24.82758 55.17241, % y = 2.35
-27.58620 52.41379, % y = 2.19
-30.34482 49.65517, % y = 2.04
-33.10344 46.89655, % y = 1.88
-35.86206 44.13793, % y = 1.73
-38.62068 41.37931, % y = 1.57
-41.37931 38.62068, % y = 1.42
-44.13793 35.86206, % y = 1.26
-46.89655 33.10344, % y = 1.11
-49.65517 30.34482, % y = .95
-52.41379 27.58620, % y = .80
-55.17241 24.82758, % y = .64
-57.93103 22.06896, % y = .49
-60.68965 19.31034, % y = .33
-63.44827 16.55172, % y = .18
-66.20689 13.79310, % y = .02
-68.96551 11.03448, % y = -.12
-71.72413 8.27586, % y = -.28
-74.48275 5.51724, % y = -.43
-77.24137 2.75862, % y = -.59
-79.99999 0
-)
-\figdrawend
-\figvisu{\figBoxA}{}{%
-\figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
-\figwritee 1:(5pt)     \figwriten 2:(5pt)
-\figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
-\figwrites 102:(1)
-\figset write(mark=$\bullet$)
-\figwritesw 100:(2)
-\figwritene 101:(2)
-\figwritesw 0:$O$(2)
-\figwritene 200:(2)
-}
-\centerline{\box\figBoxA}
-
-	\end{marginfigure}
+  \figinit{pt}
+  \def\Xmin{-13.33333}
+  \def\Ymin{-13.33333}
+  \def\Xmax{66.66666}
+  \def\Ymax{66.66666}
+  \def\Xori{13.33333}
+  \def\Yori{13.33333}
+  \figpt0:(\Xori,\Yori)
+  \figpt 100: $M$(66.2,13.8)
+  \figpt 101: $N$(13.5,66)
+  \figpt 102: $L_1$(80,0)
+  \figptorthoprojline 200 :$K$= 0 /100, 101/
+  \figdrawbegin{}
+  \def\Xmaxx{\Xmax} % To customize the position
+  \def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
+  \figdrawline [0,200]
+  \figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
+  \figdrawaxes 0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+  \figdrawlineC(
+  0 79.99999, % y = 3.75
+  2.75862 77.24137, % y = 3.59
+  5.51724 74.48275, % y = 3.43
+  8.27586 71.72413, % y = 3.28
+  11.03448 68.96551, % y = 3.12
+  13.79310 66.20689, % y = 2.97
+  16.55172 63.44827, % y = 2.81
+  19.31034 60.68965, % y = 2.66
+  22.06896 57.93103, % y = 2.50
+  24.82758 55.17241, % y = 2.35
+  27.58620 52.41379, % y = 2.19
+  30.34482 49.65517, % y = 2.04
+  33.10344 46.89655, % y = 1.88
+  35.86206 44.13793, % y = 1.73
+  38.62068 41.37931, % y = 1.57
+  41.37931 38.62068, % y = 1.42
+  44.13793 35.86206, % y = 1.26
+  46.89655 33.10344, % y = 1.11
+  49.65517 30.34482, % y = .95
+  52.41379 27.58620, % y = .80
+  55.17241 24.82758, % y = .64
+  57.93103 22.06896, % y = .49
+  60.68965 19.31034, % y = .33
+  63.44827 16.55172, % y = .18
+  66.20689 13.79310, % y = .02
+  68.96551 11.03448, % y = -.12
+  71.72413 8.27586, % y = -.28
+  74.48275 5.51724, % y = -.43
+  77.24137 2.75862, % y = -.59
+  79.99999 0
+  )
+  \figdrawend
+  \figvisu{\figBoxA}{}{%
+  \figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
+  \figwritee 1:(5pt)     \figwriten 2:(5pt)
+  \figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
+  \figwrites 102:(1)
+  \figset write(mark=$\bullet$)
+  \figwritesw 100:(2)
+  \figwritene 101:(2)
+  \figwritesw 0:$O$(2)
+  \figwritene 200:(2)
+  }
+  \vspace{0.7cm}
+  \centerline{\box\figBoxA}
 \fi 
 
 \begin{solution}[\halfpage]
-	The situation is \asif. $OK \perp L_1 \Rightarrow$ slope of $L_1 = -\dfrac{1}{\tan\ang{\vbfour}} = -\vbtwo$
-	
+	The situation is \asif. 
+  \[ OK \perp L_1 \implies\text{ slope of }L_1 = -\dfrac{1}{\tan\ang{\vd}} = -\vb \]
 	Now, if $M = (m,0)$ and $N = (0,n)$, then looking at $L_1$
 	\begin{align}
-		\dfrac{n-0}{0-m} &= -\vbtwo \Rightarrow n = \vbtwo m
+		\dfrac{n-0}{0-m} &= -\vb \implies n = \vb m
 	\end{align}
 	Moreover, the area of $\triangle OMN$ is 
 	\begin{align}
-		\dfrac{1}{2}m\cdot n &= \dfrac{1}{2}\vbtwo m\cdot m = \vbthree \\
-		\Rightarrow m &= \pm\vbfive \text{ and } \therefore n = \pm\vbsix
+		\dfrac{1}{2}m\cdot n &= \dfrac{1}{2}\vb m\cdot m = \vc \\
+		\implies m &= \pm\ve \text{ and } \therefore n = \pm\vf
 	\end{align}
 	There would be \textit{two} lines that meet our criterion. And their equations would be 
 	\begin{align}
-		\dfrac{x}{\vbfive} + \dfrac{y}{\vbsix} &= 1 \\
-		\text{ and } -\dfrac{x}{\vbfive} - \dfrac{y}{\vbsix} &= 1
-    \end{align}
+		\dfrac{x}{\ve} + \dfrac{y}{\vf} &= 1 \\
+		\text{ and } -\dfrac{x}{\ve} - \dfrac{y}{\vf} &= 1
+  \end{align}
+  That we got two lines means there are two such triangles. 
+
+  One of them is in the first quadrant (shown). The other will be formed by the points 
+  \[ M'=(-\ve,0), N'=(0,-\vf)\text{ and } O = (0,0) \] 
+  in the third quadrant (not shown). 
+
+  You can say that one could have similarly sized triangles in the second and fourth 
+  quadrants also ($\implies$ same area).
+
+  But for those triangles, the perpendicular from the origin will not be at $\ang\vd$.
 \end{solution}
 
+\ifprintanswers\begin{codex}
+  $\dfrac{x}{\ve} + \dfrac{y}{\vf} = 1\text{ and }
+  -\dfrac{x}{\ve} - \dfrac{y}{\vf} = 1$
+\end{codex}\fi

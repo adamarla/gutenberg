@@ -1,14 +1,28 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand\va{3}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\va{3}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\va{4}
+    }{
+      \renewcommand\va{5}
+    }
+  }
+}
 
-\question[4] The figure alongside shows the plot of the curve $y=(x^2+2x)\cdot e^{-x}$.
-Find the area contained between it and the $x-axis$.
+\SUBTRACT\va{2}\vb
+\SQUARE\va\vc
+\SUBTRACT\va{1}\vd
+\ADD\vc\vd\ve
 
+\question[4] The figure below shows the plot of the curve \[y=(x^2+\va x)\cdot e^{-x}\]
+Find the area contained between it and the $x-$axis.
 
-\ifprintanswers
-\fi 
+\watchout
 
-\begin{marginfigure}
-  % 1. Definition of characteristic points
 \figinit{pt}
 \def\Xmin{-66.66666}
 \def\Ymin{-14.57502}
@@ -17,7 +31,7 @@ Find the area contained between it and the $x-axis$.
 \def\Xori{66.66666}
 \def\Yori{14.57502}
 \figpt0:(\Xori,\Yori)
-\figpt 100: (32,13)
+\figpt 100: (32,14)
 \figdrawbegin{}
 \def\Xmaxx{\Xmax} % To customize the position
 \def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
@@ -60,35 +74,54 @@ Find the area contained between it and the $x-axis$.
 \figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
 \figwritee 1:(5pt)     \figwriten 2:(5pt)
 \figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
-\figwrites 100:$R$(2)
+\ifprintanswers
+  \large
+  \figwrites 100:$A$(2)
+\fi
 }
-\centerline{\box\figBoxA}
 
-\end{marginfigure}
+\vspace{0.7cm}
+\centerline{\box\figBoxA}
 
 \begin{solution}[\fullpage]
  \begin{align}
-    (x^2+2x)\cdot e^{-x} &= x(x+2)\cdot e^{-x}
+    (x^2+\va x)\cdot e^{-x} &= x(x+\va)\cdot e^{-x}
  \end{align}
- $\Rightarrow$ the curve cuts the $x-axis$ at $x=0$ and $x=-2$
+ $\implies$ the curve cuts the $x-axis$ at $x=0$ and $x=-\va$.
  
- The required area $A$ of region $R$ is therefore
+ The required area $A$ of the region is therefore
  \begin{align}
-    A &= \int_{-2}^0(x^2+2x)e^{-x}\ud x \\
-      &= \int_{-2}^0 (x^2\cdot e^{-x})\ud x + \int_{-2}^0 (2x\cdot e^{-x})\ud x
+    A &= \int_{-\va}^0(x^2+\va x)e^{-x}\ud x \\
+      &= \int_{-\va}^0 (x^2\cdot e^{-x})\ud x + \int_{-\va}^0 (\va x\cdot e^{-x})\ud x
   \end{align}
   
-  Setting $-x = z$, we get 
+  Setting $-x = z\implies \ud x = -\ud z$, we get 
   \begin{align}
-    A &= -\int_2^0(z^2\cdot e^z)\ud z + \int_2^0 (2z\cdot e^z)\ud z \\
-      &= \int_0^2(z^2\cdot e^z)\ud z + \int_2^0 (2z\cdot e^z)\ud z \\
-      &= \underbrace{\left[ (e^{z}z^2)_0^2 - \int_0^2 e^{z}(2z)\ud z \right]}_{\texttt{integration by parts}}
-      + \int_2^0 (2z\cdot e^z)\ud z \\
-      &= \left( e^{z}z^2 \right)_0^2 + 4\cdot\int_2^0 ze^{z}\ud z \\
-      &= 4e^4 + 4\cdot\left( e^{z}(z-1)\right)_2^0 \\
-      &= 4e^2 + 4\cdot(-1-e^2) \\
-      &= -4
- \end{align}
- As area cannot be negative, we simply take the absolute value of the calculated integral.
- And hence, the required area $A = 4$ units
+    A &= -\int_{\va}^0(z^2\cdot e^z)\ud z - \int_{\va}^0 (\va z\cdot e^z)\ud z \\
+      &= \int_0^{\va}(z^2\cdot e^z)\ud z + \int_0^{\va} (\va z\cdot e^z)\ud z
+  \end{align}
+  Looks like we will soon have to evaluate the following integrals 
+  \[ \int z^2\cdot e^z\ud z\text{ and } \int z\cdot e^z\ud z \]
+  And here is how you should think about them. If, 
+  \begin{align}
+    y = z^n\cdot e^z\text{ then }\dfrac{\ud y}{\ud z} &= z^n\cdot e^z + n\cdot z^{n-1}\cdot e^z \\
+    \implies \int\ud y &= \underbrace{\int z^n\cdot e^z\ud z}_{\text{ what we need}} + 
+    n\int z^{n-1}\cdot e^z\ud z \\
+    \implies \int z^n\cdot e^z\ud z &= \underbrace{z^n\cdot e^z}_{=y} - n\cdot\int z^{n-1}\cdot e^z\ud z
+  \end{align}
+  \textbf{Using this general result,} we can now say that 
+  \begin{align}
+    \int z^2\cdot e^z\ud z &= z^2\cdot e^z -2\int z\cdot e^z\ud z \text{ and } \\
+    \int z\cdot e^z\ud z &= z\cdot e^z - \int z^0\cdot e^z\ud z = ze^z - e^z + C \\
+    &= (z-1)\cdot e^z + C 
+  \end{align}
+  And therefore, 
+  \begin{align}
+    A &= \int_0^{\va}(z^2\cdot e^z)\ud z + \int_0^{\va} (\va z\cdot e^z)\ud z \nonumber\\
+      &= \left[ z^2\cdot e^z - 2\int z\cdot e^z\ud z \right]_0^{\va} 
+      + \left[ \va\int z\cdot e^z\ud z \right]_0^{\va} \\ 
+      &= \left[ z^2\cdot e^z + \vb\cdot (z-1)\cdot e^z \right]_0^{\va} = \ve\cdot e^{\va} - 1
+  \end{align}
 \end{solution}
+
+\ifprintanswers\begin{codex}$\ve\cdot e^{\va} - 1$ sq. units\end{codex}\fi

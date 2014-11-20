@@ -54,8 +54,7 @@ aircraft in kilometers per hour? The aircraft maintains its altitude for the $\v
 \end{calcaid}
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}[-100pt]
+  \vspace{0.7cm}
     \figinit{pt}
       \figpt 100: $A$(0,0)
       \figpt 101: $B$(40,0)
@@ -71,6 +70,7 @@ aircraft in kilometers per hour? The aircraft maintains its altitude for the $\v
       \figdrawarccircP 100 ; 16 [101,104] 
     \figdrawend
     \figvisu{\figBoxA}{}{%
+      \Large
       \figwrites 100:(2)
       \figwrites 101:(2)
       \figwrites 102:(2)
@@ -78,7 +78,6 @@ aircraft in kilometers per hour? The aircraft maintains its altitude for the $\v
       \figwriten 104:(2)
     }
     \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 \begin{solution}[\halfpage]
@@ -93,7 +92,8 @@ aircraft in kilometers per hour? The aircraft maintains its altitude for the $\v
 	\begin{align}
     BC &= \vh\text{ km}\cdot(\cot\angle{FAC}-\cot\angle{EAB}) \\
       &= \vh\text{ km}\cdot(\vy-\vx) = \vj\text{ km} \\
-      \implies\text{Speed } &= \dfrac{\vj\text{ km}}{\vt\text{ seconds}}\times 3600\text{ s/hour} = \vs\text{ km/hour}
+      \implies\text{Speed } &= \dfrac{\vj\text{ km}}{\vt\text{ seconds}}\times 3600\text{ s/hour} \\
+      &= \vs\text{ km/hour}
 	\end{align}
 \end{solution}
 \ifprintanswers\begin{codex}$\vs$ km/hour\end{codex}\fi

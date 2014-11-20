@@ -5,79 +5,43 @@ due south of it is $\alpha$ and $\beta$ from a point $B$ due east of it. If $AB=
 then prove that the height of the tower - $H$ - is equal to 
 $\dfrac{d}{\sqrt{\cot^2\alpha + \cot^2\beta}}$
 
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-	\begin{marginfigure}
-		\figinit{pt}
-    \figpt 0:$\texttt{Tower(O)}$ (10,0)
-    \figpt 1:$A$ (10,-40)
-    \figpt 2:$B$ (80,0)
-    \figvectP 10 [1,2]
-    \figpttra 3:$d$= 1/0.5, 10/
-		\figdrawbegin{}
-			\figdrawline[0,1,2,0]
-		\figdrawend
-		\figvisu{\figBoxA}{Top-view}{
-      \figwriten 0:(5)
-      \figwrites 1:(5)
-      \figwritee 2:(5)
-      \figwritese 3:(5)
-    }
-		\centerline{\box\figBoxA}
-	\end{marginfigure}
-
-  \begin{marginfigure}[0.5cm]
-    \figinit{pt}
-      \figpt 0:$A$ (10,0)
-      \figpt 1:$\texttt{Tower(O)}$ (80,0)
-      \figpt 2: (80,50)
-      \figpt 3:$\alpha$ (30,3)
-
-    \figdrawbegin{}
-      \figdrawline [0,1,2,0]
-      \figdrawarccircP 0;13 [1,2]
-    \figdrawend
-    \figvisu{\figBoxA}{South-side}{
-      \figwritesw 0:(5)
-      \figwritee 1:(5)
-      \figwriten 3:(0)
-    }
-		\centerline{\box\figBoxA}
-  \end{marginfigure}
-
-  \begin{marginfigure}[0.5cm]
-    \figinit{pt}
-      \figpt 0:$\texttt{Tower(O)}$ (10,0)
-      \figpt 1:$B$ (80,0)
-      \figpt 2: (10,50)
-      \figpt 3:$\beta$ (60,3)
-
-    \figdrawbegin{}
-      \figdrawline [0,1,2,0]
-      \figdrawarccircP 1;13 [2,0]
-    \figdrawend
-    \figvisu{\figBoxA}{East-side}{
-      \figwrites 0:(5)
-      \figwritee 1:(5)
-      \figwriten 3:(0)
-    }
-		\centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi  
+\vspace{0.7cm}
+\figinit{pt}
+  \figpt 1: $A$(0,0)
+  \figpt 2: $B$(120,30)
+  \figpt 3: (30,30)
+  \figpt 4: $\text{Tower}$(30,90)
+\figdrawbegin{}
+  \figdrawline [1,4,3,1]
+  \figdrawline [3,2,4]
+  \ifprintanswers
+    \figset general (dash=8)
+    \figdrawline [1,2]
+  \fi
+\figdrawend
+\figvisu{\figBoxA}{}{
+  \Large
+  \figset write(mark=$\bullet$)
+  \figwritew 1:(3)
+  \figwritee 2:(3)
+  \figwriten 4:(5)
+}
+\centerline{\box\figBoxA}
 
 \begin{solution}[\fullpage]
 	From the adjoining figures, we know the following:
 	\begin{align}
-		\text{Top-view} &: OA^2 + OB^2 = d^2 \\
-		\text{South-side} &: OX = H = OA \times\tan\alpha \Rightarrow OA = H\cdot\cot\alpha \\
-		\text{East-side} &: OX = H = OB \times\tan\beta \Rightarrow OB = H\cdot\cot\beta
+		\text{(Top-view) } OA^2 + OB^2 &= d^2 \\
+		\text{(Point A) } OX = H &= OA \times\tan\alpha \\
+    \implies OA &= H\cdot\cot\alpha \\
+		\text{(Point B) } OX = H &= OB \times\tan\beta \\
+    \implies OB &= H\cdot\cot\beta
 	\end{align}
 	
 	Substituting (2) and (3) in (1), we get
 	\begin{align}
 		(H\cdot\cot\alpha)^2 + (H\cdot\cot\beta)^2 &= d^2 \\
-		\Rightarrow H^2 &= \dfrac{d^2}{\cot^2\alpha + \cot^2\beta} \\
-		\Rightarrow H &= \dfrac{d}{\sqrt{\cot^2\alpha + \cot^2\beta}}
+		\implies H^2 &= \dfrac{d^2}{\cot^2\alpha + \cot^2\beta} \\
+		\implies H &= \dfrac{d}{\sqrt{\cot^2\alpha + \cot^2\beta}}
 	\end{align}
 \end{solution}
