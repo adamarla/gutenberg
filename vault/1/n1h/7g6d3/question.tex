@@ -38,45 +38,43 @@ he land in order to reach the camp in the shortest possible time?
 \watchout
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-  	\figinit{pt}
-      \figpt 100: (0,0)
-      \figpt 101: (80,0)
-      \figpt 102: (0,120)
-      \figpt 103: (80,120)
-      \figpt 104: (20,20) % boat 
-      \figpt 105: (80,20) % nearest point
-      \figpt 106: (80,110) % camp
-      \figpt 107: (80,80) % landing spot
-      \figpt 200: (50,17)
-      \figpt 201: (82,50)
-      \figpt 202: (82,95)
-  	\figdrawbegin{}
-      \figdrawline [100,102]
-      \figdrawline [101,103]
-      \figdrawline [104,105,106]
-      \figdrawline [104,107]
-      \figdrawline [104,106]
-  	\figdrawend
-  	\figvisu{\figBoxA}{}{
-      \fontfamily{cmss}\selectfont\normalsize
-      \figwrites 104:$\textbf{Boat}$(2)
-      \figwritee 105:$\textbf{Nearest Pt (A)}$(2)
-      \figwritee 106:$\textbf{Camp}$(2)
-      \figwritee 107:$\textbf{Landing Pt}$(2)
-      \figwrites 200:$\vs\text{ km}$(1)
-      \figwritee 201:$x\text{ km}$(1)
-      \figwritee 202:$\vd-x\text{ km}$(1)
-  	}
-  	\centerline{\box\figBoxA}
-  \end{marginfigure}
+  \figinit{pt}
+    \figpt 100: (0,0)
+    \figpt 101: (80,0)
+    \figpt 102: (0,120)
+    \figpt 103: (80,120)
+    \figpt 104: (20,20) % boat 
+    \figpt 105: (80,20) % nearest point
+    \figpt 106: (80,110) % camp
+    \figpt 107: (80,80) % landing spot
+    \figpt 200: (50,17)
+    \figpt 201: (82,50)
+    \figpt 202: (82,95)
+  \figdrawbegin{}
+    \figdrawline [100,102]
+    \figdrawline [101,103]
+    \figdrawline [104,105,106]
+    \figdrawline [104,107]
+    \figdrawline [104,106]
+  \figdrawend
+  \figvisu{\figBoxA}{}{
+    \fontfamily{cmss}\selectfont\normalsize
+    \figwrites 104:$\textbf{Boat}$(2)
+    \figwritee 105:$\textbf{Nearest Pt (A)}$(2)
+    \figwritee 106:$\textbf{Camp}$(2)
+    \figwritee 107:$\textbf{Landing Pt}$(2)
+    \figwrites 200:$\vs\text{ km}$(1)
+    \figwritee 201:$x\text{ km}$(1)
+    \figwritee 202:$\vd-x\text{ km}$(1)
+  }
+  \vspace{0.7cm}
+  \centerline{\box\figBoxA}
 \fi 
 
 \begin{solution}[\fullpage]
-  The situation is as shown in the figure alongside. 
+  The situation is as shown in the figure above. 
 
- \textbf{Step \#1: Find the extreme point(s)} 
+ \textbf{Step \#1: Find the extrema value(s) of $x$} 
 
  If $T$ be the total time it takes row to the landing point  
  and then walk from the landing point to the camp, then
@@ -86,7 +84,7 @@ he land in order to reach the camp in the shortest possible time?
        \implies \dfrac{\ud T}{\ud x} &= 0\text{ when } \dfrac{x}{\sqrt{x^2+\vy}} = \dfrac{\vr}{\vw}
        \text{ or } x = \vx\text{ km} 
    \end{align}
-   \textbf{Step \#2: Is it a maxima or a minima?}
+   \textbf{Step \#2: Maxima or minima?} 
    
    To answer that, we need to find the second derivative.
    \begin{align}
