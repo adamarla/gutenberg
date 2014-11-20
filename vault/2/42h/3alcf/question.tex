@@ -1,42 +1,73 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand\vs{13}
+  \renewcommand\vq{91}
+  \renewcommand\vk{3}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\vs{21}
+    \renewcommand\vq{273}
+    \renewcommand\vk{4}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\vs{14}
+      \renewcommand\vq{84}
+      \renewcommand\vk{2}
+    }{
+      \renewcommand\vs{21}
+      \renewcommand\vq{189}
+      \renewcommand\vk{2}
+    }
+  }
+}
 
-\question[3] The sum of three numbers which form a geometric progression is 13 and the sum of their squares is 91. Find the numbers.
+\SQUARE\vs\va
+\MULTIPLY\vs{2}\vb
+\SUBTRACT\va\vq\vc
+\FRACTIONSIMPLIFY\vc\vb\vm\a % a = 1
+\SUBTRACT\vs\vm\vn
 
+\DIVIDE\vm\vk\vx
+\MULTIPLY\vm\vk\vy
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
+\question[3] The sum of three consecutive terms in a geometric progression is $\vs$ 
+and the sum of their squares is $\vq$. What are the numbers? 
+
+\watchout
 
 \begin{solution}[\halfpage]
-  Let the three numbers be $\dfrac{a}{r}$, $a$ and $ar$. The conditions we have been given are:
+  If the three consecutive terms be $a, ar$ and $ar^2$, then 
   \begin{align}
-    \dfrac{a}{r} + a + ar                       &= 13 \\
-    \dfrac{a^2}{r^2} + a^2 + {ar}^2 &= 91
+    a + ar + ar^2 &= a\cdot (1+r +r^2) = \vs \\
+    a^2 + a^2r^2 + a^2r^4 &= a^2\cdot(1 + r^2 + r^4) = \vq
+  \end{align} 
+  \textbf{Insight \#1}
+  \begin{align}
+    1+r^2+r^4 &= (1+r+r^2)^2 - 2r - 2r^ - 2r^3 \\
+    &= (1+r+r^2)^2 - 2r\cdot (1+r+r^2)
   \end{align}
+  And therefore, 
+  \begin{align}
+    \underbrace{a^2\cdot (1+r^2 + r^4)}_{=\vq} &= 
+    \underbrace{a^2\cdot(1+r+r^2)^2}_{=\vs^2} - 2\cdot ar\cdot\underbrace{a\cdot (1+r+r^2)}_{=\vs} \\
+    \implies\vb\cdot ar &= \va - \vq = \vc \\
+    \implies\underbrace{(a\cdot r)}_{\text{middle term}} &= \vm\implies a = \dfrac\vm{r} \\
+    \therefore a\cdot (1+r+r^2) &= \dfrac\vm{r}\cdot (1+r+r^2) = \vs \\
+    \implies \vm r^2 -\vn r + \vm &= 0 
+  \end{align}
+  Solving this last quadratic equation for $r$ gives 
 
-  Consider equation (1) and take square on both sides,
-  \begin{align}
-    a^2(\dfrac{1}{r} + 1 + r)^2 &= 169
-  \end{align}
-  
-  Subtract equation (2) from equation (3),
-  \begin{align}
-    a^2(\dfrac{1}{r} + 1 + r)^2 - a^2(\dfrac{1}{r^2} + 1 + r^2) &= 169 - 91 \\
-                                                                 a(\dfrac{a}{r} + a + ar) &= 39
-  \end{align}
-  
-  Substitute equation (1) into equation (5),
-  \begin{align}
-    a = 3
-  \end{align}  
-  
-  Substitute the value of $a$ into equation (1),
-  \begin{align}
-    \dfrac{3}{r} + 3 + 3r &= 13 \\
-    (3r - 1)(r - 3)                &= 0
-  \end{align}  
-  
-  $r$ may be equal to $\dfrac{1}{3}$ or $3$. Either way the numbers would be $1$, $3$ and $9$.
-  
+  \begin{tabular}{c c c} 
+    \toprule
+      $r$ & $a=\frac\vm{r}$ & Numbers \\
+    \midrule
+      $\frac{1}\vk$ & $\vy$ & $(\vy,\vm,\vx)$ \\ 
+      $\vk$ & $\vx$ & $(\vx,\vm,\vy)$ \\ 
+    \bottomrule
+  \end{tabular}
+
+  Either way, the three numbers are 
+  \[ \vx,\vm\text{ and }\vy \] 
 \end{solution}
 
+\ifprintanswers\begin{codex}$\vx,\vm\text{ and }\vy$\end{codex}\fi
