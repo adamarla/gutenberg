@@ -3,56 +3,41 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{Heptagon}
-  \renewcommand{\vbtwo}{7}
-  \renewcommand{\vbthree}{14}
+  \renewcommand{\va}{heptagon}
+  \renewcommand{\vb}{7}
+  \renewcommand{\vc}{14}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{Decagon}
-    \renewcommand{\vbtwo}{10}
-    \renewcommand{\vbthree}{35}
+    \renewcommand{\va}{decagon}
+    \renewcommand{\vb}{10}
+    \renewcommand{\vc}{35}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{Octagon}
-      \renewcommand{\vbtwo}{8}
-      \renewcommand{\vbthree}{20}
+      \renewcommand{\va}{octagon}
+      \renewcommand{\vb}{8}
+      \renewcommand{\vc}{20}
     }{
       % variables 
-      \renewcommand{\vbone}{Nonagon}
-      \renewcommand{\vbtwo}{9}
-      \renewcommand{\vbthree}{27}
+      \renewcommand{\va}{nonagon}
+      \renewcommand{\vb}{9}
+      \renewcommand{\vc}{27}
     }
   }
 }
 
-\question[2] How many diagonals does a $\vbone$ ($\vbtwo$ sided figure) have?
-
+\question[2] How many diagonals does a \textbf{\va } have? A \text{\va } has $\vb$ vertices. 
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}[\mcq]
-  To compute the diagonal we subtract the number of sides of the polygon from
-  the total number of edges (lines connecting a pair of points taken together)
-  \begin{align}
-     &\encr{\vbtwo}{2}-\vbtwo \\
-    =\quad&\vbthree
-  \end{align}
+  \textbf{Insight \#1: If its not a side then its a diagonal}
 
+  Which means, that if $N_{\text{all}} = $ number of ways of connecting any two of the $\vb$ points, then 
+  \begin{align}
+    N_{\text{all}} &= \binom\vb{2} \\
+    \text{ and }N_{\text{diagonals}} &= N_{\text{all}} - N_{\text{sides}} = \binom\vb{2} - \vb = \vc
+  \end{align}
 \end{solution}
+\ifprintanswers\begin{codex}$\vc$\end{codex}\fi
