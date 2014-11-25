@@ -2,68 +2,64 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{99}
-  \renewcommand{\vbtwo}{9}
-  \renewcommand{\vbthree}{1}
-  \renewcommand{\vbfour}{600}
+  \renewcommand{\va}{99}
+  \renewcommand{\vb}{9}
+  \renewcommand{\vc}{1}
+  \renewcommand{\vd}{600}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{95}
-    \renewcommand{\vbtwo}{4}
-    \renewcommand{\vbthree}{3}
-    \renewcommand{\vbfour}{250}
+    \renewcommand{\va}{95}
+    \renewcommand{\vb}{4}
+    \renewcommand{\vc}{3}
+    \renewcommand{\vd}{250}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{97}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{1}
-      \renewcommand{\vbfour}{750}
+      \renewcommand{\va}{97}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{1}
+      \renewcommand{\vd}{750}
     }{
       % variables 
-      \renewcommand{\vbone}{98}
-      \renewcommand{\vbtwo}{7}
-      \renewcommand{\vbthree}{3}
-      \renewcommand{\vbfour}{400}
+      \renewcommand{\va}{98}
+      \renewcommand{\vb}{7}
+      \renewcommand{\vc}{3}
+      \renewcommand{\vd}{400}
     }
   }
 }
 
-\EXPR[0]\p{(10 * \vbone * \vbthree)}
-\EXPR[0]\q{(\vbtwo * (\vbfour - \vbthree))}
+\EXPR[0]\p{(10 * \va * \vc)}
+\EXPR[0]\q{(\vb * (\vd - \vc))}
 \EXPR[0]\r{\p + \q}
 
 \question[5] It is standard practice to take a chest X-ray of a person 
 suspected of having tuberculosis (TB). The probability of detecting TB in 
-a person actually suffering from it is $\frac{\vbone}{100}$. However, the 
-probability of a healthy person being diagnosed with TB is $\frac{\vbtwo}{1000}$. 
-In a certain city, $\vbthree$ in $\vbfour$ people suffers from TB. A person is 
+a person actually suffering from it is $\frac{\va}{100}$. However, the 
+probability of a healthy person being diagnosed with TB is $\frac{\vb}{1000}$. 
+In a certain city, $\vc$ in $\vd$ people suffers from TB. A person is 
 selected at random and is diagnosed with the disease. What is the probability
 that the person actually has TB?  
 
-
-\watchout[-80pt]
-
-\ifprintanswers
-\fi 
+\watchout
 
 \begin{solution}[\fullpage]
 	Let event $X =$ X-ray says person has TB and event $T=$ person actually has TB. Given these 
 	definitions, here is what we know
 	\begin{align}
-		P(X\vert T) &= \dfrac{\vbone}{100} \\
-		P(T) &= \dfrac{\vbthree}{\vbfour} \\
-		P(X\vert{T'}) &= \dfrac{\vbtwo}{1000}
+		P(X\vert T) &= \dfrac{\va}{100} \\
+		P(T) &= \dfrac{\vc}{\vd} \\
+		P(X\vert{T'}) &= \dfrac{\vb}{1000}
 	\end{align}
 	What we need to find is $P(T\vert X)$. Now, from Baye's theorem, we have 
 	\begin{align}
 		P(T\vert X) &= \dfrac{P(X\vert T)\cdot P(T)}{P(X\vert\,T')\cdot P(T') + P(X\vert T)\cdot P(T)} \\
-		&= \dfrac{\frac{\vbone}{100}\cdot\frac{\vbthree}{\vbfour}}
-		   {\frac{\vbtwo}{1000}\cdot\left(1-\frac{\vbthree}{\vbfour}\right) + \frac{\vbone}{100}\cdot\frac{\vbthree}{\vbfour}} \\
+		&= \dfrac{\frac{\va}{100}\cdot\frac{\vc}{\vd}}
+		   {\frac{\vb}{1000}\cdot\left(1-\frac{\vc}{\vd}\right) + \frac{\va}{100}\cdot\frac{\vc}{\vd}} \\
 		&= \WRITEFRAC\p\r
 	\end{align}
 
 \end{solution}
 
-
+\ifprintanswers\begin{codex}$\WRITEFRAC\p\r$\end{codex}\fi
