@@ -1,41 +1,44 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{1}
+  \renewcommand{\va}{1}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{2}
+    \renewcommand{\va}{2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{3}
+      \renewcommand{\va}{3}
     }{
-      \renewcommand{\vbone}{4}
+      \renewcommand{\va}{4}
     }
   }
 }
 
-\SQUARE\vbone\vbtwo
-\POWER\vbone{3}\vbthree
-\MULTIPLY\vbtwo{3}\vbfour
+\SQUARE\va\vb
+\POWER\va{3}\vc
+\MULTIPLY\vb{3}\vd
 
 \question[4] Does the following limit exist? If yes, then what? If not, then why not?
-\[ \lim_{x\to\vbone}\left[ \dfrac{x^3-\vbthree}{(x-\vbone)^2}\right]\]
+\[ \lim_{x\to\va}\left[ \dfrac{x^3-\vc}{(x-\va)^2}\right]\]
 
 \watchout[-40pt]
 
 \begin{solution}[\halfpage]
-  In of itself, the expression is of the form $\frac{0}{0}$ for $x=\vbone$ - which cannot be determined. So, lets try to get it to be something that can be determined. Might not be possible - but lets try anyway
+  In of itself, the expression is of the form $\frac{0}{0}$ for $x=\va$ - which cannot be determined. So, lets try to get it to be something that can be determined. Might not be possible - but lets try anyway
   
   \begin{align}
-    \lim_{x\to\vbone}\left[ \dfrac{x^3-\vbthree}{(x-\vbone)^2}\right] &= 
-    \lim_{x\to\vbone}\left[ \dfrac{(x-\vbone)\cdot (x^2 + \vbone x + \vbtwo)}{(x-\vbone)^2}\right]\\
-    &= \lim_{x\to\vbone}\left( \dfrac{x^2+\vbone x + \vbtwo}{x-\vbone}\right)
+    \lim_{x\to\va}\left[ \dfrac{x^3-\vc}{(x-\va)^2}\right] &= 
+    \lim_{x\to\va}\left[ \dfrac{(x-\va)\cdot (x^2 + \va x + \vb)}{(x-\va)^2}\right]\\
+    &= \lim_{x\to\va}\left( \dfrac{x^2+\va x + \vb}{x-\va}\right)
   \end{align}
   
-  Now, at $x=\vbone$, the \textbf{numerator} = \vbfour. However, note that 
+  Now, at $x=\va$, the \textbf{numerator} = \vd. However, note that 
   \begin{align}
-    \lim_{x\to\vbone^+}\left( \dfrac{x^2+\vbone x + \vbtwo}{x-\vbone}\right) &= \infty \\
-    \lim_{x\to\vbone^-}\left( \dfrac{x^2+\vbone x + \vbtwo}{x-\vbone}\right) &= -\infty
+    \lim_{x\to\va^+}\left( \dfrac{x^2+\va x + \vb}{x-\va}\right) &= \infty \\
+    \lim_{x\to\va^-}\left( \dfrac{x^2+\va x + \vb}{x-\va}\right) &= -\infty
   \end{align}
   
-  And as \[ \lim_{x\to\vbone^+} f(x) \neq \lim_{x\to\vbone^-} f(x)\], the \textbf{limit does not exist}
+  And as \[ \lim_{x\to\va^+} f(x) \neq \lim_{x\to\va^-} f(x)\], the \textbf{limit does not exist}
 \end{solution}
+\ifprintanswers\begin{codex}
+  Left-hand limit $\neq$ right-hand limit $\implies$ no limit.
+\end{codex}\fi

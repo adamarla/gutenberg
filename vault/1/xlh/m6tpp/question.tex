@@ -1,33 +1,44 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{3}
+  \renewcommand{\va}{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{5}
+    \renewcommand{\va}{5}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{7}
+      \renewcommand{\va}{7}
     }{
-      \renewcommand{\vbone}{9}
+      \renewcommand{\va}{9}
     }
   }
 }
 
-\MULTIPLY\vbone{2}\vbtwo
+\MULTIPLY\va{2}\vb
 
-\question[4] Evaluate the following limit \[ \lim_{x\to\frac\pi{2}}\left(\dfrac{\tan\vbtwo x}{x-\frac{\pi}{2}}\right)\]
+\question[4] Evaluate the following limit \[ \lim_{x\to\frac\pi{2}}\left(\dfrac{\tan\vb x}{x-\frac{\pi}{2}}\right)\]
+
+\watchout
 
 \begin{solution}[\halfpage]
-  Lets start by setting $\theta = x - \frac{\pi}{2}$ so that,
+  If we let 
+  \[ \theta = x-\dfrac\pi{2} \implies \theta\to 0\text{ as }x\to\frac\pi{2} \]
+  then,
   \begin{align}
-    \lim_{x\to\frac\pi{2}}\left( \dfrac{\tan\vbtwo x}{x-\frac\pi{2}}\right) &= 
+    \lim_{x\to\frac\pi{2}}\left( \dfrac{\tan\vb x}{x-\frac\pi{2}}\right) &= 
     \lim_{\theta\to 0}\left[ 
-    \dfrac{\tan\left\lbrace\vbtwo\cdot\left( \theta + \frac\pi{2} \right)\right\rbrace}{\theta}
+    \dfrac{\tan\left\lbrace\vb\cdot\left( \theta + \frac\pi{2} \right)\right\rbrace}{\theta}
     \right] \\
-    &= \lim_{\theta\to 0}\left[ \dfrac{\tan (\vbone\pi + \vbtwo\theta)}{\vbtwo\theta} \times\vbtwo\right] \\
-    &= \vbtwo\times\lim_{\theta\to 0}\left( 
-    \dfrac{\tan\vbtwo\theta}{\vbtwo\theta}\right) \\
-    &= \vbtwo\times\underbrace{\lim_{\alpha\to 0}\left( \dfrac{\tan\alpha}{\alpha}\right)}_{\alpha=\vbtwo\theta} = \vbtwo
+    &= \lim_{\theta\to 0}\left[ \dfrac{\tan (\va\pi + \vb\theta)}{\vb\theta} \times\vb\right]
+  \end{align}
+  Now, 
+  \[ \tan(\va\pi + \vb\theta) = \tan\vb\theta \]
+  And therefore, 
+  \begin{align}
+    \lim_{\theta\to 0}\left[ \dfrac{\tan (\va\pi + \vb\theta)}{\vb\theta} \times\vb\right]
+    &= \vb\times\lim_{\theta\to 0}\left( 
+    \dfrac{\tan\vb\theta}{\vb\theta}\right) \\
+    &= \vb\times\underbrace{\lim_{\alpha\to 0}\left( \dfrac{\tan\alpha}{\alpha}\right)}_{\alpha=\vb\theta} = \vb
   \end{align}
 
 \end{solution}
+\ifprintanswers\begin{codex}$\vb$\end{codex}\fi
