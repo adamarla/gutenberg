@@ -2,37 +2,41 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{2}
+  \renewcommand{\va}{2}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{3}
+    \renewcommand{\va}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{4}
+      \renewcommand{\va}{4}
     }{
-      \renewcommand{\vbone}{5}
+      \renewcommand{\va}{5}
     }
   }
 }
-\POWER\vbone{2}\vbtwo
-\POWER\vbone{3}\vbthree
-\SQUARE\vbtwo\vbfour
-\MULTIPLY\vbfour{3}\vbfive
+\POWER\va{2}\vb
+\POWER\va{3}\vc
+\SQUARE\vb\vd
+\MULTIPLY\vd{3}\ve
 
-\question[2] Evaluate the limit \[\lim_{x\to -\vbone}\left(\dfrac{\frac{1}{x} + \frac{1}{\vbone}}{x^3+\vbthree} \right) \]
+\question[2] Evaluate the limit 
+  \[\lim_{x\to -\va}\left(\dfrac{\frac{1}{x} + \frac{1}{\va}}{x^3+\vc} \right) \]
 
 \watchout
 
 \begin{solution}[\mcq]
-  Simply plugging in $x=-\vbone$ wouldn't cut it because then we get an expression of $\frac{0}{0}$ form. So, we need to change how the expression looks 
+  Simply plugging in $x=-\va$ wouldn't cut it because then we get an expression of $\frac{0}{0}$ form. 
+  
+  So, we need to change what the expression looks.
   \begin{align}
-    \lim_{x\to -\vbone}\left( \dfrac{\frac{1}{x} + \frac{1}{\vbone}}{x^3 + \vbthree}\right) &=
-    \lim_{x\to -\vbone}\left( \dfrac{x + \vbone}{\vbone x\cdot 
-    \underbrace{(x^3 + \vbthree)}_{x^3 + a^3 = ?}}\right) \\
-    &= \lim_{x\to -\vbone}\left[ \dfrac{x + \vbone}
-    {\vbone x\cdot (x + \vbone)\cdot (x^2 + \vbtwo -\vbone x)}\right] \\
-    &= \lim_{x\to -\vbone}\left[ \dfrac{1}{\vbone x\cdot (x^2-\vbone x + \vbtwo) }\right] = 
-    -\dfrac{1}{\vbfive}
+    \lim_{x\to -\va}\left( \dfrac{\frac{1}{x} + \frac{1}{\va}}{x^3 + \vc}\right) &=
+    \lim_{x\to -\va}\left( \dfrac{x + \va}{\va x\cdot 
+    \underbrace{(x^3 + \vc)}_{x^3 + a^3 = ?}}\right) \\
+    &= \lim_{x\to -\va}\left[ \dfrac{x + \va}
+    {\va x\cdot (x + \va)\cdot (x^2 + \vb -\va x)}\right] \\
+    &= \lim_{x\to -\va}\left[ \dfrac{1}{\va x\cdot (x^2-\va x + \vb) }\right] \\
+    &= -\dfrac{1}{\ve}
   \end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}$-\dfrac{1}\ve$\end{codex}\fi

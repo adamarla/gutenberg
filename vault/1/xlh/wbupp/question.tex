@@ -1,50 +1,52 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{2}
-  \renewcommand{\vbtwo}{5}
-  \renewcommand{\vbthree}{7}
+  \renewcommand{\va}{2}
+  \renewcommand{\vb}{5}
+  \renewcommand{\vc}{7}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{3}
-    \renewcommand{\vbtwo}{3}
-    \renewcommand{\vbthree}{5}
+    \renewcommand{\va}{3}
+    \renewcommand{\vb}{3}
+    \renewcommand{\vc}{5}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{2}
-      \renewcommand{\vbtwo}{2}
-      \renewcommand{\vbthree}{9}
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{2}
+      \renewcommand{\vc}{9}
     }{
-      \renewcommand{\vbone}{3}
-      \renewcommand{\vbtwo}{2}
-      \renewcommand{\vbthree}{6}
+      \renewcommand{\va}{3}
+      \renewcommand{\vb}{2}
+      \renewcommand{\vc}{6}
     }
   }
 }
 
-\POWER\vbone\vbtwo\a
-\POWER\vbone\vbthree\b
-\SUBTRACT\vbthree\vbtwo\c
-\POWER\vbone\c\d
-\MULTIPLY\vbthree\d\e
+\POWER\va\vb\a
+\POWER\va\vc\b
+\SUBTRACT\vc\vb\c
+\POWER\va\c\d
+\MULTIPLY\vc\d\e
 
-\question[4] Evaluate the following limit \[ \lim_{x\to \vbone}\left(\dfrac{x^\vbtwo-\a}{x^\vbthree-\b}\right)\]
+\question[4] Evaluate the following limit 
+\[ \lim_{x\to \va}\left(\dfrac{x^\vb-\a}{x^\vc-\b}\right)\]
 
 \watchout[-45pt]
 
 \begin{solution}[\halfpage]
   The easiest way to find this limit is to use the fact 
   \[\lim_{x\to a}\left( \dfrac{x^n-a^n}{x-a}\right) = na^{n-1}\]
-  
-  When applied to the given limit, we get 
+  Note also that, 
+  \[ \a = \va^\vb\text{ and } \b = \va^\vc \]
+  Using both of the above facts, we get  
   \begin{align}
-    \lim_{x\to \vbone}\left(\dfrac{x^\vbtwo-\a}{x^\vbthree-\b}\right) &= 
-    \lim_{x\to \vbone}\left[ \dfrac{\left(\dfrac{x^\vbtwo-\vbone^\vbtwo}{x-\vbone}\right)}
-    {\left(\dfrac{x^\vbthree-\vbone^\vbthree}{x-\vbone}\right)}\right] \\
-    &= \dfrac{\lim_{x\to\vbone}\left(\dfrac{x^\vbtwo-\vbone^\vbtwo}{x-\vbone}\right)}
-    {\lim_{x\to\vbone}\left(\dfrac{x^\vbthree-\vbone^\vbthree}{x-\vbone}\right)} = 
-    \dfrac{\vbtwo\cdot\vbone^{\vbtwo - 1}}{\vbthree\cdot\vbone^{\vbthree - 1}} \\
-    &= \WRITEFRAC\vbtwo\e
+    \lim_{x\to \va}\left(\dfrac{x^\vb-\a}{x^\vc-\b}\right) &= 
+    \lim_{x\to \va}\left[ \dfrac{\left(\dfrac{x^\vb-\va^\vb}{x-\va}\right)}
+    {\left(\dfrac{x^\vc-\va^\vc}{x-\va}\right)}\right] \\
+    &= \dfrac{\lim_{x\to\va}\left(\dfrac{x^\vb-\va^\vb}{x-\va}\right)}
+    {\lim_{x\to\va}\left(\dfrac{x^\vc-\va^\vc}{x-\va}\right)} \\ 
+    &= \dfrac{\vb\cdot\va^{\vb - 1}}{\vc\cdot\va^{\vc - 1}} = \WRITEFRAC\vb\e
   \end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}$\WRITEFRAC[false]\vb\e$\end{codex}\fi
