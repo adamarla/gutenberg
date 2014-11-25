@@ -3,98 +3,65 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{12}
-  \renewcommand{\vbtwo}{three}
-  \renewcommand{\vbthree}{3}
-  \renewcommand{\vbfour}{207900}
+  \renewcommand{\vn}{12}
+  \renewcommand\vz{420}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{12}
-    \renewcommand{\vbtwo}{four}
-    \renewcommand{\vbthree}{4}
-    \renewcommand{\vbfour}{443520}
+    \renewcommand{\vn}{9}
+    \renewcommand\vz{120}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{15}
-      \renewcommand{\vbtwo}{three}
-      \renewcommand{\vbthree}{3}
-      \renewcommand{\vbfour}{756756}
+      \renewcommand{\vn}{15}
+      \renewcommand\vz{1512}
     }{
       % variables 
-      \renewcommand{\vbone}{15}
-      \renewcommand{\vbtwo}{five}
-      \renewcommand{\vbthree}{5}
-      \renewcommand{\vbfour}{8408400}
+      \renewcommand{\vn}{18}
+      \renewcommand\vz{5544}
     }
   }
 }
 
-\gcalcexpr[0]{\setSize}{\vbone / \vbthree}
-\gcalcexpr[0]{\second}{\vbone - \setSize}
-\gcalcexpr[0]{\third}{\second - \setSize}
-\gcalcexpr[0]{\fourth}{\third - \setSize}
-\gcalcexpr[0]{\fifth}{\fourth - \setSize}
+\DIVIDE\vn{3}\vp
+\SUBTRACT\vn\vp\vq
+\SUBTRACT\vq\vp\vr
 
-\question[4] In how many ways could we distribute $\vbone$ distinct items among
-$\vbtwo$ people such that each person gets the same number of items and all
-the items get distributed.
-
+\question[4] In how many ways can $\vn$ \textbf{distinct} items be distributed 
+equally amongst three people? You can leave your answer as an expression if 
+the calculations get too long.
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}[\halfpage]
-  In order to distribute the items such that each person gets the same number,
-  we need to create $\vbtwo$ sets of $\setSize$ items each. Number of ways in
-  which we can do this is
+  Each of the three people should get $\dfrac\vn{3}=\vp$ items. 
+
+  \textbf{Step \#1: Number of ways of creating three sets of $\vp$ items each}
+
+  Irrespective of which person gets which items, we would first create three sets 
+  of $\vp$ items each. 
+
+  The first set will be made by picking $\vp$ items from $\vn$, the second by picking $\vp$ from 
+  the remaining $\vq$ and the last will just have whatever remains. 
+  \[ N_{\text{sets}} = \underbrace{\binom\vn\vp}_{\text{Set 1}}\times
+  \underbrace{\binom\vq\vp}_{\text{Set 2}}\times
+  \underbrace{\binom\vr\vp}_{\text{Set 3}} \]
+  \textbf{Step \#2: Number of ways of distributing three sets amongst three people} 
+
+  With the sets made, we can think about whom to give them to. 
+
+  The first person could get either of the three. The second, one of the remaining two. 
+  And the last person will just have to take whatever remains. 
+
+  In other words, 
+  \[ N_{\text{distribute}} = 3\times 2\times 1 = 3! = 6 \] 
+
+  Hence, the \textbf{required} number of ways is simply 
   \begin{align}
-    \encr{\vbone}{\setSize}\times
-    \encr{\second}{\setSize}\times
-    \encr{\third}{\setSize}
-    \ifnumequal{\value{rolldice}}{1}{
-  	  \times\encr{\fourth}{\setSize}
-    }{
-      \ifnumequal{\value{rolldice}}{3}{
- 	    \times\encr{\fourth}{\setSize}
-        \times\encr{\fifth}{\setSize}
-      }{
-      }
-    }
+    N_{\text{reqd}} &= N_{\text{sets}}\times N_{\text{distribute}} \\
+        &= \binom\vn\vp\times\underbrace{\binom\vq\vp\times\binom\vr\vp\times 3!}_{=\vz} \\
+        &= \vz\times\binom\vn\vp
   \end{align}
-  The number of ways in which we can distribute three sets of equal size
-  ($\setSize$) among $\vbtwo$ people is $\vbthree!$ Therefore the total 
-  number of distributions is
-  \begin{align}
-    &\vbthree!\times
-      \encr{\vbone}{\setSize}\times
-      \encr{\second}{\setSize}\times
-      \encr{\third}{\setSize}
-    \ifnumequal{\value{rolldice}}{1}{
-      \times\encr{\fourth}{\setSize}
-    }{
-      \ifnumequal{\value{rolldice}}{3}{
-        \times\encr{\fourth}{\setSize}
-        \times\encr{\fifth}{\setSize}
-      }{
-      }
-    }
-    \\
-    =\quad&\vbfour
-  \end{align}
+
 \end{solution}
+\ifprintanswers\begin{codex}$\vz\times\binom\vn\vp$\end{codex}\fi
