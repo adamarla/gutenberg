@@ -3,57 +3,60 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{4}
-  \renewcommand{\vbtwo}{5}
-  \renewcommand{\vbthree}{20}
+  \renewcommand{\va}{4}
+  \renewcommand{\vb}{5}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{4}
-    \renewcommand{\vbtwo}{6}
-    \renewcommand{\vbthree}{24}
+    \renewcommand{\va}{4}
+    \renewcommand{\vb}{6}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{3}
-      \renewcommand{\vbtwo}{7}
-      \renewcommand{\vbthree}{21}
+      \renewcommand{\va}{3}
+      \renewcommand{\vb}{7}
     }{
       % variables 
-      \renewcommand{\vbone}{6}
-      \renewcommand{\vbtwo}{8}
-      \renewcommand{\vbthree}{48}
+      \renewcommand{\va}{6}
+      \renewcommand{\vb}{8}
     }
   }
 }
 
-\question[5] A bag contains $\vbone$ mangoes and and $\vbtwo$ oranges. In how many ways can a person make a selection so as to take atleast one mango and one orange?  
+\MULTIPLY\va\vb\vc
 
+\question[5] A bag contains $\va$ mangoes and and $\vb$ oranges. 
+In how many ways can a person take out \textbf{atleast} one mango and one orange from the bag? 
+There is no difference between any two mangoes nor is there any difference between any two oranges.
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}[\halfpage]
-Since all mangoes are identical, the number of ways of selecting r mangoes from n mangoes is 1(r$\leq$n). Thus, there is 1 way for choosing 0 mango or 1 mango or 2 and so on....\\
-Total ways of choosing from $\vbone$ mangoes is $\lbrace \underbrace{1+1..}_{\vbone +1 \quad times} \rbrace = (\vbone +1)$ \\
-Here 1 case will be for no mango getting picked. Now, to choose \textit{atleast} one mango we subtract this from above\\
-$\therefore $ Ways for choosing \textit{atleast} one mango is $\vbone + 1 -1 = \vbone$\\
-Similarly, number of ways for choosing \textit{atleast} one orange from $\vbtwo$ oranges is $\vbtwo  $.\\
-Hence, total ways for selecting fruits is : $\vbone \times \vbtwo = \vbthree$     
+  \textbf{Insight \#1: The importance of being identical}
+
+  Had each mango (or orange) been of a different variety, then it would have mattered 
+  which two or three were picked from the bag. 
+
+  But as the mangoes (and oranges) are all identical to each other, the only difference 
+  between any two outcomes is \textbf{how many} of each were picked - not which ones.
+
+  Which means, there can be \textbf{only one way to pick} $N$ mangoes (or oranges) from the bag.
+  Think about it. \textbf{You cannot have two ways of picking three mangoes from the bag.}
+
+  The above argument is summarized in the table below. 
+
+  \begin{tabular}{c c c c c c c}
+    \toprule
+    \# picked & 1 & 2 & 3 & $\ldots$ & N & Total \\
+    \midrule 
+    \# ways  & 1 & 1 & 1 & $\ldots$ & 1 & $\sum_{k=1}^N 1 = N$ \\
+    \bottomrule
+  \end{tabular}
+
+  Given this, the \textbf{total number of ways of picking $\geq 1$} 
+  \[ \text{Mangoes} = \sum_{k=1}^{\va} = \va\text{ and Oranges} = \sum_{k=1}^\vb = \vb \] 
+  And hence, the \textbf{the total number of ways} is 
+  \[ N_{\text{total}} = \va\times\vb = \vc \] 
 \end{solution}
 
-
+\ifprintanswers\begin{codex}$\vc$\end{codex}\fi
