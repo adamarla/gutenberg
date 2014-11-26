@@ -3,50 +3,50 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{10}
-  \renewcommand{\vbtwo}{4}
+  \renewcommand{\vn}{10}
+  \renewcommand{\vm}{4}
+  \renewcommand{\vx}{2}
+  \renewcommand{\vz}{3024}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{9}
-    \renewcommand{\vbtwo}{3}
+    \renewcommand{\vn}{9}
+    \renewcommand{\vm}{3}
+    \renewcommand{\vx}{6}
+    \renewcommand{\vz}{336}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{9}
-      \renewcommand{\vbtwo}{4}
+      \renewcommand{\vn}{9}
+      \renewcommand{\vm}{4}
+      \renewcommand{\vx}{5}
+      \renewcommand{\vz}{1680}
     }{
       % variables 
-      \renewcommand{\vbone}{10}
-      \renewcommand{\vbtwo}{5}
+      \renewcommand{\vn}{11}
+      \renewcommand{\vm}{5}
+      \renewcommand{\vx}{3}
+      \renewcommand{\vz}{30,240}
     }
   }
 }
-\SUBTRACT\vbone{1}\k
-\SUBTRACT\k\vbtwo\l
-\question[3] In how many of the permutations of $\vbone$ things taken $\vbtwo$ at a time, will one thing never occur.
 
+\SUBTRACT\vn{1}\vi
+\SUBTRACT\vi\vm\vj
+
+\question[3] Given $\vn$ items ($A_1\to A_{\vn}$), in how many permutations of items taken $\vm$ 
+at a time will $A_{\vx}$ never occur? 
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}[\mcq]
-For one thing to never occur we simply count the number of permutations of $(\vbone - 1)$ things taken $\vbtwo$ at a time.\\
-$\therefore \quad$ Number of permutations $= {^{\k}}{P}_{\vbtwo} = \dfrac{\k!}{\l!}$ 
+  If $A_{\vx}$ \textbf{cannot} occur in any of the required permutations, then its almost like 
+  it does not exist!
+
+  We can ignore it and simply count the number of permutations of $\vm$ things from $(\vn-1) = \vi$ things.
+
+  Which gives us 
+  \[ N_{\text{reqd}} = ^{\vi}P_\vm = \dfrac{\vi!}{(\vi-\vm)!} = \dfrac{\vi !}{\vj !} = \vz\]
 \end{solution}
 
-
+\ifprintanswers\begin{codex}$\vz$\end{codex}\fi
