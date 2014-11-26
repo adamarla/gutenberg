@@ -3,71 +3,87 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
+  \renewcommand\vi{0.03}
+  \renewcommand\vr{9}
+  \renewcommand\vd{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
+    \renewcommand\vi{0.05}
+    \renewcommand\vr{6}
+    \renewcommand\vd{2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
+      \renewcommand\vi{0.08}
+      \renewcommand\vr{7}
+      \renewcommand\vd{4}
     }{
       % variables 
+      \renewcommand\vi{0.04}
+      \renewcommand\vr{8}
+      \renewcommand\vd{3}
     }
   }
 }
 
-\question The radius r of a sphere is increasing at a constant rate of 
- $0.04$ centimetres per second. \textit{note: The Volume $V$ of a sphere with
- radius $r$ is given by $\dfrac{4}{3}\pi r^3$.}
+\SQUARE\vr\vs
+\EXPR[2]\va{ 4*\vs*\vi }
 
+\CUBE\vd\b
+\FRACMULT\b{1}{4}{3}\vv\vw
 
-\ifprintanswers
-\fi 
+\EXPR[2]\vb{ 8*\vd*\vi}
+
+\question The radius $R$ of a sphere is increasing at a constant rate of 
+ $\vi$ cm/sec. 
+
+ \watchout
 
 \begin{parts}
-  \part[3] At the time when the radius of the sphere is 10 centimetres, what is 
-  the rate of  increase of its volume?
+  \part[3] When $R=\vr$ cm, then how fast is the volume of the sphere increasing?
 
-\begin{solution}[\mcq]
-    Rate of increase of volume $\dfrac{\ud V}{\ud t}$ is given by,
+  \begin{solution}[\mcq]
+    The volume of a sphere is given by 
+    \[ V = \dfrac{4}{3}\pi R^3 \]
+    Which means,
     \begin{align}
-      &\dfrac{\ud V}{\ud t} = \dfrac{4\pi}{3}\cdot3r^2\cdot\dfrac{\ud r}{\ud t} 
-                            = 4\pi r^2\dfrac{\ud r}{\ud t} \\
-      &\dfrac{\ud V}{\ud t} \vert_{r=10} = 4\pi (100)(0.04) = 16\pi
+      \dfrac{\ud V}{\ud t} &= \dfrac{4}{3}\pi\cdot(3R^2)\cdot\dfrac{\ud R}{\ud t} = 4\pi\cdot R^2\dfrac{\ud R}{\ud t}
     \end{align}
-    $V$ is changing at the rate of $16\pi (cm^3/sec)$ when $r=10(cm)$.
+    And therefore, when $R=\vr$ cm, then 
+    \begin{align}
+      \dfrac{\ud V}{\ud t}&= 4\pi\cdot(\vr\text{ cm})^2\times\vi\text{ cm/s} \\
+          &= \va\pi\text{ cubic cm/sec} 
+    \end{align}
   \end{solution}
 
-  \part[3] At the time when the volume of the sphere is $36\pi$ cubic centimetres,
-  what is the rate of increase of the area of a cross section through the center 
-  of the sphere?
+  \part[3] When the volume of the sphere is $V=\WRITEFRAC[false]\vv\vw\pi$ cubic cm, then how fast is its surface area increasing?
 
-\begin{solution}[\mcq]
-    When $Volume$ is $36\pi (cm^3)$,
+  \begin{solution}[\mcq]
     \begin{align}
-      \dfrac{4}{3}\pi r^3 = 36\pi \Rightarrow r^3 = 27 \Rightarrow r=3      
+      V &= \dfrac{4}{3}\pi\cdot R^3 = \WRITEFRAC[false]\vv\vw\pi \\
+      \implies R^3 &= \b\text{ cubic cm}\implies R = \vd\text{ cm}
     \end{align}
-    Rate of increase of area $\dfrac{\ud A}{\ud t}$ is given by,
-    \begin{align}
-      &\dfrac{\ud A}{\ud t} = \pi\cdot\dfrac{\ud r^2}{\ud t} 
-                            = 2\pi r\dfrac{\ud r}{\ud t} \\
-      &\dfrac{\ud A}{\ud t} \vert_{r=3} = 2\pi(3)(0.04) = 0.24\pi
-    \end{align}
-    $A$ is changing at the rate of $0.24\pi (cm^2/sec)$ when $r=3(cm)$.
+    The surface area $S$ of a sphere with radius $R$ is 
+     \[ S = 4\pi\cdot R^2 \] 
+     And therefore, at $R=\vd\text{ cm}$ and $\dfrac{\ud R}{\ud t}=\vi\text{ cm/s}$, 
+     \[ \dfrac{\ud S}{\ud t} = 4\pi\dfrac{\ud R^2}{\ud t} = 8\pi\cdot R\dfrac{\ud R}{\ud t} = \vb\pi\text{ sq. cm/sec} \]
   \end{solution}
 
-  \part[3] At the time when the volume and the radius of the sphere are increasing 
-  at the same \textit{numerical} rate, what is the radius?
+  \part[3] At what value of radius $R$ would the radius be changing as fast as the volume in increasing? 
 
-\begin{solution}[\mcq]
-    To find $r$ when $\dfrac{\ud V}{\ud t}$ and $\dfrac{\ud r}{\ud t}$ are 
-    numerically equal
+  \begin{solution}[\mcq]
+    Basically, we have to find the $R$ at which 
     \begin{align}
-      &4\pi r^2\cdot\dfrac{\ud r}{\ud t} = \dfrac{\ud r}{\ud t} \\
-      &4\pi r^2 = 1 \Rightarrow r=\sqrt{\dfrac{1}{4\pi}}
+      \dfrac{\ud V}{\ud t} &= \dfrac{\ud R}{\ud t} \\ 
+      \implies 4\pi\cdot R^2\dfrac{\ud R}{\ud t} &= \dfrac{\ud R}{\ud t} \\
+      \implies R^2 &= \dfrac{1}{4\pi}\text{ or } R = \dfrac{1}{2\sqrt\pi}\text{ cm}
     \end{align}
-    $r$ equals $\sqrt{\dfrac{1}{4\pi}}(cm)$ when $\dfrac{\ud V}{\ud t}$ and
-    $\dfrac{\ud r}{\ud t}$ are numerically equal.
   \end{solution}
-
 \end{parts}
 
+\ifprintanswers
+  \begin{codex}
+    $(a)\,\va\pi\text{ cubic cm/sec}\qquad (b)\,\vb\pi\text{ sq.cm/sec}\qquad (c)\,\dfrac{1}{2\sqrt\pi}\text{ cm}$
+  \end{codex}
+\fi

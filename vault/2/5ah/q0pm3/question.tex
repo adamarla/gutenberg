@@ -3,74 +3,52 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{3}
-  \renewcommand{\vbtwo}{5}
-  \renewcommand{\vbthree}{2}
-  \renewcommand{\vbfour}{3}
-  \renewcommand{\vbfive}{7}
+  \renewcommand{\va}{3}
+  \renewcommand{\vb}{5}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{4}
-    \renewcommand{\vbtwo}{7}
-    \renewcommand{\vbthree}{3}
-    \renewcommand{\vbfour}{\dfrac{4}{3}}
-    \renewcommand{\vbfive}{\dfrac{-2}{9}}
+    \renewcommand{\va}{4}
+    \renewcommand{\vb}{7}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{21}
-      \renewcommand{\vbthree}{2}
-      \renewcommand{\vbfour}{5}
-      \renewcommand{\vbfive}{23}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{21}
     }{
       % variables 
-      \renewcommand{\vbone}{2}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{1}
-      \renewcommand{\vbfour}{4}
-      \renewcommand{\vbfive}{14}
+      \renewcommand{\va}{6}
+      \renewcommand{\vb}{11}
     }
   }
 }
 
-\question[3] If $a=\dfrac{\vbone+\sqrt{\vbtwo}}{\vbthree}$, then find the value of
-$a^2+\dfrac{1}{a^2}$.
+\SQUARE\va\a
+\SUBTRACT\a\vb\c
+\SQRT\c\vc
+\MULTIPLY\va{2}\vg
 
+\FRACPOWER\vg\vc{2}\vx\vy
+\FRACMINUS\vx\vy{2}{1}\vm\vn
+
+\question[3] If $a=\dfrac{\va+\sqrt{\vb}}{\vc}$, then find the value of
+$a^2+\dfrac{1}{a^2}$.
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}[\halfpage]
-
+  Given that 
+  \[ x^2 + y^2 = (x+y)^2 - 2xy \]
+  we can infer that 
+  \[ a^2+\dfrac{1}{a^2} = \left( a + \dfrac{1}{a} \right)^2 - 2\cdot a\cdot\dfrac{1}{a} = \left( a+\dfrac{1}{a}\right)^2 - 2\] 
+  where
   \begin{align}
-    a^2 + \dfrac{1}{a^2} &= (a + \dfrac{1}{a})^2 - 2 
+    a + \dfrac{1}{a} &= \underbrace{\dfrac{\va + \sqrt\vb}\vc}_{a} + 
+    \underbrace{\dfrac\vc{\va + \sqrt\vb}}_{\frac{1}{a}} \\
+    &= \dfrac{(\va^2 + \vb + 2\cdot\va\cdot\sqrt\vb) + \vc^2}{\vc\cdot(\va + \sqrt\vb)} = \WRITEFRAC[false]\vg\vc \\
+    \therefore\left( a^2 + \dfrac{1}{a^2} \right) &= 
+    \left(\WRITEFRAC[false]\vg\vc\right)^2 - 2 = \WRITEFRAC[false]\vx\vy - 2 = \WRITEFRAC[false]\vm\vn
   \end{align}
-  Let us compute $(a+\dfrac{1}{a})$ first,
-  \begin{align}
-    a+\dfrac{1}{a} &= \dfrac{\vbone + \sqrt{\vbtwo}}{\vbthree} + \dfrac{\vbthree}{\vbone + \sqrt{\vbtwo}} \\   
-                   &= \vbfour
-  \end{align}
-  Therefore, 
-  \begin{align}
-    (a+\dfrac{1}{a})^2 - 2 &= (\vbfour)^2 - 2 \\
-                           &= \vbfive
-  \end{align}
-
 \end{solution}
 
+\ifprintanswers\begin{codex}$\WRITEFRAC[false]\vm\vn$\end{codex}\fi

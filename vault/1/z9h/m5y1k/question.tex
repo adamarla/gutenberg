@@ -3,31 +3,31 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{1}
-  \renewcommand{\vbtwo}{1}
+  \renewcommand{\va}{1}
+  \renewcommand{\vb}{1}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{4}
-    \renewcommand{\vbtwo}{3}
+    \renewcommand{\va}{4}
+    \renewcommand{\vb}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{9}
-      \renewcommand{\vbtwo}{5}
+      \renewcommand{\va}{9}
+      \renewcommand{\vb}{5}
     }{
       % variables 
-      \renewcommand{\vbone}{1}
-      \renewcommand{\vbtwo}{9}
+      \renewcommand{\va}{1}
+      \renewcommand{\vb}{9}
     }
   }
 }
 
-\MULTIPLY{2}{\vbtwo}{\m}
-\SQUARE{\vbtwo}{\n}
-\gcalcexpr[0]\p{-(\vbone - \n)}
+\MULTIPLY{2}{\vb}{\m}
+\SQUARE{\vb}{\n}
+\EXPR[0]\p{-(\va - \n)}
 
-\question[4] Suppose $f(x) = \sqrt{x^2 - \vbone} = (g \circ h)(x)$. If $h(x) = (x + \vbtwo)$, 
+\question[4] Suppose $f(x) = \sqrt{x^2 - \va} = (g \circ h)(x)$. If $h(x) = (x + \vb)$, 
 then find $g(x)$. The notation $(g\circ h)(x)$ means $g(h(x))$
 
 
@@ -37,7 +37,7 @@ then find $g(x)$. The notation $(g\circ h)(x)$ means $g(h(x))$
 \fi 
 
 \begin{solution}[\halfpage]
-	The question boils down to finding $g(x)$ so that $g(x+\vbtwo) = \sqrt{x^2-\vbone}$. And the key 
+	The question boils down to finding $g(x)$ so that $g(x+\vb) = \sqrt{x^2-\va}$. And the key 
 	is to understand that $g(x)$ has to bring to the table whatever $h(x)$ does \textit{not} - like 
 	a square root and $x^2$ term 
 	
@@ -45,31 +45,34 @@ then find $g(x)$. The notation $(g\circ h)(x)$ means $g(h(x))$
 	$g(x)$ is of the form 
 	
 	\begin{align}
-		g(x + \vbtwo) &= \sqrt{A\cdot\underbrace{(x + \vbtwo)^2}_{\texttt{will give } x^2} 
-		+ B\cdot(x + \vbtwo) + C}
+		g(x + \vb) &= \sqrt{A\cdot\underbrace{(x + \vb)^2}_{\texttt{will give } x^2} 
+		+ B\cdot(x + \vb) + C}
 	\end{align}			
 	
 	
 	And so,
 	\begin{align}
-		\sqrt{x^2 - \vbone} &= \sqrt{A\cdot(x + \vbtwo)^2 + B\cdot(x + \vbtwo) + C} \\ 
-		 &= \sqrt{A\cdot(x^2 + \m\cdot x + \n) + B\cdot(x + \vbtwo) + C} \\
-		 &= \sqrt{A\cdot x^2 + (\m A + B)\cdot x + (\n\cdot A + \vbtwo B + C)}
+		\sqrt{x^2 - \va} &= \sqrt{A\cdot(x + \vb)^2 + B\cdot(x + \vb) + C} \\ 
+		 &= \sqrt{A\cdot(x^2 + \m\cdot x + \n) + B\cdot(x + \vb) + C} \\
+		 &= \sqrt{A\cdot x^2 + (\m A + B)\cdot x + (\n\cdot A + \vb B + C)}
 	\end{align}
 	
 	Now its a simple question of comparing \textit{coefficients of x} on both sides. 
-	Which means, if 
+	Which means that if,
+  \[ \underbrace{\sqrt{x^2 - \va}}_{f(x)} = 
+		\underbrace{\sqrt{A\cdot x^2 + (\m A + B)\cdot x + (\n\cdot A + \vb B + C)}}_{(g\circ h)(x)} \]
+  then, 
 	\begin{align}
-		\underbrace{\sqrt{x^2 - \vbone}}_{f(x)} &= 
-		\underbrace{\sqrt{A\cdot x^2 + (\m A + B)\cdot x + (\n\cdot A + \vbtwo B + C)}}_{(g\circ h)(x)} \\
-		\text{then } A &= 1 \\
-		\m A + B &= 0 \Rightarrow B = -\m \\
-		\text{and } \n\cdot A + \vbtwo B + C &= -\vbone \Rightarrow C = \p
+    A &= 1 \\
+		\m A + B &= 0 \implies B = -\m \\
+		\text{and } \n\cdot A + \vb B + C &= -\va \implies C = \p
 	\end{align}
 	
-	Hence, $g(x + \vbtwo)$ = $\sqrt{(x+\vbtwo)^2 -\m\cdot(x + \vbtwo) + \p}$. Or, generally speaking, 
-	$g(x) = \sqrt{x^2 - \m x + \p}$
+	Hence, $g(x + \vb)$ = $\sqrt{(x+\vb)^2 -\m\cdot(x + \vb) + \p}$. Or, generally speaking, 
+	\[g(x) = \sqrt{x^2 - \m x + \p} \]
 	
 \end{solution}
 
-
+\ifprintanswers\begin{codex}
+	$g(x) = \sqrt{x^2 - \m x + \p}$
+\end{codex}\fi

@@ -1,49 +1,50 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{1}
-  \renewcommand{\vbtwo}{3} % x^{1/ vbtwo}
-  \renewcommand{\vbthree}{4} % x^{1 / vbthree }
+  \renewcommand{\va}{1}
+  \renewcommand{\vb}{3} % x^{1/ vb}
+  \renewcommand{\vc}{4} % x^{1 / vc }
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{1}
-    \renewcommand{\vbtwo}{2}
-    \renewcommand{\vbthree}{5}
+    \renewcommand{\va}{1}
+    \renewcommand{\vb}{2}
+    \renewcommand{\vc}{5}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{1}
-      \renewcommand{\vbtwo}{4}
-      \renewcommand{\vbthree}{7}
+      \renewcommand{\va}{1}
+      \renewcommand{\vb}{4}
+      \renewcommand{\vc}{7}
     }{
       % variables 
-      \renewcommand{\vbone}{1}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{5}
+      \renewcommand{\va}{1}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{5}
     }
   }
 }
 
-\FRACMINUS{1}\vbtwo{1}{1}\a\b
-\FRACMINUS{1}\vbthree{1}{1}\c\d
-\FRACDIV{1}\vbtwo{1}\vbthree\p\q
+\FRACMINUS{1}\vb{1}{1}\a\b
+\FRACMINUS{1}\vc{1}{1}\c\d
+\FRACDIV{1}\vb{1}\vc\p\q
 
-\question[4] Evaluate the limit \[ \lim_{x\to\vbone}\dfrac{x^{\frac{1}\vbtwo}-\vbone}{x^{\frac{1}\vbthree}-\vbone}\]
+\question[4] Evaluate the limit \[ \lim_{x\to\va}\dfrac{x^{\frac{1}\vb}-\va}{x^{\frac{1}\vc}-\va}\]
 
 \watchout[-30pt]
 
 \begin{solution}[\halfpage]
   The easiest way to solve this problem is to use the fact \[ \lim_{x\to a}\dfrac{x^n-a^n}{x-a} = n\cdot a^{n-1}\]
   \begin{align}
-    \lim_{x\to\vbone}\dfrac{x^{\frac{1}\vbtwo}-1}{x^{\frac{1}\vbthree}-1} &= 
-    \lim_{x\to\vbone}\dfrac{\dfrac{x^{\frac{1}\vbtwo}-\vbone^{\frac{1}\vbtwo}}{x-\vbone}}
-    {\dfrac{x^{\frac{1}\vbthree}-\vbone^{\frac{1}\vbthree}}{x-\vbone}} \\
-    &= \dfrac{\lim_{x\to\vbone}\left(\dfrac{x^{\frac{1}\vbtwo}-\vbone}{x-\vbone}\right)}
-    {\lim_{x\to\vbone}\left(\dfrac{x^{\frac{1}{\vbthree}}-\vbone}{x-\vbone} \right)} \\
-    &= \dfrac{\frac{1}{\vbtwo}\cdot\vbone^{\frac{1}\vbtwo - 1}}
-    {\frac{1}{\vbthree}\cdot\vbone^{\frac{1}{\vbthree} - 1}} = \WRITEFRAC\p\q
+    \lim_{x\to\va}\dfrac{x^{\frac{1}\vb}-1}{x^{\frac{1}\vc}-1} &= 
+    \lim_{x\to\va}\dfrac{\dfrac{x^{\frac{1}\vb}-\va^{\frac{1}\vb}}{x-\va}}
+    {\dfrac{x^{\frac{1}\vc}-\va^{\frac{1}\vc}}{x-\va}} \\
+    &= \dfrac{\lim_{x\to\va}\left(\dfrac{x^{\frac{1}\vb}-\va}{x-\va}\right)}
+    {\lim_{x\to\va}\left(\dfrac{x^{\frac{1}{\vc}}-\va}{x-\va} \right)} \\
+    &= \dfrac{\frac{1}{\vb}\cdot\va^{\frac{1}\vb - 1}}
+    {\frac{1}{\vc}\cdot\va^{\frac{1}{\vc} - 1}} = \WRITEFRAC[false]\p\q
   \end{align}
 \end{solution}
 
 
+\ifprintanswers\begin{codex}$\WRITEFRAC[false]\p\q$\end{codex}\fi

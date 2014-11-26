@@ -1,47 +1,44 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{1}
-  \renewcommand{\vbtwo}{2}
-  \renewcommand{\vbthree}{4}
-  \renewcommand{\vbfour}{6}
+  \renewcommand{\va}{1}
+  \renewcommand{\vb}{2}
+  \renewcommand{\vc}{4}
+  \renewcommand{\vd}{6}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{3}
-    \renewcommand{\vbtwo}{7}
-    \renewcommand{\vbthree}{2}
-    \renewcommand{\vbfour}{4}
+    \renewcommand{\va}{3}
+    \renewcommand{\vb}{7}
+    \renewcommand{\vc}{2}
+    \renewcommand{\vd}{4}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{2}
-      \renewcommand{\vbtwo}{6}
-      \renewcommand{\vbthree}{5}
-      \renewcommand{\vbfour}{9}
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{6}
+      \renewcommand{\vc}{5}
+      \renewcommand{\vd}{9}
     }{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{4}
-      \renewcommand{\vbthree}{3}
-      \renewcommand{\vbfour}{7}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{4}
+      \renewcommand{\vc}{3}
+      \renewcommand{\vd}{7}
     }
   }
 }
 
-\SQUARE\vbtwo\tp
-\gcalcexpr[0]\tq{\vbfour * \tp}
-\ADD\tq\vbthree\tr
-\MULTIPLY\vbtwo{2}\ts
+\SQUARE\vb\tp
+\gcalcexpr[0]\tq{\vd * \tp}
+\ADD\tq\vc\tr
+\MULTIPLY\vb{2}\ts
 
-\question[3] Given two functions - $f(x)$ and $g(x)$ - find $f'(x)$ given that 
-$g(\vbone) = \vbtwo$, $\left.\dfrac{d}{dx} f(x)g(x)\right\vert_{x=\vbone} = \vbthree$ and 
-$\dfrac{d}{dx}\left.\dfrac{f(x)}{g(x)}\right\vert_{x=\vbone} = \vbfour$
+\question[3] Given two functions $f(x)$ and $g(x)$, find $f'(x)$ given that 
+\[ g(\va) = \vb, \left[\dfrac{d}{dx} f(x)g(x)\right]_{x=\va} = \vc\text{ and } 
+\left[\dfrac{d}{dx}\dfrac{f(x)}{g(x)}\right]_{x=\va} = \vd \]
 
 \watchout
-
-\ifprintanswers
-\fi 
 
 \begin{solution}[\halfpage]
 	We know that, 
@@ -50,12 +47,13 @@ $\dfrac{d}{dx}\left.\dfrac{f(x)}{g(x)}\right\vert_{x=\vbone} = \vbfour$
 		\text{(Quotient Rule) }\dfrac{d}{dx}\dfrac{f}{g} &= \dfrac{gf' - g'f}{g^2}
 	\end{align}
 	
-	And therefore, when $x=\vbone$, the following would hold 
+	And therefore, when $x=\va$, the following would hold 
 	\begin{align}
-		\vbtwo\cdot f' + g'f &= \vbthree \Rightarrow g'f = \vbthree - \vbtwo\cdot f' \\
-		\dfrac{\vbtwo\cdot f' - g'f }{\vbtwo^2} &= \vbfour \Rightarrow g'f = \vbtwo\cdot f' - \tq \\
-		\Rightarrow \vbthree - \vbtwo\cdot f' &= \vbtwo\cdot f' - \tq \\
+		\vb\cdot f' + g'f &= \vc \implies g'f = \vc - \vb\cdot f' \\
+		\dfrac{\vb\cdot f' - g'f }{\vb^2} &= \vd \implies g'f = \vb\cdot f' - \tq \\
+		\implies \vc - \vb\cdot f' &= \vb\cdot f' - \tq \\
 		\text{ or } f'(x) &= \WRITEFRAC\tr\ts
 	\end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}$\WRITEFRAC\tr\ts$\end{codex}\fi

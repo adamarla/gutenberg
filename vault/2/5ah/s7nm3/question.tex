@@ -1,82 +1,98 @@
 
-
-
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
+  \renewcommand\va{2}
+  \renewcommand\vb{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
+    \renewcommand\va{3}
+    \renewcommand\vb{4}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
+      \renewcommand\va{5}
+      \renewcommand\vb{6}
     }{
-      % variables 
+      \renewcommand\va{4}
+      \renewcommand\vb{5}
     }
   }
 }
 
-\question Consider the curve given by $xy^2-x^3y=6$.
+\MULTIPLY\va\vb\vc
+\MULTIPLY\vc{-4}\vd
 
+\EXPR[0]\vm{-\va*(3+\va)}
+\EXPR[0]\vn{-2*\va - 1}
 
+\EXPR[0]\vp{\vb*(3-\vb)}
+\EXPR[0]\vq{2*\vb - 1}
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
+\LINEINTERCEPT{1}{-\va}\vm\vn\a\b
+\LINEINTERCEPT{1}{\vb}\vp\vq\m\n
+
+\question Given the curve 
+  \[ xy^2-x^3y=\vc \]
+\watchout
 
 \begin{parts}
-  \part[2] Show that $\dydx = \dfrac{3x^2y-y^2}{2xy-x^3}$.
+  \part[2] Find $\dfrac{\ud y}{\ud x}$. 
 
 \begin{solution}[\mcq]
-    \begin{align}
-                  &xy^2-x^3y=6 \\
-      \Rightarrow &x(2y)\dydx+y^2\cdot 1-\left[x^3\dydx +y(3x^2)\right]=0 \\
-      \Rightarrow &\dydx = \dfrac{3x^2y-y^2}{2xy-x^3}    
-    \end{align}
-  \end{solution}
+  \begin{align}
+    xy^2 - x^3y &= \vc \\ 
+    \implies\dfrac\ud{\ud x}(xy^2 - x^3y) &= \dfrac\ud{\ud x} \vc = 0 \\
+    \implies\left(y^2\dfrac\ud{\ud x}x + x\dfrac\ud{\ud x}y^2\right) 
+    &- \left( y\dfrac\ud{\ud x}x^3 + x^2\dfrac\ud{\ud x} y\right) = 0 \\
+    \implies \left( y^2 + 2xy\dfrac{\ud y}{\ud x} \right) &=
+    \left( 3x^2y + x^3\dfrac{\ud y}{\ud x} \right) \\
+    \implies \dfrac{\ud y}{\ud x} &= \dfrac{3x^2y - y^2}{2xy-x^3} 
+  \end{align}
+\end{solution}
 
-  \part[3] Find all the points on the curve whose \textit{x-coordinate} is $1$ and 
-  write an equation for the tangent line at each of these points.
+  \part[3] Find all the points on the curve whose \textbf{x-coordinate} is $1$ and 
+  write an equation for the tangent at each of these points.
 
 \begin{solution}[\mcq]
-    Substitute $x=1$ in the equation of the curve,
-    \begin{align}
-      &y^2-y=6 \Rightarrow y=3 \text{ or } y=-2
-    \end{align}
-    To find the equation for the tangent line we need the $derivative$ (slope)
-    of the function at these two points.
-    \begin{align}
-      \dydx {\displaystyle\vert}_{(1,3)} &=0 \Rightarrow y=3\\ 
-      \dydx {\displaystyle\vert}_{(1,-2)}&=2 \Rightarrow y+2=2(x-1) \\
-                                         &\quad\quad\Rightarrow y=2x-4)
-    \end{align}
-  \end{solution}
+  When $x=1$, then 
+  \begin{align}
+    1\cdot y^2 - 1^3\cdot y &= \vc \implies y^2-y-\vc = 0 \\
+    \implies y &= -\va,\vb
+  \end{align}
+  Hence, the two points \textbf{on the curve} with $x=1$ are 
+  \[ A = (1,-\va)\text{ and }B=(1,\vb) \]
+  The slope of the tangent is simply the $\dfrac{\ud y}{\ud x}$ we found in part (a). 
+  \begin{align}
+    m_A &= \left[ \dfrac{\ud y}{\ud x} \right]_{(1,-\va)} = \WRITEFRAC[false]\vm\vn  \\
+    m_B &= \left[ \dfrac{\ud y}{\ud x} \right]_{(1,\vb)} = \WRITEFRAC[false]\vp\vq
+  \end{align}
+  And as these lines with slopes $m_A$ and $m_B$ pass through $A$ and $B$ respectively, therefore 
+  \begin{align}
+    \underbrace{\dfrac{y+\va}{x-1}}_{m_A} &= \WRITEFRAC[false]\vm\vn \implies y = \WRITELINE\vm\vn\a\b \\
+    \underbrace{\dfrac{y-\vb}{x-1}}_{m_B} &= \WRITEFRAC[false]\vp\vq \implies y = \WRITELINE\vp\vq\m\n
+  \end{align}
+\end{solution}
 
-  \part[3] Find the \textit{x-coordinate} of each point on the curve where the tangent
-  line is vertical.
+  \part[3] For what values of the $x-$coordinate is the tangent vertical?
 \begin{solution}[\mcq]
-    The tangent is vertical when $\dfrac{\ud x}{\ud y}$ is $0$. Therefore,
-    \begin{align}
-                  &\dfrac{2xy-x^3}{3x^2y-y^2}=0 \\
-      \Rightarrow &2xy-x^3=0 \textit{ (and $3x^2y-y^2\neq 0$)} \\
-      \Rightarrow &2xy-x^3=0 \Rightarrow x(2y-x^2)=0 \\
-      \Rightarrow &x=0 \text{ or } y=\dfrac{1}{2}x^2
-    \end{align}
-    $x=0$ rejected, therefore using $y =\dfrac{1}{2}x^2$
-    \begin{align}
-                  &\dfrac{1}{4}x^5-\dfrac{1}{2}x^5=6 \\
-      \Rightarrow &x^5 =-24 \Rightarrow x=\sqrt[5]{-24}
-    \end{align}
-  \end{solution}
+  For the tangent to be vertical 
+  \begin{align}
+    \dfrac{\ud y}{\ud x} &= \dfrac{3x^2y-y^2}{2xy-x^3} = \infty \\
+    \implies 2xy-x^3 &= 0\implies y = \dfrac{x^2}{2}
+  \end{align}
+  Moreover, as all such points are also on the curve, it also means that 
+  \begin{align}
+    xy^2 - x^3 y &= \vc \\
+    \implies x\cdot\left(\dfrac{x^2}{2} \right)^2 - x^3\cdot\dfrac{x^2}{2} &= \vc \\
+    \implies x^5\cdot\left(\dfrac{1}{4}-\dfrac{1}{2}\right)  &= \vc \\
+    \implies x^5 = \vd \implies x &= \sqrt[5]{\vd}
+  \end{align}
+\end{solution}
 \end{parts}
 
+\ifprintanswers
+  \begin{codex}
+    \begin{tabular}{l l l} 
+      $(a)\,\dfrac{3x^2y - y^2}{2xy-x^3}$ & $(b)\,y=\WRITELINE\vm\vn\a\b\text{ and } y = \WRITELINE\vp\vq\m\n\qquad$ 
+      & $(c)\,x = \sqrt[5]{\vd}$
+    \end{tabular}
+  \end{codex}
+\fi

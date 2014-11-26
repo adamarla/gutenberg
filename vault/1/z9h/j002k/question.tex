@@ -2,66 +2,72 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{3}
-  \renewcommand{\vbtwo}{4}
-  \renewcommand{\vbthree}{4}
-  \renewcommand{\vbfour}{3}
+  \renewcommand{\va}{3}
+  \renewcommand{\vb}{4}
+  \renewcommand{\vc}{4}
+  \renewcommand{\vd}{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{7}
-    \renewcommand{\vbtwo}{4}
-    \renewcommand{\vbthree}{5}
-    \renewcommand{\vbfour}{3}
+    \renewcommand{\va}{7}
+    \renewcommand{\vb}{4}
+    \renewcommand{\vc}{5}
+    \renewcommand{\vd}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{9}
-      \renewcommand{\vbthree}{4}
-      \renewcommand{\vbfour}{6}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{9}
+      \renewcommand{\vc}{4}
+      \renewcommand{\vd}{6}
     }{
       % variables 
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{7}
-      \renewcommand{\vbthree}{6}
-      \renewcommand{\vbfour}{5}
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{7}
+      \renewcommand{\vc}{6}
+      \renewcommand{\vd}{5}
     }
   }
 }
 
-\ADD\vbone\vbtwo\p
-\ADD\vbthree\vbfour\q
-\MULTIPLY\vbthree{2}\r
-\FRACADD\vbone\p\r\q\s\t
+\ADD\va\vb\p
+\ADD\vc\vd\q
+\MULTIPLY\vc{2}\r
+\FRACADD\va\p\r\q\s\t
 \FRACMULT\s\t{1}{3}\u\v
 
-\question[2] There are two bags - I and II - with black and white balls. Bag I contains $\vbone$ black 
-and $\vbtwo$ white balls whereas bag II contains $\vbthree$ black and $\vbfour$ white balls. A die
-is now thrown. If it shows up $1$ or $3$, then a ball is picked from bag I; otherwise a ball is picked
-from bag II. What is the probability of picking a black ball?
+\question[2] There are two bags - X and Y - with black and white balls. Bag X contains $\va$ black 
+and $\vb$ white balls whereas bag Y contains $\vc$ black and $\vd$ white balls. A die
+is now thrown. If it shows up $1$ or $3$, then a ball is picked from bag X; otherwise a ball is picked
+from bag Y. What is the probability of picking a black ball?
 
-
-\watchout[-50pt]
-
-\ifprintanswers
-\fi 
+\watchout
 
 \begin{solution}[\halfpage]
-	If $I =$ event that a ball is picked from bag I, $II=$ event that ball is picked from bag II
-	and $B =$ a black ball is drawn, then we have been given the following
+  If we define events as follows 
+
+  \begin{tabular}{c l}
+    \toprule 
+      Event & Meaning \\
+    \midrule
+      X & Dice roll = $(1,3)\implies$ ball from $X$ \\ 
+      Y & Dice roll = $(2,4,5,6)\implies$ ball from $Y$ \\ 
+      B & A black ball is drawn \\ 
+    \bottomrule 
+  \end{tabular} 
+
+  then we know that, 
 	\begin{align}
-		P(I) &= \dfrac{2}{6} = \dfrac{1}{3} \\
-		P(II) &= \dfrac{4}{6} = \dfrac{2}{3} \\
-		P(B\vert\,I) &= \dfrac{\vbone}{\vbone+\vbtwo} = \WRITEFRAC\vbone\p \\
-		P(B\vert\,II) &= \dfrac{\vbthree}{\vbthree+\vbfour} = \WRITEFRAC\vbthree\q
+		P(X) &= \dfrac{2}{6} = \dfrac{1}{3} \\
+		P(Y) &= \dfrac{4}{6} = \dfrac{2}{3} \\
+		P(B\vert\,X) &= \dfrac{\va}{\va+\vb} = \WRITEFRAC\va\p \\
+		P(B\vert\,Y) &= \dfrac{\vc}{\vc+\vd} = \WRITEFRAC\vc\q
 	\end{align}
 	$\therefore P(B) = $ probability that a black ball is (eventually) drawn is
 	\begin{align}
-		P(B) &= P(I)\cdot P(B\vert\,I) + P(II)\cdot P(B\vert\, II) \\
-		&= \dfrac{1}{3}\cdot\WRITEFRAC\vbone\p + \dfrac{2}{3}\cdot\WRITEFRAC\vbthree\q \\
-		&= \WRITEFRAC\u\v
+		P(B) &= P(X)\cdot P(B\vert\,X) + P(Y)\cdot P(B\vert\, Y) \\
+		&= \dfrac{1}{3}\cdot\WRITEFRAC\va\p + \dfrac{2}{3}\cdot\WRITEFRAC\vc\q = \WRITEFRAC\u\v
 	\end{align}
 \end{solution}
 
-
+\ifprintanswers\begin{codex}$\WRITEFRAC\u\v$\end{codex}\fi

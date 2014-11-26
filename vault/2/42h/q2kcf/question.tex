@@ -1,58 +1,62 @@
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{10}
-  \renewcommand{\vbtwo}{1}
-  \renewcommand{\vbthree}{41}
-  \renewcommand{\vbfour}{84}
+  \renewcommand{\va}{10}
+  \renewcommand{\vb}{2}
+  \renewcommand{\vc}{1}
+  \renewcommand{\vd}{6}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{8}
-    \renewcommand{\vbtwo}{2}
-    \renewcommand{\vbthree}{11}
-    \renewcommand{\vbfour}{24}
+    \renewcommand{\va}{6}
+    \renewcommand{\vb}{9}
+    \renewcommand{\vc}{7}
+    \renewcommand{\vd}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{9}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{19}
-      \renewcommand{\vbfour}{33}
+      \renewcommand{\va}{9}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{5}
+      \renewcommand{\vd}{7}
     }{
       % variables 
-      \renewcommand{\vbone}{7}
-      \renewcommand{\vbtwo}{4}
-      \renewcommand{\vbthree}{53}
-      \renewcommand{\vbfour}{90}
+      \renewcommand{\va}{7}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{5}
+      \renewcommand{\vd}{7}
     }
   }
 }
 
-\gcalcexpr[0]{\fednadaltot}{\vbone + 2}
-\gcalcexpr[0]{\djokonadaltot}{\vbone + 2}
+\ADD\va\vb\nf
+\ADD\vc\vd\nd
+
+\FRACMULT{1}{2}\va\nf\vm\vn
+\FRACMULT{1}{2}\vc\nd\vo\vp
+\FRACADD\vm\vn\vo\vp\vy\vz
 
 \question[3] Rafael Nadal is poised to meet either Roger Federer or Novak 
 Djokovic in the French Open finals. Nadal's record against Federer is 
-$\vbone-2$, which means that Nadal has won $\vbone$ of their last $\fednadaltot$ matches. Nadal's 
-record against Djokovic is $\vbtwo-6$. Federer and Djokovic have an equal chance of
-beating each other in the other semi-final. What is the probability that Nadal will win 
-the French Open finals? 
-
+$\va-\vb$, which means that Nadal has won $\va$ of their last $\vn = \va+\vb$ matches. 
+Nadal's record against Djokovic is $\vc-\vd$. If Federer and Djokovic have an equal 
+of getting to the finals, then what is the probability that Nadal will win the French Open?
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
-
 \begin{solution}[\halfpage]
-  Let $P_{W}$ be the probability that Nadal wins the title, 
-$P_{NdefD}$ be the probablity that he defeats Djokovic and $P_{NdefF}$  
-be the probability that he wins against Federer, then 
-   
-  \begin{align}
-    P_{W} &= \dfrac{1}{2}(P_{NdefD}) + \dfrac{1}{2}(P_{NdefF}) \\
-   	  &= \dfrac{1}{2}(\dfrac{\vbtwo}{\djokonadaltot}) + \dfrac{1}{2}(\dfrac{\vbone}{\fednadaltot}) \\ 
-   	  &= \dfrac{\vbthree}{\vbfour}
-  \end{align}
+  There are two scenarios in which Nadal can win the French Open. 
+
+  \textbf{Scenario \#1: Nadal vs Feder, Nadal wins}
+  \[\text{Federer beats Djokovic }\textbf{and then}\text{ Nadal beats Federer} \]
+  If the probability of the above happening be $P(A)$, then 
+  \[ P(A) = \dfrac{1}{2}\times\left( \dfrac{\va}{\va+\vb}\right) = \WRITEFRAC[false]\vm\vn \] 
+  \textbf{Scenario \#2: Nadal vs Djokovic, Nadal wins}
+  
+  And this can happen if 
+  \[\text{Djokovic beats Federer }\textbf{and then}\text{ Nadal beats Djokovic} \]
+  If the probability of the above happening be $P(B)$, then 
+  \[ P(B) = \dfrac{1}{2}\times\left(\dfrac{\vc}{\vc+\vd} \right) = \WRITEFRAC[false]\vo\vp \] 
+  Hence, the probability that Nadal will win the French Open is simply, 
+  \[ P(\text{Nadal wins}) = P(A) + P(B) = \WRITEFRAC[false]\vy\vz \]
 \end{solution}
+\ifprintanswers\begin{codex}$\WRITEFRAC[false]\vy\vz$\end{codex}\fi
