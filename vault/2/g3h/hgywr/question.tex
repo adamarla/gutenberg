@@ -1,26 +1,46 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\va}{12}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\va}{24}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\va}{18}
+    }{
+      \renewcommand{\va}{6}
+    }
+  }
+}
 
-\question[4] Two dots zip along the circumference of a circle. If they move in opposite directions they meet every $15sec$ whereas if they move in the same direction then meet every $60sec$. If the circumference of the circle is $1.2m$, calculate the speed of the dots? \textit{(Use speed = distance/time)}
+\DIVIDE\va{24}\a
+\DIVIDE\va{15}\t
+\SUBTRACT\t\a\b
 
+\question[4] Two dots zip along the circumference of a circle. If they move in 
+opposite directions they meet every $15sec$ whereas if they move in the same direction
+then meet every $60sec$. If the circumference of the circle is $\va m$, calculate the 
+speed of the dots? \textit{(Use speed = distance/time)}
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
+\watchout
 
 \begin{solution}[\halfpage]
   Let the speeds of the dots be $v_1(m/sec)$ and $v_2(m/sec)$. To meet the dots have to traverse the circumference of the circle. Therefore,
   \begin{align}
-    \dfrac{1.2(m)}{15(sec)} &= v_1(m/sec)+v_2(m/sec) 
+    \dfrac{\va(m)}{15(sec)} &= v_1(m/sec)+v_2(m/sec) 
 	\quad\quad\textit{(opp. directions)} \\
-    \dfrac{1.2(m)}{60(sec)} &= v_1(m/sec)-v_2(m/sec) 
+    \dfrac{\va(m)}{60(sec)} &= v_1(m/sec)-v_2(m/sec) 
 	\quad\quad\textit{(same direction)}
   \end{align}
   Add equation (1) and (2), 
   \begin{align}
-    \dfrac{1.2}{15}+\dfrac{1.2}{60} &= 2v_1 \\
-    v_1                             &= 0.05 \\
-    v_2                             &= 0.03
+    \dfrac{\va}{15}+\dfrac{\va}{60} &= 2v_1 \\
+    v_1                             &= \a \\
+    v_2                             &= \b
   \end{align}
-  The speeds of the dots are $0.05(m/sec)$ and $0.03(m/sec)$.
+  The speeds of the dots are $\a(m/sec)$ and $\b(m/sec)$.
 \end{solution}
 
+\ifprintanswers\begin{codex}
+  $\a(m/sec)$ and $\b(m/sec)$
+\end{codex}\fi
