@@ -41,7 +41,8 @@
 \SUBTRACT\vd\vb\yd
 \SUBTRACT\vc\va\xd
 \FRACDIV{-1}{1}\yd\xd\p\q
-\EXPR[0]\r{(\q*\vf-\p*\ve)}
+
+\LINEINTERCEPT\ve\vf\p\q\vx\vy
 
 \question[2] Find the equation of the line that passes through $(\ve,\vf)$ and 
 is perpendicular to the line joining the points $(\va,\vb)$ and $(\vc, \vd)$
@@ -49,21 +50,17 @@ is perpendicular to the line joining the points $(\va,\vb)$ and $(\vc, \vd)$
 \watchout
 
 \begin{solution}[\halfpage]
-	For the line passing through $(\va, \vb)$ and $(\vc, \vd)$, the slope is given by 
+  For a line $L$  passing through $(\va, \vb)$ and $(\vc, \vd)$  
 	\begin{align}
-		& \fSlope{1}{2} = \dfrac{\vd - \vb}{\vc - \va} = \WRITEFRAC\yd\xd \\
-		& \implies m_2 = \text{ slope of the perpendicular line } = \dfrac{-1}{m_1} = \WRITEFRAC\p\q
+		& m_L = \text{slope} = \dfrac{\vd - \vb}{\vc - \va} = \WRITEFRAC[false]\yd\xd \\
+		& \implies m_{\perp} = \text{ slope of line}\perp L = \dfrac{-1}{m_1} = \WRITEFRAC[false]\p\q
 	\end{align}
-	
-	And hence, the equation of the line passing through $(\ve,\vf)$ and with slope $= \WRITEFRAC\p\q$, is
-	\begin{align}
-		\dfrac{y-\vf}{x-\ve} &= \WRITEFRAC\p\q \\
-		\text{ or } \q y &= \p x + \r 
-	\end{align}
+  And if a line with slope $= m_{\perp}$ also passes through $(\ve,\vf)$, then 
+  \[ \dfrac{y-\vf}{x-\ve} = \WRITEFRAC[false]\p\q\implies y = \WRITELINE\p\q\vx\vy \] 
 \end{solution}
 
 \ifprintanswers
   \begin{codex}
-    $\q y = \p x + \r$
+    $y=\WRITELINE\p\q\vx\vy$
   \end{codex}
 \fi
