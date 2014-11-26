@@ -3,60 +3,40 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{n}
-  \renewcommand{\vbtwo}{105}
-  \renewcommand{\vbthree}{\dfrac{n\cdot(n-1)}{2}}
-  \renewcommand{\vbfour}{15}
+  \renewcommand\vn{11}
+  \renewcommand\vz{55}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{15}
-    \renewcommand{\vbtwo}{n}
-    \renewcommand{\vbthree}{\dfrac{15\cdot 14}{2}}
-    \renewcommand{\vbfour}{105}
+    \renewcommand\vn{14}
+    \renewcommand\vz{91}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{12}
-      \renewcommand{\vbtwo}{n}
-      \renewcommand{\vbthree}{\dfrac{12\cdot 11}{2}}
-      \renewcommand{\vbfour}{66}
+      \renewcommand\vn{13}
+      \renewcommand\vz{78}
     }{
       % variables 
-      \renewcommand{\vbone}{n}
-      \renewcommand{\vbtwo}{66}
-      \renewcommand{\vbthree}{\dfrac{n\cdot (n-1)}{2}}
-      \renewcommand{\vbfour}{12}
+      \renewcommand\vn{12}
+      \renewcommand\vz{66}
     }
   }
 }
 
-\question[4] There are $\vbone$ stations in a railways line. The number of kinds of ticket printed are $\vbtwo$. Find n   
-
+\question[4] There are $\vn$ stations on a railway line. If the price of a ticket depends on 
+which two stations one is travelling between, then how many differently priced tickets can there be? 
+The fare from $A\to B$ is equal to the fare from $B\to A$.
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}[\mcq]
-One ticket will be printed for travelling from one particular station to other. Thus, the total number of tickets will be every possible combination of 2 stations from 
-$\vbone$ stations. \\
-$\therefore$ Total possible tickets will be $^{\vbone}C_{2} = \vbtwo$\\ 
-$\Rightarrow \vbthree = \vbtwo$\\
-$\Rightarrow n = \vbfour$
+  The number of ways in which two out of $\vn$ stations can be picked is 
+  \[ N = \binom\vn{2} = \dfrac{\vn !}{2!\cdot (\vn-2)!} = \vz \]
+  As a train journey is defined by which two stations it is between, the above 
+  number is also the number of distinct journeys that can be made. 
+
+  And as each journey has its own ticket price, 
+  \[ N_{\text{tickets}} = \vz \] 
 \end{solution}
 
-
+\ifprintanswers\begin{codex}$\vz$\end{codex}\fi
