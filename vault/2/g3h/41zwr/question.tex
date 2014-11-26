@@ -1,32 +1,64 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\va}{10}
+  \renewcommand{\vb}{8}
+  \renewcommand{\vc}{160}
+  \renewcommand{\vd}{20}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\va}{12}
+    \renewcommand{\vb}{8}
+    \renewcommand{\vc}{192}
+    \renewcommand{\vd}{24}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\va}{12}
+      \renewcommand{\vb}{6}
+      \renewcommand{\vc}{54}
+      \renewcommand{\vd}{18}
+    }{
+      \renewcommand{\va}{10}
+      \renewcommand{\vb}{14}
+      \renewcommand{\vc}{336}
+      \renewcommand{\vd}{24}
+    }
+  }
+}
 
-\question[4] A tank of capacity $2400m^3$ is full of water. The rate at which water discharges from the tank is $10m^3/min$ higher than the rate at which it fills. As a result it takes $8min$ more to fill the tank than it takes to empty it. Find the rate at which the tank fills?
+\DIVIDE{\vc}\vb\m
+\MULTIPLY\m\va\n
+\SUBTRACT\vd\va\o
 
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
+\question[4] A tank of capacity $\vc m^3$ is full of water. The rate at which water 
+discharges from the tank is $\va m^3/min$ higher than the rate at which it fills. As a 
+result it takes $\vb min$ more to fill the tank than it takes to empty it. Find the 
+rate at which the tank fills?
 
 \begin{solution}[\halfpage]
   If $t_f(min)$ is the time it takes to fill the tank at rate $r_f(m^3/min)$ and $t_e(min)$ is the time it takes to empty the tank at rate $r_e(m^3/min)$, then as per the question,
   \begin{align}
-    r_f(m^3/min) &= r_e(m^3/min) - 10(m^3/min) \\
-    t_f(min)     &= t_e(min)+8(min)
+    r_f(m^3/min) &= r_e(m^3/min) - \va(m^3/min) \\
+    t_f(min)     &= t_e(min) + \vb(min)
   \end{align}
   
-  We know that $(rate=volume/time)$. Substituting $times$ with the corresponding $rates$ in equation (2) we get,
+  We know that $(rate=volume/time)$. Substituting $times$ with the corresponding 
+  $rates$ in equation (2) we get,
   \begin{align}
-    \dfrac{2400(m^3)}{r_f(m^3/min)} &= 
-    	\dfrac{2400(m^3)}{r_e(m^3/min)}+8(min) 
+    \dfrac{\vc(m^3)}{r_f(m^3/min)} &= 
+      \dfrac{\vc(m^3)}{r_e(m^3/min)} + \vb(min) 
   \end{align}
   
   Combining equations (1) and (3),
   \begin{align}      
-    \dfrac{2400}{r_f}               &= \dfrac{2400}{r_f+10}+8 \\
-    r_f^2 + 10r_f - 3000            &= 0 \\
-    r_f^2 + 60r_f -50r_f - 3000     &= 0 \\
-    r_f                             &= 50, -60
+    \dfrac{\vc}{r_f}              &= \dfrac{\vc}{r_f + \va} + \vb \\
+    r_f^2 + \va r_f - \n          &= 0 \\
+    r_f^2 + \vd r_f - \o r_f - \n &= 0 \\
+    r_f                           &= \o, -\vd
   \end{align}
-  Negative value is rejected, rate at which the tank fills is $50(m^3/min)$.
+  Negative value is rejected, rate at which the tank fills is $\o(m^3/min)$.
 \end{solution}
+
+
+
+\ifprintanswers\begin{codex}$\o(m^3/min)$\end{codex}\fi
 

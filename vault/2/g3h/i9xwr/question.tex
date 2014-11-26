@@ -1,26 +1,71 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\va}{twice}
+  \renewcommand{\vb}{three}
+  \renewcommand{\vc}{1}
+  \renewcommand{\vd}{3}
+  \renewcommand{\ve}{2}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\va}{twice}
+    \renewcommand{\vb}{four}
+    \renewcommand{\vc}{1}
+    \renewcommand{\vd}{4}
+    \renewcommand{\ve}{2}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\va}{thrice}
+      \renewcommand{\vb}{four}
+      \renewcommand{\vc}{1}
+      \renewcommand{\vd}{4}
+      \renewcommand{\ve}{3}
+    }{
+      \renewcommand{\va}{thrice}
+      \renewcommand{\vb}{five}
+      \renewcommand{\vc}{1}
+      \renewcommand{\vd}{5}
+      \renewcommand{\ve}{3}
+    }
+  }
+}
 
-\question[3] Three masons working together need `$a$' hours to make a stone wall. The first of them, working alone can make the wall twice as fast as the third mason and three times as fast as the second mason. How long would each take to complete the wall on their own.
+\FRACADD{1}\vc{1}\vd\tn\td
+\FRACADD\tn\td{1}\ve\sn\sd
 
+\FRACDIV{1}\vc\sn\sd\an\ad
+\FRACDIV{1}\vd\sn\sd\bn\bd
+\FRACDIV{1}\ve\sn\sd\cn\cd
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
+\question[3] Three masons working together need `$a$' hours to make a stone 
+wall. The first of them, working alone can make the wall $\va$ as fast as the 
+first mason and $\vb$ times as fast as the second mason. How long would each 
+take to complete the wall on their own.
+
+\watchout
 
 \begin{solution}[\halfpage]
-  Let the three masons take $a_1$, $3a_1$ and $2a_1$ hours individually to complete the wall. The rate at which each mason works is $\frac{1}{a_1}$, $\frac{1}{3a_1}$ and $\frac{1}{2a_1}$ Wall/hr respectively. Together they work at an effective rate of,
+  Let the three masons take $\vc n$, $\vd n$ and $\ve n$ hours individually to 
+  complete the wall. The rate at which each mason works is $\frac{1}{\vc n}$, 
+  $\frac{1}{\vd n}$ and $\frac{1}{\ve n}$(Wall/hr) respectively. Together they 
+  work at an effective rate of,
   \begin{align}
-	R_{eff} = \dfrac{1}{a_1} + \dfrac{1}{3a_1} + \dfrac{1}{2a_1} (Wall/hr)
+    R_{eff} = \dfrac{1}{\vc n} +\dfrac{1}{\vd n} +\dfrac{1}{\ve n}(Wall/hr)
   \end{align}
   
   The time it would take them to complete the wall working together is,
   \begin{align}
     a(hr) &= \dfrac{1(Wall)}{R_{eff}(Wall/hr)} \\
-    a     &= \dfrac{1}{\dfrac{1}{a_1} + \dfrac{1}{3a_1} + \dfrac{1}{2a_1}} \\
-    a     &= \dfrac{6}{11}a_1
+    a     &= \dfrac{1}{\dfrac{1}{\vc n} +\dfrac{1}{\vd n} +\dfrac{1}{\ve n}} \\
+    a     &= \dfrac{\sd n}{\sn}
   \end{align}
   
-  The three masons can complete the job solo in $\dfrac{11}{6}a$, $\dfrac{11}{2}a$ and $\dfrac{11}{3}a$ hours respectively.
+  The three masons can complete the job solo in $\dfrac{\an a}{\ad}$, 
+  $\dfrac{\bn a}{\bd}$ and $\dfrac{\cn a}{\cd}$ hours respectively.
   
 \end{solution}
+
+\ifprintanswers\begin{codex}
+  $\dfrac{\an a}{\ad}$, $\dfrac{\bn a}{\bd}$ and $\dfrac{\cn a}{\cd}$ hours 
+  respectively
+\end{codex}\fi
 

@@ -1,6 +1,33 @@
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand{\va}{12}
+  \renewcommand{\vb}{25}
+  \renewcommand{\vc}{20}
+  \renewcommand{\vd}{30}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand{\va}{6}
+    \renewcommand{\vb}{16}
+    \renewcommand{\vc}{8}
+    \renewcommand{\vd}{24}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand{\va}{8}
+      \renewcommand{\vb}{18}
+      \renewcommand{\vc}{12}
+      \renewcommand{\vd}{24}
+    }{
+      \renewcommand{\va}{13}
+      \renewcommand{\vb}{27}
+      \renewcommand{\vc}{18}
+      \renewcommand{\vd}{36}
+    }
+  }
+}
 
+\MULTIPLY\vb{2}\m
+\MULTIPLY\va\m\n
 
-\question[4] Two workers working together can complete a job in $12$ days. If the first worker completes half the work and then the second worker takes over, the job will be completed in $25$ days. How many days would it take each worker to do the job if they worked alone?
+\question[4] Two workers working together can complete a job in $\va$ days. If the first worker completes half the work and then the second worker takes over, the job will be completed in $\vb$ days. How many days would it take each worker to do the job if they worked alone?
 
 
 \ifprintanswers
@@ -16,29 +43,32 @@
     				  &= \left(\frac{1}{t_1}+\frac{1}{t_2}\right)(jobs/day)
   \end{align}
   
-  Now, working together they complete a job as a whole in $12$ days, therefore,
+  Now, working together they complete a job as a whole in $\va$ days, therefore,
   \begin{align}
 	\dfrac{1(job)}
-	      {\left(\dfrac{1}{t_1}+\dfrac{1}{t_2}\right)(jobs/day)} &= 12(days) \\
-	\Rightarrow \dfrac{t_1t_2}{t_1+t_2}                          &= 12
+	      {\left(\dfrac{1}{t_1}+\dfrac{1}{t_2}\right)(jobs/day)} &= \va(days) \\
+	\implies \dfrac{t_1t_2}{t_1+t_2}                             &=\va 
   \end{align}
   
-  Dividing the job into two halves, where each worker completes one half and the second one starts only after the first one finishes, they take $25$ days, therefore,
+  Dividing the job into two halves, where each worker completes one half and the second one starts only after the first one finishes, they take $\vb$ days, therefore,
   \begin{align}
-    \dfrac{\frac{1}{2}(job)}{\dfrac{1}{t_1}(jobs/day)}+
-    	\dfrac{\frac{1}{2}(job)}{\dfrac{1}{t_1}(jobs/day)} &= 25(days) \\
-    \Rightarrow t_1+t_2                                    &= 50
+    \dfrac{\frac{1}{2}(job)}{\dfrac{1}{t_1}(jobs/day)} +
+      \dfrac{\frac{1}{2}(job)}{\dfrac{1}{t_2}(jobs/day)} &= \vb(days) \\
+    \implies t_1+t_2                                     &= \m 
   \end{align}
   
   Using results (5) and (7), we get,
   \begin{align}
-    \dfrac{t_1(50-t_1)}{t_1+(50-t_1)} &= 12 \\
-    50t_1-t_1^2                       &= 600 \\
-    t_1^2-50t_1+600                   &= 0 \\     
-    t_1                               &= 20 \\
-    t_2                               &= 30
+    \dfrac{t_1(\m-t_1)}{t_1+(\m-t_1)} &= \va \\
+    \m t_1-t_1^2                       &= \n \\
+    t_1^2-\m t_1+\n                   &= 0 \\     
+    t_1                               &= \vc \\
+    t_2                               &= \vd 
   \end{align}
-  Therefore, working by themselves, the workers would take $20$ and $30$ days respectively to complete the job.
+  Therefore, working by themselves, the workers would take $\vc$ and $\vd$ days respectively to complete the job.
 
 \end{solution}
 
+\ifprintanswers\begin{codex}
+  $\vc$ and $\vd$ days
+\end{codex}\fi
