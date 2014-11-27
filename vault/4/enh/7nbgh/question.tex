@@ -1,81 +1,56 @@
 
 
+\renewcommand\va{4}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{3}
-  \renewcommand{\vbtwo}{7}
-  \renewcommand{\vbthree}{9\times 10 \times 10}
-  \renewcommand{\vbfour}{900}
-  \renewcommand{\vbfive}{8 \times 9 \times 9}
-  \renewcommand{\vbsix}{648}
-  \renewcommand{\vbseven}{252}
+  \renewcommand{\vb}{7}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{2}
-    \renewcommand{\vbtwo}{6}
-    \renewcommand{\vbthree}{9 \times 10}
-    \renewcommand{\vbfour}{90}
-    \renewcommand{\vbfive}{8 \times 9}
-    \renewcommand{\vbsix}{72}
-    \renewcommand{\vbseven}{18}
+    \renewcommand{\vb}{6}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{5}
-      \renewcommand{\vbthree}{9 \times 10 \times 10 \times 10}
-      \renewcommand{\vbfour}{9000}
-      \renewcommand{\vbfive}{8 \times 9 \times 9 \times 9}
-      \renewcommand{\vbsix}{5823}
-      \renewcommand{\vbseven}{3177}
+      \renewcommand{\vb}{5}
     }{
       % variables 
-      \renewcommand{\vbone}{3}
-      \renewcommand{\vbtwo}{2}
-      \renewcommand{\vbthree}{9 \times 10 \times 10}
-      \renewcommand{\vbfour}{900}
-      \renewcommand{\vbfive}{8 \times 9 \times 9}
-      \renewcommand{\vbsix}{648}
-      \renewcommand{\vbseven}{252}
+      \renewcommand{\vb}{2}
     }
   }
 }
 
-\question[3] How many $\vbone$ digit numbers are there such that atleast one of their digit is $\vbtwo$. 
+\SUBTRACT\va{1}\a
+\POWER{10}\a\b
+\MULTIPLY{9}\b\n
 
+\POWER{9}\a\d
+\MULTIPLY\d{8}\p
+\SUBTRACT\n\p\vz
+
+\question[3] How many $\va$ digit numbers are there such that atleast one of their digit is $\vb$. 
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
 
 \begin{solution}[\halfpage]
-The first digit can not be zero thus we have 9 digits available to choose from. Second digit onwards we can choose from any of the 10 digits.\\
-Thus,\\
-Total ${\vbone}$ digit numbers are : ${\vbthree} = {\vbfour}$\\ \\
-Among these we find the numbers in which no digit is $\vbtwo$\\ \\
-Now, the first digit can not be a $0$ or a $\vbtwo$, hence we are left with only 8 remaining digits to choose from. \\
-The other numbers can be picked from 9 digits($0 - 9$, except ${\vbtwo}$).\\
-Thus, the $\vbone$ digit numbers with no  $\vbtwo$ are : ${\vbfive}$ = ${\vbsix}$\\
-\\
-Now, we subtract this from total $\vbone$ digit numbers to find the numbers with atleast one digit as ${\vbtwo}$
-\begin{align}
-\Rightarrow \vbfour - \vbsix = \vbseven
-\end{align}
-\end{solution}
+  The \textbf{left-most} digit of a $N-$ digit number \textbf{cannot} be $0$. If it is, then 
+  we do not have a $N-$digit, but an $N-1$ digit number. 
+  
+  Other than that, there is no constraint on which digits can come in the remaining $N-1$ positions.
 
+  Given this, the \textbf{total} number of $\va-$digit numbers that can be formed is
+  \[ N_{\text{total}} = 9\times\underbrace{10\times10\times\ldots\times10}_{\a\text{ times}} = \n \] 
+  The number of numbers with \textbf{atleast one} $\vb$ is simply 
+  \[ N = N_{\text{total}} - N_{\text{no }\vb} \] 
+  If $\vb$ can't appear anywhere, then we have a total of $9$ digits (including $0$) that we can use. 
+
+  And of these, only $8$ can be used for the left-most digit. Hence, 
+  \begin{align}
+     N_{\text{no }\vb} &= 8\times\underbrace{9\times9\times\ldots\times9}_{\a\text{ times}} = \p \\
+     \implies N &= N_{\text{total}} - N_{\text{no }\vb} = \n-\p = \vz
+  \end{align}
+
+\end{solution}
  
+\ifprintanswers\begin{codex}$\vz$\end{codex}\fi
