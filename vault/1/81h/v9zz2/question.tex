@@ -17,18 +17,16 @@
 \FRACTIONSIMPLIFY\vb{-12}\vm\vn
 \ABSVALUE\vm\vo
 
-\question[3] Find the area of the figure bounded by the $y-axis$ and the curve 
-$x=y^2(y-\va)$
+\question[3] Find the area of the figure bounded by the $y-axis$ and the curve (see figure)
+\[ x=y^2(y-\va) \]
 
 \watchout
 
-\ifprintanswers
-  \begin{marginfigure}[30pt]
-    \includegraphics[width=100pt]{graph.eps}
-  \end{marginfigure}
-\fi 
+\includegraphics[width=300pt]{plotly.eps}
 
 \begin{solution}[\halfpage]
+  \textbf{Plotting $x=f(y)$}
+
   We are accustomed to seeing $y=f(x)$ - where $y$ is the dependent variable and 
   $x$ is the independent variable. 
   
@@ -36,9 +34,12 @@ $x=y^2(y-\va)$
   simply treat $y$ as the independent variable and $x$ as the dependent variable. 
 
   In other words, plot it like you would $y=x^2\cdot (x-\va)$ - but inter-change 
-  the $y$ with the $x$. You will then get the figure in the margin. 
+  the $y$ with the $x$. 
 
-  The required area $(A)$ is of the bulge between $y=0$ and $y=\va$.
+  \textbf{Back to the question $\ldots$}
+
+  The required area $(A)$ is of the bulge between the points where $x=0$. In other words, where 
+  \[ x = y^2\cdot(y-\va) = 0\implies y = 0, \va \]
   \begin{align}
      A &= \int_0^{\va} y^2\cdot(y-\va)\ud y 
      = \int_0^{\va}\left(y^3-\va y^2\right)\ud y \\
