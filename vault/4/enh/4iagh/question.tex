@@ -3,55 +3,47 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{3}
-  \renewcommand{\vbtwo}{4}
-  \renewcommand{\vbthree}{64}
+  \renewcommand{\va}{3}
+  \renewcommand{\vb}{4}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{3}
-    \renewcommand{\vbtwo}{5}
-    \renewcommand{\vbthree}{125}
+    \renewcommand{\va}{3}
+    \renewcommand{\vb}{5}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{5}
-      \renewcommand{\vbthree}{625}
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{5}
     }{
       % variables 
-      \renewcommand{\vbone}{2}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{9}
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{3}
     }
   }
 }
 
-\question[4] In how many ways can $\vbone$ letters addressed to different people be posted in $\vbtwo$ postboxes?
+\POWER\vb\va\vz
 
+\question[4] In how many ways can $\va$ letters be posted in $\vb$ letter-boxes? 
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}[\mcq]
-Each letter can be posted in $\vbtwo$ post boxes. First into $\vbtwo$, second into $\vbtwo$ and so on...\\
-Thus the total ways of posting these letters are $\underbrace{\vbtwo \times \vbtwo \cdots}_{\vbone \text{times}}$\\
-\begin{align}
-\Rightarrow {\vbtwo}^{\vbone} = {\vbthree}
-\end{align}  
+  Each of the letters could go into either of the $\vb$ letter-boxes - 
+  as summarized in the table below.
+
+  \begin{tabular}{l c c c c c}
+    \toprule
+      Letter \# & 1 & 2 & 3 & $\ldots$ & N \\
+    \midrule
+      \# options available & $\vb$ & $\vb$ & $\vb$ & $\ldots$ & $\vb$ \\
+    \bottomrule
+  \end{tabular}
+
+  Generally speaking, with $\vb$ letter-boxes, the number of ways of posting $N$ letters is $\vb^N$. 
+
+  And in this case, that number would be $\vb^{\va} = \vz$.
 \end{solution}
 
+\ifprintanswers\begin{codex}$\vz$\end{codex}\fi
