@@ -3,52 +3,41 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{12}
-  \renewcommand{\vbtwo}{66}
-  \renewcommand{\vbthree}{\text{Twelve}}
+  \renewcommand{\va}{12}
+  \renewcommand{\vb}{66}
+  \renewcommand{\vc}{\text{Twelve}}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{10}
-    \renewcommand{\vbtwo}{45}
-    \renewcommand{\vbthree}{\text{Ten}}
+    \renewcommand{\va}{10}
+    \renewcommand{\vb}{45}
+    \renewcommand{\vc}{\text{Ten}}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{8}
-      \renewcommand{\vbtwo}{28}
-      \renewcommand{\vbthree}{\text{Eight}}
+      \renewcommand{\va}{8}
+      \renewcommand{\vb}{28}
+      \renewcommand{\vc}{\text{Eight}}
     }{
       % variables 
-      \renewcommand{\vbone}{6}
-      \renewcommand{\vbtwo}{15}
-      \renewcommand{\vbthree}{\text{Six}}
+      \renewcommand{\va}{6}
+      \renewcommand{\vb}{15}
+      \renewcommand{\vc}{\text{Six}}
     }
   }
 }
 
-\question[4] $\vbthree$ people meet in a room and each hand shakes with all others. Find the number of hand shakes possible  
-
+\question[4] \text{\vc } people meet in a room. Each person shakes hands with all others just once. 
+How many handshakes in total would have been done?
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}[\mcq]
-Two people will come together for one handshake. Thus the total number of handshakes will be, every possible combination of two from $\vbone$ people. \\
-$\therefore \quad$ Number of handshakes = $^{\vbone}C_{2} = \vbtwo$ 
+  Two people are needed to do one handshake. And a handshake between $A$ and $B$ is the same 
+  as a handshake between $B$ and $A$. 
+
+  Hence, the total number of handshakes is simply 
+  \[ N_{\text{total}} = \binom\va{2} = \dfrac{\va !}{2!\cdot (\va-2)!} = \vb \] 
 \end{solution}
 
+\ifprintanswers\begin{codex}$\vb$\end{codex}\fi

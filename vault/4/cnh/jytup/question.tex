@@ -3,44 +3,65 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{\text{MADHUBANI}}
+  \renewcommand\vw{MADHUBANI}
+  \renewcommand\vn{9}
+  \renewcommand\vr{A}
+  \renewcommand\vf{M}
+  \renewcommand\vl{I}
+  \renewcommand\vz{17640}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
+    \renewcommand\vw{MOTHBALL}
+    \renewcommand\vn{8}
+    \renewcommand\vr{L}
+    \renewcommand\vf{M}
+    \renewcommand\vl{A}
+    \renewcommand\vz{2160}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
+      \renewcommand\vw{HORIZON}
+      \renewcommand\vn{7}
+      \renewcommand\vr{O}
+      \renewcommand\vf{H}
+      \renewcommand\vl{N}
+      \renewcommand\vz{300}
     }{
       % variables 
+      \renewcommand\vw{CONDOR}
+      \renewcommand\vn{6}
+      \renewcommand\vr{O}
+      \renewcommand\vf{C}
+      \renewcommand\vl{R}
+      \renewcommand\vz{48}
     }
   }
 }
 
-\question How many permutations of the letters of the word "\vbone" do not begin with M but end with I.
+\SUBTRACT\vn{1}\vo
+\SUBTRACT\vo{1}\vb
 
+\question How many distinct permutations of the letters of the word \text{\vw } do not begin with $\vf$ but end with $\vl$?
 
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
+\watchout
 
 \begin{solution}
-Lets count the number of words that end with \textit{I}.\\
-For this, \textit{I} is fixed at the end. Other 8 letters can be rearranged in $\frac{8!}{2!}$ ways.\\
-Now we find the words that start with \textit{M} and end with \textit{I}. So, \textit{M} and \textit{I} are fixed at the start and the end and other 7 letters are rearranged in $\frac{7!}{2!}$ ways.\\ \\
-Thus, the number of words that do not start with \textit{M} and end with \textit{I} can be found by subtracting this from the total words that have \textit{I} at the end. \\ \\                                                                                            
-$\therefore$ the number of words that do not start with \textit{M} and end with \textit{I} $=\frac{8!}{2!} - \frac{7!}{2!}  =  \frac{7\cdot7!}{2}$
+  The word \text{\vw } has $\vn$ characters. For now, let us treat all characters as distinct, 
+  including the two $\vr$'s - which we will call $\vr_1$ and $\vr_2$.
+
+  If the last character has to be $\vl$ and the first cannot be $\vf$, then we 
+  have $\vn-2=\vb$ options for the first character. 
+
+  With two characters taken (first and last), the middle $\vb$ can be permuted in $\vb !$ ways. 
+  Had all characters been distinct, our answer would have been 
+  \[ X = \vb\cdot\vb ! \]
+
+  But in any of the above $X$ permutations, switching the two $\vr$s results in the same word. 
+
+  And as the two $\vr$s can be permuted amongst themselves in $2!$ ways, the number of \textbf{distinct} permutations is 
+  \[ N_{\text{final}} = \dfrac{X}{2!} = \dfrac{\vb\cdot\vb!}{2!} = \vz \] 
 \end{solution}
 
 
+\ifprintanswers\begin{codex}$\vz$\end{codex}\fi
