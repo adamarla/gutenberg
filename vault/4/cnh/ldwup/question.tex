@@ -3,79 +3,87 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{\text{REGULATION}}
-  \renewcommand{\vbtwo}{5}
-  \renewcommand{\vbthree}{5}
+  \renewcommand{\vw}{REGULATION}
+  \renewcommand{\vv}{5}
+  \renewcommand{\vc}{5}
+  \renewcommand\vi{362,880}
+  \renewcommand\vj{40,320}
+  \renewcommand\vk{86,400}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{\text{SPRINGVALE}}
-    \renewcommand{\vbtwo}{3}
-    \renewcommand{\vbthree}{7}
+    \renewcommand{\vw}{SPRINGVALE}
+    \renewcommand{\vv}{3}
+    \renewcommand{\vc}{7}
+    \renewcommand\vi{362,880}
+    \renewcommand\vj{40,320}
+    \renewcommand\vk{241,920}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{\text{FALCONVIEW}}
-      \renewcommand{\vbtwo}{4}
-      \renewcommand{\vbthree}{6}
+      \renewcommand{\vw}{FALCONVIEW}
+      \renewcommand{\vv}{4}
+      \renewcommand{\vc}{6}
+      \renewcommand\vi{362,880}
+      \renewcommand\vj{40,320}
+      \renewcommand\vk{120,960}
     }{
       % variables 
-      \renewcommand{\vbone}{\text{PATHFINDER}}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{7}
+      \renewcommand{\vw}{PLETHORA}
+      \renewcommand{\vv}{3}
+      \renewcommand{\vc}{5}
+      \renewcommand\vi{5040}
+      \renewcommand\vj{720}
+      \renewcommand\vk{4320}
     }
   }
 }
-\ADD\vbthree{1}\k
-\question How many different words can be formed from the letters of the word $\vbone$. 
 
+\ADD\vv\vc\vn
+\SUBTRACT\vn{1}\a
+\SUBTRACT\vn{2}\b
+\ADD\vc{1}\c
+
+\question Given the word \text{\vw }, how many words (with or without meaning) can be formed that $\ldots$ 
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-\begin{solution}
-Total number of words that can be formed by rearranging the 10 letters : $10!$ 
-\end{solution}
 \begin{parts}
-  
-
-  \part In how many words 'E' comes first.
+  \part $\ldots$ begin with an E? 
 
   \begin{solution}
-  Let's fix E at the first place and rearrange the rest of the $9$ letters.\\
-  $\therefore$ Number of words with E in first place $= 9!$ 
+    The word \text{\vw } has $\vn$ characters with no character repeating. 
+
+    And hence, if E is fixed as the first character, then the remaining $\a$ characters
+    can be permuted in
+    \[ N = \a! = \vi\text{ ways}\] 
   \end{solution}
 
-  \part E comes first and A at the end.
+  \part $\ldots$ begin with an E but end with an A?
 
   \begin{solution}
-  Fixing E at first spot and A at end. We rearrange the remaining 8 letters.\\
-  $\therefore$ Number of words with E in first place and A in the end $=8!$ ways. 
+    With two characters fixed (first and last), only the middle $\b$ characters need to be permuted. 
+    And hence, 
+    \[ N = \b! = \vj \]
   \end{solution}
 
-  \part Vowels are together
+  \part $\ldots$ have all the vowels together? 
 
   \begin{solution}
-  Number of vowels in the word = $\vbtwo$\\
-  Number of consonants in the word = $\vbthree$\\
-  Lets assume all the vowels are in a packet \\
-  Now we arrange the packet and $\vbthree$ consonants in $\k!$ ways.\\
-  The vowels inside the packet can be arranged in $\vbtwo!$ ways.\\
-  Thus, total arrangements $=(\vbtwo!) \cdot(\k!)$
+    Of the $\vn$ characters in \text{\vw }, $\vc$ are consonants and $\vv$ are vowels. 
+
+    If we \textbf{bundle} the vowels together into one unit, then in all we will have 
+    \[ N = \underbrace{\vc}_{\text{consonants}} + \underbrace{1}_{\text{vowel bundle}} = \c \] 
+    entities to permute. This can happen in $\c!$ ways.
+
+    Moreover, the \textbf{vowels can permute} within the bundle in $\vv!$ ways. 
+
+    And hence, 
+      \[ \text{Answer}=\c!\times\vv! = \vk \]
   \end{solution}
 
 \end{parts}
 
+\ifprintanswers\begin{codex}
+  $(a)\,\vi\qquad(b)\,\vj\qquad(c)\,\vk$
+\end{codex}\fi
