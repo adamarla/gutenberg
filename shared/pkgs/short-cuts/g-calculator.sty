@@ -49,13 +49,13 @@
 } 
 
 \newcommand\WRITEFRAC\gWriteFrac % alias
-\newcommand{\gWriteFrac}[3][true]{ % #1 = num, #2 = denom
+\newcommand{\gWriteFrac}[3][false]{ % #1 = num, #2 = denom
   \FRACTIONSIMPLIFY{#2}{#3}\tmp\tmq
   % After simplification, any negative sign is on the numerator only => \tmq > 0
   \ifnumcomp\tmq{=}{1}{\tmp}{
     \INTEGERQUOTIENT\tmp\tmq\quo
     \ifnumcomp\quo{=}{0}{\dfrac\tmp\tmq}{
-      \ifstrequal{#1}{true}{
+      \ifstrequal{#1}{true}{ % write as a mixed fraction
         \MODULO\tmp\tmq\remd
         \ifnumcomp\remd{=}{0}{\quo}{\quo\frac\remd\tmq}
       }{\dfrac\tmp\tmq}
