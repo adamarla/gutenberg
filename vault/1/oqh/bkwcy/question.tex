@@ -1,61 +1,61 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{7}
-  \renewcommand{\vbtwo}{1}
-  \renewcommand{\vbthree}{5}
-  \renewcommand{\vbfour}{3}
-  \renewcommand{\vbfive}{16}
-  \renewcommand{\vbsix}{0.845}
-  \renewcommand{\vbseven}{0.699}
+  \renewcommand{\va}{7}
+  \renewcommand{\vb}{1}
+  \renewcommand{\vc}{5}
+  \renewcommand{\vd}{3}
+  \renewcommand{\ve}{16}
+  \renewcommand{\vf}{0.845}
+  \renewcommand{\vg}{0.699}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{3}
-    \renewcommand{\vbtwo}{3}
-    \renewcommand{\vbthree}{7}
-    \renewcommand{\vbfour}{2}
-    \renewcommand{\vbfive}{18}
-    \renewcommand{\vbsix}{0.477}
-    \renewcommand{\vbseven}{0.845}
+    \renewcommand{\va}{3}
+    \renewcommand{\vb}{3}
+    \renewcommand{\vc}{7}
+    \renewcommand{\vd}{2}
+    \renewcommand{\ve}{18}
+    \renewcommand{\vf}{0.477}
+    \renewcommand{\vg}{0.845}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{2}
-      \renewcommand{\vbtwo}{7}
-      \renewcommand{\vbthree}{9}
-      \renewcommand{\vbfour}{2}
-      \renewcommand{\vbfive}{17}
-      \renewcommand{\vbsix}{0.301}
-      \renewcommand{\vbseven}{0.954}
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{7}
+      \renewcommand{\vc}{9}
+      \renewcommand{\vd}{2}
+      \renewcommand{\ve}{17}
+      \renewcommand{\vf}{0.301}
+      \renewcommand{\vg}{0.954}
     }{
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{4}
-      \renewcommand{\vbthree}{3}
-      \renewcommand{\vbfour}{2}
-      \renewcommand{\vbfive}{21}
-      \renewcommand{\vbsix}{0.699}
-      \renewcommand{\vbseven}{0.477}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{4}
+      \renewcommand{\vc}{3}
+      \renewcommand{\vd}{2}
+      \renewcommand{\ve}{21}
+      \renewcommand{\vf}{0.699}
+      \renewcommand{\vg}{0.477}
     }
   }
 }
 
-\POWER\vbone\vbtwo\m
-\POWER\vbthree\vbfour\n
+\POWER\va\vb\m
+\POWER\vc\vd\n
 \MULTIPLY\m\n\p
-\EXPR[2]\q{(\vbfive * (\vbtwo * \vbsix + \vbfour * \vbseven ) )}
+\EXPR[2]\q{(\ve * (\vb * \vf + \vd * \vg ) )}
 \FLOOR\q\a
 \ADD\a{1}\b
 
-\question Given a number $N = \p^{\vbfive}$
+\question Given a number $N = \p^{\ve}$
 
 \watchout
 
 \begin{parts}
-  \part[2] Find $\log_{10} N$ ($\log_{10}\vbone=\vbsix,\,\log_{10}\vbthree=\vbseven$)
+  \part[2] Find $\log_{10} N$ ($\log_{10}\va=\vf,\,\log_{10}\vc=\vg$)
 
 \begin{solution}[\mcq]
     \begin{align}
-      \log_{10} N &= \log_{10} \p^{\vbfive} = \vbfive\cdot\log_{10}\p \\
-      &= \vbfive\cdot\log_{10}(\vbone^\vbtwo\times\vbthree^\vbfour) \\
-      &= \vbfive\cdot (\vbtwo\cdot\log_{10}\vbone + \vbfour\cdot\log_{10}\vbthree) = \q
+      \log_{10} N &= \log_{10} \p^{\ve} = \ve\cdot\log_{10}\p \\
+      &= \ve\cdot\log_{10}(\va^\vb\times\vc^\vd) \\
+      &= \ve\cdot (\vb\cdot\log_{10}\va + \vd\cdot\log_{10}\vc) = \q
     \end{align}
   \end{solution}
 
@@ -68,14 +68,15 @@
     between $10^2 = 100$ and $10^3 = 1000$.  
   \end{solution}
 
-  \part[2] Using your answers for part (a) and (b), how many digits do you think there are in  $\p^{\vbfive}$? 
+  \part[2] Using your answers for part (a) and (b), how many digits do you think there are in  $\p^{\ve}$? 
 
 \begin{solution}[\mcq]
-    In part (a), we found $\log_{10}\p^{\vbfive} = \q\implies 10^{\q} = \p^{\vbfive}$.
+    In part (a), we found $\log_{10}\p^{\ve} = \q\implies 10^{\q} = \p^{\ve}$.
     
-    It also means that $\p^{\vbfive} \in [10^{\a}, 10^{\b}]$. And from 
+    It also means that $\p^{\ve} \in [10^{\a}, 10^{\b}]$. And from 
     part (b), we know that $N$ would therefore have $\b$ digits
   \end{solution}
 
 \end{parts}
 
+\ifprintanswers\begin{codex}$(c)\,\b\text{ digits}$\end{codex}\fi
