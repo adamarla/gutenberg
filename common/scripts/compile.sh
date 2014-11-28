@@ -233,7 +233,13 @@ function compile_tex {
     if [ -e $stem.ps ] ; then 
       ps2pdf $stem.ps
       if [ -e $stem.pdf ] ; then
-        if [ $mode == "vault" -o $mode == "quiz" ] ; then create_imgs $stem.pdf png ; fi
+        if [ $mode == "vault" -o $mode == "quiz" ] ; then 
+          create_imgs $stem.pdf png 
+          if [ $mode == "vault" ] ; then 
+            echo ".... Creating jpegs"
+            create_imgs $stem.pdf jpeg
+          fi 
+        fi
       else
         if [ ! -z $2 ] ; then echo "(compile.sh: 169) - PS -> PDF failed" >> $2 ; fi
       fi
@@ -251,12 +257,14 @@ function create_imgs {
   if [ $2 == "png" ] ; then 
     extn='png'
     fmt='png16'
+    trim='-chop 40x60 -trim'
   else
     extn='jpg'
     fmt='jpeg'
+    trim=''
   fi
   gs -dNOPAUSE -dBATCH -sDEVICE=$fmt -r300 -sOutputFile=pg-%d.$extn $1 
-  for f in `ls pg-*.$extn` ; do convert $f -resize 600x800 -chop 40x60 -trim $f ; done
+  for f in `ls pg-*.$extn` ; do convert $f -resize 600x800 $trim $f ; done
 }
 
 function mobile_pngs { 
