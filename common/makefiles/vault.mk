@@ -66,6 +66,7 @@ ifeq ($(type),question)
 	mobile_pngs $(version)
 else
 	mv pg-*.png $(version)
+	mv pg-*.jpg $(version)
 	mv $(STEM).pdf $(version)
 	create_codex $(version)
 endif
