@@ -1,6 +1,5 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  % variables 
   \renewcommand\va{2}
   \renewcommand\vb{3}
   \renewcommand\vc{3}
@@ -8,7 +7,6 @@
   \renewcommand\ve{2}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    % variables 
     \renewcommand\va{3}
     \renewcommand\vb{4}
     \renewcommand\vc{7}
@@ -16,14 +14,12 @@
     \renewcommand\ve{2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      % variables 
       \renewcommand\va{4}
       \renewcommand\vb{3}
       \renewcommand\vc{9}
       \renewcommand\vd{7}
       \renewcommand\ve{2}
     }{
-      % variables 
       \renewcommand\va{2}
       \renewcommand\vb{5}
       \renewcommand\vc{4}
@@ -38,14 +34,14 @@
 \SUBTRACT\ve\vb\z
 \FRACPOWER\vc{1}\z\vx\vy
 
-\question For what value of $N$ would the following be true? 
+\question[3] For what value of $N$ would the following be true? 
  \[ \log_{\va}\a + \log_{\vc} N = \log_{\vd}\d \] 
 
 \insertQR{}
 
 \watchout
 
-\begin{solution}
+\begin{solution}[\halfpage]
   \begin{align}
     \va^\vb &= \a \implies \log_{\va}\a = \vb \\
     \vd^\ve &= \d \implies \log_{\vd}\d = \ve \\
