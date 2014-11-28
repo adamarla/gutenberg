@@ -108,9 +108,15 @@
 } 
 
 \newcommand{\FRACPOWER}[5]{
-  \POWER{#1}{#3}\a
-  \POWER{#2}{#3}\b
-  \FRACTIONSIMPLIFY\a\b{#4}{#5}
+  \ifnumcomp{#3}{<}{0}{
+    \MULTIPLY{#3}{-1}\gcz
+    \POWER{#2}\gcz\gca
+    \POWER{#1}\gcz\gcb
+  }{
+    \POWER{#1}{#3}\gca
+    \POWER{#2}{#3}\gcb
+  }
+  \FRACTIONSIMPLIFY\gca\gcb{#4}{#5}
 }
 
 \newcommand{\QUADEQNBITS}[5] { % returns just sqrt(b2 - 4ac) and the denominator - 2a

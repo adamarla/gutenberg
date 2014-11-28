@@ -1,72 +1,58 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
+  \renewcommand\va{2}
+  \renewcommand\vb{3}
+  \renewcommand\vc{3}
+  \renewcommand\vd{6}
+  \renewcommand\ve{2}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
+    \renewcommand\va{3}
+    \renewcommand\vb{4}
+    \renewcommand\vc{7}
+    \renewcommand\vd{5}
+    \renewcommand\ve{2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
+      \renewcommand\va{4}
+      \renewcommand\vb{3}
+      \renewcommand\vc{9}
+      \renewcommand\vd{7}
+      \renewcommand\ve{2}
     }{
       % variables 
+      \renewcommand\va{2}
+      \renewcommand\vb{5}
+      \renewcommand\vc{4}
+      \renewcommand\vd{9}
+      \renewcommand\ve{3}
     }
   }
 }
 
-\question
+\POWER\va\vb\a
+\POWER\vd\ve\d
+\SUBTRACT\ve\vb\z
+\FRACPOWER\vc{1}\z\vx\vy
+
+\question For what value of $N$ would the following be true? 
+ \[ \log_{\va}\a + \log_{\vc} N = \log_{\vd}\d \] 
 
 \insertQR{}
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}
+  \begin{align}
+    \va^\vb &= \a \implies \log_{\va}\a = \vb \\
+    \vd^\ve &= \d \implies \log_{\vd}\d = \ve \\
+    \therefore \log_{\va}\a + \log_{\vc} N &= \log_{\vd}\d \implies \vb + \log_{\vc} N = \ve \\
+    \implies \log_{\vc} N &= \ve-\vb = \z \\
+    \implies N &= \vc^{\z} = \WRITEFRAC\vx\vy
+  \end{align}
 \end{solution}
 
-\begin{parts}
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-  \part 
-
-  \insertQR{}
-  \begin{solution}
-  \end{solution}
-
-\end{parts}
-
+\ifprintanswers\begin{codex}$\WRITEFRAC\vx\vy$\end{codex}\fi
