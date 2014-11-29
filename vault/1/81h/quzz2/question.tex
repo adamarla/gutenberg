@@ -45,107 +45,18 @@ $y=\vc x + \vd$ off the parabola $y=x^2$
 \watchout
 
 \ifprintanswers
-  \figinit{pt}
-  \def\Xmin{-26.66666}
-  \def\Ymin{-6.13026}
-  \def\Xmax{53.33333}
-  \def\Ymax{93.86973}
-  \def\Xori{26.66666}
-  \def\Yori{6.13026}
-  \figpt0:(\Xori,\Yori)
-  \figpt 100: (30,30)
-  \figpt 101: (11,14)
-  \figpt 102: (68,74)
-  \figdrawbegin{}
-  \def\Xmaxx{\Xmax} % To customize the position
-  \def\Ymaxx{\Ymax} % of the arrow-heads of the axes.
-  \figset arrowhead(length=4, fillmode=yes) % styling the arrowheads
-  \figdrawaxes 0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
-  \figdrawlineC(
-  0 2.29885,
-  2.75862 5.07332,
-  5.51724 7.84780,
-  8.27586 10.62227,
-  11.03448 13.39674,
-  13.79310 16.17122,
-  16.55172 18.94569,
-  19.31034 21.72017,
-  22.06896 24.49464,
-  24.82758 27.26912,
-  27.58620 30.04359,
-  30.34482 32.81807,
-  33.10344 35.59254,
-  35.86206 38.36702,
-  38.62068 41.14149,
-  41.37931 43.91597,
-  44.13793 46.69044,
-  46.89655 49.46492,
-  49.65517 52.23939,
-  52.41379 55.01387,
-  55.17241 57.78834,
-  57.93103 60.56282,
-  60.68965 63.33729,
-  63.44827 66.11177,
-  66.20689 68.88624,
-  68.96551 71.66072,
-  71.72413 74.43519,
-  74.48275 77.20967,
-  77.24137 79.98414,
-  79.99999 82.75862
-  )
-  \figdrawlineC(
-  0 29.59770,
-  2.75862 24.99350,
-  5.51724 20.89159,
-  8.27586 17.29194,
-  11.03448 14.19458,
-  13.79310 11.59949,
-  16.55172 9.50667,
-  19.31034 7.91613,
-  22.06896 6.82787,
-  24.82758 6.24188,
-  27.58620 6.15817,
-  30.34482 6.57673,
-  33.10344 7.49757,
-  35.86206 8.92068,
-  38.62068 10.84607,
-  41.37931 13.27374,
-  44.13793 16.20368,
-  46.89655 19.63590,
-  49.65517 23.57039,
-  52.41379 28.00716,
-  55.17241 32.94620,
-  57.93103 38.38752,
-  60.68965 44.33111,
-  63.44827 50.77698,
-  66.20689 57.72513,
-  68.96551 65.17555,
-  71.72413 73.12825,
-  74.48275 81.58322,
-  77.24137 90.54047,
-  79.99999 99.99999
-  )
-  \figdrawend
-  \figvisu{\figBoxA}{}{%
-  \figptsaxes 1:0(\Xmin, \Xmaxx, \Ymin, \Ymaxx)
-  \figwritee 1:(5pt)     \figwriten 2:(5pt)
-  \figptsaxes 1:0(\Xmin, \Xmax, \Ymin, \Ymax)
-  \figwritee 100: $R$(4)
-  \figwritew 101: ${(\va,\ve)}$(4)
-  \figwritee 102: ${(\vb,\vf)}$(4)
-  }
-  \vspace{0.7cm}
-  \centerline{\box\figBoxA}
-\fi 
+  \vspace{0.3cm}
+  \includegraphics[width=300pt]{plotly.eps}
+\fi
 
 \begin{solution}[\halfpage]
-   The two curves intersect at points where
+   The two curves intersect at points $X$ and $Y$ where
    \begin{align}
       x^2 &= \vc x +\vd\implies x^2 - \vc x - \vd = 0 \\
       \text{or } x &= \va,\vb
    \end{align}
    
-   And therefore, the area $(A)$ of region $R$ (see figure) is 
+   And therefore, the area $A$ (see figure) is therefore,  
    \begin{align}
      A &= \int_{\va}^\vb (\vc x+\vd-x^2)\ud x \\
        &= \left[ \WRITEFRAC\vp\vq x^2+\vd x-\dfrac{x^3}{3} \right]_{\va}^\vb \\
