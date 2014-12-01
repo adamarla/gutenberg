@@ -1,36 +1,36 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{3}
-  \renewcommand{\vbtwo}{2}
-  \renewcommand{\vbthree}{10}
-  \renewcommand{\vbfour}{98}
+  \renewcommand{\va}{3}
+  \renewcommand{\vb}{2}
+  \renewcommand{\vc}{10}
+  \renewcommand{\vd}{98}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{4}
-    \renewcommand{\vbtwo}{3}
-    \renewcommand{\vbthree}{14}
-    \renewcommand{\vbfour}{194}
+    \renewcommand{\va}{4}
+    \renewcommand{\vb}{3}
+    \renewcommand{\vc}{14}
+    \renewcommand{\vd}{194}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{8}
-      \renewcommand{\vbfour}{62}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{8}
+      \renewcommand{\vd}{62}
     }{
       % variables 
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{2}
-      \renewcommand{\vbthree}{6}
-      \renewcommand{\vbfour}{34}
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{2}
+      \renewcommand{\vc}{6}
+      \renewcommand{\vd}{34}
     }
   }
 }
 
-\question[2] If $x = \dfrac{\sqrt{\vbone}+\sqrt{\vbtwo}}{\sqrt{\vbone}-\sqrt{\vbtwo}}$
-and $y = \dfrac{\sqrt{\vbone}-\sqrt{\vbtwo}}{\sqrt{\vbone}+\sqrt{\vbtwo}}$, then find
+\question[2] If $x = \dfrac{\sqrt{\va}+\sqrt{\vb}}{\sqrt{\va}-\sqrt{\vb}}$
+and $y = \dfrac{\sqrt{\va}-\sqrt{\vb}}{\sqrt{\va}+\sqrt{\vb}}$, then find
 the value of $x^2+y^2$
 
 
@@ -57,20 +57,21 @@ the value of $x^2+y^2$
   \end{align}
   Let us calculate $x+y$ and $xy$.
   \begin{align}
-    x + y &= \dfrac{\sqrt{\vbone}+\sqrt{\vbtwo}}{\sqrt{\vbone}-\sqrt{\vbtwo}} +
-      \dfrac{\sqrt{\vbone}-\sqrt{\vbtwo}}{\sqrt{\vbone}+\sqrt{\vbtwo}} \\ \nonumber
-          &= \vbthree
+    x + y &= \dfrac{\sqrt{\va}+\sqrt{\vb}}{\sqrt{\va}-\sqrt{\vb}} +
+      \dfrac{\sqrt{\va}-\sqrt{\vb}}{\sqrt{\va}+\sqrt{\vb}} \\ \nonumber
+          &= \vc
   \end{align}
   \begin{align}
-    \text{xy} &= \dfrac{\sqrt{\vbone}+\sqrt{\vbtwo}}{\sqrt{\vbone}-\sqrt{\vbtwo}} \times
-      \dfrac{\sqrt{\vbone}-\sqrt{\vbtwo}}{\sqrt{\vbone}+\sqrt{\vbtwo}} \\ \nonumber
+    \text{xy} &= \dfrac{\sqrt{\va}+\sqrt{\vb}}{\sqrt{\va}-\sqrt{\vb}} \times
+      \dfrac{\sqrt{\va}-\sqrt{\vb}}{\sqrt{\va}+\sqrt{\vb}} \\ \nonumber
           &= 1
   \end{align}
   From equations (1), (2) and (3), we get,
   \begin{align}
-    x^2 + y^2 &= (\vbthree)^2 - 2 \\ \nonumber
-              &= \vbfour
+    x^2 + y^2 &= (\vc)^2 - 2 \\ \nonumber
+              &= \vd
   \end{align}
   
 \end{solution}
 
+\ifprintanswers\begin{codex}$\vd$\end{codex}\fi
