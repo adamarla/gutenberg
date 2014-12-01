@@ -26,10 +26,6 @@ Let $y=B(t)$ be the solution to the differential equation above with initial con
 $B(0)=20$. 
 
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-\fi 
-
 \begin{parts}
   \part[2] Is the bird gaining weight faster when it weighs $40$ grams or when it weights
   $70$ grams? Explain your reasoning.
@@ -46,8 +42,9 @@ $B(0)=20$.
   \end{solution}
 
   \part[2] Find $\dfrac{\ud^2 B}{\ud t^2}$ in terms of $B$. Use $\dfrac{\ud^2 B}{\ud t^2}$ to 
-  explain why the graph of $B$ cannot resemble the adjoining graph.
-  \begin{marginfigure}
+  explain why the graph of $B$ cannot resemble the below graph.\\
+%  \begin{marginfigure}
+    \vspace{1cm}
     \figinit{pt}
       \figpt 100:(-5,0)
       \figpt 101:(120,0)
@@ -79,7 +76,8 @@ $B(0)=20$.
       \figwritew 203: $\text{Weight(grams)}$(10 pt)
     }
     \centerline{\box\figBoxA}
-  \end{marginfigure}
+%  \end{marginfigure}
+
 \begin{solution}[\mcq]
     Let us first determine $\dfrac{\ud^2 B}{\ud t^2}$ in terms of $B$,
     \begin{align}
@@ -104,7 +102,7 @@ $B(0)=20$.
     Since $20 \leq B < 100$, therefore $|100-B| = 100-B$. Use $B=20$
     to find the value of $C$,
     \begin{align}
-      -\ln(100-20)=\dfrac{1}{5}(0)+C \Rightarrow -\ln(80) = C
+      -\ln(100-20)=\dfrac{1}{5}(0)+C \implies -\ln(80) = C
     \end{align}
     Substitute into original equation,
     \begin{align}
@@ -116,3 +114,7 @@ $B(0)=20$.
 
 \end{parts}
 
+\ifprintanswers\begin{codex}
+  (a) $40$gm (b) $\frac{d^2B}{dt^2}= -\frac{1}{25}(100-B)$ \\
+  (c) $B(t) = 100 - 80 e^{-t/5}\text{,}\quad t\geq 0$
+\end{codex}\fi
