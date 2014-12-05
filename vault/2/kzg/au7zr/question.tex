@@ -1,21 +1,31 @@
 
 
-\question[3]  Prove that
-	\begin{align}
-		\dfrac{\tan 2x \tan x}{\tan 2x -\tan x} = \sin 2x \nonumber
-	\end{align}
+\question[3] For what value of $M$ would the following be true? 
+\[ \dfrac{\tan 2x\cdot\tan x}{\tan 2x - \tan x} = \sin Mx \] 
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
 \fi 
 
 \begin{solution}[\halfpage]
-	Start with the Left Hand Side (LHS),
+  \textbf{Method \# 1}
+
+  \begin{align}
+    \dfrac{\tan 2x\cdot \tan x}{\tan 2x-\tan x} &= 
+    \dfrac{\dfrac{\sin 2x}{\cos 2x}\cdot\dfrac{\sin x}{\cos x}}{\dfrac{\sin 2x}{\cos 2x}-\dfrac{\sin x}{\cos x}} \\
+    &= \dfrac{\sin 2x\cdot \sin x}{\underbrace{\sin 2x\cdot\cos x - \cos 2x\cdot\sin x}_{\sin(a-b)=\eSinOfDiff{a}{b}}} \\
+    &= \dfrac{\sin 2x\cdot\sin x}{\sin (2x-x)} = \sin 2x \\
+    \implies M &= 2
+  \end{align}
+
+  \textbf{Method \# 2}
+
 	\begin{align}
-		\text{LHS} &= \dfrac{\tan 2x \tan x}{\tan 2x -\tan x} \\
-				   &= \left(\dfrac{\sin 2x\sin x}{\cos 2x\cos x}\right)
-				   	  \left(\dfrac{\cos 2x\cos x}{\sin 2x\cos x -\cos 2x\sin x}\right) \\
-				   &= \dfrac{\sin 2x\sin x}{\sin \left(2x - x\right)} \\
-				   &= \sin 2x
+    \dfrac{\tan 2x\cdot \tan x}{\tan 2x-\tan x} &= 
+    \dfrac{\left(\dfrac{2\tan x}{1-\tan^2 x} \right)\cdot \tan x}{\left(\dfrac{2\tan x}{1-\tan^2 x}\right)-\tan x} \\
+    &= \dfrac{2\tan^2 x}{2\tan x - (\tan x -\tan^3 x)} \\
+    &= \dfrac{2\tan^2 x}{\tan x + \tan^3 x} = \dfrac{2\tan x}{1 + \tan^2 x} \\
+    &= \sin 2x \implies M = 2
 	\end{align}
 \end{solution}
+\ifprintanswers\begin{codex}$2$\end{codex}\fi
