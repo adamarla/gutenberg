@@ -39,8 +39,9 @@
 \SUBTRACT\ve\vd\d
 \ADD\c\d\e
 
-\SUBTRACT\va\vd\vx
+\SUBTRACT\va\vd\vw
 \MULTIPLY\vd\ve\vy
+\ADD\vw\vy\vx
 \EXPR[0]\vz{ 5*(2*\vx + 9*\vy)}
 
 \question[4] Given two arithmetic progressions 
@@ -55,21 +56,25 @@ find the sum of the first ten terms \textbf{common} to $A$ and $B$.
   \[ a_m = \va + (m - 1)\cdot\vd \]
   Similarly, a term in $B$ is of the form 
   \[ b_n = \vb + (n-1)\cdot\ve \]
-  Note, however, that 
-  \[ m \neq n\text{ and } m,n\in\mathbb{N}\implies m,n\text{ are positive integers}\] 
+  Note however that 
+  \[ m \neq n\text{ and } m,n\in\mathbb{N} \]
   Now, for $a_m = b_n$, 
   \begin{align}
     \va + (m-1)\cdot\vd &= \vb + (n-1)\cdot\ve \\
     \implies \ve n&=\left[ \vd\cdot m + (\va-\vb) + (\ve-\vd) \right] \\
     &= (\vd\cdot m + \e)
   \end{align}
-  \textbf{Now the catch!}
-  \[ n\in\mathbb{N}\implies \ve n\in\mathbb{N}\implies (\vd\cdot m + \e)\text{ is a multiple of }\ve \]
+  \textbf{The catch!}
+  \[ \ve n = \vd\cdot m + \e \implies \vd\cdot m + \e\text{ is a multiple of }\ve \]
   And the above is possible \textbf{only if}
   \[ m=\ve k,\, k\in\mathbb{N} \] 
-  Only for these values of $m$ would a term $(C_k)$ be \textbf{common to both series}.
+
+  Only for these values of $m$ would a term in $A$ be also present in $B$. 
+  
+  And the value of these \textbf{common} terms - $(A_{\ve k})$ -  would be 
   \begin{align}
-    C_k &= \va + [\ve\cdot k - 1]\cdot \vd = \underbrace{\vx + \vy\cdot k}_{a=\vx,\, d=\vy}
+    A_{\ve k} &= \va + [\ve\cdot k - 1]\cdot \vd = \vw + \vy\cdot k,\, k\geq 1 \\
+    \implies A_{\ve} &= \vx\text{ and } \underbrace{A_{\ve k} = \vx + (k-1)\cdot\vy}_{a=A_{\ve}=\vx, d=\vy}
   \end{align}
   And hence, the sum of the first $10$ terms is
   \begin{align}
