@@ -1,33 +1,21 @@
 
 
-\question[3] Prove that $\left( \sin 3x + \sin x\right)\cdot \sin x + \left(\cos 3x - \cos x \right)\cdot\cos x = 0 $
-
-
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
+\question[3] If $\left( \sin 3x + \sin x\right)\cdot \sin x + 
+  \left(\cos 3x - \cos x \right)\cdot\cos x = M$, find $M$?
 
 \begin{solution}[\halfpage]
 	\begin{align}
 	    \text{We know that}\quad
 		\fSumOfSin{3x}{x} \nonumber \\
-		\Rightarrow (\sin 3x + \sin x)\sin x 
+		\implies (\sin 3x + \sin x)\sin x 
 			= 2\sin{2x}\cdot\cos{x}\cdot\sin{x}\\
 	    \text{Similarly,}\quad
 		\fDiffOfCos{3x}{x} \nonumber \\
-		\Rightarrow (\cos 3x-\cos x)\cdot\cos x 
+		\implies (\cos 3x-\cos x)\cdot\cos x 
 			= 2\sin{2x}\cdot(-\sin x)\cdot\cos x
 	\end{align}
-	Add (1) and (2) to get the original equation.
+	Add (1) and (2) to get $M=0$.
 \end{solution}
+
+\ifprintanswers\begin{codex}$M=0$\end{codex}\fi
+
