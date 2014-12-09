@@ -1,75 +1,75 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{2}
-  \renewcommand{\vbtwo}{1}
-  \renewcommand{\vbthree}{1}
-  \renewcommand{\vbfour}{2}
-  \renewcommand{\vbfive}{5}
-  \renewcommand{\vbsix}{1}
-  \renewcommand{\vbseven}{3}
-  \renewcommand{\vbeight}{3}
-  \renewcommand{\vbnine}{6}
-  \renewcommand{\vbten}{3}
+  \renewcommand{\va}{2}
+  \renewcommand{\vb}{1}
+  \renewcommand{\vc}{1}
+  \renewcommand{\vd}{2}
+  \renewcommand{\ve}{5}
+  \renewcommand{\vf}{1}
+  \renewcommand{\vg}{3}
+  \renewcommand{\vh}{3}
+  \renewcommand{\vi}{6}
+  \renewcommand{\vj}{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{3}
-    \renewcommand{\vbtwo}{2}
-    \renewcommand{\vbthree}{2}
-    \renewcommand{\vbfour}{2}
-    \renewcommand{\vbfive}{4}
-    \renewcommand{\vbsix}{1}
-    \renewcommand{\vbseven}{4}
-    \renewcommand{\vbeight}{3}
-    \renewcommand{\vbnine}{5}
-    \renewcommand{\vbten}{2}
+    \renewcommand{\va}{3}
+    \renewcommand{\vb}{2}
+    \renewcommand{\vc}{2}
+    \renewcommand{\vd}{2}
+    \renewcommand{\ve}{4}
+    \renewcommand{\vf}{1}
+    \renewcommand{\vg}{4}
+    \renewcommand{\vh}{3}
+    \renewcommand{\vi}{5}
+    \renewcommand{\vj}{2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{3}
-      \renewcommand{\vbtwo}{2}
-      \renewcommand{\vbthree}{4}
-      \renewcommand{\vbfour}{2}
-      \renewcommand{\vbfive}{5}
-      \renewcommand{\vbsix}{1}
-      \renewcommand{\vbseven}{9}
-      \renewcommand{\vbeight}{1}
-      \renewcommand{\vbnine}{8}
-      \renewcommand{\vbten}{1}
+      \renewcommand{\va}{3}
+      \renewcommand{\vb}{2}
+      \renewcommand{\vc}{4}
+      \renewcommand{\vd}{2}
+      \renewcommand{\ve}{5}
+      \renewcommand{\vf}{1}
+      \renewcommand{\vg}{9}
+      \renewcommand{\vh}{1}
+      \renewcommand{\vi}{8}
+      \renewcommand{\vj}{1}
     }{
       % variables 
-      \renewcommand{\vbone}{2}
-      \renewcommand{\vbtwo}{1}
-      \renewcommand{\vbthree}{1}
-      \renewcommand{\vbfour}{2}
-      \renewcommand{\vbfive}{3}
-      \renewcommand{\vbsix}{1}
-      \renewcommand{\vbseven}{7}
-      \renewcommand{\vbeight}{1}
-      \renewcommand{\vbnine}{6}
-      \renewcommand{\vbten}{1}
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{1}
+      \renewcommand{\vc}{1}
+      \renewcommand{\vd}{2}
+      \renewcommand{\ve}{3}
+      \renewcommand{\vf}{1}
+      \renewcommand{\vg}{7}
+      \renewcommand{\vh}{1}
+      \renewcommand{\vi}{6}
+      \renewcommand{\vj}{1}
     }
   }
 }
 
-\ADD\vbnine{0}\a
-\ADD\vbten{0}\b
-\SUBTRACT\vbfour\a\distx
-\SUBTRACT\vbfive\b\disty
+\ADD\vi{0}\a
+\ADD\vj{0}\b
+\SUBTRACT\vd\a\distx
+\SUBTRACT\ve\b\disty
 \gcalcexpr[0]\rsq{(\distx * \distx) + (\disty * \disty)}
-\gcalcexpr[0]\tp{(\vbone * \vbfive) + (\vbtwo * \vbfour)}
+\gcalcexpr[0]\tp{(\va * \ve) + (\vb * \vd)}
 
-\question[4] The line $l_1(\vbone x -\vbtwo y =-\vbthree)$ touches a circle 
-with center $O$ at point $P(\vbfour, \vbfive)$. Point $O$ lies on the line
-$l_2(\vbsix x-\vbseven y =-\vbeight)$. What is the equation of the circle?
+\question[4] The line $l_1(\va x -\vb y =-\vc)$ touches a circle 
+with center $O$ at point $P(\vd, \ve)$. Point $O$ lies on the line
+$l_2(\vf x-\vg y =-\vh)$. What is the equation of the circle?
 
 
 \watchout
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
+  %\begin{marginfigure}
     \figinit{pt}
       \figpt 100:(0,0)
       \figpt 101:(-20,20)
@@ -85,12 +85,12 @@ $l_2(\vbsix x-\vbseven y =-\vbeight)$. What is the equation of the circle?
     \figdrawend
     \figvisu{\figBoxA}{}{%
       \figwritese 100:$O\text{($a$,$b$)}$(2pt)
-      \figwritenw 101:$P\text{($\vbfour$, $\vbfive$)}$(2pt)
+      \figwritenw 101:$P\text{($\vd$, $\ve$)}$(2pt)
       \figwritesw 102:$l_1$(3pt)
       \figwritesw 104:$l_2$(3pt)
     }
     \centerline{\box\figBoxA}
-  \end{marginfigure}
+  %\end{marginfigure}
 \fi 
 
 \begin{solution}[\halfpage]
@@ -98,19 +98,19 @@ $l_2(\vbsix x-\vbseven y =-\vbeight)$. What is the equation of the circle?
   and it's radius be $r$. Since $l_1$ touches the circle at $P$ 
   therefore $OP \perp l_1$,
   \begin{align}
-    \left(\dfrac{b-\vbfive}{a-\vbfour}\right)\cdot
-      \left(\dfrac{\vbone}{\vbtwo}\right)&=-1 \\
-                     \vbtwo a + \vbone b &= \tp
+    \left(\dfrac{b-\ve}{a-\vd}\right)\cdot
+      \left(\dfrac{\va}{\vb}\right)&=-1 \\
+                     \vb a + \va b &= \tp
   \end{align}
   Since $(a,b)$ lies on $l_2$,
   \begin{align}
-    \vbsix a -\vbseven b = -\vbeight
+    \vf a -\vg b = -\vh
   \end{align}
   Using equations (2) and (3) we get $a=\a$ and $b=\b$. Now
   we can use distance formula to get $r$, the distance
   between $O$ and $P$.
   \begin{align}
-    r^2 &= (\vbfour-\a)^2+(\vbfive-\b)^2 \\
+    r^2 &= (\vd-\a)^2+(\ve-\b)^2 \\
         &= \rsq
   \end{align}
   Therefore, equation of the circle is,
@@ -118,3 +118,8 @@ $l_2(\vbsix x-\vbseven y =-\vbeight)$. What is the equation of the circle?
     (x-\a^2)+(y-\b^2)=\rsq
   \end{align}  
 \end{solution}
+
+\ifprintanswers\begin{codex}
+  $(x-\a^2)+(y-\b^2)=\rsq$
+\end{codex}\fi
+

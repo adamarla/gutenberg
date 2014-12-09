@@ -1,60 +1,60 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{positive}
-  \renewcommand{\vbtwo}{positive}
-  \renewcommand{\vbthree}{3}
-  \renewcommand{\vbfour}{3}
-  \renewcommand{\vbfive}{-3}
-  \renewcommand{\vbsix}{-3}
-  \renewcommand{\vbeight}{+3}
+  \renewcommand{\va}{positive}
+  \renewcommand{\vb}{positive}
+  \renewcommand{\vc}{3}
+  \renewcommand{\vd}{3}
+  \renewcommand{\ve}{-3}
+  \renewcommand{\vf}{-3}
+  \renewcommand{\vh}{+3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{positive}
-    \renewcommand{\vbtwo}{negative}
-    \renewcommand{\vbthree}{3}
-    \renewcommand{\vbfour}{-3}
-    \renewcommand{\vbfive}{-3}
-    \renewcommand{\vbsix}{+3}
-    \renewcommand{\vbseven}{-}
-    \renewcommand{\vbeight}{-3}
+    \renewcommand{\va}{positive}
+    \renewcommand{\vb}{negative}
+    \renewcommand{\vc}{3}
+    \renewcommand{\vd}{-3}
+    \renewcommand{\ve}{-3}
+    \renewcommand{\vf}{+3}
+    \renewcommand{\vg}{-}
+    \renewcommand{\vh}{-3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{negative}
-      \renewcommand{\vbtwo}{positive}
-      \renewcommand{\vbthree}{-3}
-      \renewcommand{\vbfour}{3}
-      \renewcommand{\vbfive}{+3}
-      \renewcommand{\vbsix}{-3}
-      \renewcommand{\vbseven}{-}
-      \renewcommand{\vbeight}{+3}
+      \renewcommand{\va}{negative}
+      \renewcommand{\vb}{positive}
+      \renewcommand{\vc}{-3}
+      \renewcommand{\vd}{3}
+      \renewcommand{\ve}{+3}
+      \renewcommand{\vf}{-3}
+      \renewcommand{\vg}{-}
+      \renewcommand{\vh}{+3}
     }{
       % variables 
-      \renewcommand{\vbone}{negative}
-      \renewcommand{\vbtwo}{negative}
-      \renewcommand{\vbthree}{-3}
-      \renewcommand{\vbfour}{-3}
-      \renewcommand{\vbfive}{+3}
-      \renewcommand{\vbsix}{+3}
-      \renewcommand{\vbeight}{-3}
+      \renewcommand{\va}{negative}
+      \renewcommand{\vb}{negative}
+      \renewcommand{\vc}{-3}
+      \renewcommand{\vd}{-3}
+      \renewcommand{\ve}{+3}
+      \renewcommand{\vf}{+3}
+      \renewcommand{\vh}{-3}
     }
   }
 }
-\ABSVALUE\vbthree\r
-\SQUARE\vbthree\rsq
+\ABSVALUE\vc\r
+\SQUARE\vc\rsq
 
-\question A circle with center at point $C$ touches the $\vbone$ x-axis 
-at point $A$ and the $\vbtwo$ y-axis at point $B$. Points $A$ and $B$ are 
+\question A circle with center at point $C$ touches the $\va$ x-axis 
+at point $A$ and the $\vb$ y-axis at point $B$. Points $A$ and $B$ are 
 both $\r$ units from the origin.
 
 
 \watchout
 
 \ifprintanswers  
-  \MULTIPLY\vbthree{10}\xcept
-  \MULTIPLY\vbfour{10}\ycept
+  \MULTIPLY\vc{10}\xcept
+  \MULTIPLY\vd{10}\ycept
   \MULTIPLY\r{10}\RAD
   % stuff to be shown only in the answer key - like explanatory margin figures
   \begin{marginfigure}
@@ -93,10 +93,10 @@ both $\r$ units from the origin.
                 &(x-a)^2 + (y-b)^2 = r^2
   \end{align}
   Our circle touches the x and y axes therefore it's radius is
-  $\r$ units and its center is at $(\vbthree,\vbfour)$. The equation
+  $\r$ units and its center is at $(\vc,\vd)$. The equation
   for this circle would be,
   \begin{align}
-    (x\vbfive)^2+(y\vbsix)^2&=\rsq 
+    (x\ve)^2+(y\vf)^2&=\rsq 
   \end{align}
 \end{solution}
 
@@ -104,12 +104,17 @@ both $\r$ units from the origin.
 $A$ and $B$?
 
 \begin{solution}[\mcq]
-  The line passing through the points of contact $(\vbthree,0)$
-  and $(0,\vbfour)$ is given by,
+  The line passing through the points of contact $(\vc,0)$
+  and $(0,\vd)$ is given by,
   \begin{align}
-    y = \vbseven x\vbeight
+    y = \vg x\vh
   \end{align}
 \end{solution}
 
 \end{parts}
+
+\ifprintanswers\begin{codex}
+  (a) $(x\ve)^2+(y\vf)^2=\rsq$ \\
+  (b) $y = \vg x\vh$
+\end{codex}\fi
 
