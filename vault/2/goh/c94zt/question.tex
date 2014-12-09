@@ -3,33 +3,33 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{3}
-  \renewcommand{\vbtwo}{4}
-  \renewcommand{\vbthree}{12}
+  \renewcommand{\va}{3}
+  \renewcommand{\vb}{4}
+  \renewcommand{\vc}{12}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{5}
-    \renewcommand{\vbtwo}{3}
-    \renewcommand{\vbthree}{15}
+    \renewcommand{\va}{5}
+    \renewcommand{\vb}{3}
+    \renewcommand{\vc}{15}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{6}
-      \renewcommand{\vbtwo}{5}
-      \renewcommand{\vbthree}{30}
+      \renewcommand{\va}{6}
+      \renewcommand{\vb}{5}
+      \renewcommand{\vc}{30}
     }{
       % variables 
-      \renewcommand{\vbone}{2}
-      \renewcommand{\vbtwo}{7}
-      \renewcommand{\vbthree}{14}
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{7}
+      \renewcommand{\vc}{14}
     }
   }
 }
 
-\SQUARE\vbone\aa
-\SQUARE\vbtwo\bb
-\SQUARE\vbthree\cc
+\SQUARE\va\aa
+\SQUARE\vb\bb
+\SQUARE\vc\cc
 
 \ADD\aa\bb\j
 
@@ -56,24 +56,29 @@
 \begin{solution}[\halfpage]
   This looks like the equation for a hyperbola. And it can be re-written as
   \begin{align}
-    \dfrac{x^2}{\left( \frac{\vbthree}{\vbone}\right)^2}
-    - \dfrac{y^2}{\left(\frac{\vbthree}{\vbtwo}\right)^2} &= 1 \\
-    \implies \dfrac{x^2}{\underbrace{\vbtwo^2}_{a^2}} - 
-    \dfrac{y^2}{\underbrace{\vbone^2}_{b^2}} &= 1
+    \dfrac{x^2}{\left( \frac{\vc}{\va}\right)^2}
+    - \dfrac{y^2}{\left(\frac{\vc}{\vb}\right)^2} &= 1 \\
+    \implies \dfrac{x^2}{\underbrace{\vb^2}_{a^2}} - 
+    \dfrac{y^2}{\underbrace{\va^2}_{b^2}} &= 1
   \end{align}
   
   The vertices of this hyperbola will be on the $x-$axis and the coordinates of the 
-  vertices would be $(\pm a,0) = (\pm \vbtwo, 0)$ 
+  vertices would be $(\pm a,0) = (\pm \vb, 0)$ 
   
   If the coordinates of the foci be $(-c,0)$ and $(c,0)$, then we know that 
   \begin{align}
-    c^2 &= a^2 + b^2  =\vbtwo^2 + \vbone^2 =  \j \\
+    c^2 &= a^2 + b^2  =\vb^2 + \va^2 =  \j \\
     \implies c &= \sqrt{\j}
   \end{align}
   
   Hence, the foci are at $(\pm\sqrt\j, 0)$. And the eccentricity is
   \begin{align}
-    e &= \dfrac{\sqrt{a^2 + b^2}}{a} = \dfrac{c}{a} = \dfrac{\sqrt{\j}}{\vbtwo}  
+    e &= \dfrac{\sqrt{a^2 + b^2}}{a} = \dfrac{c}{a} = \dfrac{\sqrt{\j}}{\vb}  
   \end{align}      
 \end{solution}
+
+\ifprintanswers\begin{codex}
+  $c = \sqrt{\j}$, $f=(\pm\sqrt\j, 0)$\\
+  $e = \frac{\sqrt{\j}}{\vb}$
+\end{codex}\fi
 

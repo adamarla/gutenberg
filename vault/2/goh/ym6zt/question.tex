@@ -1,41 +1,41 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{4}
-  \renewcommand{\vbtwo}{6}
-  \renewcommand{\vbthree}{5}
-  \renewcommand{\vbfour}{3\sqrt{2}}
+  \renewcommand{\va}{4}
+  \renewcommand{\vb}{6}
+  \renewcommand{\vc}{5}
+  \renewcommand{\vd}{3\sqrt{2}}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{6}
-    \renewcommand{\vbtwo}{4}
-    \renewcommand{\vbthree}{3}
-    \renewcommand{\vbfour}{4}
+    \renewcommand{\va}{6}
+    \renewcommand{\vb}{4}
+    \renewcommand{\vc}{3}
+    \renewcommand{\vd}{4}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{4}
-      \renewcommand{\vbthree}{4}
-      \renewcommand{\vbfour}{2\sqrt{3}}
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{4}
+      \renewcommand{\vc}{4}
+      \renewcommand{\vd}{2\sqrt{3}}
     }{
       % variables 
-      \renewcommand{\vbone}{6}
-      \renewcommand{\vbtwo}{6}
-      \renewcommand{\vbthree}{2}
-      \renewcommand{\vbfour}{2\sqrt{5}}
+      \renewcommand{\va}{6}
+      \renewcommand{\vb}{6}
+      \renewcommand{\vc}{2}
+      \renewcommand{\vd}{2\sqrt{5}}
     }
   }
 }
 
-\DIVIDE\vbone{2}\a
-\DIVIDE\vbtwo{2}\b
+\DIVIDE\va{2}\a
+\DIVIDE\vb{2}\b
 
 \question[2] Find the center and radius of the circle represented 
 by the following equation
 \begin{align}
-  x^2 + y^2 - \vbone x + \vbtwo y - \vbthree = 0 \nonumber
+  x^2 + y^2 - \va x + \vb y - \vc = 0 \nonumber
 \end{align}
 
 
@@ -61,15 +61,18 @@ by the following equation
   its center at $(a, b)$ and a radius $r$,
   \begin{align}
                 &(x-a)^2 + (y-b)^2 = r^2 \\
-    \Rightarrow &x^2 + y^2 - 2a -2b + (a^2 + b^2 -r^2) = 0
+    \implies &x^2 + y^2 - 2a -2b + (a^2 + b^2 -r^2) = 0
   \end{align}
   On comparing coefficients with the equation given in the question 
   we get,
   \begin{align}
-      2a = \vbone &\Rightarrow a=\a \\
-      2b = -\vbtwo  &\Rightarrow b=-\b \\
-      a^2+b^2-c^2 = -\vbthree &\Rightarrow c=\vbfour
+      2a = \va &\implies a=\a \\
+      2b = -\vb  &\implies b=-\b \\
+      a^2+b^2-c^2 = -\vc &\implies c=\vd
   \end{align}
   Therefore, the given circle has $(\a, \b)$ as center and a radius
-  of $\vbfour$ units.
+  of $\vd$ units.
 \end{solution}
+\ifprintanswers\begin{codex}
+    $C(\a,\b)$, $R=\vd$ units.
+\end{codex}\fi
