@@ -2,36 +2,39 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{4}
-  \renewcommand{\vbtwo}{5}
-  \renewcommand{\vbthree}{20}
+  \renewcommand{\va}{4}
+  \renewcommand{\vb}{5}
+  \renewcommand{\vc}{20}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{6}
-    \renewcommand{\vbtwo}{3}
-    \renewcommand{\vbthree}{11}
+    \renewcommand{\va}{6}
+    \renewcommand{\vb}{3}
+    \renewcommand{\vc}{11}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{7}
-      \renewcommand{\vbthree}{8}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{7}
+      \renewcommand{\vc}{8}
     }{
       % variables 
-      \renewcommand{\vbone}{8}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{9}
+      \renewcommand{\va}{8}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{9}
     }
   }
 }
 
-\SQUARE\vbone\aa
-\SQUARE\vbtwo\bb
-\SQUARE\vbthree\cc
+\SQUARE\va\aa
+\SQUARE\vb\bb
+\SQUARE\vc\cc
 
-\MIN\vbone\vbtwo\da
-\MAX\vbone\vbtwo\db
+\FRACMAX\vc\va\vc\vb\vm\vn
+\FRACMIN\vc\va\vc\vb\vp\vq
+
+\MIN\va\vb\da
+\MAX\va\vb\db
 
 \SQUARE\da\daa
 \SQUARE\db\dbb
@@ -39,119 +42,123 @@
 \SQRT\j\p
 \SQRT\k\q
 \DIVIDE\p\q\e
-\MULTIPLY\e\vbthree\nf
+\MULTIPLY\e\vc\nf
 \DIVIDE\nf\da\tempf
 \ROUND[2]\tempf\f
+\ROUND[2]\e\vz
 
-\renewcommand\vbfour{\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2}}
-\renewcommand\vbfive{\dfrac{x^2}{b^2} + \dfrac{y^2}{a^2}}
+\renewcommand\vd{\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2}}
+\renewcommand\ve{\dfrac{x^2}{b^2} + \dfrac{y^2}{a^2}}
 
 \ifnumodd{\value{rolldice}}{ % vertical
-  \renewcommand\vbsix\vbfive
-  \renewcommand\vbseven{A}
-  \renewcommand\vbeight{\left(0, \pm a\right)}
-  \renewcommand\vbnine{\left(0, \pm\frac\vbthree\da\right)}
-  \renewcommand\vbten{\left(0, \pm ae\right)}
+  \renewcommand\vf\ve
+  \renewcommand\vg{A}
+  \renewcommand\vh{\left(0, \pm a\right)}
+  \renewcommand\vi{\left(0, \pm\WRITEFRAC\vc\da\right)}
+  \renewcommand\vj{\left(0, \pm ae\right)}
   \providecommand\vbeleven{\left(0,\pm\f \right)}
 }{
-  \renewcommand\vbsix\vbfour
-  \renewcommand\vbseven{B}
-  \renewcommand\vbeight{\left(\pm a, 0\right)}
-  \renewcommand\vbnine{\left(\pm\frac\vbthree\da, 0\right)}
-  \renewcommand\vbten{\left(\pm ae, 0\right)}
+  \renewcommand\vf\vd
+  \renewcommand\vg{B}
+  \renewcommand\vh{\left(\pm a, 0\right)}
+  \renewcommand\vi{\left(\pm\WRITEFRAC\vc\da, 0\right)}
+  \renewcommand\vj{\left(\pm ae, 0\right)}
   \providecommand\vbeleven{\left(\pm\f,0\right)}
 }
 
 \question The figure alongside shows two ellipses - $A$ and $B$. One of them has the  
-equation $\aa x^2 + \bb y^2 = \cc$
+equation \[\aa x^2 + \bb y^2 = \cc \]
 
 \watchout
 
-\begin{marginfigure}
-  \figinit{pt}
-    \def\Xori{45}
-    \def\Yori{45}
-    \def\rxa{30} % A:x-radius
-    \def\rya{40} % A:y-radius
-    \def\rxb{40} % B:x-radius
-    \def\ryb{30} % B:y-radius
-    \def\Xmin{0}
-    \def\Xmax{60}
-    \def\Ymin{0}
-    \def\Ymax{60}
-    \figpt 100:$C$(\Xori,\Yori) % center of ellipse
-    \ifnumodd{\value{rolldice}}{
-      \figptell 101:$V_2$: 100;\rxa,\rya (90,0)
-      \figptell 102:$V_1$: 100;\rxa,\rya (270,0)
-    }{
-      \figptell 101:$V_2$: 100;\rxb,\ryb (0,0)
-      \figptell 102:$V_1$: 100;\rxb,\ryb (180,0)
-    }
-    \figptell 500:$A$: 100;\rxa,\rya (60,0)
-    \figptell 501:$B$: 100;\rxb,\ryb (23,0)
-    \figvectP 200 [100,101]
-    \figvectP 201 [100,102]
-    \figpttra 103:$F_2$= 100 /0.6,200/
-    \figpttra 104:$F_1$= 100 /0.6,201/
-  \figdrawbegin{}
-    %\figset arrowhead(fillmode=yes,angle=15,length=6)
-    %\figset general(color=0.7)
-    %\figdrawaxes 100(-\Xmax,\Xmax,-\Ymax,\Ymax)
-    \drawAxes{100}{-\Xmax}\Xmax{-\Ymax}\Ymax
-    %\figreset{general}
-    \figdrawarcell 100;\rxa,\rya (0,360,0)
-    \figdrawarcell 100;\rxb,\ryb (0,360,0)
-  \figdrawend
-  \figvisu{\figBoxA}{}{%
-    \figsetmark{$\bullet$}
-    \figwritese 100:(3)
-    \ifprintanswers
-      \ifnumodd{\value{rolldice}}{
-        \figwritene 101:(3)
-        \figwritese 102:(3)
-        \figwritew 103:(3)
-        \figwritew 104:(3)
-      }{
-        \figwritese 101:(3)
-        \figwritesw 102:(3)
-        \figwritenw 103:(3)
-        \figwritene 104:(3)
-      }
-    \fi
-    \figsetmark{}
-    \figwritene 500:(3)
-    \figwritene 501:(3)
+\figinit{pt}
+  \def\Xori{45}
+  \def\Yori{45}
+  \def\rxa{30} % A:x-radius
+  \def\rya{40} % A:y-radius
+  \def\rxb{40} % B:x-radius
+  \def\ryb{30} % B:y-radius
+  \def\Xmin{0}
+  \def\Xmax{60}
+  \def\Ymin{0}
+  \def\Ymax{60}
+  \figpt 100:$C$(\Xori,\Yori) % center of ellipse
+  \ifnumodd{\value{rolldice}}{
+    \figptell 101:$V_2$: 100;\rxa,\rya (90,0)
+    \figptell 102:$V_1$: 100;\rxa,\rya (270,0)
+  }{
+    \figptell 101:$V_2$: 100;\rxb,\ryb (0,0)
+    \figptell 102:$V_1$: 100;\rxb,\ryb (180,0)
   }
-  \centerline{\box\figBoxA}
-\end{marginfigure}
+  \figptell 500:$A$: 100;\rxa,\rya (60,0)
+  \figptell 501:$B$: 100;\rxb,\ryb (23,0)
+  \figvectP 200 [100,101]
+  \figvectP 201 [100,102]
+  \figpttra 103:$F_2$= 100 /0.6,200/
+  \figpttra 104:$F_1$= 100 /0.6,201/
+\figdrawbegin{}
+  %\figset arrowhead(fillmode=yes,angle=15,length=6)
+  %\figset general(color=0.7)
+  %\figdrawaxes 100(-\Xmax,\Xmax,-\Ymax,\Ymax)
+  \drawAxes{100}{-\Xmax}\Xmax{-\Ymax}\Ymax
+  %\figreset{general}
+  \figdrawarcell 100;\rxa,\rya (0,360,0)
+  \figdrawarcell 100;\rxb,\ryb (0,360,0)
+\figdrawend
+\figvisu{\figBoxA}{}{%
+  \Large
+  \figsetmark{$\bullet$}
+  \figwritese 100:(3)
+  \ifprintanswers
+    \ifnumodd{\value{rolldice}}{
+      \figwritene 101:(3)
+      \figwritese 102:(3)
+      \figwritew 103:(3)
+      \figwritew 104:(3)
+    }{
+      \figwritese 101:(3)
+      \figwritesw 102:(3)
+      \figwritenw 103:(3)
+      \figwritene 104:(3)
+    }
+  \fi
+  \figsetmark{}
+  \figwritene 500:(3)
+  \figwritene 501:(3)
+}
+
+\vspace{0.7cm}
+\centerline{\box\figBoxA}
 
 \begin{parts}
-  \part[2] Which is it - $A$ or $B$? Justify your answer 
+  \part[2] Which of the two ellipses - $A$ or $B$ - is the equation for? Justify your answer 
 
 \begin{solution}[\mcq]
-    The given equation can be re-written as 
-    \begin{align}
-      \aa x^2 + \bb y^2 = \cc &\implies 
-      \dfrac{x^2}{\left( \dfrac{\vbthree}{\vbone}\right)^2} + 
-      \dfrac{y^2}{\left( \dfrac\vbthree\vbtwo \right)^2} = 1
-    \end{align}
-    
-    Now, in both the standard forms of an ellipse
-    \begin{align}
-      \vbfour = 1 &\implies \text{horizontally aligned} \\
-      \text{ and } \vbfive = 1 &\implies\text{ vertically aligned }
-    \end{align}
-    it is understood that $a \geq b$
-    
-    Hence $a = \max\left(\frac{\vbthree}{\vbone},\frac{\vbthree}{\vbtwo}\right) = \frac{\vbthree}{\da}$ and $b=\min\left(\frac{\vbthree}{\vbone},\frac{\vbthree}{\vbtwo}\right) = \frac{\vbthree}{\db}$
+  The equation for an ellipse can be in one of two forms 
+  \begin{align}
+    \dfrac{x^2}{b^2} + \dfrac{y^2}{a^2} &= 1\implies\text{ an ellipse like A} \\
+    \dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} &= 1\implies\text{ an ellipse like B} 
+  \end{align} 
 
-    This means that the original equation is of the form $\vbsix = 1\implies\vbseven$
+  \textbf{In both the forms, $a\geq b$}
+
+  You can know what $a$ and $b$ are \textbf{only after} writing the equation in the standard form. 
+
+  And for the given ellipse 
+  \begin{align}
+    \aa x^2 + \bb y^2 &= \cc \\
+    \implies \dfrac{x^2}{\left(\WRITEFRAC\vc\va\right)^2} + \dfrac{y^2}{\left(\WRITEFRAC\vc\vb \right)^2} &= 1 \\
+    \implies a = \WRITEFRAC\vm\vn\text{ and } b = \WRITEFRAC\vp\vq
+  \end{align}
+  Which means, that the given equation is of the form 
+  \[ \vf \implies \text{ an ellipse like }\vg \] 
   \end{solution}
 
-  \part[1] Mark the vertices of the ellipse and find their coordinates. Call the vertices $V_1$ and $V_2$
+  \part[1] Mark the vertices of the ellipse and find their coordinates. Call the vertices $V_1$ and $V_2$.
 \begin{solution}[\mcq]
-    The vertices of ellipse $\vbseven$ are simply $\vbeight = \vbnine$. These are the points where the ellipse 
-    makes the sharpest turns 
+    The vertices of ellipse $\vg$ are simply $\vh = \vi$. 
+    
+    These are the points where the ellipse makes the sharpest turns.
   \end{solution}
 
   \part[1] Find the eccentricity ($e$) of the ellipse 
@@ -159,7 +166,7 @@ equation $\aa x^2 + \bb y^2 = \cc$
 \begin{solution}[\mcq]
     \begin{align}
       b^2 &= a^2\cdot (1-e^2) \implies e = \sqrt{1-\frac{b^2}{a^2}} \\
-      &= \sqrt{\dfrac{\j}{\k}} = \e
+      &= \sqrt{\dfrac{\j}{\k}} = \vz
     \end{align}
   \end{solution}
 
@@ -167,8 +174,15 @@ equation $\aa x^2 + \bb y^2 = \cc$
   \part[1] Mark the focii and find their coordinates. Call the focii $F_1$ and $F_2$
 
 \begin{solution}[\mcq]
-    The focii of the ellipse would be $\vbten = \vbeleven$
+    The focii of the ellipse would be $\vj = \vbeleven$
   \end{solution}
 
 \end{parts}
 
+\ifprintanswers
+  \begin{codex}
+    \begin{tabular}{l l l l}
+      (a) Ellipse $\vg$ & (b) $\vi$ & (c) $e=\vz$ & (d) $\vbeleven$
+    \end{tabular}
+  \end{codex}
+\fi
