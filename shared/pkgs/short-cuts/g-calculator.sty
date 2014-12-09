@@ -139,3 +139,24 @@
   \ADD\tmp{1}{#2}
 }
 
+\newcommand\FRACMAX[6]{ % max( #1/#2, #3/#4 )
+  \FRACMINUS{#1}{#2}{#3}{#4}\gca\gcb
+  \ifnumcomp\gca{>}{0}{
+    \COPY{#1}{#5}
+    \COPY{#2}{#6}
+  }{
+    \COPY{#3}{#5}
+    \COPY{#4}{#6}
+  }
+}
+
+\newcommand\FRACMIN[6]{ % min( #1/#2, #3/#4 )
+  \FRACMINUS{#1}{#2}{#3}{#4}\gca\gcb
+  \ifnumcomp\gca{>}{0}{
+    \COPY{#3}{#5}
+    \COPY{#4}{#6}
+  }{
+    \COPY{#1}{#5}
+    \COPY{#2}{#6}
+  }
+}
