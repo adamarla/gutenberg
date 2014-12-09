@@ -1,16 +1,41 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  \renewcommand\ve{\star\cdot\tan A-\cot A\cos A}
+  \renewcommand\vm{\sin A}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    \renewcommand\ve{\sin A\cdot\star-\cot A\cos A}
+    \renewcommand\vm{\tan A}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      \renewcommand\ve{\sin A\cdot\tan A-\star\cdot\cos A}
+      \renewcommand\vm{\cot A}
+    }{
+      \renewcommand\ve{\sin A\cdot\tan A-\cot A\cdot \star}
+      \renewcommand\vm{\cos A}
+    }
+  }
+}
 
-\question[2]  Prove the following  
-\[ (1+\cot A+\tan A)(\sin A-\cos A)=(\sin A\tan A-\cot A\cos A) \]
+\question[2] For the following to be true, the $\star$ 
+should be replaced with which trigonometric ratio?
+\[ (1+\cot A+\tan A)(\sin A-\cos A)=\ve \]
+
+\watchout
 
 \begin{solution}[\halfpage]
   \begin{align}
-     &(1+\cot A+\tan A)(\sin A-\cos A) = \nonumber\\
-		 &\left( 1+\dfrac{\cos A}{\sin A} + \dfrac{\sin A}{\cos A}\right)\cdot (\sin A - \cos A) \\
-		 &= \left( \sin A + \sin A\cdot\dfrac{\cos A}{\sin A} + \sin A\cdot\dfrac{\sin A}{\cos A}\right) \nonumber\\
-		 &-\cos A - \cos A\cdot\dfrac{\cos A}{\sin A} - \cos A\cdot\dfrac{\sin A}{\cos A} \\
-		 &= \sin A + \cos A + \sin A\cdot\tan A - \cos A - \cos A\cdot\cot A - \sin A \\
-		 &= \sin A\cdot\tan A - \cos A\cdot \cot A
+    &( 1 + \cot A + \tan A)\cdot(\sin A - \cos A) \nonumber \\
+    &=(\sin A + \sin A\cot A + \sin A\tan A) \nonumber \\
+    &- (\cos A + \cos A\cot A + \cos A \tan A) \\
+    &= \left(\sin A +\sin A\cdot\dfrac{\cos A}{\sin A} + \sin A\cdot\dfrac{\sin A}{\cos A}\right) \nonumber \\
+    &- \left( \cos A +\cos A\cdot\dfrac{\cos A}{\sin A} + \cos A\cdot\dfrac{\sin A}{\cos A} \right) \\
+    &= \left(\sin A + \cos A + \dfrac{\sin^2 A}{\cos A} \right) \nonumber \\
+    &- \left(\cos A + \dfrac{\cos^2 A}{\sin A} + \sin A\right) \\
+    &= \sin A\cdot\dfrac{\sin A}{\cos A} - \cos A\cdot\dfrac{\cos A}{\sin A} \\
+    &= \sin A\tan A - \cos A\cot A
   \end{align}
-
+  Compare this with the expression given in the question, and we can see that 
+  \[ \star = \vm \]
 \end{solution}
+\ifprintanswers\begin{codex}$\vm$\end{codex}\fi

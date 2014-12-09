@@ -17,45 +17,30 @@
     }
   }
 }
-\ADD\va\vb\mt
-\MULTIPLY\va\vb\lt
+\ADD\va\vb\vm
+\MULTIPLY\va\vb\vl
 
-\question[3] The real-valued function $f(x) = \sqrt{x^2-\mt x+\lt}$ has
+\question[3] The real-valued function $f(x) = \sqrt{x^2-\vm x+\vl}$ has
 the following domain $\{x : x \leq a,\, x \geq b\}$. What are the 
 values of $a$ and $b$?
 
 \watchout
 
 \begin{solution}[\halfpage]
+  For $f(x)\in\mathbb{R}$,
+  \[ x^2-\vm x + \vl \geq 0 \implies (x-\va)\cdot (x-\vb) \geq 0\] 
+  This gives rise to \textbf{two cases}.
 
-  \begin{align}
-    f(x) = \sqrt{\underbrace{ x^2 -\mt x + \lt}_{exp}}
-  \end{align}
-
-  The domain of the function $f(x)$ is all values of $x$ for which
-  $exp$ is greater than $0$,
+  \begin{tabular}{l l l}
+    \toprule
+      $(x-\va)\cdot(x-\vb)\geq 0$ & Implies & Min. Cond. \\ 
+    \midrule
+     $x-\va \geq 0$ and $x-\vb\geq 0$ & $x\geq\va$ and $x\geq \vb$ & $x\geq\vb$\\
+     $x-\va \leq 0$ and $x-\vb\leq 0$ & $x\leq\va$ and $x\leq \vb$ & $x\leq\va$ \\
+    \bottomrule
+  \end{tabular} 
   
-  \begin{align}
-    exp = x^2 -\mt x + \lt \geq 0 \\
-    \underbrace{(x - \va)}_{T_1}\underbrace{(x - \vb)}_{T_2} \geq 0
-  \end{align}
-  
-  The condition in $(3)$ is only satisfied if $T_1$ and $T_2$
-  are either \textit{both positive} or \textit{both negative}.\\
-  
-  Case I: both positive
-  \begin{align}
-    T_1 \geq 0 \Rightarrow x \geq \va \\
-    T_2 \geq 0 \Rightarrow \mathbf{x \geq \vb}    
-  \end{align}
-  
-  Case II: both negative
-  \begin{align}
-    T_1 \geq 0 \Rightarrow \mathbf{x \leq \va} \\
-    T_2 \geq 0 \Rightarrow x \leq \vb 
-  \end{align}
-
-  Since the conditions in $(5)$ and $(6)$ already account
-  for the conditions in $(4)$ and $(7)$, we get, $a=\va$, $b=\vb$.  
-
+  What the above means is that for $x^2-\vm x + \vl\geq 0$ so that  $f(x)\in\mathbb{R}$, 
+  \[ x \leq \va \text{ or } x\geq \vb \implies a= \va\text{ and } b = \vb \] 
 \end{solution}
+\ifprintanswers\begin{codex}$a=\va,\, b = \vb$\end{codex}\fi
