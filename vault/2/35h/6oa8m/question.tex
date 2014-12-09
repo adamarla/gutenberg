@@ -3,95 +3,96 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{-1}
-  \renewcommand{\vbtwo}{0}
-  \renewcommand{\vbthree}{7}
-  \renewcommand{\vbfour}{2}
-  \renewcommand{\vbfive}{5}
-  \renewcommand{\vbsix}{-2}
-  \renewcommand{\vbseven}{\frac{20}{7}}
-  \renewcommand{\vbeight}{\frac{11}{7}}
+  \renewcommand{\va}{-1}
+  \renewcommand{\vb}{0}
+  \renewcommand{\vc}{7}
+  \renewcommand{\vd}{2}
+  \renewcommand{\ve}{5}
+  \renewcommand{\vf}{-2}
+  \renewcommand{\vg}{\frac{20}{7}}
+  \renewcommand{\vh}{\frac{11}{7}}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{1}
-    \renewcommand{\vbtwo}{0}
-    \renewcommand{\vbthree}{-7}
-    \renewcommand{\vbfour}{2}
-    \renewcommand{\vbfive}{-5}
-    \renewcommand{\vbsix}{-2}
-    \renewcommand{\vbseven}{-\frac{20}{7}}
-    \renewcommand{\vbeight}{\frac{11}{7}}
+    \renewcommand{\va}{1}
+    \renewcommand{\vb}{0}
+    \renewcommand{\vc}{-7}
+    \renewcommand{\vd}{2}
+    \renewcommand{\ve}{-5}
+    \renewcommand{\vf}{-2}
+    \renewcommand{\vg}{-\frac{20}{7}}
+    \renewcommand{\vh}{\frac{11}{7}}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{-1}
-      \renewcommand{\vbtwo}{0}
-      \renewcommand{\vbthree}{7}
-      \renewcommand{\vbfour}{-2}
-      \renewcommand{\vbfive}{5}
-      \renewcommand{\vbsix}{2}
-      \renewcommand{\vbseven}{\frac{20}{7}}
-      \renewcommand{\vbeight}{-\frac{11}{7}}
+      \renewcommand{\va}{-1}
+      \renewcommand{\vb}{0}
+      \renewcommand{\vc}{7}
+      \renewcommand{\vd}{-2}
+      \renewcommand{\ve}{5}
+      \renewcommand{\vf}{2}
+      \renewcommand{\vg}{\frac{20}{7}}
+      \renewcommand{\vh}{-\frac{11}{7}}
     }{
       % variables 
-      \renewcommand{\vbone}{1}
-      \renewcommand{\vbtwo}{0}
-      \renewcommand{\vbthree}{-7}
-      \renewcommand{\vbfour}{-2}
-      \renewcommand{\vbfive}{-5}
-      \renewcommand{\vbsix}{2}
-      \renewcommand{\vbseven}{-\frac{20}{7}}
-      \renewcommand{\vbeight}{-\frac{11}{7}}
+      \renewcommand{\va}{1}
+      \renewcommand{\vb}{0}
+      \renewcommand{\vc}{-7}
+      \renewcommand{\vd}{-2}
+      \renewcommand{\ve}{-5}
+      \renewcommand{\vf}{2}
+      \renewcommand{\vg}{-\frac{20}{7}}
+      \renewcommand{\vh}{-\frac{11}{7}}
     }
   }
 }
 
-\gcalcexpr[0]{\mxone}{(\vbone + \vbthree) / 2}
-\gcalcexpr[0]{\myone}{(\vbtwo + \vbfour) / 2}
-\gcalcexpr[0]{\mxtwo}{(\vbthree + \vbfive) / 2}
-\gcalcexpr[0]{\mytwo}{(\vbfour + \vbsix) / 2}
-\gcalcexpr[0]{\mxthree}{(\vbone + \vbfive) / 2}
-\gcalcexpr[0]{\mythree}{(\vbtwo + \vbsix) / 2}
+\EXPR[0]{\mxone}{(\va + \vc) / 2}
+\EXPR[0]{\myone}{(\vb + \vd) / 2}
+\EXPR[0]{\mxtwo}{(\vc + \ve) / 2}
+\EXPR[0]{\mytwo}{(\vd + \vf) / 2}
+\EXPR[0]{\mxthree}{(\va + \ve) / 2}
+\EXPR[0]{\mythree}{(\vb + \vf) / 2}
 
-\gcalcexpr[0]{\mab}{-(\vbthree - \vbone)/(\vbfour - \vbtwo)}
-\gcalcexpr[2]{\mbc}{-(\vbfive - \vbthree)/(\vbsix - \vbfour) }
-\gcalcexpr[0]{\mca}{-(\vbone - \vbfive)/(\vbtwo - \vbsix)} 
+\EXPR[0]{\mab}{-(\vc - \va)/(\vd - \vb)}
+\EXPR[2]{\mbc}{-(\ve - \vc)/(\vf - \vd) }
+\EXPR[0]{\mca}{-(\va - \ve)/(\vb - \vf)} 
 
-\gcalcexpr[0]{\cone}{\myone - (\mab * \mxone)}
-\gcalcexpr[0]{\ctwo}{\mytwo - (\mbc * \mxtwo)}
-\gcalcexpr[0]{\cthree}{\mythree - (\mca * \mxthree)}
+\EXPR[0]{\cone}{\myone - (\mab * \mxone)}
+\EXPR[0]{\ctwo}{\mytwo - (\mbc * \mxtwo)}
+\EXPR[0]{\cthree}{\mythree - (\mca * \mxthree)}
 
-\question[3] A triangle has vertices $A = (\vbone, \vbtwo)$, $B = (\vbthree, \vbfour)$ and 
-$C = (\vbfive, \vbsix)$ - \asif. $X$, $Y$ and $Z$ are the mid-points of the three sides.
-Show that the \textit{perpendicular} bisectors of the sides are concurrent \textit{and}
+\question[3] A triangle has vertices $A = (\va, \vb)$, $B = (\vc, \vd)$ and 
+$C = (\ve, \vf)$ (see figure). $X$, $Y$ and $Z$ are the mid-points of the three sides.
+Show that the \textbf{perpendicular} bisectors of the sides are concurrent \textbf{and}
 find the point of concurrence
 
 
-\begin{marginfigure}
-  \figinit{pt}
-    \figpt 10:$A$(-10, 0)
-    \figpt 20:$B$(70, 20)
-    \figpt 30:$C$(50, -20)
-    \figpt 11: $X$(30,10)
-    \figpt 21: $Y$(60,0)
-    \figpt 31: $Z$(20,-10)
-  \figdrawbegin{}
-    \figdrawline [10, 20]
-    \figdrawline [20, 30]
-    \figdrawline [30, 10]
-  \figdrawend
-  \figvisu{\figBoxA}{}{%
-    \figwritesw 10:(5pt)
-    \figwritene 20:(5pt)
-    \figwritese 30:(5pt)
-    \figset write(mark=$\bullet$)
-    \figwriten 11:(4)
-    \figwritee 21:(4)
-    \figwrites 31:(4)
-  }
-  \centerline{\box\figBoxA}
-\end{marginfigure}
+\figinit{pt}
+  \figpt 10:$A$(-10, 0)
+  \figpt 20:$B$(70, 20)
+  \figpt 30:$C$(50, -20)
+  \figpt 11: $X$(30,10)
+  \figpt 21: $Y$(60,0)
+  \figpt 31: $Z$(20,-10)
+\figdrawbegin{}
+  \figdrawline [10, 20]
+  \figdrawline [20, 30]
+  \figdrawline [30, 10]
+\figdrawend
+\figvisu{\figBoxA}{}{%
+  \Large
+  \figwritesw 10:(5pt)
+  \figwritene 20:(5pt)
+  \figwritese 30:(5pt)
+  \figset write(mark=$\bullet$)
+  \figwriten 11:(5)
+  \figwritee 21:(5)
+  \figwrites 31:(5)
+}
+
+\vspace{0.5cm}
+\centerline{\box\figBoxA}
 
 \watchout
 
@@ -102,32 +103,32 @@ find the point of concurrence
 		
 		And so, the coordinates of $X$, $Y$ and $Z$ would be 
 		\begin{align}
-			X &= \left( \frac{\vbone + \vbthree}{2}, \frac{\vbtwo + \vbfour}{2} \right) = (\mxone, \myone) \\
-			Y &= \left( \frac{\vbthree + \vbfive}{2}, \frac{\vbfour + \vbsix}{2} \right) = (\mxtwo, \mytwo) \\
-			Z &= \left( \frac{\vbone + \vbfive}{2}, \frac{\vbtwo + \vbsix}{2} \right) = (\mxthree, \mythree)
+			X &= \left( \frac{\va + \vc}{2}, \frac{\vb + \vd}{2} \right) = (\mxone, \myone) \\
+			Y &= \left( \frac{\vc + \ve}{2}, \frac{\vd + \vf}{2} \right) = (\mxtwo, \mytwo) \\
+			Z &= \left( \frac{\va + \ve}{2}, \frac{\vb + \vf}{2} \right) = (\mxthree, \mythree)
 		\end{align}
 	
 		If $AB_\perp$, $BC_\perp$ and $CA_\perp$ be the perpendicular bisectors of $AB$, $BC$ and $CA$ respectively, then 
 		their slopes are given by
 		\begin{align}
-			m_{AB,\perp} &= -\frac{1}{m_{AB}} = -\dfrac{\vbthree - \vbone}{\vbfour - \vbtwo} = \mab \\
-			m_{BC,\perp} &= -\frac{1}{m_{BC}} = -\dfrac{\vbfive - \vbthree}{\vbsix - \vbfour} = \mbc \\
-			m_{CA,\perp} &= -\frac{1}{m_{CA}} = -\dfrac{\vbone - \vbfive}{\vbtwo - \vbsix} = \mca
+			m_{AB,\perp} &= -\frac{1}{m_{AB}} = -\dfrac{\vc - \va}{\vd - \vb} = \mab \\
+			m_{BC,\perp} &= -\frac{1}{m_{BC}} = -\dfrac{\ve - \vc}{\vf - \vd} = \mbc \\
+			m_{CA,\perp} &= -\frac{1}{m_{CA}} = -\dfrac{\va - \ve}{\vb - \vf} = \mca
 		\end{align}
 		And their equations, therefore, would be 
 		\begin{align}
-			AB_\perp &= \dfrac{y-\myone}{x-\mxone} = \mab \Rightarrow y = \mab x + \cone \\
-			BC_\perp &= \dfrac{y-\mytwo}{x-\mxtwo} = \mbc \Rightarrow y = \mbc x + \ctwo \\
-			CA_\perp &= \dfrac{y-\mythree}{x-\mxthree} = \mca \Rightarrow y = \mca x + \cthree					
+			AB_\perp &= \dfrac{y-\myone}{x-\mxone} = \mab \implies y = \mab x + \cone \\
+			BC_\perp &= \dfrac{y-\mytwo}{x-\mxtwo} = \mbc \implies y = \mbc x + \ctwo \\
+			CA_\perp &= \dfrac{y-\mythree}{x-\mxthree} = \mca \implies y = \mca x + \cthree					
 		\end{align}
 	
-		$AB_\perp$ and $BC_\perp$ intersect when $ y = \mab x + \cone = \mbc x + \ctwo \Rightarrow x = \vbseven$ 
-		and $y = \vbeight$
+		$AB_\perp$ and $BC_\perp$ intersect when $ y = \mab x + \cone = \mbc x + \ctwo \implies x = \vg$ 
+		and $y = \vh$
 		
-		$(\vbseven, \vbeight)$ also satisfies the equation of $CA_\perp$. You can check this by plugging in 
-		$(x,y) = (\vbseven, \vbeight)$ into the equation for $CA_\perp$. Which means that \textit{all three} 
-		perpendicular bisectors intersect at one point \textit{and} that point is $(\vbseven, \vbeight)$
+		$(\vg, \vh)$ also satisfies the equation of $CA_\perp$. You can check this by plugging in 
+		$(x,y) = (\vg, \vh)$ into the equation for $CA_\perp$. Which means that \textbf{all three} 
+		perpendicular bisectors intersect at one point \textbf{and} that point is $(\vg, \vh)$
 \end{solution}
 
-\ifprintanswers\begin{codex}$(\vbseven, \vbeight)$\end{codex}\fi
+\ifprintanswers\begin{codex}$(\vg, \vh)$\end{codex}\fi
 
