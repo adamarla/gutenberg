@@ -234,10 +234,10 @@ function compile_tex {
       ps2pdf $stem.ps
       if [ -e $stem.pdf ] ; then
         if [ $mode == "vault" -o $mode == "quiz" ] ; then 
-          create_imgs $stem.pdf png 
+          create_imgs $stem.pdf jpeg 
           if [ $mode == "vault" ] ; then 
-            echo ".... Creating jpegs"
-            create_imgs $stem.pdf jpeg
+            echo ".... Creating PNGs"
+            create_imgs $stem.pdf png
           fi 
         fi
       else
