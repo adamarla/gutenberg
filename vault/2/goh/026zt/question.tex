@@ -3,111 +3,124 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{-4} % open left  
-  \renewcommand{\vbthree}{y^2 = \vbtwo x}
+  \renewcommand{\va}{-4} % open left  
+  \renewcommand{\vc}{y^2 = \vb x}
+  \renewcommand\vi{y^2\geq 0\implies \vb x\geq 0\implies x\leq 0}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{3} % open up
-    \renewcommand{\vbthree}{y = \vbtwo x^2}
+    \renewcommand{\va}{3} % open up
+    \renewcommand{\vc}{y = \vb x^2}
+    \renewcommand\vi{\vb x^2\geq 0\implies y\geq 0\text{ for all }x}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{-5} %open left
-      \renewcommand{\vbthree}{y^2 = \vbtwo x}
+      \renewcommand{\va}{-5} %open left
+      \renewcommand{\vc}{y^2 = \vb x}
+      \renewcommand\vi{y^2\geq 0\implies \vb x\geq 0\implies x\leq 0}
     }{
       % variables 
-      \renewcommand{\vbone}{-6} %open down
-      \renewcommand{\vbthree}{y = \vbtwo x^2}
+      \renewcommand{\va}{-6} %open down
+      \renewcommand{\vc}{y = \vb x^2}
+      \renewcommand\vi{\vb x^2 \leq 0\text{ for all }x\implies y\leq 0\text{ for all }x}
     }
   }
 }
 
 \ifnumodd{\value{rolldice}}{
-  \renewcommand\vbfour{x^2 = 4py}
-  \renewcommand\vbfive{ F = (0,\vbone) }
+  \renewcommand\vd{x^2 = 4py}
+  \renewcommand\ve{ F = (0,\va) }
 }{
-  \renewcommand\vbfour{y^2 = 4px}
-  \renewcommand\vbfive{ F = (\vbone, 0) }
+  \renewcommand\vd{y^2 = 4px}
+  \renewcommand\ve{ F = (\va, 0) }
 }
 
-\MULTIPLY\vbone{4}\vbtwo
-\ABSVALUE\vbtwo\vbsix
+\MULTIPLY\va{4}\vb
+\ABSVALUE\vb\vf
 
-\question Given the equation $\vbthree$ of a parabola
+\question Given the equation $\vc$ of a parabola
 
 \watchout
 
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \def\Xori{49}
-      \def\Yori{45}
-      \figpt 1:$O$(\Xori,\Yori)
-      \figpt 2:(55,55)
-      \figpt 3:(55,35)
-      \figpt 4:(100,75)
-      \figpt 5:$A$(100,15)
-      \figptscontrol 10[4,2,3,5]
-      \ifprintanswers
-        \ifnumodd{\value{rolldice}}{ % x = 4y^2
-          \ifnumequal{\value{rolldice}}{1}{ % y = 4x^2
-            \figpt 20:(40,49)
-            \figpt 21:(58,49)
-            \figpt 22:(15,90)
-            \figpt 23:(75,90)
-          }{ % y = -4x^2
-            \figpt 20:(40,40)
-            \figpt 21:(58,40)
-            \figpt 22:(20,5)
-            \figpt 23:(85,5)
-          }
-        }{
-          \figpt 20:(43,35)
-          \figpt 21:(43,55)
-          \figpt 22:(0,15)
-          \figpt 23:(0,75)
-        }
-        \figptscontrol 30[22,20,21,23]
-      \fi
-    \figdrawbegin{}
-      \figdrawBezier 1[4,10,11,5]
-      \ifprintanswers
-        \figdrawBezier 1[22,30,31,23]
-      \fi
-      \drawAxes{1}{-5}{60}{-5}{60}
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-      \figwritesw 1:(3)
-      \figwritese 5:(3)
-      \ifprintanswers
-        \figwritew 22:$B$(2) 
-      \fi
+\figinit{pt}
+  \def\Xori{49}
+  \def\Yori{45}
+  \figpt 1:$O$(\Xori,\Yori)
+  \figpt 2:(55,55)
+  \figpt 3:(55,35)
+  \figpt 4:(100,75)
+  \figpt 5:$A$(100,15)
+  \figptscontrol 10[4,2,3,5]
+  \ifprintanswers
+    \ifnumodd{\value{rolldice}}{ % x = 4y^2
+      \ifnumequal{\value{rolldice}}{1}{ % y = 4x^2
+        \figpt 20:(40,49)
+        \figpt 21:(58,49)
+        \figpt 22:(15,90)
+        \figpt 23:(75,90)
+      }{ % y = -4x^2
+        \figpt 20:(40,40)
+        \figpt 21:(58,40)
+        \figpt 22:(20,5)
+        \figpt 23:(85,5)
+      }
+    }{
+      \figpt 20:(43,35)
+      \figpt 21:(43,55)
+      \figpt 22:(0,15)
+      \figpt 23:(0,75)
     }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
+    \figptscontrol 30[22,20,21,23]
+  \fi
+\figdrawbegin{}
+  \figdrawBezier 1[4,10,11,5]
+  \ifprintanswers
+    \figdrawBezier 1[22,30,31,23]
+  \fi
+  \drawAxes{1}{-5}{60}{-5}{60}
+\figdrawend
+\figvisu{\figBoxA}{}{%
+  \figwritesw 1:(3)
+  \figwritese 5:(3)
+  \ifprintanswers
+    \figwritew 22:$B$(2) 
+  \fi
+}
+
+\vspace{0.7cm}
+\centerline{\box\figBoxA}
 
 \begin{parts}
-  \part[1] Can curve $A$ - \asif - be the plot of the given parabola? If not, then draw the correct plot
+  \part[1] Can curve $A$ be the plot of the given parabola? If not, then draw the correct plot.
 
 \begin{solution}[\mcq]
-    The given equation - $\vbthree$ - is of the form $\vbfour$, where $p = \vbone$. 
-    Hence, the curve cannot look like $A$ but should look like $B$
+  From the given equation, we can infer that 
+  \[ \vi \]
+  
+  Hence, if anything, the parabola should look like curve $B$.
   \end{solution}
 
-  \part[1] Find coordinates of the focus($F$) and the vertex ($V$). Mark both in the corrected plot 
+  \part[1] Find coordinates of the focus($F$) and the vertex ($V$). Mark both in the corrected plot.
 
 \begin{solution}[\mcq]
-    The vertex of the parabola is simply at $(0,0)$
+    The vertex of the parabola is simply at $(0,0)$.
 
-    And given the form of the equation - $\vbfour$ - the focus is $\vbfive$
+    And given the form of the equation 
+    \[ \vd \implies p = \va \] 
+    the focus is simply $\ve$
   \end{solution}
 
-  \part[1] Find the length of the latus rectum of the parabola 
+  \part[1] Find the length of the latus rectum of the parabola.
 
 \begin{solution}[\mcq]
-    The length of the latus rectum is simply $= \vert 4\times\vbone\vert = \vbsix$
+    The length of the latus rectum is
+    \[ \vert 4\times p\vert = \vert 4\times \va\vert = \vf \]
   \end{solution}
 
 \end{parts}
 
+\ifprintanswers\begin{codex}
+  \begin{tabular}{l l l}
+    (a) No & (b) Vertex = $(0,0)$, Focus = $\ve$ & (c) $\vf$
+  \end{tabular}
+\end{codex}\fi
