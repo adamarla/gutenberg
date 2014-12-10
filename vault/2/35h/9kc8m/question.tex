@@ -1,109 +1,108 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{1} % x-avg
-  \renewcommand{\vbtwo}{7} % y-avg
-  \renewcommand{\vbthree}{2} % m-1
-  \renewcommand{\vbfour}{3} % m-2
-  \renewcommand{\vbfive}{4} % c-1
-  \renewcommand{\vbsix}{2} % c-2
+  \renewcommand{\va}{1} % x-avg
+  \renewcommand{\vb}{7} % y-avg
+  \renewcommand{\vc}{2} % m-1
+  \renewcommand{\vd}{3} % m-2
+  \renewcommand{\ve}{4} % c-1
+  \renewcommand{\vf}{2} % c-2
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{2}
-    \renewcommand{\vbtwo}{5}
-    \renewcommand{\vbthree}{3}
-    \renewcommand{\vbfour}{4}
-    \renewcommand{\vbfive}{5}
-    \renewcommand{\vbsix}{3}
+    \renewcommand{\va}{2}
+    \renewcommand{\vb}{5}
+    \renewcommand{\vc}{3}
+    \renewcommand{\vd}{4}
+    \renewcommand{\ve}{5}
+    \renewcommand{\vf}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{7}
-      \renewcommand{\vbthree}{1}
-      \renewcommand{\vbfour}{2}
-      \renewcommand{\vbfive}{5}
-      \renewcommand{\vbsix}{3}
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{7}
+      \renewcommand{\vc}{1}
+      \renewcommand{\vd}{2}
+      \renewcommand{\ve}{5}
+      \renewcommand{\vf}{3}
     }{
       % variables 
-      \renewcommand{\vbone}{3}
-      \renewcommand{\vbtwo}{-5}
-      \renewcommand{\vbthree}{2}
-      \renewcommand{\vbfour}{3}
-      \renewcommand{\vbfive}{7}
-      \renewcommand{\vbsix}{9}
+      \renewcommand{\va}{3}
+      \renewcommand{\vb}{-5}
+      \renewcommand{\vc}{2}
+      \renewcommand{\vd}{3}
+      \renewcommand{\ve}{7}
+      \renewcommand{\vf}{9}
     }
   }
 }
 
 
-\MULTIPLY\vbone{2}\j
-\MULTIPLY\vbtwo{2}\k
-\ADD\vbfive\vbsix\a
+\MULTIPLY\va{2}\j
+\MULTIPLY\vb{2}\k
+\ADD\ve\vf\a
 \SUBTRACT\a\k\b
 \MULTIPLY\b{-1}\c
-\SOLVELINEARSYSTEM(\vbthree,\vbfour;1,1)(\c,\j)(\g,\h)
-\EXPR[0]\v{(\vbthree * \g + \vbfive)}
-\EXPR[0]\w{(\vbfour * \h + \vbsix)}
+\SOLVELINEARSYSTEM(\vc,\vd;1,1)(\c,\j)(\g,\h)
+\EXPR[0]\v{(\vc * \g + \ve)}
+\EXPR[0]\w{(\vd * \h + \vf)}
 
-\SUBTRACT\v\vbtwo\pp
-\SUBTRACT\g\vbone\qq
+\SUBTRACT\v\vb\pp
+\SUBTRACT\g\va\qq
 \FRACTIONSIMPLIFY\pp\qq\p\q
-\EXPR[0]{\acn}{(\q * \vbtwo - \p * \vbone)}
+\EXPR[0]{\acn}{(\q * \vb - \p * \va)}
 
-\question[4] The segment of a line between two other lines $L_1: \vbthree x - y + \vbfive = 0$ and $L_2: \vbfour x -y + \vbsix = 0$ 
-is bisected at the point $M = (\vbone, \vbtwo)$. Find the equation of the line
-
+\question[4] The segment of a line between two other lines $L_1: \vc x - y + \ve = 0$ and $L_2: \vd x -y + \vf = 0$ 
+is bisected at the point $M = (\va, \vb)$. Find the equation of the line.
 
 \watchout[-10pt]
 
+\figinit{pt}
+  \figpt 1:(10,90)
+  \figpt 2:$L_2$(80,30)
+  \figvectP 20 [1,2]
+  \figpt 3:(10,30)
+  \figpt 4:$L_1$(80,50)
+  \figvectP 21 [3,4]
+  \figpt 5:(25,25)
+  \figpt 6:(25,70)
+  \figvectP 22 [5,6]
+  \figptinterlines 30:$B$[1,20;5,22]
+  \figptinterlines 31:$A$[3,21;5,22]
+  \figvectP 23 [30,31]
+  \figpttra 7:$M$= 30 /0.5,23/
+\figdrawbegin{}
+  \figdrawline [1,2]
+  \figdrawline [3,4]
+  \figdrawline [30,31]
+\figdrawend
+\figvisu{\figBoxA}{}{%
+  \Large
+  \figwritee 2:(3)
+  \figwritee 4:(3)
+  \figset write(mark=$\bullet$)
+  \figwritene 30:(3)
+  \figwritese 31:(3)
+  \figwritew 7:(3)
+}
+
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}[30pt]
-    \figinit{pt}
-      \figpt 1:(10,90)
-      \figpt 2:$L_2$(80,30)
-      \figvectP 20 [1,2]
-      \figpt 3:(10,30)
-      \figpt 4:$L_1$(80,40)
-      \figvectP 21 [3,4]
-      \figpt 5:(25,25)
-      \figpt 6:(25,70)
-      \figvectP 22 [5,6]
-      \figptinterlines 30:$B$[1,20;5,22]
-      \figptinterlines 31:$A$[3,21;5,22]
-      \figvectP 23 [30,31]
-      \figpttra 7:$M$= 30 /0.5,23/
-    \figdrawbegin{}
-      \figdrawline [1,2]
-      \figdrawline [3,4]
-      \figdrawline [30,31]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-      \figwritee 2:(3)
-      \figwritee 4:(3)
-      \figset write(mark=$\bullet$)
-      \figwritene 30:(3)
-      \figwritese 31:(3)
-      \figwritew 7:(3)
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
+  \vspace{0.7cm}
+  \centerline{\box\figBoxA}
 \fi 
 
 \begin{solution}[\halfpage]
 	If the required line intersects $L_1$ at $A = (a,b)$ and $L_2$ at $B = (m,n)$, then 
 	\begin{align}
-		\dfrac{a + m}{2} &= \vbone \Rightarrow a+m = \j \\
-		\dfrac{b + n}{2} &= \vbtwo \Rightarrow b+n = \k
+		\dfrac{a + m}{2} &= \va \implies a+m = \j \\
+		\dfrac{b + n}{2} &= \vb \implies b+n = \k
 	\end{align}
 	Moreover, as $(a,b)$ lies on $L_1$ and $(m,n)$ lies on $L_2$ 
 	\begin{align}
-    (L_1) : \vbthree a + \vbfive &= b  \\
-    (L_2) : \vbfour m + \vbsix &= n  \\
-    \implies b+n &= \k = \vbthree a + \vbfour m + (\vbfive + \vbsix) \\
-    \implies \vbthree a + \vbfour m &= \c
+    (L_1) : \vc a + \ve &= b  \\
+    (L_2) : \vd m + \vf &= n  \\
+    \implies b+n &= \k = \vc a + \vd m + (\ve + \vf) \\
+    \implies \vc a + \vd m &= \c
 	\end{align}
 
   Solving equations (1) and (6), we get 
@@ -113,9 +112,9 @@ is bisected at the point $M = (\vbone, \vbtwo)$. Find the equation of the line
   \end{align}
 
   We now have more than enough information to find the equation of the required line. Take \textbf{any two} 
-  of the three points - $(\vbone, \vbtwo), (\g,\v)$ or $(\h,\w)$ and find the line
+  of the three points - $(\va, \vb), (\g,\v)$ or $(\h,\w)$ and find the line
   \begin{align}
-    \dfrac{y-\vbtwo}{x - \vbone} &= \dfrac{\v-\vbtwo}{\g-\vbone} = \WRITEFRAC\p\q \\
+    \dfrac{y-\vb}{x - \va} &= \dfrac{\v-\vb}{\g-\va} = \WRITEFRAC\p\q \\
     \implies \q y &= \p x + \acn
   \end{align}
 \end{solution}
