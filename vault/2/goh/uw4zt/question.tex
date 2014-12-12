@@ -7,6 +7,7 @@
   \renewcommand{\vd}{3}
   \renewcommand{\ve}{-3}
   \renewcommand{\vf}{-3}
+  \renewcommand{\vg}{-}
   \renewcommand{\vh}{+3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
@@ -17,7 +18,7 @@
     \renewcommand{\vd}{-3}
     \renewcommand{\ve}{-3}
     \renewcommand{\vf}{+3}
-    \renewcommand{\vg}{-}
+    \renewcommand{\vg}{}
     \renewcommand{\vh}{-3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
@@ -28,7 +29,7 @@
       \renewcommand{\vd}{3}
       \renewcommand{\ve}{+3}
       \renewcommand{\vf}{-3}
-      \renewcommand{\vg}{-}
+      \renewcommand{\vg}{}
       \renewcommand{\vh}{+3}
     }{
       % variables 
@@ -38,6 +39,7 @@
       \renewcommand{\vd}{-3}
       \renewcommand{\ve}{+3}
       \renewcommand{\vf}{+3}
+      \renewcommand{\vg}{-}
       \renewcommand{\vh}{-3}
     }
   }
@@ -76,7 +78,7 @@ both $\r$ units from the origin.
       \figwrites 101:$A$(2pt)
       \figwritew 102:$B$(2pt)
       \figset write(mark=$\bullet$)      
-      \figwrites 103:$C\text{($\xcept$, $\ycept$)}$(2pt)
+      \figwrites 103:$C\text{($\vc$, $\vd$)}$(2pt)
     }
     \centerline{\box\figBoxA}
   \end{marginfigure}
