@@ -3,44 +3,44 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{3}
-  \renewcommand{\vbtwo}{3}
-  \renewcommand{\vbthree}{120}
-  \renewcommand{\vbfour}{21}
-  \renewcommand{\vbfive}{99}
-  \renewcommand{\vbsix}{7}
+  \renewcommand{\va}{3}
+  \renewcommand{\vb}{3}
+  \renewcommand{\vc}{120}
+  \renewcommand{\vd}{21}
+  \renewcommand{\ve}{99}
+  \renewcommand{\vf}{7}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{4}
-    \renewcommand{\vbtwo}{4}
-    \renewcommand{\vbthree}{5040}
-    \renewcommand{\vbfour}{138}
-    \renewcommand{\vbfive}{4902}
-    \renewcommand{\vbsix}{21}
+    \renewcommand{\va}{4}
+    \renewcommand{\vb}{4}
+    \renewcommand{\vc}{5040}
+    \renewcommand{\vd}{138}
+    \renewcommand{\ve}{4902}
+    \renewcommand{\vf}{21}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{3}
-      \renewcommand{\vbthree}{720}
-      \renewcommand{\vbfour}{93}
-      \renewcommand{\vbfive}{627}
-      \renewcommand{\vbsix}{12}
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{3}
+      \renewcommand{\vc}{720}
+      \renewcommand{\vd}{93}
+      \renewcommand{\ve}{627}
+      \renewcommand{\vf}{12}
     }{
       % variables 
-      \renewcommand{\vbone}{3}
-      \renewcommand{\vbtwo}{4}
-      \renewcommand{\vbthree}{720}
-      \renewcommand{\vbfour}{26}
-      \renewcommand{\vbfive}{694}
-      \renewcommand{\vbsix}{14}
+      \renewcommand{\va}{3}
+      \renewcommand{\vb}{4}
+      \renewcommand{\vc}{720}
+      \renewcommand{\vd}{26}
+      \renewcommand{\ve}{694}
+      \renewcommand{\vf}{14}
     }
   }
 }
 
-\question Find the number of ways in which $\vbone$ rings can be worn on
-$\vbtwo$ fingers given that -
+\question Find the number of ways in which $\va$ rings can be worn on
+$\vb$ fingers given that -
 
 
 \watchout
@@ -107,7 +107,7 @@ $\vbtwo$ fingers given that -
     }    
   }
   The total number of combinations, which is the sum of combinations 
-  for each of these individual cases equals $\vbsix$.
+  for each of these individual cases equals $\vf$.
   \end{solution}
   
   \part[3] Each ring is distinct and the order in which it is worn on a 
@@ -117,7 +117,7 @@ $\vbtwo$ fingers given that -
   Since the order in which the rings go on the finger matters, the total
   number of permutations would be given by,
   \begin{align}
-    (\vbone + \vbtwo -1)! = \vbthree \nonumber
+    (\va + \vb -1)! = \vc \nonumber
   \end{align}
   \end{solution}
 
@@ -167,8 +167,9 @@ $\vbtwo$ fingers given that -
   }
   Adding all these and subtracting from the result in part b) we get,
   \begin{align}  
-    \vbthree - \vbfour = \vbfive
+    \vc - \vd = \ve
   \end{align}
   \end{solution}
 
 \end{parts}
+\ifprintanswers\begin{codex}\end{codex}\fi

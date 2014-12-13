@@ -2,42 +2,42 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  \newcommand{\cost}{755}  % variables 
-  \newcommand{\dep}{18}  % variables 
-  \newcommand{\yrs}{5}  % variables 
-  \newcommand{\calcaid}{2.5}
-  \newcommand{\p}{302}
+  \renewcommand{\vb}{755}  % variables 
+  \renewcommand{\vc}{18}  % variables 
+  \renewcommand{\vd}{5}  % variables 
+  \renewcommand{\va}{2.5}
+  \renewcommand{\ve}{302}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \newcommand{\cost}{855}  % variables 
-    \newcommand{\dep}{15}  % variables 
-    \newcommand{\yrs}{4}  % variables 
-    \newcommand{\calcaid}{1.8}
-    \newcommand{\p}{475}
+    \renewcommand{\vb}{855}  % variables 
+    \renewcommand{\vc}{15}  % variables 
+    \renewcommand{\vd}{4}  % variables 
+    \renewcommand{\va}{1.8}
+    \renewcommand{\ve}{475}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \newcommand{\cost}{690}  % variables 
-      \newcommand{\dep}{16}  % variables 
-      \newcommand{\yrs}{5}  % variables 
-      \newcommand{\calcaid}{2.3}
-      \newcommand{\p}{300}
+      \renewcommand{\vb}{690}  % variables 
+      \renewcommand{\vc}{16}  % variables 
+      \renewcommand{\vd}{5}  % variables 
+      \renewcommand{\va}{2.3}
+      \renewcommand{\ve}{300}
     }{
-      \newcommand{\cost}{800}  % variables 
-      \newcommand{\dep}{14}  % variables 
-      \newcommand{\yrs}{5}  % variables 
-      \newcommand{\calcaid}{2.0}
-      \newcommand{\p}{400}
+      \renewcommand{\vb}{800}  % variables 
+      \renewcommand{\vc}{14}  % variables 
+      \renewcommand{\vd}{5}  % variables 
+      \renewcommand{\va}{2.0}
+      \renewcommand{\ve}{400}
     }
   }
 }
 
-\MULTIPLY\dep\yrs\m
-\gcalcexpr[2]\final{\p * \dep / 100.00}
+\MULTIPLY\vc\vd\m
+\gcalcexpr[2]\final{\ve * \vc / 100.00}
 
-\question[2] A freezer depreciates at the rate of $\dep$\% per year. It
-was purchased new for \$$\cost$. How fast is it depreciating in dollar
-terms (\textit{in \$\$/year}) when it is exactly $\yrs$ years old.\\
-\textit{Calculation Aid: $e^{0.\m}=\calcaid$}
+\question[2] A freezer vcreciates at the rate of $\vc$\% per year. It
+was purchased new for \$$\vb$. How fast is it vcreciating in dollar
+terms (\textit{in \$\$/year}) when it is exactly $\vd$ years old.\\
+\textit{Calculation Aid: $e^{0.\m}=\va$}
 
 \watchout
 
@@ -45,32 +45,38 @@ terms (\textit{in \$\$/year}) when it is exactly $\yrs$ years old.\\
   Let the price of the refrigerator as a function of time be $p(t)$.
   Now, we know that,
   \begin{align}
-    \dfrac{dp}{dt}    &= -0.\dep p \\
-    \dfrac{dp}{p}     &= -0.\dep dt \\
-    \int\dfrac{dp}{p} &= \int -0.\dep dt \\
-    \ln p(t)          &= -0.\dep t + C
+    \dfrac{dp}{dt}    &= -0.\vc p \\
+    \dfrac{dp}{p}     &= -0.\vc dt \\
+    \int\dfrac{dp}{p} &= \int -0.\vc dt \\
+    \ln p(t)          &= -0.\vc t + C
   \end{align}
   Using the fact that at $t=0$, the original price of the refrigerator 
-  was $\cost$, we can use the equation in step (4) to get the value of 
-  the constant of integration $C$ to be $\ln\cost$. \\
+  was $\vb$, we can use the equation in step (4) to get the value of 
+  the constant of integration $C$ to be $\ln\vb$. \\
   Substituting this value of $C$ back in the equation we get,
   \begin{align}
-    \ln p(t)                &= -0.\dep t + \ln \cost \\
-    \ln \dfrac{p(t)}{\cost} &= -0.\dep t \\
-    \dfrac{p(t)}{\cost}     &= e^{-0.\dep t} \\
-    p(t)                    &= \dfrac{\cost}{e^{0.\dep t}}
+    \ln p(t)                &= -0.\vc t + \ln \vb \\
+    \ln \dfrac{p(t)}{\vb} &= -0.\vc t \\
+    \dfrac{p(t)}{\vb}     &= e^{-0.\vc t} \\
+    p(t)                    &= \dfrac{\vb}{e^{0.\vc t}}
   \end{align}
-  At $t=\yrs$ years, the price of the refrigerator $p(\yrs)$ can be
+  At $t=\vd$ years, the price of the refrigerator $p(\vd)$ can be
   calculated as shown,
   \begin{align}
-    p(\yrs) &= \dfrac{\cost}{e^{0.\dep\times\yrs}}
-             = \dfrac{\cost}{e^{0.\m}} = \dfrac{\cost}{\calcaid}
-             = \p
+    p(\vd) &= \dfrac{\vb}{e^{0.\vc\times\vd}}
+             = \dfrac{\vb}{e^{0.\m}} = \dfrac{\vb}{\va}
+             = \ve
   \end{align}
-  Therefore depreciation rate at the end of the $\yrs_{th}$ year is
+  Therefore vcreciation rate at the end of the $\vd_{th}$ year is
   \begin{align}
-    0.\dep\times\p = \$\final\,\textit{per year}
+    0.\vc\times\ve = \$\final\,\textit{per year}
   \end{align}
 
 \end{solution}
+
+\ifprintanswers
+  \begin{codex}
+    $\$\final\,\textit{per year}$
+  \end{codex}
+\fi
 

@@ -1,134 +1,163 @@
 
+%same suit
+\renewcommand{\va}{All 4 cards are of the same suit}
+\renewcommand{\ve}
+  {First pick one of the four suits ($4$ ways). Then, pick $4$ from the $13$ 
+   cards in that suit. Combining these we get $4\times ^{13}C_4=2860$ ways}
+\renewcommand{\vi}{2860}
+   
+%same number
+\renewcommand{\vb}{All 4 cards have the same number}
+\renewcommand{\vf}
+  {The first card can be picked in $13$ ways, since there are $13$ unique 
+   \textit{numbers} including face cards. The next three cards are now fixed
+   as that same number, but from the rest of the suits. Therefore final answer
+   is $13$ ways}
+\renewcommand{\vj}{13}
 
+%face cards
+\renewcommand{\vc}{All 4 cards are face cards (Jack, Queen, King)}
+\renewcommand{\vg}
+  {There are $3$ face cards in each suit and $4$ suits which makes for a total
+   of $4\times 3=12$ face cards. Number of ways to choose $4$ from $12$ is
+   $^{12}C_4=495$}
+\renewcommand{\vk}{495}
+
+%succession
+\renewcommand{\vd}{All 4 cards are in succession and of the same suit}
+\renewcommand{\vh}
+  {The first card can be picked in $52$ ways since there are $52$ unique cards. 
+   Thereafter the next three cards, starting at the first card we picked, are 
+   fixed as successive cards of the same suit. Therefore, number of ways is 
+   simply $52$}
+\renewcommand{\vl}{52}
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{All 4 cards are of the same suit}
-  \renewcommand{\vbtwo}{All 4 cards have the same number}
-  \renewcommand{\vbthree}{All 4 cards are in succession and of the same suit}
-  \renewcommand{\vbfour}{All 4 cards are face cards (Jack, Queen, King)}
+  \renewcommand{\vp}{\va}
+  \renewcommand{\vq}{\vb}
+  \renewcommand{\vr}{\vc}
+  \renewcommand{\vs}{\vd}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{All 4 cards have the same number}
-    \renewcommand{\vbtwo}{All 4 cards are of the same suit}
-    \renewcommand{\vbthree}{All 4 cards are face cards (Jack, Queen, King)}
-    \renewcommand{\vbfour}{All 4 cards are in succession and of the same suit}
+    \renewcommand{\vp}{\vd}
+    \renewcommand{\vq}{\va}
+    \renewcommand{\vr}{\vb}
+    \renewcommand{\vs}{\vc}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{All 4 cards are face cards (Jack, Queen, King)}
-      \renewcommand{\vbtwo}{All 4 cards are in succession and of the same suit}
-      \renewcommand{\vbthree}{All 4 cards are of the same suit}
-      \renewcommand{\vbfour}{All 4 cards have the same number}
+      \renewcommand{\vp}{\vc}
+      \renewcommand{\vq}{\vd}
+      \renewcommand{\vr}{\va}
+      \renewcommand{\vs}{\vb}
     }{
       % variables 
-      \renewcommand{\vbone}{All 4 cards are in succession and of the same suit}
-      \renewcommand{\vbtwo}{All 4 cards are face cards (Jack, Queen, King)}
-      \renewcommand{\vbthree}{All 4 cards have the same number}
-      \renewcommand{\vbfour}{All 4 cards are of the same suit}
+      \renewcommand{\vp}{\vb}
+      \renewcommand{\vq}{\vc}
+      \renewcommand{\vr}{\vd}
+      \renewcommand{\vs}{\va}
     }
   }
 }
 
-\renewcommand{\vbfive}{$\encr{13}{4}=2860$}%same suit
-\renewcommand{\vbsix}{$13$}%same number
-\renewcommand{\vbseven}{$\encr{12}{4}=495$}%face cards
-\renewcommand{\vbeight}{$52\times2\times2\times2=416$}%succession
-
-\question In how any ways can you choose 4 cards from a complete deck of
- 52 cards such that (consider the cards to be in continuation Ace follows
- King):
-
+\question In how any ways can you choose $4$ cards from a complete deck of
+ $52$ cards such that (consider the cards to be in continuation so Ace follows
+ King, Two follows Ace and so on):
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{parts}
-  \part[2] \vbone
+  \part[2] \vp
 
-\begin{solution}[\mcq]
-	\ifnumequal{\value{rolldice}}{0}{
-	  \vbfive
-	}{
-	  \ifnumequal{\value{rolldice}}{1}{
-	    \vbsix
-	  }{
-	    \ifnumequal{\value{rolldice}}{2}{
-	      \vbseven
-	    }{
-	      \vbeight
-	    }
-	  }
-	}  
+  \begin{solution}[\mcq]
+    \ifnumequal{\value{rolldice}}{0}{
+      \ve
+    }{
+      \ifnumequal{\value{rolldice}}{1}{
+        \vh
+      }{
+        \ifnumequal{\value{rolldice}}{2}{
+          \vg
+        }{
+          \vf
+        }
+      }
+    }  
   \end{solution}
 
-  \part[2] \vbtwo
+  \part[2] \vq
 
-\begin{solution}[\mcq]
-	\ifnumequal{\value{rolldice}}{0}{
-	  \vbsix
-	}{
-	  \ifnumequal{\value{rolldice}}{1}{
-	    \vbfive
-	  }{
-	    \ifnumequal{\value{rolldice}}{2}{
-	      \vbeight
-	    }{
-	      \vbseven
-	    }
-	  }
-	}  
+  \begin{solution}[\mcq]
+    \ifnumequal{\value{rolldice}}{0}{
+      \vf
+    }{
+      \ifnumequal{\value{rolldice}}{1}{
+        \ve
+      }{
+        \ifnumequal{\value{rolldice}}{2}{
+          \vh
+        }{
+          \vg
+        }
+      }
+    }  
   \end{solution}
 
-  \part[2] \vbthree
+  \part[2] \vr
 
-\begin{solution}[\mcq]
-	\ifnumequal{\value{rolldice}}{0}{
-	  \vbeight
-	}{
-	  \ifnumequal{\value{rolldice}}{1}{
-	    \vbseven
-	  }{
-	    \ifnumequal{\value{rolldice}}{2}{
-	      \vbfive
-	    }{
-	      \vbsix
-	    }
-	  }
-	}  
+  \begin{solution}[\mcq]
+    \ifnumequal{\value{rolldice}}{0}{
+      \vg
+    }{
+      \ifnumequal{\value{rolldice}}{1}{
+        \vf
+      }{
+        \ifnumequal{\value{rolldice}}{2}{
+          \ve
+        }{
+          \vh
+        }
+      }
+    }  
   \end{solution}
 
-  \part[2] \vbfour
+  \part[2] \vs
 
-\begin{solution}[\mcq]
-	\ifnumequal{\value{rolldice}}{0}{
-	  \vbseven
-	}{
-	  \ifnumequal{\value{rolldice}}{1}{
-	    \vbeight
-	  }{
-	    \ifnumequal{\value{rolldice}}{2}{
-	      \vbsix
-	    }{
-	      \vbfive
-	    }
-	  }
-	}  
+  \begin{solution}[\mcq]
+    \ifnumequal{\value{rolldice}}{0}{
+      \vh
+    }{
+      \ifnumequal{\value{rolldice}}{1}{
+        \vg
+      }{
+        \ifnumequal{\value{rolldice}}{2}{
+          \vf
+        }{
+          \ve
+        }
+      }
+    }  
   \end{solution}
 
 \end{parts}
+
+\ifprintanswers
+  \begin{codex}
+    \ifnumequal{\value{rolldice}}{0}{
+      (a) $\vi$ (b) $\vj$ (c) $\vk$ (d) $\vl$
+    }{
+      \ifnumequal{\value{rolldice}}{1}{
+        (a) $\vl$ (b) $\vi$ (c) $\vj$ (d) $\vk$
+      }{
+        \ifnumequal{\value{rolldice}}{2}{
+          (a) $\vk$ (b) $\vl$ (c) $\vi$ (d) $\vj$
+        }{
+          (a) $\vj$ (b) $\vk$ (c) $\vl$ (d) $\vi$
+        }
+      }
+    }
+  \end{codex}
+\fi
+

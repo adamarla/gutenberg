@@ -3,28 +3,28 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{{1,2,3,4,3,2,1 }}
-  \renewcommand{\vbtwo}{{1,3,3,1}}
-  \renewcommand{\vbthree}{2}
+  \renewcommand{\va}{{1,2,3,4,3,2,1 }}
+  \renewcommand{\vb}{{1,3,3,1}}
+  \renewcommand{\vc}{2}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{{3,4,1,2,1,4,3}}
-    \renewcommand{\vbtwo}{{3,1,1,3}}
-    \renewcommand{\vbthree}{4}
+    \renewcommand{\va}{{3,4,1,2,1,4,3}}
+    \renewcommand{\vb}{{3,1,1,3}}
+    \renewcommand{\vc}{4}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{{3,4,5,2,5,4,3}}
-      \renewcommand{\vbtwo}{{3,5,5,3}}
-      \renewcommand{\vbthree}{4}
+      \renewcommand{\va}{{3,4,5,2,5,4,3}}
+      \renewcommand{\vb}{{3,5,5,3}}
+      \renewcommand{\vc}{4}
     }{
       % variables 
     }
   }
 }
 
-\question[3] How many different numbers can be formed using all the digits $\lbrace\vbone\rbrace$ so that odd digits occupy odd places 
+\question[3] How many different numbers can be formed using all the digits $\lbrace\va\rbrace$ so that odd digits occupy odd places 
 
 
 \watchout
@@ -45,11 +45,12 @@
 \fi 
 
 \begin{solution}[\mcq]
-A 7-digit number will be formed using these digits, we have four available odd places and four odd numbers $\lbrace\vbtwo\rbrace$.\\
+A 7-digit number will be formed using these digits, we have four available odd places and four odd numbers $\lbrace\vb\rbrace$.\\
 \\
 These can be arranged at four places in $\dfrac{4!}{2!\cdot2!}$ $\left[\text{ As two numbers repeat themselves} \right]$\\
-Now, the remaining 3 digits can be rearranged at 3 places in $\dfrac{3!}{2!}$ $\left[ \text{As $\vbthree$ repeats itself} \right]$\\
+Now, the remaining 3 digits can be rearranged at 3 places in $\dfrac{3!}{2!}$ $\left[ \text{As $\vc$ repeats itself} \right]$\\
 Thus,\\
 total arrangements$ =\dfrac{4!}{2!\cdot2!} \times \dfrac{3!}{2!} = 18$ 
 \end{solution}
 
+\ifprintanswers\begin{codex}\end{codex}\fi

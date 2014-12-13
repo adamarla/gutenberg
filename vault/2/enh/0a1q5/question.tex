@@ -1,60 +1,35 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{Eight}
-  \renewcommand{\vbtwo}{{A, B, C, D, E, F, G, H}}
-  \renewcommand{\vbthree}{eight}
-  \renewcommand{\vbfour}{8}
-  \renewcommand{\vbfive}{}
-  \renewcommand{\vbsix}{}
-  \renewcommand{\vbseven}{}
-  \renewcommand{\vbeight}{}
-  \renewcommand{\vbnine}{}
-  \renewcommand{\vbten}{}
+  \renewcommand{\va}{Eight}
+  \renewcommand{\vb}{{A, B, C, D, E, F, G, H}}
+  \renewcommand{\vc}{eight}
+  \renewcommand{\vd}{8}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{Six}
-    \renewcommand{\vbtwo}{{A, B, C, D, E, F}}
-    \renewcommand{\vbthree}{six}
-    \renewcommand{\vbfour}{6}
-    \renewcommand{\vbfive}{}
-    \renewcommand{\vbsix}{}
-    \renewcommand{\vbseven}{}
-    \renewcommand{\vbeight}{}
-    \renewcommand{\vbnine}{}
-    \renewcommand{\vbten}{}
+    \renewcommand{\va}{Six}
+    \renewcommand{\vb}{{A, B, C, D, E, F}}
+    \renewcommand{\vc}{six}
+    \renewcommand{\vd}{6}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{Seven}
-      \renewcommand{\vbtwo}{{A, B, C, D, E, F, G}}
-      \renewcommand{\vbthree}{seven}
-      \renewcommand{\vbfour}{7}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
+      \renewcommand{\va}{Seven}
+      \renewcommand{\vb}{{A, B, C, D, E, F, G}}
+      \renewcommand{\vc}{seven}
+      \renewcommand{\vd}{7}
     }{
-      \renewcommand{\vbone}{Five}
-      \renewcommand{\vbtwo}{{A, B, C, D, E}}
-      \renewcommand{\vbthree}{five}
-      \renewcommand{\vbfour}{5}
-      \renewcommand{\vbfive}{}
-      \renewcommand{\vbsix}{}
-      \renewcommand{\vbseven}{}
-      \renewcommand{\vbeight}{}
-      \renewcommand{\vbnine}{}
-      \renewcommand{\vbten}{}
-
+      \renewcommand{\va}{Five}
+      \renewcommand{\vb}{{A, B, C, D, E}}
+      \renewcommand{\vc}{five}
+      \renewcommand{\vd}{5}
     }
   }
 }
 
-\SUBTRACT\vbfour{1}\n
-\SUBTRACT\vbfour{2}\r
+\SUBTRACT\vd{1}\n
+\SUBTRACT\vd{2}\r
 
-\question[3] $\vbone$ students $\vbtwo$ are to be randomly assigned to 
-$\vbthree$ desks placed in a row. $B$ has a secret crush on $C$. 
+\question[3] $\va$ students $\vb$ are to be randomly assigned to 
+$\vc$ desks placed in a row. $B$ has a secret crush on $C$. 
 What is the probability $P_{sad}$, that they do $NOT$ get to sit 
 next to each other?
 
@@ -74,17 +49,20 @@ next to each other?
   $N_2$ = \textit{{no. of ways B and C can be arranged on two desks}} \\
   $N_3$ = \textit{{no. of ways the rest can sit on remaining desks}} \\
   
-  If universal set $U$, is the number of ways $\vbthree$ people can be 
-  arranged on $\vbfour$ desks, then,
+  If universal set $U$, is the number of ways $\vc$ people can be 
+  arranged on $\vd$ desks, then,
   \begin{align}
     P_{happy} &= \dfrac{N}{U} \\
-              &= \dfrac{\n\times 2\times \r!}{\vbfour!} \\
-              &= \dfrac{2}{\vbfour}
+              &= \dfrac{\n\times 2\times \r!}{\vd!} \\
+              &= \dfrac{2}{\vd}
   \end{align}
   \begin{align}
     P_{sad} &= 1 - P_{happy} \\
-            &= \dfrac{\r}{\vbfour}
+            &= \dfrac{\r}{\vd}
   \end{align}
   
 \end{solution}
 
+\ifprintanswers\begin{codex}
+  $P_{happy} = \frac{2}{\vd}$, $P_{sad} = \frac{\r}{\vd}$
+\end{codex}\fi

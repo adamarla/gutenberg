@@ -16,15 +16,15 @@ If the radius of the base of the funnel is \SI{5}{\centi\meter} and the funnel's
 	be the radius at the water-level, then 
 	\begin{align}
 		\dfrac{r}{h} &= \dfrac{R_0}{H} = \dfrac{5}{10} = \dfrac{1}{2} \\
-		\Rightarrow r &= \dfrac{h}{2}
+		\implies r &= \dfrac{h}{2}
 	\end{align}
 	Also, we have been told that 
 	\begin{align}
 		\dfrac{\ud V}{\ud t} &= \dfrac{\pi}{3}\dfrac{\ud}{\ud t}r^2h = \SI{5}{\cubic\centi\meter\per\second} \\
 		&= \dfrac{\pi}{3}\left[2rh\dfrac{\ud r}{\ud t} + r^2\dfrac{\ud h}{\ud t}\right] \\
 		&= \dfrac{\pi}{3}\left[h^2\cdot\dfrac{1}{2}\dfrac{\ud h}{\ud t} + \dfrac{h^2}{4}\dfrac{\ud h}{\ud t} \right] \\
-		\Rightarrow \dfrac{\pi h^2}{4}\dfrac{\ud h}{\ud t} &= \SI{5}{\cubic\centi\meter\per\second} \\
-		\Rightarrow \dfrac{\ud h}{\ud t} &= \dfrac{\SI{5}{\cubic\centi\meter\per\second}}
+		\implies \dfrac{\pi h^2}{4}\dfrac{\ud h}{\ud t} &= \SI{5}{\cubic\centi\meter\per\second} \\
+		\implies \dfrac{\ud h}{\ud t} &= \dfrac{\SI{5}{\cubic\centi\meter\per\second}}
 		{\dfrac{\pi h^2}{4}}
 	\end{align}
 	When the water-level is $2.5$ cm from the base, $h = 7.5$ cm. And at that instant
@@ -34,3 +34,4 @@ If the radius of the base of the funnel is \SI{5}{\centi\meter} and the funnel's
 		&= \SI{0.028}{\centi\meter\per\second}
 	\end{align}
 \end{solution}
+\ifprintanswers\begin{codex}\end{codex}\fi

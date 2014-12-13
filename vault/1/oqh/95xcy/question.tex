@@ -2,49 +2,50 @@
 
 
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{5}
-  \renewcommand{\vbtwo}{3}
-  \renewcommand{\vbthree}{1}
-  \renewcommand{\vbfour}{2}
+  \renewcommand{\va}{5}
+  \renewcommand{\vb}{3}
+  \renewcommand{\vc}{1}
+  \renewcommand{\vd}{2}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{7}
-    \renewcommand{\vbtwo}{2}
-    \renewcommand{\vbthree}{2}
-    \renewcommand{\vbfour}{7}
+    \renewcommand{\va}{7}
+    \renewcommand{\vb}{2}
+    \renewcommand{\vc}{2}
+    \renewcommand{\vd}{7}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{3}
-      \renewcommand{\vbtwo}{11}
-      \renewcommand{\vbthree}{4}
-      \renewcommand{\vbfour}{3}
+      \renewcommand{\va}{3}
+      \renewcommand{\vb}{11}
+      \renewcommand{\vc}{4}
+      \renewcommand{\vd}{3}
     }{
-      \renewcommand{\vbone}{9}
-      \renewcommand{\vbtwo}{2}
-      \renewcommand{\vbthree}{5}
-      \renewcommand{\vbfour}{1}
+      \renewcommand{\va}{9}
+      \renewcommand{\vb}{2}
+      \renewcommand{\vc}{5}
+      \renewcommand{\vd}{1}
     }
   }
 }
 
-\ADD\vbone\vbfour\p
-\SUBTRACT\vbthree\vbtwo\q
+\ADD\va\vd\p
+\SUBTRACT\vc\vb\q
 \def\logtwo{0.301}
-\EXPR[3]\a{ ((\vbone - (\vbone + \vbfour)*\logtwo) / (\vbtwo + (\vbthree - \vbtwo)*\logtwo)) }
+\EXPR[3]\a{ ((\va - (\va + \vd)*\logtwo) / (\vb + (\vc - \vb)*\logtwo)) }
 
 \question[2] Using logarithms, solve the following equation for $x$.
 \texttt{Hint:} $\log_{10}5 = \log_{10}\frac{10}{2} = 1 - \log_{10} 2$. ($\log_{10}2 = 0.301$)
-\[ 5^{\vbone - \vbtwo x} = 2^{\vbthree x + \vbfour}\]
+\[ 5^{\va - \vb x} = 2^{\vc x + \vd}\]
 
 \watchout[-40pt]
 
 \begin{solution}[\mcq]
   \begin{align}
-    5^{\vbone -\vbtwo x} &= 2^{\vbthree x + \vbfour} \implies 
-    (\vbone - \vbtwo x)\cdot\log_{10} 5 = (\vbthree x + \vbfour)\cdot\log_{10} 2 \\
-    &\implies (\vbone - \vbtwo x)\cdot(1-\log_{10} 2) = (\vbthree x + \vbfour)\cdot\log_{10} 2 \\
-    \text{ or } x &= \dfrac{\vbone - (\vbone + \vbfour)\log_{10} 2}
-    {\vbtwo + (\vbthree - \vbtwo)\log_{10} 2} = \a
+    5^{\va -\vb x} &= 2^{\vc x + \vd} \implies 
+    (\va - \vb x)\cdot\log_{10} 5 = (\vc x + \vd)\cdot\log_{10} 2 \\
+    &\implies (\va - \vb x)\cdot(1-\log_{10} 2) = (\vc x + \vd)\cdot\log_{10} 2 \\
+    \text{ or } x &= \dfrac{\va - (\va + \vd)\log_{10} 2}
+    {\vb + (\vc - \vb)\log_{10} 2} = \a
   \end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}\end{codex}\fi

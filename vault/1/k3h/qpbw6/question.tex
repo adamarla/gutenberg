@@ -1,4 +1,57 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{}
+  \renewcommand{\vb}{}
+  \renewcommand{\vc}{}
+  \renewcommand{\vd}{}
+  \renewcommand{\ve}{}
+  \renewcommand{\vf}{}
+  \renewcommand{\vg}{}
+  \renewcommand{\vh}{}
+  \renewcommand{\vi}{}
+  \renewcommand{\vj}{}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{}
+    \renewcommand{\vb}{}
+    \renewcommand{\vc}{}
+    \renewcommand{\vd}{}
+    \renewcommand{\ve}{}
+    \renewcommand{\vf}{}
+    \renewcommand{\vg}{}
+    \renewcommand{\vh}{}
+    \renewcommand{\vi}{}
+    \renewcommand{\vj}{}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{}
+      \renewcommand{\vb}{}
+      \renewcommand{\vc}{}
+      \renewcommand{\vd}{}
+      \renewcommand{\ve}{}
+      \renewcommand{\vf}{}
+      \renewcommand{\vg}{}
+      \renewcommand{\vh}{}
+      \renewcommand{\vi}{}
+      \renewcommand{\vj}{}
+    }{
+      % variables 
+      \renewcommand{\va}{}
+      \renewcommand{\vb}{}
+      \renewcommand{\vc}{}
+      \renewcommand{\vd}{}
+      \renewcommand{\ve}{}
+      \renewcommand{\vf}{}
+      \renewcommand{\vg}{}
+      \renewcommand{\vh}{}
+      \renewcommand{\vi}{}
+      \renewcommand{\vj}{}
+    }
+  }
+}
 
 \question If it takes 366 persons to be 100 percent sure that at least two in the group
 have the same birthday, then how many would it take to be 50 percent sure? Assume a non-leap year
@@ -13,10 +66,11 @@ have the same birthday, then how many would it take to be 50 percent sure? Assum
    birthday as me and $N$ the number of people in the group (including me), then 
    \begin{align}
      P(B) = 1 - P(\overline{B}) &= 0.5 \\
-     \Rightarrow P(B) = P(\overline{B}) &= 0.5 \\
+     \implies P(B) = P(\overline{B}) &= 0.5 \\
      \text{where } P(\overline{B}) &= \left(\dfrac{364}{365}\right)^N \\
-     \Rightarrow \left(\dfrac{364}{365}\right)^N &= 0.5 \\
+     \implies \left(\dfrac{364}{365}\right)^N &= 0.5 \\
      \text{or } N &= \dfrac{\log 0.5}{\log\left(\dfrac{364}{365}\right)} \\
        &= 253
    \end{align} 
 \end{solution}
+\ifprintanswers\begin{codex}\end{codex}\fi

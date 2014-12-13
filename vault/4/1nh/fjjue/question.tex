@@ -2,35 +2,36 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{7}
+  \renewcommand{\va}{7}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{3}
+    \renewcommand{\va}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{4}
+      \renewcommand{\va}{4}
     }{
       % variables 
-      \renewcommand{\vbone}{5}
+      \renewcommand{\va}{5}
     }
   }
 }
 
-\SQUARE\vbone\vbtwo
-\MULTIPLY\vbone{2}\vbthree
+\SQUARE\va\vb
+\MULTIPLY\va{2}\vc
 
-\question[1] Evaluate the following limit \[ \lim_{x\to\vbone}\dfrac{\sqrt{x^2 -\vbtwo} + \sqrt{x-\vbone}}{\sqrt{x^2-\vbtwo}}\]
+\question[1] Evaluate the following limit \[ \lim_{x\to\va}\dfrac{\sqrt{x^2 -\vb} + \sqrt{x-\va}}{\sqrt{x^2-\vb}}\]
 
 \watchout
 
 \begin{solution}[\mcq]
   \begin{align}
-    \lim_{x\to\vbone}\dfrac{\sqrt{x^2-\vbtwo} + \sqrt{x-\vbone}}{\sqrt{x^2-\vbtwo}} &= 
-    \lim_{x\to\vbone}\dfrac{\sqrt{x-\vbone}\cdot (\sqrt{x+\vbone} + 1)}{\sqrt{x-\vbone}\cdot\sqrt{x + \vbone}} \\
-    &= \lim_{x\to\vbone}\dfrac{\sqrt{x+\vbone} + 1}{\sqrt{x + \vbone}} 
-    = 1 + \frac{1}{\sqrt\vbthree}
+    \lim_{x\to\va}\dfrac{\sqrt{x^2-\vb} + \sqrt{x-\va}}{\sqrt{x^2-\vb}} &= 
+    \lim_{x\to\va}\dfrac{\sqrt{x-\va}\cdot (\sqrt{x+\va} + 1)}{\sqrt{x-\va}\cdot\sqrt{x + \va}} \\
+    &= \lim_{x\to\va}\dfrac{\sqrt{x+\va} + 1}{\sqrt{x + \va}} 
+    = 1 + \frac{1}{\sqrt\vc}
   \end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}\end{codex}\fi

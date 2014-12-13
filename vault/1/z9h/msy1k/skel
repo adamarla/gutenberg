@@ -1,0 +1,59 @@
+
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{1}
+  \renewcommand{\vb}{2}
+  \renewcommand{\vc}{4}
+  \renewcommand{\vd}{6}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{3}
+    \renewcommand{\vb}{7}
+    \renewcommand{\vc}{2}
+    \renewcommand{\vd}{4}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{6}
+      \renewcommand{\vc}{5}
+      \renewcommand{\vd}{9}
+    }{
+      % variables 
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{4}
+      \renewcommand{\vc}{3}
+      \renewcommand{\vd}{7}
+    }
+  }
+}
+
+\SQUARE\vb\tp
+\gcalcexpr[0]\tq{\vd * \tp}
+\ADD\tq\vc\tr
+\MULTIPLY\vb{2}\ts
+
+\question[3] Given two functions $f(x)$ and $g(x)$, find $f'(x)$ given that 
+\[ g(\va) = \vb, \left[\dfrac{d}{dx} f(x)g(x)\right]_{x=\va} = \vc\text{ and } 
+\left[\dfrac{d}{dx}\dfrac{f(x)}{g(x)}\right]_{x=\va} = \vd \]
+
+\watchout
+
+\begin{solution}[\halfpage]
+	We know that, 
+	\begin{align}
+		\text{(Product Rule) }\dfrac{d}{dx} f\cdot g &= f'g + g'f \\
+		\text{(Quotient Rule) }\dfrac{d}{dx}\dfrac{f}{g} &= \dfrac{gf' - g'f}{g^2}
+	\end{align}
+	
+	And therefore, when $x=\va$, the following would hold 
+	\begin{align}
+		\vb\cdot f' + g'f &= \vc \implies g'f = \vc - \vb\cdot f' \\
+		\dfrac{\vb\cdot f' - g'f }{\vb^2} &= \vd \implies g'f = \vb\cdot f' - \tq \\
+		\implies \vc - \vb\cdot f' &= \vb\cdot f' - \tq \\
+		\text{ or } f'(x) &= \WRITEFRAC\tr\ts
+	\end{align}
+\end{solution}
+
+\ifprintanswers\begin{codex}$\WRITEFRAC\tr\ts$\end{codex}\fi

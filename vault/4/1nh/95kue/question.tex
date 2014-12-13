@@ -3,60 +3,87 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
+  \renewcommand\va{6}
+  \renewcommand\vb{7}
+  \renewcommand\vc{2}
+  \renewcommand\vj{1}
+  \renewcommand\vk{2}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
+    \renewcommand\va{9}
+    \renewcommand\vb{10}
+    \renewcommand\vc{1}
+    \renewcommand\vj{1}
+    \renewcommand\vk{2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
+      \renewcommand\va{6}
+      \renewcommand\vb{7}
+      \renewcommand\vc{2}
+      \renewcommand\vj{1}
+      \renewcommand\vk{2}
     }{
       % variables 
+      \renewcommand\va{6}
+      \renewcommand\vb{7}
+      \renewcommand\vc{2}
+      \renewcommand\vj{1}
+      \renewcommand\vk{2}
     }
   }
 }
 
-\question For the equation $6x^2 - 7x + 2 = 0$,
+\SQUARE\vb\b
+\EXPR[0]\vd{\b-4*\va*\vc}
+\SQUARE\va\ve
+\MULTIPLY\va\vb\vf
+\MULTIPLY\va\vc\vg
 
+\FRACPOWER\vb{2}{2}\vp\vq
+\FRACMINUS\vp\vq{12}{1}\vr\vs
+\FRACADD{\vb}{2}\vj\vk\p\q
+\FRACMINUS{\vb}{2}\vj\vk\r\s
+
+\FRACDIV\p\q\va{1}\w\x
+\FRACDIV\r\s\va{1}\y\z
+
+\question For the equation $\va x^2 - \vb x + \vc = 0$,
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{parts}
-  \part[3] Determine whether the equation has real roots
+  \part[3] Determine whether the equation has real roots.
 
-\begin{solution}[\mcq]
-  For the equation $6x^2-7x+2$ to have real roots discriminant (D) $\geq$ 0 \\
-  \begin{align}
-  D &= b^2 - 4\cdot a \cdot c = 1 \geq 0
-  \end{align}
- Thus, the equation has real roots  
+  \begin{solution}[\mcq]
+    For the equation to have real roots, 
+    \[ D = \text{discriminant} = b^2-4ac \geq 0 \]
+    And in this case 
+    \[ D = \vb^2-4\times\va\times\vc = \vd \geq 0 \implies\text{ real roots} \]
   \end{solution}
 
-  \part[4] Find the roots by first expressing the equation in the form $\left( x - a\right)^2 - b^2 = 0$
+  \part[4] If the equation has real roots, then find the roots by first expressing 
+  the equation in form 
+  \[ (x-a)^2-b^2 = 0 \]
 
-\begin{solution}[\halfpage]
-  \begin{align}
-  6x^2-7x+2=0 \rightarrow 36x^2 - 42x +12 \\
-  \Rightarrow \underbrace{\left[ (6x)^2 - 2\cdot\dfrac{7}{2} \cdot 6x  + \left(\dfrac{7}{2}\right)^2 \right]}_{(a-b)^2} + \left(12 - \dfrac{49}{4}\right) \\
-  \Rightarrow (6x - \dfrac{7}{2})^2 - (\dfrac{1}{2})^2 &= 0\\
-  \Rightarrow x &= \dfrac{2}{3} , \dfrac{1}{2} 
-  \end{align}
+  \begin{solution}[\halfpage]
+    \begin{align}
+      &\va x^2-\vb x + \vc = 0 \implies\va\times(\va x^2-\vb x + \vc) = 0 \\
+      &\implies (\va x)^2 - \left( 2\times\dfrac\vb{2}\right)\cdot\va x + \vg 
+      + \underbrace{\left[\left(\dfrac\vb{2}\right)^2-\left( \dfrac\vb{2}\right)^2 \right]}_{\text{effectively 0}} = 0 \\
+      &\implies \underbrace{\left[ (\va x)^2 - 2\cdot\dfrac\vb{2}\cdot\va x + \left(\dfrac\vb{2}\right)^2 \right]}_{(a-b)^2}
+      + \left[ \vg - \left(\dfrac\vb{2} \right)^2\right] = 0 \\
+      &\implies \underbrace{\left( \va x - \dfrac\vb{2} \right)^2 - \dfrac\vr\vs}_{a^2-b^2} = 0 \\
+      &\implies\left( \va x -\dfrac\vb{2}+\dfrac\vj\vk \right)\cdot
+      \left( \va x -\dfrac\vb{2} - \dfrac\vj\vk \right) = 0 \\
+      &\implies x = \WRITEFRAC[false]\w\x,\WRITEFRAC[false]\y\z
+    \end{align}
   \end{solution}
-
- 
 \end{parts}
 
+\ifprintanswers
+  \begin{codex}
+    $(a)\text{ Yes}\qquad (b)\,\WRITEFRAC[false]\w\x,\,\WRITEFRAC[false]\y\z$
+  \end{codex}
+\fi

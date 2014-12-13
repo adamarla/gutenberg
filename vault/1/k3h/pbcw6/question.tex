@@ -1,6 +1,59 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{}
+  \renewcommand{\vb}{}
+  \renewcommand{\vc}{}
+  \renewcommand{\vd}{}
+  \renewcommand{\ve}{}
+  \renewcommand{\vf}{}
+  \renewcommand{\vg}{}
+  \renewcommand{\vh}{}
+  \renewcommand{\vi}{}
+  \renewcommand{\vj}{}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{}
+    \renewcommand{\vb}{}
+    \renewcommand{\vc}{}
+    \renewcommand{\vd}{}
+    \renewcommand{\ve}{}
+    \renewcommand{\vf}{}
+    \renewcommand{\vg}{}
+    \renewcommand{\vh}{}
+    \renewcommand{\vi}{}
+    \renewcommand{\vj}{}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{}
+      \renewcommand{\vb}{}
+      \renewcommand{\vc}{}
+      \renewcommand{\vd}{}
+      \renewcommand{\ve}{}
+      \renewcommand{\vf}{}
+      \renewcommand{\vg}{}
+      \renewcommand{\vh}{}
+      \renewcommand{\vi}{}
+      \renewcommand{\vj}{}
+    }{
+      % variables 
+      \renewcommand{\va}{}
+      \renewcommand{\vb}{}
+      \renewcommand{\vc}{}
+      \renewcommand{\vd}{}
+      \renewcommand{\ve}{}
+      \renewcommand{\vf}{}
+      \renewcommand{\vg}{}
+      \renewcommand{\vh}{}
+      \renewcommand{\vi}{}
+      \renewcommand{\vj}{}
+    }
+  }
+}
 
-\question Two men - $M$ and $N$ - are playing a rather dangerous game. They are taking
+\question[3] Two men - $M$ and $N$ - are playing a rather dangerous game. They are taking
 turns firing at each other from a revolver that has 2 bullets with space for six (6). 
 The revolver's bullet chamber is circular and the bullets are in \textit{adjacent} chambers.
 $M$ took the first shot and it was blank. Now its $N's$ turn. Should $N$ fire the gun as-is
@@ -8,7 +61,6 @@ or should he rotate the chamber first?
 
 
 \ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
   \begin{marginfigure}
     \figinit{pt}
       \figpt 100: (50,50)
@@ -39,7 +91,7 @@ or should he rotate the chamber first?
   \end{marginfigure}
 \fi 
 
-\begin{solution}
+\begin{solution}[\halfpage]
 	The two men obviously don't like each other. Otherwise they wouldn't be playing such 
 	a dangerous game. Be that as it may, it is obvious that $N$ would want to fire a bullet - and not a 
 	blank - at $M$ when his turn comes
@@ -56,10 +108,11 @@ or should he rotate the chamber first?
 		\text{where }\bayesp{X}{\textoverline{Y}} = P(\text{first shot = A}) &= \dfrac{1}{6} \\
 		P(\overline{Y}) = P(\text{first shot = A or F}) &= \dfrac{2}{6} \\
 		\text{and } P(X) &= \dfrac{4}{6} \\
-		\Rightarrow \bayesp{\textoverline{Y}}{X} &= \dfrac{\frac{1}{6}\times\frac{2}{6}}{\frac{2}{3}} = \dfrac{1}{12}
+		\implies \bayesp{\textoverline{Y}}{X} &= \dfrac{\frac{1}{6}\times\frac{2}{6}}{\frac{2}{3}} = \dfrac{1}{12}
 	\end{align}
 	
 	If, however, $N$ were to rotate the chamber, then his probability of firing a \textit{non-blank} 
 	chamber would be $\dfrac{1}{3} > \dfrac{1}{12}$. And therefore, $N$ should rotate the chamber before firing
 	
 \end{solution}
+\ifprintanswers\begin{codex}\end{codex}\fi
