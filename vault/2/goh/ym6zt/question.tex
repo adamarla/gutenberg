@@ -30,50 +30,38 @@
 }
 
 \DIVIDE\va{2}\a
-\DIVIDE\vb{2}\b
+\DIVIDE\vb{-2}\b
+\SQUARE\a\aa
+\SQUARE\b\bb
+\EXPR[0]\rr{\aa + \bb + \vc}
 
 \question[2] Find the center and radius of the circle represented 
 by the following equation
-\begin{align}
-  x^2 + y^2 - \va x + \vb y - \vc = 0 \nonumber
-\end{align}
-
+  \[ x^2 + y^2 - \va x + \vb y - \vc = 0 \]
 
 \watchout
 
-\ifprintanswers
-  % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(0,0)
-    \figdrawbegin{}
-      \figdrawline [100,101]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-    }
-    \centerline{\box\figBoxA}
-  \end{marginfigure}
-\fi 
-
 \begin{solution}[\halfpage]
-  Let us begin by expanding the general equation of a circle with 
-  its center at $(a, b)$ and a radius $r$,
+  The equation of a circle centered at $(a,b)$ with radius $R$ is given by 
   \begin{align}
-                &(x-a)^2 + (y-b)^2 = r^2 \\
-    \implies &x^2 + y^2 - 2a -2b + (a^2 + b^2 -r^2) = 0
+    (x-a)^2 &+ (y-b)^2 = R^2 \\
+    \implies (x^2 - 2ax + a^2) &+ (y^2-2by + b^2) -R^2 = 0 \\
+    \implies x^2 + y^2 - 2ax - 2by &+ (a^2 + b^2 - R^2) = 0
   \end{align}
-  On comparing coefficients with the equation given in the question 
-  we get,
+  Compare this with the equation we have been given and you will see 
+  \[ \underbrace{x^2+y^2}_{\text{same}}\overbrace{-2ax}^{-\va x}\underbrace{-2by}_{\vb y}\overbrace{+ (a^2+b^2-R^2)}^{-\vc} = 0\]
+  In other words, 
   \begin{align}
-      2a = \va &\implies a=\a \\
-      2b = -\vb  &\implies b=-\b \\
-      a^2+b^2-c^2 = -\vc &\implies c=\vd
+    -2a &= -\va \implies a = \a \\
+    -2b &= \vb \implies b = \b \\
+    a^2 + b^2 - R^2 &= -\vc \implies R^2 = \aa + \bb + \vc = \rr \nonumber\\
+    \implies R &= \vd\text{ units}
   \end{align}
-  Therefore, the given circle has $(\a, -\b)$ as center and a radius
-  of $\vd$ units.
+  Hence, the center of the circle $C$ and its radius $R$ are 
+  \[ C = (a,b) = (\a,\b)\text{ and } R = \vd \]
 \end{solution}
+
 \ifprintanswers\begin{codex}
-    $C(\a,-\b)$, $R=\vd$ units.
+  Center = $(\a,\b)$, Radius = $\vd$ units
 \end{codex}\fi
 
