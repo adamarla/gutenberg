@@ -1,63 +1,65 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{positive}
-  \renewcommand{\vbtwo}{positive}
-  \renewcommand{\vbthree}{3}
-  \renewcommand{\vbfour}{3}
-  \renewcommand{\vbfive}{-3}
-  \renewcommand{\vbsix}{-3}
-  \renewcommand{\vbeight}{+3}
+  \renewcommand{\va}{positive}
+  \renewcommand{\vb}{positive}
+  \renewcommand{\vc}{3}
+  \renewcommand{\vd}{3}
+  \renewcommand{\ve}{-3}
+  \renewcommand{\vf}{-3}
+  \renewcommand{\vh}{+3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{positive}
-    \renewcommand{\vbtwo}{negative}
-    \renewcommand{\vbthree}{3}
-    \renewcommand{\vbfour}{-3}
-    \renewcommand{\vbfive}{-3}
-    \renewcommand{\vbsix}{+3}
-    \renewcommand{\vbseven}{-}
-    \renewcommand{\vbeight}{-3}
+    \renewcommand{\va}{positive}
+    \renewcommand{\vb}{negative}
+    \renewcommand{\vc}{3}
+    \renewcommand{\vd}{-3}
+    \renewcommand{\ve}{-3}
+    \renewcommand{\vf}{+3}
+    \renewcommand{\vg}{-}
+    \renewcommand{\vh}{-3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{negative}
-      \renewcommand{\vbtwo}{positive}
-      \renewcommand{\vbthree}{-3}
-      \renewcommand{\vbfour}{3}
-      \renewcommand{\vbfive}{+3}
-      \renewcommand{\vbsix}{-3}
-      \renewcommand{\vbseven}{-}
-      \renewcommand{\vbeight}{+3}
+      \renewcommand{\va}{negative}
+      \renewcommand{\vb}{positive}
+      \renewcommand{\vc}{-3}
+      \renewcommand{\vd}{3}
+      \renewcommand{\ve}{+3}
+      \renewcommand{\vf}{-3}
+      \renewcommand{\vg}{-}
+      \renewcommand{\vh}{+3}
     }{
       % variables 
-      \renewcommand{\vbone}{negative}
-      \renewcommand{\vbtwo}{negative}
-      \renewcommand{\vbthree}{-3}
-      \renewcommand{\vbfour}{-3}
-      \renewcommand{\vbfive}{+3}
-      \renewcommand{\vbsix}{+3}
-      \renewcommand{\vbeight}{-3}
+      \renewcommand{\va}{negative}
+      \renewcommand{\vb}{negative}
+      \renewcommand{\vc}{-3}
+      \renewcommand{\vd}{-3}
+      \renewcommand{\ve}{+3}
+      \renewcommand{\vf}{+3}
+      \renewcommand{\vh}{-3}
     }
   }
 }
-\ABSVALUE\vbthree\r
-\SQUARE\vbthree\rsq
+\ABSVALUE\vc\r
+\SQUARE\vc\rsq
 
-\question A circle with center at point $C$ touches the $\vbone$ x-axis 
-at point $A$ and the $\vbtwo$ y-axis at point $B$. Points $A$ and $B$ are 
+\LINESLOPE\vc{0}{0}\vd\vm\vn
+\LINEINTERCEPT\vc{0}\vm\vn\vx\vy
+
+\question A circle with center at point $C$ touches the \textbf{\va} x-axis 
+at point $A$ and the \textbf{\vb} y-axis at point $B$. Points $A$ and $B$ are 
 both $\r$ units from the origin.
 
 
 \watchout
 
 \ifprintanswers  
-  \MULTIPLY\vbthree{10}\xcept
-  \MULTIPLY\vbfour{10}\ycept
+  \MULTIPLY\vc{10}\xcept
+  \MULTIPLY\vd{10}\ycept
   \MULTIPLY\r{10}\RAD
   % stuff to be shown only in the answer key - like explanatory margin figures
-  \begin{marginfigure}
     \figinit{pt}
       \def\min{-60}
       \def\max{60}      
@@ -72,14 +74,14 @@ both $\r$ units from the origin.
       \figdrawline [101,102]
     \figdrawend
     \figvisu{\figBoxA}{}{%
-      \figwritese 100:$O$(2pt)      
-      \figwrites 101:$A$(2pt)
-      \figwritew 102:$B$(2pt)
+      \Large
       \figset write(mark=$\bullet$)      
-      \figwrites 103:$C\text{($\xcept$, $\ycept$)}$(2pt)
+      \figwrites 101:$A$(3)
+      \figwritew 102:$B$(3)
+      \figwrites 103:$C$(3)
     }
+    \vspace{0.7cm}
     \centerline{\box\figBoxA}
-  \end{marginfigure}
 \fi 
 
 
@@ -87,29 +89,42 @@ both $\r$ units from the origin.
 
 \part[2] Find the equation of the circle?
 \begin{solution}[\mcq]
-  The general equation of a circle with its center at $(a, b)$ 
-  and radius $r$ is,
+  Given that both $A$ and $B$ are $\r$ units from the origin \textbf{and} given that 
+  they lie on the \textbf{\va} x and \textbf{\vb} y-axis respectively, \textbf{we can infer that}
   \begin{align}
-                &(x-a)^2 + (y-b)^2 = r^2
-  \end{align}
-  Our circle touches the x and y axes therefore it's radius is
-  $\r$ units and its center is at $(\vbthree,\vbfour)$. The equation
-  for this circle would be,
+    A &= (\vc, 0) \\
+    B &= (0,\vd)
+  \end{align} 
+
+  Also, given that the circle \textbf{only touches} the axes at $A$ and $B$ means 
+  that both the axes are \textbf{tangents} to the circle. Which, in turn, means 
   \begin{align}
-    (x\vbfive)^2+(y\vbsix)^2&=\rsq 
+    CA\perp\text{ x-axis and }&CB\perp\text{ y-axis} \\
+     \implies C = (\vc,\vd)&\text{ and radius } = \r\text{ units}
   \end{align}
+
+  The \textbf{general equation} of a circle with center at $(a, b)$ 
+  and radius $R$ is,
+  \[ (x-a)^2 + (y-b)^2 = R^2 \]
+  Our circle would therefore be 
+  \[ (x\ve)^2 +(y\vf)^2 = \rsq \] 
 \end{solution}
 
 \part[1] Find the equation of the line that passes through the points
 $A$ and $B$?
 
 \begin{solution}[\mcq]
-  The line passing through the points of contact $(\vbthree,0)$
-  and $(0,\vbfour)$ is given by,
+  A line passing through $A$ and $B$ would be given by 
   \begin{align}
-    y = \vbseven x\vbeight
+    \dfrac{y-0}{x-\vc} &= \dfrac{\vd - 0}{0-\vc} \\
+    \implies y &= \WRITELINE\vm\vn\vx\vy
   \end{align}
 \end{solution}
 
 \end{parts}
 
+\ifprintanswers
+\begin{codex}
+  $(a)\,(x\ve)^2 +(y\vf)^2=\rsq\qquad (b)\, y=\WRITELINE\vm\vn\vx\vy$
+\end{codex}
+\fi
