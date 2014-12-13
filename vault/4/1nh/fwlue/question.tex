@@ -3,26 +3,26 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{1}
+  \renewcommand{\va}{1}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{2}
+    \renewcommand{\va}{2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{3}
+      \renewcommand{\va}{3}
     }{
       % variables 
-      \renewcommand{\vbone}{4}
+      \renewcommand{\va}{4}
     }
   }
 }
 
-\POWER\vbone{2}\p
+\POWER\va{2}\p
 \providecommand\e{ (1+x)^{\frac{1}{m}} - (1-x)^{\frac{1}{m}} }
 
-\question[4] Find the limit $\limit{x}{\vbone}\dfrac{\sqrt[m]{1+x} - \sqrt[m]{1-x}}{\sqrt[n]{1+x} - \sqrt[n]{1-x}}$, $m\neq n$
+\question[4] Find the limit $\limit{x}{\va}\dfrac{\sqrt[m]{1+x} - \sqrt[m]{1-x}}{\sqrt[n]{1+x} - \sqrt[n]{1-x}}$, $m\neq n$
 
 \watchout
 
@@ -47,11 +47,12 @@
 
 	Thus, L'Hospital's Rule can be applied. 
 \begin{align}
-&\Rightarrow \limit{x}{1}\dfrac{ \dfrac{d}{dx} \left[  \e \right] }{2} \\
-&\Rightarrow \limit{x}{1}\dfrac{\dfrac{d}{dx}\sqrt[m]{1+x} - \sqrt[m]{1-x}} {\dfrac{d}{dx} \sqrt[n]{1+x} - \sqrt[n]{1-x}}\\
-&\Rightarrow \limit{x}{1} \dfrac{\dfrac{1}{m} \times (1) - \dfrac{1}{m} \times (-1)}{\dfrac{1}{n}\times (1) - \dfrac{1}{n}\times(-1)}\\
-&\Rightarrow \dfrac{n}{m}
+&\implies \limit{x}{1}\dfrac{ \dfrac{d}{dx} \left[  \e \right] }{2} \\
+&\implies \limit{x}{1}\dfrac{\dfrac{d}{dx}\sqrt[m]{1+x} - \sqrt[m]{1-x}} {\dfrac{d}{dx} \sqrt[n]{1+x} - \sqrt[n]{1-x}}\\
+&\implies \limit{x}{1} \dfrac{\dfrac{1}{m} \times (1) - \dfrac{1}{m} \times (-1)}{\dfrac{1}{n}\times (1) - \dfrac{1}{n}\times(-1)}\\
+&\implies \dfrac{n}{m}
 \end{align}
 \end{solution}
 
 
+\ifprintanswers\begin{codex}\end{codex}\fi

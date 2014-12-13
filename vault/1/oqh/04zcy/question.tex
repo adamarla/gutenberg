@@ -1,61 +1,61 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{10000}
-  \renewcommand{\vbtwo}{40}
-  \renewcommand{\vbthree}{20}
-  \renewcommand{\vbfour}{10}
-  \renewcommand{\vbfive}{5}
-  \renewcommand{\vbsix}{3}
-  \renewcommand{\vbseven}{4}
-  \renewcommand{\vbeight}{2}
+  \renewcommand{\va}{10000}
+  \renewcommand{\vb}{40}
+  \renewcommand{\vc}{20}
+  \renewcommand{\vd}{10}
+  \renewcommand{\ve}{5}
+  \renewcommand{\vf}{3}
+  \renewcommand{\vg}{4}
+  \renewcommand{\vh}{2}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{12000}
-    \renewcommand{\vbtwo}{30}
-    \renewcommand{\vbthree}{20}
-    \renewcommand{\vbfour}{15}
-    \renewcommand{\vbfive}{5}
-    \renewcommand{\vbsix}{4}
-    \renewcommand{\vbseven}{4}
-    \renewcommand{\vbeight}{2}
+    \renewcommand{\va}{12000}
+    \renewcommand{\vb}{30}
+    \renewcommand{\vc}{20}
+    \renewcommand{\vd}{15}
+    \renewcommand{\ve}{5}
+    \renewcommand{\vf}{4}
+    \renewcommand{\vg}{4}
+    \renewcommand{\vh}{2}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{9000}
-      \renewcommand{\vbtwo}{20}
-      \renewcommand{\vbthree}{35}
-      \renewcommand{\vbfour}{30}
-      \renewcommand{\vbfive}{5}
-      \renewcommand{\vbsix}{4}
-      \renewcommand{\vbseven}{3}
-      \renewcommand{\vbeight}{1}
+      \renewcommand{\va}{9000}
+      \renewcommand{\vb}{20}
+      \renewcommand{\vc}{35}
+      \renewcommand{\vd}{30}
+      \renewcommand{\ve}{5}
+      \renewcommand{\vf}{4}
+      \renewcommand{\vg}{3}
+      \renewcommand{\vh}{1}
     }{
-      \renewcommand{\vbone}{8000}
-      \renewcommand{\vbtwo}{20}
-      \renewcommand{\vbthree}{30}
-      \renewcommand{\vbfour}{35}
-      \renewcommand{\vbfive}{2}
-      \renewcommand{\vbsix}{4}
-      \renewcommand{\vbseven}{5}
-      \renewcommand{\vbeight}{2}
+      \renewcommand{\va}{8000}
+      \renewcommand{\vb}{20}
+      \renewcommand{\vc}{30}
+      \renewcommand{\vd}{35}
+      \renewcommand{\ve}{2}
+      \renewcommand{\vf}{4}
+      \renewcommand{\vg}{5}
+      \renewcommand{\vh}{2}
     }
   }
 }
 
-\DIVIDE\vbone{100}\byhundred
-\MULTIPLY\vbtwo\byhundred\a
-\MULTIPLY\vbthree\byhundred\b
-\MULTIPLY\vbfour\byhundred\c
-\MULTIPLY\vbfive\byhundred\ab
-\MULTIPLY\vbsix\byhundred\bc
-\MULTIPLY\vbseven\byhundred\ca
-\MULTIPLY\vbeight\byhundred\abc
+\DIVIDE\va{100}\byhundred
+\MULTIPLY\vb\byhundred\a
+\MULTIPLY\vc\byhundred\b
+\MULTIPLY\vd\byhundred\c
+\MULTIPLY\ve\byhundred\ab
+\MULTIPLY\vf\byhundred\bc
+\MULTIPLY\vg\byhundred\ca
+\MULTIPLY\vh\byhundred\abc
 \EXPR[0]{\na}{\a-\ab-\ca+\abc}
 \EXPR[0]{\aunionbunionc}{\a+\b+\c-\ab-\bc-\ca+\abc}
-\SUBTRACT\vbone\aunionbunionc\noabc
+\SUBTRACT\va\aunionbunionc\noabc
 
-\question In a town of $\vbone$ families, \vbtwo\% families buy newspaper $A$, 
-\vbthree\% buy newspaper $B$, \vbfour\% buy newspaper $C$, \vbfive\% buy both $A$ and $B$, 
-\vbsix\% buy $B$ and $C$ and \vbseven\% buy $A$ and $C$. If \vbeight\% of the families buy all 
+\question In a town of $\va$ families, \vb\% families buy newspaper $A$, 
+\vc\% buy newspaper $B$, \vd\% buy newspaper $C$, \ve\% buy both $A$ and $B$, 
+\vf\% buy $B$ and $C$ and \vg\% buy $A$ and $C$. If \vh\% of the families buy all 
 three newspapers, then 
 
 
@@ -107,8 +107,9 @@ three newspapers, then
 
     And hence
     \begin{align}
-      n(A\cup B\cup C)' &= \vbone - \aunionbunionc = \noabc
+      n(A\cup B\cup C)' &= \va - \aunionbunionc = \noabc
     \end{align}
   \end{solution}
 \end{parts}
 
+\ifprintanswers\begin{codex}\end{codex}\fi

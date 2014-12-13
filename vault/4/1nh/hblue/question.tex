@@ -3,47 +3,48 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{1}
-  \renewcommand{\vbtwo}{2}
+  \renewcommand{\va}{1}
+  \renewcommand{\vb}{2}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{2}
-    \renewcommand{\vbtwo}{3}
+    \renewcommand{\va}{2}
+    \renewcommand{\vb}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{3}
-      \renewcommand{\vbtwo}{4}
+      \renewcommand{\va}{3}
+      \renewcommand{\vb}{4}
     }{
       % variables 
-      \renewcommand{\vbone}{1}
-      \renewcommand{\vbtwo}{3}
+      \renewcommand{\va}{1}
+      \renewcommand{\vb}{3}
     }
   }
 }
 
-\SQUARE\vbone\aa
-\SQUARE\vbtwo\bb
-\SUBTRACT\bb\aa\vbthree
+\SQUARE\va\aa
+\SQUARE\vb\bb
+\SUBTRACT\bb\aa\vc
 
-\MULTIPLY\vbone{-1}\vbfour
+\MULTIPLY\va{-1}\vd
 
-\question[4] Evaluate the following limit \[ \lim_{x\to -\vbone}\dfrac{x + \vbone}{\sqrt{x^2 + \vbthree} - \vbtwo} \] 
+\question[4] Evaluate the following limit \[ \lim_{x\to -\va}\dfrac{x + \va}{\sqrt{x^2 + \vc} - \vb} \] 
 
 \watchout
 
 
 \begin{solution}[\halfpage]
-  Plugging in $x = -\vbone$ will turn the expression into $\frac{A}{0}$ form. Not good. So, we need to 
+  Plugging in $x = -\va$ will turn the expression into $\frac{A}{0}$ form. Not good. So, we need to 
   do something to turn it into $\frac{C}{D},\, D\neq 0$ form. Lets try rationalizing 
 
   \begin{align}
-    \lim_{x\to -\vbone}\dfrac{x + \vbone}{\sqrt{x^2 + \vbthree} - \vbtwo} &= 
-    \lim_{x\to -\vbone}\dfrac{x + \vbone}{\sqrt{x^2 + \vbthree} - \vbtwo}\times\dfrac{\sqrt{x^2 + \vbthree} + \vbtwo}{\sqrt{x^2 + \vbthree} + \vbtwo}  \\
-    &= \lim_{x\to -\vbone}\dfrac{(x + \vbone)\cdot(\sqrt{x^2 + \vbthree} + \vbtwo)}
-    {\underbrace{(x^2 + \vbthree) - \bb}_{x^2-\aa = (x-\vbone)\cdot(x+\vbone)}} \\
-    &= \lim_{x\to -\vbone}\dfrac{(\sqrt{x^2 + \vbthree} + \vbtwo)}{x-\vbone} = \WRITEFRAC\vbtwo\vbfour
+    \lim_{x\to -\va}\dfrac{x + \va}{\sqrt{x^2 + \vc} - \vb} &= 
+    \lim_{x\to -\va}\dfrac{x + \va}{\sqrt{x^2 + \vc} - \vb}\times\dfrac{\sqrt{x^2 + \vc} + \vb}{\sqrt{x^2 + \vc} + \vb}  \\
+    &= \lim_{x\to -\va}\dfrac{(x + \va)\cdot(\sqrt{x^2 + \vc} + \vb)}
+    {\underbrace{(x^2 + \vc) - \bb}_{x^2-\aa = (x-\va)\cdot(x+\va)}} \\
+    &= \lim_{x\to -\va}\dfrac{(\sqrt{x^2 + \vc} + \vb)}{x-\va} = \WRITEFRAC\vb\vd
   \end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}\end{codex}\fi

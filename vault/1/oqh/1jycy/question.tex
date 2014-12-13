@@ -1,28 +1,28 @@
 
 \ifnumequal{\value{rolldice}}{0}{
-  \renewcommand{\vbone}{-2}
-  \renewcommand{\vbtwo}{-5}
+  \renewcommand{\va}{-2}
+  \renewcommand{\vb}{-5}
 }{
   \ifnumequal{\value{rolldice}}{1}{
-    \renewcommand{\vbone}{-3}
-    \renewcommand{\vbtwo}{-7}
+    \renewcommand{\va}{-3}
+    \renewcommand{\vb}{-7}
   }{
     \ifnumequal{\value{rolldice}}{2}{
-      \renewcommand{\vbone}{-4}
-      \renewcommand{\vbtwo}{-9}
+      \renewcommand{\va}{-4}
+      \renewcommand{\vb}{-9}
     }{
-      \renewcommand{\vbone}{-5}
-      \renewcommand{\vbtwo}{-6}
+      \renewcommand{\va}{-5}
+      \renewcommand{\vb}{-6}
     }
   }
 }
 
-\ADD\vbone\vbtwo\a
-\MULTIPLY\vbone\vbtwo\b
+\ADD\va\vb\a
+\MULTIPLY\va\vb\b
 \MULTIPLY\a{-1}\c
 
-\MULTIPLY\vbone{-1}\p
-\MULTIPLY\vbtwo{-1}\q
+\MULTIPLY\va{-1}\p
+\MULTIPLY\vb{-1}\q
 
 \question[3] What would the \textbf{equivalent roster form} of the following set be? The roster form is one 
 in which all elements are listed individually  - for example - $C = \lbrace a,b,c\ldots z\rbrace$
@@ -34,10 +34,11 @@ in which all elements are listed individually  - for example - $C = \lbrace a,b,
   First, lets find the $x$ that satisfy the quadratic equation
   \begin{align}
     x^2 + \c x + \b &= 0 \implies (x + \p)\cdot (x + \q) = 0 \\
-    \implies x &= \vbone \text{ or } x = \vbtwo
+    \implies x &= \va \text{ or } x = \vb
   \end{align}
 
-  Hence, $C$ \textbf{could be} $= \lbrace \vbone, \vbtwo \rbrace$. But note that $x\in\mathbb{N}$.
-  And as neither $\vbone\notin\mathbb{N}$ nor $\vbtwo\notin\mathbb{N}$, hence $C=\phi$ (empty set)
+  Hence, $C$ \textbf{could be} $= \lbrace \va, \vb \rbrace$. But note that $x\in\mathbb{N}$.
+  And as neither $\va\notin\mathbb{N}$ nor $\vb\notin\mathbb{N}$, hence $C=\phi$ (empty set)
 \end{solution}
 
+\ifprintanswers\begin{codex}\end{codex}\fi

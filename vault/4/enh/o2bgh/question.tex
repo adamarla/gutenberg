@@ -3,47 +3,47 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{4}
-  \renewcommand{\vbtwo}{\text{FAILURE}}
-  \renewcommand{\vbthree}{\text{F}}
-  \renewcommand{\vbfour}{3}
-  \renewcommand{\vbfive}{6}
-  \renewcommand{\vbsix}{480}
-  \renewcommand{\vbseven}{360}
+  \renewcommand{\va}{4}
+  \renewcommand{\vb}{\text{FAILURE}}
+  \renewcommand{\vc}{\text{F}}
+  \renewcommand{\vd}{3}
+  \renewcommand{\ve}{6}
+  \renewcommand{\vf}{480}
+  \renewcommand{\vg}{360}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{4}
-    \renewcommand{\vbtwo}{\text{CERTAIN}}
-    \renewcommand{\vbthree}{\text{T}}
-    \renewcommand{\vbfour}{3}
-    \renewcommand{\vbfive}{6}
-    \renewcommand{\vbsix}{480}
-    \renewcommand{\vbseven}{360}
+    \renewcommand{\va}{4}
+    \renewcommand{\vb}{\text{CERTAIN}}
+    \renewcommand{\vc}{\text{T}}
+    \renewcommand{\vd}{3}
+    \renewcommand{\ve}{6}
+    \renewcommand{\vf}{480}
+    \renewcommand{\vg}{360}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{3}
-      \renewcommand{\vbtwo}{\text{PICTURE}}
-      \renewcommand{\vbthree}{\text{P}}
-      \renewcommand{\vbfour}{2}
-      \renewcommand{\vbfive}{6}
-      \renewcommand{\vbsix}{90}
-      \renewcommand{\vbseven}{120}
+      \renewcommand{\va}{3}
+      \renewcommand{\vb}{\text{PICTURE}}
+      \renewcommand{\vc}{\text{P}}
+      \renewcommand{\vd}{2}
+      \renewcommand{\ve}{6}
+      \renewcommand{\vf}{90}
+      \renewcommand{\vg}{120}
     }{
       % variables 
-      \renewcommand{\vbone}{3}
-      \renewcommand{\vbtwo}{\text{PICTURE}}
-      \renewcommand{\vbthree}{\text{P}}
-      \renewcommand{\vbfour}{2}
-      \renewcommand{\vbfive}{6}
-      \renewcommand{\vbsix}{90}
-      \renewcommand{\vbseven}{120}
+      \renewcommand{\va}{3}
+      \renewcommand{\vb}{\text{PICTURE}}
+      \renewcommand{\vc}{\text{P}}
+      \renewcommand{\vd}{2}
+      \renewcommand{\ve}{6}
+      \renewcommand{\vf}{90}
+      \renewcommand{\vg}{120}
     }
   }
 }
 
-\question How many $\vbone$ letter words can be formed using "$\vbtwo$" 
+\question How many $\va$ letter words can be formed using "$\vb$" 
 
 
 \watchout
@@ -65,28 +65,29 @@
 
 
 \begin{parts}
-  \part[3] "$\vbthree$" is included in each word
+  \part[3] "$\vc$" is included in each word
 
 \begin{solution}[\mcq]
-  When one letter is fixed as $\vbthree$. We choose $\vbfour$ letters from the remaining letters of $\vbtwo$ other than "$\vbthree$".\\
-  And we arrange these letters in $\vbone !$ ways.\\
-  Total number of words when "$\vbthree$" is included in each word 
+  When one letter is fixed as $\vc$. We choose $\vd$ letters from the remaining letters of $\vb$ other than "$\vc$".\\
+  And we arrange these letters in $\va !$ ways.\\
+  Total number of words when "$\vc$" is included in each word 
   \begin{align}
-  \Rightarrow ^{7}C_{\vbone} \times {\vbone}!  = \vbsix
+  \implies ^{7}C_{\va} \times {\va}!  = \vf
   \end{align}
   \end{solution}
 
-  \part[3] "$\vbthree$" is not included in each word
+  \part[3] "$\vc$" is not included in each word
 
 \begin{solution}[\mcq]
-  We choose $\vbone$ letters from the remaining letters of $\vbtwo$ other than "$\vbthree$".\\
-  And we arrange these letters in $\vbone !$ ways.\\
-  Total number of words when "$\vbthree$" is not included in any word 
+  We choose $\va$ letters from the remaining letters of $\vb$ other than "$\vc$".\\
+  And we arrange these letters in $\va !$ ways.\\
+  Total number of words when "$\vc$" is not included in any word 
   \begin{align}
-  \Rightarrow ^{\vbfive}C_{\vbone} \times {\vbone}! = \vbseven
+  \implies ^{\ve}C_{\va} \times {\va}! = \vg
   \end{align}
   \end{solution}
 
 
 \end{parts}
 
+\ifprintanswers\begin{codex}\end{codex}\fi

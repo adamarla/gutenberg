@@ -2,50 +2,51 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{9}
-  \renewcommand{\vbtwo}{-\dfrac{2}{9\pi}}
+  \renewcommand{\va}{9}
+  \renewcommand{\vb}{-\dfrac{2}{9\pi}}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{3}
-    \renewcommand{\vbtwo}{\dfrac{2}{3\pi}}
+    \renewcommand{\va}{3}
+    \renewcommand{\vb}{\dfrac{2}{3\pi}}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{5}
-      \renewcommand{\vbtwo}{-\dfrac{2}{5\pi}}
+      \renewcommand{\va}{5}
+      \renewcommand{\vb}{-\dfrac{2}{5\pi}}
     }{
       % variables 
-      \renewcommand{\vbone}{7}
-      \renewcommand{\vbtwo}{\dfrac{2}{7\pi}}
+      \renewcommand{\va}{7}
+      \renewcommand{\vb}{\dfrac{2}{7\pi}}
     }
   }
 }
 
-\POWER\vbone{2}\p
+\POWER\va{2}\p
 
-\question[4] Evaluate the following limit $(\ln x = \log_{e}x )$ \[ \lim_{x\to\vbone}\left( \sec\frac{\pi x}{2}\cdot\ln\frac{x}\vbone\right) \] 
+\question[4] Evaluate the following limit $(\ln x = \log_{e}x )$ \[ \lim_{x\to\va}\left( \sec\frac{\pi x}{2}\cdot\ln\frac{x}\va\right) \] 
 
 \watchout
 
 \begin{solution}[\halfpage]
   The first things to note are that 
   \begin{align}
-    \lim_{x\to\vbone}\ln\frac{x}\vbone &= 0 \\
-    \lim_{x\to\vbone}\sec\frac{\pi x}{2} &= \lim_{x\to\vbone}\dfrac{1}{\cos\frac{\pi x}{2}} = \infty
+    \lim_{x\to\va}\ln\frac{x}\va &= 0 \\
+    \lim_{x\to\va}\sec\frac{\pi x}{2} &= \lim_{x\to\va}\dfrac{1}{\cos\frac{\pi x}{2}} = \infty
   \end{align}
   Which means, that if we re-write the expression as 
   \begin{align}
-    \lim_{x\to\vbone}\left( \sec\frac{\pi x}{2}\cdot\ln\frac{x}\vbone \right) &= 
-    \lim_{x\to\vbone}\left( \dfrac{\ln\frac{x}\vbone}{\cos\frac{\pi x}{2}} \right)
+    \lim_{x\to\va}\left( \sec\frac{\pi x}{2}\cdot\ln\frac{x}\va \right) &= 
+    \lim_{x\to\va}\left( \dfrac{\ln\frac{x}\va}{\cos\frac{\pi x}{2}} \right)
   \end{align}
   then we have a limit in a $\frac{0}{0}$ form - which by itself is indeterminate. Hence, we must 
   apply \textbf{L'Hospital's Rule}. Doing so gives us 
 
   \begin{align}
-    \lim_{x\to\vbone}\left( \dfrac{\ln\frac{x}\vbone}{\cos\frac{\pi x}{2}} \right) &=
-    \lim_{x\to\vbone}\left( \dfrac{\dydx[\ln\frac{x}\vbone]}{\dydx[\cos\frac{\pi x}{2}]} \right) \\
-    &= \lim_{x\to\vbone}\dfrac{\frac{1}{x}}{-\frac\pi{2}\cdot\sin\frac{\pi x}{2}} = \vbtwo
+    \lim_{x\to\va}\left( \dfrac{\ln\frac{x}\va}{\cos\frac{\pi x}{2}} \right) &=
+    \lim_{x\to\va}\left( \dfrac{\dydx[\ln\frac{x}\va]}{\dydx[\cos\frac{\pi x}{2}]} \right) \\
+    &= \lim_{x\to\va}\dfrac{\frac{1}{x}}{-\frac\pi{2}\cdot\sin\frac{\pi x}{2}} = \vb
   \end{align}
 \end{solution}
 
+\ifprintanswers\begin{codex}\end{codex}\fi

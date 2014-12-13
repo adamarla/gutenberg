@@ -1,7 +1,60 @@
 
+\ifnumequal{\value{rolldice}}{0}{
+  % variables 
+  \renewcommand{\va}{}
+  \renewcommand{\vb}{}
+  \renewcommand{\vc}{}
+  \renewcommand{\vd}{}
+  \renewcommand{\ve}{}
+  \renewcommand{\vf}{}
+  \renewcommand{\vg}{}
+  \renewcommand{\vh}{}
+  \renewcommand{\vi}{}
+  \renewcommand{\vj}{}
+}{
+  \ifnumequal{\value{rolldice}}{1}{
+    % variables 
+    \renewcommand{\va}{}
+    \renewcommand{\vb}{}
+    \renewcommand{\vc}{}
+    \renewcommand{\vd}{}
+    \renewcommand{\ve}{}
+    \renewcommand{\vf}{}
+    \renewcommand{\vg}{}
+    \renewcommand{\vh}{}
+    \renewcommand{\vi}{}
+    \renewcommand{\vj}{}
+  }{
+    \ifnumequal{\value{rolldice}}{2}{
+      % variables 
+      \renewcommand{\va}{}
+      \renewcommand{\vb}{}
+      \renewcommand{\vc}{}
+      \renewcommand{\vd}{}
+      \renewcommand{\ve}{}
+      \renewcommand{\vf}{}
+      \renewcommand{\vg}{}
+      \renewcommand{\vh}{}
+      \renewcommand{\vi}{}
+      \renewcommand{\vj}{}
+    }{
+      % variables 
+      \renewcommand{\va}{}
+      \renewcommand{\vb}{}
+      \renewcommand{\vc}{}
+      \renewcommand{\vd}{}
+      \renewcommand{\ve}{}
+      \renewcommand{\vf}{}
+      \renewcommand{\vg}{}
+      \renewcommand{\vh}{}
+      \renewcommand{\vi}{}
+      \renewcommand{\vj}{}
+    }
+  }
+}
 
 \question[3] Without using a calculator, find the value of
-$(\sin\ang{12}\times\sin\ang{48}\times\sin\ang{54})$
+\[ \sin\ang{12}\times\sin\ang{48}\times\sin\ang{54} \]
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
@@ -10,6 +63,9 @@ $(\sin\ang{12}\times\sin\ang{48}\times\sin\ang{54})$
 \fi 
 
 \begin{solution}[\halfpage]
+    \begin{align}
+      \eDiffOfCos{A}{B}
+    \end{align}
     \begin{align}
        \sin\ang{12}\cdot\sin\ang{48}\cdot\sin\ang{54} &= 
        \dfrac{4\cdot\sin\overbrace{\ang{72}}^{60+12}}
@@ -21,3 +77,4 @@ $(\sin\ang{12}\times\sin\ang{48}\times\sin\ang{54})$
        &= \dfrac{1}{8}
     \end{align}
 \end{solution}
+\ifprintanswers\begin{codex}\end{codex}\fi
