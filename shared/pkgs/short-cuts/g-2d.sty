@@ -67,26 +67,81 @@
   \FRACTIONSIMPLIFY{\tmc}{#4}{#5}{#6}
 }
 
-% Write #1/#2 x + #3/#4 as a clean polynomial
-\newcommand\coeff@x{}
-\newcommand\WRITELINE[4]{
-  \ifnumequal{#1}{#2}{
-    \renewcommand\coeff@x{1}
+%%% Rendering polynomials
+\newbool{isFirstPolyTerm}
+\newcommand{\poly@pwr}{}
+\newcommand{\startpoly}{\setbool{isFirstPolyTerm}{true}}
+
+\newcommand\WRITEPOLYTERM[3][x]{ 
+  % #1 = independent variable, #2 = coefficient, #3 = raised to power, 
+  \ABSVALUE{#2}\kf
+  \ABSVALUE{#3}\pw
+  \ifnumcomp{\pw}{=}{1}{\renewcommand{\poly@pwr}{}}{\renewcommand{\poly@pwr}{\pw}}
+%
+  \ifnumcomp{#3}{>}{0}{ % x raised to positive power 
+    \ifnumcomp\kf{=}{1}{ % +1x or -1x 
+      \ifnumcomp{#2}{<}{0}{-#1^{\poly@pwr}}{
+        \ifbool{isFirstPolyTerm}{#1^{\poly@pwr}}{+#1^{\poly@pwr}}
+      }
+    }{ % coefficient != +1 or -1 
+      \ifnumcomp{#2}{<}{0}{#2 #1^{\poly@pwr}}{
+        \ifbool{isFirstPolyTerm}{#2 #1^{\poly@pwr}}{+#2 #1^{\poly@pwr}}
+      }
+    }
   }{
-    \ifnumequal{#1}{-#2}{
-      \renewcommand\coeff@x{-1}
-   }{
-      \renewcommand\coeff@x{100}
+    \ifnumcomp{#3}{<}{0}{ % Example: x^{-2}
+      \ifnumcomp{#2}{<}{0}{-\dfrac\kf{#1^{\poly@pwr}}}{
+        \ifbool{isFirstPolyTerm}{\dfrac\kf{#1^{\poly@pwr}}}{+\dfrac\kf{#1^{\poly@pwr}}}
+      }
+    }{ % Example: x^0 => just the coefficient
+      \ifnumcomp{#2}{<}{0}{#2}{
+        \ifbool{isFirstPolyTerm}{#2}{+#2}
+      }
     }
   }
-  \ifnumequal{#1}{0}{\renewcommand\coeff@x{0}}{}
-  \ifnumequal\coeff@x{0}{
+  \setbool{isFirstPolyTerm}{false}
+}
+
+\newcommand\cf@x{}
+\newcommand\cf@y{}
+\newcommand\konst{}
+
+% write y = #1/#2 x + #3/#4 in ax + by + c = 0 form
+\newcommand\WRITELINEEQUALSZERO[4]{
+  \LCM{#2}{#4}\cf@y
+  \DIVIDE\cf@y{#2}\wl@x
+  \DIVIDE\cf@y{#4}\wl@k
+  \MULTIPLY\wl@x{#1}\cf@x
+  \MULTIPLY\wl@k{#3}\konst
+  \ifnumcomp{\cf@x}{<}{0}{
+    \MULTIPLY\cf@x{-1}\cf@x
+    \MULTIPLY\konst{-1}\konst
+  }{
+    \MULTIPLY\cf@y{-1}\cf@y
+  }
+  \startpoly\WRITEPOLYTERM\cf@x{1}\WRITEPOLYTERM[y]\cf@y{1}\WRITEPOLYTERM[]\konst{1} = 0
+}
+
+
+% Write #1/#2 x + #3/#4 as a clean polynomial
+\newcommand\WRITELINEMXPLUSC[4]{
+  \ifnumequal{#1}{#2}{
+    \renewcommand\cf@x{1}
+  }{
+    \ifnumequal{#1}{-#2}{
+      \renewcommand\cf@x{-1}
+   }{
+      \renewcommand\cf@x{100}
+    }
+  }
+  \ifnumequal{#1}{0}{\renewcommand\cf@x{0}}{}
+  \ifnumequal\cf@x{0}{
     \WRITEFRAC[false]{#3}{#4}
   }{
-    \ifnumequal\coeff@x{100}{
+    \ifnumequal\cf@x{100}{
       \WRITEFRAC[false]{#1}{#2} x
     }{
-      \ifnumequal\coeff@x{1}{x}{-x}
+      \ifnumequal\cf@x{1}{x}{-x}
     }
     \ifnumcomp{#3}{<}{0}{
       \ABSVALUE{#3}\tmo 
@@ -94,4 +149,5 @@
     }{+\WRITEFRAC[false]{#3}{#4}}
   }
 }
-
+% alias for backward compatibility
+\newcommand\WRITELINE\WRITELINEMXPLUSC
