@@ -49,12 +49,12 @@
 \RequirePackage{auto-pst-pdf} 
 \RequirePackage{siunitx}
 \RequirePackage{fig4tex}
+\RequirePackage{etoolbox}
 \RequirePackage{g-trig}
 \RequirePackage{g-seq}
 \RequirePackage{g-calculator}
 \RequirePackage{g-2d}
 \RequirePackage{g-comb}
-\RequirePackage{etoolbox}
 \RequirePackage{xcolor}
 \RequirePackage{xstring}
 \RequirePackage{calculator}
@@ -312,37 +312,3 @@
   \setbool{qrcInMargin}{false}
 }
 
-%%% Rendering polynomials
-\newbool{isFirstPolyTerm}
-\newcommand{\poly@pwr}{}
-\newcommand{\startpoly}{\setbool{isFirstPolyTerm}{true}}
-
-\newcommand\WRITEPOLYTERM[3][x]{ 
-  % #1 = independent variable, #2 = coefficient, #3 = raised to power, 
-  \ABSVALUE{#2}\kf
-  \ABSVALUE{#3}\pw
-  \ifnumcomp{\pw}{=}{1}{\renewcommand{\poly@pwr}{}}{\renewcommand{\poly@pwr}{\pw}}
-%
-  \ifnumcomp{#3}{>}{0}{ % x raised to positive power 
-    \ifnumcomp\kf{=}{1}{ % +1x or -1x 
-      \ifnumcomp{#2}{<}{0}{-#1^{\poly@pwr}}{
-        \ifbool{isFirstPolyTerm}{#1^{\poly@pwr}}{+#1^{\poly@pwr}}
-      }
-    }{ % coefficient != +1 or -1 
-      \ifnumcomp{#2}{<}{0}{#2 #1^{\poly@pwr}}{
-        \ifbool{isFirstPolyTerm}{#2 #1^{\poly@pwr}}{+#2 #1^{\poly@pwr}}
-      }
-    }
-  }{
-    \ifnumcomp{#3}{<}{0}{ % Example: x^{-2}
-      \ifnumcomp{#2}{<}{0}{-\dfrac\kf{#1^{\poly@pwr}}}{
-        \ifbool{isFirstPolyTerm}{\dfrac\kf{#1^{\poly@pwr}}}{+\dfrac\kf{#1^{\poly@pwr}}}
-      }
-    }{ % Example: x^0 => just the coefficient
-      \ifnumcomp{#2}{<}{0}{#2}{
-        \ifbool{isFirstPolyTerm}{#2}{+#2}
-      }
-    }
-  }
-  \setbool{isFirstPolyTerm}{false}
-}
