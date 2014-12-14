@@ -60,66 +60,76 @@
 \gcalcexpr[0]\rsq{(\distx * \distx) + (\disty * \disty)}
 \gcalcexpr[0]\tp{(\va * \ve) + (\vb * \vd)}
 
-\question[4] The line $l_1(\va x -\vb y =-\vc)$ touches a circle 
-with center $O$ at point $P(\vd, \ve)$. Point $O$ lies on the line
-$l_2(\vf x-\vg y =-\vh)$. What is the equation of the circle?
-
+\question[4] The line $L_1: \WRITELINEEQUALSZERO\va\vb\vc\vb$ touches a circle 
+with center $O$ at point $P = (\vd, \ve)$. Point $O$ lies on the line
+$L_2: \WRITELINEEQUALSZERO\vf\vg\vh\vg$. What is the equation of the circle?
 
 \watchout
 
 \ifprintanswers
   % stuff to be shown only in the answer key - like explanatory margin figures
-  %\begin{marginfigure}
-    \figinit{pt}
-      \figpt 100:(0,0)
-      \figpt 101:(-20,20)
-      \figpt 102:(-40,0)
-      \figpt 103:(0,40)
-      \figpt 104:(-30,-10)
-      \figpt 105:(30,10)
-    \figdrawbegin{}
-      \figdrawaltitude 5 [100,102,103]
-      \figdrawcirc 100 (28)
-      \figdrawline [102,103]
-      \figdrawline [104,105]
-    \figdrawend
-    \figvisu{\figBoxA}{}{%
-      \figwritese 100:$O\text{($a$,$b$)}$(2pt)
-      \figwritenw 101:$P\text{($\vd$, $\ve$)}$(2pt)
-      \figwritesw 102:$l_1$(3pt)
-      \figwritesw 104:$l_2$(3pt)
-    }
-    \centerline{\box\figBoxA}
-  %\end{marginfigure}
+  \figinit{pt}
+    \def\rad{50}
+    \figpt 0:$O$(0,0)
+    \figptcirc 1 :$P$: 0;\rad (135)
+    \figvectN 500 [0,1]
+    \figpttra 2 ::= 1 /1,500/
+    \figpttra 3 ::= 1 /-1,500/
+    \figptcirc 7 :: 0;\rad (60)
+    \figvectP 501 [0,7]
+    \figpttra 8 ::= 0 /1.5, 501/
+    \figpttra 9 ::= 0 /-1.5, 501/
+  \figdrawbegin{}
+    \figdrawcirc 0 (\rad)
+    \figdrawline [2,1,3]
+    \figdrawline [0,1]
+    \figdrawline [9,0,8]
+  \figdrawend
+  \figvisu{\figBoxA}{}{%
+    \Large
+    \figwritene 3:$L_1$ (4)
+    \figwritene 8:$L_2$(4)
+    \figset write(mark=$\bullet$)
+    \figwritese 0:(4)
+    \figwritenw 1:(4)
+  }
+  \vspace{0.7cm}
+  \centerline{\box\figBoxA}
 \fi 
 
 \begin{solution}[\halfpage]
-  Let the co-ordinates of the center of the circle $O$ be $(a,b)$
-  and it's radius be $r$. Since $l_1$ touches the circle at $P$ 
-  therefore $OP \perp l_1$,
+  \textbf{Insight \#1:$L_1\perp OP$} 
+
+  $OP$ is the radius of the circle. And as $L_1$ only touches the circle 
+  at $P$, $L_1$ is tangent to the circle at $P$. And the tangent and radius at a point 
+  are perpendicular to  each other.
+
+  If the center $O=(a,b)$, then 
   \begin{align}
-    \left(\dfrac{b-\ve}{a-\vd}\right)\cdot
-      \left(\dfrac{\va}{\vb}\right)&=-1 \\
-                     \vb a + \va b &= \tp
+    m_{OP}\times m_{L_1} &= -1 \\
+    \underbrace{\dfrac{b-\ve}{a-\vd}}_{m_{OP}}\times\underbrace{\WRITEFRAC\va\vb}_{m_{L_1}} &= -1 \\
+    \implies\startpoly\WRITEPOLYTERM[a]\vb{1}\WRITEPOLYTERM[b]\va{1} &= \tp
   \end{align}
-  Since $(a,b)$ lies on $l_2$,
+
+  Since $O = (a,b)$ also lies on $L_2$,
   \begin{align}
-    \vf a -\vg b = -\vh
+    \underbrace{\startpoly\WRITEPOLYTERM[a]\vf{1}\WRITEPOLYTERM[b]{-\vg}{1} + \vh}_{x=a,y=b} = 0\implies
+    \startpoly\WRITEPOLYTERM[a]\vf{1}\WRITEPOLYTERM[b]{-\vg}{1} = -\vh
   \end{align}
-  Using equations (2) and (3) we get $a=\a$ and $b=\b$. Now
-  we can use distance formula to get $r$, the distance
-  between $O$ and $P$.
+  Solving equations (3) and (4), we get 
   \begin{align}
-    r^2 &= (\vd-\a)^2+(\ve-\b)^2 \\
-        &= \rsq
+    a &= \a\text{ and } b=\b 
   \end{align}
-  Therefore, equation of the circle is,
-  \begin{align}
-    (x-\a^2)+(y-\b^2)=\rsq
-  \end{align}  
+
+  \textbf{Step \#2: Find $R^2$}
+
+  This bit is easy. 
+  \[ R^2 = (\a-\vd)^2 + (\b-\ve)^2 = \rsq \] 
+  Which means, the \textbf{equation of the circle} is 
+  \[ (x-\a)^2 + (y-\b)^2 = \rsq \]
 \end{solution}
 
 \ifprintanswers\begin{codex}
-  $(x-\a^2)+(y-\b^2)=\rsq$
+  $(x-\a)^2+(y-\b)^2=\rsq$
 \end{codex}\fi
 
