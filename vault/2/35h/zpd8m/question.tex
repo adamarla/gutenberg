@@ -3,94 +3,90 @@
 
 \ifnumequal{\value{rolldice}}{0}{
   % variables 
-  \renewcommand{\vbone}{2}
-  \renewcommand{\vbtwo}{-3}
-  \renewcommand{\vbthree}{3}
-  \renewcommand{\vbfour}{4}
-  \renewcommand{\vbfive}{-3}
-  \renewcommand{\vbsix}{1}
-  \renewcommand{\vbseven}{5}
-  \renewcommand{\vbeight}{3}
+  \renewcommand{\va}{2}
+  \renewcommand{\vb}{-3}
+  \renewcommand{\vc}{3}
+  \renewcommand{\vd}{4}
+  \renewcommand{\ve}{-3}
+  \renewcommand{\vf}{1}
+  \renewcommand{\vg}{5}
+  \renewcommand{\vh}{3}
 }{
   \ifnumequal{\value{rolldice}}{1}{
     % variables 
-    \renewcommand{\vbone}{3}
-    \renewcommand{\vbtwo}{2}
-    \renewcommand{\vbthree}{2}
-    \renewcommand{\vbfour}{7}
-    \renewcommand{\vbfive}{2}
-    \renewcommand{\vbsix}{9}
-    \renewcommand{\vbsix}{-5}
-    \renewcommand{\vbseven}{-4}
-    \renewcommand{\vbeight}{3}
+    \renewcommand{\va}{3}
+    \renewcommand{\vb}{2}
+    \renewcommand{\vc}{2}
+    \renewcommand{\vd}{7}
+    \renewcommand{\ve}{2}
+    \renewcommand{\vf}{9}
+    \renewcommand{\vf}{-5}
+    \renewcommand{\vg}{-4}
+    \renewcommand{\vh}{3}
   }{
     \ifnumequal{\value{rolldice}}{2}{
       % variables 
-      \renewcommand{\vbone}{4}
-      \renewcommand{\vbtwo}{-5}
-      \renewcommand{\vbthree}{3}
-      \renewcommand{\vbfour}{8}
-      \renewcommand{\vbfive}{-15}
-      \renewcommand{\vbsix}{1}
-      \renewcommand{\vbseven}{-3}
-      \renewcommand{\vbeight}{3}
+      \renewcommand{\va}{4}
+      \renewcommand{\vb}{-5}
+      \renewcommand{\vc}{3}
+      \renewcommand{\vd}{8}
+      \renewcommand{\ve}{-15}
+      \renewcommand{\vf}{1}
+      \renewcommand{\vg}{-3}
+      \renewcommand{\vh}{3}
     }{
       % variables 
-      \renewcommand{\vbone}{2}
-      \renewcommand{\vbtwo}{8}
-      \renewcommand{\vbthree}{5}
-      \renewcommand{\vbfour}{3}
-      \renewcommand{\vbfive}{7}
-      \renewcommand{\vbsix}{1}
-      \renewcommand{\vbseven}{4}
-      \renewcommand{\vbeight}{3}
+      \renewcommand{\va}{2}
+      \renewcommand{\vb}{8}
+      \renewcommand{\vc}{5}
+      \renewcommand{\vd}{3}
+      \renewcommand{\ve}{7}
+      \renewcommand{\vf}{1}
+      \renewcommand{\vg}{4}
+      \renewcommand{\vh}{3}
     }
   }
 }
 
-\FRACMINUS\vbfour\vbfive\vbone\vbtwo\tp\tq
-\FRACMINUS\vbsix\vbfive\vbthree\vbtwo\tr\ts
+\FRACMINUS\vd\ve\va\vb\tp\tq
+\FRACMINUS\vf\ve\vc\vb\tr\ts
 \FRACDIV\tr\ts\tp\tq\ixn\ixd % x-intersect 
-\FRACL{-\vbone}{\vbthree}\ixn\ixd\iyn\iyd
-\FRACDIV\iyn\iyd\vbtwo{1}\iyn\iyd
+\FRACL{-\va}{\vc}\ixn\ixd\iyn\iyd
+\FRACDIV\iyn\iyd\vb{1}\iyn\iyd
 \MULTIPLY\ixn\iyd\tp
 \MULTIPLY{\ixd}\iyn\tq
 \MULTIPLY\ixd\iyd\tr
-\MULTIPLY\vbseven\tp\ga
-\MULTIPLY\tr\vbseven\gb
+\MULTIPLY\vg\tp\ga
+\MULTIPLY\tr\vg\gb
 \SUBTRACT\ga\tq\aq
-\FRACDIV\vbseven{1}\aq\gb\bq\cq
+\FRACDIV\vg{1}\aq\gb\bq\cq
 
 
-\question[2] If the straight line $L_1: bx - ay = ab$ passes through the point of intersection of 
-$L_2: \gsign\vbone x \gsign\vbtwo y = \vbthree$ and $L_3: \gsign\vbfour x \gsign\vbfive y = \vbsix$ 
-\textit{and} is parallel to $L_4: y = \gsign\vbseven x - \vbeight$, then find $a$ and $b$
-
+\question[2] Find $a$ and $b$ if the straight line $L_1: bx - ay = ab$ passes through the point of intersection of 
+\[ L_2: \WRITELINEEQUALSZERO{-\va}\vb\vc\vb\text{ and } L_3: \WRITELINEEQUALSZERO{-\vd}\ve\vf\ve\] 
+and is parallel to $L_4: \WRITELINEEQUALSZERO\vg{1}{-\vh}{1}$
 
 \watchout
 
-\ifprintanswers
-\fi 
-
 \begin{solution}[\halfpage]
 	\begin{align}
-		bx - ay &= ab \Rightarrow y = \dfrac{b}{a}x -b \\
-		\text{And }\therefore L_1 \parallel L_4 &\Rightarrow \dfrac{b}{a} = \vbseven 
+		bx - ay &= ab \implies y = \dfrac{b}{a}x -b \\
+		\therefore L_1 \parallel L_4 &\implies m_{L_1} = \dfrac{b}{a} = m_{L_4} = \vg 
 	\end{align}
 	Now, $L_2$ and $L_3$ intersect when 
 	\begin{align}
-		y &= \underbrace{\WRITEFRAC{-\vbone}\vbtwo x  + \WRITEFRAC\vbthree\vbtwo}_{L_2} 
-		 = \underbrace{\WRITEFRAC{-\vbfour}\vbfive x + \WRITEFRAC\vbsix\vbfive}_{L_3} \\
-		 \Rightarrow x &= \WRITEFRAC\ixn\ixd \text{ and } y = \WRITEFRAC\iyn\iyd
+		y &= \underbrace{\WRITEFRAC{-\va}\vb x  + \WRITEFRAC\vc\vb}_{L_2} 
+		 = \underbrace{\WRITEFRAC{-\vd}\ve x + \WRITEFRAC\vf\ve}_{L_3} \\
+		 \implies x &= \WRITEFRAC\ixn\ixd \text{ and } y = \WRITEFRAC\iyn\iyd
 	\end{align}
 	And as $L_1$ passes through this point of intersection 
 	$ = M\left( \WRITEFRAC\ixn\ixd,\,\WRITEFRAC\iyn\iyd\right)$, 
 	\begin{align}
 		\left(\WRITEFRAC\ixn\ixd b\right) - \left( \WRITEFRAC\iyn\iyd a \right)&= ab \\
-		\Rightarrow (\tp b) - (\tq a) &= \gsign\tr ab \\
-		\text{And given that } \dfrac{b}{a} &= \vbseven, \text{ the above becomes } \\
-		(\ga a) - (\tq a) &= (\gb a^2) \Rightarrow a = \WRITEFRAC\aq\gb \\
-		\therefore b &= \frac{\vbseven}{a} = \WRITEFRAC\bq\cq
+		\implies (\tp b) - (\tq a) &= \gsign\tr ab \\
+		\text{And given that } \dfrac{b}{a} &= \vg, \text{ the above becomes } \\
+		(\ga a) - (\tq a) &= (\gb a^2) \implies a = \WRITEFRAC\aq\gb \\
+		\therefore b &= \frac{\vg}{a} = \WRITEFRAC\bq\cq
 	\end{align}
 \end{solution}
 
