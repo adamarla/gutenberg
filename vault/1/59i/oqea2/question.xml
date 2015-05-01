@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <question>
+        <statement>
+            <tex>
+                \text{After how many terms will the first negative term}\newline
+                \text{appear in the following arithmetic progression}\newline
+                \qquad 121, 117, 113,\ldots
+            </tex>
+        </statement>
+        <step>
+            <context>
+                \text{What is the common difference }(d)?
+            </context>
+            <tex correct="true">
+                \text{For this progression, }\newline
+                d = 117-121 = 113-117 = -4
+            </tex>
+            <tex correct="false">
+                \text{For this progression, }\newline
+                d = 121-117 = 117-113 = 4
+            </tex>
+            <reason>
+                \text{The terms are decreasing and hence }d\lt 0\newline
+                \text{And more generally, }d = a_{n+1} - a_n \newline
+                \text{where } a_{n+1} = \text{(n+1)-th term and }a_n = \text{n-th term}
+            </reason>
+        </step>
+        <step>
+            <context>
+                \text{What will the n-th term }a_n = ?
+            </context>
+            <tex correct="true">
+                \qquad a_n = a_0 + (n-1)\cdot d = 121 + (n-1)\cdot -4 \newline
+                \quad\implies a_n = 125-4n
+            </tex>
+            <tex correct="false">
+                \qquad a_n = a_0 + n\cdot d = 121 - 4n
+            </tex>
+            <reason>
+                \text{The n-th term of an arithmetic progression is }\newline
+                \quad a_n = a_0 + (n-1)\cdot d,\text{ where }a_0 = \text{first term}
+            </reason>
+        </step>
+        <step swipe="false">
+            <context>
+                \text{What do we need to find?}
+            </context>
+            <tex correct="true">
+                \text{The smallest }n\text{ for which} a_n\lt 0
+            </tex>
+            <tex correct="false">
+                \text{The smallest }n\text{ for which} a_n \gt 0
+            </tex>
+            <reason>
+                \text{As }n\text{ increases, }a_n\text{ decreases.}\newline
+                \text{And at some }n, a_n\lt 0.\text{ We need to find that }n.
+            </reason>
+        </step>
+        <step>
+            <context>
+                \text{Do you agree with the following conclusion?}
+            </context>
+            <tex correct="true">
+                a_n\lt 0\implies 125-4n\lt 0\newline
+                \implies 4n\gt 125\implies n\gt 31.25\newline
+                \text{But as }n\text{ is an integer, the smallest }n\gt 31.25\text{ is } n=32\newline
+                \text{Which means, after 31 terms, the first negative}\newline
+                \text{term will appear}
+            </tex>
+            <tex correct="false">
+                a_n\lt 0\implies 125-4n\lt 0\newline
+                \implies 4n\gt 125\implies n\gt 31.25\newline
+                \text{But as }n\text{ is an integer, }n=31.\newline
+                \text{Which means, after 30 terms, the first negative}\newline
+                \text{term will appear}
+            </tex>
+            <reason>
+                \text{Need to be careful. If }n\gt 31.25\text{ and }n\in\mathbb{Z}\newline
+                \text{then the smallest }n\text{ for which both are true is }n=32.
+            </reason>
+        </step>
+        <choices>
+            <tex correct="true">31</tex>
+            <tex>31.25</tex>
+            <tex>32</tex>
+            <tex>30</tex>
+        </choices>
+    </question>

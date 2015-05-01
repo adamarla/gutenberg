@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question>
+    <choices>
+        <tex>55\%</tex>
+        <tex>65\%</tex>
+        <tex>60\%</tex>
+        <tex correct="true">72.2\%</tex>
+    </choices>
+    <statement>
+        <tex>
+            \text{Bill and Paul have just raised a first round of}\newline
+            \text{investment from John for their startup}\newline
+            \text{- Microsoft. John has invested \$200K for a 10%}\newline
+            \text{equity stake. If everyone's equity stake is in proportion}\newline
+            \text{to the money they put in, and if Paul put in \$500K,}\newline
+            \text{then what was Bill's equity stake before}\newline
+            \text{the investment?}
+        </tex>
+    </statement>
+    <step>
+        <context>
+            \text{What is Microsoft's value } (V) \text{ after }\newline
+            \text{the investment?}
+        </context>
+        <tex correct="true">
+            \qquad V = \dfrac{\$200K}{10\%} = \$2\text{ million}
+        </tex>
+        <tex correct="false">
+            \qquad V = \dfrac{\$200K}{10\%}-\$200K = \$1.8\text{ million}
+        </tex>
+        <reason>
+            \text{Once John puts in \$200K, he will get 10% of the firm.}\newline
+            \text{Which means that John believes the value of the firm}\newline
+            \text{after investment - or post-money value - to be \$ 2m.}
+        </reason>
+    </step>
+    <step>
+        <context>
+            \text{How much money had Bill invested?}
+        </context>
+        <tex correct="true">
+            \text{If Paul put in \$500K and John invested \$200K}\newline
+            \text{to take the value of the firm to \$2 million, then}\newline
+            \text{Bill must have invested}\\
+            \qquad B = \$2\text{ mill} -\$200K -\$500K = \$1.3\text{ million.}
+        </tex>
+        <tex correct="false">
+            \text{If Paul put in \$500K, then Bill invested }\\
+            \qquad B = \$ 2\text{ million} - \$500K = \$1.5\text{ million}
+        </tex>
+        <reason>
+            \text{Do not forget the \$200K John invested.}
+        </reason>
+    </step>
+    <step>
+        <context>
+            \text{Does this look right?}
+        </context>
+        <tex correct="true">
+            \text{Bill's equity stake before the investment was }\\
+            \qquad B = \dfrac{\$1.3\text{ mill}}{\$2\text{ mill} - \$200K} = 72.2\%
+        </tex>
+        <tex correct="false">
+            \text{Bill's equity stake before the investment was }\\
+            \qquad B = \dfrac{\$1.3\text{ mill}}{\$2\text{ mill}} = 65\%
+        </tex>
+        <reason>
+            \text{Bill's equity stake before the investment should be}\\
+            \text{calculated using Microsoft's value before the investment.}\\
+            \text{And that value is = }\$2\text{ mill} - \$200K = \$1.8\text{ million}
+        </reason>
+    </step>
+
+</question>

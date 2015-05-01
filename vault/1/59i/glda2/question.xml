@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <question>
+        <statement>
+            <tex>
+            \text{A bag contains 5 red balls and some blue balls.}\newline
+            \text{If the probability of drawing a blue ball is }\newline
+            \text{double that of drawing a red ball, then how }\newline
+            \text{many blue balls are there in the bag?}
+            </tex>
+        </statement>
+        <step>
+            <context>
+                \text{If }x=\text{ number of blue balls, then }\newline
+                \text{how many balls are there in total?}
+            </context>
+            <tex correct="true">
+                \text{Total number of balls = }N = x + 5
+            </tex>
+            <tex correct="false">
+                \text{Total number of balls = }N = 5x
+            </tex>
+            <reason>
+                \text{With }x\text{ blue balls and 5 red balls, the }\newline
+                \text{total number of balls = } x + 5.
+            </reason>
+        </step>
+
+        <step swipe="false">
+            <context>
+                \text{What are the probabilities of drawing a blue }\newline
+                \text{and a red ball?}
+            </context>
+            <tex correct="true">
+                \text{If P(B) = probability of drawing a blue ball and }\newline
+                \text{P(R) = probability of drawing a red ball, then }\newline
+                \qquad P(B) = \dfrac{x}{x+5}\text{ and }
+                 P(R) = \dfrac{5}{x+5}
+            </tex>
+            <tex correct="false">
+                \text{If P(B) = probability of drawing a blue ball and }\newline
+                \text{P(R) = probability of drawing a red ball, then }\newline
+                \qquad P(B) = \dfrac{5}{x+5}\text{ and }
+                 P(R) = \dfrac{x}{x+5}
+            </tex>
+            <reason>
+                \text{With }x\text{ blue balls, }P(B) = \frac{x}{x+5}. \\
+                \text{Similarly, with 5 red balls, }P(R) = \frac{5}{x+5}
+            </reason>
+
+        </step>
+        <step swipe="false">
+            <context>
+                \text{Is the following correct?}
+            </context>
+            <tex correct="true">
+                P(B) = 2\times P(R)\newline
+                \implies\dfrac{x}{x+5} = 2\cdot\dfrac{5}{x+5}\implies x = 10.\newline
+                \text{Hence, there are 10 blue balls in the bag}
+            </tex>
+            <tex correct="false">
+                2\cdot P(B) = P(R)\newline
+                \implies 2\cdot\dfrac{x}{x+5} = \dfrac{5}{x+5}\implies x=\dfrac{5}{2}.\newline
+                \text{Hence, there are 2.5 blue balls in the bag}
+            </tex>
+            <reason>
+                \text{The question says }P(B) = 2\times P(R).
+            </reason>
+        </step>
+        <choices>
+            <tex>8</tex>
+            <tex>12</tex>
+            <tex>6</tex>
+            <tex correct="true">10</tex>
+        </choices>
+
+    </question>
