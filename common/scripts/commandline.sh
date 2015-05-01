@@ -11,6 +11,15 @@ COL_BLUE=$ESC_SEQ"34;01m"
 COL_MAGENTA=$ESC_SEQ"35;01m"
 COL_CYAN=$ESC_SEQ"36;01m"
 
+function stage { 
+  if [ ! -e question.xml ] ; then 
+    echo "No question.xml!"
+    return 0
+  fi
+  
+  cp question.xml $HOME/AndroidStudioProjects/Prepwell/app/src/main/assets/questions/stage/
+} 
+
 function change_latex_variables { 
   q=$(find . -name question.tex)
   declare -A v=( ['vbone']='va' ['vbtwo']='vb' ['vbthree']='vc' ['vbfour']='vd' ['vbfive']='ve' ['vbsix']='vf' ['vbseven']='vg' ['vbeight']='vh' ['vbnine']='vi' ['vbten']='vj' ['Rightarrow']='implies' )
