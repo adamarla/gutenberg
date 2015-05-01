@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question>
+    <statement>
+        <tex>
+            \text{Find the area contained between the curves}\newline
+            \qquad y=\dfrac{x^2}{2}\text{ and } y = \dfrac{1}{1+x^2}
+        </tex>
+    </statement>
+    <step>
+        <context>
+            \text{What do the two curves look like?}
+        </context>
+        <image correct="true">1-right.svg</image>
+        <image correct="false">1-wrong.svg</image>
+        <reason>
+           y=\dfrac{x^2}{2} = 0\text{ for }x=0\text{ and }\geq 0\text{ for all }x.
+        </reason>
+    </step>
+    <step>
+        <context>
+            \text{What would you find next?}
+        </context>
+        <tex correct="true">
+            \text{The points where the two curves intersect}
+        </tex>
+        <tex correct="false">
+            \text{The points where the two curves cut}\newline
+            \text{the y-axis}
+        </tex>
+        <reason>
+            \text{The required area lies between the two points}\newline
+            \text{where the curves intersect. Hence, find those first.}
+        </reason>
+    </step>
+    <step swipe="false">
+        <context>
+            \text{Does this look right?}
+        </context>
+        <tex correct="true">
+            \text{The two curves intersect when }\newline
+            y=\dfrac{x^2}{2}=\dfrac{1}{1+x^2}\implies x^4+x^2-2 = 0\newline
+            \text{If }z=x^2,\text{ then } z^2+z-2 = 0 \newline
+            \implies (z-1)\cdot (z+2) = 0\implies z = x^2 = 1,-2\newline
+            \text{But as }x^2\geq 0, x^2 = 1\implies x = \pm 1
+        </tex>
+        <tex correct="false">
+            \text{The two curves intersect when }\newline
+            y=\dfrac{x^2}{2}=\dfrac{1}{1+x^2}\implies x^4-x^2-2 = 0\newline
+            \text{If }z=x^2,\text{ then } z^2-z-2 = 0 \newline
+            \implies (z-2)\cdot (z+1) = 0\implies z = x^2 = -1,2\newline
+            \text{But as }x^2\geq 0, x^2 = 2\implies x = \pm\sqrt{2}
+        </tex>
+        <reason>
+            \text{Review calculations if you got it wrong}
+        </reason>
+    </step>
+    <step>
+        <context>
+            \text{And hence, the required area } A =
+        </context>
+        <tex correct="true">
+            \quad A = \int_{-1}^1\frac{1}{1+x^2}\cdot dx - \int_{-1}^1\frac{x^2}{2}\cdot dx\newline
+            \qquad = \left[ \tan^{-1} x \right]_{-1}^1 - \left[ \frac{x^3}{6}\right]_{-1}^{1}
+            = \frac\pi{2}-\frac{1}{3}
+        </tex>
+        <tex correct="false">
+            \quad A = \int_{-1}^1\frac{x^2}{2}\cdot dx - \int_{-1}^1\frac{1}{1+x^2}\cdot dx\newline
+            \qquad = \left[ \frac{x^3}{6} \right]_{-1}^1 - \left[ \tan^{-1}x \right]_{-1}^{1}
+            = \frac{1}{3}-\frac\pi{2}
+        </tex>
+        <reason>
+            \text{In the region of interest, }y=\frac{1}{1+x^2}\\
+            \text{lies above }y=\frac{x^2}{2}.
+        </reason>
+    </step>
+    <choices>
+        <tex>\dfrac{1}{3}-\dfrac\pi{2}</tex>
+        <tex>\dfrac{1}{3}</tex>
+        <tex>\dfrac\pi{2}</tex>
+        <tex correct="true">\dfrac\pi{2}-\dfrac{1}{3}</tex>
+    </choices>
+
+</question>
