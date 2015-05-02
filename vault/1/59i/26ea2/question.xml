@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <question>
+    <question xmlns="http://www.gradians.com" >
        <statement>
            <tex>
                \text{For what values of }x\text{ would } \newline
@@ -8,6 +8,9 @@
            </tex>
        </statement>
        <step>
+           <context>
+               \text{What does }\lfloor x\rfloor\text{ mean? }
+           </context>
            <tex correct="true">
                \text{If }\lfloor x\rfloor = N,\text{ then } \newline
                \qquad \bullet N\in\mathbb{Z}\text{ (set of integers) } \newline
@@ -22,11 +25,11 @@
                \text{The greatest integer function }\lfloor x\rfloor \newline
                \text{ gives the largest integer } N\leq x.
            </reason>
-           <context>
-               \text{What does }\lfloor x\rfloor\text{ mean? }
-           </context>
        </step>
        <step swipe="false">
+           <context>
+               \text{If }\lfloor x\rfloor^2-7\lfloor x\rfloor + 12=0,\text{ then }\ldots
+           </context>
            <tex correct="false">
                x^2 - 7x + 12 = 0 \implies (x-3)\cdot(x-4) = 0 \newline
                \implies x = 3,
@@ -36,14 +39,14 @@
                (\lfloor x\rfloor -3 )\cdot (\lfloor x \rfloor -4 ) = 0 \newline
                \implies\lfloor x\rfloor = 3,4
            </tex>
-           <context>
-               \text{If }\lfloor x\rfloor^2-7\lfloor x\rfloor + 12=0,\text{ then }\ldots
-           </context>
            <reason>
                \text{The quadratic is in }\lfloor x \rfloor\text{, not } x.
            </reason>
        </step>
        <step>
+           <context>
+               \text{Does this follow? }
+           </context>
             <tex>
                 \lfloor x\rfloor = 3\implies x\in [3,4) \newline
                 \text{ and }\lfloor x\rfloor = 4 \implies x\in [4,5) \newline
@@ -59,9 +62,6 @@
                \text{Hence, if }\lfloor x\rfloor = N\implies N\leq x\lt N + 1, \newline
                \text{ then } x\in [N,N+1).
            </reason>
-           <context>
-               \text{Does this follow? }
-           </context>
        </step>
        <choices>
            <tex>x\in (3,4)\cup (4,5)</tex>
