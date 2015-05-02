@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="www.gradians.com">
+  <statement>
+    <tex>
+      \text{The volume of a cube is increasing at the}\newline
+      \text{rate of }8\frac{cm^3}{s}.\text{How fast is its surface}\newline
+      \text{area increasing when the length of an}\newline
+      \text{edge is 12 cm?}
+    </tex>
+  </statement>
+
+  <step>
+    <context>
+      \text{If A = surface area and L = length of an edge}\newline
+      \text{at time = T, then what do we need to find?}
+    </context>
+    <tex>
+      \qquad \left[\dfrac{dA}{dL}\right]_{L=12}
+    </tex>
+    <tex correct="true">
+      \qquad \left[\dfrac{dA}{dT}\right]_{L=12} = \left[\dfrac{dA}{dL}\times\dfrac{dL}{dT}\right]_{L=12}
+    </tex>
+    <reason>
+      \text{The question is about the }\textbf{rate}\text{ at which the}\newline
+      \text{surface area is increasing}\implies\frac{dA}{dT}.
+    </reason>
+  </step>
+
+  <step>
+    <context>
+      \text{And what have we been given?}
+    </context>
+    <tex>
+      \qquad \dfrac{dV}{dL} = 8\frac{cm^3}{s}\newline
+      \qquad\text{where V = cube's volume}.
+    </tex>
+    <tex correct="true">
+      \qquad \dfrac{dV}{dT} = \dfrac{d}{dT}L^3 
+      = 3L^2\cdot\dfrac{dL}{dT} = 8\frac{cm^3}{s}\newline
+      \qquad\implies \left[\dfrac{dL}{dT}\right]_{L=12} = \dfrac{8\frac{cm^3}{s}}{3\cdot 12^2 cm^2}\newline
+      \qquad\text{or }\left[ \dfrac{dL}{dT} \right]_{L=12} = \dfrac{1}{54}\frac{cm}{s}.
+    </tex>
+    <reason>
+      \text{Again, we were given the rate at which the volume}\newline
+      \text{was increasing, that is, }\frac{dV}{dT}.\text{And from this, we infer}\frac{dL}{dT}.
+    </reason>
+  </step>
+
+  <step swipe="false">
+    <context>
+      \text{Does this look right?}
+    </context>
+    <tex>
+      \qquad \left[\dfrac{dA}{dT}\right]_{L=12} = \left[\dfrac{dA}{dL}\times\dfrac{dL}{dT}\right]_{L=12}\newline
+      \text{And as }A = 6\cdot L^2\newline 
+      \qquad\left[ \dfrac{dA}{dT} \right]_{L=12} = \left[ 6L^2\cdot\dfrac{dL}{dT} \right]_{L=12}\newline
+      \qquad\implies\left[ \dfrac{dA}{dT} \right]_{L=12} = 6\cdot (12 cm)^2\cdot\dfrac{1}{54}\frac{cm}{s}
+    </tex>
+    <tex correct="true">
+      \qquad \left[\dfrac{dA}{dT}\right]_{L=12} = \left[\dfrac{dA}{dL}\times\dfrac{dL}{dT}\right]_{L=12}\newline
+      \text{And as }A = 6\cdot L^2, \dfrac{dA}{dL} = 12\cdot L \newline 
+      \qquad\implies\left[ \dfrac{dA}{dT} \right]_{L=12} = \left[ 12L\cdot\dfrac{dL}{dT} \right]_{L=12}\newline
+      \qquad\implies\left[ \dfrac{dA}{dT} \right]_{L=12} = 144 cm\cdot\dfrac{1}{54}\frac{cm}{s} 
+      = \dfrac{8}{3}\frac{cm^2}{s}.
+    </tex>
+    <reason>
+      \text{The only missing piece is }\frac{dA}{dL}\text{ where } A=6L^2.
+    </reason>
+  </step>
+
+  <choices>
+    <tex>13\frac{cm^2}{s}</tex>
+    <tex correct="true">\dfrac{8}{3}\frac{cm^2}{s}</tex>
+    <tex>\dfrac{13}{3}\frac{cm^2}{s}</tex>
+    <tex>12\frac{cm^2}{s}</tex>
+  </choices>
+</question>

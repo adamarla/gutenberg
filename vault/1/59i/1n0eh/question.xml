@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <question xmlns="www.gradians.com">
+    <statement>
+      <tex>
+        \text{Find the rate of change of the area of a circle}\newline
+        \text{with respect to its radius }R\text{ when }\newline
+        \qquad (a)\, R=3\text{ cm}\qquad (b)\, R=4\text{ cm}
+      </tex>
+    </statement>
+
+    <step>
+      <context>
+        \text{If }A=\text{area, then we need to find what?}
+      </context>
+      <tex>
+        \qquad \dfrac{dA}{dT}\text{ where }T = \text{ time}
+      </tex>
+      <tex correct="true">
+        \qquad\dfrac{dA}{dR}
+      </tex>
+      <reason>
+        \text{The question asks for rate of change of area }\newline
+        \text{with respect to radius, that is }\frac{dA}{dR}.
+      </reason>
+    </step>
+
+    <step>
+      <context>
+        \text{And hence, }\frac{dA}{dR} = ?
+      </context>
+      <tex>
+        \qquad\dfrac{dA}{dR} = \dfrac{d}{dR}4\pi R^2 = 8\pi R\newline
+        \text{And hence, }\newline
+        \qquad \left[ \dfrac{dA}{dR} \right]_{R=3} = 24\pi\frac{cm^2}{cm}\newline
+        \qquad \left[ \dfrac{dA}{dR} \right]_{R=4} = 32\pi\frac{cm^2}{cm}
+      </tex>
+      <tex correct="true">
+        \qquad\dfrac{dA}{dR} = \dfrac{d}{dR}\pi R^2 = 2\pi R\newline
+        \text{And hence, }\newline
+        \qquad \left[ \dfrac{dA}{dR} \right]_{R=3} = 6\pi\frac{cm^2}{cm}\newline
+        \qquad \left[ \dfrac{dA}{dR} \right]_{R=4} = 8\pi\frac{cm^2}{cm}
+      </tex>
+      <reason>
+        \text{The area of a circle is given by }A=\pi\cdot R^2.\newline
+        \text{And hence, }\frac{dA}{dR} = \pi\cdot\frac{d}{dR}R^2 = 2\pi R.
+      </reason>
+    </step>
+
+
+    <choices>
+      <tex>(a)\,24\pi\qquad (b)\,32\pi</tex>
+      <tex>(a)\,8\pi\qquad (b)\,6\pi</tex>
+      <tex>(a)\,9\pi\qquad (b)\,16\pi</tex>
+      <tex correct="true">(a)\,6\pi\qquad (b)\,8\pi</tex>
+    </choices>
+
+  </question>

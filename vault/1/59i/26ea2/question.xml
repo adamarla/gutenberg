@@ -16,7 +16,7 @@
                \qquad \bullet N\in\mathbb{Z}\text{ (set of integers) } \newline
                \qquad \bullet N\leq x \lt N+1
            </tex>
-           <tex correct="false">
+           <tex>
                \text{If }\lfloor x\rfloor = N,\text{ then } \newline
                \qquad \bullet N\in\mathbb{Z}\text{ (set of integers)} \newline
                \qquad \bullet N-1\lt x \leq N+1
@@ -34,7 +34,7 @@
                x^2 - 7x + 12 = 0 \implies (x-3)\cdot(x-4) = 0 \newline
                \implies x = 3,
            </tex>
-           <tex>
+           <tex correct="true">
                \lfloor x\rfloor^2 -7\lfloor x\rfloor + 12 = 0 \newline \implies
                (\lfloor x\rfloor -3 )\cdot (\lfloor x \rfloor -4 ) = 0 \newline
                \implies\lfloor x\rfloor = 3,4
@@ -47,12 +47,12 @@
            <context>
                \text{Does this follow? }
            </context>
-            <tex>
+           <tex correct="true">
                 \lfloor x\rfloor = 3\implies x\in [3,4) \newline
                 \text{ and }\lfloor x\rfloor = 4 \implies x\in [4,5) \newline
                 \implies x\in [3,4)\cup [4,5)
             </tex>
-           <tex correct="false">
+           <tex>
                \lfloor x\rfloor = 3\implies x\in (3,4] \newline
                \text{ and }\lfloor x\rfloor = 4 \implies x\in (4,5] \newline
                \implies x\in (3,4]\cup (4,5]
