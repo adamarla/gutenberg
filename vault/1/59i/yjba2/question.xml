@@ -1,11 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<question>
-    <choices>
-        <tex>55\%</tex>
-        <tex>65\%</tex>
-        <tex>60\%</tex>
-        <tex correct="true">72.2\%</tex>
-    </choices>
+<question xmlns="http://www.gradians.com">
     <statement>
         <tex>
             \text{Bill and Paul have just raised a first round of}\newline
@@ -70,5 +64,11 @@
             \text{And that value is = }\$2\text{ mill} - \$200K = \$1.8\text{ million}
         </reason>
     </step>
+    <choices>
+        <tex>55\%</tex>
+        <tex>65\%</tex>
+        <tex>60\%</tex>
+        <tex correct="true">72.2\%</tex>
+    </choices>
 
 </question>

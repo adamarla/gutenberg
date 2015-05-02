@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <question>
+    <question xmlns="http://www.gradians.com">
        <statement>
            <tex>
                \text{There are three boxes: Box X has 10 bulbs}\newline
@@ -82,6 +82,12 @@
            <tex correct="true">
                P(Z\vert\bar{D}) = \dfrac{P(\bar{D}\vert Z)\cdot P(Z)}{P(\bar{D})}
            </tex>
+           <tex correct="true">
+               P(Z\vert\bar{D}) = \dfrac{P(\bar{D}\vert Z)\cdot P(Z)}{P(\bar{D})}
+           </tex>
+           <reason>
+               \text{This is the reason}
+           </reason>
        </step>
 
        <choices>
