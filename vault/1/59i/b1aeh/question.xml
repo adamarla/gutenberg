@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="www.gradians.com">
+  <statement>
+    <tex>
+      \text{An edge of a variable cube is increasing at}\newline
+      \text{the rate of 3}\frac{cm}{s}.\text{How fast is the volume of }\newline
+      \text{the cube increasing when the edge is 10 cm long?}
+    </tex>
+  </statement>
+  <step>
+    <context>
+      \text{If L = length of an edge and V = cube's volume at any}\newline
+      \text{given time T, then what do we need to find?}
+    </context>
+    <tex>
+      \qquad\left[ \dfrac{dL}{dT} \right]_{L=10}
+    </tex>
+    <tex correct="true">
+      \qquad\left[ \dfrac{dV}{dT} \right]_{L=10}
+    </tex>
+    <reason>
+      \text{We need to find }\dfrac{dV}{dT}\text{ when L = 10cm given that }\newline
+      \dfrac{dL}{dT} = 3\frac{cm}{s}.
+    </reason>
+  </step>
+  <step swipe="false">
+    <context>
+      \text{Does this look right?}
+    </context>
+    <tex>
+      \qquad\dfrac{dV}{dT} = \dfrac{dV}{dL}\times\dfrac{dL}{dT}\newline
+      \qquad\text{And given that }\dfrac{dL}{dT} = 3\frac{cm}{s}\text{ and } V = 6L^2 \newline
+      \qquad\left[ \dfrac{dV}{dT}\right]_{L=10} = \left[12\cdot L\times\dfrac{dL}{dT}\right]_{L=10}\newline
+      \qquad\implies\left[\dfrac{dV}{dT}\right]_{L=10} = 360\frac{cm^3}{s}.
+    </tex>
+    <tex correct="true">
+      \qquad\dfrac{dV}{dT} = \dfrac{dV}{dL}\times\dfrac{dL}{dT}\newline
+      \qquad\text{And given that }\dfrac{dL}{dT} = 3\frac{cm}{s}\text{ and } V = L^3 \newline
+      \qquad\left[ \dfrac{dV}{dT}\right]_{L=10} = \left[3L^2\times\dfrac{dL}{dT}\right]_{L=10}\newline
+      \qquad\implies\left[\dfrac{dV}{dT}\right]_{L=10} = 900\frac{cm^3}{s}.
+    </tex>
+    <reason>
+      \text{If V = }L^3\text{, then }\dfrac{dV}{dT} = \dfrac{dV}{dL}\cdot\dfrac{dL}{dT}\newline
+      = 3L^2\cdot\dfrac{dL}{dT}.
+    </reason>
+  </step>
+</question>

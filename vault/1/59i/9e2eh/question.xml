@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="www.gradians.com">
+  <statement>
+    <tex>
+      \text{The radius of a circle is increasing at the rate of}\newline
+      \text{8 }\frac{cm}{s}.\text{ Find the rate at which the area of the}\newline 
+      \text{circle is increasing when the radius is 10 cm.}
+    </tex>
+  </statement>
+  <step>
+    <context>
+      \text{What do we know?}
+    </context>
+    
+    <tex>
+      \qquad \dfrac{dA}{dT} = 8\frac{cm^2}{s},\text{ where A = circle's area. }
+    </tex>
+    <tex correct="true">
+      \qquad \dfrac{dR}{dT} = 8\frac{cm}{s},\text{ where R = circle's radius. }
+    </tex>
+    <reason>
+      \text{We have to find }\dfrac{dA}{dT}.\text{We have been given }\dfrac{dR}{dT}.
+    </reason>
+  </step>
+
+  <step swipe="false">
+    <context>
+      \text{Does this look right?}
+    </context>
+    <tex>
+      \qquad A = \dfrac{\pi\cdot R^2}{2}\implies\dfrac{dA}{dT} = \pi R\cdot\dfrac{dR}{dT}\newline
+      \qquad\text{But as }\dfrac{dR}{dT} = 8\frac{cm}{s}\newline
+      \qquad\therefore\left[ \dfrac{dA}{dT} \right]_{R=10} = 80\pi\frac{cm^2}{s}.
+    </tex>
+    <tex correct="true">
+      \qquad A = \pi\cdot R^2\implies\dfrac{dA}{dT} = 2\pi R\cdot\dfrac{dR}{dT}\newline
+      \qquad\text{But as }\dfrac{dR}{dT} = 8\frac{cm}{s}\newline
+      \qquad\therefore\left[ \dfrac{dA}{dT} \right]_{R=10} = 160\pi\frac{cm^2}{s}.
+    </tex>
+    <reason>
+      A=\pi\cdot R^2\implies\dfrac{dA}{dT} = \pi\cdot\dfrac{d}{dR} R^2\cdot\dfrac{dR}{dT}
+      = 2\pi R\cdot\dfrac{dR}{dT}.
+    </reason>
+  </step>
+  <choices>
+    <tex correct="true">160\pi\frac{cm^2}{s}</tex>
+    <tex>20\pi\frac{cm^2}{s}</tex>
+    <tex>80\pi\frac{cm^2}{s}</tex>
+    <tex>40\pi\frac{cm^2}{s}</tex>
+  </choices>
+</question>
