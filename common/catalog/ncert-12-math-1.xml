@@ -1,0 +1,49 @@
+<qsource  tag="ncert-12-math-1" label="NCERT XII - Mathematics - I">
+    <qbatch tag="ch1" label="1 Relations and Functions">
+        <qbundle tag="ex1" label="Exercise 1.1"/>
+        <qbundle tag="ex2" label="Exercise 1.2"/>
+        <qbundle tag="ex3" label="Exercise 1.3"/>
+        <qbundle tag="ex4" label="Exercise 1.4"/>
+        <qbundle tag="misc" label="Miscellaneous"/>
+    </qbatch>
+    <qbatch tag="ch2" label="2 Inverse Trigonometric Functions"> 
+        <qbundle tag="ex1" label="Exercise 2.1"/>
+        <qbundle tag="ex2" label="Exercise 2.2"/>
+        <qbundle tag="misc" label="Miscellaneous"/>
+    </qbatch>
+    <qbatch tag="ch3" label="3 Matrices">
+        <qbundle tag="ex1" label="Exercise 3.1"/>
+        <qbundle tag="ex2" label="Exercise 3.2"/>
+        <qbundle tag="ex3" label="Exercise 3.3"/>
+        <qbundle tag="ex4" label="Exercise 3.4"/>
+        <qbundle tag="misc" label="Miscellaneous"/>
+    </qbatch>
+    <qbatch tag="ch4" label="Determinants">
+        <qbundle tag="ex1" label="Exercise 4.1"/>
+        <qbundle tag="ex2" label="Exercise 4.2"/>
+        <qbundle tag="ex3" label="Exercise 4.3"/>
+        <qbundle tag="ex4" label="Exercise 4.4"/>
+        <qbundle tag="ex5" label="Exercise 4.5"/>
+        <qbundle tag="ex6" label="Exercise 4.6"/>
+        <qbundle tag="misc" label="Miscellaneous"/>
+    </qbatch>
+    <qbatch tag="ch5" label="5 Continuity and Differentiability">
+        <qbundle tag="ex1" label="Exercise 5.1"/>
+        <qbundle tag="ex2" label="Exercise 5.2"/>
+        <qbundle tag="ex3" label="Exercise 5.3"/>
+        <qbundle tag="ex4" label="Exercise 5.4"/>
+        <qbundle tag="ex5" label="Exercise 5.5"/>
+        <qbundle tag="ex6" label="Exercise 5.6"/>
+        <qbundle tag="ex7" label="Exercise 5.7"/>
+        <qbundle tag="ex8" label="Exercise 5.8"/>
+        <qbundle tag="misc" label="Miscellaneous"/>
+    </qbatch>
+    <qbatch tag="chapter6" label="6 Application of Derivatives">
+        <qbundle tag="ex1" label="Exercise 6.1"/>
+        <qbundle tag="ex2" label="Exercise 6.2"/>
+        <qbundle tag="ex3" label="Exercise 6.3"/>
+        <qbundle tag="ex4" label="Exercise 6.4"/>
+        <qbundle tag="ex5" label="Exercise 6.5"/>
+        <qbundle tag="misc" label="Miscellaneous"/>
+    </qbatch>
+</qsource>

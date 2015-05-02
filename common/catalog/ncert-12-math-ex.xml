@@ -1,0 +1,57 @@
+<qsource tag="ncert-12-math-ex" label="NCERT XII - Mathematics Exemplar">
+    <qbatch tag="ch1" label="1 Relations and Functions">
+        <qbundle tag="ex1" label="Exercise 1.1"/>
+        <qbundle tag="ex2" label="Exercise 1.2"/>
+    </qbatch>
+    <qbatch tag="ch2" label="2 Inverse Trigonometric Functions"> 
+        <qbundle tag="ex1" label="Exercise 2.1"/>
+    </qbatch>
+    <qbatch tag="ch3" label="3 Matrices">
+        <qbundle tag="ex1" label="Exercise 3.1"/>
+        <qbundle tag="ex2" label="Exercise 3.2"/>
+    </qbatch>
+    <qbatch tag="ch4" label="Determinants">
+        <qbundle tag="ex1" label="Exercise 4.1"/>
+        <qbundle tag="ex2" label="Exercise 4.2"/>
+        <qbundle tag="ex3" label="Exercise 4.3"/>
+        <qbundle tag="ex4" label="Exercise 4.4"/>
+    </qbatch>
+    <qbatch tag="ch5" label="5 Continuity and Differentiability">
+        <qbundle tag="ex1" label="Exercise 5.1"/>
+        <qbundle tag="ex2" label="Exercise 5.2"/>
+        <qbundle tag="ex3" label="Exercise 5.3"/>
+    </qbatch>
+    <qbatch tag="chapter6" label="6 Application of Derivatives">
+        <qbundle tag="ex1" label="Exercise 6.1"/>
+        <qbundle tag="ex2" label="Exercise 6.2"/>
+    </qbatch>
+	<qbatch tag="ch7" label="Chapter 7">
+	    <qbundle tag="ex1" label="Exercise 1.1"/>
+	</qbatch>
+	<qbatch tag="ch8" label="Chapter 8">
+	    <qbundle tag="ex1" label="Exercise 2.1"/>
+	    <qbundle tag="ex2" label="Exercise 2.2"/>
+	    <qbundle tag="misc" label="Miscellaneous"/>
+	</qbatch>
+	<qbatch tag="ch9" label="Chapter 9">
+	    <qbundle tag="ex1" label="Exercise 3.1"/>
+	    <qbundle tag="ex2" label="Exercise 3.2"/>
+	</qbatch>
+	<qbatch tag="ch10" label="Chapter 10">
+	    <qbundle tag="ex1" label="Exercise 3.1"/>
+	    <qbundle tag="ex2" label="Exercise 3.2"/>
+	</qbatch>
+	<qbatch tag="ch11" label="11. Three Dimensional Geometry">
+	    <qbundle tag="ex1" label="Exercise 4.1"/>
+	    <qbundle tag="ex2" label="Exercise 4.2"/>
+	</qbatch>
+	<qbatch tag="ch12" label="12. Linear Programming">
+	    <qbundle tag="ex1" label="Exercise 5.1"/>
+	    <qbundle tag="ex2" label="Exercise 5.2"/>
+	    <qbundle tag="ex3" label="Exercise 5.3"/>
+	</qbatch>
+	<qbatch tag="ch13" label="13. Probability">
+	    <qbundle tag="ex1" label="Exercise 6.1"/>
+	    <qbundle tag="ex2" label="Exercise 6.2"/>
+	</qbatch>
+</qsource>
