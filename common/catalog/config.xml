@@ -1,0 +1,21 @@
+<config>
+    <tagset id="concepts">Algebra,2 Variable Eqns,3 Variable Eqns,n Variable Eqns,
+	    Inequalities,Polynomial Factorization,Quadratic Eqns,Factor Theorem,Remainder Theorem,
+	    Number System,Arithmetic Progression,Geometric Progression,Harmonic Progression,
+	    Functions – Domain, Range etc,Mathematical Induction,Complex Numbers,Binomial Theorem,
+	    Matrices and Determinants, Geometry, Lines and Angles, Similar Triangles, 
+	    Congruent Triangles, Circles, Quadrilaterals, Polygons, Area 2D shapes,
+	    Surface Areas &amp; Volumes, Trigonometric Ratios, Trigonometric Eqns, Heights and Distances, 
+	    Inverse Trigonometry, Points and Lines, Circle, Conic Sections, 3D Geometry, Vectors, 
+	    Limits, Continuity &amp; Differentiability, Differentiation, Application of Derivates, 
+	    Integration, Differential Equations, Area Under the Curve, Mean, Median, Mode, 
+	    Counting Outcomes, Venn Diagrams, Measures of Dispersion, Conditional Probability, 
+	    Independent Events, Baye's Theorem, Normal Distribution, Permutations &amp; Combinations 
+    </tagset>
+    <tagset id="qsn">1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,
+        21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43,
+        44, 45, 46, 47, 48, 49, 50    
+    </tagset>
+    <tagset id="part">,a, b, c, d, e, f, g, i, ii, iii, iv, v, vi</tagset>
+    <tagset id="subpart">,i, ii, iii, iv, v, vi, a, b, c, d, e, f, g</tagset>
+</config>
