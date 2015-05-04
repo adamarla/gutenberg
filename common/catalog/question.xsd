@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.gradians.com"
+	targetNamespace="http://www.gradians.com" 
+	elementFormDefault="qualified">
+	<xsd:element name="question" type="tns:questionType"/> 
+	<xsd:complexType name="questionType">
+	    <xsd:sequence>
+	        <xsd:element name="statement" type="tns:statementType"/>
+	        <xsd:element name="step" type="tns:stepType" maxOccurs="6"/>
+	        <xsd:element name="choices" type="tns:choicesType" minOccurs="0"/>
+	    </xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="statementType">
+	    <xsd:sequence>
+	        <xsd:element name="tex" type="tns:texType" maxOccurs="unbounded"/>
+	        <xsd:element name="image" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
+	    </xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="stepType">
+	   <xsd:sequence>
+	       <xsd:element name="context" type="tns:texType"/>
+	       <xsd:element name="tex" type="tns:texType" minOccurs="0" maxOccurs="2"/>
+           <xsd:element name="image" type="tns:texType" minOccurs="0" maxOccurs="2"/>
+           <xsd:element name="reason" type="tns:texType"/>
+	   </xsd:sequence>
+	   <xsd:attribute name="swipe" type="xsd:boolean"/>
+	</xsd:complexType>
+	<xsd:complexType name="choicesType">
+	    <xsd:sequence>
+	       <xsd:element name="tex" type="tns:texType" minOccurs="4" maxOccurs="4"/>
+	    </xsd:sequence>
+	</xsd:complexType>
+	<xsd:complexType name="texType">
+	    <xsd:simpleContent>
+	        <xsd:extension base="xsd:string">
+	            <xsd:attribute name="correct" type="xsd:boolean" use="optional"/>
+	        </xsd:extension>
+	    </xsd:simpleContent>
+	</xsd:complexType>
+</xsd:schema>
