@@ -38,7 +38,7 @@
         <qbundle tag="ex8" label="Exercise 5.8"/>
         <qbundle tag="misc" label="Miscellaneous"/>
     </qbatch>
-    <qbatch tag="chapter6" label="6 Application of Derivatives">
+    <qbatch tag="ch6" label="6 Application of Derivatives">
         <qbundle tag="ex1" label="Exercise 6.1"/>
         <qbundle tag="ex2" label="Exercise 6.2"/>
         <qbundle tag="ex3" label="Exercise 6.3"/>
