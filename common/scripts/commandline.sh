@@ -11,6 +11,15 @@ COL_BLUE=$ESC_SEQ"34;01m"
 COL_MAGENTA=$ESC_SEQ"35;01m"
 COL_CYAN=$ESC_SEQ"36;01m"
 
+function noxml { 
+  a=$(ls -d *)
+  b=$(dirname $(find . -name "question.xml") | sed -e 's/\.\///g') 
+  echo $a | sed -e 's/ /\n/g' | sort > all
+  echo $b | sed -e 's/ /\n/g' | sort > have
+  comm -2 -3 all have
+  rm -f all have
+} 
+
 function stage { 
   if [ ! -e question.xml ] ; then 
     echo "No question.xml!"
