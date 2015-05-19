@@ -1,12 +1,12 @@
-<qsource tag="cbse-12-math" label="CBSE XII - Mathematics">
-	<qbatch tag="2015" label="2015 Set I">
-	    <qbundle tag="secna" label="Section A"/>
-	    <qbundle tag="secnb" label="Section B"/>
-	    <qbundle tag="secnc" label="Section C"/>
-	</qbatch>
-	<qbatch tag="2014" label="2014 Set I">
-	    <qbundle tag="secna" label="Section A"/>
-	    <qbundle tag="secnb" label="Section B"/>
-	    <qbundle tag="secnc" label="Section C"/>
-	</qbatch>
-</qsource>
+<book tag="cbse-12-math" label="Board Exams">
+	<chapter tag="2015" label="2015">
+	    <exercise tag="secna" label="Section A"/>
+	    <exercise tag="secnb" label="Section B"/>
+	    <exercise tag="secnc" label="Section C"/>
+	</chapter>
+	<chapter tag="2014" label="2014">
+	    <exercise tag="secna" label="Section A"/>
+	    <exercise tag="secnb" label="Section B"/>
+	    <exercise tag="secnc" label="Section C"/>
+	</chapter>
+</book>

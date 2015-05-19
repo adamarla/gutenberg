@@ -1,0 +1,26 @@
+<catalog>
+    <subjects>
+        <subject tag="math" label="Mathematics"/>
+        <subject tag="physics" label="Physics"/>
+        <subject tag="chem" label="Chemistry"/>
+    </subjects>
+    <grades>
+        <grade tag="12" label="12"/>
+        <grade tag="11" label="11"/>
+        <grade tag="10" label="10"/>
+        <grade tag="9" label="9"/>
+    </grades>
+    <publishers>
+        <publisher tag="ncert" label="NCERT"/>
+        <publisher tag="cbse" label="CBSE"/>
+        <publisher tag="isc" label="ISC"/>
+        <publisher tag="myco" label="MyCo"/>
+    </publishers>
+    <books>
+        <book tag="ncert-12-math-1" publisher="ncert" subject="math" grade="12" label="Mathematics - I">ncert-12-math-1.xml</book>
+        <book tag="ncert-12-math-2" publisher="ncert" subject="math" grade="12" label="Mathematics - II">ncert-12-math-2.xml</book>
+        <book tag="ncert-12-math-ex" publisher="ncert" subject="math" grade="12" label="Exemplar">ncert-12-math-ex.xml</book>
+        <book tag="cbse-12-math" publisher="cbse" subject="math" grade="12" label="Board Exams" category="exam">cbse-12-math.xml</book>
+        <book tag="myco-12-math-1" publisher="ncert" subject="math" grade="12" label="My Co XII - Mathematics">myco-12-math.xml</book>
+    </books>
+</catalog>
