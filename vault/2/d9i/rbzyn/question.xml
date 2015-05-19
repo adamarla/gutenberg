@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+    <statement>
+        <tex>
+            \text{Given that E and F are events such that}\newline
+            P(E)=0.6, P(F)=0.3 \text{ and } P(E\cap F)=0.2, \newline
+            \text{find } P(E|F) \text{ and } P(F|E).
+        </tex>
+    </statement>
+    <step>
+        <context>
+            \text{What does } P(E\cap F) \text{ mean }?
+        </context>
+        <tex correct="true">
+            P(E\cap F) = \text{Probability that E and F }\newline
+            \text{ both happen }
+        </tex>
+        <tex correct="false">
+            P(E\cap F) = \text{Probability that either E or F }\newline
+            \text{ happen }
+        </tex>
+        <reason>
+            P(E\cap F) \text{ is the intersection of the two sets }\newline
+            P(E) and P(F). \text{Therefore it is the probability that} \newline
+            \text{ both events E and F take place }
+        </reason>
+    </step>
+    <step>
+        <context>
+            \text{What is } P(E|F) ?
+        </context>
+        <tex correct="true">
+            P(E|F) = \text{Probability that E happens given that F }\newline
+            \text{ already happened }
+        </tex>
+        <tex correct="false">
+            P(E|F) = \text{Probability that E happens given that F }\newline
+            \text{ did not happen }
+        </tex>
+        <reason>
+            P(E|F) \text{indicates the probability that E will happen }\newline
+            \text{ given that F already took place }
+        </reason>
+    </step>
+    <step swipe="false">
+        <context>
+            \text{How are } P(E|F) \text{ and } F(E\cap F) \text{ related ?}
+        </context>
+        <tex correct="true">
+            P(E|F) = \dfrac{P(E\cap F)}{P(F)} \newline
+            \qquad = \dfrac{0.2}{0.3}
+        </tex>
+        <tex correct="false">
+            P(E|F) = P(F\cap F)\cdot P(F) \newline
+            \qquad = 0.2\cdot 0.3
+        </tex>
+        <reason>
+            \text{Intuitively, if occurence of F is a certainity }\newline
+            \text{ than it makes sense that the probability that both}\newline
+            \text{ must occur is the ratio} P(E\cap E) \text{:} P(E)
+        </reason>
+    </step>
+    <choices>
+        <tex correct="true">\dfrac{2}{3}</tex>
+        <tex>\dfrac{1}{2}</tex>
+        <tex>\dfrac{1}{5}</tex>
+        <tex>\dfrac{1}{3}</tex>
+    </choices>
+</question>
+
