@@ -1,28 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <question xmlns="http://www.gradians.com">
     <statement>
-        <tex correct="true">
-            \text{Write problem statement}
+        <tex>
+            \text{Problem statement}
         </tex>
         <!--image>image1.svg</image-->
     </statement>
-    <step swipe="false">
-        <context>\text{This is the context}</context>
-        <tex>\text{this is correct}</tex>
-        <tex correct='false'>\text{this is incorrect}</tex>
-        <reason>\text{This is why}</reason>
+    <step >
+        <context>\text{Context for step}</context>
+        <tex>\text{Correct step}</tex>
+        <tex correct='false'>\text{Incorrect step}</tex>
+        <reason>\text{Reason for step}</reason>
     </step>
     <step swipe="false">
-        <context>\text{This is the context}</context>
-        <tex>\text{this is correct}</tex>
-        <tex correct='false'>\text{this is incorrect}</tex>
-        <reason>\text{This is why}</reason>
+        <context>\text{Context}</context>
+        <tex>\text{Correct}</tex>
+        <tex correct='false'>\text{Incorrect}</tex>
+        <reason>\text{Reason}</reason>
     </step>
     <choices>
-        <tex>\text{The answer is A}</tex>
-        <tex correct='true'>\text{The answer is B}</tex>
-        <tex>\text{The answer is C}</tex>
-        <tex>\text{The answer is D}</tex>
+        <tex>\text{A}</tex>
+        <tex correct='true'>\text{B}</tex>
+        <tex>\text{C}</tex>
+        <tex>\text{D}</tex>
     </choices>
 </question>
 
