@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex></tex>
+  </statement>
+  <step>
+    <context>\text{a}</context>
+    <tex correct='true'></tex>
+    <tex></tex>
+    <reason>\text{d}</reason>
+  </step>
+  <step>
+    <context>\text{b}</context>
+    <tex correct='true'></tex>
+    <tex></tex>
+    <reason>\text{c}</reason>
+  </step>
+  <choices>
+    <tex></tex>
+    <tex correct='true'></tex>
+    <tex></tex>
+    <tex></tex>
+  </choices>
+</question>
