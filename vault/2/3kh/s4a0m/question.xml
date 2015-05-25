@@ -1,29 +1,44 @@
-<?xml version="1.0" encoding="utf-8"?>
-<question xmlns="http://www.gradians.com">
-    <statement>
-        <tex correct="true">
-            \text{What is this?}\newline
-            \sin ^2\theta + \cos^2 \theta
-        </tex>
-        <!--image>image1.svg</image-->
-    </statement>
-    <step swipe="false">
-        <context>\text{Is this correct}\\ \sin ^2\theta?</context>
-        <tex>\text{this is correct}</tex>
-        <tex correct='false'>\text{this is incorrect}</tex>
-        <reason>\text{Why this is happening}</reason>
-    </step>
-    <step swipe="true">
-        <context>\text{Whats happening here 2}\\ \sin ^2\theta</context>
-        <tex>\text{this is correct 2}</tex>
-        <tex correct='false'>\text{this is incorrect 2}</tex>
-        <reason>\text{Why this is happening 2}</reason>
-    </step>
-    <choices>
-        <tex>\text{Actually he does A}</tex>
-        <tex correct='true'>\text{Actually he does B}</tex>
-        <tex>\text{Actually he does C}</tex>
-        <tex>\text{Actually he does D}</tex>
-    </choices>
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Maximize} Z=3x+4y \\
+\text{subject to the constraints} \\
+x+y \le 4,\, x \ge 0, \text{ and } y \ge 0</tex>
+  </statement>
+  <step>
+    <context>\text{Does this plot correctly represent the } \\
+\text{feasible region given the constraints?}</context>
+    <image correct='true'>1a.svg</image>
+    <image>1b.svg</image>
+    <reason>\text{Given the constraints}\\
+x+y \le 4\, x \ge 0, \text{ and } y \ge 0 \\
+\text{the area would be restricted to}\\
+X\text{ and } Y\text{ axes, and } x+y=4 \\
+\text{a line with negative slope}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{What is the value of the Maximum} \\
+\text{ for the corner points as seen in the graph?}</context>
+    <tex correct='true'>\begin{align}
+\text{Corner Points}\qquad &amp;Z=3x+4y \\
+(0, 4) \qquad &amp;16\, \text{(Maximum)} \\
+(0, 0) \qquad &amp;0 \\
+(4, 0) \qquad &amp;12
+\end{align}</tex>
+    <tex>\begin{align}
+\text{Corner Points}\qquad &amp;Z=3x+4y  \\
+(4, 2) \qquad  &amp;20 \\
+(0, 0) \qquad  &amp;0 \\
+(2, 4) \qquad  &amp;22\, \text{(Maximum)}
+\end{align}</tex>
+    <reason>\text{Maximum is calculated by substituting}\\
+\text{the correct corner points into the }\\
+\text{objective function } Z=3x+4y</reason>
+  </step>
+  <choices>
+    <tex>\text{Maximum } 12\text{ is at }(0, 4)</tex>
+    <tex correct='true'>\text{Maximum } 20\text{ is at }(4, 2)</tex>
+    <tex>\text{Maximum } 16\text{ is at }(0, 4)</tex>
+    <tex>\text{Maximum } 22\text{ is at }(2, 4)</tex>
+  </choices>
 </question>
-
