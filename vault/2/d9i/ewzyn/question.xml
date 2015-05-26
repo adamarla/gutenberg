@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{This is my dumm question}\\
+\sin\theta=\dfrac{\text{Opp}}{\text{Hypotenuse}}</tex>
+  </statement>
+  <step>
+    <context>\text{what is the first step?}</context>
+    <tex correct='true'>\text{is it this?}</tex>
+    <tex>\text{is it not this ?}</tex>
+    <reason>\text{it is not that, it is this right?}</reason>
+  </step>
+  <step>
+    <context>\text{which quadrant}</context>
+    <tex correct='true'>\text{2nd quadrant because positive}</tex>
+    <tex>\text{3rd quadrant because negative}</tex>
+    <reason>\text{cannot be 1st or 3rd}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{\pi}{2}</tex>
+    <tex correct='true'>\dfrac{\pi}{4}</tex>
+    <tex>\dfrac{3\pi}{2}</tex>
+    <tex>\dfrac{2\pi}{3}</tex>
+  </choices>
+</question>
