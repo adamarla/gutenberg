@@ -17,7 +17,7 @@ x+2y \le 10,\, 3x + y \le 15,\, x, y \ge 0</tex>
 \text{ for }x \in [0, 4] \text{ and } 3x+y\le 15
 \text{ for } x\in [4, 5]</reason>
   </step>
-  <step>
+  <step swipe='false'>
     <context>\text{What is the value of the Maximum} \\
 \text{for the corner points as seen in the graph?}</context>
     <tex correct='true'>\begin{align}
@@ -25,14 +25,14 @@ x+2y \le 10,\, 3x + y \le 15,\, x, y \ge 0</tex>
 (0, 5) \qquad &amp;10 \\
 (0, 0) \qquad &amp;0 \\
 (5, 0) \qquad &amp;15 \\
-(4, 5) \qquad &amp;22 \text{ (Maximum)}
+(4, 3) \qquad &amp;22 \text{ (Maximum)}
 \end{align}</tex>
     <tex>\begin{align}
 \text{Corner Points}\qquad &amp;Z=3x+2y \\
 (0, 15) \qquad &amp;30 \text{ (Maximum)} \\
 (0, 0) \qquad &amp;0 \\
 (5, 0) \qquad &amp;15 \\
-(4, 5) \qquad &amp;22
+(4, 3) \qquad &amp;18 \\
 \end{align}</tex>
     <reason>\text{Maximum is calculated by substituting}\\
 \text{the correct corner points into the }\\
@@ -41,7 +41,7 @@ x+2y \le 10,\, 3x + y \le 15,\, x, y \ge 0</tex>
   <choices>
     <tex>\text{Maximum } 30\text{ is at }(0, 15)</tex>
     <tex>\text{Maximum } 15\text{ is at }(5, 0)</tex>
-    <tex correct='true'>\text{Maximum } 22\text{ is at }(4, 5)</tex>
+    <tex correct='true'>\text{Maximum } 18\text{ is at }(4, 3)</tex>
     <tex>\text{ Maximum} 17\text{ is at }(5, 1) </tex>
   </choices>
 </question>
