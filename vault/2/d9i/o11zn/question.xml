@@ -42,8 +42,8 @@
   <choices>
     <tex>\text{Maximum } 15\text{ is at }(0, 5)</tex>
     <tex>\text{Maximum } 9\text{ is at }(0, 3)</tex>
-    <tex correct='true'>\text{Maximum } 10\text{ is at }(2, 0)</tex>
-    <tex>\text{ Maximum}\dfrac{235}{19}
+    <tex>\text{Maximum } 10\text{ is at }(2, 0)</tex>
+    <tex correct='true'>\text{ Maximum}\dfrac{235}{19}
 \text{ is at }(\dfrac{20}{19},\dfrac{45}{19}) </tex>
   </choices>
 </question>
