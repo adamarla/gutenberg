@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Solve the Linear Programming problem graphically}\\
+    <tex>\text{Solve this Linear Programming problem graphically}\\
 \text{Maximize} Z=3x+4y \\
 \text{subject to the constraints} \\
 x+y \le 4,\, x \ge 0, \text{ and } y \ge 0</tex>
