@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Solve this Linear Programming problem graphically}\\
+\text{Maximize} Z=5x+3y \\
+\text{subject to the constraints} \\
+3x+5y \le 15,\, 5x + 2y \le 10,\, x \ge 0, \text{ and } y \ge 0</tex>
+  </statement>
+  <step>
+    <context>\text{Does this plot correctly represent the } \\
+\text{feasible region given the constraints?}</context>
+    <image correct='true'>1a.svg</image>
+    <image>1b.svg</image>
+    <reason>\text{Given the constraints}\\
+\text{the area would be restricted to}\\
+\text{the X and Y axes, } 3x+5y\le 15 \\
+\text{and } 5x+2y\le 10
+\text{ both lines with negative (downward) slope}</reason>
+  </step>
+  <step>
+    <context>\text{What is the value of the Maximum} \\
+\text{for the corner points as seen in the graph?}</context>
+    <tex correct='true'>\begin{align}
+\text{Corner Points}\qquad &amp;Z=5x+3y \\
+(0, 3) \qquad &amp;9 \\
+(0, 0) \qquad &amp;0 \\
+(2, 0) \qquad &amp;10 \\
+(\dfrac{20}{19},\dfrac{45}{19}) 
+  \qquad &amp;\dfrac{235}{19}\text{ (Maximum)}
+\end{align}</tex>
+    <tex>\begin{align}
+\text{Corner Points}\qquad &amp;Z=5x+3y \\
+(0, 5) \qquad &amp;15 \\
+(0, 0) \qquad &amp;0 \\
+(2, 0) \qquad &amp;10 \\
+(2, 3) \qquad &amp;16 \text{ (Maximum)}
+\end{align}</tex>
+    <reason>\text{Maximum is calculated by substituting}\\
+\text{the correct corner points into the }\\
+\text{objective function } Z=3x+4y</reason>
+  </step>
+  <choices>
+    <tex>\text{Maximum } 15\text{ is at }(0, 5)</tex>
+    <tex>\text{Maximum } 9\text{ is at }(0, 3)</tex>
+    <tex correct='true'>\text{Maximum } 10\text{ is at }(2, 0)</tex>
+    <tex>\text{ Maximum}\dfrac{235}{19}
+\text{ is at }(\dfrac{20}{19},\dfrac{45}{19}) </tex>
+  </choices>
+</question>
