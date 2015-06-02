@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Solve this Linear Programming problem graphically}\\
+\text{Minimise } Z=x+2y \\
+\text{subject to the constraints} \\
+2x+y \ge 3,\, x+2y \ge 6,\, x ,\, y \ge 0</tex>
+  </statement>
+  <step>
+    <context>\text{Does this plot correctly represent the } \\
+\text{feasible region given the constraints?}</context>
+    <image correct='true'>1a.svg</image>
+    <image>1b.svg</image>
+    <reason>\text{Given the constraints the area would be }\\
+\text{restricted by the X and Y axes, }\\
+\text{and the area above } 2x+y=3 \text{ and }x+2y=6 \\
+\text{Note inequalities are } \ge\text{ not }\le</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{What is the value of the Minimum} \\
+\text{for the corner points as seen in the graph?}</context>
+    <tex correct='true'>\begin{align}
+\text{Corner Points}\qquad &amp;Z=x+2y \\
+(0, 3) \qquad &amp;6 \\
+(6, 0) \qquad &amp;6
+\end{align}</tex>
+    <tex>\begin{align}
+\text{Corner Points}\qquad &amp;Z=x+2y \\
+(0, 3) \qquad &amp;6 \\
+(1.5, 0) \qquad &amp;1.5 \text{ (Minimun)}\\
+(6, 0) \qquad &amp;6
+\end{align}</tex>
+    <reason>\text{Minimum is calculated by substituting}\\
+\text{the correct corner points into the }\\
+\text{objective function } Z=x+2y \\
+\text{Here minimum is at all points joining (0, 3) and (6, 0)}</reason>
+  </step>
+  <choices>
+    <tex>\text{Minimum } 1.5\text{ is at }(1.5, 0)</tex>
+    <tex correct='true'>\text{Minimum } 6\text{ is at all points from (0, 3) to (6, 0)}</tex>
+    <tex>\text{Minimum } 6\text{ is at }(0, 3)</tex>
+    <tex>\text{Minimum } 6\text{ is at }(6, 0) </tex>
+  </choices>
+</question>
