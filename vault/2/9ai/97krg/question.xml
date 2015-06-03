@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Solve this Linear Programming problem graphically}\\
+\text{Maximise } Z=-x+2y \\
+\text{subject to the constraints} \\
+x \ge 3,\, x+y \ge 5,\, x+2y\ge 6\, y \ge 0</tex>
+  </statement>
+  <step>
+    <context>\text{Does this plot correctly represent the } \\
+\text{feasible region given the constraints?}</context>
+    <image correct='true'>1a.svg</image>
+    <image>1b.svg</image>
+    <reason>\text{Given the constraints the area would be }\\
+\text{above } x+y=5 \text{ and }x+2y=6 \\
+\text{and to the right of x=3 and above the x axis}
+</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{What is the value of the Maximum} \\
+\text{for the corner points as seen in the graph?}</context>
+    <tex correct='true'>\begin{align}
+\text{Corner Points}\qquad &amp;Z=-x+2y \\
+(3, 2) \qquad &amp;1 \\
+(4, 1) \qquad &amp;-2 \\
+(6, 0) \qquad &amp;-6
+\end{align}\\
+\text{Since the feasible region is unbounded, } \\
+\text{none of the above values qualify for the maximum
+</tex>
+    <tex>\begin{align}
+\text{Corner Points}\qquad &amp;Z=-x+2y \\
+(3, 2) \qquad &amp;1 \\
+(4, 1) \qquad &amp;-2 \\
+(6, 0) \qquad &amp;-6 \text{ (Minimum)}
+\end{align}</tex>
+    <reason>\text{Maximum can be predicted by substituting  the}\\
+\text{correct corner points into the objective function } \\
+\text{Z=-x+2y, provided the feasible region is bounded.} \\
+\text{Here the feasible region is unbounded (open),} \\
+\text{therefore we cannot predict the maximum based on} \\
+\text{the above information}</reason>
+  </step>
+  <step>
+    <context>\text{What do we need to plot next to determine} \\
+\text{whether a maximum is possible?}</context>
+    <image correct='true'>3a.svg</image>
+    <image>3b.svg</image>
+    <reason>\text{We need to plot }-x+2y\ge 1\text{ because we}\\
+\text{are looking to maximise the objective function}\\
+\text{However since }-x+2y\ge 1\text{ does overlap}\\
+\text{with the feasible region, therefore there is no}\\
+\text{maximum value subject to the given constraints}</reason>
+  </step>
+  <choices>
+    <tex>\text{Minimum 100 is at } (0, 50) \\
+\text{Maximum 400 is at  }(0, 200)</tex>
+    <tex>\text{Minimum 100 is at } (20, 40)\\
+\text{Maximum 400 is at  }(0, 200)</tex>
+    <tex>\text{Minimum 100 is at all points from (0, 50) to (20, 40)}\\
+\text{Maximum 200 is at  }(0, 200)</tex>
+    <tex correct='true'>\text{Minimum 100 is at all points from (0, 50) to (20, 40)}\\
+\text{Maximum 400 is at  }(0, 200)</tex>
+  </choices>
+</question>
