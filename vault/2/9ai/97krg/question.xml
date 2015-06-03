@@ -53,13 +53,10 @@ x \ge 3,\, x+y \ge 5,\, x+2y\ge 6\, y \ge 0</tex>
 \text{maximum value subject to the given constraints}</reason>
   </step>
   <choices>
-    <tex>\text{Minimum 100 is at } (0, 50) \\
-\text{Maximum 400 is at  }(0, 200)</tex>
-    <tex>\text{Minimum 100 is at } (20, 40)\\
-\text{Maximum 400 is at  }(0, 200)</tex>
-    <tex>\text{Minimum 100 is at all points from (0, 50) to (20, 40)}\\
-\text{Maximum 200 is at  }(0, 200)</tex>
-    <tex correct='true'>\text{Minimum 100 is at all points from (0, 50) to (20, 40)}\\
-\text{Maximum 400 is at  }(0, 200)</tex>
+    <tex>\text{Maximum 1 is at  }(3, 2)</tex>
+    <tex correct='true'>\text{There is a maximum, but it cannot be }\\
+\text{determined with the given information}</tex>
+    <tex>\text{There is no maximum}</tex>
+    <tex>\text{Maximum 1 is at  }(5, 3)</tex>
   </choices>
 </question>
