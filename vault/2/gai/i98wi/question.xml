@@ -20,7 +20,7 @@
 \text{what we require is simply the total number of cakes of}\\
 \text{each kind}.</reason>
   </step>
-  <step>
+  <step swipe='false'>
     <context>\text{Given the conditions, what would the constraints}\\
 \text{on x and y, the number of each type of cake, be?}</context>
     <tex correct='true'>\text{Total flour requirement,}\\
