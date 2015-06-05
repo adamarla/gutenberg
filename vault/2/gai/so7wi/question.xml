@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{A factory manufactures two types of screws, A and B. Each}\\
+\text{type of screw requires the use of two machines, an automatic}\\
+\text{and a hand operated. It takes 4 minutes on the automatic and}\\
+\text{6 minutes on the hand operated machine to manufacture a}\\
+\text{package of screws A, while it takes 6 minutes on the automatic}\\
+\text{3 minutes on the hand operated machine to manufacture a}\\
+\text{package of screws B, Each machine is available for at the most}\\
+\text{4 hours on any day. The manufacturer can sell a package of}\\
+\text{screws A at a profit of Rs. 7 and screws B at a profit of Rs. 10.}\\
+\text{Assuming that he can sell the screws he manufactures, how}\\
+\text{many packages of each type should the factory owner produce}\\
+\text{in a day in order to maximise his profit? Determine the maximum}\\
+\text{profit.}</tex>
+  </statement>
+  <step swipe='false'>
+    <context>\text{Given the conditions, if there are x packages of}\\
+\text{screw A and y packages of screw B are being}\\
+\text{produced each day, what do we need to maximise?}
+</context>
+    <tex correct='true'>\text{We need to maximise Total Profit} = T(x, y),\\
+\begin{align}
+\qquad T(x, y) &amp;= x(pkgs/day)\cdot 7.00(Rs/pkg) +
+    y(pkgs/day)\cdot 10.00(Rs/pkg) \\
+\implies T(x, y) &amp;= 7x + 10y
+\end{align}
+</tex>
+    <tex>\text{We need to maximise Total Profit} = T(x, y),\\
+\begin{align}
+\qquad T(x, y) &amp;= x(pkgs/day)\cdot 7.00/4(Rs/pkg) +
+    y(pkgs/day)\cdot 10.00/4(Rs/pkg) \\
+\implies T(x, y) &amp;= 7/4x + 10/4y
+\end{align}
+</tex>
+    <reason>\text{Since we need to maximise the total profit from sales,}\\
+\text{what we require is simply the product of number of}\\
+\text{packages of each kind, with the per unit profit from}\\
+\text{each package}.
+</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Given the conditions, what would the constraints}\\
+\text{on x and y, the number of each type of package, be?}</context>
+    <tex correct='true'>\text{Manual Machine time constraint,}\\
+\begin{align}
+\qquad &amp;x(pkgs)\cdot 6(mins/pkg)+
+    y(pkgs)\cdot 3(mins/pkg) \le 240 \\
+\implies &amp;6x+3y \le 240 \\
+\implies &amp;2x+y \le 80
+\end{align}\\
+\text{Automatic Machine time constraint,}\\
+\begin{align}
+\qquad &amp;x(pkgs)\cdot 4(mins/pkg)+
+    y(pkgs)\cdot 6(mins/pkg) \le 240(mins) \\
+\implies &amp;4x+6y\le 240\\
+\implies &amp;2x+3y\le 120
+\end{align}\\
+\text{Number of packages cannot be negative}\\
+\qquad x\ge 0\, y\ge 0
+</tex>
+    <tex>\text{Manual Machine time constraint,}\\
+\begin{align}
+\qquad &amp;x(pkgs)\cdot 6(mins/pkg)+
+    y(pkgs)\cdot 3(mins/pkg) \ge 240 \\
+\implies &amp;6x+3y \ge 240 \\
+\implies &amp;2x+y \ge 80
+\end{align}\\
+\text{Automatic Machine time constraint,}\\
+\begin{align}
+\qquad &amp;x(pkgs)\cdot 4(mins/pkg)+
+    y(pkgs)\cdot 6(mins/pkg) \ge 240(mins) \\
+\implies &amp;4x+6y\ge 240\\
+\implies &amp;2x+3y\ge 120
+\end{align}\\
+\text{Number of packages cannot be negative}\\
+\qquad x\ge 0\, y\ge 0
+</tex>
+    <reason>\text{To calculate the time for which the machines are being}\\
+\text{run, multiply the number of packages of each kind}\\
+\text{being produced with the time for which each machine}\\
+\text{is being occupied. As per the condition, the total time}\\
+\text{should be LESS than the maximum 4(hour/day) specified.}</reason>
+  </step>
+  <step>
+    <context>\text{For the above constraints, what does the plot }\\
+\text{representing the feasible region and its corner }\\
+\text{points look like?}</context>
+    <image correct='true'>3a.svg</image>
+    <image>3b.svg</image>
+    <reason>\text{As per the constraints, the feasible region,}\\
+\text{is bounded by the x and y axes and the area}\\
+\text{below lines }2x+3y=120 \text{ and } 2x+y=80
+</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Can we predict the number of each type of package}\\
+\text{that needs to be producted in order to maximise profit}\\
+\text{based on the corner points in the diagram above?}
+</context>
+    <tex correct='true'>\begin{align}
+\text{Corner Point} \qquad &amp; T= 7x+10y \\
+(0, 40) \qquad &amp;400 \\
+(0, 0)   \qquad &amp;0 \\
+(40, 0) \qquad &amp;280 \\
+(30, 20) \qquad &amp;410 \text{ (Maximum)} \\
+\end{align}</tex>
+    <tex>\begin{align}
+\text{Corner Point} \qquad &amp; T= 7x+10y \\
+(0, 40) \qquad &amp;400 \text{ (Maximum)} \\
+(0, 0)   \qquad &amp;0 \\
+(40, 0) \qquad &amp;280 \\
+(30, 20) \qquad &amp;410 \\
+\end{align}
+</tex>
+    <reason>\text{Since the feasible region is bounded, so we can}\\
+\text{establish the maximum by substituting corner} \\
+\text{points in the objective function and seeing which}\\
+\text{point results in the highest value of the function}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\text{30 packages of screw A and 20 packages of screw B}\\
+\text{for a total profit of Rs. 410 per day}
+</tex>
+    <tex>\text{20 packages of screw A and 20 packages of screw B}\\
+\text{for a total profit of Rs. 340 per day}
+</tex>
+    <tex>\text{30 packages of screw A and 20 packages of screw B}\\
+\text{for a total profit of Rs. 400 per day}
+</tex>
+    <tex>\text{30 packages of screw A and 30 packages of screw B}\\
+\text{for a total profit of Rs. 580 per day}
+</tex>
+  </choices>
+</question>
