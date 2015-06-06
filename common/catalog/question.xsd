@@ -7,7 +7,7 @@
 	<xsd:complexType name="questionType">
 	    <xsd:sequence>
 	        <xsd:element name="statement" type="tns:statementType"/>
-	        <xsd:element name="step" type="tns:stepType" maxOccurs="6"/>
+	        <xsd:element name="step" type="tns:stepType" minOccurs="2" maxOccurs="6"/>
 	        <xsd:element name="choices" type="tns:choicesType" minOccurs="0"/>
 	    </xsd:sequence>
 	</xsd:complexType>

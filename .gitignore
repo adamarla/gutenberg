@@ -4,6 +4,17 @@
 #	2. Any .gnuplot files ( but not generated .table files )
 #	3. Makefiles ( obviously )
 
+# Generated SVG files
+vault/*/*/*/STMT_*.svg
+vault/*/*/*/CH_*.svg
+vault/*/*/*/CTX_*.svg
+vault/*/*/*/CRT_*.svg
+vault/*/*/*/WRNG_*.svg
+vault/*/*/*/RSN_*.svg
+
+# bundle request marker
+vault/*/*/*/bundle.xml
+
 *.anx
 *.dvi
 *.ps

@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{A factory makes tennis rackets and cricket bats.}\\
+\text{A tennis racket takes 1.5 hours of machine time}\\
+\text{and 3 hours of a craftman's time in its making, }\\
+\text{while a cricket bat takes 3 hours of machine time}\\
+\text{and 1 hour of a craftman's time to make it.}\\
+\text{In a day, the factory has the availability of not more}\\
+\text{than 42 hours of machine time and 24 hours of a}\\
+\text{craftsman's time.}\\
+\text{(i) What number of rackets and bats must be made}\\
+\text{if the factory is to work at full capacity?}\\
+\text{(ii) If the profit on a racket and on a bat is Rs.20 and}\\
+\text{Rs.10 respectively, find the maximum profit of the factory.}</tex>
+  </statement>
+  <step swipe='false'>
+    <context>\text{If the factory produces x rackets and y bats in a }\\
+\text{day, what functions represent}\\
+\text{(i) Maximum capacity C(x, y)}\\
+\text{(ii) Maximum profit P(x, y)}</context>
+    <tex correct='true'>\text{(i) For maximum capacity}\\
+\begin{align}
+\qquad C(x, y) &amp;= x(unit)+y(unit) \\
+\implies C(x, y) &amp;= x+y
+\end{align}\\
+\text{(i) For maximum profit}\\
+\begin{align}
+\qquad P(x, y) &amp;= x(unit)\cdot 20(Rs/unit)+
+    y(unit)\cdot 10(Rs/unit) \\
+\implies P(x, y) &amp;= 20x+10y
+\end{align}
+</tex>
+    <tex>\text{(i) For maximum capacity}\\
+\begin{align}
+\qquad C(x, y) &amp;= 2x(unit)+y(unit) \\
+\implies C(x, y) &amp;= 2x+y
+\end{align}\\
+\text{(i) For maximum profit}\\
+\begin{align}
+\qquad P(x, y) &amp;= 2x(unit)\cdot 10(Rs/unit)+
+    y(unit)\cdot 20(Rs/unit) \\
+\implies P(x, y) &amp;= 20x+20y
+\end{align}
+</tex>
+    <reason>\text{The output of the factory is the simply sum of the}\\
+\text{total number of rackets and bats it can produce.}\\
+\text{Maximum profitability is the weighted sum by per unit}\\
+\text{profit that the sale of rackets and bats generate.}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Given the time limitations, what would the constraints}\\
+\text{on x and y, the total number of rackets and bats}\\
+\text{produced in a day be?}</context>
+    <tex correct='true'>\text{Machine time limitation}\\
+\begin{align}
+\qquad &amp;x(rackets)\cdot 1.5(hours/racket)+
+    y(bats)\cdot 3(hours/bat) \le 42 \\
+\implies &amp;1.5x + 3y\le 42 \\
+\implies &amp;x/2 + y\le 14
+\end{align}\\
+\text{Craftsmen time limitation}\\
+\begin{align}
+\qquad &amp;x(rackets)\cdot 3(hours/racket)+
+    y(bats)\cdot 1(hour/bat) \le 24\\
+\implies &amp;3x+y\le 24
+\end{align}\\
+\text{Number of items produces cannot be negative,}\\
+x\ge 0,\, y\ge 0
+
+</tex>
+    <tex>\text{Machine time limitation}\\
+\begin{align}
+\qquad &amp;x(rackets)\cdot 1.5(hours/racket)+
+    y(bats)\cdot 3(hours/bat) \ge 42 \\
+\implies &amp;1.5x + 3y\ge 42 \\
+\implies &amp;x/2 + y\ge 14
+\end{align}\\
+\text{Craftsmen time limitation}\\
+\begin{align}
+\qquad &amp;x(rackets)\cdot 3(hours/racket)+
+    y(bats)\cdot 1(hour/bat) \ge 24\\
+\implies &amp;3x+y\ge 24
+\end{align}\\
+\text{Number of items produces cannot be negative,}\\
+x\ge 0,\, y\ge 0
+</tex>
+    <reason>\text{To find the time for which any resource is occupied, }\\
+\text{multiply the time on each resource needed by an item}\\
+\text{with the total number of that item being produced.}\\
+\text{Thereafter, ensure that the total time a resource is}\\
+\text{needed for, is LESS than the total time it is available for}
+</reason>
+  </step>
+  <step>
+    <context>\text{For the constraints established in the previous}\\
+\text{step, what does the plot for the feasible region }\\
+\text{and its corner points look like?}</context>
+    <image correct='true'>3a.svg</image>
+    <image>3b.svg</image>
+    <reason>\text{As per the constraints, the feasible region,}\\
+\text{is bounded by the x and y axes and the area}\\
+\text{below lines }x/2+y=14 \text{ and } 3x+y=24
+</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Can we predict }\\
+\text{(i) the full capacity of the factory, and}\\
+\text{(ii) it's maximum profitability }\\
+\text{based on corner points in the diagram above?}
+</context>
+    <tex correct='true'>\begin{align}
+\text{Corner Point} \qquad &amp;C=x+y \qquad &amp; P=20x + 10y\\
+(0, 14) \qquad &amp;14 \qquad &amp;140 \\
+(0, 0)   \qquad &amp;0   \qquad &amp;0 \\
+(8, 0)   \qquad &amp;8   \qquad &amp;160 \\
+(4, 12) \qquad &amp;16 \qquad &amp;200 \\
+\end{align}\\
+\text{Both functions are maximum at (4, 12)}</tex>
+    <tex>\begin{align}
+\text{Corner Point} \qquad &amp;C=x+y \qquad &amp; P=20x + 10y\\
+(0, 14) \qquad &amp;14 \qquad &amp;140 \\
+(0, 0)   \qquad &amp;0   \qquad &amp;0 \\
+(8, 0)   \qquad &amp;8   \qquad &amp;160 \\
+(4, 12) \qquad &amp;16 \qquad &amp;200 \\
+\end{align}\\
+\text{C is maximum at (0, 0) whereas P is maximum at (8, 0)}</tex>
+    <reason>\text{Since the feasible region is bounded, we can}\\
+\text{establish the maximum by substituting corner} \\
+\text{points in the respective objective functions.}</reason>
+  </step>
+  <choices>
+    <tex>\text{(i) Maximum production 6 rackets and 6 bats}\\
+\text{(ii) Maximum profitability Rs. 220}</tex>
+    <tex>\text{(i) Maximum production 8 rackets and 4 bats}\\
+\text{(ii) Maximum profitability Rs. 200}</tex>
+    <tex correct='true'>\text{(i) Maximum production 4 rackets and 12 bats}\\
+\text{(ii) Maximum profitability Rs. 200}</tex>
+    <tex>\text{(i) Maximum production 12 rackets and 4 bats}\\
+\text{(ii) Maximum profitability Rs. 280}</tex>
+  </choices>
+</question>

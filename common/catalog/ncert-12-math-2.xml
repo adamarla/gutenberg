@@ -17,38 +17,29 @@
         <exercise tag="misc" label="Miscellaneous"/>
     </chapter>
     <chapter tag="ch10" label="Vector Algebra">
-        <exercise tag="ex1" label="Exercise 3.1"/>
-        <exercise tag="ex2" label="Exercise 3.2"/>
-        <exercise tag="ex3" label="Exercise 3.3"/>
-        <exercise tag="ex4" label="Exercise 3.4"/>
+        <exercise tag="ex1" label="Exercise 10.1"/>
+        <exercise tag="ex2" label="Exercise 10.2"/>
+        <exercise tag="ex3" label="Exercise 10.3"/>
+        <exercise tag="ex4" label="Exercise 10.4"/>
         <exercise tag="misc" label="Miscellaneous"/>
     </chapter>
     <chapter tag="ch11" label="Three Dimensional Geometry">
-        <exercise tag="ex1" label="Exercise 4.1"/>
-        <exercise tag="ex2" label="Exercise 4.2"/>
-        <exercise tag="ex3" label="Exercise 4.3"/>
-        <exercise tag="ex4" label="Exercise 4.4"/>
-        <exercise tag="ex5" label="Exercise 4.5"/>
-        <exercise tag="ex6" label="Exercise 4.6"/>
+        <exercise tag="ex1" label="Exercise 11.1"/>
+        <exercise tag="ex2" label="Exercise 11.2"/>
+        <exercise tag="ex3" label="Exercise 11.3"/>
         <exercise tag="misc" label="Miscellaneous"/>
     </chapter>
     <chapter tag="ch12" label="Linear Programming">
-        <exercise tag="ex1" label="Exercise 5.1"/>
-        <exercise tag="ex2" label="Exercise 5.2"/>
-        <exercise tag="ex3" label="Exercise 5.3"/>
-        <exercise tag="ex4" label="Exercise 5.4"/>
-        <exercise tag="ex5" label="Exercise 5.5"/>
-        <exercise tag="ex6" label="Exercise 5.6"/>
-        <exercise tag="ex7" label="Exercise 5.7"/>
-        <exercise tag="ex8" label="Exercise 5.8"/>
+        <exercise tag="ex1" label="Exercise 12.1"/>
+        <exercise tag="ex2" label="Exercise 12.2"/>
         <exercise tag="misc" label="Miscellaneous"/>
     </chapter>
     <chapter tag="ch13" label="Probability">
-        <exercise tag="ex1" label="Exercise 6.1"/>
-        <exercise tag="ex2" label="Exercise 6.2"/>
-        <exercise tag="ex3" label="Exercise 6.3"/>
-        <exercise tag="ex4" label="Exercise 6.4"/>
-        <exercise tag="ex5" label="Exercise 6.5"/>
+        <exercise tag="ex1" label="Exercise 13.1"/>
+        <exercise tag="ex2" label="Exercise 13.2"/>
+        <exercise tag="ex3" label="Exercise 13.3"/>
+        <exercise tag="ex4" label="Exercise 13.4"/>
+        <exercise tag="ex5" label="Exercise 13.5"/>
         <exercise tag="misc" label="Miscellaneous"/>
     </chapter>
 </book>
