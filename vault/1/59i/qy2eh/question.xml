@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{The length $x$ of a rectangle is decreasing at the rate}\\
+\text{of 5 cm/min and the width $y$ is increasing at the rate}\\
+\text{of 4 cm/min. When $x=$ 8 cm and $y=$ 6 cm, find the}\\
+\text{rates of change of }\\
+\text{(a) the perimeter, and (b) the area of the rectangle}</tex>
+  </statement>
+  <step>
+    <context>\text{As per the question}\ldots</context>
+    <tex correct='true'>\begin{align}
+\dfrac{dx}{dt} &amp;= -5\text{ cm/min} \\
+\dfrac{dy}{dt} &amp;= 4\text{ cm/min}
+\end{align}</tex>
+    <tex>\begin{align}
+\dfrac{dx}{dt} &amp;= 5\text{ cm/min} \\
+\dfrac{dy}{dt} &amp;= 4\text{ cm/min}
+\end{align}</tex>
+    <reason>\text{The length is decreasing. And hence, }\dfrac{dx}{dt}&lt;0.</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Does the following look right?}</context>
+    <tex correct='true'>\begin{align}
+P&amp;=\text{ perimeter } = 2\cdot( x + y) \\
+\implies\dfrac{dP}{dt} &amp;= 2\cdot\left[ \dfrac{dx}{dt}
++\dfrac{dy}{dt}\right]\\
+&amp;= 2\cdot\left( -5\text{ cm/min}+4\text{ cm/min}\right)
+= -2\text{ cm/min}
+\end{align}</tex>
+    <tex>\begin{align}
+P&amp;=\text{ perimeter } = 4\cdot( x + y) \\
+\implies\dfrac{dP}{dt} &amp;= 4\cdot\left[ \dfrac{dx}{dt}
++\dfrac{dy}{dt}\right]\\
+&amp;= 4\cdot\left( -5\text{ cm/min}+4\text{ cm/min}\right)
+= -4\text{ cm/min}
+\end{align}</tex>
+    <reason>\text{The perimeter P of a rectangle}= 2x + 2y = 2\cdot(x+y).</reason>
+  </step>
+  <step>
+    <context>\text{And }\frac{dA}{dt}\text{, where A = area would be}\ldots</context>
+    <tex correct='true'>\begin{align}
+A &amp;= x\cdot y \implies\dfrac{dA}{dt} 
+= x\cdot\frac{dy}{dt} + y\cdot\frac{dx}{dt} \\
+\implies\left[ \frac{dA}{dt}\right]_{x=8,y=6} &amp;= 
+8\text{ cm}\cdot 4\text{ cm/min} + 6\text{ cm}\cdot -5\text{cm/min}\\
+&amp;= 2\text{ cm$^2$/min}
+\end{align}</tex>
+    <tex>\begin{align}
+A &amp;= x\cdot y \implies\dfrac{dA}{dt} 
+=\frac{dx}{dt} \times \frac{dy}{dt} \\
+\implies\left[ \frac{dA}{dt}\right]_{x=8,y=6} &amp;= 
+-5\text{ cm/min}\times 4\text{ cm/min}\\
+&amp;= -20\text{ cm$^2$/min$^2$}
+\end{align}</tex>
+    <reason>\text{When }A=x\cdot y,\text{ then as per Chain Rule }\\
+\frac{dA}{dt} = x\cdot\frac{dy}{dt} + y\cdot\frac{dx}{dt}.\\
+\text{Also, the units of }\frac{dA}{dt}\text{ should be cm}^2/min</reason>
+  </step>
+  <choices>
+    <tex>\text{(a) 2 cm/min (b) 20 cm$^2$/min}</tex>
+    <tex>\text{(a) 2 cm/min (b) -20 cm$^2$/min}</tex>
+    <tex correct='true'>\text{(a) -2 cm/min (b) 2 cm$^2$/min}</tex>
+    <tex>\text{(a) -2 cm/min (b) -2 cm$^2$/min}</tex>
+  </choices>
+</question>
