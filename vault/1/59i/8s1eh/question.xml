@@ -8,30 +8,31 @@
   </statement>
   <step>
     <context>
-      \text{If A = surface area and L = length of an edge}\\
-      \text{at time = T, then what do we need to find?}
+    \text{Given the surface area (A) and length of}\\
+    \text{a side (L) at time T, what do we have to find?}
     </context>
     <tex correct='true'>
-      \qquad \left[\dfrac{dA}{dT}\right]_{L=12} = \left[\dfrac{dA}{dL}\times\dfrac{dL}{dT}\right]_{L=12}
+      \qquad \left[\dfrac{dA}{dT}\right]_{L=12}
     </tex>
     <tex>
       \qquad \left[\dfrac{dA}{dL}\right]_{L=12}
     </tex>
     <reason>
-      \text{The question is about the }\textbf{rate}\text{ at which the}\\
-      \text{surface area is increasing}\implies\frac{dA}{dT}.
+      \text{We have to find }\frac{dA}{dT}\text{ when }L=12\text{ cm.}\\
+      \text{In other words, }\left[\frac{dA}{dT}\right]_{L=12}.
     </reason>
   </step>
   <step>
     <context>
-      \text{And what have we been given?}
+      \text{And what have we been told?}
     </context>
     <tex correct='true'>
       \begin{align}
- \dfrac{dV}{dT} = \dfrac{d}{dT}L^3 
-      &amp;= 3L^2\cdot\dfrac{dL}{dT} = 8\frac{cm^3}{s}\\
-     \implies \left[\dfrac{dL}{dT}\right]_{L=12} &amp;= \dfrac{8\frac{cm^3}{s}}{3\cdot 12^2 cm^2}\\
-     \text{or }\left[ \dfrac{dL}{dT} \right]_{L=12} &amp;= \dfrac{1}{54}\frac{cm}{s}.
+     \dfrac{dV}{dT} &amp;= 8\text{ cm$^3$/s}\\
+     \text{But as } V&amp;= L^3, \frac{dV}{dT} = \frac{d}{dT}L^3 \\
+     &amp;= 3L^2\cdot\frac{dL}{dT} \\ 
+     \implies \left[\dfrac{dL}{dT}\right]_{L=12} &amp;= 
+     \dfrac{8\frac{cm^3}{s}}{3\cdot\text{(12 cm)}^2} = \frac{1}{54}\text{ cm/s}
 \end{align}
     </tex>
     <tex>
@@ -60,11 +61,12 @@
  \left[\dfrac{dA}{dT}\right]_{L=12} &amp;= \left[\dfrac{dA}{dL}\times\dfrac{dL}{dT}\right]_{L=12}\\
       \text{And as }A &amp;= 6\cdot L^2\\ 
       \left[ \dfrac{dA}{dT} \right]_{L=12} &amp;= \left[ 6L^2\cdot\dfrac{dL}{dT} \right]_{L=12}\\
-      \implies\left[ \dfrac{dA}{dT} \right]_{L=12} &amp;= 6\cdot (12 cm)^2\cdot\dfrac{1}{54}\frac{cm}{s}
+      \implies\left[ \dfrac{dA}{dT} \right]_{L=12} &amp;= 6\cdot (12 cm)^2\cdot\dfrac{1}{54}\frac{cm}{s}=16\text{ cm$^3$/s}
 \end{align}
     </tex>
     <reason>
-      \text{The only missing piece is }\frac{dA}{dL}\text{ where } A=6L^2.
+      \text{You know }\frac{dL}{dT}\text{ from Step #2. And you}\\
+      \text{need }\frac{dA}{dT}.\text{The missing piece is }\frac{dA}{dL}.
     </reason>
   </step>
   <choices>
