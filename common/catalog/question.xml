@@ -10,12 +10,6 @@
         <tex correct='false'/>
         <reason/>
     </step>
-    <step>
-        <context/>
-        <tex/>
-        <tex correct='false'/>
-        <reason/>
-    </step>
     <choices>
         <tex/>
         <tex correct='true'/>
