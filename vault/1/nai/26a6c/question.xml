@@ -2,14 +2,15 @@
 <question xmlns='http://www.gradians.com'>
 	<statement>
 		<tex>
-		\text{A particle moves along the curve }6y=x^3 +2.\text{ Find the}\\
-		\text{points on the curve at which the y-coordinate is} \\
-		\text{changing 8 times as fast as the x-coordinate}
+		\text{A particle moves along the curve }6y=x^3 +2.\\
+		\text{Find the points on the curve at which the }\\
+		\text{y-coordinate is changing 8 times as fast as}\\
+		\text{the x-coordinate.}
 		</tex>
 	</statement>
 		<step>
 			<context>
-			\text{The points we are looking for are points where}\ldots
+			\text{The points we need are points where}\ldots
 			</context>
 			<tex correct="true">
 			\begin{align}

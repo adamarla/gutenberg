@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+		\text{The radius of an air bubble is increasing}\\
+		\text{at the rate of }\frac{1}{2}\text{ cm/s. At what}\\
+		\text{rate is the volume of the bubble increasing}\\
+		\text{when the radius is 1 cm?}
+		</tex>
+	</statement>
+	
+		<step>
+			<context>
+			\text{What do we know and what do we have to find?}
+			</context>
+			<tex correct="true">
+			\quad\text{Know: }\frac{dR}{dT} = \frac{1}{2}\text{ cm/s}\\
+			\quad\text{Find: }\frac{dV}{dT}\\
+			\text{(V = volume and R = radius at time T)}
+			</tex>
+			<tex correct="false">
+			\quad\text{Know: }\frac{dR}{dT} = \frac{1}{2}\text{ cm/s}\\
+			\quad\text{Find: }V\text{ when R = 1 cm}\\
+			\text{(V = volume and R = radius at time T)}
+			</tex>
+			<reason>
+			\text{The questions asks for the rate at which the}\\
+			\text{volume of the bubble is increasing, that is }\frac{dV}{dT}
+			</reason>
+		</step>
+		
+			<step swipe='false'>
+				<context>
+				\text{Is the following correct?}
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  V&amp;= \frac{4}{3}\pi R^3\implies\frac{dV}{dT}=4\pi R^2\frac{dR}{dT}\\
+				  \therefore\left[\frac{dV}{dT}\right]_{R=1}&amp;= 
+				  4\pi\cdot \text{(1 cm)}^2\cdot\frac{1}{2}\text{ cm/s}\\
+				  &amp;= 2\pi\text{ cm$^3$/s}
+				\end{align}
+				</tex>
+				<tex correct="false">
+				\begin{align}
+				  V&amp;= \frac{2}{3}\pi R^3\implies\frac{dV}{dT}=2\pi R^2\frac{dR}{dT}\\
+				  \therefore\left[\frac{dV}{dT}\right]_{R=1}&amp;= 
+				  2\pi\cdot \text{(1 cm)}^2\cdot\frac{1}{2}\text{ cm/s}\\
+				  &amp;= \pi\text{ cm$^3$/s}
+				\end{align}
+				</tex>
+				<reason>
+				\text{The bubble is a sphere. And hence its volume is }\frac{4}{3}\pi R^3.
+				</reason>
+			</step>
+			
+				<choices>
+					<tex>\pi\text{ cm$^3$/s}</tex>
+					<tex correct='true'>2\pi\text{ cm$^3$/s}</tex>
+					<tex>\frac\pi{2}\text{ cm$^3$/s}</tex>
+					<tex>3\pi\text{ cm$^3$/s}</tex>
+				</choices>
+</question>
+
