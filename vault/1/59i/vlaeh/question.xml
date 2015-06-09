@@ -1,21 +1,31 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{A balloon, which always remains spherical on inflation,}\\
-\text{is being inflated by pumping in gas at 900 cm$^3$/s. Find}\\
-\text{the rate at which the radius of the balloon is increasing}\\
-\text{when the radius is 15 cm.}</tex>
+    <tex>\text{A balloon, which always remains spherical }\\
+    \text{on inflation, is being inflated by pumping in}\\
+    \text{gas at 900 cm$^3$/s. Find the rate at which the }\\
+    \text{radius of the balloon is increasing when the}\\
+    \text{radius is 15 cm.}</tex>
   </statement>
-  <step>
-    <context>\text{What are we being asked?}</context>
-    <tex correct='true'>\text{Given }\frac{dV}{dt} = 900\text{cm $^3$/s, find }
-\left[\frac{dR}{dt}\right]_{R=15}\\
-\text{where V = balloon's volume and R = it's radius}</tex>
-    <tex>\text{Find }\frac{dR}{dt}\text{ when V = 900 cm$^3$}\\
-\text{where V = balloon's volume and R = it's radius}</tex>
-    <reason>\text{If the units of V are cm$^3$, then cm$^3$/s must be }\frac{dV}{dt}.\\
-\text{In other words, 900 cm$^3$/s = $\dfrac{dV}{dt}$. </reason>
-  </step>
+
+  	<step>
+    		<context>
+    		\text{What do we know and what are we being asked?}
+    		</context>
+    		<tex correct="true">
+    		\quad\text{Given: }\frac{dV}{dT} = 900\text{ cm$^3$/s} \\
+    		\quad\text{Find: }\left[\frac{dR}{dT}\right]_{R=15}
+    		</tex>
+    		<tex correct="false">
+    		\quad\text{Given: R = \text{15 cm}}\\
+    		\quad\text{Find: }\left[\frac{dR}{dT}\right]_{R=15}
+    		</tex>
+    		<reason>
+    		\text{We know }\frac{dV}{dT}=900\text{ cm$^3$/s. We need }\frac{dR}{dT}.
+    		</reason>
+    	</step>  
+  
+  
   <step swipe='false'>
     <context>\text{Does the following look right?}</context>
     <tex correct='true'>\begin{align}
@@ -50,4 +60,11 @@ V &amp;= \frac{2}{3}\pi\cdot R^3 \\
     <reason>\text{Check the calculations if you got them wrong. Moreover,}\\
 \text{notice that the units of }\frac{dR}{dt}\text{ should be cm/s.}</reason>
   </step>
+  
+  	<choices>
+  		<tex>\frac{15}{\pi}\text{ cm$^2$/s}</tex>
+  		<tex>\text{60 cm/s}</tex>
+  		<tex correct="true">\frac{1}{\pi}\text{ cm/s}</tex>
+  		<tex>\text{45 cm/s}</tex>
+  	</choices>
 </question>

@@ -2,9 +2,10 @@
 <question xmlns='http://www.gradians.com'>
 	<statement>
 		<tex>
-		\text{A balloon, which always remains spherical, has a}\\
-		\text{variable radius. Find the rate at which it's volume}\\
-		\text{is increasing with the radius when the latter is 15 cm.}
+		\text{A balloon, which always remains spherical,}\\
+		\text{has a variable radius. Find the rate at which}\\
+		\text{it's volume is increasing with the radius }\\
+		\text{when the latter is 15 cm.}
 		</tex>
 	</statement>
 		<step>
