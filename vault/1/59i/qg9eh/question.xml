@@ -1,10 +1,13 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{A stone is dropped into a quiet lake and waves move}\\
-\text{in circles at the speed of 5 cm/s. At the instant when}\\
-\text{radius of the circular wave is 8cm, how fast is the}\\
-\text{enclosed area increasing?}</tex>
+    <tex>
+    \text{A stone is dropped into a quiet lake and}\\
+    \text{waves move in circles at the speed of}\\
+    \text{5 cm/s. At the instant when radius of the }\\
+    \text{circular wave is 8cm, how fast is the }\\
+    \text{enclosed area increasing?}
+  </tex>
   </statement>
   <step>
     <context>\text{If R = radius of the wave at time = T and}\\

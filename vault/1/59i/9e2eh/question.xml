@@ -1,9 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{The radius of a circle is increasing uniformly at the}\\
-      \text{rate of }3\frac{cm}{s}.\text{ Find the rate at which the area of the}\\ 
-      \text{circle is increasing when the radius is 10 cm.}</tex>
+    <tex>\text{The radius of a circle is increasing uniformly} \\
+    \text{at the rate of }3\text{ cm/s}.\text{ Find the rate at}\\
+    \text{which the area of the circle is increasing when}\\
+    \text{the radius is 10 cm.}</tex>
   </statement>
   <step>
     <context>

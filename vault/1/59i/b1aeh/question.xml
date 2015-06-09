@@ -1,26 +1,31 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{An edge of a variable cube is increasing at}\\
-      \text{the rate of 3}\frac{cm}{s}.\text{How fast is the volume of }\\
-      \text{the cube increasing when the edge is 10 cm long?}</tex>
+    <tex>\text{An edge of a variable cube is increasing}\\
+    \text{at the rate of 3 cm/s. How fast is the}\\
+    \text{volume of the cube increasing when the}\\
+    \text{edge is 10 cm long?}</tex>
   </statement>
-  <step>
-    <context>
-      \text{If L = length of an edge and V = cube's volume at any}\\
-      \text{given time T, then what do we need to find?}
-    </context>
-    <tex correct='true'>
-      \qquad\left[ \dfrac{dV}{dT} \right]_{L=10}
-    </tex>
-    <tex>
-      \qquad\left[ \dfrac{dL}{dT} \right]_{L=10}
-    </tex>
-    <reason>
-      \text{We need to find }\dfrac{dV}{dT}\text{ when L = 10cm given that }\\
-      \dfrac{dL}{dT} = 3\frac{cm}{s}.
-    </reason>
-  </step>
+
+	<step>
+  		<context>
+  		\text{What do we know and what do we need}\\
+  		\text{to find?}
+  		</context>
+  		<tex correct="true">
+  		  \quad\text{Given: }\frac{dL}{dT} = 3\text{ cm/s} \\
+  		  \quad\text{Find: }\left[\frac{dV}{dT}\right]_{L=10}
+  		</tex>
+  		<tex correct="false">
+  		\quad\text{Given: }L=\text{10 cm}\\
+  		\quad\text{Find: }\left[\frac{dL}{dT}\right]_{L=10}
+  		</tex>
+  		<reason>
+  		\text{We know }\frac{dL}{dT}.\text{ We need }\frac{dV}{dT}\text{ when L = 10 cm.}
+  		</reason>
+  	</step>  
+  
+  
   <step swipe='false'>
     <context>
       \text{Does this look right?}
