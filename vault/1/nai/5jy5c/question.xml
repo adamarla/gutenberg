@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Sand is pouring from a pipe at the rate}\\
+			\text{of 12 cm$^3$/s. The falling sand forms a cone}\\
+			\text{on the ground in such a way that the height of}\\
+			\text{the cone is always one-sixth of the radius}\\
+			\text{of the base. How fast is the height of the sand}\\
+			\text{cone increasing when the height is 4 cm?}
+		</tex>
+		<image>cone.svg</image>
+	</statement>
+	
+		<step>
+			<context>
+			\text{What do we know and what do we have to find?}
+			</context>
+			<tex correct="true">
+			\text{We know}\\
+			\quad R=6\cdot H\text{ and }\frac{dV}{dT} = 12\text{ cm$^3$/s}\\
+			\text{And we have to find}
+			\quad\left[\frac{dH}{dT}\right]_{H=4}
+			</tex>
+			<tex correct="false">
+			\text{We know}\\
+			\quad R=6\cdot H\text{ and }V = 12\text{ cm$^3$}\\
+			\text{And we have to find}
+			\quad\left[\frac{dH}{dT}\right]
+			</tex>
+			<reason>
+			\text{Both }\frac{dV}{dT}\text{ and }\frac{R}{H}\text{ are known. They are}\\
+			\text{also constant. What we need to find is }\frac{dH}{dT}.
+			</reason>
+		</step>
+		
+			<step>
+				<context>
+				\text{Is the following correct?}\ldots
+				</context>
+				<tex correct="true">
+				  \begin{align}
+				    V&amp;= \frac{1}{3}\pi R^2\cdot H \\
+				    &amp;= \frac{1}{3}\pi\cdot (6H)^2\cdot H = 12\pi\cdot H^3 \\
+				    \implies\frac{dV}{dT}&amp;=\frac{dV}{dH}\times\frac{dH}{dT} \\
+				    &amp;= 36\pi H^2\cdot\frac{dH}{dT}
+				  \end{align}
+				</tex>
+				<tex correct="false">
+				 \begin{align}
+				    V&amp;= \frac{1}{6}\pi R^2\cdot H \\
+				    &amp;= \frac{1}{6}\pi\cdot (6H)^2\cdot H = 6\pi\cdot H^3 \\
+				    \implies\frac{dV}{dT}&amp;=\frac{dV}{dH}\times\frac{dH}{dT} \\
+				    &amp;= 18\pi H^2\cdot\frac{dH}{dT}
+				  \end{align}
+				</tex>
+				<reason>
+				\text{The volume of a cone is } V=\frac{1}{3}\pi R^2 H. \\
+				\text{And, }\frac{dV}{dT} = \frac{dV}{dH}\times\frac{dH}{dT}.
+				</reason>
+			</step>
+			
+				<step swipe='false'>
+					<context>
+					\text{Are the calculations below correct?}
+					</context>
+					<tex correct="true">
+					\begin{align}
+					  \frac{dH}{dT}&amp;= \frac{12\text{ cm$^3$/s}}{36\pi\cdot (4 cm)^2} \\
+					  &amp;= \frac\pi{48}\text{ cm/s}
+					\end{align}
+					</tex>
+					<tex correct="false">
+          \begin{align}
+					\frac{dH}{dT}&amp;= \frac{12\text{ cm$^3$/s}}{36\pi\cdot (4 cm)^2} \\
+					  &amp;= \frac\pi{12}\text{ cm/s}
+          \end{align}
+					</tex>
+					<reason>
+					\text{Check the calculations if you got them wrong.}
+					</reason>
+				</step>
+</question>
