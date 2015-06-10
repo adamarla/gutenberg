@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Prove that }\\
+			\quad\quad y=\dfrac{4\sin\theta}{(\cos\theta + 2)}-\theta\\
+			\text{is an increasing function of }\theta\text{ in }\left[0,\frac{\pi}{2}\right]
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{When would y be an increasing function?}
+			</context>
+			<tex correct="true">
+			\quad\quad\dfrac{d}{d\theta}y\geq 0
+			</tex>
+			<tex correct="false">
+			\quad\quad\dfrac{d}{d\theta}y\gt 0
+			</tex>
+			<reason>
+			y\text{ is required to only be an increasing function}\\
+			\text{- not a strictly increasing one. Hence, the condition}\\
+			\text{is less strict, that is, }y'\geq 0\text{ and not }y'\gt 0.
+			</reason>
+		</step>
+		<step>
+			<context>
+			\text{The first term is of the form - }f(\theta)=\frac{g(\theta)}{h(\theta)}.\\
+			\text{And therefore, }
+			</context>
+			<tex correct="true">
+			\begin{align}
+			  \frac{d}{d\theta}f(\theta)&amp;=\dfrac{g'\cdot h-g\cdot h'}{h^2}
+			\end{align}
+			</tex>
+			<tex correct="false">
+			\begin{align}
+			  \frac{d}{d\theta}f(\theta)&amp;=\dfrac{g'\cdot h+g\cdot h'}{h^2}
+			\end{align}
+			</tex>
+			<reason>
+			\text{This is a standard result. Review if you}\\
+			\text{got it wrong.}
+			</reason>
+		</step>
+			<step>
+				<context>
+				\text{Has }\dfrac{d}{d\theta}\dfrac{4\sin\theta}{(\cos\theta + 2)}\text{ been calculated}\\
+				\text{correctly below?}
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  \dfrac{d}{d\theta}\dfrac{4\sin\theta}{(\cos\theta + 2)}&amp;\\
+				  &amp;=\dfrac{4\frac{d}{d\theta}\sin\theta\cdot(\cos\theta+2)-4\sin\theta\frac{d}{d\theta}\cos\theta}{(\cos\theta+2)^2}\\
+				  &amp;=\dfrac{4\cos\theta\cdot(\cos\theta+2)-4\sin\theta\cdot(-\sin\theta)}{(\cos\theta +2)^2}\\
+				  &amp;=\dfrac{4\cdot(1+2\cos\theta)}{(\cos\theta+2)^2}
+				\end{align}
+				</tex>
+				
+				<reason>
+				\text{We have simply applied the results from Step #1.}\\
+				\text{Also, }4\cos^2\theta+4\sin^2\theta=4\cdot(\cos^2\theta+\sin^2\theta)=4.
+				</reason>
+			</step>
+				<step>
+					<context>
+					\text{Are the calculations below correct?}
+					</context>
+					<tex correct="true">
+					\begin{align}
+					  \frac{dy}{d\theta}&amp;= \frac{4\cdot(1+2\cos\theta)}{(\cos\theta+2)^2}-\frac{d}{d\theta}\theta \\
+					  &amp;= \dfrac{(4+8\cos\theta)-(\cos\theta+2)^2}{(\cos\theta+2)^2}\\
+					  &amp;=\dfrac{\cos\theta\cdot(4-\cos\theta)}{(\cos\theta+2)^2}
+					\end{align}
+					</tex>
+					
+					<reason>
+					\text{Nothing much to say. You only need to know what}\\
+					(\cos\theta + 2)^2\text{ expands to and then simplify.}
+					</reason>
+				</step>
+					<step>
+						<context>
+						\text{Is the analysis below correct?}
+						</context>
+						<tex correct="true">
+						\begin{align}
+						  \cos\theta&amp;\leq 1\text{ for all }\theta\\
+						  \implies (4-\cos\theta)&amp;\gt 0\text{ for all }\theta \\
+						  \text{Moreover, }(\cos\theta+2)^2&amp;\gt 0\text{ for all }\theta\\
+						  \therefore\frac{dy}{d\theta}&amp;\geq 0\text{ if }\cos\theta\geq 0\\
+						  \implies\theta&amp;\in \left[0,\frac{\pi}{2}\right]
+						\end{align}
+						
+						</tex>
+
+						<reason>
+						\text{Remember, we want }y(\theta)\text{ to only be increasing}\\
+						\text{- not strictly increasing. Hence, }\frac{d}{d\theta}y\geq 0\text{ is sufficient.}
+						</reason>
+					</step>
+</question>
