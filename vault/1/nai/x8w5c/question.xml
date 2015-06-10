@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Find the intervals in which the function}\\
+			\quad f(x) = 2x^3-3x^2-36x + 7 \text{ is }\\
+			\text{(a) strictly increasing}\quad\text{(b) strictly decreasing}
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{For }f(x)\text{ to be strictly increasing}\ldots
+			</context>
+			<tex correct="false">
+			\begin{align}
+			  \frac{d}{dx} f(x) &amp;\gt 0\\
+			  \text{and, }f(x)&amp;\gt 0\text{ in the whole domain}
+			\end{align}
+			</tex>
+			<reason>
+			\text{There is no need for }f(x)\gt 0.\text{What matters is}\\
+			\text{whether }\frac{d}{dx}f(x)\gt 0.\text{If it is, then }f(x)\text{ is}\\
+			\text{increasing, else decreasing.}
+			</reason>
+		</step>
+		
+			<step>
+				<context>
+				\text{Is the following analysis correct?}
+				</context>
+				<tex correct="true">
+				  \begin{align}
+				    \frac{d}{dx}f(x)&amp;= \frac{d}{dx}(2x^3 -3x^2-36x +7) \\
+				    &amp;= 6\cdot (x^2-x-6) \\
+				    &amp;= 6\cdot(x+2)\cdot(x-3) \\
+				    \therefore\text{ if }\frac{d}{dx}f(x)&amp;\gt 0\text{ then }\\
+				    6\cdot(x+2)\cdot(x-3)&amp;\gt 0 \implies x\lt -2\text{ and }x\gt 3.
+				  \end{align}
+				</tex>
+				<reason>
+				\text{For any x}\lt -2, \text{ both }(x+2)\text{ and }(x-3)\lt 0.\\
+				\text{For any x}\gt 3, \text{ both }(x+2)\text{ and }(x-3)\gt 0.\\
+				\implies\text{ in both these ranges }(x+2)\cdot(x-3)\gt 0.
+				
+				</reason>
+			</step>
+				<step>
+					<context>
+					\text{And for }f(x)\text{ to be strictly decreasing?}
+					</context>
+					<tex correct="true">
+					  \begin{align}
+					    \frac{d}{dx}f(x)&amp;\lt 0 \\
+					    \implies 6\cdot (x+2)\cdot(x-3)&amp;\lt 0 \\
+					    \implies x&amp;\in \left(-2,3\right)
+					  \end{align}
+					</tex>
+
+					<reason>
+					\text{For any }x\text{ between -2 and 3, }(x+2)\gt 0\\
+				\text{and }(x-3)\lt 0\implies (x+2)\cdot(x-3)\lt 0.
+					</reason>
+				</step>
+					<choices>
+						<tex correct='true'>\text{(a) }\left(-\infty,-2\right)\text{ and }\left(3,\infty\right)\quad\text{(b) }\left(-2,3\right)</tex>
+						<tex>\text{(a) }\left(-\infty,2\right)\text{ and }\left(3,\infty\right)\quad\text{(b) }\left(2,3\right)</tex>
+						<tex>\text{(a) }\left(-3,-2\right)\text{ and }\left(3,\infty\right)\quad\text{(b) }\left(-2,3\right)</tex>
+						<tex>\text{(a) }\left(-\infty,-2\right)\text{ and }\left(2,3\right)\quad\text{(b) }\left(2,3\right)</tex>
+					</choices>
+</question>

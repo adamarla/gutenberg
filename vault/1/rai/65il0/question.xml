@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Find the values of x for which }\\
+			\quad\quad y = \left[x\cdot(x-2)\right]^2\\
+			\text{is an increasing function.}
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{For y to be increasing}\ldots
+			</context>
+			<tex correct="true">
+			\begin{align}
+			  \frac{dy}{dx}\gt 0
+			\end{align}
+			</tex>
+			<tex correct="false">
+			\begin{align}
+			  \frac{dy}{dx}&amp;\gt 0 \\
+			  \text{and }y&amp;\gt 0
+			\end{align}
+			</tex>
+			<reason>
+			\text{For a function to be increasing, only }\frac{d}{dx}f(x)\gt 0.
+			</reason>
+		</step>
+			<step swipe='false'>
+				<context>
+				\text{Is the mathematics correct?}
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  y&amp;= \left[x\cdot(x-2)\right]^2 \\
+				  \implies\dfrac{dy}{dx}&amp;= 2\left[x\cdot(x-2)\right]\cdot\frac{d}{dx}(x^2-2x)\\
+				  &amp;=2x\cdot(x-2)\cdot (2x-2) \\
+				  &amp;= 4x\cdot(x-1)\cdot(x-2)
+				\end{align}
+				</tex>
+				<tex correct="false">
+				\begin{align}
+				  y&amp;= \left[x\cdot(x-2)\right]^2 \\
+				  \implies\dfrac{dy}{dx}&amp;= 2\left[x\cdot(x-2)\right]\cdot\frac{d}{dx}(x^2-2x)\\
+				  &amp;=2x\cdot(x-2)\cdot (2x-2) \\
+				  &amp;= 4x\cdot(x-2)^2
+				\end{align}
+				</tex>
+				<reason>
+				\text{If we let }g(x) = x\cdot(x-2), \text{ then } y = g(x)^2.\\
+				\text{And }\therefore, \frac{d}{dx}y = \frac{d}{dg(x)}g(x)^2\cdot\frac{d}{dx}g(x).\\
+				\text{Rest is all calculation - which you can check.}
+				</reason>
+			</step>
+				<step>
+					<context>
+					\text{Is the following conclusion correct?}
+					</context>
+					<tex correct="true">
+					\begin{align}
+					  \frac{dy}{dx}&amp;= 4x\cdot(x-1)\cdot (x-2) \\
+					  \text{Hence, }\dfrac{dy}{dx}&amp;\gt 0\text{ when }\\
+					  4x\cdot(x-1)\cdot(x-2)&amp;\gt 0\\
+					  \implies 0\lt x\lt 1&amp;\text{ or } x\gt 2
+					\end{align}
+					</tex>
+					<reason>
+					\text{For }x\gt 2, \text{ all three terms are }\gt 0\\
+					\implies x\cdot(x-1)\cdot(x-2)\gt 0\\
+					\text{And between 0 and 1, }(x-1)\text{ and }(x-2)\lt 0\text{ but }x\gt 0\\
+					\implies x\cdot (x-1)\cdot (x-2) \gt 0.
+					</reason>
+				</step>
+					<choices>
+						<tex>x\lt 0\text{ and }x\gt 2</tex>
+						<tex>x\in (0,2)</tex>
+						<tex>x\in (1,2)</tex>
+						<tex correct='true'>x\in (0,1)\text{ and }x\gt 2</tex>
+					</choices>
+</question>
