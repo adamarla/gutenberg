@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Find the intervals in which the function }\\
+			f(x) = 2x^2-3x\text{ is }\\
+			\text{(a) strictly increasing}\quad\text{(b) strictly decreasing}
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{Is the following assertion correct?}
+			</context>
+
+			<tex correct="false">
+			\text{For a function to be strictly increasing}\\
+			\text{in an interval} \\
+			\begin{align}
+			  \frac{d}{dx}f(x)&amp;\gt 0 \\
+			  \text{and, }f(x)&amp;\gt 0\text{ for all }x\text{ in the interval}
+			\end{align}
+			</tex>
+			<reason>
+			\text{It doesn't matter if }f(x)\gt 0\text{ or }f(x)\lt 0.\text{Only}\\
+			\text{that }a \gt b\implies f(a)\gt f(b)\implies\frac{d}{dx}f(x)\gt 0.
+			</reason>
+		</step>
+		
+			<step>
+				<context>
+				\text{And therefore, for }f(x)\text{ to be increasing}\ldots
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  \frac{d}{dx}f(x)= \frac{d}{dx}(2x^2-3x) &amp;= 4x - 3\gt 0\\
+				  \implies x&amp;\gt\frac{3}{4}
+				\end{align}
+				</tex>
+				<tex correct="false">
+				\begin{align}
+				  \frac{d}{dx}f(x)&amp;= \frac{d}{dx}(2x^2-3x)= 4x - 3\gt 0\\
+				  \implies -3&amp;\gt -4x\implies x\lt\frac{-3}{-4}\implies x\lt\frac{3}{4} 
+				\end{align}
+				</tex>
+				<reason>
+				\text{Re-visit how to solve inequalities if you got this wrong.}
+				</reason>
+			</step>
+			
+				<step>
+					<context>
+					\text{Would this be the condition for }f(x)\\
+					\text{to be strictly decreasing?}
+					</context>
+					<tex correct="true">
+					\begin{align}
+					  \frac{d}{dx}f(x) = 4x - 3 \lt 0\implies x\lt\frac{3}{4}
+					\end{align}
+					</tex>
+					<reason>
+					\text{For }f(x)\text{ to be decreasing, }\frac{d}{dx}f(x)\lt 0.
+					</reason>
+				</step>
+				
+					<choices>
+						<tex>\text{(a) }x\lt\frac{3}{4}\quad\text{(b) }x\gt\frac{3}{4}</tex>
+						<tex>\text{(a) }x\gt\frac{3}{4}\quad\text{(b) Never}</tex>
+						<tex correct='true'>\text{(a) }x\gt\frac{3}{4}\quad\text{(b) }x\lt\frac{3}{4}</tex>
+						<tex>\text{(a) }x\gt\frac{4}{3}\quad\text{(b) }x\lt\frac{4}{3}</tex>
+					</choices>
+</question>
