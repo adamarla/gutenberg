@@ -14,7 +14,8 @@
 	
 		<step>
 			<context>
-			\text{What do we know and what do we have to find?}
+			\text{What do we know and }\\
+			\text{what do we have to find?}
 			</context>
 			<tex correct="true">
 			\text{We know}\\
@@ -80,4 +81,10 @@
 					\text{Check the calculations if you got them wrong.}
 					</reason>
 				</step>
+					<choices>
+						<tex>\frac{\pi}{48}\text{ cm/s}</tex>
+						<tex>\frac{\pi}{6}\text{ cm/s}</tex>
+						<tex>\frac{\pi}{8}\text{ cm/s}</tex>
+						<tex correct='true'>\frac{\pi}{12}\text{ cm/s}</tex>
+					</choices>
 </question>
