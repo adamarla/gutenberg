@@ -13,11 +13,17 @@
 			\text{What do we need to find?}
 			</context>
 			<tex correct="true">
-			\quad\dfrac{dV}{dx}\text{, where V = balloon's volume.}
+			\begin{align}
+			&amp;\frac{dV}{dx} \\
+			\text{where V} &amp;= \text{balloon's volume.}
+			\end{align}
 			</tex>
 			<tex correct="false">
-			\quad\dfrac{dV}{dD}\\
-			\text{where V = balloon's volume and D = diameter}
+						\begin{align}
+			&amp;\frac{dV}{dD} \\
+			\text{where V }&amp;=\text{balloon's volume}\\
+			\text{D} &amp;= \text{it's diameter}
+			\end{align}
 			</tex>
 			<reason>
 			\text{The questions asks for change in volume with}\\
