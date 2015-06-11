@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Find the intervals in which}\\
+			\quad\quad y = -2x^3-9x^2-12x + 1 \\
+			\text{is strictly increasing or decreasing}
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{Under what conditions would y be strictly}\\
+			\text{increasing or decreasing?}
+			</context>
+			<tex correct="true">
+			\begin{align}
+			  \dfrac{dy}{dx}&amp;\gt 0\text{ (strictly increasing)}\\
+			  \dfrac{dy}{dx}&amp;\lt 0\text{ (strictly decreasing)}
+			\end{align}
+			</tex>
+			<tex correct="false">
+			\begin{align}
+			  \dfrac{dy}{dx}&amp;\gt 0\text{ (strictly decreasing)}\\
+			  \dfrac{dy}{dx}&amp;\lt 0\text{ (strictly increasing)}
+			\end{align}
+			</tex>
+			<reason>
+			\frac{d}{dx}f(x)\gt 0\implies f(b)\gt f(a), b\gt a\text{ (increasing).}\\
+			\text{Similarly, }\frac{d}{dx}f(x)\lt 0\implies f(b)\lt f(a), b\gt a\text{ (decreasing)}
+			</reason>
+		</step>
+			<step>
+				<context>
+				\text{Is the following analysis correct?}
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  \dfrac{dy}{dx}&amp;=-6x^2-18x-12 = -6\cdot(x^2+3x+2)\\
+				  &amp;=-6\cdot(x+1)\cdot(x+2)\\
+				  &amp;\gt 0\text{ when }(x+1)\cdot (x+2)\lt 0\\
+				  &amp;\implies x\in \left(-2,-1\right)\text{ (increasing)}\\
+				  &amp;\lt 0\text{ when }(x+1)\cdot (x+2)\gt 0\\
+				  &amp;\implies x\lt -2\text{ or }x\gt -1\text{ (decreasing)}
+				\end{align}
+				</tex>
+				
+				<reason>
+				\begin{tabular}{cccc}
+				 &amp; x+1 &amp; x+2 &amp; \frac{dy}{dx}\\
+				x\lt -2&amp;- &amp;- &amp; -\\
+				-2\lt x\lt-1 &amp; - &amp; + &amp;+\\
+				x\gt -1 &amp; + &amp; + &amp;-
+				\end{tabular}
+				</reason>
+			</step>
+			
+	<choices>
+		<tex>\text{(decreasing) }\left(-2,-1\right)\text{ (increasing) }x\lt -2\text{ or }x\gt -1</tex>
+		<tex>\text{(increasing) } x\gt -2\text{ (decreasing) }x\gt -1</tex>
+		<tex>\text{(increasing) }x\lt -1\text{ (decreasing) }x\lt -2</tex>
+		<tex correct='true'>\text{(increasing) }\left(-2,-1\right)\text{ (decreasing) }x\lt -2\text{ or }x\gt -1</tex>
+	</choices>
+</question>
