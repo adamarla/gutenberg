@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="400" height="250" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" class="main-svg">
+ <defs>
+  <g id="svg_3" class="clips">
+   <clipPath id="clip267bfex" class="axesclip">
+    <rect id="svg_4" height="250" width="400" y="0" x="0"/>
+   </clipPath>
+   <clipPath id="clip267bfey" class="axesclip">
+    <rect id="svg_5" height="250" width="400" y="0" x="0"/>
+   </clipPath>
+   <clipPath id="clip267bfexy" class="axesclip">
+    <rect id="svg_6" height="250" width="400" y="0" x="0"/>
+   </clipPath>
+  </g>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <rect id="svg_7" fill="rgb(0, 0, 0)" fill-opacity="0" height="250" width="400" y="0" x="0"/>
+  <g id="svg_8" class="draglayer">
+   <g id="svg_9"/>
+  </g>
+  <g id="svg_10" class="subplot xy">
+   <rect id="svg_11" stroke-width="0px" fill="rgb(0, 0, 0)" fill-opacity="0" height="250" width="400" y="0" x="0"/>
+   <g id="svg_12">
+    <path id="svg_13" stroke="rgb(238, 238, 238)" stroke-width="1px" d="m141.25,0l0,250" class="xgrid crisp"/>
+    <path id="svg_14" stroke="rgb(238, 238, 238)" stroke-width="1px" d="m258.75,0l0,250" class="xgrid crisp"/>
+    <path id="svg_15" stroke="rgb(238, 238, 238)" stroke-width="1px" d="m376.25,0l0,250" class="xgrid crisp"/>
+    <path id="svg_16" stroke="rgb(238, 238, 238)" stroke-width="1px" d="m0,233.75l400,0" class="ygrid crisp"/>
+    <path id="svg_17" stroke="rgb(238, 238, 238)" stroke-width="1px" d="m0,197.5l400,0" class="ygrid crisp"/>
+    <path id="svg_18" stroke="rgb(238, 238, 238)" stroke-width="1px" d="m0,125l400,0" class="ygrid crisp"/>
+    <path id="svg_19" stroke="rgb(238, 238, 238)" stroke-width="1px" d="m0,88.75l400,0" class="ygrid crisp"/>
+    <path id="svg_20" stroke="rgb(238, 238, 238)" stroke-width="1px" d="m0,52.5l400,0" class="ygrid crisp"/>
+    <path id="svg_21" stroke="rgb(238, 238, 238)" stroke-width="1px" d="m0,16.25l400,0" class="ygrid crisp"/>
+   </g>
+   <g id="svg_22"/>
+   <g id="svg_23">
+    <path id="svg_24" stroke="rgb(68, 68, 68)" stroke-width="1px" d="m23.75,0l0,250" class="xzl zl crisp"/>
+    <path id="svg_25" stroke="rgb(68, 68, 68)" stroke-width="1px" d="m0,161.25l400,0" class="yzl zl crisp"/>
+   </g>
+   <g id="svg_26"/>
+   <g id="svg_1">
+    <svg id="svg_27" viewBox="0 0 400 250" height="250" width="400" y="0" x="0" preserveAspectRatio="none">
+     <g id="svg_28" class="maplayer"/>
+     <g id="svg_29" class="barlayer"/>
+     <g id="svg_30" class="errorlayer">
+      <g id="svg_31" class="errorbars"/>
+      <g id="svg_32" class="errorbars"/>
+      <g id="svg_33" class="errorbars"/>
+     </g>
+     <g id="svg_34" class="boxlayer"/>
+     <g id="svg_35" class="scatterlayer">
+      <g id="svg_36" stroke-miterlimit="2" class="trace scatter">
+       <path id="svg_37" fill="none" stroke="rgb(255, 127, 14)" stroke-width="2px" d="m23.75,16.25l352.5,217.5" class="js-line"/>
+       <g id="svg_38" class="points">
+        <path id="svg_39" stroke-width="0px" fill="rgb(255, 127, 14)" d="m26.75,16.25a3,3 0 1 1 -3,-3a3,3 0 0 1 3,3z" class="point"/>
+        <path id="svg_40" stroke-width="0px" fill="rgb(255, 127, 14)" d="m144.25,88.75a3,3 0 1 1 -3,-3a3,3 0 0 1 3,3z" class="point"/>
+        <path id="svg_41" stroke-width="0px" fill="rgb(255, 127, 14)" d="m261.75,161.25a3,3 0 1 1 -3,-3a3,3 0 0 1 3,3z" class="point"/>
+        <path id="svg_42" stroke-width="0px" fill="rgb(255, 127, 14)" d="m379.25,233.75a3,3 0 1 1 -3,-3a3,3 0 0 1 3,3z" class="point"/>
+       </g>
+      </g>
+      <g id="svg_43" stroke-miterlimit="2" class="trace scatter">
+       <path id="svg_44" fill="none" stroke="rgb(31, 119, 180)" stroke-width="2px" d="m23.75,88.75l352.5,72.5" class="js-line"/>
+       <g id="svg_45" class="points">
+        <path id="svg_46" stroke-width="0px" fill="rgb(31, 119, 180)" d="m26.75,88.75a3,3 0 1 1 -3,-3a3,3 0 0 1 3,3z" class="point"/>
+        <path id="svg_47" stroke-width="0px" fill="rgb(31, 119, 180)" d="m379.25,161.25a3,3 0 1 1 -3,-3a3,3 0 0 1 3,3z" class="point"/>
+       </g>
+      </g>
+      <g id="svg_48" stroke-miterlimit="2" class="trace scatter">
+       <path id="svg_49" fill="none" stroke="rgb(127, 127, 127)" stroke-dasharray="3px, 3px" stroke-width="2px" d="m23.75,59.75l352.5,130.5" class="js-line"/>
+       <g id="svg_50" class="points">
+        <path id="svg_51" stroke-width="0px" fill="rgb(127, 127, 127)" d="m26.75,59.75a3,3 0 1 1 -3,-3a3,3 0 0 1 3,3z" class="point"/>
+        <path id="svg_52" stroke-width="0px" fill="rgb(127, 127, 127)" d="m379.25,190.25a3,3 0 1 1 -3,-3a3,3 0 0 1 3,3z" class="point"/>
+       </g>
+      </g>
+     </g>
+    </svg>
+   </g>
+   <g id="svg_53"/>
+   <path id="svg_54" fill="none" stroke-width="1px" stroke="rgb(0, 0, 0)" stroke-opacity="0" d="m-1,250.5l402,0" class="crisp"/>
+   <path id="svg_55" fill="none" stroke="rgb(0, 0, 0)" stroke-opacity="0" stroke-width="1px" d="m-0.5,-1l0,251" class="crisp"/>
+   <g id="svg_56"/>
+   <g id="svg_57">
+    <g id="svg_58" class="xtick">
+     <text id="svg_59" font-family="'Open sans', verdana, arial, sans-serif" font-size="12px" fill="rgb(68, 68, 68)" y="264" x="23.75" text-anchor="middle">0</text>
+    </g>
+    <g id="svg_60" class="xtick">
+     <text id="svg_61" font-family="'Open sans', verdana, arial, sans-serif" font-size="12px" fill="rgb(68, 68, 68)" y="264" x="141.25" text-anchor="middle">1</text>
+    </g>
+    <g id="svg_62" class="xtick">
+     <text id="svg_63" font-family="'Open sans', verdana, arial, sans-serif" font-size="12px" fill="rgb(68, 68, 68)" y="264" x="258.75" text-anchor="middle">2</text>
+    </g>
+    <g id="svg_64" class="xtick">
+     <text id="svg_65" font-family="'Open sans', verdana, arial, sans-serif" font-size="12px" fill="rgb(68, 68, 68)" y="264" x="376.25" text-anchor="middle">3</text>
+    </g>
+   </g>
+   <g id="svg_66">
+    <g id="svg_67" class="ytick">
+     <text id="svg_68" font-family="'Open sans', verdana, arial, sans-serif" font-size="12px" fill="rgb(68, 68, 68)" y="239.75" x="-2" text-anchor="end">−1</text>
+    </g>
+    <g id="svg_69" class="ytick">
+     <text id="svg_70" font-family="'Open sans', verdana, arial, sans-serif" font-size="12px" fill="rgb(68, 68, 68)" y="203.5" x="-2" text-anchor="end">−0.5</text>
+    </g>
+    <g id="svg_71" class="ytick">
+     <text id="svg_72" font-family="'Open sans', verdana, arial, sans-serif" font-size="12px" fill="rgb(68, 68, 68)" y="167.25" x="-2" text-anchor="end">0</text>
+    </g>
+    <g id="svg_73" class="ytick">
+     <text id="svg_74" font-family="'Open sans', verdana, arial, sans-serif" font-size="12px" fill="rgb(68, 68, 68)" y="131" x="-2" text-anchor="end">0.5</text>
+    </g>
+    <g id="svg_75" class="ytick">
+     <text id="svg_76" font-family="'Open sans', verdana, arial, sans-serif" font-size="12px" fill="rgb(68, 68, 68)" y="94.75" x="-2" text-anchor="end">1</text>
+    </g>
+    <g id="svg_77" class="ytick">
+     <text id="svg_78" font-family="'Open sans', verdana, arial, sans-serif" font-size="12px" fill="rgb(68, 68, 68)" y="58.5" x="-2" text-anchor="end">1.5</text>
+    </g>
+    <g id="svg_79" class="ytick">
+     <text id="svg_80" font-family="'Open sans', verdana, arial, sans-serif" font-size="12px" fill="rgb(68, 68, 68)" y="22.25" x="-2" text-anchor="end">2</text>
+    </g>
+   </g>
+   <g id="svg_81"/>
+  </g>
+  <g id="svg_82" class="shapelayer"/>
+  <g id="svg_83" class="glimages"/>
+  <text id="svg_84" font-family="'Open Sans', Arial, sans-serif" font-size="12px" fill="rgb(68, 68, 68)" x="393" text-anchor="end" y="241" class="js-plot-link-container"/>
+  <g id="svg_85" class="infolayer">
+   <g id="svg_86" class="g-gtitle"/>
+   <g id="svg_87" class="g-xtitle"/>
+   <g id="svg_88" class="g-ytitle"/>
+   <g id="svg_89" class="annotation">
+    <g id="svg_2" class="annotation-text-g">
+     <svg id="svg_90" height="21" width="136" y="187" x="132">
+      <rect id="svg_91" stroke-width="1px" stroke="rgb(0, 0, 0)" stroke-opacity="0" fill="rgb(0, 0, 0)" fill-opacity="0" height="20" width="135" y="0.5" x="0.5" class="bg"/>
+      <text id="svg_92" font-family="'Open sans', verdana, arial, sans-serif" font-size="12px" fill="rgb(68, 68, 68)" y="15" x="68.078125" text-anchor="middle" class="annotation">3x + 5y &lt; 7  (no overlap)</text>
+     </svg>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>
