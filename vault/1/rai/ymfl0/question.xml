@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Prove that the logarithmic function is}\\
+			\text{strictly increasing on }\left(0,\infty\right).
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{What is the logarithmic function?}
+			</context>
+			<tex correct="true">
+			  \quad y = \ln x, x\in \left(0,\infty\right)
+			</tex>
+			<tex correct='false'>
+				\quad y = \ln x, x\in \left(-\infty,\infty\right)
+			</tex>
+			<reason>
+        y = \ln x \text{ makes sense only if }x\gt 0.
+			</reason>
+		</step>
+			<step swipe='false'>
+				<context>
+				\text{Is the following assertion true?}
+				</context>
+				<tex correct="true">
+				\text{For }y=\ln x\text{ to be strictly increasing,}\\
+				\quad\quad\dfrac{dy}{dx}\gt 0
+				</tex>
+				<tex correct="false">
+				\text{For }y=\ln x\text{ to be strictly increasing,}\\
+				\quad\quad\dfrac{dy}{dx}\geq 0
+				</tex>
+				<reason>
+				y\text{ has to be }\textbf{strictly}\text{ increasing }\\
+				\text{- not just increasing. Hence, }\frac{dy}{dx}\gt 0 - \text{not}\geq 0.
+				</reason>
+			</step>
+			
+		<step>
+			<context>
+			\text{Does the following look correct?}
+			</context>
+			<tex correct="true">
+			\begin{align}
+			  y &amp;= \ln x \\
+			  \implies\frac{dy}{dx}&amp;= \frac{1}{x} \\
+			  &amp;\gt 0\text{ for all }x\gt 0
+			\end{align}
+			\\ \text{Hence, y is strictly increasing in }\left(0,\infty\right).
+			</tex>
+
+			<reason>
+			\text{We simply used a standard result, }\frac{d}{dx}\ln x=\frac{1}{x}.\\
+			\text{And given that }x\gt 0,\frac{1}{x}\gt 0\implies\frac{dy}{dx}\gt 0.
+			</reason>
+		</step>
+</question>

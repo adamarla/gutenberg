@@ -38,10 +38,11 @@
 				  \end{align}
 				</tex>
 				<reason>
-				\text{For any x}\lt -2, \text{ both }(x+2)\text{ and }(x-3)\lt 0.\\
-				\text{For any x}\gt 3, \text{ both }(x+2)\text{ and }(x-3)\gt 0.\\
-				\implies\text{ in both these ranges }(x+2)\cdot(x-3)\gt 0.
-				
+				\begin{tabular}{cccc}
+				&amp;(x+2)&amp;(x-3)&amp;f'(x)\\
+				x\lt -2&amp;-&amp;-&amp;+\\
+				x\gt 3&amp;+&amp;+&amp;+
+				\end{tabular}				
 				</reason>
 			</step>
 				<step>
@@ -57,8 +58,10 @@
 					</tex>
 
 					<reason>
-					\text{For any }x\text{ between -2 and 3, }(x+2)\gt 0\\
-				\text{and }(x-3)\lt 0\implies (x+2)\cdot(x-3)\lt 0.
+					\begin{tabular}{cccc}
+				&amp;(x+2)&amp;(x-3)&amp;f'(x)\\
+				-2\lt x\lt 3&amp;+&amp;-&amp;-
+				\end{tabular}			
 					</reason>
 				</step>
 					<choices>

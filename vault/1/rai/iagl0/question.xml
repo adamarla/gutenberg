@@ -50,7 +50,7 @@
 				</context>
 				<tex correct="true">
 				\begin{align}
-				  \dfrac{d}{d\theta}\dfrac{4\sin\theta}{(\cos\theta + 2)}&amp;\\
+				  &amp;\dfrac{d}{d\theta}\dfrac{4\sin\theta}{(\cos\theta + 2)}\\
 				  &amp;=\dfrac{4\frac{d}{d\theta}\sin\theta\cdot(\cos\theta+2)-4\sin\theta\frac{d}{d\theta}\cos\theta}{(\cos\theta+2)^2}\\
 				  &amp;=\dfrac{4\cos\theta\cdot(\cos\theta+2)-4\sin\theta\cdot(-\sin\theta)}{(\cos\theta +2)^2}\\
 				  &amp;=\dfrac{4\cdot(1+2\cos\theta)}{(\cos\theta+2)^2}
@@ -75,8 +75,8 @@
 					</tex>
 					
 					<reason>
-					\text{Nothing much to say. You only need to know what}\\
-					(\cos\theta + 2)^2\text{ expands to and then simplify.}
+					\text{Nothing much to say.}\frac{d\theta}{d\theta} = 1\text{ and}\\
+					(\cos\theta + 2)^2\text{ has been expanded.}
 					</reason>
 				</step>
 					<step>
