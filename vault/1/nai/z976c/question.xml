@@ -55,9 +55,13 @@
 				</reason>
 			</step>
 				<choices>
-					<tex>x\lt -\frac{2}{3}\text{ (increasing) and }x\gt -\frac{2}{3}\text{ (decreasing) }</tex>
-					<tex>x\gt -\frac{2}{3}\text{ (increasing) and }x\lt -\frac{2}{3}\text{ (decreasing) }</tex>
-					<tex correct='true'>x\lt -\frac{3}{2}\text{ (increasing) and }x\gt -\frac{3}{2}\text{ (decreasing) }</tex>
-					<tex>x\lt -\frac{3}{2}\text{ (decreasing) and }x\gt -\frac{3}{2}\text{ (increasing) }</tex>
+					<tex>x\lt -\frac{2}{3}\text{ (increasing)}\\
+					x\gt -\frac{2}{3}\text{ (decreasing) }</tex>
+					<tex>x\gt -\frac{2}{3}\text{ (increasing)}\\
+					x\lt -\frac{2}{3}\text{ (decreasing) }</tex>
+					<tex correct='true'>x\lt -\frac{3}{2}\text{ (increasing)}\\
+					x\gt -\frac{3}{2}\text{ (decreasing) }</tex>
+					<tex>x\lt -\frac{3}{2}\text{ (decreasing)}\\
+					x\gt -\frac{3}{2}\text{ (increasing) }</tex>
 				</choices>
  </question>
