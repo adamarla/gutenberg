@@ -1,43 +1,40 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Solve this Linear Programming problem graphically}\\
-\text{Minimise} Z=-3x+4y \\
-\text{subject to the constraints} \\
-x+2y \le 8,\, 3x + 2y \le 12,\, x \ge 0,\,  y \ge 0</tex>
+    <tex>\text{Solve this Linear Programming problem}\\
+\text{graphically. Minimise } Z=-3x+4y \\
+\text{subject to the constraints } x+2y \le 8, \\
+3x + 2y \le 12, \text{ and } (x,  y) \ge 0</tex>
   </statement>
   <step>
-    <context>\text{Does this plot correctly represent the } \\
-\text{feasible region given the constraints?}</context>
+    <context>\text{Does the double shaded region in this plot }\\
+\text{correctly represent the feasible region, given} \\
+\text{the constraints?}</context>
     <image correct='true'>1a.svg</image>
     <image>1b.svg</image>
-    <reason>\text{Given the constraints}\\
-x+2y \le 8,\, 3x + 2y \le 12,\, x \ge 0,\,  y \ge 0 \\
-\text{the area would be restricted to}\\
-X\text{ and } Y\text{ axes, and } x+2y=8 \\
-\text{in }x=[0, 2] \text{ and } 3x+2y=12\text{ in }x=[2,4]</reason>
+    <reason>\text{Both lines have a negative slope so the}\\
+\text{area is restricted to (x, y) }\gt 0 \text{ and}\\
+\text{whichever line has a smaller y for that x}</reason>
   </step>
-  <step>
-    <context>\text{What is the value of the Minumum} \\
-\text{for the corner points as seen in the graph?}</context>
+  <step swipe='false'>
+    <context>\text{What is the value of the minumum as per} \\
+\text{the corner points seen in the graph?}</context>
     <tex correct='true'>\begin{align}
 \text{Corner Points}\qquad &amp;Z=-3x+4y \\
 (0, 5) \qquad &amp;20 \\
 (0, 0) \qquad &amp;0 \\
-(4, 0) \qquad &amp;-12  \text{ (Minimum)} \\
+(4, 0) \qquad &amp;-12  \leftarrow\text{minimum} \\
 (2, 4) \qquad &amp;10
 \end{align}</tex>
     <tex>\begin{align}
 \text{Corner Points}\qquad &amp;Z=-3x+4y \\
 (0, 8.5) \qquad &amp;20 \\
 (0, 0) \qquad &amp;0 \\
-(8, 0) \qquad &amp;-24  \text{ (Minimum)} \\
+(8, 0) \qquad &amp;-24  \leftarrow\text{minimum} \\
 \end{align}</tex>
-    <reason>\text{Minumum is calculated by substituting}\\
-\text{the correct corner points into the }\\
-\text{objective function } Z=-3x+4y \\
-\text{Corner points are the bounding box}\\
-\text{of the overlapping region}</reason>
+    <reason>\text{The correct corner points from the graph}\\
+\text{when substituted into the objective function}\\
+\text{show the minimum to be -12}</reason>
   </step>
   <choices>
     <tex correct='true'>\text{Minimum } -12\text{ is at }(4, 0)</tex>
