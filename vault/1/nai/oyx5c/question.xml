@@ -55,9 +55,13 @@
 			</step>
 			
 	<choices>
-		<tex>\text{(decreasing) }\left(-2,-1\right)\text{ (increasing) }x\lt -2\text{ or }x\gt -1</tex>
-		<tex>\text{(increasing) } x\gt -2\text{ (decreasing) }x\gt -1</tex>
-		<tex>\text{(increasing) }x\lt -1\text{ (decreasing) }x\lt -2</tex>
-		<tex correct='true'>\text{(increasing) }\left(-2,-1\right)\text{ (decreasing) }x\lt -2\text{ or }x\gt -1</tex>
+		<tex>\text{(decreasing) }\left(-2,-1\right)\\ 
+		\text{(increasing) }x\lt -2\text{ or }x\gt -1</tex>
+		<tex>\text{(increasing) } x\gt -2\\
+		\text{(decreasing) }x\gt -1</tex>
+		<tex>\text{(increasing) }x\lt -1\\
+		\text{(decreasing) }x\lt -2</tex>
+		<tex correct='true'>\text{(increasing) }\left(-2,-1\right)\\
+		\text{(decreasing) }x\lt -2\text{ or }x\gt -1</tex>
 	</choices>
 </question>
