@@ -4,12 +4,12 @@
 		<tex>
 			\text{Find the values of x for which }\\
 			\quad\quad y = \left[x\cdot(x-2)\right]^2\\
-			\text{is an increasing function.}
+			\text{is a strictly increasing function.}
 		</tex>
 	</statement>
 		<step>
 			<context>
-			\text{For y to be increasing}\ldots
+			\text{For y to be strictly increasing}\ldots
 			</context>
 			<tex correct="true">
 			\begin{align}
@@ -23,7 +23,8 @@
 			\end{align}
 			</tex>
 			<reason>
-			\text{For a function to be increasing, only }\frac{d}{dx}f(x)\gt 0.
+			\text{For a function to be increasing}\\
+			\text{only }\frac{d}{dx}f(x)\gt 0.
 			</reason>
 		</step>
 			<step swipe='false'>
@@ -47,8 +48,8 @@
 				\end{align}
 				</tex>
 				<reason>
-				\text{If we let }g(x) = x\cdot(x-2), \text{ then } y = g(x)^2.\\
-				\text{And }\therefore, \frac{d}{dx}y = \frac{d}{dg(x)}g(x)^2\cdot\frac{d}{dx}g(x).\\
+				\text{See y as }y=g(x)^2,\text{ where }g(x)=x\cdot(x-2).\\
+				\therefore y' = \frac{d}{dg(x)}g(x)^2\cdot\frac{d}{dx}g(x).\\
 				\text{Rest is all calculation - which you can check.}
 				</reason>
 			</step>
@@ -65,10 +66,11 @@
 					\end{align}
 					</tex>
 					<reason>
-					\text{For }x\gt 2, \text{ all three terms are }\gt 0\\
-					\implies x\cdot(x-1)\cdot(x-2)\gt 0\\
-					\text{And between 0 and 1, }(x-1)\text{ and }(x-2)\lt 0\text{ but }x\gt 0\\
-					\implies x\cdot (x-1)\cdot (x-2) \gt 0.
+					\begin{tabular}{ccccc}
+					&amp;x&amp;(x-1)&amp;(x-2)&amp;\frac{dy}{dx}\\
+					x\gt 2&amp;+&amp;+&amp;+&amp;+\\
+					0\lt x\lt 1&amp;+&amp;-&amp;-&amp;+
+					\end{tabular}
 					</reason>
 				</step>
 					<choices>
