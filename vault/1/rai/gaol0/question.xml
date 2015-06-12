@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Prove that the function }\\
+			\quad f(x) = \log\cos x \\
+			\text{is strictly decreasing on }\left(0,\frac{\pi}{2}\right)\\
+			\text{and strictly increasing on }\left(-\frac{\pi}{2},0\right)
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{Can }f(x)\text{ be increasing over }\left(\frac{\pi}{2},\pi\right)\\
+			\text{as asked in the textbook}?
+			</context>
+			<tex correct="true">
+			\text{No. In fact, }\log\cos x\text{ is not even }\\
+			\text{defined in }\left(\frac{\pi}{2},\pi\right)\text{ because }\\
+			\cos x\lt 0\text{ when }x\in\left(\frac{\pi}{2},\pi\right).
+			</tex>
+			<tex correct="false">
+			\text{Yes, sure. Why not?} \\
+			\text{Its in textbook, right?}
+			</tex>
+			<reason>
+			\log x \text{ makes sense only if }x\gt 0.\\
+			\therefore \log\cos x\text{ makes sense only when }\cos x\gt 0\\
+			\implies x\in \left(-\frac{\pi}{2},\frac{\pi}{2}\right).
+			</reason>
+		</step>
+			<step>
+				<context>
+				\text{Is the analysis below correct?}
+				</context>
+				<tex correct="true">
+				\dfrac{d}{dx}\log\cos x = \dfrac{1}{\cos x}\cdot\dfrac{d}{dx}\cos x = -\tan x\\
+				\begin{tabular}{ccc}
+				\text{Range}&amp;f'(x)&amp;\text{Conclusion}\\
+				\left(0,\frac{\pi}{2}\right)&amp;\lt 0&amp;\text{strictly decreasing}\\
+				\left(-\frac{\pi}{2},\frac{\pi}{2}\right)&amp;\gt 0&amp;\text{strictly increasing}\\
+				\end{tabular}
+				</tex>
+				<reason>
+				f'(x) = -\tan x\implies f'(x)\gt 0\text{ when }\tan x\lt 0\\
+				\text{(fourth quadrant) and }f'(x)\lt 0\implies\tan x\gt 0\\
+				\text{ (first quadrant)}.
+				</reason>
+			</step>
+</question>

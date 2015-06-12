@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Prove that the function}\\
+			\quad\quad f(x) = x^3-3x^2+3x-100 \\
+			\text{is increasing in }\mathbb{R}.
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{What is the condition for a function}\\
+			\text{to be increasing in an interval?}
+			</context>
+			<tex correct="true">
+			\quad\quad\dfrac{d}{dx}f(x)\geq 0
+			</tex>
+			<tex correct="false">
+			\quad\quad\dfrac{d}{dx}f(x)\gt 0
+			</tex>
+			<reason>
+			\text{An increasing function can have periods where}\\
+			\text{it does not grow, ie. }f'(x) = 0.\text{At other}\\
+			\text{times, it will grow }-f'(x)\gt 0.\text{Hence, }f'(x)\geq 0.
+			</reason>
+		</step>
+			<step>
+				<context>
+				\text{Is the analysis below correct?}
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  f(x)&amp;= x^3-3x^2+3x-100 \\
+				  \implies\dfrac{d}{dx}f(x)&amp;= 3x^2 -6x + 3 = 3\cdot(x-1)^2 \\
+				  &amp;\geq 0\text{ for all }x\in\mathbb{R}
+				\end{align}
+				\\ \text{Hence, }f(x)\text{ is increasing in all of }\mathbb{R}.
+				</tex>
+				<reason>
+				(x-1)^2\text{ can only be }\geq 0 \text{ and hence }\dfrac{d}{dx}f(x)\geq 0.\\
+				\text{Therefore, }f(x)\text{ can only increase.}
+				</reason>
+			</step>
+</question>
