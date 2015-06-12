@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Prove that the function }\\
+			\quad f(x) = \log\sin x \\
+			\text{is strictly increasing on }\left(0,\frac{\pi}{2}\right)\\
+			\text{and strictly decreasing on }\left(\frac{\pi}{2},\pi\right)
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{Is }\log\sin x\text{ defined over all of }(0,2\pi)?
+			</context>
+			<tex correct="true">
+			\quad\text{No. Only over }(0,\pi)
+			</tex>
+			<tex correct="false">
+			\quad\text{Yes. Over all of } (0,2\pi)
+			</tex>
+			<reason>
+			\log x \text{ makes sense only if }x\gt 0.\\
+			\therefore \log\sin x\text{ makes sense only when }\sin x\gt 0\implies x\in (0,\pi).
+			</reason>
+		</step>
+			<step>
+				<context>
+				\text{Is the analysis below correct?}
+				</context>
+				<tex correct="true">
+				\dfrac{d}{dx}\log\sin x = \dfrac{1}{\sin x}\cdot\dfrac{d}{dx}\sin x = \cot x\\
+				\begin{tabular}{ccc}
+				\text{Range}&amp;f'(x)&amp;\text{Conclusion}\\
+				\left(0,\frac{\pi}{2}\right)&amp;\gt 0&amp;\text{strictly increasing}\\
+				\left(\frac{\pi}{2},\pi\right)&amp;\lt 0&amp;\text{strictly decreasing}\\
+				\end{tabular}
+				</tex>
+				<reason>
+				f'(x) = \cot x.\text{ And }\cot \gt 0 \text{ in the first quadrant}\\
+				\text{and }\lt 0\text{ in the second quadrant.}
+				</reason>
+			</step>
+</question>

@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Let I be any interval disjoint from }\left[-1,1\right].\\
+			\text{Prove that the function }f(x)=x+\frac{1}{x}\text{ is }\\
+			\text{strictly increasing in I.}
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{If I is disjoint from }\left[-1,1\right],\text{ then}\\
+			\text{what does that tell you?}
+			</context>
+			<tex correct="true">
+			\text{That I lies totally outside }\left[-1,1\right]
+			</tex>
+			<tex correct="false">
+			\text{That I lies totally within }\left[-1,1\right]
+			</tex>
+			<reason>
+			\text{If I is disjoint from }\left[-1,1\right],\text{ then }\\
+			\text{they share no elements together. Mathematically,}\\
+			a\in I\implies a\notin\left[-1,1\right]
+			</reason>
+		</step>
+			<step>
+				<context>
+				\text{Is the following analysis correct?}
+				</context>
+				<tex correct="true">
+				\text{For }f(x)\text{ to be strictly increasing}\\
+				\begin{align}
+				  \dfrac{d}{dx}f(x)&amp;=\dfrac{d}{dx}\left(x+\frac{1}{x}\right)\gt 0\\
+				  \implies 1-\frac{1}{x^2}&amp;\gt 0\implies\frac{1}{x^2}\gt 1\\
+				  \implies x^2&amp;\gt 1\implies (x-1)\cdot (x+1)\gt 0\\
+				  \implies x\gt 1&amp;\text{ or }x\lt -1\implies x\notin\left[-1,1\right]
+				\end{align}
+				</tex>
+				<tex correct="false">
+				\begin{align}
+				  \dfrac{d}{dx}f(x)&amp;=\dfrac{d}{dx}\left(x+\frac{1}{x}\right)\gt 0\\
+				  \implies 1-\frac{1}{x^2}&amp;\gt 0\implies\frac{1}{x^2}\gt 1\\
+				  \implies x^2&amp;\gt 1\implies x\gt 1\implies x\notin\left[-1,1\right]
+				\end{align}
+				</tex>
+				<reason>
+				\text{Do not forget }x\lt 0.\\
+				x^2\gt 1\implies (x^2-1)\gt 0\\ 
+				\implies (x-1)\cdot(x+1)\gt 0\implies x\lt -1\text{ or }x\gt 1.
+				</reason>
+			</step>
+</question>

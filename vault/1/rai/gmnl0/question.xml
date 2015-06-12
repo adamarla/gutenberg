@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Find the least value of N such that the}\\
+			\text{function }f(x) = x^2 + Nx + 1\text{ is strictly}\\
+			\text{increasing on (1,2).}
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{Which of the following would be true}\\
+			\text{for the above condition to be met?}
+			</context>
+			<tex correct="true">
+			\quad\dfrac{d}{dx}f(x) = 2x + N \gt 0, x\in \left(1,2\right)
+			</tex>
+			<tex correct="false">
+			\quad\dfrac{d}{dx}f(x) = 2x + N \gt 0, x\in\mathbb{R}
+			</tex>
+			<reason>
+			f(x)\text{ needs to be strictly increasing only}\\
+			\text{over }\left(1,2\right) - \text{not }\mathbb{R}.
+			</reason>
+		</step>
+			<step>
+				<context>
+				\text{Which of the following analysis is correct?}
+				</context>
+				<tex correct="true">
+				\begin{tabular}{cccc}
+				x&amp;f'(x)\gt 0&amp;\text{Condition} \\
+				1&amp;2+N\gt 0&amp;N\gt -2\\
+				2&amp;4+N\gt 0&amp;N\gt -4
+				\end{tabular}
+				\\ \text{Only }N\gt -2\text{ satisfies both conditions.}\\
+				\text{Hence, minimum N = -2.}
+				</tex>
+				<tex correct="false">
+				\begin{tabular}{cccc}
+				x&amp;f'(x)\gt 0&amp;\text{Condition} \\
+				1&amp;2+N\gt 0&amp;N\gt -2\\
+				2&amp;4+N\gt 0&amp;N\gt -4
+				\end{tabular}
+				\\ \text{As }-4\lt -2, \text{minimum }N = -4.
+				</tex>
+				<reason>
+				\text{The same N must satisfy conditions for an}\\
+				\text{increasing function at x=1 and x=2. Hence,}\\
+				\text{pick the stricter of the two conditions - }N\gt -2.
+				</reason>
+			</step>
+				<choices>
+					<tex>0</tex>
+					<tex>-4</tex>
+					<tex correct='true'>-2</tex>
+					<tex>4</tex>
+				</choices>
+</question>
