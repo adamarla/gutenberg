@@ -1,0 +1,140 @@
+<?xml version="1.0"?>
+<svg width="766" height="411" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" class="main-svg">
+ <defs>
+  <g class="clips" id="svg_2">
+   <clipPath class="axesclip" id="clip48900fx">
+    <rect x="0" y="0" width="766" height="411" id="svg_3"/>
+   </clipPath>
+   <clipPath class="axesclip" id="clip48900fy">
+    <rect x="0" y="0" width="766" height="411" id="svg_4"/>
+   </clipPath>
+   <clipPath class="axesclip" id="clip48900fxy">
+    <rect x="0" y="0" width="766" height="411" id="svg_5"/>
+   </clipPath>
+  </g>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <rect x="0" y="0" width="766" height="411" fill-opacity="0" fill="rgb(0, 0, 0)" id="svg_6"/>
+  <g class="draglayer" id="svg_7">
+   <g id="svg_8"/>
+  </g>
+  <g class="subplot xy" id="svg_9">
+   <rect y="-2" width="766" height="411" fill-opacity="0" fill="rgb(0, 0, 0)" stroke-width="0px" id="svg_10"/>
+   <g id="svg_11">
+    <path class="xgrid crisp" d="m111.239998,-2l0,411" stroke-width="1px" stroke="rgb(238, 238, 238)" id="svg_12"/>
+    <path class="xgrid crisp" d="m247.119995,-2l0,411" stroke-width="1px" stroke="rgb(238, 238, 238)" id="svg_13"/>
+    <path class="xgrid crisp" d="m518.880005,-2l0,411" stroke-width="1px" stroke="rgb(238, 238, 238)" id="svg_14"/>
+    <path class="xgrid crisp" d="m654.76001,-2l0,411" stroke-width="1px" stroke="rgb(238, 238, 238)" id="svg_15"/>
+    <path class="ygrid crisp" d="m0,306.670013l766,0" stroke-width="1px" stroke="rgb(238, 238, 238)" id="svg_16"/>
+    <path class="ygrid crisp" d="m0,229.889999l766,0" stroke-width="1px" stroke="rgb(238, 238, 238)" id="svg_17"/>
+    <path class="ygrid crisp" d="m0,153.110001l766,0" stroke-width="1px" stroke="rgb(238, 238, 238)" id="svg_18"/>
+    <path class="ygrid crisp" d="m0,76.339996l766,0" stroke-width="1px" stroke="rgb(238, 238, 238)" id="svg_19"/>
+    <path class="ygrid crisp" d="m0,-0.44l766,0" stroke-width="1px" stroke="rgb(238, 238, 238)" id="svg_20"/>
+   </g>
+   <g id="svg_21"/>
+   <g id="svg_22">
+    <path class="xzl zl crisp" d="m383,-2l0,411" stroke-width="1px" stroke="rgb(68, 68, 68)" id="svg_23"/>
+    <path class="yzl zl crisp" d="m0,383.450012l766,0" stroke-width="1px" stroke="rgb(68, 68, 68)" id="svg_24"/>
+   </g>
+   <g id="svg_25"/>
+   <g y="-2" x="1" id="svg_1">
+    <svg preserveAspectRatio="none" x="2" y="-2" width="766" height="411" viewBox="0 0 766 411" id="svg_93">
+     <g class="maplayer" id="svg_123"/>
+     <g class="barlayer" id="svg_122"/>
+     <g class="errorlayer" id="svg_120">
+      <g class="errorbars" id="svg_121"/>
+     </g>
+     <g class="boxlayer" id="svg_119"/>
+     <g class="scatterlayer" id="svg_94">
+      <g class="trace scatter" stroke-miterlimit="2" id="svg_95">
+       <path class="js-line" d="m43.299999,25.549999l33.969997,68.379993l33.970001,61.180008l33.970009,53.990005l33.969986,46.789993l33.970001,39.590012l33.970001,32.389984l33.970001,25.190002l33.970001,17.98999l33.970001,10.800018l33.970001,3.600006l33.970001,-3.600006l33.970001,-10.800018l33.970001,-17.98999l33.970001,-25.190002l33.969971,-32.389984l33.970032,-39.590012l33.969971,-46.789993l33.970032,-53.990005l33.969971,-61.180008l33.970032,-68.379993" stroke-width="2px" stroke="rgb(255, 127, 14)" fill="none" id="svg_118"/>
+       <g class="points" id="svg_96">
+        <path class="point" d="m47.299999,25.549999a4,4 0 1 1 -4,-4a4,4 0 0 1 4,4z" fill="rgb(255, 127, 14)" stroke-width="0px" id="svg_117"/>
+        <path class="point" d="m81.269997,93.93a4,4 0 1 1 -4,-4a4,4 0 0 1 4,4z" fill="rgb(255, 127, 14)" stroke-width="0px" id="svg_116"/>
+        <path class="point" d="m115.239998,155.110001a4,4 0 1 1 -4,-4a4,4 0 0 1 4,4z" fill="rgb(255, 127, 14)" stroke-width="0px" id="svg_115"/>
+        <path class="point" d="m149.210007,209.100006a4,4 0 1 1 -4,-4a4,4 0 0 1 4,4z" fill="rgb(255, 127, 14)" stroke-width="0px" id="svg_114"/>
+        <path class="point" d="m183.179993,255.889999a4,4 0 1 1 -4,-4a4,4 0 0 1 4,4z" fill="rgb(255, 127, 14)" stroke-width="0px" id="svg_113"/>
+        <path class="point" d="m217.149994,295.480011a4,4 0 1 1 -4,-4a4,4 0 0 1 4,4z" fill="rgb(255, 127, 14)" stroke-width="0px" id="svg_112"/>
+        <path class="point" d="m251.119995,327.869995a4,4 0 1 1 -4,-4a4,4 0 0 1 4,4z" fill="rgb(255, 127, 14)" stroke-width="0px" id="svg_111"/>
+        <path class="point" d="m285.089996,353.059998a4,4 0 1 1 -4,-4a4,4 0 0 1 4,4z" fill="rgb(255, 127, 14)" stroke-width="0px" id="svg_110"/>
+        <path class="point" d="m319.059998,371.049988a4,4 0 1 1 -4,-4a4,4 0 0 1 4,4z" fill="rgb(255, 127, 14)" stroke-width="0px" id="svg_109"/>
+        <path class="point" d="m353.029999,381.850006a4,4 0 1 1 -4,-4a4,4 0 0 1 4,4z" fill="rgb(255, 127, 14)" stroke-width="0px" id="svg_108"/>
+        <path class="point" d="m387,385.450012a4,4 0 1 1 -4,-4a4,4 0 0 1 4,4z" fill="rgb(255, 127, 14)" stroke-width="0px" id="svg_107"/>
+        <path class="point" d="m420.970001,381.850006a4,4 0 1 1 -4,-4a4,4 0 0 1 4,4z" fill="rgb(255, 127, 14)" stroke-width="0px" id="svg_106"/>
+        <path class="point" d="m454.940002,371.049988a4,4 0 1 1 -4,-4a4,4 0 0 1 4,4z" fill="rgb(255, 127, 14)" stroke-width="0px" id="svg_105"/>
+        <path class="point" d="m488.910004,353.059998a4,4 0 1 1 -4,-4a4,4 0 0 1 4,4z" fill="rgb(255, 127, 14)" stroke-width="0px" id="svg_104"/>
+        <path class="point" d="m522.880005,327.869995a4,4 0 1 1 -4,-4a4,4 0 0 1 4,4z" fill="rgb(255, 127, 14)" stroke-width="0px" id="svg_103"/>
+        <path class="point" d="m556.849976,295.480011a4,4 0 1 1 -4,-4a4,4 0 0 1 4,4z" fill="rgb(255, 127, 14)" stroke-width="0px" id="svg_102"/>
+        <path class="point" d="m590.820007,255.889999a4,4 0 1 1 -4,-4a4,4 0 0 1 4,4z" fill="rgb(255, 127, 14)" stroke-width="0px" id="svg_101"/>
+        <path class="point" d="m624.789978,209.100006a4,4 0 1 1 -4,-4a4,4 0 0 1 4,4z" fill="rgb(255, 127, 14)" stroke-width="0px" id="svg_100"/>
+        <path class="point" d="m658.76001,155.110001a4,4 0 1 1 -4,-4a4,4 0 0 1 4,4z" fill="rgb(255, 127, 14)" stroke-width="0px" id="svg_99"/>
+        <path class="point" d="m692.72998,93.93a4,4 0 1 1 -4,-4a4,4 0 0 1 4,4z" fill="rgb(255, 127, 14)" stroke-width="0px" id="svg_98"/>
+        <path class="point" d="m726.700012,25.549999a4,4 0 1 1 -4,-4a4,4 0 0 1 4,4z" fill="rgb(255, 127, 14)" stroke-width="0px" id="svg_97"/>
+       </g>
+      </g>
+     </g>
+    </svg>
+   </g>
+   <g id="svg_57"/>
+   <path class="crisp" d="m-1,409.5l768,0" stroke-opacity="0" stroke="rgb(0, 0, 0)" stroke-width="1px" fill="none" id="svg_58"/>
+   <path class="crisp" d="m-0.5,-3l0,412" stroke-width="1px" stroke-opacity="0" stroke="rgb(0, 0, 0)" fill="none" id="svg_59"/>
+   <g id="svg_60"/>
+   <g id="svg_61">
+    <g class="xtick" id="svg_62">
+     <text text-anchor="middle" x="111.239998" y="423" fill="rgb(68, 68, 68)" font-size="12px" font-family="&#x27;Open sans', verdana, arial, sans-serif" id="svg_63">−2</text>
+    </g>
+    <g class="xtick" id="svg_64">
+     <text text-anchor="middle" x="247.119995" y="423" fill="rgb(68, 68, 68)" font-size="12px" font-family="&#x27;Open sans', verdana, arial, sans-serif" id="svg_65">−1</text>
+    </g>
+    <g class="xtick" id="svg_66">
+     <text text-anchor="middle" x="383" y="423" fill="rgb(68, 68, 68)" font-size="12px" font-family="&#x27;Open sans', verdana, arial, sans-serif" id="svg_67">0</text>
+    </g>
+    <g class="xtick" id="svg_68">
+     <text text-anchor="middle" x="518.880005" y="423" fill="rgb(68, 68, 68)" font-size="12px" font-family="&#x27;Open sans', verdana, arial, sans-serif" id="svg_69">1</text>
+    </g>
+    <g class="xtick" id="svg_70">
+     <text text-anchor="middle" x="654.76001" y="423" fill="rgb(68, 68, 68)" font-size="12px" font-family="&#x27;Open sans', verdana, arial, sans-serif" id="svg_71">2</text>
+    </g>
+   </g>
+   <g id="svg_72">
+    <g class="ytick" id="svg_73">
+     <text x="-2" text-anchor="end" y="389.450012" fill="rgb(68, 68, 68)" font-size="12px" font-family="&#x27;Open sans', verdana, arial, sans-serif" id="svg_74">0</text>
+    </g>
+    <g class="ytick" id="svg_75">
+     <text x="-2" text-anchor="end" y="312.670013" fill="rgb(68, 68, 68)" font-size="12px" font-family="&#x27;Open sans', verdana, arial, sans-serif" id="svg_76">2</text>
+    </g>
+    <g class="ytick" id="svg_77">
+     <text x="-2" text-anchor="end" y="235.889999" fill="rgb(68, 68, 68)" font-size="12px" font-family="&#x27;Open sans', verdana, arial, sans-serif" id="svg_78">4</text>
+    </g>
+    <g class="ytick" id="svg_79">
+     <text x="-2" text-anchor="end" y="159.110001" fill="rgb(68, 68, 68)" font-size="12px" font-family="&#x27;Open sans', verdana, arial, sans-serif" id="svg_80">6</text>
+    </g>
+    <g class="ytick" id="svg_81">
+     <text x="-2" text-anchor="end" y="82.339996" fill="rgb(68, 68, 68)" font-size="12px" font-family="&#x27;Open sans', verdana, arial, sans-serif" id="svg_82">8</text>
+    </g>
+    <g class="ytick" id="svg_83">
+     <text x="-2" text-anchor="end" y="5.56" fill="rgb(68, 68, 68)" font-size="12px" font-family="&#x27;Open sans', verdana, arial, sans-serif" id="svg_84">10</text>
+    </g>
+   </g>
+   <g id="svg_85"/>
+  </g>
+  <g class="shapelayer" id="svg_86"/>
+  <g class="glimages" id="svg_87"/>
+  <text class="js-plot-link-container" y="402" text-anchor="end" x="759" fill="rgb(68, 68, 68)" font-size="12px" font-family="&#x27;Open Sans', Arial, sans-serif" id="svg_88"/>
+  <g class="infolayer" id="svg_89">
+   <g class="g-gtitle" id="svg_90"/>
+   <g class="g-xtitle" id="svg_91"/>
+   <g class="g-ytitle" id="svg_92"/>
+  </g>
+  <line id="svg_124" y2="122" x2="719" y1="387" x1="468" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="2" stroke="#666666" fill="none"/>
+  <text stroke="#666666" transform="matrix(1.23702 0 0 1.2916 -162.258 -64.4328)" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" id="svg_126" y="252.655174" x="673.195652" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">Tangent</text>
+  <text stroke="#666666" transform="matrix(1.21053 0 0 1.14815 -87.579 -22.0741)" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" id="svg_127" y="162.290331" x="491.173854" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">Normal</text>
+  <line stroke="#666666" id="svg_130" y2="242" x2="543" y1="242" x1="544" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="2" fill="none"/>
+  <line id="svg_131" y2="397" x2="553" y1="173" x1="555" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="2" stroke="#666666" fill="none"/>
+  <line id="svg_132" y2="169" x2="489" y1="169" x1="490" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="2" stroke="#666666" fill="none"/>
+  <line id="svg_133" y2="164" x2="521" y1="164" x1="522" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="2" stroke="#666666" fill="none"/>
+  <line id="svg_134" y2="108" x2="549" y1="107" x1="549" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="2" stroke="#666666" fill="none"/>
+  <line id="svg_135" y2="166" x2="460" y1="166" x1="461" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="2" stroke="#666666" fill="none"/>
+ </g>
+</svg>
