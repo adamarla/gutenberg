@@ -35,4 +35,10 @@
 				\text{The slope of the tangent is simply }\frac{dy}{dx}.
 				</reason>
 			</step>
+				<choices>
+					<tex>924</tex>
+					<tex>768</tex>
+					<tex>498</tex>
+					<tex correct='true'>764</tex>
+				</choices>
 </question>
