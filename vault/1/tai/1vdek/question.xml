@@ -3,8 +3,7 @@
 	<statement>
 		<tex>
 			\text{Find the slope of the tangent to the curve}\\
-			\quad y = 3x^4 - 4x \\
-			\text{at } x = 4.
+			\quad y = 3x^4 - 4x\text{ at } x = 4.
 		</tex>
 	</statement>
 		<step>

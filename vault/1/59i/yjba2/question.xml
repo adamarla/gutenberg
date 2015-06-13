@@ -12,7 +12,7 @@
 			\text{In which of the two graphs are points}\\
 			\text{A and B likely to have tangents with slope -1?}
 			</context>
-			<image correct='true'>correct.svg</image>
+			<image correct='true'>right.svg</image>
 			<image correct='false'>wrong.svg</image>
 			<reason>
 			\text{A line with slope -1 would go from the}\\
