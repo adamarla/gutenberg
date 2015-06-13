@@ -1,76 +1,68 @@
-<?xml version="1.0" encoding="utf-8"?>
-    <question xmlns="http://www.gradians.com" >
-        <statement>
-            <tex>
-            \text{A bag contains 5 red balls and some blue balls.}\newline
-            \text{If the probability of drawing a blue ball is }\newline
-            \text{double that of drawing a red ball, then how }\newline
-            \text{many blue balls are there in the bag?}
-            </tex>
-        </statement>
-        <step>
-            <context>
-                \text{If }x=\text{ number of blue balls, then }\newline
-                \text{how many balls are there in total?}
-            </context>
-            <tex correct="true">
-                \text{Total number of balls = }N = x + 5
-            </tex>
-            <tex correct="false">
-                \text{Total number of balls = }N = 5x
-            </tex>
-            <reason>
-                \text{With }x\text{ blue balls and 5 red balls, the }\newline
-                \text{total number of balls = } x + 5.
-            </reason>
-        </step>
-
-        <step swipe="false">
-            <context>
-                \text{What are the probabilities of drawing a blue }\newline
-                \text{and a red ball?}
-            </context>
-            <tex correct="true">
-                \text{If P(B) = probability of drawing a blue ball and }\newline
-                \text{P(R) = probability of drawing a red ball, then }\newline
-                \qquad P(B) = \dfrac{x}{x+5}\text{ and }
-                 P(R) = \dfrac{5}{x+5}
-            </tex>
-            <tex correct="false">
-                \text{If P(B) = probability of drawing a blue ball and }\newline
-                \text{P(R) = probability of drawing a red ball, then }\newline
-                \qquad P(B) = \dfrac{5}{x+5}\text{ and }
-                 P(R) = \dfrac{x}{x+5}
-            </tex>
-            <reason>
-                \text{With }x\text{ blue balls, }P(B) = \frac{x}{x+5}. \\
-                \text{Similarly, with 5 red balls, }P(R) = \frac{5}{x+5}
-            </reason>
-
-        </step>
-        <step swipe="false">
-            <context>
-                \text{Is the following correct?}
-            </context>
-            <tex correct="true">
-                P(B) = 2\times P(R)\newline
-                \implies\dfrac{x}{x+5} = 2\cdot\dfrac{5}{x+5}\implies x = 10.\newline
-                \text{Hence, there are 10 blue balls in the bag}
-            </tex>
-            <tex correct="false">
-                2\cdot P(B) = P(R)\newline
-                \implies 2\cdot\dfrac{x}{x+5} = \dfrac{5}{x+5}\implies x=\dfrac{5}{2}.\newline
-                \text{Hence, there are 2.5 blue balls in the bag}
-            </tex>
-            <reason>
-                \text{The question says }P(B) = 2\times P(R).
-            </reason>
-        </step>
-        <choices>
-            <tex>8</tex>
-            <tex>12</tex>
-            <tex>6</tex>
-            <tex correct="true">10</tex>
-        </choices>
-
-    </question>
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Find the point on the curve}\\
+			\quad y = x^3 -11x + 5 \\
+			\text{at which the tangent is }y=x-11.
+		</tex>
+	</statement>
+		<step swipe='false'>
+			<context>
+			\text{If }y=x-11\text{ is a tangent, then}\frac{dy}{dx} = ?
+			</context>
+			<tex correct="true">
+			\quad\dfrac{dy}{dx} = 1
+			</tex>
+			<tex correct="false">
+			\quad\dfrac{dy}{dx} = -11
+			</tex>
+			<reason>
+			\text{Compare }y = x-11\text{ with the general equation}\\
+			\text{of a line, }y = mx+c.\text{ This will give }m=1.
+			</reason>
+		</step>
+			<step>
+				<context>
+				\text{Is the analysis below complete and correct?}
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  \dfrac{dy}{dx}&amp;= \dfrac{d}{dx}(x^3-11x+5) = 1\\
+				  \implies 3x^2-11&amp;= 1\implies x^2 = 4\text{ or }x=\pm 2
+				\end{align}
+				\\ \text{The two tangents with slope 1 are therefore,}\\
+				\begin{tabular}{cccc}
+				x&amp; y&amp; m&amp; \text{Line} \\
+				-2&amp; 19&amp; 1&amp;\frac{y+2}{x-19}=1\implies y=x-21\\
+				2&amp; -9&amp; 1&amp;\frac{y+9}{x-2}=1\implies y=x-11
+				\end{tabular}
+				\\ \text{Hence, the required point is }(2,-9).
+				</tex>
+				
+				<tex correct="false">
+				\begin{align}
+				  \dfrac{dy}{dx}&amp;= \dfrac{d}{dx}(x^3-11x+5) = 1\\
+				  \implies 3x^2-11&amp;= 1\implies x^2 = 4\text{ or }x=2
+				\end{align}
+				\\ \text{The tangent with slope 1 is therefore,}\\
+				\begin{tabular}{cccc}
+				x&amp; y&amp; m&amp; \text{Line} \\
+				2&amp; -9&amp; 1&amp;\frac{y+9}{x-2}=1\implies y=x-11
+				\end{tabular}
+				\\ \text{Hence, the required point is }(2,-9).
+				</tex>
+				
+				<reason>
+				\text{Do not ignore x=-2 as a possibility. There is no}\\
+				\text{good reason to ignore it until much later.}
+				</reason>
+			</step>
+			
+				<choices>
+					<tex>\left(1,-5\right)</tex>
+					<tex>\left(-2,19\right)</tex>
+					<tex correct='true'>\left(2,-9\right)</tex>
+					<tex>\left(-2,19\right)\text{ and }\left(2,-9\right)</tex>
+				</choices>
+</question>

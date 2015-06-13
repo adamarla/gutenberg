@@ -1,74 +1,67 @@
-<?xml version="1.0" encoding="utf-8"?>
-<question xmlns="http://www.gradians.com">
-    <statement>
-        <tex>
-            \text{Bill and Paul have just raised a first round of}\newline
-            \text{investment from John for their startup}\newline
-            \text{- Microsoft. John has invested \$200K for a 10%}\newline
-            \text{equity stake. If everyone's equity stake is in proportion}\newline
-            \text{to the money they put in, and if Paul put in \$500K,}\newline
-            \text{then what was Bill's equity stake before}\newline
-            \text{the investment?}
-        </tex>
-    </statement>
-    <step>
-        <context>
-            \text{What is Microsoft's value } (V) \text{ after }\newline
-            \text{the investment?}
-        </context>
-        <tex correct="true">
-            \qquad V = \dfrac{\$200K}{10\%} = \$2\text{ million}
-        </tex>
-        <tex correct="false">
-            \qquad V = \dfrac{\$200K}{10\%}-\$200K = \$1.8\text{ million}
-        </tex>
-        <reason>
-            \text{Once John puts in \$200K, he will get 10% of the firm.}\newline
-            \text{Which means that John believes the value of the firm}\newline
-            \text{after investment - or post-money value - to be \$ 2m.}
-        </reason>
-    </step>
-    <step>
-        <context>
-            \text{How much money had Bill invested?}
-        </context>
-        <tex correct="true">
-            \text{If Paul put in \$500K and John invested \$200K}\newline
-            \text{to take the value of the firm to \$2 million, then}\newline
-            \text{Bill must have invested}\\
-            \qquad B = \$2\text{ mill} -\$200K -\$500K = \$1.3\text{ million.}
-        </tex>
-        <tex correct="false">
-            \text{If Paul put in \$500K, then Bill invested }\\
-            \qquad B = \$ 2\text{ million} - \$500K = \$1.5\text{ million}
-        </tex>
-        <reason>
-            \text{Do not forget the \$200K John invested.}
-        </reason>
-    </step>
-    <step>
-        <context>
-            \text{Does this look right?}
-        </context>
-        <tex correct="true">
-            \text{Bill's equity stake before the investment was }\\
-            \qquad B = \dfrac{\$1.3\text{ mill}}{\$2\text{ mill} - \$200K} = 72.2\%
-        </tex>
-        <tex correct="false">
-            \text{Bill's equity stake before the investment was }\\
-            \qquad B = \dfrac{\$1.3\text{ mill}}{\$2\text{ mill}} = 65\%
-        </tex>
-        <reason>
-            \text{Bill's equity stake before the investment should be}\\
-            \text{calculated using Microsoft's value before the investment.}\\
-            \text{And that value is = }\$2\text{ mill} - \$200K = \$1.8\text{ million}
-        </reason>
-    </step>
-    <choices>
-        <tex>55\%</tex>
-        <tex>65\%</tex>
-        <tex>60\%</tex>
-        <tex correct="true">72.2\%</tex>
-    </choices>
-
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Find the equation of all lines having slope -1}\\
+			\text{that are tangents to the curve}\\
+			\quad y = \dfrac{1}{x-1},x\neq 1.
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{In which of the two graphs are points}\\
+			\text{A and B likely to have tangents with slope -1?}
+			</context>
+			<image correct='true'>correct.svg</image>
+			<image correct='false'>wrong.svg</image>
+			<reason>
+			\text{A line with slope -1 would go from the}\\
+			\text{bottom-right to the top-left corner.}
+			</reason>
+		</step>
+			<step swipe='false'>
+				<context>
+				\text{Is the analysis below complete and correct?}
+				</context>
+				<tex correct="true">
+				\begin{align}
+				\text{Tangent's slope}=\dfrac{dy}{dx}&amp;=-\dfrac{1}{(x-1)^2} \\
+				\therefore\dfrac{dy}{dx}= -1\implies -\dfrac{1}{(x-1)^2}&amp;=-1\\
+				\implies (x-1)^2=-1\implies x-1&amp;=\pm 1\\
+				\implies x&amp;=0,2
+				\end{align}
+				\\ \text{Hence, the tangents are}\\
+				\begin{tabular}{cccc}
+				x&amp; y&amp; m&amp;\text{Line} \\
+				0&amp; -1&amp; -1&amp; \dfrac{y+1}{x}=-1\implies x+y+1=0\\
+				2&amp; 1&amp; -1&amp; \dfrac{y-1}{x-2}=-1\implies x+y-3=0
+				\end{tabular}
+				</tex>
+				
+				<tex correct="false">
+				\begin{align}
+				\text{Tangent's slope}=\dfrac{dy}{dx}&amp;=-\dfrac{1}{(x-1)^2} \\
+				\therefore\dfrac{dy}{dx}= -1\implies -\dfrac{1}{(x-1)^2}&amp;=-1\\
+				\implies (x-1)^2=-1\implies x-1&amp;= 1\\
+				\implies x&amp;=2
+				\end{align}
+				\\ \text{Hence, the tangents are}\\
+				\begin{tabular}{cccc}
+				x&amp; y&amp; m&amp;\text{Line} \\
+				2&amp; 1&amp; -1&amp; \dfrac{y-1}{x-2}=-1\implies x+y-3=0
+				\end{tabular}
+				</tex>
+				
+				<reason>
+				\text{As }(x-1)^2=1\implies x-1=\pm 1,\\
+				\text{ you should get two tangents.}
+				</reason>
+			</step>
+			
+				<choices>
+					<tex>\text{Just }x+y-3=0</tex>
+					<tex>\text{Just }x+y+1=0</tex>
+					<tex correct='true'>x+y+1=0\text{ and }x+y-3=0</tex>
+					<tex>\text{No tangent with slope = -1 exists.}</tex>
+				</choices>
 </question>
