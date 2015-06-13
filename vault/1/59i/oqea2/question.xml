@@ -1,88 +1,79 @@
-<?xml version="1.0" encoding="utf-8"?>
-    <question xmlns="http://www.gradians.com">
-        <statement>
-            <tex>
-                \text{After how many terms will the first negative term}\newline
-                \text{appear in the following arithmetic progression}\newline
-                \qquad 121, 117, 113,\ldots
-            </tex>
-        </statement>
-        <step>
-            <context>
-                \text{What is the common difference }(d)?
-            </context>
-            <tex correct="true">
-                \text{For this progression, }\newline
-                d = 117-121 = 113-117 = -4
-            </tex>
-            <tex correct="false">
-                \text{For this progression, }\newline
-                d = 121-117 = 117-113 = 4
-            </tex>
-            <reason>
-                \text{The terms are decreasing and hence }d\lt 0\newline
-                \text{And more generally, }d = a_{n+1} - a_n \newline
-                \text{where } a_{n+1} = \text{(n+1)-th term and }a_n = \text{n-th term}
-            </reason>
-        </step>
-        <step>
-            <context>
-                \text{What will the n-th term }a_n = ?
-            </context>
-            <tex correct="true">
-                \qquad a_n = a_0 + (n-1)\cdot d = 121 + (n-1)\cdot -4 \newline
-                \quad\implies a_n = 125-4n
-            </tex>
-            <tex correct="false">
-                \qquad a_n = a_0 + n\cdot d = 121 - 4n
-            </tex>
-            <reason>
-                \text{The n-th term of an arithmetic progression is }\newline
-                \quad a_n = a_0 + (n-1)\cdot d,\text{ where }a_0 = \text{first term}
-            </reason>
-        </step>
-        <step swipe="false">
-            <context>
-                \text{What do we need to find?}
-            </context>
-            <tex correct="true">
-                \text{The smallest }n\text{ for which} a_n\lt 0
-            </tex>
-            <tex correct="false">
-                \text{The smallest }n\text{ for which} a_n \gt 0
-            </tex>
-            <reason>
-                \text{As }n\text{ increases, }a_n\text{ decreases.}\newline
-                \text{And at some }n, a_n\lt 0.\text{ We need to find that }n.
-            </reason>
-        </step>
-        <step>
-            <context>
-                \text{Do you agree with the following conclusion?}
-            </context>
-            <tex correct="true">
-                a_n\lt 0\implies 125-4n\lt 0\newline
-                \implies 4n\gt 125\implies n\gt 31.25\newline
-                \text{But as }n\text{ is an integer, the smallest }n\gt 31.25\text{ is } n=32\newline
-                \text{Which means, after 31 terms, the first negative}\newline
-                \text{term will appear}
-            </tex>
-            <tex correct="false">
-                a_n\lt 0\implies 125-4n\lt 0\newline
-                \implies 4n\gt 125\implies n\gt 31.25\newline
-                \text{But as }n\text{ is an integer, }n=31.\newline
-                \text{Which means, after 30 terms, the first negative}\newline
-                \text{term will appear}
-            </tex>
-            <reason>
-                \text{Need to be careful. If }n\gt 31.25\text{ and }n\in\mathbb{Z}\newline
-                \text{then the smallest }n\text{ for which both are true is }n=32.
-            </reason>
-        </step>
-        <choices>
-            <tex correct="true">31</tex>
-            <tex>31.25</tex>
-            <tex>32</tex>
-            <tex>30</tex>
-        </choices>
-    </question>
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Find the slope of the normal to the curve}\\
+			\quad x = 1-a\sin\theta, y = b\cos^2\theta\text{ at }\theta=\frac{\pi}{2}.
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{What do the tangent and normal at}\\
+			\text{a point look like?}
+			</context>
+			<image correct='true'>right.svg</image>
+			<image correct='false'>wrong.svg</image>
+			<reason>
+			\text{The tangent only touches the curve at a point.}\\
+			\text{And the normal is the line }\perp\text{ tangent.}
+			</reason>
+		</step>
+			<step swipe='false'>
+				<context>
+				\text{The slope of the tangent would be}\ldots
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  \dfrac{dy}{dx}&amp;=\dfrac{\frac{dy}{d\theta}}{\frac{dx}{d\theta}}\\
+				  &amp;=\dfrac{2b\cos\theta\cdot(-\sin\theta)}{-a\cdot\cos\theta}\\
+				  &amp;=\dfrac{2b\sin\theta}{a}\implies
+				  \left[\dfrac{dy}{dx}\right]_{\theta=\frac{\pi}{2}}=\dfrac{2b}{a}
+				\end{align}
+				</tex>
+				<tex correct="false">
+				\begin{align}
+				  \dfrac{dy}{d\theta}&amp;= 2b\cdot\cos\theta\cdot(-\sin\theta) \\
+				  \implies\left[\dfrac{dy}{dx}\right]_{\theta=\frac{\pi}{2}}&amp;= 0
+				\end{align}
+				</tex>
+				<reason>
+				\text{The curve is drawn in the x-y plane. Its just}\\
+				\text{that both x and y are expressed in terms of a} \\
+				\text{parameter} -\theta.\text{ The slope is still }\frac{dy}{dx}.
+				</reason>
+			</step>
+				<step>
+					<context>
+					\text{Which means, the slope of the normal is}\ldots ...
+					</context>
+					<tex correct="true">
+					\begin{align}
+					\text{If }m_T &amp;= \text{tangent's slope}\\
+					\text{and }m_N &amp;= \text{normal's slope}\\
+					\text{then }m_T\times m_N &amp;= -1 \\
+					\implies m_N &amp;= -\dfrac{1}{m_T} = -\dfrac{1}{\frac{2b}{a}} = -\frac{a}{2b}
+					\end{align}
+
+					</tex>
+					<tex correct="false">
+					\begin{align}
+					\text{If }m_T &amp;= \text{tangent's slope}\\
+					\text{and }m_N &amp;= \text{normal's slope}\\
+					\text{then }m_T\times m_N &amp;= 1 \\
+					\implies m_N &amp;= \dfrac{1}{m_T} = \dfrac{1}{\frac{2b}{a}} = \frac{a}{2b}
+					\end{align}
+
+					</tex>
+					<reason>
+					\text{This is a standard result} - m_T\times m_N = -1.\\
+					\text{Review if you got it wrong.}
+					</reason>
+				</step>
+				
+					<choices>
+						<tex>\frac{a}{2b}</tex>
+						<tex>\infty </tex>
+						<tex correct='true'>-\frac{a}{2b}</tex>
+						<tex>0</tex>
+					</choices>
+</question>
