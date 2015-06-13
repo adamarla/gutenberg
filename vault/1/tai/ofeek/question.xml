@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Find the slope of the tangent to the curve}\\
+			\quad y = x^3-x+1 \\
+			\text{at the point whose x-coordinate is 2.}
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{Is the following correct?}
+			</context>
+			<tex correct="true">
+			\begin{align}
+			  \dfrac{d}{dx}y&amp;= \dfrac{d}{dx}(x^3-x+1) \\
+			  &amp;= 3x^2 - 1 \\
+			  \implies\left[\dfrac{dy}{dx}\right]_{x=2}&amp;= 3\times 4 - 1 = 11.
+			\end{align}
+			</tex>
+			<reason>
+			\text{Simply differentiate and find value using }x=2.
+			</reason>
+		</step>
+		<choices>
+			<tex>5</tex>
+			<tex>8</tex>
+			<tex correct='true'>11</tex>
+			<tex>14</tex>
+		</choices>
+</question>
