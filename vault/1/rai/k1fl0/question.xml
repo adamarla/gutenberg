@@ -11,11 +11,11 @@
 		<step>
 			<context>
 			\text{In the graph below, is the function strictly}\\
-			\text{increasing between points A and C?}
+			\text{increasing between points O and C?}
 			</context>
-			<image correct='false'>plot.svg</image>
+			<image correct='false'>increasing.svg</image>
 			<reason>
-			f(x)\text{ is increasing between A and C - but not strictly.}\\
+			f(x)\text{ is increasing between O and C - but not strictly.}\\
 			\quad\quad\dfrac{d}{dx}f(x) = 0\text{ between A and B.}\\
 			\text{In a strictly increasing function, }\dfrac{d}{dx}f(x)\gt 0.
 			</reason>
