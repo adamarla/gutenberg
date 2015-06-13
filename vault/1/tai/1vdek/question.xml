@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Find the slope of the tangent to the curve}\\
+			\quad y = 3x^4 - 4x \\
+			\text{at } x = 4.
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{Which of the two graphs correctly shows}\\
+			\text{the tangent at point P} (x=4)?
+			</context>
+			<image correct='true'>right.svg</image>
+			<image correct='false'>wrong.svg</image>
+			<reason>
+			\text{A tangent would only graze the curve at}\\
+			\text{point P - not cut through it.}
+			</reason>
+		</step>
+			<step>
+				<context>
+				\text{Is the following analysis correct?}
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  \text{Slope} = \dfrac{dy}{dx}&amp;= \dfrac{d}{dx}(3x^4-4x)\\
+				  &amp;= 12x^3 - 4 \\
+				  \implies\left[\dfrac{dy}{dx}\right]_{x=4}&amp;= 764.
+				\end{align}
+				</tex>
+
+				<reason>
+				\text{The slope of the tangent is simply }\frac{dy}{dx}.
+				</reason>
+			</step>
+</question>
