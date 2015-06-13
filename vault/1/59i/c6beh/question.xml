@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Find the slope of the normal to the curve}\\
+			\quad x = a\cos^3\theta, y = a\sin^3\theta\text{ at }\theta=\frac{\pi}{4}.
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{What do the tangent and normal at}\\
+			\text{a point look like?}
+			</context>
+			<image correct='true'>right.svg</image>
+			<image correct='false'>wrong.svg</image>
+			<reason>
+			\text{The tangent only touches the curve at a point.}\\
+			\text{And the normal is the line }\perp\text{ tangent.}
+			</reason>
+		</step>
+			<step swipe='false'>
+				<context>
+				\text{The slope of the tangent would be}\ldots
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  \dfrac{dy}{dx}&amp;=\dfrac{\frac{dy}{d\theta}}{\frac{dx}{d\theta}}\\
+				  &amp;= \dfrac{3a\sin^2\theta\cdot\cos\theta}{3a\cos^2\theta\cdot (-\sin\theta)} \\
+				  &amp;= -\tan\theta \\
+				  \implies\left[\dfrac{dy}{dx}\right]_{\theta=\frac{\pi}{4}}&amp;= -1.
+				\end{align}
+				</tex>
+				<tex correct="false">
+				\begin{align}
+				  \dfrac{dy}{d\theta}&amp;= 3a\sin^2\theta\cdot\frac{d}{d\theta}\sin\theta\\
+				  &amp;= 3a\cdot\sin^2\theta\cos\theta \\
+				  \implies\left[\dfrac{dy}{d\theta}\right]_{\theta=\frac{\pi}{4}}&amp;= 
+				  3a\cdot\frac{1}{2}\cdot\frac{1}{\sqrt{2}} = \frac{3a}{2\sqrt{2}}
+				\end{align}
+				</tex>
+				<reason>
+				\text{The curve is drawn in the x-y plane. Its just}\\
+				\text{that both x and y are expressed in terms of a} \\
+				\text{parameter} -\theta.\text{ The slope is still }\frac{dy}{dx}.
+				</reason>
+			</step>
+				<step>
+					<context>
+					\text{Which means, the slope of the normal is}\ldots ...
+					</context>
+					<tex correct="true">
+					\begin{align}
+					\text{If }m_T &amp;= \text{tangent's slope}\\
+					\text{and }m_N &amp;= \text{normal's slope}\\
+					\text{then }m_T\times m_N &amp;= -1 \\
+					\implies m_N &amp;= -\dfrac{1}{m_T} = -\dfrac{1}{-1} = 1.
+					\end{align}
+
+					</tex>
+					<tex correct="false">
+					\begin{align}
+					\text{If }m_T &amp;= \text{tangent's slope}\\
+					\text{and }m_N &amp;= \text{normal's slope}\\
+					\text{then }m_T\times m_N &amp;= 1 \\
+					\implies m_N &amp;= \dfrac{1}{m_T} = \dfrac{1}{-1} = -1.
+					\end{align}
+
+					</tex>
+					<reason>
+					\text{This is a standard result} - m_T\times m_N = -1.\\
+					\text{Review if you got it wrong.}
+					</reason>
+				</step>
+				
+					<choices>
+						<tex correct='true'>1</tex>
+						<tex>-2</tex>
+						<tex>\frac{1}{2}</tex>
+						<tex>-1</tex>
+					</choices>
+</question>
