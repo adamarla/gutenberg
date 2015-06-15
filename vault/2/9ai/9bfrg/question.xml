@@ -1,54 +1,52 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Solve this Linear Programming problem graphically}\\
-\text{Minimise and Maximise } Z=x+2y \\
-\text{subject to the constraints} \\
-x+2y \ge 100,\, 2x-y \le 0,\, 2x+y\le 200;\, x , y \ge 0</tex>
+    <tex>\text{Solve this Linear Programming problem}\\
+\text{graphically. Minimise and maximise }\\
+Z=x+2y \text{ subject to the constraints}\\
+x+2y \ge 100, 2x-y \le 0,\, 2x+y\le 200\\
+\text{and } (x , y) \ge 0</tex>
   </statement>
   <step>
     <context>\text{Does this plot correctly represent the } \\
 \text{feasible region given the constraints?}</context>
     <image correct='true'>1a.svg</image>
     <image>1b.svg</image>
-    <reason>\text{Given the constraints the area would be }\\
-\text{below } 2x+y=200 \text{ but above }x+2y=100 \\
-\text{Further since }2x-y\text{ needs to be negative, }\\
-\text{therefore it would also need to be above }2x-y=0\\
-\text{since that is where y would be greater than 2x}</reason>
+    <reason>y \ge -x/2+50 \implies\text{y above the line}\\
+y\ge 2x \implies\text{y above the line}\\
+y\le -2x+200\implies\text{y below the line}</reason>
   </step>
   <step swipe='false'>
     <context>\text{What is the value of the Minimum} \\
 \text{for the corner points as seen in the graph?}</context>
     <tex correct='true'>\begin{align}
 \text{Corner Points}\qquad &amp;Z=x+2y \\
-(0, 200) \qquad &amp;400 \text{ (Maximum)} \\
+(0, 200) \qquad &amp;400 \rightarrow\text{Maximum} \\
 (0, 50)   \qquad &amp;100 \\
 (20, 40) \qquad &amp;100 \\
 (50, 100) \qquad &amp;250
 \end{align} \\
-\text{Minimum 100 is at (0, 50) and along }x+2y=100</tex>
+\text{Minimum 100 at all points joining}\\ 
+(0, 50) \text{ and } (20, 40)</tex>
     <tex>\begin{align}
 \text{Corner Points}\qquad &amp;Z=x+2y \\
-(0, 200) \qquad &amp;400 \text{ (Maximum)} \\
-(0, 50)   \qquad &amp;100 \text{ (Minimum)} \\
+(0, 200) \qquad &amp;400 \rightarrow\text{Maximum} \\
+(0, 50)   \qquad &amp;100 \rightarrow\text{Minimum} \\
 (20, 40) \qquad &amp;100 \\
 (50, 100) \qquad &amp;250
 \end{align}</tex>
-    <reason>\text{Maximum and Minimum are calculated by }\\
-\text{substituting the correct corner points into the }\\
-\text{objective function } Z=x+2y \\
-\text{Here maximum is at (0, 200) whereas miimum} \\
-\text{is at all points joining (0, 50) and (20, 40)}</reason>
+    <reason>\text{Objective function }x+2y=100 \text{ and}\\
+\text{constraint }x+2y \ge 100 \text{ are colinear and}\\
+\text{through the point of Minimum }(0, 50)</reason>
   </step>
   <choices>
     <tex>\text{Minimum 100 is at } (0, 50) \\
 \text{Maximum 400 is at  }(0, 200)</tex>
     <tex>\text{Minimum 100 is at } (20, 40)\\
 \text{Maximum 400 is at  }(0, 200)</tex>
-    <tex>\text{Minimum 100 is at all points from (0, 50) to (20, 40)}\\
+    <tex>\text{Minimum 100, from (0, 50) to (20, 40)}\\
 \text{Maximum 200 is at  }(0, 200)</tex>
-    <tex correct='true'>\text{Minimum 100 is at all points from (0, 50) to (20, 40)}\\
+    <tex correct='true'>\text{Minimum 100, from (0, 50) to (20, 40)}\\
 \text{Maximum 400 is at  }(0, 200)</tex>
   </choices>
 </question>

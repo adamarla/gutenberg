@@ -25,7 +25,7 @@
 (1.5, 0.5) \qquad &amp;7 \\
 (3, 0) \qquad &amp;9
 \end{align}\\
-\text{Minimum cannot be predicted from this.}</tex>
+\text{Minimum cannot be predicted by this alone.}</tex>
     <tex>\begin{align}
 \text{Corner Points}\qquad &amp;Z=3x+5y \\
 (0, 2) \qquad &amp;10 \\
@@ -38,7 +38,7 @@
   </step>
   <step swipe='false'>
     <context>\text{Does the open half plane created by}\\
-3x+5y\lt 7\text{ overlap with the feasible region.}</context>
+3x+5y\lt 7\text{ overlap with the feasible region?}</context>
     <image correct='true'>3a.svg</image>
     <image>3b.svg</image>
     <reason>\text{Open half plane created by }3x+5y\lt 7 \text{ is}\\

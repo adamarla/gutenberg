@@ -1,20 +1,19 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Solve this Linear Programming problem graphically}\\
-\text{Minimise } Z=x+2y \\
-\text{subject to the constraints} \\
-2x+y \ge 3,\, x+2y \ge 6,\, x ,\, y \ge 0</tex>
+    <tex>\text{Solve this Linear Programming problem}\\
+\text{graphically. Minimise } Z=x+2y \text{ subject}\\
+\text{to the constraints} 2x+y \ge 3,\, x+2y \ge 6\\
+\text{and (x , y)} \ge 0</tex>
   </statement>
   <step>
     <context>\text{Does this plot correctly represent the } \\
 \text{feasible region given the constraints?}</context>
     <image correct='true'>1a.svg</image>
     <image>1b.svg</image>
-    <reason>\text{Given the constraints the area would be }\\
-\text{restricted by the X and Y axes, }\\
-\text{and the area above } 2x+y=3 \text{ and }x+2y=6 \\
-\text{Note inequalities are } \ge\text{ not }\le</reason>
+    <reason>\text{Within the positive X and Y axes, and}\\
+\text{above whichever of the lines has a}\\
+\textbf{greater} \text{ y value for the same x.}</reason>
   </step>
   <step swipe='false'>
     <context>\text{What is the value of the Minimum} \\
@@ -22,22 +21,34 @@
     <tex correct='true'>\begin{align}
 \text{Corner Points}\qquad &amp;Z=x+2y \\
 (0, 3) \qquad &amp;6 \\
-(6, 0) \qquad &amp;6
-\end{align}</tex>
+(6, 0) \qquad &amp;6 
+\end{align}\\
+\text{Minimum cannot be predicted by this alone.}</tex>
     <tex>\begin{align}
 \text{Corner Points}\qquad &amp;Z=x+2y \\
-(0, 3) \qquad &amp;6 \\
-(1.5, 0) \qquad &amp;1.5 \text{ (Minimun)}\\
-(6, 0) \qquad &amp;6
-\end{align}</tex>
-    <reason>\text{Minimum is calculated by substituting}\\
-\text{the correct corner points into the }\\
-\text{objective function } Z=x+2y \\
-\text{Here minimum is at all points joining (0, 3) and (6, 0)}</reason>
+(0, 3) \qquad &amp;6 \leftarrow\text{minimum}\\
+(6, 0) \qquad &amp;6 \leftarrow\text{minimum}
+\end{align}\\
+\text{Minimum is 6 at points (0, 3) and (6, 0).}</tex>
+    <reason>\text{The feasible region is unbounded so we can}\\
+\text{not say for sure that 6 is the minimum}</reason>
+  </step>
+  <step>
+    <context>\text{Does the open half plane created by}\\
+x+2y\lt 6\text{ overlap with the feasible region?}</context>
+    <tex correct='true'>x+2y\lt 6 \text{ does not overlap with the feasible}\\
+\text{region since it includes all points}\textbf{ below}\\
+x+2y=6\text{ which is one of the constraints.}</tex>
+    <tex>x+2y\lt 6 \text{ clearly overlaps with the feasible}\\
+\text{region since it includes all points}\text{ above}\\
+x+2y=6\text{ which is one of the constraints.}</tex>
+    <reason>\text{Inequality of the form }y\lt -x/2+3\\
+\text{only includes y values}\textbf{ less}\\
+\text{than those representing the line.}</reason>
   </step>
   <choices>
     <tex>\text{Minimum } 1.5\text{ is at }(1.5, 0)</tex>
-    <tex correct='true'>\text{Minimum } 6\text{ is at all points from (0, 3) to (6, 0)}</tex>
+    <tex correct='true'>\text{Minimum } 6\text{ all points from (0, 3) to (6, 0)}</tex>
     <tex>\text{Minimum } 6\text{ is at }(0, 3)</tex>
     <tex>\text{Minimum } 6\text{ is at }(6, 0) </tex>
   </choices>
