@@ -1,21 +1,21 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Solve this Linear Programming problem graphically}\\
-\text{Minimise and Maximise } Z=5x+10y \\
-\text{subject to the constraints} \\
-x+2y \le 120,\, x+y \ge 60,\, x-2y\ge 0,\, x ,\, y \ge 0</tex>
+    <tex>\text{Solve this Linear Programming problem}\\
+\text{graphically. Minimise and maximise} \\
+Z=5x+10y\text{ subject to the constraints}\\
+x+2y \le 120, x+y \ge 60, x-2y\ge 0,\\
+\text{and }(x , y) \ge 0.</tex>
   </statement>
   <step>
     <context>\text{Does this plot correctly represent the } \\
 \text{feasible region given the constraints?}</context>
     <image correct='true'>1a.svg</image>
     <image>1b.svg</image>
-    <reason>\text{Given the constraints the area would be }\\
-\text{below } x+2y=120 \text{ but above }x+y=60 \\
-\text{Further since }x-2y\text{ needs to be positive, }\\
-\text{therefore it would also need to be below }x-2y=0\\
-\text{since that is where x would be greater than 2y}</reason>
+    <reason>\text{Within the positive x and y axes and }\\
+\text{below } x+2y=120 \text{ and } x-2y=0\\
+\text{but above }x+y=60 \\
+</reason>
   </step>
   <step swipe='false'>
     <context>\text{What is the value of the Minimum} \\
@@ -23,11 +23,12 @@ x+2y \le 120,\, x+y \ge 60,\, x-2y\ge 0,\, x ,\, y \ge 0</tex>
     <tex correct='true'>\begin{align}
 \text{Corner Points}\qquad &amp;Z=5x+10y \\
 (40, 20) \qquad &amp;400 \\
-(60, 0)   \qquad &amp;300 \text{ (Minimum)} \\
+(60, 0)   \qquad &amp;300 \leftarrow\text{minimum} \\
 (120, 0) \qquad &amp;600 \\
 (60, 40) \qquad &amp;400
 \end{align} \\
-\text{Maximum 600 is at (60, 30) and along }x+2y=120</tex>
+\text{Maximum 600 is at all points joining }\\
+(60, 30) \text{ and } (120, 0)</tex>
     <tex>\begin{align}
 \text{Corner Points}\qquad &amp;Z=5x+10y \\
 (40, 20) \qquad &amp;400 \\
@@ -35,16 +36,16 @@ x+2y \le 120,\, x+y \ge 60,\, x-2y\ge 0,\, x ,\, y \ge 0</tex>
 (120, 0) \qquad &amp;600 \text{ (Maximum)} \\
 (60, 40) \qquad &amp;400
 \end{align}</tex>
-    <reason>\text{Maximum and Minimum are calculated by }\\
-\text{substituting the correct corner points into the }\\
-\text{objective function } Z=x+2y \\
-\text{Here minimum is at (60, 0) whereas maximum} \\
-\text{is at all points joining (60, 30) and (120, 0)}</reason>
+    <reason>\text{Objective function }5x+10y\lt 600 \text{ and}\\
+\text{constraint }x+2y=120\text{ are colinear and}\\
+\text{through point of maximum }(120, 0).</reason>
   </step>
   <choices>
     <tex correct='true'>\text{Minimum 300 is at }(60, 0) \\
-\text{Maximum 600 is at  at all points from (60, 30) to (120, 0)}</tex>
-    <tex>\text{Minimum 300 is at all points from (60, 30) to (120, 0)}\\
+\text{Maximum 600, all points from}\\
+  (60, 30) \text{ to } (120, 0)</tex>
+    <tex>\text{Minimum 300, all points from}\\
+  (60, 30) \text{ to } (120, 0)\\
 \text{Maximum 600 is at }(60, 0)</tex>
     <tex>\text{Minimum 300 is at }(60, 0) \\
 \text{Maximum 600 is at  }(60, 30)</tex>

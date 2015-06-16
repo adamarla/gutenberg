@@ -1,22 +1,22 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Solve this Linear Programming problem graphically}\\
-\text{Maximise } z=x+y \\
-\text{subject to the constraints} \\
-x - y \le -1,\, -x+y \le 0,\, x, y \ge 0</tex>
+    <tex>\text{Solve this Linear Programming problem.}\\
+\text{Maximise } z=x+y \text{subject to the}\\
+\text{constraints }x - y \le -1,\, -x+y \le 0,\\
+\text{and } (x, y) \ge 0</tex>
   </statement>
   <step>
     <context>\text{Does this plot correctly represent the } \\
 \text{feasible region given the constraints?}</context>
     <image correct='true'>1a.svg</image>
     <image>1b.svg</image>
-    <reason>\text{Given the constraints the area would be }\\
-\text{above } -x+y=0 \text{ and below }x-y=-1.
+    <reason>x - y \le -1\implies y\ge x+1\text{ (above the line)}\\
+-x+y \le 0\implies y\le x\text{ (below the line)}
 </reason>
   </step>
   <step swipe='false'>
-    <context>\text{What is the value of the Maximum} \\
+    <context>\text{What is the value of the maximum} \\
 \text{from seeing the graph?}</context>
     <tex correct='true'>\text{No feasible region therefore no maximum}
 </tex>
@@ -25,19 +25,8 @@ x - y \le -1,\, -x+y \le 0,\, x, y \ge 0</tex>
 (0, 1) \qquad &amp;1 \text{ (Maximum)}\\
 (1, 0) \qquad &amp;1 \text{ (Maximum)}
 \end{align}</tex>
-    <reason>\text{Since there is no overlap, therefore there is no }\\
-\text{feasible region and hence no maximum}</reason>
-  </step>
-  <step>
-    <context>\text{What do we need to plot next to determine} \\
-\text{whether a maximum is possible?}</context>
-    <image correct='true'>3a.svg</image>
-    <image>3b.svg</image>
-    <reason>\text{We need to plot }-x+2y\ge 1\text{ because we}\\
-\text{are looking to maximise the objective function}\\
-\text{However since }-x+2y\ge 1\text{ does overlap}\\
-\text{with the feasible region, therefore there is no}\\
-\text{maximum value subject to the given constraints}</reason>
+    <reason>\text{No point on the plot satisfies all the}\\
+\text{constraints.}</reason>
   </step>
   <choices>
     <tex correct='true'>\text{No feasible region therefore no maximum}</tex>
