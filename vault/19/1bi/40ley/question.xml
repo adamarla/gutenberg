@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Using elementary transformations, find the}\\
+\text{inverse of the matrix A, if it exists.}\\
+A=\left[\begin{array}{rrr}
+2 &amp; -3 &amp; 1 \\ 
+2 &amp; 2 &amp; 1 \\
+3 &amp; -2 &amp; -1 \end{array} \right]</tex>
+  </statement>
+  <step>
+    <context>\text{To find }A^{-1}\text{ using column transformation, }\\ 
+\text{express A in terms of A and I, where I is }\\
+\text{the identity matrix?}</context>
+    <tex correct='true'>A = AI</tex>
+    <tex>A = IA</tex>
+    <reason>\text{When using }\textbf{column} \text{ transformation, identity}\\
+\text{matrix must be the }\textbf{second}\text{ multiplier.}</reason>
+  </step>
+  <step>
+    <context>\text{What would the equation look like if you}\\
+\text{apply the following transformation}\\
+C_3\rightarrow C_3 - C_1</context>
+    <tex correct='true'>\left[\begin{array}{rrr}
+ 2 &amp; -3 &amp; 1 \\ 
+2 &amp; 2 &amp; 1\\
+3 &amp; -2 &amp; -1\end{array} \right] =A
+\left[\begin{array}{rrr}
+ 1 &amp; 0 &amp; -1\\ 
+0 &amp; 1&amp; 0\\
+0 &amp; 0 &amp; 1\end{array} \right]</tex>
+    <tex>\left[\begin{array}{rrr}
+ 2 &amp; -3 &amp; 1 \\ 
+2 &amp; 2 &amp; 1\\
+3 &amp; -2 &amp; -1\end{array} \right] = A
+\left[\begin{array}{rrr}
+1 &amp; 0 &amp; 0\\ 
+0 &amp; 1&amp; 0\\
+0 &amp; 0 &amp; 1\end{array} \right]</tex>
+    <reason>\text{Each column transformation needs to be }\\
+\text{applied to LHS and the}\textbf{ second}\text{ matrix in RHS.}</reason>
+  </step>
+  <step>
+    <context>\text{Would the following sequence convert LHS to:}\\
+\left[\begin{array}{rrr}
+ 1 &amp; 0 &amp; 0 \\ 
+1 &amp; 5 &amp; 0 \\
+ -1 &amp; -5 &amp; 5 \end{array} \right]</context>
+    <tex correct='true'>\begin{align}
+C_1\leftrightarrow &amp;C_3 \\
+C_2\rightarrow &amp;C_2 + 3C_1\\
+C_3\rightarrow &amp;C_3 - 2C_1
+\end{align}
+
+</tex>
+    <tex>\begin{align}
+C_3\rightarrow &amp;C_3 - 2C_1\\
+C_1\leftrightarrow &amp;C_3 \\
+C_2\rightarrow &amp;C_2 + 3C_1
+\end{align}
+
+</tex>
+    <reason>\text{The above transformations, only in the}\\
+\text{stated sequence, would result in the}\\
+\text{required conversion.}</reason>
+  </step>
+  <step>
+    <context>\text{Would the following sequence convert }\\
+\text{LHS to I ?}</context>
+    <tex correct='true'>\begin{align}
+C_3\rightarrow &amp; \dfrac{1}{5}C_3 \,\,\&amp;\,
+C_2\rightarrow &amp; \dfrac{1}{5}C_2\\
+C_1\rightarrow &amp;C_1 - C_2\\
+C_2\rightarrow &amp;C_2+C_3
+\end{align}
+
+</tex>
+    <tex>\begin{align}
+C_3\rightarrow &amp; \dfrac{1}{5}C_3 \,\,\&amp;\,
+C_2\rightarrow &amp; \dfrac{1}{5}C_2\\
+C_2\rightarrow &amp;C_2+C_3\\
+C_1\rightarrow &amp;C_1 - C_2
+\end{align}
+
+</tex>
+    <reason>\text{The above transformations, only in the}\\
+\text{stated sequence, would result in }A\rightarrow I</reason>
+  </step>
+  <choices>
+    <tex correct='true'>A^{-1}=\dfrac{1}{5}
+\left[\begin{array}{rrr}
+-2 &amp; 0 &amp; 3 \\ 
+-1 &amp; 1 &amp; 0\\
+2 &amp; 1 &amp; -2 \end{array} \right]</tex>
+    <tex>A^{-1}=
+\left[\begin{array}{rrr}
+-1 &amp; 1 &amp; 0\\
+-2 &amp; 0 &amp; 3 \\ 
+2 &amp; 1 &amp; -2 \end{array} \right]</tex>
+    <tex>A^{-1}=\dfrac{1}{5}
+\left[\begin{array}{rrr}
+-1 &amp; 1 &amp; 0\\
+-2 &amp; 0 &amp; 3 \\ 
+2 &amp; 1 &amp; -2 \end{array} \right]</tex>
+    <tex>A^{-1}\text{ does not exist.}</tex>
+  </choices>
+</question>

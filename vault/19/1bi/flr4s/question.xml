@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Using elementary transformations, find the}\\
+\text{inverse of the matrix A, if it exists.}\\
+A=\left[\begin{array}{rr}
+1 &amp; -1 \\ 
+2 &amp; 3 \end{array} \right]</tex>
+  </statement>
+  <step>
+    <context>\text{To find }A^{-1}\text{ using row transformation, express}\\ 
+\text{A in terms of A and I, where I is identity }\\
+\text{matrix?}</context>
+    <tex correct='true'>A = IA</tex>
+    <tex>A = AI</tex>
+    <reason>\text{When using row transformation, identity}\\
+\text{matrix }\textbf{must}\text{ be the first multiplier.}</reason>
+  </step>
+  <step>
+    <context>\text{What would the equation look like if you}\\
+\text{apply the following transformation}\\
+R_2\rightarrow R_2 - 2R_1</context>
+    <tex correct='true'>\left[\begin{array}{rr}
+ 1 &amp; -1 \\ 
+0 &amp; 5\end{array} \right] =
+\left[\begin{array}{rr}
+ 1 &amp; 0 \\ 
+-2 &amp; 1\end{array} \right]A</tex>
+    <tex>\left[\begin{array}{rr}
+ 1 &amp; -1 \\ 
+0 &amp; 5\end{array} \right] =
+\left[\begin{array}{rr}
+1 &amp; 0 \\ 
+0 &amp; 1\end{array} \right]A</tex>
+    <reason>\text{Each row transformation needs to be applied}\\
+\text{to LHS and the first matrix in RHS.}</reason>
+  </step>
+  <step>
+    <context>\text{Would the following sequence of row}\\
+\text{transformations convert LHS to I?}</context>
+    <tex correct='true'>\begin{align}
+R_3\rightarrow &amp;\dfrac{1}{5} R_3 \\
+R_1\rightarrow &amp;R_1 + R_2
+\end{align}
+
+</tex>
+    <tex>\begin{align}
+R_1\rightarrow &amp;R_1 + R_2\\
+R_3\rightarrow &amp;\dfrac{1}{5} R_3
+\end{align}
+
+</tex>
+    <reason>\text{The above transformations, only in the}\\
+\text{stated sequence would result in }A\rightarrow I</reason>
+  </step>
+  <choices>
+    <tex>A^{-1}=
+2\left[\begin{array}{rr}
+1 &amp; 2 \\ 
+-1 &amp; 3 \end{array} \right]</tex>
+    <tex>A^{-1}\text{ does not exist.}</tex>
+    <tex correct='true'>A^{-1}=
+\dfrac{1}{5}
+\left[\begin{array}{rr}
+3 &amp; 1 \\ 
+-2 &amp; 1 \end{array} \right]</tex>
+    <tex>A^{-1}=
+\left[\begin{array}{rr}
+3 &amp; 1 \\ 
+-2 &amp; 1 \end{array} \right]</tex>
+  </choices>
+</question>

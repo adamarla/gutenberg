@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Matrices A and B will be inverse of each other}\\
+\text{only if}</tex>
+  </statement>
+  <step>
+    <context>\text{What does A = B^{-1} imply?}</context>
+    <tex correct='true'>AB = I</tex>
+    <tex>AB = 0</tex>
+    <reason>A = B^{-1}\implies AB = I 
+</reason>
+  </step>
+  <choices>
+    <tex>AB = BA</tex>
+    <tex>AB = BA = 0</tex>
+    <tex>AB = 0, BA = I</tex>
+    <tex correct='true'>AB = BA = I</tex>
+  </choices>
+</question>
