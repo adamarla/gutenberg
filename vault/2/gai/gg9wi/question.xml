@@ -1,60 +1,59 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Reshma wishes to mix two types of food, P and Q, in}\\
-\text{such a way that the vitamin contents of the mixture}\\
-\text{contain at least 8 units of vitamin A and 11 units of}\\
-\text{vitamin B. Food P costs Rs. 60/kg and food Q costs}\\
-\text{Rs. 80/kg. Food P contains 3 units/kg of vitamin A and}\\
-\text{5 units/kg of vitamin B, while food Q contains 4 units/kg}\\
-\text{of vitamin A and 2 units/kg of vitamin B. Determine the}\\
+    <tex>\text{Reshma wishes to mix two types of food, P}\\
+\text{and Q, in such a way that the vitamin}\\
+\text{contents of the mixture contain at least 8}\\ 
+\text{units of vitamin A and 11 units of vitamin B.}\\ 
+\text{Food P costs Rs. 60/kg and food Q costs}\\
+\text{Rs. 80/kg. Food P contains 3 units/kg of}\\ 
+\text{vitamin A and 5 units/kg of vitamin B, while}\\ 
+\text{food Q contains 4 units/kg of vitamin A and}\\ 
+\text{2 units/kg of vitamin B. Determine the}\\
 \text{minimum cost of the mixture.}</tex>
   </statement>
   <step>
-    <context>\text{If the quantity of P be x(kg) and the quantity of Q}\\
-\text{be y(kg), then what is does the objective function} \\
-\text{of the quantity we want to minimise look like?}</context>
-    <tex correct='true'>\text{If the objective function Total Cost} = C(x, y)  \text{ then,}\\
+    <context>\text{If mix has x(kg) of P and  y(kg) of Q then}\\
+\text{what does the objective function we need}\\
+\text{to minimise look like?}</context>
+    <tex correct='true'>\text{Objective function, C(x, y) = Total Cost }\\
 C = x(kg)\cdot 60(Rs/kg)+y(kg)\cdot 80(Rs/kg)</tex>
-    <tex>\text{If the objective function Total Cost} = C(x, y) \text{ then,}\\
-C = (x(kg)+y(kg))\cdot\dfrac{60+80}{2}(Rs/kg)</tex>
-    <reason>\text{Total Cost is a simply the product of the cost}\\
-\text{per kg of each food type times its weight}</reason>
-  </step>
-  <step>
-    <context>\text{Given the conditions, what would the constraints}\\
-\text{on x and y, the weights of each of the foods, be?}</context>
-    <tex correct='true'>\text{Food must contain 8 units of vitamin A, therefore,}\\
-\qquad x(kg)\cdot 3(units/kg)+y(kg)\cdot 4(units/kg) \ge 8 \\
-\text{Food 11 units of vitamin B, therefore,}\\
-\qquad x(kg)\cdot 5(units/kg)+y(kg)\cdot 2(units/kg) \ge 11
-\text{Quantity of foods cannot be negative}\\
-\qquad x(kg)\ge 0\, y(kg)\ge 0
-</tex>
-    <tex>\text{Food must contain 8 units of vitamin A, therefore,}\\
-\qquad x(kg)/ 3(units/kg)+y(kg)/ 4(units/kg) \ge 8 \\
-\text{Food 11 units of vitamin B, therefore,}\\
-\qquad x(kg)/ 5(units/kg)+y(kg)/ 2(units/kg) \ge 11
-\text{Quantity of foods cannot be negative}\\
-\qquad x(kg)+y(kg)\ge 0
-</tex>
-    <reason>\text{To calculate the quantity of a particular vitamin}\\
-\text{in a food, multiply the weight of the food with the}\\
-\text{stated per unit weight of the vitamin in it}</reason>
-  </step>
-  <step>
-    <context>\text{For the above constraints, what does the plot }\\
-\text{representing the feasible region and its corner }\\
-\text{points look like?}</context>
-    <image correct='true'>3a.svg</image>
-    <image>3b.svg</image>
-    <reason>\text{As per the constraints, the feasible region unbounded,}\\
-\text{above 3x+4y=8 and 5x+2y=11, and restricted }\\
-\text{to the first quadrant}</reason>
+    <tex>\text{Objective function, C(x, y) = Total Cost }\\
+C = \dfrac{x(kg)+y(kg)}{2}\cdot
+  \dfrac{60+80}{2}(Rs/kg)</tex>
+    <reason>\text{Total Cost is the sum of the weighted}\\
+\text{cost of each food type}</reason>
   </step>
   <step swipe='false'>
-    <context>\text{Can we predict the minimum cost (C) based on the }\\
-\text{Corner Points established in the diagram above?}
+    <context>\text{What are the constraints on x and y,}\\
+\text{the weight of each food type?}</context>
+    <tex correct='true'>\text{Vitamin A, 8 unit minimum:}\\
+x(kg)\cdot 3\left(\dfrac{\text{units}}{\text{kg}}\right)+
+y(kg)\cdot 4\left(\dfrac{\text{units}}{\text{kg}}\right) \ge 8 \\
+\text{Vitamin B, 11 unit mininum:}\\
+x(kg)\cdot 5\left(\dfrac{\text{units}}{\text{kg}}\right)+
+y(kg)\cdot 2\left(\dfrac{\text{units}}{\text{kg}}\right) \ge 11 \\
+\text{Units cannot be negative:}\\
+x(kg)\ge 0\, y(kg)\ge 0
+</tex>
+    <tex></tex>
+    <reason>\text{Units of a vitamin in a food equals}\\
+\text{weight of food times per unit weight of}\\
+\text{that vitamin in it.}</reason>
+  </step>
+  <step>
+    <context>\text{For above constraints, what does the plot }\\
+\text{the feasible region and points look like?}</context>
+    <image correct='true'>3a.svg</image>
+    <image>3b.svg</image>
+    <reason>3x+4y=8\implies y\ge -3/4x+2 \\
+5x+2y=11\implies y\ge -5x/2+11/2 \\
+(x, y)\ge 0\implies \text{positive x, y}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Can we predict the minimum cost (C)}\\
+\text{based on the Corner Points established}\\ 
+\text{in the diagram above?}
 </context>
     <tex correct='true'>\begin{align}
 \text{Corner Point} \qquad &amp;C=60x+80y \\
@@ -62,38 +61,34 @@ C = (x(kg)+y(kg))\cdot\dfrac{60+80}{2}(Rs/kg)</tex>
 (2, 0.5) \qquad &amp;160 \\
 (8/3, 0) \qquad &amp;160
 \end{align}\\
-\text{Feasible region is unbounded, therefore }\\
-\text{160 may not be the minimum}</tex>
+\text{Cannot predict minimum based on this.}</tex>
     <tex>\begin{align}
 \text{Corner Point} \qquad &amp;C=60x+80y \\
 (0, 5.5) \qquad &amp;440 \\
-(2, 0.5) \qquad &amp;160 \text{ (Minimum)}\\
-(8/3, 0) \qquad &amp;160 \text{ (Minimum)}
-\end{align}\\
-\text{Since the feasible region is unbounded, therefore}\\
-\text{the minimum is 160}</tex>
-    <reason>\text{When the feasible region is unbounded, we cannot}\\
-\text{establish the minimum (or maximum) for a function}\\
-\text{without checking whether the open-half plane for that}\\
-\text{minimum (or maximum) has an overlap with the }\\
-\text{feasible region}</reason>
+(2, 0.5) \qquad &amp;160 \leftarrow\text{minimum}\\
+(8/3, 0) \qquad &amp;160 \leftarrow\text{minimum}
+\end{align}</tex>
+    <reason>\text{Since feasible region is unbounded,}\\ 
+\text{cannot establish the minimum (or maximum)}\\ 
+\text{based on corner points alone.}</reason>
   </step>
   <step>
-    <context>\text{Does the open half plane }60x+80y\lt 160 \text{or}\\
-3x+4y\lt 8 \text{have an overlap with the feasible region? }</context>
+    <context>\text{Does the open half plane}\\
+60x+80y\lt 160 \equiv 3x+4y\lt 8 \\
+\text{overlap with the feasible region?}</context>
     <image correct='true'>5a.svg</image>
     <image>5b.svg</image>
-    <reason>\text{The open half plane }3x+4y\lt 8\text{ is below the}\\
-\text{line and therefore does not have any overlap}\\
-\text{with the feasible region. Therefore the minimum value }\\
-\text{of Cost function C is 160 }</reason>
+    <reason>3x+4y\lt 8\implies y\lt -3/4x+2.\\
+\text{No overlap with feasible region,}\\
+\text{so established minimum is valid.}</reason>
   </step>
   <choices>
     <tex>\text{There is no minimum for this function}</tex>
-    <tex>\text{Minimum cost}=Rs. 440 \text{ at } (0, 0.5)</tex>
-    <tex correct='true'>\text{Minimum cost}=Rs. 160 \text{ at line segment joining}\\
-(\dfrac{8}{3}, 0) \text{ and } (2, 0.5)</tex>
-    <tex>\text{Minimum cost}=Rs. 120 \text{ at line segment joining}\\
-(\dfrac{8}{3}, 0) \text{ and } (2, 0.5)</tex>
+    <tex>\text{Minimum cost = Rs.440, for 0kg(P)}\\
+\text{and 0.5kg(Q).}</tex>
+    <tex correct='true'>\text{Minimum cost = Rs.160, for a range from} \\
+\dfrac{8}{3}\text{kg(P) and 0kg(Q) to 2kg(P) and 0.5kg(Q).}</tex>
+    <tex>\text{Minimum cost = Rs.120, for a range from} \\
+\dfrac{8}{3}\text{kg(P) and 0kg(Q) to 2kg(P) and 0.5kg(Q).}</tex>
   </choices>
 </question>
