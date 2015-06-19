@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{For what value of }\lambda\text{ is the function} \\
+			f(x) = \begin{cases}
+			  \lambda\cdot(x^2-2x),\, x\leq 0 \\
+			  4x + 1,\, x\gt 0
+			\end{cases} \\
+			\text{continuous at }x = 0? \\
+			\text{What about continuity at }x=1?
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{What is the condition for continuity?}
+			</context>
+			<tex correct="true">
+			\lim_{x\to 0^-}f(x) = \lim_{x\to 0^+}f(x) = f(0)
+			</tex>
+			<tex correct="false">
+			\lim_{x\to 0^-}f(x) = f(0)
+			</tex>
+			<reason>
+			\text{For a function to be continuous at a point, }\\
+			\text{its limits from either side should be equal to}\\
+			\text{the value of the function at that point.}
+			</reason>
+		</step>
+		
+			<step>
+				<context>
+				\text{What are }\lim_{x\to 0^-}f(x)\text{ and }\lim_{x\to 0^+} f(x)?
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  \lim_{x\to 0^-}\lambda\cdot(x^2-2x) &amp;= 0 \\
+				  \lim_{x\to 0^+}(4x+1) &amp;= 1
+				\end{align}
+				</tex>
+				<tex correct="false">
+				\begin{align}
+				  \lim_{x\to 0^-}(4x+1) &amp;= 1 \\
+				  \lim_{x\to 0^+}\lambda\cdot(x^2-2x) &amp;= 0 
+				  
+				\end{align}
+				</tex>
+				<reason>
+				f(x)\text{ is defined differently for }x\lt 0\text{ and }x\gt 0.\\
+				\text{Calculate limits using those definitions.}
+				</reason>
+			</step>
+			
+				<step>
+					<context>
+					\text{Is the following assertion correct?}
+					</context>
+					<tex correct="true">
+					\lim_{x\to 0^-}f(x)f(x) \neq \lim_{x\to 0^+}f(x)\text{ for any }\lambda.\\
+					\text{Hence, no value of }\lambda\text{ possible.}
+					</tex>
+					
+					<reason>
+					\text{The assertion is true. Irrespective of what}\lambda\\
+					\text{is, }\lim_{x\to 0^-}f(x) = 0 \neq \lim_{x\to 0^+}f(x).
+					</reason>
+				</step>
+				
+					<step>
+						<context>
+						\text{And what about }x=1?
+						</context>
+						<tex correct="true">
+						\text{For }x>0\text{ (like x = 1), }f(x) = 4x + 1, \\
+						\text{which is a straight line. Hence, }f(x)\text{ is}\\
+						\text{continuous in the whole domain }(x\gt 0).
+						</tex>
+						
+						<reason>
+						\text{The key is to identify which definition of }f(x)\\
+						\text{applies to which values of }x.
+						</reason>
+					</step>
+</question>  
