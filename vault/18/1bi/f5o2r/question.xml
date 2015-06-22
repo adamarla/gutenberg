@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Examine the continuity of }\\
+ f(x)=\frac{1}{x-5},x\neq 5
+
+\begin{align}
+\end{align}</tex>
+  </statement>
+  <step>
+    <context>\text{Condition for continuity?}	 </context>
+    <tex correct='true'>\lim_{x\to\ c^{-}}f(x)=\lim_{x\to\ c^{+}}f(x)\text{ = value of f(x) at x}</tex>
+    <tex>\lim_{x\to\ c^{-}}f(x)\text{= value of f(x) at c}</tex>
+    <reason>\text{It's necessary that Limit of\\
+f(x) at x either side is equal to the\\
+value of function at x}</reason>
+  </step>
+  <step>
+    <context>\text{For which value of x we will \\
+check the continuity of f(x)?}</context>
+    <tex correct='true'>\text{For any real value c \\
+}</tex>
+    <tex>\text{For x=0\\
+}</tex>
+    <reason>\text{Since, it definded for every real value of x }</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{value of f(x), Left hand limit and right\\
+hand limit of f(x) at x=c. Where c is any real\\
+ number. Are these statements correct?}\\</context>
+    <tex correct='true'>f(c) = \frac{1}{c-5}\\
+
+\text{LHL}\\                  
+\lim_{x\to\ c^{-}}\text{f(x)} = \frac{1}{c-5}\\            
+
+
+\text{RHL}\\                  
+\lim_{x\to\ c^{+}}\text{f(x)} = \frac{1}{c-5}\\            
+</tex>
+    <tex>f(c) = \frac{1}{c-5}\\
+
+\text{LHL}\\                  
+\lim_{x\to\ c^{-}}\text{f(x)} = c-5\\            
+
+
+\text{RHL}\\                  
+\lim_{x\to\ 5^{+}}\text{f(x)} = c+5\\            
+</tex>
+    <reason>\text{For calculating LHL substitute x with x-h}\\
+\text{For calculating RHL substitute x with x+h}\\
+\text{LHL=&gt;}\lim_{h\to\ 0^{-}}\text{f(x-h)}  \text{  RHL=&gt;}\lim_{h\to\ 0^{+}}\text{f(x+h)}\\
+
+
+
+
+
+
+</reason>
+  </step>
+  <choices>
+    <tex>\text{Continuous at just x=5 }</tex>
+    <tex>\text{Discontinuous at just x=5}</tex>
+    <tex correct='true'>\text{Continuous everywhere in its domian }</tex>
+    <tex>\text{Discontinuous everywhere in its domain }</tex>
+  </choices>
+</question>
