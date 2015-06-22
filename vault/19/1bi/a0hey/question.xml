@@ -4,9 +4,9 @@
     <tex>\text{Using elementary transformations, find the}\\
 \text{inverse of the matrix A, if it exists.}\\
 A=\left[\begin{array}{rrr}
-2 &amp; -3 &amp; 1 \\ 
-2 &amp; 2 &amp; 1 \\
-3 &amp; -2 &amp; -1 \end{array} \right]</tex>
+ 2 &amp; 0 &amp; -1 \\ 
+-5 &amp; 1 &amp;  0 \\
+ 0 &amp; 1 &amp;  3 \end{array} \right]</tex>
   </statement>
   <step>
     <context>\text{To find }A^{-1}\text{ using elementary transformation,}\\ 
@@ -23,24 +23,23 @@ A = AI \text{ (when using Row transformation)}</tex>
   </step>
   <step>
     <context>\text{What would the equation look like if you}\\
-\text{apply the following transformation}\\
-C_3\rightarrow C_3 - C_1</context>
+\text{apply }R_2\rightarrow R_2 - 2R_1?</context>
     <tex correct='true'>\left[\begin{array}{rrr}
- 2 &amp; -3 &amp; 1 \\ 
-2 &amp; 2 &amp; 1\\
-3 &amp; -2 &amp; -1\end{array} \right] =A
+2 &amp; 0 &amp; -1 \\ 
+1 &amp; 1 &amp; 2 \\
+0 &amp; 1 &amp; 3\end{array} \right] =
 \left[\begin{array}{rrr}
- 1 &amp; 0 &amp; -1\\ 
-0 &amp; 1&amp; 0\\
-0 &amp; 0 &amp; 1\end{array} \right]</tex>
+1 &amp; 0 &amp; 0\\ 
+-2 &amp; 1&amp; 0\\
+0 &amp; 0 &amp; 1\end{array} \right]A</tex>
     <tex>\left[\begin{array}{rrr}
- 2 &amp; -3 &amp; 1 \\ 
-2 &amp; 2 &amp; 1\\
-3 &amp; -2 &amp; -1\end{array} \right] = A
+2 &amp; 0 &amp; -1 \\ 
+1 &amp; 1 &amp; 2 \\
+0 &amp; 1 &amp; 3\end{array} \right] =
 \left[\begin{array}{rrr}
 1 &amp; 0 &amp; 0\\ 
 0 &amp; 1&amp; 0\\
-0 &amp; 0 &amp; 1\end{array} \right]</tex>
+0 &amp; 0 &amp; 1\end{array} \right]A</tex>
     <reason>\text{Each transformation needs to be applied}\\
 \text{simultaneously to the LHS and the first matrix}\\
 \text{on the RHS.}</reason>
@@ -48,47 +47,47 @@ C_3\rightarrow C_3 - C_1</context>
   <step>
     <context>\text{Does the following transformation convert}\\
 \mathbf{a_{11}}\text{ to }1?</context>
-    <tex correct='true'>C_1\leftrightarrow C_3
+    <tex correct='true'>R_1\leftrightarrow R_2
 
 </tex>
-    <tex>C_1\leftrightarrow C_2
+    <tex>R_1\leftrightarrow R_3
 </tex>
-    <reason>C_1\leftrightarrow C_3\text{ converts \mathbf{a_{11}}\text{ to }1</reason>
+    <reason>R_1\leftrightarrow R_2\text{ converts \mathbf{a_{11}}\text{ to }1</reason>
   </step>
   <step>
     <context>\text{Does the following transformation convert}\\
-\mathbf{a_{12}}\text{ to }0?</context>
-    <tex correct='true'>C_2\rightarrow C_2 + 3C_1</tex>
-    <tex>C_2\rightarrow C_2 + C_1</tex>
-    <reason>C_2\rightarrow C_2 + 3C_1\text{ converts \mathbf{a_{12}}\text{ to }0</reason>
+\mathbf{a_{21}}\text{ to }0?</context>
+    <tex correct='true'>R_2\rightarrow R_2-2R_1</tex>
+    <tex>R_2\rightarrow R_2-R_1</tex>
+    <reason>R_2\rightarrow R_2-2R_1\text{ converts \mathbf{a_{21}}\text{ to }0</reason>
   </step>
   <step>
     <context>\text{Does the following transformation convert}\\
-\mathbf{a_{13}}\text{ to }0?</context>
-    <tex correct='true'>C_3\rightarrow C_3 - 2C_1
+\mathbf{a_{32}}\text{ to }0?</context>
+    <tex correct='true'>R_3\rightarrow R_3+\dfrac{1}{2}R_2
 </tex>
-    <tex>C_3\rightarrow 2C_3 - C_1
-</tex>
-    <reason>C_3\rightarrow C_3 - 2C_1
-\text{ converts \mathbf{a_{13}}\text{ to }0</reason>
+    <tex>R_3\rightarrow R_3-\dfrac{1}{2}R_2</tex>
+    <reason>R_3\rightarrow R_3+\dfrac{1}{2}R_2
+\text{ converts \mathbf{a_{32}}\text{ to }0</reason>
   </step>
   <step swipe='false'>
     <context>\text{Would the following transformation}\\
 \text{convert }
 \left[\begin{array}{rrr}
- 1 &amp; 0 &amp; 0 \\ 
- 1 &amp; 5 &amp; 0 \\
--1 &amp;-5 &amp; 5\end{array} \right]\text{ to }
+ 1 &amp; 1 &amp; 2 \\ 
+ 0 &amp; -2 &amp; -5 \\
+ 0 &amp; 0 &amp; 1/2\end{array} \right]\text{ to }
 \left[\begin{array}{rrr}
  1 &amp; 0 &amp; 0 \\ 
  0 &amp; 1 &amp; 0\\
  0 &amp; 0 &amp; 1\end{array} \right]
 </context>
     <tex correct='true'>\begin{align}
-C_3\rightarrow &amp; \dfrac{1}{5}C_3 \\
-C_2\rightarrow &amp; \dfrac{1}{5}C_2\\
-C_1\rightarrow &amp;C_1 - C_2\\
-C_2\rightarrow &amp;C_2+C_3
+R_3\rightarrow &amp;2R_3\\
+R_2\rightarrow &amp;-\dfrac{1}{2}R_2\\
+R_2\rightarrow &amp;R_2 - \frac{5}{2}R_3\\
+R_1\rightarrow &amp;R_1 - R_2\\
+R_1\rightarrow &amp;R_1 - 2R_3
 \end{align}
 
 </tex>
@@ -97,21 +96,21 @@ C_2\rightarrow &amp;C_2+C_3
 \text{identity matrix on the RHS, it becomes }A^{-1}</reason>
   </step>
   <choices>
-    <tex correct='true'>A^{-1}=\dfrac{1}{5}
-\left[\begin{array}{rrr}
--2 &amp; 0 &amp; 3 \\ 
--1 &amp; 1 &amp; 0\\
-2 &amp; 1 &amp; -2 \end{array} \right]</tex>
+    <tex>A^{-1}\text{ does not exist.}</tex>
     <tex>A^{-1}=
 \left[\begin{array}{rrr}
--1 &amp; 1 &amp; 0\\
--2 &amp; 0 &amp; 3 \\ 
-2 &amp; 1 &amp; -2 \end{array} \right]</tex>
-    <tex>A^{-1}=\dfrac{1}{5}
+13 &amp; -5 &amp; 5 \\ 
+-15 &amp; 6 &amp; -5\\
+5 &amp; -2 &amp; 2 \end{array} \right]</tex>
+    <tex correct='true'>A^{-1}=
 \left[\begin{array}{rrr}
--1 &amp; 1 &amp; 0\\
--2 &amp; 0 &amp; 3 \\ 
-2 &amp; 1 &amp; -2 \end{array} \right]</tex>
-    <tex>A^{-1}\text{ does not exist.}</tex>
+3 &amp; -1 &amp; 1 \\ 
+-15 &amp; 6 &amp; -5\\
+5 &amp; -2 &amp; 2 \end{array} \right]</tex>
+    <tex>A^{-1}=
+\left[\begin{array}{rrr}
+-2 &amp; 1 &amp; 0 \\ 
+-15 &amp; 6 &amp; -5\\
+5 &amp; -2 &amp; 2 \end{array} \right]</tex>
   </choices>
 </question>
