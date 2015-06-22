@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Are the following functions continuous?}\\
+			\begin{tabular}{cc}
+			  f(x) = \sin x + \cos x &amp; g(x) = \sin x-\cos x \\
+			  h(x) = \sin x\cdot \cos x
+			\end{tabular}
+		</tex>
+	</statement>
+	
+		<step>
+			<context>
+			\text{Which of the following is complete and true} \\
+			\text{for some two functions - A(x) and B(x) - that}\\
+			\text{are continuous at x = C?}
+			</context>
+			<tex correct="true">
+			\text{A(x) + B(x) is continuous at x = C} \\
+			\text{A(x) - B(x) is continuous at x = C} \\
+			\text{A(x)\cdot B(x) is continuous at x = C}
+			</tex>
+			<tex correct="false">
+			\text{A(x) + B(x) is continuous at x = C} \\
+			\text{A(x) - B(x) is continuous if } A(x)\neq B(x) \\
+			\text{A(x)\cdot B(x) is continuous if } B(x)\neq 0
+			</tex>
+			<reason>
+			\text{These are standard results for continuous functions.}\\
+			\text{Review if you thought otherwise.}
+			</reason>
+			
+		</step>
+			<step>
+				<context>
+				\text{And therefore, is the following assertion true?}
+				</context>
+				<tex correct="true">
+				\sin x + \cos x \text{ is continuous.}\\
+				\sin x - \cos x \text{ is continuous.} \\
+				\sin x\cdot\cos x\text{ is continuous.}
+				</tex>
+				
+				<reason>
+				\text{Both }\sin x\text{ and }\cos x\text{ are continuous.}\\
+				\text{Hence, it follows from Step 1 that so are }\\
+				\text{f(x), g(x) and h(x).}
+				</reason>
+			</step>
+			
+		<choices>
+			<tex>\text{None are continuous}</tex>
+			<tex>\text{Only f(x) is continuous}</tex>
+			<tex>\text{Only f(x) and g(x) are continuous}</tex>
+			<tex correct='true'>\text{All are continuous}</tex>
+		</choices>
+</question>

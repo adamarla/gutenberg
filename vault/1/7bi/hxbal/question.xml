@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{For what value of k would }\\
+			f(x) = \begin{cases}
+			  \dfrac{k\cos x}{\pi - 2x}, x\neq \dfrac{\pi}{2}, \\
+			  3, x = \frac{\pi}{2}
+			\end{cases}
+			\\ \text{be continuous at }x=\frac{\pi}{2}?
+		</tex>
+	</statement>
+	
+			<step>
+				<context>
+				\text{What is }f\left(\frac{\pi}{2}\right) = ?
+				</context>
+				<tex correct="true">
+				f\left(\frac{\pi}{2}\right) = 3
+				</tex>
+				<tex correct="false">
+				\begin{align}
+				f\left(\frac{\pi}{2}\right) &amp;= \dfrac{k\cdot\cos\frac{\pi}{2}}{\pi-2\cdot\frac{\pi}{2}} \\
+				&amp;= \dfrac{k\cdot 0}{0} = \text{undefined}
+				\end{align}
+				
+				</tex>
+				<reason>
+				\text{See the function's definition. It is defined}\\
+				\text{differently for }x\neq\frac{\pi}{2}\text{ and for } x = \frac{\pi}{2}.
+				</reason>
+			</step>
+
+	  <step>
+					<context>
+					\text{Is the following analysis correct?}
+					</context>
+					<tex correct="true">
+					\begin{align}
+					  \lim_{x\to\frac{\pi}{2}}f(x) &amp;= 
+					  \lim_{x\to\frac{\pi}{2}}\dfrac{k\cdot\cos x}{\pi-2x}
+					  =\lim_{x\to\frac{\pi}{2}}\dfrac{k}{2}\cdot\dfrac{\sin\left(\frac{\pi}{2}-x\right)}
+					  {\left(\frac{\pi}{2}-x\right()} \\
+					  \text{Now, if }y&amp;= \frac{\pi}{2}-x\text{, then }\\
+					  \lim_{x\to\frac{\pi}{2}}f(x) &amp;= \lim_{y\to 0}\dfrac{k}{2}\dfrac{\sin y}{y} 
+					  = \dfrac{k}{2}
+					\end{align}
+					\\ \text{And hence, for f(x) to be continuous at }x=\frac{\pi}{2} \\
+					\begin{align}
+					  \lim_{x\to\frac{\pi}{2}}f(x) &amp;= \dfrac{k}{2} = f\left(\frac{\pi}{2}\right) = 3\\
+					  \implies k &amp;= 6.
+					\end{align}
+					</tex>
+ 
+					<reason>
+					\text{We have used two standard results above: }\\
+					\begin{align}
+					  \cos\theta &amp;= \sin \left(\frac{\pi}{2}-\theta\right) \\
+					  \lim_{\theta\to 0}\dfrac{\sin\theta}{\theta}&amp;= 1
+					\end{align}
+					</reason>
+				</step>			
+			
+			
+		<choices>
+			<tex>\text{No value of k.}</tex>
+			<tex>k=3</tex>
+			<tex correct='true'>k=6</tex>
+			<tex>k=9</tex>
+		</choices>
+</question>
