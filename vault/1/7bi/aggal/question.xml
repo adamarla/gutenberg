@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='utf-8'?>
+	<question xmlns='http://www.gradians.com'>
+		<statement>
+			<tex>
+				\text{Determine if the function f defined as}\\
+				f(x) = \begin{cases}
+				        x^2\cdot\sin\dfrac{1}{x}, x\neq 0 \\
+				        0, x = 0
+				       \end{cases} 
+				 \\ \text{is a continuous function?}
+			</tex>
+		</statement>
+		
+			<step>
+				<context>
+				\text{What are we being asked in the question?}
+				</context>
+				<tex correct="true">
+				\text{To prove f(x) is continuous for all x.}
+				</tex>
+				<tex correct="false">
+				\text{To prove f(x) is continuous at x = 0.}
+				</tex>
+				<reason>
+				\text{As no specific domain or point has been}\\
+				\text{specified, we have to prove continuity for all x.}
+				</reason>
+			</step>
+			
+				<step>
+					<context>
+					\text{Which of the following assertions is correct?}
+					</context>
+					
+					<tex correct="true">
+					A(x) = x^2 \text{ is continuous for all x. }\\
+					\text{And }B(x) = \sin\dfrac{1}{x}, x\neq 0 \text{ is simply the sine function } \\ 
+					\text{and hence also continuous.} \\
+					\implies A(x)\cdot B(x) \text{ is also continuous for }x\neq 0.
+					</tex>
+				
+				<tex correct="false">
+					A(x) = x^2 \text{ is continuous for all x. }\\
+					\text{But }B(x) = \sin\dfrac{1}{x}\text{ is not continuous for very}\\
+					\text{small or very large values of x. Hence, }A(x)\cdot B(x)\\
+					 \text{cannot be continuous for }x\neq 0.
+			   </tex>
+					
+					<reason>
+					\sin\dfrac{1}{x}\text{ is simply the sine function. It is} \\
+					\text{defined and continuous for }x\neq 0. \text{Moreover, if }\\
+					\text{A(x) and B(x) are two continuous functions, }\\
+					\text{then so is }A(x)\cdot B(x). 
+					</reason>
+				</step>
+				
+					<step>
+						<context>
+						\text{Is the following analysis correct?}
+						</context>
+						<tex correct="true">
+						\begin{align}
+						  \lim_{x\to 0^-}x^2\cdot\dfrac{1}{x} &amp;= 0\times\text{ something } = 0 \\
+						  \lim_{x\to 0^+}x^2\cdot\dfrac{1}{x} &amp;= 0\times\text{ something } = 0 \\
+						  \text{and }f(0) &amp;= 0 \text{ (by definition)}
+						\end{align}
+						\\ \text{Hence, f(x) is also continuous at x = 0. And}\\
+						\text{therefore it is continuous for all x.}
+						</tex>
+
+						<reason>
+						\text{In Step 2, we proved that f(x) is continuous} \\
+						\text{for }x\neq 0. \text{In Step 3, we proved it is continuous} \\
+						\text{at x = 0. That means, f(x) is continuous for all x.}
+						</reason>
+					</step>
+				
+					<choices>
+						<tex>\text{Continuous only for }x\neq 0</tex>
+						<tex>\text{Continuous only at x = 0.}</tex>
+						<tex correct='true'>\text{Continuous for all x.}</tex>
+						<tex>\text{Not continuous at any x.}</tex>
+					</choices>
+	</question>
