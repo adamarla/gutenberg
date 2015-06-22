@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{For what value of k would }\\
+			f(x) = \begin{cases}
+			  kx + 1, x\leq\pi, \\
+			  \cos x, x\gt \pi
+			\end{cases}
+			\\ \text{be continuous at }x=\pi?
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{What is the value of }f\left(\pi\right)?
+			</context>
+			<tex correct="true">
+			f(\pi) = k\cdot \pi + 1
+			</tex>
+			<tex correct="false">
+			f(\pi) = \cos\pi = -1 
+			</tex>
+			<reason>
+			\text{Note that }f(x)=kx + 1\text{ for }x\leq\pi.\\
+			\text{and }=\cos x\text{ only for }x\gt\pi.
+			</reason>
+		</step>
+		
+			<step>
+				<context>
+				\text{What will the condition for}\\
+				\text{continuity at }x = \pi\text{ be}?
+				</context>
+				<tex correct="true">
+				\lim_{x\to \pi^-}f(x) = \lim_{x\to \pi^+}f(x) = f(\pi)
+				</tex>
+				<tex correct="false">
+				\lim_{x\to \pi^-}f(x) = \lim_{x\to \pi^+}f(x)
+				</tex>
+				<reason>
+				\text{For a function to be continuous at }x=a\\
+				\lim_{x\to a^-}f(x) = \lim_{x\to a^+}f(x) = f(a).
+				</reason>
+			</step>
+			
+				<step>
+					<context>
+					\text{Is the following analysis correct?}
+					</context>
+					<tex correct="true">
+					\begin{align}
+					  \lim_{x\to \pi^-}f(x) &amp;= \lim_{x\to \pi^-}kx+1=k\pi + 1 \\
+					  \lim_{x\to \pi^+}f(x) &amp; \lim_{x\to \pi^+}\cos x = -1 \\
+					  f(\pi) &amp;= k\pi + 1
+					\end{align}
+					\\ \text{And hence, for continuity at }x=\pi \\
+					\begin{align}
+					  k\cdot\pi + 1 &amp;= -1 \implies k = -\dfrac{2}{\pi}
+					\end{align}
+					</tex>
+
+					<reason>
+					\text{We have only applied the condition from Step 2}\\
+					\text{here. Check your calculations if got something else.}
+					</reason>
+				</step>
+				
+					<choices>
+						<tex>-\dfrac{\pi}{2}</tex>
+						<tex correct='true'>-\dfrac{2}{\pi}</tex>
+						<tex>\dfrac{2}{\pi}</tex>
+						<tex>-\dfrac{1}{\pi}</tex>
+					</choices>
+</question>

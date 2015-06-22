@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{For what value of k would }\\
+			f(x) = \begin{cases}
+			  kx + 1, x\leq 5, \\
+			  3x-5, x\gt 5
+			\end{cases}
+			\\ \text{be continuous at }x=5?
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{What are the values of }f(-10), f(5)\text{ and }f(20)?
+			</context>
+			<tex correct="true">
+			  \begin{align}
+			    f(-10) &amp;= -10k + 1 \\
+			    f(5) &amp;= 5k + 1 \\
+			    f(20) &amp;= 3\cdot 20 - 5 = 55
+			  \end{align}
+			</tex>
+			<tex correct="false">
+			\begin{align}
+			    f(-10) &amp;= -10k + 1 \\
+			    f(5) &amp;= 3\cdot 5 - 5 = 10\\
+			    f(20) &amp;= 3\cdot 20 - 5 = 55
+			  \end{align}
+			</tex>
+			<reason>
+			\text{Be mindful of how the function is defined.}\\
+			f(x) = 3x-5\text{ only for }x\gt 5.
+			</reason>
+		</step>
+		
+			<step>
+				<context>
+				\text{What will the condition for}\\
+				\text{continuity at }x = 5\text{ be}?
+				</context>
+				<tex correct="true">
+				\lim_{x\to 5^-}f(x) = \lim_{x\to 5^+}f(x) = f(5)
+				</tex>
+				<tex correct="false">
+				\lim_{x\to 5^-}f(x) = \lim_{x\to 5^+}f(x)
+				</tex>
+				<reason>
+				\text{For a function to be continuous at }x=a\\
+				\lim_{x\to a^-}f(x) = \lim_{x\to a^+}f(x) = f(a).
+				</reason>
+			</step>
+			
+				<step>
+					<context>
+					\text{Is the following analysis correct?}
+					</context>
+					<tex correct="true">
+					\begin{align}
+					  \lim_{x\to 5^-}f(x) &amp;= \lim_{x\to 5^-}kx+1=5k + 1 \\
+					  \lim_{x\to 5^+}f(x) &amp; \lim_{x\to 5^+}3x-5 = 10 \\
+					  f(5) &amp;= 5k + 1
+					\end{align}
+					\\ \text{And hence, for continuity at }x=5 \\
+					\begin{align}
+					  5k + 1&amp;= 10 \implies k = \dfrac{9}{5}
+					\end{align}
+					</tex>
+
+					<reason>
+					\text{We have only applied the condition from Step 2}\\
+					\text{here. Check your calculations if got something else.}
+					</reason>
+				</step>
+				
+					<choices>
+						<tex>-\dfrac{5}{2}</tex>
+						<tex correct='true'>\dfrac{9}{5}</tex>
+						<tex>\dfrac{5}{9}</tex>
+						<tex>-\dfrac{1}{5}</tex>
+					</choices>
+</question>

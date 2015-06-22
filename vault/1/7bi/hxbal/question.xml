@@ -38,16 +38,17 @@
 					<tex correct="true">
 					\begin{align}
 					  \lim_{x\to\frac{\pi}{2}}f(x) &amp;= 
-					  \lim_{x\to\frac{\pi}{2}}\dfrac{k\cdot\cos x}{\pi-2x}
-					  =\lim_{x\to\frac{\pi}{2}}\dfrac{k}{2}\cdot\dfrac{\sin\left(\frac{\pi}{2}-x\right)}
-					  {\left(\frac{\pi}{2}-x\right()} \\
+					  \lim_{x\to\frac{\pi}{2}}\dfrac{k\cdot\cos x}{\pi-2x} \\
+					  &amp;=\lim_{x\to\frac{\pi}{2}}\dfrac{k}{2}\cdot\dfrac{\sin\left(\frac{\pi}{2}-x\right)}
+					  {\left(\frac{\pi}{2}-x\right)} \\
 					  \text{Now, if }y&amp;= \frac{\pi}{2}-x\text{, then }\\
 					  \lim_{x\to\frac{\pi}{2}}f(x) &amp;= \lim_{y\to 0}\dfrac{k}{2}\dfrac{\sin y}{y} 
 					  = \dfrac{k}{2}
 					\end{align}
-					\\ \text{And hence, for f(x) to be continuous at }x=\frac{\pi}{2} \\
+					\\ \text{And hence, for f(x) to be }\\
+					\text{continuous at }x=\frac{\pi}{2} \\
 					\begin{align}
-					  \lim_{x\to\frac{\pi}{2}}f(x) &amp;= \dfrac{k}{2} = f\left(\frac{\pi}{2}\right) = 3\\
+					  \lim_{x\to\frac{\pi}{2}}f(x) = \dfrac{k}{2} &amp;= f\left(\frac{\pi}{2}\right) = 3\\
 					  \implies k &amp;= 6.
 					\end{align}
 					</tex>
