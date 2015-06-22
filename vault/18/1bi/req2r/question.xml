@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{FInd all points of discontinuity of f,\\
+where f is defined by }\\
+
+f(x) = \begin{cases} 
+         2x +3,if  x \leq 2\\
+         2x - 3,if  x\gt 2 
+         \end{cases}</tex>
+  </statement>
+  <step>
+    <context>\text{Condition for continuity?}</context>
+    <tex correct='true'>\begin{align} 
+          \lim_{x\to 2^-}f(x) =\lim_{x\to 2^+}f(x)  = f(2)
+\end{align}</tex>
+    <tex>\begin{align} 
+          \lim_{x\to 2^-}f(x) = f(2)
+\end{align}</tex>
+    <reason>\text{For a function to be continuous at a\\
+point it's limits on either side of f(x)\\
+should be equal to the value of f(x) at\\
+that point}</reason>
+  </step>
+  <step>
+    <context>\text{Is the following assertion correct?}</context>
+    <tex correct='true'>f(x) \text{ is a straight line for }x\neq 2.\\
+\text{Hence, it is continuous for all }x\neq 2.\\
+\text{But we need to check for continuity \\
+at x=2.}\\
+</tex>
+    <tex></tex>
+    <reason>\text{At }x=2\text{, the definition of the function}\\
+\text{changes. Hence, x = 2 could be the}\\
+\text{ only problem point. We should check}\\
+\text{ for continuity there.}</reason>
+  </step>
+  <step>
+    <context>\text{Which of the following set of statements\\
+are correct?}</context>
+    <tex correct='true'>\begin{align}
+    \lim_{x\to 2^-}f(x) &amp;= \lim_{x\to 2^-} (2x+3)  = 7 \\
+    \lim_{x\to 2^+}f(x) &amp;= \lim_{x\to 2^+} (2x-3)  = 1 \\
+    f(2) = 2(2)+3 = 7
+\end{align}
+\\ \text{Hence, f(x) is discontinuous at x=2.}\\
+\therefore \text{x=2 is the only point of discontinuity.}</tex>
+    <tex>\begin{align}
+    \lim_{x\to 2^-}f(x) &amp;= \lim_{x\to 2^-} (2x+3)  = 7 \\
+    \lim_{x\to 2^+}f(x) &amp;= \lim_{x\to 2^+} (2x-3)  = 7 \\
+    f(2) = 2(2)+3 = 7
+\end{align}
+\\ \text{Hence, f(x) is also continuous at x=2.}\\
+\therefore \text{ it is continuous at all x.}</tex>
+    <reason>\text{Just substitute the value of x in}\\
+\lim_{x\to 2^-} (2x+3)  \,and \lim_{x\to 2^+} (2x-3)</reason>
+  </step>
+  <choices>
+    <tex>\text{Discontinuous everywhere in domain \\
+of f(x)}</tex>
+    <tex correct='true'>\text{Continuous everywhere in domain \\
+of f(x)}</tex>
+    <tex>\text{Discontinuous at x=0}</tex>
+    <tex>\text{Discontinuous at x=2}</tex>
+  </choices>
+</question>

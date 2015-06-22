@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{FInd all points of discontinuity of f,\\
+where f is defined by }\\
+
+f(x) = \begin{cases} 
+         \vert x \vert + 3,if\, x \leq -3\\
+         -2x,\,if  -3\lt x\lt 2 \\
+          6x +2,if \, x\gt 3\\	
+         \end{cases}</tex>
+  </statement>
+  <step>
+    <context>\text{Which of these is the correct definition \\
+of the function?}</context>
+    <tex correct='true'>f(x) = \begin{cases} 
+         -x + 3,if\, x \leq -3\\
+         -2x,\,if  -3\lt x\lt 3 \\
+          6x +2,if \, x\gt 3\\	
+         \end{cases}</tex>
+    <tex>f(x) = \begin{cases} 
+          x + 3,if\, x \leq -3\\
+         -2x,\,if  -3\lt x\lt 3 \\
+          6x +2,if \, x\gt 3\\	
+         \end{cases}</tex>
+    <reason>since.
+\vert x \vert = \begin{cases} 
+           	-x, if x\lt 0\\
+	 x, if x\ge0\\
+         	\end{cases}</reason>
+  </step>
+  <step>
+    <context>\text{Is the following assertion correct?}</context>
+    <tex correct='true'>f(x) \text{ is a straight line for }x\neq 3,-3.\\
+\text{Hence, it is continuous for all }x\neq 3,-3.\\
+\text{But we need to check for continuity \\
+at x=3 and x=-3.}\\
+</tex>
+    <tex></tex>
+    <reason>\text{Since, at x=3,-3 the definition of the \\
+function changes, hence they can only \\be
+the problem point, so we need to \\check 
+continuity there.}</reason>
+  </step>
+  <step>
+    <context>\text{Which of the following set of statements\\
+are correct?</context>
+    <tex correct='true'>\begin{align}
+    \lim_{x\to -3^-}f(x) &amp;= \lim_{x\to -3^-} (-x+3) =6\\
+    \lim_{x\to -3^+}f(x) &amp;= \lim_{x\to -3^+} (-2x) =6 \\
+    \f(-3) = -(-3)+3 = 6\\
+    \lim_{x\to 3^-}f(x) &amp;= \lim_{x\to 3^-} (-2x)  =-6\\
+    \lim_{x\to 3^+}f(x) &amp;= \lim_{x\to-3^+} (6x+2)=20 \\
+    f(3) = (6(3)+2) = 20\\
+\end{align}
+\\ \text{Hence, f(x) is discontinuous at x=3.}\\
+\therefore \text{x=3 is the only point of discontinuity.}</tex>
+    <tex>\begin{align}
+    \lim_{x\to -3^-}f(x) &amp;= \lim_{x\to -3^-} (-x+3)  = 6\\
+    \lim_{x\to -3^+}f(x) &amp;= \lim_{x\to -3^+} (-2x)  = -6 \\
+    f(-3) = -(-3)+3 = 6\\
+    \lim_{x\to 3^-}f(x) &amp;= \lim_{x\to 3^-} (-2x)  = -6\\
+    \lim_{x\to 3^+}f(x) &amp;= \lim_{x\to-3^+} (6x+2)  = 20 \\
+    f(3) = (6(3)+2) = 20\\
+\end{align}
+\\ \text{Hence, f(x) is discontinuous at x=3,-3.}\\
+\therefore \text{x=3,-3 are the points of discontinuity.}</tex>
+    <reason>\text{Just substitute the value of x in}\\
+\lim_{x\to 3^-} f(x)  \,and \lim_{x\to 3^+} f(x)\\
+\lim_{x\to -3^-} f(x)  \,and \lim_{x\to -3^+} f(x)\\</reason>
+  </step>
+  <choices>
+    <tex>\text{x=3 is the only point of discontinuity}</tex>
+    <tex correct='true'>\text{x=-3 is the only point of discontinuity}</tex>
+    <tex>\text{No point of discontinuity}</tex>
+    <tex>\text{X=3, -3 are the points of discontinuity}</tex>
+  </choices>
+</question>
