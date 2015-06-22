@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Examine the continuity of the\\
+ f(x)=2x^2-1 at x=3}
+
+\begin{align}
+\end{align}</tex>
+  </statement>
+  <step>
+    <context>\text{Condition for continuity?}	 </context>
+    <tex correct='true'>\text{LHL = RHL = value of f(x) at x}</tex>
+    <tex>\text{LHL = RHL}</tex>
+    <reason>\text{It's necessary that \\
+Limit of f(x) at x = value of function at x}</reason>
+  </step>
+  <step>
+    <context>\text{value of f(x)=2x^2-1 at x=3?}</context>
+    <tex correct='true'>\text{f(3) =17 \\
+}</tex>
+    <tex>\text{f(3)= 8\\
+}</tex>
+    <reason>\text{Just substitute the value of x in the f(x).}</reason>
+  </step>
+  <step>
+    <context>\text{value of LHL and RHL of f(x) at x=3}</context>
+    <tex correct='true'>\text{LHL}\\                  
+\lim_{x\to\ 3^{-}}\text{f(x)} = 17\\            
+
+
+\text{RHL}\\                  
+\lim_{x\to\ 3^{+}}\text{f(x)} = 17\\            
+</tex>
+    <tex>\text{LHL}\\                  
+\lim_{x\to\ 3^{-}}\text{f(x)} = 17\\            
+
+
+\text{RHL}\\                  
+\lim_{x\to\ 3^{+}}\text{f(x)} = 7\\            
+</tex>
+    <reason>\text{For calculating LHL substitute x with x-h}\\
+\text{For calculating RHL substitute x with x+h}\\
+\text{LHL=&gt;}\lim_{h\to\ 0}\text{f(x-h)}  \text{  RHL=&gt;}\lim_{h\to\ 0}\text{f(x+h)}\\
+
+
+
+
+
+
+</reason>
+  </step>
+  <choices>
+    <tex>\text{Continuous at x=3 }</tex>
+    <tex>\text{Discontinuous at x=3}</tex>
+    <tex correct='true'>\text{Defined and Continuous at x=3 }</tex>
+    <tex>\text{Defined but Discontinuous at x=3 }</tex>
+  </choices>
+</question>

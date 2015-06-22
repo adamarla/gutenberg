@@ -40,19 +40,14 @@ R_2\rightarrow R_2 - 2R_1</context>
 \text{simultaneously to LHS and the first matrix}\\
 \text{in RHS}</reason>
   </step>
-  <step>
-    <context>\text{What is the optimal transformation to convert}\\
+  <step swipe='false'>
+    <context>\text{Does the following transformation convert}\\
 \mathbf{a_{22}}\text{ to }1?</context>
     <tex correct='true'>\begin{align}
 R_2\rightarrow &amp;\dfrac{1}{5} R_2 \\
 \end{align}
 </tex>
-    <tex>\begin{align}
-R_2\rightarrow R_2+ 5 R_1
-\end{align}
-</tex>
-    <reason>\text{The optimal transformation does not result}\\
-\text{in unwanted changes in other elements.}</reason>
+    <reason>\text{The above transformation converts \mathbf{a_{22}}\text{ to }1</reason>
   </step>
   <step swipe='false'>
     <context>\text{Would the following row transformation}\\
