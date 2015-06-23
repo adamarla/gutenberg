@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{For what value of k would }\\
+			f(x) = \begin{cases}
+			  k\cdot x^2, x\leq 2, \\
+			  3, x\gt 2
+			\end{cases}
+			\\ \text{be continuous at }x=2?
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{What is the value of }f(1000)?
+			</context>
+			<tex correct="true">
+			f(1000) = 3 
+			</tex>
+			<tex correct="false">
+			f(1000) = k\cdot (1000)^2 
+			</tex>
+			<reason>
+			f(x) = k\cdot x^2\text{ only for }x\leq 2.\\
+			\text{For every other x, f(x) is a constant = 3.}
+			</reason>
+		</step>
+		
+			<step>
+				<context>
+				\text{What is the condition for}\\
+				\text{continuity at }x = 2?
+				</context>
+				<tex correct="true">
+				\lim_{x\to 2^-}f(x) = \lim_{x\to 2^+}f(x) = f(2)
+				</tex>
+				<tex correct="false">
+				\lim_{x\to 2^-}f(x) = \lim_{x\to 2^+}f(x)
+				</tex>
+				<reason>
+				\text{For a function to be continuous at }x=a\\
+				\lim_{x\to a^-}f(x) = \lim_{x\to a^+}f(x) = f(a).
+				</reason>
+			</step>
+			
+				<step>
+					<context>
+					\text{Is the following analysis correct?}
+					</context>
+					<tex correct="true">
+					\begin{align}
+					  \lim_{x\to 2^-}f(x) &amp;= \lim_{x\to 2^-}k\cdot x^2 = 4k \\
+					  \lim_{x\to 2^+}f(x) &amp; \lim_{x\to 2^+}3 = 3 \\
+					  f(2) &amp;= k\cdot 2^2 = 4k 
+					\end{align}
+					\\ \text{And hence, for continuity at }x=2 \\
+					\begin{align}
+					4k &amp;= 3 \implies k = \dfrac{3}{4}
+					\end{align}
+					</tex>
+
+					<reason>
+					\text{We have only applied the condition from Step 2}\\
+					\text{here. Check your calculations if got something else.}
+					</reason>
+				</step>
+				
+					<choices>
+						<tex>\dfrac{4}{3}</tex>
+						<tex>4</tex>
+						<tex>3</tex>
+						<tex correct='true'>\dfrac{3}{4}</tex>
+					</choices>
+</question>
