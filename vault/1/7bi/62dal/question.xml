@@ -49,8 +49,8 @@
 					\text{the definitions of }\vert x\vert\text{ and }\vert x+1\vert\\
 					\text{along the number line?}
 					</context>
-					<image correct='true'>trim-right.svg</image>
-					<image correct='false'>trim-wrong.svg</image>
+					<image correct='true'>notrim-right.svg</image>
+					<image correct='false'>notrim-wrong.svg</image>
 					<reason>
 					\text{Be careful.} \vert x\vert \text{is defined differently}\\
 					\text{around }x=0.\text{ But }\vert x+1\vert\text{ is defined }\\
@@ -94,25 +94,24 @@
 				<tex correct="true">
 				\text{At x = -1}\\
 				\begin{align}
-				  \lim_{x\to -1^-}f(x) &amp;= 1 \text{ and }\\
-				  \lim_{x\to -1^+}f(x) &amp;= -2\cdot(-1) -1 = 1 = f(-1) \\
-				  &amp;\implies\text{ continuity at x = -1}
+				  \lim_{x\to -1^-}f(x) &amp;= 1 =
+				  \lim_{x\to -1^+}f(x) = -2\cdot(-1) -1 \\
+				  \text{Also, }\lim_{x\to -1} &amp;= f(-1)\implies\text{ continuity at x = -1}
 				\end{align}
 				\\ \text{Similarly, at x = 0} \\
 				\begin{align}
-				 \lim_{x\to 0^-}f(x) &amp;= -2\cdot(0)-1 = -1 \text{ and } \\
-				 \lim_{x\to 0^+}f(x) &amp;= -1 = f(0) \\
+				  \lim_{x\to 0^-}f(x) &amp;= \lim_{x\to 0^+}f(x) = f(0) \\
 				  &amp;\implies\text{ continuity at x = 0}
 				\end{align}
 				\\ \text{Hence, f(x) is also continuous at x = 0 }\\
-				\text{and x = -1. Therefore, it is continuous }\\
-				\text{everywhere}\implies\text{discontinuous nowhere.}
+				\text{and x = -1 }\implies\text{ continuous everywhere }\\
+				\implies\text{discontinuous nowhere.}
 				</tex>
 				
 				<reason>
-				\text{After the previous step, we only knew that }\\
-				x=0\text{ and }x=1\text{ could be points where f(x) is }\\
-				\text{discontinuous. In this step, we showed that f(x) is not.}
+				\text{From the previous step, we know f(x) is}\\
+				\text{continuous for }x\neq 0\text{ and }x\neq -1.\text{Now, we}\\
+				\text{have shown f(x) is continuous for }x=-1, 0.
 				</reason>
 			</step>
 	
