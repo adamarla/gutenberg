@@ -5,7 +5,7 @@
 \text{inverse of the matrix A, if it exists.}\\
 A=\left[\begin{array}{rr}
 2 &amp; 1 \\ 
-1 &amp; 1\end{array} \right]</tex>
+4 &amp; 2 \end{array} \right]</tex>
   </statement>
   <step>
     <context>\text{To find }A^{-1}\text{ using elementary transformation,}\\ 
@@ -23,63 +23,51 @@ A = AI \text{ (when using Row transformation)}</tex>
   <step>
     <context>\text{What would the equation look like if you}\\
 \text{apply the following transformation}\\
-R_1\leftrightarrow R_2 </context>
+C_2\rightarrow 2C_2 </context>
     <tex correct='true'>\left[\begin{array}{rr}
-1 &amp; 1 \\ 
-2 &amp; 1\end{array} \right] =
-\left[\begin{array}{rr}
- 0 &amp; 1 \\ 
- 1 &amp; 0\end{array} \right]A</tex>
-    <tex>\left[\begin{array}{rr}
-1 &amp; 1 \\ 
-2 &amp; 1\end{array} \right] =
+2 &amp; 2 \\ 
+4 &amp; 4\end{array} \right] = A
 \left[\begin{array}{rr}
 1 &amp; 0 \\ 
-0 &amp; 1\end{array} \right]A</tex>
-    <reason>\text{Each transformation needs to be applied}\\
-\text{to LHS and the first matrix on RHS.}</reason>
-  </step>
-  <step swipe='false'>
-    <context>\text{Does the following transformation convert}\\
-\mathbf{a_{21}}\text{ to }0?</context>
-    <tex correct='true'>R_2\rightarrow R_2- 2R_1 
-
-
-</tex>
-    <reason>\text{The above transformation converts \mathbf{a_{21}}\text{ to }0</reason>
-  </step>
-  <step swipe='false'>
-    <context>\text{Would the following transformation}\\
-\text{convert }
+0 &amp; 2\end{array} \right]</tex>
+    <tex>\left[\begin{array}{rr}
+2 &amp; 2 \\ 
+4 &amp; 4\end{array} \right] = A
 \left[\begin{array}{rr}
- 1 &amp; 1 \\ 
-0 &amp; -1\end{array} \right]\text{ to }
+1 &amp; 0 \\ 
+0 &amp; 1\end{array} \right]</tex>
+    <reason>\text{Each transformation needs to be applied}\\
+\text{simultaneously to LHS and the first matrix}\\
+\text{on RHS}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Would }C_2\rightarrow C_2 - C_1 \text{ convert}\\
+\left[\begin{array}{rr}
+2 &amp; 2 \\ 
+4 &amp; 4\end{array} \right]\text{ to }
 \left[\begin{array}{rr}
  1 &amp; 0 \\ 
-0 &amp; 1\end{array} \right]</context>
-    <tex correct='true'>\begin{align}
-R_2\rightarrow &amp;- R_2 \\
-R_1\rightarrow &amp;R_1 - R_2
-\end{align}
-</tex>
-    <reason>\text{The above transformations are correct. After}\\
-\text{all transformations so far have been applied to}\\
-\text{identity matrix on RHS, it becomes} A^{-1}</reason>
+0 &amp; 1\end{array} \right] \text{?}</context>
+    <tex correct='true'>\text{No, we get all zeros in the second column.}</tex>
+    <tex>\text{Yes, it becomes identity matrix.}</tex>
+    <reason>\text{Since, we get all zeros in the second column}\\
+\text{on the left hand side matrix, we cannot}\\
+\text{convert it into an identity matrix and }A^{-1} \\
+\text{ does not exist.}</reason>
   </step>
   <choices>
-    <tex>A^{-1}\text{ does not exist.}
-</tex>
-    <tex correct='true'>A^{-1}=
-\left[\begin{array}{rr}
-1 &amp; -1 \\ 
--1 &amp; 2 \end{array} \right]</tex>
     <tex>A^{-1}=
 \left[\begin{array}{rr}
-2 &amp; -1 \\ 
--1 &amp; 1 \end{array} \right]</tex>
+2 &amp; 1 \\ 
+4 &amp; 2 \end{array} \right]</tex>
     <tex>A^{-1}=
 \left[\begin{array}{rr}
-1 &amp; 0 \\ 
+2 &amp; 4 \\ 
+1 &amp; 2 \end{array} \right]</tex>
+    <tex>A^{-1}=
+\left[\begin{array}{rr}
+1&amp; 0 \\ 
 0 &amp; 1 \end{array} \right]</tex>
+    <tex correct='true'>A^{-1}\text{ does not exist.}</tex>
   </choices>
 </question>
