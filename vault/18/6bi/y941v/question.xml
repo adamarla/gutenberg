@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Discuss the continuity of the function f,\\
+where f is defined by}\\
+
+       \begin{cases}
+        3, \, if \, 0\leq x \leq1\\
+        4, \, if \, 1\lt x \lt3\\
+        5, \, if \, 3\leq x \leq10\\	
+       \end{cases}</tex>
+  </statement>
+  <step>
+    <context>\text{What is the condition for continuity?}</context>
+    <tex correct='true'>\begin{align}
+	\lim_{x\to 1^-}f(x) =\lim_{x\to 1^+}f(x) = f(1)
+\end{align}</tex>
+    <tex>\begin{align}
+	\lim_{x\to 1^-}f(x) =\lim_{x\to 1^-}f(x)
+\end{align}</tex>
+    <reason>\text{For a function to be continuous at a\\
+point it's limits on either sides should be\\
+equal to the value of f(x) at that point}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Is the following assertion correct?}</context>
+    <tex correct='true'>f(x) \text{ is a straight line for }x\ne1,3 .\\
+\text{Hence, it is continuous for all }x\neq 1,3.\\
+\text{But we need to check for continuity \\
+at x=1,x=3.}
+</tex>
+    <tex></tex>
+    <reason>\text{Since, at x=1 the definition of the\\
+function changes. So, x=1,3 is the only \\
+problem point.}\\
+\therefore\text{ we need to check continuity at x =1,3.} </reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Is the following analyasis correct?}</context>
+    <tex correct='true'>    \lim_{x\to 1^-}f(x) = 3\\
+    \lim_{x\to 1^+}f(x) = 4 \\
+    f(1)=3\\
+
+    \lim_{x\to 3^-}f(x) = 4\\
+    \lim_{x\to 3^+}f(x) = 5 \\
+    f(3)=5\\
+
+\\ \therefore \text{f(x) is discontinuous at x=1 and x=3.}\\
+</tex>
+    <tex>
+</tex>
+    <reason>\text{Since, f(x) is continuous at }x \neq 1,3\text{(step2)}\\
+\text{So,x=1,3 are the only points of discontinuity}\\</reason>
+  </step>
+  <choices>
+    <tex>\text{f(x) is discontinuous at x=0,1,3,10}</tex>
+    <tex correct='true'>\text{f(x) is discontinuous at x=1 and x=3}</tex>
+    <tex>\text{f(x) is discontinuous at x=3 and x=10}</tex>
+    <tex>\text{f(x) is discontinuous at x=0}</tex>
+  </choices>
+</question>

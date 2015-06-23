@@ -2,7 +2,7 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Examine the continuty of the function}\\
- f(x) = | x-5 |</tex>
+ f(x) = \vert x-5 \vert</tex>
   </statement>
   <step swipe='false'>
     <context>\text{which of the following correctly defines f(x)? }\\</context>
@@ -16,7 +16,7 @@
          -x-5, x\lt 5 
          \end{cases}
 </tex>
-    <reason>\text{Remember, }| x-5| \geq 0\text{ for all x } \\
+    <reason>\text{Remember, }\vert x-5\vert \geq 0\text{ for all x } \\
 \text{including for }x\lt 5. </reason>
   </step>
   <step swipe='false'>
@@ -26,8 +26,7 @@
 \text{But we need to check for continuity at }x=5.
 
 </tex>
-    <tex>
-</tex>
+    <tex></tex>
     <reason>\text{At }x=5\text{, the definition of the function}\\
 \text{changes. Hence, x = 5 could be the only}\\
 \text{problem point. We should check for}\\
@@ -35,13 +34,13 @@
   </step>
   <step>
     <context>\text{Is the following analysis correct?}</context>
-    <tex correct='true'>\begin{align}
-    \lim_{x\to 5^-}f(x) &amp;= \lim_{x\to 5^-} (5-x)  = 0 \\
-    \lim_{x\to 5^+}f(x) &amp;= \lim_{x\to 5^+} (x-5)  = 0 \\
+    <tex correct='true'>
+    \lim_{x\to 5^-}f(x) = \lim_{x\to 5^-} (5-x)  = 0 \\
+    \lim_{x\to 5^+}f(x) = \lim_{x\to 5^+} (x-5)  = 0 \\
     f(5) = \vert 5-5 \vert  = 0
-\end{align}
+
 \\ \text{Hence, f(x) is also continuous at x=5.}\\
-\therefore \text{ it is continuous at all x.}</tex>
+</tex>
     <tex></tex>
     <reason>\text{In Step 2, we established that f(x) is }\\
 \text{continuous at }x\neq 5. \text{Now, we have proven}\\
@@ -54,6 +53,6 @@
     <tex>\text{Discontinuous at just x=5 and continuous\\
 everywhere in it's domain}</tex>
     <tex>\text{Discontinuous everywhere in it's domain}</tex>
-    <tex correct='true'>\text{continuous everywhere in it's domain}</tex>
+    <tex correct='true'>\text{Continuous everywhere in it's domain}</tex>
   </choices>
 </question>

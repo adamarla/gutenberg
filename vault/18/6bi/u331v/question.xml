@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Discuss the continuity of the function\\
+f, where f is defined by}\\
+	
+   f(x) =\begin{cases}
+           2x, &amp; if &amp;x \lt 0\\
+           0, &amp;if 	 &amp;0\leq x \leq 1\\
+           4x, &amp; if  &amp;x \gt 1\\	
+           \end{cases}</tex>
+  </statement>
+  <step>
+    <context>\text{What is the condition for continuity?}</context>
+    <tex correct='true'>\begin{align}
+	\lim_{x\to 0^-}f(x) =\lim_{x\to 0^+}f(x) = f(0)
+\end{align}</tex>
+    <tex>\begin{align}
+	\lim_{x\to 0^-}f(x) =\lim_{x\to 0^+}f(x)
+\end{align}</tex>
+    <reason>\text{For a function to be continuous at a\\
+point it's limits on either sides should be\\
+equal to the value of f(x) at that point.}\\
+</reason>
+  </step>
+  <step>
+    <context>\text{Is the following assertion correct?}</context>
+    <tex correct='true'>f(x) \text{ is a straight line for }x\ne 1,0.\\
+\text{Hence, it is continuous for all }x\neq 1,0.\\
+\text{But we need to check for continuity \\
+at x=1,0.}
+</tex>
+    <tex></tex>
+    <reason>\text{Since, at x=1,0 the definition of the\\
+function changes. So, x=1,0 are the\\
+only problem points.hence, we need\\
+to check continuity at x=1,0.} </reason>
+  </step>
+  <step>
+    <context>\text{Is the following analysis correct?}</context>
+    <tex correct='true'>
+    \lim_{x\to 0^-}f(x) = \lim_{x\to 0^-} (2x) = 0\\
+    \lim_{x\to 0^+}f(x) = 0 \\
+    f(0) = 0\\
+
+    \lim_{x\to 1^-}f(x) = 0\\
+    \lim_{x\to 1^+}f(x) = \lim_{x\to 1^+} (4x) =4 \\
+    f(1)= 0\\
+
+\\ \text{Hence, f(x) is discontinuous at x=1.}\\
+</tex>
+    <tex></tex>
+    <reason>\text{Since,f(x) is continuous at }x \neq 1,0\\
+\therefore \text{x=1 is the only point of discontinuity}\\</reason>
+  </step>
+  <choices>
+    <tex>\text{x=0,1 are the point of discontinuity}</tex>
+    <tex>\text{x=0 is the only point of discontinuity}</tex>
+    <tex correct='true'>\text{x=1 is the only point of discontinuity}</tex>
+    <tex>\text{No points of discontinuity}</tex>
+  </choices>
+</question>

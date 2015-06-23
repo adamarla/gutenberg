@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Prove that the function f(x)=x^n is \\
+continuous at x=n.Where n is a positive \\
+integer.}</tex>
+  </statement>
+  <step>
+    <context>\text{What is the question asking you to prove?}</context>
+    <tex correct='true'>
+          f(x) = x^{1}\text{ is continuous at x=1}\\
+          f(x) = x^{1001}\text{ is continuous at x=1001}\\
+          f(x) = x^{73}\text{ is continuous at x=73}\\	
+</tex>
+    <tex>
+          f(x) = x^{23}\text{ is continuous at x=23}\\
+          f(x) = x^{-99999}\text{ is continuous at x=-99999}\\
+          f(x) = x^{-733}\text{ is continuous at x=-733}\\	
+</tex>
+    <reason>\text{Read the questions carefully. It's clearly\\
+written that n is a positive integer.}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Is the following analysis correct?}</context>
+    <tex correct='true'>\begin{align}
+    \lim_{x\to n}f(x) &amp;= \lim_{x\to n} (x^n)  = n^n\\
+  
+\end{align}\\
+  f(n) = (n)^n = n^n\\	
+\therefore\text{the function f(x) is continuous at x=n.}</tex>
+    <tex></tex>
+    <reason>\text{Since, the function f(x) is not changing \\
+at x=n, for the function to be continuous at \\
+x=n, the limit at x should be equal to the\\
+value of function at x=n}</reason>
+  </step>
+</question>
