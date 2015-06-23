@@ -74,17 +74,14 @@
 					\text{Is the following analysis correct?}
 					</context>
 					<tex correct="true">
-					\text{At x = 2}\\
+					\text{For continuity at x = 2}\\
 					\begin{align}
-					  \lim_{x\to 2^-}f(x) &amp;= \lim_{x\to 2^-} 5 = 5 \\
-					  \lim_{x\to 2^+}f(x) &amp;= \lim_{x\to 2^+} (ax+b) = 2a+b \\
-					  f(2) &amp;= 5
+					  \lim_{x\to 2^-}f(x) &amp;= \lim_{x\to 2^+}f(x) = f(2) \\
+					  \implies 5 &amp;= 2a + b = 5
 					\end{align}
-					\\ \text{And at x = 10}\\
+					\\ \text{Similarly, for continuity at x = 10}\\
 					\begin{align}
-					  \lim_{x\to 10^-}f(x) &amp;= \lim_{x\to 10^-} (ax+b) = 10a + b \\
-					  \lim_{x\to 10^+}f(x) &amp;= \lim_{x\to 10^+} 21 = 21 \\
-					  f(10) &amp;= 21
+					  10 a + b &amp;= 21 
 					\end{align}
 					\\ \text{Which means, for f(x) to be continuous}\\
 					\begin{align}
