@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If A = }
+\left[\begin{array}{rrrr}
+ 2 &amp; 5 &amp; 19 &amp; -7 \\ 
+35 &amp; -2 &amp; 5/2 &amp; 12 \\
+\sqrt{3} &amp; 1 &amp; -5 &amp; 17 \end{array} \right] \\
+\text{then, write the following:}\\
+\text{(i) The order of the matrix,}\\
+\text{(ii) The number of elements,}\\
+\text{(iii) The elements }
+a_{13}, a_{21}, a_{33}, a_{24}, a_{23}</tex>
+  </statement>
+  <step>
+    <context>\text{What is the order of the matrix A ?}\\</context>
+    <tex correct='true'>3 \times 4</tex>
+    <tex>4 \times 3</tex>
+    <reason>\text{Matrix having m rows and n columns has}\\
+ \text{order m} \times \text{ n}</reason>
+  </step>
+  <step>
+    <context>\text{What is the number of elements in the}\\
+\text{matrix A ?}</context>
+    <tex correct='true'>3\times 4 = 12</tex>
+    <tex>3 + 4 = 7</tex>
+    <reason>\text{A matrix of }m\text{ rows and }n\text{ columns}\\
+\text{has }m\times n \text{ elements.}
+</reason>
+  </step>
+  <step>
+    <context>\text{Find the elements }
+a_{13}, a_{21}, a_{33}, a_{24}, a_{23}\\
+\text{ in the matrix A.}</context>
+    <tex correct='true'>\begin{align}
+a_{13} &amp;=19,\\
+a_{21} &amp;=35,\\ 
+a_{33} &amp;=-5,\\
+a_{24} &amp;=12,\\
+a_{23} &amp;=5/2
+\end{align}</tex>
+    <tex>\begin{align}
+a_{13} &amp;=19,\\
+a_{21} &amp;=5,\\ 
+a_{33} &amp;=-5,\\
+a_{24} &amp;=12,\\
+a_{23} &amp;=5/2
+\end{align}</tex>
+    <reason>\text{In general } a_{ij} \text{ is an element lying in the}\\
+i^{th} \text{ row and }j^{th} \text{ column.}</reason>
+  </step>
+  <choices>
+    <tex>\text{(i) } 4 \times 3 \text{ (ii) }12
+\text{ (iii) }a_{13}=19, a_{21}=35,\\ 
+\quad a_{33}=-5, a_{24}=12, a_{23}=5/2</tex>
+    <tex correct='true'>\text{(i) } 3 \times 4 \text{ (ii) }12
+\text{ (iii) }a_{13}=19, a_{21}=35,\\ 
+\quad a_{33}=-5, a_{24}=12, a_{23}=5/2</tex>
+    <tex>\text{(i) } 3 \times 4 \text{ (ii) }12
+\text{ (iii) }a_{13}=19, a_{21}=5,\\ 
+\quad a_{33}=-5, a_{24}=12, a_{23}=5/2</tex>
+    <tex>\text{(i) } 3 \times 4 \text{ (ii) }3
+\text{ (iii) }a_{13}=19, a_{21}=35,\\ 
+\quad a_{33}=-5, a_{24}=12, a_{23}=5/2</tex>
+  </choices>
+</question>
