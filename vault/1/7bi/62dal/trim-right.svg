@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<svg width="559" height="304" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:se="http://svg-edit.googlecode.com" clip-path="url(#presentation_clip_path)" preserveAspectRatio="xMidYMid">
+ <!-- Created with SVG-edit - http://svg-edit.googlecode.com/ -->
+ <g>
+  <title>Layer 1</title>
+  <polyline se:connector="svg_9 svg_2" fill="none" stroke-width="3" stroke="#000000" points="19.788084030151367,131.05880737304688 91.75798034667969,131.05880737304688 163.72787475585938,131.0587921142578" id="svg_10"/>
+  <polyline se:connector="svg_6 svg_5" fill="none" stroke-width="3" stroke="#000000" points="333.7880554199219,131.05880737304688 436.50799560546875,131.05880737304688 539.2279052734375,131.05880737304688" id="svg_8"/>
+  <polyline se:connector="svg_2 svg_6" fill="none" stroke-width="3" stroke="#000000" points="181.28810119628906,131.0587921142578 248.75796508789062,131.05880737304688 316.22784423828125,131.05880737304688" id="svg_7"/>
+  <path stroke="#00007f" id="svg_11" transform="rotate(89.7911 248.734 95.8414)" d="m262.856049,170.173264c-7.799179,0 -14.121445,-0.917511 -14.121445,-2.051361l0,-71.254822c0,-1.13147 -6.323578,-2.051361 -14.122772,-2.051361l0,0c7.799194,0 14.122772,-0.917572 14.122772,-2.049042l0,-71.257126l0,0c0,-1.133759 6.322266,-2.051361 14.121445,-2.051361" stroke-width="3" fill="none"/>
+  <path stroke="#00007f" id="svg_13" transform="rotate(-89.8396 437.7 208.673)" d="m451.822266,322.971558c-7.799194,0 -14.12146,-1.410858 -14.12146,-3.154358l0,-109.566849c0,-1.739838 -6.323578,-3.154327 -14.122772,-3.154327l0,0c7.799194,0 14.122772,-1.41095 14.122772,-3.150787l0,-109.570374l0,0c0,-1.743378 6.322266,-3.154327 14.12146,-3.154327" stroke-width="3" fill="none"/>
+  <path stroke="#00007f" id="svg_14" transform="rotate(-89.8396 88.0826 204.887)" d="m102.20475,289.161346c-7.799194,0 -14.12146,-1.040253 -14.12146,-2.325775l0,-80.786026c0,-1.282806 -6.323578,-2.325745 -14.122772,-2.325745l0,0c7.799194,0 14.122772,-1.040344 14.122772,-2.323151l0,-80.788666l0,0c0,-1.285431 6.322266,-2.325775 14.12146,-2.325775" stroke-width="3" fill="none"/>
+  <text style="cursor: move;" stroke="#00007f" transform="matrix(1.55738 0 0 1.74074 -78.8689 -222.963)" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" id="svg_15" y="232.985904" x="158.841963" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">-1</text>
+  <text id="svg_16" stroke="#00007f" transform="matrix(1.55738 0 0 1.74074 -78.8689 -222.963)" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" y="233.567125" x="256.124901" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">0</text>
+  <text style="cursor: move;" id="svg_18" stroke="#00007f" transform="matrix(1.55738 0 0 1.74074 -78.8689 -222.963)" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" y="190.456888" x="96.239686" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">&lt; -1</text>
+  <text id="svg_19" stroke="#00007f" transform="matrix(1.55738 0 0 1.74074 -78.8689 -222.963)" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" y="190.45489" x="331.891877" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#000000">&gt; 0</text>
+  <g id="svg_22">
+   <text transform="matrix(1.35678 0 0 1.06511 -121.784 -194.565)" stroke="#00007f" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" id="svg_20" y="204" x="272" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#00007f">|x| = -x</text>
+   <text transform="matrix(1.35678 0 0 1.06511 -121.784 -194.565)" stroke="#00007f" id="svg_21" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" y="239" x="275.5" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#00007f">|x + 1| = x + 1</text>
+  </g>
+  <g id="svg_29">
+   <text transform="matrix(1.28253 0 0 1.09719 -10.2197 -39.6325)" stroke="#00007f" id="svg_27" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" y="273.01743" x="89.462783" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#00007f">|x| = -x</text>
+   <text transform="matrix(1.28253 0 0 1.09719 -10.2197 -39.6325)" stroke="#00007f" id="svg_28" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" y="308.01743" x="92.962783" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#00007f">|x + 1| = -x - 1</text>
+  </g>
+  <g id="svg_30">
+   <text transform="matrix(1.31806 0 0 1.08136 -125.423 -33.1973)" stroke="#00007f" id="svg_24" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" y="270.524751" x="443.935559" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#00007f">|x| = x</text>
+   <text transform="matrix(1.31806 0 0 1.08136 -125.423 -33.1973)" stroke="#00007f" id="svg_25" xml:space="preserve" text-anchor="middle" font-family="Sans-serif" font-size="24" y="305.524751" x="446.435559" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="0" fill="#00007f">|x + 1| = x + 1</text>
+  </g>
+  <g id="svg_33">
+   <g id="svg_32">
+    <circle id="svg_2" r="7.28011" cy="131.058792" cx="172.507975" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="3" stroke="#00007f" fill="none"/>
+    <circle id="svg_5" r="7.28011" cy="131.058804" cx="548.007975" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="3" stroke="#00007f" fill="none"/>
+    <circle id="svg_6" r="7.28011" cy="131.058804" cx="325.007975" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="3" stroke="#00007f" fill="none"/>
+    <circle id="svg_9" r="7.28011" cy="131.058804" cx="11.007975" stroke-linecap="null" stroke-linejoin="null" stroke-dasharray="null" stroke-width="3" stroke="#00007f" fill="none"/>
+   </g>
+  </g>
+ </g>
+</svg>
