@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Differentiate the following function}\\
+			\text{with respect to x}\\
+			\quad f(x) = \sec (\tan\sqrt{x})
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{If g(x), h(x) and j(x) be three functions such}\\
+			\text{that }g(x) = \sec x, h(x) = \tan x\text{ and }j(x) = \sqrt{x}, \\ 
+			\text{then }f(x) = ?
+			</context>
+			<tex correct="true">
+			\quad f(x) = (g\circ h\circ j)(x) 
+			</tex>
+			<tex correct="false">
+			\quad f(x) = (h\circ g\circ j)(x) 
+			</tex>
+			<reason>
+			(g\circ h\circ j)(x) = g(h(j(x))) = \sec (\tan(j(x))) \\
+			= \sec(\tan(\sqrt{x})) = f(x).\\
+			\text{Slightly more complicated than before. But}\\
+			\text{the same idea.}
+			</reason>
+		</step>
+		
+			<step>
+				<context>
+				\text{Is the following correct?}
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  &amp;\dfrac{f}{dx}f(x) =\dfrac{d}{d h(x)}g(x)\cdot\dfrac{d}{d j(x)}h(x)\cdot\dfrac{d}{dx}j(x) \\
+				  &amp;= \left[\sec(\tan\sqrt{x})\cdot\tan(\tan\sqrt{x})\right]\cdot 
+				  \left[\sec^2\sqrt{x}\right]\cdot \dfrac{1}{2\sqrt{x}}
+				\end{align}
+				</tex>
+
+				<reason>
+				\text{You probably realized that the above is simply}\\
+				\text{the product rule. If you didn't, then review}\\
+				\text{the concept.}
+				</reason>
+			</step>
+			
+				<choices>
+					<tex>\dfrac{\tan(\tan\sqrt{x})\cdot\sec^2\sqrt{x}}{2\sqrt{x}}</tex>
+					<tex correct='true'>\dfrac{\sec(\tan\sqrt{x})\tan(\tan\sqrt{x})\cdot\sec^2\sqrt{x}}{2\sqrt{x}}</tex>
+					<tex>\dfrac{\sec x\cdot\tan x}{2\sqrt{x}}</tex>
+					<tex>\dfrac{\sec x\cdot\tan x\cdot \sec^2\sqrt{x}}{2\sqrt{x}}</tex>
+				</choices>
+</question>
