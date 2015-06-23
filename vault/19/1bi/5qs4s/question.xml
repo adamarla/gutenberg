@@ -8,13 +8,17 @@ A=\left[\begin{array}{rr}
 7 &amp; 4 \end{array} \right]</tex>
   </statement>
   <step>
-    <context>\text{To find }A^{-1}\text{ using row transformation, express}\\ 
-\text{A in terms of A and I, where I is identity }\\
-\text{matrix?}</context>
-    <tex correct='true'>A = IA</tex>
-    <tex>A = AI</tex>
-    <reason>\text{When using row transformation, identity}\\
-\text{matrix }\textbf{must}\text{ be the first multiplier.}</reason>
+    <context>\text{To find }A^{-1}\text{ using elementary transformation,}\\ 
+\text{how does one express A in terms of A and I,}\\ 
+\text{where I is the } \textbf{identity matrix}\text{ ?}</context>
+    <tex correct='true'>A = IA \text{ (when using Row transformation)}\\
+A = AI \text{ (when using Column transformation)}</tex>
+    <tex>A = IA \text{ (when using Column transformation)}\\
+A = AI \text{ (when using Row transformation)}</tex>
+    <reason>\text{When using }\textbf{row } \text{transformation, I must be }\\ 
+\text{the }\textbf{first}\text{ multiplier, whereas when using}\\
+\textbf{column}\text{ transformation, it is the }\textbf{ second.}
+</reason>
   </step>
   <step>
     <context>\text{What would the equation look like if you}\\
@@ -33,29 +37,41 @@ R_1\leftrightarrow R_2</context>
 1 &amp; 0 \\ 
 0 &amp; 1\end{array} \right]A</tex>
     <reason>\text{Each row transformation needs to be applied}\\
-\text{to LHS and the first matrix in RHS.}</reason>
+\text{simultaneously to the LHS and the first matrix}\\
+\text{on the RHS.}</reason>
   </step>
-  <step>
-    <context>\text{Would the following sequence of row}\\
-\text{transformations convert LHS to I?}</context>
+  <step swipe='false'>
+    <context>\text{Does the following transformation convert}\\
+\mathbf{a_{11}}\text{ to }1?</context>
     <tex correct='true'>\begin{align}
-R_1\rightarrow &amp; R_1- 3R_2 \\
-R_2\rightarrow &amp;R_2 - 2 R_1\\
+R_1\rightarrow &amp; R_1- 3R_2 
+\end{align}</tex>
+    <tex>
+</tex>
+    <reason>\text{The above transformation converts \mathbf{a_{11}}\text{ to }1</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Does the following transformation convert}\\
+\mathbf{a_{21}}\text{ to }0?</context>
+    <tex correct='true'>R_2\rightarrow &amp;R_2 - 2 R_1</tex>
+    <reason>\text{The above transformation converts \mathbf{a_{21}}\text{ to }0</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Would the following row transformation}\\
+\text{convert }
+\left[\begin{array}{rr}
+1 &amp; 1 \\ 
+0 &amp; -1\end{array} \right]\text{ to }
+\left[\begin{array}{rr}
+1 &amp; 0 \\ 
+0 &amp; 1\end{array} \right]</context>
+    <tex correct='true'>\begin{align}
 R_2\rightarrow &amp;-R_2\\
 R_1\rightarrow &amp;R_1 - R_2
-\end{align}
-
-</tex>
-    <tex>\begin{align}
-R_1\rightarrow &amp; R_1- 3R_2 \\
-R_2\rightarrow &amp;R_2 - 2 R_1\\
-R_1\rightarrow &amp;R_1 - R_2\\
-R_2\rightarrow &amp;-R_2
-\end{align}
-
-</tex>
-    <reason>\text{The above transformations, only in the}\\
-\text{stated sequence would result in }A\rightarrow I</reason>
+\end{align}</tex>
+    <reason>\text{The above transformation is correct. After}\\
+\text{all transformations so far are applied to}\\
+\text{identity matrix on the RHS, it becomes }A^{-1}</reason>
   </step>
   <choices>
     <tex>A^{-1}=

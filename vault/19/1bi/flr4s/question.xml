@@ -36,21 +36,19 @@ R_2\rightarrow R_2 - 2R_1</context>
 \left[\begin{array}{rr}
 1 &amp; 0 \\ 
 0 &amp; 1\end{array} \right]A</tex>
-    <reason>\text{Each row transformation needs to be applied}\\
-\text{simultaneously to LHS and the first matrix}\\
-\text{in RHS}</reason>
+    <reason>\text{Each transformation needs to be applied}\\
+\text{simultaneously to the LHS and the first matrix}\\
+\text{on the RHS.}</reason>
   </step>
-  <step swipe='false'>
+  <step>
     <context>\text{Does the following transformation convert}\\
 \mathbf{a_{22}}\text{ to }1?</context>
-    <tex correct='true'>\begin{align}
-R_2\rightarrow &amp;\dfrac{1}{5} R_2 \\
-\end{align}
-</tex>
-    <reason>\text{The above transformation converts \mathbf{a_{22}}\text{ to }1</reason>
+    <tex correct='true'>R_2\rightarrow \dfrac{1}{5} R_2</tex>
+    <tex>R_2\rightarrow \dfrac{2}{5} R_2</tex>
+    <reason>R_2\rightarrow \dfrac{1}{5} R_2\text{ converts \mathbf{a_{22}}\text{ to }1</reason>
   </step>
   <step swipe='false'>
-    <context>\text{Would the following row transformation}\\
+    <context>\text{Would the following transformation}\\
 \text{convert }
 \left[\begin{array}{rr}
  1 &amp; -1 \\ 
@@ -58,13 +56,10 @@ R_2\rightarrow &amp;\dfrac{1}{5} R_2 \\
 \left[\begin{array}{rr}
  1 &amp; 0 \\ 
 0 &amp; 1\end{array} \right]</context>
-    <tex correct='true'>\begin{align}
-R_1\rightarrow &amp; R_1 + R_2 \\
-\end{align}
-</tex>
-    <reason>\text{The above transformation(s) are correct. After}\\
-\text{all transformations have been applied to the }\\
-\text{first matrix on RHS, it becomes the inverse.}</reason>
+    <tex correct='true'>R_1\rightarrow R_1 + R_2</tex>
+    <reason>\text{The above transformation is correct. After}\\
+\text{all transformations so far are applied to}\\
+\text{identity matrix on the RHS, it becomes }A^{-1}</reason>
   </step>
   <choices>
     <tex>A^{-1}=

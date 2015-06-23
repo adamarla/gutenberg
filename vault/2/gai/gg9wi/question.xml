@@ -24,21 +24,38 @@ C = \dfrac{x(kg)+y(kg)}{2}\cdot
     <reason>\text{Total Cost is the sum of the weighted}\\
 \text{cost of each food type}</reason>
   </step>
-  <step swipe='false'>
+  <step>
     <context>\text{What are the constraints on x and y,}\\
 \text{the weight of each food type?}</context>
-    <tex correct='true'>\text{Vitamin A, 8 unit minimum:}\\
+    <tex correct='true'>\text{Minimum units of vitamin A = 8, therefore,}\\
+\begin{align}
 x(kg)\cdot 3\left(\dfrac{\text{units}}{\text{kg}}\right)+
-y(kg)\cdot 4\left(\dfrac{\text{units}}{\text{kg}}\right) \ge 8 \\
-\text{Vitamin B, 11 unit mininum:}\\
+y(kg)\cdot 4\left(\dfrac{\text{units}}{\text{kg}}\right) &amp;\ge 8 \\
+\implies 3x+4y &amp;\ge 8
+\end{align}\\
+
+\text{Minimum units of Vitamin B = 11, therefore,}\\
+\begin{align}
 x(kg)\cdot 5\left(\dfrac{\text{units}}{\text{kg}}\right)+
-y(kg)\cdot 2\left(\dfrac{\text{units}}{\text{kg}}\right) \ge 11 \\
-\text{Units cannot be negative:}\\
-x(kg)\ge 0\, y(kg)\ge 0
+y(kg)\cdot 2\left(\dfrac{\text{units}}{\text{kg}}\right) &amp;\ge 11 \\
+\implies 5x+2y &amp;\ge 11
+\end{align}\\
+
+\text{Weight cannot be negative, therefore}\\ 
+x\ge 0 \text{ and } y\ge 0
 </tex>
-    <tex></tex>
-    <reason>\text{Units of a vitamin in a food equals}\\
-\text{weight of food times per unit weight of}\\
+    <tex>\text{Minimum units of vitamin A = 8, therefore,}\\
+x \ge 8\\
+
+\text{Minimum units of Vitamin B = 11, therefore,}\\
+y \ge 11\\
+
+\text{Weight cannot be negative, therefore}\\ 
+x\ge 0 \text{ and } y\ge 0
+
+</tex>
+    <reason>\text{Units of a vitamin in a food is the weight}\\
+\text{of that food times the per unit weight of}\\
 \text{that vitamin in it.}</reason>
   </step>
   <step>

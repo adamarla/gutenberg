@@ -9,13 +9,17 @@ A=\left[\begin{array}{rr}
  \end{array} \right]</tex>
   </statement>
   <step>
-    <context>\text{To find }A^{-1}\text{ using column transformation, }\\ 
-\text{express A in terms of A and I, where I is }\\
-\text{the identity matrix?}</context>
-    <tex correct='true'>A = AI</tex>
-    <tex>A = IA</tex>
-    <reason>\text{When using }\textbf{column} \text{ transformation, identity}\\
-\text{matrix must be the }\textbf{second}\text{ multiplier.}</reason>
+    <context>\text{To find }A^{-1}\text{ using elementary transformation,}\\ 
+\text{how does one express A in terms of A and I,}\\ 
+\text{where I is the } \textbf{identity matrix}\text{ ?}</context>
+    <tex correct='true'>A = IA \text{ (when using Row transformation)}\\
+A = AI \text{ (when using Column transformation)}</tex>
+    <tex>A = IA \text{ (when using Column transformation)}\\
+A = AI \text{ (when using Row transformation)}</tex>
+    <reason>\text{When using }\textbf{row } \text{transformation, I must be }\\ 
+\text{the }\textbf{first}\text{ multiplier, whereas when using}\\
+\textbf{column}\text{ transformation, it is the }\textbf{ second.}
+</reason>
   </step>
   <step>
     <context>\text{What would the equation look like if you}\\
@@ -35,26 +39,34 @@ C_1\rightarrow C_1 + 2C_2</context>
 \left[\begin{array}{rr}
  1 &amp; 0\\ 
 0 &amp; 1\end{array} \right]</tex>
-    <reason>\text{Each column transformation needs to be }\\
-\text{applied to LHS and the}\textbf{ second}\text{ matrix in RHS.}</reason>
+    <reason>\text{Each transformation needs to be applied}\\
+\text{simultaneously to the LHS and the first matrix}\\
+\text{on the RHS.}</reason>
   </step>
   <step>
-    <context>\text{Would the following sequence convert }\\
-\text{LHS to I ?}</context>
-    <tex correct='true'>\begin{align}
-C_2\rightarrow &amp;C_2 +C_1\\
-C_2\rightarrow &amp; \dfrac{1}{2}C_2
-\end{align}
+    <context>\text{Does the following transformation convert}\\
+\mathbf{a_{12}}\text{ to }0?</context>
+    <tex correct='true'>C_2\rightarrow C_2 +C_1
 
 </tex>
-    <tex>\begin{align}
-C_2\rightarrow &amp; \dfrac{1}{2}C_2 \\
-C_2\rightarrow &amp;C_2 +C_1
-\end{align}
+    <tex>C_2\rightarrow C_2 - C_1</tex>
+    <reason>C_2\rightarrow C_2 +C_1\text{ converts \mathbf{a_{12}}\text{ to }0
 
-</tex>
-    <reason>\text{The above transformations, only in the}\\
-\text{stated sequence, would result in }A\rightarrow I</reason>
+</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Would the following transformation}\\
+\text{convert }
+\left[\begin{array}{rr}
+1 &amp; 0 \\ 
+0 &amp; 2\end{array} \right]\text{ to }
+\left[\begin{array}{rr}
+ 1 &amp; 0 \\ 
+0 &amp; 1\end{array} \right]</context>
+    <tex correct='true'>C_2\rightarrow \dfrac{1}{2}C_2</tex>
+    <reason>\text{The above transformation is correct. After}\\
+\text{all transformations so far are applied to}\\
+\text{identity matrix on the RHS, it becomes }A^{-1}</reason>
   </step>
   <choices>
     <tex>A^{-1}=
