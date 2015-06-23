@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Find all the points of discontinuity}\\
+			\text{of f defined as }f(x) = \vert x\vert - \vert x+1\vert.
+		</tex>
+	</statement>
+	
+		<step>
+			<context>
+			\text{Which of the following shows the}\\
+			\text{correct definitions for }\vert x\vert\text{ and }\vert x+1\vert ?
+			</context>
+			<tex correct="true">
+			\begin{align}
+			  \vert x\vert &amp;= \begin{cases}
+			                          x,x\geq 0, \\
+			                          -x, x\lt 0
+			                      \end{cases} \\
+			  \vert x+1\vert &amp;= \begin{cases}
+			                          x + 1, x\geq -1 \\
+			                          -x-1, x\lt -1
+			                        \end{cases}
+			\end{align}
+			</tex>
+			<tex correct="false">
+			\begin{align}
+			  \vert x\vert &amp;= \begin{cases}
+			                          x,x\geq 0, \\
+			                          -x, x\lt 0
+			                      \end{cases} \\
+			  \vert x+1\vert &amp;= \begin{cases}
+			                          x + 1, x\geq 0\\
+			                          -x-1, x\lt 0
+			                        \end{cases}
+			\end{align}
+			</tex>
+			<reason>
+			\text{The tricky function is }\vert x+1\vert. \\
+			\text{And the trick is to see }\vert x + 1\vert \text{ as }\vert y \vert\\
+			\text{where } y = x + 1.
+			</reason>
+		</step>
+		
+			<step>
+					<context>
+					\text{Which of the following correctly shows}\\
+					\text{the definitions of }\vert x\vert\text{ and }\vert x+1\vert\\
+					\text{along the number line?}
+					</context>
+					<image correct='true'>trim-right.svg</image>
+					<image correct='false'>trim-wrong.svg</image>
+					<reason>
+					\text{Just testing SVG rendering}
+					</reason>
+				</step>	
+	
+		<choices>
+			<tex>\text{Discontinuous at every integer.}</tex>
+			<tex>\text{Discontinuous at x = -1 and x = 1.}</tex>
+			<tex correct='true'>\text{No points of discontinuity.}</tex>
+			<tex>\text{Discontinuous at x = 0.}</tex>
+		</choices>
+</question>
