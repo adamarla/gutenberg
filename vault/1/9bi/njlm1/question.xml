@@ -38,8 +38,10 @@
 					  &amp;= -3x^2\cdot\sin x^3 \\
 					  \dfrac{d}{dx}\sin^2 (x^5) &amp;= \dfrac{d}{d x^5}\sin^2 (x^5)\cdot\dfrac{d}{dx}x^5 \\
 					  &amp;= 5x^4\cdot \left[2\sin x^5\cdot\cos x^5 \right] \\
-					  \therefore f'(x)&amp;=  \cos x^3\dfrac{d}{dx}\sin^2 (x^5) + \sin^2 (x^5)\dfrac{d}{dx}\cos x^3 \\
-					  &amp;= 10x^4\sin x^5\cos x^5\cos x^3 -3x^2 \sin x^3 \sin^2 (x^5) 
+					  \therefore f'(x)&amp;=  \cos x^3\dfrac{d}{dx}\sin^2 (x^5) \\ 
+					  &amp;+ \sin^2 (x^5)\dfrac{d}{dx}\cos x^3 \\
+					  &amp;= 10x^4\sin x^5\cos x^5\cos x^3 \\
+					  &amp;-3x^2 \sin x^3 \sin^2 (x^5) 
 					\end{align}
 					</tex>
 					
