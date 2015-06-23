@@ -45,22 +45,35 @@
 					  \lim_{x\to\frac{\pi}{2}}f(x) &amp;= \lim_{y\to 0}\dfrac{k}{2}\dfrac{\sin y}{y} 
 					  = \dfrac{k}{2}
 					\end{align}
-					\\ \text{And hence, for f(x) to be }\\
-					\text{continuous at }x=\frac{\pi}{2} \\
-					\begin{align}
-					  \lim_{x\to\frac{\pi}{2}}f(x) = \dfrac{k}{2} &amp;= f\left(\frac{\pi}{2}\right) = 3\\
-					  \implies k &amp;= 6.
-					\end{align}
 					</tex>
  
 					<reason>
 					\text{We have used two standard results above: }\\
 					\begin{align}
-					  \cos\theta &amp;= \sin \left(\frac{\pi}{2}-\theta\right) \\
-					  \lim_{\theta\to 0}\dfrac{\sin\theta}{\theta}&amp;= 1
+					  &amp;\cos\theta = \sin \left(\frac{\pi}{2}-\theta\right) \\
+					  &amp;\lim_{\theta\to 0}\dfrac{\sin\theta}{\theta}= 1
 					\end{align}
 					</reason>
 				</step>			
+				
+					<step>
+						<context>
+						\text{Is the following conclusion correct?}
+						</context>
+						<tex correct="true">
+						\text{For f(x) to be continuous at }x=\dfrac{\pi}{2} \\
+						\begin{align}
+						  \lim_{x\to\frac{\pi}{2}}f(x) &amp;= f\left(\frac{\pi}{2}\right) \\
+						  \implies \dfrac{k}{2}&amp;= 3 \implies k = 6.
+						\end{align}
+						</tex>
+						
+						<reason>
+						\text{For f(x) to be continuous at }x=\frac{\pi}{2}, \\
+						\lim_{x\to\frac{\pi}{2}}f(x) = f\left(\frac{\pi}{2}\right).
+						\text{The rest is only calculations.}
+						</reason>
+					</step>
 			
 			
 		<choices>
