@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Differentiate the following with respect to x.}\\
+			\quad f(x) = e^{x^3} 
+		</tex>
+	</statement>
+	
+		<step>
+			<context>
+			\text{Is the following assertion correct?}
+			</context>
+			<tex correct="true">
+			\text{The domain of f(x) is }\mathbb{R}. \\
+			\text{In other words, x can be anything.}
+			</tex>
+			<tex correct="false">
+			\text{The domain of f(x) is }\mathbb{R^+}. \\
+			\text{In other words, x can only be positive}\\
+			\text{real numbers.}
+			</tex>
+			<reason> 
+			\text{There is no restriction on x.} e^{\text{anything}}\text{ can be}\\
+			\text{evaluated. But why bother with finding the}\\
+			\text{domain? Because if f(x) is not defined for some x, }\\
+			\text{then how can }f'(x)\text{ be?}
+			</reason>
+		</step>
+		
+			<step>
+				<context>
+				\text{Are the calculations below correct?}
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  \dfrac{d}{dx}e^{x^3} &amp;= \dfrac{d}{d x^3}e^{x^3}\cdot\dfrac{d}{dx}x^3 \\ 
+				  &amp;= e^{x^3}\cdot 3x^2 
+				\end{align}
+				</tex>
+				
+				<reason>
+				\text{The above is a simply the application of the}\\
+				\textbf{Chain Rule} - f(x) = (g\circ h)(x) \implies 
+				f'(x) = \frac{dg}{dh}\cdot\dfrac{dh}{dx}.  
+				</reason>
+			</step>
+			
+				<choices>
+					<tex>e^{x^3}</tex>
+					<tex correct='true'>3x^2\cdot e^{x^3}</tex>
+					<tex>e^{3x^2}</tex>
+					<tex>x^3\cdot e^{x^3}</tex>
+				</choices>
+</question>

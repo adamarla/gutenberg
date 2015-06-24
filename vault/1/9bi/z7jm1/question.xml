@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Differentiate the following with respect to x}\\
+			\quad f(x) = e^{\sin^{-1} x}
+		</tex>
+	</statement>
+	
+		<step>
+			<context>
+			\text{Before we start differentiating, what is}\\
+			\text{the domain of f(x)?}
+			</context>
+			<tex correct="true">
+			\sin^{-1} x\text{ is defined only if }x\in \left[-1,1\right].\\
+			\text{Hence, the domain of f(x) is }\left[-1,1\right].
+			</tex>
+			<tex correct="false">
+			x\text{ can be anything. In other words, }x\in\mathbb{R}.
+			</tex>
+			<reason>
+			\text{If }\sin^{-1}x = \theta\text{ then }x=\sin\theta.\\
+			\text{But, }-1\leq\sin\theta\leq 1\implies -1\leq x\leq 1.\\
+			\text{We find the domain because f'(x) makes sense only}\\
+			\text{when f(x) is defined.}
+			</reason>
+		</step>
+		
+			<step>
+				<context>
+				\text{Are the calculations done below correct?}
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  \dfrac{d}{dx}e^{\sin^{-1} x} &amp;= \dfrac{d}{d \sin^{-1}x}e^{\sin^{-1}x}
+				  \cdot\dfrac{d}{dx}\sin^{-1}x \\
+				  &amp;= e^{\sin^{-1}x}\cdot\dfrac{1}{\sqrt{1-x^2}}, x\in \left(-1,1\right)
+				\end{align}
+				</tex>
+				
+				<reason>
+				\text{If }g(v) = e^v\text{ and }h(x) = \sin^{-1}x, \text{ then }f(x) = g(h(x)).\\
+				\text{And hence, we apply Chain Rule - }\dfrac{df}{dx} = \dfrac{dg}{dh}\cdot\dfrac{dh}{dx}.\\
+				\text{Note also that }\dfrac{df}{dx}\text{ is defined only for }x\in \left(-1,1\right) \\  
+				- \text{not }x\in \left[-1,1\right].
+				</reason>
+			</step>
+		
+			<choices>
+				<tex>
+				-e^{\sin^{-1}x}\cdot\dfrac{1}{\sqrt{1+x^2}}
+				</tex>
+				<tex correct='true'>
+				e^{\sin^{-1}x}\cdot\dfrac{1}{\sqrt{1-x^2}}, x\in \left(-1,1\right)
+				</tex>
+				<tex>
+				e^{x}\sin^{-1}x \cdot\dfrac{1}{\sqrt{1-x^2}}, x\in \left(-1,1\right)
+				</tex>
+				<tex>
+				e^{x}\cdot\dfrac{1}{\sqrt{1-x^2}}, x\in \left(-1,1\right)
+				</tex>
+			</choices>
+		
+</question>

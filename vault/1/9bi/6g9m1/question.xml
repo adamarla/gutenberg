@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Differentiate the following with respect to x}\\
+			\quad f(x) = \dfrac{e^x}{\sin x}
+		</tex>
+	</statement>
+	
+		<step>
+			<context>
+			\text{Before we start differentiating, }\\
+			\text{for what values of x is f(x) defined?}
+			</context>
+			<tex correct="true">
+			\quad x \neq n\pi, n\in\mathbb{Z}\text{ (integers) } 
+			</tex>
+			<tex correct="false">
+			\text{Any }x\in\mathbb{R} 
+			</tex>
+			<reason>
+			\text{If }x=\pi,2\pi,3\pi\ldots \text{ then }\sin x = 0.\\
+			\text{And at such points, }f(x)=\dfrac{e^x}{\sin x}\text{ is not defined.}
+			</reason>
+		</step>
+		
+			<step>
+				<context>
+				\text{If }f(x) = \dfrac{g(x)}{h(x)}\text{, then which of} \\
+				\text{the following is true?}
+				</context>
+				<tex correct="true">
+				  \begin{align}
+				    \dfrac{d}{dx}f(x) &amp;= \dfrac{g'h - gh'}{h^2}
+				  \end{align}
+				</tex>
+				<tex correct="false">
+				  \begin{align}
+				    \dfrac{d}{dx}f(x) &amp;= \dfrac{g'}{h'}
+				  \end{align}
+				</tex>
+				<reason>
+				\text{This is a standard result. And its called the}\\
+				\textbf{Quotient Rule}.\text{ Review if you got it wrong.}
+				</reason>
+			</step>
+			
+				<step>
+					<context>
+					\text{Are the following calculations correct?}
+					</context>
+					<tex correct="true">
+					\begin{align}
+					  \dfrac{d}{dx}f(x) &amp;= \dfrac{g'h - gh'}{h^2} \\ 
+					  \text{where }g(x) = e^x &amp;\text{ and } h(x) = \sin x \\
+					  &amp;= \dfrac{e^x\cdot\sin x - e^x\cdot\cos x }{\sin^2 x} \\
+					  &amp;= \dfrac{e^x\cdot (\sin x - \cos x }{\sin^2 x} \\
+					  &amp;x\neq n\pi, n\in\mathbb{Z}
+					\end{align}
+					</tex>
+					
+					<reason>
+					\text{Other than the Quotient Rule, we have used}\\
+					\text{the facts that }\dfrac{d}{dx}e^x = e^x \text{ and }\dfrac{d}{dx}\sin x = \cos x.
+					</reason>
+				</step>
+				
+					<choices>
+						<tex>\dfrac{e^x}{\cos x}</tex>
+						<tex>\dfrac{e^x\cdot\cos x}{\sin^2 x}, x\neq n\pi, n\in\mathbb{Z}</tex>
+						<tex>\dfrac{x\cdot e^x\cos x}{\sin^2 x}, x\neq n\pi, n\in\mathbb{Z}</tex>
+						<tex correct='true'>
+						\dfrac{e^x\cdot (\sin x - \cos x)}{\sin^2 x}, x\neq n\pi, n\in\mathbb{Z}</tex>
+					</choices>
+</question>
