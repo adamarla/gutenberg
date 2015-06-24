@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Examine the continuty of the function}\\
+ f(x) = | x-5 |</tex>
+  </statement>
+  <step swipe='false'>
+    <context>\text{which of the following correctly defines f(x)? }\\</context>
+    <tex correct='true'>f(x) = \begin{cases} 
+         x - 5, x \geq 5 \\
+         5-x, x\lt 5 
+         \end{cases} 
+</tex>
+    <tex>f(x) = \begin{cases} 
+         x - 5, x \geq 5 \\
+         -x-5, x\lt 5 
+         \end{cases}
+</tex>
+    <reason>\text{Remember, }| x-5| \geq 0\text{ for all x } \\
+\text{including for }x\lt 5. </reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Is the following assertion correct?}</context>
+    <tex correct='true'>f(x) \text{ is a straight line for }x\neq 5.\\
+\text{Hence, it is continuous for all }x\neq 5.\\
+\text{But we need to check for continuity at }x=5.
+
+</tex>
+    <tex>
+</tex>
+    <reason>\text{At }x=5\text{, the definition of the function}\\
+\text{changes. Hence, x = 5 could be the only}\\
+\text{problem point. We should check for}\\
+\text{continuity there.}</reason>
+  </step>
+  <step>
+    <context>\text{Is the following analysis correct?}</context>
+    <tex correct='true'>\begin{align}
+    \lim_{x\to 5^-}f(x) &amp;= \lim_{x\to 5^-} (5-x)  = 0 \\
+    \lim_{x\to 5^+}f(x) &amp;= \lim_{x\to 5^+} (x-5)  = 0 \\
+    f(5) = \vert 5-5 \vert  = 0
+\end{align}
+\\ \text{Hence, f(x) is also continuous at x=5.}\\
+\therefore \text{ it is continuous at all x.}</tex>
+    <tex></tex>
+    <reason>\text{In Step 2, we established that f(x) is }\\
+\text{continuous at }x\neq 5. \text{Now, we have proven}\\
+\text{continuity at x=5. Hence, f(x) is continuous}\\
+\text{for all x.}</reason>
+  </step>
+  <choices>
+    <tex>\text{Continuous at just x=5 and discontinuous\\
+ everywhere in it's domain}</tex>
+    <tex>\text{Discontinuous at just x=5 and continuous\\
+everywhere in it's domain}</tex>
+    <tex>\text{Discontinuous everywhere in it's domain}</tex>
+    <tex correct='true'>\text{continuous everywhere in it's domain}</tex>
+  </choices>
+</question>
