@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Differentiate the following with respect to x.}\\
+			\quad \sin \left(\tan^{-1} e^{-x}\right)
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{If g(x), h(x) and j(x) be three}\textbf{ unrelated}\\
+			\text{functions such that }g(x)=\sin x, h(x)=\tan^{-1}x\\ 
+			\text{ and }j(x) = e^{-x},\text{then what is f(x) = ?}
+			</context>
+			<tex correct="true">
+			\quad f(x) = (g\circ h\circ j)(x) 
+			</tex>
+			<tex correct="false">
+			\quad f(x) = (v\circ h\circ g)(x) 
+			</tex>
+			<reason>
+			f(x) = (g\circ h\circ j)(x)\implies f(x) = g(h(j(x))). \\
+			\text{In other words, }f(x) = \sin(h(j(x)) = \\ 
+			\sin(\tan^{-1} j(x)) = \sin(\tan^{-1} e^{-x}).
+			</reason>
+		</step>
+		
+	<step>
+		<context>
+		\text{Are the analysis and calculations below correct?}
+		</context>
+		<tex correct="true">
+		\begin{align}
+		  &amp;f(x) = (g\circ h\circ j)(x) \\ 
+		  &amp;\implies \dfrac{d}{dx}f(x) = \dfrac{dg}{dh}\cdot\dfrac{dh}{dj}\cdot\dfrac{dj}{dx} \\
+		  &amp;= \dfrac{d}{d\tan^{-1}(e^{-x})}\sin \left(\tan^{-1}(e^{-x})\right)\\
+		  &amp;\times\dfrac{d}{de^{-x}}\tan^{-1}e^{-x}\times \dfrac{d}{dx}e^{-x} \\
+		  &amp;= \cos \left(\tan^{-1}(e^{-x})\right)\cdot 
+		  \dfrac{1}{1+\left(e^{-x}\right)^2}\cdot 
+		  \left(-e^{-x}\right) \\
+		  &amp;= -\dfrac{e^{-x}\cdot \cos \left(\tan^{-1}(e^{-x})\right)}{1+e^{-2x}}
+		\end{align}
+		</tex>
+	
+		<reason>
+		\text{First, }f(x) = (g\circ h\circ j)(x) \implies 
+		f' = \frac{dg}{dh}\cdot\dfrac{dh}{dj}\cdot\dfrac{dj}{dx}. \\
+		\text{This is called the Chain Rule. Also, }\frac{d}{d\theta}\sin\theta=\cos\theta, \\
+		\frac{d}{dy}\tan^{-1}y = \frac{1}{1+y^2}\text{ and }\frac{d}{dz}e^{-z} = -e^{-z}.
+		</reason>
+	</step>
+	
+		<choices>
+			<tex correct='true'>-\dfrac{e^{-x}\cdot \cos \left(\tan^{-1}(e^{-x})\right)}{1+e^{-2x}}</tex>
+			<tex>\dfrac{\cos \left(\tan^{-1}(e^{-x})\right)}{1+e^{-2x}}</tex>
+			<tex>-\dfrac{e^{-x}}{1+e^{-2x}}</tex>
+			<tex>\dfrac{e^{-x}\cdot \cos \left(\tan^{-1}(e^{-x})\right)}{1+e^{-x}}</tex>
+		</choices>
+</question>

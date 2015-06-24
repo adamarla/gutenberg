@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Differentiate the following with respect to x.}\\
+			\qquad f(x) = \log (\log x), x\gt 1
+		</tex>
+	</statement>
+
+	<step>
+			<context>
+			\text{Why is the }x\gt 1\text{ in the question}\\
+			\text{important - if at all?}
+			</context>
+			<tex correct="true">
+			\log (\log x)\text{ is defined only if }\log x\gt 0.\\
+			\text{And }\log x\gt 0\text{ only if }x\gt 1.\text{That is why.}
+			</tex>
+			<tex correct="false">
+			\text{It is probably not. These things are written}\\
+			\text{just to confuse students.}
+			</tex>
+			<reason>
+			\text{If f(x) is not defined for some x, then how}\\
+			\text{can f'(x) be? That is why it is important to know}\\
+			\text{where all f(x) is defined before finding f'(x).}
+			</reason>
+		</step>	
+		
+			<step>
+				<context>
+				\text{Are the calculations below correct?}
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  \dfrac{d}{dx}\log(\log x) &amp;= \dfrac{d}{d\log x}\log(\log x)
+				  \cdot\dfrac{d}{dx}\log x \\
+				  &amp;= \dfrac{1}{\log x}\cdot\dfrac{1}{x} = \dfrac{1}{x\cdot\log x}, x\gt 1.
+				\end{align}
+				</tex>
+
+				<reason>
+				\text{We have simply applied the Chain Rule to find f'(x).}\\
+				\text{Also, used the standard result - }\dfrac{d}{dy}\log y = \dfrac{1}{y}.
+				</reason>
+			</step>
+			
+				<choices>
+					<tex>\dfrac{1}{x}</tex>
+					<tex>\dfrac{1}{\log x}</tex>
+					<tex correct='true'>\dfrac{1}{x\cdot\log x}</tex>
+					<tex>\dfrac{x}{\log x}</tex>
+				</choices>
+	
+</question>

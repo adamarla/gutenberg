@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Differentiate the following with respect to x.}\\
+			\qquad f(x) = \sqrt{e^{\sqrt{x}}}, x \geq 0
+		</tex>
+	</statement>
+
+			<step>
+				<context>
+				\text{Is the analysis below correct?}
+				</context>
+				<tex correct="true">
+				
+				\begin{align}
+				  \text{Let }x &amp;= t^2 \implies dx = 2t\cdot dt \\ 
+				  \implies \dfrac{dt}{dx} &amp;= \dfrac{1}{2t} = \dfrac{1}{2\sqrt{x}} \\
+				  \therefore f(x) &amp;= \sqrt{e^{\sqrt{x}}} = \sqrt{e^{t}} \\
+				  \implies \dfrac{d}{dx}f(x) &amp;= \dfrac{d}{dt}\sqrt{e^t}\cdot\dfrac{dt}{dx} \\
+				  &amp;= \dfrac{1}{2\sqrt{e^t}}\cdot\dfrac{d}{dt}e^t\cdot\dfrac{dt}{dx} \\
+				  &amp;= \dfrac{e^t}{2\cdot\sqrt{e^t}}\cdot\dfrac{1}{2\sqrt{x}} = 
+				  \dfrac{e^{\sqrt{x}}}{4\cdot\sqrt{x\cdot e^{\sqrt{x}}}}
+				\end{align}
+				</tex>
+
+				<reason>
+				\text{We have simply applied the Chain Rule to find f'(x).}\\
+				\text{Also, used the standard results - } \\
+				\dfrac{d}{dy}e^y = e^y \text{ and }\dfrac{d}{dz}\sqrt{z} = \dfrac{1}{2\sqrt{z}}.
+				</reason>
+			</step>
+			
+				<step>
+					<context>
+					\textbf{Bonus Question:}\text{ Are f(x) and f'(x) defined}\\
+					\text{for the same values of x?}
+					</context>
+					<tex correct="true">
+					\textbf{No. }\text{For }f(x) = \sqrt{e^{\sqrt{x}}}\text{ to be defined, }x\geq 0.\\
+					\text{But for }f'(x) = \dfrac{e^{\sqrt{x}}}{4\cdot\sqrt{x\cdot e^{\sqrt{x}}}}\text{ to be defined}\\
+					x\neq 0 \implies x\gt 0.
+					</tex>
+					<tex correct="false">
+					\textbf{Yes. } f(x)\text{ is defined for }x\geq 0. \text{And so is }f'(x).
+					</tex>
+					<reason>
+					\text{If f(x) is not defined at some x, then f'(x) cannot be.}\\
+					\text{But that does }\textbf{not }\text{mean that if f(x) is}\\
+					\text{defined, then f'(x) also must be. See x = 0.}
+					</reason>
+				</step>
+			
+				<choices>
+					<tex correct='true'>
+					\dfrac{e^{\sqrt{x}}}{4\cdot\sqrt{x\cdot e^{\sqrt{x}}}}, x\gt 0
+					</tex>
+					<tex>
+					\dfrac{e^{\sqrt{x}}}{2\cdot\sqrt{e^{\sqrt{x}}}}
+					</tex>
+					<tex>
+					\dfrac{e^{\sqrt{x}}}{4\cdot\sqrt{e^{\sqrt{x}}}}
+					</tex>
+					<tex>
+					\dfrac{e^{\sqrt{x}}}{2\cdot\sqrt{x}}
+					</tex>
+				</choices>
+	
+</question>
