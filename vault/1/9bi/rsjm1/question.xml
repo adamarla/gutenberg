@@ -9,19 +9,20 @@
 	</statement>
 		<step>
 			<context>
-			\text{If}\\
-			\begin{align}
-			  g(u) &amp;= 2\sqrt{u} \\
-			  h(v) &amp;= \cot v \\
-			  j(w) &amp;= w^2 
-			\end{align}\\
-			\text{then }f(x) = ?
+			\text{How would you express f(x) in terms}\\
+			\text{of the following}\textbf{ unrelated}\text{ functions} \\
+			\quad g(x) = 2\sqrt{x}, h(x) = \cot x\text{ and }j(x) = x^2
+			
 			</context>
 			<tex correct="true">
-			\quad f(x) = (g\circ h\circ j)(x) 
+			\begin{align}
+			  f(x) &amp;= g( h(j(x)) ) \implies f(x) = (g\circ h\circ j)(x)
+			\end{align}
 			</tex>
 			<tex correct="false">
-			\quad f(x) = (h\circ g\circ j)(x) 
+      \begin{align}
+			  f(x) &amp;= h( g(j(x)) ) \implies f(x) = (h\circ g\circ j)(x)
+			\end{align}
 			</tex>
 			<reason>
 			f(x) = (g\circ h\circ j)(x)\text{ simply means} \\
@@ -36,8 +37,8 @@
 				</context>
 				<tex correct="true">
 				\begin{align}
-				f(x) &amp;= (g\circ h\circ j)(x) \\
-				\implies\dfrac{df}{dx} &amp;= 
+				&amp;f(x) = (g\circ h\circ j)(x) \\
+				\implies&amp;\dfrac{df}{dx} = 
 				\dfrac{d}{dh(x)}g(h(x))\cdot\dfrac{d}{dj(x)}h(j(x))\cdot\dfrac{d}{dx}j(x) \\
 				&amp;=\dfrac{d}{d\cot(x^2)}2\sqrt{\cot (x^2)}\cdot
 				\dfrac{d}{dx^2}\cot(x^2)\cdot \dfrac{d}{dx}x^2 \\
@@ -48,9 +49,9 @@
 				</tex>
 
 				<reason>
-				\text{You probably realized that the above is simply}\\
-				\text{the product rule. If you didn't, then review}\\
-				\text{the concept.}
+				\text{If }f(x) = (g\circ h\circ j)(x) = g(h(j(x)))\text{ then, }\\
+				f'(x) = \frac{dg}{dh}\cdot\frac{dh}{dj}\cdot\frac{dj}{dx}. \\
+				\text{This is what is called the Product Rule.}
 				</reason>
 			</step>
 			
