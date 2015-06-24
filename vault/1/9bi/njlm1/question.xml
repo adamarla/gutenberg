@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Differentiate the following function}\\
+			\text{with respect to x}\\
+			\quad f(x) = \cos x^3\cdot\sin^2 (x^5)
+		</tex>
+	</statement>
+
+	<step>
+		<context>
+		\text{If }f(x) = g(x)\cdot h(x)\text{, then }f'(x) = ?
+		</context>
+		<tex correct="true">
+		\begin{align}
+		  \dfrac{d}{dx}f(x) &amp;= g'h + gh' 
+		\end{align}
+		</tex>
+		<tex correct="false">
+		\begin{align}
+		  \dfrac{d}{dx}f(x) &amp;= g'\cdot h'
+		\end{align}
+		</tex>
+		<reason>
+		\text{This is a standard result. And its called}\\
+		\text{the Product Rule. Review if you got this wrong.}
+		</reason>
+	</step>
+	
+		<step>
+					<context>
+					\text{Are the following calculations correct?}
+					</context>
+					<tex correct="true">
+					\begin{align}
+					  \dfrac{d}{dx}\cos x^3 &amp;= \dfrac{d}{d x^3}\cos x^3\cdot\dfrac{d}{dx} x^3 \\
+					  &amp;= -3x^2\cdot\sin x^3 \\
+					  \dfrac{d}{dx}\sin^2 (x^5) &amp;= \dfrac{d}{d x^5}\sin^2 (x^5)\cdot\dfrac{d}{dx}x^5 \\
+					  &amp;= 5x^4\cdot \left[2\sin x^5\cdot\cos x^5 \right] \\
+					  \therefore f'(x)&amp;=  \cos x^3\dfrac{d}{dx}\sin^2 (x^5) \\ 
+					  &amp;+ \sin^2 (x^5)\dfrac{d}{dx}\cos x^3 \\
+					  &amp;= 10x^4\sin x^5\cos x^5\cos x^3 \\
+					  &amp;-3x^2 \sin x^3 \sin^2 (x^5) 
+					\end{align}
+					</tex>
+					
+					<reason>
+					\text{Don't forget to differentiate the }x^3\text{ in }\cos x^3\\
+					\text{and the }x^5\text{ in }\sin^2 (x^5). 
+					</reason>
+				</step>		
+				<choices>
+					<tex correct='true'> 10x^4\sin x^5\cos x^5\cos x^3 -3x^2 \sin x^3 \sin^2   (x^5)</tex>
+					<tex>\sin 2x^5\cdot\cos x^3 - 3\cos x^3\sin^2 x^5</tex>
+					<tex>5x^4\sin 2x^5\cdot\cos x^3 + \cos x^3\sin^2 x^5</tex>
+					<tex>3x^2\sin 2x^5\cdot\cos x^3 - 5x^4\cos x^3\sin^2 x^5</tex>
+				</choices>
+</question>

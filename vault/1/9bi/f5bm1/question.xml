@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Differentiate the following function}\\
+			\text{with respect to x}\\
+			\quad f(x) = \sin (ax + b) 
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{If g(x) and h(x) be two functions such that}\\
+			g(x) = \sin x \text{ and } h(x) = ax + b,\text{ then }f(x) = ?
+			</context>
+			<tex correct="true">
+			\quad f(x) = (g\circ h)(x) 
+			</tex>
+			<tex correct="false">
+			\quad f(x) = (h\circ g)(x) 
+			</tex>
+			<reason>
+			(g\circ h)(x) = g(h(x)) = \sin(h(x)) = \sin(ax + b) = f(x).\\
+			(h\circ g)(x) = h(g(x)) = h(\sin x) = a\sin x + b \neq f(x).\\
+			\text{Just wanted to see if you're comfortable}\\
+			\text{with the notation.}
+			</reason>
+		</step>
+		
+			<step>
+				<context>
+				\text{Is the following correct?}
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  \dfrac{d}{dx}f(x) &amp;= \dfrac{d}{dx}(g\circ h)(x) \\
+				  &amp;= \dfrac{d}{d h(x)}g(x)\cdot \dfrac{d}{dx}h(x) \\ 
+				  &amp;= \cos (ax + b)\cdot\dfrac{d}{dx}(ax +b) \\
+				  &amp;= a\cdot\cos(ax + b)
+				\end{align}
+				</tex>
+
+				<reason>
+				\text{You probably realized that the above is simply}\\
+				\text{the product rule. If you didn't, then review}\\
+				\text{the concept.}
+				</reason>
+			</step>
+			
+				<choices>
+					<tex>\sin (ax + b)</tex>
+					<tex>a\cdot\sin (ax +b)</tex>
+					<tex correct='true'>a\cos (ax + b)</tex>
+					<tex>\cos (ax + b)</tex>
+				</choices>
+</question>

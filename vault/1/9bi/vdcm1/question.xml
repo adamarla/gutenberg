@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Differentiate the following function}\\
+			\text{with respect to x}\\
+			\quad f(x) = \dfrac{\sin (ax +b)}{\cos (cx + d)} 
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{If }f(x) = \dfrac{g(x)}{h(x)}, \text{ then \dfrac{d}{dx}f(x) = ?}
+			</context>
+			<tex correct="true">
+			\begin{align}
+			  \dfrac{d}{dx}f(x) &amp;= \dfrac{g'h - gh'}{h^2}
+			\end{align}
+			</tex>
+			<tex correct="false">
+			\begin{align}
+			  \dfrac{d}{dx}f(x) &amp;= \dfrac{g'(x)}{h'(x)}
+			\end{align}
+			</tex>
+			<reason>
+			\text{This is a standard result. And its called}\\
+			\text{the Quotient Rule. Review if you got this wrong.}
+			</reason>
+		</step>
+		
+	<step>
+		<context>
+		\text{Are the following calculations correct?}
+		</context>
+		<tex correct="true">
+		\begin{align}
+		  &amp;f'(x) = \dfrac{g'h - gh'}{h^2} \\
+		  &amp;\text{where }g'(x) = \dfrac{d}{dx}\sin (ax + b) = \cos (ax + b)\cdot\dfrac{d}{dx}(ax + b)\\
+		  &amp;= a\cdot\cos (ax + b) \\
+		  &amp;\text{Similarly, } h'(x) = \dfrac{d}{dx}\cos (cx + d) = -c\cdot\sin(cx+d) \\
+		  &amp;\implies f'(x) = \dfrac{a\cos (ax+b)\cdot\cos(cx+d) + c\sin(cx+d)\cdot\sin(ax+b)}{\cos^2 (cx+d)} \\
+		  &amp;= \sec(cx +d)\cdot \left[a\cos(ax+b) + c\tan(cx+d)\cdot\sin(ax+b)\right]
+		\end{align}
+		</tex>
+
+  <tex correct="false">
+		\begin{align}
+		  &amp;f'(x)= \dfrac{g'h - gh'}{h^2} \\
+		  &amp;\text{where }g'(x)= \dfrac{d}{dx}\sin (ax + b) = \cos (ax + b) \\
+		  &amp;\text{Similarly, } h'(x) = \dfrac{d}{dx}\cos (cx + d) = -\sin(cx+d) \\
+		  &amp;\implies f'(x) = \dfrac{\cos (ax+b)\cdot\cos(cx+d) + \sin(cx+d)\cdot\sin(ax+b)}{\cos^2 (cx+d)} \\
+		  &amp;= \sec(cx +d)\cdot \left[\cos(ax+b) + \tan(cx+d)\cdot\sin(ax+b)\right]
+		\end{align}
+		</tex>		
+		
+		
+		<reason>
+		\text{Quotient rule was required to find }f'(x). \\
+		\text{But Product Rule was required to find }\\
+		g'\text{ and }h'\text{ that are needed in }f'(x).
+		</reason>
+	</step>
+
+			
+				<choices>
+					<tex>
+					\sec(cx +d)\cdot \left[a\cos(ax+b) - c\tan(cx+d)\cdot\sin(ax+b)\right]
+					</tex>
+					<tex>
+					\cos(ax+b) + \tan(cx+d)\cdot\sin(ax+b)
+					</tex>
+					<tex>
+					\sec(cx +d)\cdot \left[\cos(ax+b) + \tan(cx+d)\cdot\sin(ax+b)\right]
+					</tex>
+					<tex correct='true'>
+					\sec(cx +d)\cdot \left[a\cos(ax+b) + c\tan(cx+d)\cdot\sin(ax+b)\right]
+					</tex>
+				</choices>
+</question>

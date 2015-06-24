@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Differentiate the following function}\\
+			\text{with respect to x}\\
+			\quad f(x) = 2\cdot\sqrt{\cot (x^2)}
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{How would you express f(x) in terms}\\
+			\text{of the following}\textbf{ unrelated}\text{ functions} \\
+			\quad g(x) = 2\sqrt{x}, h(x) = \cot x\text{ and }j(x) = x^2
+			
+			</context>
+			<tex correct="true">
+			\begin{align}
+			  f(x) &amp;= g( h(j(x)) ) \implies f(x) = (g\circ h\circ j)(x)
+			\end{align}
+			</tex>
+			<tex correct="false">
+      \begin{align}
+			  f(x) &amp;= h( g(j(x)) ) \implies f(x) = (h\circ g\circ j)(x)
+			\end{align}
+			</tex>
+			<reason>
+			f(x) = (g\circ h\circ j)(x)\text{ simply means} \\
+			f(x) = g(h(j(x)) = 2\sqrt{h(j(x))} = 2\sqrt{\cot(j(x))} \\
+			= 2\sqrt{\cot(x^2)}
+			</reason>
+		</step>
+		
+			<step>
+				<context>
+				\text{Is the following correct?}
+				</context>
+				<tex correct="true">
+				\begin{align}
+				&amp;f(x) = (g\circ h\circ j)(x) \\
+				\implies&amp;\dfrac{df}{dx} = 
+				\dfrac{d}{dh(x)}g(h(x))\cdot\dfrac{d}{dj(x)}h(j(x))\cdot\dfrac{d}{dx}j(x) \\
+				&amp;=\dfrac{d}{d\cot(x^2)}2\sqrt{\cot (x^2)}\cdot
+				\dfrac{d}{dx^2}\cot(x^2)\cdot \dfrac{d}{dx}x^2 \\
+				&amp;=\dfrac{1}{\sqrt{\cot (x^2)}}\cdot(-\csc^2 x^2)\cdot 2x \\
+				&amp;= -\dfrac{2x\csc^2 (x^2)}{\sqrt{\cot (x^2)}} \\ 
+				
+				\end{align}
+				</tex>
+
+				<reason>
+				\text{If }f(x) = (g\circ h\circ j)(x) = g(h(j(x)))\text{ then, }\\
+				f'(x) = \frac{dg}{dh}\cdot\frac{dh}{dj}\cdot\frac{dj}{dx}. \\
+				\text{This is what is called the Product Rule.}
+				</reason>
+			</step>
+			
+				<step>
+					<context>
+					\text{Is the following simplification correct?}
+					</context>
+					<tex correct="true">
+					\begin{align}
+					\dfrac{d}{dx}f(x) &amp;= -\dfrac{2x\csc^2 (x^2)}{\sqrt{\cot (x^2)}} \\ 
+					&amp;=-\dfrac{2x}{\sin (x^2)\cdot\sin (x^2)\cdot\sqrt{\dfrac{\cos (x^2)}{\sin (x^2)}}} \\
+				&amp;= -\dfrac{2\sqrt{2} x}{\sin (x^2)\cdot\sqrt{2\sin(x^2)\cdot\cos(x^2)}} \\
+				&amp;= -\dfrac{2\sqrt{2}x}{\sin (x^2)\cdot \sqrt{\sin (2x^2)}}
+					\end{align}
+					</tex>
+
+					<reason>
+					\text{We have used two standard results above}\\
+					\begin{align}
+					  \quad\cot\theta &amp;= \dfrac{\cos\theta}{\sin\theta} \\
+					  \quad\sin 2\theta &amp;= 2\sin\theta\cos\theta
+					\end{align}
+					</reason>
+				</step>
+			
+				<choices>
+					<tex>-\dfrac{2x}{\sin (x^2)\cdot \sqrt{\sin (x^2)}}</tex>
+					<tex correct='true'>-\dfrac{2\sqrt{2}x}{\sin (x^2)\cdot \sqrt{\sin (2x^2)}}</tex>
+					<tex>\dfrac{\sec x\cdot\tan x}{2\sqrt{x}}</tex>
+					<tex>\dfrac{\sec x\cdot\tan x\cdot \sec^2\sqrt{x}}{2\sqrt{x}}</tex>
+				</choices>
+</question>
