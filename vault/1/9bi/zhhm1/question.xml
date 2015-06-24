@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Differentiate the following with respect to x.}\\
+			\quad f(x) = \log (\cos e^x)
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{For what values of x or }e^x
+			\text{ is f(x) defined?}
+			</context>
+			<tex correct="true">
+			\text{If }\log\cos(e^x)\text{ is defined, then }\cos (e^x)\gt 0 \\
+			\implies e^x \text{ must be in the first or fourth quadrants.}\\
+			\implies (2n+1)\frac{\pi}{2}\lt e^x\lt \left[2\cdot(n+1) + 1\right]\frac{\pi}{2}, n\in\mathbb{N}\\
+			\implies (2n + 1)\frac{\pi}{2}\lt e^x \lt (2n + 3)\frac{\pi}{2}, n\in\mathbb{N}
+			</tex>
+			<tex correct="false">
+			\text{Why bother? Let us assume that f(x) is}\\
+			\text{defined for all x, that is, }x\in\mathbb{R} \\
+			\text{and get on with differentiating.}
+			</tex>
+			<reason>
+			\text{How can a function have a rate of change at}\\
+			\text{a point if it is not even defined at that point?}\\
+			\text{This is why knowing the domain is important.}
+			</reason>
+		</step>
+		
+			<step>
+				<context>
+				\text{Is the following correct?}
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  \dfrac{d}{dx}f(x) &amp;= \dfrac{d}{d\cos e^x}\log(\cos e^x)
+				  \cdot\dfrac{d}{d e^x}\cos(e^x)\cdot\dfrac{d}{dx}e^x 
+				\end{align}
+				</tex>
+
+				<reason>
+				\text{The above is simply the Chain Rule.}\\
+				\text{Think of it like this. If A changes 3 times faster}\\
+				\text{than B and B changes 4 times faster than C, then }\\
+				\text{how much faster does A change with respect to C?}
+				</reason>
+			</step>
+			
+				<step>
+					<context>
+					\text{Are the calculations below correct?}
+					</context>
+					<tex correct="true">
+					\begin{align}
+					  \dfrac{d}{dx}f(x) &amp;= \dfrac{d}{d\cos e^x}\log(\cos e^x)
+				  \cdot\dfrac{d}{d e^x}\cos(e^x)\cdot\dfrac{d}{dx}e^x \\
+				  &amp;= \dfrac{1}{\cos e^x}\times\left(-\sin e^x\right)\times e^x \\
+				  &amp;= -e^x\tan (e^x)
+					\end{align}
+					</tex>
+				
+					<reason>
+					\text{We have only used }\textbf{three standard results.}\\
+					\dfrac{d}{dy}\log y = \dfrac{1}{y}, \dfrac{d}{d\theta}\cos\theta = -\sin\theta, 
+					\dfrac{d}{dz}e^z = e^z.
+					</reason>
+				</step>
+				
+					<choices>
+						<tex>e^x\sin (e^x)\cdot\cos (e^x)</tex>
+						<tex>-\dfrac{e^x}{\cos e^x}</tex>
+						<tex>\tan (e^x)</tex>
+						<tex correct='true'> -e^x\tan (e^x)</tex>
+					</choices>
+</question>
