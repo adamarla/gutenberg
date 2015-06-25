@@ -2,8 +2,9 @@
 <question xmlns='http://www.gradians.com'>
 	<statement>
 		<tex>
-			\text{Differentiate the following with respect to x.}\\
-			\quad \sin \left(\tan^{-1} e^{-x}\right)
+			\text{Differentiate the following } \\
+			\quad \sin \left(\tan^{-1} e^{-x}\right) \\
+			\text{with respect to x.}\\
 		</tex>
 	</statement>
 		<step>

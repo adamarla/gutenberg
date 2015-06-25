@@ -2,8 +2,9 @@
 <question xmlns='http://www.gradians.com'>
 	<statement>
 		<tex>
-			\text{Differentiate the following with respect to x.}\\
-			\quad f(x) = e^{x^3} 
+			\text{Differentiate the following } \\
+			\quad f(x) = e^{x^3} \\
+			\text{with respect to x.}\\
 		</tex>
 	</statement>
 	
