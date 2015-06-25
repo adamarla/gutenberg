@@ -22,8 +22,8 @@ x+y &amp; 2 \\
 </tex>
     <tex>a_{ij}= b_{ij} \quad (\; \forall \; i, j \text{ that exist in both matrices})</tex>
     <reason>\text{If } A= B \text{ then, the matrices are identical}\\
-\text{i.e. the same number of elements present at the}\\
-\text{same positions.}</reason>
+\text{i.e. the same number of elements present at}\\
+\text{the same positions.}</reason>
   </step>
   <step swipe='false'>
     <context>\text{Using the matrix equality, what would the}\\
