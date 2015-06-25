@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Differentiate the following} \\
+			\qquad f(x) = \cos \left(\log x + e^x\right), x\gt 0
+		</tex>
+	</statement>
+	
+		<step>
+			<context>
+			\text{Why is }x\gt 0\text{ important - if at all?}
+			</context>
+			<tex correct="true">
+			\cos \left(\log x + e^x\right)\text{ is defined only if }\\
+			\log x + e^x \text{ is defined.} \\
+			\text{Now, }e^x\text{ is defined for all x. But }\log x\\
+			\text{is defined only for }x\gt 0. \\
+			\text{Hence, for f(x) to be defined, }x\gt 0.
+			</tex>
+			<tex correct="false">
+			\text{It is not important at all.}x\gt 0\text{ is written}\\
+			\text{only to confuse us.}
+			</tex>
+			<reason>
+			\text{If f(x) is not defined, then how can f'(x) be?}\\
+			\text{Which is why }x\gt 0\text{ is important. For }x\gt 0\\
+			\log x \text{ is defined }\implies\cos \left(\log x + e^x\right)\text{ is defined.}
+			</reason>
+		</step>
+		
+			<step>
+				<context>
+				\text{Is the following analysis correct?}
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  \text{Let }g(x) &amp;= \log x + e^x \\ 
+				  \implies f(x) &amp;= \cos g(x) \\
+				  \text{and, }\dfrac{dg}{dx} &amp;= \left(\frac{1}{x} + e^x\right) \\
+				  \therefore \dfrac{d}{dx}f(x) &amp;= \dfrac{df}{dg} \cdot \dfrac{dg}{dx} \\
+				  &amp;= -\sin g\cdot \left(\frac{1}{x} + e^x\right) \\
+				  &amp;= -\sin (\log x + e^x)\cdot \left(\frac{1}{x} + e^x\right), x \gt 0
+				\end{align}
+				</tex>
+
+				<reason>
+				\text{You would've recognized the above as simply}\\
+				\text{the application of the }\textbf{Chain Rule.}\\
+				\text{If }f(x) = u(v(x)),\text{ then }f'x = \frac{du}{dv}\cdot\frac{dv}{dx}.
+				</reason>
+			</step>
+			
+				<choices>
+					<tex correct='true'>
+					\sin (\log x + e^x)\cdot \left(\frac{1}{x} + e^x\right), x \gt 0
+					</tex>
+					<tex>
+          -\sin (\log x + e^x), x \gt 0
+					</tex>
+					<tex correct='true'>
+					-\sin (\log x + e^x)\cdot \left(\frac{1}{x} + e^x\right), x \gt 0
+					</tex>
+					<tex>
+          \cos (\log x + e^x)\cdot \left(\frac{1}{x} + e^x\right), x \gt 0
+					</tex>
+				</choices>
+</question>
