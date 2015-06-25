@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{FInd all points of discontinuity of f,\\
+where f is defined by }\\
+
+f(x) = \begin{cases} 
+         2x +3,&amp;if \, x \leq 2\\
+         2x - 3,&amp;if \, x\gt 2 
+         \end{cases}</tex>
+  </statement>
+  <step>
+    <context>\text{What is the condition for continuity?}</context>
+    <tex correct='true'>\begin{align} 
+          \lim_{x\to 2^-}f(x) =\lim_{x\to 2^+}f(x)  = f(2)
+\end{align}</tex>
+    <tex>\begin{align} 
+          \lim_{x\to 2^-}f(x) =\lim_{x\to 2^+}f(x)
+\end{align}</tex>
+    <reason>\text{For a function to be continuous at a\\
+point it's limits on either side of f(x)\\
+should be equal to the value of f(x) at\\
+that point}</reason>
+  </step>
+  <step>
+    <context>\text{Is the following assertion correct?}</context>
+    <tex correct='true'>f(x) \text{ is a straight line for }x\neq 2.\\
+\text{Hence, it is continuous for all }x\neq 2.\\
+\text{But we need to check for continuity \\
+at x=2.}\\
+</tex>
+    <tex></tex>
+    <reason>\text{At }x=2\text{, the definition of the function}\\
+\text{changes. Hence, x = 2 could be the}\\
+\text{only problem point. We should check}\\
+\text{for continuity there.}</reason>
+  </step>
+  <step>
+    <context>\text{Which of the following set of statements\\
+are correct?}</context>
+    <tex correct='true'>
+    \lim_{x\to 2^-}f(x) = \lim_{x\to 2^-} (2x+3)  = 7 \\
+    \lim_{x\to 2^+}f(x) = \lim_{x\to 2^+} (2x-3)  = 1 \\
+
+f(2) = 2(2)+3 = 7\\
+\\ \text{Hence, f(x) is discontinuous at x=2.}\\
+</tex>
+    <tex></tex>
+    <reason>\text{Since, f(x) is continuous at x}\neq 2\text{(step 2)}\\
+\therefore x=2\text{ is the only point of discontinuity.}</reason>
+  </step>
+  <choices>
+    <tex>\text{Discontinuous everywhere in domain \\
+of f(x)}</tex>
+    <tex>\text{Continuous everywhere in domain \\
+of f(x)}</tex>
+    <tex>\text{Discontinuous everywhere in domain \\
+of f(x) except x=2}</tex>
+    <tex correct='true'>\text{x=2 is only point of discontinuity}</tex>
+  </choices>
+</question>

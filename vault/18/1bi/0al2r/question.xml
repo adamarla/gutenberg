@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Is th function defined by}\\
+f(x) = \begin{cases} 
+         x, if\, x \leq 1 \\
+         5, if \,x\gt 1 
+         \end{cases} \\
+\text{Countinuous at x=0? At x=1?At x=2?}</tex>
+  </statement>
+  <step>
+    <context>\text{What is the condition for continuity?}</context>
+    <tex correct='true'>\begin{align}
+	\lim_{x\to 0^-}f(x) =\lim_{x\to 0^+}f(x) = f(0)
+\end{align}</tex>
+    <tex>\begin{align}
+\lim_{x\to 0^-}f(x) =\lim_{x\to 0^+}f(x)
+\end{align}</tex>
+    <reason>\text{For a function to be continuous at a\\
+point it's limits on either sides should be equal\\
+to the value of f(x) at that point}</reason>
+  </step>
+  <step>
+    <context>\text{Is the folloeing assertion correct?}</context>
+    <tex correct='true'>f(x) \text{ is a straight line for }x\neq 1.\\
+\text{Hence, it is continuous for all }x\neq 1.\\
+\text{But we need to check for continuity at }x=1.
+</tex>
+    <tex></tex>
+    <reason>\text{At }x=1\text{, the definition of the function}\\
+\text{changes. Hence, x = 1 could be the only}\\
+\text{problem point. We should check for}\\
+\text{continuity there.}</reason>
+  </step>
+  <step>
+    <context>\text{Is the following analysis correct?}</context>
+    <tex correct='true'>\begin{align}
+    \lim_{x\to 1^-}f(x) &amp;=1 \\
+    \lim_{x\to 1^+}f(x) &amp;=5 \\
+    f(1) = 1
+\end{align}
+\\ \text{Hence, f(x) is discontinuous at x=1.}\\
+</tex>
+    <tex></tex>
+    <reason>\text{Since, f(x) is continuous at x}\neq 1\text{(step 2)}\\
+\therefore x=1\text{ is the only point of discontinuity.}</reason>
+  </step>
+  <choices>
+    <tex>\text{Continuous at x=0 but\\
+discontinuous x=1,2} </tex>
+    <tex correct='true'>\text{Continuous at x=0,2 but\\
+discontinuous at x=1}</tex>
+    <tex>\text{Continuous at x=0,1,2 }</tex>
+    <tex>\text{Discontinuous at x=0,1,2}</tex>
+  </choices>
+</question>

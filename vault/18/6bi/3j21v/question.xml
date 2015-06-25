@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{FInd all points of discontinuity of f,\\
+where f is defined by }\\
+
+f(x) = \begin{cases} 
+          x^{10}- 1,&amp;if\, x \leq 1\\
+          x^2,\,&amp;if  \,x\gt 1 \\
+          \end{cases}</tex>
+  </statement>
+  <step>
+    <context>\text{What is the condition for continuity?}</context>
+    <tex correct='true'>\begin{align}
+	\lim_{x\to 1^-}f(x) =\lim_{x\to 1^+}f(1) = f(1)
+\end{align}</tex>
+    <tex>\begin{align}
+	\lim_{x\to 1^-}f(x) =\lim_{x\to 1^+}f(x)
+\end{align}</tex>
+    <reason>\text{For a function to be continuous at a\\
+point it's limits on either sides should be\\
+equal to the value of f(x) at that point}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Is the following assertion correct?}</context>
+    <tex correct='true'>f(x) \text{ is a polynomial function for }x\ne 1.\\
+\text{Hence, it is continuous for all }x\neq 1.\\
+\text{But we need to check for continuity \\
+at x=1.}
+</tex>
+    <tex></tex>
+    <reason>\text{Since, at x=1 the definition of the\\
+function changes. So, x=1 is the only \\
+problem point.}\\
+\therefore\text{ we need to check continuity at x =1.}  </reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Is the following analysis correct?}</context>
+    <tex correct='true'>
+    \lim_{x\to 1^-}f(x) = \lim_{x\to 1^-} (x^{10}-1) =0\\
+    \lim_{x\to 1^+}f(x) = \lim_{x\to 1^+} (x^2) =1 \\
+    f(1)=(1)^{10}-1 = 0\\
+
+\\ \text{Hence, f(x) is discontinuous at x=1.}\\
+</tex>
+    <tex></tex>
+    <reason>\text{Since, f(x) is continuous at }x \neq 1\text{(step2)}\\
+\text{So,x=1 is the only point of discontinuity}\\</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\text{x=1 is the only point of discontinuity}</tex>
+    <tex>\text{x=1 is the only point of continuity}</tex>
+    <tex>\text{f(x) is continuous everywhere in\\
+it's domain}</tex>
+    <tex>\text{f(x) is discontinuous everywhere in\\
+it's domain}</tex>
+  </choices>
+</question>

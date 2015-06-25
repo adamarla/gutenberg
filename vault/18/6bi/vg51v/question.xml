@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find all the points of discontinuity of f,\\
+where f is defined by}\\
+
+f(x) = \begin{cases} 
+         \frac{\vert x \vert}{x},&amp;if\, x \neq 0\\
+         0,&amp;if\, x= 0	
+         \end{cases}</tex>
+  </statement>
+  <step>
+    <context>\text{Which of these is the correct definition \\
+of the function?}</context>
+    <tex correct='true'>f(x) = \begin{cases} 
+         \frac{-x}{x}&amp;,if\, x \lt 0\\
+         0&amp;,if\, x= 0\\	
+         \frac{x}{x}&amp;,if\, x \gt 0\\
+         \end{cases}</tex>
+    <tex>f(x) = \begin{cases} 
+         \frac{x}{x}&amp;,if\, x \lt 0\\
+         0&amp;,if\, x= 0\\	
+         \frac{x}{x}&amp;,if\, x \gt 0\\
+         \end{cases}</tex>
+    <reason>since,\\
+\vert x \vert = \begin{cases} 
+           	-x,\, &amp;if \,x\lt 0\\
+	 x,\, &amp;if \,x\ge0\\
+	\end{cases}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Is the following assertion correct?}</context>
+    <tex correct='true'>f(x) \text{ is a straight line for }x\neq 0\\
+\text{Hence, it is continuous for all }x\neq 0.\\
+\text{But we need to check for continuity \\
+at x=0.}\\
+</tex>
+    <tex></tex>
+    <reason>\text{Since, at x=0 the definition of the\\
+function changes.Hence x=0 can be \\
+the only problem point.So we need to\\
+check for continuity at x=0.}\\</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Is the following analysis correct?}</context>
+    <tex correct='true'> \lim_{x\to 0^-}f(x) = \lim_{x\to 0^-} \frac{-x}{x} = -1\\
+ \lim_{x\to 0^+}f(x) = \lim_{x\to 0^+}\frac{x}{x} =1\\
+ f(0) = 0\\
+
+\text{Hence,f(x) is discontinuous at x=0.}</tex>
+    <tex></tex>
+    <reason>\text{Since, f(x) is continuous at x}\neq 0\text{(step 2)}\\
+\therefore x=0\text{ is the only point of discontinuity.}</reason>
+  </step>
+  <choices>
+    <tex>\text{f(x) is discontinuous everywhere in \\
+it's domain except 0}</tex>
+    <tex correct='true'>\text{x=0 is the only point of discontinuity}</tex>
+    <tex>\text{f(x) is discontinuous everywhere in \\
+it's domain}</tex>
+    <tex>\text{f(x) is continuous everywhere in \\
+it's domain}</tex>
+  </choices>
+</question>

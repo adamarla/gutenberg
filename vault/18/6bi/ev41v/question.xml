@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find all points of discontinuity of f,\\
+where f is defined by }\\
+
+f(x) = \begin{cases} 
+          x^3- 3,&amp;if\, x \leq 2\\
+          x^2+1,&amp;if \, x\gt 2 \\
+          \end{cases}</tex>
+  </statement>
+  <step>
+    <context>\text{What is the condition for continuity?}</context>
+    <tex correct='true'>\begin{align}
+	\lim_{x\to 0^-}f(x) =\lim_{x\to 0^+}f(x) = f(0)
+\end{align}</tex>
+    <tex>\begin{align}
+	\lim_{x\to 0^-}f(x) =\lim_{x\to 0^+}f(x)
+\end{align}</tex>
+    <reason>\text{For a function to be continuous at a\\
+point it's limits on either sides should be\\
+equal to the value of f(x) at that point}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Is the following assertion correct?}	</context>
+    <tex correct='true'>f(x) \text{ is a straight line for }x\le 2.\\
+f(x) \text{ is a continuous curve(x^3) for }x\gt 2.\\
+\text{Hence, it is continuous for all }x\neq 2.\\
+\text{But we need to check for continuity \\
+at x=2.}
+</tex>
+    <tex></tex>
+    <reason>\text{Since, at x=2 the definition of the\\
+function changes. So, x=2 is the only \\
+problem point.}\\
+\therefore\text{ we need to check continuity at x =2.}  </reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Is the following analysis correct?}</context>
+    <tex correct='true'>
+    \lim_{x\to 2^-}f(x) = \lim_{x\to 2^-} (x^3-3) =5\\
+    \lim_{x\to 2^+}f(x) = \lim_{x\to 2^+} (x^2+1) =5 \\
+    f(1)=x^3-3 = 5\\
+
+\\ \text{Hence, f(x) is continuous at x=2.}\\
+</tex>
+    <tex></tex>
+    <reason>\text{Since, f(x) is continuous at }x \neq 2\text{(step2)}\\
+\text{So,there is no point of discontinuity}\\</reason>
+  </step>
+  <choices>
+    <tex>\text{x=2 is the only point of discontinuity.}</tex>
+    <tex correct='true'>\text{No point of discontunity.}</tex>
+    <tex>\text{f(x) discontinuous everywhere in it's\\
+domain except x=2.}</tex>
+    <tex>\text{f(x) is discontinuous at x=2,0}</tex>
+  </choices>
+</question>
