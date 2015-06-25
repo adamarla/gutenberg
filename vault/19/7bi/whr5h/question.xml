@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>A = [a_{ij}]_{mn} \text{ is a square matrix, if}</tex>
+  </statement>
+  <step>
+    <context>\text{What is the relation between the number}\\ 
+\text{of rows (m) and the number of}\\
+\text{columns (n) in a square matrix?}</context>
+    <tex correct='true'>m = n</tex>
+    <tex>m=n=k^2 (\text{ where }k \in N)
+</tex>
+    <reason>\text{A square matrix has equal number number of}\\
+\text{rows and columns and can be of any order.}\\</reason>
+  </step>
+  <step>
+    <context></context>
+    <reason></reason>
+  </step>
+  <step>
+    <context></context>
+    <reason></reason>
+  </step>
+  <step>
+    <context></context>
+    <reason></reason>
+  </step>
+  <step>
+    <context></context>
+    <reason></reason>
+  </step>
+  <step>
+    <context></context>
+    <reason></reason>
+  </step>
+  <choices>
+    <tex>m \lt n</tex>
+    <tex>m \gt n</tex>
+    <tex correct='true'>m = n</tex>
+    <tex>\text{None of these}</tex>
+  </choices>
+</question>

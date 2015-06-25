@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If a matrix has 24 elements, what are the}\\
+\text{possible orders it can have? What if it has}\\
+\text{13 elements?}</tex>
+  </statement>
+  <step>
+    <context>\text{What possible orders can a matrix containing}\\
+24 \text{ elements have?} </context>
+    <tex correct='true'>\begin{align}
+\{ &amp;1\times 24, \,2\times 12,\, 3\times 8,\, 4\times6,\, \\
+&amp;6\times 4,\, 8\times 3,\, 12\times 2,\, 24\times1 \} \\
+\end{align}</tex>
+    <tex>1\times 24 \text{ and }24\times1 </tex>
+    <reason>\text{The set of ordered pair of natural numbers}\\
+\text{whose product is }24 , \text{ gives the possible orders.}</reason>
+  </step>
+  <step>
+    <context>\text{What possible orders can a matrix containing}\\
+13 \text{ elements have?} </context>
+    <tex correct='true'>1\times 13 \text{ and }13\times 1</tex>
+    <tex>13\times 13</tex>
+    <reason>\text{The set of ordered pair of natural numbers}\\
+\text{whose product is }13 , \text{ gives the possible orders.}</reason>
+  </step>
+  <choices>
+    <tex>\begin{align}
+24 : &amp;\{ 1\times 24,\, 24\times1 \} \\
+13 : &amp;\{1\times 13, \,13\times 1\}
+\end{align}</tex>
+    <tex>\begin{align}
+24 : &amp;\{2\times 12,\, 3\times 8,\, 4\times6,\, \\
+&amp;6\times 4,\, 8\times 3,\, 12\times 2 \} \\
+13 : &amp;\{1\times 13, \,13\times 1\}
+\end{align}</tex>
+    <tex correct='true'>\begin{align}
+24 : &amp;\{ 1\times 24, \,2\times 12,\, 3\times 8,\, 4\times6,\, \\
+&amp;6\times 4,\, 8\times 3,\, 12\times 2,\, 24\times1 \} \\
+13 : &amp;\{1\times 13, \,13\times 1\}
+\end{align}</tex>
+    <tex>\begin{align}24 : &amp;\{ 1\times 24, \,2\times 12,\, 3\times 8 \\
+&amp;8\times 3,\, 12\times 2,\, 24\times1 \} \\
+13 : &amp;\{1\times 13, \,13\times 1\}
+\end{align}</tex>
+  </choices>
+</question>

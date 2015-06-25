@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{What is the number of all possible matrices of}\\
+3 \ltimes 3 \text{ order with each entry 0 or 1?}</tex>
+  </statement>
+  <step>
+    <context>\text{What does a matrix having order } 3 \times 3  \text{ imply?}</context>
+    <tex correct='true'>\text{It has } 3 \text{ rows and }3 \text{ columns.}</tex>
+    <tex>\text{It can have any number of rows and columns}\\
+\text{but has }3\times 3 = 9 \text{ elements.}</tex>
+    <reason>\text{A martix having m rows and n columns is of}\\
+\text{order }m \times n</reason>
+  </step>
+  <step>
+    <context>\text{How many }3\times 3 \text{ matrices can be made using}\\
+\text{only 0 and 1 as elements?}</context>
+    <tex correct='true'>\text{Number of elements} = 3\times 3 = 9\\
+\text{and each element} \in \{0, \;1\}\\
+\implies 2^9 = 512 \text{ possible matrices}</tex>
+    <tex>\text{Number of elements} = 3\times 3 = 9\\
+\text{and each element} \in \{0, \;1\}\\
+\implies 9^2 =  81 \text{ possible matrices}</tex>
+    <reason>\text{The number of possible matrices}= k^n \text{ where,}\\
+k = \text{ set of values that each element can take}\\
+\text{and n} = \text{ number of elements in the matrix.} </reason>
+  </step>
+  <choices>
+    <tex>27</tex>
+    <tex>18</tex>
+    <tex>81</tex>
+    <tex correct='true'>512</tex>
+  </choices>
+</question>
