@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find}\frac{dy}{dx}\text{ in the following}\\
+
+ax + by^2 = \cos y</tex>
+  </statement>
+  <step>
+    <context>\text{Are the following calculations correct?}</context>
+    <tex correct='true'>\text{after diffrentiating the equation we get}\\
+\frac{d(ax + by^2)}{dx}=\frac{d(\cos y)}{dx}\\
+\Rightarrow a .  \frac{d(x)}{dx}+2(b) . \frac{d(y)}{dx}=\frac{d(\cos y)}{dx} . \frac{d(y)}{dx}\\
+\Rightarrow a +2b . \frac{dy}{dx} = -\sin y . \frac{d(y)}{dx}\\
+
+\text{After rearranging, we get}\\
+\frac{dy}{dx}= \frac{-a}{2b+\sin y}</tex>
+    <tex></tex>
+    <reason>\text{Other than chain rule we have used}\\
+\text{the fact that }\frac{d(\cos x)}{dx}=-\sin x\\
+\text{Check your calculations if you got something \\else.}</reason>
+  </step>
+</question>

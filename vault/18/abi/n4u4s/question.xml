@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find}\frac{dy}{dx}\text{ in the following}\\
+
+xy + y^2 = \tan x + y</tex>
+  </statement>
+  <step>
+    <context>\text{If }f(x) = g(x) \,.\, h(x)\text{,then f^\prime}=</context>
+    <tex correct='true'>\frac{df(x)}{dx} = g^\prime h + gh^\prime </tex>
+    <tex>\frac{df(x)}{dx} = g^\prime h^\prime </tex>
+    <reason>\text{This is a standard formula.}\\
+\text{It is called Prodect Rule.}\\
+\text{Review it if you got this wrong.}\\</reason>
+  </step>
+  <step>
+    <context>\text{Are the following calculations correct?}</context>
+    <tex correct='true'>\text{After diffrentiating the equation we get}\\
+\frac{d(xy + y^2)}{dx}=\frac{d(\tan x + y)}{dx}\\
+\Rightarrow \frac{dx}{dx}.  y + \frac{dy}{dx}. x +2 .y \frac{dy}{dx}=\sec^2 x . \frac{dx}{dx}+\frac{dy}{dx}\\
+\Rightarrow y + \frac{dy}{dx}. x +2 .y \frac{dy}{dx}=\sec^2 x +\frac{dy}{dx}\\
+
+\text{After rearranging, we get}\\
+\frac{dy}{dx}= \frac{\sec^2 x - y}{x + 2y - 1}</tex>
+    <tex></tex>
+    <reason>\text{Other than chain rule and chain rule we}\\
+\text{have used the fact that }\frac{d(\tan x)}{dx}=\sec^2 x\\
+\text{Check your calculations if you got something \\else.}</reason>
+  </step>
+  <choices>
+    <tex>\frac{dy}{dx}= \frac{x + 2y - 1}{\sec^2 x - y}</tex>
+    <tex>\frac{dy}{dx}= \frac{\sec^2 x - x}{x + 2y - 1}</tex>
+    <tex correct='true'>\frac{dy}{dx}= \frac{\sec^2 x - y}{x + 2y - 1}</tex>
+    <tex>\frac{dy}{dx}= \frac{\sec^2 x - y}{x + 2y}</tex>
+  </choices>
+</question>

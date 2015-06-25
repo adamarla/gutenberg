@@ -21,7 +21,7 @@ point it's limits on either sides should be equal\\
 to the value of f(x) at that point}</reason>
   </step>
   <step>
-    <context>\text{Is the folloeing assertion correct?}</context>
+    <context>\text{Is the following assertion correct?}</context>
     <tex correct='true'>f(x) \text{ is a straight line for }x\neq 1.\\
 \text{Hence, it is continuous for all }x\neq 1.\\
 \text{But we need to check for continuity at }x=1.
