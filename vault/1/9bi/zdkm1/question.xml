@@ -3,7 +3,8 @@
 	<statement>
 		<tex>
 			\text{Differentiate the following} \\
-			\qquad f(x) = \cos \left(\log x + e^x\right), x\gt 0
+			\qquad f(x) = \cos \left(\log x + e^x\right), x\gt 0 \\
+			\text{with respect to x.}
 		</tex>
 	</statement>
 	

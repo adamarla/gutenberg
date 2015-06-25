@@ -2,8 +2,9 @@
 <question xmlns='http://www.gradians.com'>
 	<statement>
 		<tex>
-			\text{Differentiate the following with respect to x.}\\
-			\qquad f(x) = \log (\log x), x\gt 1
+			\text{Differentiate the following } \\
+			\qquad f(x) = \log (\log x), x\gt 1 \\
+			\text{with respect to x.}
 		</tex>
 	</statement>
 

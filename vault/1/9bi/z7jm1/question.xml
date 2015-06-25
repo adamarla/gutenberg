@@ -2,28 +2,28 @@
 <question xmlns='http://www.gradians.com'>
 	<statement>
 		<tex>
-			\text{Differentiate the following with respect to x}\\
-			\quad f(x) = e^{\sin^{-1} x}
+			\text{Differentiate the following }\\
+			\quad f(x) = e^{\sin^{-1} x} \\
+			\text{with respect to x.}\\
 		</tex>
 	</statement>
 	
 		<step>
 			<context>
-			\text{Before we start differentiating, what is}\\
-			\text{the domain of f(x)?}
+			\text{For what values of x is f(x) defined?}
 			</context>
 			<tex correct="true">
 			\sin^{-1} x\text{ is defined only if }x\in \left[-1,1\right].\\
 			\text{Hence, the domain of f(x) is }\left[-1,1\right].
 			</tex>
 			<tex correct="false">
-			x\text{ can be anything. In other words, }x\in\mathbb{R}.
+			f(x)\text{ is defined for all x.} \\
+			\text{In other words, }x\in\mathbb{R}.
 			</tex>
 			<reason>
 			\text{If }\sin^{-1}x = \theta\text{ then }x=\sin\theta.\\
 			\text{But, }-1\leq\sin\theta\leq 1\implies -1\leq x\leq 1.\\
-			\text{We find the domain because f'(x) makes sense only}\\
-			\text{when f(x) is defined.}
+			\text{Hence, only if }x\in \left[-1,1\right]\text{ does f(x) make sense.}
 			</reason>
 		</step>
 		
@@ -41,9 +41,8 @@
 				
 				<reason>
 				\text{If }g(v) = e^v\text{ and }h(x) = \sin^{-1}x, \text{ then }f(x) = g(h(x)).\\
-				\text{And hence, we apply Chain Rule - }\dfrac{df}{dx} = \dfrac{dg}{dh}\cdot\dfrac{dh}{dx}.\\
-				\text{Note also that }\dfrac{df}{dx}\text{ is defined only for }x\in \left(-1,1\right) \\  
-				- \text{not }x\in \left[-1,1\right].
+				\text{Hence, apply Chain Rule - }\dfrac{df}{dx} = \dfrac{dg}{dh}\cdot\dfrac{dh}{dx}.\\
+				\text{Note also that f'(x) is not defined for }x=\pm 1.
 				</reason>
 			</step>
 		
