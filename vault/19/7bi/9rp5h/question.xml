@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If a matrix has 18 elements, what are the}\\
+\text{possible orders it can have? What if it has}\\
+\text{5 elements?}</tex>
+  </statement>
+  <step>
+    <context>\text{What possible orders can a matrix containing}\\
+18 \text{ elements have?} </context>
+    <tex correct='true'>\begin{align}
+18 : &amp;\{ 1\times 18, \,2\times 9,\, 3\times 6, \\
+&amp;6\times 3,\, 9\times 2,\, 18\times 1\}
+\end{align}</tex>
+    <tex>1\times 18 \text{ and }18\times1 </tex>
+    <reason>\text{The set of ordered pair of natural numbers}\\
+\text{whose product is }18 , \text{ gives the possible orders.}</reason>
+  </step>
+  <step>
+    <context>\text{What possible orders can a matrix containing}\\
+5 \text{ elements have?} </context>
+    <tex correct='true'>1\times 5 \text{ and }5\times 1</tex>
+    <tex>5\times 5</tex>
+    <reason>\text{The set of ordered pair of natural numbers}\\
+\text{whose product is }5 , \text{ gives the possible orders.}</reason>
+  </step>
+  <choices>
+    <tex>\begin{align}
+18 : &amp;\{ 1\times 18,\, 18\times1 \} \\
+5 : &amp;\{1\times 5, \,5\times 1\}
+\end{align}</tex>
+    <tex>\begin{align}
+18 : &amp;\{ 1\times 18, \,2\times 9, \\
+&amp;9\times 2,\, 18\times 1\} \\
+5 : &amp;\{1\times 5, \,5\times 1\}
+\end{align}</tex>
+    <tex>\begin{align}
+18 : &amp;\{ 2\times 9,\, 3\times 6, \\
+&amp;6\times 3,\, 9\times 2\} \\
+5 : &amp;\{1\times 5, \,5\times 1\}
+\end{align}</tex>
+    <tex correct='true'>\begin{align}
+18 : &amp;\{ 1\times 18, \,2\times 9,\, 3\times 6, \\
+&amp;6\times 3,\, 9\times 2,\, 18\times 1\} \\
+5 : &amp;\{1\times 5, \,5\times 1\}
+\end{align}</tex>
+  </choices>
+</question>

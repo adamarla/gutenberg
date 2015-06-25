@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Differentiate the following} \\ 
+			\qquad f(x) = e^x + e^{x^2} + \ldots + e^{x^5}
+		</tex>
+	</statement>
+	
+		<step>
+			<context>
+			\text{What will f(x) look like when fully expanded?}
+			</context>
+			<tex correct="true">
+			f(x) = e^x + e^{x^2} + e^{x^3} + e^{x^4} + e^{x^5} 
+			</tex>
+			<tex correct="false">
+			f(x) = e^x + e^{x^2} + e^{x^5} 
+			</tex>
+			<reason>
+			\text{Note that the n-th term is simply }e^{x^n}, 1\leq n \leq 5.
+			</reason>
+		</step>
+		
+			<step>
+				<context>
+				\text{Which of the following assertions is true?}
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  \text{N-th term} &amp;= T_n = e^{x^n} \\ 
+				  \implies \dfrac{d}{dx}T_n &amp;= \dfrac{d}{d x^n}e^{x^n}\cdot\dfrac{d}{dx}x^n \\
+				  &amp;= n\cdot x^{n-1}\cdot e^{x^n}
+				\end{align}
+				</tex>
+				<tex correct="false">
+				\begin{align}
+				  \text{N-th term} &amp;= T_n = e^{x^n} \\ 
+				  \implies \dfrac{d}{dx}T_n &amp;= \dfrac{d}{d x^n}e^{x^n} \\
+				  &amp;= e^{x^n}
+				\end{align}
+				</tex>
+				<reason>
+				\text{See each term as }T_n = e^t, \text{ where }t = x^n. \\
+				\therefore \frac{d}{dx}T_n = \dfrac{d}{dt}e^t\cdot\dfrac{dt}{dx}\textbf{ (Chain Rule).}
+				</reason>
+			</step>
+			
+				<step>
+					<context>
+					\text{Are the calculations below correct?}
+					</context>
+					<tex correct="true">
+					\begin{align}
+					  \dfrac{d}{dx}f(x) &amp;= \dfrac{d}{dx}e^x + \dfrac{d}{dx}e^{x^2} + \ldots + \dfrac{d}{dx}e^{x^5}\\
+					  \text{But we know }\dfrac{d}{dx}e^{x^n} &amp;= nx^{n-1}\cdot e^{x^n} \\
+					  \therefore \dfrac{d}{dx}f(x) &amp;= e^x + 2x\cdot e^{x^2} + 3x^2\cdot e^{x^3} \\
+					  &amp;+ 4x^3\cdot e^{x^4} + 5x^4\cdot e^{x^5}
+					\end{align}
+					</tex>
+					
+					<reason>
+					\text{We have simply used the general result from}\\
+					\text{Step 2 and applied it to each term in f(x). That's it.}
+					</reason>
+				</step>
+				
+			<choices>
+				<tex>
+				e^x + 3x^2\cdot e^{x^3}
+			  + 5x^4\cdot e^{x^5}
+				</tex>
+				<tex>
+				e^x + 5x^4\cdot e^{x^5}
+				</tex>
+				<tex>
+				e^x + 3x^2\cdot e^{x^3}
+			  + 4x^3\cdot e^{x^4} + 5x^4\cdot e^{x^5}
+				</tex>
+				<tex correct='true'>
+				e^x + 2x\cdot e^{x^2} + 3x^2\cdot e^{x^3}
+			  + 4x^3\cdot e^{x^4} + 5x^4\cdot e^{x^5}
+				</tex>
+			</choices>
+</question>

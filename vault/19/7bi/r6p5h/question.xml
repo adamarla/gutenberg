@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the value of a, b, c and d from the}\\
+\text{equation:}\\
+\left[\begin{array}{cc}
+ a-b &amp; 2a+ c \\ 
+2a-b &amp; 3c+d
+ \end{array} \right]
+=
+\left[\begin{array}{rr}
+ -1 &amp; 5 \\ 
+0 &amp; 13 
+ \end{array} \right]</tex>
+  </statement>
+  <step>
+    <context>\text{If A and B are two matrices what does A = B}\\
+\text{imply?}</context>
+    <tex correct='true'>\begin{align}
+\text{Order of }A &amp;= \text{ Order of B}\\
+\text{and }a_{ij} &amp;= b_{ij} \quad(\forall\; i, j)
+\end{align}
+</tex>
+    <tex>a_{ij}= b_{ij} \quad (\; \forall \; i, j \text{ that exist in both matrices})</tex>
+    <reason>\text{If } A= B \text{ then, they have same order hence,}\\
+\text{same number of elements, which are present}\\
+\text{at the same positions.}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Using the matrix equality, what would the}\\
+\text{linear equations be?}</context>
+    <tex correct='true'>a-b = -1\\
+2a+c =5 \\
+2a-b = 0\\
+3c+d=13</tex>
+    <reason>\text{Solving the four linear equations gives the }\\
+\text{required values.}</reason>
+  </step>
+  <choices>
+    <tex>a =1, b=2, c=4 , d=3</tex>
+    <tex correct='true'>a =1, b=2, c=3 , d=4</tex>
+    <tex>a =3, b=4, c=1 , d=2</tex>
+    <tex>a =1, b=2, c=4 , d=4</tex>
+  </choices>
+</question>

@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Construct a }2\times 2\text{ matrix, } A = [a_{ij}],\\
+\text{whose elements are given by:}\\
+a_{ij} = \dfrac{(i+j)^2}{2}</tex>
+  </statement>
+  <step>
+    <context>\text{What are the possible values that (i,j) can}\\
+\text{take?}</context>
+    <tex correct='true'>(i,j) = \{(1,1),\, (1,2),\,(2,1),\, (2,2)\} </tex>
+    <tex>(i,j) = \{(1,1),\,  (2,2)\} </tex>
+    <reason>\text{Since i and j range from 1 to 2, therefore}\\
+\text{all combinations within that range.}\\ 
+</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{What is the value of  the elements } a_{ij} \text{ of the}\\
+\text{matrix A?}</context>
+    <tex correct='true'>a_{11} = 2\\
+a_{12} = 9/2\\
+a_{21} = 9/2\\
+a_{22} = 8
+</tex>
+    <reason>\text{Check your calculations if you got something}\\
+\text{else.}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{What is the resulting matrix A?}</context>
+    <tex correct='true'>A = 
+\left[\begin{array}{cc}
+ 2 &amp; 9/2 \\ 
+ 9/2 &amp; 8 \end{array} \right]</tex>
+    <reason>a_{ij} \text{ element lies in the } i^{th} \text{ row and } j^{th} \text{ column.}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>A = 
+\left[\begin{array}{cc}
+ 2 &amp; 9/2 \\ 
+ 9/2 &amp; 8 \end{array} \right]</tex>
+    <tex>A = \dfrac{9}{2}
+\left[\begin{array}{rr}
+ -2 &amp; 1 \\
+ 1 &amp; 8 \end{array} \right]</tex>
+    <tex>A = 
+\left[\begin{array}{cc}
+ 8 &amp; 9/2 \\ 
+ 9/2 &amp; 2 \end{array} \right]</tex>
+    <tex>A = 
+\left[\begin{array}{cc}
+ 2 &amp; 9/2 \\ 
+ 9/2 &amp; -8 \end{array} \right]</tex>
+  </choices>
+</question>

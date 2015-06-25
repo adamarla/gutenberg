@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Which of the given values of x and y make the}\\
+\text{following pair of matrices equal?}\\
+\left[\begin{array}{cc}
+ 3x+7 &amp; 5 \\ 
+ y+1 &amp; 2-3x \end{array} \right],
+\left[\begin{array}{cc}
+0 &amp; y-2 \\ 
+8 &amp; 4 \\
+ \end{array} \right]</tex>
+  </statement>
+  <step>
+    <context>\text{If A and B are two matrices what does A = B}\\
+\text{imply?}</context>
+    <tex correct='true'>\begin{align}
+\text{Order of }A &amp;= \text{ Order of B}\\
+\text{and }a_{ij} &amp;= b_{ij} \quad(\forall\; i, j)
+\end{align}
+</tex>
+    <tex>a_{ij}= b_{ij} \quad (\; \forall \; i, j \text{ that exist in both matrices})</tex>
+    <reason>\text{If } A= B \text{ then, the matrices are identical}\\
+\text{i.e. the same number of elements present at}\\
+\text{the same positions.}</reason>
+  </step>
+  <step>
+    <context>\text{Using the matrix equality, what would the}\\
+\text{linear equations be?}</context>
+    <tex correct='true'>
+\begin{align}
+3x+7 &amp;= 0 \\
+y-2 &amp;=5\\
+y+1 &amp;=8\\
+2-3x &amp;= 4
+\end{align}</tex>
+    <reason>\text{There's no x and y statisfying all four}\\
+\text{equations. Thus, the two matrices cannot}\\
+\text{be equal.}</reason>
+  </step>
+  <choices>
+    <tex>x = \dfrac{-1}{3}, y =7</tex>
+    <tex correct='true'>\text{Not possible to find}</tex>
+    <tex>y = 7, x = \dfrac{-2}{3}</tex>
+    <tex>x = \dfrac{-1}{3}, y =\dfrac{-2}{3}</tex>
+  </choices>
+</question>
