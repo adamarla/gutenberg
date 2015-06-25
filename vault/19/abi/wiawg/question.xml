@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the value of x, y and z from the equation}\\
+\left[\begin{array}{cc}
+4 &amp; 3 \\ 
+x &amp; 5
+ \end{array} \right]
+=
+\left[\begin{array}{rr}
+y &amp; z \\ 
+1 &amp; 5 
+ \end{array} \right]</tex>
+  </statement>
+  <step>
+    <context>\text{If A and B are two matrices what does A = B}\\
+\text{imply?}</context>
+    <tex correct='true'>\begin{align}
+\text{Order of }A &amp;= \text{ Order of B}\\
+\text{and }a_{ij} &amp;= b_{ij} \quad(\forall\; i, j)
+\end{align}
+</tex>
+    <tex>a_{ij}= b_{ij} \quad (\; \forall \; i, j \text{ that exist in both matrices})</tex>
+    <reason>\text{If } A= B \text{ then, they have same order hence,}\\
+\text{same number of elements, which are present}\\
+\text{at the same positions.}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Using the matrix equality, what would the}\\
+\text{linear equations be?}</context>
+    <tex correct='true'>4 = y\\
+3 = z \\
+x = 1\\
+</tex>
+    <reason>\text{Solving the linear equations gives the }\\
+\text{required values.}</reason>
+  </step>
+  <step>
+    <context></context>
+    <reason></reason>
+  </step>
+  <step>
+    <context></context>
+    <reason></reason>
+  </step>
+  <step>
+    <context></context>
+    <reason></reason>
+  </step>
+  <step>
+    <context></context>
+    <reason></reason>
+  </step>
+  <choices>
+    <tex>x=1, y=-4, z=3</tex>
+    <tex>x=-1, y=4, z=3</tex>
+    <tex>x=1, y=3, z=-4</tex>
+    <tex correct='true'>x=1, y=4, z=3</tex>
+  </choices>
+</question>
