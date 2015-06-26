@@ -3,7 +3,7 @@
   <statement>
     <tex>\text{Find}\frac{dy}{dx}\text{ of the following}\\
 
-xy + y^2 = \tan x + y</tex>
+x^2 + xy +y^2= 100</tex>
   </statement>
   <step>
     <context>\text{If }f(x) = g(x) \,.\, h(x)\text{,then f^\prime}=</context>
@@ -15,20 +15,20 @@ xy + y^2 = \tan x + y</tex>
   <step>
     <context>\text{Are the following calculations correct?}</context>
     <tex correct='true'>\text{After diffrentiating the equation we get}\\
-\frac{d(x^2 + xy + y^2)}{dx}=\frac{d(100)}{dx}\\
-\Rightarrow 2x . \frac{dx}{dx} + \frac{dx}{dx}. y + \frac{dy}{dx}. x +2 .y \frac{dy}{dx}=0\\
-\Rightarrow y + \frac{dy}{dx}. x +2 .y \frac{dy}{dx}=\sec^2 x +\frac{dy}{dx}\\
+\frac{d(x^2 + xy + y^2}{dx}=\frac{d(100)}{dx}\\
+\Rightarrow 2x .  \frac{d(x)}{dx}+y .  \frac{d(x)}{dx}+x . \frac{d(y)}{dx}+2y \frac{d(y)}{dx}=0\\
+\Rightarrow 2x +y +x . \frac{dy}{dx}+2y . \frac{dy}{dx}  = 0\\
 
 \text{After rearranging, we get}\\
-\frac{dy}{dx}= \frac{\sec^2 x - y}{x + 2y - 1}</tex>
-    <reason>\text{Other than Chain Rule and Product Rule we}\\
-\text{have used the fact that }\frac{d(\tan x)}{dx}=\sec^2 x\\
-\text{Check your calculations if you got something else.}</reason>
+\frac{dy}{dx} = -\frac{2x+y}{x+2y}\\</tex>
+    <reason>\text{We have used Chain Rule and Product Rule to}\\
+\text{solvethis problem.Check your calculations if you}\\
+\text{got something else.}</reason>
   </step>
   <choices>
-    <tex>\frac{dy}{dx}= \frac{x + 2y - 1}{\sec^2 x - y}</tex>
-    <tex>\frac{dy}{dx}= \frac{\sec^2 x - x}{x + 2y - 1}</tex>
-    <tex correct='true'>\frac{dy}{dx}= \frac{\sec^2 x - y}{x + 2y - 1}</tex>
-    <tex>\frac{dy}{dx}= \frac{\sec^2 x - y}{x + 2y}</tex>
+    <tex correct='true'>\frac{dy}{dx} = -\frac{2x+y}{x+2y}\\</tex>
+    <tex>\frac{dy}{dx} = \frac{2x+y}{x+2y}\\</tex>
+    <tex>\frac{dy}{dx} = -\frac{x+2y}{2x+y}\\</tex>
+    <tex>\frac{dy}{dx} = \frac{x-2y}{2x+y}\\</tex>
   </choices>
 </question>

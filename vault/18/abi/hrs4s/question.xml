@@ -1,22 +1,35 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Find}\frac{dy}{dx}\text{ in the following}\\
+    <tex>\text{Find}\frac{dy}{dx}\text{ of the following}\\
 
 2x + 3y = \sin y</tex>
   </statement>
   <step>
+    <context>\text{If }f(x) = g(h(x)), f^\prime = 
+</context>
+    <tex correct='true'>\frac{df(x)}{dx} = g^\prime (h) . h^\prime</tex>
+    <tex>\frac{df(x)}{dx} = g^\prime (h^\prime) </tex>
+    <reason>\text{This is a standard formula.It is called Chain}\\
+\text{Rule.Review it if you got this wrong.}\\</reason>
+  </step>
+  <step>
     <context>\text{Are the following calculations correct?}</context>
-    <tex correct='true'>\text{after diffrentiating the equation we get}\\
+    <tex correct='true'>\text{After diffrentiating the equation we get}\\
 \frac{d(2x + 3y)}{dx}=\frac{d(\sin y)}{dx}\\
 \Rightarrow 2 .  \frac{d(x)}{dx}+3 . \frac{dy}{dx}=\frac{d(\sin y)}{dx} . \frac{d(y)}{dx}\\
 \Rightarrow 2 + 3 . \frac{dy}{dx}=\cos y . \frac{d(y)}{dx}\\ 
 
 \text{After rearranging , we get}\\
 \frac{dy}{dx}= \frac{2}{\cos y - 3} </tex>
-    <tex></tex>
-    <reason>\text{Other than chain rule we have used}\\
-\text{the fact that }\frac{d(\sin x)}{dx}=\cos x\\
-\text{Check your calculations if you got something \\else.}</reason>
+    <reason>\text{Other than chain rule we have used the fact}\\
+\text{that }\frac{d(\sin x)}{dx}=\cos x \text{.Check your calculations}\\
+\text{if you got something else.}</reason>
   </step>
+  <choices>
+    <tex correct='true'>\frac{dy}{dx}= \frac{2}{-\cos y - 3} </tex>
+    <tex>\frac{dy}{dx}= \frac{\cos y - 3}{2} </tex>
+    <tex>\frac{dy}{dx}= \frac{2}{\cos y - 3} </tex>
+    <tex>\frac{dy}{dx}= \frac{-\cos y - 3}{2} </tex>
+  </choices>
 </question>

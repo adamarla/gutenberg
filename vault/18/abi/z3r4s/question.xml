@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Find}\frac{dy}{dx}\text{ in the following}\\
+    <tex>\text{Find}\frac{dy}{dx}\text{ of the following equation}\\
 
 2x + 3y = \sin x</tex>
   </statement>
@@ -10,9 +10,8 @@
 </context>
     <tex correct='true'>\frac{df(x)}{dx} = g^\prime (h) . h^\prime</tex>
     <tex>\frac{df(x)}{dx} = g^\prime (h^\prime) </tex>
-    <reason>\text{This is a standard formula.}\\
-\text{It is called Chain Rule.}\\
-\text{Review it if you got this wrong.}\\</reason>
+    <reason>\text{This is a standard formula. It is called Chain}\\
+\text{ Rule.Review it if you got this wrong.}\\</reason>
   </step>
   <step>
     <context>\text{Are the following calculations correct?}</context>

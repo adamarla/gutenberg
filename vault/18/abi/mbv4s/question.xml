@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find}\frac{dy}{dx}\text{ of the following}\\
+
+\sin^2 y + cos xy = \pi</tex>
+  </statement>
+  <step>
+    <context>f(x) = g(p(x) \,.\, q(x))\text{,then f^\prime}=</context>
+    <tex correct='true'>\frac{df(x)}{dx} = g^\prime(pq) . (p^\prime q + q^\prime p)</tex>
+    <tex>\frac{df(x)}{dx} = g^\prime(p^\prime q + q^\prime p)</tex>
+    <reason>\text{This is a combination of Chain Rule and }\\
+\text{Product Rule.Review your solution and check}\\
+\text{where you went wrong.}</reason>
+  </step>
+  <step>
+    <context>\text{Are the following calculations correct?}</context>
+    <tex correct='true'>\text{After diffrentiating the equation we get}\\
+\frac{d(\sin^2 y + \cos xy)}{dx}=\frac{d(\pi)}{dx}\\
+\Rightarrow 2\sin y \cos y \frac{d(y)}{dx} - \sin xy . \frac{d(xy)}{dx}=0\\
+\Rightarrow \sin 2y\frac{dy}{dx} -\sin xy .\bigg(x . \frac{dy}{dx} + y \frac{dx}{dx}\bigg) = 0\\
+\Rightarrow \sin 2y \frac{dy}{dx}-x\sin xy  \frac{dy}{dx} -y\sin xy = 0\\
+\text{After rearranging, we get}\\
+\frac{dy}{dx} = \frac{y\sin xy}{sin2y - xsin xy}\\</tex>
+    <reason>\text{We have used Chain Rule and Product Rule to}\\
+\text{solvethis problem.Check your calculations if you}\\
+\text{got something else.}</reason>
+  </step>
+  <choices>
+    <tex>\frac{dy}{dx} = \frac{y\sin 2y}{ sinxy- xsin xy}</tex>
+    <tex>\frac{dy}{dx} = -\frac{y\sin xy}{sin2y - xsin xy}\\</tex>
+    <tex>\frac{dy}{dx} = -\frac{sin2y - xsin xy}{y\sin xy}\\</tex>
+    <tex correct='true'>\frac{dy}{dx} = \frac{y\sin xy}{sin2y - xsin xy}\\</tex>
+  </choices>
+</question>
