@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Differentiate the following}\\
+			\qquad f(x) = x^x - 2^{\sin x} \\
+			\text{with respect to x.}
+		</tex>
+	</statement>
+	
+		<step>
+			<context>
+			\text{Which of the following shows the} \\
+			\text{mathematically correct way to start solving?}
+			</context>
+			<tex correct="true">
+			\begin{align}
+			  f'(x) &amp;= x^x - 2^{\sin x} \\
+			  \implies f'(x) &amp;= \frac{d}{dx}x^x - \frac{d}{dx}2^{\sin x}
+			\end{align}
+			</tex>
+			<tex correct="false">
+			\begin{align}
+			  f(x) &amp;= x^x - 2^{\sin x} \\
+			  \implies \log f(x) &amp;= \log x^x - \log 2^{\sin x} \\
+			  &amp;= x\log x - \sin x\cdot \log 2 \\
+			  \therefore f'(x) &amp;= \frac{d}{dx}(x\log x) - \log 2\frac{d}{dx}\sin x
+			\end{align}
+			</tex>
+			<reason>
+			\text{Finding }\log f(x) \text{ would have helped had }\\
+			f(x) = a\cdot b\text{ or }\frac{a}{b}.\text{But it is not. }f(x) = a - b. \\  
+			\text{ Taking its log wouldn't help.}
+			</reason>
+		</step>
+		
+			<step>
+				<context>
+				\text{If }g(x) = x^x,\text{ then which of the following}\\
+				\text{shows the correct evaluation of }g'(x)?
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  g(x) &amp;= x^x \implies \log g(x) = x\cdot \log x \\ 
+				  \therefore \frac{1}{g(x)} g'(x) &amp;= \underbrace{\left[x\frac{d}{dx}\log x 
+				  + \log x\frac{d}{dx}x\right]}_{\textbf{Chain Rule}} \\
+				  \implies g'(x) &amp;= x^x\cdot (1+\log x)
+				\end{align}
+				</tex>
+				<tex correct="false">
+				\begin{align}
+				  g(x) = x^x \implies g'(x) = \underbrace{x\cdot x^{x-1}}_{\frac{d}{dx}x^n = nx^{n-1}}
+				\end{align}
+				</tex>
+				<reason>
+				g'(x) = N\cdot x^{N-1}\text{ is true only when N is a known} \\
+				\text{constant. But taking }\log g(x)\text{ when }g(x) = h(x)^{j(x)}\\
+				\textbf{ will always work.}
+				</reason>
+			</step>
+			
+				<step>
+					<context>
+					\text{Are the calculations and conclusions below correct?}
+					</context>
+					<tex correct="true">
+					\begin{align}
+					f(x) &amp;= \underbrace{x^x}_{g(x)} - \underbrace{2^{\sin x}}_{h(x)} \\
+					  \implies f'(x) &amp;= g'(x) - h'(x) \\
+					  \text{Now, }h(x) = 2^{\sin x} &amp;\implies\log h(x) = \sin x\cdot\log 2 \\
+					  \implies \frac{1}{h(x)}h'(x) &amp;= \log 2\cdot\cos x \\
+					  \implies h'(x) &amp;= \log 2\cdot 2^{\sin x}\cdot cos x \\
+					  \therefore f'(x) = x^x\cdot (1+\log x) &amp;-\log 2\cdot\cos x\cdot 2^{\sin x}
+					\end{align}
+					</tex>
+					
+					<reason>
+					\text{We found }g'(x) \text{in the last step. We only need to }\\
+					\text{find }h'(x)\text{, where }h(x) = 2^{\sin x}\text{ by taking }\log h(x)\text{ first.}
+					</reason>
+				</step>
+				
+					<choices>
+						<tex correct='true'>
+						x^x\cdot (1+\log x)-\log 2\cdot\cos x\cdot 2^{\sin x}
+						</tex>
+						<tex>
+						(1+\log x)+\log 2\cdot\cos x\cdot 2^{\sin x}
+						</tex>
+						<tex>
+						x^x\cdot (1+\log x)+\cos x\cdot 2^{\sin x}
+						</tex>
+						<tex>
+						x^x\cdot (1+\log x)+\log 2\cdot\cos x\cdot 2^{\sin x}
+						</tex>
+					</choices>
+</question>

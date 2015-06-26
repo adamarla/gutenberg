@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Differentiate the following }\\
+			\quad f(x) = \cos x\cdot\cos 2x\cdot \cos 3x \\
+			\text{with respect to x.}
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{Which of the following shows the correct }\log f(x)?
+			</context>
+			<tex correct="true">
+			\begin{align}
+			  f(x) &amp;= \cos x\cdot \cos 2x\cdot \cos 3x \\ 
+			  \implies \log f(x) &amp;= \log (\cos x) + \log (\cos 2x) + \log (\cos 3x) 
+			\end{align}
+			</tex>
+			<tex correct="false">
+			\begin{align}
+			  f(x) &amp;= \cos x\cdot \cos 2x\cdot \cos 3x \\ 
+			  \implies \log f(x) &amp;= \log (\cos x) \cdot \log (\cos 2x)\cdot \log (\cos 3x) 
+			\end{align}
+			</tex>
+			<reason>
+			\text{If }a = x\cdot y\cdot z,\text{ then }\log a = \log x + \log y + \log z.\\
+			\text{This is a standard result. Review if you got it wrong.}
+			</reason>
+		</step>
+		
+			<step>
+				<context>
+				\text{If }u(x) = \log(\cos Nx), N\in\mathbb{N},\text{then }u'(x) = ?
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  u(x) &amp;= \log(\cos Nx) \implies u'(x) = \dfrac{1}{\cos Nx}\cdot\dfrac{d}{dx}\cos Nx \\
+				  &amp;= -\dfrac{N\cdot\sin Nx}{\cos Nx} = -N\tan Nx
+				\end{align}
+				</tex>
+				
+				<tex correct='false'>
+				\begin{align}
+				  u(x) &amp;= \log(\cos Nx) \implies u'(x) = \dfrac{1}{\cos Nx}\cdot\dfrac{d}{dx}\cos Nx \\
+				  &amp;= -\dfrac{\sin Nx}{\cos Nx} = -\tan Nx
+				\end{align}
+				</tex>
+
+				<reason>
+				\frac{d}{dx}\log(g(x)) = \frac{1}{g(x)}\cdot\frac{d}{dx}g(x)\textbf{ (Chain Rule).}\\
+				\text{But }g(x) = \cos Nx \implies \frac{d}{dx}g(x) = -\sin Nx\frac{d}{dx}Nx\\
+				 = -N\sin Nx\textbf{ (Chain Rule again).}
+				</reason>
+			</step>
+			
+			<step>
+				<context>
+				\text{Are the calculations below correct?}
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  \log f(x) &amp;= \log (\cos x) + \log (\cos 2x) \\
+				  &amp;+ \log (\cos 3x) \\ 
+				  \implies\dfrac{1}{f(x)}\dfrac{d}{dx}f(x) &amp;= 
+				  \dfrac{d}{dx}\log(\cos x) + \dfrac{d}{dx}\log(\cos 2x)  \\
+				  &amp;+ \dfrac{d}{dx}\log(\cos 3x) \\
+				  &amp;= -\left(\tan x + 2\tan 2x + 3\tan 3x\right)  \\
+				  \implies \dfrac{d}{dx}f(x) &amp;= -(\cos x\cdot\cos 2\cdot\cos 3x)\\
+				  &amp;\times\left[\tan x+\tan 2x + \tan 3x\right]
+				\end{align}
+				</tex>
+
+				<reason>
+				\text{Use Step 1 to write }\log f(x)\text{ and Step 2}\\
+				\text{to write }\frac{d}{dx}\log (\cos Nx). \text{That's it.}
+				</reason>
+			</step>
+			
+				<choices>
+					<tex correct='true'>
+					-(\cos x\cdot\cos 2\cdot\cos 3x) \times \\
+				  \left[\tan x+\tan 2x + \tan 3x\right]
+					</tex>
+					<tex>
+					\left[\tan x+\tan 2x + \tan 3x\right]
+					</tex>
+					<tex>
+					-\left[\tan x+\tan 2x + \tan 3x\right]
+					</tex>
+					<tex>
+					(\cos x\cdot\cos 2\cdot\cos 3x)
+					</tex>
+				</choices>
+</question>
