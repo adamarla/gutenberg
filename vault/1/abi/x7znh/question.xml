@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Differentiate the following} \\
+			\qquad f(x) = (\log x)^{\cos x} \\
+			\text{with respect to x.}
+		</tex>
+	</statement>
+	
+		<step>
+			<context>
+			\text{What is }\log f(x)? 
+			</context>
+			<tex correct="true">
+			f(x) = (\log x)^{\cos x} \implies \log f(x) = \cos x\cdot (\log (\log x)) 
+			</tex>
+			<tex correct="false">
+			f(x) = (\log x)^{\cos x} \implies \log f(x) = \cos x\cdot (\log x)
+			</tex>
+			<reason>
+			\text{If }f(x) = g(x) ^{h(x)},\text{ then }\log f(x) = h(x)\cdot\log g(x).
+			</reason>
+		</step>
+		
+			<step>
+				<context>
+				\text{If }m(x) = n(x) \cdot p(x),\text{ then what is }m'(x)?
+				</context>
+				<tex correct="true">
+				\quad m'(x) = p(x)\cdot\frac{d}{dx}n(x) + n(x)\cdot\frac{d}{dx}p(x)
+				</tex>
+				<tex correct="false">
+				\quad m'(x) = \frac{d}{dx}n(x)\cdot\frac{d}{dx}p(x)
+				</tex>
+				<reason>
+				\textbf{The Product Rule}\text{ says that if }\\
+				m(x) = n(x)\cdot p(x)\text{ then }m'(x) = n'p + np'.
+				</reason>
+			</step>
+			<step>
+				<context>
+				\text{Is the analysis below correct?}
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  \log f(x) &amp;= \cos x\cdot \log(\log x) \\
+				  \implies \dfrac{1}{f(x)}f'(x) &amp;= 
+				  \log(\log x)\frac{d}{dx}\cos x \\
+				  &amp;+ \cos x\cdot\frac{d}{dx}\log(\log x)) \\
+		&amp;= -\sin x\cdot\log(\log x) \\ 
+		&amp;+ \cos x\cdot \left[\frac{1}{\log x}\cdot\frac{d}{dx}\log x\right] \\
+		&amp;= \left[\frac{\cos x}{x\cdot\log x} - \sin x\cdot\log(\log x)\right] \\
+		\therefore f'(x) = (\log x)^{\cos x}\cdot&amp;\left[\frac{\cos x}{x\cdot\log x} - \sin x\cdot\log(\log x)\right]
+				\end{align}
+				</tex>
+			
+				<reason>
+				\text{Notice that we applied }\textbf{Chain Rule}\text{ when }\\
+				\text{evaluating }\frac{d}{dx}\log(\log x). \\
+				\frac{d}{dx}\log(\log x) = \frac{1}{\log x}\cdot\frac{d}{dx}\log x = \frac{1}{x\cdot\log x}
+				</reason>
+			</step>
+			
+				<choices>
+					<tex>
+					(\log x)^{\cos x}\cdot\left[\frac{\cos x}{\log x} - \sin x\cdot\log(\log x)\right]
+					</tex>
+					<tex>
+					(\log x)^{\cos x}\cdot\left[\frac{\cos x}{x\cdot\log x} + \sin x\cdot\log(\log x)\right]
+					</tex>
+					<tex correct='true'>
+					(\log x)^{\cos x}\cdot\left[\frac{\cos x}{x\cdot\log x} - \sin x\cdot\log(\log x)\right]
+					</tex>
+					<tex>
+					(\log x)^{\cos x}\cdot\left[\frac{\cos x}{x\cdot\log x}  + \sin x\cdot\log x\right]
+					</tex>
+				</choices>
+</question>
