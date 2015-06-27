@@ -2,7 +2,7 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{What is the number of all possible matrices of}\\
-3 \ltimes 3 \text{ order with each entry 0 or 1?}</tex>
+3 \times 3 \text{ order with each entry 0 or 1?}</tex>
   </statement>
   <step>
     <context>\text{What does a matrix having order } 3 \times 3  \text{ imply?}</context>

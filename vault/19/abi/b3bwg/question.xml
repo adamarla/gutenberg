@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the values of x, y, z if the matrix }\\
+A =
+\left[\begin{array}{ccc}
+0 &amp; 2y &amp; z \\ 
+x &amp; y &amp; -z \\
+x &amp; -y &amp; z \end{array} \right]\\
+\text{satisfies the equation }A'A =I</tex>
+  </statement>
+  <step>
+    <context>\text{What is the transpose of matrix A?}</context>
+    <tex correct='true'>A' =
+\left[\begin{array}{ccc}
+0 &amp; x &amp; x \\ 
+2y &amp; y &amp; -y \\
+z &amp; -z &amp; z \end{array} \right]</tex>
+    <tex>A' =
+\left[\begin{array}{ccc}
+ x &amp; -y &amp; z \\ 
+x &amp; y &amp; -z \\
+ 0 &amp; 2y &amp; z \end{array} \right]</tex>
+    <reason>A' \text{ or } A^{T} \text{ is the matrix obtained by}\\
+\text{interchanging rows and columns of }A\\
+\text{i.e. } [\;a_{ij}\;] \leftrightarrow [\;a_{ji}\;]</reason>
+  </step>
+  <step>
+    <context>\text{What is the product matrix A'A i.e.}\\
+\left[\begin{array}{ccc}
+0 &amp; x &amp; x \\ 
+2y &amp; y &amp; -y \\
+z &amp; -z &amp; z \end{array} \right] 
+\left[\begin{array}{ccc}
+0 &amp; 2y &amp; z \\ 
+x &amp; y &amp; -z \\
+x &amp; -y &amp; z \end{array} \right] = \text{?}
+</context>
+    <tex correct='true'>A'A =
+\left[\begin{array}{ccc}
+ 2x^2 &amp; 0 &amp; 0 \\ 
+0 &amp; 6y^2 &amp; 0 \\
+0 &amp; 0 &amp; 3z^2 \end{array} \right]</tex>
+    <tex>A'A =
+\left[\begin{array}{ccc}
+ 0 &amp; 2xy &amp; xz \\ 
+2yx &amp; y^2 &amp; yz \\
+zx &amp; yz &amp; z^2 \end{array} \right]</tex>
+    <reason>AB = C \implies
+\begin{align}
+[a_{ij}]\times [b_{jk}] &amp; = [c_{ik}]\\
+ \text{where, } [c_{ik}] &amp; = 
+\displaystyle \sum_{j=1}^{n}a_{ij}\;b_{jk}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{Using the equation A'A = I, what are the}\\
+\text{values of x, y and z?}</context>
+    <tex correct='true'>\begin{align}
+2x^2 &amp;=1 &amp;x = \pm \dfrac{1}{\sqrt{2}}\\
+6y^2 &amp;=1   \quad \implies \quad  &amp;y = \pm \dfrac{1}{\sqrt{6}}\\
+3z^2 &amp;= 1 &amp;z = \pm \dfrac{1}{\sqrt{3}}
+\end{align}
+
+</tex>
+    <tex>\begin{align}
+2x^2 &amp;=1 &amp;x =  \dfrac{1}{\sqrt{2}}\\
+6y^2 &amp;=1   \quad \implies \quad  &amp;y =  \dfrac{1}{\sqrt{6}}\\
+3z^2 &amp;= 1 &amp;z =  \dfrac{1}{\sqrt{3}}
+\end{align}
+
+</tex>
+    <reason>\text{Both positive and negative square roots are to}\\
+\text{be considered.}</reason>
+  </step>
+  <choices>
+    <tex>x =  \dfrac{1}{\sqrt{2}} ,\; y =  \dfrac{1}{\sqrt{6}}\\
+\text{and }z =  \dfrac{1}{\sqrt{3}}</tex>
+    <tex>x = \pm \dfrac{1}{\sqrt{4}} ,\; y = \pm \dfrac{1}{\sqrt{6}}\\
+\text{and }z = \pm \dfrac{1}{\sqrt{3}}</tex>
+    <tex>x = - \dfrac{1}{\sqrt{2}} ,\; y = - \dfrac{1}{\sqrt{6}}\\
+\text{and }z = - \dfrac{1}{\sqrt{3}}</tex>
+    <tex correct='true'>x = \pm \dfrac{1}{\sqrt{2}} ,\; y = \pm \dfrac{1}{\sqrt{6}}\\
+\text{and }z = \pm \dfrac{1}{\sqrt{3}}</tex>
+  </choices>
+</question>

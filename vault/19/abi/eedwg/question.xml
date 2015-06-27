@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{A manufacturer produces three}\\
+\text{products x, y and z ,which he sells in}\\
+\text{two markets. Annual Sales are}\\
+\text{indicated below:}\\
+\begin{tabular}{cccc}
+\text{Market} &amp; {} &amp;\text{Products}&amp;{}\\
+\hline 
+I &amp; 10,000 &amp;2,000 &amp;18,000 \\
+II &amp; 6,000 &amp; 20,000 &amp; 8,000 \\
+\end{tabular}\\
+
+\text{If unit sale prices of x, y and z are}\\
+\text{Rs 2.50, Rs 1.50 and Rs 1.00,}\\
+\text{respectively, find the total revenue in}\\
+\text{each market with the help of matrix}\\
+\text{algebra.}</tex>
+  </statement>
+  <step>
+    <context>\text{What is the formula used for calculating}\\
+\text{total revenue?}</context>
+    <reason></reason>
+  </step>
+  <choices>
+    <tex correct='true'>\text{Total Revenue in}\\
+\text{Market  I : Rs 46,000}\\
+\text{Market II : Rs 53,000}\\</tex>
+    <tex>\text{Total Revenue in}\\
+\text{Market  I : Rs 53,000}\\
+\text{Market II : Rs 46,000}\\</tex>
+    <tex>\text{Not possible to find}</tex>
+    <tex>\text{Total Revenue in}\\
+\text{Market  I : Rs 50,000}\\
+\text{Market II : Rs 53,000}\\</tex>
+  </choices>
+</question>
