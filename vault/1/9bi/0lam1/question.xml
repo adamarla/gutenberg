@@ -2,8 +2,9 @@
 <question xmlns='http://www.gradians.com'>
 	<statement>
 		<tex>
-			\text{Differentiate the following with respect to x.}\\
-			\qquad f(x) = \sqrt{e^{\sqrt{x}}}, x \geq 0
+			\text{Differentiate the following } \\
+			\qquad f(x) = \sqrt{e^{\sqrt{x}}}, x \geq 0 \\
+			\text{with respect to x.}
 		</tex>
 	</statement>
 
