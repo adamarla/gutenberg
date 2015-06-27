@@ -26,7 +26,6 @@ to the value of f(x) at that point}</reason>
 \text{Hence, it is continuous for all }x\neq 1.\\
 \text{But we need to check for continuity at }x=1.
 </tex>
-    <tex></tex>
     <reason>\text{At }x=1\text{, the definition of the function}\\
 \text{changes. Hence, x = 1 could be the only}\\
 \text{problem point. We should check for}\\
@@ -41,7 +40,6 @@ to the value of f(x) at that point}</reason>
 \end{align}
 \\ \text{Hence, f(x) is discontinuous at x=1.}\\
 </tex>
-    <tex></tex>
     <reason>\text{Since, f(x) is continuous at x}\neq 1\text{(step 2)}\\
 \therefore x=1\text{ is the only point of discontinuity.}</reason>
   </step>
