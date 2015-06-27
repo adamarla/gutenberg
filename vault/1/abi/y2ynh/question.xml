@@ -15,7 +15,7 @@
 			</context>
 			<tex correct="true">
 			\text{Given }g(x) = \left(x+\frac{1}{x}\right)^x\text{ and }
-			h(x) = x^{\left(x + \frac{1}{x}\right)} \\
+			h(x) = x^{\left(1 + \frac{1}{x}\right)} \\
  			\begin{align}
 			  f(x) &amp;= g(x) + h(x) \\ 
 			  \implies f'(x) &amp;= g'(x) + h'(x) 
@@ -45,12 +45,14 @@
 						<tex correct="true">
 						\begin{align}
 						  g(x) &amp;= \left(x+\frac{1}{x}\right)^x \\ 
-						  \implies \log g(x) &amp;= x\cdot\log \left(x+\frac{1}{x}\right) \\
-						  \therefore\dfrac{1}{g(x)}g'(x) &amp;= 
+						  \implies \log g(x) &amp;= x\cdot\log \left(x+\frac{1}{x}\right)
+            \end{align} \\
+            \begin{align}
+						  &amp;\therefore\dfrac{1}{g(x)}g'(x) = 
 						  x\cdot\dfrac{d}{dx}\log \left(x+\frac{1}{x}\right) \\  
 						  &amp;+ \log \left(x+\frac{1}{x}\right)\cdot\dfrac{d}{dx} x \\
-						  &amp;= x\cdot\dfrac{1}{\left(x+\frac{1}{x}\right)}\cdot \left(1-\frac{1}{x^2}\right) \\
-						  &amp;+ \log \left(x+\frac{1}{x}\right) \\ 
+						  &amp;= x\cdot\dfrac{1}{\left(x+\frac{1}{x}\right)}\cdot \left(1-\frac{1}{x^2}\right) 
+						  + \log \left(x+\frac{1}{x}\right) \\ 
 						  &amp;= \log \left(x+\frac{1}{x}\right) + \dfrac{x^2-1}{x^2 + 1}
 						\end{align}
 						</tex>
@@ -64,16 +66,18 @@
 			<step>
 				<context>
 				\text{Similarly, is the following valid calculations}\\
-				\text{for finding g'(x) where } g(x) = \left(x+\frac{1}{x}\right)^x?
+				\text{for finding h'(x) where } h(x) = x^{\left(1+\frac{1}{x}\right)}?
 				</context>
 				
 				<tex correct="true">
 				\begin{align}
 				  h(x) &amp; = x^{\left(1+\frac{1}{x}\right)} \\ 
-				  \implies\log h(x) &amp;= \left(1+\frac{1}{x}\right)\cdot\log x \\
-				  \therefore \dfrac{1}{h(x)}h'(x) &amp;= 
-				  \left(1+\frac{1}{x}\right)\frac{d}{dx}\log x \\
-				  &amp;+ \log x\cdot\dfrac{d}{dx}\left(1+\frac{1}{x}\right) \\
+				  \implies\log h(x) &amp;= \left(1+\frac{1}{x}\right)\cdot\log x
+				\end{align} \\
+				\begin{align}
+				  &amp;\therefore \dfrac{1}{h(x)}h'(x) = \\
+				  &amp;\left(1+\frac{1}{x}\right)\frac{d}{dx}\log x 
+				  + \log x\cdot\dfrac{d}{dx}\left(1+\frac{1}{x}\right) \\
 				  &amp;= \left(\frac{x+1}{x^2}\right)-\dfrac{\log x}{x^2}
 				\end{align}
 				</tex>
