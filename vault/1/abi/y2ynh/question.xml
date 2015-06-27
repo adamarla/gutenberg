@@ -58,7 +58,8 @@
 						</tex>
 						
 						<reason>
-						\text{Go from }g(x) \rightarrow \log g(x) \rightarrow \dfrac{1}{g(x)}g'(x).\\
+						\text{One needs to go from } \\ 
+						g(x) \rightarrow \log g(x) \rightarrow \dfrac{1}{g(x)}g'(x).\\
 						\text{Plus, use }\textbf{Chain Rule }\text{ to find } g'(x).
 						</reason>
 					</step>		
@@ -83,7 +84,8 @@
 				</tex>
 
 				<reason>
-				\text{As with g(x), go from }h(x)\rightarrow\log h(x)\rightarrow\frac{1}{h(x)}h'(x).
+				\text{As with g(x), go from } \\
+				h(x)\rightarrow\log h(x)\rightarrow\frac{1}{h(x)}h'(x).
 				</reason>
 			</step>
 			
