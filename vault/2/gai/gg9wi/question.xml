@@ -59,8 +59,9 @@ x\ge 0 \text{ and } y\ge 0
 \text{that vitamin in it.}</reason>
   </step>
   <step>
-    <context>\text{For above constraints, what does the plot }\\
-\text{the feasible region and points look like?}</context>
+    <context>\text{For above constraints, does the plot for the}\\
+\text{feasible region and its corner points look}\\ 
+\text{like this?}</context>
     <image correct='true'>3a.svg</image>
     <image>3b.svg</image>
     <reason>3x+4y=8\implies y\ge -3/4x+2 \\
@@ -68,9 +69,8 @@ x\ge 0 \text{ and } y\ge 0
 (x, y)\ge 0\implies \text{positive x, y}</reason>
   </step>
   <step swipe='false'>
-    <context>\text{Can we predict the minimum cost (C)}\\
-\text{based on the Corner Points established}\\ 
-\text{in the diagram above?}
+    <context>\text{Based on the graph in the previous step, are}\\
+\text{these the correct corner points and minimum?}
 </context>
     <tex correct='true'>\begin{align}
 \text{Corner Point} \qquad &amp;C=60x+80y \\
@@ -78,16 +78,16 @@ x\ge 0 \text{ and } y\ge 0
 (2, 0.5) \qquad &amp;160 \\
 (8/3, 0) \qquad &amp;160
 \end{align}\\
-\text{Cannot predict minimum based on this.}</tex>
+\text{Minimum cannot be established based on this.}</tex>
     <tex>\begin{align}
 \text{Corner Point} \qquad &amp;C=60x+80y \\
 (0, 5.5) \qquad &amp;440 \\
 (2, 0.5) \qquad &amp;160 \leftarrow\text{minimum}\\
 (8/3, 0) \qquad &amp;160 \leftarrow\text{minimum}
 \end{align}</tex>
-    <reason>\text{Since feasible region is unbounded,}\\ 
-\text{cannot establish the minimum (or maximum)}\\ 
-\text{based on corner points alone.}</reason>
+    <reason>\text{Since feasible region is unbounded, need to}\\ 
+\text{check if it overlaps with open half plane }\\
+C(x, y)\lt 160\implies 60x+80y \lt 160</reason>
   </step>
   <step>
     <context>\text{Does the open half plane}\\
@@ -97,7 +97,7 @@ x\ge 0 \text{ and } y\ge 0
     <image>5b.svg</image>
     <reason>3x+4y\lt 8\implies y\lt -3/4x+2.\\
 \text{No overlap with feasible region,}\\
-\text{so established minimum is valid.}</reason>
+\text{therefore established minimum is valid.}</reason>
   </step>
   <choices>
     <tex>\text{There is no minimum for this function}</tex>

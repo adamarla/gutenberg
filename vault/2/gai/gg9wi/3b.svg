@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="869" height="473" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="main-svg">
+<svg width="769" height="473" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="main-svg">
  <defs>
   <g class="clips" id="svg_68">
    <clipPath class="axesclip" id="clipf5607ax">
     <rect x="80" y="0" width="632" height="473" id="svg_69"/>
    </clipPath>
    <clipPath class="axesclip" id="clipf5607ay">
-    <rect x="0" y="100" width="869" height="293" id="svg_70"/>
+    <rect x="0" y="100" width="769" height="293" id="svg_70"/>
    </clipPath>
    <clipPath class="axesclip" id="clipf5607axy">
     <rect x="80" y="100" width="632" height="293" id="svg_71"/>
@@ -15,7 +15,7 @@
  </defs>
  <g>
   <title>Layer 1</title>
-  <rect x="0" y="0" width="869" height="473" fill="rgb(255, 255, 255)" id="svg_72"/>
+  <rect x="0" y="0" width="769" height="473" fill="rgb(255, 255, 255)" id="svg_72"/>
   <g class="draglayer" id="svg_73">
    <g id="svg_74"/>
   </g>
@@ -183,7 +183,7 @@
     </g>
    </g>
    <g id="svg_40">
-    <svg id="svg_120" height="67" width="132" y="100" x="725" class="legend">
+    <svg id="svg_120" height="67" width="132" y="100" x="525" class="legend">
      <rect id="svg_289" stroke="rgb(68, 68, 68)" fill="rgb(255, 255, 255)" stroke-width="0px" height="67" width="132" y="0" x="0" class="bg"/>
      <g id="svg_279" class="traces">
       <g id="svg_287" class="legendfill">

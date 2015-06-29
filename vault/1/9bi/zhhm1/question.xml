@@ -2,8 +2,9 @@
 <question xmlns='http://www.gradians.com'>
 	<statement>
 		<tex>
-			\text{Differentiate the following with respect to x.}\\
-			\quad f(x) = \log (\cos e^x)
+			\text{Differentiate the following } \\
+			\quad f(x) = \log (\cos e^x)\\
+			\text{with respect to x.}\\
 		</tex>
 	</statement>
 		<step>

@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+		\text{Differentiate the following}\\
+		\quad f(x) = (x+3)^2\cdot (x+4)^3\cdot (x+5)^4 \\
+		\text{with respect to x.}
+		</tex>
+	</statement>
+	
+		<step>
+			<context>
+			\text{Shown below are two ways of differentiating}\\
+			f(x).\textbf{Both are correct.}\text{ But one is more}\\
+			\text{elegant than the other. Which one?}
+			</context>
+			<tex correct="true">
+			\begin{align}
+			  f(x) &amp;= g(x) \cdot h(x) \cdot j(x) \\ 
+			  \implies \log f(x) &amp;= \log g(x) + \log h(x) + \log j(x) \\ 
+			  \implies \frac{1}{f(x)}f'(x) &amp;= \frac{1}{g(x)}g'(x) + 
+			  \frac{1}{h(x)}h'(x) + \frac{1}{j(x)}j'(x)
+			\end{align}
+			</tex>
+			<tex correct="false">
+				\begin{align}
+			  f(x) &amp;= \underbrace{g(x) \cdot h(x)}_{M(x)} \cdot j(x) \\ 
+			  \implies f'(x)&amp;= M'(x)\cdot j(x) + M(x)\cdot j'(x) \\
+			  \text{where }M'(x) &amp;= \frac{d}{dx}g(x)\cdot h(x) \\ 
+			  &amp;= g'(x)h(x) + h'(x)g(x)
+			\end{align}
+			</tex>
+			<reason>
+			\text{If }f(x) = a(x)\cdot b(x)\cdot\ldots \cdot z(x),\text{ then consider}\\
+			\text{first taking }\log f(x). \text{Logs convert products to sums}\\
+			(\log(mn) = \log m + \log n)\text{ and divisions to subtractions.}
+			</reason>
+		</step>
+		
+			<step>
+				<context>
+				\text{Are the analysis and calculations below correct?}
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  f(x) &amp;= (x+3)^2\cdot(x+4)^3\cdot(x+5)^4 \\
+				  \implies\log f(x)&amp;= 2\log (x+3) + 3\log (x+4) \\ 
+				  &amp;+ 4\log (x+5) \\
+				  \therefore\frac{1}{f(x)}f'(x) &amp;= 
+				  \left[\frac{2}{x+3} + \frac{3}{x+4} + \frac{4}{x+5}\right] \\
+				  \implies f'(x) &amp;= (x+3)^2\cdot(x+4)^3\cdot(x+5)^4 \times \\
+				  &amp;\left[\frac{2}{x+3} + \frac{3}{x+4} + \frac{4}{x+5}\right] \\
+				  = (x+3)(x+4)^2&amp;\cdot(x+5)^3\cdot(9x^2+70x+ 133)
+				\end{align}
+				</tex>
+
+				<reason>
+				\text{Once we decided that finding }\log f(x)\text{ was the }\\
+				\text{way to go, we simply used the fact }\\
+				\dfrac{d}{dx}\log f(x)  = \dfrac{1}{f(x)}\cdot f'(x). 
+				</reason>
+			</step>
+			
+				<choices>
+					<tex>
+					(x+3)(x+4)\cdot(x+5)^2\cdot(4x^2-27x + 111)
+					</tex>
+					<tex>
+					(x+3)(x+4)\cdot(x+5)^2\cdot(9x^2-70x - 133)
+					</tex>
+					<tex correct='true'>
+					(x+3)(x+4)^2\cdot(x+5)^3\cdot(9x^2+70x+ 133)
+					</tex>
+					<tex>
+          (x+3)(x+4)^2\cdot(x+5)^3\cdot(7x^2 + 79x + 143)
+					</tex>
+				</choices>
+</question>

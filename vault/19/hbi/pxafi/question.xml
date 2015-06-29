@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Let A} = 
+\left[\begin{array}{cc}
+2 &amp; 4 \\ 
+3 &amp; 2 \\
+\end{array} \right] \text{ and } 
+C = 
+\left[\begin{array}{cc}
+-2 &amp; 5 \\ 
+3 &amp; 4 \\
+\end{array} \right]\\
+
+\text{Then, find }3A- C.</tex>
+  </statement>
+  <step>
+    <context>\text{Under what condition, the subtraction of two}\\
+\text{matrices }A_{m \times n} \text{ and } C_{p \times q}  \text{ is defined?}</context>
+    <tex correct='true'>\text{When both matrices have the same order i.e.}\\
+m = p \text{ and } n = q
+</tex>
+    <tex>\text{When both matrices have the same number}\\
+\text{of elements i.e. }\quad
+
+m \times n = p \times q
+</tex>
+    <reason>\text{Only matrices having the {\bf same order} i.e.}\\
+\text{equal no. of rows (m) and equal no. of}\\
+\text{columns (n) can be subtracted.}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{If } A = 
+\left[\begin{array}{cc}
+2 &amp; 4 \\ 
+3 &amp; 2 \\
+\end{array} \right] 
+\text{then, find }3A.</context>
+    <tex correct='true'>3 A = 
+\left[\begin{array}{cc}
+3\times 2 &amp; 3 \times 4 \\ 
+3\times 3 &amp; 3\times 2 
+\end{array} \right] = 
+\left[\begin{array}{cc}
+6 &amp; 12 \\ 
+9 &amp; 6 
+\end{array} \right]</tex>
+    <tex>\begin{align}
+3A &amp;= 3 \times (2 +4+3+2)\\
+&amp;= 3 \times 11\\
+&amp;= 33
+\end{align} </tex>
+    <reason>\text{If } A = [a_{ij}]_{\,m\times n} \text{ and k is a scalar then,}\\
+\text{kA is another matrix of order m\times n}\\
+\text{such that }
+kA = [k(a_{ij})]_{\,m\times n}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{If D = $3A_{m \times n} - C_{ m \times n} $ then, what is the}\\
+\text{order of resultant matrix D?}
+</context>
+    <tex correct='true'>D \text{ has order m \times n}</tex>
+    <reason>P_{m \times n} - Q_{m \times n} = R_{m \times n}\\
+\text{having m rows and n columns.} </reason>
+  </step>
+  <step>
+    <context>\text{Find $D_{2 \times 2} = }
+\left[\begin{array}{cc}
+6 &amp; 12 \\ 
+9 &amp; 6 
+\end{array} \right] -
+\left[\begin{array}{cc}
+-2 &amp; 5 \\ 
+3 &amp; 4 \\
+\end{array} \right]
+</context>
+    <tex correct='true'>D_{2 \times 2} = 
+\left[\begin{array}{cc}
+6+2&amp; 12-5 \\ 
+9-3 &amp; 6-4
+\end{array} \right] =
+
+\left[\begin{array}{rr}
+8&amp; 7 \\ 
+6&amp; 2
+\end{array} \right]
+
+</tex>
+    <tex>D_{2 \times 2} = 
+\left[\begin{array}{rr}
+6 - 12&amp; 2 -5 \\ 
+9-6 &amp; 3-4
+\end{array} \right] =
+
+\left[\begin{array}{cc}
+-6 &amp; -3 \\ 
+3&amp; -1\\
+\end{array} \right]</tex>
+    <reason>A_{m \times n} - B_{m \times n} = D_{m \times n} = [d_{ij}]_{m \times n}\\
+\text{where } d_{ij} = a_{ij} - b_{ij} \, (\forall \text{ possible ij values}).\\
+\text{Thus, corresponding elements are subtracted.}</reason>
+  </step>
+  <choices>
+    <tex>\text{Not defined}</tex>
+    <tex>3A - C = 
+\left[\begin{array}{cc}
+8 &amp; 6 \\ 
+7 &amp; 2 \\
+\end{array} \right]\\</tex>
+    <tex correct='true'>3A - C = 
+\left[\begin{array}{cc}
+8 &amp; 7 \\ 
+6 &amp; 2 \\
+\end{array} \right]\\</tex>
+    <tex>3A - C = O</tex>
+  </choices>
+</question>

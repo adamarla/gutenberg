@@ -258,7 +258,7 @@
                 </svg>
             </g>
         </g>
-        <svg class="legend" x="725" y="100" width="132" height="86">
+        <svg class="legend" x="525" y="100" width="132" height="66">
             <rect class="bg" x="0" y="0" width="132" height="86" style="stroke: rgb(68, 68, 68); stroke-opacity: 1; fill: rgb(255, 255, 255); fill-opacity: 1; stroke-width: 0px;"/>
             <g class="traces" transform="translate(0,14.5)" style="opacity: 1;">
                 <g class="legendfill">

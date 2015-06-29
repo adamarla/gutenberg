@@ -1,78 +1,71 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{A manufacturer produces nuts and bolts. It takes 1 hour of}\\
-\text{work on machine A and 3 hours on machine B to produce a}\\
-\text{package of nuts. It takes 3 hours on machine A and 1 hour on}\\
-\text{machine B to produce a package of bolts. He earns a profit of}\\
-\text{Rs 17.50 per package on nuts and Rs 7.00 per package on }\\
-\text{bolts. How many packages of each should be produced each day}\\
-\text{so as to maximise his profit, if he operates his machines for at}\\
-\text{the most 12 hours a day.}</tex>
+    <tex>\text{A manufacturer produces nuts and bolts.}\\
+\text{It takes 1 hour of work on machine A and}\\
+\text{3 hours on machine B to produce a package}\\
+\text{of nuts. It takes 3 hours on machine A and}\\
+\text{1 hour on machine B to produce a package}\\ 
+\text{of bolts. He earns a profit of Rs 17.50 per}\\ 
+\text{package on nuts and Rs 7.00 per package on}\\
+\text{bolts. How many packages of each should be}\\ 
+\text{produced each day so as to maximise his profit,}\\
+\text{if he operates his machines for at the most}\\ 
+\text{12 hours a day.}</tex>
   </statement>
-  <step swipe='false'>
-    <context>\text{Given the conditions, if there are x packages of nuts}\\
-\text{and y packages of bolts being produced each day,}\\
-\text{what do we need to maximise?}
+  <step>
+    <context>\text{If x packages of nuts and y packages of bolts}\\ 
+\text{are being produced each day, what do we need}\\ 
+\text{to maximise?}
 </context>
-    <tex correct='true'>\text{We need to maximise Total Profit} = T(x, y),\\
-\begin{align}
-\qquad T(x, y) &amp;= x(pkgs/day)\cdot 17.50(Rs/pkg) +
-    y(pkgs/day)\cdot 7.00(Rs/pkg) \\
-\implies T(x, y) &amp;= 17.50x + 7.00y
-\end{align}
+    <tex correct='true'>\text{We need to maximise Total Profit} = T(x, y)\\
+T = x\left(\dfrac{\text{pkgs}}{\text{day}}\right)\cdot 
+  17.50\left(\dfrac{\text{Rs.}}{\text{pkgs}}\right) +\\
+  \qquad y\left(\dfrac{pkgs}{day}\right)\cdot 
+  7\left(\dfrac{\text{Rs.}}{\text{pkgs}}\right) \\
+\implies T = 17.5x + 7y
 </tex>
-    <tex>\text{We need to maximise Total Profit} = T(x, y),\\
-\begin{align}
-\qquad T(x, y) &amp;= x/12(pkgs/day)\cdot 17.50(Rs/pkg) +
-    y/12(pkgs/day)\cdot 7.00(Rs/pkg) \\
-\implies T(x, y) &amp;= 17.50/12 x + 7.00/12 y
-\end{align}
-</tex>
-    <reason>\text{Since we need to maximise the total profit from sales}\\
-\text{what we require is simply the product of number of}\\
-\text{packages of each kind, with the per unit profit of each}\\
-\text{package}.
+    <tex>\text{We need to maximise Total Packages} = T(x, y)\\
+T = x\left(\dfrac{\text{pkgs}}{\text{day}}\right) +
+  y\left(\dfrac{pkgs}{day}\right) \\
+\implies T = x + y</tex>
+    <reason>\text{We need to maximise the profit from sales,}\\
+\text{which may not be for the maximum number}\\
+\text{of total packages produced.}
 </reason>
   </step>
-  <step swipe='false'>
-    <context>\text{Given the conditions, what would the constraints}\\
-\text{on x and y, the number of each type of package, be?}</context>
-    <tex correct='true'>\text{Machine A time constraint,}\\
-\begin{align}
-\qquad &amp;x(pkgs)\cdot 1(hr/pkg)+
-    y(pkgs)\cdot 3(hrs/pkg) \le 12 \\
-\implies &amp;x+3y \le 12
-\end{align}\\
-\text{Machine B time constraint,}\\
-\begin{align}
-\qquad &amp;x(pkgs)\cdot 3(hrs/pkg)+
-    y(pkgs)\cdot 1(hr/pkg) \le 12 \\
-\implies &amp;3x+y\le 12
-\end{align}\\
+  <step>
+    <context>\text{What constraints do Machines A and B impose}\\
+\text{on x and y (pkgs of nuts and bolts produced}\\
+\text{each day)?}</context>
+    <tex correct='true'>\text{Machine A can only be used for 12 hrs/day,}\\
+x(pkg)\cdot 1\left(\dfrac{hr}{pkg}\right)+
+  y(pkg)\cdot 3\left(\dfrac{hr}{pkg}\right) \le 12hr\\
+\implies x+3y \le 12\\
+
+\text{Machine B can only be used for 12 hrs/day,}\\
+x(pkg)\cdot 3\left(\dfrac{hr}{pkg}\right)+
+  y(pkg)\cdot 1\dfrac{hr}{pkg}\le 12hr \\
+\implies 3x+y\le 12\\
+
 \text{Number of packages cannot be negative}\\
-\qquad x\ge 0\, y\ge 0
+\implies x\ge 0,\, y\ge 0
 </tex>
-    <tex>\text{Machine A time constraint,}\\
-\begin{align}
-\qquad &amp;x(pkgs)\cdot 1(hr/pkg)+
-    y(pkgs)\cdot 3(hrs/pkg) \ge 12 \\
-\implies &amp;x+3y \ge 12
-\end{align}\\
-\text{Machine B time constraint,}\\
-\begin{align}
-\qquad &amp;x(pkgs)\cdot 3(hrs/pkg)+
-    y(pkgs)\cdot 1(hr/pkg) \ge 12 \\
-\implies &amp;3x+y\ge 12
-\end{align}\\
+    <tex>\text{Machines A and B can only be used for a}\\
+\text{total of 12 hrs/day (6 hours each),}\\
+x(pkg)\cdot 1\left(\dfrac{hr}{pkg}\right)+
+  y(pkg)\cdot 3\left(\dfrac{hr}{pkg}\right) \le 6hr\\
+\implies x+3y \le 6\\
+
+x(pkg)\cdot 3\left(\dfrac{hr}{pkg}\right)+
+  y(pkg)\cdot 1\dfrac{hr}{pkg}\le 6hr \\
+\implies 3x+y\le 6\\
+
 \text{Number of packages cannot be negative}\\
-\qquad x\ge 0\, y\ge 0
+\implies x\ge 0,\, y\ge 0
 </tex>
-    <reason>\text{To calculate the time for which the machines are being}\\
-\text{run, multiply the number of packages of each kind}\\
-\text{being produced with the hours for which each machine}\\
-\text{is being occupied. As per the condition, the total hours}\\
-\text{should be LESS than the max 12 hour a day specified.}</reason>
+    <reason>\text{Each machine can individually be used for 12 hrs}\\
+\text{daily.}</reason>
   </step>
   <step>
     <context>\text{For the above constraints, what does the plot }\\
@@ -86,10 +79,9 @@
 </reason>
   </step>
   <step swipe='false'>
-    <context>\text{Can we predict the number of each type of package}\\
-\text{that needs to be producted in order to maximise profit}\\
-\text{based on the corner points in the diagram above?}
-</context>
+    <context>\text{What are the corner points and maximum}\\
+\text{for objective function } T = 17.5x + 7y\\
+\text{based on the graph in the previous step?}</context>
     <tex correct='true'>\begin{align}
 \text{Corner Point} \qquad &amp; T= 17.50x + 7.00y \\
 (0, 4) \qquad &amp;28 \\
@@ -104,23 +96,23 @@
 (4, 0) \qquad &amp;70 \\
 (3, 3) \qquad &amp;73.5 \\
 \end{align}\\
-\text{No maximum can be predicted based on the above}</tex>
+\text{No maximum can be predicted.}</tex>
     <reason>\text{Since the feasible region is bounded, we can}\\
 \text{establish the maximum by substituting corner} \\
 \text{points in the objective function.}</reason>
   </step>
   <choices>
     <tex>\text{3 packages of nuts and 6 packages of bolts}\\
-\text{for a total profit of Rs. 94.50 per day}
+\text{for a daily profit of Rs.94.50}
 </tex>
     <tex>\text{6 packages of nuts and 6 packages of bolts}\\
-\text{for a total profit of Rs. 147 per day}
+\text{for a daily profit of Rs.147}
 </tex>
     <tex>\text{6 packages of nuts and 3 packages of bolts}\\
-\text{for a total profit of Rs. 126 per day}
+\text{for a daily profit of Rs.126}
 </tex>
     <tex correct='true'>\text{3 packages of nuts and 3 packages of bolts}\\
-\text{for a total profit of Rs. 73.50 per day}
+\text{for a daily profit of Rs.73.50}
 </tex>
   </choices>
 </question>

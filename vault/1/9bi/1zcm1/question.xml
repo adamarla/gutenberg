@@ -3,7 +3,8 @@
 	<statement>
 		<tex>
 			\text{Differentiate the following} \\ 
-			\qquad f(x) = e^x + e^{x^2} + \ldots + e^{x^5}
+			\qquad f(x) = e^x + e^{x^2} + \ldots + e^{x^5} \\
+			\text{with respect to x.}
 		</tex>
 	</statement>
 	
