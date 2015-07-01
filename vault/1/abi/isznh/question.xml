@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Differentiate the following}\\
+			\qquad f(x) = (\log x)^x + x^{\log x} \\
+			\text{with respect to x.}</tex>
+  </statement>
+  <step>
+    <context>
+			\text{Which of the following shows the} \\
+			\text{mathematically correct way to start solving?}
+			</context>
+    <tex correct='true'>
+			\begin{align}
+			  f(x) &amp;= (\log x)^x + x^{\log x}\\
+			  \implies f'(x) &amp;= \frac{d}{dx}(\log x)^x + \frac{d}{dx}(x^{\log x})
+			\end{align}
+			</tex>
+    <tex>\begin{align}
+f(x) &amp;= (\log x)^x + x^{\log x}\\
+\implies \log f(x) &amp;= \log (\log x)^x + \log (x^{\log x}) \\
+ &amp; = x.\log (\log x) + (\log x).\log x \\
+ \therefore f'(x) &amp;= \frac{d}{dx}.\log (\log x)  + \frac{d}{dx}(\log x).\log x 
+\end{align}
+</tex>
+    <reason>
+			\text{Finding }\log f(x) \text{ would have helped had }\\
+			f(x) = a\cdot b\text{ or }\frac{a}{b}.\text{But it is not. }f(x) = a - b. \\  
+			\text{ Taking its log wouldn't help.}
+			</reason>
+  </step>
+  <step>
+    <context>
+				\text{If }g(x) = (\log x)^x ,\text{ then which of the following}\\
+				\text{shows the correct evaluation of }g'(x)?
+				</context>
+    <tex correct='true'>
+				\begin{align}
+				  g(x) &amp;= (\log x)^x  \\ 
+				  \implies \log g(x) &amp;= x\cdot \log(\log x )
+				\end{align} \\
+				
+				\begin{align}
+				
+				  \therefore \frac{1}{g(x)} g'(x) = \underbrace{\left[x\frac{d}{dx}\log (\log x) 
+				  + \log (\log x ) \frac{d}{dx}x\right]}_{\textbf{Product Rule}} \\
+				
+				= \left[ \underbrace{x\frac{d \log(\log x)}{d\log x }\cdot \frac {d \log x}{dx}}_{\textbf{Chain Rule}}
+				  + \log (\log x ) \frac{d}{dx}x\right] \\
+				  \implies g'(x) = (\log x)^{x-1}[ \,1 + (\log x) \cdot \log (\log x)]
+				\end{align}
+				</tex>
+    <tex>
+				\begin{align}
+				  g(x) = (\log x)^x  \implies g'(x) = \underbrace{x\cdot (\log x)^{x-1}}_{\frac{d}{dx}x^n = nx^{n-1}}
+				\end{align}
+				</tex>
+    <reason>
+				g'(x) = N\cdot x^{N-1}\text{ is true only when N is a known} \\
+				\text{constant. But taking }\log g(x)\text{ when }g(x) = h(x)^{j(x)}\\
+				\textbf{ will always work.}
+				</reason>
+  </step>
+  <step>
+    <context>
+					\text{Are the calculations and conclusions below correct?}
+					</context>
+    <tex correct='true'>
+					\begin{align}
+					f(x) &amp;= \underbrace{(\log x)^x }_{g(x)} + \underbrace{x^{\log x}}_{h(x)} \\
+					  \implies f'(x) &amp;= g'(x) + h'(x) \\
+					  \text{Now, }h(x) &amp;= x^{\log x} \implies\log h(x) = \log x\cdot\log x \\
+					    \implies \frac{1}{h(x)}h'(x) &amp;= \frac {2}{x}\log x\\
+					  \end{align}\\
+					  \begin{align}
+					   					
+					  \implies h'(x) =  x^{\log x}\cdot \frac {2}{x}\log x &amp;= 2x^{(\log x -1)}\cdot \log x
+					\end{align}\\
+					  \therefore f'(x) = (\log x)^{x-1}[ \,1+(\log x)\cdot \log (\log x)]\\
+					\qquad \qquad + 2x^{\log x -1}\cdot \log x
+					</tex>
+    <reason>
+					\text{We found }g'(x) \text{in the last step. We only need}\\
+					\text{to find }h'(x)\text{, where }h(x) = x^{\log x}\text{ by taking}\\
+					\log h(x)\text{ first.}
+					</reason>
+  </step>
+  <choices>
+    <tex>(\log x)^{x}[1 + \log x . \log (\log x)] + 2 x^{\log x -1}. \log x</tex>
+    <tex correct='true'>(\log x)^{x-1}[1 + \log x . \log (\log x)] + 2 x^{\log x -1}. \log x</tex>
+    <tex>(\log x)^{x-1}[1 + \log (\log x)] + 2 x^{\log x -1}. \log x</tex>
+    <tex>(\log x)^{x-1}[1 + \log x . \log (\log x)] + x^{\log x -1}. \log x</tex>
+  </choices>
+</question>

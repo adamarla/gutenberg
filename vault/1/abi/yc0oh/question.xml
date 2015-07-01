@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Differentiate the following}\\
+		\qquad f(x) = x^{\sin x} + (\sin x)^ {\cos x} \\
+		\text{with respect to x.}</tex>
+  </statement>
+  <step>
+    <context>
+			\text{Which of the following shows the}\\
+			\text{mathematically correct way to start solving?}
+			</context>
+    <tex correct='true'>
+			\begin{align}
+			f(x) &amp; = x^{\sin x} + (\sin x)^{\cos x}\\
+			\implies f'(x) &amp;= \frac{d}{dx}x^{\sin x} + \frac{d}{dx}(\sin x)^{\cos x}
+			\end{align}
+			</tex>
+    <tex>
+			\begin{align}					
+			f(x) &amp; = x^{\sin x} + (\sin x)^{\cos x}\\
+			\implies \log f(x) &amp; = \log(x^{\sin x}) + \log [(\sin x)^{\cos x}]\\
+			&amp; = \sin x \cdot \log x + \cos x \cdot \log(\sin x) \\
+			\therefore f'(x) &amp; = \frac{d}{dx}(\sin x \cdot \log x) + \\
+			&amp; \quad  \frac{d}{dx}[\cos x \cdot \log (\sin x )]
+			\end{align}
+			</tex>
+    <reason>
+			\text{Finding }\log f(x) \text{ would have helped had }\\
+                        f(x) = a\cdot b\text{ or }\frac{a}{b}.\text{But it is not. }f(x) = a + b. \\
+                        \text{ Taking its log wouldn't help.}
+			</reason>
+  </step>
+  <step>
+    <context>\text{If }g(x) = x^{\sin x},\text{ then which of the following}\\
+\text{shows the correct evaluation of }g'(x)?</context>
+    <tex correct='true'>\begin{align}
+g(x) &amp;=  x^{\sin x}\\
+ \implies \log g(x) &amp;= \sin x \cdot \log x \\ 
+\end{align}\\
+
+\begin{align}
+\therefore \frac{1}{g(x)} g'(x) &amp;= \underbrace{\left[\sin x\frac{d}{dx}\log x
++ \log x\frac{d}{dx}\sin x\right ]}_{\textbf{Product Rule}} \\
+
+\implies g'(x) &amp;= x^{\sin x} \left[\, \frac {\sin x}{x}+ (\cos x) \cdot \log x \right]
+\end{align}</tex>
+    <tex>\begin{align}
+g(x) &amp;= x^{\sin x}\\
+ \implies g'(x) 
+&amp;= \underbrace{(\sin x) \cdot x^{\sin x- \,1}}_{\frac{d}{dx}x^n = nx^{n-1}}
+\end{align}			
+				</tex>
+    <reason>g'(x) = N\cdot x^{N-1}\text{ is true only when N is a known} \\
+\text{constant. But taking }\log g(x)\text{ when }g(x) = h(x)^{j(x)}\\
+\textbf{ will always work.}				</reason>
+  </step>
+  <step>
+    <context>\text{Are the calculations and conclusions below}\\
+\text{correct?}
+		</context>
+    <tex correct='true'>\begin{align}
+f(x) &amp;= \underbrace{x^{\sin x}}_{g(x)} + \underbrace{(\sin x) ^{\cos x}}_{h(x)} \\
+\implies f'(x) &amp;= g'(x) + h'(x) \\
+\text{Now, }h(x) &amp;= (\sin x)^{\cos x}
+\\ \implies\log h(x) &amp;= \cos x\cdot\log \sin x \\
+\implies \frac{1}{h(x)}h'(x) &amp;= \cot x \cdot \cos x -\sin x \cdot \log (\sin x) \\
+\end{align}\\
+\begin{align}
+\text{So, } h'(x) &amp;=   (\sin x)^{\cos x} \left[ \cot x \cdot \cos x -\sin x \cdot \log (\sin x) \right] \\
+\therefore f'(x) &amp;= x^{\sin x} \left[\, \frac {\sin x}{x}+ (\cos x) \cdot \log x \right] +\\
+\quad (&amp;\sin x)^{\cos x} \left[ \cot x \cdot \cos x -\sin x \cdot \log (\sin x) \right]
+\end{align}
+</tex>
+    <reason>
+\text{We found }g'(x) \text{in the last step. We only need}\\
+\text{to find }h'(x)\text{, where }h(x) = (\sin x)^{\cos x}\text{ by taking }\\
+\log h(x)\text{ first.}
+</reason>
+  </step>
+  <choices>
+    <tex>x^{\sin x} \left[\, \frac {\sin x}{x}+ (\cos x) \cdot \log x \right] +\\
+ (\sin x)^{\cos x} \left[ \cdot \cos x -\sin x \cdot \log (\sin x) \right]</tex>
+    <tex correct='true'>x^{\sin x} \left[\, \frac {\sin x}{x}+ (\cos x) \cdot \log x \right] +\\
+ (\sin x)^{\cos x} \left[ \cot x \cdot \cos x -\sin x \cdot \log (\sin x) \right]</tex>
+    <tex>x^{\sin x} \left[\, \frac {\sin x}{x}+ (\cos x) \cdot \log x \right] +\\
+ (\sin x)^{\cos x} \left[ \tan x \cdot \cos x -\sin x \cdot \log (\sin x) \right]</tex>
+    <tex>x^{\sin x} \left[\, \frac {\sin x}{x}- (\cos x) \cdot \log x \right] +\\
+ (\sin x)^{\cos x} \left[ \cot x \cdot \cos x -\sin x \cdot \log (\sin x) \right]</tex>
+  </choices>
+</question>
