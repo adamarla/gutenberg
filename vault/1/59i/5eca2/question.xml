@@ -2,12 +2,12 @@
     <question xmlns="http://www.gradians.com">
        <statement>
            <tex>
-               \text{There are three boxes: Box X has 10 bulbs}\newline
-               \text{of which 4 are defective, Box Y has 6 bulbs of}\newline
-               \text{of which 1 is defective and Box Z has 7 bulbs of} \newline
-               \text{which 3 are defective. A box is chosen at random}\newline
-               \text{and a bulb drawn from it. If the bulb is not} \newline
-               \text{defective, then what is the probability} \newline
+               \text{There are three boxes: Box X has 10 bulbs}\\
+               \text{of which 4 are defective, Box Y has 6 bulbs of}\\
+               \text{of which 1 is defective and Box Z has 7 bulbs of} \\
+               \text{which 3 are defective. A box is chosen at random}\\
+               \text{and a bulb drawn from it. If the bulb is not} \\
+               \text{defective, then what is the probability} \\
                \text{that it came from Z?}
            </tex>
        </statement>
@@ -16,17 +16,17 @@
                \text{What is the probability we are looking for?}
            </context>
            <tex correct="false">
-               \qquad P(Z)\text{ where }\newline
+               \qquad P(Z)\text{ where }\\
                Z=\text{ event that bulb comes from box Z}
            </tex>
            <tex correct="true">
-               \qquad P(Z\,\vert\bar{D}) \newline
-               \text{where } Z = \text{ event bulb comes from box Z}\newline
-               \text{and } D = \text{ event bulb is defective}\newline
+               \qquad P(Z\,\vert\bar{D}) \\
+               \text{where } Z = \text{ event bulb comes from box Z}\\
+               \text{and } D = \text{ event bulb is defective}\\
                \implies\bar{D} = \text{ event bulb is not defective}
            </tex>
            <reason>
-               \text{We need to find the probability that bulb }\newline
+               \text{We need to find the probability that bulb }\\
                \text{comes from box Z given that it is not defective.}
            </reason>
        </step>
@@ -42,8 +42,8 @@
                P(Z\vert\bar{D}) = P(Z\cap\bar{D})
            </tex>
            <reason>
-               \text{Bayes' theorem states that given two events A and B}\newline
-               P(A\vert B)\cdot P(B) = P(B\vert A)\cdot P(A) = P(A\cap B)\newline
+               \text{Bayes' theorem states that given two events A and B}\\
+               P(A\vert B)\cdot P(B) = P(B\vert A)\cdot P(A) = P(A\cap B)\\
                \text{Note that the correct }P(Z\vert\bar{D})\text{ is of this form.}
            </reason>
        </step>
@@ -54,23 +54,23 @@
            </context>
            <tex correct="false">
                P(Z)=\frac{N(\text{bulbs in Z})}{N(\text{bulbs in X,Y and Z})} =
-               \frac{7}{10+6+7} = \frac{7}{23}\newline
-               \text{And similarly, }P(X) = \frac{10}{23}\text{ and }P(Y) = \frac{6}{23}\newline
+               \frac{7}{10+6+7} = \frac{7}{23}\\
+               \text{And similarly, }P(X) = \frac{10}{23}\text{ and }P(Y) = \frac{6}{23}\\
                \implies P(\bar{D}) = P(\bar{D}\vert X)\cdot P(X) + P(\bar{D}\vert Y)\cdot P(Y)
-               + P(\bar{D}\vert Z)\cdot P(Z) \newline
+               + P(\bar{D}\vert Z)\cdot P(Z) \\
                = \frac{4}{10}\cdot\frac{10}{23}+\frac{1}{6}\cdot\frac{6}{23}+
                \frac{3}{7}\cdot\frac{7}{23} = \frac{8}{23}
            </tex>
            <tex correct="true">
-               P(Z) = P(\text{ball comes from Z}) = P(\text{box Z is picked}) = \frac{1}{3}\newline
-               \text{Same goes for boxes X and Y, ie. }P(X) = P(Y) = P(Z) = \frac{1}{3}\newline
+               P(Z) = P(\text{ball comes from Z}) = P(\text{box Z is picked}) = \frac{1}{3}\\
+               \text{Same goes for boxes X and Y, ie. }P(X) = P(Y) = P(Z) = \frac{1}{3}\\
                \text{And hence, }P(\bar{D}) = \dfrac{1}{3}\cdot\left[
-               P(\bar{D}\vert X) + P(\bar{D}\vert Y) + P(\bar{D}\vert Z) \right]\newline
+               P(\bar{D}\vert X) + P(\bar{D}\vert Y) + P(\bar{D}\vert Z) \right]\\
                = \dfrac{1}{3}\cdot\left[ \frac{4}{10} + \frac{1}{6} + \frac{3}{7} \right] = \dfrac{209}{630}
            </tex>
            <reason>
-               \text{We did not mix the bulbs from the three boxes before}\newline
-               \text{picking a bulb. Instead, we picked a box first and then a}\newline
+               \text{We did not mix the bulbs from the three boxes before}\\
+               \text{picking a bulb. Instead, we picked a box first and then a}\\
                \text{bulb. Any bulb taken out then is guaranteed to come from that box, right?}
            </reason>
        </step>
