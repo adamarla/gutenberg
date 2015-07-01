@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{Show that the tangents to the curve} \\
+			y = 7x^3 + 11\text{ at the points where }x=-2 \\
+			\text{and }x=2\text{ are parallel.}
+		</tex>
+	</statement>
+	
+		<step>
+			<context>
+			\text{If two lines with slopes }m_1\text{ and }m_2 \\
+			\text{respectively are parallel, then }\ldots 
+			</context>
+			<tex correct="true">
+			\qquad m_1 = m_2 
+			</tex>
+			<tex correct="false">
+			\qquad m_1\cdot m_2 = -1 
+			</tex>
+			<reason>
+			\text{For two lines to be parallel, their slopes}\\
+			\text{must be equal }(m_1 = m_2). \\ 
+			m_1\cdot m_2 = -1\implies\text{ perpendicularity.}
+			</reason>
+		</step>
+		<step>
+			<context>
+			\text{Are the analysis and conclusion below correct?}
+			</context>
+			<tex correct="true">
+			\text{Slope at a point (x,y)} = \frac{dy}{dx}. \\
+			\begin{align}
+			  \therefore\text{ slope }&amp;= \dfrac{d}{dx}(7x^3 + 11) = 21x^2 
+			\end{align} \\
+			\text{But as }\left[\dfrac{dy}{dx}\right]_{x=-2} = \left[\dfrac{dy}{dx}\right]_{x=2}, 
+			\text{the two tangents} \\
+			\text{have equal slopes }\implies\text{ they are parallel.}
+			</tex>
+
+			<reason>
+			y = c\cdot x^2 \text{ has the same value for }x = \pm a. \text{That}\\
+			\text{is why, }\dfrac{dy}{dx}\text{ = tangent's slope, is same at }x=\pm 2.
+			</reason>
+		</step>
+		
+			<step swipe='false'>
+				<context>
+				\textbf{Bonus Question: }\text{Would the tangents at } \\
+				x=\pm 5\text{ also be parallel?}
+				</context>
+				<tex correct="true">
+				\textbf{Yes. }\dfrac{dy}{dx} = 21x^2\text{ is the same at }x=\pm 5.\\
+				\text{Hence, for this curve, the tangents at }x=\pm 5\\
+				\text{would also be parallel.}
+				</tex>
+				<tex correct="false">
+				\textbf{No. }\text{ Only the tangents at }x=\pm 2 \\
+				\text{are parallel.}
+				</tex>
+				<reason>
+				\text{We established in Step 2 that }\frac{dy}{dx}\text{ is the same} \\
+				\text{for }x = \pm a.\text{Hence, it must also be so for }x=\pm 5.\\
+				\text{Or, for that matter, any }x= \pm a.
+				</reason>
+			</step>
+</question>
