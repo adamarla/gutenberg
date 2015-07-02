@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If x and y are connected parametricaly by the}\\
+\text{following equations, without eliminating the}\\
+\text{parameter ,Find }\frac{dy}{dx}\\
+x = a \sec \theta,\quad y =b \tan \theta</tex>
+  </statement>
+  <step>
+    <context>\text{if $p = f(\theta)$ and $q = g(\theta)$ then,} \frac{dp}{dq}=</context>
+    <tex correct='true'>
+\frac{dp}{d\theta} = \frac{dp}{dq}.\frac{dq}{d\theta}\\
+\begin{align}
+\Rightarrow\frac{dp}{dq} &amp;= \frac{\dfrac{dp}{d\theta}}{\dfrac{dq}{d\theta}}\\
+ 		&amp;= \frac{f^{\prime}(\theta)}{g^{\prime}(\theta)}\\
+\end{align}	 	</tex>
+    <tex>\begin{align}
+\frac{dp}{dq} &amp;= \frac{\dfrac{dp}{dx}}{\dfrac{dq}{dx}}\\
+	
+\end{align}</tex>
+    <reason>\text{For calculating }\frac{dp}{dq}\text{we just divide}\\
+\frac{dp}{d\theta}\text{ by }\frac{dq}{d\theta}\text{ as p and q are function of \theta.}\\</reason>
+  </step>
+  <step>
+    <context>\text{Are the following calculations correct?}</context>
+    <tex correct='true'>\begin{align}
+\frac{d(x)}{d\theta} &amp;= \frac{d(a\sec \theta)}{d\theta}\\
+	&amp;=a . \sec \theta .\tan \theta\\
+\end{align}
+\\
+\\
+\begin{align}
+\frac{d(y)}{d\theta} &amp;= \frac{d(a\tan \theta)}{d\theta}\\
+	&amp;=b . \sec^2 \theta \\
+\end{align}</tex>
+    <reason>\text{Other than Chain Rule we have used the }\\
+\text{fact that,}\dfrac{d(\sec \theta)}{d \theta} = \sec \theta . \tan \theta \,and \\ \dfrac{d(\tan \theta)}{d\theta} = \sec^2 \theta\\</reason>
+  </step>
+  <step>
+    <context>\text{Are the following calculations correct?}</context>
+    <tex correct='true'>\frac{dy}{dx} =\frac{ \dfrac{d(y)}{dt}}{\dfrac{d(x)}{dt}}\\
+\\
+\text{Substituting, }\dfrac{d(x)}{dt}\text{ and }\dfrac{d(y)}{dt}\text{ in the above}\\
+\text{equation.}\\
+
+\dfrac{dy}{dx} = \dfrac{b .\sec^2 \theta}{a . sec \theta . \tan \theta}=\dfrac{b\sec \theta}{a  . \tan \theta}= \dfrac{b}{a . \dfrac{\sin \theta}{\cos \theta} . \cos \theta}\\
+\quad\,\,\,=\dfrac{b}{a .\sin \theta}\\
+\quad\,\,\,=\dfrac{b}{a} . \mathrm{cosec} \theta\\
+</tex>
+    <reason>\text{For calculating }\frac{dy}{dx}\text{we just divide}\\
+\frac{dy}{dt}\text{ by }\frac{dx}{dt}\text{(which we have calculated in}\\
+\text{the previous steps).}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{dy}{dx} = \dfrac{b}{a} . \sin \theta</tex>
+    <tex correct='true'>\dfrac{dy}{dx} = \dfrac{b}{a} . \mathrm{cosec} \theta</tex>
+    <tex>\dfrac{dy}{dx} = \dfrac{b}{a} . \tan \theta</tex>
+    <tex>\dfrac{dy}{dx} = -\dfrac{b}{a} </tex>
+  </choices>
+</question>

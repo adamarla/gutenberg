@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the second order derivative of the }\\
+\text{function }\sin (\log x).</tex>
+  </statement>
+  <step>
+    <context>\text{What do you understand by the second}\\
+\text{order derivative of a function f(x)?}</context>
+    <tex correct='true'>\dfrac{d}{dx}\dfrac{d}{dx}f(x) = \dfrac{d^2f(x)}{dx^2}\\ </tex>
+    <tex>\Bigg(\dfrac{d}{dx}f(x)\Bigg)^2</tex>
+    <reason>\text{The second order derivative of a function}\\
+\text{is the derivative of derivative of that}\\
+\text{function.}</reason>
+  </step>
+  <step>
+    <context>\text{which one of following the correct way to }\\
+\text{find } \dfrac{d{f(x)}}{dx}\text{ where $f(x) = e^{6x} . \cos 3x$}?</context>
+    <tex correct='true'>\begin{align}
+\dfrac{d(f(x))}{dx} &amp;= \dfrac{d(\sin (log x))}{dx}\\
+	&amp;=\underbrace{\dfrac{d(\sin (\log x))}{dx} . \dfrac{d(\log x)}{dx}}_{\text{Chain Rule}}\\
+	&amp;=\dfrac{\cos (\log x)}{x}   
+\end{align}\\
+</tex>
+    <tex>\begin{align}
+\dfrac{d(f(x))}{dx} &amp;= \dfrac{d(\sin (log x))}{dx}\\
+	&amp;=\underbrace{\dfrac{d(\sin (\dfrac{d(\log x)}{dx})}{dx}}_{\text{Chain Rule}}\\
+	&amp;=\dfrac{\cos (\log x)}{x}   
+\end{align}\\
+</tex>
+    <reason>\text{We have used Chain Rule here.It's a}\\
+\text{standard formula.Review it if you got this}\\
+\text{wrong.}\\
+</reason>
+  </step>
+  <step>
+    <context>\text{Is the following the correct way to }\\
+\text{find } \dfrac{d^2(f(x))}{dx^2}?</context>
+    <tex correct='true'>\begin{align}
+\dfrac{d^2(f(x))}{dx^2} &amp;= \dfrac{d(f^{\prime}(x)}{dx}\\
+	&amp;=\dfrac{d\Bigg(\dfrac{\cos (\log x)}{x}\Bigg) }{dx}\\
+	&amp;=\dfrac{\dfrac{d(\cos (\log x))}{dx}.x - \dfrac{d(x)}{dx} . \cos (\log x)}{dx}\\
+	&amp;=-\dfrac{(\sin(\log x) + \cos (\log x))}{x^2}\\ 
+\end{align}\\
+</tex>
+    <reason>\text{Other than Chain Rule and Product Rule,we have}\\
+\text{used the fact that \dfrac{d(sin \theta)}{d\theta}} = \cos \theta\text{ and}\\
+\dfrac{d(\cos \theta)}{d\theta} = -\sin \theta \text{.Check your calculations}\\
+\text{if you got something wrong.}\\</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{d^2f(x)}{dx^2} = \dfrac{(\sin(\log x) + \cos (\log x))}{x^2}</tex>
+    <tex>\dfrac{d^2f(x)}{dx^2} = -\dfrac{(\sin(\log x) - \cos (\log x))}{x^2}</tex>
+    <tex>\dfrac{d^2f(x)}{dx^2} = -\dfrac{(\sin(\log x) + \cos (\log x))}{(x^2)^2}</tex>
+    <tex correct='true'>\dfrac{d^2f(x)}{dx^2} = -\dfrac{(\sin(\log x) + \cos (\log x))}{x^2}</tex>
+  </choices>
+</question>

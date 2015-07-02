@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If x and y are connected parametricaly by the}\\
+\text{following equations, without eliminating the}\\
+\text{parameter ,Find }\frac{dy}{dx}\\
+
+x = a\Bigg(\cos t + \log \tan \dfrac{t}{2}\Bigg),  \quad y = a\sin t\\</tex>
+  </statement>
+  <step>
+    <context>\text{if $p = f(t)$ and $q = g(t)$ then,} \frac{dp}{dq}= </context>
+    <tex correct='true'>
+\frac{dp}{dt} = \frac{dp}{dq}.\frac{dq}{dt}\\
+\begin{align}
+\Rightarrow\frac{dp}{dq} &amp;= \frac{\dfrac{dp}{dt}}{\dfrac{dq}{dt}}\\
+ 		&amp;= \frac{f^{\prime}(t)}{g^{\prime}(t)}\\
+\end{align}	 	</tex>
+    <tex>\begin{align}
+\frac{dp}{dq} &amp;= \frac{\dfrac{dp}{dx}}{\dfrac{dq}{dx}}\\
+	
+\end{align}</tex>
+    <reason>\text{For calculating }\frac{dp}{dq}\text{we just divide}\\
+\frac{dp}{dt}\text{ by }\frac{dq}{dt}\text{ as p and q are function of t.}\\</reason>
+  </step>
+  <step>
+    <context>\text{Are the following calculations correct}?</context>
+    <tex correct='true'>\begin{align}
+\frac{d(x)}{dt} &amp;= \frac{d\Bigg(a\Bigg(\cos t + \log \tan \dfrac{t}{2}\Bigg)\Bigg)}{dt}\\
+	&amp;=\frac{a\Bigg(d(\cos t)}{dt} + \frac{d\Bigg(\log \tan \dfrac{t}{2}\Bigg)\Bigg)}{dt}\\
+	&amp;=a\Bigg(- \sin t + \frac{1}{2}\frac{sec^2 \dfrac{t}{2}}{\tan \dfrac{t}{2}}\Bigg)\\
+	&amp;=a\Bigg(-\sin t +\frac{1}{\sin t}  \Bigg)\\
+	&amp;=a\Bigg({-\sin^2 t +1}{\sin t} \Bigg)\\
+	&amp;=a\Bigg(\frac{\cos ^2 t}{\sin t} \Bigg)\\
+	&amp;=a . \cot t. \cos t 
+
+	
+\end{align}</tex>
+    <reason>\text{Other than Chain Rule we have used the}\\
+\text{fact that }\frac{d(\sin \theta)}{d\theta} = \cos \theta \, ,\frac{d(log \theta)}{d\theta} = \frac{1}{\theta}\text{ and }\\
+\frac{d(\tan \theta)}{d\theta} = \sec^2 \theta
+</reason>
+  </step>
+  <step>
+    <context>\text{Are the following calculations correct}?</context>
+    <tex correct='true'>\begin{align}
+\frac{d(y)}{dt} &amp;= \frac{d(a . \sin t)}{dt}\\
+	   &amp;= a\cos t\\
+
+	
+\end{align}</tex>
+    <reason>\text{Other than Chain Rule we have used the}\\
+\text{fact that }\frac{d(\sin \theta)}{d\theta} = \cos \theta</reason>
+  </step>
+  <step>
+    <context>\text{Are the following calculations correct?}</context>
+    <tex correct='true'>\frac{dy}{dx} =\frac{ \dfrac{d(y)}{dt}}{\dfrac{d(x)}{dt}}\\
+\\
+\text{Substituting, }\dfrac{d(x)}{dt}\text{ and }\dfrac{d(y)}{dt}\text{ in the above}\\
+\text{equation.}\\
+\begin{align}
+\frac{dy}{dx} &amp;=\frac{a . \cos t}{a . \cot t. \cos t }\\
+&amp;=\frac{1}{\cot t}\\
+&amp;=\tan t
+\end{align}</tex>
+    <reason>\text{For calculating }\frac{dy}{dx}\text{we just divide}\\
+\frac{dy}{dt}\text{ by }\frac{dx}{dt}\text{(which we have calculated in}\\
+\text{the previous steps).}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\frac{dy}{dx} = \tan t</tex>
+    <tex>\frac{dy}{dx} = -\cot t</tex>
+    <tex>\frac{dy}{dx} = \cot t</tex>
+    <tex>\frac{dy}{dx} = -\tan t</tex>
+  </choices>
+</question>

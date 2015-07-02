@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If } x = \sqrt{a^{\sin^{-1} t}}, \quad y = \sqrt{a^{\cos^{-1} t}}\, ,\\
+\text{show that }\dfrac{dy}{dx} = -\dfrac{y}{x}</tex>
+  </statement>
+  <step>
+    <context>\text{Is the following the right way to \\find \dfrac{dx}{dt}?}\\
+</context>
+    <tex correct='true'>\begin{align}
+	x &amp;= \sqrt{a^{\sin^{-1} t}}\\
+\text{Squaring both sides }\\
+\Rightarrow x^2  &amp;= a^{\sin^{-1} t}\\
+\text{Taking log both sides}\\
+\Rightarrow 2 . \log x &amp;= \sin^{-1} t .\log a\\
+\text{Diffrentiating both sides }\\
+\Rightarrow \dfrac{(2. \log x)}{dt} &amp;= \dfrac{\sin^{-1} t .\log a}{dt}\\
+\Rightarrow 2. \dfrac{1}{x}. \dfrac{dx}{dt} &amp;=  \dfrac{1}{1 + t^2} . \log a . \dfrac{dt}{dt}\\
+\Rightarrow \dfrac{2}{x} . \dfrac{dx}{dt} &amp;=  \dfrac{\log a}{1 + t^2}\\
+\Rightarrow \dfrac {dx}{dt} &amp;=  \dfrac{x . \log a}{2(1 + t^2)}\\
+\end{align}</tex>
+    <tex>\text{}</tex>
+    <reason>\text{Other than Chain Rule we have used the}\\
+\text{fact that \dfrac{d(\log \theta)}{d\theta} = \frac{1}{\theta}}\text{ and }\dfrac{d(\sin^{-1} \theta)}{d\theta} = \dfrac{1}{1 + x^2} \\</reason>
+  </step>
+  <step>
+    <context>\text{Similarly, is the following the correct way to\\
+find \dfrac{dy}{dt}?}</context>
+    <tex correct='true'>\begin{align}
+	y &amp;= \sqrt{a^{\cos^{-1} t}}\\
+\text{Squaring both sides }\\
+\Rightarrow y^2  &amp;= a^{\cos^{-1} t}\\
+\text{Taking log both sides}\\
+\Rightarrow 2 . \log y &amp;= \cos^{-1} t .\log a\\
+\text{Diffrentiating both sides }\\
+\Rightarrow \dfrac{(2. \log y)}{dt} &amp;= \dfrac{\cos^{-1} t .\log a}{dt}\\
+\Rightarrow 2. \dfrac{1}{y}. \dfrac{dy}{dt} &amp;= - \dfrac{1}{1 + t^2} . \log a . \dfrac{dt}{dt}\\
+\Rightarrow \dfrac{2}{y} . \dfrac{dy}{dt} &amp;= - \dfrac{\log a}{1 + t^2}\\
+\Rightarrow \dfrac {dy}{dt} &amp;= - \dfrac{y . \log a}{2(1 + t^2)}\\
+\end{align}</tex>
+    <reason>\text{Other than Chain Rule we have used the}\\
+\text{fact that \dfrac{d(\log \theta)}{d\theta} = \frac{1}{\theta}}\text{ and }\dfrac{d(\cos^{-1} \theta)}{d\theta} = - \dfrac{1}{1 + x^2}\\ </reason>
+  </step>
+  <step>
+    <context>\text{Is the following correct way to \\find \dfrac{dy}{dx}?}</context>
+    <tex correct='true'>\frac{dy}{dx} =\frac{ \dfrac{d(y)}{dt}}{\dfrac{d(x)}{dt}}\\
+\\
+\text{Substituting, }\dfrac{d(x)}{dt}\text{ and }\dfrac{d(y)}{dt}\text{ in the above}\\
+\text{equation.}\\
+
+\dfrac{dy}{dx} = \dfrac{- \dfrac{y . \log a}{2(1 + t^2)}}{\dfrac{x . \log a}{2(1 + t^2)}}\\
+\quad\,\,\,=-\dfrac{y}{x}\\
+
+</tex>
+    <reason>\text{For calculating }\frac{dy}{dx}\text{we just divide}\\
+\frac{dy}{dt}\text{ by }\frac{dx}{dt}\text{(which we have calculated in}\\
+\text{the previous steps).</reason>
+  </step>
+</question>

@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the relationship between a and b so}\\
+\text{that the function f defined by}\\
+
+f(x) = \begin{cases}
+	ax + 1, if \,x\leq 3\\
+	bx + 3, if \,x\gt 3  \\
+         \end{cases}\\
+
+\text{Is continuous at x=3}</tex>
+  </statement>
+  <step>
+    <context>\text{what is the condition for continuity of f(x)}\\
+\text{at x=3?}</context>
+    <tex correct='true'>\begin{align}
+	\lim_{x\to 3^-}f(x) =\lim_{x\to 3^+}f(x) = f(3)
+\end{align}</tex>
+    <tex>\begin{align}
+	\lim_{x\to 3^-}f(x) =\lim_{x\to 3^+}f(x)
+\end{align}</tex>
+    <reason>\text{For a function to be continuous at a\\
+point it's limits on either sides should be\\
+equal to the value of f(x) at that point}</reason>
+  </step>
+  <step>
+    <context>\text{Are the following calculations correct?}</context>
+    <tex correct='true'>\lim_{x\to 3^-}f(x) = \lim_{x\to 3^-}ax + 1 = 3a + 1\\
+
+\lim_{x\to 3^+}f(x) = \lim_{x\to 3^+}bx + 3 = 3b +1\\
+
+f(3) = 3(a )+ 1 = 3a +1\\</tex>
+    <reason>\text{Just substitute the value of x in}\\
+\lim_{x\to 3^-}f(x) ,\lim_{x\to 3^+}f(x) \text{ and }f(x)\\
+</reason>
+  </step>
+  <step>
+    <context>\text{Are the following calculations correct?}</context>
+    <tex correct='true'>\text{Using step 1, }\\
+
+\begin{align}
+	\lim_{x\to 3^-}f(x) &amp;=\lim_{x\to 3^+}f(x) = f(3)\\
+	3a + 1 &amp;= 3b +3 = 3a +1\\
+\end{align}\\
+\text{So, for f(x) to be continuous the relation}\\
+\text{between a and b is}\\
+\begin{align}
+\Rightarrow 3a + 1 &amp;= 3b + 3\\
+\Rightarrow 3(a - b) &amp;= 2\\
+\Rightarrow a &amp;= \dfrac{2}{3}.b\\
+\end{align}</tex>
+    <reason>\text{We have simply applied the condition for}\\
+\text{continuity at x = 3. This gave us two values}\\
+\text{in terms of a and b - which we equated to find}\\
+\text{the relation between a and b.}\\</reason>
+  </step>
+  <choices>
+    <tex>a = -\dfrac{2}{3}.b</tex>
+    <tex>b = \dfrac{2}{3}.a</tex>
+    <tex>a = \dfrac{3}{2}.b</tex>
+    <tex correct='true'>a = \dfrac{2}{3}.b</tex>
+  </choices>
+</question>
