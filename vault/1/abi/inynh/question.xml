@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Differentiate the following}\\
+    <tex>\text{Differentiate the following }\\
 		\qquad f(x) = x^{x \cos x} + \, \dfrac{x^2 + 1}{x^2 -1}\\
 		\text{with respect to x.}</tex>
   </statement>
@@ -60,32 +60,43 @@ g(x) &amp;=  x^{x \cos x}\\
 \text{correct?}
 		</context>
     <tex correct='true'>\begin{align}
-f(x) &amp;= \underbrace{x^{\sin x}}_{g(x)} + \underbrace{(\sin x) ^{\cos x}}_{h(x)} \\
+f(x) &amp;= \underbrace{x^{x \cos x}}_{g(x)} + \underbrace{\left[ \dfrac{x^2 + 1}{x^2 -1}\right] }_{h(x)} \\
 \implies f'(x) &amp;= g'(x) + h'(x) \\
-\text{Now, }h(x) &amp;= (\sin x)^{\cos x}
-\\ \implies\log h(x) &amp;= \cos x\cdot\log \sin x \\
-\implies \frac{1}{h(x)}h'(x) &amp;= \cot x \cdot \cos x -\sin x \cdot \log (\sin x) \\
+\text{Now, }h(x) &amp;= \quad \, \, \left[ \dfrac{x^2 + 1}{x^2 -1}\right]
+\\ \implies\log h(x) &amp;= \log \left[ \dfrac{x^2 + 1}{x^2 -1}\right] \\
+ \frac{1}{h(x)}h'(x) &amp;= \underbrace{\left[ \dfrac{(x^2 -1)(2x) - (x^2 +1)(2x)}{(x^2 -1)^2} \right]}_{\textbf{Quotient Rule}} \\
+
+\implies h'(x) &amp;= \dfrac{-4 x}{(x^2 -1)^2}   \\
 \end{align}\\
+
 \begin{align}
-\text{So, } h'(x) &amp;=   (\sin x)^{\cos x} \left[ \cot x \cdot \cos x -\sin x \cdot \log (\sin x) \right] \\
-\therefore f'(x) &amp;= x^{\sin x} \left[\, \frac {\sin x}{x}+ (\cos x) \cdot \log x \right] +\\
-\quad (&amp;\sin x)^{\cos x} \left[ \cot x \cdot \cos x -\sin x \cdot \log (\sin x) \right]
+
+\therefore f'(x) &amp;= x^{x \cos x} \left[\, \cos x \cdot (1 + \log x) - x \sin x \cdot \log x \right] \\
+&amp; \quad -  \dfrac{4 x}{(x^2 -1)^2} 
 \end{align}
 </tex>
     <reason>
 \text{We found }g'(x) \text{in the last step. We only need}\\
-\text{to find }h'(x)\text{, where }h(x) = (\sin x)^{\cos x}\text{ by taking }\\
+\text{to find }h'(x)\text{, where }h(x) = \dfrac{x^2 + 1}{x^2 -1}\text{ by taking }\\
 \log h(x)\text{ first.}
 </reason>
   </step>
   <choices>
-    <tex>x^{\sin x} \left[\, \frac {\sin x}{x}+ (\cos x) \cdot \log x \right] +\\
- (\sin x)^{\cos x} \left[ \cdot \cos x -\sin x \cdot \log (\sin x) \right]</tex>
-    <tex correct='true'>x^{\sin x} \left[\, \frac {\sin x}{x}+ (\cos x) \cdot \log x \right] +\\
- (\sin x)^{\cos x} \left[ \cot x \cdot \cos x -\sin x \cdot \log (\sin x) \right]</tex>
-    <tex>x^{\sin x} \left[\, \frac {\sin x}{x}+ (\cos x) \cdot \log x \right] +\\
- (\sin x)^{\cos x} \left[ \tan x \cdot \cos x -\sin x \cdot \log (\sin x) \right]</tex>
-    <tex>x^{\sin x} \left[\, \frac {\sin x}{x}- (\cos x) \cdot \log x \right] +\\
- (\sin x)^{\cos x} \left[ \cot x \cdot \cos x -\sin x \cdot \log (\sin x) \right]</tex>
+    <tex correct='true'>\begin{align}
+f'(x) = &amp;x^{x \cos x} \left[\, \cos x \cdot (1 + \log x) - x \sin x \cdot \log x \right] \\
+&amp; -  \dfrac{4 x}{(x^2 -1)^2} 
+\end{align}</tex>
+    <tex>\begin{align}
+f'(x) = &amp;x^{x \cos x} \left[\, \cos x \cdot (1 + \log x) - x \sin x \cdot \log x \right] \\
+&amp; -  \dfrac{4 x}{(x^2 -1)} 
+\end{align}</tex>
+    <tex>\begin{align}
+f'(x) = &amp;x^{x \cos x} \left[\, \cos x \cdot (1 + \log x) - x \sin x \cdot \log x \right] \\
+&amp; +  \dfrac{4 x}{(x^2 -1)^2} 
+\end{align}</tex>
+    <tex>\begin{align}
+f'(x) = &amp;x^{x \cos x} \left[\, \cos x \cdot (1 + \log x) + x \sin x \cdot \log x \right] \\
+&amp; -  \dfrac{4 x}{(x^2 -1)^2} 
+\end{align}</tex>
   </choices>
 </question>
