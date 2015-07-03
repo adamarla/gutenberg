@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{if }y = 3\cos \left(\log x\right) + 4\sin \left(\log x\right)\text{, show that}\\
+x^2 \,y^{\, \prime \prime} + x \,y^{\, \prime} +y  =0</tex>
+  </statement>
+  <step>
+    <context>\text{Which one the correct way of finding \dfrac{dy}{dx}}?
+</context>
+    <tex correct='true'>y = 3 \cos \left(\log x\right) + 4\sin \left(\log x\right)\\
+\begin{align}
+		\dfrac{dy}{dx} &amp;= \dfrac{d \left(3 \cos \left(\log x\right) + 4\sin \left(\log x\right)\right)}{dx}\\
+							&amp;= \dfrac{d \left(3 \cos \left(\log x\right)\right)}{dx} + \dfrac{\left(4\sin \left(\log x\right)\right)}{dx}\\
+							&amp;= \overbrace{3 \dfrac{d \left(\cos \left(\log x\right))\right)}{dx}. \dfrac{d \left(\log x\right)}{dx}}^{Chain Rule} + \\
+							&amp;\qquad\quad\underbrace{4 \dfrac{d \left(\sin \left(\log x\right))\right)}{dx}. \dfrac{d \left(\log x\right)}{dx}}_{Chain Rule}\\
+							&amp;= -\dfrac{3\sin \left(\log x\right)}{x} + \dfrac{4\cos \left(\log x\right)}{x}
+\end{align}
+</tex>
+    <tex>y = 3 \cos \left(\log x\right) + 4\sin \left(\log x\right)\\
+\begin{align}
+		\dfrac{dy}{dx} &amp;= \dfrac{d \left(3 \cos \left(\log x\right) + 4\sin \left(\log x\right)\right)}{dx}\\
+							&amp;= \dfrac{d \left(3 \cos \left(\log x\right)\right)}{dx} + \dfrac{\left(4\sin \left(\log x\right)\right)}{dx}\\
+							&amp;= \overbrace{3 \dfrac{ d\left(\cos \left(\dfrac{d\left(\log x\right)}{dx}\right)\right)}{dx}}^{Chain Rule} + \\
+							&amp;\qquad\quad\underbrace{4\dfrac{d\left(\sin \left(\dfrac{d \left(log x\right)}{dx}\right)\right)}{dx}}_{Chain Rule}\\
+							&amp;= -3\sin \left(\dfrac{1}{x}\right) + 4\cos \left(\dfrac{1}{x}\right)}
+\end{align}
+
+</tex>
+    <reason>\text{We have used Chain Rule and the fact that}\\
+\dfrac{d \left(\sin \theta\right)}{d\theta} = \cos \theta \text{ and }\dfrac{d \left(\cos \theta\right)}{d\theta} = -\sin \theta.\\
+\text{Review Chain Rule if you got it wrong.}</reason>
+  </step>
+  <step>
+    <context>\text{Are the calculations below correct?}</context>
+    <tex correct='true'>\dfrac{dy}{dx} =  -\dfrac{3\sin \left(\log x\right)}{x} + \dfrac{4\cos \left(\log x\right)}{x}\\
+\text{Diffrentiating the above equaton we get}\\
+\begin{align}
+	\dfrac{d^2y}{dx^2} &amp;=\dfrac{d \left(-\dfrac{3\sin \left(\log x\right)}{x} + \dfrac{4\cos \left(\log x\right)}{x}\right)}{dx}\\
+								&amp;=\dfrac{-\dfrac{d \left(3\sin \left(\log x\right)\right)}{dx}. x - (-\dfrac{d \left(x\right)}{dx}) . 3\sin \left(\log x\right)}{x^2} +\\
+								&amp;\qquad\quad\dfrac{ \dfrac{d \left(4\cos \left(\log x\right)\right)}{dx}. x - \dfrac{d \left(x\right)}{dx} . 4\cos \left(\log x\right)}{x^2} \\
+								&amp;=\dfrac{\dfrac{ \left(-3\cos \left(\log x\right)\right)}{x}. x + 3\sin \left(\log x\right)}{x^2}- \\
+								&amp;\qquad\quad\dfrac{ \dfrac{ \left(4\sin \left(\log x\right)\right)}{x}. x - 4\cos \left(\log x\right)}{x^2} \\
+								&amp;=\dfrac{-3\cos \left(\log x\right) + 3\sin \left(\log x\right)}{x^2}- \\
+								&amp;\qquad\quad\dfrac{ 4\sin \left(\log x\right) - 4\cos \left(\log x\right)}{x^2} \\
+\end{align}</tex>
+    <reason>\text{Other than Chain Rule and Quotient Rule  we have }\\
+\text{use the fact that }\dfrac{d \left(\sin \theta\right)}{d\theta} = \cos \theta \text\, ,\dfrac{d \left(\log \theta\right)}{d\theta} = \dfrac{1}{\theta}\\{and }\,\dfrac{d \left(\cos \theta\right)}{d\theta} = -\sin \theta.\text{Check your calculation if }\\
+\text{got something else.}</reason>
+  </step>
+  <step>
+    <context>\text{Are the calculations below correct?}</context>
+    <tex correct='true'>\text{puntting everything together}\\
+x^2 \,y^{\, \prime \prime} + x \,y^{\, \prime} +y\\
+\Rightarrow x^2 . \left(\dfrac{-3\cos \left(\log x\right) + 3\sin \left(\log x\right)}{x^2}- \\
+		\qquad\quad\dfrac{ 4\sin \left(\log x\right) - 4\cos \left(\log x\right)}{x^2})\right) +\\
+		x . \left(-\dfrac{3\sin \left(\log x\right)}{x} + \dfrac{4\cos \left(\log x\right)}{x}\right) +\\
+		3\cos \left(\log x\right) + 4\sin \left(\log x\right)\\
+
+		
+\Rightarrow -7\cos \left(\log x\right) - \sin \left(\log x\right) -3\sin \left(\log x\right) +\\ 
+\qquad\quad4\cos \left(\log x\right)+3\cos \left(\log x\right) + 4\sin \left(\log x\right)\\
+\Rightarrow 0</tex>
+    <reason>\text{Placing the values of$\, y , y^{\prime}$ \,and$\, y^{\prime \prime}$ in }\\
+x^2 \,y^{\, \prime \prime} + x \,y^{\, \prime} +y \text{\,results into 0.Check your}\\
+\text{calculations if you got something else}\\</reason>
+  </step>
+</question>

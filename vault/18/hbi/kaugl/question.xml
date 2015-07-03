@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If $y = 5\cos x + - 3\sin x$,prove that }\\
+\dfrac{d^2y}{dx^2} + y = 0</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the following matches your}\\
+\text{understanding of }\dfrac{d^2y}{dx^2}?
+</context>
+    <tex correct='true'>\dfrac{d^2y}{dx^2} = \dfrac{d}{dx}\dfrac{d}{dx}(y)</tex>
+    <tex>\begin{align}
+\dfrac{d^2y}{dx^2} &amp;= \dfrac{dy}{dx}.\dfrac{dy}{dx}\\
+							&amp;= \bigg( \dfrac{dy}{dx}\bigg)\\
+							
+\end{align}
+				</tex>
+    <reason>\dfrac{d^2y}{dx^2} \text{ is the derivative of the derivative }\\
+\text{of y.}</reason>
+  </step>
+  <step>
+    <context>\text{Are the analysis and calculations below correct?}</context>
+    <tex correct='true'>y  = 5\cos x + 3\sin x\rightarrow \left(eq 1\right)\\ 
+\text{First calculating the first order derivative}\\
+\begin{align}
+		\dfrac{dy}{dx} &amp;= \dfrac{d\left(5 \cos x + 3\sin x \right)}{dx}\\
+							&amp;= - 5\sin x + 3\cos x \\
+\end{align}\\
+\text{Now calculating the second order derivative}\\
+\begin{align}
+	
+		\dfrac{d^2 y}{dx^2}&amp;= \dfrac{d\left(- 5\sin x + 3\cos x\right)}{dx}\\
+									&amp;= -5\cos x - 3\sin x\\
+
+\end{align}\\
+\text{By comparing \left(eq 1\right) and \dfrac{d^2y}{dx^2}}\text{we get}\\
+
+\begin{align}
+	
+		\dfrac{d^2 y}{dx^2}&amp;= -5\cos x - 3\sin x\\
+									&amp; = -(5\cos x + 3\sin x)\\
+									&amp;= - y\\									
+\end{align}\\
+\therefore \dfrac{d^2 y}{dx^2} - y = 0</tex>
+    <reason>\text{We have used the fact that }\dfrac{d(\sin \theta)}{d\theta} = \cos \theta\,\\
+\text{and }\dfrac{d(\cos \theta)}{d\theta}= -\sin \theta\text{.Check your calculation}\\
+\text{if you got something else.}</reason>
+  </step>
+</question>
