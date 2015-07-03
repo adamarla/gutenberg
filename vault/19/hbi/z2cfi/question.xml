@@ -1,0 +1,194 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Compute }  (A+B) \text{ and } (B-C) \text{ where, }\\
+ A = 
+\left[\begin{array}{ccc}
+ 1 &amp; 2 &amp; -3 \\ 
+ 5 &amp; 0 &amp; 2 \\
+ 1 &amp; -1 &amp; 1 \end{array} \right],
+ B = 
+ \left[\begin{array}{ccc}
+ 3 &amp; -1 &amp; 2 \\ 
+ 4 &amp; 2 &amp; 5 \\
+ 2 &amp; 0 &amp; 3 \end{array} \right] \\
+ \qquad \text{ and } C =
+ \left[\begin{array}{ccc}
+ 4 &amp; 1 &amp; 2 \\ 
+ 0 &amp; 3 &amp; 2 \\
+ 1 &amp; -2 &amp; 3 \end{array} \right], \\
+
+ \text{ Also, verify that } A +(B-C) = (A+B)-C</tex>
+  </statement>
+  <step>
+    <context> \text{If }A = 
+\left[\begin{array}{ccc}
+ 1 &amp; 2 &amp; -3 \\ 
+ 5 &amp; 0 &amp; 2 \\
+ 1 &amp; -1 &amp; 1 \end{array} \right],
+ B = 
+ \left[\begin{array}{ccc}
+ 3 &amp; -1 &amp; 2 \\ 
+ 4 &amp; 2 &amp; 5 \\
+ 2 &amp; 0 &amp; 3 \end{array} \right] \\
+ \qquad \text{ and } C =
+ \left[\begin{array}{ccc}
+ 4 &amp; 1 &amp; 2 \\ 
+ 0 &amp; 3 &amp; 2 \\
+ 1 &amp; -2 &amp; 3 \end{array} \right]  \\
+ \text{then, are all the following statements true?}\\</context>
+    <tex correct='true'>(i) \,\text{A, B and C have the same order.}\\
+(ii) \,\text{A+B, B+C, A+C and A-B, B-C, A-C}\\
+\; \;\text{are all defined and have the order 3 \times 3.}\\
+(iii)\,\text{A+B+C is defined and has order 3 \times 3}
+</tex>
+    <tex>(i) \,\text{A, B and C have the same order.}\\
+(ii) \,\text{A+B, B+C, A+C and A-B, B-C, A-C}\\
+\; \;\text{are all defined and have the order 3 \times 3.}\\
+(iii) \,\text{A+B+C is not defined.}
+</tex>
+    <reason>\text{Only matrices having the {\bf same order} i.e.}\\
+\text{equal no. of rows (m) and equal no. of}\\
+\text{columns (n) can be added or subtracted and}\\
+\text{the order of the resultant matrix is also m \times n.}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{What is  the value of A+B and B-C ? Given, }\\
+ A = 
+\left[\begin{array}{ccc}
+ 1 &amp; 2 &amp; -3 \\ 
+ 5 &amp; 0 &amp; 2 \\
+ 1 &amp; -1 &amp; 1 \end{array} \right],
+ B = 
+ \left[\begin{array}{ccc}
+ 3 &amp; -1 &amp; 2 \\ 
+ 4 &amp; 2 &amp; 5 \\
+ 2 &amp; 0 &amp; 3 \end{array} \right] \\
+ \qquad \text{ and } C =
+ \left[\begin{array}{ccc}
+ 4 &amp; 1 &amp; 2 \\ 
+ 0 &amp; 3 &amp; 2 \\
+ 1 &amp; -2 &amp; 3 \end{array} \right], \\</context>
+    <tex correct='true'> \begin{align}
+
+ A+B &amp;=\left[\begin{array}{ccc}
+ 1+3 &amp; 2-1 &amp; -3+2 \\ 
+ 5+4 &amp; 0+2 &amp; 2+5 \\
+ 1+2 &amp; -1+0 &amp; 1+3 \end{array} \right] \\
+ &amp;=
+
+\left[\begin{array}{ccc}
+ 4 &amp; 1 &amp; -1 \\ 
+ 9 &amp; 2 &amp; 7 \\
+ 3 &amp; -1 &amp; 4 \end{array} \right] \\
+
+
+B-C
+  &amp;=\left[\begin{array}{ccc}
+ 3 -4&amp; -1-1 &amp; 2-2 \\ 
+ 4-0 &amp; 2-3 &amp; 5-2 \\
+ 2-1 &amp; 0+2 &amp; 3-3 \end{array} \right] \\
+ &amp;=
+
+\left[\begin{array}{ccc}
+ -1 &amp; -2 &amp; 0 \\ 
+ 4 &amp; -1 &amp; 3 \\
+ 1 &amp; 2 &amp; 0\end{array} \right] 
+ 
+ \end{align} \\</tex>
+    <reason>A_{m \times n} + B_{m \times n} = S_{m \times n} = [s_{ij}]_{m \times n}\\
+\text{where } s_{ij} = a_{ij} + b_{ij} \, (\forall \text{ possible ij values}).\\
+\text{ Similarly, in case of subtraction, corresponding}\\
+\text{elements are subtracted.}</reason>
+  </step>
+  <step>
+    <context>\text{Compute A+(B-C) and (A+B)-C . Given, }\\
+A + B =
+\left[\begin{array}{ccc}
+ 4 &amp; 1 &amp; -1 \\ 
+ 9 &amp; 2 &amp; 7 \\
+ 3 &amp; -1 &amp; 4 \end{array} \right] 
+
+ B-C =
+ \left[\begin{array}{ccc}
+ -1 &amp; -2 &amp; 0 \\ 
+ 4 &amp; -1 &amp; 3 \\
+ 1 &amp; 2 &amp; 0\end{array} \right] 
+</context>
+    <tex correct='true'>
+A + (B-C) \\
+=
+\left[\begin{array}{rrr}
+ 1 &amp; 2 &amp; -3 \\ 
+ 5 &amp; 0 &amp; 2 \\
+ 1 &amp; -1 &amp; 1 \end{array} \right] + 
+
+\left[\begin{array}{rrr}
+ -1 &amp; -2 &amp; 0 \\ 
+ 4 &amp; -1 &amp; 3 \\
+ 1 &amp; 2 &amp; 0\end{array} \right] \\
+ = 
+ \left[\begin{array}{rrr}
+ 0&amp; 0 &amp; -3 \\ 
+ 9 &amp;  -1 &amp;  5 \\
+ 2 &amp; 1 &amp; 1 \end{array} \right] \\
+
+ (A+B)-C \\ =
+ \left[\begin{array}{rrr}
+ 4 &amp; 1 &amp; -1 \\ 
+ 9 &amp; 2 &amp; 7 \\
+ 3 &amp; -1 &amp; 4 \end{array} \right] -
+
+  \left[\begin{array}{rrr}
+ 4 &amp; 1 &amp; 2 \\ 
+ 0 &amp; 3 &amp; 2 \\
+ 1 &amp; -2 &amp; 3 \end{array} \right]
+ \\
+ =
+  \left[\begin{array}{rrr}
+ 0&amp; 0 &amp; -3 \\ 
+ 9 &amp;  -1 &amp;  5 \\
+ 2 &amp; 1 &amp; 1 \end{array} \right]
+
+</tex>
+    <reason>\therefore A+(B-C) = (A+B)-C \text{ is verified.}\\
+\text{Thus, the addition of matrices follows }\\
+\textbf{Associative Law}\\
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\overbrace{
+\left[\begin{array}{ccc}
+ 4 &amp; 1 &amp; -1 \\ 
+ 9 &amp; 2 &amp; 7 \\
+ 3 &amp; -1 &amp; 4 \end{array} \right] }^{\textbf{A+B}} \qquad
+
+
+\overbrace{ \left[\begin{array}{ccc}
+ -1 &amp; -2 &amp; 0 \\ 
+ 4 &amp; -1 &amp; 3 \\
+ 1 &amp; 2 &amp; 0 \end{array} \right]}^\textbf{B-C}</tex>
+    <tex>\overbrace{
+ \left[\begin{array}{ccc}
+ -1 &amp; -2 &amp; 0 \\ 
+ 4 &amp; -1 &amp; 3 \\
+ 1 &amp; 2 &amp; 0 \end{array} \right] }^\textbf{A+B}
+
+ \qquad
+ \overbrace{
+\left[\begin{array}{ccc}
+ 4 &amp; 1 &amp; -1 \\ 
+ 9 &amp; 2 &amp; 7 \\
+ 3 &amp; -1 &amp; 4 \end{array} \right] }^\textbf{B-C}</tex>
+    <tex>A+B = 28 \qquad
+B-C = 6</tex>
+    <tex>A + B = 
+\left[\begin{array}{ccc}
+ 4 &amp; 1 &amp; -1 \\ 
+ 9 &amp; 2 &amp; 7 \\
+ 3 &amp; -1 &amp; 4 \end{array} \right] \\
+
+\text{and } B-C \text{ is not defined.}
+</tex>
+  </choices>
+</question>

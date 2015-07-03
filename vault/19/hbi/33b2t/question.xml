@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the product of the following}\\
+\text{matrix multiplication.}\\
+\left[\begin{array}{cc}
+2 &amp; 1 \\ 
+3 &amp; 2\\
+-1 &amp; 1 
+\end{array} \right]
+\times
+\left[\begin{array}{ccc}
+1 &amp; 0 &amp; 1 \\ 
+-1 &amp; 2 &amp; 1 
+\end{array} \right]</tex>
+  </statement>
+  <step>
+    <context>\text{Under what condition, the product of}\\
+\text{two matrices, }A_{m \times n} \times B_{p \times q}  \text{ is defined?}</context>
+    <tex correct='true'>\begin{align}
+\text{If no. of columns of } A &amp;= \text{no. of rows of B}\\
+\text{i.e. }n &amp;= p 
+\end{align}
+</tex>
+    <tex>\text{If order of A } = \text{order of B}\\
+\, \text{i.e. }m = p \text{ and }n = q
+</tex>
+    <reason>\text{For the product of two matrices to be defined,}\\
+\text{no. of columns of first matrix }= \\
+\text{no. of rows of second matrix}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{If } P = A_{m \times n} \times B_{ n \times p} \text{ then, what is the}\\
+\text{order of the product matrix P?}
+</context>
+    <tex correct='true'>P \text{ has order m \times p}</tex>
+    <tex>P \text{ has order n \times n}</tex>
+    <reason>A_{m \times n} \times B_{n \times p} = P_{m \times p}\\
+\text{having m rows and p columns.}</reason>
+  </step>
+  <step>
+    <context>\text{What is the product of the following matrix}\\
+\text{multiplication }
+\left[\begin{array}{cc}
+2 &amp; 1 \\ 
+3 &amp; 2\\
+-1 &amp; 1 
+\end{array} \right] \times
+\left[\begin{array}{ccc}
+1 &amp; 0 &amp; 1 \\ 
+-1 &amp; 2 &amp; 1 
+\end{array} \right]?</context>
+    <tex correct='true'>= 
+\left[\begin{array}{ccc}
+2 -1 &amp; 0 +2 &amp; 2+1 \\ 
+3-2 &amp; 0 +4  &amp; 3+2\\
+-1 -1&amp; 0 +2 &amp; -1+1 
+\end{array} \right] \\
+
+=
+\left[\begin{array}{ccc}
+ 1 &amp; 2 &amp; 3 \\ 
+ 1 &amp; 4 &amp; 5 \\
+ -2 &amp; 2 &amp; 0 \end{array} \right]</tex>
+    <tex>= 
+\left[\begin{array}{rrr}
+2 \times 1  &amp; 1 \times 0 &amp; 1 \\ 
+3 \times (-1) &amp; 2 \times 2 &amp; 1\\
+-1 &amp; 1 &amp; 0
+\end{array} \right] \\
+= 
+\left[\begin{array}{ccc}
+2  &amp; 0 &amp; 1 \\ 
+-3 &amp; 4 &amp; 1\\
+-1 &amp; 1 &amp; 0 
+\end{array} \right]</tex>
+    <reason>A_{m \times n} \times B_{n \times p} = C_{m \times p} = [c_{ik}]_{m \times p}\\
+ \text{where, } c_{ik}  = 
+\displaystyle \sum_{j=1}^{n}a_{ij}\;b_{jk}
+</reason>
+  </step>
+  <choices>
+    <tex>\text{Not defined}</tex>
+    <tex correct='true'>=
+\left[\begin{array}{ccc}
+ 1 &amp; 2 &amp; 3 \\ 
+ 1 &amp; 4 &amp; 5 \\
+ -2 &amp; 2 &amp; 0 \end{array} \right]</tex>
+    <tex>= 
+\left[\begin{array}{ccc}
+2  &amp; 0 &amp; 1 \\ 
+-3 &amp; 4 &amp; 1\\
+-1 &amp; 1 &amp; 0 
+\end{array} \right]</tex>
+    <tex>=
+\left[\begin{array}{ccc}
+ 1 &amp; 1 &amp; -2 \\ 
+ 2 &amp; 4 &amp; 5 \\
+ 3 &amp; 2 &amp; 0 \end{array} \right]</tex>
+  </choices>
+</question>
