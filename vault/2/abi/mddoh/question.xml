@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the matrix X so that }\\
+X\cdot
+\left[\begin{array}{ccc}
+ 1 &amp; 2 &amp; 3 \\ 
+ 4 &amp; 5 &amp; 6 \end{array} \right]=
+\left[\begin{array}{ccc}
+ -7 &amp; -8 &amp; -9 \\ 
+  2 &amp; 4 &amp; 6 \end{array} \right]</tex>
+  </statement>
+  <step>
+    <context>\text{If $A\times B=C$ where A B and C are matrices }\\
+\text{and A and B are of orders $m\times n$ and $p\times q$}\\
+\text{respectively, are the following always true?}</context>
+    <tex correct='true'>n = p \text{ and matrix C has order }m\times q</tex>
+    <tex>m = p \text{ and } n = q\\</tex>
+    <reason>\text{If matrix $A_{m\times n}$ and $B_{p\times q}$ can be multiplied,}\\
+\text{then $n = p$ and the resulting product matrix}\\ 
+\text{is of order }m\times q
+</reason>
+  </step>
+  <step>
+    <context>\text{If }\left[\begin{array}{cc}
+ a &amp; b \\ 
+ c &amp; d \end{array} \right]\times
+\left[\begin{array}{ccc}
+ 1 &amp; 2 &amp; 3 \\ 
+ 4 &amp; 5 &amp; 6 \end{array} \right]= C\text{ then,}
+</context>
+    <tex correct='true'>C=\left[\begin{array}{ccc}
+ a+4b &amp; 2a+5b &amp; 3a+6b \\ 
+ c+4d &amp; 2c+5d &amp; 3c+6d \end{array} \right]
+
+
+</tex>
+    <tex>C=\left[\begin{array}{ccc}
+  a  &amp; 2b &amp; 3 \\ 
+ 4c &amp; 5d &amp; 6 \end{array} \right]
+
+
+</tex>
+    <reason>A_{m\times n}\times B_{n\times p}=C_{m\times p}\\
+\text{where } C = [c_{ik}]\text{ and }
+c_{ik}=\sum_{j=1}^{n} a_{ij}\cdot b_{jk}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{If } \left[\begin{array}{ccc}
+ a+4b &amp; 2a+5b &amp; 3a+6b \\ 
+ c+4d &amp; 2c+5d &amp; 3c+6d \end{array} \right]=
+\left[\text{}^{-7}_{\,\,\,\, 2} \text{ }^{-8}_{\,\,\,\, 4} \text{ }^{-9}_{\,\,\,\, 6}\right]\\
+\text{ then the following must be true:}
+</context>
+    <tex correct='true'>\begin{array}{ccc}
+  a+4b   = -7 &amp; 2a+5b =-8 &amp; 3a+6b =-9\\
+  c+4d   = 2  &amp; 2c+5d =4  &amp; 3c+6d =6
+\end{array}
+</tex>
+    <reason>A=B \implies \text{ A and B are two matrices of the}\\
+\text{same order and $a_{ij} = b_{ij}$, where $n_{ij}$ is element}\\
+\text{at the $i^{th}$ row and $j^{th}$ column.}</reason>
+  </step>
+  <step>
+    <context>\text{Does solving following equations yield unique}\\
+\text{values for a and b?}\\ 
+a+4b=-7, 2a+5b=-8, 3a+6b=-9</context>
+    <tex correct='true'>\text{Solving for a and b, using any two of the}\\
+\text{above equations gives $a=1$ and $b=-2$.} 
+ </tex>
+    <tex>\text{A unique result is not possible as we have more}\\
+\text{equations (3) than variables (2).}</tex>
+    <reason>\text{The equations represent three distinct lines}\\
+\text{lines which happen to coincide. Solving}\\
+\text{using any two would give the same result..}</reason>
+  </step>
+  <step>
+    <context>\text{Does solving following equations yield unique}\\
+\text{values for c and d?}\\ 
+c+4d, 2c+5d, 3c+6d </context>
+    <tex correct='true'>\text{Solving for a and b, using any two of the}\\
+\text{above equations gives $c=2$ and $d=0$.} 
+ </tex>
+    <tex>\text{A unique result is not possible as we have more}\\
+\text{equations (3) than variables (2).}</tex>
+    <reason>\text{The equations represent three distinct lines}\\
+\text{lines which happen to coincide. Solving}\\
+\text{using any two would give the same result.}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\left[\begin{array}{cc}
+ 1 &amp; -2\\ 
+ 2 &amp; 0 \end{array} \right]</tex>
+    <tex>\left[\begin{array}{cc}
+ 2 &amp; 0\\ 
+ 1 &amp; -2 \end{array} \right]</tex>
+    <tex>\left[\begin{array}{cc}
+ 1 &amp; 2\\ 
+ 0 &amp; 4 \end{array} \right]</tex>
+    <tex>\left[\begin{array}{cc}
+ 1 &amp; -2\\ 
+ 4 &amp; 0 \end{array} \right]</tex>
+  </choices>
+</question>
