@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If }y = \left(\tan^{-1} x\right)^2\, , \left(show that\right)\\
+\left(x^2 + 1\right)^2 y^{\prime\prime} + 2x(x^2  +1) y^{\prime} =2\\</tex>
+  </statement>
+  <step>
+    <context>\text{Which one the correct way of finding \dfrac{dy}{dx}}?
+</context>
+    <tex correct='true'>y =  \left(\tan^{-1} x\right)^2\\
+\begin{align}
+		\dfrac{dy}{dx} &amp;= \dfrac{d \left(\left(\tan^{-1} x\right)^2\right)}{dx}\\
+							&amp;= \underbrace{2 \tan^{-1} x . \left(\dfrac{d \left(\tan^{-1} x \right)}{dx}\right)}_{Chain Rule}\\
+							&amp;= 2 \tan^{-1} x . \left(\dfrac{1}{1 + x^2}\right)
+\end{align}
+</tex>
+    <tex>y =  \left(\tan^{-1} x\right)^2\\
+\begin{align}
+		\dfrac{dy}{dx} &amp;= \dfrac{d \left( \left(\tan^{-1} x\right)^2\right)}{dx}\\
+							&amp;= \underbrace{2  \left(\dfrac{d \left(\tan^{-1} x \right)}{dx}\right)}_{Chain Rule}\\
+							&amp;=  \left(\dfrac{2}{1 + x^2}\right)
+\end{align}
+</tex>
+    <reason>\text{We have used Chain Rule and the fact that}\\
+\dfrac{d \left(\sin \theta\right)}{d\theta} = \cos \theta \text{ and }\dfrac{d \left(\cos \theta\right)}{d\theta} = -\sin \theta.\\
+\text{Review Chain Rule if you got it wrong.}</reason>
+  </step>
+  <step>
+    <context>\text{Are the calculations below correct?}</context>
+    <tex correct='true'>\dfrac{dy}{dx} = 2 \tan^{-1} x . \left(\dfrac{1}{1 + x^2}\right)\\
+\left(1 + x^2\right)\dfrac{dy}{dx} = 2 \tan^{-1} x\\
+\text{Diffrentiating the above equaton we get}\\
+\begin{align}
+	\dfrac{d \left(\left(1 + x^2\right)\dfrac{dy}{dx}\right)}{dx} = \dfrac{d \left(2 \tan^{-1} x\right)}{dx}\\
+	 \left(1 + x^2\right) \dfrac{d^2y}{dx^2}  +2x . \dfrac{dy}{dx} = 2 \left(\dfrac{1}{1 + x^2}\right)\\
+	 \left(1 + x^2\right)^2 \dfrac{d^2y}{dx^2}  +2x .\left(1 + x^2\right) \dfrac{dy}{dx} = 2 \\
+	 
+\end{align}</tex>
+    <reason>\text{Other than Chain Rule we have used the  }\\
+\text{fact that }\dfrac{d \left(\tan^{-1} x\right)}{dx} = \dfrac{1}{1 + x^2}\text{.Check your}\\
+\text{calculations if you something else.}</reason>
+  </step>
+</question>

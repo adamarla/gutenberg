@@ -37,4 +37,27 @@
 \text{fact that }\dfrac{d \left(\log t\right)}{dx} = \dfrac{1}{t}\text{. Check your calculation}\\
 \text{if you got anything else.}</reason>
   </step>
+  <step>
+    <context>\text{Are the calculations below correct}?												</context>
+    <tex correct='true'>
+\begin{align}
+\dfrac{d^2y}{dx^2} &amp;= \dfrac{d \left(\dfrac{dy}{dx}\right)}{dx}\\
+						    &amp;= \dfrac{d\left(- \dfrac{1}{\left(x +1 \right)}\right)}{dx}\\
+						    &amp;= - \left(\dfrac{-1}{\left(x + 1\right)^2}\right)\\
+						    &amp;=\dfrac{1}{\left(x +1\right)^2}\\
+\end{align}\\
+
+\text{Comparing }\dfrac{d^2y}{dx^2}\text{ and }\dfrac{dy}{dx}\text{ we get}\\
+
+
+\begin{align}
+\dfrac{d^2y}{dx^2} &amp;=\dfrac{1}{\left(x +1\right)^2}\\
+							&amp;= \left(\dfrac{-1}{x + 1}\right)
+							&amp;=\left(\dfrac{dy}{dx}\right)^2
+\end{align}
+</tex>
+    <reason>\text{We have used Chain Rule here. Check your }\\
+\text{calculations if were not able to get the right \\result.}\\
+</reason>
+  </step>
 </question>
