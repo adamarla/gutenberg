@@ -1,0 +1,156 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\qquad \qquad \qquad \qquad  \qquad \text{Simplify}\\
+\cos \theta 
+\left[\begin{array}{cc}
+ \cos \theta &amp; \sin \theta \\ 
+ -\sin \theta &amp; \cos \theta 
+\end{array} \right]
+ +
+ \sin \theta
+ \left[\begin{array}{rr}
+ \sin \theta &amp; - \cos \theta \\ 
+ \cos \theta &amp; \sin \theta
+ \end{array} \right]</tex>
+  </statement>
+  <step>
+    <context> \text{If }A = 
+\left[\begin{array}{cc}
+ \cos \theta &amp; \sin \theta \\ 
+ -\sin \theta &amp; \cos \theta 
+\end{array} \right]
+ \text{and }\\
+ \quad B = 
+ \left[\begin{array}{rr}
+ \sin \theta &amp; - \cos \theta \\ 
+ \cos \theta &amp; \sin \theta
+ \end{array} \right]
+ 
+ \text{then,}\\
+ \text{are all the following statements true?}\\</context>
+    <tex correct='true'>(i) \,\text{A and B have the same order.}\\
+(ii) \,\text{A+B is defined and the resultant matrix }\\
+\text{has order }2 \times 2.\\
+</tex>
+    <tex>(i) \,\text{A and B have the same order.}\\
+(ii) \,\text{A+B is defined and the resultant matrix}\\
+\text{is of order }1\times 1.</tex>
+    <reason>\text{Only matrices having the {\bf same order} i.e.}\\
+\text{equal no. of rows (m) and equal no. of}\\
+\text{columns (n) can be added and the order}\\
+\text{of the resultant matrix is also m \times n.}</reason>
+  </step>
+  <step>
+    <context>\text{What is  the value of \cos \theta \times A and  \sin \theta \times B ?}\\
+\text{Given }
+A = 
+\left[\begin{array}{rr}
+ \cos \theta &amp; \sin \theta \\ 
+ -\sin \theta &amp; \cos \theta 
+\end{array} \right]
+ 
+B=
+ \left[\begin{array}{rr}
+ \sin \theta &amp; - \cos \theta \\ 
+ \cos \theta &amp; \sin \theta
+ \end{array} \right]</context>
+    <tex correct='true'>\begin{align}
+\cos \theta \times A &amp;=
+\left[\begin{array}{rr}
+ \cos \theta \times \cos \theta \quad &amp; \cos \theta \times \sin \theta \\ 
+ \cos \theta \times (-\sin \theta) \quad &amp; \cos \theta \times \cos \theta 
+\end{array} \right] \\
+
+&amp;= 
+\left[\begin{array}{rr}
+ (\cos \theta)^2 \quad \quad &amp; \cos \theta \cdot \sin \theta \\ 
+ - (\cos \theta \cdot \sin \theta) \quad &amp;  (\cos \theta)^2
+\end{array} \right] \\
+
+ \sin \theta \times B &amp;=
+
+  \left[\begin{array}{rr}
+ \sin \theta \times \sin \theta \quad &amp; \sin \theta \times (- \cos \theta) \\ 
+ \sin \theta \times \cos \theta \quad &amp; \sin \theta \times \sin \theta
+ \end{array} \right] \\
+ 
+&amp;=
+ \left[\begin{array}{rr}
+ (\sin \theta)^2 \quad &amp; - (\sin \theta \cdot \cos \theta) \\ 
+ \sin \theta \cdot \cos \theta \quad &amp; (\sin \theta)^2
+ \end{array} \right]
+ 
+\end{align}
+</tex>
+    <reason>\text{If } X = [x_{ij}]_{\,m\times n} \text{ and k is a scalar then,}\\
+\text{kX is another matrix of order m\times n}\\
+\text{such that }
+kX = [k(x_{ij})]_{\,m\times n}</reason>
+  </step>
+  <step>
+    <context>\text{What is the result of the following matrix addition}\\
+S = X + Y \text{ if, }
+X =
+\left[\begin{array}{cc}
+ (\cos \theta)^2  &amp; \cos \theta . \sin \theta \\ 
+ - (\cos \theta . \sin \theta) &amp;  (\cos \theta)^2
+\end{array} \right]  \\
+
+\qquad \quad \quad \quad   Y = 
+ \left[\begin{array}{ll}
+ (\sin \theta)^2 &amp; - (\sin \theta \cdot \cos \theta) \\ 
+ \sin \theta \cdot \cos \theta &amp; (\sin \theta)^2
+ \end{array} \right]  ?</context>
+    <tex correct='true'>\begin{align}
+s_{11} &amp;=  (\cos \theta)^2  +(\sin \theta)^2  &amp;= 1\\
+s_{12} &amp;= \cos \theta \sin \theta - (\sin \theta \cos \theta) &amp;=0 \\ 
+s_{21} &amp;=  - (\cos \theta \sin \theta) +  \sin \theta \cos \theta &amp;= 1\\
+s_{22} &amp;= (\cos \theta)^2 + (\sin \theta)^2 &amp;= 0 \\
+ 
+\end{align}\\
+
+\quad \therefore S =
+\left[\begin{array}{ccc}
+ 1 &amp; 0 \\ 
+ 0 &amp; 1
+ \end{array} \right]
+</tex>
+    <tex>\begin{align}
+s_{11} &amp;=  (\cos \theta)^2  +(\sin \theta)^2  &amp;= 1\\
+s_{12} &amp;= \cos \theta \sin \theta - (\sin \theta \cos \theta) &amp;=0 \\ 
+s_{21} &amp;=  - (\cos \theta \sin \theta) +  \sin \theta \cos \theta &amp;= 1\\
+s_{22} &amp;= (\cos \theta)^2 + (\sin \theta)^2 &amp;= 0 \\
+
+\therefore S &amp;= 1+0+1+0
+&amp;= 2
+
+ 
+\end{align}</tex>
+    <reason>X_{m \times n} + Y_{m \times n} = S_{m \times n} = [s_{ij}]_{m \times n}\text{ where,}\\
+s_{ij} = a_{ij} + b_{ij} \, (\forall \text{ possible ij values)}. \text{ So, corresponding}\\
+\text{elements are added to form the }\textbf{resultant matrix.}</reason>
+  </step>
+  <choices>
+    <tex>= 
+\left[\begin{array}{ccc}
+ 1 &amp; 1 \\ 
+ 1 &amp; 1
+ \end{array} \right]</tex>
+    <tex correct='true'>= 
+\left[\begin{array}{ccc}
+ 1 &amp; 0 \\ 
+ 0 &amp; 1
+ \end{array} \right]</tex>
+    <tex>= 
+\left[\begin{array}{ccc}
+ 2 \cos \theta &amp; 1 \\ 
+ 1 &amp; 2 \sin \theta 
+ \end{array} \right]</tex>
+    <tex>= 
+\left[\begin{array}{ccc}
+ 1 &amp; 0 \\ 
+ 0 &amp; -1
+ \end{array} \right]</tex>
+  </choices>
+</question>

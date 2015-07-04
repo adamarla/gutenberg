@@ -1,0 +1,198 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find X and Y, if}\\
+2X+3Y = 
+\left[\begin{array}{cc}
+ 2 &amp; 3 \\ 
+ 4 &amp; 0 \end{array} \right] \text{ and} \\
+
+ 3X+2Y = 
+\left[\begin{array}{cc}
+ 2 &amp; -2 \\ 
+ -1 &amp; 5 \end{array} \right]</tex>
+  </statement>
+  <step>
+    <context>\text{If $ A = [a_{ij}]_{m \times n}$ and } B = [b_{ij}]_{m \times n} 
+\text{ are any two matrices,}\\
+\text{then, are all the following conclusions correct?}
+</context>
+    <tex correct='true'>(i) \,\text{A and B have the same order.}\\
+(ii) \,\text{$A+B$ and $A-B $ are defined and the}\\
+\text{resultant matrices have order }m  \times n\\
+</tex>
+    <tex>(i) \,\text{A and B have the same order.}\\
+(ii) \,\text{$A+B$ and $A-B  $ are defined and the}\\
+\text{resultant matrices have order }1\times 1.</tex>
+    <reason>\text{Only matrices having the {\bf same order} i.e.}\\
+\text{equal no. of rows (m) and equal no. of}\\
+\text{columns (n) can be added and the order}\\
+\text{of the resultant matrix is also m \times n.}</reason>
+  </step>
+  <step>
+    <context>\text{Are following caclulations and conclusion correct?}\\
+\text{Given, } 
+2X+3Y = 
+\left[\begin{array}{cc}
+ 2 &amp; 3 \\ 
+ 4 &amp; 0 \end{array} \right] \\ \text{ and }
+
+ 3X+2Y = 
+\left[\begin{array}{cc}
+ 2 &amp; -2 \\ 
+ -1 &amp; 5 \end{array} \right]</context>
+    <tex correct='true'>\begin{align}
+2\times (2X+3Y) &amp;= 
+\left[\begin{array}{cc}
+ 2\times 2 &amp; 2\times  3 \\ 
+ 2\times 4 &amp; 2\times 0 \end{array} \right] \\
+ 
+\implies 4X +6Y
+ &amp;=
+
+\left[\begin{array}{cc}
+ 4 &amp; 6 \\ 
+ 8 &amp; 0 \end{array} \right]  \\
+
+ 3\times (3X+2Y) &amp;= 
+\left[\begin{array}{cc}
+ 3\times 2 &amp; 3\times  -2 \\ 
+ 3\times (-1) &amp; 3\times 5 \end{array} \right] \\
+\implies 9X +6Y
+ &amp;=
+
+\left[\begin{array}{cc}
+ 6 &amp; -6 \\ 
+ -3 &amp; 15 \end{array} \right] \\
+  \end{align} \\
+
+
+\begin{align}
+
+ \text{Now }
+(9X +6Y) - (4X +6Y) &amp;= 
+\left[\begin{array}{cc}
+6-4 &amp; -6-6 \\ 
+ -3-8 &amp; 15-0 
+ \end{array} \right] \\
+
+\implies 5 X &amp;= 
+\left[\begin{array}{cc}
+2 &amp; -12 \\ 
+ -11 &amp; 15 
+ \end{array} \right] 
+ \\
+ \therefore X &amp;= 
+ \left[\begin{array}{cc}
+ \dfrac{2}{5} &amp; \dfrac{-12}{5} \\ 
+ \dfrac{-11}{5} &amp; 3 \end{array} \right] 
+
+
+\end{align}
+
+
+ </tex>
+    <reason>P_{m \times n} + Q_{m \times n} = S_{m \times n} = [s_{ij}]_{m \times n}\text{ where,}\\
+s_{ij} = p_{ij} + q_{ij} \, (\forall \text{ possible ij values)}. \\
+\text{Also, if } X = [x_{ij}]_{\,m\times n} \text{ and k is a scalar then,}\\
+\text{kX is another matrix of order m\times n}\\
+\text{such that }
+kX = [k(x_{ij})]_{\,m\times n}</reason>
+  </step>
+  <step>
+    <context>\text{Are following caclulations and conclusion correct?}\\
+\text{Given, } 
+2X+3Y = 
+\left[\begin{array}{cc}
+ 2 &amp; 3 \\ 
+ 4 &amp; 0 \end{array} \right] \\ \text{ and }
+
+ 3X+2Y = 
+\left[\begin{array}{cc}
+ 2 &amp; -2 \\ 
+ -1 &amp; 5 \end{array} \right]</context>
+    <tex correct='true'>\begin{align}
+3\times (2X+3Y) &amp;= 
+\left[\begin{array}{cc}
+ 3\times 2 &amp; 3\times  3 \\ 
+ 3\times 4 &amp; 3\times 0 \end{array} \right] \\
+ \implies 6X +9Y
+ &amp;=
+
+\left[\begin{array}{cc}
+ 6 &amp; 9 \\ 
+ 12 &amp; 0 \end{array} \right]  \\
+
+ 2\times (3X+2Y) &amp;= 
+\left[\begin{array}{cc}
+ 2\times 2 &amp; 2\times  -2 \\ 
+ 2\times (-1) &amp; 2\times 5 \end{array} \right] \\
+\implies 6X +4Y
+ &amp;=
+\left[\begin{array}{cc}
+ 4 &amp; -4 \\ 
+ -2 &amp; 10 \end{array} \right] \\
+  \end{align} \\
+\begin{align}
+
+ \text{Now }
+ (6X +9Y) - (6X +4Y) &amp;= 
+\left[\begin{array}{cc}
+ 6-4 &amp; 9+4 \\ 
+ 12+2 &amp; 0 -10
+ \end{array} \right] \\
+
+\implies 5 Y &amp;= 
+\left[\begin{array}{cc}
+2 &amp; 13 \\ 
+ 14 &amp; -10
+ \end{array} \right] 
+ \\
+ \therefore Y &amp;= 
+ \left[\begin{array}{cc}
+ \dfrac{2}{5} &amp; \dfrac{13}{5} \\ 
+ \dfrac{14}{5} &amp; -2 \end{array} \right]
+
+
+\end{align}
+
+
+ </tex>
+    <reason>P_{m \times n} + Q_{m \times n} = S_{m \times n} = [s_{ij}]_{m \times n}\text{ where,}\\
+s_{ij} = p_{ij} + q_{ij} \, (\forall \text{ possible ij values)}. \\
+\text{Also, if } X = [x_{ij}]_{\,m\times n} \text{ and k is a scalar then,}\\
+\text{kX is another matrix of order m\times n}\\
+\text{such that }
+kX = [k(x_{ij})]_{\,m\times n}</reason>
+  </step>
+  <choices>
+    <tex>X = 
+\left[\begin{array}{cc}
+ \dfrac{2}{5} &amp; \dfrac{-12}{5} \\ 
+ \dfrac{-11}{5} &amp; 3 \end{array} \right] ,
+
+ Y =
+ \left[\begin{array}{cc}
+ \dfrac{2}{5} &amp; \dfrac{13}{5} \\ 
+ \dfrac{14}{5} &amp; \dfrac{-2}{5} \end{array} \right]</tex>
+    <tex>X = 
+\left[\begin{array}{cc}
+ \dfrac{2}{5} &amp; \dfrac{-12}{5} \\ 
+ \dfrac{-11}{5} &amp; \dfrac{3}{5} \end{array} \right] ,
+
+ Y =
+ \left[\begin{array}{cc}
+ \dfrac{2}{5} &amp; \dfrac{13}{5} \\ 
+ \dfrac{14}{5} &amp; -2 \end{array} \right]</tex>
+    <tex correct='true'>X = 
+\left[\begin{array}{cc}
+ \dfrac{2}{5} &amp; \dfrac{-12}{5} \\ 
+ \dfrac{-11}{5} &amp; 3 \end{array} \right] ,
+
+ Y =
+ \left[\begin{array}{cc}
+ \dfrac{2}{5} &amp; \dfrac{13}{5} \\ 
+ \dfrac{14}{5} &amp; -2 \end{array} \right]</tex>
+    <tex>\text{Not possible to find X and Y}</tex>
+  </choices>
+</question>

@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find X, if }
+Y = 
+\left[\begin{array}{cc}
+3 &amp; 2 \\ 
+ 1 &amp; 4 \end{array} \right] \\ \text{ and } 
+
+ 2X +Y = 
+\left[\begin{array}{cc}
+ 1 &amp; 0 \\ 
+ -3 &amp; 2 \end{array} \right]</tex>
+  </statement>
+  <step>
+    <context>\text{If $ A = [a_{ij}]_{m \times n}$ and } B = [b_{ij}]_{m \times n} 
+\text{ are any two matrices,}\\
+\text{then, are all the following conclusions correct?}
+</context>
+    <tex correct='true'>(i) \,\text{A and B have the same order.}\\
+(ii) \,\text{$A+B$ and $A-B $ are defined and the}\\
+\text{resultant matrices have order }m  \times n.\\
+</tex>
+    <tex>(i) \,\text{A and B have the same order.}\\
+(ii) \,\text{$A+B$ and $A-B  $ are defined and the}\\
+\text{resultant matrices have order }1\times 1.</tex>
+    <reason>\text{Only matrices having the {\bf same order} i.e.}\\
+\text{equal no. of rows (m) and equal no. of}\\
+\text{columns (n) can be added and the order}\\
+\text{of the resultant matrix is also m \times n.}</reason>
+  </step>
+  <step>
+    <context>\text{Are following caclulations correct ?}\\
+\text{Given, }
+Y = 
+\left[\begin{array}{cc}
+3 &amp; 2 \\ 
+ 1 &amp; 4 \end{array} \right] \text{ and } 
+
+ 2X +Y = 
+\left[\begin{array}{cc}
+ 1 &amp; 0 \\ 
+ -3 &amp; 2 \end{array} \right]</context>
+    <tex correct='true'>\begin{align}
+(2X+Y) - Y &amp;= 
+\left[\begin{array}{cc}
+ 1-3 &amp; 0-2 \\ 
+ -3-1 &amp; 2-4 \end{array} \right]
+\\
+\implies 2X
+ &amp;=
+\left[\begin{array}{cc}
+ -2 &amp; -2 \\ 
+ -4 &amp; -2 \end{array} \right] 
+ \end{align} \\
+</tex>
+    <reason>P_{m \times n}- Q_{m \times n} = D_{m \times n} = [d_{ij}]_{m \times n}\text{ where,}\\
+d_{ij} = p_{ij} - q_{ij} \, (\forall \text{ possible ij values)}. \\
+\text{Thus, corresponding elements are subtracted.}</reason>
+  </step>
+  <step>
+    <context>\text{Is the following conclusion correct?}\\
+\text{Given, } 2 X
+ =
+\left[\begin{array}{cc}
+ -2 &amp; -2 \\ 
+ -4 &amp; -2 \end{array} \right] 
+</context>
+    <tex correct='true'>\begin{align}
+X &amp;= \dfrac{1}{2}\times \left[\begin{array}{cc}
+ -2 &amp; -2 \\ 
+ -4 &amp; -2 \end{array} \right] \\
+
+  &amp;= 
+ \left[\begin{array}{cc}
+ -2/2 &amp; -2/2 \\ 
+ -4/2 &amp; -2/2 \end{array} \right] \\
+
+ \therefore X &amp;= 
+\left[\begin{array}{cc}
+ -1 &amp; -1 \\ 
+ -2 &amp; -1 \end{array} \right]
+
+
+
+ \end{align} 
+
+</tex>
+    <reason>
+
+\text{If, } X = [x_{ij}]_{\,m\times n} \text{ and k is a scalar then,}\\
+\text{kX is another matrix of order m\times n}\\
+\text{such that }
+kX = [k(x_{ij})]_{\,m\times n}</reason>
+  </step>
+  <choices>
+    <tex>X = 
+\left[\begin{array}{cc}
+ -1 &amp; 1 \\ 
+ -2 &amp; -1 \end{array} \right]
+</tex>
+    <tex correct='true'>X = 
+\left[\begin{array}{cc}
+ -1 &amp; -1 \\ 
+ -2 &amp; -1 \end{array} \right]
+</tex>
+    <tex>X = 
+\left[\begin{array}{cc}
+ -1 &amp; -2 \\ 
+ -1 &amp; -1 \end{array} \right]
+</tex>
+    <tex>\text{Not possible to find X}</tex>
+  </choices>
+</question>
