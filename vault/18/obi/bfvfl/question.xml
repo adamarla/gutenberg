@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If }y = 500e^{7x} + 600e^{-7x}, \text{show that }\\
+\dfrac{d^2y}{dx^2} = 49y</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the following matches your}\\
+\text{understanding of }\dfrac{d^2y}{dx^2}?
+</context>
+    <tex correct='true'>
+\dfrac{d^2y}{dx^2} = \dfrac{d}{dx}\dfrac{d}{dx}(y)</tex>
+    <tex>\begin{align}
+\dfrac{d^2y}{dx^2} &amp;= \dfrac{dy}{dx}.\dfrac{dy}{dx}\\
+							&amp;= \bigg( \dfrac{dy}{dx}\bigg)\\
+							
+\end{align}
+				</tex>
+    <reason>\dfrac{d^2y}{dx^2} \text{ is the derivative of the derivative }\\
+\text{of y.}</reason>
+  </step>
+  <step>
+    <context>\text{Are the calculations below correct?}</context>
+    <tex correct='true'>y = 500e^{7x} + 600e^{-7x}\\
+
+\text{Differentiating the above equation we get }\\
+\begin{align}
+	\dfrac{dy}{dx} &amp;= \dfrac{d \left(500e^{7x} + 600e^{-7x}\right)}{dx}\\
+						&amp;= 3500e^{7x} - 4200e^{-7x}\\
+\end{align}\\
+
+\text{Further differentiating }\dfrac{dy}{dx} \text{ we get}\\
+\begin{align}
+	\dfrac{d^2 y}{dx^2} &amp;= \dfrac{d \left( 3500e^{7x} - 4200e^{-7x}\right)}{dx}\\
+								&amp;=7* 3500e^{7x} - (-7)*4200e^{-7x}\\
+								&amp;= 24500e^{7x} + 29400e^{-7x}\\	
+\end{align}					</tex>
+    <reason>\text{Other than Chain Rule we have used the }\\
+\text{fact that }\dfrac{d \left(e^{\theta}\right)}{d\theta} = e^{\theta}\\</reason>
+  </step>
+  <step>
+    <context>\text{Are the below calculations correct?}</context>
+    <tex correct='true'>\text{puntting everything together}\\
+\text{If we compare y and \dfrac{d^2y}{dx^2}we can figure out that}\\
+\begin{align}
+\dfrac{d^2y}{dx^2}&amp;= 24500e^{7x} + 29400e^{-7x}\\
+							&amp;= 7* 7 \left( 500e^{7x} + 600e^{-7x}\right)\\
+							&amp;=49 y
+
+\end{align}
+
+</tex>
+    <reason></reason>
+  </step>
+</question>
