@@ -1,0 +1,179 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Solve the equation for x, y, z and t, if }\\
+2  
+\left[\begin{array}{cc}
+x &amp; z \\ 
+y &amp; t \end{array} \right] + 
+
+3
+\left[\begin{array}{cc}
+ 1 &amp; -1 \\ 
+ 0 &amp; 2 \end{array} \right] 
+
+ = 
+ 3
+ \left[\begin{array}{cc}
+ 3 &amp; 5 \\ 
+ 4 &amp; 6 \end{array} \right]</tex>
+  </statement>
+  <step>
+    <context>\text{If $ A = [a_{ij}]_{m \times n}$ and } B = [b_{ij}]_{m \times n} 
+\text{ are any two matrices,}\\
+\text{then, are all the following conclusions correct?}
+</context>
+    <tex correct='true'>(i) \,\text{A and B have the same order.}\\
+(ii) \,\text{$A+B$ and $A-B $ are defined and the}\\
+\text{resultant matrices have order }m  \times n.\\
+</tex>
+    <tex>(i) \,\text{A and B have the same order.}\\
+(ii) \,\text{$A+B$ and $A-B  $ are defined and the}\\
+\text{resultant matrices have order }1\times 1.</tex>
+    <reason>\text{Only matrices having the {\bf same order} i.e.}\\
+\text{equal no. of rows (m) and equal no. of}\\
+\text{columns (n) can be added and the order}\\
+\text{of the resultant matrix is also m \times n.}</reason>
+  </step>
+  <step>
+    <context>\text{What is the result of the following matrix}\\
+\text{addition, }
+2  
+\left[\begin{array}{cc}
+x &amp; z \\ 
+y &amp; t \end{array} \right] + 
+
+3
+\left[\begin{array}{cc}
+ 1 &amp; -1 \\ 
+ 0 &amp; 2 \end{array} \right] ?</context>
+    <tex correct='true'> \begin{align}
+2  
+\left[\begin{array}{cc}
+x &amp; z \\ 
+y &amp; t \end{array} \right]
+ &amp;=
+\left[\begin{array}{cc}
+2x &amp; 2z \\ 
+ 2y &amp; 2t \end{array} \right] \\
+
+ 3
+\left[\begin{array}{cc}
+ 1 &amp; -1 \\ 
+ 0 &amp; 2 \end{array} \right]
+ &amp;=
+ \left[\begin{array}{cc}
+ 3 \times 1 &amp; 3 \times -1 \\ 
+ 3 \times 0 &amp; 3 \times 2 \end{array} \right] \\
+ &amp;=
+ \left[\begin{array}{cc}
+ 3 &amp; -3 \\ 
+ 0 &amp; 6 \end{array} \right] 
+ \end{align} \\
+
+ 
+\begin{align}
+
+ 
+\implies &amp;2  
+\left[\begin{array}{cc}
+x &amp; z \\ 
+y &amp; t \end{array} \right] + 
+
+3
+\left[\begin{array}{cc}
+ 1 &amp; -1 \\ 
+ 0 &amp; 2 \end{array} \right] \\
+ &amp;=
+ \left[\begin{array}{cc}
+2x &amp; 2z \\ 
+ 2y &amp; 2t \end{array} \right]  +
+  \left[\begin{array}{cc}
+ 3 &amp; -3 \\ 
+ 0 &amp; 6 \end{array} \right] \\
+ &amp;=
+  \left[\begin{array}{cc}
+2x+3 &amp; 2z-3 \\ 
+ 2y &amp; 2t+6 \end{array} \right] 
+ 
+\end{align}</tex>
+    <reason>\text{If, } X = [x_{ij}]_{\,m\times n} \text{ and k is a scalar then,}\\
+\text{kX is another matrix of order m\times n}\\
+\text{such that }
+kX = [k(x_{ij})]_{\,m\times n} \\
+\text{Also }P_{m \times n}+ Q_{m \times n} = S_{m \times n} = [s_{ij}]_{m \times n}\text{ where,}\\
+s_{ij} = p_{ij} + q_{ij} \, (\forall \text{ possible ij values)}.
+
+</reason>
+  </step>
+  <step>
+    <context>\text{Is the following conclusion correct? Given,}\\
+  \left[\begin{array}{cc}
+2x+3 &amp; 2z-3 \\ 
+ 2y &amp; 2t+6 \end{array} \right] 
+ =
+ 3
+  \left[\begin{array}{cc}
+ 3 &amp; 5 \\ 
+ 4 &amp; 6 \end{array} \right]
+</context>
+    <tex correct='true'>\begin{align}
+   \left[\begin{array}{cc}
+2x+3 &amp; 2z-3 \\ 
+ 2y &amp; 2t+6 \end{array} \right] 
+ &amp;= 
+ 3
+  \left[\begin{array}{cc}
+ 3 &amp; 5 \\ 
+ 4 &amp; 6 \end{array} \right] \\
+ &amp;=
+   \left[\begin{array}{cc}
+ 9 &amp; 15 \\ 
+ 12 &amp; 18 \end{array} \right] \\
+ \implies 
+ 2x+3 &amp;= 9 \\
+  2z-3 &amp;= 15 \\
+ 2y &amp;= 12 \\
+ 2t+6 &amp;= 18 \\
+
+\quad  \therefore 
+ x = 3, y= 6 , z =9 \text{ and }t &amp;=6
+
+ 
+
+\end{align}</tex>
+    <tex>\begin{align}
+   \left[\begin{array}{cc}
+2x+3 &amp; 2z-3 \\ 
+ 2y &amp; 2t+6 \end{array} \right] 
+ &amp;= 
+ 3
+  \left[\begin{array}{cc}
+ 3 &amp; 5 \\ 
+ 4 &amp; 6 \end{array} \right] \\
+ &amp;=
+   \left[\begin{array}{cc}
+ 9 &amp; 15 \\ 
+ 12 &amp; 18 \end{array} \right] 
+ \end{align}\\
+ 
+\begin{align}
+ \text{So, }(2x+3)+  (2z-3) + (2y) +(2t+6) &amp;= 54 \\
+\implies x+z +y +t &amp;= 24
+\end{align}\\
+\therefore \text{The solutions of above linear equality give}\\
+\text{the desired values of x, y, z and t.}</tex>
+    <reason>\text{If, } X = [x_{ij}]_{\,m\times n} \text{ and k is a scalar then,}\\
+\text{kX is another matrix of order m\times n}\\
+\text{such that }
+kX = [k(x_{ij})]_{\,m\times n} \\
+\text{For equality of two matrices, the }\\
+\text{corresponding elements must be equal.}</reason>
+  </step>
+  <choices>
+    <tex>x=3 , t= 6 \text{, not possible to find y and z.}</tex>
+    <tex>x = 3, y= 6 , z =-9 \text{ and }t=6</tex>
+    <tex correct='true'>x = 3, y= 6 , z =9 \text{ and }t=6</tex>
+    <tex>x = 3, y= -6 , z =-9 \text{ and }t=6</tex>
+  </choices>
+</question>

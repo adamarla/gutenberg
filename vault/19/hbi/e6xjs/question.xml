@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the values of  x, y, z and w, if }\\
+3  
+\left[\begin{array}{cc}
+x &amp; y \\ 
+z &amp; w \end{array} \right] = 
+
+
+\left[\begin{array}{cc}
+x &amp; 6 \\ 
+ -1 &amp; 2w \end{array} \right] 
++
+ \left[\begin{array}{cc}
+ 4 &amp; x+y \\ 
+ z+w &amp; 3 \end{array} \right]</tex>
+  </statement>
+  <step>
+    <context>\text{If $ A = [a_{ij}]_{m \times n}$ and } B = [b_{ij}]_{m \times n} 
+\text{ are any two matrices,}\\
+\text{then, are all the following conclusions correct?}
+</context>
+    <tex correct='true'>(i) \,\text{A and B have the same order.}\\
+(ii) \,\text{$A+B$ and $A-B $ are defined and the}\\
+\text{resultant matrices have order }m  \times n.\\
+</tex>
+    <tex>(i) \,\text{A and B have the same order.}\\
+(ii) \,\text{$A+B$ and $A-B  $ are defined and the}\\
+\text{resultant matrices have order }1\times 1.</tex>
+    <reason>\text{Only matrices having the {\bf same order} i.e.}\\
+\text{equal no. of rows (m) and equal no. of}\\
+\text{columns (n) can be added and the order}\\
+\text{of the resultant matrix is also m \times n.}</reason>
+  </step>
+  <step>
+    <context>\text{Are the following calculations and conclusion}\\
+\text{correct? Given,}\\
+3  
+\left[\begin{array}{cc}
+x &amp; y \\ 
+z &amp; w \end{array} \right] = 
+
+
+\left[\begin{array}{cc}
+x &amp; 6 \\ 
+ -1 &amp; 2w \end{array} \right] 
++
+ \left[\begin{array}{cc}
+ 4 &amp; x+y \\ 
+ z+w &amp; 3 \end{array} \right]
+</context>
+    <tex correct='true'> \begin{align}
+3  
+\left[\begin{array}{cc}
+x &amp; y \\ 
+z &amp; w \end{array} \right]
+&amp;=
+\left[\begin{array}{cc}
+3 x &amp; 3 y \\ 
+3 z &amp; 3w \end{array} \right] \\
+
+ \text{Also, }\left[\begin{array}{cc}
+x &amp; 6 \\ 
+ -1 &amp; 2w \end{array} \right] 
+&amp;+
+ \left[\begin{array}{cc}
+ 4 &amp; x+y \\ 
+ z+w &amp; 3 \end{array} \right] \\
+ 
+ &amp;=
+
+ \left[\begin{array}{cc}
+x +4 &amp; 6 +x+y\\ 
+ -1+z+w &amp; 2w+3 \end{array} \right] \\
+  
+\implies 
+\left[\begin{array}{cc}
+3 x &amp; 3 y \\ 
+3 z &amp; 3w \end{array} \right] 
+&amp;=
+ \left[\begin{array}{cc}
+x +4 &amp; 6 +x+y\\ 
+ -1+z+w &amp; 2w+3 \end{array} \right] 
+ \end{align}\\
+
+
+
+\begin{align}
+
+ \implies 3x &amp;= x+4 \\
+  3y &amp;= 6+x+y\\
+ 3z &amp;=-1+z+w\\
+ 3w &amp;= 2w+3
+ \end{align}\\
+
+\qquad  \therefore x=2, y=4, w=3, z=1
+
+</tex>
+    <reason>\text{If, } X = [x_{ij}]_{\,m\times n} \text{ and k is a scalar then,}\\
+kX = [k(x_{ij})]_{\,m\times n} 
+\text{ .If }P_{m \times n}+ Q_{m \times n} = S_{m \times n} = [s_{ij}]_{m \times n}\\
+\text{ where,}
+s_{ij} = p_{ij} + q_{ij} \, (\forall \text{ possible ij values)}.\\
+\text{For equality of two matrices the corresponding}\\
+\text{elements must be equal.}
+
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>x=2, y=4, w=3, z=1</tex>
+    <tex>x=-2, y=4, w=3, z=1</tex>
+    <tex>x=2, y=0, w=3, z=1</tex>
+    <tex>x=2, y=4, \text{not possible to find w and z.}</tex>
+  </choices>
+</question>
