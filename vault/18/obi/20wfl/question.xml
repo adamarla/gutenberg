@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Find the integral for}
+    <tex>\text{Find the following integral}
 
 \int \left(4 e^{3x} + 1\right).dx</tex>
   </statement>
@@ -17,7 +17,7 @@
 
 </tex>
     <reason>\text{We have used the fact that }\int e^{t} .dt = e^{t}+c.\\
-\text{Check your calculation if you got anything else.}</reason>
+</reason>
   </step>
   <choices>
     <tex>\int \left(4 e^{3x} + 1\right).dx =4\left(\dfrac{e^{3x}}{3}\right) - x +c\\</tex>
