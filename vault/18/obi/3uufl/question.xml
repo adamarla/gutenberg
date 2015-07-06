@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find an anti derivative (or integral) of the}\\
+	\text{following function by the method of inspection.}\\
+	
+	 \left(ax + b\right)^2</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the below function has the derivative}\\
+\text{as }\left(ax + b\right)^n\text{, where }n \in \mathbb{R}</context>
+    <tex correct='true'>\dfrac{\left(ax + b\right)^{n+1}}{a\left(n+1\right)}</tex>
+    <tex>a \left({n+1}\right)\left(ax + b\right)^{n+1}</tex>
+    <reason>\text{We have used Chain Rule here, review it}\\
+\text{you got this wrong. }\\</reason>
+  </step>
+  <step>
+    <context>\text{Is the analysis below correct?}</context>
+    <tex correct='true'>\text{Since , }\\
+\begin{align}
+\dfrac{d \left(ax + b\right)^3}{dx} &amp;= 3a \left(ax + b\right)^2\\
+\Rightarrow \left(ax + b\right)^2 &amp;= \dfrac{1}{3a}.\dfrac{d}{dx}\left(\left(ax + b\right)^3\right)
+\end{align}\\
+\therefore \text{anti derivative or integral of }\left(ax + b\right)^2 \\
+\text{ is } \dfrac{\left(ax + b\right)^3}{3a}\\
+</tex>
+    <reason>\text{We have used the Chain Rule and the result }\\
+\text{step 1. Check your calculations if you got}\\
+\text{something else}.</reason>
+  </step>
+  <choices>
+    <tex>\int \left(ax + b\right)^2.dx = -\dfrac{\left(ax + b\right)^3}{3a}</tex>
+    <tex>\int \left(ax + b\right)^2 .dx= \dfrac{\left(ax + b\right)^3}{2a}</tex>
+    <tex>\int \left(ax + b\right)^2 .dx= \dfrac{\left(ax + b\right)^3}{3}</tex>
+    <tex correct='true'>\int \left(ax + b\right)^2 .dx= \dfrac{\left(ax + b\right)^3}{3a}</tex>
+  </choices>
+</question>
