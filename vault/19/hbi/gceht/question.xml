@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the integral of the function}\\
+\sin^3 (2x+1)</tex>
+  </statement>
+  <step>
+    <context>\text{Are the following calculations and analysis correct?}
+
+</context>
+    <tex correct='true'> \text{Using trignometric identity,}\\
+
+\begin{align}
+
+\sin 3 x &amp;= 3 \sin x - 4 \sin^3 x \\
+
+\implies \sin^3 (2x+1) &amp;= 
+\dfrac{3 \sin (2 x+1) -  \sin 3 (2x +1)}{4}
+\end{align}\\
+ 
+
+\therefore
+\int \sin^3 (2x+1) dx \\
+\quad \qquad \qquad = \int \dfrac{3 \sin (2 x+1) - \sin (6x +3)}{4} dx</tex>
+    <reason>\text{Applied the trignometeric identity, }\\
+\sin^3 x = 3 \sin x - 4 \sin^3 x \text{ by replacing x by 2x+1}\\
+\text{Check your calculations, if you got something}\\
+\text{else.}
+</reason>
+  </step>
+  <step>
+    <context>\text{Is the following evaluation of the integral}\\
+\int \dfrac{3 \sin (2 x+1) - \sin (6x +3)}{4} dx \quad
+\text{correct}?</context>
+    <tex correct='true'>\int \dfrac{3 \sin (2 x+1) - \sin (6x +3)}{4} dx \\
+= 
+\dfrac{3}{4} \int sin(2x+1) dx - \dfrac{1}{4}\int  \sin(6x+3) dx \\
+= \dfrac{-3}{8}\cos (2x + 1) + \dfrac{1}{24} \cos (6 x + 3) + C</tex>
+    <reason>
+\int \sin (a x)dx =  \dfrac{- \cos (a x)}{a}+ C</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{3}{8}\cos (2x + 1) + \dfrac{1}{24} \cos (6 x + 3) + C</tex>
+    <tex correct='true'>\dfrac{-3}{8}\cos (2x + 1) + \dfrac{1}{24} \cos (6 x + 3) + C</tex>
+    <tex>\dfrac{-3}{8}\cos (2x + 1) - \dfrac{1}{24} \cos (6 x + 3) + C</tex>
+    <tex>\dfrac{-3}{4}\cos (2x + 1) + \dfrac{1}{6} \cos (6 x + 3) + C</tex>
+  </choices>
+</question>

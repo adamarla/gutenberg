@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the integral of the function} \\
+\sin^2 (2x +5)</tex>
+  </statement>
+  <step>
+    <context>\text{Are the following calculations and analysis correct?}
+
+</context>
+    <tex correct='true'> \text{Using trignometric identity,}\\
+  \begin{align}
+\cos 2 x &amp;= 1 - 2 \sin^2  x \\
+\implies \sin^2 (2x +5)  &amp;= 
+\dfrac{1 - \cos 2 (2x+5)}{2}\\
+
+\therefore
+\int \sin^2 (2x +5) dx &amp;= \int \dfrac{1 - \cos 2 (2x+5)}{2}dx
+\end{align}</tex>
+    <tex> \text{Using trignometric identity,}\\
+  \begin{align}
+\cos 2 x &amp;= 1 - 2 \sin^2  x \\
+\implies \sin^2 (2x +5)  &amp;= 
+2 - 2\cos 2 (2x+5)\\
+
+\therefore 
+\int \sin^2 (2x +5) dx &amp;= \int 2 - 2\cos (2x+5) dx
+\end{align}</tex>
+    <reason>\text{Replace x by 2x+5 in the trignometeric}\\
+\text{indentity, }\cos 2 x = 1 - 2 \sin^2  x 
+</reason>
+  </step>
+  <step>
+    <context>\text{Is the following evaluation of the integral}\\
+\int \dfrac{1 - \cos 2 (2x+5)}{2}dx \quad
+\text{correct}?</context>
+    <tex correct='true'>
+\int \dfrac{1 - \cos 2 (2x+5)}{2}dx \\
+= 
+\dfrac{1}{2}\int dx - \dfrac{1}{2} \int \cos (4x+10) dx \\
+
+= \dfrac{x}{2} - \dfrac{1}{8} \sin(4x +10) +C
+</tex>
+    <reason>\int dx = x \text{ and }
+\int \cos (ax) dx = 
+\dfrac{\sin(ax)}{a}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{x}{2} - \dfrac{1}{8} \sin(4x +10) </tex>
+    <tex correct='true'>\dfrac{x}{2} - \dfrac{1}{8} \sin(4x +10) +C</tex>
+    <tex>\dfrac{x}{2} - \dfrac{1}{2} \sin(4x +10) +C</tex>
+    <tex>\dfrac{x}{2} + \dfrac{1}{8} \sin(4x +10) +C</tex>
+  </choices>
+</question>

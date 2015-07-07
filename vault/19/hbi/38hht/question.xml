@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the integral of the function} \\
+\sin 3x \cos 4x</tex>
+  </statement>
+  <step>
+    <context>\text{Are the following calculations and analysis correct?}
+
+</context>
+    <tex correct='true'> \text{Using trignometric identity,}\\
+  \begin{align}
+\sin x \cos y &amp;= \dfrac{1}{2}[\sin (x+y) + \sin (x-y)] \\
+\implies \sin 3x \cos 4x  &amp;= 
+\dfrac{1}{2}[\sin 7x - \sin x]\\
+
+\therefore
+\int \sin 3x \cos 4x  dx &amp;= \int \dfrac{1}{2}[\sin 7x - \sin x] dx
+\end{align}</tex>
+    <tex> \text{Using trignometric identity,}\\
+  \begin{align}
+\sin x \cos y &amp;= \dfrac{1}{2}[\sin (x+y) + \sin (x-y)] \\
+\implies \sin 3x \cos 4x  &amp;= 
+\dfrac{1}{2}[\sin 7x + \sin x]\\
+
+\therefore
+\int \sin 3x \cos 4x  dx &amp;= \int \dfrac{1}{2}[\sin 7x + \sin x]dx
+\end{align}</tex>
+    <reason>\text{Replace x by 3x and y by 4x in the trignometeric}\\
+\text{indentity, }\sin x \cos y = \dfrac{1}{2}[\sin (x+y) + \sin (x-y)] \\ 
+</reason>
+  </step>
+  <step>
+    <context>\text{Is the following evaluation of the integral}\\
+\int \dfrac{1}{2}[\sin 7x - \sin x] dx \quad
+\text{correct}?</context>
+    <tex correct='true'>\int \dfrac{1}{2}[\sin 7x - \sin x] dx\\
+= 
+\dfrac{1}{2}\int \sin 7x dx - \dfrac{1}{2} \int \sin x dx \\
+
+= \dfrac{- \cos 7x}{14} + \dfrac{\cos x}{2} +C
+</tex>
+    <reason>
+\int \sin (ax) dx = \dfrac{- \cos (ax)}{a} + C
+</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{- \cos 7x}{14} - \dfrac{\cos x}{2} +C</tex>
+    <tex>\dfrac{- \cos 7x}{2} + \dfrac{\cos x}{2} +C</tex>
+    <tex>\dfrac{\cos 7x}{14} + \dfrac{\cos x}{2} +C</tex>
+    <tex correct='true'>\dfrac{- \cos 7x}{14} + \dfrac{\cos x}{2} +C</tex>
+  </choices>
+</question>
