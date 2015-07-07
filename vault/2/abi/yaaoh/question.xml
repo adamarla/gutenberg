@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If the matrix A is both a symmetric and a}\\
+\text{skew matrix, which of these is A?}</tex>
+  </statement>
+  <step>
+    <context>\text{If matrix $A=[a_{ij}]_{m\times m}$ is a symmetric matrix,}\\
+\text{what can be said about its elements?}</context>
+    <tex correct='true'>a_{ij}=a{ji}</tex>
+    <tex>a_{ij}+a_{ji}=0</tex>
+    <reason>\text{A is a symmetric matrix if $a_{ij}=a_{ji}$}\\
+\text{or $A=A'$}</reason>
+  </step>
+  <step>
+    <context>\text{If matrix $A=[a_{ij}]_{m\times m}$ is a skew matrix,}\\
+\text{what can be said about its elements?}</context>
+    <tex correct='true'>a_{ij}+a{ji}=0</tex>
+    <tex>a_{ij}=a_{ji}</tex>
+    <reason>\text{A is a skew matrix if $a_{ij}=-a_{ji}$\\
+\text{or $A=-A'$}</reason>
+  </step>
+  <step>
+    <context>\text{What can you say about elements of a matrix}\\
+\text{whose elements satisfy $a_{ij}=a_{ji}$ and}\\
+\text{$a_{ij}=-a_{ji}$.}</context>
+    <tex correct='true'>a_{ij}=a_{ji}=0\\
+\text{A matrix with all elements that satisfy $a_{ij}=a_{ji}$}\\
+\text{and $a_{ij}+a_{ji}=0$ is a zero matrix.}</tex>
+    <tex>a_{ij}=a_{ji}=0\\
+\text{A matrix with all elements that satisfy $a_{ij}=a_{ji}$}\\
+\text{and $a_{ij}+a_{ji}=0$ is a diagonal matrix.}</tex>
+    <reason>\text{Based on the given conditions (symmetric and}\\
+\text{skew), matrix A could only be a zero matrix.}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\text{A is a diagonal matrix}
+</tex>
+    <tex>\text{A is a zero matrix}</tex>
+    <tex>\text{A is a square matrix}</tex>
+    <tex>\text{None of these}</tex>
+  </choices>
+</question>

@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If A and B are square matrices of the same}\\
+\text{order such that $AB = BA$, then prove using}\\
+\text{mathematical induction that $AB^n=B^nA$.}\\ 
+\text{Further, prove that $(AB)^n=A^nB^n$ for all }\\
+n\in \mathbb{N}.</tex>
+  </statement>
+  <step swipe='false'>
+    <context>\text{To prove $AB^n=B^nA$ using induction, the first}\\
+\text{step is to prove it true for $n=1$,}\\
+\begin{align}
+AB^n \text{ (n=1) }\implies &amp;AB^1 = AB\\
+B^nA \text{ (n=1) }\implies &amp;B^1A = BA
+\end{align}\\
+\text{$AB=BA$ because?}</context>
+    <tex correct='true'>AB=BA\text{ is a condition stated in the question.}</tex>
+    <tex>\text{$AB$ always equals $BA$ (matrix multiplication is}\\
+\text{associative).}</tex>
+    <reason>\text{$AB^n=B^nA$ is true for $n=1$ in this case but}\\
+\text{$AB=BA$ is not always true, i.e. matrix}\\
+\text{multiplication is {\bf not} associative.}</reason>
+  </step>
+  <step>
+    <context>\text{Assuming $AB^n=B^nA$ is true for $n=k$, based}\\
+\text{on the following analysis can we say it is true}\\
+\text{for $n=k+1$?}</context>
+    <tex correct='true'>\begin{align}
+AB^{k+1} &amp;= AB^k\cdot B\\
+                  &amp;=B^k A\cdot B \text{ ($AB^k=B^kA$ assumed)} \\
+                  &amp;=B^k B\cdot A \text{ ($AB = BA$ given)}\\
+                  &amp;=B^{k+1}A
+\end{align}</tex>
+    <tex>\begin{align}
+AB^{k+1}=B^{k+1}A &amp;\text{ (since AB^k=B^kA,  AB^{k+1}}\\
+                                     &amp;\text{  must equal AB^{k+1})}
+\end{align}
+</tex>
+    <reason>\text{$AB^n=B^nA$ is given true for $n=1$. Assuming}\\
+\text{$AB^k=B^kA$, it has been proved true for}\\
+\text{$n=k+1$. By the principal of mathematical}\\
+\text{induction, $AB^n=B^nA$ for all $n\in \mathbb{N}$.}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Given that $AB^n=B^nA$ for all $n \in \mathbb{N}$,}\\
+\text{to prove $(AB)^n=A^n B^n$, can $A^nB^n$ be}\\
+\text{rewritten like this?}</context>
+    <tex correct='true'>\begin{align}
+  A^n\cdot B^n &amp;= A^{n-1}\cdot AB^n \\
+ &amp;= A^{n-1}\cdot B^n A \quad (\because AB^n=B^nA)\\
+ &amp;= A^{n-1}\cdot B^{n-1}\cdot BA \\
+ &amp;= A^{n-1}\cdot B^{n-1} \cdot AB \quad (\because AB=BA)
+\end{align}</tex>
+    <reason>A^n\cdot B^n = A^{n-1}\cdot B^{n-1}\cdot AB</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{If the result $A^n\cdot B^n = A^{n-1}\cdot B^{n-1}\cdot AB$}\\
+\text{is applied to itself ($A^{n-1}\cdot B^{n-1}$), does the}\\
+\text{resulting equation look like this?}
+</context>
+    <tex correct='true'>\begin{align}
+  A^n\cdot B^n =&amp; \underbrace{A^{n-1}\cdot B^{n-1}}\cdot AB \\
+                         =&amp; \underbrace{A^{n-2}\cdot B^{n-2}\cdot AB}\cdot AB   
+\end{align}
+</tex>
+    <tex>\begin{align}
+  A^n\cdot B^n =&amp; \underbrace{A^{n-1}\cdot B^{n-1}}\cdot AB \\
+                         =&amp; \underbrace{A^{n-2}\cdot B^{n-2}}\cdot AB   
+\end{align}
+</tex>
+    <reason>\begin{align}
+  A^n\cdot B^n =&amp; A^{n-1}\cdot B^{n-1}\cdot AB \\
+                         =&amp; A^{n-2}\cdot B^{n-2}\cdot AB\cdot AB\\
+                         =&amp; A^{n-2}\cdot B^{n-2}\cdot (AB)^2
+\end{align}
+</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Applying the expansion for $A^nB^n$ to}\\
+\begin{align}
+A^n\cdot B^n= &amp;\overbrace{A^{n-2}\cdot B^{n-2}}\cdot (AB)^2
+\end{align}\\
+\text{would the equation look like this?}
+</context>
+    <tex correct='true'>\begin{align}
+  A^n\cdot B^n =&amp; A^{n-2}\cdot B^{n-2}\cdot (AB)^2 \\
+                         =&amp; A^{n-3}\cdot B^{n-3}\cdot AB \cdot (AB)^2 \\
+                         =&amp; A^{n-3}\cdot B^{n-3}\cdot (AB)^3 \\
+                         =&amp; (AB)\cdot (AB)^{n-1} = (AB)^n
+\end{align}
+</tex>
+    <reason>\text{Proves that $(AB)^n=A^nB^n$ for all $n\in \mathbb{N}$}
+</reason>
+  </step>
+</question>

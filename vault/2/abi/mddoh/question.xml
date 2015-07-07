@@ -22,12 +22,13 @@ X\cdot
 </reason>
   </step>
   <step>
-    <context>\text{If }\left[\begin{array}{cc}
+    <context>\left[\begin{array}{cc}
  a &amp; b \\ 
  c &amp; d \end{array} \right]\times
 \left[\begin{array}{ccc}
  1 &amp; 2 &amp; 3 \\ 
- 4 &amp; 5 &amp; 6 \end{array} \right]= C\text{ then,}
+ 4 &amp; 5 &amp; 6 \end{array} \right]=C\\
+ \text{Is this correct?}
 </context>
     <tex correct='true'>C=\left[\begin{array}{ccc}
  a+4b &amp; 2a+5b &amp; 3a+6b \\ 
@@ -71,20 +72,20 @@ a+4b=-7, 2a+5b=-8, 3a+6b=-9</context>
     <tex>\text{A unique result is not possible as we have more}\\
 \text{equations (3) than variables (2).}</tex>
     <reason>\text{The equations represent three distinct lines}\\
-\text{lines which happen to coincide. Solving}\\
-\text{using any two would give the same result..}</reason>
+\text{which happen to coincide. Solving for a and b}\\
+\text{using any two would give the same result.}</reason>
   </step>
   <step>
     <context>\text{Does solving following equations yield unique}\\
 \text{values for c and d?}\\ 
-c+4d, 2c+5d, 3c+6d </context>
+c+4d=2, 2c+5d=4, 3c+6d=6</context>
     <tex correct='true'>\text{Solving for a and b, using any two of the}\\
 \text{above equations gives $c=2$ and $d=0$.} 
  </tex>
     <tex>\text{A unique result is not possible as we have more}\\
 \text{equations (3) than variables (2).}</tex>
     <reason>\text{The equations represent three distinct lines}\\
-\text{lines which happen to coincide. Solving}\\
+\text{which happen to coincide. Solving for a and b}\\
 \text{using any two would give the same result.}</reason>
   </step>
   <choices>

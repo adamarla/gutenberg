@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If A is a square matrix such that $A^2=A$,}\\
+\text{then expand $(I+A)^3-7A$ such that there}\\
+\text{only first order terms remaining.}\\
+\text{(e.g. A, A+I etc).}</tex>
+  </statement>
+  <step>
+    <context>\text{Are these operations correct?}
+</context>
+    <tex correct='true'>\begin{align}
+  I^2 &amp;=I \\
+  IA    &amp;=A
+\end{align}</tex>
+    <tex>\begin{align}
+  I^2 &amp;=2I \\
+  IA    &amp;=I+A
+\end{align}</tex>
+    <reason>\text{Anything multiplied by identity matrix is the}\\
+\text{matrix itself }\therefore I^2=I \text{ and } IA=AI=A.</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Given $I^2=I$, $A^2=A$ and $IA=AI=A$,}\\
+\text{is this a valid expansion for $(I+A)^3$}
+</context>
+    <tex correct='true'>\begin{align}
+  (I+A)^3 &amp;= I^3 + 3I^2\cdot A + 3I\cdot A^2 + A^3 \\
+               &amp;= I + 3IA + 3I\cdot A^2 + A\cdot A^2\\
+               &amp;= I + 3IA + 3IA + A^2 \\
+               &amp;= I + 6IA + A \\ 
+               &amp;= I + 6A + A = I + 7A
+\end{align}</tex>
+    <reason>(I+A)^3 =I+7A \implies (I+A)^3-7A = I</reason>
+  </step>
+  <choices>
+    <tex>A</tex>
+    <tex>I-A</tex>
+    <tex correct='true'>I</tex>
+    <tex>3A</tex>
+  </choices>
+</question>
