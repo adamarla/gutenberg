@@ -2,7 +2,7 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Find the integral of the function} \\
-\sin^2 (2x +5)</tex>
+\sin^2 (2x +5) \, .</tex>
   </statement>
   <step>
     <context>\text{Are the following calculations and analysis correct?}

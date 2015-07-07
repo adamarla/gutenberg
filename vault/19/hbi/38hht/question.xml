@@ -2,7 +2,7 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Find the integral of the function} \\
-\sin 3x \cos 4x</tex>
+\sin 3x \cos 4x \, .</tex>
   </statement>
   <step>
     <context>\text{Are the following calculations and analysis correct?}

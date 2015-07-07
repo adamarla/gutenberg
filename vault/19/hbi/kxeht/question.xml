@@ -2,7 +2,7 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Find the integral of the function}\\
-\cos 2 x \cdot \cos 4 x \cdot \cos 6 x</tex>
+\cos 2 x \cdot \cos 4 x \cdot \cos 6 x \,</tex>
   </statement>
   <step>
     <context>\text{Are the following calculations and analysis correct?}

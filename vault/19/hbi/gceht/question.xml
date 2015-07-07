@@ -2,7 +2,7 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Find the integral of the function}\\
-\sin^3 (2x+1)</tex>
+\sin^3 (2x+1) \, .</tex>
   </statement>
   <step>
     <context>\text{Are the following calculations and analysis correct?}
