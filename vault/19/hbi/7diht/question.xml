@@ -37,7 +37,7 @@
   </step>
   <step>
     <context>\text{Is the following evaluation of the integral}\\
-= \int (t^2 -1) t^3  dx \quad
+\int (t^2 -1) t^3  dx \quad
 \text{correct}?</context>
     <tex correct='true'> \int (t^2 -1) t^3  dx \\
 = 
@@ -48,6 +48,16 @@
 \therefore 
 \int \sin^3 x \cos^3 x 
 = \dfrac{1}{6}\cos ^6 x - \dfrac {1} {4} \cos^4x + C
+</tex>
+    <tex> \int (t^2 -1) t^3  dx \\
+= 
+\int t^5 dx - \int  t^3 dx \\
+= \dfrac{t^5}{5} - \dfrac{t^3}{3}+ C \\
+\text{Again substituting } t = \cos x \\
+= \dfrac{1}{5}\cos ^5 x - \dfrac {1} {3} \cos^3 x + C \\
+\therefore 
+\int \sin^3 x \cos^3 x 
+= \dfrac{1}{5}\cos ^5 x - \dfrac {1} {3} \cos^3 x + C
 </tex>
     <reason>\int x^n dx = \dfrac{x^{n+1}}{n+1} +  C \\
 \text{ where C is the constant of integration.}</reason>

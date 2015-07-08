@@ -36,6 +36,10 @@
 = 
 \dfrac{3}{4} \int sin(2x+1) dx - \dfrac{1}{4}\int  \sin(6x+3) dx \\
 = \dfrac{-3}{8}\cos (2x + 1) + \dfrac{1}{24} \cos (6 x + 3) + C</tex>
+    <tex>\int \dfrac{3 \sin (2 x+1) - \sin (6x +3)}{4} dx \\
+= 
+\dfrac{3}{4} \int sin(2x+1) dx - \dfrac{1}{4}\int  \sin(6x+3) dx \\
+= \dfrac{3}{8}\cos (2x + 1) - \dfrac{1}{24} \cos (6 x + 3) + C</tex>
     <reason>
 \int \sin (a x)dx =  \dfrac{- \cos (a x)}{a}+ C \\
 \text{Alternatively, proceed with }

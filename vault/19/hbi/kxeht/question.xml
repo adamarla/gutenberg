@@ -45,6 +45,14 @@
 = \dfrac{\sin 12 x}{48} + \dfrac{\sin 4x}{32} +
  \dfrac{ x}{4} + \dfrac{\sin 8 x}{16}+ C
 </tex>
+    <tex>\int \dfrac{1}{4} [ \cos 12 x + \cos 8 x + 1 + \cos 4 x ] dx \\
+= 
+\dfrac{1}{4}\int \cos (12 x) dx + \dfrac{1}{4}\int \cos (8 x) dx \\
++  \dfrac{1}{4} \int dx + \dfrac{1}{4} \int \cos (4 x) dx \\
+
+= \dfrac{- \sin 12 x}{48} - \dfrac{\sin 4x}{32} -
+ \dfrac{ x}{4} - \dfrac{\sin 8 x}{16}+ C
+</tex>
     <reason>
 \int \cos (a x)dx = \dfrac{\sin (a x)}{a}+ C</reason>
   </step>

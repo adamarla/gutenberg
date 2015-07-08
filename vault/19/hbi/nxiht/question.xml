@@ -45,6 +45,13 @@
 
 =  \dfrac {1} {4}\left[ \dfrac{- 1}{2} {\cos 2 x} + \dfrac{1}{6}{\cos6 x} - \dfrac{1}{4}{\cos 4x}
  \right]+ C</tex>
+    <tex>\int \dfrac{1}{4} [ \sin 2 x - \sin 6x +sin 4x] dx \\
+= 
+\dfrac{1}{4}\int \sin (2 x) dx - \dfrac{1}{4}\int \sin (6 x) dx 
++  \dfrac{1}{4} \int sin(4 x) dx  \\
+
+=  \dfrac {1} {4}\left[ \dfrac{ 1}{2} {\cos 2 x} - \dfrac{1}{6}{\cos6 x} + \dfrac{1}{4}{\cos 4x}
+ \right]+ C</tex>
     <reason>
 \int \sin (a x)dx = \dfrac{- \cos (a x)}{a}+ C \\
 \text{where C is the constant of integration.}

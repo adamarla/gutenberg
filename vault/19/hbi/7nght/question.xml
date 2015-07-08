@@ -37,6 +37,12 @@
 
 =  \dfrac {1} {2}\left[ \dfrac{1}{4}{\sin4 x}
  - \dfrac{1}{12}{\sin 12 x}\right]+ C</tex>
+    <tex>\int \dfrac{1}{2}[\cos 4 x - \cos 12 x] dx \\
+= 
+\dfrac{1}{2}\int \cos (4 x) dx - \dfrac{1}{2}\int \cos (12 x) dx \\
+
+=  \dfrac {1} {2}\left[ \dfrac{-1}{4}{\sin4 x}
+ + \dfrac{1}{12}{\sin 12 x}\right]+ C</tex>
     <reason>
 \int \cos (a x)dx = \dfrac{\sin (a x)}{a}+ C
 \\ \text{where C is the constant of integration.}</reason>
