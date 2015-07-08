@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the integral of the function}\\
+\sin  x \cdot \sin 2 x \cdot \sin 3 x \,</tex>
+  </statement>
+  <step>
+    <context>\text{Are the following calculations and analysis correct?}
+
+</context>
+    <tex correct='true'> \text{Using trignometric identity,}\\
+
+\begin{align}
+
+\sin A \sin B &amp;= \dfrac{1}{2}[\cos (A-B) - \cos (A+B)] \\
+\implies \sin 2x \sin 3x  &amp;= 
+\dfrac{1}{2}[\cos x - \cos 5 x] \\
+\end{align}\\
+ 
+\text{So, } \sin x \cdot \sin 2x \cdot \sin 3 x \\
+\qquad \qquad = \dfrac{1}{2}[\sin x \cos x - \sin x \cos 5 x] \\
+\text{Using, }\sin A \sin B = \dfrac{1}{2}\left[ cos(A-B) - cos(A+B) \right]
+\\
+\qquad \qquad = \dfrac{1}{4} [ \sin 2 x + \sin 0 - \sin 6x +sin 4x] \\
+
+\therefore
+\int \sin  x \cdot \sin 2 x \cdot \sin 3 x \, dx \\
+\qquad \qquad = \int \dfrac{1}{4} [ \sin 2 x - \sin 6x +sin 4x] dx
+</tex>
+    <reason>\text{As, }
+\cos A \cos B = \dfrac{1}{2}[\cos (A+B) + \cos (A-B)]\\
+\text{and } \sin A \sin B = \dfrac{1}{2}\left[ cos(A-B) - cos(A+B) \right] \\
+\text{Check your calculations, if you got something}\\
+\text{else.}
+</reason>
+  </step>
+  <step>
+    <context>\text{Is the following evaluation of the integral}\\
+\int \dfrac{1}{4} [ \sin 2 x - \sin 6x +sin 4x] dx \quad
+\text{correct}?</context>
+    <tex correct='true'>\int \dfrac{1}{4} [ \sin 2 x - \sin 6x +sin 4x] dx \\
+= 
+\dfrac{1}{4}\int \sin (2 x) dx - \dfrac{1}{4}\int \sin (6 x) dx 
++  \dfrac{1}{4} \int sin(4 x) dx  \\
+
+=  \dfrac {1} {4}\left[ \dfrac{- 1}{2} {\cos 2 x} + \dfrac{1}{6}{\cos6 x} - \dfrac{1}{4}{\cos 4x}
+ \right]+ C</tex>
+    <reason>
+\int \sin (a x)dx = \dfrac{- \cos (a x)}{a}+ C \\
+\text{where C is the constant of integration.}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'> \dfrac {1} {4}\left[ \dfrac{1}{6}{\cos6 x} - \dfrac{1}{4}{\cos 4x} -
+ \dfrac{ 1}{2} {\cos 2 x}\right]+ C</tex>
+    <tex> \dfrac {1} {4}\left[ \dfrac{1}{6}{\cos6 x} + \dfrac{1}{4}{\cos 4x} -
+ \dfrac{ 1}{2} {\cos 2 x}\right]+ C</tex>
+    <tex> \dfrac {1} {4}[\cos6 x - \cos 4x - \cos 2 x ]+ C</tex>
+    <tex> \dfrac {1} {8}\left[ \dfrac{1}{6}{\cos6 x} - \dfrac{1}{4}{\cos 4x} -
+ \dfrac{ 1}{2} {\cos 2 x}\right]+ C</tex>
+  </choices>
+</question>

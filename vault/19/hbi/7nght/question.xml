@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the integral of the function}\\
+\sin 4 x \cdot \sin 8 x  \,</tex>
+  </statement>
+  <step>
+    <context>\text{Are the following calculations and analysis correct?}
+
+</context>
+    <tex correct='true'> \text{Using trignometric identity,}\\
+
+\begin{align}
+
+\sin A \sin B &amp;= \dfrac{1}{2}[\cos (A-B) - \cos (A+B)] \\
+\implies \sin 4 x \cdot \sin 8 x  &amp;= 
+\dfrac{1}{2}[\cos 4 x - \cos 12 x] \\
+\end{align}\\
+ 
+\therefore
+\int \sin 4 x \cdot \sin 8 x  \, dx 
+= \int \dfrac{1}{2}[\cos 4 x - \cos 12 x] dx
+</tex>
+    <reason>\text{Applied the trignometeric identity, }\\
+\sin A \sin B = \dfrac{1}{2}[\cos (A-B) - \cos (A+B)] \\
+\text{Check your calculations, if you got something}\\
+\text{else.}
+</reason>
+  </step>
+  <step>
+    <context>\text{Is the following evaluation of the integral}\\
+\int \dfrac{1}{2}[\cos 4 x - \cos 12 x] dx \quad
+\text{correct}?</context>
+    <tex correct='true'>\int \dfrac{1}{2}[\cos 4 x - \cos 12 x] dx \\
+= 
+\dfrac{1}{2}\int \cos (4 x) dx - \dfrac{1}{2}\int \cos (12 x) dx \\
+
+=  \dfrac {1} {2}\left[ \dfrac{1}{4}{\sin4 x}
+ - \dfrac{1}{12}{\sin 12 x}\right]+ C</tex>
+    <reason>
+\int \cos (a x)dx = \dfrac{\sin (a x)}{a}+ C
+\\ \text{where C is the constant of integration.}</reason>
+  </step>
+  <choices>
+    <tex> \dfrac {1} {2}\left[ \dfrac{1}{4}{\sin4 x}
+ + \dfrac{1}{12}{\sin 12 x}\right]+ C</tex>
+    <tex correct='true'> \dfrac {1} {2}\left[ \dfrac{1}{4}{\sin4 x}
+ - \dfrac{1}{12}{\sin 12 x}\right]+ C</tex>
+    <tex> \dfrac {1} {2}\left[ \dfrac{1}{4}{\sin4 x} 
+ - \dfrac{1}{12}{\sin 12 x}\right]</tex>
+    <tex> \dfrac {1} {2}\left[\sin4 x
+ - \sin 12 x \right]+ C</tex>
+  </choices>
+</question>

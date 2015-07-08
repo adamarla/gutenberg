@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the integral of the function}\\
+\sin^3 x \cos^3 x \\</tex>
+  </statement>
+  <step>
+    <context>\text{Are the following calculations and analysis correct?}
+
+</context>
+    <tex correct='true'> \text{Using trignometric identity,}\\
+
+\begin{align}
+
+\sin^2 x + \cos^2 x &amp;= 1 \\
+
+\implies \sin^3 x \cdot \cos^3 x &amp;= (1- \cos^2 x)\cdot \sin x \cdot \cos^3 x \\ 
+\text{Let } \cos x &amp;= t \text{ then, } -\sin x dx = dt \\
+\end{align}\\
+
+\begin{align}
+\implies  (1- \cos^2 x) \cdot \cos^3 x \cdot \sin x &amp;= -(1- t^2) t^3 \\
+&amp;= (t^2 -1) t^3  
+\end{align} \\
+
+ 
+
+\therefore
+\int \sin^3 x \cos^3 x dx 
+= \int (t^2 -1) t^3  dx</tex>
+    <reason>\text{Applied the trignometeric identity, }\\
+\sin^2 x + \cos^2 x = 1 
+\text{ and substituted } \cos x =t \\
+\text{Check your calculations, if you got something}\\
+\text{else.}
+</reason>
+  </step>
+  <step>
+    <context>\text{Is the following evaluation of the integral}\\
+= \int (t^2 -1) t^3  dx \quad
+\text{correct}?</context>
+    <tex correct='true'> \int (t^2 -1) t^3  dx \\
+= 
+\int t^5 dx - \int  t^3 dx \\
+= \dfrac{t^6}{6} - \dfrac{t^4}{4}+ C \\
+\text{Again substituting } t = \cos x \\
+= \dfrac{1}{6}\cos ^6 x - \dfrac {1} {4} \cos^4x + C \\
+\therefore 
+\int \sin^3 x \cos^3 x 
+= \dfrac{1}{6}\cos ^6 x - \dfrac {1} {4} \cos^4x + C
+</tex>
+    <reason>\int x^n dx = \dfrac{x^{n+1}}{n+1} +  C \\
+\text{ where C is the constant of integration.}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{1}{6}\cos ^6 x + \dfrac {1} {4} \cos^4x + C</tex>
+    <tex>\cos ^6 x - \cos^4x + C</tex>
+    <tex>\dfrac{1}{6}\cos ^6 x - \dfrac {1} {4} \cos^4x</tex>
+    <tex correct='true'>\dfrac{1}{6}\cos ^6 x - \dfrac {1} {4} \cos^4x + C</tex>
+  </choices>
+</question>
