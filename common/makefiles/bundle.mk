@@ -7,7 +7,7 @@ SHELL = /bin/bash
 bundle.xml : question.xml
 	if [ -e $@ ] ; then
 		if [ -e question.xml ] ; then
-			java -jar ~/Qquill-all.jar -b
+			java -jar ~/quill/Qquill-all.jar -b
 			touch $@
 		fi
 	fi

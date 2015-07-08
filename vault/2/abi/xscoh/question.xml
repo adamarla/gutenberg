@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If matrix A}=
+\left[\begin{array}{cc}
+ \alpha &amp; \beta \\ 
+ \gamma &amp; -\alpha\end{array} \right]
+\text{ is such that $A^2=I$}\\
+\text{where I is identity matrix, then what is the}\\
+\text{relationship between $\alpha$, $\beta$ and $\gamma$?}</tex>
+  </statement>
+  <step>
+    <context>\text{Does the expansion for $A^2=A\times A$ look}\\
+\text{like this?}</context>
+    <tex correct='true'>\left[\begin{array}{cc}
+\alpha &amp; \beta \\ 
+\gamma &amp; -\alpha\end{array} \right]^{2}=
+\left[\begin{array}{cc}
+\alpha &amp; \beta \\ 
+\gamma &amp; -\alpha\end{array} \right]\times
+\left[\begin{array}{cc}
+\alpha &amp; \beta \\ 
+\gamma &amp; -\alpha\end{array} \right]\\
+\qquad\qquad\qquad =
+\left[\begin{array}{cc}
+\alpha^2+\beta\gamma &amp; 0 \\ 
+0 &amp; \gamma\beta+\alpha^2\end{array} \right]
+
+</tex>
+    <tex>\left[\begin{array}{cc}
+\alpha &amp; \beta \\ 
+\gamma &amp; -\alpha\end{array} \right]^{2}=
+\left[\begin{array}{cc}
+\alpha &amp; \beta \\ 
+\gamma &amp; -\alpha\end{array} \right]\times
+\left[\begin{array}{cc}
+\alpha &amp; \beta \\ 
+\gamma &amp; -\alpha\end{array} \right]\\
+\qquad\qquad\quad\,\, =
+\left[\begin{array}{cc}
+\alpha^2+\beta^2 &amp; 0 \\ 
+\gamma^2 &amp; \alpha^2\end{array} \right]
+
+</tex>
+    <reason>\left[\begin{array}{cc}
+a &amp; b \\ 
+c &amp; d\end{array} \right]\times
+\left[\begin{array}{cc}
+e &amp; f \\ 
+g &amp; h\end{array} \right]=
+\left[\begin{array}{cc}
+ae+bg &amp; af+bh \\ 
+ce+dg &amp; cf+dh\end{array} \right]</reason>
+  </step>
+  <step>
+    <context>\text{If }
+\left[\begin{array}{cc}
+\alpha^2+\beta\gamma &amp; 0 \\ 
+0 &amp; \gamma\beta+\alpha^2\end{array} \right]=
+\left[\begin{array}{cc}
+1 &amp; 0 \\ 
+0 &amp; 1 \end{array} \right]\\
+\text{could we conclude this?}</context>
+    <tex correct='true'>\begin{align}
+               &amp;\alpha^2+\beta\gamma = 1 \\
+  \implies &amp;\alpha^2+\beta\gamma - 1 = 0
+\end{align}</tex>
+    <tex>\begin{align}
+               &amp;\alpha^2+\beta\gamma \times 1 = 0\\
+  \implies &amp;\alpha^2+\beta\gamma = 0
+\end{align}
+</tex>
+    <reason>\text{If two matrices are equal, their corresponding}\\
+\text{elements are equal.}</reason>
+  </step>
+  <choices>
+    <tex>1+\alpha ^2 + \beta\gamma=0</tex>
+    <tex>1 -\alpha ^2 + \beta\gamma=0</tex>
+    <tex correct='true'>1 -\alpha ^2 - \beta\gamma=0</tex>
+    <tex>1+\alpha ^2 - \beta\gamma=0</tex>
+  </choices>
+</question>
