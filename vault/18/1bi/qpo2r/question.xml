@@ -1,34 +1,61 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Check if function f(x)=5x-3 is continuous\\
-at x=0, x=-3 and at x=5.}
-
-\begin{align}
-\end{align}</tex>
+    <tex>\text{Check if the function } \\ 
+\qquad f(x)=5x-3  \\
+\text{is continuous at x=0, x=-3 and at x=5.}</tex>
   </statement>
   <step>
-    <context>\text{Is the following analysis correct?} </context>
-    <tex correct='true'>\lim_{x\to\ 0}f(x) =\lim_{x\to\ 0}(5x-3) = -3\\ 
-f(0)=-3\\
-\lim_{x\to\ -3}f(x) =\lim_{x\to\ -3}(5x-3) =-18\\
-f(-3)= -18\\
-\lim_{x\to\ 5}f(x) =\lim_{x\to\ 5}(5x-3)= 22\\
-f(5)= 22\\
-
-\therefore \text{f(x) is continuous at x=0,-3,5. }</tex>
-    <tex></tex>
-    <reason>\text{Since, limit of the f(x) at x=0,-3,5}\\
-\text{are equal to the value of f(x) at}\\
-\text{x=0,3,5.Hence, f(x) is continuous at}\\
-\text{above points.}</reason>
+    <context>\text{What is the condition for a function}\\
+\text{to be continuous at a point }x=a?</context>
+    <tex correct='true'>\text{For a function to be continuous at}\\
+\text{a point}\\
+\begin{align}
+    \lim_{x\to a^-}f(x) = 
+    \lim_{x\to a^+}f(x) = f(a)
+\end{align}</tex>
+    <tex>\text{For a function to be continuous at}\\
+\text{a point}\\
+\begin{align}
+    \lim_{x\to a^-}f(x) = 
+    \lim_{x\to a^+}f(x)
+\end{align}</tex>
+    <reason>\text{If a function is continuous at a point,}\\
+\text{then it can be drawn without lifting the}\\
+\text{pencil. But if }\lim_{x\to a^-}f(x)\neq\lim_{x\to a^+}f(x)\\
+\text{or }\lim_{x\to a}f(x) \neq f(a),\text{ then one will have}\\
+\text{to lift the pencil.}\implies\text{ discontinuity.}</reason>
+  </step>
+  <step>
+    <context>\text{Which of the following shows the}\\
+\text{correct results for }\lim_{x\to a^-}f(x),\lim_{x\to a^+}f(x)\text{ and }f(a)?</context>
+    <tex correct='true'>\begin{tabular}{c|c|c|c|c}
+x\to a&amp;\lim_{x\to a^-}f(x)&amp;\lim_{x\to a^+}f(x)&amp;f(a)&amp;\text{Continuous}\\
+\hline
+0&amp;-3&amp;-3&amp;-3&amp;\text{Yes}\\
+-3&amp;-18&amp;-18&amp;-18&amp;\text{Yes}\\
+5&amp;22&amp;22&amp;22&amp;\text{Yes}\\
+\hline
+\end{tabular}</tex>
+    <tex>\begin{tabular}{c|c|c|c|c}
+x\to a&amp;\lim_{x\to a^-}f(x)&amp;\lim_{x\to a^+}f(x)&amp;f(a)&amp;\text{Continuous}\\
+\hline
+0&amp;-3&amp;-3&amp;-3&amp;\text{Yes}\\
+-3&amp;-23&amp;-13&amp;-18&amp;\text{No}\\
+5&amp;22&amp;22&amp;22&amp;\text{Yes}\\
+\hline
+\end{tabular}</tex>
+    <reason>\text{If your calculations are correct, then}\\
+\text{you will find that }\lim_{x\to a^-}f(x)=\lim_{x\to a^+}f(x)=f(a)\\
+\text{for }x = 0,-3\text{ and }-5.\text{Moreover, }f(x)=5x-3\\
+\text{is a straight line. And straight lines are continuous.}</reason>
   </step>
   <choices>
-    <tex>\text{Continuous at x=0,-3 and\\
-discontiuous at x=5}</tex>
-    <tex correct='true'>\text{Continuous at x=0,-3,5}</tex>
-    <tex>\text{Continuous at x=0 and \\
-discontinuous at x=-3,5}</tex>
-    <tex>\text{Discontinuous at x=0,-3,5}</tex>
+    <tex>\text{Continuous at} x=0,-3. \\
+\text{Discontinuous at } x=5</tex>
+    <tex correct='true'>\text{Continuous at }x=0,-3,5</tex>
+    <tex>\text{Continuous at }x=0 \\
+\text{Discontinuous at } x=-3,5</tex>
+    <tex>\text{Discontinuous at }x=0,-3,5</tex>
   </choices>
 </question>
