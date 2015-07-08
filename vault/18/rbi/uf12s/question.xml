@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the following integral}
+
+\int \left(1 - x\right)\sqrt{x}.dx</tex>
+  </statement>
+  <step>
+    <context>\text{Is the calculation below correct?}</context>
+    <tex correct='true'>\begin{align}
+\int \left(1 - x\right)\sqrt{x}.dx &amp;= \int \left(\sqrt{x} - x \sqrt{x}\right) .dx \\
+									   &amp;= \int x^{\dfrac{1}{2}} - \int x^{\dfrac{3}{2}}\\
+									   &amp;= \dfrac{x^{\dfrac{3}{2}}}{\left(\dfrac{3}{2}\right)} - \dfrac{x^{\dfrac{5}{2}}}{\left(\dfrac{5}{2}\right)} +C \\
+									   &amp;= \dfrac{2}{3}.x^{\dfrac{3}{2}} - \dfrac{2}{5}. x^{\dfrac{5}{2}} +C\\
+\end{align}\\
+
+\text{Here, C is the constant of integration}</tex>
+    <reason>\text{Other than using the result of step 1, we have}\\
+\text{used the fact that }\int t^n .dt = \dfrac{t^{n+1}}{n+1}.\text{ Check your}\\
+\text{calculations you got something else.}
+</reason>
+  </step>
+  <choices>
+    <tex>\int \left(1 - x\right)\sqrt{x}.dx= \dfrac{3}{2}.x^{\dfrac{3}{2}} - \dfrac{5}{2}. x^{\dfrac{5}{2}} +C\\</tex>
+    <tex>\int \left(1 - x\right)\sqrt{x}.dx= \dfrac{2}{3}.x^{\dfrac{3}{2}} + \dfrac{2}{5}. x^{\dfrac{5}{2}} +C\\</tex>
+    <tex correct='true'>\int \left(1 - x\right)\sqrt{x}.dx= \dfrac{2}{3}.x^{\dfrac{3}{2}} - \dfrac{2}{5}. x^{\dfrac{5}{2}} +C\\</tex>
+    <tex>\int \left(1 - x\right)\sqrt{x}.dx= -\dfrac{2}{3}.x^{\dfrac{3}{2}} - \dfrac{2}{5}. x^{\dfrac{5}{2}} +C\\</tex>
+  </choices>
+</question>

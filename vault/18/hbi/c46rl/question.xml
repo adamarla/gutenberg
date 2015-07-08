@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the second order derivative of the }\\
+\text{function }\tan^{-1} x.</tex>
+  </statement>
+  <step>
+    <context>\text{What do you understand by the second}\\
+\text{order derivative of a function f(x)?}</context>
+    <tex correct='true'>\dfrac{d}{dx}\dfrac{d}{dx}f(x) = \dfrac{d^2f(x)}{dx^2}\\ </tex>
+    <tex>\Bigg(\dfrac{d}{dx}f(x)\Bigg)^2</tex>
+    <reason>\text{The second order derivative of a function}\\
+\text{is the derivative of derivative of that}\\
+\text{function.}</reason>
+  </step>
+  <step>
+    <context>\text{Is the following the correct way to }\\
+\text{find } \dfrac{d^2(f(x))}{dx^2}?\text{Where f(x) =}\tan^{-1} x.</context>
+    <tex correct='true'>\begin{align}
+\dfrac{d(f(x))}{dx} &amp;= \dfrac{d(\tan^{-1} x)}{dx}\\
+						&amp;=\dfrac{1}{1 + x^2} 
+\end{align}\\
+
+\begin{align}
+\dfrac{d^2(f (x))}{dx^2} &amp;= \dfrac{d(f^{\prime}(x))}{dx} = \dfrac{d(\dfrac{1}{1 + x^2})}{dx}\\
+						&amp;= \underbrace{\dfrac{\dfrac{d(1)}{dx}.(1+x^2)-\dfrac{d(1+x^2)}{dx}}{(1+x^2)^2}}_{Quotient Rule}\\
+						&amp;= -\dfrac{2x}{(1+x^2)^2}\\
+\end{align}\\
+
+</tex>
+    <reason>\text{Other than Quotient rule we have used the}\\
+\text{fact that } \dfrac{d(\tan ^{-1} x)}{dx} = \dfrac{1}{1+ x^2}\text{.Check your}\\
+\text{calculation if you got something else.}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{d^2(f(x))}{dx^2} = -\dfrac{2x}{(1+x^2)^2}</tex>
+    <tex>\dfrac{d^2(f(x))}{dx^2} = \dfrac{2x}{(1+x^2)^2}</tex>
+    <tex>\dfrac{d^2(f(x))}{dx^2} = -\dfrac{x}{(1+x^2)^2}</tex>
+    <tex>\dfrac{d^2(f(x))}{dx^2} = -\dfrac{2x}{(1+x^2)}</tex>
+  </choices>
+</question>

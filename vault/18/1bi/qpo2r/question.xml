@@ -8,65 +8,27 @@ at x=0, x=-3 and at x=5.}
 \end{align}</tex>
   </statement>
   <step>
-    <context>\text{Condition for continuity?}	 </context>
-    <tex correct='true'>\text{LHL = RHL = value of f(x) at x}</tex>
-    <tex>\text{LHL = RHL}</tex>
-    <reason>\text{It's necessary that \\
-Limit of f(x) at x = value of function at x}</reason>
-  </step>
-  <step>
-    <context>\text{value of f(x)=5x-3 at x=0,-3,5?}</context>
-    <tex correct='true'>\text{f(0) = -3\\
-\\
-f(-3) = -18\\ 
-\\
-f(5) = 22}</tex>
-    <tex>\text{f(0)= -3\\
-\\
-f(-3) = 12\\
-\\
-f(5) = 22}</tex>
-    <reason>\text{Just substitute the value of x in the f(x).}</reason>
-  </step>
-  <step>
-    <context>\text{value of LHL and RHL of f(x) at x=0,-3,5}</context>
-    <tex correct='true'>\text{LHL}\\                  
-\lim_{x\to\ 0^{-}}\text{f(x)} = -3\\            
-\lim_{x\to\ -3^{-}}\text{f(x)} = -18\\
-\lim_{x\to\ 5^{-}}\text{f(x)} = 22\\
-\\
+    <context>\text{Is the following analysis correct?} </context>
+    <tex correct='true'>\lim_{x\to\ 0}f(x) =\lim_{x\to\ 0}(5x-3) = -3\\ 
+f(0)=-3\\
+\lim_{x\to\ -3}f(x) =\lim_{x\to\ -3}(5x-3) =-18\\
+f(-3)= -18\\
+\lim_{x\to\ 5}f(x) =\lim_{x\to\ 5}(5x-3)= 22\\
+f(5)= 22\\
 
-\text{RHL}\\                  
-\lim_{x\to\ 0^{+}}\text{f(x)} = -3\\            
-\lim_{x\to\ -3^{+}}\text{f(x)} = -18\\
-\lim_{x\to\ 5^{+}}\text{f(x)} = 22\\</tex>
-    <tex>\text{LHL}\\                  
-\lim_{x\to\ 0^{-}}\text{f(x)} = -3\\            
-\lim_{x\to\ -3^{-}}\text{f(x)} = -18\\
-\lim_{x\to\ 5^{-}}\text{f(x)} = 22\\
-\\
-
-\text{RHL}\\                  
-\lim_{x\to\ 0^{+}}\text{f(x)} = -3\\            
-\lim_{x\to\ -3^{+}}\text{f(x)} = -12\\
-\lim_{x\to\ 5^{+}}\text{f(x)} = 22\\</tex>
-    <reason>\text{For calculating LHL substitute x with x-h}\\
-\text{For calculating RHL substitute x with x+h}\\
-\text{LHL=&gt;}\lim_{h\to\ 0}\text{f(x-h)}  \text{  RHL=&gt;}\lim_{h\to\ 0}\text{f(x+h)}\\
-
-
-
-
-
-
-</reason>
+\therefore \text{f(x) is continuous at x=0,-3,5. }</tex>
+    <tex></tex>
+    <reason>\text{Since, limit of the f(x) at x=0,-3,5}\\
+\text{are equal to the value of f(x) at}\\
+\text{x=0,3,5.Hence, f(x) is continuous at}\\
+\text{above points.}</reason>
   </step>
   <choices>
-    <tex>\text{continuous at x=0,-3 and\\
+    <tex>\text{Continuous at x=0,-3 and\\
 discontiuous at x=5}</tex>
-    <tex correct='true'>\text{continuous at x=0,-3,5}</tex>
-    <tex>\text{continuous at x=0 and \\
+    <tex correct='true'>\text{Continuous at x=0,-3,5}</tex>
+    <tex>\text{Continuous at x=0 and \\
 discontinuous at x=-3,5}</tex>
-    <tex>\text{discontinuous at x=0,-3,5}</tex>
+    <tex>\text{Discontinuous at x=0,-3,5}</tex>
   </choices>
 </question>

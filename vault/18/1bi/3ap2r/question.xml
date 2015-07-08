@@ -8,19 +8,16 @@
 \end{align}</tex>
   </statement>
   <step>
-    <context>\text{Condition for continuity?}	 </context>
-    <tex correct='true'>\text{LHL = RHL = value of f(x) at x}</tex>
-    <tex>\text{LHL = RHL}</tex>
-    <reason>\text{It's necessary that \\
-Limit of f(x) at x = value of function at x}</reason>
-  </step>
-  <step>
-    <context>\text{value of f(x)=2x^2-1 at x=3?}</context>
-    <tex correct='true'>\text{f(3) =17 \\
-}</tex>
-    <tex>\text{f(3)= 8\\
-}</tex>
-    <reason>\text{Just substitute the value of x in the f(x).}</reason>
+    <context>\text{Is the following analysis correct?}</context>
+    <tex correct='true'>               
+\lim_{x\to\ 3}f(x) =\lim_{x\to\ 3} 2x^2-1= 17\\            
+f(3)= 2(3)^2-1=17\\
+
+\therefore \text{f(x) is continuous at x=3.}</tex>
+    <tex></tex>
+    <reason>\text{Since the value of f(x) at x=3 is equal }\\
+\text{to the limit of f(x) at x=3.}
+\text{Hence,f(x) is continuous at x=3.}</reason>
   </step>
   <step>
     <context>\text{value of LHL and RHL of f(x) at x=3}</context>

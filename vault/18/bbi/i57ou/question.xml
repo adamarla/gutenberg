@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If x and y are connected parametricaly by the}\\
+\text{following equations, without eliminating the}\\
+\text{parameter ,Find }\frac{dy}{dx}\\
+
+x = \cos \theta -\cos 2\theta,  \quad y = \sin \theta -\sin 2\theta</tex>
+  </statement>
+  <step>
+    <context>\text{if $p = f(\theta)$ and $q = g(\theta)$ then,} \frac{dp}{dq}=</context>
+    <tex correct='true'>
+\frac{dp}{d\theta} = \frac{dp}{dq}.\frac{dq}{d\theta}\\
+\begin{align}
+\Rightarrow\frac{dp}{dq} &amp;= \frac{\dfrac{dp}{d\theta}}{\dfrac{dq}{d\theta}}\\
+ 		&amp;= \frac{f^{\prime}(\theta)}{g^{\prime}(\theta)}\\
+\end{align}	 	</tex>
+    <tex>\begin{align}
+\frac{dp}{dq} &amp;= \frac{\dfrac{dp}{dx}}{\dfrac{dq}{dx}}\\
+	
+\end{align}</tex>
+    <reason>\text{For calculating }\frac{dp}{dq}\text{we just divide}\\
+\frac{dp}{d\theta}\text{ by }\frac{dq}{d\theta}\text{ as p and q are function of \theta.}\\</reason>
+  </step>
+  <step>
+    <context>\text{Are the following calculatons correct?}</context>
+    <tex correct='true'>\begin{align}
+\frac{d(x)}{d\theta} &amp;= \frac{d(\cos \theta - cos 2\theta)}{d\theta}\\
+	&amp;=\frac{d(\cos \theta)}{d\theta}- \frac{d(\cos 2\theta)}{d\theta}\\
+	&amp;=- \sin \theta.\frac{d(\theta)}{d\theta} -(-\sin 2\theta).\frac{d(2\theta)}{d\theta}\\
+	&amp;=- \sin \theta + 2\sin 2\theta\\
+\end{align}</tex>
+    <reason>\text{Other than Chain Rule we have used the fact}\\
+\text{that }\frac{d(\cos \theta)}{d\theta} = -\sin \theta\text{ .Check your calculation}\\
+\text{if you got something else.}
+</reason>
+  </step>
+  <step>
+    <context>\text{Are the following calculations correct?}</context>
+    <tex correct='true'>\begin{align}
+\frac{d(x)}{d\theta} &amp;= \frac{d(\sin \theta - sin 2\theta)}{d\theta}\\
+	&amp;=\frac{d(\sin \theta)}{d\theta}- \frac{d(\sin 2\theta)}{d\theta}\\
+	&amp;=\cos \theta.\frac{d(\theta)}{d\theta} -\cos 2\theta.\frac{d(2\theta)}{d\theta}\\
+	&amp;= \cos \theta - 2\cos 2\theta\\
+\end{align}</tex>
+    <reason>\text{Other than Chain Rule we have used the fact}\\
+\text{that }\frac{d(\sin \theta)}{d\theta} = \cos \theta\text{ .Check your calculation}\\
+\text{if you got something else.}
+</reason>
+  </step>
+  <step>
+    <context>\text{Are the following calculations correct?}</context>
+    <tex correct='true'>\frac{dy}{dx} =\frac{ \dfrac{dy}{d\theta}}{\dfrac{dx}{d\theta}}\\
+\\
+\text{Substituting, }\dfrac{dx}{d\theta}\text{ and }\dfrac{dy}{d\theta}\text{ in the above equation}\\
+\begin{align}
+\frac{dy}{dx} &amp;=\frac{\cos \theta - 2\cos 2\theta}{- \sin \theta + 2\sin 2\theta}\\
+&amp;=\frac{\cos \theta - 2\cos 2\theta}{2\sin 2\theta- \sin \theta}
+\end{align}</tex>
+    <reason>\text{For calculating }\frac{dy}{dx}\text{we just divide}\\
+\frac{dy}{d\theta}\text{ by }\frac{dx}{d\theta}\text{(which we have calculated in}\\
+\text{the previous steps).}</reason>
+  </step>
+  <choices>
+    <tex>\frac{dy}{dx} 
+= \frac{\cos \theta - 2\cos 2\theta}{2\sin 2\theta- \sin \theta}</tex>
+    <tex correct='true'>\frac{dy}{dx} 
+= \frac{2\sin 2\theta- \sin \theta}{\cos \theta - 2\cos 2\theta}</tex>
+    <tex>\frac{dy}{dx} 
+= \frac{\cos \theta - 2\sin 2\theta}{2\cos 2\theta- \sin \theta}</tex>
+    <tex>\frac{dy}{dx} 
+=- \frac{\cos \theta - 2\cos 2\theta}{2\sin 2\theta- \sin \theta}</tex>
+  </choices>
+</question>

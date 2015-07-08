@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the second order derivative of the }\\
+\text{function }\log (\log x).</tex>
+  </statement>
+  <step>
+    <context>\text{What do you understand by the second}\\
+\text{order derivative of a function f(x)?}</context>
+    <tex correct='true'>\dfrac{d}{dx}\dfrac{d}{dx}f(x) = \dfrac{d^2f(x)}{dx^2}\\ </tex>
+    <tex>\Bigg(\dfrac{d}{dx}f(x)\Bigg)^2</tex>
+    <reason>\text{The second order derivative of a function}\\
+\text{is the derivative of derivative of that}\\
+\text{function.}</reason>
+  </step>
+  <step>
+    <context>\text{Is the following the correct way to }\\
+\text{find } \dfrac{d^2(f(x))}{dx^2}?\text{where f(x) = \log (\log x).}</context>
+    <tex correct='true'>\begin{align}
+\dfrac{d(f(x))}{dx} &amp;= \dfrac{d(\log (\log x))}{dx}\\
+						&amp;= \dfrac{1}{\log x}.\dfrac{d(\log x)}{dx}\\
+						&amp;=\dfrac{1}{x .\log x}\\ 
+\end{align}\\
+
+\begin{align}
+\dfrac{d^2(f(x))}{dx^2} &amp;= \dfrac{d\Bigg(\dfrac{1}{x .\log x}\Bigg)}{dx}\\
+						&amp;= \underbrace{\dfrac{\dfrac{d(1)}{dx}.d(x . \log x)  +\dfrac{d(x . \log x)}{dx}}{(x . \log x)^2}}_{Quotient Rule}\\
+						&amp;=-\dfrac{(1+\log x)}{(x \log x)^2}\\ 
+\end{align}\\
+</tex>
+    <reason>\text{Other than Quotient Rule we have used the fact}\\
+\text{that }\dfrac{d(\log x)}{dx} = \dfrac{1}{x}.\text{Check your calculation if you}\\
+\text{got something else}.</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{d^2(f(x))}{dx} = \dfrac{(1+\log x)}{(x \log x)^2}</tex>
+    <tex>\dfrac{d^2(f(x))}{dx} = -\dfrac{(1-\log x)}{(x \log x)^2}</tex>
+    <tex correct='true'>\dfrac{d^2(f(x))}{dx} = -\dfrac{(1+\log x)}{(x \log x)^2}</tex>
+    <tex>\dfrac{d^2(f(x))}{dx} = -\dfrac{(1+\log x)}{(x \log x)}</tex>
+  </choices>
+</question>

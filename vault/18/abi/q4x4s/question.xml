@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find}\frac{dy}{dx}\text{ of the following}\\
+
+x^2 + xy +y^2= 100</tex>
+  </statement>
+  <step>
+    <context>\text{If }f(x) = g(x) \,.\, h(x)\text{,then f^\prime}=</context>
+    <tex correct='true'>\frac{df(x)}{dx} = g^\prime h + gh^\prime </tex>
+    <tex>\frac{df(x)}{dx} = g^\prime h^\prime </tex>
+    <reason>\text{This is a standard formula.It is called Product}\\
+\text{Rule.Review it if you got this wrong.}\\</reason>
+  </step>
+  <step>
+    <context>\text{Are the following calculations correct?}</context>
+    <tex correct='true'>\text{After diffrentiating the equation we get}\\
+\frac{d(x^2 + xy + y^2}{dx}=\frac{d(100)}{dx}\\
+\Rightarrow 2x .  \frac{d(x)}{dx}+y .  \frac{d(x)}{dx}+x . \frac{d(y)}{dx}+2y \frac{d(y)}{dx}=0\\
+\Rightarrow 2x +y +x . \frac{dy}{dx}+2y . \frac{dy}{dx}  = 0\\
+
+\text{After rearranging, we get}\\
+\frac{dy}{dx} = -\frac{2x+y}{x+2y}\\</tex>
+    <reason>\text{We have used Chain Rule and Product Rule to}\\
+\text{solvethis problem.Check your calculations if you}\\
+\text{got something else.}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\frac{dy}{dx} = -\frac{2x+y}{x+2y}\\</tex>
+    <tex>\frac{dy}{dx} = \frac{2x+y}{x+2y}\\</tex>
+    <tex>\frac{dy}{dx} = -\frac{x+2y}{2x+y}\\</tex>
+    <tex>\frac{dy}{dx} = \frac{x-2y}{2x+y}\\</tex>
+  </choices>
+</question>

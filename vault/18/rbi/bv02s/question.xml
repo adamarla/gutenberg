@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the following integral?}
+
+\int \dfrac{x^3 + 3x + 4 }{\sqrt{x}}dx</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the following is the right way }\\
+\text{solving the problem}?</context>
+    <tex correct='true'>\begin{align}
+\int \dfrac{x^3 + 3x + 4 }{\sqrt{x}}dx &amp;= \int \left(\dfrac{x^3}{\sqrt{x}} + \dfrac{3x}{\sqrt{x}}+ \dfrac{4}{\sqrt{x}}\right)dx\\ 
+											   &amp;= \int\left( x^{\dfrac{5}{2}} +3x^{\dfrac{1}{2}} +4 x^{-\dfrac{1}{2}}\right).dx
+\end{align}
+</tex>
+    <tex>\begin{align}
+\int \dfrac{x^3 + 3x + 4 }{\sqrt {x}}dx &amp;=\dfrac{\int \left(x^3 + 3x + 4\right)dx}{\int \sqrt{x}  .dx}
+\end{align}
+</tex>
+    <reason>\text{In }\int \dfrac{P(x)}{Q(x)}\text{ integration cannot be distributed}\\
+\text{in numerator and denominator. }  </reason>
+  </step>
+  <step>
+    <context>\text{Is the calculation below correct?}</context>
+    <tex correct='true'>\text{Using step 1}\\
+
+\int \dfrac{x^3 + 3x + 4 }{\sqrt{x}}dx  = \int\left( x^{\dfrac{5}{2}} +3x^{\dfrac{1}{2}} +4 x^{-\dfrac{1}{2}}\right).dx\\
+												   \qquad\qquad= \dfrac{x^{\dfrac{5}{2}+1}}{\left(\dfrac{5}{2}+1\right)}+\dfrac{3x^{\dfrac{1}{2} + 1}}{\left(\dfrac{1}{2}+1\right)} +\dfrac{4 x^{-\dfrac{1}{2}+1}}{\left(-\dfrac{1}{2}+1\right)} \\
+										\qquad\qquad=\dfrac{2}{7}x^{\dfrac{7}{2}}+ 2 x^{\dfrac{3}{2}} + 8x^{\dfrac{1}{2}} + C\\
+										\qquad\qquad=\dfrac{2}{7}x^{\dfrac{7}{2}}+ 2 x^{\dfrac{3}{2}} + 8\sqrt{x} + C\\
+
+\text{Here, C is the constant of integration.}</tex>
+    <reason>\text{Other than using the result of step 1, we have}\\
+\text{used the fact that }\int t^n .dt = \dfrac{t^{n+1}}{n+1}.\text{ Check your}\\
+\text{calculations you got something else.}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\int \dfrac{x^3 + 3x + 4 }{\sqrt{x}}dx = \int\left( x^{\dfrac{5}{2}} +3x^{\dfrac{1}{2}} +4 x^{-\dfrac{1}{2}}\right).dx</tex>
+    <tex>\int \dfrac{x^3 + 3x + 4 }{\sqrt{x}}dx = -\int\left( x^{\dfrac{5}{2}} +3x^{\dfrac{1}{2}} +4 x^{-\dfrac{1}{2}}\right).dx</tex>
+    <tex>\int \dfrac{x^3 + 3x + 4 }{\sqrt{x}}dx = \int\left( x^{\dfrac{5}{2}} -3x^{\dfrac{1}{2}} +4 x^{-\dfrac{1}{2}}\right).dx</tex>
+    <tex>\int \dfrac{x^3 + 3x + 4 }{\sqrt{x}}dx = \int\left( x^{\dfrac{5}{2}} +3x^{\dfrac{1}{2}} -4 x^{-\dfrac{1}{2}}\right).dx</tex>
+  </choices>
+</question>

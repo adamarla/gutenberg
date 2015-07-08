@@ -11,7 +11,8 @@ where f is defined by}\\
        \end{cases}</tex>
   </statement>
   <step>
-    <context>\text{What is the condition for continuity?}</context>
+    <context>\text{What is the condition for continuity at}\\
+\text{ x = 1?}</context>
     <tex correct='true'>\begin{align}
 	\lim_{x\to 1^-}f(x) =\lim_{x\to 1^+}f(x) = f(1)
 \end{align}</tex>
@@ -29,7 +30,6 @@ equal to the value of f(x) at that point}</reason>
 \text{But we need to check for continuity \\
 at x=1,x=3.}
 </tex>
-    <tex></tex>
     <reason>\text{Since, at x=1 the definition of the\\
 function changes. So, x=1,3 is the only \\
 problem point.}\\
@@ -46,8 +46,6 @@ problem point.}\\
     f(3)=5\\
 
 \\ \therefore \text{f(x) is discontinuous at x=1 and x=3.}\\
-</tex>
-    <tex>
 </tex>
     <reason>\text{Since, f(x) is continuous at }x \neq 1,3\text{(step2)}\\
 \text{So,x=1,3 are the only points of discontinuity}\\</reason>
