@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find X and Y, if}\\
+X+Y = 
+\left[\begin{array}{cc}
+ 7 &amp; 0 \\ 
+ 2 &amp; 5 \end{array} \right] \text{ and} \\
+
+ X-Y = 
+\left[\begin{array}{cc}
+ 3 &amp; 0 \\ 
+ 0 &amp; 3 \end{array} \right]</tex>
+  </statement>
+  <step>
+    <context>\text{If $ A = [a_{ij}]_{m \times n}$ and } B = [b_{ij}]_{m \times n} 
+\text{ are any two matrices,}\\
+\text{then, are all the following conclusions correct?}
+</context>
+    <tex correct='true'>(i) \,\text{A and B have the same order.}\\
+(ii) \,\text{$A+B$ and $A-B $ are defined and the}\\
+\text{resultant matrices have order }m  \times n.\\
+</tex>
+    <tex>(i) \,\text{A and B have the same order.}\\
+(ii) \,\text{$A+B$ and $A-B  $ are defined and the}\\
+\text{resultant matrices have order }1\times 1.</tex>
+    <reason>\text{Only matrices having the {\bf same order} i.e.}\\
+\text{equal no. of rows (m) and equal no. of}\\
+\text{columns (n) can be added and the order}\\
+\text{of the resultant matrix is also m \times n.}</reason>
+  </step>
+  <step>
+    <context>\text{Are following caclulations and conclusion correct?}\\
+\text{Given, } X+Y =  
+\left[\begin{array}{cc}
+ 7 &amp; 0 \\ 
+ 2 &amp; 5 \end{array} \right]  
+
+ \text{ and } X-Y = 
+\left[\begin{array}{cc}
+ 3 &amp; 0 \\ 
+ 0 &amp; 3 \end{array} \right]</context>
+    <tex correct='true'>\begin{align}
+(X+Y) +(X-Y) &amp;= 
+\left[\begin{array}{cc}
+ 7+3 &amp; 0+0 \\ 
+ 2+0 &amp; 5+3 \end{array} \right]  
+\\
+
+\implies 2X
+ &amp;=
+
+\left[\begin{array}{cc}
+ 10 &amp; 0 \\ 
+ 2 &amp; 8 \end{array} \right] 
+ \end{align} \\
+
+ \therefore X = \dfrac{1}{2} \left[\begin{array}{cc}
+ 10 &amp; 0 \\ 
+ 2 &amp; 8 \end{array} \right] 
+
+ = 
+\left[\begin{array}{cc}
+ 5 &amp; 0 \\ 
+ 1 &amp; 4 \end{array} \right] 
+ 
+
+</tex>
+    <reason>P_{m \times n} + Q_{m \times n} = S_{m \times n} = [s_{ij}]_{m \times n}\text{ where,}\\
+s_{ij} = p_{ij} + q_{ij} \, (\forall \text{ possible ij values)}. \\
+\text{Also, if } X = [x_{ij}]_{\,m\times n} \text{ and k is a scalar then,}\\
+\text{kX is another matrix of order m\times n}\\
+\text{such that }
+kX = [k(x_{ij})]_{\,m\times n}</reason>
+  </step>
+  <step>
+    <context>\text{Are following caclulations and conclusion correct?}\\
+\text{Given, } X+Y =  
+\left[\begin{array}{cc}
+ 7 &amp; 0 \\ 
+ 2 &amp; 5 \end{array} \right]  
+
+ \text{ and } X= 
+ \left[\begin{array}{cc}
+ 5 &amp; 0 \\ 
+ 1 &amp; 4 \end{array} \right] 
+</context>
+    <tex correct='true'>\begin{align}
+(X + Y)- X 
+&amp;=
+\left[\begin{array}{cc}
+ 7-5 &amp; 0-0 \\ 
+ 2-1 &amp; 5-4 \end{array} \right]  \\
+
+ \implies
+
+
+ Y &amp;= 
+\left[\begin{array}{cc}
+ 2 &amp; 0 \\ 
+ 1 &amp; 1 \end{array} \right]
+ \\
+ \end{align} 
+
+
+</tex>
+    <reason>P_{m \times n}- Q_{m \times n} = D_{m \times n} = [d_{ij}]_{m \times n}\text{ where,}\\
+d_{ij} = p_{ij} - q_{ij} \, (\forall \text{ possible ij values)}. \\
+\text{Thus, corresponding elements are subtracted.}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>X = 
+\left[\begin{array}{cc}
+ 5 &amp; 0 \\ 
+ 1 &amp; 4 \end{array} \right] \text{ and } 
+
+ Y = 
+\left[\begin{array}{cc}
+ 2 &amp; 0 \\ 
+ 1 &amp; 1 \end{array} \right]</tex>
+    <tex>X = 
+\left[\begin{array}{cc}
+ 2 &amp; 0 \\ 
+ 1 &amp; 1 \end{array} \right] \text{ and }
+
+Y = 
+\left[\begin{array}{cc}
+ 5 &amp; 0 \\ 
+ 1 &amp; 4 \end{array} \right]
+</tex>
+    <tex>X = 
+\left[\begin{array}{cc}
+ 5 &amp; 0 \\ 
+ 1 &amp; 4 \end{array} \right] \text{ and } 
+
+ Y \text{ is not possible to find.}</tex>
+    <tex>\text{Not possible to find X and Y}</tex>
+  </choices>
+</question>

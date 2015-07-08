@@ -1,0 +1,161 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the values of x and y, if }\\
+x
+\left[\begin{array}{c}
+2 \\ 
+3 \end{array} \right] + 
+
+y
+\left[\begin{array}{r}
+ -1 \\ 
+ 1 \end{array} \right] 
+
+ = 
+ \left[\begin{array}{c}
+ 10 \\ 
+ 5 \end{array} \right]</tex>
+  </statement>
+  <step>
+    <context>\text{If $ A = [a_{ij}]_{m \times n}$ and } B = [b_{ij}]_{m \times n} 
+\text{ are any two matrices,}\\
+\text{then, are all the following conclusions correct?}
+</context>
+    <tex correct='true'>(i) \,\text{A and B have the same order.}\\
+(ii) \,\text{$A+B$ and $A-B $ are defined and the}\\
+\text{resultant matrices have order }m  \times n.\\
+</tex>
+    <tex>(i) \,\text{A and B have the same order.}\\
+(ii) \,\text{$A+B$ and $A-B  $ are defined and the}\\
+\text{resultant matrices have order }1\times 1.</tex>
+    <reason>\text{Only matrices having the {\bf same order} i.e.}\\
+\text{equal no. of rows (m) and equal no. of}\\
+\text{columns (n) can be added and the order}\\
+\text{of the resultant matrix is also m \times n.}</reason>
+  </step>
+  <step>
+    <context>\text{What is the result of the following matrix}\\
+\text{addition, }
+x
+\left[\begin{array}{c}
+2 \\ 
+3 \end{array} \right]_{2\times 1} + 
+
+y
+\left[\begin{array}{r}
+ -1 \\ 
+ 1 \end{array} \right]_{2\times 1}
+ ?</context>
+    <tex correct='true'> \begin{align}
+ x
+\left[\begin{array}{c}
+2 \\ 
+3 \end{array} \right]
+&amp;=
+\left[\begin{array}{c}
+2x\\ 
+ 3x
+ \end{array} \right] \\
+
+\text{and }
+y
+\left[\begin{array}{r}
+ -1 \\ 
+ 1 \end{array} \right]  
+ &amp;= 
+ \left[\begin{array}{r}
+ -y \\ 
+ y \end{array} \right]  \\
+
+ \implies 
+x
+\left[\begin{array}{c}
+2 \\ 
+3 \end{array} \right] + 
+
+y
+\left[\begin{array}{r}
+ -1 \\ 
+ 1 \end{array} \right]  
+ &amp;=
+ \left[\begin{array}{c}
+2x -y\\ 
+ 3x+y\end{array} \right]_{2\times 1} \\
+ 
+\end{align}</tex>
+    <tex> \begin{align}
+ x
+\left[\begin{array}{c}
+2 \\ 
+3 \end{array} \right]
+&amp;=
+\left[\begin{array}{c}
+2x\\ 
+ 3x
+ \end{array} \right] \\
+
+\text{and }
+y
+\left[\begin{array}{r}
+ -1 \\ 
+ 1 \end{array} \right]  
+ &amp;= 
+ \left[\begin{array}{r}
+ -y \\ 
+ y \end{array} \right]  \\
+
+ \implies 
+x
+\left[\begin{array}{c}
+2 \\ 
+3 \end{array} \right] + 
+
+y
+\left[\begin{array}{r}
+ -1 \\ 
+ 1 \end{array} \right]  
+ &amp;=
+ \left[\begin{array}{cc}
+2x &amp; -y\\ 
+ 3x &amp; y\end{array} \right]_{2\times 2} \\
+ 
+\end{align}</tex>
+    <reason>\text{If, } X = [x_{ij}]_{\,m\times n} \text{ and k is a scalar then,}\\
+\text{kX is another matrix of order m\times n}\\
+\text{such that }
+kX = [k(x_{ij})]_{\,m\times n} \\
+\text{Also }P_{m \times n}+ Q_{m \times n} = S_{m \times n} = [s_{ij}]_{m \times n}\text{ where,}\\
+s_{ij} = p_{ij} + q_{ij} \, (\forall \text{ possible ij values)}.
+
+</reason>
+  </step>
+  <step>
+    <context>\text{Is the following conclusion correct? Given,}\\
+  \ \left[\begin{array}{c}
+2x -y\\ 
+ 3x+y\end{array} \right]_{2\times 1}
+ =
+ \left[\begin{array}{c}
+ 10 \\ 
+ 5 \end{array} \right]</context>
+    <tex correct='true'>
+\begin{align}
+
+2x-y &amp;= 10 \\
+ 3x+y &amp;= 5\\
+
+ \therefore 
+ x=3 \text{ and }&amp; y=-4
+ 
+\end{align}</tex>
+    <reason>\text{For equality of two matrices, the }\\
+\text{corresponding elements must be equal.}</reason>
+  </step>
+  <choices>
+    <tex>x=3, y=4</tex>
+    <tex>\text{Not possible to find x and y.}</tex>
+    <tex>x = 3, y=1</tex>
+    <tex correct='true'>x=3, y=-4</tex>
+  </choices>
+</question>

@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If }
+F(x) = 
+\left[\begin{array}{ccc}
+ \cos x &amp; -\sin x &amp; 0 \\ 
+ \sin x &amp; \cos x &amp; 0 \\
+ 0 &amp; 0 &amp; 1 \end{array} \right]\\
+\text{then, }
+\text{show that } 
+F(x)F(y) = F(x+y)</tex>
+  </statement>
+  <step>
+    <context>\text{If }
+F(x) = 
+\left[\begin{array}{ccc}
+ \cos x &amp; -\sin x &amp; 0 \\ 
+ \sin x &amp; \cos x &amp; 0 \\
+ 0 &amp; 0 &amp; 1 \end{array} \right]_{3\times 3}
+\text{then,}\\
+\text{are the following calculations and conclusion correct?}\\</context>
+    <tex correct='true'> \begin{align}
+ F(x) \, F(y) = F(x) &amp;\times \left[\begin{array}{ccc}
+ \cos y &amp; -\sin y &amp; 0 \\ 
+ \sin y &amp; \cos y &amp; 0 \\
+ 0 &amp; 0 &amp; 1 \end{array} \right] \\
+ =\left[\begin{array}{ccc}
+ \cos x &amp; -\sin x &amp; 0 \\ 
+ \sin x &amp; \cos x &amp; 0 \\
+ 0 &amp; 0 &amp; 1 \end{array} \right]
+ &amp;\times 
+ \left[\begin{array}{ccc}
+ \cos y &amp; -\sin y &amp; 0 \\ 
+ \sin y &amp; \cos y &amp; 0 \\
+ 0 &amp; 0 &amp; 1 \end{array} \right] =
+ \end{align} \\
+  \left[\begin{array}{c}
+ \cos x \cos y - \sin x \sin y \; -\cos x \sin y - \sin x \cos y \; 0 \\ 
+ \sin x \cos y + \cos x \sin y \; -\sin x \sin y + \cos x \cos y \; 0 \\
+\quad \quad \quad 0 \qquad \qquad \quad \qquad \qquad \qquad 0 \; \; \qquad \qquad  1 \end{array} \right] \\
+ \text{Using }\cos(x+y) = \cos x \cos y - \sin x \sin y \\
+ \text{and }  \sin( x+y) =  \sin x \cos y + \cos x \sin y  \\
+  =
+   \left[\begin{array}{ccc}
+ \cos (x+y) &amp; -\sin(x+y) &amp; 0 \\ 
+ \sin( x+y) &amp; \cos(x+y) &amp; 0 \\
+ 0 &amp; 0 &amp; 1 \end{array} \right]_{3\times 3} \\
+
+
+= F(x+y) \\
+
+
+\therefore F(x) \; F(y) = F(x+y)</tex>
+    <reason>A_{m \times n} \times B_{n \times p} = C_{m \times p} = [c_{ik}]_{m \times p}\\
+ \text{where, } c_{ik}  = 
+\displaystyle \sum_{j=1}^{n}a_{ij}\;b_{jk}\\
+\text{For equality of two matrices, the corresponding}\\
+\text{elements must be equal.}
+
+</reason>
+  </step>
+</question>

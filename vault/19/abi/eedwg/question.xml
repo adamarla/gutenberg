@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{A manufacturer produces three}\\
+\text{products x, y and z ,which he sells in}\\
+\text{two markets. Annual Sales are}\\
+\text{indicated below:}\\
+\begin{tabular}{cccc}
+\text{Market} &amp; {} &amp;\text{Products}&amp;{}\\
+\hline 
+I &amp; 10,000 &amp;2,000 &amp;18,000 \\
+II &amp; 6,000 &amp; 20,000 &amp; 8,000 \\
+\end{tabular}\\
+
+\text{If unit sale prices of x, y and z are}\\
+\text{Rs 2.50, Rs 1.50 and Rs 1.00,}\\
+\text{respectively, find the total revenue in}\\
+\text{each market with the help of matrix}\\
+\text{algebra.}</tex>
+  </statement>
+  <step>
+    <context>\text{If quantity $q_{x}$ of x, $q_y $ of y and }q_z\text{ of z is}\\
+\text{sold at price $p_x \,, p_y$ and $p_z$ respectively then,}\\
+\text{is the following formula correct for calculating}\\
+\text{the total Revenue R ?}\\</context>
+    <tex correct='true'>R =
+(q_x \times p_x) + (q_y \times p_y) + (q_z \times p_z)
+</tex>
+    <tex>R =
+(q_x + q_y + q_z) \times (p_x + p_y + p_z)</tex>
+    <reason>\text{For n products,}\\
+\text{Total Revenue} = \displaystyle \sum_{i=1}^{n}(q_{i}\times p_{i})</reason>
+  </step>
+  <step>
+    <context>\text{If }R = Q \times P \text{ where, } $R_{2\times 1} \text{ is Revenue matrix,}\\
+Q_{2 \times 3} \text{ is Quantity matrix then, what is the order}\\
+\text{of the Price matrix P ?}</context>
+    <tex correct='true'>P \text{ is a column matrix of order } 3 \times 1</tex>
+    <tex>P \text{ is a row matrix of order } 1 \times 3</tex>
+    <reason>\text{For product } Q \times P \text{ to be defined,}\\
+\text{no. of columns in } Q=
+\text{no. of rows in }P\\
+</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Have the following matrices $Q_{2\times 3} $ and } P_{3\times 1}\\
+\text{been written correctly ?}</context>
+    <tex correct='true'>Q =
+\left[\begin{array}{ccc}
+ 10,000 &amp; 2,000 &amp; 18,000 \\ 
+6, 000 &amp; 20,000 &amp;8,000
+\end{array} \right] 
+\\
+
+P =
+\left[\begin{array}{c}
+ 2.50 \\ 
+1.50 \\
+ 1.00 \end{array} \right]</tex>
+    <reason>\text{A matrix of order } m \times n \text{ has m rows and n}\\
+\text{columns.}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{If total Revenue matrix }
+R = 
+\left[\begin{array}{c}
+r_1 \\ 
+r_2 
+\end{array} \right] = Q \times P \\
+\text{where $r_1$ and $ r_2$ are the total revenues in}\\
+\text{market I and market II respectively, then, is}\\
+\text{the following correct?}</context>
+    <tex correct='true'>\begin{align}
+r_1 &amp;= 10,000 \times 2.5 +2,000 \times 1.5 + 18,000 \times1 \\
+ &amp;= 46,000\\ 
+r_2 &amp;= 6,000 \times 2.5 +20,000 \times 1.5 + 8,000 \times1 \\
+ &amp;= 53,000\\ 
+\end{align}
+
+
+</tex>
+    <reason>A_{m \times n} \times B_{n \times p} = C_{m \times p} = [c_{ik}]_{m \times p}\\
+ \text{where, } c_{ik}  = 
+\displaystyle \sum_{j=1}^{n}a_{ij}\;b_{jk}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\text{Total Revenue in}\\
+\text{Market  I : Rs 46,000}\\
+\text{Market II : Rs 53,000}\\</tex>
+    <tex>\text{Total Revenue in}\\
+\text{Market  I : Rs 53,000}\\
+\text{Market II : Rs 46,000}\\</tex>
+    <tex>\text{Not possible to find}</tex>
+    <tex>\text{Total Revenue in}\\
+\text{Market  I : Rs 50,000}\\
+\text{Market II : Rs 53,000}\\</tex>
+  </choices>
+</question>

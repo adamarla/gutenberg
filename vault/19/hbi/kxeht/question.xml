@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the integral of the function}\\
+\cos 2 x \cdot \cos 4 x \cdot \cos 6 x \,</tex>
+  </statement>
+  <step>
+    <context>\text{Are the following calculations and analysis correct?}
+
+</context>
+    <tex correct='true'> \text{Using trignometric identity,}\\
+
+\begin{align}
+
+\cos x \cos y &amp;= \dfrac{1}{2}[\cos (x+y) + \cos (x-y)] \\
+\implies \cos 4x \cos 6x  &amp;= 
+\dfrac{1}{2}[\cos 10 x + \cos 2 x] \\
+\end{align}\\
+ 
+\text{So, } \cos 2 x \cdot \cos 4 x \cdot \cos 6 x \\
+\qquad \qquad = \dfrac{1}{2}[\cos 2x \cos 10 x + \cos 2 x \cos 2 x] \\
+
+
+\qquad \qquad = \dfrac{1}{4} [ \cos 12 x + \cos 8 x + 1 + \cos 4 x ] \\
+
+\therefore
+\int \cos 2 x \cdot \cos 4 x \cdot \cos 6 x  \, dx \\
+\qquad \qquad = \int \dfrac{1}{4} [ \cos 12 x + \cos 8 x + 1 + \cos 4 x ] dx
+</tex>
+    <reason>\text{Applied the trignometeric identity, }\\
+\cos x \cos y = \dfrac{1}{2}[\cos (x+y) + \cos (x-y)] \text{ twice.}\\
+\text{Check your calculations, if you got something}\\
+\text{else.}
+</reason>
+  </step>
+  <step>
+    <context>\text{Is the following evaluation of the integral}\\
+\int \dfrac{1}{4} [ \cos 12 x + \cos 8 x + 1 + \cos 4 x ] dx \quad
+\text{correct}?</context>
+    <tex correct='true'>\int \dfrac{1}{4} [ \cos 12 x + \cos 8 x + 1 + \cos 4 x ] dx \\
+= 
+\dfrac{1}{4}\int \cos (12 x) dx + \dfrac{1}{4}\int \cos (8 x) dx \\
++  \dfrac{1}{4} \int dx + \dfrac{1}{4} \int \cos (4 x) dx \\
+
+= \dfrac{\sin 12 x}{48} + \dfrac{\sin 4x}{32} +
+ \dfrac{ x}{4} + \dfrac{\sin 8 x}{16}+ C
+</tex>
+    <reason>
+\int \cos (a x)dx = \dfrac{\sin (a x)}{a}+ C</reason>
+  </step>
+  <choices>
+    <tex correct='true'>= \dfrac{\sin 12 x}{48} + \dfrac{\sin 4x}{32} +
+ \dfrac{ x}{4} + \dfrac{\sin 8 x}{16}+ C</tex>
+    <tex>= \dfrac{\sin 12 x}{48} + \dfrac{\sin 4x}{32} +
+ \dfrac{ x}{4} + \dfrac{\sin 8 x}{16}</tex>
+    <tex>= \dfrac{\sin 12 x}{48} - \dfrac{\sin 4x}{32} +
+ \dfrac{ x}{4} + \dfrac{\sin 8 x}{16}+ C</tex>
+    <tex>= \dfrac{\sin 12 x}{4} + \dfrac{\sin 4x}{4} +
+ \dfrac{ x}{4} + \dfrac{\sin 8 x}{4}+ C</tex>
+  </choices>
+</question>

@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the result of the following matrix addition}\\
+\left[\begin{array}{ccc}
+-1 &amp; 4 &amp; -6\\ 
+8 &amp; 5 &amp;16\\
+2 &amp; 8 &amp; 5 
+\end{array} \right] + 
+
+\left[\begin{array}{ccc}
+12 &amp; 7 &amp; 6\\ 
+8 &amp; 0 &amp; 5\\
+3 &amp; 2 &amp; 4
+\end{array} \right]</tex>
+  </statement>
+  <step>
+    <context>\text{Under what condition, the sum of two matrices}\\
+A_{m \times n} \text{ and } B_{p \times q}  \text{ is defined?}</context>
+    <tex correct='true'>\text{When both matrices have the same order i.e.}\\
+m = p \text{ and } n = q
+</tex>
+    <tex>\text{When both matrices have the same number}\\
+\text{of elements i.e. }\quad
+
+m \times n = p \times q
+</tex>
+    <reason>\text{Only matrices having the {\bf same order} i.e.}\\
+\text{equal no. of rows (m) and equal no. of}\\
+\text{columns (n) can be added.}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{If S = $A_{m \times n} + B_{ m \times n} $ then, what is the}\\
+\text{order of resultant matrix S?}
+</context>
+    <tex correct='true'>S \text{ has order m \times n}</tex>
+    <reason>A_{m \times n} + B_{m \times n} = S_{m \times n}\\
+\text{Thus, resultant matrix S has m rows and}\\
+\text{n columns.}</reason>
+  </step>
+  <step>
+    <context>\text{Find the result of the following matrix addition}\\
+\left[\begin{array}{ccc}
+-1 &amp; 4 &amp; -6\\ 
+8 &amp; 5 &amp;16\\
+2 &amp; 8 &amp; 5 
+\end{array} \right] + 
+
+\left[\begin{array}{ccc}
+12 &amp; 7 &amp; 6\\ 
+8 &amp; 0 &amp; 5\\
+3 &amp; 2 &amp; 4
+\end{array} \right]</context>
+    <tex correct='true'> = \left[\begin{array}{ccc}
+-1+12 &amp; 4+7 &amp; -6+6\\ 
+8+8 &amp; 5+0 &amp;16+5\\
+2+3 &amp; 8+2 &amp; 5+4 
+\end{array} \right]  \\=
+
+\left[\begin{array}{ccc}
+ 11 &amp; 11 &amp; 0 \\ 
+ 16 &amp; 5 &amp; 21 \\
+ 5 &amp; 10 &amp; 9 \end{array} \right]</tex>
+    <reason>A_{m \times n} + B_{m \times n} = S_{m \times n} = [s_{ij}]_{m \times n}\\
+\text{where } s_{ij} = a_{ij} + b_{ij} \, (\forall \text{ possible ij values}).\\
+\text{Therefore, corresponding elements are added.}</reason>
+  </step>
+  <choices>
+    <tex>\text{Not defined}</tex>
+    <tex correct='true'>\left[\begin{array}{ccc}
+ 11 &amp; 11 &amp; 0 \\ 
+ 16 &amp; 5 &amp; 21 \\
+ 5 &amp; 10 &amp; 9 \end{array} \right]</tex>
+    <tex>53</tex>
+    <tex>\left[\begin{array}{ccc}
+ 11 &amp; 16 &amp; 5 \\ 
+ 11 &amp; 5 &amp; 21 \\
+ 0 &amp; 10 &amp; 9 \end{array} \right]</tex>
+  </choices>
+</question>

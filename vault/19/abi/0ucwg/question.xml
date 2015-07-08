@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{A manufacturer produces three}\\
+\text{products x, y and z ,which he sells in}\\
+\text{two markets. Annual Sales are}\\
+\text{indicated below:}\\
+\begin{tabular}{cccc}
+\text{Market} &amp; {} &amp;\text{Products}&amp;{}\\
+\hline 
+I &amp; 10,000 &amp;2,000 &amp;18,000 \\
+II &amp; 6,000 &amp; 20,000 &amp; 8,000 \\
+\end{tabular}\\
+
+\text{If the unit costs of the above three}\\
+\text{commodities are Rs 2.00, Rs 1.00 and}\\
+\text{50 paise respectively.FInd the gross profit.}\\</tex>
+  </statement>
+  <step swipe='false'>
+    <context>\text{If SP is the Sellling Price, CP is the Cost}\\
+\text{Price of a product and Q is the quantity sold,}\\
+\text{then is the following formula correct for}\\
+\text{calculating the Gross Profit GP ?}\\</context>
+    <tex correct='true'>GP =
+Q\times (SP -  CP)
+</tex>
+    <reason>\text{For n products,}\\
+\text{Gross Profit} = \displaystyle \sum_{i=1}^{n} Q_{i} \times (SP_{i} - CP_{i})</reason>
+  </step>
+  <step>
+    <context>\text{If }G = Q \times M \text{ where, } $G_{2\times 1} \text{ is Gross Profit}\\
+\text{matrix and }Q_{2 \times 3} \text{ is Quantity matrix then, what}\\
+\text{is the order of Margin Difference matrix M ?}</context>
+    <tex correct='true'>M \text{ is a column matrix of order } 3 \times 1</tex>
+    <tex>M \text{ is a row matrix of order } 1 \times 3</tex>
+    <reason>\text{For product } Q \times M \text{ to be defined,}\\
+\text{no. of columns in } Q=
+\text{no. of rows in }M\\
+</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Have the following matrices $Q_{2\times 3} $ and } M_{3\times 1}\\
+\text{been written correctly ?}</context>
+    <tex correct='true'>Q =
+\left[\begin{array}{ccc}
+ 10,000 &amp; 2,000 &amp; 18,000 \\ 
+6, 000 &amp; 20,000 &amp;8,000
+\end{array} \right] 
+\\
+
+P =
+\left[\begin{array}{c}
+ 0.50 \\ 
+0.50 \\
+ 0.50 \end{array} \right]</tex>
+    <tex>Q =
+\left[\begin{array}{ccc}
+ 10,000 &amp; 2,000 &amp; 18,000 \\ 
+6, 000 &amp; 20,000 &amp;8,000
+\end{array} \right] 
+\\
+
+P =
+\left[\begin{array}{cc}
+ 2.50 \quad &amp;-2.00 \\ 
+1.50 \quad &amp;-1.00 \\
+1.00 \quad &amp;- 0.50 \end{array} \right]</tex>
+    <reason>\text{A matrix of order } m \times n \text{ has m rows and n}\\
+\text{columns.}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{If Gross profit matrix, }
+G = 
+\left[\begin{array}{c}
+g_1 \\ 
+g_2 
+\end{array} \right] = Q \times M \\
+\text{where $g_1$ and $ g_2$ are the gross profits in}\\
+\text{market I and market II respectively, then, is}\\
+\text{the following correct?}</context>
+    <tex correct='true'>\begin{align}
+g_1 &amp;= 10000 \times 0.5 +2000 \times 0.5 + 18000 \times 0.5 \\
+ &amp;= 15,000\\ 
+g_2 &amp;= 6000 \times 0.5 +20000 \times 0.5 + 8000 \times 0.5 \\
+ &amp;= 17,000\\ 
+\end{align}
+
+
+</tex>
+    <tex>
+
+
+</tex>
+    <reason>A_{m \times n} \times B_{n \times p} = C_{m \times p} = [c_{ik}]_{m \times p}\\
+ \text{where, } c_{ik}  = 
+\displaystyle \sum_{j=1}^{n}a_{ij}\;b_{jk}
+</reason>
+  </step>
+  <choices>
+    <tex>\text{Gross Profit in}\\
+\text{Market  I : Rs 16,000}\\
+\text{Market II : Rs 17,000}\\</tex>
+    <tex>\text{Gross Profit in}\\
+\text{Market  I : Rs 17,000}\\
+\text{Market II : Rs 15,000}\\</tex>
+    <tex correct='true'>\text{Gross Profit in}\\
+\text{Market  I : Rs 15,000}\\
+\text{Market II : Rs 17,000}\\</tex>
+    <tex>\text{Not possible to find}</tex>
+  </choices>
+</question>

@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the result of the following matrix addition}\\
+\left[\begin{array}{cc}
+{\cos}^2 x &amp; {\sin}^2 x \\ 
+ {\sin}^2 x  &amp; {\cos}^2 x 
+\end{array} \right] + 
+
+\left[\begin{array}{cc}
+ {\sin}^2 x  &amp; {\cos}^2 x \\
+{\cos}^2 x &amp; {\sin}^2 x 
+\end{array} \right]</tex>
+  </statement>
+  <step>
+    <context>\text{Under what condition, the sum of two matrices}\\
+A_{m \times n} \text{ and } B_{p \times q}  \text{ is defined?}</context>
+    <tex correct='true'>\text{When both matrices have the same order i.e.}\\
+m = p \text{ and } n = q
+</tex>
+    <tex>\text{When both matrices have the same number}\\
+\text{of elements i.e. }\quad
+
+m \times n = p \times q
+</tex>
+    <reason>\text{Only matrices having the {\bf same order} i.e.}\\
+\text{equal no. of rows (m) and equal no. of}\\
+\text{columns (n) can be added.}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{If S = $A_{m \times n} + B_{ m \times n} $ then, what is the}\\
+\text{order of resultant matrix S?}
+</context>
+    <tex correct='true'>S \text{ has order m \times n}</tex>
+    <reason>A_{m \times n} + B_{m \times n} = S_{m \times n}\\
+\text{Thus, resultant matrix S has m rows and}\\
+\text{n columns.}</reason>
+  </step>
+  <step>
+    <context>\text{Find the result of the following matrix addition}\\
+\left[\begin{array}{cc}
+{\cos}^2 x &amp; {\sin}^2 x \\ 
+ {\sin}^2 x  &amp; {\cos}^2 x 
+\end{array} \right] + 
+
+\left[\begin{array}{cc}
+ {\sin}^2 x  &amp; {\cos}^2 x \\
+{\cos}^2 x &amp; {\sin}^2 x 
+\end{array} \right] </context>
+    <tex correct='true'>\left[\begin{array}{cc}
+{\cos}^2 x + {\sin}^2 x  &amp; {\cos}^2 x + {\sin}^2 x \\ 
+ {\sin}^2 x  + {\cos}^2 x  &amp; {\cos}^2 x + {\sin}^2 x
+\end{array} \right] \\
+
+=
+
+\left[\begin{array}{cc}
+ 1  &amp; 1 \\
+1 &amp; 1 
+\end{array} \right] 
+
+(\text{Using identity, {\cos}^2 x + {\sin}^x = 1)
+</tex>
+    <tex>\left[\begin{array}{cc}
+{\cos}^2 x + {\cos}^2 x  &amp; {\sin}^2 x + {\sin}^2 x \\ 
+ {\sin}^2 x  + {\sin}^2 x  &amp; {\cos}^2 x + {\cos}^2 x
+\end{array} \right] \\
+ 
+ = 
+\left[\begin{array}{cc}
+2{\cos}^2 x &amp; 2{\sin}^2 x \\ 
+ 2{\sin}^2 x  &amp; 2{\cos}^2 x 
+\end{array} \right]</tex>
+    <reason>A_{m \times n} + B_{m \times n} = S_{m \times n} = [s_{ij}]_{m \times n}\\
+\text{where } s_{ij} = a_{ij} + b_{ij} \, (\forall \text{ possible ij values}).\\
+\text{Therefore, corresponding elements are added.}</reason>
+  </step>
+  <choices>
+    <tex>\left[\begin{array}{cc}
+2{\cos}^2 x &amp; 2{\sin}^2 x \\ 
+ 2{\sin}^2 x  &amp; 2{\cos}^2 x 
+\end{array} \right]</tex>
+    <tex>\text{Not defined}</tex>
+    <tex>4 ({\cos}^2 x +{\sin}^2 x) </tex>
+    <tex correct='true'>\left[\begin{array}{cc}
+1 &amp; 1 \\ 
+1 &amp; 1 
+\end{array} \right]</tex>
+  </choices>
+</question>

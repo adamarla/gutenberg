@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the values of x for which the following}\\
+\text{equation satisfies.}\\
+
+\left[\begin{array}{ccc}
+x &amp; -5 &amp; -1 \end{array} \right]
+
+\left[\begin{array}{ccc}
+1 &amp; 0 &amp; 2 \\ 
+0 &amp; 2 &amp; 1 \\
+2 &amp; 0 &amp; 3 \end{array} \right]
+
+\left[\begin{array}{c}
+x\\ 
+4 \\
+ 1 \end{array} \right]
+= O</tex>
+  </statement>
+  <step swipe='false'>
+    <context>\text{If A is of order } p \times q, \text{ B is of order } q \times r \text{ and C}\\
+\text{is of order }r \times s \text{ then, is the following true?}</context>
+    <tex correct='true'>(AB)\,C = A\,(BC)</tex>
+    <reason>\text{Matrix multiplication is}\textbf{ associative }\text{whenever}\\
+A\times B \text{ and $B \times C$ are defined.Therefore,}\\
+(AB)_{p \times r}\,C_{r \times s} = A_{p \times q}\,(BC)_{q \times s}= (ABC)_{p \times s}  
+</reason>
+  </step>
+  <step>
+    <context>\text{What is the product of the following matrix}\\
+\text{multiplication}\\
+\left[\begin{array}{ccc}
+x &amp; -5 &amp; -1 \end{array} \right]_{1 \times 3}
+\left[\begin{array}{ccc}
+1 &amp; 0 &amp; 2 \\ 
+0 &amp; 2 &amp; 1 \\
+2 &amp; 0 &amp; 3 \end{array} \right]_{3 \times 3}
+\text{?}
+</context>
+    <tex correct='true'>\left[\begin{array}{ccc}
+x-2 &amp; -10 &amp; 2x -5 -3
+\end{array} \right]_{1 \times 3}</tex>
+    <reason>A_{m \times n} \times B_{n \times p} = C_{m \times p} = [c_{ik}]_{m \times p}\\
+ \text{where, } c_{ik}  = 
+\displaystyle \sum_{j=1}^{n}a_{ij}\;b_{jk}
+</reason>
+  </step>
+  <step>
+    <context>\text{What is the product of the following}\\
+\left[\begin{array}{ccc}
+x-2 &amp; -10 &amp; 2x -5 -3
+\end{array} \right]_{1 \times 3}
+
+\left[\begin{array}{c}
+x\\ 
+4 \\
+ 1 \end{array} \right]_{3 \times 1}
+\text{ ?}
+</context>
+    <tex correct='true'>\left[\begin{array}{c}
+x^2 - 48
+\end{array} \right]_{1 \times 1}
+</tex>
+    <tex>\left[\begin{array}{ccc}
+x^2 - 2x  &amp; -40 &amp;2x-8
+\end{array} \right]_{1 \times 3}
+</tex>
+    <reason>A_{m \times n} \times B_{n \times p} = C_{m \times p} = [c_{ik}]_{m \times p}\\
+ \text{where, } c_{ik}  = 
+\displaystyle \sum_{j=1}^{n}a_{ij}\;b_{jk}
+</reason>
+  </step>
+  <step>
+    <context>\text{What does the following matrix equality imply}\\
+\left[\begin{array}{c}
+x^2 - 48 
+\end{array} \right]_{1 \times 1} = O
+\text{ ?}</context>
+    <tex correct='true'>\left[\begin{array}{c}
+x^2 - 48 
+\end{array} \right] =
+
+\left[\begin{array}{c}
+0
+\end{array} \right]\\
+
+
+x^2 - 48 = 0 \implies x = \pm 4 \sqrt{3}
+</tex>
+    <tex>\left[\begin{array}{cc}
+x^2 &amp;- 48 
+\end{array} \right] =
+
+\left[\begin{array}{cc}
+0 &amp;0
+\end{array} \right] \\
+
+
+\quad x^2 = 0 \quad \implies x =0</tex>
+    <reason>\text{For equality of two matrices the corresponding}\\
+\text{elements must be equal. Thus, O is the null}\\
+\text{matrix of order }1 \times 1.</reason>
+  </step>
+  <choices>
+    <tex>x = 4 \sqrt{3}</tex>
+    <tex>x = 4 \sqrt{3}</tex>
+    <tex>\text{Not possible to find}</tex>
+    <tex correct='true'>x = \pm 4 \sqrt{3}</tex>
+  </choices>
+</question>

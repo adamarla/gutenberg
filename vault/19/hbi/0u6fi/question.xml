@@ -1,0 +1,97 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Let A} = 
+\left[\begin{array}{cc}
+2 &amp; 4 \\ 
+3 &amp; 2 
+\end{array} \right]\, \text{ and } 
+B = 
+\left[\begin{array}{cc}
+1 &amp; 3 \\ 
+-2 &amp; 5 
+\end{array} \right]\\
+
+\text{Then, find BA.}</tex>
+  </statement>
+  <step>
+    <context>\text{Under what condition, the matrix}\\
+\text{multiplication }B_{m \times n} \times A_{p \times q}  \text{ is defined?}</context>
+    <tex correct='true'>\begin{align}
+\text{If no. of columns of } B &amp;= \text{no. of rows of A}\\
+\text{i.e. }n &amp;= p 
+\end{align}
+</tex>
+    <tex>\text{If order of B } = \text{order of A}\\
+\, \text{i.e. }m = p \text{ and }n = q
+</tex>
+    <reason>\text{For the product of two matrices to be defined,}\\
+\text{no. of columns of first matrix }= \\
+\text{no. of rows of second matrix}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{If } P = B_{m \times n} \times A_{ n \times p} \text{ then, what is the}\\
+\text{order of the product matrix P?}
+</context>
+    <tex correct='true'>P \text{ has order m \times p}</tex>
+    <tex>P \text{ has order n \times n}</tex>
+    <reason>B_{m \times n} \times A_{n \times p} = P_{m \times p}\\
+\text{having m rows and p columns.}</reason>
+  </step>
+  <step>
+    <context>\text{What is the product of the following matrix}\\
+\text{multiplication }
+\left[\begin{array}{cc}
+1 &amp; 3 \\ 
+-2 &amp; 5 
+\end{array} \right] \times
+\left[\begin{array}{cc}
+2 &amp; 4 \\ 
+3 &amp; 2 
+\end{array} \right]
+ ?</context>
+    <tex correct='true'>= 
+\left[\begin{array}{cc}
+ 2+9  &amp; 4+6 \\ 
+-4+15 &amp; -8+10 
+\end{array} \right]
+
+=
+\left[\begin{array}{cc}
+11 &amp; 10 \\
+ 11 &amp; 2
+\end{array} \right]</tex>
+    <tex>= 
+\left[\begin{array}{cc}
+1\times 2  &amp; 3 \times 4 \\ 
+-2 \times 3 &amp; 5 \times 2
+\end{array} \right]
+=
+\left[\begin{array}{cc}
+2 &amp; 12 \\
+ -6 &amp; 10
+\end{array} \right]</tex>
+    <reason>B_{m \times n} \times A_{n \times p} = C_{m \times p} = [c_{ik}]_{m \times p}\\
+ \text{where, } c_{ik}  = 
+\displaystyle \sum_{j=1}^{n}b_{ij}\;a_{jk}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>BA = 
+\left[\begin{array}{cc}
+11 &amp; 10 \\ 
+11 &amp; 2
+\end{array} \right]</tex>
+    <tex>\text{Not defined}</tex>
+    <tex>BA = 
+\left[\begin{array}{cc}
+11 &amp; 11 \\ 
+10 &amp; 2
+\end{array} \right]]</tex>
+    <tex>BA = 
+\left[\begin{array}{cc}
+11 &amp; 10 \\ 
+11 &amp; 10
+\end{array} \right]</tex>
+  </choices>
+</question>

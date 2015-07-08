@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the values of x for which the following}\\
+\text{equation satisfies.}\\
+
+\left[\begin{array}{ccc}
+1 &amp; 2 &amp; 1 \end{array} \right]
+
+\left[\begin{array}{ccc}
+1 &amp; 2 &amp; 0 \\ 
+2 &amp; 0 &amp; 1 \\
+1 &amp; 0 &amp; 2 \end{array} \right]
+
+\left[\begin{array}{c}
+ 0\\ 
+2 \\
+ x \end{array} \right]
+= O</tex>
+  </statement>
+  <step swipe='false'>
+    <context>\text{If A is of order } p \times q, \text{ B is of order } q \times r \text{ and C}\\
+\text{is of order }r \times s \text{ then, is the following true?}</context>
+    <tex correct='true'>(AB)\,C = A\,(BC)</tex>
+    <reason>\text{Matrix multiplication is}\textbf{ associative }\text{whenever}\\
+A\times B \text{ and $B \times C$ are defined.Therefore,}\\
+(AB)_{p \times r}\,C_{r \times s} = A_{p \times q}\,(BC)_{q \times s}= (ABC)_{p \times s}  
+</reason>
+  </step>
+  <step>
+    <context>\text{What is the product of the following matrix}\\
+\text{multiplication}
+\left[\begin{array}{ccc}
+1 &amp; 2 &amp; 1 \end{array} \right]_{1 \times 3}
+
+\left[\begin{array}{ccc}
+1 &amp; 2 &amp; 0 \\ 
+2 &amp; 0 &amp; 1 \\
+1 &amp; 0 &amp; 2 \end{array} \right]_{3 \times 3}
+\text{?}
+</context>
+    <tex correct='true'>\left[\begin{array}{ccc}
+6 &amp; 2 &amp;4
+\end{array} \right]_{1 \times 3}</tex>
+    <tex>\left[\begin{array}{ccc}
+1 &amp; 4 &amp; 0 \\ 
+2 &amp; 0 &amp; 1 \\
+1 &amp; 0 &amp; 2 \end{array} \right]_{3 \times 3}</tex>
+    <reason>A_{m \times n} \times B_{n \times p} = C_{m \times p} = [c_{ik}]_{m \times p}\\
+ \text{where, } c_{ik}  = 
+\displaystyle \sum_{j=1}^{n}a_{ij}\;b_{jk}
+</reason>
+  </step>
+  <step>
+    <context>\text{What is the product of the following matrix}\\
+\text{multiplication}
+\left[\begin{array}{ccc}
+6 &amp; 2 &amp;4
+\end{array} \right]_{1 \times 3}
+
+\left[\begin{array}{ccc}
+ 0\\ 
+2 \\
+ x \end{array} \right]_{3 \times 1} 
+\text{ ?} 
+</context>
+    <tex correct='true'>\left[\begin{array}{c}
+0 + 4 + 4x 
+\end{array} \right]_{1 \times 1}
+</tex>
+    <tex>\left[\begin{array}{ccc}
+0  &amp;4 &amp;4x 
+\end{array} \right]_{1 \times 3}
+</tex>
+    <reason>A_{m \times n} \times B_{n \times p} = C_{m \times p} = [c_{ik}]_{m \times p}\\
+ \text{where, } c_{ik}  = 
+\displaystyle \sum_{j=1}^{n}a_{ij}\;b_{jk}
+</reason>
+  </step>
+  <step>
+    <context>\text{What does the following matrix equality imply}\\
+\left[\begin{array}{c}
+0 + 4 + 4x 
+\end{array} \right]_{1 \times 1} = O
+\text{ ?}</context>
+    <tex correct='true'>\left[\begin{array}{c}
+4 + 4x
+\end{array} \right] =
+
+\left[\begin{array}{c}
+0
+\end{array} \right]\\
+
+4 + 4 x = 0 \implies x = -4
+</tex>
+    <tex>\left[\begin{array}{cc}
+4 &amp;4x
+\end{array} \right] =
+
+\left[\begin{array}{cc}
+0 &amp;0
+\end{array} \right]\\
+\quad 4x = 0 \quad \implies x =0</tex>
+    <reason>\text{For equality of two matrices the corresponding}\\
+\text{elements must be equal. Thus, O is the null}\\
+\text{matrix of order }1 \times 1.</reason>
+  </step>
+  <choices>
+    <tex>x = 1</tex>
+    <tex correct='true'>x = -1</tex>
+    <tex>x = -1, \, 1</tex>
+    <tex>x = 0, \, -1</tex>
+  </choices>
+</question>
