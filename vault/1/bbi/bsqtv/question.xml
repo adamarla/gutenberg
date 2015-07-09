@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+		<tex>
+			\text{For the curve }y=4x^3-2x^5, \text{ find all the points}\\
+			\text{at which the tangent passes through the origin.}
+		</tex>
+	</statement>
+		<step>
+			<context>
+			\text{Which of the following would be}\\
+			\text{true of the required tangents?}
+			</context>
+			<tex correct="true">
+			\begin{align}
+			  \dfrac{y-0}{x-0}&amp;= m = \dfrac{dy}{dx} \\
+			  \implies\dfrac{y}{x}&amp;= \dfrac{dy}{dx}
+			\end{align}
+			</tex>
+			<tex correct="false">
+			\begin{align}
+			  \dfrac{dy}{dx}&amp;= 0 
+			\end{align}
+			</tex>
+			<reason>
+			\text{If the tangents pass through the origin,}\\
+			\text{then they must satisfy }\frac{y-0}{x-0}=m.\text{ And, what}\\
+			\text{is }m=?.\text{ It is the slope of the tangent} = \frac{dy}{dx}.
+			</reason>
+		</step>
+		
+			<step>
+				<context>
+				\text{Are the following calculations and}\\
+				\text{analysis correct?}
+				</context>
+				<tex correct="true">
+				\begin{align}
+				  \dfrac{y}{x}&amp;= \dfrac{dy}{dx} = \dfrac{d}{dx}(4x^3-2x^5)\\
+				  &amp;= 12x^2-10x^4 \\
+				  \implies \dfrac{4x^3-2x^5}{x}&amp;= 12x^2 - 10x^4 \\
+				  \implies 4x^3-2x^5 &amp;= 12x^3 - 10x^5\\
+				  \implies 8x^3\cdot(x^2-1) &amp;= 0 \text{ or }x=0,\pm 1
+				\end{align} \\
+				\text{The required points, therefore, are}\\
+				\begin{tabular}{ccc}
+				x&amp; y=4x^3-2x^5&amp;(x,y) \\
+				\hline
+				0&amp;0 &amp;(0,0)\\
+				1&amp;2&amp;(1,2)\\
+				-1&amp;-2&amp;(-1,-2)\\
+				\hline
+				\end{tabular}
+				</tex>
+				<tex correct="false">
+				\begin{align}
+				  \dfrac{y}{x}&amp;= \dfrac{dy}{dx} = \dfrac{d}{dx}(4x^3-2x^5)\\
+				  &amp;= 12x^2-10x^4 \\
+				  \implies \dfrac{4x^3-2x^5}{x}&amp;= 12x^2 - 10x^4 \\
+				  \implies\dfrac{2x^3\cdot(2-x^2)}{x}&amp;= 2x^2\cdot(6-5x^2) \\
+				  \implies 2-x^2&amp;= 6-5x^2\text{ or }4x^2 = 4 \\
+				  \implies x^2 &amp;= 1\text{ or }x=\pm 1
+				\end{align} \\
+				\text{The required points, therefore, are}\\
+				\begin{tabular}{ccc}
+				x&amp; y=4x^3-2x^5&amp;(x,y) \\
+				\hline
+				1&amp;2&amp;(1,2)\\
+				-1&amp;-2&amp;(-1,-2)\\
+				\hline
+				\end{tabular}
+				</tex>
+				<reason>
+				\text{Did you do the following?}\\
+				\frac{4x^3-2x^5}{x}=\frac{2x^3\cdot(2-x^2)}{x} = 2x^2\cdot(2-x^2)\\
+				\text{If yes, then know that, }\frac{x^n}{x}=x^{n-1}\text{ only if }x\neq 0.\\
+				\text{Division by zero is not defined.}
+				</reason>
+			</step>
+			
+				<choices>
+					<tex>(1,2), (-1,-2)</tex>
+					<tex correct='true'>(0,0),(-1,-2),(1,2)</tex>
+					<tex>(0,0)</tex>
+					<tex>(0,0),(1,2)</tex>
+				</choices>
+</question>

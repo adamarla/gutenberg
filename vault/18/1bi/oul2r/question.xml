@@ -1,37 +1,55 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Prove that the function f(x)=x^n is \\
-continuous at x=n.Where n is a positive \\
-integer.}</tex>
+    <tex>\text{Prove that the function }\\
+\qquad f(x) = x^n \text{ is continuous at }x=n,\\
+\text{ where n is a positive integer.}</tex>
   </statement>
   <step>
     <context>\text{What is the question asking you to prove?}</context>
-    <tex correct='true'>
-          f(x) = x^{1}\text{ is continuous at x=1}\\
-          f(x) = x^{1001}\text{ is continuous at x=1001}\\
-          f(x) = x^{73}\text{ is continuous at x=73}\\	
+    <tex correct='true'>\begin{tabular}{c|c}\\
+\text{Prove that }f(x) = \ldots&amp;\ldots\text{ is continuous at }\\
+\hline
+x^{3}&amp;x=3 \\
+x^{76}&amp;x=76\\
+x^{973}&amp;x=973\\
+\hline
+\end{tabular}
 </tex>
-    <tex>
-          f(x) = x^{23}\text{ is continuous at x=23}\\
-          f(x) = x^{-99999}\text{ is continuous at x=-99999}\\
-          f(x) = x^{-733}\text{ is continuous at x=-733}\\	
-</tex>
-    <reason>\text{Read the questions carefully. It's clearly\\
-written that n is a positive integer.}</reason>
+    <tex>\begin{tabular}{c|c}\\
+\text{Prove that }f(x) = \ldots&amp;\ldots\text{ is continuous at }\\
+\hline
+x^{\frac{1}{3}}&amp;x=\frac{1}{3}\\
+x^{-76}=\dfrac{1}{x^{76}}&amp;x=-76\\
+x^{-\frac{1}{2}}=\dfrac{1}{\sqrt{x}}&amp;x=-\frac{1}{2}\\
+\hline
+\end{tabular}</tex>
+    <reason>\text{The question is only asking about}\\
+n\in\mathbb{Z}^+,\text{ that is, positive integers.}\\
+\text{So, why bother with anything else?}</reason>
   </step>
   <step swipe='false'>
-    <context>\text{Is the following analysis correct?}</context>
+    <context>\text{For a function }f(x)\text{ to be continuous}\\
+\text{at }x = a,\text{ what must be true?}</context>
+    <tex correct='true'>\lim_{x\to a^-}f(x) = \lim_{x\to a^+}f(x) = f(a).</tex>
+    <tex>\lim_{x\to a^-}f(x) = \lim_{x\to a^+}f(x).</tex>
+    <reason>\text{If a function is continuous at }x =a,\text{ then}\\
+\text{it can be drawn through }x=a\text{ without lifting}\\
+\text{the pencil. But if }\lim_{x\to a^-}f(x)\neq\lim_{x\to a^+}f(x)\\
+\text{ or }\lim_{x\to a}f(x)\neq f(a), \text{ then the pencil will}\\
+\text{have to be lifted}\implies \text{discontinuity.}</reason>
+  </step>
+  <step>
+    <context>\text{Is the following true for }f(x) = x^n\\
+\text{at }x=n, n\in\mathbb{Z}^+?</context>
     <tex correct='true'>\begin{align}
-    \lim_{x\to n}f(x) &amp;= \lim_{x\to n} (x^n)  = n^n\\
-  
+\lim_{x\to n^-}x^n &amp;= n^n \\
+\lim_{x\to n^+}x^n &amp;= n^n \\
+f(n) &amp;= n^n\\
 \end{align}\\
-  f(n) = (n)^n = n^n\\	
-\therefore\text{the function f(x) is continuous at x=n.}</tex>
-    <tex></tex>
-    <reason>\text{Since, the function f(x) is not changing \\
-at x=n, for the function to be continuous at \\
-x=n, the limit at x should be equal to the\\
-value of function at x=n}</reason>
+\text{And therefore, }f(x) = x^n\text{ is continous}\\
+\text{at }x=n, n\in\mathbb{Z}^+.</tex>
+    <reason>\text{We have simply applied the condition}\\
+\text{for continuity from Step 2.}</reason>
   </step>
 </question>
