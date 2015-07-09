@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the second order derivative of the }\\
+\text{function }x^{20}.</tex>
+  </statement>
+  <step>
+    <context>\text{Is the following correct way to}\\ 
+\text{find  } \dfrac {d^2(f(x))}{dx^2}? \text{ where f(x) = x^{20}.</context>
+    <tex correct='true'>
+\text{First, finding the first order derivative}\\
+\begin{align}
+\dfrac{d(f(x))}{dx} &amp;= \dfrac{d(x^{20})}{dx}\\
+	&amp;= 20 . x^{19}\\
+\end{align}\\
+\text{Now, finding the second order derivative}\\
+\begin{align}
+\dfrac{d^2(f (x))}{dx^2} &amp;= \dfrac{d(f^{\prime}(x))}{dx}\\
+	&amp;= \dfrac{d(20 . X^{19})}{dx}\\
+	&amp;=380 . x^{18}
+\end{align}</tex>
+    <reason>\text{We have just used the Chain Rule of diffrentiation.}\\
+\text{Check your calculations if you got something else.}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{d^2y}{dx^2} = 20 . x^{18}</tex>
+    <tex correct='true'>\dfrac{d^2y}{dx^2} = 380 . x^{18} </tex>
+    <tex>\dfrac{d^2y}{dx^2} =- 20 . x^{19}</tex>
+    <tex>\dfrac{dy^2}{dx^2} = 380 . x^{19} </tex>
+  </choices>
+</question>
