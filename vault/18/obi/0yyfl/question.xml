@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find an anti derivative (or integral) of the}\\
+	\text{following function by the method of inspection.}\\
+	
+	 e^{2x}</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the below function has the derivative}\\
+\text{as }e^{nx}\text{, where }n \in \mathbb{R}</context>
+    <tex correct='true'>\dfrac{e^{nx}}{n}</tex>
+    <tex>e^{nx}</tex>
+    <reason>\text{We have used Chain Rule and the fact }\\
+\text{that }\dfrac{d \left(e^{t}\right)}{dt} = e^{t}.\text{Check your calculations}\\
+\text{if you got this wrong.}</reason>
+  </step>
+  <step>
+    <context>\text{Is the analysis below correct?}</context>
+    <tex correct='true'>\text{Since , }\\
+\begin{align}
+\dfrac{d \left(e^{2x}\right)}{dx} &amp;= 2 e^{2x}\\
+\Rightarrow e^{2x} &amp;= \dfrac{1}{2}.\dfrac{d}{dx}\left(e^{2x}\right)
+\end{align}\\
+\therefore \text{anti derivative or integral of }e^{2x} \text{ is} \dfrac{e^{2x}}{2}\\
+</tex>
+    <reason>\text{We have used the result of step 1. Review it if}\\
+\text{you got something else. }\\</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\int e^{2x} .dx = \dfrac{e^{2x}}{2}</tex>
+    <tex>\int e^{2x} .dx = \dfrac{\log \left(2x\right)}{2}</tex>
+    <tex>\int e^{2x} .dx = 2e^{2x}</tex>
+    <tex>\int e^{2x} .dx = -\dfrac{e^{2x}}{2}</tex>
+  </choices>
+</question>

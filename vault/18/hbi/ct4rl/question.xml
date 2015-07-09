@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the second order derivative of the }\\
+\text{function } x^3 \, \log x.</tex>
+  </statement>
+  <step>
+    <context>\text{Is the following the correct way to }\\
+\text{find } \dfrac{d^2{f(x)}}{dx^2}\text{ where $f(x) = x^3 \log x$}?</context>
+    <tex correct='true'>
+\text{First, finding the first order derivative}\\
+\begin{align}
+\dfrac{d(f(x))}{dx} &amp;= \dfrac{d(x^3 \log x }{dx}\\
+	&amp;= \dfrac{d(x^3)}{dx}. \log x + x^3 . \dfrac{d(\log x)}{dx}\\
+	&amp;= 3x^2 . \log x + x^3 . \dfrac{1}{x}\\
+	&amp;= 3x^2 . \log x + x^2
+\end{align}\\
+\text{Now, finding the second order derivative}\\
+\begin{align}
+\dfrac{d^2(f (x))}{dx^2} &amp;= \dfrac{d(f^{\prime}(x))}{dx}= \dfrac{d(3x^2 . \log x + x^2)}{dx}\\
+	&amp;= \dfrac{d(3x^2)}{dx} . \log x + 3x^2 .  \dfrac{d{(\log x)}}{dx} +  \dfrac{d(x^2)}{dx}\\
+	&amp;= 6 x . \log x + 3 x + 2x\\
+	&amp;= x(5 + 6 \log x)\\
+\end{align}</tex>
+    <reason></reason>
+  </step>
+  <choices>
+    <tex>\dfrac{d^2y}{dx^2} = x(5\log x + 6 )</tex>
+    <tex>\dfrac{d^2y}{dx^2} = x(8 + 6 \log x)</tex>
+    <tex>\dfrac{d^2y}{dx^2} = - x(5 + 5 \log x)</tex>
+    <tex correct='true'>\dfrac{d^2y}{dx^2} = x(5 + 6 \log x)</tex>
+  </choices>
+</question>

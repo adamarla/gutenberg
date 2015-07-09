@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Examine the continuity of }\\
+ f(x)=\frac{x^2-25}{x+5},x\neq -5</tex>
+  </statement>
+  <step>
+    <context>\text{Is the following analysis correct?}</context>
+    <tex correct='true'>f(c) = \frac{c^2-25}{c+5}\\               
+\lim_{x\to c}f(x) =\lim_{x\to c}\frac{X^2-25}{x+5} =\frac{c^2-25}{c+5}\\            
+\text{Where c is any real number.}\\
+\therefore \text{f(x) is continuous at x=c}</tex>
+    <tex></tex>
+    <reason>\text{Since the value of f(x) at x=c is equal }\\
+\text{to the limit of f(x) at x=c.}\\
+\text{Hence,f(x) is continuous for all real numbers.}</reason>
+  </step>
+  <choices>
+    <tex>\text{f(x) is continuous everywhere in its domain.}</tex>
+    <tex correct='true'>\text{f(x) is continuous everywhere in its domain.}	</tex>
+    <tex>\text{f(x) is continuous x=5}</tex>
+    <tex>\text{f(x) is discontinuous everywhere in its}\\ 
+\text{domain except at x=5.}</tex>
+  </choices>
+</question>

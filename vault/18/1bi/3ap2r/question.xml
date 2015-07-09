@@ -1,46 +1,36 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Examine the continuity of the\\
- f(x)=2x^2-1 at x=3}
-
-\begin{align}
-\end{align}</tex>
+    <tex>\text{Examine the continuity of }\\
+\qquad f(x) = 2x^2 -1 \text{ at } x = 3.</tex>
   </statement>
   <step>
-    <context>\text{Condition for continuity?}	 </context>
-    <tex correct='true'>\text{LHL = RHL = value of f(x) at x}</tex>
-    <tex>\text{LHL = RHL}</tex>
-    <reason>\text{It's necessary that \\
-Limit of f(x) at x = value of function at x}</reason>
+    <context>\text{If a function }f(x)\text{ is continuous at}\\
+\text{at a point }x = a, \text{ then }\ldots </context>
+    <tex correct='true'>\lim_{x\to a^-}f(x) = \lim_{x\to a^+}f(x) = f(a) </tex>
+    <tex>\lim_{x\to a^-}f(x) = \lim_{x\to a^+}f(x) </tex>
+    <reason>\text{If a function is continuous at a point, }\\
+\text{then it can be drawn without lifting the}\\
+\text{pencil. However, if }\lim_{x\to a^-}f(x)\neq\lim_{x\to a^+}f(x)\text{ or }\\
+\lim_{x\to a}f(x)\neq f(a),\text{ then one will have to lift}\\
+\text{the pencil}\implies\text{ discontinuity.}</reason>
   </step>
   <step>
-    <context>\text{value of f(x)=2x^2-1 at x=3?}</context>
-    <tex correct='true'>\text{f(3) =17 \\
-}</tex>
-    <tex>\text{f(3)= 8\\
-}</tex>
-    <reason>\text{Just substitute the value of x in the f(x).}</reason>
-  </step>
-  <step>
-    <context>\text{value of LHL and RHL of f(x) at x=3}</context>
-    <tex correct='true'>\text{LHL}\\                  
-\lim_{x\to\ 3^{-}}\text{f(x)} = 17\\            
-
-
-\text{RHL}\\                  
-\lim_{x\to\ 3^{+}}\text{f(x)} = 17\\            
+    <context>\text{Which of the following analysis and }\\
+\text{conclusions is correct?}</context>
+    <tex correct='true'>\begin{tabular}{cccc}
+\lim_{x\to 3^-}f(x)&amp;\lim_{x\to 3^+}f(x)&amp;f(3)&amp;\text{Continuous?}\\
+\hline
+17&amp;17&amp;17&amp;\text{Yes}
+\end{tabular}   
 </tex>
-    <tex>\text{LHL}\\                  
-\lim_{x\to\ 3^{-}}\text{f(x)} = 17\\            
-
-
-\text{RHL}\\                  
-\lim_{x\to\ 3^{+}}\text{f(x)} = 7\\            
-</tex>
-    <reason>\text{For calculating LHL substitute x with x-h}\\
-\text{For calculating RHL substitute x with x+h}\\
-\text{LHL=&gt;}\lim_{h\to\ 0}\text{f(x-h)}  \text{  RHL=&gt;}\lim_{h\to\ 0}\text{f(x+h)}\\
+    <tex>\begin{tabular}{cccc}
+\lim_{x\to 3^-}f(x)&amp;\lim_{x\to 3^+}f(x)&amp;f(3)&amp;\text{Continuous?}\\
+\hline
+7&amp;31&amp;17&amp;\text{No}
+\end{tabular}   </tex>
+    <reason>\text{Check your calculations. You should find}\\
+\lim_{x\to 3}f(x) = f(x)\implies\text{ continuity.}
 
 
 
@@ -50,9 +40,9 @@ Limit of f(x) at x = value of function at x}</reason>
 </reason>
   </step>
   <choices>
-    <tex>\text{Continuous at x=3 }</tex>
-    <tex>\text{Discontinuous at x=3}</tex>
-    <tex correct='true'>\text{Defined and Continuous at x=3 }</tex>
-    <tex>\text{Defined but Discontinuous at x=3 }</tex>
+    <tex>\text{Discontinuous because }f(3)\text{ is not defined.}</tex>
+    <tex>\text{Discontinuous because }\lim_{x\to 3^-}f(x)\neq\lim_{x\to 3^+}f(x)</tex>
+    <tex correct='true'>\text{Continuous at }x=3.</tex>
+    <tex>\text{Discontinuous because }\lim_{x\to 3}f(x)\neq f(3).</tex>
   </choices>
 </question>

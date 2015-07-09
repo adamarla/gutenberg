@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the second order derivative of the }\\
+\text{function } x^2 + 3x + 2.</tex>
+  </statement>
+  <step>
+    <context>\text{What do you understand by the second}\\
+\text{order derivative of a function f(x)?}</context>
+    <tex correct='true'>\dfrac{d}{dx}\dfrac{d}{dx}f(x) = \dfrac{d^2f(x)}{dx^2}\\ 
+</tex>
+    <tex>\Bigg(\dfrac{d}{dx}f(x)\Bigg)^2 </tex>
+    <reason>\text{The second order derivative of a function}\\
+\text{is the derivative of derivative of that}\\
+\text{function.}</reason>
+  </step>
+  <step>
+    <context>\text{Is the following the correct way to }\\
+\text{find } \dfrac{d^2{f(x)}}{dx^2}\text{ where $f(x) = x^2 + 3x + 2$}?</context>
+    <tex correct='true'>
+\text{First, finding the first order derivative}\\
+\begin{align}
+\dfrac{d(f(x))}{dx} &amp;= \dfrac{d(x^2 + 3x + 2)}{dx}\\
+	&amp;= 2x + 3\\
+\end{align}\\
+\text{Now, finding the second order derivative}\\
+\begin{align}
+\dfrac{d^2(f (x))}{dx^2} &amp;= \dfrac{d(f^{\prime}(x))}{dx}\\&amp;= \dfrac{d(2x + 3)}{dx}\\
+	&amp;= 2
+\end{align}</tex>
+    <reason>\text{We have just used the Chain Rule of diffrentiation.}\\
+\text{Check your calculations if you got something else.}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{d^2y}{dx^2} = 2x + 3</tex>
+    <tex>\dfrac{d^2y}{dx^2} = 2x</tex>
+    <tex correct='true'>\dfrac{d^2y}{dx^2} = 2</tex>
+    <tex>\dfrac{d^2y}{dx^2} = 3</tex>
+  </choices>
+</question>

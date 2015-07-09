@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If }e^{y}\left(x + 1\right) = 1\, \text{, show that} \\
+\dfrac{d^2y}{dx^2}  = \left(\dfrac{dy}{dx}\right)^{2}</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the following matches your}\\
+\text{understanding of }\dfrac{d^2y}{dx^2}?
+</context>
+    <tex correct='true'>
+\dfrac{d^2y}{dx^2} = \dfrac{d}{dx}\dfrac{d}{dx}(y)</tex>
+    <tex>\begin{align}
+\dfrac{d^2y}{dx^2} &amp;= \dfrac{dy}{dx}.\dfrac{dy}{dx}\\
+							&amp;= \bigg( \dfrac{dy}{dx}\bigg)\\
+							
+\end{align}
+</tex>
+    <reason>\dfrac{d^2y}{dx^2} \text{ is the derivative of the derivative }\\
+\text{of y.}</reason>
+  </step>
+  <step>
+    <context>\text{Is the following of calculating }\dfrac{dy}{dx} \text{ correct?}</context>
+    <tex correct='true'>\begin{align}
+	e^{y} \left(x +1\right)  &amp;= 1\\
+		e^{y} &amp;= \dfrac{1}{x +1}\\
+		y &amp;= \log \left(\dfrac{1}{x +1}\right)\\
+\end{align}\\
+
+\text{Differentiating the above equation we get}\\
+\begin{align}
+		\dfrac{dy}{dx} &amp;= \dfrac{d \left(\log \left(\dfrac{1}{x +1}\right)\right)}{dx}\\
+							&amp;=\left(x + 1\right) . \left(\dfrac{-1}{\left(x + 1\right)^2}\right)\\
+							&amp;=- \dfrac{1}{\left(x +1 \right)}\\
+\end{align}</tex>
+    <reason>\text{Other than Chain Rule we have used the }\\
+\text{fact that }\dfrac{d \left(\log t\right)}{dx} = \dfrac{1}{t}\text{. Check your calculation}\\
+\text{if you got anything else.}</reason>
+  </step>
+  <step>
+    <context>\text{Are the calculations below correct}?												</context>
+    <tex correct='true'>
+\begin{align}
+\dfrac{d^2y}{dx^2} &amp;= \dfrac{d \left(\dfrac{dy}{dx}\right)}{dx}\\
+						    &amp;= \dfrac{d\left(- \dfrac{1}{\left(x +1 \right)}\right)}{dx}\\
+						    &amp;= - \left(\dfrac{-1}{\left(x + 1\right)^2}\right)\\
+						    &amp;=\dfrac{1}{\left(x +1\right)^2}\\
+\end{align}\\
+
+\text{Comparing }\dfrac{d^2y}{dx^2}\text{ and }\dfrac{dy}{dx}\text{ we get}\\
+
+
+\begin{align}
+\dfrac{d^2y}{dx^2} &amp;=\dfrac{1}{\left(x +1\right)^2}\\
+							&amp;= \left(\dfrac{-1}{x + 1}\right)
+							&amp;=\left(\dfrac{dy}{dx}\right)^2
+\end{align}
+</tex>
+    <reason>\text{We have used Chain Rule here. Check your }\\
+\text{calculations if were not able to get the right \\result.}\\
+</reason>
+  </step>
+</question>

@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{if }y = \cos^{-1} x,\text{Find }\dfrac{d^2y}{dx^2}\text{ in terms of y alone.}</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the following matches your}\\
+\text{understanding of }\dfrac{d^2y}{dx^2}?
+</context>
+    <tex correct='true'>\dfrac{d^2y}{dx^2} = \dfrac{d}{dx}\dfrac{d}{dx}(y)</tex>
+    <tex>\begin{align}
+\dfrac{d^2y}{dx^2} &amp;= \dfrac{dy}{dx}.\dfrac{dy}{dx}\\
+							&amp;= \bigg( \dfrac{dy}{dx}\bigg)\\
+							
+\end{align}
+				</tex>
+    <reason>\dfrac{d^2y}{dx^2} \text{ is the derivative of the derivative }\\
+\text{of y.}</reason>
+  </step>
+  <step>
+    <context>\text{Shown below are two ways of differentiating }\\
+y. \textbf{Both are correct.}\text{ But one is more relevant}\\
+\text{to the question.Which one?}</context>
+    <tex correct='true'>\begin{align}
+		y &amp;=\cos^{-1} x\\
+		\cos y &amp;= x\\
+\end{align}\\
+\text{Diffrentiating the above equation we get}\\
+\begin{align}
+		\dfrac{d(\cos y)}{dx} &amp;=\dfrac{d(x)}{dx}\\
+		-\sin y .\dfrac{dy}{dx} &amp;= 1\\
+		\dfrac{dy}{dx} &amp;= - \csc y
+\end{align}</tex>
+    <tex>\begin{align}
+			y = \cos^{-1} x\\ 
+		\dfrac{dy}{dx} = - \dfrac{1}{\sqrt{1 - x^2}}
+\end{align}</tex>
+    <reason>\dfrac{dy}{dx} = -\csc y \text{ is more relevant to the question}\\
+\text{as we have to find $\dfrac{dy}{dx}$ in terms of y}.</reason>
+  </step>
+  <step>
+    <context>\text{Are the calculations below correct?}</context>
+    <tex correct='true'>\dfrac{dy}{dx} = -\csc y\\
+
+\text{Diffrentiating the above equation we get}\\
+\begin{align}
+		\dfrac{d^2y}{dx^2} &amp;= -\dfrac{d(\csc y)}{dx}\\
+									&amp;= - (-\csc y \cot y . \dfrac{dy}{dx})\\
+									&amp;= \csc y \cot y .\dfrac{dy}{dx}\\
+									&amp;= \csc y .\cot y .(-\csc y)\\
+									&amp;= -\cot y .\csc^2 y\\
+\end{align}
+</tex>
+    <reason>\text{Other than Chain Rule we have used the }\\
+\text{fact that }\dfrac{d \left(\csc \theta\right)}{d\theta} = -\csc \theta . \cot \theta.\text{Check your}\\
+\text{calculations if you got something else.}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{d^2y}{dx^2} = -cot y .\csc^2 y\\</tex>
+    <tex>\dfrac{d^2y}{dx^2} = -\cot^2 y .\csc y\\</tex>
+    <tex correct='true'>\dfrac{d^2y}{dx^2} = -\cot y .\csc^2 y\\</tex>
+    <tex>\dfrac{d^2y}{dx^2} = -\cot y .\csc y\\</tex>
+  </choices>
+</question>

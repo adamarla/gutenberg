@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the second order derivative of the }\\
+\text{function } \log x.</tex>
+  </statement>
+  <step>
+    <context>\text{Is the following the correct way to }\\
+\text{find } \dfrac{d^2{f(x)}}{dx^2}\text{ where $f(x) = \log x$}?</context>
+    <tex correct='true'>
+\text{First, finding the first order derivative}\\
+\begin{align}
+\dfrac{d(f(x))}{dx} &amp;= \dfrac{d(\log x)}{dx}\\
+	&amp;= \dfrac{1}{x}\\
+\end{align}\\
+\text{Now, finding the second order derivative}\\
+\begin{align}
+\dfrac{d^2(f (x))}{dx^2} &amp;= \dfrac{d(f^{\prime}(x))}{dx}= \dfrac{d(\dfrac{1}{x})}{dx}\\
+	&amp;= - \dfrac{1}{x^2}
+\end{align}</tex>
+    <reason>\text{We have just used the Chain Rule of diffrentiation.}\\
+\text{Check your calculations if you got something else.}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{d^2y}{dx^2} = - \dfrac{1}{x^2}</tex>
+    <tex>\dfrac{d^2y}{dx^2} = - \dfrac{1}{x}</tex>
+    <tex>\dfrac{d^2y}{dx^2} = \dfrac{1}{x^2}</tex>
+    <tex>\dfrac{d^2y}{dx^2} = \dfrac{1}{\sqrt{x}}</tex>
+  </choices>
+</question>

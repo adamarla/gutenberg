@@ -10,7 +10,8 @@ f(x) = \begin{cases}
          \end{cases}</tex>
   </statement>
   <step>
-    <context>\text{What is the condition for continuity?}</context>
+    <context>\text{What is the condition for continuity}\\
+\text{at }x=2 \,?</context>
     <tex correct='true'>\begin{align} 
           \lim_{x\to 2^-}f(x) =\lim_{x\to 2^+}f(x)  = f(2)
 \end{align}</tex>
@@ -22,7 +23,7 @@ point it's limits on either side of f(x)\\
 should be equal to the value of f(x) at\\
 that point}</reason>
   </step>
-  <step>
+  <step swipe='false'>
     <context>\text{Is the following assertion correct?}</context>
     <tex correct='true'>f(x) \text{ is a straight line for }x\neq 2.\\
 \text{Hence, it is continuous for all }x\neq 2.\\
@@ -35,9 +36,8 @@ at x=2.}\\
 \text{only problem point. We should check}\\
 \text{for continuity there.}</reason>
   </step>
-  <step>
-    <context>\text{Which of the following set of statements\\
-are correct?}</context>
+  <step swipe='false'>
+    <context>\text{Is the following analysis correct?}</context>
     <tex correct='true'>
     \lim_{x\to 2^-}f(x) = \lim_{x\to 2^-} (2x+3)  = 7 \\
     \lim_{x\to 2^+}f(x) = \lim_{x\to 2^+} (2x-3)  = 1 \\

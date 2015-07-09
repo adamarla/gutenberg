@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find}\frac{dy}{dx}\text{ of the following}\\
+
+y = \sin^{-1} \Bigg( \frac{2x}{1+x^2}\Bigg)</tex>
+  </statement>
+  <step>
+    <context>f(x) = \frac{g(x)}{h(x)}\text{,then f^\prime }=</context>
+    <tex correct='true'>\frac{d(f(x))}{dx}= \frac{g^\prime h - gh^\prime}{h^2}  </tex>
+    <tex>\frac{d(f(x))}{dx}= \frac{g^\prime}{h^\prime}  </tex>
+    <reason>\text{This is a standard formula.It is called Quotient}\\
+\text{Rule.Review it if you got this wrong.}\\</reason>
+  </step>
+  <step>
+    <context>\text{Is the following calculation correct?}</context>
+    <tex correct='true'>\sin y = \frac{2x}{1+x^2}\\
+
+\text{Ater diffrentiating the above equation we get}\\
+\Rightarrow \frac{d(\sin y)}{dx} = \frac{2x}{1+x^2}\\
+\Rightarrow \cos y\frac{d(y)}{dx} =\frac{ \frac{d(2x)}{dx}.(1+x^2) - (2x) .\frac{d(1+x^2)}{dx}}{(1+x^2)^2}\\
+\Rightarrow \sqrt{1 - sin^2 y}\frac{dy}{dx} =\frac{2 + 2x^2-4x^2}{(1+x^2)^2}\\
+\Rightarrow \sqrt{1 - \Bigg(\frac{2x}{1+x^2}\Bigg)^2}\frac{dy}{dx} =\frac{2 - x^2}{(1+x^2)^2}\\
+\Rightarrow \sqrt{\frac{1 + x^4+ 2x^2 - 4x^2}{(1+x^2)^2}}\frac{dy}{dx} =\frac{2 - x^2}{(1+x^2)^2}\\
+\Rightarrow \sqrt{\frac{(1 - x^2)^2}{(1+x^2)^2}}\frac{dy}{dx} =\frac{2 - x^2}{(1+x^2)^2}\\
+\text{Solving above equation}\\
+\frac{dy}{dx} = \frac{2}{1+ x^2} </tex>
+    <reason>\text{Other than Quatiant Rule we have used the}\\
+\text{fact that}\frac{d(\sin \theta)}{d\theta}= \cos \theta \text{ and } \sin^2 \theta +\cos^2 \theta = 1\\
+\text{Check your calculation if you got something else. }</reason>
+  </step>
+  <choices>
+    <tex>\frac{dy}{dx} = -\frac{2}{1+ x^2} </tex>
+    <tex correct='true'>\frac{dy}{dx} = \frac{2}{1- x^2} </tex>
+    <tex>\frac{dy}{dx} = \frac{2}{1+ x^2} </tex>
+    <tex>\frac{dy}{dx} = \frac{2}{(1+ x^2)(1 - x^2)} </tex>
+  </choices>
+</question>

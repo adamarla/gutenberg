@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the following integral}
+
+\int x^2\left(1 - \dfrac{1}{x^2}\right).dx</tex>
+  </statement>
+  <step>
+    <context>\text{Are the calculations bellow correct?}</context>
+    <tex correct='true'>\begin{align}
+\int x^2\left(1 - \dfrac{1}{x^2}\right).dx &amp;= \int \left(x^2 -\dfrac{x^2}{x^2}\right).dx\\
+													&amp;= \int x^2 .dx - \int 1.dx\\
+													&amp;=\dfrac{x^3}{3} - x + c
+\end{align}\\
+
+\text{Here, c is the constant of integration.}
+</tex>
+    <reason>\text{We have used the fact that }
+\int x^n = \dfrac{x^{n+1}}{n+1}.\\
+\text{Check your calculation if you got something else.} </reason>
+  </step>
+</question>

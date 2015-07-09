@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the second order derivative of the }\\
+\text{function } x . \cos x.</tex>
+  </statement>
+  <step>
+    <context>\text{Is the following the correct way to }\\
+\text{find } \dfrac{d^2{f(x)}}{dx^2}\text{ where $f(x) =x . \cos x$}?</context>
+    <tex correct='true'>\text{First, finding the first order derivative}\\
+\begin{align}
+\dfrac{d(f(x))}{dx} &amp;= \dfrac{d(x .\cos x)}{dx}\\
+	&amp;= \dfrac{d(x)}{dx} . \cos x + x . \dfrac{d(\cos x)}{dx}\\
+	&amp;= \cos x - x . \sin x 
+\end{align}\\
+\text{Now, finding the second order derivative}\\
+\begin{align}
+\dfrac{d^2(f (x))}{dx^2} &amp;= \dfrac{d(f^{\prime}(x))}{dx}= \dfrac{d(\cos x - x . \sin x )}{dx}\\
+	&amp;=\dfrac{d(\cos x)}{dx}- \dfrac{d(x .\sin x)}{dx}\\
+	&amp;=- \sin x - \dfrac{d(x)}{dx}. \sin x - x . \dfrac{\sin x}{dx}\\
+	&amp;=-sinx -\sin x - x .\cos x\\
+	&amp;=- x \, \cos x - 2\sin x
+\end{align}</tex>
+    <reason>\text{Other than Chain Rule we have used the fact}\\
+\text{that }\frac{d(\sin \theta)}{d\theta}= \cos \theta \text{ and }\frac{d(\cos \theta)}{d\theta}= -\sin \theta</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{d^2y}{dx^2} = - x \, \sin x - 2\cos x</tex>
+    <tex>\dfrac{d^2y}{dx^2} = - \cos x - 2 x\, \sin x</tex>
+    <tex correct='true'>\dfrac{d^2y}{dx^2} = - x \, \cos x - 2\sin x</tex>
+    <tex>\dfrac{d^2y}{dx^2} = x \, \cos x - 2\sin x</tex>
+  </choices>
+</question>

@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If x and y are connected parametricaly by the}\\
+\text{following equations, without eliminating the}\\
+\text{parameter ,Find }\frac{dy}{dx}\\
+
+x = a\sin t,  \quad y = b\cos 2t</tex>
+  </statement>
+  <step>
+    <context>\text{if $p = f(t)$ and $q = g(t)$ then,} \frac{dp}{dq}= </context>
+    <tex correct='true'>\frac{dp}{dt} = \frac{dp}{dq}.\frac{dq}{dt}\\
+\begin{align}
+\Rightarrow\frac{dp}{dq} &amp;= \frac{\dfrac{dp}{dt}}{\dfrac{dq}{dt}}\\
+ 		&amp;= \frac{f^{\prime}(t)}{g^{\prime}(t)}\\
+\end{align}	 	</tex>
+    <tex>\begin{align}
+\frac{dp}{dq} &amp;= \frac{\dfrac{dp}{dx}}{\dfrac{dq}{dx}}\\
+	
+\end{align}</tex>
+    <reason>\text{For calculating }\frac{dp}{dq}\text{we just divide}\\
+\frac{dp}{dt}\text{ by }\frac{dq}{dt}\text{ as p and q are function of t}\\</reason>
+  </step>
+  <step>
+    <context>\text{Are the follwing calculations correct?}</context>
+    <tex correct='true'>\begin{align}
+\frac{d(x)}{dt} &amp;= \frac{d(\sin t)}{dt}\\
+	&amp;= \cos t\frac{d(d t)}{dt}\\
+	&amp;= \cos t\\
+\end{align}</tex>
+    <tex>\text{}</tex>
+    <reason>\text{Other than Chain Rule we have usef the fact}\\
+\text{that }\dfrac{d\sin \theta}{d\theta} = \cos \theta\text{.Check your calculation}\\
+\text{if you got something else.}\\</reason>
+  </step>
+  <step>
+    <context>\text{Are the following calculartions correct?}</context>
+    <tex correct='true'>\begin{align}
+\frac{d(y)}{dt} &amp;= \frac{d(\cos 2t)}{dt}\\
+	&amp;=-\sin 2t.\dfrac{d(2t)}{dt}\\
+	&amp;=-2\sin 2t\\
+	
+\end{align}</tex>
+    <reason>\text{Other than Chain Rule we have usef the fact}\\
+\text{that }\dfrac{d\cos \theta}{d\theta} = -\sin \theta\text{.Check your calculation}\\
+\text{if you got something else.}\\</reason>
+  </step>
+  <step>
+    <context>\text{Are the following calculations correct?}</context>
+    <tex correct='true'>\frac{dy}{dx} =\frac{ \dfrac{d(y)}{dt}}{\dfrac{d(x)}{dt}}\\
+\\
+\text{Substituting, }\dfrac{d(x)}{dt}\text{ and }\dfrac{d(y)}{dt}\text{ in the above}\\
+\text{equation.}\\
+\begin{align}
+\frac{dy}{dx} &amp;=\frac{-2 \sin 2t}{\sin t}\\
+&amp;=\frac{-4 \sin t \cos t}{\cos t}\\
+&amp;= -4 \sin t
+\end{align}</tex>
+    <reason>\text{For calculating }\frac{dy}{dx}\text{we just divide}\\
+\frac{dy}{dt}\text{ by }\frac{dx}{dt}\text{(which we have calculated in}\\
+\text{the previous steps).}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{dy}{dx} = 4 \sin t</tex>
+    <tex>\dfrac{dy}{dx} = -2 \sin 2t</tex>
+    <tex correct='true'>\dfrac{dy}{dx} = -4 \sin t</tex>
+    <tex>\dfrac{dy}{dx} = -2 \sin 2t</tex>
+  </choices>
+</question>

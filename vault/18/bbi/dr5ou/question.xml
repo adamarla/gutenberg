@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If x and y are connected parametricaly by the}\\
+\text{following equations, without eliminating the}\\
+\text{parameter ,Find }\frac{dy}{dx}\\
+
+x = a\cos \theta,  \quad y = b\cos \theta</tex>
+  </statement>
+  <step>
+    <context>\text{if $p = f(\theta)$ and $q = g(\theta)$ then,} \frac{dp}{dq}=</context>
+    <tex correct='true'>
+\frac{dp}{d\theta} = \frac{dp}{dq}.\frac{dq}{d\theta}\\
+\begin{align}
+\Rightarrow\frac{dp}{dq} &amp;= \frac{\dfrac{dp}{d\theta}}{\dfrac{dq}{d\theta}}\\
+ 		&amp;= \frac{f^{\prime}(\theta)}{g^{\prime}(\theta)}\\
+\end{align}	 	</tex>
+    <tex>\begin{align}
+\frac{dp}{dq} &amp;= \frac{\dfrac{dp}{dx}}{\dfrac{dq}{dx}}\\
+	
+\end{align}</tex>
+    <reason>\text{For calculating }\frac{dp}{dq}\text{we just divide}\\
+\frac{dp}{d\theta}\text{ by }\frac{dq}{d\theta}\text{ as p and q are function of \theta}\\</reason>
+  </step>
+  <step>
+    <context>\text{Are the following calculations correct?}</context>
+    <tex correct='true'>\begin{align}
+\frac{d(x)}{d\theta} &amp;= \frac{d(a\cos \theta)}{d\theta}\\
+	&amp;=a.\frac{d(\cos \theta)}{d\theta}\\
+	&amp;=-a \sin \theta.\frac{d(\theta)}{d\theta}\\
+	&amp;=-a \sin \theta\\
+\end{align}</tex>
+    <reason>\text{Other than Chain Rule we have used the fact}\\
+\text{that }\frac{d(\cos \theta)}{d\theta} = -\sin \theta\text{ .Check your calculation}\\
+\text{if you got something else.}
+</reason>
+  </step>
+  <step>
+    <context>\text{Are the following calculations correct?}</context>
+    <tex correct='true'>\begin{align}
+\frac{d(y)}{d\theta} &amp;= \frac{d(b\cos \theta)}{d\theta}\\
+	&amp;=b.\frac{d(\cos \theta)}{d\theta}\\
+	&amp;=-b \sin \theta.\frac{d(\theta)}{d\theta}\\
+	&amp;=-b \sin \theta\\
+\end{align}</tex>
+    <reason>\text{Other than Chain Rule we have used the fact}\\
+\text{that }\dfrac{d(\cos \theta)}{d\theta} = -\sin \theta\text{ .Check your calculation}\\
+\text{if you got something else.}
+</reason>
+  </step>
+  <step>
+    <context>\text{Are the following calculatios correct?}</context>
+    <tex correct='true'>\frac{dy}{dx} =\frac{ \dfrac{dy}{d\theta}}{\dfrac{dx}{d\theta}}\\
+\\
+\text{Substituting, }\dfrac{dx}{d\theta}\text{ and }\dfrac{dy}{d\theta}\text{ in the above equation}\\
+\begin{align}
+\frac{dy}{dx} &amp;=\frac{-b\sin \theta}{-a \cos \theta}\\
+&amp;=\frac{b}{a}
+\end{align}</tex>
+    <reason>\text{For calculating }\frac{dy}{dx}\text{we just divide}\\
+\frac{dy}{d\theta}\text{ by }\frac{dx}{d\theta}\text{(which we have calculated in}\\
+\text{the previous steps).}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{dy}{dx}=-\frac{a}{b}</tex>
+    <tex correct='true'>\dfrac{dy}{dx}=\frac{b}{a}</tex>
+    <tex>\dfrac{dy}{dx}=-\frac{b}{a}</tex>
+    <tex>\dfrac{dy}{dx}=\frac{a}{b}</tex>
+  </choices>
+</question>

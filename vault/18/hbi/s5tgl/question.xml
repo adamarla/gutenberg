@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If }y = Ae^{mx} + Be^{nx}\text{, show that}\\
+\dfrac{d^2y}{dx^2} - \left(m+n\right)\dfrac{dy}{dx} +mny =0</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the following matches your}\\
+\text{understanding of }\dfrac{d^2y}{dx^2}?
+</context>
+    <tex correct='true'>
+\dfrac{d^2y}{dx^2} = \dfrac{d}{dx}\dfrac{d}{dx}(y)</tex>
+    <tex>\begin{align}
+\dfrac{d^2y}{dx^2} &amp;= \dfrac{dy}{dx}.\dfrac{dy}{dx}\\
+							&amp;= \bigg( \dfrac{dy}{dx}\bigg)\\
+							
+\end{align}
+				</tex>
+    <reason>\dfrac{d^2y}{dx^2} \text{ is the derivative of the derivative }\\
+\text{of y.}</reason>
+  </step>
+  <step>
+    <context>\text{Are the calculations below correct?}</context>
+    <tex correct='true'>y = Ae^{mx} + Be^{nx}\\
+
+\text{Differentiating the above equation we get }\\
+\begin{align}
+	\dfrac{dy}{dx} &amp;= \dfrac{d \left(Ae^{mx} + Be^{nx}\right)}{dx}\\
+						&amp;= Ame^{mx} + Bne^{nx}\\
+\end{align}\\
+
+\text{Further differentiating }\dfrac{dy}{dx} \text{ we get}\\
+\begin{align}
+	\dfrac{d^2 y}{dx^2} &amp;= \dfrac{d \left(Ame^{mx} + Bne^{nx}\right)}{dx}\\
+								&amp;= Am^2e^{mx} + Bn^2e^{nx}
+\end{align}	
+</tex>
+    <reason>\text{Other than Chain Rule we have used the }\\
+\text{fact that }\dfrac{d \left(e^{\theta}\right)}{d\theta} = e^{\theta}\\</reason>
+  </step>
+  <step>
+    <context>\text{Are the calculations below correct?}</context>
+    <tex correct='true'>\text{puntting everything together}\\
+\dfrac{d^2y}{dx^2} - \left(m+n\right)\dfrac{dy}{dx} +mny\\
+\Rightarrow Am^2e^{mx} + Bn^2e^{nx} -\left(m+n\right)\left( Ame^{mx} + Bne^{nx} \right)\\
+\qquad\qquad\qquad\qquad + Ae^{mx} + Be^{nx}\\
+\Rightarrow Am^2e^{mx} + Bn^2e^{nx} - Am^2e^{mx} - Bmne^{nx} \\
+\qquad\quad- Amne^{mx} + Bn^2e^{nx} +Amne^{mx} + Bmne^{nx}\\ 
+\Rightarrow 0</tex>
+    <reason>\text{Placing the values of$\, y , \dfrac{dy}{dx}$ \,and$\,\dfrac{d^2y}{dx^2}$ in }\\
+\dfrac{d^2y}{dx^2} - \left(m+n\right)\dfrac{dy}{dx} +mny\text{\,\,results into 0.Check }\\
+\text{your calculations if you got something else}\\</reason>
+  </step>
+</question>

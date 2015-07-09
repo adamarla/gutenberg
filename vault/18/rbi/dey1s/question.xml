@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the following integral?}
+
+\int \dfrac{x^3 + 5x^2 - 4 }{x^2}dx</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the following is the right way }\\
+\text{solving the problem}?</context>
+    <tex correct='true'>\begin{align}
+\int \dfrac{x^3 + 5x^2 - 4 }{x^2}dx &amp;= \int \dfrac{x^3}{x^2}dx +\int \dfrac{5x^2}{x^2}dx - \int \dfrac{4}{x^2}dx\\ 
+											   &amp;= \int x.dx + \int 5.dx -\int \dfrac{4}{x^2}.dx
+\end{align}
+</tex>
+    <tex>\begin{align}
+\int \dfrac{x^3 + 5x^2 - 4 }{x^2}dx &amp;=\dfrac{\int \left(x^3 + 5x^2 - 4\right)dx}{\int x^2 .dx}
+\end{align}
+</tex>
+    <reason>\text{In }\int \dfrac{P(x)}{Q(x)}\text{ integration cannot be distributed}\\
+\text{in numerator and denominator. }  </reason>
+  </step>
+  <step>
+    <context>\text{Is the calculation below correct?}</context>
+    <tex correct='true'>\text{Using step 1}\\
+\begin{align}
+\int \dfrac{x^3 + 5x^2 - 4 }{x^2}dx &amp;= \int x.dx + \int 5.dx -\int \dfrac{4}{x^2}.dx\\
+											   &amp;= \dfrac{x^2}{2} + 5 x +4\left(\dfrac{x^{-2 + 1}}{-2 + 1}\right) + C\\
+											   &amp;= \dfrac{x^2}{2} + 5 x -\dfrac{4}{ x} + C
+\end{align}
+\text{Here , C is the constant of integration}</tex>
+    <reason>\text{Other than using the result of step 1, we have}\\
+\text{used the fact that }\int t^n .dt = \dfrac{t^{n+1}}{n+1}.\text{ Check your}\\
+\text{calculations you got something else.}
+</reason>
+  </step>
+  <choices>
+    <tex>\int \dfrac{x^3 + 5x^2 - 4 }{x^2}dx = \dfrac{x^2}{2} + 5 x +\dfrac{4}{ x}</tex>
+    <tex correct='true'>\int \dfrac{x^3 + 5x^2 - 4 }{x^2}dx = -\dfrac{x^2}{2} + 5 x -\dfrac{4}{ x}</tex>
+    <tex>\int \dfrac{x^3 + 5x^2 - 4 }{x^2}dx = \dfrac{x^2}{2} + 5 x -4\log \vert x\vert</tex>
+    <tex>\int \dfrac{x^3 + 5x^2 - 4 }{x^2}dx = \dfrac{x^2}{2} + 5 x -\dfrac{4}{ x}</tex>
+  </choices>
+</question>

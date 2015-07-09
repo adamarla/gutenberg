@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find an anti derivative (or integral) of the}\\
+\text{following function by the method of inspection.}\\
+
+ \cos 3x</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the below function has the derivative}\\
+\text{as }\cos nx\text{, where }n \in \mathbb{R}</context>
+    <tex correct='true'>\dfrac{\sin nx}{n}</tex>
+    <tex>n\sin nx</tex>
+    <reason>\text{We have used the Chain Rule and the fact}\\
+\text{that }\dfrac{d \left(\cos \theta\right)}{dx} = -\sin \theta.\text{Check your calculation}\\
+\text{if you got this wrong.}</reason>
+  </step>
+  <step>
+    <context>\text{Is the analysis below correct?}</context>
+    <tex correct='true'>\text{Since , }\\
+\begin{align}
+\dfrac{d \left(\sin 3x\right)}{dx} &amp;= 3 \cos 3x\\
+\Rightarrow \cos 3x &amp;= \dfrac{1}{3}.\dfrac{d}{dx}\left(\sin 3x\right)
+\end{align}\\
+\therefore \text{anti derivative or integral of }\cos 3x \text{ is } \dfrac{\sin 3x}{3}\\
+</tex>
+    <reason>\text{We have used the result of step 1. Review it if}\\
+\text{you got something else. }\\</reason>
+  </step>
+  <choices>
+    <tex>\int \cos 3x.dx  = -\dfrac{\sin 3x}{3}</tex>
+    <tex correct='true'>\int \cos 3x.dx  = \dfrac{\sin 3x}{3}</tex>
+    <tex>\int \cos 3x.dx  =3\sin 3x</tex>
+    <tex>\int \cos 3x.dx  = -3\sin 3x</tex>
+  </choices>
+</question>

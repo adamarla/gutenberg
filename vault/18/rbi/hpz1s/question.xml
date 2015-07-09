@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the following integral}\\
+
+\int \sqrt{x} \left( 3 x^2 + 2 x + 3\right)dx</tex>
+  </statement>
+  <step>
+    <context>\text{Is the calculation below correct?}</context>
+    <tex correct='true'>\int \sqrt{x} \left( 3 x^2 + 2 x + 3\right)dx \\
+\qquad\qquad\quad = \int \left( 3 x^2 . \sqrt{x} + 2 x.\sqrt{x} + 3\sqrt{x}\right)dx \\
+\qquad\qquad\quad = \int \left(3 x^{\dfrac{5}{2}}+2x^{\dfrac{3}{2}} + 3 x^{\dfrac{1}{2}} \right)dx\\
+\qquad\qquad\quad = 3 \dfrac{x^{\dfrac{7}{2}}}{\left(\dfrac{7}{2}\right)}+ 2\dfrac{x^{\dfrac{5}{2}}}{\left(\dfrac{5}{2}\right)} + 3 \dfrac{x^{\dfrac{3}{2}}}{\left(\dfrac{3}{2}\right)} + C\\
+\qquad\qquad\quad = \dfrac{6}{7}. x^{\dfrac{7}{2}} + \dfrac{4}{5}. x^{\dfrac{5}{2}} + 2 x^{\dfrac{3}{2}}+ C\\
+\text{Here, C is the constant of integration}</tex>
+    <reason>\text{Other than using the result of step 1, we have}\\
+\text{used the fact that }\int t^n .dt = \dfrac{t^{n+1}}{n+1}.\text{ Check your}\\
+\text{calculations you got something else.}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\int \sqrt{x} \left( 3 x^2 + 2 x + 3\right)dx=\dfrac{6}{7}. x^{\dfrac{7}{2}} + \dfrac{4}{5}. x^{\dfrac{5}{2}} + 2 x^{\dfrac{3}{2}}+ C</tex>
+    <tex>\int \sqrt{x} \left( 3 x^2 + 2 x + 3\right)dx=\dfrac{6}{7}. x^{\dfrac{7}{2}} + \dfrac{4}{5}. x^{\dfrac{5}{2}} - 2 x^{\dfrac{3}{2}}+ C</tex>
+    <tex>\int \sqrt{x} \left( 3 x^2 + 2 x + 3\right)dx=\dfrac{6}{7}. x^{\dfrac{7}{2}} - \dfrac{4}{5}. x^{\dfrac{5}{2}} + 2 x^{\dfrac{3}{2}}+ C</tex>
+    <tex>\int \sqrt{x} \left( 3 x^2 + 2 x + 3\right)dx=\dfrac{3}{7}. x^{\dfrac{7}{2}} + \dfrac{4}{5}. x^{\dfrac{5}{2}} + 2 x^{\dfrac{3}{2}}+ C</tex>
+  </choices>
+</question>
