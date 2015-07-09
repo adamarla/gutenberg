@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{The anti derivative of }\left(\sqrt x +\dfrac{1}{\sqrt x}\right) \text{ equals }</tex>
+  </statement>
+  <step>
+    <context>\text{Is the calculation below correct?}</context>
+    <tex correct='true'>\begin{align}
+\int \left(\sqrt x +\dfrac{1}{\sqrt x}\right).dx &amp;= \int x^{\dfrac{1}{2}}.dx  + \int x^{-\dfrac{1}{2}}.dx\\
+														&amp;= \dfrac{x^{\dfrac{1}{2} +1}}{\left(\dfrac{1}{2}+1\right)} + \dfrac{x^{-\dfrac{1}{2}+1}}{\left(-\dfrac{1}{2}+1\right)}+ C\\                    
+														&amp;= \dfrac{2}{3}x^{\dfrac{3}{2}} + 2x^{\dfrac{1}{2}} + C\\
+\end{align}	\\
+\text{Here, C is the constant of integration}
+
+</tex>
+    <reason>\text{We have used the fact that }\int t^n.dt = \dfrac{t^{n+1}}{n+1}\\
+\text{Check your calculation if you got anything else}. </reason>
+  </step>
+  <choices>
+    <tex>\dfrac{1}{3}x^{\dfrac{1}{3}} + 2 x^{\dfrac{1}{2}} + C</tex>
+    <tex>\dfrac{2}{3}x^{\dfrac{2}{3}} + \dfrac{1}{2}x^2 + C \dfrac{}{}</tex>
+    <tex correct='true'>\dfrac{2}{3}x^{\dfrac{3}{2}} + 2x^{\dfrac{1}{2}} +C</tex>
+    <tex>\dfrac{3}{2}x^{\dfrac{3}{2}} +\dfrac{1}{2}x^{\dfrac{1}{2}} + C</tex>
+  </choices>
+</question>
