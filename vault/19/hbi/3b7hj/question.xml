@@ -19,7 +19,7 @@
 \therefore
 \int \dfrac{\sin^2 x}{1+\cos x} \, dx = \int \left( 1 - \cos x \right) \, dx
 </tex>
-    <reason>\text{Applied the trignometeric identity, }\\
+    <reason>\text{Applied the trigonometric identity, }\\
 \sin^2 x + \cos^2 x = 1
 \quad \text{Check your}\\
 \text{calculations, if you got something}

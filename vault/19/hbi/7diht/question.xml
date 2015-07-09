@@ -28,7 +28,7 @@
 \therefore
 \int \sin^3 x \cos^3 x dx 
 = \int (t^2 -1) t^3  dx</tex>
-    <reason>\text{Applied the trignometeric identity, }\\
+    <reason>\text{Applied the trigonometric identity, }\\
 \sin^2 x + \cos^2 x = 1 
 \text{ and substituted } \cos x =t \\
 \text{Check your calculations, if you got something}\\

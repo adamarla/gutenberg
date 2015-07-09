@@ -22,7 +22,7 @@
 &amp;= \int \dfrac{1}{2}  \left[ 2 -  \sec^2 \dfrac{x}{2}  \right] dx \\
 
 \end{align}\\</tex>
-    <reason>\text{Applied the trignometeric identities, }\\
+    <reason>\text{Applied the trigonometric identities, }\\
 \cos x = \cos^2 \left( \dfrac{x}{2}\right) - \sin^2 \left( \dfrac{x}{2}\right) \, , \\
  \cos 2 x = 1 - 2 \cos^2 x 
  \text{ and }

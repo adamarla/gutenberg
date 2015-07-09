@@ -27,7 +27,7 @@
 \int \cos 2 x \cdot \cos 4 x \cdot \cos 6 x  \, dx \\
 \qquad \qquad = \int \dfrac{1}{4} [ \cos 12 x + \cos 8 x + 1 + \cos 4 x ] dx
 </tex>
-    <reason>\text{Applied the trignometeric identity, }\\
+    <reason>\text{Applied the trigonometric identity, }\\
 \cos x \cos y = \dfrac{1}{2}[\cos (x+y) + \cos (x-y)] \text{ twice.}\\
 \text{Check your calculations, if you got something}\\
 \text{else.}

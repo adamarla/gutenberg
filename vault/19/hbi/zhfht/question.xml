@@ -28,7 +28,7 @@
 \int \dfrac{1-cos x}{1+cos x} \,dx 
 &amp;= \int \left[ \sec^2 \left( \dfrac{x}{2} \right)  -1 \right] dx
 \end{align}</tex>
-    <reason>\text{Applied the trignometeric identity, }\\
+    <reason>\text{Applied the trigonometric identity, }\\
 \cos 2 A = 1 - 2 \sin^2 A = 2 \cos^2 A - 1 \\
 \text{and } 1 + \tan^2 x = \sec^2 x 
 \text{. Check your}\\\text{ calculations, if you got something else.}

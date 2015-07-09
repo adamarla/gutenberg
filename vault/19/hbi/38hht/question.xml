@@ -26,7 +26,7 @@
 \therefore
 \int \sin 3x \cos 4x  dx &amp;= \int \dfrac{1}{2}[\sin 7x + \sin x]dx
 \end{align}</tex>
-    <reason>\text{Replace x by 3x and y by 4x in the trignometeric}\\
+    <reason>\text{Replace x by 3x and y by 4x in the trigonometric}\\
 \text{indentity, }\sin x \cos y = \dfrac{1}{2}[\sin (x+y) + \sin (x-y)] \\ 
 </reason>
   </step>

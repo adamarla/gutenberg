@@ -22,7 +22,7 @@
 \therefore
 \int \sin^3 (2x+1) dx \\
 \quad \qquad \qquad = \int \dfrac{3 \sin (2 x+1) - \sin (6x +3)}{4} dx</tex>
-    <reason>\text{Applied the trignometeric identity, }\\
+    <reason>\text{Applied the trigonometric identity, }\\
 \sin^3 x = 3 \sin x - 4 \sin^3 x \text{ by replacing x by 2x+1}\\
 \text{Check your calculations, if you got something}\\
 \text{else.}

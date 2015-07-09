@@ -19,7 +19,7 @@
 \int \cos ^4 2 x   \, dx 
  &amp;= \int  \dfrac{1}{4} \left[ \dfrac{3}{2}+ \dfrac{1}{2}\cos 8x +2 \cos 4x  \right]  \,dx 
 \end{align}</tex>
-    <reason>\text{Applied the trignometeric identity, }\\
+    <reason>\text{Applied the trigonometric identity, }\\
 \cos 2x = 2 \cos^2 x -1 \\
 \text{Check your calculations, if you got something}\\
 \text{else.}
