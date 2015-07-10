@@ -17,7 +17,7 @@
 			\quad f(x) = (g\circ h\circ j)(x) 
 			</tex>
 			<tex correct="false">
-			\quad f(x) = (v\circ h\circ g)(x) 
+			\quad f(x) = (j\circ h\circ g)(x) 
 			</tex>
 			<reason>
 			f(x) = (g\circ h\circ j)(x)\implies f(x) = g(h(j(x))). \\
