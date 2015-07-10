@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the integral of the function}\\
+\dfrac{\sin^3 x +\cos^3 x}{\sin^2 x \cos^2 x} \,</tex>
+  </statement>
+  <step>
+    <context>\text{Are the following calculations and analysis correct?}
+
+</context>
+    <tex correct='true'>
+\begin{align}
+
+\dfrac{\sin^3 x +\cos^3 x}{\sin^2 x \cos^2 x}
+&amp;= \dfrac{\sin^3 x}{\sin^2 x \cos^2 x } + \dfrac{\cos^3 x}{\sin^2 x \cos^2 x} \\
+&amp;= \dfrac{\sin x}{\cos^2 x} + \dfrac{\cos x}{\sin^2 x} \\
+&amp;= \tan x \sec x + \cot x \, \mathrm{cosec} \, x \\
+\end{align}
+ 
+</tex>
+    <reason>\text{Using } \dfrac{\sin x}{\cos x} = \tan x 
+\text{ and } \dfrac{\cos x}{\sin x} = \cot x \\
+\text{Also, }\dfrac{1}{\sin x }= \mathrm{cosec}\, x  \text{ and } \dfrac{1}{\cos x} = \sec x \\ </reason>
+  </step>
+  <step>
+    <context>\text{Is the following evaluation of the integral}\\
+\int \dfrac{\sin^3 x +\cos^3 x}{\sin^2 x \cos^2 x} \, dx  \quad
+\text{correct}?</context>
+    <tex correct='true'>
+\dfrac{\sin^3 x +\cos^3 x}{\sin^2 x \cos^2 x} \,   = 
+\tan x \sec x + \cot x \, \mathrm{cosec} \, x  \\
+
+\implies
+\int \dfrac{\sin^3 x +\cos^3 x}{\sin^2 x \cos^2 x} \, dx  \\
+\quad \quad \quad = \int (\tan x \sec x + \cot x \, \mathrm{cosec} \, x ) \, dx \\
+\quad \quad \quad = \int \tan x \sec x \, dx + \int \cot x \, \mathrm{cosec} \, x ) \, dx \\
+
+
+ \quad \quad \quad = \sec x- \mathrm{cosec}\, x+C
+</tex>
+    <tex>
+\dfrac{\sin^3 x +\cos^3 x}{\sin^2 x \cos^2 x} \,   = 
+\tan x \sec x + \cot x \, \mathrm{cosec} \, x  \\
+
+\implies
+\int \dfrac{\sin^3 x +\cos^3 x}{\sin^2 x \cos^2 x} \, dx  \\
+\quad \quad \quad = \int (\tan x \sec x + \cot x \, \mathrm{cosec} \, x ) \, dx \\
+\quad \quad \quad = \int \tan x \sec x \, dx + \int \cot x \, \mathrm{cosec} \, x ) \, dx \\
+
+
+ \quad \quad \quad = \sec^2 x- \mathrm{cosec}^2\, x+C
+</tex>
+    <reason>\int \tan x \sec x \, dx = \sec x + C_1 \\
+\int \cot x \, \mathrm{cosec} \, x ) \, dx = - \mathrm{cosec}\, x + C_2 \\
+\text{where } C_1 \text{ and } C_2  \text{ are constants of integration.}</reason>
+  </step>
+  <choices>
+    <tex>  \sec x- \mathrm{cosec}\, x</tex>
+    <tex correct='true'>  \sec x- \mathrm{cosec}\, x+C</tex>
+    <tex>  \sec x + \mathrm{cosec}\, x + C</tex>
+    <tex>  \cos x+ \mathrm{cosec}\, x+C</tex>
+  </choices>
+</question>
