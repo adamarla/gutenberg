@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate the following, }\\
+\dfrac{\sec^2 x}{\sqrt{\tan^2 x + 4}}</tex>
+  </statement>
+  <step>
+    <context>\text{To convert }\int \dfrac{\sec^2 x.dx}{\sqrt{\tan^2 x  +4}}\rightarrow \int \dfrac{dt}{\sqrt{t^2 + 4}}, t =?</context>
+    <tex correct='true'>t = \tan x</tex>
+    <tex>t = \sec x</tex>
+    <reason>\text{If }t = tan x\text{, then } dt = sec^2 x.dx\\
+\implies \int \dfrac{\sec^2 x.dx}{\sqrt{\tan^2 x + 4}}= \int \dfrac{dt}{\sqrt{t^2 + 4}} </reason>
+  </step>
+  <step>
+    <context>\text{Which of the following shows the }\\
+\text{correct integral in terms of x?}</context>
+    <tex correct='true'>\begin{align}
+\int \dfrac{dt}{\sqrt{t^2 + 4}} &amp;= \int \dfrac{dt}{\sqrt{t^2 + 2^2}}\\
+										 &amp;= \log \left| t + \sqrt{t^2 + 2^2}\right| + C\\
+										 &amp;= \log \left| t + \sqrt{\tan^2 x + 4}\right| + C\\
+\end{align}
+
+</tex>
+    <tex>\int \dfrac{dt}{\sqrt{t^2 + 4}} = \log \left|t + \sqrt{t^2 + 4^2}\right| + C\\
+										= \log \left|\tan x + \sqrt{\tan^2 x + 16}\right|+C\\	</tex>
+    <reason>\text{If you compare }\dfrac{dt}{\sqrt{t^2 + 4}}\text{ with }\dfrac{dt}{\sqrt{t^2 + a^2}},\text{then}\\
+a = 2.\text{Other than that,use }\\
+\int \dfrac{dt}{\sqrt{t^2 + a^2}} = \log \left|t + \sqrt{t^2 + 4^2}\right| + C\\</reason>
+  </step>
+  <choices>
+    <tex>\log \left| t + \sqrt{\tan^2 x - 4}\right| + C</tex>
+    <tex>\log \left| t + \sqrt{\tan x + 4}\right| + C</tex>
+    <tex>\log \left| t - \sqrt{\tan^2 x + 4}\right| + C</tex>
+    <tex correct='true'>\log \left| t + \sqrt{\tan^2 x + 4}\right| + C</tex>
+  </choices>
+</question>

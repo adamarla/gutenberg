@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate the following, }\\
+\dfrac{1}{\sqrt{1 +4x^2}}</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the following ways of writing }\\
+\dfrac{1}{\sqrt{1 + 4x^2}}\text{ would make it easier to find}\\
+\text{the integral?}</context>
+    <tex correct='true'>\dfrac{1}{\sqrt{1 +4x^2}} = \dfrac{1}{\sqrt{1^2 + \left(2x\right)^2}}</tex>
+    <tex>\dfrac{1}{\sqrt{1 +4x^2}} = \dfrac{1}{\sqrt{\left(2x + 1\right)^2 -4x} }</tex>
+    <reason>\dfrac{1}{\sqrt{1 +4x^2}} = \dfrac{1}{\sqrt{1 + \left(2x\right)^2}} \text{ looks like }\left(\dfrac{1}{\sqrt{x^2 + a^2}}\right)\\
+\text{for which we might know the integral. Stick with}\\
+\text{Stick with what is familiar.}\\</reason>
+  </step>
+  <step>
+    <context>\text{Has the integral been calculated correctly?}</context>
+    <tex correct='true'>\text{Let } t = 2x \implies \dfrac{dt}{2} = dx\\
+\begin{align}
+\therefore \int \dfrac{dx}{\sqrt{1 + 4x^2}}&amp;= \dfrac{1}{2}\int \dfrac{dt}{\underbrace{\sqrt{t^2 + 1^2}}_{a = 1}}\\
+                                                                      &amp;= \dfrac{1}{2}\left[\log \vert t + \sqrt{t^2 + a^2}\vert\right] + C\\
+                                                                      &amp;=\dfrac{1}{2}\left[\log \vert2x + \sqrt{4x^2 + 1} \vert\right] +C\\
+\end{align}										
+</tex>
+    <reason>\text{Standard result}\\
+\int \dfrac{dx}{\sqrt{x^2 + a^2}} = \log \vert x + \sqrt{x^2 + a^2} \vert + C</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{1}{2}\left[\log \vert2x + \sqrt{4x^2 + 1} \vert\right] +C</tex>
+    <tex>-\dfrac{1}{2}\left[\log \vert2x + \sqrt{4x^2 + 1} \vert\right] +C</tex>
+    <tex>\dfrac{1}{2}\left[\log \vert x + \sqrt{4x^2 + 1} \vert\right] +C</tex>
+    <tex>\dfrac{1}{2}\left[\log \vert2x + \sqrt{x^2 + 1} \vert\right] +C</tex>
+  </choices>
+</question>
