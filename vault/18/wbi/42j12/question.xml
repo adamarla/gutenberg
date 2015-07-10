@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate the following, }\\
+\dfrac{3x}{1 + 2x^4}</tex>
+  </statement>
+  <step>
+    <context>\text{If we Let }t = x^2 \text{, then which of the }\\
+\text{following is the integral in terms of t?}\\
+</context>
+    <tex correct='true'>\begin{align}
+t &amp;= x^2\\
+dt &amp;= 2x.dx\\
+\end{align}\\
+
+\begin{align}
+	\int \dfrac{3x.dx}{1 + 2x^4} &amp;= \dfrac{3}{2}\int \dfrac{2x.dx}{1+2 \left(x^2\right)^2}\\
+										  &amp;= \dfrac{3}{2}\int \dfrac{dt}{1 + 2t^2}\\
+									
+\end{align}</tex>
+    <tex>
+3\int \dfrac{dt}{1 + 2 \left(x^2\right)^2} = 3\int \dfrac{dt}{1 +2t^2}
+</tex>
+    <reason>\text{If }t = x^2 \implies dt = 2x.dx\text{, then}\\
+ x.dx = \dfrac{dt}{2} \implies 3x.dx = \dfrac{3}{2}.dt</reason>
+  </step>
+  <step>
+    <context>\int \dfrac{dt}{\left(1 +2t^2\right)}\text{ looks most like}\int \dfrac{dy}{y^2 + a^2}\\
+\text{In fact }\dfrac{3}{2}\int \dfrac{dt}{1+ 2t^2} = b\int \dfrac{dt}{\left(t^2 + a^2\right)}\\
+\text{what are a and b?}</context>
+    <tex correct='true'>\begin{align}
+a &amp;= \dfrac{1}{\sqrt{2}}\\
+b &amp;= \dfrac{3}{4}
+\end{align}</tex>
+    <tex>\begin{align}
+a &amp;= \dfrac{1}{2}\\
+b &amp;= \dfrac{3}{4}
+\end{align}</tex>
+    <reason>\dfrac{3}{2}\int \dfrac{dt}{1 + 2t^2} = \dfrac{3}{2}\int \dfrac{dt}{2 \left(t^2+\dfrac{1}{2} \right)}\\=\dfrac{3}{4}\int\dfrac{dt}{t^2 + \left(\dfrac{1}{\sqrt{2}}\right)^2}
+\text{ Hence }a = \dfrac{1}{\sqrt{2}} \text{ and }b= \dfrac{3}{4}.</reason>
+  </step>
+  <step>
+    <context>\text{Putting it altogether, which of the following }\\
+\text{be the integral in terms of x?}</context>
+    <tex correct='true'>\begin{align}
+I &amp;= \dfrac{3}{4}\int \dfrac{dt}{t^2 + \dfrac{1}{\left(\sqrt{2}\right)^2}}\\
+  &amp;= \dfrac{3}{4}\left[\dfrac{1}{\dfrac{1}{\sqrt{2}}}\tan^{-1} \dfrac{t}{\left(\dfrac{1}{\sqrt{2}}\right)}\right] + C\\
+  &amp;= \dfrac{3}{2\sqrt{2}}\tan^{-1} \sqrt{2}t + C\\
+  &amp;= \dfrac{3}{2\sqrt{2}}\tan^{-1} \sqrt{2}x^2 + C\\
+ 
+\end{align}</tex>
+    <tex>\begin{align}
+I &amp;=\dfrac{3}{4}\int \dfrac{dt}{t^2 + \left(\dfrac{1}{\sqrt{2}}\right)^2}\\
+  &amp;=\dfrac{3}{4}\left[\dfrac{1}{\sqrt{2}}\tan^{-1} \dfrac{t}{\dfrac{1}{\sqrt{2}}}\right]+ C\\
+  &amp;=\dfrac{3}{4\sqrt{2}}\tan^{-1}\sqrt{2}t +C\\
+   &amp;=\dfrac{3}{4\sqrt{2}}\tan^{-1}\sqrt{2}x^2 +C\\
+\end{align}</tex>
+    <reason>\text{Use }\int \dfrac{1}{x^2 + a^2} = \dfrac{1}{a}\tan^{-1}\dfrac{x}{a}+C.\\
+\text{But }a = \dfrac{1}{\sqrt{2}}\implies \dfrac{1}{a} = \dfrac{1}{\dfrac{1}{\sqrt{2}}} = \sqrt{2}
+</reason>
+  </step>
+  <choices>
+    <tex>-\dfrac{3}{2\sqrt{2}}\tan^{-1} \sqrt{2}x^2 + C</tex>
+    <tex correct='true'>\dfrac{3}{2\sqrt{2}}\tan^{-1} \sqrt{2}x^2 + C</tex>
+    <tex>\dfrac{3}{2\sqrt{2}}\tan^{-1} \sqrt{2}x + C</tex>
+    <tex>\dfrac{3}{2\sqrt{2}}\tan^{-1} 2x^2 + C</tex>
+  </choices>
+</question>

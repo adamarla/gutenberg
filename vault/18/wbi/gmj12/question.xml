@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate the following, }\\
+\dfrac{3 x^2}{x^6 + 1}</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the following substitutions is more}\\
+\text{more elegant/ less painful?}</context>
+    <tex correct='true'>
+
+\text{Let }t = x^3\\
+dt = 3x^2.dx\\
+\begin{align}
+\therefore \dfrac{3x^2}{x^6 + 1}.dx = \dfrac{dt}{t^2 + 1}\\
+\end{align}
+
+</tex>
+    <tex>
+\text{Let }t = x^2\\
+	dt = 2x.dx\\
+\begin{align}
+	\dfrac{3x^2.dx }{x^6 + 1}&amp;= \dfrac{3}{2}.\dfrac{\sqrt{t}.dt}{t^3 + 1}\\
+							   &amp;= \dfrac{3}{2}.\dfrac{\sqrt{t}.dt}{\underbrace{\left(t+1\right)\left(t^2 - t +1\right)}_{\left(t^3 + a^3\right) = \left(t + a\right)\left(t^2 - at -a^2\right)}}
+	
+\end{align}</tex>
+    <reason>\text{We know what }\int \dfrac{dx}{x^2 + a^2}\text{ is.}\\
+\text{so lets try that first.}</reason>
+  </step>
+  <step>
+    <context>\text{Has the integral been calculated}\\
+\text{properly?}</context>
+    <tex correct='true'>\begin{align}
+\int \dfrac{3x^2 .dx}{x^6 + 1} &amp;= \int \dfrac{dt}{t^2 +1}\\
+										&amp;= \tan^{-1} t + C\\
+										&amp;= \tan^{-1} x^3	+ c\\	
+\end{align}</tex>
+    <reason>\int \dfrac{dx}{x^2 + a^2} = \tan^{-1} \dfrac{x}{a} + C\text{ \left(standard \,result \right)}\\
+\text{For our case }a = 1.</reason>
+  </step>
+  <choices>
+    <tex> \tan x^3	+ c\\	</tex>
+    <tex correct='true'> \tan^{-1} x^3	+ c\\	</tex>
+    <tex> \tan^{-1} x^2	+ c\\	</tex>
+    <tex> -\tan^{-1} x^3	+ c	</tex>
+  </choices>
+</question>
