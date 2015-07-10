@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the following integral   }\\
+\int \left(2x^2 -3\sin x + 5\sqrt{x}\right).dx</tex>
+  </statement>
+  <step>
+    <context>\text{Is the calculation below correct?}</context>
+    <tex correct='true'>\int \left(2x^2 -3\sin x + 5\sqrt{x}\right).dx\\
+\qquad\quad= 2\int x^2.dx -3\int \sin x .dx+ 5\int \sqrt{x}.dx\\
+\qquad\quad= 2 \dfrac{x^3}{3} - 3 \left(-\cos x\right) + 5 \dfrac{x^{\dfrac{3}{2}}}{\left(\dfrac{3}{2}\right)} + C\\
+\qquad\quad= \dfrac{2}{3}x^3 + 3 \cos x + \dfrac{10}{3} x^{\dfrac{3}{2}} + C\\
+
+
+ </tex>
+    <reason>\text{We have used the fact that }\int x^{n}.dx = \dfrac{x^{n+1}}{n+1} + C\\
+\text{and }\int \sin x.dx = -\cos x + C\text{ .Check your calculation}\\
+\text{if you got something else.}\\</reason>
+  </step>
+  <choices>
+    <tex>\int \left(2x^2 -3\sin x + 5\sqrt{x}\right).dx \\
+\qquad\qquad\qquad= \dfrac{2}{3}x^3 + 3 \cos x + \dfrac{5}{3} x^{\dfrac{3}{2}} + C</tex>
+    <tex>\int \left(2x^2 -3\sin x + 5\sqrt{x}\right).dx\\
+\qquad\qquad\qquad= -\dfrac{2}{3}x^3 + 3 \cos x + \dfrac{10}{3} x^{\dfrac{3}{2}} + C</tex>
+    <tex correct='true'>\int \left(2x^2 -3\sin x + 5\sqrt{x}\right).dx\\
+\qquad\qquad\qquad= \dfrac{2}{3}x^3 + 3 \cos x + \dfrac{10}{3} x^{\dfrac{3}{2}} + C</tex>
+    <tex>\int \left(2x^2 -3\sin x + 5\sqrt{x}\right).dx\\
+\qquad\qquad\qquad= \dfrac{2}{3}x^3 + 3 \cos x + \dfrac{10}{3} x^{\dfrac{5}{2}} + C</tex>
+  </choices>
+</question>

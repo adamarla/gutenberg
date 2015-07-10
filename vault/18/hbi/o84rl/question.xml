@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the second order derivative of the }\\
+\text{function }e^6x . \cos 3x.</tex>
+  </statement>
+  <step>
+    <context>\text{What do you understand by the second}\\
+\text{order derivative of a function f(x)?}</context>
+    <tex correct='true'>\dfrac{d}{dx}\dfrac{d}{dx}f(x) = \dfrac{d^2f(x)}{dx^2}\\ </tex>
+    <tex>\Bigg(\dfrac{d}{dx}f(x)\Bigg)^2</tex>
+    <reason>\text{The second order derivative of a function}\\
+\text{is the derivative of derivative of that}\\
+\text{function.}</reason>
+  </step>
+  <step>
+    <context>\text{which one of following the correct way to }\\
+\text{find } \dfrac{d{f(x)}}{dx}\text{ where $f(x) = e^{6x} . \cos 3x$}?</context>
+    <tex correct='true'>\begin{align}
+\dfrac{d(f(x))}{dx} &amp;= \dfrac{d(e^{6x}. \cos 3x)}{dx}\\
+	&amp;=\underbrace{\frac{d(e^{6x})}{dx} .\cos 3x + e^{6x} . \frac{d(\cos 3x)}{dx}}_{\text{Product Rule}}\\
+	&amp;=6e^{6x} . \cos 3x - 3 e^{6x} . \sin 3x 
+\end{align}\\
+</tex>
+    <tex>\begin{align}
+\dfrac{d(f(x))}{dx} &amp;= \dfrac{d(e^{6x}. \cos 3x)}{dx}\\
+	&amp;=\underbrace{\frac{d(e^{6x})}{dx} . \frac{d(\cos 3x)}{dx}}_{\text{Product Rule}}\\
+	&amp;= -18 e^{6x} . \sin 3x 
+\end{align}\\
+</tex>
+    <reason>\text{We have used Product Rule here.It's a}\\
+\text{standard formula.Review it if you got this}\\
+\text{wrong.}\\
+</reason>
+  </step>
+  <step>
+    <context>\text{Is the following the correct way to }\\
+\text{find } \dfrac{d^2(f(x))}{dx^2}?</context>
+    <tex correct='true'>\dfrac{d^2(f (x))}{dx^2} = \dfrac{d(f^{\prime}(x))}{dx}
+= \dfrac{d(6e^{6x} . \cos 3x - 3 e^{6x} . \sin 3x  )}{dx}\\
+\qquad\qquad= \frac{d(e^{6x})}{dx} . \cos 3x +e^{6x} . \frac{d(\cos 3x)}{dx}-\\ 
+\qquad\qquad\qquad 3\frac{d(e^{6x})}{dx}.\sin 3x - 3.e^{6x} . \frac{d(\sin 3x)}{dx}\\   
+	\qquad\qquad= 36e^{6x} . \cos 3x - 18  e^{6x} .\sin 3x \\
+	\qquad\qquad\qquad-18 .e^{6x} \sin 3x - 9 . e^{6x} . \sin 3x \\
+	\qquad\qquad= 27e^{6x} \cos 3x - 36 e^{6x} \sin 3x\\
+	\qquad\qquad=9(3e^{6x}\cos 3x - 4e^{6x}\sin 3x )\\
+</tex>
+    <reason>\text{Other than Chain Rule and Product Rule,we have}\\
+\text{used the fact that \dfrac{d(sin \theta)}{d\theta}} = \cos \theta\text{ and}\\
+\dfrac{d(\cos \theta)}{d\theta} = -\sin \theta \text{.Check your calculations}\\
+\text{if you got something wrong.}\\</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{d^2(f(x))}{dx^2} =9(3e^{6x}\cos 3x + 4e^{6x}\sin 3x )</tex>
+    <tex correct='true'>\dfrac{d^2(f(x))}{dx^2} =9(3e^{6x}\cos 3x - 4e^{6x}\sin 3x )</tex>
+    <tex>\dfrac{d^2(f(x))}{dx^2} =-9(3e^{6x}\cos 3x + 4e^{6x}\sin 3x )</tex>
+    <tex>\dfrac{d^2(f(x))}{dx^2} =9(4e^{6x}\cos 3x + 3e^{6x}\sin 3x )</tex>
+  </choices>
+</question>

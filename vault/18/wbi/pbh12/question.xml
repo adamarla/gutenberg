@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the following integral}
+\int \sec x \left(\sec x + \tan x\right).dx</tex>
+  </statement>
+  <step>
+    <context>\text{Is the calculation below correct?}</context>
+    <tex correct='true'>\int \sec x \left(\sec x + \tan x\right).dx \\
+\qquad\qquad\qquad= \int \left(\sec^2 x + \sec x . \tan x \right)dx\\
+\qquad\qquad\qquad=\int \sec^2 x .dx + \int \sec x. \tan x .dx\\
+\qquad\qquad\qquad= \tan x + \sec x + C\\
+
+\text{Here C is constant of Integration}\\	</tex>
+    <reason>\text{We have used the fact that}\int \sec^2 x.dx = \tan x + C\\
+\text{and }\int \sec x.\tan x.dx = \sec x + C \text{ .Check your}\\
+\text{calculations if you got something else.}</reason>
+  </step>
+  <choices>
+    <tex>\int \sec x \left(\sec x + \tan x\right).dx= -\tan x + \sec x + C
+</tex>
+    <tex>\int \sec x \left(\sec x + \tan x\right).dx= \tan x - \sec x + C
+</tex>
+    <tex>\int \sec x \left(\sec x + \tan x\right).dx= \tan^2 x + \sec x + C
+</tex>
+    <tex correct='true'>\int \sec x \left(\sec x + \tan x\right).dx= \tan x + \sec x + C
+</tex>
+  </choices>
+</question>

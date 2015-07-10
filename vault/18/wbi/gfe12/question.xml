@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the following integral}\\
+\int \dfrac{\sec^2 x}{\csc^2 x}.dx</tex>
+  </statement>
+  <step>
+    <context>\text{Is the following claculation correct?}</context>
+    <tex correct='true'>\begin{align}
+\int \dfrac{\sec^2 x}{\csc^2 x}.dx &amp;=\int \dfrac{\dfrac{1}{\cos^2 x}}{\dfrac{1}{\sin^2 x}}\\
+											&amp;=\int \dfrac{\sin^2 x}{\cos^2 x}.dx\\
+											&amp;=\int \tan^2 x.dx\\
+											&amp;=\int \left(\sec^2 x - 1\right).dx\\
+											&amp;=\int sec^2 x.dx - \int 1.dx\\
+											&amp;=\tan x - x + C\\
+\end{align}\\
+\text{Here, C is the cosntant of integration}
+
+</tex>
+    <reason>\text{We have used the fact that}\int \sec^2 x.dx = \tan x + C\\
+\text{and }\sec^2 x -\tan^2 x = 1 \text{ .Check your calculations}\\
+\text{if you got something else.}</reason>
+  </step>
+  <choices>
+    <tex>\int \dfrac{\sec^2 x}{\csc^2 x}.dx=\tan x + x + C</tex>
+    <tex correct='true'>\int \dfrac{\sec^2 x}{\csc^2 x}.dx=\tan x - x + C</tex>
+    <tex>\int \dfrac{\sec^2 x}{\csc^2 x}.dx=-\tan x - x + C</tex>
+    <tex>\int \dfrac{\sec^2 x}{\csc^2 x}.dx=\tan^2 x - x + C</tex>
+  </choices>
+</question>
