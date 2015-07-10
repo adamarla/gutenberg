@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate the following }\\
+\qquad \dfrac{1}{\sqrt{(x-1)\cdot (x-2)}}</tex>
+  </statement>
+  <step>
+    <context>\text{We know that }(x-1)\cdot(x-2) = x^2-3x + 2. \\
+\text{But if }x^2-3x + 2= \left(x-a\right)^2 - b^2\text{ then } \\
+\text{what are } a = ? \text{ and } b = ?</context>
+    <tex correct='true'>\begin{align}
+a &amp;= \dfrac{3}{2} \\
+b &amp;= \dfrac{1}{2}
+\end{align}</tex>
+    <tex>\begin{align}
+a &amp;= 3\\
+b &amp;= \dfrac{3}{2}
+\end{align}</tex>
+    <reason>(x-a)^2 - a^2 = x^2 - 2ax.\text{ Therefore, }x^2-3x \\
+= \left(x-\frac{3}{2}\right)^2 - \left(\frac{3}{2}\right)^2 
+\text{and }x^2 - 3x + 2 \\
+= \left(x-\frac{3}{2}\right)^2-\frac{9}{4} + 2 = 
+\left(x-\frac{3}{2}\right)^2 - \frac{1}{2^2}
+</reason>
+  </step>
+  <step>
+    <context>\text{Is the evaluation of the integral below correct?}</context>
+    <tex correct='true'>\begin{align}
+\int\dfrac{dx}{\sqrt{(x-1)\cdot(x-2)}} &amp;= 
+\int\dfrac{dx}{\sqrt{\left(x-\frac{3}{2}\right)^2 - \frac{1}{2^2}}} \\
+\text{If } t = x-\frac{3}{2}&amp;\text{ and } b = \frac{1}{2},\text{ then }\\
+\int\dfrac{dx}{\sqrt{(x-1)\cdot(x-2)}} &amp;= 
+\int\dfrac{dt}{\sqrt{t^2 - b^2}} \\ 
+&amp;= \log\vert t + \sqrt{t^2 - b^2} \vert + C  
+\end{align}\\
+\text{which, when we replace the values of }\\
+t\text{ and } b\text{ gives us} \\
+\qquad\log\left| \left(x-\frac{3}{2}\right)+ \sqrt{x^2-3x+2}\right| + C </tex>
+    <reason>\text{Once we expressed }\frac{1}{\sqrt{(x-1)\cdot(x-2)}}\\
+\text{in the form }\frac{1}{\sqrt{t^2 - b^2}}
+\text{, we simply used }\\
+\int\frac{dt}{\sqrt{t^2 - b^2}} = \log\vert t + \sqrt{t^2-b^2}\vert + C.\\
+\text{Of course, express t in terms of x.}</reason>
+  </step>
+</question>
