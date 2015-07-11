@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate the following, }\\
+\dfrac{1}{\sqrt{7 - 6x - x^2}}</tex>
+  </statement>
+  <step>
+    <context>\text{If }\left(7 -6x + x^2\right) = \left(a^2 - t^2\right)\text{,where a is}\\
+\text{constant, then what are a=? and t=? }</context>
+    <tex correct='true'>\begin{align}
+t &amp;= x + 3\\
+a &amp;= 4\\
+\end{align}</tex>
+    <tex>\begin{align}
+t &amp;= x - 3\\
+a &amp;= 16\\
+\end{align}</tex>
+    <reason>\text{Notice that }-\left(x + 3\right)^2 = -\left(x^2  +6x + 9\right) \\
+= -x^2 -6x -9.\text{Quite close to }-x^2 - 6x + 7\\
+\text{In fact, }-x^2- 6x +7 - 16 = -\left(x + 3\right)^2\\
+\Rightarrow -x^2-6X +7 =16 -\left(x + 3\right)^2 = 4^2 - \left(x + 3\right)^2\\
+\therefore a =4 \text{ and }t = \left(x +3\right).
+</reason>
+  </step>
+  <step>
+    <context>\text{Has the integral been evaluated correctly?}</context>
+    <tex correct='true'>t = x +3\implies dt =dx\\
+
+\begin{align}
+\therefore \int \dfrac{dx}{\sqrt{7- 6x - x^2}} &amp;= \int \dfrac{dt}{\sqrt{4^2 - t^2}}\\
+														&amp;=\sin^{-1} \left(\dfrac{t}{4}\right) + C\\
+														&amp;=\sin^{-1} \left(\dfrac{x+3}{4}\right) +C\\
+
+\end{align}
+</tex>
+    <reason>\text{Use the standard result }\\
+\int \dfrac{dt}{\sqrt{dt}{\sqrt{a^2 - t^2}}} = \sin^{-1} \dfrac{t}{a} + C</reason>
+  </step>
+  <choices>
+    <tex>\sin \left(\dfrac{x+3}{4}\right) +C</tex>
+    <tex>\cos^{-1} \left(\dfrac{x+3}{4}\right) +C</tex>
+    <tex correct='true'>\sin^{-1} \left(\dfrac{x+3}{4}\right) +C</tex>
+    <tex>-\sin^{-1} \left(\dfrac{x+3}{4}\right) +C</tex>
+  </choices>
+</question>

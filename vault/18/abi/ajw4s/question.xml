@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find }\frac{dy}{dx} \text{ of the following}\\
+
+y = \tan^{-1}\Bigg(\frac{3x - x^3}{1 - x^2}\Bigg), -\frac{1}{\sqrt{3}}\lt x \lt \frac{1}{\sqrt{3}}</tex>
+  </statement>
+  <step>
+    <context>\text{Which the following mathematically correct?}</context>
+    <tex correct='true'>\tan 3\theta = \frac{3\tan \theta - \tan^3 \theta}{1 - 3 tan^2\theta }
+
+
+</tex>
+    <tex>\tan 3\theta \neq \frac{3\tan \theta - \tan^3 \theta}{1 - 3 tan^2\theta }
+
+
+</tex>
+    <reason>\text{Since,}\tan 3\theta = \frac{3\tan \theta - \tan^3 \theta}{1 - 3 tan^2\theta}\\
+\text{Its a standard formula.Moreover, }\\
+\tan 3\theta = \frac{3\tan \theta - \tan^3 \theta}{1 - 3 tan^2\theta}\text{looks similar to }\frac{3x - x^3}{1 - x^2} </reason>
+  </step>
+  <step>
+    <context>\text{Is the previous step any useful in solving}\\
+\text{the question?}\\</context>
+    <tex correct='true'>\text{Yes,the previous step helps in solving the problem}\\
+\text{efficiently.}</tex>
+    <tex>\text{No, the previous step does not helps in solving}\\
+\text{the problem.}</tex>
+    <reason>\text{Yes,the previous step helps in solving the }\\
+\text{problem efficiently,as the problem now reduces to}\\
+\text{diffrentiatiation of equation }x = \tan \frac{y}{3}\\</reason>
+  </step>
+  <step>
+    <context>\text{Are the following calculations correct?}</context>
+    <tex correct='true'>\text{Using step 2, we can replace }x \,by \tan \frac{y}{3}\\
+
+\Rightarrow x = \tan \frac{y}{3}\\
+
+\text{Diffrentiating the above equation, we get}\\
+
+\frac{d(x)}{dx}= \frac{1}{3} . \sec^2 \frac{y}{3} . \frac{d(y)}{dx}\\
+\text{Rearranging above equation, we get}\\
+\begin{align}
+\Rightarrow \frac{dy}{dx}&amp;= \frac{3}{\sec^2 \frac{y}{3}}\\
+		&amp;=\frac{3}{1 + \tan^2 \frac{y}{3}}\\
+		&amp;=\frac{3}{1 + x^2}\\
+\end{align}</tex>
+    <reason>\text{Other than Chain Rule and Step 2, we have }\\
+\text{used the fact that }\sec^2 \theta = 1+\tan^2 \theta\text{.Check}\\
+\text{your calculations if you got something else}</reason>
+  </step>
+  <choices>
+    <tex>\frac{dy}{dx} = -\frac{3}{1 + x^2}\\</tex>
+    <tex correct='true'>\frac{dy}{dx} = \frac{3}{1 + x^2}\\</tex>
+    <tex>\frac{dy}{dx} = \frac{1 + x^2}{3}\\</tex>
+    <tex>\frac{dy}{dx} = -\frac{1 + x^2}{3}\\</tex>
+  </choices>
+</question>

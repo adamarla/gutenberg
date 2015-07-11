@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int \dfrac{1}{x+x\log x}dx</tex>
+  </statement>
+  <step>
+    <context>\text{The following substition would convert}\\
+I=\int \dfrac{1}{x+x\log x}dx \text{ to }\int\dfrac{1}{t}dt</context>
+    <tex correct='true'>1+\log x=t</tex>
+    <tex>\log x = t</tex>
+    <reason>\begin{align}
+  1+\log x=t &amp;\implies \dfrac{1}{x}\cdot \dfrac{dx}{dt}=1\\
+                    &amp;\implies \dfrac{1}{x}\cdot dx = dt
+\end{align}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{Does this look correct?}</context>
+    <tex correct='true'>\begin{align}
+  I &amp;=\int \dfrac{1}{x+x\log x}dx \\
+    &amp;\text{substituting }(1+\log x=t) \\
+  I &amp;=\int \dfrac{1}{t}dt \\
+    &amp;=\log t + C \\
+    &amp;=\log (1+\log x) + C
+\end{align}</tex>
+    <tex>\begin{align}
+  I &amp;=\int \dfrac{1}{x+x\log x}dx \\
+    &amp;\text{substituting }(1+\log x=t) \\
+  I &amp;=\int \dfrac{1}{t}dt \\
+    &amp;=-\dfrac{1}{t^2} + C
+\end{align}</tex>
+    <reason>\int \dfrac{1}{x}dx = \log x + C</reason>
+  </step>
+</question>

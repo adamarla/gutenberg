@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find }\frac{dy}{dx}\text{ for the following}\\
+
+y = \cos^{-1}\Bigg( \frac{1 - x^2}{1+ x^2}\Bigg) , 0\lt x \lt 1</tex>
+  </statement>
+  <step>
+    <context>\text{Is the following statement mathematically \\
+correct ?}\\</context>
+    <tex correct='true'>
+\cos 2\theta =\cos^2 \theta -\sin^2 \theta =  \frac{1 - \tan^2 \theta}{1+ \tan^2 \theta}\\
+	</tex>
+    <tex>
+\cos 2\theta =\cos^2 \theta -\sin^2 \theta \neq  \frac{1 - \tan^2 \theta}{1+ \tan^2 \theta}\\</tex>
+    <reason>\text{Since,}cos 2\theta = \frac{1 - \tan^2 \theta}{1+ \tan^2 \theta}\\
+\text{Its a standard formula.Moreover, }\\
+\frac{1 - \tan^2 \theta}{1+ \tan^2 \theta}\text{looks similar to }\frac{1 - x^2 \theta}{1+ x^2 \theta}</reason>
+  </step>
+  <step>
+    <context>\text{Is the formula on the previous step, of }\\
+\text{any use in solving the current question?}
+</context>
+    <tex correct='true'>x= \tan \frac{y}{2}\\
+
+\Rightarrow \tan^{-1} x = \frac{y}{2}\\
+
+\Rightarrow  y = 2 . \tan^{-1} x\\
+
+\text{Diffrentiating y we get:}\\
+
+\Rightarrow \frac{dy}{dx} = 2 .\Bigg( \frac{d(\tan^{-1} x)}{dx} \Bigg) \\
+\quad =  \frac{2}{1 + x^2} \\</tex>
+    <reason>\text{Using the fact }\\
+
+\frac{d(tan^{-1})}{dx} x = \frac{1}{1 + x^2}</reason>
+  </step>
+  <step>
+    <context>\text{Are the following calculations correct?}</context>
+    <tex correct='true'>x= \tan \frac{y}{2}\\
+
+\Rightarrow \tan^{-1} x = \frac{y}{2}\\
+
+\Rightarrow  y = 2 . \tan^{-1} x\\
+
+\text{Diffrentiating y we get:}\\
+
+\Rightarrow \frac{dy}{dx} = 2 .\Bigg( \frac{d(\tan^{-1} x)}{dx} \Bigg) \\
+\quad =  \frac{2}{1 + x^2} \\</tex>
+    <reason>\text{Using the fact }\frac{d(tan^{-1})}{dx} x = \frac{1}{1 + x^2}</reason>
+  </step>
+</question>

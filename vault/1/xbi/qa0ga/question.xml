@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate the following} \\
+\qquad \dfrac{x^2}{\sqrt{x^6+a^6}}</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the following sets of substitutions}\\
+\text{will make it easier to calculate the integral?}</context>
+    <tex correct='true'>\begin{align}
+\text{Let }t &amp;= x^3 \text{ and } b= a^3 \\
+\therefore dt &amp;= 3x^2 dx\implies x^2dx = \frac{dt}{3} 
+\end{align}</tex>
+    <tex>\begin{align}
+\text{Let }t &amp;= x^2 \text{ and } b= a^2 \\
+\therefore dt &amp;= 2x dx\implies x dx = \frac{dt}{2} \\
+\implies\int\dfrac{x\cdot x}{\sqrt{x^6+a^6}}dx &amp;= 
+\int\dfrac{\sqrt{t}}{\sqrt{t^3 + b^3}}dt 
+\end{align}</tex>
+    <reason>\text{When substituting, you ideally want to pick a}\\
+t = f(x) \text{ such that only }dt = f'(x)\text{ is in the } \\
+\text{numerator and something with just }t\text{ is in }\\
+\text{the denominator.}</reason>
+  </step>
+  <step>
+    <context>\text{Has the integral been calculated correctly}\\
+\text{below in terms of x?}</context>
+    <tex correct='true'>\begin{align}
+\int\dfrac{x^2}{\sqrt{x^6 + a^6}}dx &amp;= 
+\dfrac{1}{3}\int\dfrac{dt}{\sqrt{t^2 + b^2}} \\ 
+&amp;= \dfrac{1}{3}\log\left| t + \sqrt{t^2 + b^2} \right| + C  \\ 
+&amp;=  \dfrac{1}{3}\log\left| x^3 + \sqrt{x^6 + a^6} \right| + C 
+\end{align}</tex>
+    <reason>\text{Use }\int\dfrac{dt}{\sqrt{t^2 + b^2}} = 
+\log\left| t + \sqrt{t^2 + b^2}\right| + C. \\
+\text{And don't forget, } t = x^3 \text{ and } b = a^3.</reason>
+  </step>
+</question>

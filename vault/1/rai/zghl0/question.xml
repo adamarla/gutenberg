@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{On which of the following intervals}\\
+\text{is the function f given by }\\
+\qquad f(x) = x^{100}-\sin x + 1 \\
+\text{strictly decreasing?}\\
+\begin{tabular}{ll}
+(a) (0,1) &amp; (b) \left(0,\dfrac{\pi}{2}\right) \\
+(c) \left(\frac\pi{2},\pi\right) &amp; (d)\text{ None of the above}
+\end{tabular}</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the following must be true}\\
+\text{for }f(x)\text{ to be strictly decreasing?}</context>
+    <tex correct='true'>\text{For }f(x)\text{ to be strictly decreasing}\\
+\begin{align}
+    \dfrac{d}{dx}f(x) &amp;\lt 0 \\
+    \implies \dfrac{d}{dx}\left(x^{100} + \sin x - 1\right)
+    &amp;= 100x^{99} + \cos x \lt 0 \\
+    \implies \cos x\lt -100\cdot x^{99}
+\end{align}</tex>
+    <tex>\text{For }f(x)\text{ to be strictly decreasing}\\
+\begin{align}
+    \dfrac{d}{dx}f(x) &amp;\leq 0 \\
+    \implies \dfrac{d}{dx}\left(x^{100} + \sin x - 1\right)
+    &amp;= 100x^{99} + \cos x \leq 0 \\
+    \implies \cos x\leq -100\cdot x^{99}
+\end{align}</tex>
+    <reason>\text{A strictly decreasing function is always}\\
+\text{decreasing. Which means, }f'(x)\neq 0 \text{ anywhere.}\\
+\text{Hence the condition }\frac{d}{dx}f(x)\lt 0.</reason>
+  </step>
+  <step>
+    <context>\text{Does the table below correctly capture}\\
+\text{the relative values of }\cos x\text{ and }-100\cdot x^{99}?</context>
+    <tex correct='true'>\begin{tabular}{c|c|c}
+x &amp; \cos x &amp; -100\cdot x^{99} \\
+\hline
+(0,1) &amp; \gt 0 &amp; \lt 0  \\
+\left(\frac\pi{2},\pi\right) &amp;\lt 0, \gt -1 &amp; \lt -100\implies\lt -1\\
+\left(0,\frac\pi{2}\right) &amp; \gt 0 &amp; \lt 0 \\
+\hline
+\end{tabular}\\
+\text{As, }\cos x\nless -100x^{99}\text{ in any of the given}\\
+\text{intervals, therefore f(x) cannot be strictly}\\
+\text{decreasing in any of them.}</tex>
+    <reason>\text{The trickiest interval is }\left(\frac\pi{2},\pi\right).
+\text{Remember, }\frac\pi{2}\gt 1.\\
+\text{ And therefore, }\frac\pi{2}\lt x\lt \pi\implies x^{99}\gt 1\\
+\implies -100x^{99}\lt -100\implies -100x^{99}\lt -1\lt \cos x.</reason>
+  </step>
+  <choices>
+    <tex>\left(0,1\right)</tex>
+    <tex correct='true'>\left(0,\frac\pi{2}\right)</tex>
+    <tex>\left(\frac\pi{2},\pi\right)</tex>
+    <tex>\text{None of the above.}</tex>
+  </choices>
+</question>

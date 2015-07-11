@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate the following }\\
+\dfrac{1}{\sqrt{\left(2 - x\right)^2 + 1}}</tex>
+  </statement>
+  <step>
+    <context>\text{Which substitution will make it }\\
+\text{easier to evaluate the integral?}</context>
+    <tex correct='true'>\text{Let }t = 2 - x \implies -dt = dx\\
+
+\therefore \int \dfrac{dx}{\sqrt{\left(2 -x \right)^2 + 1}} = -\int \dfrac{dt}{\sqrt{t^2 +1}}\\
+</tex>
+    <tex>\text{Let }t = \left(2 - x\right)^2\\
+\therefore \dfrac{dt}{dx} = -2 \left(2 -x\right) \implies dx = \dfrac{-dt}{2 \left(2 - x\right)} = \dfrac{-dt}{2\sqrt{t}}\\
+\begin{align}
+\int \dfrac{dx}{\sqrt{\left(2 - x\right)^2 + 1}} = -\dfrac{1}{2}\int \dfrac{dt}{\sqrt{t}\left(\sqrt{t + 1}\right)}
+\end{align}</tex>
+    <reason>\int \dfrac{dx}{\sqrt{\left(x\right)^2 + a^2}} \text{ is a known result. And we can} \\
+\text{make }\int \dfrac{dx}{\sqrt{\left(2 - x\right)^2 + 1}}\text{ look like it, then it }\\
+\text{should be easy to evaluate the integral.}</reason>
+  </step>
+  <step>
+    <context>\text{Are the calculations below correct?}</context>
+    <tex correct='true'>
+\int \dfrac{dx}{\sqrt{\left(2 -x\right)^2 + 1}} = -\int \dfrac{dt}{\underbrace{\sqrt{t^2 + 1}}_{a = 1}}\\
+															\qquad\qquad\quad= -\log \left| t + \sqrt{t^2 + 1} \right| + C\\
+															\qquad\qquad\quad= -\log \left| \left(2 -x\right) + \sqrt{\left(2 -x\right)^2 + 1}\right| + C\\
+															\qquad\qquad\quad= \log \left| \dfrac{1}{\left(2 - x\right) + \sqrt{x^2 -4x + 5}}\right| + C\\
+</tex>
+    <reason>\text{Standard result}\\
+\int \dfrac{dx}{\sqrt{x^2 + a^2}} = \log \vert x + \sqrt{x^2 + a^2} \vert + C</reason>
+  </step>
+  <choices>
+    <tex>\log \left|\left(2 - x\right) + \sqrt{x^2 -4x + 5}\right| + C</tex>
+    <tex>\log \left| \dfrac{1}{\left(2 - x^2\right) + \sqrt{x^2 -4x + 5}}\right| + C</tex>
+    <tex correct='true'>\log \left| \dfrac{1}{\left(2 - x\right) + \sqrt{x^2 -4x + 5}}\right| + C</tex>
+    <tex>-\log \left| \dfrac{1}{\left(2 - x\right) + \sqrt{x^2 -4x + 5}}\right| + C</tex>
+  </choices>
+</question>

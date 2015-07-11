@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate the following, }\\
+\dfrac{1}{\sqrt{x^2 +2x + 2}}</tex>
+  </statement>
+  <step>
+    <context>\text{If }\dfrac{1}{\sqrt{x^2 + 2x + 2}} = \dfrac{1}{\sqrt{t^2 + a^2}},\text{then}\\
+t =? \text{ and }a =? </context>
+    <tex correct='true'>\begin{align}
+t &amp;= x +1\\
+a &amp;= 1
+\end{align} </tex>
+    <tex>\begin{align}
+t &amp;= x +1\\
+a &amp;= 0
+\end{align} </tex>
+    <reason>x^2 + 2x +2 \text{ is almost like }x^2+2x + 1\text{ but not}\\
+\text{equal.In fact }\left(x^2 + 2x +2\right) = \left(x +1\right)^2 + 1^2\\
+\therefore \dfrac{1}{\sqrt{x^2 + 2x + 2}}= \dfrac{1}{\sqrt{\left(x +1\right)^2 + 1^2}}\\
+
+</reason>
+  </step>
+  <step>
+    <context>\text{Has the integral been calculated correctly?}</context>
+    <tex correct='true'>
+\int \dfrac{1}{\sqrt{x^2 + 2x + 2}}.dx = \int \dfrac{1}{\sqrt{\left(x+1\right)^2 + 1^2}}.dx\\
+												  \qquad\qquad\quad= \log \left|\left(x+1\right)+\sqrt{\left(x +1\right)^2 + 1^2} \right| + C\\
+												  \qquad\qquad\quad= \log \left|\left(x+1\right)+\sqrt{x^2 + 2x +2} \right| + C\\
+</tex>
+    <reason>\text{Use }\dfrac{dt}{\sqrt{t^2 + a^2}} = \log \left|t + \sqrt{t^2 + a^2}\right| +C\\
+t= x+1</reason>
+  </step>
+  <choices>
+    <tex>\log \left|\left(x-1\right)+\sqrt{x^2 + 2x +2} \right| + C</tex>
+    <tex correct='true'>\log \left|\left(x+1\right)+\sqrt{x^2 + 2x +2} \right| + C</tex>
+    <tex>-\log \left|\left(x+1\right)+\sqrt{x^2 + 2x +2} \right| + C</tex>
+    <tex>\log \left|\left(x+1\right)-\sqrt{x^2 + 2x +2} \right| + C</tex>
+  </choices>
+</question>

@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the following integral}\\
+\int \left(2x - 3\cos x + e^x\right) .dx</tex>
+  </statement>
+  <step>
+    <context>\text{Is the calculation below correct?}</context>
+    <tex correct='true'>\int \left(2x - 3\cos x + e^x\right) .dx \\
+\qquad\qquad\quad= \int 2x.dx -\int 3 \cos x .dx +\int e^x.dx \\
+\qquad\qquad\quad=\dfrac{2x^2}{2} - 3\sin x + e^x  +C\\
+\qquad\qquad\quad= x^2 - 3\sin x + e^x + C
+\\
+\text{Here, C is the constant of integration}</tex>
+    <reason>\text{Other than using the result of step 1, we have}\\
+\text{used the fact that }\int t^n .dt = \dfrac{t^{n+1}}{n+1}.\text{ Check your}\\
+\text{calculations you got something else.}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\int \left(2x - 3\cos x + e^x\right) .dx= x^2 - 3\sin x + e^x + C</tex>
+    <tex>\int \left(2x - 3\cos x + e^x\right) .dx= - x^2 +3\sin x + e^x + C</tex>
+    <tex>\int \left(2x - 3\cos x + e^x\right) .dx=- x^2 - 3\sin x + e^x + C</tex>
+    <tex>\int \left(2x - 3\cos x + e^x\right) .dx= \dfrac{x^2}{2} - 3\sin x + e^x + C</tex>
+  </choices>
+</question>

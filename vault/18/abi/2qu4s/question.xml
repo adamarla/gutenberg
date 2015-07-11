@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find}\frac{dy}{dx}\text{ of the following}\\
+
+\sin^2 x + \cos^2 y = 1</tex>
+  </statement>
+  <step>
+    <context>f(x) = g(h(x))\text{,then f^\prime}=</context>
+    <tex correct='true'>\frac{df(x)}{dx} = g^\prime( h) h^\prime</tex>
+    <tex>\frac{df(x)}{dx} = g^\prime(h^\prime) </tex>
+    <reason>\text{This is a standard formula.It is called Chain}\\
+\text{Rule.Review it if you got this wrong.}\\</reason>
+  </step>
+  <step>
+    <context>\text{Are the following calculations correct?}</context>
+    <tex correct='true'>\text{After diffrentiating the equation we get}\\
+\frac{d(\sin^2 x + \cos^2 y)}{dx}=\frac{d(1)}{dx}\\
+\Rightarrow 2\sin x \cos x   \frac{d(x)}{dx}+2\cos y (-\sin y) \frac{d(y)}{dx} = 0\\   
+\Rightarrow \sin 2 x  -\sin 2y \frac{dy}{dx} = 0 \\
+
+\text{After rearranging, we get}\\
+\frac{dy}{dx}=\frac{\sin 2x}{\cos 2y}</tex>
+    <reason>\text{Other than chain rule we have used the fact}\\
+\text{that }\frac{d(\sin x)}{dx}=\cos x\text{ and }\frac{d(\cos x)}{dx}=-\sin x \\
+\text{Check your calculations if you got something else.}</reason>
+  </step>
+  <choices>
+    <tex>\frac{dy}{dx}=\frac{\sin 2y}{\cos 2x}</tex>
+    <tex>\frac{dy}{dx}=-\frac{\sin 2y}{\cos 2x}</tex>
+    <tex correct='true'>\frac{dy}{dx}=\frac{\sin 2x}{\cos 2y}</tex>
+    <tex>\frac{dy}{dx}=-\frac{\sin 2x}{\cos 2y}</tex>
+  </choices>
+</question>
