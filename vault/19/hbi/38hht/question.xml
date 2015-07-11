@@ -5,43 +5,54 @@
 \sin 3x \cos 4x \, .</tex>
   </statement>
   <step>
-    <context>\text{Are the following calculations and analysis correct?}
+    <context>\text{The following substitution would convert}\\
+\sin x \cos y \text{ to the more easily integrable form }\\
+\sin \theta + \sin \alpha \text{ or }\cos \theta + \cos \alpha
 
 </context>
-    <tex correct='true'> \text{Using trignometric identity,}\\
-  \begin{align}
-\sin x \cos y &amp;= \dfrac{1}{2}[\sin (x+y) + \sin (x-y)] \\
-\implies \sin 3x \cos 4x  &amp;= 
-\dfrac{1}{2}[\sin 7x - \sin x]\\
+    <tex correct='true'> \text{Using trigonometric identity,}\\
 
-\therefore
-\int \sin 3x \cos 4x  dx &amp;= \int \dfrac{1}{2}[\sin 7x - \sin x] dx
-\end{align}</tex>
-    <tex> \text{Using trignometric identity,}\\
-  \begin{align}
-\sin x \cos y &amp;= \dfrac{1}{2}[\sin (x+y) + \sin (x-y)] \\
-\implies \sin 3x \cos 4x  &amp;= 
-\dfrac{1}{2}[\sin 7x + \sin x]\\
+\sin A \cos B = \dfrac{1}{2}[\sin (A+B) + \sin (A-B)] \\ 
 
+ 
+
+
+
+
+</tex>
+    <tex> \text{Using trigonometric identity,}\\
+ \cos 2 A = 2 \cos^2 A - 1 = 1 - 2 \sin^2 A
+</tex>
+    <reason> \sin 3x \cos 4x  = 
+\dfrac{1}{2}[\sin 7x - \sin x]  \\
 \therefore
-\int \sin 3x \cos 4x  dx &amp;= \int \dfrac{1}{2}[\sin 7x + \sin x]dx
-\end{align}</tex>
-    <reason>\text{Replace x by 3x and y by 4x in the trigonometric}\\
-\text{indentity, }\sin x \cos y = \dfrac{1}{2}[\sin (x+y) + \sin (x-y)] \\ 
-</reason>
+\int \sin 3x \cos 4x  dx = \int \dfrac{1}{2}[\sin 7x - \sin x] dx</reason>
   </step>
   <step>
     <context>\text{Is the following evaluation of the integral}\\
-\int \dfrac{1}{2}[\sin 7x - \sin x] dx \quad
+I = \int \dfrac{1}{2}[\sin 7x - \sin x] dx \quad
 \text{correct}?</context>
-    <tex correct='true'>\int \dfrac{1}{2}[\sin 7x - \sin x] dx\\
-= 
+    <tex correct='true'>
+\begin{align}
+
+I &amp;= \int \dfrac{1}{2}[\sin 7x - \sin x] dx\\
+&amp;= 
 \dfrac{1}{2}\int \sin 7x dx - \dfrac{1}{2} \int \sin x dx \\
 
-= \dfrac{- \cos 7x}{14} + \dfrac{\cos x}{2} +C
-</tex>
+&amp;= \dfrac{- \cos 7x}{14} + \dfrac{\cos x}{2} +C
+\end{align}</tex>
+    <tex>
+\begin{align}
+
+I &amp;= \int \dfrac{1}{2}[\sin 7x - \sin x] dx\\
+&amp;= 
+\dfrac{1}{2}\int \sin 7x dx - \dfrac{1}{2} \int \sin x dx \\
+
+&amp;= \dfrac{\cos 7x}{14} - \dfrac{\cos x}{2} +C
+\end{align}</tex>
     <reason>
-\int \sin (ax) dx = \dfrac{- \cos (ax)}{a} + C
+\int \sin (ax) dx = \dfrac{- \cos (ax)}{a} + C_1 \\
+\text{where }C_1 \text{ is the constant of integration.}
 </reason>
   </step>
   <choices>

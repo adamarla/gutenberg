@@ -5,43 +5,45 @@
 \sin^3 (2x+1) \, .</tex>
   </statement>
   <step>
-    <context>\text{Are the following calculations and analysis correct?}
+    <context>\text{The following substitution would convert}\\
+\sin ^3 \theta \text{ to the more easily integrable form }\\
+ \sin \theta_1 + \sin \theta_2 \text{ or }\cos \theta_1 + \cos \theta_2</context>
+    <tex correct='true'> \text{Using trigonometric identity,}\\
+\sin 3 x = 3 \sin x - 4 \sin^3 x \\
 
-</context>
-    <tex correct='true'> \text{Using trignometric identity,}\\
 
-\begin{align}
 
-\sin 3 x &amp;= 3 \sin x - 4 \sin^3 x \\
 
-\implies \sin^3 (2x+1) &amp;= 
-\dfrac{3 \sin (2 x+1) -  \sin 3 (2x +1)}{4}
-\end{align}\\
- 
+ </tex>
+    <tex> \text{Using trigonometric identity,}\\
+ \sin^2 x + \cos^2 x = 1</tex>
+    <reason>\sin^3 (2x+1) = 
+\dfrac{3 \sin (2 x+1) -  \sin 3 (2x +1)}{4} \\
 
-\therefore
+ \therefore
 \int \sin^3 (2x+1) dx \\
-\quad \qquad \qquad = \int \dfrac{3 \sin (2 x+1) - \sin (6x +3)}{4} dx</tex>
-    <reason>\text{Applied the trigonometric identity, }\\
-\sin^3 x = 3 \sin x - 4 \sin^3 x \text{ by replacing x by 2x+1}\\
-\text{Check your calculations, if you got something}\\
-\text{else.}
-</reason>
+\quad \qquad \qquad = \int \dfrac{3 \sin (2 x+1) - \sin (6x +3)}{4} dx</reason>
   </step>
   <step>
     <context>\text{Is the following evaluation of the integral}\\
-\int \dfrac{3 \sin (2 x+1) - \sin (6x +3)}{4} dx \quad
+I = \int \dfrac{3 \sin (2 x+1) - \sin (6x +3)}{4} dx \quad
 \text{correct}?</context>
-    <tex correct='true'>\int \dfrac{3 \sin (2 x+1) - \sin (6x +3)}{4} dx \\
-= 
-\dfrac{3}{4} \int sin(2x+1) dx - \dfrac{1}{4}\int  \sin(6x+3) dx \\
-= \dfrac{-3}{8}\cos (2x + 1) + \dfrac{1}{24} \cos (6 x + 3) + C</tex>
-    <tex>\int \dfrac{3 \sin (2 x+1) - \sin (6x +3)}{4} dx \\
-= 
-\dfrac{3}{4} \int sin(2x+1) dx - \dfrac{1}{4}\int  \sin(6x+3) dx \\
-= \dfrac{3}{8}\cos (2x + 1) - \dfrac{1}{24} \cos (6 x + 3) + C</tex>
+    <tex correct='true'>
+\begin{align}
+
+I &amp;= \int \dfrac{3 \sin (2 x+1) - \sin (6x +3)}{4} dx \\
+&amp;= \dfrac{3}{4} \int sin(2x+1) dx - \dfrac{1}{4}\int  \sin(6x+3) dx \\
+&amp;= \dfrac{-3}{8}\cos (2x + 1) + \dfrac{1}{24} \cos (6 x + 3) + C
+\end{align}</tex>
+    <tex>
+\begin{align}
+
+I &amp;= \int \dfrac{3 \sin (2 x+1) - \sin (6x +3)}{4} dx \\
+&amp;= \dfrac{3}{4} \int sin(2x+1) dx - \dfrac{1}{4}\int  \sin(6x+3) dx \\
+&amp;= \dfrac{3}{8}\cos (2x + 1) - \dfrac{1}{24} \cos (6 x + 3) + C
+\end{align}</tex>
     <reason>
-\int \sin (a x)dx =  \dfrac{- \cos (a x)}{a}+ C \\
+\int \sin (a x)dx =  \dfrac{- \cos (a x)}{a}+ C_1 \\
 \text{Alternatively, proceed with }
 \sin^3 x = \sin^2 x \cdot \sin x  \\
 \text{which gives } 

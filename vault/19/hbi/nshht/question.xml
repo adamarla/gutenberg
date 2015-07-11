@@ -14,18 +14,6 @@
 \end{align}
 </tex>
     <tex> \text{Using trignometric identity,}\\
-<<<<<<< HEAD
-  \begin{align}
-\cos 2 x &amp;= 1 - 2 \sin^2  x \\
-\implies \sin^2 (2x +5)  &amp;= 
-2 - 2\cos 2 (2x+5)\\
-
-\therefore 
-\int \sin^2 (2x +5) dx &amp;= \int 2 - 2\cos (2x+5) dx
-\end{align}</tex>
-    <reason>\text{Replace x by 2x+5 in the trigonometric}\\
-\text{indentity, }\cos 2 x = 1 - 2 \sin^2  x 
-=======
 \begin{align}
   \sin ^2\theta + \cos ^2\theta = 1
 \end{align}
@@ -35,7 +23,6 @@
 \therefore
 \int \sin^2 (2x +5) dx &amp;= \int \dfrac{1 - \cos 2 (2x+5)}{2}dx  
 \end{align}
->>>>>>> upstream/master
 </reason>
   </step>
   <step>
