@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>\text{Integrate the following}\\
+\qquad \dfrac{x+2}{\sqrt{x^2+2x+3}}</tex>
+  </statement>
+  <step>
+    <context>
+      \text{If }\underbrace{x+2}_{\text{Numerator}} = 
+  		A\cdot\dfrac{d}{dx}(x^2+2x+3) + B \\
+  		\text{then what are A and B?}
+  		</context>
+    <tex correct="true">
+  		\begin{align}
+  		  A &amp;=\frac{1}{2} \\
+  		  B &amp;= 1
+  		\end{align}
+  		</tex>
+    <tex correct="false">
+  		\begin{align}
+  		  A &amp;= -\frac{1}{2} \\
+  		  B &amp;= 2 
+  		\end{align}
+  		</tex>
+    <reason>
+      \begin{align}
+      x+2 &amp;= A\cdot\frac{d}{dx}(x^2+2x+3) + B \\
+      \implies x+2 &amp;= 2Ax + (2A + B) \\
+      \implies 2A=1\text{ or }A&amp;=\frac{1}{2}\text{ and }\therefore B = 1
+      \end{align}
+  		</reason>
+  </step>
+  <step>
+    <context>
+  		\text{Which of the following shows the correct}\\
+  		\text{way to re-write }\int\dfrac{x+2}{\sqrt{x^2+2x+3}}dx?
+  			</context>
+    <tex correct="true">
+  			\begin{align}
+  			  \int\dfrac{x+2}{\sqrt{x^2+2x+3}}dx &amp;= 
+  			  \frac{1}{2}\int\dfrac{2x+2}{x^2+2x+3}dx \\
+  			  &amp;+ \int\dfrac{dx}{\sqrt{x^2+2x+3}}dx
+  			\end{align}
+  			</tex>
+    <tex correct="false">
+  			\begin{align}
+  			  \int\dfrac{x+2}{\sqrt{x^2+2x+3}}dx &amp;= 
+  			  \int\dfrac{2x+2}{x^2+2x+3}dx \\
+  			  &amp;+ \int\dfrac{dx}{\sqrt{x^2+2x+3}}dx
+  			\end{align}
+  			</tex>
+    <reason>
+  			\text{We showed that }x+2 = \frac{1}{2}\cdot(2x+2) + 1.\\
+  			\therefore \int\dfrac{x+2}{\sqrt{x^2+2x+3}}dx = 
+  			\int\dfrac{\frac{1}{2}\cdot(2x+2) + 1}{\sqrt{x^2+2x+3}}dx \\
+  			= \frac{1}{2}\int\dfrac{2x+2}{x^2+2x+3}dx + \int\dfrac{dx}{\sqrt{x^2+2x+3}}dx
+  			</reason>
+  </step>
+  <step>
+    <context>
+  		\text{If }M = \frac{1}{2}\int\dfrac{2x+2}{x^2+2x+3}dx, \\
+  		\text{then has M been evaluated correctly below?}
+  		</context>
+    <tex correct="true">
+  		\begin{align}
+  		  \text{Let }t &amp;= x^2+2x+3 \implies dt = (2x+2)\cdot dx\\
+  		  \therefore M &amp;= \frac{1}{2}\int\dfrac{2x+2}{x^2+2x+3}dx = \frac{1}{2}\int\dfrac{dt}{\sqrt{t}}\\
+  		  &amp;= \frac{1}{2}\cdot\dfrac{1}{\frac{1}{2}}\cdot\sqrt{t} + C_1 \\
+  		  &amp;= \sqrt{x^2+2x+3} + C_1
+  		\end{align}
+  		</tex>
+    <reason>
+  		\int t^{n} dt = \dfrac{t^{n+1}}{n+1} + C.\text{In this case, }n=-\frac{1}{2}.\\
+  		\therefore \frac{1}{2}\int\dfrac{dt}{\sqrt{t}} = 
+  		\frac{1}{2}\cdot\frac{1}{\frac{1}{2}}t^{\frac{1}{2}} = \sqrt{t} + C_1
+  		</reason>
+  </step>
+  <step>
+    <context>
+  			\text{And if }N = \int\dfrac{dx}{\sqrt{x^2+2x+3}}dx, \text{then would}\\
+  			\text{N be the following?}
+  			</context>
+    <tex correct="true">
+  			\begin{align}
+  			  x^2+2x+3 &amp;= \left[\left(x+1\right)^2 + 2\right] \\
+  			  &amp;= \left[\left(x+1\right)^2+(\sqrt{2})^2\right] \\
+  			  \therefore N &amp;= \int\dfrac{dx}{\sqrt{\left(x+1\right)^2
+  			  +(\sqrt{2})^2 }}dx\\
+  			\end{align}\\
+  			\begin{align}
+  			&amp;= \log\left| \left(x+1\right) + 
+  			  \sqrt{\left(x+1\right)^2+(\sqrt{2})^2}\right| + C_2  \\
+  			  &amp;= \log\left| \left(x+1\right) + \sqrt{x^2+2x+3}\right| + C_2
+  			\end{align}
+  			</tex>
+    <reason>
+  			\text{You can convert any quadratic polynomial into}\\
+  			(x\pm a)^2\pm b^2\text{ form. And so, we went from}\\
+  			x^2+2x+3\rightarrow (x+1)^2 + 2 \rightarrow \int\dfrac{dx}{\sqrt{(x+1)^2+(\sqrt{2})^2}}\\
+  			\text{After that, we simply applied used result for }\\
+  			\int\frac{dx}{\sqrt{x^2 + m^2}}dx
+  			</reason>
+  </step>
+  <step>
+    <context>
+  		\text{And so, is this the final answer?}
+  		</context>
+    <tex correct="true">
+  		\begin{align}
+  		&amp;\int\dfrac{x+2}{\sqrt{x^2+2x+3}}dx =\sqrt{x^2+2x+3} \\
+  		&amp;+ \log\left| \left(x+1\right) + \sqrt{x^2+2x+3}\right| + C
+  		\end{align}
+  		</tex>
+    <reason>
+  		\int\dfrac{x+2}{\sqrt{x^2+2x+3}}dx = \underbrace{M}_{\text{Step 3}} 
+  		+\underbrace{N}_{\text{Step 4}}. \\
+  		\text{Nothing more complicated than that.}
+  		</reason>
+  </step>
+</question>
