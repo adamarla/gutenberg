@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate the following, }\\
+\dfrac{6x + 7}{\sqrt{\left(x-5\right)\left(x-4\right)}}</tex>
+  </statement>
+  <step>
+    <context>\left(6x + 7\right) = A\dfrac{d}{dx}\left(x-5\right)\left(x-4\right) +B\\
+\text{What are A and B?}</context>
+    <tex correct='true'>\begin{align}
+A &amp;=3\\
+B &amp;=34\\
+\end{align}</tex>
+    <tex>\begin{align}
+A &amp;=6\\
+B &amp;=23\\
+\end{align}</tex>
+    <reason>
+\begin{align}
+\left(6x + 7\right) =A\dfrac{d}{dx}\left(x^2 -9x + 20\right)+B\\
+											=A \left(2x -9\right) + B\\
+\end{align}\\
+\implies 6x+7 = 2Ax + \left(B -9A\right)\\
+\therefore 2A=6\implies A=3 \text{ and }B-27=7\implies B=34											</reason>
+  </step>
+  <step>
+    <context>\text{Which of the following shows the correct }\\
+\text{way of rewriting }\int \dfrac{6x+7}{\left(x-5\right)\left(x-4\right)}.dx?
+</context>
+    <tex correct='true'>\begin{align}
+\int \dfrac{6x+7}{\left(x-5\right)\left(x-4\right)}.dx = &amp;3\int \dfrac{2x-9}{\sqrt{x^2-9x+20}}dx\\
+&amp;+34 \int \dfrac{dx}{\sqrt{x^2-9x+20}}
+\end{align}</tex>
+    <tex>\begin{align}
+\int \dfrac{6x+7}{\left(x-5\right)\left(x-4\right)}.dx = &amp;\int \dfrac{2x-9}{\sqrt{x^2-9x+20}}.dx\\
+&amp;+\int \dfrac{dx}{\sqrt{x^2-9x+20}}
+\end{align}</tex>
+    <reason>\text{We showed that }6x+7 = 3 \left(2x-9\right) +34\\
+\begin{align}
+\therefore\int \dfrac{6x+7}{\left(x-5\right)\left(x-4\right)}.dx = &amp;3\int \dfrac{2x-9}{\sqrt{x^2-9x+20}}dx\\
+&amp;+34 \int \dfrac{dx}{\sqrt{x^2-9x+20}}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{If }M =3 \int \dfrac{2x-9}{\sqrt{x^2- 9x +20}}.dx \text{,then what does}\\
+\text{M evaluate to?</context>
+    <tex correct='true'>M = 3 \int \dfrac{2x-9}{\sqrt{x^2- 9x +20}}.dx\\
+\text{If }t = x^2- 9x +20\text{, then }dt  =\left(2x-9\right).dt\\
+\begin{align}
+\therefore M &amp;= 3\int \dfrac{dt}{\sqrt{t}}= 3.\dfrac{1}{\dfrac{1}{2}}.\sqrt{t} +C_1\\ 
+&amp;=6\sqrt{t}+C_1\\
+&amp;=6\sqrt{x^2-9x+20} + C_1\\
+\end{align}
+</tex>
+    <reason></reason>
+  </step>
+  <step>
+    <context>\text{And if }N= 34\int \dfrac{dx}{\sqrt{x^2-9x+20}}\text{,then what}\\
+\text{is N=?}</context>
+    <tex correct='true'>\begin{align}
+x^2-9x+20 &amp;= \left[\left(x - \dfrac{9}{2}\right)^2 - \dfrac{81}{4} +20\right]\\
+&amp;=\left[\left(x - \dfrac{9}{2}\right)^2 - \left(\dfrac{1}{2}\right)^2\right]\\
+
+\end{align}\\
+
+\therefore N = 34\int \dfrac{dx}{\sqrt{x^2-9x+20}}=34\int \dfrac{dx}{\sqrt{\left(x-\dfrac{9}{2}\right)^2-\left(\dfrac{1}{2}\right)^2}}</tex>
+    <reason></reason>
+  </step>
+</question>

@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate the following }\\
+\dfrac{x +2}{\sqrt{x^2 - 1}}</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the following ways of rewriting }\\
+\dfrac{x + 2}{\sqrt{x^2 - 1}}\text{ will make it easier to calculate}\\
+\text{the Integral ?}</context>
+    <tex correct='true'>\dfrac{x + 2}{\sqrt{x^2 - 1}} = \dfrac{x}{\sqrt{x^2 - 1}} + \dfrac{2}{\sqrt{x^2 - 1}}</tex>
+    <tex>\begin{align}
+\dfrac{x + 2}{\sqrt{x^2 - 1}} &amp;= \dfrac{\left(x + 1\right) + 1}{\sqrt{x^2 - 1}}\\
+									   &amp;= \sqrt{\dfrac{x +1}{x - 1}} + \dfrac{1}{\sqrt{x^2 - 1}}	
+\end{align}
+
+</tex>
+    <reason>\text{Notice that in }\dfrac{x + 2}{\sqrt{x^2 - 1}} = \dfrac{x}{\underbrace{\sqrt{x^2 - 1}}_{A}} + \dfrac{2}{\underbrace{\sqrt{x^2 - 1}}_{B}},\\
+\text{A is of the form }\dfrac{dt}{\sqrt{t}}\text{ and B is of the form}\dfrac{1}{\sqrt{x^2 - t^2}}\\
+-\text{both of which we know.}</reason>
+  </step>
+  <step>
+    <context>\text{Has the integral been calculated correctly?}</context>
+    <tex correct='true'>\begin{align}
+\int \dfrac{x +2}{\sqrt{x^2 - 1}}.dx &amp;=\int \dfrac{x}{\underbrace{\sqrt{x^2 - 1}}_{A}}.dx  +2\int \dfrac{dx}{\underbrace{\sqrt{x^2 - 1}}_{B}}\\
+							
+\end{align}\\
+\text{In A,if }t =x^2 -1,\implies dt = 2x.dx \implies x.dx=\dfrac{dt}{2}\\
+
+\begin{align}
+\therefore \int \dfrac{x.dx}{\sqrt{x^2 -1}} &amp;= \dfrac{1}{2}\int \dfrac{dt}{\sqrt{t}}= \dfrac{1}{2}.2\sqrt{t}+ C_1\\
+														&amp;=\sqrt{x^2 - 1} + C_1\\
+\end{align} \\
+\text{And } B = 2\int \dfrac{dx}{\sqrt{x^2 -1}} = 2\log \left|x + \sqrt{x^2 - 1}\right|+C_2\\
+\begin{align}
+\therefore \int \dfrac{x +2}{\sqrt{x^2 -1}}.dx = \sqrt{x^2 -1}&amp;+ 2\log \left|x + \sqrt{x^2 - 1}\right| \\
+																		&amp;+ \underbrace{\left(C_1+C_2\right)}_{C}
+\end{align}</tex>
+    <reason>\text{Use standard formula}\\
+\int \dfrac{dx}{\sqrt{x^2 -a^2}} = \log \left|x + \sqrt{x^2 -a^2}\right| +C\\
+\text{Here }a =1</reason>
+  </step>
+</question>
