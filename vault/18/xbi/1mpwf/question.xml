@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate the following, }\\
+\dfrac{1}{\sqrt{8 + 3x - x^2}}</tex>
+  </statement>
+  <step>
+    <context>\text{If }8 +3x + x^2 = b^2 - \left(x - a\right)^2\text{, then what are}\\
+a,b = ?</context>
+    <tex correct='true'>\begin{align}
+a &amp;= \dfrac{3}{2}\\
+b &amp;= \dfrac{\sqrt{41}}{2}\\ 
+\end{align}</tex>
+    <tex>\begin{align}
+a &amp;= 3\\
+b &amp;= 4\\ 
+\end{align}</tex>
+    <reason>8 + 3x - x^2 = -\left(x^2 -3x -8\right)\\
+\text{Now }x^2- 3x = \left(x - \dfrac{3}{2}\right)^2 - \dfrac{9}{4},\text{So,}\\
+-\left[x^2 -3x - 8\right] = -\left[\left(x - \dfrac{3}{2}\right)^2 - \dfrac{9}{4} - 8\right] \\= \left(\dfrac{\sqrt{41}}{2}\right)^2 - \left(x - \dfrac{3}{2}\right)^2\\</reason>
+  </step>
+  <step>
+    <context>\text{Has the Integral been evaluated correctly?}</context>
+    <tex correct='true'>\begin{align}
+\int \dfrac{dx}{\sqrt{8 + 3x - x^2}} &amp;= \int \dfrac{dx}{\underbrace{\sqrt{\left(\dfrac{\sqrt{41}}{2}\right)^2 - \left(x - \dfrac{3}{2}\right)^2}}_{\sqrt{a^2 - x^2}}}\\
+												&amp;=\sin^{-1}\left(\dfrac{x - \dfrac{3}{2}}{\left(\dfrac{\sqrt{41}}{2}\right)}\right) + C\\
+												&amp;= \sin^{-1} \left(\dfrac{2x - 3}{\sqrt{41}}\right) + C\\
+\end{align}</tex>
+    <reason>\text{Use the standard result}\\
+\int \dfrac{dx}{\sqrt{a^2 - x^2}} = sin^{-1} \dfrac{x}{a}  +C</reason>
+  </step>
+  <choices>
+    <tex>\sin \left(\dfrac{2x - 3}{\sqrt{41}}\right) + C</tex>
+    <tex correct='true'>\sin^{-1} \left(\dfrac{2x - 3}{\sqrt{41}}\right) + C</tex>
+    <tex>\sin^{-1} \left(\dfrac{x - 3}{\sqrt{41}}\right) + C</tex>
+    <tex>-\sin^{-1} \left(\dfrac{2x - 3}{\sqrt{41}}\right) + C</tex>
+  </choices>
+</question>
