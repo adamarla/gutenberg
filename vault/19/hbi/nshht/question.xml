@@ -5,45 +5,44 @@
 \sin^2 (2x +5) \, .</tex>
   </statement>
   <step>
-    <context>\text{Are the following calculations and analysis correct?}
-
-</context>
+    <context>\text{The following substitution would convert}\\
+\sin ^2\theta \text{ to the more easily integrable form }\\
+\sin n\theta \text{ or }\cos n\theta.</context>
     <tex correct='true'> \text{Using trignometric identity,}\\
-  \begin{align}
-\cos 2 x &amp;= 1 - 2 \sin^2  x \\
-\implies \sin^2 (2x +5)  &amp;= 
-\dfrac{1 - \cos 2 (2x+5)}{2}\\
-
-\therefore
-\int \sin^2 (2x +5) dx &amp;= \int \dfrac{1 - \cos 2 (2x+5)}{2}dx
-\end{align}</tex>
+\begin{align}
+  \sin ^2\theta = \dfrac{1-\cos 2\theta}{2}
+\end{align}
+</tex>
     <tex> \text{Using trignometric identity,}\\
-  \begin{align}
-\cos 2 x &amp;= 1 - 2 \sin^2  x \\
-\implies \sin^2 (2x +5)  &amp;= 
-2 - 2\cos 2 (2x+5)\\
-
-\therefore 
-\int \sin^2 (2x +5) dx &amp;= \int 2 - 2\cos (2x+5) dx
-\end{align}</tex>
-    <reason>\text{Replace x by 2x+5 in the trignometeric}\\
-\text{indentity, }\cos 2 x = 1 - 2 \sin^2  x 
+\begin{align}
+  \sin ^2\theta + \cos ^2\theta = 1
+\end{align}
+</tex>
+    <reason>\begin{align}
+  \sin^2 (2x +5)  &amp;= \dfrac{1 - \cos 2 (2x+5)}{2}\\
+\therefore
+\int \sin^2 (2x +5) dx &amp;= \int \dfrac{1 - \cos 2 (2x+5)}{2}dx  
+\end{align}
 </reason>
   </step>
   <step>
     <context>\text{Is the following evaluation of the integral}\\
-\int \dfrac{1 - \cos 2 (2x+5)}{2}dx \quad
+I=\int \dfrac{1 - \cos 2 (2x+5)}{2}dx \quad
 \text{correct}?</context>
-    <tex correct='true'>
-\int \dfrac{1 - \cos 2 (2x+5)}{2}dx \\
-= 
-\dfrac{1}{2}\int dx - \dfrac{1}{2} \int \cos (4x+10) dx \\
-
-= \dfrac{x}{2} - \dfrac{1}{8} \sin(4x +10) +C
+    <tex correct='true'>\begin{align}
+I &amp;= \int \dfrac{1 - \cos 2 (2x+5)}{2}dx \\
+  &amp;= \dfrac{1}{2}\int dx - \dfrac{1}{2} \int \cos (4x+10) dx \\
+  &amp;= \dfrac{x}{2} - \dfrac{1}{8} \sin(4x +10) +C
+\end{align}
+</tex>
+    <tex>\begin{align}
+I &amp;= \int \dfrac{1 - \cos 2 (2x+5)}{2}dx \\
+  &amp;= \dfrac{1}{2}\int dx - \dfrac{1}{2} \int \cos (4x+10) dx \\
+  &amp;= \dfrac{x}{2} - \dfrac{1}{2} \sin(4x +10) +C
+\end{align}
 </tex>
     <reason>\int dx = x \text{ and }
-\int \cos (ax) dx = 
-\dfrac{\sin(ax)}{a}</reason>
+\int \cos (ax)dx = \dfrac{\sin(ax)}{a}</reason>
   </step>
   <choices>
     <tex>\dfrac{x}{2} - \dfrac{1}{8} \sin(4x +10) </tex>

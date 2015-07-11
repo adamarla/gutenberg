@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int \dfrac{2x}{1+x^2}dx</tex>
+  </statement>
+  <step>
+    <context>\text{The following substitution would convert}\\
+I=\int \dfrac{2x}{1+x^2}dx \text{ to }I=\int \dfrac{1}{t}dt.</context>
+    <tex correct='true'>1+x^2=t</tex>
+    <tex>1+x=t</tex>
+    <reason>\begin{align}
+1+x^2 =t &amp;\implies 2x\cdot \dfrac{dx}{dt} =1 \\
+                &amp;\implies 2x\cdot dx = dt
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>\text{Does this look correct?}</context>
+    <tex correct='true'>\begin{align}
+  I &amp;=\int \dfrac{2x}{1+x^2}dx\\
+    &amp;\text{substituting }1+x^2=t\\
+  I &amp;= \int \dfrac{1}{t}dt \\
+    &amp;= \ln t + C \\
+    &amp;= \ln (1+x^2) + C
+\end{align}
+</tex>
+    <tex>\begin{align}
+  I &amp;= \int \dfrac{1}{t}dt \\
+    &amp;= \int t^{-1} dt \\
+    &amp;= t^0 + C
+\end{align}
+</tex>
+    <reason>\int \dfrac{1}{x}dx=\ln x + C</reason>
+  </step>
+</question>
