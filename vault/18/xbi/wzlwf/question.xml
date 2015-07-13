@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate the following rational function}\\
+\dfrac{x}{\left(x+1\right)\left(x+2\right)}</tex>
+  </statement>
+  <step>
+    <context>\text{If }\dfrac{x}{\left(x+1\right)\left(x+2\right)} = \dfrac{A}{\left(x+1\right)}+\dfrac{B}{\left(x+2\right)}\\
+\text{then which of the following is true?}</context>
+    <tex correct='true'>\begin{align}
+A +B &amp;=1\\
+2A + B &amp;= 0
+\end{align}\\
+\implies A = -1 \text{ and } B =2</tex>
+    <tex>\begin{align}
+A +B = 0\\
+2A + B = 1\\
+\end{align}\\
+\implies A=1 \text{ and }B =-1</tex>
+    <reason>\dfrac{x}{\left(x+1\right)\left(x+2\right)} = \dfrac{A}{\left(x+1\right)}+\dfrac{B}{\left(x+2\right)}\\
+
+\begin{align}
+\implies x &amp;= A \left(x +2\right) + B \left(x +1\right)\\
+&amp;=\left(A + B\right)x + \left(2A + B\right)\\
+\end{align}\\
+\text{On comparing }, A + B =1 , 2A + B = 0\\
+\implies A = -1 \text{ and } B= 2</reason>
+  </step>
+  <step>
+    <context>\text{Would }\int \dfrac{x}{\left(x+1\right)\left(x+2\right)}.dx\text{ would evaluate}\\
+\text{to the following?}</context>
+    <tex correct='true'>
+\int \dfrac{x}{\left(x+1\right)\left(x+2\right)}.dx =-\int \dfrac{dx}{x+1} + 2\int \dfrac{dx}{x+2}\\
+\qquad\qquad\qquad=2 \log \left|x +2\right| -\log \left|x+1\right| + C\\
+\qquad\qquad\qquad=\log \left|\dfrac{\left(x + 2\right)^2}{x +1}\right| + C\\
+</tex>
+    <reason>\text{In step 1, we showed }\\
+\dfrac{x}{\left(x+1\right)\left(x+2\right)} = \dfrac{-1}{\left(x+1\right)}+\dfrac{2}{\left(x+2\right)}\\
+\therefore \int \dfrac{x}{\left(x+1\right)\left(x+2\right)}.dx =-\int \dfrac{dx}{x+1} + 2\int \dfrac{dx}{x+2}\\
+\text{and }\int \dfrac{dx}{f \left(x\right)} = \log \left|f \left(x\right)\right| + C\\</reason>
+  </step>
+</question>
