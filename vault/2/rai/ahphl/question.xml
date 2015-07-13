@@ -16,7 +16,8 @@ I=\int \dfrac{(\log x)^2}{x}dx \text{ to }I=\int t^2 dt</context>
 </reason>
   </step>
   <step>
-    <context>\text{Does this look correct?}</context>
+    <context>\text{If }I=\int \dfrac{(\log x)^2}{x}dx=\int t^2 dt\\
+\text{then does this look correct?}</context>
     <tex correct='true'>\begin{align}
   I &amp;=\int t^2 dt \\
     &amp;=\dfrac{t^3}{3}+C\\
@@ -30,9 +31,9 @@ I=\int \dfrac{(\log x)^2}{x}dx \text{ to }I=\int t^2 dt</context>
     <reason>\int x^n dx = \dfrac{x^{n+1}}{n+1}</reason>
   </step>
   <choices>
-    <tex correct='true'>\dfrac{(\log x)^3}{3}+C</tex>
+    <tex>\dfrac{(\log x)^2}{3}</tex>
     <tex>\dfrac{(\log x)^3}{3}</tex>
     <tex>3(\log x)^3+C</tex>
-    <tex>\dfrac{(\log x)^2}{3}</tex>
+    <tex correct='true'>\dfrac{(\log x)^3}{3}+C</tex>
   </choices>
 </question>
