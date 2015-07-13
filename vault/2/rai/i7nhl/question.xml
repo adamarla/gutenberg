@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int \sin x\sin(\cos x)dx</tex>
+  </statement>
+  <step>
+    <context>\text{The following substitution would convert}\\
+I=\int \sin x\sin(\cos x)dx \text{ to } \int -\sin tdt</context>
+    <tex correct='true'>\cos x = t</tex>
+    <tex>\sin(\cos x)=t</tex>
+    <reason>\begin{align}
+  \cos x = t &amp;\implies -\sin x \dfrac{dx}{dt}=1\\
+                  &amp;\implies -\sin x dx = dt
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{If }I=\int \sin x\sin(\cos x)dx = \int -\sin t dt\\
+\text{then does this look right?}</context>
+    <tex correct='true'>\begin{align}
+  I &amp;=\int -\sin t dt \\
+    &amp;=\cos t + C = \cos (\cos x) + C
+\end{align}</tex>
+    <tex>\begin{align}
+  I &amp;=\int -\sin t dt \\
+    &amp;=-\cos t + C = -\cos (\cos x) + C
+\end{align}</tex>
+    <reason>\begin{align}
+               &amp;\dfrac{d}{dx}\cos \theta = -\sin\theta \\
+  \implies &amp;\int -\sin\theta = \cos \theta + C
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>\cos(x)+C</tex>
+    <tex correct='true'>\cos(\cos x)+C</tex>
+    <tex>-\cos(\cos x)+C</tex>
+    <tex>\sin(\cos x)+C</tex>
+  </choices>
+</question>

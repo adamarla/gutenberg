@@ -15,10 +15,12 @@ I=\int \dfrac{2x}{1+x^2}dx \text{ to }I=\int \dfrac{1}{t}dt.</context>
 </reason>
   </step>
   <step>
-    <context>\text{Does this look correct?}</context>
+    <context>\begin{align}
+  I &amp;=\int \dfrac{2x}{1+x^2}dx =\int \dfrac{1}{t}dt
+    \,(\because 1+x^2=t)    
+\end{align}\\
+\text{Now does this look correct?}</context>
     <tex correct='true'>\begin{align}
-  I &amp;=\int \dfrac{2x}{1+x^2}dx\\
-    &amp;\text{substituting }1+x^2=t\\
   I &amp;= \int \dfrac{1}{t}dt \\
     &amp;= \ln t + C \\
     &amp;= \ln (1+x^2) + C
@@ -27,9 +29,14 @@ I=\int \dfrac{2x}{1+x^2}dx \text{ to }I=\int \dfrac{1}{t}dt.</context>
     <tex>\begin{align}
   I &amp;= \int \dfrac{1}{t}dt \\
     &amp;= \int t^{-1} dt \\
-    &amp;= t^0 + C
-\end{align}
-</tex>
+    &amp;= t^0 + C = 1 + C
+\end{align}</tex>
     <reason>\int \dfrac{1}{x}dx=\ln x + C</reason>
   </step>
+  <choices>
+    <tex correct='true'>\ln (1+x^2) + C</tex>
+    <tex>\ln (1+x^2)</tex>
+    <tex>\dfrac{1}{2}\ln (1+x^2) + C</tex>
+    <tex>1+C</tex>
+  </choices>
 </question>
