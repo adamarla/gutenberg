@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the integral of the function}\\
+\dfrac{\cos 2 x+2\sin^2 x}{\cos^ 2 x} \,</tex>
+  </statement>
+  <step>
+    <context>\text{The following substitution would convert}\\
+f(x) = \dfrac{\cos 2 x+2\sin^2 x}{\cos^ 2 x}  \text{ to the more easily}\\
+\text{integrable form } \sec^2 x \text{ or } \mathrm{cosec}^2 x
+
+</context>
+    <tex correct='true'>\text{Using the trigonometric identity, }\\
+\cos 2 A = 1 - 2 \sin^2 A 
+
+</tex>
+    <tex>\text{Using the trigonometric identity, }\\
+\cos^2 x + \sin^2 x = 1
+
+</tex>
+    <reason>\begin{align}
+f(x) = \dfrac{\cos 2 x+2\sin^2 x}{\cos^ 2 x} \,
+&amp;= \dfrac{\cos 2 x+(1 - \cos 2x)}{\cos^ 2 x} \\
+&amp;= \dfrac{1}{\cos^2 x} 
+= \sec^2 x 
+\end{align}
+
+</reason>
+  </step>
+  <step>
+    <context>\text{Is the following evaluation of the integral}\\
+I = \int \dfrac{\cos 2 x+2\sin^2 x}{\cos^ 2 x} \, dx \quad
+\text{correct}?</context>
+    <tex correct='true'>
+\begin{align}
+I = \int f(x) \, dx
+&amp;= 
+
+
+\int \dfrac{\cos 2 x+2\sin^2 x}{\cos^ 2 x} \, dx \\
+&amp;=
+\int \sec^2 x \, dx \\
+&amp;=  \tan x+C
+\end{align}
+</tex>
+    <tex>
+\begin{align}
+I = \int f(x) \, dx
+&amp;= 
+
+
+\int \dfrac{\cos 2 x+2\sin^2 x}{\cos^ 2 x} \, dx \\
+&amp;=
+\int \sec^2 x \, dx \\
+&amp;=  \tan^2 x+C
+\end{align}
+</tex>
+    <reason>
+\int \sec^2 (a x) \,dx = \dfrac{\tan (a x)}{a}+ C \\
+\text{where C is the constant of integration.}</reason>
+  </step>
+  <choices>
+    <tex> \cot x+C</tex>
+    <tex> \tan^2 x+C</tex>
+    <tex correct='true'> \tan x+C</tex>
+    <tex> 2 \tan x+C</tex>
+  </choices>
+</question>

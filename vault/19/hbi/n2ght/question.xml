@@ -22,7 +22,7 @@
 &amp;= \int \dfrac{1}{2}  \left[ 2 -  \sec^2 \dfrac{x}{2}  \right] dx \\
 
 \end{align}\\</tex>
-    <reason>\text{Applied the trignometeric identities, }\\
+    <reason>\text{Applied the trigonometric identities, }\\
 \cos x = \cos^2 \left( \dfrac{x}{2}\right) - \sin^2 \left( \dfrac{x}{2}\right) \, , \\
  \cos 2 x = 1 - 2 \cos^2 x 
  \text{ and }
@@ -39,15 +39,26 @@
     <tex correct='true'>
 \begin{align}
 
-\quad \int \dfrac{1}{2}  \left[ 2 -  \sec^2 \dfrac{x}{2}  \right] dx 
-&amp;= \int \dfrac{1}{2} \left[ 2 -  \sec^2 \dfrac{x}{2}  \right] dx \\
+\int \dfrac{1}{2}  \left[ 2 -  \sec^2 \dfrac{x}{2}  \right] dx  
+&amp;= \dfrac{1}{2} \int \left[ 2 -  \sec^2 \dfrac{x}{2}  \right] dx \\
 
 &amp;= \dfrac{1}{2} \left[ 2 x - \dfrac{\tan (x/2)}{(1/2)} \right] + C \\
 
 &amp;= x- \tan \dfrac {x}{2}+C
 \end{align}</tex>
+    <tex>
+\begin{align}
+
+\int \dfrac{1}{2}  \left[ 2 -  \sec^2 \dfrac{x}{2}  \right] dx  
+&amp;= \dfrac{1}{2} \int \left[ 2 -  \sec^2 \dfrac{x}{2}  \right] dx \\
+
+&amp;= \dfrac{1}{2} \left[ 2 x - \dfrac{\tan^2 (x/2)}{(1/2)} \right] + C \\
+
+&amp;= x- \tan^2 \dfrac {x}{2}+C
+\end{align}</tex>
     <reason>
-\int \sec^2  (ax) dx = \dfrac{\tan (a x)}{a}+ C</reason>
+\int \sec^2  (ax) dx = \dfrac{\tan (a x)}{a}+ C \\
+\text{where C is the constant of integration.}</reason>
   </step>
   <choices>
     <tex> x + \tan \dfrac {x}{2}+C</tex>

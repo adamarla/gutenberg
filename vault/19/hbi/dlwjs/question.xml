@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{fkjgkhgklgk}</tex>
+  </statement>
+  <step>
+    <context>\text{jklsjadl}</context>
+    <reason></reason>
+  </step>
+  <step>
+    <context>\text{jklsjadl}</context>
+    <tex correct='true'>\text{dsad}</tex>
+    <reason>\text{fgfkj}</reason>
+  </step>
+</question>

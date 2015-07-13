@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the integral of the function}\\
+\dfrac{\cos x-\sin x}{1+\sin 2 x} \,</tex>
+  </statement>
+  <step>
+    <context>\text{Are the following calculations and analysis correct?}
+
+</context>
+    <tex correct='true'>
+\begin{align}
+
+\dfrac{\cos x-\sin x}{1+\sin 2 x} \,
+&amp;= \dfrac{\cos x - \sin x}{(\sin^2 x + \cos^2 x) + 2 \sin x \cos x}\\ 
+
+&amp;= \dfrac{\cos x - \sin x}{(\sin x + \cos x)^2} 
+\end{align} \\
+
+
+\begin{align}
+
+\text{Substitue } \sin x + \cos x &amp;= t \\
+
+\implies (\cos x - \sin x)dx &amp;= dt \\
+\implies \int \dfrac{\cos x-\sin x}{1+\sin 2 x} \, dx 
+&amp;= \int \dfrac{\cos x - \sin x }{(\sin x + \cos x)^2} \, dx \\
+&amp;= \int \dfrac{1}{t^2} \, dt
+
+\end{align}
+</tex>
+    <reason>\text{Applied the trigonometric identities, }\\
+\sin^2 x + \cos^2 x = 1 \text{ and }
+\sin 2x = 2 \sin x \cos x \\
+\text{Check your calculations, if you got something}\\
+\text{else.}
+
+</reason>
+  </step>
+  <step>
+    <context>\text{Is the following evaluation of the integral}\\
+\int \dfrac{1}{t^2} \, dt \quad
+\text{correct}?</context>
+    <tex correct='true'>\int \dfrac{1}{t^2} \, dt \\
+
+= \dfrac{t^{-1}}{-1} + C \\
+= -\dfrac{1}{t} + C \\
+
+ = - \dfrac{ 1}{\cos x+\sin x}+C</tex>
+    <tex>\int \dfrac{1}{t^2} \, dt \\
+
+= \dfrac{t^{-3}}{-3} + C \\
+= -\dfrac{1}{3 t^3} + C \\
+
+ = - \dfrac{ 1}{3 (\cos x+\sin x)^3}+C</tex>
+    <reason>
+\int x^n \, dx = \dfrac{x^{n+1}}{n+1} + C \\
+\text{where C is the constant of integration.}</reason>
+  </step>
+  <choices>
+    <tex correct='true'> - \dfrac{ 1}{\cos x+\sin x}+C</tex>
+    <tex> \dfrac{ 1}{\cos x+\sin x}+C</tex>
+    <tex> - \dfrac{ 1}{\cos x - \sin x}+C</tex>
+    <tex> - \dfrac{ 1}{\cos x+\sin x}</tex>
+  </choices>
+</question>

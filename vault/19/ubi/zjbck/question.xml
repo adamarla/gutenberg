@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the integral of the function}\\
+\tan ^4 x</tex>
+  </statement>
+  <step>
+    <context>\text{Are the following calculations and analysis correct?}
+
+</context>
+    <tex correct='true'>
+\begin{align}
+
+\tan ^4 x &amp;= \tan^2 x \cdot \tan^2 x \\
+&amp;= \sec^2 x \tan^2 x - \tan^2 x \\
+&amp;= \sec^2 x \tan^2 x - \sec^2 x +1 
+\end{align} \\
+
+\begin{align}
+
+\therefore \int \tan^4 x \, dx 
+&amp;= \int ( \sec^2 x \tan^2 x - \sec^2 x +1) \, dx \\
+&amp;= \int \sec^2 x \tan^2 x \, dx - \tan x + x + C_1
+\end{align}</tex>
+    <reason>\text{Applied the trigonometric identity, }\\
+1 + \tan^2 x = \sec^2 x \\
+\text{Also, }\int \sec^2 x \, dx = \tan x \text{ and } 
+\int dx = x \\
+\text{Check your calculations, if you got something}\\
+\text{else.}
+</reason>
+  </step>
+  <step>
+    <context>\text{Is the following evaluation of the integral}\\
+\int \sec^2 x \tan^2 x \, dx - \tan x + x + C_1 \quad
+\text{correct}?</context>
+    <tex correct='true'>\text{Let } \tan x = t \implies \sec^2 x \, dx = dt \\
+
+\begin{align}
+
+\text{So, } \int \sec^2 x \tan^2 x \, dx &amp;= \int t^2 dt \\
+&amp;= \dfrac{t^3}{3}\\
+&amp;= \dfrac{\tan^3 x}{3}
+\end{align} \\
+\therefore 
+\int \tan ^4 x \, dx = 
+ \dfrac {1} {3}\tan^3 x-\tan x+x+ C</tex>
+    <tex>\text{Let } \tan x = t \implies \sec^2 x \, dx = dt \\
+
+\begin{align}
+
+\text{So, } \int \sec^2 x \tan^2 x \, dx &amp;= \int t^2 dt \\
+&amp;= \dfrac{t^1}{1}\\
+&amp;= \tan x
+\end{align} \\
+\therefore 
+\int \tan ^4 x \, dx = 
+ \tan x-\tan x+x+ C = x + C</tex>
+    <reason>\int x^n dx = \dfrac{x^{n+1}}{n+1} +  C \\
+\text{ where C is the constant of integration.}</reason>
+  </step>
+  <choices>
+    <tex correct='true'> \dfrac {1} {3}\tan^3 x-\tan x+x+ C</tex>
+    <tex> \dfrac {1} {3}\tan^3 x +\tan x+x+ C</tex>
+    <tex> \dfrac {1} {3}\tan^3 x-\tan x+x</tex>
+    <tex> \dfrac {1} {3}\tan^3 x-\sec x+x+ C</tex>
+  </choices>
+</question>

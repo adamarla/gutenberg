@@ -5,48 +5,54 @@
 \cos 2 x \cdot \cos 4 x \cdot \cos 6 x \,</tex>
   </statement>
   <step>
-    <context>\text{Are the following calculations and analysis correct?}
-
+    <context>\text{The following substitution would convert}\\
+ f(x) = \cos 2 x \cdot \cos 4 x \cdot \cos 6 x 
+ \text{ to the more easily}\\
+\text{integrable form }
+\cos \theta_1 + \cos \theta_2 + \cos \theta_3 + \cos \theta_4  \\
+\text{or } 
+\sum_{i=1}^{i=n} \sin \theta_i
 </context>
-    <tex correct='true'> \text{Using trignometric identity,}\\
-
-\begin{align}
-
-\cos x \cos y &amp;= \dfrac{1}{2}[\cos (x+y) + \cos (x-y)] \\
-\implies \cos 4x \cos 6x  &amp;= 
-\dfrac{1}{2}[\cos 10 x + \cos 2 x] \\
-\end{align}\\
- 
-\text{So, } \cos 2 x \cdot \cos 4 x \cdot \cos 6 x \\
-\qquad \qquad = \dfrac{1}{2}[\cos 2x \cos 10 x + \cos 2 x \cos 2 x] \\
+    <tex correct='true'>\text{Using trigonometric identity, }\\
+\cos A \cos B = \dfrac{1}{2}[\cos (A+B) + \cos (A-B)] \\
 
 
-\qquad \qquad = \dfrac{1}{4} [ \cos 12 x + \cos 8 x + 1 + \cos 4 x ] \\
-
+</tex>
+    <tex> \text{Using trigonometric identity,}\\
+ \cos 2 A = 2 \cos^2 A - 1 = 1 - 2 \sin^2 A
+</tex>
+    <reason>f(x) =
+  \dfrac{1}{4} [ \cos 12 x + \cos 8 x + 1 + \cos 4 x ] \\
+  
 \therefore
 \int \cos 2 x \cdot \cos 4 x \cdot \cos 6 x  \, dx \\
-\qquad \qquad = \int \dfrac{1}{4} [ \cos 12 x + \cos 8 x + 1 + \cos 4 x ] dx
-</tex>
-    <reason>\text{Applied the trignometeric identity, }\\
-\cos x \cos y = \dfrac{1}{2}[\cos (x+y) + \cos (x-y)] \text{ twice.}\\
-\text{Check your calculations, if you got something}\\
-\text{else.}
-</reason>
+ \qquad \quad = \int \dfrac{1}{4} [ \cos 12 x + \cos 8 x + 1 + \cos 4 x ] dx</reason>
   </step>
   <step>
     <context>\text{Is the following evaluation of the integral}\\
-\int \dfrac{1}{4} [ \cos 12 x + \cos 8 x + 1 + \cos 4 x ] dx \quad
-\text{correct}?</context>
-    <tex correct='true'>\int \dfrac{1}{4} [ \cos 12 x + \cos 8 x + 1 + \cos 4 x ] dx \\
-= 
+I = \int \dfrac{1}{4} [ \cos 12 x + \cos 8 x + 1 + \cos 4 x ] dx 
+\text{ correct}?</context>
+    <tex correct='true'>\begin{align}
+I &amp;= \int \dfrac{1}{4} [ \cos 12 x + \cos 8 x + 1 + \cos 4 x ] dx \\
+&amp;= 
 \dfrac{1}{4}\int \cos (12 x) dx + \dfrac{1}{4}\int \cos (8 x) dx \\
-+  \dfrac{1}{4} \int dx + \dfrac{1}{4} \int \cos (4 x) dx \\
+&amp;+  \dfrac{1}{4} \int dx + \dfrac{1}{4} \int \cos (4 x) dx \\
 
-= \dfrac{\sin 12 x}{48} + \dfrac{\sin 4x}{32} +
+&amp;= \dfrac{\sin 12 x}{48} + \dfrac{\sin 4x}{32} +
  \dfrac{ x}{4} + \dfrac{\sin 8 x}{16}+ C
-</tex>
+\end{align}</tex>
+    <tex>\begin{align}
+I &amp;= \int \dfrac{1}{4} [ \cos 12 x + \cos 8 x + 1 + \cos 4 x ] dx \\
+&amp;= 
+\dfrac{1}{4}\int \cos (12 x) dx + \dfrac{1}{4}\int \cos (8 x) dx \\
+&amp;+  \dfrac{1}{4} \int dx + \dfrac{1}{4} \int \cos (4 x) dx \\
+
+&amp;= \dfrac{- \sin 12 x}{48} - \dfrac{\sin 4x}{32} -
+ \dfrac{ x}{4} - \dfrac{\sin 8 x}{16}+ C
+\end{align}</tex>
     <reason>
-\int \cos (a x)dx = \dfrac{\sin (a x)}{a}+ C</reason>
+\int \cos (a x)dx = \dfrac{\sin (a x)}{a}+ C_1 \\
+\text{where } C_1 \text{ is the constant of integration.}</reason>
   </step>
   <choices>
     <tex correct='true'>= \dfrac{\sin 12 x}{48} + \dfrac{\sin 4x}{32} +

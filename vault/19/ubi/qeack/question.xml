@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the value of }
+\int \dfrac{\sin^2 x - \cos^2 x}{\sin^2 x \cos^2 x}dx</tex>
+  </statement>
+  <step>
+    <context>\text{Are the following calculations and conclusion}\\
+\text{correct?}
+
+</context>
+    <tex correct='true'>
+\begin{align}
+
+\dfrac{\sin^2 x - \cos^2 x}{\sin^2 x \cos^2 x}
+&amp;= \dfrac{\sin^2 x}{\sin^2 x \cos^2 x} - \dfrac{\cos^2 x}{\sin^2 x \cos^2 x}\\
+&amp;= \sec^2 x - \mathrm{cosec}^2 x \\
+\therefore
+\int \dfrac{\sin^2 x - \cos^2 x}{\sin^2 x \cos^2 x}dx 
+&amp;= \int ( \sec^2 x - \mathrm{cosec}^2 x ) \, dx \\
+&amp;= \tan x + \cot x + C
+\end{align}</tex>
+    <tex>
+\begin{align}
+
+\dfrac{\sin^2 x - \cos^2 x}{\sin^2 x \cos^2 x}
+&amp;= \dfrac{\sin^2 x}{\sin^2 x \cos^2 x} - \dfrac{\cos^2 x}{\sin^2 x \cos^2 x}\\
+&amp;= \sec^2 x - \mathrm{cosec}^2 x \\
+\therefore
+\int \dfrac{\sin^2 x - \cos^2 x}{\sin^2 x \cos^2 x}dx 
+&amp;= \int ( \sec^2 x - \mathrm{cosec}^2 x ) \, dx \\
+&amp;= \tan x - \cot x + C
+\end{align}</tex>
+    <reason>\int \sec^2 x \, dx = \tan x + C_1 \\
+\int \mathrm{cosec}^2 x = - \cot x + C_2 \\
+\text{where } C_1 \text{ and } C_2 \text{ are constants of integration.}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\tan x + \cot x + C</tex>
+    <tex>\tan x + \mathrm{cosec}\, x + C</tex>
+    <tex>- \tan x + \cot x + C</tex>
+    <tex>\tan x + \sec x + C</tex>
+  </choices>
+</question>
