@@ -4,6 +4,13 @@
         <exercise tag="ex2" label="Exercise 7.2"/>
         <exercise tag="ex3" label="Exercise 7.3"/>
         <exercise tag="ex4" label="Exercise 7.4"/>
+        <exercise tag="ex5" label="Exercise 7.5"/>
+        <exercise tag="ex6" label="Exercise 7.6"/>
+        <exercise tag="ex7" label="Exercise 7.7"/>
+        <exercise tag="ex8" label="Exercise 7.8"/>
+        <exercise tag="ex9" label="Exercise 7.9"/>
+        <exercise tag="ex10" label="Exercise 7.10"/>
+        <exercise tag="ex11" label="Exercise 7.11"/>
         <exercise tag="misc" label="Miscellaneous"/>
     </chapter>
     <chapter tag="ch8" label="Application of Integrals">
