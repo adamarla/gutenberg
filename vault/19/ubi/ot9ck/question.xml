@@ -5,46 +5,52 @@
 \dfrac{\cos 2 x+2\sin^2 x}{\cos^ 2 x} \,</tex>
   </statement>
   <step>
-    <context>\text{Are the following calculations and analysis correct?}
+    <context>\text{The following substitution would convert}\\
+f(x) = \dfrac{\cos 2 x+2\sin^2 x}{\cos^ 2 x}  \text{ to the more easily}\\
+\text{integrable form } \sec^2 x \text{ or } \mathrm{cosec}^2 x
 
 </context>
-    <tex correct='true'>
-\begin{align}
-
-\dfrac{\cos 2 x+2\sin^2 x}{\cos^ 2 x} \,
-&amp;= \dfrac{\cos 2 x+(1 - \cos 2x)}{\cos^ 2 x} \\
-&amp;= \dfrac{1}{\cos^2 x} \\
-&amp;= \sec^2 x 
-\end{align}</tex>
-    <reason>\text{Applied the trigonometric identity, }\\
+    <tex correct='true'>\text{Using the trigonometric identity, }\\
 \cos 2 A = 1 - 2 \sin^2 A 
-\text{ Check your}\\
-\text{calculations, if you got something else.}
+
+</tex>
+    <tex>\text{Using the trigonometric identity, }\\
+\cos^2 x + \sin^2 x = 1
+
+</tex>
+    <reason>\begin{align}
+f(x) = \dfrac{\cos 2 x+2\sin^2 x}{\cos^ 2 x} \,
+&amp;= \dfrac{\cos 2 x+(1 - \cos 2x)}{\cos^ 2 x} \\
+&amp;= \dfrac{1}{\cos^2 x} 
+= \sec^2 x 
+\end{align}
 
 </reason>
   </step>
   <step>
     <context>\text{Is the following evaluation of the integral}\\
-\int \dfrac{\cos 2 x+2\sin^2 x}{\cos^ 2 x} \, dx \quad
+I = \int \dfrac{\cos 2 x+2\sin^2 x}{\cos^ 2 x} \, dx \quad
 \text{correct}?</context>
     <tex correct='true'>
 \begin{align}
+I = \int f(x) \, dx
+&amp;= 
 
-\dfrac{\cos 2 x+2\sin^2 x}{\cos^ 2 x} \, &amp;= \sec^2 x \\
-\implies 
 
-\int \dfrac{\cos 2 x+2\sin^2 x}{\cos^ 2 x} \, dx &amp;=
+\int \dfrac{\cos 2 x+2\sin^2 x}{\cos^ 2 x} \, dx \\
+&amp;=
 \int \sec^2 x \, dx \\
 &amp;=  \tan x+C
 \end{align}
 </tex>
     <tex>
 \begin{align}
+I = \int f(x) \, dx
+&amp;= 
 
-\dfrac{\cos 2 x+2\sin^2 x}{\cos^ 2 x} \, &amp;= \sec^2 x \\
-\implies 
 
-\int \dfrac{\cos 2 x+2\sin^2 x}{\cos^ 2 x} \, dx &amp;=
+\int \dfrac{\cos 2 x+2\sin^2 x}{\cos^ 2 x} \, dx \\
+&amp;=
 \int \sec^2 x \, dx \\
 &amp;=  \tan^2 x+C
 \end{align}

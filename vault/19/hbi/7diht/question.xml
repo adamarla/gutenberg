@@ -5,59 +5,52 @@
 \sin^3 x \cos^3 x \\</tex>
   </statement>
   <step>
-    <context>\text{Are the following calculations and analysis correct?}
-
+    <context>\text{Let } f(x) = \sin^3 x \cos^3 x \\
+\text{If the trigonometric identity, } \sin^2 x = 1 - \cos^2 x \\
+\text{is applied on f(x) then, what can be substituted}\\
+\text{with t to make f(x) more easily integrable}?
 </context>
-    <tex correct='true'> \text{Using trignometric identity,}\\
-
-\begin{align}
-
-\sin^2 x + \cos^2 x &amp;= 1 \\
-
-\implies \sin^3 x \cdot \cos^3 x &amp;= (1- \cos^2 x)\cdot \sin x \cdot \cos^3 x \\ 
-\text{Let } \cos x &amp;= t \text{ then, } -\sin x dx = dt \\
-\end{align}\\
+    <tex correct='true'>\text{Substitue } \cos x = t 
+\implies
+ -\sin x dx = dt \\</tex>
+    <tex>\text{Substitue } \cos^2 x = t \implies -2 \sin x \cos x dx = dt</tex>
+    <reason>\sin^3 x \cdot \cos^3 x = (1- \cos^2 x)\cdot \sin x \cdot \cos^3 x \\ 
+\text{Let } \cos x = t \text{ then, } -\sin x dx = dt \\
 
 \begin{align}
 \implies  (1- \cos^2 x) \cdot \cos^3 x \cdot \sin x &amp;= -(1- t^2) t^3 \\
 &amp;= (t^2 -1) t^3  
 \end{align} \\
-
  
 
 \therefore
 \int \sin^3 x \cos^3 x dx 
-= \int (t^2 -1) t^3  dx</tex>
-    <reason>\text{Applied the trigonometric identity, }\\
-\sin^2 x + \cos^2 x = 1 
-\text{ and substituted } \cos x =t \\
-\text{Check your calculations, if you got something}\\
-\text{else.}
-</reason>
+= \int (t^2 -1) t^3  dx</reason>
   </step>
   <step>
     <context>\text{Is the following evaluation of the integral}\\
-\int (t^2 -1) t^3  dx \quad
+I = \int (t^2 -1) t^3  dx \quad
 \text{correct}?</context>
-    <tex correct='true'> \int (t^2 -1) t^3  dx \\
-= 
+    <tex correct='true'>\begin{align}
+I &amp;= \int (t^2 -1) t^3  dx \\
+&amp;= 
 \int t^5 dx - \int  t^3 dx \\
-= \dfrac{t^6}{6} - \dfrac{t^4}{4}+ C \\
-\text{Again substituting } t = \cos x \\
-= \dfrac{1}{6}\cos ^6 x - \dfrac {1} {4} \cos^4x + C \\
-\therefore 
-\int \sin^3 x \cos^3 x 
-= \dfrac{1}{6}\cos ^6 x - \dfrac {1} {4} \cos^4x + C
-</tex>
-    <tex> \int (t^2 -1) t^3  dx \\
-= 
-\int t^5 dx - \int  t^3 dx \\
-= \dfrac{t^5}{5} - \dfrac{t^3}{3}+ C \\
-\text{Again substituting } t = \cos x \\
-= \dfrac{1}{5}\cos ^5 x - \dfrac {1} {3} \cos^3 x + C \\
-\therefore 
-\int \sin^3 x \cos^3 x 
-= \dfrac{1}{5}\cos ^5 x - \dfrac {1} {3} \cos^3 x + C
+&amp;= \dfrac{t^6}{6} - \dfrac{t^4}{4}+ C \\
+
+\text{Putting } t &amp;= \cos x \\
+&amp;= \dfrac{1}{6}\cos ^6 x - \dfrac {1} {4} \cos^4x + C \\
+\therefore \int \sin^3 x \cos^3 x 
+&amp;= \dfrac{1}{6}\cos ^6 x - \dfrac {1} {4} \cos^4x + C
+\end{align}</tex>
+    <tex> \begin{align}
+I &amp;= \int (t^2 -1) t^3  dx \\
+&amp;= \int t^5 dx - \int  t^3 dx \\
+&amp;= \dfrac{t^5}{5} - \dfrac{t^3}{3}+ C \\
+\text{Putting } t &amp;= \cos x \\
+&amp;= \dfrac{1}{5}\cos ^5 x - \dfrac {1} {3} \cos^3 x + C \\
+\therefore \int \sin^3 x \cos^3 x 
+&amp;= \dfrac{1}{5}\cos ^5 x - \dfrac {1} {3} \cos^3 x + C
+\end{align}
 </tex>
     <reason>\int x^n dx = \dfrac{x^{n+1}}{n+1} +  C \\
 \text{ where C is the constant of integration.}</reason>

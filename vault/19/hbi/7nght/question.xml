@@ -5,47 +5,54 @@
 \sin 4 x \cdot \sin 8 x  \,</tex>
   </statement>
   <step>
-    <context>\text{Are the following calculations and analysis correct?}
+    <context>\text{The following substitution would convert}\\
+f(x) = \sin 4 x \cdot \sin 8 x    \text{ to the more easily integrable}\\
+\text{form }
+\sin \theta_1 + \sin \theta_2  \text{ or }\cos \theta_1 + \cos \theta_2
+
+
 
 </context>
-    <tex correct='true'> \text{Using trignometric identity,}\\
-
-\begin{align}
-
-\sin A \sin B &amp;= \dfrac{1}{2}[\cos (A-B) - \cos (A+B)] \\
-\implies \sin 4 x \cdot \sin 8 x  &amp;= 
+    <tex correct='true'> \text{Using trigonometric identity,}\\
+\sin A \sin B = \dfrac{1}{2}[\cos (A-B) - \cos (A+B)] \\</tex>
+    <tex> \text{Using trigonometric identity,}\\
+ \sin 2x = 2 \sin x \cos x</tex>
+    <reason>
+ \sin 4 x \cdot \sin 8 x  = 
 \dfrac{1}{2}[\cos 4 x - \cos 12 x] \\
-\end{align}\\
- 
 \therefore
 \int \sin 4 x \cdot \sin 8 x  \, dx 
 = \int \dfrac{1}{2}[\cos 4 x - \cos 12 x] dx
-</tex>
-    <reason>\text{Applied the trigonometric identity, }\\
-\sin A \sin B = \dfrac{1}{2}[\cos (A-B) - \cos (A+B)] \\
-\text{Check your calculations, if you got something}\\
-\text{else.}
 </reason>
   </step>
   <step>
     <context>\text{Is the following evaluation of the integral}\\
-\int \dfrac{1}{2}[\cos 4 x - \cos 12 x] dx \quad
+I = \int \dfrac{1}{2}[\cos 4 x - \cos 12 x] dx \quad
 \text{correct}?</context>
-    <tex correct='true'>\int \dfrac{1}{2}[\cos 4 x - \cos 12 x] dx \\
-= 
+    <tex correct='true'>
+\begin{align}
+
+
+I &amp;= \int \dfrac{1}{2}[\cos 4 x - \cos 12 x] dx \\
+&amp;= 
 \dfrac{1}{2}\int \cos (4 x) dx - \dfrac{1}{2}\int \cos (12 x) dx \\
 
-=  \dfrac {1} {2}\left[ \dfrac{1}{4}{\sin4 x}
- - \dfrac{1}{12}{\sin 12 x}\right]+ C</tex>
-    <tex>\int \dfrac{1}{2}[\cos 4 x - \cos 12 x] dx \\
-= 
+&amp;=  \dfrac {1} {2}\left[ \dfrac{1}{4}{\sin4 x}
+ - \dfrac{1}{12}{\sin 12 x}\right]+ C
+ \end{align}</tex>
+    <tex>
+\begin{align}
+
+I &amp;= \int \dfrac{1}{2}[\cos 4 x - \cos 12 x] dx \\
+&amp;= 
 \dfrac{1}{2}\int \cos (4 x) dx - \dfrac{1}{2}\int \cos (12 x) dx \\
 
-=  \dfrac {1} {2}\left[ \dfrac{-1}{4}{\sin4 x}
- + \dfrac{1}{12}{\sin 12 x}\right]+ C</tex>
+&amp;=  \dfrac {1} {2}\left[ \dfrac{-1}{4}{\sin4 x}
+ + \dfrac{1}{12}{\sin 12 x}\right]+ C
+ \end{align}</tex>
     <reason>
-\int \cos (a x)dx = \dfrac{\sin (a x)}{a}+ C
-\\ \text{where C is the constant of integration.}</reason>
+\int \cos (a x)dx = \dfrac{\sin (a x)}{a}+ C_1
+\\ \text{where }C_1 \text{ is the constant of integration.}</reason>
   </step>
   <choices>
     <tex> \dfrac {1} {2}\left[ \dfrac{1}{4}{\sin4 x}
