@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{dfsdf}</tex>
+  </statement>
+  <step>
+    <context>\text{fdadf}</context>
+    <reason>\text{fdfs}</reason>
+  </step>
+</question>

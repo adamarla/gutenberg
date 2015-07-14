@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Differentiate the following}\\
+		\qquad f(x) = \sqrt{\dfrac{(x-1)(x-2)}{(x-3)(x-4)(x-5)}}\\
+		\text{with respect to x.}</tex>
+  </statement>
+  <step>
+    <context>\text{Which is }</context>
+    <reason></reason>
+  </step>
+  <choices>
+    <tex>f'(x) = </tex>
+    <tex correct='true'></tex>
+    <tex></tex>
+    <tex></tex>
+  </choices>
+</question>

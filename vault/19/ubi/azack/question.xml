@@ -2,7 +2,7 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Find the integral of the function}\\
-\dfrac{1-cos x}{1+cos x} \,</tex>
+\dfrac{1}{\cos (x-a) \cos (x-b)} \,</tex>
   </statement>
   <step>
     <context>\text{Are the following calculations and analysis correct?}
@@ -28,7 +28,7 @@
 \int \dfrac{1-cos x}{1+cos x} \,dx 
 &amp;= \int \left[ \sec^2 \left( \dfrac{x}{2} \right)  -1 \right] dx
 \end{align}</tex>
-    <reason>\text{Applied the trigonometric identity, }\\
+    <reason>\text{Applied the trignometeric identity, }\\
 \cos 2 A = 1 - 2 \sin^2 A = 2 \cos^2 A - 1 \\
 \text{and } 1 + \tan^2 x = \sec^2 x 
 \text{. Check your}\\\text{ calculations, if you got something else.}
@@ -55,9 +55,9 @@
 \int \sec^2 (a x) \,dx = \dfrac{\tan (a x)}{a}+ C</reason>
   </step>
   <choices>
-    <tex> 2 \tan \dfrac {x}{2}+{ x}+C</tex>
-    <tex> \dfrac{ \tan \dfrac {x}{2}}{2}+C</tex>
-    <tex> 2 \tan \dfrac {x}{2}-{ x}</tex>
-    <tex correct='true'> 2 \tan \dfrac {x}{2}-{ x}+C</tex>
+    <tex correct='true'>\dfrac {1}{\sin (a-b)}\log |\dfrac{cos (x-a)}{cos(x-b)}| +C</tex>
+    <tex>\dfrac {1}{\sin (a-b)}\log |\dfrac{cos (x-a)}{cos(x-b)}| +C</tex>
+    <tex>\dfrac {1}{\sin (a-b)}\log |\dfrac{cos (x-a)}{cos(x-b)}| +C</tex>
+    <tex>\dfrac {1}{\sin (a-b)}\log |\dfrac{cos (x-a)}{cos(x-b)}| +C</tex>
   </choices>
 </question>

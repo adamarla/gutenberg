@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the integral of the function}\\
+\dfrac{\cos 2 x}{(\cos x+\sin  x)^2} \,</tex>
+  </statement>
+  <step>
+    <context>\text{Are the following calculations and analysis correct?}
+
+</context>
+    <tex correct='true'>
+
+\begin{align}
+\dfrac{\cos 2 x}{(\cos x+\sin  x)^2} 
+&amp;= \dfrac{\cos 2 x}{\cos^2 x+\sin^2  x + 2 \sin x \cos x} \\
+
+&amp;= \dfrac{\cos 2x}{1 + \sin 2x}
+\end{align} \\
+
+\therefore 
+\int \dfrac{\cos 2 x}{(\cos x+\sin  x)^2} \, dx = \int \dfrac{\cos 2x}{1 + \sin 2x} \, dx\\
+
+
+
+
+
+
+
+
+</tex>
+    <reason>\text{Applied the trigonometric identity, }\\
+\sin^2 x + \cos^2 x = 1 \text{ and }
+\sin 2x = 2 \sin x \cos x \\
+\text{Check your calculations, if you got something}\\
+\text{else.}
+
+</reason>
+  </step>
+  <step>
+    <context>\text{Is the following evaluation of the integral}\\
+\int \dfrac{\cos 2x}{1 + \sin 2x} \, dx \quad
+\text{correct}?</context>
+    <tex correct='true'>\text{Let } 1 + \sin 2 x = t \implies 2 \cos 2x \, dx = dt \\
+
+
+\begin{align}
+
+\int \dfrac{\cos 2x}{1 + \sin 2x} \, dx  &amp;= 
+\dfrac{1}{2} \int \dfrac{1}{t} dt \\
+&amp;= \dfrac{1}{2} \log |1 + \sin 2x| + C \\
+&amp;= \dfrac{1}{2} \log |(\sin x + \cos x)^2| + C 
+\end{align} \\
+
+\therefore 
+\int \dfrac{\cos 2 x}{(\cos x+\sin  x)^2} \, dx
+= \log| \cos x+\sin x|+C
+</tex>
+    <tex>\text{Let } 1 + \sin 2 x = t \implies 2 \cos 2x \, dx = dt \\
+
+
+\begin{align}
+
+\int \dfrac{\cos 2x}{1 + \sin 2x} \, dx  &amp;= 
+\dfrac{1}{2} \int \dfrac{1}{t} dt \\
+&amp;= \dfrac{1}{2} \log |(1 + \sin 2x)^2| + C \\
+&amp;= \dfrac{1}{2} \log |(\sin x + \cos x)^4| + C 
+\end{align} \\
+
+\therefore 
+\int \dfrac{\cos 2 x}{(\cos x+\sin  x)^4} \, dx
+= 2 \log| \cos x+\sin x|+C
+</tex>
+    <reason>\int \dfrac{1}{x} \, dx = \log |x|+ C \\
+\text{where C is the constant of integration.} \\
+\text{Also, }\sin^2 x + \cos^2 x = 1 \text{ and }
+\sin 2x = 2 \sin x \cos x \\</reason>
+  </step>
+  <choices>
+    <tex>\log|\cos x+\sin x|</tex>
+    <tex>\log|\cos x+\cos x|+C</tex>
+    <tex correct='true'>\log| \cos x+\sin x|+C</tex>
+    <tex>\log|\sin x+\cos x|+C</tex>
+  </choices>
+</question>

@@ -17,6 +17,12 @@ vault/*/*/*/bundle.xml
 vault/*/*/*/old_bundle.xml
 vault/*/*/*/*.lbl
 
+# script aids
+vault/*/.all
+vault/*/.pending
+vault/*/.tagged
+vault/*/.written
+
 *.anx
 *.dvi
 *.ps

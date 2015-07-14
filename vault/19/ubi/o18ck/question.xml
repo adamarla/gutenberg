@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the integral of the function}\\
+\dfrac{1}{\sin  x\cos^3 x} \,</tex>
+  </statement>
+  <step>
+    <context>\text{Are the following calculations and analysis correct?}
+
+</context>
+    <tex correct='true'>
+\begin{align}
+
+\dfrac{1}{\sin  x\cos^3 x} &amp;= 
+\dfrac{\sin^2 x + \cos^2 x}{\sin x \cos^3 x} \\
+&amp;= \dfrac{\sin x}{\cos^3 x} + \dfrac{1}{\sin x \cos x} \\
+&amp;= \tan x \sec^2 x + \dfrac{1/(\cos^2 x)}{\sin x \cos x / \cos^2 x}\\
+&amp;= \tan x \sec^2 x + \dfrac{\sec^2 x }{\tan x}
+\end{align}</tex>
+    <reason>\text{Applied the trigonometry identity, }\\
+\sin^2 x + \cos^2 x = 1 
+\text{. Check your} \\
+\text{ calculations, if you got something else.}
+
+</reason>
+  </step>
+  <step>
+    <context>\text{Is the following evaluation of the integral}\\
+\int \left( \tan x \sec^2 x \, + \dfrac{\sec^2 x }{\tan x}\right) dx \quad
+\text{correct}?</context>
+    <tex correct='true'>\text{Let } \tan x = t \implies \sec^2 x \, dx = dt \\
+\int \left( \tan x \sec^2 x \, + \dfrac{\sec^2 x }{\tan x}\right) dx \\
+\qquad \qquad \quad \quad = \int \tan x \sec^2 x \, dx + \int \dfrac{\sec^2 x }{\tan x} \, dx \\
+\qquad \qquad \quad \quad = \int t \, dt + \int \dfrac{1}{t}dt \\
+\qquad \qquad \quad \quad = \dfrac{t^2}{2} + \log |t| + C \\
+\therefore 
+\int \dfrac{1}{\sin  x\cos^3 x} \, dx =
+\dfrac{1}{2}\tan^2 x +\log |\tan x| +C
+
+
+
+</tex>
+    <tex>\text{Let } \tan x = t \implies \sec^2 x \, dx = dt \\
+\int \left( \tan x \sec^2 x \, + \dfrac{\sec^2 x }{\tan x}\right) dx \\
+\qquad \qquad \quad \quad = \int \tan x \sec^2 x \, dx + \int \dfrac{\sec^2 x }{\tan x} \, dx \\
+\qquad \qquad \quad \quad = \int t \, dt + \int \dfrac{1}{t}dt \\
+\qquad \qquad \quad \quad = \dfrac{t^2}{2} + \log |\dfrac{1}{t}| + C \\
+\therefore 
+\int \dfrac{1}{\sin  x\cos^3 x} \, dx =
+\dfrac{1}{2}\tan^2 x +\log |\dfrac{1}{\tan x}| +C
+
+
+
+</tex>
+    <reason>\int x^n \, dx = \dfrac{x^{n+1}}{n+1} + C_1 \\
+\int \dfrac{1}{x} \, dx = \log |x| + C_2
+\\ \text{where } C_1 \text{ and } C_2 \text{ are constants of integration.}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\log |tan x| +\dfrac{1}{2}\tan^2 x+C</tex>
+    <tex>\log |tan x| - \dfrac{1}{2}\tan^2 x+C</tex>
+    <tex>\log |tan x| +\dfrac{1}{2}\tan x+C</tex>
+    <tex>\log |tan x| +\dfrac{1}{2}\tan^2 x</tex>
+  </choices>
+</question>
