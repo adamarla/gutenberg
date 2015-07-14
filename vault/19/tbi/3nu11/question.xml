@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate the rational function } 
+\dfrac{1}{(e^x-1)} \\
+\text{Hint:\text{Put t = e^x }</tex>
+  </statement>
+  <step>
+    <context>\text{What will we get when we multiply numerator}\\
+\text{and denominator by }  e^x\, ?</context>
+    <tex correct='true'>\dfrac{e^x}{e^x(e^x -1)} \\</tex>
+    <tex>\dfrac{e^x}{e^x - e^x} </tex>
+    <reason>\text{We have to multiply with } e^x  \text{ in both numerator}\\
+\text{and denominator. } 
+\text{Be careful with the algebra.}</reason>
+  </step>
+  <step>
+    <context>\text{After multiplying, which of the following looks}\\
+\text{more useful. }\\
+\text{Note : Both are mathematically correct. }</context>
+    <tex correct='true'> \dfrac{1}{(e^x-1)} \times \dfrac{e^x}{e^x}=
+ \dfrac{e^x}{e^x(e^x -1)}</tex>
+    <tex> \dfrac{1}{(e^x-1)} \times \dfrac{e^x}{e^x}= \dfrac{e^x}{e^x(e^x -1)} 
+= \dfrac{e^x}{e^{2x} - e^x} </tex>
+    <reason>\text{When we write } 
+ \dfrac{e^x}{e^x(e^x -1)} \text{then, we have only }\\
+ e^x \text{ in the numerator and } e^x \, dx = dt \\ 
+ \text{This form just looks simpler and more useful.}</reason>
+  </step>
+  <step>
+    <context>\text{Has the integral been evaluated correctly?}</context>
+    <tex correct='true'>\text{Put t = } e^x \implies e^x \, dx = dt \\
+ \begin{align}
+ \therefore \int \dfrac{e^x}{e^x(e^x-1)} \, dx &amp;= 
+ \int \dfrac{dt}{t(t-1)} \\
+ &amp;=  \left[  \int \dfrac{t+1-t}{t(t-1)} \, dt\right] \\
+&amp;=  \left[  \underbrace{\int \dfrac{dt}{t-1}}_{X} - \underbrace{\int \dfrac{dt}{t}}_{Y} \right] \\
+&amp;=  \left[ \log \left| \dfrac{t-1}{t} \right| \right] +C \\
+&amp;= \left[ \log \left| \dfrac{e^x -1}{e^x}\right| \right] +C \\
+\end{align}
+ 
+
+</tex>
+    <reason>\text{We first broke } \dfrac{1}{t(t-1)} \text{ into partial fractions. Then,}\\
+\text{simply applied } \int \dfrac{dt}{p} = \log |p| + C
+\text{ in X and Y.}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\left[ \log \left| \dfrac{e^x -1}{e^x}\right| \right] +C \\</tex>
+    <tex>\left[ \log \left| \dfrac{e^x }{e^x-1}\right| \right] +C \\</tex>
+    <tex>\left[ \log \left| \dfrac{e^x +1}{e^x}\right| \right] +C \\</tex>
+    <tex>\left[ \log \left| \dfrac{e^x -1}{e^x}\right| \right] \\</tex>
+  </choices>
+</question>

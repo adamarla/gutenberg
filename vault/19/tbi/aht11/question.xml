@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }  \dfrac{5x}{(x+1)(x^2 -4)} \text{ using partial fractions.}</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the following correctly expresses}\\
+ \dfrac{5x}{(x+1)(x^2 -4)} \text{ as the sum of partial fractions?}</context>
+    <tex correct='true'> \dfrac{5x}{(x+1)(x^2 -4)}= \dfrac{A}{x+1} + \dfrac{B}{x+2} + \dfrac{C}{x -2}\\</tex>
+    <tex> \dfrac{5x}{(x+1)(x^2 -4)}= \dfrac{A}{x+1} + \dfrac{B}{x^2 -4}</tex>
+    <reason> \text{If a polynomial in the denominator can be}\\
+ \text{factorized, then factorize it first.}\\
+ \text{(x^2-4) can be factorized into (x+2)(x-2)}\\
+ \text{Hence, \dfrac{A}{x+1} + \dfrac{B}{x+2} + \dfrac{C}{x -2}}\\</reason>
+  </step>
+  <step>
+    <context>\text{If }  \dfrac{5x}{(x+1)(x^2 -4)}= \dfrac{A}{x+1} + \dfrac{B}{x+2} + \dfrac{C}{x -2}\\
+\text{then, what are the values of A, B and C?}</context>
+    <tex correct='true'>\begin{align}
+A &amp;= \dfrac{5}{3} \\
+B &amp;= \dfrac{-5}{2} \text{ and }\\
+C &amp;= \dfrac{5}{6}
+\end{align}</tex>
+    <tex>\begin{align}
+A &amp;= \dfrac{5}{3} \\
+B &amp;= \dfrac{5}{2} \text{ and }\\
+C &amp;= \dfrac{5}{6}
+\end{align}</tex>
+    <reason> \dfrac{5x}{(x+1)(x^2 -4)}= \dfrac{A}{x+1} + \dfrac{B}{x+2} + \dfrac{C}{x -2}\\
+\implies 5x = A(x^2-4) + B(x+1)(x-2) \\
+\qquad \qquad  \qquad \; \;  \qquad + C(x+1)(x+2) \\
+\qquad \quad  \qquad = (A+B+C)x^2 + (-B+3C)x \\
+\qquad \quad  \qquad +(-2A-B+C)\\
+\text{On comparing coefficients, we get}\\
+A+B+C = 0 , \, -B+3C=5 , \, -2A-B+C=0 \\
+\text{Solve to get }
+A= \dfrac{5}{3} , \, B = \dfrac{-5}{2} \text{ and }
+C = \dfrac{5}{6}</reason>
+  </step>
+  <step>
+    <context>\text{Has the integral been evaluated correctly?} </context>
+    <tex correct='true'>\int  \dfrac{5x}{(x+1)(x^2 -4)} \, dx \\
+= \dfrac{5}{3} \underbrace{\int \dfrac{dx}{x+1}}_{X} - \dfrac{5}{2}\underbrace{ \int \dfrac{dx}{x+2}}_{Y}+ \dfrac{5}{6} \underbrace{ \int \dfrac{dx}{x-2}}_{Z}\\
+= \dfrac{5}{3} \log |x+1| - \dfrac{5}{2} \log |x+2| + \dfrac{5}{6} \log |x-2|+ C</tex>
+    <reason>X , \, Y \text{ and } Z \text{ are of the form } \int \dfrac{dp}{p} = \log p + C\\</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{5}{3} \log |x+1| - \dfrac{5}{2} \log |x+2| + \dfrac{5}{6} \log |x-2|+ C</tex>
+    <tex>\dfrac{5}{3} \log |x+1| - \dfrac{5}{2} \log |x+2| + \dfrac{5}{6} \log |x-2|</tex>
+    <tex> \dfrac{5}{3} \log |x+1| - \dfrac{5}{2} \log |x+2| + \dfrac{10}{6} \log |x-2|+ C</tex>
+    <tex > \dfrac{5}{3} \log |x+1| + \dfrac{5}{2} \log |x+2| + \dfrac{5}{6} \log |x-2|+ C</tex>
+  </choices>
+</question>
