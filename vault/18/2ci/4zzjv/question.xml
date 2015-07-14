@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }\dfrac{1-x^2}{x \left(1-2x\right)} \text{ using partial fractions.}</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the following true?}</context>
+    <tex correct='true'>\text{Degree of }\left(1-x^2\right) = \text{degree of }x \left(1-2x\right)\\
+\therefore \dfrac{1-x^2}{x \left(1-2x\right)} = A + \dfrac{P(x)}{x \left(1-2x\right)}</tex>
+    <tex>\text{Degree of }1 - x^2 \lt \text{degree of }x \left(1 -2x\right)\\
+\therefore \dfrac{1-x^2}{x \left(1 - 2x\right)} = \dfrac{A}{x} + \dfrac{B}{1 - 2x}</tex>
+    <reason>\text{The highest power of x in both }\left(1 -x^2\right) \text{ and}\\
+x \left(1 -2x\right) \text{ is }2 \implies \text{degree }2. \text{ Hence }\\
+\left(1 -x^2\right) = Ax . \left(1-2x\right) + P(x)\\
+\implies \dfrac{1 -x^2}{x \left(1-2x\right)} = A + \dfrac{P \left(x\right)}{x \left(1 - 2x\right)}</reason>
+  </step>
+  <step>
+    <context>\text{Given }\dfrac{1 - x^2}{x \left(1 -2x\right)} = A + \dfrac{P \left(x\right)}{x \left(1 -2x\right)}\text{ what are}\\
+\text{A and }P(x)?</context>
+    <tex correct='true'>\begin{align}
+A &amp;=\dfrac{1}{2}\\
+P(x) &amp;=\left(1 - \dfrac{x}{2}\right)\\
+\end{align}</tex>
+    <tex>\begin{align}
+A &amp;=1\\
+P(x) &amp;=\left(x -2\right)\\
+\end{align}</tex>
+    <reason>\left(1 -x^2\right) = A. \left(x-2x^2\right) + P(x)\text{ we need only x^2}\\
+\text{So }A =\dfrac{1}{2}\implies 1-x^2 = \left(\dfrac{x}{2} - x^2\right) + P \left(x\right)\\
+\text{True if }P(x) = \left(1 -\dfrac{x}{2}\right)</reason>
+  </step>
+  <step>
+    <context>\text{Has } \int \dfrac{1 -x^2}{x \left(1 -2x\right)}.dx \text{ been rewritten correctly}\\
+\text{below?}</context>
+    <tex correct='true'>\begin{align}
+\int \dfrac{1 - x^2}{x \left(1 -2x\right)}.dx &amp;= \dfrac{1}{2}\int 1.dx + \int \dfrac{1 -\dfrac{x}{2}}{x \left(1 -2x\right)}.dx\\
+&amp;=\dfrac{x}{2} + \underbrace{\dfrac{1}{2}\int \dfrac{2 - x}{x \left(1 -2x\right)}.dx}_{N}\\
+
+\end{align}\\
+\text{Now }\dfrac{2-x}{2 \left(1-2x\right)} = \dfrac{A}{x} +\dfrac{B}{1-2x}\\
+\therefore A =2 \text{ and }B =3\\
+\text{Hence }\int \dfrac{1-x^2}{x \left(1-2x\right)}.dx = \dfrac{1}{2}\int dx\\
+\qquad\qquad\qquad\qquad+\dfrac{1}{2}\left[\int \dfrac{2}{x}.dx + 3\int \dfrac{dx}{1-2x}\right]\\
+</tex>
+    <reason>\dfrac{2-x}{x \left(1 -2x\right)} = \dfrac{A}{x}+\dfrac{B}{1 -2x}\\
+\implies 2-x = A \left(1-2x\right) +Bx = A +\left(B -2A\right)x\\
+\therefore A=2 , B=3</reason>
+  </step>
+  <step>
+    <context>\text{Does }\int \dfrac{1-x^2}{x \left(1-2x\right)}.dx \text{ evaluate to the following?}\\
+</context>
+    <tex correct='true'>\int \dfrac{1-x^2}{x \left(1-2x\right)}.dx = \dfrac{1}{2}\int dx\\
+\qquad\qquad\qquad\qquad+\dfrac{1}{2}\left[\int \dfrac{2}{x}.dx + 3\int \dfrac{dx}{1-2x}\right]\\
+\qquad\qquad\qquad\quad=\dfrac{x}{2} + \log \left|x\right| + \dfrac{3}{2}\int \dfrac{dx}{1-2x}\\
+\qquad\qquad\qquad\quad=\dfrac{x}{2} +\log \left|x\right| - \dfrac{3}{4}\left|1-2x\right| +C</tex>
+    <reason>\text{Be careful when evaluating }\int \dfrac{dx}{1-2x}\\
+\text{Let }t =1-2x\implies dx = -\dfrac{dt}{2}\\
+\int \dfrac{dx}{1-2x} = -\dfrac{1}{2}\int \dfrac{dt}{t}=-\dfrac{1}{2}\log \left|t\right|\\ 
+\qquad\qquad\qquad\qquad\quad= -\dfrac{1}{2}\log\left|1-2x\right|</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{x}{2} +\log \left|x\right| + \dfrac{3}{4}\left|1-2x\right| +C</tex>
+    <tex correct='true'>\dfrac{x}{2} +\log \left|x\right| - \dfrac{3}{4}\left|1-2x\right| +C</tex>
+    <tex>\dfrac{x}{2} -\log \left|x\right| - \dfrac{3}{4}\left|1-2x\right| +C</tex>
+    <tex>\dfrac{x}{2} +\log \left|x\right| - \dfrac{3}{4}\left|1+2x\right| +C</tex>
+  </choices>
+</question>
