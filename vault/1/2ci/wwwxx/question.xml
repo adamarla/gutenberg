@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+			\text{Integrate the following}\\
+			\qquad x^2\cdot e^x \\
+			\text{using integration by parts.}
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\text{Which of the following would be easier to}\\
+			\text{evaluate given that }\\
+			\int f(x)g(x)dx = f\cdot\int g dx - \int \left[ f' \cdot\int g dx\right] dx
+			</context>
+    <tex correct="true">
+			\begin{align}
+			  \text{Let }f(x) &amp;= x^2\text{ and }g(x) = e^x \\
+			  therefore I &amp;= \int x^2\cdot e^x dx \\
+			  &amp;= x^2\int e^x dx - \int\left[ \frac{d}{dx}x^2\int e^x dx\right] dx 
+			\end{align}
+			</tex>
+    <tex correct="false">
+			\begin{align}
+			\text{Let }f(x) &amp;= e^x \text{ and }g(x) = e^x \\
+			\therefore I &amp;= \int e^x\cdot x^2 dx \\
+			&amp;= e^x\int x^2 dx - \int\left[ \frac{d}{dx}e^x\int x^2 dx\right] dx 
+			\end{align}
+			</tex>
+    <reason>
+			\text{If we choose }f(x) = e^x\text{ and }g(x) = x^2,\text{ then} \\
+			\begin{align}
+			I &amp;= e^x\int x^2 dx - \overbrace{\int\left[ \frac{d}{dx}e^x\int x^2 dx\right] dx}^{A} \\
+			  &amp;= e^x\int x^2 dx - \int\left[e^x\cdot\dfrac{x^3}{3}\right] dx
+			\end{align} \\
+			\text{This makes A even more complicated than I to}\\
+			\text{evaluate. Hence, }f(x) = x^2\text{ and }g(x) = e^x \\
+			\text{seems to be the better choice.}
+			</reason>
+  </step>
+  <step>
+    <context>
+  		\text{Which of the following is }\textbf{I}\text{ after}\\
+  		\text{the last step? }
+  		</context>
+    <tex correct="true">
+  		\begin{align}
+  		I &amp;= x^2\int e^x dx - \int\left[ \frac{d}{dx}e^x\int x^2 dx\right] dx \\
+  		&amp;= x^2\cdot e^x - \underbrace{2\cdot\int e^x\cdot x dx}_{B}
+  		\end{align}
+  		</tex>
+    <tex correct="false">
+  		\begin{align}
+  		I &amp;= x^2\int e^x dx - \int\left[ \frac{d}{dx}e^x\int x^2 dx\right] dx \\
+  		&amp;= x^2\cdot e^x - \underbrace{\int e^x\cdot x dx}_{B}
+  		\end{align}
+  		</tex>
+    <reason>
+  		\text{We agreed that }f(x) = x^2\text{ and }g(x) = e^x.\\
+  		\text{Therefore, }\\
+  		\begin{align}
+  		  I &amp;= x^2\int e^x dx - \int\left[ \frac{d}{dx}x^2\int e^x dx\right] dx \\
+  		   &amp;= x^2\cdot e^x -\int\left[\dfrac{d}{dx}x^2\int e^x dx \right] dx  \\
+  		   &amp;= x^2\cdot e^x - \underbrace{2\int\left(x\cdot e^x\right) dx}_{B}
+  		\end{align}
+  		</reason>
+  </step>
+  <step>
+    <context>
+  			\text{What does } B = 2\int\left(x\cdot e^x\right) dx\text{ evaluate to?}
+  			</context>
+    <tex correct="true">
+  			2\cdot(x-1)\cdot e^x 
+  			</tex>
+    <tex correct="false">
+  			2\cdot x\cdot e^x 
+  			</tex>
+    <reason>
+  			\begin{align}
+  			  B &amp;= 2\int\left(x\cdot e^x\right) dx \\
+  			  \text{Let }f(x) &amp;= x\text{ and }g(x) = e^x \\
+  			  \therefore B &amp;= 2\left[x\int e^x dx - \int\left(\frac{d}{dx}x\int e^x dx\right) dx\right]\\
+  			  &amp;= 2\left(x\cdot e^x - e^x\right) = 2\cdot (x-1)\cdot e^x 
+  			\end{align}\\
+  			\text{Notice that this time around, we let }f(x) = x\\
+  			\text{and }g(x) = e^x\text{ because }f'(x) = 1\text{ and that makes}\\
+  			\text{evaluating }\int \left[f'(x)\int g(x) dx\right] dx \text{ easier.}
+  			</reason>
+  </step>
+  <step>
+    <context>
+  		  				\text{And so, the original integral }I = ?
+  		  				</context>
+    <tex correct="true">
+  		  				\begin{align}
+  		  				I &amp;= x^2\cdot e^x - 2\cdot(x-1)\cdot e^x + C \\
+  		  				&amp;= e^x\cdot(x^2-2x+2) + C 
+  		  				\end{align}
+  		  				
+  		  				</tex>
+    <tex correct="false">
+  		  				\begin{align}
+  		  				I &amp;= x^2\cdot e^x - 2\cdot(x-1)\cdot e^x + C \\
+  		  				&amp;= e^x\cdot(x^2+2x-2) + C 
+  		  				\end{align}
+  		  				</tex>
+    <reason>
+  		  				\text{Simply replace B from the previous step into} \\
+  		  				\text{I from Step 2.}
+  		  				</reason>
+  </step>
+</question>
