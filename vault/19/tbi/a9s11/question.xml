@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate the function } 
+x \, \sin x \\
+\text{using integration by parts.}</tex>
+  </statement>
+  <step>
+    <context>\text{Given } \int f(x) \cdot g(x) \, dx  \\
+= f(x) \int \, dx - \int \left[ f'(x) \cdot \int g(x) \, dx \right] \, dx \\
+\text{which is better choice for } f(x) \text{ and } g(x) ?
+</context>
+    <tex correct='true'>f(x) = x \\
+g(x) = \sin x </tex>
+    <tex>
+f(x) = \sin x \\
+g(x) = x </tex>
+    <reason>\text{There is a nice rule of thumb - called ILATE - }\\
+\text{that you can use. Let } f(x) \text{ be the function} \\
+\text{that matches first.} \\
+
+\begin{tabular}{|c|c|c|}
+\hline
+I &amp; Inverse &amp; \, \\
+\hline
+L  &amp; Logartihmic &amp; \\
+\hline
+A &amp;Algebraic &amp; x \\
+\hline
+T  &amp; Trignometric &amp; \sin x \\
+\hline
+E &amp; Exponential &amp; \\
+\hline
+\end{tabular} \\
+\text{Hence, } f(x) = x \text{ and } g(x) = \sin x</reason>
+  </step>
+  <step>
+    <context>\text{Given } f(x) = x \text{ and } g(x) = \sin x, \text{ what does} \\
+ I = \int f(x) \cdot g(x) \, dx  \text{ evaluate to } ?</context>
+    <tex correct='true'>I = \int f(x) \cdot g(x) \, dx  = -x \cos x + \sin x + C</tex>
+    <tex>I = \int f(x) \cdot g(x) \, dx = -x \sin x + \cos x + C  </tex>
+    <reason>\begin{align}
+I &amp;= \int f(x) \cdot g(x) \, dx  \\
+&amp;= f(x) \int \, dx - \int \left[ f'(x) \cdot \int g(x) \, dx \right] \, dx \\
+\implies I &amp;= x \int \sin x \, dx - \int \left[ \dfrac{d}{dx} x \cdot \int \sin x \, dx \right] \, dx\\
+&amp;= x \int \sin x \, dx  + \int \cos x \, dx \\
+&amp;= -x \cos x + \sin x + C
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>-x \cos x + \sin x + C</tex>
+    <tex>-x \sin x + \cos x + C  </tex>
+    <tex>x \cos x + \sin x + C</tex>
+    <tex>x \sin x + \cos x + C  </tex>
+  </choices>
+</question>
