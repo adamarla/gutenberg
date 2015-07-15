@@ -2,55 +2,36 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Find the integral of the function}\\
-\dfrac{1-cos x}{1+cos x} \,</tex>
+\dfrac{1-cos x}{1+cos x}</tex>
   </statement>
-  <step>
-    <context>\text{Are the following calculations and analysis correct?}
-
-</context>
-    <tex correct='true'> \text{Using the trignometric identity,}\\
+  <step swipe='false'>
+    <context>\text{The following substitution would convert}\\
+I=\int\dfrac{1-cos x}{1+cos x}dx \text{ to }I=\int 2\tan^2 t\,dt</context>
+    <tex correct='true'>x = 2t</tex>
+    <tex>\cos x = t</tex>
+    <reason>x=2t\implies dx =2dt \\
 \begin{align}
-\cos 2 A &amp;= 1 - 2 \sin^2 A = 2 \cos^2 A - 1 \\
-\implies 1 - \cos x &amp;= 
-2 \sin^2 \left( \,\dfrac{x}{2} \, \right) \\
-\text{and } 1 + \cos x &amp;= 2 \cos^2 \left( \, \dfrac{x}{2} \, \right)
-\end{align}\\
-
- 
-\begin{align}
-
-\text{So, }\dfrac{1-cos x}{1+cos x} &amp;=  \tan^2 \left( \dfrac{x}{2} \right) 
-
-
-=  \underbrace{\sec^2 \left( \dfrac{x}{2} \right)  -1}_{\text{As, }1 + \tan^2 x = \sec^2 x}  \\
-
-\therefore
-\int \dfrac{1-cos x}{1+cos x} \,dx 
-&amp;= \int \left[ \sec^2 \left( \dfrac{x}{2} \right)  -1 \right] dx
-\end{align}</tex>
-    <reason>\text{Applied the trigonometric identity, }\\
-\cos 2 A = 1 - 2 \sin^2 A = 2 \cos^2 A - 1 \\
-\text{and } 1 + \tan^2 x = \sec^2 x 
-\text{. Check your}\\\text{ calculations, if you got something else.}
-
-</reason>
+\therefore &amp;\int\dfrac{1-\cos x}{1+\cos x}dx=
+  \int\dfrac{1-\cos 2t}{1+\cos 2t}\cdot 2\,dt\\
+=&amp;\int\dfrac{1-\cos^2t+\sin^2t}{1+\cos^2t-\sin^2t}\cdot 2\,dt\\
+=&amp;\int\dfrac{2\sin^2t}{2\cos^2t}\cdot 2\,dt=\int 2\tan^2t\,dt
+\end{align}</reason>
   </step>
   <step>
-    <context>\text{Is the following evaluation of the integral}\\
-\int \left[ \sec^2 \left( \dfrac{x}{2} \right)  -1 \right] dx \quad
-\text{correct}?</context>
-    <tex correct='true'>\int \left[ \sec^2 \left( \dfrac{x}{2} \right)  -1 \right] dx \\
-= 
-\int  \sec^2 \left( \dfrac{x}{2} \right) \, dx  - \int dx \\
-
-=  \dfrac{ \tan \dfrac {x}{2}}{2}-{ x}+C \\
- = 2 \tan \dfrac {x}{2}-{ x}+C</tex>
-    <tex>\int \left[ \sec^2 \left( \dfrac{x}{2} \right)  -1 \right] dx \\
-= 
-\int  \sec^2 \left( \dfrac{x}{2} \right) \, dx  - \int dx \\
-
-=   \tan \dfrac {x}{2}-{ x}+C \\
- = \tan \dfrac{x}{2}- x +C</tex>
+    <context>\text{If }I=\int\dfrac{1-\cos x}{1+\cos x}dx=\int 2\tan^2t\,dt\\
+\text{then does this look correct}?</context>
+    <tex correct='true'>\begin{align}
+  I &amp;= \int 2\tan^2t\,dt = \int 2(\sec^2t-1)dt\\
+    &amp;=2\int\sec^2t - 2\int dt=2\tan t - 2t + C\\
+    &amp;=2\tan \dfrac{x}{2}-x+C
+\end{align}
+</tex>
+    <tex>\begin{align}
+  I &amp;= \int 2\tan^2t\,dt = \int 2(\sec^2t-1)dt\\
+    &amp;=2\int\sec^2t - 2\int dt=2\sec t\cdot\tan t - 2t + C\\
+    &amp;=2\sec\dfrac{x}{2}\tan\dfrac{x}{2}-x+C
+\end{align}
+</tex>
     <reason>
 \int \sec^2 (a x) \,dx = \dfrac{\tan (a x)}{a}+ C</reason>
   </step>

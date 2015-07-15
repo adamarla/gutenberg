@@ -2,44 +2,33 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Find the integral of the function}\\
-\sin 4 x \cdot \sin 8 x  \,</tex>
+\sin 4 x \cdot \sin 8 x</tex>
   </statement>
   <step>
     <context>\text{The following substitution would convert}\\
-f(x) = \sin 4 x \cdot \sin 8 x    \text{ to the more easily integrable}\\
+\sin 4x\cdot\sin 8x \text{ to the more easily integrable}\\
 \text{form }
-\sin \theta_1 + \sin \theta_2  \text{ or }\cos \theta_1 + \cos \theta_2
-
-
-
-</context>
+\sin \theta_1 + \sin \theta_2  \text{ or }\cos \theta_1 + \cos \theta_2</context>
     <tex correct='true'> \text{Using trigonometric identity,}\\
 \sin A \sin B = \dfrac{1}{2}[\cos (A-B) - \cos (A+B)] \\</tex>
     <tex> \text{Using trigonometric identity,}\\
- \sin 2x = 2 \sin x \cos x</tex>
-    <reason>
- \sin 4 x \cdot \sin 8 x  = 
-\dfrac{1}{2}[\cos 4 x - \cos 12 x] \\
-\therefore
-\int \sin 4 x \cdot \sin 8 x  \, dx 
-= \int \dfrac{1}{2}[\cos 4 x - \cos 12 x] dx
-</reason>
+ \sin 2A = 2 \sin A \cos A</tex>
+    <reason>\begin{align}
+  I &amp;= \int\sin 4x\cdot\sin 8x 
+      = \int \dfrac{1}{2}[\cos 4 x - \cos 12 x] dx\\
+    &amp;= \int\dfrac{1}{2}\cos 4xdx - \int\dfrac{1}{2}\cos 12xdx
+\end{align}  </reason>
   </step>
   <step>
-    <context>\text{Is the following evaluation of the integral}\\
-I = \int \dfrac{1}{2}[\cos 4 x - \cos 12 x] dx \quad
-\text{correct}?</context>
-    <tex correct='true'>
-\begin{align}
-
-
-I &amp;= \int \dfrac{1}{2}[\cos 4 x - \cos 12 x] dx \\
-&amp;= 
-\dfrac{1}{2}\int \cos (4 x) dx - \dfrac{1}{2}\int \cos (12 x) dx \\
-
-&amp;=  \dfrac {1} {2}\left[ \dfrac{1}{4}{\sin4 x}
- - \dfrac{1}{12}{\sin 12 x}\right]+ C
- \end{align}</tex>
+    <context>\text{If }I=\int\dfrac{1}{2}\cos 4x dx - 
+  \int\dfrac{1}{2}\cos 12x dx \\
+\text{then does this look correct}?</context>
+    <tex correct='true'>\begin{align}
+I &amp;=\dfrac{1}{2}\int \cos (4 x) dx - \dfrac{1}{2}
+                            \int \cos (12 x) dx \\
+  &amp;=  \dfrac {1} {2}\left[ \dfrac{1}{4}{\sin4 x}-
+         \dfrac{1}{12}{\sin 12 x}\right]+ C
+\end{align}</tex>
     <tex>
 \begin{align}
 
