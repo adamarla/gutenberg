@@ -7,9 +7,7 @@
   <step>
     <context>\text{The following substitution would convert}\\
 \sin x \cos y \text{ to the more easily integrable form }\\
-\sin \theta + \sin \alpha \text{ or }\cos \theta + \cos \alpha
-
-</context>
+\sin \theta + \sin \alpha \text{ or }\cos \theta + \cos \alpha</context>
     <tex correct='true'> \text{Using trigonometric identity,}\\
 
 \sin A \cos B = \dfrac{1}{2}[\sin (A+B) + \sin (A-B)] \\ 
@@ -23,23 +21,21 @@
     <tex> \text{Using trigonometric identity,}\\
  \cos 2 A = 2 \cos^2 A - 1 = 1 - 2 \sin^2 A
 </tex>
-    <reason> \sin 3x \cos 4x  = 
-\dfrac{1}{2}[\sin 7x - \sin x]  \\
+    <reason>\begin{align}
+\sin 3x \cos 4x  &amp;= \dfrac{1}{2}[\sin 7x - \sin x]  \\
 \therefore
-\int \sin 3x \cos 4x  dx = \int \dfrac{1}{2}[\sin 7x - \sin x] dx</reason>
+\int \sin 3x \cos 4x  dx &amp;= \int \dfrac{1}{2}[\sin 7x - \sin x] dx
+\end{align}
+</reason>
   </step>
   <step>
-    <context>\text{Is the following evaluation of the integral}\\
-I = \int \dfrac{1}{2}[\sin 7x - \sin x] dx \quad
-\text{correct}?</context>
+    <context>\text{If }I = \int \dfrac{1}{2}[\sin 7x - \sin x] dx \\
+\text{Is the following correct}?</context>
     <tex correct='true'>
 \begin{align}
-
 I &amp;= \int \dfrac{1}{2}[\sin 7x - \sin x] dx\\
-&amp;= 
-\dfrac{1}{2}\int \sin 7x dx - \dfrac{1}{2} \int \sin x dx \\
-
-&amp;= \dfrac{- \cos 7x}{14} + \dfrac{\cos x}{2} +C
+  &amp;= \dfrac{1}{2}\int \sin 7x dx - \dfrac{1}{2} \int \sin x dx \\
+  &amp;= -\dfrac{\cos 7x}{14} + \dfrac{\cos x}{2} +C
 \end{align}</tex>
     <tex>
 \begin{align}
@@ -48,7 +44,7 @@ I &amp;= \int \dfrac{1}{2}[\sin 7x - \sin x] dx\\
 &amp;= 
 \dfrac{1}{2}\int \sin 7x dx - \dfrac{1}{2} \int \sin x dx \\
 
-&amp;= \dfrac{\cos 7x}{14} - \dfrac{\cos x}{2} +C
+&amp;= \dfrac{\cos 7x}{2} - \dfrac{\cos x}{2} +C
 \end{align}</tex>
     <reason>
 \int \sin (ax) dx = \dfrac{- \cos (ax)}{a} + C_1 \\

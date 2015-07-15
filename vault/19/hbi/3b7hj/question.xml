@@ -2,34 +2,21 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Find the integral of the function}\\
-\dfrac{\sin^2 x}{1+\cos x} \,</tex>
+\dfrac{\sin^2 x}{1+\cos x}</tex>
   </statement>
   <step>
-    <context>\text{Are the following calculations and analysis correct?}
-
-</context>
-    <tex correct='true'>\begin{align}
-\dfrac{\sin^2 x}{1+\cos x} &amp;= \dfrac{\sin^2 x}{1+\cos x} \times \left( \dfrac{ 1 -\cos x}{ 1- \cos x}\right) \\ 
-&amp;= \dfrac{\sin^2 x  \, (1 - \cos x)}{1 - \cos^2 x} \\
-&amp;= \dfrac{\sin^2 x \, (1 - \cos x)}{\sin^2 x} \\
-&amp;= 1 - \cos x 
-\end{align}\\
- 
-
-\therefore
-\int \dfrac{\sin^2 x}{1+\cos x} \, dx = \int \left( 1 - \cos x \right) \, dx
-</tex>
-    <reason>\text{Applied the trigonometric identity, }\\
-\sin^2 x + \cos^2 x = 1
-\quad \text{Check your}\\
-\text{calculations, if you got something}
-\text{ else.} 
-</reason>
+    <context>\text{The following trigonometric identity would}\\
+\text{help reduce }\dfrac{\sin^2 x}{1+\cos x} \text{ to }
+(1-\cos x).</context>
+    <tex correct='true'>\sin^2A + \cos^2A = 1</tex>
+    <tex>\sin 2A =2\sin A\cos A</tex>
+    <reason>\dfrac{\sin^2 x}{1+\cos x} 
+  = \dfrac{1-\cos^2 x}{1+\cos x}
+  = 1 - \cos x </reason>
   </step>
   <step>
-    <context>\text{Is the following evaluation of the integral}\\
-\int \left( 1 - \cos x \right) \, dx \quad
-\text{correct}?</context>
+    <context>I=\int \dfrac{\sin^2 x}{1+\cos x}dx = \int(1 - \cos x)dx \\
+\text{Is the following  correct}?</context>
     <tex correct='true'>
 \begin{align}
 
