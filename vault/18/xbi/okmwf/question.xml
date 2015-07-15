@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate the following rational function}\\
+\dfrac{1}{x^2-9}</tex>
+  </statement>
+  <step>
+    <context>\text{If }\dfrac{1}{x^2-9} = \dfrac{A}{x +3} + \dfrac{B}{P \left(x\right)}\text{, then what}\\
+\text{are }A, B \text{ and }P \left(x\right)?</context>
+    <tex correct='true'>\begin{align}
+P \left(x\right) &amp;= x-3\\
+A &amp;= -\dfrac{1}{6}\\
+B &amp;= \dfrac{1}{6}\\
+
+\end{align}</tex>
+    <tex>\begin{align}
+P \left(x\right) &amp;= x-3\\
+A &amp;= \dfrac{1}{6}\\
+B &amp;= -\dfrac{1}{6}\\
+
+\end{align}</tex>
+    <reason>\begin{align}
+\dfrac{1}{x^2 - 9} &amp;= \dfrac{1}{\left(x-3\right)\left(x+3\right)}\\
+&amp;=\dfrac{A}{x+3}+\dfrac{B}{x-3}\\
+\end{align}\\
+\implies A+B =0\text{ and }3B -3A = 1\\
+\implies A = \dfrac{-1}{6} \text{ and } = \dfrac{1}{6}
+ </reason>
+  </step>
+  <step>
+    <context>
+\text{Would }\int \dfrac{dx}{x^2 -9}\text{ evaluate to the following?}</context>
+    <tex correct='true'>I = \int \dfrac{dx}{x^2 -9} = \dfrac{-1}{6}\int \dfrac{dx}{x+3}+\dfrac{1}{6}\int \dfrac{dx}{x-3}\\
+\qquad\qquad\qquad=\dfrac{-1}{6}\log \left|x+3\right| +\dfrac{1}{6}\log\left|x-3\right| +C\\
+\qquad\qquad\qquad=\dfrac{1}{6}\log \dfrac{x-3}{x+3} +C\\
+</tex>
+    <reason>\text{We showed in step 1 that}\\
+\dfrac{1}{x^2 -9}=\dfrac{-1}{6}\dfrac{1}{x+3}+\dfrac{1}{6}\dfrac{1}{x-3}\\
+\therefore \int \dfrac{dx}{x^2 -9} = \dfrac{-1}{6}\int \dfrac{dx}{x+3}+\dfrac{1}{6}\int \dfrac{dx}{x-3}\\
+\text{Just use }\int \dfrac{dy}{y} = \log \left|y\right|+C</reason>
+  </step>
+</question>

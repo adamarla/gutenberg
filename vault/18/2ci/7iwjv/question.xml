@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }\dfrac{2}{\left(1-x\right)\left(1+x^2\right)}\text{ using partial fractions.}</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the following correctly shows }\\
+\dfrac{2}{\left(1-x\right)\left(1+x^2\right)} \text{ as the sum of partial fractions?}</context>
+    <tex correct='true'>\dfrac{2}{\left(1-x\right)\left(1+x^2\right)} = \dfrac{A}{\left(1-x\right)} +\dfrac{Bx+C}{\left(1+x^2\right)}</tex>
+    <tex>\dfrac{2}{\left(1-x\right)\left(1+x^2\right)} = \dfrac{A}{\left(1-x\right)}+\dfrac{B}{\left(1+x^2\right)}</tex>
+    <reason>\text{If in a proper rational function, }\dfrac{P \left(x\right)}{\left(x-a\right)Q \left(x\right)},\\
+Q \left(x\right)\text{ cannot be partitioned - like }1+x^2 \text{ can't.}\\
+\text{Then the function is expressed as }\\
+\dfrac{P \left(x\right)}{\left(x-a\right)Q \left(x\right)} = \dfrac{A}{x-a}+\dfrac{Bx+C}{Q \left(x\right)}
+</reason>
+  </step>
+  <step>
+    <context>\text{Given }\dfrac{2}{\left(1-x\right)\left(1+x^2\right)}=\dfrac{A}{1-x}+\dfrac{Bx+C}{1+x^2}\\
+\text{What are A, B and C. }</context>
+    <tex correct='true'>A=B=C= 1</tex>
+    <tex>A=B=1\\
+C= 0</tex>
+    <reason>\dfrac{2}{\left(1-x\right)\left(1+x^2\right)}=\dfrac{A}{1-x}+\dfrac{Bx+C}{1+x^2}\\
+\implies 2 = A \left(1+x^2\right)+\left(Bx+C\right)\left(1-x\right)\\
+	\qquad= \left(A -B \right)x^2 +\left(B - C\right)x +\left(A +C\right)\\
+	\therefore A -B =0, B -C =0 \text{ and } A +C =2\\
+\text{Which gives }A =B =C =1</reason>
+  </step>
+  <step>
+    <context>\text{Has the integral been evaluated correctly?}</context>
+    <tex correct='true'>\int \dfrac{2dx}{\left(1-x\right)\left(1 +x^2\right)} = \int \dfrac{dx}{1-x}+\int \dfrac{x+1}{1+x^2}dx\\
+ \qquad= \int \underbrace{\dfrac{dx}{1-x}}_{X} + \int \underbrace{\dfrac{x.dx}{1+x^2}}_{Y} +\int \underbrace{\dfrac{dx}{1+x^2}}_{Z}\\
+ \quad= -\log \left|1-x\right| +\dfrac{1}{2}\log \left|1+x^2\right| + \tan^{-1} x +C\\
+ </tex>
+    <reason>\text{Z is simply a standard result }\\
+-\int \dfrac{dx}{1+x^2} =\tan^{-1} x +C\\
+\text{In Y, put }t =1+X^2 \implies x.dx = \dfrac{dt}{2}\\
+\text{And in X, if }t = 1-x\text{, then }dx = -dt\\
+\implies \int \dfrac{dx}{1-x} = -\int \dfrac{dt}{t} = -\log \left|t\right| = -\log \left|1-x\right|</reason>
+  </step>
+  <choices>
+    <tex correct='true'>-\log \left|1-x\right| +\dfrac{1}{2}\log \left|1+x^2\right| + \tan^{-1} x +C</tex>
+    <tex>\log \left|1-x\right| +\dfrac{1}{2}\log \left|1+x^2\right| + \tan^{-1} x +C</tex>
+    <tex>-\log \left|1-x\right| +\dfrac{1}{2}\log \left|1+x^2\right| + \tan x +C</tex>
+    <tex>-\log \left|1-x\right| -\dfrac{1}{2}\log \left|1+x^2\right| + \tan^{-1} x +C</tex>
+  </choices>
+</question>

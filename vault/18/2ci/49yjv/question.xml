@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }x . \tan^{-1} x \text{ using integration by parts.}</tex>
+  </statement>
+  <step>
+    <context>\text{Given }\int f . g .dx = f \int g.dx - \int \left[f^{\prime}\int g.dx \right].dx\\
+\text{which would be the better choice for }f \left(x\right) \text{ and }\\g \left(x\right)?</context>
+    <tex correct='true'>\begin{align}
+f \left(x\right) &amp;= \tan^{-1} x\\
+g \left(x\right) &amp;= x\\
+\end{align}</tex>
+    <tex>\begin{align}
+f \left(x\right) &amp;= x\\
+g \left(x\right) &amp;=\tan^{-1} x\\
+\end{align}</tex>
+    <reason>\text{There is a good thumb rule }\textemdash \text{ called ILATE}\\
+\text{that you can use.}f \left(x\right) \text{ is the function that}\\
+\text{matches first.}\\
+\begin{tabular}{|C|C|C|C|}
+\hline
+I &amp; \text{Inverse trigonometric}&amp; \textemdash\\
+L &amp; \text{Logrithmic } &amp;\tan^{-1} x &amp;- f \left(x\right) \\
+A &amp; \text{Algebric } &amp; x &amp; -g \left(x\right)\\
+T &amp; \text{Trigonometic } &amp; \textemdash\\
+E &amp; \text{Exponential } &amp; \textemdash\\
+\hline
+\end{tabular}</reason>
+  </step>
+  <step>
+    <context>\text{Given }f \left(x\right) \text{ and }g \left(x\right)\text{ what would}\\
+I = \int x. \tan^{-1} x .dx \text{ look like?} </context>
+    <tex correct='true'>I = \dfrac{x^2}{2}\tan^{-1} x - \dfrac{1}{2}\int \dfrac{x^2.dx}{1 + x^2}</tex>
+    <tex>I = \dfrac{x^2}{2}\tan^{-1} x - \int \dfrac{x.dx}{1 + x^2}</tex>
+    <reason>\begin{align}
+I &amp;= \int \underbrace{\tan^{-1} x}_{f \left(x\right)} .\underbrace{x}_{g \left(x\right)} .dx\\
+&amp;=\tan^{-1} x \int x.dx - \int \left[\dfrac{d}{dx}\tan^{-1} x\int x.dx \right].dx\\
+&amp;=\dfrac{x^2}{2}\tan^{-1} x - \int \dfrac{1}{1 + x^2}.\dfrac{x^2}{2}.dx\\
+&amp;=\dfrac{x^2}{2} - \dfrac{1}{2}\int \dfrac{x^2}{1+x^2}
+.dx\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{What is }B = \dfrac{1}{2}\int \dfrac{x^2}{1+x^2}.dx?</context>
+    <tex correct='true'>\dfrac{1}{2}\left[x - \tan^{-1} x\right] + C</tex>
+    <tex>\dfrac{1}{2}\left[\log \left|1 + x^2\right|\right] + C</tex>
+    <reason>\begin{align}
+B &amp;= \dfrac{1}{2}\int \dfrac{x^2}{1+x^2}.dx = \dfrac{1}{2}\left[\int \dfrac{x^2+1-1}{x^2+1}.dx\right]\\
+&amp;= \dfrac{1}{2}\left[\int dx - \int \dfrac{dx}{1 + x^2}\right] \\
+&amp;= \dfrac{1}{2}\left[x - tan^{-1} x\right]+C
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{So what is }I = \int x.\tan^{-1} x .dx?</context>
+    <tex correct='true'>\dfrac{\left(x^2+1\right)}{2}\tan^{-1} x - \dfrac{x}{2}+ C</tex>
+    <tex>\dfrac{\left(x^2-1\right)}{2}\tan^{-1} x + \dfrac{x}{2}+ C</tex>
+    <reason>\begin{align}
+I &amp;= \dfrac{x^2}{2}\tan^{-1}x - \dfrac{1}{2}\int \dfrac{x^2}{1+x^2}.dx\\
+ &amp;= \dfrac{x^2}{2}\tan^{-1} x - \dfrac{1}{2}\left[x - \tan^{-1} x\right] + C\\
+ &amp;= \dfrac{\tan^{-1} x}{2}\left(x^2+1\right) - \dfrac{x^2}{2}+C\\
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{\left(x^2+1\right)}{2}\tan^{-1} x - \dfrac{x}{2}+ C</tex>
+    <tex>\dfrac{\left(x^2+1\right)}{2}\tan x - \dfrac{x}{2}+ C</tex>
+    <tex>\dfrac{\left(x^2-1\right)}{2}\tan^{-1} x - \dfrac{x}{2}+ C</tex>
+    <tex>\dfrac{\left(x^2+1\right)}{2}\tan^{-1} x + \dfrac{x}{2}+ C</tex>
+  </choices>
+</question>
