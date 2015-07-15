@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }  \dfrac{x}{(x^2 + 1)(x-1)} \text{ using partial fractions.}</tex>
+  </statement>
+  <step>
+    <context>\text{How will }  \dfrac{x}{(x^2 + 1)(x-1)} \text{ be expressed }\\
+\text{in terms of partial fractions?}\\
+</context>
+    <tex correct='true'> \dfrac{x}{(x^2 + 1)(x-1)} = \dfrac{A}{x-1} + \dfrac{Bx + C}{x^2 + 1}</tex>
+    <tex> \dfrac{x}{(x^2 + 1)(x-1)} = \dfrac{A}{x-1} + \dfrac{B}{x^2 + 1}</tex>
+    <reason> \dfrac{x}{(x^2 + 1)(x-1)} = \dfrac{A}{x-1} + \dfrac{Bx + C}{x^2 + 1}\\
+ \text{will give sensible values for A, B and C}\\
+ \text{with }  \dfrac{x}{(x^2 + 1)(x-1)} = \dfrac{A}{x-1} + \dfrac{B}{x^2 + 1}, \\
+ \text{you will find that A = 0 and A = 1} \\ 
+ \text{which is not possible.}</reason>
+  </step>
+  <step>
+    <context>\text{If }  \dfrac{x}{(x^2 + 1)(x-1)} = \dfrac{A}{x-1} + \dfrac{Bx + C}{x^2 + 1}, \\
+\text{then, what are } A, B \text{ and } C.
+</context>
+    <tex correct='true'>A = C = \dfrac{1}{2} \\
+\text{and }B = \dfrac{-1}{2}</tex>
+    <tex>A = B = \dfrac{-1}{2} \\
+\text{and }C = \dfrac{1}{2}</tex>
+    <reason>\dfrac{x}{(x^2 + 1)(x-1)} = \dfrac{A}{x-1} + \dfrac{Bx + C}{x^2 + 1} \\
+\begin{align}
+\implies x &amp;= A(x^2 + 1) + (B x + C) (x-1) \\
+&amp;= (A+B)x^2 + (C-B)x + (A-C) 
+\end{align} \\
+\text{Comparing coefficients, we get}\\
+A+B = 0, C - B = 1 \text{ and } A-C = 0 \\
+\text{Solve to get } A = C = \dfrac{1}{2} 
+\text{ and }B = \dfrac{-1}{2}
+
+</reason>
+  </step>
+  <step>
+    <context>\text{Has the integral been re-written properly below?}</context>
+    <tex correct='true'>\int \dfrac{x}{(x^2 + 1)(x-1)} \, dx \\
+= \dfrac{1}{2} \int \dfrac{dx}{x-1} + \int \dfrac{\left( \dfrac{-1}{2}x + \dfrac{1}{2} \right) }{(x^2 + 1)} \, dx \\
+= \dfrac{1}{2} \left[ \int \dfrac{dx}{x-1}  - \int \dfrac{x}{x^2 +1} \, dx  + \int \dfrac{dx}{x^2 + 1}\right]
+</tex>
+    <reason>\text{Simply replace values of A, B and C we found} \\
+\text{in step (2). After that, its just a little algebra.}</reason>
+  </step>
+  <step>
+    <context>\text{Has the integral been calculated correctly?}</context>
+    <tex correct='true'>\int \dfrac{x}{(x^2 + 1)(x-1)} \, dx  \\
+= \dfrac{1}{2} \left[ \underbrace{ \int \dfrac{dx}{x-1}}_{X} - \underbrace{\overbrace {\int \dfrac{x}{x^2 +1}}^{\text{Put t = x^2 +1}}}_{Y} \, dx  + \underbrace {\int \dfrac{dx}{x^2 + 1}}_{Z}\right]\\
+= \dfrac{1}{2} \left[ \log |x-1| - \dfrac{1}{2} \log |x^2 + 1| + \tan ^{-1} x \right] +C \\</tex>
+    <reason>X = \int \dfrac{dx}{x-1} = \log |x-1| , \, Z = \int \dfrac{dx}{x^2 + 1}= \tan^{-1} x\\
+\text{For } Y, \text{ let } t = x^2 + 1 , \, \dfrac{dt}{2} = x \, dx \\
+\implies \int \dfrac{x \, dx}{x^2 +1} = \dfrac{1}{2} \int \dfrac{dt}{t} \\
+= \dfrac{1}{2} \log |t| + C = \dfrac{1}{2} \log |x^2 +1| + C</reason>
+  </step>
+  <choices>
+    <tex correct='true'> \dfrac{1}{2} \left[ \log |x-1| - \dfrac{1}{2} \log |x^2 + 1| + \tan ^{-1} x \right] +C </tex>
+    <tex> \dfrac{1}{4} \left[ \log |x-1| - \dfrac{1}{2} \log |x^2 + 1| + \tan ^{-1} x \right] +C </tex>
+    <tex> \dfrac{1}{2} \left[ \log |x-1| + \dfrac{1}{2} \log |x^2 + 1| + \tan ^{-1} x \right] +C </tex>
+    <tex> \dfrac{1}{2} \left[ \log |x-1| - \dfrac{1}{2} \log |x^2 + 1| + \tan  x \right] +C </tex>
+  </choices>
+</question>

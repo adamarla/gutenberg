@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate } \dfrac{1}{x(x^4 -1)} \text{ using partial fractions.}</tex>
+  </statement>
+  <step>
+    <context>\text{If } \dfrac{1}{x(x^4 -1)} = \dfrac{A}{x} + \dfrac{B}{x-1} 
++ \dfrac{C}{P(x)} + \dfrac{Dx + E}{Q(x)} \\ 
+\text{then, what are } P(x) \text{ and } Q(x) \, ?</context>
+    <tex correct='true'>P(x) = x+1 \\
+Q(x) = x^2 + 1 </tex>
+    <tex>P(x) = (x-1)^2 \\
+Q(x) = x+ 1  </tex>
+    <reason>\begin{align}
+
+\dfrac{1}{x(x^4 -1)} &amp;= \dfrac{1}{x(x^2 -1)(x^2 + 1)} \\
+&amp;= \dfrac{1}{x(x-1)(x+1)(x^2+1)} \\ 
+\therefore \dfrac{1}{x(x^4 -1)} 
+&amp;= \dfrac{A}{x}+ \dfrac{B}{x-1} + \underbrace{\dfrac{C}{x+1}}_{P(x)} + \underbrace{\dfrac{Dx + E}{x^2 + 1}}_{Q(x)}
+\end{align}
+
+</reason>
+  </step>
+  <step>
+    <context>\text{What are the values of A, B, C, D and E}?</context>
+    <tex correct='true'>\begin{tabular}{|c|c|c|c|c|}
+\hline
+A &amp; B &amp; C &amp; D &amp; E \\
+\hline
+-1 &amp; \dfrac{1}{4} &amp; \dfrac{1}{4} &amp; \dfrac{1}{2} &amp; 0 \\
+\hline
+\end{tabular}</tex>
+    <tex>\begin{tabular}{|c|c|c|c|c|}
+\hline
+A &amp; B &amp; C &amp; D &amp; E \\
+\hline
+0 &amp; \dfrac{1}{2} &amp; \dfrac{1}{4} &amp; \dfrac{1}{2} &amp; -1 \\
+\hline
+\end{tabular}</tex>
+    <reason>\dfrac{1}{x(x^4 -1)} = 
+\dfrac{A}{x} + \dfrac{B}{x-1} + \dfrac{C}{x+1} + \dfrac{Dx + E}{x^2 + 1}\\
+1 = A(x^2 -1)(x^2 +1) + B x(x +1)(x^2 +1)\\
+\quad + C x(x-1)(x^2 +1) + (Dx + E)(x^2 - 1)x \\
+= (A+B+C+D)x^4 + (B-C+E)x^3 \\
+\quad + (B+C-D)x^2 + (B-C-E)x - A \\
+\begin{tabular}{|c|c|}
+\hline
+x^4 &amp; A+B+C+D = 0 \\
+X^3 &amp; B-C+E = 0 \\
+x^2 &amp; B+C -D = 0\\
+x &amp; B - C - E = 0 \\
+x^0  &amp; -A = 1 \\
+\hline
+\end{tabular} \\
+\text{Solving these we get the required values. }
+
+
+</reason>
+  </step>
+  <step>
+    <context>\text{Is the following calculation correct}?
+</context>
+    <tex correct='true'>\begin{align}
+\int \dfrac{dx}{x(x^4 -1)} &amp;= 
+- \underbrace{\int \dfrac{dx}{x}}_{W}+ \dfrac{1}{4} \underbrace{\int \dfrac{dx}{x-1}}_{X} \\
+&amp;+ \dfrac{1}{4} \underbrace{\int \dfrac{dx}{x+1}}_{Y} + \dfrac{1}{2} \underbrace{ \int \dfrac{x \, dx}{x^2 +1}}_{Z} \\
+\end{align} \\
+\quad \quad= - \log |x| + \dfrac{1}{4} \log |x-1| + \dfrac{1}{4} \log |x+1| \\
+\quad \qquad + \dfrac{1}{4} \log |x^2 + 1| + C \\
+
+
+\quad \quad =  - \dfrac{1}{4} \log |x^4| + \dfrac{1}{4} \log |(x^2 -1)(x^2 +1)| +C \\
+\quad \quad= \dfrac{1}{4} \left| \dfrac{x^4 -1}{x^4} \right| + C
+
+
+
+</tex>
+    <reason>W, X \text{ and } Y \text{ are of the form } 
+\int \dfrac{dp}{p} = \log |p| + C \\
+\text{For } z, \text{ put } t = x^2 + 1 \implies  \dfrac{dt}{2} = x \, dx \\
+\begin{align}
+\therefore \dfrac{1}{2} \int \dfrac{x \, dx}{x^2 + 1} = \dfrac{1}{4} \int \dfrac{dt}{t} &amp;= \dfrac{1}{4} \log |t| + C \\
+&amp;= \dfrac{1}{4} \log |x^2 + 1| +C 
+\end{align} \\
+\begin{align}
+\text{Also note that, as } \log |x^n| &amp;= n \log x \\
+\therefore \dfrac{1}{n} \log |x^n| &amp;= \log |x| 
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{1}{4} \left| \dfrac{x^2 -1}{x^2} \right| + C</tex>
+    <tex>\dfrac{1}{4} \left| \dfrac{x^4 -1}{x^4} \right| </tex>
+    <tex correct='true'>\dfrac{1}{4} \left| \dfrac{x^4 -1}{x^4} \right| + C</tex>
+    <tex>\dfrac{1}{4} \left| \dfrac{x^4 +1}{x^4} \right| + C</tex>
+  </choices>
+</question>

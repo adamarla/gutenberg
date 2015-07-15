@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }  \dfrac{2 x - 3}{(x^2 -1)(2x +3)} \text{ using partial fractions.}</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the following correctly expresses}\\
+\dfrac{2 x - 3}{(x^2 -1)(2x +3)} \text{ as the sum of partial fractions?}</context>
+    <tex correct='true'>\dfrac{2 x - 3}{(x^2 -1)(2x +3)} = \dfrac{A}{x+1} + \dfrac{B}{x-1} + \dfrac{C}{2x +3}</tex>
+    <tex>\dfrac{2 x - 3}{(x^2 -1)(2x +3)} = \dfrac{A}{x^2 -1} + \dfrac{B}{2x+3} </tex>
+    <reason> \text{If a polynomial in the denominator can be}\\
+ \text{factorized, then factorize it first.}\\
+ \text{(x^2-1) can be factorized into (x+1)(x-1)}\\
+ \text{Hence, \dfrac{A}{x+1} + \dfrac{B}{x-1} + \dfrac{C}{2x + 3}}\\</reason>
+  </step>
+  <step>
+    <context>\text{If } \dfrac{2 x - 3}{(x^2 -1)(2x +3)} = \dfrac{A}{x+1} + \dfrac{B}{x-1} + \dfrac{C}{2x +3},\\
+\text{then, what are the values of A, B and C?}</context>
+    <tex correct='true'>\begin{align}
+A&amp;= \dfrac{5}{2} \\
+B &amp;= \dfrac{-1}{10} \\
+C &amp;= \dfrac{-24}{5}
+\end{align}</tex>
+    <tex>\begin{align}
+A&amp;= \dfrac{1}{10} \\
+B &amp;= \dfrac{12}{5} \\
+C &amp;= \dfrac{-5}{2}
+\end{align}</tex>
+    <reason>\dfrac{2 x - 3}{(x^2 -1)(2x +3)} = \dfrac{A}{x+1} + \dfrac{B}{x-1} + \dfrac{C}{2x +3} \\
+\implies 2x - 3 = A(x-1)(2x+3) \\
+\qquad \qquad  \qquad + B(x+1)(2x+3) + C(x^2 -1) \\
+\qquad \quad  \qquad = (2 A + 2B + C)x^2 + (A+ 5B)x \\
+\qquad \quad  \qquad +(3B -3A-C)\\
+\text{On comparing coefficients, we get}\\
+2 A + 2B + C =0 , \, A+ 5B=2 , \, 3B - 3A -C =-3 \\
+\text{Solve to get }
+A= \dfrac{5}{2} , \, B = \dfrac{-1}{10} \text{ and }
+C = \dfrac{-24}{5}</reason>
+  </step>
+  <step>
+    <context>\text{Has the integral been evaluated correctly?} </context>
+    <tex correct='true'>\int  \dfrac{2 x - 3}{(x^2 -1)(2x +3)} \, dx \\
+= \dfrac{5}{2} \underbrace{\int \dfrac{dx}{x+1}}_{X} - \dfrac{1}{10}\underbrace{ \int \dfrac{dx}{x-1}}_{Y}- \dfrac{24}{5} \underbrace{ \int \dfrac{dx}{2x+3}}_{Z}\\
+= \dfrac{5}{2} \log |x+1| - \dfrac{1}{10} \log |x-1| - \dfrac{12}{5} \log |2x+3|+ C</tex>
+    <reason>X \text{ and } Y \text{ are of the form } \int \dfrac{dp}{p} = \log p + C\\
+Z   \text{ is of the form } \int \dfrac{dp}{ap + b} = \dfrac{1}{a} \log |ap + b|+ C</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{5}{2} \log |x+1| - \dfrac{1}{10} \log |x-1| - \dfrac{12}{5} \log |2x+3|</tex>
+    <tex>\dfrac{5}{2} \log |x+1| + \dfrac{1}{10} \log |x-1| - \dfrac{12}{5} \log |2x+3|+ C</tex>
+    <tex>\dfrac{5}{2} \log |x+1| - \dfrac{1}{10} \log |x-1| - \dfrac{24}{5} \log |2x+3|+ C</tex>
+    <tex correct='true'>\dfrac{5}{2} \log |x+1| - \dfrac{1}{10} \log |x-1| - \dfrac{12}{5} \log |2x+3|+ C</tex>
+  </choices>
+</question>

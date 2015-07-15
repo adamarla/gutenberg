@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }  \dfrac{2 x}{x^2 + 3x +2} \text{ using partial fractions.}</tex>
+  </statement>
+  <step>
+    <context>\text{If } \dfrac{2 x}{x^2 + 3x +2} = \dfrac{A}{P(x)} + \dfrac{B}{x+2}, \\
+\text{then, what are A, B and P(x)?}</context>
+    <tex correct='true'>\begin{align}
+A &amp; = -2 \\
+B &amp;= 4 \\
+P(x) &amp;= x +1 
+\end{align}</tex>
+    <tex>\begin{align}
+A &amp; =2 \\
+B &amp;= -4 \\
+P(x) &amp;= x +1 
+\end{align}</tex>
+    <reason> \dfrac{2 x}{x^2 + 3x +2} = \dfrac{2x}{(x+1)(x+2)} = \dfrac{A}{x+1}
+ + \dfrac{B}{x+2} \\
+ \implies P(x) = x+1 \\
+ \begin{align}
+\text{Moreover, } 2x &amp;= A(x+2) + B(x+1)\\
+&amp;= (A+B)x + (2A+B) 
+\end{align} \\
+\implies A + B =2 \text{ and } 2A +B = 0. \\
+\text{Solve to get } A =-2 \text{ and } B = 4
+</reason>
+  </step>
+  <step>
+    <context>\text{Has } \int \dfrac{2 x}{x^2 + 3x +2} \, dx \text{ been }\\
+\text{evaluated correctly?}  </context>
+    <tex correct='true'>\int \dfrac{2 x}{x^2 + 3x +2} \, dx  = -2 \int \dfrac{dx}{x+1} 
++ 4 \int \dfrac{dx }{x+2} \\
+= -2 \log |x+1| + 4 \log |x+2| + C \\
+= \log \dfrac{(x+2)^4}{(x+1)^2} + C \\
+</tex>
+    <reason>\text{Using the result of step (1) }, \\
+\dfrac{2 x}{x^2 + 3x +2} = \dfrac{-2}{x+1} + \dfrac{4}{x+2}\\
+\text{So, simply apply } \\
+a \int \dfrac{dx}{x} = a \log |x| + C = \log|x^a| + C </reason>
+  </step>
+  <choices>
+    <tex>\log \dfrac{(x+2)^2}{(x+1)^2} + C \\</tex>
+    <tex> \log \dfrac{(x+2)^4}{(x+1)^4} + C \\</tex>
+    <tex correct='true'> \log \dfrac{(x+2)^4}{(x+1)^2} + C \\</tex>
+    <tex>\log \dfrac{(x-2)^4}{(x+1)^2} + C \\</tex>
+  </choices>
+</question>
