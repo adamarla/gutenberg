@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate the following definite integral }\\
+\int_{0}^{\dfrac{\pi}{4}} \sin 2x.dx</tex>
+  </statement>
+  <step>
+    <context>\textbf{Check Point\#1: }\text{Is the following function}\\
+\text{defined and continuous in }\left[0 , \dfrac{\pi}{4}\right]?</context>
+    <tex correct='true'>\text{Yes.}\sin 2x \text{ is simply the sine function which is }\\
+\text{defined and continuous for all x }</tex>
+    <tex>\text{No.}\sin 2x \text{ is not continuous at }x =0</tex>
+    <reason>\int_{a}^{b} f \left(x\right).dx \text{ makes sense only if }f \left(x\right) \text{ is defined}\\
+\text{and continuous in }\left[0,\dfrac{\pi}{4}\right],\text{for example}\\
+\int_{-\dfrac{\pi}{4}}^{\dfrac{\pi}{4}} \dfrac{dx}{\sin 2x}\text{ is not defined because }\dfrac{1}{\sin 2x}\text{ is}\\
+\text{discontinuous at }x = 0. \in \left[-\dfrac{\pi}{4},\dfrac{\pi}{4}\right].</reason>
+  </step>
+  <step>
+    <context>\text{And so }A = \int_{0}^{\dfrac{\pi}{4}} \sin 2x.dx = ?
+
+</context>
+    <tex correct='true'>A = \dfrac{1}{2} </tex>
+    <tex>A = 1</tex>
+    <reason>\begin{align}
+A = \int_{0}^{\dfrac{\pi}{4}}\sin 2x.dx &amp;= \left[- \dfrac{\cos 2x}{2}\right]_{0}^{\dfrac{\pi}{4}}\\
+&amp;= -\underbrace{\dfrac{\cos \dfrac{\pi}{2}}{2}}_{=0} + \dfrac{\cos 0}{2}\\
+&amp;=\dfrac{1}{2}
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{1}{2}</tex>
+    <tex>-\dfrac{1}{2}</tex>
+    <tex>\dfrac{1}{4}</tex>
+    <tex>\dfrac{\pi}{2}</tex>
+  </choices>
+</question>

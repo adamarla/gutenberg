@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Evaluate the following definite integral }\\
+\int_{0}^{\dfrac{\pi}{4}}\tan x.dx</tex>
+  </statement>
+  <step>
+    <context>\textbf{Check Point\#1: }\text{Is the following function}\\
+\text{defined and continuous in }\left[0 , \dfrac{\pi}{4}\right]?</context>
+    <tex correct='true'>\text{Yes. }\tan x\text{ is defined and continuous in }\left[0,\dfrac{\pi}{4}\right]</tex>
+    <tex>\text{No. }\tan x\text{ is not continuous at }x =\dfrac{\pi}{2}\text{ and}\\
+\text{therefore not defined and continuous in }\left[0,\dfrac{\pi}{4}\right]</tex>
+    <reason>\text{It is important to check for continuity in the}\\
+\text{interval because it only makes sense if the}\\
+\text{function is defined and continuous in the interval.}\\
+\text{for example }\int_{\dfrac{\pi}{4}}^{\dfrac{3\pi}{4}}\tan x.dx \text{ is not defined because}\\
+\text{at }x =\dfrac{\pi}{2}\in \left[\dfrac{\pi}{4}, \dfrac{3\pi}{4}\right]
+\tan x\text{ is discontinuous.}</reason>
+  </step>
+  <step>
+    <context>\text{Therefore }A = \int_{0}^{\dfrac{\pi}{4}}\tan x.dx = ?</context>
+    <tex correct='true'>A = \dfrac{1}{2}\log 2</tex>
+    <tex>A = \log 2</tex>
+    <reason>\begin{align}
+A = \int_{0}^{\dfrac{\pi}{4}}\tan x.dx &amp;= \int_{0}^{\dfrac{\pi}{4}}\underbrace{\dfrac{\sin x}{\cos x}}_{\text{Put }t =\cos x}.dx\\
+&amp;=\int_{0}^{\dfrac{\pi}{4}} -\log \left|\cos x\right|.dx\\
+&amp;= -\log \dfrac{1}{\sqrt{2}} + \underbrace{\log 1}_{ = 0}\\
+&amp;=\underbrace{\log \sqrt{2}}_{ - \log \,\frac{1}{N} = \log N}\\
+&amp;= \dfrac{1}{2}\log 2
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>-\log 2</tex>
+    <tex> -\dfrac{1}{2}\log 2</tex>
+    <tex> \log 2</tex>
+    <tex correct='true'> \dfrac{1}{2}\log 2</tex>
+  </choices>
+</question>
