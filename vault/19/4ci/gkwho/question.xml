@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Evaluate the following}\\
+\quad \int^{1}_{0} x \cdot e^{x^{2}} \, dx</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the following equality is correct ?}</context>
+    <tex correct='true'>e^{x^2} = (e^x)^x = e^{(x^2)}</tex>
+    <tex>e^{x^2} = (e^x)^2 =  e^{(2x)}</tex>
+    <reason>a^{{m}^n} = a^{({m}^n)} \implies e^{x^2} = e^{(x^{2})} \\
+
+\text{whereas } (a^{m})^{n}  = a^{m \cdot n}= a^{n \cdot m} =  (a^{m})^{n}  \\
+\implies  (e^{x})^{2} = e^{x \cdot 2} = e^{2 \cdot x} = (e^2)^{x} \\
+
+\therefore
+e^{(x^2)}= e^{(x \cdot x)} = (e^x)^{x} \neq (e^x)^{2}
+
+
+
+</reason>
+  </step>
+  <step>
+    <context>\text{What substitution will convert} \\
+ \int^{1}_{0} x \cdot e^{x^{2}} \, dx \rightarrow 
+ \dfrac{1}{2} \int^{1}_{0} e^{t} \, dt  \, ?
+</context>
+    <tex correct='true'>t = x^2</tex>
+    <tex>t = e^x</tex>
+    <reason>\text{Let } t = x^2 \implies \dfrac{dt}{2} = x \, dx \\
+\therefore  \int^{1}_{0} x \cdot e^{x^{2}} \, dx = 
+ \dfrac{1}{2} \int^{1}_{0} e^{t} \, dt  \\
+ </reason>
+  </step>
+  <step>
+    <context>\text{So, what does the definite integral } \\
+A =  \int^{1}_{0} x \cdot e^{x^{2}} \, dx = 
+ \dfrac{1}{2} \int^{1}_{0} e^{t} \, dt  \text{  evaluate to} ?</context>
+    <tex correct='true'>A = \dfrac{1}{2} (e -1) </tex>
+    <tex>A =\dfrac{e}{2} </tex>
+    <reason>A =  \int^{1}_{0} x \cdot e^{x^{2}} \, dx
+=\dfrac{1}{2} \int^{1}_{0} e^{t} \, dt \\
+ \quad = \dfrac{1}{2} \left[e^t \, \right]^{1}_{0}  \qquad = \dfrac{1}{2} \left[e^1 - e^0 \right]\\
+\quad  = \dfrac{1}{2} (e -1) </reason>
+  </step>
+  <choices>
+    <tex>\dfrac{1}{2} (e -1) + C</tex>
+    <tex>\dfrac{e}{2} +C</tex>
+    <tex>\dfrac{e}{2}</tex>
+    <tex correct='true'>\dfrac{1}{2} (e -1) </tex>
+  </choices>
+</question>
