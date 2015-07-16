@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+		\text{Evaluate the following integral}\\
+		\qquad \int_2^3 \dfrac{dx}{x^2-1} 
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\textbf{Check Point #1:}\text{ Can this integral } \\
+			\text{even be evaluated?}
+			</context>
+    <tex correct="true">
+			\text{Yes. }\dfrac{1}{x^2-1}\text{ is defined and continuous}\\
+			\text{for all (but not just) }x\gt 1\text{ and therefore}\\
+			\text{also for }x\in [2,3].\\ 
+			\text{Hence, the integral can be evaluated.}
+			</tex>
+    <tex correct="false">
+			\text{No. }\dfrac{1}{x^2-1}\text{ is discontinuous at }x = \pm 1.\\
+			\text{Hence, this integral cannot be evaluated.}
+			</tex>
+    <reason>
+			\int_a^b f(x)\cdot dx \text{ makes sense only if f(x) is} \\
+			\text{defined and continuous in }[a,b].\\
+			\text{For example, }\int_0^2\dfrac{dx}{x^2-1}\text{ is not defined as}\\
+      \dfrac{1}{x^2-1}\text{ is discontinuous at } x=1\in [0,2].
+			</reason>
+  </step>
+  <step>
+    <context>
+				\text{If }\dfrac{1}{x^2-1} = \dfrac{A}{x-1} + \dfrac{B}{x+1}, \\
+				\text{then what are the values of A and B?}
+				</context>
+    <tex correct="true">
+				\qquad A = \frac{1}{2}, B = -\frac{1}{2}
+				</tex>
+    <tex correct="false">
+				\qquad A = 1, B = -1
+				</tex>
+    <reason>
+				\begin{align}
+				  \dfrac{1}{x^2-1} = \dfrac{1}{(x-1)\cdot (x+1)} &amp;= \dfrac{A}{x-1} + \dfrac{B}{x+1}\\
+				  \implies 1 = A\cdot(x+1) &amp;+ B\cdot(x-1) \\
+				  = (A+B)\cdot x &amp;+ (A-B) \\
+				  \implies A+B = 0, A-B &amp;= 1\\
+				  \therefore A = \frac{1}{2}, B &amp;= -\frac{1}{2}
+				\end{align}
+				</reason>
+  </step>
+  <step>
+    <context>
+					\text{And therefore, }A = \int_2^3\dfrac{dx}{x^2-1} = ? 
+					</context>
+    <tex correct="true">
+					A = \dfrac{1}{2}\log\left| \dfrac{3}{2}\right| 
+					</tex>
+    <tex correct="false">
+					A = \log\left| \dfrac{3}{2}\right| 
+					</tex>
+    <reason>
+					\begin{align}
+					  A &amp;= \int_2^3\dfrac{dx}{x^2-1} = \int_2^3\left[\dfrac{\frac{1}{2}}{x-1}
+					  -\dfrac{\frac{1}{2}}{x+1}\right]\cdot dx \\
+					  &amp;=\dfrac{1}{2}\cdot \left[\int_2^3\dfrac{dx}{x-1}-\int_2^3\dfrac{dx}{x+1}\right] \\
+					  &amp;= \dfrac{1}{2}\cdot \left[\log\left|\dfrac{x-1}{x+1} \right|\right]_2^3 
+					  = \dfrac{1}{2}\cdot \left[\log\left| \frac{2}{4}\right| - 
+					  \left|\frac{1}{3}\right| \right] \\
+					  &amp;= \dfrac{1}{2}\log\left|\dfrac{\frac{1}{2}}{\frac{1}{3}} \right|
+					  = \dfrac{1}{2}\log\left| \dfrac{3}{2}\right| 
+					\end{align}
+					</reason>
+  </step>
+</question>
