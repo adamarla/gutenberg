@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+			\text{Integrate the following}\\
+			\qquad \sin^{-1}\left(\dfrac{2x}{1+x^2}\right) \\
+			\text{using integration by parts.}
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\sin^{-1}\left(\dfrac{2x}{1+x^2}\right)\rightarrow \sin^{-1}\sin M\theta \rightarrow M\theta.\\
+			\text{What is }M = ? \text{ and what substitution will make}\\
+			\text{the above possible?}
+			</context>
+    <tex correct="true">
+			\begin{align}
+			  x &amp;= \tan\theta \\ 
+			  M &amp;= 2
+			\end{align}
+			</tex>
+    <tex correct="false">
+			\begin{align}
+			  x &amp;= \sin\theta \\ 
+			  M &amp;= 1
+			\end{align}
+			</tex>
+    <reason>
+			\begin{align}
+			  \sin 2\theta &amp;= \dfrac{2\sin\theta\cdot\cos\theta}
+			  {\underbrace{\sin^2\theta + \cos^2\theta}}_{=1} = 
+			  \dfrac{\frac{2\sin\theta\cdot\cos\theta}{\cos^2\theta}}
+			  {\frac{\sin^2\theta+\cos^2\theta}{\cos^2\theta}} \\
+			  &amp;= \dfrac{2\tan\theta}{1+\tan^2\theta}
+			\end{align} \\
+			\text{Hence, if we let }x=\tan\theta,\text{ then } \\
+			\begin{align}
+			  \sin^{-1}\left(\dfrac{2x}{1+x^2}\right) &amp;= 
+			  \sin^{-1}\left(\dfrac{2\tan\theta}{1+\tan^2\theta}\right) \\
+			  &amp;= \sin^{-1}(\sin 2\theta) = 2\theta \\
+			  &amp;\implies M = 2.  
+			\end{align}
+			</reason>
+  </step>
+  <step>
+    <context>
+  		\text{Hence, }I = \int\sin^{-1}\left(\dfrac{2x}{1+x^2}\right)\cdot dx\text{ can be}\\
+  		\text{re-written as }\ldots
+  		</context>
+    <tex correct="true">
+  		I = \int \sin^{-1}\left(\dfrac{2x}{1+x^2}\right)\cdot dx = 
+  		2\cdot\int\theta\cdot\sec^2\theta\cdot d\theta
+  		</tex>
+    <tex correct="false">
+  		I = \int \sin^{-1}\left(\dfrac{2x}{1+x^2}\right)\cdot dx = 
+  		\int 2\cdot\theta\cdot d\theta
+  		</tex>
+    <reason>
+  		\begin{align}
+  		  x = \tan\theta &amp;\implies dx = \sec^2\theta\cdot d\theta \\
+  		  \therefore \int\underbrace{\sin^{-1}\left(\dfrac{2x}{1+x^2}\right)}
+  		  _{= \sin^{-1}\sin 2\theta = 2\theta}\cdot dx 
+  		  &amp;= 2\int\theta\cdot\sec^2\theta\cdot d\theta
+  		\end{align}
+  		</reason>
+  </step>
+  <step>
+    <context>
+  		\text{Given } \\
+  		\int f(\theta)\cdot g(\theta)\cdot d\theta = f\cdot\int g d\theta - \int \left[ f' \cdot\int g d\theta\right] d\theta \\
+  		\text{which of the following is the better choice}\\
+  		\text{for }f(\theta)\text{ and }g(\theta)? 
+  		</context>
+    <tex correct="true">
+  		\begin{align}
+  		f(\theta) &amp;= \theta \\ 
+  		g(\theta) &amp;= \sec^2\theta
+  		\end{align}
+  		</tex>
+    <tex correct="false">
+  		\begin{align}
+  		f(\theta) &amp;= \sec^2\theta \\ 
+  		g(\theta) &amp;= \theta
+  		\end{align}
+  		</tex>
+    <reason>
+  		\text{There is a nice rule of thumb - called ILATE} \\ 
+  		\text{to help you decide what } f(\theta) \text{ and }g(\theta) \text{ should be.}\\
+  		\text{Basically, }f(\theta) \text{ is the function that matches first.}\\
+  		\begin{tabular}{c|c|c}
+  		I &amp; Inverse Trig &amp; - \\
+  		\hline
+  		L &amp; Logarithm &amp; - \\
+  		\hline
+  		A &amp; Algebra &amp; \theta = f(\theta) \\
+  		\hline
+  		T &amp; Trigonometric &amp; \sec^2\theta = g(\theta) \\
+  		\hline
+  		E &amp; Exponential &amp; - \\
+  		\hline
+  		\end{tabular}
+  		</reason>
+  </step>
+  <step>
+    <context>
+  		\text{Given }f(\theta)\text{ and }g(\theta),\text{ what does }\\
+  		I = 2\cdot\int\theta\cdot\sec^2\theta\cdot d\theta\text{ evaluate to?}
+  		</context>
+    <tex correct="true">
+  		2\cdot \left(\theta\cdot\tan\theta + \log\vert\cos\theta\vert \right)
+  		</tex>
+    <tex correct="false">
+  		2\cdot \left(\theta\cdot\tan\theta - \log\vert\cos\theta\vert \right)
+  		</tex>
+    <reason>
+  		\begin{align}
+  		  I &amp;= 2\int\theta\cdot\sec^2\theta\cdot d\theta \\ 
+  		  &amp;= 2\left[\theta\int\sec^2\theta d\theta 
+  		  - \int \left[\frac{d\theta}{d\theta}\int\sec^2\theta\cdot d\theta\right]\right]\cdot d\theta\\
+  		  &amp;= 2\left[\theta\cdot\tan\theta 
+  		  - \underbrace{\int \tan\theta\cdot d\theta}
+  		  _{\tan\theta=\frac{\sin\theta}{\cos\theta}.\text{ Put }\cos\theta=t} \right] \\
+  		  &amp;= 2\cdot \left(\theta\cdot\tan\theta + \log\vert\cos\theta\vert \right)
+  		\end{align}
+  		</reason>
+  </step>
+  <step>
+    <context>
+  		\text{And hence, what is the integral I in}\\
+  		\text{terms of x?}
+  		</context>
+    <tex correct="true">
+  		\qquad I = 2x\cdot\tan^{-1}x - \log (1+x^2) + C 
+  		</tex>
+    <tex correct="false">
+  		\qquad I = 2x\cdot\tan^{-1}x + \log\sqrt{1+x^2} + C 
+  		</tex>
+    <reason>
+  		\begin{align}
+  		  I &amp;= 2\theta\cdot\tan\theta + 
+  		  \underbrace{\log\cos^2\theta}_{2\log\cos\theta = \log\cos^2\theta} + C \\
+  		  &amp;= 2\theta\cdot\tan\theta + \log\dfrac{1}{1+\tan^2\theta} + C \\ 
+  		  &amp;= 2\theta\cdot\tan\theta - \log (1+\tan^2\theta) + C \\ 
+  		  &amp;= \underbrace{2x\cdot\tan^{-1}x - \log (1+x^2)}_{x = \tan\theta} + C 
+  		\end{align}
+  		</reason>
+  </step>
+</question>

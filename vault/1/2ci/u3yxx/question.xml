@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+			\text{Integrate the following }\\
+			\qquad \dfrac{(x^2 + 1)\cdot (x^2+2)}{(x^2+3)\cdot (x^2+4)} \\
+			\text{using partial fractions.}
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\text{If }(x^2 + 1)\cdot (x^2+2) = A\cdot (x^2+3)\cdot (x^2+4) + P(x),\\
+			\text{then what is } A = ?.\text{Ignore P(x) for now.}
+			</context>
+    <tex correct="true">
+			\text{A is a constant and }A = 1.
+			</tex>
+    <tex correct="false">
+			\text{A could be anything, including a polynomial }\\
+			\text{- like }ax+b.
+			</tex>
+    <reason>
+			  (x^2 + 1)\cdot (x^2+2) = x^4 + 3x^2 + 2 \\
+			  \text{ and } (x^2+3)\cdot (x^2+4) = x^4 + 7x^2 + 12.\text{ Now,} \\
+			  \text{if }x^4 + 3x^2 + 2 = A\cdot (x^4 + 7x^2 + 12) + P(x) \\
+			  \text{then on comparing coefficients of }x^4, A = 1.
+			</reason>
+  </step>
+  <step>
+    <context>
+				\text{Which of the following is mathematically correct?}
+				</context>
+    <tex correct="true">
+				\begin{align}
+				  \dfrac{(x^2 + 1)\cdot (x^2+2)}{(x^2+3)\cdot (x^2+4)} &amp;= 
+				  1 + \dfrac{Ax+B}{x^2+3} + \dfrac{Cx+D}{x^2 + 4}
+				\end{align}
+				</tex>
+    <tex correct="false">
+				\begin{align}
+				  \text{Let } t &amp;= x^2 \\
+				  \therefore \dfrac{(x^2 + 1)\cdot (x^2+2)}{(x^2+3)\cdot (x^2+4)} &amp;= 
+				  \dfrac{(t+1)\cdot( t+2)}{(t+3)\cdot (t+4)} \\
+				  &amp;= 1 + \dfrac{A}{t+3} + \dfrac{B}{t+4}
+				\end{align}
+				</tex>
+    <reason>
+    \text{When you set }t = x^2\text{ and convert }x^2 + a\rightarrow t + a\\
+    \text{you forget that }x^2 + a\text{ is a quadratic}\\
+    \text{polynomial and not a linear one. That makes}\\
+    \text{all the difference to how the partial sum looks.}
+    
+				</reason>
+  </step>
+  <step>
+    <context>
+  		\text{Given }\dfrac{(x^2 + 1)\cdot (x^2+2)}{(x^2+3)\cdot (x^2+4)} = 
+  		1 + \dfrac{Ax+B}{x^2+3} + \dfrac{Cx+D}{x^2 + 4}, \\
+  		\text{what are the values of }A,B,C\text{ and }D?
+  		</context>
+    <tex correct="true">
+  		\begin{tabular}{cccc}
+  		\hline
+  		 A &amp; B &amp; C &amp; D \\		
+  		 \hline
+  		0 &amp; 2 &amp; 0 &amp; -6 \\
+  		\hline 
+  		\end{tabular}
+  		</tex>
+    <tex correct="false">
+  		\begin{tabular}{cccc}
+  		\hline
+  		 A &amp; B &amp; C &amp; D  \\		
+  		 \hline
+  		0 &amp; -2 &amp; 0 &amp; -2 \\
+  		\hline 
+  		\end{tabular}
+  		</tex>
+    <reason>
+  		\begin{align}
+  		&amp;\dfrac{(x^2+1)\cdot (x^2+2)}{(x^2+3)\cdot (x^2+4)} = 1 + \dfrac{Ax+B}{x^2+3} + \dfrac{Cx+D}{x^2+4} \\
+  		&amp;\implies\underbrace{x^4+3x^2+1}_{(x^2+1)\cdot(x^2+2)} = 
+  		\underbrace{x^4+7x^2+12}_{(x^2+3)\cdot(x^2+4)} \\
+  		&amp;+ A\cdot (x^2+4) + B\cdot (x^2+3)\\
+  		&amp;= x^4 + (A+C)x^3 + (7+B+D)x^2 \\
+  		&amp;+ (4A+3C)x + (12+4B+3D)
+  		\end{align}\\
+  		\text{On comparing coefficients, we get }\\
+  		\begin{tabular}{cc}
+  		x^3 &amp; A+C = 0 \\
+  		x^2 &amp; B+D+7 = 3 \\
+  		x &amp; 4A+3C = 0 \\
+  		x^0 &amp; 12+4B+3D = 2
+  		\end{tabular}\\
+  		\text{Solve to get values for A,B,C and D.}
+  		
+  		</reason>
+  </step>
+  <step>
+    <context>
+  			\text{Has the integral been solved correctly?}
+  			</context>
+    <tex correct="true">
+  			\begin{align}
+  			  &amp;\int\dfrac{(x^2 + 1)\cdot (x^2+2)}{(x^2+3)\cdot (x^2+4)} dx \\
+  			  &amp;= 
+  			  \int dx + 2\underbrace{\int\dfrac{dx}{x^2 + 3}}_{X} 
+  			  - \underbrace{6\int\dfrac{dx}{x^2+4}}_{Y} \\
+  			  &amp;= x + \dfrac{2}{\sqrt{3}}\tan^{-1}\dfrac{x}{\sqrt{3}} - 3\tan^{-1}\tan^{-1}\dfrac{x}{2} + C
+  			\end{align}
+  			</tex>
+    <reason>
+  			\text{Note that both X and Y are of the form}\\
+  			\int\dfrac{dy}{y^2 + a^2 } = \dfrac{1}{a}\tan^{-1}\dfrac{y}{a} + C.
+  			</reason>
+  </step>
+</question>

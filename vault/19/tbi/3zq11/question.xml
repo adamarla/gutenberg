@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate the rational function } 
+\dfrac{1}{x(x^n + 1)} \\
+\text{Hint: Multiply the numerator and denominator}\\
+\text{by } x^{n-1}\text{and then put t = } x^n</tex>
+  </statement>
+  <step>
+    <context>\text{What will we get when we multiply numerator}\\
+\text{and denominator by }  x^{n-1}\, ?</context>
+    <tex correct='true'>\dfrac{x^{n-1}}{x(x^n + 1)x^{n-1}} \\</tex>
+    <tex>\dfrac{x^{n-1}}{x(x^n + 1)(x^n - 1)}\\
+= \dfrac{x^{n-1}}{x(x^{2n} - 1)}</tex>
+    <reason>\text{We have to multiply with } x^{n-1} \neq (x^n - 1) \\
+\text{Be careful with the algebra.}</reason>
+  </step>
+  <step>
+    <context>\text{After multiplying, which of the following looks}\\
+\text{more useful. }\\
+\text{Note : Both are mathematically correct. }</context>
+    <tex correct='true'>\dfrac{x^{n-1}}{x(x^n + 1)x^{n-1}} 
+= \dfrac{x^{n-1}}{x^n (x^n + 1) \\</tex>
+    <tex>\dfrac{x^{n-1}}{x(x^n + 1)x^{n-1}} 
+= \dfrac{x^{n-1}}{x  (x^{2n-1} + 1) \\</tex>
+    <reason>\text{When we write } 
+\dfrac{x^{n-1}}{x(x^n + 1)x^{n-1}} \text{ as }
+\dfrac{x^{n-1}}{x  (x^{2n-1} + 1) }\\
+\text{then, we have only } x^n \text{ in the denominator and}\\
+ \dfrac{1}{n} \dfrac{d}{dx}x^n = x^{n-1} \text{ in the numerator. }\\
+ \text{This form just looks simpler and more useful.}</reason>
+  </step>
+  <step>
+    <context>\text{Has the integral been evaluated correctly?}</context>
+    <tex correct='true'>\text{Put t = } x^n \implies \dfrac{dt}{n} = x^{n-1} \, dx \\
+ \begin{align}
+ \therefore \int \dfrac{x^{n-1}}{x^n (x^n + 1)} &amp;= 
+ \dfrac{1}{n} \int \dfrac{dt}{t(t+1)} \\
+ &amp;= \dfrac{1}{n} \left[  \int \dfrac{t+1-t}{t(t+1)} \, dt\right] \\
+&amp;= \dfrac{1}{n} \left[  \underbrace{\int \dfrac{dt}{t}}_{X} - \underbrace{\int \dfrac{dt}{t+1}}_{Y} \right] \\
+&amp;= \dfrac{1}{n} \left[ \log \left| \dfrac{t}{t+1} \right| \right] +C \\
+&amp;= \dfrac{1}{n} \left[ \log \left| \dfrac{x^n}{x^n+1}\right| \right] +C \\
+\end{align}
+ 
+
+</tex>
+    <reason>\text{We first broke } \dfrac{1}{t(t+1)} \text{ into partial fractions. Then,}\\
+\text{simply applied } \int \dfrac{dt}{p} = \log |p| + C
+\text{ in X and Y.}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{1}{n} \left[ \log \left| \dfrac{x^n}{x^n+1}\right| \right]  \\</tex>
+    <tex>\dfrac{1}{n^2} \left[ \log \left| \dfrac{x^n}{x^n+1}\right| \right] +C \\</tex>
+    <tex>\dfrac{1}{n} \left[ \log \left|\dfrac{x^n}{x^n}\right| \right] +C \\</tex>
+    <tex correct='true'>\dfrac{1}{n} \left[ \log \left| \dfrac{x^n}{x^n+1}\right| \right] +C \\</tex>
+  </choices>
+</question>

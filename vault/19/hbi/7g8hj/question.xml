@@ -5,50 +5,41 @@
 \dfrac{\cos 2 x- \cos 2 \alpha}{\cos x - \cos \alpha}</tex>
   </statement>
   <step>
-    <context>\text{Are the following calculations and analysis correct?}
-
-</context>
-    <tex correct='true'>
-\begin{align}
-
+    <context>\text{The following trigonometric identity would}\\
+\text{help reduce }\dfrac{\cos 2 x- \cos 2 \alpha}{\cos x - \cos \alpha}
+\text{ to }2(\cos x + \cos\alpha)</context>
+    <tex correct='true'>\cos 2 A = 2 \cos^2 A - 1</tex>
+    <tex>\cos A -\cos B=-2\sin\left(\dfrac{A+B}{2}\right)
+  \sin\left(\dfrac{A-B}{2}\right)</tex>
+    <reason>\begin{align}
 \dfrac{\cos 2 x- \cos 2 \alpha}{\cos x - \cos \alpha} 
-&amp;= \dfrac{(2 \cos^2 x - 1) - (2 \cos^2 \alpha - 1) }{ \cos x - \cos \alpha}\\
-&amp;=  \dfrac{2( \cos^2 x - \cos^2 \alpha)}{ (\cos x - \cos \alpha)}\\
-\end{align}\\
-\quad \quad \qquad = \dfrac{2( \cos^2 x - \cos^2 \alpha)}{ (\cos x - \cos \alpha)} \times \left( \dfrac{\cos x + \cos \alpha}{\cos x + \cos \alpha} \right) \\
-\quad \quad \qquad = \dfrac{2( \cos^2 x - \cos^2 \alpha)(\cos x + \cos \alpha)}{ (\cos^2 x - \cos^2 \alpha)}  \\
-\quad \quad \qquad = 2 ( \cos x + \cos \alpha) </tex>
-    <reason>\text{Applied the trigonometric identity, }\\
-\cos 2 A = 2 \cos^2 A - 1 \\
-\text{Check your calculations, if you got something}\\
-\text{else.}
-</reason>
+  &amp;= \dfrac{(2 \cos^2 x - 1) - (2 \cos^2 \alpha - 1) }{ \cos x - \cos \alpha}\\
+  &amp;= 2 ( \cos x + \cos \alpha)
+\end{align}</reason>
   </step>
   <step>
-    <context>\text{Is the following evaluation of the integral}\\
-\int 2 ( \cos x + \cos \alpha)  \, dx \quad
-\text{correct}?</context>
-    <tex correct='true'>\int 2 ( \cos x + \cos \alpha)  \, dx \quad \\
-= 2 \left[ \int \cos x \, dx + \int \cos \alpha \, dx \right] \\
-=  2 \left[ \int \cos x \, dx + \cos \alpha \int dx \right] \\
-= 2(\sin  x + x \cos \alpha)+C
+    <context>\int\dfrac{\cos 2 x- \cos 2 \alpha}{\cos x - \cos \alpha}dx
+  =\int 2(\cos x + \cos \alpha)dx \\
+\text{Is the following correct}?</context>
+    <tex correct='true'>\begin{align}
+  &amp;\int 2 ( \cos x + \cos \alpha)  \, dx \quad \\
+  &amp;= 2 \int \cos x \, dx + 2\int \cos \alpha \, dx \\
+  &amp;= 2(\sin  x + x\cos\alpha)+C
+\end{align}
 </tex>
-    <tex>\int 2 ( \cos x + \cos \alpha)  \, dx \quad \\
-= 2 \left[ \int \cos x \, dx + \int \cos \alpha \, dx \right] \\
-=  2 \left[ \int \cos x \, dx + \cos \alpha \right] \\
-= 2(\sin  x + cos \alpha)+C
-</tex>
-    <reason>
-\int \cos (a x)dx = \dfrac{\sin (a x)}{a}+ C1 \\
-\int dx = x +C2 \\
-\text{where C1 and C2 are constants of integration.}
-
-</reason>
+    <tex>\begin{align}
+  &amp;\int 2 ( \cos x + \cos \alpha)  \, dx \quad \\
+  &amp;= 2 \int \cos x \, dx + 2\int \cos \alpha \, dx \\
+  &amp;= 2(\sin  x + \sin\alpha)+C
+\end{align}</tex>
+    <reason>\int \cos (a x)dx = \dfrac{\sin (a x)}{a}+ C \text{, but}\\
+\int \cos a\,dx = \cos a\, x +C \\
+\text{$\cos a$ is a constant, not a function of x.}</reason>
   </step>
   <choices>
     <tex> 4 (\sin  x - x \cos \alpha)+C</tex>
-    <tex> 4 (\sin  x + x \cos \alpha)+C</tex>
-    <tex>  2 ( \sin  x + x \cos \alpha)</tex>
     <tex correct='true'>2(\sin  x + x \cos \alpha)+C</tex>
+    <tex>  2 ( \sin  x + x \cos \alpha)</tex>
+    <tex>2(\sin  x + \sin\alpha)+C</tex>
   </choices>
 </question>

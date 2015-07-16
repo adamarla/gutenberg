@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate the function } 
+x \cdot \sin^{-1} x \\
+\text{using integration by parts.}</tex>
+  </statement>
+  <step>
+    <context>\text{Given } \int f(x) \cdot g(x) \, dx  \\
+= f(x) \int \, dx - \int \left[ f'(x) \cdot \int g(x) \, dx \right] \, dx \\
+\text{which is better choice for } f(x) \text{ and } g(x) ?
+</context>
+    <tex correct='true'>f(x) = \sin^{-1} x  \\
+g(x) =  x </tex>
+    <tex>
+f(x) = x \\
+g(x) = \sin^{-1} x </tex>
+    <reason>\text{There is a nice rule of thumb - called ILATE - }\\
+\text{that you can use. Let } f(x) \text{ be the function} \\
+\text{that matches first.} \\
+
+\begin{tabular}{|c|c|c|}
+\hline
+I &amp; Inverse &amp; \sin^{-1} x  \\
+\hline
+L  &amp; Logartihmic &amp;  \\
+\hline
+A &amp;Algebraic &amp; x \\
+\hline
+T  &amp; Trignometric &amp; \\
+\hline
+E &amp; Exponential &amp; \\
+\hline
+\end{tabular} \\
+\text{Hence, } f(x) = \sin^{-1} x  \text{ and } g(x) = x</reason>
+  </step>
+  <step>
+    <context>\text{Given } f(x) = \sin^{-1} x \text{ and } g(x) = x, \text{ what does} \\
+\text{I = \int  f(x) \cdot g(x)  dx  \text{ evaluate to } ?</context>
+    <tex correct='true'>I = \int f(x) \cdot g(x) \, dx  \\ 
+\quad = \sin^{-1} x  \cdot \dfrac{ x^2}{2} + C_1 - \dfrac{1}{2} \int \dfrac{x^2 }{\sqrt{1- x^2}} \, dx</tex>
+    <tex>I = \int f(x) \cdot g(x) \, dx  \\ 
+\quad = \sin^{-1} x  \cdot \dfrac{ x^2}{2} + C_1 -  \int \dfrac{x^2 }{\sqrt{1- x^2}} \, dx</tex>
+    <reason>\begin{align}
+I &amp;= \int f(x) \cdot g(x) \, dx  \\
+&amp;= f(x) \int \, dx - \int \left[ f'(x) \cdot \int g(x) \, dx \right] \, dx \\
+\implies I &amp;= \sin^{-1} x \int x \, dx - \int \left[ \dfrac{d}{dx} \sin^{-1} x \cdot \int  x \, dx \right] \, dx\\
+&amp;= \sin^{-1} x  \cdot \dfrac{ x^2}{2} + C_1 -  \int \dfrac{1}{\sqrt{1- x^2}} \cdot \dfrac{x^2 }{2} \, dx \\
+&amp;= \sin^{-1} x  \cdot \dfrac{ x^2}{2} + C_1 - \dfrac{1}{2} \int \dfrac{x^2 }{\sqrt{1- x^2}} \, dx
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>\text{Which substitution will make it easier to evaluate} \\
+\dfrac{1}{2} \int \dfrac{x^2 }{\sqrt{1- x^2}} \, dx \, ?</context>
+    <tex correct='true'>x = \sin \phi</tex>
+    <tex>1 - x^2 = t</tex>
+    <reason>\text{Notice the } \sqrt{1- x^2} \text{ term in the denominator.} \\
+\text{It requires that } |x| &lt; 1. \\
+\text{It also means that x can be written as } \sin \phi  \\
+\text{because } |\sin \phi| \leq 1</reason>
+  </step>
+  <step>
+    <context>\text{Given } x = \sin \phi, \text{ what is } 
+\dfrac{1}{2} \int \dfrac{x^2}{\sqrt{1- x^2}} \, dx ?</context>
+    <tex correct='true'>\dfrac{1}{4} \left[ \sin^{-1}x  \, - x \sqrt{1 - x^2} \right] + C_2</tex>
+    <tex>\dfrac{1}{4} \left[ \sin^{-1}x  \, - \sqrt{1 - x^2} \right] + C_2</tex>
+    <reason>x = \sin \phi \implies dx = \cos \phi \, d \phi \\
+\therefore \dfrac{1}{2} \int \dfrac{x^2}{\sqrt{1- x^2}} \, dx 
+= \dfrac{1}{2} \int \dfrac{\sin^2 \phi \, \cos \phi }{\sqrt{1 - \sin^2 \phi}} \, d \phi \\
+= \dfrac{1}{2} \int \sin^2 \phi \, d \phi 
+ = \dfrac{1}{2} \int \underbrace{\dfrac{1- \cos 2 \phi }{2}}_{\sin^2 \phi = \frac{1 - \cos 2 \phi}{2}}  d \phi \\ 
+ = \dfrac{1}{4} \left[ \phi - \dfrac{\overbrace{\sin 2 \phi}^{ \sin 2 \phi = 
+ 2\sin \phi \cos \phi}}{2}\right] + C_2 \\
+ = \dfrac{1}{4} \left[ \phi - \sin \phi \cos \phi \right] +C_2 \\
+ = \dfrac{1}{4} \left[ \sin^{-1}x  \, - x \sqrt{1 - x^2} \right] + C_2
+ 
+ </reason>
+  </step>
+  <step>
+    <context>\text{Is the following the correct value for the original}\\
+\text{integral I in step 2 }?</context>
+    <tex correct='true'>\dfrac{1}{4}(2 x^2 - 1) \sin^{-1}x  \, + x \dfrac{ \sqrt{ 1 - x^2 }}{4} + C</tex>
+    <reason>I = 
+\sin^{-1} x  \cdot \dfrac{ x^2}{2} + C_1 - \dfrac{1}{2} \int \dfrac{x^2 }{\sqrt{1- x^2}} \, dx\\
+=\sin^{-1} x  \cdot \dfrac{ x^2}{2}+ C_1 - \underbrace{\dfrac{1}{4} \left[ \sin^{-1}x  \, - x \sqrt{1 - x^2} \right] - C_2}_{\text{Step (4)}}\\
+
+= \dfrac{1}{4}(2 x^2 - 1) \sin^{-1}x  \, + x \dfrac{ \sqrt{ 1 - x^2 }}{4} + C</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{1}{4}(2 x^2 + 1) \sin^{-1}x  \, + x \dfrac{ \sqrt{ 1 - x^2 }}{4} + C</tex>
+    <tex>\dfrac{1}{4}(2 x^2 - 1) \sin^{-1}x  \, + x \dfrac{ \sqrt{ 1 - x^2 }}{2} + C</tex>
+    <tex>\dfrac{1}{2}(2 x^2 - 1) \sin^{-1}x  \, + x \dfrac{ \sqrt{ 1 - x^2 }}{4} + C</tex>
+    <tex correct='true'>\dfrac{1}{4}(2 x^2 - 1) \sin^{-1}x  \, + x \dfrac{ \sqrt{ 1 - x^2 }}{4} + C</tex>
+  </choices>
+</question>

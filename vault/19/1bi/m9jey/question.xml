@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate the function } 
+\dfrac{x \cdot \cos^{-1} x}{\sqrt{1-x^2}} \\
+\text{using integration by parts.}</tex>
+  </statement>
+  <step>
+    <context>\text{Given } \int f(x) \cdot g(x) \, dx  \\
+= f(x) \int \, dx - \int \left[ f'(x) \cdot \int g(x) \, dx \right] \, dx \\
+\text{which is better choice for } f(x) \text{ and } g(x) ?
+</context>
+    <tex correct='true'>f(x) = \cos^{-1} x  \\
+g(x) =  \dfrac{x}{\sqrt{1 - x^2}}</tex>
+    <tex>
+f(x) =  \dfrac{x}{\sqrt{1 - x^2}} \\
+g(x) = \cos^{-1} x </tex>
+    <reason>\text{There is a nice rule of thumb - called ILATE - }\\
+\text{that you can use. Let } f(x) \text{ be the function} \\
+\text{that matches first.} \\
+
+\begin{tabular}{|c|c|c|}
+\hline
+I &amp; Inverse &amp; \cos^{-1} x  \\
+\hline
+L  &amp; Logartihmic &amp;  \\
+\hline
+A &amp;Algebraic &amp; \dfrac{x}{\sqrt{1 - x^2}}\\
+\hline
+T  &amp; Trignometric &amp; \\
+\hline
+E &amp; Exponential &amp; \\
+\hline
+\end{tabular} \\
+\text{Hence, }
+f(x) = \cos^{-1} x  \text{ and }
+g(x) =  \dfrac{x}{\sqrt{1 - x^2}}</reason>
+  </step>
+  <step>
+    <context>\text{Given } f(x) = \cos^{-1} x \text{ and } g(x) =  \dfrac{x}{\sqrt{1 - x^2}}\\
+\text{ what does I = \int  f(x) \cdot g(x)  dx \\
+\text{ evaluate to } ?</context>
+    <tex correct='true'>I = \int f(x) \cdot g(x) \, dx  \\ 
+\quad = \cos^{-1} x  \cdot \int \dfrac{x}{\sqrt{1-x^2}} \, dx \\
+\quad +  \int \left[ \dfrac{1 }{\sqrt{1- x^2}} \int \dfrac{x}{\sqrt{1-x^2}} \, dx  \right] \, dx</tex>
+    <tex>I = \int f(x) \cdot g(x) \, dx  \\ 
+\quad = \cos^{-1} x  \cdot \int \dfrac{x}{\sqrt{1-x^2}} \, dx \\
+\quad +  \int \left[ \dfrac{x }{\sqrt{1- x^2}} \int \dfrac{x}{\sqrt{1-x^2}} \, dx  \right] \, dx</tex>
+    <reason>\begin{align}
+I &amp;= \int f(x) \cdot g(x) \, dx  \\
+&amp;= f(x) \int \, dx - \int \left[ f'(x) \cdot \int g(x) \, dx \right] \, dx \\
+\implies I 
+&amp;= \cos^{-1} x  \cdot \int \dfrac{x}{\sqrt{1-x^2}} \, dx \\
+&amp;+  \int \left[ \dfrac{1 }{\sqrt{1- x^2}} \int \dfrac{x}{\sqrt{1-x^2}} \, dx  \right] \, dx
+\end{align} \\
+
+\text{Using, } \dfrac{d}{dx} \cos^{-1} x = - \dfrac{1}{\sqrt{1-x^2}}
+
+</reason>
+  </step>
+  <step>
+    <context>\text{If } A = \int \dfrac{x}{\sqrt{1-x^2}} \, dx \,  \text{ then, what is A ?}</context>
+    <tex correct='true'>A = - \sqrt{1- x^2}</tex>
+    <tex>A = \dfrac{1}{\sqrt{1-x^2}}</tex>
+    <reason>\text{Let } x = \sin \phi \\
+\implies \sqrt{1-x^2} = \cos \phi \text{ and }
+dx = \cos \phi d \phi \\
+\therefore \int \dfrac{x}{\sqrt{1-x^2}} dx = \int \dfrac{\sin \phi}{\cos \phi} \cos \phi d \phi\\
+= \int \sin \phi d \phi = - \cos \phi = - \sqrt{1-x^2}</reason>
+  </step>
+  <step>
+    <context>\text{Given, } A = \int \dfrac{x}{\sqrt{1-x^2}} dx = 
+- \sqrt{1 - x^2} \\
+ \text{what does I = } \int \dfrac{x \cdot \cos^{-1} x}{\sqrt{1-x^2}} dx 
+\text{ evaluate to ?}</context>
+    <tex correct='true'>- \left( \cos^{-1} x \, \sqrt{1- x^2} + x \right) + C</tex>
+    <tex>- \cos^{-1} x \, \sqrt{1- x^2} + x  + C</tex>
+    <reason> I = \cos^{-1} x  \cdot \int \dfrac{x}{\sqrt{1-x^2}} \, dx \\
++  \int \left[ \dfrac{1 }{\sqrt{1- x^2}} \int \dfrac{x}{\sqrt{1-x^2}} \, dx  \right] \, dx
+\\
+= - \cos^{-1}\sqrt{1-x^2} - \int \dfrac{1}{\sqrt{1-x^2}} \cdot \sqrt{1-x^2} dx \\ 
+
+= - \cos^{-1}\sqrt{1-x^2} - \int dx \\
+
+
+ = - \left( \cos^{-1} x \, \sqrt{1- x^2} + x \right) + C</reason>
+  </step>
+  <choices>
+    <tex> \left( \cos^{-1} x \, \sqrt{1- x^2} + x \right) + C</tex>
+    <tex> - \left( \cos x \, \sqrt{1- x^2} + x \right) + C</tex>
+    <tex correct='true'> - \left( \cos^{-1} x \, \sqrt{1- x^2} + x \right) + C</tex>
+    <tex> - \left( \sin^{-1} x \, \sqrt{1- x^2} + x \right) + C</tex>
+  </choices>
+</question>
