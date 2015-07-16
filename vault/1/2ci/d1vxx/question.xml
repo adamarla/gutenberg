@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+			\text{Integrate the following }\\ 
+			\qquad \dfrac{3x-1}{(x+2)^2} \\
+			\text{using partial fractions.}
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\text{If }\dfrac{3x-1}{(x+2)^2} = \dfrac{A}{x+2} + \dfrac{B}{(x+2)^2},\\
+			\text{then what are the values of A and B?}
+			</context>
+    <tex correct="true">
+			\begin{align}
+			  A &amp;= 3 \\
+			  B &amp;= -7 
+			\end{align}
+			</tex>
+    <tex correct="false">
+			\begin{align}
+			  A &amp;= -3 \\
+			  B &amp;= 5 
+			\end{align}
+			</tex>
+    <reason>
+			\begin{align}
+			  \dfrac{3x-1}{(x+2)^2} &amp;= \dfrac{A}{x+2} + \dfrac{B}{(x+2)^2} \\ 
+			  \implies 3x - 1 &amp;= A\cdot(x+2) + B = Ax + (2A + B) 
+			\end{align} \\
+			\text{On comparing coefficients, we get } \\
+			A = 3 \text{ and } 2A+B = -1\implies B = -7.
+			</reason>
+  </step>
+  <step>
+    <context>
+				\text{Has the integral been evaluated correctly?}
+				</context>
+    <tex correct="true">
+				\begin{align}
+				\int\dfrac{3x-1}{(x+2)^2} &amp;= 
+				\underbrace{3\cdot\int\dfrac{dx}{x+2}}_{X} - 
+				\underbrace{7\int\dfrac{dx}{(x+2)^2}}_{Y} \\
+				&amp;= 3\log\vert x+2\vert + \dfrac{7}{x+2} + C 
+				\end{align}
+				</tex>
+    <reason>
+				\text{X is simply of the form } \int\dfrac{dy}{y} = \log\vert y\vert. \\
+				\text{And Y is of the form }\int y^{n} dy = \dfrac{y^{n+1}}{n+1}, n\neq -1.\\
+				\text{But in Y, } n = -2 \implies n + 1 = -1.
+				</reason>
+  </step>
+</question>

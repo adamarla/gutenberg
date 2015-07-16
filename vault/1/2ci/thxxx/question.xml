@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+			\text{Integrate the following }\\
+			\qquad \dfrac{3x+5}{x^3-x^2-x+1} \\
+			\text{using partial fractions.}
+		</tex>
+  </statement>
+  <step>
+    <context>
+			x^3-x^2-x+1 = P(x)\cdot (x+1).\text{ What is }P(x)?
+			</context>
+    <tex correct="true">
+			\qquad P(x) = (x-1)^2
+			</tex>
+    <tex correct="false">
+			\qquad P(x) = x^2 - 1
+			</tex>
+    <reason>
+			\begin{align}
+			  x^3-x^2-x+1 &amp;= x^2\cdot(x-1) - (x-1) \\
+			  &amp;= (x-1)\cdot(x^2-1) \\
+			  &amp;= (x-1)\cdot(x-1)\cdot(x+1) \\
+			  &amp;= (x-1)^2\cdot (x+1) \\
+			  \therefore P(x) &amp;= (x-1)^2
+			\end{align}
+			</reason>
+  </step>
+  <step>
+    <context>
+				\text{If }\dfrac{3x+5}{x^3-x^2-x+1} = \dfrac{A}{x-1} + \dfrac{B}{(x-1)^2} + \dfrac{C}{x+1}\\
+				\text{then what are }A,B\text{ and }C?
+				</context>
+    <tex correct="true">
+				\begin{align}
+				  A &amp;= -\frac{1}{2} \\
+				  B &amp;= 4 \\ 
+				  C &amp;= \frac{1}{2}
+				\end{align}
+				</tex>
+    <tex correct="false">
+				\begin{align}
+				  A &amp;= \frac{1}{2} \\
+				  B &amp;= 5 \\ 
+				  C &amp;= -\frac{1}{2}
+				\end{align}
+				</tex>
+    <reason>
+				  \begin{align}
+				  \dfrac{3x+5}{(x+1)\cdot(x-1)^2} &amp;= \dfrac{A}{x-1} + \dfrac{B}{(x-1)^2} + \dfrac{C}{x+1} \\
+				  \implies 3x+5 &amp;= A(x-1)(x+1) \\
+				  &amp;+ B(x+1) + C(x-1)^2 \\
+				  &amp;= (A+C)\cdot x^2 + (B-2C)\cdot x \\
+				  &amp;+ (B+C-A)
+				  \end{align} \\
+				  \text{On comparing coefficient, we get } \\
+				  A+C= 0, B-2C=3\text{ and }B+C-A = 5.\\
+				  \text{Solve to get }A=-\frac{1}{2}, B = 4\text{ and }C = \frac{1}{2}.
+				  
+				</reason>
+  </step>
+  <step>
+    <context>
+					\text{Has the integral been evaluated correctly?}
+					</context>
+    <tex correct="true">
+					\begin{align}
+					  &amp;\int\dfrac{3x+5}{(x-1)^2\cdot(x+1)} = \\
+					  &amp;\underbrace{-\frac{1}{2}\int\dfrac{dx}{x}}_{X}
+					  + \underbrace{4\int\dfrac{dx}{(x-1)^2}}_{Y}
+					  + \underbrace{\frac{1}{2}\int\dfrac{dx}{x+1}}_{Z} \\
+					  &amp;= -\dfrac{1}{2}\log\vert x-1\vert - \dfrac{4}{x-1} + \dfrac{1}{2}\log\vert x+1\vert + C \\
+					  &amp;= \dfrac{1}{2}\log\left| \dfrac{x+1}{x-1}\right| - \dfrac{4}{x-1} + C 
+					\end{align}
+					</tex>
+    <reason>
+					\text{X and Z are of the form }\int\frac{dy}{y} = \log\vert y\vert + C.\\
+					\text{And Y is of the form }\int\dfrac{dy}{y^2} = -\dfrac{1}{y} + C.\\
+					\text{Also, }\log\vert y\vert - \log\vert z\vert = \log\left| \dfrac{y}{z}\right| 
+					</reason>
+  </step>
+</question>

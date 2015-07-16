@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }\left(\sin^{-1} x\right)^2 \text{using partial fraction.}</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the following is more helpful to}\\
+\text{get the ball rolling?}</context>
+    <tex correct='true'>\text{Let }\sin^{-1} x = \theta</tex>
+    <tex>\int \left(\sin^{-1} x\right)^2 .dx = \int \left(\sin^{-1} x\right)\left(\sin^{-1} x\right).dx\\
+\therefore \text{let }f \left(x\right) = \sin^{-1} x \text{ and }g \left(x\right) = \sin^{-1} x</tex>
+    <reason>\text{Picking one }\sin^{-1} x \text{ as } f \left(x\right)\text{ and the other }\\
+\text{as }g \left(x\right)\text{ can't help. After all, it's the same  }\\
+\text{function.But letting }\sin^{-1} x = \theta \text{ might help.} </reason>
+  </step>
+  <step>
+    <context>\text{If I is re-written in terms of }\phi\text{, then is this}\\
+\text{what it will be?}</context>
+    <tex correct='true'>\sin^{-1} x = \phi \implies x = \sin \phi\\
+\implies dx = \cos \phi .d\phi\\
+\therefore I = \int \phi^2 . \cos \phi</tex>
+    <reason></reason>
+  </step>
+  <step>
+    <context>\text{Given }I = \int \phi^2 . \cos \phi .d\phi,\text{ which would be the}\\
+\text{better choice for f and g in}\\
+I = f \int g.dx - \int \left[f^{\prime}\int g.dx \right].dx</context>
+    <tex correct='true'>\begin{align}
+f \left(\phi\right) &amp;= \phi^2\\
+g \left(\phi\right) &amp;=\cos \phi\\
+\end{align}</tex>
+    <tex>\begin{align}
+f \left(\phi\right) &amp;= \cos \phi\\
+g \left(\phi\right) &amp;=\phi^2\\
+\end{align}</tex>
+    <reason>\text{There is a good thumb rule }\textemdash \text{ called ILATE}\\
+\text{that you can use.}f \left(x\right) \text{ is the function that}\\
+\text{matches first.}\\
+\begin{tabular}{|C|C|C|C|}
+\hline
+I &amp; \text{Inverse trigonometric}&amp; \textemdash\\
+L &amp; \text{Logrithmic } &amp;\textemdash  \\
+A &amp; \text{Algebric } &amp; \phi^2 &amp; -f \left(x\right)\\
+T &amp; \text{Trigonometic } &amp; \cos \phi&amp; - g \left(x\right)\\
+E &amp; \text{Exponential } &amp; \textemdash\\
+\hline
+\end{tabular}</reason>
+  </step>
+  <step>
+    <context>\text{Given }f \left(\phi\right)=\phi^2 \text{ and }g \left(\phi\right) = \cos \phi,\text{what}\\
+\text{does } I = \int \phi^2 . \cos \phi .d\phi \text{ evaluate to?}\\</context>
+    <tex correct='true'>\phi^2 \sin \phi + 2 \phi \cos \phi - 2\sin \phi +C</tex>
+    <tex>2\phi \cos \phi - \sin \phi + C</tex>
+    <reason>I = \phi^2 \int \cos \phi d\phi - \int  \left[\dfrac{d}{d\phi}\phi^2\int \cos \phi .d\phi\right].d\phi\\
+ = \phi^2\sin \phi - 2 \int \phi \sin \phi . d\phi\\
+  = \phi^2 \sin \phi - 2 \left[\phi \int \sin \phi d\phi - \int \left[\dfrac{d\phi}{d\phi}\int \sin \phi .d\phi \right]\right]d\phi\\
+  =\phi^2 \sin \phi -2 \left[-\phi \cos \phi + \sin \phi\right] + C\\
+  = \phi^2 \sin \phi + 2\phi \cos \phi -2\sin \phi +C</reason>
+  </step>
+  <step>
+    <context>\text{Is the following the value of I when expressed }\\
+\text{in terms of x?}</context>
+    <tex correct='true'>I = \left(\sin^{-1} x\right)^2 .x + 2\sin^{-1} x \left(\sqrt{1-x^2}\right) -2x +C</tex>
+    <reason>I = \phi^2\sin \phi +2\cos \phi -2\sin \phi +C\\
+\text{And as }\sin \phi =x ,\therefore \cos \phi = \sqrt{1-x^2}.\\
+\text{Hence, }I = \left(\sin^{-1} x\right)^2 .x + 2\sin^{-1} x \left(\sqrt{1-x^2}\right) \\
+\qquad\qquad\qquad\qquad\qquad\qquad\qquad-2x +C</reason>
+  </step>
+  <choices>
+    <tex>\left(\sin x\right)^2 .x - 2\sin^{-1} x \left(\sqrt{1-x^2}\right) -2x +C</tex>
+    <tex correct='true'>\left(\sin^{-1} x\right)^2 .x + 2\sin^{-1} x \left(\sqrt{1-x^2}\right) -2x +C</tex>
+    <tex>\left(\sin^{-1} x\right)^2 .x + 2\sin x \left(\sqrt{1-x^2}\right) -2x +C</tex>
+    <tex>\left(\sin^{-1} x\right)^2 .x + 2\sin^{-1} x \left(\sqrt{1-x^2}\right) +2x +C</tex>
+  </choices>
+</question>

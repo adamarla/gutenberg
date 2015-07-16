@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }x\sin 3x \text{ using integration by parts.}</tex>
+  </statement>
+  <step>
+    <context>\text{Given }\int f . g .dx = f \int g.dx - \int \left[f^{\prime}\int g.dx\right].dx\\
+\text{Which is the better choice for  }f \left(x\right) \text{ and }g \left(x\right).
+</context>
+    <tex correct='true'>\begin{align}
+f \left(x\right) &amp;= x\\
+g \left(x\right) &amp;= \sin 3x\\
+\end{align}</tex>
+    <tex>\begin{align}
+f \left(x\right) &amp;= \sin 3x\\
+g \left(x\right) &amp;= x\\
+\end{align}</tex>
+    <reason>\text{Ideally, you want a }f \left(x\right) \text{ whose }f^{\prime} \left(x\right)\text{ is simpler}\\
+\text{In this case, }f \left(x\right) = x \left(\text{ and }g \left(x\right) = \sin^3 x\right)\text{ is the}\\
+\text{better choice.Or you can use a good thumb rule}\\
+\text{called ILATE i.e.  }f \left(x\right)\text{ is the function that}\\ 
+\text{matches first.}\\ 
+
+\begin{tabular}{|C|C|}
+\hline
+I &amp; \text{Inverse trigonometric functions}\\
+L &amp; \text{Logrithmic functions} \\
+A &amp; \text{Algebric functions} \\
+T &amp; \text{Trigonometic functions} \\
+E &amp; \text{Exponential functions} \\
+\hline
+\end{tabular}</reason>
+  </step>
+  <step>
+    <context>\text{Given }f \left(x\right) = x \text{ and }g \left(x\right) =\sin 3x\text{, what will}\\
+\text{Integral evaluate to?}</context>
+    <tex correct='true'>\dfrac{-x}{3}.\cos 3x + \dfrac{\sin 3x}{9} + C</tex>
+    <tex>\dfrac{-x}{3}.\cos 3x + \dfrac{\sin 3x}{3} + C</tex>
+    <reason>\begin{align}
+I &amp;= \int f . g .dx = f \int g.dx - \int \left[f^{\prime}\int g.dx \right].dx\\
+&amp;= x \int \sin 3x .dx -\int \left[\dfrac{dx}{dx}\int \sin 3x.dx\right].dx\\
+&amp;= -\underbrace{x \dfrac{\cos 3x}{3}}_{\int \sin Nx.dx =-\frac{ \cos Nx}{N}}+\int \dfrac{\cos 3x}{3} \\
+&amp;= -x .\dfrac{\cos 3x}{3}+\underbrace{\dfrac{\sin 3x}{9}}_{\dfrac{1}{3}\times\dfrac{1}{3}} +C\\
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{x}{3}.\cos 3x + \dfrac{\sin 3x}{9} + C</tex>
+    <tex>\dfrac{x}{3}.\cos 3x - \dfrac{\sin 3x}{9} + C</tex>
+    <tex>\dfrac{-x}{3}.\cos 3x + \dfrac{\sin 3x}{3} + C</tex>
+    <tex correct='true'>\dfrac{-x}{3}.\cos 3x + \dfrac{\sin 3x}{9} + C</tex>
+  </choices>
+</question>

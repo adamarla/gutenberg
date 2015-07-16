@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }\dfrac{x^3 + x +1}{x^2 - 1} \text{ using partial fraction.}</tex>
+  </statement>
+  <step>
+    <context>\text{What is the correct way to break }\dfrac{x^3 + x +1}{x^2 - 1}\\
+\text{into sum of partial fractions?}
+</context>
+    <tex correct='true'>\dfrac{x^3 + x +1}{x^2 - 1} = \left(Ax +B\right) + \dfrac{C}{x -1}+\dfrac{D}{x +1}</tex>
+    <tex>\dfrac{x^3 + x +1}{x^2 - 1} = \dfrac{A}{x-1} +\dfrac{B}{x+1}</tex>
+    <reason>\underbrace{\text{Degree of }x^3 + x +1}_{3}\gt \underbrace{\text{degree of }x^2 -1}_{2}\\
+\text{In particular, to get }x^3, \left(x^2 -1\right)\text{ must be }\\
+\text{multiplied with something like }\left(Ax +B\right)\\
+\implies \left(x^3 + x +1\right) = \left(Ax+B\right)\left(x^2 - 1\right) + \underbrace{Q \left(x\right)}_{degree \lt 2}</reason>
+  </step>
+  <step>
+    <context>\text{Given }\dfrac{x^3+x+1}{x^2 -1} = Ax +B + \dfrac{C}{x-1} +\dfrac{D}{x+1}\\
+\text{What are A,B,C and D?}</context>
+    <tex correct='true'>\begin{align}
+A &amp;= 1\\
+B &amp;= 0\\
+C &amp;= \dfrac{3}{2}\\
+D &amp;= \dfrac{1}{2}\\
+\end{align}</tex>
+    <tex>\begin{align}
+A &amp;= B= 1\\
+C &amp;= \dfrac{1}{2}\\
+D &amp;= \dfrac{3}{2}\\
+\end{align}</tex>
+    <reason>x^3 + x+1 = \left(Ax+B\right)\left(X^2 -1\right)+C \left(x+1\right)\\
+\qquad\qquad\qquad\qquad\qquad\qquad\qquad+D \left(x-1\right)\\
+\implies x^3 + x+1 = Ax^3+Bx^2+\left(C+D-A\right)x \\
+\qquad\qquad\qquad\qquad\qquad\qquad\quad+\left(C-B-D\right)\\
+\text{On comparing coefficients and solving, we get}\\
+A =1, B =0,C=\dfrac{3}{2} \text{ and }D = \dfrac{1}{2}</reason>
+  </step>
+  <step>
+    <context>\text{Has the integral been solved correctly? }</context>
+    <tex correct='true'>\int \dfrac{x^3+x+1}{x^2+1}dx = \int \underbrace{ x.dx}_{X} + \dfrac{3}{2}\int \underbrace{\dfrac{dx}{x-1}}_{Y}\\
+\qquad\qquad\qquad\qquad\qquad\qquad+\dfrac{1}{2}\int \underbrace{\dfrac{dx}{x+1}}_{Z}\\
+\qquad=\dfrac{x^2}{2} + \dfrac{3}{2}\log \left| x -1\right|+\dfrac{1}{2}\log \left|x+1\right|+C\\
+</tex>
+    <reason>\text{Y and Z are of the form }\int \dfrac{dy}{y} = \log \left|y\right|+C\\
+\text{X is of the form }\int y^n.dy =\dfrac{y^{n+1}}{n+1} +C </reason>
+  </step>
+</question>

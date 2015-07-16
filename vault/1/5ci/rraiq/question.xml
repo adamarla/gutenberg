@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+		\text{Evaluate the following integral}\\
+		\qquad \int_2^3\dfrac{x}{x^2+1}\cdot dx  
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\text{Which of the following approaches will be} \\
+			\text{more helpful in solving }\int\dfrac{x}{x^2+1}\cdot dx?
+			</context>
+    <tex correct="true">
+			\begin{align}
+			  I &amp;= \int\dfrac{x\cdot dx}{x^2 + 1} \\
+			  \text{Let } x^2 + 1 &amp;= t \implies x\cdot dx = \frac{dt}{2}
+			\end{align}
+			</tex>
+    <tex correct="false">
+			\begin{align}
+			  \dfrac{x}{x^2+1} &amp;= \dfrac{Ax+B}{x^2 + 1} \\
+			  \implies x &amp;= Ax + B \implies A = 1, B = 0.
+			\end{align}
+			</tex>
+    <reason>
+			\text{Given that }\frac{d}{dx}\underbrace{(x^2+1)}_{\text{Denominator}}
+			 = 2\underbrace{x\cdot dx}_{\text{Numerator}} \\
+			 \text{it intuitively makes more sense to set }\\ 
+			 t = x^2 + 1\text{ and then solve the integral.}
+			</reason>
+  </step>
+  <step>
+    <context>
+			\text{Given }t = x^2 + 1, \text{ how will } A = \int_2^3\dfrac{x\cdot dx}{x^2+1} \\
+			\text{be re-written in terms of t?}
+			</context>
+    <tex correct="true">
+			A = \dfrac{1}{2}\cdot\int_5^{10}\dfrac{dt}{t}
+			</tex>
+    <tex correct="false">
+			A = \dfrac{1}{2}\cdot\int_2^3\dfrac{dt}{t}
+			</tex>
+    <reason>
+			\begin{align}
+			  \text{If }t &amp;= x^2 + 1, \text{ then }\frac{dt}{2} = x\cdot dx \\
+			  \textbf{Also, }t &amp;= 5 (x=2)\text{ and } t = 10 (x=3) \\
+			  \therefore A &amp;= \dfrac{1}{2}\cdot\int_5^{10}\dfrac{dt}{t}
+			\end{align}
+			</reason>
+  </step>
+  <step>
+    <context>
+				\text{And hence, the value of A is?}
+				</context>
+    <tex correct="true">
+				A = \dfrac{1}{2}\cdot\log 2
+				</tex>
+    <tex correct="false">
+				A = \dfrac{1}{2}\cdot\log 5
+				</tex>
+    <reason>
+				\begin{align}
+				  A &amp;= \dfrac{1}{2}\cdot\int_5^{10}\dfrac{dt}{t} = \dfrac{1}{2}\cdot \left(\log t\right)_5^{10}\\
+				  &amp;= \dfrac{1}{2}\cdot \left(\log 10 - \log 5\right) 
+				  = \dfrac{1}{2}\cdot\log \left(\dfrac{10}{5}\right) \\
+				  &amp;= \dfrac{1}{2}\cdot\log 2
+				\end{align}
+				</reason>
+  </step>
+</question>

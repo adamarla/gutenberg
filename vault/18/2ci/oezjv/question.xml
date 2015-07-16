@@ -1,0 +1,47 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }\dfrac{\cos x}{\left(1 -\sin x\right)\left(2 - \sin x\right)}\text{ using partial} \\
+\text{functions.}</tex>
+  </statement>
+  <step>
+    <context>\text{If }\int \dfrac{\cos x}{\left(1 -\sin x\right)\left(2 - \sin x\right)}.dx = \int \dfrac{dt}{\left(1-t\right)\left(2 -t\right)}\\
+ = \int \dfrac{A.dt}{\left(1-t\right)} + \int \dfrac{B.dt}{\left(2-t\right)}\text{, then what are t, A}\\
+ \text{and B?}</context>
+    <tex correct='true'>\begin{align}
+t &amp;= \sin x\\
+A &amp;= 1\\
+B &amp;= -1\\
+\end{align}</tex>
+    <tex>\begin{align}
+t &amp;= \cos x\\
+A &amp;= -1\\
+B &amp;= -1\\
+\end{align}</tex>
+    <reason>\text{If }dt = \cos x.dx \text{, then }t =\sin x\\
+\text{Moreover }\dfrac{1}{\left(1 -\sin x\right)\left(2 -\sin x\right)} = \dfrac{1}{\left(1 -t\right)\left(2-t \right)}\\
+\qquad\qquad\qquad\qquad\qquad\qquad=\dfrac{A}{1 - t} + \dfrac{B}{2-t}\\
+\implies 1 = A \left(2-t\right) + B \left(1-t\right) \\
+\qquad\qquad= \left(2A + B\right) - \left(A +B\right)t\\
+\text{Comparing the coefficients, we get }A +B = 0 \\
+\text{and }2A+B = 1\implies A = 1 \text{ and }B = -1</reason>
+  </step>
+  <step>
+    <context>\text{Has the integral been calculated correctly?}</context>
+    <tex correct='true'>\int \dfrac{\cos x.dx}{\left(1-\sin x\right)\left(2 -\sin x\right)} = \int \dfrac{dt}{\left(1-t\right)\left(2-t\right)}\\
+\qquad\qquad\qquad= \int \underbrace{\dfrac{dt}{1-t}}_{X} - \int \underbrace{\dfrac{dt}{2-t}}_{Y}\\
+\qquad\qquad\qquad=-\log \left|1 -t\right| + \log \left|2 -t\right| +C\\
+\qquad\qquad\qquad=\log \left|\dfrac{2-t}{1 -t}\right| +C\\
+\qquad\qquad\qquad=\log \left|\dfrac{2 -\sin x}{1 -\sin x}\right| +C</tex>
+    <reason>\text{X and Y are of the form }\int \dfrac{dy}{\left(a-y\right)} = -\log \left|a-y\right|\\
+\text{Why? Put }z =a- y \implies dy = -dz\\
+\therefore \int \dfrac{dy}{a-y} = -\int \dfrac{dz}{z} = -\log \left|z\right|  +C\\
+\qquad\qquad\qquad\qquad\quad=-\log \left|a-y\right| +C</reason>
+  </step>
+  <choices>
+    <tex>\log \left|\dfrac{2 -\cos x}{1 -\cos x}\right| +C</tex>
+    <tex>\log \left|\dfrac{2 -\sin x}{1 +\sin x}\right| +C</tex>
+    <tex>\log \left|\dfrac{1 -\sin x}{2 -\sin x}\right| +C</tex>
+    <tex correct='true'>\log \left|\dfrac{2 -\sin x}{1 -\sin x}\right| +C</tex>
+  </choices>
+</question>

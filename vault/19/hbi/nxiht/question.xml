@@ -2,70 +2,52 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Find the integral of the function}\\
-\sin  x \cdot \sin 2 x \cdot \sin 3 x \,</tex>
+\sin  x \cdot \sin 2 x \cdot \sin 3 x</tex>
   </statement>
   <step>
     <context>\text{The following substitution would convert}\\
- f(x) = \sin  x \cdot \sin 2 x \cdot \sin 3 x 
- \text{ to the more easily}\\
-\text{integrable form }
-\sin \theta_1 + \sin \theta_2 + \sin \theta_3  \\
-\text{or } 
-\sum_{i=1}^{i=n} \cos \theta_i
-
-</context>
+\sin  x\cdot\sin 2x\cdot\sin 3x\text{ to the more easily}\\
+\text{integrable sum of sine or cosine form}</context>
     <tex correct='true'> \text{Using trigonometric identities,}\\
 \sin A \sin B = \dfrac{1}{2}\left[ cos(A-B) - cos(A+B) \right] \text{ and } \\
 \sin A \cos B = \dfrac{1}{2}\left[  \sin(A+B) + \sin(A-B) \right]
-
-
-
 </tex>
     <tex> \text{Using trigonometric identities,}\\
- \sin^2 x + \cos^2 x = 1 \\
-\cos 2x = 2 \cos^2 x - 1 = 1 - 2 \sin^2 x \\
+ \sin^2 A+ \cos^2 A = 1 \text{ and}\\
+\cos 2A = 2 \cos^2 A - 1 = 1 - 2 \sin^2 A \\
  
 
 
 
 </tex>
-    <reason>f(x) = \dfrac{1}{4} [ \sin 2 x + \sin 0 - \sin 6x +sin 4x] \\
-
-\therefore
-\int \sin  x \cdot \sin 2 x \cdot \sin 3 x \, dx \\
-\qquad \qquad = \int \dfrac{1}{4} [ \sin 2 x - \sin 6x +sin 4x] dx
-</reason>
+    <reason>\begin{align}
+  f(x) &amp;= \dfrac{1}{4} [ \sin 2 x + \sin 0 - \sin 6x +sin 4x] \\
+        &amp;= \dfrac{1}{4} [ \sin 2 x - \sin 6x +sin 4x]
+\end{align}</reason>
   </step>
   <step>
-    <context>\text{Is the following evaluation of the integral}\\
-I = \int \dfrac{1}{4} [ \sin 2 x - \sin 6x +sin 4x] dx \quad
-\text{correct}?</context>
+    <context>\begin{align}
+  I &amp;= \int\sin  x\cdot\sin 2x\cdot\sin 3x \\
+    &amp;= \int \dfrac{1}{4} [ \sin 2 x - \sin 6x +sin 4x] dx
+\end{align}\\
+\text{Is the following correct}?</context>
     <tex correct='true'> 
 \begin{align}
-
- I &amp;= \int \dfrac{1}{4} [ \sin 2 x - \sin 6x +sin 4x] dx \\
-&amp;= 
-\dfrac{1}{4}\int \sin (2 x) dx - \dfrac{1}{4}\int \sin (6 x) dx 
-+  \dfrac{1}{4} \int sin(4 x) dx  \\
-
-&amp;=  \dfrac {1} {4}\left[ \dfrac{- 1}{2} {\cos 2 x} + \dfrac{1}{6}{\cos6 x} - \dfrac{1}{4}{\cos 4x}
- \right]+ C
- \end{align}</tex>
-    <tex>
+  I &amp;= \int \dfrac{1}{4} [ \sin 2 x - \sin 6x +sin 4x] dx \\
+    &amp;=\dfrac{1}{4}\left[\int \sin 2xdx - \int \sin 6xdx 
+      +\int \sin 4xdx \right] \\
+    &amp;=  \dfrac {1} {4}\left[-\dfrac{1}{2} {\cos 2 x} 
+      + \dfrac{1}{6}{\cos6 x} - \dfrac{1}{4}{\cos 4x}\right]+C
+\end{align}</tex>
+    <tex> 
 \begin{align}
-
-I &amp;=
-
-\int \dfrac{1}{4} [ \sin 2 x - \sin 6x +sin 4x] dx \\
-&amp;= 
-\dfrac{1}{4}\int \sin (2 x) dx - \dfrac{1}{4}\int \sin (6 x) dx 
-+  \dfrac{1}{4} \int sin(4 x) dx  \\
-
-&amp;=  \dfrac {1} {4}\left[ \dfrac{ 1}{2} {\cos 2 x} - \dfrac{1}{6}{\cos6 x} + \dfrac{1}{4}{\cos 4x}
- \right]+ C
- \end{align}</tex>
+  I &amp;= \int \dfrac{1}{4} [ \sin 2 x - \sin 6x +sin 4x] dx \\
+    &amp;=\dfrac{1}{4}\left[\int \sin 2x dx - \int \sin 6x dx 
+      +\int \sin 4x dx \right] \\
+    &amp;=  \dfrac {1} {4}\left[\cos 2 x + \cos6 x -\cos 4x\right]+C
+\end{align}</tex>
     <reason>
-\int \sin (a x)dx = \dfrac{- \cos (a x)}{a}+ C_1 \\
+\int \sin (a x)dx = -\dfrac{\cos (a x)}{a}+ C_1 \\
 \text{where } C_1 \text{ is the constant of integration.}
 </reason>
   </step>

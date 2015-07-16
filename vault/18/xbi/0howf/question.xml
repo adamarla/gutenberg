@@ -1,0 +1,119 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate the following}\\
+\qquad \dfrac{5x+3}{\sqrt{x^2+4x+10}}</tex>
+  </statement>
+  <step>
+    <context>
+      \text{If }\underbrace{5x+3}_{\text{Numerator}} = 
+  		A\cdot\dfrac{d}{dx}(x^2+4x+10) + B \\
+  		\text{then what are A and B?}
+  		</context>
+    <tex correct='true'>
+  		\begin{align}
+  		  A &amp;=\frac{5}{2} \\
+  		  B &amp;= -7
+  		\end{align}
+  		</tex>
+    <tex>
+  		\begin{align}
+  		  A &amp;= -\frac{5}{2} \\
+  		  B &amp;= 13 
+  		\end{align}
+  		</tex>
+    <reason>
+      \begin{align}
+      5x+3 &amp;= A\cdot\frac{d}{dx}(x^2+4x+10) + B \\
+      \implies 5x+3 &amp;= 2Ax + (4A + B) \\
+      \implies 2A=5\text{ or }A&amp;=\frac{5}{2}\text{ and }\therefore B = -7
+      \end{align}
+  		</reason>
+  </step>
+  <step>
+    <context>
+  		\text{Which of the following shows the correct}\\
+  		\text{way to re-write }\int\dfrac{5x+3}{\sqrt{x^2+4x+10}}dx?
+  			</context>
+    <tex correct='true'>
+  			\begin{align}
+  			  \int\dfrac{5x+3}{\sqrt{x^2+4x+10}}dx &amp;= 
+  			  \frac{5}{2}\int\dfrac{2x+4}{\sqrt{x^2+4x+10}}dx \\
+  			  &amp;-7 \int\dfrac{dx}{\sqrt{x^2+4x+10}}dx
+  			\end{align}
+  			</tex>
+    <tex>
+  			\begin{align}
+  			  \int\dfrac{5x+3}{\sqrt{x^2+4x+10}}dx &amp;= 
+  			  \int\dfrac{2x+4}{\sqrt{x^2+4x+10}}dx \\
+  			  &amp;- \int\dfrac{dx}{\sqrt{x^2+4x+10}}dx
+  			\end{align}
+  			</tex>
+    <reason>
+  			\text{We showed that }5x+3 = \frac{5}{2}\cdot(2x+4) - 7.\\
+  			\therefore \int\dfrac{5x+3}{\sqrt{x^2+4x+10}}dx = 
+  			\int\dfrac{\frac{5}{2}\cdot(2x+4) - 7}{\sqrt{x^2+4x+10}}dx \\
+  			= \frac{5}{2}\int\dfrac{2x+4}{\sqrt{x^2+4x+10}}dx -7 \int\dfrac{dx}{\sqrt{x^2+4x+10}}dx
+  			</reason>
+  </step>
+  <step>
+    <context>
+  		\text{If }M = \frac{5}{2}\int\dfrac{2x+4}{\sqrt{x^2+4x+10}}dx, \\
+  		\text{then has M been evaluated correctly below?}
+  		</context>
+    <tex correct='true'>
+  		\begin{align}
+  		  \text{Let }t &amp;= x^2+4x+10 \implies dt = (2x+4)\cdot dx\\
+  		  \therefore M &amp;= \frac{5}{2}\int\dfrac{2x+4}{\sqrt{x^2+4x+10}}dx = \frac{5}{2}\int\dfrac{dt}{\sqrt{t}}\\
+  		  &amp;= \frac{5}{2}\cdot\dfrac{1}{\frac{1}{2}}\cdot\sqrt{t} + C_1 \\
+  		  &amp;= 5\sqrt{x^2+4x+10} + C_1
+  		\end{align}
+  		</tex>
+    <reason>
+  		\int t^{n} dt = \dfrac{t^{n+1}}{n+1} + C.\text{In this case, }n=-\frac{1}{2}.\\
+  		\therefore \frac{5}{2}\int\dfrac{dt}{\sqrt{t}} = 
+  		\frac{5}{2}\cdot\frac{1}{\frac{1}{2}}t^{\frac{1}{2}} = 5\sqrt{t} + C_1
+  		</reason>
+  </step>
+  <step>
+    <context>
+  			\text{And if }N =-7 \int\dfrac{dx}{\sqrt{x^2+4x+10}}dx, \text{then would}\\
+  			\text{N be the following?}
+  			</context>
+    <tex correct='true'>
+  			\begin{align}
+  			  x^2+4x+10 &amp;= \left[\left(x+2\right)^2 + 6\right] \\
+  			  &amp;= \left[\left(x+2\right)^2+(\sqrt{6})^2\right] \\
+  			  \therefore N &amp;= -7\int\dfrac{dx}{\sqrt{\left(x+2\right)^2
+  			  +(\sqrt{6})^2 }}dx\\
+  			\end{align}\\
+  			\begin{align}
+  			&amp;=-7 \log\left| \left(x+2\right) + \sqrt{\left(x+2\right)^2+(\sqrt{6})^2}\right| + C_2  \\
+  			  &amp;= -7\log\left| \left(x+2\right) + \sqrt{x^2+4x+10}\right| + C_2
+  			\end{align}
+  			</tex>
+    <reason>
+  			\text{You can convert any quadratic polynomial into}\\
+  			(x\pm a)^2\pm b^2\text{ form. And so, we went from}\\
+  			x^2+4x+10\rightarrow (x+2)^2 + 6 \rightarrow \int\dfrac{dx}{\sqrt{(x+2)^2+(\sqrt{6})^2}}\\
+  			\text{After that, we simply applied used result for }\\
+  			\int\frac{dx}{\sqrt{x^2 + m^2}}dx
+  			</reason>
+  </step>
+  <step>
+    <context>
+  		\text{And so, is this the final answer?}
+  		</context>
+    <tex correct='true'>
+  		\begin{align}
+  		&amp;\int\dfrac{5x+3}{\sqrt{x^2+4x+10}}dx =5\sqrt{x^2+4x+10} \\
+  		&amp;-7 \log\left| \left(x+2\right) + \sqrt{x^2+4x+10}\right| + C
+  		\end{align}
+  		</tex>
+    <reason>
+  		\int\dfrac{5x+3}{\sqrt{x^2+4x+10}}dx = \underbrace{M}_{\text{Step 3}} 
+  		+\underbrace{N}_{\text{Step 4}}. \\
+  		\text{Nothing more complicated than that.}
+  		</reason>
+  </step>
+</question>
