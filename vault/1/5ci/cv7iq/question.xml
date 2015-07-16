@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+			\text{Evaluate the following integral}\\
+			\qquad \int_0^{\frac{\pi}{4}} (2\sec^2 x + x^3 + 2)\cdot dx 
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\text{Has }A = \int_0^{\frac{\pi}{4}} (2\sec^2 x + x^3 + 2)\cdot dx  \\
+			\text{been re-written correctly below?}
+			</context>
+    <tex correct="true">
+			\begin{align}
+			  A &amp;= \int_0^{\frac{\pi}{4}} (2\sec^2 x + x^3 + 2)\cdot dx \\
+			  &amp;= \int_0^\frac\pi{4}2\sec^2 x\cdot dx + \int_0^\frac\pi{4} x^3\cdot dx + \int_0^\frac\pi{4}2\cdot dx\\
+			  &amp;= \left[2\tan x\right]_0^\frac\pi{4} + \left[\frac{x^4}{4}\right]_0^\frac\pi{4}
+			  + \left[2x\right]_0^\frac\pi{4}
+			\end{align}
+			</tex>
+    <reason>
+			\begin{align}
+			  \int 2\sec^2 x\cdot dx &amp;= 2\int\sec^2\cdot dx = 2\tan x \\
+			  \int x^3\cdot dx &amp;= \frac{x^4}{4} \\
+			  \int 2\cdot dx &amp;= 2\cdot\int dx = 2x 
+			\end{align}
+			</reason>
+  </step>
+  <step>
+    <context>
+				\text{And therefore, A = ?}
+				</context>
+    <tex correct="true">
+				  A = 2 + \dfrac{\pi^4}{1024} + \frac{\pi}{2}
+				</tex>
+    <tex correct="false">
+				  A = 2 + \dfrac{\pi^4}{256} + \frac{\pi}{2}
+				</tex>
+    <reason>
+				\begin{align}
+				  A &amp;= \left[2\tan x\right]_0^\frac\pi{4} + \left[\frac{x^4}{4}\right]_0^\frac\pi{4}
+			  + \left[2x\right]_0^\frac\pi{4} \\
+			  &amp;= 2\cdot(1-0) + \dfrac{\frac{\pi^4}{4^4}}{4} + 2\cdot \left(\frac{\pi}{4} - 0\right) \\
+			  &amp;= 2 + \underbrace{\dfrac{\pi^4}{4^5}}_{4^5=1024} + \frac{\pi}{2}
+				\end{align}
+				</reason>
+  </step>
+</question>
