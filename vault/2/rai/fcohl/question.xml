@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int \sqrt{ax+b}dx</tex>
+  </statement>
+  <step swipe='false'>
+    <context>\text{The following substitution would convert} \\
+I=\int \sqrt{ax+b}\, dx\text{ to }I=\int\dfrac{\sqrt t}{a}dt</context>
+    <tex correct='true'>ax+b=t</tex>
+    <reason>ax+b=t\implies a\,dx = dt \\
+I=\int\dfrac{1}{a}\sqrt{ax+b}\cdot a\,dx=\int \dfrac{\sqrt{t}}{a}dt</reason>
+  </step>
+  <step>
+    <context>\text{If }I=\int \sqrt{ax+b}\, dx=\int\dfrac{\sqrt t}{a}dt\\
+\text{then does this look right?}</context>
+    <tex correct='true'>\begin{align}
+I&amp;=\int \dfrac{\sqrt{t}}{a}dt
+   =\dfrac{2t^{\frac{3}{2}}}{3a}+C\\
+ &amp;= \dfrac{2(ax+b)^{\frac{3}{2}}}{3a}+C
+\end{align}</tex>
+    <tex>\begin{align}
+I&amp;=\int \dfrac{\sqrt{t}}{a}dt
+   =\dfrac{t^{\frac{3}{2}}}{a}+C \\
+ &amp;=\dfrac{(ax+b)^{\frac{3}{2}}}{a}+C
+\end{align}
+</tex>
+    <reason>\int\dfrac{x^n}{a}dx=\dfrac{1}{a}\int x^n\,dx
+  =\dfrac{x^{n+1}}{a(n+1)} + C</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{2t^{\frac{3}{2}}}{3a}+C</tex>
+    <tex>\dfrac{2t^{\frac{3}{2}}}{3a}</tex>
+    <tex>\dfrac{t^{\frac{3}{2}}}{a}+C</tex>
+    <tex>\dfrac{2t^{\frac{1}{2}}}{a}+C</tex>
+  </choices>
+</question>
