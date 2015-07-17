@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int(4x+2)\sqrt{x^2+x+1}\,dx</tex>
+  </statement>
+  <step>
+    <context>\text{The following substitution would convert} \\
+I=\int(4x+2)\sqrt{x^2+x+1}\,dx \text{ to }I=\int 2\sqrt{t}\,dt</context>
+    <tex correct='true'>x^2+x+1=t</tex>
+    <tex>4x+2=t</tex>
+    <reason>x^2+x+1=t\implies 2x+1\,dx=dt \\
+\int 2\sqrt{x^2+x+1}\underbrace{(2x+1)\,dx}_{dt}
+  =\int 2\sqrt{t}\,dt</reason>
+  </step>
+  <step>
+    <context>\text{If }I=\int 2\sqrt{t}\,dt \\
+\text{then does this look correct?}</context>
+    <tex correct='true'>\begin{align}
+I &amp;=\int 2\sqrt{t}\,dt =\dfrac{4}{3}t^{\frac{3}{2}}+C\\
+  &amp;=\dfrac{4}{3}(x^2+x+1)^{\frac{3}{2}}+C
+\end{align}</tex>
+    <tex>\begin{align}
+I &amp;=\int 2\sqrt{t}\,dt =2t^{\frac{3}{2}}+C\\
+  &amp;=2(x^2+x+1)^{\frac{3}{2}}+C
+\end{align}</tex>
+    <reason>\int a\cdot x^{n}dx=\dfrac{a\cdot x^{n+1}}{n+1}+C, 
+\forall\, n \in \mathbb{R}</reason>
+  </step>
+  <choices>
+    <tex>4(x^2+x+1)^{\frac{3}{2}}+C</tex>
+    <tex>2(x^2+x+1)^{\frac{3}{2}}+C</tex>
+    <tex>\dfrac{2}{3}(x^2+x+1)^{\frac{3}{2}}+C</tex>
+    <tex correct='true'>\dfrac{4}{3}(x^2+x+1)^{\frac{3}{2}}+C</tex>
+  </choices>
+</question>

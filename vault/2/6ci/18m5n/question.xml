@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int x\sqrt{1+2x^2}\, dx</tex>
+  </statement>
+  <step>
+    <context>\text{The following substitution would convert} \\
+I=\int x\sqrt{1+2x^2}\, dx \text{ to }\int \dfrac{\sqrt{t}}{4}dt</context>
+    <tex correct='true'>1+2x^2=t</tex>
+    <tex>\sqrt{1+2x^2}=t</tex>
+    <reason>\begin{align}
+  1+2x^2=t \implies 4x\, dx=\,dt \\
+  \int\dfrac{1}{4}\sqrt{1+4x^2}\,\underbrace{2x\, dx}_{dt}=
+  \int\dfrac{\sqrt{t}}{4}dt
+\end{align}</reason>
+  </step>
+  <step>
+    <context>I=\int x\sqrt{1+2x^2}\, dx =\int\dfrac{\sqrt{t}}{4}dt \\
+\text{then does this look right?}</context>
+    <tex correct='true'>\begin{align}
+  I &amp;=\dfrac{\sqrt{t}}{4}dt 
+      =\dfrac{1}{6}t^{\frac{3}{2}}+C \\
+    &amp;=\dfrac{1}{6}(1+2x^2)^{\frac{3}{2}}+C 
+\end{align}</tex>
+    <tex>\begin{align}
+  I &amp;=\dfrac{\sqrt{t}}{4}dt 
+      =\dfrac{1}{4}t^{\frac{3}{2}}+C \\
+    &amp;=\dfrac{1}{4}(1+2x^2)^{\frac{3}{2}}+C 
+\end{align}</tex>
+    <reason>\int\dfrac{x^n}{a}dx=\dfrac{1}{a}\int x^n\,dx
+  =\dfrac{x^{n+1}}{a(n+1)} + C</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{1}{6}(1+2x^2)^{\frac{1}{2}}+C</tex>
+    <tex>(1+2x^2)^{\frac{3}{2}}+C</tex>
+    <tex correct='true'>\dfrac{1}{6}(1+2x^2)^{\frac{3}{2}}+C</tex>
+    <tex>\dfrac{1}{4}(1+2x^2)^{\frac{3}{2}}+C</tex>
+  </choices>
+</question>

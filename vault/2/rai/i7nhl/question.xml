@@ -5,7 +5,7 @@
   </statement>
   <step>
     <context>\text{The following substitution would convert}\\
-I=\int \sin x\sin(\cos x)dx \text{ to } \int -\sin tdt</context>
+I=\int \sin x\sin(\cos x)dx \text{ to }I=\int -\sin t\,dt</context>
     <tex correct='true'>\cos x = t</tex>
     <tex>\sin(\cos x)=t</tex>
     <reason>\begin{align}
