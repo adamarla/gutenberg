@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Evaluate the following} \\
+\quad \int^{\pi / 4}_{\pi/6} \mathrm{cosec} \, x \, dx</tex>
+  </statement>
+  <step>
+    <context>\textbf{Check Point }\# 1: \text{ Is the function defined} \\
+\text{and continuous in } \left[ \frac{\pi}{6}, \frac{\pi }{4} \right] ?  </context>
+    <tex correct='true'>\text{Yes. } \mathrm{cosec} \, x = \dfrac{1}{\sin x} \text{ is defined and}\\
+\text{is continuous in }  \left[ \frac{\pi}{6}, \frac{\pi }{4} \right] </tex>
+    <tex>\text{No. } \mathrm{cosec} \, x = \dfrac{1}{\sin x} \text{ and}\\
+\text{ is not }\text{continuous at } x =0  \\
+\therefore \text{It is discontinuous in }\left[ \frac{\pi}{6}, \frac{\pi }{4} \right] </tex>
+    <reason>\int^{b}_{a}f(x)\, dx \text{ makes sense only if f(x) is} \\
+\text{defined and is continuous in [a, b].} \\
+\text{ For example, }
+\int^{\pi / 4}_{- \pi/4} \mathrm{cosec} \, x \, dx
+ \text{ is not defined}\\
+\text{because } \mathrm{cosec} \, x = \dfrac{1}{\sin x} \text{ is discontinuos at }\\
+x = 0 \in \left[ \frac{- \pi}{4}, \frac{\pi }{4} \right] </reason>
+  </step>
+  <step>
+    <context>\text{And thus, } A = \int^{\pi / 4}_{\pi/6} \mathrm{cosec} \, x \, dx = ?</context>
+    <tex correct='true'>A = \log \left| \frac{\sqrt 2 - 1}{2 - \sqrt 3}\right|</tex>
+    <tex>A = \log \left| \frac{\sqrt 6 (1- \sqrt 2 )}{\sqrt 3 -2}\right|</tex>
+    <reason>\begin{align}
+
+A &amp;= \int^{\pi / 4}_{\pi/6} \mathrm{cosec} \, x \, dx \\
+
+&amp;= \left[ \underbrace{\log \, | \mathrm{cosec} \,  x - \cot x | \, }_{\text{Standard Result}} \right]^{\pi / 4}_{\pi /6} \\
+ 
+&amp;= \log |\sqrt 2 -1| - \log |2 - \sqrt 3| \\
+&amp;= \log \left| \frac{\sqrt 2 - 1}{2 - \sqrt 3}\right|
+
+
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex>\log \left| \frac{\sqrt 2 - 1}{2 - \sqrt 3}\right| +C</tex>
+    <tex>\log \left| \frac{\sqrt 6 (1- \sqrt 2 )}{\sqrt 3 -2}\right|</tex>
+    <tex correct='true'>\log \left| \frac{\sqrt 2 - 1}{2 - \sqrt 3}\right|</tex>
+    <tex>\log \left| \frac{\sqrt 2 +1}{2 + \sqrt 3}\right|</tex>
+  </choices>
+</question>

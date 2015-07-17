@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Evaluate the following} \\
+\quad \int^{1}_{0} \dfrac{dx}{1+x^2}</tex>
+  </statement>
+  <step>
+    <context>\textbf{Check Point }\# 1: \text{ Is the function defined} \\
+\text{and continuous in } [0, 1] ?  </context>
+    <tex correct='true'>\text{Yes. } \dfrac{1}{1+x^2} \text{ is defined and is continuous in } [0, 1]</tex>
+    <tex>\text{No. } \dfrac{1}{1+x^2} \text{ is not continuous at } x=0</tex>
+    <reason>\int^{b}_{a}f(x)\, dx \text{ makes sense only if f(x) is} \\
+\text{defined and is continuous in [a, b].} \\
+\text{ For example, }\int^{1}_{-1} \dfrac{1}{x} \, dx \text{ is not defined}\\
+\text{because }\dfrac{1}{x} \text{ is discontinuos at } x = 0 \in [-1, 1]</reason>
+  </step>
+  <step>
+    <context>\text{And thus, } A =   \int^{1}_{0} \dfrac{dx}{1+x^2}  = ?</context>
+    <tex correct='true'>A = \dfrac{\pi}{4}</tex>
+    <tex>A = \log 2</tex>
+    <reason>\begin{align}
+
+A &amp;=  \int^{1}_{0} \dfrac{dx}{1+x^2}  \\
+&amp;=  \left[  \tan^{-1} x \right]^{1}_{0} \\
+&amp;= \tan^{-1} 1 - \tan^{-1} 0 \\
+&amp;= \dfrac{\pi}{4}
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{\pi}{4}</tex>
+    <tex>\dfrac{\pi}{2}</tex>
+    <tex>\dfrac{\pi}{4} + C</tex>
+    <tex>\log 2</tex>
+  </choices>
+</question>

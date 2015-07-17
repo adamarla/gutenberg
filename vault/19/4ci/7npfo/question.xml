@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Evaluate the following} \\
+\int^{2}_{1} (4x^3 -5x^2 +6x +9) dx</tex>
+  </statement>
+  <step>
+    <context>\textbf{Check Point } \#1: \text{ Is the function defined} \\
+\text{and continuous in } [1, 2] ?  </context>
+    <tex correct='true'>\text{Yes. } (4x^3 -5x^2 +6x +9) \text{ is defined and is}\\
+\text{continuous in } [1, 2] \text{, being a polynomial function.}</tex>
+    <tex>\text{No. } (4x^3 -5x^2 +6x +9) \text{ is not continuous at } x=0</tex>
+    <reason>\int^{b}_{a}f(x)\, dx \text{ makes sense only if f(x) is} \\
+\text{defined and is continuous in [a, b].} \\
+\text{ For example, }\int^{1}_{-1} \dfrac{1}{x} \, dx \text{ is not defined}\\
+\text{because }\dfrac{1}{x} \text{ is discontinuos at } x = 0 \in [-1, 1]</reason>
+  </step>
+  <step>
+    <context>\text{And thus, } A =  \int^{2}_{1} (4x^3 -5x^2 +6x +9) dx = ?</context>
+    <tex correct='true'>A = \dfrac{64}{3}</tex>
+    <tex>A = 64</tex>
+    <reason>
+\begin{align}
+
+A &amp;= \int^{2}_{1} (4x^3 -5x^2 +6x +9) dx  \\
+&amp;= \left[ \dfrac{4 x^4}{4} - \dfrac{5x^3}{3} + \dfrac{6x^2}{2}+ 9x \right]^{2}_{1} \\
+&amp;= \left[ x^4 - \dfrac{5x^3}{3} + 3x^2+ 9x \right]^{2}_{1} \\
+&amp;=[16-\dfrac{5}{3}\cdot 8 +12+18] -[1-\dfrac{5}{3}+3+9] \\
+&amp;= \dfrac{64}{3}
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{64}{3}</tex>
+    <tex>\dfrac{32}{3}</tex>
+    <tex>64</tex>
+    <tex>32</tex>
+  </choices>
+</question>

@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Evaluate the following} \\
+\quad \int^{5}_{4} e^x dx</tex>
+  </statement>
+  <step>
+    <context>\textbf{Check Point } \#1: \text{ Is the function defined} \\
+\text{and continuous in } [4, 5] ?  </context>
+    <tex correct='true'>\text{Yes. } e^x \text{ is defined and is continuous in } [4, 5]</tex>
+    <tex>\text{No. } e^x \text{ is not continuous at } x=4,5</tex>
+    <reason>e^x \text{ is defined and is continuous } \forall \,  x \in \mathbb{R} \\
+
+\text{Note :}
+\int^{b}_{a}f(x)\, dx \text{ makes sense only if f(x)} \\
+\qquad \text{is defined and is continuous in [a, b].} \\
+\text{ For example, }\int^{1}_{-1} \dfrac{1}{x} \, dx \text{ is not defined}\\
+\text{because }\dfrac{1}{x} \text{ is discontinuos at } x = 0 \in [-1, 1]</reason>
+  </step>
+  <step>
+    <context>\text{And thus, } A =  \int^{5}_{4} e^x dx = ?</context>
+    <tex correct='true'>A = e^4(e-1)</tex>
+    <tex>A = e^4(e-1) + C</tex>
+    <reason>\begin{align}
+
+A &amp;= \int^{5}_{4} e^x dx \\
+&amp;= \left[ \, e^x \, \right]^{5}_{4} = e^5 - e^4 = e^4(e-1)
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>e^4(e - 1) +C</tex>
+    <tex correct='true'>e^4(e-1)</tex>
+    <tex>e^4(e^2-1)</tex>
+    <tex>e^5(e-1)</tex>
+  </choices>
+</question>
