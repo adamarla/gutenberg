@@ -5,21 +5,20 @@
 \quad \int^{1}_{-1} (x+1) dx</tex>
   </statement>
   <step>
-    <context>\textbf{Check Point }\# 1: \text{ Is the function defined} \\
-\text{and continuous in } [-1, 1] ?  </context>
-    <tex correct='true'>\text{Yes. } (x+1) \text{ is defined and is continuous in } [-1, 1]</tex>
-    <tex>\text{No. } (x+1) \text{ is not continuous at } x=-1</tex>
-    <reason>\int^{b}_{a}f(x)\, dx \text{ makes sense only if f(x) is} \\
-\text{defined and is continuous in [a, b].} \\
-\text{ For example, }\int^{1}_{-1} \dfrac{1}{x} \, dx \text{ is not defined}\\
-\text{because }\dfrac{1}{x} \text{ is discontinuos at } x = 0 \in [-1, 1]</reason>
+    <context>\textbf{Check Point \# 1:}\text{ Is $f(x)=(x+1)$ defined} \\
+\text{and continuous in $[-1, 1]$ ?}</context>
+    <tex correct='true'>\text{Yes. $(x+1)$ is defined and continuous}\\
+\text{in $[-1, 1]$.}</tex>
+    <tex>\text{No. $(x+1)$ is not continuous at $x=-1$}.</tex>
+    <reason>\int^{b}_{a}f(x)\, dx \text{ makes sense only if f(x) is defined} \\
+\text{and continuous in $[a, b]$. For e.g.}\int^{1}_{-1}\dfrac{1}{x}\, dx\\
+\text{does not, because $\dfrac{1}{x}$ is discontinuous at $x = 0$.</reason>
   </step>
   <step>
     <context>\text{And thus, } A =   \int^{1}_{-1} (x+1) dx = ?</context>
     <tex correct='true'>A = 2</tex>
     <tex>A = 0</tex>
     <reason>\begin{align}
-
 A &amp;= \int^{1}_{-1} (x+1) dx = \left[ \dfrac{x^2}{2} + x \right]^{1}_{-1} \\
 &amp;= \left[\dfrac{ x^2}{2}+ x \right]_{x=1} -  \left[\dfrac{ x^2}{2}+ x \right]_{x= -1} \\
 &amp;= \left( \dfrac{1}{2} +1\right) -  \left( \dfrac{1}{2} - 1\right) = 2

@@ -5,25 +5,21 @@
 e^x  \left( \dfrac{1}{x} - \dfrac{1}{x^2} \right)</tex>
   </statement>
   <step>
-    <context>\text{Which of the following relationship between }\\
-\dfrac{1}{x} \text{ and } - \dfrac{1}{x^2} \text{ is more useful here ?} </context>
-    <tex correct='true'>\dfrac{d}{dx}\left[ \dfrac{1}{x} \right] = - \dfrac{1}{x^2}</tex>
-    <tex>- {\left[\dfrac{1}{x} \right]}^2 = \dfrac{-1}{x^2}</tex>
-    <reason>\text{There is a standard result } \\
-\int e^x [\, f(x) + f'(x)\, ] dx = e^x f(x) + C \\
-\text{The key is to identify what f(x) and f'(x) are.}</reason>
-  </step>
-  <step>
-    <context>\text{Hence, which of the following evaluates to } \\
-I = \int e^x  \left[ \dfrac{1}{x} - \dfrac{1}{x^2} \right] \, dx \text{ correctly ?}</context>
-    <tex correct='true'>I = \dfrac{e^x}{x}  + C</tex>
-    <tex> I = - \dfrac{e^x}{x^2} + C</tex>
+    <context>\text{Would the following choice of $f(x)$ and $f'(x)$} \\
+\text{work to fit}
+\int e^x  \left( \dfrac{1}{x} - \dfrac{1}{x^2} \right)dx
+\text{ into this} \\
+\text{standard result }\\
+\int e^x[f(x) + f'(x)] dx = e^x\cdot f(x) + C?</context>
+    <tex correct='true'>f(x)=\dfrac{1}{x}, f'(x)=-\dfrac{1}{x^2}\\
+\therefore I=\int e^x  \left( \dfrac{1}{x} - 
+  \dfrac{1}{x^2} \right) = \dfrac{e^x}{x}+C</tex>
+    <tex>f(x)=-\dfrac{1}{x^2}, f'(x)=\dfrac{1}{x} \\
+\therefore I=\int e^x  \left( \dfrac{1}{x} - 
+  \dfrac{1}{x^2} \right) = -\dfrac{e^x}{x^2}+C</tex>
     <reason>e^x  \left[ \dfrac{1}{x} - \dfrac{1}{x^2} \right] \text{ matches the form } \\
 e^x [\, f(x) + f'(x)\, ] \text{ only if }f(x) = \dfrac{1}{x} \\
-\text{Remember }\dfrac{d}{dx} \left[ \dfrac{-1}{x^2} \right] = 2 \dfrac{1}{x^3} \\
-\text{ and thus, }
-f(x) \neq - \dfrac{1}{x^2}
-</reason>
+\text{Remember }\dfrac{d}{dx} \left[-\dfrac{1}{x^2}\right]=\dfrac{2}{x^3}</reason>
   </step>
   <choices>
     <tex> - \dfrac{e^x}{x^2} + C</tex>

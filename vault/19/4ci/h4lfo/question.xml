@@ -8,16 +8,14 @@
     <context>\textbf{Check Point }\# 1:\\
 \text{Can this definite integral be evaluated ?} \\
 </context>
-    <tex correct='true'>\text{Yes. } \dfrac{1}{\sqrt{1- x^2}} \text{ is defined and is continuous in } [0, 1] \\
-\therefore \text{The definite integral }
-\int^{1}_{0} \dfrac{dx}{\sqrt{1- x^2}} \\
+    <tex correct='true'>\text{Yes. } \dfrac{1}{\sqrt{1- x^2}} \text{ is defined and is continuous in } \\ \\
+[0, 1]\therefore \int^{1}_{0} \dfrac{dx}{\sqrt{1- x^2}}
 \text{ can be evaluated.}</tex>
     <tex>\text{No. } \dfrac{1}{\sqrt{1- x^2}} \text{ is discontinuous at } x=1\\
-\therefore \text{The definite integral }
- \int^{1}_{0} \dfrac{dx}{\sqrt{1- x^2}}\\
+\therefore \int^{1}_{0} \dfrac{dx}{\sqrt{1- x^2}}
  \text{ cannot be evaluated.}</tex>
-    <reason>\text{It is true that } \dfrac{1}{\sqrt{1- x^2}} \text{ is discontinuous at } x=1 \\
-\text{But we are calculating the area over } [0,1] \\
+    <reason>\dfrac{1}{\sqrt{1- x^2}} \text{ is discontinuous at } x=1, \\
+\text{but we are calculating the area over } [0,1] \\
 \text{where } \dfrac{1}{\sqrt{1- x^2}} \text{ is defined and is continuous.}\\
 \text{So, the definite integral can be evaluated.}</reason>
   </step>

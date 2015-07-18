@@ -2,7 +2,7 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Integrate the following definite integral }\\
-\int_{0}^{\dfrac{\pi}{2}} \cos 2x.dx</tex>
+\int_{0}^{\pi/2} \cos 2x\, dx</tex>
   </statement>
   <step>
     <context>\textbf{Check Point\#1: }\text{Is the following function}\\
@@ -10,21 +10,17 @@
     <tex correct='true'>\text{Yes.}\cos 2x \text{ is simply the sine function which is }\\
 \text{defined and continuous for all x }</tex>
     <tex>\text{No.}\cos 2x \text{ is not continuous at }x =\dfrac{\pi}{2}</tex>
-    <reason>\int_{a}^{b} f \left(x\right).dx \text{ makes sense only if }f \left(x\right) \text{ is defined}\\
-\text{and continuous in }\left[0,\dfrac{\pi}{2}\right],\text{ for example}\int_{-\dfrac{\pi}{2}}^{\dfrac{\pi}{2}} \dfrac{dx}{\cos 2x} \\
-\text{is not defined because }\dfrac{1}{\cos 2x}\text{ is discontinuous at}\\
-x = 0. \in \left[-\dfrac{\pi}{2},\dfrac{\pi}{2}\right].</reason>
+    <reason>\int_{a}^{b} f(x)\, dx \text{ makes sense only if }f(x)\text{ is defined}\\
+\text{and continuous in }\left[0,\dfrac{\pi}{2}\right],\text{ for e.g.}\int_{-\pi/2}^{\pi/2}\dfrac{dx}{\cos 2x} \\
+\text{does not because}\dfrac{1}{\cos 2x}\text{ is not defined at }x=0.</reason>
   </step>
   <step>
-    <context>\text{And so }A = \int_{0}^{\dfrac{\pi}{2}} \cos 2x.dx = ?
-
-</context>
+    <context>\text{And so }A = \int_{0}^{\dfrac{\pi}{2}} \cos 2x.dx = ?</context>
     <tex correct='true'>A = 0</tex>
     <tex>A = \dfrac{1}{2}</tex>
     <reason>\begin{align}
-A = \int_{0}^{\dfrac{\pi}{2}}\cos 2x.dx &amp;= \left[ \dfrac{\sin 2x}{2}\right]_{0}^{\dfrac{\pi}{2}}\\
-&amp;= \dfrac{\sin \pi}{2} - \dfrac{\sin 0}{2}\\
-&amp;=0
+A &amp;= \int_{0}^{\dfrac{\pi}{2}}\cos 2x\, dx= \left[ \dfrac{\sin 2x}{2}\right]_{0}^{\dfrac{\pi}{2}}\\
+&amp;= \dfrac{\sin \pi}{2} - \dfrac{\sin 0}{2}=0
 \end{align}</reason>
   </step>
   <choices>

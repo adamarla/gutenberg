@@ -2,31 +2,33 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Evaluate the following definite integral }\\
-\int_{0}^{\dfrac{\pi}{4}}\tan x.dx</tex>
+\int_{0}^{\pi/4}\tan x\, dx</tex>
   </statement>
   <step>
-    <context>\textbf{Check Point\#1: }\text{Is the following function}\\
-\text{defined and continuous in }\left[0 , \dfrac{\pi}{4}\right]?</context>
-    <tex correct='true'>\text{Yes. }\tan x\text{ is defined and continuous in }\left[0,\dfrac{\pi}{4}\right]</tex>
-    <tex>\text{No. }\tan x\text{ is not continuous at }x =\dfrac{\pi}{2}\text{ and}\\
+    <context>\textbf{Check Point\#1: }\text{Is $\tan x$ defined and}\\
+\text{continuous in }\left[0 , \dfrac{\pi}{4}\right]?</context>
+    <tex correct='true'>\text{Yes. $\tan x$ is defined and continuous in }\left[0,\dfrac{\pi}{4}\right]</tex>
+    <tex>\text{No. $\tan x$ is not continuous at }x =\dfrac{\pi}{2}\text{ and}\\
 \text{therefore not defined and continuous in }\left[0,\dfrac{\pi}{4}\right]</tex>
     <reason>\text{It is important to check for continuity in the}\\
-\text{interval because it only makes sense if the}\\
-\text{function is defined and continuous in the interval.}\\
-\text{for example }\int_{\dfrac{\pi}{4}}^{\dfrac{3\pi}{4}}\tan x.dx \text{ is not defined because}\\
-\text{at }x =\dfrac{\pi}{2}\in \left[\dfrac{\pi}{4}, \dfrac{3\pi}{4}\right]
-\tan x\text{ is discontinuous.}</reason>
+\text{interval because area under a curve in that}\\
+\text{interval only makes sense if the curve is}\\
+\text{defined and continuous at all points in it.}\\
+\text{For e.g.}\int_{\pi/4}^{3\pi/4}\tan x\, dx \text{ does not make sense} \\
+\text{because $\tan x$ is not defined at }x=\dfrac{\pi}{2}\text{ and}\\
+\frac{\pi}{2}\in \left[\frac{\pi}{4}, \frac{3\pi}{4}\right]</reason>
   </step>
   <step>
     <context>\text{Therefore }A = \int_{0}^{\dfrac{\pi}{4}}\tan x.dx = ?</context>
     <tex correct='true'>A = \dfrac{1}{2}\log 2</tex>
     <tex>A = \log 2</tex>
     <reason>\begin{align}
-A = \int_{0}^{\dfrac{\pi}{4}}\tan x.dx &amp;= \int_{0}^{\dfrac{\pi}{4}}\underbrace{\dfrac{\sin x}{\cos x}}_{\text{Put }t =\cos x}.dx\\
-&amp;=\int_{0}^{\dfrac{\pi}{4}} -\log \left|\cos x\right|.dx\\
-&amp;= -\log \dfrac{1}{\sqrt{2}} + \underbrace{\log 1}_{ = 0}\\
-&amp;=\underbrace{\log \sqrt{2}}_{ - \log \,\frac{1}{N} = \log N}\\
-&amp;= \dfrac{1}{2}\log 2
+A &amp;= \int_{0}^{\pi/4}\tan x\, dx = \underbrace{\int_{0}^{\pi/4}
+         \dfrac{\sin x}{\cos x}}_{\text{Put }\cos x=t}dx \\
+   &amp;=\int_{0}^{\pi/4} -\log \left|\cos x\right|dx \\
+   &amp;= \underbrace{-\log\dfrac{1}{\sqrt{2}}}_{ - \log \,\frac{1}{N} = \log N} + 
+         \underbrace{\log 1}_{=0}
+     =\log\sqrt{2}= \dfrac{1}{2}\log 2
 \end{align}</reason>
   </step>
   <choices>
