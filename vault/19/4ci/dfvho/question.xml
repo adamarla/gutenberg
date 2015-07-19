@@ -13,28 +13,27 @@ I=\int \cot x \cdot \log \sin x \,dx
     <tex>\sin x = t</tex>
     <reason>\begin{align}
   \log \sin x =t &amp;\implies \dfrac{1}{\sin x} \cdot \cos x \cdot \dfrac{dx}{dt}=1\\
-                    &amp;\implies \cos x  \cdot dx= dt
+                    &amp;\implies  \dfrac{1}{\sin x} \cdot \cos x \cdot dx= dt
 \end{align}</reason>
   </step>
   <step swipe='false'>
-    <context>\text{If }I=\int \dfrac{\cos x}{\sqrt{1 + \sin x}}\,dx 
-= \int \dfrac{1}{\sqrt{t}} \, dt   \\
+    <context>\text{If }I=\int \cot x \cdot \log \sin x \,dx
+= \int t \, dt   \\
 \text{Does this look correct?}</context>
     <tex correct='true'>\begin{align}
-  I &amp;= \int \dfrac{1}{\sqrt{t}} \, dt  \\
-    &amp;= \dfrac{t^{1/2}}{1/2} + C \\
-    &amp;= 2 \sqrt t + C \\
-    &amp;= 2\sqrt{1 + \sin x} + C
+  I &amp;= \int t \, dt  \\
+    &amp;= \dfrac{t^2}{2} + C \\
+   &amp;= \dfrac{1}{2} (\log \sin x)^2 + C
     
 \end{align}</tex>
     <tex>\begin{align}
-  I &amp;= \int \dfrac{1}{\sqrt{t}} \, dt  \\
-    &amp;= \dfrac{1}{2} \cdot t^{1/2} + C \\
-    &amp;= \dfrac{1}{2} \sqrt t + C \\
-    &amp;= \dfrac{1}{2} \sqrt{1 + \sin x} + C
+  I &amp;= \int t \, dt  \\
+    &amp;= t^2 + C \\
+   &amp;=  (\log \sin x)^2 + C
     
 \end{align}</tex>
-    <reason>\int x^n \, dx = \dfrac{x^{n+1}}{n+1} + C</reason>
+    <reason>\int x^n \, dx = \dfrac{x^{n+1}}{n+1} + C \\
+\therefore \int x \, dx = \dfrac{x^2}{2} + C</reason>
   </step>
   <choices>
     <tex>2 (\log \sin x)^2 + C</tex>
