@@ -14,7 +14,7 @@ I=\int \dfrac{2}{t-1}dt</context>
   =\int \dfrac{2\, dt}{t-1}</reason>
   </step>
   <step>
-    <context>\text{If }\int \dfrac{2}{t-1}dt \\
+    <context>\text{If }I=\int \dfrac{2}{t-1}dt \\
 \text{then does this look correct?}</context>
     <tex correct='true'>\begin{align}
   I &amp;=\int \dfrac{2}{t-1}dt = 2\log|t-1|+C \\

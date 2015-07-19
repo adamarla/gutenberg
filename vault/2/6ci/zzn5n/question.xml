@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int \left(x^3-1\right)^{\frac{1}{3}}x^5\, dx</tex>
+  </statement>
+  <step>
+    <context>\text{The following substitution would convert} \\
+I=\int \left(x^3-1\right)^{\frac{1}{3}}x^5\, dx \text{ to }
+  I=\int \dfrac{1}{3}t^{\frac{1}{3}}(t+1)\,dt</context>
+    <tex correct='true'>x^3-1=t</tex>
+    <tex>x^3=t</tex>
+    <reason>x^3-1=t\implies 3x^2\, dx=dt \\
+\therefore\int\dfrac{1}{3}\left(x^3-1\right)^{\frac{1}{3}}
+  \underbrace{x^3}_{(t+1)}3x^2\, dx
+  =\int\dfrac{1}{3}t^{\frac{1}{3}}(t+1)\,dt</reason>
+  </step>
+  <step>
+    <context>\text{If }I=\int \left(x^3-1\right)^{\frac{1}{3}}x^5\, dx
+=\int\dfrac{1}{3}t^{\frac{1}{3}}(t+1)\,dt \\
+\text{then does the following look correct?}</context>
+    <tex correct='true'>\begin{align}
+I &amp;= \int\dfrac{1}{3}t^{\frac{1}{3}}(t+1)\,dt
+    = \dfrac{1}{3}\left[\dfrac{3}{7}t^{\frac{7}{3}} +
+       \dfrac{3}{4}t^{\frac{4}{3}}\right]+C \\
+  &amp;=\dfrac{1}{7}(x^3-1)^{\frac{7}{3}} +
+       \dfrac{1}{4}(x^3-1)^{\frac{4}{3}}+C
+\end{align}</tex>
+    <tex>\begin{align}
+I &amp;= \int\dfrac{1}{3}t^{\frac{1}{3}}(t+1)\,dt
+    = \dfrac{1}{3}\left[\dfrac{3}{5}t^{\frac{5}{3}} +
+       \dfrac{3}{2}t^{\frac{2}{3}}\right]+C \\
+  &amp;=\dfrac{1}{5}(x^3-1)^{\frac{5}{3}} +
+       \dfrac{1}{2}(x^3-1)^{\frac{2}{3}}+C
+\end{align}</tex>
+    <reason>\begin{align}
+I &amp;= \int\dfrac{1}{3}t^{\frac{1}{3}}(t+1)\,dt
+    = \dfrac{1}{3}\left[\int t^{\frac{4}{3}}dt + 
+      \int t^{\frac{1}{3}}dt\right] \\
+  &amp;= \dfrac{1}{3}\left[\dfrac{3}{7}t^{\frac{7}{3}} +
+       \dfrac{3}{4}t^{\frac{4}{3}}\right]+C
+     =\dfrac{1}{7}t^{\frac{7}{3}} +
+       \dfrac{1}{4}t^{\frac{4}{3}}+C \\
+  &amp;=\dfrac{1}{7}(x^3-1)^{\frac{7}{3}} +
+       \dfrac{1}{4}(x^3-1)^{\frac{4}{3}}+C
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{1}{7}(x^3-1)^{\frac{7}{3}} +
+\dfrac{1}{4}(x^3-1)^{\frac{4}{3}}+C</tex>
+    <tex>\dfrac{1}{5}(x^3-1)^{\frac{5}{3}} +
+\dfrac{1}{2}(x^3-1)^{\frac{2}{3}}+C</tex>
+    <tex>\dfrac{1}{7}(x^3-1)^{\frac{5}{3}} +
+\dfrac{1}{4}(x^3-1)^{\frac{2}{3}}+C</tex>
+    <tex>\dfrac{1}{5}(x^3-1)^{\frac{7}{3}} +
+\dfrac{1}{2}(x^3-1)^{\frac{4}{3}}+C</tex>
+  </choices>
+</question>

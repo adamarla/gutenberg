@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int e^{2x+3}\, dx</tex>
+  </statement>
+  <step>
+    <context>\text{The function $e^{2x+3}$ requires that we} \\
+\text{first take log of both sides in order to integrate} \\
+\text{since the function has a variable exponent,} \\
+\text{i.e. $x$ term in power.}</context>
+    <tex correct='true'>\text{No it is not required to take log of both sides.} </tex>
+    <tex>\text{Yes, we do need to take log of both sides.}</tex>
+    <reason>\text{In cases where the base function is the} \\
+\text{exponential function $f(x)=e^{g(x)}$, we do not}\\
+\text{need to take log of both sids, although we} \\
+\text{could still solve the problem by doing so.}</reason>
+  </step>
+  <step>
+    <context>\text{The following substitution would convert} \\
+I=\int e^{2x+3}\, dx \text{ to } I=\int \dfrac{1}{2}e^t dt</context>
+    <tex correct='true'>2x+3=t</tex>
+    <tex>e^{2x+3}=t</tex>
+    <reason>2x+3=t \implies 2\,dx=dt \\
+\therefore \int \dfrac{1}{2}e^{2x+3}\, 2\, dx =\int \dfrac{1}{2}e^t dt</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{If }I=\int e^{2x+3}\, dx =\int \dfrac{1}{2}e^t dt \\
+\text{then does the following look correct?}</context>
+    <tex correct='true'>\begin{align}
+  I &amp;=\int \dfrac{1}{2}e^t dt= \dfrac{1}{2}e^t+C \\
+    &amp;=\dfrac{1}{2}e^{2x+3}+C
+\end{align}</tex>
+    <reason>\int e^x\, dx=e^x+C</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{1}{2e^{2x+3}}+C</tex>
+    <tex>e^{(2x+3)/2}+C</tex>
+    <tex>e^{2x+3}+C</tex>
+    <tex correct='true'>\dfrac{1}{2}e^{2x+3}+C</tex>
+  </choices>
+</question>
