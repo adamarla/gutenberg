@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int x\sqrt{x+2}dx</tex>
+  </statement>
+  <step>
+    <context>\text{The following substitution would convert}\\
+I=\int x\sqrt{x+2}\, dx \text{ to }I=\int (t-2)\sqrt{t}\,dt</context>
+    <tex correct='true'>x+2=t</tex>
+    <tex>\sqrt{x+2}=t</tex>
+    <reason>x+2=t\implies dx=dt \\
+I=\int x\sqrt{x+2}dx=\int (t-2)\sqrt{t}\, dt</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{If }I=\int (t-2)\sqrt{t}\,dt \\
+\text{does the following look correct?}</context>
+    <tex correct='true'>\begin{align}
+  I&amp;=\int (t-2)\sqrt{t}\,dt 
+     =\int (t^{\frac{3}{2}}-2t^{\frac{1}{2}})dt \\
+   &amp;=\dfrac{2}{5}t^{\frac{5}{2}}-
+        \dfrac{4}{3}t^{\frac{3}{2}}+C \\
+   &amp;=\dfrac{2}{5}(x+2)^{\frac{5}{2}}-
+        \dfrac{4}{3}(x+2)^{\frac{3}{2}}+C \\    
+\end{align}</tex>
+    <reason>\int x^{n}dx=\dfrac{x^{n+1}}{n+1}+C, 
+\forall\, n \in \mathbb{R}</reason>
+  </step>
+  <choices>
+    <tex>(x+2)^{\frac{5}{2}}+(x+2)^{\frac{3}{2}}+C</tex>
+    <tex>(x+2)^{\frac{5}{2}}-(x+2)^{\frac{3}{2}}+C</tex>
+    <tex>\dfrac{2}{5}(x+2)^{\frac{5}{2}}-
+\dfrac{2}{3}(x+2)^{\frac{3}{2}}+C</tex>
+    <tex correct='true'>\dfrac{2}{5}(x+2)^{\frac{5}{2}}-
+\dfrac{4}{3}(x+2)^{\frac{3}{2}}+C</tex>
+  </choices>
+</question>

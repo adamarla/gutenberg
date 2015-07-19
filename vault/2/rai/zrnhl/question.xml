@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int\sin(ax+b)\cos(ax+b)</tex>
+  </statement>
+  <step>
+    <context>\text{The following substitution would convert}\\
+I=\int\sin(ax+b)\cos(ax+b)\text{ to }I=\int\dfrac{t}{a}dt</context>
+    <tex correct='true'>\sin(ax+b)=t</tex>
+    <tex>\cos(ax+b)=t</tex>
+    <reason>\sin(ax+b)=t\implies\cos(ax+b)a\,dx=dt \\
+\int\dfrac{1}{a}\underbrace{\sin(ax+b)}_t
+  \underbrace{\cos(ax+b)a\,dx}_{dt}=\int\dfrac{t}{a}dt</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{If }I=\int\sin(ax+b)\cos(ax+b)=\int\dfrac{t}{a}dt \\
+\text{then does this look right?}</context>
+    <tex correct='true'>\begin{align}
+  I &amp;=\int\dfrac{t}{a}dt =\dfrac{t^2}{2a}+B
+\end{align}</tex>
+    <reason>\int \dfrac{x}{n}dx
+  =\dfrac{1}{n}\int x\, dx 
+  = \dfrac{x^2}{2n}+C</reason>
+  </step>
+  <step swipe='false'>
+    <context>\dfrac{\sin^2(ax+b)}{2a}+B \\
+\text{is equivalent to the following}</context>
+    <tex correct='true'>-\dfrac{1}{4a}\cos 2(ax+b)+C</tex>
+    <reason>\sin ^2 A = \dfrac{1-\cos 2A}{2} \\
+\therefore \dfrac{\sin^2 (ax+b)}{2a}+B 
+=\dfrac{1-\cos 2(ax+b)}{4a}+B\\
+=-\dfrac{1}{4a}\cos 2(ax+b)
+  +\underbrace{\dfrac{1}{4a}+B}_{constant\, C}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>-\dfrac{1}{4a}\cos 2(ax+b)+C</tex>
+    <tex>\dfrac{1}{4a}\cos 2(ax+b)+C</tex>
+    <tex>-\dfrac{1}{2a}\cos 2(ax+b)+C</tex>
+    <tex>\dfrac{1}{2a}\cos 2(ax+b)+C</tex>
+  </choices>
+</question>

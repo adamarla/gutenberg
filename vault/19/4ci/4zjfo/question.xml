@@ -5,25 +5,17 @@
 e^x ( \sin x + \cos x)</tex>
   </statement>
   <step>
-    <context>\text{Which of the following relationships between }\\
-\sin x \text{ and }  \cos x \text{ is more useful here ?} </context>
-    <tex correct='true'>\dfrac{d}{dx} \sin x = \cos x</tex>
-    <tex>\sqrt{1 - \sin^2 x} = \cos x</tex>
-    <reason>\text{There is a standard result } \\
-\int e^x [\, f(x) + f'(x)\, ] dx = e^x f(x) + C \\
-\text{The key is to identify what f(x) and f'(x) are.}</reason>
-  </step>
-  <step>
-    <context>\text{Hence, which of the following evaluates to } \\
- I = \int e^x ( \sin x + \cos x)  \, dx \text{ correctly ?}</context>
-    <tex correct='true'>I = e^x \,\sin x + C</tex>
-    <tex>I = e^x \,\cos x + C</tex>
+    <context>\text{Would the following choice of $f(x)$ and $f'(x)$} \\
+\text{work to fit $\int e^x( \sin x + \cos x)dx$ into this} \\
+\text{standard result }\\
+\int e^x[f(x) + f'(x)] dx = e^x\cdot f(x) + C?</context>
+    <tex correct='true'>f(x)=\sin x, f'(x)=\cos x \\
+\therefore I = \int e^x[\sin x + \cos x] dx = e^x \,\sin x + C</tex>
+    <tex>f(x)=\cos x, f'(x)=\sin x \\
+\therefore I = \int e^x[\cos x + \sin x] dx = e^x \,\cos x + C</tex>
     <reason>e^x ( \sin x + \cos x)  \text{ matches the form } \\
 e^x [\, f(x) + f'(x)\, ] \text{ only if }f(x) = \sin x \\
-\text{Remember }\dfrac{d}{dx} \cos x = - \sin x \\
-\text{ and thus, }
-f(x) \neq \cos x
-</reason>
+\text{Remember }\dfrac{d}{dx} \cos x = -\sin x</reason>
   </step>
   <choices>
     <tex>e^x \,\cos x + C</tex>

@@ -5,39 +5,38 @@
 \int_{0}^{1} \dfrac{2x +3 }{5x^2 +1}.dx</tex>
   </statement>
   <step>
-    <context>\int_{0}^{1} \dfrac{2x +3 }{5x^2 +1}.dx  = \overbrace{\int_{0}^{1} \dfrac{2x.dx}{5x^2 +1}}^{X} + 3\overbrace{\int_{0}^{1} \dfrac{dx }{5x^2 +1}}^{Y}\\
+    <context>\int_{0}^{1} \dfrac{2x +3 }{5x^2 +1}\, dx  
+  = \overbrace{\int_{0}^{1} \dfrac{2x\, dx}{5x^2 +1}}^{X} + 
+      \overbrace{\int_{0}^{1} \dfrac{3\, dx }{5x^2 +1}}^{Y}\\
 \text{Now, if}\int_{0}^{1}\dfrac{2x.dx}{5x^2 +1} \xrightarrow{t = 5x^2 +1}M\int_{m}^{n}\dfrac{dt}{t}\text{ then}\\
 \text{what are M, m and n =?}
 </context>
     <tex correct='true'>m =1 , n= 6 \text{ and }M =\dfrac{1}{5}</tex>
     <tex>m =0 , n= 1 \text{ and }M =\dfrac{1}{5}</tex>
-    <reason>\text{If }t = 5x^2 + 1, \text{ then }dt = 10x.dx\\
-\implies \dfrac{dt}{5} = 2x.dx\\
+    <reason>\text{If }t = 5x^2 + 1, \text{ then }dt = 10x\, dx\\
+\implies \dfrac{dt}{5} = 2x\, dx\\
 \therefore \int \dfrac{2x}{5x^2 +1}.dx = \underbrace{\dfrac{1}{5}}_{M}\int \dfrac{dt}{t}\\
 \text{Also, }t = 1 \left(x =0\right)\text{ and }t = 6 \left(x = 1\right)\\
-\text{So. }\int_{0}^{1}\dfrac{2x}{5x^2 +1}.dx = \dfrac{1}{5}\int_{1}^{6}\dfrac{dt}{t}\\
+\text{So. }\int_{0}^{1}\dfrac{2x}{5x^2 +1}\, dx = \dfrac{1}{5}\int_{1}^{6}\dfrac{dt}{t}\\
 \implies M= \dfrac{1}{5}, m=1\text{ and }n=6\\</reason>
   </step>
   <step>
-    <context>\text{Is the following expression of }\\
-A =\int_{0}^{1}\dfrac{2x +3 }{5x^2 +1}.dx \text{ correct?}</context>
-    <tex correct='true'>A = \int_{0}^{1}\dfrac{2x +3 }{5x^2 +1}.dx\\
-= \underbrace{\dfrac{1}{5}\int_{1}^{6} \dfrac{dt}{t}}_{t =5x^2 +1} + \dfrac{3}{5}\int_{0}^{1}\dfrac{dx}{x^2 +\left(\dfrac{1}{\sqrt{5}}\right)^2}\\</tex>
-    <reason>X = \int_{0}^{1}\dfrac{2x }{5x^2 +1}.dx = \dfrac{1}{5}\int_{1}^{6}\dfrac{dt}{t}\text{ is from} \\
-\text{last step.}\\
+    <context>A =\int_{0}^{1}\dfrac{2x +3 }{5x^2 +1}\, dx 
+   = \dfrac{1}{5}\int_{1}^{6}\dfrac{dt}{t}+
+      \int_{0}^{1} \dfrac{3\, dx}{5x^2 +1} \\
+\text{then is the following result correct?}</context>
+    <tex correct='true'>A =\dfrac{1}{5}\log 6 +\dfrac{3}{\sqrt{5}}\tan^{-1} \sqrt{5}</tex>
+    <tex>A=\dfrac{1}{5}\log 6 +3\sqrt{5}\tan^{-1} \sqrt{5}</tex>
+    <reason>X = \dfrac{1}{5}\int_{1}^{6}\dfrac{dt}{t}
+   =\dfrac{1}{6}\left[\log 6 - 0\right]=\dfrac{1}{6}\left[\log 6\right] \\
 \begin{align}
-\text{And }Y = 3\int_{0}^{1}\dfrac{dx}{5x^2 +1} &amp; = \dfrac{3}{5}\int_{0}^{1}\dfrac{dx}{\left(x^2 + \dfrac{1}{5}\right)}\\
-&amp;= \dfrac{3}{5}\int_{0}^{1}\dfrac{dx}{x^2 + \left(\dfrac{1}{\sqrt{5}}\right)^2}
+Y &amp;= 3\int_{0}^{1}\dfrac{dx}{5x^2 +1} 
+     = \dfrac{3}{5}\int_{0}^{1}\dfrac{dx}{\left(x^2 + \frac{1}{5}\right)} \\
+   &amp;= \dfrac{3}{5}\int_{0}^{1}\dfrac{dx}{x^2 + \left(\frac{1}{\sqrt{5}}\right)^2} \\
+   &amp;=\dfrac{3}{5}\left[\dfrac{1}{\left(\frac{1}{\sqrt{5}}\right)}\tan^{-1} 
+        \dfrac{x}{\left(\frac{1}{\sqrt{5}}\right)}\right]_{0}^{1} \\
+   &amp;= \dfrac{1}{5}\log 6 + \dfrac{3}{\sqrt{5}}\tan^{-1} \sqrt{5}
 \end{align}</reason>
-  </step>
-  <step>
-    <context>\text{And so, what is the value of }\\
-A = \int_{0}^{1} \dfrac{2x+3}{5x^2+1}.dx?</context>
-    <tex correct='true'>\dfrac{1}{5}\log 6 +\dfrac{3}{\sqrt{5}}\tan^{-1} \sqrt{5}</tex>
-    <tex>\dfrac{1}{5}\log 6 +3\sqrt{5}\tan^{-1} \sqrt{5}</tex>
-    <reason>A = \dfrac{1}{5}\int_{1}^{6}\dfrac{dt}{t} +\dfrac{3}{5}\int_{0}^{1}\dfrac{dx}{x^2 + \left(\dfrac{1}{\sqrt{5}}\right)}\\
- = \dfrac{1}{5}\left[\log 6 -\log 1\right] +\dfrac{3}{5}\left[\dfrac{1}{\left(\dfrac{1}{\sqrt{5}}\right)}\tan^{-1} \dfrac{x}{\left(\dfrac{1}{\sqrt{5}}\right)}\right]_{0}^{1}\\
- = \dfrac{1}{5}\log 6 + \dfrac{3}{\sqrt{5}}\tan^{-1} \sqrt{5}</reason>
   </step>
   <choices>
     <tex>\dfrac{1}{5}\log 5 + \dfrac{3}{\sqrt{5}}\tan \sqrt{5}</tex>

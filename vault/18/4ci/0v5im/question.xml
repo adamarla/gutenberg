@@ -2,44 +2,37 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Evaluate the following definite integral }\\
-\int_{0}^{2} \dfrac{6x+3 }{x^2+4}.dx</tex>
+\int_{0}^{2} \dfrac{6x+3 }{x^2+4}\, dx</tex>
   </statement>
   <step>
-    <context>\int_{0}^{2} \dfrac{6x+3 }{x^2+4}.dx  = \overbrace{\int_{0}^{2} \dfrac{6x.dx}{x^2+4}}^{X} + 3\overbrace{\int_{0}^{2} \dfrac{dx }{x^2+4}}^{Y}\\
+    <context>\int_{0}^{2} \dfrac{6x+3 }{x^2+4}.dx  
+=\overbrace{\int_{0}^{2} \dfrac{6x.dx}{x^2+4}}^{X} + 
+3\overbrace{\int_{0}^{2} \dfrac{dx }{x^2+4}}^{Y}\\
 \text{Now, if}\int_{0}^{2}\dfrac{6x}{x^2+4} \xrightarrow{t = x^2+4}M\int_{m}^{n}\dfrac{dt}{t}\text{ then}\\
-\text{what are M, m and n =?}
-</context>
+\text{what are M, m and n =?}</context>
     <tex correct='true'>m =4 , n= 8 \text{ and }M =3</tex>
     <tex>m =4 , n= 8 \text{ and }M =3</tex>
     <reason>\text{If }t = x^2 + 4, \text{ then }dt = 2x.dx\\
 \implies 3.dt = 6x.dx\\
 \therefore \int \dfrac{6x}{x^2+4}.dx = \underbrace{3}_{M}\int \dfrac{dt}{t}\\
 \text{Also, }t = 4 \left(x =0\right)\text{ and }t = 8 \left(x = 2\right)\\
-\text{So. }\int_{0}^{2}\dfrac{6x}{x^2+4}.dx = 3\int_{4}^{8}\dfrac{dt}{t}\\
+\text{So. }\int_{0}^{2}\dfrac{6x}{x^2+4}\, dx = 3\int_{4}^{8}\dfrac{dt}{t}\\
 \implies M= 3, m=4\text{ and }n=8\\</reason>
   </step>
   <step>
-    <context>\text{Is the following expression of }\\
-A =\int_{0}^{2}\dfrac{6x+3 }{x^2+4}.dx \text{ correct?}</context>
-    <tex correct='true'>A = \int_{0}^{2}\dfrac{6x+3 }{x^2+4}.dx\\
-= \underbrace{3\int_{4}^{8} \dfrac{dt}{t}}_{t =x^2+4} + 3\int_{0}^{2}\dfrac{dx}{x^2 +\left(2\right)^2}\\</tex>
-    <reason>X = \int_{0}^{2}\dfrac{6x }{x^2+4}.dx = 3\int_{4}^{8}\dfrac{dt}{t}\text{ is from} \\
-\text{last step.}\\
-\begin{align}
-\text{And }Y = 3\int_{0}^{2}\dfrac{dx}{x^2+4} &amp; = 3\int_{0}^{2}\dfrac{dx}{\left(x^2 + \left(2\right)^2\right)}\\
-&amp;= 3\int_{0}^{2}\dfrac{dx}{x^2 + 2^2}
-\end{align}</reason>
-  </step>
-  <step>
-    <context>\text{And so, what is the value of }\\
-A = \int_{0}^{2} \dfrac{6x+3}{x^2+4}.dx?</context>
+    <context>A =\int_{0}^{2} \dfrac{6x+3 }{x^2+4}\, dx 
+= 3\int_{4}^{8}\dfrac{dt}{t} + \int_{0}^{2} \dfrac{dx }{x^2+4} \\
+\text{then is the following result correct?}
+</context>
     <tex correct='true'>3\log 2 + \dfrac{3\pi}{8}</tex>
     <tex>3\log 2 + \dfrac{3\pi}{4}</tex>
-    <reason>A = 3\int_{4}^{8}\dfrac{dt}{t} +3\int_{0}^{2}\dfrac{dx}{x^2 + 2^2}\\
- = 3\left[\log 8 -\log 4\right] +3\left[\dfrac{1}{2}\tan^{-1} \dfrac{x}{2}\right]_{0}^{2}\\
- = 3\log \dfrac{8}{4} + \dfrac{3}{2} \left[\tan^{-1} 1 - \tan^{-1} 0 \right]\\
- = 3\log 2 + \dfrac{3\pi}{8}\\
- </reason>
+    <reason>X =3\int_{4}^{8}\dfrac{dt}{t}=3[\log 8 -\log 4] \\
+\begin{align}
+Y &amp;= 3\int_{0}^{2}\dfrac{dx}{x^2+4}
+      =3\int_{0}^{2}\dfrac{dx}{x^2 + 2^2}\\
+   &amp;=3\left[\dfrac{1}{2}\tan^{-1} \dfrac{x}{2}\right]_{0}^{2}
+     =\dfrac{3}{2} \left[\tan^{-1} 1 - \tan^{-1} 0 \right]
+\end{align}</reason>
   </step>
   <choices>
     <tex>3\log 2 + \dfrac{3\pi}{4}</tex>
