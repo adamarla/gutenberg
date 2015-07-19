@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\dfrac{e^{2x} - e^{-2x}}{e^{2x} + e^{-2x}}dx</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the following substitution would}\\ 
+\text{convert }I=\int \dfrac{e^{2x} - e^{-2x}}{e^{2x} + e^{-2x}}dx \text{ to } \int \dfrac{1}{2t}dt</context>
+    <tex correct='true'>t = e^{2x} + e^{-2x}</tex>
+    <tex>t = e^{2x} - e^{-2x}</tex>
+    <reason>\begin{align}
+e^{2x} + e^{-2x} = t &amp;\implies \dfrac{d}{dt}\left(e^{2x} + e^{-2x}\right) = 1\\
+							&amp; \implies \left(2e^{2x} -2 e^{-2x}\right)\dfrac{dx}{dt}=1\\
+ 				&amp;\implies 2 \left(e^{2x} - e^{-2x}\right)dx = dt
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{If }I=\int \dfrac{e^{2x} - e^{-2x}}{e^{2x} + e^{-2x}}dx = \int \dfrac{1}{2t}dt\\
+\text{then does this look correct?}</context>
+    <tex correct='true'>\begin{align}
+I &amp;= \int \dfrac{1}{2t}dt= \dfrac{1}{2}\int \dfrac{1}{t}.dt\\
+ &amp;=\dfrac{1}{2}\log \left|t\right|+C\\
+ &amp;=\dfrac{1}{2}\log \left|e^{2x} + e^{-2x}\right|+C
+\end{align}</tex>
+    <tex>\begin{align}
+I &amp;= \int \dfrac{1}{2t}dt= \dfrac{1}{2}\int t^{-1}.dt\\ 
+ &amp;=\dfrac{1}{2}\dfrac{t^\left(-2\right)}{\left(-2\right)}+C\\
+ &amp;=-\dfrac{1}{4}\dfrac{1}{t^2} + C
+ 
+\end{align}</tex>
+    <reason>\int \dfrac{1}{x}dx = \log \left|x\right| + C</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{1}{4}\log \left|e^{2x} + e^{-2x}\right|+C</tex>
+    <tex>\log \left|e^{2x} + e^{-2x}\right|+C</tex>
+    <tex>\dfrac{1}{2}\log \left|e^{2x} - e^{-2x}\right|+C</tex>
+    <tex correct='true'>\dfrac{1}{2}\log \left|e^{2x} + e^{-2x}\right|+C</tex>
+  </choices>
+</question>

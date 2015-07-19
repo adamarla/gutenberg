@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I = \sec^2  \left(7 -4x\right).dx</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the following substitution would}\\ 
+\text{convert }I = \sec^2  \left(7 -4x\right)dx \text{ to } -\dfrac{1}{4}\int \sec^2 t dt</context>
+    <tex correct='true'>t = 7 - 4x</tex>
+    <tex>t = 4 \left(7 -4x\right)</tex>
+    <reason>\begin{align}
+7 - 4x = t  &amp;\implies \dfrac{d}{dt}\left(7 - 4x\right) =1\\
+&amp;\implies -4\cdot \dfrac{dx}{dt}=1\\
+&amp;\implies -4\cdot dx = dt\\
+
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{If }I = \sec^2  \left(7 -4x\right)dx = -\dfrac{1}{4}\int \sec^2 t dt\\
+\text{then does this look correct?}</context>
+    <tex correct='true'>\begin{align}
+I &amp;= -\dfrac{1}{4}\int \sec^2 t \cdot dt=-\dfrac{1}{4}\tan t + C\\
+&amp; = -\dfrac{1}{4}\tan \left(7-4x\right) + C\\
+\end{align}</tex>
+    <tex>\begin{align}
+I &amp;= -\dfrac{1}{4}\int \sec^2 t \cdot dt\\
+&amp;=-\dfrac{1}{4}\cdot 2\sec t\cdot \left(-\sec t \cdot \tan t\right)+ C\\
+&amp; = \dfrac{1}{2}\sec^2 t \tan t + C\\
+&amp; = \dfrac{1}{2}\sec^2 \left(7-4x\right) \cdot \tan \left(7 -4x\right)+C
+\end{align}</tex>
+    <reason>\int sec^2 x\cdot dx = \tan x +C</reason>
+  </step>
+  <choices>
+    <tex correct='true'>-\dfrac{1}{4}\tan \left(7-4x\right) + C</tex>
+    <tex>\dfrac{1}{4}\tan \left(7-4x\right) + C</tex>
+    <tex>-\dfrac{1}{2}\tan \left(7-4x\right) + C</tex>
+    <tex>-\dfrac{1}{4}\tan^2 \left(7-4x\right) + C</tex>
+  </choices>
+</question>
