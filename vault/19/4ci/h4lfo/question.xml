@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Evaluate the following} \\
+\quad \int^{1}_{0} \dfrac{dx}{\sqrt{1- x^2}}</tex>
+  </statement>
+  <step>
+    <context>\textbf{Check Point }\# 1:\\
+\text{Can this definite integral be evaluated ?} \\
+</context>
+    <tex correct='true'>\text{Yes. } \dfrac{1}{\sqrt{1- x^2}} \text{ is defined and is continuous in } \\ \\
+[0, 1]\therefore \int^{1}_{0} \dfrac{dx}{\sqrt{1- x^2}}
+\text{ can be evaluated.}</tex>
+    <tex>\text{No. } \dfrac{1}{\sqrt{1- x^2}} \text{ is discontinuous at } x=1\\
+\therefore \int^{1}_{0} \dfrac{dx}{\sqrt{1- x^2}}
+ \text{ cannot be evaluated.}</tex>
+    <reason>\dfrac{1}{\sqrt{1- x^2}} \text{ is discontinuous at } x=1, \\
+\text{but we are calculating the area over } [0,1] \\
+\text{where } \dfrac{1}{\sqrt{1- x^2}} \text{ is defined and is continuous.}\\
+\text{So, the definite integral can be evaluated.}</reason>
+  </step>
+  <step>
+    <context>\text{And thus, } A =  \int^{1}_{0} \dfrac{dx}{\sqrt{1- x^2}}  = ?</context>
+    <tex correct='true'>A = \dfrac{\pi}{2}</tex>
+    <tex>A = \pi</tex>
+    <reason>\begin{align}
+
+A &amp;=  \int^{1}_{0} \dfrac{dx}{\sqrt{1- x^2}}  \\
+
+&amp;= \left[ \sin^{-1} x \,  \right]^{1}_{0} \\
+&amp;= \sin^{-1} 1 - \sin^{-1} 0 \\
+
+&amp;= \dfrac{\pi}{2}
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{\pi}{4}</tex>
+    <tex correct='true'>\dfrac{\pi}{2}</tex>
+    <tex>\dfrac{\pi}{4} + C</tex>
+    <tex>\log 2</tex>
+  </choices>
+</question>

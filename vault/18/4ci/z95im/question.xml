@@ -10,21 +10,20 @@
     <tex correct='true'>\text{Yes.}\sin 2x \text{ is simply the sine function which is }\\
 \text{defined and continuous for all x }</tex>
     <tex>\text{No.}\sin 2x \text{ is not continuous at }x =0</tex>
-    <reason>\int_{a}^{b} f \left(x\right).dx \text{ makes sense only if }f \left(x\right) \text{ is defined}\\
-\text{and continuous in }\left[0,\dfrac{\pi}{4}\right],\text{for example}\\
-\int_{-\dfrac{\pi}{4}}^{\dfrac{\pi}{4}} \dfrac{dx}{\sin 2x}\text{ is not defined because }\dfrac{1}{\sin 2x}\text{ is}\\
-\text{discontinuous at }x = 0. \in \left[-\dfrac{\pi}{4},\dfrac{\pi}{4}\right].</reason>
+    <reason>\int_{a}^{b} f(x)dx \text{ makes sense only if $f(x)$ is defined}\\
+\text{and continuous in }\left[0,\frac{\pi}{4}\right],\text{for e.g.}
+\int_{-\pi/4}^{\pi/4}\dfrac{dx}{\sin 2x}\\ 
+\text{does not because }\dfrac{1}{\sin 2x}\text{ is }
+\text{not defined at }x=0.</reason>
   </step>
   <step>
-    <context>\text{And so }A = \int_{0}^{\dfrac{\pi}{4}} \sin 2x.dx = ?
-
-</context>
+    <context>\text{And so }A = \int_{0}^{\dfrac{\pi}{4}} \sin 2x\, dx = ?</context>
     <tex correct='true'>A = \dfrac{1}{2} </tex>
     <tex>A = 1</tex>
     <reason>\begin{align}
-A = \int_{0}^{\dfrac{\pi}{4}}\sin 2x.dx &amp;= \left[- \dfrac{\cos 2x}{2}\right]_{0}^{\dfrac{\pi}{4}}\\
-&amp;= -\underbrace{\dfrac{\cos \dfrac{\pi}{2}}{2}}_{=0} + \dfrac{\cos 0}{2}\\
-&amp;=\dfrac{1}{2}
+A &amp;= \int_{0}^{\dfrac{\pi}{4}}\sin 2x\, dx = \left[- \dfrac{\cos 2x}{2}\right]_{0}^{\pi/4}\\
+&amp;= -\underbrace{\dfrac{\cos \frac{\pi}{2}}{2}}_{=0} + \dfrac{\cos 0}{2}
+  =\dfrac{1}{2}
 \end{align}</reason>
   </step>
   <choices>

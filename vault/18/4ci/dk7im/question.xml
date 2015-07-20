@@ -21,9 +21,8 @@ x = 0 \in \left[-1, 1\right].</reason>
     <tex>A = \log \dfrac{3}{2} +C</tex>
     <reason>\begin{align}
 A = \int_{2}^{3}\dfrac{1}{x}.dx &amp;= \bigg(\log x\bigg)_{2}^{3}\\ 
-&amp;= \log 3 - \log 2\\
-&amp;= \log \dfrac{3}{2}\\
-
+&amp;= \log 3 - \log 2
+  = \log \dfrac{3}{2}
 \end{align}</reason>
   </step>
 </question>

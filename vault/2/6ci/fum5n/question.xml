@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int\dfrac{x}{\sqrt{x+4}}dx</tex>
+  </statement>
+  <step>
+    <context>\text{The following substitution would convert} \\
+I=\int\dfrac{x}{\sqrt{x+4}}dx \text{ to }
+  I=\int\dfrac{t-4}{\sqrt{t}}dt</context>
+    <tex correct='true'>x+4=t</tex>
+    <tex>\sqrt{x+4}=t</tex>
+    <reason>x+4=t\implies dx=dt \\
+\therefore \int\dfrac{x}{\sqrt{x+4}}dx
+  =\int\dfrac{t-4}{\sqrt{t}}dt</reason>
+  </step>
+  <step>
+    <context>\text{If }I=\int\dfrac{x}{\sqrt{x+4}}dx
+  =\int\dfrac{t-4}{\sqrt{t}}dt \\
+\text{then does the following look correct?}</context>
+    <tex correct='true'>\begin{align}
+I&amp;=\int \sqrt{t}\, dt - 4\int \dfrac{1}{\sqrt{t}}\, dt \\
+ &amp;=\dfrac{2}{3}t\sqrt{t}-8\sqrt{t}+C \\
+ &amp;=\dfrac{2}{3}\sqrt{x+4}\left(x-8\right)+C
+\end{align}</tex>
+    <tex>\begin{align}
+I&amp;=\int \sqrt{t}\, dt - 4\int \dfrac{1}{\sqrt{t}}\, dt \\
+ &amp;=\dfrac{2}{3}t\sqrt{t}-4\log|\sqrt{t}|+C \\
+ &amp;=\dfrac{2}{3}\sqrt{x+4}-4\log|\sqrt{x+4}|+C
+\end{align}</tex>
+    <reason>\begin{align}
+  I &amp;=\int\dfrac{t-4}{\sqrt{t}}\, dt
+      =\int \sqrt{t}\, dt - 4\int \dfrac{1}{\sqrt{t}}\, dt \\
+    &amp;=\dfrac{2}{3}t\sqrt{t}-8\sqrt{t}+C
+      =\dfrac{2}{3}\sqrt{t}\cdot t-\dfrac{2}{3}\sqrt{t}\cdot 12+C\\
+    &amp;=\dfrac{2}{3}\sqrt{t}\left(t-12\right)+C
+       =\dfrac{2}{3}\sqrt{x+4}\left(x-8\right)+C
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{1}{2}\sqrt{x+4}\left(x-8\right)+C</tex>
+    <tex>\dfrac{2}{3}\sqrt{x+4}-4\log|\sqrt{x+4}|+C</tex>
+    <tex>\dfrac{2}{3}\sqrt{x+4}\left(x+4\right)+C</tex>
+    <tex correct='true'>\dfrac{2}{3}\sqrt{x+4}\left(x-8\right)+C</tex>
+  </choices>
+</question>

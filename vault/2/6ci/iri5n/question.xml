@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int \dfrac{1}{x(\log x)^m}, x&gt;0, m\neq 1</tex>
+  </statement>
+  <step>
+    <context>f(x)=\int \dfrac{1}{x(\log x)^m}, x&gt;0, m\neq 1 \\
+\text{although not here, but is integrable for $x\lt 0$}</context>
+    <tex correct='true'>\text{No, it is not integrable. $f(x)$ is not defined for }\\
+x \lt 0.</tex>
+    <tex>\text{Yes, it is integrable. The condition $(x\gt 0)$ is } \\
+\text{not given for any real reason.}</tex>
+    <reason>\text{Division by 0 is not defined. Nor is the log} \\
+\text{function for negative numbers}.</reason>
+  </step>
+  <step>
+    <context>\text{The following substitution would convert} \\
+I=\int \dfrac{1}{x(\log x)^m} \text{ to }
+I=\int \dfrac{1}{t^m}dt</context>
+    <tex correct='true'>\log x=t</tex>
+    <tex>(\log x)^m=t</tex>
+    <reason>\log x=t\implies \dfrac{1}{x}dx=dt \\
+\therefore\int \dfrac{1}{(\log x)^m}\cdot \dfrac{1}{x}dx
+  =\int \dfrac{1}{t^m}dt</reason>
+  </step>
+  <step>
+    <context>\text{If }I=\int \dfrac{1}{x(\log x)^m}
+  =\int \dfrac{1}{t^m}dt \\
+\text{then does the following look correct?}</context>
+    <tex correct='true'>\begin{align}
+  I&amp;=\int \dfrac{1}{t^m}dt
+     =\dfrac{t^{(-m+1)}}{-m+1}+C \\
+   &amp;=\dfrac{(\log x)^{(1-m)}}{1-m}+C
+\end{align}</tex>
+    <tex>\begin{align}
+  I&amp;=\int \dfrac{1}{t^m}dt
+     =\dfrac{t^{(m+1)}}{m+1}+C \\
+   &amp;=\dfrac{(\log x)^{(m+1)}}{m+1}+C
+\end{align}</tex>
+    <reason>\begin{align}
+  I&amp;=\int \dfrac{1}{t^m}dt
+     =\int t^{-m}dt = \dfrac{t^{(-m+1)}}{-m+1}+C \\
+   &amp;=\dfrac{t^{(1-m)}}{1-m}+C
+     =\dfrac{(\log x)^{(1-m)}}{1-m}+C
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{x(\log x)^{(1-m)}}{1-m}+C</tex>
+    <tex>\dfrac{(\log x)^{(m+1)}}{m+1}+C</tex>
+    <tex correct='true'>\dfrac{(\log x)^{(1-m)}}{1-m}+C</tex>
+    <tex>x(\log x)^{(1-m)}+C</tex>
+  </choices>
+</question>

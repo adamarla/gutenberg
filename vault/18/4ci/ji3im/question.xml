@@ -2,28 +2,29 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Evaluate the following definite integral }\\
-\int_{0}^{\dfrac{\pi}{2}}\cos^2 x.dx</tex>
+\int_{0}^{\pi/2}\cos^2 x.dx</tex>
   </statement>
   <step>
-    <context>\text{Which of the following is true? }\\
+    <context>\text{The following trigonometric identity helps}\\
+\text{express $\cos^2 x$ in the more readily }\\
+\text{integrable form }(A+{(or)}-\cos Bx)
 </context>
     <tex correct='true'>\cos^2 x =\dfrac{1 +\cos 2x}{2}</tex>
     <tex>\cos^2 x =\dfrac{1 -\cos 2x}{2}</tex>
-    <reason>\begin{align}
-\cos 2x &amp;= \cos^2 x -\sin^2 x \\
-&amp;= \cos^2 - \left(1 - \cos^2 x\right) \\
-\end{align}\\
+    <reason>\cos 2x = \cos^2 x -\sin^2 x = \cos^2 - \left(1 - \cos^2 x\right) \\
 \implies \cos^2 x = \left(\dfrac{1 + \cos 2x}{2}\right)</reason>
   </step>
   <step>
-    <context>\text{therefore }A = \int_{0}^{\dfrac{\pi}{2}}\cos^2x .dx = ?</context>
+    <context>\text{therefore }A = \int_{0}^{\pi/2}\cos^2x\, dx = ?</context>
     <tex correct='true'>A = \dfrac{\pi}{4}</tex>
     <tex>A = \dfrac{\pi}{2}</tex>
-    <reason>
-A = \int_{0}^{\dfrac{\pi}{2}}\cos^2 x.dx = \int_{0}^{\dfrac{\pi}{2}} \left(\dfrac{1 +\cos 2x}{2}\right).dx\\
-\qquad\qquad\qquad= \left[\int_{0}^{\dfrac{\pi}{2}} dx + \int_{0}^{\dfrac{\pi}{2}} \cos 2x.dx\right]\\
-\qquad\qquad\qquad=\left[\dfrac{\pi}{2} +\left(\dfrac{\pi}{2} +\underbrace{\left(\dfrac{\sin 2x}{2}\right)_{0}^{\dfrac{\pi}{2}}}_{ = 0}\right)\right]\\
-\qquad\qquad\qquad= \dfrac{\pi}{4}
+    <reason>\begin{align}
+  A &amp;= \int_{0}^{\pi/2}\cos^2 x\, dx 
+       = \int_{0}^{\pi/2}\left(\dfrac{1 +\cos 2x}{2}\right)\, dx \\
+     &amp;=\dfrac{1}{2}\left[\int_{0}^{\pi/2}dx + \int_{0}^{\pi/2}\cos 2x\, dx\right]\\
+     &amp;=\left[\dfrac{\pi}{4}+\underbrace{\left[\dfrac{\sin 2x}{2}\right]_{0}^{\pi/2}}_{ = 0}\right]
+       = \dfrac{\pi}{4}
+\end{align}
 </reason>
   </step>
   <choices>

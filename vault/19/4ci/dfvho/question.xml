@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int \cot x \cdot \log \sin x \,dx</tex>
+  </statement>
+  <step>
+    <context>\text{The following substitution would convert}\\
+I=\int \cot x \cdot \log \sin x \,dx
+  \rightarrow \int t \, dt </context>
+    <tex correct='true'>\log \sin x =t</tex>
+    <tex>\sin x = t</tex>
+    <reason>\log \sin x =t \implies
+  \underbrace{\dfrac{1}{\sin x}\cdot\cos x}_{\cot x}\cdot dx=dt \\
+\therefore \int \log \sin x\cdot \cot x \, dx=\int t\, dt</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{If }I=\int \cot x \cdot \log \sin x \,dx= \int t \, dt   \\
+\text{then does this look correct?}</context>
+    <tex correct='true'>\begin{align}
+  I &amp;= \int t \, dt = \dfrac{t^2}{2} + C \\
+    &amp;= \dfrac{1}{2} (\log \sin x)^2 + C    
+\end{align}</tex>
+    <tex>\begin{align}
+  I &amp;= \int t \, dt = t^2 + C \\
+   &amp;=  (\log \sin x)^2 + C    
+\end{align}</tex>
+    <reason>\int x^n \, dx = \dfrac{x^{n+1}}{n+1} + C 
+\implies \int x \, dx = \dfrac{x^2}{2} + C</reason>
+  </step>
+  <choices>
+    <tex>2 (\log \sin x)^2 + C</tex>
+    <tex correct='true'>\dfrac{1}{2} (\log \sin x)^2 + C</tex>
+    <tex>\dfrac{1}{2} (\log \sin x)^2 </tex>
+    <tex>\dfrac{1}{2} (\log \cos x)^2 + C</tex>
+  </choices>
+</question>

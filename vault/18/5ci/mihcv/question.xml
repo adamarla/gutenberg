@@ -1,34 +1,39 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Integrate }I = \int \dfrac{2\cos x-3\sin x}{6\cos x + 4\sin x}\cdot dx</tex>
+    <tex>\text{Integrate }I = \int \dfrac{2\cos x-3\sin x}
+  {6\cos x + 4\sin x}\, dx</tex>
   </statement>
   <step>
-    <context>\text{Which of the following substitution would}\\ 
-\text{convert }I = \int \dfrac{2\cos x-3\sin x}{6\cos x + 4\sin x}\cdot dx\text{ to }\int \dfrac{dt}{2t}</context>
-    <tex correct='true'>t = 3\cos x + 2\sin x </tex>
-    <tex>t = 2\cos x - 3\sin x</tex>
+    <context>\text{The following substitution would convert} \\
+I = \int\dfrac{2\cos x-3\sin x}{6\cos x + 4\sin x}\, dx
+  \text{ to }\int \dfrac{1}{2t}dt</context>
+    <tex correct='true'>3\cos x + 2\sin x=t</tex>
+    <tex>2\cos x - 3\sin x=t</tex>
     <reason>\begin{align}
-3\cos x &amp;+ 2\sin x =t \\
-&amp;\implies \dfrac{d}{dt}\left(3\cos x + 2\sin x \right) = 1\\
-&amp;\implies \left(-3\sin x +2\cos x\right)\dfrac{dx}{dt} = 1\\
-&amp;\implies \left(-3\sin x +2\cos x\right)dx = dt\\
-\end{align}</reason>
+  &amp;3\cos x + 2\sin x=t \\
+  \implies &amp;\left(-3\sin x +2\cos x\right)dx = dt \\
+\end{align} \\
+\therefore \int\dfrac{(2\cos x-3\sin x)dx}{2(3\cos x + 2\sin x)}
+  =\int \dfrac{1}{2t}dt</reason>
   </step>
   <step>
-    <context>\text{If }I = \int \dfrac{2\cos x-3\sin x}{6\cos x + 4\sin x}\cdot dx=\int \dfrac{dt}{2t}\\
+    <context>\text{If }I = \int \dfrac{2\cos x-3\sin x}{6\cos x + 4\sin x}\, dx
+  =\int \dfrac{dt}{2t}\\
 \text{then does this look correct?}</context>
     <tex correct='true'>\begin{align}
-I &amp;=\int \dfrac{dt}{2t}= \dfrac{1}{2}\int \dfrac{dt}{t}\\
-&amp;= \dfrac{1}{2}\log \left|t\right| +C\\
-&amp;= \dfrac{1}{2}\log \left|3\cos x + 2\sin x \right| +C\\
+I &amp;=\int \dfrac{dt}{2t}= \dfrac{1}{2}\int \dfrac{dt}{t}
+    = \dfrac{1}{2}\log \left|t\right| +C\\
+  &amp;= \dfrac{1}{2}\log \left|3\cos x + 2\sin x \right| +C\\
 \end{align}</tex>
     <tex>\begin{align}
-I &amp;=\int \dfrac{dt}{2t}= \dfrac{1}{2}\int t^{-1}\cdot dt\\
-&amp;=\dfrac{1}{2}\cdot 2 t^{-2} +  C =  \dfrac{1}{t^{2}} +C\\
-&amp;= \dfrac{1}{\left(3\cos x + 2\sin x\right)^2} +C\\
+I &amp;=\int \dfrac{dt}{2t}= \dfrac{1}{2}\int \dfrac{dt}{t}
+    = \dfrac{1}{2}\log \left(t\right) +C\\
+  &amp;= \dfrac{1}{2}\log \left(3\cos x + 2\sin x \right) +C\\
 \end{align}</tex>
-    <reason>\int \dfrac{1}{x}.dx = \log \left|x\right| + C</reason>
+    <reason>\int \dfrac{1}{x}\, dx = \log \left|x\right| + C
+\text{ log function is only}\\
+\text{defined for positive values of $x$}</reason>
   </step>
   <choices>
     <tex>\log \left|3\cos x + 2\sin x \right| +C\</tex>

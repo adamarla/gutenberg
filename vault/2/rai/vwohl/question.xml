@@ -8,18 +8,12 @@
 I=\int \dfrac{2x}{1+x^2}dx \text{ to }I=\int \dfrac{1}{t}dt.</context>
     <tex correct='true'>1+x^2=t</tex>
     <tex>1+x=t</tex>
-    <reason>\begin{align}
-1+x^2 =t &amp;\implies 2x\cdot \dfrac{dx}{dt} =1 \\
-                &amp;\implies 2x\cdot dx = dt
-\end{align}
-</reason>
+    <reason>1+x^2 =t \implies 2x\cdot dx = dt \\
+I=\int {\dfrac{2x\, dx}{1+x^2}=\int \dfrac{1}{t}dt</reason>
   </step>
   <step>
-    <context>\begin{align}
-  I &amp;=\int \dfrac{2x}{1+x^2}dx =\int \dfrac{1}{t}dt
-    \,(\because 1+x^2=t)    
-\end{align}\\
-\text{Now does this look correct?}</context>
+    <context>\text{If }I =\int \dfrac{2x}{1+x^2}dx =\int \dfrac{1}{t}dt\\
+\text{then does this look correct?}</context>
     <tex correct='true'>\begin{align}
   I &amp;= \int \dfrac{1}{t}dt \\
     &amp;= \ln t + C \\

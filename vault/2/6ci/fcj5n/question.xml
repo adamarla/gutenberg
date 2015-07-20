@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int\dfrac{x^2}{(2+3x^3)^3}dx</tex>
+  </statement>
+  <step>
+    <context>\text{The following substitution would convert} \\
+I=\int\dfrac{x^2}{(2+3x^3)^3}dx \text{ to }I=\int \dfrac{1}{9\, t^3}dt</context>
+    <tex correct='true'>2+3x^3=t</tex>
+    <tex>(2+3x^3)^3=t</tex>
+    <reason>2+3x^3=t \implies 9x^2\, dx=dt \\
+\therefore \int\dfrac{1}{9}\cdot\dfrac{9x^2\, dx}{(2+3x^3)^3}=
+  \int \dfrac{dt}{9\, t^3}</reason>
+  </step>
+  <step>
+    <context>\text{If }I=\int\dfrac{x^2}{(2+3x^3)^3}dx
+  =\int \dfrac{1}{9\, t^3}dt \\
+\text{then does the following look correct?}</context>
+    <tex correct='true'>\begin{align}
+  I&amp;=\int\dfrac{1}{9\, t^3}dt
+      =\dfrac{1}{9}\int t^{-3}dt \\
+   &amp;=-\dfrac{1}{18\, t^2}+C
+      =-\dfrac{1}{18\, (2+3x^3)^2}+C
+\end{align}</tex>
+    <tex>\begin{align}
+  I&amp;=\int\dfrac{1}{9\, t^3}dt
+      =\dfrac{1}{9}\int t^{-3}dt \\
+   &amp;=\dfrac{1}{9\, t^2}+C
+      =\dfrac{1}{9\, (2+3x^3)^2}+C
+\end{align}</tex>
+    <reason>\begin{align}
+  I&amp;=\int\dfrac{1}{9\, t^3}dt
+     =\dfrac{1}{9}\int t^{-3}dt
+     =\dfrac{1}{9}\cdot \dfrac{t^{-2}}{-2}+C \\
+   &amp;=-\dfrac{1}{18\, t^2}+C
+     =-\dfrac{1}{18\, (2+3x^3)^2}+C
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>-\dfrac{1}{9\, (2+3x^3)^2}+C</tex>
+    <tex>\dfrac{1}{18\, (2+3x^3)^2}+C</tex>
+    <tex>\dfrac{1}{9\, (2+3x^3)^2}+C</tex>
+    <tex correct='true'>-\dfrac{1}{18\, (2+3x^3)^2}+C</tex>
+  </choices>
+</question>

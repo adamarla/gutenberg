@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+		\text{Evaluate the following integral}\\
+		\qquad \int_0^\pi \left(\sin^2\frac{x}{2} -\cos^2\frac{x}{2}\right) \cdot dx
+		</tex>
+  </statement>
+  <step>
+    <context>
+			A = \int_0^\pi \left(\sin^2\frac{x}{2} -\cos^2\frac{x}{2}\right) \cdot dx
+			 = \int_a^b\cos Mx\cdot dx, \\
+			 \text{where }M\in\mathbb{N}, M\leq 2.\text{ What are }a,b\text{ and }M?
+			</context>
+    <tex correct="true">
+			M = 1, a = \pi, b = 0
+			</tex>
+    <tex correct="false">
+			M = 2, a = 0, b = \pi
+			</tex>
+    <reason>
+			\begin{align}
+			  \cos 2\theta &amp;= \cos^2\theta - \sin^2\theta \\
+			  &amp;=-(\sin^2\theta - \cos^2\theta) \\
+			  \therefore \sin^2\frac{x}{2} - \cos^2\frac{x}{2} &amp;= 
+			  -\cos \left(2\cdot\frac{x}{2}\right) = -\cos x
+			\end{align} \\
+			\begin{align}
+			  &amp;\implies \int_0^\pi \left(\sin^2\frac{x}{2} -\cos^2\frac{x}{2}\right) \cdot dx \\
+			  &amp;= \underbrace{-\int_0^\pi\cos x\cdot dx = \int_\pi^0\cos x\cdot dx}
+			  _{\int_a^b f(x) dx = -\int_b^a f(x)dx}
+			\end{align} \\
+			\text{Compare }\int_\pi^0\cos x\cdot dx\text{ with }\int_a^b\cos Mx\cdot dx, \\
+			\text{and one can see that }M = 1, a = \pi\text{ and }b = 0.
+			</reason>
+  </step>
+  <step>
+    <context>
+				\text{And so, the value of }\\
+				A = \int_0^\pi \left(\sin^2\frac{x}{2} -\cos^2\frac{x}{2}\right) \cdot dx\text{ is = ?}
+				</context>
+    <tex correct="true">
+				A = 0 
+				</tex>
+    <tex correct="false">
+				A = \pi
+				</tex>
+    <reason>
+				\begin{align}
+				  A &amp;= \int_0^\pi \left(\sin^2\frac{x}{2} -\cos^2\frac{x}{2}\right) \cdot dx
+				  = \int_\pi^0\cos x\cdot dx \\ 
+				  &amp;= \left[\sin x\right]_{\pi}^0 = \sin 0-\sin \pi = 0.
+				\end{align}
+				</reason>
+  </step>
+</question>

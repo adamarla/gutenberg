@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate the function } \\
+\qquad e^{2x} \, \sin x \\
+\text{using integration by parts.}</tex>
+  </statement>
+  <step>
+    <context>\text{Given } \int f(x) \cdot g(x) \, dx  \\
+= f(x) \int \, dx - \int \left[ f'(x) \cdot \int g(x) \, dx \right] \, dx \\
+\text{which is better choice for } f(x) \text{ and } g(x) ?
+</context>
+    <tex correct='true'>f(x) = \sin x \\
+g(x) = e^{2x}</tex>
+    <tex>f(x) = e^{2x}\\
+g(x) = \sin x </tex>
+    <reason>\text{There is a nice rule of thumb - called ILATE - }\\
+\text{that you can use. Let } f(x) \text{ be the function} \\
+\text{that matches first.} \\
+
+\begin{tabular}{|c|c|c|}
+\hline
+I &amp; Inverse &amp;   \\
+\hline
+L  &amp; Logartihmic &amp;  \\
+\hline
+A &amp;Algebraic &amp; \\
+\hline
+T  &amp; Trignometric &amp; \sin x \\
+\hline
+E &amp; Exponential &amp; e^{2x} \\
+\hline
+\end{tabular} \\
+\text{Hence, }
+f(x) = \sin x \text{ and }
+g(x) = e^{2x}</reason>
+  </step>
+  <step>
+    <context>\text{Given } f(x) = \sin x \text{ and }g(x) = e^{2x}\\
+\text{ what does I = \int  f(x) \cdot g(x)  dx \\
+\text{ evaluate to } ?</context>
+    <tex correct='true'>I = \int f(x) \cdot g(x) \, dx  \\ 
+\quad =  \dfrac{e^{2x} \sin x}{2} - \dfrac{1}{2}\int e^{2x}  \cos x \, dx</tex>
+    <tex>I = \int f(x) \cdot g(x) \, dx  \\ 
+\quad =  \dfrac{e^{2x} \sin x}{2} + \dfrac{1}{2}\int e^{2x}  \cos x  \, dx</tex>
+    <reason>\begin{align}
+I &amp;= \int f(x) \cdot g(x) \, dx  \\
+&amp;= f(x) \int \, dx - \int \left[ f'(x) \cdot \int g(x) \, dx \right] \, dx \\
+\implies I 
+&amp;= \sin x  \cdot \int e^{2x} \, dx -  \int \left[ \cos x \int e^{2x} \, dx  \right] \, dx \\
+&amp;= \dfrac{e^{2x} \sin x}{2} - \dfrac{1}{2}\int e^{2x}  \cos x dx
+\end{align} \\
+
+\text{Using, } \dfrac{d}{dx} \sin x = \cos x \text{ and }
+\int e^{2x} dx = \dfrac{e^{2x}}{2}
+
+</reason>
+  </step>
+  <step>
+    <context>\text{If } A = \int e^{2x}  \cos x \, dx \,  \text{ then, what is A ?}</context>
+    <tex correct='true'>A = \dfrac{e^{2x} \cos x}{2} + \dfrac{1}{2}\int e^{2x}  \sin x \, dx</tex>
+    <tex>A = \dfrac{e^{2x} \cos x}{2} - \dfrac{1}{2}\int e^{2x}  \sin x \, dx</tex>
+    <reason>\begin{align}
+A &amp;= \int f(x) \cdot g(x) \, dx  \\
+&amp;= f(x) \int \, dx - \int \left[ f'(x) \cdot \int g(x) \, dx \right] \, dx \\
+\implies A 
+&amp;= \cos x  \cdot \int e^{2x} \, dx -  \int \left[ - \sin x \int e^{2x} \, dx  \right] \, dx \\
+&amp;= \dfrac{e^{2x} \cos x}{2} + \dfrac{1}{2}\int e^{2x}  \sin x dx
+\end{align} \\
+
+\text{Using, } \dfrac{d}{dx} \cos x = - \sin x \text{ and }
+\int e^{2x} dx = \dfrac{e^{2x}}{2}
+
+</reason>
+  </step>
+  <step>
+    <context>\text{If, } A = \int e^{2x}  \cos x \, dx = \dfrac{e^{2x} \cos x}{2} + \dfrac{1}{2}\int e^{2x}  \sin x \, dx \\
+ \text{what does I = } 
+ \dfrac{e^{2x} \sin x}{2} - \dfrac{1}{2}\int e^{2x}  \cos x \, dx \\
+\text{ evaluate to ?}</context>
+    <tex correct='true'>I = \dfrac{e^{2x}}{5}[2 \sin x - \cos x] + C</tex>
+    <tex>I = \dfrac{e^{2x}}{5}[2 \sin x + \cos x] + C</tex>
+    <reason>I = 
+ \dfrac{e^{2x} \sin x}{2} - \dfrac{1}{2}\int e^{2x}  \cos x \, dx \\
+
+=  \dfrac{e^{2x} \sin x}{2} - \dfrac{1}{2} \left[ \dfrac{e^{2x} \cos x}{2} + \dfrac{1}{2}\int e^{2x}  \sin x \, dx  \right]   \\
+
+= \dfrac{e^{2x} \sin x}{2} -   \dfrac{e^{2x} \cos x}{4} - \dfrac{1}{4}\, I    \\
+
+ \implies \dfrac{5}{4}\,  I = \dfrac{e^{2x} \sin x}{2} -   \dfrac{e^{2x} \cos x}{4} \\
+
+\therefore I = \dfrac{e^{2x}}{5}[2 \sin x - \cos x] + C
+
+ </reason>
+  </step>
+  <choices>
+    <tex>\dfrac{e^{2x}}{5}[2 \sin x - \cos x]</tex>
+    <tex>\dfrac{e^{2x}}{5}[2 \sin x + \cos x] + C</tex>
+    <tex>\dfrac{e^{2x}}{3}[2 \sin x - \cos x] + C</tex>
+    <tex correct='true'>\dfrac{e^{2x}}{5}[2 \sin x - \cos x] + C</tex>
+  </choices>
+</question>

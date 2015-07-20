@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int \dfrac{x}{9-4x^2}dx</tex>
+  </statement>
+  <step>
+    <context>\text{The following substitution would convert} \\
+I=\int \dfrac{x}{9-4x^2}dx \text{ to }
+  I=\int -\dfrac{1}{8t}dt</context>
+    <tex correct='true'>9-4x^2=t</tex>
+    <tex>3-2x=t</tex>
+    <reason>9-4x^2=t\implies -8x\, dx=dt \\
+\therefore\int -\dfrac{1}{8}\cdot\dfrac{-8x\, dx}{9-4x^2}=
+  \int -\dfrac{dt}{8t}=\int -\dfrac{1}{8t}dt</reason>
+  </step>
+  <step>
+    <context>\text{If }I=\int \dfrac{x}{9-4x^2}dx=\int -\dfrac{1}{8t}dt \\
+\text{then does the following look correct?}</context>
+    <tex correct='true'>\begin{align}
+  I &amp;=\int -\dfrac{1}{8t}dt
+      =-\dfrac{1}{8}\log |t| + C \\
+    &amp;= -\dfrac{1}{8}\log |9-4x^2| + C
+\end{align}</tex>
+    <tex>\begin{align}
+  I &amp;=\int -\dfrac{1}{8t}dt
+      =-\dfrac{1}{8}\log (t) + C \\
+    &amp;= -\dfrac{1}{8}\log (9-4x^2) + C
+\end{align}</tex>
+    <reason>\int \dfrac{1}{x}dx=\log|x|+C \text{ since log function is}\\
+\text{only valid for positive values of x}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>-\dfrac{1}{8}\log |9-4x^2| + C</tex>
+    <tex>-\dfrac{1}{8}\log (9-4x^2) + C</tex>
+    <tex>\dfrac{1}{8}\log |9-4x^2| + C</tex>
+    <tex>\dfrac{1}{8}\log (9-4x^2) + C</tex>
+  </choices>
+</question>

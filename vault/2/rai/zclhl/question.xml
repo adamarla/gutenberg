@@ -5,7 +5,7 @@
   </statement>
   <step>
     <context>\text{The following substition would convert}\\
-I=\int \dfrac{1}{x+x\log x}dx \text{ to }\int\dfrac{1}{t}dt</context>
+I=\int \dfrac{1}{x+x\log x}dx \text{ to }I=\int\dfrac{1}{t}dt</context>
     <tex correct='true'>1+\log x=t</tex>
     <tex>x\log x = t</tex>
     <reason>\begin{align}

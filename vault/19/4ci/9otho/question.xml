@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int \sqrt{\sin 2 x} \cdot \cos 2x\, dx</tex>
+  </statement>
+  <step>
+    <context>\text{The following substitution would convert}\\
+I=\int \sqrt{\sin 2 x} \cdot \cos 2 x  \,dx
+\rightarrow \int \dfrac{1}{2} \sqrt{t} \, dt </context>
+    <tex correct='true'>\sin 2 x =t</tex>
+    <tex>\cos 2x = t</tex>
+    <reason>\sin 2 x =t \implies 2 \cos 2x  \cdot dx= dt \\
+\therefore \int\dfrac{1}{2}\sqrt{\sin 2 x}\cdot 2\cos 2 x  \,dx
+  =\int \dfrac{1}{2} \sqrt{t}\, dt</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{If }I=\int \sqrt{\sin 2 x} \cdot \cos 2 x  \,dx
+= \int \dfrac{1}{2} \sqrt{t}\, dt \\
+\text{then does this look correct?}</context>
+    <tex correct='true'>\begin{align}
+  I &amp;= \int  \dfrac{1}{2} \sqrt{t} \, dt   = \dfrac{1}{2} \int  \sqrt{t} \, dt  \\
+    &amp;= \dfrac{1}{2} \left[ \frac{t^{3/2}}{3/2} \right] + C 
+   = \dfrac{1}{3} t^{3/2} + C \\
+    &amp;= \dfrac{1}{3} (\sin 2 x)^{3/2} + C    
+\end{align}</tex>
+    <tex>\begin{align}
+  I &amp;= \int  \dfrac{1}{2} \sqrt{t} \, dt   = \dfrac{1}{2} \int  \sqrt{t} \, dt  \\
+    &amp;= \dfrac{1}{2} \cdot {t^{3/2}} + C  \\
+    &amp;= \dfrac{1}{2} (\sin 2 x)^{3/2} + C
+    
+\end{align}</tex>
+    <reason>\int a \cdot x^n \, dx = a \int x^n  \, dx= a \cdot \left[ \dfrac{x^{n+1}}{n+1} \right] + C</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{2}{3} (\sin 2 x)^{3/2} + C</tex>
+    <tex>\dfrac{1}{3} (\sin 2 x)^{3/2} </tex>
+    <tex>\dfrac{2}{3} (\sin 2 x)^{3/2}</tex>
+    <tex correct='true'>\dfrac{1}{3} (\sin 2 x)^{3/2} + C</tex>
+  </choices>
+</question>
