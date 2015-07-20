@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Evaluate the integral }\\
+\int_{-5}^{5}\left|x+2\right|\cdot dx\\
+\text{Using properties of definite integrals.}</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the following definitions of }\left|x+2\right|\\
+\text{is correct?}</context>
+    <tex correct='true'>\left|x+2\right|= \begin{cases}
+						-\left(x+2\right), &amp; x\in [-5,-2)\\
+						\left(x+2\right),	  &amp;x\in [-2,5]	
+					
+					\end{cases}</tex>
+    <tex>\left|x+2\right|= \begin{cases}
+						-\left(x+2\right), &amp; x\in [-5,0)\\
+						\left(x+2\right),	  &amp;x\in [0,5]	
+					
+					\end{cases}</tex>
+    <reason>\left|x+2\right| = -\left(x+2\right)\text{ when }x+2 \lt 0\implies x\lt-2\\
+\begin{align}
+\text{Similarly }\left|x+2\right| =\left(x+2\right)\text{ when }&amp;x+2\geq 0\\
+&amp;\implies x\geq 0
+\end{align}\\
+\text{Hence, the interval }\left[-5,5\right]\text{is broken in two at}\\ x=2</reason>
+  </step>
+  <step>
+    <context>\text{Has the integral }A = \int_{5}^{-5} \left|x+2\right|dx \text{ been}\\
+\text{re - written correctly below?}\\
+</context>
+    <tex correct='true'>\begin{align}
+A &amp;= \int_{-5}^{5}\left|x+2\right|.dx\\
+&amp;=\int_{-5}^{-2}-\left(x+2\right).dx + \int_{-2}^{5}\left(x+2\right).dx
+\end{align}</tex>
+    <reason>f \left(x\right) = \left|x+5\right| \text{ is computed differently in}\\
+[-5,2) \text{ and }[-2,5]\\
+\begin{align}
+\text{So, }A &amp;= \int_{-5}^{5}f \left(x\right).dx\\
+&amp;=\int_{-5}^{-2}f_1 \left(x\right).dx + \int_{-2}^{5}f_2 \left(x\right).dx\\
+\end{align}\\
+
+\text{Where }f_1 \left(x\right) = -\left(x+2\right)\text{ and }f_2 \left(x\right) = \left(x+2\right)</reason>
+  </step>
+  <step>
+    <context>\text{What will }A = \int_{-5}^{5}\left|x+2\right|.dx \text{ evaluate to?}</context>
+    <tex correct='true'>A=29</tex>
+    <tex>A=27</tex>
+    <reason>\begin{align}
+A &amp;= \int_{-5}^{5}\left|x+2\right|.dx\\
+&amp;= \int_{-5}^{-2}-\left(x+2\right).dx + \int_{-2}^{5}\left(x+2\right).dx\\
+&amp;=\left[-\dfrac{x^2}{2}-2x\right]_{-5}^{-2}+\left[\dfrac{x^2}{2}+2x\right]\\
+&amp;=\left[\underbrace{\left(-2+4\right)}_{x=-2}+\underbrace{\left(\dfrac{-25}{2}+10\right)}_{x=-5}\right]+\\
+&amp;\quad\left[\underbrace{\left(\dfrac{25}{10}+10\right)}_{x=5}-\underbrace{\left(2-4\right)}_{x=-2}\right]\\
+&amp;=29
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>29</tex>
+    <tex>27</tex>
+    <tex>-27</tex>
+    <tex>-29</tex>
+  </choices>
+</question>
