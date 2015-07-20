@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+			\text{Evaluate the following integral} \\
+			\qquad \int_0^\frac\pi{2} (2\log\sin x - \log \sin 2x)\cdot dx 
+		</tex>
+  </statement>
+  <step>
+    <context>
+			2\log\sin x - \sin 2x = P\cdot\log\sin x + Q\cdot\log\cos x \\
+			+R\cdot\log 2.\text{ What are }P,Q\text{ and }R?
+			</context>
+    <tex correct="true">
+			\begin{tabular}{c|c|c}
+			P &amp; Q &amp; R \\
+			\hline
+			1 &amp; -1 &amp; -1 \\
+			\hline
+			\end{tabular}
+			</tex>
+    <tex correct="false">
+			\begin{tabular}{c|c|c}
+			P &amp; Q &amp; R \\
+			\hline
+			1 &amp; 1 &amp; 1 \\
+			\hline
+			\end{tabular}
+			</tex>
+    <reason>
+			\begin{align}
+			  &amp;2\log\sin x - \log \sin 2x \\
+			  &amp;= 2\log\sin x - \log (2\sin x\cdot\cos x) \\
+			  &amp;= 2\log\sin x - (\log 2 + \log\sin x + \log\cos x) \\ 
+			  &amp;= \log\sin x - \log\cos x - \log 2 \\
+			  &amp;\implies P = 1 \text{ and } Q = R = -1.
+			\end{align}
+			</reason>
+  </step>
+  <step>
+    <context>
+  		\text{Are the analysis and calculations} \\
+  		\text{below correct?}
+  		</context>
+    <tex correct="true">
+  		\begin{align}
+  		&amp;A = \int_0^\frac\pi{2} (2\log\sin x - \log \sin 2x)\cdot dx \\
+  		&amp;= \int_0^\frac\pi{2}(\log\sin x-\log\cos x - \log 2)\cdot dx \\
+  		&amp;= \int_0^\frac\pi{2}(\log\cos x - \log\sin x - \log 2)\cdot dx \\
+  		&amp;\implies A + A = \int_0^\frac\pi{2} -2\log 2\cdot dx \\
+  		&amp;= -2\cdot\log 2\cdot\frac{\pi}{2} \implies A = -\log 2\cdot\frac\pi{2} \\
+  		&amp;= \frac\pi{2}\cdot\log 2^{-1} = \frac\pi{2}\cdot\log\frac{1}{2}
+  		\end{align}
+  		</tex>
+    <reason>
+  		\text{In }A = \int_0^\frac\pi{2}(\log\sin x-\log\cos x-\log 2)\cdot dx, \\
+  		\text{we have a }\sin x,\text{ a }\cos x\text{ and a }\frac\pi{2}. \\
+  		\text{Given that }\sin x = \cos \left(\frac{\pi}{2} -x \right)\\ 
+  		\text{ and }\cos x = \sin \left(\frac{\pi}{2}-x\right)\text{ we should be} \\
+  		\text{thinking about }\int_0^a f(x)\cdot dx = \int_0^a f(a-x)\cdot dx.
+  		</reason>
+  </step>
+</question>
