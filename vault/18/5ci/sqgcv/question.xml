@@ -21,9 +21,9 @@
     <reason>\left|x+2\right| = -\left(x+2\right)\text{ when }x+2 \lt 0\implies x\lt-2\\
 \begin{align}
 \text{Similarly }\left|x+2\right| =\left(x+2\right)\text{ when }&amp;x+2\geq 0\\
-&amp;\implies x\geq 0
+&amp;\implies x\geq -2
 \end{align}\\
-\text{Hence, the interval }\left[-5,5\right]\text{is broken in two at}\\ x=2</reason>
+\text{Hence, the interval }\left[-5,5\right]\text{is broken in two at}\\ x=-2</reason>
   </step>
   <step>
     <context>\text{Has the integral }A = \int_{5}^{-5} \left|x+2\right|dx \text{ been}\\
@@ -33,7 +33,7 @@
 A &amp;= \int_{-5}^{5}\left|x+2\right|.dx\\
 &amp;=\int_{-5}^{-2}-\left(x+2\right).dx + \int_{-2}^{5}\left(x+2\right).dx
 \end{align}</tex>
-    <reason>f \left(x\right) = \left|x+5\right| \text{ is computed differently in}\\
+    <reason>f \left(x\right) = \left|x+2\right| \text{ is computed differently in}\\
 [-5,2) \text{ and }[-2,5]\\
 \begin{align}
 \text{So, }A &amp;= \int_{-5}^{5}f \left(x\right).dx\\
@@ -49,8 +49,8 @@ A &amp;= \int_{-5}^{5}\left|x+2\right|.dx\\
     <reason>\begin{align}
 A &amp;= \int_{-5}^{5}\left|x+2\right|.dx\\
 &amp;= \int_{-5}^{-2}-\left(x+2\right).dx + \int_{-2}^{5}\left(x+2\right).dx\\
-&amp;=\left[-\dfrac{x^2}{2}-2x\right]_{-5}^{-2}+\left[\dfrac{x^2}{2}+2x\right]\\
-&amp;=\left[\underbrace{\left(-2+4\right)}_{x=-2}+\underbrace{\left(\dfrac{-25}{2}+10\right)}_{x=-5}\right]+\\
+&amp;=\left[-\dfrac{x^2}{2}-2x\right]_{-5}^{-2}+\left[\dfrac{x^2}{2}+2x\right]_{-2}^{5}\\
+&amp;=\left[\underbrace{\left(-2+4\right)}_{x=-2}-\underbrace{\left(\dfrac{-25}{2}+10\right)}_{x=-5}\right]+\\
 &amp;\quad\left[\underbrace{\left(\dfrac{25}{10}+10\right)}_{x=5}-\underbrace{\left(2-4\right)}_{x=-2}\right]\\
 &amp;=29
 \end{align}</reason>

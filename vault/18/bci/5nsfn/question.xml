@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Evaluate the integral }\\
+\int_{0}^{2} x\cdot \sqrt{2-x}\cdot dx\\
+\text{Using properties of definite integrals.}</tex>
+  </statement>
+  <step>
+    <context>\text{Your friend makes the following two claims }\textemdash\\
+\text{only one of which is correct. Which one?}</context>
+    <tex correct='true'>\int_{0}^{a}f \left(x\right)\cdot dx = \int_{0}^{a}f \left(a-x\right)\cdot dx</tex>
+    <tex>\int_{0}^{a}f \left(x\right)\cdot dx = \int_{0}^{a}f \left(a-x\right)\cdot dx \\
+\implies \int f \left(x\right)\cdot dx = \int f \left(a-x\right)\cdot dx</tex>
+    <reason>\text{Just because the area under the curve is the }\\
+\text{same does \textbf{not } mean that the curves are the}\\
+\text{same. Just because area of a square}=\text{ area }\\
+\text{of some circle, does not mean the square is a}\\
+\text{circle.}
+\text{Hence, only }\int_{0}^{a}f \left(x\right).dx = \int_{0}^{a} f \left(a-x\right)dx\\
+\text{is true.Nothing else. }</reason>
+  </step>
+  <step>
+    <context>\text{Are the analysis and calculations below correct?}</context>
+    <tex correct='true'>\begin{align}
+A &amp;= \int_{0}^{2}x\sqrt{2-x}\cdot dx \\
+&amp;= \int_{0}^{2}\left(2-x\right)\sqrt{2-\left(2-x\right).dx}\\
+&amp;= \int_{0}^{2}\left(2-x\right)\sqrt{x}\cdot dx = 2\int_{0}^{2}\sqrt{x}.dx-\int_{0}^{2}x^{\dfrac{3}{2}}.dx\\
+&amp;=2 \left[\dfrac{2}{3}x^{\dfrac{3}{2}}\right]_{0}^{2}-\left[\dfrac{2}{5}x^{\dfrac{5}{2}}\right]_{0}^{2}=\dfrac{16\sqrt{2}}{15}
+\end{align}</tex>
+    <reason>\begin{align}
+\text{Find }f \left(2-x\right) \text{ to be }&amp;= \left(2-x\right)\sqrt{2-\left(2-x\right)}\\
+&amp;=\left(2-x\right)\sqrt{x}
+\end{align}\\
+\text{Then, apply the fact that }\\
+\int_{0}^{a}f \left(x\right)dx = \int_{0}^{a}f \left(a-x\right)dx</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{32}{15}</tex>
+    <tex correct='true'>\dfrac{16\sqrt{2}}{15}</tex>
+    <tex>\dfrac{8\sqrt{2}}{15}</tex>
+    <tex>-\dfrac{16\sqrt{2}}{15}</tex>
+  </choices>
+</question>
