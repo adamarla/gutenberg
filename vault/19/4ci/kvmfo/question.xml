@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Evaluate the integral } \\
+\quad A = \int^{1}_{0} \dfrac{x}{x^2 +1} \, dx \\
+\text{using substitution.}</tex>
+  </statement>
+  <step>
+    <context>\text{If }\int^{1}_{0} \dfrac{x}{x^2 +1} \, dx 
+= \lambda \cdot \int^{n}_{m} \dfrac{dt}{t(x)} \\
+\text{what are } \lambda , m, n \text{ and } t(x) ?</context>
+    <tex correct='true'>\begin{align}
+
+t(x) &amp;= x^2 + 1 \\
+\lambda &amp;= \dfrac{1}{2} \\
+m &amp;= 1 \\
+n &amp;=2
+\end{align}</tex>
+    <tex>\begin{align}
+t(x) &amp;= x^2 + 1 \\
+\lambda &amp;= 1 \\
+m &amp;= 0 \\
+n &amp;=1
+\end{align}</tex>
+    <reason>\text{If } t= x^2 + 1, \text{ then } dt = 2x \cdot dx \implies
+x \cdot dx = \dfrac{dt}{2} \\
+\text{Also, when } x=0, t=1 \text{ and when } x=1, t=2 \\
+\therefore \int^{1}_{0} \dfrac{x}{x^2 +1} \, dx 
+= \dfrac{1}{2} \int^{2}_{1} \dfrac{dt}{t} \\
+\text{Comparison with } \lambda \cdot \int^{n}_{m} \dfrac{dt}{t(x)} 
+\text{ gives, }\\
+\lambda = \dfrac{1}{2}, m =1 , n =2</reason>
+  </step>
+  <step>
+    <context>\text{And so, what does A evaluate to, i.e.}\\
+A = \int^{1}_{0} \dfrac{x}{x^2 +1} \, dx = ?\\</context>
+    <tex correct='true'>A = \dfrac{1}{2} \log 2</tex>
+    <tex>A = \log \frac{1}{2}</tex>
+    <reason>\begin{align}
+
+A &amp;= \int^{1}_{0} \dfrac{x}{x^2 +1} \, dx = \dfrac{1}{2}\int^{2}_{1} \frac{dt}{t} \\
+&amp;= \dfrac{1}{2} \left[  \log t \frac{}{} \right]_{1}^{2} = 
+\dfrac{1}{2} \left[ \, \log 2 - \underbrace{\log 1}_{=\, 0}\, \right] \\
+&amp;= \dfrac{1}{2} \log 2
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>\log \frac{1}{2}</tex>
+    <tex>\dfrac{1}{2} \log 2 + C</tex>
+    <tex> \log 2</tex>
+    <tex correct='true'>\dfrac{1}{2} \log 2</tex>
+  </choices>
+</question>

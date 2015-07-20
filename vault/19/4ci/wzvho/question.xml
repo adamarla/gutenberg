@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Evaluate the integral } \\
+\quad  \int^{\pi /2}_{0} \sqrt{\sin \phi}\cos^5 \phi \, d \phi \\
+\text{using substitution.}</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the following is mathematically correct}?</context>
+    <tex correct='true'>\begin{align}
+
+A &amp;= \int^{\pi /2}_{0} \sqrt{\sin \phi}\cos^5 \phi \, d \phi \\
+&amp;=  \int^{\pi /2}_{0} \sqrt{\sin \phi} \cdot (1 - \sin \phi)^2 \cdot \cos \phi \, d \phi 
+\end{align}</tex>
+    <tex>A = \int^{\pi /2}_{0} \sqrt{\sin \phi}\cos^5 \phi \, d \phi \\
+ \left[ \text{Using, }1 - \sin^4 \phi = (1 - \sin^2 \phi)(1 + \sin^2 \phi)  \right] \\
+ = 
+ \int^{\pi /2}_{0} \sqrt{\sin \phi} \cdot (1 - \sin^2 \phi) (1 + \sin^2 \phi) \cos \phi \, d \phi \\ 
+</tex>
+    <reason>\begin{align}
+
+\text{Only } \cos^2 \phi &amp;= 1 - \sin^2 \phi \\
+\implies \cos^4 \phi &amp;= (1 - \sin^2 \phi)^2 
+\end{align} \\
+
+\begin{align}
+\therefore A &amp;=  \int^{\pi /2}_{0} \sqrt{\sin \phi}\cos^5 \phi \, d \phi \\
+&amp;=  \int^{\pi /2}_{0} \sqrt{\sin \phi} \cdot (1 - \sin \phi)^2 \cdot \cos \phi
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{If } t = \sin \phi \, , \text{ then, which of the following is the}\\
+\text{integral in terms of t}?</context>
+    <tex correct='true'>A = \int_{0}^{1} \left( \sqrt{t} - 2 t^{5/2} + t^{9/2}  \right) \, dt</tex>
+    <tex>A = \int_{0}^{1} \left( t^{1/2} - t^{9/2}\right) \, dt</tex>
+    <reason>
+
+\text{If } t = \sin \phi \, , \text{ then } dt = \cos \phi \cdot d \phi \\
+\therefore A =  \int^{\pi /2}_{0} \sqrt{\sin \phi} \cdot (1 - \sin^2 \phi)^2 \cdot \cos \phi \, d \phi \\
+= \int_{0}^{1} \sqrt{t} \left( 1 - t^2 \right)^2 \, dt 
+= \int_{0}^{1} t^{1/2} \left( 1 - 2t^2 + t^4 \right) \, dt \\
+= \int_{0}^{1} \left( \sqrt{t} - 2 t^{5/2} + t^{9/2}  \right) \, dt
+</reason>
+  </step>
+  <step>
+    <context>\text{And thus, }A =?</context>
+    <tex correct='true'>A =\dfrac{64}{231}</tex>
+    <tex>A =\dfrac{30}{77}</tex>
+    <reason>
+\begin{align}
+A &amp;= \int_{0}^{1} \left( \sqrt{t} - 2 t^{5/2} + t^{9/2}  \right) \, dt \\
+&amp;= \left[ \dfrac{t^{3/2}}{\left( \frac{1}{2} + 1 \right) }  - \dfrac{2 t^{\left( \frac{5}{2} + 1 \right) }}{\left(  \frac{5}{2}+1  \right) } + \dfrac{t^{\left( \frac{9}{2} + 1 \right) }}{\left(  \frac{9}{2} + 1 \right) } \right]_{0}^{1} \\
+&amp;= \left[  \dfrac{2}{3} t^{(3/2)}  - \dfrac{4}{7} t^{(7/2)}   + \dfrac{2}{11} t^{(11/2)}    \right]^{1}_{0} \\
+&amp;= \dfrac{2}{3} - \dfrac{4}{7} + \dfrac{2}{11} 
+= \dfrac{64}{231}
+\end{align}
+
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{64}{231}</tex>
+    <tex>\dfrac{30}{77}</tex>
+    <tex>\dfrac{30}{77} + C</tex>
+    <tex>\dfrac{46}{231}</tex>
+  </choices>
+</question>

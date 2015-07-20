@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Evaluate the following integral} \\
+\qquad \int_{0}^{\pi / 4}  \log (1 + \tan x)\, dx \,</tex>
+  </statement>
+  <step>
+    <context>\text{If $ f(x) = \log (1+\tan x) , $ then what is }
+f\left( \frac{\pi}{4}- x\right)?</context>
+    <tex correct='true'>\log 2 - \log|1+\tan x |</tex>
+    <tex>- \log |1 + \tan x|</tex>
+    <reason>\begin{align}
+
+f(x) &amp;= \log |1 +\tan x | \\
+\implies f\left( \frac{\pi}{4}- x\right) &amp;= 
+\log \left| 1 + \tan \left( \frac{\pi}{4}- x\right)  \right| \\
+&amp;= \log \left[ 1 + \frac{\tan (\pi / 4) - \tan x }{1 + \tan (\pi / 4) \cdot \tan x }\right]\\
+\end{align} \\
+= \log \left[ 1 + \frac{1 - \tan x }{1 + \tan x} \right] 
+= \log \left[ \frac{2}{1 + \tan x} \right] \\
+= \log 2 - \log|1 + \tan x| \\
+
+\text{We used, $tan(A-B) = \dfrac{\tan A - \tan B}{1 + \tan A \cdot \tan B}}
+
+
+</reason>
+  </step>
+  <step>
+    <context>\text{Is the following analysis correct}?</context>
+    <tex correct='true'>\begin{align}
+
+A &amp;= \int^{\pi /4}_{0} \log |1+\tan x| \, dx \\
+&amp;= \int ^{\pi /4}_{0} \left[ \log 2 - \log|1 + \tan x| \right] \, dx \\
+&amp;=  \int ^{\pi /4}_{0} \log 2 \, dx -  \underbrace{\int ^{\pi /4}_{0} \log |1 + \tan x| \, dx}_{A} \\
+\therefore 2 A &amp;= \log 2  \int ^{\pi /4}_{0} dx = \dfrac{\pi }{4} \log 2 \\
+\implies A &amp;= \dfrac{\pi}{8} \log 2
+\end{align}
+
+</tex>
+    <reason>\text{Given } f\left( \frac{\pi}{4}- x\right) = \log 2 - \log |1 + \tan x| \\
+\text{We can see that }
+A = \int^{\pi /4}_{0} \log 2 \, dx - A \\
+\quad \quad  \implies A = \dfrac{1}{2} \int^{\pi /4}_{0} \log 2 \, dx = \dfrac{\pi}{8} \log 2</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{1}{(n+1)(n+2)}</tex>
+    <tex>\dfrac{2n+3}{(n+1)(n+2)}</tex>
+    <tex>\dfrac{1}{n(n+1)}</tex>
+    <tex>\dfrac{1}{(n+1)(n+2)} + C</tex>
+  </choices>
+</question>
