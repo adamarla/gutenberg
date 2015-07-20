@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Evaluate the integral }\\
+\int_{-1}^{1}\dfrac{dx}{x^2 + 2x +5 }\\
+\text{Using substitution.}</tex>
+  </statement>
+  <step>
+    <context>x^2 + 2x +5 = \left(x+a\right)^2 +b^2, a,b \in \mathbb{N}\\
+\text{What are a and b?}</context>
+    <tex correct='true'>\begin{align}
+a &amp;=1\\
+b&amp;=2
+\end{align}</tex>
+    <tex>\begin{align}
+a &amp;=2\\
+b&amp;=1
+\end{align}</tex>
+    <reason>\begin{align}
+x^2 + 2x +5 &amp;= \left(x^2 + 2x +1 \right) + 4\\
+&amp;=\left(x+1\right)^2 +2^2
+\end{align}\\
+\text{Compare with }\left(x+a\right)^2+b^2 \text{ and it's obvious}\\
+\text{that }a =1 \text{ and }b=2</reason>
+  </step>
+  <step>
+    <context>\text{If }\int_{-1}^{1} \dfrac{dx}{x^2 +2x +5} = \int_{m}^{n}\dfrac{dt}{t^2+c^2},\text{then}\\
+\text{What are m, n, }t\left(x\right)\text{ and }c?</context>
+    <tex correct='true'>\begin{align}
+m &amp;= 0\\
+n &amp;= 2\\
+t \left(x\right) &amp;= x+1\\
+c &amp;=2
+\end{align}</tex>
+    <tex>\begin{align}
+m &amp;= 2\\
+n &amp;= 0\\
+t \left(x\right) &amp;= x+1\\
+c &amp;=2
+\end{align}</tex>
+    <reason>\int \dfrac{dx}{x^2+2x + 5}  =\int \dfrac{dx}{\left(x+1\right)^2 + 2^2},\text{if } x +1=t,\\
+\text{then }dx =dt.\\
+\implies I = \int \dfrac{dx}{x^2+2x + 5} = \int \dfrac{dx}{\left(x+1\right)^2 +2^2}\\
+\implies t \left(x\right) = \left(x+1\right) \text{ and }c =2\\
+\text{Moreover }t=0 \text{ when }x =-1\text{ and }t = 2 \text{ when}\\x=1.\\
+\therefore A =\int_{-1}^{1}\dfrac{dx}{x^2+2x+5} = \int_{0}^{2} \dfrac{dt}{t^2+2^2}</reason>
+  </step>
+  <step>
+    <context>\text{Therefore, what does A evaluate to ?}</context>
+    <tex correct='true'>A = \dfrac{\pi}{8}</tex>
+    <tex>A = \dfrac{\pi}{4}</tex>
+    <reason>\begin{align}
+A = \underbrace{\int_{0}^{2}\dfrac{dt}{t^2 + 2^2}}_{\int \frac{dx}{x^2 +a^2} = \frac{1}{a}\tan^{-1}\frac{x}{a}} &amp;= \left[\frac{1}{2}\tan^{-1} \frac{t}{2}\right]_{0}^{2}\\
+&amp;=\dfrac{1}{2}\left[\tan^{-1} 1 - \tan^{-1} 0\right]\\
+&amp;=\dfrac{1}{2}\dfrac{\pi}{4}=\dfrac{\pi}{8}
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{\pi}{4}</tex>
+    <tex>-\dfrac{\pi}{8}</tex>
+    <tex>-\dfrac{\pi}{4}</tex>
+    <tex>\dfrac{\pi}{8}</tex>
+  </choices>
+</question>
