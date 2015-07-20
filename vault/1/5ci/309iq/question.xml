@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+			\text{Evaluate the following integral}\\
+			\qquad \int_0^\frac\pi{2} \dfrac{\sin^\frac{3}{2} x}{\sin^\frac{3}{2} x + \cos^\frac{3}{2} x}\cdot dx 
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\text{Your friend claims that }\\
+			A = \int_0^\frac\pi{2} \dfrac{\sin^\frac{3}{2} x}{\sin^\frac{3}{2} x + \cos^\frac{3}{2} x}\cdot dx \\
+			 = \int_0^\frac\pi{2} \dfrac{\cos^\frac{3}{2} x}{\cos^\frac{3}{2} x + \sin^\frac{3}{2} x}\cdot dx .\\
+			\text{Is he/she correct in saying so?}
+			</context>
+    <tex correct="true">
+			\textbf{Yes. }\text{ And because, }\\
+			\begin{align}
+			\int_0^\frac\pi{2} f(x)\cdot dx &amp;= \int_0^\frac\pi{2} f(\frac\pi{2}-x)\cdot dx \\
+			\text{and }\dfrac{\cos^\frac{3}{2} x}{\cos^\frac{3}{2} x + \sin^\frac{3}{2} x} &amp;= f\left(\frac{\pi}{2}-x\right)
+			\end{align}
+			\qquad 
+			</tex>
+    <tex correct="false">
+			\textbf{No. }\text{And how can it be so? }\\
+			\dfrac{\cos^\frac{3}{2} x}{\cos^\frac{3}{2} x + \sin^\frac{3}{2} x}\text{ and }
+			\dfrac{\sin^\frac{3}{2} x}{\sin^\frac{3}{2} x + \cos^\frac{3}{2} x}\\
+			\text{are two completely different functions.}
+			</tex>
+    <reason>
+			\int_0^a f(x)\cdot dx = \int_0^a f(a-x)\cdot dx\text{ is a known}\\
+			\text{property of integrals. Therefore, }\\
+			\begin{align}
+			  &amp;\int_0^\frac\pi{2} \dfrac{\sin^\frac{3}{2} x}{\sin^\frac{3}{2} x + \cos^\frac{3}{2} x}\cdot dx \\
+        &amp;=\int_0^\frac\pi{2} \dfrac{\sin^\frac{3}{2} \left(\frac\pi{2}-x\right)}
+        {\sin^\frac{3}{2} \left(\frac\pi{2}-x\right) + \cos^\frac{3}{2} \left(\frac\pi{2}-x\right)}\cdot dx \\
+			  &amp;=\int_0^\frac\pi{2}\dfrac{\cos^\frac{3}{2} x}{\cos^\frac{3}{2} x + \sin^\frac{3}{2} x}\cdot dx
+			\end{align}
+			</reason>
+  </step>
+  <step>
+    <context>
+				\text{Is the following analysis correct?}
+				</context>
+    <tex correct="true">
+				\begin{align}
+        A &amp;= \int_0^\frac\pi{2} \dfrac{\sin^\frac{3}{2} x}{\sin^\frac{3}{2} x + \cos^\frac{3}{2} x}\cdot dx \\
+        &amp;= \int_0^\frac\pi{2}\dfrac{\cos^\frac{3}{2} x}{\cos^\frac{3}{2} x + \sin^\frac{3}{2} x}\cdot dx \\
+        \implies A + A &amp;= \int_0^\frac\pi{2} 
+        \dfrac{\sin^\frac{3}{2} x + \cos^\frac{3}{2} x}{\sin^\frac{3}{2} x + \cos^\frac{3}{2} x}\cdot dx \\
+				  &amp;= \int_0^\frac\pi{2} dx = \frac\pi{2} \\
+				  \implies A &amp;= \frac{\pi}{4}
+				\end{align}
+				</tex>
+    <reason>
+				\text{Simply use the fact that,  }\\
+				\int_a^b f(x)\cdot dx + \int_a^b g(x) \cdot dx = \int_a^b [f(x) + g(x)] \cdot dx.
+				</reason>
+  </step>
+</question>
