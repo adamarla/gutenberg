@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int\dfrac{\sin x}{(1+\cos x)^2}\, dx</tex>
+  </statement>
+  <step>
+    <context>\text{The following substitution would convert} \\
+I=\int\dfrac{\sin x}{(1+\cos x)^2}\, dx 
+  \text{ to }I=\int-\dfrac{dt}{t^2}</context>
+    <tex correct='true'>1+\cos x=t</tex>
+    <tex>(1+\cos x)^2=t</tex>
+    <reason>1+\cos x=t \implies -\sin x\, dx=dt \\
+\int-\dfrac{-\sin x\, dx}{(1+\cos x)^2}=\int-\dfrac{dt}{t^2}</reason>
+  </step>
+  <step>
+    <context>\text{If }I=\int\dfrac{\sin x}{(1+\cos x)^2}\, dx=\int-\dfrac{dt}{t^2} \\
+\text{then does the following look correct?}</context>
+    <tex correct='true'>\begin{align}
+  I&amp;=\int-\dfrac{1}{t^2}\, dt =-\int t^{-2}\, dt \\
+   &amp;=-\dfrac{t^{-1}}{-1}+C = \dfrac{1}{t}+C \\ 
+   &amp;= \dfrac{1}{1+\cos x}+C
+\end{align}</tex>
+    <tex>\begin{align}
+  I&amp;=\int-\dfrac{1}{t^2}\, dt =-\int t^{-2}\, dt \\
+   &amp;=-\dfrac{t^{-3}}{-3}+C = \dfrac{1}{3t^3}+C \\ 
+   &amp;= \dfrac{1}{3(1+\cos x)^3}+C
+\end{align}</tex>
+    <reason>\int x^{n}\, dx=\dfrac{x^{n+1}}{n+1}+C,\, \forall\, n \in \mathbb{R} </reason>
+  </step>
+  <choices>
+    <tex>= \dfrac{1}{3(1+\cos x)^3}+C</tex>
+    <tex>= \dfrac{1}{\cos x}+C</tex>
+    <tex correct='true'>= \dfrac{1}{1+\cos x}+C</tex>
+    <tex>= \dfrac{1}{1+\cos x}</tex>
+  </choices>
+</question>

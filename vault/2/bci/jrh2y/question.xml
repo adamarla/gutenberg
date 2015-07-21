@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int \dfrac{e^{\tan^{-1}x}}{1+x^2}\, dx</tex>
+  </statement>
+  <step>
+    <context>\text{The following substitution would convert} \\
+I=\int \dfrac{e^{\tan^{-1}x}}{1+x^2}\, dx \text{ to }
+  I=\int e^t\, dt</context>
+    <tex correct='true'>\tan^{-1}x=t</tex>
+    <tex>e^{\tan^{-1}x}=t</tex>
+    <reason>\tan^{-1}x=t\implies \dfrac{1}{1+x^2}dx=dt \\
+\therefore \int e^{\tan^{-1}x}\cdot\dfrac{1}{1+x^2}dx  
+  =\int e^t\, dt</reason>
+  </step>
+  <step>
+    <context>\text{If }I=\int \dfrac{e^{\tan^{-1}x}}{1+x^2}\, dx 
+  =\int e^t\, dt \\
+  \text{then is the following correct?}</context>
+    <tex correct='true'>I=\int e^t\, dt=e^t+C=e^{\tan^{-1}x}+C</tex>
+    <tex>I=\int e^t\, dt=e^t=e^{\tan^{-1}x}</tex>
+    <reason>\text{If }\int f(x)\, dx=g(x)\text{ then there are an infinite} \\
+\text{number of functions $h(x)=g(x)+C$, where C} \\
+\text{is a constant, that satisfy }\dfrac{d}{dx}h(x)=f(x).</reason>
+  </step>
+  <choices>
+    <tex correct='true'>e^{\tan^{-1}x}+C</tex>
+    <tex>e^{\tan^{-1}x}</tex>
+    <tex>-e^{\tan^{-1}x}+C</tex>
+    <tex>-e^{\tan^{-1}x}</tex>
+  </choices>
+</question>

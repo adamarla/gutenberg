@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int\dfrac{\sqrt{\tan x}}{\sin x \cos x}\, dx</tex>
+  </statement>
+  <step>
+    <context>\text{The following substitution would convert} \\
+I=\int\dfrac{\sqrt{\tan x}}{\sin x \cos x}\, dx \text{ to }
+  I=\int\dfrac{1}{\sqrt{t}}\, dt</context>
+    <tex correct='true'>\tan x=t</tex>
+    <tex>\sin x\cos x=t</tex>
+    <reason>\dfrac{\sqrt{\tan x}}{\sin x \cos x} 
+  =\dfrac{\sqrt{\tan x}}{\tan x\cos^2 x}
+  =\dfrac{\sec ^2x}{\sqrt{\tan x}} \\
+\tan x=t\implies \sec ^2 x\, dx=dt \\
+\therefore \int\dfrac{\sqrt{\tan x}}{\sin x \cos x}\, dx 
+  =\int\dfrac{\sec ^2x\, dx}{\sqrt{\tan x}}
+  =\int\dfrac{1}{\sqrt{t}}\, dt</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{If }I=\int\dfrac{\sqrt{\tan x}}{\sin x \cos x}\, dx
+  =\int\dfrac{1}{\sqrt{t}}\, dt \\
+\text{then is the following correct?}</context>
+    <tex correct='true'>\begin{align}
+  I &amp;=\int\dfrac{1}{\sqrt{t}}\, dt =\int t^{-\frac{1}{2}} \, dt \\
+    &amp;= 2\sqrt{t}+C=2\sqrt{\tan x}+C
+\end{align}</tex>
+    <tex>\begin{align}
+  I &amp;=\int\dfrac{1}{\sqrt{t}}\, dt =\int t^{-\frac{1}{2}} \, dt \\
+    &amp;= \sqrt{t}+C=\sqrt{\tan x}+C
+\end{align}</tex>
+    <reason>\int x^n\, dx=\dfrac{x^{n+1}}{\bf n+1}+C</reason>
+  </step>
+  <choices>
+    <tex>2\sqrt{\sin x}+C</tex>
+    <tex>\sqrt{\tan x}+C</tex>
+    <tex correct='true'>2\sqrt{\tan x}+C</tex>
+    <tex>\sqrt{\tan x}+C</tex>
+  </choices>
+</question>

@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int
+  \dfrac{10x^9+10^x\log_e 10}{x^{10}+10^{x}}\, dx</tex>
+  </statement>
+  <step>
+    <context>\text{If $y=5^x$, then the following analysis is correct.}</context>
+    <tex correct='true'>\begin{align}
+  y = 5^x \implies &amp;\dfrac{dy}{dx}=5^x\log_e 5  
+\end{align}</tex>
+    <tex>\begin{align}
+  y = 5^x \implies &amp;\dfrac{dy}{dx}= x\, 5^{x-1}  
+\end{align}</tex>
+    <reason>\text{$\dfrac{d}{dx}x^n=nx^{n-1}$ is only applicable when $n$ is a} \\ 
+\text{constant, independent of $x$. Otherwise,} \\
+\begin{align}
+  y=5^x \implies &amp; \log y = x\log 5 \\
+    \implies &amp;\dfrac{1}{y}\, \dfrac{dy}{dx}=\log_e 5  \\
+    \implies &amp;\dfrac{dy}{dx} = y\log 5 = 5^x\log_e 5
+\end{align} \\
+\text{where $log_e $ is $\ln$, the natural logarithm.}</reason>
+  </step>
+  <step>
+    <context>\text{The following substitution would convert} \\
+I=\int\dfrac{10x^9+10^x\log_e 10}{x^{10}+10^{x}}\, dx 
+  \text{ to }I=\int \dfrac{1}{t}\, dt</context>
+    <tex correct='true'>x^{10}+10^x=t</tex>
+    <tex>10^x=t</tex>
+    <reason>(x^{10}+10^x=t\implies 
+  \left(10x^9+10^x\log_e 10\right)dx=dt \\
+\therefore \int
+  \dfrac{10x^9+10^x\log_e 10}{x^{10}+10^{x}}\, dx
+=\int \dfrac{1}{t}\, dt</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{If }I=\int
+  \dfrac{10x^9+10^x\log_e 10}{x^{10}+10^{x}}\, dx
+  =\int \dfrac{1}{t}\, dt \\
+\text{then does the following look correct?}</context>
+    <tex correct='true'>\begin{align}
+  I&amp;=\dfrac{1}{t}\, dt =\log |t|+C \\
+   &amp;=\log |{x^{10}+10^x}|+C
+\end{align}</tex>
+    <reason>\int \dfrac{1}{z}\, dz = \log_e z+C , \\
+\text{where $\log_e z$ is the natural logarithm.} </reason>
+  </step>
+  <choices>
+    <tex>{x^{10}+10^x}+C</tex>
+    <tex>{x^{10}-10^x}+C</tex>
+    <tex>\left({x^{10}-10^x}\right)^{-1}+C</tex>
+    <tex correct='true'>\log |{x^{10}+10^x}|+C</tex>
+  </choices>
+</question>
