@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int \dfrac{x}{e^{x^2}}dx</tex>
+  </statement>
+  <step>
+    <context>\text{The following substitution would convert} \\
+I=\int \dfrac{x}{e^{x^2}}dx \text{ to }
+  I=\int \dfrac{1}{2e^t}dt</context>
+    <tex correct='true'>x^2=t</tex>
+    <tex>e^{x^2}=t</tex>
+    <reason>x^2=t\implies 2x\, dx=dt \\
+\therefore \int \dfrac{1}{2}\cdot\dfrac{2x\, dx}{e^{x^2}}
+  =\int \dfrac{1}{2e^t}dt \\
+e^{x^2}=t\text{ can also be used to solve the problem}\\
+\text{but that solution would take a different path.}</reason>
+  </step>
+  <step>
+    <context>\text{If }I=\int \dfrac{x}{e^{x^2}}dx
+  =\int \dfrac{1}{2e^t}dt \\
+  \text{then does this look correct?}</context>
+    <tex correct='true'>\begin{align}
+  I&amp;=\int\dfrac{1}{2e^t}dt=\dfrac{1}{2}(-1)e^{-t}+C \\
+   &amp;=-\dfrac{1}{2e^{x^2}}+C 
+\end{align}</tex>
+    <tex>\begin{align}
+  I&amp;=\int\dfrac{1}{2e^t}dt=\dfrac{1}{2}e^{-t}+C \\
+   &amp;=\dfrac{1}{2e^{x^2}}+C 
+\end{align}</tex>
+    <reason>\begin{align}
+  I&amp;=\int\dfrac{1}{2e^t}dt
+     =\underbrace{\dfrac{1}{2}\int e^{-t}dt}_{(-t)=h\,\implies\, -dt=dh} \\
+   &amp;=-\dfrac{1}{2}\int e^{h}dh=-\dfrac{1}{2}e^{h}+C \\
+   &amp;=-\dfrac{1}{2}e^{-t}+C =-\dfrac{1}{2e^{x^2}}+C 
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>-\dfrac{1}{e^{x^2}}+C</tex>
+    <tex>\dfrac{1}{e^{x^2}}+C</tex>
+    <tex>\dfrac{1}{2e^{x^2}}+C</tex>
+    <tex correct='true'>-\dfrac{1}{2e^{x^2}}+C</tex>
+  </choices>
+</question>

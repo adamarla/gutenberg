@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int
+  \dfrac{x^3\sin\left(\tan^{-1}x^4\right)}{1+x^8}</tex>
+  </statement>
+  <step>
+    <context>\text{The following substitution would convert} \\
+  I=\int\dfrac{x^3\sin\left(\tan^{-1}x^4\right)}{1+x^8}
+    \text{ to }
+  I=\int\dfrac{1}{4}\sin t \,dt</context>
+    <tex correct='true'>\tan^{-1}x^4=t</tex>
+    <tex>\sin\left(\tan^{-1}x^4\right)=t</tex>
+    <reason>\tan^{-1}x^4=t\implies 
+  \dfrac{1}{1+(x^4)^2}\cdot 4x^3\, dx=dt \\
+\therefore 
+  \int\dfrac{1}{4}\cdot\sin\left(\tan^{-1}x^4\right)
+    \dfrac{4x^3}{1+x^8}\, dx=\int \dfrac{1}{4}\sin t\, dt</reason>
+  </step>
+  <step>
+    <context>\text{If }I=\int
+  \dfrac{x^3\sin\left(\tan^{-1}x^4\right)}{1+x^8}
+  =\int \dfrac{1}{4}\sin t\, dt \\
+\text{then is the following correct?}</context>
+    <tex correct='true'>\begin{align}
+  I &amp;= \int \dfrac{1}{4}\sin t\,dt =\dfrac{1}{4}\int\sin t\, dt \\
+    &amp;= -\dfrac{1}{4}\cos t + C
+       =-\dfrac{1}{4}\cos (\tan^{-1} x^4) + C
+\end{align}</tex>
+    <tex>\begin{align}
+  I &amp;= \int \dfrac{1}{4}\sin t\,dt =\dfrac{1}{4}\int\sin t\, dt \\
+    &amp;= \dfrac{1}{4}\cos t + C
+       =\dfrac{1}{4}\cos (\tan^{-1} x^4) + C
+\end{align}</tex>
+    <reason>\dfrac{d}{dx}\cos x\, dx=-\sin x \\
+\therefore \int\sin x\, dx={\bf -\cos x}+C</reason>
+  </step>
+  <choices>
+    <tex>-\cos (\tan^{-1} x^4) + C</tex>
+    <tex>\cos (\tan^{-1} x^4) + C</tex>
+    <tex>\dfrac{1}{4}\cos (\tan^{-1} x^4) + C</tex>
+    <tex correct='true'>-\dfrac{1}{4}\cos (\tan^{-1} x^4) + C</tex>
+  </choices>
+</question>

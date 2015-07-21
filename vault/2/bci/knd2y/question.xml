@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int\dfrac{e^{2x}-1}{e^{2x}+1}\, dx</tex>
+  </statement>
+  <step>
+    <context>\text{The following substitution would convert} \\
+I=\int\dfrac{e^{2x}-1}{e^{2x}+1}\, dx 
+  \text{ to }I=\int \dfrac{1}{t}\, dt</context>
+    <tex correct='true'>e^x+e^{-x}=t</tex>
+    <tex>e^x-e^{-x}=t</tex>
+    <reason>e^x+e^{-x}=t\implies e^x-e^{-x}\,dx=dt \\
+\dfrac{\left(e^{2x}-1\right)/e^x}{\left(e^{2x}+1\right)/e^x}
+  =\dfrac{e^x-1/e^x}{e^x+1/e^x}
+  =\dfrac{\overbrace{e^x-e^{-x}}^{dt}}
+              {\underbrace{e^x+e^{-x}}_{t}}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{If }I=\int\dfrac{e^{2x}-1}{e^{2x}+1}\, dx
+  =\int \dfrac{dt}{t} \\
+  \text{then does this look correct?}</context>
+    <tex correct='true'>\begin{align}
+  I &amp;= \int \dfrac{1}{t}\, dt = \log t+C \\
+    &amp;= \log (e^x+e^{-x})+C
+\end{align}</tex>
+    <reason>\int \dfrac{1}{x}\, dx = \log x+C</reason>
+  </step>
+  <choices>
+    <tex>\log (e^{2x}+1)+C</tex>
+    <tex correct='true'>\log (e^x+e^{-x})+C</tex>
+    <tex>\log (e^x-e^{-x})+C</tex>
+    <tex>\log (e^{2x}-1)+C</tex>
+  </choices>
+</question>

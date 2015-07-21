@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int\dfrac{\sin x}{1+\cos x}\, dx</tex>
+  </statement>
+  <step>
+    <context>\text{The following substitution would convert} \\
+  I=\dfrac{\sin x}{1+\cos x}\, dx \text{ to }I=\dfrac{1}{t}\, dt
+</context>
+    <tex correct='true'>1 + \cos x=t</tex>
+    <tex>\cos x=t</tex>
+    <reason>1 + \cos x=t \implies -\sin x \, dx=dt \\
+\therefore \int-\dfrac{-\sin x\, dx}{1 + \cos x}
+  =\int -\dfrac{dt}{t} \\
+\cos x=t\text{ is also a valid substitution but} \\
+\text{it will result in a different solution path.}  </reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{If }I=\int\dfrac{\sin x}{1+\cos x}\, dx=\int -\dfrac{dt}{t} \\
+\text{then is the following correct?}</context>
+    <tex correct='true'>\begin{align}
+  I &amp;=\int- \dfrac{dt}{t} = -\int\dfrac{dt}{t} \\
+    &amp;=-\log |t|+C = -\log |1+\cos x|+C
+\end{align}</tex>
+    <tex>\begin{align}
+  I &amp;=\int- \dfrac{dt}{t} = -\int\dfrac{dt}{t} \\
+    &amp;=-\log \left(t\right)+C = -\log \left(1+\cos x\right)+C
+\end{align}</tex>
+    <reason>\int \dfrac{1}{x}\, dx = \log |x| + C \\
+\text{Log function is only defined for positive $x$.}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>-\log |1+\cos x|+C</tex>
+    <tex>\log |1+\cos x|+C</tex>
+    <tex>\log \left(1+\cos x\right)+C</tex>
+    <tex>-\log \left(1+\cos x\right)+C</tex>
+  </choices>
+</question>

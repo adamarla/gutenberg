@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int\dfrac{1}{1-\tan x}\, dx</tex>
+  </statement>
+  <step swipe='false'>
+    <context>\dfrac{1}{1-\tan x} \text{ may also be written} \\
+\text{as follows in terms of $\sin x$ and $\cos x$}</context>
+    <tex correct='true'>\dfrac{1}{2}\left(1+
+  \dfrac{\cos x + \sin x}{\cos x - \sin x}\right)</tex>
+    <reason>\begin{align}
+  \dfrac{1}{1-\tan x}&amp;=\dfrac{\cos x}{\cos x - \sin x}
+    =\dfrac{1}{2}\left(\dfrac{2\cos x}{\cos x - \sin x}\right) \\
+    &amp;=\dfrac{1}{2}\left(\dfrac{2\cos x - \sin x + \sin x}
+      {\cos x - \sin x}\right) \\
+    &amp;=\dfrac{1}{2}\left(\dfrac{\cos x - \sin x + \cos x + \sin x}
+      {\cos x - \sin x}\right) \\
+    &amp;=\dfrac{1}{2}\left(1+
+  \dfrac{\cos x + \sin x}{\cos x - \sin x}\right)
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{The following substitution would convert} \\
+  I=\int\dfrac{1}{2}\left(1+
+    \dfrac{\cos x + \sin x}{\cos x - \sin x}\right)dx \text{ to} \\
+  I=\dfrac{1}{2}\left(\int dx - \int \dfrac{dt}{t}\right)
+</context>
+    <tex correct='true'>\cos x-\sin x=t</tex>
+    <tex>\cos x+\sin x=t</tex>
+    <reason>\cos x -\sin x = t \implies - \sin x - \cos x \, dx=dt \\
+\therefore \int-\dfrac{\sin x + \sin x}{\cos x - \sin x}\, dx
+  =\int -\dfrac{dt}{t}= -\int \dfrac{dt}{t}</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{If }I=\dfrac{1}{2}\left(\int dx - \int \dfrac{dt}{t}\right) \\
+\text{then is the following correct?}</context>
+    <tex correct='true'>\begin{align}
+  I &amp;=\dfrac{1}{2}\left(\int dx - \int \dfrac{dt}{t}\right) \\
+    &amp;=\dfrac{1}{2}x- \dfrac{1}{2}\log |t|+C \\
+    &amp;=\dfrac{x}{2}- \dfrac{1}{2}\log |\cos x-\sin x|+C
+\end{align}</tex>
+    <tex>\begin{align}
+  I &amp;=\dfrac{1}{2}\left(\int dx - \int \dfrac{dt}{t}\right) \\
+    &amp;=\dfrac{1}{2}x- \dfrac{1}{2}\log (t)+C \\
+    &amp;=\dfrac{x}{2}- \dfrac{1}{2}\log (\cos x-\sin x)+C
+\end{align}</tex>
+    <reason>\int \dfrac{1}{x}\, dx = \log |x| + C \\
+\text{Log function is only defined for positive $x$.}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{x}{2}- \log |\cos x-\sin x|+C</tex>
+    <tex correct='true'>\dfrac{x}{2}- \dfrac{1}{2}\log |\cos x-\sin x|+C</tex>
+    <tex>\dfrac{x}{2}+ \dfrac{1}{2}\log |\cos x-\sin x|+C</tex>
+    <tex>\dfrac{x}{2}- \dfrac{1}{2}\log (\cos x-\sin x)+C</tex>
+  </choices>
+</question>

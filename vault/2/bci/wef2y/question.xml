@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int\dfrac{\left(1+\log x\right)^2}{x}\, dx</tex>
+  </statement>
+  <step>
+    <context>\text{The following substitution would convert} \\
+I=\int\dfrac{\left(1+\log x\right)^2}{x}\, dx \text{ to }
+  I=\int t^2\, dt</context>
+    <tex correct='true'>1+\log x=t</tex>
+    <tex>\log x=t</tex>
+    <reason>1+\log x=t\implies \dfrac{1}{x}\, dx=dt \\
+</reason>
+  </step>
+  <step swipe='false'>
+    <context>\text{If }I=\int\dfrac{\left(1+\log x\right)^2}{x}\, dx
+  =\int t^2\, dt \\
+\text{then does the following look correct?}</context>
+    <tex correct='true'>\begin{align}
+  I&amp;=\int t^2\, dt = \dfrac{t^3}{3}+C \\
+   &amp;=\dfrac{1}{3}\left(1+\log x\right)^3+C
+\end{align}</tex>
+    <tex>\begin{align}
+  I&amp;=\int t^2\, dt = t^3 +C \\
+   &amp;=\left(1+\log x\right)^3+C
+\end{align}</tex>
+    <reason>\int x^n\, dx=\dfrac{x^{n+1}}{\bf n+1}+C</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{1}{3}\left(1+\log x\right)^3+C</tex>
+    <tex>\dfrac{1}{3}\left(1+\log x\right)+C</tex>
+    <tex>\dfrac{1}{2}\left(1+\log x\right)^2+C</tex>
+    <tex>\left(1+\log x\right)^3+C</tex>
+  </choices>
+</question>
