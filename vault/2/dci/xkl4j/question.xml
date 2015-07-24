@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int\sqrt{1-4x^2}\, dx</tex>
+  </statement>
+  <step>
+    <context>I=\int\sqrt{1-4x^2}\, dx\text{ resembles the following} \\
+\text{standard integral.}</context>
+    <tex correct='true'>I=\int\sqrt{1-4x^2}\, dx
+ =2\int \sqrt{\left(\dfrac{1}{2}\right)^2-x^2}\, dx \\
+\text{is of the form }M\int \sqrt{a^2-x^2}\, dx \\
+\text{where $M=2$ and $a=\dfrac{1}{2}$}</tex>
+    <tex>I=\int\sqrt{1-4x^2}\, dx
+ =\int \sqrt{1^2-(2x)^2}\, dx \\
+\text{is of the form }M\int \sqrt{a^2-x^2}\, dx \\
+\text{where $M=1$ and $a=1$}</tex>
+    <reason>I=M\int \sqrt{a^2-x^2\, dx}\text{ form requires that the} \\
+\textbf{coefficient of $x$ be 1.}</reason>
+  </step>
+  <step>
+    <context>\text{If }I=\int\sqrt{1-4x^2}\, dx
+ =2\int\sqrt{\left(\dfrac{1}{2}\right)^2-x^2}\, dx \\
+ \text{then is the following correct?}
+</context>
+    <tex correct='true'>\begin{align}
+I &amp;=\int\sqrt{1-4x^2}\, dx
+    =2\int\sqrt{\left(\dfrac{1}{2}\right)^2-x^2}\, dx \\
+  &amp;= \dfrac{x}{2}\sqrt{\dfrac{1}{4}-x^2} +
+    \dfrac{1}{8}\sin^{-1}{2x}+C
+\end{align}</tex>
+    <tex>\begin{align}
+I &amp;=\int\sqrt{1-4x^2}\, dx
+    =2\int\sqrt{\left(\dfrac{1}{2}\right)^2-x^2}\, dx \\
+  &amp;= \dfrac{x}{2}\sqrt{\dfrac{1}{4}-x^2} -
+    \dfrac{1}{8}\log|x+\sqrt{x^2-a^2}|+C
+\end{align}</tex>
+    <reason>\int \sqrt{a^2-x^2}\, dx = \dfrac{x}{2}\sqrt{a^2-x^2}
+  +\dfrac{a^2}{2}\sin^{-1}\dfrac{x}{a}+C</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{x}{2}\sqrt{\dfrac{1}{4}-x^2} -
+    \dfrac{1}{8}\log|x+\sqrt{x^2-a^2}|+C</tex>
+    <tex>\dfrac{x}{2}\sqrt{\dfrac{1}{4}-x^2}-
+    \dfrac{1}{8}\sin^{-1}{2a}+C</tex>
+    <tex correct='true'>dfrac{x}{2}\sqrt{\dfrac{1}{4}-x^2} +
+    \dfrac{1}{8}\sin^{-1}{2x}+C    </tex>
+    <tex>\dfrac{x}{2}\sqrt{\dfrac{1}{4}-x^2} +
+    \dfrac{1}{8}\log|x+\sqrt{x^2-a^2}|+C</tex>
+  </choices>
+</question>
