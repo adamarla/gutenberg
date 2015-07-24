@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int\sqrt{x^2+4x+6}dx</tex>
+  </statement>
+  <step>
+    <context>I=\int\sqrt{1-4x^2}\, dx\text{ resembles the following} \\
+\text{standard integral.}</context>
+    <tex correct='true'>I=\int\sqrt{1-4x^2}\, dx
+ =\int 2\sqrt{\left(\dfrac{1}{2}\right)^2-x^2}\, dx \\
+\text{which is of the form }\int M\sqrt{a^2-x^2}\, dx \\</tex>
+    <tex>I=\int\sqrt{1-4x^2}\, dx=\int \dfrac{1}{2}\sqrt{2^2-x^2}\, dx \\
+\text{which is of the form }\int M\sqrt{a^2-x^2}\, dx \\</tex>
+    <reason>\begin{align}
+  I&amp;=\sqrt{1-4x^2}=\sqrt{4\left(\dfrac{1}{4}-x^2\right)} \\
+   &amp;=2\sqrt{\left(\dfrac{1}{2}\right)^2-x^2}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{If }I=\int\sqrt{1-4x^2}\, dx
+ =\int 2\sqrt{\left(\dfrac{1}{2}\right)^2-x^2}\, dx \\
+ \text{then is the following correct?}
+</context>
+    <tex correct='true'>\begin{align}
+I=\int\sqrt{1-4x^2}\, dx
+ =\int 2\sqrt{\left(\dfrac{1}{2}\right)^2-x^2}\, dx \\
+\end{align}
+</tex>
+    <reason></reason>
+  </step>
+</question>
