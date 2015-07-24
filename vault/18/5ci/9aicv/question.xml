@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Evaluate the integral }\\
+\int_{1}^{2}\left(\dfrac{1}{x} - \dfrac{1}{2x^2}\right) e^2x\cdot dx\\
+\text{Using substitutions .}</tex>
+  </statement>
+  <step>
+    <context>\text{\textbf{Check Point } \#1:which of the following is}\\
+\text{mathematically correct?}</context>
+    <tex correct='true'>\int e^x \left[f \left(x\right) + f^{\prime} \left(x\right)\right].dx = e^x \cdot f \left(x\right) +C</tex>
+    <tex>\int e^{mx} \left[f \left(x\right) + f^{\prime} \left(x\right)\right].dx = e^{mx} \cdot f \left(x\right) +C,m\neq 1</tex>
+    <reason>\int e^{mx} \left[f \left(x\right) + f^{\prime} \left(x\right)\right].dx = e^{mx} \cdot f \left(x\right) +C\\
+\text{ONLY IF }m=1.</reason>
+  </step>
+  <step>
+    <context>\int_{1}^{2}\left(\dfrac{1}{x} - \dfrac{1}{2x^2}\right) e^2x dx = \lambda\int_{m}^{n}e^t \left[f \left(t\right) + f^{\prime} \left(x\right)\right]dt\\
+\text{What should }t=? \text{ And therefore, are }\lambda,m,n,\\
+f \left(t\right) \text{ and }f^{\prime}\left(t\right)?</context>
+    <tex correct='true'>\begin{tabular}{|C|C|C|C|C|C|}
+\hline
+t &amp; \lambda &amp; m &amp; n &amp; f \left(x\right) &amp; f^{\prime} \left(t\right)\\
+\hline
+2x &amp; 1 &amp; 2 &amp; 4 &amp; \dfrac{1}{\lambda}&amp; -\dfrac{1}{\lambda^2}\\
+\hline  
+\end{tabular}</tex>
+    <tex>\begin{tabular}{|C|C|C|C|C|C|}
+\hline
+t &amp; \lambda &amp; m &amp; n &amp; f \left(x\right) &amp; f^{\prime} \left(t\right)\\
+\hline
+2x &amp; \dfrac{1}{2} &amp; 1 &amp; 2 &amp; \lambda &amp; -\lambda^2\\
+\hline  
+\end{tabular}</tex>
+    <reason>\text{If }t = 2x, \text{then }dx = \dfrac{dt}{2}\\
+\text{Also }\underbrace{t =2}_{m} \text{ when }x =1 \text{ and }\underbrace{t =4 }_{n}\text{ when } x =2\\
+\begin{align}
+\therefore &amp;\int_{1}^{2}e^{2x}\left(\dfrac{1}{x}-\dfrac{1}{2x}\right).dx\\
+&amp;= \dfrac{1}{2}\int_{2}^{4}e^t \left[\dfrac{1}{\dfrac{t}{2}}-\dfrac{1}{2 \left(\dfrac{t}{2}\right)^2}\right] dt\\
+&amp;= \dfrac{1}{2}\int_{2}^{4}e^t \left[\dfrac{2}{t}-\dfrac{2}{t^2}\right] dt=\int_{2}^{4} e^t\left[\dfrac{1}{t} - \dfrac{1}{t^2}\right]dt \\
+\end{align}\\
+\text{Notice that }-\dfrac{1}{t^2} = \dfrac{d}{dt}\left(\dfrac{1}{t}\right)\\
+\therefore A = \int_{2}^{4}e^t \left(\dfrac{1}{t} - \dfrac{1}{t^2}\right).dt=\int_{2}^{4}e^t \left[f \left(t\right)  + f^{\prime} \left(t\right)\right]dt\\
+\text{Where }f \left(t\right) = \dfrac{1}{t}\text{ and }f^{\prime}\left(t\right)=-\dfrac{1}{t^2}</reason>
+  </step>
+  <step>
+    <context>\text{And Hence, }A = ?</context>
+    <tex correct='true'>A = \dfrac{e^2}{4}\left(e^2 - 2\right)</tex>
+    <tex>A = \dfrac{e^2}{2}\left(e^2 -1\right)</tex>
+    <reason>\begin{align}
+A &amp;= \int_{2}^{4}e^t \left(f \left(t\right) + f^{\prime}\left(t\right)\right).dt = \left[e^t \cdot f \left(t\right)\right]_{2}^{4} \\
+&amp;= \left[\dfrac{e^t}{t}\right]_{2}^{4} = \dfrac{e^4}{4}- \dfrac{e^2}{2} = \dfrac{e^2}{4}\left(e^2-2\right)
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{e^4}{4}\left(e^2-2\right)</tex>
+    <tex>-\dfrac{e^2}{2}\left(e^2-2\right)</tex>
+    <tex correct='true'>\dfrac{e^2}{4}\left(e^2-2\right)</tex>
+    <tex>-\dfrac{e^2}{4}\left(e^2-2\right)</tex>
+  </choices>
+</question>
