@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Evaluate the integral} \\
+\quad \int_{0}^{2} \dfrac{dx}{x + 4 - x^2} \\
+\text{using substitution.}</tex>
+  </statement>
+  <step>
+    <context>\text{Is the following correct way to proceed}\\
+\text{for evaluating } A = \int_{0}^{2} \dfrac{dx}{x + 4 - x^2} \, ?
+</context>
+    <tex correct='true'>A = \int_{0}^{2} \dfrac{dx}{x + 4 - x^2} \\
+= \int_{0}^{2} \dfrac{dx}{- \left(  x^2 - x + \frac{1}{4} - \frac{1}{4} -4 \right)} \\
+= \int_{0}^{2} \dfrac{dx}{- \left[  \left( x - \frac{1}{2}\right)^2 - \frac{17}{4}\right] } \\
+= \int_{0}^{2} \dfrac{dx}{ \left( \frac{\sqrt{17}}{2}\right)^2 -  \left( x - \frac{1}{2}\right)^2 } </tex>
+    <reason>\text{For evaluating }
+ A = \int_{0}^{2} \dfrac{dx}{x + 4 - x^2} \\
+ \text{we first convert it in the form }
+ \int \dfrac{dt}{a^2 - t^2}\\
+ \text{which is more easily integrable .}</reason>
+  </step>
+  <step>
+    <context>\text{If } \left(x - \dfrac{1}{2}\right) = t \text{ is substitued, then } \\
+\text{which of the following is correct representation}\\
+\text{of the integral A, in terms of t}?
+</context>
+    <tex correct='true'>\begin{align}
+
+A &amp;= \int_{0}^{2} \dfrac{dx}{ \left( \frac{\sqrt{17}}{2}\right)^2 -  \left( x - \frac{1}{2}\right)^2 }\\
+&amp;= \int_{\frac{-1}{2}}^{\frac{3}{2}} \dfrac{dt}{ \left( \frac{\sqrt{17}}{2}\right)^2 -  t^2 } 
+\end{align}</tex>
+    <tex>\begin{align}
+
+A &amp;= \int_{0}^{2} \dfrac{dx}{ \left( \frac{\sqrt{17}}{2}\right)^2 -  \left( x - \frac{1}{2}\right)^2 }\\
+&amp;= \int_{0}^{2} \dfrac{dt}{ \left( \frac{\sqrt{17}}{2}\right)^2 -  t^2 } 
+\end{align}</tex>
+    <reason>x - \dfrac{1}{2} = t 
+\implies dx = dt \text{ Now, } \\
+
+\text{when } x =0 , t = \dfrac{-1}{2} \text{ and } 
+ \text{when $x = 2, t = \dfrac{3}{2}} \\
+\therefore 
+
+
+A = \int_{\frac{-1}{2}}^{\frac{3}{2}} \dfrac{dt}{ \left( \frac{\sqrt{17}}{2}\right)^2 -  t^2 } 
+
+
+</reason>
+  </step>
+  <step>
+    <context>\text{And thus, what does A }
+= \int_{\frac{-1}{2}}^{\frac{3}{2}} \dfrac{dt}{ \left( \frac{\sqrt{17}}{2}\right)^2 -  t^2 } \\ 
+\text{evaluate to?} </context>
+    <tex correct='true'>A = \dfrac{1}{\sqrt {17}} \log \left( \frac{21 +5 \sqrt {17}}{4} \right)</tex>
+    <tex>A = \dfrac{1}{\sqrt {17}} \log \left( \frac{4}{21 +5 \sqrt {17}} \right)</tex>
+    <reason>\begin{align}
+
+A &amp;= \int_{\frac{-1}{2}}^{\frac{3}{2}} \dfrac{dt}{ \left( \frac{\sqrt{17}}{2}\right)^2 -  t^2 } 
+
+= \left[ \dfrac{1}{2 \frac{\sqrt{17}}{2}} \log \left| \frac{\frac{\sqrt{17}}{2} + t}{\frac{\sqrt{17}}{2} - t}\right| \right]^{\frac{3}{2}}_{\frac{-1}{2}} \\
+
+&amp;= \dfrac{1}{\sqrt{17}} \left[  \log \left| \frac{\frac{\sqrt{17}}{2} + \frac{3}{2}}{\frac{\sqrt{17}}{2} - \frac{3}{2}}\right| -  \log \left| \frac{\frac{\sqrt{17}}{2} - \frac{1}{2}}{\frac{\sqrt{17}}{2} + \frac{1}{2}}\right| \right] \\
+
+&amp;= \dfrac{1}{\sqrt{17}} \left[  \log \left| \frac{\sqrt{17} + 3}{\sqrt{17} - 3}\right| -  \log \left| \frac{\sqrt{17} - 1}{\sqrt{17} + 1}\right| \right] \\
+
+&amp;= \dfrac{1}{\sqrt{17}} \left[  \log \left| \frac{\sqrt{17} + 3}{\sqrt{17} - 3}\times \frac{\sqrt{17} + 1}{\sqrt{17} - 1}\right| \right] \\
+
+&amp;= \dfrac{1}{\sqrt{17}} \log \left|  \frac{5 + \sqrt{17}}{5 - \sqrt{17}} \right|
+= \dfrac{1}{\sqrt {17}} \log \left( \frac{21 +5 \sqrt {17}}{4} \right)
+
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex> \log \left( \frac{21 +5 \sqrt {17}}{4} \right)</tex>
+    <tex correct='true'>\dfrac{1}{\sqrt {17}} \log \left( \frac{21 +5 \sqrt {17}}{4} \right)</tex>
+    <tex>\dfrac{1}{\sqrt {17}} \log \left( \frac{21 -5 \sqrt {17}}{4} \right) + C</tex>
+    <tex>\dfrac{1}{\sqrt {17}} \log \left( \frac{21-5 \sqrt {17}}{4} \right)</tex>
+  </choices>
+</question>

@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Evaluate the following integral} \\
+\qquad \int_{0}^{1} x (1- x)^n \, dx \,</tex>
+  </statement>
+  <step>
+    <context>\text{Which of the claims is mathematically correct}? </context>
+    <tex correct='true'>\int_{0}^{1} x (1- x)^n \, dx = \int_{0}^{1} (1- x)x^n \, dx \\
+\text{But } x(1-x)^n \text{ might not be equal}\\
+\text{to } (1-x)\cdot x^n \text{ at every/any x.}</tex>
+    <tex>\int_{0}^{1} x (1- x)^n \, dx = \int_{0}^{1} (1- x)x^n \, dx \\
+\text{because } x(1-x)^n = (1-x)\cdot x^n \text{ at every/any x.}</tex>
+    <reason>\text{While it is true that }
+\int_{0}^{a} f(x) \, dx = \int_{0}^{a} f(a- x) \, dx  \, , \\
+\text{it does not mean that at every x} \in [0, a] \\
+f(x) = f(a-x)  .\text{ It could hold but it is not necessary.}
+
+
+
+</reason>
+  </step>
+  <step>
+    <context>\text{Hence, what does } A = \int_{0}^{1} x (1- x)^n \, dx \, \\
+\text{evaluate to}?</context>
+    <tex correct='true'>A = \dfrac{1}{(n+1)(n+2)}</tex>
+    <tex>A = \dfrac{2n + 3}{(n+1)(n+2)}</tex>
+    <reason>A = \int_{0}^{1} x (1- x)^n \, dx 
+= \int_{0}^{1} (1-x) [1-(1- x)]^n \, dx \\
+= \int_{0}^{1} (1-x) \cdot  x^n \, dx 
+= \int_{0}^{1} x^n \, dx - \int^{1}_{0}x^{n+1} \, dx \\
+= \left[ \dfrac{ x^{(n+1)}}{n+1}\right]_{0}^{1} - \left[ \dfrac{ x^{(n+2)}}{n+2}\right]_{0}^{1}\\
+= \dfrac{1}{n+1} - \dfrac{1}{n+2} =  \dfrac{1}{(n+1)(n+2)}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{1}{(n+1)(n+2)}</tex>
+    <tex>\dfrac{2n+3}{(n+1)(n+2)}</tex>
+    <tex>\dfrac{1}{n(n+1)}</tex>
+    <tex>\dfrac{1}{(n+1)(n+2)} + C</tex>
+  </choices>
+</question>

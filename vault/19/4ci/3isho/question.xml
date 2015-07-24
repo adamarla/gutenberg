@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Evaluate the integral } \\
+\quad A = \int^{1}_{0} \sin^{-1} \left( \frac{2x}{1+ x^2} \right) \, dx \\
+\text{using substitution.}</tex>
+  </statement>
+  <step>
+    <context>\sin^{-1} \left( \frac{2x}{1+ x^2} \right) = sin^{-1} \left( \sin m \phi \right) = m \phi \\
+\text{With what substitution will the above happen}\\
+\text{and what is the value of m}?</context>
+    <tex correct='true'>\begin{align}
+
+x &amp;= \tan \phi \\
+m &amp;= 2
+\end{align}</tex>
+    <tex>\begin{align}
+
+x &amp;= \sin \phi \\
+m &amp;= 1
+\end{align}</tex>
+    <reason>\text{Now, } \sin 2 \phi = \dfrac{2 \tan \phi}{1 + \tan^2 \phi}
+ \text{ so, if $ x = \tan \phi \, ,$}\\
+ \text{then, $ \dfrac{2x}{1+x^2} = \dfrac{2 \tan \phi}{1 + \tan^2 \phi}} 
+ = \sin 2 \phi \\
+ \implies sin^{-1} \left( \dfrac{2x}{1+x^2}\right) 
+ = \sin^{-1} \left( \sin 2 \phi \right) = 2 \phi \\
+ \quad \therefore m =2</reason>
+  </step>
+  <step>
+    <context>\text{If }\int^{1}_{0} \sin^{-1} \left( \frac{2x}{1+ x^2} \right) \, dx 
+= 2 \int^{n}_{m} \phi \cdot  f(\phi) \, d \phi \\
+\text{then, what is $ f(\phi)? $ And what are the values}\\
+\text{of m and n? }</context>
+    <tex correct='true'>\begin{align}
+
+f(\phi) &amp;= \sec^2 \phi \\
+m &amp;= 0 \\
+n &amp;= \dfrac{\pi}{4}
+\end{align}</tex>
+    <tex>\begin{align}
+
+f(\phi) &amp;= 1 \\
+m &amp;= 0 \\
+n &amp;= \dfrac{\pi}{2}
+\end{align}</tex>
+    <reason>\text{Remember, we let $ x = \tan \phi \implies dx = \sec^2 \phi \cdot d \phi$}\\
+\text{Also } x = 0 \implies \phi = \tan^{-1} 0 = 0 \text{ and } \\
+\qquad x =1 \implies \phi = \tan^{-1} x = \dfrac{\pi}{4} \\
+ \therefore \int^{1}_{0} \sin^{-1} \left( \frac{2x}{1+ x^2} \right) \, dx 
+= 2 \int^{\pi /4}_{0} \phi \cdot  \sec^2 \phi \, d \phi \\
+\implies f(\phi) = \sec^2 \phi , m = 0 \text{ and } n = \dfrac{\pi}{4}
+
+</reason>
+  </step>
+  <step>
+    <context>\text{Given}
+\int f(\phi) \cdot g(\phi) \, d\phi  = f \int d\phi - \int \left[ f'  \int g \, d\phi \right]  d \phi \\
+\text{Which of the following is a better choice for }\\
+f(\phi) \text{ and }g(\phi)?</context>
+    <tex correct='true'>f(\phi) = \phi \\
+g(\phi) = \sec^2 \phi</tex>
+    <tex>f(\phi) = \sec^2 \phi \\
+g(\phi) = \phi</tex>
+    <reason>\text{There is a nice rule of thumb - called ILATE - }\\
+\text{that you can use. Let } f(\phi) \text{ be the function} \\
+\text{that matches first.} \\
+
+\begin{tabular}{|c|c|c|}
+\hline
+I &amp; Inverse &amp; \, \\
+\hline
+L  &amp; Logartihmic &amp; \\
+\hline
+A &amp;Algebraic &amp; \phi \\
+\hline
+T  &amp; Trignometric &amp; \sec^2 \phi \\
+\hline
+E &amp; Exponential &amp; \\
+\hline
+\end{tabular} \\
+\text{Hence, } f(\phi) = \phi \text{ and } g(\phi) = \sec^2 \phi</reason>
+  </step>
+  <step>
+    <context>\begin{align}
+\text{And hence, what is A} 
+
+&amp;=  \int^{1}_{0} \sin^{-1} \left( \frac{2x}{1+ x^2} \right) \, dx \\
+&amp;= 2 \int^{\pi /4}_{0} \phi \cdot \sec^2 \phi \, d \phi = ?
+
+\end{align}</context>
+    <tex correct='true'>A = \dfrac{\pi}{2} - \log 2</tex>
+    <tex>A = \dfrac{\pi}{2} - \dfrac{1}{2}\log 2</tex>
+    <reason>A =  2 \int^{\pi /4}_{0} \phi \cdot \sec^2 \phi \, d \phi \\
+= 2 \left[ \phi \int \sec^2 \phi \, d\phi - \int \left( \frac{d \phi}{d\phi} \int \sec^2 d \phi \right) d \phi  \right]_{0}^{\pi /4} \\
+= 2 \left[ \phi \tan \phi - \int \tan \phi \cdot d \phi \right]^{\pi/4}_{0}  \\
+= 2 \left[ \phi \tan \phi  + \log |\cos \phi | \right]^{\pi/4}_{0} \\
+= 2 \left[ \dfrac{\pi}{4} + \log \dfrac{1}{\sqrt 2} - \left( 0 +\underbrace{ \log 1}_{= 0} \right)\right] \\
+= 2 \left[ \dfrac{\pi}{4} - \dfrac{1}{2} \log 2 \right]
+= \dfrac{\pi}{2} - \log 2</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{\pi}{2} - \log 2 + C</tex>
+    <tex correct='true'>\dfrac{\pi}{2} - \log 2</tex>
+    <tex>-  \log 2</tex>
+    <tex>\dfrac{\pi}{2} + \log 2</tex>
+  </choices>
+</question>
