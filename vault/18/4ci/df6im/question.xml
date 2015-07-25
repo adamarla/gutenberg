@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }e^x \left(\dfrac{1+\sin x}{1+\cos x}\right)\text{using integration by}\\
+\text{parts.}</tex>
+  </statement>
+  <step>
+    <context>e^x \left(\dfrac{1+\sin x}{1+\cos x}\right) = e^x \left[A \left(x\right)+B(x)\right]\text{ where A}\\
+\text{and B are functions. What are A and B?</context>
+    <tex correct='true'>\begin{align}
+A &amp;= \tan \dfrac{x}{2}\\
+B &amp;= \dfrac{1}{2}\sec^2 \dfrac{x}{2}
+
+\end{align}</tex>
+    <tex>\begin{align}
+A &amp;= \sec^2 \dfrac{x}{2}\\
+B &amp;= 2\tan \dfrac{x}{2}
+
+\end{align}</tex>
+    <reason>
+e^x \left(\dfrac{1+\sin x}{1+\cos x}\right) \\
+\qquad= e^x \left(\dfrac{\sin^2 \dfrac{x}{2}+\cos^2 \dfrac{x}{2}+2\sin \dfrac{x}{2}\, \cos \dfrac{x}{2}}{2\cos^2 \dfrac{x}{2}}\right)\\
+\qquad=\dfrac{1}{2}e^x\left(\dfrac{\sin \dfrac{x}{2}+\cos \dfrac{x}{2}}{\cos \dfrac{x}{2}}\right)^2=\dfrac{1}{2}e^x\left(1+\tan \dfrac{x}{2}\right)^2\\
+\qquad=\dfrac{1}{2}e^x\left[1+\tan^2 \dfrac{x}{2} + 2\tan\dfrac{x}{2}\right]\\
+\qquad=\dfrac{1}{2}e^x \left[\sec^2 \dfrac{x}{2} + 2\tan \dfrac{x}{2}\right]\\
+\qquad= e^x \left[\tan \dfrac{x}{2}+\dfrac{1}{2}\sec^2 \dfrac{x}{2}\right]</reason>
+  </step>
+  <step>
+    <context>\text{Which of the following relationships between}\\
+\tan \dfrac{x}{2}\text{ and }\dfrac{1}{2}\sec^2 \dfrac{x}{2}\text{ will be more useful in}\\
+\text{evaluating the integral?}</context>
+    <tex correct='true'>\dfrac{d}{dx}\tan \dfrac{x}{2} = \dfrac{1}{2}\, \sec^2 \dfrac{x}{2}</tex>
+    <tex>\tan \dfrac{x}{2}\cdot\dfrac{1}{2}\cdot \dfrac{1}{\cos x\cdot \sin x} = \dfrac{1}{2}\sec^2 x</tex>
+    <reason>\text{There is a nice standard result that says}\\
+\int e^x \left(f \left(f \left(x\right) + f^{\prime} \left(x\right)\right)\right)dx = e^x f \left(x\right) +C\\
+\text{The key is to identify f\left(x\right)}.</reason>
+  </step>
+  <step>
+    <context>\text{And so, the original integral evaluates to?}</context>
+    <tex correct='true'>e^x \tan \dfrac{x}{2}+ C</tex>
+    <tex>e^x \sec^2 \dfrac{x}{2}+C</tex>
+    <reason>\text{If }f \left(x\right) = \tan \dfrac{x}{2}\text{, then }f^{\prime} \left(x\right) = \dfrac{1}{2}\sec^2 \dfrac{x}{2}{, And so}\\
+\int e^x \left[\tan \dfrac{x}{2} + \dfrac{1}{2}\sec^2 \dfrac{x}{2}\right]dx \text{ looks like }\\
+\int e^x \left[ f \left(x\right) + f^{\prime} \left(x\right)\right]dx</reason>
+  </step>
+  <choices>
+    <tex correct='true'>e^x \tan \dfrac{x}{2}+C</tex>
+    <tex>-e^x \sec^2 \dfrac{x}{2}+C</tex>
+    <tex>e^x \sec^2 \dfrac{x}{2}+C</tex>
+    <tex>-e^x \tan \dfrac{x}{2}+ C</tex>
+  </choices>
+</question>

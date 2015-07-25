@@ -33,7 +33,7 @@ Q \left(x\right) &amp;= \dfrac{1}{\left(1 + x\right)^2}
     <context>\text{And so, the original integral evaluates to?}</context>
     <tex correct='true'>\dfrac{e^x}{1 +x} +C</tex>
     <tex>-\dfrac{e^x}{\left(1 +x\right)^2} +C</tex>
-    <reason>\text{If }f \left(x\right) = \dfrac{1}{q+x}\text{, then }f \left(x\right) = \dfrac{1}{\left(1+x\right)^2}\text{, And so}\\
+    <reason>\text{If }f \left(x\right) = \dfrac{1}{1+x}\text{, then }f ^{\prime}\left(x\right) = \dfrac{1}{\left(1+x\right)^2}\text{, And so}\\
 \int e^x \left[\dfrac{1}{1+x} - \dfrac{1}{\left(1+x\right)^2}\right]dx \text{ looks like }\\
 \int e^x \left[ f \left(x\right) + f^{\prime} \left(x\right)\right]dx</reason>
   </step>
