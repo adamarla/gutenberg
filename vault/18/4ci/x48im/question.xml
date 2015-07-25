@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Integrate }x . \left(\log x\right)^2\text{ using integration by parts.}</tex>
+    <tex>\text{Integrate }x \left(\log x\right)^2\text{ using integration by parts.}</tex>
   </statement>
   <step>
-    <context>\text{Given }\int f . g .dx = f \int g.dx - \int \left[f^{\prime}\int g.dx \right].dx,\\
+    <context>\text{Given }\int f \cdot g \,dx = f \int g\,dx - \int \left[f^{\prime}\int g\,dx \right]dx,\\
 \text{which of the following is the better choice for }\\
 f \left(x\right) \text{ and }g \left(x\right)?</context>
     <tex correct='true'>\begin{align}
@@ -31,23 +31,23 @@ E &amp; \text{Exponential } &amp; \textemdash\\
   <step>
     <context>\text{Given }f \left(x\right) \text{ and }g \left(x\right),\text{which of the following }\\
 \text{is the better choice for }f \left(x\right)\text{ and }g \left(x\right)?\\</context>
-    <tex correct='true'>I = \dfrac{x^2}{2}\left(\log x\right)^2 - \int x.\log x.dx</tex>
-    <tex>I = \dfrac{x^2}{2}\left(\log x\right)^2 - 2\int x^2.dx</tex>
+    <tex correct='true'>I = \dfrac{x^2}{2}\left(\log x\right)^2 - \int x\cdot\log x\,dx</tex>
+    <tex>I = \dfrac{x^2}{2}\left(\log x\right)^2 - 2\int x^2dx</tex>
     <reason>\begin{align}
-I &amp;= \int x \left(\log x\right)^2 .dx \\
-&amp;=  \left(log x\right)^2\int x.dx - \int \left[\dfrac{d}{dx}\left(\log x\right)^2\int x.dx\right] .dx\\
-&amp;= \dfrac{x^2}{2}\left(\log x\right)^2 - \int \dfrac{2 \log x}{x}.\dfrac{x^2}{2}.dx\\
-&amp;=\dfrac{x^2}{2}\left(\log x\right)^2 - \int x.\log x.dx 
+I &amp;= \int x \left(\log x\right)^2 dx \\
+&amp;=  \left(log x\right)^2\int x\,dx - \int \left[\dfrac{d}{dx}\left(\log x\right)^2\int x\,dx\right] dx\\
+&amp;= \dfrac{x^2}{2}\left(\log x\right)^2 - \int \dfrac{2 \log x}{x}\cdot\dfrac{x^2}{2}\,dx\\
+&amp;=\dfrac{x^2}{2}\left(\log x\right)^2 - \int x\cdot\log x\,dx 
 \end{align}</reason>
   </step>
   <step>
-    <context>\text{If }A = \int x.\log x.dx , \text{ then what is }A = ?</context>
+    <context>\text{If }A = \int x\cdot\log x\,dx , \text{ then what is }A = ?</context>
     <tex correct='true'>A = \left[\dfrac{x^2}{2} \log x - \dfrac{x^2}{4}\right]</tex>
     <tex>A = \left[\dfrac{x^2}{4} \log x - \dfrac{x^2}{2}\right]</tex>
     <reason>\begin{align}
 A &amp;= \int \underbrace{x}_{g\left(x\right)}\underbrace{\log x}_{f \left(x\right)}.dx \\
-&amp;= \log x \int x.dx -\int \left[\dfrac{1}{x}\int x.dx\right].dx\\
-&amp;= \dfrac{x^2}{2}\log x - \int \dfrac{1}{x}.\dfrac{x^2}{2}.dx\\
+&amp;= \log x \int x\,dx -\int \left[\dfrac{1}{x}\int x.dx\right]dx\\
+&amp;= \dfrac{x^2}{2}\log x - \int \dfrac{1}{x}\cdot\dfrac{x^2}{2}\,dx\\
 &amp;=\left[\dfrac{x^2}{2}\log x - \dfrac{x^2}{4}\right]
 \end{align}</reason>
   </step>
@@ -56,7 +56,7 @@ A &amp;= \int \underbrace{x}_{g\left(x\right)}\underbrace{\log x}_{f \left(x\rig
     <tex correct='true'>\dfrac{x^2}{2}\log x \left[\log x -1\right] + \dfrac{x^2}{2} +C</tex>
     <tex>\dfrac{x^2}{2}\left(\log x\right)^2 +\dfrac{x^2}{2}\log x - \dfrac{x^2}{4} +C</tex>
     <reason>\begin{align}
-I &amp;= \dfrac{x^2}{2}\left(\log x\right)^2 - \int \underbrace{x .\log x .dx}_{step 3}\\
+I &amp;= \dfrac{x^2}{2}\left(\log x\right)^2 - \int \underbrace{x \cdot\log x \,dx}_{step 3}\\
  &amp;= \dfrac{x^2}{2}\left(\log x\right)^2 - \left[\dfrac{x^2}{2}\log x - \dfrac{x^2}{4}\right]+ C\\
  &amp;= \dfrac{x^2}{2}\log x\left[\log x -1\right] + \dfrac{x^2}{4} + C
 \end{align}</reason>

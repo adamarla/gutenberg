@@ -2,28 +2,27 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Integrate the following, }\\
-\int \dfrac{4x + 1}{\sqrt{2x^2 + x -3}}</tex>
+\int \dfrac{4x + 1}{\sqrt{2x^2 + x -3}}\, dx</tex>
   </statement>
   <step>
     <context>\text{How are }\left(4x + 1\right) \text{ and } 2x^2 + x -3 \text{ related}?</context>
     <tex correct='true'>\left(4x + 1\right) = \dfrac{d}{dx}\left(2x^2 + x - 3\right)</tex>
     <tex>\dfrac{1}{8}\left(4x + 1\right)^2 = \left(2x^2 + x -3\right)</tex>
     <reason>\text{Notice that }\dfrac{d}{dx}\left(2x^2 + -3\right)= \left(4x + 1\right)\\
-\text{So, if }t =2x^2 + x -3 \text{, then }dt = \left(4x + 1\right).dx</reason>
+\text{So, if }t =2x^2 + x -3 \text{, then }dt = \left(4x + 1\right)dx</reason>
   </step>
   <step>
     <context>\text{Has the Integral been calculated correctly?}</context>
     <tex correct='true'>\text{Let }t = 2x^2 + x -3\\
-\therefore dt = \left(4x + 1\right).dx\\
+\therefore dt = \left(4x + 1\right)dx\\
 \begin{align}
-\int \dfrac{\left(4x + 1\right).dx}{\sqrt{2x^2 + x -3}}&amp;= \int \dfrac{dt}{\sqrt{t}}\\
-																	&amp;=\dfrac{t^{-\dfrac{1}{2} +1}}{-\dfrac{1}{2}+ 1} + C\\
+\int \dfrac{\left(4x + 1\right)dx}{\sqrt{2x^2 + x -3}}&amp;= \int \dfrac{dt}{\sqrt{t}}=\dfrac{t^{-\dfrac{1}{2} +1}}{-\dfrac{1}{2}+ 1} + C\\
 																	&amp;=2\sqrt{t} + C\\
 																	&amp;= 2\sqrt{2x^2 + x - 3} + C\\
 \end{align}</tex>
     <reason>\text{With }t = 2x^2 + x -3\text{, the integral simply }\\
 \text{became }\int \dfrac{dt}{\sqrt{t}}\text{. And we know }\\
-\int t^n.dt = \dfrac{t^{n+1}}{n+1}+C\text{.Hence }n = -\dfrac{1}{2}</reason>
+\int t^ndt = \dfrac{t^{n+1}}{n+1}+C\text{.Hence }n = -\dfrac{1}{2}</reason>
   </step>
   <choices>
     <tex correct='true'>2\sqrt{2x^2 + x - 3} + C</tex>

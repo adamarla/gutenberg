@@ -2,21 +2,21 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Evaluate the integral }\\
-\int_{0}^{2} x\sqrt{x+2}\cdot dx \\
+\int_{0}^{2} x\sqrt{x+2}\, dx \\
 \text{Using substitution. }</tex>
   </statement>
   <step>
     <context>\text{If }x+2 = t^2, \text{then which of the following shows}\\
-\text{the correct way to re - write }A = \int_{0}^{2}x\sqrt{x+2} dx\\
+\text{the correct way to re - write }A = \int_{0}^{2}x\sqrt{x+2} \,dx\\
 \text{in terms of t?}</context>
     <tex correct='true'>A = 2\int_{\sqrt{2}}^{2}\left(t^4 - 2t^2\right)dt</tex>
-    <tex>A = \int_{0}^{2}\left(t^2 - 2\right)t\cdot dt</tex>
-    <reason>\text{Let }x+2 = t^2 \implies dx = 2t\cdot dt\\
+    <tex>A = \int_{0}^{2}\left(t^2 - 2\right)t\, dt</tex>
+    <reason>\text{Let }x+2 = t^2 \implies dx = 2t\, dt\\
 \text{Now }\underbrace{t^2 = 2}_{t = \sqrt{2}}\text{ when }x = 0 \text{ and }\underbrace{t^2 = 4}_{t = 2}\text{ when }x=2\\
 \begin{align}
-\therefore A &amp;= \int_{0}^{2} x\sqrt{x +2}\cdot dx\\
-&amp;= \int_{\sqrt{2}}^{2}\left(\underbrace{t^2 - 2}_{x}\right)\cdot \underbrace{t}_{\sqrt{x+2}}\cdot \underbrace{2t\cdot dt}_{dx}\\
-&amp;=2\int_{\sqrt{2}}^{2} \left(t^4 - 2t^2\right)\cdot dt
+\therefore A &amp;= \int_{0}^{2} x\sqrt{x +2}\, dx\\
+&amp;= \int_{\sqrt{2}}^{2}\left(\underbrace{t^2 - 2}_{x}\right)\cdot \underbrace{t}_{\sqrt{x+2}}\cdot \underbrace{2t\, dt}_{dx}\\
+&amp;=2\int_{\sqrt{2}}^{2} \left(t^4 - 2t^2\right)\, dt
 \end{align}</reason>
   </step>
   <step>
@@ -24,7 +24,7 @@
     <tex correct='true'>A = \dfrac{16}{15}\sqrt{2}\left(\sqrt{2}+1\right)</tex>
     <tex> A = \dfrac{32}{15}</tex>
     <reason>\begin{align}
-A &amp;= 2 \left[\int_{\sqrt{2}}^{2} \left(t^4 - 2t^2\right)\cdot dt\right] = 2 \left[\dfrac{t^5}{5} - \dfrac{2t^3}{3}\right]_{\sqrt{2}}^{2} \\
+A &amp;= 2 \left[\int_{\sqrt{2}}^{2} \left(t^4 - 2t^2\right) dt\right] = 2 \left[\dfrac{t^5}{5} - \dfrac{2t^3}{3}\right]_{\sqrt{2}}^{2} \\
 &amp;= 2 \left[\left(\dfrac{32}{5} - \dfrac{2}{3}\cdot 8\right) - \left(\dfrac{4\sqrt{2}}{5} - \dfrac{2}{3}\cdot 2\sqrt{2}\right)\right]\\
 &amp;=\dfrac{16}{15}\sqrt{2}\left(\sqrt{2}\right + 1)
 

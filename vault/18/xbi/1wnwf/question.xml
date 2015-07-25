@@ -37,11 +37,17 @@ A =1, B =0,C=\dfrac{3}{2} \text{ and }D = \dfrac{1}{2}</reason>
   </step>
   <step>
     <context>\text{Has the integral been solved correctly? }</context>
-    <tex correct='true'>\int \dfrac{x^3+x+1}{x^2+1}dx = \int \underbrace{ x.dx}_{X} + \dfrac{3}{2}\int \underbrace{\dfrac{dx}{x-1}}_{Y}\\
+    <tex correct='true'>\int \dfrac{x^3+x+1}{x^2+1}\,dx = \int \underbrace{ x\,dx}_{X} + \dfrac{3}{2}\int \underbrace{\dfrac{dx}{x-1}}_{Y}\\
 \qquad\qquad\qquad\qquad\qquad\qquad+\dfrac{1}{2}\int \underbrace{\dfrac{dx}{x+1}}_{Z}\\
 \qquad=\dfrac{x^2}{2} + \dfrac{3}{2}\log \left| x -1\right|+\dfrac{1}{2}\log \left|x+1\right|+C\\
 </tex>
     <reason>\text{Y and Z are of the form }\int \dfrac{dy}{y} = \log \left|y\right|+C\\
-\text{X is of the form }\int y^n.dy =\dfrac{y^{n+1}}{n+1} +C </reason>
+\text{X is of the form }\int y^ndy =\dfrac{y^{n+1}}{n+1} +C </reason>
   </step>
+  <choices>
+    <tex>\dfrac{x^2}{2} + \dfrac{1}{2}\log \left| x -1\right|+\dfrac{1}{2}\log \left|x+1\right|+C</tex>
+    <tex correct='true'>\dfrac{x^2}{2} + \dfrac{3}{2}\log \left| x -1\right|+\dfrac{1}{2}\log \left|x+1\right|+C</tex>
+    <tex>\dfrac{x^2}{2} - \dfrac{3}{2}\log \left| x -1\right|+\dfrac{1}{2}\log \left|x+1\right|+C</tex>
+    <tex>\dfrac{x^2}{2} + \dfrac{3}{2}\log \left| x -1\right|-\dfrac{1}{2}\log \left|x+1\right|+C</tex>
+  </choices>
 </question>

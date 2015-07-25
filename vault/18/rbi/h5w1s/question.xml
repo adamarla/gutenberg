@@ -3,18 +3,18 @@
   <statement>
     <tex>\text{Find the following integral?}
 
-\int \dfrac{x^3 - x^2 + x - 1 }{x - 1}dx</tex>
+\int \dfrac{x^3 - x^2 + x - 1 }{x - 1}\,dx</tex>
   </statement>
   <step>
     <context>\text{Which of the following is the right way }\\
 \text{solving the problem}?</context>
     <tex correct='true'>\begin{align}
-\int \dfrac{x^3 - x^2 + x - 1 }{x - 1}dx &amp;= \int \dfrac{x^2\left(x - 1\right) + x - 1 }{x - 1}dx\\
-												 &amp;= \int \left(x^2 + 1\right)
+\int \dfrac{x^3 - x^2 + x - 1 }{x - 1}\,dx &amp;= \int \dfrac{x^2\left(x - 1\right) + x - 1 }{x - 1}\,dx\\
+												 &amp;= \int \left(x^2 + 1\right)\,dx
 
 \end{align}</tex>
     <tex>\begin{align}
-\int \dfrac{x^3 - x^2 + x - 1 }{x - 1}dx &amp;= \dfrac{\int \left(x^3 - x^2 + x - 1\right).dx }{\int \left(x - 1\right).dx}\\
+\int \dfrac{x^3 - x^2 + x - 1 }{x - 1}\,dx &amp;= \dfrac{\int \left(x^3 - x^2 + x - 1\right)dx }{\int \left(x - 1\right)dx}\\
 
 \end{align}</tex>
     <reason>\text{In }\int \dfrac{P(x)}{Q(x)}\text{ integration cannot be distributed}\\
@@ -23,22 +23,22 @@
   <step>
     <context>\text{Is the calculation below correct?}</context>
     <tex correct='true'>\begin{align}
-\int \dfrac{x^3 - x^2 + x - 1 }{x - 1}dx &amp;= \int \left(x^2 + 1\right)\\
-												&amp;= \int x^2.dx + \int 1.dx\\
+\int \dfrac{x^3 - x^2 + x - 1 }{x - 1}\,dx &amp;= \int \left(x^2 + 1\right)dx\\
+												&amp;= \int x^2dx + \int 1\,dx\\
 												&amp;= \dfrac{x^3}{3}  +x + C
 
 \end{align}\\
 \text{Here C is the constant of integration.}</tex>
     <reason>\text{Other than using the result of step 1, we have}\\
-\text{used the fact that }\int t^n .dt = \dfrac{t^{n+1}}{n+1}.\text{ Check your}\\
+\text{used the fact that }\int t^n dt = \dfrac{t^{n+1}}{n+1}.\text{ Check your}\\
 \text{calculations you got something else.}
 </reason>
   </step>
   <choices>
     <tex>
-\int \dfrac{x^3 - x^2 + x - 1 }{x - 1}dx = \dfrac{x^3}{3}  -x + C</tex>
-    <tex correct='true'>\int \dfrac{x^3 - x^2 + x - 1 }{x - 1}dx = \dfrac{x^3}{3}  +x + C</tex>
-    <tex>\int \dfrac{x^3 - x^2 + x - 1 }{x - 1}dx =  \dfrac{x^3}{2}  +x + C</tex>
-    <tex>\int \dfrac{x^3 - x^2 + x - 1 }{x - 1}dx = -\dfrac{x^3}{3}  +x + C</tex>
+\int \dfrac{x^3 - x^2 + x - 1 }{x - 1}\,dx = \dfrac{x^3}{3}  -x + C</tex>
+    <tex correct='true'>\int \dfrac{x^3 - x^2 + x - 1 }{x - 1}\,dx = \dfrac{x^3}{3}  +x + C</tex>
+    <tex>\int \dfrac{x^3 - x^2 + x - 1 }{x - 1}\,dx =  \dfrac{x^3}{2}  +x + C</tex>
+    <tex>\int \dfrac{x^3 - x^2 + x - 1 }{x - 1}\,dx = -\dfrac{x^3}{3}  +x + C</tex>
   </choices>
 </question>

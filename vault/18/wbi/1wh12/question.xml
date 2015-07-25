@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If }\dfrac{d}{dx}f \left(x\right)= 4x^3 - \dfrac{3}{x^4}\text{, such that  }\\
+f\left(2\right) = 0.\text{Then }f \left(x\right)\text{ is}</tex>
+  </statement>
+  <step>
+    <context>\text{Is the calculation below correct?}</context>
+    <tex correct='true'>\begin{align}
+\dfrac{d}{dx}f\left(x\right) &amp;= 4x^3 - \dfrac{3}{x^4}\\
+\end{align}\\
+\text{To find }f\left(x\right) \text{we need to integrate }\dfrac{d}{dx}f\left(x\right)\\
+\begin{align}
+\int \dfrac{d}{dx}f\left(x\right)dx &amp;= \int \left(4x^3 - \dfrac{3}{x^4}\right)dx\\
+											&amp;=\int \left(4x^3 - 3x^{-4}\right)dx\\
+											&amp;=\dfrac{4x^{3 + 1}}{\left(3+1\right)} - \dfrac{3 x^{-4+1}}{\left(-4+1\right)} +C\\
+											&amp;=\dfrac{4x^{4}}{\left(4\right)} - 3 \dfrac{x^{-3}}{\left(-3\right)} +C\\
+											&amp;=x^4 + \dfrac{1}{x^3}+C\\
+\end{align}\\
+\text{C is the constant of integration.}
+
+
+</tex>
+    <reason>\text{We have used the fact that }\int x^tdt = \dfrac{x^{t+1}}{t+1}\\
+\text{Check your calculation if you got something else.}</reason>
+  </step>
+  <choices>
+    <tex>x^4 + \dfrac{1}{x^3} - \dfrac{129}{8}+C</tex>
+    <tex correct='true'>x^3 + \dfrac{1}{x^4} + \dfrac{129}{8}+C</tex>
+    <tex>x^4 + \dfrac{1}{x^3}+ \dfrac{129}{8}+C</tex>
+    <tex>x^3 + \dfrac{1}{x^4} - \dfrac{129}{8}+C</tex>
+  </choices>
+</question>

@@ -11,8 +11,8 @@
     <tex correct='true'>
 \dfrac{d^2y}{dx^2} = \dfrac{d}{dx}\dfrac{d}{dx}(y)</tex>
     <tex>\begin{align}
-\dfrac{d^2y}{dx^2} &amp;= \dfrac{dy}{dx}.\dfrac{dy}{dx}\\
-							&amp;= \bigg( \dfrac{dy}{dx}\bigg)\\
+\dfrac{d^2y}{dx^2} &amp;= \dfrac{dy}{dx}\cdot\dfrac{dy}{dx}\\
+							&amp;= \bigg( \dfrac{dy}{dx}\bigg)^2\\
 							
 \end{align}
 				</tex>
@@ -41,7 +41,7 @@
   <step>
     <context>\text{Are the below calculations correct?}</context>
     <tex correct='true'>\text{puntting everything together}\\
-\text{If we compare y and \dfrac{d^2y}{dx^2}we can figure out that}\\
+\text{If we compare y and } \dfrac{d^2y}{dx^2}\text{ we can figure out that}\\
 \begin{align}
 \dfrac{d^2y}{dx^2}&amp;= 24500e^{7x} + 29400e^{-7x}\\
 							&amp;= 7* 7 \left( 500e^{7x} + 600e^{-7x}\right)\\
@@ -50,6 +50,7 @@
 \end{align}
 
 </tex>
-    <reason></reason>
+    <reason>\text{After factorizing the coefficients we found }\\
+\text{that }\dfrac{d^2y}{dx^2} = 49y</reason>
   </step>
 </question>

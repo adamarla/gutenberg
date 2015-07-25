@@ -6,14 +6,14 @@
   <step>
     <context>\text{Is the calculation below correct?}</context>
     <tex correct='true'>\begin{align}
-\int \left(\sqrt x +\dfrac{1}{\sqrt x}\right).dx &amp;= \int x^{\dfrac{1}{2}}.dx  + \int x^{-\dfrac{1}{2}}.dx\\
+\int \left(\sqrt x +\dfrac{1}{\sqrt x}\right)dx &amp;= \int x^{\dfrac{1}{2}}dx  + \int x^{-\dfrac{1}{2}}dx\\
 														&amp;= \dfrac{x^{\dfrac{1}{2} +1}}{\left(\dfrac{1}{2}+1\right)} + \dfrac{x^{-\dfrac{1}{2}+1}}{\left(-\dfrac{1}{2}+1\right)}+ C\\                    
 														&amp;= \dfrac{2}{3}x^{\dfrac{3}{2}} + 2x^{\dfrac{1}{2}} + C\\
 \end{align}	\\
 \text{Here, C is the constant of integration}
 
 </tex>
-    <reason>\text{We have used the fact that }\int t^n.dt = \dfrac{t^{n+1}}{n+1}\\
+    <reason>\text{We have used the fact that }\int t^ndt = \dfrac{t^{n+1}}{n+1}\\
 \text{Check your calculation if you got anything else}. </reason>
   </step>
   <choices>

@@ -2,7 +2,7 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Evaluate the integral }\\
-\int_{2}^{8}\left|x-5\right|\cdot dx\\
+\int_{2}^{8}\left|x-5\right| dx\\
 \text{Using properties of definite integrals.}</tex>
   </statement>
   <step>
@@ -30,25 +30,25 @@
 \text{re - written correctly below?}\\
 </context>
     <tex correct='true'>\begin{align}
-A &amp;= \int_{2}^{8}\left|x-5\right|.dx\\
-&amp;=\int_{2}^{5}-\left(x-5\right).dx + \int_{5}^{8}\left(x-5\right).dx
+A &amp;= \int_{2}^{8}\left|x-5\right|dx\\
+&amp;=\int_{2}^{5}-\left(x-5\right)dx + \int_{5}^{8}\left(x-5\right)dx
 \end{align}</tex>
     <reason>f \left(x\right) = \left|x-5\right| \text{ is computed differently in}\\
 [2,5) \text{ and }[5,8]\\
 \begin{align}
-\text{So, }A &amp;= \int_{2}^{8}f \left(x\right).dx\\
-&amp;=\int_{2}^{5}f_1 \left(x\right).dx + \int_{5}^{8}f_2 \left(x\right).dx\\
+\text{So, }A &amp;= \int_{2}^{8}f \left(x\right)dx\\
+&amp;=\int_{2}^{5}f_1 \left(x\right)dx + \int_{5}^{8}f_2 \left(x\right)dx\\
 \end{align}\\
 
 \text{Where }f_1 \left(x\right) = -\left(x-5\right)\text{ and }f_2 \left(x\right) = \left(x-5\right)</reason>
   </step>
   <step>
-    <context>\text{What will }A = \int_{2}^{8}\left|x-5\right|.dx \text{ evaluate to?}</context>
+    <context>\text{What will }A = \int_{2}^{8}\left|x-5\right|dx \text{ evaluate to?}</context>
     <tex correct='true'>A=9</tex>
     <tex>A=11</tex>
     <reason>\begin{align}
-A &amp;= \int_{2}^{8}\left|x-5\right|.dx\\
-&amp;= \int_{2}^{5}-\left(x-5\right).dx + \int_{5}^{8}\left(x-5\right).dx\\
+A &amp;= \int_{2}^{8}\left|x-5\right|dx\\
+&amp;= \int_{2}^{5}-\left(x-5\right)dx + \int_{5}^{8}\left(x-5\right)dx\\
 &amp;=\left[-\dfrac{x^2}{2}+5x\right]_{2}^{5}+\left[\dfrac{x^2}{2}-5x\right]_{5}^{8}\\
 &amp;=\left[\underbrace{\left(\dfrac{25}{2}+25\right)}_{x=5}-\underbrace{\left(-2+10\right)}_{x=2}\right]+\\
 &amp;\quad\left[\underbrace{\left(32-40\right)}_{x=5}-\underbrace{\left(\dfrac{25}{2}-25\right)}_{x=8}\right]\\

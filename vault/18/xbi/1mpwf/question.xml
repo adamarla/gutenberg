@@ -16,7 +16,7 @@ a &amp;= 3\\
 b &amp;= 4\\ 
 \end{align}</tex>
     <reason>8 + 3x - x^2 = -\left(x^2 -3x -8\right)\\
-\text{Now }x^2- 3x = \left(x - \dfrac{3}{2}\right)^2 - \dfrac{9}{4},\text{So,}\\
+\text{Now }x^2- 3x = \left(x - \dfrac{3}{2}\right)^2 - \dfrac{9}{4},\text{ So,}\\
 -\left[x^2 -3x - 8\right] = -\left[\left(x - \dfrac{3}{2}\right)^2 - \dfrac{9}{4} - 8\right] \\= \left(\dfrac{\sqrt{41}}{2}\right)^2 - \left(x - \dfrac{3}{2}\right)^2\\</reason>
   </step>
   <step>

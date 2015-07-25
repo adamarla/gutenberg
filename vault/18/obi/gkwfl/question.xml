@@ -4,34 +4,34 @@
     <tex>\text{Find an anti derivative (or integral) of the}\\
 	\text{following function by the method of inspection.}\\
 	
-	 \sin 2x - 4 e^{3x}</tex>
+	 \sin 2x - 4 \, e^{3x}</tex>
   </statement>
   <step>
     <context>\text{Which of the below function has the derivative}\\
-\text{as } \sin nx - 4 e^{mx}\text{, where }n \in \mathbb{R}</context>
-    <tex correct='true'>-\dfrac{\cos nx}{n} - 4 .\dfrac{e^{mx}}{m}</tex>
-    <tex>n\cos nx - 4m . e^{mx}</tex>
+\text{as } \sin nx - 4 \, e^{mx}\text{, where }n \in \mathbb{R}</context>
+    <tex correct='true'>-\dfrac{\cos nx}{n} - 4 \, \dfrac{e^{mx}}{m}</tex>
+    <tex>n\cos nx - 4me^{mx}</tex>
     <reason>\text{Other than Chain Rule we have used the fact }\\
 \text{that }\dfrac{d \left(\cos \theta \right)}{d\theta} = -\sin \theta \text{ and }\dfrac{d \left(e^{\theta}\right)}{d\theta} = e^{\theta}.\text{Check}\\
 \text{your calculations if got this wrong.}</reason>
   </step>
   <step>
     <context>\text{Is the analysis below correct?}</context>
-    <tex correct='true'>\text{Since , }\\
+    <tex correct='true'>
 \begin{align}
-\dfrac{d \left(-\dfrac{\cos 2x}{2} - 4 .\dfrac{e^{3x}}{3}\right)}{dx} &amp;= \sin 2x - 4 e^{3x}\\
+\text{Since , }\dfrac{d \left(-\dfrac{\cos 2x}{2} - 4\,\dfrac{e^{3x}}{3}\right)}{dx} &amp;= \sin 2x - 4 e^{3x}\\
 
 \end{align}\\
 \therefore \text{anti derivative or integral of }\sin 2x - 4 e^{3x}\text{ is} \\
--\dfrac{\cos 2x}{2} - 4 .\dfrac{e^{3x}}{3}\\
+-\dfrac{\cos 2x}{2} - 4 \,\dfrac{e^{3x}}{3}\\
 </tex>
     <reason>\text{We have used the result of step 1. Review it }\\
 \text{if you got this wrong.}</reason>
   </step>
   <choices>
-    <tex>\int \sin 2x - 4 e^{3x} .dx= \dfrac{\cos 2x}{2} - 4 .\dfrac{e^{3x}}{3}</tex>
-    <tex>\int \sin 2x - 4 e^{3x}. dx= -\cos 2x - 4 .e^{3x}</tex>
-    <tex correct='true'>\int \sin 2x - 4 e^{3x}. dx= -\dfrac{\cos 2x}{2} - 4 .\dfrac{e^{3x}}{3}</tex>
-    <tex>\int \sin 2x - 4 e^{3x} .dx= -\dfrac{\cos 2x}{2} + 4 .\dfrac{e^{3x}}{3}</tex>
+    <tex>\dfrac{\cos 2x}{2} - 4 .\dfrac{e^{3x}}{3}</tex>
+    <tex>-\cos 2x - 4 .e^{3x}</tex>
+    <tex correct='true'>-\dfrac{\cos 2x}{2} - 4 .\dfrac{e^{3x}}{3}</tex>
+    <tex>-\dfrac{\cos 2x}{2} + 4 .\dfrac{e^{3x}}{3}</tex>
   </choices>
 </question>

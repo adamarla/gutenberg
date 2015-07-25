@@ -27,16 +27,22 @@ A +B = 0\\
 \implies A = -1 \text{ and } B= 2</reason>
   </step>
   <step>
-    <context>\text{Would }\int \dfrac{x}{\left(x+1\right)\left(x+2\right)}.dx\text{ would evaluate}\\
+    <context>\text{Would }\int \dfrac{x}{\left(x+1\right)\left(x+2\right)}\,dx\text{ would evaluate}\\
 \text{to the following?}</context>
     <tex correct='true'>
-\int \dfrac{x}{\left(x+1\right)\left(x+2\right)}.dx =-\int \dfrac{dx}{x+1} + 2\int \dfrac{dx}{x+2}\\
+\int \dfrac{x}{\left(x+1\right)\left(x+2\right)}\,dx =-\int \dfrac{dx}{x+1} + 2\int \dfrac{dx}{x+2}\\
 \qquad\qquad\qquad=2 \log \left|x +2\right| -\log \left|x+1\right| + C\\
 \qquad\qquad\qquad=\log \left|\dfrac{\left(x + 2\right)^2}{x +1}\right| + C\\
 </tex>
     <reason>\text{In step 1, we showed }\\
 \dfrac{x}{\left(x+1\right)\left(x+2\right)} = \dfrac{-1}{\left(x+1\right)}+\dfrac{2}{\left(x+2\right)}\\
-\therefore \int \dfrac{x}{\left(x+1\right)\left(x+2\right)}.dx =-\int \dfrac{dx}{x+1} + 2\int \dfrac{dx}{x+2}\\
+\therefore \int \dfrac{x}{\left(x+1\right)\left(x+2\right)}\,dx =-\int \dfrac{dx}{x+1} + 2\int \dfrac{dx}{x+2}\\
 \text{and }\int \dfrac{dx}{f \left(x\right)} = \log \left|f \left(x\right)\right| + C\\</reason>
   </step>
+  <choices>
+    <tex>\log \left|\dfrac{\left(x + 1\right)^2}{x +2}\right| + C</tex>
+    <tex>\log \left|\dfrac{x + 2}{\left(x +1\right)^2}\right| + C</tex>
+    <tex correct='true'>\log\left|\dfrac{\left(x + 2\right)^2}{x +1}\right| + C</tex>
+    <tex>\log \left|\dfrac{x + 2}{x +1}\right| + C</tex>
+  </choices>
 </question>

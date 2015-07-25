@@ -33,38 +33,38 @@
   <step>
     <context>
   		\text{Which of the following shows the correct}\\
-  		\text{way to re-write }\int\dfrac{5x+3}{\sqrt{x^2+4x+10}}dx?
+  		\text{way to re-write }\int\dfrac{5x+3}{\sqrt{x^2+4x+10}}\,dx?
   			</context>
     <tex correct='true'>
   			\begin{align}
-  			  \int\dfrac{5x+3}{\sqrt{x^2+4x+10}}dx &amp;= 
-  			  \frac{5}{2}\int\dfrac{2x+4}{\sqrt{x^2+4x+10}}dx \\
-  			  &amp;-7 \int\dfrac{dx}{\sqrt{x^2+4x+10}}dx
+  			  \int\dfrac{5x+3}{\sqrt{x^2+4x+10}}\,dx &amp;= 
+  			  \frac{5}{2}\int\dfrac{2x+4}{\sqrt{x^2+4x+10}}\,dx \\
+  			  &amp;-7 \int\dfrac{dx}{\sqrt{x^2+4x+10}}\,dx
   			\end{align}
   			</tex>
     <tex>
   			\begin{align}
-  			  \int\dfrac{5x+3}{\sqrt{x^2+4x+10}}dx &amp;= 
-  			  \int\dfrac{2x+4}{\sqrt{x^2+4x+10}}dx \\
-  			  &amp;- \int\dfrac{dx}{\sqrt{x^2+4x+10}}dx
+  			  \int\dfrac{5x+3}{\sqrt{x^2+4x+10}}\,dx &amp;= 
+  			  \int\dfrac{2x+4}{\sqrt{x^2+4x+10}}\,dx \\
+  			  &amp;- \int\dfrac{dx}{\sqrt{x^2+4x+10}}\,dx
   			\end{align}
   			</tex>
     <reason>
   			\text{We showed that }5x+3 = \frac{5}{2}\cdot(2x+4) - 7.\\
-  			\therefore \int\dfrac{5x+3}{\sqrt{x^2+4x+10}}dx = 
-  			\int\dfrac{\frac{5}{2}\cdot(2x+4) - 7}{\sqrt{x^2+4x+10}}dx \\
-  			= \frac{5}{2}\int\dfrac{2x+4}{\sqrt{x^2+4x+10}}dx -7 \int\dfrac{dx}{\sqrt{x^2+4x+10}}dx
+  			\therefore \int\dfrac{5x+3}{\sqrt{x^2+4x+10}}\,dx = 
+  			\int\dfrac{\frac{5}{2}\cdot(2x+4) - 7}{\sqrt{x^2+4x+10}}\,dx \\
+  			= \frac{5}{2}\int\dfrac{2x+4}{\sqrt{x^2+4x+10}}\,dx -7 \int\dfrac{dx}{\sqrt{x^2+4x+10}}\,dx
   			</reason>
   </step>
   <step>
     <context>
-  		\text{If }M = \frac{5}{2}\int\dfrac{2x+4}{\sqrt{x^2+4x+10}}dx, \\
+  		\text{If }M = \frac{5}{2}\int\dfrac{2x+4}{\sqrt{x^2+4x+10}}\,dx, \\
   		\text{then has M been evaluated correctly below?}
   		</context>
     <tex correct='true'>
   		\begin{align}
   		  \text{Let }t &amp;= x^2+4x+10 \implies dt = (2x+4)\cdot dx\\
-  		  \therefore M &amp;= \frac{5}{2}\int\dfrac{2x+4}{\sqrt{x^2+4x+10}}dx = \frac{5}{2}\int\dfrac{dt}{\sqrt{t}}\\
+  		  \therefore M &amp;= \frac{5}{2}\int\dfrac{2x+4}{\sqrt{x^2+4x+10}}\,dx = \frac{5}{2}\int\dfrac{dt}{\sqrt{t}}\\
   		  &amp;= \frac{5}{2}\cdot\dfrac{1}{\frac{1}{2}}\cdot\sqrt{t} + C_1 \\
   		  &amp;= 5\sqrt{x^2+4x+10} + C_1
   		\end{align}
@@ -77,17 +77,19 @@
   </step>
   <step>
     <context>
-  			\text{And if }N =-7 \int\dfrac{dx}{\sqrt{x^2+4x+10}}dx, \text{then would}\\
+  			\text{And if }N =-7 \int\dfrac{dx}{\sqrt{x^2+4x+10}}\,dx, \text{then would}\\
   			\text{N be the following?}
   			</context>
     <tex correct='true'>
   			\begin{align}
   			  x^2+4x+10 &amp;= \left[\left(x+2\right)^2 + 6\right] \\
   			  &amp;= \left[\left(x+2\right)^2+(\sqrt{6})^2\right] \\
-  			  \therefore N &amp;= -7\int\dfrac{dx}{\sqrt{\left(x+2\right)^2
-  			  +(\sqrt{6})^2 }}dx\\
+  			  
   			\end{align}\\
   			\begin{align}
+  			\therefore N &amp;= -7\int\dfrac{dx}{\sqrt{\left(x+2\right)^2
+  			  +(\sqrt{6})^2 }}\,dx\\
+  			
   			&amp;=-7 \log\left| \left(x+2\right) + \sqrt{\left(x+2\right)^2+(\sqrt{6})^2}\right| + C_2  \\
   			  &amp;= -7\log\left| \left(x+2\right) + \sqrt{x^2+4x+10}\right| + C_2
   			\end{align}
@@ -95,7 +97,10 @@
     <reason>
   			\text{You can convert any quadratic polynomial into}\\
   			(x\pm a)^2\pm b^2\text{ form. And so, we went from}\\
-  			x^2+4x+10\rightarrow (x+2)^2 + 6 \rightarrow \int\dfrac{dx}{\sqrt{(x+2)^2+(\sqrt{6})^2}}\\
+  			\begin{align}
+  			x^2+4x+10&amp;\implies (x+2)^2 + 6 \\
+  			&amp;\implies \int\dfrac{dx}{\sqrt{(x+2)^2+(\sqrt{6})^2}}\\
+			\end{align}\\
   			\text{After that, we simply applied used result for }\\
   			\int\frac{dx}{\sqrt{x^2 + m^2}}dx
   			</reason>
@@ -106,14 +111,24 @@
   		</context>
     <tex correct='true'>
   		\begin{align}
-  		&amp;\int\dfrac{5x+3}{\sqrt{x^2+4x+10}}dx =5\sqrt{x^2+4x+10} \\
+  		&amp;\int\dfrac{5x+3}{\sqrt{x^2+4x+10}}\,dx =5\sqrt{x^2+4x+10} \\
   		&amp;-7 \log\left| \left(x+2\right) + \sqrt{x^2+4x+10}\right| + C
   		\end{align}
   		</tex>
     <reason>
-  		\int\dfrac{5x+3}{\sqrt{x^2+4x+10}}dx = \underbrace{M}_{\text{Step 3}} 
+  		\int\dfrac{5x+3}{\sqrt{x^2+4x+10}}\,dx = \underbrace{M}_{\text{Step 3}} 
   		+\underbrace{N}_{\text{Step 4}}. \\
   		\text{Nothing more complicated than that.}
   		</reason>
   </step>
+  <choices>
+    <tex correct='true'>5\sqrt{x^2+4x+10} \\
+  		\qquad\quad-7 \log\left| \left(x+2\right) + \sqrt{x^2+4x+10}\right| + C</tex>
+    <tex>5\sqrt{x^2+4x+10} \\
+  		\qquad\quad+7 \log\left| \left(x+2\right) + \sqrt{x^2+4x+10}\right| + C</tex>
+    <tex>5\sqrt{x^2+4x+10} \\
+  		\qquad\quad-7 \log\left|\sqrt{x^2+4x+10}\right| + C</tex>
+    <tex>\sqrt{x^2+4x+10} \\
+  		\qquad\quad- \log\left| \left(x+2\right) + \sqrt{x^2+4x+10}\right| + C</tex>
+  </choices>
 </question>

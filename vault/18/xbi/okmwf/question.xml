@@ -31,12 +31,18 @@ B &amp;= -\dfrac{1}{6}\\
     <context>
 \text{Would }\int \dfrac{dx}{x^2 -9}\text{ evaluate to the following?}</context>
     <tex correct='true'>I = \int \dfrac{dx}{x^2 -9} = \dfrac{-1}{6}\int \dfrac{dx}{x+3}+\dfrac{1}{6}\int \dfrac{dx}{x-3}\\
-\qquad\qquad\qquad=\dfrac{-1}{6}\log \left|x+3\right| +\dfrac{1}{6}\log\left|x-3\right| +C\\
-\qquad\qquad\qquad=\dfrac{1}{6}\log \dfrac{x-3}{x+3} +C\\
+\qquad\qquad\quad=\dfrac{-1}{6}\log \left|x+3\right| +\dfrac{1}{6}\log\left|x-3\right| +C\\
+\qquad\qquad\quad=\dfrac{1}{6}\log \dfrac{x-3}{x+3} +C\\
 </tex>
     <reason>\text{We showed in step 1 that}\\
-\dfrac{1}{x^2 -9}=\dfrac{-1}{6}\dfrac{1}{x+3}+\dfrac{1}{6}\dfrac{1}{x-3}\\
+\dfrac{1}{x^2 -9}=\dfrac{-1}{6}\,\dfrac{1}{x+3}+\dfrac{1}{6}\, \dfrac{1}{x-3}\\
 \therefore \int \dfrac{dx}{x^2 -9} = \dfrac{-1}{6}\int \dfrac{dx}{x+3}+\dfrac{1}{6}\int \dfrac{dx}{x-3}\\
 \text{Just use }\int \dfrac{dy}{y} = \log \left|y\right|+C</reason>
   </step>
+  <choices>
+    <tex correct='true'>\dfrac{1}{6}\log \dfrac{x-3}{x+3} +C</tex>
+    <tex>\log \dfrac{x-3}{x+3} +C</tex>
+    <tex>\dfrac{1}{6}\log \dfrac{x+3}{x-3} +C</tex>
+    <tex>-\dfrac{1}{6}\log \dfrac{x-3}{x+3} +C</tex>
+  </choices>
 </question>

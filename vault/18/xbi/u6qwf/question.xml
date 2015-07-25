@@ -16,9 +16,13 @@ t &amp;= x - 3\\
 a &amp;= 16\\
 \end{align}</tex>
     <reason>\text{Notice that }-\left(x + 3\right)^2 = -\left(x^2  +6x + 9\right) \\
-= -x^2 -6x -9.\text{Quite close to }-x^2 - 6x + 7\\
+= -x^2 -6x -9.\text{ Quite close to }-x^2 - 6x + 7\\
 \text{In fact, }-x^2- 6x +7 - 16 = -\left(x + 3\right)^2\\
-\Rightarrow -x^2-6X +7 =16 -\left(x + 3\right)^2 = 4^2 - \left(x + 3\right)^2\\
+
+\begin{align}
+\implies -x^2-6x +7 &amp;=16 -\left(x + 3\right)^2\\
+&amp;= 4^2 - \left(x + 3\right)^2\\
+\end{align}\\
 \therefore a =4 \text{ and }t = \left(x +3\right).
 </reason>
   </step>
@@ -34,7 +38,7 @@ a &amp;= 16\\
 \end{align}
 </tex>
     <reason>\text{Use the standard result }\\
-\int \dfrac{dt}{\sqrt{dt}{\sqrt{a^2 - t^2}}} = \sin^{-1} \dfrac{t}{a} + C</reason>
+\int \dfrac{dt}{\sqrt{dt}\,{\sqrt{a^2 - t^2}}} = \sin^{-1} \dfrac{t}{a} + C</reason>
   </step>
   <choices>
     <tex>\sin \left(\dfrac{x+3}{4}\right) +C</tex>

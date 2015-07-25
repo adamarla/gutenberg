@@ -1,30 +1,30 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Integrate }I = \int\dfrac{\sin^{-1} x}{\sqrt{1-x^2}}dx</tex>
+    <tex>\text{Integrate }I = \int\dfrac{\sin^{-1} x}{\sqrt{1-x^2}}\,dx</tex>
   </statement>
   <step>
     <context>\text{The following substitution would convert} \\
-I=\int\dfrac{\sin^{-1} x}{\sqrt{1-x^2}}dx \text{ to } 
+I=\int\dfrac{\sin^{-1} x}{\sqrt{1-x^2}}\,dx \text{ to } 
   I=\int t\, dt</context>
     <tex correct='true'>t = \sin^{-1} x</tex>
     <tex>t = \dfrac{1}{\sqrt{1-x^2}}</tex>
-    <reason>\sin^{-1} x = t \implies \dfrac{1}{\sqrt{1-x^2}}dx = dt \\
-\therefore \int\dfrac{\sin^{-1} x}{\sqrt{1-x^2}}dx=\int t\, dt</reason>
+    <reason>\sin^{-1} x = t \implies \dfrac{1}{\sqrt{1-x^2}}\,dx = dt \\
+\therefore \int\dfrac{\sin^{-1} x}{\sqrt{1-x^2}}\,dx=\int t\, dt</reason>
   </step>
   <step>
-    <context>\text{If }I=\int \dfrac{\sin^{-1} x}{\sqrt{1-x^2}}dx 
+    <context>\text{If }I=\int \dfrac{\sin^{-1} x}{\sqrt{1-x^2}}\,dx 
   = \int t\, dt \\
 \text{then does this look correct?}</context>
     <tex correct='true'>\begin{align}
-I &amp;=\int  t\cdot dt = \dfrac{t^2}{2} + C \\
+I &amp;=\int  t\, dt = \dfrac{t^2}{2} + C \\
   &amp;=\dfrac{1}{2}\left(\sin^{-1} x\right)^2+C 
 \end{align}</tex>
     <tex>\begin{align}
-I &amp;=\int  t\cdot dt= 2t^2 + C \\
+I &amp;=\int  t\, dt= 2t^2 + C \\
   &amp;=2\left(\sin^{-1} x\right)^2+C 
 \end{align}</tex>
-    <reason>\int x^n .dx = \dfrac{x^{n+1}}{n+1}+C</reason>
+    <reason>\int x^n \,dx = \dfrac{x^{n+1}}{n+1}+C</reason>
   </step>
   <choices>
     <tex>-\dfrac{1}{2}\left(\sin^{-1} x\right)^2+C </tex>

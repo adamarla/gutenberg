@@ -17,10 +17,10 @@
   </step>
   <step>
     <context>\text{Is the analysis below correct?}</context>
-    <tex correct='true'>\text{Since , }\\
+    <tex correct='true'>
 \begin{align}
-\dfrac{d \left(e^{2x}\right)}{dx} &amp;= 2 e^{2x}\\
-\Rightarrow e^{2x} &amp;= \dfrac{1}{2}.\dfrac{d}{dx}\left(e^{2x}\right)
+\text{Since , }\dfrac{d \left(e^{2x}\right)}{dx} &amp;= 2 e^{2x}\\
+\implies e^{2x} &amp;= \dfrac{1}{2}.\dfrac{d}{dx}\left(e^{2x}\right)
 \end{align}\\
 \therefore \text{anti derivative or integral of }e^{2x} \text{ is} \dfrac{e^{2x}}{2}\\
 </tex>
@@ -28,9 +28,9 @@
 \text{you got something else. }\\</reason>
   </step>
   <choices>
-    <tex correct='true'>\int e^{2x} .dx = \dfrac{e^{2x}}{2}</tex>
-    <tex>\int e^{2x} .dx = \dfrac{\log \left(2x\right)}{2}</tex>
-    <tex>\int e^{2x} .dx = 2e^{2x}</tex>
-    <tex>\int e^{2x} .dx = -\dfrac{e^{2x}}{2}</tex>
+    <tex correct='true'>\dfrac{e^{2x}}{2}</tex>
+    <tex> \dfrac{\log \left(2x\right)}{2}</tex>
+    <tex>2e^{2x}</tex>
+    <tex>-\dfrac{e^{2x}}{2}</tex>
   </choices>
 </question>

@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Integrate }x\sin 3x \text{ using integration by parts.}</tex>
+    <tex>\text{Integrate }x\, \sin 3x \text{ using integration by parts.}</tex>
   </statement>
   <step>
-    <context>\text{Given }\int f . g .dx = f \int g.dx - \int \left[f^{\prime}\int g.dx\right].dx\\
+    <context>\text{Given }\int f . g \,dx = f \int g\,dx - \int \left[f^{\prime}\int g\,dx\right].dx\\
 \text{Which is the better choice for  }f \left(x\right) \text{ and }g \left(x\right).
 </context>
     <tex correct='true'>\begin{align}
@@ -34,19 +34,19 @@ E &amp; \text{Exponential functions} \\
   <step>
     <context>\text{Given }f \left(x\right) = x \text{ and }g \left(x\right) =\sin 3x\text{, what will}\\
 \text{Integral evaluate to?}</context>
-    <tex correct='true'>\dfrac{-x}{3}.\cos 3x + \dfrac{\sin 3x}{9} + C</tex>
-    <tex>\dfrac{-x}{3}.\cos 3x + \dfrac{\sin 3x}{3} + C</tex>
+    <tex correct='true'>\dfrac{-x}{3}\cdot\cos 3x + \dfrac{\sin 3x}{9} + C</tex>
+    <tex>\dfrac{-x}{3}\cdot\cos 3x + \dfrac{\sin 3x}{3} + C</tex>
     <reason>\begin{align}
-I &amp;= \int f . g .dx = f \int g.dx - \int \left[f^{\prime}\int g.dx \right].dx\\
-&amp;= x \int \sin 3x .dx -\int \left[\dfrac{dx}{dx}\int \sin 3x.dx\right].dx\\
-&amp;= -\underbrace{x \dfrac{\cos 3x}{3}}_{\int \sin Nx.dx =-\frac{ \cos Nx}{N}}+\int \dfrac{\cos 3x}{3} \\
-&amp;= -x .\dfrac{\cos 3x}{3}+\underbrace{\dfrac{\sin 3x}{9}}_{\dfrac{1}{3}\times\dfrac{1}{3}} +C\\
+I &amp;= \int f \cdot g \,dx = f \int g\,dx - \int \left[f^{\prime}\int g\,dx \right]dx\\
+&amp;= x \int \sin 3x \,dx -\int \left[\dfrac{dx}{dx}\int \sin 3x\,dx\right]dx\\
+&amp;= -\underbrace{x \cdot\dfrac{\cos 3x}{3}}_{\int \sin Nx.dx =-\frac{ \cos Nx}{N}}+\int \dfrac{\cos 3x}{3} \\
+&amp;= -x \cdot\dfrac{\cos 3x}{3}+\underbrace{\dfrac{\sin 3x}{9}}_{\dfrac{1}{3}\times\dfrac{1}{3}} +C\\
 \end{align}</reason>
   </step>
   <choices>
-    <tex>\dfrac{x}{3}.\cos 3x + \dfrac{\sin 3x}{9} + C</tex>
-    <tex>\dfrac{x}{3}.\cos 3x - \dfrac{\sin 3x}{9} + C</tex>
-    <tex>\dfrac{-x}{3}.\cos 3x + \dfrac{\sin 3x}{3} + C</tex>
-    <tex correct='true'>\dfrac{-x}{3}.\cos 3x + \dfrac{\sin 3x}{9} + C</tex>
+    <tex>\dfrac{x}{3}\, \cos 3x + \dfrac{\sin 3x}{9} + C</tex>
+    <tex>\dfrac{x}{3}\,\cos 3x - \dfrac{\sin 3x}{9} + C</tex>
+    <tex>\dfrac{-x}{3}\,\cos 3x + \dfrac{\sin 3x}{3} + C</tex>
+    <tex correct='true'>\dfrac{-x}{3}\,\cos 3x + \dfrac{\sin 3x}{9} + C</tex>
   </choices>
 </question>

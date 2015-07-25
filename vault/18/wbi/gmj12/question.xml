@@ -10,18 +10,18 @@
     <tex correct='true'>
 
 \text{Let }t = x^3\\
-dt = 3x^2.dx\\
+dt = 3x^2dx\\
 \begin{align}
-\therefore \dfrac{3x^2}{x^6 + 1}.dx = \dfrac{dt}{t^2 + 1}\\
+\therefore \dfrac{3x^2}{x^6 + 1}\,dx = \dfrac{dt}{t^2 + 1}\\
 \end{align}
 
 </tex>
     <tex>
 \text{Let }t = x^2\\
-	dt = 2x.dx\\
+	dt = 2x\,dx\\
 \begin{align}
-	\dfrac{3x^2.dx }{x^6 + 1}&amp;= \dfrac{3}{2}.\dfrac{\sqrt{t}.dt}{t^3 + 1}\\
-							   &amp;= \dfrac{3}{2}.\dfrac{\sqrt{t}.dt}{\underbrace{\left(t+1\right)\left(t^2 - t +1\right)}_{\left(t^3 + a^3\right) = \left(t + a\right)\left(t^2 - at -a^2\right)}}
+	\dfrac{3x^2dx }{x^6 + 1}&amp;= \dfrac{3}{2}\,\dfrac{\sqrt{t}\,dt}{t^3 + 1}\\
+							   &amp;= \dfrac{3}{2}\,\dfrac{\sqrt{t}\,dt}{\underbrace{\left(t+1\right)\left(t^2 - t +1\right)}_{\left(t^3 + a^3\right) = \left(t + a\right)\left(t^2 - at -a^2\right)}}
 	
 \end{align}</tex>
     <reason>\text{We know what }\int \dfrac{dx}{x^2 + a^2}\text{ is.}\\
@@ -31,7 +31,7 @@ dt = 3x^2.dx\\
     <context>\text{Has the integral been calculated}\\
 \text{properly?}</context>
     <tex correct='true'>\begin{align}
-\int \dfrac{3x^2 .dx}{x^6 + 1} &amp;= \int \dfrac{dt}{t^2 +1}\\
+\int \dfrac{3x^2 dx}{x^6 + 1} &amp;= \int \dfrac{dt}{t^2 +1}\\
 										&amp;= \tan^{-1} t + C\\
 										&amp;= \tan^{-1} x^3	+ c\\	
 \end{align}</tex>

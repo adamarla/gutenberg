@@ -37,7 +37,7 @@ A + B - 2C = 1 \text{ and }2B -2A + C = 0\\
   </step>
   <step>
     <context>\text{Has the integral been calculated correctly \\below?}</context>
-    <tex correct='true'>\int \dfrac{x.dx}{\left(x -1\right)^2\left(x +2\right)} = \underbrace{\dfrac{2}{9}\int \dfrac{dx}{x -1}}_{X}+\underbrace{\dfrac{1}{3}\int \dfrac{dx}{\left(x -1\right)^2}}_{Y} \\
+    <tex correct='true'>\int \dfrac{x\,dx}{\left(x -1\right)^2\left(x +2\right)} = \underbrace{\dfrac{2}{9}\int \dfrac{dx}{x -1}}_{X}+\underbrace{\dfrac{1}{3}\int \dfrac{dx}{\left(x -1\right)^2}}_{Y} \\
 \qquad\qquad\qquad\qquad\qquad\qquad\qquad- \underbrace{\dfrac{2}{9}\int \dfrac{dx}{x +2}}_{C}\\
 \quad = \dfrac{2}{9} \log \left|x-1\right| - \dfrac{1}{3 \left(x -1\right)} - \dfrac{2}{9}\log \left| x+2\right| + C\\
 \quad= \dfrac{2}{9}\log \left|\dfrac{x-1}{x+2}\right| - \dfrac{1}{3 \left(x -1\right)} + C</tex>

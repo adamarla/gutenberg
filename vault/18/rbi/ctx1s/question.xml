@@ -3,27 +3,27 @@
   <statement>
     <tex>\text{Find the following integral}
 
-\int 2x^{2} + e^{x}</tex>
+\int \left(2x^{2} + e^{x}\right)dx</tex>
   </statement>
   <step>
     <context>\text{Are the calculations below correct?}</context>
     <tex correct='true'>
 \begin{align}
-\int \left(2x^2 + e^{x}\right).dx &amp;= 2 .\int x^2 .dx +\int e^{x}.dx \\
+\int \left(2x^2 + e^{x}\right)dx &amp;= 2 \int x^2 dx +\int e^{x}dx \\
 										&amp;=\dfrac{x^3}{3} + e^{x} + C\\
 
 \end{align}\\
 \text{here, C is the constant of integration}
 
 </tex>
-    <reason>\text{We have used the fact that }\int x^{n}.dx = \dfrac{x^{n+1}}{n+1} + c\\
-\text{and }\int e^{x}=e^{x} + c.\text{Check your calculation if you}\\
+    <reason>\text{We have used the fact that }\int x^{n}dx = \dfrac{x^{n+1}}{n+1} + c\\
+\text{and }\int e^{x}dx=e^{x} + c.\text{Check your calculation if you}\\
 \text{got something else.}\\</reason>
   </step>
   <choices>
-    <tex>\int 2x^{2} + e^{x} = \dfrac{x^3}{3} - e^{x} + C\\</tex>
-    <tex>\int 2x^{2} + e^{x} = -\dfrac{x^3}{3} + e^{x} + C\\</tex>
-    <tex>\int 2x^{2} + e^{x} = x^{3} + e^{x} + C\\</tex>
-    <tex correct='true'>\int 2x^{2} + e^{x} = \dfrac{x^3}{3} + e^{x} + C\\</tex>
+    <tex>\int \left(2x^{2} + e^{x}\right)dx = \dfrac{x^3}{3} - e^{x} + C\\</tex>
+    <tex>\int \left(2x^{2} + e^{x}\right)dx = -\dfrac{x^3}{3} + e^{x} + C\\</tex>
+    <tex>\int \left(2x^{2} + e^{x}\right)dx = x^{3} + e^{x} + C\\</tex>
+    <tex correct='true'>\int \left(2x^{2} + e^{x}\right)dx= \dfrac{x^3}{3} + e^{x} + C\\</tex>
   </choices>
 </question>

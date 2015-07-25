@@ -10,19 +10,19 @@
 </context>
     <tex correct='true'>\begin{align}
 t &amp;= x^2\\
-dt &amp;= 2x.dx\\
+dt &amp;= 2x\,dx\\
 \end{align}\\
 
 \begin{align}
-	\int \dfrac{3x.dx}{1 + 2x^4} &amp;= \dfrac{3}{2}\int \dfrac{2x.dx}{1+2 \left(x^2\right)^2}\\
+	\int \dfrac{3x\,dx}{1 + 2x^4} &amp;= \dfrac{3}{2}\int \dfrac{2x\,dx}{1+2 \left(x^2\right)^2}\\
 										  &amp;= \dfrac{3}{2}\int \dfrac{dt}{1 + 2t^2}\\
 									
 \end{align}</tex>
     <tex>
 3\int \dfrac{dt}{1 + 2 \left(x^2\right)^2} = 3\int \dfrac{dt}{1 +2t^2}
 </tex>
-    <reason>\text{If }t = x^2 \implies dt = 2x.dx\text{, then}\\
- x.dx = \dfrac{dt}{2} \implies 3x.dx = \dfrac{3}{2}.dt</reason>
+    <reason>\text{If }t = x^2 \implies dt = 2x\,dx\text{, then}\\
+ x\,dx = \dfrac{dt}{2} \implies 3x\,dx = \dfrac{3}{2}\,dt</reason>
   </step>
   <step>
     <context>\int \dfrac{dt}{\left(1 +2t^2\right)}\text{ looks most like}\int \dfrac{dy}{y^2 + a^2}\\

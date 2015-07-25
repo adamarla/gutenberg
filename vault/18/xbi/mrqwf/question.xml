@@ -25,34 +25,36 @@ B &amp;=23\\
   </step>
   <step>
     <context>\text{Which of the following shows the correct }\\
-\text{way of rewriting }\int \dfrac{6x+7}{\left(x-5\right)\left(x-4\right)}.dx?
+\text{way of rewriting }\int \dfrac{6x+7}{\left(x-5\right)\left(x-4\right)}\,dx?
 </context>
     <tex correct='true'>\begin{align}
-\int \dfrac{6x+7}{\left(x-5\right)\left(x-4\right)}.dx = &amp;3\int \dfrac{2x-9}{\sqrt{x^2-9x+20}}dx\\
+\int \dfrac{6x+7}{\left(x-5\right)\left(x-4\right)}\,dx = &amp;3\int \dfrac{2x-9}{\sqrt{x^2-9x+20}}\,dx\\
 &amp;+34 \int \dfrac{dx}{\sqrt{x^2-9x+20}}
 \end{align}</tex>
     <tex>\begin{align}
-\int \dfrac{6x+7}{\left(x-5\right)\left(x-4\right)}.dx = &amp;\int \dfrac{2x-9}{\sqrt{x^2-9x+20}}.dx\\
+\int \dfrac{6x+7}{\left(x-5\right)\left(x-4\right)}\,dx = &amp;\int \dfrac{2x-9}{\sqrt{x^2-9x+20}}\,dx\\
 &amp;+\int \dfrac{dx}{\sqrt{x^2-9x+20}}
 \end{align}</tex>
     <reason>\text{We showed that }6x+7 = 3 \left(2x-9\right) +34\\
 \begin{align}
-\therefore\int \dfrac{6x+7}{\left(x-5\right)\left(x-4\right)}.dx = &amp;3\int \dfrac{2x-9}{\sqrt{x^2-9x+20}}dx\\
+\therefore\int \dfrac{6x+7}{\left(x-5\right)\left(x-4\right)}\,dx = &amp;3\int \dfrac{2x-9}{\sqrt{x^2-9x+20}}\,dx\\
 &amp;+34 \int \dfrac{dx}{\sqrt{x^2-9x+20}}
 \end{align}</reason>
   </step>
   <step>
-    <context>\text{If }M =3 \int \dfrac{2x-9}{\sqrt{x^2- 9x +20}}.dx \text{,then what does}\\
+    <context>\text{If }M =3 \int \dfrac{2x-9}{\sqrt{x^2- 9x +20}}\,dx \text{,then what does}\\
 \text{M evaluate to?</context>
-    <tex correct='true'>M = 3 \int \dfrac{2x-9}{\sqrt{x^2- 9x +20}}.dx\\
-\text{If }t = x^2- 9x +20\text{, then }dt  =\left(2x-9\right).dt\\
+    <tex correct='true'>M = 3 \int \dfrac{2x-9}{\sqrt{x^2- 9x +20}}\,dx\\
+\text{If }t = x^2- 9x +20\text{, then }dt  =\left(2x-9\right)\,dx\\
 \begin{align}
-\therefore M &amp;= 3\int \dfrac{dt}{\sqrt{t}}= 3.\dfrac{1}{\dfrac{1}{2}}.\sqrt{t} +C_1\\ 
+\therefore M &amp;= 3\int \dfrac{dt}{\sqrt{t}}= 3\,\dfrac{1}{\dfrac{1}{2}}\,\sqrt{t} +C_1\\ 
 &amp;=6\sqrt{t}+C_1\\
 &amp;=6\sqrt{x^2-9x+20} + C_1\\
 \end{align}
 </tex>
-    <reason></reason>
+    <reason>
+  		\int t^{n} dt = \dfrac{t^{n+1}}{n+1} + C.\text{In this case, }n=-\frac{1}{2}.\\
+  		\therefore= 3\int \dfrac{dt}{\sqrt{t}}= 3\,\dfrac{1}{\dfrac{1}{2}}\,\sqrt{t} +C_1=6\sqrt{t}+C_1\\</reason>
   </step>
   <step>
     <context>\text{And if }N= 34\int \dfrac{dx}{\sqrt{x^2-9x+20}}\text{,then what}\\
@@ -63,7 +65,43 @@ x^2-9x+20 &amp;= \left[\left(x - \dfrac{9}{2}\right)^2 - \dfrac{81}{4} +20\right
 
 \end{align}\\
 
-\therefore N = 34\int \dfrac{dx}{\sqrt{x^2-9x+20}}=34\int \dfrac{dx}{\sqrt{\left(x-\dfrac{9}{2}\right)^2-\left(\dfrac{1}{2}\right)^2}}</tex>
-    <reason></reason>
+\begin{align}
+\therefore N &amp;= 34\int \dfrac{dx}{\sqrt{x^2-9x+20}}\\
+&amp;=34\int \dfrac{dx}{\sqrt{\left(x-\dfrac{9}{2}\right)^2-\left(\dfrac{1}{2}\right)^2}}\\
+&amp;=\log \left|\left(x-\dfrac{9}{2}\right) + \sqrt{x^2 - 9x + 20}\right| + C_2
+\end{align}</tex>
+    <reason>
+  			\text{You can convert any quadratic polynomial into}\\
+  			(x\pm a)^2\pm b^2\text{ form. And so, we went from}\\
+			\begin{align}
+  			x^2-9x+20&amp;\implies \left(x - \dfrac{9}{2}\right)^2 - \left(\dfrac{1}{2}\right)^2 \\
+  			&amp;\implies \int \dfrac{dx}{\sqrt{\left(x-\dfrac{9}{2}\right)^2-\left(\dfrac{1}{2}\right)^2}}\\
+  			\end{align}\\
+  			\text{After that, we simply applied used result for }\\
+  			\int\frac{dx}{\sqrt{x^2 + m^2}}
+  			</reason>
   </step>
+  <step>
+    <context>\text{And so, is the final answer?}</context>
+    <tex correct='true'>
+  	
+  		\int\dfrac{6x + 7}{\sqrt{\left(x-5\right)\left(x-4\right)}}\,dx  =6\sqrt{x^2-9x+20} \\
+  		\qquad\quad+\log \left|\left(x-\dfrac{9}{2}\right) + \sqrt{x^2 - 9x + 20}\right| + C
+  	 		</tex>
+    <reason>
+  		\int\dfrac{6x + 7}{\sqrt{\left(x-5\right)\left(x-4\right)}}\,dx = \underbrace{M}_{\text{Step 3}} 
+  		+\underbrace{N}_{\text{Step 4}}. \\
+  		\text{Nothing more complicated than that.}
+  		</reason>
+  </step>
+  <choices>
+    <tex>6\sqrt{x^2-9x+20} \\
+  		\qquad\quad+\log \left|\left(x-\dfrac{9}{4}\right) + \sqrt{x^2 - 9x - 20}\right| + C</tex>
+    <tex correct='true'>6\sqrt{x^2-9x+20} \\
+  		\qquad\quad+\log \left|\left(x-\dfrac{9}{2}\right) + \sqrt{x^2 - 9x + 20}\right| + </tex>
+    <tex>6\sqrt{x^2-9x+20} \\
+  		\qquad\quad-\log \left|\left(x-\dfrac{9}{2}\right) - \sqrt{x^2 - 9x + 20}\right| + </tex>
+    <tex>6\sqrt{x^2+9x-20} \\
+  		\qquad\quad-\log \left|\left(x-\dfrac{9}{2}\right) + \sqrt{x^2 - 9x + 20}\right| + </tex>
+  </choices>
 </question>

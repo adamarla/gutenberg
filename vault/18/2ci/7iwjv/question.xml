@@ -28,8 +28,8 @@ C= 0</tex>
   </step>
   <step>
     <context>\text{Has the integral been evaluated correctly?}</context>
-    <tex correct='true'>\int \dfrac{2dx}{\left(1-x\right)\left(1 +x^2\right)} = \int \dfrac{dx}{1-x}+\int \dfrac{x+1}{1+x^2}dx\\
- \qquad= \int \underbrace{\dfrac{dx}{1-x}}_{X} + \int \underbrace{\dfrac{x.dx}{1+x^2}}_{Y} +\int \underbrace{\dfrac{dx}{1+x^2}}_{Z}\\
+    <tex correct='true'>\int \dfrac{2\,dx}{\left(1-x\right)\left(1 +x^2\right)} = \int \dfrac{dx}{1-x}+\int \dfrac{x+1}{1+x^2}dx\\
+ \qquad= \int \underbrace{\dfrac{dx}{1-x}}_{X} + \int \underbrace{\dfrac{x\,dx}{1+x^2}}_{Y} +\int \underbrace{\dfrac{dx}{1+x^2}}_{Z}\\
  \quad= -\log \left|1-x\right| +\dfrac{1}{2}\log \left|1+x^2\right| + \tan^{-1} x +C\\
  </tex>
     <reason>\text{Z is simply a standard result }\\

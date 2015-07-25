@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Integrate }x.\log 2x \text{ using integration by parts.}</tex>
+    <tex>\text{Integrate }x\,\log 2x \text{ using integration by parts.}</tex>
   </statement>
   <step>
-    <context>\text{Given }\int f . g .dx = f \int g.dx - \int \left[f^{\prime}\int g.dx \right].dx\\
+    <context>\text{Given }\int f \cdot g \,dx = f \int g\,dx - \int \left[f^{\prime}\int g\,dx \right]dx\\
 \text{which is the better choice for }f \left(x\right) \text{ and }g \left(x\right)?</context>
     <tex correct='true'>\begin{align}
 f \left(x\right) &amp;= \log 2x\\
@@ -28,21 +28,21 @@ E &amp; \text{Exponential } &amp; \textemdash\\
 \end{tabular}</reason>
   </step>
   <step>
-    <context>\text{Given }f \left(x\right) \text{ and }g \left(x\right)\text{, what does }\int x.\log 2x .dx\\
+    <context>\text{Given }f \left(x\right) \text{ and }g \left(x\right)\text{, what does }\int x\cdot\log 2x \,dx\\
 \text{evaluate to?}</context>
     <tex correct='true'>\dfrac{x^2}{2} \log 2x - \dfrac{x^2}{4} +C</tex>
     <tex>\dfrac{x^2}{2} \log 2x - \dfrac{x^2}{2} +C</tex>
     <reason>\begin{align}
-I &amp;= \int x. \log 2x.dx\\
-&amp;= \log 2x \int x.dx - \int \left[\dfrac{d}{dx}\log 2x \int x.dx\right].dx\\
-&amp;= \log 2x . \dfrac{x^2}{2} - 2\int \dfrac{1}{2}.\dfrac{1}{x}.\dfrac{x^2}{2}.dx\\
-&amp;= \log 2x . \dfrac{x^2}{2} - \dfrac{1}{2}\int x.dx = \dfrac{x^2}{2} \log 2x - \dfrac{x^2}{4}+ C\\
+I &amp;= \int x\cdot \log 2x\,dx\\
+&amp;= \log 2x \int x\,dx - \int \left[\dfrac{d}{dx}\log 2x \int x\,dx\right].dx\\
+&amp;= \log 2x \cdot \dfrac{x^2}{2} - 2\int \dfrac{1}{2}\cdot\dfrac{1}{x}\cdot\dfrac{x^2}{2}\,dx\\
+&amp;= \log 2x \cdot \dfrac{x^2}{2} - \dfrac{1}{2}\int x\,dx = \dfrac{x^2}{2} \log 2x - \dfrac{x^2}{4}+ C\\
 \end{align}</reason>
   </step>
   <choices>
-    <tex correct='true'>\dfrac{x^2}{2} \log 2x - \dfrac{x^2}{4} +C</tex>
-    <tex>\dfrac{x^2}{4} \log 2x - \dfrac{x^2}{4} +C</tex>
-    <tex>\dfrac{x^2}{2} \log 2x + \dfrac{x^2}{2} +C</tex>
-    <tex>\dfrac{x^2}{2} \log 2x + \dfrac{x^2}{4} +C</tex>
+    <tex correct='true'>\dfrac{x^2}{2}\, \log 2x - \dfrac{x^2}{4} +C</tex>
+    <tex>\dfrac{x^2}{4} \,\log 2x - \dfrac{x^2}{4} +C</tex>
+    <tex>\dfrac{x^2}{2} \,\log 2x + \dfrac{x^2}{2} +C</tex>
+    <tex>\dfrac{x^2}{2} \,\log 2x + \dfrac{x^2}{4} +C</tex>
   </choices>
 </question>
