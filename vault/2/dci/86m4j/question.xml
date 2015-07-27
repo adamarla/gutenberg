@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int\sqrt{1+3x-x^2}\, dx</tex>
+  </statement>
+  <step>
+    <context>\text{If }\int\sqrt{1+3x-x^2}\, dx=\int M\sqrt{a^2-t^2}\, dt, \\
+\text{where $t=f(x)$ and $M$ and $a$ are constants,} \\
+\text{what are $t$, $M$ and $a$?}</context>
+    <tex correct='true'>t=x-\dfrac{3}{2}, M=1, a=\sqrt{\dfrac{13}{4}}</tex>
+    <tex>t=x-\dfrac{3}{2}, M=1, a=\dfrac{13}{4}</tex>
+    <reason>\begin{align}
+1+3x-x^2 &amp;= 1-\left(x^2-3x+\dfrac{9}{4}\right)+\dfrac{9}{4} \\ 
+                &amp;= \dfrac{13}{4}-\left(x-\dfrac{3}{2}\right)^2
+\end{align} \\
+\text{Substituting }x-\dfrac{3}{2}=t \implies dx = dt \\
+\begin{align}
+  \int\sqrt{1+3x-x^2}\, dx &amp;= \int\sqrt{\dfrac{13}{4}-t^2}\, dt \\
+                                         &amp;=\int\sqrt{a^2-t^2}
+\end{align} \\
+\text{where }{\bf t=x-\dfrac{3}{2}, M=1, a=\sqrt{\dfrac{13}{4}}}</reason>
+  </step>
+  <step>
+    <context>\text{If }I=\int\sqrt{1+3x-x^2}\, dx
+  = \int \sqrt{\dfrac{13}{4}-t^2}\, dt \\
+\text{then is the following correct?}</context>
+    <tex correct='true'>\begin{align}
+  I &amp;= \int \sqrt{\dfrac{13}{4}-t^2}\, dt \\
+    &amp;=\dfrac{t}{2}\sqrt{t^2+\dfrac{13}{4}}
+      +\dfrac{13}{8}\sin^{-1}
+        \left(\dfrac{t}{\frac{\sqrt{13}}{2}}\right)+C \\
+    &amp;=\dfrac{(2x-3)}{2}\sqrt{1+3x-x^2}\, + \\
+    &amp;\qquad\dfrac{13}{8}
+      \sin^{-1}\left(\dfrac{2x-3}{\sqrt{13}}\right)+C
+\end{align}</tex>
+    <tex>\begin{align}
+  I &amp;= \int \sqrt{\dfrac{13}{4}-t^2}\, dt \\
+    &amp;=\dfrac{t}{2}\sqrt{t^2+\dfrac{13}{4}}
+      +\dfrac{13}{8}\sin^{-1}
+        \left(\dfrac{t}{\frac{\sqrt{13}}{2}}\right)+C \\
+    &amp;=\dfrac{(2x-3)}{2}\sqrt{1+3x-x^2}\, + \\
+    &amp;\qquad
+      \sin^{-1}\left(\dfrac{2x-3}{\sqrt{13}}\right)+C
+\end{align}</tex>
+    <reason>\begin{align}
+\int\sqrt{a^2-t^2}\, dt &amp;=\dfrac{t}{2}\sqrt{a^2-t^2}+
+  \dfrac{a^2}{2}\sin^{-1}\dfrac{t}{a}+C
+\end{align} \\
+\text{Substitute $t=x-\dfrac{3}{2}$ and $a=\sqrt{\dfrac{13}{4}}$}
+\text{in the result.}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{(2x-3)}{2}\sqrt{1+3x-x^2}\, - 
+  \sin^{-1}\left(\dfrac{2x-3}{\sqrt{13}}\right)+C</tex>
+    <tex>\dfrac{(2x-3)}{2}\sqrt{1+3x-x^2}\, - \\
+  \qquad\dfrac{13}{8}
+    \sin^{-1}\left(\dfrac{2x-3}{\sqrt{13}}\right)+C</tex>
+    <tex>\dfrac{(2x-3)}{2}\sqrt{1+3x-x^2}\, + 
+  \sin^{-1}\left(\dfrac{2x-3}{\sqrt{13}}\right)+C</tex>
+    <tex correct='true'>\dfrac{(2x-3)}{2}\sqrt{1+3x-x^2}\, + \\
+  \qquad\dfrac{13}{8}
+    \sin^{-1}\left(\dfrac{2x-3}{\sqrt{13}}\right)+C</tex>
+  </choices>
+</question>
