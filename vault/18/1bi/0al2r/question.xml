@@ -15,8 +15,8 @@
     <image correct="true">right.svg</image>
     <image>wrong.svg</image>
     <reason>
-    \text{As per the definition, }f(1.0) = 1.0 \text{ but }f(1.01) = 5.\\
-    \text{Hence, a big gap is suddenly created at }x=1.
+    \text{As per the definition, }f(1.0) = 1.0 \text{ but }\\
+    f(1.01) = 5.\text{Hence, the big gap is at }x = 1.
     </reason>
   </step>
   <step>
