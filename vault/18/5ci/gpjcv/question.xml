@@ -2,11 +2,11 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Evaluate the integral }\\
-\int_{0}^{\dfrac{\pi}{2}}\dfrac{\sin x\cdot dx}{1 + \cos^2 x}\\
+\int_{0}^{\dfrac{\pi}{2}}\dfrac{\sin x\, dx}{1 + \cos^2 x}\\
 \text{Using substitution}</tex>
   </statement>
   <step>
-    <context>A = \int_{0}^{\dfrac{\pi}{2}}\dfrac{\sin x\cdot dx}{1 + \cos^2 x} = \int_{m}^{n}\dfrac{dt}{\left(1+t^2\right)}\\ 
+    <context>A = \int_{0}^{\dfrac{\pi}{2}}\dfrac{\sin x\, dx}{1 + \cos^2 x} = \int_{m}^{n}\dfrac{dt}{\left(1+t^2\right)}\\ 
 \text{for the above to be true, what should }\\
 t \left(x\right), m \text{ and } n \text{ be}?</context>
     <tex correct='true'>\begin{align}
@@ -20,12 +20,12 @@ m &amp;=1\\
 n &amp;=0\\
 \end{align}</tex>
     <reason>\text{If }t \left(x\right) = \cos x \text{, then }\\
--\sin x\cdot dx \implies \sin x\cdot dx = -dt\\
-I = \int \dfrac{\sin x\cdot dx}{\left(1 + \cos^2 x\right)} = -\int \dfrac{dt}{1+t^2}\\
+-\sin x\, dx \implies \sin x\, dx = -dt\\
+I = \int \dfrac{\sin x\, dx}{\left(1 + \cos^2 x\right)} = -\int \dfrac{dt}{1+t^2}\\
 \text{Moreover, when }x = 0, t =1 \text{ and when }x = \dfrac{\pi}{2},\\
 t =0.\\
 \begin{align}
-\text{So }A &amp;= \int_{0}^{\dfrac{\pi}{2}}\dfrac{\sin x\cdot dx}{1+\cos ^2 x}\\
+\text{So }A &amp;= \int_{0}^{\dfrac{\pi}{2}}\dfrac{\sin x\, dx}{1+\cos ^2 x}\\
 &amp;= \underbrace{-\int_{1}^{0}\dfrac{dt}{1+t^2}=\int_{1}^{0}\dfrac{dt}{1+t^2}}_{-\int_{a}^{b}f \left(x\right).dx = \int_{b}^{a}f \left(x\right).dx}
 \end{align}</reason>
   </step>

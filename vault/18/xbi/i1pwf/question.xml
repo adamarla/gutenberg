@@ -24,11 +24,11 @@ a &amp;= 0
   <step>
     <context>\text{Has the integral been calculated correctly?}</context>
     <tex correct='true'>
-\int \dfrac{1}{\sqrt{x^2 + 2x + 2}}.dx = \int \dfrac{1}{\sqrt{\left(x+1\right)^2 + 1^2}}.dx\\
+\int \dfrac{1}{\sqrt{x^2 + 2x + 2}}\,dx = \int \dfrac{1}{\sqrt{\left(x+1\right)^2 + 1^2}}\,dx\\
 												  \qquad\qquad\quad= \log \left|\left(x+1\right)+\sqrt{\left(x +1\right)^2 + 1^2} \right| + C\\
 												  \qquad\qquad\quad= \log \left|\left(x+1\right)+\sqrt{x^2 + 2x +2} \right| + C\\
 </tex>
-    <reason>\text{Use }\dfrac{dt}{\sqrt{t^2 + a^2}} = \log \left|t + \sqrt{t^2 + a^2}\right| +C\\
+    <reason>\text{Use }\int\dfrac{dt}{\sqrt{t^2 + a^2}} = \log \left|t + \sqrt{t^2 + a^2}\right| +C\\
 t= x+1</reason>
   </step>
   <choices>

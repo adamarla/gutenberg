@@ -17,18 +17,18 @@ I = \int\sec^2  \left(7 -4x\right)dx \text{ to }
   = \int -\dfrac{1}{4}\sec^2 t\, dt\\
 \text{then does this look correct?}</context>
     <tex correct='true'>\begin{align}
-  I &amp;= \int-\dfrac{1}{4}\sec^2 t \cdot dt
+  I &amp;= \int-\dfrac{1}{4}\sec^2 t \, dt
       =-\dfrac{1}{4}\tan t + C \\
     &amp;= -\dfrac{1}{4}\tan \left(7-4x\right) + C
 \end{align}</tex>
     <tex>\begin{align}
-  I &amp;= \int-\dfrac{1}{4}\sec^2 t \cdot dt
-      =-\dfrac{1}{4}\sec t\, \tan t + C \\
+  I &amp;= \int-\dfrac{1}{4}\sec^2 t \, dt
+      =-\dfrac{1}{4}\sec t\cdot \tan t + C \\
     &amp;= -\dfrac{1}{4}\sec\left(7-4x\right)\tan\left(7-4x\right)+C
 \end{align}</tex>
     <reason>\begin{align}
-  I &amp;= \int-\dfrac{1}{4}\sec^2 t \cdot dt
-      =-\dfrac{1}{4}\int \sec^2 t \cdot dt \\
+  I &amp;= \int-\dfrac{1}{4}\sec^2 t \, dt
+      =-\dfrac{1}{4}\int \sec^2 t \, dt \\
     &amp;=-\dfrac{1}{4}\tan t + C
       = -\dfrac{1}{4}\tan \left(7-4x\right) + C
 \end{align}</reason>

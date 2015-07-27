@@ -6,7 +6,7 @@
   <step swipe='false'>
     <context>\text{The following substitution would convert} \\
 I=\int \tan^2 \left(2x- 3\right)dx \text{ to } 
-  \int \dfrac{\tan^2 t}{2}dt</context>
+  \int \dfrac{\tan^2 t}{2}\,dt</context>
     <tex correct='true'>t = 2x-3</tex>
     <reason>2x-3 = t \implies 2\, dx=dt \\
 \therefore I=\int\dfrac{\tan^2 \left(2x- 3\right)}{2}\cdot 2\, dx
@@ -14,7 +14,7 @@ I=\int \tan^2 \left(2x- 3\right)dx \text{ to }
 </reason>
   </step>
   <step>
-    <context>\text{If }I=\int \tan^2 \left(2x- 3\right)dx= \int \dfrac{\tan^2 t}{2}dt\\
+    <context>\text{If }I=\int \tan^2 \left(2x- 3\right)dx= \int \dfrac{\tan^2 t}{2}\,dt\\
 \text{then does this look correct?}</context>
     <tex correct='true'>\begin{align}
 I &amp;= \int \dfrac{\tan^2 t}{2}\, dt

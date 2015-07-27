@@ -2,25 +2,25 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Find the following integral}
-\int \left(ax^2 + bx + c\right).dx</tex>
+\int \left(ax^2 + bx + c\right)dx</tex>
   </statement>
   <step>
     <context>\text{Are the calculations below correct?}</context>
     <tex correct='true'>
 \begin{align}
-\int \left(ax^{2} + bx + c\right).dx &amp;=\int ax^{2}.dx+ \int bx .dx  + c.dx\\
+\int \left(ax^{2} + bx + c\right)dx &amp;=\int ax^{2}dx+ \int bx\,dx  + c\,dx\\
 											&amp;=\dfrac{ax^{3}}{3} + \dfrac{bx^2}{2} + cx + d\\
 
 \end{align}\\
 \text{here, d is the constant of integration}
 </tex>
-    <reason>\text{We have used the fact that }	\int x^{n}.dx = \dfrac{x^{n + 1}}{n+1}\\
+    <reason>\text{We have used the fact that }	\int x^{n}dx = \dfrac{x^{n + 1}}{n+1}\\
 \text{Check your calculation if you got something else.}\\</reason>
   </step>
   <choices>
-    <tex>\int \left(ax^2 + bx + c\right).dx =- \dfrac{ax^{3}}{3} + \dfrac{bx^2}{2} + cx + d</tex>
-    <tex>\int \left(ax^2 + bx + c\right).dx =\dfrac{ax^{3}}{3} - \dfrac{bx^2}{2} + cx + d</tex>
-    <tex correct='true'>\int \left(ax^2 + bx + c\right).dx =\dfrac{ax^{3}}{3} + \dfrac{bx^2}{2} + cx + d</tex>
-    <tex>\int \left(ax^2 + bx + c\right).dx =\dfrac{ax^{3}}{3} + \dfrac{bx^2}{2} + c + d</tex>
+    <tex>\int \left(ax^2 + bx + c\right)dx =- \dfrac{ax^{3}}{3} + \dfrac{bx^2}{2} + cx + d</tex>
+    <tex>\int \left(ax^2 + bx + c\right)dx =\dfrac{ax^{3}}{3} - \dfrac{bx^2}{2} + cx + d</tex>
+    <tex correct='true'>\int \left(ax^2 + bx + c\right)dx =\dfrac{ax^{3}}{3} + \dfrac{bx^2}{2} + cx + d</tex>
+    <tex>\int \left(ax^2 + bx + c\right)dx =\dfrac{ax^{3}}{3} + \dfrac{bx^2}{2} + c + d</tex>
   </choices>
 </question>

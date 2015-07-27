@@ -19,7 +19,7 @@
 \frac{\pi}{2}\in \left[\frac{\pi}{4}, \frac{3\pi}{4}\right]</reason>
   </step>
   <step>
-    <context>\text{Therefore }A = \int_{0}^{\dfrac{\pi}{4}}\tan x.dx = ?</context>
+    <context>\text{Therefore }A = \int_{0}^{\dfrac{\pi}{4}}\tan x\,dx = ?</context>
     <tex correct='true'>A = \dfrac{1}{2}\log 2</tex>
     <tex>A = \log 2</tex>
     <reason>\begin{align}

@@ -15,7 +15,7 @@
 \text{does not because}\dfrac{1}{\cos 2x}\text{ is not defined at }x=0.</reason>
   </step>
   <step>
-    <context>\text{And so }A = \int_{0}^{\dfrac{\pi}{2}} \cos 2x.dx = ?</context>
+    <context>\text{And so }A = \int_{0}^{\dfrac{\pi}{2}} \cos 2x\,dx = ?</context>
     <tex correct='true'>A = 0</tex>
     <tex>A = \dfrac{1}{2}</tex>
     <reason>\begin{align}

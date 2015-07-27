@@ -2,7 +2,7 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Evaluate the following definite integral }\\
-\int_{2}^{3}\dfrac{1}{x}.dx</tex>
+\int_{2}^{3}\dfrac{1}{x}\,dx</tex>
   </statement>
   <step>
     <context>\textbf{Check Point\#1: }\text{Is the following function}\\
@@ -10,8 +10,8 @@
     <tex correct='true'>\text{Yes. }\dfrac{1}{x}\text{ is defined and continuous in }\left[2,3\right]</tex>
     <tex>\text{No. }\dfrac{1}{x}\text{ is not continuous at }x =0\text{ and therefore}\\
 \text{not defined and continuous in }\left[2,3\right]</tex>
-    <reason>\int_{a}^{b} f \left(x\right).dx \text{ makes sense only if }f \left(x\right) \text{ is defined}\\
-\text{and continuous in }\left[2,3\right],\text{ for example }\int \dfrac{1}{x}.dx \\
+    <reason>\int_{a}^{b} f \left(x\right)\,dx \text{ makes sense only if }f \left(x\right) \text{ is defined}\\
+\text{and continuous in }\left[2,3\right],\text{ for example }\int \dfrac{1}{x}\,dx \\
 \text{is not defined because }\dfrac{1}{x}\text{ is discontinuous at }\\
 x = 0 \in \left[-1, 1\right].</reason>
   </step>
@@ -20,9 +20,15 @@ x = 0 \in \left[-1, 1\right].</reason>
     <tex correct='true'>A = \log \dfrac{3}{2}</tex>
     <tex>A = \log \dfrac{3}{2} +C</tex>
     <reason>\begin{align}
-A = \int_{2}^{3}\dfrac{1}{x}.dx &amp;= \bigg(\log x\bigg)_{2}^{3}\\ 
+A = \int_{2}^{3}\dfrac{1}{x}\,dx &amp;= \bigg(\log x\bigg)_{2}^{3}\\ 
 &amp;= \log 3 - \log 2
   = \log \dfrac{3}{2}
 \end{align}</reason>
   </step>
+  <choices>
+    <tex>\log \dfrac{2}{3}</tex>
+    <tex>-\log \dfrac{3}{2}</tex>
+    <tex>-\log \dfrac{2}{3}</tex>
+    <tex correct='true'>\log \dfrac{3}{2}</tex>
+  </choices>
 </question>

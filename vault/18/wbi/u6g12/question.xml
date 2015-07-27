@@ -2,27 +2,27 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Find the following integral}
-\int \dfrac{2 - 3\sin x}{\cos^2 x}.dx</tex>
+\int \dfrac{2 - 3\sin x}{\cos^2 x}\,dx</tex>
   </statement>
   <step>
     <context>\text{Is the calculation below correct?}</context>
     <tex correct='true'>\begin{align}
-\int \dfrac{2 - 3\sin x}{\cos^2 x}.dx &amp;= \int \left(\dfrac{2}{\cos^2 x} - 3\dfrac{\sin x}{\cos^2 x}\right).dx\\
-											  &amp;= \int \left(2\sec^2 x - \sec x \tan x \right).dx\\
-											  &amp;= 2\int \sec^2 x.dx - \int \sec x \tan x .dx \\
+\int \dfrac{2 - 3\sin x}{\cos^2 x}\,dx &amp;= \int \left(\dfrac{2}{\cos^2 x} - 3\dfrac{\sin x}{\cos^2 x}\right)dx\\
+											  &amp;= \int \left(2\sec^2 x - \sec x \cdot\tan x \right)dx\\
+											  &amp;= 2\int \sec^2 x\,dx - \int \sec x \cdot\tan x \,dx \\
 											  &amp;= 2 \tan x - \sec x + C
 \end{align}\\
 \text{Here, C is the constant of integration.}
 
 				 </tex>
-    <reason>\text{We have used the fact that}\int \sec^2 x.dx = \tan x + C\\
-\text{and }\int \sec x.\tan x.dx = \sec x + C \text{ .Check your}\\
+    <reason>\text{We have used the fact that}\int \sec^2 x\,dx = \tan x + C\\
+\text{and }\int \sec x\cdot \tan x\,dx = \sec x + C \text{ .Check your}\\
 \text{calculations if you got something else.}</reason>
   </step>
   <choices>
-    <tex>\int \dfrac{2 - 3\sin x}{\cos^2 x}.dx = -2 \tan x - \sec x + C</tex>
-    <tex>\int \dfrac{2 - 3\sin x}{\cos^2 x}.dx = 2 \tan x + \sec x + C</tex>
-    <tex correct='true'>\int \dfrac{2 - 3\sin x}{\cos^2 x}.dx = 2 \tan x - \sec x + C</tex>
-    <tex>\int \dfrac{2 - 3\sin x}{\cos^2 x}.dx = 2 \tan^2 x - \sec x + C</tex>
+    <tex>\int \dfrac{2 - 3\sin x}{\cos^2 x}\,dx = -2 \tan x - \sec x + C</tex>
+    <tex>\int \dfrac{2 - 3\sin x}{\cos^2 x}\,dx = 2 \tan x + \sec x + C</tex>
+    <tex correct='true'>\int \dfrac{2 - 3\sin x}{\cos^2 x}\,dx = 2 \tan x - \sec x + C</tex>
+    <tex>\int \dfrac{2 - 3\sin x}{\cos^2 x}\,dx = 2 \tan^2 x - \sec x + C</tex>
   </choices>
 </question>

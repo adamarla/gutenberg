@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Integrate }\dfrac{x.e^x}{\left(1 +x\right)^2}\text{ using integration by parts.}</tex>
+    <tex>\text{Integrate }\dfrac{x\,e^x}{\left(1 +x\right)^2}\text{ using integration by parts.}</tex>
   </statement>
   <step>
-    <context>\dfrac{x.e^x}{\left(1 +x\right)^2} = e^x \left[\dfrac{A}{1+x}-\dfrac{B}{Q \left(x\right)}\right]\text{ where A and B}\\
+    <context>\dfrac{x\,e^x}{\left(1 +x\right)^2} = e^x \left[\dfrac{A}{1+x}-\dfrac{B}{Q \left(x\right)}\right]\text{ where A and B}\\
 \text{are constants. What are A, B and }Q \left(x\right)?</context>
     <tex correct='true'>\begin{align}
 A &amp;= B =1\\
@@ -15,7 +15,7 @@ A &amp;= 1\\
 B &amp;=\dfrac{1}{2}\\
 Q \left(x\right) &amp;= \dfrac{1}{\left(1 + x\right)^2}
 \end{align}</tex>
-    <reason>\dfrac{x.e^x}{\left(1 +x\right)^2} = e^x \left[\dfrac{x +1 -1}{\left(1+x\right)^2}\right]\\
+    <reason>\dfrac{x\,e^x}{\left(1 +x\right)^2} = e^x \left[\dfrac{x +1 -1}{\left(1+x\right)^2}\right]\\
  = e^x \left[\dfrac{x+1}{\left(1+x\right)^2} - \dfrac{1}{\left(1+x\right)^2}\right]\\
 = e^x \left[\dfrac{\overbrace{1}^{A}}{\left(1 +x\right)} - \underbrace{\dfrac{\overbrace{1}^{B}}{\left(1+x\right)^2}}_{Q \left(x\right)}\right]</reason>
   </step>
@@ -26,16 +26,16 @@ Q \left(x\right) &amp;= \dfrac{1}{\left(1 + x\right)^2}
     <tex correct='true'>\dfrac{d}{dx}\dfrac{1}{1+x} = -\dfrac{1}{\left(1 + x\right)^2}</tex>
     <tex>-\dfrac{1}{\left(1 +x\right)^2} = \dfrac{1}{\left(1+x\right)} \times \dfrac{-1}{\left(1+x\right)}</tex>
     <reason>\text{There is a nice standard result that says}\\
-\int e^x \left(f \left(f \left(x\right) + f^{\prime} \left(x\right)\right)\right).dx = e^x f \left(x\right) +C\\
+\int e^x \left(f \left(f \left(x\right) + f^{\prime} \left(x\right)\right)\right)dx = e^x f \left(x\right) +C\\
 \text{The key is to identify f\left(x\right)}.</reason>
   </step>
   <step>
     <context>\text{And so, the original integral evaluates to?}</context>
     <tex correct='true'>\dfrac{e^x}{1 +x} +C</tex>
     <tex>-\dfrac{e^x}{\left(1 +x\right)^2} +C</tex>
-    <reason>\text{If }f \left(x\right) = \dfrac{1}{q+x}\text{, then }f \left(x\right) = \dfrac{1}{\left(1+x\right)^2}\text{, And so}\\
-\int e^x \left[\dfrac{1}{1+x} - \dfrac{1}{\left(1+x\right)^2}\right].dx \text{ looks like }\\
-\int e^x \left[ f \left(x\right) + f^{\prime} \left(x\right)\right].dx</reason>
+    <reason>\text{If }f \left(x\right) = \dfrac{1}{1+x}\text{, then }f ^{\prime}\left(x\right) = \dfrac{1}{\left(1+x\right)^2}\text{, And so}\\
+\int e^x \left[\dfrac{1}{1+x} - \dfrac{1}{\left(1+x\right)^2}\right]dx \text{ looks like }\\
+\int e^x \left[ f \left(x\right) + f^{\prime} \left(x\right)\right]dx</reason>
   </step>
   <choices>
     <tex>\dfrac{e^x}{1 +2x} +C</tex>

@@ -30,24 +30,25 @@ D&amp;= -1\\
 \implies 2x = \left(Ax+B\right)\left(x^2+B\right)+\left(Cx+D\right)\left(x^2+1\right)\\
 =\left(A+C\right)x^3+\left(B+D\right)x^2+\left(3A+C\right)x+\left(3B+D\right)\\
 \text{Comparing the coefficients } \\
-\begin{tabular}{c|c}
+\begin{tabular}{|c|c|}
 \hline
 x^3 &amp; A+C =0\\
 x^2 &amp; B+D = 0\\
 x &amp; 3A +C = 2\\
 x^0&amp; 3B+D = 0\\ 
+\hline
 \end{tabular}\\
 \text{Which on solving }B = D =0 ,A =1 \text{ and } C = -1 </reason>
   </step>
   <step>
     <context>\text{Has the Integral been solved correctly?}\\
 </context>
-    <tex correct='true'>\int \dfrac{2x}{\left(x^2 +1\right)\left(x^2+3\right)}dx = \underbrace{\int \dfrac{x.dx}{x^2+1}}_{X} -\underbrace{\int \dfrac{x.dx}{x^2+3}}_{Y}\\
+    <tex correct='true'>\int \dfrac{2x}{\left(x^2 +1\right)\left(x^2+3\right)}dx = \underbrace{\int \dfrac{x\,dx}{x^2+1}}_{X} -\underbrace{\int \dfrac{x\,dx}{x^2+3}}_{Y}\\
 \qquad\qquad=\dfrac{1}{2}\left[\log\left |x^2 +1\right| - \log\left| x^2 +3\right|\right] +C \\
 \qquad\qquad=\dfrac{1}{2}\log\left|\dfrac{x^2 +1}{x^2+3}\right| + C</tex>
     <reason>\text{Put }t =x^2 \text{ in both X and Y }\\
-\therefore \dfrac{dt}{2} = x.dx \\
-\implies\int \dfrac{x.dx}{x^2+a} = \dfrac{1}{2}\int \dfrac{dt}{\left(t +a\right)} = \dfrac{1}{2}\log \left|t +a\right| +C</reason>
+\therefore \dfrac{dt}{2} = x\,dx \\
+\implies\int \dfrac{x\,dx}{x^2+a} = \dfrac{1}{2}\int \dfrac{dt}{\left(t +a\right)} = \dfrac{1}{2}\log \left|t +a\right| +C</reason>
   </step>
   <choices>
     <tex>\dfrac{1}{2}\log\left|\dfrac{x^2 -1}{x^2-3}\right| + C</tex>

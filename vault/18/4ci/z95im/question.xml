@@ -2,7 +2,7 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Integrate the following definite integral }\\
-\int_{0}^{\dfrac{\pi}{4}} \sin 2x.dx</tex>
+\int_{0}^{\dfrac{\pi}{4}} \sin 2x\,dx</tex>
   </statement>
   <step>
     <context>\textbf{Check Point\#1: }\text{Is the following function}\\

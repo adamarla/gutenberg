@@ -3,20 +3,26 @@
   <statement>
     <tex>\text{Find the following integral}
 
-\int x^2\left(1 - \dfrac{1}{x^2}\right).dx</tex>
+\int x^2\left(1 - \dfrac{1}{x^2}\right)dx</tex>
   </statement>
   <step>
     <context>\text{Are the calculations bellow correct?}</context>
     <tex correct='true'>\begin{align}
-\int x^2\left(1 - \dfrac{1}{x^2}\right).dx &amp;= \int \left(x^2 -\dfrac{x^2}{x^2}\right).dx\\
-													&amp;= \int x^2 .dx - \int 1.dx\\
-													&amp;=\dfrac{x^3}{3} - x + c
+\int x^2\left(1 - \dfrac{1}{x^2}\right)dx &amp;= \int \left(x^2 -\dfrac{x^2}{x^2}\right)dx\\
+													&amp;= \int x^2 dx - \int 1\,dx\\
+													&amp;=\dfrac{x^3}{3} - x + C
 \end{align}\\
 
-\text{Here, c is the constant of integration.}
+\text{Here, C is the constant of integration.}
 </tex>
     <reason>\text{We have used the fact that }
-\int x^n = \dfrac{x^{n+1}}{n+1}.\\
+\int x^n dx= \dfrac{x^{n+1}}{n+1}.\\
 \text{Check your calculation if you got something else.} </reason>
   </step>
+  <choices>
+    <tex correct='true'>\int x^2\left(1 - \dfrac{1}{x^2}\right)dx=\dfrac{x^3}{3} - x + C</tex>
+    <tex>\int x^2\left(1 - \dfrac{1}{x^2}\right)dx=\dfrac{x^3}{3} + x + C</tex>
+    <tex>\int x^2\left(1 - \dfrac{1}{x^2}\right)dx=-\dfrac{x^3}{3} - x + C</tex>
+    <tex>\int x^2\left(1 - \dfrac{1}{x^2}\right)dx=\dfrac{x^3}{3} - 2x + C</tex>
+  </choices>
 </question>

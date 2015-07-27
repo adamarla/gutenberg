@@ -2,7 +2,7 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Evaluate the following definite integral }\\
-\int_{0}^{\pi/2}\cos^2 x.dx</tex>
+\int_{0}^{\pi/2}\cos^2 x\,dx</tex>
   </statement>
   <step>
     <context>\text{The following trigonometric identity helps}\\

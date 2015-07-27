@@ -17,20 +17,20 @@
   </step>
   <step>
     <context>\text{Is the analysis below correct? }</context>
-    <tex correct='true'>\text{Since , }\\
+    <tex correct='true'>
 \begin{align}
-\dfrac{d \left(\cos 2x\right)}{dx} &amp;= -2 \sin 2x\\
-\Rightarrow \sin 2x &amp;= -\dfrac{1}{2}.\dfrac{d}{dx}\left(\cos 2x\right)
+\text{Since , }\dfrac{d \left(\cos 2x\right)}{dx} &amp;= -2 \sin 2x\\
+\implies \sin 2x &amp;= -\dfrac{1}{2}\cdot\dfrac{d}{dx}\left(\cos 2x\right)
 \end{align}\\
-\therefore \text{anti derivative or integral of }\sin 2x \text{ is} -\dfrac{\cos 2x}{2}\\
+\therefore \text{anti - derivative or integral of }\sin 2x \text{ is} -\dfrac{\cos 2x}{2}\\
 </tex>
     <reason>\text{We have used the result of step 1. Review it if}\\
 \text{you got something else. }\\</reason>
   </step>
   <choices>
-    <tex>\int\sin 2x.dx    =  \dfrac{1}{2}.\left(\cos 2x\right)</tex>
-    <tex>\int\sin 2x.dx   =  -2.\left(\cos 2x\right)</tex>
-    <tex correct='true'>\int\sin 2x.dx   =  -\dfrac{1}{2}.\left(\cos 2x\right)</tex>
-    <tex>\int \sin 2x .dx  =  2.\left(\cos 2x\right)</tex>
+    <tex>\dfrac{1}{2}\left(\cos 2x\right)</tex>
+    <tex>-2\left(\cos 2x\right)</tex>
+    <tex correct='true'>-\dfrac{1}{2}\left(\cos 2x\right)</tex>
+    <tex>2\left(\cos 2x\right)</tex>
   </choices>
 </question>

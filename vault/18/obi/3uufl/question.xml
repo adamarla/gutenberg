@@ -16,10 +16,10 @@
   </step>
   <step>
     <context>\text{Is the analysis below correct?}</context>
-    <tex correct='true'>\text{Since , }\\
+    <tex correct='true'>
 \begin{align}
-\dfrac{d \left(ax + b\right)^3}{dx} &amp;= 3a \left(ax + b\right)^2\\
-\Rightarrow \left(ax + b\right)^2 &amp;= \dfrac{1}{3a}.\dfrac{d}{dx}\left(\left(ax + b\right)^3\right)
+\text{Since , }\dfrac{d \left(ax + b\right)^3}{dx} &amp;= 3a \left(ax + b\right)^2\\
+\implies \left(ax + b\right)^2 &amp;= \dfrac{1}{3a}.\dfrac{d}{dx}\left(\left(ax + b\right)^3\right)
 \end{align}\\
 \therefore \text{anti derivative or integral of }\left(ax + b\right)^2 \\
 \text{ is } \dfrac{\left(ax + b\right)^3}{3a}\\
@@ -29,9 +29,9 @@
 \text{something else}.</reason>
   </step>
   <choices>
-    <tex>\int \left(ax + b\right)^2.dx = -\dfrac{\left(ax + b\right)^3}{3a}</tex>
-    <tex>\int \left(ax + b\right)^2 .dx= \dfrac{\left(ax + b\right)^3}{2a}</tex>
-    <tex>\int \left(ax + b\right)^2 .dx= \dfrac{\left(ax + b\right)^3}{3}</tex>
-    <tex correct='true'>\int \left(ax + b\right)^2 .dx= \dfrac{\left(ax + b\right)^3}{3a}</tex>
+    <tex>-\dfrac{\left(ax + b\right)^3}{3a}</tex>
+    <tex>\dfrac{\left(ax + b\right)^3}{2a}</tex>
+    <tex>\dfrac{\left(ax + b\right)^3}{3}</tex>
+    <tex correct='true'>\dfrac{\left(ax + b\right)^3}{3a}</tex>
   </choices>
 </question>

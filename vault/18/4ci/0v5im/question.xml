@@ -5,8 +5,8 @@
 \int_{0}^{2} \dfrac{6x+3 }{x^2+4}\, dx</tex>
   </statement>
   <step>
-    <context>\int_{0}^{2} \dfrac{6x+3 }{x^2+4}.dx  
-=\overbrace{\int_{0}^{2} \dfrac{6x.dx}{x^2+4}}^{X} + 
+    <context>\int_{0}^{2} \dfrac{6x+3 }{x^2+4}\,dx  
+=\overbrace{\int_{0}^{2} \dfrac{6x\,dx}{x^2+4}}^{X} + 
 3\overbrace{\int_{0}^{2} \dfrac{dx }{x^2+4}}^{Y}\\
 \text{Now, if}\int_{0}^{2}\dfrac{6x}{x^2+4} \xrightarrow{t = x^2+4}M\int_{m}^{n}\dfrac{dt}{t}\text{ then}\\
 \text{what are M, m and n =?}</context>

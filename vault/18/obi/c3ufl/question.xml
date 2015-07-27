@@ -17,10 +17,10 @@
   </step>
   <step>
     <context>\text{Is the analysis below correct?}</context>
-    <tex correct='true'>\text{Since , }\\
+    <tex correct='true'>
 \begin{align}
-\dfrac{d \left(\sin 3x\right)}{dx} &amp;= 3 \cos 3x\\
-\Rightarrow \cos 3x &amp;= \dfrac{1}{3}.\dfrac{d}{dx}\left(\sin 3x\right)
+\text{Since , }\dfrac{d \left(\sin 3x\right)}{dx} &amp;= 3 \cos 3x\\
+\implies\cos 3x &amp;= \dfrac{1}{3}\cdot\dfrac{d}{dx}\left(\sin 3x\right)
 \end{align}\\
 \therefore \text{anti derivative or integral of }\cos 3x \text{ is } \dfrac{\sin 3x}{3}\\
 </tex>
@@ -28,9 +28,9 @@
 \text{you got something else. }\\</reason>
   </step>
   <choices>
-    <tex>\int \cos 3x.dx  = -\dfrac{\sin 3x}{3}</tex>
-    <tex correct='true'>\int \cos 3x.dx  = \dfrac{\sin 3x}{3}</tex>
-    <tex>\int \cos 3x.dx  =3\sin 3x</tex>
-    <tex>\int \cos 3x.dx  = -3\sin 3x</tex>
+    <tex>-\dfrac{\sin 3x}{3}+C</tex>
+    <tex correct='true'>\dfrac{\sin 3x}{3}+C</tex>
+    <tex>3\sin 3x</tex>
+    <tex>-3\sin 3x</tex>
   </choices>
 </question>
