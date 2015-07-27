@@ -9,42 +9,52 @@
 \text{continuous at }x = 0,1\text{ and } 2?</tex>
   </statement>
   <step>
-    <context>\text{What is the condition for continuity?}</context>
-    <image correct='true'>right.svg</image>
+    <context>
+    \text{Is the following the graph for f(x)?}
+    </context>
+    <image correct="true">right.svg</image>
     <image>wrong.svg</image>
-    <reason>\text{For a function to be continuous at a\\
-point it's limits on either sides should be equal\\
-to the value of f(x) at that point}</reason>
+    <reason>
+    \text{As per the definition, }f(1.0) = 1.0 \text{ but }f(1.01) = 5.\\
+    \text{Hence, a big gap is suddenly created at }x=1.
+    </reason>
   </step>
   <step>
-    <context>\text{Is the following assertion correct?}</context>
-    <tex correct="true">f(x) \text{ is a straight line for }x\neq 1.\\
-\text{Hence, it is continuous for all }x\neq 1.\\
-\text{But we need to check for continuity at }x=1.
-</tex>
-    <reason>\text{At }x=1\text{, the definition of the function}\\
-\text{changes. Hence, x = 1 could be the only}\\
-\text{problem point. We should check for}\\
-\text{continuity there.}</reason>
-  </step>
-  <step>
-    <context>\text{Is the following analysis correct?}</context>
-    <tex correct="true">\begin{align}
-    \lim_{x\to 1^-}f(x) &amp;=1 \\
-    \lim_{x\to 1^+}f(x) &amp;=5 \\
-    f(1) = 1
-\end{align}
-\\ \text{Hence, f(x) is discontinuous at x=1.}\\
-</tex>
-    <reason>\text{Since, f(x) is continuous at x}\neq 1\text{(step 2)}\\
-\therefore x=1\text{ is the only point of discontinuity.}</reason>
+    <context>
+    \text{Are the following conclusions correct?}
+    </context>
+    <tex correct="true">
+      \begin{tabular}{c|c}
+        \text{At x = a} &amp; \text{Continuous? } \\
+        \hline
+        0 &amp; \text{Yes} \\
+        1 &amp; \text{No} \\
+        2 &amp; \text{Yes}
+        \hline
+      \end{tabular}
+    </tex>
+    <tex correct="false">
+     \begin{tabular}{c|c}
+        \text{At x = a} &amp; \text{Continuous? } \\
+        \hline
+        0 &amp; \text{Yes} \\
+        1 &amp; \text{Yes} \\
+        2 &amp; \text{Yes}
+        \hline
+      \end{tabular}
+    </tex>
+    <reason>
+      \text{Its apparent from the graph in the Step 1}\\
+      \text{that the big discontinuity happens at } x =1.\\
+      \text{Everywhere else, f(x) is continuous.}
+    </reason>
   </step>
   <choices>
-    <tex>\text{Continuous at x=0 but\\
-discontinuous x=1,2} </tex>
-    <tex correct="true">\text{Continuous at x=0,2 but\\
-discontinuous at x=1}</tex>
-    <tex>\text{Continuous at x=0,1,2 }</tex>
-    <tex>\text{Discontinuous at x=0,1,2}</tex>
+    <tex>\text{Continuous at } x=0 \text{ but discontinuous}\\
+    \text{at } x=1,2 </tex>
+    <tex correct="true">\text{Continuous at } x = 0,2 \text{ but }\\
+\text{discontinuous at } x=1 </tex>
+    <tex>\text{Continuous at } x=0,1,2</tex>
+    <tex>\text{Discontinuous at } x=0,1,2</tex>
   </choices>
 </question>
