@@ -1,24 +1,44 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
   <statement>
     <tex>\text{Examine the continuity of }\\
-\qquad f(x) = 2x^2 -1 \text{ at } x = 3.</tex>
+\qquad f(x) = 2x^2 -1 \\
+\text{ at } x = 3.</tex>
   </statement>
   <step>
-    <context>\text{If a function }f(x)\text{ is continuous at}\\
-\text{at a point }x = a, \text{ then }\ldots </context>
-    <tex correct='true'>\lim_{x\to a^-}f(x) = \lim_{x\to a^+}f(x) = f(a) </tex>
+    <context>
+    \text{What is the condition for continuity }\\
+    \text{at a point }x = a? 
+</context>
+    <tex correct="true">\lim_{x\to a^-}f(x) = \lim_{x\to a^+}f(x) = f(a) </tex>
     <tex>\lim_{x\to a^-}f(x) = \lim_{x\to a^+}f(x) </tex>
-    <reason>\text{If a function is continuous at a point, }\\
-\text{then it can be drawn without lifting the}\\
-\text{pencil. However, if }\lim_{x\to a^-}f(x)\neq\lim_{x\to a^+}f(x)\text{ or }\\
-\lim_{x\to a}f(x)\neq f(a),\text{ then one will have to lift}\\
-\text{the pencil}\implies\text{ discontinuity.}</reason>
+    <reason>
+    \text{For a function to be continuous at a point}\\
+    \textbf{two conditions}\text{ must be satisfied}\\
+    \begin{tabular}{l|c}
+    \hline
+    \text{In English} &amp; \text{Mathematically} \\
+    \hline
+    \text{The function must approach} &amp; \\
+    \text{the same value from the left } &amp; \\
+    \text{and the right} &amp; 
+    \lim_{x\to a}f(x)\text{ exists.}\\
+    \text{And that value should be} &amp; \\
+    \text{equal to the value of the} &amp; \\ 
+    \text{function at that point} &amp; 
+    \lim_{x\to a}f(x) = f(a) \\
+    \hline
+    \end{tabular}\\
+    \text{This also means that wherever a function is}\\
+    \text{continuous, it can be drawn without lifting}\\
+    \text{the pencil.}
+    </reason>
   </step>
   <step>
-    <context>\text{Which of the following analysis and }\\
-\text{conclusions is correct?}</context>
-    <tex correct='true'>\begin{tabular}{cccc}
+    <context>\text{Given the conditions for continuity, }\\
+    \text{is the following correct?} 
+    </context>
+    <tex correct="true">\begin{tabular}{cccc}
 \lim_{x\to 3^-}f(x)&amp;\lim_{x\to 3^+}f(x)&amp;f(3)&amp;\text{Continuous?}\\
 \hline
 17&amp;17&amp;17&amp;\text{Yes}
@@ -29,20 +49,15 @@
 \hline
 7&amp;31&amp;17&amp;\text{No}
 \end{tabular}   </tex>
-    <reason>\text{Check your calculations. You should find}\\
-\lim_{x\to 3}f(x) = f(x)\implies\text{ continuity.}
-
-
-
-
-
-
-</reason>
+    <reason>
+    \text{If your calculations are correct, then you will}\\
+    \text{find that }\lim_{x\to 3}f(x) = f(3)\implies\text{ continuity at }x=3. 
+    </reason>
   </step>
   <choices>
-    <tex>\text{Discontinuous because }f(3)\text{ is not defined.}</tex>
-    <tex>\text{Discontinuous because }\lim_{x\to 3^-}f(x)\neq\lim_{x\to 3^+}f(x)</tex>
-    <tex correct='true'>\text{Continuous at }x=3.</tex>
-    <tex>\text{Discontinuous because }\lim_{x\to 3}f(x)\neq f(3).</tex>
+    <tex>\text{Discontinuous as }f(3)\text{ is not defined.}</tex>
+    <tex>\text{Discontinuous as }\lim_{x\to 3^-}f(x)\neq\lim_{x\to 3^+}f(x)</tex>
+    <tex correct="true">\text{Continuous at }x=3.</tex>
+    <tex>\text{Discontinuous as }\lim_{x\to 3}f(x)\neq f(3).</tex>
   </choices>
 </question>

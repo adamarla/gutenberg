@@ -1,27 +1,100 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
   <statement>
-    <tex>\text{Examine the continuity of the\\
- f(x)= x-5}
-
-\begin{align}
-\end{align}</tex>
+    <tex>
+      \text{Examine the continuity of}\\
+      \qquad f(x) = x - 5 \\
+      \text{In other words, find all the points}\\
+      \text{- if any - where f(x) is discontinuous.}
+    </tex>
   </statement>
   <step>
-    <context>\text{Is the following analysis correct?}</context>
-    <tex correct='true'>\lim_{x\to c}f(x) =\lim_{x\to c} (x-5)= c-5\\            
-f(c)= c-5\\
-\text{Where c is any real number.}\\
-\therefore \text{f(x) is continuous at x=c}</tex>
-    <tex></tex>
-    <reason>\text{Since the value of f(x) at x=c is equal }\\
-\text{to the limit of f(x) at x=c.}\\
-\text{Hence,f(x) is continuous for all real numbers.</reason>
+    <context>
+  		\text{Your friend says, }\\
+  		\textbf{Pick some 10,20 or 30 points. If f(x)}\\
+  		\textbf{is continuous there, then it is continuous}\\
+  		\textbf{everywhere}\\
+  		\text{Is he/she right in saying so?}
+  		</context>
+    <tex correct="true">
+  		\textbf{No.} \text{ To prove that f(x) is continuous}\\
+  		\text{everywhere, we must prove continuity at all x.}
+  		</tex>
+    <tex correct="false">
+  		\textbf{Yes.}\text{ If f(x) is continuous at a large enough }\\
+  		\text{number of points, then there is good reason}\\
+  		\text{to believe it is continuous everywhere.}
+  		</tex>
+    <reason>
+  		\text{Even if you test for continuity at a }\\
+  		\text{billion points, there would be another billion}\\
+  		\text{points you wouldn't have tested for.}\\
+  		\text{A truly mathematical proof would therefore }\\
+  		\text{start by proving or disproving continuity at }\\
+  		\text{a general point }x = C.
+  		</reason>
+  </step>
+  <step>
+    <context>
+  			\text{Given f(x), what is the condition for}\\
+  			\text{continuity at }x = C ?
+  			</context>
+    <tex correct="true">
+  			\lim_{x\to C^-}f(x) = \lim_{x\to C^+}f(x) = f(C)
+  			</tex>
+    <tex correct="false">
+  			\lim_{x\to C^-}f(x) = \lim_{x\to C^+}f(x)
+  			</tex>
+    <reason>
+  			\text{For a function to be continuous at a point}\\
+  			\textbf{two conditions}\text{ must be satisfied}\\
+  			\begin{tabular}{l|c}
+  			\hline
+  			\text{In English} &amp; \text{Mathematically} \\
+  			\hline
+  			\text{The function must approach} &amp; \\
+  			\text{the same value from the left } &amp; \\
+  			\text{and the right} &amp; 
+  			\lim_{x\to a}f(x)\text{ exists.}\\
+  			\text{And that value should be} &amp; \\
+  			\text{equal to the value of the} &amp; \\ 
+  			\text{function at that point} &amp; 
+  			\lim_{x\to a}f(x) = f(a) \\
+  			\hline
+  			\end{tabular}\\
+  			\text{This also means that wherever a function is}\\
+  			\text{continuous, it can be drawn without lifting}\\
+  			\text{the pencil.}
+  			</reason>
+  </step>
+  <step>
+    <context>
+  				\text{Given the conditions for continuity, are}\\
+  				\text{the following analysis and conclusions correct?}
+  				</context>
+    <tex correct="true">
+  				\begin{tabular}{c|c|c|c} \\
+  				\lim_{x\to C^-}f(x) &amp; \lim_{x\to C^+}f(x) &amp; f(C) &amp; \text{Continuous?} \\
+  				\hline
+  				C-5 &amp; C-5 &amp; C-5 &amp; \text{Yes}\\
+  				\hline
+  				\end{tabular} \\
+  				\textbf{As C can be anything, }\text{ f(x) is }\\
+  				\text{continuous everywhere.}
+  				</tex>
+    <reason>
+  				\text{If your calculations are correct, then you will}\\
+  				\text{find that }\lim_{x\to C}f(x) = f(C) \implies \text{continuity }\\
+  				\text{at }x=C.\text{ And as C can be anything, }\\
+  				f(x)\text{ is continuous everywhere.}\\
+  				\text{Also, note that }f(x)\text{ is a straight line.}\\
+  				\text{And straight lines are continuous.}
+  				</reason>
   </step>
   <choices>
     <tex>\text{Continuous at just x=0 }</tex>
     <tex>\text{Discontinuous at just x=0}</tex>
-    <tex correct='true'>\text{Continuous everywhere in its domian }</tex>
+    <tex correct="true">\text{Continuous everywhere in its domian }</tex>
     <tex>\text{Discontinuous everywhere in its domain }</tex>
   </choices>
 </question>
