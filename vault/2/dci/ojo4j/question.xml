@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int\sqrt{1-4x-x^2}\, dx</tex>
+  </statement>
+  <step>
+    <context>\text{If }\int\sqrt{1-4x-x^2}\, dx=\int M\sqrt{a^2-t^2}\, dt, \\
+\text{where $t=f(x)$, and $M$ and $a$ are constants,} \\
+\text{what are $t$, $M$ and $a$?}</context>
+    <reason>\begin{align}
+  1-4x-x^2 &amp;= 5-(4+4x+x^2) \\ 
+                 &amp;= 5-(x+2)^2
+\end{align} \\
+\text{Substituting }x+2=t \implies dx = dt \\
+\begin{align}
+  \int\sqrt{1-4x-x^2}\, dx &amp;= \int \sqrt{5-t^2}\, dt \\
+                                       &amp;= \int \sqrt{a^2-t^2}\, dt  
+\end{align} \\
+\text{where } {\bf t=x+2, M=1, a=\sqrt{5}}</reason>
+  </step>
+  <step>
+    <context>\text{If }I=\int\sqrt{1-4x-x^2}\, dx
+  = \int \sqrt{5-t^2}\, dt \\
+\text{then is the following correct?}</context>
+    <tex correct='true'>\begin{align}
+  I &amp;= \int \sqrt{5-t^2}\, dt \\
+    &amp;=\dfrac{t}{2}\sqrt{5-t^2}+\dfrac{5}{2}
+      \sin^{-1}\dfrac{t}{\sqrt{5}}+C \\
+    &amp;=\dfrac{x+2}{2}\sqrt{1-4x-x^2}\, +
+      \dfrac{5}{2}\sin^{-1}\dfrac{x+2}{\sqrt{5}}+C 
+\end{align}</tex>
+    <tex>\begin{align}
+  I &amp;= \int \sqrt{5-t^2}\, dt \\
+    &amp;=\dfrac{t}{2}\sqrt{5-t^2}+
+      \sin^{-1}\dfrac{t}{\sqrt{5}}+C \\
+    &amp;=\dfrac{x+2}{2}\sqrt{1-4x-x^2}\, +
+      \sin^{-1}\dfrac{x+2}{\sqrt{5}}+C 
+\end{align}</tex>
+    <reason>\begin{align}
+\int\sqrt{a^2-t^2}\, dt &amp;=\dfrac{t}{2}\sqrt{a^2-t^2}+ \\
+  &amp;\quad\dfrac{a^2}{2}\sin^{-1}\dfrac{t}{a}+C
+\end{align} \\
+\text{Substitute $t=x+2$ and $a=\sqrt{5}$ in the result.}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{x+2}{2}\sqrt{1-4x-x^2}\, +
+  \dfrac{5}{4}\sin^{-1}\dfrac{x+2}{\sqrt{5}}+C</tex>
+    <tex>\dfrac{x+2}{2}\sqrt{1-4x-x^2}\, +
+  \sin^{-1}\dfrac{x+2}{\sqrt{5}}+C</tex>
+    <tex correct='true'>\dfrac{x+2}{2}\sqrt{1-4x-x^2}\, +
+  \dfrac{5}{2}\sin^{-1}\dfrac{x+2}{\sqrt{5}}+C</tex>
+    <tex>\dfrac{x+2}{2}\sqrt{1-4x-x^2}\, -
+    \dfrac{5}{2}\sin^{-1}\dfrac{x+2}{\sqrt{5}}+C</tex>
+  </choices>
+</question>
