@@ -1,53 +1,102 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
   <statement>
-    <tex>\text{FInd all points of discontinuity of f,\\
-where f is defined by }\\
+    <tex>\text{Find all points of discontinuity of f(x),\\
+where f(x) is defined by }\\
 
-f(x) = \begin{cases} 
+\qquad f(x) = \begin{cases} 
          2x +3,&amp;if \, x \leq 2\\
          2x - 3,&amp;if \, x\gt 2 
          \end{cases}</tex>
   </statement>
   <step>
-    <context>\text{What is the condition for continuity}\\
-\text{at }x=2 \,?</context>
-    <tex correct='true'>\begin{align} 
+    <context>
+		\text{Does the following table accurately capture}\\
+		\text{what we know and what we can infer initially?}
+		</context>
+    <tex correct="true">
+		\begin{tabular}{c|c|c|c}
+		x &amp; f(x) &amp; \text{Defined?} &amp; \text{Continuous?} \\
+		\hline
+		x\lt 2 &amp; 2x + 3 &amp;\text{Yes} &amp; \text{Yes} \\
+		x = 2 &amp; 2x + 3 &amp;\text{Yes} &amp; \text{Not sure} \\
+		x\gt 2 &amp; 2x - 3 &amp;\text{Yes} &amp; \text{Yes}
+		\hline
+		\end{tabular}
+		</tex>
+    <tex correct="false">
+		\begin{tabular}{c|c|c|c}
+		x &amp; f(x) &amp; \text{Defined?} &amp; \text{Continuous?} \\
+		\hline
+		x\lt 2 &amp; 2x + 3 &amp;\text{Yes} &amp; \text{Yes} \\
+		x = 2 &amp; 2x + 3 &amp;\text{Yes} &amp; \text{Yes} \\
+		x\gt 2 &amp; 2x - 3 &amp;\text{Yes} &amp; \text{Yes}
+		\hline
+		\end{tabular}
+		</tex>
+    <reason>
+		\text{For }x\neq 2, f(x)\text{ is either }2x+3\text{ or }2x-3.\\
+		\text{Either way, it is a straight line. And}\\
+		\text{straight lines are continuous. The only problem}\\
+		\text{point, therefore, could be }x = 2.
+		</reason>
+  </step>
+  <step>
+    <context>\text{What will be the condition for}\\
+\text{continuity at }x=2 ?</context>
+    <tex correct="true">\begin{align} 
           \lim_{x\to 2^-}f(x) =\lim_{x\to 2^+}f(x)  = f(2)
 \end{align}</tex>
     <tex>\begin{align} 
           \lim_{x\to 2^-}f(x) =\lim_{x\to 2^+}f(x)
 \end{align}</tex>
-    <reason>\text{For a function to be continuous at a\\
-point it's limits on either side of f(x)\\
-should be equal to the value of f(x) at\\
-that point}</reason>
+    <reason>
+    \text{For a function to be continuous at a point}\\
+    \textbf{two conditions}\text{ must be satisfied}\\
+    \begin{tabular}{l|c}
+    \hline
+    \text{In English} &amp; \text{Mathematically} \\
+    \hline
+    \text{The function must approach} &amp; \\
+    \text{the same value from the left } &amp; \\
+    \text{and the right} &amp; 
+    \lim_{x\to a}f(x)\text{ exists.}\\
+    \text{And that value should be} &amp; \\
+    \text{equal to the value of the} &amp; \\ 
+    \text{function at that point} &amp; 
+    \lim_{x\to a}f(x) = f(a) \\
+    \hline
+    \end{tabular}\\
+    \text{This also means that wherever a function is}\\
+    \text{continuous, it can be drawn without lifting}\\
+    \text{the pencil.}
+    </reason>
   </step>
-  <step swipe='false'>
-    <context>\text{Is the following assertion correct?}</context>
-    <tex correct='true'>f(x) \text{ is a straight line for }x\neq 2.\\
-\text{Hence, it is continuous for all }x\neq 2.\\
-\text{But we need to check for continuity \\
-at x=2.}\\
-</tex>
-    <tex></tex>
-    <reason>\text{At }x=2\text{, the definition of the function}\\
-\text{changes. Hence, x = 2 could be the}\\
-\text{only problem point. We should check}\\
-\text{for continuity there.}</reason>
-  </step>
-  <step swipe='false'>
-    <context>\text{Is the following analysis correct?}</context>
-    <tex correct='true'>
-    \lim_{x\to 2^-}f(x) = \lim_{x\to 2^-} (2x+3)  = 7 \\
-    \lim_{x\to 2^+}f(x) = \lim_{x\to 2^+} (2x-3)  = 1 \\
-
-f(2) = 2(2)+3 = 7\\
-\\ \text{Hence, f(x) is discontinuous at x=2.}\\
-</tex>
-    <tex></tex>
-    <reason>\text{Since, f(x) is continuous at x}\neq 2\text{(step 2)}\\
-\therefore x=2\text{ is the only point of discontinuity.}</reason>
+  <step>
+    <context>
+		\text{Is the following true at }x = 2?
+		</context>
+    <tex correct="true">
+		  \begin{tabular}{l|l|l|l}
+		  \lim_{x\to 2^-}f(x) &amp; \lim_{x\to 2^+}f(x) &amp; f(x) &amp; \text{Continuous} \\
+		  \hline
+		  7 &amp; 1 &amp; 7 &amp; \text{No} \\
+		  \hline
+		  \end{tabular}
+		</tex>
+    <tex correct="false">
+		  \begin{tabular}{l|l|l|l}
+		  \lim_{x\to 2^-}f(x) &amp; \lim_{x\to 2^+}f(x) &amp; f(x) &amp; \text{Continuous} \\
+		  \hline
+		  7 &amp; 7 &amp; 7 &amp; \text{Yes} \\
+		  \hline
+		  \end{tabular}
+		</tex>
+    <reason>
+		\text{Be careful about which f(x) to use when}\\
+		\text{calculating the left- and right-hand limits.}\\
+		\text{For }x\gt 2, f(x) = 2x-3.\text{For }x\leq 2, f(x) = 2x+3. 
+		</reason>
   </step>
   <choices>
     <tex>\text{Discontinuous everywhere in domain \\
@@ -56,6 +105,6 @@ of f(x)}</tex>
 of f(x)}</tex>
     <tex>\text{Discontinuous everywhere in domain \\
 of f(x) except x=2}</tex>
-    <tex correct='true'>\text{x=2 is only point of discontinuity}</tex>
+    <tex correct="true">\text{x=2 is only point of discontinuity}</tex>
   </choices>
 </question>

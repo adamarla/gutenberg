@@ -1,68 +1,127 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
   <statement>
-    <tex>\text{FInd all points of discontinuity of f,\\
-where f is defined by }\\
+    <tex>\text{Find all points of discontinuity of f(x),\\
+where f(x) is defined by }\\
 
-f(x) = \begin{cases} 
-         \vert x \vert + 3,&amp;if\, x \leq -3\\
-         -2x,\,&amp;if  -3\lt x\lt 2 \\
-          6x +2,&amp;if \, x\gt 3\\	
-         \end{cases}</tex>
+\qquad f(x) = 
+  \begin{cases} 
+    \vert x\vert + 3, x\leq -3 \\
+         -2x, -3\lt x\lt 3 \\
+         6x + 2, x\geq 3 
+   \end{cases}
+    </tex>
   </statement>
   <step>
-    <context>\text{Which of these is the correct definition \\
-of the function?}</context>
-    <tex correct='true'>f(x) = \begin{cases} 
-         -x + 3,&amp;if\, x \leq -3\\
-         -2x,\,&amp;if  -3\lt x\lt 3 \\
-          6x +2,&amp;if \, x\gt 3\\	
-         \end{cases}</tex>
-    <tex>f(x) = \begin{cases} 
-          x + 3,&amp;if\, x \leq -3\\
-         -2x,\,&amp;if  -3\lt x\lt 3 \\
-          6x +2,&amp;if \, x\gt 3\\	
-         \end{cases}</tex>
-    <reason>since.
-\vert x \vert = \begin{cases} 
-           	-x, &amp;if \,x\lt 0\\
-	 x, &amp;if \,x\ge0\\
-         	\end{cases}</reason>
+    <context>
+		\text{Is the following} \textit{ initial analysis}\text{ correct?}
+		</context>
+    <tex correct="true">
+		\begin{tabular}{c|c|c|c}
+		x &amp; f(x) &amp; \text{Defined?} &amp; \text{Continuous?} \\
+		\hline
+		x\lt -3 &amp; -x + 3 &amp;\text{Yes} &amp; \text{Yes} \\
+		x = -3 &amp; -x + 3 &amp;\text{Yes} &amp; \text{Don't know} \\
+		-3\lt x\lt 3 &amp; -2x &amp;\text{Yes} &amp; \text{Yes} \\
+		x = 3 &amp; 6x + 2 &amp; \text{Yes} &amp; \text{Don't know} \\
+		x\gt 3 &amp; 6x + 2 &amp; \text{Yes} &amp; \text{Yes}
+		\hline
+		\end{tabular}
+		</tex>
+    <tex correct="false">
+		\begin{tabular}{c|c|c|c}
+		x &amp; f(x) &amp; \text{Defined?} &amp; \text{Continuous?} \\
+		\hline
+		x\lt -3 &amp; -x + 3 &amp;\text{Yes} &amp; \text{Yes} \\
+		x = -3 &amp; -x + 3 &amp;\text{Yes} &amp; \text{Yes} \\
+		-3\lt x\lt 3 &amp; -2x &amp;\text{Yes} &amp; \text{Yes} \\
+		x = 3 &amp; 6x + 2 &amp; \text{Yes} &amp; \text{Yes} \\
+		x\gt 3 &amp; 6x + 2 &amp; \text{Yes} &amp; \text{Yes}
+		\hline
+		\end{tabular}
+		</tex>
+    <reason>
+		\text{For }x\neq -3 \text{ and }x\neq 3, f(x)\text{ is either }\\
+		\vert x\vert + 3 = -x + 3\text{ or } -2x \text{ or }6x + 2.\\
+		\text{Either way, it is a straight line. And}\\
+		\text{straight lines are continuous. The only problem}\\
+		\text{point, therefore, could be }x = \pm 3.
+		</reason>
   </step>
   <step>
-    <context>\text{Is the following assertion correct?}</context>
-    <tex correct='true'>f(x) \text{ is a straight line for }x\neq 3,-3.\\
-\text{Hence, it is continuous for all }x\neq 3,-3.\\
-\text{But we need to check for continuity \\
-at x=3 and x=-3.}\\
+    <context>\text{What will the conditions for}\\
+\text{continuity at }x=\pm 3 \text{be ?}</context>
+    <tex correct="true">
+    \begin{align}   
+          \lim_{x\to -3^-}f(x) &amp;=\lim_{x\to -3^+}f(x)  = f(-3) \\
+          \lim_{x\to 3^-}f(x) &amp;=\lim_{x\to 3^+}f(x)  = f(3)
+    \end{align}
+    </tex>
+    <tex>
+    \begin{align} 
+          \lim_{x\to -3^-}f(x) &amp;= \lim_{x\to -3^+}f(x) \\
+          \lim_{x\to 3^-}f(x) &amp;= \lim_{x\to 3^+}f(x) 
+    \end{align}
 </tex>
-    <tex></tex>
-    <reason>\text{Since, at x=3,-3 the definition of the \\
-function changes, hence x=3,-3 can \\only be
-the problem points, so we need to \\check 
-continuity there.}</reason>
+    <reason>
+    \text{For a function to be continuous at a point}\\
+    \textbf{two conditions}\text{ must be satisfied}\\
+    \begin{tabular}{l|c}
+    \hline
+    \text{In English} &amp; \text{Mathematically} \\
+    \hline
+    \text{The function must approach} &amp; \\
+    \text{the same value from the left } &amp; \\
+    \text{and the right} &amp; 
+    \lim_{x\to a}f(x)\text{ exists.}\\
+    \text{And that value should be} &amp; \\
+    \text{equal to the value of the} &amp; \\ 
+    \text{function at that point} &amp; 
+    \lim_{x\to a}f(x) = f(a) \\
+    \hline
+    \end{tabular}\\
+    \text{This also means that wherever a function is}\\
+    \text{continuous, it can be drawn without lifting}\\
+    \text{the pencil.}
+    </reason>
   </step>
   <step>
-    <context>\text{Is the following analysis correct?}</context>
-    <tex correct='true'>    \lim_{x\to -3^-}f(x) = \lim_{x\to -3^-}(x+3)=6\\ 
-    \lim_{x\to -3^-}f(x) = \lim_{x\to -3^-}(x+3)=6\\ 
-    f(-3) = -(-3)+3 = 6\\
-\\
-    \lim_{x\to 3^-}f(x) = \lim_{x\to 3^-} (-2x)  = -6\\
-    \lim_{x\to 3^+}f(x) = \lim_{x\to-3^+} (6x+2)  = 20 \\
-    f(3)=6(3)+2=20\\
-\\ \text{Hence, f(x) is discontinuous at x=3.}\\
-\therefore \text{x=3,3 is the only point of\\
-discontinuity.}</tex>
-    <tex></tex>
-    <reason>\text{Since,\\
- f(x) is continuous at x}\neq -3,3\text{(step 2)}\\
-\therefore x=3\text{ is the only point of discontinuity.}</reason>
+    <context>
+		\text{Is the following true at }x = \pm 3?
+		</context>
+    <tex correct="true">
+		  \begin{tabular}{c|c|c|c|c}
+		  a &amp; \lim_{x\to a^-}f(x) &amp; \lim_{x\to a^+}f(x) &amp; f(a) &amp; \text{Continuous?} \\
+		  -3 &amp; 6 &amp; 6 &amp; 6 &amp; \text{Yes} \\
+		  \hline
+		  3 &amp; -6 &amp; 20 &amp; 20 &amp; \text{No} \\
+		  \hline
+		  \end{tabular}
+		</tex>
+    <tex correct="false">
+		  \begin{tabular}{c|c|c|c|c}
+		  a &amp; \lim_{x\to a^-}f(x) &amp; \lim_{x\to a^+}f(x) &amp; f(a) &amp; \text{Continuous?}\\
+		  -3 &amp; 0 &amp; 6 &amp; 6 &amp; \text{No} \\
+		  \hline
+		  3 &amp; -6 &amp; 20 &amp; 20 &amp; \text{No} \\
+		  \hline
+		  \end{tabular}
+		</tex>
+    <reason>
+		\text{Be careful about which f(x) to use when}\\
+		\text{calculating the left- and right-hand limits.}\\
+		\begin{align}
+		  \lim_{x\to -3^-}f(x) &amp;= \lim_{x\to -3^-}\underbrace{(\vert x\vert + 3)}_{= -x + 3 } = 6 \\
+		  \lim_{x\to -3^+}f(x) &amp;= \lim_{x\to -3^+}(-2x) = 6 \\ 
+		  \lim_{x\to 3^-}f(x) &amp;= \lim_{x\to 3^-}f(x) (-2x) = -6 \\
+		  \lim_{x\to 3^+}f(x) &amp;= \lim_{x\to 3^+}(6x + 2) = 20 
+		\end{align}
+		</reason>
   </step>
   <choices>
-    <tex>\text{x=3 is the only point of discontinuity}</tex>
-    <tex correct='true'>\text{x=-3 is the only point of discontinuity}</tex>
-    <tex>\text{No point of discontinuity}</tex>
-    <tex>\text{X=3, -3 are the points of discontinuity}</tex>
+    <tex>\text{Discontinuous at }x=\pm 3</tex>
+    <tex>\text{Discontinuous only at }x = -3</tex>
+    <tex correct="true">\text{Discontinuous only at } x = 3</tex>
+    <tex>\text{Continuous everywhere}</tex>
   </choices>
 </question>
