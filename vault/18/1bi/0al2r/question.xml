@@ -12,7 +12,7 @@
     <context>
     \text{Is the following the graph for f(x)?}
     </context>
-    <image correct="true">right.svg</image>
+    <image correct="true">r.svg</image>
     <image>wrong.svg</image>
     <reason>
     \text{As per the definition, }f(1.0) = 1.0 \text{ but }\\
