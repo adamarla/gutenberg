@@ -1,8 +1,8 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
   <statement>
-    <tex>\text{Find all the points of discontinuity of f,\\
-where f is defined by}\\
+    <tex>\text{Find all the points of discontinuity of f(x),\\
+where f(x) is defined by}\\
 
 f(x) = \begin{cases} 
          \frac{\vert x \vert}{x},&amp;if\, x \neq 0\\
@@ -10,55 +10,81 @@ f(x) = \begin{cases}
          \end{cases}</tex>
   </statement>
   <step>
-    <context>\text{Which of these is the correct definition \\
-of the function?}</context>
-    <tex correct='true'>f(x) = \begin{cases} 
-         \frac{-x}{x}&amp;,if\, x \lt 0\\
-         0&amp;,if\, x= 0\\	
-         \frac{x}{x}&amp;,if\, x \gt 0\\
-         \end{cases}</tex>
-    <tex>f(x) = \begin{cases} 
-         \frac{x}{x}&amp;,if\, x \lt 0\\
-         0&amp;,if\, x= 0\\	
-         \frac{x}{x}&amp;,if\, x \gt 0\\
-         \end{cases}</tex>
-    <reason>since,\\
-\vert x \vert = \begin{cases} 
-           	-x,\, &amp;if \,x\lt 0\\
-	 x,\, &amp;if \,x\ge0\\
-	\end{cases}</reason>
+    <context>
+    \text{Effectively, is f(x) equal to the following?}
+</context>
+    <tex correct="true">
+      \qquad f(x) = \begin{cases}
+        -1, x\lt 0 \\
+        0, x = 0 \\
+        1, x\gt 0
+      \end{cases}
+    </tex>
+    <tex>
+    \qquad f(x) = \begin{cases}
+        0, x = 0 \\
+        1, x\neq 0
+      \end{cases}
+    </tex>
+    <reason>
+    \begin{align}
+      \text{When }x &amp;\lt 0, \vert x\vert = -x \implies\dfrac{\vert x\vert}{x} = -1 \\
+      \text{and when }x&amp;\gt 0, \vert x\vert = x \implies\dfrac{\vert x\vert}{x} = 1
+    \end{align}
+    </reason>
   </step>
-  <step swipe='false'>
-    <context>\text{Is the following assertion correct?}</context>
-    <tex correct='true'>f(x) \text{ is a straight line for }x\neq 0\\
-\text{Hence, it is continuous for all }x\neq 0.\\
-\text{But we need to check for continuity \\
-at x=0.}\\
-</tex>
-    <tex></tex>
-    <reason>\text{Since, at x=0 the definition of the\\
-function changes.Hence x=0 can be \\
-the only problem point.So we need to\\
-check for continuity at x=0.}\\</reason>
-  </step>
-  <step swipe='false'>
-    <context>\text{Is the following analysis correct?}</context>
-    <tex correct='true'> \lim_{x\to 0^-}f(x) = \lim_{x\to 0^-} \frac{-x}{x} = -1\\
- \lim_{x\to 0^+}f(x) = \lim_{x\to 0^+}\frac{x}{x} =1\\
- f(0) = 0\\
-
-\text{Hence,f(x) is discontinuous at x=0.}</tex>
-    <tex></tex>
-    <reason>\text{Since, f(x) is continuous at x}\neq 0\text{(step 2)}\\
-\therefore x=0\text{ is the only point of discontinuity.}</reason>
+  <step>
+    <context>
+    		\text{Your friend makes the following assertion.}\\
+    		\text{Is his/her assertion correct?}
+    		</context>
+    <tex correct="true">
+    		\begin{tabular}{c|c|l}
+    		x &amp; \text{Continuous} &amp; \text{Why?} \\
+    		\hline
+    		x\lt 0 &amp; \text{Yes} &amp; \\
+    		x\gt 0 &amp; \text{Yes} &amp; \\ 
+    		x = 0 &amp; \text{No} &amp; \lim_{x\to 0^-}f(x)\neq\lim_{x\to 0^+}f(x)\neq f(0)\\
+    		\hline
+    		\end{tabular}
+    		</tex>
+    <tex correct="false">
+    		\begin{tabular}{c|c}
+    		x &amp; \text{Continuous} \\
+    		\hline
+    		x\lt 0 &amp; \text{Yes} \\
+    		x\gt 0 &amp; \text{Yes} \\
+    		\hline
+    		\end{tabular} \\
+    		\text{And if f(x) is continuous for }x\lt 0\text{ and }x\gt 0,\\
+    		\text{then f(x) must be continuous even at }x= 0.
+    		</tex>
+    <reason>
+    		\text{For a function to be continuous at a point}\\
+    		\textbf{two conditions}\text{ must be satisfied}\\
+    		\begin{tabular}{l|c}
+    		\hline
+    		\text{In English} &amp; \text{Mathematically} \\
+    		\hline
+    		\text{The function must approach} &amp; \\
+    		\text{the same value from the left } &amp; \\
+    		\text{and the right} &amp; 
+    		\lim_{x\to a}f(x)\text{ exists.}\\
+    		\text{And that value should be} &amp; \\
+    		\text{equal to the value of the} &amp; \\ 
+    		\text{function at that point} &amp; 
+    		\lim_{x\to a}f(x) = f(a) \\
+    		\hline
+    		\end{tabular}\\
+    		\text{This also means that wherever a function is}\\
+    		\text{continuous, it can be drawn without lifting}\\
+    		\text{the pencil.}
+    		</reason>
   </step>
   <choices>
-    <tex>\text{f(x) is discontinuous everywhere in \\
-it's domain except 0}</tex>
-    <tex correct='true'>\text{x=0 is the only point of discontinuity}</tex>
-    <tex>\text{f(x) is discontinuous everywhere in \\
-it's domain}</tex>
-    <tex>\text{f(x) is continuous everywhere in \\
-it's domain}</tex>
+    <tex>\text{Discontinuous for }x\neq 0.</tex>
+    <tex correct="true">\text{Discontinuous only at }x = 0</tex>
+    <tex>\text{Discontinuous at all x.}</tex>
+    <tex>\text{Continuous at all x.}</tex>
   </choices>
 </question>
