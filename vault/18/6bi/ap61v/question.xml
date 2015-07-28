@@ -1,59 +1,102 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
   <statement>
-    <tex>\text{FInd all points of discontinuity of f,\\
-where f is defined by }\\
+    <tex>\text{Find all points of discontinuity of f(x),\\
+where f(x) is defined by }\\
 
-f(x) = \begin{cases} 
-         x+1,&amp;if\, x \geq 1\\
-         x^2+1,&amp;if\, x \lt 1 \\
+\qquad f(x) = \begin{cases} 
+         x+1,&amp;if \, x \geq 1\\
+         x^2+1,&amp;if \, x\lt 1 
          \end{cases}</tex>
   </statement>
   <step>
-    <context>\text{What is the condition for continuity?}</context>
-    <tex correct='true'>\begin{align}
-	\lim_{x\to 0^-}f(x) =\lim_{x\to 0^+}f(x) = f(0)
-\end{align}</tex>
-    <tex>\begin{align}
-\lim_{x\to 0^-}f(x) =\lim_{x\to 0^+}f(x)
-\end{align}</tex>
-    <reason>\text{For a function to be continuous at a\\
-point it's limits on either sides should be\\
-equal to the value of f(x) at that point.}</reason>
+    <context>
+		\text{Does the following table accurately capture}\\
+		\text{what we know about f(x)?}
+		</context>
+    <tex correct="true">
+		\begin{tabular}{c|c|c|c}
+		x &amp; f(x) &amp; \text{Defined?} &amp; \text{Continuous?} \\
+		\hline
+		x\lt 1 &amp; x^2 + 1 &amp;\text{Yes} &amp; \text{Yes} \\
+		x = 1 &amp; x+1 &amp;\text{Yes} &amp; \text{Can't say} \\
+		x\gt 1 &amp; x+1 &amp;\text{Yes} &amp; \text{Yes}
+		\hline
+		\end{tabular}
+		</tex>
+    <tex correct="false">
+		\begin{tabular}{c|c|c|c}
+		x &amp; f(x) &amp; \text{Defined?} &amp; \text{Continuous?} \\
+		\hline
+		x\lt 1 &amp; x^2 + 1 &amp;\text{Yes} &amp; \text{Yes} \\
+		x = 1 &amp; x+1 &amp;\text{Yes} &amp; \text{Yes} \\
+		x\gt 1 &amp; x+1 &amp;\text{Yes} &amp; \text{Yes}
+		\hline
+		\end{tabular}
+		</tex>
+    <reason>
+		\text{For }x\lt 1, f(x) = x^2 + 1\text{ (parabolic curve).}\\
+		\text{For }x\gt 1, f(x) = x+1 \text{ (straight line).} \\
+		\text{Either way, f(x) is continuous for }x\neq 1.\\
+		\text{The only problem point could be }x = 1\\
+		\text{where the two curves meet - or don't meet.}
+		</reason>
   </step>
-  <step swipe='false'>
-    <context>\text{Is the following assertion correct?}</context>
-    <tex correct='true'>f(x) \text{ is a straight line for }x\gt 1.\\
-f(x) \text{ is a parabola for }x\lt 1.\\
-\text{Hence, it is continuous for all }x\neq 1.\\
-\text{But we need to check for continuity \\
-at x=1.}
-</tex>
-    <tex></tex>
-    <reason>\text{Since, at x=1 the definition of the\\
-function changes. So, x=1 is the only \\
-problem point.}\\
-\therefore\text{ we need to check continuity at x =1.}  </reason>
+  <step>
+    <context>\text{What will be the condition for}\\
+\text{continuity at }x=1 ?</context>
+    <tex correct="true">\begin{align} 
+          \lim_{x\to 1^-}(x^2+1) =\lim_{x\to 1^+}(x+1)  = f(1)
+\end{align}</tex>
+    <tex>\begin{align} 
+          \lim_{x\to 1^-}(x^2+1) =\lim_{x\to 1^+}(x+1)
+\end{align}</tex>
+    <reason>
+    \text{For a function to be continuous at a point}\\
+    \textbf{two conditions}\text{ must be satisfied}\\
+    \begin{tabular}{l|c}
+    \hline
+    \text{In English} &amp; \text{Mathematically} \\
+    \hline
+    \text{The function must approach} &amp; \\
+    \text{the same value from the left } &amp; \\
+    \text{and the right} &amp; 
+    \lim_{x\to a}f(x)\text{ exists.}\\
+    \text{And that value should be} &amp; \\
+    \text{equal to the value of the} &amp; \\ 
+    \text{function at that point} &amp; 
+    \lim_{x\to a}f(x) = f(a) \\
+    \hline
+    \end{tabular}\\
+    \text{This also means that wherever a function is}\\
+    \text{continuous, it can be drawn without lifting}\\
+    \text{the pencil.}
+    </reason>
   </step>
-  <step swipe='false'>
-    <context>\text{Is the following analysis correct?}</context>
-    <tex correct='true'>
-    \lim_{x\to 1^-}f(x) = \lim_{x\to 1^-} (x^2+1) =2\\
-    \lim_{x\to 1^+}f(x) = \lim_{x\to 1^+} (x+1) =2 \\
-    f(1)=(1)+1 = 2\\
-
-\\ \text{Hence, f(x) is continuous at x=1.}\\
-</tex>
-    <tex></tex>
-    <reason>\text{Since, f(x) is continuous at }x \neq 1\text{(step2)}\\
-\text{So,there is no point of discontinuity.}\\</reason>
+  <step>
+    <context>
+		\text{Is the following true at }x = 2?
+		</context>
+    <tex correct="true">
+		  \begin{tabular}{l|l|l|l}
+		  \lim_{x\to 1^-}f(x) &amp; \lim_{x\to 1^+}f(x) &amp; f(x) &amp; \text{Continuous} \\
+		  \hline
+		  2 &amp; 2 &amp; 2 &amp; \text{Yes} \\
+		  \hline
+		  \end{tabular}
+		</tex>
+    <reason>
+		\text{Be careful about which f(x) to use when}\\
+		\text{calculating the left- and right-hand limits.}\\
+		\text{For }x\geq 1, f(x) = x+1.\text{For }x\lt 1, f(x) = x^2+1. 
+		</reason>
   </step>
   <choices>
-    <tex>\text{x=1 is the only point of discontinuity}</tex>
-    <tex correct='true'>\text{f(x) is continuinuous everywhere in \\
-it's domain except 1}</tex>
-    <tex>\text{No point of discontinuity}</tex>
-    <tex>\text{f(x) is Discontinuous everywhere in \\
-it's domain}</tex>
+    <tex>\text{Discontinuous everywhere in domain \\
+of f(x)}</tex>
+    <tex correct="true">\text{Continuous everywhere}</tex>
+    <tex>\text{Discontinuous everywhere in domain \\
+of f(x) except x=2}</tex>
+    <tex>\text{x=1 is only point of discontinuity}</tex>
   </choices>
 </question>
