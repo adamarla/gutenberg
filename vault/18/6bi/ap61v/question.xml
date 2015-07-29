@@ -75,7 +75,7 @@ where f(x) is defined by }\\
   </step>
   <step>
     <context>
-		\text{Is the following true at }x = 2?
+		\text{Is the following true at }x = 1?
 		</context>
     <tex correct="true">
 		  \begin{tabular}{l|l|l|l}

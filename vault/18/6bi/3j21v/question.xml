@@ -1,58 +1,85 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
   <statement>
-    <tex>\text{FInd all points of discontinuity of f,\\
-where f is defined by }\\
+    <tex>\text{Find all points of discontinuity of f(x),\\
+where f(x) is defined as}\\
 
 f(x) = \begin{cases} 
-          x^{10}- 1,&amp;if\, x \leq 1\\
-          x^2,\,&amp;if  \,x\gt 1 \\
+          x^{10}-1, x \leq 1\\
+          x^2,  x\gt 1 \\
           \end{cases}</tex>
   </statement>
   <step>
-    <context>\text{What is the condition for continuity?}</context>
-    <tex correct='true'>\begin{align}
-	\lim_{x\to 1^-}f(x) =\lim_{x\to 1^+}f(1) = f(1)
-\end{align}</tex>
-    <tex>\begin{align}
-	\lim_{x\to 1^-}f(x) =\lim_{x\to 1^+}f(x)
-\end{align}</tex>
-    <reason>\text{For a function to be continuous at a\\
-point it's limits on either sides should be\\
-equal to the value of f(x) at that point}</reason>
+    <context>
+  		\text{Intuitively, where all could f(x) - as defined }\\
+  		\text{above - be discontinuous?}
+  		</context>
+    <tex correct="true">
+  		\textbf{Perhaps }\text{at } x=1.
+  		</tex>
+    <tex correct="false">
+  		\textbf{Anywhere }\text{ where f(x) is defined.}
+  		</tex>
+    <reason>
+  		\text{For }x\lt 1, f(x)\text{ is a (tenth degree) polynomial.}\\
+  		\text{For }x\gt 1, f(x)\text{ is a parabola.}\\
+  		\text{Either way, f(x) is continuous for those x.}\\
+  		\text{The only problem point could be }x=1\text{ where}\\
+  		\text{the two curves meet - or don't meet.}
+  		</reason>
   </step>
-  <step swipe='false'>
-    <context>\text{Is the following assertion correct?}</context>
-    <tex correct='true'>f(x) \text{ is a polynomial function for }x\ne 1.\\
-\text{Hence, it is continuous for all }x\neq 1.\\
-\text{But we need to check for continuity \\
-at x=1.}
-</tex>
-    <tex></tex>
-    <reason>\text{Since, at x=1 the definition of the\\
-function changes. So, x=1 is the only \\
-problem point.}\\
-\therefore\text{ we need to check continuity at x =1.}  </reason>
-  </step>
-  <step swipe='false'>
-    <context>\text{Is the following analysis correct?}</context>
-    <tex correct='true'>
-    \lim_{x\to 1^-}f(x) = \lim_{x\to 1^-} (x^{10}-1) =0\\
-    \lim_{x\to 1^+}f(x) = \lim_{x\to 1^+} (x^2) =1 \\
-    f(1)=(1)^{10}-1 = 0\\
-
-\\ \text{Hence, f(x) is discontinuous at x=1.}\\
-</tex>
-    <tex></tex>
-    <reason>\text{Since, f(x) is continuous at }x \neq 1\text{(step2)}\\
-\text{So,x=1 is the only point of discontinuity}\\</reason>
+  <step>
+    <context>
+  			\text{Is the following analysis correct?}
+  			</context>
+    <tex correct="true">
+  			\text{At }x=1\\
+  			\begin{tabular}{l|l|l|l}
+  			\lim_{x\to 1^-}f(x) &amp; \lim_{x\to 1^+}f(x) &amp; f(x) &amp; \text{Continuous} \\
+  			\hline
+  			\lim_{x\to 1^-}(x^{10}-1) &amp; \lim_{x\to 1^+}x^2 &amp; x^{10}-1 &amp; \\
+  			= 0 &amp; =1 &amp; =0 &amp; \text{No} \\
+  			\hline 
+  			\end{tabular}
+  			</tex>
+    <tex correct="false">
+  			\text{At }x=1\\
+  			\begin{tabular}{l|l|l|l}
+  			\lim_{x\to 1^-}f(x) &amp; \lim_{x\to 1^+}f(x) &amp; f(x) &amp; \text{Continuous} \\
+  			\hline
+  			\lim_{x\to 1^-}x^2 &amp; \lim_{x\to 1^+}x^2 &amp; x^2 &amp; \\
+  			= 1 &amp; =1 &amp; =1 &amp; \text{Yes} \\
+  			\hline 
+  			\end{tabular}
+  			</tex>
+    <reason>
+  			\textbf{Be careful }\text{about which f(x) to use}\\
+  			\text{for which x. Remember, }f(x) = x^{10}-1, x \leq 1.\\
+  			\text{Moreover, for a function to be continuous}\\
+  			\textbf{two conditions}\text{ must be satisfied}\\
+  			\begin{tabular}{l|c}
+  			\hline
+  			\text{In English} &amp; \text{Mathematically} \\
+  			\hline
+  			\text{The function must approach} &amp; \\
+  			\text{the same value from the left } &amp; \\
+  			\text{and the right} &amp; 
+  			\lim_{x\to a}f(x)\text{ exists.}\\
+  			\text{And that value should be} &amp; \\
+  			\text{equal to the value of the} &amp; \\ 
+  			\text{function at that point} &amp; 
+  			\lim_{x\to a}f(x) = f(a) \\
+  			\hline
+  			\end{tabular}\\
+  			\text{This also means that wherever a function is}\\
+  			\text{continuous, it can be drawn without lifting}\\
+  			\text{the pencil.}
+  			</reason>
   </step>
   <choices>
-    <tex correct='true'>\text{x=1 is the only point of discontinuity}</tex>
-    <tex>\text{x=1 is the only point of continuity}</tex>
-    <tex>\text{f(x) is continuous everywhere in\\
-it's domain}</tex>
-    <tex>\text{f(x) is discontinuous everywhere in\\
-it's domain}</tex>
+    <tex correct="true">\text{Discontinuous at }x = 1.</tex>
+    <tex>\text{Discontinuous at }x = 0, 1</tex>
+    <tex>\text{Continuous everywhere.}</tex>
+    <tex>\text{Discontinuous everywhere.}</tex>
   </choices>
 </question>

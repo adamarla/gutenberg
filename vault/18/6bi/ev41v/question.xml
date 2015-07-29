@@ -1,5 +1,5 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
   <statement>
     <tex>\text{Find all points of discontinuity of f,\\
 where f is defined by }\\
@@ -10,47 +10,75 @@ f(x) = \begin{cases}
           \end{cases}</tex>
   </statement>
   <step>
-    <context>\text{What is the condition for continuity?}</context>
-    <tex correct='true'>\begin{align}
-	\lim_{x\to 0^-}f(x) =\lim_{x\to 0^+}f(x) = f(0)
-\end{align}</tex>
-    <tex>\begin{align}
-	\lim_{x\to 0^-}f(x) =\lim_{x\to 0^+}f(x)
-\end{align}</tex>
-    <reason>\text{For a function to be continuous at a\\
-point it's limits on either sides should be\\
-equal to the value of f(x) at that point}</reason>
+    <context>
+  		\text{Intuitively, where all could f(x) - as defined }\\
+  		\text{above - be discontinuous?}
+  		</context>
+    <tex correct="true">
+  		\textbf{Perhaps }\text{at } x=2.
+  		</tex>
+    <tex correct="false">
+  		\textbf{Anywhere }\text{ where f(x) is defined.}
+  		</tex>
+    <reason>
+  		\text{For }x\lt 2, f(x)\text{ is a cubic polynomial.}\\
+  		\text{For }x\gt 2, f(x)\text{ is a parabola.}\\
+  		\text{Either way, f(x) is continuous for those x.}\\
+  		\text{The only problem point could be }x=2\text{ where}\\
+  		\text{the two curves meet - or don't meet.}
+  		</reason>
   </step>
-  <step swipe='false'>
-    <context>\text{Is the following assertion correct?}	</context>
-    <tex correct='true'>f(x) \text{ is a straight line for }x\le 2.\\
-f(x) \text{ is a continuous curve(x^3) for }x\gt 2.\\
-\text{Hence, it is continuous for all }x\neq 2.\\
-\text{But we need to check for continuity \\
-at x=2.}
-</tex>
-    <tex></tex>
-    <reason>\text{Since, at x=2 the definition of the\\
-function changes. So, x=2 is the only \\
-problem point.}\\
-\therefore\text{ we need to check continuity at x =2.}  </reason>
-  </step>
-  <step swipe='false'>
-    <context>\text{Is the following analysis correct?}</context>
-    <tex correct='true'>
-    \lim_{x\to 2^-}f(x) = \lim_{x\to 2^-} (x^3-3) =5\\
-    \lim_{x\to 2^+}f(x) = \lim_{x\to 2^+} (x^2+1) =5 \\
-    f(1)=x^3-3 = 5\\
-
-\\ \text{Hence, f(x) is continuous at x=2.}\\
-</tex>
-    <tex></tex>
-    <reason>\text{Since, f(x) is continuous at }x \neq 2\text{(step2)}\\
-\text{So,there is no point of discontinuity}\\</reason>
+  <step>
+    <context>
+  			\text{Is the following analysis correct?}
+  			</context>
+    <tex correct="true">
+  			\text{At }x=2\\
+  			\begin{tabular}{l|l|l|l}
+  			\lim_{x\to 2^-}f(x) &amp; \lim_{x\to 2^+}f(x) &amp; f(2) &amp; \text{Continuous} \\
+  			\hline
+  			\lim_{x\to 2^-}(x^3-3) &amp; \lim_{x\to 2^+}(x^2+1) &amp; x^3-3 &amp; \\
+  			= 5 &amp; =5 &amp; =5 &amp; \text{Yes} \\
+  			\hline 
+  			\end{tabular}
+  			</tex>
+    <tex correct="false">
+  			\text{At }x=2\\
+  			\begin{tabular}{l|l|l|l}
+  			\lim_{x\to 2^-}f(x) &amp; \lim_{x\to 2^+}f(x) &amp; f(2) &amp; \text{Continuous} \\
+  			\hline
+  			\lim_{x\to 2^-}(x^3-3) &amp; \lim_{x\to 2^+}(x^3-3) &amp; x^3-3 &amp; \\
+  			= 5 &amp; =5 &amp; =5 &amp; \text{Yes} \\
+  			\hline 
+  			\end{tabular}
+  			</tex>
+    <reason>
+  			\textbf{Be careful }\text{about which f(x) to use}\\
+  			\text{for which x. Remember, }f(x) = x^2 + 1, x \geq 2.\\
+  			\text{Moreover, for a function to be continuous}\\
+  			\textbf{two conditions}\text{ must be satisfied}\\
+  			\begin{tabular}{l|c}
+  			\hline
+  			\text{In English} &amp; \text{Mathematically} \\
+  			\hline
+  			\text{The function must approach} &amp; \\
+  			\text{the same value from the left } &amp; \\
+  			\text{and the right} &amp; 
+  			\lim_{x\to a}f(x)\text{ exists.}\\
+  			\text{And that value should be} &amp; \\
+  			\text{equal to the value of the} &amp; \\ 
+  			\text{function at that point} &amp; 
+  			\lim_{x\to a}f(x) = f(a) \\
+  			\hline
+  			\end{tabular}\\
+  			\text{This also means that wherever a function is}\\
+  			\text{continuous, it can be drawn without lifting}\\
+  			\text{the pencil.}
+  			</reason>
   </step>
   <choices>
     <tex>\text{x=2 is the only point of discontinuity.}</tex>
-    <tex correct='true'>\text{No point of discontunity.}</tex>
+    <tex correct="true">\text{No point of discontunity.}</tex>
     <tex>\text{f(x) discontinuous everywhere in it's\\
 domain except x=2.}</tex>
     <tex>\text{f(x) is discontinuous at x=2,0}</tex>
