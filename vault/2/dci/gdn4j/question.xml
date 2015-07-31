@@ -27,14 +27,14 @@ x^2+4x-5 &amp;= x^2+4x+4-6 \\
     <tex correct='true'>\begin{align}
   I &amp;= \int \sqrt{t^2-9}\, dt \\
     &amp;=\dfrac{t}{2}\sqrt{t^2-9}
-      -\dfrac{9}{2}\log|t+\sqrt{t^2-6}|+C \\
+      -\dfrac{9}{2}\log|t+\sqrt{t^2-9}|+C \\
     &amp;=\dfrac{(x+2)}{2}\sqrt{x^2+4x-5}\, - \\
       &amp;\qquad\dfrac{9}{2}\log|x+2+\sqrt{x^2+4x-5}|+C
 \end{align}</tex>
     <tex>\begin{align}
   I &amp;= \int \sqrt{t^2-9}\, dt \\
     &amp;=\dfrac{t}{2}\sqrt{t^2-9}
-      +\dfrac{9}{2}\log|t+\sqrt{t^2-6}|+C \\
+      +\dfrac{9}{2}\log|t+\sqrt{t^2-9}|+C \\
     &amp;=\dfrac{(x+2)}{2}\sqrt{x^2+4x-5}\,  + \\
       &amp;\qquad\dfrac{9}{2}\log|x+2+\sqrt{x^2+4x-5}|+C
 \end{align}</tex>

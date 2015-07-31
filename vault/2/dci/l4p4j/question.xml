@@ -16,7 +16,7 @@ x^2+4x+1 &amp;= x^2+4x+4-3 \\
 \text{Substituting }x+2=t \implies dx = dt \\
 \begin{align}
   \int\sqrt{x^2+4x+1}\, dx &amp;= \int \sqrt{t^2-3}\, dt \\
-                                          &amp;= \int \sqrt{t^2-a^2}
+                                          &amp;= \int \sqrt{t^2-a^2}\, dt
 \end{align} \\
 \text{where }{\bf t=x+2,\, M=1,\, a=\sqrt{3}}</reason>
   </step>
