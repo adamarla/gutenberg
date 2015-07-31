@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int\sqrt{x^2-8x+7}\, dx</tex>
+  </statement>
+  <step>
+    <context>\text{If }\int\sqrt{x^2-8x+7}\, dx=\int M\sqrt{t^2-a^2}\, dt, \\
+\text{where $t=f(x)$, and $M$ and $a$ are constants,} \\
+\text{what are $t$, $M$ and $a$?}</context>
+    <tex correct='true'>t=x-4, M=1, a=3</tex>
+    <tex>t=x-4, M=1, a=9</tex>
+    <reason>\begin{align}
+x^2-8x+7 &amp;= x^2-8x+7+9-9 \\
+                &amp;= (x-4)^2-9
+\end{align} \\
+\text{Substituting }x-4=t \implies dx = dt \\
+\begin{align}
+  \int\sqrt{x^2-8x+7}\, dx &amp;= \int \sqrt{t^2-9}\, dt \\
+                                         &amp;=\int\sqrt{t^2-a^2}
+\end{align} \\
+\text{where }{\bf t=x-4, M=1, a=3}</reason>
+  </step>
+  <step>
+    <context>\text{If }I=\int\sqrt{x^2-8x+7}\, dx
+  = \int \sqrt{t^2-9}\, dt \\
+\text{then is the following correct?}</context>
+    <tex correct='true'>\begin{align}
+  I &amp;= \int \sqrt{t^2-9}\, dt \\
+    &amp;=\dfrac{t}{2}\sqrt{t^2-9}
+      -\dfrac{9}{2}\log|t+\sqrt{t^2-9}|+C \\
+    &amp;=\dfrac{(x-4)}{2}\sqrt{x^2-8x+7}\, - \\
+      &amp;\qquad\dfrac{9}{2}\log|x-4+\sqrt{x^2-8x+7}|+C
+\end{align}</tex>
+    <tex>\begin{align}
+  I &amp;= \int \sqrt{t^2-9}\, dt \\
+    &amp;=\dfrac{t}{2}\sqrt{t^2-9}
+      +\dfrac{9}{2}\log|t+\sqrt{t^2-9}|+C \\
+    &amp;=\dfrac{(x-4)}{2}\sqrt{x^2+4x-5}\,  + \\
+      &amp;\qquad\dfrac{9}{2}\log|x-4+\sqrt{x^2+4x-5}|+C
+\end{align}</tex>
+    <reason>\begin{align}
+\int\sqrt{t^2-a^2}\, dt &amp;=\dfrac{t}{2}\sqrt{t^2-a^2}- \\
+  &amp;\quad\dfrac{a^2}{2}\log|t+\sqrt{t^2-a^2}|+C
+\end{align} \\
+\text{Substitute $t=x-4$ and $a=3$ in the result.}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{(x-4)}{2}\sqrt{x^2-8x+7}\, - \\
+  \qquad9\log|x-4+\sqrt{x^2-8x+7}|+C</tex>
+    <tex>\dfrac{(x-4)}{2}\sqrt{x^2-8x+7}\, + \\
+  \qquad9\log|x-4+\sqrt{x^2-8x+7}|+C</tex>
+    <tex>\dfrac{(x-4)}{2}\sqrt{x^2-8x+7}\, - \\
+  \qquad 3\log|x-4+\sqrt{x^2-8x+7}|+C</tex>
+    <tex correct='true'>\dfrac{(x-4)}{2}\sqrt{x^2-8x+7}\, - \\
+  \qquad\dfrac{9}{2}\log|x-4+\sqrt{x^2-8x+7}|+C</tex>
+  </choices>
+</question>

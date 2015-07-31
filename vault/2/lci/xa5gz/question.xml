@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int\sqrt{x^2+3x}\, dx</tex>
+  </statement>
+  <step>
+    <context>\text{If }\int\sqrt{x^2+3x}\, dx=\int M\sqrt{t^2-a^2}\, dt, \\
+\text{where $t=f(x)$, and $M$ and $a$ are constants,} \\
+\text{what are $t$, $M$ and $a$?}</context>
+    <tex correct='true'> t=x+\dfrac{3}{2}, M=1, a=\dfrac{3}{2}</tex>
+    <tex> t=x+3, M=1, a=3</tex>
+    <reason>\begin{align}
+  x^2+3x &amp;= x^2+3x+\frac{9}{4}-\dfrac{9}{4} \\
+               &amp;= \left(x+\dfrac{3}{2}\right)^2-\dfrac{9}{4}
+\end{align} \\
+\text{Substituting }x+\dfrac{3}{2}=t \implies dx = dt \\
+\begin{align}
+  \int\sqrt{x^2+3x}\, dx &amp;= \int \sqrt{t^2-\dfrac{9}{4}}\, dt \\
+                                      &amp;= \int \sqrt{t^2-a^2}\, dt
+\end{align} \\
+\text{where }{\bf t=x+\dfrac{3}{2},\, M=1,\, a=\dfrac{3}{2}}</reason>
+  </step>
+  <step>
+    <context>\text{If }I=\int\sqrt{x^2+3x}\, dx
+  = \int \sqrt{t^2-\dfrac{3}{2}}\, dt \\
+\text{then is the following correct?}</context>
+    <tex correct='true'>\begin{align}
+  I &amp;= \int \sqrt{t^2-\dfrac{9}{4}}\, dt \\
+    &amp;=\dfrac{t}{2}\sqrt{t^2-\dfrac{9}{4}}-
+      \dfrac{9}{8}\log|t+\sqrt{t^2-\dfrac{9}{4}}|+C \\
+    &amp;=\dfrac{(2x+3)}{4}\sqrt{x^2+3x}\ - \\
+    &amp;\qquad\dfrac{9}{8}\log|x+\dfrac{3}{2}+\sqrt{x^2+3x}|+C
+\end{align}</tex>
+    <tex>\begin{align}
+  I &amp;= \int \sqrt{t^2-\dfrac{9}{4}}\, dt \\
+    &amp;=\dfrac{t}{2}\sqrt{t^2-\dfrac{9}{4}}-
+      \log|t+\sqrt{t^2-\dfrac{9}{4}}|+C \\
+    &amp;=\dfrac{(2x+3)}{4}\sqrt{x^2+3x}\ - \\
+    &amp;\qquad\log|x+\dfrac{3}{2}+\sqrt{x^2+3x}|+C
+\end{align}</tex>
+    <reason>\begin{align}
+\int\sqrt{t^2-a^2}\, dt &amp;=\dfrac{t}{2}\sqrt{t^2-a^2}\, - \\
+  &amp;\quad\dfrac{a^2}{2}\log|t+\sqrt{t^2-a^2}|+C
+\end{align} \\
+\text{Substitute $t=x+\dfrac{3}{2}$ and $a=\dfrac{3}{2}$ in the result.}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{(2x+3)}{4}\sqrt{x^2+3x}\ - \\
+  \qquad\dfrac{9}{8}\log|x+\dfrac{3}{2}+\sqrt{x^2+3x}|+C</tex>
+    <tex>\dfrac{(2x+3)}{4}\sqrt{x^2+3x}\ + \\
+  \qquad\dfrac{9}{8}\log|x+\dfrac{3}{2}+\sqrt{x^2+3x}|+C</tex>
+    <tex>\dfrac{(2x+3)}{4}\sqrt{x^2+3x}\ - \\
+  \qquad\log|x+\dfrac{3}{2}+\sqrt{x^2+3x}|+C</tex>
+    <tex>\dfrac{(2x+3)}{4}\sqrt{x^2+3x}\ + \\
+  \qquad\log|x+\dfrac{3}{2}+\sqrt{x^2+3x}|+C</tex>
+  </choices>
+</question>
