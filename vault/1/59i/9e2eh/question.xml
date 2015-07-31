@@ -1,30 +1,45 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
   <statement>
-    <tex>\text{The radius of a circle is increasing uniformly} \\
-    \text{at the rate of }3\text{ cm/s}.\text{ Find the rate at}\\
-    \text{which the area of the circle is increasing when}\\
-    \text{the radius is 10 cm.}</tex>
+    <tex>\text{The radius of a circle is increasing }\\
+    \text{uniformly at the rate of 3 cm/s.} \\
+    \text{Find the rate at which the area is}\\
+    \text{increasing when the radius is 10 cm.}
+    </tex>
   </statement>
   <step>
     <context>
-      \text{What do we know?}
+      \textbf{Right or wrong? }\text{ - Is the following}\\
+      \text{what we know and what we have to find?}
     </context>
-    <tex correct='true'>
-      \qquad \dfrac{dR}{dT} = 3\frac{cm}{s},\text{ where R = circle's radius. }
+    <tex correct="true">
+      \begin{tabular}{c|c}
+      \text{We know} &amp; \text{We have to find} \\
+      \hline 
+      \frac{dR}{dT}=\text{3 cm/s} &amp; \left[\frac{dA}{dT}\right]_{R=10} \\
+      \hline
+      \end{tabular}\\
+      \text{where A = circle's area and R = it's radius.}
     </tex>
     <tex>
-      \qquad \dfrac{dA}{dT} = 3\frac{cm^2}{s},\text{ where A = circle's area. }
+      \begin{tabular}{c|c}
+      \text{We know} &amp; \text{We have to find} \\
+      \hline 
+      \frac{dA}{dT}=\text{3 cm}^2/s &amp; \left[\frac{dA}{dR}\right]_{R=10} \\
+      \hline
+      \end{tabular}\\
+      \text{where A = circle's area and R = it's radius.}
     </tex>
     <reason>
-      \text{We have to find }\dfrac{dA}{dT}.\text{We have been given }\dfrac{dR}{dT}.
+      \text{The 3 cm/s is } = \frac{dR}{dT}. \\
+      \text{What we need to find is }\frac{dA}{dT}.
     </reason>
   </step>
-  <step swipe='false'>
+  <step swipe="false">
     <context>
-      \text{Does this look right?}
+      \textbf{Finding }\frac{dA}{dT}\text{ - Is the following correct?}
     </context>
-    <tex correct='true'>
+    <tex correct="true">
       \begin{align}
 A = \pi\cdot R^2\implies\dfrac{dA}{dT} &amp;= 2\pi R\cdot\dfrac{dR}{dT}\\
       \text{But as }\dfrac{dR}{dT} &amp;= 3\frac{cm}{s}\\
@@ -44,7 +59,7 @@ A = \pi\cdot R^2\implies\dfrac{dA}{dT} &amp;= 2\pi R\cdot\dfrac{dR}{dT}\\
     </reason>
   </step>
   <choices>
-    <tex correct='true'>60\pi\frac{cm^2}{s}</tex>
+    <tex correct="true">60\pi\frac{cm^2}{s}</tex>
     <tex>20\pi\frac{cm^2}{s}</tex>
     <tex>30\pi\frac{cm^2}{s}</tex>
     <tex>40\pi\frac{cm^2}{s}</tex>
