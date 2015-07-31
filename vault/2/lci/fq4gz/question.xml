@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int \sqrt{1+\dfrac{x^2}{9}}\, dx</tex>
+  </statement>
+  <step>
+    <context>\text{If }\int \sqrt{1+\dfrac{x^2}{9}}\, dx=\int M\sqrt{x^2+a^2}\, dt, \\
+\text{$M$ and $a$ are constants, what are $M$ and $a$?}</context>
+    <tex correct='true'>M=\dfrac{1}{3}, a=3</tex>
+    <tex>M=1, a=3</tex>
+    <reason>\begin{align}
+  1+\dfrac{x^2}{9}&amp;= \dfrac{1}{9}\left(9+x^2\right) \\
+                                &amp;= \dfrac{1}{9}\left(x^2+3^2\right) 
+\end{align} \\
+\begin{align}
+  \int\sqrt{1+\dfrac{x^2}{9}}\, dx 
+    &amp;= \int \sqrt{\dfrac{1}{9}\left(x^2+3^2\right)}\, dx \\
+    &amp;= \int \dfrac{1}{3}\sqrt{x^2+3^2}\, dx
+\end{align} \\
+\text{where }{\bf M=\dfrac{1}{3},\, a=3}</reason>
+  </step>
+  <step>
+    <context>\text{If }I=\int\sqrt{1+\dfrac{x^2}{9}}\, dx
+  = \int \dfrac{1}{3}\sqrt{x^2+9}\, dx \\
+\text{then is the following correct?}</context>
+    <tex correct='true'>\begin{align}
+  I &amp;= \int \dfrac{1}{3}\sqrt{x^2+9}\, dx \\
+    &amp;=\dfrac{x}{6}\sqrt{x^2+9}+
+      \dfrac{3}{2}\log|x+\sqrt{x^2+9}|+C
+\end{align}</tex>
+    <tex>\begin{align}
+  I &amp;= \int \dfrac{1}{3}\sqrt{x^2+3}\, dx \\
+    &amp;=\dfrac{x}{6}\sqrt{x^2+3}+
+      \dfrac{3}{2}\log|x+\sqrt{x^2+3}|+C
+\end{align}</tex>
+    <reason>\begin{align}
+\int\sqrt{x^2+a^2}\, dt &amp;=\dfrac{x}{2}\sqrt{x^2+a^2}\, + \\
+  &amp;\quad\dfrac{a^2}{2}\log|x+\sqrt{x^2+a^2}|+C
+\end{align} \\
+\text{Substitute $a=3$ in the result.}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{x}{6}\sqrt{x^2+9}+\log|x+\sqrt{x^2+9}|+C</tex>
+    <tex>\dfrac{x}{6}\sqrt{x^2+3}-\dfrac{3}{2}\log|x+\sqrt{x^2+3}|+C</tex>
+    <tex>\dfrac{x}{6}\sqrt{x^2+9}-\log|x+\sqrt{x^2+9}|+C</tex>
+    <tex correct='true'>\dfrac{x}{6}\sqrt{x^2+9}+\dfrac{3}{2}\log|x+\sqrt{x^2+9}|+C</tex>
+  </choices>
+</question>

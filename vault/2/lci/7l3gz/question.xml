@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Integrate }I=\int\sqrt{1+x^2}\, dx</tex>
+  </statement>
+  <step>
+    <context>\text{Is the following correct?}
+</context>
+    <tex correct='true'>\begin{align}
+  \int \sqrt{1+x^2}\, dx =&amp;\dfrac{x}{2}\sqrt{1+x^2}+ \\
+      &amp;\dfrac{1}{2}\log|x+\sqrt{1+x^2}|+C
+\end{align}</tex>
+    <tex>\begin{align}
+  \int \sqrt{1+x^2}\, dx =&amp;\dfrac{x^2}{2}\sqrt{1+x^2}+ \\
+      &amp;\dfrac{x^2}{2}\log|x+\sqrt{1+x^2}|+C
+\end{align}</tex>
+    <reason>\begin{align}
+\int\sqrt{x^2+a^2}\, dx &amp;=\dfrac{x}{2}\sqrt{x^2+a^2}\, + \\
+  &amp;\quad\dfrac{a^2}{2}\log|x+\sqrt{x^2+a^2}|+C
+\end{align} \\
+\text{Substitute $a=1$ in the result.}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{x}{2}\sqrt{1+x^2}+
+  \dfrac{1}{2}\log|x+\sqrt{1+x^2}|+C</tex>
+    <tex>\dfrac{2}{3}\left(1+x^2\right)^{\frac{3}{2}}+C</tex>
+    <tex>\dfrac{2}{3}x\left(1+x^2\right)^{\frac{3}{2}}+C</tex>
+    <tex>\dfrac{x^2}{2}\sqrt{1+x^2}+
+  \dfrac{x^2}{2}\log|x+\sqrt{1+x^2}|+C
+</tex>
+  </choices>
+</question>
