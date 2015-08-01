@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+			\text{Find the domain and range of the}\\
+      \text{following real function} \\ 
+			\qquad f(x) = -\vert x\vert 
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\textbf{Right or wrong? }f(x)\text{ is effectively equal}\\
+			\text{to the following.}
+			</context>
+    <tex correct="true">
+			\qquad f(x) = \begin{cases}
+			  -x, x\geq 0 \\
+			  x, x\lt 0
+			\end{cases}
+			</tex>
+    <tex correct="false">
+			\qquad f(x) = \begin{cases}
+			  -x, x\lt 0 \\
+			  x, x\geq 0
+			\end{cases}
+			</tex>
+    <reason>
+			\vert x\vert = \begin{cases}
+			  -x, x\lt 0 \\
+			  x, x\geq 0
+			\end{cases} \implies -\vert x\vert = \begin{cases}
+			   x, x\lt 0 \\
+			   -x, x\geq 0
+			\end{cases} \\
+			\text{In other words, }f(x) = -\vert x\vert\leq 0\text{ for all }x\in\mathbb{R}.
+			</reason>
+  </step>
+  <step>
+    <context>
+				\text{Given }f(x)\text{, is the following assertion correct?}
+				</context>
+    <tex correct="true">
+				\begin{tabular}{c|c}
+				&amp;  \\
+				\hline 
+				\text{Domain} &amp; \mathbb{R} \\
+				\hline
+				\text{Range} &amp; (-\infty, 0]  \\
+				\hline
+				\end{tabular}
+				</tex>
+    <tex correct="false">
+				\begin{tabular}{c|c}
+				&amp;  \\
+				\hline 
+				\text{Domain} &amp; \mathbb{R} \\
+				\hline
+				\text{Range} &amp; (-\infty, \infty) \\
+				\hline
+				\end{tabular}
+				</tex>
+    <reason>
+				f(x)\text{ is defined for all }x\implies\textbf{ domain }=\mathbb{R}.\\
+				\text{But }f(x)\leq 0\text{ for all }x\implies\textbf{ range }=(-\infty, 0].
+				</reason>
+  </step>
+  <choices>
+    <tex>
+  		  \text{Domain } = \mathbb{R}, \text{ Range } = [0, \infty)
+  		</tex>
+    <tex>
+  		  \text{Domain } = \mathbb{R}, \text{ Range } = (-\infty, \infty)
+  		</tex>
+    <tex>
+  		  \text{Domain } = \mathbb{N}, \text{ Range } = (-\infty, 0]
+  		</tex>
+    <tex correct="true">
+  		  \text{Domain } = \mathbb{R}, \text{ Range } = (-\infty, 0]
+  		</tex>
+  </choices>
+</question>
