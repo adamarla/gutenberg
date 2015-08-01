@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+			\text{Find the domain and range of the}\\
+			\text{following real function} \\
+			\qquad f(x) = \sqrt{9-x^2}
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\textbf{Right or wrong? }\text{For f(x) to be defined}\\
+			x \text{ must satisfy the following condition.} 
+			</context>
+    <tex correct="true">
+			\begin{align}
+			  9-x^2 &amp;\geq 0 \implies (3-x)\cdot (3+x)\geq 0
+			\end{align}
+			</tex>
+    <tex correct="false">
+			\textbf{No condition }\text{on }x.\\
+			\text{It can be any real number.}
+			</tex>
+    <reason>
+			\text{We did say that }f(x)\text{ is a real-valued}\\
+			\text{function. Which means, }f(x)\in\mathbb{R}. \\
+			\text{And for }f(x)\in\mathbb{R}, 9-x^2\geq 0\\
+			\implies (3-x)\cdot(3+x)\geq 0.
+			</reason>
+  </step>
+  <step>
+    <context>
+				\text{If }9-x^2\geq 0, \text{ then would the following}\\
+				\text{values of x satisfy the condition?}
+				</context>
+    <tex correct="true">
+				\qquad x\in [-3,3] \implies\textbf{ domain } = [-3,3]
+				</tex>
+    <tex correct="false">
+				\qquad x\leq -3 \text{ or } x \geq 3 = \textbf{ domain }
+				</tex>
+    <reason>
+				\begin{tabular}{c|c|c|c}
+				&amp; 3-x &amp; 3+x &amp; 9-x^2 \\
+				\hline 
+				x\lt -3 &amp; + &amp; - &amp; - \\
+				-3\leq x\leq 3 &amp; + &amp; + &amp; + \\ 
+				x\gt 3 &amp; - &amp; + &amp; - \\
+				\hline
+				\end{tabular} \\
+				\text{This means that the valid values of x}\\
+				\text{are all in }[-3,3]\implies\textbf{ domain } = [-3,3].
+				</reason>
+  </step>
+  <step>
+    <context>
+				\text{With }x \in [-3,3],\text{ what are the minimum}\\
+				\text{and maximum values of }f(x)?\text{ And hence, }\\
+				\text{what is it's range?}
+				</context>
+    <tex correct="true">
+				\begin{tabular}{c|c|c}
+				&amp; &amp; \text{ At x} \\
+				\hline 
+				\text{Minimum} &amp; 0 &amp; x = \pm 3 \\
+				\text{Maximum} &amp; 3 &amp; x = 0 
+				\end{tabular} \\ 
+				\text{Hence, the }\textbf{range }\text{ of f(x) } = [0,3].
+				</tex>
+    <tex correct="false">
+				\begin{tabular}{c|c|c}
+				&amp; &amp; \text{ At x} \\
+				\hline 
+				\text{Minimum} &amp; 0 &amp; x = 3 \\
+				\text{Maximum} &amp; 3\sqrt{2} &amp; x = -3 
+				\end{tabular} \\ 
+				\text{Hence, the }\textbf{range }\text{ of f(x) } = [0,3\sqrt{2}].
+				</tex>
+    <reason>
+				\text{The less you subtract from }9-x^2,\text{ the}\\
+				\text{greater }f(x) = \sqrt{9-x^2}\text{ will be.}\\
+				\text{Hence, }f(x)\text{ is greatest at }x = 0\text{ and }\\
+				\text{least at }x = \pm 3.
+				</reason>
+  </step>
+  <choices>
+    <tex>
+  		  \text{Domain }=(-\infty, -3],\text{ Range } = [0,9]
+  		</tex>
+    <tex>
+  		\text{Domain }=(-3,3),\text{ Range } = (0,9)
+  		</tex>
+    <tex correct="true">
+  		\text{Domain }=[-3,3],\text{ Range } = [0,3]
+  		</tex>
+    <tex>
+  		\text{Domain }=(-\infty, \infty), \text{ Range } = (-\infty,\infty)
+  		</tex>
+  </choices>
+</question>
