@@ -18,6 +18,7 @@
     </publishers>
     <books>
         <book tag="ncert-12-math-1" publisher="ncert" subject="math" grade="12" label="Mathematics - I">ncert-12-math-1.xml</book>
+        <book tag="ncert-11-math" publisher="ncert" subject="math" grade="11" label="Mathematics-XI">ncert-11-math.xml</book>
         <book tag="ncert-12-math-2" publisher="ncert" subject="math" grade="12" label="Mathematics - II">ncert-12-math-2.xml</book>
         <book tag="ncert-12-math-ex" publisher="ncert" subject="math" grade="12" label="Exemplar">ncert-12-math-ex.xml</book>
         <book tag="cbse-12-math" publisher="cbse" subject="math" grade="12" label="Board Exams" category="exam">cbse-12-math.xml</book>
