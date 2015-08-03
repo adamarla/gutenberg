@@ -1,33 +1,30 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
   <statement>
-    <tex>\text{Find}\frac{dy}{dx}\text{ of the following equation}\\
-
-2x + 3y = \sin x</tex>
+    <tex>
+    \text{Find }\frac{dy}{dx}\text{ given that }\\
+    \qquad 2x + 3y = \sin x
+    </tex>
   </statement>
   <step>
-    <context>\text{If }f(x) = g(h(x)), f^\prime = 
-</context>
-    <tex correct='true'>\frac{df(x)}{dx} = g^\prime (h) . h^\prime</tex>
-    <tex>\frac{df(x)}{dx} = g^\prime (h^\prime) </tex>
-    <reason>\text{This is a standard formula. It is called Chain}\\
-\text{ Rule.Review it if you got this wrong.}\\</reason>
-  </step>
-  <step>
-    <context>\text{Are the following calculations correct?}</context>
-    <tex correct='true'>\text{after diffrentiating the equation we get}\\
-\frac{d(2x + 3y)}{dx}=\frac{d(\sin x)}{dx}\\
-\Rightarrow 2 .  \frac{d(x)}{dx}+3 . \frac{d(y)}{dx}=\frac{d(\sin x)}{dx} . \frac{d(x)}{dx}\\
-\Rightarrow 2 +3 . \frac{dy}{dx} = \cos x \\
-
-\text{After rearranging,}\\
-\frac{dy}{dx}=\frac{\cos x - 2}{3}</tex>
-    <reason>\text{Other than chain rule we have used}\\
-\text{the fact that }\frac{d(\sin x)}{dx}=\cos x\text{.Check your}\\
-\text{calculations if you got something else.}</reason>
+    <context>
+  		\text{Is the following analysis correct?}
+  		</context>
+    <tex correct="true">
+  		\begin{align}
+  		  2x + 3y &amp;= \sin x \\
+  		  \implies y &amp;= \dfrac{\sin x-2x}{3} \\
+  		  \implies\dfrac{dy}{dx} &amp;= \dfrac{1}{3}\cdot (\cos x - 2)
+  		\end{align}
+  		</tex>
+    <reason>
+  		\text{Collect all terms with y on side}\\
+  		\text{and all terms with x on the other.}\\
+  		\text{Then differentiate with respect to x.}
+  		</reason>
   </step>
   <choices>
-    <tex correct='true'>\frac{dy}{dx}=\frac{\cos x - 2}{3}</tex>
+    <tex correct="true">\frac{dy}{dx}=\frac{\cos x - 2}{3}</tex>
     <tex>\frac{dy}{dx}=\frac{3}{\cos x - 2}</tex>
     <tex>\frac{dy}{dx}=\frac{-\cos x - 2}{3}</tex>
     <tex>\frac{dy}{dx}=\frac{3}{-\cos x - 2}</tex>
