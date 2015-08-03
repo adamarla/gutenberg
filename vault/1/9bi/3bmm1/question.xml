@@ -1,66 +1,81 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
-	<statement>
-		<tex>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
 			\text{Is the function given by}\\
 			\quad f(x) = \vert x - 1\vert, x\in\mathbb{R} \\
 			\text{differentiable at }x = 1?
 		</tex>
-	</statement>
-	
-		<step>
-			<context>
-			\text{Which of the following is correctly}\\
-			\text{defines }f(x)?
+  </statement>
+  <step>
+    <context>
+			\textbf{Right or wrong? } f(x)\text{ is effectively}\\
+			\text{equal to the following.}
 			</context>
-			<tex correct="true">
+    <tex correct="true">
 			\quad \vert x- 1\vert = \begin{cases}
 			    x-1, x\geq 1, \\
 			    -(x-1) = 1-x, x\lt 1
 			  \end{cases}
 			</tex>
-			<tex correct="false">
+    <tex correct="false">
 			\quad \vert x- 1\vert = \begin{cases}
-			    x-1, x\geq 1, \\
-			    -x-1, x\lt 1
+			    x-1, x\geq 0, \\
+			    -(x-1) = 1-x, x\lt 0
 			  \end{cases}
 			</tex>
-			<reason>
-			\text{First, }\vert x - 1\vert \geq 0\text{ for all x. And so,}\\
-			\text{for }x\geq 1, \vert x-1\vert = (x-1).\text{But for }x\lt 1\\
-			(x-1)\lt 0\implies \vert x-1\vert = -(x-1) = 1-x.
+    <reason>
+			\text{If you let }x' = x - 1,\text{ then }\vert x - 1\vert = \vert x'\vert.\\
+			\text{And as }\vert x'\vert = \begin{cases} 
+			  x', \underbrace{x' \geq 0}_{\text{not x}},  \\
+			  -x', x' \lt 0 
+			  \end{cases} \\
+			  \therefore \vert x-1\vert = \begin{cases}
+			    x-1, x-1\geq 0, \\
+			    -(x-1) = 1-x, x-1\lt 0
+			  \end{cases} \\
+			  = \begin{cases}
+			    x-1, x\geq 1, \\
+			    1-x, x\lt 1
+			  \end{cases} 
 			</reason>
-		</step>
-		
-			<step>
-				<context>
-				\text{What will be the condition for differentiability}\\
-				\text{at x = 1}?
+  </step>
+  <step>
+    <context>
+				\textbf{Right or wrong? } \text{For f(x) to be }\\
+				\text{differentiable at }x = 1,\text{ the following}\\
+				\text{condition must be satisfied.}
 				</context>
-				<tex correct="true">
+    <tex correct="true">
 				\begin{align}
-				  \lim_{x\to 1^-}\dfrac{f(1)-f(1-h)}{h} &amp;= \lim_{x\to 1^+}\dfrac{f(1+h)-f(1)}{h} \\
-				  h&amp;\gt 0
+				  \lim_{\delta\to 0}\dfrac{f(1)-f(1-\delta)}{\delta} &amp;= 
+				  \lim_{\delta\to 0}\dfrac{f(1+\delta)-f(1)}{\delta} \\
+				  (\delta &amp;\gt 0)
 				\end{align}
 				</tex>
-				<tex correct="false">
+    <tex correct="false">
 				\begin{align}
             \lim_{x\to 1^-}f(x) &amp;= \lim_{x\to 1^+}f(x) 
 				\end{align}
 				</tex>
-				<reason>
+    <reason>
 				\text{A function f(x) is differentiable at x=a if}\\
 				\text{the rates of change on either side of x=a are}\\
 				\text{equal. Mathematically, this is expressed as }\\
-				\lim_{x\to a^-}\dfrac{f(a) - f(a-h)}{h} = \lim_{x\to a^+}\dfrac{f(a+h)-f(a)}{h}, h\gt 0.
+				\begin{align}
+				\lim_{\delta\to 0}\dfrac{f(a) - f(a-\delta)}{\delta} &amp;= 
+				\lim_{\delta\to 0}\dfrac{f(a+\delta)-f(a)}{\delta} \\
+				(\delta &amp;\gt 0)
+				\end{align}
+				
 				</reason>
-			</step>
-			
-				<step>
-					<context>
-					\text{Do you agree with the following conclusion?}
+  </step>
+  <step>
+    <context>
+					\text{Are the following analysis and}\\
+					\text{conclusion correct?}
 					</context>
-					<tex correct="true">
+    <tex correct="true">
 					\begin{align}
 					  &amp;\lim_{x\to 1^-}\dfrac{f(1)-f(1-h)}{h} \\
 					  &amp;=\lim_{x\to 1^-}\dfrac{(1-1)-[1-(1-h)]}{h} \\
@@ -72,12 +87,11 @@
 					\text{As the two limits are not equal, }f(x)\\
 					\text{is not differentiable at x = 1.}
 					</tex>
-					
-					<reason>
+    <reason>
 					\text{The limits we calculated above are nothing}\\
 					\text{more than the rates of change on either side} \\
 					\text{of x = 1. As they are not equal, f(x) is} \\
 					\text{not differentiable at x = 1.}
 					</reason>
-				</step>
+  </step>
 </question>

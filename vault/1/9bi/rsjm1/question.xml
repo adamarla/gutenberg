@@ -1,65 +1,87 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
-	<statement>
-		<tex>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
 			\text{Differentiate the following function}\\
 			\text{with respect to x}\\
 			\quad f(x) = 2\cdot\sqrt{\cot (x^2)}
 		</tex>
-	</statement>
-		<step>
-			<context>
-			\text{How would you express f(x) in terms}\\
-			\text{of the following}\textbf{ unrelated}\text{ functions} \\
-			\quad g(x) = 2\sqrt{x}, h(x) = \cot x\text{ and }j(x) = x^2
-			
+  </statement>
+  <step>
+    <context>
+			\text{If }\sqrt{\cot x^2} = f(\, g(\, h(x)\,)\,), \\
+			\text{then what are f,g and h?}
 			</context>
-			<tex correct="true">
-			\begin{align}
-			  f(x) &amp;= g( h(j(x)) ) \implies f(x) = (g\circ h\circ j)(x)
-			\end{align}
+    <tex correct="true">
+			\begin{tabular}{|c|c|c|}
+			\hline
+			f(x) &amp; g(x) &amp; h(x) \\
+			\hline
+			\sqrt{x} &amp; \cot x &amp; x^2 \\
+			\hline
+      \end{tabular}			 
 			</tex>
-			<tex correct="false">
-      \begin{align}
-			  f(x) &amp;= h( g(j(x)) ) \implies f(x) = (h\circ g\circ j)(x)
-			\end{align}
+    <tex correct="false">
+			\begin{tabular}{|c|c|c|}
+			\hline
+			f(x) &amp; g(x) &amp; h(x) \\
+			\hline
+			\cot x &amp; \sqrt{x} &amp; x^2 \\
+			\hline
+      \end{tabular}			 
 			</tex>
-			<reason>
-			f(x) = (g\circ h\circ j)(x)\text{ simply means} \\
-			f(x) = g(h(j(x)) = 2\sqrt{h(j(x))} = 2\sqrt{\cot(j(x))} \\
-			= 2\sqrt{\cot(x^2)}
+    <reason>
+			\begin{tabular}{|c|c|c|c|}
+			\hline
+			f(x) &amp; g(x) &amp; h(x) &amp; f(\,g(\,h(x)\,)\, ) \\
+			\hline 
+			\sqrt{x} &amp; \cot x &amp; x^2 &amp; f(\,g(x^2)\,)\\
+			&amp; &amp; &amp; = f(\, \cot(\, x^2\, )\,) \\
+			&amp; &amp; &amp; = \sqrt{\cot x^2} \\
+			\hline
+			\end{tabular} \\
+			f(\,g(\,h(x)\,)\,)\textbf{ is normally written as }(f\circ g\circ h)(x). \\
+			\textbf{And just for fun }\\
+			\begin{tabular}{|c|c|}
+			\hline
+			(g\circ f\circ h)(x) &amp; \cot (\sqrt{x^2}) \\
+			\hline
+			(h\circ g\circ f)(x) &amp; (\cot\sqrt{x})^2 \\
+			\hline
+			(h\circ f\circ g)(x) &amp; (\sqrt{\cot x})^2 = \cot x \\
+			\hline
+			\end{tabular}
 			</reason>
-		</step>
-		
-			<step>
-				<context>
-				\text{Is the following correct?}
+  </step>
+  <step>
+    <context>
+				\textbf{Right or wrong? } \text{If }y = (f\circ g\circ h)(x),\text{ then }\\
+				\frac{dy}{dx}\text{ will evaluate to the following. }
 				</context>
-				<tex correct="true">
+    <tex correct="true">
 				\begin{align}
-				&amp;f(x) = (g\circ h\circ j)(x) \\
-				\implies&amp;\dfrac{df}{dx} = 
-				\dfrac{d}{dh(x)}g(h(x))\cdot\dfrac{d}{dj(x)}h(j(x))\cdot\dfrac{d}{dx}j(x) \\
+				&amp;f(x) = (f\circ g\circ h)(x) \\
+				\implies&amp;\dfrac{df}{dx} =
+				\underbrace{\dfrac{d}{d (g\circ h)}(f\circ g\circ h)}_A
+				\cdot\underbrace{\dfrac{d}{d h(x)}(g\circ h)}_B
+				\cdot\underbrace{\dfrac{d}{dx} h(x)}_C \\
 				&amp;=\dfrac{d}{d\cot(x^2)}2\sqrt{\cot (x^2)}\cdot
 				\dfrac{d}{dx^2}\cot(x^2)\cdot \dfrac{d}{dx}x^2 \\
 				&amp;=\dfrac{1}{\sqrt{\cot (x^2)}}\cdot(-\csc^2 x^2)\cdot 2x \\
 				&amp;= -\dfrac{2x\csc^2 (x^2)}{\sqrt{\cot (x^2)}} \\ 
-				
 				\end{align}
 				</tex>
-
-				<reason>
-				\text{If }f(x) = (g\circ h\circ j)(x) = g(h(j(x)))\text{ then, }\\
-				f'(x) = \frac{dg}{dh}\cdot\frac{dh}{dj}\cdot\frac{dj}{dx}. \\
-				\text{This is what is called the Product Rule.}
+    <reason>
+				\text{If }y = f(\, g(x)\,) = (f\circ g)(x),\text{ then }\\
+				\quad \underbrace{\frac{dy}{dx} = 
+				\frac{d}{d g(x)}f(\, g(x)\,)\cdot\frac{d}{dx}g(x)}_{\textbf{Chain Rule}}
 				</reason>
-			</step>
-			
-				<step>
-					<context>
+  </step>
+  <step>
+    <context>
 					\text{Is the following simplification correct?}
 					</context>
-					<tex correct="true">
+    <tex correct="true">
 					\begin{align}
 					\dfrac{d}{dx}f(x) &amp;= -\dfrac{2x\csc^2 (x^2)}{\sqrt{\cot (x^2)}} \\ 
 					&amp;=-\dfrac{2x}{\sin (x^2)\cdot\sin (x^2)\cdot\sqrt{\dfrac{\cos (x^2)}{\sin (x^2)}}} \\
@@ -67,20 +89,19 @@
 				&amp;= -\dfrac{2\sqrt{2}x}{\sin (x^2)\cdot \sqrt{\sin (2x^2)}}
 					\end{align}
 					</tex>
-
-					<reason>
-					\text{We have used two standard results above}\\
+    <reason>
+					\text{Use the following standard results}\\
+					\text{to simplify the expression further}\\
 					\begin{align}
 					  \quad\cot\theta &amp;= \dfrac{\cos\theta}{\sin\theta} \\
 					  \quad\sin 2\theta &amp;= 2\sin\theta\cos\theta
 					\end{align}
 					</reason>
-				</step>
-			
-				<choices>
-					<tex>-\dfrac{2x}{\sin (x^2)\cdot \sqrt{\sin (x^2)}}</tex>
-					<tex correct='true'>-\dfrac{2\sqrt{2}x}{\sin (x^2)\cdot \sqrt{\sin (2x^2)}}</tex>
-					<tex>\dfrac{\sec x\cdot\tan x}{2\sqrt{x}}</tex>
-					<tex>\dfrac{\sec x\cdot\tan x\cdot \sec^2\sqrt{x}}{2\sqrt{x}}</tex>
-				</choices>
+  </step>
+  <choices>
+    <tex>-\dfrac{2x}{\sin (x^2)\cdot \sqrt{\sin (x^2)}}</tex>
+    <tex correct="true">-\dfrac{2\sqrt{2}x}{\sin (x^2)\cdot \sqrt{\sin (2x^2)}}</tex>
+    <tex>\dfrac{\sec x\cdot\tan x}{2\sqrt{x}}</tex>
+    <tex>\dfrac{\sec x\cdot\tan x\cdot \sec^2\sqrt{x}}{2\sqrt{x}}</tex>
+  </choices>
 </question>
