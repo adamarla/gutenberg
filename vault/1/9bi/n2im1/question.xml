@@ -1,55 +1,92 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
-	<statement>
-		<tex>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
 			\text{Differentiate the following function}\\
 			\text{with respect to x}\\
 			\quad f(x) = \sec (\tan\sqrt{x})
 		</tex>
-	</statement>
-		<step>
-			<context>
-			\text{If g(x), h(x) and j(x) be three functions such}\\
-			\text{that }g(x) = \sec x, h(x) = \tan x\text{ and }j(x) = \sqrt{x}, \\ 
-			\text{then }f(x) = ?
+  </statement>
+  <step>
+    <context>
+			\text{If }\sec (\tan (\sqrt{x})) = f(\, g(\, h(x)\,)\,), \\
+			\text{then what are f,g and h?}
 			</context>
-			<tex correct="true">
-			\quad f(x) = (g\circ h\circ j)(x) 
+    <tex correct="true">
+			\begin{tabular}{|c|c|c|}
+			\hline
+			f(x) &amp; g(x) &amp; h(x) \\
+			\hline
+			\sec x &amp; \tan x &amp; \sqrt{x} \\
+			\hline
+      \end{tabular}			 
 			</tex>
-			<tex correct="false">
-			\quad f(x) = (h\circ g\circ j)(x) 
+    <tex correct="false">
+			\begin{tabular}{|c|c|c|}
+			\hline
+			f(x) &amp; g(x) &amp; h(x) \\
+			\hline
+			\tan x &amp; \sqrt{x} &amp; \sec x \\
+			\hline
+      \end{tabular}			 
 			</tex>
-			<reason>
-			(g\circ h\circ j)(x) = g(h(j(x))) = \sec (\tan(j(x))) \\
-			= \sec(\tan(\sqrt{x})) = f(x).\\
-			\text{Slightly more complicated than before. But}\\
-			\text{the same idea.}
+    <reason>
+			\begin{tabular}{|c|c|c|c|}
+			\hline
+			f(x) &amp; g(x) &amp; h(x) &amp; f(\,g(\,h(x)\,)\, ) \\
+			\hline 
+			\sec x &amp; \tan x &amp; \sqrt{x} &amp; f(\,g(\sqrt{x})\,)\\
+			&amp; &amp; &amp; = f(\,\tan (\sqrt{x} )\,) \\
+			&amp; &amp; &amp; = \sec(\,\tan (\sqrt{x})\,) \\
+			\hline
+			\end{tabular} \\
+			f(\,g(\,h(x)\,)\,)\textbf{ is normally written as }(f\circ g\circ h)(x). \\
+			\textbf{And just for fun }\\
+			\begin{tabular}{|c|c|}
+			\hline
+			(g\circ f\circ h)(x) &amp; \tan(\sec(\sqrt{x})) \\
+			\hline
+			(h\circ g\circ f)(x) &amp; \sqrt{\tan (\sec x)} \\
+			\hline
+			(h\circ f\circ g)(x) &amp; \sqrt{\sec(\tan x)} \\
+			\hline
+			\end{tabular}
 			</reason>
-		</step>
-		
-			<step>
-				<context>
-				\text{Is the following correct?}
+  </step>
+  <step>
+    <context>
+				\textbf{Right or wrong? } \text{Given }y = (f\circ g\circ h)(x), \\
+				\frac{dy}{dx}\text{ evaluates to the following.}
 				</context>
-				<tex correct="true">
+    <tex correct="true">
 				\begin{align}
-				  &amp;\dfrac{f}{dx}f(x) =\dfrac{d}{d h(x)}g(x)\cdot\dfrac{d}{d j(x)}h(x)\cdot\dfrac{d}{dx}j(x) \\
-				  &amp;= \left[\sec(\tan\sqrt{x})\cdot\tan(\tan\sqrt{x})\right]\cdot 
-				  \left[\sec^2\sqrt{x}\right]\cdot \dfrac{1}{2\sqrt{x}}
+				&amp;\dfrac{dy}{dx} = \underbrace{\dfrac{d}{d (g\circ h)}f(g\circ h)}_{A}\cdot
+				\underbrace{\dfrac{d}{d h(x)}g(h(x))}_{B}
+				\cdot\underbrace{\dfrac{d}{dx}h(x)}_{C} \\
+				&amp;= \underbrace{\sec(g\circ h)\cdot\tan(g\circ h)}_A
+				\cdot\underbrace{\sec^2 h(x)}_{B}
+				\cdot\underbrace{\dfrac{1}{2\sqrt{x}}}_{C} \\ 
+				&amp;=\underbrace{\sec (\tan\sqrt{x})\cdot\tan(\tan\sqrt{x})}_A
+				\cdot\underbrace{\sec^2(\tan\sqrt{x})}_{B}
+				\cdot\underbrace{\dfrac{1}{2\sqrt{x}}}_C
 				\end{align}
 				</tex>
-
-				<reason>
-				\text{You probably realized that the above is simply}\\
-				\text{the product rule. If you didn't, then review}\\
-				\text{the concept.}
+    <reason>
+				\text{If }y = f(\, g(x)\,) = (f\circ g)(x),\text{ then }\\
+				\quad \underbrace{\frac{dy}{dx} = 
+				\frac{d}{d g(x)}f(\, g(x)\,)\cdot\frac{d}{dx}g(x)}_{\textbf{Chain Rule}} \\
+				\text{Also, } \\
+				\begin{align}
+				  \dfrac{d}{dx}\sec x &amp;= \sec x\cdot\tan x \\
+				  \dfrac{d}{dx}\tan x &amp;= \sec^2 x \\
+				  \dfrac{d}{dx}\sqrt{x} &amp;= \dfrac{1}{2\sqrt{x}}
+				\end{align}
 				</reason>
-			</step>
-			
-				<choices>
-					<tex>\dfrac{\tan(\tan\sqrt{x})\cdot\sec^2\sqrt{x}}{2\sqrt{x}}</tex>
-					<tex correct='true'>\dfrac{\sec(\tan\sqrt{x})\tan(\tan\sqrt{x})\cdot\sec^2\sqrt{x}}{2\sqrt{x}}</tex>
-					<tex>\dfrac{\sec x\cdot\tan x}{2\sqrt{x}}</tex>
-					<tex>\dfrac{\sec x\cdot\tan x\cdot \sec^2\sqrt{x}}{2\sqrt{x}}</tex>
-				</choices>
+  </step>
+  <choices>
+    <tex>\dfrac{\tan(\tan\sqrt{x})\cdot\sec^2\sqrt{x}}{2\sqrt{x}}</tex>
+    <tex correct="true">\dfrac{\sec(\tan\sqrt{x})\tan(\tan\sqrt{x})\cdot\sec^2\sqrt{x}}{2\sqrt{x}}</tex>
+    <tex>\dfrac{\sec x\cdot\tan x}{2\sqrt{x}}</tex>
+    <tex>\dfrac{\sec x\cdot\tan x\cdot \sec^2\sqrt{x}}{2\sqrt{x}}</tex>
+  </choices>
 </question>
