@@ -1,36 +1,55 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Find an anti derivative (or integral) of the}\\
-	\text{following function by the method of inspection.}\\
-	
-	 \sin 2x</tex>
+    <tex>\text{Find an anti-derivative (or integral) of }\sin 2x\\
+\text{by the method of inspection.}</tex>
   </statement>
-  <step swipe='false'>
-    <context>\text{Which of the below function has the derivative}\\
-\text{as }\sin nx\text{, where }n \in \mathbb{R}</context>
-    <tex correct='true'>- \dfrac{\cos nx}{n}</tex>
-    <tex>n\cos nx</tex>
-    <reason>\text{We have used the Chain Rule and the fact}\\
-\text{that }\dfrac{d \left(\cos \theta\right)}{dx} = -\sin \theta.\text{Check your calculation}\\
-\text{if you got this wrong.}</reason>
+  <step>
+    <context>\dfrac{d}{dx}f(x)=g(x) \\
+\text{anti-derivative (or integral) of $g(x)$ is?}</context>
+    <tex correct='true'>f(x)</tex>
+    <tex>\dfrac{1}{f(x)}</tex>
+    <reason>\text{Anti-derivative or integral is the reverse of}\\
+\text{differentiation. Therefore, when }\dfrac{d}{dx}f(x)=g(x)\\
+\text{then integral of }g(x)=f(x).</reason>
   </step>
   <step>
-    <context>\text{Is the analysis below correct? }</context>
-    <tex correct='true'>
+    <context>\text{The function below has the derivative}\\
+\text{$\sin nx$, where }n \in \mathbb{R}.</context>
+    <tex correct='true'>- \dfrac{\cos nx}{n}</tex>
+    <tex>-\cos nx</tex>
+    <reason>\dfrac{d\cos x}{dx}=-\sin x \\
+\text{Applying the above using Chain Rule:} \\
 \begin{align}
-\text{Since , }\dfrac{d \left(\cos 2x\right)}{dx} &amp;= -2 \sin 2x\\
-\implies \sin 2x &amp;= -\dfrac{1}{2}\cdot\dfrac{d}{dx}\left(\cos 2x\right)
+  \dfrac{d}{dx}\cos nx &amp;= \dfrac{d}{d nx}\cos nx\cdot \dfrac{d}{dx}nx \\
+    &amp;= -\sin nx\cdot n \\
+    &amp;= -n\sin nx
+\end{align} \\
+\therefore\dfrac{d}{dx}\left(\dfrac{-\cos nx}{n}\right)=\sin nx</reason>
+  </step>
+  <step>
+    <context>\text{If }\dfrac{d}{dx}\left(\frac{-\cos nx}{n}\right)=\sin nx \\
+\text{is the analysis below correct? }</context>
+    <tex correct='true'>\begin{align}
+  \dfrac{d}{dx}\left(\dfrac{-\cos 2x}{2}\right)=\sin 2x
 \end{align}\\
-\therefore \text{anti - derivative or integral of }\sin 2x \text{ is} -\dfrac{\cos 2x}{2}\\
-</tex>
-    <reason>\text{We have used the result of step 1. Review it if}\\
-\text{you got something else. }\\</reason>
+\therefore\text{anti-derivative or integral of $\sin 2x$ is} \\
+\dfrac{-\cos 2x}{2}</tex>
+    <tex>\begin{align}
+  \dfrac{d}{dx}\left(\dfrac{-\cos 2x}{2}\right)=\sin 2x
+\end{align}\\
+\therefore\text{anti-derivative or integral of $\sin 2x$ is} \\
+-2\cos 2x</tex>
+    <reason>\begin{align}
+  \dfrac{d}{dx}\left(\frac{-\cos nx}{n}\right) &amp;=\sin nx \\
+  \implies \text{anti-derivative }\left(\sin nx\right) &amp;=\frac{-\cos nx}{n}
+\end{align}
+</reason>
   </step>
   <choices>
-    <tex>\dfrac{1}{2}\left(\cos 2x\right)</tex>
-    <tex>-2\left(\cos 2x\right)</tex>
-    <tex correct='true'>-\dfrac{1}{2}\left(\cos 2x\right)</tex>
-    <tex>2\left(\cos 2x\right)</tex>
+    <tex>\dfrac{1}{2}\cos 2x</tex>
+    <tex>-2\cos 2x</tex>
+    <tex correct='true'>-\dfrac{1}{2}\cos 2x</tex>
+    <tex>2\cos 2x</tex>
   </choices>
 </question>

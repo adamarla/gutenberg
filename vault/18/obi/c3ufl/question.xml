@@ -1,35 +1,53 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Find an anti derivative (or integral) of the}\\
-\text{following function by the method of inspection.}\\
-
- \cos 3x</tex>
+    <tex>\text{Find an anti-derivative (or integral) of $\cos 3x$}\\
+\text{by the method of inspection.}</tex>
   </statement>
   <step>
-    <context>\text{Which of the below function has the derivative}\\
-\text{as }\cos nx\text{, where }n \in \mathbb{R}</context>
-    <tex correct='true'>\dfrac{\sin nx}{n}</tex>
-    <tex>n\sin nx</tex>
-    <reason>\text{We have used the Chain Rule and the fact}\\
-\text{that }\dfrac{d \left(\cos \theta\right)}{dx} = -\sin \theta.\text{Check your calculation}\\
-\text{if you got this wrong.}</reason>
+    <context>\dfrac{d}{dx}f(x)=g(x) \\
+\text{anti-derivative (or integral) of $g(x)$ is?}</context>
+    <tex correct='true'>f(x)</tex>
+    <tex>\dfrac{1}{f(x)}</tex>
+    <reason>\text{Anti-derivative or integral is the reverse of}\\
+\text{differentiation. Therefore, when }\dfrac{d}{dx}f(x)=g(x)\\
+\text{then integral of }g(x)=f(x).</reason>
   </step>
   <step>
-    <context>\text{Is the analysis below correct?}</context>
-    <tex correct='true'>
+    <context>\text{The function below has the derivative}\\
+\text{$\cos nx$, where }n \in \mathbb{R}</context>
+    <tex correct='true'>\dfrac{\sin nx}{n}</tex>
+    <tex>\sin nx</tex>
+    <reason>\dfrac{d\sin x}{dx}=\cos x \\
+\text{Applying the above using Chain Rule:} \\
 \begin{align}
-\text{Since , }\dfrac{d \left(\sin 3x\right)}{dx} &amp;= 3 \cos 3x\\
-\implies\cos 3x &amp;= \dfrac{1}{3}\cdot\dfrac{d}{dx}\left(\sin 3x\right)
+  \dfrac{d}{dx}\sin nx &amp;= \dfrac{d}{d nx}\sin nx\cdot \dfrac{d}{dx}nx \\
+    &amp;= \cos nx\cdot n \\
+    &amp;= n\cos nx
+\end{align} \\
+\therefore\dfrac{d}{dx}\left(\dfrac{\sin nx}{n}\right)=\cos nx</reason>
+  </step>
+  <step>
+    <context>\text{If }\dfrac{d}{dx}\left(\frac{\sin nx}{n}\right)=\cos nx \\
+\text{is the analysis below correct? }</context>
+    <tex correct='true'>\begin{align}
+  \dfrac{d}{dx}\left(\dfrac{\sin 3x}{3}\right)=\cos 3x
 \end{align}\\
-\therefore \text{anti derivative or integral of }\cos 3x \text{ is } \dfrac{\sin 3x}{3}\\
-</tex>
-    <reason>\text{We have used the result of step 1. Review it if}\\
-\text{you got something else. }\\</reason>
+\therefore\text{anti-derivative or integral of $\sin 3x$ is} \\
+\dfrac{\cos 3x}{3}</tex>
+    <tex>\begin{align}
+  \dfrac{d}{dx}\left(\dfrac{\sin 3x}{3}\right)=\cos 3x
+\end{align}\\
+\therefore\text{anti-derivative or integral of $\cos 3x$ is} \\
+\sin 3x</tex>
+    <reason>\begin{align}
+  \dfrac{d}{dx}\left(\frac{\sin nx}{n}\right) &amp;=\cos nx\\
+  \implies \text{anti-derivative }\left(\cos nx\right) &amp;=\frac{\sin nx}{n}
+\end{align}</reason>
   </step>
   <choices>
-    <tex>-\dfrac{\sin 3x}{3}+C</tex>
-    <tex correct='true'>\dfrac{\sin 3x}{3}+C</tex>
+    <tex>-\dfrac{1}{3}\sin 3x</tex>
+    <tex correct='true'>\dfrac{1}{3}\sin 3x</tex>
     <tex>3\sin 3x</tex>
     <tex>-3\sin 3x</tex>
   </choices>
