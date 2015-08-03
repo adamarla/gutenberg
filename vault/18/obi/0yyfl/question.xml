@@ -1,31 +1,50 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Find an anti derivative (or integral) of the}\\
-	\text{following function by the method of inspection.}\\
-	
-	 e^{2x}</tex>
+    <tex>\text{Find an anti-derivative (or integral) of $e^{2x}$}\\
+\text{by the method of inspection.}</tex>
   </statement>
   <step>
-    <context>\text{Which of the below function has the derivative}\\
-\text{as }e^{nx}\text{, where }n \in \mathbb{R}</context>
-    <tex correct='true'>\dfrac{e^{nx}}{n}</tex>
-    <tex>e^{nx}</tex>
-    <reason>\text{We have used Chain Rule and the fact }\\
-\text{that }\dfrac{d \left(e^{t}\right)}{dt} = e^{t}.\text{Check your calculations}\\
-\text{if you got this wrong.}</reason>
+    <context>\dfrac{d}{dx}f(x)=g(x) \\
+\text{anti-derivative (or integral) of $g(x)$ is?}</context>
+    <tex correct='true'>f(x)</tex>
+    <tex>-g(x)</tex>
+    <reason>\text{Anti-derivative or integral is the reverse of}\\
+\text{differentiation. Therefore, when }\dfrac{d}{dx}f(x)=g(x)\\
+\text{then integral of }g(x)=f(x).</reason>
   </step>
   <step>
-    <context>\text{Is the analysis below correct?}</context>
-    <tex correct='true'>
+    <context>\text{The function below has the derivative}\\
+\text{$e ^{nx}$, where }n \in \mathbb{R}</context>
+    <tex correct='true'>\dfrac{e^{nx}}{n}</tex>
+    <tex>e^{nx}</tex>
+    <reason>\dfrac{de^x}{dx}=e^x \\
+\text{Applying the above using Chain Rule:} \\
 \begin{align}
-\text{Since , }\dfrac{d \left(e^{2x}\right)}{dx} &amp;= 2 e^{2x}\\
-\implies e^{2x} &amp;= \dfrac{1}{2}.\dfrac{d}{dx}\left(e^{2x}\right)
+  \dfrac{de^{nx}}{dx} &amp;= \dfrac{de^{nx}}{d nx}\cdot \dfrac{dnx}{dx} \\
+    &amp;= e^{nx}\cdot n \\
+    &amp;= ne^{nx}
+\end{align} \\
+\therefore\dfrac{d}{dx}\left(\dfrac{e^{nx}}{n}\right)=e^{nx}</reason>
+  </step>
+  <step>
+    <context>\text{If }\dfrac{d}{dx}\left(\dfrac{e^{nx}}{n}\right)=e^{nx} \\
+\text{is the analysis below correct? }</context>
+    <tex correct='true'>\begin{align}
+  \dfrac{d}{dx}\left(\dfrac{e^{2x}}{2}\right)=e^{2x}
 \end{align}\\
-\therefore \text{anti derivative or integral of }e^{2x} \text{ is} \dfrac{e^{2x}}{2}\\
-</tex>
-    <reason>\text{We have used the result of step 1. Review it if}\\
-\text{you got something else. }\\</reason>
+\therefore\text{anti-derivative or integral of $e^{2x}$ is} \\
+\dfrac{e^{2x}}{2}</tex>
+    <tex>\begin{align}
+  \dfrac{d}{dx}\left(\dfrac{e^{2x}}{2}\right)=e^{2x}
+\end{align}\\
+\therefore\text{anti-derivative or integral of $e^{2x}$ is} \\
+e^{2x}</tex>
+    <reason>\begin{align}
+  \dfrac{d}{dx}\left(\dfrac{e^{nx}}{n}\right)=e^{nx} \\
+  \implies \text{anti-derivative }e^{nx} &amp;=\dfrac{e^{nx}}{n}
+\end{align}
+</reason>
   </step>
   <choices>
     <tex correct='true'>\dfrac{e^{2x}}{2}</tex>

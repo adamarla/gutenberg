@@ -1,32 +1,56 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Find an anti derivative (or integral) of the}\\
-	\text{following function by the method of inspection.}\\
-	
-	 \left(ax + b\right)^2</tex>
+    <tex>\text{Find an anti-derivative (or integral) of} \\ 
+\text{$\left(ax+b\right)^2$ by the method of inspection.}</tex>
   </statement>
   <step>
-    <context>\text{Which of the below function has the derivative}\\
-\text{as }\left(ax + b\right)^n\text{, where }n \in \mathbb{R}</context>
-    <tex correct='true'>\dfrac{\left(ax + b\right)^{n+1}}{a\left(n+1\right)}</tex>
-    <tex>a \left({n+1}\right)\left(ax + b\right)^{n+1}</tex>
-    <reason>\text{We have used Chain Rule here, review it}\\
-\text{you got this wrong. }\\</reason>
+    <context>\dfrac{d}{dx}f(x)=g(x) \\
+\text{anti-derivative (or integral) of $g(x)$ is?}</context>
+    <tex correct='true'>f(x)</tex>
+    <tex>f(g(x))</tex>
+    <reason>\text{Anti-derivative or integral is the reverse of}\\
+\text{differentiation. Therefore, when }\dfrac{d}{dx}f(x)=g(x)\\
+\text{then integral of }g(x)=f(x).</reason>
   </step>
   <step>
-    <context>\text{Is the analysis below correct?}</context>
-    <tex correct='true'>
+    <context>\text{The function below has the derivative}\\
+\text{$\left(ax+b\right)^n$, where }n \in \mathbb{R}</context>
+    <tex correct='true'>\dfrac{\left(ax + b\right)^{n+1}}{a\left(n+1\right)}</tex>
+    <tex>\dfrac{\left(ax + b\right)^{n+1}}{\left(n+1\right)}</tex>
+    <reason>\dfrac{dx^{n+1}}{dx}=\left(n+1\right)x^n \\
+\text{Applying the above using Chain Rule:} \\
 \begin{align}
-\text{Since , }\dfrac{d \left(ax + b\right)^3}{dx} &amp;= 3a \left(ax + b\right)^2\\
-\implies \left(ax + b\right)^2 &amp;= \dfrac{1}{3a}.\dfrac{d}{dx}\left(\left(ax + b\right)^3\right)
-\end{align}\\
-\therefore \text{anti derivative or integral of }\left(ax + b\right)^2 \\
-\text{ is } \dfrac{\left(ax + b\right)^3}{3a}\\
-</tex>
-    <reason>\text{We have used the Chain Rule and the result }\\
-\text{step 1. Check your calculations if you got}\\
-\text{something else}.</reason>
+  \dfrac{d}{dx}\left(ax+b\right)^{n+1}
+    &amp;= \dfrac{d\left(ax+b\right)^{n+1}}{d\left(ax+b\right) }
+      \cdot \dfrac{d\left(ax+b\right)}{dx} \\
+    &amp;= \left(n+1\right)\left(ax+b\right)^{n}\cdot a \\
+    &amp;= a\left(n+1\right)\left(ax+b\right)^{n}
+\end{align} \\
+\therefore
+  \dfrac{d}{dx}\left(\dfrac{(ax+b)^{n+1}}{a\left(n+1\right)}\right)
+  =\left(ax+b\right)^{n}</reason>
+  </step>
+  <step>
+    <context>\text{If }\dfrac{d}{dx}\left(\dfrac{(ax+b)^{n+1}}{a\left(n+1\right)}\right)
+  =\left(ax+b\right)^{n} \\
+\text{is the analysis below correct?}</context>
+    <tex correct='true'>\begin{align}
+  \dfrac{d}{dx}\left(\dfrac{(ax+b)^{3}}{3a}\right)
+    =\left(ax+b\right)^{2}\end{align}\\
+\therefore\text{anti-derivative or integral of $\left(ax+b\right)^{2}$ is} \\
+\dfrac{(ax+b)^{3}}{3a}</tex>
+    <tex>\begin{align}
+  \dfrac{d}{dx}\left(\dfrac{(ax+b)^{3}}{3a}\right)
+    =\left(ax+b\right)^{2}\end{align}\\
+\therefore\text{anti-derivative or integral of $\left(ax+b\right)^{2}$ is} \\
+(ax+b)^{3}</tex>
+    <reason>\begin{align}
+  \dfrac{d}{dx}\left(\dfrac{(ax+b)^{n+1}}{a\left(n+1\right)}\right)
+  &amp;=\left(ax+b\right)^{n} \\
+  \implies \text{anti-derivative }\left(ax+b\right)^{n} &amp;=\dfrac{(ax+b)^{n+1}}{a\left(n+1\right)}
+\end{align}
+</reason>
   </step>
   <choices>
     <tex>-\dfrac{\left(ax + b\right)^3}{3a}</tex>
