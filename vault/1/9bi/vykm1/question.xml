@@ -1,60 +1,76 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
-	<statement>
-		<tex>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
 			\text{Differentiate the following function}\\
 			\text{with respect to x}\\
 			\quad f(x) = \cos\sqrt{x}
 		</tex>
-	</statement>
-		<step>
-			<context>
-			\text{How would you express f(x) in terms}\\
-			\text{of the following}\textbf{ unrelated}\text{ functions} \\
-			\quad g(x) = \cos x\text{ and }h(x) = \sqrt{x}
-			
+  </statement>
+  <step>
+    <context>
+			\text{If }\cos\sqrt{x} = f(\, g(x)\,),\text{ then what are f and g?}
 			</context>
-			<tex correct="true">
-			\begin{align}
-			  f(x) &amp;= g(h(x))\implies f(x) = (g\circ h)(x) 
-			\end{align}
+    <tex correct="true">
+			  \begin{tabular}{|c|c|}
+			  \hline
+			  f(x) &amp; g(x) \\ 
+			  \hline
+			  \cos x &amp; \sqrt{x} \\
+			  \hline 
+			  \end{tabular}
 			</tex>
-			<tex correct="false">
-      \begin{align}
-			  f(x) &amp;= h(g(x)) \implies f(x) = (h\circ g)(x)
-			\end{align}
+    <tex correct="false">
+      \begin{tabular}{|c|c|}
+			  \hline
+			  f(x) &amp; g(x) \\ 
+			  \hline
+			  \sqrt{x} &amp; \cos x \\
+			  \hline 
+			  \end{tabular}
 			</tex>
-			<reason>
-			f(x) = (g\circ h)(x)\implies f(x) = g(h(x)) = \cos (h(x)) \\
-			\text{But }h(x) = \sqrt{x}. \therefore f(x) = g(h(x)) = \cos(\sqrt{x}).\\
-			\text{It helps to be comfortable with the notation.}
+    <reason>
+			\begin{tabular}{|c|c|c|c|}
+			\hline
+			f(x) &amp; g(x) &amp; f(\, g(x)\, ) &amp;\text{Notation} \\
+			\hline 
+			\cos x &amp; \sqrt{x} &amp; \cos(\sqrt{x}) &amp; (f\circ g)(x)\\
+			\hline
+			\end{tabular} \\
+			\textbf{And just for fun }\\
+			\begin{tabular}{|c|c|c|c|}
+			\hline
+			f(x) &amp; g(x) &amp; g(\, f(x)\, ) &amp;\text{Notation} \\
+			\hline 
+			\cos x&amp; \sqrt{x} &amp; \sqrt{f(x)} &amp; \\
+			&amp; &amp; = \sqrt{\cos x} &amp; (g\circ f)(x) \\
+			\hline
+			\end{tabular}
 			</reason>
-		</step>
-		
-			<step>
-					<context>
-					\text{Would the calculations below give }\dfrac{d}{dx}f(x)\\
-					\text{given that }f(x) = (g\circ h)(x)? 
+  </step>
+  <step>
+    <context> 
+					\textbf{Right or wrong? } \text{Given }y = (f\circ g)(x), \\
+					\frac{dy}{dx}\text{ will evaluate to the following.}
 					</context>
-					<tex correct="true">
+    <tex correct="true">
 					  \begin{align}
-					    \dfrac{d}{dx}f(x) &amp;= \dfrac{dg}{dh}\cdot\dfrac{dh}{dx} \\
-					    &amp;= \dfrac{d}{d \sqrt{x}}\cos(\sqrt{x})\cdot\dfrac{d}{dx}\sqrt{x} \\
-					    &amp;= -\sin(\sqrt{x})\cdot\dfrac{1}{2\cdot\sqrt{x}}  
+					  \dfrac{dy}{dx} &amp;= \dfrac{d}{d g(x)}f(\,g(x)\,)\cdot\dfrac{d}{dx}g(x) \\
+					  &amp;= \dfrac{d}{d g(x)}\cos g(x)\cdot \dfrac{d}{dx}\sqrt{x} \\
+					  &amp;= -\sin g(x)\cdot \frac{1}{2\sqrt{x}} \\
+					  &amp;= -\dfrac{\sin\sqrt{x}}{2\cdot\sqrt{x}}
 					  \end{align}
 					</tex>
-
-					<reason>
-					\text{If }f(x) = g(h(x)),\text{ then }f'(x) = \frac{dg}{dh}\cdot\dfrac{dh}{dx}.\\
-					\text{This is known as the Product Rule - as you}\\
-					\text{would've realized.}
+    <reason>
+					\text{If }y = f(\, g(x)\,) = (f\circ g)(x),\text{ then }\\
+					\quad \underbrace{\frac{dy}{dx} = 
+					\frac{d}{d g(x)}f(\, g(x)\,)\cdot\frac{d}{dx}g(x)}_{\textbf{Chain Rule}}
 					</reason>
-				</step>	
-				
-				<choices>
-				  <tex>\dfrac{\sin(\sqrt{x})}{2\sqrt{x}}</tex>
-					<tex>-\sin(\sqrt{x})\cdot\sqrt{2x}</tex>
-					<tex correct='true'>-\dfrac{\sin(\sqrt{x})}{2\sqrt{x}}</tex>
-					<tex>2\sin(\sqrt{x})\cdot\sqrt{x}</tex>
-				</choices>
+  </step>
+  <choices>
+    <tex>\dfrac{\sin(\sqrt{x})}{2\sqrt{x}}</tex>
+    <tex>-\sin(\sqrt{x})\cdot\sqrt{2x}</tex>
+    <tex correct="true">-\dfrac{\sin(\sqrt{x})}{2\sqrt{x}}</tex>
+    <tex>2\sin(\sqrt{x})\cdot\sqrt{x}</tex>
+  </choices>
 </question>

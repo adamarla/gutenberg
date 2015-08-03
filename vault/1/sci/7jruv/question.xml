@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+			\text{Find the domain and range of the }\\
+			\text{following function} \\ 
+			\qquad f(x) = \vert x - 1\vert 
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\text{Is the following assertion correct?}
+			</context>
+    <tex correct="true">
+			f(x) = \vert x - 1\vert\text{ is defined for }\textbf{all x.}
+			</tex>
+    <tex correct="false">
+			f(x)=\vert x-1\vert\text{ is defined }\textbf{only for }x\geq 1.
+			</tex>
+    <reason>
+			\vert x-1\vert \text{ can be evaluated for any x.}\\
+			\text{But had }f(x) = \frac{1}{\vert x-1\vert}\text{ or } \sqrt{x-1},\text{ then yes,}\\
+			\text{one would have to think about what x can be.}
+			</reason>
+  </step>
+  <step>
+    <context>
+ 		\textbf{Right or wrong? } \text{The minimum and maximum}\\
+ 		\text{values of f(x) - and so it's range - are as follows.}
+ 		</context>
+    <tex correct="true">
+ 		\begin{tabular}{|c|c|c|}
+ 		  \hline 
+ 		  \text{Min. Value} &amp; \text{Max. Value} &amp; \text{Range} \\
+ 		  \hline 
+ 		  0 &amp; \infty &amp; [0,\infty) \\
+ 		  \hline
+ 		\end{tabular}
+ 		</tex>
+    <tex correct="false">
+ 		\begin{tabular}{|c|c|c|}
+ 		  \hline 
+ 		  \text{Min. Value} &amp; \text{Max. Value} &amp; \text{Range} \\
+ 		  \hline 
+ 		  1 &amp; \infty &amp; [1,\infty) \\
+ 		  \hline
+ 		\end{tabular}
+ 		</tex>
+    <reason>
+ 		f(x) = \vert x-1\vert = \begin{cases}
+ 		  -(x-1), x\lt 1 \\
+ 		  (x-1), \underbrace{x\geq 1}_{\textbf{very important}}
+ 		\end{cases}\\
+ 		= \begin{cases}
+ 		  1-x, x\lt 1 \\
+ 		  x-1, x\geq 1
+ 		\end{cases} \\
+ 		\text{So, }\vert x-1\vert \gt 0\text{ for all x.} \\
+ 		\textbf{But, }\text{its minimum value will be } = 0\text{ at x = 1.}\\
+ 		\text{Hence, the range of }f(x) = [0,\infty).
+ 		</reason>
+  </step>
+  <choices>
+    <tex>
+ 			\text{Domain } = \lbrace x:x\geq 1\rbrace,\text{ Range } = [0,\infty)
+ 			</tex>
+    <tex>
+ 			 \text{Domain } = \mathbb{R},\text{ Range } = [1,\infty)
+ 			</tex>
+    <tex correct="true">
+ 			  \text{Domain } = \mathbb{R},\text{ Range } = [0,\infty)
+ 			</tex>
+    <tex>
+ 			\text{Domain } = \lbrace x:x\geq 0\rbrace,\text{ Range } = [0,\infty)
+ 			</tex>
+  </choices>
+</question>

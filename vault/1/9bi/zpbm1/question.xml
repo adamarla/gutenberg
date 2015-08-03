@@ -1,54 +1,57 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
-	<statement>
-		<tex>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
 			\text{Differentiate the following function}\\
 			\text{with respect to x}\\
 			\quad f(x) = \cos\sin x 
 		</tex>
-	</statement>
-		<step>
-			<context>
-			\text{If g(x) and h(x) be two functions such that}\\
-			g(x) = \sin x \text{ and } h(x) = \cos x,\text{ then }f(x) = ?
+  </statement>
+  <step>
+    <context>
+			\text{If f and g be two functions such that} \\
+			\qquad \cos (\sin x) = f(\, g(x)\, ), \\
+			\text{then what are f and g?}
 			</context>
-			<tex correct="true">
-			\quad f(x) = (h\circ g)(x) 
+    <tex correct="true">
+			\qquad f(x) = \cos x, g(x) = \sin x 
 			</tex>
-			<tex correct="false">
-			\quad f(x) = (g\circ h)(x) 
+    <tex correct="false">
+			\qquad f(x) = \sin x, g(x) = \cos x
 			</tex>
-			<reason>
-			(g\circ h)(x) = g(h(x)) = \sin(h(x)) = \sin(\cos x) \neq f(x).\\
-			(h\circ g)(x) = h(g(x)) = h(\sin x) = \cos(\sin x) = f(x).\\
-			\text{Just wanted to see if you're comfortable}\\
-			\text{with the notation.}
+    <reason>
+			\begin{tabular}{|c|c|c|c|}
+			\hline
+			f(x) &amp; g(x) &amp; f(\, g(x)\, ) &amp;\text{Notation} \\
+			\hline 
+			\cos x &amp; \sin x &amp; \cos (\sin x) &amp; (f\circ g)(x) \\
+			\hline
+			\end{tabular}
 			</reason>
-		</step>
-		
-			<step>
-				<context>
-				\text{Is the following correct?}
+  </step>
+  <step>
+    <context>
+				\textbf{Right or wrong? } \text{Given } y = (f\circ g)(x), \frac{dy}{dx} \\
+				\text{will evaluate to the following.}
 				</context>
-				<tex correct="true">
+    <tex correct="true">
 				\begin{align}
-				  \dfrac{d}{dx}f(x) &amp;= \dfrac{d}{dx}(h\circ g)(x) \\
-				  &amp;= \dfrac{d}{d g(x)}h(x)\cdot \dfrac{d}{dx}g(x) \\ 
+				  \dfrac{d}{dx}y &amp;= \dfrac{d}{d g(x)}f(\, g(x)\,)\cdot\dfrac{d}{dx}g(x) \\
+				  &amp;= \dfrac{d}{d g(x)}\cos g(x)\cdot\dfrac{d}{dx}g(x) \\ 
+				  &amp;= -\sin g(x)\cdot \cos x \\
 				  &amp;= -\sin (\sin x)\cdot \cos x
 				\end{align}
 				</tex>
-
-				<reason>
-				\text{You probably realized that the above is simply}\\
-				\text{the product rule. If you didn't, then review}\\
-				\text{the concept.}
+    <reason>
+				\text{If }y = f(\, g(x)\,) = (f\circ g)(x),\text{ then }\\
+				\quad \underbrace{\frac{dy}{dx} = 
+				\frac{d}{d g(x)}f(\, g(x)\,)\cdot\frac{d}{dx}g(x)}_{\textbf{Chain Rule}}
 				</reason>
-			</step>
-			
-				<choices>
-					<tex correct='true'>-\sin(\sin x)\cdot \cos x</tex>
-					<tex>-\sin x</tex>
-					<tex>-\sin (\sin x)</tex>
-					<tex>\cos x \cdot \sin x</tex>
-				</choices>
+  </step>
+  <choices>
+    <tex correct="true">-\sin(\sin x)\cdot \cos x</tex>
+    <tex>-\sin x</tex>
+    <tex>-\sin (\sin x)</tex>
+    <tex>\cos x \cdot \sin x</tex>
+  </choices>
 </question>
