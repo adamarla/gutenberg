@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+			\text{Find }\frac{dy}{dx}\text{ given that }\\
+			y = \cos^{-1}\left(\dfrac{2x}{1+x^2}\right), -1\lt x\lt 1
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\textbf{Right or wrong? } \cos^{-1}\left(\dfrac{2x}{1+x^2}\right) = N - M\theta.\\
+			\text{For this to be true, }M, N \text{ and }\theta\text{ should have}\\
+			\text{the following values.}
+			</context>
+    <tex correct="true">
+			\qquad M = 2, N = \frac{\pi}{2}, \underbrace{\theta = \tan^{-1} x}_{x=\tan\theta}
+			</tex>
+    <tex correct="false">
+			\qquad M = 1, N = 0, \underbrace{\theta = \cos^{-1} x}_{x=\sin\theta}
+			</tex>
+    <reason>
+			\text{Recall that, }\\
+      \sin 2\theta = \dfrac{2\sin\theta\cdot\cos\theta}{\underbrace{\cos^2\theta + \sin^2\theta}}_{=1}
+      = \dfrac{2\tan\theta}{1+\tan^2\theta} \\
+			\text{Now, this looks remarkably like }\dfrac{2x}{1+x^2}.\\
+			\text{Hence, we if let }x = \tan\theta,\text{ then }\\
+			\begin{align}
+			  y &amp;= \cos^{-1}\left(\dfrac{2x}{1+x^2}\right) = 
+        \cos^{-1}\left(\dfrac{2\tan\theta}{1+\tan^2\theta}\right) \\
+			  &amp;= \cos^{-1}\sin 2\theta = \cos^{-1}\cos \left(\frac\pi{2}-2\theta\right) = \frac\pi{2}-2\theta
+			\end{align}
+			</reason>
+  </step>
+  <step>
+    <context>
+			\textbf{Right or wrong? } \text{Given }x = \tan\theta, \\
+			\frac{dy}{dx}\text{ will evaluate to the following.} 
+			</context>
+    <tex correct="true">
+			\qquad \dfrac{dy}{dx} = -\dfrac{2}{1+x^2}
+			</tex>
+    <tex correct="false">
+			\qquad \dfrac{dy}{dx} = \dfrac{2}{1+x^2}
+			</tex>
+    <reason>
+			\begin{align}
+			  y &amp;= \frac\pi{2} - 2\theta = \frac\pi{2} - 2\cdot\tan^{-1} x \\
+			  \implies \dfrac{dy}{dx} &amp;= -2\cdot\dfrac{d}{dx}\tan^{-1} x = -\dfrac{2}{1+x^2}
+			\end{align}
+			</reason>
+  </step>
+  <choices>
+    <tex>\frac{dy}{dx} = \frac{2}{1 + x^2}</tex>
+    <tex>\frac{dy}{dx} = -\dfrac{2}{\sqrt{1-x^2}}</tex>
+    <tex correct="true">\frac{dy}{dx} = -\dfrac{2}{1+x^2}</tex>
+    <tex>\frac{dy}{dx} = -\frac{1 + x^2}{2}</tex>
+  </choices>
+</question>
