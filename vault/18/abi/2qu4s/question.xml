@@ -1,34 +1,78 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
   <statement>
-    <tex>\text{Find}\frac{dy}{dx}\text{ of the following}\\
-
-\sin^2 x + \cos^2 y = 1</tex>
+    <tex>\text{Find}\frac{dy}{dx}\text{ given that}\\
+    \qquad \sin^2 x + \cos^2 y = 1</tex>
   </statement>
   <step>
-    <context>f(x) = g(h(x))\text{,then f^\prime}=</context>
-    <tex correct='true'>\frac{df(x)}{dx} = g^\prime( h) h^\prime</tex>
-    <tex>\frac{df(x)}{dx} = g^\prime(h^\prime) </tex>
-    <reason>\text{This is a standard formula.It is called Chain}\\
-\text{Rule.Review it if you got this wrong.}\\</reason>
+    <context>
+  		\textbf{Right or wrong? } \text{The derivatives of}\\
+  		\text{the individual terms in }\\
+  		\qquad \sin^2 x + \cos^2 y \\
+  		\text{are as shown in the table below.} \\
+  		\textbf{Note: } y' = \frac{dy}{dx}
+  		</context>
+    <tex correct="true">
+  		\begin{tabular}{|c|c|}
+  		  \hline
+  		  f(x) &amp; \frac{d}{dx}f(x) \\ 
+  		  \hline 
+  		  \sin^2 x &amp; \sin 2x \\
+  		  \hline 
+  		  \cos^2 y &amp; -\sin 2y \\
+  		  \hline
+  		\end{tabular}
+  		</tex>
+    <tex correct="false">
+  		\begin{tabular}{|c|c|}
+  		  \hline
+  		  f(x) &amp; \frac{d}{dx}f(x) \\ 
+  		  \hline 
+  		  \sin^2 x &amp; 2\cdot\sin x \\
+  		  \hline 
+  		  \cos^2 y &amp; 2\cos y \\
+  		  \hline
+  		\end{tabular}
+  		</tex>
+    <reason>
+  		\begin{tabular}{|c|c|l|}
+  		  \hline
+  		  f(x) &amp; \frac{d}{dx}f(x) &amp; \text{Why?} \\ 
+  		  \hline 
+  		  \sin^2 x &amp; \sin 2x &amp; 
+  		  \underbrace{\frac{d\sin^2 x}{d\sin x}\cdot\frac{d\sin x}{dx}}_{\text{Chain Rule}}\\
+  		  &amp; &amp; = \underbrace{2\sin x\cos x}_{\sin 2x} \\
+  		  \hline 
+  		  \cos^2 y &amp; -\sin 2y &amp; 
+  		  \underbrace{\frac{d\cos^2}{d\cos y}\cdot\frac{d\cos y}{dy}\cdot\frac{dy}{dx}}_{\text{Chain Rule}} \\
+  		  &amp; &amp; -\underbrace{(2\sin y\cos y)}_{\sin 2y}\cdot y' \\
+  		  \hline
+  		\end{tabular}
+  		</reason>
   </step>
   <step>
-    <context>\text{Are the following calculations correct?}</context>
-    <tex correct='true'>\text{After diffrentiating the equation we get}\\
-\frac{d(\sin^2 x + \cos^2 y)}{dx}=\frac{d(1)}{dx}\\
-\Rightarrow 2\sin x \cos x   \frac{d(x)}{dx}+2\cos y (-\sin y) \frac{d(y)}{dx} = 0\\   
-\Rightarrow \sin 2 x  -\sin 2y \frac{dy}{dx} = 0 \\
-
-\text{After rearranging, we get}\\
-\frac{dy}{dx}=\frac{\sin 2x}{\cos 2y}</tex>
-    <reason>\text{Other than chain rule we have used the fact}\\
-\text{that }\frac{d(\sin x)}{dx}=\cos x\text{ and }\frac{d(\cos x)}{dx}=-\sin x \\
-\text{Check your calculations if you got something else.}</reason>
+    <context>
+  		\textbf{Right or wrong? } \text{Given the derivatives}\\
+  		\text{of the individual terms, }\frac{dy}{dx}\text{ is given by}\\
+  		\text{the following.}
+  		</context>
+    <tex correct="true">
+  		\qquad \dfrac{dy}{dx} = \dfrac{\sin 2x}{\sin 2y}
+  		</tex>
+    <tex correct="false">
+  		\qquad \dfrac{dy}{dx} = \dfrac{\sin 2x - 1}{\sin 2y}
+  		</tex>
+    <reason>
+  		\begin{align}
+  		  \dfrac{d}{dx}(\sin^2 x + \cos^2 y) &amp;= \dfrac{d}{dx} 1 = 0 \\
+  		  \implies \sin 2x - \sin 2y\cdot y' &amp;= 0 \implies y' = \dfrac{\sin 2x}{\sin 2y}
+  		\end{align}
+  		</reason>
   </step>
   <choices>
-    <tex>\frac{dy}{dx}=\frac{\sin 2y}{\cos 2x}</tex>
+    <tex>\frac{dy}{dx}=\frac{\sin 2x - 1}{\sin 2y}</tex>
     <tex>\frac{dy}{dx}=-\frac{\sin 2y}{\cos 2x}</tex>
-    <tex correct='true'>\frac{dy}{dx}=\frac{\sin 2x}{\cos 2y}</tex>
+    <tex correct="true">\frac{dy}{dx}=\frac{\sin 2x}{\sin 2y}</tex>
     <tex>\frac{dy}{dx}=-\frac{\sin 2x}{\cos 2y}</tex>
   </choices>
 </question>
