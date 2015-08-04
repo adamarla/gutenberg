@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+			\text{Find }\frac{dy}{dx}\text{ given that }\\
+			y = \sin^{-1}\left(2x\cdot\sqrt{1-x^2}\right), -\frac{1}{\sqrt{2}}\lt x\lt\frac{1}{\sqrt{2}}
+		</tex>
+  </statement>
+  <step>
+    <context>
+	    \qquad \sin^{-1}\left(2x\cdot\sqrt{1-x^2}\right) = M\theta.\\
+			\text{For this to be true, }M\text{ and }\theta\text{ should have}\\
+			\text{the following values.}\textbf{Right or wrong? } 
+			</context>
+    <tex correct="true">
+			\qquad M = 2, \underbrace{\theta = \sin^{-1} x}_{x=\sin\theta}
+			</tex>
+    <tex correct="false">
+			\qquad M = 2, \underbrace{\theta = \tan^{-1} x}_{x=\tan\theta}
+			</tex>
+    <reason>
+			\text{Recall that, }\\
+			\qquad \sin 2\theta = 2\sin\theta\cos\theta = 2\sin\theta\cdot\sqrt{1-\sin^2\theta}\\
+			\text{Now, this looks remarkably like }2x\cdot\sqrt{1-x^2}.\\
+			\text{Hence, if we let }x = \sin\theta,\text{ then }\\
+			\begin{align}
+			  y &amp;= \sin^{-1}\left(2x\cdot\sqrt{1-x^2}\right) \\
+			  &amp;= \sin^{-1}\left(2\sin\theta\cdot\sqrt{1-\sin^2\theta}\right) \\ 
+			  &amp;= \sin^{-1}\sin 2\theta = \underbrace{2}_M\cdot\theta
+			\end{align}
+			</reason>
+  </step>
+  <step>
+    <context>
+			\text{Given }x = \sin\theta, \frac{dy}{dx}\text{ will equal}\\
+			\text{the following. } \textbf{Right or wrong? } 
+			</context>
+    <tex correct="true">
+			\qquad \dfrac{dy}{dx} = \dfrac{2}{\sqrt{1-x^2}}
+			</tex>
+    <tex correct="false">
+			\qquad \dfrac{dy}{dx} = \dfrac{2}{1-x^2}
+			</tex>
+    <reason>
+			\begin{align}
+			  y &amp;= 2\cdot\theta = 2\cdot\sin^{-1} x \\
+			  \implies \dfrac{dy}{dx} &amp;= \dfrac{2}{\sqrt{1-x^2}}
+			\end{align}
+			</reason>
+  </step>
+  <choices>
+    <tex>\frac{dy}{dx} = \frac{2}{1 + x^2}</tex>
+    <tex correct="true">\frac{dy}{dx} = \frac{2}{\sqrt{1-x^2}}</tex>
+    <tex>\frac{dy}{dx} = \frac{2}{1-x^2}</tex>
+    <tex>\frac{dy}{dx} = \frac{1}{\sqrt{1-x^2}}</tex>
+  </choices>
+</question>

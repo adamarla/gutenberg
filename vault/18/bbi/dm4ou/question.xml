@@ -1,47 +1,61 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
   <statement>
-    <tex>\text{Find }\frac{dy}{dx} \text{ of the following}\\
-
-y = \sec^{-1}\Bigg(\frac{1}{2x^2 - 1}\Bigg), 0\lt x \lt \frac{1}{\sqrt{2}}</tex>
+    <tex>
+			\text{Find }\frac{dy}{dx}\text{ given that }\\
+			y = \sec^{-1}\left(\dfrac{1}{2x^2-1}\right), 0\lt x\lt\frac{1}{\sqrt{2}}
+		</tex>
   </statement>
   <step>
-    <context>\text{Which of the following approach is a better}\\
-text{approach?}</context>
-    <tex correct='true'>y = \sec^{-1}\Bigg(\frac{1}{2x^2 - 1}\Bigg), 0\lt x \lt \frac{1}{\sqrt{2}}\\
-
-\Rightarrow \sec y = \frac{1}{2x^2 - 1}\\
-\Rightarrow \frac{1}{\cos y} = \frac{1}{2x^2 - 1}\\
-\Rightarrow \cos y  = 2x^2 - 1 \\
-\Rightarrow 1 + \cos y = 2x^2 \\ 
-\Rightarrow 2 \cos^2 \frac{y}{2} = 2x^2 \\
-\Rightarrow \cos^2 \frac{y}{2} = x^2 \\
-\therefore x = \cos \frac{y}{2}\\</tex>
-    <tex>\text{Directly diffrentiating }\\
-y = \sec^{-1}\Bigg(\frac{1}{2x^2 - 1}\Bigg)</tex>
-    <reason></reason>
+    <context>
+	    \qquad \sec^{-1}\left(\dfrac{1}{2x^2-1}\right) = M\theta.\\
+			\text{For this to be true, }M\text{ and }\theta\text{ should have}\\
+			\text{the following values.}\textbf{Right or wrong? } 
+			</context>
+    <tex correct="true">
+			\qquad M = 2, \underbrace{\theta = \cos^{-1} x}_{x=\cos\theta}
+			</tex>
+    <tex correct="false">
+			\qquad M = 2, \underbrace{\theta = \tan^{-1} x}_{x=\tan\theta}
+			</tex>
+    <reason>
+			\text{Recall that, }\\
+			\begin{align}
+			  \cos 2\theta &amp;= \cos^2\theta-\sin^2\theta = 2\cos^2\theta - 1 \\
+			  \implies \sec 2\theta &amp;= \dfrac{1}{\cos 2\theta} = \dfrac{1}{2\cos^2\theta - 1}
+			\end{align} \\
+			
+			\text{Now, this looks remarkably like }\dfrac{1}{2x^2-1}.\\
+			\text{Hence, if we let }x = \cos\theta,\text{ then }\\
+			\begin{align}
+			  y &amp;= \sec^{-1}\left(\dfrac{1}{2x^2-1}\right) \\
+			  &amp;= \sec^{-1}\left(\dfrac{1}{2\cos^2\theta - 1}\right) \\ 
+			  &amp;= \sec^{-1}\sec 2\theta = \underbrace{2}_M\cdot\theta
+			\end{align}
+			</reason>
   </step>
   <step>
-    <context>\text{Is the following calculations correct?}</context>
-    <tex correct='true'>\text{Diffrent the result of the previous step, }\\
-
-\frac{dx}{dx} = \frac{\cos \frac{y}{2}}{dx}\\
-\Rightarrow 1 = -sin\frac{y}{2} . \frac{1}{2} . \frac{dy}{dx}\\
-\begin{align}
-\Rightarrow \frac{dy}{dx} &amp;= -\frac{2}{\sin \frac{y}{2}}\\
-	  	&amp;= -\frac{2}{\sqrt(1 - \cos^2 \frac{y}{2})}\\
-		&amp;=-\frac{2}{\sqrt(1 - x^2)}\\ 		
-
-\end{align}
-</tex>
-    <reason>\text{Other than chain rule, we have used the fact that}\\
-\frac{d(\cos \theta)}{d \theta} = -\sin \theta \text{ and }\sin^2 \theta + \cos^2 \theta = 1\text{.Check}\\
-\text{your calculations if you got something else.}</reason>
+    <context>
+			\text{Given }x = \cos\theta, \frac{dy}{dx}\text{ will equal}\\
+			\text{the following. } \textbf{Right or wrong? } 
+			</context>
+    <tex correct="true">
+			\qquad \dfrac{dy}{dx} = -\dfrac{2}{\sqrt{1-x^2}}
+			</tex>
+    <tex correct="false">
+			\qquad \dfrac{dy}{dx} = \dfrac{2}{1-x^2}
+			</tex>
+    <reason>
+			\begin{align}
+			  y &amp;= 2\cdot\theta = 2\cdot\cos^{-1} x \\
+			  \implies \dfrac{dy}{dx} &amp;= -\dfrac{2}{\sqrt{1-x^2}}
+			\end{align}
+			</reason>
   </step>
   <choices>
-    <tex>\frac{dy}{dx} = -\frac{2}{\sqrt(1 - x^2)}</tex>
-    <tex correct='true'>\frac{dy}{dx} = -\frac{\sqrt(1 - x^2)}{2}</tex>
-    <tex>\frac{dy}{dx} = \frac{2}{\sqrt(1 - x^2)}</tex>
-    <tex>\frac{dy}{dx} = \frac{\sqrt(1 - x^2)}{2}</tex>
+    <tex>\frac{dy}{dx} = \frac{2}{1 + x^2}</tex>
+    <tex>\frac{dy}{dx} = \frac{2}{\sqrt{1-x^2}}</tex>
+    <tex>\frac{dy}{dx} = \frac{2}{1-x^2}</tex>
+    <tex correct="true">\frac{dy}{dx} = -\frac{2}{\sqrt{1-x^2}}</tex>
   </choices>
 </question>
