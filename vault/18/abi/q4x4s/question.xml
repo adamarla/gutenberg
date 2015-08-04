@@ -1,34 +1,46 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
   <statement>
-    <tex>\text{Find}\frac{dy}{dx}\text{ of the following}\\
-
-x^2 + xy +y^2= 100</tex>
+    <tex>
+      \text{If }x^2+xy + y^2 = 100,\text{ then what is }\frac{dy}{dx}?
+    </tex>
   </statement>
   <step>
-    <context>\text{If }f(x) = g(x) \,.\, h(x)\text{,then f^\prime}=</context>
-    <tex correct='true'>\frac{df(x)}{dx} = g^\prime h + gh^\prime </tex>
-    <tex>\frac{df(x)}{dx} = g^\prime h^\prime </tex>
-    <reason>\text{This is a standard formula.It is called Product}\\
-\text{Rule.Review it if you got this wrong.}\\</reason>
-  </step>
-  <step>
-    <context>\text{Are the following calculations correct?}</context>
-    <tex correct='true'>\text{After diffrentiating the equation we get}\\
-\frac{d(x^2 + xy + y^2}{dx}=\frac{d(100)}{dx}\\
-\Rightarrow 2x .  \frac{d(x)}{dx}+y .  \frac{d(x)}{dx}+x . \frac{d(y)}{dx}+2y \frac{d(y)}{dx}=0\\
-\Rightarrow 2x +y +x . \frac{dy}{dx}+2y . \frac{dy}{dx}  = 0\\
-
-\text{After rearranging, we get}\\
-\frac{dy}{dx} = -\frac{2x+y}{x+2y}\\</tex>
-    <reason>\text{We have used Chain Rule and Product Rule to}\\
-\text{solvethis problem.Check your calculations if you}\\
-\text{got something else.}</reason>
+    <context>
+  		\text{Are the following analysis and calculations correct?}
+  		</context>
+    <tex correct="true">
+  		\begin{align}
+  		  \underbrace{x^2}_A + \underbrace{xy}_B + \underbrace{y^2}_C &amp;= 100 \\
+  		  \implies\dfrac{d}{dx}(x^2+xy+y^2) &amp;=\dfrac{d}{dx} 100 \\ 
+  		  \implies 2x + \left(x\cdot y' + y\right) + 2y\cdot y' &amp;= 0 \\
+  		  \implies (2x + y) + (x+2y)\cdot y' &amp;= 0 \\ 
+  		  \implies y' &amp;= -\dfrac{2x + y}{x+2y} 
+  		\end{align}
+  		</tex>
+    <tex correct="false">
+  		\begin{align}
+  		  \underbrace{x^2}_A + \underbrace{xy}_B + \underbrace{y^2}_C &amp;= 100 \\
+  		  \implies\dfrac{d}{dx}(x^2+xy+y^2) &amp;=\dfrac{d}{dx} 100 \\ 
+  		  \implies 2x + \left(\frac{dx}{dx}\cdot\frac{dy}{dx}\right) + 2y\cdot y' &amp;= 0 \\
+  		  \implies 2x + y' + 2y\cdot y' &amp;= 0 \\
+  		  \implies y' &amp;= -\dfrac{2x}{2y + 1} 
+  		\end{align}
+  		</tex>
+    <reason>
+  		\text{The algebra is pretty straight-forward.}\\
+  		\text{But you need to be careful when calculating}\\
+  		\underbrace{\dfrac{d}{dx}xy}_B\text{ and }\underbrace{\dfrac{d}{dx}y^2}_C.\\
+  		\begin{align}
+  		  \dfrac{d}{dx}xy &amp;= \underbrace{x\cdot\frac{d}{dx}y + y\cdot\frac{d}{dx}x}_{\textbf{Product Rule}} \\
+  		  \dfrac{d}{dx}y^2 &amp;= \underbrace{\frac{d}{dy}y^2\cdot\frac{d}{dx}y}_{\textbf{Chain Rule}}
+  		\end{align}
+  		</reason>
   </step>
   <choices>
-    <tex correct='true'>\frac{dy}{dx} = -\frac{2x+y}{x+2y}\\</tex>
-    <tex>\frac{dy}{dx} = \frac{2x+y}{x+2y}\\</tex>
+    <tex>\frac{dy}{dx} = -\frac{2x}{2y+1}\\</tex>
     <tex>\frac{dy}{dx} = -\frac{x+2y}{2x+y}\\</tex>
     <tex>\frac{dy}{dx} = \frac{x-2y}{2x+y}\\</tex>
+    <tex correct="true">\frac{dy}{dx} = -\frac{2x+y}{x+2y}\\</tex>
   </choices>
 </question>

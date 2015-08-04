@@ -1,34 +1,93 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
   <statement>
-    <tex>\text{Find}\frac{dy}{dx}\text{ of the following}\\
-
-xy + y^2 = \tan x + y</tex>
+    <tex>\text{Find}\frac{dy}{dx}\text{ for the following}\\
+    \qquad xy + y^2 = \tan x + y
+  </tex>
   </statement>
   <step>
-    <context>\text{If }f(x) = g(x) \,.\, h(x)\text{,then f^\prime}=</context>
-    <tex correct='true'>\frac{df(x)}{dx} = g^\prime h + gh^\prime </tex>
-    <tex>\frac{df(x)}{dx} = g^\prime h^\prime </tex>
-    <reason>\text{This is a standard formula.It is called Product}\\
-\text{Rule.Review it if you got this wrong.}\\</reason>
+    <context>
+  		\text{Is the analysis below correct?} \\
+  		\textbf{Note: }y' = \frac{dy}{dx}
+  		</context>
+    <tex correct="true">
+  		\begin{align}
+  		  xy + y^2 &amp;= \tan x + y \\
+  		  \implies (x-1)\cdot y + y^2 &amp;= \tan x \\
+  		  \implies \underbrace{\dfrac{d}{dx}(x-1)\cdot y}_A + 
+  		  \underbrace{\dfrac{d}{dx}y^2}_B &amp;= \underbrace{\dfrac{d}{dx}\tan x}_C 
+  		\end{align} \\
+  		\begin{tabular}{|c|c|}
+  		\hline 
+  		A &amp; (x-1)\cdot y' + y \\
+  		\hline
+  		B &amp; 2y\cdot y' \\
+  		\hline
+  		C &amp; \sec^2 x \\
+  		\hline
+  		\end{tabular}
+  		</tex>
+    <tex correct="false">
+  		\begin{align}
+  		  xy + y^2 &amp;= \tan x + y \\
+  		  \implies (x-1)\cdot y + y^2 &amp;= \tan x \\
+  		  \implies \underbrace{\dfrac{d}{dx}(x-1)\cdot y}_A + 
+  		  \underbrace{\dfrac{d}{dx}y^2}_B &amp;= \underbrace{\dfrac{d}{dx}\tan x}_C 
+  		\end{align} \\
+  		\begin{tabular}{|c|c|}
+  		\hline 
+  		A &amp; \frac{d}{dx}(x-1)\cdot\frac{d}{dx}y \\
+  		&amp; = y'\\
+  		\hline
+  		B &amp; \frac{d}{dx}y^2 = 2y \\
+  		\hline
+  		C &amp; \sec^2 x \\
+  		\hline
+  		\end{tabular}
+  		</tex>
+    <reason>
+  		\text{The algebra is pretty straight-forward.}\\
+  		\text{But the following rules will be needed to}\\
+  		\text{find A,B and C} \\
+  		\begin{tabular}{|c|c|l|}
+  		\hline
+  		A &amp; \text{Product Rule} &amp; \frac{d}{dx}f\cdot g = f'\cdot g +f\cdot g'  \\
+  		\hline
+  		B &amp; \text{Chain Rule} &amp; \frac{d}{dx}f(g(x)) \\
+  		&amp; &amp;= \frac{d}{d g(x)}f(g(x))\cdot\frac{d}{dx}g(x) \\
+  		\hline
+  		C &amp; \text{Standard result} &amp; \frac{d}{dx}\tan x = \sec^2 x \\
+  		\hline
+  		\end{tabular}
+  		</reason>
   </step>
   <step>
-    <context>\text{Are the following calculations correct?}</context>
-    <tex correct='true'>\text{After diffrentiating the equation we get}\\
-\frac{d(x^2 + xy + y^2)}{dx}=\frac{d(100)}{dx}\\
-\Rightarrow 2x . \frac{dx}{dx} + \frac{dx}{dx}. y + \frac{dy}{dx}. x +2 .y \frac{dy}{dx}=0\\
-\Rightarrow y + \frac{dy}{dx}. x +2 .y \frac{dy}{dx}=\sec^2 x +\frac{dy}{dx}\\
-
-\text{After rearranging, we get}\\
-\frac{dy}{dx}= \frac{\sec^2 x - y}{x + 2y - 1}</tex>
-    <reason>\text{Other than Chain Rule and Product Rule we}\\
-\text{have used the fact that }\frac{d(\tan x)}{dx}=\sec^2 x\\
-\text{Check your calculations if you got something else.}</reason>
+    <context>
+  		\textbf{Right or wrong? } \text{Given A,B and C from}\\
+  		\text{the previous step, }\frac{dy}{dx}\text{ will evaluate}\\
+  		\text{to the following.}
+  		</context>
+    <tex correct="true">
+  		\qquad \dfrac{dy}{dx} = \dfrac{\sec^2 x - y}{x+2y-1}
+  		</tex>
+    <tex correct="false">
+  		\qquad \dfrac{dy}{dx} = \dfrac{\sec^2 x - x}{x+2y-1}
+  		</tex>
+    <reason>
+  		\text{It is only a little algebra} \\
+  		\begin{align}
+  		  \underbrace{\dfrac{d}{dx}(x-1)\cdot y}_A + 
+  		  \underbrace{\dfrac{d}{dx}y^2}_B &amp;= \underbrace{\dfrac{d}{dx}\tan x}_C \\
+  		  \implies \underbrace{(x-1)\cdot y'}_A + 
+  		  \underbrace{2y\cdot y'}_B &amp;= \underbrace{\sec^2 x}_C \\
+  		  \implies y' &amp;= \dfrac{\sec^2 x -y}{x+2y-1}
+  		\end{align}
+  		</reason>
   </step>
   <choices>
     <tex>\frac{dy}{dx}= \frac{x + 2y - 1}{\sec^2 x - y}</tex>
     <tex>\frac{dy}{dx}= \frac{\sec^2 x - x}{x + 2y - 1}</tex>
-    <tex correct='true'>\frac{dy}{dx}= \frac{\sec^2 x - y}{x + 2y - 1}</tex>
+    <tex correct="true">\frac{dy}{dx}= \frac{\sec^2 x - y}{x + 2y - 1}</tex>
     <tex>\frac{dy}{dx}= \frac{\sec^2 x - y}{x + 2y}</tex>
   </choices>
 </question>
