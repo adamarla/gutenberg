@@ -1,35 +1,88 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
   <statement>
-    <tex>\text{Find}\frac{dy}{dx}\text{ of the following}\\
-
-\sin^2 y + cos xy = \pi</tex>
+    <tex>
+			\text{Find }\frac{dy}{dx}\text{ given that }\\
+			\qquad \sin^2 y + \cos xy = \kappa \\
+			\qquad (\kappa\text{ is a constant })
+		</tex>
   </statement>
   <step>
-    <context>f(x) = g(p(x) \,.\, q(x))\text{,then f^\prime}=</context>
-    <tex correct='true'>\frac{df(x)}{dx} = g^\prime(pq) . (p^\prime q + q^\prime p)</tex>
-    <tex>\frac{df(x)}{dx} = g^\prime(p^\prime q + q^\prime p)</tex>
-    <reason>\text{This is a combination of Chain Rule and }\\
-\text{Product Rule.Review your solution and check}\\
-\text{where you went wrong.}</reason>
+    <context>
+  		\textbf{Right or wrong? } \text{The derivatives of}\\
+  		\text{the individual terms in }\\
+  		\qquad \sin^2 y + \cos xy \\
+  		\text{are as shown in the table below.} \\
+  		\textbf{Note: } y' = \frac{dy}{dx}
+  		</context>
+    <tex correct="true">
+  		\begin{tabular}{|c|c|}
+  		  \hline
+  		  f(x) &amp; \frac{d}{dx}f(x) \\ 
+  		  \hline 
+  		  \sin^2 y &amp; 2\sin y\cos y\cdot y' \\
+  		  &amp; = \sin 2y\cdot y' \\
+  		  \hline 
+  		  \cos xy &amp; -\sin xy\cdot ( xy' + y) \\
+  		  \hline
+  		\end{tabular}
+  		</tex>
+    <tex correct="false">
+  		\begin{tabular}{|c|c|}
+  		  \hline
+  		  f(x) &amp; \frac{d}{dx}f(x) \\ 
+  		  \hline 
+  		  \sin^2 y &amp; 2\sin y\cdot y' \\
+  		  \hline 
+  		  \cos xy &amp; \sin xy\cdot y' \\
+  		  \hline
+  		\end{tabular}
+  		</tex>
+    <reason>
+  		\begin{tabular}{|c|c|l|}
+  		  \hline
+  		  f(x) &amp; \frac{d}{dx}f(x) &amp; \text{Why?} \\ 
+  		  \hline 
+  		  \sin^2 y &amp; \sin 2y\cdot y' &amp; 
+  		  \underbrace{\frac{d\sin^2 y}{d\sin y}\cdot\frac{d\sin y}{dy}\cdot y'}_{\text{Chain Rule}}\\
+  		  &amp; &amp; = 2\sin y\cdot\cos y \cdot y' \\
+  		  &amp; &amp; = \sin 2y\cdot y' \\
+  		  \hline 
+  		  \cos xy &amp; -\sin xy\cdot ( xy' + y) &amp; 
+  		  \underbrace{\frac{d\cos xy}{d xy}\cdot\frac{d}{dx} xy}_{\text{Chain Rule}}\\
+  		  &amp; &amp; -\sin xy\cdot\underbrace{(xy' + y)}_{\text{Product Rule}} \\
+  		  \hline
+  		\end{tabular}
+  		</reason>
   </step>
   <step>
-    <context>\text{Are the following calculations correct?}</context>
-    <tex correct='true'>\text{After diffrentiating the equation we get}\\
-\frac{d(\sin^2 y + \cos xy)}{dx}=\frac{d(\pi)}{dx}\\
-\Rightarrow 2\sin y \cos y \frac{d(y)}{dx} - \sin xy . \frac{d(xy)}{dx}=0\\
-\Rightarrow \sin 2y\frac{dy}{dx} -\sin xy .\bigg(x . \frac{dy}{dx} + y \frac{dx}{dx}\bigg) = 0\\
-\Rightarrow \sin 2y \frac{dy}{dx}-x\sin xy  \frac{dy}{dx} -y\sin xy = 0\\
-\text{After rearranging, we get}\\
-\frac{dy}{dx} = \frac{y\sin xy}{sin2y - xsin xy}\\</tex>
-    <reason>\text{We have used Chain Rule and Product Rule to}\\
-\text{solvethis problem.Check your calculations if you}\\
-\text{got something else.}</reason>
+    <context>
+  		\textbf{Right or wrong? } \text{Given the derivatives}\\
+  		\text{of the individual terms, }\frac{dy}{dx}\text{ is given by}\\
+  		\text{the following.}
+  		</context>
+    <tex correct="true">
+  		\qquad \dfrac{dy}{dx} = \dfrac{y\cdot\sin xy}{\sin 2y-x\cdot\sin xy}
+  		</tex>
+    <tex correct="false">
+  		\qquad \dfrac{dy}{dx} = \dfrac{\kappa + y\cdot\sin xy}{\sin 2y-x\cdot\sin xy}
+  		</tex>
+    <reason>
+  		\text{Don't forget that }\kappa\text{ is a constant.} \\
+  		\text{And so, }\frac{d}{d x}\kappa = 0. \\
+  		\text{Other than that, it is only algebra in this step.}\\
+  		\begin{align}
+  		  \dfrac{d}{dx}(\sin^2 y + \cos xy) &amp;= \dfrac{d}{dx}\kappa = 0 \\
+  		  \implies \sin 2y\cdot y' - \sin xy\cdot (xy' + y) &amp;= 0 \\
+  		  \implies (\sin 2y -x\sin xy)\cdot y' &amp;= y\sin xy \\
+  		  \implies y' = \dfrac{y\sin xy}{\sin 2y - x\sin xy}&amp;
+  		\end{align}
+  		</reason>
   </step>
   <choices>
-    <tex>\frac{dy}{dx} = \frac{y\sin 2y}{ sinxy- xsin xy}</tex>
-    <tex>\frac{dy}{dx} = -\frac{y\sin xy}{sin2y - xsin xy}\\</tex>
-    <tex>\frac{dy}{dx} = -\frac{sin2y - xsin xy}{y\sin xy}\\</tex>
-    <tex correct='true'>\frac{dy}{dx} = \frac{y\sin xy}{sin2y - xsin xy}\\</tex>
+    <tex>\frac{dy}{dx} = \frac{y\sin 2y}{ \sin xy- x\sin xy}</tex>
+    <tex>\frac{dy}{dx} = \frac{\kappa + y\sin xy}{\sin 2y - x\sin xy}\\</tex>
+    <tex>\frac{dy}{dx} = -\frac{\sin 2y - x\sin xy}{y\sin xy}\\</tex>
+    <tex correct="true">\frac{dy}{dx} = \frac{y\sin xy}{\sin 2y - x\sin xy}\\</tex>
   </choices>
 </question>

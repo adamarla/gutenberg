@@ -1,34 +1,93 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
   <statement>
-    <tex>\text{Find}\frac{dy}{dx}\text{ of the following}\\
-
-x^3 + x^2y +xy^2+y^3= 81</tex>
+    <tex>
+    \text{Find }\frac{dy}{dx}\text{ given } x^3 + x^2y +xy^2+y^3= 81.
+    </tex>
   </statement>
   <step>
-    <context>f(x) = g(x) \,.\, h(x)\text{,then f^\prime}=</context>
-    <tex correct='true'>\frac{df(x)}{dx} = g^\prime h + gh^\prime </tex>
-    <tex>\frac{df(x)}{dx} = g^\prime h^\prime </tex>
-    <reason>\text{This is a standard formula.It is called Product}\\
-\text{Rule.Review it if you got this wrong.}\\</reason>
+    <context>
+  		\textbf{Right or wrong? } \text{The derivatives of}\\
+  		\text{the individual terms in }\\
+  		\qquad x^3 + x^2y + xy^2 + y^3 \\
+  		\text{are as shown in the table below.} \\
+  		\textbf{Note: } y' = \frac{dy}{dx}
+  		</context>
+    <tex correct="true">
+  		\begin{tabular}{|c|c|}
+  		  \hline
+  		  f(x) &amp; \frac{d}{dx}f(x) \\ 
+  		  \hline 
+  		  x^3 &amp; 3x^2 \\
+  		  \hline 
+  		  x^2 y &amp; x^2\cdot y' + 2xy \\
+  		  \hline 
+  		  xy^2 &amp; y^2 + 2xy\cdot y' \\
+  		  \hline
+  		  y^3 &amp; 3y^2\cdot y' \\
+  		  \hline 
+  		\end{tabular}
+  		</tex>
+    <tex correct="false">
+  		\begin{tabular}{|c|c|}
+  		  \hline
+  		  f(x) &amp; \frac{d}{dx}f(x) \\ 
+  		  \hline 
+  		  x^3 &amp; 3x^2 \\
+  		  \hline 
+  		  x^2 y &amp; 2x\cdot y' \\
+  		  \hline 
+  		  xy^2 &amp; 2y\cdot y' \\
+  		  \hline
+  		  y^3 &amp; 3y^2\cdot y' \\
+  		  \hline 
+  		\end{tabular}
+  		</tex>
+    <reason>
+  		\begin{tabular}{|c|c|l|}
+  		  \hline
+  		  f(x) &amp; \frac{d}{dx}f(x) &amp; \text{Why?} \\ 
+  		  \hline 
+  		  x^3 &amp; 3x^2 &amp; \frac{d}{dx}x^n = n\cdot x^{n-1}\\
+  		  \hline 
+  		  x^2 y &amp; x^2\cdot y' + 2xy &amp; 
+  		  \underbrace{\frac{d}{dx}f\cdot g = f'g + fg'}_{\text{Product Rule}}\\
+  		  \hline 
+  		  xy^2 &amp; y^2 + 2xy\cdot y' &amp; 
+  		  \underbrace{\frac{d}{dx}f\cdot g = f'g + fg'}_{\text{Product Rule}}\\
+  		  \hline
+  		  y^3 &amp; 3y^2\cdot y' &amp; 
+  		  \underbrace{\frac{d}{dx}y^3 = \frac{d}{dy}y^3\cdot\frac{dy}{dx}}_{\text{Chain Rule}}\\
+  		  \hline 
+  		\end{tabular}
+  		</reason>
   </step>
   <step>
-    <context>\text{Are the following calculations correct?}</context>
-    <tex correct='true'>\text{After diffrentiating the equation we get}\\
-\frac{d(x^3 + x^2y + xy^2 + y^3)}{dx}=\frac{d(81)}{dx}\\
-\Rightarrow 3x^2 .  \frac{d(x)}{dx}+2xy .  \frac{d(x)}{dx}+x^2 . \frac{d(y)}{dx}+y^2 \frac{d(x)}{dx}+\\ \quad \quad 2xy\frac{d(y)}{dx}+3y^2\frac{d(y)}{dx}=0\\
-\Rightarrow 3x^2 +2xy +x^2 . \frac{dy}{dx}+y^2 +2xy\frac{dy}{dx}+3y^2\frac{dy}{dx}=0\\
-
-\text{After rearranging, we get}\\
-\frac{dy}{dx}=-\frac {3x^2 + 2xy + y^2}{x^2 + 2xy + 3y^2}\\</tex>
-    <reason>\text{We have used Chain Rule and Product Rule to}\\
-\text{solve this problem.Check your calculations if you}\\
-\text{got something else.}</reason>
+    <context>
+  		\textbf{Right or wrong? } \text{Given the derivatives of}\\
+  		\text{the individual terms, }\frac{dy}{dx}\text{ equals the following.}
+  		</context>
+    <tex correct="true">
+  		  \qquad \dfrac{dy}{dx} = -\dfrac{3x^2+2xy+y^2}{x^2+2xy+3y^2}
+  		</tex>
+    <tex correct="false">
+  		 \qquad \dfrac{dy}{dx} = \dfrac{81 - (3x^2+2xy+y^2)}{x^2+2xy+3y^2}
+  		</tex>
+    <reason>
+  		\text{Don't forget that }\frac{d}{dx} 81 = 0. \\
+  		\text{After that, it is simply a little algebra.} \\
+  		\begin{align}
+  		  &amp;\dfrac{d}{dx}(x^3 + x^2y + xy^2 + y^3) = \dfrac{d}{dx} 81 \\
+  		  &amp;\implies 3x^2 + (x^2y' + 2xy) + (y^2+2xy\cdot y') + 3y^2\cdot y' = 0 \\ 
+  		  &amp;\implies (3x^2+2xy+y^2) + y'\cdot (x^2+2xy+3y^2) = 0 \\
+  		  &amp;\implies y' = -\dfrac{3x^2+2xy+y^2}{x^2+2xy+3y^2}
+  		\end{align}
+  		</reason>
   </step>
   <choices>
-    <tex>\frac{dy}{dx}=\frac {x^2 + 2xy + 3y^2}{3x^2 + 2xy + y^2}\\</tex>
-    <tex correct='true'>\frac{dy}{dx}=-\frac {3x^2 + 2xy + y^2}{x^2 + 2xy + 3y^2}\\</tex>
-    <tex>\frac{dy}{dx}=\frac {3x^2 + 2xy + y^2}{x^2 + 2xy + 3y^2}\\</tex>
-    <tex>\frac{dy}{dx}=-\frac {x^2 + 2xy + 3y^2}{3x^2 + 2xy + y^2}\\</tex>
+    <tex>\frac{dy}{dx}=\frac {x^2 + 2xy + 3y^2}{3x^2 + 2xy + y^2}</tex>
+    <tex correct="true">\frac{dy}{dx}=-\frac {3x^2 + 2xy + y^2}{x^2 + 2xy + 3y^2}</tex>
+    <tex>\frac{dy}{dx}=\frac {3x^2 + 2xy + y^2}{x^2 + 2xy + 3y^2}</tex>
+    <tex correct="true">\frac{dy}{dx}=\frac {81-(3x^2 + 2xy + y^2)}{x^2 + 2xy + 3y^2}</tex>
   </choices>
 </question>
