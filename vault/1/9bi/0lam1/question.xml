@@ -1,18 +1,44 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
-	<statement>
-		<tex>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
 			\text{Differentiate the following } \\
 			\qquad f(x) = \sqrt{e^{\sqrt{x}}}, x \geq 0 \\
 			\text{with respect to x.}
 		</tex>
-	</statement>
-
-			<step>
-				<context>
-				\text{Is the analysis below correct?}
+  </statement>
+  <step>
+    <context>
+  		\text{Your friend claims that }x\geq 0\text{ is}\\
+  		\text{important for the following reason.}\\
+  		\textbf{Is his/her logic correct?}
+  		</context>
+    <tex correct="true">
+  		  \qquad e^y \gt 0\text{ for all } y\in\mathbb{R}.\\
+  		  \textbf{But if }y = \sqrt{x},\text{ then }e^{\sqrt{x}}\text{ is defined}\\
+  		  \textbf{only if }x\geq 0.
+  		</tex>
+    <tex correct="false">
+  		\quad e^y = \begin{cases}
+  		  \gt 0, y\gt 0 \\
+  		  \lt 0, y \lt 0
+  		\end{cases} \\
+  		\text{And so, if }f(x) = \sqrt{e^y},\text{ then f(x) is defined only}\\
+  		\text{if }y\geq 0.\text{But as } y = \sqrt{x}, \text{ so }y\geq 0\implies x\geq 0.
+  		</tex>
+    <reason>
+  		\quad e^{\text{a real number}} \gt 0. \text{ Even }e^{-a} = \frac{1}{e^a} \gt 0 (a\gt 0).\\
+  		\text{In other words, }f(x) = \sqrt{e^{\sqrt{x}}}\text{ is defined if }e^{\sqrt{x}}\\
+  		\text{is defined. Which in turn is defined if }\sqrt{x}\text{ is} \\
+  		\text{defined. And }\sqrt{x}\text{ is defined for }x\geq 0.
+  		</reason>
+  </step>
+  <step>
+    <context>
+				\text{Given that f(x) is defined for }x\geq 0, \\
+				\text{would the following analysis give }\dfrac{d}{dx}f(x)?
 				</context>
-				<tex correct="true">
+    <tex correct="true">
 				
 				\begin{align}
 				  \text{Let }x &amp;= t^2 \implies dx = 2t\cdot dt \\ 
@@ -24,47 +50,49 @@
 				  \dfrac{e^{\sqrt{x}}}{4\cdot\sqrt{x\cdot e^{\sqrt{x}}}}
 				\end{align}
 				</tex>
-
-				<reason>
-				\text{We have simply applied the Chain Rule to find f'(x).}\\
-				\text{Also, used the standard results - } \\
+    <reason>
+				\begin{align}
+				  \text{If } t &amp;= x^2 \text{ then } \\
+				  \dfrac{d}{dx}f(x) &amp;= \underbrace{\dfrac{d}{dt}\sqrt{e^t}\cdot\dfrac{dt}{dx}}_
+				  {\text{Chain Rule}} \\
+				\end{align} \\
+				\text{Also, note the use of the standard results} \\
 				\dfrac{d}{dy}e^y = e^y \text{ and }\dfrac{d}{dz}\sqrt{z} = \dfrac{1}{2\sqrt{z}}.
 				</reason>
-			</step>
-			
-				<step>
-					<context>
+  </step>
+  <step>
+    <context>
 					\textbf{Bonus Question:}\text{ Are f(x) and f'(x) defined}\\
 					\text{for the same values of x?}
 					</context>
-					<tex correct="true">
+    <tex correct="true">
 					\textbf{No. }\text{For }f(x) = \sqrt{e^{\sqrt{x}}}\text{ to be defined, }x\geq 0.\\
 					\text{But for }f'(x) = \dfrac{e^{\sqrt{x}}}{4\cdot\sqrt{x\cdot e^{\sqrt{x}}}}\text{ to be defined}\\
 					x\neq 0 \implies x\gt 0.
 					</tex>
-					<tex correct="false">
-					\textbf{Yes. } f(x)\text{ is defined for }x\geq 0. \text{And so is }f'(x).
+    <tex correct="false">
+					\textbf{Yes. } f(x)\text{ is defined for }x\geq 0. \\
+					\text{And if f(x) is defined, then so must }f'(x).
 					</tex>
-					<reason>
-					\text{If f(x) is not defined at some x, then f'(x) cannot be.}\\
-					\text{But that does }\textbf{not }\text{mean that if f(x) is}\\
-					\text{defined, then f'(x) also must be. See x = 0.}
+    <reason>
+					\text{If f(x) is not defined at some x, then f'(x) } \\
+					\text{cannot be. But that does }\textbf{not }\text{mean }\\
+					\text{that if f(x) is defined, then f'(x) also must be.}\\
+					\text{See, for example, at x = 0.}
 					</reason>
-				</step>
-			
-				<choices>
-					<tex correct='true'>
+  </step>
+  <choices>
+    <tex correct="true">
 					\dfrac{e^{\sqrt{x}}}{4\cdot\sqrt{x\cdot e^{\sqrt{x}}}}, x\gt 0
 					</tex>
-					<tex>
+    <tex>
 					\dfrac{e^{\sqrt{x}}}{2\cdot\sqrt{e^{\sqrt{x}}}}
 					</tex>
-					<tex>
+    <tex>
 					\dfrac{e^{\sqrt{x}}}{4\cdot\sqrt{e^{\sqrt{x}}}}
 					</tex>
-					<tex>
+    <tex>
 					\dfrac{e^{\sqrt{x}}}{2\cdot\sqrt{x}}
 					</tex>
-				</choices>
-	
+  </choices>
 </question>
