@@ -1,40 +1,41 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
-	<statement>
-		<tex>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
 			\text{Differentiate the following} \\
 			\qquad f(x) = \cos \left(\log x + e^x\right), x\gt 0 \\
 			\text{with respect to x.}
 		</tex>
-	</statement>
-	
-		<step>
-			<context>
-			\text{Why is }x\gt 0\text{ important - if at all?}
+  </statement>
+  <step>
+    <context>
+			\text{Your friend makes the following statement}\\
+			\text{about the condition } x\gt 0. \\
+			\textbf{Is he/she correct in saying so?}
 			</context>
-			<tex correct="true">
-			\cos \left(\log x + e^x\right)\text{ is defined only if }\\
-			\log x + e^x \text{ is defined.} \\
-			\text{Now, }e^x\text{ is defined for all x. But }\log x\\
-			\text{is defined only for }x\gt 0. \\
-			\text{Hence, for f(x) to be defined, }x\gt 0.
+    <tex correct="true">
+			x\gt 0\text{ is important because }\log x\\
+			\text{- and hence - }f(x)\text{ is defined only for }x\gt 0. \\
+			\text{And f'(x) cannot exist if f(x) is not defined.}
 			</tex>
-			<tex correct="false">
-			\text{It is not important at all.}x\gt 0\text{ is written}\\
-			\text{only to confuse us.}
+    <tex correct="false">
+			x\gt 0\text{ is important because }\\
+			\log x + e^x \gt 0\text{ only for }x\gt 0.
 			</tex>
-			<reason>
-			\text{If f(x) is not defined, then how can f'(x) be?}\\
-			\text{Which is why }x\gt 0\text{ is important. For }x\gt 0\\
-			\log x \text{ is defined }\implies\cos \left(\log x + e^x\right)\text{ is defined.}
+    <reason>
+			\cos y \text{ is defined for all }y\in\mathbb{R}.\\
+			\text{But if }y = \log x + e^x,\text{ then y is defined only}\\
+			\text{if }\log x\text{ is defined (}e^x\text{ is not a problem either)}.\\
+			\text{And }\log x\text{ is defined only if }x\gt 0.
+			
 			</reason>
-		</step>
-		
-			<step>
-				<context>
-				\text{Is the following analysis correct?}
+  </step>
+  <step>
+    <context>
+				\text{Given f(x) is defined only for }x\gt 0, \\
+				\text{is the following analysis correct?}
 				</context>
-				<tex correct="true">
+    <tex correct="true">
 				\begin{align}
 				  \text{Let }g(x) &amp;= \log x + e^x \\ 
 				  \implies f(x) &amp;= \cos g(x) \\
@@ -44,26 +45,30 @@
 				  &amp;= -\sin (\log x + e^x)\cdot \left(\frac{1}{x} + e^x\right), x \gt 0
 				\end{align}
 				</tex>
-
-				<reason>
-				\text{You would've recognized the above as simply}\\
-				\text{the application of the }\textbf{Chain Rule.}\\
-				\text{If }f(x) = u(v(x)),\text{ then }f'x = \frac{du}{dv}\cdot\frac{dv}{dx}.
+    <reason>
+				\begin{align}
+				  f(x) &amp;= \cos\underbrace{(\log x + e^x)}_{g(x)} = \cos (g(x)) \\
+				  \implies\frac{d}{dx}f(x) &amp;= \underbrace{\frac{d}{d g(x)}\cos g(x)\cdot\frac{d}{dx}g(x)}_
+				  {\text{Chain Rule}}
+				\end{align} \\
+				\text{Also, note the use of the standard results}\\
+				\quad \frac{d}{d\theta}\cos\theta = -\sin\theta \\
+				\quad \frac{d}{dy}\log y = \frac{1}{y} \\
+				\quad \frac{d}{dz} e^z = e^z 
 				</reason>
-			</step>
-			
-				<choices>
-					<tex correct='true'>
+  </step>
+  <choices>
+    <tex correct="true">
 					\sin (\log x + e^x)\cdot \left(\frac{1}{x} + e^x\right), x \gt 0
 					</tex>
-					<tex>
+    <tex>
           -\sin (\log x + e^x), x \gt 0
 					</tex>
-					<tex correct='true'>
+    <tex correct="true">
 					-\sin (\log x + e^x)\cdot \left(\frac{1}{x} + e^x\right), x \gt 0
 					</tex>
-					<tex>
+    <tex>
           \cos (\log x + e^x)\cdot \left(\frac{1}{x} + e^x\right), x \gt 0
 					</tex>
-				</choices>
+  </choices>
 </question>
