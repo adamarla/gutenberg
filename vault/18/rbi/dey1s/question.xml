@@ -1,24 +1,37 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Find the following integral?}
-
-\int \dfrac{x^3 + 5x^2 - 4 }{x^2}\,dx</tex>
+    <tex>\text{Find the integral}
+\int\dfrac{x^3 + 5x^2 - 4 }{x^2}\,dx</tex>
   </statement>
   <step>
-    <context>\text{Which of the following is the right way }\\
-\text{solving the problem}?</context>
+    <context>\text{Is the following expansion correct?}</context>
+    <tex correct='true'>\int \dfrac{x^3 + 5x^2 - 4 }{x^2}\,dx \\
+\qquad= \int x\, dx+5\int dx - 4\int \dfrac{1}{x^2}\, dx</tex>
+    <tex>\int \dfrac{x^3 + 5x^2 - 4 }{x^2}\,dx \\
+=\dfrac{\int \left(x^3 + 5x^2 - 4 \right)\,dx }
+         {\int \left(x^2\right)\,dx }</tex>
+    <reason>\text{The appropriate way to expand } \\
+\int \dfrac{f(x)+g(x)}{h(x)}\, dx = 
+  \int \dfrac{f(x)}{h(x)}\, dx+\int\dfrac{g(x)}{h(x)}\, dx \\
+\text{However, }\int \dfrac{f(x)}{h(x)}\neq \dfrac{\int f(x)}{\int h(x)}
+</reason>
+  </step>
+  <step>
+    <context>\text{Is the following integration correct?}</context>
     <tex correct='true'>\begin{align}
-\int \dfrac{x^3 + 5x^2 - 4 }{x^2}\,dx &amp;= \int \dfrac{x^3dx }{x^2}+\int \dfrac{5x^2dx}{x^2} - \int \dfrac{4\,dx}{x^2}\\ 
-											   &amp;= \int x\,dx + \int 5\,dx -\int \dfrac{4}{x^2}\,dx
+&amp;\int \dfrac{x^3 + 5x^2 - 4 }{x^2}\,dx \\
+&amp;\qquad= \int x\, dx+5\int dx - 4\int \dfrac{1}{x^2}\, dx \\
+&amp;\qquad= \dfrac{x^2}{2}+ 5x +\dfrac{4}{x}+C
 \end{align}
 </tex>
     <tex>\begin{align}
-\int \dfrac{x^3 + 5x^2 - 4 }{x^2}\,dx &amp;=\dfrac{\int \left(x^3 + 5x^2 - 4\right)dx}{\int x^2\, dx}
+&amp;\int \dfrac{x^3 + 5x^2 - 4 }{x^2}\,dx \\
+&amp;\qquad= \int x\, dx+5\int dx - 4\int \dfrac{1}{x^2}\, dx \\
+&amp;\qquad= \dfrac{x^2}{2}+ 5x -\dfrac{4}{x}+C
 \end{align}
 </tex>
-    <reason>\text{In }\int \dfrac{P(x)}{Q(x)}\text{ integration cannot be distributed}\\
-\text{in numerator and denominator. }  </reason>
+    <reason>\int x^n\, dx=\dfrac{x^{n+1}}{n+1}+C</reason>
   </step>
   <step>
     <context>\text{Is the calculation below correct?}</context>
@@ -35,9 +48,9 @@
 </reason>
   </step>
   <choices>
-    <tex>\int \dfrac{x^3 + 5x^2 - 4 }{x^2}\,dx = \dfrac{x^2}{2} + 5 x +\dfrac{4}{ x}+ C</tex>
-    <tex correct='true'>\int \dfrac{x^3 + 5x^2 - 4 }{x^2}\,dx = -\dfrac{x^2}{2} + 5 x -\dfrac{4}{ x}+C</tex>
-    <tex>\int \dfrac{x^3 + 5x^2 - 4 }{x^2}\,dx = \dfrac{x^2}{2} + 5 x -4\log \vert x\vert+C</tex>
-    <tex>\int \dfrac{x^3 + 5x^2 - 4 }{x^2}\,dx = \dfrac{x^2}{2} + 5 x -\dfrac{4}{ x}+C</tex>
+    <tex correct='true'>\dfrac{x^2}{2} + 5 x +\dfrac{4}{ x}+ C</tex>
+    <tex>-\dfrac{x^2}{2} + 5 x -\dfrac{4}{ x}+C</tex>
+    <tex>\dfrac{x^2}{2} + 5 x -4\log \vert x\vert+C</tex>
+    <tex>\dfrac{x^2}{2} + 5 x -\dfrac{4}{ x}+C</tex>
   </choices>
 </question>

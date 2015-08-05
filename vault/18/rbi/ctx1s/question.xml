@@ -1,29 +1,36 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Find the following integral}
-
+    <tex>\text{Find the integral}
 \int \left(2x^{2} + e^{x}\right)dx</tex>
   </statement>
   <step>
-    <context>\text{Are the calculations below correct?}</context>
-    <tex correct='true'>
-\begin{align}
+    <context>\text{Is the following expansion correct?}</context>
+    <tex correct='true'>\int \left(2x^2 + e^{x}\right)dx = 2 \int x^2 dx +\int e^{x}dx</tex>
+    <reason>\int \left(A f(x)+g(x)\right)\, dx = A\int f(x)\, dx+\int g(x)\, dx \\
+\text{where A is a constant (independent of $x$)}</reason>
+  </step>
+  <step>
+    <context>\text{Is the following integration correct?}</context>
+    <tex correct='true'>\begin{align}
 \int \left(2x^2 + e^{x}\right)dx &amp;= 2 \int x^2 dx +\int e^{x}dx \\
-										&amp;=\dfrac{x^3}{3} + e^{x} + C\\
-
-\end{align}\\
-\text{here, C is the constant of integration}
-
+  &amp;=\dfrac{2}{3}x^3 + e^{x} + C\\
+\end{align} \\
+\text{where C is the constant of integration}
 </tex>
-    <reason>\text{We have used the fact that }\int x^{n}dx = \dfrac{x^{n+1}}{n+1} + c\\
-\text{and }\int e^{x}dx=e^{x} + c.\text{Check your calculation if you}\\
-\text{got something else.}\\</reason>
+    <tex>\begin{align}
+\int \left(2x^2 + e^{x}\right)dx &amp;= 2 \int x^2 dx +\int e^{x}dx \\
+  &amp;=2x^3 + e^{x} + C\\
+\end{align} \\
+\text{where C is the constant of integration}
+</tex>
+    <reason>\int x^{n}\, dx = \dfrac{x^{n+1}}{n+1} + C \\
+\int e^{x}\, dx=e^{x} + C</reason>
   </step>
   <choices>
-    <tex>\int \left(2x^{2} + e^{x}\right)dx = \dfrac{x^3}{3} - e^{x} + C\\</tex>
-    <tex>\int \left(2x^{2} + e^{x}\right)dx = -\dfrac{x^3}{3} + e^{x} + C\\</tex>
-    <tex>\int \left(2x^{2} + e^{x}\right)dx = x^{3} + e^{x} + C\\</tex>
-    <tex correct='true'>\int \left(2x^{2} + e^{x}\right)dx= \dfrac{x^3}{3} + e^{x} + C\\</tex>
+    <tex>\dfrac{x^3}{3} - e^{x} + C\\</tex>
+    <tex>-\dfrac{2}{3}x^3 + e^{x} + C\\</tex>
+    <tex>x^{3} + e^{x} + C\\</tex>
+    <tex correct='true'>\dfrac{2}{3}x^3 + e^{x} + C\\</tex>
   </choices>
 </question>
