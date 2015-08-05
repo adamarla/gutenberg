@@ -1,39 +1,68 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
-	<statement>
-		<tex>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
 			\text{Differentiate the following } \\
 			\quad \sin \left(\tan^{-1} e^{-x}\right) \\
 			\text{with respect to x.}\\
 		</tex>
-	</statement>
-		<step>
-			<context>
-			\text{If g(x), h(x) and j(x) be three}\textbf{ unrelated}\\
-			\text{functions such that }g(x)=\sin x, h(x)=\tan^{-1}x\\ 
-			\text{ and }j(x) = e^{-x},\text{then what is f(x) = ?}
+  </statement>
+  <step>
+    <context>
+			\text{If }\sin (\tan^{-1} (e^{-x})) = f(\, g(\, h(x)\,)\,), \\
+			\text{then what are f,g and h?}
 			</context>
-			<tex correct="true">
-			\quad f(x) = (g\circ h\circ j)(x) 
+    <tex correct="true">
+			\begin{tabular}{|c|c|c|}
+			\hline
+			f(x) &amp; g(x) &amp; h(x) \\
+			\hline
+			\sin x &amp; \tan^{-1} x &amp; e^{-x} \\
+			\hline
+      \end{tabular}			 
 			</tex>
-			<tex correct="false">
-			\quad f(x) = (j\circ h\circ g)(x) 
+    <tex correct="false">
+			\begin{tabular}{|c|c|c|}
+			\hline
+			f(x) &amp; g(x) &amp; h(x) \\
+			\hline
+			\tan^{-1} x &amp; e^{-x} &amp; \sin x \\
+			\hline
+      \end{tabular}			 
 			</tex>
-			<reason>
-			f(x) = (g\circ h\circ j)(x)\implies f(x) = g(h(j(x))). \\
-			\text{In other words, }f(x) = \sin(h(j(x)) = \\ 
-			\sin(\tan^{-1} j(x)) = \sin(\tan^{-1} e^{-x}).
+    <reason>
+			\begin{tabular}{|c|c|c|c|}
+			\hline
+			f(x) &amp; g(x) &amp; h(x) &amp; f(\,g(\,h(x)\,)\, ) \\
+			\hline 
+			\sin x &amp; \tan^{-1} x &amp; e^{-x} &amp; f(\,g(e^{-x})\,)\\
+			&amp; &amp; &amp; = f(\,\tan^{-1} (e^{-x} )\,) \\
+			&amp; &amp; &amp; = \sin(\,\tan^{-1} (e^{-x})\,) \\
+			\hline
+			\end{tabular} \\
+			f(\,g(\,h(x)\,)\,)\textbf{ is normally written as }(f\circ g\circ h)(x). \\
+			\textbf{And just for fun }\\
+			\begin{tabular}{|c|c|}
+			\hline
+			(g\circ f\circ h)(x) &amp; \tan^{-1}(\sin(e^{-x})) \\
+			\hline
+			(h\circ g\circ f)(x) &amp; e^{-\tan^{-1}(\sin x)} \\
+			\hline
+			(h\circ f\circ g)(x) &amp; e^{-\sin (\tan^{-1} x)} \\
+			\hline
+			\end{tabular}
 			</reason>
-		</step>
-		
-	<step>
-		<context>
-		\text{Are the analysis and calculations below correct?}
+  </step>
+  <step>
+    <context>
+		\text{Given that }y = \sin( \tan^{-1} (e^{-x}))\text{ is of the form }\\
+		(f\circ g\circ h)(x),\text{ has }\frac{dy}{dx}\text{ been evaluated}\\
+		\text{correctly below?}
 		</context>
-		<tex correct="true">
+    <tex correct="true">
 		\begin{align}
-		  &amp;f(x) = (g\circ h\circ j)(x) \\ 
-		  &amp;\implies \dfrac{d}{dx}f(x) = \dfrac{dg}{dh}\cdot\dfrac{dh}{dj}\cdot\dfrac{dj}{dx} \\
+		  y &amp;= \sin \tan^{-1} (e^{-x}) = f(\, g(\, h(x)\,)\,) \\
+		  &amp;\implies \dfrac{dy}{dx} = \dfrac{df}{dg}\cdot\dfrac{dg}{dh}\cdot\dfrac{dh}{dx} \\
 		  &amp;= \dfrac{d}{d\tan^{-1}(e^{-x})}\sin \left(\tan^{-1}(e^{-x})\right)\\
 		  &amp;\times\dfrac{d}{de^{-x}}\tan^{-1}e^{-x}\times \dfrac{d}{dx}e^{-x} \\
 		  &amp;= \cos \left(\tan^{-1}(e^{-x})\right)\cdot 
@@ -42,19 +71,19 @@
 		  &amp;= -\dfrac{e^{-x}\cdot \cos \left(\tan^{-1}(e^{-x})\right)}{1+e^{-2x}}
 		\end{align}
 		</tex>
-	
-		<reason>
-		\text{First, }f(x) = (g\circ h\circ j)(x) \implies 
-		f' = \frac{dg}{dh}\cdot\dfrac{dh}{dj}\cdot\dfrac{dj}{dx}. \\
-		\text{This is called the Chain Rule. Also, }\frac{d}{d\theta}\sin\theta=\cos\theta, \\
-		\frac{d}{dy}\tan^{-1}y = \frac{1}{1+y^2}\text{ and }\frac{d}{dz}e^{-z} = -e^{-z}.
+    <reason>
+				\text{If }y = f(\, g(x)\,) = (f\circ g)(x),\text{ then }\\
+				\quad \underbrace{\frac{dy}{dx} = 
+				\frac{d}{d g(x)}f(\, g(x)\,)\cdot\frac{d}{dx}g(x)}_{\textbf{Chain Rule}} \\
+				\textbf{In this question, however, } y = f(\, g(\, h(x)\, )\,). \\
+				\text{Hence, the expression for }\frac{dy}{dx}\text{ is a little longer.}\\
+				\text{But the idea is the same.}
 		</reason>
-	</step>
-	
-		<choices>
-			<tex correct='true'>-\dfrac{e^{-x}\cdot \cos \left(\tan^{-1}(e^{-x})\right)}{1+e^{-2x}}</tex>
-			<tex>\dfrac{\cos \left(\tan^{-1}(e^{-x})\right)}{1+e^{-2x}}</tex>
-			<tex>-\dfrac{e^{-x}}{1+e^{-2x}}</tex>
-			<tex>\dfrac{e^{-x}\cdot \cos \left(\tan^{-1}(e^{-x})\right)}{1+e^{-x}}</tex>
-		</choices>
+  </step>
+  <choices>
+    <tex correct="true">-\dfrac{e^{-x}\cdot \cos \left(\tan^{-1}(e^{-x})\right)}{1+e^{-2x}}</tex>
+    <tex>\dfrac{\cos \left(\tan^{-1}(e^{-x})\right)}{1+e^{-2x}}</tex>
+    <tex>-\dfrac{e^{-x}}{1+e^{-2x}}</tex>
+    <tex>\dfrac{e^{-x}\cdot \cos \left(\tan^{-1}(e^{-x})\right)}{1+e^{-x}}</tex>
+  </choices>
 </question>

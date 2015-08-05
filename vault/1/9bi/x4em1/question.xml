@@ -1,56 +1,56 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
-	<statement>
-		<tex>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
 			\text{Differentiate the following } \\
 			\quad f(x) = e^{x^3} \\
 			\text{with respect to x.}\\
 		</tex>
-	</statement>
-	
-		<step>
-			<context>
-			\text{Is the following assertion correct?}
+  </statement>
+  <step>
+    <context>
+			\textbf{Right or wrong? } \text{If }f(x) = e^{g(x)},\text{ then}\\
+			\frac{d}{dx}f(x)\text{ equals the following.}
 			</context>
-			<tex correct="true">
-			\text{The domain of f(x) is }\mathbb{R}. \\
-			\text{In other words, x can be anything.}
+    <tex correct="true">
+			\qquad \dfrac{d}{dx}f(x) = e^{g(x)}\cdot\dfrac{d}{dx}g(x)
 			</tex>
-			<tex correct="false">
-			\text{The domain of f(x) is }\mathbb{R^+}. \\
-			\text{In other words, x can only be positive}\\
-			\text{real numbers.}
-			</tex>
-			<reason> 
-			\text{There is no restriction on x.} e^{\text{anything}}\text{ can be}\\
-			\text{evaluated. But why bother with finding the}\\
-			\text{domain? Because if f(x) is not defined for some x, }\\
-			\text{then how can }f'(x)\text{ be?}
+    <reason>
+			\begin{align}
+			 \text{If }f(x) &amp;= e^{g(x)},\text{ then }\\
+			 \dfrac{d}{dx}f(x) &amp;= \underbrace{\dfrac{d}{d g(x)}e^{g(x)}\cdot\dfrac{d}{dx}g(x)}_{\text{Chain Rule}}\\
+			 &amp;= e^{g(x)}\cdot\dfrac{d}{dx}g(x)
+			\end{align} \\
+			\textbf{Alternatively, } \\
+			\begin{align}
+			  f(x) = e^{g(x)} \implies \log f(x) &amp;= g(x)\cdot\underbrace{\log e}_{=1} \\
+			  \implies \dfrac{d}{dx}\log f(x) &amp;= \dfrac{d}{dx}g(x) \\
+			  \implies\dfrac{1}{f(x)}\dfrac{d}{dx}f(x) &amp;= \dfrac{d}{dx}g(x) \\
+			  \implies \dfrac{d}{dx}f(x) &amp;= \underbrace{e^{g(x)}}_{ = f(x) }\cdot\dfrac{d}{dx}g(x)
+			\end{align}
 			</reason>
-		</step>
-		
-			<step>
-				<context>
-				\text{Are the calculations below correct?}
-				</context>
-				<tex correct="true">
-				\begin{align}
-				  \dfrac{d}{dx}e^{x^3} &amp;= \dfrac{d}{d x^3}e^{x^3}\cdot\dfrac{d}{dx}x^3 \\ 
-				  &amp;= e^{x^3}\cdot 3x^2 
-				\end{align}
-				</tex>
-				
-				<reason>
-				\text{The above is a simply the application of the}\\
-				\textbf{Chain Rule} - f(x) = (g\circ h)(x) \implies 
-				f'(x) = \frac{dg}{dh}\cdot\dfrac{dh}{dx}.  
-				</reason>
-			</step>
-			
-				<choices>
-					<tex>e^{x^3}</tex>
-					<tex correct='true'>3x^2\cdot e^{x^3}</tex>
-					<tex>e^{3x^2}</tex>
-					<tex>x^3\cdot e^{x^3}</tex>
-				</choices>
+  </step>
+  <step>
+    <context>
+			\textbf{Right or wrong? } \text{Given }\frac{d}{dx}e^{g(x)},\dfrac{d}{dx}f(x)\\
+			\text{will evaluate to the following.}
+			</context>
+    <tex correct="true">
+			\qquad \dfrac{d}{dx}f(x) = 3x^2\cdot e^{x^3}
+			</tex>
+    <reason>
+			\text{We know from Step 1 that }\\
+			\begin{align}
+			  \dfrac{d}{dx}e^{g(x)} &amp;= e^{g(x)}\cdot\dfrac{d}{dx}g(x) \\
+			  \therefore \dfrac{d}{dx}e^{x^3} &amp;= e^{x^3}\cdot\dfrac{d}{dx}x^3 \\
+			  &amp;= 3x^2\cdot e^{x^3}
+			\end{align}
+		</reason>
+  </step>
+  <choices>
+    <tex>e^{x^3}</tex>
+    <tex correct="true">3x^2\cdot e^{x^3}</tex>
+    <tex>e^{3x^2}</tex>
+    <tex>x^3\cdot e^{x^3}</tex>
+  </choices>
 </question>
