@@ -1,64 +1,95 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
-	<statement>
-		<tex>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
 			\text{Differentiate the following }\\
 			\quad f(x) = e^{\sin^{-1} x} \\
 			\text{with respect to x.}\\
 		</tex>
-	</statement>
-	
-		<step>
-			<context>
-			\text{For what values of x is f(x) defined?}
+  </statement>
+  <step>
+    <context>
+			\textbf{Right or wrong? } \text{If }f(x) = e^{g(x)},\text{ then}\\
+			\frac{d}{dx}f(x)\text{ equals the following.}
 			</context>
-			<tex correct="true">
-			\sin^{-1} x\text{ is defined only if }x\in \left[-1,1\right].\\
-			\text{Hence, the domain of f(x) is }\left[-1,1\right].
+    <tex correct="true">
+			\qquad \dfrac{d}{dx}f(x) = e^{g(x)}\cdot\dfrac{d}{dx}g(x)
 			</tex>
-			<tex correct="false">
-			f(x)\text{ is defined for all x.} \\
-			\text{In other words, }x\in\mathbb{R}.
-			</tex>
-			<reason>
-			\text{If }\sin^{-1}x = \theta\text{ then }x=\sin\theta.\\
-			\text{But, }-1\leq\sin\theta\leq 1\implies -1\leq x\leq 1.\\
-			\text{Hence, only if }x\in \left[-1,1\right]\text{ does f(x) make sense.}
+    <reason>
+			\begin{align}
+			 \text{If }f(x) &amp;= e^{g(x)},\text{ then }\\
+			 \dfrac{d}{dx}f(x) &amp;= \underbrace{\dfrac{d}{d g(x)}e^{g(x)}\cdot\dfrac{d}{dx}g(x)}_{\text{Chain Rule}}\\
+			 &amp;= e^{g(x)}\cdot\dfrac{d}{dx}g(x)
+			\end{align} \\
+			\textbf{Alternatively, } \\
+			\begin{align}
+			  f(x) = e^{g(x)} \implies \log f(x) &amp;= g(x)\cdot\underbrace{\log e}_{=1} \\
+			  \implies \dfrac{d}{dx}\log f(x) &amp;= \dfrac{d}{dx}g(x) \\
+			  \implies\dfrac{1}{f(x)}\dfrac{d}{dx}f(x) &amp;= \dfrac{d}{dx}g(x) \\
+			  \implies \dfrac{d}{dx}f(x) &amp;= \underbrace{e^{g(x)}}_{ = f(x) }\cdot\dfrac{d}{dx}g(x)
+			\end{align}
 			</reason>
-		</step>
-		
-			<step>
-				<context>
-				\text{Are the calculations done below correct?}
-				</context>
-				<tex correct="true">
-				\begin{align}
-				  \dfrac{d}{dx}e^{\sin^{-1} x} &amp;= \dfrac{d}{d \sin^{-1}x}e^{\sin^{-1}x}
-				  \cdot\dfrac{d}{dx}\sin^{-1}x \\
-				  &amp;= e^{\sin^{-1}x}\cdot\dfrac{1}{\sqrt{1-x^2}}, x\in \left(-1,1\right)
-				\end{align}
-				</tex>
-				
-				<reason>
-				\text{If }g(v) = e^v\text{ and }h(x) = \sin^{-1}x, \text{ then }f(x) = g(h(x)).\\
-				\text{Hence, apply Chain Rule - }\dfrac{df}{dx} = \dfrac{dg}{dh}\cdot\dfrac{dh}{dx}.\\
-				\text{Note also that f'(x) is not defined for }x=\pm 1.
-				</reason>
-			</step>
-		
-			<choices>
-				<tex>
+  </step>
+  <step>
+    <context>
+			\textbf{Right or wrong? } \text{Given }\frac{d}{dx}e^{g(x)},\dfrac{d}{dx}f(x)\\
+			\text{will evaluate to the following.}
+			</context>
+    <tex correct="true">
+			\qquad \dfrac{d}{dx}f(x) = \dfrac{e^{\sin^{-1}x}}{\sqrt{1-x^2}}, x\in (-1,1)
+			</tex>
+    <tex correct="false">
+			\qquad \dfrac{d}{dx}f(x) = -\dfrac{e^{\sin^{-1}x}}{\sqrt{1-x^2}}, x\in\mathbb{R}
+			</tex>
+    <reason>
+			\text{We know from Step 1 that }\\
+			\begin{align}
+			  \dfrac{d}{dx}e^{g(x)} &amp;= e^{g(x)}\cdot\dfrac{d}{dx}g(x) \\
+			  \therefore \dfrac{d}{dx}e^{\sin^{-1}x} &amp;= e^{\sin^{-1}x}\cdot\dfrac{d}{dx}\sin^{-1}x \\
+			  &amp;= \dfrac{e^{\sin^{-1}x}}{\sqrt{1-x^2}}
+			\end{align}\\
+			\textbf{But note that }\dfrac{d}{dx}f(x)\text{ is defined only}\\
+			\text{when } 1-x^2 \neq 0\text{ and }1-x^2 \gt 0.\\
+			\text{ Which means, } x\in (-1,1). \\
+			\text{Hence, }\dfrac{d}{dx}f(x) = \dfrac{e^{\sin^{-1}x}}{\sqrt{1-x^2}}, x\in (-1,1).
+			</reason>
+  </step>
+  <step>
+    <context>
+	  		\textbf{Right or wrong? }\text{ f'(x) is defined wherever}\\
+	  		\text{f(x) is defined. }
+	  		</context>
+    <tex correct="true">
+	  		  \textbf{No. }\text{ f'(x) is not defined at }x=\pm 1.\\
+	  		  \text{But f(x) is defined at }x = \pm 1.
+	  		</tex>
+    <tex correct="false">
+	  		  \textbf{Yes. }\text{ And it is expected, right?} \\
+	  		  \text{If f(x) exists, then so must f'(x).}
+	  		</tex>
+    <reason>
+	  		\text{If f(x) is not defined at some x, then}\\
+	  		\text{f'(x) cannot be. }\\
+	  		\textbf{But }\text{, if f(x) is defined, then it does}\\
+	  		\textbf{not }\text{mean that f'(x) must be too.} \\
+	  		\text{Notice that }f(x) = e^{\sin^{-1}x}\text{ is defined if }\sin^{-1}x\\
+	  		\text{ is defined. And }\sin^{-1}x\text{ is defined for }x\in [-1,1].\\
+	  		\text{But as we saw, f'(x) is defined only for }\\
+	  		x\in (-1,1) = [-1,1]-\lbrace -1,1\rbrace.
+	  		</reason>
+  </step>
+  <choices>
+    <tex>
 				-e^{\sin^{-1}x}\cdot\dfrac{1}{\sqrt{1+x^2}}
 				</tex>
-				<tex correct='true'>
+    <tex correct="true">
 				e^{\sin^{-1}x}\cdot\dfrac{1}{\sqrt{1-x^2}}, x\in \left(-1,1\right)
 				</tex>
-				<tex>
+    <tex>
 				e^{x}\sin^{-1}x \cdot\dfrac{1}{\sqrt{1-x^2}}, x\in \left(-1,1\right)
 				</tex>
-				<tex>
+    <tex>
 				e^{x}\cdot\dfrac{1}{\sqrt{1-x^2}}, x\in \left(-1,1\right)
 				</tex>
-			</choices>
-		
+  </choices>
 </question>
