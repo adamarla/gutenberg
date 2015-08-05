@@ -1,26 +1,38 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Find the following integral}
+    <tex>\text{Find the integral}
 \int \left(ax^2 + bx + c\right)dx</tex>
   </statement>
   <step>
-    <context>\text{Are the calculations below correct?}</context>
-    <tex correct='true'>
-\begin{align}
-\int \left(ax^{2} + bx + c\right)dx &amp;=\int ax^{2}dx+ \int bx\,dx  + c\,dx\\
-											&amp;=\dfrac{ax^{3}}{3} + \dfrac{bx^2}{2} + cx + d\\
-
+    <context>\text{Is the following expansion correct?}</context>
+    <tex correct='true'>\int \left(ax^{2} + bx + c\right)dx \\
+  \qquad=a\int x^{2}\, dx+ b\int x \,dx  + c\int dx</tex>
+    <reason>\int \left(A\cdot f(x)+B\right)\, dx = A\int f(x)\, dx+B\int dx \\
+\text{where A and B are constant (independent of $x$)}</reason>
+  </step>
+  <step>
+    <context>\text{Is the following integration correct?}  </context>
+    <tex correct='true'>\begin{align}
+  &amp;\int\left(ax^{2} + bx + c\right)dx \\
+    &amp;\qquad=a\int x^{2}dx+ \int bx\,dx  + c\,dx\\
+    &amp;\qquad=\dfrac{ax^{3}}{3} + \dfrac{bx^2}{2} + cx + D
 \end{align}\\
-\text{here, d is the constant of integration}
+\text{where D is the constant of integration}
 </tex>
-    <reason>\text{We have used the fact that }	\int x^{n}dx = \dfrac{x^{n + 1}}{n+1}\\
-\text{Check your calculation if you got something else.}\\</reason>
+    <tex>\begin{align}
+  &amp;\int\left(ax^{2} + bx + c\right)dx \\
+    &amp;\qquad=a\int x^{2}dx+ \int bx\,dx  + c\,dx\\
+    &amp;\qquad=ax^{3} + bx^2 + cx + D
+\end{align}\\
+\text{where D is the constant of integration}
+</tex>
+    <reason>\int x^{n}dx = \dfrac{x^{n + 1}}{n+1}</reason>
   </step>
   <choices>
-    <tex>\int \left(ax^2 + bx + c\right)dx =- \dfrac{ax^{3}}{3} + \dfrac{bx^2}{2} + cx + d</tex>
-    <tex>\int \left(ax^2 + bx + c\right)dx =\dfrac{ax^{3}}{3} - \dfrac{bx^2}{2} + cx + d</tex>
-    <tex correct='true'>\int \left(ax^2 + bx + c\right)dx =\dfrac{ax^{3}}{3} + \dfrac{bx^2}{2} + cx + d</tex>
-    <tex>\int \left(ax^2 + bx + c\right)dx =\dfrac{ax^{3}}{3} + \dfrac{bx^2}{2} + c + d</tex>
+    <tex>-\dfrac{ax^{3}}{3}+\dfrac{bx^2}{2}+cx+d</tex>
+    <tex>\dfrac{ax^{3}}{3} - \dfrac{bx^2}{2} + cx + d</tex>
+    <tex correct='true'>\dfrac{ax^{3}}{3} + \dfrac{bx^2}{2} + cx + d</tex>
+    <tex>\dfrac{ax^{3}}{3} + \dfrac{bx^2}{2} + c + d</tex>
   </choices>
 </question>

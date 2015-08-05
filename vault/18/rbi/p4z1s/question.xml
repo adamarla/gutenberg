@@ -1,28 +1,43 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Find the following integral}
-
+    <tex>\text{Find the integral}
 \int \left(\sqrt{x} - \dfrac{1}{\sqrt{x}}\right)^2 dx</tex>
   </statement>
   <step>
-    <context>\text{Are the calculations below correct?}</context>
+    <context>\text{Is the following expansion correct?}</context>
+    <tex correct='true'>\int \left(\sqrt{x} - \dfrac{1}{\sqrt{x}}\right)^2dx \\
+  \qquad = \int x\, dx + \int\dfrac{1}{x}\, dx -2\int dx</tex>
+    <tex>\int \left(\sqrt{x} - \dfrac{1}{\sqrt{x}}\right)^2dx 
+  = \int x\, dx - \int\dfrac{1}{x}\, dx</tex>
+    <reason>\int \left(A\cdot f(x)+B\cdot g(x)\right)^2\, dx \\
+  \qquad= A^2\int f(x)^2\, dx+B\int g(x)^2dx \\
+  \qquad\qquad+ 2AB\int f(x)\cdot g(x)\, dx \\
+\text{where A and B are constant (independent of $x$)}</reason>
+  </step>
+  <step>
+    <context>\text{Is the following integration correct?}</context>
     <tex correct='true'>\begin{align}
-\int \left(\sqrt{x} - \dfrac{1}{\sqrt{x}}\right)^2dx &amp;= \int \left(x + \dfrac{1}{x} -2\right)dx\\
-															 &amp;= \int x\,dx + \int \dfrac{1}{x}\,dx - 2\int 1\,dx\\
-															 &amp;= \dfrac{x^2}{2} + \log \vert x \vert + 2x + C  
+  &amp;\int \left(\sqrt{x} - \dfrac{1}{\sqrt{x}}\right)^2dx \\
+  &amp;\qquad = \int x\, dx + \int\dfrac{1}{x}\, dx -2\int dx \\
+  &amp;\qquad = \dfrac{x^2}{2} + \log \vert x \vert + 2x + C 
 \end{align}\\
-
 \text{Here C is constant of Integration}\\	
-
 </tex>
-    <reason>\text{We have used the fact that }\int x^{n}dx = \dfrac{x^{n+1}}{n+1} + c\\
-\text{Check your calculation if you got something else.}\\</reason>
+    <tex>\begin{align}
+  &amp;\int \left(\sqrt{x} - \dfrac{1}{\sqrt{x}}\right)^2dx \\
+  &amp;\qquad = \int x\, dx + \int\dfrac{1}{x}\, dx -2\int dx \\
+  &amp;\qquad = \dfrac{x^2}{2} -\dfrac{1}{x^2} + 2x + C 
+\end{align}\\
+\text{Here C is constant of Integration}\\	
+</tex>
+    <reason>\int x^{n}\, dx = \dfrac{x^{n+1}}{n+1} + C \quad (n\neq -1) \\
+\int \dfrac{1}{x}\, dx=\log \vert x \vert + C</reason>
   </step>
   <choices>
-    <tex>\int \left(\sqrt{x} - \dfrac{1}{\sqrt{x}}\right)^2 dx = \dfrac{x^2}{2} + \log \vert x \vert + 2x + C  </tex>
-    <tex correct='true'>\int \left(\sqrt{x} - \dfrac{1}{\sqrt{x}}\right)^2  dx = -\dfrac{x^2}{2} + \log \vert x \vert + 2x + C  </tex>
-    <tex>\int \left(\sqrt{x} - \dfrac{1}{\sqrt{x}}\right)^2 dx = \dfrac{x^2}{2} - \dfrac{1}{x^2} + 2x + C  </tex>
-    <tex>\int \left(\sqrt{x} - \dfrac{1}{\sqrt{x}}\right)^2 dx = \dfrac{x^2}{2} +\dfrac{1}{x^2} + 2x + C  </tex>
+    <tex correct='true'>\dfrac{x^2}{2} + \log \vert x \vert - 2x + C  </tex>
+    <tex>-\dfrac{x^2}{2} + \log \vert x \vert + 2x + C  </tex>
+    <tex>\dfrac{x^2}{2} - \dfrac{1}{x^2} + 2x + C  </tex>
+    <tex>\dfrac{x^2}{2} +\dfrac{1}{x^2} + 2x + C  </tex>
   </choices>
 </question>

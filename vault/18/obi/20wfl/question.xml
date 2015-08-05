@@ -1,28 +1,34 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Find the following integral}
-
-\int \left(4 e^{3x} + 1\right)dx</tex>
+    <tex>\text{Find the integral }\int \left(4 e^{3x} + 1\right)dx</tex>
   </statement>
   <step>
-    <context>\text{Are the calculations below correct?}</context>
-    <tex correct='true'>
-\begin{align}
-\int \left(4 e^{3x} + 1\right)dx &amp;= 4\int \left(e^{3x}\right)dx +\int 1\,dx \\
+    <context>\text{Is the following expansion correct?}</context>
+    <tex correct='true'>\int \left(4 e^{3x} + 1\right)dx=4\int e^{3x}\, dx +\int \, dx</tex>
+    <reason>\int \left(A\cdot f(x)+B\right)\, dx = A\int f(x)\, dx+B\int dx \\
+\text{where A and B are constant (independent of $x$)}</reason>
+  </step>
+  <step>
+    <context>\text{Is the following integration correct?}</context>
+    <tex correct='true'>\begin{align}
+  \int \left(4 e^{3x} + 1\right)dx &amp;= 4\int \left(e^{3x}\right)dx +\int 1\,dx \\
 										&amp;=4\left(\dfrac{e^{3x}}{3}\right) + x +C\\
-
 \end{align}\\
-\text{here, C is the constant of integration}
-
+\text{where C is the constant of integration}
 </tex>
-    <reason>\text{We have used the fact that }\int e^{t} dt = e^{t}+C.\\
+    <tex>\begin{align}
+  \int \left(4 e^{3x} + 1\right)dx &amp;= 4\int \left(e^{3x}\right)dx +\int 1\,dx \\
+										&amp;=4\left(e^{3x}\right) + x +C\\
+\end{align}\\
+\text{where C is the constant of integration}</tex>
+    <reason>\int e^{ax}dx = \dfrac{e^{ax}}{a}+C
 </reason>
   </step>
   <choices>
-    <tex>\int \left(4 e^{3x} + 1\right)dx =4\left(\dfrac{e^{3x}}{3}\right) - x +C\\</tex>
-    <tex correct='true'>\int \left(4 e^{3x} + 1\right)dx =4\left(\dfrac{e^{3x}}{3}\right) + x +C\\</tex>
-    <tex>\int \left(4 e^{3x} + 1\right)dx =-4\left(\dfrac{e^{3x}}{3}\right) + x +C\\</tex>
-    <tex>\int \left(4 e^{3x} + 1\right)dx =4e^{3x} + x +C\\</tex>
+    <tex>4\left(\dfrac{e^{3x}}{3}\right) - x +C\\</tex>
+    <tex correct='true'>4\left(\dfrac{e^{3x}}{3}\right) + x +C\\</tex>
+    <tex>-4\left(\dfrac{e^{3x}}{3}\right) + x +C\\</tex>
+    <tex>4e^{3x} + x +C\\</tex>
   </choices>
 </question>
