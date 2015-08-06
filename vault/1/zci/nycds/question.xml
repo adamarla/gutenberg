@@ -5,7 +5,7 @@
 			\text{Which of the points - A,B,C or D - in} \\
 			\text{the complex plane below are the roots} \\
 			\text{the equation} \\
-			  \qquad 3x^2 - 4x + \dfrac{20}{3} = 0
+			  \qquad 27x^2-10x+1 = 0
 		</tex>
     <image>plot.svg</image>
   </statement>
@@ -17,27 +17,27 @@
 			</context>
     <tex correct="true">
 			\text{The roots of the equation are} \\
-			\quad A = \left(\dfrac{2}{3} + \dfrac{4}{3}\iota\right)\text{ and }
-			B = \left(\dfrac{2}{3}-\dfrac{4}{3}\iota\right)
+			\quad A = \left(\dfrac{5}{27} + \dfrac{\sqrt{2}}{27}\iota\right)\text{ and }
+			B = \left(\dfrac{5}{27}-\dfrac{\sqrt{2}}{27}\iota\right)
 			</tex>
     <tex correct="false">
 			\text{The roots of the equation are} \\
-			\quad C = \left(-\dfrac{2}{3} + \dfrac{4}{3}\iota\right)\text{ and }
-			D = \left(-\dfrac{2}{3}-\dfrac{4}{3}\iota\right)
+			\quad C = \left(-\dfrac{5}{27} + \dfrac{\sqrt{2}}{27}\iota\right)\text{ and }
+			D = \left(-\dfrac{5}{27}-\dfrac{\sqrt{2}}{27}\iota\right)
 			</tex>
     <reason>
 			\begin{align}
-			  3x^2- 4x + \frac{20}{3} &amp;= 0 \\ 
-			  \implies x &amp;= \underbrace{\dfrac{4\pm\sqrt{16-4\cdot\frac{20}{3}\cdot 3}}{2\times 3}}_{x = \dfrac{-b\pm\sqrt{b^2-4ac}}{2a}} \\
-			  &amp;= \dfrac{4\pm\sqrt{-64}}{6} = \dfrac{4\pm 8\iota}{6} \\
-        &amp;= \dfrac{2}{3}\pm \dfrac{4}{3}\iota\implies\text{A and B}
+			  27x^2-10x+1 &amp;= 0 \\ 
+			  \implies x &amp;= \underbrace{\dfrac{10\pm\sqrt{100-4\cdot 27\cdot 1}}{2\times 27}}_{x = \dfrac{-b\pm\sqrt{b^2-4ac}}{2a}} \\
+			  &amp;= \dfrac{10\pm\sqrt{-8}}{54} = \dfrac{10\pm 2\sqrt{2}\iota}{54} \\
+			  &amp;= \dfrac{5}{27}\pm \dfrac{\sqrt{2}}{27}\iota\implies\text{A and B}
 			\end{align}
 			</reason>
   </step>
   <choices>
+    <tex correct="true">\text{A and B}</tex>
     <tex>\text{C and D}</tex>
     <tex>\text{B and C}</tex>
-    <tex correct="true">\text{A and B}</tex>
     <tex>\text{A and D}</tex>
   </choices>
 </question>
