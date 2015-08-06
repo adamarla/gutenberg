@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+			\text{Reduce }\left(\dfrac{1}{1-4i}-\dfrac{2}{1+i} \right)\cdot \left(\dfrac{3-4i}{5+i}\right)\\
+			\text{to the standard form.}
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\textbf{Right or wrong? } \\
+			\text{If }\left(\dfrac{1}{1-4i}-\dfrac{2}{1+i} \right) = \dfrac{A+iB}{C+iD}, \text{then} \\
+      \text{A,B,C and D have the following values.}
+			</context>
+    <tex correct="true">
+			\begin{tabular}{|c|c|c|c|}
+			\hline 
+			  A &amp; B &amp; C &amp; D  \\
+			  \hline 
+			  -1 &amp; 9 &amp; 5 &amp; -3 \\ 
+			  \hline 
+			\end{tabular}
+			</tex>
+    <tex correct="false">
+			\begin{tabular}{|c|c|c|c|}
+			\hline 
+			  A &amp; B &amp; C &amp; D  \\
+			  \hline 
+			  2 &amp; -9 &amp; 3 &amp; -5 \\ 
+			  \hline 
+			\end{tabular}
+			</tex>
+    <reason>
+			\text{Start with a little algebra} \\
+			\begin{align}
+			  \left(\dfrac{1}{1-4i}-\dfrac{2}{1+i} \right) &amp;= 
+			  \dfrac{(1+i) - 2\cdot(1-4i)}{(1-4i)\cdot (1+i)} \\
+			  &amp;= \dfrac{(1+i)-2 + 8i}{1 + i - 4i \underbrace{- 4i^2}_{= +4}} \\
+			  &amp;= \dfrac{-1 + 9i}{5-3i}
+			\end{align}
+			</reason>
+  </step>
+  <step>
+    <context>
+				\textbf{Right or wrong? } \\
+				\text{If }\left(\dfrac{-1 + 9i}{5-3i}\right)\cdot \left(\dfrac{3-4i}{5+i}\right)
+				= \dfrac{1}{n}\cdot\dfrac{E + iF}{G + iH}, (n\gt 1) \\
+				\text{then the values of E,F,G,H and n are as follows.}
+				</context>
+    <tex correct="true">
+				\begin{tabular}{|c|c|c|c|c|}
+				\hline
+				  E &amp; F &amp; G &amp; H &amp; n \\
+				  \hline
+				  33 &amp; 31 &amp; 14 &amp; -5 &amp; 2 \\
+				  \hline 
+				\end{tabular}
+				</tex>
+    <tex correct="false">
+				\begin{tabular}{|c|c|c|c|c|}
+				\hline
+				  E &amp; F &amp; G &amp; H &amp; n \\
+				  \hline
+				  -39 &amp; 31 &amp; 11 &amp; -5 &amp; 2 \\
+				  \hline 
+				\end{tabular}
+				</tex>
+    <reason>
+				\begin{align}
+				  \left(\dfrac{-1 + 9i}{5-3i}\right)&amp;\cdot \left(\dfrac{3-4i}{5+i}\right)
+				  = \dfrac{(-1+9i)\cdot (3-4i)}{(5-3i)\cdot (5+i)} \\
+				  &amp;= \dfrac{-3 + 4i + 27i \overbrace{-36 i^2}^{= 36}}{25 + 5i - 15i \underbrace{-3i^2}_{= 3}} \\
+				  &amp;= \dfrac{33 + 31i}{28-10i} = \frac{1}{2}\cdot\dfrac{33+31i}{14-5i}
+				\end{align}
+				</reason>
+  </step>
+  <step>
+    <context>
+					\text{Your friend claims that the final answer - }\\
+					\text{expressed in standard form - is as shown below. }\\
+					\textbf{Is he/she right?} 
+					</context>
+    <tex correct="true">
+					  \qquad \dfrac{307}{442} + \dfrac{599}{442} i
+					</tex>
+    <tex correct="false">
+					\qquad \dfrac{\frac{33}{2}}{( 14-5i)} + \dfrac{\frac{31}{2}}{(14-5i)}i
+					</tex>
+    <reason>
+					\textbf{In the standard form }(a + ib), a,b\in\mathbb{R}. \\
+					\text{Which means, we must reduce }\frac{1}{2}\cdot\dfrac{33+31i}{14-5i} \\
+					\text{still further.} \\
+					\begin{align}
+					  \frac{1}{2}\cdot\dfrac{33+31i}{14-5i} &amp;= 
+					  \frac{1}{2}\cdot\dfrac{33+31i}{14-5i}\cdot\dfrac{14+5i}{14+5i} \\
+					  &amp;= \dfrac{462 + 165i + 434i + 155i^2}{2\cdot (14^2 + 5^2)} \\
+					  &amp;= \dfrac{307 + 599i}{442} = \dfrac{307}{442} + \dfrac{599}{442}i
+					\end{align}
+ 					</reason>
+  </step>
+  <choices>
+    <tex correct="true">
+						\dfrac{307}{442} + \dfrac{599}{442}i
+						</tex>
+    <tex>
+						\dfrac{599}{442} + \dfrac{307}{442}i
+						</tex>
+    <tex>
+						\dfrac{307}{221} - \dfrac{599}{221}i</tex>
+    <tex>
+						\dfrac{307}{221} + \dfrac{599}{221}i
+						</tex>
+  </choices>
+</question>
