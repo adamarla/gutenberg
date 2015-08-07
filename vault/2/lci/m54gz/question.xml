@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If }\left(x+iy\right)^3=u+iv,\text{then show that} \\
+\dfrac{u}{x}+\dfrac{v}{y}=4\left(x^2-y^2\right)</tex>
+  </statement>
+  <step>
+    <context>\text{Is this the correct expansion for}\left(x+iy\right)^3?</context>
+    <tex correct='true'>x\left(x^2-3y^2\right)+iy\left(3x^2-y^2\right)</tex>
+    <tex>x\left(x^2+3y^2\right)+iy\left(3x^2+y^2\right)</tex>
+    <reason>\begin{align}
+  \left(x+iy\right)^3 &amp;= x^3+3x^2iy+3xi^2y^2+i^3y^3 \\
+    &amp;= x^3+3x^2iy-3xy^2-iy^3 \\
+    &amp;= x\left(x^2-3y^2\right)+iy\left(3x^2-y^2\right)
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{If }\left(x+iy\right)^3=x\left(x^2-3y^2\right)+iy\left(3x^2-y^2\right) \\
+\text{and }\left(x+iy\right)^3=u+iv \text{ then}</context>
+    <tex correct='true'>u=x\left(x^2-3y^2\right) \implies \dfrac{u}{x}=x^2-3y^2 </tex>
+    <reason></reason>
+  </step>
+</question>
