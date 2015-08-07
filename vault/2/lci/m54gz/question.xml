@@ -1,8 +1,8 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{If }\left(x+iy\right)^3=u+iv,\text{then show that} \\
-\dfrac{u}{x}+\dfrac{v}{y}=4\left(x^2-y^2\right)</tex>
+    <tex>\text{If }\left(x+iy\right)^3=u+iv,\text{then what is} \\
+\dfrac{u}{x}+\dfrac{v}{y}?</tex>
   </statement>
   <step>
     <context>\text{Is this the correct expansion for}\left(x+iy\right)^3?</context>
@@ -10,14 +10,33 @@
     <tex>x\left(x^2+3y^2\right)+iy\left(3x^2+y^2\right)</tex>
     <reason>\begin{align}
   \left(x+iy\right)^3 &amp;= x^3+3x^2iy+3xi^2y^2+i^3y^3 \\
-    &amp;= x^3+3x^2iy-3xy^2-iy^3 \\
+    &amp;= x^3+3x^2iy\overbrace{-3xy^2}^{i^2=-1}
+      \overbrace{-iy^3}^{i^3=-1} \\
     &amp;= x\left(x^2-3y^2\right)+iy\left(3x^2-y^2\right)
 \end{align}</reason>
   </step>
   <step>
-    <context>\text{If }\left(x+iy\right)^3=x\left(x^2-3y^2\right)+iy\left(3x^2-y^2\right) \\
-\text{and }\left(x+iy\right)^3=u+iv \text{ then}</context>
-    <tex correct='true'>u=x\left(x^2-3y^2\right) \implies \dfrac{u}{x}=x^2-3y^2 </tex>
-    <reason></reason>
+    <context>\text{If }u+iv =x\left(x^2-3y^2\right)+iy\left(3x^2-y^2\right) \\
+\text{then }\dfrac{u}{x}+\dfrac{v}{y}\text{ is}</context>
+    <tex correct='true'>4\left(x^2-y^2\right)</tex>
+    <tex>-4\left(x^2-y^2\right)</tex>
+    <reason>{\bf a+ib=c+id \implies a=c, b=d} \\
+\therefore u+iv =x\left(x^2-3y^2\right)+iy\left(3x^2-y^2\right) \\
+\implies 
+\begin{align}
+  u=x\left(x^2-3y^2\right) \implies \dfrac{u}{x}=x^2-3y^2 \\
+  v=y\left(3x^2-y^2\right) \implies \dfrac{v}{y}=3x^2-y^2 \\
+\end{align} \\
+\begin{align}
+  \therefore
+    \dfrac{u}{x}+\dfrac{v}{y} &amp;=x^2-3y^2+3x^2-y^2 \\
+    &amp;=4\left(x^2-y^2\right)
+\end{align}</reason>
   </step>
+  <choices>
+    <tex>2\left(x^2-y^2\right)</tex>
+    <tex>-4\left(x^2-y^2\right)</tex>
+    <tex correct='true'>4\left(x^2-y^2\right)</tex>
+    <tex>\left(x^2-y^2\right)</tex>
+  </choices>
 </question>
