@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+			\text{If }z_1 = 2-\iota, z_2 = 1 + \iota\text{, find }\left\vert\dfrac{z_1+z_2+1}{z_1-z_2+1}\right\vert
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\textbf{Right or wrong? } \\
+			\text{If }z_3 = \dfrac{z_1+z_2+1}{z_1-z_2+1} = \dfrac{a+\iota b}{c+\iota d},\text{ then }\\
+			a,b,c\text{ and } d\text{ are as follows.}
+			</context>
+    <tex correct="true">
+			\begin{tabular}{|c|c|c|c|}
+			\hline 
+			a &amp; b &amp; c &amp; d \\
+			\hline
+			2 &amp; 0 &amp; 1 &amp; -1 \\
+			\hline
+			\end{tabular}
+			</tex>
+    <tex correct="false">
+			\begin{tabular}{|c|c|c|c|}
+			\hline 
+			a &amp; b &amp; c &amp; d \\
+			\hline
+			4 &amp; -2 &amp; 2 &amp; 1 \\
+			\hline
+			\end{tabular}
+			</tex>
+    <reason>
+			\text{We first find what }z_3 = \dfrac{z_1+z_2+1}{z_1-z_2+1}\text{ is before}\\
+			\text{finding what }\vert z_3\vert\text{ is.} \\
+			\begin{align}
+			  z_3 &amp;= \dfrac{z_1+z_2+1}{z_1-z_2+1} \\ 
+			  &amp;= \dfrac{(2-\iota) + (1+\iota) + 1}{(2-\iota)-(1+\iota) + 1}\\
+			  &amp;= \dfrac{4}{2-2\iota} = \dfrac{2}{1-\iota}
+			\end{align} \\
+			\text{Compare }\dfrac{2}{1-\iota}\text{ with }\dfrac{a +\iota b}{c+\iota d}\text{ and you will see}\\
+			\begin{tabular}{|c|c|c|c|}
+			\hline 
+			a &amp; b &amp; c &amp; d \\
+			\hline
+			2 &amp; 0 &amp; 1 &amp; -1 \\
+			\hline
+			\end{tabular}
+			</reason>
+  </step>
+  <step>
+    <context>
+				\text{Your friends claims that to find }\\
+				\vert z_3\vert = \left\vert \dfrac{2}{1-\iota}\right\vert, \\
+				\text{we }\textbf{must}\text{ first convert }z_3\text{ into }x+\iota y \text{ form.}\\
+				\textbf{Is he / she correct?}
+				</context>
+    <tex correct="true">
+				\textbf{No. }\text{You can - but don't have to - express }z_3 \\
+				\text{in }x+\iota y\text{ form. There is a standard result for}\\
+				\left\vert\dfrac{z_m}{z_n}\right\vert\text{ that one could also use.}
+				</tex>
+    <tex correct="false">
+				\textbf{Yes. }\text{Only when }z_3\text{ is in } x + \iota y\text{ form can} \\
+				\text{find }\vert z_3\vert\text{ using }\vert z_3\vert = \sqrt{x^2 + y^2}
+				</tex>
+    <reason>
+				  \text{If you expressed }z_3\text{ in standard form firm first,}\\
+				  \text{then that is ok. But it still helps to know that}\\
+				  \qquad \left\vert \dfrac{z_m}{z_n}\right\vert = 
+				  \dfrac{\vert z_m\vert}{\vert z_n\vert},\text{ if }\vert z_n\vert \neq 0.
+				</reason>
+  </step>
+  <step>
+    <context>
+					\textbf{Right or wrong? } \\
+					\left\vert\dfrac{2}{1-\iota}\right\vert\text{ therefore equals the following}
+					</context>
+    <tex correct="true">
+					\qquad \left\vert\dfrac{2}{1-\iota}\right\vert = \sqrt{2}
+					</tex>
+    <tex correct="false">
+					\qquad \left\vert\dfrac{2}{1-\iota}\right\vert = 2
+					</tex>
+    <reason>
+					\begin{align}
+					  \left\vert\dfrac{2}{1-\iota}\right\vert &amp;= \dfrac{\vert 2\vert}{\vert 1-\iota\vert} \\
+					  &amp;= \dfrac{2}{\sqrt{1^2+1^2}} = \sqrt{2}
+					\end{align}
+					</reason>
+  </step>
+  <choices>
+    <tex>2\sqrt{2}</tex>
+    <tex>2</tex>
+    <tex correct="true">\sqrt{2}</tex>
+    <tex>4</tex>
+  </choices>
+</question>
