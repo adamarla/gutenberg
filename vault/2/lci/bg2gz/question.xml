@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the real numbers $x$ and $y$ if} \\
+\left(x-iy\right)\left(3+5i\right)
+\text{ is the conjugate of }
+\left(-6-2i\right).</tex>
+  </statement>
+  <step>
+    <context>\text{If}\left(a+ib\right)\text{is a conjugate of}\left(c+id\right), \text{the}\\
+\text{following is true.}</context>
+    <tex correct='true'>a=c, b=-d</tex>
+    <tex>a=-c, b=-d</tex>
+    <reason>\text{The conjugate of complex number }z=a+ib, \\
+\text{denoted by $\bar{z}$, is given by }\bar{z}=a-ib.</reason>
+  </step>
+  <step>
+    <context>\left(x-iy\right)\left(3+5i\right)\text{reduced to the form }a+ib \\
+\text{looks like this.}</context>
+    <tex correct='true'>\left(3x+5y\right)+i\left(5x-3y\right)</tex>
+    <tex>\left(3x-5y\right)+i\left(5x-3y\right)</tex>
+    <reason>\begin{align}
+  \left(x-iy\right)\left(3+5i\right) &amp;= 3x+5xi-3yi-5y{\bf i^2} \\
+    &amp;= 3x-5y\cdot{\bf (-1)}+5xi-3yi \\
+    &amp;= \left(3x+5y\right)+i\left(5x-3y\right)
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{If }\left(3x+5y\right)+i\left(5x-3y\right) \text{is the conjugate of}\\
+\left(-6-24i\right),\text{x and y are the following.}</context>
+    <tex correct='true'>x=3, y=3</tex>
+    <reason>\text{Conjugate of}\left(-6-24i\right)\text{is}\left(-6+24i\right) \text{therefore,}\\
+\begin{align}
+  \quad 3x+5y &amp;= -6 \\
+  \quad 5x-3y  &amp;= 24
+\end{align} \\
+\text{solve the above to get the answer.}</reason>
+  </step>
+  <choices>
+    <tex>x=3, y=3</tex>
+    <tex>x=3, y=3</tex>
+    <tex>x=-3, y=-3</tex>
+    <tex correct='true'>x=3, y=-3</tex>
+  </choices>
+</question>

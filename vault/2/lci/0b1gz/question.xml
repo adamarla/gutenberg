@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the modulus of }\dfrac{1+i}{1-i}-\dfrac{1-i}{1+i}</tex>
+  </statement>
+  <step>
+    <context>\dfrac{1+i}{1-i}-\dfrac{1-i}{1+i}\text{ reduced to the form }a+ib \\
+\text{looks like this}</context>
+    <tex correct='true'>2i</tex>
+    <tex>(2+i)</tex>
+    <reason>\begin{align}
+  \dfrac{1+i}{1-i}-\dfrac{1-i}{1+i} 
+    &amp;= \dfrac{\overbrace{(1+i)^2-(1-i)^2}^{\text{expand as }a^2-b^2}}
+      {(1-i)(1+i)} \\
+    &amp;= \dfrac{2\times 2i}{(1-i^2)}=2i
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>\text{Modulus {\it$r$} of complex number $2i$ is}</context>
+    <tex correct='true'>r=2</tex>
+    <tex>r=4</tex>
+    <reason>\text{Modulus of a complex number }z=a+ib \text{ is} \\
+\text{defined as }\sqrt{a^2+b^2}. \text{ Therefore, }z=\sqrt{2^2}=2.</reason>
+  </step>
+  <choices>
+    <tex correct='true'>2</tex>
+    <tex>4</tex>
+    <tex>-4</tex>
+    <tex>-2</tex>
+  </choices>
+</question>
