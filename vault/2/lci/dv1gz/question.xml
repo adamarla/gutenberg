@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the number of non-zero integral solutions}  \\
+\text{of the equation }\left\vert 1-i\right\vert^x=2^x</tex>
+  </statement>
+  <step>
+    <context>\text{If }z=\left\vert 1-i\right\vert, \\
+\left\vert z\right\vert \text{equals the following}</context>
+    <tex correct='true'>\left\vert z\right\vert=\left\vert 1-i\right\vert=\sqrt{2}</tex>
+    <tex>\left\vert z\right\vert=\left\vert 1-i\right\vert=0</tex>
+    <reason>\text{The modulus $r$ of a complex number $z=x+iy$} \\
+\text{is }r = \sqrt{x^2+y^2}\, .</reason>
+  </step>
+  <step>
+    <context>\text{If }\left\vert 1-i\right\vert=\sqrt{2}\text{ and }x \in \mathbb{Z}, \\
+\text{ then what does }(\sqrt{2})^x=2^x \text{ imply?}
+
+</context>
+    <tex correct='true'>x=0</tex>
+    <tex>x = n, \text{ where }n \in \mathbb{N}</tex>
+    <reason>\text{If x is an Integer, }(\sqrt{2})^x=2^x \\
+\text{can only be true for }x=0.</reason>
+  </step>
+  <choices>
+    <tex>\sqrt{2}</tex>
+    <tex>0</tex>
+    <tex>2</tex>
+    <tex correct='true'>\text{There are none.}</tex>
+  </choices>
+</question>

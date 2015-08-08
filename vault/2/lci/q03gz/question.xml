@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If }\left(a+ib\right)\left(c+id\right)
+  \left(e+if\right)\left(g+ih\right)=A+iB\, , \\
+\text{express}  \\
+  (a^2+b^2)(c^2+d^2)
+    (e^2+f^2)(g^2+h^2) \\
+\text{in terms of $A$ and $B$}.</tex>
+  </statement>
+  <step>
+    <context>\text{If $z_1$ and $z_2$ are complex numbers, what is } \\
+|z_1\cdot z_2|?</context>
+    <tex correct='true'>|z_1\cdot z_2|=|z_1|\cdot |z_2|</tex>
+    <tex>|z_1\cdot z_2|=|z_1|+ |z_2|</tex>
+    <reason>\begin{align}
+  z_1\cdot z_2 &amp;= (x+iy)\cdot (p+iq) \\
+    &amp;= xp+ixq+iyp+i^2yq \\
+    &amp;= (xp-yq)+i(xq+yp) \\
+  |z_1\cdot z_2| &amp;= \sqrt{(xp-yq)^2+(xq+yp)^2} \\
+    &amp;= \sqrt{x^2p^2+y^2q^2+x^2q^2+y^2p^2} \\
+    &amp;= \sqrt{(x^2+y^2)}\cdot \sqrt{(p^2+q^2)} \\
+    &amp;= |z_1|\cdot|z_2|
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{If }|z_1\cdot z_2|=|z_1|\cdot |z_2| \text{ and} \\
+(a+ib)(c+id)(e+if)(g+ih)=A+iB, \\
+\text{then }(A^2+B^2) \text{ equals}?</context>
+    <tex correct='true'>(a^2+b^2)(c^2+d^2)(e^2+f^2)(g^2+h^2)</tex>
+    <tex>(a^2+b^2)+(c^2+d^2)+(e^2+f^2)+(g^2+h^2)</tex>
+    <reason>(a+ib)(c+id)(e+if)(g+ih) =A+iB \\
+\therefore |(a+ib)(c+id)(e+if)(g+ih)|=|A+iB| \\
+|(a+ib)||(c+id)||(e+if)||(g+ih)|=|A+iB| \\
+(a^2+b^2)(c^2+d^2)(e^2+f^2)(g^2+h^2)=A^2+B^2</reason>
+  </step>
+  <choices>
+    <tex>A+B</tex>
+    <tex correct='true'>A^2+B^2</tex>
+    <tex>A^2-B^2</tex>
+    <tex>2(A+B)</tex>
+  </choices>
+</question>
