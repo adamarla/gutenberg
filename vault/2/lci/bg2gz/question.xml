@@ -2,8 +2,7 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>\text{Find the real numbers $x$ and $y$ if} \\
-\left(x-iy\right)\left(3+5i\right)
-\text{ is the conjugate of }
+\left(x-iy\right)\left(3+5i\right) \text{ is the conjugate of }\\
 \left(-6-2i\right).</tex>
   </statement>
   <step>
@@ -16,7 +15,7 @@
   </step>
   <step>
     <context>\left(x-iy\right)\left(3+5i\right)\text{reduced to the form }a+ib \\
-\text{looks like this.}</context>
+\text{looks like this}</context>
     <tex correct='true'>\left(3x+5y\right)+i\left(5x-3y\right)</tex>
     <tex>\left(3x-5y\right)+i\left(5x-3y\right)</tex>
     <reason>\begin{align}
@@ -29,12 +28,13 @@
     <context>\text{If }\left(3x+5y\right)+i\left(5x-3y\right) \text{is the conjugate of}\\
 \left(-6-24i\right),\text{x and y are the following.}</context>
     <tex correct='true'>x=3, y=3</tex>
+    <tex>x=3, y=-3</tex>
     <reason>\text{Conjugate of}\left(-6-24i\right)\text{is}\left(-6+24i\right) \text{therefore,}\\
 \begin{align}
   \quad 3x+5y &amp;= -6 \\
   \quad 5x-3y  &amp;= 24
 \end{align} \\
-\text{solve the above to get the answer.}</reason>
+\text{on solving }x=3, y=3</reason>
   </step>
   <choices>
     <tex>x=3, y=3</tex>

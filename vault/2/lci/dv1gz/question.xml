@@ -5,22 +5,19 @@
 \text{of the equation }\left\vert 1-i\right\vert^x=2^x</tex>
   </statement>
   <step>
-    <context>\text{If }z=\left\vert 1-i\right\vert, \\
-\left\vert z\right\vert \text{equals the following}</context>
+    <context>\text{If }z=1-i, \left\vert z\right\vert \text{equals the following}</context>
     <tex correct='true'>\left\vert z\right\vert=\left\vert 1-i\right\vert=\sqrt{2}</tex>
     <tex>\left\vert z\right\vert=\left\vert 1-i\right\vert=0</tex>
     <reason>\text{The modulus $r$ of a complex number $z=x+iy$} \\
 \text{is }r = \sqrt{x^2+y^2}\, .</reason>
   </step>
   <step>
-    <context>\text{If }\left\vert 1-i\right\vert=\sqrt{2}\text{ and }x \in \mathbb{Z}, \\
-\text{ then what does }(\sqrt{2})^x=2^x \text{ imply?}
-
-</context>
+    <context>\text{ If $x \in \mathbb{Z}$, what does }
+(\sqrt{2})^x=2^x \text{ imply?}</context>
     <tex correct='true'>x=0</tex>
     <tex>x = n, \text{ where }n \in \mathbb{N}</tex>
-    <reason>\text{If x is an Integer, }(\sqrt{2})^x=2^x \\
-\text{can only be true for }x=0.</reason>
+    <reason>\text{If x is an Integer, $(\sqrt{2})^x=2^x$ can only be true} \\
+\text{for }x=0.</reason>
   </step>
   <choices>
     <tex>\sqrt{2}</tex>

@@ -10,8 +10,7 @@
     <tex>x\left(x^2+3y^2\right)+iy\left(3x^2+y^2\right)</tex>
     <reason>\begin{align}
   \left(x+iy\right)^3 &amp;= x^3+3x^2iy+3xi^2y^2+i^3y^3 \\
-    &amp;= x^3+3x^2iy\overbrace{-3xy^2}^{i^2=-1}
-      \overbrace{-iy^3}^{i^3=-1} \\
+    &amp;= x^3+3x^2iy-3xy^2-iy^3 \\
     &amp;= x\left(x^2-3y^2\right)+iy\left(3x^2-y^2\right)
 \end{align}</reason>
   </step>

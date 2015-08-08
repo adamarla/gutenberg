@@ -11,9 +11,10 @@
 \left\vert\dfrac{z_1}{z_2}\right\vert \text{and } \dfrac{|z_1|}{|z_2|}?</context>
     <tex correct='true'>\left\vert\dfrac{z_1}{z_2}\right\vert=\dfrac{|z_1|}{|z_2|}</tex>
     <tex>\left\vert\dfrac{z_1}{z_2}\right\vert\neq\dfrac{|z_1|}{|z_2|}</tex>
-    <reason>\begin{align}
-  \dfrac{z_1}{z_2} &amp;= \dfrac{x+iy}{p+iq} \\
-    &amp;= \dfrac{x+iy}{p+iq}\cdot\dfrac{p-iq}{p-iq} \\
+    <reason>z_1=x+iy\text{ and }z_2=p+iq \text{ then}, \\
+\begin{align}
+  \dfrac{z_1}{z_2} &amp;= \dfrac{x+iy}{p+iq}
+      = \dfrac{x+iy}{p+iq}\cdot\dfrac{p-iq}{p-iq} \\
     &amp;= \dfrac{(xp+yq)+i(py-xq)}{p^2+q^2} \\
   \left\vert\dfrac{z_1}{z_2}\right\vert
     &amp;=\sqrt{\dfrac{(xp+yq)^2+(py-xq)^2}{(p^2+q^2)^2}} \\
@@ -22,14 +23,16 @@
 \end{align}</reason>
   </step>
   <step>
-    <context>\text{If $\alpha=a+ib$ and $\beta=c+ix$, what is} \\
+    <context>\text{If $\alpha=a+ib$ and $\beta=c+id$, what is} \\
 |\beta-\alpha|?</context>
     <tex correct='true'>\sqrt{1+a^2+b^2-2ac-2bd}</tex>
+    <tex>\sqrt{c^2+d^2}-\sqrt{a^2+b^2}</tex>
     <reason>\begin{align}
   \beta-\alpha &amp;= (c+id)-(a+ib) \\
     &amp;= (c-a) + i(d-b) \\
-  |\beta-\alpha| &amp;= \sqrt{\underbrace{c^2+a^2}_{|\beta|=1}
-      -2ac+b^2+d^2-2bd} \\
+  |\beta-\alpha| &amp;= \sqrt{c^2+a^2-2ac+b^2+d^2-2bd} \\
+    &amp;= \sqrt{\underbrace{c^2+d^2}_{|\beta|=1}
+      -2ac+b^2+a^2-2bd} \\  
     &amp;=\sqrt{1+a^2+b^2-2ac-2bd}
 \end{align}
 </reason>
@@ -38,12 +41,13 @@
     <context>\text{If $\alpha=a+ib$ and $\beta=c+ix$, what is} \\
 |1-\bar{\alpha}\beta|?</context>
     <tex correct='true'>\sqrt{1+a^2+b^2-2ac-2bd}</tex>
+    <tex>1-\sqrt{a^2+b^2}\sqrt{c^2+d^2}</tex>
     <reason>\begin{align}
   1-\bar{\alpha}\beta &amp;= 1-(a-ib)(c+id) \\
     &amp;= (1-ac-bd)+i(bc-ad) \\
 \end{align} \\
-|1-\bar{\alpha}\beta|= \sqrt{(1-ac-bd)^2+(bc_ad)^2} \\
-= \sqrt{1+a^2c^2+b^d^2-2ac-2bc+b^2c^2+a^2d^2} \\
+|1-\bar{\alpha}\beta|= \sqrt{(1-ac-bd)^2+(bc-ad)^2} \\
+= \sqrt{1+a^2c^2+b^2d^2-2ac-2bc+b^2c^2+a^2d^2} \\
 = \sqrt{1+a^2(\underbrace{c^2+d^2)}_{|\beta|=1}+
   b^2(c^2+d^2)-2ac-2bc} \\
 =\sqrt{1+a^2+b^2-2ac-2bc}
@@ -55,8 +59,9 @@
 \left\vert\dfrac{\beta-\alpha}{1-\bar{\alpha}\beta}\right\vert?</context>
     <tex correct='true'>1</tex>
     <tex>\text{cannot be determined}</tex>
-    <reason>\left\vert\dfrac{\beta-\alpha}{1-\bar{\alpha}\beta}\right\vert
-  =\dfrac{|\beta-\alpha|}{|1-\bar{\alpha}\beta|}=1</reason>
+    <reason>\text{If $z_1$ and $z_2$ are two complex numbers then} \\
+\left\vert\dfrac{z_1}{z_2}\right\vert=\dfrac{|z_1|}{|z_2|} \\
+</reason>
   </step>
   <choices>
     <tex>\alpha\beta</tex>
