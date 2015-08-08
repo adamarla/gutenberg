@@ -8,9 +8,10 @@
   </statement>
   <step>
     <context>
-			\text{Is the following correct given that}\\
-			z_1 = a-\iota b = R_1\cdot(\cos\theta_1 + \iota\sin\theta_1) = R_1\cdot e^{\iota\theta_1}\\
-			\text{and }z_2 = c-\iota d = R_2\cdot e^{\iota\theta_2}
+			\text{Let } \\
+			\qquad z_1 = a-\iota b = R_1\cdot e^{\iota\theta_1}\text{ and }\\
+			\qquad z_2 = c-\iota d = R_2\cdot e^{\iota\theta_2}. \\
+			\text{Given this, is the following correct?}
 			</context>
     <tex correct="true">
 			\begin{align}
