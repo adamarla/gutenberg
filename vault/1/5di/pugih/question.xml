@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+			\text{Evaluate the following} \\
+			\qquad \int (\sqrt{\cot x} + \sqrt{\tan x})\cdot dx
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\textbf{Right or wrong? } \\
+			\text{The following first step would make} \\
+			\text{evaluating the integral easier.}
+			</context>
+    <tex correct="true">
+			\qquad\text{Let }\tan x = t^2
+			</tex>
+    <tex correct="false">
+			\begin{align}
+			  I &amp;= \int (\sqrt{\cot x} + \sqrt{\tan x})\cdot dx \\ 
+			  &amp;= \underbrace{\int\sqrt{\cot x}\cdot dx}_A + 
+			  \underbrace{\int\sqrt{\tan x}\cdot dx}_B 
+			\end{align} \\
+			\text{We then evaluate A and B separately.}
+			</tex>
+    <reason>
+			\text{Ideally, you want to reduce the number of}\\
+			\sqrt{x}\text{ in an expression. One }\sqrt{x}\text{ type term is}\\
+			\text{better than two. But no }\sqrt{x}\text{ type term is best.}
+			</reason>
+  </step>
+  <step>
+    <context>
+				\textbf{Right or wrong? }  \\
+				\text{With }\tan x = t^2,\text{ the integral (I) can be}\\
+				\text{re-written as follows (in terms of t).}
+				</context>
+    <tex correct="true">
+				\qquad I = 2\int\dfrac{t^2+1}{t^4+1}\cdot dt 
+				</tex>
+    <tex correct="false">
+				\qquad I = 2\int\dfrac{t^2+1}{t^2+1}\cdot dt = 2\int dt 
+				</tex>
+    <reason>
+				\begin{align}
+				  \tan x &amp;= t^2 \implies \sec^2 x\cdot dx = 2t\cdot dt \\
+				  \implies dx &amp;= \dfrac{2t}{1+\tan^2 x}\cdot dt = \dfrac{2t}{1 + t^4}\cdot dt \\
+				  \implies I &amp;= \int (\sqrt{\cot x} + \sqrt{\tan x})\cdot dx  \\
+				  &amp;= \int \left(\frac{1}{t} + t\right)\cdot \dfrac{2t}{1+t^4}\cdot dt \\ 
+				  &amp;= 2\int\dfrac{t^2 + 1}{t^4 + 1}\cdot dt
+				\end{align}
+				</reason>
+  </step>
+  <step>
+    <context>
+			2\int\dfrac{t^2 + 1}{t^4 + 1}\cdot dt\text{ can be re-written as } 2\int\dfrac{dz}{z^2 + a^2},\\
+			\text{where 'a' is a constant. But is this possible}\\
+			\text{with the following substitution and 'a'?}
+			</context>
+    <tex correct="true">
+			\qquad\begin{align}
+			  z &amp;= t-\frac{1}{t} \\
+			  a &amp;= \sqrt{2}
+			\end{align}
+			</tex>
+    <tex correct="false">
+			\qquad\begin{align}
+			  z &amp;= t + \frac{1}{t} \\
+			  a &amp;= \sqrt{2}
+			\end{align}
+			</tex>
+    <reason>
+			  \begin{align}
+			    I &amp;= 2\int\dfrac{t^2 + 1}{t^4 + 1}\cdot dt \\ 
+			    &amp;= 2\int\dfrac{1+\frac{1}{t^2}}{t^2+\frac{1}{t^2}}\cdot dt  \\
+			    \text{Now, }\dfrac{d}{dt}\left(t-\frac{1}{t}\right) &amp;= 1 + \frac{1}{t^2} \\
+			    \text{Hence, if } z &amp;= t-\frac{1}{t} \\
+			    \text{then }\left(1+\frac{1}{t^2}\right) dt &amp;= dz\\
+			    \implies I &amp;= \underbrace{2\int\dfrac{dz}{z^2 + 2}}_{p^2+q^2=(p-q)^2 + 2pq} \\
+			    &amp;= 2\int\dfrac{dz}{z^2 + (\sqrt{2})^2}
+			  \end{align}
+			</reason>
+  </step>
+  <step>
+    <context>
+				\textbf{Right or wrong? } \\
+				\text{Given } I = 2\int\dfrac{dz}{z^2 + (\sqrt{2})^2},\text{ I is}\\
+				\text{the following in terms of x.}
+				</context>
+    <tex correct="true">
+				\sqrt{2}\tan^{-1}\left(\dfrac{\tan x - 1}{\sqrt{2\cdot\tan x}}\right) + C
+				</tex>
+    <tex correct="false">
+				2\tan^{-1}\left(\dfrac{\tan x}{\sqrt{2\cdot\tan x}}\right) + C
+				</tex>
+    <reason>
+				\begin{align}
+				  I &amp;= 2\int\dfrac{dz}{z^2 + (\sqrt{2})^2} 
+				  = 2\cdot\dfrac{1}{\sqrt{2}}\tan^{-1}\dfrac{z}{\sqrt{2}} + C\\
+				  &amp;= \underbrace{\sqrt{2}\tan^{-1}\dfrac{t^2-1}{\sqrt{2}\cdot t}}_{z = t-\frac{1}{t}} + C\\
+				  &amp;= \sqrt{2}\tan^{-1}\left(\underbrace{\dfrac{\tan x - 1}{\sqrt{2\cdot\tan x}}}_{t^2 = \tan x}\right) + C
+				\end{align}
+				</reason>
+  </step>
+  <choices>
+    <tex>
+					\sqrt{2}\tan^{-1}\left(\dfrac{\tan x}{\sqrt{2}}\right) + C
+					</tex>
+    <tex>
+					2\tan^{-1}\left(\dfrac{\tan x}{\sqrt{2\cdot\tan x}}\right) + C
+					</tex>
+    <tex correct="true">
+					\sqrt{2}\tan^{-1}\left(\dfrac{\tan x - 1}{\sqrt{2\cdot\tan x}}\right) + C
+					</tex>
+    <tex>
+					\sqrt{2}\tan^{-1}\left(\dfrac{\tan x - 1}{\sqrt{2}}\right) + C
+					</tex>
+  </choices>
+</question>
