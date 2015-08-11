@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+			\text{Find }\frac{dy}{dx}\text{ if }x = \alpha\sin 2t\cdot (1+\cos 2t)\text{ and } \\
+			y = \beta\cos 2t\cdot (1-\cos 2t)
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\textbf{Strategy?} \\
+			\text{Would we be right if we said the following?}
+			</context>
+    <tex correct="true">
+			\qquad \dfrac{dy}{dx} = \dfrac{\dfrac{dy}{dt}}{\dfrac{dx}{dt}}
+			</tex>
+    <tex correct="false">
+			\qquad \dfrac{dy}{dx} = \dfrac{\dfrac{dx}{dt}}{\dfrac{dy}{dt}}
+			</tex>
+    <reason>
+			\text{Both x and y are expressed in terms of}\\
+			\text{a third variable/parameter - t. Hence, }\\
+			\begin{align}
+			  \dfrac{dy}{dx} &amp;= \dfrac{\dfrac{dy}{dt}}{\dfrac{dx}{dt}}
+			\end{align}
+			</reason>
+  </step>
+  <step>
+    <context>
+				\quad \dfrac{dx}{dt} = \alpha\cdot\cos Mt\cdot \cos Nt,\, (M\gt N).\\
+				\text{What are the values of M and N?}
+				</context>
+    <tex correct="true">
+				\qquad M = 3, N = 1
+				</tex>
+    <tex correct="false">
+				\qquad M = 4, N = 2
+				</tex>
+    <reason>
+				\begin{align}
+				  \dfrac{dx}{dt} &amp;= \alpha\left[
+				  (1+\cos 2t)\frac{d\sin 2t}{dt}
+				  + \sin 2t\dfrac{d (1+\cos 2t)}{dt}\right] \\
+				  &amp;= \alpha\left[(1+\cos 2t)\dfrac{\cos 2t}{2} 
+				  - \sin 2t\dfrac{\sin 2t}{2}\right] \\
+				  &amp;=\dfrac{\alpha}{2}\cdot \left[\cos 2t + \underbrace{\cos^2 2t-\sin^2 2t}
+				  _{\cos^2\theta - \sin^2\theta = \cos 2\theta} \right] \\
+				  &amp;= \dfrac{\alpha}{2}\cdot \left[\cos 2t + \cos 4t\right] \\
+				  &amp;= \dfrac{\alpha}{2}\cdot \left(2\cos\dfrac{2t+4t}{2}\cos\dfrac{4t-2t}{2}\right) \\
+				  &amp;= \alpha\cdot\cos 3t\cdot\cos t \implies M = 3,N = 1.
+				\end{align}
+				</reason>
+  </step>
+  <step>
+    <context>
+			\text{Similarly, }\dfrac{dy}{dt} = \beta\cdot\cos Pt\sin Qt. \\
+			\text{What are P and Q - and therefore }\dfrac{dy}{dx}?
+			</context>
+    <tex correct="true">
+			\qquad P = 3, Q = 1, \dfrac{dy}{dx} = \dfrac{\beta}{\alpha}\tan t
+			</tex>
+    <tex correct="false">
+			\qquad P = 1, Q = 3, \dfrac{dy}{dx} = \dfrac{\beta}{\alpha}\tan 3t
+			</tex>
+    <reason>
+			\begin{align}
+			\dfrac{dy}{dt} &amp;= \beta\left[
+				  (1-\cos 2t)\frac{d\cos 2t}{dt}
+				  + \cos 2t\dfrac{d (1-\cos 2t)}{dt}\right] \\
+				  &amp;= \beta\left[(1-\cos 2t)\dfrac{-\sin 2t}{2} 
+				  + \cos 2t\dfrac{\sin 2t}{2}\right] \\
+				  &amp;=\dfrac{\beta}{2}\cdot \left[-\sin 2t + \underbrace{2\sin 2t\cos 2t}_{ = \sin 4t} \right]\\
+				  &amp;= \dfrac{\beta}{2}\cdot \left[\sin 4t - \sin 2t\right( \\
+				  &amp;= \dfrac{\beta}{2}\cdot \left(2\cos\dfrac{4t+2t}{2}\sin\dfrac{4t-2t}{2}\right) \\
+				  &amp;= \beta\cdot\cos 3t\cdot\sin t \implies P = 3,Q = 1
+			\end{align}\\
+			\begin{align}
+				  \therefore\dfrac{dy}{dx} &amp;= \dfrac{\dfrac{dy}{dt}}{\dfrac{dx}{dt}}
+				  =\dfrac{\beta\cdot\cos 3t\cdot\sin t}
+				  {\alpha\cdot\cos 3t\cdot\cos t} =\dfrac{\beta}{\alpha}\tan t
+			\end{align}
+			</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{\alpha}{\beta}\tan t</tex>
+    <tex>\dfrac{\beta}{\alpha}\tan 3t</tex>
+    <tex correct="true">\dfrac{\beta}{\alpha}\tan t</tex>
+    <tex>\dfrac{\alpha}{\beta}\tan 2t</tex>
+  </choices>
+</question>

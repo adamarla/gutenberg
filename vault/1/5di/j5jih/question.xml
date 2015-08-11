@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+			\text{Evaluate }\dfrac{d}{dx}\cos^{-1}\left(\dfrac{x-x^{-1}}{x+x^{-1}}\right)
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\textbf{Right or wrong? } \\
+			\cos^{-1}\left(\dfrac{x-x^{-1}}{x+x^{-1}}\right) = 
+			\cos^{-1}\left(\dfrac{x^2-1}{x^2+1}\right) =  2\theta.\\
+			\text{This is true only if }\ldots 
+			
+			</context>
+    <tex correct="true">
+			\qquad x = \cot\theta
+			</tex>
+    <tex correct="false">
+			\qquad x = \tan\theta
+			</tex>
+    <reason>
+			\begin{align}
+			  \cos 2\theta &amp;= \dfrac{\cos^2\theta - \sin^2\theta}{\cos^2\theta + \sin^2\theta} 
+			  = \underbrace{\dfrac{\cot^2\theta - 1}{\cot^2\theta + 1}}_{\text{Divide Nr. and Dn. with }\sin^2\theta}
+			\end{align} \\
+			\text{Now, this looks remarkably like }\dfrac{x^2-1}{x^2+1}.\\
+			\text{In fact, if }x=\cot\theta,\text{ then } \\
+			\cos^{-1}\left(\dfrac{x-x^{-1}}{x+x^{-1}}\right) = \cos^{-1}\cos 2\theta = 2\theta.
+			</reason>
+  </step>
+  <step>
+    <context>
+				\text{Hence, is the following analysis correct?}
+				</context>
+    <tex correct="true">
+				\begin{align}
+				  y &amp;= \cos^{-1}\left(\dfrac{x-x^{-1}}{x+x^{-1}}\right) = 2\theta \\
+				  \therefore\dfrac{dy}{dx} &amp;= \dfrac{dy}{d\theta}\cdot\dfrac{d\theta}{dx} \\
+				  &amp;= \dfrac{d}{d\theta}2\theta\cdot\dfrac{d}{dx}\cot^{-1}x = -\dfrac{2}{1+x^2}
+				\end{align}
+				</tex>
+    <reason>
+				  \dfrac{d}{dx}\cot^{-1} x = -\dfrac{1}{1+x^2}\text{ (standard result)}
+				</reason>
+  </step>
+  <step>
+    <context>
+			\textbf{Bonus Question}\\
+			\text{If instead of }x=\cot\theta,\text{ we substituted}\\
+			x=\tan\theta,\text{ then what would }y=?\text{ and }\dfrac{dy}{dx} = ?
+			</context>
+    <tex correct="true">
+			\qquad y = \pi-2\theta, \dfrac{dy}{dx} = -\dfrac{2}{1+x^2}
+			</tex>
+    <tex correct="false">
+			\qquad y = 2\pi-2\theta, \dfrac{dy}{dx} = -\dfrac{1}{1+x^2}
+			</tex>
+    <reason>
+			\text{Why should }\dfrac{dy}{dx}\text{ be different with }x=\cot\theta\\
+			\text{and }x=\tan\theta ?\text{ After all, its the same function.}\\
+			\text{But if you're not convinced, then}\\
+			\begin{align}
+			  \text{Let }x &amp;= \tan\theta \implies y = \cos^{-1}\left(\dfrac{x-x^{-1}}{x+x^{-1}}\right) \\
+			  &amp;= \cos^{-1}\left(\dfrac{\tan^2\theta-1}{\tan^2\theta+1}\right) \\
+			  &amp;= \cos^{-1}\left(-\underbrace{\dfrac{1-\tan^2\theta}{1+\tan^2\theta}}_{=\cos 2\theta}\right)\\
+			  &amp;= \underbrace{\cos^{-1}(-\cos 2\theta) = \pi - 2\theta}
+			  _{\cos (\pi-\theta) = -\cos\theta\implies \pi-\theta = \cos^{-1}(-\cos\theta)} \\
+			  \therefore\dfrac{dy}{dx} &amp;= \dfrac{d}{d\theta}(\pi-2\theta)\cdot\dfrac{d}{dx}\theta \\
+			  &amp;= -2\cdot\dfrac{d}{dx}\tan^{-1}x = -\dfrac{2}{1+x^2}
+			\end{align} 
+			</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{2}{\sqrt{1-x^2}}</tex>
+    <tex>\dfrac{2}{1+x^2}</tex>
+    <tex>\dfrac{1}{1+x^2}</tex>
+    <tex correct="true">-\dfrac{2}{1+x^2}</tex>
+  </choices>
+</question>
