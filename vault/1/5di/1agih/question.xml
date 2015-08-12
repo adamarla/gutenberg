@@ -10,6 +10,7 @@
   </statement>
   <step>
     <context>
+      \textbf{Winning on a throw}\\ 
 			\text{What is the probability that a player (A or B)}\\
 			\text{throws a number greater than 4?}
 			</context>
@@ -27,6 +28,7 @@
   </step>
   <step>
     <context>
+      \textbf{Winning in a round}\\ 
   		\text{If a single throw by A and a single throw}\\
   		\text{by B makes up one round of throwing,}\\
   		\text{then are the following probabilities correct?}
@@ -70,9 +72,9 @@
   </step>
   <step>
     <context>
-  			\textbf{Right or wrong? } \\
-  			\text{If }B_n = \text{ event that B wins in the n-th}\\
-  			\text{round, then }P(B_n)\text{ equals the following.}
+      \textbf{Winning in the n-th round}\\ 
+  			\text{If }B_n = \text{ event that B wins in the n-th round,}\\
+  			\text{then would }P(B_n)\text{ equal the following?}
   			</context>
     <tex correct="true">
   			\qquad P(B_n) = \left(\dfrac{4}{9}\right)^{n-1}\cdot \dfrac{2}{9}
@@ -91,9 +93,10 @@
   </step>
   <step>
     <context>
-    		\textbf{Right or wrong? } \\
+      \textbf{Winning the game.}\\ 
     		\text{The probability that B wins the game}\\
     		\text{is therefore the following.}
+    		\textbf{ Right or wrong? } \\
     		</context>
     <tex correct="true">
     		\begin{align}
