@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Write the direction ratios of the following line} \\
+x=-3, \dfrac{y-4}{3}=\dfrac{2-z}{1}</tex>
+  </statement>
+  <step>
+    <context>\text{What does the $x=-3$ tell us about the } \\
+\text{relationship of the line with the $x$ axis?}</context>
+    <tex correct='true'>\text{That the line is perpendicular to the $x$ axis.} \\
+\therefore \text{it's direction cosine }l=0</tex>
+    <tex>\text{That the line is parallel to the $x$ axis.} \\
+\therefore \text{it's direction cosine }l=1</tex>
+    <reason>\text{$x=-3$ indicates that for any value of $y$ or $z$,} \\
+\text{the $x$ coordinate of the line will always be $-3$.} \\
+\text{This implies that the line lies in the plane} \\
+\text{$x=-3$ which is perpendicular to the $x$ axis.} </reason>
+  </step>
+  <step>
+    <context>\text{The direction cosines {\it m} and {\it n} with the} \\
+\text{positive y and z axes respectively are}</context>
+    <tex correct='true'>m=\dfrac{3}{\sqrt{10}},\, n=\dfrac{-1}{\sqrt{10}}</tex>
+    <reason>\begin{align}
+    &amp;\dfrac{y-4}{3} = \dfrac{2-z}{1} \\
+  \implies&amp; y-4 = -3z+6 \\
+  \implies&amp; y = -3z + 10
+\end{align} \\
+\text{Slope in y-z plane }=-3 \\
+\text{Direction cosine m }=\dfrac{3}{\sqrt{3^2+1^2}}
+  =\dfrac{3}{\sqrt{10}} \\
+\text{Direction cosine n}=\dfrac{-1}{\sqrt{3^2+1^2}}
+  =\dfrac{-1}{\sqrt{10}} </reason>
+  </step>
+  <step>
+    <context>\text{If the direction cosines are } \\
+  l=\dfrac{0}{\sqrt{10}}=0, m=\dfrac{3}{\sqrt{10}}, 
+  n=\dfrac{-1}{\sqrt{10}} \\
+\text{the direction ratios could be}</context>
+    <tex correct='true'>0, 3, -1</tex>
+    <reason>0, \dfrac{3}{\sqrt{10}} \text{and }\dfrac{-1}{\sqrt{10}} 
+\text{are in the ratio }0:3:-1</reason>
+  </step>
+  <choices>
+    <tex>1, 3, -1</tex>
+    <tex>-3, 3, -1</tex>
+    <tex>0, 3, 1</tex>
+    <tex correct='true'>0, 3, -1</tex>
+  </choices>
+</question>

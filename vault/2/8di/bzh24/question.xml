@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the differential equation representing the} \\
+\text{curve }y=cx+c^2?</tex>
+  </statement>
+  <step>
+    <context>\text{The relationship between a differential equation} \\
+\text{and the curve that it represents is}</context>
+    <tex correct='true'>\dfrac{dy}{dx}\, {Curve}\Rightarrow{Differential Equation}</tex>
+    <tex>\dfrac{dy}{dx}\, {Differential Equation}\Rightarrow{Curve}</tex>
+    <reason>\text{If an equation (curve) is differentiated on both} \\ 
+\text{sides with respect to a variable, the result is a} \\
+\text{differential equation for the family of curves} \\
+\text{that the equation is part of.} \\
+\text{If }y=a\cdot f(x)+b, \text{and }\dfrac{dy}{dx}f(x)=g(x), \\
+\text{then }\dfrac{dy}{dx}=a\cdot g(x) 
+\text{ is it's differential equation.}</reason>
+  </step>
+  <step>
+    <context>y=cx+c^2, \text{ differentiating} \\
+\text{both sides with respect to x gives}</context>
+    <tex correct='true'>\left(\dfrac{dy}{dx}\right)^2+x\dfrac{dy}{dx}-y=0
+</tex>
+    <tex>\dfrac{d^2y}{dx^2}+x\dfrac{dy}{dx}-y=0</tex>
+    <reason>\begin{align}
+  y &amp;= cx + c^2 \\
+  \dfrac{dy}{dx} &amp;= \dfrac{d}{dx}cx + \dfrac{d}{dx}c^2 \\
+  \dfrac{dy}{dx} &amp;= c
+\end{align} \\
+\text{Substituting c in the original equation} \\
+\left(\dfrac{dy}{dx}\right)^2+x\dfrac{dy}{dx}-y=0 \\
+\text{Note: }\left(\dfrac{dy}{dx}\right)^2\neq \dfrac{d^2y}{dx^2}
+</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{dy}{dx}=y</tex>
+    <tex>\dfrac{dy}{dx}=x</tex>
+    <tex correct='true'>\left(\dfrac{dy}{dx}\right)^2+x\dfrac{dy}{dx}-y=0</tex>
+    <tex>\dfrac{d^2y}{dx^2}+x\dfrac{dy}{dx}-y=0
+</tex>
+  </choices>
+</question>

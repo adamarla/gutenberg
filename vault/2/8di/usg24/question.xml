@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If }A=
+\left[\begin{array}{rr}
+  2 &amp; 3 \\
+  5 &amp; -2
+\end{array}\right],
+\text{then what is }A^{-1}?</tex>
+  </statement>
+  <step>
+    <context>\text{If B is of $A^{-1}$ then,}</context>
+    <tex correct='true'>A\cdot B = I, \\
+\text{where I is identity matrix.}</tex>
+    <tex>A+B=0</tex>
+    <reason>\text{If A and B are square matrices such that B} \\
+\text{is the inverse of A, then A is also the inverse} \\
+\text{of B and their product is the identity matrix.} \\ 
+AB = BA = I</reason>
+  </step>
+  <step>
+    <context>\text{If }A=
+\left[\begin{array}{rr}
+  2 &amp; 3 \\
+  5 &amp; -2
+\end{array}\right],
+B=
+\left[\begin{array}{rr}
+  a &amp; b \\
+  c &amp; d
+\end{array}\right]
+\text{and }AB=I \\
+\text{where I is the identity matrix then the following} \\
+\text{equations hold}</context>
+    <tex correct='true'>\begin{align}
+  2a+3c=1 \quad &amp; 2b+3d=0 \\
+  5a-2c=0  \quad &amp; 5b-2d=1
+\end{align}</tex>
+    <tex>\begin{align}
+  2a+3c=1 \quad &amp; 2b+3d=1 \\
+  5a-2c=1  \quad &amp; 5b-2d=1
+\end{align}</tex>
+    <reason>\left[\begin{array}{rr}
+  2 &amp; 3 \\
+  5 &amp; -2
+\end{array}\right]\cdot
+\left[\begin{array}{rr}
+  a &amp; b \\
+  c &amp; d
+\end{array}\right]=
+\left[\begin{array}{rr}
+  2a+3c &amp; 2b+3d \\
+  5a-2c  &amp; 5b-2d
+\end{array}\right] \\
+\text{Identity Matrix }I=
+\left[\begin{array}{rr}
+  1 &amp; 0 \\
+  0 &amp; 1
+\end{array}\right] \text{therefore,}\\
+\begin{align}
+  2a+3c=1 \quad &amp; 2b+3d=0 \\
+  5a-2c=0  \quad &amp; 5b-2d=1
+\end{align} \\ \text{on solving }\\
+a=\dfrac{2}{19},b=\dfrac{3}{19},
+c=\dfrac{5}{19}\text{ and}d=\dfrac{-2}{19}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{1}{19}\left[\begin{array}{rr}
+  2 &amp; 3 \\
+  5 &amp; -2
+\end{array}\right]
+</tex>
+    <tex>\left[\begin{array}{rr}
+  2 &amp; 3 \\
+  5 &amp; -2
+\end{array}\right]
+</tex>
+    <tex>\left[\begin{array}{rr}
+  2 &amp; 5 \\
+  3 &amp; -2
+\end{array}\right]
+</tex>
+    <tex>\left[\begin{array}{rr}
+  1 &amp; 0 \\
+  0 &amp; 1
+\end{array}\right]
+</tex>
+  </choices>
+</question>
