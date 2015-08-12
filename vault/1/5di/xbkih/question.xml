@@ -27,7 +27,7 @@
   </step>
   <step>
     <context>
-				\quad \dfrac{dx}{dt} = \alpha\cdot\cos Mt\cdot \cos Nt,\, (M\gt N).\\
+				\quad \dfrac{dx}{dt} = 4\alpha\cdot\cos Mt\cdot \cos Nt,\, (M\gt N).\\
 				\text{What are the values of M and N?}
 				</context>
     <tex correct="true">
@@ -41,19 +41,19 @@
 				  \dfrac{dx}{dt} &amp;= \alpha\left[
 				  (1+\cos 2t)\frac{d\sin 2t}{dt}
 				  + \sin 2t\dfrac{d (1+\cos 2t)}{dt}\right] \\
-				  &amp;= \alpha\left[(1+\cos 2t)\dfrac{\cos 2t}{2} 
-				  - \sin 2t\dfrac{\sin 2t}{2}\right] \\
-				  &amp;=\dfrac{\alpha}{2}\cdot \left[\cos 2t + \underbrace{\cos^2 2t-\sin^2 2t}
+				  &amp;= \alpha\left[(1+\cos 2t)\cdot 2\cos 2t 
+				  - \sin 2t\cdot 2\sin 2t\right] \\
+				  &amp;=2\alpha\cdot \left[\cos 2t + \underbrace{\cos^2 2t-\sin^2 2t}
 				  _{\cos^2\theta - \sin^2\theta = \cos 2\theta} \right] \\
-				  &amp;= \dfrac{\alpha}{2}\cdot \left[\cos 2t + \cos 4t\right] \\
-				  &amp;= \dfrac{\alpha}{2}\cdot \left(2\cos\dfrac{2t+4t}{2}\cos\dfrac{4t-2t}{2}\right) \\
-				  &amp;= \alpha\cdot\cos 3t\cdot\cos t \implies M = 3,N = 1.
+				  &amp;= 2\alpha\cdot \left[\cos 2t + \cos 4t\right] \\
+				  &amp;= 2\alpha\cdot \left(2\cos\dfrac{2t+4t}{2}\cos\dfrac{4t-2t}{2}\right) \\
+				  &amp;= 4\alpha\cdot\cos 3t\cdot\cos t \implies M = 3,N = 1.
 				\end{align}
 				</reason>
   </step>
   <step>
     <context>
-			\text{Similarly, }\dfrac{dy}{dt} = \beta\cdot\cos Pt\sin Qt. \\
+			\text{Similarly, }\dfrac{dy}{dt} = 4\beta\cdot\cos Pt\sin Qt. \\
 			\text{What are P and Q - and therefore }\dfrac{dy}{dx}?
 			</context>
     <tex correct="true">
@@ -67,17 +67,17 @@
 			\dfrac{dy}{dt} &amp;= \beta\left[
 				  (1-\cos 2t)\frac{d\cos 2t}{dt}
 				  + \cos 2t\dfrac{d (1-\cos 2t)}{dt}\right] \\
-				  &amp;= \beta\left[(1-\cos 2t)\dfrac{-\sin 2t}{2} 
-				  + \cos 2t\dfrac{\sin 2t}{2}\right] \\
-				  &amp;=\dfrac{\beta}{2}\cdot \left[-\sin 2t + \underbrace{2\sin 2t\cos 2t}_{ = \sin 4t} \right]\\
-				  &amp;= \dfrac{\beta}{2}\cdot \left[\sin 4t - \sin 2t\right( \\
-				  &amp;= \dfrac{\beta}{2}\cdot \left(2\cos\dfrac{4t+2t}{2}\sin\dfrac{4t-2t}{2}\right) \\
-				  &amp;= \beta\cdot\cos 3t\cdot\sin t \implies P = 3,Q = 1
+				  &amp;= \beta\left[(1-\cos 2t)\cdot -2\sin 2t
+				  + \cos 2t\cdot 2\sin 2t\right] \\
+				  &amp;=2\beta\cdot \left[-\sin 2t + \underbrace{2\sin 2t\cos 2t}_{ = \sin 4t} \right]\\
+				  &amp;= 2\beta\cdot \left[\sin 4t - \sin 2t\right] \\
+				  &amp;= 2\beta\cdot \left(2\cos\dfrac{4t+2t}{2}\sin\dfrac{4t-2t}{2}\right) \\
+				  &amp;= 4\beta\cdot\cos 3t\cdot\sin t \implies P = 3,Q = 1
 			\end{align}\\
 			\begin{align}
 				  \therefore\dfrac{dy}{dx} &amp;= \dfrac{\dfrac{dy}{dt}}{\dfrac{dx}{dt}}
-				  =\dfrac{\beta\cdot\cos 3t\cdot\sin t}
-				  {\alpha\cdot\cos 3t\cdot\cos t} =\dfrac{\beta}{\alpha}\tan t
+				  =\dfrac{4\beta\cdot\cos 3t\cdot\sin t}
+				  {4\alpha\cdot\cos 3t\cdot\cos t} =\dfrac{\beta}{\alpha}\tan t
 			\end{align}
 			</reason>
   </step>
