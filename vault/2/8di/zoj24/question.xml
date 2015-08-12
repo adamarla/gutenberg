@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Write the value of }\vec{a}\cdot(\vec{b}\times \vec{a})</tex>
+  </statement>
+  <step>
+    <context>\text{If the vector cross product }\vec{b}\times\vec{a}=\vec{c}, \\
+\text{are the following true about $\vec{c}$ ?}</context>
+    <tex correct='true'>\text{$\vec{c}$ is $\perp$ to the plane containing $\vec{a}$ and $\vec{b}$.}</tex>
+    <tex>\text{$\vec{c}$ lies in the plane containing $\vec{a}$ and $\vec{b}$.}</tex>
+    <reason>\text{As suggested by the Right-Hand rule, the} \\
+\text{cross-product of two non-zero vectors is}\\
+\text{a vector which is perpendicular to the plane} \\
+\text{containing the original two vectors.}</reason>
+  </step>
+  <step>
+    <context>\vec{c}=(\vec{b}\times\vec{a})
+\text{. If $\vec{c}\perp\vec{a}$, what can we say about} \\
+\vec{a}\cdot\vec{c}?</context>
+    <tex correct='true'>\vec{c}\perp\vec{a}\implies \vec{a}\cdot\vec{c}=0</tex>
+    <tex>\vec{c}\perp\vec{a}\implies\vec{a}\cdot\vec{c}
+  =|\vec{a}||\vec{c}|</tex>
+    <reason>\vec{a}\cdot\vec{c}=|\vec{a}||\vec{c}|\cos\theta, \\
+\text{where $\theta$ is the included angle.} \\
+\text{Since }\theta=\pi/2 \therefore |\vec{a}||\vec{c}|\cos\theta=0</reason>
+  </step>
+  <choices>
+    <tex>|\vec{a}||\vec{b}|</tex>
+    <tex>1</tex>
+    <tex correct='true'>0</tex>
+    <tex>|\vec{a}|^2|\vec{b}|</tex>
+  </choices>
+</question>
