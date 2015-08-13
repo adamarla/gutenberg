@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the acute angle between the plane} \\
+5x-4y+7z-13=0 \text{ and the y-axis.}</tex>
+  </statement>
+  <step>
+    <context>\text{If the angle between a line and the normal} \\
+\text{to a plane is $\theta$, what is the angle between}\\
+\text{that same line and the plane's surface?}</context>
+    <tex correct='true'>\dfrac{\pi}{2}-\theta</tex>
+    <tex>\pi-\theta</tex>
+    <reason>\text{The surface of a plane and it's normal are} \\
+\text{perpendiculars. Therefore a line in between} \\
+\text{would make complementary angles with the} \\
+\text{the surface and the normal.}
+</reason>
+  </step>
+  <step>
+    <context>\text{If $\alpha$ is the angle between the {\bf surface} of plane} \\
+\text{$5x-4y+7z-13=0$ and the y-axis, and the}\\
+\text{cosine of the angle between two planes whose} \\
+\text{direction ratios are $A_1$, $A_2$, $A_3$ and $B_1$, $B_2$} \\
+\text{$B_3$ respectively, is given by } \\
+\cos\theta=
+\left\vert\dfrac{A_1A_2+B_1B_2+C_1C_2}
+{\sqrt{A_1^2+B_1^2+C_1^2}\sqrt{A_2^2+B_2^2+C_2^2}}
+\right\vert \\
+\text{then the following is true} \\
+</context>
+    <tex correct='true'>\sin\alpha = \left(\dfrac{4}{3\sqrt{10}}\right)</tex>
+    <tex>\cos\alpha = \left(\dfrac{4}{3\sqrt{10}}\right)</tex>
+    <reason>\text{Equation of plane $5x-4y+7z-13=0$.} \\
+\text{Direction ratios for plane, $5, 4, 7$.} \\
+\text{Direction ratios for y-axis, $0, 1, 0$.} \\
+\text{If $\alpha is the angle between the {\bf surface}} \\
+\text{of the plane and the y-axis then,} \\
+\begin{align}
+  \cos(\dfrac{\pi}{2}-\alpha) 
+    &amp;= \left\vert\dfrac{4}{\sqrt{25+16+49}\sqrt{1}}\right\vert \\
+  \sin\alpha &amp;= \dfrac{4}{3\sqrt{10}}
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\sin^{-1}\dfrac{4}{3\sqrt{10}}</tex>
+    <tex>\cos^{-1}\dfrac{4}{3\sqrt{10}}</tex>
+    <tex>\pi-\sin^{-1}\dfrac{4}{3\sqrt{10}}</tex>
+    <tex>\pi-\cos^{-1}\dfrac{4}{3\sqrt{10}}</tex>
+  </choices>
+</question>
