@@ -1,0 +1,91 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Show that the following two lines are coplanar:} \\
+\dfrac{x-a+d}{\alpha-\delta}=\dfrac{y-a}{\alpha}=\dfrac{z-a-d}{\alpha+\delta}
+\text{ and}\\
+\dfrac{x-b+c}{\beta-\gamma}=\dfrac{y-b}{\beta}=\dfrac{z-b-c}{\beta+\gamma}</tex>
+  </statement>
+  <step>
+    <context>\text{Let A and B be points on each of the lines} \\
+\text{and let }\overrightarrow{d_1} \text{ and }
+  \overrightarrow{d_2}
+\text{ be the direction vectors}\\
+\text{of the two lines.}\\
+\text{If the lines are coplaner, then what is}\\
+\overrightarrow{AB}\cdot(\overrightarrow{d_1}\times 
+  \overrightarrow{d_2})?
+</context>
+    <tex correct='true'>\text{If the lines are coplaner,}\\
+\overrightarrow{AB}\cdot(\overrightarrow{d_1}\times 
+  \overrightarrow{d_2})=0
+</tex>
+    <tex>\text{If the lines are coplaner,}\\
+\overrightarrow{AB}\cdot(\overrightarrow{d_1}\times 
+  \overrightarrow{d_2})=|\overrightarrow{AB}|
+</tex>
+    <reason>\text{If the lines are coplaner, then }\\
+\overrightarrow{AB}, \overrightarrow{d_1} \text{ and }
+  \overrightarrow{d_2} \text{ are in the same plane}. \\
+\text{Therefore }  (\overrightarrow{d_1} \times
+  \overrightarrow{d_2})\text{ is $\perp$ to }\overrightarrow{AB}, \\
+\text{hence }  \overrightarrow{AB}\cdot(\overrightarrow{d_1}\times 
+  \overrightarrow{d_2})=0
+</reason>
+  </step>
+  <step>
+    <context>\text{If }\dfrac{x-a+d}{\alpha-\delta}=
+  \dfrac{y-a}{\alpha}=\dfrac{z-a-d}{\alpha+\delta} \\
+\text{passes through A and }\\
+\dfrac{x-b+c}{\beta-\gamma}=
+  \dfrac{y-b}{\beta}=\dfrac{z-b-c}{\beta+\gamma} \\
+\text{passes through B, and $\vec{d_1}$ and $\vec{d_2}=0$ } \\
+\text{are direction vectors, what would prove that} \\ 
+\text{the lines are coplanar?} \\ 
+</context>
+    <tex correct='true'>\text{The product }
+  \overrightarrow{BA}\cdot(\vec{d_1}\times\vec{d_2})=0
+  \text{ given by} \\
+
+\left\vert\begin{array}{ccc}
+  (a-d-b+c) &amp; (a-b) &amp; (a+d-b-c) \\
+  \alpha-\delta &amp; \alpha &amp; \alpha+\delta \\
+  \beta-\gamma &amp; \beta &amp; \beta + \gamma 
+\end{array}\right\vert
+</tex>
+    <tex>\text{The product }
+  \overrightarrow{BA}\cdot(\vec{d_1}\times\vec{d_2})=0
+  \text{ given by} \\
+
+\left\vert\begin{array}{ccc}
+  \alpha-\delta-\beta+\gamma &amp; \alpha-\beta  
+    &amp; \alpha+\delta-\beta-\gamma  \\
+  a-d &amp; a &amp; a+d \\
+  b-c &amp; b &amp; b+c
+\end{array}\right\vert
+</tex>
+    <reason>\text{If }\dfrac{x-a+d}{\alpha-\delta}=\dfrac{y-a}{\alpha}=
+  \dfrac{z-a-d}{\alpha+\delta} \\
+\text{passes through A and }\\
+\dfrac{x-b+c}{\beta-\gamma}
+  =\dfrac{y-b}{\beta}=\dfrac{z-b-c}{\beta+\gamma} \\
+\text{passes through B, then }\\
+\begin{align}
+\overrightarrow{BA}
+  &amp;=\overrightarrow{A}-\overrightarrow{B} \\
+  &amp;=\vector{(a-d-b+c)}{(a-b)}{}+ \\
+  &amp;\qquad(a+d-b-c)\hat{\it k}
+\end{align} \\
+\therefore \overrightarrow{BA}\cdot(\vec{d_1}\times\vec{d_2}) = \\
+\left\vert\begin{array}{ccc}
+  {\small (a-d-b+c)} &amp; {\small (a-b)} &amp; {\small (a+d-b-c)} \\
+  \alpha-\delta &amp; \alpha &amp; \alpha+\delta \\
+  \beta-\gamma &amp; \beta &amp; \beta + \gamma 
+\end{array}\right\vert \\
+\text{Expanding the determinant gives } \\
+\overrightarrow{BA}\cdot(\vec{d_1}\times\vec{d_2}) = 0
+
+
+</reason>
+  </step>
+</question>
