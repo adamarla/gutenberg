@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If the function $f:R \rightarrow R$ be defined by} \\
+\text{$f(x)=2x-3$ and $g:R\rightarrow R$ by $g(x)=x^3+5$,} \\
+\text{then find the value of $(fog)^{-1}(x)$}.</tex>
+  </statement>
+  <step>
+    <context>\begin{align}
+  f: R\rightarrow R, \, f(x) = 2x-3 \\
+  g: R\rightarrow R, \, g(x) = x^3+5  
+\end{align} \\
+\text{then $fog(x)$ is}</context>
+    <tex correct='true'>fog(x)=2x^3-7</tex>
+    <tex>fog(x)=2x^4-3x^3+10x-15</tex>
+    <reason>f(x) = 2x-3 \\ 
+g(x) = x^3+5  \\
+fog(x)\text{ is shorthand for }f(g(x)) \\
+\begin{align}
+  f(x) &amp;= 2x-3 \\
+  \therefore f(g(x)) &amp;= 2(g(x))-3 \\
+    &amp;= 2(x^3+5)-3 \\
+    &amp;= 2x^3+10-3 \\
+  \implies fog(x) &amp;= 2x^3+7
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>\text{If }fog(x)=y=2x^3+7,
+\text{ then what is }fog^{-1}(x)?
+</context>
+    <tex correct='true'>x=\sqrt[3]{\dfrac{y-7}{2}}</tex>
+    <tex>x=2y^3+7</tex>
+    <reason>\begin{align}
+  &amp;\quad y=2x^3+7 \\
+  \implies&amp; x=\sqrt[3]{\dfrac{y-7}{2}}
+\end{align} \\
+fog(x)=y \implies x = fog^{-1}(y) \\
+\begin{align}
+  &amp;fog^{-1}(y) = \sqrt[3]{\dfrac{y-7}{2}} \\
+  \implies &amp;fog^{-1}(x)=\sqrt[3]{\dfrac{x-7}{2}}
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex>2x^3-7</tex>
+    <tex>\sqrt[3]{\dfrac{y-7}{2}} </tex>
+    <tex>\dfrac{1}{2x^3-7}</tex>
+    <tex correct='true'>\sqrt[3]{\dfrac{x-7}{2}}</tex>
+  </choices>
+</question>

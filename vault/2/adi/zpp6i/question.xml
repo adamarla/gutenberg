@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the direction rations of the normal to the} \\
+\text{plane which passes through the points $(1, 0, 0)$ } \\
+\text{and $(0, 1, 0)$ and makes angle $\frac{\pi}{4}$ with the plane} \\
+\text{$x+y=3$. Also find the equation of the plane.}</tex>
+  </statement>
+  <step>
+    <context>\text{Let the equation of the plane in question be} \\
+Ax+By+Cz+D=0. \text{ If this plans makes an}\\ 
+\text{angle of $\frac{\pi}{4}$ with $x+y=3$ then the following}\\ 
+\text{must be true.}</context>
+    <tex correct='true'>\left\vert\dfrac{A+B}{\sqrt{A^2+B^2+C^2}}\right\vert=1
+</tex>
+    <tex>\left\vert\dfrac{A+B}{\sqrt{A^2+B^2+C^2}}\right\vert
+  =\dfrac{1}{\sqrt{2}}
+</tex>
+    <reason>\text{If the angle between }A_1x+B_1y+C_1z+D_1=0 \\
+\text{and }A_2x+B_2y+C_2z+D_2=0\text{ is $\theta$ then,} \\
+\cos\theta=\left\vert\dfrac{A_1A_2+B_1B_2+C_1_C2}
+  {\sqrt{A_1^2+B_1^2+C_1^2}\sqrt{A_2^2+B_2^2+C_2^2}}
+  \right\vert \\
+\text{In this problem } A_1=A, B_1=B, C_1=C, \\
+A_2=1, B_2=1, C_2=0 \text{ and } \theta=\pi/4 \\
+\therefore \dfrac{1}{\sqrt{2}}=
+\left\vert\dfrac{A+B}{\sqrt{A^2+B^2+C^2}\sqrt{2}}\right\vert \\
+\implies 1=\left\vert\dfrac{A+B}{\sqrt{A^2+B^2+C^2}}\right\vert </reason>
+  </step>
+  <step>
+    <context>\text{If a plane }Ax+By+Cz+D=0 \\
+\text{passes through $(1, 0, 0)$ and $(0, 1, 0)$} \\
+\text{can we say the following about A and B?}
+</context>
+    <tex correct='true'>A=B=-D</tex>
+    <tex>A+B=0</tex>
+    <reason>\text{Since $(1, 0, 0)$ lies on $Ax+By+Cz+D=0$} \\
+A(1)+B(0)+C(0)+D=0 \implies A+D=0 \\
+\text{Similarly since $(0, 1, 0)$ also lies on it,} \\
+A(0)+B(1)+C(0)+D=0 \implies B+D=0 \\
+\therefore A=B=-D</reason>
+  </step>
+  <step>
+    <context>\text{If for plane $Ax+By+Cz+D=0$} \\
+\left\vert\dfrac{A+B}{\sqrt{A^2+B^2+C^2}}\right\vert=1\text{ and }
+A=B=-D \\
+\text{equation of the plane is}</context>
+    <tex correct='true'>x+y\pm\sqrt{2}z-1=0 \\
+(\text{Direction ratios }1, 1, \pm\sqrt{2})</tex>
+    <tex>2x+2y\pm z-2=0  \\
+(\text{Direction ratios }1, 1, \pm\sqrt{2})</tex>
+    <reason>\begin{align}
+  &amp;\left\vert\dfrac{A+B}{\sqrt{A^2+B^2+C^2}}\right\vert=1 \\
+  \implies &amp;(A+B)^2=A^2+B^2+C^2 \\
+  &amp;\text{(substitute A=-D, B=-D)} \\
+  \implies &amp;(-2D)^2=D^2+D^2+C^2 \\
+  \implies &amp;\pm\sqrt{2}D=C
+\end{align} \\
+\therefore \text{equation of the plane is} \\
+\begin{align}
+  -Dx-Dy\pm\sqrt{2}Dz+D &amp;=0 \\
+  x+y\pm\sqrt{2}z-1&amp;=0
+  \end{align}
+</reason>
+  </step>
+  <choices>
+    <tex>2x+2y\pm z-2=0  \\
+(\text{Direction ratios }1, 1, \pm\sqrt{2})</tex>
+    <tex>x+y\pm z-2=0  \\
+(\text{Direction ratios }1, 1, \pm\sqrt{2})</tex>
+    <tex>x+y\pm\sqrt{2}z+1=0 \\
+(\text{Direction ratios }1, 1, \pm\sqrt{2})</tex>
+    <tex correct='true'>x+y\pm\sqrt{2}z-1=0 \\
+(\text{Direction ratios }1, 1, \pm\sqrt{2})</tex>
+  </choices>
+</question>
