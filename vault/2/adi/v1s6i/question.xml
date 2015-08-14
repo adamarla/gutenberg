@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{To raise money for an orphanage. students} \\
+\text{of three schools A, B and C organised an} \\
+\text{exhibition in their locality, where they sold} \\
+\text{paper bags, scrap-books and pastel sheets} \\
+\text{made by them using recycled paper, at the} \\
+\text{rate of ₹ 20, ₹ 15 and ₹ 5 per unit } \\
+\text{respectively. School A sold 25 paper bags,} \\
+\text{12 scrap-books and 34 pastel sheets. School B} \\
+\text{sold 22 paper bags, 15 scrap-books and 28} \\
+\text{pastel sheets while School C sold 26 paper bags} \\
+\text{18 scrap-books and 36 pastel sheets. Using} \\
+\text{matrices, find the total amount raised by each} \\
+\text{school.} \\
+\text{What values does such an exhibition inculcate} \\
+\text{in the students?}</tex>
+  </statement>
+  <step>
+    <context>\text{If Q is the quantity sold, R is rate per item} \\
+\text{and A the amount raised, the relationship} \\
+\text{between Q, R and A is}</context>
+    <tex correct='true'>Q\times R = A</tex>
+    <tex>A\times R = Q</tex>
+    <reason>Q \text{(units)}\times R \text{(₹/unit)}
+ =A\text{(₹)}</reason>
+  </step>
+  <step>
+    <context>\text{If the quantity matrix Q looks like this} \\
+\overbrace{
+Q=\left[\begin{array}{ccc}
+  25 &amp; 12 &amp; 34 \\
+  22 &amp; 15 &amp; 28  \\
+  26 &amp; 18 &amp; 36
+\end{array}\right] }^\text{paper bag | scrap-book | pastel sheet}
+\begin{array}{c}
+  \small\text{School A} \\
+  \small\text{School B} \\
+  \small\text{School C}
+\end{array} \\
+\text{what does the rate matrix R look like so that} \\
+Q\times R = A\text{ (amount matrix)}?</context>
+    <tex correct='true'>R=\left[\begin{array}{cl}
+  20 &amp; \small\text{(₹/paper bag)}\\
+  15 &amp; \small\text{(₹/scrap-book)}\\
+  5   &amp; \small\text{(₹/pastel sheet)}
+\end{array}\right]</tex>
+    <tex>R=\left[
+  20 \small\text{(₹/p.bag)}\quad
+  15 \small\text{(₹/s.book)}\quad
+  5   \small\text{(₹/pastel)}
+\right]</tex>
+    <reason>\text{A $3\times 3$ matrix can only be } \\
+\text{multiplied with a $3\times n$ matrix.}
+</reason>
+  </step>
+  <step>
+    <context>\text{What is the product of these two matrices?} \\
+\left[\begin{array}{ccc}
+  25 &amp; 12 &amp; 34 \\
+  22 &amp; 15 &amp; 28  \\
+  26 &amp; 18 &amp; 36
+\end{array}\right]\times
+\left[\begin{array}{c}
+  20 \\
+  15 \\
+  5
+\end{array}\right]</context>
+    <tex correct='true'>\left[850 \quad 805\quad 970\right]</tex>
+    <tex>\left[1420 \quad 975\quad 400\right]</tex>
+    <reason>\text{Each item in a row of the quantity matrix } \\
+\text{multiplies with the appropriate rate from } \\
+\text{rate matrix. When added together, these } \\
+\text{products represent the total amount } \\
+\text{raised by a school. Therefore,} \\
+
+\left[\begin{array}{ccc}
+  25 &amp; 12 &amp; 34 \\
+  22 &amp; 15 &amp; 28  \\
+  26 &amp; 18 &amp; 36
+\end{array}\right]\times
+\left[\begin{array}{c}
+  20 \\
+  15 \\
+  5
+\end{array}\right]=\left[A_1 \quad A_2\quad A_3\right], \\
+\text{where,} \\
+A_1=(25\times 20+12\times 15+34\times 5)=850 \\
+A_2=(22\times 20+15\times 15+28\times 5)=805 \\
+A_3=(26\times 20+18\times 15+36\times 5)=970 \\
+
+\text{Such an exercise certainly inculcate feelings} \\
+\text{of kindness, togetherness with the community}\\
+\text{and a sense of what teamwork can achieve.}
+</reason>
+  </step>
+  <choices>
+    <tex>\left[1420 \quad 975\quad 400\right]</tex>
+    <tex correct='true'>\left[850 \quad 805\quad 970\right]</tex>
+    <tex>\left[1420 \quad 975\quad 970\right]</tex>
+    <tex>\left[850 \quad 975\quad 400\right]</tex>
+  </choices>
+</question>
