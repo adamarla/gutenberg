@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Let $A=Q\times Q$, where Q is the set of all} \\
+\text{rational numbers, and * be a binary operation} \\
+\text{defined on A as } \\
+(a, b)*(c, d)=(ac, b+ad), \forall \left(a, b\right)\left(c, d\right) \in A \\
+Find \\
+\text{(i) the identity element in A.} \\
+\text{(ii) the invertible element of A.}</tex>
+  </statement>
+  <step>
+    <context>\text{If the identity element is the pair $I (i, j) \in A$,} \\
+\text{by definition of identity element } \\
+(a, b)*(i, j) = (a, b) = (i, j)*(a, b). \\
+\text{What are i and j?}
+</context>
+    <tex correct='true'>(i, j) = (1, 0)</tex>
+    <tex>(i, j) = (0, 1)</tex>
+    <reason>I(i, j) \in A \\
+\text{Consider }(a, b)*(i, j) = (a, b) \\
+\begin{align}
+  \implies &amp;(ai, b+aj) = (a, b) \\
+  \implies &amp;ai = a, b+aj=b \\
+  \implies &amp;a=1, b=0 
+\end{align} \\
+\text{Consider }(i, j)(a, b) = (a, b) \\
+\begin{align}
+  \implies &amp;(ai, b+aj) = (a, b) \\
+  \implies &amp;ai = a, b+aj=b \\
+  \implies &amp;a=1, b=0 
+\end{align} \\
+\therefore {\bf\text{identity element} (1, 0).} \\
+</reason>
+  </step>
+  <step>
+    <context>\text{If the invertible element is the pair $L (l, m) \in A$,} \\
+\text{by definition of identity element } \\
+(a, b)*(l, m) = (1, 0) = (l, m)*(a, b) \\
+\text{What are l and m?}
+</context>
+    <reason>L(l, m) \in A \\
+\text{Consider }(a, b)*(l, m) = (1, 0) = (l, m)*(a, b) \\
+\begin{align}
+  \implies &amp;(al, b+am)=(1, 0) \\
+  \implies &amp;(la, m+lb)=(1, 0) \\
+  \implies &amp;la=1, b+am=0 \\
+  \implies &amp;l=\dfrac{1}{a},m=-\dfrac{b}{a}
+\end{align} \\
+\therefore {\bf\text{invertible element} 
+  \left(\dfrac{1}{a}, -\dfrac{b}{a}\right)}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>(i) \left(1, 0\right) \\
+(ii) \left(\dfrac{1}{a}, -\dfrac{b}{a}\right)</tex>
+    <tex>(i) \left(0, 1\right) \\
+(ii) \left(-a, \dfrac{b}{a}\right)</tex>
+    <tex>(i) \left(-1, 0\right) \\
+(ii) \left(\dfrac{1}{a}, \dfrac{b}{a}\right)</tex>
+    <tex>(i) \left(0, 1\right) \\
+(ii) \left(a, \dfrac{1}{a}\right)</tex>
+  </choices>
+</question>
