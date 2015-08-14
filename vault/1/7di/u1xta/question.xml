@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+		\text{Prove that} \\
+		2\tan^{-1}\left(\sqrt{\dfrac{a-b}{a+b}}\tan\dfrac{x}{2}\right) = 
+		\cos^{-1}\left(\dfrac{a\cos x + b}{a + b\cos x}\right)
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\text{We are making the following claims about}\\
+			\text{A and B from the equation.}\\
+			2\underbrace{\tan^{-1}\left(\sqrt{\dfrac{a-b}{a+b}}\tan\dfrac{x}{2}\right)}_
+			{\textbf{A}} = 
+		  \underbrace{\cos^{-1}\left(\dfrac{a\cos x + b}{a + b\cos x}\right)}_{\textbf{B}} \\
+		  \text{Are our claims correct?}
+			</context>
+    <tex correct="true">
+			\begin{tabular}{|c|c|}
+			\hline
+			&amp; \text{Claim} \\
+			\hline
+			1 &amp; \text{A is an angle} \\
+			2 &amp; \text{B is an angle} \\
+			3 &amp; \tan A = \sqrt{\dfrac{a-b}{a+b}}\tan\dfrac{x}{2} \\
+			4 &amp; \cos B = \dfrac{a\cos x + b}{a + b\cos x} \\
+			\hline
+			\end{tabular}
+			</tex>
+    <reason>
+			\underline{\text{\#1 and \#2}} \\
+			\tan^{-1}\alpha \text{ is an angle. So is }\cos^{-1}\beta \\
+			\underline{\text{\#3 and \#4}} \\
+			\text{Moreover, }\tan^{-1}\alpha = \theta \implies\tan\theta = \alpha\\
+			\text{and }\cos^{-1}\beta = \phi\implies\cos\phi = \beta.
+			</reason>
+  </step>
+  <step>
+    <context>
+				\textbf{Connecting A and B}\\
+				\text{Is the following correct?}
+				</context>
+    <tex correct="true">
+				\begin{align}
+				  \text{If }\cos^{-1}\dfrac{a\cos x + b}{a + b\cos x}  &amp;= 2A\text{ then }\\
+				  \dfrac{a\cos x + b}{a + b\cos x} &amp;= \cos 2A \\ 
+				  &amp;= \dfrac{1-\tan^2 A}{1+\tan^2 A} \\
+				  &amp;= \dfrac{1-\frac{a-b}{a+b}\tan^2\frac{x}{2}}{1+\frac{a-b}{a+b}\tan^2\frac{x}{2}}
+				\end{align}
+				</tex>
+    <reason>
+				\text{If }2A = B = \cos^{-1}\beta,\text{ then }\cos 2A = \beta.\\
+				\text{And we also know that}\\
+				\quad\tan A = \sqrt{\dfrac{a-b}{a+b}}\tan\dfrac{x}{2}. \\
+				\text{But, }\cos 2A = \dfrac{1-\tan^2A}{1+\tan^2 A}
+				</reason>
+  </step>
+  <step>
+    <context>
+			\text{Are the analysis and calculations done}\\
+			\text{below correct?}
+			</context>
+    <tex correct="true">
+			\begin{align}
+			  \cos 2A &amp;= \dfrac{1-\frac{a-b}{a+b}\tan^2\frac{x}{2}}{1+\frac{a-b}{a+b}\tan^2\frac{x}{2}}\\
+			  &amp;= \dfrac{a\cdot(1-\tan^2\frac{x}{2}) + b\cdot(1+\tan^2\frac{x}{2})}
+			  {a\cdot(1+\tan^2\frac{x}{2}) + b\cdot(1-\tan^2\frac{x}{2})} \\
+			  &amp;= \dfrac{a\cdot\dfrac{1-\tan^2\frac{x}{2}}{1+\tan^2\frac{x}{2}} + b}
+			  {a + b\cdot\dfrac{1-\tan^2\frac{x}{2}}{1+\tan^2\frac{x}{2}}} \\
+			  &amp;= \dfrac{a\cdot\cos x + b}{a + b\cdot\cos x} \\
+			  \implies 2A &amp;= \cos^{-1}\dfrac{a\cdot\cos x + b}{a + b\cdot\cos x} = B
+			\end{align} \\
+			\textbf{Hence proved.}
+			</tex>
+    <reason>
+			\text{Notice that we used } \\
+			\cos x = \dfrac{1-\tan^2\frac{x}{2}}{1+\tan^2\frac{x}{2}}.\\
+			\text{Other than that, it is only some algebra}\\
+			\text{in this step.}
+			</reason>
+  </step>
+</question>
