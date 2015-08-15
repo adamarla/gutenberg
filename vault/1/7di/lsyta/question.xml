@@ -60,7 +60,8 @@
   </step>
   <step>
     <context>
-				\text{Would }\dfrac{dy}{dx} = 0\text{ at the following values of x?}
+      \text{Given }f(x) = 2x^3-9mx^2 + 12m^2x + 1, \\
+      \dfrac{d}{dx}f(x) = 0 \implies ?
 				</context>
     <tex correct="true">
 				\qquad x = m, 2m
