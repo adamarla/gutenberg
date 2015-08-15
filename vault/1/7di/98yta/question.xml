@@ -9,13 +9,13 @@
 		\text{limited office space and budgetary constraints,}\\
 		\text{the number of temporary helpers cannot exceed}\\
 		\text{10. According to past experience, a man can}\\
-		\text{handle 300 letters and 80 packets per day, on}\\
+		\text{handle 300 lettes and 80 packets per day, on}\\
 		\text{the average, and a woman can handle 400}\\
-		\text{letters and 50 packets per day. The postmaster}\\
+		\text{lettes and 50 packets per day. The postmaster}\\
 		\text{believes that the daily volume of extra mail}\\
 		\text{and packets will be no less than 3400 and 680}\\
-		\text{respectively. A man receives Rs. 225 a day}\\
-		\text{and a woman receives Rs. 200 a day.}\\
+		\text{respectively. A man receives ₹225 a day}\\
+		\text{and a woman receives ₹200 a day.}\\
 		\text{How many men and women should be hired to}\\
 		\text{keep the pay-roll at a minimum? Formulate}\\
 		\text{an LPP and solve it graphically.}
@@ -37,7 +37,7 @@
 			  \hline
 			  m + w \leq 10 &amp; w = 10 - m \\
 			  \hline
-			  300m + 400m \geq 3400 &amp; -\frac{3}{4}m + 8.5 \\
+			  300m + 400m \geq 3400 &amp; w = -\frac{3}{4}m + 8.5 \\
 			  \hline
 			  80m+50w \geq 680 &amp; w = -\frac{8}{5}m + 13.6 \\
 			  \hline
@@ -52,7 +52,7 @@
 			  \hline
 			  m + w \leq 10 &amp; w = 10 - m \\
 			  \hline
-			  300m + 400m \leq 3400 &amp; -\frac{3}{4}m + 8.5 \\
+			  300m + 400m \leq 3400 &amp; w = -\frac{3}{4}m + 8.5 \\
 			  \hline
 			  80m+50w \leq 680 &amp; w = -\frac{8}{5}m + 13.6 \\
 			  \hline
@@ -69,7 +69,7 @@
 			  m + w \leq 10 &amp; \text{Can't hire more than}\\
 			  &amp;\text{10 people total.} \\
 			  \hline
-			  300m + 400m \geq 3400 &amp; \textbf{Atleast }3400\text{ extra letters.} \\
+			  300m + 400m \geq 3400 &amp; \textbf{Atleast }3400\text{ extra letters} \\
 			  \hline
 			  80m+50w \geq 680 &amp; \textbf{Atleast }680\text{ extra packets.}\\
 			  \hline
@@ -87,7 +87,65 @@
 				\text{Refer to the equations we found in}\\
 				\text{Step 1. The line with the largest y-intercept}\\
 				(13.6)\text{ is for packages, followed by those}\\
-				\text{for workers (10) and then for letters (8.5)}
+				\text{for workers(10) and then for letters(8.5)} \\
+				\textbf{Also note, }\text{that the three lines}\\
+				\text{intersect when }\\
+				\begin{align}
+				  -\frac{3}{4} m + 8.5 &amp;= -1.6m + 13.6 \\ 
+				  \implies 0.85m &amp;= 5.1 \text{ or } m = 6, w = 10-m=4.
+				\end{align} \\
+				\text{Hence, }A = (6,4).
 				</reason>
   </step>
+  <step>
+    <context>
+  		\textbf{Right or wrong?}\\
+  		\text{Your friend makes the following claim about}\\
+  		\text{what the }\textbf{feasible region }\text{is.}\\
+  		\underline{\text{Is his claim correct?}}
+  		</context>
+    <tex correct="true">
+  		\text{There is no feasible region. Only a}\\
+  		\text{feasible point } - A = (6,4).
+  		</tex>
+    <tex correct="false">
+  		\text{There is a feasible region - and it is}\\
+  		\text{below the }\underline{\text{Workers}}\text{ line in the graph}\\
+  		\text{(see Step 2)}.
+  		</tex>
+    <reason>
+  		\text{Any feasible region would satisfy the}\\
+  		\text{following three conditions} \\
+  		\bullet\text{be on or above } \underline{Letters} \\
+  		\bullet\text{be on or above }\underline{Packages} \\
+  		\bullet\text{be on or below }\underline{Workers} \\
+  		\text{But notice that there is no such region.}\\
+  		\text{At best, only two of the three conditions}\\
+  		\text{are satisfied at a time. However, at} \\
+  		A=(6,4)\text{ are all three conditions met.}
+  		</reason>
+  </step>
+  <step>
+    <context>
+  			\text{And hence, the minimum pay-roll per day is}\ldots
+  			</context>
+    <tex correct="true">
+  			\qquad ₹2150
+  			</tex>
+    <tex correct="false">
+  			\qquad ₹2100
+  			</tex>
+    <reason>
+  			\begin{align}
+  			  \text{Payroll} &amp;= (6\times ₹225) + (4\times ₹ 200) \\
+  			  &amp;= ₹ 2150.
+  			\end{align}
+  			</reason>
+  </step>
+  <choices>
+    <tex>₹ 2100</tex>
+    <tex>₹ 1900</tex>
+    <tex>₹ 2050</tex>
+    <tex correct="true">₹ 2150</tex>
+  </choices>
 </question>
