@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+		\text{The postmaster of a local office wishes to}\\
+		\text{hire extra helpers during the festive season}\\
+		\text{because of a large increase in the volume of}\\
+		\text{mail handling and delivery. Because of the}\\
+		\text{limited office space and budgetary constraints,}\\
+		\text{the number of temporary helpers cannot exceed}\\
+		\text{10. According to past experience, a man can}\\
+		\text{handle 300 letters and 80 packets per day, on}\\
+		\text{the average, and a woman can handle 400}\\
+		\text{letters and 50 packets per day. The postmaster}\\
+		\text{believes that the daily volume of extra mail}\\
+		\text{and packets will be no less than 3400 and 680}\\
+		\text{respectively. A man receives Rs. 225 a day}\\
+		\text{and a woman receives Rs. 200 a day.}\\
+		\text{How many men and women should be hired to}\\
+		\text{keep the pay-roll at a minimum? Formulate}\\
+		\text{an LPP and solve it graphically.}
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\text{Let } m =\text{ number of men hired and}\\
+			w = \text{number of women hired. Given this,}\\
+			\text{does the table below correctly capture the}\\
+			\text{constraints the postmaster faces?}
+			</context>
+    <tex correct="true">
+			  \begin{tabular}{|c|c|}
+			  \hline 
+			  \text{Constraint} &amp; \text{Line to plot} \\
+			  \hline
+			  m\geq 0, w\geq 0 &amp; m = 0, w = 0 \\
+			  \hline
+			  m + w \leq 10 &amp; w = 10 - m \\
+			  \hline
+			  300m + 400m \geq 3400 &amp; -\frac{3}{4}m + 8.5 \\
+			  \hline
+			  80m+50w \geq 680 &amp; w = -\frac{8}{5}m + 13.6 \\
+			  \hline
+			  \end{tabular}
+			</tex>
+    <tex correct="false">
+			\begin{tabular}{|c|c|}
+			  \hline 
+			  \text{Constraint} &amp; \text{Line to plot} \\
+			  \hline
+			  m\geq 0, w\geq 0 &amp; m = 0, w = 0 \\
+			  \hline
+			  m + w \leq 10 &amp; w = 10 - m \\
+			  \hline
+			  300m + 400m \leq 3400 &amp; -\frac{3}{4}m + 8.5 \\
+			  \hline
+			  80m+50w \leq 680 &amp; w = -\frac{8}{5}m + 13.6 \\
+			  \hline
+			  \end{tabular}
+			</tex>
+    <reason>
+			\begin{tabular}{|c|l|}
+			  \hline 
+			  \text{Constraint} &amp; \text{Meaning} \\
+			  \hline
+			  m\geq 0, w\geq 0 &amp; \text{Hire some help but} \\
+			  &amp;\text{don't fire any.} \\
+			  \hline
+			  m + w \leq 10 &amp; \text{Can't hire more than}\\
+			  &amp;\text{10 people total.} \\
+			  \hline
+			  300m + 400m \geq 3400 &amp; \textbf{Atleast }3400\text{ extra letters.} \\
+			  \hline
+			  80m+50w \geq 680 &amp; \textbf{Atleast }680\text{ extra packets.}\\
+			  \hline
+			  \end{tabular}
+			</reason>
+  </step>
+  <step>
+    <context>
+				\text{Have the constraint lines been correctly}\\
+				\text{marked in the graph below?}
+				</context>
+    <image correct="true">1-right.svg</image>
+    <image correct="false">1-wrong.svg</image>
+    <reason>
+				\text{Refer to the equations we found in}\\
+				\text{Step 1. The line with the largest y-intercept}\\
+				(13.6)\text{ is for packages, followed by those}\\
+				\text{for workers (10) and then for letters (8.5)}
+				</reason>
+  </step>
+</question>
