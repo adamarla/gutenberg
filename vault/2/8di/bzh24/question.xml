@@ -6,16 +6,20 @@
   </statement>
   <step>
     <context>\text{The relationship between a differential equation} \\
-\text{and the curve that it represents is}</context>
-    <tex correct='true'>\dfrac{dy}{dx}\, {Curve}\Rightarrow{Differential Equation}</tex>
-    <tex>\dfrac{dy}{dx}\, {Differential Equation}\Rightarrow{Curve}</tex>
+\text{and the curve (function) that it represents is}</context>
+    <tex correct='true'>\dfrac{d}{dx}\, \text{Curve}\Rightarrow\text{Differential Equation}</tex>
+    <tex>\dfrac{d}{dx}\, \text{Differential Equation}\Rightarrow\text{Curve}</tex>
     <reason>\text{If an equation (curve) is differentiated on both} \\ 
 \text{sides with respect to a variable, the result is a} \\
 \text{differential equation for the family of curves} \\
 \text{that the equation is part of.} \\
-\text{If }y=a\cdot f(x)+b, \text{and }\dfrac{dy}{dx}f(x)=g(x), \\
-\text{then }\dfrac{dy}{dx}=a\cdot g(x) 
-\text{ is it's differential equation.}</reason>
+\text{If }y=a\cdot f(x)+b, \text{and }f'(x)=g(x), 
+\text{ then}\\
+\begin{align}
+  &amp;\dfrac{dy}{dx}=a\cdot \dfrac{d}{dx}f(x)+0 \\
+  \implies &amp;\dfrac{dy}{dx}=a\cdot g(x)
+\end{align} \\
+\text{which is the differential equation.}</reason>
   </step>
   <step>
     <context>y=cx+c^2, \text{ differentiating} \\
@@ -28,7 +32,7 @@
   \dfrac{dy}{dx} &amp;= \dfrac{d}{dx}cx + \dfrac{d}{dx}c^2 \\
   \dfrac{dy}{dx} &amp;= c
 \end{align} \\
-\text{Substituting c in the original equation} \\
+\text{Substituting c in } y=cx+c^2, \\
 \left(\dfrac{dy}{dx}\right)^2+x\dfrac{dy}{dx}-y=0 \\
 \text{Note: }\left(\dfrac{dy}{dx}\right)^2\neq \dfrac{d^2y}{dx^2}
 </reason>
