@@ -6,27 +6,31 @@
 \left(1+y^2\right)dx - \left(tan^{-1}y-x\right)dy=0</tex>
   </statement>
   <step>
-    <context>\text{If }\left(1+y^2\right)dx - \left(tan^{-1}y-x\right)dy=0 \\
-\text{is to be written in the form }
-\dfrac{dx}{dy}+xP=Q \\
-\text{where P and Q are constants or functions of y} \\
-\text{what would the value of P and Q be?}</context>
-    <tex correct='true'>P=\dfrac{1}{1+y^2},\, Q=\dfrac{\tan^{-1}y}{1+y^2}</tex>
-    <tex>P=\dfrac{1}{1+y^2},\, Q=\dfrac{\tan^{-1}y}{1+y^2}</tex>
-    <reason>\begin{align}
-  &amp;\left(1+y^2\right)dx - \left(tan^{-1}y-x\right)dy=0 \\
-  \implies &amp;\left(1+y^2\right)dx =\left(tan^{-1}y-x\right)dy \\
-  \implies &amp;\dfrac{dx}{dy}+x\cdot\underbrace{\dfrac{1}{1+y^2}}_{P}
-    =\underbrace{\dfrac{\tan^{-1}y}{1+y^2}}_{Q}
-\end{align}</reason>
+    <context>\text{To find the integrating factor for a differential } \\
+\text{equation, is the following form appropriate}</context>
+    <tex correct='true'>\dfrac{dx}{dy}+xP=Q \\
+\text{where P and Q are constants or functions of y}</tex>
+    <tex>\dfrac{dy}{dx}+xP=Q \\
+\text{where P and Q are constants or functions of y}</tex>
+    <reason>\dfrac{dx}{dy}+xP=Q \text{ is correct. Here's why.} \\
+\text{Multiply both sides by }e^{\int P\, dy} \\
+\begin{align}
+   &amp;e^{\int P\, dy}\dfrac{dx}{dy}+xPe^{\int P\, dy}=Qe^{\int P\, dy} \\
+   \implies &amp; \dfrac{d}{dy}\left(x\cdot e^{\int P\, dy}\right) 
+     = Qe^{\int P\, dy} \\
+   \implies &amp; x\cdot e^{\int P\, dy} = \int Qe^{\int P\, dy} \, dy+C
+\end{align}  \\
+\text{Since P and Q are either constants or functions} \\
+\text{of y, we've arrived at a general solution.}</reason>
   </step>
   <step>
     <context>\text{If }\dfrac{dx}{dy}+x\cdot\dfrac{1}{1+y^2}
   =\dfrac{\tan^{-1}y}{1+y^2}, \\
 \text{what is the Integrating Factor (I.F.)?}  </context>
-    <tex correct='true'>\text{I.F.}=e^{\int \dfrac{1}{1+y^2}\, dy}=e^{\tan ^{-1}y}</tex>
-    <tex>\text{I.F.}=e^{\int \dfrac{\tan^{-1}y}{1+y^2}\, dy}
-  =e^\left(\dfrac{{\tan ^{-1}y}^2}{2}\right)</tex>
+    <tex correct='true'>\text{I.F.}=e^{\int {\small\dfrac{1}{1+y^2}}\, dy}
+  =e^{\tan ^{-1}y}</tex>
+    <tex>\text{I.F.}=e^{\int {\small\dfrac{\tan^{-1}y}{1+y^2}}\, dy}
+  =e^\left({\small\dfrac{{\tan ^{-1}y}^2}{2}}\right)</tex>
     <reason>\text{If }\dfrac{dx}{dy}+x\cdot P=Q \\
 \text{Integrating Factor (I.F.) }=e^{\int P\, dy}</reason>
   </step>
