@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If }
+\left\vert\begin{array}{cc}
+  2x &amp; 5 \\
+  8 &amp; x
+\end{array}\right\vert=
+\left\vert\begin{array}{cc}
+  6 &amp; -2 \\
+  7 &amp; 3
+\end{array}\right\vert, \\
+\text{write the value of $x$.}</tex>
+  </statement>
+  <step>
+    <context>\text{If A}=
+\left\vert\begin{array}{cc}
+  a &amp; b \\
+  c &amp; d
+\end{array}\right\vert \\
+\text{what is Det(A) or |A|?}
+</context>
+    <tex correct='true'>|A| = ad - bc</tex>
+    <tex>|A| = ad + bc</tex>
+    <reason>\text{If A}=
+\left\vert\begin{array}{cc}
+  a &amp; b \\
+  c &amp; d
+\end{array}\right\vert \\
+\text{Det(A) or |A|} = ad-bc. \\
+\text{This is the definition of Det(A)}</reason>
+  </step>
+  <step>
+    <context>\text{If }
+\left\vert\begin{array}{cc}
+  2x &amp; 5 \\
+  8 &amp; x
+\end{array}\right\vert=
+\left\vert\begin{array}{cc}
+  6 &amp; -2 \\
+  7 &amp; 3
+\end{array}\right\vert \\
+\text{then the following can be concluded}</context>
+    <tex correct='true'>x=\pm 6</tex>
+    <tex>x=3</tex>
+    <reason>\begin{align}
+&amp;\left\vert\begin{array}{cc}
+  2x &amp; 5 \\
+  8 &amp; x
+\end{array}\right\vert=
+\left\vert\begin{array}{cc}
+  6 &amp; -2 \\
+  7 &amp; 3
+\end{array}\right\vert \\
+\implies &amp; 2x^2-40=18+14 \\
+\implies &amp; x=\pm 6
+\end{align} \\
+
+\text{Note: Even if two determinants are equal,} \\
+\text{their corresponding elements need not be} \\
+\text{equal. Although the converse is always true.} \\
+
+</reason>
+  </step>
+  <choices>
+    <tex>32</tex>
+    <tex>3</tex>
+    <tex>\pm 8</tex>
+    <tex correct='true'>\pm 6</tex>
+  </choices>
+</question>

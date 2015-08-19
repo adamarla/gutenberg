@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the project of vector $\vector{1}{3}{7}$ on the} \\
+\text{vector $\vector{2}{-3}{6}$}.</tex>
+  </statement>
+  <step>
+    <context>\text{The dashed line in the figure shows the} \\
+\text{projection of $\ora{A}$ on $\ora{B}$}.</context>
+    <image correct='true'>1a.svg</image>
+    <image>1b.svg</image>
+    <reason>\text{Projection of a vector A on vector B is the} \\
+\text{component of vector A in the direction}\\
+\text{vector B.}</reason>
+  </step>
+  <step>
+    <context>\text{If $\ora{A}$ and $\ora{B}$}
+\text{are the two vectors then the} \\
+\text{following calculation would give the} \\
+\text{projection of }\ora{A}\text{ on }
+\ora{B}.</context>
+    <tex correct='true'>\dfrac{\ora{A}\cdot\ora{B}}
+  {|\ora{B}|}</tex>
+    <tex>\ora{A}\cdot\ora{B}</tex>
+    <reason>\text{The projection of $\ora{A}$ on $\ora{B}$  is the scalar} \\
+\text{{\bf dot product} of $\ora{A}$ and }
+\text{unit vector }\hat{B}. \\
+\therefore |\ora{A}_B|=
+  \ora{A}\cdot\hat{B}=
+  \ora{A}\cdot\dfrac{\ora{B}}
+    {|\ora{B}|}=
+  \dfrac{\ora{A}\cdot\ora{B}}
+    {|\ora{B}|}
+  </reason>
+  </step>
+  <step>
+    <context>\text{If }$\ora{A}=\vector{1}{3}{7}$ 
+\text{ and }$\ora{B}=\vector{2}{-3}{6} \\
+\text{and $|\ora{A}_B|$ is the projection of }
+\ora{A}\text{ along }\ora{B}, \\
+\text{then is the following correct?}
+</context>
+    <tex correct='true'>\begin{align}
+  |\ora{A}_B| &amp;=\dfrac{\ora{A}\cdot\ora{B}}
+    {|\ora{B}|} \\
+    &amp;=\dfrac{2-9+42}{\sqrt{4+9+36}}=5
+\end{align}
+</tex>
+    <tex>\begin{align}
+  |\ora{A}_B| &amp;=\dfrac{\ora{A}\cdot\ora{B}}
+    {|\ora{B}|} \\
+    &amp;=\dfrac{2-9+42}{2-3+6}=\dfrac{49}{5}
+\end{align}
+</tex>
+    <reason>\begin{align}
+  \text{If }\ora{V}_1&amp;=\vector{a_1}{b_1}{c_1} \\
+  \text{and } \ora{V}_2&amp;=\vector{a_2}{b_2}{c_2} \\
+\end{align}
+\text{ then } \\
+\begin{align}
+  \ora{V}_1\cdot \ora{V}_2
+    &amp;= a_1\cdot a_2+b_1\cdot b_2+c_1\cdot c_2 \\
+  |\ora{V_2}| &amp;= \sqrt{(a_2)^2+(b_2)^2+(c_2)^2}  
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex>0</tex>
+    <tex>\dfrac{49}{5}</tex>
+    <tex>-5</tex>
+    <tex correct='true'>5</tex>
+  </choices>
+</question>

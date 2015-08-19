@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Let * be a binary operation, on the set of all} \\
+\text{non-zero real numbers, given by } \\
+\begin{array}{c}
+  a*b=\dfrac{ab}{5} \text{ for all } a, b\in R - \{0\} \\
+\end{array} \\
+\text{Find the value of x, given that }2*(x*5)=10</tex>
+  </statement>
+  <step>
+    <context>\text{Is }a*b\text{ defined for }a=1.5, b=2?</context>
+    <tex correct='true'>\text{Yes, it is defined for all } (a, b)\in \mathbb{R} \\
+\text{and $1.5$ and $2$ are real numbers.}</tex>
+    <tex>\text{No, it is not defined for $a=1.5$, since } \\
+\text{$1.5$ does not belong to real numbers.}</tex>
+    <reason>\text{Real numbers include all rational and} \\ 
+\text{irrational numbers.}</reason>
+  </step>
+  <step>
+    <context>\text{Does }2*\left(x*5\right)\text{ expanded, look like this?} </context>
+    <tex correct='true'>\begin{align}
+  &amp;2*\left(x*5\right)=\dfrac{2x}{5} \\
+  \implies &amp;\dfrac{2x}{5}=10\, \therefore x=25
+\end{align}
+</tex>
+    <tex>\begin{align}
+  &amp;2*\left(x*5\right)=2x \\
+  \implies &amp;2x=10\, \therefore x=5
+\end{align}
+</tex>
+    <reason>\begin{align}
+  &amp;2*\left(x*5\right)=\dfrac{2x}{5} \\
+  \implies &amp;\dfrac{2\times \dfrac{5x}{5}}{5}=10 \\
+  \implies &amp;\dfrac{2x}{5}=10\, \therefore x=25
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>25</tex>
+    <tex>5</tex>
+    <tex>50</tex>
+    <tex>10</tex>
+  </choices>
+</question>
