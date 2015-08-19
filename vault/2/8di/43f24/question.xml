@@ -15,41 +15,41 @@
   </step>
   <step>
     <context>\text{If A, B, C and D are coplanar and } \\
-\overrightarrow{BA} =\vec{A}-\vec{B},
-\overrightarrow{BC}=\vec{C}-\vec{B} \text{ and }
-\overrightarrow{BD}=\vec{D}-\vec{B},\\
+\ora{BA} =\ora{A}-\ora{B},
+\ora{BC}=\ora{C}-\ora{B} \text{ and }
+\ora{BD}=\ora{D}-\ora{B},\\
 \text{then is the following correct?}
 </context>
-    <tex correct='true'>\overrightarrow{BD}\cdot 
-  \left(\overrightarrow{BA}\times \overrightarrow{BC}\right)=0</tex>
-    <tex>\overrightarrow{BD}\cdot 
-  \left(\overrightarrow{BA}\times \overrightarrow{BC}\right)=
-  |\overrightarrow{BD}||\overrightarrow{BA}||\overrightarrow{BC}|</tex>
+    <tex correct='true'>\ora{BD}\cdot 
+  \left(\ora{BA}\times \ora{BC}\right)=0</tex>
+    <tex>\ora{BD}\cdot 
+  \left(\ora{BA}\times \ora{BC}\right)=
+  |\ora{BD}||\ora{BA}||\ora{BC}|</tex>
     <reason>\text{A, B, C and D are coplanar, therefore } 
-\overrightarrow{BA}, \\ \overrightarrow{BC}
-\text{and }\overrightarrow{BD} \text{(the lines joining them),} \\
+\ora{BA}, \\ \ora{BC}
+\text{and }\ora{BD} \text{(the lines joining them),} \\
 \text{must also be coplanar.} \\
-\text{If }\overrightarrow{P}=(\overrightarrow{BA}\times
-  \overrightarrow{BC}) \text{ then P is $\perp$ to the plane} \\
+\text{If }\ora{P}=(\ora{BA}\times
+  \ora{BC}) \text{ then P is $\perp$ to the plane} \\
 \text{containing A, B, C and D.} \\
-\text{Therefore $\overrightarrow{P}\cdot \overrightarrow{BD}$ }
+\text{Therefore $\ora{P}\cdot \ora{BD}$ }
 \text{must equal zero.}</reason>
   </step>
   <step>
     <context>\text{If }
 \begin{align}
-\overrightarrow{BA}&amp;=\vector{4}{6}{2} \\
-\overrightarrow{BC}&amp;=\vector{3}{10}{5}
+\ora{BA}&amp;=\vector{4}{6}{2} \\
+\ora{BC}&amp;=\vector{3}{10}{5}
 \end{align} \\
 \text{is the following correct?}</context>
-    <tex correct='true'>\overrightarrow{P}=\overrightarrow{BA}\times \overrightarrow{BC}=
+    <tex correct='true'>\ora{P}=\ora{BA}\times \ora{BC}=
   \vector{10}{-14}{22}</tex>
-    <tex>\overrightarrow{P}=\overrightarrow{BA}\times \overrightarrow{BC}=
+    <tex>\ora{P}=\ora{BA}\times \ora{BC}=
   \vector{12}{60}{10}</tex>
-    <reason>\overrightarrow{BA}=\vector{4}{6}{2},\, 
-\overrightarrow{BC}=\vector{3}{10}{5} \\
+    <reason>\ora{BA}=\vector{4}{6}{2},\, 
+\ora{BC}=\vector{3}{10}{5} \\
 \begin{align}
-\overrightarrow{BA}\times \overrightarrow{BC} &amp;=
+\ora{BA}\times \ora{BC} &amp;=
 \left\vert\begin{array}{ccc}
   i &amp; j &amp; k \\
   4 &amp; 6 &amp; 2 \\
@@ -61,16 +61,16 @@
 </reason>
   </step>
   <step>
-    <context>\text{If }\overrightarrow{P}\cdot \overrightarrow{BD}=p
+    <context>\text{If }\ora{P}\cdot \ora{BD}=p
 \text{ where } \\
-\overrightarrow{P} =\vector{10}{-14}{22} \text{ and }
-\overrightarrow{BD}=\vector{-4}{5}{5} \\
+\ora{P} =\vector{10}{-14}{22} \text{ and }
+\ora{BD}=\vector{-4}{5}{5} \\
 \text{then, what is p?}
 </context>
     <tex correct='true'>p=0, \text{therefore A, B, C and D are coplanar.}</tex>
     <tex>p=220, \text{therefore A, B, C and D are coplanar.}</tex>
     <reason>\begin{align}
-\overrightarrow{P}\cdot \overrightarrow{BD}
+\ora{P}\cdot \ora{BD}
   &amp;=(-4\times 10)+(-14\times 5)+(22\times 5) \\
   &amp;=-40-70+110 \\
   &amp;=0

@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Write the vector equation of the plane, passing} \\
+\text{through the point $(a, b, c)$ and parallel to the} \\
+\text{plane }\ora{r}\cdot(\vector{1}{1}{1})=2</tex>
+  </statement>
+  <step>
+    <context>\text{If the equation of a plane in vector form is} \\
+\begin{array}{c}
+\ora{r}\cdot \hat{n}=d, \text{where,}
+\end{array} \\
+\text{$\hat{n}$ - unit vector normal to the plane} \\
+\text{$d$ - $\perp$  distance from origin to the plane,} \\
+\text{what are unit vector normal and $\perp$ distance} \\
+\text{from origin, to the plane }\ora{r}\cdot(\vector{1}{1}{1})=2?
+</context>
+    <tex correct='true'>\text{Unit vector normal, }
+  \hat{n}=\dfrac{1}{\sqrt{3}}(\vector{1}{1}{1}) \\
+\text{$\perp$ distance, }d=\dfrac{2}{\sqrt{3}}</tex>
+    <tex>\text{Unit vector normal, }
+  \hat{n}=(\vector{1}{1}{1}) \\
+\text{$\perp$ distance, }d=2</tex>
+    <reason>\begin{align}
+  \ora{r}\cdot(\vector{1}{1}{1})=2 &amp;\text{(given plane)}\\
+  \ora{r}\cdot\hat{n}=d &amp;\text{(general form)}\\
+\end{align} \\
+\text{To convert given plane to the general form,} \\
+\text{replace $(\vector{1}{1}{1})$ with it's unit vector $\hat{n}$,} \\
+\begin{align}
+  \hat{n} &amp;= \dfrac{(\vector{1}{1}{1})}{\sqrt{1+1+1}} 
+    = \dfrac{1}{\sqrt{3}}(\vector{1}{1}{1})
+\end{align} \\
+\text{Substituting this in the given plane,} \\
+\begin{align}
+  &amp;\ora{r}\cdot(\vector{1}{1}{1})=2 \\
+  \implies &amp;\ora{r}\cdot\dfrac{1}{\sqrt{3}}(\vector{1}{1}{1})
+    =\dfrac{2}{\sqrt{3}}
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>\text{If we were to{\bf push} (or pull) the plane} \\
+\ora{r}\cdot(\vector{1}{1}{1})=2 \text{ such that the unit vector}\\
+\text{normal to it remained the same, but the plane} \\
+\text{passed through $(a, b, c)$. What would it's} \\
+\text{equation look like now?}</context>
+    <tex correct='true'>\ora{r}\cdot\dfrac{1}{\sqrt{3}}(\vector{1}{1}{1})
+  =\sqrt{a^2+b^2+c^2}</tex>
+    <tex>\ora{r}\cdot(\vector{1}{1}{1})=\sqrt{a^2+b^2+c^2}</tex>
+    <reason>\text{$(a, b, c)$ is at a distance $\sqrt{a^2+b^2+c^2}$} \\
+\text{from the origin. Substituting this in the} \\
+\text{equation of the equation of the plane,} \\
+\ora{r}\cdot\dfrac{1}{\sqrt{3}}(\vector{1}{1}{1})
+  =\sqrt{a^2+b^2+c^2}
+</reason>
+  </step>
+  <choices>
+    <tex>\ora{r}\cdot(\vector{1}{1}{1})=\sqrt{a^2+b^2+c^2}</tex>
+    <tex correct='true'>\ora{r}\cdot\dfrac{1}{\sqrt{3}}(\vector{1}{1}{1})
+  =\sqrt{a^2+b^2+c^2}</tex>
+    <tex>\ora{r}\cdot(\vector{1}{1}{1})=(a^2+b^2+c^2)</tex>
+    <tex>\ora{r}\dfrac{1}{\sqrt{3}}\cdot(\vector{1}{1}{1})
+  =(a^2+b^2+c^2)</tex>
+  </choices>
+</question>

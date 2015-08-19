@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Solve the following matrix equation for x,} \\
+\left[\begin{array}{cc}
+  x &amp; 1
+\end{array}\right]\times
+\left[\begin{array}{cc}
+  1 &amp; 0 \\
+  -2 &amp; 0
+\end{array}\right]=0.</tex>
+  </statement>
+  <step>
+    <context>\text{What would the be the rows and columns} \\
+\text{of a matrix which is the product of a $1\times 2$}\\
+\text{and a $2\times 2$ matrix?} \\
+(a \times b = \text{rows }\times \text{columns})
+</context>
+    <tex correct='true'>1\times 2</tex>
+    <tex>2\times 2</tex>
+    <reason>\text{The product of an $(a\times b)$ matrix and a $(b\times c)$} \\
+\text{matrix is an $(a\times c)$ matrix.}</reason>
+  </step>
+  <step>
+    <context>\text{If}
+\left[\begin{array}{cc}
+  x &amp; 1
+\end{array}\right]\times
+\left[\begin{array}{cc}
+  1 &amp; 0 \\
+  -2 &amp; 0
+\end{array}\right]=0.\\
+\text{does the following look correct?}
+</context>
+    <tex correct='true'>x=2</tex>
+    <tex>x=0</tex>
+    <reason>\begin{align}
+&amp;\left[\begin{array}{cc}
+  x &amp; 1
+\end{array}\right]\times
+\left[\begin{array}{cc}
+  1 &amp; 0 \\
+  -2 &amp; 0
+\end{array}\right]=0 \\
+\implies&amp;\left[\begin{array}{cc}
+  x-2 &amp; 0
+\end{array}\right]=
+\left[\begin{array}{cc}
+  0 &amp; 0
+\end{array}\right] \\
+\implies&amp;x-2=0 \implies x=2
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>-1</tex>
+    <tex>4</tex>
+    <tex>0</tex>
+    <tex correct='true'>2</tex>
+  </choices>
+</question>

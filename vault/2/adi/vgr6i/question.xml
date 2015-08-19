@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If $\ora{a}$ and $\ora{b}$ are two unit vectors such that} \\
+\text{$\ora{a}+\ora{b}$ is also a unit vector, then find the} \\
+\text{angle between $\ora{a}$ and $\ora{b}$.}</tex>
+  </statement>
+  <step>
+    <context>\text{If $\ora{a}$ and $\ora{b}$ are two unit vectors, that means} \\</context>
+    <tex correct='true'>\ora{|a|}=\ora{|b|}=1 \\</tex>
+    <tex>\ora{a}=\ora{b}=\vector{1}{1}{1}</tex>
+    <reason>\text{$\ora{a}$ is a unit vector}\iff \ora{|a|}=1.</reason>
+  </step>
+  <step>
+    <context>\begin{align}
+  \text{If }\ora{a}&amp;=\vector{a_1}{a_2}{a_3}, \\
+  \ora{b}&amp;=\vector{b_1}{b_2}{b_3} \\
+\end{align} \\
+\text{and $\ora{|a|}=1$, $\ora{|b|}=1$ then does} \\
+\text{the following look correct?}</context>
+    <tex correct='true'>|\ora{a}+\ora{b}|=\sqrt{2(1+a_1b_1+a_2b_2+a_3b_3)}</tex>
+    <tex>|\ora{a}+\ora{b}|=2</tex>
+    <reason>\begin{align}
+  \text{If }\ora{a}&amp;=\vector{a_1}{a_2}{a_3}, \\
+  \text{and }\ora{b}&amp;=\vector{b_1}{b_2}{b_3} \text{ then}\\
+\end{align} \\
+\ora{a}+\ora{b}=\vector{(a_1+b_1)}{(a_2+b_2)}{(a_3+b_3)} \\
+\therefore|\ora{a}+\ora{b}|= 
+    \sqrt{(a_1+b_1)^2+(a_2+b_2)^2+(a_3+b_3)^2}\\
+    =\sqrt{(a_1+b_1)^2+(a_2+b_2)^2+(a_3+b_3)^2}\\
+    =\sqrt{\underbrace{a_1^2+a_2^2+a_3^2}_{|a|=1} + 
+     \underbrace{b_1^2+b_2^2+b_3^2}_{|b|=1}+
+     2(a_1b_1+a_2b_2+a_3b_3)} \\
+    =\sqrt{2(1+a_1b_1+a_2b_2+a_3b_3)}
+</reason>
+  </step>
+  <step>
+    <context>\begin{align}
+  \text{If }\ora{a}&amp;=\vector{a_1}{a_2}{a_3} \\
+  \text{and }\ora{b}&amp;=\vector{a_1}{a_2}{a_3}
+\end{align} \\
+\text{and $\ora{|a|}=1$, $\ora{|b|}=1$} \\
+\text{and $\theta$ is the angle between $\ora{a}$ and $\ora{b}$,} \\
+\text{then does the following correct?}
+</context>
+    <tex correct='true'>\cos\theta=a_1a_2+b_2b_2+c_1c_2</tex>
+    <reason>\begin{align}
+  \text{If }\ora{a}&amp;=\vector{a_1}{a_2}{a_3}, \\
+  \text{and }\ora{b}&amp;=\vector{b_1}{b_2}{b_3}
+\end{align} \\
+\text{and $\theta$ is the angle between them,} \\
+\begin{align}
+  &amp;{\bf\ora{a}\cdot\ora{b}}= \underbrace{\ora{|a|}}_{1}
+    \underbrace{\ora{|b|}}_{1}\cos\theta \\
+  \implies&amp; a_1b_1+a_2b_2+a_3b_3=\cos\theta
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>\text{If }|\ora{a}+\ora{b}|=\sqrt{2(1+a_1b_1+a_2b_2+a_3b_3)}, \\
+(\ora{a}+\ora{b}) \text{ is a unit vector and } \\
+\cos\theta=a_1a_2+b_2b_2+c_1c_2, \\
+\text{then is the following true?}
+</context>
+    <tex correct='true'>\cos\theta=\dfrac{2\pi}{3}</tex>
+    <tex>\cos\theta=\dfrac{\pi}{3}</tex>
+    <reason>|\ora{a}+\ora{b}|=\sqrt{2(1+a_1b_1+a_2b_2+a_3b_3)} \\
+(\ora{a}+\ora{b}) \text{ is a unit vector}
+  \implies |\ora{a}+\ora{b}|=1 \\
+\begin{align}
+  \implies&amp;\sqrt{2(1+a_1b_1+a_2b_2+a_3b_3)}=1 \\
+  \implies&amp;2(1+\underbrace{a_1b_1+a_2b_2+a_3b_3}_{\cos\theta})=1 \\
+  \implies&amp;2(1+\cos\theta)=1 \\
+  \implies&amp;\cos\theta=-\dfrac{1}{2}
+  \implies\theta=\dfrac{2\pi}{3}
+\end{align} </reason>
+  </step>
+  <choices>
+    <tex>\dfrac{3\pi}{4}</tex>
+    <tex>\dfrac{\pi}{2}</tex>
+    <tex correct='true'>\dfrac{2\pi}{3}</tex>
+    <tex>\dfrac{\pi}{3}</tex>
+  </choices>
+</question>

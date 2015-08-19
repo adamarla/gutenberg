@@ -1,30 +1,30 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{If }\vec{a}=\hat\imath+2\hat\jmath -\hat {\it k}, 
-\vec{b}=2\hat\imath+\hat\jmath +\hat {\it k} \text{ and } \\
-\vec{c}=5\hat\imath -4\hat\jmath+3\hat {\it k}, \text{then find the value of} \\
-(\vec{a}+\vec{b})\cdot\vec{c}.</tex>
+    <tex>\text{If }\ora{a}=\hat\imath+2\hat\jmath -\hat {\it k}, 
+\ora{b}=2\hat\imath+\hat\jmath +\hat {\it k} \text{ and } \\
+\ora{c}=5\hat\imath -4\hat\jmath+3\hat {\it k}, \text{then find the value of} \\
+(\ora{a}+\ora{b})\cdot\ora{c}.</tex>
   </statement>
   <step>
-    <context>\text{If }\vec{a}=\hat\imath+2\hat\jmath -\hat {\it k} \text{ and }
-\vec{b}=2\hat\imath+\hat\jmath +\hat {\it k}, \\
-\text{what is }\vec{a}+\vec{b}? </context>
-    <tex correct='true'>\vec{a}+\vec{b}=3\hat\imath+3\hat\jmath</tex>
-    <tex>\vec{a}+\vec{b}=\sqrt{5}\hat\imath+\sqrt{5}\hat\jmath+
+    <context>\text{If }\ora{a}=\hat\imath+2\hat\jmath -\hat {\it k} \text{ and }
+\ora{b}=2\hat\imath+\hat\jmath +\hat {\it k}, \\
+\text{what is }\ora{a}+\ora{b}? </context>
+    <tex correct='true'>\ora{a}+\ora{b}=3\hat\imath+3\hat\jmath</tex>
+    <tex>\ora{a}+\ora{b}=\sqrt{5}\hat\imath+\sqrt{5}\hat\jmath+
   \sqrt{2}\hat{\it k}</tex>
     <reason>\text{To add vectors expressed in the form of their} \\
 \text{unit vectors, simply add the component unit} \\
 \text{vectors, since they are in the same direction.}</reason>
   </step>
   <step>
-    <context>\text{If }\vec{a}+\vec{b}=3\hat\imath+3\hat\jmath \text{ and }
-\vec{c}=5\hat\imath -4\hat\jmath+3\hat {\it k}, \\
-\text{what is }(\vec{a}+\vec{b})\cdot \vec{c}?</context>
+    <context>\text{If }\ora{a}+\ora{b}=3\hat\imath+3\hat\jmath \text{ and }
+\ora{c}=5\hat\imath -4\hat\jmath+3\hat {\it k}, \\
+\text{what is }(\ora{a}+\ora{b})\cdot \ora{c}?</context>
     <tex correct='true'>3</tex>
     <tex>30</tex>
     <reason>\begin{align}
-  (\vec{a}+\vec{b})\cdot \vec{c}
+  (\ora{a}+\ora{b})\cdot \ora{c}
     &amp;=(3\hat\imath+3\hat\jmath)\cdot(5\hat\imath -4\hat\jmath+3\hat{\it k}) \\
     &amp;={\bf 15\hat\imath\cdot\hat\imath}-12\hat\imath\cdot\hat\jmath
       +9\hat\imath\cdot\hat{\it k}+ \\
@@ -32,7 +32,7 @@
       +9\hat\jmath\cdot\hat{\it k} \\
 &amp;\begin{tabular}{|c|c|}
   \hline
-  \theta &amp; \vec{A}\cdot\vec{B}=|A||B|\cos\theta \\
+  \theta &amp; \ora{A}\cdot\ora{B}=|A||B|\cos\theta \\
   \hline
   \pi/2 &amp; 0 \\
   0 &amp; |A|\times|B| \\

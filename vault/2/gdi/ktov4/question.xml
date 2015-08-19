@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If }2 \left[\begin{array}{cc}
+  3 &amp; 4 \\
+  5 &amp; x
+\end{array}\right] +
+\left[\begin{array}{cc}
+  1 &amp; y \\
+  0 &amp; 1
+\end{array}\right] =
+\left[\begin{array}{cc}
+  7 &amp; 0 \\
+  10 &amp; 5
+\end{array}\right], \\
+\text{find }(x-y).</tex>
+  </statement>
+  <step>
+    <context>\text{Is this }
+2 \left[\begin{array}{cc}
+  3 &amp; 4 \\
+  5 &amp; x
+\end{array}\right]</context>
+    <tex correct='true'>\left[\begin{array}{cc}
+  6 &amp; 8 \\
+  10 &amp; 2x
+\end{array}\right] </tex>
+    <tex>\left[\begin{array}{cc}
+  6 &amp; 8 \\
+  5 &amp; x
+\end{array}\right] </tex>
+    <reason>\text{Mutliplication of a scalar with a matrix results} \\
+\text{in matrix, each of whose terms is multiplied by} \\
+\text{the scalar. } 
+k \times\left[a_{ij}\right]=\left[k\times a_{ij}\right]</reason>
+  </step>
+  <step>
+    <context>\text{If }\left[\begin{array}{cc}
+  6 &amp; 8 \\
+  10 &amp; 2x
+\end{array}\right] +
+\left[\begin{array}{cc}
+  1 &amp; y \\
+  0 &amp; 1
+\end{array}\right] =
+\left[\begin{array}{cc}
+  7 &amp; 0 \\
+  10 &amp; 5
+\end{array}\right], \\
+\text{the following is true.}
+</context>
+    <tex correct='true'>\begin{align}
+  2x+1=5 &amp;\implies x=2 \\
+  8+y=0 &amp;\implies y=-8
+\end{align}
+</tex>
+    <reason>\text{Addition or Subtraction of matrices involves } \\
+\text{adding / subtracting the corresponding item} \\
+\text{in each of the matrices. Only matrices of the} \\
+\text{same order can be added / subtracted.} \\
+\left[a_{ij}\right]+\left[b_{ij}\right]=\left[a_{ij}+b_{ij}\right] \\
+</reason>
+  </step>
+  <choices>
+    <tex>x=8, y=10</tex>
+    <tex>x=1, y=-5</tex>
+    <tex correct='true'>x=2, y=-8</tex>
+    <tex>x=12, y=-8</tex>
+  </choices>
+</question>
