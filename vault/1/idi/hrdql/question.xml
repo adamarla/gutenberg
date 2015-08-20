@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+		\text{Evaluate} \int (x-3)\cdot\sqrt{x^2+3x-18} \cdot dx
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\text{The given integral is similar to }\\
+			\quad I_E = \int (x-b)\cdot\sqrt{x^2+a^2}\cdot dx.\\
+			\text{If we therefore recommended the following}\\
+			\text{strategy for finding }I_E\text{, then would you}\\
+			\text{accept our recommendation?}
+			</context>
+    <tex correct="true">
+			\begin{align}
+			  \text{Let }t = x^2+a^2 &amp;\text{ and }(x-b) = A\dfrac{dt}{dx} + B \\
+			  \implies A &amp;= \frac{1}{2}\text{ and } B = -b \\
+			  \implies (x-b)\cdot dx &amp;= \frac{dt}{2} - b\cdot dx \\
+			  \implies I_E &amp;= \int\sqrt{t}\cdot\underbrace{\left(\frac{dt}{2} - b dx\right)}
+			  _{ = (x-b)\cdot dx} \\
+			  &amp;= \int\dfrac{\sqrt{t}}{2} dt - b\int\underbrace{\sqrt{x^2+a^2}}_{\sqrt{t}} dx
+			\end{align}
+			</tex>
+    <tex correct="false">
+			\text{Apply integration by parts} \\
+			\begin{align}
+			  I_E &amp;= \int (x-b)\cdot\sqrt{x^2+a^2} dx \\
+			  &amp;= (x-b)\int\sqrt{x^2+a^2}\cdot dx \\
+			  &amp;- \int \left[\frac{d}{dx}(x-b)\cdot\int\sqrt{x^2+a^2}\right]\cdot dx \\
+			  &amp;= (x-b)\int\sqrt{x^2+a^2}\cdot dx \\
+			  &amp;- \int\left(\int\sqrt{x^2+a^2} \cdot dx\right)\cdot dx
+			\end{align}
+			</tex>
+    <reason>
+			\text{If you apply integration by parts to }\\
+			\quad I_E = \int(x-b)\cdot\sqrt{x^2+a^2}\cdot dx\\
+			\text{then you will soon find that the resulting}\\
+			\text{integral is more complicated to solve than}\\
+			\text{the original one. Not what you want.}\\
+			\text{Life is easier if }(x-b) = A\dfrac{d}{dx}(x^2+a^2) + B.\\
+			\text{The original integral can then be broken}\\
+			\text{into ones that are easier to evaluate.}
+			</reason>
+  </step>
+  <step>
+    <context>
+				\text{If }t = x^2+3x-18,\text{ then is the}\\
+				\text{following true?}
+				</context>
+    <tex correct="true">
+				\begin{align}
+				  (x-3)\cdot dx &amp;= \dfrac{dt}{2} -\dfrac{9}{2}\cdot dx 
+				\end{align}
+				</tex>
+    <tex correct="false">
+				\begin{align}
+				  (x-3)\cdot dx &amp;= \dfrac{dt}{2} + \dfrac{3}{2}\cdot dx 
+				\end{align}
+				</tex>
+    <reason>
+				\begin{align}
+				  t = x^2+3x-18 &amp;\implies \dfrac{dt}{dx} = (2x+3) \\
+				  \therefore\text{ if }(x-3) &amp;= A\cdot (2x+3) + B \\
+				  \text{then }A = \dfrac{1}{2}, B = -\dfrac{9}{2} \\ 
+				  \implies (x-3) &amp;= \dfrac{1}{2}\dfrac{dt}{dx} - \dfrac{9}{2} \\ 
+				  \implies (x-3)\cdot dx &amp;= \dfrac{dt}{2} - \dfrac{9}{2}\cdot dx
+				\end{align}
+				</reason>
+  </step>
+  <step>
+    <context>
+					\text{Given that }(x-3)\cdot dx =  \dfrac{dt}{2} -\dfrac{9}{2}\cdot dx \\
+					\text{will }I = \int (x-3)\cdot\sqrt{x^2+3x-18} \cdot dx\\
+					\text{evaluate to the following?}
+					</context>
+    <tex correct="true">
+					\begin{align}
+					  I &amp;= \dfrac{(x^2+3x-18)^\frac{3}{2}}{3} - \dfrac{9}{2}I_Z +C\text{ where } \\
+					  I_Z &amp;= \frac{1}{2}\left[z\sqrt{z^2-a^2} - 
+					  \frac{a^2}{2}\log\vert z + \sqrt{z^2-a^2}\vert\right] \\
+					  z &amp;= \left(x+\frac{3}{2}\right), a = \frac{9}{2} \\
+					\end{align}
+					</tex>
+    <reason>
+					\begin{align}
+					  I &amp;= \int (x-3)\cdot\sqrt{\underbrace{x^2+3x-18}_{t}} \cdot dx \\
+					  &amp;= \int\sqrt{t}\cdot 
+					  \underbrace{\left(\dfrac{dt}{2}-\dfrac{9}{2}\cdot dx\right)}_{ = (x-3)\cdot dx} \\
+					  &amp;= \int \sqrt{t}\cdot \dfrac{dt}{2} - \dfrac{9}{2}\int\sqrt{x^2+3x-18}\cdot dx \\
+					  &amp;= \dfrac{1}{2}\dfrac{t^{\frac{3}{2}}}{\frac{3}{2}}
+					  -\dfrac{9}{2}\int\sqrt{\left(x+\frac{3}{2}\right)^2 - \left(\frac{9}{2}\right)^2}\cdot dx \\
+					  &amp;= \dfrac{(x^2+3x-18)^\frac{3}{2}}{3} - \dfrac{9}{2}
+					  \underbrace{\int\sqrt{z^2 - a^2}\cdot dz}_{I_Z} \\
+					  \text{where } z &amp;= \left(x+\frac{3}{2}\right) \implies dz = dx, a = \frac{9}{2}\\
+					  I_Z &amp;= \frac{1}{2}\left[z\sqrt{z^2-a^2} - 
+					  \frac{a^2}{2}\log\vert z + \sqrt{z^2-a^2}\vert\right]
+					\end{align}
+					</reason>
+  </step>
+</question>
