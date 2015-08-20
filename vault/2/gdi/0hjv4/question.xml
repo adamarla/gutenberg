@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Let $A=\{1, 2, 3, ... 9\}$ and $R$ be the relation in} \\
+A\times A\text{ defined by}\left(a, b\right) R \left(c, d\right)
+\text{ if }a+d=b+c \\
+\text{for $(a, b), (c, d)$ in $A\times A$. Prove that $R$ is an} \\
+\text{equivalence relation. } \\
+\text{Also obtain the equivalence class $[(2, 5)]$.}</tex>
+  </statement>
+  <step>
+    <context>\text{For R to be an equivalence relation, what three} \\
+\text{attributes must it have?}</context>
+    <tex correct='true'>\text{Reflexive, Symmetric, Transitive}</tex>
+    <tex>\text{Active, Passive, Multiplicative}</tex>
+    <reason>\text{An equivalence relation must be demonstrably} \\
+\textbf{Reflexive, Symmetric}\text{ and{\bf Transitive}}. \\
+\text{In brief:} \\
+\begin{tabular}{|c|c|}
+  \hline
+  \text{Reflexive} &amp; (x,x)\in R \\
+  \hline
+  \text{Symmetric} &amp; (x, y), (y, x)\in R \\
+  \hline
+  \text{Transitive} &amp; (x, y), (y, z), (x, z)\in R \\
+  \hline 
+\end{tabular}
+</reason>
+  </step>
+  <step>
+    <context>\text{To prove R is Reflexive, for an arbitrary} \\
+\text{element }(a,b)\in A\times A, \text{we need to show what?}</context>
+    <tex correct='true'>(a+b)=(b+a)</tex>
+    <tex>(a+a)=(b+b)</tex>
+    <reason>\text{For Reflexivity, we need to show} 
+  \left(a, b\right) R \left(a, b\right) \\
+\begin{align}
+  &amp;\left(a, b\right) R \left(c, d\right) \implies a+d=b+c \\
+  \therefore &amp;{\bf \left(a, b\right) R \left(a, b\right) \implies a+b=b+a} \\
+\end{align} \\
+\text{which is true, since addition is commutative.}</reason>
+  </step>
+  <step>
+    <context>\text{To prove R is Symmetric, for }(a,b), (c,d)\in \\
+A\times A, \text{where} \left(a,b\right)R \left(c,d\right) \\
+\text{we need to show what?}</context>
+    <tex correct='true'>(c+b)=(d+a)</tex>
+    <tex>(c+d)=(b+a)</tex>
+    <reason>\text{For Symmetry, we need to show} \\ 
+\begin{array}{c}
+\left(a, b\right) R \left(c, d\right) 
+  \implies \left(c, d\right)R \left(a, b\right)
+\end{array} \\
+\text{Applying the relation,} \\
+\begin{align}
+  \left(a, b\right) R \left(c, d\right) &amp;\implies a+d=b+c \\
+    &amp;\implies d+a=c+b \\
+    &amp;\implies {\bf c+b=d+a} \\
+    &amp;\implies \left(c, d\right)R \left(a, b\right)
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{To prove R is Transitive, for }(a,b), (c,d), (e, f) \\
+\in A\times A, \text{ where} \left(a,b\right)R \left(c,d\right)
+\text{ and }\left(c,d\right)R \left(e,f\right) \\
+\text{we need to show what?}</context>
+    <tex correct='true'>(a+f)=(b+e)</tex>
+    <tex>(a+b)=(e+f)</tex>
+    <reason>\text{For Transitivity, we need to show} \\ 
+\left(a, b\right) R \left(c, d\right),
+  \left(c, d\right) R \left(e, f\right) 
+  \implies \left(a, b\right) R \left(e, f\right). \\
+\text{Applying the relation,} \\  
+\begin{align}
+  \left(a, b\right) R \left(c, d\right) &amp;\implies a+d=b+c \\
+  \left(c, d\right) R \left(e, f\right) &amp;\implies c+f=d+e \\
+\end{align} \\
+\text{Adding the two equations,} \\
+\begin{align}
+  &amp;a+d+c+f=b+c+d+e \\
+  \implies&amp; a+f+\underbrace{d+c}=b+e+c+d \\
+  \implies&amp; a+f+\overbrace{c+d}=b+e+c+d \\
+  \implies&amp; {\bf a+f=b+e} \\
+  \implies&amp; \left(a, b\right)R \left(e, f\right)
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>\text{If $(a,b)$ was in the equivalence class of $[(2, 5)]$} \\
+\text{where } (a,b)\in A\times A \text{what could we say about} \\
+a \text{ and } b?
+</context>
+    <tex correct='true'>a+5=b+2</tex>
+    <tex>a+b=5+2</tex>
+    <reason>\begin{align}
+  \left(a, b\right)R \left(c, d\right)\implies a+d=b+c \\
+  \therefore \left(a, b\right)R \left(5, 2\right)\implies a+5=b+2
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{If $A=\{1, 2, 3, ... 9\}$ and we need $\left(a, b\right) \in R$} \\
+\text{such that $a+5=b+2$, what set satisfies} \\
+\text{the above condition?}</context>
+    <tex correct='true'>\left(1, 4\right), \left(2, 5\right), \left(3, 6\right), \left(4, 7\right),
+\left(5, 8\right), \left(6, 9\right)</tex>
+    <tex>\left(4, 1\right), \left(5, 2\right), \left(6, 3\right), \left(7, 4\right),
+\left(8, 5\right), \left(9, 6\right)</tex>
+    <reason>\text{We need $\left(a,b\right)$ from }A=\{1, 2, 3, ... 9\}, \\
+\text{such that }a+5=b+2 \implies b-a=3 \\
+\text{The pairs that satisfy this condition are} \\
+\left(1, 4\right), \left(2, 5\right), \left(3, 6\right), \left(4, 7\right),
+\left(5, 8\right), \left(6, 9\right)</reason>
+  </step>
+</question>

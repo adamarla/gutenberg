@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Using properties of determinants, prove that} \\
+\small{\left\vert\begin{array}{ccc}
+  2y &amp; y-z-x &amp; 2y \\
+  2x &amp; 2x &amp; z-x-y \\
+  x-y-x &amp; 2x &amp; 2x
+\end{array}\right\vert=(x+y+z)^3}</tex>
+  </statement>
+  <step>
+    <context>\textbf{On properties of determinants} \\
+\text{What property of determinant could we use to} \\
+\text{convert} 
+\left\vert\begin{array}{cc}
+  1 &amp; 1 \\
+  2 &amp; 1
+\end{array}\right\vert \text{ to }
+\left\vert\begin{array}{cc}
+  1 &amp; 1 \\
+  1 &amp; 0
+\end{array}\right\vert ?
+</context>
+    <tex correct='true'>R_2 \rightarrow R_2-1R_1</tex>
+    <tex>R_2 \rightarrow R_2 - 1</tex>
+    <reason>\text{Property of determinant to be used - }\\
+\text{If we apply the operation ${\bf R_i \rightarrow R_i+kR_j}$ to a} \\
+\text{row of the determinant, it's value remains} \\
+\text{unchanged. Same can be done with columns.} \\
+\text{Note: Properties of determinants do not allow} \\
+\text{to add/subtract a constant to a row or column}</reason>
+  </step>
+  <step>
+    <context>\text{Would the following transformations convert} \\
+\small{\left\vert\begin{array}{ccc}
+  2y &amp; y-z-x &amp; 2y \\
+  2x &amp; 2x &amp; z-x-y \\
+  x-y-x &amp; 2x &amp; 2x
+\end{array}\right\vert} \\
+\text{to } \\
+\small{\left\vert\begin{array}{ccc}
+  0 &amp; -(x+y+z) &amp; 2y \\
+  x+y+z &amp; x+y+z &amp; z-x-y \\
+  -(x+y+x) &amp; 0 &amp; 2x
+\end{array}\right\vert}
+</context>
+    <tex correct='true'>C_1 \rightarrow C_1 - C_3 \\
+C_2 \rightarrow C_2 - C_3</tex>
+    <tex>C_1 \rightarrow C_1 - C_2 \\
+C_3 \rightarrow C_2 - C_3</tex>
+    <reason>\text{Only the following transformations would} \\
+\text{produce the required outcome.}\\
+{\bf C_1 \rightarrow C_1 - C_2} \\
+\small{\left\vert\begin{array}{ccc}
+  \overbrace{(2y-2y)}^{0} &amp; y-z-x &amp; 2y \\
+  \overbrace{(2z-z+x+y)}^{x+y+z} &amp; 2z &amp; z-x-y \\
+  \overbrace{(x-y-z-2x)}^{-(x+y+z)} &amp; 2x &amp; 2x
+\end{array}\right\vert} \\
+{\bf C_1 \rightarrow C_2 - C_3} \\
+\small{\left\vert\begin{array}{ccc}
+  0 &amp; -(x+y+z) &amp; 2y \\
+  x+y+z &amp; x+y+z &amp; z-x-y \\
+  -(x+y+x) &amp; 0 &amp; 2x
+\end{array}\right\vert}
+</reason>
+  </step>
+  <step>
+    <context>\text{Would the following transformations convert } \\
+\small{\left\vert\begin{array}{ccc}
+  0 &amp; -(x+y+z) &amp; 2y \\
+  x+y+z &amp; x+y+z &amp; z-x-y \\
+  -(x+y+x) &amp; 0 &amp; 2x
+\end{array}\right\vert} \\
+\text{ to } \\
+\small{\left\vert\begin{array}{ccc}
+  0 &amp; -(x+y+z) &amp; 2y \\
+  0 &amp; 0 &amp; (x+y+z) \\
+  -(x+y+x) &amp; 0 &amp; 2x
+\end{array}\right\vert}?
+</context>
+    <tex correct='true'>R_2\rightarrow R_1+R_2 \\
+R_2\rightarrow R_2++R_3 </tex>
+    <tex>R_1\rightarrow R_1+R_2 \\
+R_3\rightarrow R_2+R_3 </tex>
+    <reason>\text{Only the following transformations would} \\
+\text{produce the required outcome.}\\
+{\bf R_2\rightarrow R_1+R_2} \\
+\small{\left\vert\begin{array}{ccc}
+  0 &amp; -(x+y+z) &amp; 2y \\
+  x+y+z &amp; 0 &amp; z-x+y \\
+  -(x+y+x) &amp; 0 &amp; 2x
+\end{array}\right\vert} \\
+{\bf R_2\rightarrow R_2+R_3 } \\
+\small{\left\vert\begin{array}{ccc}
+  0 &amp; -(x+y+z) &amp; 2y \\
+  x+y+z &amp; 0 &amp; (x+y+z) \\
+  -(x+y+x) &amp; 0 &amp; 2x
+\end{array}\right\vert}
+</reason>
+  </step>
+  <step>
+    <context>A=\small{\left\vert\begin{array}{ccc}
+  0 &amp; -(x+y+z) &amp; 2y \\
+  0 &amp; 0 &amp; (x+y+z) \\
+  -(x+y+x) &amp; 0 &amp; 2x
+\end{array}\right\vert} \\
+\text{what is }|A|?
+</context>
+    <tex correct='true'>(x+y+z)^3</tex>
+    <tex>-(x+y+z)^3</tex>
+    <reason>A=\small{\left\vert\begin{array}{ccc}
+  0 &amp; -(x+y+z) &amp; 2y \\
+  0 &amp; 0 &amp; (x+y+z) \\
+  -(x+y+x) &amp; 0 &amp; 2x
+\end{array}\right\vert} \\
+\begin{align}
+\therefore |A|&amp;=-(x+y+z)\left[-(x+y+z)(x+y+z)\right] \\
+  &amp;= (x+y+z)^3
+\end{align}
+</reason>
+  </step>
+</question>

@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Prove that, for any three vectors }\ora{a}, \ora{b}, \ora{c} \\
+\left[\ora{a}+\ora{b}, \ora{b}+\ora{c}, \ora{c}+\ora{a}\right]
+  =2\left[\ora{a}, \ora{b}, \ora{c}\right]</tex>
+  </statement>
+  <step>
+    <context>\textbf{General Question} \\
+\text{If }\ora{a}, \ora{b}, \ora{c}\text{ are three vectors, what does} \\
+\text{the notation }\left[\ora{a}, \ora{b}, \ora{c}\right]\text{mean?}</context>
+    <tex correct='true'>\text{Scalar triple product }
+  \ora{a}\cdot (\ora{b}\times \ora{c})</tex>
+    <tex>\text{Scalar triple product }
+  \ora{a}\cdot (\ora{b}\cdot \ora{c})</tex>
+    <reason>\text{Scalar triple product of three vectors is} \\
+  \ora{a}\cdot (\ora{b}\times \ora{c}). \\
+\text{It is invariant under a circular shift i.e. } \\
+\ora{a}\cdot (\ora{b}\times\ora{c}) 
+  = \ora{b}\cdot (\ora{c}\times\ora{a})
+  =\ora{c}\cdot (\ora{a}\times\ora{b}) \\
+\text{Note: }\ora{a}\cdot (\ora{b}\cdot \ora{c}) 
+  \text{ is invalid. Why?}</reason>
+  </step>
+  <step>
+    <context>\left[\ora{a}+\ora{b}, \ora{b}+\ora{c}, \ora{c}+\ora{a}\right] \\
+  =(\ora{a}+\ora{b})\cdot
+  \left((\ora{b}+\ora{c})\times (\ora{c}+\ora{a})\right) \\
+\text{What is }
+  {\bf\left((\ora{b}+\ora{c})\times (\ora{c}+\ora{a})\right)}?</context>
+    <tex correct='true'>(\ora{b}\times \ora{c})+(\ora{b}\times \ora{a})+
+  (\ora{c}\times\ora{a})</tex>
+    <reason>\begin{align}
+  &amp;{\bf \left((\ora{b}+\ora{c})\times (\ora{c}+\ora{a})\right)}
+    =(\ora{b}\times \ora{c}) \\
+    &amp;\qquad+(\ora{b}\times \ora{a})
+    +\underbrace{(\ora{c}\times \ora{c})}_{0}+(\ora{c}\times\ora{a}) \\
+  &amp;=(\ora{b}\times \ora{c})+(\ora{b}\times \ora{a})+
+    (\ora{c}\times\ora{a})
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\textbf{General Question} \\
+\text{What is scalar tripe product }
+  \ora{a}\cdot(\ora{b}\times \ora{a})?</context>
+    <tex correct='true'>0</tex>
+    <tex>|\ora{a}|^2|\ora{b}|</tex>
+    <reason>\text{Scaler triple product is invariant under a} \\
+\text{circular shift. Therefore,} \\
+\ora{a}\cdot(\ora{b}\times \ora{a})
+  =\ora{b}\cdot(\ora{a}\times \ora{a})=0 \\
+\text{Cross product of a vector with itself is 0. Why?}
+
+</reason>
+  </step>
+  <step>
+    <context>{\small(\ora{a}+\ora{b})\cdot
+\left((\ora{b}\times \ora{c})+(\ora{b}\times \ora{a})+
+  (\ora{c}\times\ora{a})\right)} \\
+\text{Expanding the above equals?}  </context>
+    <tex correct='true'>\ora{a}\cdot(\ora{b}\times \ora{c}) +
+  \ora{b}\cdot(\ora{c}\times \ora{a})</tex>
+    <reason>\small{\begin{align}
+&amp;(\ora{a}+\ora{b})\cdot
+  \left((\ora{b}\times \ora{c})+(\ora{b}\times \ora{a})+
+  (\ora{c}\times\ora{a})\right) \\
+  &amp;=\ora{a}\cdot(\ora{b}\times \ora{c}) 
+    +\overbrace{\ora{a}\cdot(\ora{b}\times \ora{a})}^{0}
+    +\overbrace{\ora{a}\cdot(\ora{c}\times \ora{a})}^{0} \\
+  &amp;\, +\underbrace{\ora{b}\cdot(\ora{b}\times \ora{c})}_{0} 
+    +\underbrace{\ora{b}\cdot(\ora{b}\times \ora{a})}_{0}
+    +\ora{b}\cdot(\ora{c}\times \ora{a}) \\
+  &amp;={\bf \ora{a}\cdot(\ora{b}\times \ora{c})
+    +\ora{b}\cdot(\ora{c}\times \ora{a})} \\
+  &amp;=2\ora{a}\cdot(\ora{b}\times \ora{c})
+  =2\left[\ora{a}, \ora{b}, \ora{c}\right] \text{ (why?)}
+\end{align}}
+</reason>
+  </step>
+</question>
