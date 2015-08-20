@@ -11,10 +11,10 @@
 \end{array}\right]=0.</tex>
   </statement>
   <step>
-    <context>\text{What would the be the rows and columns} \\
-\text{of a matrix which is the product of a $1\times 2$}\\
-\text{and a $2\times 2$ matrix?} \\
-(a \times b = \text{rows }\times \text{columns})
+    <context>\text{If a $1\times 2$ matrix were multiplied by a $2\times 2$ }\\
+\text{matrix, what would the order of the product} \\
+\text{matrix be? }
+(a \times b \implies \text{a rows, b columns})
 </context>
     <tex correct='true'>1\times 2</tex>
     <tex>2\times 2</tex>
@@ -24,13 +24,13 @@
   <step>
     <context>\text{If}
 \left[\begin{array}{cc}
-  x &amp; 1
+  {\bf x} &amp; 1
 \end{array}\right]\times
 \left[\begin{array}{cc}
   1 &amp; 0 \\
   -2 &amp; 0
-\end{array}\right]=0.\\
-\text{does the following look correct?}
+\end{array}\right]=0 \\
+\text{what is $x$?}
 </context>
     <tex correct='true'>x=2</tex>
     <tex>x=0</tex>
