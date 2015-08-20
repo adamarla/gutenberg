@@ -5,31 +5,44 @@
 \text{then find the value of $x$.}</tex>
   </statement>
   <step>
+    <context>\textbf{General Question} \\
+\text{If }\sin^{-1}\left(\dfrac{1}{a}\right)=\theta, \text{what is}
+\cos^{-1}\left(\dfrac{1}{a}\right)?</context>
+    <tex correct='true'>\dfrac{\pi}{2}-\theta</tex>
+    <tex>\dfrac{\pi}{2}+\theta</tex>
+    <reason>\begin{align}
+  &amp;\sin^{-1}\left(\dfrac{1}{a}\right)=\theta  \\
+  \implies &amp;\left(\dfrac{1}{a}\right)=\sin\theta \\
+  \implies &amp;\left(\dfrac{1}{a}\right)
+    ={\bf\cos\left(\dfrac{\pi}{2}-\theta\right)} \\
+  \implies &amp;\cos^{-1}\left(\dfrac{1}{a}\right)
+    =\dfrac{\pi}{2}-\theta
+\end{align}</reason>
+  </step>
+  <step>
     <context>\text{If }\sin\left(\sin ^{-1}\dfrac{1}{5}+\cos^{-1} x\right)=1, \\
 \text{do you agree with the following?}</context>
     <tex correct='true'>\sin^{-1}\dfrac{1}{5}+\cos^{-1}x=\dfrac{\pi}{2}</tex>
     <tex>\sin^{-1}\dfrac{1}{5}+\cos^{-1}x=\pi</tex>
-    <reason>\begin{tabular}{|c|c|}
+    <reason>\begin{tabular}{|c|c|c|c|}
   \hline
-  \theta &amp; \sin\theta \\
+  {\bf \theta} &amp; 0 &amp; {\bf \frac{\pi}{2}} &amp; \pi \\
   \hline
-  0 &amp; 0 \\
-  {\bf \frac{\pi}{2}} &amp; {\bf 1 }\\
-  \pi &amp; 1 \\
+  {\bf\sin\theta} &amp; 0 &amp; {\bf 1} &amp; -1 \\
   \hline
 \end{tabular}
 </reason>
   </step>
   <step>
     <context>\text{If }\sin^{-1}\dfrac{1}{5}+\cos^{-1}x=\dfrac{\pi}{2} \\
-\text{do you agree with the following?}</context>
+\text{what is x?}</context>
     <tex correct='true'>x=\dfrac{1}{5}</tex>
     <tex>x=\dfrac{2\sqrt{6}}{5}</tex>
     <reason>\begin{align}
   &amp;\sin^{-1}\dfrac{1}{5}+\cos^{-1}x=\dfrac{\pi}{2} \\
   \implies &amp;\cos^{-1}x = \dfrac{\pi}{2}-\sin^{-1}\dfrac{1}{5} \\
-  \implies &amp;x=\cos \left(\dfrac{\pi}{2}-\sin^{-1}\dfrac{1}{5}\right) \\
-  \implies &amp;x=\sin \left(\sin^{-1}\dfrac{1}{5}\right) = \dfrac{1}{5}
+  \implies &amp;\sin^{-1}x=\sin^{-1}\dfrac{1}{5} \\
+  \implies &amp;x=\dfrac{1}{5}
 \end{align}
 </reason>
   </step>

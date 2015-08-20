@@ -37,28 +37,25 @@ k \times\left[a_{ij}\right]=\left[k\times a_{ij}\right]</reason>
   <step>
     <context>\text{If }\left[\begin{array}{cc}
   6 &amp; 8 \\
-  10 &amp; 2x
+  10 &amp; {\bf 2x}
 \end{array}\right] +
 \left[\begin{array}{cc}
-  1 &amp; y \\
+  1 &amp; {\bf y} \\
   0 &amp; 1
 \end{array}\right] =
 \left[\begin{array}{cc}
   7 &amp; 0 \\
   10 &amp; 5
 \end{array}\right], \\
-\text{the following is true.}
+\text{the following is correct?}
 </context>
-    <tex correct='true'>\begin{align}
-  2x+1=5 &amp;\implies x=2 \\
-  8+y=0 &amp;\implies y=-8
-\end{align}
-</tex>
+    <tex correct='true'>x=2, y=-8</tex>
+    <tex>x=\dfrac{5}{2}, y=0</tex>
     <reason>\text{Addition or Subtraction of matrices involves } \\
-\text{adding / subtracting the corresponding item} \\
+\text{adding / subtracting the corresponding term} \\
 \text{in each of the matrices. Only matrices of the} \\
 \text{same order can be added / subtracted.} \\
-\left[a_{ij}\right]+\left[b_{ij}\right]=\left[a_{ij}+b_{ij}\right] \\
+\left[a_{ij}\right]+\left[b_{ij}\right]=\left[a_{ij}+b_{ij}\right]
 </reason>
   </step>
   <choices>

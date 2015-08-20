@@ -4,37 +4,37 @@
     <tex>\text{Let * be a binary operation, on the set of all} \\
 \text{non-zero real numbers, given by } \\
 \begin{array}{c}
-  a*b=\dfrac{ab}{5} \text{ for all } a, b\in R - \{0\} \\
+  a*b=\dfrac{ab}{5} \text{ for all } a, b\in \mathbb{R} - \{0\} \\
 \end{array} \\
 \text{Find the value of x, given that }2*(x*5)=10</tex>
   </statement>
   <step>
-    <context>\text{Is }a*b\text{ defined for }a=1.5, b=2?</context>
-    <tex correct='true'>\text{Yes, it is defined for all } (a, b)\in \mathbb{R} \\
-\text{and $1.5$ and $2$ are real numbers.}</tex>
+    <context>a*b\text{ is defined for all } a, b\in \mathbb{R} - \{0\} \\
+\text{Is it defined for }a=1.5, b=2?</context>
+    <tex correct='true'>\text{Yes, it is not defined for $a=1.5$ and $b=2$,} \\
+\text{since these belong to real numbers.}</tex>
     <tex>\text{No, it is not defined for $a=1.5$, since } \\
 \text{$1.5$ does not belong to real numbers.}</tex>
     <reason>\text{Real numbers include all rational and} \\ 
 \text{irrational numbers.}</reason>
   </step>
   <step>
-    <context>\text{Does }2*\left(x*5\right)\text{ expanded, look like this?} </context>
-    <tex correct='true'>\begin{align}
-  &amp;2*\left(x*5\right)=\dfrac{2x}{5} \\
-  \implies &amp;\dfrac{2x}{5}=10\, \therefore x=25
-\end{align}
-</tex>
-    <tex>\begin{align}
-  &amp;2*\left(x*5\right)=2x \\
-  \implies &amp;2x=10\, \therefore x=5
-\end{align}
+    <context>\text{If $a*b=\dfrac{ab}{5}$, does this expansion} \\
+\text{for }2*\left(x*5\right)\text{ look correct?} </context>
+    <tex correct='true'>2*\left(x*5\right)=\dfrac{2x}{5}</tex>
+    <tex>2*\left(x*5\right)=2x
 </tex>
     <reason>\begin{align}
-  &amp;2*\left(x*5\right)=\dfrac{2x}{5} \\
-  \implies &amp;\dfrac{2\times \dfrac{5x}{5}}{5}=10 \\
-  \implies &amp;\dfrac{2x}{5}=10\, \therefore x=25
+  2*\left(x*5\right)&amp;=\dfrac{2\times \left(\dfrac{5x}{5}\right)}{5} \\
+   &amp;=\dfrac{2x}{5}
 \end{align}
 </reason>
+  </step>
+  <step>
+    <context>\text{If $2*(x*5)=\dfrac{2x}{5}=10,$ x is?}</context>
+    <tex correct='true'>25</tex>
+    <tex>1</tex>
+    <reason>\dfrac{2x}{5}=10\implies x=25</reason>
   </step>
   <choices>
     <tex correct='true'>25</tex>
