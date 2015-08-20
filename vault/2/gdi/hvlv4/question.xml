@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If $y=x^x$, prove that }
+\dfrac{d^2y}{dx^2}-\dfrac{1}{y}\left(\dfrac{dy}{dx}\right)
+  -\dfrac{y}{x}=0.</tex>
+  </statement>
+  <step>
+    <context>\text{If }y=x^x. \text{ what is }\dfrac{dy}{dx}?</context>
+    <tex correct='true'>\dfrac{dy}{dx}=x^x\left(1+\log x\right)</tex>
+    <tex>\dfrac{dy}{dx}=x^x</tex>
+    <reason>\text{We cannot directly differentiate a function with} \\
+\text{respect to $x$, when $x$ is an exponent. In such} \\
+\text{functions, we first take $\log$ of both sides in} \\
+\text{order to get $x$ out of the exponent.} \\
+\begin{align}
+  &amp;y = x^x \\
+  \implies&amp; {\bf \log y =x\log x}  
+\end{align} \\
+\text{Now differentiate both sides with respect to $x$}, \\
+\begin{align}
+  &amp;\dfrac{1}{y}\dfrac{dy}{dx}=x\cdot \dfrac{1}{x}+\log x \\
+  \implies &amp; \dfrac{dy}{dx}=y \left(1+\log x\right) \\
+  \implies &amp; {\bf \dfrac{dy}{dx}=x^x \left(1+\log x\right)}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{If }y=x^x\text{ and }\dfrac{dy}{dx}=x^x\left(1+\log x\right), \\
+\text{what is }\dfrac{d^2y}{dx^2}?</context>
+    <tex correct='true'>\dfrac{d^2y}{dx^2}=\dfrac{y}{x}+
+  \dfrac{1}{y}\left(\dfrac{dy}{dx}\right)</tex>
+    <tex>\dfrac{d^2y}{dx^2}=\left(\dfrac{dy}{dx}\right)^2</tex>
+    <reason>\text{If }y=x^x\text{ and }\dfrac{dy}{dx}=x^x\left(1+\log x\right), \\
+\text{Rewrite the second equation by substituting y,} \\
+\begin{align}
+  &amp;\dfrac{dy}{dx}=y\left(1+\log x\right) \\
+  &amp;\text{differentiate with respect to $x$} \\
+  \implies&amp;\dfrac{d^2y}{dx^2}= y\cdot\dfrac{1}{x}
+    +\underbrace{\left(1+\log x\right)}_{\dfrac{1}{y}\dfrac{dy}{dx}}\dfrac{dy}{dx} \\
+  \implies&amp;{\bf\dfrac{d^2y}{dx^2}=\dfrac{y}{x}
+    +\dfrac{1}{y}\left(\dfrac{dy}{dx}\right)^2} \\
+  \implies&amp;\dfrac{d^2y}{dx^2}-\dfrac{1}{y}\left(\dfrac{dy}{dx}\right)
+    -\dfrac{y}{x}=0
+\end{align}</reason>
+  </step>
+</question>
