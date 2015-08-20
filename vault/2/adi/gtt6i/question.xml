@@ -6,21 +6,16 @@
 \text{plane }\ora{r}\cdot(\vector{1}{1}{1})=2</tex>
   </statement>
   <step>
-    <context>\text{If the equation of a plane in vector form is} \\
-\begin{array}{c}
-\ora{r}\cdot \hat{n}=d, \text{where,}
-\end{array} \\
+    <context>\text{For a plane whose equation is }\ora{r}\cdot \hat{n}=d \\
 \text{$\hat{n}$ - unit vector normal to the plane} \\
-\text{$d$ - $\perp$  distance from origin to the plane,} \\
-\text{what are unit vector normal and $\perp$ distance} \\
-\text{from origin, to the plane }\ora{r}\cdot(\vector{1}{1}{1})=2?
+\text{$d$ - $\perp$  distance from origin to the plane.} \\
+\text{What are unit vector normal and $\perp$ distance} \\
+\text{from origin, for the plane }\ora{r}\cdot(\vector{1}{1}{1})=2?
 </context>
-    <tex correct='true'>\text{Unit vector normal, }
-  \hat{n}=\dfrac{1}{\sqrt{3}}(\vector{1}{1}{1}) \\
-\text{$\perp$ distance, }d=\dfrac{2}{\sqrt{3}}</tex>
-    <tex>\text{Unit vector normal, }
-  \hat{n}=(\vector{1}{1}{1}) \\
-\text{$\perp$ distance, }d=2</tex>
+    <tex correct='true'>\text{Unit vector normal}=\dfrac{1}{\sqrt{3}}(\vector{1}{1}{1}) \\
+\text{$\perp$ distance}=\dfrac{2}{\sqrt{3}}</tex>
+    <tex>\text{Unit vector normal}=(\vector{1}{1}{1}) \\
+\text{$\perp$ distance}=2</tex>
     <reason>\begin{align}
   \ora{r}\cdot(\vector{1}{1}{1})=2 &amp;\text{(given plane)}\\
   \ora{r}\cdot\hat{n}=d &amp;\text{(general form)}\\
@@ -31,12 +26,11 @@
   \hat{n} &amp;= \dfrac{(\vector{1}{1}{1})}{\sqrt{1+1+1}} 
     = \dfrac{1}{\sqrt{3}}(\vector{1}{1}{1})
 \end{align} \\
-\text{Substituting this in the given plane,} \\
-\begin{align}
-  &amp;\ora{r}\cdot(\vector{1}{1}{1})=2 \\
-  \implies &amp;\ora{r}\cdot\dfrac{1}{\sqrt{3}}(\vector{1}{1}{1})
-    =\dfrac{2}{\sqrt{3}}
-\end{align}
+\text{Substituting this in the given equation,} \\
+\ora{r}\cdot
+  \overbrace{\dfrac{1}{\sqrt{3}}(\vector{1}{1}{1})}^
+    \text{unit vector normal}
+    =\overbrace{\dfrac{2}{\sqrt{3}}}^\text{$\perp$ dist}
 </reason>
   </step>
   <step>
@@ -48,7 +42,7 @@
     <tex correct='true'>\ora{r}\cdot\dfrac{1}{\sqrt{3}}(\vector{1}{1}{1})
   =\sqrt{a^2+b^2+c^2}</tex>
     <tex>\ora{r}\cdot(\vector{1}{1}{1})=\sqrt{a^2+b^2+c^2}</tex>
-    <reason>\text{$(a, b, c)$ is at a distance $\sqrt{a^2+b^2+c^2}$} \\
+    <reason>\text{$(a, b, c)$ is at a $\perp$ distance $\sqrt{a^2+b^2+c^2}$} \\
 \text{from the origin. Substituting this in the} \\
 \text{equation of the equation of the plane,} \\
 \ora{r}\cdot\dfrac{1}{\sqrt{3}}(\vector{1}{1}{1})
