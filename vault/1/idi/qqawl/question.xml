@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+		\text{A dealer in rural area wishes to purchase}\\
+		\text{a number of sewing machines. He has only }\\
+		\text{₹ 5760 to invest and has space for atmost}\\
+		\text{20 items for storage. An electronic sewing}\\
+		\text{costs him ₹ 360 and a manually operated}\\
+		\text{sewing machine ₹ 240. He can see an electronic}\\
+		\text{sewing machine at a profit of ₹ 22 and a}\\
+		\text{manually operated machine at a profit of ₹ 18.}\\
+		\text{Assuming he can sell all the machines that }\\
+		\text{he can buy, how should he invest his money}\\
+		\text{in order to maximize his profit?}\\
+		\textbf{Make it as a LPP and solve it graphically.}
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\text{Does the figure below correctly capture}\\
+			\text{the \bf{storage and budgetary constraints}}\\
+			\text{of the dealer?}
+			</context>
+    <image correct="true">1-right.svg</image>
+    <image correct="false">1-wrong.svg</image>
+    <reason>
+			\text{The dealer has certain constraints, as shown}\\
+			\text{in the table below} \\
+			(\textbf{e = }\text{electronic m/c, }\textbf{m = }\text{ manual m/c.})\\
+			\begin{tabular}{|c|c|c|}
+			\hline 
+			\text{Type} &amp; \text{Constraint} &amp; \text{Line} \\
+			\hline 
+			\text{Budgetary} &amp; 360e + 240m\leq 5760 &amp; 3e + 2m = 48 \\
+			\text{Storage} &amp; e + m \leq 20 &amp; e + m = 20 \\
+			\hline
+			\end{tabular} \\
+			\underline{\text{Spot Check}} \\
+			\begin{align}
+			  e + m &amp;= 20 \implies e = 20-m \\
+			  3e + 2m &amp;= 48 \implies e = 16 - \frac{2}{3}m
+			\end{align} \\
+			\text{The line with the higher y-intercept should}\\
+			\text{therefore be }e + m = 20\text{ - which happens}\\
+			\text{to be the storage constraint line.}
+			</reason>
+  </step>
+  <step>
+    <context>
+				\textbf{Feasible Region}\\
+				\text{Does the figure below correctly show }\\
+				\text{the feasible region?}
+				</context>
+    <image correct="true">2-right.svg</image>
+    <image correct="false">2-wrong.svg</image>
+    <reason>
+				\text{Any feasible region will have to satisfy}\\
+				\text{the following two conditions }\textbf{simultaneously.}\\
+				\quad\bullet\, \text{be below }e + m = 20 \\
+				\quad\bullet\, \text{be below }3e + 2m = 48 \\
+				</reason>
+  </step>
+  <step>
+    <context>
+				\text{The dealer thinks he knows what the maximum}\\
+				\text{profit he can make is. And he tells you that}\\
+				\text{it is the number below.}\\
+				\textbf{Has the dealer calculated his profit correctly?}
+				</context>
+    <tex correct="true">
+				\quad ₹ 392 
+				</tex>
+    <tex correct="false">
+				\quad ₹ 360
+				</tex>
+    <reason>
+				\text{The dealer's objective is to maximize} \\
+				\quad P = 22e + 18m \\
+				\text{And given the feasible region from Step 2, we} \\
+				\text{have the following points to consider}\\
+				\begin{tabular}{|c|c|c|}
+				\hline 
+				\text{Point} &amp; (m,e) &amp; \text{Profit} \\
+				\hline 
+				B &amp; (0,16) &amp; 16\times ₹22 = ₹ 352\\
+				C &amp; (12,8) &amp; 12\times ₹ 18 + 8\times ₹ 22 = ₹ 392\\
+				D &amp; (20,0) &amp; 20\times ₹ 18 = ₹ 360 \\
+				\hline
+				\end{tabular} \\
+				\text{Hence, the dealer's maximum profit would be}\\
+				\text{when he sells 12 manual and 8 electronic sewing}\\
+				\text{machines for a total profit of ₹ 392.}
+				</reason>
+  </step>
+  <choices>
+    <tex>\text{Max. profit = }₹ 360</tex>
+    <tex correct="true">\text{Max. profit = }₹ 392</tex>
+    <tex>\text{Max. profit = }₹ 298</tex>
+    <tex>\text{Max. profit = }₹ 348</tex>
+  </choices>
+</question>
