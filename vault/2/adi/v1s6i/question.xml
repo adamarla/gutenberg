@@ -13,9 +13,7 @@
 \text{pastel sheets while School C sold 26 paper bags} \\
 \text{18 scrap-books and 36 pastel sheets. Using} \\
 \text{matrices, find the total amount raised by each} \\
-\text{school.} \\
-\text{What values does such an exhibition inculcate} \\
-\text{in the students?}</tex>
+\text{school.}</tex>
   </statement>
   <step>
     <context>\text{If Q is the quantity sold, R is rate per item} \\
@@ -28,12 +26,12 @@
   </step>
   <step>
     <context>\text{If the quantity matrix Q looks like this} \\
-\overbrace{
-Q=\left[\begin{array}{ccc}
+Q=\overbrace{\left[\begin{array}{ccc}
   25 &amp; 12 &amp; 34 \\
   22 &amp; 15 &amp; 28  \\
   26 &amp; 18 &amp; 36
-\end{array}\right] }^\text{paper bag | scrap-book | pastel sheet}
+\end{array}\right] }^
+  \text{\dfrac{paper}{bag }| \dfrac{scrap}{book }| \dfrac{pastel }{sheet}}
 \begin{array}{c}
   \small\text{School A} \\
   \small\text{School B} \\
@@ -51,7 +49,10 @@ Q\times R = A\text{ (amount matrix)}?</context>
   15 \small\text{(₹/s.book)}\quad
   5   \small\text{(₹/pastel)}
 \right]</tex>
-    <reason>\text{A $3\times 3$ matrix can only be } \\
+    <reason>\text{In $3\times 1$ configuration, the total amount raised} \\
+\text{by a school would be realised as the weighted} \\
+\text{sum of the amount raised for each good type.} \\
+\text{Moreover, a $3\times 3$ matrix can only be } \\
 \text{multiplied with a $3\times n$ matrix.}
 </reason>
   </step>
@@ -86,19 +87,15 @@ Q\times R = A\text{ (amount matrix)}?</context>
   5
 \end{array}\right]=\left[A_1 \quad A_2\quad A_3\right], \\
 \text{where,} \\
-A_1=(25\times 20+12\times 15+34\times 5)=850 \\
-A_2=(22\times 20+15\times 15+28\times 5)=805 \\
-A_3=(26\times 20+18\times 15+36\times 5)=970 \\
-
-\text{Such an exercise certainly inculcate feelings} \\
-\text{of kindness, togetherness with the community}\\
-\text{and a sense of what teamwork can achieve.}
+A_1=(25\times 20+12\times 15+34\times 5)=₹850 \\
+A_2=(22\times 20+15\times 15+28\times 5)=₹805 \\
+A_3=(26\times 20+18\times 15+36\times 5)=₹970 \\
 </reason>
   </step>
   <choices>
-    <tex>\left[1420 \quad 975\quad 400\right]</tex>
-    <tex correct='true'>\left[850 \quad 805\quad 970\right]</tex>
-    <tex>\left[1420 \quad 975\quad 970\right]</tex>
-    <tex>\left[850 \quad 975\quad 400\right]</tex>
+    <tex>A=₹1420, B=₹975, C=₹400</tex>
+    <tex correct='true'>A=₹850, B=₹805, C=₹970</tex>
+    <tex>A=₹1420, B=₹975, C=₹970</tex>
+    <tex>A=₹850, B=₹975, C=₹400</tex>
   </choices>
 </question>

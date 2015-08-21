@@ -1,0 +1,273 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Two schools P and Q want to award their} \\
+\text{selected students on the values of Discipline,} \\
+\text{Politeness and Punctuality. The school P} \\
+\text{wants to award ₹ x each, ₹ y each and ₹ z } \\
+\text{each for the three respective values to its 3, 2,} \\
+\text{and 1 students with a total award money of } \\
+\text{₹ 1,000. School Q wants to spend ₹ 1,500 to} \\
+\text{award its 3, 2 and 1 students on the respective} \\
+\text{values (by giving the same award money for the} \\
+\text{the three values as before). If the total amount} \\
+\text{of awards for one prize on each value is ₹ 600,} \\
+\text{using matrices, find the award money for each} \\
+\text{value.}</tex>
+  </statement>
+  <step>
+    <context>\text{If N is the number of students, R is rate per} \\
+\text{discipline and A the amount awarded, the } \\
+\text{relationship between N, R and A is}</context>
+    <tex correct='true'>N\times R = A</tex>
+    <tex>A\times R = N</tex>
+    <reason>N \text{(students)}\times R \text{(₹/student)}
+ =A\text{(₹ awarded)}</reason>
+  </step>
+  <step>
+    <context>\text{If the number awarded matrix N looks like this} \\
+N=\overbrace{
+\left[\begin{array}{ccc}
+  3 &amp; 2 &amp; 1 \\
+  4 &amp; 1 &amp; 3 
+\end{array}\right] }^\text{disci| polite| punct}
+\begin{array}{c}
+  \small\text{School P} \\
+  \small\text{School Q} \\
+\end{array} \\
+\text{what does the rate matrix R look like so that} \\
+N\times R = A\text{ (amount matrix)}?</context>
+    <tex correct='true'>R=\left[\begin{array}{cl}
+  x &amp; \small\text{(₹/discipline)}\\
+  y &amp; \small\text{(₹/politeness)}\\
+  z   &amp; \small\text{(₹/punctuality)}
+\end{array}\right]</tex>
+    <tex>R=\left[
+  x \small\text{(₹/discipline)}\quad
+  y \small\text{(₹/polite)}\quad
+  z \small\text{(₹/punct)}\right]</tex>
+    <reason>\text{In $3\times 1$ configuration, the total awarded by} \\
+\text{a school would be realised as the weighted} \\
+\text{sum of the amount awarded for each virtue.} \\
+\text{Moreover, a $3\times 3$ matrix can only be } \\
+\text{multiplied with a $3\times n$ matrix.}
+</reason>
+  </step>
+  <step>
+    <context>\text{Multiplying rate and number awarded we get} \\
+\left[\begin{array}{ccc}
+  3 &amp; 2 &amp; 1 \\
+  4 &amp; 1 &amp; 3 
+\end{array}\right]\times
+\left[\begin{array}{c}
+  x \\
+  y \\
+  z
+\end{array}\right]=
+\left[\begin{array}{c}
+  1000 \\
+  1500
+\end{array}\right] \\
+\text{If we combine the constraint on total award} \\
+\text{money $(x+y+z)=600$ with this, what does} \\
+\text{the new equation look like in matrix form?}
+</context>
+    <tex correct='true'>\left[\begin{array}{ccc}
+  3 &amp; 2 &amp; 1 \\
+  4 &amp; 1 &amp; 3 \\
+  1 &amp; 1 &amp; 1
+\end{array}\right]\times
+\left[\begin{array}{c}
+  x \\
+  y \\
+  z
+\end{array}\right]=
+\left[\begin{array}{c}
+  1000 \\
+  1500 \\
+  600
+\end{array}\right] \\
+</tex>
+    <tex>\left[\begin{array}{ccc}
+  3 &amp; 2 &amp; 1 \\
+  4 &amp; 1 &amp; 3
+\end{array}\right]\times
+\left[\begin{array}{c}
+  x \\
+  y \\
+  z
+\end{array}\right]=
+\left[\begin{array}{c}
+  1000 \\
+  1500 \\
+  600
+\end{array}\right] \\
+</tex>
+    <reason>\left[\begin{array}{ccc}
+  3 &amp; 2 &amp; 1 \\
+  4 &amp; 1 &amp; 3 
+\end{array}\right]\times
+\left[\begin{array}{c}
+  x \\
+  y \\
+  z
+\end{array}\right]=
+\left[\begin{array}{c}
+  1000 \\
+  1500
+\end{array}\right] \\
+\text{represents the equations } \\
+\begin{align}
+  3x+2y+z &amp;=1000 \text{ and} \\
+  4x+y+3z &amp;=1500
+\end{align} \\
+\text{To this if we add }x+y+z=600, \\
+\text{the new set of equations would be} \\
+\left[\begin{array}{ccc}
+  3 &amp; 2 &amp; 1 \\
+  4 &amp; 1 &amp; 3 \\ 
+  1 &amp; 1 &amp; 1
+\end{array}\right]\times
+\left[\begin{array}{c}
+  x \\
+  y \\
+  z
+\end{array}\right]=
+\left[\begin{array}{c}
+  1000 \\
+  1500 \\
+  600
+\end{array}\right] \\
+</reason>
+  </step>
+  <step>
+    <context>\overbrace{\left[\begin{array}{ccc}
+  3 &amp; 2 &amp; 1 \\
+  4 &amp; 1 &amp; 3 \\ 
+  1 &amp; 1 &amp; 1
+\end{array}\right]\times}^{N}
+\overbrace{\left[\begin{array}{c}
+  x \\
+  y \\
+  z
+\end{array}\right]}^{R}=
+\overbrace{\left[\begin{array}{c}
+  1000 \\
+  1500 \\
+  600
+\end{array}\right]}^{A} \\
+\text{If the same row transforms are applied to} \\
+\text{N and A till N turns into I (Identity Matrix),} \\
+\text{what would A turn into?}
+</context>
+    <tex correct='true'>R</tex>
+    <tex>N^{-1}</tex>
+    <reason>\begin{align}
+  A&amp;=N\times R \\
+  N&amp;\rightarrow I \text{ (row transformations)}\\
+  A&amp;=IR \implies A=R
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\overbrace{\left[\begin{array}{ccc}
+  3 &amp; 2 &amp; 1 \\
+  4 &amp; 1 &amp; 3 \\ 
+  1 &amp; 1 &amp; 1
+\end{array}\right]\times}^{N}
+\overbrace{\left[\begin{array}{c}
+  x \\
+  y \\
+  z
+\end{array}\right]}^{R}=
+\overbrace{\left[\begin{array}{c}
+  1000 \\
+  1500 \\
+  600
+\end{array}\right]}^{A} \\
+\text{Would the following transform N to } \\
+\left[\begin{array}{ccc}
+  15 &amp; 10 &amp; 0 \\
+  0 &amp; -3 &amp; 0 \\ 
+  0 &amp; 0 &amp; 5
+\end{array}\right]</context>
+    <tex correct='true'>R_2\rightarrow R_2-4R_3 \\
+R_3\rightarrow 3R_3-R_1 \\
+R_3\rightarrow 3R_3+R_2 \\
+R_2\rightarrow R_2+5R_3 \\
+R_1\rightarrow 5R_1-R_3
+</tex>
+    <reason>\begin{array}{cc}
+\begin{align}
+  R_2\rightarrow R_2-4R_3 \\
+  R_3\rightarrow 3R_3-R_1 \\
+\end{align} &amp;
+\left[\begin{array}{ccc}
+  3 &amp; 2 &amp; 1 \\
+  0 &amp; -3 &amp; -1 \\ 
+  0 &amp; 1 &amp; 2
+\end{array}\right] \\
+\begin{align}
+  R_3\rightarrow 3R_3+R_2 \\
+  R_2\rightarrow R_2+5R_3 \\
+\end{align} &amp;
+\left[\begin{array}{ccc}
+  3 &amp; 2 &amp; 1 \\
+  0 &amp; -3 &amp; -1 \\ 
+  0 &amp; 0 &amp; 5
+\end{array}\right] \\
+R_1\rightarrow 5R_1-R_3 &amp;
+\left[\begin{array}{ccc}
+  15 &amp; 10 &amp; 0 \\
+  0 &amp; -3 &amp; 0 \\ 
+  0 &amp; 0 &amp; 5
+\end{array}\right]
+\end{array}
+</reason>
+  </step>
+  <step>
+    <context>\text{Would the following transform } \\
+\left[\begin{array}{ccc}
+  15 &amp; 10 &amp; 0 \\
+  0 &amp; -3 &amp; 0 \\ 
+  0 &amp; 0 &amp; 5
+\end{array}\right] \text{ to I (Identity Matrix)?}</context>
+    <tex correct='true'>R_2\rightarrow -\dfrac{1}{3}R_2 \\
+R_3\rightarrow \dfrac{1}{5}R_3 \\
+R_1\rightarrow R_1-10R_2 \\
+R_1\rightarrow \dfrac{1}{15}R_1
+</tex>
+    <reason>\begin{array}{cc}
+\begin{align}
+  R_2\rightarrow -\dfrac{1}{3}R_2 \\
+  R_3\rightarrow \dfrac{1}{5}R_3 \\
+\end{align} &amp;
+\left[\begin{array}{ccc}
+  15 &amp; 10 &amp; 0 \\
+  0 &amp; 1 &amp; 0 \\ 
+  0 &amp; 0 &amp; 1
+\end{array}\right] \\
+\begin{align}
+  R_1\rightarrow R_1-10R_2 \\
+  R_1\rightarrow \dfrac{1}{15}R_1
+\end{align} &amp;
+\left[\begin{array}{ccc}
+  1 &amp; 0 &amp; 0 \\
+  0 &amp; 1 &amp; 0 \\ 
+  0 &amp; 0 &amp; 1
+\end{array}\right]
+\end{array} \\
+\text{Applying the corresponding transforms to the} \\
+\text{amount matrix from Step 4 gives } \\
+\left[\begin{array}{c}
+  100 \\
+  200 \\
+  300
+\end{array}\right]</reason>
+  </step>
+  <choices>
+    <tex correct='true'>x = ₹100, y=₹200, z=₹300</tex>
+    <tex>x = ₹300, y=₹200, z=₹100</tex>
+    <tex>x = ₹300, y=₹100, z=₹200</tex>
+    <tex>x = ₹400, y=₹100, z=₹100</tex>
+  </choices>
+</question>

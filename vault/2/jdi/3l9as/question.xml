@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the distance of point }\left(-1,-5, -10\right)\text{ from} \\
+\text{the point where the line } \ora{r}=\vector{2}{-}{2}+ \\
+\lambda(\vector{3}{4}{2}) \text{ passes through the plane} \\
+\ora{r}\cdot(\vector{1}{-}{1})=5.</tex>
+  </statement>
+  <step>
+    <context>\textbf{Intersection of line and plane} \\
+\text{If a point lies on plane }\ora{r}\cdot(\vector{1}{-}{1})=5 \\
+\text{as well as on line }\ora{r}=\vector{2}{-}{2}+ \\
+\lambda(\vector{3}{4}{2})\text{, is the following a valid} \\
+\text{expression for it?}
+</context>
+    <tex correct='true'>\small{\left(\vector{(2+3\lambda)}{(-1+4\lambda)}
+  {(2+2\lambda)}\right)\cdot}
+  \small{(\vector{1}{-}{1})=5}</tex>
+    <tex>\lambda(\vector{3}{4}{2})\cdot(\vector{1}{-}{1})=5</tex>
+    <reason>\text{For the given line, the position vector of any} \\
+\text{point on this line can be expressed as} \\
+\ora{r}=\vector{(2+3\lambda)}{(-1+4\lambda)}{(2+2\lambda)} \\
+\text{Similarly for the given plane, the position} \\ 
+\text{vector of any point on it is can be expressed as} \\
+\ora{r}\cdot(\vector{1}{-}{1})=5. \\
+\text{When the point lies on {\bf both the line and the}} \\
+\textbf{plane}\text{, they are said to{\bf intersect}.To establish} \\
+\text{the point of interection, the two expressions for} \\
+\text{position vector of the point can be equated.} \\
+{\bf\small{\left(\vector{(2+3\lambda)}{(-1+4\lambda)}{(2+2\lambda)}
+  \right)\cdot}} \\
+  \qquad{\bf\small{(\vector{1}{-}{1})=5}}</reason>
+  </step>
+  <step>
+    <context>\small{\left(\vector{(2+3\lambda)}{(-1+4\lambda)}
+  {(2+2\lambda)}\right)\cdot}
+  \small{(\vector{1}{-}{1})=5} \\
+\text{Are these the co-ordinates for the point of} \\
+\text{interection?}</context>
+    <tex correct='true'>(2,-1,2)</tex>
+    <reason>\small{\left(\vector{(2+3\lambda)}{(-1+4\lambda)}
+  {(2+2\lambda)}\right)\cdot}
+  \small{(\vector{1}{-}{1})}=\small{5} \\
+\text{Taking scalar{\bf dot-product}} \\
+\begin{align}
+  &amp;(2+3\lambda)-(-1+4\lambda)+(2+2\lambda)=5 \\
+  \implies&amp;\lambda+5=5\implies{\bf \lambda=0}
+\end{align} \\
+\text{Substitute $\lambda$ in the equation of the line} \\
+\begin{align}
+  \ora{r}&amp;=\vector{2}{-}{2}+0(\vector{3}{4}{2}) \\
+    &amp;=\vector{2}{-}{2}
+\end{align} \\
+\text{Therefore co-ordinates are }{\bf(2, -1, 2).}
+</reason>
+  </step>
+  <step>
+    <context>\text{What is the distance between intersection point} \\
+(2,-1,2)\text{ and given point }(-1, -5, -10)?</context>
+    <tex correct='true'>13</tex>
+    <tex>25</tex>
+    <reason>\text{Distance between $(x_1, y_1, z_1)$ and $(x_2, y_2, z_2)$ is}\\
+\text{given by }\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2} \\
+\begin{align}
+\small{D}&amp;=\small{\sqrt{((2-(-1))^2+(-1-(-5))^2+(2-(-10))^2}} \\
+  &amp;=\small{\sqrt{9+16+144}}=\sqrt{169}={\bf 13} 
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>13</tex>
+    <tex>169</tex>
+    <tex>117</tex>
+    <tex>25</tex>
+  </choices>
+</question>

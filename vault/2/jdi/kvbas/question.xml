@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the distance between the point P $(7,2,4)$}\\
+\text{and the plane determined by the points,} \\
+A(2, 5, -3), B(-2, -3. 5)\text{ and }C(5, 3, -3).</tex>
+  </statement>
+  <step>
+    <context>\text{If A. B and C are three non-colinear points,} \\
+\text{is this the vector representation of the plane} \\
+\text{that contains them?}</context>
+    <tex correct='true'>(\ora{r}-\ora{A})\cdot[(\ora{B}-\ora{A})
+  \times(\ora{C}-\ora{A})]=0</tex>
+    <tex>(\ora{r}-\ora{A})\times[(\ora{B}-\ora{A})
+  \times(\ora{C}-\ora{A})]=0</tex>
+    <reason>\text{If $\ora{r}$ is the position vector to any point on} \\
+\text{the plane, and $\ora{A}$, $\ora{B}$ and $\ora{C}$ are three points} \\
+\text{on the plane, then,}\\
+\begin{array}{|c|c|}
+  \hline
+  \textbf{Vector} &amp; \textbf{Orientation} \\
+  \hline
+  \ora{r}-\ora{A} &amp; \text{along the plane} \\
+  \ora{B}-\ora{A} &amp; \text{along the plane} \\
+  \ora{C}-\ora{A} &amp; \text{along the plane} \\
+  \hline
+  (\ora{B}-\ora{A})\times(\ora{C}-\ora{A}) &amp;
+    \text{normal to the plane} \\
+  \hline  
+\end{array} \\
+\therefore\text{ for any point $\ora{r}$ on the plane} \\
+(\ora{r}-\ora{A})\cdot[(\ora{B}-\ora{A})
+  \times(\ora{C}-\ora{A})]=0
+  </reason>
+  </step>
+  <step>
+    <context>\text{If }(\ora{r}-\ora{A})\cdot
+  [(\ora{B}-\ora{A})\times(\ora{C}-\ora{A})]=0 \\
+\text{and A, B and C are }(2, 5, -3), (-2, -3. 5)\text{ and } \\
+(5, 3, -3)\text{ respectively. is this is the vector} \\
+\text{notation for equation of the plane?}
+</context>
+    <tex correct='true'>\ora{r}\cdot(\vector{2}{3}{4})=7</tex>
+    <reason>\begin{align}
+[(\ora{B}-\ora{A})\times(\ora{C}-\ora{A})]&amp;=
+\left\vert\begin{array}{ccc}
+  \imath &amp; \jmath &amp; {\it k} \\
+  -4 &amp; -8 &amp; 8 \\
+  3 &amp; -2 &amp; 0
+\end{array}\right\vert \\
+  &amp;= -8(\vector{2}{3}{4})
+\end{align} \\
+\begin{align}
+  \therefore&amp;(\ora{r}-\ora{A})\cdot(-8(\vector{2}{3}{4}))=0 \\
+  \implies&amp;(\ora{r}-(\vector{2}{5}{-3}))\cdot (\vector{2}{3}{4})=0 \\
+  \implies&amp;{\bf \ora{r}\cdot(\vector{2}{3}{4})=7} \\
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>\text{If \ora{P} is point on a plane{\bf parallel} to the plane} \\
+\ora{r}\cdot(\vector{2}{3}{4})=7, \\
+\text{and $\ora{r}$ is a point on this plane containing P,} \\
+\text{then is the following true?}  
+</context>
+    <tex correct='true'>(\ora{r}-\ora{P})\cdot\dfrac{(\vector{2}{3}{4})}{\sqrt{29}}=0</tex>
+    <tex>(\ora{r}-\ora{P})\times\dfrac{(\vector{2}{3}{4})}{\sqrt{29}}=0</tex>
+    <reason>\text{Since the plane containing P is parallel to} \\
+\text{the plane } \\
+\begin{array}{c}
+\ora{r}\cdot(\vector{2}{3}{4})=7,
+\end{array} \\
+\text{any vector along the plane containing P would} \\
+\text{be $\perp$ to the common normal of the two planes.} \\
+\text{Hence, } \\
+\begin{array}{c}
+  (\ora{r}-\ora{P})\cdot\dfrac{(\vector{2}{3}{4})}{\sqrt{29}}=0
+\end{array}
+</reason>
+  </step>
+  <step>
+    <context>\text{P is }(7, 2, 4)\text{ and the equation of the plane } \\
+\text{containing P is } \\
+\begin{array}{c}
+  (\ora{r}-\ora{P})\cdot\dfrac{(\vector{2}{3}{4})}{\sqrt{29}}=0
+\end{array} \\
+\text{Is this correct equation for this plane?}</context>
+    <tex correct='true'>\ora{r}\cdot(\vector{2}{3}{4})=36</tex>
+    <reason>\begin{align}
+  &amp;(\ora{r}-\ora{P})\cdot\dfrac{(\vector{2}{3}{4})}{\sqrt{29}}=0 \\
+  \implies&amp; (\ora{r}-(\vector{7}{2}{4}))\cdot
+    \dfrac{(\vector{2}{3}{4})}{\sqrt{29}}=0 \\
+  \implies&amp; \ora{r}\cdot\dfrac{(\vector{2}{3}{4})}{\sqrt{29}}
+    -\dfrac{36}{\sqrt{29}}=0 \\
+  \implies&amp; {\bf\ora{r}\cdot(\vector{2}{3}{4})=36} \\
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{If this is the plane containing A, B and C} \\
+\ora{r}\cdot(\vector{2}{3}{4})=7, \\
+\text{and this is a parallel plane containing P} \\
+\ora{r}\cdot(\vector{2}{3}{4})=36, \\
+\text{then what is the separation between P and the} \\
+\text{the plane containing A, B and C?}    </context>
+    <tex correct='true'>\sqrt{29}</tex>
+    <tex>29</tex>
+    <reason>\text{In order to get the separation between P} \\
+\text{and the plane containing A, B and C, we} \\
+\text{need to subtract the $\perp$ distance from origin} \\
+\text{of the two planes.} \\
+\begin{align}
+  \therefore&amp;\ora{r}\cdot(\vector{2}{3}{4})=7, \\
+  \implies&amp;{\bf\ora{r}\cdot\dfrac{(\vector{2}{3}{4})}{\sqrt{29}}
+    =\dfrac{7}{\sqrt{29}}}
+\end{align} \\
+\begin{align}
+  &amp;\ora{r}\cdot(\vector{2}{3}{4})=36, \\
+  \implies&amp;{\bf\ora{r}\cdot\dfrac{(\vector{2}{3}{4})}{\sqrt{29}}
+    =\dfrac{36}{\sqrt{29}}}
+\end{align} \\
+\therefore\text{distance between the two planes } \\
+\begin{array}{c}
+  \dfrac{36}{\sqrt{29}}-\dfrac{7}{\sqrt{29}}={\bf\sqrt{29}}
+\end{array}
+</reason>
+  </step>
+  <choices>
+    <tex>36</tex>
+    <tex>29</tex>
+    <tex correct='true'>\sqrt{29}</tex>
+    <tex>7</tex>
+  </choices>
+</question>
