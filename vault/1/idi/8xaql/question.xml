@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+		\text{Assume that each child born is equally likely}\\
+		\text{to be a boy or a girl. If a family has two}\\
+		\text{children, what is the conditional probability}\\
+		\text{that both are girls given that}\\
+		\quad(i)\,\text{ the youngest is a girl.}\\
+		\quad(ii)\,\text{ atleast one is a girl.}
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\text{Let }N_G=\text{number of girls in the family},\\
+			C_1=\text{first child (boy/girl) and }C_2=\text{second}\\
+			\text{child (boy/girl)}.\\
+			\text{Given this, }\textbf{do we have to find the}\\
+			\textbf{following probabilities?}
+			</context>
+    <tex correct="true">
+			\quad(i)\, P(N_G = 2\vert C_2 = girl) \\
+			\quad(ii)\, P(N_G = 2\vert N_G\geq 1)
+			</tex>
+    <reason>
+			\text{With the given definitions, we can define}\\
+			\text{events as follows}\\
+			\begin{tabular}{|c|c|}
+			\hline
+			\text{Event} &amp; \text{Notation} \\
+			\hline
+			\text{Both girls} &amp; N_G = 2 \\
+			\text{Second child is a girl} &amp; C_2 = girl \\
+			\text{Atleast one girl} &amp; N_G \geq 1 \\
+			\hline
+			\end{tabular} \\
+			\text{Moreover, we have to find the probability}\\
+			\text{of both being girls given that} \\
+			\begin{tabular}{|c|c|}
+			\hline
+			\text{Given} &amp; \text{Probability} \\
+			\hline
+			\text{Second child is a girl} &amp; P(N_G = 2\vert\, C_2=girl) \\
+			\text{Atleast one girl} &amp; P(N_G = 2\vert\, N_G\geq 1) \\
+			\hline
+			\end{tabular}
+			</reason>
+  </step>
+  <step>
+    <context>
+				\textbf{When the second child is a girl}\ldots\\
+				\ldots\text{would the probability of both children}\\
+				\text{being girls be as follows?}
+				</context>
+    <tex correct="true">
+				P(N_G = 2\vert\, C_2=girl) = \dfrac{1}{2}
+				</tex>
+    <tex correct="false">
+				P(N_G = 2\vert\, C_2=girl) = \dfrac{1}{3}
+				</tex>
+    <reason>
+				\begin{align}
+				&amp;P(N_G = 2\vert\, C_2=girl) = \\
+				&amp;\dfrac{P(C_2=girl\vert\, N_G=2)\cdot P(N_G=2)}
+				{P(C_2=girl)} \\
+				&amp;\text{Now } P(C_2=girl\vert\, N_G=2) = 1\\
+				&amp;\text{(both girls}\implies C_2=girl)\\
+				&amp;P(C_2=girl) = \dfrac{1}{2} \\
+				&amp;P(N_G = 2) = \dfrac{1}{2}\cdot\dfrac{1}{2} = \dfrac{1}{4} \\
+				&amp;\therefore P(N_G = 2\vert\, C_2=girl) = \dfrac{1\times\frac{1}{4}}{\frac{1}{2}} = \dfrac{1}{2}
+				\end{align} 
+				</reason>
+  </step>
+  <step>
+    <context>
+					\textbf{And if atleast one child is a girl}\ldots\\
+					\ldots\text{then would the probability be as follows?}
+					</context>
+    <tex correct="true">
+					\quad P(N_G=2\vert\,N_G\geq 1) = \dfrac{1}{3}
+					</tex>
+    <tex correct="false">
+					\quad P(N_G=2\vert\,N_G\geq 1) = \dfrac{1}{4}
+					</tex>
+    <reason>
+					\begin{align}
+					&amp;P(N_G=2\vert\,N_G\geq 1) = \\
+					&amp;\dfrac{P(N_G\geq 1\vert\, N_G=2)\cdot P(N_G=2)}{P(N_G\geq 1)} \\
+					&amp;\text{Now, }P(N_G\geq 1) = 1-P(N_G=0) \\
+					&amp;= 1-P(\text{both boys}) = 1-\frac{1}{4} = \frac{3}{4} \\
+					&amp;\text{and }P(N_G\geq 1\vert\, N_G=2) = 1 \\
+					&amp;\therefore P(N_G=2\vert\,N_G\geq 1) = \dfrac{1\times\frac{1}{2}\cdot\frac{1}{2}}{\frac{3}{4}} = \frac{1}{3}
+					\end{align}
+					</reason>
+  </step>
+  <choices>
+    <tex>(i)\,\dfrac{1}{3}\quad(ii)\,\dfrac{1}{4}</tex>
+    <tex>(i)\,\dfrac{1}{3}\quad(ii)\,\dfrac{1}{6}</tex>
+    <tex>(i)\,\dfrac{1}{4}\quad(ii)\,\dfrac{1}{2}</tex>
+    <tex correct="true">(i)\,\dfrac{1}{2}\quad(ii)\,\dfrac{1}{3}</tex>
+  </choices>
+</question>
