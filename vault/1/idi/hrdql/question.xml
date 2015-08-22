@@ -7,96 +7,88 @@
   </statement>
   <step>
     <context>
-			\text{The given integral is similar to }\\
-			\quad I_E = \int (x-b)\cdot\sqrt{x^2+a^2}\cdot dx.\\
-			\text{If we therefore recommended the following}\\
-			\text{strategy for finding }I_E\text{, then would you}\\
-			\text{accept our recommendation?}
-			</context>
+ 		(x-3)\cdot\sqrt{x^2+3x-18} = (x'-A)\cdot\sqrt{x'^2 - A^2} \\
+ 		\text{The above is true only if x' and A}\\
+ 		\text{equal the following. }\textbf{Right or wrong?}
+ 		</context>
     <tex correct="true">
-			\begin{align}
-			  \text{Let }t = x^2+a^2 &amp;\text{ and }(x-b) = A\dfrac{dt}{dx} + B \\
-			  \implies A &amp;= \frac{1}{2}\text{ and } B = -b \\
-			  \implies (x-b)\cdot dx &amp;= \frac{dt}{2} - b\cdot dx \\
-			  \implies I_E &amp;= \int\sqrt{t}\cdot\underbrace{\left(\frac{dt}{2} - b dx\right)}
-			  _{ = (x-b)\cdot dx} \\
-			  &amp;= \int\dfrac{\sqrt{t}}{2} dt - b\int\underbrace{\sqrt{x^2+a^2}}_{\sqrt{t}} dx
-			\end{align}
-			</tex>
+ 		\quad x' = x+\dfrac{3}{2}, A = \dfrac{9}{2}
+ 		</tex>
     <tex correct="false">
-			\text{Apply integration by parts} \\
-			\begin{align}
-			  I_E &amp;= \int (x-b)\cdot\sqrt{x^2+a^2} dx \\
-			  &amp;= (x-b)\int\sqrt{x^2+a^2}\cdot dx \\
-			  &amp;- \int \left[\frac{d}{dx}(x-b)\cdot\int\sqrt{x^2+a^2}\right]\cdot dx \\
-			  &amp;= (x-b)\int\sqrt{x^2+a^2}\cdot dx \\
-			  &amp;- \int\left(\int\sqrt{x^2+a^2} \cdot dx\right)\cdot dx
-			\end{align}
-			</tex>
+ 		\quad x' = x-\dfrac{3}{2}, A = \dfrac{7}{2}
+ 		</tex>
     <reason>
-			\text{If you apply integration by parts to }\\
-			\quad I_E = \int(x-b)\cdot\sqrt{x^2+a^2}\cdot dx\\
-			\text{then you will soon find that the resulting}\\
-			\text{integral is more complicated to solve than}\\
-			\text{the original one. Not what you want.}\\
-			\text{Life is easier if }(x-b) = A\dfrac{d}{dx}(x^2+a^2) + B.\\
-			\text{The original integral can then be broken}\\
-			\text{into ones that are easier to evaluate.}
-			</reason>
+ 		\text{Just so you know, we tried many approaches} \\
+ 		\text{before finding the one given below - integration}\\
+ 		\text{by parts, factorizing }x^2+3x-18\text{ etc.} \\
+ 		\text{None of them resulted in an expression that was}\\
+ 		\text{easy to integrate.}\\
+ 		\textbf{Sometimes, you just have to try 2 wrong}\\
+ 		\textbf{approaches before finding the one right one.} \\
+ 		\begin{align}
+ 		  x^2+3x-18 &amp;= \underbrace{x^2 + 2\dfrac{3}{2}x + \dfrac{9}{4}}_{(x+a)^2=x^2+2ax+a^2} - 18-\dfrac{9}{4} \\
+ 		  &amp;= \left(x+\dfrac{3}{2}\right)^2 - \dfrac{81}{4}  \\
+ 		  &amp;= \left(x+\dfrac{3}{2}\right)^2 - \left(\dfrac{9}{2}\right)^2 \\
+ 		  \text{Also }x+3 &amp;= \left(x+\dfrac{3}{2}\right)-\dfrac{9}{2} \\
+ 		  \therefore x' &amp;= \left(x+\dfrac{3}{2}\right)\text{ and } A = \dfrac{9}{2}
+ 		\end{align}
+ 		</reason>
   </step>
   <step>
     <context>
-				\text{If }t = x^2+3x-18,\text{ then is the}\\
-				\text{following true?}
-				</context>
+  		\textbf{Right or wrong? }I_1\text{ in the expression below}\\
+  		\text{will evaluate to the following.}\\
+  		\begin{align}
+  		I &amp;= \int (x'-A)\sqrt{x'^2-A^2}\cdot dx \\
+  		&amp;= \underbrace{\int x'\sqrt{x'^2-A^2}dx}_{I_1}
+  		- \underbrace{A\int\sqrt{x'^2-A^2}\cdot dx}_{I_2}
+  		\end{align}
+  		</context>
     <tex correct="true">
-				\begin{align}
-				  (x-3)\cdot dx &amp;= \dfrac{dt}{2} -\dfrac{9}{2}\cdot dx 
-				\end{align}
-				</tex>
+  		\quad I_1 = \dfrac{(x^2+3x-18)^\frac{3}{2}}{3} + C_1
+  		</tex>
     <tex correct="false">
-				\begin{align}
-				  (x-3)\cdot dx &amp;= \dfrac{dt}{2} + \dfrac{3}{2}\cdot dx 
-				\end{align}
-				</tex>
+  		\quad I_1 = \dfrac{2\cdot (x^2+3x-18)^\frac{3}{2}}{3} + C_1
+  		</tex>
     <reason>
-				\begin{align}
-				  t = x^2+3x-18 &amp;\implies \dfrac{dt}{dx} = (2x+3) \\
-				  \therefore\text{ if }(x-3) &amp;= A\cdot (2x+3) + B \\
-				  \text{then }A = \dfrac{1}{2}, B = -\dfrac{9}{2} \\ 
-				  \implies (x-3) &amp;= \dfrac{1}{2}\dfrac{dt}{dx} - \dfrac{9}{2} \\ 
-				  \implies (x-3)\cdot dx &amp;= \dfrac{dt}{2} - \dfrac{9}{2}\cdot dx
-				\end{align}
-				</reason>
+  		\begin{align}
+  		I_1 &amp;= \int x'\cdot\sqrt{x'^2- A^2}\cdot dx \\
+  		\text{Let }x'^2-A^2 &amp;= z^2 \implies x'\cdot dx' = z\cdot dz \\
+  		\therefore I_1 &amp;= \int \sqrt{z^2} \cdot (z\cdot dz) = \int z^2\cdot dz \\
+  		&amp;= \dfrac{z^3}{3} + C_1 = \dfrac{(x'^2-A^2)^\frac{3}{2}}{3} + C_1 \\
+  		&amp;= \dfrac{(x^2+3x-18)^\frac{3}{2}}{3} + C_1
+  		\end{align}
+  		</reason>
   </step>
   <step>
     <context>
-					\text{Given that }(x-3)\cdot dx =  \dfrac{dt}{2} -\dfrac{9}{2}\cdot dx \\
-					\text{will }I = \int (x-3)\cdot\sqrt{x^2+3x-18} \cdot dx\\
-					\text{evaluate to the following?}
-					</context>
+  		\textbf{Right or wrong?}\\
+  		\text{And hence, }I = I_1 - I_2 \text{ will evaluate}\\
+  		\text{to the following.}
+  		</context>
     <tex correct="true">
-					\begin{align}
-					  I &amp;= \dfrac{(x^2+3x-18)^\frac{3}{2}}{3} - \dfrac{9}{2}I_Z +C\text{ where } \\
-					  I_Z &amp;= \frac{1}{2}\left[z\sqrt{z^2-a^2} - 
-					  \frac{a^2}{2}\log\vert z + \sqrt{z^2-a^2}\vert\right] \\
-					  z &amp;= \left(x+\frac{3}{2}\right), a = \frac{9}{2} \\
-					\end{align}
-					</tex>
+  		I = \dfrac{(x^2+3x-18)^\frac{3}{2}}{3} - \\ 
+  		 \frac{9}{4}\left[ \left(x+\frac{3}{2}\right)\sqrt{x^2+3x-18} \\
+  		 - \frac{81}{4}\log\left\vert \left(x+\frac{3}{2}\right) + \sqrt{x^2+3x-18}\right\vert
+  		 \right]
+  		</tex>
     <reason>
-					\begin{align}
-					  I &amp;= \int (x-3)\cdot\sqrt{\underbrace{x^2+3x-18}_{t}} \cdot dx \\
-					  &amp;= \int\sqrt{t}\cdot 
-					  \underbrace{\left(\dfrac{dt}{2}-\dfrac{9}{2}\cdot dx\right)}_{ = (x-3)\cdot dx} \\
-					  &amp;= \int \sqrt{t}\cdot \dfrac{dt}{2} - \dfrac{9}{2}\int\sqrt{x^2+3x-18}\cdot dx \\
-					  &amp;= \dfrac{1}{2}\dfrac{t^{\frac{3}{2}}}{\frac{3}{2}}
-					  -\dfrac{9}{2}\int\sqrt{\left(x+\frac{3}{2}\right)^2 - \left(\frac{9}{2}\right)^2}\cdot dx \\
-					  &amp;= \dfrac{(x^2+3x-18)^\frac{3}{2}}{3} - \dfrac{9}{2}
-					  \underbrace{\int\sqrt{z^2 - a^2}\cdot dz}_{I_Z} \\
-					  \text{where } z &amp;= \left(x+\frac{3}{2}\right) \implies dz = dx, a = \frac{9}{2}\\
-					  I_Z &amp;= \frac{1}{2}\left[z\sqrt{z^2-a^2} - 
-					  \frac{a^2}{2}\log\vert z + \sqrt{z^2-a^2}\vert\right]
-					\end{align}
-					</reason>
+  		\text{We found }I_1\text{ in Step 2. So, we only}\\
+  		\text{need to find }I_2. \\
+  		\begin{align}
+  		 &amp;I_2 = A\int\sqrt{x'^2-A^2}\cdot dx \\ 
+  		 &amp;= \underbrace{ 
+  		 \dfrac{A}{2}\cdot\left[x'\sqrt{x'^2-A^2}-A^2\log\vert x' + \sqrt{x'^2-A^2}\vert\right]}
+  		 _{\int\sqrt{x^2-a^2}dx=\frac{1}{2}\cdot \left[x\sqrt{x^2-a^2} - a^2\log\vert x + \sqrt{x^2-a^2}\vert\right]} + C_2 \\
+  		 &amp;\text{But } x' = \left(x + \frac{3}{2}\right), A = \frac{9}{2} \\
+  		 &amp;\therefore I_2 = \frac{9}{4}\left[ \left(x+\frac{3}{2}\right)\sqrt{x^2+3x-18} \\
+  		 &amp;- \frac{81}{4}\log\left\vert \left(x+\frac{3}{2}\right) + \sqrt{x^2+3x-18}\right\vert
+  		 \right] \\
+  		 &amp;\text{and }I = \dfrac{(x^2+3x-18)^\frac{3}{2}}{3} - \\
+  		 &amp;\frac{9}{4}\left[ \left(x+\frac{3}{2}\right)\sqrt{x^2+3x-18} \\
+  		 &amp;-\frac{81}{4}\log\left\vert \left(x+\frac{3}{2}\right) + \sqrt{x^2+3x-18}\right\vert
+  		 \right] + C
+  		\end{align}
+  		</reason>
   </step>
 </question>
