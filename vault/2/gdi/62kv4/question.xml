@@ -1,54 +1,73 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
   <statement>
     <tex>\text{If }\sin\left(\sin ^{-1}\dfrac{1}{5}+\cos^{-1} x\right)=1, \\
 \text{then find the value of $x$.}</tex>
   </statement>
   <step>
-    <context>\textbf{General Question} \\
-\text{If }\sin^{-1}\left(\dfrac{1}{a}\right)=\theta, \text{what is}
-\cos^{-1}\left(\dfrac{1}{a}\right)?</context>
-    <tex correct='true'>\dfrac{\pi}{2}-\theta</tex>
-    <tex>\dfrac{\pi}{2}+\theta</tex>
-    <reason>\begin{align}
-  &amp;\sin^{-1}\left(\dfrac{1}{a}\right)=\theta  \\
-  \implies &amp;\left(\dfrac{1}{a}\right)=\sin\theta \\
-  \implies &amp;\left(\dfrac{1}{a}\right)
-    ={\bf\cos\left(\dfrac{\pi}{2}-\theta\right)} \\
-  \implies &amp;\cos^{-1}\left(\dfrac{1}{a}\right)
-    =\dfrac{\pi}{2}-\theta
-\end{align}</reason>
+    <context>
+  		\text{Your friend makes the following claims} \\
+  		\text{about the given equation.}\\
+  		\quad \sin \left(\underbrace{\sin^{-1}\dfrac{1}{5}}_A + 
+  		\underbrace{\cos^{-1}x}_B\right) = 1 \\
+  		\textbf{Is he right?} 
+  		</context>
+    <tex correct="true">
+  		\quad\bullet\,\text{A and B are angles.} \\
+  		\quad\bullet\, A + B = \dfrac{\pi}{2}
+  		</tex>
+    <tex correct="false">
+  		\quad\bullet\,\text{A and B are angles.} \\
+  		\quad\bullet\, A + B = \textbf{unknown.}
+  		</tex>
+    <reason>
+  		\sin^{-1}x\text{ (or}\cos^-1{x}\text{) is an angle. So, that}\\
+  		\text{much is correct. But notice also that }\\ 
+  		\sin (\theta + \phi) = 1
+  		\implies \theta + \phi = \sin^{-1}1 = \dfrac\pi{2}.
+  		</reason>
   </step>
   <step>
-    <context>\text{If }\sin\left(\sin ^{-1}\dfrac{1}{5}+\cos^{-1} x\right)=1, \\
-\text{do you agree with the following?}</context>
-    <tex correct='true'>\sin^{-1}\dfrac{1}{5}+\cos^{-1}x=\dfrac{\pi}{2}</tex>
-    <tex>\sin^{-1}\dfrac{1}{5}+\cos^{-1}x=\pi</tex>
-    <reason>\begin{tabular}{|c|c|c|c|}
-  \hline
-  {\bf \theta} &amp; 0 &amp; {\bf \frac{\pi}{2}} &amp; \pi \\
-  \hline
-  {\bf\sin\theta} &amp; 0 &amp; {\bf 1} &amp; -1 \\
-  \hline
-\end{tabular}
-</reason>
+    <context>
+  	 		\text{If }\cos^{-1}x = \theta,\textbf{ then is the following true?}
+  	 		</context>
+    <tex correct="true">
+  	 		\quad \cos^{-1}x = \dfrac{\pi}{2}-\sin^{-1}x 
+  	 		</tex>
+    <tex correct="false">
+  	 		\quad \cos^{-1}x = \sin^{-1}\left(\dfrac{\pi}{2}-x\right)
+  	 		</tex>
+    <reason>
+  	 		\begin{align}
+  	 		  \cos^{-1}x &amp;= \theta \implies x = \cos\theta = \sin \left(\dfrac{\pi}{2}-\theta\right) \\
+  	 		  \implies \dfrac{\pi}{2}-\theta &amp;= \sin^{-1} x \\ 
+  	 		  \implies \theta &amp;= \cos^{-1} x = \dfrac\pi{2}-\sin^{-1}x. 
+  	 		\end{align}
+  	 		</reason>
   </step>
   <step>
-    <context>\text{If }\sin^{-1}\dfrac{1}{5}+\cos^{-1}x=\dfrac{\pi}{2} \\
-\text{what is x?}</context>
-    <tex correct='true'>x=\dfrac{1}{5}</tex>
-    <tex>x=\dfrac{2\sqrt{6}}{5}</tex>
-    <reason>\begin{align}
-  &amp;\sin^{-1}\dfrac{1}{5}+\cos^{-1}x=\dfrac{\pi}{2} \\
-  \implies &amp;\cos^{-1}x = \dfrac{\pi}{2}-\sin^{-1}\dfrac{1}{5} \\
-  \implies &amp;\sin^{-1}x=\sin^{-1}\dfrac{1}{5} \\
-  \implies &amp;x=\dfrac{1}{5}
-\end{align}
-</reason>
+    <context>
+  	 			\text{Given the results from Steps 1 and 2,}\\
+  	 			\text{is the following value of x correct?} 
+  	 			</context>
+    <tex correct="true">
+  	 			\quad x = \dfrac{1}{5}
+  	 			</tex>
+    <tex correct="false">
+  	 			\quad x = \dfrac{2\sqrt{6}}{5}
+  	 			</tex>
+    <reason>
+  	 			\begin{align}
+  	 			\sin \left(\sin^{-1}\frac{1}{5} + \cos^{-1}x\right) &amp;= 1 \\ 
+  	 			\implies\sin^{-1}\frac{1}{5} + \cos^{-1}x &amp;= \frac\pi{2} \\
+  	 			\implies \sin^{-1}\frac{1}{5} + \left(\frac\pi{2}-\sin^{-1}x\right) &amp;= \frac\pi{2} \\
+  	 			\implies \sin^{-1}\frac{1}{5} = \sin^{-1} x &amp;\implies x = \frac{1}{5}
+  	 			\end{align}
+  	 			</reason>
   </step>
   <choices>
     <tex>x=\dfrac{2\sqrt{6}}{5}</tex>
-    <tex correct='true'>x=\dfrac{1}{5}</tex>
+    <tex correct="true">x=\dfrac{1}{5}</tex>
     <tex>5</tex>
     <tex>\dfrac{3}{5}</tex>
   </choices>
