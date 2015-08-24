@@ -5,8 +5,8 @@
 \text{$\left(ax+b\right)^2$ by the method of inspection.}</tex>
   </statement>
   <step>
-    <context>\dfrac{d}{dx}f(x)=g(x) \\
-\text{anti-derivative (or integral) of $g(x)$ is?}</context>
+    <context>\text{If }\dfrac{d}{dx}f(x)=g(x)\text{, is this the} \\
+\text{anti-derivative (or integral) of $g(x)$?}</context>
     <tex correct='true'>f(x)</tex>
     <tex>f(g(x))</tex>
     <reason>\text{Anti-derivative or integral is the reverse of}\\
@@ -14,7 +14,8 @@
 \text{then integral of }g(x)=f(x).</reason>
   </step>
   <step>
-    <context>\text{The function below has the derivative}\\
+    <context>\textbf{Is this correct?} \\
+\text{The function below has the derivative}\\
 \text{$\left(ax+b\right)^n$, where }n \in \mathbb{R}</context>
     <tex correct='true'>\dfrac{\left(ax + b\right)^{n+1}}{a\left(n+1\right)}</tex>
     <tex>\dfrac{\left(ax + b\right)^{n+1}}{\left(n+1\right)}</tex>
@@ -40,15 +41,11 @@
     =\left(ax+b\right)^{2}\end{align}\\
 \therefore\text{anti-derivative or integral of $\left(ax+b\right)^{2}$ is} \\
 \dfrac{(ax+b)^{3}}{3a}</tex>
-    <tex>\begin{align}
-  \dfrac{d}{dx}\left(\dfrac{(ax+b)^{3}}{3a}\right)
-    =\left(ax+b\right)^{2}\end{align}\\
-\therefore\text{anti-derivative or integral of $\left(ax+b\right)^{2}$ is} \\
-(ax+b)^{3}</tex>
     <reason>\begin{align}
   \dfrac{d}{dx}\left(\dfrac{(ax+b)^{n+1}}{a\left(n+1\right)}\right)
   &amp;=\left(ax+b\right)^{n} \\
-  \implies \text{anti-derivative }\left(ax+b\right)^{n} &amp;=\dfrac{(ax+b)^{n+1}}{a\left(n+1\right)}
+  \implies \text{anti-derivative }\left(ax+b\right)^{n} &amp;=\dfrac{(ax+b)^{n+1}}{a\left(n+1\right)} \\
+  \implies \text{anti-derivative }\left(ax+b\right)^{3} &amp;=\dfrac{(ax+b)^{4}}{a\left(n+1\right)}
 \end{align}
 </reason>
   </step>

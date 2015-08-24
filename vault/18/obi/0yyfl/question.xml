@@ -5,8 +5,8 @@
 \text{by the method of inspection.}</tex>
   </statement>
   <step>
-    <context>\dfrac{d}{dx}f(x)=g(x) \\
-\text{anti-derivative (or integral) of $g(x)$ is?}</context>
+    <context>\text{If }\dfrac{d}{dx}f(x)=g(x)\text{, is this the} \\
+\text{anti-derivative (or integral) of $g(x)$?}</context>
     <tex correct='true'>f(x)</tex>
     <tex>-g(x)</tex>
     <reason>\text{Anti-derivative or integral is the reverse of}\\
@@ -14,8 +14,9 @@
 \text{then integral of }g(x)=f(x).</reason>
   </step>
   <step>
-    <context>\text{The function below has the derivative}\\
-\text{$e ^{nx}$, where }n \in \mathbb{R}</context>
+    <context>\textbf{Is this correct?} \\
+\text{The function below has the derivative}\\
+\text{$e ^{nx}$, where }n \in \mathbb{R}.</context>
     <tex correct='true'>\dfrac{e^{nx}}{n}</tex>
     <tex>e^{nx}</tex>
     <reason>\dfrac{de^x}{dx}=e^x \\
@@ -33,16 +34,16 @@
     <tex correct='true'>\begin{align}
   \dfrac{d}{dx}\left(\dfrac{e^{2x}}{2}\right)=e^{2x}
 \end{align}\\
-\therefore\text{anti-derivative or integral of $e^{2x}$ is} \\
+\therefore\text{anti-derivative or integral of $e^{2x}$ is }
 \dfrac{e^{2x}}{2}</tex>
     <tex>\begin{align}
-  \dfrac{d}{dx}\left(\dfrac{e^{2x}}{2}\right)=e^{2x}
+  \dfrac{d}{dx}\left(e^{2x}\right)=e^{2x}
 \end{align}\\
-\therefore\text{anti-derivative or integral of $e^{2x}$ is} \\
-e^{2x}</tex>
+\therefore\text{anti-derivative or integral of $e^{2x}$ is }e^{2x}</tex>
     <reason>\begin{align}
   \dfrac{d}{dx}\left(\dfrac{e^{nx}}{n}\right)=e^{nx} \\
-  \implies \text{anti-derivative }e^{nx} &amp;=\dfrac{e^{nx}}{n}
+  \implies \text{anti-derivative }e^{nx} &amp;=\dfrac{e^{nx}}{n} \\
+  \therefore \text{anti-derivative }e^{2x} &amp;=\dfrac{e^{2x}}{2}
 \end{align}
 </reason>
   </step>

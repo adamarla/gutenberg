@@ -5,8 +5,8 @@
 \text{by the method of inspection.}</tex>
   </statement>
   <step>
-    <context>\dfrac{d}{dx}f(x)=g(x) \\
-\text{anti-derivative (or integral) of $g(x)$ is?}</context>
+    <context>\text{If }\dfrac{d}{dx}f(x)=g(x)\text{, is this the} \\
+\text{anti-derivative (or integral) of $g(x)$?}</context>
     <tex correct='true'>f(x)</tex>
     <tex>\dfrac{1}{f(x)}</tex>
     <reason>\text{Anti-derivative or integral is the reverse of}\\
@@ -14,8 +14,9 @@
 \text{then integral of }g(x)=f(x).</reason>
   </step>
   <step>
-    <context>\text{The function below has the derivative}\\
-\text{$\cos nx$, where }n \in \mathbb{R}</context>
+    <context>\textbf{Is this correct?} \\
+\text{The function below has the derivative}\\
+\text{$\cos nx$, where }n \in \mathbb{R}.</context>
     <tex correct='true'>\dfrac{\sin nx}{n}</tex>
     <tex>\sin nx</tex>
     <reason>\dfrac{d\sin x}{dx}=\cos x \\
@@ -33,16 +34,17 @@
     <tex correct='true'>\begin{align}
   \dfrac{d}{dx}\left(\dfrac{\sin 3x}{3}\right)=\cos 3x
 \end{align}\\
-\therefore\text{anti-derivative or integral of $\sin 3x$ is} \\
+\therefore\text{anti-derivative or integral of $\sin 3x$ is }
 \dfrac{\cos 3x}{3}</tex>
     <tex>\begin{align}
-  \dfrac{d}{dx}\left(\dfrac{\sin 3x}{3}\right)=\cos 3x
+  \dfrac{d}{dx}\left(\sin 3x\right)=\cos 3x
 \end{align}\\
-\therefore\text{anti-derivative or integral of $\cos 3x$ is} \\
+\therefore\text{anti-derivative or integral of $\cos 3x$ is }
 \sin 3x</tex>
     <reason>\begin{align}
   \dfrac{d}{dx}\left(\frac{\sin nx}{n}\right) &amp;=\cos nx\\
-  \implies \text{anti-derivative }\left(\cos nx\right) &amp;=\frac{\sin nx}{n}
+  \implies \text{anti-derivative }\left(\cos nx\right) &amp;=\frac{\sin nx}{n} \\
+  \implies \text{anti-derivative }\left(\cos 3x\right) &amp;=\frac{\sin 3x}{3} 
 \end{align}</reason>
   </step>
   <choices>

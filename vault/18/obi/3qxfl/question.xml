@@ -5,8 +5,8 @@
 \text{by the method of inspection.}</tex>
   </statement>
   <step>
-    <context>\dfrac{d}{dx}f(x)=g(x) \\
-\text{anti-derivative (or integral) of $g(x)$ is?}</context>
+    <context>\text{If }\dfrac{d}{dx}f(x)=g(x) \text{, is this the} \\
+\text{anti-derivative (or integral) of $g(x)$?}</context>
     <tex correct='true'>f(x)</tex>
     <tex>\dfrac{1}{f(x)}</tex>
     <reason>\text{Anti-derivative or integral is the reverse of}\\
@@ -14,7 +14,8 @@
 \text{then integral of }g(x)=f(x).</reason>
   </step>
   <step>
-    <context>\text{The function below has the derivative}\\
+    <context>\textbf{Is this correct?} \\
+\text{The function below has the derivative}\\
 \text{$\sin nx$, where }n \in \mathbb{R}.</context>
     <tex correct='true'>- \dfrac{\cos nx}{n}</tex>
     <tex>-\cos nx</tex>
@@ -33,16 +34,12 @@
     <tex correct='true'>\begin{align}
   \dfrac{d}{dx}\left(\dfrac{-\cos 2x}{2}\right)=\sin 2x
 \end{align}\\
-\therefore\text{anti-derivative or integral of $\sin 2x$ is} \\
+\therefore\text{anti-derivative of $\sin 2x$ is }
 \dfrac{-\cos 2x}{2}</tex>
-    <tex>\begin{align}
-  \dfrac{d}{dx}\left(\dfrac{-\cos 2x}{2}\right)=\sin 2x
-\end{align}\\
-\therefore\text{anti-derivative or integral of $\sin 2x$ is} \\
--2\cos 2x</tex>
     <reason>\begin{align}
   \dfrac{d}{dx}\left(\frac{-\cos nx}{n}\right) &amp;=\sin nx \\
-  \implies \text{anti-derivative }\left(\sin nx\right) &amp;=\frac{-\cos nx}{n}
+  \implies \text{anti-derivative }\left(\sin nx\right) &amp;=\frac{-\cos nx}{n} \\
+  \therefore \text{anti-derivative }\left(\sin 2x\right) &amp;=\frac{-\cos 2x}{2}
 \end{align}
 </reason>
   </step>
