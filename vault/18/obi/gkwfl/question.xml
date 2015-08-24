@@ -5,16 +5,17 @@
 \sin 2x - 4 \, e^{3x}\text{ by the method of inspection.}</tex>
   </statement>
   <step>
-    <context>\dfrac{d}{dx}f(x)=g(x) \\
+    <context>\text{If }\dfrac{d}{dx}f(x)=g(x)\text{, is this the} \\
 \text{anti-derivative (or integral) of $g(x)$ is?}</context>
     <tex correct='true'>f(x)</tex>
-    <tex>g(f(x))</tex>
+    <tex>\dfrac{1}{f(x)}</tex>
     <reason>\text{Anti-derivative or integral is the reverse of}\\
 \text{differentiation. Therefore, when }\dfrac{d}{dx}f(x)=g(x)\\
 \text{then integral of }g(x)=f(x).</reason>
   </step>
   <step>
-    <context>\text{The below function has the derivative}\\
+    <context>\textbf{Is this correct?} \\
+\text{The below function has the derivative}\\
 \sin nx - 4 \, e^{mx}\text{, where }n,m \in \mathbb{R}</context>
     <tex correct='true'>-\dfrac{\cos nx}{n} - 4 \, \dfrac{e^{mx}}{m}</tex>
     <tex>-\cos nx - 4e^{mx}</tex>
@@ -57,7 +58,10 @@
     <reason>\dfrac{d}{dx}\left(\dfrac{-\cos nx}{n}\right)=\sin nx \\
 \implies \text{anti-derivative }\left(\sin nx\right)=\dfrac{-\cos nx}{n} \\
 \dfrac{d}{dx}\left(\dfrac{e^{mx}}{m}\right)=e^{mx} \\
-\implies\text{anti-derivative }\left(e^{mx}\right)=\dfrac{e^{mx}}{m}
+\implies\text{anti-derivative }\left(e^{mx}\right)=\dfrac{e^{mx}}{m} \\
+\implies \text{anti-derivative } \\
+  \qquad\left(\sin 2x\right)-4\left(e^{3x}\right)=\dfrac{-\cos 2x}{n}
+    -4\dfrac{e^{3x}}{3}\\
 </reason>
   </step>
   <choices>

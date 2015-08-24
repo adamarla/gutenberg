@@ -33,20 +33,6 @@
 </tex>
     <reason>\int x^n\, dx=\dfrac{x^{n+1}}{n+1}+C</reason>
   </step>
-  <step>
-    <context>\text{Is the calculation below correct?}</context>
-    <tex correct='true'>\text{Using step 1}\\
-\begin{align}
-\int \dfrac{x^3 + 5x^2 - 4 }{x^2}dx &amp;= \int x\,dx + \int 5\,dx -\int \dfrac{4}{x^2}\,dx\\
-											   &amp;= \dfrac{x^2}{2} + 5 x +4\left(\dfrac{x^{-2 + 1}}{-2 + 1}\right) + C\\
-											   &amp;= \dfrac{x^2}{2} + 5 x -\dfrac{4}{ x} + C
-\end{align}\\
-\text{Here , C is the constant of integration}</tex>
-    <reason>\text{Other than using the result of step 1, we have}\\
-\text{used the fact that }\int t^n dt = \dfrac{t^{n+1}}{n+1}.\text{ Check your}\\
-\text{calculations you got something else.}
-</reason>
-  </step>
   <choices>
     <tex correct='true'>\dfrac{x^2}{2} + 5 x +\dfrac{4}{ x}+ C</tex>
     <tex>-\dfrac{x^2}{2} + 5 x -\dfrac{4}{ x}+C</tex>
