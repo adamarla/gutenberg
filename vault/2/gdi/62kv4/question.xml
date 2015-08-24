@@ -10,7 +10,7 @@
   		\text{about the given equation.}\\
   		\quad \sin \left(\underbrace{\sin^{-1}\dfrac{1}{5}}_A + 
   		\underbrace{\cos^{-1}x}_B\right) = 1 \\
-  		\textbf{Is he right?} 
+  		\textbf{Are all his claims correct?} 
   		</context>
     <tex correct="true">
   		\quad\bullet\,\text{A and B are angles.} \\
@@ -21,7 +21,7 @@
   		\quad\bullet\, A + B = \textbf{unknown.}
   		</tex>
     <reason>
-  		\sin^{-1}x\text{ (or}\cos^-1{x}\text{) is an angle. So, that}\\
+  		\sin^{-1}x\text{ (or}\cos^{-1}{x}\text{) is an angle. So, that}\\
   		\text{much is correct. But notice also that }\\ 
   		\sin (\theta + \phi) = 1
   		\implies \theta + \phi = \sin^{-1}1 = \dfrac\pi{2}.
