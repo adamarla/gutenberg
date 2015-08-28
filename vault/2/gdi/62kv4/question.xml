@@ -68,7 +68,7 @@
   <choices>
     <tex>x=\dfrac{2\sqrt{6}}{5}</tex>
     <tex correct="true">x=\dfrac{1}{5}</tex>
-    <tex>5</tex>
-    <tex>\dfrac{3}{5}</tex>
+    <tex>x=5</tex>
+    <tex>x=\dfrac{3}{5}</tex>
   </choices>
 </question>
