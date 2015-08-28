@@ -40,63 +40,63 @@
   </step>
   <step>
     <context>
-				\text{The table below shows some probabilities.}\\
-				\text{The probabilities are correct. But we don't}\\
-				\text{know what columns A and B are.}\\
-				\textbf{What are columns A and B?}
+    \text{Given that } \\
+				\begin{tabular}{|c|c|}
+				  \hline
+				  \text{Event} &amp; \text{Meaning} \\
+				  \hline
+          L &amp; \text{The card lost was a spade}\\
+          \hline
+          \bar{L} &amp; \text{The card lost was not a spade}\\
+          \hline
+          C_N &amp; \text{N-th card drawn is a spade.} \\
+          \hline
+				\end{tabular}\\
+				\text{is the table below correct?}
 				</context>
     <tex correct="true">
-				\begin{tabular}{|c|c|c|}
-				  \hline 
-				  &amp; A &amp; B \\
-				  \hline
-				  \text{First card = Spade} &amp; \frac{12}{51} &amp; \frac{13}{51}\\
-				  \hline
-				  \text{Second card = Spade}&amp; \frac{11}{50} &amp; \frac{12}{50} \\
-				  \hline
-				  \text{Third card = Spade} &amp; \frac{10}{49} &amp; \frac{11}{49} \\
-				  \hline
-				\end{tabular} \\
-				\begin{tabular}{|c|c|}
-				  \hline
-          A &amp; \text{The card lost is a spade} = L \\
-          \hline
-          B &amp; \text{The card lost is not a spade} = \bar{L} \\		
-          \hline
+				\begin{tabular}{|c|c|c|} \\
+				\hline
+				N &amp; P(C_N\vert\,L) &amp; P(C_N\vert\,\bar{L}) \\
+				\hline
+				1 &amp; \frac{12}{51} &amp; \frac{13}{51} \\
+				\hline
+				2 &amp; \frac{11}{50} &amp; \frac{12}{50} \\
+				\hline
+				3 &amp; \frac{10}{49} &amp; \frac{11}{49} \\
+				\hline
 				\end{tabular}
-				</tex>
+		</tex>
     <tex correct="false">
-				\begin{tabular}{|c|c|c|}
-				  \hline 
-				  &amp; A &amp; B \\
-				  \hline
-				  \text{First card = Spade} &amp; \frac{12}{51} &amp; \frac{13}{51}\\
-				  \hline
-				  \text{Second card = Spade}&amp; \frac{11}{50} &amp; \frac{12}{50} \\
-				  \hline
-				  \text{Third card = Spade} &amp; \frac{10}{49} &amp; \frac{11}{49} \\
-				  \hline
-				\end{tabular} \\
-				\begin{tabular}{|c|c|}
-				  \hline
-          A &amp; \text{The card lost is not a spade} = \bar{L}\\
-          \hline
-          B &amp; \text{The card lost is a spade} = L  \\		
-          \hline
+				\begin{tabular}{|c|c|c|} \\
+				\hline
+				N &amp; P(C_N\vert\,L) &amp; P(C_N\vert\,\bar{L}) \\
+				\hline
+				1 &amp; \frac{13}{51}  &amp; \frac{12}{51} \\
+				\hline
+				2 &amp; \frac{12}{50} &amp; \frac{11}{50} \\
+				\hline
+				3 &amp; \frac{11}{49} &amp; \frac{10}{49} \\
+				\hline
 				\end{tabular}
 				</tex>
     <reason>
 				\text{Once a  card is lost, we would either have}\\
-				\text{12 spades remaining or 13 spades. It is then}\\
-				\text{that we start drawing three cards. And the}\\
-				\text{probability of getting three successive spades}\\
-				\text{will depend on what card was lost initially.}
+				\text{12 spades remaining or 13 spades. }\\
+				\text{It is then that we start drawing three cards.}\\
+				\textbf{Remember, }P(C_N\vert\, L)\text{ is the probability that}\\
+				\text{the N-th card drawn is a spade }\textbf{given that}\\
+				\text{the card lost was a spade.}\\
+				\textbf{Similarly, }P(C_N\vert\,\bar{L})\text{ is the probability that}\\
+				\text{the N-th card drawn is a spade }\textbf{given that}\\
+        \text{the card lost was }\textbf{not}\text{ a spade.}
 				</reason>
   </step>
   <step>
     <context>
-					\text{Your friend makes the following claims.}\\
-					\textbf{Is he correct?}
+					\text{Your friend makes the following claims}\\
+					\text{about drawing three successive spades.}\\
+					\textbf{Are his claims correct?}
 					</context>
     <tex correct="true">
 					\begin{tabular}{|c|c|}
@@ -121,11 +121,11 @@
 					\end{tabular}
 					</tex>
     <reason>
-					\text{The event }S_3\text{ we defined in Step 2 is really}\\
-					S_3 = (C_1=spade)\cap(C_2=spade)\cap(C_3=spade).\\
+					\text{The event }S_3\text{ we defined in Step 1 is really}\\
+					\quad S_3 = C_1\cap C_2\cap C_3.\\
 					\text{Hence, we must multiply the probabilities.}\\
 					\textbf{But }\text{the probabilities we listed in Step 2}\\
-					\text{were also for when a card was lost initially.}\\
+					\text{were }\textbf{conditional}\text{ probabilities.} \\
 					\text{Hence, it is not }P(S_3)\text{ that we know, but }\\
 					\mathbf{P(S_3\vert L)}\text{ and }\mathbf{P(S_3\vert\bar{L}).}
 					</reason>
