@@ -1,0 +1,16 @@
+<book  tag="prepwell-math-experiment" label="5-day Trial">
+  <chapter tag="xi" label="Class XI">
+    <exercise tag="d1" label="Day 1"/>
+    <exercise tag="d2" label="Day 2"/>
+    <exercise tag="d3" label="Day 3"/>
+    <exercise tag="d4" label="Day 4"/>
+    <exercise tag="d5" label="Day 5"/>
+  </chapter>
+  <chapter tag="xii" label="Class XII">
+    <exercise tag="d1" label="Day 1"/>
+    <exercise tag="d2" label="Day 2"/>
+    <exercise tag="d3" label="Day 3"/>
+    <exercise tag="d4" label="Day 4"/>
+    <exercise tag="d5" label="Day 5"/>
+  </chapter>
+</book>
