@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the value of} \\
+\small{
+  \left(1+\cos\dfrac{\pi}{8}\right)\left(1+\cos\dfrac{3\pi}{8}\right)
+  \left(1+\cos\dfrac{5\pi}{8}\right)\left(1+\cos\dfrac{7\pi}{8}\right)}</tex>
+  </statement>
+  <step>
+    <context>\text{Your friend looks at the problem and makes} \\
+\text{the following claim. Is your friend correct?}</context>
+    <tex correct='true'>1+\cos\dfrac{5\pi}{8}=1-\cos\dfrac{3\pi}{8} \\
+1+\cos\dfrac{7\pi}{8}=1-\cos\dfrac{\pi}{8} \\
+</tex>
+    <reason>\begin{align}
+  1+\cos\dfrac{5\pi}{8}
+    &amp;=1+\cos\left(\dfrac{8\pi-3\pi}{8}\right) \\
+    &amp;=1+\cos\left(\pi-\dfrac{3\pi}{8}\right) \\
+    &amp;=1+\cos\pi\cos\dfrac{3\pi}{8}+\sin\pi\sin\dfrac{3\pi}{8} \\
+    &amp;=1-\cos\dfrac{3\pi}{8}
+\end{align} \\
+\text{Similarly }1+\cos\dfrac{5\pi}{8}=1-\sin\dfrac{\pi}{8}
+</reason>
+  </step>
+  <step>
+    <context>\text{Using the results } 
+1+\cos\dfrac{5\pi}{8}=1-\cos\dfrac{3\pi}{8} \text{ and} \\
+1+\cos\dfrac{7\pi}{8}=1-\cos\dfrac{\pi}{8}
+\text{ from the previous step,} \\
+\text{does the original expression reduce to:}
+</context>
+    <tex correct='true'>\sin^2\dfrac{\pi}{8}\sin^2\dfrac{3\pi}{8}</tex>
+    <reason>\small{
+\left(1+\cos\dfrac{\pi}{8}\right)\left(1+\cos\dfrac{3\pi}{8}\right)
+\left(1+\cos\dfrac{5\pi}{8}\right)\left(1+\cos\dfrac{7\pi}{8}\right)} \\
+=\small{
+\left(1+\cos\dfrac{\pi}{8}\right)\left(1+\cos\dfrac{3\pi}{8}\right)
+\left(1-\cos\dfrac{\pi}{8}\right)\left(1-\cos\dfrac{3\pi}{8}\right)} \\
+=\left(1-\cos^2\dfrac{\pi}{8}\right)
+  \left(1-\cos^2\dfrac{3\pi}{8}\right) \\
+={\bf\sin^2\dfrac{\pi}{8}\sin^2\dfrac{3\pi}{8}}
+</reason>
+  </step>
+  <step>
+    <context>\textbf{Right or Wrong?} \\
+\sin^2\dfrac{\pi}{8}\sin^2\dfrac{3\pi}{8} 
+\text{ is equivalent to the following:}</context>
+    <tex correct='true'>\dfrac{1}{4} \left(1-\cos^2\dfrac{\pi}{4}\right)</tex>
+    <tex>\dfrac{1}{4} \left(1-\cos^2\dfrac{\pi}{8}\right)</tex>
+    <reason>\text{Using this following standard result} \\
+\begin{align}
+  \cos 2A &amp;=\cos^2A-\sin^2A \\
+    &amp;= 1-2\sin^2A
+\end{align} \\
+\text{we get,} \\
+\begin{align}
+  \sin^2\dfrac{\pi}{8}\sin^2\dfrac{3\pi}{8}
+    &amp;=\dfrac{1}{4}\left(1-\cos\dfrac{\pi}{4}\right)
+      \left(1+\cos\dfrac{\pi}{4}\right) \\
+    &amp;=\dfrac{1}{4}\left(1-\cos^2\dfrac{\pi}{4}\right)
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{Is the following assertion correct?}
+</context>
+    <tex correct='true'>\dfrac{1}{4}\left(1-\cos^2\dfrac{\pi}{4}\right)=\dfrac{1}{8}
+</tex>
+    <tex>\dfrac{1}{4}\left(1-\cos^2\dfrac{\pi}{4}\right)=\dfrac{1}{4}
+</tex>
+    <reason>\text{Given that }
+\cos\dfrac{\pi}{4}=\dfrac{1}{\sqrt{2}} \\
+\dfrac{1}{4}\left(1-\cos^2\dfrac{\pi}{4}\right)
+  =\dfrac{1}{4}\left(1-\dfrac{1}{2}\right)=\dfrac{1}{8}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{1}{8}</tex>
+    <tex>1</tex>
+    <tex>\dfrac{1}{2}</tex>
+    <tex>\dfrac{1}{4}</tex>
+  </choices>
+</question>

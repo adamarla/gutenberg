@@ -1,0 +1,80 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{For what value of $N$ would the following hold} \\
+\dfrac{\cos 8A\cos 5A-\cos 12A\cos 9A}
+  {\sin 8A\cos 5A+\cos 12A\sin 9A}=\tan NA</tex>
+  </statement>
+  <step>
+    <context>\text{If you had to express }\cos 8A\cos 5A\text{ as a} \\
+\text{sum of trigonometric ratios instead of a} \\
+\text{product, would this be correct?}</context>
+    <tex correct='true'>2\cos 8A\cos 5A=\cos 13A+\cos 3A</tex>
+    <tex>2\cos 8A\cos 5A=\cos \dfrac{13}{2}A+\cos \dfrac{3}{2}A</tex>
+    <reason>\text{Using the following standard result} \\
+\small{\begin{align}
+  &amp;\cos(X+Y)+\cos(X-Y)= \\
+  &amp;\quad \cos X\cos Y-\sin X\sin Y+\cos X\cos Y+\sin X\sin Y \\
+  &amp;=2\cos X\cos Y
+\end{align}} \\
+\therefore {\bf 2\cos 8A\cos 5A=\cos 13A+\cos 3A}</reason>
+  </step>
+  <step>
+    <context>\text{Similarly, if you had to express }\sin 8A\cos 5A \\
+\text{as a sum of trigonometric ratios instead of a} \\
+\text{product, would this be correct?}
+</context>
+    <tex correct='true'>2\sin 8A\cos 5A=\sin 13A+\sin 3A</tex>
+    <tex>2\sin 8A\cos 5A=\sin 13A-\sin 3A</tex>
+    <reason>\text{Using the following standard result} \\
+\small{\begin{align}
+  &amp;\sin(X+Y)+\sin(X-Y)= \\
+  &amp;\quad \sin X\cos Y+\cos X\sin Y+\sin X\cos Y-\cos X\sin Y \\
+  &amp;=2\sin X\cos Y
+\end{align}} \\
+\therefore {\bf 2\sin 8A\cos 5A=\sin 13A+\sin 3A}</reason>
+  </step>
+  <step>
+    <context>\text{Using the standard results from the previous} \\
+\text{steps, can the original equation can be written} \\
+\text{as the following?}</context>
+    <tex correct='true'>\dfrac{\cos 13A -\cos 21A}{\sin 13A+\sin 21A}</tex>
+    <tex>\dfrac{\cos 13A -\cos 21A}{\sin 13A-\sin 21A}</tex>
+    <reason>\begin{align}
+  2\cos 8A\cos 5A &amp;=\cos 13A+\cos 3A \quad (1)\\
+  2\cos 12A\cos 9A &amp;=\cos 21A+\cos 3A \quad (2) \\
+  2\sin 8A\cos 5A &amp;=\sin 13A+\sin 3A \quad (3) \\
+  2\sin 9A\cos 12A &amp;=\sin 21A-\sin 3A \quad (4)
+\end{align} \\
+\text{Adding (1) and (2), and (3) and (4), the} \\
+\text{original equation reduces to} \\
+{\bf \dfrac{\cos 13A-\cos 21A}{\sin 13A+\sin 21A}}</reason>
+  </step>
+  <step>
+    <context>\dfrac{\cos 13A-\cos 21A}{\sin 13A+\sin 21A} \\
+\textbf{Right or Wrong? }
+\text{Converting the sum/difference} \\
+\text{in the above expression to product results in:}</context>
+    <tex correct='true'>\dfrac{2\sin 17A\sin 4A}{2\sin 17A\cos 4A}=\tan 4A</tex>
+    <tex>-\dfrac{2\sin 17A\sin 4A}{2\sin 17A\cos 4A}=-\tan 4A</tex>
+    <reason>\text{Using the standard results we saw earlier} \\
+\cos(X+Y)-\cos(X-Y)=-2\sin X\sin Y \\
+\sin(X+Y)-\sin(X-Y)=2\sin X\cos Y \\
+\text{we need to chose X and Y such that} \\
+X+Y=21, X-Y=13 \text{, we get,} \\
+\begin{align}
+  \dfrac{\cos 13A-\cos 21A}{\sin 13A+\sin 21A}
+    &amp;= \dfrac{2\sin 17A\sin 4A}{2\sin 17A\cos 4A} \\
+    &amp;={\bf \tan 4A}
+\end{align} \\
+\text{Comparing coefficients between the above} \\
+\text{result and the problem statement, $N=4$.}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>N=4</tex>
+    <tex>N=2</tex>
+    <tex>N=\dfrac{1}{2}</tex>
+    <tex>1</tex>
+  </choices>
+</question>

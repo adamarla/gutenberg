@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Without resorting to a calculator or} \\
+\text{trigonometric tables, compute } \\
+\begin{array}{c}
+  \dfrac{1}{\cos 290^\circ}+\dfrac{1}{\sqrt{3}\sin 250^\circ}
+\end{array}</tex>
+  </statement>
+  <step>
+    <context>\text{Are the following correct?}</context>
+    <tex correct='true'>\cos 290^\circ=\sin\dfrac{\pi}{9}, \sin 250^\circ=-\cos\dfrac{\pi}{9} \\
+\therefore
+\dfrac{1}{\cos 290^\circ}+\dfrac{1}{\sqrt{3}\sin 250^\circ}=
+\dfrac{1}{\sin\dfrac{\pi}{9}}-\dfrac{1}{\sqrt{3}\cos\dfrac{\pi}{9}} \\
+</tex>
+    <tex>\cos 290^\circ=\sin\dfrac{\pi}{9}, \sin 250^\circ=\cos\dfrac{\pi}{9} \\
+\therefore 
+\dfrac{1}{\cos 290^\circ}+\dfrac{1}{\sqrt{3}\sin 250^\circ}=
+\dfrac{1}{\sin\dfrac{\pi}{9}}+\dfrac{1}{\sqrt{3}\cos\dfrac{\pi}{9}} \\
+</tex>
+    <reason>\begin{align}
+  \cos 290^\circ &amp;=\cos\left(\dfrac{3\pi}{2}+\dfrac{\pi}{9}\right) \\
+    &amp;=\cos\dfrac{3\pi}{2}\cos \dfrac{\pi}{9}
+      -\sin\dfrac{3\pi}{2}\sin \dfrac{\pi}{9} \\
+    &amp;= 0 - (-1)\cdot\sin \dfrac{\pi}{9}={\bf\sin \dfrac{\pi}{9}} \\
+  \sin 250^\circ &amp;=\sin\left(\dfrac{3\pi}{2}-\dfrac{\pi}{9}\right) \\
+    &amp;= \sin\dfrac{3\pi}{2}\cos \dfrac{\pi}{9}
+      +\cos\dfrac{3\pi}{2}\sin \dfrac{\pi}{9} \\
+    &amp;= (-1)\cdot \cos \dfrac{\pi}{9}+0={\bf-\cos \dfrac{\pi}{9}}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\textbf{Right or Wrong?} \\
+\text{Applying }\sin (A+B)=\sin A\cos B+\cos A\sin B \\
+\text{and }\sin (A-B)=\sin A\cos B-\cos A\sin B \text{ to}\\
+\dfrac{1}{\sin\dfrac{\pi}{9}}-\dfrac{1}{\sqrt{3}\cos\dfrac{\pi}{9}}
+\text{ reduces it to the following:}
+</context>
+    <tex correct='true'>\dfrac{4}{\sqrt{3}}\left(
+  \dfrac{\sin \left(\dfrac{\pi}{3}-\dfrac{\pi}{9}\right)}
+  {\sin 2\left(\dfrac{\pi}{9}\right)}\right)</tex>
+    <reason>  \dfrac{1}{\sin\dfrac{\pi}{9}}-\dfrac{1}{\sqrt{3}\cos\dfrac{\pi}{9}}
+    = \dfrac{\sqrt{3}\cos\dfrac{\pi}{9}-\sin\dfrac{\pi}{9}}
+      {\sqrt{3}\cos\dfrac{\pi}{9}\sin\dfrac{\pi}{9}} \\
+    \qquad= \dfrac{2\left(\dfrac{\sqrt{3}}{2}\cos\dfrac{\pi}{9}-
+        \dfrac{1}{2}\sin\dfrac{\pi}{9}\right)}
+      {\dfrac{\sqrt{3}}{2}\left(
+        2\cos\dfrac{\pi}{9}\sin\dfrac{\pi}{9}\right)} \\
+    \qquad= \dfrac{4}{\sqrt{3}}
+      \left(\dfrac{\sin\dfrac{\pi}{3}\cos\dfrac{\pi}{9}-
+        \cos\dfrac{\pi}{3}\sin\dfrac{\pi}{9}}
+        {\sin 2 \left(\dfrac{\pi}{9}\right)}\right) \\
+    \qquad=\dfrac{4}{\sqrt{3}}\left(
+      \dfrac{{\bf\sin \left(\dfrac{\pi}{3}-\dfrac{\pi}{9}\right)}}
+        {\sin {\bf 2\left(\dfrac{\pi}{9}\right)}}\right)
+</reason>
+  </step>
+  <step>
+    <context>\text{Is the following reduction correct?}</context>
+    <tex correct='true'>\dfrac{4}{\sqrt{3}}\left(
+  \dfrac{\sin \left(\dfrac{\pi}{3}-\dfrac{\pi}{9}\right)}
+  {\sin 2\left(\dfrac{\pi}{9}\right)}\right)
+  =\dfrac{4}{\sqrt{3}}</tex>
+    <tex>\dfrac{4}{\sqrt{3}}\left(
+  \dfrac{\sin \left(\dfrac{\pi}{3}-\dfrac{\pi}{9}\right)}
+  {\sin 2\left(\dfrac{\pi}{9}\right)}\right)
+  =-\dfrac{4}{\sqrt{3}}</tex>
+    <reason>\dfrac{4}{\sqrt{3}}\left(
+  \dfrac{\sin \left(\dfrac{\pi}{3}-\dfrac{\pi}{9}\right)}
+  {\sin 2\left(\dfrac{\pi}{9}\right)}\right)
+  =\dfrac{4}{\sqrt{3}}\left(
+    \dfrac{\sin\left(\dfrac{3\pi}{9}-\dfrac{\pi}{9}\right)}
+      {\sin 2 \left(\dfrac{\pi}{9}\right)}\right) \\
+  =\dfrac{4}{\sqrt{3}}\left(
+    \dfrac{\sin\dfrac{2\pi}{9}}{\sin \dfrac{2\pi}{9}}\right)
+  =\dfrac{4}{\sqrt{3}}</reason>
+  </step>
+  <choices>
+    <tex>-4</tex>
+    <tex>4</tex>
+    <tex>-\dfrac{4}{\sqrt{3}}</tex>
+    <tex correct='true'>\dfrac{4}{\sqrt{3}}</tex>
+  </choices>
+</question>

@@ -5,6 +5,12 @@
 \int \left(2x - 3\cos x + e^x\right)dx</tex>
   </statement>
   <step>
+    <context>\text{Is the following expansion correct?}</context>
+    <tex correct='true'>\int \left(2x - 3\cos x + e^x\right)dx= \\
+  \qquad\int 2x\, dx - \int 3\cos x\, dx + \int e^x\, dx</tex>
+    <reason></reason>
+  </step>
+  <step>
     <context>\text{Is the calculation below correct?}</context>
     <tex correct='true'>\int \left(2x - 3\cos x + e^x\right)dx \\
 \qquad\qquad\quad= \int 2x\,dx -\int 3 \cos x\,dx +\int e^x\,dx \\
@@ -18,9 +24,9 @@
 </reason>
   </step>
   <choices>
-    <tex correct='true'>\int \left(2x - 3\cos x + e^x\right)dx= x^2 - 3\sin x + e^x + C</tex>
-    <tex>\int \left(2x - 3\cos x + e^x\right)dx= - x^2 +3\sin x + e^x + C</tex>
-    <tex>\int \left(2x - 3\cos x + e^x\right)dx=- x^2 - 3\sin x + e^x + C</tex>
-    <tex>\int \left(2x - 3\cos x + e^x\right)dx= \dfrac{x^2}{2} - 3\sin x + e^x + C</tex>
+    <tex correct='true'>x^2 - 3\sin x + e^x + C</tex>
+    <tex>- x^2 +3\sin x + e^x + C</tex>
+    <tex>- x^2 - 3\sin x + e^x + C</tex>
+    <tex>\dfrac{x^2}{2} - 3\sin x + e^x + C</tex>
   </choices>
 </question>

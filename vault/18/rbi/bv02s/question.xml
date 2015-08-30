@@ -36,7 +36,11 @@
   +4\sqrt{x}+C
  \end{align}
 </tex>
-    <reason>\int x^n\, dx=\dfrac{x^{n+1}}{n+1}+C</reason>
+    <reason>\text{Establish the correct exponent (power) of x} \\
+\text{in each term and then apply standard result } \\
+\int x^n\, dx =\dfrac{x^{n+1}}{n+1} 
+\text{ carefully to each term.}  
+</reason>
   </step>
   <choices>
     <tex correct='true'>\dfrac{2}{7}x^{\frac{7}{2}}+2 x^{\frac{3}{2}} 
