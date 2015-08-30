@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If angle $\theta$ is divided into two parts such that} \\
+\text{the tangent of one part is $k$ times the tangent} \\
+\text{of the other, and $\phi$ is the difference between} \\
+\text{the two parts, then find the ratio }
+\dfrac{\sin\theta}{\sin\phi} \\
+\text{in terms of $k$}?</tex>
+  </statement>
+  <step>
+    <context>\text{If the angle $\theta$ is divided into two parts} \\
+\text{$\alpha$ and $\beta$, then is this what the problem} \\
+\text{states?}</context>
+    <tex correct='true'>\text{Given }\alpha+\beta=\theta, \alpha-\beta=\phi, 
+  \tan\alpha=k\tan\beta, \\
+\text{find }\dfrac{\sin\theta}{\sin\phi}\text{ in terms of $k$?}</tex>
+    <reason>\text{A careful reading of the problem shows} \\
+\text{that if $\theta$ is divided in two parts $\alpha$ and $\beta$} \\
+\text{such that $\alpha-\beta=\phi$, and }\tan\alpha=k\tan\beta \\
+\text{we need to establish }\dfrac{\sin\theta}{\sin\phi}.
+</reason>
+  </step>
+  <step>
+    <context>\text{Given that }
+\dfrac{\tan\alpha}{\tan\beta}=\dfrac{k}{1}, \\
+\text{is the following correct?}</context>
+    <tex correct='true'>\dfrac{\tan\alpha+\tan\beta}
+{\tan\alpha-\tan\beta}=\dfrac{k+1}{k-1}</tex>
+    <reason>\text{Application of componendo and dividendo, } \\
+\dfrac{\tan\alpha}{\tan\beta}=\dfrac{k}{1} \\
+\text{Adding 1 to both sides} \\
+\dfrac{\tan\alpha+\tan\beta}{\tan\beta}=\dfrac{k+1}{1} \quad(1)\\
+\text{Whereas subtracting 1 from both sides of the} \\
+\text{original expression we get,} \\
+\dfrac{\tan\alpha-\tan\beta}{\tan\beta}=\dfrac{k-1}{1}\quad(2) \\
+\text{Dividing (1) by (2) we get,} \\
+{\bf\dfrac{\tan\alpha+\tan\beta}
+  {\tan\alpha-\tan\beta}=\dfrac{k+1}{k-1}}
+</reason>
+  </step>
+  <step>
+    <context>\text{Given }
+\dfrac{\tan\alpha+\tan\beta}
+{\tan\alpha-\tan\beta}=\dfrac{k+1}{k-1} \\
+\text{can we conclude the following?}</context>
+    <tex correct='true'>\dfrac{\sin\theta}{\sin\phi}=\dfrac{k+1}{k-1}</tex>
+    <tex>\dfrac{\sin\phi}{\sin\theta}=\dfrac{k+1}{k-1}</tex>
+    <reason>\begin{align}
+  &amp;\dfrac{\tan\alpha+\tan\beta}{\tan\alpha-\tan\beta}
+    =\dfrac{k+1}{k-1} \\
+  \implies&amp;\dfrac{\frac{\sin\alpha}{\cos\alpha}
+    +\frac{\sin\beta}{\cos\beta}}
+    {\frac{\sin\alpha}{\cos\alpha}-\frac{\sin\beta}{\cos\beta}}
+    =\dfrac{k+1}{k-1} \\
+  \implies&amp;\dfrac{\sin\alpha\cos\beta+\cos\alpha\sin\beta}
+    {\sin\alpha\cos\beta+\cos\alpha\sin\beta}
+    =\dfrac{k+1}{k-1} \\
+  \implies&amp;\dfrac{\sin \left(\alpha+\beta\right)}
+    {\sin \left(\alpha-\beta\right)}=\dfrac{k+1}{k-1} 
+\end{align} \\
+\text{As per our original assumption } \\
+\alpha+\beta=\theta \text{ and }\alpha-\beta=\phi \\
+\therefore {\bf\dfrac{\sin\theta}{\sin\phi}=\dfrac{k+1}{k-1}}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{k^2}{k-1}</tex>
+    <tex>\sqrt{\dfrac{k+1}{k-1}}</tex>
+    <tex correct='true'>\dfrac{k+1}{k-1}</tex>
+    <tex>\dfrac{k-1}{k+1}</tex>
+  </choices>
+</question>

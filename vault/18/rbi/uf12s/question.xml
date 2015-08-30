@@ -32,9 +32,11 @@
 \end{align}\\
 
 \text{Here, C is the constant of integration}</tex>
-    <reason>\text{Apply standard result }\int x^n\, dx
-  =\dfrac{x^{n+1}}{n+1} \\
-\text{carefully to each term.}  </reason>
+    <reason>\text{Establish the correct exponent (power) of x} \\
+\text{in each term and then apply standard result } \\
+\int x^n\, dx =\dfrac{x^{n+1}}{n+1} 
+\text{ carefully to each term.}  
+</reason>
   </step>
   <choices>
     <tex>\dfrac{3}{2}x^{\frac{3}{2}} - \dfrac{5}{2}x^{\frac{5}{2}} +C\\</tex>

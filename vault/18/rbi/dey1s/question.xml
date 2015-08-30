@@ -31,7 +31,11 @@
 &amp;\qquad= \dfrac{x^2}{2}+ 5x -\dfrac{4}{x}+C
 \end{align}
 </tex>
-    <reason>\int x^n\, dx=\dfrac{x^{n+1}}{n+1}+C</reason>
+    <reason>\text{Establish the correct exponent (power) of x} \\
+\text{in each term and then apply standard result } \\
+\int x^n\, dx =\dfrac{x^{n+1}}{n+1} 
+\text{ carefully to each term.}  
+</reason>
   </step>
   <choices>
     <tex correct='true'>\dfrac{x^2}{2} + 5 x +\dfrac{4}{ x}+ C</tex>

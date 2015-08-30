@@ -25,9 +25,11 @@
 \end{align}\\
 \text{where C is the constant of integration.}
 </tex>
-    <reason>\text{Apply standard result }\int x^n\, dx
-  =\dfrac{x^{n+1}}{n+1} \\
-\text{carefully to each term.}  </reason>
+    <reason>\text{Establish the correct exponent (power) of x} \\
+\text{in each term and then apply standard result } \\
+\int x^n\, dx =\dfrac{x^{n+1}}{n+1} 
+\text{ carefully to each term.}  
+</reason>
   </step>
   <choices>
     <tex correct='true'>\dfrac{x^3}{3} - x+C</tex>

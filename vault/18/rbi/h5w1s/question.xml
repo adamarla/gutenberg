@@ -24,9 +24,11 @@
 \text{is the following correct?}</context>
     <tex correct='true'>\int \left(x^2 + 1\right)\,dx=\dfrac{x^3}{3}+x+C</tex>
     <tex>\int \left(x^2 + 1\right)\,dx=\dfrac{x^3}{3}+\dfrac{x^2}{2}+C</tex>
-    <reason>\text{Apply standard result }\int x^n\, dx
-  =\dfrac{x^{n+1}}{n+1} \\
-\text{carefully to each term.}  </reason>
+    <reason>\text{Establish the correct exponent (power) of x} \\
+\text{in each term and then apply standard result } \\
+\int x^n\, dx =\dfrac{x^{n+1}}{n+1} 
+\text{ carefully to each term.}  
+</reason>
   </step>
   <choices>
     <tex>\dfrac{x^3}{3}+\dfrac{x^2}{2} + C</tex>

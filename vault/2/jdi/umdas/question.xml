@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{For what values of $x$ is }2\cos^2 x+3\sin x=0?</tex>
+  </statement>
+  <step>
+    <context>\text{Is the following a valid quadratic form} \\
+\text{for }2\cos^2 x+3\sin x=0?
+</context>
+    <tex correct='true'>2\sin^2 x-3\sin x-2=0</tex>
+    <tex>2\cos^2 x-3\cos x-3=0</tex>
+    <reason>\begin{align}
+  &amp;2\cos^2 x+3\sin x =0 \\
+  \implies&amp; 2 \left(1-\sin^2 x\right)+3\sin x = 0 \\
+  \implies&amp; 2-2\sin^2 x+3\sin x =0 \\
+  \implies&amp; 2\sin^2 x-3\sin x-2 =0
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{If $2\sin^2 x-3\sin x-2=0$, for }x\in [0, 2\pi], \\
+\text{valid value(s) for $\sin x$ are:}</context>
+    <tex>2, -\dfrac{1}{2}</tex>
+    <reason>\begin{align}
+  &amp;2\sin^2 x-3\sin x-2=0 \\
+  \implies &amp;\sin x = \dfrac{3\pm\sqrt{3^2-4\cdot 2\cdot (-2)}}{2\cdot 2} \\
+  \implies &amp;\sin x = 2 \text{ or} -\dfrac{1}{2}  
+\end{align} \\
+\sin x \in [-1, 1], \text{ therefore the only valid value is } \\
+{\bf\sin x=-\dfrac{1}{2}}</reason>
+  </step>
+  <step>
+    <context>\text{If}\sin x = -\dfrac{1}{2}\text{, is the following true of x}?</context>
+    <tex correct='true'>x=n\pi+(-1)^{n+1}\left(\dfrac{\pi}{6}\right)</tex>
+    <tex>x=n\pi+(-1)^{n}\left(\dfrac{\pi}{6}\right)</tex>
+    <reason>\text{If }x\in [0, 2\pi], \\
+\begin{align}
+  \sin x =-\dfrac{1}{2} 
+    &amp;\implies x=0-\dfrac{\pi}{6}, \pi+\dfrac{\pi}{6} \\
+    &amp;\implies x=\overbrace{2\pi-\dfrac{\pi}{6}}^{0=2n\pi}, \pi+\dfrac{\pi}{6} \\
+    &amp;\implies {\bf x=n\pi+(-1)^{n+1}\left(\dfrac{\pi}{6}\right)}
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex>x=n\pi+(-1)^{n+1}\left(\dfrac{\pi}{3}\right)</tex>
+    <tex>x=n\pi+(-1)^{n}\left(\dfrac{\pi}{6}\right)</tex>
+    <tex>x=n\pi+(-1)^{n}\left(\dfrac{\pi}{3}\right)</tex>
+    <tex correct='true'>x=n\pi+(-1)^{n+1}\left(\dfrac{\pi}{6}\right)</tex>
+  </choices>
+</question>
