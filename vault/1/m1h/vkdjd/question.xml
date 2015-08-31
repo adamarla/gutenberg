@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+		\text{What is the minimum value (if it exists) of }\\
+		\quad y = \dfrac{x}{\ln x^2} \\
+		\textbf{Note: }\ln = \log_e 
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\text{Given }y=\dfrac{x}{\ln x^2},\text{ can we say the following}\\
+			\text{by looking at }\dfrac{dy}{dx}?
+			</context>
+    <tex correct="true">
+			\textbf{An extreme value occurs when }x=e.
+			</tex>
+    <tex correct="false">
+		  \textbf{An extreme value occurs when }x=e^2.
+			</tex>
+    <reason>
+			\begin{align}
+			  y &amp;= \dfrac{x}{\ln x^2} = \underbrace{\dfrac{x}{2\cdot\ln x}}_{\log a^b = b\cdot\log a}\\ 
+			  \implies\dfrac{dy}{dx} &amp;= \dfrac{\ln x - x\cdot\frac{d}{dx}\ln x}
+			  {2\cdot\left(\ln x\right)^2} = \dfrac{\ln x - 1}{2\cdot \left(\ln x\right)^2}\\
+			  \implies \dfrac{dy}{dx} &amp;= 0\text{ when } \ln x - 1 = 0 \\
+			  \implies \ln x &amp;= 1\implies x = e.
+			\end{align}
+			</reason>
+  </step>
+  <step>
+    <context>
+				\text{Going further, is the following true at the}\\
+				\text{extrema point }x = e?
+				</context>
+    <tex correct="true">
+				\text{There is a minima at } x = e.\\
+				\textbf{And the minimum value is } y = \dfrac{e}{2}.
+				</tex>
+    <tex correct="false">
+				\text{There is a maxima - not minima - at } x = e.\\
+				\textbf{And the maximum value is } y = \dfrac{e}{2}.
+				</tex>
+    <reason>
+				\begin{align}
+				  \dfrac{dy}{dx} &amp;= \dfrac{1}{2}\cdot \left[\dfrac{1}{\ln x}-\dfrac{1}{(\ln x)^2}\right]\\
+				  \implies\dfrac{d^2 y}{dx^2} &amp;= \dfrac{1}{2}\cdot 
+				  \left[-\dfrac{1}{x\cdot (\ln x)^2} + \dfrac{2}{x\cdot (\ln x)^3}\right] \\
+				  &amp;= \dfrac{1}{2x\cdot (\ln x)^2}\cdot \left(\dfrac{2}{\ln x} - 1 \right) \\
+				  \implies \left[\dfrac{d^2 y}{dx^2}\right]_{x=e} &amp;= 
+				  \dfrac{1}{2e\cdot (\ln e)^2}\cdot \left(\dfrac{2}{\ln e} - 1\right) \\
+				  &amp;= \dfrac{1}{2e}\gt 0\implies\text{ minima.} \\
+				  \text{And so, }y_{MIN} &amp;= \left[\dfrac{x}{\ln x^2}\right]_{x=e} = \dfrac{e}{2\ln e} 
+				  = \dfrac{e}{2}.
+				\end{align}
+				</reason>
+  </step>
+  <choices>
+    <tex>\text{Maxima at }x = e^2,y_{MAX} = \dfrac{e^2}{4}.</tex>
+    <tex correct="true">\text{Minima at }x = e,y_{MIN} = \dfrac{e}{2}.</tex>
+    <tex>\text{Maxima at }x = e,y_{MAX} = \dfrac{e}{2}.</tex>
+    <tex>\text{Minima at }x = e^2,y_{MIN} = \dfrac{e^2}{4}.</tex>
+  </choices>
+</question>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+		\text{For a parabola }y^2 = 2px\, (p\gt 0)\text{ and a point A}\\
+		\text{on its axis (does not have to be the focus),} \\
+		\text{what is the x-coordinate of the point on the}\\
+		\text{parabola closest to A?}
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\text{What will the parabola look like, what will}\\
+			\text{its axis be and where will the point A lie?}\\
+			\textbf{In short, is the figure below correct?}
+			</context>
+    <image correct="true">1-right.svg</image>
+    <image>1-wrong.svg</image>
+    <reason>
+			\begin{align}
+			  y^2 &amp;= 2px \implies 2px \geq 0 \\
+			  \text{And if }p&amp;\gt 0\text{ then } x\geq 0.
+			\end{align} \\
+			\text{In other words, the parabola is defined }\\
+			\text{only for }x\geq 0.\text{ Hence, it's axis will be}\\
+			\text{along the x-axis. And a point A on its axis}\\
+			\text{will be of the form }A=(a,0),\, a\gt 0.
+			</reason>
+  </step>
+  <step>
+    <context>
+				\text{If X be the distance between the point A}\\
+				\text{on the axis and B on the parabola, then}\\
+				\text{would the following be true?}
+				</context>
+    <tex correct="true">
+				\begin{align}
+				  \dfrac{d}{dx}X^2 &amp;= 2\cdot(x-a) + 2p \\
+				  \dfrac{d^2}{dx^2}X^2 &amp;= 2 \implies \text{ minima. }
+				\end{align}
+				</tex>
+    <reason>
+				\text{A point B on the parabola will have the}\\
+				\text{coordinates } B = \left(x,\sqrt{2px}\right).\\
+				\begin{align}
+				  \implies X &amp;= \underbrace{\sqrt{(x-a)^2 + \left(\sqrt{2px}-0\right)^2}}
+				  _{\text{Distance between two points.}} \\
+				  \implies X^2 &amp;= (x-a)^2 + 2px \\
+				  \therefore \dfrac{d}{dx}X^2 &amp;= 2\cdot(x-a) + 2p \\
+				  \text{and }\dfrac{d^2}{dx^2}X^2 &amp;= 2\gt 0\implies\text{ minima.}
+				\end{align}
+				</reason>
+  </step>
+  <step>
+    <context>
+					\text{Given that}\\
+					\dfrac{d}{dx}X^2 = 2\cdot(x-a) + 2p\text{ and }\dfrac{d^2}{dx^2}X^2\gt 0,\\
+					\textbf{would the following be true }\text{for 'x' - the}\\
+					\text{x-coordinate of the closest point B?}
+					</context>
+    <tex correct="true">
+					x = \begin{cases}
+					  a-p, \quad \text{ if } a\gt p, \\
+					  0,\quad\text{ otherwise.} 
+					\end{cases}
+					</tex>
+    <tex correct="false">
+					\quad x = a-p
+					</tex>
+    <reason>
+					\begin{align}
+					  \dfrac{d}{dx}X^2 &amp;= 2\cdot(x-a) + 2p = 0\implies x = a-p
+					\end{align} \\
+					\text{And as }\dfrac{d^2}{dx^2}X^2 \gt 0\text{ we can say that the closest} \\
+					\text{point B will have x-coordinate = }(a-p).\\
+					\textbf{But what happens if }a\lt p?\\
+					\text{Then, }x_B = (a-p)\lt 0.\text{ But if B lies on the}\\
+					\text{parabola, then }x_B \geq 0\text{ (Step 1). }\\
+					\text{Hence, when }\underline{a\lt p},\text{ then the closest point}\\
+					\text{to }A(a,0)\text{ is simply the origin - (0,0).}
+					</reason>
+  </step>
+</question>
