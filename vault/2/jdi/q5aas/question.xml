@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{The scalar product of the vector }\ora{V}=\vector{1}{1}{1} \\
+\text{and the unit vector along the sum of} \\
+\ora{A}=\vector{2}{4}{-5}\text{ and }
+\ora{B}=\vector{\lambda}{2}{3} \text{ is }1. \\
+\text{Find the value of }\lambda.</tex>
+  </statement>
+  <step>
+    <context>\ora{A}=\vector{2}{4}{-5}\text{ and }
+\ora{B}=\vector{\lambda}{2}{3} \text{ is }1. \\
+\text{Does the following represent the unit vector} \\
+\text{along $\ora{A}+\ora{B}$?}</context>
+    <tex correct='true'>\dfrac{1}{\sqrt{(\lambda+2)^2+40}}
+  \left(\vector{(\lambda+2)}{6}{-2}\right)</tex>
+    <tex>\vector{(\lambda+2)}{6}{-2}</tex>
+    <reason>\begin{align}
+  \ora{A}+\ora{B}&amp;=\vector{(\lambda+2)}{(4+2)}{(-5+3)} \\
+    &amp;=\vector{(\lambda+2)}{6}{-2}
+\end{align} \\
+\text{However, we require the{\bf unit vector} along } \\
+\ora{A}+\ora{B}. \text{Therefore, we need to divide it by it's} \\
+\text{own magnitude.} \\
+\begin{align}
+  \left\vert\ora{A}+\ora{B}\right\vert
+    &amp;=\sqrt{(\lambda+2)^2+(4+2)^2+(-5+3)^2} \\
+    &amp;=\sqrt{(\lambda+2)^2+40}
+\end{align} \\
+\therefore\text{Unit vector along}\ora{A}+\ora{B}\text{ is} \\
+{\bf\dfrac{1}{\sqrt{(\lambda+2)^2+40}}
+  \left(\vector{(\lambda+2)}{6}{-2}\right)}</reason>
+  </step>
+  <step>
+    <context>\text{Is this the scalar (dot) product of $\ora{V}=\vector{1}{1}{1}$} \\
+\text{and unit vector } \\
+\dfrac{1}{\sqrt{(\lambda+2)^2+40}}
+  \left(\vector{(\lambda+2)}{6}{-2}\right)?</context>
+    <tex correct='true'>\dfrac{\lambda+6}{\sqrt{(\lambda+2)^2+40}</tex>
+    <tex>\lambda+6</tex>
+    <reason>\text{The scalar (dot) product of any two vectors} \\
+\begin{align}
+  \ora{A}&amp;=\vector{a_1}{a_2}{a_3}  \\
+  \ora{B}&amp;=\vector{b_1}{b_2}{b_3}
+\end{align} \\
+\text{is given by}{\bf\ora{A}\cdot\ora{B}=a_1b_1+a_2b_2+a_3b_3} \\
+\text{this is easily derivable by expanding $\ora{A}\cdot\ora{B}$} \\
+\text{as }(a_1\hat i\cdot b_1\hat i+a_1\hat i\cdot b_2\hat j+ ...
++a_3\hat k\cdot b_3\hat k). \\
+\begin{align}
+\text{Note:}
+  &amp;{\it \hat i\cdot\hat j=\hat j\cdot\hat k=
+    \hat k\cdot\hat i=\cos (\pi/2)=0},\\ 
+  &amp;{\it \hat i\cdot\hat i=\hat j\cdot\hat j=
+    \hat k\cdot\hat k=\cos 0=1}
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>\text{If }
+\dfrac{\lambda+6}{\sqrt{(\lambda+2)^2+40}}=1
+\text{ then is this $\lambda$?}</context>
+    <tex correct='true'>\lambda=1</tex>
+    <tex>\lambda=-4</tex>
+    <reason>\begin{align}
+  &amp;\dfrac{\lambda+6}{\sqrt{(\lambda+2)^2+40}}=1 \\
+  \implies&amp;\lambda^2+12\lambda+36=\lambda^2+4\lambda+44 \\
+  \implies&amp;8\lambda=8\implies\lambda=1
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>-9</tex>
+    <tex>8</tex>
+    <tex correct='true'>1</tex>
+    <tex>12</tex>
+  </choices>
+</question>
