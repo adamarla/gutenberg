@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+		\text{For the function } f:\mathbb{R}\to\mathbb{R} = \sqrt{5x-2x^2} \\
+		\text{find the following} \\
+		\text{(a) its domain. }\\
+		\text{(b) domain if }f:\mathbb{N}\to\mathbb{R}\text{ instead of }f:\mathbb{R}\to\mathbb{R}.
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\textbf{A question on notation.} \\
+			\text{The table below shows some function}\\
+			\text{notations and what they mean.} \\
+			\textbf{But is everything in the table correct?}
+			</context>
+    <tex correct="true">
+			\begin{tabular}{|c|c|}
+			\hline 
+			\text{Notation} &amp; \text{Meaning} \\
+			\hline 
+			f(x) = f:\mathbb{R}\to\mathbb{N} &amp; x\in\mathbb{R}, f(x)\in\mathbb{N} \\
+			\hline 
+			f(x) = f:\mathbb{Z}\to\mathbb{N} &amp; x\in\mathbb{Z}, f(x)\in\mathbb{N} \\
+			\hline
+			f(x) = f:\mathbb{R}\to\mathbb{R} &amp; x\in\mathbb{R}, f(x)\in\mathbb{R} \\
+			\hline
+			\end{tabular}
+			</tex>
+    <tex correct="false">
+			\begin{tabular}{|c|c|}
+			\hline 
+			\text{Notation} &amp; \text{Meaning} \\
+			\hline 
+			f(x) = f:\mathbb{R}\to\mathbb{N} &amp; x\in\mathbb{N}, f(x)\in\mathbb{R} \\
+			\hline 
+			f(x) = f:\mathbb{Z}\to\mathbb{N} &amp; x\in\mathbb{N}, f(x)\in\mathbb{Z} \\
+			\hline
+			f(x) = f:\mathbb{R}\to\mathbb{R} &amp; x\in\mathbb{R}, f(x)\in\mathbb{R} \\
+			\hline
+			\end{tabular}
+			</tex>
+    <reason>
+			f(x) = f:\mathbb{N}\to\mathbb{R}\text{ - for example - means that} \\
+			\text{the domain of f(x) is the set of natural numbers.}\\
+			\text{But f(x) itself }\in\mathbb{R}. \\
+			\text{Hence, the correct table will be} \\
+			\begin{tabular}{|c|c|}
+			\hline 
+			\text{Notation} &amp; \text{Meaning} \\
+			\hline 
+			f(x) = f:\mathbb{R}\to\mathbb{N} &amp; x\in\mathbb{R}, f(x)\in\mathbb{N} \\
+			\hline 
+			f(x) = f:\mathbb{Z}\to\mathbb{N} &amp; x\in\mathbb{Z}, f(x)\in\mathbb{N} \\
+			\hline
+			f(x) = f:\mathbb{R}\to\mathbb{R} &amp; x\in\mathbb{R}, f(x)\in\mathbb{R} \\
+			\hline
+			\end{tabular}
+			</reason>
+  </step>
+  <step>
+    <context>
+				\textbf{Right or wrong?} \\
+				\text{For }f(x) = f:\mathbb{R}\to\mathbb{R} = \sqrt{5x-2x^2}\text{ to be}\\
+				\text{defined, the following will have to be true.}
+				</context>
+    <tex correct="true">
+				\quad x\in \left[0,\frac{5}{2}\right]\implies\textbf{Domain} = \left[0,\frac{5}{2}\right]
+				</tex>
+    <tex correct="false">
+				\quad x\leq\frac{5}{2}\implies\textbf{Domain} = \left(-\infty,\frac{5}{2}\right]
+				</tex>
+    <reason>
+				\text{For f(x) to be defined, }\\
+				\quad 5x-2x^2\geq 0\implies x\cdot (5-2x)\geq 0.\\
+				\text{This gives rise to the following cases.}\\
+				\begin{tabular}{|c|c|c|c|}
+				\hline 
+				&amp; x &amp; 5-2x &amp; x\cdot(5-2x) \\
+				\hline 
+				x\lt 0 &amp; - &amp; + &amp; - \\
+				\hline
+				0\leq x\leq \frac{5}{2} &amp; + &amp; + &amp; + \\
+				\hline
+				x\gt\frac{5}{2} &amp; + &amp; - &amp; - \\
+				\hline
+				\end{tabular} \\
+				\text{As }5x-2x^2\geq 0\text{ only when }0\leq x\leq\frac{5}{2}\\
+				\text{the domain of f(x) is }\left[0,\frac{5}{2}\right].
+				</reason>
+  </step>
+  <step>
+    <context>
+					\textbf{Right or wrong?}\\
+					\text{The domain of }f:\mathbb{R}\to\mathbb{R}\text{ is }\left[0,\frac{5}{2}\right].\\
+					\text{But if it was }f:\mathbb{N}\to\mathbb{R},\text{ then the following}\\
+					\text{would have been true.}
+					</context>
+    <tex correct="true">
+					\quad \textbf{Domain }=\lbrace 1,2\rbrace
+					</tex>
+    <tex correct="false">
+					\textbf{No change.}\\
+					\text{The domain would still be }\left[0,\frac{5}{2}\right].
+					</tex>
+    <reason>
+					\text{If the function were now }f:\mathbb{N}\to\mathbb{R},\text{then}\\
+					\text{only }x\in\mathbb{N}\text{ can be in the domain.}\\
+					\text{So, how many natural numbers are there}\\
+					\text{in }\left[0,\frac{5}{2}\right]=\left[0,2.5\right]?\\
+					\text{Just two - 1 and 2. (No, }0\notin\mathbb{N}).\\
+					\text{Hence, the domain now is }\lbrace 1,2\rbrace.
+					</reason>
+  </step>
+  <choices>
+    <tex>(a)\, \left(-\infty,\frac{5}{2}\right]\quad (b)\,\lbrace x:x\leq 2, x\in\mathbb{N}\rbrace</tex>
+    <tex>(a)\, \left[-\frac{5}{2},\frac{5}{2}\right]\quad (b)\,\lbrace -1,-2,0,1,2\rbrace</tex>
+    <tex>(a)\, \left(0,\frac{5}{2}\right)\quad (b)\,\lbrace 0,1,2\rbrace</tex>
+    <tex correct="true">(a)\, \left[0,\frac{5}{2}\right]\quad (b)\,\lbrace 1,2\rbrace</tex>
+  </choices>
+</question>

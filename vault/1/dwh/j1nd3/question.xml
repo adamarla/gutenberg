@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+		\text{Out of 100 students, 15 passed in English(E),}\\
+		\text{12 passed in Maths(M), 8 passed in Science(S),}\\
+		\text{6 in English and Maths, 7 in Maths and Science,}\\
+		\text{4 in English and Science - and 4 in all three.}\\
+		\text{Given this, find out how many passed in}\\
+		\quad\text{(a) two or more subjects?} \\
+		\quad\text{(b) exactly 2 subjects?}
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\textbf{What do we know?}\\
+			\text{Does the table below correctly capture all}\\
+			\text{that we know (or can infer)?}
+			</context>
+    <tex correct="true">
+			\begin{tabular}{|r|c|}
+			\hline
+			n(E) &amp; 15 \\
+			\hline
+			n(M) &amp; 12 \\
+			\hline
+			n(S) &amp; 8 \\
+			\hline
+			n(E\cap M) &amp; 6 \\
+			\hline
+			n(M\cap S) &amp; 7 \\
+			\hline
+			n(E\cap S) &amp; 4 \\
+			\hline
+			n(E\cap M\cap S) &amp; 4 \\
+			\hline
+			n(E\cup M\cup S) &amp; 22 \\
+			\hline
+			\end{tabular}
+			</tex>
+    <tex correct="false">
+			\begin{tabular}{|r|c|}
+			\hline
+			n(E) &amp; 15 \\
+			\hline
+			n(M) &amp; 12 \\
+			\hline
+			n(S) &amp; 8 \\
+			\hline
+			n(E\cap M) &amp; 6 \\
+			\hline
+			n(M\cap S) &amp; 7 \\
+			\hline
+			n(E\cap S) &amp; 4 \\
+			\hline
+			n(E\cap M\cap S) &amp; 4 \\
+			\hline
+			n(E\cup M\cup S) &amp; 100 \\
+			\hline
+			\end{tabular}
+			</tex>
+    <reason>
+			\text{Most of the values come straight from the}\\
+			\text{question. The only tricky one is }n(E\cup M\cup S).\\
+			\textbf{Remember, some students may not have}\\
+			\textbf{passed in any subject!}\\
+			\text{Which is why }\\
+			\begin{align}
+			  n(E\cup M\cup S) &amp;= n(E) + n(M) + n(S) \\
+			  &amp;- n(E\cap M)-n(M\cap S)-n(S\cap E) \\
+			  &amp;+ n(E\cap M\cap S) \\
+			  &amp;= 15 + 12 + 8 -6-7-4 + 4 \\
+			  &amp;= 22
+			\end{align} \\
+			\text{And therefore, }\\
+			\begin{tabular}{|r|c|l|}
+			\hline
+			&amp; &amp; \text{Meaning} \\
+			\hline
+			n(E) &amp; 15 &amp; \text{Passed in English} \\
+			\hline
+			n(M) &amp; 12 &amp; \text{In Maths}\\
+			\hline
+			n(S) &amp; 8 &amp; \text{In Science}\\
+			\hline
+			n(E\cap M) &amp; 6 &amp; \text{In English and Maths}\\
+			\hline
+			n(M\cap S) &amp; 7 &amp; \text{In Maths and Science}\\
+			\hline
+			n(E\cap S) &amp; 4 &amp; \text{In English and Science}\\
+			\hline
+			n(E\cap M\cap S) &amp; 4 &amp; \text{In all}\\
+			\hline
+			n(E\cup M\cup S) &amp; 22 &amp; \text{In atleast one}\\
+			\hline
+			\end{tabular}
+			</reason>
+  </step>
+  <step>
+    <context>
+				\textbf{Two or more subjects} \\
+				\text{In the figure below, }\textbf{N}\text{ is the number}\\
+				\text{of elements in the shaded region.}\\
+				\textbf{But, }\text{is the shaded region the set of students}\\
+				\text{who have passed in two or more subjects?}\\
+				\underline{\text{And is the value of N correct?}}
+				</context>
+    <image correct="true">2-right.svg</image>
+    <image correct="false">2-wrong.svg</image>
+    <reason>
+				\underline{\text{Of the passing students}}\text{, we want to exclude}\\
+				\text{those who passed in just one subject. }\\
+				\text{The rest would therefore have passed in }\\
+				\underline{\text{two or more subjects}}.\\
+				\begin{align}
+				N &amp;= n(E\cap M) + \underbrace{n(M\cap S) + n(S\cap E)}_{\text{2 extra }n(E\cap M\cap S)} \\
+				&amp;- \underbrace{2\cdot n(E\cap M\cap S)}_{\text{hence removed}} \\
+				&amp;= 6+7+4-2\times 4 = 9
+				\end{align}
+				</reason>
+  </step>
+  <step>
+    <context>
+				\textbf{Exactly two subjects.} \\
+				\text{In the figure below, }\textbf{N}\text{ is the number of}\\
+				\text{elements in the shaded region.}\\
+				\textbf{But, }\text{is the shaded region the set of students}\\
+				\text{who have passed in exactly two subjects?}\\
+				\underline{\text{And is the value of N correct?}}
+				</context>
+    <image correct="true">3-right.svg</image>
+    <image correct="false">3-wrong.svg</image>
+    <reason>
+				\underline{\text{Of the passing students}}\text{, we want to exclude}\\
+				\text{those who passed in just one subject or in all. }\\
+				\text{The rest would therefore have passed in }\\
+				\underline{\text{exactly two subjects}}.\\
+				\begin{align}
+				N &amp;= \underbrace{[n(E\cap M) - n(E\cap M\cap S)]}_{\text{only English and Maths}} \\
+				&amp;+ \underbrace{[n(M\cap S) - n(E\cap M\cap S)]}_{\text{only Maths and Science}} \\
+				&amp;+ \underbrace{[n(S\cap E) - n(E\cap M\cap S)]}_{\text{only Science and English}} \\
+				&amp;= 
+				n(E\cap M)+n(M\cap S) + n(S\cap E) \\
+				&amp;- 3\cdot n(E\cap M\cap S) \\
+				&amp;= 6+7+4-3\times 4 = 5
+				\end{align}
+				</reason>
+  </step>
+  <choices>
+    <tex>(a)\, 17\quad (b)\, 7</tex>
+    <tex>(a)\, 11\quad (b)\, 6</tex>
+    <tex correct="true">(a)\, 9\quad (b)\, 5</tex>
+    <tex>(a)\, 7\quad (b)\, 4</tex>
+  </choices>
+</question>
