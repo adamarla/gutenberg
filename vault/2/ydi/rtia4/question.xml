@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Vectors $\ora{a}$, $\ora{b}$ and $\ora{c}$ are such that} \\
+\ora{a}+\ora{b}+\ora{c}=0\text{ and }|\ora{a}|=3, |\ora{b}|=5 \\
+\text{and }|\ora{c}|=7. \\
+\text{Find the angle between $\ora{a}$ and $\ora{b}$?}</tex>
+  </statement>
+  <step>
+    <context>\text{If }\ora{a}+\ora{b}=-\ora{c}, \text{and $\theta$ is the angle} \\
+\text{between $\ora{a}$ and $\ora{b}$, what is the relation}  \\
+\text{between}|\ora{a}|, |\ora{b}| \text{ and }|\ora{c}|?
+</context>
+    <tex correct='true'>|\ora{a}|^2+|\ora{b}|^2+2|\ora{a}||\ora{b}|\cos\theta=|\ora{c}|^2</tex>
+    <tex>|\ora{a}|^2+|\ora{b}|^2+2|\ora{a}||\ora{b}|=|\ora{c}|^2</tex>
+    <reason>\begin{align}
+  \text{Let }\ora{a}&amp;=\vector{a_1}{a_2}{a_3} \text{ and}\\
+  \ora{b}&amp;=\vector{b_1}{b_2}{b_3}
+\end{align} \\
+\text{then }\ora{c}=\vector{(a_1+b_1)}{(a_2+b_2)}{(a_3+b_3)} \\
+\begin{align}
+  \therefore|\ora{c}|^2&amp;=(a_1+b_1)^2+(a_2+b_2)^2+(a_3+b_3)^2 \\
+    &amp;=\overbrace{a_1^2+b_1^2+c_1^2}^{|\ora{a}|^2}
+      +\overbrace{a_2^2+b_2^2+c_2^2}^{|\ora{b}|^2}+\\
+    &amp;\qquad2(\overbrace{a_1a_2+b_1b_2+c_1c_2}^{\ora{a}\cdot\ora{b}}) \\
+    &amp;=|\ora{a}|^2+|\ora{b}|^2+2|\ora{a}||\ora{b}|\cos\theta
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{If }|\ora{a}|=3, |\ora{b}|=5, |\ora{c}|=7\text{ and } \\
+|\ora{a}|^2+|\ora{b}|^2+2|\ora{a}||\ora{b}|\cos\theta=|\ora{c}|^2 \\
+\text{what is }\theta?</context>
+    <tex correct='true'>\theta=\pm\dfrac{2\pi}{3}</tex>
+    <tex>\theta=\pm\dfrac{\pi}{4}</tex>
+    <reason>\text{Given }|\ora{a}|=3, |\ora{b}|=5, |\ora{c}|=7. \\
+\begin{align}
+  &amp;|\ora{a}|^2+|\ora{b}|^2+2|\ora{a}||\ora{b}|\cos\theta
+    =|\ora{c}|^2 \\
+  \implies&amp; 9+25+30\cos\theta=49 \\
+  \implies&amp; 30\cos\theta=15 \\
+  \implies&amp; {\bf\cos\theta=\dfrac{1}{2}\implies \theta=\pm\dfrac{2\pi}{3}}
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>\pm\dfrac{\pi}{4}</tex>
+    <tex>\pm\dfrac{\pi}{3}</tex>
+    <tex>\dfrac{\pi}{2}</tex>
+    <tex correct='true'>\pm\dfrac{2\pi}{3}</tex>
+  </choices>
+</question>
