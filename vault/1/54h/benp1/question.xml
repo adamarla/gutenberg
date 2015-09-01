@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+		\text{Find the inverse of the one-to-one function}\\
+		\quad f(x) = \dfrac{2x-1}{x+5}
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\textbf{A theoretical question.} \\
+			\text{If }f^{-1}(x)\text{ be the inverse of }f(x), \\
+			\text{then is the following true?}
+			</context>
+    <tex correct="true">
+			\quad (f^{-1}\circ f)(x) = x 
+			</tex>
+    <tex correct="false">
+			\quad f^{-1}(x) = \dfrac{1}{f(x)}
+			</tex>
+    <reason>
+			f^{-1}(x)\text{ is just another function.} \\
+			\textbf{Do not confuse with }\dfrac{1}{f(x)} = f(x)^{-1}.\\
+			\text{If f(x) takes you from }x\to y\text{, then }\\
+			f^{-1}(x)\text{ takes you from }y\to x.\\
+			\text{Mathematically, }\\
+			\begin{align}
+			\text{If }f(x) &amp;= y \\
+			\text{then }f^{-1}(y) &amp;= x 
+			\end{align} \\
+			\text{Which is why }(f^{-1}\circ f)(x) = f^{-1}(\, f(x)\,) = x.
+			</reason>
+  </step>
+  <step>
+    <context>
+				\text{Is the work done below correct?} 
+				</context>
+    <tex correct="true">
+				\begin{align}
+				  f(x) &amp;= y = \dfrac{2x-1}{x+5}\implies 5y + xy = 2x - 1\\
+				  \implies x &amp;= \dfrac{5y + 1}{2-y} \\
+				  \therefore f^{-1}(x) &amp;= \dfrac{5x + 1}{2-x}
+				\end{align}
+				</tex>
+    <reason>
+				\begin{align}
+				  f(x) &amp;= y = \dfrac{2x-1}{x+5}\implies 5y + xy = 2x - 1\\
+				  \implies x &amp;= \dfrac{5y + 1}{2-y}
+				\end{align} \\
+				\text{So far, pretty straight-forward.} \\
+				\textbf{But notice something. }\text{In the above equation, }\\
+				\text{'x' is the independent variable (what you know)}\\
+				\text{and 'y' is the dependent variable (what you find).}\\
+				\underline{\text{But what if you only knew values for 'y'?}} \\
+				\text{Then you would think of 'y' as 'x' because}\\
+				\text{that is the only thing you know.} \\
+				\text{And you would use }g(x) = \dfrac{5x + 1}{2-x}\text{ to find}\\
+				\text{the 'x' that was used in }f(x). \\
+				\text{Hence, with }f(x) = \dfrac{2x-1}{x+5}, f^{-1}(x) = \dfrac{5x + 1}{2-x}
+				</reason>
+  </step>
+  <step>
+    <context>
+					\textbf{Bonus Question} \\
+					\text{What are the range and domain of }f(x) = \dfrac{2x-1}{x+5}?
+					</context>
+    <tex correct="true">
+					\begin{tabular}{c|c}
+					\text{Domain} &amp; \mathbb{R} - \lbrace -5 \rbrace \\
+					\hline 
+					\text{Range} &amp; \mathbb{R} - \lbrace 2\rbrace \\
+					\end{tabular}
+					</tex>
+    <tex correct="false">
+					\begin{tabular}{c|c}
+					\text{Domain} &amp; \mathbb{R}\\
+					\hline 
+					\text{Range} &amp; \mathbb{R}\\
+					\end{tabular}
+					</tex>
+    <reason>
+					\text{In }f(x) = \dfrac{2x-1}{x+5},\, f(x)\underline{\text{ is not defined}}\\
+					\text{when  }x = -5\,(\because x + 5 = 0).\text{Otherwise, x can}\\
+					\text{be anything }\implies\textbf{ domain } = \mathbb{R}-\lbrace -5\rbrace. \\
+					\text{And if you recall that }x = \dfrac{5y + 1}{2-y},\text{ then you'll}\\
+					\text{notice that there is}\underline{\text{ no valid 'x' for }y = 2}.\\
+					\text{Hence, }y=2\text{ cannot be in the range of }f(x). \\
+					\implies\textbf{ range } = \mathbb{R} -\lbrace 2\rbrace.
+					</reason>
+  </step>
+  <choices>
+    <tex>f^{-1}(x) = \dfrac{x + 5}{2x + 3}</tex>
+    <tex>f^{-1}(x) = \dfrac{5x - 1}{x+2}</tex>
+    <tex>f^{-1}(x) = \dfrac{2x + 1}{5-x}</tex>
+    <tex correct="true">f^{-1}(x) = \dfrac{5x + 1}{2-x}</tex>
+  </choices>
+</question>
