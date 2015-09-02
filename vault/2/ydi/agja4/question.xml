@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\sin\dfrac{\theta}{2}\sin\dfrac{7\theta}{2}+
+  \sin\dfrac{3\theta}{2} \sin\dfrac{11\theta}{2}=
+  \sin N\theta\cdot\sin 2\theta. \\
+\text{Find the value of N?}</tex>
+  </statement>
+  <step>
+    <context>\sin\dfrac{\theta}{2}\sin\dfrac{7\theta}{2}+
+  \sin\dfrac{3\theta}{2} \sin\dfrac{11\theta}{2} \\
+\text{If above product of sines is re-written as} \\
+\text{sum or difference of trigonometric ratios,} \\
+\text{would the following be correct?}
+</context>
+    <tex correct='true'>\dfrac{1}{2}(\cos 3\theta-\cos 7\theta)</tex>
+    <reason>\text{Using } 2\sin X\sin Y=\cos(X-Y)-\cos(X-Y) \\
+\begin{align}
+  2\sin\dfrac{\theta}{2}\sin\dfrac{7\theta}{2}
+    &amp;=\cos\frac{(7\theta-\theta) }{2}-\cos\frac{(7\theta+\theta)}{2} \\
+  2\sin\dfrac{3\theta}{2} \sin\dfrac{11\theta}{2}  
+    &amp;=\cos\frac{(11\theta-3\theta)}{2}-\cos\frac{(11\theta+3\theta)}{2}
+\end{align} \\
+\therefore
+  \sin\dfrac{\theta}{2}\sin\dfrac{7\theta}{2}+
+  \sin\dfrac{3\theta}{2} \sin\dfrac{11\theta}{2}=
+  \dfrac{1}{2}(\cos 3\theta-\cos 7\theta)</reason>
+  </step>
+  <step>
+    <context>\text{Is the following the correct expression for} \\
+\dfrac{1}{2}(\cos 3\theta-\cos 7\theta)
+\text{ as a product of sines?}
+</context>
+    <tex correct='true'>\sin 2\theta\cdot\sin 5\theta\quad (\therefore N=5)</tex>
+    <reason>\cos X-\cos Y=-2\sin \left(\dfrac{X+Y}{2}\right)\sin \left(\dfrac{X-Y}{2}\right) \\
+\begin{align}
+  &amp;\therefore\dfrac{1}{2}(\cos 3\theta-\cos 7\theta) \\
+  &amp;\quad=\dfrac{1}{2}\left[-2\sin\dfrac{(3\theta+7\theta)}{2}
+      \sin\dfrac{(3\theta-7\theta)}{2}\right] \\
+  &amp;\quad={\bf\sin 5\theta\sin 2\theta}\quad (\sin -\theta=-\sin\theta)
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{1}{2}</tex>
+    <tex correct='true'>5</tex>
+    <tex>-5</tex>
+    <tex>2</tex>
+  </choices>
+</question>

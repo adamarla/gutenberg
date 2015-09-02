@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Without using a calculator, find the value of} \\
+\small{\sin^4\left(\frac{\pi}{8}\right)+\sin^4\left(\dfrac{3\pi}{8}\right)+
+  \sin^4\left(\frac{5\pi}{8}\right)+\sin^4\left(\frac{7\pi}{8}\right)}</tex>
+  </statement>
+  <step>
+    <context>\text{Is the following relation between $\sin\theta$ and } \\
+\text{$\sin (\pi-\theta)$ correct?}</context>
+    <tex correct='true'>\sin(\pi-\theta)=\sin\theta</tex>
+    <tex>\sin(\pi-\theta)=-\sin\theta</tex>
+    <reason>\begin{align}
+  \sin(\pi-\theta)
+    &amp;=\underbrace{\sin\pi}_{0}\cos\theta-
+      \underbrace{\cos\pi}_{-1}\sin\theta \\
+    &amp;=\sin\theta
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{Using $\sin(\pi-\theta)=\sin\theta$ can} \\
+\small{\sin^4\left(\frac{\pi}{8}\right)+\sin^4\left(\dfrac{3\pi}{8}\right)+
+  \sin^4\left(\frac{5\pi}{8}\right)+\sin^4\left(\frac{7\pi}{8}\right)} \\
+\text{be reduced to the following?}  </context>
+    <tex correct='true'>2\left[\sin^4\dfrac{\pi}{8}+\sin^4\dfrac{3\pi}{8}\right]</tex>
+    <tex>2\left[\sin^4\dfrac{\pi}{8}-\sin^4\dfrac{3\pi}{8}\right]</tex>
+    <reason>\begin{align}
+  \sin\dfrac{7\pi}{8}&amp;=\sin\left(\pi-\dfrac{\pi}{8}\right)
+    =\sin\dfrac{\pi}{8} \\
+  \sin\dfrac{5\pi}{8}&amp;=\sin\left(\pi-\dfrac{3\pi}{8}\right)
+    =\sin\dfrac{3\pi}{8}
+\end{align} \\
+\therefore
+\small{\sin^4\left(\frac{\pi}{8}\right)+\sin^4\left(\dfrac{3\pi}{8}\right)+
+  \sin^4\left(\frac{5\pi}{8}\right)+\sin^4\left(\frac{7\pi}{8}\right)} \\
+=2\left[\sin^4\dfrac{\pi}{8}+\sin^4\dfrac{3\pi}{8}\right]</reason>
+  </step>
+  <step>
+    <context>\text{Can }2\left[\sin^4\dfrac{\pi}{8}+\sin^4\dfrac{3\pi}{8}\right] \\
+\text{be re-written as below?}</context>
+    <tex correct='true'>2\left[\sin^4\dfrac{\pi}{8}+\cos^4\dfrac{\pi}{8}\right]</tex>
+    <tex>2\left[\sin^4\dfrac{\pi}{8}-\cos^4\dfrac{\pi}{8}\right]</tex>
+    <reason>\sin\dfrac{3\pi}{8}
+  =\overbrace{\sin\left(\dfrac{\pi}{2}-\dfrac{\pi}{8}\right)}^{\sin(\pi/2-\theta)=\cos\theta}
+  =\cos\dfrac{\pi}{8} \\
+\therefore2\left[\sin^4\dfrac{\pi}{8}+\sin^4\dfrac{3\pi}{8}\right]
+  =2\left[\sin^4\dfrac{\pi}{8}+\cos^4\dfrac{3\pi}{8}\right]
+</reason>
+  </step>
+  <step>
+    <context>\textbf{Right or Wrong?} \\
+2\left[\sin^4\dfrac{\pi}{8}+\cos^4\dfrac{\pi}{8}\right] 
+\text{reduced from an order $4$ } \\
+\text{to an order $2$ expression, would be this.}</context>
+    <tex correct='true'>2\left[1-2\sin^2\dfrac{\pi}{8}\cdot\cos^2\dfrac{\pi}{8}\right]</tex>
+    <tex>2\left[1+2\sin^2\dfrac{\pi}{8}\cdot\cos^2\dfrac{\pi}{8}\right]</tex>
+    <reason>\begin{align}
+  &amp;2\overbrace{\left[\sin^4\dfrac{\pi}{8}+\cos^4\dfrac{\pi}{8}\right]}^{a^2+b^2} \\
+  &amp;\quad=
+    2\overbrace{\left[\left(\sin^2\dfrac{\pi}{8}+\cos^2\dfrac{\pi}{8}\right)^2
+    - 2\sin^2\dfrac{\pi}{8}\cdot\cos^2\dfrac{\pi}{8}\right]}^{(a+b)^2-2ab} \\
+  &amp;\quad=2\left[1-2\sin^2\dfrac{\pi}{8}\cdot\cos^2\dfrac{\pi}{8}\right]  
+\end{align}</reason>
+  </step>
+  <step>
+    <context>2\left[1-2\sin^2\dfrac{\pi}{8}\cdot\cos^2\dfrac{\pi}{8}\right]
+\text{can be written in terms} \\
+\text{of well known angle $\dfrac{\pi}{4}$ as shown below.} \\
+\text{Do you agree?}</context>
+    <tex correct='true'>2\left[1-\dfrac{1}{2}\left(1-\cos\dfrac{\pi}{4}\right)
+  \left(1+\cos\frac{\pi}{4}\right)\right]</tex>
+    <reason>\begin{align}
+  {\bf 2\sin^2\theta} &amp;=\sin^2\theta+(1-\cos^2\theta) \\
+    &amp;=1-(\cos^2\theta-\sin^2\theta) \\
+    &amp;={\bf 1-\cos 2\theta} \\
+\end{align} \\
+\text{Similarly, } \\
+\begin{align}
+  {\bf 2\cos^2\theta} &amp;=\cos^2\theta+(1-\sin^2\theta) \\
+    &amp;=1+(\cos^2\theta-\sin^2\theta) \\
+    &amp;={\bf 1+\cos 2\theta} \\
+\end{align} \\
+\text{Using the above results} \\
+\begin{align}
+  &amp;2\left[1-2\sin^2\dfrac{\pi}{8}\cdot\cos^2\dfrac{\pi}{8}\right] \\
+  &amp;\quad=2\left[1-2\cdot\dfrac{1-\cos\frac{\pi}{4}}{2}
+    \cdot\dfrac{1+\cos\frac{\pi}{4}}{2}\right] \\
+  &amp;\quad=2\left[1-\dfrac{1}{2}\left(1-\cos\dfrac{\pi}{4}\right)
+    \left(1+\cos\frac{\pi}{4}\right)\right]
+
+\end{align}</reason>
+  </step>
+  <step>
+    <context>2\left[1-\dfrac{1}{2}\left(1-\cos\dfrac{\pi}{4}\right)
+  \left(1+\cos\frac{\pi}{4}\right)\right] \\
+  \text{Is this evaluation of the above expression} \\
+  \text{correct?}
+</context>
+    <tex correct='true'>2\left[1-\dfrac{1}{2}\left(1+\dfrac{1}{\sqrt{2}}\right)
+  \left(1-\dfrac{1}{\sqrt{2}}\right)\right]=\dfrac{3}{2}</tex>
+    <tex>2\left[1-\dfrac{1}{2}\left(1+\dfrac{1}{2}\right)
+  \left(1-\dfrac{1}{2}\right)\right]=\dfrac{5}{4}</tex>
+    <reason>\text{Right triangle with angle }\dfrac{\pi}{4}\text{ has equal sides.} \\
+\therefore\cos\dfrac{\pi}{4}=\dfrac{1}{\sqrt{2}}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{5}{4}</tex>
+    <tex>\dfrac{2}{3}</tex>
+    <tex>\dfrac{1}{2}</tex>
+    <tex correct='true'>\dfrac{3}{2}</tex>
+  </choices>
+</question>
