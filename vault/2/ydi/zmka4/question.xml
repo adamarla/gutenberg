@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{What is the value of} \\
+\dfrac{\sin(A-B)}{\cos A\cos B}+\dfrac{\sin(B-C)}{\cos B\cos C}
++\dfrac{\sin(C-A)}{\cos C\cos A}?</tex>
+  </statement>
+  <step>
+    <context>\dfrac{\sin(A-B)}{\cos A\cos B}+\dfrac{\sin(B-C)}{\cos B\cos C}
++\dfrac{\sin(C-A)}{\cos C\cos A} \\
+\text{If $\sin(A-B)$, $\sin(B-C)$ and $\sin(C-A)$ are} \\ 
+\text{expanded, is this result correct?}</context>
+    <tex correct='true'>\dfrac{\sin A\cdot\cos B - \cos A\cdot\sin B}{\cos A\sin B} \\
+\quad\,+\dfrac{\sin B\cdot\cos C-\cos B\cdot\sin C}{\cos B\cos C} \\
+\quad\,+\dfrac{\sin C\cdot\cos A-\cos C\cdot\sin A}{\cos C\cos A} \\
+</tex>
+    <tex>\dfrac{\sin A\cdot\cos B + \cos A\cdot\sin B}{\cos A\sin B} \\
+\quad\,+\dfrac{\sin B\cdot\cos C+\cos B\cdot\sin C}{\cos B\cos C} \\
+\quad\,+\dfrac{\sin C\cdot\cos A+\cos C\cdot\sin A}{\cos C\cos A} \\
+</tex>
+    <reason>\sin(X-Y)=\sin X\cos Y-\cos X\sin Y \\
+\therefore\dfrac{\sin(A-B)}{\cos A\cos B}+\dfrac{\sin(B-C)}{\cos B\cos C}
+  +\dfrac{\sin(C-A)}{\cos C\cos A} \\
+\quad=\dfrac{\sin A\cdot\cos B - \cos A\cdot\sin B}{\cos A\sin B} \\
+\quad\,+\dfrac{\sin B\cdot\cos C-\cos B\cdot\sin C}{\cos B\cos C} \\
+\quad\,+\dfrac{\sin C\cdot\cos A-\cos C\cdot\sin A}{\cos C\cos A} \\
+</reason>
+  </step>
+  <step>
+    <context>\text{Can the result from the previous step be} \\
+\text{reduced to this?}</context>
+    <tex correct='true'>0</tex>
+    <tex>7</tex>
+    <reason>\left(\dfrac{\sin A}{\cos A}-\dfrac{\sin B}{\cos B}\right)
++\left(\dfrac{\sin B}{\cos B}-\dfrac{\sin C}{\cos C}\right) \\
+\quad+\left(\dfrac{\sin C}{\cos C}-\dfrac{\sin A}{\cos A}\right) \\
+=\left(\tan A-\tan B\right)+\left(\tan B-\tan C\right) \\
+\quad+\left(\tan C-\tan A\right) \\
+=0</reason>
+  </step>
+</question>

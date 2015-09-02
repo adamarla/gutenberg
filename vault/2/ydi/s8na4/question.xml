@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If }\cos\alpha=\frac{3}{5}\text{and}\cos\beta=\dfrac{4}{5},
+\text{what is }\cos\dfrac{\alpha-\beta}{2} \\
+\text{assuming $\alpha$ and $\beta$ are positive acute angles.}</tex>
+  </statement>
+  <step>
+    <context>\text{Given}\cos\alpha=\frac{3}{5}\text{and}
+  \cos\beta=\dfrac{4}{5},\text{is this correct?}</context>
+    <tex correct='true'>\sin\alpha=\dfrac{4}{5}, \sin\beta=\dfrac{3}{5}</tex>
+    <tex>\sin\alpha=\dfrac{3}{5}, \sin\beta=\dfrac{4}{5}</tex>
+    <reason>\begin{align}
+  \cos\alpha=\dfrac{3}{5}\implies\sin\alpha=\sqrt{1-\cos^2\alpha}
+    =\dfrac{4}{5} \\
+  \cos\beta=\dfrac{4}{5}\implies\sin\beta=\sqrt{1-\cos^2\beta}
+    =\dfrac{3}{5}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{If}\cos\alpha=\frac{3}{5}, \cos\beta=\dfrac{4}{5},
+  \sin\alpha=\dfrac{4}{5}, \sin\beta=\dfrac{3}{5} \\
+\text{is this the value of $\cos(\alpha-\beta)$?}  </context>
+    <tex correct='true'>\cos(\alpha-\beta)=\dfrac{24}{25}</tex>
+    <tex>\cos(\alpha-\beta)=\dfrac{12}{25}</tex>
+    <reason>\begin{align}
+  \cos(\alpha-\beta)&amp;=\cos\alpha\cos\beta+\sin\alpha\sin\beta \\
+    &amp;=\dfrac{3}{5}\dfrac{4}{5}+\dfrac{4}{5}\dfrac{3}{5}
+    =\dfrac{24}{25}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{If }\cos(\alpha-\beta)=\dfrac{12}{25}, \text{ is this }
+\cos\left(\dfrac{\alpha-\beta}{2}\right)?
+</context>
+    <tex correct='true'>\dfrac{7\sqrt{2}}{10}</tex>
+    <tex>\dfrac{6}{25}</tex>
+    <reason>\text{Remember }\cos 2\theta\neq 2\times\cos\theta \\
+\begin{align}
+  {\bf\cos 2\theta} 
+    &amp;= \cos\theta\cdot\cos\theta-\sin\theta\cdot\sin\theta \\
+    &amp;=\cos^2\theta-\sin^2\theta \\
+    &amp;=\cos^2\theta-1+\cos^2\theta={\bf 2\cos^2\theta-1}
+\end{align} \\
+\begin{align}
+  \therefore &amp;2\cos^2\left(\dfrac{\alpha-\beta}{2}\right)
+    =\cos(\alpha-\beta)+1 \\
+  \implies&amp;\cos^2\left(\dfrac{\alpha-\beta}{2}\right)
+    =\dfrac{49}{50} \\
+  \implies&amp;\cos\left(\dfrac{\alpha-\beta}{2}\right)
+    ={\bf\dfrac{7\sqrt{2}}{10}}
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex>-\dfrac{7\sqrt{2}}{10}</tex>
+    <tex>\dfrac{12}{25}</tex>
+    <tex>\dfrac{6}{25}</tex>
+    <tex correct='true'>\dfrac{7\sqrt{2}}{10}</tex>
+  </choices>
+</question>
