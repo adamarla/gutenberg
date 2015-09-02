@@ -69,7 +69,7 @@
     <reason>
 				\begin{align}
 				  \lfloor x\rfloor^2 -9\lfloor x\rfloor + 14 &amp;= 0 \\
-				  \implies (\lfloor x \rfloor - 2)\cdot (\lfloor x \rfloor - 2) &amp;= 0 \\
+				  \implies (\lfloor x \rfloor - 2)\cdot (\lfloor x \rfloor - 7) &amp;= 0 \\
 				  \implies \lfloor x \rfloor &amp;= 2,7
 				\end{align} \\
 				\text{But remember, there are \underline{\text{infinite values of x}}\\
