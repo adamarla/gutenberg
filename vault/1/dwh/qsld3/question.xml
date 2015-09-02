@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+		\text{Which of the set operations: }\cup,\\
+		\cap\text{ or } -\text{ (minus) would make the}\\
+		\text{following true? Replace the }\star\text{ with}\\
+		\text{one of the symbols.} \\
+		\qquad A\cup (B-A) = A\star B
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\textbf{What - and where - is }(B-A)?\\
+			\text{Has }(B-A)\text{ been identified correctly below?}
+			</context>
+    <image correct="true">1-right.svg</image>
+    <image>1-wrong.svg</image>
+    <reason>
+			B-A\text{ is the set of elements that belong}\\
+			\underline{\text{exclusively}}\text{ to B. Mathematically, } \\
+			\qquad x\in(B-A)\implies x\in B, x\notin A. \\
+			\text{Needless to say, a point like }\underline{\text{p}}\text{ that }\notin A\\
+			\text{ also }\notin(B-A)\text{ because }p\notin B.
+			</reason>
+  </step>
+  <step>
+    <context>
+				\text{Is the analysis below correct?}
+				</context>
+    <tex correct="true">
+				\begin{align}
+				A\cup (B-A) &amp;= A\cup (B\cap A') \\
+				&amp;= (A\cup B)\cap (A\cup A') \\
+				&amp;= (A\cup B)\cap U \\
+				\implies \star &amp;= \cup
+				\end{align}
+				</tex>
+    <reason>
+				\text{The following standard results were applied.} \\
+				\begin{align}
+				  B-A &amp;= B\cap A' \\
+				  X\cup (Y\cap Z) &amp;= (X\cup Y)\cap (X\cup Z) \\
+				  A\cup A' &amp;= U\text{ (universal set)} \\
+				  A\cap U &amp;= A 
+				\end{align}
+				</reason>
+  </step>
+  <choices>
+    <tex>\star = -(minus)</tex>
+    <tex>\star = \cap</tex>
+    <tex correct="true">\star = \cup</tex>
+    <tex>\text{None of the above.}</tex>
+  </choices>
+</question>
