@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+    \text{Of the 50 students taking examinations in}\\
+    \text{Maths (M), Physics (P) and Chemistry (C) -}\\
+    \text{each passed in atleast one of the subjects.}\\
+    \text{Moreover, 37 passed in Maths, 24 in Physics}\\
+    \text{and 37 in Chemistry. At most, 19 passed in}\\
+    \text{Maths and Physics, (at most) 29 in Maths and}\\
+    \text{Chemistry and (at most) 20 in Physics and}\\
+    \text{Chemistry. What then is the maximum possible}\\
+    \text{number of students who could've passed in all}\\
+    \text{three subjects?}
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\textbf{What do we know?}\\
+			\text{Can we make the following assertions from}\\
+			\text{what we have been told in the question?}
+			</context>
+    <tex correct="true">
+			\begin{tabular}{|r|c|}
+			\hline
+			n(P\cap M) &amp; \leq 19 \\
+			\hline
+			n(M\cap C) &amp; \leq 29 \\
+			\hline 
+			n(P\cap C) &amp; \leq 20 \\
+			\hline 
+			n(P\cup M\cup C)' &amp; 0 \\
+			\hline
+			n(P\cup M\cup C) &amp; 50 \\
+			\hline 
+			\end{tabular}
+			</tex>
+    <tex correct="false">
+			\begin{tabular}{|r|c|}
+			\hline
+			n(P\cap M) &amp; \geq 19 \\
+			\hline
+			n(M\cap C) &amp; \geq 29 \\
+			\hline 
+			n(P\cap C) &amp; \geq 20 \\
+			\hline 
+			n(P\cup M\cup C)' &amp; \gt 0 \\
+			\hline
+			n(P\cup M\cup C) &amp; \lt 50 \\
+			\hline 
+			\end{tabular}
+			</tex>
+    <reason>
+    \text{In this question, you only need to be}\\
+    \text{careful about the phrases }\underline{\text{at most}}\text{ and }\\
+    \underline{\text{at least}}. \\
+    \text{If X is at most 20, then }X\leq 20.\\
+    \text{If X is at least 20, then} X\geq 20. \\
+    \text{We have also been told that }\underline{\text{every student}}\\
+    \text{passed in at least one subject }\implies\text{ no one}\\
+    \text{failed in all. Hence, }\\
+    \quad n(P\cup M\cup C) = 50\implies n(P\cup M\cup C)' = 0.\\
+    \text{In summary, }\\
+			\begin{tabular}{|r|c|l|}
+			\hline
+			&amp; &amp; \text{Passed In}\ldots \\
+			\hline
+			n(P\cap M) &amp; \leq 19 &amp; \text{Maths and Physics}\\
+			\hline
+			n(M\cap C) &amp; \leq 29 &amp; \text{Maths and Chemistry}\\
+			\hline 
+			n(P\cap C) &amp; \leq 20 &amp; \text{Physics and Chemistry}\\
+			\hline 
+			n(P\cup M\cup C)' &amp; 0 &amp; \text{Neither}\\
+			\hline
+			n(P\cup M\cup C) &amp; 50 &amp; \text{At least one}\\
+			\hline 
+			\end{tabular}
+			</reason>
+  </step>
+  <step>
+    <context>
+  		\textbf{Minimum passing in all three.} \\
+				\text{Given what }n(P\cup M\cup C)\text{ is (or, you tell us),}\\
+				\text{is the assertion below correct?} 
+  		</context>
+    <tex correct="true">
+  		\begin{align}
+  		  \text{Passing in all three subjects} &amp;= n(P\cap M\cap C) \\
+  		  n(P\cap M\cap C) &amp;\leq 14 
+  		\end{align}
+  		</tex>
+    <tex correct="false">
+  		\begin{align}
+  		  \text{Passing in all three subjects} &amp;= n(P\cap M\cap C) \\
+  		  n(P\cap M\cap C) &amp;\leq 10
+  		\end{align}
+  		</tex>
+    <reason>
+  		\begin{align}
+  		  &amp;n(C\cup M\cup P) = \\
+  		  &amp;n(C)+n(M)+n(P)-n(C\cap M) \\
+  		  &amp;- n(M\cap P) - n(P\cap C) + n(C\cap M\cap P) \\ 
+  		  &amp;\implies n(C\cap M\cap P) = \\
+  		  &amp;\overbrace{n(C\cup M\cup P) - n(C)-n(M)-n(P)}^
+  		  {\text{Have exact values}} \\
+  		  &amp;+ \underbrace{n(C\cap M) + n(M\cap P) + n(P\cap C)}_
+  		  {\text{Only maximum possible known}}
+  		\end{align} \\
+  		\underline{n(C\cap M\cap P)\text{ will be maximum}}\text{ when }n(C\cap M), \\
+  		n(M\cap P)\text{ and } n(P\cap C)\text{ are also maximum.} \\
+  		\begin{align}
+  		  \therefore n(C\cap M\cap P) &amp;\leq 50-37-37-24 \\
+  		  &amp;+19+29+20 \\
+  		  &amp;\leq 14
+  		\end{align}\\
+  		\underline{\text{Hence, the most number of students that}}\\
+  		\underline{\text{could've passed in all three subjects is 14}}.
+  		</reason>
+  </step>
+  <choices>
+    <tex>10</tex>
+    <tex>12</tex>
+    <tex>17</tex>
+    <tex correct="true">14</tex>
+  </choices>
+</question>
