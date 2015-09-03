@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Let }\ora{a}=\vector{1}{4}{2}, \ora{b}=\vector{3}{-2}{7} \\
+\text{and }\ora{c}=\vector{2}{-1}{4}.\text{ Find a vector}\ora{d} \\
+\text{which is perpendicular to both $\ora{a}$ and $\ora{b}$} \\
+\text{and }\ora{c}\cdot \ora{d}=15.</tex>
+  </statement>
+  <step>
+    <context>\text{If }\ora{d}=\vector{d_1}{d_2}{d_3}\text{ and $\ora{d}$ is $\perp$ to} \\
+\text{$\ora{a}=\vector{1}{4}{2}$ and $\ora{b}=\vector{3}{-2}{7}$} \\
+\text{can we say the following?}</context>
+    <tex correct='true'>\begin{align}
+  d_1+4d_2+2d_3 &amp;= 0 \\
+  3d_1-2d_2+7d_3 &amp;= 0
+\end{align}</tex>
+    <tex>\begin{align}
+  d_1&amp;=1+3=4 \\
+  d_2&amp;=4-2=2 \\
+  d_3&amp;=2+7=9
+\end{align}</tex>
+    <reason>\text{Since $\ora{d}$ is $\perp$ to $\ora{a}$ and $\ora{b}$ we can} \\
+\text{say that $\ora{a}\cdot \ora{d}=0$ and $\ora{d}\cdot \ora{b}=0$} \\
+\begin{align}
+  \therefore\ora{a}\cdot \ora{d}&amp;={\bf d_1+4d_2+2d_3 = 0} \\
+  \ora{b}\cdot \ora{d}&amp;={\bf 3d_1-2d_2+7d_3 = 0}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{If }\ora{d}=\vector{d_1}{d_2}{d_3}\text{ and }\ora{c}=\vector{2}{-1}{4} \\
+\text{ and $\ora{c}\cdot\ora{d}=15$ is the following valid?}</context>
+    <tex correct='true'>2d_1-d_2+4d_3=15</tex>
+    <tex>2d_1-d_2+4d_3=0</tex>
+    <reason>\text{The question clearly states that }\ora{c}\cdot \ora{d}=15 \\
+\therefore {\bf 2d_1-d_2+4d_3=15}
+</reason>
+  </step>
+  <step>
+    <context>\text{If }\begin{align}
+  d_1+4d_2+2d_3 &amp;= 0 \\
+  3d_1-2d_2+7d_3 &amp;= 0 \\
+  2d_1-d_2+4d_3&amp;=15
+\end{align}\text{ and } \\
+\ora{d}=\vector{d_1}{d_2}{d_3},
+\text{ is the following correct?}</context>
+    <tex correct='true'>\ora{d}=\dfrac{1}{3}\left(\vector{160}{-5}{-70}\right)</tex>
+    <tex>\ora{d}=\dfrac{1}{3}\left(\vector{160}{-5}{-70}\right)</tex>
+    <reason>\begin{align}
+  d_1+4d_2+2d_3 = 0 &amp;\quad (1)\\
+  3d_1-2d_2+7d_3 = 0 &amp;\quad (2)\\
+  2d_1-d_2+4d_3=15 &amp;\quad (3)
+\end{align} \\
+\text{Use equation (3), } d_2=2d_1+4d_3-15 \\
+\text{Substitute $d_2$ in equations (1) and (2),} \\
+\begin{align}
+  3d_1+6d_3 &amp;= 20 \\
+  d_1+d_3 &amp;= 30
+\end{align} \\
+\text{On solving, we get }
+  \ora{d}=\dfrac{1}{3}\left(\vector{160}{-5}{-70}\right)</reason>
+  </step>
+  <choices>
+    <tex>\ora{d}=\dfrac{1}{3}\left(\vector{160}{-5}{70}\right)</tex>
+    <tex>\ora{d}=\vector{160}{-5}{-70}</tex>
+    <tex correct='true'>\ora{d}=\dfrac{1}{3}\left(\vector{160}{-5}{-70}\right)</tex>
+    <tex>\ora{d}=\vector{23}{-5}{12}</tex>
+  </choices>
+</question>
