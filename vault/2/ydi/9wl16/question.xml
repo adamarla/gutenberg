@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If $\ora{a}=\vector{1}{1}{1}$ and $\ora{b}=\vector{}{1}{-1}$, find a} \\
+\text{vector $\ora{c}$, such that $\ora{a}\times \ora{c}=\ora{b}$ and} \\
+\ora{a}\cdot \ora{c}=3.</tex>
+  </statement>
+  <step>
+    <context>\text{If }\ora{c}=\vector{c_1}{c_2}{c_3}\text{ and }
+\ora{a}=\vector{1}{1}{1}, \\ 
+\text{does }\ora{a}\cdot\ora{c}=3, \text{ imply the following?}</context>
+    <tex correct='true'>c_1+c_2+c_3=3</tex>
+    <tex>\sqrt{c_1^2+c_2^2+c_3^2}=9</tex>
+    <reason>\begin{align}
+  &amp;\ora{a}\cdot \ora{c}=3 \\
+  \implies&amp;(\vector{1}{1}{1})\cdot(\vector{c_1}{c_2}{c_3})=3 \\
+  \implies&amp;1\cdot c_1+1\cdot c_2+1\cdot c_3=3   \\
+  \implies&amp;{\bf c_1+c_2+c_3=3}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{If }\ora{a}=\vector{1}{1}{1}, \ora{b}=\vector{}{1}{-1}
+\text{ and } \\
+\ora{c}=\vector{c_1}{c_2}{c_3},
+\text{ does }\ora{a}\times \ora{c}=\ora{b} \\
+\text{imply the following?}
+</context>
+    <tex correct='true'>c_3=c_2=c_1-1</tex>
+    <reason>\ora{a}=\vector{1}{1}{1}, \ora{b}=\vector{}{1}{-1}
+\text{ and } \\
+\ora{c}=\vector{c_1}{c_2}{c_3}. \\
+\begin{align}
+  \text{Now, }&amp;{\bf \ora{a}\times \ora{c}=\ora{b}} \\
+  \implies &amp;
+  \left\vert\begin{array}{ccc}
+    i &amp; j &amp; k \\
+    1 &amp; 1 &amp; 1 \\
+    c_1 &amp; c_2 &amp; c_3
+  \end{array}\right\vert=\vector{}{1}{-1} \\
+  \implies&amp;\vector{(c_3-c_2)}{-(c_3-c_1)}{(c_2-c_1)}=\vector{}{1}{-1} \\
+  \implies &amp; c_3-c_2=0, c_1=1+c_3, c_1=1+c_2
+\end{align} \\
+\therefore {\bf c_3=c_2=c_1-1}
+
+</reason>
+  </step>
+  <step>
+    <context>\text{If }\ora{v}=\vector{c_1}{c_2}{c_3}\text{ such that} \\
+c_3=c_2=c_1-1 \text{ and } c_1+c_2+c_3=3 \\
+\text{is the following correct?}</context>
+    <tex correct='true'>\ora{v}=\dfrac{1}{3}\left(\vector{5}{2}{2}\right)</tex>
+    <tex>\ora{v}=\dfrac{1}{3}\left(\vector{5}{-2}{-2}\right)</tex>
+    <reason>c_3=c_2=c_1-1 \text{ and } c_1+c_2+c_3=3 \\
+\implies c_1+c_1-1+c_1-1=3 \\
+\implies 3c_1=5 \implies c_1=\dfrac{5}{3} \\
+\therefore c_2=c_3=\dfrac{2}{3} \\
+\therefore \ora{c}=\dfrac{1}{3}\left(\vector{5}{2}{2}\right)</reason>
+  </step>
+  <choices>
+    <tex>\ora{c}=\dfrac{1}{3}\left(\vector{5}{-2}{-2}\right)</tex>
+    <tex>\ora{c}=\vector{5}{2}{2}</tex>
+    <tex correct='true'>\ora{c}=\dfrac{1}{3}\left(\vector{5}{2}{2}\right)</tex>
+    <tex>\ora{c}=\vector{3}{1}{1}</tex>
+  </choices>
+</question>
