@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Using vectors, find the area of the triangle} \\
+\text{ABC with vertices $A (1, 2, 3)$, $B(2, -1, 4)$} \\
+\text{and $C(4. 5. -1)$.}</tex>
+  </statement>
+  <step>
+    <context>\text{If $\ora{P}$ and $\ora{Q}$ are two vectors and $\theta$ is the} \\
+\text{angle between them, what is }|\ora{P}\times \ora{Q}|?</context>
+    <tex correct='true'>|\ora{P}\times \ora{Q}|=|\ora{P}||\ora{Q}|\sin\theta</tex>
+    <tex>|\ora{P}\times \ora{Q}|=|\ora{P}||\ora{Q}|\cos\theta</tex>
+    <reason>\text{Although }\ora{P}\times \ora{Q}\text{ is a vector} \\
+|\ora{P}\times \ora{Q}|\text{ is a scalar such that} \\
+{\bf |\ora{P}\times \ora{Q}|=|\ora{P}||\ora{Q}|\sin\theta.}</reason>
+  </step>
+  <step>
+    <context>\text{If in triangle ABC, AB is the base, $\perp$ from C} \\
+\text{to AB is the height, and the angle $\angle CAB=\theta$,} \\
+\text{is this area of $\triangle$ABC?}</context>
+    <tex correct='true'>\text{Area }\triangle ABC=\dfrac{1}{2}\times AB\times AC\sin\theta</tex>
+    <tex>\text{Area }\triangle ABC=\dfrac{1}{2}\times AB\times AC\cos\theta</tex>
+    <reason>\text{Area of $\triangle$=}\dfrac{1}{2}\times\text{base}\times\text{height} \\
+\therefore \text{Area }\triangle ABC=\dfrac{1}{2}\times (BC)\times (AC\sin\theta)</reason>
+  </step>
+  <step>
+    <context>\text{If the vertices of the triangle are $\ora{A}$, $\ora{B}$ and $\ora{C}$,} \\
+\text{and $\angle CAB=\theta$ is the following correct?}</context>
+    <tex correct='true'>\text{Area }\triangle = \dfrac{1}{2}|\ora{AB}\times\ora{AC}|</tex>
+    <tex>\text{Area }\triangle = \dfrac{1}{2}|\ora{AB}\cdot\ora{AC}|</tex>
+    <reason>\begin{align}
+  \text{Area }\triangle ABC&amp;=\dfrac{1}{2}\times AB\times AC\sin\theta \\
+    &amp;= \dfrac{1}{2}\cdot |\ora{AB}|\cdot|\ora{AC}|\cdot\sin\theta \\
+    &amp;=\dfrac{1}{2}|\ora{AB}\times \ora{BC}|
+\end{align}
+  </reason>
+  </step>
+  <step>
+    <context>\text{If $A(1, 2, 3)$, $B(2, -1, 4)$, $C(4. 5. -1)$ are} \\
+\text{position vectors is this correct?}</context>
+    <tex correct='true'>\dfrac{1}{2}\vert\ora{AB}\times \ora{AC}\vert
+  =\dfrac{\sqrt{274}}{2}</tex>
+    <reason>A=(1, 2, 3), B=(2, -1, 4), C=(4, 5, -1) \\
+\begin{align}
+  \therefore\ora{AB}&amp;=\vector{(2-1)}{(-1-2)}{(4-3)} \\
+  &amp;=\vector{1}{-3}{1} \\
+  \ora{AC}&amp;=\vector{4-1}{5-2}{-1-3} \\
+  &amp;=\vector{3}{3}{-4}
+\end{align} \\
+\begin{align}
+  \therefore\ora{AB}\times \ora{AC}&amp;=
+    \left[\begin{array}{ccc}
+    i &amp; j &amp; k \\
+    1 &amp; -3 &amp; 1 \\
+    3 &amp; 3 &amp; -4
+    \end{array}\right] \\
+    &amp;=\vector{9}{7}{12}  
+\end{align} \\
+\therefore\dfrac{1}{2}\vert\ora{AB}\times \ora{AC}\vert
+  ={\bf \dfrac{\sqrt{274}}{2}}
+</reason>
+  </step>
+  <choices>
+    <tex>123</tex>
+    <tex>\dfrac{274}{4}</tex>
+    <tex>117</tex>
+    <tex correct='true'>\dfrac{\sqrt{274}}{2}</tex>
+  </choices>
+</question>

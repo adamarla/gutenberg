@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{The two adjacent sides of a parallelogram are} \\
+\vector{2}{-4}{5}\text{ and }\vector{1}{-2}{-3}.
+\text{ Find the unit} \\
+\text{vector parallel to its diagonal. Also, find the} \\
+\text{area of the parallelogram.}</tex>
+  </statement>
+  <step>
+    <context>\text{If }\ora{AB}=\vector{2}{-4}{5}\text{ and }
+\ora{AC}=\vector{1}{-2}{-3}. \\
+\text{represent the adjacent sides of a parallelogram} \\
+\text{does the following represent its diagonal AD?}
+</context>
+    <tex correct='true'>\ora{AD}=\vector{3}{-6}{2}</tex>
+    <tex>\ora{AD}=\vector{1}{-2}{8}</tex>
+    <reason>\begin{align}
+  &amp;\ora{AD}=\ora{AB}+\ora{AC} \\
+  \therefore &amp;\ora{AD}=\vector{(2+1)}{(-4-2)}{(5-3)} \\
+  \implies &amp;\ora{AD}=\vector{3}{-6}{2}
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>\text{If }\ora{AD}=\vector{3}{-6}{2}, \text{then is a unit vector} \\
+\text{in its direction given by the following?}</context>
+    <tex correct='true'>\hat{AD}=\dfrac{1}{7}\left(\vector{3}{-6}{2}\right)</tex>
+    <tex>\hat{AD}=\dfrac{1}{11}\left(\vector{3}{-6}{2}\right)</tex>
+    <reason>\text{For any vector }\ora{A}\text{ its unit vector }
+\hat A=\dfrac{\ora{A}}{\ora{|A|}} \\
+\therefore \hat{AD}
+  =\dfrac{\vector{3}{-6}{2}}{\sqrt{3^2+(-6)^2+2^2}}
+  =\dfrac{1}{7}(\vector{3}{-6}{2})</reason>
+  </step>
+  <step>
+    <context>\text{If }\ora{AB}=\vector{2}{-4}{5}\text{ and }
+\ora{AC}=\vector{1}{-2}{-3}. \\
+\text{represent the adjacent sides of a parallelogram} \\
+\text{does the following represent its area?}
+</context>
+    <tex correct='true'>Area=\vert\ora{AB}\times \ora{AC}\vert</tex>
+    <tex>Area=\ora{AB}\times \ora{AC}</tex>
+    <reason>\text{Area is a scalar and as such does not have a} \\
+\text{directional component. When computing area} \\
+\text{of a parallelogram based on the adjacent side} \\
+\text{vectors, we must compute it as the{\bf magnitude}} \\
+\text{of the cross product of the two vectors.} \\
+\therefore {\bf \text{Area}=\vert \ora{AB}\times \ora{AC}\vert}
+</reason>
+  </step>
+  <step>
+    <context>\text{If }\ora{AB}=\vector{2}{-4}{5}\text{ and }
+\ora{AC}=\vector{1}{-2}{-3}. \\
+\text{is this correct?}</context>
+    <tex correct='true'>Area=\vert\ora{AB}\times \ora{AC}\vert=11\sqrt{5}</tex>
+    <tex>Area=\vert\ora{AB}\times \ora{AC}\vert=5</tex>
+    <reason>\text{If }\ora{AB}=\vector{2}{-4}{5}\text{ and }
+\ora{AC}=\vector{1}{-2}{-3}. \\
+\begin{align}
+  \ora{AB}\times \ora{AC}&amp;=
+  \left[\begin{array}{ccc}
+    i &amp; j &amp; k \\
+    2 &amp; -4 &amp; 5 \\
+    1 &amp; -2 &amp; -3
+  \end{array}\right] \\
+  &amp;=\vector{22}{-11}{}
+\end{align} \\
+\therefore\vert\ora{AB}\times \ora{AC}\vert=
+  \sqrt{22^2+11^2}=11\sqrt{5}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{1}{7}\left(\vector{3}{-6}{2}\right); 11\sqrt{5}</tex>
+    <tex>\dfrac{1}{7}\left(\vector{3}{-6}{2}\right); 11</tex>
+    <tex>\vector{3}{-6}{2}; 11</tex>
+    <tex>\dfrac{1}{4}\left(\vector{3}{-6}{2}\right); 49</tex>
+  </choices>
+</question>
