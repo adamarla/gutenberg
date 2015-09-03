@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+		\text{For what values of x would }f(x)\lt 0,\text{ if}\\
+		\quad x = 3 + \dfrac{f(x)}{3+\dfrac{f(x)}{3+\frac{f(x)}{3+\ldots}}} \\
+		\textit{This problem only looks tough.}
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\textbf{Seeing a pattern.} \\
+			\text{If } x = 3 + \dfrac{f(x)}{\underbrace{\left(3+\dfrac{f(x)}{3+\frac{f(x)}{3+\ldots}}\right)}_{A}},
+			\text{ then }A = ?
+			</context>
+    <tex correct="true">
+			\quad A = x \implies x = 3 + \dfrac{f(x)}{x}
+			</tex>
+    <tex correct="false">
+			\quad A = 3 + f(x) \implies x = 3 + \dfrac{f(x)}{f(x) + 3}
+			</tex>
+    <reason>
+			\text{Look at }A=\left(3+\dfrac{f(x)}{3+\frac{f(x)}{3+\ldots}}\right)\text{ again.}\\
+			\underline{\text{It looks exactly like x!}}\text{ So, that is}\\
+			\text{what it must be. And therefore, if} \\
+			\begin{align}
+			  x = 3 + \dfrac{f(x)}{x}&amp;\text{ then } f(x) = x^2-3x \\
+			  \implies f(x) &amp;= x\cdot (x-3)
+			\end{align} \\
+			\text{Now, that looks a lot less scary, doesn't it?}
+			</reason>
+  </step>
+  <step>
+    <context>
+				\text{Given that }x=3+\frac{f(x)}{x}\implies f(x) = x\cdot (x-3),\\
+				\underline{\text{is the following assertion true?}}
+				</context>
+    <tex correct="true">
+				\quad f(x)\lt\text{ when } 0\lt x\lt 3.
+				</tex>
+    <tex correct="false">
+				\quad f(x)\lt 0\text{ when } x\in(-\infty, 0)\cup (3,\infty).
+				</tex>
+    <reason>
+				\begin{align}
+				  f(x) &amp;= x\cdot (x-3)\to\text{ (Step 1). Therefore,}
+				\end{align} \\
+				\begin{tabular}{|c|c|c|c|}
+				\hline
+				&amp; x &amp; x-3 &amp; f(x)=x\cdot (x-3) \\
+				\hline 
+				x \lt 0 &amp; - &amp; - &amp; + \\
+				\hline 
+				0\lt x\lt 3 &amp; + &amp; - &amp; - \\
+				\hline 
+				x \gt 3 &amp; + &amp; + &amp; + \\
+				\hline
+				\end{tabular} \\
+				\text{The above table tells us that }f(x)\lt 0 \\
+				\text{when }0\lt x\lt 3.
+				</reason>
+  </step>
+  <choices>
+    <tex correct="true">0\lt x\lt 3</tex>
+    <tex>x\in(-\infty, 0)\cup (3,\infty)</tex>
+    <tex>x\lt 0</tex>
+    <tex>x\gt 3</tex>
+  </choices>
+</question>
