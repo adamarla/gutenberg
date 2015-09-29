@@ -23,5 +23,6 @@
         <book tag="ncert-12-math-ex" publisher="ncert" subject="math" grade="12" label="Exemplar">ncert-12-math-ex.xml</book>
         <book tag="cbse-12-math" publisher="cbse" subject="math" grade="12" label="Board Exams" category="exam">cbse-12-math.xml</book>
         <book tag="prepwell-math-experiment" publisher="prepwell" subject="math" grade="12" label="5-day Trial">prepwell-math-experiment.xml</book>
+        <book tag="playpen-11" publisher="prepwell" subject="math" grade="11" label="Playpen XI">playpen-11.xml</book>
     </books>
 </catalog>

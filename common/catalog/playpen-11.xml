@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<book tag="playpen-11" label="Playpen XI">
+  <chapter tag="btheorem" label="Binomial Theorem">
+    <exercise tag="set1" label="Set 1"/>
+  </chapter>
+</book>
