@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+		\text{What is the coefficient of }x^2\text{ in }\\
+		\qquad \left(\frac{2}{3}x-\frac{3}{2x}\right)^6
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\text{If }\left(\frac{2}{3}x-\frac{3}{2x}\right)^6 = 
+			\overbrace{\underbrace{T_1 + T_2 + \cdots + T_N }_{\text{N terms}}}^{\longrightarrow\text{ increasing powers of x}},\\
+			\text{then are the following true?}
+			</context>
+    <tex correct="true">
+			\begin{align}
+			  N &amp;= 7 \\
+			  T_m &amp;= ^6C_{m-1}\left(\frac{2x}{3}\right)^{m-1}\cdot (-1)^{7-m}
+			  \cdot \left(\frac{3}{2x}\right)^{7-m} \\
+			  &amp; (1\leq m\leq 7)
+			\end{align}
+			</tex>
+    <tex correct="false">
+			\begin{align}
+			  N &amp;= 6 \\
+			  T_m &amp;= ^6C_{m-1}\left(\frac{2x}{3}\right)^{m-1}
+			  \cdot \left(\frac{3}{2x}\right)^{6-m} \\
+			  &amp; (1\leq m\leq 6)
+			\end{align}
+			</tex>
+    <reason>
+			(a+b)^n\text{ will have }(n+1)\text{ terms. Hence,} \\
+			\left(\frac{2}{3}x-\frac{3}{2x}\right)^6\text{ will have }N=6+1=7\text{ terms.}\\
+			\text{Also, if }\left(\frac{2}{3}x-\frac{3}{2x}\right)^6 = 
+			\overbrace{T_1 + T_2 + \cdots + T_N}^{\longrightarrow\text{ increasing powers of x}},\\
+			{then }T_1\text{ should have } \left(\frac{2x}{3}\right)^0\text{and }T_7\text{ should }\\
+			\text{have }\left(\frac{2x}{3}\right)^6.\text{Hence, the m-th term is}\\
+			\begin{align}
+			  T_m &amp;= ^6C_{m-1}\left(\frac{2x}{3}\right)^{m-1}
+			  \cdot \left(-\frac{3}{2x}\right)^{6-(m-1)} \\
+			  &amp;=^6C_{m-1}\left(\frac{2x}{3}\right)^{m-1}\cdot (-1)^{7-m} 
+			  \cdot \left(\frac{3}{2x}\right)^{7-m} \\
+			  &amp; (1\leq m\leq 7)
+			\end{align} \\
+			\textbf{Or, expand with decreasing powers of x.}\\
+			\text{After all, }T_1+T_2+\cdots T_7 = T_7+T_6 + \cdots + T_1.
+			</reason>
+  </step>
+  <step>
+    <context>
+				\textbf{Right or wrong?} \\
+				\text{Given }T_m = ^6C_{m-1}\left(\frac{2x}{3}\right)^{m-1}
+			  \cdot \left(-\frac{3}{2x}\right)^{7-m} \\
+			  \text{a term with }\frac{1}{x^2}\text{ will result when }\ldots 
+				</context>
+    <tex correct="true">
+				\begin{align}
+				\dfrac{x^{m-1}}{x^{7-m}} &amp;= \frac{1}{x^2} \\
+				\implies 2m-8&amp;= -2 \implies m = 3
+				\end{align}
+				</tex>
+    <tex correct="false">
+				\begin{align}
+				\dfrac{x^{m-1}}{x^{7-m}} &amp;= \frac{1}{x^2} \\
+				\implies 2m-8&amp;= 2 \implies m = 5
+				\end{align}
+				</tex>
+    <reason>
+				\begin{align}
+				  \left(\frac{2x}{3}\right)^{m-1} &amp;= A\cdot x^{m-1} \\
+				  \left(-\frac{3}{2x}\right)^{7-m} &amp;= \frac{B}{x^{7-m}} \\
+				  \implies \left(\frac{2x}{3}\right)^{m-1}\cdot \left(-\frac{3}{2x}\right)^{7-m}
+				  &amp;= A\cdot B\cdot \frac{x^{m-1}}{x^{7-m}} \\
+				  &amp;= C\cdot x^{m-1-(7-m)} \\
+				  &amp;= C\cdot x^{2m-8}
+				\end{align} \\
+				\text{Hence, for a term with }\frac{1}{x^2} \\
+				\begin{align}
+				  x^{2m-8} &amp;= \frac{1}{x^2} = x^{-2} \\
+				  \implies 2m - 8 &amp;= -2 \implies m = 3.
+				\end{align}
+				</reason>
+  </step>
+  <step>
+    <context>
+					\textbf{Right or wrong?}\text{ The coefficient of the}\\
+					\text{term with }\frac{1}{x^2}\text{ will be the following.}
+					</context>
+    <tex correct="true">
+					\qquad \dfrac{135}{4}
+					</tex>
+    <tex correct="false">
+					\qquad \dfrac{48}{7}
+					</tex>
+    <reason>
+					\text{With }m=3\text{ we get a term having }\frac{1}{x^2}.\\
+					\begin{align}
+					  T_3 &amp;= ^6C_{3-1}\left(\frac{2x}{3}\right)^{3-1}
+					  \cdot \left(-\frac{3}{2x}\right)^{7-3} \\
+					  &amp;= \underbrace{^6C_2\cdot \left(\frac{2}{3}\right)^2\cdot \left(-\frac{3}{2}\right)^{4}}_{K_3}
+					  \cdot\dfrac{x^2}{x^4} \\
+					  \implies K_3 &amp;= 15\cdot\dfrac{4}{9}\cdot\dfrac{81}{16} = \dfrac{135}{4}
+					\end{align}
+					</reason>
+  </step>
+  <choices>
+    <tex correct="true">\frac{135}{4}</tex>
+    <tex>\frac{71}{2}</tex>
+    <tex>-\frac{35}{4}</tex>
+    <tex>\frac{48}{7}</tex>
+  </choices>
+</question>

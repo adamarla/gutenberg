@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+		\text{If some }\underline{\text{consecutive}}\text{ coefficients in the}\\
+		\text{expansion of }(1+x)^n \text{ are in the ratio }\\
+		1:3:5,\text{ then find the value of n.}
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\textbf{Right or wrong?}\\
+			\text{If }T_m\text{ be the m-th term in }\\
+			\quad (1+x)^n = \sum_{m=1}^{n+1} \overbrace{K_m\cdot x^{m-1}}^{T_m}\\
+			\text{then we have been told the following.}
+			</context>
+    <tex correct="true">
+			\text{For some }m, (1\leq m\leq n+1)\\
+       \begin{align}
+         \dfrac{K_m}{K_{m-1}} &amp;= \dfrac{3}{1} \\
+         \dfrac{K_{m+1}}{K_m} &amp;= \dfrac{5}{3}
+       \end{align}       
+			</tex>
+    <tex correct="false">
+			\text{For some }m, (1\leq m\leq n+1)\\
+			\begin{align}
+         \dfrac{T_m}{T_{m-1}} &amp;= \dfrac{3}{1} \\
+         \dfrac{T_{m+1}}{T_m} &amp;= \dfrac{5}{3}
+       \end{align}
+			</tex>
+    <reason>
+			\text{It is the }\underline{\text{coefficients}}\text{ that are in the}\\
+			\text{given ratios - not the terms! Hence, in}\\
+			\begin{align}
+			  (1+x)^n &amp;= \sum_{m=1}^{n+1}\overbrace{K_m\cdot x^{m-1}}^{T_m} \\
+			   \dfrac{K_m}{K_{m-1}} &amp;= \dfrac{3}{1} \\
+         \dfrac{K_{m+1}}{K_m} &amp;= \dfrac{5}{3}
+			\end{align} \\
+			</reason>
+  </step>
+  <step>
+    <context>
+				\text{Given the ratios }\frac{K_m}{K_{m-1}}\text{ and }\frac{K_{m+1}}{K_m},\\
+				\text{is the following correct?}
+				</context>
+    <tex correct="true">
+				\begin{align}
+				  \dfrac{K_m}{K_{m-1}} &amp;= \dfrac{3}{1}\implies 4m = n+5 \\
+				  \dfrac{K_{m+1}}{K_m} &amp;= \dfrac{5}{3}\implies 8m = 3n + 3\\
+				  \implies n &amp;= 7
+				\end{align}
+				</tex>
+    <tex correct="false">
+				\begin{align}
+				  \dfrac{K_m}{K_{m-1}} &amp;= \dfrac{3}{1}\implies 4m = n+7 \\
+				  \dfrac{K_{m+1}}{K_m} &amp;= \dfrac{5}{3}\implies 8m = 4n+2\\
+				  \implies n &amp;= 6
+				\end{align}
+				</tex>
+    <reason>
+				\begin{align}
+				\dfrac{K_m}{K_{m-1}} = \dfrac{^nC_{m-1}}{^nC_{m-2}} &amp;= \dfrac{3}{1} \\
+				\implies \left[\dfrac{\dfrac{n!}{(m-1)!\cdot (n-(m-1))!}}{\dfrac{n!}{(m-2)!\cdot (n-(m-2))!}}\right] &amp;= 3\\
+				\implies\dfrac{n-m+2}{m-1} &amp;= 3 \\
+				\implies 4m &amp;= n+5
+				\end{align} \\
+				\text{Similarly, }\\
+				\begin{align}
+				\dfrac{K_{m+1}}{K_m} &amp;= \dfrac{^nC_m}{^nC_{m-1}} = \dfrac{5}{3} \\
+				\implies 8m &amp;= 3n+3 \\
+				\therefore \dfrac{8m}{4m} &amp;= \dfrac{3n+3}{n+5} = 2 \implies n = 7.
+				\end{align}.
+				</reason>
+  </step>
+  <choices>
+    <tex>n=6</tex>
+    <tex correct="true">n=7</tex>
+    <tex>n=8</tex>
+    <tex>n=9</tex>
+  </choices>
+</question>
