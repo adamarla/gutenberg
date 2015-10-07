@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the value of a if} \\
+\left[
+\begin{array}{cc}
+  a-b &amp; 2a+c \\
+  2a-b &amp; 3c+d
+\end{array}
+\right]=
+\left[
+\begin{array}{cc}
+  -1 &amp; 5 \\
+  0 &amp; 13
+\end{array}
+\right]</tex>
+  </statement>
+  <step>
+    <context>\text{If }\left[\begin{array}{cc}
+  i_{11} &amp; i_{12} \\
+  i_{21} &amp; i_{22}
+\end{array}\right]=
+\left[\begin{array}{cc}
+  j_{11} &amp; j_{12} \\
+  j_{21} &amp; j_{22}
+\end{array}
+\right] \\
+\text{is the following true?}</context>
+    <tex correct='true'>i_{11}=j_{11},
+i_{12}=j_{12}, \\
+i_{21}=j_{21},
+i_{22}=j_{22}
+</tex>
+    <tex>i_{11}=j_{11},
+i_{12}=-j_{12}, \\
+i_{21}=-j_{21},
+i_{22}=j_{22}
+</tex>
+    <reason>\text{If two matrices are equal, they must be} \\
+\text{identical. In other words, the same number} \\
+\text{of rows and columns and corresponding} \\
+\text{elements equal.}</reason>
+  </step>
+  <step>
+    <context>\text{If }\left[
+\begin{array}{cc}
+  a-b &amp; 2a+c \\
+  2a-b &amp; 3c+d
+\end{array}
+\right]=
+\left[
+\begin{array}{cc}
+  -1 &amp; 5 \\
+  0 &amp; 13
+\end{array}
+\right] \\
+\text{can we conclude the following?}</context>
+    <tex correct='true'>a=1</tex>
+    <reason>\text{Comparing corresponding elements on both} \\
+\text{sides we get, } a-b=-1 \text{ and } 2a-b=0. \\
+\therefore a=1.</reason>
+  </step>
+  <choices>
+    <tex>0</tex>
+    <tex correct='true'>1</tex>
+    <tex>2</tex>
+    <tex>-1</tex>
+  </choices>
+</question>

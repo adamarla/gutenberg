@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Write the principal value of } \\
+\tan ^{-1}(1)+\cos^{-1}\left(-\dfrac{1}{2}\right)</tex>
+  </statement>
+  <step>
+    <context>\text{Is the following statement correct?} \\
+\tan^{-1}(1)=\dfrac{\sin^{-1}(1)}{\cos^{-1}(1)}</context>
+    <tex>\text{Yes of course, } \\
+\begin{align}
+    &amp;\sin^{-1}(1)=\cos^{-1}(1)=\dfrac{1}{2} \\
+  \therefore &amp;\tan^{-1}(1)=\dfrac{\sin^{-1}(1)}{\cos^{-1}(1)}=1
+\end{align}
+</tex>
+    <reason>\text{No, it is not correct. In fact it is rubbish!} \\
+\text{Inverse trigonometric functions represent } \\
+\text{angles, not ratios. For e.g.,} \\
+\begin{align}
+  \tan\theta=5 &amp;\implies \tan^{-1}(5)=\theta \\
+  \cos\alpha=1 &amp;\implies \cos^{-1}(1)=\alpha \\
+  \sin\phi=0 &amp;\implies \sin^{-1}(0)=\phi \text{ and so on}
+\end{align}
+
+</reason>
+  </step>
+  <step>
+    <context>\text{If }tan^{-1}(1)=\theta, \text{ what is }\theta?</context>
+    <tex correct='true'>\tan^{-1}(1)=\theta \implies\tan\theta=1 \\
+\therefore \theta=45^\circ \text{ or }\dfrac{\pi}{4} (radians)</tex>
+    <tex>\tan^{-1}(1)=\theta \implies\tan\theta=1 \\
+\therefore \theta=90^\circ \text{ or }\dfrac{\pi}{2} (radians)</tex>
+    <reason>\tan\theta=\dfrac{opp}{adj}=1 \\ 
+\text{implies that the opposite and adjacent sides} \\
+\text{of a Right triangle are equal. Therefore the} \\
+\text{angles opposite those sides are also equal.} \\
+\therefore\theta=45^\circ</reason>
+  </step>
+  <step>
+    <context>\text{If }cos^{-1}\left(-\dfrac{1}{2}\right)=\theta, 
+\text{ what is }\theta?</context>
+    <tex correct='true'>\cos^{-1}\left(-\dfrac{1}{2}\right)=\theta
+  \implies\cos\theta=-\dfrac{1}{2} \\
+\therefore \theta=120^\circ \text{ or }2\dfrac{\pi}{3} (radians)</tex>
+    <tex>\cos^{-1}\left(-\dfrac{1}{2}\right)=\theta
+  \implies\cos\theta=-\dfrac{1}{2} \\
+\therefore \theta=-120^\circ \text{ or }-\dfrac{\pi}{3} (radians)</tex>
+    <reason>\text{The sign of}\cos\text{function is as follows} \\
+\text{in the four quadrants} \\
+\begin{array}{c|c}
+\textbf{negative} &amp; \text{positive} \\
+\hline
+\text{negative} &amp; \text{positive} \\
+\end{array} \\
+\text{Therefore its principal negative value is in} \\
+\text{the \bf{second} quadrant}.</reason>
+  </step>
+  <step>
+    <context>\text{Putting the results together, this equals?} \\
+\tan ^{-1}(1)+\cos^{-1}\left(-\dfrac{1}{2}\right)=? \\
+</context>
+    <tex correct='true'>165^\circ, \dfrac{11\pi}{12}{rad}
+</tex>
+    <reason>\begin{align}
+  &amp;\tan ^{-1}(1)+\cos^{-1}\left(-\dfrac{1}{2}\right) \\
+  =&amp;45^{\circ}+120^{\circ}
+  =165^{\circ} \\
+  =&amp;\dfrac{\pi}{4}+\dfrac{2\pi}{3}
+  =\dfrac{11\pi}{12}
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>165^\circ, \dfrac{11\pi}{12}{rad}</tex>
+    <tex>-25^\circ, -\dfrac{\pi}{12}{rad}</tex>
+    <tex>90^\circ, \dfrac{\pi}{3}{rad}</tex>
+    <tex>-45^\circ, -\dfrac{\pi}{4}{rad}</tex>
+  </choices>
+</question>
