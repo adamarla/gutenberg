@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If }
+\left\vert\begin{array}{cc}
+  x+1 &amp; x-1 \\
+  x-3 &amp; x+2
+\end{array}\right\vert=
+\left\vert\begin{array}{cc}
+  4 &amp; -1 \\
+  1 &amp; 3
+\end{array}\right\vert, \\
+\text{then write the value of x.}</tex>
+  </statement>
+  <step>
+    <context>\text{If two determinants are equal i.e.} \\
+\left\vert
+\begin{array}{cc}
+  a_{11} &amp; a_{12} \\
+  a_{21} &amp; a_{22}
+\end{array}\right\vert=
+\left\vert
+\begin{array}{cc}
+  b_{11} &amp; b_{12} \\
+  b_{21} &amp; b_{22}
+\end{array}\right\vert \\
+\text{is the following strictly true?}</context>
+    <tex>a_{11}=b_{11}, 
+a_{12}=b_{12}, 
+a_{21}=b_{21}, 
+a_{22}=b_{22}
+</tex>
+    <reason>\text{Unlike a matrix, a determinant can be} \\
+\text{computed to a single value. For e.g.} \\
+D=\left\vert\begin{array}{cc}
+  a &amp; b \\
+  c &amp; d
+\end{array}\right\vert \implies |D|=ad-bc. \\
+\begin{align}
+\therefore \left\vert
+\begin{array}{cc}
+  a_{11} &amp; a_{12} \\
+  a_{21} &amp; a_{22}
+\end{array}\right\vert &amp;=
+\left\vert
+\begin{array}{cc}
+  b_{11} &amp; b_{12} \\
+  b_{21} &amp; b_{22}
+\end{array}\right\vert \\
+\implies
+a_{11}\cdot a_{22}-a_{21}\cdot  a_{12}&amp;=
+b_{11}\cdot b_{22}-b_{21}\cdot b_{12}
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>\text{Given the result from the previous step,} \\
+\text{if }\left\vert\begin{array}{cc}
+  x+1 &amp; x-1 \\
+  x-3 &amp; x+2
+\end{array}\right\vert=
+\left\vert\begin{array}{cc}
+  4 &amp; -1 \\
+  1 &amp; 3
+\end{array}\right\vert \\
+\text{is the following correct?}</context>
+    <tex correct='true'>x=2</tex>
+    <tex>x=4</tex>
+    <reason>\left\vert\begin{array}{cc}
+  x+1 &amp; x-1 \\
+  x-3 &amp; x+2
+\end{array}\right\vert=
+\left\vert\begin{array}{cc}
+  4 &amp; -1 \\
+  1 &amp; 3
+\end{array}\right\vert \\
+\implies(x+1)(x+2)-(x-3)(x-1) \\
+  \qquad=4\cdot 3-(1)(-1) \\
+\implies 7x-1=13 \\ 
+\implies x=2
+</reason>
+  </step>
+  <choices>
+    <tex>x=3,4</tex>
+    <tex>x=3,4,1,0</tex>
+    <tex correct='true'>x=2</tex>
+    <tex>x=4</tex>
+  </choices>
+</question>

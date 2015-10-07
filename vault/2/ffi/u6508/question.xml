@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If }
+\left[\begin{array}{ccc}
+  9 &amp; -1 &amp; 4 \\
+  -2 &amp; 1 &amp; 3
+\end{array}\right]=A+
+\left[\begin{array}{ccc}
+  1 &amp; 2 &amp; -1 \\
+  0 &amp; 4 &amp; 9
+\end{array}\right] \\
+\text{then find the matrix A.}</tex>
+  </statement>
+  <step>
+    <context>\textbf{General Question: }\text{Is this sum correct?} \\
+\left[\begin{array}{c}
+  1 &amp; 2 \\
+  3 &amp; 4
+\end{array}\right]+
+\left[\begin{array}{ccc}
+  4 &amp; 3 &amp; 1 \\
+  2 &amp; 1 &amp; 1
+\end{array}\right]=
+\left[\begin{array}{ccc}
+  5 &amp; 5 &amp; 1 \\
+  5 &amp; 5 &amp; 1
+\end{array}\right]
+</context>
+    <tex>\text{Yes, this is correct. The corresponding} \\
+\text{terms have been added.}</tex>
+    <reason>\left[\begin{array}{cc}
+  1 &amp; 2 \\
+  3 &amp; 4
+\end{array}\right] \text{ and }
+\left[\begin{array}{ccc}
+  4 &amp; 3 &amp; 1 \\
+  2 &amp; 1 &amp; 1
+\end{array}\right] \\
+\text{cannot be added since they are not} \\
+\text{of the same order (rows x columns)}</reason>
+  </step>
+  <step>
+    <context>\text{If }
+\left[\begin{array}{ccc}
+  9 &amp; -1 &amp; 4 \\
+  -2 &amp; 1 &amp; 3
+\end{array}\right]=A+
+\left[\begin{array}{ccc}
+  1 &amp; 2 &amp; -1 \\
+  0 &amp; 4 &amp; 9
+\end{array}\right] \\
+\text{is the following correct?}
+</context>
+    <tex correct='true'>A=\left[\begin{array}{ccc}
+  8 &amp; -3 &amp; 5 \\
+  -2 &amp; -3 &amp; -6
+\end{array}\right]</tex>
+    <reason></reason>
+  </step>
+  <choices>
+    <tex correct='true'>A=\left[\begin{array}{ccc}
+  8 &amp; -3 &amp; 5 \\
+  -2 &amp; -3 &amp; -6
+\end{array}\right]</tex>
+    <tex>A=\left[\begin{array}{cc}
+  8 &amp; -3 \\
+  -2 &amp; -3
+\end{array}\right]</tex>
+    <tex>A=\left[\begin{array}{ccc}
+  -8 &amp; 3 &amp; -5 \\
+  2 &amp; 3 &amp; 6
+\end{array}\right]</tex>
+    <tex>A=\left[\begin{array}{ccc}
+  8 &amp; 3 &amp; 5 \\
+  2 &amp; 3 &amp; 6
+\end{array}\right]</tex>
+  </choices>
+</question>

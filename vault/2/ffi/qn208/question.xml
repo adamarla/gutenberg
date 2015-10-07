@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Write the value of}
+\tan \left(2\tan^{-1}\dfrac{1}{5}\right)</tex>
+  </statement>
+  <step>
+    <context>\text{Suppose }\tan^{-1}\dfrac{1}{5}
+  \text{ equals some angle }\theta. \\
+\text{Then is the following correct?}</context>
+    <tex correct='true'>\dfrac{1}{5}=\tan\theta</tex>
+    <reason>\text{Comes from the definition of inverse} \\
+\text{trigonometric functions i.e.} \\
+\tan^{-1}\left(\dfrac{a}{b}\right)=\theta\implies
+  \dfrac{a}{b}=\tan\theta</reason>
+  </step>
+  <step>
+    <context>\text{If }\dfrac{1}{5}=\tan\theta\text{ what is }\tan 2\theta?</context>
+    <tex correct='true'>\tan 2\theta=\dfrac{5}{12}</tex>
+    <tex>\tan 2\theta=\dfrac{2}{5}</tex>
+    <reason>\dfrac{1}{5}=\tan\theta \implies \tan^{-1}\dfrac{1}{5}=\theta \\
+\therefore\tan \left(2\tan^{-1}\dfrac{1}{5}\right)=\tan (2\theta) \\
+\begin{align}
+  \implies\tan 2\theta &amp;= \dfrac{2\tan\theta}{1-\tan^2\theta} \\
+  &amp;= \dfrac{2\times \frac{1}{5}}{1-\frac{1}{25}}
+  = \dfrac{5}{12}
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{9}{10}</tex>
+    <tex>\dfrac{1}{2}</tex>
+    <tex correct='true'>\dfrac{2}{5}</tex>
+    <tex>\dfrac{5}{12}</tex>
+  </choices>
+</question>
