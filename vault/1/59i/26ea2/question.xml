@@ -15,8 +15,9 @@
 			<image correct='true'>right.svg</image>
 			<image correct='false'>wrong.svg</image>
 			<reason>
-			\text{Just wanted to make sure you realize }\\
-			\text{that points A and B are on the curve.}
+        \text{Both points }A(2,0)\text{ and }B(4,4)\text{ lie on}\\
+        \text{the curve }y=(x-2)^2.\\
+        \text{Moreover, notice that }y\geq 0\text{ for all }x.
 			</reason>
 		</step>
 			<step swipe='false'>

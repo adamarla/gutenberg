@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+		\text{In the expansion of }(1+x)^{10},\text{ for what value}\\
+		\text{of 'm' are the coefficients of the }(2m+1)^{th}\\
+		\text{and }(4m+5)^{th}\text{ terms equal?}
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\textbf{Right or wrong?}\\
+			(1+x)^{10}\text{ will expand to the following.}
+			</context>
+    <tex correct="true">
+			\begin{align}
+			  (1+x)^{10} &amp;= \sum_{k=1}^{11}\,^{10}C_{k-1}\cdot x^{k-1}
+			\end{align}
+			</tex>
+    <tex correct="false">
+			\begin{align}
+			  (1+x)^{10} &amp;= \sum_{k=1}^{10}\,^{10}C_{k-1}\cdot x^{k-1}
+			\end{align}
+			</tex>
+    <reason>
+			\text{The highest power of x in the expansion is }x^{10}.\\
+			\text{And therefore, only if 'k' changes from }1\to 11\\
+			\text{would there be a }x^{10}\text{ term (due to }x^{k-1}\text{).}\\
+			\text{Hence, }(1+x)^n = \sum_{k=1}^{11}\,^{10}C_{k-1}\cdot x^{k-1}.
+			</reason>
+  </step>
+  <step>
+    <context>
+				\textbf{Right or wrong?}\\
+				\text{The coefficients of the }(2m+1)^{th}\text{ and }\\
+				(4m+5)^{th}\text{ terms will be as follows.}
+				</context>
+    <tex correct="true">
+				\begin{tabular}{|c|c|}
+				\hline
+				\text{Term} &amp; \text{Coefficient} \\
+				\hline 
+				(2m+1)^{th} &amp; ^{10}C_{2m} \\
+				\hline 
+				(4m+5)^{th} &amp; ^{10}C_{4m+4} \\
+				\hline
+				\end{tabular}
+				</tex>
+    <tex correct="false">
+				\begin{tabular}{|c|c|}
+				\hline
+				\text{Term} &amp; \text{Coefficient} \\
+				\hline 
+				(2m+1)^{th} &amp; ^{10}C_{2m+1} \\
+				\hline 
+				(4m+5)^{th} &amp; ^{10}C_{4m+5} \\
+				\hline
+				\end{tabular}
+				</tex>
+    <reason>
+				\text{Look at the expansion in Step 1 again.}\\
+				\text{Notice that the coefficient for the k-th term}\\
+				\text{is }^{10}C_{k-1} - \text{ not }^{10}C_k.
+				</reason>
+  </step>
+  <step>
+    <context>
+					\textbf{Right or wrong?}\\
+					\text{Your friend says that if the coefficients of }\\
+					\text{the }(2m+1)^{th}\text{ and }(4m+5)^{th}\text{ terms are equal,}\\
+					\text{then it can only mean the following.}
+					</context>
+    <tex correct="false">
+					\begin{align}
+					^{10}C_{2m} &amp;= ^{10}C_{4m+4} \\
+					\implies 2m &amp;= 4m + 4\implies m = -2
+					\end{align}
+					</tex>
+    <reason>
+					m=-2\text{ can't be right. When }m=-2\text{ then }\\
+					2m+1=4m+5=-3.\text{ But there cannot }\\
+					\text{be a }{-3}^{th}\text{ term.} \\
+					\text{However, there is another option. }\\
+					\text{Recall that }^nC_k = ^nC_{n-k}.\\
+					\begin{align}
+					  \therefore\,^{10}C_{2m} &amp;= ^{10}C_{4m+4} \\
+					  \implies 2m &amp;= 10 - (4m+4) \implies m = 1 \\
+					  \implies 2m + 1 &amp;= 3\text{ and }4m + 5 = 9.
+					\end{align} \\
+					\text{Hence, the coefficients of the }3^{rd}\text{ and}\\
+					9^{th}\text{ terms are equal.}
+					</reason>
+  </step>
+  <choices>
+    <tex>m=-2</tex>
+    <tex correct="true">m=1</tex>
+    <tex>m=2</tex>
+    <tex>m=1,-2</tex>
+  </choices>
+</question>
