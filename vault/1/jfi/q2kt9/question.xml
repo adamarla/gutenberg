@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+		\text{Write the degree of the differential equation}\\
+		\qquad x^3\cdot\left(\frac{d^2 y}{dx^2}\right)^2+x\cdot \left(\frac{dy}{dx}\right)^4 = 0
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\textbf{Order and degree of a differential equation.}\\
+			\text{Which one of A,B,C or D (see below) is the }\\
+			\underline{\text{order}}\text{ of the equation and which is the }
+			\underline{\text{degree}}? \\
+			x^{\overbrace{3}^A}\cdot
+			\left(\frac{d^{\overbrace{2}^B} y}{dx^2}\right)^{\overbrace{2}^C}
+			+x\cdot \left(\frac{dy}{dx}\right)^{\overbrace{4}^D} = 0
+			</context>
+    <tex correct="true">
+			\begin{tabular}{|c|c|}
+			\hline 
+			\text{Order} &amp; B = 2 \\
+			\hline 
+			\text{Degree} &amp; C = 2 \\
+			\hline
+			\end{tabular}
+			</tex>
+    <tex correct="false">
+			\begin{tabular}{|c|c|}
+			\hline 
+			\text{Order} &amp; A = 3 \\
+			\hline 
+			\text{Degree} &amp; D = 4 \\
+			\hline
+			\end{tabular}
+			</tex>
+    <reason>
+			\begin{tabular}{|c|l|}
+			\hline
+			&amp; \text{Definition}  \\
+			\hline
+			\text{Order} &amp; \text{Find all }\left(\frac{d^N y}{dx^N}\right)\text{ terms }(N\geq 1) \\
+			&amp;\text{The }\underline{\text{maximum}}\text{ N is the order.} \\
+			\hline 
+			\textbf{Degree} &amp; \text{The }\underline{\text{highest}}\text{ power to which} \\
+			&amp; \text{the highest order term is raised.} \\
+			\hline
+			\end{tabular} \\
+			\text{Hence, we can from }\left(\frac{d^{\overbrace{2}^B} y}{dx^2}\right)^{\overbrace{2}^C}
+			\text{that }\\
+			\begin{align}
+			  \text{Order } &amp;= B = 2 \\
+			  \textbf{Degree} &amp;= C = 2
+			\end{align}
+			</reason>
+  </step>
+  <step>
+    <context>
+				\textbf{Bonus question}\\
+				\text{What is the order and degree of the following?} \\
+				\quad \left(\frac{d^2 y}{dx^2}\right)^3 + x\cdot \left(\frac{d^2 y}{dx^2}\right) + 
+				\left(\frac{d^3 y}{dx^3}\right) = 0
+				</context>
+    <tex correct="true">
+				\begin{tabular}{|c|c|}
+			\hline 
+			\text{Order} &amp; 3 \\
+			\hline 
+			\text{Degree} &amp; 1 \\
+			\hline
+			\end{tabular}
+				</tex>
+    <tex correct="false">
+				
+				\begin{tabular}{|c|c|}
+			\hline 
+			\text{Order} &amp; 3 \\
+			\hline 
+			\text{Degree} &amp; 3 \\
+			\hline
+			\end{tabular}
+				</tex>
+    <reason>
+				\text{To find the degree, find the highest order term}\\
+				\text{first. In this case, it is }\left(\frac{d^3 y}{dx^3}\right) = \left(\frac{d^3 y}{dx^3}\right)^1.\\
+				\text{Hence, order = 3 and degree = 1.}
+				</reason>
+  </step>
+  <choices>
+    <tex>1</tex>
+    <tex correct="true">2</tex>
+    <tex>3</tex>
+    <tex>4</tex>
+  </choices>
+</question>

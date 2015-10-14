@@ -1,18 +1,97 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
   <statement>
     <tex>\text{Differentiate the following}\\
 		\qquad f(x) = \sqrt{\dfrac{(x-1)(x-2)}{(x-3)(x-4)(x-5)}}\\
 		\text{with respect to x.}</tex>
   </statement>
   <step>
-    <context>\text{Which is }</context>
-    <reason></reason>
+    <context>
+  		\textbf{A theoretical question.} \\
+  		\text{If }y = f(x) = \sqrt{\dfrac{a}{b}},\text{ then what is }\log y?
+  		</context>
+    <tex correct="true">
+  		\log y = \dfrac{1}{2}\cdot \left(\log a - \log b\right)
+  		</tex>
+    <tex correct="false">
+  		\log y = \dfrac{1}{2}\cdot\dfrac{\log a}{\log b}
+  		</tex>
+    <reason>
+  		\text{If you see an expression of the form } y = \left(\dfrac{a}{b}\right)^c,\\
+  		\text{then consider taking log on both sides. The}\\
+  		\text{resulting expression is usually easier to work}\\
+  		\text{with. That said, }\\
+  		\begin{align}
+  		  \text{If } y &amp;= \sqrt{m}\text{ then }\log y = \frac{1}{2}\log m \\
+  		  \text{and if } m &amp;= \frac{a}{b}\text{ then }\log m = \log a - \log b \\
+  		  \implies \log y &amp;= \frac{1}{2}\log m = \frac{1}{2}\cdot \left(\log a - \log b\right)
+  		\end{align}
+  		</reason>
   </step>
-  <choices>
-    <tex>f'(x) = </tex>
-    <tex correct='true'></tex>
-    <tex></tex>
-    <tex></tex>
-  </choices>
+  <step>
+    <context>
+  			\textbf{Getting comfortable with }\sum \\
+  			\text{Which of the following correctly expresses }\\
+  			\log y = \log f(x)?
+  			</context>
+    <tex correct="true">
+  			\log y = \frac{1}{2}\cdot \left[\sum_{i=1}^2 \log (x-i) - \sum_{j=3}^5 \log (x-j)\right]
+  			</tex>
+    <tex correct="false">
+  			\log y = \frac{1}{2}\cdot\sum_{i=1}^5\log (x-i)
+  			</tex>
+    <reason>
+  			\sum_{i=1}^n T_i = T_1 + T_2 + \cdots + T_n.\text{ It is simply a}\\
+  			\text{convenient way to write long expressions.} \\
+  			\text{That said, we showed in Step 1 that }\\
+  			\qquad \log y = \frac{1}{2}\cdot \left(\log a - \log b\right).\\
+  			\begin{align}
+  			  \therefore a &amp;= (x-1)\cdot (x-2) \\
+  			  \implies \log a &amp;= \log (x-1) + \log (x-2) \\
+  			  &amp;= \sum_{i=1}^2\log (x-i) \\
+  			  \text{And }b &amp;= (x-3)\cdot (x-4)\cdot (x-5) \\
+  			  \implies \log b &amp;= \log (x-3) + \log (x-4) + \log (x-5)  \\
+  			  &amp;= \sum_{j=3}^5\log (x-j) \\
+  			  \implies \log y &amp;= \frac{1}{2}\cdot \left(\log a - \log b\right) \\
+  			  &amp;= \frac{1}{2}\cdot \left[\sum_{i=1}^2\log (x-i) - \sum_{j=3}^5\log (x-j)\right]
+  			\end{align}
+  			</reason>
+  </step>
+  <step>
+    <context>
+  				\textbf{Right or wrong?}\text{ Given that } \\
+  				\log y = \frac{1}{2}\cdot \left[\sum_{i=1}^2\log (x-i) - \sum_{j=3}^5\log (x-j)\right] \\
+  				\text{will }\frac{dy}{dx}\text{ evaluate to the following?}
+  				</context>
+    <tex correct="true">
+  				\begin{align}
+  				\frac{dy}{dx} &amp;= \frac{y}{2}
+  				\cdot \left[\sum_{i=1}^2\frac{1}{(x-i)} - \sum_{j=3}^5\frac{1}{(x-j)}\right] \\
+  				\text{where }y &amp;= \sqrt{\dfrac{(x-1)(x-2)}{(x-3)(x-4)(x-5)}}
+  				\end{align}
+  				</tex>
+    <tex correct="false">
+  				\begin{align}
+  				\frac{dy}{dx} &amp;= \frac{1}{2}\cdot \left[\sum_{i=1}^2\frac{1}{(x-i)} - \sum_{j=3}^5\frac{1}{(x-j)}\right]
+  				\end{align}
+  				</tex>
+    <reason>
+  				\text{Use the following three facts }\\
+  				\begin{align}
+  				  \frac{d}{dx}\log (x-i) &amp;= \frac{1}{(x-i)} \\
+  				  \implies \frac{d}{dx}\sum_{i=1}^N\log (x-i) &amp;= 
+  				  \underbrace{\sum_{i=1}^N\frac{d}{dx}\log (x-i)}_{\frac{d}{dx}\text{sum } = \text{ sum of }\frac{d}{dx}} \\
+  				  &amp;= \sum_{i=1}^N\frac{1}{(x-i)} \\
+  				  \frac{d}{dx}\log y &amp; = \underbrace{\frac{1}{y}\cdot\frac{dy}{dx}}_{\text{Chain Rule}}
+  				\end{align}\\
+  				\begin{align}
+  				  \therefore \log y &amp;= \frac{1}{2}\cdot \left[\sum_{i=1}^2\log (x-i) - \sum_{j=3}^5\log (x-j)\right] \\
+  				  \implies\frac{1}{y}\frac{dy}{dx} &amp;= 
+  				  \frac{1}{2}\cdot\underbrace{\left[\sum_{i=1}^2\frac{1}{(x-i)} - \sum_{j=3}^5\frac{1}{(x-j)}\right]}_{\text{Using the above three rules}} \\
+  				  \implies \frac{dy}{dx} &amp;= 
+  				  \frac{y}{2}\cdot\left[\sum_{i=1}^2\frac{1}{(x-i)} - \sum_{j=3}^5\frac{1}{(x-j)}\right]\\
+  				  \text{where }y&amp;= \sqrt{\dfrac{(x-1)(x-2)}{(x-3)(x-4)(x-5)}}
+  				\end{align}
+  				</reason>
+  </step>
 </question>
