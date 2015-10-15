@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<question xmlns="http://www.gradians.com">
+  <statement>
+    <tex>
+		\text{The amount of pollution content added in}\\
+		\text{air in a city due to x-diesel vehicles is given} \\
+		\text{by }P(x) = 0.005x^3 + 0.02 x^2 + 30 x.\text{ Find the}\\
+		\text{marginal increase in pollution content when}\\
+		\text{3 diesel vehicles are added and write which }\\
+		\text{value is indicated in the above question.}  
+		</tex>
+  </statement>
+  <step>
+    <context>
+			\text{How many vehicles are on the road when}\\
+			\text{this marginal increase is to be calculated?}
+			</context>
+    <tex correct="true">
+			\text{3 vehicles}
+			</tex>
+    <tex correct="false">
+			\text{x vehicles}
+			</tex>
+    <reason>
+			\textbf{Don't over think! It is a 1-mark problem.}\\
+			\text{If you thought that there are x vehicles}\\
+			\text{now and }x+3\text{ vehicles later, then you}\\
+			\text{are over thinking it.} \\
+			\text{Yes, it is a badly worded problem. But the}\\
+			\text{implicit assumption is that there were no }\\
+			\text{vehicles before and now there are three.}
+			</reason>
+  </step>
+  <step>
+    <context>
+				\textbf{Marginal increase and total pollution.}\\
+				\text{Given }P(x),\text{ what will be the marginal increase}\\
+				\text{in pollution when there are already 3 vehicles on}\\
+				\text{the road? How much is the total pollution then?}
+				</context>
+    <tex correct="true">
+				\begin{align}
+				\text{Marginal increase } &amp;= 31.47 \\
+				\text{Total pollution} &amp;= 90.315
+				\end{align}
+				</tex>
+    <tex correct="false">
+				\begin{align}
+				\text{Marginal increase } &amp;= 30.42 \\
+				\text{Total pollution} &amp;= 92.89
+				\end{align}
+				</tex>
+    <reason>
+				\text{The marginal increase in pollution when }\\
+				x=3\text{ is simply,}\\
+				\begin{align}
+				  \left[\dfrac{d}{dx}P(x)\right]_{x=3} &amp;= 
+				  \left[\underbrace{0.15x^2 + 0.04x^2 + 30}_{\frac{d}{dx}P(x)}\right]_{x=3} \\
+				  &amp;= 31.47
+				\end{align} \\
+				\text{The total pollution content is simply }\\
+				P(3) = 0.005\cdot 3^3 + 0.02\cdot 3^2 + 30\cdot 3 = 90.315.
+				</reason>
+  </step>
+  <choices>
+    <tex>
+					\begin{align}
+				\text{Marginal increase } &amp;= 33.12 \\
+				\text{Total pollution} &amp;= 95.83
+				\end{align}
+					</tex>
+    <tex>
+					\begin{align}
+				\text{Marginal increase } &amp;= 31.57 \\
+				\text{Total pollution} &amp;= 93.93
+				\end{align}
+					</tex>
+    <tex>
+					\begin{align}
+				\text{Marginal increase } &amp;= 29.77 \\
+				\text{Total pollution} &amp;= 89.54
+				\end{align}
+					</tex>
+    <tex correct="true">
+					\begin{align}
+				\text{Marginal increase } &amp;= 30.42 \\
+				\text{Total pollution} &amp;= 92.89
+				\end{align}
+					</tex>
+  </choices>
+</question>
