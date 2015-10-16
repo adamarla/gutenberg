@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+	<statement>
+	  <tex></tex>
+		<image>statement.svg</image>
+	</statement>
+		<step>
+			<context>
+			•
+			</context>
+			<tex correct="true">
+			•
+			</tex>
+			<tex correct="false">
+			•
+			</tex>
+			<reason>
+			•
+			</reason>
+		</step>
+</question>
