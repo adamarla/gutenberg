@@ -16,4 +16,13 @@
 			•
 			</reason>
 		</step>
+			<step>
+				<context>
+				•
+				</context>
+				<image correct='true'>step_two.svg</image>
+				<reason>
+				•
+				</reason>
+			</step>
 </question>
