@@ -2,18 +2,16 @@
 <question xmlns='http://www.gradians.com'>
 	<statement>
 	  <tex></tex>
-		<image>statement.svg</image>
+		<image>STMT_0.svg</image>
 	</statement>
 		<step>
 			<context>
-			•
+			\textbf{First, a theoretical question}.\\
+			\text{If }y = t^3\text{ and }x = t^2\text{ then which of} \\
+			\text{the following is true?}
 			</context>
-			<tex correct="true">
-			•
-			</tex>
-			<tex correct="false">
-			•
-			</tex>
+			<image correct='true'>step_one_correct.svg</image>
+			<image>step_one_incorrect.svg</image>			
 			<reason>
 			•
 			</reason>
