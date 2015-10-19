@@ -13,7 +13,7 @@
 	</xsd:complexType>
 	<xsd:complexType name="statementType">
 	    <xsd:sequence>
-	        <xsd:element name="tex" type="tns:texType" maxOccurs="unbounded"/>
+	        <xsd:element name="tex" type="tns:texType" minOccurs="0" maxOccurs="unbounded"/>
 	        <xsd:element name="image" type="xsd:string" minOccurs="0" maxOccurs="unbounded"/>
 	    </xsd:sequence>
 	</xsd:complexType>
@@ -35,7 +35,9 @@
 	    <xsd:simpleContent>
 	        <xsd:extension base="xsd:string">
 	            <xsd:attribute name="correct" type="xsd:boolean" use="optional"/>
+	            <xsd:attribute name="image" type="xsd:boolean" use="optional"/>
 	        </xsd:extension>
 	    </xsd:simpleContent>
 	</xsd:complexType>
 </xsd:schema>
+
