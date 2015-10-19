@@ -1,27 +1,20 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
 	<statement>
-	  <tex></tex>
-		<image>STMT_0.svg</image>
+		<image>stmt-1.svg</image>
 	</statement>
 		<step>
-			<context>
-			\textbf{First, a theoretical question}.\\
-			\text{If }y = t^3\text{ and }x = t^2\text{ then which of} \\
-			\text{the following is true?}
-			</context>
-			<image correct='true'>step_one_correct.svg</image>
-			<image>step_one_incorrect.svg</image>			
-			<reason>
-			•
-			</reason>
+			<context image='true'>ctx-1.svg</context>
+			<image correct='true'>1-correct.svg</image>
+			<image>1-wrong.svg</image>			
+			<reason image='true'>reason-1.svg</reason>
 		</step>
 			<step>
 				<context>
 				•
 				</context>
-				<image correct='true'>step_two.svg</image>
-				<image>step_two_wrong.svg</image>
+				<image correct='true'>2-correct.svg</image>
+				<image>2-wrong.svg</image>
 				<reason>
 				•
 				</reason>
