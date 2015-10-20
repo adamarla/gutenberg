@@ -1,0 +1,123 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Evaluate \[ \int_0^4 \left( \vert x\vert + \vert x - 2\vert + \vert x - 4\vert\right)\cdot dx \]
+%</tex>
+  </statement>
+  <step>
+    <context>\text{We know that }\vert x \vert = \begin{cases}
+x, x\geq 0 \\
+-x, x\lt 0
+\end{cases}
+%text
+
+But what are $\vert x-2\vert$ and $\vert x-4\vert$?
+%</context>
+    <tex correct='true'>\vert x-2\vert = \begin{cases}
+x-2, x\geq 2 \\
+2-x, x\lt 2
+\end{cases}\\
+
+\vert x-4\vert = \begin{cases}
+x-4, x\geq 4 \\
+4-x, x\lt 4
+\end{cases}</tex>
+    <tex>\vert x-2\vert = \begin{cases}
+x-2, x\geq 0 \\
+2-x, x\lt 0
+\end{cases}\\
+
+\vert x-4\vert = \begin{cases}
+x-4, x\geq 0 \\
+4-x, x\lt 0
+\end{cases}</tex>
+    <reason>%text
+Here is how you should think about $\vert x-a\vert$. 
+If $x-a = z, (a\gt 0)$, then $\vert x-a\vert = \vert  z\vert$.
+Now, we know that 
+%
+\vert z\vert = \begin{cases}
+z\text{ if } z\geq 0 \\
+-z\text{ if } z\lt 0 
+\end{cases} 
+%text
+
+But as $z=x-a$, thererfore 
+%
+\vert z\vert = \vert x-a\vert = \begin{cases} 
+x-a\text{ if } x-a\geq 0 \implies x\geq a \\
+a-x\text{ if }x-a\lt 0\implies x\lt a
+\end{cases} \\
+\text{Which is why }
+\vert x-2\vert = \begin{cases}
+x-2, x\geq 2 \\
+2-x, x\lt 2
+\end{cases}\text{ and } \\
+
+\vert x-4\vert = \begin{cases}
+x-4, x\geq 4 \\
+4-x, x\lt 4
+\end{cases}</reason>
+  </step>
+  <step>
+    <context>%text
+\textbf{Right or wrong?}
+Given the definitions of $\vert x\vert,\vert x-2\vert$ and $\vert x-4\vert$,
+the table below correctly summarizes the value
+of $f(x)$ in various intervals. 
+%</context>
+    <tex correct='true'>\begin{tabular}{|c|c|c|c|c|}
+\hline
+&amp; x \lt 0 &amp; x\in(0,2) &amp; x\in (2,4) &amp; x\gt 4 \\
+\hline 
+\vert x\vert &amp; -x &amp; x &amp; x &amp; x \\
+\hline 
+\vert x-2\vert &amp; 2-x &amp; 2-x &amp; x-2 &amp; x-2 \\
+\hline 
+\vert x-4\vert &amp; 4-x &amp; 4-x &amp; 4-x &amp; x-4 \\ 
+\hline 
+f(x) &amp; 6-3x &amp; 6-x &amp; x+2 &amp; 3x -6 \\
+\hline 
+\end{tabular} \\
+
+\texttt{Note: } f(x) = \vert x\vert + \vert x-2\vert + \vert x-4\vert </tex>
+    <reason>%text
+There are three critical points in this question,
+$x =0,2$ and $4$. These are critical because the
+definition of $\vert x-a\vert$ changes at these points.
+
+With 3 critical points, we have 4 intervals to 
+consider, namely, 
+$x\lt 0, \underbrace{0\leq x\lt 2}_{x\in(0,2)}, \underbrace{2\leq x\lt 4}_{x\in (2,4)}$ and $x\gt 4$. 
+The table simply shows the values of $\vert x\vert$,
+$\vert x-2\vert$ and $\vert x-4\vert$ in these intervals. 
+
+And $f(x) = \vert x\vert + \vert x-2\vert + \vert x-4\vert$ has been
+evaluated separately in each interval.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+\textbf{Right or wrong?}
+Given $f(x) = \vert x\vert + \vert x-2\vert + \vert x-4\vert$ and its
+definition in various intervals (see Step 2),  
+\[ A = \int_0^4 f(x)\cdot dx\] will have the following value. 
+%</context>
+    <tex correct='true'>A = 20 </tex>
+    <tex>A = 16</tex>
+    <reason>\begin{align}
+A &amp;= \int_0^4 f(x)\cdot dx \\ 
+&amp;= \underbrace{\int_0^2 (6-x)\cdot dx}_{f(x) = 6-x} + 
+\underbrace{\int_2^4 (x+2)\cdot dx}_{f(x) = x+2} \\ 
+&amp;= \left[ 6x -\frac{x^2}{2}\right]_0^2 + \left[ \frac{x^2}{2} + 2x\right]_2^4 \\
+&amp;= (12 - 2) + [(8+8)-(2+4)] = 20
+\end{align} </reason>
+  </step>
+  <choices>
+    <tex correct='true'>20</tex>
+    <tex>32</tex>
+    <tex>12</tex>
+    <tex>16</tex>
+  </choices>
+</question>
