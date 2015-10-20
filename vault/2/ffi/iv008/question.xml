@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Find the Cartesian equation of the line which} \\
+\text{passes through the point }(-2, 4, 5)\text{ and} \\
+\text{is parallel to the line }
+\dfrac{x+3}{3}=\dfrac{4-y}{5}=\dfrac{z+8}{6}.</tex>
+  </statement>
+  <step>
+    <context>\textbf{A general question} \\
+L_1:\dfrac{x+3}{3}=\dfrac{4-y}{5}=\dfrac{z+8}{6},\,
+L_2:\dfrac{x}{3}=\dfrac{-y}{5}=\dfrac{z}{6} \\
+\text{Are lines $L_1$ and $L_2$ parallel?}
+</context>
+    <tex correct='true'>\text{Yes, they are parallel. }</tex>
+    <reason>\text{Generally speaking, a line L whose} \\
+\text{equation is }
+\dfrac{x-x_1}{a}=\dfrac{y-y_1}{b}=\dfrac{z-z_1}{c}, \\
+\text{whose directions ratios a,b and c, would equal} \\
+\text{any other line with the same direction ratios.}</reason>
+  </step>
+  <step>
+    <context>\textbf{Another general question} \\
+L:\dfrac{x+3}{3}=\dfrac{4-y}{5}=\dfrac{z+8}{6} \\
+\text{Does $(3, -6, 0)$ satisfy the equation } \\
+\text{of the above line?}
+</context>
+    <tex>\text{Yes, it does.}</tex>
+    <reason>L:\dfrac{x+3}{3}=\dfrac{4-y}{5}=\dfrac{z+8}{6} \\
+\text{Substituting $(3, -6, 0)$ in the above line results} \\
+\text{in }\dfrac{3+3}{3}=\dfrac{4+6}{5}=\dfrac{0+8}{6} \\
+\implies 2 = 2 = \dfrac{4}{3}. \\
+\text{Therefore, $(3, -6, 0)$ does not satisfy the} \\
+\text{equation of the line $L$.}</reason>
+  </step>
+  <step>
+    <context>\text{For a line that passes through }(-2, 4, 5) \\
+\text{and is parallel to }\dfrac{x+3}{3}=\dfrac{4-y}{5}=\dfrac{z+8}{6}, \\
+\text{is the following a valid equation?}</context>
+    <tex correct='true'>\dfrac{x-1}{3}=\dfrac{y-9}{5}=\dfrac{z-11}{6}</tex>
+    <reason>\text{For a line to be parallel to } \\
+\dfrac{x+3}{3}=\dfrac{4-y}{5}=\dfrac{z+8}{6}, \\
+\text{it must have direction ratios 3, 5 and 6}. \\
+\text{And for a line to pass through }(-2, 4, 5), \\
+\text{the point must satisfy the equation of the line.} \\
+\text{Both the conditions are satisfied by} \\
+\bf\dfrac{x-1}{3}=\dfrac{y-9}{5}=\dfrac{z-11}{6}\qquad(1).\\
+\text{It is possible however that you expected} \\
+\text{a different looking equation. For e.g. } \\
+\bf\dfrac{x+2}{3}=\dfrac{y-4}{5}=\dfrac{z-5}{6}\qquad(2), \\
+\text{This is also correct as it satisfies both conditions.} \\
+\text{Note that adding 3 to each term in equation (1)} \\
+\text{would result in (2), hence both are equivalent.}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{x-1}{3}=\dfrac{y-9}{5}=\dfrac{z-11}{6}</tex>
+    <tex>\dfrac{x+3}{3}=\dfrac{4-y}{5}=\dfrac{z+8}{6}</tex>
+    <tex>\dfrac{x-3}{3}=\dfrac{4+y}{5}=\dfrac{z-8}{6}</tex>
+    <tex>\dfrac{x+1}{3}=\dfrac{y+9}{5}=\dfrac{z+11}{6}</tex>
+  </choices>
+</question>

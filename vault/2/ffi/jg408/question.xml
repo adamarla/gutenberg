@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If }\ora{a}=\vector{x}{2}{-z}\text{ and }\ora{b}=\vector{3}{-y}{1} \\
+\text{are two equal vectors, then write the value of } \\
+x+y+z.</tex>
+  </statement>
+  <step>
+    <context>\text{If }\ora{a}=\vector{x}{2}{-z}\text{ and }\ora{b}=\vector{3}{-y}{1} \\
+\text{is the following sufficient?}</context>
+    <tex>\vert\ora{a}\vert=\vert\ora{b}\vert
+</tex>
+    <reason>\text{A vector has not only magnitude but also} \\
+\text{direction. For $\ora{a}$ and $\ora{b}$ to be equal, each of} \\
+\text{their $\hat i$, $\hat j$ and $\hat k$ components must be identical.}
+</reason>
+  </step>
+  <step>
+    <context>\begin{align}
+  \ora{a}&amp;=\vector{x}{2}{-z} \\
+  \ora{b}&amp;=\vector{3}{-y}{1} \\
+\end{align} \\
+\text{and $\ora{a}=\ora{b}$. Is the following correct?}
+</context>
+    <tex correct='true'>x=3, y=-2, z=-1</tex>
+    <tex>x=-3, y=2, z=1</tex>
+    <reason>\begin{align}
+  \ora{a}&amp;=\vector{x}{2}{-z} \\
+  \ora{b}&amp;=\vector{3}{-y}{1} \\
+\end{align} \\
+\text{Since $\ora{a}=\ora{b}$, comparing coefficients of $\hat i$, $\hat j$} \\
+\text{and $\hat k$ we get, }\bf x=3, y=-2, z=-1</reason>
+  </step>
+  <choices>
+    <tex>x=-3, y=2, z=1</tex>
+    <tex>x=3, y=2, z=1</tex>
+    <tex>x=-3, y=-2, z=-1</tex>
+    <tex correct='true'>x=3, y=-2, z=-1</tex>
+  </choices>
+</question>

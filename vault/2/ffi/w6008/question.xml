@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If a unit vector $\ora{a}$ makes an angles $\dfrac{\pi}{3}$ with} \\
+\text{$\ora{i}$, $\dfrac{\pi}{4}$ with $\hat j$ and an acute angle $\theta$ with $\hat k$,} \\
+\text{then find the value of $\theta$.}</tex>
+  </statement>
+  <step>
+    <context>\text{If a vector $\ora{v}$ makes an angle $\theta_x$ with the x-axis,} \\
+\text{what the component of $\ora{v}$ along the x-axis?}</context>
+    <tex correct='true'>\vert\ora{v}\vert\cos\theta_x</tex>
+    <tex>\text{Cannot be determined since the $\theta$ is an angle in} \\
+\text{3-d space.} 
+</tex>
+    <reason>\text{The component of a vector along a direction} \\
+\text{is given by $\cos$ of the angle it makes with} \\
+\text{that direction. Therefore, if $\ora{v}$ is a vector} \\
+\text{in 3-d space, and its angle with the x, y and z} \\
+\text{axes are $\theta_x$, $\theta_y$ and $\theta_z$ respectively then,} \\
+\begin{tabular}{|c|c|}
+  \hline
+  \text{Component along} &amp; \text{Value} \\
+  \hline
+  \text{x-axis} &amp; \vert\ora{v}\vert\cos\theta_x \\
+  \text{y-axis} &amp; \vert\ora{v}\vert\cos\theta_y \\
+  \text{z-axis} &amp; \vert\ora{v}\vert\cos\theta_z \\
+  \hline
+\end{tabular}</reason>
+  </step>
+  <step>
+    <context>\text{If $\hat{a}$ makes an angles $\dfrac{\pi}{3}$ with $\hat i$, $\dfrac{\pi}{4}$ with $\hat j$,} \\
+\text{what are $a_i$ and $a_j$, its $\hat i$ and $\hat j$ components?}
+</context>
+    <tex correct='true'>a_i=\cos\dfrac{\pi}{3}, a_j=\cos\dfrac{\pi}{4}</tex>
+    <reason>\text{Since $\hat a$ is a unit vector, therefore $|\ora{a}|$=1,} \\
+\therefore a_i=1\cdot\cos\dfrac{\pi}{3}=\cos\dfrac{\pi}{3}, \text{ and }
+a_j=\cos\dfrac{\pi}{4}.</reason>
+  </step>
+  <step>
+    <context>\text{If unit vector }\vec{a}=\vector{\cos\dfrac{\pi}{3}}{\cos\dfrac{\pi}{4}}{\cos\theta}, \\
+\text{and $\theta$ is an acute angle, then is this correct?}</context>
+    <tex correct='true'>\theta=\dfrac{\pi}{3}</tex>
+    <reason>\text{Since }\vert\ora{a}\vert=1, \\
+\begin{align}
+  &amp;\cos^2\dfrac{\pi}{3}+\cos^2\dfrac{\pi}{4}+\cos^2\theta=1 \\
+  \implies &amp;\dfrac{1}{4}+\dfrac{1}{2}+\cos^2\theta=1 \\
+  \implies &amp;\cos\theta=\dfrac{1}{2}\implies\theta=\dfrac{\pi}{3}
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex>-\dfrac{\pi}{3}</tex>
+    <tex correct='true'>\dfrac{\pi}{3}</tex>
+    <tex>\dfrac{2\pi}{3}</tex>
+    <tex>\dfrac{\pi}{4}</tex>
+  </choices>
+</question>
