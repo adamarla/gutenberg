@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Show that the function f in }
+A=\mathbb{R}-\left\{\dfrac{2}{3}\right\} \\
+\text{defined as } f(x)=\dfrac{4x+3}{6x-4}
+\text{ is one-one and onto.} \\
+\text{Hence find }f^{-1}.</tex>
+  </statement>
+  <step>
+    <context>\text{If f(x) is one-one, what does }f(x_1)=f(x_2)\text{ imply?}</context>
+    <tex correct='true'>x_1=x_2</tex>
+    <tex>x_1 \gt 0,\, x_2 \gt 0</tex>
+    <reason>\text{The definition of a one-one (injective) function } \\
+\text{is that for $f:X\rightarrow Y$, for every $x_1, x_2\in X$,} \\
+f(x_1)=f(x_2) \implies x_1=x_2.</reason>
+  </step>
+  <step>
+    <context>\text{For }f(x)=\dfrac{4x+3}{6x-4}\text{ if }
+x_1, x_2 \in \mathbb{R}-\left\{\dfrac{3}{2}\right\}, \\
+\text{does }f(x_1)=f(x_2) \text{ imply the following?}
+</context>
+    <tex correct='true'>x_1=x_2</tex>
+    <tex>x_1 \gt 0,\, x_2 \gt 0</tex>
+    <reason>\begin{align}
+    &amp;\dfrac{4x_1+3}{6x_1-4}=\dfrac{4x_2+3}{6x_2-4} \\
+    \implies &amp;\left(4x_1+3\right)\left(6x_2-4\right)=
+    \left(4x_2+3\right)\left(6x_1-4\right) \\
+    \implies &amp;24x_1x_2-16x_1+18x_2-12= \\
+    &amp;\quad\quad24x_1x_2-16x_2+18x_1-12 \\
+    \implies &amp;-16x_1+18x_2=-16x_2+18x_1 \\
+    \implies &amp;{\bf x_1=x_2}
+\end{align} \\
+\text{Therefore, f(x) is one-one}</reason>
+  </step>
+  <step>
+    <context>\text{If }f(x)=\dfrac{4x+3}{6x-4}=y, \\
+\text{is the following correct?}
+</context>
+    <tex correct='true'>g(y)=x=\dfrac{4y+3}{6y-4}</tex>
+    <reason>\begin{align}
+    y=\dfrac{4x+3}{6x-4}&amp;\implies \left(6x-4\right)y=4x+3 \\
+    &amp;\implies {\bf x=\dfrac{4y+3}{6y-4}}=g(y)
+\end{align} </reason>
+  </step>
+  <step>
+    <context>\text{If }f(x)=\dfrac{4x+3}{6x-4}\text{ is onto, }
+\text{what is }f\left(\dfrac{4y+3}{6y-4}\right)?</context>
+    <tex correct='true'>f\left(\dfrac{4y+3}{6y-4}\right)=y</tex>
+    <tex>f\left(\dfrac{4y+3}{6y-4}\right)=0</tex>
+    <reason>\text{If f(x) is onto, it means for any real number} \\
+y \in \mathbb{R}, \text{there exists }
+\dfrac{4y+3}{6y-4}\text{ in }\mathbb{R}-\left\{\dfrac{3}{2}\right\}  \\
+\text{such that }f\left(\dfrac{4y+3}{6y-4}\right)=y. \\
+\begin{align}
+  f\left(\dfrac{4y+3}{6y-4}\right)  &amp;=
+    \dfrac{4\left(\dfrac{4y+3}{6y-4}\right)+3}
+      {6\left(\dfrac{4y+3}{6y-4}\right)-4} \\
+  &amp;=\dfrac{16y+12+18y-12}{24y+18-24y+16}=y    
+\end{align} \\
+\text{Therefore, f(x) is both one-one and onto and} \\
+{\bf f^{-1}(x)=g(x)=\dfrac{4x+3}{6x-4}}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{4x-3}{6x+4}</tex>
+    <tex correct='true'>\dfrac{4x+3}{6x-4}</tex>
+    <tex>\dfrac{6x-4}{4x+3}</tex>
+    <tex>\dfrac{6x+4}{4x-3}</tex>
+  </choices>
+</question>

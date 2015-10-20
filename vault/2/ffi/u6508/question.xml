@@ -29,16 +29,9 @@
 </context>
     <tex>\text{Yes, this is correct. The corresponding} \\
 \text{terms have been added.}</tex>
-    <reason>\left[\begin{array}{cc}
-  1 &amp; 2 \\
-  3 &amp; 4
-\end{array}\right] \text{ and }
-\left[\begin{array}{ccc}
-  4 &amp; 3 &amp; 1 \\
-  2 &amp; 1 &amp; 1
-\end{array}\right] \\
-\text{cannot be added since they are not} \\
-\text{of the same order (rows x columns)}</reason>
+    <reason>\text{Only matrices of the same order} \\
+\text{(rows x columns) can be added. The} \\
+\text{operation shown is not permissible.}</reason>
   </step>
   <step>
     <context>\text{If }
@@ -56,7 +49,9 @@
   8 &amp; -3 &amp; 5 \\
   -2 &amp; -3 &amp; -6
 \end{array}\right]</tex>
-    <reason></reason>
+    <reason>\text{To add two matrices that have the same} \\
+\text{order (rows x columns), simply add their} \\
+\text{corresponding terms.}</reason>
   </step>
   <choices>
     <tex correct='true'>A=\left[\begin{array}{ccc}

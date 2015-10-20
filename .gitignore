@@ -11,6 +11,7 @@ vault/*/*/*/CTX_*.svg
 vault/*/*/*/CRT_*.svg
 vault/*/*/*/WRNG_*.svg
 vault/*/*/*/RSN_*.svg
+vault/*/*/*/PREVIEW.svg
 
 # bundle request marker
 vault/*/*/*/bundle.xml

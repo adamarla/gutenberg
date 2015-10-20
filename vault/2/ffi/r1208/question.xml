@@ -1,0 +1,32 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Using properties of determinants, prove} \\
+\text{the following:} \\
+\begin{align}
+  \left\vert\begin{array}{ccc}
+    1 &amp; x &amp; x^2 \\
+    x^2 &amp; 1 &amp; x \\
+    x &amp; x^2 &amp; 1
+  \end{array}\right\vert=
+  \left(1-x^3\right)^2
+\end{align}</tex>
+  </statement>
+  <step>
+    <context>\text{What is the objective behind using properties} \\
+3x^2+97\text{ or }\sin ^2\theta\text{ which is $(1+1)^3$} \\
+\text{of determinants to reduce a determinant?} \\
+%text
+What is the objective behind using properties
+$3x^2+97$ or $\sin ^2\theta$ which is $(1+1)^3$
+of determinants to reduce a determinant?
+%
+</context>
+    <tex>\text{Fun really. Just move numbers around.}</tex>
+    <reason>\text{By using properties of determinants,}\\
+\text{calculations to find the value of the}\\
+\text{determinant can be simplified. For instance}\\
+\text{getting at least two zeros in a row or column} \\
+\text{can reduce a $3\times 3$ determinant to a $2\times 2$.}</reason>
+  </step>
+</question>
