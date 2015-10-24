@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Prove that:
+%
+\tan^{-1}\left(\dfrac{1}{2}\right)+\tan^{-1}\left(\dfrac{1}{5}\right)
+  +\tan^{-1}\left(\dfrac{1}{8}\right)=\dfrac{\pi}{4}</tex>
+  </statement>
+  <step>
+    <context>%text
+Are these two terms equivalent?
+%
+\tan^{-1}\left(\dfrac{1}{2}\right), \cot^{-1}\left(\dfrac{2}{1}\right)
+</context>
+    <tex correct='true'>%text
+Yes, they are equivalent.
+%
+\tan^{-1}\left(\dfrac{1}{2}\right)=\cot^{-1}\left(\dfrac{2}{1}\right)
+</tex>
+    <tex>%text
+No, they are inverse of each another, i.e.
+%
+\tan^{-1}\left(\dfrac{1}{2}\right)=\dfrac{1}{\cot^{-1}\dfrac{1}{2}}</tex>
+    <reason>%text
+Inverse trigonometric functions represent
+angles and in fact all of the following are 
+equivalent:
+%
+\tan^{-1}\dfrac{1}{2}=\cot^{-1}2=\sin^{-1}\dfrac{1}{\sqrt{5}}
+  =\cos^{-1}\dfrac{2}{\sqrt{5}} \\
+%text
+since they reference the same{\bf angle} of a
+right-angled triangle whose sides are
+%
+\begin{align}
+\text{Adjacent side}&amp;=\sqrt{5} \\
+\text{Opposite side}&amp;=1 \\
+\text{Hypotenuse}   &amp;=2
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>
+%text
+If $\tan^{-1}\dfrac{1}{2}=A$ and $\tan^{-1}\dfrac{1}{5}=B$ then
+is the following correct?
+%
+</context>
+    <tex correct='true'>A+B=\tan^{-1}\dfrac{7}{9}</tex>
+    <tex>A+B=\tan^{-1}\dfrac{7}{10}</tex>
+    <reason>\tan^{-1}\dfrac{1}{2}=A\implies \tan A=\dfrac{1}{2} \\
+\tan^{-1}\dfrac{1}{5}=B\implies \tan B=\dfrac{1}{5} \\
+\begin{align}
+  \text{Now }\tan (A+B)&amp;=\dfrac{\tan A+ \tan B}{1-\tan A\tan B} \\
+  \implies A+B&amp;=\tan^{-1}\left(\dfrac{\frac{1}{2}+\frac{1}{5}}
+    {1-\frac{1}{2}\frac{1}{5}}\right) \\
+    \implies A+B&amp;=\tan^{-1}\dfrac{7}{9}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+Based on the previous step if
+%
+\tan^{-1}\left(\dfrac{1}{2}\right)+\tan^{-1}\left(\dfrac{1}{5}\right)
+  =\tan^{-1}\left(\dfrac{7}{9}\right), \\
+%text
+then is the following correct?
+%  </context>
+    <tex correct='true'>\begin{align}
+  \tan^{-1}\left(\dfrac{7}{9}\right)+\tan^{-1}\left(\dfrac{1}{8}\right)
+    &amp;=\tan^{-1}\left(1\right) \\
+  &amp;=\dfrac{\pi}{4}
+\end{align}
+</tex>
+    <reason>\begin{align}
+  \tan^{-1}\left(\dfrac{7}{9}\right)+\tan^{-1}\left(\dfrac{1}{8}\right)
+    &amp;=\tan^{-1}\left(\frac{\frac{7}{9}+\frac{1}{8}}
+      {1-\frac{7}{9}\frac{1}{8}}\right) \\
+    &amp;=\tan^{-1}\left(\dfrac{1}{1}\right)=\dfrac{\pi}{4}
+\end{align}
+  </reason>
+  </step>
+</question>

@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the value of the following:
+%
+\tan \dfrac{1}{2}\left[\sin^{-1}\dfrac{2x}{1+x^2}+
+  \cos^{-1}\dfrac{1-y^2}{1+y^2}\right] \\
+%text
+where $|x|&lt;1$, $y&gt;0$ and $xy&lt;1$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+Are these two terms equivalent?
+%
+\sin^{-1}\dfrac{2x}{1+x^2}, \cos^{-1}\dfrac{1-x^2}{1+x^2}</context>
+    <tex correct='true'>%text
+Yes, they are equivalent.
+%</tex>
+    <reason>%text
+Inverse trigonometric functions represent
+angles and in fact all of the following are 
+equivalent:
+%
+\sin^{-1}\dfrac{2x}{1+x^2}=\cos^{-1}\dfrac{1-x^2}{1+x^2}
+=\tan^{-1}\dfrac{2x}{1-x^2} \\
+%text
+since they reference the same{\bf angle} of a
+right-angled triangle whose sides are
+%
+\begin{align}
+  \text{Adjacent side}&amp;=1-x^2 \\
+  \text{Opposite side}&amp;=2x \\
+  \text{Hypotenuse}   &amp;=1+x^2
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>\text{If }\sin^{-1}\dfrac{2x}{1+x^2}=A
+\text{ and }\cos^{-1}\dfrac{1-y^2}{1+y^2}=B \\
+%text
+then is the following correct?
+%
+</context>
+    <tex correct='true'>\tan\dfrac{A}{2}=x, \tan\dfrac{B}{2}=y</tex>
+    <reason>\sin^{-1}\dfrac{2x}{1+x^2}=A
+  \implies\tan^{-1}\dfrac{2x}{1-x^2}= A \\
+\begin{align}
+  \therefore&amp;\dfrac{2x}{1-x^2}=\tan A \\
+  \implies&amp;\dfrac{2x}{1-x^2}=\tan 2\dfrac{A}{2} \\
+  \implies&amp;\dfrac{2x}{1-x^2}=
+    \dfrac{2\tan\frac{A}{2}}{1-\tan^2\frac{A}{2}} \\
+  \implies&amp;{\bf x=\tan\dfrac{A}{2}}
+\end{align} \\
+%text
+Similarly,
+%
+\cos^{-1}\dfrac{1-y^2}{1+y^2}=B
+  \implies \tan^{-1}\dfrac{2y}{1-y^2}=B \\
+\begin{align}
+  \therefore&amp;\dfrac{2y}{1-y^2}=
+    \dfrac{2\tan\frac{B}{2}}{1-\tan^2\frac{B}{2}} \\
+  \implies&amp;{\bf y=\tan\dfrac{B}{2}}
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>%text
+Using these results from the previous step
+%
+\sin^{-1}\dfrac{2x}{1+x^2}=A\implies \tan\dfrac{A}{2}=x \\
+\cos^{-1}\dfrac{1-y^2}{1+y^2}=B \implies \tan\dfrac{B}{2}=y \\
+
+%text
+is the following expansion correct?
+%</context>
+    <tex correct='true'>\tan \dfrac{1}{2}\left[A+B\right]=\dfrac{x+y}{1-xy}</tex>
+    <reason>\begin{align}
+  \tan\dfrac{1}{2}\left[A+B\right]
+    &amp;=\tan \left(\dfrac{A}{2}+\dfrac{B}{2}\right) \\
+    &amp;=\dfrac{\tan \dfrac{A}{2}+\tan\dfrac{B}{2}}
+      {1-\tan\dfrac{A}{2}\tan\dfrac{B}{2}} \\
+    &amp;=\dfrac{x+y}{1-xy}
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>1</tex>
+    <tex>\dfrac{1+x}{1+y}</tex>
+    <tex>0</tex>
+    <tex correct='true'>\dfrac{x+y}{1-xy}</tex>
+  </choices>
+</question>
