@@ -1,0 +1,95 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+If $\ora{a}$ and $\ora{b}$ are two vectors such that
+$\vert \ora{a}+\ora{b}\vert=\vert\ora{a}\vert$, then prove that vector
+$2\ora{a}+\ora{b}$ is perpendicular to vector $\ora{b}$.
+%</tex>
+  </statement>
+  <step>
+    <context>\begin{align}
+  \ora{a}&amp;=\vector{x_a}{y_a}{z_a} \\
+  \ora{b}&amp;=\vector{x_b}{y_b}{z_b}
+\end{align} \\
+%text
+What is $\vert\ora{a}+\ora{b}\vert$?
+%
+</context>
+    <tex>\vert\ora{a}+\ora{b}\vert
+  =(x_a+x_b)+(y_a+y_b)+(z_a+z_b)</tex>
+    <reason>\begin{align}
+  \text{If }\ora{a}&amp;=\vector{x_a}{y_a}{z_a} \\
+  \text{and }\ora{b}&amp;=\vector{x_b}{y_b}{z_b}\text{ then}
+\end{align} \\
+\ora{a}+\ora{b}=
+  \vector{(x_a+x_b)}{(y_a+y_b)}{(z_a+z_b)} \\
+\text{Note: $\ora{a}+\ora{b}$ is a vector, therefore,} \\
+\vert\ora{a}+\ora{b}\vert=
+  \sqrt{(x_a+x_b)^2+(y_a+y_b)^2+(z_a+z_b)^2}
+</reason>
+  </step>
+  <step>
+    <context>\begin{align}
+  \ora{a}&amp;=\vector{x_a}{y_a}{z_a} \\
+  \ora{b}&amp;=\vector{x_b}{y_b}{z_b},
+\end{align} \\
+%text
+If $|\ora{a}+\ora{b}|=|\ora{a}|$, and $|\ora{b}|\neq 0$ then 
+is the following correct?
+%
+</context>
+    <tex correct='true'>x_b^2+y_b^2+z_b^2+2(x_ax_b+y_ay_b+z_az_b)=0</tex>
+    <reason>\vert\ora{a}+\ora{b}\vert=
+  \sqrt{(x_a+x_b)^2+(y_a+y_b)^2+(z_a+z_b)^2} \\
+\vert\ora{a}\vert=\sqrt{x_a^2+y_a^2+z_a^2} \\
+\begin{align}
+  \therefore&amp;|\ora{a}+\ora{b}|=|\ora{a}| \\
+  \implies &amp;(x_a+x_b)^2+(y_a+y_b)^2+(z_a+z_b)^2 \\
+  &amp;\qquad\qquad\qquad\qquad\qquad=x_a^2+y_a^2+z_a^2 \\
+  \implies&amp;x_b^2+2x_ax_b+y_b^2+2y_ay_b+z_b^2+2z_az_b=0 \\
+  \implies&amp; x_b^2+y_b^2+z_b^2+2(x_ax_b+y_ay_b+z_az_b)=0
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+If $\ora{a}\perp \ora{b}$, is the following true?
+%</context>
+    <tex correct='true'>\ora{a}\cdot \ora{b}=0</tex>
+    <tex>\ora{a}-\ora{b}=0</tex>
+    <reason>%text
+If two vectors are perpendicular, their dot
+product is zero. Alternatively, if two vectors
+are parallel, their cross product is zero.
+%</reason>
+  </step>
+  <step>
+    <context>\begin{align}
+  \ora{a}&amp;=\vector{x_a}{y_a}{z_a} \\
+  \ora{b}&amp;=\vector{x_b}{y_b}{z_b}
+\end{align} \\
+%text
+If $|2\ora{a}+\ora{b}|$ is $\perp$ to $\ora{b}$ then is the
+following correct?
+%
+</context>
+    <tex correct='true'>x_b^2+y_b^2+z_b^2+2(x_ax_b+y_ay_b+z_az_b)=0</tex>
+    <reason>\begin{align}
+  \ora{a}&amp;=\vector{x_a}{y_a}{z_a} \\
+  \ora{b}&amp;=\vector{x_b}{y_b}{z_b}
+\end{align} \\
+%text
+$2 \ora{a}+\ora{b}$ is $\perp$ to $\ora{b}$, therefore,
+%
+\begin{align}
+  &amp;(2 \ora{a}+\ora{b})\cdot \ora{b}=0 \\
+  \implies&amp;2\ora{a}\cdot\ora{b}+\ora{b}\cdot\ora{b}=0 \\
+  \implies&amp;2(x_ax_b+y_ay_b+z_az_b)+x_b^2+y_b^2+z_b^2=0
+\end{align} \\
+%text
+Which matches the result derived from 
+condition $|\ora{a}+\ora{b}|=|\ora{a}|$ given in Step 2,
+thus proving the original problem.
+%</reason>
+  </step>
+</question>
