@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the vector equation of the plane which
+contains the line of intersection of planes
+%
+\ora{r}\cdot(\vector{1}{2}{3})-4=0 \\
+\ora{r}\cdot(\vector{2}{1}{-1})+5=0 \\
+%text
+and which is perpendicular to the plane
+%
+\ora{r}\cdot(\vector{5}{3}{-6})+8=0</tex>
+  </statement>
+  <step>
+    <context>%text
+Does the following equation represent the 
+(family of) planes that pass through the line 
+of intersection of $\ora{r}\cdot(\vector{1}{2}{3})-4$ and
+$\ora{r}\cdot(\vector{2}{1}{-1})+5=0$?
+%
+</context>
+    <tex correct='true'>{\small\ora{r}\cdot\left(\vector{(1+2\lambda)}{(2+\lambda)}{(3-\lambda)}\right)
+  =4-\lambda 5} \\
+\text{where }\lambda \in \mathbb{R}.</tex>
+    <tex>\ora{r}\cdot(\vector{3}{3}{2})=-1, \\</tex>
+    <reason>%text
+If $\ora{r}\cdot \ora{n_1}=d_1$ and $\ora{r}\cdot\ora{n_2}=d_2$ are intersecting
+planes,{\bf the family of planes} that they are part
+of is given by,
+%
+\begin{align}
+  &amp;\left(\ora{r}\cdot \ora{n_1}-d_1\right)+\lambda(\ora{r}\cdot \ora{n_2}-d_2)=0 \\
+  \implies&amp;\ora{r}\cdot(\ora{n_1}+\lambda\ora{n_2})=d_1+\lambda d_2
+\end{align} \\
+%text
+Each distinct value of $\lambda$ represents a different
+plane passing through the line of intersection of 
+the two planes. 
+Therefore, for the given planes, the equation
+would be,
+%
+\begin{align}
+  \ora{r}\cdot(\vector{1}{2}{3}+\lambda(\vector{2}{1}{-1}))=4-\lambda 5 \\
+  \ora{r}\cdot(\vector{(1+2\lambda)}{(2+\lambda)}{(3-\lambda)})=4-\lambda 5 
+\end{align}
+
+</reason>
+  </step>
+  <step>
+    <context>{\small\ora{r}\cdot\left(\vector{(1+2\lambda)}{(2+\lambda)}{(3-\lambda)}\right)
+  =4-\lambda 5} \\
+%text
+For what value of $\lambda$ would the plane 
+represented by the above equation be 
+perpendicular to $\ora{r}\cdot(\vector{5}{3}{-6})=-8$?
+%
+</context>
+    <tex correct='true'>\lambda=\dfrac{7}{19}</tex>
+    <reason>%text
+If two planes $\ora{r}\cdot\ora{n_1}=d_1$ and $\ora{r}\cdot\ora{n_2}=d_2$ are 
+perpendicular, their normals, $\ora{n_1}$ and $\ora{n_2}$ are 
+also perpendicular. Therefore, in this problem,
+%
+\begin{align}
+  &amp;{\small \left(\vector{(1+2\lambda)}{(2+\lambda)}{(3-\lambda)}\right)\cdot
+    \left(\vector{5}{3}{-6}\right)=0} \\
+  &amp;\implies 5(1+2\lambda)+3(2+\lambda)-6(3-\lambda)=0 \\
+  &amp;\implies \lambda=\dfrac{7}{19}
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>%text
+If $\lambda=\dfrac{7}{19}$, is the final equation of plane
+%
+{\small\ora{r}\cdot\left(\vector{(1+2\lambda)}{(2+\lambda)}{(3-\lambda)}\right)=4-\lambda 5} \\
+%text
+the following?
+%</context>
+    <tex correct='true'>\ora{r}\cdot(\vector{33}{45}{50})=41</tex>
+    <reason>%text
+A simple substitution gives the final answer,
+%
+\begin{align}
+  &amp;{\small\ora{r}\cdot\left(\vector{(1+2\lambda)}{(2+\lambda)}{(3-\lambda)}\right)=4-\lambda 5} \\
+  &amp;{\small\ora{r}\cdot
+    \vector{(1+2\cdot\dfrac{7}{19})}{(2+\dfrac{7}{19})}{(3-\dfrac{7}{19})}
+    =4-5\cdot\dfrac{7}{19}} \\
+  &amp;\implies\ora{r}\cdot(\vector{33}{45}{50})=41.  
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex>\ora{r}\cdot(\vector{33}{45}{50})=0</tex>
+    <tex correct='true'>\ora{r}\cdot(\vector{33}{45}{50})=41</tex>
+    <tex>\ora{r}\cdot(\vector{5}{3}{-6})=8</tex>
+    <tex>\ora{r}\cdot(\vector{5}{3}{-6})=-8</tex>
+  </choices>
+</question>
