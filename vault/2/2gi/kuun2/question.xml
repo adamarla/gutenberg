@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the coordinate of the point, where 
+the line $\dfrac{x-2}{3}=\dfrac{y+1}{4}=\dfrac{z-2}{2}$ intersects
+the plane $x-y+z-5=0$. Also find the 
+angle between the line and the plane
+%</tex>
+  </statement>
+  <step>
+    <context>\begin{align}
+  \dfrac{x-2}{3}=\dfrac{y+1}{4}&amp;=\dfrac{z-2}{2} \\
+  x-y+z-5&amp;=0 
+\end{align} \\
+%text
+Are the two equations above sufficient to find
+the intersection point between the line and
+the plane? If so what is it?
+%
+</context>
+    <tex>%text
+No, they are not. We need three equations
+to find three variables (x, y and z), which 
+form the coordinates of the intersection point.
+%
+</tex>
+    <reason>\dfrac{x-2}{3}=\dfrac{y+1}{4}=\dfrac{z-2}{2} \\
+%text
+The above equation for a line is actually 
+two distinct equations. 
+%
+\begin{align}
+    \qquad\dfrac{x-2}{3}=\dfrac{y+1}{4} \text{ and } 
+      \dfrac{y+1}{4}=\dfrac{z-2}{2}. 
+\end{align} \\
+%text
+Therefore, the two equations above along
+with the equation of the plane $x-y+z=5$
+are sufficient to solve for x, y and z.
+%
+</reason>
+  </step>
+  <step>
+    <context>\begin{align}
+  \dfrac{x-2}{3}=\dfrac{y+1}{4}&amp;=\dfrac{z-2}{2} \\
+  x-y+z-5&amp;=0 
+\end{align} \\
+%text
+What is the point of intersection of the
+line and plane shown above? 
+%
+</context>
+    <tex correct='true'>(2,-1,2)</tex>
+    <reason>%text
+To find the intersection points we can
+write x, y and z in terms of a variable k
+and substitute k into the equation of 
+the plane.
+%
+\dfrac{x-2}{3}=\dfrac{y+1}{4}=\dfrac{z-2}{2}=k \\
+\begin{align}
+  &amp;(3k+2)-(4k-1)+(2k+2)-5=0 \\
+  \implies&amp; k=0. \\
+  \implies&amp;x=2, y=-1, z=2 
+\end{align} \\
+%text
+The line and plane intersect at $(2,-1,2)$.
+%
+</reason>
+  </step>
+  <step>
+    <context>%text
+If $(2,-1,2)$ lies on plane the $x-y+z=5$, 
+what is the equation of the normal to the 
+plane at this point?
+%
+</context>
+    <tex correct='true'>\dfrac{x-2}{1}=\dfrac{y+1}{-1}=\dfrac{z-2}{1}</tex>
+    <tex>\dfrac{x-2}{2}=\dfrac{y+1}{1}=\dfrac{z-2}{2}</tex>
+    <reason>%text
+For a plane $ax+by+cz+d=0$, a, b 
+and c are the direction ratios of its normal. 
+Therefore, equation of normal is
+%
+\dfrac{x-2}{1}=\dfrac{y+1}{-1}=\dfrac{z-2}{1}
+</reason>
+  </step>
+  <step>
+    <context>%text
+What is the angle between given line
+$\dfrac{x-2}{3}=\dfrac{y+1}{4}=\dfrac{z-2}{2}$
+and the normal to the plane $x-y+z=5$
+$\dfrac{x-2}{1}=\dfrac{y+1}{-1}=\dfrac{z-2}{1}$?
+%
+</context>
+    <tex correct='true'>\cos^{-1}\dfrac{1}{\sqrt{87}}</tex>
+    <reason>%text
+If $\theta$ is the angle between two lines with
+direction ratios $a_1$, $b_1$, $c_1$ and $a_2$, $b_2$, $c_2$
+then,
+%
+\cos\theta=\left\vert\dfrac{a_1a_2+b_1b_2+c_1c_2}
+  {\sqrt{a_1^2+b_1^2+c_1^2}\sqrt{a_2^2+b_2^2+c_2^2}}\right\vert \\
+\text{Therefore,} \\
+\begin{align}
+  \cos\theta&amp;=\dfrac{3\times 1+4\times -1+2\times 1}
+    {\sqrt{9+16+4}\sqrt{1+1+1}} \\
+  \theta&amp;=\cos^{-1}\left(\dfrac{1}{\sqrt{87}}\right)  
+\end{align}  </reason>
+  </step>
+  <step>
+    <context>%text
+If $\cos^{-1}\frac{1}{\sqrt{87}}$ is the angle between the line 
+and the normal to the plane, what is the 
+angle between that same line and the 
+plane's surface?
+%
+</context>
+    <tex correct='true'>\sin^{-1}\frac{1}{\sqrt{87}}</tex>
+    <tex>\sin^{-1}\sqrt{\frac{86}{87}}</tex>
+    <reason>%text
+The angle between a plane and its normal is
+$\pi/2$ (radians). Therefore, if the angle between
+a line and the normal is $\theta$, the angle between
+that same line and the plane's surface will be
+its complement.
+%
+\dfrac{\pi}{2}-\cos^{-1}\dfrac{1}{\sqrt{87}}=
+  \cos^{-1}\sqrt{\dfrac{86}{87}}=\sin^{-1}\dfrac{1}{\sqrt{87}}</reason>
+  </step>
+</question>
