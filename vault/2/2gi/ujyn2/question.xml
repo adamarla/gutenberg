@@ -1,0 +1,79 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the value of $x+y$ from the following
+equation:
+%
+2 \left[\begin{array}{cc}
+  x &amp; 5 \\ 7 &amp; y-3
+\end{array}\right]+
+\left[\begin{array}{cc}
+  3 &amp; -4 \\ 1 &amp; 2
+\end{array}\right]=
+\left[\begin{array}{cc}
+  7 &amp; 6 \\ 15 &amp; 14
+\end{array}\right]</tex>
+  </statement>
+  <step>
+    <context>\text{Can }2 \left[\begin{array}{cc}
+  x &amp; 5 \\ 7 &amp; y-3
+\end{array}\right] \\
+%text
+be rewritten as shown below?
+%
+</context>
+    <tex>\left[\begin{array}{cc}
+  2x &amp; 10 \\ 7 &amp; y-3
+\end{array}\right]</tex>
+    <reason>%text
+Whenwe multiple a matrix by a constant 'k', 
+each entry of the matrix gets multiplied by 'k'.
+Therefore in our case,
+%
+2 \left[\begin{array}{cc}
+  x &amp; 5 \\ 7 &amp; y-3
+\end{array}\right]=
+\left[\begin{array}{cc}
+  2x &amp; 10 \\ 14 &amp; 2y-6
+\end{array}\right]</reason>
+  </step>
+  <step>
+    <context>\left[\begin{array}{cc}  
+  2x &amp; 10 \\ 14 &amp; 2y-6
+\end{array}\right]+
+\left[\begin{array}{cc}
+  3 &amp; -4 \\ 1 &amp; 2
+\end{array}\right]=
+\left[\begin{array}{cc}
+  7 &amp; 6 \\ 15 &amp; 14
+\end{array}\right] \\
+%text
+Will the following equations determine $x$ and $y$?
+%</context>
+    <tex correct='true'>2x+3=7 \\
+2y-6+2=14</tex>
+    <tex>2x+3+11=7 \\
+10+2y-6+2=14</tex>
+    <reason>%text
+Only matrices of the same order (rows and 
+columns) may be added. We add matrices by
+simply adding the corresponding elements of
+two or more matrices.
+Two matrices are considered equal iff they
+have the same order and all of their elements 
+are identical. Therefore,
+%
+\begin{align}
+  2x+3&amp;=7 \\
+  2y-6+2&amp;=14
+\end{align} \implies
+x+y=2+9=11</reason>
+  </step>
+  <choices>
+    <tex>9</tex>
+    <tex correct='true'>11</tex>
+    <tex>12</tex>
+    <tex>14</tex>
+  </choices>
+</question>

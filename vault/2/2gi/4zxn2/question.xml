@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the principal value of 
+$\tan^{-1}\sqrt{3}-\sec^{-1}(-2)$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+The following is the principal value
+of $\tan^{-1}\sqrt{3}$.
+%</context>
+    <tex correct='true'>\dfrac{\pi}{3}</tex>
+    <tex>\dfrac{4\pi}{3}</tex>
+    <reason>%text
+The principal value of $y=\tan^{-1}(x)$ lies in
+the open interval $\left(-\dfrac{\pi}{2},\dfrac{\pi}{2}\right)$. And $\tan^{-1}\sqrt{3}$
+is an angle whose $\tan$ is $\sqrt{3}$. Therefore, 
+%
+\tan^{-1}\sqrt{3}=\dfrac{\pi}{3}
+</reason>
+  </step>
+  <step>
+    <context>%text
+The following is the principal value
+of $\sec^{-1}(-2)$.
+%</context>
+    <tex correct='true'>\dfrac{2\pi}{3}</tex>
+    <tex>-\dfrac{\pi}{3}</tex>
+    <reason>%text
+The principal value of $y=\sec^{-1}(x)$ lies in
+the interval $\left[0,\dfrac{\pi}{2}\right)\cup\left(\dfrac{\pi}{2}, \pi\right]$. And $\sec^{-1}(-2)$
+is an angle whose $\sec$ is $-2$. Therefore, 
+%
+\sec^{-1}(-2)=\dfrac{2\pi}{3}
+</reason>
+  </step>
+  <step>
+    <context>%text
+Bonus points: $\cos^{-1}\left(\cos\dfrac{2\pi}{3}\right)=\dfrac{2\pi}{3}$.
+What is $\sin^{-1}\left(\sin\dfrac{2\pi}{3}\right)$?
+%</context>
+    <tex>\dfrac{2\pi}{3}</tex>
+    <reason>\sin^{-1}\left(\sin\dfrac{2\pi}{3}\right)
+  =\sin^{-1}\left(\sin\dfrac{\pi}{3}\right)=\dfrac{\pi}{3} \\
+%text
+The principal value of $\sin^{-1}\in \left[-\frac{\pi}{2},\frac{\pi}{2}\right]$
+whereas the principal value of $\cos^{-1}\in \left[0, \pi\right]$
+%</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{2\pi}{3}</tex>
+    <tex>\dfrac{\pi}{6}</tex>
+    <tex correct='true'>-\dfrac{\pi}{3}</tex>
+    <tex>-\dfrac{2\pi}{3}</tex>
+  </choices>
+</question>

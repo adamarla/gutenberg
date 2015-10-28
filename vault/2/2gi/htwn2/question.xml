@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If }A^T=
+\left[\begin{array}{rr}
+  3 &amp; 4 \\ -1 &amp; 2 \\ 0 &amp; 1
+\end{array}\right]\text{and }B=
+\left[\begin{array}{rrr}
+  -1 &amp; 2 &amp; 1 \\ 1 &amp; 2 &amp; 3
+\end{array}\right], \\
+%text
+then find $A^T-B^T$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+In the given problem, is it possible to 
+compute $A^T-B$?
+%</context>
+    <tex>%text
+Yes, $A^T-B$ can be computed.
+%</tex>
+    <reason>%text
+Only matrices of the same order (rows $\times$
+columns) can be added or subtracted. 
+Therefore $B (2\times 3)$ cannot be subtracted
+from $A^T (3\times 2)$
+%</reason>
+  </step>
+  <step>
+    <context>B=\left[\begin{array}{rrr}
+  -1 &amp; 2 &amp; 1 \\ 1 &amp; 2 &amp; 3
+\end{array}\right] \\
+%text
+Is the following correct?
+%
+
+</context>
+    <tex correct='true'>B^T=\left[\begin{array}{rr}
+  -1 &amp; 1 \\ 2 &amp; 2 \\ 1 &amp; 3
+\end{array}\right]</tex>
+    <reason>%text
+In taking transpose of a matrix, we change
+the $i^{th}$ row to the $i^{th}$ column for every row
+in the matrix.
+%
+\begin{align}
+  A^T-B^T &amp;=
+    \left[\begin{array}{rr}
+      3 &amp; 4 \\ -1 &amp; 2 \\ 0 &amp; 1
+    \end{array}\right]-
+    \left[\begin{array}{rr}
+      -1 &amp; 1 \\ 2 &amp; 2 \\ 1 &amp; 3
+    \end{array}\right] \\
+    &amp;=\left[\begin{array}{rr}
+      4 &amp; 3 \\ -3 &amp; 0 \\ -1 &amp; -2
+    \end{array}\right]
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>\left[\begin{array}{rr}
+  2 &amp; 5 \\ 1 &amp; 4 \\ 1 &amp; 4
+\end{array}\right]</tex>
+    <tex>\left[\begin{array}{rr}
+  -4 &amp; -3 \\ 3 &amp; 0 \\ 1 &amp; 2
+\end{array}\right]</tex>
+    <tex>\left[\begin{array}{rr}
+  4 &amp; 3 \\ -3 &amp; 0 \\ 1 &amp; 2
+\end{array}\right]</tex>
+    <tex correct='true'>\left[\begin{array}{rr}
+  4 &amp; 3 \\ -3 &amp; 0 \\ -1 &amp; -2
+\end{array}\right]</tex>
+  </choices>
+</question>
