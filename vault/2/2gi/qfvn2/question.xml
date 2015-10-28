@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+The binary operation $*:\mathbf{R}\times\mathbf{R}\rightarrow\mathbf{R}$ is 
+defined as $a*b=2a+b$. 
+Find $(2*3)*4$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+Is this expansion for $(2*3)*4$ correct?
+%</context>
+    <tex correct='true'>(2\times((2\times 2)+3))+4=18</tex>
+    <tex>(2\times(2\times 3))+ 4=16</tex>
+    <reason>%text
+The binary operator * is used twice. 
+Each instance needs to be treated 
+independently.
+%
+\begin{align}
+  R_1=2*3 &amp;= (2\times 2)+3 \\
+  R_2=R_1*4 &amp;= (2\times R_1)+4 \\
+                    &amp;= (2\times((2\times 2)+3))+4 \\
+                    &amp;= (2\times 7)+4=18
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+Can you demonstrate using $(2*3)*4$
+that the binary operator $*$ is associative?
+%</context>
+    <tex>%text
+$(2*3)*4=2*(3*4)$. Therefore $*$ is 
+associative.
+%</tex>
+    <reason>%text
+Binary operator $*$ is{\bf not} associative, as
+is clearly evidenced by the calculation below.
+%
+\begin{align}
+  (2*3)*4&amp;=2\times(2\times 2+3)+4 \\
+              &amp;=2\times 7+4=18 \\
+  2*(3*4) &amp;=2\times 2+(2\times 3+4) \\
+               &amp;=2\times 2+10=14
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>18</tex>
+    <tex>14</tex>
+    <tex>12</tex>
+    <tex>24</tex>
+  </choices>
+</question>
