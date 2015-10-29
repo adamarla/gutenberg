@@ -1,0 +1,67 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Write the value of $(\hat i\times \hat j)\cdot \hat k+\hat i\cdot \hat j$
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+General question: In the context of this 
+scalar triple product $(\hat i\times \hat j)\cdot \hat k$, are the 
+following equivalent?
+%
+</context>
+    <tex>(\hat i\times \hat j)\cdot \hat k=(\hat i\cdot \hat j)\times \hat k</tex>
+    <reason>%text
+$(\hat i\cdot \hat j)\times \hat k$ is not even a valid operation since
+the resulting term in the parenthesis is a scalar
+and it cannot be cross multiplied with a vector.
+The following though are equivalent:
+%
+(\hat i\times \hat j)\cdot \hat k=\hat i\cdot (\hat j\times \hat k) \\
+</reason>
+  </step>
+  <step>
+    <context>%text
+What are $A$, $B$, $C$ and $D$ if $\hat i$, $\hat j$ and $\hat k$ are 
+a set of mutually perpendicular unit 
+vectors.
+%
+\begin{align}
+  \hat i\cdot \hat k=A &amp;\qquad \hat k\cdot \hat i=B \\
+  \hat i\times\hat j=C &amp;\qquad \hat j\times \hat k=D  
+\end{align}
+</context>
+    <tex correct='true'>A=0, B=0, C=\hat k, D=\hat i</tex>
+    <tex>A=1, B=1, C=-\hat k, D=-\hat i</tex>
+    <reason>\begin{align}
+  \hat i\cdot \hat k&amp;= |\hat i||\hat k|\cos\left(\frac{\pi}{2}\right)
+    =1\cdot1\cdot 0=0 \\
+  \hat i\times \hat j&amp;=
+    \left\vert\begin{array}{ccc}
+      \hat i &amp; \hat j &amp; \hat k \\ 1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0
+    \end{array}\right\vert=\hat k(1)=\hat k
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+Given the results thus far, is the 
+following correct?
+%
+</context>
+    <tex>(\hat i\times \hat j)\cdot \hat k+\hat i\cdot \hat j=2</tex>
+    <reason>\begin{align}
+     &amp;(\hat i\times \hat j)\cdot \hat k+\hat i\cdot \hat j \\
+  =&amp;\hat k\cdot \hat k+\hat i\cdot \hat j \\
+  =&amp;1+0=1 
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex>0</tex>
+    <tex>2</tex>
+    <tex correct='true'>1</tex>
+    <tex>-1</tex>
+  </choices>
+</question>

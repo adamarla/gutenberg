@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the scalar components of the vector $\ora{AB}$
+with initial point $A(2,1)$ and terminal point 
+$B(-5,7)$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+Is the following expression for $\ora{AB}$ correct
+if $A(2,1)$ and $B(-5,7)$, are the initial and
+terminal points of the vector?
+%</context>
+    <tex correct='true'>\ora{AB}=\vector{-7}{6}{}</tex>
+    <tex>\ora{AB}=\vector{7}{-6}{}</tex>
+    <reason>%text
+If $(x_1, y_1)$ and $(x_2,y_2)$ are the initial and final
+points of a vector, the expression for the 
+vector is given by $\vector{(x_2-x_1)}{(y_2-y_1)}{}$.
+%
+\therefore \ora{AB}=\vector{(-5-2)}{(7-6)}{}=\vector{-7}{6}{}
+</reason>
+  </step>
+  <step>
+    <context>%text
+Are the scalar ($x$ and $y$) components of 
+$\ora{AB}=\vector{7}{-6}{}$ correct as shown below?
+%
+</context>
+    <tex>\text{x-component}=-7, \\
+\text{y-component}=6</tex>
+    <reason>%text
+x and y (scalar) components of a vector are
+the projections of the vector along the x and y 
+axis. Since $\hat i$ and $\hat j$ are the unit vectors along
+the x and y axis respectively, the projection is 
+given by the coefficients of $\hat i$ and $\hat j$.
+%
+\begin{align}
+  &amp;\qquad\ora{AB}=\vector{7}{-6}{} \\
+  &amp;\qquad\text{x-component}=7 \\ 
+  &amp;\qquad\text{y-component}=-6
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex>\text{x-component}=-14, \\
+\text{y-component}=12</tex>
+    <tex>\text{x-component}=-7, \\
+\text{y-component}=6</tex>
+    <tex>\text{x-component}=7, \\
+\text{y-component}=6</tex>
+    <tex correct='true'>\text{x-component}=7, \\
+\text{y-component}=-6</tex>
+  </choices>
+</question>

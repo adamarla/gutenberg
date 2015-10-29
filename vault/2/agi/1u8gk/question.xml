@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Given }\int e^x(\tan x+1)\sec x\,dx=e^xf(x)+c, \\
+%text
+Write $f(x)$ satisfying the above.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+For the following value of $f(x)$,
+%
+(\tan x+1)\sec x=f(x)+f'(x)</context>
+    <tex correct='true'>f(x)=\sec x</tex>
+    <tex>f(x)=\tan x</tex>
+    <reason>\begin{align}
+  &amp;f(x)=\sec x \\
+  \implies &amp;f'(x)=\sec x\tan x \\
+  \implies &amp;f(x)+f'(x)=(\tan x+1)\sec x
+\end{align} \\
+%text
+Next, using standard result 
+%
+\int e^x(f(x)+f'(x) \,dx=e^xf(x)+c \\
+%text
+we can conclude that $f(x)=\sec x$.
+%
+\therefore \int e^x(\tan x+1)\sec x\,dx=e^x\sec x+c</reason>
+  </step>
+  <step>
+    <context>%text
+Bonus points: What if the function were
+%
+\int e^{kx}(\tan kx+1) \sec kx\,dx=e^{kx} \sec kx? \\
+%text
+Would the above still be correct?
+%
+</context>
+    <tex>%text
+Yes, it would still be correct.
+%</tex>
+    <reason>I=\int e^{kx}(\tan kx+1) \sec kx\,dx \\
+%text
+If we substitute $kx=y$ in the above integral,
+we have $kdx=dy$ and the integral becomes,
+%
+\begin{align}
+  I&amp;=\dfrac{1}{k}\int e^y(\tan y+1)\sec y\,dy \\
+   &amp;=\dfrac{1}{k}e^y\sec y+c
+   =\dfrac{1}{k}e^{kx}\sec kx+c
+\end{align} \\
+%text
+As we can see, a factor of $\frac{1}{k}$ gets
+introduced in the result.
+%
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>f(x)=\sec x</tex>
+    <tex>f(x)=\tan x</tex>
+    <tex>f(x)=\sec^2 x</tex>
+    <tex>f(x)=\sec x\tan x</tex>
+  </choices>
+</question>
