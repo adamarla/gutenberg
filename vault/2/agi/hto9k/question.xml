@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Let A be a square matrix of order $3\times 3$. 
+Write the value of $|2A|$, where $|A|=4$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+A $3\times 3$ matrix is multiplied by a constant
+value 2. How many elements of the matrix 
+are affected by this operation?
+%</context>
+    <tex correct='true'>%text
+$9$ - all the elements in the matrix.
+%</tex>
+    <tex>%text
+$3$ - all the elements in one row.
+%</tex>
+    <reason>%text
+When a matrix is multiplied by a constant, all
+of the elements in the matrix are multiplied by
+that constant.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+$3\times 3$ matrix $A$ is multiplied by 2, and
+the resulting matrix is called $B$. What is $|B|$ 
+if $|A|=4$?
+($|A|=$ Determinant $A$, $|B|=$ Determinant $B$)
+%
+</context>
+    <tex correct='true'>|B|=8\times|A|=8\times 4=32</tex>
+    <tex>|B|=2\times|A|=2\times 4=8</tex>
+    <reason>%text
+If $A$ is an $n\times n$ matrix, $|kA|=k^n|A|$
+%
+</reason>
+  </step>
+  <choices>
+    <tex>48</tex>
+    <tex>24</tex>
+    <tex correct='true'>32</tex>
+    <tex>8</tex>
+  </choices>
+</question>

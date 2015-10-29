@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the distance of the plane 
+$3x-4y+12z=3$ from the origin.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+Perpendicular distance of point $P(x,y,z)$ from
+the plane $ax+by+cz-d=0$ is?
+%</context>
+    <tex>\left\vert \dfrac{ax_1+by_1+cz_1-d}{\sqrt{a+b+c}}\right\vert</tex>
+    <reason>%text
+The distance formula for perpendicular
+distance from a point $P(x_1, y_1, z_1)$ to a
+plane $ax+by+cz+d=0$ is given by,
+%
+\left\vert\dfrac{ax_1+by_1+cz_1-d}{\sqrt{a^2+b^2+c^2}}\right\vert \\
+
+%text
+In the given problem, the perpendicular
+distance of the origin $(0,0,0)$ from 
+$3x-4y+12z-3=0$ is given by,
+%
+\begin{align}
+  d&amp;=\left\vert\dfrac{-3}{\sqrt{3^2+4^2+12^2}}\right\vert
+      =\left\vert\dfrac{-3}{169}\right\vert=\dfrac{3}{169}
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{3}{169}</tex>
+    <tex>\dfrac{9}{13}</tex>
+    <tex>\dfrac{3}{13}</tex>
+    <tex>\dfrac{1}{13}</tex>
+  </choices>
+</question>

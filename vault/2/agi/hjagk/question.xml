@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Evaluate:
+%
+\qquad\int_0^2\sqrt{4-x^2} \,dx</tex>
+  </statement>
+  <step>
+    <context>%text
+Complete the following standard results:
+%
+\begin{align}
+  \int\sqrt{a^2-x^2} \,dx=\dfrac{x}{2}\sqrt{a^2-x^2} + A \\
+  \int\sqrt{x^2-a^2} \,dx=\dfrac{x}{2}\sqrt{x^2-a^2} - B \\
+  \int\sqrt{a^2+x^2} \,dx=\dfrac{x}{2}\sqrt{a^2+x^2} + C
+\end{align}
+</context>
+    <tex correct='true'>\begin{align}
+  A&amp;=\dfrac{a^2}{2}\sin^{-1}\left(\dfrac{x}{a}\right)+D \\
+  B&amp;=\dfrac{a^2}{2}\log\vert x+\sqrt{x^2-a^2}\vert+D \\
+  C&amp;=\dfrac{a^2}{2}\log\vert x+ \sqrt{a^2+x^2}\vert + D
+\end{align}</tex>
+    <tex>\begin{align}
+  A&amp;=\dfrac{a^2}{2}\log\vert x+\sqrt{a^2-x^2}\vert+D \\
+  B&amp;=\dfrac{a^2}{2}\sin^{-1}\left(\dfrac{x}{a}\right)+D \\
+  C&amp;=\dfrac{a^2}{2}\tan^{-1}\left(\dfrac{x}{a}\right)+D
+\end{align}</tex>
+    <reason>%text
+For $\sqrt{a^2-x^2}$ use $x=a\sin\theta$ as substitution,
+and the integral reduces to,
+%
+\begin{align}
+  I&amp;=\int \sqrt{a^2-a^2\sin^2\theta}\,a\cos\theta\, d\theta \\
+   &amp;=\int a^2\cos^2\theta\,d\theta=a^2\int \dfrac{1+\cos 2\theta}{2}\, d\theta \\
+   &amp;=\dfrac{a^2}{2}\left(\theta+\dfrac{\sin 2\theta}{2}\right)+C \\
+   &amp;=\dfrac{a^2}{2}\left(\sin^{-1}\left(\dfrac{x}{a}\right)+
+       \dfrac{x}{a}\dfrac{\sqrt{a^2-x^2}}{a}\right)+C \\
+   &amp;=\dfrac{x}{2}\sqrt{a^2-x^2}+\dfrac{a^2}{2}\sin^{-1}\left(\dfrac{x}{a}\right)+C
+\end{align} \\
+%text
+For $\sqrt{x^2-a^2}$ use $x=a\sec\theta$ and for $\sqrt{x^2+a^2}$
+use $x=a\tan\theta$ as substitutions to solve.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+Using standard result
+%
+{\small\int\sqrt{a^2-x^2} \,dx=\dfrac{x}{2}\sqrt{a^2-x^2}+\dfrac{a^2}{2}\sin^{-1}\left(\dfrac{x}{a}\right)+C} \\
+%text
+is the following calculation correct?
+%</context>
+    <tex correct='true'>\int_0^2\sqrt{4-x^2} \,dx=\pi</tex>
+    <tex>\int_0^2\sqrt{4-x^2} \,dx=0</tex>
+    <reason>\begin{align}
+  \int_0^2\sqrt{4-x^2}&amp;=\left[\dfrac{x}{2}\sqrt{2^2-x^2}+
+      \dfrac{2^2}{2}\sin^{-1}\left(\dfrac{x}{2}\right)\right]_0^2 \\
+    &amp;=\left[2 \sin^{-1}(1)-2\sin^{-1}(0)\right] \\
+    &amp;=2 \left(\dfrac{\pi}{2}\right)=\pi
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>0</tex>
+    <tex>\dfrac{\pi}{2}</tex>
+    <tex correct='true'>\pi</tex>
+    <tex>2\pi</tex>
+  </choices>
+</question>
