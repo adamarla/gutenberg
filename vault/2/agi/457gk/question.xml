@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Using properties of determinants, show that
+%
+\left\vert \begin{array}{ccc}
+  b+c &amp; a &amp; a \\ b &amp; c+a &amp; b \\ c &amp; c&amp; a+b  
+\end{array}\right\vert=4abc</tex>
+  </statement>
+  <step>
+    <context>%text
+Would the following operation involving 
+three rows making the element in position
+$(1,1)$ (first row, first column) of the 
+determinant equal zero?
+%</context>
+    <tex correct='true'>R_1 \rightarrow R_1-(R_2+R_3)</tex>
+    <tex>R_1 \rightarrow R_1-R_2+R_3</tex>
+    <reason>%text
+Our aim is to get as many zeros as possible
+by using properties of determinants. After
+$R_1\rightarrow R_1-(R_2+R_3)$ the given determinant 
+becomes,
+%
+\left\vert \begin{array}{ccc}
+  0 &amp; -2c &amp; -2b \\ b &amp; c+a &amp; b \\ c &amp; c&amp; a+b  
+\end{array}\right\vert
+</reason>
+  </step>
+  <step>
+    <context>\left\vert \begin{array}{ccc}
+  0 &amp; -2c &amp; -2b \\ b &amp; c+a &amp; b \\ c &amp; c&amp; a+b  
+\end{array}\right\vert \\
+%text
+Is the following a valid expansion for 
+the above determinant?
+%</context>
+    <tex>-2c\left(b(a+b)-bc\right)-2b\left(bc-c(c+a)\right)</tex>
+    <reason>%text
+The rules for expansion along a row
+or column require that the element
+must be multiplied by $(-1)^{(row+col)}$
+Therefore,
+%
+\begin{align}
+&amp;\left\vert \begin{array}{ccc}
+  0 &amp; -2c &amp; -2b \\ b &amp; c+a &amp; b \\ c &amp; c&amp; a+b  
+\end{array}\right\vert \\
+  &amp;\qquad=2c \left(b(a+b)-bc\right)-2b \left(bc-c(c+a)\right) \\
+  &amp;\qquad=2c \left(ba+b^2-bc\right)-2b \left(bc-c^2-ac\right) \\
+  &amp;\qquad=2abc+2b^2c-2bc^2-2b^2c+2bc^2+2abc \\
+  &amp;\qquad=4abc
+\end{align}
+</reason>
+  </step>
+</question>

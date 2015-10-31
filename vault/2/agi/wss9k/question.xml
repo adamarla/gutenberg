@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+A ladder $5$m long is leaning against a wall. 
+The bottom of the ladder is pulled along the 
+ground, away from the wall, at the rate of 
+$2$cm/s. How fast is its height on the wall
+decreasing when the foot of the ladder is $4$m 
+away from the wall?
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If $x$ is the distance of the foot of the ladder
+from the wall, and $y$ is the distance of the
+top of the ladder from the floor, what is the
+relationship between $x$ and $y$?
+%</context>
+    <tex>x+y=c\text{ (some constant)}</tex>
+    <reason>%text
+$x$, the distance of the foot of the ladder from
+the wall and $y$, the distance of the top of
+the ladder from the floor, always form a right
+triangle with the ladder itself such that,
+%
+x^2+y^2=l^2, \text{ where l=length of ladder (5m)}</reason>
+  </step>
+  <step>
+    <context>%text
+If $x^2+y^2=5^2$ where $x$(m) is distance of
+foot of the ladder from the wall and $y$(m) 
+is the distance of the top of the ladder from
+the floor. How is rate of change of $y$ with time
+related with rate of change of $x$ with time?
+%</context>
+    <tex correct='true'>\dfrac{dy}{dt}=-\dfrac{x}{y}\dfrac{dx}{dt}</tex>
+    <tex>\dfrac{dy}{dt}=-\dfrac{dx}{dt}</tex>
+    <reason>%text
+Rate of change of $y$ with time=$\left(\dfrac{dy}{dt}\right)$ 
+Rate of change of $x$ with time=$\left(\dfrac{dx}{dt}\right)$,
+%
+\begin{align}
+   &amp;x^2+y^2=5^2 \\
+  \implies &amp;2x \dfrac{dx}{dt}+2y \dfrac{dy}{dt}=0 \\
+  \implies &amp;\dfrac{dy}{dt}=-\dfrac{x}{y}\dfrac{dx}{dt}
+    =  -\dfrac{x}{\sqrt{25-x^2}}\dfrac{dx}{dt}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+If $\dfrac{dy}{dt}=-\dfrac{x}{y}\dfrac{dx}{dt}$, what is $\dfrac{dy}{dt}$
+when $x=4$m?
+%</context>
+    <tex correct='true'>\dfrac{8}{3}(cm/s)</tex>
+    <tex>\dfrac{8}{3}(m/s)</tex>
+    <reason>\begin{align}
+  \dfrac{dy}{dt}&amp;=-\dfrac{x}{y}\dfrac{dx}{dt} \\
+    &amp;=-\dfrac{x}{\sqrt{25-x^2}}\dfrac{dx}{dt} \\
+    &amp;=-\dfrac{4}{\sqrt{25-16}}(0.02) \\
+    &amp;=-\dfrac{4\times 0.02}{3}=-\dfrac{0.08}{3}(m/s)
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{4}{3}cm/s</tex>
+    <tex correct='true'>\dfrac{8}{3}cm/s</tex>
+    <tex>\dfrac{400}{3}cm/s</tex>
+    <tex>\dfrac{8}{3}m/s</tex>
+  </choices>
+</question>

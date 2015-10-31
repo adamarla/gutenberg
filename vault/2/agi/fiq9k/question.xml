@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Show that $f:\mathbf{N}\rightarrow\mathbf{N},$ given by
+%
+  f(x)=\begin{cases}
+    x+1, \text{ if $x$ is odd} \\
+    x-1, \text{ if $x$ is even} 
+  \end{cases} \\
+%text
+is both one-one and onto
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If $f(x)$ is a one-one function and $f(x_1)=f(x_2)$,
+what can be said about $x_1$ and $x_2$?	
+%</context>
+    <tex correct='true'>x_1=x_2</tex>
+    <tex>x_1\neq x_2</tex>
+    <reason>%text
+A function $f:X\rightarrow X$ is defined as one-one
+(or injective) if for every $x_1, x_2 \in X$, 
+$f(x_1)=f(x_2)$ implies $x_1=x_2$.
+For e.g. consider function $f(x)=x$. It is 
+immediately obvious that $f(x_1)=f(x_2)$
+implies $x_1=x_2$. Hence, $f(x)=x$ is one-one.
+%
+</reason>
+  </step>
+  <step>
+    <context>f:\mathbf{N}\rightarrow\mathbf{N}, \text{ given by,} \\
+f(x)=\begin{cases}
+  x+1, \text{ if $x$ is odd} \\
+  x-1, \text{ if $x$ is even} 
+\end{cases} \\
+%text
+If $f(x_1)=f(x_2)$ is it possible that $x_1$ is odd and 
+$x_2$ is even, or $x_2$ is odd and $x_1$ is even?
+%
+</context>
+    <tex>%text
+If $f(x_1)=f(x_2)$ it must be that either $x_1$ is odd 
+and $x_2$ is even or that $x_2$ is odd and $x_1$ is even.
+%
+</tex>
+    <reason>%text
+If $x_1$ is odd and $x_2$ is even, and $f(x_1)=f(x_2)$
+as per the function definition,
+%
+\begin{align}
+  &amp; x_1+1=x_2-1 \\
+  \implies &amp; x_2-x_1=2
+\end{align} \\
+%text
+The difference betwen an odd and even number
+cannot be $2$. Therefore the assumption that
+for $f(x_1)=f(x_2)$, $x_1$ and $x_2$ can be even
+and odd, or odd and even is incorrect. 
+%</reason>
+  </step>
+  <step>
+    <context>%text
+For the same function as defined in the prior
+step, if $f(x_1)=f(x_2)$ and $x_1$ and $x_2$ are both
+even, what is the relation between $x_1$ and $x_2$?
+%
+</context>
+    <tex>x_2-x_1=2</tex>
+    <reason>%text
+If $x_1$ and $x_2$ are both even, and $f(x_1)=f(x_2)$
+as per the function definition,
+%
+\begin{align}
+  &amp; x_1+1=x_2+1 \\
+  \implies &amp; x_2-x_1=0\implies x_1=x_2
+\end{align} \\
+%text
+Similarly if $x_1$ and $x_2$ were both even, we would
+get the same result. Therefore, it is safe to
+conclude that $f(x_1)=f(x_2)\implies x_1=x_2$ and
+the function $f(x)$ is one-one (or injective).
+%
+</reason>
+  </step>
+  <step>
+    <context>%text
+For the function $f$ defined in Step 2, for
+any odd number $2n+1$ is there an $x\in\mathbf{N}$ 
+such that $f(x)=2n+1$?
+%</context>
+    <tex correct='true'>%text
+Yes, for any odd number $2n+1$ there 
+exists an (even number) $x\in \mathbf{N}$ such that 
+$f(x)=2n+1$
+%</tex>
+    <reason>%text
+For $f(x)$ to be an odd number $2n+1$, it
+must be defined as $x-1$, therefore,
+%
+\begin{align}
+  &amp;x-1 = 2n+1 \\
+  \implies &amp;x=2n+2
+\end{align} \\
+%text
+Similarly for every even number $2n$ 
+there exists an odd number $x=2n+1$ 
+such that $f(x)=2n$. Therefore $f$ is also 
+onto (or bijective) since its range covers 
+the entire set $\mathbf{N}$.
+%</reason>
+  </step>
+</question>

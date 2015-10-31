@@ -1,0 +1,110 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Consider the binary operations $*:\mathbb{R}\times\mathbb{R}\rightarrow\mathbb{R}$
+and $o:\mathbb{R}\times\mathbb{R}\rightarrow\mathbb{R}$ defined as $a*b=|a-b|$
+and $a\,o\,b=a$ for all $a,b\in \mathbb{R}$. Show that '$*$' 
+is commutative but not associative, and '$o$' is 
+associative but not commutative.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+Would the following prove that the binary 
+operator '$*$' is not associative (answer and
+then confirm using an example)?
+%</context>
+    <tex correct='true'>%text
+$a*(b*c)\neq (a*b)*c$ for any $a,b,c\in\mathbb{R}$
+%
+</tex>
+    <tex>%text
+$a*b\neq b*a$ for any $a,b\in\mathbb{R}$.
+%
+</tex>
+    <reason>%text
+By definition of associativity, binary operator 
+'$*$' is associative if $a*(b*c)= (a*b)*c$ for
+any $a,b,c\in \mathbb{R}$.
+Let us verify that '$*$' is not associative using
+an example where $a=1$, $b=2$ and $c=3$.
+%
+\qquad\begin{align}
+  a*(b*c) &amp;= |a-|b-c|| \\
+    &amp;= |1-|2-3||=0 \\
+  (a*b)*c &amp;= ||a-b|-c| \\
+    &amp;= ||1-2|-3| = 2
+\end{align} \\
+%text
+Therefore '$*$' is not associative.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+Would the following prove that the binary 
+operator '$o$' is not commutative (answer and
+then confirm using an example)?
+%</context>
+    <tex correct='true'>%text
+$a\,o\,b\neq b\,o\,a$ for any $a,b\in\mathbb{R}$.
+%
+</tex>
+    <reason>%text
+By definition of commutativity, binary 
+operator '$o$' is commutative if $a\,o\,b=b\,o\,a$ for
+any $a,b\in \mathbb{R}$.
+Let us verify that '$o$' is not associative using
+an example where $a=1$ and $b=2$.
+%
+\qquad\begin{align}
+  a\,o\,b &amp;= a = 1 \\
+  b\,o\,a &amp;= b = 2
+\end{align} \\
+%text
+Therefore binary operator '$o$' is not 
+commutative.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+Does the following prove that binary
+operator '$*$' is commutative?
+%</context>
+    <tex correct='true'>|a-b|=|b-a|\,\forall \,a,b\in\mathbb{R}
+</tex>
+    <tex>a-b=b-a\,\forall \,a,b\in\mathbb{R}
+</tex>
+    <reason>%text
+To prove operator '$*$' is commutative, we
+need to show that $a*b=b*a$. 
+%
+\begin{align}
+  a*b&amp;=|a-b| \\
+  b*a&amp;=|b-a| \\
+  |a-b|&amp;=|b-a|\implies a*b=b*a
+\end{align} \\
+%text
+Therefore binary operator '$*$'' is commutative.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+Does the following prove that binary
+operator '$o$' is associative?
+%</context>
+    <tex>a\,o\,(b\,o\,c)=a\,o\,(c\,o\,b)\,\forall \,a,b\in\mathbb{R}</tex>
+    <reason>%text
+To prove operator '$o$' is associative, we
+need to show that $a\,o\,(b\,o\,c)=(a\,o\,b)\, c$. 
+%
+\begin{align}
+  a\,o\,(b\,o\,c)&amp;=a\,o\,b=a \\
+  (a\,o\,b)\,o\, c&amp;=a\,o\,c=a \\
+  a&amp;=a\implies a\,o\,(b\,o\,c)=(a\,o\,b)\,o\, c
+\end{align}\\
+%text
+Therefore binary operator '$o$'' is associative.
+%</reason>
+  </step>
+</question>

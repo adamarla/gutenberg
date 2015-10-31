@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+If $x=\sqrt{a^{\sin^{-1}t}}$, $y=\sqrt{a^{\cos^{-1}t}}$, show that 
+$\dfrac{dy}{dx}=-\dfrac{y}{x}$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If $x=f(t)$ and $y=g(t)$, what is $\dfrac{dy}{dx}$?
+%</context>
+    <tex>\dfrac{dy}{dx}=\dfrac{f'(t)}{g'(t)}</tex>
+    <reason>\begin{align}
+  \dfrac{dy}{dx}&amp;=\dfrac{\frac{dy}{dt}}{\frac{dx}{dt}}
+    =\dfrac{g'(t)}{f'(t)}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+If $x=\sqrt{a^{\sin^{-1}t}}$, what is $\dfrac{dx}{dt}$?
+%</context>
+    <tex correct='true'>\dfrac{dx}{dt}=\dfrac{x\log a}{2\sqrt{1-t^2}}</tex>
+    <tex>\dfrac{dx}{dt}=\dfrac{1}{2ax\sqrt{1-t^2}}</tex>
+    <reason>%text
+Since we have a variable ($t$) in the exponent, 
+we need to take $\log$ of both sides before we 
+differentiate.
+%
+\begin{align}
+  &amp;x=\sqrt{a^{\sin^{-1}t}} \\
+  \implies &amp;x^2=a^{\sin^{-1}t} \\
+  \implies &amp;\log \left(x^2\right)=\log \left(a^{\sin^{-1}t}\right)  \\
+  \implies &amp;2\log x=\sin^{-1}t\log a \\
+  \implies &amp;\dfrac{2}{x}\dfrac{dx}{dt}=\dfrac{\log a}{\sqrt{1-t^2}} \\
+  \implies &amp;\dfrac{dx}{dt}=\dfrac{x}{2}\dfrac{\log a}{\sqrt{1-t^2}}
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>%text
+If $y=\sqrt{a^{\cos^{-1}t}}$, what is $\dfrac{dy}{dt}$?
+%</context>
+    <tex correct='true'>\dfrac{dy}{dt}=-\dfrac{y\log a}{2\sqrt{1-t^2}}</tex>
+    <reason>%text
+Again, since we have a variable ($t$) in the 
+exponent, we need to take $\log$ of both sides 
+before we differentiate.
+%
+\begin{align}
+  &amp;y=\sqrt{a^{\cos^{-1}t}} \\
+  \implies &amp;y^2=a^{\cos^{-1}t} \\
+  \implies &amp;2\log y=\cos^{-1}t\log a \\
+  \implies &amp;\dfrac{dy}{dt}=-\dfrac{y}{2}\dfrac{\log a}{\sqrt{1-t^2}}
+\end{align} \\
+%text
+Combining with result from previous step
+%
+\begin{align}
+  \dfrac{dy}{dx}=\dfrac{\dfrac{dy}{dt}}{\dfrac{dx}{dt}}
+    &amp;=\dfrac{-\dfrac{y\log a}{2\sqrt{1-t^2}}}
+      {\dfrac{x\log a}{2\sqrt{1-t^2}}}=-\dfrac{y}{x}  
+\end{align}
+</reason>
+  </step>
+</question>
