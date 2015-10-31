@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Prove the following:
+%
+\qquad \cos \left(\sin^{-1}\dfrac{3}{5}+\cot^{-1}\dfrac{3}{2}\right)
+  =\dfrac{6}{5\sqrt{13}}</tex>
+  </statement>
+  <step>
+    <context>\sin^{-1}\dfrac{3}{5}+\cot^{-1}\dfrac{3}{2} \\
+%text
+Can the above be re-written as the following?
+%
+</context>
+    <tex correct='true'>\tan^{-1}\dfrac{3}{4}+\tan^{-1}\dfrac{2}{3}</tex>
+    <reason>\begin{align}
+  &amp;\tan^{-1}a=\sin^{-1}\dfrac{3}{5} \\
+  \implies &amp;\sin(\tan^{-1}a)=\dfrac{3}{5}
+    =\dfrac{\text{opposite}}{\text{hypotenuse}} \\
+  \implies &amp;\tan(\tan^{-1}a)=\dfrac{3}{4} 
+    =\dfrac{\text{opposite}}{\text{adjacent}}\\
+  \implies &amp;a=\dfrac{3}{4}
+\end{align} \\
+%text
+Similarly,
+%
+\begin{align}
+  &amp;\tan^{-1}b=\cot^{-1}\dfrac{3}{2} \\
+  \implies &amp;\cot(\tan^{-1}b)=\dfrac{3}{2}
+    =\dfrac{\text{adjacent}}{\text{opposite}} \\
+  \implies &amp;\tan(\tan^{-1}b)=\dfrac{2}{3}
+    =\dfrac{\text{opposite}}{\text{adjacent}} \\
+  \implies &amp;b=\dfrac{2}{3}  
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>\text{If }\tan^{-1}\dfrac{3}{4}+\tan^{-1}\dfrac{2}{3}=\theta, \\
+%text
+is this correct?
+%
+</context>
+    <tex correct='true'>\theta=\tan^{-1}\dfrac{17}{6}</tex>
+    <tex>\theta=\tan^{-1}\dfrac{17}{12}</tex>
+    <reason>\begin{align}
+  \tan^{-1}\dfrac{3}{4}=a &amp;\implies \dfrac{3}{4}=\tan a \\
+  \tan^{-1}\dfrac{2}{3}=b &amp;\implies \dfrac{2}{3}=\tan b \\
+  \tan(a+b)&amp;=\dfrac{\tan a+\tan b}{1-\tan a\cdot\tan b} \\
+    &amp;=\dfrac{\frac{3}{4}+\frac{2}{3}}
+      {1-\frac{3}{4}\frac{2}{3}}=\dfrac{17}{6} \\
+   \implies&amp;(a+b)=\tan^{-1}\dfrac{17}{6} \\
+   \implies&amp;\tan^{-1}\dfrac{3}{4}+\tan^{-1}\dfrac{2}{3}
+     =\tan^{-1}\dfrac{17}{6}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+Substituting the results from the previous
+steps into the original problem we get,
+%
+\cos\left(\sin^{-1}\dfrac{3}{5}+\cot^{-1}\dfrac{3}{2}\right)
+  =\cos\left(\tan^{-1}\dfrac{17}{6}\right) \\
+%text
+Could we re-write $\tan^{-1}\dfrac{17}{6}$ as the following?
+%  
+  </context>
+    <tex correct='true'>\sin^{-1}\dfrac{17}{\sqrt{325}}</tex>
+    <reason>\begin{align}
+  &amp;\tan^{-1}\dfrac{17}{6}=\theta \implies\tan\theta=\dfrac{17}{6} \\
+  \therefore&amp;\sin\theta=\dfrac{17}{\sqrt{17^2+6^2}}
+    =\dfrac{17}{\sqrt{325}} \\
+  \implies&amp;\cos\theta=\dfrac{6}{\sqrt{325}} \\
+  \implies&amp;\theta=\cos^{-1}\dfrac{6}{\sqrt{325}}
+    =\sin^{-1}\dfrac{17}{\sqrt{325}} \\
+  \implies&amp;\cos \left(\tan^{-1}\dfrac{17}{6}\right)
+    =\cos \left(\cos^{-1}\dfrac{6}{\sqrt{325}}\right) \\
+  &amp;\qquad\qquad\qquad\quad=\dfrac{6}{5\sqrt{13}}
+\end{align}</reason>
+  </step>
+</question>

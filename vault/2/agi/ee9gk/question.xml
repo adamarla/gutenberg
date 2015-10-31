@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+If $x=a(\cos t+t \sin t)$, $y=a(\sin t-t \cos t)$
+and $0\lt t\lt \dfrac{\pi}{2}$, find $\dfrac{d^2x}{dt^2}$, $\dfrac{d^2y}{dt^2}$ and $\dfrac{d^2y}{dx^2}$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If $x=a(\cos t+t \sin t)$, what is $\dfrac{d^2x}{dt^2}$
+%</context>
+    <tex>(at\cos t)^2</tex>
+    <reason>\begin{align}
+  x&amp;=a(\cos t+t \sin t) \\
+  \implies \dfrac{dx}{dt}&amp;=a(-\sin t+t\cos t+\sin t) \\
+    &amp;=at\cos t \\
+  \implies \dfrac{d^2x}{dt^2}&amp;=\dfrac{d}{dt}\left(\dfrac{dx}{dt}\right)
+      =-at\sin t+a\cos t \\
+    &amp;=a(\cos t-t\sin t)
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+If $y=a(\sin t-t \cos t)$, what is $\dfrac{d^2y}{dt^2}$
+%</context>
+    <tex correct='true'>a(t\cos t+\sin t)</tex>
+    <reason>\begin{align}
+  y&amp;=a(\sin t-t \cos t) \\
+  \implies \dfrac{dy}{dt}&amp;=a(\cos t+t\sin t-\cos t) \\
+    &amp;=at\sin t \\
+  \implies \dfrac{d^2y}{dt^2}&amp;=\dfrac{d}{dt}\left(\dfrac{dy}{dt}\right)
+      =at\cos t+a\sin t \\
+    &amp;=a(t\cos t+\sin t)
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+If $x=a(\cos t+t \sin t)$, $y=a(\sin t-t \cos t)$ 
+$\dfrac{dx}{dt}=at\cos t$ and $\dfrac{dy}{dt}=at\sin t$ and
+$\dfrac{d^2y}{dt^2}=a(t\cos t+\sin t)$ and 
+$\dfrac{d^2x}{dt^2}=a(\cos t-t\sin t)$, then what is $\dfrac{d^2y}{dx^2}$?
+%</context>
+    <tex>\dfrac{d^2y}{dx^2}=\dfrac{\dfrac{d^2y}{dt^2}}{\dfrac{d^2x}{dt^2}}
+  =\dfrac{t\cos t+\sin t}{\cos t-t\sin t}</tex>
+    <reason>\begin{align}
+  \dfrac{dy}{dx}&amp;=\dfrac{\dfrac{dy}{dt}}{\dfrac{dx}{dt}}
+    =\tan t\\
+  \implies \dfrac{d^2y}{dx^2} 
+    &amp;=\dfrac{d}{dx}\left(\dfrac{dy}{dx}\right) \\
+    &amp;=\dfrac{d}{dt}\left(\dfrac{dy}{dx}\right)\cdot \dfrac{dt}{dx} \\
+    &amp;=\dfrac{d}{dt}\left(\tan t\right)\cdot \dfrac{1}{at\cos t} \\
+    &amp;=\sec^2 t\cdot \dfrac{1}{at\cos t}=\dfrac{\sec^3 t}{at}
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{d^2x}{dt^2}=a(-t\sin t), 
+\dfrac{d^2y}{dt^2}=a(-t\cos t), \\
+\dfrac{d^2y}{dx^2}=\dfrac{\sec^2 t}{at}</tex>
+    <tex>\dfrac{d^2x}{dt^2}=a(\cos t+t\sin t), 
+\dfrac{d^2y}{dt^2}=a(\sin t-t\cos t), \\
+\dfrac{d^2y}{dx^2}=\dfrac{\sec^2 t}{t}</tex>
+    <tex correct='true'>\dfrac{d^2x}{dt^2}=a(\cos t-t\sin t), 
+\dfrac{d^2y}{dt^2}=a(\sin t+t\cos t), \\
+\dfrac{d^2y}{dx^2}=\dfrac{\sec^3 t}{at}</tex>
+    <tex>\dfrac{d^2x}{dt^2}=a(\cos t), 
+\dfrac{d^2y}{dt^2}=a(\sin t), \\
+\dfrac{d^2y}{dx^2}=\tan t</tex>
+  </choices>
+</question>

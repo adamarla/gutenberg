@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Differentiate $\tan^{-1}\left[\dfrac{\sqrt{1+x^2}-1}{x}\right]$ w.r.t $x$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+Match each function with a typical 
+substitution that would help to 
+differentiate it -
+%
+\begin{tabular}{|l|c|}
+  \hline
+  \text{Function} &amp; \text{Substitution} \\
+  \hline
+  \sqrt{1+x^2} &amp; A \\
+  \sqrt{x^2-1} &amp; B \\
+  \sqrt{1-x^2} &amp; C \\
+  \hline
+\end{tabular}
+</context>
+    <tex correct='true'>\begin{align}
+  A&amp;=\tan\theta \\
+  B&amp;=\sec\theta \\
+  C&amp;=\sin\theta  
+\end{align}</tex>
+    <tex>\begin{align}
+  A&amp;=\sec\theta \\
+  B&amp;=\sin\theta \\
+  C&amp;=\cot\theta  
+\end{align}</tex>
+    <reason>\begin{align}
+  x&amp;=\tan\theta\implies \sqrt{1+x^2}=\sec\theta \\
+  x&amp;=\sec\theta\implies \sqrt{x^2-1}=\tan\theta \\
+  x&amp;=\sin\theta \implies \sqrt{1-x^2}=\cos\theta
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\tan^{-1}\left[\dfrac{\sqrt{1+x^2}-1}{x}\right] \\
+%text
+What would the above function reduce to
+upon substituting $x=\tan\theta$?
+%</context>
+    <tex correct='true'>\dfrac{1}{2}\tan^{-1}x</tex>
+    <reason>%text
+Substituting $x=\tan\theta$ in $\tan^{-1}\left[\dfrac{\sqrt{1+x^2}-1}{x}\right]$
+%
+\begin{align}
+     &amp;\tan^{-1}\left[\dfrac{\sqrt{1+\tan^2\theta}-1}{\tan\theta}\right] \\
+  =&amp;\tan^{-1}\left[\dfrac{\sec\theta-1}{\tan\theta}\right]
+  =\tan^{-1}\left[\dfrac{1-\cos\theta}{\sin\theta}\right] \\
+  =&amp;\tan^{-1}\left[\dfrac{2 \sin^2(\theta/2)}{2\sin(\theta/2)\cos(\theta/2)}\right]
+  =\tan^{-1}\left[\tan(\theta/2)\right] \\
+  =&amp;\dfrac{1}{2}\tan^{-1}x
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+What is $\dfrac{d}{dx}\dfrac{1}{2}\tan^{-1}x$?
+%</context>
+    <tex correct='true'>\dfrac{1}{2(1+x^2)}</tex>
+    <tex>\dfrac{1}{(1+x^2)}</tex>
+    <reason>\begin{align}
+  \dfrac{d}{dx}\dfrac{1}{2}\tan^{-1}x
+    &amp;=\dfrac{1}{2}\cdot\dfrac{dy}{dx}\tan^{-1}x \\
+    &amp;=\dfrac{1}{2}\cdot\dfrac{1}{1+x^2}
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{1}{2(1-x^2)}</tex>
+    <tex>\dfrac{1}{2\sqrt{(1+x^2)}}</tex>
+    <tex>\dfrac{1}{2\sqrt{(1-x^2)}}</tex>
+    <tex correct='true'>\dfrac{1}{2(1+x^2)}</tex>
+  </choices>
+</question>
