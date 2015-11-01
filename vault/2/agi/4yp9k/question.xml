@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Evaluate:
+%
+  \qquad\int_0^\pi\dfrac{x\sin x}{1+\cos^2 x} \,dx</tex>
+  </statement>
+  <step>
+    <context>\text{If }I=\int_0^\pi\dfrac{x\sin x}{1+\cos^2 x} \,dx,
+\text{ then using } \\
+\int_0^af(x) \,dx=\int_0^af(a-x) \,dx \\
+%text
+is the following correct?
+%</context>
+    <tex correct='true'>I=\dfrac{\pi}{2}\int_0^\pi \dfrac{\sin x}{1+\cos^2 x}\,dx</tex>
+    <reason>\begin{array}{ll}
+  I=\int_0^\pi\dfrac{x\sin x}{1+\cos^2 x} \,dx &amp;\qquad(1)  \\
+  I=\int_0^\pi\dfrac{(\pi-x)\sin (\pi-x)}{1+\cos^2 (\pi-x)} \,dx, &amp;\qquad(2)
+\end{array} \\
+%text
+Adding (1) and (2),
+%
+\begin{align}
+  2I&amp;=\int_0^\pi\left(\dfrac{x\sin x}{1+\cos^2 x}+
+    \dfrac{(\pi-x)\sin x}{1+\cos^2 x}\right)\, dx \\
+  \implies I&amp;=\dfrac{\pi}{2}\int_0^\pi\dfrac{\sin x}{1+\cos^2 x}\, dx
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>%text
+What substitution would convert 
+%
+\dfrac{\pi}{2}\int_0^\pi \dfrac{\sin x}{1+\cos^2 x}\,dx \text{ to }
+\dfrac{\pi}{2}\int_{-1}^{1}\dfrac{1}{1+t^2} \,dt
+</context>
+    <tex correct='true'>\cos x=t</tex>
+    <tex>\sin x=t</tex>
+    <reason>\begin{align}
+  I&amp;=\dfrac{\pi}{2}\int_0^\pi \dfrac{\sin x}{1+\cos^2 x}\,dx \\
+  &amp;\cos x=t \implies -\sin x\,dx=dt \\
+  &amp;x=0\implies t=1, \\
+  &amp;x=1 \implies t=-1 \\
+  \implies I&amp;=-\dfrac{\pi}{2}\int_{1}^{-1}\dfrac{1}{1+t^2} \,dt \\
+    &amp;=\dfrac{\pi}{2}\int_{-1}^{1}\dfrac{1}{1+t^2} \,dt
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>\text{What does }\dfrac{\pi}{2}\int_{-1}^{1}\dfrac{1}{1+t^2} \,dt
+\text{ evaluate to?}
+</context>
+    <tex correct='true'>\dfrac{\pi^2}{4}</tex>
+    <tex>\dfrac{\pi^2}{8}</tex>
+    <reason>\begin{align}
+  \dfrac{\pi}{2}\int_{-1}^{1}\dfrac{1}{1+t^2} \,dt
+    &amp;=\dfrac{\pi}{2}\left[\tan^{-1}t\right]_{-1}^{1} \\
+    &amp;=\dfrac{\pi}{2}\left[\tan^{-1}(1)-\tan^{-1}(-1)\right] \\
+    &amp;=\dfrac{\pi}{2}\left[\dfrac{\pi}{4}-\left(-\dfrac{\pi}{4}\right)\right] \\
+    &amp;=\dfrac{\pi}{2}\cdot \dfrac{\pi}{2}=\dfrac{\pi^2}{4}
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{\pi}{4}</tex>
+    <tex>\dfrac{\pi^2}{16}</tex>
+    <tex>\dfrac{\pi}{8}</tex>
+    <tex correct='true'>\dfrac{\pi^2}{4}</tex>
+  </choices>
+</question>
