@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Evaluate:
+%
+\qquad \int_{-1}^2\left\vert x^3-x\right\vert \,dx</tex>
+  </statement>
+  <step>
+    <context>%text
+Since greatest integer function is involved,
+we need to figure out when $(x^3-x)$ is 
+positive and negative in the range $(-1, 2)$.
+Is the following correct?
+%</context>
+    <tex correct='true'>\begin{tabular}{|c|c|}
+  \hline
+  \text{Range} &amp; \text{Sign} \\
+  \hline
+  \left[-1,0\right) &amp; + \\
+  \left[0, 1\right) &amp; - \\
+  \left(1, 2\right] &amp; + \\
+  \hline
+\end{tabular}</tex>
+    <tex>\begin{tabular}{|c|c|}
+  \hline
+  \text{Range} &amp; \text{Sign} \\
+  \hline
+  \left[-1,0\right) &amp; - \\
+  \left[0, 1\right) &amp; + \\
+  \left(1, 2\right] &amp; + \\
+  \hline
+\end{tabular}</tex>
+    <reason>%text
+There are multiple ways of determining
+the sign of $(x^3-x)$ in the range $[-2, 1]$.
+One way is by factorizing it.
+%
+\begin{align}
+  x^3-x &amp;= x(x^2-1) \\
+    &amp;=x(x-1)(x+1)
+\end{align} \\
+%text
+By determining the sign of each factor in the
+range we can determine the sign of the
+entire function.
+%
+\begin{tabular}{|c|c|c|c|c|}
+  \hline
+  \text{Range} &amp; x &amp; x-1 &amp; x+1 &amp; {\bf x^3-x} \\
+  \hline
+  \left[-1,0\right) &amp; - &amp; - &amp; + &amp; {\bf +} \\
+  \left[0, 1\right) &amp; + &amp; - &amp; + &amp; {\bf -} \\
+  \left(1, 2\right] &amp; + &amp; + &amp; - &amp; {\bf +}  \\
+  \hline
+\end{tabular}</reason>
+  </step>
+  <step>
+    <context>%text
+We can now split the original integral into
+the following three integrals.
+%
+{\small\int_{-1}^0 (x^3-x) \,dx+\int_0^1-(x^3-x) \,dx+
+  \int_1^2(x^3-x) \,dx} \\
+%text
+What do the above integrals add up to?
+%  </context>
+    <tex correct='true'>\dfrac{9}{4}</tex>
+    <reason>\begin{align}
+  \int(x^3-x) \,dx &amp;=\dfrac{x^4}{4}-\dfrac{x^2}{2}+C
+\end{align} \\
+%text
+Applying the above result for the open integral
+to the definite integrals below we get,
+%
+\begin{align}
+  \int_{-1}^0 (x^3-x) \,dx &amp;=-\left[\dfrac{1}{4}-\dfrac{1}{2}\right]
+    =\dfrac{1}{4} \\
+  -\int_0^1(x^3-x) \,dx &amp;=-\left[\dfrac{1}{4}-\dfrac{1}{2}\right]
+    =\dfrac{1}{4} \\
+  \int_1^2(x^3-x) \,dx &amp;=\left[\dfrac{16}{4}-\dfrac{4}{2}\right]
+    -\left[\dfrac{1}{4}-\dfrac{1}{2}\right]=\dfrac{7}{4}
+\end{align} \\
+%text
+Adding the area for each of the sections
+we get the total area as $\dfrac{9}{4}$
+%
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{9}{4}</tex>
+    <tex>\dfrac{5}{4}</tex>
+    <tex>\dfrac{8}{3}</tex>
+    <tex>\dfrac{15}{4}</tex>
+  </choices>
+</question>
