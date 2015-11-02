@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Let $\ora{a}=\vector{1}{4}{2}$, $\ora{b}=\vector{3}{-2}{7}$ and
+$\ora{c}=\vector{2}{-1}{4}$. Find a vector $\ora{p}$ which is 
+perpendicular to both $\ora{a}$ and $\ora{b}$ and whose
+dot product with c, $\ora{p}\cdot\ora{c}=18$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If a vector $\ora{p}$ is perpendicular to both$\ora{a}$
+and $\ora{b}$, and $\lambda$ is some scalar, can we say
+the following about $\ora{p}$?
+%</context>
+    <tex correct='true'>\ora{p}=\lambda(\ora{a}\times \ora{b})</tex>
+    <tex>\ora{p}=\lambda (\ora{a}+ \ora{b})</tex>
+    <reason>%text
+Any vector perpendicular to $\ora{a}$ and $\ora{b}$ is
+parallel to $(\ora{a}\times \ora{b})$. Therefore, $\ora{p}$ must 
+be a scalar multiple of $(\ora{a}\times \ora{b})$.
+%
+</reason>
+  </step>
+  <step>
+    <context>%text
+Given that $\ora{p}\cdot \ora{c}=18$ and $\ora{p}=\lambda(\ora{a}\times \ora{b})$,
+what is $\lambda$?
+%</context>
+    <tex correct='true'>\lambda=2</tex>
+    <tex>\lambda=9</tex>
+    <reason>\begin{align}
+  &amp;\ora{p}\cdot \ora{c}=18 \\
+  \implies &amp;\lambda(\ora{a}\times \ora{b})\cdot \ora{c}=18 \\
+  \implies &amp;\lambda\left\vert\begin{array}{ccc}
+    1 &amp; 4 &amp; 2 \\ 3 &amp; -2 &amp; 7 \\ 2 &amp; -1 &amp; 4\end{array}\right\vert=18 \\
+  \implies &amp;\lambda \left[1(-8+7)-4(12-14)+2(-3+4)\right]=18 \\
+  \implies &amp;\lambda \left[-1+8+2\right]=18 \\
+  \implies &amp;\lambda=2
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+$\ora{a}=\vector{1}{4}{2}$, $\ora{b}=\vector{3}{-2}{7}$ and 
+$\lambda=2$. $\ora{p}=\lambda(\ora{a}\times \ora{b})$. Find $\ora{p}$?
+%
+</context>
+    <tex correct='true'>\ora{p}=\vector{64}{-2}{-28}</tex>
+    <tex>\ora{p}=\vector{64}{2}{-28}</tex>
+    <reason>\begin{align}
+  \ora{a}\times\ora{b}&amp;=\left\vert\begin{array}{ccc}
+      \hat i &amp; \hat j &amp; \hat k \\ 1 &amp; 4 &amp; 2 \\ 3 &amp; -2 &amp; 7
+    \end{array}\right\vert \\
+    &amp;=\vector{(28+4)}{-(7-6)}{(-2-12)} \\
+    &amp;=\vector{32}{-1}{-14}
+\end{align} \\
+\therefore \ora{p}=2(\vector{32}{-1}{-14})=\vector{64}{-2}{-28}</reason>
+  </step>
+  <choices>
+    <tex>\ora{p}=\vector{64}{2}{28}</tex>
+    <tex>\ora{p}=\vector{64}{2}{-28}</tex>
+    <tex correct='true'>\ora{p}=\vector{64}{-2}{-28}</tex>
+    <tex>\ora{p}=\vector{32}{-1}{-14}</tex>
+  </choices>
+</question>

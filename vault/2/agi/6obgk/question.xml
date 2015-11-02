@@ -1,0 +1,130 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Form the differential equation of the family
+of circles in the second quadrant and touching
+the coordinate axes.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+What is the equation of a circle with radius $r$, 
+touching both co-ordinate axes and in the 
+second quadrant.
+%</context>
+    <tex correct='true'>(x+r)^2+(y-r)^2=r^2</tex>
+    <tex>(x+r)^2+(y+r)^2=r^2</tex>
+    <reason>%text
+A circle with radius $r$, touching the axes
+and in the second quadrant would have its
+center at $(-r, r)$ and therefore its equation
+would be, $(x+r)^2+(y-r)^2=r^2$.
+%
+</reason>
+  </step>
+  <step>
+    <context>(x+r)^2+(y-r)^2=r^2 \\
+%text
+If the above equation is differentiated once,
+what is $r$ in terms of $x$, $y$ and $\dfrac{dy}{dx}$ ?
+%</context>
+    <tex correct='true'>r=\dfrac{x+y y'}{y'-1}, \text{ where }y'=\dfrac{dy}{dx}</tex>
+    <reason>\begin{align}
+  &amp;(x+r)^2+(y-r)^2=r^2 \\
+  \implies &amp;2(x+r)+2(y-r)\dfrac{dy}{dx}=0 \\
+  \implies &amp; x+y \dfrac{dy}{dx}=r \left(\dfrac{dy}{dx}-1\right) \\
+  \implies &amp; r=\dfrac{x+y \dfrac{dy}{dx}}{\dfrac{dy}{dx}-1}
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>%text
+We have $r=\dfrac{x+y y'}{y'-1}$. In order to get the
+final differential equation, we need to 
+eliminate $r$. How can we do this?
+%</context>
+    <tex correct='true'>%text
+Substitute $r=\dfrac{x+y y'}{y'-1}$ in the original equation
+$(x+r)^2+(y-r)^2=r^2$.
+%</tex>
+    <tex>%text
+Differentiate $r=\dfrac{x+y y'}{y'-1}$ w.r.t $x$ in order to
+eliminate $r$.
+%</tex>
+    <reason>%text
+We do not require to differentiate again
+since we can get a first-order differential
+equation simply by substituting $r$ into the
+original equation of the circle.
+%
+</reason>
+  </step>
+  <step>
+    <context>\text{If }r=\dfrac{x+y y'}{y'-1}, \text{ where }y'=\dfrac{dy}{dx} \\
+%text
+is substituted back in the original equation
+of the circle, what is the outcome?
+%</context>
+    <tex correct='true'>(x+y)^2 \left[(y')^2+1\right]=\left[x+yy'\right]^2</tex>
+    <reason>\begin{align}
+  &amp;(x+r)^2+(y-r)^2=r^2 \\
+  \Rightarrow&amp;{\small\left[x+\dfrac{x+y y'}{y'-1}\right]^2+
+    \left[y-\dfrac{x+y y'}{y'-1}\right]^2=
+    \left[\dfrac{x+y y'}{y'-1}\right]^2} \\
+  \Rightarrow&amp;{\small\left[xy'-x+x+yy'\right]^2+\left[yy'-y-x-yy'\right]^2}
+    \small{=\left[x+yy'\right]^2} \\
+  \Rightarrow&amp;(x+y)^2 \left[(y')^2+1\right]=\left[x+yy'\right]^2
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{If }r=\dfrac{x+y \dfrac{dy}{dx}}{\dfrac{dy}{dx}-1}
+%text
+ is differentiated to eliminate $r$, 
+what is the outcome?
+%</context>
+    <tex correct='true'>{\small\left(\dfrac{dy}{dx}-1\right)\left(1+y \dfrac{d^2y}{dx^2}+
+  \left(\dfrac{dy}{dx}\right)^2\right)=
+  \left(x+y \dfrac{dy}{dx}\right)\left(\dfrac{dy}{dx}\right)^2}</tex>
+    <reason>r=\dfrac{x+y \dfrac{dy}{dx}}{\dfrac{dy}{dx}-1} \\
+%text
+Since the left-side of the equation is constant,
+its derivative would be zero. Therefore we can 
+apply Quotient Rule and equate the numerator
+of the derivative of the right side to zero.
+%
+\begin{align}
+&amp;{\small\left(\dfrac{dy}{dx}-1\right)\dfrac{d}{dx}\left(x+
+  y \dfrac{dy}{dx}\right)=\left(x+y \dfrac{dy}{dx}\right)
+  \dfrac{d}{dx}\left(\dfrac{dy}{dx}-1\right)} \\
+&amp;{\small\left(\dfrac{dy}{dx}-1\right)\left(1+y \dfrac{d^2y}{dx^2}+
+  \left(\dfrac{dy}{dx}\right)^2\right)=
+  \left(x+y \dfrac{dy}{dx}\right)\left(\dfrac{dy}{dx}\right)^2}
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>(x+r)^2+(y-r)^2=r^2 \\
+%text
+If the above equation is differentiated once,
+what is $r$ when expressed in terms of $x$, $y$
+and $\dfrac{dy}{dx}$?
+%</context>
+    <reason>\begin{align}
+  &amp;(x+r)^2+(y-r)^2=r^2 \\
+  \implies &amp;2(x+r)+2(y-r)\dfrac{dy}{dx}=0 \\
+  \implies &amp;(x+r)=-(y-r)\dfrac{dy}{dx} \\
+  \implies &amp; x+y \dfrac{dy}{dx}=r \left(\dfrac{dy}{dx}-1\right) \\
+  \implies &amp; r=\dfrac{x+y \dfrac{dy}{dx}}{\dfrac{dy}{dx}-1} \\
+  \implies &amp;(x+r)^2=(y-r)^2 \left(\dfrac{dy}{dx}\right)^2 \\
+  \implies &amp;(y-r)^2 \left(\left(\dfrac{dy}{dx}\right)^2+1\right)=r^2
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex>(x-y)^2 \left[(y')^2+1\right]=\left[x-yy'\right]^2</tex>
+    <tex>(x+y)^2 \left[(y')^2+1\right]=\left[x+yy'\right]</tex>
+    <tex correct='true'>(x+y)^2 \left[(y')^2+1\right]=\left[x+yy'\right]^2</tex>
+    <tex>(x+y) \left[(y')^2+1\right]=\left[x-yy'\right]</tex>
+  </choices>
+</question>

@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Solve the following differential equation:
+%
+\qquad\left(1+x^2\right)dy+2xy\,dx=\cot x\,dx;x\neq0</tex>
+  </statement>
+  <step>
+    <context>%text
+A linear differential equation is of the form
+$\dfrac{dy}{dx}+P(x)y=Q(x)$. What are $P$ and $Q$ for 
+$(1+x^2)\,dy+2xy\,dx=\cot x\,dx$?
+%</context>
+    <tex correct='true'>P(x)=\dfrac{2x}{1+x^2}, Q(x)=\dfrac{\cot x}{1+x^2}</tex>
+    <tex>P(x)=\dfrac{2xy}{1+x^2}, Q(x)=\cot x</tex>
+    <reason>%text
+Upon dividing the given differential equation
+by $(1+x^2)\,dx$, it reduces to,
+%
+\begin{align}
+  \dfrac{dy}{dx}+\underbrace{\dfrac{2x}{1+x^2}}_{P(x)}y
+    =\underbrace{\dfrac{\cot x}{1+x^2}}_{Q(x)}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\dfrac{dy}{dx}+\dfrac{2x}{1+x^2}y=\dfrac{\cot x}{1+x^2} \\
+%text
+What is the integrating factor (IF) for the 
+above equation?
+%
+</context>
+    <tex correct='true'>IF=e^{1+x^2}
+</tex>
+    <tex>IF=1+x^2</tex>
+    <reason>%text
+Integrating Factor (IF) is of the form $e^{\int P(x)\, dx}$.
+Therefore, in the case of the given differential
+equation, 
+%
+\begin{align}
+  \text{IF}&amp;=e^{\int \dfrac{2x}{1+x^2}\,dx }
+    =e^{\log (1+x^2)}=1+x^2
+\end{align} \\
+%text
+When we multiply both sides of the differential
+equation with IF, we get the following easily 
+integrable form,
+%
+\begin{align}
+  &amp;(1+x^2)\dfrac{dy}{dx}+2xy=\cot x \\
+  \implies &amp;\dfrac{d}{dx}\left(y(1+x^2)\right)=\cot x
+\end{align} \\
+</reason>
+  </step>
+  <step>
+    <context>%text
+Multiplying both sides of the differential
+equation with IF, gives us the following form.
+%
+\qquad\dfrac{d}{dx}\left(y(1+x^2)\right)=\cot x. \\
+%text
+What result do we get on integrating it?
+%
+</context>
+    <tex correct='true'>y\left(1+x^2\right)=\log \sin x+C</tex>
+    <tex>y\left(1+x^2\right)= \tan x+C</tex>
+    <reason>\begin{align}
+  \dfrac{d}{dx}\left(y(1+x^2)\right)&amp;=\cot x \\
+  \implies y\left(1+x^2\right)&amp;=\int \cot x\,dx \\
+  \implies y\left(1+x^2\right)&amp;= \int \dfrac{\cos x}{\sin x}\,dx \\
+  \implies y\left(1+x^2\right)&amp;= \log\cos x+C
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>y\left(1+x^2\right)=\log \sin x+C</tex>
+    <tex>y\left(1+x^2\right)=\tan x+C</tex>
+    <tex>y\left(1+x^2\right)=\log \tan x+C</tex>
+    <tex>y\left(1+x^2\right)=\sin x+C</tex>
+  </choices>
+</question>

@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the particular solution of the differential
+equation $x(x^2-1)\dfrac{dy}{dx}=1; y=0$ when $x=2$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+What does $x(x^2-1)\dfrac{dy}{dx}=1$ look like
+on separating the variables?
+%</context>
+    <tex correct='true'>\dfrac{dy}{1}=\dfrac{dx}{x(x+1)(x-1)}</tex>
+    <tex>\dfrac{dy}{dx}=\dfrac{1}{x(x+1)(x-1)}</tex>
+    <reason>%text
+Separating variables means all occurences
+of the two variables ($x$ and $y$ in this case)
+are on either side of the equality.
+%
+\therefore\dfrac{dy}{1}=\dfrac{dx}{x(x+1)(x-1)} \\
+%text
+The next step would be to integrate both
+sides.
+%</reason>
+  </step>
+  <step>
+    <context>\dfrac{1}{x(x+1)(x-1)}=\dfrac{A}{x}+\dfrac{B}{x+1}+\dfrac{C}{x-1} \\
+%text
+Find A, B and C?
+%</context>
+    <tex correct='true'>A=-1, B=\dfrac{1}{2}, C=\dfrac{1}{2}</tex>
+    <tex>A=1, B=-\dfrac{1}{2}, C=\dfrac{1}{2}</tex>
+    <reason>%text
+Adding the fractions, we get,
+%
+1=A(x^2-1)+Bx(x-1)+Cx(x+1) \\
+%text
+In the above equation,
+%
+\begin{align}
+  x=0 &amp;\implies A=-1 \\
+  x=1 &amp;\implies C=\dfrac{1}{2} \\
+  x=-1&amp;\implies B=\dfrac{1}{2}
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>%text
+What does the following differential equation
+evaluate to on integrating both sides.
+%
+\int \dfrac{dy}{1}=\int 
+  \left(-\dfrac{1}{x}+\dfrac{1}{2(x-1)}+\dfrac{1}{2(x+1)}\right)\, dx
+  </context>
+    <tex correct='true'>y=\log\dfrac{\sqrt{x^2-1}}{x}+C</tex>
+    <reason>\begin{align}
+  &amp;{\small\int\dfrac{dy}{1}=\int \left(-\dfrac{1}{x}
+    +\dfrac{1}{2(x-1)}+\dfrac{1}{2(x+1)}\right)\, dx} \\
+  \implies&amp;{\small y=-\log x+\dfrac{1}{2}\log(x-1)
+    +\dfrac{1}{2}\log(x+1)+C} \\
+  \implies&amp;{\small y=\log\left(\dfrac{\sqrt{(x-1)(x+1)}}{x}\right)+C} \\
+  \implies&amp;{\small y=\log\dfrac{\sqrt{x^2-1}}{x}+C}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>y=\log\dfrac{\sqrt{x^2-1}}{x}+C\, 
+%text
+is the general solution for 
+the given differential equation for a constant C.
+What is the particular solution when $y=0$ at
+$x=2$?
+%</context>
+    <tex correct='true'>y=\log\dfrac{\sqrt{x^2-1}}{x}-\log\dfrac{\sqrt{3}}{2}</tex>
+    <tex>y=\log\dfrac{\sqrt{x^2-1}}{x}-\log\sqrt{\dfrac{3}{2}}</tex>
+    <reason>%text
+Substitute $x=2$ and $y=0$ in the equation,
+to get a value for C,
+%
+\begin{align}
+  &amp;0=\log\dfrac{\sqrt{2^2-1}}{2}+C \\
+  \implies&amp; C=-\log\dfrac{\sqrt{3}}{2}
+\end{align} \\
+%text
+Substituting C back in the equation we get
+%
+\begin{align}
+  &amp;y=\log\dfrac{\sqrt{x^2-1}}{x}-\log\dfrac{\sqrt{3}}{2} \\
+  \implies&amp;y=\log\left(\dfrac{2}{\sqrt{3}}\dfrac{\sqrt{x^2-1}}{x}\right) \\
+  \implies&amp;e^y=\dfrac{2}{\sqrt{3}}\dfrac{\sqrt{x^2-1}}{x} \\
+  \implies&amp;\dfrac{\sqrt{3}}{2}e^y=\dfrac{\sqrt{x^2-1}}{x}
+\end{align}</reason>
+  </step>
+</question>
