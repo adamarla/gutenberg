@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the coordinates of the point where
+the line through the points $A(3,4,1)$ and
+$B(5,1,6)$ cross the XY-plane.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+What is the equation of the line through
+the points $(3,4,1)$ and $(5,1,6)$?
+%</context>
+    <tex correct='true'>\dfrac{x-3}{2}=\dfrac{y-4}{-3}=\dfrac{z-1}{5}</tex>
+    <tex>\dfrac{x}{2}=\dfrac{y}{-3}=\dfrac{z}{5}</tex>
+    <reason>%text
+Equation of a line joining any two points
+$(x_1, y_1,z_1)$ and $(x_2,y_2,z_2)$ is given by 
+%
+\qquad\dfrac{x-x_1}{x_2-x_1}=\dfrac{y-y_1}{y_2-y_1}
+  =\dfrac{z-z_1}{z_2-z_1}. \\
+%text
+Therefore for the given points $(3,4,1)$ and
+$(5,1,6)$, we have,
+%
+\begin{align}
+  &amp;\dfrac{x-3}{5-3}=\dfrac{y-4}{1-4}=\dfrac{z-1}{6-1} \\
+  \implies&amp;\dfrac{x-3}{2}=\dfrac{y-4}{-3}=\dfrac{z-1}{5}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+What are the correct equations for the
+$x$-$y$, $y$-$z$ and $z$-$x$ planes?
+%</context>
+    <tex correct='true'>\begin{tabular}{|c|c|}
+  \hline
+  \text{Plane} &amp; \text{Equation} \\
+  \hline
+  \text{$x$-$y$} &amp; z=0 \\
+  \text{$y$-$z$} &amp; x=0 \\
+  \text{$z$-$x$} &amp; y=0 \\
+  \hline
+\end{tabular}
+</tex>
+    <tex>\begin{tabular}{|c|c|}
+  \hline
+  \text{Plane} &amp; \text{Equation} \\
+  \hline
+  \text{$x$-$y$} &amp; x+y=0 \\
+  \text{$y$-$z$} &amp; y+z=0 \\
+  \text{$z$-$x$} &amp; z+x=0 \\
+  \hline
+\end{tabular}
+</tex>
+    <reason>%text
+The $x$-$y$ plane is simply all points that
+have their $z$ coordinate as zero. Therefore
+the equation of the $x$-$y$ plane is $z=0$.
+Similarly for the $y$-$z$ and $z$-$x$ planes.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+What is the point of intersection of the $x$-$y$ 
+plane and line $\dfrac{x-3}{2}=\dfrac{y-4}{-3}=\dfrac{z-1}{5}$?
+%
+</context>
+    <tex>\left(\dfrac{13}{5}, \dfrac{23}{5}, \dfrac{-1}{5}\right)</tex>
+    <reason>%text
+To find the point of intersection, substitute 
+the equation of the plane $z=0$ into the 
+equation of the line and solve.
+%
+
+\begin{align}
+  &amp;\dfrac{x-3}{2}=\dfrac{y-4}{-3}=\dfrac{0-1}{5} \\
+  \implies &amp;\dfrac{x-3}{2}=\dfrac{y-4}{-3}=\dfrac{-1}{5} \\
+  \implies &amp;x=-\dfrac{2}{5}+3=\dfrac{13}{5} \\
+  \implies &amp;y=\dfrac{3}{5}+4=\dfrac{23}{5}
+\end{align} \\
+%text
+Point if intersection is $\left(\dfrac{13}{5}, \dfrac{23}{5}, 0\right)$
+%</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\left(\dfrac{13}{5}, \dfrac{23}{5}, 0\right)</tex>
+    <tex>\left(\dfrac{13}{5}, 0, \dfrac{23}{5}\right)</tex>
+    <tex>\left(\dfrac{17}{5}, \dfrac{23}{5}, 0\right)</tex>
+    <tex>\left(0, \dfrac{13}{5}, \dfrac{23}{5}\right)</tex>
+  </choices>
+</question>

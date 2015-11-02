@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Two cards are drawn simultaneously 
+(without replacement) from a well-shuffled 
+pack of $52$ cards. Find the mean and 
+variance of the number of red cards.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+When two cards are drawn at random from
+a complete set of well shuffled cards, what
+is the possible number of Red cards?
+%</context>
+    <tex>%text
+There can either be $1$ or $2$ red cards.
+%</tex>
+    <reason>%text
+There are $3$ possibilities - no red cards, 
+$1$ red card or $2$ red cards.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+if $X$ is a random variable which denotes the
+number of red cards drawn when $2$ cards are
+drawn from a deck without replacement, what 
+is $X$'s probability distribution?
+%
+</context>
+    <tex correct='true'>\begin{tabular}{|c|c|c|c|}
+  \hline
+  X &amp; 0 &amp; 1 &amp; 2 \\
+  \hline
+  P(X) &amp; \dfrac{25}{102} &amp; \dfrac{26}{51} &amp; \dfrac{25}{102} \\
+  \hline
+\end{tabular}</tex>
+    <tex>\begin{tabular}{|c|c|c|c|}
+  \hline
+  X &amp; 0 &amp; 1 &amp; 2 \\
+  \hline
+  P(X) &amp; \dfrac{25}{104} &amp; \dfrac{1}{2} &amp; \dfrac{25}{104} \\
+  \hline
+\end{tabular}</tex>
+    <reason>%text
+Since the cards are not being replaced after
+being picked, and if $X$ denotes the number of 
+red cards picked, the probabilities are:
+%
+\begin{align}
+  P(X=0) &amp;=\dfrac{26}{52}\cdot\dfrac{25}{51}=\dfrac{25}{102} \\
+  P(X=1) &amp;=\dfrac{26}{51}\cdot \dfrac{26}{51}
+    +\dfrac{26}{52}\dfrac{26}{51}=\dfrac{26}{51} \\
+  P(X=2) &amp;=\dfrac{26}{52}\cdot\dfrac{25}{51}=\dfrac{25}{102}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+For the probability distribution established in
+the previous step, what are the mean and
+variance?
+%</context>
+    <tex correct='true'>%text
+Mean $=1$, Variance$=\dfrac{25}{51}$
+%</tex>
+    <tex>%text
+Mean $=1$, Variance$=\dfrac{1}{2}$
+%</tex>
+    <reason>\begin{align}
+  \text{Mean}=&amp;E(X)=\sum_{i=1}^n x_i\, p(x_i) \\
+    &amp;=0 \times\dfrac{25}{102}+1\times\dfrac{26}{51}+
+      2\times\dfrac{25}{102} \\
+    &amp;=1  
+\end{align} \\
+%text
+Variance is derived as below,
+%
+\begin{align}
+  Var(X)=&amp;E(X-\bar{X})^2=E(X^2+\bar{X}^2-2X\bar{X}) \\
+    &amp;=E(X^2)+E(\bar{X}^2)-2E(X)E(\bar{X}) \\
+    &amp;=E(X^2)+\bar{X}^2-2\bar{X}^2 \\
+    &amp;=E(X^2)-\bar{X}^2=E(X^2)-[E(X)]^2    
+\end{align} \\
+%text
+Applying it in this case,
+%
+\begin{align}
+  \text{Var(X)}&amp;=E(X^2)-[E(X)]^2 \\
+    &amp;=\left(1^2\times\dfrac{26}{51}+2^2\times\dfrac{25}{102}\right)
+      -\left(1\right)^2 \\
+    &amp;=\dfrac{76}{51}-1=\dfrac{25}{51}
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>%text
+Mean $=1$, Variance$=\dfrac{25}{51}$
+%</tex>
+    <tex>%text
+Mean $=2$, Variance$=\dfrac{1}{2}$
+%</tex>
+    <tex>%text
+Mean $=1$, Variance$=\dfrac{1}{4}$
+%</tex>
+    <tex>%text
+Mean $=\dfrac{1}{2}$, Variance$=\dfrac{1}{4}$
+%</tex>
+  </choices>
+</question>
