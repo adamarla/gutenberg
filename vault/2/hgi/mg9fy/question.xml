@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Suppose a girl throws a die. If she gets a $5$ 
+or $6$, she tosses a coin $3$ times and notes the
+number of heads. If she gets $1$, $2$, $3$ or $4$,
+she tosses a coin once and notes whether a 
+head or a tail is obtained. If she obtained
+exactly one head, what is the probability that 
+she threw $1$, $2$, $3$ or $4$ with the die?
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If $E_1$ is the event that she rolled $1$, $2$, $3$ or
+$4$ and $E_2$ is the event that she rolled $5$ or $6$, 
+and $H$ is the event that exactly one head was
+obtained from the coin toss(es), what is the
+question asking?
+%
+</context>
+    <tex correct='true'>%text
+Probability that given $H$ occured, it must have
+followed $E_1$, or $P(E_1|H)$.
+%
+</tex>
+    <tex>%text
+Probability that given $E_1$ occured, $H$ will 
+follow, or $P(H|E_1)$.
+%
+</tex>
+    <reason>%text
+The question is clearly asking us the probability
+of the past event (the die roll) given the future
+event that a single head was the result of coin
+toss(es). Expressed symbolically as $P(E_1|H)$.
+%
+</reason>
+  </step>
+  <step>
+    <context>%text
+If $E_1$ is the event that she rolled $1$, $2$, $3$ or
+$4$ and $E_2$ is the event that she rolled $5$ or $6$, 
+what are $P(E_1)$ and $P(E_2)$?
+%
+</context>
+    <tex>P(E_1)=\dfrac{2}{3}, P(E_2)=\dfrac{5}{6}</tex>
+    <reason>%text
+From the basic definition of probability, the
+likelihood of events $E_1$ and $E_2$ are,
+%
+P(E_1)=\dfrac{4}{6}=\dfrac{2}{3} \\
+P(E_2)=\dfrac{2}{6}=\dfrac{1}{3} \\
+%text
+Note that $P(E_1)+P(E_2)=1$, indicating the
+two events are mutually exclusive and 
+exhaustive in that between them they cover 
+the entire sample space.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+If $H$ be the event that there is exactly one
+head at the end of the exercise, what is the
+probability of $H$ succeeding $E_1$ $(P(H|E_1))$ 
+and of $H$ succeeding $E_2$ $(P(H|E_2))$?
+%</context>
+    <tex correct='true'>P(H|E_1)=\dfrac{1}{2}, P(H|E_2)=\dfrac{3}{8}</tex>
+    <tex>P(H|E_1)=\dfrac{1}{2}, P(H|E_2)=\dfrac{1}{3}</tex>
+    <reason>%text
+Let us consider each case individually. After
+$E_1$ she tosses a coin once, 
+%
+\therefore P(H|E_1)=\dfrac{1}{2} \\
+%text
+After $E_2$ she tosses a coin thrice which can
+lead to $8$ possible total outcomes $(2^3)$. Of 
+these, a single head can come from exactly
+three configurations (HTT, THT and TTH),
+%
+\therefore P(H|E_2)=\dfrac{3}{8}
+</reason>
+  </step>
+  <step>
+    <context>%text
+We have established thus far that,
+%
+{\small P(E_1)=\dfrac{2}{3}, P(E_2)=\dfrac{1}{3},
+  P(H|E_1)=\dfrac{1}{2}, P(H|E_2)=\dfrac{3}{8}} \\
+%text
+Given the above, what is $P(H)$?
+%</context>
+    <tex correct='true'>P(H)=\dfrac{11}{24}</tex>
+    <tex>P(H)=\dfrac{7}{8}</tex>
+    <reason>%text
+Since $E_1$ and $E_2$ are exhaustive events, 
+by theorum of total probability,
+%
+\begin{align}
+  P(H)&amp;=P(H|E_1)\cdot P(E_1)+P(H|E_2)\cdot P(E_2) \\
+    &amp;=\dfrac{1}{2}\cdot \dfrac{2}{3}+\dfrac{3}{8}\cdot \dfrac{1}{3}
+    =\dfrac{1}{3}+\dfrac{1}{8}=\dfrac{11}{24}
+
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>\text{If }P(H)=\dfrac{11}{24}, P(E_1)=\dfrac{2}{3} \text{ and } P(H|E_1)=\dfrac{1}{2}, \\
+%text
+what is $P(E_1|H)$?
+%</context>
+    <tex correct='true'>P(E_1|H)=\dfrac{8}{11}</tex>
+    <tex>P(E_1|H)=\dfrac{3}{11}</tex>
+    <reason>%text
+Using Bayes' Theorum or the formula for 
+conditional probability,
+%
+\begin{align}
+  P(E_1|H)&amp;=\dfrac{P(H\cap E_1)}{P(H)} \\
+    &amp;=\dfrac{P(E_1)\cdot P(H|E_1)}{P(H)} \\
+    &amp;=\dfrac{\frac{2}{3}\cdot \frac{1}{2}}{\frac{11}{24}}
+    =\dfrac{8}{11}
+\end{align} \\
+%text
+Note:${\small P(H)=P(E_1)\cdot P(H|E_1)+P(E_2)\cdot P(H|E_2)}$
+had already been established in the previous 
+step.
+%
+</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{3}{11}</tex>
+    <tex>\dfrac{3}{8}</tex>
+    <tex correct='true'>\dfrac{8}{11}</tex>
+    <tex>\dfrac{1}{3}</tex>
+  </choices>
+</question>
