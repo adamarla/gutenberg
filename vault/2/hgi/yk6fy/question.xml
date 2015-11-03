@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+If the lines $\dfrac{x-1}{-3}=\dfrac{y-2}{1}=\dfrac{z-3}{2}$ and
+$\dfrac{x-1}{k}=\dfrac{y-2}{1}=\dfrac{z-3}{5}$ are perpendicular,
+find the value of $k$ and hence find the 
+equation of plane containing these lines.
+%</tex>
+  </statement>
+  <step>
+    <context>L_1:\dfrac{x-1}{-3}=\dfrac{y-2}{-2k}=\dfrac{z-3}{2} \\
+L_2:\dfrac{x-1}{k}=\dfrac{y-2}{1}=\dfrac{z-3}{5} \\
+%text
+If $L_1\perp L_2$, what is the value of $k$?
+%</context>
+    <tex correct='true'>k=2</tex>
+    <tex>k=10</tex>
+    <reason>%text
+If the angle between two lines is $\theta$, then
+%
+\cos\theta=\left\vert\dfrac{a_1a_2+b_1b_2+c_1c_2}
+  {\sqrt{a_1^2+b_1^2+c_1^2}\sqrt{a_2^2+b_2^2+c_2^2}}\right\vert \\
+%text
+where $a_1$, $b_1$, $c_1$ and $a_2$, $b_2$, $c_2$ are respectively
+the direction ratios of the two lines.
+Since $L_1\perp L_2$ therefore,
+% 
+\begin{align}
+  &amp;(-3)(k)+(-2k)(1)+(2)(5)=0 \\
+  \implies &amp;-3k-2k+10=0 \implies k=2
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>L_1:\dfrac{x-1}{-3}=\dfrac{y-2}{-4}=\dfrac{z-3}{2} \\
+L_2:\dfrac{x-1}{2}=\dfrac{y-2}{1}=\dfrac{z-3}{5} \\
+%text
+What are the vector equations of the above
+lines $L_1$ and $L_2$?
+%</context>
+    <tex correct='true'>L_1: \ora{r}=\vector{1}{2}{3}+\lambda(\vector{-3}{-4}{2}) \\
+L_2: \ora{r}=\vector{1}{2}{3}+\lambda(\vector{2}{1}{5})</tex>
+    <reason>%text
+For a line passing through $(x_1, y_1, z_1)$ and
+having direction ratios $a$, $b$ and $c$, the vector 
+and cartesian equations are:
+%
+\qquad\begin{align}
+  &amp;\dfrac{x-x_1}{a}=\dfrac{y-y_1}{b}=\dfrac{z-z_1}{c} \\
+  &amp;\ora{r}=\vector{x_}{y_1}{z_1}+\lambda(\vector{a}{b}{c})
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>L_1: \ora{r}=\vector{1}{2}{3}+\lambda(\vector{-3}{-4}{2}) \\
+L_2: \ora{r}=\vector{1}{2}{3}+\lambda(\vector{2}{1}{5}) \\
+%text
+The normal to the plane containing 
+above two lines would be?
+%
+</context>
+    <tex correct='true'>\vector{-22}{19}{5}</tex>
+    <reason>%text
+The normal $\ora{n}$ is given by,
+%
+\begin{align}
+  \ora{n}&amp;=(\vector{-3}{-4}{2})\times (\vector{2}{1}{5}) \\
+    &amp;= \left\vert \begin{array}{ccc}
+      i &amp; j &amp; k \\ -3 &amp; -4 &amp; 2 \\ 2 &amp; 1 &amp; 5
+    \end{array}\right\vert \\
+    &amp;=\vector{(-20-2)}{-(-15-4)}{(-3+8)} \\
+    &amp;=\vector{-22}{19}{5}
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>%text
+Since $(\vector{1}{2}{3})$, is a point common to
+both lines and the plane containing them, 
+and the normal to the plane is given by 
+$\vector{-22}{19}{5}$, what is the equation of the 
+plane containing the lines?
+%
+</context>
+    <tex correct='true'>-22x+19y+5z=31
+</tex>
+    <tex>-22x+19y+5z=14</tex>
+    <reason>%text
+If $\ora{r}$ is the position vector of any
+point on the plane, $\vector{1}{2}{3}$, is a point
+on the plane and $\vector{-22}{19}{5}$ is the 
+normal to the plane then,
+%
+\begin{align}
+  &amp;(\ora{r}-(\vector{1}{2}{3}))\cdot (\vector{-22}{19}{5})=0 \\
+  &amp;\ora{r}\cdot(\vector{-22}{19}{5})= \\
+  &amp;\qquad\qquad(\vector{1}{2}{3})\cdot(\vector{-22}{19}{5}) \\
+  &amp;\ora{r}\cdot(\vector{-22}{19}{5})=31
+\end{align} \\
+%text
+In cartesian form this would be,
+%
+\begin{align}
+  (\vector{x}{y}{z})\cdot(\vector{-22}{19}{5})&amp;=31 \\
+  -22x+19y+5z&amp;=31
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>-22x+19y+5z=14</tex>
+    <tex>x+2y+3z=14</tex>
+    <tex>x+2y+3z=31</tex>
+    <tex correct='true'>-22x+19y+5z=31</tex>
+  </choices>
+</question>

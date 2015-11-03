@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Using matrices, solve the following the system
+of equations: $2x+3y+3z=15$, 
+$x-2y+z=-4$, $3x-y-2z=3$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+Write the equations $2x+3y+3z=15$, 
+$x-2y+z=-4$, $3x-y-2z=3$ in matrix
+form $AX=B$.
+%</context>
+    <tex correct='true'>\left[\begin{array}{rrr}
+  2 &amp; 3 &amp; 3 \\ 1 &amp; -2 &amp; 1 \\ 3 &amp; -1 &amp; -2
+\end{array}\right]
+\left[\begin{array}{r} x \\ y \\ z \end{array}\right]=
+\left[\begin{array}{r} 5 \\ -4 \\ 3 \end{array}\right]</tex>
+    <tex>\left[\begin{array}{rrr}
+  2 &amp; 1 &amp; 3 \\ 3 &amp; -2 &amp; -1 \\ 3 &amp; 1 &amp; -2
+\end{array}\right]
+\left[\begin{array}{r} x \\ y \\ z \end{array}\right]=
+\left[\begin{array}{r} 5 \\ -4 \\ 3 \end{array}\right]</tex>
+    <reason>%text
+If $A$ is a $3\times 3$ matrix and $X$ is a $3\times 1$
+matrix then $AX$ is a $3\times 1$ matrix.
+%
+AX=\left[\begin{array}{c}
+  2x+3y+3z \\ x-2y+z \\ 3x-y-2z
+\end{array}\right]=
+\left[\begin{array}{r}
+  5 \\ -4 \\ 3
+\end{array}\right]
+</reason>
+  </step>
+  <step>
+    <context>AX=B\implies X=A^{-1}B \\
+%text
+To find $X$ we need the inverse of $A$.
+Is this $A^{-1}$?
+%</context>
+    <tex correct='true'>A^{-1}=\dfrac{1}{40}\left[\begin{array}{ccc}
+  5 &amp; 3 &amp; 9 \\ 5 &amp; -13 &amp; 1 \\ 5 &amp; 11 &amp; -7
+\end{array}\right]</tex>
+    <tex>A^{-1}=\dfrac{1}{40}\left[\begin{array}{ccc}
+  5 &amp; 3 &amp; 9 \\ 5 &amp; -13 &amp; 1 \\ 5 &amp; 11 &amp; -7
+\end{array}\right]</tex>
+    <reason>%text
+Start by finding the cofactors,
+%
+C_{ij}=Det_{ij}\times (-1)^{i+j} \\
+\begin{array}{ccc}
+  C_{11}=5 &amp; C_{12}=5 &amp; C_{13}=5 \\
+  C_{21}=3 &amp; C_{22}=-13 &amp; C_{23}=11 \\
+  C_{31}=9 &amp; C_{32}=1 &amp; C_{33}=-7
+\end{array} \\
+%text
+Thereafter, find the adjoint,
+%
+Adj(A)=[CF]^T=\left[\begin{array}{ccc}
+  5 &amp; 3 &amp; 9 \\ 5 &amp; -13 &amp; 1 \\ 5 &amp; 11 &amp; -7
+\end{array}\right] \\
+\begin{align}
+  A^{-1}&amp;=\dfrac{1}{Det(A)}\times Adj(A) \\
+    &amp;=\dfrac{1}{40}\left[\begin{array}{ccc}
+        5 &amp; 3 &amp; 9 \\ 5 &amp; -13 &amp; 1 \\ 5 &amp; 11 &amp; -7
+      \end{array}\right]
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>X=A^{-1}\times B.\text{ If} \\
+A^{-1}=\dfrac{1}{40}\left[\begin{array}{ccc}
+  5 &amp; 3 &amp; 9 \\ 5 &amp; -13 &amp; 1 \\ 5 &amp; 11 &amp; -7
+\end{array}\right]\text{and }B=
+\left[\begin{array}{r}
+  5 \\ -4 \\ 3
+\end{array}\right], \\
+%text
+is the following correct?
+%
+</context>
+    <tex correct='true'>X=\left[\begin{array}{rrr}
+  1 \\ 2 \\ -1
+\end{array}\right]</tex>
+    <tex>X=\left[\begin{array}{rrr}
+  1 \\ 1 \\ 0
+\end{array}\right]</tex>
+    <reason>\begin{align}
+  X&amp;=\dfrac{1}{40}\left[\begin{array}{ccc}
+    5 &amp; 3 &amp; 9 \\ 5 &amp; -13 &amp; 1 \\ 5 &amp; 11 &amp; -7
+  \end{array}\right]\times \left[\begin{array}{r}
+    5 \\ -4 \\ 3
+  \end{array}\right] \\
+  &amp;=\dfrac{1}{40}\left[\begin{array}{rrr}
+    25-12+27 \\ 25+52+3 \\ 25-44-21
+  \end{array}\right] \\
+  &amp;=\dfrac{1}{40}\left[\begin{array}{rrr}
+    40 \\ 80 \\ -40
+  \end{array}\right]=\left[\begin{array}{rrr}
+    1 \\ 2 \\ -1
+  \end{array}\right]
+\end{align} \\
+%text
+This implies $x=1, y=2, z=-1$.
+%</reason>
+  </step>
+  <choices>
+    <tex>x=1,y=1,z=0</tex>
+    <tex>x=2,y=4,z=2</tex>
+    <tex>x=3,y=2,z=1</tex>
+    <tex correct='true'>x=1,y=2,z=-1</tex>
+  </choices>
+</question>

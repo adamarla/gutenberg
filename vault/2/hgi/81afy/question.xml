@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Evaluate:
+%
+\qquad \int \dfrac{x \sin^{-1}x}{\sqrt{1-x^2}}\,dx</tex>
+  </statement>
+  <step>
+    <context>\text{What does }\int\dfrac{x \sin^{-1}x}{\sqrt{1-x^2}}\, dx 
+\text{ reduce to} \\
+%text
+if we substitute $\sin^{-1}x$ with $t$?
+%</context>
+    <tex correct='true'>\int t \sin t\, dt</tex>
+    <tex>\int \sin  t\, dt</tex>
+    <reason>\begin{align}
+  &amp;\sin^{-1}x=t\implies \dfrac{1}{\sqrt{1-x^2}}\, dx=dt \\
+  \therefore &amp;\int \dfrac{x \sin^{-1}x}{\sqrt{1-x^2}}\, dx
+    =\int t\sin t \,dt
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\int t \sin t\, dt \\
+%text
+If the above were to be integrated by
+parts, which function ($t$ or $\sin t$) is to
+be taken as the first function?
+%
+</context>
+    <tex correct='true'>%text
+first function $t$
+%</tex>
+    <tex>%text
+first function $\sin t$
+%</tex>
+    <reason>%text
+When using integration by parts the choice
+of the first function is guided by the acronym
+ILATE - indicating order of preference:
+{\bf I}nverse Trigonometric
+{\bf L}ogarithmic
+{\bf A}lgebraic
+{\bf T}rigonometric
+{\bf E}xponential
+%
+</reason>
+  </step>
+  <step>
+    <context>%text
+What does the following evaluate to using 
+integration by parts?
+%
+\qquad I=\int t\sin t \,dt \\
+</context>
+    <tex correct='true'>x-\sin^{-1}x \sqrt{1-x^2}+C</tex>
+    <reason>\begin{align}
+  I&amp;=\int t\sin t \,dt \\
+   &amp;=t\int \sin t\, dt - \int 1.(-\cos t\, dt \\
+   &amp;=-t\cos t+\sin t+C \\
+   &amp;=-\sin^{-1}x \cos(\sin^{-1}x)+x+C \\
+   &amp;=-\sin^{-1}x \cos(\cos^{-1}\sqrt{1-x^2})+x+C \\
+   &amp;=x-\sin^{-1}x \sqrt{1-x^2}+C
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>x-\sin^{-1}x \sqrt{1-x^2}+C</tex>
+    <tex>-x+\sin^{-1}x \sqrt{1-x^2}+C</tex>
+    <tex>-\sin^{-1}x-\sqrt{1-x^2}+C</tex>
+    <tex>x^2-\sin^{-1}x\sqrt{1-x^2}+C</tex>
+  </choices>
+</question>
