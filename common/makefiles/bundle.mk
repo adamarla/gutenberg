@@ -4,9 +4,6 @@ SHELL = /bin/bash
 .DELETE_ON_ERROR:
 .PHONY : clean
 
-question.zip : bundle.xml
-	zip question.zip *.svg question.xml
-
 bundle.xml : question.xml
 	if [ -e $@ ] ; then
 		if [ -e question.xml ] ; then
