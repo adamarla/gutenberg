@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Prove that the radius of the right circular 
+cylinder of greatest curved surface area 
+which can be inscribed in a given cone is 
+half that of the of the cone.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+Study the diagram below and the 
+accompanying equations. Are the diagrams 
+and equations correct?
+%</context>
+    <image correct='true'>right.svg</image>
+    <image>wrong.svg</image>
+    <reason>%text
+From the diagram we can see that
+%
+\begin{align}
+\tan\phi &amp;= \frac{R}{H} = \frac{R_C}{x} \\
+\text{where } x &amp;= H-H_C \\
+\therefore \tan\phi &amp;= \frac{R}{H} = \frac{R_C}{H-H_C} \\
+\text{and }R_C &amp;= x\cdot\tan\phi
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+If $A$ be the curved surface area of 
+the cylinder, then which of the following 
+is the correct expression for $A$? 
+%</context>
+    <tex correct='true'>\[ A = 2\pi\tan\phi\cdot (Hx -x^2)\]</tex>
+    <tex>\[ A = 2\pi\tan\phi\cdot (Hx -x^2) + 2\pi\cdot (x^2\tan^2\phi) \]</tex>
+    <reason>%text
+The curved surface area of a cylinder does
+\textbf{not } include the base and the top. Hence,
+%
+\begin{align}
+A &amp;= (2\pi\cdot R_C)\cdot H_C \\
+&amp;= 2\pi\cdot \underbrace{(x\tan\phi)}_{R_C}\cdot \underbrace{(H-x)}_{H_C} \\
+&amp;= 2\pi\tan\phi\cdot (Hx - x^2)
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+Given the expression for $A$ from Step 2, 
+are the following conclusions correct?
+%</context>
+    <tex correct='true'>\begin{align}
+\frac{dA}{dx} &amp;= 0 \implies x = \frac{H}{2} \\ 
+\frac{d^2A}{dx^2} &amp;\lt 0\implies\text{ maxima when }x=\frac{H}{2}
+\end{align}</tex>
+    <tex>\begin{align}
+\frac{dA}{dx} &amp;= 0 \implies x = \frac{H}{2} \\ 
+\frac{d^2A}{dx^2} &amp;\gt 0\implies\text{ maxima when }x=\frac{H}{2}
+\end{align}</tex>
+    <reason>\begin{align}
+A &amp;= 2\pi\tan\phi\cdot(Hx-x^2) \\
+\implies\frac{dA}{dx} &amp;= 2\pi\tan\phi\cdot (H-2x) \\
+\therefore\frac{dA}{dx} &amp;= 0\text{ when } H = 2x \implies x=\frac{H}{2}\\
+\text{Also, }\frac{d^2 A}{dx^2} &amp;= \frac{d}{dx}\frac{dA}{dx} = 2\pi\tan\phi\cdot(0-2)\lt 0
+\end{align}\\
+%text
+And as $\dfrac{d^2 A}{dx^2}\lt 0$, we have a maxima 
+when $x=\dfrac{H}{2}$.
+%</reason>
+  </step>
+  <step>
+    <context>\textbf{Radius of the cylinder}\\
+%text
+If $A$ (curved surface area) is maximum when 
+$x=\frac{H}{2}$, then is the following also true? 
+%</context>
+    <tex correct='true'>\[ x=\frac{H}{2} \Rightarrow \frac{R_C}{R} = \frac{1}{2} \] </tex>
+    <tex>\[ x=\frac{H}{2} \nRightarrow \frac{R_C}{R} = \frac{1}{2} \] </tex>
+    <reason>%text
+We established in Step 1 that 
+%
+\begin{align}
+\tan\phi &amp;= \frac{R}{H} = \frac{R_C}{x} \\
+\implies\frac{R_C}{R} &amp;= \frac{x}{H} \\
+\text{But }x &amp;= \frac{H}{2}\text{ when maxima occurs}\\
+\therefore\frac{R_C}{R} &amp;= \frac{\frac{H}{2}}{H} = \frac{1}{2}
+\end{align} \\
+%text
+
+Hence, we have proven that the cylinder
+with the maximum curved surface inscribed 
+inside a cone has a radius \underline\text{half} that
+of the cone.
+%</reason>
+  </step>
+</question>
