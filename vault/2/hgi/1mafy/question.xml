@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+An open box with a square base is to be 
+made out of a given quantity of cardboard of 
+area $c^2$ square units. Show that the maximum 
+volume of the box is $\dfrac{c^3}{6\sqrt{3}}$ cubic units.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+Given a box with a square base (see figure),
+are the following assertions also true? 
+(see equations below the figure)
+%</context>
+    <image correct='true'>right.svg</image>
+    <image>wrong.svg</image>
+    <reason>%text
+It is a box with a \underline\text{square base}. But
+no one ever said that it is a square box. 
+
+Hence, it is \underline\text{not necessary} that $x=y$.
+
+Moreover, it is an \underline\text{open} box. Which means 
+that it has no top. Hence, if we have $c^2$ 
+square units of cardboard, then 
+
+%
+\begin{align}
+c^2 &amp;= \underbrace{4xy}_{\text{4 faces}} + \underbrace{x^2}_\text{base}
+\end{align} </reason>
+  </step>
+  <step>
+    <context>\textbf{Volume of the box}\\
+%text
+If $V$ be the volume of the box, then given
+the results of Step 1, would the following
+be true?
+%</context>
+    <tex correct='true'>\[ V = \dfrac{c^2x - x^3}{4} \]</tex>
+    <tex>\[ V = \dfrac{c^2 - x^2}{4x} \]</tex>
+    <reason>%text
+From Step 1, we know that 
+%
+\begin{align}
+c^2 &amp;= 4xy + x^2 \implies y = \dfrac{c^2-x^2}{4x} \\
+\therefore V &amp;= x^2 y = x^2\cdot\left( \dfrac{c^2-x^2}{4x}\right) \\
+&amp;= \dfrac{c^2x - x^3}{4}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+Given that $V = \dfrac{c^2x-x^3}{4}$, are the following
+assertions correct?
+%</context>
+    <tex correct='true'>\begin{align}
+\frac{dV}{dx} &amp;= 0 \text{ when } x = \frac{c}{\sqrt{3}} \\
+\frac{d^2V}{dx^2} &amp;\lt 0\implies \text{ maxima } \\
+V_\text{maximum} &amp;= \frac{c^3}{6\sqrt{3}}
+\end{align}</tex>
+    <tex>\begin{align}
+\frac{dV}{dx} &amp;= 0 \text{ when } x = \frac{c}{\sqrt{3}} \\
+\frac{d^2V}{dx^2} &amp;\gt 0\implies \text{ maxima }\\
+V_\text{maximum} &amp;= \frac{c^3}{6\sqrt{3}}
+\end{align}</tex>
+    <reason>%text
+At a maxima, $\dfrac{d}{dx}f(x)=0$ and $\dfrac{d^2 f(x)}{dx^2}\lt 0$.
+Therefore, 
+%
+\begin{align}
+V = \frac{c^2x - x^3}{4}&amp;\implies\frac{dV}{dx} = \frac{1}{4}\cdot (c^2 - 3x^2)\\
+\therefore \frac{dV}{dx}= 0 &amp;\implies c^2 - 3x^2 = 0\text{ or }x = \frac{c}{\sqrt{3}}\\
+\text{Also, }\frac{d^2V}{dx^2} &amp;= \underbrace{\frac{1}{4}\cdot (0-6x)\lt 0}_{\text{Because }x\gt 0}\\
+&amp;\implies\text{ maxima} \\
+\therefore V_\text{maximum} &amp;= \frac{x}{4}\cdot (c^2 - x^2) \\
+&amp;=\underbrace{\frac{\frac{c}{\sqrt{3}}}{4}\cdot\left(c^2-\frac{c^2}{3}\right)}_{x=\frac{c}{\sqrt{3}}}\\
+&amp;= \frac{c}{4\sqrt{3}}\cdot\frac{2c^2}{3} = \frac{c^3}{6\sqrt{3}}
+\end{align}</reason>
+  </step>
+</question>
