@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+A dietician wishes to mix two types of foods
+in a such a way that the vitamin contents of
+the mixture contains atleast 8 units of  
+vitamin A and 10 units of vitamin C. Food X 
+contains 2 units/kg of vitamin A and 1 unit/kg 
+of vitamin C while food Y contains 1 unit/kg of
+vitamin A and 2 units/kg of vitamin C. It costs 
+₹ 5/kg to purchase food X and ₹ 7/kg to 
+purchase food Y. Determine the minimum cost
+of such a mixture. Formulate the above as a
+LPP and solve it graphically. 
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+Given the following variables, have the 
+constraints and the objective function 
+been written correctly? 
+%
+\begin{tabular}{|c|c|}
+\hline 
+\text{Variable} &amp; \text{Meaning} \\
+\hline 
+Q_X &amp; \text{Quantity of X needed (kg)} \\
+\hline 
+Q_Y &amp; \text{Quantity of Y needed (kg)}\\
+\hline 
+\end{tabular}</context>
+    <tex correct='true'>\begin{align}
+2Q_X + Q_Y &amp;\geq 8 \\
+Q_X + 2Q_Y &amp;\geq 10 \\
+\text{Minimize }&amp; 5Q_X + 7Q_Y 
+\end{align} </tex>
+    <tex>\begin{align}
+2Q_X + Q_Y &amp;\geq 10 \\
+Q_X + 2Q_Y &amp;\geq 8 \\
+\text{Minimize }&amp; 5Q_X + 7Q_Y 
+\end{align} </tex>
+    <reason>%text
+First, take stock of all the facts given 
+in the question. 
+
+If we use $Q_X$ kg of food X and $Q_Y$ kg of
+food Y, then the \underline{\text{total vitamin content}} in
+the mixture will be as follows.
+
+%
+\begin{tabular}{|c|c|c|c|}
+\hline 
+&amp; \text{X} &amp; \text{Y} &amp; \text{Total} \\
+\hline 
+\text{Vit. A} &amp; \text{2 units/kg} &amp; \text{1 unit/kg} &amp; 2Q_X + Q_Y \\ 
+\hline 
+\text{Vit. C} &amp; \text{1 unit/kg} &amp; \text{2 units/kg} &amp; Q_X + 2Q_Y \\
+\hline
+\end{tabular} 
+%text
+
+Moreover
+%
+\begin{tabular}{|c|l|}
+\hline
+\text{Constraint} &amp; \text{Meaning} \\
+\hline 
+2Q_X + Q_Y \geq 8 &amp; \text{Atleast 8 units of vit. A} \\
+\hline 
+Q_X + 2Q_Y \geq 10 &amp; \text{Atleast 10 units of vit. C} \\
+\hline
+5Q_X + 7Q_Y &amp; \text{Total cost (minimize)} \\
+\hline
+\end{tabular} </reason>
+  </step>
+  <step>
+    <context>%text
+Have the constraints from Step 1, and 
+hence the \underline\text{feasible} region and points been
+shown correctly below?
+%
+</context>
+    <image correct='true'>right.svg</image>
+    <image>wrong.svg</image>
+    <reason>%text
+Notice that in the $Q_X-Q_Y$ plot, only 
+points \underline\text{like point $r$} satisfy \underline\text{both} of the 
+following conditions 
+
+%
+\begin{align}
+2Q_x + Q_Y &amp;\geq 8 \\ 
+Q_X + 2Q_Y &amp;\geq 10
+\end{align}
+%text
+
+
+All other points (like p,q and s) satisfy 
+only one (or none) of the constraints. 
+
+Hence, with the feasible region as shown, 
+the only \underline\text{feasible points} are $B,C$ and $E$.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+Given the three feasible points - B,C and E
+- the lowest cost mixture that will fullfill all
+vitamin requirements is the following.
+\textbf{Right or wrong?}
+%</context>
+    <tex correct='true'>%text
+Lowest cost = ₹ 38 at point C.
+%</tex>
+    <tex>%text
+Lowest cost = ₹ 50 at point E.
+%</tex>
+    <reason>%text
+The coordinates of point $C$ can be gotten
+by solving the following equations.
+%
+\begin{align}
+ 2Q_X &amp;+ Q_Y = 8 \\
+ Q_X &amp;+ 2Q_Y = 10 \\
+ \implies Q_X &amp;=2\text{ and }Q_Y = 4
+\end{align}\\
+%text
+
+And from the graph in Step 2, one can also
+see that $B=(0,8)$ and $E=(10,0)$. Hence,
+
+%
+\begin{tabular}{|c|c|c|}
+\hline 
+\text{Point} &amp; (Q_X, Q_Y) &amp; \text{Cost}=5Q_X + 7Q_Y \\
+\hline 
+B &amp; (0,8) &amp; ₹ 56 \\
+\hline 
+C &amp; (2,4) &amp; ₹ 38 \\
+\hline 
+E &amp; (10,0) &amp; ₹ 50 \\
+\hline
+\end{tabular}\\
+%text
+
+The \underline\text{lowest cost} mixture therefore consists
+of 2 kg of food X and 4 kg of food Y at a 
+\underline\text{total cost} of ₹ 38.
+%</reason>
+  </step>
+  <choices>
+    <tex>₹ 60</tex>
+    <tex>₹ 56</tex>
+    <tex>₹ 50 </tex>
+    <tex correct='true'>₹ 38 </tex>
+  </choices>
+</question>
