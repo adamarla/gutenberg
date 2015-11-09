@@ -9,7 +9,8 @@ bundle.xml : question.xml
 		if [ -e question.xml ] ; then
 			java -jar ~/quill/Qquill-all.jar -b
 			zip question.zip *.svg question.xml
-			qid=$$(grep questionId $@ | sed -e 's/<questionId>\(.*\)<\/questionId>/\1/g')
+			bentry=$$(grep questionId $@ | sed -e 's/<questionId>\(.*\)<\/questionId>/\1/g')
+			qid=$$(echo $$bentry)
 			curl http://www.gradians.com/question/set_potd_flag?id=$$qid
 			touch $@
 		fi
