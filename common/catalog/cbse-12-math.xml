@@ -24,4 +24,24 @@
 	    <exercise tag="secnb" label="Section B"/>
 	    <exercise tag="secnc" label="Section C"/>
 	</chapter>
+	<chapter tag="2010" label="2010">
+	    <exercise tag="secna" label="Section A"/>
+	    <exercise tag="secnb" label="Section B"/>
+	    <exercise tag="secnc" label="Section C"/>
+	</chapter>
+	<chapter tag="2009" label="2009">
+	    <exercise tag="secna" label="Section A"/>
+	    <exercise tag="secnb" label="Section B"/>
+	    <exercise tag="secnc" label="Section C"/>
+	</chapter>
+	<chapter tag="2008" label="2008">
+	    <exercise tag="secna" label="Section A"/>
+	    <exercise tag="secnb" label="Section B"/>
+	    <exercise tag="secnc" label="Section C"/>
+	</chapter>
+	<chapter tag="2007" label="2007">
+	    <exercise tag="secna" label="Section A"/>
+	    <exercise tag="secnb" label="Section B"/>
+	    <exercise tag="secnc" label="Section C"/>
+	</chapter>
 </book>
