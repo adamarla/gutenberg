@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Evaluate \[ \int \sec^2 (7-4x)\cdot dx \]
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If \[ \int\sec^2 (7-4x)\cdot dx = A\cdot \int\sec^2 t\cdot dt \]
+then what are $t$ and $A$?
+%</context>
+    <tex correct='true'>\begin{align}
+t &amp;= 7-4x \\ 
+A &amp;= -\frac{1}{4}
+\end{align}</tex>
+    <tex>\begin{align}
+t &amp;= 7-4x \\ 
+A &amp;= -4
+\end{align}</tex>
+    <reason>%text
+If we let $t = 7-4x$ then 
+%
+\begin{align}
+dt = -4\cdot dx &amp;\implies dx = -\frac{dt}{4} \\
+\therefore \int\sec^2 (7-4x)\cdot dx &amp;= -\frac{1}{4}\cdot\int\sec^2 t\cdot dt \\
+\implies A &amp;= -\frac{1}{4}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+Given that 
+\[ I = \int\sec^2 (7-4x)\cdot dx = -\frac{1}{4}\int\sec^2 t\cdot dt\]
+what will $I$ evaluate to in terms of $x$?
+%</context>
+    <tex correct='true'>\[ -\frac{\tan (7-4x)}{4} + C \]</tex>
+    <tex>\[ -\frac{\tan (7-4x)\cdot\sec (7-4x)}{4} + C \]</tex>
+    <reason>\begin{align}
+I &amp;= -\frac{1}{4}\int sec^2 t\cdot dt = -\frac{1}{4}\tan t + C \\ 
+&amp;= -\frac{\tan (7-4x)}{4} + C 
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>\[ \frac{\tan (7-4x)}{4} + C \]</tex>
+    <tex>\[ -\frac{\tan (7-4x)\cdot\sec (7-4x)}{4} + C \]</tex>
+    <tex correct='true'>\[ -\frac{\tan (7-4x)}{4} + C \]</tex>
+    <tex>\[ -\frac{\tan (7-4x)\cdot\sec (7-4x)}{4} + C \]</tex>
+  </choices>
+</question>
