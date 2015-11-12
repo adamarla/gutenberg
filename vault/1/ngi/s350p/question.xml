@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Write the principal value of $\sec^{-1}(-2)$. 
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+Is the following assertion true? 
+%</context>
+    <tex correct='true'>\sec^{-1}(-2) = \cos^{-1}\left(-\dfrac{1}{2}\right)</tex>
+    <tex>\sec^{-1}(-2) \neq \cos^{-1}\left(-\dfrac{1}{2}\right)</tex>
+    <reason>\begin{align}
+\sec\theta &amp;= -2 \implies \theta = \sec^{-1}(-2) \\ 
+\text{Also }\sec\theta &amp;= -2 \implies\cos\theta = -\dfrac{1}{2}\\
+&amp;\implies \theta=\cos^{-1}\left( -\dfrac{1}{2}\right) \\
+\therefore \theta &amp;= \sec^{-1}(-2) = \cos^{-1}\left(-\dfrac{1}{2} \right) 
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\textbf{Given that }\\
+\[ \cos\left( 2\pi-\frac{2\pi}{3} \right) = \cos\frac{4\pi}{3} = -\frac{1}{2}\]\\
+%text
+is the following statement true?
+%</context>
+    <tex correct='true'>\begin{align}
+\cos\dfrac{4\pi}{3} = -\dfrac{1}{2}\nRightarrow
+\cos^{-1}\left( -\frac{1}{2}\right) &amp;= \frac{4\pi}{3} \\
+\text{In fact, }\cos^{-1}\left(-\frac{1}{2}\right) &amp;= \frac{2\pi}{3} \\
+\therefore \sec^{-1}(-2) = \cos^{-1}\left(-\frac{1}{2}\right) &amp;= \frac{2\pi}{3}
+\end{align}</tex>
+    <tex>\begin{align}
+\cos\dfrac{4\pi}{3} = -\dfrac{1}{2}\implies
+\cos^{-1}\left( -\frac{1}{2}\right) &amp;= \frac{4\pi}{3} \\
+\therefore \sec^{-1}(-2) = \cos^{-1}\left(-\frac{1}{2}\right) &amp;= \frac{4\pi}{3}
+\end{align}</tex>
+    <reason>%text
+There are \underline{\text{infinite }\theta} for which 
+\[ \cos\theta = -\frac{1}{2} \left( \implies \sec\theta =  -2 \right) \]
+
+So,which $\theta$ do we have in mind when we 
+say that $\theta = \cos^{-1}\left(-\frac{1}{2}\right)$? 
+
+By definition, the $\theta$ we consider in the one 
+that lies in the \underline\text{principal range}. 
+
+This is the \underline\text{smallest} range that includes
+zero (0) and gives all possible values of the 
+trigonometric function.
+
+Which is why, when $cos x = \theta$, then we say
+that $\theta \in \underbrace{\left[ 0,2\pi \right]}_{\text{Principal Range}}
+
+And therefore, 
+%
+\begin{align}
+\cos\theta &amp;= -\frac{1}{2}\implies \theta = \frac{2\pi}{3}\in\left[ 0,2\pi\right]
+\end{align}</reason>
+  </step>
+</question>

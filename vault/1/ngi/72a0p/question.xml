@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Write the value of the following integral:
+\[\qquad\qquad \int_{-\frac\pi{2}}^{\frac\pi{2}}\sin^5 x\cdot dx\]
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+Your friend makes the following claims 
+about $f(x) = \sin^5 x$ and \[ A = \int_{-\frac\pi{2}}^{\frac\pi{2}}\sin^5x\cdot dx\].
+\underline\text{Are his claims correct?}
+%</context>
+    <tex correct='true'>(\Roman{1})\quad f(x)\text{ is an odd function. } \\
+(\Roman{2})\,\therefore A = \int_{-\frac\pi{2}}^{\frac\pi{2}} f(x)\cdot dx = 0</tex>
+    <tex>(\Roman{1})\quad f(x)\text{ is an even function. } \\
+(\Roman{2})\,\therefore A = \int_{-\frac\pi{2}}^{\frac\pi{2}} f(x)\cdot dx = 2\cdot\int_0^{\frac\pi{2}}f(x)\cdot dx = 2</tex>
+    <reason>%text
+Whenever you see an integral of the form
+\[\quad\quad A = \int_{-a}^{+a}f(x)\cdot dx \] 
+ask yourself whether $f(x)$ is 
+\underline\text{odd or even or neither}. Because if it is 
+odd or even, then life is simpler. 
+
+In this case, notice that 
+%
+\begin{align}
+f(x) &amp;= \sin^5 x = (\sin x)^5 \\ 
+f(-x) &amp;= [\sin (-x)]^5 = \underbrace{(-\sin x)^5}_{\sin(-\theta) = -\sin\theta} \\
+&amp;= -\sin^5 x = -f(x) 
+\end{align} \\
+%text
+As $f(-x) = -f(x), f(x)$ \underline\text{is an odd function}. 
+And we know that for odd functions 
+\[ \quad \int_{-a}^{+a}f(x)\cdot dx = 0 \]
+Hence, \[ A = \int_{-\frac\pi{2}}^{\frac\pi{2}}\sin^5x\cdot dx = 0 \].
+%</reason>
+  </step>
+  <choices>
+    <tex correct='true'>0</tex>
+    <tex>1</tex>
+    <tex>2</tex>
+    <tex>4</tex>
+  </choices>
+</question>
