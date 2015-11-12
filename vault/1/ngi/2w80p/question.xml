@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Evaluate the following: 
+\[ \qquad \int_1^2\frac{5x^2}{x^2+4x+3}\cdot dx \]
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+\textbf{Partial Sums: } In the given integral\\
+\[ A = \int_1^2\frac{5x^2\cdot dx}{x^2+4x+3}= 5\int_1^2\underbrace{\frac{x^2}{x^2+4x+3}}_Pdx \]
+\underline\text{how can 'P' be re-written as a partial sum}?
+%</context>
+    <tex correct='true'>P = \frac{x^2}{x^2+4x+3} = a + \frac{b}{x+1} + \frac{c}{x+3} </tex>
+    <tex>P = \frac{x^2}{x^2+4x+3} = \frac{b}{x+1} + \frac{c}{x+3} </tex>
+    <reason>%text
+If \[\frac{x^2}{x^2+4x+3} \neq a + \frac{b}{x+1}+\frac{c}{x+3}\] but
+\underline\text{instead} \frac{x^2}{x^2+4x+3} = \frac{b}{x+1} + \frac{c}{x+3}
+then 
+
+%
+\begin{align}
+x^2 &amp;= \left[\frac{b}{x+1}+\frac{c}{x+3} \right]\cdot\underbrace{(x+1)\cdot (x+3)}_{= x^2+4x+3} \\
+&amp;= b\cdot(x+3) + c\cdot(x+1) \\
+&amp;= \underbrace{(b+c)\cdot x + (3b + c)}_{\text{No }x^2\text{ term!}}
+\end{align}\\
+%text
+Hence, \[\frac{x^2}{x^2+4x+3} \neq \frac{b}{x+1} + \frac{c}{x+3}\]
+
+Instead, \[\frac{x^2}{x^2+4x+3} = a + \frac{b}{x+1} + \frac{c}{x+3}\]
+%
+</reason>
+  </step>
+  <step>
+    <context>%text
+\textbf{Partial Sums - II}
+In \[\frac{x^2}{x^2+4x+3} = a + \frac{b}{x+1} + \frac{c}{x+3}\]
+what are the \underline\text{values of 'a', 'b' and 'c'}?
+%</context>
+    <tex correct='true'>\begin{tabular}{|c|c|}
+\hline 
+a &amp; 1 \\
+\hline 
+b &amp; \frac{1}{2} \\ 
+\hline 
+c &amp; -\frac{9}{2} \\
+\hline 
+\end{tabular} </tex>
+    <tex>\begin{tabular}{|c|c|}
+\hline 
+a &amp; 1 \\
+\hline 
+b &amp; -\frac{1}{2} \\ 
+\hline 
+c &amp; \frac{9}{2} \\
+\hline 
+\end{tabular} </tex>
+    <reason>\begin{align}
+\frac{x^2}{x^2+4x+3} &amp;= a + \frac{b}{x+1} + \frac{c}{x+3} \\
+\implies x^2 &amp;= a\cdot (x^2+4x+3) + b\cdot (x+3) \\
+&amp;+ c\cdot (x+1) \\
+&amp;= ax^2 + (4a + b + c)x + (3a + 3b+c)
+\end{align}\\
+%text
+
+On \underline\text{comparing coefficients}, we can see that
+
+%
+\begin{align}
+a &amp;= 1 \text{ (coefficient of }x^2)\\
+\underbrace{4a + b + c = 0}_{x} &amp;\implies \underbrace{b + c = -4}_{a=1} \\ 
+\underbrace{3a + 3b + c = 0}_{\text{constant term}}&amp;\implies\underbrace{3b +c = -3}_{a=1}\\
+\implies b &amp;= \frac{1}{2}\text{ and } c = -\frac{9}{2}
+\end{align} </reason>
+  </step>
+  <step>
+    <context>%text
+Given the results of Step 2, what will 
+\[A = 5\int_1^2\frac{x^2}{x^2+4x+3}dx \] evaluate to?
+%</context>
+    <tex correct='true'>A = 5\cdot\left[ 1 + \frac{1}{2}\log\frac{3}{2}-\frac{9}{2}\log\frac{5}{4}\right]</tex>
+    <tex>A = 5\cdot\left[ 1 + \frac{1}{2}\log\frac{3}{2}+\frac{9}{2}\log\frac{5}{4}\right]</tex>
+    <reason>\begin{align}
+A &amp;= 5\int_1^2\frac{x^2}{x^2+4x+3}dx \\
+&amp;= 5\int_1^2\left[ 1 + \frac{1}{2\cdot(x+1)} -\frac{9}{2\cdot(x+3)}\right]\cdot dx\\
+&amp;=5\left[\int_1^2 dx + \frac{1}{2}\int_1^2\frac{dx}{x+1}-\frac{9}{2}\int_1^2\frac{dx}{x+3} \right]\\
+&amp;= 5\left[ x + \frac{1}{2}\log(x+1) -\frac{9}{2}\log(x+3)\right]_1^2 \\
+&amp;= 5\left[ \left(2+\frac{1}{2}\log 3-\frac{9}{2}\log 5\right) - \\
+&amp;\left(1+\frac{1}{2}\log 2-\frac{9}{2}\log 4\right)\right] \\
+&amp;= 5\cdot\left[ 1 + \underbrace{\frac{1}{2}\log\frac{3}{2}-\frac{9}{2}\log\frac{5}{4}}_{\log a - \log b = \log\frac{a}{b}}\right]
+\end{align} </reason>
+  </step>
+  <choices>
+    <tex>A = 5\cdot\left[ 1 + \frac{1}{2}\log\frac{45}{16}\right]</tex>
+    <tex>A = 5\cdot\left[ 1 + \frac{1}{2}\log\frac{3}{2}-\frac{9}{2}\log\frac{5}{4}\right]</tex>
+    <tex>A = 5\cdot\left[ 1 + \frac{1}{2}\log\frac{15}{8}\right]</tex>
+    <tex correct='true'>A = 5\cdot\left[ 1 + \frac{1}{2}\log\frac{3}{2}-\frac{9}{2}\log\frac{5}{4}\right]</tex>
+  </choices>
+</question>
