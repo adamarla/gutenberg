@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If }y = \cos^{-1}\left( \dfrac{3x + 4\sqrt{1-x^2}}{5}\right),\text{ find }\dfrac{dy}{dx}.</tex>
+  </statement>
+  <step>
+    <context>%text
+Study the figure(s) below. Have the values 
+of $\sin\phi, \cos\phi$ (in $\triangle ABC$) and $\sin\theta,\cos\theta$ (in
+$\triangle PQR$) been written correctly? 
+%</context>
+    <image correct='true'>right.svg</image>
+    <image>wrong.svg</image>
+    <reason>\text{In }\underline{\triangle ABC}, \\
+\begin{align}
+AC &amp;= \sqrt{3^2+4^2} = 5 \\ 
+\therefore\sin\phi &amp;= \frac{4}{5}\text{ and }\cos\phi = \frac{3}{5}
+\end{align} \\
+\text{Similarly, in }\underline{\triangle PQR} \\
+\begin{align}
+PR &amp;= \sqrt{x^2 + (\sqrt{1-x^2})^2} = 1 \\
+\therefore\sin\theta &amp;= \sqrt{1-x^2}\text{ and }\cos\theta = x 
+\end{align} </reason>
+  </step>
+  <step>
+    <context>%text
+\textbf{Right or wrong? } Given the results of Step 1,
+\[ y= \cos^{-1}\left( \frac{3x+4\sqrt{1-x^2}}{5}\right) \] can be re-written
+as follows (in terms of $\theta$ and $\phi$)
+%</context>
+    <tex correct='true'>y = \cos^{-1}\left( \cos(\theta-\phi)\right) = \theta - \phi </tex>
+    <tex>y = \cos^{-1}\left( \cos(\theta+\phi)\right) = \theta +\phi </tex>
+    <reason>\begin{align}
+y &amp;= \cos^{-1}\left( \frac{3x + 4\sqrt{1-x^2}}{5}\right) \\
+&amp;= \cos^{-1}\left( \underbrace{\frac{3}{5}}_{\cos\phi}\underbrace{x}_{\cos\theta} 
++ \underbrace{\frac{4}{5}}_{\sin\phi}\underbrace{\sqrt{1-x^2}}_{\sin\theta}\right)\\
+&amp;= \cos^{-1}[\underbrace{\cos(\theta - \phi)}_{=\cos\theta\cos\phi + \sin\theta\sin\phi}]
+= \theta - \phi
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+Given that $y=\theta-\phi, \frac{dy}{dx}$ will evaluate
+to the following. \textbf{Right or wrong?}
+%</context>
+    <tex correct='true'>\frac{dy}{dx} = -\frac{1}{\sqrt{1-x^2}}</tex>
+    <tex>\frac{dy}{dx} = \frac{1}{\sqrt{1-x^2}}</tex>
+    <reason>%text
+In the last step, we established that 
+\[y = \cos^{-1} (\cos(\theta - \phi))=\theta - \phi \]
+
+Remember, \underline{\phi\text{ is a constant}}. Therefore,  
+
+%
+\begin{align}
+\frac{dy}{dx} &amp;= \underbrace{\frac{dy}{d\theta}\cdot\frac{d\theta}{dx}}_
+{\text{Chain Rule}} = \frac{d}{d\theta}\left( \theta-\phi\right)\cdot
+\underbrace{\frac{d}{dx}\cos^{-1}x}_{\theta=\cos^{-1}x}\\
+&amp;= -\frac{1}{\sqrt{1-x^2}}
+\end{align} </reason>
+  </step>
+  <choices>
+    <tex>\frac{1}{\sqrt{1-x^2}}</tex>
+    <tex>\frac{1}{1+x^2}</tex>
+    <tex correct='true'>-\frac{1}{\sqrt{1-x^2}}</tex>
+    <tex>-\frac{1}{1+x^2}</tex>
+  </choices>
+</question>
