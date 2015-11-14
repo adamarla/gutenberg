@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find $\lambda$ if $(\vector{2}{6}{14})\times(\vector{1}{-\lambda}{7})=0$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+What is $\ora{P}=(\vector{2}{6}{14})\times(\vector{1}{-\lambda}{7})$?
+%</context>
+    <tex correct='true'>\ora{P}=\left\vert \begin{array}{ccc}
+  \it{i} &amp; \it{j} &amp; \it{k} \\ 2 &amp; 6 &amp; 14 \\ 1 &amp; -\lambda &amp; 7
+\end{array}\right\vert</tex>
+    <reason>%text
+The vector cross product of two vectors $\ora{A}$ 
+and $\ora{B}$ where, 
+  $\ora{A}=\vector{a_1}{a_2}{a_3}$ and 
+  $\ora{B}=\vector{b_1}{b_2}{b_3}$,
+looks something like this,
+%
+\begin{align}
+  \ora{A}\times\ora{B} 
+    &amp;=(\vector{a_1}{a_2}{a_3})\times(\vector{b_1}{b_2}{b_3}) \\
+    &amp;=a_1b_1({\it\hat i}\times{\it i})+a_1b_2({\it i}\times{\it j})+a_1b_3({\it i}\times{\it k}) \\
+    &amp;\quad a_2b_1({\it j}\times{\it i})+a_2b_2({\it j}\times{\it j})+a_2b_3({\it j\times{\it k}}) \\
+    &amp;\quad a_3b_1({\it k}\times{\it i})+a_3b_2({\it k}\times{\it j})+a_3b_3({\it k\times{\it k}}) \\
+    &amp;=0+a_1b_2 \hat{\it k} -a_1b_3 \hat\jmath
+    -a_2b_1\hat{\it k}+0+a_2b_3\hat\imath \\
+    &amp;\qquad a_3b_1\hat\jmath - a_3b_2\hat\imath + 0 \\
+    &amp;=(a_2b_3-a_3b_2)\hat\imath + (a_3b_1-a_1b_3)\hat\jmath \\
+    &amp;\qquad \hat{\it k}(a_1b_2-a_2b_1) \\
+    &amp;=\left\vert \begin{array}{ccc}
+        \hat\imath &amp; \hat\jmath &amp; \hat{\it k} \\
+        a_1 &amp; a_2 &amp; a_3 \\ b_1 &amp; b_2 &amp; b_3
+      \end{array}\right\vert
+      
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\ora{P}=\left\vert \begin{array}{ccc}
+  \it{i} &amp; \it{j} &amp; \it{k} \\ 2 &amp; 6 &amp; 14 \\ 1 &amp; -\lambda &amp; 7
+\end{array}\right\vert \\
+%text
+If $\ora{P}=\ora{0}$ (zero vector), what is $\lambda$?
+%</context>
+    <tex correct='true'>-3</tex>
+    <tex>6</tex>
+    <reason>\begin{align}
+  &amp;\qquad \hat\imath(6\cdot 7 - (-\lambda)14)=0 \\
+  &amp;\implies 42+14\lambda=0 \\
+  &amp;\implies \lambda=-3
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>0</tex>
+    <tex>6</tex>
+    <tex>3</tex>
+    <tex correct='true'>-3</tex>
+  </choices>
+</question>

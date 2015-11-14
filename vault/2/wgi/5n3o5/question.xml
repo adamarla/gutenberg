@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+What positive value of $x$ makes the following
+pair of determinants equal?
+%
+\left\vert\begin{array}{cc}
+  2x &amp; 3 \\ 5 &amp; x
+\end{array}\right\vert,
+\left\vert\begin{array}{cc}
+  16 &amp; 3 \\ 5 &amp; 2
+\end{array}\right\vert</tex>
+  </statement>
+  <step>
+    <context>%text
+General Question: Are the following 
+pair of determinants equal?
+%
+\left\vert\begin{array}{cc}
+  3 &amp; 1 \\ 2 &amp; 6  
+\end{array}\right\vert,
+\left\vert\begin{array}{cc}
+  8 &amp; 1 \\ 0 &amp; 2
+\end{array}\right\vert
+</context>
+    <tex correct='true'>%text
+Yes, they are both equal to $16$.
+%</tex>
+    <tex>%text
+No, this pair of determinants is unequal.
+%</tex>
+    <reason>%text
+Unlike matrices, determinants with unequal 
+elements could still be equal provided the
+determinant computes to the same value.
+So for example,
+%
+\left\vert\begin{array}{cc}
+  3 &amp; 1 \\ 2 &amp; 6  
+\end{array}\right\vert=\left[3\times 6- 2\times 1\right]=16 \\
+\left\vert\begin{array}{cc}
+  8 &amp; 1 \\ 0 &amp; 2
+\end{array}\right\vert=\left[8\times 2 - 1\times 0\right]=16 \\
+%text
+Therefore, despite having distinct elements, 
+the two determinants above are equal.
+%
+</reason>
+  </step>
+  <step>
+    <context>%text
+True or False?
+%
+\left\vert\begin{array}{cc}
+  2x &amp; 3 \\ 5 &amp; x
+\end{array}\right\vert=
+\left\vert\begin{array}{cc}
+  16 &amp; 3 \\ 5 &amp; 2
+\end{array}\right\vert \implies x^2=16</context>
+    <tex correct='true'>True.</tex>
+    <tex>False.</tex>
+    <reason>\begin{align}
+  &amp;\qquad\left\vert\begin{array}{cc}
+    2x &amp; 3 \\ 5 &amp; x
+  \end{array}\right\vert=
+  \left\vert\begin{array}{cc}
+    16 &amp; 3 \\ 5 &amp; 2
+  \end{array}\right\vert \\
+  &amp;\implies 2x^2-15=32-15 \\
+  &amp;\implies 2x^2=32 \\
+  &amp;\implies x^2=16 \implies x=4 \qquad(\because x\in \mathbb{Z}^+)
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex>\pm 4</tex>
+    <tex>16</tex>
+    <tex correct='true'>4</tex>
+    <tex>8</tex>
+  </choices>
+</question>
