@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+If $f:\mathbb{R}\rightarrow\mathbb{R}$, $f(x)=(3-x^3)^{1/3}$, then find
+$fof(x)$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+For any function $f$, what is $fof(x)$?
+%</context>
+    <tex correct='true'>f \left(f(x)\right)</tex>
+    <tex>f(x)\cdot f(x)</tex>
+    <reason>%text
+$fof(x)$ is the mathematical shorthand for one
+level of recursion of the function $f$. So if 
+$y=f(x)$ then, $fof(x)=f(y)=f(f(x))$.
+%
+</reason>
+  </step>
+  <step>
+    <context>%text
+Given that $fof(x)=f(f(x))$, for given function
+$f(x)=(3-x^3)^{1/3}$, is the following correct?
+%</context>
+    <tex correct='true'>fof(x)=\left(3-f(x)\right)^{1/3}</tex>
+    <reason>%text
+Substitute $x$ with $f(x)$ in the given function
+definition and you get, $fof(x)=(3-f(x))^{1/3}$
+%</reason>
+  </step>
+  <step>
+    <context>%text
+If $f(x)=(3-x^3)^{1/3}$, is this the correct 
+expression for $fof(x)$ in terms of $x$?
+%</context>
+    <tex correct='true'>x</tex>
+    <tex>(3-x^3)^{1/3}</tex>
+    <reason>\begin{align}
+  fof(x) &amp;= (3-f(x)^3)^{1/3} \\
+    &amp;= \left(3-\left((3-x)^{1/3}\right)^3\right)^{1/3} \\
+    &amp;= \left(3-(3-x^3)\right)^{1/3} \\
+    &amp;= \left(3-3+x^3\right)^{1/3}=x
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>x</tex>
+    <tex>(3-x^3)^{1/3}</tex>
+    <tex>1</tex>
+    <tex>(3-x^3)^{2/3}</tex>
+  </choices>
+</question>

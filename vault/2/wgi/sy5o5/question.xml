@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Write a vector of magnitude $9$ units in the
+direction of vector $\vector{-2}{1}{2}$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+What is the magnitude of vector 
+$\ora{A}=\vector{-2}{1}{2}$?
+%</context>
+    <tex correct='true'>|\ora{A}|=3</tex>
+    <tex>|\ora{A}|=1</tex>
+    <reason>%text
+Magnitude of a vector $V=\vector{a}{b}{c}$ is
+given by $|\ora{V}|=\sqrt{a^2+b^2+c^2}$.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+If $|\ora{A}|=3$, what scalar $k$ do we need to
+multiply $\ora{A}$ with so as to make the magnitude
+of the resulting vector $|\ora{B}|=9$?
+%</context>
+    <tex correct='true'>k=3</tex>
+    <reason>\begin{align}
+  \ora{A}&amp;=\vector{2}{-1}{2} \\
+  \ora{B}&amp;=3\ora{A}=\vector{6}{-3}{6} \\ 
+  |\ora{B}|&amp;=\sqrt{6^2+(-3)^2+6^2}=\sqrt{81}=9
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>3</tex>
+    <tex>9</tex>
+    <tex>6</tex>
+    <tex>1</tex>
+  </choices>
+</question>

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Write the distance of the following plane
+from the origin: $2x-y+2z+1=0$
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+The following is the distance of the plane
+$2x-y+2z+1=0$ from a point $(x_1, y_1)$.
+%</context>
+    <tex correct='true'>D=\left\vert\dfrac{2x_1-y_1+2z_1+1}
+  {\sqrt{2^2+(-1)^2+2^2}}\right\vert</tex>
+    <tex>D=\left\vert\dfrac{2x_1-y_1+2z_1+1}
+  {\sqrt{x_1^2+y_1^2}}\right\vert</tex>
+    <reason>%text
+The distance of any point $(x_1, y_1)$, from a
+plane $Ax+By+Cz+D=0$, is given by,
+%
+D=\left\vert\dfrac{Ax_1+By_1+Cz_1+D}
+  {\sqrt{A^2+B^2+C^2}}\right\vert</reason>
+  </step>
+  <step>
+    <context>%text
+Given the previous result, what is the distance 
+of the plane $2x-y+2z+1=0$ from $(0, 0)$?
+%
+</context>
+    <tex correct='true'>\dfrac{1}{3}</tex>
+    <tex>\dfrac{1}{\sqrt{3}}</tex>
+    <reason>\begin{align}
+  D=\left\vert\dfrac{1}{\sqrt{2^2+(-1)^2+2^2}}\right\vert
+    =\dfrac{1}{3}
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{\sqrt{3}}{1}</tex>
+    <tex>\dfrac{1}{\sqrt{3}}</tex>
+    <tex correct='true'>\dfrac{1}{3}</tex>
+    <tex>\dfrac{3}{1}</tex>
+  </choices>
+</question>
