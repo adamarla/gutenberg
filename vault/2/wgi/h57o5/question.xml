@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Prove the following:
+%
+\qquad \cos \left[\tan^{-1}\left\{\sin(\cot^{-1}x)\right\}\right]
+  =\sqrt{\dfrac{1+x^2}{2+x^2}}</tex>
+  </statement>
+  <step>
+    <context>%text
+Let us begin from the inside and make our
+way out. What is $\sin(\cot^{-1}x)$?
+%
+</context>
+    <tex correct='true'>\dfrac{1}{\sqrt{1+x^2}}</tex>
+    <tex>\dfrac{1}{x}</tex>
+    <reason>%text
+If $\cot^{-1}x=\theta$, it implies $x=\cot\theta$.
+Therefore, the ratio of the opposite side of 
+the Right triangle to the adjacent side is $x:1$. 
+Therefore the $\sin$ (opp/hyp) of the same angle 
+is given by $\dfrac{1}{\sqrt{1+x^2}}$.
+%
+\sin\theta=\dfrac{1}{\sqrt{1+x^2}}\implies 
+  \theta=\sin^{-1}\left(\dfrac{1}{\sqrt{1+x^2}}\right) \\
+\begin{align}
+  \therefore \sin(\cot^{-1}x)&amp;=\sin\theta  \\
+    &amp;=\sin \left(\sin^{-1}\left(\dfrac{1}{\sqrt{1+x^2}}\right)\right)  \\
+    &amp;=\dfrac{1}{\sqrt{1+x^2}}
+\end{align}  
+  </reason>
+  </step>
+  <step>
+    <context>%text
+Similarly what is $\cos(\tan^{-1}y)$?
+%
+</context>
+    <tex correct='true'>\dfrac{1}{\sqrt{1+y^2}}</tex>
+    <tex>\dfrac{y}{\sqrt{1+y^2}}</tex>
+    <reason>%text
+If $\tan^{-1}y=\phi$, it implies $y=\tan\phi$.
+Therefore, the ratio of the opposite side of 
+the Right triangle to the adjacent side is $y:1$. 
+Therefore the $\cos$ (adj/hyp) of the same angle 
+is given by $\dfrac{1}{\sqrt{1+y^2}}$.
+%
+\cos\phi=\dfrac{1}{\sqrt{1+y^2}}\implies 
+  \phi=\cos^{-1}\left(\dfrac{1}{\sqrt{1+y^2}}\right) \\
+\begin{align}
+  \therefore \cos\left(\tan^{-1}y\right)&amp;=\cos\phi  \\
+    &amp;=\cos \left(\cos^{-1}\left(\dfrac{1}{\sqrt{1+y^2}}\right)\right)  \\
+    &amp;=\dfrac{1}{\sqrt{1+y^2}}
+\end{align}  
+  </reason>
+  </step>
+  <step>
+    <context>%text
+If $y=\dfrac{1}{\sqrt{1+x^2}}$ and $\cos(\tan^{-1}y)=\dfrac{1}{\sqrt{1+y^2}}$
+then what is $\cos(\tan^{-1}y)$ in terms of $x$?
+%</context>
+    <tex correct='true'>\sqrt{\dfrac{1+x^2}{2+x^2}}</tex>
+    <reason>\begin{align}
+  \cos(\tan^{-1}y)&amp;=\dfrac{1}{\sqrt{1+y^2}} \\
+    &amp;=\dfrac{1}{\sqrt{1+\left(\dfrac{1}{\sqrt{1+x^2}}\right)^2}} \\
+    &amp;=\dfrac{1}{\sqrt{1+\dfrac{1}{1+x^2}}} \\
+    &amp;=\sqrt{\dfrac{1+x^2}{2+x^2}}
+\end{align}</reason>
+  </step>
+</question>
