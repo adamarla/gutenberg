@@ -1,0 +1,42 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Prove the following:
+%
+\tan^{-1}x+\tan^{-1}\left(\dfrac{2x}{1-x^2}\right)
+  =\tan^{-1}\left(\dfrac{3x-x^3}{1-3x^2}\right)</tex>
+  </statement>
+  <step>
+    <context>%text
+If $\tan^{-1}x=\theta$, what is $\tan 2\theta$ in terms
+of $x$?
+%</context>
+    <tex>2x</tex>
+    <reason>\begin{align}
+  &amp; \tan^{-1}x= \theta \implies x=\tan\theta \\
+  &amp; \tan 2\theta=\dfrac{2\tan\theta}{1-\tan^2\theta} \\
+  \therefore &amp;\tan 2\theta=\dfrac{2x}{1-x^2}
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>%text
+If $\tan\theta=x$ and $\tan 2\theta=\dfrac{2x}{1-x^2}$,
+what is $3\theta$?
+%</context>
+    <tex>3\theta=\tan^{-1}\left(\dfrac{x-x^3}{1-x^2}\right)</tex>
+    <reason>\begin{align}
+  \tan 3\theta &amp;= \tan (\theta +2\theta) \\
+    &amp;=\dfrac{\tan\theta + \tan 2\theta}{1-\tan\theta \tan 2\theta} \\
+    &amp;=\dfrac{x+\frac{2x}{1-x^2}}{1-\frac{2x^2}{1-x^2}} \\
+    &amp;=\dfrac{x(1-x^2)+2x}{1-x^2-2x^2} \\
+    &amp;=\dfrac{x-x^3+2x}{1-x^2}=\dfrac{3x-x^3}{1-x^2} \\
+  \therefore 3\theta &amp;= \tan^{-1}\left(\dfrac{3x-x^3}{1-x^2}\right)
+\end{align} \\
+%text
+Since $\theta+2\theta=3\theta$, the given
+equation is proved.
+%</reason>
+  </step>
+</question>

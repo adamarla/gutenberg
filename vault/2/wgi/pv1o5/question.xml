@@ -1,0 +1,144 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Show that the relation S in the set 
+$A=\{x\in\mathbb{Z}:0 \le x\le 12\}$ given by 
+$S=\{(a,b): a, b\in \mathbb{Z}, |a-b|$ is divisible by $4$\}
+is an equivalence relation. Find the set of 
+all elements related to 1.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+Are the following pairs a valid examples of
+$S=\{(a,b): a, b\in \mathbb{Z}, |a-b|$ is divisible by $4$\}
+in the set $A=\{x\in\mathbb{Z}:0 \le x\le 12\}$?
+%
+</context>
+    <tex>(1,5), (12,4), (6,8), (2, 6), (3,15)</tex>
+    <reason>\begin{align}
+  (1,5)&amp;=|1-5|=4 \\
+  (12,4)&amp;=|12-4|=8 \\
+  (5,11)&amp;=|5-11|=6 \\
+  (2, 6)&amp;=|2-6|=4 \\
+  (3,15)&amp;=|3-15|=12
+\end{align} \\
+%text
+Of the above, $6$ is not divisible by $4$ and $15$
+is not a member of set A. Therefore, all pairs 
+above are valid examples of the relation S, 
+with the exception of $(5,11)$ and $(3, 15)$.
+%
+</reason>
+  </step>
+  <step>
+    <context>%text
+What conditions must a relation satisfy for
+it to be an equivalence relation?
+%</context>
+    <tex correct='true'>%text
+It must be reflexive, symmetric and transitive.
+%</tex>
+    <tex>%text
+It must be reflexive, but not symmetric or 
+transitive.
+%</tex>
+    <reason>%text
+An equivalence relation must be reflexive, 
+symmetric and transitive. Next, what are
+these and how do we go about proving
+them?
+%</reason>
+  </step>
+  <step>
+    <context>%text
+Is the relation
+$S=\{(a,b): a, b\in \mathbb{Z}, |a-b|$ is divisible by $4$\}
+in the set $A=\{x\in\mathbb{Z}:0 \le x\le 12\}$ reflexive? 
+In other words, does $(a, a)\in A$ and is $|a-a|$ 
+divisible by $4$?
+%
+</context>
+    <tex correct='true'>%text
+Yes, $(a,a)$ is reflexive since $|a-a|$ is divisible 
+by $4$.
+%
+</tex>
+    <reason>%text
+$|a-a|=0$ which is divisible by $4$, therefore 
+relation $S$ is reflexive.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+Is the relation
+$S=\{(a,b): a, b\in \mathbb{Z}, |a-b|$ is divisible by $4$\}
+in the set $A=\{x\in\mathbb{Z}:0 \le x\le 12\}$ symmetric? 
+In other words, does $(a, b)=(b, a)$?
+%
+</context>
+    <tex correct='true'>%text
+Yes, $(a,b)=(b,a)$ therefore the relation is 
+symmetric.
+%</tex>
+    <reason>%text
+$(a,b)=|a-b|$ which is obviously equal to 
+$|b-a|$, therefore if $(a,b)\in S$ is true then 
+$(b,a) \in S$ is also true and the relation is 
+symmetric.
+%
+</reason>
+  </step>
+  <step>
+    <context>%text
+Is the relation
+$S=\{(a,b): a, b\in \mathbb{Z}, |a-b|$ is divisible by $4$\}
+in the set $A=\{x\in\mathbb{Z}:0 \le x\le 12\}$ transitive? 
+In other words, if $(a, b)\in S$ and $(b,c)\in S$, 
+does it mean $(a,c)\in S$ is also true?
+%
+</context>
+    <tex>%text
+If $(a,b)\in S$ and $(b,c)\in S$ we cannot presume
+$(c,a)\in S$.
+%</tex>
+    <reason>\begin{align}
+  (a,b) &amp;= |a-b| \\
+  (b,c) &amp;= |b-c| \\
+  (c,a) &amp;= |c-a| \\   
+\end{align} \\
+%text
+If $|a-b|=4k$ and $|b-c|=4l$, then
+$a=b\pm 4k$ and $c=b\pm 4l$. Therefore,
+$|c-a|$ must be divisible by $4$.
+Moreover, since $(a,b)\in A$, their difference
+would also be $\in A$.
+Therefore, $(a,b)$ is transitive.
+%
+</reason>
+  </step>
+  <step>
+    <context>%text
+$S=\{(a,b): a, b\in \mathbb{Z}, |a-b|$ is divisible by $4$\}
+For the relation S in the set 
+$A=\{x\in\mathbb{Z}:0 \le x\le 12\}$ find the set of 
+all elements related to 1. 
+In other words, find the set of $(1, a)$ for 
+which $|1-a|$ is divisible by $4$.
+%
+</context>
+    <tex>\left\{5,9,13\right\}</tex>
+    <reason>\left\{5, 9\right\} \\
+%text
+Only the above elements related with $1$ are
+part of the set A..
+%</reason>
+  </step>
+  <choices>
+    <tex>\left\{5, 9, 13\right\}</tex>
+    <tex>\left\{4, 8\right\}</tex>
+    <tex>\left\{4, 8, 12\right\}</tex>
+    <tex correct='true'>\left\{5, 9\right\}</tex>
+  </choices>
+</question>
