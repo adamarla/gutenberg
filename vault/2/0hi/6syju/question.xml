@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Express the following matrix as the sum of
+a symmetric and a skew symmetric matrix,
+and verify your result:
+%
+\left[\begin{array}{rrr}
+  3 &amp; -2 &amp; -4 \\ 3 &amp; -2 &amp; -5 \\ -1 &amp; 1 &amp; 2
+\end{array}\right]</tex>
+  </statement>
+  <step>
+    <context>%text
+Are $M_{sym}$ and $M_{skw}$ examples of symmetric and
+skew matrices respectively?
+%</context>
+    <tex correct='true'>M_{sym}=\left[\begin{array}{cc}
+  a &amp; b \\ b &amp; a
+\end{array}\right],
+M_{skw}=\left[\begin{array}{rr}
+  a &amp; b \\ -b &amp; a
+\end{array}\right]
+</tex>
+    <tex>M_{sym}=\left[\begin{array}{cc}
+  a &amp; a \\ b &amp; b
+\end{array}\right],
+M_{skw}=\left[\begin{array}{rr}
+  a &amp; -a \\ b &amp; -b
+\end{array}\right]
+</tex>
+    <reason>%text
+A{\bf symmetric} matrix is a square matrix with
+$\mathbf{a_{ij}=a_{ji}}$, where $a_{ij}$ referes to the element at
+the $i^{th}$ row and $j^{th}$ column. 
+%
+%text
+A{\bf skew} symmetric matrix is a square matrix 
+with $\mathbf{a_{ij}=-a_{ji}}$. 
+%
+%text
+Note: A square matrix has equal number of 
+rows and columns.
+%</reason>
+  </step>
+  <step>
+    <context>\text{If }A=\left[\begin{array}{rrr}
+  3 &amp; -2 &amp; -4 \\ 3 &amp; -2 &amp; -5 \\ -1 &amp; 1 &amp; 2
+\end{array}\right] \\
+%text
+what are $(A+A')$ and $(A-A')$?
+($A'$ is transpose of $A$)
+%
+</context>
+    <tex correct='true'>\begin{align}
+  A+A' &amp;=\left[\begin{array}{rrr}
+    6 &amp; 1 &amp; -5 \\ 1 &amp; -4 &amp; -4 \\ -5 &amp; -4 &amp; 4
+  \end{array}\right] \\
+  A-A' &amp;=\left[\begin{array}{rrr}
+    0 &amp; -5 &amp; -3 \\ 5 &amp; 0 &amp; -6 \\ 3 &amp; 6 &amp; 0
+  \end{array}\right]
+\end{align}
+</tex>
+    <reason>\begin{align}
+  A&amp;=\left[\begin{array}{rrr}
+      3 &amp; -2 &amp; -4 \\ 3 &amp; -2 &amp; -5 \\ -1 &amp; 1 &amp; 2 \\    
+    \end{array}\right] \\
+  A'&amp;=\left[\begin{array}{rrr}
+      3 &amp; -2 &amp; -4 \\ 3 &amp; -2 &amp; -5 \\ -1 &amp; 1 &amp; 2 \\
+    \end{array}\right] \\
+  A+A'&amp;=\left[\begin{array}{rrr}
+      6 &amp; 1 &amp; -5 \\ 1 &amp; -4 &amp; -4 \\ -5 &amp; -4 &amp; 4 \\
+    \end{array}\right] \\ 
+  A-A'&amp;=\left[\begin{array}{rrr}
+      0 &amp; -5 &amp; -3 \\ 5 &amp; 0 &amp; -6 \\ 3 &amp; 6 &amp; 0 \\  
+    \end{array}\right]
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+If $S=A+A'$ is a symmetric matrix and 
+$D=A-A'$ is a skew matrix, what is $A$ in 
+terms of $S$ and $D$?
+%</context>
+    <tex>A=\dfrac{1}{2}(S-D)</tex>
+    <reason>\begin{align}
+  S &amp;= A+A' \\
+  D &amp;= A-A'
+\end{align} \\
+%text
+Adding,
+%
+\begin{align}
+  &amp;S+D=\left(A+A'+A-A'\right)=2A \\
+  \implies &amp;A=\dfrac{1}{2}(S+D)
+\end{align} \\
+%text
+Verification -
+%
+\begin{align}
+  S+D&amp;=\left[\begin{array}{rrr}
+    6+0 &amp; 1-5 &amp; -5-3 \\ 1+5 &amp; -4 &amp; -4-6 \\ -5+3 &amp; -4+6 &amp; 4
+  \end{array}\right] \\
+  &amp;=\left[\begin{array}{rrr}
+    6 &amp; 1 &amp; -5 \\ 1 &amp; -4 &amp; -4 \\ -5 &amp; -4 &amp; 4
+  \end{array}\right] \\
+  \implies \dfrac{S+D}{2}&amp;=\left[\begin{array}{rrr}
+    3 &amp; -2 &amp; -4 \\ 3 &amp; -2 &amp; -5 \\ -1 &amp; 1 &amp; 2
+  \end{array}\right]
+\end{align}
+
+</reason>
+  </step>
+</question>
