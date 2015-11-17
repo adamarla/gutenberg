@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the distance of the point $P(6,5,9)$ from
+the plane determined by the points $A(3,-1,2)$,
+$B(5,2,4)$ and $C(-1,-1,6)$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If $A(3,-1,2)$, $B(5,2,4)$ and $C(-1,-1,6)$ are 
+points on the plane and $\ora{AB}$ and $\ora{AC}$ are two
+vectors in this plane, what is $\ora{N}$, the{\bf normal}
+to the plane?
+%</context>
+    <tex correct='true'>\begin{align}
+  \ora{N}&amp;=\ora{AB}\times \ora{AC} \\
+    &amp;=\vector{12}{16}{12}
+\end{align}
+</tex>
+    <tex>\begin{align}
+  \ora{N}&amp;=\ora{AB}- \ora{AC} \\
+    &amp;=\vector{6}{3}{-2}
+\end{align}
+</tex>
+    <reason>\begin{align}
+  \ora{AB}&amp;=\ora{B}-\ora{A}=\vector{2}{3}{2} \\
+  \ora{AC}&amp;=\ora{C}-\ora{A}=\vector{-4}{0}{4}
+\end{align} \\
+%text
+Since $\ora{AB}$ and $\ora{AC}$ are along the plane, the 
+normal to the plane must be the vector cross 
+product of these two. Therefore, 
+%
+\begin{align}
+  \ora{N}&amp;=\ora{AB}\times \ora{AC} \\
+    &amp;=\left\vert \begin{array}{ccc}
+           \hat\imath &amp; \hat\jmath &amp; \hat{\it k} \\
+           2 &amp; 3 &amp; 2 \\
+           -4 &amp; 0 &amp; 4
+         \end{array}\right\vert
+    =\vector{12}{16}{12}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+If $\ora{N}=\vector{12}{16}{12}$ is the normal to the 
+plane and $\ora{R}$ and $\ora{A}=\vector{3}{-1}{2}$ are points
+on the plane's surface, is the following valid?
+%</context>
+    <tex correct='true'>\ora{R}\cdot \left(\vector{3}{4}{3}\right)-11=0</tex>
+    <reason>%text
+Since $\ora{R}$ and $\ora{A}$ are along the plane and $\ora{N}$
+is normal to the plane, $\ora{AR}\cdot \ora{N}$ must equal $0$. 
+Therefore,
+%
+\begin{align}
+  &amp;\ora{AR}\cdot \ora{N}=0 \\
+  \implies &amp;\left(\ora{R}-\ora{A}\right)\cdot \ora{N}=0 \\
+  \implies &amp;\ora{R}\cdot \ora{N}=\ora{A}\cdot \ora{N} \\
+  \implies &amp;\ora{R}\cdot \left(\vector{12}{16}{12}\right) \\
+  &amp;\quad  =\left(\vector{3}{-1}{2}\right)\cdot \left(\vector{12}{16}{12}\right) \\
+  \implies &amp;\ora{R}\cdot \left(\vector{12}{16}{12}\right)=36-16+24 \\
+  \implies &amp;\ora{R}\cdot \left(\vector{3}{4}{3}\right)-11=0
+\end{align} \\
+%text
+Since $\ora{R}$ is any point on the plane's surface
+$\ora{R}\cdot \left(\vector{3}{4}{3}\right)-11=0$ is effectively the
+vector equation of the plane.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+What is the distance between point $P(6,5,9)$
+and the plane represented by the equation 
+$\ora{R}\cdot \left(\vector{3}{4}{3}\right)-11=0$?
+%</context>
+    <tex correct='true'>\dfrac{54}{\sqrt{34}}</tex>
+    <reason>%text
+The plane $\ora{R}\cdot \left(\vector{3}{4}{3}\right)-11=0$ in 
+cartesian form is $3x+4y+3z-11=0$. 
+Distance from a point $P(6,5,9)$ to the plane
+is given by,
+%
+\begin{align}
+  D&amp;=\left\vert\dfrac{Ax+By+Cz+D}{\sqrt{A^2+B^2+C^2}}\right\vert \\
+    &amp;=\left\vert\dfrac{3(6)+4(5)+3(9)-11}{\sqrt{3^2+4^2+3^2}}\right\vert \\
+    &amp;=\left\vert\dfrac{18+20+27-11}{\sqrt{9+16+9}}\right\vert
+    =\dfrac{54}{\sqrt{34}}
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{54}{\sqrt{34}}</tex>
+    <tex>\dfrac{54}{34}</tex>
+    <tex>\dfrac{27}{34}</tex>
+    <tex>\dfrac{27}{\sqrt{34}}</tex>
+  </choices>
+</question>

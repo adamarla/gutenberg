@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+If $\ora{a}=\vector{1}{1}{1}$, $\ora{b}=\vector{4}{-2}{3}$ and 
+$\ora{c}=\vector{1}{-2}{1}$, find a vector of magnitude 
+$6$ units which is parallel to $2\ora{a}-\ora{b}+3\ora{c}$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If $\ora{a}=\vector{1}{1}{1}$, $\ora{b}=\vector{4}{-2}{3}$ and 
+$\ora{c}=\vector{1}{-2}{1}$, what is $2\ora{a}-\ora{b}+3\ora{c}$?
+%
+</context>
+    <tex correct='true'>\vector{1}{-2}{2}</tex>
+    <tex>\vector{2}{8}{3}</tex>
+    <reason>\begin{align}
+  2\ora{a} &amp;= \vector{2}{2}{2} \\
+  -\ora{b} &amp;= \vector{-4}{2}{-3} \\
+  3\ora{c} &amp;= \vector{3}{-6}{3}
+\end{align} \\
+%text
+Adding the equations, we get,
+%
+2\ora{a}-\ora{b}+3\ora{c}=\vector{1}{-2}{2}</reason>
+  </step>
+  <step>
+    <context>%text
+If $\ora{A}=\vector{1}{-2}{2}$ were to be expressed as $p\hat A$,
+where $\hat A$ is the unit vector in the direction of
+$\ora{A}$ and $p$ is a scalar, what would it look like?
+%</context>
+    <tex correct='true'>p\hat A=3 \left(\vector{\dfrac{1}{3}}{-\dfrac{2}{3}}{\dfrac{2}{3}}\right)</tex>
+    <tex>p\hat A=\dfrac{1}{3} \left(\vector{1}{-2}{2}\right)</tex>
+    <reason>\begin{align}
+  \ora{A} &amp;= \vector{1}{-2}{2} \\
+  \therefore |\ora{A}| &amp;= \sqrt{(1)^2+(-2)^2+(2)^2} \\
+    &amp;= \sqrt{1+4+4}=3
+\end{align} \\
+%text
+$|\ora{A}|=3$, therefore by factoring out $3$
+from $\ora{A}$, we can get its unit vector.
+%
+\begin{align}
+  \ora{A}&amp;= \vector{1}{-2}{2} \\
+    &amp;=3\left(\vector{\dfrac{1}{3}}{-\dfrac{2}{3}}{\dfrac{2}{3}}\right) \\
+    &amp;=3\hat A
+\end{align} \\
+%text
+Note: $|\hat A|=\sqrt{\dfrac{1}{9}+\dfrac{4}{9}+\dfrac{4}{9}}=1$
+%
+</reason>
+  </step>
+  <step>
+    <context>\ora{A}=3 \left(\vector{\dfrac{1}{3}}{-\dfrac{2}{3}}{\dfrac{2}{3}}\right) \\
+%text
+what is the equation for a vector parallel to 
+$\ora{A}$ whose magnitude is $6$?
+%</context>
+    <tex correct='true'>\vector{2}{-4}{4}</tex>
+    <tex>\vector{6}{-12}{12}</tex>
+    <reason>\begin{align}
+  \hat A &amp;=\vector{\dfrac{1}{3}}{-\dfrac{2}{3}}{\dfrac{2}{3}} \\
+  \therefore 6\hat A &amp;=6 \left(\vector{\dfrac{1}{3}}{-\dfrac{2}{3}}{\dfrac{2}{3}}\right) \\
+  &amp;=\vector{2}{-4}{4}  
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+If $\ora{A}=\vector{1}{-2}{2}$ were to be expressed as $p\hat A$,
+where $\hat A$ is the unit vector in the direction of
+$\ora{A}$ and $p$ is a scalar, what would it look like?
+%</context>
+    <tex correct='true'>p\hat A=3 \left(\vector{\dfrac{1}{3}}{-\dfrac{2}{3}}{\dfrac{2}{3}}\right)</tex>
+    <tex>p\hat A=\dfrac{1}{3} \left(\vector{1}{-2}{2}\right)</tex>
+    <reason>\begin{align}
+  \ora{A} &amp;= \vector{1}{-2}{2} \\
+  \therefore |\ora{A}| &amp;= \sqrt{(1)^2+(-2)^2+(2)^2} \\
+    &amp;= \sqrt{1+4+4}=3
+\end{align} \\
+%text
+$|\ora{A}|=3$, therefore by factoring out $3$
+from $\ora{A}$, we can get its unit vector.
+%
+\begin{align}
+  \ora{A}&amp;= \vector{1}{-2}{2} \\
+    &amp;=3\left(\vector{\dfrac{1}{3}}{-\dfrac{2}{3}}{\dfrac{2}{3}}\right) \\
+    &amp;=3\hat A
+\end{align} \\
+%text
+Note: $|\hat A|=\sqrt{\dfrac{1}{9}+\dfrac{4}{9}+\dfrac{4}{9}}=1$
+%
+</reason>
+  </step>
+  <choices>
+    <tex>\vector{3}{-6}{6}</tex>
+    <tex>\vector{2}{-4}{2}</tex>
+    <tex correct='true'>\vector{2}{-4}{4}</tex>
+    <tex>\vector{1}{-2}{2}</tex>
+  </choices>
+</question>
