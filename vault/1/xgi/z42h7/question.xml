@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Evaluate: \[ \int (ax+b)^3\cdot dx \]
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If \[ I = \int (ax+b)^3\cdot dx = A\cdot\int\phi^3\cdot d\phi \]
+then what are the \underline\text{values of $A$ and $\phi$}?
+%</context>
+    <tex correct='true'>\begin{align}
+\phi &amp;= (ax+b) \\ 
+A &amp;= \frac{1}{a}
+\end{align} </tex>
+    <tex>\begin{align}
+\phi &amp;= (ax+b) \\ 
+A &amp;= a
+\end{align} </tex>
+    <reason>\begin{align}
+\phi &amp;= (ax+b) \implies d\phi = a\cdot dx \\
+\therefore dx &amp;= \frac{d\phi}{a}\\
+\text{And, }I &amp;= \int (ax+b)^3\cdot dx 
+= \underbrace{\frac{1}{a}}_A\int \phi^3 \cdot d\phi
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+Given that \[ I = \frac{1}{a}\int\phi^2\cdot d\phi \], what is \textbf{I}
+in \underline\text{terms of x}?
+%</context>
+    <reason>\begin{align}
+I = \frac{1}{a}\int\phi^3\cdot d\phi &amp;\implies I = \frac{1}{a}\frac{\phi^4}{4} + C\\
+\text{But }\phi &amp;= (ax+b) \\
+\therefore I &amp;= \frac{(ax+b)^4}{4a} + C
+\end{align} </reason>
+  </step>
+  <choices>
+    <tex> \frac{a\cdot (ax+b)^4}{4}</tex>
+    <tex correct='true'> \frac{(ax+b)^4}{4a}</tex>
+    <tex> \frac{3\cdot (ax+b)^2}{a}</tex>
+    <tex> \frac{(ax+b)^4}{a}</tex>
+  </choices>
+</question>

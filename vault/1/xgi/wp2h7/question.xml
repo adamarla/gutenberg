@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Evaluate \[ \int \frac{dx}{\sqrt{1-x^2}} \]
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If \[ I = \int\frac{dx}{\sqrt{1-x^2}} = \int d\phi\], then what is
+\underline\text{$x$ in terms of $\phi$}?
+%</context>
+    <tex correct='true'>x=\sin\phi</tex>
+    <tex>x=\cos \phi</tex>
+    <reason>%text
+There is a \underline\text{standard result} for this integral. 
+But let us remind ourselves how that 
+standard result came about. 
+
+
+\underline\text{Hence, if \[ x = \sin\phi \]}, then 
+%
+\begin{align}
+dx &amp;= \cos\phi\cdot d\phi \\
+\implies I &amp;= \int\frac{dx}{\sqrt{1-x^2}} = 
+\int\frac{\cos\phi\cdot d\phi}{\sqrt{1-\sin^2\phi}} \\
+&amp;= \int\frac{\cos\phi\cdot d\phi}{\cos\phi} = \int d\phi
+\end{align} </reason>
+  </step>
+  <step>
+    <context>%text
+Given that \[ I = \int d\phi \], what is \textbf{I } \underline\text{in terms of x}?
+%</context>
+    <tex correct='true'>I = \sin^{-1} x + C </tex>
+    <tex>I = \cos^{-1} x + C </tex>
+    <reason>\begin{align}
+I &amp;= \int d\phi = \phi + C \\ 
+\text{But }x &amp;= \sin\phi \implies \phi = \sin^{-1} x \\ 
+\therefore I &amp;= \sin^{-1}x + C 
+\end{align} </reason>
+  </step>
+  <choices>
+    <tex>I = \cos^{-1} \left( \pi - x \right) + C </tex>
+    <tex>I = \sin^{-1} \left(\frac\pi{2} - x\right) + C </tex>
+    <tex correct='true'>I = \sin^{-1} x + C </tex>
+    <tex>I = \cos^{-1} x + C </tex>
+  </choices>
+</question>
