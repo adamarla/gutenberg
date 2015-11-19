@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the coordinates of the foot of the 
+perpendicular and the perpendicular distance 
+of the point $P(3.2.1)$ from the plane 
+$2x-y+z+1=0$. Find also, the image of 
+the point in the plane.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If the foot of the perpendicular is a point $F$ 
+whose coordinates are $(x_1,y_1,z_1)$, what is
+the relationship between $\ora{FP}$ and $\ora{N}$ the
+normal to the plane?
+%</context>
+    <tex correct='true'>\ora{FP}\parallel \ora{N}</tex>
+    <tex>\ora{FP}\perp \ora{N}</tex>
+    <reason>%text
+Since $\ora{FP}$ is a perpendicular to the plane
+and $\ora{N}$ is the normal to the plane, $\ora{FP}$
+has to be parallel to $\ora{N}$.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+What equation(s) represent(s) $\ora{FP}\parallel\ora{N}$ for
+$F(x_1, y_1, z_1)$, $P(3,2,1)$ and $\ora{N}=\vector{2}{-1}{1}$?
+%</context>
+    <tex correct='true'>\dfrac{x_1-3}{2}=\dfrac{y_1-2}{-1}=\dfrac{z_1=1}{1}</tex>
+    <reason>%text
+For the given plane $2x-y+z+1=0$ and 
+points $P(3,2,1)$ and $F(x_1.y_1.z_1)$,
+%
+
+\begin{align}
+  \ora{FP}&amp;= \vector{(x_1-3)}{(y_1-2)}{(z_1-1)} \\
+  \ora{N}&amp;=\vector{2}{-1}{1}.
+\end{align} \\
+
+%text
+Since the two vectors are parallel, their
+direction ratios must be proportional, 
+therefore,
+%
+\dfrac{x_1-3}{2}=\dfrac{y_1-2}{-1}=\dfrac{z_1-1}{1}
+
+</reason>
+  </step>
+  <step>
+    <context>%text
+If point $F(x_1,y_1,z_1)$ lies on the plane 
+$2x-y+z=-1$ and ${\small\dfrac{x_1-3}{2}=\dfrac{y_1-2}{-1}=\dfrac{z_1=1}{1}}$,
+what is $F(x_1,y_1,z_1)$?
+%</context>
+    <tex correct='true'>F(x_1,y_1,z_1)=(1,3,0)</tex>
+    <tex>F(x_1,y_1,z_1)=(5,1,2)</tex>
+    <reason>\begin{align}
+  &amp;\dfrac{x_1-3}{2}=\dfrac{y_1-2}{-1}=\dfrac{z_1=1}{1}=k \,\text{(say)}, \\
+  \implies&amp; x_1=2k+3, y_1=-k+1, z_1=k+1
+\end{align} \\
+
+%text
+Since $F$ lies on the plane, it must also satisfy 
+the equation of the plane $2x-y+z+1=0$.
+%
+\begin{align}
+  &amp;2x_1-y_1+z_1+1=0 \\
+  \implies &amp;2(2k+3)-(-k+2)+(k+1)+1=0 \\
+  \implies &amp;4k+6+k-2+k+2=0 \\
+  \implies &amp;k=-1  
+\end{align} \\
+%text
+Substituting $k$ back in the first equation 
+we get $F(x_1,y_1,z_1)=(1,3,0)$
+%
+</reason>
+  </step>
+  <step>
+    <context>%text
+If $F(1,3,0)$ is the foot of the perpendicular 
+from $P(3,2,1)$ and $R(x_2,y_2,z_2)$ is the reflection
+point of $P$, what is $D=|\ora{FP}|$ and what is $\ora{R}$? 
+%</context>
+    <tex correct='true'>D=\sqrt{6}, R\left(-1,4,-1\right)</tex>
+    <tex>D=2\sqrt{3}, R\left(1,2,3\right)</tex>
+    <reason>%text
+The distance $D$, between $F\left(1,3,0\right)$ and 
+$P\left(3,2,1\right)$ can be established using distance 
+formula, 
+%
+\begin{align}
+  D &amp;= \sqrt{(3-1)^2+(2-3)^2+((1-0)^2} \\
+    &amp;= \sqrt{4+1+1}=\sqrt{6}
+\end{align} \\
+%text
+Further, since $F$ is the midpoint between $P$ 
+and reflection point $R(x_2,y_2,z_2)$, we can say,
+%
+\qquad\begin{align}
+  \dfrac{x_2+3}{2}=1 &amp;\implies x_2=-1 \\
+  \dfrac{y_2+2}{2}=3 &amp;\implies y_2=4 \\
+  \dfrac{z_2+1}{2}=0 &amp;\implies z_2=-1
+\end{align} \\
+\therefore R \left(-1,4,-1\right)</reason>
+  </step>
+  <choices>
+    <tex>D=2\sqrt{3}, R\left(1,2,3\right)</tex>
+    <tex correct='true'>D=\sqrt{6}, R\left(-1,4,-1\right)</tex>
+    <tex>D=2\sqrt{3}, R\left(-1,2,-3\right)</tex>
+    <tex>D=2\sqrt{3}, R\left(-1,4,-1\right)</tex>
+  </choices>
+</question>
