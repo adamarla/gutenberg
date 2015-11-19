@@ -1,0 +1,210 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the inverse of the following matrix using
+elementary row transformations.
+%
+{\small A=\left[\begin{array}{rrr}
+  1 &amp; 2 &amp; -2 \\ -1 &amp; 3 &amp; 0 \\ 0 &amp; -2 &amp; 1
+\end{array}\right]}</tex>
+  </statement>
+  <step>
+    <context>%text
+In order to apply elementary row 
+transformations to find the inverse of
+a matrix $A$, how must the equation
+be set up?
+%</context>
+    <tex correct='true'>A=IA \\
+%text
+where $I$ is an identity matrix of the same
+order as A.
+%</tex>
+    <tex>A=AI \\
+%text
+where $I$ is an identity matrix of the same
+order as A.
+%</tex>
+    <reason>%text
+When using row transforms, use $A=IA$,
+when using column transforms, use $A=AI$,
+where $I$ is an identity matrix of the same
+order as $A$.
+If the original matrix is called $A$, then we have,
+%
+{\small\left[\begin{array}{rrr}
+  1 &amp; 2 &amp; -2 \\ -1 &amp; 3 &amp; 0 \\ 0 &amp; -2 &amp; 1
+\end{array}\right]}=
+\left[\begin{array}{rrr}
+  1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1
+\end{array}\right]A
+</reason>
+  </step>
+  <step>
+    <context>%text
+Would the following transforms convert
+the initial equation from the prior step to,
+%
+{\small\left[\begin{array}{rrr}
+  1 &amp; 0 &amp; -1 \\ 0 &amp; 5 &amp; -2 \\ 0 &amp; -2 &amp; 1
+\end{array}\right]}=
+\left[\begin{array}{rrr}
+  1 &amp; 0 &amp; 1 \\ 1 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1
+\end{array}\right]A
+</context>
+    <tex correct='true'>\begin{align}
+  R_2\rightarrow &amp;R_1+R_2 \\
+  R_1\rightarrow &amp;R_1+R_3
+\end{align}
+</tex>
+    <reason>%text
+Initial equation,
+%
+{\small\left[\begin{array}{rrr}
+  1 &amp; 2 &amp; -2 \\ -1 &amp; 3 &amp; 0 \\ 0 &amp; -2 &amp; 1
+\end{array}\right]}=
+\left[\begin{array}{rrr}
+  1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1
+\end{array}\right]A \\
+%text
+Applying $R_2\rightarrow R_1+R_2$
+%
+{\small\left[\begin{array}{rrr}
+  1 &amp; 2 &amp; -2 \\ 0 &amp; 5 &amp; -2 \\ 0 &amp; -2 &amp; 1
+\end{array}\right]}=
+\left[\begin{array}{rrr}
+  1 &amp; 0 &amp; 0 \\ 1 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1
+\end{array}\right]A \\
+%text
+Applying $R_1\rightarrow R_1+R_3$
+%
+{\small\left[\begin{array}{rrr}
+  1 &amp; 0 &amp; -1 \\ 0 &amp; 5 &amp; -2 \\ 0 &amp; -2 &amp; 1
+\end{array}\right]}=
+\left[\begin{array}{rrr}
+  1 &amp; 0 &amp; 1 \\ 1 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1
+\end{array}\right]A
+</reason>
+  </step>
+  <step>
+    <context>%text
+Would the following transforms convert 
+the equation from the prior step to,
+%
+{\small\left[\begin{array}{ccc}
+  1 &amp; 0 &amp; -1 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1/5
+\end{array}\right]=
+\left[\begin{array}{ccc}
+  1 &amp; 0 &amp; 1 \\ 1 &amp; 1 &amp; 2 \\ 2/5 &amp; 2/5 &amp; 1
+\end{array}\right]A}
+</context>
+    <tex correct='true'>\begin{align}
+  R_2\rightarrow &amp;R_2/5 \\
+  R_3\rightarrow &amp;2R_2+R_3 \\
+  R_2\rightarrow &amp;R_2+2R_3
+\end{align}
+</tex>
+    <reason>%text
+Equation from prior step,
+%
+{\small\left[\begin{array}{rrr}
+  1 &amp; 0 &amp; -1 \\ 0 &amp; 5 &amp; -2 \\ 0 &amp; -2 &amp; 1
+\end{array}\right]}=
+\left[\begin{array}{rrr}
+  1 &amp; 0 &amp; 1 \\ 1 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1
+\end{array}\right]A \\
+%text
+Applying $R_2\rightarrow R_2/5$
+%
+{\small\left[\begin{array}{ccc}
+  1 &amp; 0 &amp; -1 \\ 0 &amp; 1 &amp; -2/5 \\ 0 &amp; -2 &amp; 1
+\end{array}\right]}=
+{\small\left[\begin{array}{ccc}
+  1 &amp; 0 &amp; 0 \\ 1/5 &amp; 1/5 &amp; 0 \\ 0 &amp; 0 &amp; 1
+\end{array}\right]A} \\
+%text
+Applying $R_3\rightarrow 2R_2+R_3$
+%
+{\small\left[\begin{array}{ccc}
+  1 &amp; 0 &amp; -1 \\ 0 &amp; 1 &amp; -2/5 \\ 0 &amp; 0 &amp; 1/5
+\end{array}\right]}=
+{\small\left[\begin{array}{cc}
+  1 &amp; 0 &amp; 1 \\ 1/5 &amp; 1/5 &amp; 0 \\ 2/5 &amp; 2/5 &amp; 1
+\end{array}\right]A} \\
+%text
+Applying $R_2\rightarrow R_2+2R_3$
+%
+\left[\begin{array}{ccc}
+  1 &amp; 0 &amp; -1 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1/5
+\end{array}\right]=
+{\small\left[\begin{array}{cc}
+  1 &amp; 0 &amp; 1 \\ 1 &amp; 1 &amp; 2 \\ 2/5 &amp; 2/5 &amp; 1
+\end{array}\right]A} \\
+</reason>
+  </step>
+  <step>
+    <context>%text
+Would the following transforms convert
+the equation from the prior step to,
+%
+\left[\begin{array}{ccc}
+  1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1
+\end{array}\right]=
+\left[\begin{array}{ccc}
+  1 &amp; 0 &amp; 1 \\ 1 &amp; 1 &amp; 2 \\ 2 &amp; 2 &amp; 5
+\end{array}\right]A
+</context>
+    <tex correct='true'>\begin{align}
+  R_3\rightarrow &amp;5R_3 \\
+  R_1\rightarrow &amp;R_1+R_3
+\end{align}
+</tex>
+    <reason>%text
+Equation from prior step,
+%
+\left[\begin{array}{ccc}
+  1 &amp; 0 &amp; -1 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1/5
+\end{array}\right]=
+{\small\left[\begin{array}{ccc}
+  1 &amp; 0 &amp; 1 \\ 1 &amp; 1 &amp; 2 \\ 2/5 &amp; 2/5 &amp; 1
+\end{array}\right]A} \\
+%text
+Applying $R_3\rightarrow 5R_3$
+%
+\left[\begin{array}{ccc}
+  1 &amp; 0 &amp; -1 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1
+\end{array}\right]=
+\left[\begin{array}{cc}
+  1 &amp; 0 &amp; 0 \\ 1 &amp; 1 &amp; 2 \\ 2 &amp; 2 &amp; 5
+\end{array}\right]A \\
+%text
+Applying $R_1\rightarrow R_1+R_3
+%
+\left[\begin{array}{ccc}
+  1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1
+\end{array}\right]=
+\left[\begin{array}{ccc}
+  3 &amp; 2 &amp; 5 \\ 1 &amp; 1 &amp; 2 \\ 2 &amp; 2 &amp; 5
+\end{array}\right]A \\
+\therefore A^{-1}=\left[\begin{array}{ccc}
+  3 &amp; 2 &amp; 5 \\ 1 &amp; 1 &amp; 2 \\ 2 &amp; 2 &amp; 5
+\end{array}\right]
+
+</reason>
+  </step>
+  <choices>
+    <tex>{\small A^{-1}=\left[\begin{array}{ccc}
+  -1 &amp; -1 &amp; 0 \\ 2 &amp; -3 &amp; -2 \\ 2 &amp; 0 &amp; -1
+\end{array}\right]}</tex>
+    <tex>{\small A^{-1}=\left[\begin{array}{ccc}
+  1 &amp; -1 &amp; 0 \\ 2 &amp; 3 &amp; -2 \\ -2 &amp; 0 &amp; 1
+\end{array}\right]}</tex>
+    <tex>{\small A^{-1}=\left[\begin{array}{ccc}
+  1 &amp; -2 &amp; -2 \\ 1 &amp; 3 &amp; 0 \\ 0 &amp; 2 &amp; 1
+\end{array}\right]}</tex>
+    <tex correct='true'>A^{-1}=\left[\begin{array}{ccc}
+  3 &amp; 2 &amp; 5 \\ 1 &amp; 1 &amp; 2 \\ 2 &amp; 2 &amp; 5
+\end{array}\right]</tex>
+  </choices>
+</question>

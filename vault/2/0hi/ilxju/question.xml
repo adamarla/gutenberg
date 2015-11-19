@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Using properties of determinants, prove the
+following:
+%
+{\small\left\vert\begin{array}{ccc}
+  x &amp; x^2 &amp; 1+px^3 \\ y &amp; y^2 &amp; 1+py^3 \\ z &amp; z^2 &amp; 1+pz^3
+\end{array}\right\vert=(1+pxyz)(x-y)(y-z)(z-x)}</tex>
+  </statement>
+  <step>
+    <context>{\small\left\vert\begin{array}{ccc}
+  x &amp; x^2 &amp; 1+px^3 \\ y &amp; y^2 &amp; 1+py^3 \\ z &amp; z^2 &amp; 1+pz^3
+\end{array}\right\vert \\
+%text
+If the determinant above were re-written as
+the sum of two determinants, would this be
+a valid sum?
+%
+</context>
+    <tex correct='true'>\left\vert\begin{array}{ccc}
+  x &amp; x^2 &amp; 1 \\ y &amp; y^2 &amp; 1 \\ z &amp; z^2 &amp; 1
+\end{array}\right\vert+
+\left\vert\begin{array}{ccc}
+  x &amp; x^2 &amp; px^3 \\ y &amp; y^2 &amp; py^3 \\ z &amp; z^2 &amp; pz^3
+\end{array}\right\vert</tex>
+    <tex>\left\vert\begin{array}{ccc}
+  x/2 &amp; x^2/2 &amp; 1 \\ y/2 &amp; y^2/2 &amp; 1 \\ z/2 &amp; z^2/2 &amp; 1
+\end{array}\right\vert+
+\left\vert\begin{array}{ccc}
+  x/2 &amp; x^2/2 &amp; px^3 \\ y/2 &amp; y^2/2 &amp; py^3 \\ z/2 &amp; z^2/2 &amp; pz^3
+\end{array}\right\vert</tex>
+    <reason>%text
+Unlike matrices, if a determinant has a row or
+column which is the sum of two or more terms,
+such a determinant can be expressed as the
+sum of two or more determinants as shown, 
+%
+{\small\left\vert\begin{array}{ccc}
+  x &amp; x^2 &amp; 1+px^3 \\ y &amp; y^2 &amp; 1+py^3 \\ z &amp; z^2 &amp; 1+pz^3
+\end{array}\right\vert=
+\left\vert\begin{array}{ccc}
+  x &amp; x^2 &amp; 1 \\ y &amp; y^2 &amp; 1 \\ z &amp; z^2 &amp; 1
+\end{array}\right\vert+
+\left\vert\begin{array}{ccc}
+  x &amp; x^2 &amp; px^3 \\ y &amp; y^2 &amp; py^3 \\ z &amp; z^2 &amp; pz^3
+\end{array}\right\vert}
+</reason>
+  </step>
+  <step>
+    <context>\left\vert\begin{array}{ccc}
+  x &amp; x^2 &amp; px^3 \\ y &amp; y^2 &amp; py^3 \\ z &amp; z^2 &amp; pz^3
+\end{array}\right\vert=
+Q\left\vert\begin{array}{ccc}
+  x &amp; x^2 &amp; 1 \\ y &amp; y^2 &amp; 1 \\ z &amp; z^2 &amp; 1
+\end{array}\right\vert \\
+%text
+If the above statement is true, what is Q?
+%
+</context>
+    <tex correct='true'>pxyz</tex>
+    <tex>(pxyz)^3</tex>
+    <reason>\begin{align}
+  \left\vert\begin{array}{ccc}
+  x &amp; x^2 &amp; px^3 \\ y &amp; y^2 &amp; py^3 \\ z &amp; z^2 &amp; pz^3
+  \end{array}\right\vert&amp;=
+    xyz\left\vert\begin{array}{ccc}
+    1 &amp; x &amp; px^2 \\ 1 &amp; y &amp; py^2 \\ 1 &amp; z &amp; pz^2
+    \end{array}\right\vert \\
+    &amp;=pxyz\left\vert\begin{array}{ccc}
+    1 &amp; x &amp; x^2 \\ 1 &amp; y &amp; y^2 \\ 1 &amp; z &amp; z^2
+    \end{array}\right\vert \\
+    &amp;=pxyz\left\vert\begin{array}{ccc}
+    x &amp; x^2 &amp; 1 \\ y &amp; y^2 &amp; 1 \\ z &amp; z^2 &amp; 1
+    \end{array}\right\vert
+\end{align} \\
+%text
+Properties used -
+1. If each element of a row or column of a 
+determinant is multiplied by a factor, the
+determinant itself gets multiplied by that factor.
+2. If any two rows or columns of a determinant 
+are interchanged, its sign changes.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+The original determinant can be expressed as,
+%
+(1+pxyz)\left\vert\begin{array}{ccc}
+x &amp; x^2 &amp; 1 \\ y &amp; y^2 &amp; 1 \\ z &amp; z^2 &amp; 1
+\end{array}\right\vert \\
+%text
+What would the result of the following 
+operations on it be?
+%
+R_1\rightarrow R_1-R_2, R_2\rightarrow R_2-R_3
+</context>
+    <tex correct='true'>(1+pxyz)(x-y)(y-z)\left\vert\begin{array}{ccc}
+1 &amp; x+y &amp; 0 \\ 1 &amp; y+z &amp; 0 \\ z &amp; z^2 &amp; 1
+\end{array}\right\vert
+</tex>
+    <reason>\begin{align}
+  {\small \left\vert\begin{array}{ccc}
+  x &amp; x^2 &amp; 1 \\ y &amp; y^2 &amp; 1 \\ z &amp; z^2 &amp; 1
+  \end{array}\right\vert}&amp;=
+    {\small\left\vert\begin{array}{ccc}
+    x-y &amp; x^2-y^2 &amp; 0 \\ y &amp; y^2 &amp; 1 \\ z &amp; z^2 &amp; 1
+    \end{array}\right\vert \, (R_1\rightarrow R_1-R_2)} \\
+    &amp;={\small\left\vert\begin{array}{ccc}
+    x-y &amp; x^2-y^2 &amp; 0 \\ y-z &amp; y^2-z^2 &amp; 0 \\ z &amp; z^2 &amp; 1
+    \end{array}\right\vert \, (R_2\rightarrow R_2-R_3)} \\
+    &amp;={\small(x-y)(y-z)\left\vert\begin{array}{ccc}
+    1 &amp; x+y &amp; 0 \\ 1 &amp; y+z &amp; 0 \\ z &amp; z^2 &amp; 1
+    \end{array}\right\vert}
+\end{align} \\
+%text
+Combining all the terms we get
+%
+(1+pxyz)(x-y)(y-z)\left\vert\begin{array}{ccc}
+1 &amp; x+y &amp; 0 \\ 1 &amp; y+z &amp; 0 \\ z &amp; z^2 &amp; 1
+\end{array}\right\vert
+
+</reason>
+  </step>
+  <step>
+    <context>(1+pxyz)(x-y)(y-z)\left\vert\begin{array}{ccc}
+1 &amp; x+y &amp; 0 \\ 1 &amp; y+z &amp; 0 \\ z &amp; z^2 &amp; 1
+\end{array}\right\vert \\
+%text
+What is the result if the above determinant
+is expanded?
+%
+</context>
+    <tex correct='true'>(1+pxyz)(x-y)(y-z)(z-x)</tex>
+    <tex>(1+pxyz)(x-y)(y-z)(x-z)</tex>
+    <reason>%text
+Consider only the determinant,
+%
+\begin{align}
+  \left\vert\begin{array}{ccc}
+  1 &amp; x+y &amp; 0 \\ 1 &amp; y+z &amp; 0 \\ z &amp; z^2 &amp; 1
+  \end{array}\right\vert&amp;=-
+    \left\vert\begin{array}{ccc}
+    0 &amp; x+y &amp; 1 \\ 0 &amp; y+z &amp; 1 \\ 1 &amp; z^2 &amp; 1z    
+    \end{array}\right\vert \\
+    &amp;=-\left[(x+y)-(y-z)\right] \\
+    &amp;=-x-y+y+z \\
+    &amp;=z-x
+\end{align} \\
+%text
+Putting it all together, the determinant
+evaluates to,
+%
+(1+pxyz)(x-y)(y-z)(z-x)</reason>
+  </step>
+</question>
