@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Let $A=\{1,2,3\}$, $B=\{4,5,6,7\}$ and let
+$f=\{(1,4), (2,5), (3,6)\}$ be a function from 
+$A$ to $B$. State whether $f$ is one-one or not.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+Given $A=\{1,2,3\}$ and $B=\{4,5,6,7\}$
+consider these functions from $A$ to $B$:
+$f=\{(1,4), (2,5), (3,6)\}$ 
+$g=\{(1,4), (2,5), (3,4)\}$.
+$h=\{(2,5), (3,6), (1,7)\}$.
+Which of the following is true?
+%</context>
+    <tex correct='true'>%text
+$f$ and $h$ are one-one, 
+$g$ is not one-one.
+%</tex>
+    <tex>%text
+$f$ and $h$ are not one-one, 
+$g$ is one-one.
+%</tex>
+    <reason>%text
+A function is said to be{\bf one-one} only if
+for each value in $A$ (in this case), there is
+a unique corresponding value in $B$.
+As can be seen, $g(1)=g(3)=4$ which makes
+$g$ a{\bf many-one} instead of one-one.
+%</reason>
+  </step>
+</question>
