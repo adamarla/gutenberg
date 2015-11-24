@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Using properties of determinants, solve the 
+following for $x$:
+%
+\left\vert\begin{array}{ccc}
+  x-2 &amp; 2x-3 &amp; 3x-4 \\ x-4 &amp; 2x-9 &amp; 3x-16 \\ x-8 &amp; 2x-27 &amp; 3x-64
+\end{array}\right\vert=0</tex>
+  </statement>
+  <step>
+    <context>\left\vert\begin{array}{ccc}
+  x-2 &amp; 2x-3 &amp; 3x-4 \\ x-4 &amp; 2x-9 &amp; 3x-16 \\ x-8 &amp; 2x-27 &amp; 3x-64
+\end{array}\right\vert \\
+%text
+To reduce the above determinant, what is a 
+preffered set of transforms?
+%
+</context>
+    <tex correct='true'>R_2\rightarrow R_2-R_1,\, R_2\rightarrow -\dfrac{1}{2}R_2 \\
+R_3\rightarrow R_3-R_1,\, R_3\rightarrow -\dfrac{1}{6}R_3 \\</tex>
+    <tex>R_2\rightarrow R_2+R_1,\, R_2\rightarrow -\dfrac{1}{2}R_2 \\
+R_3\rightarrow R_3+R_1,\, R_3\rightarrow -\dfrac{1}{2}R_3</tex>
+    <reason>R_2\rightarrow R_2-R_1 \\
+R_3\rightarrow R_3-R_1 \\
+%text
+is the preferred set of transforms since it
+results in single values in rows $2$ and $3$ instead
+of mixed values (see determinant).
+%
+D=\left\vert\begin{array}{ccc}
+  x-2 &amp; 2x-3 &amp; 3x-4 \\ {\bf -2} &amp; {\bf -6} &amp; {\bf -12} \\ 
+    {\bf -6} &amp; {\bf -24} &amp; {\bf -60}
+\end{array}\right\vert \\
+%text
+Further by dividing $R_2$ by $-2$ and $R_3$ by $-6$
+we get,
+%
+\quad=12\left\vert\begin{array}{ccc}
+  x-2 &amp; 2x-3 &amp; 3x-4 \\ 1 &amp; 3 &amp; 6 \\ 1 &amp; 4 &amp; 10
+\end{array}\right\vert \\
+</reason>
+  </step>
+  <step>
+    <context>%text
+Which set of transforms would convert
+%
+{\small\left\vert\begin{array}{ccc}
+  x-2 &amp; 2x-3 &amp; 3x-4 \\ 1 &amp; 3 &amp; 6 \\ 1 &amp; 4 &amp; 10
+\end{array}\right\vert
+\rightarrow\left\vert\begin{array}{ccc}
+  x-2 &amp; 3-x &amp; 8-3x \\ 1 &amp; 0 &amp; 0 \\ 1 &amp; 1 &amp; 4
+\end{array}\right\vert}
+</context>
+    <tex correct='true'>\begin{align}
+  C_2&amp;\rightarrow C_2-3C_1 \\
+  C_3&amp;\rightarrow C_3-4C_1
+\end{align}</tex>
+    <tex>\begin{align}
+  R_3&amp;\rightarrow R_3-R_2 \\
+  R_2&amp;\rightarrow R_2-2R_3
+\end{align}</tex>
+    <reason>\left\vert\begin{array}{ccc}
+  x-2 &amp; 2x-3 &amp; 3x-4 \\ 1 &amp; 3 &amp; 6 \\ 1 &amp; 4 &amp; 10
+\end{array}\right\vert \\
+{\bf C_2\rightarrow C_2-3C_1} \\
+\left\vert\begin{array}{ccc}
+  x-2 &amp; -x+3 &amp; 3x-4 \\ 1 &amp; 0 &amp; 6 \\ 1 &amp; 1 &amp; 10
+\end{array}\right\vert \\
+{\bf C_3\rightarrow C_3-4C_1} \\
+\left\vert\begin{array}{ccc}
+  x-2 &amp; -x+3 &amp; 8-3x \\ 1 &amp; 0 &amp; 0 \\ 1 &amp; 1 &amp; 4
+\end{array}\right\vert</reason>
+  </step>
+  <step>
+    <context>\text{If }
+\left\vert\begin{array}{ccc}
+  x-2 &amp; -x+3 &amp; 8-3x \\ 1 &amp; 0 &amp; 0 \\ 1 &amp; 1 &amp; 4
+\end{array}\right\vert=0, \text{ what is $x$}?
+</context>
+    <tex correct='true'>x=4</tex>
+    <tex>x=7</tex>
+    <reason>\begin{align}
+  &amp;\left\vert\begin{array}{ccc}
+    x-2 &amp; 3-x &amp; 8-3x \\ 1 &amp; 0 &amp; 0 \\ 1 &amp; 1 &amp; 4
+  \end{array}\right\vert=0 \\
+  \implies &amp;\left\vert\begin{array}{ccc}
+    1 &amp; 0 &amp; 0 \\ x-2 &amp; 3-x &amp; 8-3x \\ 1 &amp; 1 &amp; 4
+  \end{array}\right\vert=0 \\
+  \implies &amp;4(3-x)-(8-3x)=0 \\
+  \implies &amp;12-4x-8+3x=0 \\
+  \implies &amp;x=4
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>x=8</tex>
+    <tex>x=1</tex>
+    <tex>x=7</tex>
+    <tex correct='true'>x=4</tex>
+  </choices>
+</question>

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Prove that:
+%
+\tan^{-1}\left[\dfrac{\sqrt{1+x}-\sqrt{1-x}}{\sqrt{1+x}+\sqrt{1-x}}\right]
+  =\dfrac{\pi}{4}-\dfrac{1}{2}\cos^{-1}x, \\
+  \text{ where }-\dfrac{1}{2}\le x\le 1.</tex>
+  </statement>
+  <step>
+    <context>%text
+If in $\tan^{-1}\left[\dfrac{\sqrt{1+x}-\sqrt{1-x}}{\sqrt{1+x}+\sqrt{1-x}}\right]$, we substitute 
+$x$ with $\cos 2\theta$, what would it reduce to?
+%
+  </context>
+    <tex correct='true'>\tan^{-1}\left[\dfrac{\cos\theta-\sin\theta}
+  {\cos\theta+\sin\theta}\right]</tex>
+    <reason>\begin{align}
+  &amp;\tan^{-1}\left[\dfrac{\sqrt{1+x}-\sqrt{1-x}}
+    {\sqrt{1+x}+\sqrt{1-x}}\right] \\
+  =&amp;\tan^{-1}\left[\dfrac{\sqrt{1+\cos 2\theta}-\sqrt{1-\cos2\theta}}
+    {\sqrt{1+\cos 2\theta}+\sqrt{1-\cos 2\theta}}\right] \\
+  =&amp;\tan^{-1}\left[\dfrac{\sqrt{2\cos^2\theta}-\sqrt{2\cos^2\theta}}
+    {\sqrt{2\cos^2\theta}+\sqrt{2\cos^2\theta}}\right] \\
+  =&amp;\tan^{-1}\left[\dfrac{\cos\theta-\cos\theta}
+    {\cos\theta+\cos\theta}\right] \\
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+If we divide numerator and denominator by 
+$\cos\theta$, what does $\left[\dfrac{\cos\theta-\sin\theta}{\cos\theta+\sin\theta}\right]$ reduce to?
+%</context>
+    <tex correct='true'>\tan\left[\dfrac{\pi}{4}-\theta\right]</tex>
+    <tex>\tan\left[\dfrac{\pi}{2}-\theta\right]</tex>
+    <reason>\begin{align}
+  &amp;\left[\dfrac{\cos\theta-\sin\theta}{\cos\theta+\sin\theta}\right] \\
+  =&amp;\left[\dfrac{1-\tan\theta}{1+\tan\theta}\right] \\
+  =&amp;\left[\dfrac{\tan\frac{\pi}{4}-\tan\theta}{\tan\frac{\pi}{4}+\tan\theta}\right] \\
+  =&amp;\tan\left[\dfrac{\pi}{4}-\theta\right]
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+If $x=\cos 2\theta$ what is $\tan^{-1}\left(\tan\left[\dfrac{\pi}{4}-\theta\right]\right)$
+%</context>
+    <tex correct='true'>\dfrac{\pi}{4}-\dfrac{1}{2}\cos^{-1}x</tex>
+    <reason>\begin{align}
+  &amp;x=\cos 2\theta \implies \theta=\dfrac{1}{2}\cos^{-1}x \\
+  \therefore &amp;\tan^{-1}\left(\tan\left[\dfrac{\pi}{4}-\theta\right]\right)
+    =\dfrac{\pi}{4}-\dfrac{1}{2}\cos^{-1}x  
+\end{align}</reason>
+  </step>
+</question>
