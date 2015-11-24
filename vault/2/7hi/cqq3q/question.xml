@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Let $f:\mathbb{R}\rightarrow \mathbb{R}$ be defined as $f(x)=10x+7$. 
+Find the function $g:\mathbb{R}\rightarrow \mathbb{R}$ such that
+$gof=fog=I_R$
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+For any function $f$ to be invertible, it must be?
+%</context>
+    <tex correct='true'>%text
+both one-one and onto
+%</tex>
+    <tex>%text
+one-one but not onto
+%</tex>
+    <reason>%text
+If a function $f$ is invertible, it must be one-one
+and onto and conversely, if $f$ is one-one and
+onto, then it must be invertible.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+If $f(x)$ is one-one, what does $f(x_1)=f(x_2)$ 
+imply?
+%</context>
+    <tex>x_1=-x_2</tex>
+    <reason>%text
+If $f(x)$ is a one-one function then,
+%
+\begin{align}
+  f(x_1)=f(x_2) &amp;\implies x_1=x_2 \\
+  x_1=x_2 &amp;\implies f(x_1)=f(x_2)
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>%text
+If $f(x)$ is onto, what does $f(x)=y$ imply?
+%</context>
+    <tex correct='true'>%text
+That $\forall$ y $\in \mathbb{R}$, there exists an $x \in \mathbb{R}$
+such that $f(x)=y$
+%</tex>
+    <reason>%text
+A function $f:X\rightarrow Y$ is said to be onto
+(or surjective), if every element in $Y$ is the 
+image of some element in $X$, i.e. for every 
+$y\in Y$, there exists an element $x\in X$ such 
+that $f(x)=y$.
+%
+</reason>
+  </step>
+  <step>
+    <context>%text
+If $y=10x+7$, find $x$ in terms if $y$?
+%</context>
+    <tex correct='true'>x=\dfrac{y-7}{10}</tex>
+    <reason>\begin{align}
+  &amp;y= 10x+7 \\
+  \implies&amp; y-7=10x \\
+  \implies&amp; \dfrac{y-7}{10}=x
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+If $g(y)=\dfrac{y-7}{10}$ and $f(x)=10x+7$, 
+what are $gof$ and $fog$?
+%</context>
+    <tex correct='true'>fog=f(g(y))=y \\
+gof=g(f(x))=x</tex>
+    <reason>\begin{align}
+  fog&amp;=f(g(y))=10\left(\dfrac{y-7}{10}\right)+7=y \\
+  gof&amp;=g(f(x))=\dfrac{(10x+7)-7}{10}=x
+\end{align}</reason>
+  </step>
+</question>
