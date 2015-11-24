@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Using principal value, evaluate the 
+following 
+\[\qquad  \sin^{-1}\sin\left(\frac{3\pi}{5}\right) \]
+%</tex>
+  </statement>
+  <step>
+    <context>\textbf{Fill in the blanks}\\
+%text
+The principal value of $\sin^{-1}x$ is an $\underline{\hspace{0.5cm}\alpha\hspace{0.5cm}}$
+that lies between $\underline{\hspace{0.5cm}\beta\hspace{0.5cm}}$ and $\underline{\hspace{0.5cm}\gamma\hspace{0.5cm}}$.
+%</context>
+    <tex correct='true'>\begin{tabular}{|c|c|}
+\hline 
+\alpha &amp; \text{angle} \\ 
+\hline
+\beta &amp; -\frac\pi{2} \\
+\hline 
+\gamma &amp; \frac\pi{2}\\
+\hline 
+\end{tabular}</tex>
+    <tex>\begin{tabular}{|c|c|}
+\hline 
+\alpha &amp; \text{angle} \\ 
+\hline
+\beta &amp; 0\\
+\hline 
+\gamma &amp; \pi \\
+\hline 
+\end{tabular}</tex>
+    <reason>%text
+$\sin^{-1}x$ is an angle. 
+
+But \underline\text{given an $x\in[-1,1]$}, there are \underline\text{infinite}
+angles that have $\sin\theta = x$. So, which angle 
+do we have in mind when we say $\sin^{-1} x = \theta$? 
+
+And so, \underline\text{by definition}, $\sin^{-1}x$ is an angle
+between $-\frac\pi{2}$ and $\frac\pi{2}$. This range - $\left[ -\frac\pi{2},\frac\pi{2}\right]$ -
+is called the \underline\text{principal range} and the value of 
+$\theta = \sin^{-1}x$ is called the \underline\text{principal value}. 
+%</reason>
+  </step>
+  <step>
+    <context>%text
+Given what a principal value is, which of 
+the following is correct? 
+%</context>
+    <tex correct='true'>\begin{align}
+\sin^{-1} \sin\frac{3\pi}{5} &amp;= \sin^{-1}\sin\left( \pi-\frac{3\pi}{5}\right) = \frac{2\pi}{5}
+\end{align} </tex>
+    <tex>\begin{align}
+\sin^{-1} \left(\sin\frac{3\pi}{5}\right) &amp;= \frac{3\pi}{5}
+\end{align} </tex>
+    <reason>%text
+Did you notice that \[ \frac{3\pi}{5}\notin\left[ -\frac\pi{2},\frac\pi{2} \right] \]?
+In fact, $\frac{3\pi}{5}\gt \frac\pi{2}$. Therefore, $\frac{3\pi}{5}$ cannot be 
+the principal value. 
+
+However, notice that 
+%
+\begin{align}
+\sin\frac{3\pi}{5} &amp;= \sin\left( \pi-\frac{3\pi}{5} \right) = \sin\frac{2\pi}{5} \\
+\text{And }\frac{2\pi}{5} &amp;\in \left[ -\frac\pi{2},\frac\pi{2} \right] \\
+\therefore\sin^{-1}\left( \sin\frac{3\pi}{5}  \right) &amp;= \frac{2\pi}{5}
+\end{align} </reason>
+  </step>
+  <choices>
+    <tex correct='true'>\frac{2\pi}{5}</tex>
+    <tex>\frac\pi{5}</tex>
+    <tex>\frac{3\pi}{5}</tex>
+    <tex>\frac{4\pi}{5}</tex>
+  </choices>
+</question>

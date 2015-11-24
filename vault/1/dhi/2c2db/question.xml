@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+If \[ \int_0^1 (3x^2 + 2x + k)\cdot dx = 0\], then
+find the value of k.
+%</tex>
+  </statement>
+  <step>
+    <context>\textbf{The First Step}\\
+%text
+Which of the following is correct? 
+%</context>
+    <tex correct='true'>\int_0^1 (3x^2 + 2x + k)\cdot dx = \left[ x^3 + x^2 + kx \right]_0^1</tex>
+    <tex>\int_0^1 (3x^2 + 2x + k)\cdot dx = \left[ x^3 + x^2 + k \right]_0^1</tex>
+    <reason>%text
+The first step might be trivial. But you still 
+have to be careful. 
+
+%
+\begin{align}
+\int_0^1 (3x^2+2x+k)\cdot dx &amp;= \left[ 3\frac{x^3}{3} + 2\frac{x^2}{2} + k\cdot x \right]_0^1 \\
+&amp;= \left[ x^3 + x^2 + kx \right]_0^1 
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+Given the result of Step 1, \underline\text{what should k be}?
+%</context>
+    <tex correct='true'>k = -2 </tex>
+    <tex>k = -3 </tex>
+    <reason>\begin{align}
+A &amp;= \left[ x^3 + x^2 + k\cdot x \right]_0^1 = (1+1+k) - 0 \\
+\therefore A &amp;= 0 \implies (k+2) = 0 \implies k = -2 
+\end{align} </reason>
+  </step>
+  <choices>
+    <tex>k = -1</tex>
+    <tex>k = -3 </tex>
+    <tex>k = -4</tex>
+    <tex correct='true'>k = -2</tex>
+  </choices>
+</question>
