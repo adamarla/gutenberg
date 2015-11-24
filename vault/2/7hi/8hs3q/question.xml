@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+A binary operator $*$ on the set $\{0,1,2,3,4,5\}$ 
+is defined as:
+%
+a*b=\begin{cases}
+  a+b, \, &amp;\text{if } a+b \lt 6 \\
+  a+b-6, \, &amp;\text{if }a+b \ge 6
+\end{cases} \\
+%text
+Show that zero is the identity for this operation 
+and each element 'a' of the set is invertible with
+$6-a$, being the inverse of 'a'.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+Is this the correct operation table for the 
+and the identity for the operator $*$?
+%</context>
+    <tex correct='true'>%text
+Identity $=0$
+%
+\begin{tabular}{|c|cccccc|}
+  \hline
+  * &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 \\
+  \hline
+  0 &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 \\
+  1 &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 0 \\
+  2 &amp; 2 &amp; 3 &amp; 4 &amp; 5 &amp; 0 &amp; 1 \\
+  3 &amp; 3 &amp; 4 &amp; 5 &amp; 0 &amp; 1 &amp; 2 \\
+  4 &amp; 4 &amp; 5 &amp; 0 &amp; 1 &amp; 2 &amp; 3 \\
+  5 &amp; 5 &amp; 0 &amp; 1 &amp; 2 &amp; 3 &amp; 4 \\
+  \hline
+\end{tabular}</tex>
+    <reason>%text
+The value of any cell $(i, j)$ is either $i+j$ or
+$i+j-6$ depending on the sum of $i$ and $j$.
+The identity $e$ for an operator is given by
+the condition $a*e=e*a=a$.
+Simply observing the first row and column of
+the operator table shows that $0$ is the
+identity for this operator.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+Looking at the operator table, what is the
+inverse of $2$?
+%</context>
+    <tex correct='true'>4</tex>
+    <tex>-2</tex>
+    <reason>%text
+As can be seen from the operator table,
+inverse of $2$ is $4$ since $2*4=4*2=0$.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+More generally, observing the operator 
+table, for any column with header $a$, what
+is the corresponding row header of its cell
+whose value is $0$ (identity)?
+%</context>
+    <tex correct='true'>6-a</tex>
+    <tex>5-a</tex>
+    <reason>%text
+If $b$ be inverse of any element $a$ then
+$a*b=b*a=0$ (identity).
+As can be seen from the operator table,
+%
+\begin{tabular}{|c|c|c|c|c|c|}
+  \hline
+  \text{Inverse of } &amp; 1 &amp; 2 &amp; 3 &amp; 4 &amp; 5 \\
+  \hline
+  \text{ is } &amp; 5 &amp; 4 &amp; 3 &amp; 2 &amp; 1  \\
+  \hline
+\end{tabular} \\
+%text
+Therefore generally, inverse of any $a$ is $6-a$.
+%
+</reason>
+  </step>
+</question>
