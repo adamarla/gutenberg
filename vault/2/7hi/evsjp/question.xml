@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Write the direction-cosines of the line 
+joining the points $(1,0,0)$ and $(0,1,1)$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+What are the direction cosines of a line that
+makes an angle of $\alpha$ with the $x$-axis $\beta$ with
+the $y$-axis and $\gamma$ with the $z$-axis?
+%</context>
+    <tex correct='true'>\cos \alpha, \cos \beta, \cos \gamma</tex>
+    <reason>%text
+The definition of direction cosines of a line
+are the cosines of the angles the line makes 
+with the $x$, $y$ and $z$ axes respectively.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+What are the direction cosines of the
+line joining $(1,0,0)$ and $(0,1,1)$?
+%</context>
+    <tex correct='true'>\dfrac{1}{\sqrt{3}}, \dfrac{-1}{\sqrt{3}}, \dfrac{-1}{\sqrt{3}}</tex>
+    <tex>\dfrac{1}{\sqrt{3}}, \dfrac{1}{\sqrt{3}}, \dfrac{1}{\sqrt{3}}</tex>
+    <reason>%text
+If the distance between the points
+$(1,0,0)$ and $(0,1,1)$ is $d$, then
+%
+\begin{align}
+  d &amp;= \sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2} \\
+    &amp;=\sqrt{(0-1)^2+(1-0)^2+(1-0)^2} \\
+    &amp;=\sqrt{1+1+1}=\sqrt{3}
+\end{align} \\
+%text
+Therefore, the direction cosines are,
+%
+\begin{align}
+  \cos \alpha&amp;=\dfrac{x_2-x_1}{d}=\dfrac{-1}{\sqrt{3}} \\
+  \cos \beta &amp;=\dfrac{y_2-y_1}{d}=\dfrac{1}{\sqrt{3}} \\
+  \cos \gamma &amp;= \dfrac{z_2-z_1}{d}=\dfrac{1}{\sqrt{3}}
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{1}{\sqrt{3}}, \dfrac{-1}{\sqrt{3}}, \dfrac{1}{\sqrt{3}}</tex>
+    <tex>\dfrac{1}{\sqrt{3}}, \dfrac{1}{\sqrt{3}}, \dfrac{1}{\sqrt{3}}</tex>
+    <tex correct='true'>\dfrac{1}{\sqrt{3}}, \dfrac{-1}{\sqrt{3}}, \dfrac{-1}{\sqrt{3}}</tex>
+    <tex>\dfrac{-1}{\sqrt{3}}, \dfrac{-1}{\sqrt{3}}, \dfrac{-1}{\sqrt{3}}</tex>
+  </choices>
+</question>

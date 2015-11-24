@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Evaluate:
+%
+\qquad \left\vert \begin{array}{cc}
+    \cos 15^\circ &amp; \sin 15^\circ \\
+    \sin 75^\circ &amp; \cos 75^\circ
+  \end{array}\right\vert</tex>
+  </statement>
+  <step>
+    <context>\left\vert \begin{array}{cc}
+    \cos 15^\circ &amp; \sin 15^\circ \\
+    \sin 75^\circ &amp; \cos 75^\circ
+  \end{array}\right\vert \\
+%text
+What is the correct expansion of the above?
+%</context>
+    <tex correct='true'>\begin{align}
+  {\small\left\vert \begin{array}{cc}
+    \cos 15^\circ &amp; \sin 15^\circ \\
+    \sin 75^\circ &amp; \cos 75^\circ
+  \end{array}\right\vert} 
+    &amp;=\cos 15^\circ \cos 75^\circ - \sin 15^\circ\sin 75^\circ  \\
+\end{align}</tex>
+    <tex>\begin{align}
+  {\small\left\vert \begin{array}{cc}
+    \cos 15^\circ &amp; \sin 15^\circ \\
+    \sin 75^\circ &amp; \cos 75^\circ
+  \end{array}\right\vert} 
+    &amp;=\cos 15^\circ \cos 75^\circ + \sin 15^\circ\sin 75^\circ  \\
+\end{align}</tex>
+    <reason>D=\left\vert\begin{array}{cc}
+  a &amp; b \\ c &amp; d
+\end{array}\right\vert \\
+%text
+Expansion of a $2\times 2$ determinant of
+the form shown above is $D=a\cdot d-b\cdot c$.
+Therefore,
+%
+
+\begin{align}
+  {\small\left\vert \begin{array}{cc}
+    \cos 15^\circ &amp; \sin 15^\circ \\
+    \sin 75^\circ &amp; \cos 75^\circ
+  \end{array}\right\vert} 
+    &amp;=\cos 15^\circ \cos 75^\circ - \sin 15^\circ\sin 75^\circ
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+Can $\cos 15^\circ \cos 75^\circ - \sin 15^\circ\sin 75^\circ$ be
+rewritten as below?
+%</context>
+    <tex correct='true'>\begin{align}
+  \cos 15^\circ \cos 75^\circ - \sin 15^\circ\sin 75^\circ
+    &amp;=\cos(15^\circ+75^\circ) \\
+    &amp;=\cos(90^\circ) \\
+    &amp;= 0    
+\end{align}
+</tex>
+    <tex>\begin{align}
+  \cos 15^\circ \cos 75^\circ - \sin 15^\circ\sin 75^\circ
+    &amp;=\cos(15^\circ-75^\circ) \\
+    &amp;=\cos(-60^\circ) \\
+    &amp;=\dfrac{1}{2}   
+\end{align}
+</tex>
+    <reason></reason>
+  </step>
+  <choices>
+    <tex>\dfrac{1}{2}</tex>
+    <tex correct='true'>0</tex>
+    <tex>-\dfrac{1}{2}</tex>
+    <tex>1</tex>
+  </choices>
+</question>

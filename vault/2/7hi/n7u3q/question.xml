@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Write the projection of the vector $\vector{1}{-1}{}$ on
+the vector $\vector{1}{1}{}$.
+%</tex>
+  </statement>
+  <step>
+    <context>\text{The dashed line in the figure shows the} \\
+\text{projection of vector $\ora{A}$ on vector $\ora{B}$}.</context>
+    <image correct='true'>1a.svg</image>
+    <image>1b.svg</image>
+    <reason>\text{Projection of a vector A on vector B is the} \\
+\text{component of vector A in the direction}\\
+\text{vector B.}</reason>
+  </step>
+  <step>
+    <context>%text
+What is the projection of $\ora{A}$ on $\ora{B}$ when
+$\ora{A}\parallel \ora{B}$ and $\ora{A}\perp \ora{B}$?
+%</context>
+    <tex correct='true'>\begin{array}{|c|c|}
+  \hline
+  \text{Condition} &amp; \text{Projection $\ora{p}$ on $\ora{q}$} \\
+  \hline
+  \ora{A}\parallel \ora{B} &amp; |\ora{A}| \\
+  \hline
+  \ora{A}\perp \ora{B} &amp; 0 \\
+  \hline
+\end{array}
+</tex>
+    <tex>\begin{array}{|c|c|}
+  \hline
+  \text{Condition} &amp; \text{Projection $\ora{A}$ on $\ora{B}$} \\
+  \hline
+  \ora{A}\parallel \ora{B} &amp; |\ora{p}|\sqrt{2} \\
+  \hline
+  \ora{B}\perp \ora{B} &amp; 1 \\
+  \hline
+\end{array}
+</tex>
+    <reason>%text
+When $\ora{A}\perp \ora{B}$, there is no projection of $\ora{A}$
+on to $\ora{B}$. When $\ora{A}\parallel \ora{B}$, the projection is $|\ora{A}|$
+because $\ora{A}$ and $\ora{B}$ are colinear.
+%
+</reason>
+  </step>
+  <step>
+    <context>%text
+If $\ora{A}=\vector{1}{1}{}$ and $\ora{B}=\vector{1}{-1}{}$ and $A_B$ 
+is the projection of $\ora{A}$ on $\ora{B}$, then is the 
+following correct?
+%
+</context>
+    <tex correct='true'>A_B=0</tex>
+    <tex>A_B =\sqrt{2}</tex>
+    <reason>%text
+The projection of $\ora{A}$ on $\ora{B}$  is the scalar \\
+dot product of $\ora{A}$ and{\bf unit vector} \hat{B}. \\
+%
+\therefore A_B=\ora{A}\cdot\hat{B}=
+  \ora{A}\cdot\dfrac{\ora{B}}{|\ora{B}|}=
+  \dfrac{\ora{A}\cdot\ora{B}}{|\ora{B}|} \\
+%text
+To compute the above,
+%  
+\begin{align}
+\dfrac{\ora{A}\cdot\ora{B}}{|\ora{B}|}
+  &amp;=\dfrac{(\vector{1}{1}{})(\vector{1}{-1}{})}{\sqrt{1^2+(-1)^2}} \\
+  &amp;=\dfrac{\hat\imath\cdot \hat\imath +\hat\imath\cdot\hat\jmath
+    -\hat\imath\cdot\hat\jmath-\hat\imath\cdot\hat\jmath}{\sqrt{2}} \\
+  &amp;=\dfrac{1-1}{\sqrt{2}}=0
+\end{align} \\
+%text
+Note: when computing the dot product of
+$\vector{a_1}{b_1}{c_1}$ and $\vector{a_2}{b_2}{c_2}$, we can
+write it simply as $(a_1a_2+b_1b_2+c_1c_2)$.
+%
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>0</tex>
+    <tex>\sqrt{2}</tex>
+    <tex>1</tex>
+    <tex>2</tex>
+  </choices>
+</question>

@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Write the vector equation of a line given by
+$\dfrac{x=5}{3}=\dfrac{y+4}{7}=\dfrac{z-6}{2}$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+Do the points $(5,-4,6)$ and $(8,3,8)$ lie on 
+line $\dfrac{x-5}{3}=\dfrac{y+4}{7}=\dfrac{z-6}{2}$?
+%</context>
+    <tex correct='true'>%text
+$(5,-4,6)$ and $(8,3,8)$ both lie on the
+given line.
+%</tex>
+    <tex>%text
+$(5,-4,6)$ does not lie on the given line
+but $(8,3,8)$ does.
+%</tex>
+    <reason>\begin{align}
+  &amp;\dfrac{x-5}{3}=\dfrac{y+4}{7}=\dfrac{z-6}{2}=\lambda \text{ (say)} \\
+  \implies &amp;x=5+3\lambda \\
+  &amp;y=-4+7\lambda \\
+  &amp;z=6+2\lambda, \, \text{where }\lambda \in \mathbb{R}$.
+\end{align} \\
+%text
+Substituting $\lambda=0$ and $\lambda=1$ respectively 
+in the above set of equations would result
+in points $(5,-4,6)$ and $(8,3,8)$.
+%
+</reason>
+  </step>
+  <step>
+    <context>%text
+If $x=-5+3\lambda$, $y=4+7\lambda$ and $z=6+2\lambda$ 
+specifies a vector $\ora{r}$, and $\ora{a}=\vector{-5}{4}{6}$ 
+and $\ora{b}=\vector{3}{7}{2}$, what is the relation 
+between $\ora{r}$, $\ora{a}$ and $\ora{b}$?
+%</context>
+    <tex correct='true'>\ora{r}=\ora{a}+\lambda(\ora{b})
+</tex>
+    <reason>%text
+$\ora{r}=\vector{(-5+3\lambda)}{(4+7\lambda)}{(6+2\lambda)}$, can
+be expressed as the sum of the following 
+two vectors -
+%
+\begin{align}
+  \ora{r}&amp;=\vector{(-5+3\lambda)}{(4+7\lambda)}{(6+2\lambda)} \\
+    &amp;=-5\hat\imath+3\lambda\hat\imath+4\hat\jmath+7\lambda\hat\jmath
+      +6\hat{\it \lambda}+2k\hat{\it \lambda} \\
+    &amp;=\vector{-5}{4}{6}+\lambda(\vector{3}{7}{2}) \\
+    &amp;=\ora{a}+\lambda(\ora{b})    
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\ora{r}=\vector{-5}{4}{6}+\lambda(\vector{3}{7}{2})</tex>
+    <tex>\ora{r}=\vector{5}{-4}{-6}+\lambda(\vector{3}{7}{2})</tex>
+    <tex>\ora{r}=\vector{5}{-4}{-6}+\lambda(\vector{-3}{-7}{-2})</tex>
+    <tex>\ora{r}=\vector{-5}{4}{6}+\lambda(\vector{-3}{-7}{-2})</tex>
+  </choices>
+</question>
