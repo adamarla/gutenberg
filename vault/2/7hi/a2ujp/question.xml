@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+If a matrix has $5$ elements, write all the 
+possible orders it can have.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If the five elements are $a$, $b$, $c$, $d$ and $e$,
+which of the following configurations form
+valid matrices?
+%
+\overbrace{\left[\begin{array}{ccc}
+  a &amp; b &amp; c \\ d &amp; e &amp; 
+\end{array}\right]}^A
+\overbrace{\left[\begin{array}{ccccc}
+  a &amp; b &amp; c &amp; d &amp; e 
+\end{array}\right] }^B
+\overbrace{\left[\begin{array}{c}
+  a \\ b \\ c \\ d \\ e 
+\end{array}\right]}^C \\</context>
+    <tex correct='true'>%text
+$B$ and $C$ are valid matrices.
+%</tex>
+    <tex>%text
+$A$ and $B$ are valid matrices.
+%</tex>
+    <reason>%text
+In a valid matrix, all of the rows must have
+equal number of elements and all of the
+columns must also have equal number of
+elements.
+Therefore, the only valid matrices that can
+be formed using $5$ elements are $1\times 5$
+and $5\times 1$.
+%</reason>
+  </step>
+  <choices>
+    <tex correct='true'>(5\times 1),\, (1\times 5)</tex>
+    <tex>(5\times 1),\, (1\times 5),\, (3\times 2)</tex>
+    <tex>(5\times 1),\, (1\times 5),\, (2\times 3)</tex>
+    <tex>(5\times 1),\, (4\times 2)</tex>
+  </choices>
+</question>

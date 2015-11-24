@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+If $A=\left[\begin{array}{cc} 2 &amp; 3 \\ 5 &amp; -2\end{array}\right]$, write $A^{-1}$
+in terms of $A$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+What is the definition of $A^{-1}$ in terms of 
+$Adj(A)$ and $|A|$?
+%</context>
+    <tex correct='true'>A^{-1}=\dfrac{1}{|A|}\cdot Adj(A)</tex>
+    <tex>A^{-1}=|A|\cdot Adj(A)</tex>
+    <reason>\begin{align}
+  &amp;|A|\cdot I=A\cdot Adj(A) \\
+  \implies &amp; I=A \left(\dfrac{1}{|A|}Adj(A)\right) \\
+  \implies &amp; A^{-1}=\dfrac{1}{|A|}Adj(A)
+\end{align} \\
+%text
+where $I$ is identity matrix.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+If $A=\left[\begin{array}{cc} 2 &amp; 3 \\ 5 &amp; -2\end{array}\right]$, and $A^{-1}=\dfrac{1}{|A|}Adj(A)$, 
+what is $A^{-1}$?
+%
+</context>
+    <tex correct='true'>A^{-1}=-\dfrac{1}{19}\left[\begin{array}{cc} 
+    -2 &amp; -3 \\ -5 &amp; 2 \end{array}\right]</tex>
+    <tex>A^{-1}=-\dfrac{1}{19}\left[\begin{array}{cc} 
+    -2 &amp; 3 \\ 5 &amp; 2 \end{array}\right]</tex>
+    <reason>A=\left[\begin{array}{cc} 2 &amp; 3 \\ 5 &amp; -2\end{array}\right]
+  \therefore |A|= 2\cdot(-2)-5\cdot 3=-19 \\
+\begin{align}
+  CF(A)&amp;=\left[\begin{array}{cc} -2 &amp; -5 \\ -3 &amp; 2 \end{array}\right]
+    \,\text{(cofactor matrix)}\\
+  Adj(A)&amp;=CF^T \, \text{(transpose of CF)} \\
+    &amp;=\left[\begin{array}{cc} -2 &amp; -3 \\ -5 &amp; 2 \end{array}\right] \\
+  A^{-1}&amp;=-\dfrac{1}{19}\left[\begin{array}{cc} 
+    -2 &amp; -3 \\ -5 &amp; 2 \end{array}\right]
+    =\dfrac{-1}{19}(-A)=\dfrac{A}{19}
+\end{align} \\
+
+%text
+Note: In the case of a $2\times 2$ matrix, you
+can directly compute the inverse like so,
+%
+A=\left[\begin{array}{cc}a &amp; b \\ c &amp; d\end{array}\right]
+  \implies A^{-1}=\dfrac{1}{|A|}\left[\begin{array}{cc} -a &amp; -b \\ -c &amp; -d \end{array} \right]$
+</reason>
+  </step>
+  <choices>
+    <tex>A^{-1}=-\dfrac{A}{19}</tex>
+    <tex>A^{-1}=-\dfrac{A'}{19}</tex>
+    <tex>A^{-1}=\dfrac{A'}{19}</tex>
+    <tex correct='true'>A^{-1}=\dfrac{A}{19}</tex>
+  </choices>
+</question>
