@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Using vectors, find the area of the triangle 
+with vertices A$(1,1,2)$, B$(2,3,5)$ and 
+C$(1,5,5)$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+For a triangle $\triangle ABC$, what is the formula
+for its area given that its vertices are at $\ora{A}$
+$\ora{B}$ and $\ora{C}$?
+%</context>
+    <tex correct='true'>\dfrac{1}{2}\left\vert \ora{AB}\times \ora{BC}\right\vert</tex>
+    <tex>\dfrac{1}{2}\left( \ora{AB}\cdot \ora{BC}\right)</tex>
+    <reason>%text
+Area of a triangle $\triangle ABC$ is given by,
+%
+\begin{align}
+  \text{Area}=&amp;\dfrac{1}{2}|\ora{AB}|\cdot |\ora{AC}|\sin\theta,\,
+    (\theta=\angle CAB) \\
+  =&amp;\dfrac{1}{2}\left\vert\ora{AB}\times \ora{AC}\right\vert
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>%text
+If $\ora{A}=\vector{1}{1}{2}$, $\ora{B}=\vector{2}{3}{5}$ and 
+$\ora{C}=\vector{1}{5}{5}$, what is $\dfrac{1}{2}|\ora{AB}\times \ora{AC}|$?
+%</context>
+    <tex correct='true'>\dfrac{\sqrt{61}}{2}</tex>
+    <tex>\dfrac{1}{2}\sqrt{14}</tex>
+    <reason>\begin{align}
+  \ora{A} &amp;= \vector{1}{1}{2}\, \ora{B}= \vector{2}{3}{5}, \\
+  &amp;\quad\ora{C}= \vector{1}{5}{5} \\
+  \ora{AB} &amp;= \vector{(2-1)}{(3-1)}{(5-2)} \\
+    &amp;=\vector{1}{2}{3} \\
+  \ora{AC} &amp;= \vector{(1-1)}{(5-1)}{(5-2)} \\
+    &amp;=\vector{}{4}{3} \\
+  \ora{AB}\times\ora{AC} &amp;=
+    \left\vert \begin{array}{ccc}
+      \hat\imath &amp; \hat\jmath &amp; {\it k} \\
+      1 &amp; 2 &amp; 3 \\ 0 &amp; 4 &amp; 3
+    \end{array}\right\vert=\vector{1}{-6}{3} \\
+  \dfrac{1}{2}\left\vert\ora{AB}\times\ora{AC}\right\vert
+    &amp;=\dfrac{1}{2}\sqrt{2^2+(-6)^2+3^2}=\dfrac{1}{2}\sqrt{61}
+\end{align} \\
+%text
+Note: $|\ora{AB}\times \ora{AC}|\neq|\ora{AB}|\times|\ora{AC}|$
+%
+</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{\sqrt{41}}{2}</tex>
+    <tex>\dfrac{5}{2}\sqrt{14}</tex>
+    <tex correct='true'>\dfrac{\sqrt{61}}{2}</tex>
+    <tex>\dfrac{\sqrt{59}}{2}</tex>
+  </choices>
+</question>
