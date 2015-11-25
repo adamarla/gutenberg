@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+FInd the projection of $\ora{a}$ on $\ora{b}$ if $\ora{a}\cdot \ora{b}=8$
+and $\ora{b}=\vector{2}{6}{3}$.
+%</tex>
+  </statement>
+  <step>
+    <context>\text{Which dashed line in the figure shows the} \\
+\text{projection of vector $\ora{A}$ on vector $\ora{B}$}.</context>
+    <image correct='true'>1a.svg</image>
+    <image>1b.svg</image>
+    <reason>%text
+Projection of a $\ora{A}$ on $\ora{B}$ is the component
+of $\ora{A}$ in the direction of $\ora{B}$.
+%
+</reason>
+  </step>
+  <step>
+    <context>%text
+If the angle between $\ora{a}$ and $\ora{b}$ is $\theta$, what
+is the component of $\ora{a}$ along $\ora{b}$?
+%</context>
+    <tex correct='true'>|\ora{a}|\cos\theta</tex>
+    <tex>|\ora{a}|\sin\theta</tex>
+    <reason>%text
+If the projection of $\ora{a}$ along $\ora{b}$ is $a_b$ then,
+and the angle between $\ora{a}$ and $\ora{b}$ is $\theta$, then.
+%
+\cos\theta=\dfrac{a_b}{|\ora{a}|}\implies a_b=|\ora{a}|\cos\theta
+</reason>
+  </step>
+  <step>
+    <context>%text
+If $\ora{a}\cdot \ora{b}=8$, $\ora{b}=\vector{2}{6}{3}$
+what is $a_b=|\ora{a}|\cos\theta$?
+($\theta$ is the angle between $\ora{a}$ and $\ora{b}$)
+%</context>
+    <tex correct='true'>\dfrac{8}{7}</tex>
+    <reason>\begin{align}
+  &amp;\ora{a}\cdot \ora{b}=8 \\
+  \implies &amp;|\ora{a}||\ora{b}| \cos\theta=8 \\
+  \implies &amp;|\ora{a}|\left(\sqrt{2^2+6^2+3^2}\right)\cos\theta=8 \\
+  \implies &amp;|\ora{a}|(7)\cos\theta=8 \\
+  \implies &amp;|\ora{a}|\cos\theta=\dfrac{8}{7}
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{8}{7}</tex>
+    <tex>\dfrac{7}{8}</tex>
+    <tex>7</tex>
+    <tex>1</tex>
+  </choices>
+</question>

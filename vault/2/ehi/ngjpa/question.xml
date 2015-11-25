@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Write the value of $p$ for which 
+$\ora{a}=\vector{3}{2}{9}$ and $\ora{b}=\vector{1}{p}{3}$ 
+are parallel vectors.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+What does the condition $\ora{a}=\lambda\ora{b}$, for some
+scalar $\lambda$, signify?
+%</context>
+    <tex correct='true'>%text
+That $\ora{a}$ and $\ora{b}$ are parallel.
+%</tex>
+    <tex>%text
+That $\ora{a}$ and $\ora{b}$ are perpendicular.
+%</tex>
+    <reason>%text
+Two parallel vectors share the same unit vector 
+(direction), they only differ only in magnitude. 
+Therefore, if $\hat a$ and $\hat b$ are unit vectors for $\ora{a}$ 
+and $\ora{b}$ respectively then, $\hat{a}=\hat{b}$.
+%
+</reason>
+  </step>
+  <step>
+    <context>%text
+If $\ora{a}=\vector{3}{2}{9}$ and $\ora{b}=\vector{1}{p}{3}$
+and $\ora{a}=\lambda\ora{b}$ what is p?
+%</context>
+    <tex correct='true'>p=\dfrac{2}{3}</tex>
+    <tex>p=3</tex>
+    <reason>\begin{align}
+  \ora{a}&amp;=\vector{3}{2}{9} \\
+  \ora{b}&amp;=\vector{1}{p}{3} \\
+  \ora{a}=\lambda\ora{b} &amp;\implies 3=\lambda 1 \\
+    &amp;\,\qquad 2=\lambda p \\
+    &amp;\,\qquad 9=\lambda 3
+\end{align} \\
+\therefore \lambda=3 \implies p=\dfrac{2}{3}</reason>
+  </step>
+  <choices>
+    <tex>p=3</tex>
+    <tex>p=9</tex>
+    <tex correct='true'>p=\dfrac{2}{3}</tex>
+    <tex>p=1</tex>
+  </choices>
+</question>
