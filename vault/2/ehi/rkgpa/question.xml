@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+If matrix $A=(1,2,3)$, write $AA'$, where $A'$
+is the transpose of matrix A.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+What is the transpose $A'$ of row matrix 
+$A=\left[1,2,3\right]$?
+%</context>
+    <tex correct='true'>A'=\left[\begin{array}{c} 1 \\ 2 \\ 3 \end{array}\right]</tex>
+    <tex>A'=\left[3,2,1\right]</tex>
+    <reason>%text
+Transpose of a matrix means interchanging
+the rows and columns with each other. I,e. 
+row $n$ becomes column $n$ and so on. Transpose 
+of a $n\times m$ matrix is a $m\times n$ matrix.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+If $A=\left[1,2,3\right]$ and $A'=\left[\begin{array}{c}1 \\ 2 \\ 3\end{array}\right]$ what is $AA'$?
+%</context>
+    <tex correct='true'>14</tex>
+    <tex>36</tex>
+    <reason>\begin{align}
+  A\times A' &amp;=\left[1,2,3\right]\times \left[\begin{array}{c}1 \\ 2 \\ 3\end{array}\right] \\
+    &amp;= (1\times 1)+(2\times 2)+ (3\times 3)=14
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>14</tex>
+    <tex>36</tex>
+    <tex>9</tex>
+    <tex>6</tex>
+  </choices>
+</question>

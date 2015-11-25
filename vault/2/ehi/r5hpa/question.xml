@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Write the value of the determinant 
+%
+\left\vert\begin{array}{ccc}
+  2 &amp; 3 &amp; 4 \\ 5 &amp; 6 &amp; 8 \\ 6x &amp; 9x &amp; 12x
+\end{array}\right\vert?</tex>
+  </statement>
+  <step>
+    <context>%text
+If two rows or columns of a determinant
+are proportional, what is the value of such 
+a determinant?
+%</context>
+    <tex correct='true'>zero</tex>
+    <tex>1</tex>
+    <reason>%text
+If two rows or columns of a determinant
+are proportional, we can factor out that
+value which would make the said rows 
+(or columns) identical. From this point on
+subtracting the two identical rows (or
+columns) ensures that the determinant
+reduces to zero.
+%</reason>
+  </step>
+  <step>
+    <context>\left\vert\begin{array}{ccc}
+  2 &amp; 3 &amp; 4 \\ 5 &amp; 6 &amp; 8 \\ 6x &amp; 9x &amp; 12x
+\end{array}\right\vert \\
+%text
+Are any two rows or columns of the above 
+determinant proportional?
+%
+</context>
+    <tex>%text
+No. No two rows or columns of the above
+determinant are proportional.
+%</tex>
+    <reason>\left\vert\begin{array}{ccc}
+  2 &amp; 3 &amp; 4 \\ 5 &amp; 6 &amp; 8 \\ 6x &amp; 9x &amp; 12x
+\end{array}\right\vert \\
+%text
+In the above determinant $R_3=3x\times R_1$.
+Therefore, we can rewrite the determinant
+as,
+%
+3x\left\vert\begin{array}{ccc}
+  2 &amp; 3 &amp; 4 \\ 5 &amp; 6 &amp; 8 \\ 2 &amp; 3 &amp; 4
+\end{array}\right\vert \\
+%text
+Therefore, the value of this determinant
+is zero.
+%
+</reason>
+  </step>
+  <choices>
+    <tex>14x^2-18x+24</tex>
+    <tex>42x-14</tex>
+    <tex>12x+30</tex>
+    <tex correct='true'>zero</tex>
+  </choices>
+</question>

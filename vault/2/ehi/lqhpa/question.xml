@@ -1,0 +1,77 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Write a unit vector in the direction of 
+$\ora{a}=\vector{2}{-6}{3}$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If $\ora{u}=\vector{u_1}{u_2}{u_3}$ is a unit vector, what is
+true about $u_1$, $u_2$ and $u_3$?
+%</context>
+    <tex correct='true'>u_1^2+u_2^2+u_3^2=1</tex>
+    <tex>u_1=u_2=u_3=1</tex>
+    <reason>%text
+If $\ora{u}$ is a unit vector, it means its
+magnitude is $1$. ie. $|\ora{u}|=1$. Therefore,
+%
+\sqrt{u_1^2+u_2^2+u_3^2}=1 \implies u_1^2+u_2^2+u_3^2=1 \\
+%text
+Note: 
+%
+\begin{align}
+  &amp;u_1=u_2=u_3=1 \\
+  \implies &amp;|\ora{u}|=\sqrt{u_1^2+u_2^2+u_3^2} \\
+  \implies &amp;|\ora{u}|=\sqrt{1+1+1}=\sqrt{3}
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>%text
+If a vector is multiplied by a scalar, what
+is{\bf always} true about the resulting vector?
+%</context>
+    <tex correct='true'>%text
+It has the same direction as the original
+vector.
+%</tex>
+    <reason>%text
+If a vector is multiplied by a scalar, all it does
+is produce a new vector pointing in the exact
+same direction. This new vector may be of 
+greater, less or the same magnitude when 
+compared with the original vector.
+%
+\begin{align}
+  \ora{v}\cdot \lambda = \ora{w} \implies |\ora{v}|=\lambda|\ora{w}|
+\end{align} \\
+%text
+(where $\lambda$ is a scalar).
+%</reason>
+  </step>
+  <step>
+    <context>%text
+What does $\ora{a}=\vector{2}{-6}{3}$ need to be
+multiplied with so that the magnitude of the
+resulting vector is $1$.
+%
+</context>
+    <tex correct='true'>\dfrac{1}{7}</tex>
+    <tex>7</tex>
+    <reason>\begin{align}
+  \ora{a} &amp;= \vector{2}{-6}{3} \\
+  \implies|\ora{a}| &amp;= \sqrt{2^2+(-6)^2+3^2} \\
+    &amp;=\sqrt{4+36+9}=7 \\
+  \therefore \hat{a} &amp;= \dfrac{1}{7}\ora{a} \\
+    &amp;=\dfrac{1}{7}\left(\vector{2}{-6}{3}\right)
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>7\left(\vector{2}{-6}{3}\right)</tex>
+    <tex>\left(\vector{2}{-6}{3}\right)</tex>
+    <tex correct='true'>\dfrac{1}{7}\left(\vector{2}{-6}{3}\right)</tex>
+    <tex>49\left(\vector{2}{-6}{3}\right)</tex>
+  </choices>
+</question>
