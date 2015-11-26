@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Evaluate \[\int_0^{\frac\pi{2}}\left( 2\log\sin x - \log \sin 2x \right)\cdot dx \]
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+In \[ R = \int_0^{\frac\pi{2}}\underbrace{(2\log\sin x - \log\sin 2x)}_\beta\cdot dx \], 
+ \[ \qquad \beta = \log f(x) - \log g(x) - \log 2\].
+
+\underline\text{ But what are $f(x)$ and $g(x)$}?
+%</context>
+    <tex correct='true'>\begin{align}
+f(x) &amp;= \sin x \text{ and } g(x) = \cos x 
+\end{align}
+</tex>
+    <tex>\begin{align}
+f(x) &amp;= \cos x \text{ and } g(x) = \sin  x 
+\end{align}</tex>
+    <reason>\begin{align}
+\beta &amp;= 2\log \sin x - \log\sin 2x = \underbrace{\log\left( \frac{\sin^2 x}{\sin 2x} \right) }_{a\log b = \log b^a } \\
+&amp;= \log \left( \frac{\sin^2 x}{2\sin x\cdot\cos x}\right) 
+= \log \left( \frac{\sin x}{2\cos x}\right) \\
+&amp;= \overbrace{\log\underbrace{\sin x}_{f(x)} - \underbrace{\log\underbrace{\cos x}_{g(x)} - \log 2}_{\log 2\cos x = \log 2 + \log\cos x}}^{\log\frac{a}{b} = \log a - \log b}
+\end{align} </reason>
+  </step>
+  <step>
+    <context>%text
+Given that 
+
+\[ 2\log\sin x - \log\sin 2x = \log\sin x-\log\cos x - \log 2\]
+
+\underline\text{would the following be true?}
+%</context>
+    <tex correct='true'>\begin{align}
+R &amp;= \int_0^{\frac\pi{2}}(2\log\sin x-\log\sin 2x)\cdot dx \\ 
+&amp;= \int_0^{\frac\pi{2}}\left[ \log \sin x - \log \cos x - \log 2\right]\cdot dx \\
+&amp;\underbrace{=  \int_0^{\frac\pi{2}}\left[ \log \cos x - \log \sin x - \log 2\right]\cdot dx}
+_{\text{Focus on this line}}
+\end{align} </tex>
+    <tex>\begin{align}
+R &amp;= \int_0^{\frac\pi{2}}(2\log\sin x-\log\sin 2x)\cdot dx \\ 
+&amp;= \int_0^{\frac\pi{2}}\left[ \log \sin x - \log \cos x - \log 2\right]\cdot dx \\
+&amp;\underbrace{\neq  \int_0^{\frac\pi{2}}\left[ \log \cos x - \log \sin x - \log 2\right]\cdot dx}
+_{\text{Focus on this line}} 
+\end{align} </tex>
+    <reason>%text
+There is a nice, little rule that says 
+\[\qquad \int_0^a f(x)\cdot dx = \int_0^a f(a-x)\cdot dx \]
+
+Which means that 
+%
+\begin{align}
+&amp;R = \int_0^{\frac\pi{2}}\left[ \log \sin x - \log \cos x - \log 2\right]\cdot dx \\
+&amp;= \int_0^{\frac\pi{2}}\left[ \log \sin\left(\frac\pi{2}-x\right) - \log \cos\left(\frac\pi{2}-x\right)  - \log 2\right]dx\\
+&amp;= \int_0^{\frac\pi{2}}\left[ \log\cos x - \log \sin x -\log 2\right]dx  
+\end{align} 
+</reason>
+  </step>
+  <step>
+    <context>%text
+Given the results of Step 2, what will 
+$2R = R+R$ - and therefore - $R$ equal? 
+%</context>
+    <tex correct='true'>\begin{align}
+2R &amp;= -2\log2\cdot\frac\pi{2} \\
+R &amp;= -\log2\cdot\frac\pi{2} 
+\end{align}</tex>
+    <tex>\begin{align}
+2R &amp;= -\log2\cdot\frac\pi{2} \\
+R &amp;= -\frac{\log2}{2}\cdot\frac\pi{2} 
+\end{align}</tex>
+    <reason>%text
+We established in Step 2 that 
+%
+\begin{align}
+R &amp;= \int_0^{\frac\pi{2}}\left[ \log \sin x - \log \cos x - \log 2\right]\cdot dx \\
+&amp;= \int_0^{\frac\pi{2}}\left[ \log\cos x - \log \sin x -\log 2\right]dx 
+\end{align}\\
+\begin{align} 
+\therefore R + R &amp;= \underbrace{-2\log 2\cdot\int_0^{\frac\pi{2}}dx }_{\text{everything else cancels out}}\\
+\text{or } 2R &amp;= -2\log 2\cdot\frac\pi{2} \implies R = -\log 2\cdot\frac\pi{2}
+\end{align} </reason>
+  </step>
+  <choices>
+    <tex correct='true'>-\log2\cdot\frac\pi{2} </tex>
+    <tex>-2\log2\cdot\frac\pi{2}</tex>
+    <tex>-\frac{\log2}{2}\cdot\frac\pi{2} </tex>
+    <tex>\pi\cdot\log 2</tex>
+  </choices>
+</question>

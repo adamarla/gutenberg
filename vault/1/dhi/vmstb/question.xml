@@ -1,0 +1,152 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Three bags contain balls as shown 
+in the table below 
+
+%
+\begin{tabular}{|c|c|c|c|}
+\hline 
+\text{Bag} &amp; \text{# White} &amp; \text{# Black} &amp; \text{# Red} \\
+\hline
+I &amp; 1 &amp; 2 &amp; 3 \\
+\hline 
+II &amp; 2 &amp; 1 &amp; 1 \\
+\hline 
+III &amp; 4 &amp; 3 &amp; 2 \\
+\hline 
+\end{tabular} 
+%text
+
+A bag is chosen at random and two balls 
+are drawn from it. They happen to be 
+white and red. What is the probability 
+that they came from bag III? 
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+\underline\text{What probability do we have to find} 
+given the following events? 
+%
+\begin{tabular}{|c|l|}
+\hline 
+A &amp; \text{Two balls picked - 1 red, 1 white} \\
+\hline 
+B_1 &amp; \text{Bag 1 picked} \\
+\hline 
+B_2 &amp; \text{Bag 2 picked} \\
+\hline 
+B_3 &amp; \text{Bag 3 picked} \\
+\hline 
+\end{tabular}</context>
+    <tex correct='true'>P\left( B_3 \,\vert A\right) </tex>
+    <tex>P(B_3)</tex>
+    <reason>%text
+We have already drawn a red and a 
+white ball. But we don't know from 
+which bag. 
+
+Not just that, the question is whether
+the balls came from bag III. 
+
+Hence, the required probability is 
+\[ \qquad P\left( B_3\,\vert\, A\right) = P\left(\text{$B_3$ given A}\right) \]
+%</reason>
+  </step>
+  <step>
+    <context>%text
+Given that we need to find $P(B_3\vert A)$,
+\underline\text{is the following correct}?
+%</context>
+    <tex correct='true'>\begin{align}
+P(B_3\vert A) &amp;= \dfrac{P(A\vert B_3)\cdot P(B_3)}{\sum_{k=1}^3\quad P(A\vert B_k)\cdot P(B_k)}
+\end{align}</tex>
+    <reason>%text
+This is simply \underline\text{Bayes' Theorem}.
+%
+\begin{align}
+P(B_3\vert A)\cdot P(A) &amp;= P(A\vert B_3)\cdot P(B_3) \\
+\therefore P(B_3\vert A) &amp;= \frac{P(A\vert B_3)\cdot P(B_3)}{P(A)}
+\end{align} \\
+%text
+
+Moreover, in the above formula, 
+%
+\begin{align}
+P(A) &amp;= \underbrace{P(A\vert B_1)\cdot P(B_1) +\ldots + P(A\vert B_3)\cdot P(B_3)}_{\sum_{k=1}^3 \quad P(A\vert B_k)\cdot P(B_k)}
+\end{align} </reason>
+  </step>
+  <step>
+    <context>%text
+What would the \underline\text{values of} $P(A\vert B_1)$, 
+$P(A\vert B_2)$ and $P(A\vert B_3)$ be? 
+
+Refer to the formula in last step. 
+%</context>
+    <tex correct='true'>\begin{tabular}{|c|c|c|}
+\hline 
+P(A\vert B_3) &amp; P(A\vert B_2) &amp; P(A\vert B_3) \\
+\hline 
+\frac{1}{5} &amp; \frac{1}{3} &amp; \frac{2}{9} \\
+\hline 
+\end{tabular} </tex>
+    <tex>\begin{tabular}{|c|c|c|}
+\hline 
+P(A\vert B_3) &amp; P(A\vert B_2) &amp; P(A\vert B_3) \\
+\hline 
+\frac{3}{8} &amp; \frac{1}{4} &amp; \frac{2}{7} \\
+\hline 
+\end{tabular}</tex>
+    <reason>%text
+$P(A\vert B_1)$ is the probability of drawing a 
+\underline\text{red and a white} ball \underline\text{from bag I}.
+
+Similarly, $P(A\vert B_2)$ and $P(A\vert B_3)$ are the 
+probabilities of drawing a red and a white 
+ball from bags II and III respectively. 
+
+%
+\begin{tabular}{|c|c|c|}
+\hline 
+\text{Bag} &amp; \text{Total balls} &amp; P(A\vert\text{ bag}) \\
+\hline 
+I &amp; 6 &amp; \frac{{^3C_1}\times{^1C_1}}{{^6C_2}} = \frac{1}{5} \\
+\hline 
+II &amp; 4 &amp;  \frac{{^2C_1}\times{^1C_1}}{{^4C_2}} = \frac{1}{3} \\
+\hline 
+III &amp; 9 &amp;  \frac{{^4C_1}\times{^2C_1}}{{^9C_2}} = \frac{2}{9} \\
+\hline 
+\end{tabular}</reason>
+  </step>
+  <step>
+    <context>%text
+Given the probabilities of drawing a red 
+and a white ball from each bag, what 
+then is the \underline\text{required probability - $P(B_3\vert A)$}?
+%</context>
+    <tex correct='true'>P(B_3\vert A) = \frac{5}{17}</tex>
+    <tex>P(B_3\vert A) = \frac{7}{13}</tex>
+    <reason>%text
+When a bag is picked initially, then each 
+bag has an equal chance of being picked. 
+
+Which means $P(B_1) = P(B_2) = P(B_3) = \frac{1}{3} $
+
+And therefore, 
+%
+\begin{align}
+P(B_3\vert A) &amp;= \underbrace{\frac{P(A\vert B_1)}{P(A\vert B_1) + P(A\vert B_2) + P(A\vert B_3)}}_
+{P(B_1), P(B_2)\text{ and }P(B_3)\text{ all cancel out}} \\
+&amp;= \frac{\frac{2}{9}}{\frac{1}{5} + \frac{1}{3} + \frac{2}{9}} \\
+&amp;= \frac{5}{17}
+\end{align} </reason>
+  </step>
+  <choices>
+    <tex>\frac{7}{13}</tex>
+    <tex>\frac{10}{13}</tex>
+    <tex>\frac{8}{13}</tex>
+    <tex correct='true'>\frac{5}{17}</tex>
+  </choices>
+</question>
