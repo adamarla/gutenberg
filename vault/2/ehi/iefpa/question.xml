@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Prove that: } \\
+\sin^{-1}\left(\dfrac{4}{5}\right)+\sin^{-1}\left(\dfrac{5}{13}\right)
+  +\sin^{-1}\left(\dfrac{16}{65}\right)=\dfrac{\pi}{2}</tex>
+  </statement>
+  <step>
+    <context>%text
+What are $\sin^{-1}\left(\dfrac{4}{5}\right)$, $\sin^{-1}\left(\dfrac{5}{13}\right)$ and 
+$\sin^{-1}\left(\dfrac{16}{65}\right)$ in terms if $\tan^{-1}$?
+%</context>
+    <tex correct='true'>\begin{align}
+  \sin^{-1}\dfrac{4}{5}&amp;=\tan^{-1}\dfrac{4}{3} \\
+  \sin^{-1}\dfrac{5}{13}&amp;=\tan^{-1}\dfrac{5}{12} \\
+  \sin^{-1}\dfrac{16}{65}&amp;=\tan^{-1}\dfrac{16}{63}  
+\end{align}
+</tex>
+    <tex>\begin{align}
+  \sin^{-1}\dfrac{4}{5}&amp;=\tan^{-1}\dfrac{3}{5} \\
+  \sin^{-1}\dfrac{5}{13}&amp;=\tan^{-1}\dfrac{12}{13} \\
+  \sin^{-1}\dfrac{16}{65}&amp;=\tan^{-1}\dfrac{63}{65}  
+\end{align}
+</tex>
+    <reason></reason>
+  </step>
+  <step>
+    <context>%text
+What is $\tan^{-1}\dfrac{4}{3}+\tan^{-1}\dfrac{5}{12}$?
+%</context>
+    <tex correct='true'>\tan^{-1}\dfrac{63}{16}</tex>
+    <tex>\tan^{-1}\dfrac{63}{36}</tex>
+    <reason>\begin{align}
+  \tan^{-1}x &amp;= \theta \implies x=\tan\theta \\
+  \tan^{-1}y &amp;= \phi \implies y=\tan\phi \\
+  \tan(\theta+\phi) &amp;= \dfrac{\tan\theta+\tan\phi}{1-\tan\theta\tan\phi} \\
+  (\theta+\phi) &amp;=\tan^{-1}\left(\dfrac{\tan\theta+\tan\phi}
+    {1-\tan\theta\tan\phi}\right) \\
+  \therefore \tan^{-1}x+\tan^{-1}y &amp;=\tan^{-1}\left(\dfrac{x+y}{1-xy}\right)  
+\end{align} \\
+%text
+Using the above result,
+%
+\begin{align}
+  \tan^{-1}\dfrac{4}{3}+\tan^{-1}\dfrac{5}{12}
+    &amp;=\tan^{-1}\left(\dfrac{\frac{4}{3}+\frac{5}{12}}
+      {1-\frac{4}{3}}\right) \\
+    &amp;=\tan^{-1}\dfrac{63}{16}
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>%text
+If $\tan^{-1}\dfrac{63}{16}+\theta=\dfrac{\pi}{2}$, what is $\theta$?
+%</context>
+    <tex correct='true'>\theta=\tan^{-1}\dfrac{16}{63}</tex>
+    <tex>\theta=\cot^{-1}\dfrac{16}{63}</tex>
+    <reason>\tan^{-1}\dfrac{63}{16}+\theta=\dfrac{\pi}{2}
+  \implies \theta=\left(\dfrac{\pi}{2}-\tan^{-1}\dfrac{63}{16}\right) \\
+\begin{align}
+  \tan\theta&amp;=\tan\left(\dfrac{\pi}{2}-\tan^{-1}\dfrac{63}{16}\right) \\
+    &amp;=\cot\left(\tan^{-1}\dfrac{63}{16}\right)
+       =\cot\left(\cot^{-1}\dfrac{16}{63}\right)
+       =\dfrac{16}{63} \\
+\end{align} \\
+\tan\theta=\dfrac{16}{63} \implies \theta=\tan^{-1}\dfrac{16}{63} \\
+\therefore \tan^{-1}\dfrac{16}{63}+\tan^{-1}\dfrac{63}{16}=\dfrac{\pi}{2}
+</reason>
+  </step>
+</question>

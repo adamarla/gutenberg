@@ -1,0 +1,65 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+If $\ora{a}\times \ora{b}=\ora{c}\times \ora{d}$ and $\ora{a}\times \ora{c}=\ora{b}\times \ora{d}$,
+show that $\ora{a}-\ora{d}$ is parallel to $\ora{b}-\ora{c}$,
+where $\ora{a}\neq \ora{d}$ and $\ora{b}\neq \ora{c}$
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If $(\ora{a}-\ora{d})$ and $(\ora{b}-\ora{c})$ are two vectors, 
+how can we show that they are perpendicular?
+%</context>
+    <tex correct='true'>(\ora{a}-\ora{d})\times(\ora{b}-\ora{c})=0</tex>
+    <tex>(\ora{a}-\ora{d})-(\ora{b}-\ora{c})=0</tex>
+    <reason>%text
+If two vectors are perpendicular their
+cross product is zero.
+%</reason>
+  </step>
+  <step>
+    <context>\qquad\begin{align}
+      \ora{a}\times \ora{b}=\ora{c}\times \ora{d} \qquad (1) \\
+      \ora{a}\times \ora{c}=\ora{b}\times \ora{d} \qquad (2)
+    \end{align} \\
+%text
+$(1)-(2)$ results in $\ora{a}\times \ora{P}=\ora{d}\times \ora{Q}$
+what are $\ora{P}$ and $\ora{Q}$?
+%</context>
+    <tex>\ora{P}=\ora{b}-\ora{c} \\
+\ora{Q}=\ora{c}-\ora{b}</tex>
+    <reason>\begin{align}
+    &amp;\ora{a}\times \ora{b}=\ora{c}\times \ora{d}  \\
+    &amp;\ora{a}\times \ora{c}=\ora{b}\times \ora{d}  \\
+    \implies &amp;{\small(\ora{a}\times \ora{b})-
+      \left(\ora{a}\times \ora{c}\right)=
+      (\ora{c}\times \ora{d})-(\ora{b}\times \ora{d})} \\
+    \implies &amp;\ora{a}\times(\ora{b}-\ora{c})=
+      (\ora{c}-\ora{b})\times\ora{d} \\
+    \implies &amp;\ora{a}\times\underbrace{(\ora{b}-\ora{c})}_{P}=
+      \ora{d}\times \underbrace{(\ora{b}-\ora{c})}_{Q}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\ora{a}\times(\ora{b}-\ora{c})=\ora{d}\times(\ora{b}-\ora{c}) \\
+%text
+How does the above result show that $(\ora{a}-\ora{d})$
+is perpendicular to $(\ora{b}-\ora{c})$?
+%</context>
+    <tex correct='true'>%text
+By subtractiong $\ora{d}\times (\ora{b}-\ora{c})$ from both 
+sides and taking $(\ora{b}-\ora{c})$ common.
+%</tex>
+    <tex>%text
+By dividing both sides with $(\ora{b}-\ora{c})$
+%</tex>
+    <reason>\begin{align}
+  &amp; \ora{a}\times(\ora{b}-\ora{c})=\ora{d}\times(\ora{b}-\ora{c}) \\
+  \implies &amp;\ora{a}\times(\ora{b}-\ora{c})-\ora{d}\times(\ora{b}-\ora{c})=0 \\
+  \implies &amp;(\ora{a}-\ora{d})\times (\ora{b}-\ora{c})=0 \\
+  \implies &amp;(\ora{a}-\ora{d}) \perp (\ora{b}-\ora{c})
+\end{align}</reason>
+  </step>
+</question>
