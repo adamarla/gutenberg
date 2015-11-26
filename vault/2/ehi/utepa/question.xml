@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Solve for $x$, $\tan^{-1}3x+\tan^{-1}2x=\dfrac{\pi}{4}$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+What is $z$ in terms of $x$ and $y$ if 
+$\tan^{-1}x+\tan^{-1}y=\tan^{-1}z$.
+%</context>
+    <tex correct='true'>z=\dfrac{x+y}{1-xy}</tex>
+    <tex>z=\dfrac{xy-1}{x+y}</tex>
+    <reason>\begin{align}
+  \tan^{-1}x &amp;= \theta \implies x=\tan\theta \\
+  \tan^{-1}y &amp;= \phi \implies y=\tan\phi \\
+  \tan(\theta+\phi) &amp;= \dfrac{\tan\theta+\tan\phi}{1-\tan\theta\tan\phi} \\
+  (\theta+\phi) &amp;=\tan^{-1}\left(\dfrac{\tan\theta+\tan\phi}
+    {1-\tan\theta\tan\phi}\right) \\
+  \therefore \tan^{-1}x+\tan^{-1}y &amp;=\tan^{-1}\left(\dfrac{x+y}{1-xy}\right)  
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\tan^{-1}3x+\tan^{-1}2x=\dfrac{\pi}{4} \\
+%text
+For what value of $x$ is the above true?
+%</context>
+    <tex correct='true'>x=\dfrac{1}{6}</tex>
+    <tex>x=-1,\dfrac{1}{6}</tex>
+    <reason>\begin{align}
+  &amp;\tan^{-1}3x+\tan^{-1}2x=\dfrac{\pi}{4} \\
+  \implies &amp;\tan^{-1}\left(\dfrac{3x+2x}{1-3x\cdot 2x}\right) 
+    =\dfrac{\pi}{4} \\
+  \implies &amp;6x^2+5x-1=0 \\
+  \implies &amp;x=-1,\dfrac{1}{6}
+\end{align} \\
+%text
+$x=-1$ results in $\tan^{-1}(-3)$  and $\tan^{-1}(-2)$. 
+Since these are negative values, the angle
+that they represent is no longer in the first
+quadrant (where $\tan$ is positive). Therefore,
+we ignore $x=-1$.
+%</reason>
+  </step>
+  <choices>
+    <tex>x=-1</tex>
+    <tex correct='true'>x=\frac{1}{6}</tex>
+    <tex>x=\dfrac{2}{3}</tex>
+    <tex>x=-1,\dfrac{1}{6}</tex>
+  </choices>
+</question>

@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+If the binary operation $*$ on the set of integers 
+\mathbb{Z}, is defined by $a*b=a+3b^2$, then find the
+value of $2*4$?
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+Before we dive in, if $a,b\in \mathbb{Z}$ and
+$a*b=a+3b^2$, why is $*$ a{\bf binary} 
+operation?
+%</context>
+    <tex>%text
+Because it has two operands $a$ and $b$.
+%</tex>
+    <reason>%text
+$*$ is a binary operation because
+$a$, $b$ and $(a+3b^2)$ all $\in \mathbb{Z}$, or
+in other words because $*:\mathbb{Z}\times \mathbb{Z}\rightarrow\mathbb{Z}$.
+%
+</reason>
+  </step>
+  <step>
+    <context>%text
+If $a*b=a+3b^2$, what is $2*4$? And is it
+the same as $4*2$?
+%</context>
+    <tex correct='true'>(2*4=50) \neq (4*2=16)</tex>
+    <tex>2*4=8=4*2</tex>
+    <reason>\begin{align}
+  2*4 &amp;= 2+3(4^2)=2+48=50 \\
+  4*2 &amp;= 4+3(2^2)=4+12=16
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>16</tex>
+    <tex correct='true'>50</tex>
+    <tex>8</tex>
+    <tex>62</tex>
+  </choices>
+</question>
