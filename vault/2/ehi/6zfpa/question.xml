@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+If $A$ is an invertible matrix of order $3$ and
+$|A|=5$, then find the $|adj. (A)|$?
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+For an invertible matrix $A$ whose determinant 
+$|A|\neq 0$, is the following true?
+%</context>
+    <tex correct='true'>|Adj(A)|=|A|^{n-1}</tex>
+    <tex>|Adj(A)|=|A|^n</tex>
+    <reason>%text
+For any invertible matrix of order $n$,
+A(Adj(A))=Adj(A)A=|A|I, where
+I is the identity matrix.
+{\it (this can easily be verified using a}
+{\it $3\times 3$ matrix with placeholder}
+{\it values e.g. $a_{11}, a_{21}$ etc.)}
+%
+
+\begin{align}
+  &amp;\qquad A\cdot Adj(A) =|A|I  \\
+  &amp;\implies A\cdot Adj(A)=|A|\left[ \begin{array}{ccc}
+    1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1
+    \end{array}\right] \\
+  &amp;\implies A\cdot Adj(A)=\left[ \begin{array}{ccc}
+    |A| &amp; 0 &amp; 0 \\ 0 &amp; |A| &amp; 0 \\ 0 &amp; 0 &amp; |A|
+    \end{array}\right] \\
+  &amp;\implies |A\cdot Adj(A)|=\left\vert \begin{array}{ccc}
+    |A| &amp; 0 &amp; 0 \\ 0 &amp; |A| &amp; 0 \\ 0 &amp; 0 &amp; |A|
+    \end{array}\right\vert \\
+    &amp;\implies |A|\cdot|Adj(A)|=|A|^3 \\
+    &amp;\implies |Adj(A)|=|A|^2
+\end{align} \\
+\therefore |A|=5 \implies |Adj(A)|=5^{2}=25.
+</reason>
+  </step>
+  <choices>
+    <tex>5</tex>
+    <tex>50</tex>
+    <tex>\dfrac{1}{50}</tex>
+    <tex correct='true'>25</tex>
+  </choices>
+</question>
