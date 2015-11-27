@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Using matrices, solve the following system 
+of equations:
+%
+\qquad\begin{align}
+  &amp; 2x-3y+5z=11 \\
+  &amp; 3x+2y-4z=-5 \\
+  &amp; x+y-2z=-3
+\end{align}</tex>
+  </statement>
+  <step>
+    <context>%text
+If $A$, $X$ and $B$ are matrices such that $AX=B$ 
+represents $2x-3y+5z=11$, $3x+2y-4z=-5$ 
+and $x+y-2z=-3$, then what are $A$, $B$ and $C$?
+%
+</context>
+    <tex>\overbrace{\left[\begin{array}{rrr}
+  2 &amp; 3 &amp; 1 \\ -3 &amp; 2 &amp; 1 \\ 5 &amp; -4 &amp; -2
+\end{array}\right]}^A
+\overbrace{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}^X=
+\overbrace{\left[\begin{array}{c} 11 \\ -5 \\ -3 \end{array}\right]}^B</tex>
+    <reason>%text
+If $A$ is a $3\times 3$ matrix and $X$ is a $3\times 1$
+matrix then $AX$ is a $3\times 1$ matrix which 
+would look like this,
+%
+\overbrace{\left[\begin{array}{rrr}
+  2 &amp; -3 &amp; 5 \\ 3 &amp; 2 &amp; -4 \\ 1 &amp; 1 &amp; -2
+\end{array}\right]}^A
+\overbrace{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}^X=
+\overbrace{\left[\begin{array}{c} 11 \\ -5 \\ -3 \end{array}\right]}^B \\
+
+\overbrace{\left[\begin{array}{c}
+  2x-3y+5z \\ 3x+2y-4z \\ x+y-2z
+\end{array}\right]}^{AX}=
+\left[\begin{array}{r} 11 \\ -5 \\ -3 \end{array}\right]
+</reason>
+  </step>
+  <step>
+    <context>\overbrace{\left[\begin{array}{rrr}
+  2 &amp; -3 &amp; 5 \\ 3 &amp; 2 &amp; -4 \\ 1 &amp; 1 &amp; -2
+\end{array}\right]}^A
+\overbrace{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}^X=
+\overbrace{\left[\begin{array}{c} 11 \\ -5 \\ -3 \end{array}\right]}^B \\
+%text
+$AX=B\implies X=A^{-1}B$. What is $A^{-1}$?
+%</context>
+    <tex>A^{-1}=\left[\begin{array}{ccc}
+  0 &amp; -1 &amp; 2 \\ 2 &amp; -9 &amp; 23 \\ 1 &amp; -5 &amp; 13
+\end{array}\right]</tex>
+    <reason>{\small A=\left[\begin{array}{rrr}
+  2 &amp; -3 &amp; 5 \\ 3 &amp; 2 &amp; -4 \\ 1 &amp; 1 &amp; -2
+\end{array}\right]} \\
+{\small Det(A)=2(-4+4)+3(-6+4)+5(3-2)=-1} \\
+%text
+Next, the cofactors, $c_{ij}=Det_{ij}\times (-1)^{i+j}$
+%
+\begin{array}{lll}
+  c_{11}=0 &amp; c_{12}=2 &amp; c_{13}=1 \\
+  c_{21}=-1 &amp; c_{22}=-9 &amp; c_{23}=-5 \\
+  c_{31}=2 &amp; c_{32}=-5 &amp; c_{33}=13
+\end{array} \\
+{\small Adj(A)=CF(A)^T=\left[\begin{array}{rrr}
+  0 &amp; -1 &amp; 2 \\ 2 &amp; -9 &amp; 23 \\ 1 &amp; -5 &amp; 13
+\end{array}\right]} \\
+\begin{align}
+  {\small A^{-1}}&amp;={\small \dfrac{1}{Det(A)}\times Adj(A)} \\
+    &amp;{\small=\dfrac{1}{-1}\left[\begin{array}{rrr}
+        0 &amp; -1 &amp; 2 \\ 2 &amp; -9 &amp; 23 \\ 1 &amp; -5 &amp; 13
+      \end{array}\right]
+    = \left[\begin{array}{rrr}
+        0 &amp; 1 &amp; -2 \\ -2 &amp; 9 &amp; -23 \\ -1 &amp; 5 &amp; -13
+      \end{array}\right]}
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>A^{-1}=\left[\begin{array}{rrr}
+  0 &amp; 1 &amp; -2 \\ -2 &amp; 9 &amp; -23 \\ -1 &amp; 5 &amp; -13
+\end{array}\right],
+B=
+\left[\begin{array}{r}
+  11 \\ -5 \\ -3
+\end{array}\right] \\
+%text
+$X=A^{-1}B$. FInd $X$?
+%</context>
+    <tex correct='true'>X=\left[\begin{array}{rrr}
+  1 \\ 2 \\ 3
+\end{array}\right] \implies x=1,y=2,z=3</tex>
+    <reason>\begin{align}
+  X&amp;=A^{-1}B \\
+    &amp;=\left[\begin{array}{rrr}
+        0 &amp; 1 &amp; -2 \\ -2 &amp; 9 &amp; -23 \\ -1 &amp; 5 &amp; -13
+      \end{array}\right]
+      \left[\begin{array}{r}
+        11 \\ -5 \\ -3
+      \end{array}\right] \\
+    &amp;=\left[\begin{array}{c}
+        0(11)+1(-5)+2(-3) \\
+        -2(11)+9(-5)-23(-3) \\
+        -1(11)+5(-5)-13(-3)
+      \end{array}\right]
+      =\left[\begin{array}{c} 1 \\ 2 \\ 3 \end{array}\right]
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>x=3,y=2,z=6</tex>
+    <tex correct='true'>x=1,y=2,z=3</tex>
+    <tex>x=3,y=2,z=\dfrac{9}{2}</tex>
+    <tex>x=5,y=4,z=3</tex>
+  </choices>
+</question>
