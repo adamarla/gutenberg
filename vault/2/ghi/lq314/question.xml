@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Prove that the relation $R$ in the set 
+$A=\{1,2,3,4,5\}$ given by 
+$R=\{(a,b):|a-b|$ is even$\}$, is an 
+equivalence relation.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+For a relation $R$ in set $A$ to be an equivalence
+relation it needs to exhibit reflexivity, symmetry 
+and transitivity. What the following an example 
+of? $(2,4)=|2-4|=2=(4,2)=|4-2|=2$
+%
+</context>
+    <tex correct='true'>%text
+$(2,4)=(4,2)$ is an example of symmetry.
+%</tex>
+    <tex>%text
+$(2,4)=(4,2)$ is an example of transitivity..
+%</tex>
+    <reason>\begin{align}
+  \text{Reflexivity:} &amp;(a,a)\in R\, \forall\, a\in A \\
+  \text{Symmetry:} &amp;(a,b)\in R \implies (b,a)\in R \\
+  \text{Transitivity:} &amp;(a,b)\in R, (b,c)\in R \implies (a,c)\in R
+\end{align} \\
+%text
+More generally, since $(a,b)=(b,a)$ 
+therefore $R$ is symmetric.
+%
+</reason>
+  </step>
+  <step>
+    <context>%text
+Is $R=\{(a,b):|a-b|, \text{is even}\}$ for set 
+$A=\{1,2,3,4,5\}$ reflexive?
+%</context>
+    <tex>%text
+$(a,a)=|a-a|=0$, therefore relation $R$ is 
+not reflexive.
+%</tex>
+    <reason>%text
+$(a,a)=|a-a|=0$, which is{\bf even} therefore 
+relation $R$ is reflexive.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+Is $R=\{(a,b):|a-b|, \text{is even}\}$ for set 
+$A=\{1,2,3,4,5\}$ transitive?
+%</context>
+    <tex correct='true'>%text
+If $|a-b|$ is even and $|b-c|$ is even 
+then $|a-c|$ is also even, therefore
+$R$ is transitive.
+%</tex>
+    <reason>\begin{align}
+  &amp;|a-b|= 2k \quad\text{(say)} \\
+  &amp;|b-c|= 2m \quad\text{(say)} \\
+  &amp;|a-c|= |\pm 2k \pm 2m|=2|\pm k\pm m| \\
+  \implies &amp;|a-c| \in\text{even}
+\end{align} \\
+%text
+Therefore, $R$ is also transitive.
+Hence, since $R$ is reflexive, symmetric and
+transitive, it is an equivalence relation.
+
+%</reason>
+  </step>
+</question>

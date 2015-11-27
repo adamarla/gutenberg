@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+By using properties of determinants, prove 
+the following:
+%
+\left\vert \begin{array}{ccc}
+  x+4 &amp; 2x &amp; 2x \\ 2x &amp; x+4 &amp; 2x \\ 2x &amp; 2x &amp; x+4
+\end{array}\right\vert=(5x+4)(4-x)^2</tex>
+  </statement>
+  <step>
+    <context>\left\vert \begin{array}{ccc}
+  x+4 &amp; 2x &amp; 2x \\ 2x &amp; x+4 &amp; 2x \\ 2x &amp; 2x &amp; x+4
+\end{array}\right\vert \\
+%text
+Consider the determinant above. What 
+can be factored out after the operation 
+%
+R_1\rightarrow R_1+R_2+R_3?
+
+</context>
+    <tex correct='true'>5x+4</tex>
+    <tex>x+4</tex>
+    <reason>D=\left\vert \begin{array}{ccc}
+  x+4 &amp; 2x &amp; 2x \\ 2x &amp; x+4 &amp; 2x \\ 2x &amp; 2x &amp; x+4
+\end{array}\right\vert \\
+R_1\rightarrow R_1+R_2+R_3 \\
+\quad=\left\vert \begin{array}{ccc}
+  5x+4 &amp; 5x+4 &amp; 5x+4 \\ 2x &amp; x+4 &amp; 2x \\ 2x &amp; 2x &amp; x+4
+\end{array}\right\vert \\
+\quad=(5x+4)\left\vert \begin{array}{ccc}
+  1 &amp; 1 &amp; 1 \\ 2x &amp; x+4 &amp; 2x \\ 2x &amp; 2x &amp; x+4
+\end{array}\right\vert</reason>
+  </step>
+  <step>
+    <context>%text
+What set of operations would convert
+%
+{\small\left\vert \begin{array}{ccc}
+  1 &amp; 1 &amp; 1 \\ 2x &amp; x+4 &amp; 2x \\ 2x &amp; 2x &amp; x+4
+\end{array}\right\vert\rightarrow
+\left\vert \begin{array}{ccc}
+  0 &amp; 0 &amp; 1 \\ 0 &amp; 4-x &amp; 2x \\ x-4 &amp; x-4 &amp; x+4
+\end{array}\right\vert}
+</context>
+    <tex correct='true'>C_1\rightarrow C_1-C_2 \\
+C_2\rightarrow C_2-C_3</tex>
+    <tex>C_1\rightarrow C_1-C_3 \\
+C_2\rightarrow C_2-C_3 \\
+C_3\rightarrow C_3-C_1
+</tex>
+    <reason>\left\vert \begin{array}{ccc}
+  1 &amp; 1 &amp; 1 \\ 2x &amp; x+4 &amp; 2x \\ 2x &amp; 2x &amp; x+4
+\end{array}\right\vert \\
+C_1\rightarrow C_1-C_2 \\
+\left\vert \begin{array}{ccc}
+  0 &amp; 1 &amp; 1 \\ x-4 &amp; x+4 &amp; 2x \\ 0 &amp; 2x &amp; x+4
+\end{array}\right\vert \\
+C_2\rightarrow C_2-C_3 \\
+\left\vert \begin{array}{ccc}
+  0 &amp; 0 &amp; 1 \\ x-4 &amp; 4-x &amp; 2x \\ 0 &amp; x-4 &amp; x+4
+\end{array}\right\vert
+</reason>
+  </step>
+  <step>
+    <context>(5x+4)\left\vert \begin{array}{ccc}
+  0 &amp; 0 &amp; 1 \\ x-4 &amp; 4-x &amp; 2x \\ 0 &amp; x-4 &amp; x+4
+\end{array}\right\vert \\
+%text
+What is the outcome of the above 
+multiplication?
+%
+</context>
+    <tex correct='true'>(5x+4)(4-x)^2</tex>
+    <reason>\begin{align}
+  &amp;(5x+4)\left\vert \begin{array}{ccc}
+  0 &amp; 0 &amp; 1 \\ x-4 &amp; 4-x &amp; 2x \\ 0 &amp; x-4 &amp; x+4
+  \end{array}\right\vert \\
+  =&amp;(5x+4)\left[(1)(x-4)(x-4)-(0)(4-x)\right] \\
+  =&amp;(5x+4)(x-4)(x-4) \\
+  =&amp;(5x+4)(x-4)^2=(5x+4)(4-x)^2
+\end{align}</reason>
+  </step>
+</question>

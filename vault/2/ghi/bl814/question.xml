@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the equation of the plane passing 
+through the point $(-1,3,2)$ and perpendicular
+to each of the planes $x+2y+3z=5$ and 
+$3x+3y+z=0$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If $ax+by+cz+d=0$ is perpendicular to
+$x+2y+3z=5$ and $3x+3y+z=0$, is the
+following true?
+%</context>
+    <tex correct='true'>\begin{align}
+  a+2b+3c=0 \\
+  3a+3b+c=0
+\end{align}</tex>
+    <tex>\begin{align}
+  \dfrac{a}{1}+\dfrac{b}{2}+\dfrac{c}{3}=0 \\
+  \dfrac{a}{3}+\dfrac{b}{3}+\dfrac{c}{1}=0
+\end{align}
+</tex>
+    <reason>%text
+If two planes $a_1x+b_1y+c_1z+d_1=0$ and
+$a_2x+b_2y+c_2z+d_2=0$ are perpendicular, 
+their normals are also perpendicular and their
+direction ratios bear the following relationship.
+%
+\qquad a_1a_2+b_1b_2+c_1c_2=0</reason>
+  </step>
+  <step>
+    <context>%text
+If a point $P(-1,3,2)$ lies on a plane 
+$ax+by+cz+d=0$, what can we say about 
+$a$, $b$, $c$ and $d$?
+%</context>
+    <tex correct='true'>-a+3b+2c+d=0</tex>
+    <reason>%text
+Since the point $(-1,3,2)$ lies on the plane
+$ax+by+cz+d=0$, it must satisfy the 
+equation of the plane $\therefore -a+3b+2c+d=0$.
+%
+</reason>
+  </step>
+  <step>
+    <context>\text{If }\begin{align}
+  &amp;a+2b+3c=0 \\
+  &amp;3a+3b+c=0 \\
+  &amp;a-3b-2c-d=0
+\end{align} \\
+%text
+What is the actual equation of the 
+plane $ax+by+cz+d=0$?
+%</context>
+    <tex correct='true'>7x-8y+3z+25=0</tex>
+    <tex>6x-7y+3z-23=0</tex>
+    <reason>\begin{align}
+  &amp;a+2b+3c=0 \quad (1) \\
+  &amp;3a+3b+c=0 \quad (2) \\
+  &amp;a-3b-2c-d=0 \quad (3) 
+\end{align} \\
+%text
+Solving $(1)$ and $(2)$ pairwise for $a$, $b$ 
+and $c$. we get, ${\bf a:b:c=7:-8:3}$. 
+Let the actual values be $a=7k$, $b=-8k$, 
+$c=3k$, $d=mk$ (for some $k$).
+Substituting these in $(3)$,
+%
+\begin{align}
+  &amp;1(7k)-3(-8k)-2(3k)-m(k)=0 \\
+  &amp;7+24-6-m=0 \implies m=25
+\end{align} \\
+%text
+Therefore, final equation for the plane,
+%
+{\bf 7x-8y+3z+25=0}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>7x-8y+3z+25=0</tex>
+    <tex>5x-6y+3z+25=0</tex>
+    <tex>6x-7y+3z+23=0</tex>
+    <tex>7x-8y+z+25=0</tex>
+  </choices>
+</question>
