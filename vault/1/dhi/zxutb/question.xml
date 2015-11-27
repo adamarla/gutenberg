@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+A tank with rectangular base and 
+rectangular sides, open at the top, is 
+to be constructed so that its depth is 
+2m and volume is 8 $m^3$. 
+
+If building of tank costs ₹ 70 per 
+sq. meter for the base and ₹ 45 per 
+sq. meter for sides, what is the cost of
+the least expensive tank? 
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+In the diagram below, $x$ and $y$ are the 
+width and length of the tank's base and 
+\underline\text{$C$ is the total cost} of building the tank.
+
+\underline\text{Are the two equations we've written correct}?
+%</context>
+    <image correct='true'>right.svg</image>
+    <reason>%text
+The volume of the tank is 8 $m^3$. 
+\[ \quad \therefore (2m)\times (x\cdot y) = 8 m^3 \implies xy = 4 m^2 \] 
+
+Moreover, we have to build \underline\text{one base} 
+and \underline\text{four faces}. The tank is open from
+the top, remember? 
+
+The total cost of doing that will be 
+%
+\begin{align}
+C = 70\cdot (xy) &amp;+ \underbrace{2\cdot 45\cdot (2x) + 2\cdot 45\cdot 2y}
+_{\text{Two faces each with widths x and y}} \\
+\text{But }x\cdot y &amp;= 4 \\
+\therefore C &amp;= 280 + 180\cdot (x+y) 
+\end{align} </reason>
+  </step>
+  <step>
+    <context>%text
+Given the expression for the total cost, 
+which of the following is true? 
+%</context>
+    <tex correct='true'>\begin{align}
+\frac{dC}{dx} &amp;= 180 - \frac{720}{x^2} \\ 
+\frac{d^2 C}{dx^2} &amp;= \frac{1440}{x^3}\gt 0 \implies \text{ minima}
+\end{align} 
+</tex>
+    <tex>\begin{align}
+\frac{dC}{dx} &amp;= 180 + \frac{1620}{x^2} \\ 
+\frac{d^2 C}{dx^2} &amp;= -\frac{3240}{x^3}\lt 0 \implies \text{ minima}
+\end{align} </tex>
+    <reason>\begin{align}
+C &amp;= 280 + 180\cdot (x+y)  \\
+&amp;= 280 + 180\cdot \left(x + \frac{4}{x}\right) \\
+\therefore \frac{dC}{dx} &amp;= 0 + 180\cdot\left( 1 - \frac{4}{x^2}\right) \\
+&amp;=180-\frac{720}{x^2} \\
+\text{and }\frac{d^2 C}{dx^2} &amp;= \frac{d}{dx}\frac{dC}{dx} 
+= \underbrace{0 +\frac{1440}{x^3}}_{\frac{d}{dx}\frac{1}{x^2}=-\frac{2}{x^3}}\\
+&amp;\gt 0 \because x\gt 0\implies\text{ minima}
+\end{align} </reason>
+  </step>
+  <step>
+    <context>%text
+Given $\frac{dC}{dx}$ and the condition for minima,
+what will be the minimum cost for the tank? 
+%</context>
+    <reason>\begin{align}
+\frac{dC}{dx} = 180-\frac{720}{x^2} = 0&amp;\implies x^2 = 4 \text{ or } x = 2\\
+\text{Also }\frac{d^2 C}{dx^2} &amp;\gt 0 \text{ for all }x \gt 0 
+\end{align} 
+%text
+
+Hence, we will have \underline\text{minimum cost} 
+when $x=2m$ and $y=\frac{4}{x} = 2m$. 
+
+And the minimum cost will be 
+
+%
+\begin{align}
+C &amp;= 280 + 180\cdot (x+y) \\ 
+&amp;= 280 + 180\cdot (2+2) = ₹ 1000 
+\end{align} </reason>
+  </step>
+  <choices>
+    <tex>₹ 700</tex>
+    <tex>₹ 780</tex>
+    <tex>₹ 850</tex>
+    <tex correct='true'>₹ 1000 </tex>
+  </choices>
+</question>
