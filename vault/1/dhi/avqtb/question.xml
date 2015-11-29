@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the intervals in which the function $f(x)$
+given by $f(x) = x^3 + \dfrac{1}{x^3}, x\neq 0$
+is (i) increasing (ii) decreasing 
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+\underline\text{What are the conditions} for a function to be
+increasing or decreasing in some interval $[a,b]$? 
+%</context>
+    <tex correct='true'>\begin{align}
+\frac{dy}{dx} &amp;\geq 0, x\in [a,b] \implies\text{ increasing in } [a,b] \\
+\frac{dy}{dx} &amp;\leq 0, x\in [a,b] \implies\text{ decreasing in } [a,b] \\
+\end{align} </tex>
+    <reason></reason>
+  </step>
+  <step>
+    <context>%text
+Given Step 1, when will  $f(x) = y = x^3 + \dfrac{1}{x^3}$ 
+be increasing and decreasing?
+%</context>
+    <tex correct='true'>\begin{align}
+(x^6 - 1) &amp;\geq 0 \implies \text{increasing}\\
+(x^6 - 1) &amp;\leq 0 \implies\text{decreasing} 
+\end{align} </tex>
+    <tex>\begin{align}
+(1-x^6) &amp;\geq 0 \implies \text{increasing}\\
+(1-x^6) &amp;\leq 0 \implies\text{decreasing} 
+\end{align} </tex>
+    <reason>\begin{align}
+y = x^3 + \frac{1}{x^3} &amp;\implies \frac{dy}{dx} = 3x^2 - \frac{3}{x^4} \\
+\text{or }\frac{dy}{dx} &amp;= \underbrace{\frac{3\cdot(x^6- 1)}{x^4}}_{x^4 \gt 0,x\neq 0}\\
+\therefore \frac{dy}{dx} &amp;\geq 0\implies (x^6-1)\geq 0 \\
+\text{and }\frac{dy}{dx} &amp;\leq 0 \implies (x^6-1)\leq 0
+\end{align} </reason>
+  </step>
+  <step>
+    <context>%text
+Given Step 2, in \underline\text{which intervals} would $f(x)$ 
+be increasing and decreasing? 
+%</context>
+    <tex correct='true'>%text
+Increasing when $x\leq -1$ or $x\geq 1$ 
+Decreasing when $x\in(-1,1)$
+%</tex>
+    <tex>%text
+Decreasing when $x\leq -1$ or $x\geq 1$ 
+Increasing when $x\in(-1,1)$
+%</tex>
+    <reason>\begin{align}
+x^6-1 &amp;= (x^3)^2-1 = \underbrace{(x^3-1)\cdot (x^3+1) }_{a^2-b^2 = (a-b)\cdot (a+b), a = x^3, b = 1}
+\end{align} \\
+
+%text
+
+Now comes the \underline\text{slightly tricky part}. The 
+roots of $x^3-1$ and $x^3+1$ are 1 and -1 
+respectively. Hence, we will split the number 
+line at $x=-1$ and $x=1$, thus giving us the 
+following three intervals. 
+
+%
+
+\begin{tabular}{|c|c|c|c|}
+\hline 
+&amp; x\leq -1 &amp; x\in(-1,1) &amp; x\geq 1 \\
+\hline 
+x^3-1 &amp; - &amp; - &amp; + \\ 
+\hline 
+x^3 + 1 &amp; - &amp; + &amp; + \\
+\hline
+x^6 - 1 &amp; + &amp; - &amp; + \\
+\hline
+\end{tabular} 
+
+%text
+
+And we can see \underline\text{from the last row} of 
+the table that 
+%
+
+\begin{align}
+x^6-1 &amp;\geq 0\text{ when }x\leq -1\text{ or }x\geq 1 \\
+&amp;\implies \frac{dy}{dx} \geq 0\implies\text{increasing} \\ 
+x^6-1 &amp;\leq 0\text{ when }x\in (-1,1) \\ 
+\implies \frac{dy}{dx} &amp;\leq 0 \implies\text{decreasing} 
+\end{align} </reason>
+  </step>
+  <step>
+    <context>%text
+\textbf{Trick Question} 
+If a function $y=C$ (a constant) is defined
+in $[a,b]$, then \underline\text{can we say the following}?
+%</context>
+    <tex correct='true'>%text
+(i) the function is increasing - but \underline\text{not strictly} 
+(ii) the function is decreasing - but \underline\text{not strictly} 
+%</tex>
+    <reason>%text 
+For an \underline\text{increasing} function, $\frac{dy}{dx} \geq 0$. 
+Similarly, for a \underline\text{decreasing} function, $\frac{dy}{dx}\leq 0$.
+
+Note, that in both cases $\frac{dy}{dx} = 0$ is allowed. 
+
+It is only for \underline\text{strictly} increasing or decreasing 
+functions that $\frac{dy}{dx}\neq 0$. 
+%</reason>
+  </step>
+  <choices>
+    <tex>%text
+Increasing when $x\geq 1$
+Decreasing when $x\leq 1$
+%</tex>
+    <tex>%text
+Decreasing when $x\leq -1$ or $x\geq 1$ 
+Increasing when $x\in(-1,1)$
+%</tex>
+    <tex correct='true'>%text
+Increasing when $x\leq -1$ or $x\geq 1$ 
+Decreasing when $x\in(-1,1)$
+%</tex>
+    <tex>%text
+Increasing when $x\geq -1$ 
+Decreasing when $x\leq -1$
+%</tex>
+  </choices>
+</question>
