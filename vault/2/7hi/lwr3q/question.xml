@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the distance of the point ${\small(-1,-5,-10)}$, 
+from the point of intersection of the line 
+$\ora{r}=(\vector{2}{-1}{2})+\lambda(\vector{3}{4}{2})$ and 
+the plane $\ora{r}\cdot(\vector{1}{-1}{1})=5$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+What are the possible intersections, if any, of 
+a line and a plane?
+%</context>
+    <tex correct='true'>%text
+a point, a line.
+%</tex>
+    <tex>%text
+a point, a line, a plane.
+%</tex>
+    <reason>%text
+A line and a plane can intersect in either
+a{\bf point}, a{\bf line}, or have{\bf no intersection}.
+If the line is parallel to the plane, but there
+is distance between them, there is no
+intersection. However if a line lies on the
+plane their intersection is the line itself. If 
+none of the above scenarios are true then 
+the intersection is the point at which the 
+line passes through the plane.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+If $\ora{r}=(\vector{2}{-1}{2})+\lambda(\vector{3}{4}{2})$ 
+represents a point on the line and 
+$\ora{r}\cdot(\vector{1}{-1}{1})=5$ represents a point on the 
+plane, what is the condition for these two to 
+be the same point?
+%</context>
+    <tex correct='true'>{\small\left((\vector{2}{-1}{2})+\lambda(\vector{3}{4}{2})\right)
+  \cdot(\vector{1}{-1}{1})=5}</tex>
+    <tex>{\small\left((\vector{2}{-1}{2})+\lambda(\vector{3}{4}{2})\right)
+  \cdot(\vector{1}{-1}{1})=0}</tex>
+    <reason>%text
+The point of intersection of the line and plane
+must satisfy both of their equations. Therefore,
+if we substitute $\ora{r}$ from the definition of the
+line into the plane, we satisfy both.
+%
+{\small\left((\vector{2}{-1}{2})+\lambda(\vector{3}{4}{2})\right)
+  \cdot(\vector{1}{-1}{1})=5}
+</reason>
+  </step>
+  <step>
+    <context>{\small\left((\vector{2}{-1}{2})+\lambda(\vector{3}{4}{2})\right)
+  \cdot(\vector{1}{-1}{1})=5} \\
+%text
+Find $\lambda$ so the above equation is true?
+%</context>
+    <tex correct='true'>\lambda=0</tex>
+    <tex>\lambda=-1</tex>
+    <reason>\begin{align}
+  &amp;{\small\left((\vector{2}{-1}{2})+\lambda(\vector{3}{4}{2})\right)
+  \cdot(\vector{1}{-1}{1})=5} \\
+  &amp;\implies (\vector{2}{-1}{2})\cdot (\vector{1}{-1}{1})+ \\
+  &amp;\qquad\qquad \lambda(\vector{3}{4}{2})\cdot(\vector{1}{-1}{1})=5 \\
+  &amp;\implies (2+1+2)+\lambda(3-4+2)=5 \\
+  &amp;\implies \lambda=0
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\ora{r}=(\vector{2}{-1}{2})+\lambda(\vector{3}{4}{2}) \\
+%text
+If $\lambda=0$ is a point on the above line, what 
+is its distance from ${\small(-1,-5,-10)}$?
+%</context>
+    <tex correct='true'>13</tex>
+    <tex>8</tex>
+    <reason>\begin{align}
+  \ora{r}&amp;=(\vector{2}{-1}{2})+(0)(\vector{3}{4}{2}) \\
+    &amp;=\vector{2}{-1}{2}
+\end{align} \\
+%text
+Distance between ${\small(-1,-5,-10)}$ and ${\small(2,-1,2)}$,
+%
+\begin{align}
+  D&amp;=\sqrt{(-1-2)^2+(-5+1)^2+(-10-2)^2)} \\
+    &amp;=\sqrt{9+16+144}=\sqrt{169}=13
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex>8</tex>
+    <tex>16</tex>
+    <tex>9</tex>
+    <tex correct='true'>13</tex>
+  </choices>
+</question>
