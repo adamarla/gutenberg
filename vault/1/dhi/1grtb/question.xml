@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the equation of the tangent to the 
+curve $y = \sqrt{3x - 2}$ which is parallel to the 
+line $4x-2y +5 =0$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+For a tangent to $y=\sqrt{3x-2}$ to be 
+parallel to $4x-2y+5 = 0$, which of the 
+following must be true?
+%</context>
+    <tex correct='true'>\sqrt{3x-2} = \frac{3}{4}\text{ or } x = \frac{41}{48}</tex>
+    <tex>\sqrt{3x-2} = \frac{3}{2}\text{ or } x = \frac{17}{12}</tex>
+    <reason>%text
+For two lines to be parallel,
+\underline\text{their slopes must be equal}.
+
+%
+\begin{align}
+\text{Now, }4x-2y + 5 &amp;= 0\implies  y = 2x + \frac{5}{2} \\
+\therefore \text{Slope} &amp;= \underbrace{m = 2}_{\text{Line's slope}} \\
+\text{and }\frac{dy}{dx} &amp;= \frac{1}{2\sqrt{3x-2}}\frac{d}{dx}(3x-2) \\
+&amp;= \underbrace{\frac{3}{2\sqrt{3x-2}}}_{\text{Tangent's slope}} \\
+\text{So }  \frac{3}{2\sqrt{3x-2}} &amp;= m = 2 \\
+\implies \sqrt{3x-2} &amp;= \frac{3}{4} \text{or } x = \frac{41}{48}
+\end{align} </reason>
+  </step>
+  <step>
+    <context>%text
+The graph shows two points A and B - both
+with $x=\frac{41}{48}$. The required tangent will be
+at \underline\text{which of the two points}? 
+%</context>
+    <image correct='true'>right.svg</image>
+    <image>wrong.svg</image>
+    <reason>%text
+First, $y=\sqrt{3x-2}$ \underline\text{is a parabola}.
+\[ \underbrace{y^2 = 3x-2=3\left(x-\frac{2}{3}\right) = ax'}_{\text{Equation of a parabola}} \]
+
+But there will \underline\text{two points} with $x=\frac{41}{48}$.
+And these points will be 
+%
+\begin{align}
+y^2 &amp;= 3\frac{41}{48} - 2 = \frac{9}{16} \\
+\implies y &amp;= \pm\frac{3}{4} \\
+\therefore A&amp;=\left(\frac{41}{48},\frac{3}{4}\right)\text{ and } B = \left(\frac{41}{48},-\frac{3}{4}\right)
+\end{align} 
+%text
+
+However, the required tangent must slope 
+upwards $(m=2)$. And that is possible only 
+\underline\text{at A}. 
+
+Hence, point A is the only point we need
+to consider. 
+%</reason>
+  </step>
+  <step>
+    <context>%text
+Given that the \underline\text{required tangent is at point A}, 
+what will be the equation of this tangent? 
+%</context>
+    <reason>%text
+We know the slope of the required tangent 
+and the one point it passes through. 
+
+That is all that we need to find its equation. 
+%
+
+\begin{align}
+\frac{y-\frac{3}{4}}{x-\frac{41}{48}} = 2 &amp;\implies y-\frac{3}{4} = 2x-\frac{41}{24} \\
+\text{or } 24y &amp;= 48x - 23 
+\end{align} </reason>
+  </step>
+  <choices>
+    <tex correct='true'>24y = 48x - 23</tex>
+    <tex>12y = 24x + 14 </tex>
+    <tex>6y = 8x - 5</tex>
+    <tex>13y = 26x - 17</tex>
+  </choices>
+</question>
