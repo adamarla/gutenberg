@@ -68,6 +68,8 @@ C &amp;= 280 + 180\cdot (x+y)  \\
 Given $\frac{dC}{dx}$ and the condition for minima,
 what will be the minimum cost for the tank? 
 %</context>
+    <tex correct='true'>₹ 1000 </tex>
+    <tex>₹ 780</tex>
     <reason>\begin{align}
 \frac{dC}{dx} = 180-\frac{720}{x^2} = 0&amp;\implies x^2 = 4 \text{ or } x = 2\\
 \text{Also }\frac{d^2 C}{dx^2} &amp;\gt 0 \text{ for all }x \gt 0 
