@@ -13,7 +13,7 @@ COL_CYAN=$ESC_SEQ"36;01m"
 
 function add_joke { 
   if [ -z $VAULT ] ; then 
-    echo -e "$COL_RED Set \$VAULT.$COL_RESET Point it to vault/jotd." 
+    echo -e "$COL_RED Set \$VAULT.$COL_RESET" 
     return 0 
   fi 
 
@@ -47,7 +47,7 @@ function add_joke {
 
   uid=$(shasum $1 | cut -c1-8)
 
-  local dest="$VAULT/jotd/$uid"
+  local dest="$VAULT/humor/$uid"
   if [ -e $dest ] ; then return 0 ; fi 
 
   mkdir -p $dest 
@@ -77,7 +77,6 @@ function add_joke {
   # But it will need a file in vault/. 
   # So, remember to merge the pull-request on Github !!!
 
-  # curl "http://www.gradians.com/joke/add?uid=$uid&type=$ftype"
   curl --data "uid=$uid&type=$ftype" http://www.gradians.com/joke/add
   #curl --data "uid=$uid&type=$ftype" http://192.168.1.48:3000/joke/add
   echo -e "$COL_CYAN ... Creating DB record (using curl)$COL_RESET" 
