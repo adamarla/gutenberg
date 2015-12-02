@@ -38,6 +38,7 @@ compiled
 codex.cdx
 
 !vault/common/instruction.tex
+!vault/jotd/*/funny.png
 !question.tex
 !shared/replacements/*/*.tex
 !shared/*.tex
