@@ -11,76 +11,102 @@ COL_BLUE=$ESC_SEQ"34;01m"
 COL_MAGENTA=$ESC_SEQ"35;01m"
 COL_CYAN=$ESC_SEQ"36;01m"
 
-function add_joke { 
+function analgesic { 
   if [ -z $VAULT ] ; then 
     echo -e "$COL_RED Set \$VAULT.$COL_RESET" 
     return 0 
   fi 
 
-  # Insist on exactly one joke at a time. 
-  if [ $# -ne 1 ] ; then 
-    if [ $# -lt 1 ] ; then 
-      echo -e "$COL_YELLOW Where is your funny bone?$COL_RESET Specify a single PNG or Text file." 
-    else 
-      echo -e "$COL_CYAN Think you're funny?$COL_RESET Specify only one PNG or Text file." 
-    fi 
-    return 0
-  fi 
+  local type OPTIND
 
-  # Ensure that $1 is a regular file
-  if [ ! -e $1 -o ! -f $1 -o ! -s $1 ] ; then 
-    echo -e "$COL_CYAN Idiot!$COL_RESET Atleast give me a file to work with." 
-    return 0
-  fi 
-
-  # Insist on a text or a PNG file only.
-  local ftype
-  for f in ASCII PNG ; do 
-    t=$(file $1 | grep $f)
-    len=${#t}
-    if [ $len -gt 0 ] ; then ftype=$(echo $f) ; break ; fi 
+  while getopts ":t:" opt; do 
+    case $opt in 
+      t) 
+        type=$OPTARG
+        if [ $type != "humor" -a $type != "trivia" ] ; then 
+          echo -e "$COL_CYAN Usage$COL_RESET analgesic -t [humor | trivia] svg_1 svg_2 ..." 
+          return 1 
+        fi ;; 
+      \?) 
+        echo -e "$COL_CYAN Usage$COL_RESET analgesic -t [humor | trivia] svg_1 svg_2 ..." 
+        return 1 ;; 
+    esac 
   done 
-  if [ -z $ftype ] ; then 
-    echo -e "$COL_CYAN Only PNG or Text file allowed$COL_RESET"
-    return 0
+
+  # Insist on a -t option 
+  if [ -z $type ] ; then 
+    echo -e "$COL_CYAN Specify a -t option$COL_RESET"
+    echo -e "$COL_CYAN Usage$COL_RESET analgesic -t [humor | trivia] svg_1 svg_2 .... " 
+    return 1 
   fi 
 
-  uid=$(shasum $1 | cut -c1-8)
+  # Make $@ just contain the file names.
+  shift $((OPTIND-1))
 
-  local dest="$VAULT/humor/$uid"
-  if [ -e $dest ] ; then return 0 ; fi 
+  # Array of UIDs that were added
+  added=() 
 
-  mkdir -p $dest 
-  local target
-  if [ $ftype == "ASCII" ] ; then 
-    target=$dest/funny.txt 
-  else 
-    target=$dest/funny.png 
+  for f in $@ ; do 
+    if [ ! -e $f ] ; then 
+      echo -e "$COL_RED (Missing)$COL_RESET .... $f" 
+      continue 
+    fi 
+
+    svg=$(file $f | grep SVG) 
+    if [ ${#svg} -eq 0 ] ; then 
+      echo -e "$COL_YELLOW Ignoring$COL_RESET $f (not SVG)" 
+      continue
+    fi 
+
+    local uid=$(shasum $f | cut -c1-8)
+    local dest="$VAULT/analgesic/$uid"
+
+    if [ -e $dest ] ; then 
+      echo -e "$COL_CYAN (Ignoring)$COL_RESET .... $f (already added)"
+      continue 
+    else 
+      mkdir -p $dest 
+    fi 
+
+    local target=$dest/pill.svg 
+
+    cp $f $dest/pill.svg 
+    git add $dest/pill.svg 
+    echo -e "$COL_YELLOW .... (added)$COL_RESET $f"
+    added=("${added[*]}" $uid)
+  done 
+
+  # Do nothing if nothing added 
+  num_added=${#added[*]}
+  if [ ! $num_added -gt 0 ] ; then 
+    echo -e "$COL_RED (exiting)$COL_RESET Nothing to add" 
+    return 1 
   fi 
 
-  # Copy the file to destination folder 
-  cp $1 $target 
-
-  # Git operations - add, commit, push, pull-request 
-  local author=$(whoami)
-  git add $target 
-  git commit -m "Show me the funny - $author" $target
-  echo -e "$COL_CYAN ... Added in vault/ ($uid)$COL_RESET"
-
+  # All files added. Now git commit, push to origin and issue pull-request 
+  cd $VAULT 
+  local git_msg="$num_added analgesic(s) [type = $type] added by $(whoami)"
+  git commit -m "$git_msg"
   git push origin master 
-  echo -e "$COL_YELLOW ... Pushed to master$COL_RESET" 
+  hub pull-request -b gutenberg:master -m "$git_msg"
+  cd - 
 
-  hub pull-request -b gutenberg:master -m "Funny added by $author" 
   echo -e "$COL_GREEN ... Issued pull-request. Remember to merge! $COL_RESET"  
 
   # We are creating a record in the DB now. 
   # But it will need a file in vault/. 
   # So, remember to merge the pull-request on Github !!!
 
-  curl --data "uid=$uid&type=$ftype" http://www.gradians.com/joke/add
-  #curl --data "uid=$uid&type=$ftype" http://192.168.1.48:3000/joke/add
+  # A comma-separated list of added UIDs
+  uid_list=$(IFS=, ; echo "${added[*]}")
+
+  echo $uid_list
+  # curl --data "uid=$uid_list&type=$type" http://192.168.1.48:3000/analgesics/add
+  curl --data "uid=$uid_list&type=$type" http://www.gradians.com/analgesics/add
   echo -e "$COL_CYAN ... Creating DB record (using curl)$COL_RESET" 
-} 
+
+  return 0
+}
 
 function noxml { 
   a=$(ls -d *)
