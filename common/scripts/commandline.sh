@@ -77,7 +77,7 @@ function analgesic {
   done 
 
   # Do nothing if nothing added 
-  num_added=${#added[*]}
+  num_added=${#added[@]}
   if [ ! $num_added -gt 0 ] ; then 
     echo -e "$COL_RED (exiting)$COL_RESET Nothing to add" 
     return 1 
@@ -85,7 +85,7 @@ function analgesic {
 
   # All files added. Now git commit, push to origin and issue pull-request 
   cd $VAULT 
-  local git_msg="$num_added analgesic(s) [type = $type] added by $(whoami)"
+  local git_msg="Analgesics [type = $type] added by $(whoami)"
   git commit -m "$git_msg"
   git push origin master 
   hub pull-request -b gutenberg:master -m "$git_msg"
