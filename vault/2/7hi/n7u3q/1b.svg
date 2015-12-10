@@ -7,7 +7,9 @@
   <line fill="none" stroke="#ff7f00" x1="53" y1="150" x2="181" y2="34" id="svg_4"/>
   <text fill="#000000" stroke="#ff7f00" stroke-width="0" x="100" y="79" id="svg_5" font-size="24" font-family="serif" text-anchor="middle" xml:space="preserve">A</text>
   <line fill="none" stroke="#00ffff" x1="54" y1="149" x2="241" y2="149" id="svg_6"/>
-  <text fill="#000000" stroke="#00ffff" stroke-width="0" x="268" y="159" id="svg_7" font-size="24" font-family="serif" text-anchor="middle" xml:space="preserve">B</text>
-  <line fill="none" stroke="#b2b2b2" stroke-dasharray="5,5" x1="181" y1="33" x2="180" y2="146" id="svg_8"/>
+  <text fill="#000000" stroke="#ff0000" stroke-width="0" x="268" y="159" id="svg_7" font-size="24" font-family="serif" text-anchor="middle" xml:space="preserve">B</text>
+  <line fill="none" stroke="#ff0000" stroke-dasharray="5,5" x1="180" y1="35" x2="180" y2="146" id="svg_8"/>
+  <line fill="none" stroke="#00ffff" x1="188" y1="141" x2="188" y2="149" id="svg_9"/>
+  <line fill="none" stroke="#00ffff" x1="180" y1="141" x2="188" y2="141" id="svg_10"/>
  </g>
 </svg>
