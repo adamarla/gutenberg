@@ -22,7 +22,7 @@ $\ora{A}\parallel \ora{B}$ and $\ora{A}\perp \ora{B}$?
 %</context>
     <tex correct='true'>\begin{array}{|c|c|}
   \hline
-  \text{Condition} &amp; \text{Projection $\ora{p}$ on $\ora{q}$} \\
+  \text{Condition} &amp; \text{Projection $\ora{A}$ on $\ora{B}$} \\
   \hline
   \ora{A}\parallel \ora{B} &amp; |\ora{A}| \\
   \hline
@@ -34,13 +34,17 @@ $\ora{A}\parallel \ora{B}$ and $\ora{A}\perp \ora{B}$?
   \hline
   \text{Condition} &amp; \text{Projection $\ora{A}$ on $\ora{B}$} \\
   \hline
-  \ora{A}\parallel \ora{B} &amp; |\ora{p}|\sqrt{2} \\
+  \ora{A}\parallel \ora{B} &amp; |\ora{A}|\sqrt{2} \\
   \hline
   \ora{B}\perp \ora{B} &amp; 1 \\
   \hline
 \end{array}
 </tex>
     <reason>%text
+Projection of a vector on another is the 
+shadow cast by the first vector when light 
+perpendicular to the second vector falls
+on it.
 When $\ora{A}\perp \ora{B}$, there is no projection of $\ora{A}$
 on to $\ora{B}$. When $\ora{A}\parallel \ora{B}$, the projection is $|\ora{A}|$
 because $\ora{A}$ and $\ora{B}$ are colinear.
@@ -49,16 +53,16 @@ because $\ora{A}$ and $\ora{B}$ are colinear.
   </step>
   <step>
     <context>%text
-If $\ora{A}=\vector{1}{1}{}$ and $\ora{B}=\vector{1}{-1}{}$ and $A_B$ 
-is the projection of $\ora{A}$ on $\ora{B}$, then is the 
-following correct?
+If $\ora{A}=\vector{1}{1}{}$ and $\ora{B}=\vector{1}{-1}{}$ and $A_B$  is the
+projection of $\ora{A}$ on $\ora{B}$, then is this correct?
 %
 </context>
     <tex correct='true'>A_B=0</tex>
     <tex>A_B =\sqrt{2}</tex>
     <reason>%text
-The projection of $\ora{A}$ on $\ora{B}$  is the scalar \\
-dot product of $\ora{A}$ and{\bf unit vector} \hat{B}. \\
+The projection of $\ora{A}$ on $\ora{B}$ can be computed
+as the (scalar) dot product of $\ora{A}$ and unit 
+vector $\hat{B}$.
 %
 \therefore A_B=\ora{A}\cdot\hat{B}=
   \ora{A}\cdot\dfrac{\ora{B}}{|\ora{B}|}=
@@ -70,13 +74,12 @@ To compute the above,
 \dfrac{\ora{A}\cdot\ora{B}}{|\ora{B}|}
   &amp;=\dfrac{(\vector{1}{1}{})(\vector{1}{-1}{})}{\sqrt{1^2+(-1)^2}} \\
   &amp;=\dfrac{\hat\imath\cdot \hat\imath +\hat\imath\cdot\hat\jmath
-    -\hat\imath\cdot\hat\jmath-\hat\imath\cdot\hat\jmath}{\sqrt{2}} \\
-  &amp;=\dfrac{1-1}{\sqrt{2}}=0
+    -\hat\imath\cdot\hat\jmath-\hat\imath\cdot\hat\jmath}{\sqrt{2}}
+    =\dfrac{1-1}{\sqrt{2}}=0
 \end{align} \\
 %text
-Note: when computing the dot product of
-$\vector{a_1}{b_1}{c_1}$ and $\vector{a_2}{b_2}{c_2}$, we can
-write it simply as $(a_1a_2+b_1b_2+c_1c_2)$.
+Note: dot product of $\vector{a_1}{b_1}{c_1}$ and 
+$\vector{a_2}{b_2}{c_2}$ is $(a_1a_2+b_1b_2+c_1c_2)$.
 %
 </reason>
   </step>

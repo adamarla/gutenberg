@@ -9,6 +9,8 @@
   <line fill="none" stroke="#00ffff" x1="54" y1="149" x2="241" y2="149" id="svg_6"/>
   <text fill="#000000" stroke="#00ffff" stroke-width="0" x="268" y="159" id="svg_7" font-size="24" font-family="serif" text-anchor="middle" xml:space="preserve">B</text>
   <line fill="none" stroke="#ff0000" stroke-dasharray="5,5" x1="53" y1="149" x2="180" y2="149" id="svg_8"/>
-  <line fill="none" stroke="#ff0000" x1="181" y1="34" x2="180" y2="149" id="svg_9"/>
+  <line fill="none" stroke="#ff0000" x1="180" y1="34" x2="180" y2="149" id="svg_9"/>
+  <line fill="none" stroke="#ff0000" x1="188" y1="141" x2="188" y2="149" id="svg_10"/>
+  <line fill="none" stroke="#ff0000" x1="180" y1="141" x2="188" y2="141" id="svg_11"/>
  </g>
 </svg>
