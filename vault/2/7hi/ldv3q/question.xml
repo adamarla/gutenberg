@@ -15,7 +15,7 @@ following for $x$:
 \end{array}\right\vert \\
 %text
 To reduce the above determinant, what is a 
-preffered set of transforms?
+preferred set of transforms?
 %
 </context>
     <tex correct='true'>R_2\rightarrow R_2-R_1,\, R_2\rightarrow -\dfrac{1}{2}R_2 \\
