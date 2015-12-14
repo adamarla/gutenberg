@@ -1,0 +1,18 @@
+<book  tag="uandi" label="Prepwell + U&I">
+    <chapter tag="class-9" label="Class IX">
+      <exercise tag="25" label="₹ 25"/>
+      <exercise tag="50" label="₹ 50"/>
+    </chapter>
+    <chapter tag="class-10" label="Class X">
+      <exercise tag="25" label="₹ 25"/>
+      <exercise tag="50" label="₹ 50"/>
+    </chapter>
+    <chapter tag="class-11" label="Class XI">
+      <exercise tag="25" label="₹ 25"/>
+      <exercise tag="50" label="₹ 50"/>
+    </chapter>
+    <chapter tag="class-12" label="Class XII">
+      <exercise tag="25" label="₹ 25"/>
+      <exercise tag="50" label="₹ 50"/>
+    </chapter>
+</book>
