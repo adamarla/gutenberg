@@ -17,7 +17,7 @@
         <publisher tag="prepwell" label="Prepwell"/>
     </publishers>
     <books>
-        <book tag="uandi" publisher="Prepwell" subject="math" grade="12" label="Prepwell + U and I">uandi.xml</book>
+        <book tag="uandi" publisher="prepwell" subject="math" grade="12" label="Prepwell + U and I">uandi.xml</book>
         <book tag="ncert-12-math-1" publisher="ncert" subject="math" grade="12" label="Mathematics - I">ncert-12-math-1.xml</book>
         <book tag="ncert-11-math" publisher="ncert" subject="math" grade="11" label="Mathematics-XI">ncert-11-math.xml</book>
         <book tag="ncert-12-math-2" publisher="ncert" subject="math" grade="12" label="Mathematics - II">ncert-12-math-2.xml</book>
