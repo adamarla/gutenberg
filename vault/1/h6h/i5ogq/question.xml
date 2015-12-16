@@ -1,13 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<question xmlns="http://www.gradians.com">
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>
-		\text{If the sixth term of an arithmetic}\\
+    <tex>\text{If the sixth term of an arithmetic}\\
 		\text{progression is 3 and the common difference}\\
 		\text{is }\beta,\text{then for what value of }\beta\text{ is the}\\
 		\text{product of the }\underline{\text{first, fourth and fifth}}\\
-		\text{terms the greatest?}
-		</tex>
+		\text{terms the greatest?}</tex>
   </statement>
   <step>
     <context>
@@ -16,10 +14,10 @@
 			\text{terms respectively and P be their product,}\\
 			\text{then P will equal the following.}
 			</context>
-    <tex correct="true">
+    <tex correct='true'>
 			\quad P = -10\beta^3 + 51\beta^2 -72\beta + 27
 			</tex>
-    <tex correct="false">
+    <tex>
 			\quad P = -10\beta^3 + 72\beta^2 -51\beta + 81
 			</tex>
     <reason>
@@ -41,10 +39,10 @@
 				\text{For P to have an extreme value (maxima or}\\
 				\text{minima), the following will have to be true.}
 				</context>
-    <tex correct="true">
+    <tex correct='true'>
 				\quad \beta = 1,\dfrac{12}{5}
 				</tex>
-    <tex correct="false">
+    <tex>
 				\quad \beta = \dfrac{1}{2},\dfrac{7}{5}
 				</tex>
     <reason>
@@ -63,10 +61,10 @@
 					\text{Given that extrema occurs when }\beta = 1,\dfrac{12}{5},\\
 					\textbf{is the following assertion correct?}
 					</context>
-    <tex correct="true">
+    <tex correct='true'>
 					\text{The product P is maximum when }\beta=\dfrac{12}{5}.
 					</tex>
-    <tex correct="false">
+    <tex>
 					\underline{\text{The smaller }\beta\text{ is}}
 					\text{, the larger }a_1,a_4\text{ and }a_5\\
 					\text{would be. And so also their product - P.}\\
@@ -89,7 +87,7 @@
   <choices>
     <tex>\beta=\dfrac{7}{5}</tex>
     <tex>\beta = 1</tex>
-    <tex correct="true">\beta=\dfrac{12}{5}</tex>
+    <tex correct='true'>\beta=\dfrac{12}{5}</tex>
     <tex>\beta=\dfrac{1}{2}</tex>
   </choices>
 </question>
