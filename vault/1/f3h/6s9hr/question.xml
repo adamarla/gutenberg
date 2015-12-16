@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+$336$ apples are distributed equally amongst
+a certain number of students. Had there been
+$6$ more students, each would have got one
+apple less. How many students are there?
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+Does the following equation correctly account
+for the difference in each person's share?
+%</context>
+    <tex correct='true'>1=\dfrac{336}{N}-\dfrac{336}{N+6}</tex>
+    <tex>1=\dfrac{336}{N}-\dfrac{336}{6}
+</tex>
+    <reason>%text
+If $336$ apples were to be distributed equally
+among $N$ people, each person's share would 
+be $\dfrac{336}{N}$
+If there were $6$ more people, each person's
+share would decrease by $1$ to $\dfrac{336}{N+6}$
+%
+\therefore 1=\dfrac{336}{N}-\dfrac{336}{N+6}</reason>
+  </step>
+  <step>
+    <context>%text
+If $1=\dfrac{288}{N}-\dfrac{288}{N+6}$, what is $N$?
+%
+</context>
+    <tex correct='true'>N=42</tex>
+    <tex>N=48</tex>
+    <reason>\begin{align}
+  &amp; 1=\dfrac{336}{N}-\dfrac{336}{N+6} \\
+  \implies &amp; 1=336\left(\dfrac{1}{N}-\dfrac{1}{N+6}\right) \\
+  \implies &amp; N(N+6)=336 \left(N+6-N \right) \\
+  \implies &amp; N^2+6N-2016=0 \\
+  \implies &amp; N^2-42N+48N-2016=0 \\
+  \implies &amp; N(N-42)+48(N-48)=0 \\
+  \implies &amp; N=42, N=-48
+\end{align} \\
+%text
+Since there cannot be negative number of 
+people therefore, $N=42$
+%</reason>
+  </step>
+  <choices>
+    <tex correct='true'>42</tex>
+    <tex>48</tex>
+    <tex>36</tex>
+    <tex>32</tex>
+  </choices>
+</question>
