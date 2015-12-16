@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<question xmlns="http://www.gradians.com">
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>
-		\text{For what values of x would }f(x)\lt 0,\text{ if}\\
+    <tex>\text{For what values of x would }f(x)\lt 0,\text{ if}\\
 		\quad x = 3 + \dfrac{f(x)}{3+\dfrac{f(x)}{3+\frac{f(x)}{3+\ldots}}} \\
-		\textit{This problem only looks tough.}
-		</tex>
+		\textit{This problem only looks tough.}</tex>
   </statement>
   <step>
     <context>
@@ -13,32 +11,41 @@
 			\text{If } x = 3 + \dfrac{f(x)}{\underbrace{\left(3+\dfrac{f(x)}{3+\frac{f(x)}{3+\ldots}}\right)}_{A}},
 			\text{ then }A = ?
 			</context>
-    <tex correct="true">
+    <tex correct='true'>
 			\quad A = x \implies x = 3 + \dfrac{f(x)}{x}
 			</tex>
-    <tex correct="false">
+    <tex>
 			\quad A = 3 + f(x) \implies x = 3 + \dfrac{f(x)}{f(x) + 3}
 			</tex>
-    <reason>
-			\text{Look at }A=\left(3+\dfrac{f(x)}{3+\frac{f(x)}{3+\ldots}}\right)\text{ again.}\\
-			\underline{\text{It looks exactly like x!}}\text{ So, that is}\\
-			\text{what it must be. And therefore, if} \\
-			\begin{align}
-			  x = 3 + \dfrac{f(x)}{x}&amp;\text{ then } f(x) = x^2-3x \\
+    <reason>%text
+Look at \[A=\left(3+\dfrac{f(x)}{3+\frac{f(x)}{3+\ldots}}\right)\] again.
+
+\underline\text{It looks exactly like x}.
+
+So, that is what it must be. And so, 
+%
+
+\begin{align}
+			  x = 3 + \dfrac{f(x)}{x}&amp;\implies f(x) = x^2-3x \\
 			  \implies f(x) &amp;= x\cdot (x-3)
-			\end{align} \\
-			\text{Now, that looks a lot less scary, doesn't it?}
+\end{align} 
+
+%text
+
+Now, that is not scary at all, is it? 
+%
 			</reason>
   </step>
   <step>
-    <context>
-				\text{Given that }x=3+\frac{f(x)}{x}\implies f(x) = x\cdot (x-3),\\
-				\underline{\text{is the following assertion true?}}
-				</context>
-    <tex correct="true">
+    <context>%text
+Given that 
+\[\qquad x = 3+\frac{f(x)}{x}\implies f(x) = x\cdot (x-3) \]
+\underline\text{would the following also be true}?
+%</context>
+    <tex correct='true'>
 				\quad f(x)\lt\text{ when } 0\lt x\lt 3.
 				</tex>
-    <tex correct="false">
+    <tex>
 				\quad f(x)\lt 0\text{ when } x\in(-\infty, 0)\cup (3,\infty).
 				</tex>
     <reason>
@@ -61,7 +68,7 @@
 				</reason>
   </step>
   <choices>
-    <tex correct="true">0\lt x\lt 3</tex>
+    <tex correct='true'>0\lt x\lt 3</tex>
     <tex>x\in(-\infty, 0)\cup (3,\infty)</tex>
     <tex>x\lt 0</tex>
     <tex>x\gt 3</tex>

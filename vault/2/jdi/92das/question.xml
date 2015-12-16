@@ -1,80 +1,145 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{For what value of $N$ would the following hold} \\
-\dfrac{\cos 8A\cos 5A-\cos 12A\cos 9A}
-  {\sin 8A\cos 5A+\cos 12A\sin 9A}=\tan NA</tex>
+    <tex>%text
+For what value of $N$ would the following 
+be true? 
+
+\[ \quad \dfrac{\cos 8A\cos 5A-\cos 12A\cos 9A}{\sin 8A\cos 5A+\cos 12A\sin 9A}=\tan NA \] 
+%</tex>
   </statement>
-  <step>
-    <context>\text{If you had to express }\cos 8A\cos 5A\text{ as a} \\
-\text{sum of trigonometric ratios instead of a} \\
-\text{product, would this be correct?}</context>
-    <tex correct='true'>2\cos 8A\cos 5A=\cos 13A+\cos 3A</tex>
-    <tex>2\cos 8A\cos 5A=\cos \dfrac{13}{2}A+\cos \dfrac{3}{2}A</tex>
-    <reason>\text{Using the following standard result} \\
-\small{\begin{align}
-  &amp;\cos(X+Y)+\cos(X-Y)= \\
-  &amp;\quad \cos X\cos Y-\sin X\sin Y+\cos X\cos Y+\sin X\sin Y \\
-  &amp;=2\cos X\cos Y
-\end{align}} \\
-\therefore {\bf 2\cos 8A\cos 5A=\cos 13A+\cos 3A}</reason>
-  </step>
-  <step>
-    <context>\text{Similarly, if you had to express }\sin 8A\cos 5A \\
-\text{as a sum of trigonometric ratios instead of a} \\
-\text{product, would this be correct?}
-</context>
-    <tex correct='true'>2\sin 8A\cos 5A=\sin 13A+\sin 3A</tex>
-    <tex>2\sin 8A\cos 5A=\sin 13A-\sin 3A</tex>
-    <reason>\text{Using the following standard result} \\
-\small{\begin{align}
-  &amp;\sin(X+Y)+\sin(X-Y)= \\
-  &amp;\quad \sin X\cos Y+\cos X\sin Y+\sin X\cos Y-\cos X\sin Y \\
-  &amp;=2\sin X\cos Y
-\end{align}} \\
-\therefore {\bf 2\sin 8A\cos 5A=\sin 13A+\sin 3A}</reason>
-  </step>
-  <step>
-    <context>\text{Using the standard results from the previous} \\
-\text{steps, can the original equation can be written} \\
-\text{as the following?}</context>
-    <tex correct='true'>\dfrac{\cos 13A -\cos 21A}{\sin 13A+\sin 21A}</tex>
-    <tex>\dfrac{\cos 13A -\cos 21A}{\sin 13A-\sin 21A}</tex>
-    <reason>\begin{align}
-  2\cos 8A\cos 5A &amp;=\cos 13A+\cos 3A \quad (1)\\
-  2\cos 12A\cos 9A &amp;=\cos 21A+\cos 3A \quad (2) \\
-  2\sin 8A\cos 5A &amp;=\sin 13A+\sin 3A \quad (3) \\
-  2\sin 9A\cos 12A &amp;=\sin 21A-\sin 3A \quad (4)
-\end{align} \\
-\text{Adding (1) and (2), and (3) and (4), the} \\
-\text{original equation reduces to} \\
-{\bf \dfrac{\cos 13A-\cos 21A}{\sin 13A+\sin 21A}}</reason>
-  </step>
-  <step>
-    <context>\dfrac{\cos 13A-\cos 21A}{\sin 13A+\sin 21A} \\
-\textbf{Right or Wrong? }
-\text{Converting the sum/difference} \\
-\text{in the above expression to product results in:}</context>
-    <tex correct='true'>\dfrac{2\sin 17A\sin 4A}{2\sin 17A\cos 4A}=\tan 4A</tex>
-    <tex>-\dfrac{2\sin 17A\sin 4A}{2\sin 17A\cos 4A}=-\tan 4A</tex>
-    <reason>\text{Using the standard results we saw earlier} \\
-\cos(X+Y)-\cos(X-Y)=-2\sin X\sin Y \\
-\sin(X+Y)-\sin(X-Y)=2\sin X\cos Y \\
-\text{we need to chose X and Y such that} \\
-X+Y=21, X-Y=13 \text{, we get,} \\
+  <step swipe='false'>
+    <context>%text
+\textbf{Product $\longrightarrow$ Sum}
+Is the following true for \underline\text{P,Q,R and S}?
+\[\quad  \dfrac{\overbrace{\cos 8A\cos 5A}^P-\overbrace{\cos 12A\cos 9A}^Q}{\underbrace{\sin 8A\cos 5A}_R+\underbrace{\cos 12A\sin 9A}_S}\]
+%</context>
+    <tex correct='true'>\begin{tabular}{|c|c|}
+\hline 
+&amp; \text{Equals }\ldots \\
+\hline 
+2\times P &amp; \cos 13A + \cos 3A \\
+\hline 
+2\times Q &amp; \cos 21A + \cos 3A \\ 
+\hline 
+2\times R &amp; \sin 13A + \sin 3A \\
+\hline 
+2\times S &amp; \sin 21A - \sin 3A  \\
+\hline 
+\end{tabular} </tex>
+    <tex>\begin{tabular}{|c|c|}
+\hline 
+&amp; \text{Equals }\ldots \\
+\hline 
+2\times P &amp; \cos 13A - \cos 3A \\
+\hline 
+2\times Q &amp; \cos 21A - \cos 3A \\ 
+\hline 
+2\times R &amp; \sin 13A - \sin 3A \\
+\hline 
+2\times S &amp; \sin 21A + \sin 3A  \\
+\hline 
+\end{tabular} </tex>
+    <reason>%text
+Simply used the following \underline\text{standard results}
+
+%
+
 \begin{align}
-  \dfrac{\cos 13A-\cos 21A}{\sin 13A+\sin 21A}
-    &amp;= \dfrac{2\sin 17A\sin 4A}{2\sin 17A\cos 4A} \\
-    &amp;={\bf \tan 4A}
-\end{align} \\
-\text{Comparing coefficients between the above} \\
-\text{result and the problem statement, $N=4$.}
+2\cos x\cdot \cos y &amp;= \cos \left(x+y\right) + \cos \left(x-y\right) \\
+2\sin x\cdot\cos y &amp;= \sin \left(x+y\right) + \sin \left(x-y\right) 
+\end{align} 
+</reason>
+  </step>
+  <step>
+    <context>%text
+\textbf{Plug $\longrightarrow$ Simplify}
+Given P,Q,R and S from the last step, 
+which of the following is true? 
+%</context>
+    <tex correct='true'>\dfrac{P-Q}{R+S} = 
+\dfrac{\cos 13A -\cos 21A}{\sin 13A+\sin 21A}</tex>
+    <tex>\dfrac{P-Q}{R+S} =\dfrac{\cos 13A +\cos 21A}{\sin 13A-\sin 21A}</tex>
+    <reason>%text
+We know the following from the last step.
+
+%
+\begin{tabular}{|c|c|}
+\hline 
+&amp; \text{Equals }\ldots \\
+\hline 
+2\times P &amp; \cos 13A + \cos 3A \\
+\hline 
+2\times Q &amp; \cos 21A + \cos 3A \\ 
+\hline 
+2\times R &amp; \sin 13A + \sin 3A \\
+\hline 
+2\times S &amp; \sin 21A - \sin 3A  \\
+\hline 
+\end{tabular} 
+
+%text
+And therefore, 
+%
+\begin{align}
+&amp;\dfrac{2P-2Q}{2R-2S} = \dfrac{P-Q}{R-S} \\
+&amp;= \dfrac{\cos 13A + \cos 3A - (\cos 21A + \cos 3A)}
+{\sin 13A + \sin 3A - (\sin 21A + \sin 3A)} \\
+&amp;= \dfrac{\cos 13A - \cos 21A}{\sin 13A + \sin 21A}
+\end{align} </reason>
+  </step>
+  <step>
+    <context>%text
+\textbf{Sum $\longrightarrow$ Product}
+What would be the \underline\text{values of $J$ and $K$} --- 
+and hence of $N$ in the equation below? 
+\[ \qquad \dfrac{\overbrace{\cos 13A -\cos 21A }^J}{\underbrace{\sin 13A + \sin 21A}_K} = \tan NA \]
+%</context>
+    <tex correct='true'>\begin{tabular}{|c|c|}
+\hline 
+&amp; \text{Equals}\ldots \\
+\hline 
+J &amp; 2\sin 17A\cdot \sin 4A \\
+\hline 
+K &amp; 2\sin 17A\cdot \cos 4A \\
+\hline 
+N &amp; 4 \\
+\hline 
+\end{tabular} </tex>
+    <tex>\begin{tabular}{|c|c|}
+\hline 
+&amp; \text{Equals}\ldots \\
+\hline 
+J &amp; 2\sin 17A\cdot \cos 4A \\
+\hline 
+K &amp; 2\cos 17A\cdot \cos 4A \\
+\hline 
+N &amp; 17 \\
+\hline 
+\end{tabular} 
+</tex>
+    <reason>%text
+Once again, we have simply applied  the 
+foloowing \underline\text{standard results}.
+
+Notice that these are simply the \underline\text{inverse}
+of the results we used earlier. 
+
+%
+
+\begin{align}
+\cos\alpha -\cos\beta = 2\sin\left( \frac{\alpha + \beta}{2} \right) &amp;\cdot\sin\left( \frac{\beta-\alpha}{2}\right) \\
+\sin\alpha +\sin\beta = 2\sin\left(\frac{\alpha+\beta}{2} \right) &amp;\cdot\cos\left(\frac{\beta-\alpha}{2} \right) \\
+\therefore \dfrac{\overbrace{\cos 13A -\cos 21A }^J}{\underbrace{\sin 13A + \sin 21A}_K} &amp;= 
+\dfrac{2\sin 17A\cdot \sin 4A}{2\sin 17A\cdot \cos 4A}\\
+&amp;= \tan 4A \text{ or }\underline{N=4}
+\end{align} 
 </reason>
   </step>
   <choices>
     <tex correct='true'>N=4</tex>
     <tex>N=2</tex>
     <tex>N=\dfrac{1}{2}</tex>
-    <tex>1</tex>
+    <tex>N = 1</tex>
   </choices>
 </question>

@@ -1,26 +1,28 @@
-<?xml version="1.0" encoding="utf-8"?>
-<question xmlns="http://www.gradians.com">
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>
-    \text{Of the 50 students taking examinations in}\\
-    \text{Maths (M), Physics (P) and Chemistry (C) -}\\
-    \text{each passed in atleast one of the subjects.}\\
-    \text{Moreover, 37 passed in Maths, 24 in Physics}\\
-    \text{and 37 in Chemistry. At most, 19 passed in}\\
-    \text{Maths and Physics, (at most) 29 in Maths and}\\
-    \text{Chemistry and (at most) 20 in Physics and}\\
-    \text{Chemistry. What then is the maximum possible}\\
-    \text{number of students who could've passed in all}\\
-    \text{three subjects?}
-		</tex>
+    <tex>%text
+Of the 50 students taking examinations in
+Maths (M), Physics (P) and Chemistry (C), 
+each passed in atleast one of the subjects.
+Moreover, 37 passed in Maths, 24 in Physics
+and 37 in Chemistry. At most, 19 passed in
+Maths and Physics, (at most) 29 in Maths 
+and Chemistry and (at most) 20 in Physics 
+and Chemistry. 
+
+What then is the \underline\text{maximum} possible 
+number of students who could've passed 
+in \underline\text{all three subjects}?
+%</tex>
   </statement>
   <step>
-    <context>
-			\textbf{What do we know?}\\
-			\text{Can we make the following assertions from}\\
-			\text{what we have been told in the question?}
+    <context>%text
+Does the table below correctly summarize 
+the information given in the question? 
+%
 			</context>
-    <tex correct="true">
+    <tex correct='true'>
 			\begin{tabular}{|r|c|}
 			\hline
 			n(P\cap M) &amp; \leq 19 \\
@@ -35,7 +37,7 @@
 			\hline 
 			\end{tabular}
 			</tex>
-    <tex correct="false">
+    <tex>
 			\begin{tabular}{|r|c|}
 			\hline
 			n(P\cap M) &amp; \geq 19 \\
@@ -79,18 +81,18 @@
 			</reason>
   </step>
   <step>
-    <context>
-  		\textbf{Minimum passing in all three.} \\
-				\text{Given what }n(P\cup M\cup C)\text{ is (or, you tell us),}\\
-				\text{is the assertion below correct?} 
-  		</context>
-    <tex correct="true">
+    <context>%text
+\textbf{Minimum passing in all three.} \\
+Given what \[ n\left( P\cup M\cup C \right) \] is (see last step), 
+\underline\text{is the following assertion correct}?
+%</context>
+    <tex correct='true'>
   		\begin{align}
   		  \text{Passing in all three subjects} &amp;= n(P\cap M\cap C) \\
   		  n(P\cap M\cap C) &amp;\leq 14 
   		\end{align}
   		</tex>
-    <tex correct="false">
+    <tex>
   		\begin{align}
   		  \text{Passing in all three subjects} &amp;= n(P\cap M\cap C) \\
   		  n(P\cap M\cap C) &amp;\leq 10
@@ -122,6 +124,6 @@
     <tex>10</tex>
     <tex>12</tex>
     <tex>17</tex>
-    <tex correct="true">14</tex>
+    <tex correct='true'>14</tex>
   </choices>
 </question>
