@@ -1,45 +1,62 @@
-<?xml version="1.0" encoding="utf-8"?>
-<question xmlns="http://www.gradians.com">
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>
-		\text{What is the minimum value (if it exists) of }\\
-		\quad y = \dfrac{x}{\ln x^2} \\
-		\textbf{Note: }\ln = \log_e 
-		</tex>
+    <tex>%text
+What is the minimum value (if any) of
+\[ \qquad \qquad y = \dfrac{x}{\ln x^2} \] 
+\textbf{Note: }$\ln = \log_e$ (natural logarithm)
+%</tex>
   </statement>
   <step>
-    <context>
-			\text{Given }y=\dfrac{x}{\ln x^2},\text{ can we say the following}\\
-			\text{by looking at }\dfrac{dy}{dx}?
-			</context>
-    <tex correct="true">
-			\textbf{An extreme value occurs when }x=e.
+    <context>%text
+Given $y = \dfrac{y}{\ln x^2}$, what will $\dfrac{dy}{dx}$ be?
+%</context>
+    <tex correct='true'>\dfrac{dy}{dx} = \dfrac{\ln x - 1}{2\cdot \left(\ln x\right)^2}</tex>
+    <tex>\dfrac{dy}{dx} = \dfrac{\ln x - x}{\left(\ln x\right)^2}</tex>
+    <reason>\begin{align}
+y &amp;= \dfrac{x}{\ln x^2} = \underbrace{\dfrac{x}{2\cdot\ln x}}_{\log a^b = b\cdot\log a}\\ 
+\implies\dfrac{dy}{dx} &amp;= \underbrace{\dfrac{\ln x - x\cdot\frac{d}{dx}\ln x}
+{2\cdot\left(\ln x\right)^2}}_{\text{Quotient Rule}} = 
+\underbrace{\dfrac{\ln x - 1}{2\cdot \left(\ln x\right)^2}}_{x\cdot\frac{d}{dx}\ln x = x\cdot\frac{1}{x} = 1}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+Given $\dfrac{dy}{dx}$, which of the following is true?
+%</context>
+    <tex correct='true'>%text
+An extreme value occurs when \underline{$x=e$}
+%
 			</tex>
-    <tex correct="false">
-		  \textbf{An extreme value occurs when }x=e^2.
+    <tex>%text
+An extreme value occurs when \underline{$x=e^2$}
+%
 			</tex>
-    <reason>
-			\begin{align}
-			  y &amp;= \dfrac{x}{\ln x^2} = \underbrace{\dfrac{x}{2\cdot\ln x}}_{\log a^b = b\cdot\log a}\\ 
-			  \implies\dfrac{dy}{dx} &amp;= \dfrac{\ln x - x\cdot\frac{d}{dx}\ln x}
-			  {2\cdot\left(\ln x\right)^2} = \dfrac{\ln x - 1}{2\cdot \left(\ln x\right)^2}\\
-			  \implies \dfrac{dy}{dx} &amp;= 0\text{ when } \ln x - 1 = 0 \\
-			  \implies \ln x &amp;= 1\implies x = e.
-			\end{align}
+    <reason>\begin{align}
+\dfrac{dy}{dx} &amp;= \dfrac{\ln x - 1}{2\cdot \left(\ln x\right)^2} \\
+\implies \dfrac{dy}{dx} &amp;= 0\text{ when } \ln x - 1 = 0 \\
+\implies \ln x &amp;= 1\implies x = e 
+\end{align}\\
+%text
+
+Therefore, an extrema occurs when $x=e$.
+%
 			</reason>
   </step>
   <step>
-    <context>
-				\text{Going further, is the following true at the}\\
-				\text{extrema point }x = e?
+    <context>%text
+Going further, is the following true at the
+extrema point $x = e$?
+%
 				</context>
-    <tex correct="true">
-				\text{There is a minima at } x = e.\\
-				\textbf{And the minimum value is } y = \dfrac{e}{2}.
-				</tex>
-    <tex correct="false">
-				\text{There is a maxima - not minima - at } x = e.\\
-				\textbf{And the maximum value is } y = \dfrac{e}{2}.
+    <tex correct='true'>%text
+There is a minima at $x = e$.
+And the \underline\text{minimum} value is $y = \dfrac{e}{2}$.
+%</tex>
+    <tex>%text
+There is a maxima - not minima - at $x = e$.
+And the \underline\text{maximum} value is $y = \dfrac{e^2}{2}$.
+%
 				</tex>
     <reason>
 				\begin{align}
@@ -57,8 +74,8 @@
   </step>
   <choices>
     <tex>\text{Maxima at }x = e^2,y_{MAX} = \dfrac{e^2}{4}.</tex>
-    <tex correct="true">\text{Minima at }x = e,y_{MIN} = \dfrac{e}{2}.</tex>
-    <tex>\text{Maxima at }x = e,y_{MAX} = \dfrac{e}{2}.</tex>
+    <tex correct='true'>\text{Minima at }x = e,y_{MIN} = \dfrac{e}{2}.</tex>
+    <tex>\text{Maxima at }x = e,y_{MAX} = \dfrac{e^2}{2}.</tex>
     <tex>\text{Minima at }x = e^2,y_{MIN} = \dfrac{e^2}{4}.</tex>
   </choices>
 </question>
