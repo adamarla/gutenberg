@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+A small aircraft encounters bad weather a
+third of the way into a $600$ km flight and has
+to slow down by $50$ km/h. As a result, it
+lands $40$ minutes later than usual. How long
+does the aircraft take to fly the same route on
+a clear clear day?
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If the flight were broken down to 3 equal
+legs, as per the problem what would the
+speed of the aircraft be in each leg?
+%</context>
+    <tex correct='true'>\begin{tabular}{c|c|c|c}
+  \text{Leg} &amp; 1^{st} &amp; 2^{nd} &amp; 3^{rd} \\
+  \hline
+  \text{Speed (km/h)} &amp; s &amp; s-50 &amp; s-50
+\end{tabular}</tex>
+    <tex>\begin{tabular}{c|c|c|c}
+  \text{Leg} &amp; 1^{st} &amp; 2^{nd} &amp; 3^{rd} \\
+  \hline
+  \text{Speed (km/h)} &amp; s &amp; s &amp; s-50
+\end{tabular}</tex>
+    <reason>%text
+As per the problem, bad weather hit after
+the first third of the flight had passed. And
+due to this, the aircraft had to reduce its
+regular cruising speed by $50$(km/h). If the
+regular speed of the aircraft during the first
+third of the flight path was ${\it s}$ km/h, then 
+during the second and last thirds it would 
+slow down to ${\it (s-50)}$ km/h.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+If it takes the aircraft flying at ${\bf s}$ km/h, ${\bf m}$
+minutes to fly the $600$ km route on a clear 
+day, what is the correct expression for ${\bf m}$?
+%</context>
+    <tex correct='true'>m=\dfrac{600\times 60}{s}=\dfrac{3600}{s}</tex>
+    <tex>m=\dfrac{600}{s\times 60}=\dfrac{10}{s}</tex>
+    <reason>%text
+Speed is defined as distance covered over
+time elapsed. Using this relation we can
+connect speed, distance and time, taking 
+into account the units for each of them,
+%
+\begin{align}
+  \overbrace{\dfrac{m(min)}{60(min/h)}}^\text{time}
+    &amp;=\dfrac{\overbrace{600(km)}^\text{distance}}
+                {\underbrace{s(km/h)}_\text{speed}} \\
+  \implies m(min)&amp;=\dfrac{600 (\st{km})\times 60 (min/\st{h})}
+                                       {s (\st{km/h})} \\
+    &amp;=\dfrac{600\times 60 (min)}{s}=\dfrac{3600}{s}(min)
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>%text
+On a clear day the aircraft flies at $s$ km/h
+taking $\frac{3600}{s}$ minutes to complete the flight.
+What is the correct expression for the $40$ 
+minute delay due to which the flight had to 
+go $50$ km/h slower in the last two-third?
+%</context>
+    <tex correct='true'>40=\left(\dfrac{200\times 60}{s}
+  +\dfrac{400\times 60}{s-50}\right)-\dfrac{3600}{s}</tex>
+    <tex>40=\left(\dfrac{200\times 60}{s-50}
+  +\dfrac{400\times 60}{s-50}\right)-\dfrac{3600}{s}</tex>
+    <reason>%text
+On the bad weather day, if the aircraft
+took $t_1$ minutes for the first one-third of
+the journey and $t_2$ minutes for the rest
+then,
+%
+\begin{align}
+  t_1 &amp;= \dfrac{200 (km)}{\dfrac{s}{60}(km/min)}
+    =\dfrac{200\times 60}{s} (min) \\
+  t_2 &amp;=\dfrac{400 (km)}{\dfrac{(s-50)}{60}(km/min)}
+    =\dfrac{400\times 60}{s-50}(min)
+\end{align} \\
+%text
+Combining $t_1$ and $t_2$ and subtracting from
+the regular journey time we get,
+%
+\begin{align}
+  \overbrace{40 (min)}^\text{delay}&amp;=
+    \overbrace{\dfrac{200\times 60}{s}}^\text{    time \\ first-third}
+      +\overbrace{\dfrac{400\times 60}{s-50}}^\text{      time \\ last two-third}
+      -\overbrace{\dfrac{3600}{s}}^\text{usual time}     
+\end{align}</reason>
+  </step>
+  <step>
+    <context>40=\left(\dfrac{200\times 60}{s}
+  +\dfrac{400\times 60}{s-50}\right)-\dfrac{3600}{s} \\
+%text
+What is/are the value(s) of $s$, if $s$ represents 
+speed of the aircraft on a clear day?
+%  </context>
+    <tex correct='true'>s=200 (km/h)</tex>
+    <tex>s=200(km/h), -150 (km/h)</tex>
+    <reason>\begin{align}
+  &amp;40=\left(\dfrac{200\times 60}{s}
+    +\dfrac{400\times 60}{s-50}\right)-\dfrac{3600}{s} \\
+  \implies &amp; \dfrac{40}{60}=\dfrac{200}{s}-\dfrac{600}{s}+\dfrac{400}{s-50} \\
+  \implies &amp; s^2-50s-600 \left(50\right)=0 \\
+  \implies &amp; s^2+150s-200s-(200\times 150)=0 \\
+  \implies &amp; (s+150)(s-200)=0 \\
+  \implies &amp; s=-150, s=200
+\end{align} \\
+%text
+Since $s$ represents the speed of the plane, we
+reject the negative value. Therefore the speed
+of the plane is $200$ km/h.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+Assuming a clear day, how long would the
+aircraft take to cover $600$ km while flying at
+$200$ km/h?
+%</context>
+    <tex correct='true'>%text
+$3$ hours.
+%</tex>
+    <tex>%text
+$6$ hours.
+%</tex>
+    <reason>\begin{align}
+  t=\dfrac{600 (km)}{200 (km/h)}=3(h)
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>%text
+$6$ hours
+%</tex>
+    <tex>%text
+$2$ hours
+%</tex>
+    <tex correct='true'>%text
+$3$ hours
+%</tex>
+    <tex>%text
+$1.5$ hours
+%</tex>
+  </choices>
+</question>

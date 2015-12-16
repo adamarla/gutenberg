@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the value of $k$ for which the points
+$A=(k, 3),\, B=(6, -2)$ and $C=(-3, 4)$ are
+collinear.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If points $(x_1,y_1)$, $(x_2,y_2)$ and $(x_3,y_3)$ are
+in a straight line, is the following always true?
+%</context>
+    <tex correct='true'>\dfrac{y_2-y_1}{x_2-x_1}=\dfrac{y_3-y_2}{x_3-x_2}</tex>
+    <tex>x_2=\dfrac{x_1+x_3}{2}, y_2=\dfrac{y_1+y_3}{2}</tex>
+    <reason>%text
+The line joining any two points has a slope.
+When a third point is said to be on this same
+line, then the slope formed by any pair of
+two points is equal. Therefore,
+%
+\qquad\underbrace{\dfrac{y_2-y_1}{x_2-x_1}}_{\text{slope}_{12}}
+  =\underbrace{\dfrac{y_3-y_2}{x_3-x_2}}_{\text{slope}_{23}}
+  =\underbrace{\dfrac{y_3-y_1}{x_3-x_1}}_{\text{slope}_{31}}</reason>
+  </step>
+  <step>
+    <context>%text
+If slope formed by $A(k, 3),\, B(6, -2)$ is equal 
+to the slope formed by $B(6, -2)$, $C(-3, 4)$, 
+then what is $k$?
+%
+</context>
+    <tex correct='true'>k=-\dfrac{3}{2}</tex>
+    <tex>k=\dfrac{4}{3}</tex>
+    <reason>%text
+$A=(k, 3),\, B=(6, -2)$ and $C=(-3, 4)$
+%
+
+\begin{align}
+  \text{slope}_{AB} &amp;= \dfrac{-2-3}{6-k} \\
+  \text{slope}_{BC} &amp;= \dfrac{4-(-2)}{-3-6}
+\end{align} \\
+%text
+The two slopes are equal therefore,
+%
+\begin{align}
+  &amp;\dfrac{-2-3}{6-k}=\dfrac{4-(-2)}{-3-6} \\
+  \implies &amp;\dfrac{-5}{6-k}=\dfrac{6}{-9} \\
+  \implies &amp;\dfrac{-5}{6-k}=\dfrac{2}{-3} \\
+  \implies &amp; 15=12-2k \implies k=-\dfrac{3}{2}
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>k=\dfrac{3}{2}</tex>
+    <tex correct='true'>k=-\dfrac{3}{2}</tex>
+    <tex>k=\dfrac{4}{3}</tex>
+    <tex>k=-\dfrac{2}{3}</tex>
+  </choices>
+</question>
