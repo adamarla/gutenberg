@@ -1,22 +1,20 @@
-<?xml version="1.0" encoding="utf-8"?>
-<question xmlns="http://www.gradians.com">
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>
-		\text{What would be the equivalent roster form}\\
-		\text{of the following set?}\\
-		\quad C = \lbrace x:x^2+7x+10 = 0,x\in\mathbb{N} \rbrace
-		</tex>
+    <tex>%text
+What would be the equivalent \underline\text{roster} form
+of the following set?
+\[ \qquad C = \lbrace x:x^2+7x+10 = 0,x\in\mathbb{N} \rbrace\]
+%</tex>
   </statement>
   <step>
-    <context>
-			\textbf{A theoretical question.}\\
-			\text{Do the set-builder and roster notations}\\
-			\text{mean what is shown in the table below?}
-			</context>
-    <tex correct="true">
-			\begin{tabular}{|c|c|}
+    <context>%text
+Which of the tables below correctly shows 
+what set-builder and roster notations are?
+%</context>
+    <tex correct='true'>\begin{tabular}{|c|c|}
 			\hline 
-			\text{Type} &amp; \text{Meaning} \\
+			&amp; \text{Meaning} \\
 			\hline
 			\text{Set builder} &amp; \lbrace x:\texttt{ list of conditions on x}\rbrace \\
 			\hline
@@ -24,10 +22,10 @@
 			\hline
 			\end{tabular}
 			</tex>
-    <tex correct="false">
+    <tex>
 			\begin{tabular}{|c|c|}
 			\hline 
-			\text{Type} &amp; \text{Meaning} \\
+			&amp; \text{Meaning} \\
 			\hline
 			\text{Set builder} &amp; \lbrace a_1,a_2, a_3, \ldots \rbrace \\
 			\hline
@@ -35,46 +33,56 @@
 			\hline
 			\end{tabular}
 			</tex>
-    <reason>
-			\textbf{Roster is just another word for a list.}\\
-			\text{So, when you list out all the elements of a set}\\
-			\text{you are expressing the set in }\underline{\text{Roster notation}}. \\
-			\text{But if instead you list the conditions that} \\
-			\text{elements of a set must satisfy, then you're}\\
-			\text{using the }\underline{\text{Set builder notation}}.
-			</reason>
+    <reason>%text
+\textbf{Roster is just another word for a list.}
+
+So, when you \underline\text{list} out all the elements of
+a set, then you are expressing the set in 
+\underline{\text{Roster notation}}.
+
+But if instead you list the \underline\text{conditions} that
+the elements of a set must satisfy, then 
+you're using the \underline\text{Set builder notation}.
+%</reason>
   </step>
   <step>
-    <context>
-				\text{Given that }C = \lbrace x:x^2+7x+10 = 0,x\in\mathbb{N} \rbrace \\
-				\text{is set-builder notation, is the following correct?}
+    <context>%text
+Given that $C = \lbrace x:x^2+7x+10 = 0,x\in\mathbb{N} \rbrace$
+is in set-builder notation, \underline\text{is the following}
+\underline\text{correct}? 
+%
 				</context>
-    <tex correct="true">
-				\text{No 'x' satisfies both the conditions }\\
-				\text{mentioned in C. Hence, }C = \lbrace\rbrace = \phi.
-				</tex>
-    <tex correct="false">
-				\begin{align}
+    <tex correct='true'>%text
+\underline\text{No $x$} satisfies both the conditions in $C$.  
+
+Hence, $C=\lbrace\rbrace = \phi$.
+%</tex>
+    <tex>\begin{align}
 				\text{If }x \in C\text{ then }&amp;x^2 + 7x + 10 = 0 \\
 				\implies (x+2)\cdot (x+5) &amp;= 0 \implies x = -2, -5. \\
 				\text{Hence, }C &amp;= \lbrace -2,-5 \rbrace
 				\end{align}\\
 				
 				</tex>
-    <reason>
-				\begin{align}
+    <reason>\begin{align}
 				x^2+7x+10 &amp;= 0\implies (x+2)\cdot (x+5) = 0 \\
 				\implies x &amp;= -2, -5
-				\end{align} \\
-				\textbf{But don't forget the second condition!}\\
-				\text{Neither of }x=-2\text{ nor }x=-5\in\mathbb{N}.\\
-				\text{Hence, C is an empty set. Or, }C = \phi.
+				\end{align} 
+%text
+
+
+\textbf{But don't forget the second condition!}
+Neither of $x=-2$ nor $x=-5 \in\mathbb{N}.
+
+Hence, C is an empty set. That is, \underline{$C = \phi$}.
+%
+				
 				</reason>
   </step>
   <choices>
     <tex>C = \lbrace 2,5 \rbrace</tex>
     <tex>C=\lbrace -2,-5 \rbrace</tex>
-    <tex correct="true">C=\phi</tex>
+    <tex correct='true'>C=\phi</tex>
     <tex>C = \lbrace -2,5 \rbrace</tex>
   </choices>
 </question>
