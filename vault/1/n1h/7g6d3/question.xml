@@ -1,57 +1,58 @@
-<?xml version="1.0" encoding="utf-8"?>
-<question xmlns="http://www.gradians.com">
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
   <statement>
-    <tex> 
-		\text{A torpedo boat is anchored 9 km away from}\\
-		\text{the nearest point $(A)$ on a shore. A messenger}\\
-		\text{must be sent from the torpedo boat to a camp}\\
-		\text{that is 15 km away from $A$ along the shore. }\\
-		\text{If a messenger can walk at 5 km/h and row }\\
-		\text{at 4 km/h, then where on the shore must he}\\
-		\text{land in order to reach the camp in the}\\
-		\text{shortest possible time?}
-		</tex>
+    <tex>%text
+A torpedo boat is anchored 9 km away from
+the nearest point $(A)$ on a shore. A messenger
+must be sent from the torpedo boat to a camp
+that is 15 km away from $A$ along the shore.
+If a messenger can walk at 5 km/h and row
+at 4 km/h, then where on the shore must he
+land in order to reach the camp in the
+shortest possible time?
+%</tex>
   </statement>
   <step>
-    <context>
-			\text{Does the figure below correctly describe the}\\
-			\text{situation? The boat is at B and the camp} \\
-			\text{is at C.}\\
-			\textbf{Note:}\text{ 'x' is the distance from the nearest}\\
-			\text{point (A) to where the boat lands (X)}
-			</context>
-    <image correct="true">1-right.svg</image>
-    <image correct="false">1-wrong.svg</image>
-    <reason>
-			\text{The boat is anchored 9 km away from the}\\
-			\text{nearest point A. Hence, AB = 9 km.} \\
-			\text{And as the camp is 15 km away from A, }\\
-			\text{therefore AC = 15 km.}
+    <context>%text
+Does the figure below correctly describe 
+the situation? The boat is at B and the 
+camp is at C.
+\textbf{Note: } \underline\text{x} is the distance from the nearest
+point (A) to where the boat lands (X)
+%</context>
+    <image correct='true'>1-right.svg</image>
+    <image>1-wrong.svg</image>
+    <reason>%text
+The boat is anchored 9 km away from the
+nearest point A. Hence, AB = 9 km.
+And as the camp is 15 km away from A,
+therefore AC = 15 km.
+%
 			</reason>
   </step>
   <step>
-    <context>
-				\textbf{Right or wrong?}\\
-				\text{If } T = T_R + T_W \text{ where, }T_R = \text{ time spent}\\
-				\text{rowing and }T_W = \text{ time spent walking, then the}\\
-				\text{total time taken (T) would have an extreme}\\
-				\text{value when the following is true.}
+    <context>%text
+If the total time taken $ = T = T_R + T_W$ where, 
+$T_R = $ time spent rowing and $T_W = $ time spent 
+walking, then \underline\text{which of the following is true}?
+%
 				</context>
-    <tex correct="true">
+    <tex correct='true'>
 				\begin{align}
 				  \dfrac{dT}{dx} &amp;= \dfrac{x}{4\sqrt{x^2+81}} - \dfrac{1}{5} \\
 				  \implies \dfrac{dT}{dx} &amp;= 0\text{ when } x = 12\text{ km.}
 				\end{align}
 				</tex>
-    <tex correct="false">
+    <tex>
 				\begin{align}
 				  \dfrac{dT}{dx} &amp;= \dfrac{x}{2\sqrt{x^2+81}} - \dfrac{1}{5} \\
 				  \implies \dfrac{dT}{dx} &amp;= 0\text{ when } x = \dfrac{18}{\sqrt{21}}\text{ km.}
 				\end{align}
 				</tex>
-    <reason>
-				\textbf{Remember, }\text{we want to find the minimum}\\
-				\text{time taken. And time = }\dfrac{\text{distance}}{\text{speed}}.\text{ Hence,}\\
+    <reason>%text
+\textbf{Remember, }we want to find the minimum
+time taken. And time = $\dfrac{\text{distance}}{\text{speed}}$. Hence,
+%
 				\begin{align}
 				  T &amp;= \underbrace{\dfrac{\sqrt{x^2 + 9^2}}{4}}_{T_R = \frac{BX}{4 km/h}} + 
 				  \underbrace{\dfrac{15-x}{5}}_{T_W = \frac{CX}{5 km/h}}  \\
@@ -63,40 +64,45 @@
 				</reason>
   </step>
   <step>
-    <context>
-					\text{Your friend now says }\\
-					\textit{Agreed that the time has an extreme value}\\
-					\textit{when }x = 12\textit{ km. But it not a minimum}\\
-					\textit{value - but a maximum one.}\\
-					\textbf{Is your friend correct?}
+    <context>%text
+Your friend now says
+\textit{Agreed that the time has an extreme value}
+\textit{when }$x = 12$\textit{ km. But it not a minimum}
+\textit{value - but a maximum one.}
+\textbf{Is your friend correct?}
+%
 					</context>
-    <tex correct="true">
-					\textbf{Nope. He is wrong.} \\
+    <tex correct='true'>
+					\textbf{No. The friend is wrong.} \\
 					\quad\dfrac{d^2 T}{dx^2} \gt 0\implies \text{ minima at x = 12 km.}
 					</tex>
-    <tex correct="false">
-					\textbf{Yes. He is right.} \\
+    <tex>
+					\textbf{Yes. The friend is right.} \\
 					\quad\dfrac{d^2 T}{dx^2} \lt 0\implies \text{ maxima at x = 12 km.} \\
 					\text{Which means, there is no minima.}
 					</tex>
-    <reason>
-					\begin{align}
+    <reason>\begin{align}
 					  \dfrac{dT}{dx} &amp;= \dfrac{x}{4\sqrt{x^2+81}} - \dfrac{1}{5} \\
 					  \implies \dfrac{d^2T}{dx^2} &amp;= \underbrace{\dfrac{1}{4}\cdot 
 					  \left[\dfrac{\sqrt{x^2+81} - \frac{x\cdot 2x}{2\sqrt{x^2+81}}}{(x^2+81)}\right]}
 					  _{\frac{d}{dx}\frac{f(x)}{g(x)} = \frac{gf'-fg'}{g^2}} \\
 					  &amp;= \dfrac{81}{4\cdot (x^2+81)^\frac{3}{2}} \gt 0\text{ for x = 12.}
 					\end{align} \\
-					\text{Hence, not only does T have an extreme value}\\
-					\text{when x = 12 km, that value is also a minimum.}\\
-					\text{Hence, the boat must land 12 km from A} \\
-					\text{or }(15-x) = 3\text{ km from the camp (C).}
+%text
+
+Hence, not only does T have an extreme 
+value when x = 12 km, that value is also 
+a minimum. 
+
+Hence, the \underline\text{boat must land 12 km from A}
+or $(15-x) = 3$  km from the camp (C).
+%
 					</reason>
   </step>
   <choices>
     <tex>\text{In the middle - 7.5 km from the camp.}</tex>
     <tex>\text{12 km from the camp.}</tex>
     <tex>\text{3 km from the nearest point (A)}</tex>
-    <tex correct="true">\text{3 km from the camp.}</tex>
+    <tex correct='true'>\text{3 km from the camp.}</tex>
   </choices>
 </question>

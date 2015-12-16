@@ -1,35 +1,40 @@
-<?xml version="1.0" encoding="utf-8"?>
-<question xmlns="http://www.gradians.com">
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>
-		\text{What would be the largest term numerically}\\
-		\text{in the expansion of }(2+3x)^9\text{ if }x=\frac{3}{2}?
-		</tex>
+    <tex>%text
+What would be the largest term 
+numerically in the expansion of $(2+3x)^9$ 
+if $x=\dfrac{3}{2}$?
+%</tex>
   </statement>
   <step>
-    <context>
-			\text{What will be the n-th term }(T_n)\text{ given that}\\
-			\begin{align}
-			  (2+3x)^9 &amp;= 2^9\cdot \left(1+\frac{3}{2}x\right)^9 \\
-			  &amp;= \underbrace{a_1}_{T_1} + \underbrace{a_2 x}_{T_2} + \cdots 
-			  + \underbrace{a_{10} x^9}_{T_{10}}
-			\end{align}
+    <context>%text
+What will be the n-th term $(T_n)$ given that
+%
+\begin{align}
+	 (2+3x)^9 &amp;= 2^9\cdot \left(1+\frac{3}{2}x\right)^9 \\
+	&amp;= \underbrace{a_1}_{T_1} + \underbrace{a_2 x}_{T_2} + \cdots 
+	+ \underbrace{a_{10} x^9}_{T_{10}}
+\end{align}
 			</context>
-    <tex correct="true">
+    <tex correct='true'>
 			T_n = 2^9\cdot ^9C_{n-1} \left(\frac{3}{2}x\right)^{n-1}, 1\leq n\leq 10
 			</tex>
-    <tex correct="false">
+    <tex>
 			T_n = ^9C_{n-1} \left(\frac{3}{2}x\right)^{10-n}, 1\leq n\leq 10
 			</tex>
-    <reason>
-			\begin{align}
+    <reason>\begin{align}
 			  (2+3x)^9 &amp;= \overbrace{T_1 + T_2 + \cdots + T_{10}}^
 			  {\longrightarrow\text{ increasing powers of x}} \\ 
 			  &amp;= \overbrace{T_{10} + T_9 + \cdots + T_1}^
 			  {\longrightarrow\text{ decreasing powers of x}}
 			\end{align} \\ 
-			\underline{\text{Either is fine}}.\text{ But pick one and stick with it.}\\
-			\text{We will use }T_1 + T_2 + \cdots +T_{10}.\text{ Hence, }\\
+%text
+Either is fine. But pick one and stick with
+it. We will use $T_1 + T_2 + \cdots +T_{10}$.
+
+And hence,
+%
 			\begin{align}
 			  (2+3x)^9 &amp;= 2^9\cdot \left(1+\frac{3}{2}x\right)^9 \\
 			  &amp;= 2^9\cdot \sum_{n=1}^{10}\, ^9C_{n-1}\left(\frac{3}{2}x\right)^{n-1}\cdot 1^{9-(n-1)} \\
@@ -40,39 +45,43 @@
 			</reason>
   </step>
   <step>
-    <context>
-				\textbf{Condition for largest term.}\\
-				\text{If }T_n\text{ be the largest term in the expansion,}\\
-				\text{then would the following be true?}
+    <context>\textbf{Condition for largest term.}\\
+%text
+If $T_n$ be the largest term in the expansion,
+then \underline\text{would the following be true}?
+%
 				</context>
-    <tex correct="true">
+    <tex correct='true'>
 				  \dfrac{T_n}{T_{n-1}} \gt 1\text{ and }\dfrac{T_{n+1}}{T_n}\lt 1
 				</tex>
-    <tex correct="false">
+    <tex>
 				\dfrac{T_n}{T_{n-1}} \gt 1\text{ and }\dfrac{T_{n+1}}{T_n}\gt 1
 				</tex>
-    <reason>
-				\textbf{First, }\text{note that every }T_n\text{ in the expansion}\\
-				\text{of }(2+3x)^9\text{ with }x=\frac{3}{2}\text{ is }\gt 0.\text{ This would}\\
-				\text{not have been true if instead of }(2+3x)^9\\
-				\text{we had }(2-3x)^9.\\
-				\text{Now, if }T_n\text{ is the largest term, then}\\
-				\begin{align}
-				  T_n - T_{n-1} &amp;\gt 0 \implies T_n \gt T_{n-1}\implies \dfrac{T_n}{T_{n-1}}\gt 1\\
-				  T_{n+1}-T_n &amp;\lt 0\implies T_{n+1}\lt T_n\implies \dfrac{T_{n+1}}{T_n}\lt 1
-				\end{align}
+    <reason>%text
+\textbf{First, }note that every $T_n$ in the expansion
+of $(2+3x)^9$ is $\gt 0$ for $x=\frac{3}{2}$. 
+
+This would not have been true if instead 
+of $(2+3x)^9$, we had $(2-3x)^9$.
+
+Now, \underline\text{if $T_n$ is the largest term}, then 
+%
+\begin{align}
+	 T_n - T_{n-1} &amp;\gt 0 \implies T_n \gt T_{n-1}\implies \dfrac{T_n}{T_{n-1}}\gt 1\\
+	 T_{n+1}-T_n &amp;\lt 0\implies T_{n+1}\lt T_n\implies \dfrac{T_{n+1}}{T_n}\lt 1
+\end{align}
 				</reason>
   </step>
   <step>
-    <context>
-					\textbf{Right or wrong?}\\
-					T_n \text{ will keep increasing as long as }\ldots \\
-					\text{(Remember }x=\frac{3}{2}\text{)}.
-					</context>
-    <tex correct="true">
+    <context>%text
+\textbf{Right or wrong?}
+$T_n$ will keep increasing as long as $\ldots$
+\textbf{Note: }$x=\frac{3}{2}$.
+%</context>
+    <tex correct='true'>
 					\quad n\lt\dfrac{103}{13}
 					</tex>
-    <tex correct="false">
+    <tex>
 					\quad n\lt\dfrac{91}{12}
 					</tex>
     <reason>
@@ -93,33 +102,38 @@
 					</reason>
   </step>
   <step>
-    <context>
-						\textbf{Right or wrong?}\\
-						\text{The largest term will therefore be }\ldots 
+    <context>%text
+Which means, the \underline\text{largest term} will be
+the following. \textbf{Right or wrong?}
+%
 						</context>
-    <tex correct="true">
+    <tex correct='true'>
 						\quad T_7 = \dfrac{7\cdot 3^{13}}{2}
 						</tex>
-    <tex correct="false">
+    <tex>
 						\quad T_8 = \dfrac{3^{16}}{8}
 						</tex>
-    <reason>
-						\text{In Step 2, we found that }T_n\text{ will keep}\\
-						\text{increasing as a long as }n\lt\frac{103}{13}.\\
-						\text{But remember, }n\in\mathbb{N}\implies\text{ the largest 'n'}\\
-						\text{such that }n\lt\frac{103}{13},n\in\mathbb{N}\text{ is } n = 7.\\
-						\text{Hence, the largest term will be }\\
-						\begin{align}
-						  T_7 &amp;= 2^9\cdot ^9C_{7-1}\cdot \left(\frac{3}{2}\cdot\frac{3}{2}\right)^{7-1} \\
-						  &amp;= 2^9\cdot\dfrac{9!}{6!\cdot 3!}\cdot\dfrac{3^{12}}{2^{12}} 
-						  = \dfrac{7\cdot 3^{13}}{2}
-						\end{align}
+    <reason>%text
+\underline\text{In Step 2}, we found that $T_n$ will keep
+increasing as a long as $n\lt\frac{103}{13}$.
+
+But remember, $n\in\mathbb{N}\implies$ \underline\text{the largest n}
+such that $n\lt\frac{103}{13},n\in\mathbb{N}$ is \underline{$n = 7$.}
+
+Hence, the \underline\text{largest term} will be 
+%
+\begin{align}
+	T_7 &amp;= 2^9\cdot ^9C_{7-1}\cdot \left(\frac{3}{2}\cdot\frac{3}{2}\right)^{7-1} \\
+	&amp;= 2^9\cdot\dfrac{9!}{6!\cdot 3!}\cdot\dfrac{3^{12}}{2^{12}} 
+	= \dfrac{7\cdot 3^{13}}{2}
+\end{align}
+					
 						</reason>
   </step>
   <choices>
     <tex>\dfrac{3^{14}}{2^3}</tex>
     <tex>\dfrac{3^{16}}{8}</tex>
     <tex>2\cdot 3^{13}</tex>
-    <tex correct="true">\dfrac{7\cdot 3^{13}}{2}</tex>
+    <tex correct='true'>\dfrac{7\cdot 3^{13}}{2}</tex>
   </choices>
 </question>
