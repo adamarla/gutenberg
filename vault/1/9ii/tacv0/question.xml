@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Evaluate \[ \int \frac{(x-4)\cdot e^x}{(x-2)^3}\cdot dx \] 
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+\underline\text{A theoretical question}
+If \[ f(x) = \frac{1}{(x-a)^2}\], then \underline\text{what is $f(x) + f'(x)?$}
+%</context>
+    <tex correct='true'>f(x) + f'(x) = \frac{x-(a+2)}{(x-a)^3}</tex>
+    <tex>f(x) + f'(x) = \frac{x-(a+1)}{(x-a)^3}</tex>
+    <reason>%text
+On seeing \[ \frac{x-4}{(x-2)^3} \], we noticed that  
+
+%
+\begin{align}
+(x-4) - (x-2) &amp;= -2 \\
+\text{and }\frac{d}{dx}\frac{1}{(x-2)^2} &amp;= \frac{-2}{(x-2)^3} 
+\end{align} 
+
+%text
+
+
+So, that is two ways of getting a $-2$. 
+Seems to be \underline\text{more than a coincidence}.
+
+And hence, \underline\text{we wondered} what $f(x) + f'(x)$ 
+would be if $f(x) = \frac{1}{(x-a)^2}$
+%
+\begin{align}
+f(x)  = \frac{1}{(x-a)^2} &amp;\implies f'(x) = \frac{-2}{(x-a)^3} \\
+\therefore f(x) + f'(x) &amp;= \frac{1}{(x-a)^2} -\frac{2}{(x-a)^3} \\
+&amp;= \frac{x-(a+2)}{(x-a)^3}
+\end{align} </reason>
+  </step>
+  <step>
+    <context>%text
+Given the result from Step 1, 
+\underline\text{is the following correct}?
+%</context>
+    <tex correct='true'>\begin{align}
+\int\frac{e^x\cdot (x-4)}{(x-2)^3}dx &amp;= \int e^x\left[ \frac{1}{(x-2)^2} -\frac{2}{(x-2)^3}\right] dx\\
+&amp;= \frac{e^x}{(x-2)^2} +C 
+\end{align} </tex>
+    <reason>\begin{align}
+\frac{x-4}{(x-2)^3} = \frac{(x-2) - 2}{(x-2)^3} &amp;= \frac{1}{(x-2)^2}-\frac{2}{(x-2)^3}\\
+\therefore \int e^x\frac{x-4}{(x-2)^3}dx  &amp;= \int e^x [f(x) + f'(x)]\cdot dx \\
+\text{where }f(x) &amp;= \frac{1}{(x-2)^2} \\
+\therefore I = e^x\cdot f(x) + C &amp;= \frac{e^x}{(x-2)^2} + C
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\frac{e^x}{(x-2)^2} + C</tex>
+    <tex>\frac{e^x}{(x-2)} + C</tex>
+    <tex>\frac{e^x}{(x-2)^3} + C</tex>
+    <tex>-\frac{e^x}{(x-2)^2} + C</tex>
+  </choices>
+</question>
