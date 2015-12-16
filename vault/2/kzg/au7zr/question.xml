@@ -1,0 +1,56 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+For what value of $M$ would the following be
+true?
+%
+\qquad\dfrac{\tan 2x\cdot \tan x}{\tan 2x- \tan x}=\sin Mx</tex>
+  </statement>
+  <step>
+    <context>%text
+Is the following conversion of $\dfrac{\tan 2x\cdot \tan x}{\tan 2x- \tan x}$
+to $\sin$ and $\cos$ functions correct?
+%</context>
+    <tex correct='true'>\dfrac{\sin 2x\cdot \sin x}{\sin 2x\cdot\cos x- \cos 2x\cdot \sin x}</tex>
+    <tex>\dfrac{\cos 2x\cdot \cos x}{\cos 2x\cdot\sin x- \sin 2x\cdot \cos x}</tex>
+    <reason>\begin{align}
+  \dfrac{\tan 2x\cdot \tan x}{\tan 2x- \tan x}
+    &amp;=\dfrac{\dfrac{\sin 2x}{\cos 2x}\cdot \dfrac{\sin x}{\cos x}}
+                  {\dfrac{\sin 2x}{\cos 2x}- \dfrac{\sin x}{\cos x}} \\
+    &amp;=\dfrac{\sin 2x\cdot \sin x}{\sin 2x\cdot\cos x- \cos 2x\cdot \sin x}
+     
+  
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+Can $(\sin 2x\cdot\cos x- \cos 2x\cdot \sin x)$ be expressed
+as the following single function?
+%</context>
+    <tex correct='true'>\sin x</tex>
+    <tex>\sin 3x</tex>
+    <reason>\sin(A-B)=\sin A\cos B-\cos A\sin B \\
+\begin{align}
+  \therefore \sin 2x\cdot\cos x- \cos 2x\cdot \sin x&amp;=\sin (2x-x) \\
+  &amp;=\sin x
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+If $\dfrac{\sin 2x\cdot \sin x}{\sin x}=\sin Mx$, what is M?
+%</context>
+    <tex correct='true'>M=2</tex>
+    <reason>\begin{align}
+  &amp;\dfrac{\sin 2x\cdot \sin x}{\sin x}=\sin Mx \\
+  \implies &amp;\sin 2x=\sin Mx \implies M=2
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>M=2</tex>
+    <tex>M=3</tex>
+    <tex>M=1</tex>
+    <tex>M=\dfrac{1}{2}</tex>
+  </choices>
+</question>
