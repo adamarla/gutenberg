@@ -1,26 +1,26 @@
-<?xml version="1.0" encoding="utf-8"?>
-<question xmlns="http://www.gradians.com">
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>
-		\text{A right conical funnel with a slant height of}\\
-		\text{18 cm must be made. What should be its height}\\
-		\text{for it to have the greatest possible volume?}
-		</tex>
+    <tex>%text
+A right conical funnel with a slant height 
+of 18 cm must be made. What should be 
+its height for it to have the greatest 
+possible volume?
+%</tex>
   </statement>
   <step>
-    <context>
-			\text{Let }\begin{tabular}{|c|c|c|}
+    <context>\textbf{Let }\begin{tabular}{|c|c|c|}
 			\hline
 			\text{Slant Height} &amp; \text{Height} &amp; \text{Base's Radius} \\
 			\hline
 			L &amp; h &amp; R \\
 			\hline
 			\end{tabular} \\
-			\text{Given this, is the figure below }\underline{\text{correct in}}\\
-			\underline{\text{all respects}}?\textbf{ V}\text{ is the cone's volume.}
-			
-			</context>
-    <image correct="true">1-right.svg</image>
+%text
+Given this, \underline\text{are the figures and equations}
+given below correct?
+%</context>
+    <image correct='true'>1-right.svg</image>
     <image>1-wrong.svg</image>
     <reason>
 			\text{The height of a cone is from the tip to} \\
@@ -34,15 +34,16 @@
 			</reason>
   </step>
   <step>
-    <context>
-				\textbf{Right or wrong?} \\
-				\text{Given }V = \frac\pi{3}\cdot(L^2-h^2)\cdot h\text{ and }L=18 cm, \\
-				\text{the cone will have the greatest volume when }\ldots
-				</context>
-    <tex correct="true">
+    <context>\textbf{Right or wrong?} \\
+%text
+Given $V = \dfrac\pi{3}\cdot(L^2-h^2)\cdot h$ and L=18 cm, the
+cone will have the greatest volume when 
+the height (h) is the following.
+%</context>
+    <tex correct='true'>
 				\quad h = 6\sqrt{3}\text{ cm.}
 				</tex>
-    <tex correct="false">
+    <tex>
 				\quad h = 3\sqrt{6}\text{ cm.}
 				</tex>
     <reason>
@@ -61,6 +62,6 @@
     <tex>3\sqrt{6}\text{ cm.}</tex>
     <tex>4\sqrt{3}\text{ cm.}</tex>
     <tex>2\sqrt{6}\text{ cm.}</tex>
-    <tex correct="true">6\sqrt{3}\text{ cm.}</tex>
+    <tex correct='true'>6\sqrt{3}\text{ cm.}</tex>
   </choices>
 </question>
