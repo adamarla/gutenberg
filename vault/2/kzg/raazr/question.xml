@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+The angle of elevation of a hot air balloon
+climbing vertically changes from $30^\circ$ at $10$ AM
+to $60^\circ$ at ten minutes past $10$ AM. The point
+of observation is $300$ meters from the point
+of take off. What is the average upward speed
+of the plane?
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If O is the point of observation, A the takeoff
+point and B and C the balloon's positions at 
+$10$ AM and $10:10$ AM respectively, is the 
+following diagram accurate?
+%</context>
+    <image correct='true'>1a.svg</image>
+    <image>1b.svg</image>
+    <reason>%text
+The balloon travels straight up, so the path
+of the balloon is along ABC and OA equals 
+$300$ mts.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+If $\tan 30^\circ=\dfrac{BA}{OA}$, $\tan 60^\circ=\dfrac{CA}{OA}$ and
+$OA=300m$, what is length $BC$?
+%</context>
+    <tex correct='true'>\dfrac{600}{\sqrt{3}}m</tex>
+    <tex>\dfrac{300}{\sqrt{3}}m</tex>
+    <reason>\begin{align}
+  \tan 30^\circ=\dfrac{BA}{OA} &amp;\implies BA=\dfrac{OA}{\sqrt{3}} \\
+    &amp;\implies BA=\dfrac{300}{\sqrt{3}} \\
+  \tan 60^\circ=\dfrac{CA}{OA} &amp;\implies BA+BC=OA\sqrt{3} \\
+    &amp;\implies BC=300\sqrt{3}-\dfrac{300}{\sqrt{3}} \\
+    &amp;\implies BC=300 \left(\dfrac{2}{\sqrt{3}}\right)=\dfrac{600}{\sqrt{3}}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+If the balloon traversed $\dfrac{600}{\sqrt{3}}m$ in $10$ minutes,
+what is its speed in metres per second?
+%</context>
+    <tex correct='true'>\dfrac{1}{\sqrt{3}}(m/s)</tex>
+    <tex>\sqrt{3}(m/s)</tex>
+    <reason>\begin{align}
+  10 \text{ (minutes)}&amp;=600 \text{ (seconds)} \\
+  \therefore \text{speed}&amp;=\dfrac{\frac{600}{\sqrt{3}}(m)}{600(s)} \\
+    &amp;=\dfrac{1}{\sqrt{3}}(m/s)
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>\dfrac{3}{\sqrt{3}}(m/s)</tex>
+    <tex correct='true'>\dfrac{1}{\sqrt{3}}(m/s)</tex>
+    <tex>3(m/s)</tex>
+    <tex>3\sqrt{3}(m/s)</tex>
+  </choices>
+</question>
