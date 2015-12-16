@@ -1,26 +1,25 @@
-<?xml version="1.0" encoding="utf-8"?>
-<question xmlns="http://www.gradians.com">
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>
-		\text{What is the coefficient of }x^2\text{ in }\\
-		\qquad \left(\frac{2}{3}x-\frac{3}{2x}\right)^6
-		</tex>
+    <tex>%text
+What is the coefficient of $x^2$  in the
+expansion of \[ \left(\frac{2}{3}x-\frac{3}{2x}\right)^6 \]?
+%</tex>
   </statement>
   <step>
-    <context>
-			\text{If }\left(\frac{2}{3}x-\frac{3}{2x}\right)^6 = 
-			\overbrace{\underbrace{T_1 + T_2 + \cdots + T_N }_{\text{N terms}}}^{\longrightarrow\text{ increasing powers of x}},\\
-			\text{then are the following true?}
+    <context>%text
+If \[ \left(\frac{2}{3}x-\frac{3}{2x}\right)^6 = \overbrace{\underbrace{T_1 + T_2 + \cdots + T_N}_{\text{N terms}}}^{\longrightarrow\text{ increasing powers of x}}\] 
+then \underline\text{are the following true}?
+%
 			</context>
-    <tex correct="true">
-			\begin{align}
+    <tex correct='true'>\begin{align}
 			  N &amp;= 7 \\
 			  T_m &amp;= ^6C_{m-1}\left(\frac{2x}{3}\right)^{m-1}\cdot (-1)^{7-m}
 			  \cdot \left(\frac{3}{2x}\right)^{7-m} \\
 			  &amp; (1\leq m\leq 7)
 			\end{align}
 			</tex>
-    <tex correct="false">
+    <tex>
 			\begin{align}
 			  N &amp;= 6 \\
 			  T_m &amp;= ^6C_{m-1}\left(\frac{2x}{3}\right)^{m-1}
@@ -28,45 +27,57 @@
 			  &amp; (1\leq m\leq 6)
 			\end{align}
 			</tex>
-    <reason>
-			(a+b)^n\text{ will have }(n+1)\text{ terms. Hence,} \\
-			\left(\frac{2}{3}x-\frac{3}{2x}\right)^6\text{ will have }N=6+1=7\text{ terms.}\\
-			\text{Also, if }\left(\frac{2}{3}x-\frac{3}{2x}\right)^6 = 
-			\overbrace{T_1 + T_2 + \cdots + T_N}^{\longrightarrow\text{ increasing powers of x}},\\
-			{then }T_1\text{ should have } \left(\frac{2x}{3}\right)^0\text{and }T_7\text{ should }\\
-			\text{have }\left(\frac{2x}{3}\right)^6.\text{Hence, the m-th term is}\\
-			\begin{align}
-			  T_m &amp;= ^6C_{m-1}\left(\frac{2x}{3}\right)^{m-1}
-			  \cdot \left(-\frac{3}{2x}\right)^{6-(m-1)} \\
-			  &amp;=^6C_{m-1}\left(\frac{2x}{3}\right)^{m-1}\cdot (-1)^{7-m} 
-			  \cdot \left(\frac{3}{2x}\right)^{7-m} \\
-			  &amp; (1\leq m\leq 7)
-			\end{align} \\
-			\textbf{Or, expand with decreasing powers of x.}\\
-			\text{After all, }T_1+T_2+\cdots T_7 = T_7+T_6 + \cdots + T_1.
+    <reason>%text
+$(a+b)^n$ has $(n+1) terms. 
+
+And therefore,, \[ \left(\frac{2}{3}x-\frac{3}{2x}\right)^6\] will 
+have $N=6+1=7$ terms. 
+
+Also, \underline\text{if we expand in increasing} powers 
+of $x$, then the \underline\text{powers of \[\left(\frac{2x}{3}\right)\]} should 
+increase as we go from $T_1\longrightarrow T_7$. 
+
+Hence, the m-th term would be
+
+%
+\begin{align}
+	T_m &amp;= ^6C_{m-1}\left(\frac{2x}{3}\right)^{m-1}
+	\cdot \left(-\frac{3}{2x}\right)^{6-(m-1)} \\
+	&amp;=^6C_{m-1}\left(\frac{2x}{3}\right)^{m-1}\cdot (-1)^{7-m} 
+	\cdot \left(\frac{3}{2x}\right)^{7-m} \\
+	&amp; (1\leq m\leq 7)
+\end{align} 
+%text
+
+\textbf{Note that we could have expanded in}
+\textbf{decreasing powers of x too.} 
+
+The final answer would not change. After
+all, it is the same binomial expansion.
+%
+
+
 			</reason>
   </step>
   <step>
-    <context>
-				\textbf{Right or wrong?} \\
-				\text{Given }T_m = ^6C_{m-1}\left(\frac{2x}{3}\right)^{m-1}
-			  \cdot \left(-\frac{3}{2x}\right)^{7-m} \\
-			  \text{a term with }\frac{1}{x^2}\text{ will result when }\ldots 
-				</context>
-    <tex correct="true">
+    <context>%text
+Given \[ T_m = ^6C_{m-1}\left(\frac{2x}{3}\right)^{m-1}\], we will get 
+a $\dfrac{1}{x^2}$ term when the following is true. 
+\textbf{Right or wrong?}
+%</context>
+    <tex correct='true'>
 				\begin{align}
 				\dfrac{x^{m-1}}{x^{7-m}} &amp;= \frac{1}{x^2} \\
 				\implies 2m-8&amp;= -2 \implies m = 3
 				\end{align}
 				</tex>
-    <tex correct="false">
+    <tex>
 				\begin{align}
 				\dfrac{x^{m-1}}{x^{7-m}} &amp;= \frac{1}{x^2} \\
 				\implies 2m-8&amp;= 2 \implies m = 5
 				\end{align}
 				</tex>
-    <reason>
-				\begin{align}
+    <reason>\begin{align}
 				  \left(\frac{2x}{3}\right)^{m-1} &amp;= A\cdot x^{m-1} \\
 				  \left(-\frac{3}{2x}\right)^{7-m} &amp;= \frac{B}{x^{7-m}} \\
 				  \implies \left(\frac{2x}{3}\right)^{m-1}\cdot \left(-\frac{3}{2x}\right)^{7-m}
@@ -82,14 +93,15 @@
 				</reason>
   </step>
   <step>
-    <context>
-					\textbf{Right or wrong?}\text{ The coefficient of the}\\
-					\text{term with }\frac{1}{x^2}\text{ will be the following.}
-					</context>
-    <tex correct="true">
+    <context>%text
+Given that $m=3$, the coefficient of the
+required term will be the following. 
+\textbf{Right or wrong?}
+%</context>
+    <tex correct='true'>
 					\qquad \dfrac{135}{4}
 					</tex>
-    <tex correct="false">
+    <tex>
 					\qquad \dfrac{48}{7}
 					</tex>
     <reason>
@@ -104,7 +116,7 @@
 					</reason>
   </step>
   <choices>
-    <tex correct="true">\frac{135}{4}</tex>
+    <tex correct='true'>\frac{135}{4}</tex>
     <tex>\frac{71}{2}</tex>
     <tex>-\frac{35}{4}</tex>
     <tex>\frac{48}{7}</tex>
