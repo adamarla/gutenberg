@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+A metal ball bearing of diameter $42$cm is
+melted and drawn into a wire of diameter
+$28$cm. What would be the length of the
+wire if $20$\% of the metal was lost.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If the ball bearing is of diameter $42$cm, is the
+following the correct expression for its volume?
+%</context>
+    <tex correct='true'>V=\dfrac{4}{3}\pi \cdot(21)^3 (cm^3)</tex>
+    <tex>V=\dfrac{2}{3}\pi \cdot(21)^3 (cm^3)</tex>
+    <reason>%text
+Volume of a sphere of radius $r$ is $\dfrac{4}{3}\pi r^3$
+%</reason>
+  </step>
+  <step>
+    <context>%text
+If $20$\% of the original $\dfrac{4}{3}\pi\cdot 21^3(cm)^3$ of metal
+from the ball bearing was lost in melting, how
+much metal by volume remains for the wire?
+%</context>
+    <tex correct='true'>\dfrac{16}{15}\pi\cdot 21^3(cm)^3</tex>
+    <tex>\pi\cdot 21^3(cm)^3</tex>
+    <reason>%text
+$20$\% by volume was lost therefore $80$\% or 
+four-fifths still remains.
+%
+\quad V=\dfrac{4}{5}\cdot \dfrac{4}{3}\pi\cdot 21^3(cm)^3=
+  \dfrac{16}{15}\pi\cdot 21^3(cm)^3</reason>
+  </step>
+  <step>
+    <context>%text
+If $\dfrac{16}{15}\pi\cdot 21^3(cm)^3$ of metal is available for
+drawing into a wire of $28$ cm diameter, what 
+would the length of such a wire be?
+%</context>
+    <tex correct='true'>%text
+$50.4$ cm
+%</tex>
+    <reason>%text
+The volume of a wire of length $l$ and radius $r$
+is given by ${\bf\pi \cdot r^2l}$. Equating this with volume 
+of metal remaining we get,
+%
+\begin{align}
+  &amp;\dfrac{16}{15}\pi\cdot 21^3(cm)^3=\pi \cdot \left(\dfrac{28}{2}\right)^2\cdot l\,(cm)^3 \\
+  \implies &amp;\dfrac{16}{15}\pi\cdot 21^3(cm)^3=\pi \cdot 14^2\cdot l\,(cm)^3 \\
+  \implies &amp;l=\dfrac{16\times 7^3\times 3^3}{15\times 7^2\times 2^2}
+    =\dfrac{4\times 7\times 3^2}{5}=50.4cm
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>%text
+$63$ cm
+%</tex>
+    <tex>%text
+$44$ cm
+%</tex>
+    <tex correct='true'>%text
+$50.4$ cm
+%</tex>
+    <tex>%text
+$48.8$ cm
+%</tex>
+  </choices>
+</question>
