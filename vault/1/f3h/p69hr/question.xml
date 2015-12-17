@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Two pipes, when used together can fill a tank
+in $12$ minutes. Individually however, one pipe
+takes $7$ minutes longer than the other pipe 
+to fill the same tank. How long do each of the
+pipes take to fill the tank on their own?
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If the volume of the tank is V, and the time
+it takes for the slower pipe to fill the tank on
+its own is ${\bf t}$, what are the rates $R_1$ and $R_2$
+at which each of the pipes fill the tank?
+%</context>
+    <tex correct='true'>R_1=\dfrac{V}{t}, R_2=\dfrac{V}{t+5}</tex>
+    <tex>R_1=Vt, R_2=V(t+5)</tex>
+    <reason>%text
+The rate at which a tank fills is the volume
+of the tank divided by the time it takes to fill
+it. Therefore,
+%
+\begin{align}
+  R_1\times t=V &amp;\implies R_1=\dfrac{V}{t} \\
+  R_2\times (t+7)=V &amp;\implies R_2=\dfrac{V}{t+7}
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>%text
+If $R_1$ and $R_2$ are the individual rates for each
+of the pipes, what is the effective rate $R_{eff}$
+when both pipes are filling the tank together?
+%</context>
+    <tex correct='true'>R_{eff}=R_1+R_2</tex>
+    <tex>R_{eff}=\dfrac{R_1R_2}{R_1+R_2}</tex>
+    <reason>%text
+For any number of pipes filling the tank
+simultaneously, the effective rate is the sum 
+of all the individual rates. $R_{eff}=\sum_{i=1}^n R_i$
+%</reason>
+  </step>
+  <step>
+    <context>%text
+$R_1=\dfrac{V}{t}$,$R_2=\dfrac{V}{t+7}$ and $R_{eff}=R_1+R_2$. If 
+$R_{eff}=\dfrac{V}{12}$, what is ${\bf t}$, the time it took for the
+slower pipe to fill the tank?
+%</context>
+    <tex correct='true'>%text
+$21$ (min)
+%</tex>
+    <tex>%text
+$14$ (min)
+%</tex>
+    <reason>\begin{align}
+  &amp;R_{eff}=R_1+R_2 \\
+  \implies &amp;\dfrac{V}{12}=\dfrac{V}{t}+\dfrac{V}{t+7} \\
+  \implies &amp;t^2+7t=12(2t+7) \\
+  \implies &amp;t^2-17t-84=0 \\
+  \implies &amp;t^2-21t+4t-84=0 \\
+  \implies &amp;t(t-21)+4(t-21)=0 \\
+  \implies &amp;t=21, -4
+\end{align} \\
+%text
+Rejecting the negative values for time, we get
+$t=21$.
+%</reason>
+  </step>
+  <choices>
+    <tex correct='true'>%text
+$21$ (min), $28$ (min)
+%</tex>
+    <tex>%text
+$14$ (min), $21$ (min)
+%</tex>
+    <tex>%text
+$20$ (min), $27$ (min)
+%</tex>
+    <tex>%text
+$15$ (min), $22$ (min)
+%</tex>
+  </choices>
+</question>
