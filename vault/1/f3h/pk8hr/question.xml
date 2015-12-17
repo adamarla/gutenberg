@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+You want to build a tiled walking track of
+fixed width around a rectangular park. But
+you can only afford $3100$ tiles of $1$ sq. foot 
+each. How wide can you make your track if 
+the park is $160(ft)\times 140(ft)$?
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If the width of the walking track is ${\bf w}$ and the
+park is $160(ft)\times 140(ft)$, what is the area
+occupied by the track?
+%</context>
+    <tex correct='true'>w^2+300w</tex>
+    <tex>(160+2w)(140+2w)</tex>
+    <reason>%text
+To establish the area occupied by the track, 
+subtract the area of the park from the total
+area of the rectangle which includes both park
+and track.
+%
+\begin{align}
+   A&amp;={\small\left[(160+w)\times (140+w)\right]-(160\times 140)(ft^2)} \\
+    &amp;={\small 160\times 140+160w+140w+w^2-160\times 140} \\
+    &amp;=w^2+300w=w(w+300)
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+If total track affordable area $(w^2+300w)$ is 
+$3100(ft^2)$, what is track width ${\bf w}$?
+%</context>
+    <tex correct='true'>w=10(ft)</tex>
+    <reason>\begin{align}
+  &amp;w^2+300w=3100 \\
+  \implies &amp;w^2+300w-3100=0 \\
+  \implies &amp;w^2+310w-10w-3100=0 \\
+  \implies &amp;(w+310)(w-10)=0 \\
+  \implies &amp;w=-310, 10
+\end{align} \\
+%text
+Since width cannot be negative, $w=10$.
+%</reason>
+  </step>
+  <choices>
+    <tex>20(ft)</tex>
+    <tex>100(ft)</tex>
+    <tex correct='true'>10(ft)</tex>
+    <tex>14(ft)</tex>
+  </choices>
+</question>
