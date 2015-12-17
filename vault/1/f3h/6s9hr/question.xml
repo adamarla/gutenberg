@@ -27,7 +27,7 @@ share would decrease by $1$ to $\dfrac{336}{N+6}$
   </step>
   <step>
     <context>%text
-If $1=\dfrac{288}{N}-\dfrac{288}{N+6}$, what is $N$?
+If $1=\dfrac{336}{N}-\dfrac{336}{N+6}$, what is $N$?
 %
 </context>
     <tex correct='true'>N=42</tex>
