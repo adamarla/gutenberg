@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+A cylindrical roller $2.5$ m in length, $0.75$ m in
+radius, when rolled on a road was found to 
+have covered an area of $525\pi$ $m^2$. How
+many revolutions did the roller make?
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+How much area does a roller of length $2.5$ m
+and radius $0.75$ m cover in $1$ revolution?
+%</context>
+    <tex correct='true'>2.625\pi\,m^2</tex>
+    <tex>1.40625\pi\, m^2</tex>
+    <reason>%text
+A cyclindrical roller will cover an area 
+equivalent to its curved surface in one 
+rotation. For a cylinder of radius $r$ and 
+length $l$, the curved surface area is ${\bf 2\pi rl}$
+In the given problem, 
+%
+2\pi rl=2\pi \times 0.75\times 2.5=2.625\pi\, m^2
+</reason>
+  </step>
+  <step>
+    <context>%text
+If a roller covers $2.625\pi\,m^2$ in 1 revolution,
+how many revolutions would it take to cover 
+$525\pi\, m^2$?
+%</context>
+    <tex correct='true'>200</tex>
+    <tex>250</tex>
+    <reason>%text
+To ascertain the number of revolutions simply
+divide the total area covered by the area
+covered in a single revolution. In our particular
+problem,
+%
+\text{Revolutions}=\dfrac{525\pi\, m^2}{2.625\pi\,m^2}=200 \\
+%text
+Note: Number of revolutions is obviously a
+dimensionless entity, so no units.
+%
+</reason>
+  </step>
+  <choices>
+    <tex>250</tex>
+    <tex>100</tex>
+    <tex>150</tex>
+    <tex correct='true'>200</tex>
+  </choices>
+</question>
