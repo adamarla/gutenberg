@@ -2,125 +2,105 @@
 <question xmlns='http://www.gradians.com'>
   <statement>
     <tex>%text
-Commander Spock of Star Treck would like
-to invest for some money for $2$ Vulcan years.
-He has two choices - The{\bf Solar-Earth} Bank
-(on planet Earth) or the{\bf Vulcan National}
-Bank (on planet Vulcan).
-Solar-Earth offers $3\%$ compounded semi-
-annually while Vulcan National offers $6\%$
-per annum. Which bank should Commander
-Spock choose given that $2$ Earth years equal
-$1$ Vulcan year.
+Commander Spock of Star Trek fame would 
+like to invest some money for a period of 2
+\underline\text{Vulcan years} (1 Vulcan year = 2 Earth years)
+
+He can choose one of two banks - Bank E on 
+planet Earth or Bank V on planet Vulcan.
+
+Bank E offers $3\%$ compound interest every
+\underline\text{6 Earth months} while Bank V offers $6\%$ 
+compound interest \underline\text{once every Vulcan year}.
+Which bank should Spock choose to get 
+greater returns? 
 %</tex>
   </statement>
   <step>
     <context>%text
-If $2$ Earth years equals $1$ Vulcan year, and
-the Earth bank compounds semi-annually, 
-how many times would it compound interest 
-in $1$ Vulcan year?
+Over a period of \underline\text{2 Vulcan years}, how many
+times will the money compound in the 
+two banks (Bank E and Bank V) ? 
 %
 </context>
-    <tex correct='true'>%text
-$4$ times.
-%</tex>
-    <tex>%text
-$2$ times.
-%</tex>
+    <tex correct='true'>\begin{tabular}{|c|c|}
+\hline 
+&amp; \text{\# times money will compound} \\
+\hline 
+\text{Bank E} &amp; 8 \\
+\hline
+\text{Bank V} &amp; 2 \\
+\hline 
+\end{tabular} </tex>
+    <tex>\begin{tabular}{|c|c|}
+\hline 
+&amp; \text{\# times money will compound} \\
+\hline 
+\text{Bank E} &amp; 4 \\
+\hline
+\text{Bank V} &amp; 2 \\
+\hline 
+\end{tabular} </tex>
     <reason>%text
-The number of times Earth Bank compounds 
-money in $1$ Vulcan year can be established 
-by the following calculation,
-%
-\begin{align}
-  &amp;{\small 1\text{(vulcan-yr)}\times
-    2\left(\dfrac{\text{earth-yr}}{\text{vulcan-yr}}\right)\times
-    2\left(\dfrac{\text{times-comp}}{\text{earth-yr}}\right)} \\
-  &amp;={\small 4\text{(times-comp)}}
-\end{align} \\
-%text
-Therefore, Earth Bank effectively compounds
-money $4$ times per Vulcan year.
+\underline\text{2 Vulcan years = 4 Earth years} 
+
+As Bank E compounds money \underline\text{twice} every 
+\underline\text{Earth year} (once every 6 Earth months),
+therefore over 4 Earth years, it would have 
+compounded the money $=4\times 2 = 8$ times. 
+
+Similarly, Bank V compounds money \underline\text{once} 
+every \underline\text{1 Vulcan year}. 
+
+Therefore, over 2 Vulcan years, it would 
+compound the money $=2\times 1 = 2$ times. 
 %
 </reason>
   </step>
   <step>
     <context>%text
-If Solar-Earth compounds money $4$ times per
-Vulcan year at $3\%$ and Vulcan-National does 
-so $2$ times per Vulcan year at $6\%$, then what
-would the balance in each bank be at the end 
-of $1$ Vulcan year on a principle of $P$ dollars?
+Given the number of compounding periods, 
+which bank will give the \underline\text{larger final amount}
+at the end of 2 Vulcan years? 
+\textbf{Use: } $(1.03)^4 = 1.13, (1.06)^2=1.124$
 %</context>
-    <tex correct='true'>\begin{align}
-  A_\text{Solar-Earth}&amp;= P \left[1+\dfrac{3}{100}\right]^{4\times 1} \\
-  A_\text{Vulcan-National}&amp;= P \left[1+\dfrac{6}{100}\right]^{2\times 1}
-\end{align}
-</tex>
-    <tex>\begin{align}
-  A_\text{Solar-Earth}&amp;=P \left[1+\dfrac{3\times 4}{100}\right] \\
-  A_\text{Vulcan-National}&amp;= P \left[1+\dfrac{6\times 2}{100}\right]
-\end{align}
-</tex>
+    <tex correct='true'>%text
+\textbf{Bank E}. Spock should put his money with 
+the bank on Earth. 
+%</tex>
+    <tex>%text
+\textbf{Bank V}. Spock should put his money with 
+the bank on Vulcan.. 
+%</tex>
     <reason>%text
-The expression for the amount resulting
-from compound interest is,
+If Spock puts in Rs. P initially (the principal), 
+then at the \underline\text{end of 2 vulcan years}, he would
+get the following \underline\text{final amounts}.
+
 %
-\text{Amount}= 
-  \text{Principle}\left[1+\dfrac{\text{rate}}{100}\right]^\text{cycles} \\
+
+\begin{tabular}{|c|c|c|c|}
+\hline 
+&amp;  \text{Interest} &amp; \text{Final amount} &amp; \text{Equals} \\
+\hline 
+\text{Bank E} &amp; 3\% &amp; \underbrace{P\cdot\left( 1 + \frac{3}{100}\right)^8}_{(1.03)^8 = (1.03^4)^2 = (1.13)^2} &amp; 1.28P \\
+\hline 
+\text{Bank V}  &amp; 6\% &amp; P\cdot\left( 1+\frac{6}{100}\right)^2 &amp; 1.124P \\
+\hline
+\end{tabular}
 %text
-cycles = \text{times compounded}\times\text{no. of years} \\
-</reason>
-  </step>
-  <step>
-    <context>\begin{align}
-  A_\text{Solar-Earth}&amp;= P \left[1+\dfrac{3}{100}\right]^{4\times 1} \\
-  A_\text{Vulcan-National}&amp;= P \left[1+\dfrac{6}{100}\right]^{2\times 1}
-\end{align} \\
-%text
-Which is greater, $A_{Solar-Earth}$ or $A_{Vulcan-National}$?
-%
-</context>
-    <tex correct='true'>\begin{align}
-  A_\text{Solar-Earth}&amp;= P(1.1255) \,\surd  \\
-  A_\text{Vulcan-National}&amp;= P (1.1236)
-\end{align}
-</tex>
-    <tex>\begin{align}
-  A_\text{Solar-Earth}&amp;= P(1.0081)  \\
-  A_\text{Vulcan-National}&amp;= P (1.0036)
-\end{align}
-</tex>
-    <reason>\begin{align}
-  A_\text{Solar-Earth}&amp;= P \left[1+\dfrac{3}{100}\right]^{4\times 1} \\
-    &amp;= P(1.03)^4 = {\bf P(1.1255)} \\
-  A_\text{Vulcan-National}&amp;= P \left[1+\dfrac{6}{100}\right]^{2\times 1} \\
-    &amp;= P(1.06)^2=P(1.1236)
-\end{align} \\
-%text
-Commander Spock best invest on Earth!
+
+It is obvious that Spock's money will grow 
+more on Earth. And hence, he should invest 
+his money with \underline\text{Bank E}. 
 %</reason>
   </step>
   <choices>
-    <tex>\begin{align}
-  A_\text{Solar-Earth}&amp;= P(1.0081)  \,\surd \\
-  A_\text{Vulcan-National}&amp;= P (1.0036)
-\end{align}</tex>
-    <tex>\begin{align}
-  A_\text{Solar-Earth}&amp;= P(1.03)  \\
-  A_\text{Vulcan-National}&amp;= P (1.06) \,\surd
-\end{align} 
+    <tex>\text{Either. They will both give the same returns}.</tex>
+    <tex>\text{Bank V on Vulcan}.
 </tex>
-    <tex>\begin{align}
-  A_\text{Solar-Earth}&amp;= P(1.3399)  \\
-  A_\text{Vulcan-National}&amp;= P (1.6688) \,\surd
-\end{align}
-</tex>
-    <tex correct='true'>\begin{align}
-  A_\text{Solar-Earth}&amp;= P(1.1255) \,\surd \\
-  A_\text{Vulcan-National}&amp;= P (1.1236)
-\end{align}
+    <tex correct='true'>\text{Bank E on Earth}.</tex>
+    <tex>
 </tex>
   </choices>
 </question>
