@@ -95,8 +95,14 @@ Given that on the bad-weather day
 \underline\text{what is the speed on a normal day (x)}?
 \textbf{Note: }$350^2 = 122,500$
 %</context>
-    <tex correct='true'>x = 200\text{ km/h} </tex>
-    <tex>x = 150\text{ km/h}</tex>
+    <tex correct='true'>\begin{align}
+x &amp;= 200\text{ km/h}  \\
+\implies T_{\text{Normal}}&amp;= \frac{600 \text{ km}}{200\text{ km /h}} = 3\text{ hours}
+\end{align} </tex>
+    <tex>\begin{align}
+x &amp;= 150\text{ km/h}  \\
+\implies T_{\text{Normal}}&amp;= \frac{600 \text{ km}}{150\text{ km /h}} = 4\text{ hours}
+\end{align}</tex>
     <reason>%text
 We have an equation. We can solve for $x$. 
 
@@ -116,11 +122,16 @@ We have an equation. We can solve for $x$.
 %text
 
 $x=-150$ makes no sense. Hence $x=200$ km/h.
+
+And therefore, the \underline\text{time taken} 
+on a \underline\text{normal day} is 
+
+\[ \qquad\qquad T_{\text{Normal}} = \dfrac{600\text{ km}}{200\text{ km/h}} = 3\text{ hours}\]
 %</reason>
   </step>
   <choices>
     <tex>%text
-$6$ hours
+$4$ hours
 %</tex>
     <tex>%text
 $2$ hours
@@ -129,7 +140,7 @@ $2$ hours
 $3$ hours
 %</tex>
     <tex>%text
-$1.5$ hours
+$1\frac{1}{2}$ hours
 %</tex>
   </choices>
 </question>
