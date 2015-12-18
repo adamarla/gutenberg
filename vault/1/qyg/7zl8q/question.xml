@@ -3,138 +3,120 @@
   <statement>
     <tex>%text
 A small aircraft encounters bad weather a
-third of the way into a $600$ km flight and has
-to slow down by $50$ km/h. As a result, it
-lands $40$ minutes later than usual. How long
-does the aircraft take to fly the same route on
-a clear clear day?
+third of the way into a $600$ km flight and 
+has to slow down by $50$ km/h. As a result, 
+it lands $40$ minutes later than usual. 
+
+How long does the aircraft take to fly the
+same route on a clear day?
 %</tex>
   </statement>
   <step>
     <context>%text
-If the flight were broken down to 3 equal
-legs, as per the problem what would the
-speed of the aircraft be in each leg?
+If the \underline\text{speed} of the aircraft on a \underline\text{normal day} 
+be $x$ km/h, then which of the tables below 
+correctly shows the \underline\text{times} taken for the trip 
+on a normal day and on a bad-weather day?
 %</context>
-    <tex correct='true'>\begin{tabular}{c|c|c|c}
-  \text{Leg} &amp; 1^{st} &amp; 2^{nd} &amp; 3^{rd} \\
-  \hline
-  \text{Speed (km/h)} &amp; s &amp; s-50 &amp; s-50
-\end{tabular}</tex>
-    <tex>\begin{tabular}{c|c|c|c}
-  \text{Leg} &amp; 1^{st} &amp; 2^{nd} &amp; 3^{rd} \\
-  \hline
-  \text{Speed (km/h)} &amp; s &amp; s &amp; s-50
-\end{tabular}</tex>
+    <tex correct='true'>\begin{tabular}{|c|c|}
+\hline
+&amp; \text{Time taken (hours)} \\
+\hline
+\text{Normal day} &amp; \frac{600}{x} \\
+\hline 
+\text{Bad-weather day} &amp; \frac{600}{x} + \frac{2}{3} \\
+\hline
+\end{tabular} </tex>
+    <tex>\begin{tabular}{|c|c|}
+\hline
+&amp; \text{Time taken (hours)} \\
+\hline
+\text{Normal day} &amp; \frac{600}{x} \\
+\hline 
+\text{Bad-weather day} &amp; \frac{600}{x} + 40 \\
+\hline
+\end{tabular} </tex>
     <reason>%text
-As per the problem, bad weather hit after
-the first third of the flight had passed. And
-due to this, the aircraft had to reduce its
-regular cruising speed by $50$(km/h). If the
-regular speed of the aircraft during the first
-third of the flight path was ${\it s}$ km/h, then 
-during the second and last thirds it would 
-slow down to ${\it (s-50)}$ km/h.
+\underline\text{Use the same units of time throughout}. 
+
+40 minutes = $\frac{2}{3}$ of an hour. 
+
+Hence, if \underline\text{on a normal day} the aircraft flies 
+at $x$ km / hour, then the aircraft will take 
+$\dfrac{600}{x}$ hours for the trip. 
+
+But on the \underline\text{bad-weather day}, it will take 
+40 minutes longer than usual. 
+
+Which means, it will take $= \dfrac{600}{x} + \dfrac{2}{3}$ hours.
+%</reason>
+  </step>
+  <step swipe='false'>
+    <context>%text
+If the aircraft reduced it's speed by 
+$50$ km/h a third of the way through, then 
+\underline\text{is the following equation true?} 
+%</context>
+    <tex correct='true'>\begin{align}
+\frac{600}{x} + \frac{2}{3} &amp;= \frac{200}{x} + \frac{400}{x-50}
+\end{align} </tex>
+    <tex>\begin{align}
+\frac{600}{x} + \frac{2}{3} &amp;= \frac{200}{x-50} + \frac{400}{x}
+\end{align} </tex>
+    <reason>%text
+We have one expression \[ \left(\frac{600}{x}+\frac{2}{3}  \right) \] for
+the time taken \underline\text{on a bad-weather day}. 
+
+\underline\text{We need another expression} to form an 
+equation so that we can solve for $x$. And 
+we can get that from the table below. 
+
+%
+\begin{tabular}{|c|c|c|}
+\hline 
+&amp; \text{Distance (km)} &amp; \text{Time (hours)} \\
+\hline 
+\text{Normal Speed} &amp; 200 &amp; \frac{200}{x} \\
+\hline 
+\text{Slow Speed} &amp; 400 &amp; \frac{400}{x-50} \\
+\hline 
+\end{tabular} 
+
+%text
+
+Hence, the total time taken is also equal to 
+\[ \qquad \qquad T = \frac{200}{x} + \frac{400}{x-50} \] 
 %</reason>
   </step>
   <step>
     <context>%text
-If it takes the aircraft flying at ${\bf s}$ km/h, ${\bf m}$
-minutes to fly the $600$ km route on a clear 
-day, what is the correct expression for ${\bf m}$?
+Given that on the bad-weather day
+\[ \quad T = \frac{600}{x} + \frac{2}{3} = \frac{200}{x} + \frac{400}{x-50} \]
+\underline\text{what is the speed on a normal day (x)}?
+\textbf{Note: }$350^2 = 122,500$
 %</context>
-    <tex correct='true'>m=\dfrac{600\times 60}{s}=\dfrac{3600}{s}</tex>
-    <tex>m=\dfrac{600}{s\times 60}=\dfrac{10}{s}</tex>
+    <tex correct='true'>x = 200\text{ km/h} </tex>
+    <tex>x = 150\text{ km/h}</tex>
     <reason>%text
-Speed is defined as distance covered over
-time elapsed. Using this relation we can
-connect speed, distance and time, taking 
-into account the units for each of them,
+We have an equation. We can solve for $x$. 
+
 %
 \begin{align}
-  \overbrace{\dfrac{m(min)}{60(min/h)}}^\text{time}
-    &amp;=\dfrac{\overbrace{600(km)}^\text{distance}}
-                {\underbrace{s(km/h)}_\text{speed}} \\
-  \implies m(min)&amp;=\dfrac{600 (\st{km})\times 60 (min/\st{h})}
-                                       {s (\st{km/h})} \\
-    &amp;=\dfrac{600\times 60 (min)}{s}=\dfrac{3600}{s}(min)
-\end{align}
-</reason>
-  </step>
-  <step>
-    <context>%text
-On a clear day the aircraft flies at $s$ km/h
-taking $\frac{3600}{s}$ minutes to complete the flight.
-What is the correct expression for the $40$ 
-minute delay due to which the flight had to 
-go $50$ km/h slower in the last two-third?
-%</context>
-    <tex correct='true'>40=\left(\dfrac{200\times 60}{s}
-  +\dfrac{400\times 60}{s-50}\right)-\dfrac{3600}{s}</tex>
-    <tex>40=\left(\dfrac{200\times 60}{s-50}
-  +\dfrac{400\times 60}{s-50}\right)-\dfrac{3600}{s}</tex>
-    <reason>%text
-On the bad weather day, if the aircraft
-took $t_1$ minutes for the first one-third of
-the journey and $t_2$ minutes for the rest
-then,
-%
+\frac{600}{x} + \frac{2}{3} &amp;= \frac{200}{x} + \frac{400}{x-50} \\
+\frac{1800 + 2x}{3x} &amp;= \frac{200\cdot (x-50) + 400 x}{x\cdot (x-50)} \\
+(1800 + 2x) \cdot (x-50) &amp;= 3\cdot (600x - 10,000) \\
+\text{or }2x^2 - 100x - 60,000 &amp;= 0 \\
+\implies x^2 - 50x - 30,000 &amp;= 0 
+\end{align}  \\
 \begin{align}
-  t_1 &amp;= \dfrac{200 (km)}{\dfrac{s}{60}(km/min)}
-    =\dfrac{200\times 60}{s} (min) \\
-  t_2 &amp;=\dfrac{400 (km)}{\dfrac{(s-50)}{60}(km/min)}
-    =\dfrac{400\times 60}{s-50}(min)
-\end{align} \\
+\therefore x &amp;= \underbrace{\frac{50 \pm \sqrt{(-50)^2 -4\cdot(-30,000)}}{2}}_
+{x = \frac{-b + \sqrt{b^2-4ac}}{2a}}\\
+\implies x &amp;= \frac{50 \pm 350}{2} \text{ or } x = 200, -150 
+\end{align} 
 %text
-Combining $t_1$ and $t_2$ and subtracting from
-the regular journey time we get,
-%
-\begin{align}
-  \overbrace{40 (min)}^\text{delay}&amp;=
-    \overbrace{\dfrac{200\times 60}{s}}^\text{    time \\ first-third}
-      +\overbrace{\dfrac{400\times 60}{s-50}}^\text{      time \\ last two-third}
-      -\overbrace{\dfrac{3600}{s}}^\text{usual time}     
-\end{align}</reason>
-  </step>
-  <step>
-    <context>40=\left(\dfrac{200\times 60}{s}
-  +\dfrac{400\times 60}{s-50}\right)-\dfrac{3600}{s} \\
-%text
-What is/are the value(s) of $s$, if $s$ represents 
-speed of the aircraft on a clear day?
-%  </context>
-    <tex correct='true'>s=200 (km/h)</tex>
-    <tex>s=200(km/h), -150 (km/h)</tex>
-    <reason>\begin{align}
-  &amp;40=\left(\dfrac{200\times 60}{s}
-    +\dfrac{400\times 60}{s-50}\right)-\dfrac{3600}{s} \\
-  \implies &amp; \dfrac{40}{60}=\dfrac{200}{s}-\dfrac{600}{s}+\dfrac{400}{s-50} \\
-  \implies &amp; s^2-50s-600 \left(50\right)=0 \\
-  \implies &amp; s^2+150s-200s-(200\times 150)=0 \\
-  \implies &amp; (s+150)(s-200)=0 \\
-  \implies &amp; s=-150, s=200
-\end{align} \\
-%text
-Since $s$ represents the speed of the plane, we
-reject the negative value. Therefore the speed
-of the plane is $200$ km/h.
+
+$x=-150$ makes no sense. Hence $x=200$ km/h.
 %</reason>
-  </step>
-  <step>
-    <context>%text
-Assuming a clear day, how long would the
-aircraft take to cover $600$ km while flying at
-$200$ km/h?
-%</context>
-    <tex correct='true'>%text
-$3$ hours.
-%</tex>
-    <tex>%text
-$6$ hours.
-%</tex>
-    <reason>\begin{align}
-  t=\dfrac{600 (km)}{200 (km/h)}=3(h)
-\end{align}</reason>
   </step>
   <choices>
     <tex>%text
