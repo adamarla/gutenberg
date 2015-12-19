@@ -14,8 +14,9 @@ of the plane?
     <context>%text
 If O is the point of observation, A the takeoff
 point and B and C the balloon's positions at 
-$10$ AM and $10:10$ AM respectively, is the 
-following diagram accurate?
+$10$ AM and $10:10$ AM respectively, does the 
+following diagram depict the flight path of the 
+balloon?
 %</context>
     <image correct='true'>1a.svg</image>
     <image>1b.svg</image>
@@ -27,8 +28,9 @@ $300$ mts.
   </step>
   <step>
     <context>%text
-If $\tan 30^\circ=\dfrac{BA}{OA}$, $\tan 60^\circ=\dfrac{CA}{OA}$ and
-$OA=300m$, what is length $BC$?
+Referring to the diagram in the prior step, if
+$\tan 30^\circ=\frac{BA}{OA}$, $\tan 60^\circ=\frac{CA}{OA}$ and $OA=300m$, 
+what is length $BC$?
 %</context>
     <tex correct='true'>\dfrac{600}{\sqrt{3}}m</tex>
     <tex>\dfrac{300}{\sqrt{3}}m</tex>
