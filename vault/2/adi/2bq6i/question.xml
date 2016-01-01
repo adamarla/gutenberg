@@ -1,51 +1,71 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{If the function $f:R \rightarrow R$ be defined by} \\
-\text{$f(x)=2x-3$ and $g:R\rightarrow R$ by $g(x)=x^3+5$,} \\
-\text{then find the value of $(fog)^{-1}(x)$}.</tex>
+    <tex>\text{If the function $f:\mathbb{R} \rightarrow \mathbb{R}$ be defined by} \\
+\text{$f(x)=2x-3$ and $g:\mathbb{R}\rightarrow \mathbb{R}$ by $g(x)=x^3+5$,} \\
+\text{then find the value of $(f\circ g)^{-1}\left(x\right)$}.</tex>
   </statement>
   <step>
-    <context>\begin{align}
-  f: R\rightarrow R, \, f(x) = 2x-3 \\
-  g: R\rightarrow R, \, g(x) = x^3+5  
-\end{align} \\
-\text{then $fog(x)$ is}</context>
-    <tex correct='true'>fog(x)=2x^3-7</tex>
-    <tex>fog(x)=2x^4-3x^3+10x-15</tex>
-    <reason>f(x) = 2x-3 \\ 
-g(x) = x^3+5  \\
-fog(x)\text{ is shorthand for }f(g(x)) \\
+    <context>%text
+What is $(f\circ g)\left(x\right)$ given that 
+%
+\begin{align}
+  f: \mathbb{R}\rightarrow \mathbb{R} &amp;= 2x-3 \\
+  g: \mathbb{R}\rightarrow \mathbb{R} &amp;= x^3+5  
+\end{align} </context>
+    <tex correct='true'>(f\circ g)\left(x \right)=2x^3 + 7</tex>
+    <tex>(f\circ g)\left(x \right)=2x^4-3x^3+10x-15</tex>
+    <reason>%text
+\underline{(f\circ g)\left(x \right)\text{ is shorthand for }f\left(g\left((x\right)\right)}
+And hence, 
+%
+
 \begin{align}
   f(x) &amp;= 2x-3 \\
-  \therefore f(g(x)) &amp;= 2(g(x))-3 \\
+  \implies (f\circ g)\left(x\right) &amp;= f(g(x)) = 2(g(x))-3 \\
     &amp;= 2(x^3+5)-3 \\
     &amp;= 2x^3+10-3 \\
-  \implies fog(x) &amp;= 2x^3+7
+  \implies (f\circ g)\left(x \right) &amp;= 2x^3+7
 \end{align}
 </reason>
   </step>
   <step>
-    <context>\text{If }fog(x)=y=2x^3+7,
-\text{ then what is }fog^{-1}(x)?
+    <context>%text
+If \[ y = (f\circ g)\left( x\right) = 2x^3 + 7\], then what is 'x' in
+terms of 'y'? And therefore, what is $(f\circ g)^{-1}\left(x\right)$?
+%
 </context>
-    <tex correct='true'>x=\sqrt[3]{\dfrac{y-7}{2}}</tex>
-    <tex>x=2y^3+7</tex>
-    <reason>\begin{align}
-  &amp;\quad y=2x^3+7 \\
-  \implies&amp; x=\sqrt[3]{\dfrac{y-7}{2}}
-\end{align} \\
-fog(x)=y \implies x = fog^{-1}(y) \\
+    <tex correct='true'>(f\circ g)^{-1}\left(x\right) = \sqrt[3]\dfrac{x-7}{2}</tex>
+    <tex>(f\circ g)^{-1}\left(x\right)=\dfrac{1}{(f\circ g)(x)} = \dfrac{1}{2x^3+7}</tex>
+    <reason>%text
+If $y = f(x)$, then $x = f^{-1}(y) \left[ \neq \dfrac{1}{f(y)} \right] $. 
+
+And hence, 
+
+%
+
 \begin{align}
-  &amp;fog^{-1}(y) = \sqrt[3]{\dfrac{y-7}{2}} \\
-  \implies &amp;fog^{-1}(x)=\sqrt[3]{\dfrac{x-7}{2}}
-\end{align}
+y &amp;= \overbrace{(f\circ g)\left( x\right) = 2x^3 + 7}^{\text{x is the independent variable}} \\
+\implies x  &amp;= \underbrace{(f\circ g)^{-1}(y) = \sqrt[3]\dfrac{y-7}{2}}
+_{\text{y is the independent variable}}
+\end{align} \\
+
+%text
+
+But \underline\text{the convention} is to write the independent 
+variable as x and the dependent variable as y.  
+
+And hence, 
+\[ \qquad \qquad (f\circ g)^{-1}(y) = \sqrt[3]\dfrac{y-7}{2} \]
+
+\underline\text{can be re-written as} 
+\[ \qquad \qquad \underbrace{(f\circ g)^{-1}(x) = \sqrt[3]\dfrac{x-7}{2}}_{\text{By convention}}\]
 </reason>
   </step>
   <choices>
-    <tex>2x^3-7</tex>
-    <tex>\sqrt[3]{\dfrac{y-7}{2}} </tex>
-    <tex>\dfrac{1}{2x^3-7}</tex>
+    <tex>2x^3 + 7</tex>
+    <tex>\sqrt[3]\dfrac{x + 7}{2}</tex>
+    <tex>\dfrac{1}{2x^3 + 7}</tex>
     <tex correct='true'>\sqrt[3]{\dfrac{x-7}{2}}</tex>
   </choices>
 </question>
