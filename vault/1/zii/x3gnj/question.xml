@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the equation of the tangent to the 
+curve \[ x = \sin 3t, y = \cos 2t \] at \[ t = \frac\pi{4} \]
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+Your friend says that the required tangent 
+is a line that satisfies the following 
+condition. \underline\text{Is your friend correct}? 
+%</context>
+    <tex correct='true'>%text
+The tangent is a line that passes through 
+\[ A = \underbrace{\left( \sin 3t, \cos 2t \right)}_{t=\frac\pi{4}} \] and has slope \[= \frac{dy}{dx} \]
+%</tex>
+    <tex>%text
+The tangent is a line that passes through
+\[ A = \underbrace{\left( \sin 3t, \cos 2t \right)}_{t=0}\text{ and } B= \underbrace{\left( \sin 3t, \cos 2t \right)}_{t=\frac\pi{4}}\]
+%</tex>
+    <reason>%text
+Both $x$ and $y$ have been defined in terms of 
+a third parameter (t). Hence, what we have 
+is a \underline\text{parametric curve}. 
+
+It is still plotted in the $x-y$ plane. But all 
+calculations are done in terms of t. 
+
+Now, given $x=f(t)$ and $y=g(t)$, we can 
+find the point $A \left(t=\frac\pi{4}\right)$ through which the 
+tangent passes.
+
+And we can also find $\frac{dy}{dx}= $ tangent's slope.. 
+
+That is all that we need to find the equation 
+of the tangent. 
+%</reason>
+  </step>
+  <step>
+    <context>%text
+Given $x=f(t)$ and $y=g(t)$, which of the 
+following is true at \underline{$t=\frac\pi{4}$}?
+%</context>
+    <tex correct='true'>\begin{tabular}{|c|c|c|}
+\hline
+\text{When} &amp; \text{Point (x,y)} &amp; \text{Tangent's Slope (m)} \\ 
+\hline 
+t=\frac\pi{4} &amp; \left( \frac{1}{\sqrt{2}}, 0\right) &amp; \frac{2\sqrt{2}}{3} \\
+\hline
+\end{tabular}</tex>
+    <tex>\begin{tabular}{|c|c|c|}
+\hline
+\text{When} &amp; \text{Point (x,y)} &amp; \text{Tangent's Slope (m)} \\ 
+\hline 
+t=\frac\pi{4} &amp; \left( \frac{1}{\sqrt{2}}, 0\right) &amp; - \frac{2\sqrt{2}}{3} \\
+\hline
+\end{tabular}</tex>
+    <reason>%text
+If the tangent is for when $t=\frac\pi{4}$, then it 
+will pass through 
+\[ \qquad A = \left( \sin\frac{3\pi}{4}, \cos \frac{2\pi}{4} \right) = \left( \frac{1}{\sqrt{2}}, 0\right) \]
+
+\underline\text{As for the tangent's slope}
+
+%
+
+\begin{align}
+\frac{dy}{dx} &amp;= \dfrac{\frac{dy}{dt}}{\frac{dx}{dt}} = 
+\dfrac{\frac{d}{dt}\cos 2t}{\frac{d}{dt}\sin 3t} = \dfrac{-2\sin 2t}{3\cos 3t} \\
+\therefore \left[ \frac{dy}{dx} \right]_{t=\frac\pi{4}} &amp;= 
+\left[ \dfrac{-2\sin 2t}{3\cos 3t}\right]_{t=\frac\pi{4}} = \dfrac{-2\sin\frac{2\pi}{4}}{3\cos\frac{3\pi}{4}}\\
+&amp;= \dfrac{-2}{-\dfrac{3}{\sqrt{2}}} = \dfrac{2\sqrt{2}}{3}
+\end{align} </reason>
+  </step>
+  <step>
+    <context>%text
+Given the slope (m) and the point A it passes
+through, \underline\text{what will the tangent's equation be}?
+%</context>
+    <tex correct='true'>3y = 2\sqrt{2} x - 2 </tex>
+    <tex>y = 2\sqrt{2}x + \dfrac{2}{3}</tex>
+    <reason>%text
+The equation of the tangent will be
+%
+
+\begin{align}
+\dfrac{y - 0}{x-\frac{1}{\sqrt{2}}} &amp;= \dfrac{2\sqrt{2}}{3} \\
+\implies 3y &amp;= 2\sqrt{2}\cdot\left( x - \frac{1}{\sqrt{2}}\right) = 2\sqrt{2}x - 2 
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>3y = 2\sqrt{2} x - 2 </tex>
+    <tex>2\sqrt{2}y = 3x -2 </tex>
+    <tex>y = 2\sqrt{2}x + \dfrac{2}{3}</tex>
+    <tex>2y = 3\sqrt{2} x + 2 </tex>
+  </choices>
+</question>
