@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Solve the differential equation 
+\[ \qquad \cos^2 x\cdot \frac{dy}{dx} + y = \tan x \]
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+We will tell you that \[ \cos^2 x \cdot \frac{dy}{dx} + y = \tan x\]
+can be re-written as 
+\[ \qquad\quad \frac{d}{dx}\left[ f(x)\cdot y \right] = \tan x \cdot \sec^2 x \cdot e^{\tan x}\]
+
+\underline\text{But for what $f(x)$ will this be true}?
+%
+ </context>
+    <tex correct='true'>f(x) = e^{\tan x}</tex>
+    <tex>f(x) = e^{\sec x}</tex>
+    <reason>%text
+$f(x)$ is what you know as the \underline\text{integrating}
+\underline\text{factor}. It allows us to \underline\text{re-write} a linear 
+differential equation so that it can be 
+solved easily. Now, 
+%
+\begin{align}
+\cos^2 x \cdot\frac{dy}{dx} + y  &amp;= \tan x \\ 
+\implies \frac{dy}{dx} + \underbrace{\sec^2 x}_{P(x)}\cdot y &amp;= 
+\underbrace{\tan x\cdot \sec^2 x}_{Q(x)} 
+\end{align} 
+%text
+
+Therefore, the integrating factor $f(x)$ is 
+\[ \qquad e^{\int P(x)\cdot dx} = e^{\int\sec^2x\cdot dx} = e^{\tan x }\]
+
+And when we \underline\text{multiply both sides} with $f(x)$
+
+%
+\begin{align}
+e^{\tan x}\frac{dy}{dx} + e^{\tan x}\cdot\sec^2 x\cdot y &amp;= e^{\tan x}\cdot\tan x\cdot \sec^2 x \\
+\text{Also, note that }\frac{d}{dx}e^{\tan x} &amp;= e^{\tan x}\cdot\sec^2 x \\
+\therefore \frac{d}{dx}\left[ e^{\tan x}\cdot y \right] &amp;= e^{\tan x}\cdot\tan x\cdot \sec^2 x 
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\begin{align}
+\text{Given that }\frac{d}{dx}\left[ e^{\tan x}\cdot y \right] &amp;= e^{\tan x}\cdot\tan x\cdot \sec^2 x \\
+\implies e^{\tan x}\cdot y &amp;= \int e^z\cdot z\cdot dz
+\end{align} 
+%text
+
+then \underline\text{what is z in the above equation}? 
+%</context>
+    <tex correct='true'>z = \tan x </tex>
+    <tex>z = e^{\tan x} </tex>
+    <reason>\begin{align}
+\frac{d}{dx} (e^{\tan x}\cdot y) &amp;= e^{\tan x}\cdot\sec^2 x \cdot \tan x \\ 
+\implies \int d (e^{\tan x}\cdot y) &amp;= \int e^{\tan x}\cdot\sec^2 x \cdot \tan x \cdot dx \\
+\implies e^{\tan x}\cdot y &amp;= 
+\int e^{\tan x}\cdot\sec^2 x \cdot \tan x \cdot dx \\
+\text{Now, if }z = \tan x &amp;\text{ then }dz = \sec^2 x \cdot dx \\
+\therefore e^{\tan x}\cdot y &amp;= \int e^z\cdot z\cdot dz
+\end{align} </reason>
+  </step>
+  <step>
+    <context>%text
+What will \[ \int e^z\cdot z\cdot dz \] evaluate to in terms
+of x? And therefore, \underline\text{what will y be}? 
+%</context>
+    <reason>\begin{align}
+\int e^z\cdot z\cdot dz &amp;= \underbrace{z\int e^z\cdot dz - \int\left[ \frac{d}{dz}z\int e^z\cdot dz \right]dz}_{\text{Integration by parts}}\\
+&amp;= z\cdot e^z - \int \left(\int e^z\cdot dz\right)\cdot dz \\
+&amp;= z\cdot e^z - \int e^z\cdot dz = (z-1)\cdot e^z + C  \\
+&amp;= \underbrace{(\tan x - 1)\cdot e^{\tan x}}_{z = \tan x} + C \\
+\end{align} 
+%text
+
+And given that 
+\[ \qquad e^{\tan x}\cdot y = \int e^z\cdot z\cdot dz = (\tan x - 1)\cdot e^{\tan x}\]
+we can say that 
+\[ \qquad y = (\tan x - 1) + \frac{C}{e^{\tan x}}  \]
+%</reason>
+  </step>
+  <choices>
+    <tex>y = e^{\tan x}\cdot (\tan x-1) + C </tex>
+    <tex correct='true'>y = (\tan x - 1) + \frac{C}{e^{\tan x}} </tex>
+    <tex>y = (\tan x - 1) + C\cdot e^{\tan x}</tex>
+    <tex>y = e^{\tan x}\cdot (\tan x + 1) + C </tex>
+  </choices>
+</question>
