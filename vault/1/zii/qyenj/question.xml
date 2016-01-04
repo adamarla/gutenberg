@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Evaluate \[ \int_0^1\frac{dx}{1+x^2} \]
+%</tex>
+  </statement>
+  <step swipe='false'>
+    <context>%text
+Is the following correct? 
+%</context>
+    <tex correct='true'>\begin{align}
+\int\frac{dx}{1+x^2} &amp;= \tan^{-1}x + C \\ 
+\therefore \int_0^1\frac{dx}{1+x^2} &amp;= \left[ \tan^{-1} x \right]_0^1 = \frac\pi{4} 
+\end{align} </tex>
+    <tex>\begin{align}
+\int\frac{dx}{1+x^2} &amp;= \cot^{-1}x + C \\ 
+\therefore \int_0^1\frac{dx}{1+x^2} &amp;= \left[ \cot^{-1} x \right]_0^1 = \frac\pi{4} 
+\end{align} </tex>
+    <reason>%text
+We have simply used the following two
+\underline\text{standard results}
+
+%
+\begin{align}
+   \int\frac{dx}{1+x^2} &amp;= \tan^{-1} x + C \\ 
+   \int_a^b f(x)\cdot dx &amp;= \left[ F(x) \right]_a^b = F(b) - F(a) \\
+   \therefore \int_0^1\frac{dx}{1+x^2} &amp;= \left[ \tan^{-1} x\right]_0^1 \\
+   &amp;= \tan^{-1}1 - \tan^{-1} 0 = \frac\pi{4}
+\end{align} </reason>
+  </step>
+  <choices>
+    <tex correct='true'>\frac\pi{4}</tex>
+    <tex>\frac\pi{2}</tex>
+    <tex>1</tex>
+    <tex>\frac\pi{8}</tex>
+  </choices>
+</question>
