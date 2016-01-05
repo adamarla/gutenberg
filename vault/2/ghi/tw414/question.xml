@@ -1,0 +1,71 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the co-factor of $a_{12}$ in the following:
+%
+\left\vert\begin{array}{rrr}
+  2 &amp; -3 &amp; 5 \\ 6 &amp; 0 &amp; 4 \\ 1 &amp; 5 &amp; -7
+\end{array}\right\vert</tex>
+  </statement>
+  <step>
+    <context>%text
+What is the cofactor of $a_{12}$ in
+%
+\left\vert\begin{array}{rrr}2 &amp; {\bf -3} &amp; 5 \\ 6 &amp; 0 &amp; 4 \\ 1 &amp; 5 &amp; -7\end{array}\right\vert? \\
+
+
+</context>
+    <tex>\left\vert\begin{array}{rr}
+  6 &amp; 4 \\ 1 &amp; -7
+\end{array}\right\vert=(-42-4)=-46</tex>
+    <reason>%text
+Co-factor of $a_{mn}$ is $(-1)^{m+n}$ times the \underline{minor}
+obtained by deleting the $n^{th}$ row and $m^{th}col.
+%
+
+\begin{align}
+  \text{Minor ($a_{12}$)}
+    &amp;=\left\vert\begin{array}{rrr}\st{2} &amp; -\st{3} &amp; \st{5} \\ 
+    6 &amp; \st{0} &amp; 4 \\ 1 &amp; \st{5} &amp; -7\end{array}\right\vert \\
+    &amp;= \left\vert\begin{array}{rr}
+    6 &amp; 4 \\ 1 &amp; -7\end{array}\right\vert=-42-4=-46 \\
+  \text{Co-factor($a_{12}$)}&amp;=(-1)^{(1+2)}\times\text{Minor ($a_{12}$)} \\
+    &amp;=-1\times 46=-46
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>%text
+$\underline{\text{Bonus Question}}$: If in a determinant $A$, a row
+(or column) is multiplied by its corresponding
+co-factors, what is the result?
+%
+</context>
+    <tex correct='true'>|A|</tex>
+    <tex>0</tex>
+    <reason>\text{If }A=\left\vert\begin{array}{ccc}
+  a_1 &amp; a_2 &amp; a_3 \\ b_1 &amp; b_2 &amp; b_3 \\ c_1 &amp; c_2 &amp; c_3
+\end{array}\right\vert \\
+%text
+then $|A|=a_1 CF(a_1)+a_2 CF(a_2)+a_3 CF(a_3)$
+where $CF(a_n)$ indicates co-factor $a_n$.
+
+If however, a row (or column) is multiplied
+by the co-factors of a different row, the result
+is zero. For e.g.,
+%
+\begin{align}
+  &amp;a_1CF(b_1)+a_2CF(b_2)+a_3CF(b_3) \\
+  &amp;={\small -a_1(a_2c_3-a_3c_2)+a_2(a_1c_3-a_3c_1)-a_3(a_1c_2-c_1a_2)} \\
+  &amp;=0
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex>46</tex>
+    <tex correct='true'>-46</tex>
+    <tex>-3</tex>
+    <tex>3</tex>
+  </choices>
+</question>
