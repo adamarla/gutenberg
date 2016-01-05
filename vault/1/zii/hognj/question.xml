@@ -1,0 +1,111 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+A pair of dice is thrown 4 times. If getting a 
+doublet is considered a success, then find
+the probability distribution of successes. 
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+\textbf{Getting a doublet}
+The figure below shows the two dice after 
+being thrown. If you can see only one die, 
+then what is the \underline\text{probability you got a doublet}?
+
+%</context>
+    <image correct='true'>right.svg</image>
+    <image>wrong.svg</image>
+    <reason>%text
+Think of it like this. You roll the two dice. 
+But you see the number on Dice I before 
+you see the number on Dice II. 
+
+Dice I will have some number (1-6) on it. 
+
+But to get a doublet, Dice II must also have 
+the same number.
+
+Which means the probability of getting a 
+doublet is $=p = \frac{1}{6}$
+%</reason>
+  </step>
+  <step>
+    <context>%text
+\textbf{Probability of getting 2 doublets}
+Shown below is \underline\text{one way} of getting two 
+doublets in 4 rounds of throwing. But in which 
+of the two figures  has the probability of 
+getting two doublets been written correctly?
+%</context>
+    <image correct='true'>right-2.svg</image>
+    <image>wrong-2.svg</image>
+    <reason>%text
+The probability of getting doublets in 
+\underline\text{exactly rounds \#2 and \#4} is 
+\[\qquad \quad p^2\cdot q^2 \text{ where } q = (1-p)  \]
+
+\underline\text{But we want two doublets total} - not 
+just in rounds 2 and 4. Which means that 
+we are ok with getting the doublets in 
+rounds (1,2) or (1,3) or (1,4) etc.
+
+Hence, the \underline\text{total probability} would be 
+\[ \qquad \quad ^4C_2\cdot p^2\cdot q^2 \] 
+%</reason>
+  </step>
+  <step>
+    <context>%text
+\textbf{Probabilities of getting R doublets $(R\leq 4)$}
+Based on what we learned from Step 2, is 
+the \underline\text{following distribution table correct}? 
+%</context>
+    <tex correct='true'>\begin{tabular}{|c|c|}
+\hline 
+\text{\# of doublets} &amp; \text{Probability} \\
+\hline 
+0 &amp; \frac{625}{1296} \\
+\hline 
+1 &amp; \frac{125}{324} \\
+\hline 
+2 &amp; \frac{25}{216} \\
+\hline 
+3 &amp; \frac{5}{324} \\
+\hline 
+4 &amp; \frac{1}{1296} \\
+\hline 
+\end{tabular} </tex>
+    <reason>%text
+In Step 2, we learned how to find the 
+\underline\text{probability of getting 2 doublets}. 
+
+But the \underline\text{probability of getting R doublets}
+$(R\leq 4)$ is simply 
+
+\[ \qquad \qquad P(R) = ^4C_R \cdot p^R \cdot q^{4-R} \] 
+
+Note that $q = 1-p = \frac{5}{6}$ in the above equation. 
+
+And hence, the \underline\text{probability distribution} 
+will be as follows
+
+%
+
+\begin{tabular}{|c|c|c|}
+\hline 
+\text{\# of doublets} &amp; \text{Prob. Expr.} &amp; \text{Probability} \\
+\hline 
+0 &amp; ^4C_0\cdot p^0\cdot q^4 &amp; \frac{625}{1296} \\
+\hline 
+1 &amp; ^4C_1 \cdot p^1\cdot q^3 &amp; \frac{125}{324} \\
+\hline 
+2 &amp; ^4C_2 \cdot p^2 \cdot q^2 &amp; \frac{25}{216} \\
+\hline 
+3 &amp; ^4C_3\cdot p^3\cdot q^1 &amp; \frac{5}{324} \\
+\hline 
+4 &amp; ^4C_4 \cdot p^4\cdot q^0 &amp; \frac{1}{1296} \\
+\hline 
+\end{tabular} </reason>
+  </step>
+</question>
