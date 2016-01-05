@@ -1,0 +1,41 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Evaluate:}
+\left\vert \begin{array}{cc}
+  a+\imath b &amp; c+\imath d \\ -c+\imath d &amp; a-\imath b
+\end{array}\right\vert</tex>
+  </statement>
+  <step>
+    <context>\left\vert \begin{array}{cc}
+  a+\imath b &amp; c+\imath d \\ -c+\imath d &amp; a-\imath b
+\end{array}\right\vert \\
+%text
+Is the following expansion of the above
+determinant correct?
+%</context>
+    <tex correct='true'>-(-c+\imath d)(c+\imath d)+(a+\imath b)(a-\imath b)</tex>
+    <reason>\left\vert\begin{array}{cc}
+  a_1 &amp; a_2 \\ b_1 &amp; b_2
+\end{array}\right\vert=a_1b_2-a_2b_1 \\
+</reason>
+  </step>
+  <step>
+    <context>%text
+Is the expansion below correct?
+%</context>
+    <tex correct='true'>(a+\imath b)(a-\imath b)-(-c+\imath d)(c+\imath d) \\
+\qquad=a^2+b^2+d^2+c^2</tex>
+    <reason>\begin{align}
+     &amp; (a+\imath b)(a-\imath b)-(-c+\imath d)(c+\imath d) \\
+  =&amp; a^2+b^2-(-d^2-c^2) \qquad(\because\imath^2=-1) \\
+  =&amp; a^2+b^2+d^2+c^2
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>-a^2+b^2+c^2+d^2</tex>
+    <tex correct='true'>a^2+b^2+c^2+d^2</tex>
+    <tex>-a^2+b^2-c^2+d^2</tex>
+    <tex>a^2-b^2+c^2-d^2</tex>
+  </choices>
+</question>
