@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the value of $x$ and $y$ if:
+%
+2\left[\begin{array}{cc} 1 &amp; 3 \\ 0 &amp; x \end{array}\right]
++\left[\begin{array}{cc} y &amp; 0 \\ 1 &amp; 2 \end{array}\right]
+=\left[\begin{array}{cc} 5 &amp; 6 \\ 1 &amp; 8 \end{array}\right]</tex>
+  </statement>
+  <step>
+    <context>%text
+Is this the correct outcome of $2\left[\begin{array}{cc} 1 &amp; 3 \\ 0 &amp; x \end{array}\right]?$
+%
+</context>
+    <tex>\left[\begin{array}{cc} 2 &amp; 6 \\ 0 &amp; x \end{array}\right]
+</tex>
+    <reason>%text
+Scalar multiplication of a matrix by $\lambda$, implies
+each entry of the matrix be multiplied by $\lambda$.
+%
+\therefore 2\left[\begin{array}{cc} 1 &amp; 3 \\ 0 &amp; x \end{array}\right]
+=\left[\begin{array}{cc} 2 &amp; 6 \\ 0 &amp; 2x \end{array}\right]</reason>
+  </step>
+  <step>
+    <context>%text
+Is this the correct outcome of
+%
+\left[\begin{array}{cc} 2 &amp; 6 \\ 0 &amp; 2x \end{array}\right]
++\left[\begin{array}{cc} y &amp; 0 \\ 1 &amp; 2 \end{array}\right]?
+</context>
+    <tex correct='true'>\left[\begin{array}{cc} 2+y &amp; 6 \\ 1 &amp; 2x+2 \end{array}\right]</tex>
+    <reason>%text
+During matrix addition, the corresponding 
+elements of the two matrices are added. 
+Therefore the two matrices being added 
+must have the \underline{\text{same number of rows and}}
+\underline{\text{columns}}.
+%
+\left[\begin{array}{cc} 2 &amp; 6 \\ 0 &amp; 2x \end{array}\right]
++\left[\begin{array}{cc} y &amp; 0 \\ 1 &amp; 2 \end{array}\right]
+=\left[\begin{array}{cc} 2+y &amp; 6 \\ 1 &amp; 2x+2 \end{array}\right]</reason>
+  </step>
+  <step>
+    <context>\text{If }\left[\begin{array}{cc} 2+y &amp; 6 \\ 1 &amp; 2x+2 \end{array}\right]
+=\left[\begin{array}{cc} 5 &amp; 6 \\ 1 &amp; 8 \end{array}\right] \\
+%text
+are the following values for $x$ and $y$ correct?
+%
+</context>
+    <tex correct='true'>x=3, y=3</tex>
+    <tex>x=2, y=4</tex>
+    <reason>%text
+If two matrices are equal, their corresponding
+elements must be equal AND they must have
+the same number of rows and columns.
+%
+\therefore \left[\begin{array}{cc} 2+y &amp; 6 \\ 1 &amp; 2x+2 \end{array}\right]
+  =\left[\begin{array}{cc} 5 &amp; 6 \\ 1 &amp; 8 \end{array}\right] \\
+\implies
+\begin{align}
+  2+y=5 &amp;\implies y=3 \\
+  2x+2=8 &amp;\implies x=3
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>x=3,y=3</tex>
+    <tex>x=2,y=4</tex>
+    <tex>x=6,y=4</tex>
+    <tex>x=4,y=5</tex>
+  </choices>
+</question>
