@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+For what value of $\lambda$ are the vectors
+$\ora{a}=\vector{2}{\lambda}{1}$ and $\ora{b}=\vector{1}{-2}{3}$
+perpendicular to each other?
+%</tex>
+  </statement>
+  <step>
+    <context>\text{If }\ora{v_1}=\vector{a_1}{a_2}{a_3},
+\ora{v_2}=\vector{b_1}{b_2}{b_3} \\
+%text
+and $\ora{v_1}\perp\ora{v_2}$, then is the following correct?
+%
+</context>
+    <tex correct='true'>a_1b_1+a_2b_2+a_3b_3=0</tex>
+    <reason>%text
+If two vectors are perpendicular, their dot 
+product is zero. $\ora{v_1}\perp\ora{v_2}\implies\ora{v_1}\cdot\ora{v_2}=0$
+%
+\begin{align}
+  \text{If }\ora{v_1}&amp;=\vector{a_1}{a_2}{a_3},
+    \ora{v_2}=\vector{a_2}{b_2}{c_2} \\
+  \ora{v_1}\cdot \ora{v_2}&amp;=\left(\vector{a_1}{a_2}{a_3}\right)\cdot
+     \left(\vector{b_1}{b_2}{b_3}\right) \\
+   \therefore 0 &amp;=a_1b_2+a_2b_2+a_3b_3
+\end{align} \\
+%text
+tip: prove $\ora{v_1}\cdot\ora{v_2}=a_1b_1+a_2b_2+a_3b_3$ by
+yourself.
+%</reason>
+  </step>
+  <step>
+    <context>\text{If }\ora{a}=\vector{2}{\lambda}{1}, \ora{b}=\vector{1}{-2}{3} \\
+\text{and }\ora{a}\perp\ora{b}, \text{ what is }\lambda?</context>
+    <tex>\lambda=-1</tex>
+    <reason>\begin{align}
+  &amp;\ora{a}=\vector{2}{\lambda}{1}, \ora{b}=\vector{1}{-2}{3} \\
+  &amp;\ora{a}\cdot\ora{b}=2-2\lambda+3=0 \\
+  \therefore &amp; 2-2\lambda+3=0 \text{ or }\lambda=\dfrac{5}{2}
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex>\lambda=\dfrac{3}{2}</tex>
+    <tex>\lambda=-1</tex>
+    <tex>\lambda=\dfrac{1}{2}</tex>
+    <tex correct='true'>\lambda=\dfrac{5}{2}</tex>
+  </choices>
+</question>

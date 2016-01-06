@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{Let }A=\left[\begin{array}{rrr}
+  3 &amp; 2 &amp; 5 \\ 4 &amp; 1 &amp; 3 \\ 0 &amp; 6 &amp; 7
+\end{array}\right] \\
+%text
+Express A as the sum of a two matrices such
+that one is symmetric and the other is skew
+symmetric.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+Are $M_{sym}$ and $M_{skw}$ examples of symmetric and
+skew symmetric matrices respectively?
+%</context>
+    <tex correct='true'>M_{sym}=\left[\begin{array}{cc}
+  a &amp; b \\ b &amp; a
+\end{array}\right],
+M_{skw}=\left[\begin{array}{rr}
+  a &amp; b \\ -b &amp; a
+\end{array}\right]
+</tex>
+    <tex>M_{sym}=\left[\begin{array}{cc}
+  a &amp; a \\ b &amp; b
+\end{array}\right],
+M_{skw}=\left[\begin{array}{rr}
+  a &amp; -a \\ b &amp; -b
+\end{array}\right]
+</tex>
+    <reason>%text
+Symmetric and Skew-Symmetric are both
+square matrices whose elements meet the
+following criterea:
+%
+\begin{tabular}{|l|l|}
+  \hline
+  \text{Symmetric} &amp; a_{ij}=a{ji} \\
+  \hline
+  \text{Skew-Symmetric} &amp; a_{ij}=-a{ji} \\
+  \hline
+\end{tabular} \\
+%text
+Note: A square matrix has as many rows as
+columns.
+%
+</reason>
+  </step>
+  <step>
+    <context>\text{If }A=\left[\begin{array}{rrr}
+  3 &amp; -2 &amp; -4 \\ 3 &amp; -2 &amp; -5 \\ -1 &amp; 1 &amp; 2
+\end{array}\right] \\
+%text
+what are $(A+A')$ and $(A-A')$
+if $A'$ is transpose of $A$?
+%
+</context>
+    <tex correct='true'>\begin{align}
+  A+A' &amp;=\left[\begin{array}{rrr}
+    6 &amp; 6 &amp; 5 \\ 6 &amp; 2 &amp; 9 \\ 5 &amp; 9 &amp; 14 \\
+  \end{array}\right] \\
+  A-A' &amp;=\left[\begin{array}{rrr}
+    0 &amp; -2 &amp; 5 \\ 2 &amp; 0 &amp; -3 \\ -5 &amp; 3 &amp; 0 \\  
+  \end{array}\right]
+\end{align}
+</tex>
+    <reason>\begin{align}
+  A&amp;=\left[\begin{array}{rrr}
+  3 &amp; 2 &amp; 5 \\ 4 &amp; 1 &amp; 3 \\ 0 &amp; 6 &amp; 7
+\end{array}\right] \\
+  A'&amp;=\left[\begin{array}{rrr}
+      3 &amp; 4 &amp; 0 \\ 2 &amp; 1 &amp; 6 \\ 5 &amp; 3 &amp; 7 \\
+    \end{array}\right] \\
+  A+A'&amp;=\left[\begin{array}{rrr}
+      6 &amp; 6 &amp; 5 \\ 6 &amp; 2 &amp; 9 \\ 5 &amp; 9 &amp; 14 \\
+    \end{array}\right] \\ 
+  A-A'&amp;=\left[\begin{array}{rrr}
+      0 &amp; -2 &amp; 5 \\ 2 &amp; 0 &amp; -3 \\ -5 &amp; 3 &amp; 0 \\  
+    \end{array}\right]
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+If $M_{sym}=A+A'$ and $M_{skw}=A-A'$ is a skew
+matrix, what is $A$ in terms of $M_{sym}$ and $M_{skw}$?
+%</context>
+    <tex correct='true'>A=\dfrac{1}{2}(M_{sym}+M_{skw})</tex>
+    <tex>A=\dfrac{1}{2}(M_{sym}-M_{skw})</tex>
+    <reason>\begin{align}
+  M_{sym} &amp;= A+A' \\
+  M_{skw} &amp;= A-A' \\
+  M_{sym}+M_{skw} &amp;=\left(A+A'+A-A'\right)=2A \\
+  \therefore A&amp;=\dfrac{1}{2}(M_{sym}+M_{skw})
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\dfrac{1}{2}\left(\left[\begin{array}{rrr}
+    6 &amp; 6 &amp; 5 \\ 6 &amp; 2 &amp; 9 \\ 5 &amp; 9 &amp; 14 \\
+  \end{array}\right]+\left[\begin{array}{rrr}
+    0 &amp; -2 &amp; 5 \\ 2 &amp; 0 &amp; -3 \\ -5 &amp; 3 &amp; 0 \\  
+  \end{array}\right]\right)
+  </tex>
+    <tex>\dfrac{1}{2}\left(\left[\begin{array}{rrr}
+    6 &amp; -6 &amp; 5 \\ -6 &amp; 2 &amp; -9 \\ 5 &amp; -9 &amp; 14 \\
+  \end{array}\right]+\left[\begin{array}{rrr}
+    0 &amp; 2 &amp; 5 \\ -2 &amp; 0 &amp; 3 \\ 5 &amp; -3 &amp; 0 \\  
+  \end{array}\right]\right)</tex>
+    <tex>\dfrac{1}{2}\left(\left[\begin{array}{rrr}
+    6 &amp; 6 &amp; 5 \\ 6 &amp; 2 &amp; 9 \\ 5 &amp; 9 &amp; 14 \\
+  \end{array}\right]+\left[\begin{array}{rrr}
+    0 &amp; 2 &amp; 5 \\ 2 &amp; 0 &amp; 3 \\ 5 &amp; 3 &amp; 0 \\  
+  \end{array}\right]\right)</tex>
+    <tex>\dfrac{1}{2}\left(\left[\begin{array}{rrr}
+    6 &amp; -6 &amp; 5 \\ -6 &amp; 2 &amp; -9 \\ 5 &amp; -9 &amp; 14 \\
+  \end{array}\right]+\left[\begin{array}{rrr}
+    0 &amp; -2 &amp; 5 \\ 2 &amp; 0 &amp; -3 \\ -5 &amp; 3 &amp; 0 \\  
+  \end{array}\right]\right)</tex>
+  </choices>
+</question>

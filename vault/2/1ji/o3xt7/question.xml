@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>\text{If }
+A=\left[\begin{array}{ccc}
+  1 &amp; 2 &amp; 2 \\ 2 &amp; 1 &amp; 2 \\ 2 &amp; 2 &amp; 1
+\end{array}\right], \\
+%text
+verify that $A^2-4A-5I=0$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If $A^2-4A-5I$ were to be factored as a
+quadratic expression would, what would the
+factors look like?
+%</context>
+    <tex correct='true'>\left(A-5I\right)\left(A+I\right)</tex>
+    <tex>\left(A-5\right)\left(A+1\right)</tex>
+    <reason>%text
+Since A is a matrix, and not a scalar unity
+or 1 is represented by identity matrix I. 
+%
+\begin{align}
+  \therefore A^2-4A-5I &amp;= A^2-5A+A-5I \\
+    &amp;= A(A-5I)+(A-5I) \\
+    &amp;= \left(A-5I\right)\left(A+I\right)
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\text{If }
+A=\left[\begin{array}{ccc}
+  1 &amp; 2 &amp; 2 \\ 2 &amp; 1 &amp; 2 \\ 2 &amp; 2 &amp; 1
+\end{array}\right], \\
+\text{and I is identity matrix}\\
+\text{what does}\left(A-5I\right)\left(A+I\right)\text{look like}?
+</context>
+    <tex>\left[\begin{array}{ccc}
+  -4 &amp; -3 &amp; -3 \\
+  -3 &amp; -4 &amp; -3 \\
+  -3 &amp; -3 &amp; -4
+\end{array}\right]\times
+\left[\begin{array}{ccc}
+  2 &amp; 3 &amp; 3 \\
+  3 &amp; 2 &amp; 3 \\
+  3 &amp; 3 &amp; 2
+\end{array}\right]
+</tex>
+    <reason>A=\left[\begin{array}{ccc}
+  1 &amp; 2 &amp; 2 \\ 2 &amp; 1 &amp; 2 \\ 2 &amp; 2 &amp; 1
+\end{array}\right] 
+I=\underbrace{\left[\begin{array}{ccc}
+  1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1
+\end{array}\right]}_\text{identity matrix} \\ 
+\therefore
+\underbrace{\left[\begin{array}{rrr}
+  -4 &amp; 2 &amp; 2 \\ 2 &amp; -4 &amp; 2 \\ 2 &amp; 2 &amp; -4
+\end{array}\right]}_{A-5I}\times
+\underbrace{\left[\begin{array}{ccc}
+  2 &amp; 2 &amp; 2 \\ 2 &amp; 2 &amp; 2 \\ 2 &amp; 2 &amp; 2
+\end{array}\right]}_{A+I}
+</reason>
+  </step>
+  <step>
+    <context>\left[\begin{array}{rrr}
+  -4 &amp; 2 &amp; 2 \\ 2 &amp; -4 &amp; 2 \\ 2 &amp; 2 &amp; -4
+\end{array}\right]\times
+\left[\begin{array}{ccc}
+  2 &amp; 2 &amp; 2 \\ 2 &amp; 2 &amp; 2 \\ 2 &amp; 2 &amp; 2
+\end{array}\right]=? \\
+%text
+If the product of the above matrices is
+a $3\times 3$ matrix, what is the expression
+for the middle term $(a_{22})$ of the product?
+%
+</context>
+    <tex>a_{22}=(-4\times 2)</tex>
+    <reason>%text
+When multiplying two $3\times 3$ matrices
+M and N, the product matrix P also has $3$ 
+rows and $3$ columns. 
+If $a_{ij}$ is the element in row i and col j of
+product P, then
+%
+a_{ij}=(M_{i1}\times N_{j1})+(M_{i2}\times N_{j2})+
+  (M_{i3}\times N_{3j}) \\
+\text{If }M=\left[\begin{array}{rrr}
+  -4 &amp; 2 &amp; 2 \\ 2 &amp; -4 &amp; 2 \\ 2 &amp; 2 &amp; -4
+\end{array}\right],
+N=\left[\begin{array}{ccc}
+  2 &amp; 2 &amp; 2 \\ 2 &amp; 2 &amp; 2 \\ 2 &amp; 2 &amp; 2
+\end{array}\right] \\
+\text{then } a_{22}=-(2\times 2)+(-4\times 2)-(2\times 2)=0 \\
+%text
+Multiplying in this way all of the terms
+in the product matrix would be zero.
+%</reason>
+  </step>
+  <choices>
+    <tex>\left[\begin{array}{ccc}
+  0 &amp; 0 &amp; 1 \\
+  4 &amp; 2 &amp; 9 \\
+  1 &amp; 1 &amp; 6
+\end{array}\right]</tex>
+    <tex>\left[\begin{array}{ccc}
+  1 &amp; -1 &amp; -2 \\
+  -1 &amp; -1 &amp; -1 \\
+  6 &amp; 4 &amp; 4
+\end{array}\right]</tex>
+    <tex>\left[\begin{array}{ccc}
+  1 &amp; -1 &amp; -3 \\
+  1 &amp; -1 &amp; -10 \\
+  6 &amp; 4 &amp; 1
+\end{array}\right]</tex>
+    <tex correct='true'>\left[\begin{array}{ccc}
+  1 &amp; -1 &amp; -3 \\
+  -1 &amp; -1 &amp; -10 \\
+  -5 &amp; 4 &amp; 4
+\end{array}\right]</tex>
+  </choices>
+</question>
