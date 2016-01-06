@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the angle between the vectors
+$\ora{a}=\vector{1}{-1}{1}$ and $\ora{b}=\vector{1}{1}{-1}$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If $\ora{a}$ and $\ora{b}$ are two vectors such that $\theta$ is the 
+angle between them, what is $\ora{a}\cdot \ora{b}-\ora{b}\cdot \ora{a}$?
+%</context>
+    <tex correct='true'>0</tex>
+    <tex>2|\ora{a}||\ora{b}|\cos\theta</tex>
+    <reason>%text
+The dot product of two vectors is projection
+(or perpendicular) of one vector on the other,
+times the other or vica-versa.
+If two vectors $\ora{a}$ and $\ora{b}$ have angle $\theta$ 
+between them,
+%
+\begin{align}
+  \ora{a}\cdot \ora{b}&amp;=|\ora{a}|\cos\theta\times|\ora{b}|
+    =|\ora{a}||\ora{b}|\cos\theta \\
+  \ora{b}\cdot \ora{a}&amp;=|\ora{b}|\cos\theta\times|\ora{a}|
+    =|\ora{a}||\ora{b}|\cos\theta \\    
+\end{align}</reason>
+  </step>
+  <step>
+    <context>\ora{a}=\vector{1}{-1}{1}, \ora{b}=\vector{1}{1}{-1} \\
+%text
+If $\theta$ is the angle between $\ora{a}$ and
+$\ora{b}$, what is is $\cos\theta$?
+%</context>
+    <tex correct='true'>\cos\theta=-\dfrac{1}{3}</tex>
+    <tex>\cos\theta=\dfrac{1}{3}</tex>
+    <reason>\begin{align}
+  \ora{a}&amp;=\vector{1}{-1}{1}, \ora{b}=\vector{1}{1}{-1} \\
+  \ora{a}\cdot\ora{b} &amp;= (1\cdot 1)+(-1\cdot 1)+(1\cdot -1)=-1 \\
+  |\ora{a}| &amp;= \sqrt{(1)^2+(-1)^2+(1)^2}=\sqrt{3} \\
+  |\ora{b}| &amp;= \sqrt{(1)^2+(1)^2+(-1)^2}=\sqrt{3} \\
+  \therefore\cos\theta&amp;=\dfrac{-1}{\sqrt{3}\sqrt{3}}=-\dfrac{1}{3}
+    \implies \theta=\cos^{-1}\left(-\dfrac{1}{3}\right)
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>\cos^{-1}\left(-\dfrac{1}{3}\right)</tex>
+    <tex>\cos^{-1}\left(-\dfrac{1}{\sqrt{3}}\right)</tex>
+    <tex>\cos^{-1}\left(-\dfrac{1}{2\sqrt{3}}\right)</tex>
+    <tex>\cos^{-1}\left(-\dfrac{1}{\sqrt{2}}\right)</tex>
+  </choices>
+</question>
