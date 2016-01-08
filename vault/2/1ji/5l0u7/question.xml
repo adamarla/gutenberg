@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Using properties of determinants, prove the
+following:
+%
+\begin{array}{r}
+\small{ \left\vert \begin{array}{ccc}
+  a+b+2c &amp; a &amp; b \\ c &amp; b+c+2a &amp; b \\ c &amp; a &amp; c+a+2b
+\end{array}\right\vert}= \\
+  2(a+b+c)^3
+\end{array}</tex>
+  </statement>
+  <step>
+    <context>\small{ \left\vert \begin{array}{ccc}
+  a+b+2c &amp; a &amp; b \\ c &amp; b+c+2a &amp; b \\ c &amp; a &amp; c+a+2b
+\end{array}\right\vert} \\
+%text
+What operation would allow factoring
+out $(a+b+c)$ from the above determinant?
+%
+</context>
+    <tex correct='true'>C_1 \rightarrow C_1+C_2+C_3</tex>
+    <tex>R_1\rightarrow R_1+R_2+R_3</tex>
+    <reason>%text
+Any term that multiplies all the items in a
+row or column can be factored out of a 
+determinant. For e.g.,
+%
+\left\vert\begin{array}{ccc}
+  ka_1 &amp; a_2 &amp; a_3 \\ kb_1 &amp; b_2 &amp; b_3 \\ kc_1 &amp; c_2 &amp; c_4
+\end{array}\right\vert=
+k\left\vert\begin{array}{ccc}
+  a_1 &amp; a_2 &amp; a_3 \\ b_1 &amp; b_2 &amp; b_3 \\ c_1 &amp; c_2 &amp; c_4
+\end{array}\right\vert \\
+%text
+For the given matrix the result of performing
+operation $C_1\rightarrow C_1+C_2+C_3$ is,
+%
+\left\vert \begin{array}{ccc}
+  2(a+b+c) &amp; a &amp; b \\ 2(a+b+c) &amp; b+c+2a &amp; b \\ 
+    2(a+b+c) &amp; a &amp; c+a+2b
+\end{array}\right\vert \\
+%text
+from which $2(a+b+c)$ may be factored out.
+%
+</reason>
+  </step>
+  <step>
+    <context>2(a+b+c)\left\vert \begin{array}{ccc}
+  1 &amp; a &amp; b \\ 1 &amp; b+c+2a &amp; b \\  1 &amp; a &amp; c+a+2b
+\end{array}\right\vert \\
+%text
+What series of transformations to the above
+determinant would result in it having two 
+zeros in its first column?
+%</context>
+    <tex correct='true'>R_2\rightarrow R_2-R_1 \\
+R_3\rightarrow R_3-R_1</tex>
+    <tex>R_1\rightarrow R_1-R_2 \\
+R_3\rightarrow R_3-R_1</tex>
+    <reason>\left\vert \begin{array}{ccc}
+  1 &amp; a &amp; b \\ 1 &amp; b+c+2a &amp; b \\  1 &amp; a &amp; c+a+2b
+\end{array}\right\vert \\
+R_2\rightarrow R_2-R_1 \\
+\left\vert \begin{array}{ccc}
+  1 &amp; a &amp; b \\ 0 &amp; b+c+a &amp; 0 \\  1 &amp; a &amp; c+a+2b
+\end{array}\right\vert \\
+R_3\rightarrow R_3-R_1 \\
+\left\vert \begin{array}{ccc}
+  1 &amp; a &amp; b \\ 0 &amp; b+c+a &amp; 0 \\  0 &amp; 0 &amp; c+a+b
+\end{array}\right\vert</reason>
+  </step>
+  <step>
+    <context>2(a+b+c)\left\vert \begin{array}{ccc}
+  1 &amp; a &amp; b \\ 0 &amp; b+c+a &amp; 0 \\  0 &amp; 0 &amp; c+a+b
+\end{array}\right\vert \\
+%text
+What does the above determinant expand to?
+
+%</context>
+    <tex correct='true'>2(a+b+c)^3</tex>
+    <reason>%text
+Expanding along the first column,
+%
+2(a+b+c)\left\vert \begin{array}{ccc}
+  1 &amp; a &amp; b \\ 0 &amp; b+c+a &amp; 0 \\  0 &amp; 0 &amp; c+a+b
+\end{array}\right\vert \\
+\quad =2(a+b+c)\left[1\left(b+c+a\right)\left(c+a+b\right)-0\right] \\
+\quad =2(a+b+c)^3
+</reason>
+  </step>
+</question>
