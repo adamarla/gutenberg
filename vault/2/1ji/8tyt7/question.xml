@@ -1,0 +1,132 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the shortest distance between the
+following lines: $\dfrac{x-3}{1}=\dfrac{y-5}{-2}=\dfrac{z-7}{1}$
+and $\dfrac{x+1}{7}=\dfrac{y+1}{-6}=\dfrac{z+1}{1}$
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If $\dfrac{x-3}{1}=\dfrac{y-5}{-2}=\dfrac{z-7}{1}$ is expressed as
+$\ora{r}=\ora{a_1}+\lambda\ora{b_1}$ and $\dfrac{x+1}{7}=\dfrac{y+1}{-6}=\dfrac{z+1}{1}$ is
+expressed as $\ora{r}=\ora{a_2}+\lambda\ora{b_2}$, what are $\ora{a_1}$, $\ora{a_2}$,
+$\ora{b_1}$ and $\ora{b_2}$?
+%</context>
+    <tex correct='true'>\begin{tabular}{ll}
+  \ora{a_1}=(3,5,7), &amp;\ora{b_1}=(1,-2,1) \\
+  \ora{a_2}=(-1,-1-1), &amp;\ora{b_2}=(7,-6,1)
+\end{tabular}</tex>
+    <reason>\begin{align}
+  &amp;\dfrac{x-3}{1}=\dfrac{y-5}{-2}=\dfrac{z-7}{1}=\lambda \\
+  \implies &amp;x=\lambda+3, y=-2\lambda+5,z=\lambda+7 \\
+  \implies &amp;(x,y,z)=(\lambda+3,-2\lambda+5,\lambda+7) \\
+  \implies &amp;\ora{r}=\underbrace{(\vector{3}{5}{7})}_\ora{a_1}+
+    \lambda\underbrace{(\vector{1}{-2}{1})}_\ora{b_1}
+\end{align} \\
+%text
+Similarly,
+%
+\begin{align}
+  &amp;\dfrac{x+1}{7}=\dfrac{y+1}{-6}=\dfrac{z+1}{1}=\lambda \\
+  \implies &amp;\ora{r}=\underbrace{(\vector{-1}{-1}{-1})}_\ora{a_2}+
+    \lambda(\underbrace{\vector{7}{-6}{1}}_\ora{b_2})
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+For any two non-intersecting lines 
+$\ora{r}=\ora{a_1}+\lambda\ora{b_1}$ and $\ora{r}=\ora{a_2}+\lambda\ora{b_2}$,
+the vector joining the two lines is _?
+%</context>
+    <tex correct='true'>%text
+perpendicular to both $\ora{b_1}$ \underline{and} $\ora{b_2}$
+%</tex>
+    <tex>%text
+perpendicular to either $\ora{b_1}$ \underline{or} $\ora{b_2}$
+%</tex>
+    <reason>%text
+The foot of the line segment representing the 
+shortest distance from a point to a line \underline{must}
+be perpendicular to it. 
+Therefore, a line segment that represents the
+shortest distance between two lines, must be
+perpendicular to both lines.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+What is the expression for the unit vector $\perp$ 
+to the lines $\ora{r}=\ora{a_1}+\lambda\ora{b_1}$ and $\ora{r}=\ora{a_2}+\lambda\ora{b_2}$
+%</context>
+    <tex correct='true'>\dfrac{(\ora{b_1}\times\ora{b_2})}{|\ora{b_1}\times\ora{b_2}|}</tex>
+    <tex>\dfrac{(\ora{b_1}-\ora{b_2})}{|\ora{b_1}-\ora{b_2}|}</tex>
+    <reason>%text
+For lines $\ora{r}=\ora{a_1}+\lambda\ora{b_1}$ and $\ora{r}=\ora{a_2}+\lambda\ora{b_2}$
+the vector $\perp$ to both is $(\ora{b_1}\times\ora{b_2})$.
+Therefore unit vector $\perp$ to both $\ora{b_1}$ and $\ora{b_2}$ 
+is $\dfrac{(\ora{b_1}\times\ora{b_2})}{|\ora{b_1}\times\ora{b_2}|}$
+%
+</reason>
+  </step>
+  <step>
+    <context>%text
+If $\ora{r}=\ora{a_1}+\lambda\ora{b_1}$ and $\ora{r}=\ora{a_2}+\lambda\ora{b_2}$ are two
+lines that pass through $\ora{a_1}$ and $\ora{a_2}$, what is the
+shortest distance between them in terms of 
+$\ora{a_1}$, $\ora{a_2}$, $\ora{b_1}$ and $\ora{b_2}$?
+%</context>
+    <tex correct='true'>\left(\ora{a_1}-\ora{a_2}\right)\cdot
+  \left(\dfrac{\ora{b_1}\times\ora{b_2}}
+                  {|\ora{b_1}\times \ora{b_2|}}\right)</tex>
+    <reason>%text
+If $\ora{r}=\ora{a_1}+\lambda\ora{b_1}$ and $\ora{r}=\ora{a_2}+\lambda\ora{b_2}$ are two
+lines then they each pass through $\ora{a_1}$ and $\ora{a_2}$
+respectively, $(\ora{a_1}-\ora{a_2})$ is the length of the line
+segment connecting them.
+However, the shortest distance (SD) is the
+projection of $(\ora{a_1}-\ora{a_2})$along the $\perp$ to both
+lines.
+%
+SD=(\ora{a_1}-\ora{a_2})\cdot\left(\dfrac{\ora{b_1}\times\ora{b_2}}
+  {|\ora{b_1}\times \ora{b_2|}}\right)</reason>
+  </step>
+  <step>
+    <context>\begin{align}
+  \ora{a_1}&amp;=(3,5,7),\,\ora{b_1}=(1,-2,1) \\
+  \ora{a_2}&amp;=(-1,-1-1),\,\ora{b_2}=(7,-6,1)
+\end{align} \\
+\text{What is }\left(\ora{a_1}-\ora{a_2}\right)\cdot
+  \left(\dfrac{\ora{b_1}\times\ora{b_2}}
+  {|\ora{b_1}\times \ora{b_2|}}\right)?
+  </context>
+    <tex correct='true'>\sqrt{116}</tex>
+    <reason>\begin{align}
+  \ora{a_1}-\ora{a_2}&amp;=\vector{3}{5}{7}-(\vector{-1}{-1}{-1}) \\
+    &amp;=\vector{4}{6}{8} \\
+\end{align} \\
+  \ora{b_1}\times\ora{b_2}=\left\vert \begin{array}{ccc}
+      \imath &amp; \jmath &amp; {\it k} \\ 1 &amp; -2 &amp; 1 \\ 7 &amp; -6 &amp; 1
+    \end{array}\right\vert=\vector{4}{6}{8} \\
+\begin{align}
+  \dfrac{(\ora{b_1}\times\ora{b_2})}{|\ora{b_1}\times\ora{b_2}|}
+    &amp;=\dfrac{\vector{4}{6}{8}}{|\vector{4}{6}{8}|} \\
+    &amp;=\dfrac{1}{\sqrt{116}}(\vector{4}{6}{8})    
+\end{align} \\
+\begin{align}
+  \therefore(\ora{a_1}-\ora{a_2})\cdot
+    \dfrac{(\ora{b_1}\times\ora{b_2})}{|\ora{b_1}\times\ora{b_2}|}
+    &amp;=\dfrac{\vector{4}{6}{8}}
+      {\left(\dfrac{\vector{4}{6}{8}}{\sqrt{116}}\right)} \\
+    &amp;=\sqrt{116}
+\end{align}
+  </reason>
+  </step>
+  <choices>
+    <tex>\sqrt{112}</tex>
+    <tex>\sqrt{111}</tex>
+    <tex correct='true'>\sqrt{116}</tex>
+    <tex>\sqrt{109}</tex>
+  </choices>
+</question>

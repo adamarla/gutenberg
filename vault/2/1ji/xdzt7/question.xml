@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the point on the line
+%
+\qquad\dfrac{x+2}{3}=\dfrac{y+1}{2}=\dfrac{z-3}{2} \\
+%text
+at a distance $\sqrt{5}$ units from the point $(1,2,3)$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+What are the co-ordinates of a general
+point on the line $\dfrac{x+2}{3}=\dfrac{y+1}{2}=\dfrac{z-3}{2}$?
+%</context>
+    <tex correct='true'>(3k-2, 2k-1, 2k+3)</tex>
+    <tex>(3k+2, 2k+1, 2k-3)</tex>
+    <reason>\begin{align}
+  &amp;\dfrac{x+2}{3}=\dfrac{y+1}{2}=\dfrac{z-3}{2}=k\,\text{(say)} \\
+  &amp;\dfrac{x+2}{3}=k\implies x=3k-2 \\
+  &amp;\dfrac{y+1}{2}=k\implies y=2k-1 \\
+  &amp;\dfrac{z-3}{2}=k\implies z=2k+3
+\end{align} \\
+%text
+Therefore, any point on the given line can
+be expressed as $(3k-2,2k-1,2k+3)$ where
+$k\in R$.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+For what value of $r$ does the distance between
+$(3k-2, 2k-1, 2k+3)$ and $(1,2,3)$ equal $\sqrt{5}$.
+%</context>
+    <tex correct='true'>r=1,\dfrac{13}{17}</tex>
+    <tex>r=-1,-\dfrac{13}{17}</tex>
+    <reason>%text
+Distance between any two points $(x_1,y_1,z_1)$ 
+and $(x_2, y_2, z_2)$ is,
+%
+\qquad\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2} \\
+
+%text
+Therefore, if distance between $(1,2,3)$ 
+and $(3k-2, 2k-1, 2k+3)$ is $\sqrt{5}$ then,
+%
+
+\begin{tabular}{rr}
+  &amp;(3k-2)^2+(2k-3)^2+(2k)^2=5 \\
+  \implies &amp;17k^2-30k+13=0 \\
+  \implies &amp;k=1,\dfrac{13}{17}
+\end{tabular} \\
+
+%text
+The co-ordinates of the point for which the
+distance between the two points is $\sqrt{5}$ are,
+%
+\begin{tabular}{|l|c|}
+  \hline
+  \text{For }k=1 &amp; (1, 1, 5) \\
+  \hline
+  \text{For }k=\dfrac{13}{17} &amp; 
+  	\left(\frac{5}{17},\frac{9}{17},\frac{77}{17}\right) \\
+  \hline
+\end{tabular}
+
+</reason>
+  </step>
+  <choices>
+    <tex>%text
+$(1,7,3)$ and $(1,2,8)$
+%</tex>
+    <tex>%text
+$(3,2,2)$
+%</tex>
+    <tex>%text
+$(3,6,7)$ and $\left(\dfrac{1}{7},\dfrac{2}{7},\dfrac{-4}{7}\right)$
+%</tex>
+    <tex correct='true'>%text
+$(1,1,5)$ and $\left(\dfrac{5}{17},\dfrac{9}{17},\dfrac{77}{17}\right)$
+%</tex>
+  </choices>
+</question>
