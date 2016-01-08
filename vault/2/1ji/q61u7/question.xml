@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+If $\ora{a}=\vector{1}{1}{1}$ and $\ora{b}=\vector{}{1}{-1}$, find
+a vector $\ora{c}$ such that $\ora{a}\times \ora{c}=\ora{b}$ and 
+$\ora{a}\cdot \ora{c}=3$
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If $\ora{a}=\vector{1}{1}{1}$, $\ora{c}=\vector{x}{y}{z}$ and 
+$\ora{a}\cdot \ora{c}=3$, is the following correct?
+%</context>
+    <tex>x+y+z=9</tex>
+    <reason>%text
+Dot product of any two vectors 
+$\ora{v_1}=\vector{a_1}{a_2}{a_3}$ and
+$\ora{v_2}=\vector{b_1}{b_2}{b_3}$ 
+is given by, $\ora{v_1}\cdot\ora{v_2}=a_1a_2+b_1b_2+c_1c_3$
+
+In the given problem, 
+$\ora{a}=\vector{1}{1}{1}$ and 
+$\ora{c}=\vector{x}{y}{z}$, 
+therefore, $\ora{a}\cdot \ora{c}=x+y+z$ and hence,
+$x+y+z=3$
+%
+</reason>
+  </step>
+  <step>
+    <context>%text
+If $\ora{a}=\vector{1}{1}{1}$, $\ora{b}=\vector{}{1}{-1}$, 
+$\ora{c}=\vector{x}{y}{z}$ and $\ora{a}\times \ora{c}=\ora{b}$, then
+is the following correct?
+%</context>
+    <tex correct='true'>z-y=0. x-z=1, y-x=-1</tex>
+    <reason>%text
+Vector (cross) product of any two vectors 
+$\ora{v_1}=\vector{a_1}{a_2}{a_3}$ and
+$\ora{v_2}=\vector{b_1}{b_2}{b_3}$ 
+is given by,
+%
+\ora{v_1}\times\ora{v_2}=\left\vert \begin{array}{ccc}
+  \imath &amp; \jmath &amp; {\it k} \\ a_1 &amp; a_2 &amp; a_3 \\ b_1 &amp; b_2 &amp; b_3
+\end{array}\right\vert \\
+%text
+In the given problem, 
+$\ora{a}=\vector{1}{1}{1}$, $\ora{b}=\vector{}{1}{-1}$ and
+$\ora{c}=\vector{x}{y}{z}$, therefore, 
+%
+\therefore\ora{a}\times \ora{c}=\vector{(z-y)}{(x-z)}{(y-z)} \\
+%text
+Using the condition $\ora{a}\times \ora{c}=\ora{b}$,
+%
+\begin{align}
+  &amp;\vector{(z-y)}{(x-z)}{(y-z)}=\ora{b} \\
+  \implies &amp;\vector{(z-y)}{(x-z)}{(y-z)}=\vector{}{1}{-1} \\
+  \implies &amp;z-y=0, x-z=1, y-x=-1
+\end{align}
+
+</reason>
+  </step>
+  <step>
+    <context>%text
+If $x+y+z=3$, $z-y=0$, $x-z=1$, 
+$y-x=-1$ and $\ora{c}=\vector{x}{y}{z}$, 
+what is $\ora{c}$?
+%</context>
+    <tex correct='true'>\ora{c}=\vector{\dfrac{5}{3}}{\dfrac{2}{3}}{\dfrac{2}{3}}</tex>
+    <reason>\begin{align}
+  z-y=0 &amp;\implies z=y \\
+  z-x=3 &amp;\implies z=3+x \\
+  y-z=-1 &amp;\implies y=z-1 \\
+  x+y+z=0 &amp; \implies x+3+x+3+x=3 \\ 
+    &amp;\implies x=\dfrac{3}{2}
+\end{align} \\
+\therefore x=\dfrac{3}{2}, y=z=\dfrac{2}{3} \implies
+\ora{c}=\vector{\dfrac{5}{3}}{\dfrac{2}{3}}{\dfrac{2}{3}}</reason>
+  </step>
+  <choices>
+    <tex>\ora{c}=\vector{\dfrac{5}{3}}{-\dfrac{2}{3}}{-\dfrac{2}{3}}</tex>
+    <tex correct='true'>\ora{c}=\vector{\dfrac{5}{3}}{\dfrac{2}{3}}{\dfrac{2}{3}}</tex>
+    <tex>\ora{c}=\vector{5}{2}{2}</tex>
+    <tex>\ora{c}=\vector{7}{2}{2}</tex>
+  </choices>
+</question>
