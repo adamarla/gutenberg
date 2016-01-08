@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+If $\ora{a}+\ora{b}+\ora{c}$ and $|\ora{a}|=3$, $|\ora{b}|=5$ and
+$|\ora{c}|=7$, show that the angle between $\ora{a}$ and
+$\ora{b}$ is $60^\circ$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If the angle between $\ora{a}$ and $\ora{b}$ is $\theta$, what
+is $|\ora{c}|$ in terms of $|\ora{a}|$, $|\ora{b}|$ and $\theta$?
+%</context>
+    <tex correct='true'>|\ora{a}|^2+|\ora{b}|^2+2|\ora{a}||\ora{b}|\cos\theta=|\ora{c}|^2</tex>
+    <tex>|\ora{a}|^2+|\ora{b}|^2+2|\ora{a}||\ora{b}|\sin\theta=|\ora{c}|^2</tex>
+    <reason>\begin{align}
+  \ora{a}+\ora{b}+\ora{c}=0\implies(\ora{a}+\ora{b})=(-\ora{c})
+\end{align} \\
+%text
+Taking dot product of each side with itself,
+%
+\begin{align}
+  &amp;(\ora{a}+\ora{b})\cdot(\ora{a}+\ora{b})=(-\ora{c})\cdot(-\ora{c}) \\
+  \implies &amp;\ora{a}\cdot\ora{a}+2(\ora{a}\cdot\ora{b})
+    +\ora{b}\cdot\ora{b}=\ora{c}\cdot\ora{c} \\
+  \implies &amp;|\ora{a}|^2+|\ora{b}|^2+2|\ora{a}||\ora{b}|\cos\theta
+    =|\ora{c}|^2
+\end{align} \\
+</reason>
+  </step>
+  <step>
+    <context>%text
+If $|\ora{a}|^2+|\ora{b}|^2+2|\ora{a}||\ora{b}|\cos\theta=|\ora{c}|^2$,
+and $|\ora{a}|=3$, $|\ora{b}|=5$ and $|\ora{c}|=7$ what is $\theta$?
+%</context>
+    <tex correct='true'>60^\circ</tex>
+    <tex>30^\circ</tex>
+    <reason>\begin{align}
+  &amp;|\ora{a}|^2+|\ora{b}|^2+2|\ora{a}||\ora{b}|\cos\theta=
+    |\ora{c}|^2 \\
+  \implies&amp;\cos\theta=\dfrac{|\ora{c}|^2-(|\ora{a}|^2+|\ora{b}|^2)}
+    {2|\ora{a}||\ora{b}|} \\
+  \implies&amp;\cos\theta=\dfrac{7^2-(3^2+5^2)}{2\cdot 3\cdot 5}
+    =\dfrac{1}{2} \\
+  \implies&amp;\theta=\cos^{-1}\dfrac{1}{2}=60^\circ
+\end{align}</reason>
+  </step>
+</question>
