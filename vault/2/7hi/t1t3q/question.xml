@@ -1,0 +1,99 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the equation of the plane passing
+through the points $(3,4,1)$ and $(0,1,0)$ and
+parallel to the line $\dfrac{x+3}{2}=\dfrac{y-3}{7}=\dfrac{z+2}{5}$
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If A, B and C are the direction ratios of a 
+plane that passes through $(3,4,1)$ and $(0,1,0)$
+is the following correct?
+%</context>
+    <tex correct='true'>3A+3B+C=0</tex>
+    <reason>%text
+The equation of a plane having direction ratios
+A, B and C, which contains point $(x_1, y_1, z_1)$,
+is given by,
+%
+\qquad A(x-x_1)+B(y-y_1)+C(z-z_1)=0 \\
+%text
+Therefore for the given plane which contains
+$(3,4,1)$ the equations is,
+%
+\qquad A(x-3)+B(y-4)+C(z-1)=0 \\
+%text
+Further, $(0,1,0)$ satisfies this equation
+therefore,
+%
+\begin{align}
+  &amp;A(0-3)+B(1-4)+C(0-1)=0 \\
+  \implies &amp; 3A+3B+C=0
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+If a plane with direction ratios A, B and C
+is parallel to line $\dfrac{x+3}{2}=\dfrac{y-3}{7}=\dfrac{z+2}{5}$,
+is the following true?
+%</context>
+    <tex correct='true'>2A+7B+5C=0</tex>
+    <tex>\dfrac{A}{2}=\dfrac{B}{7}=\dfrac{C}{5}</tex>
+    <reason>%text
+If a plane with direction ratios $a_1$, $b_1$,
+$c_1$ contains or is parallel to a line with 
+direaction ratios $a_2$, $b_2$, $c_2$, the
+normal of the plane is perpendicular to the
+said line. Therefore they represent vectors 
+whose dot-product is zero. Hence,
+%
+\qquad a_1a_2+b_1b_2+c_1c_2=0 \\
+%text
+In the given problem the direction ratios of
+$\dfrac{x+3}{2}=\dfrac{y-3}{7}=\dfrac{z+2}{5}$ are $2$, $7$ and $5$, 
+%
+\qquad \therefore 2A+7B+5C=0
+</reason>
+  </step>
+  <step>
+    <context>%text
+If $A(x-3)+B(y-4)+C(z-1)=0$ and
+%
+\qquad \begin{align}
+  &amp; 3A+3B+C=0 \\
+  &amp; 2A+7B+5C=0
+\end{align} \\
+%text
+what is the final equation of the plane?
+%
+</context>
+    <reason>\qquad\begin{align}
+  &amp; 3A+3B+C=0 \\
+  &amp; 2A+7B+5C=0
+\end{align} \\
+%text
+Using the above equations and expressing 
+A and B in terms of C we get,
+%
+\qquad {\bf A:B:C=8:-13:15} \\
+%text
+
+Substituting A. B and C as $8k$, $-13k$ and
+$15k$ in $A(x-3)+B(y-4)+C(z-1)=0$,
+%
+\begin{align}
+  &amp; 8k(x-3)-13k(y-4)+15k(z-1)=0 \\
+  \implies &amp; 8x-24-13y+52+15z-15=0 \\
+  \implies &amp; {\bf 8x-13y+15z+13=0}
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex>8x-13y+15z-22=0</tex>
+    <tex correct='true'>8x-13y+15z+13=0</tex>
+    <tex>8x-13y+15z+10=0</tex>
+    <tex>8x-13y-15z+13=0</tex>
+  </choices>
+</question>

@@ -1,0 +1,94 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+Find the equation of the plane passing through
+the point $(-1,-1,2)$ and perpendicular to
+each of the planes: $2x+3y-3z=2$ and 
+$5x-4y+z=6$.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+If A, B and C are the direction ratios of a 
+plane that passes through $(-1,-1,2)$, what 
+is the equation of the plane?
+%</context>
+    <tex correct='true'>A(x+1)+B(y+1)+C(z-2)=0</tex>
+    <tex>(Ax+1)+(By+1)+(Cz-2)=0</tex>
+    <reason>%text
+The equation of a plane having direction ratios
+A, B and C, which contains point $(x_1, y_1, z_1)$,
+is given by,
+%
+\qquad A(x-x_1)+B(y-y_1)+C(z-z_1)=0 \\
+%text
+Therefore for the given plane which contains
+$(-1,-1,2)$, the equation is, 
+%
+\qquad A(x+1)+B(y+1)+C(z-2)=0</reason>
+  </step>
+  <step>
+    <context>%text
+If $A(x+1)+B(y+1)+C(z-2)=0$ is
+perpendicular to $2x+3y-3z=2$ and
+$5x-4y+z=6$, which of the following is
+true?
+%</context>
+    <tex correct='true'>2A+3B-3C=0 \\
+5A-4B+C=0</tex>
+    <tex>\dfrac{A}{2}+\dfrac{B}{3}-\dfrac{C}{3}=0 \\
+\dfrac{A}{5}-\dfrac{B}{4}+\dfrac{C}{1}=0</tex>
+    <reason>%text
+If two planes with direction ratios $a_1$, $b_1$,
+$c_1$ and $a_2$, $b_2$, $c_2$ respectively, are $\perp$ their
+normals are also perpendicular. Therefore 
+their direction ratios represent vectors whose 
+dot-product is zero. Hence,
+%
+\qquad a_1a_2+b_1b_2+c_1c_2=0 \\
+%text
+for perpendicular planes.
+%
+</reason>
+  </step>
+  <step>
+    <context>%text
+If $A(x+1)+B(y+1)+C(z-2)=0$ and
+%
+\qquad \begin{align}
+  &amp; 2A+3B-3C=0 \\
+  &amp; 5A-4B+C=0
+\end{align} \\
+%text
+what is the final equation of the plane?
+%
+</context>
+    <tex>9x+7y+23z=12</tex>
+    <reason>\qquad\begin{align}
+  &amp; 2A+3B-3C=0 \\
+  &amp; 5A-4B+C=0
+\end{align} \\
+%text
+Using the above equations and expressing 
+A and B in terms of C we get,
+%
+\qquad {\bf A:B:C=9:17:23} \\
+%text
+
+Substituting A. B and C as $9k$, $17k$ and
+$23k$ in $A(x+1)+B(y+1)+C(z-2)=0$,
+%
+\begin{align}
+  &amp; 9k(x+1)+17k(y+1)+23k(z-2)=0 \\
+  \implies &amp; 9x+9+17y+17+23z-46=0 \\
+  \implies &amp; {\bf 9x+17y+23z=20}
+\end{align}</reason>
+  </step>
+  <choices>
+    <tex correct='true'>9x+17y+23z=20</tex>
+    <tex>7x+17y+13z=12</tex>
+    <tex>19x+7y+12z=22</tex>
+    <tex>9x+17y+23z=18</tex>
+  </choices>
+</question>
