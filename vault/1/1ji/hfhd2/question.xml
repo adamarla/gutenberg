@@ -1,0 +1,116 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+An insurance company insured 2000 scooter 
+drivers, 4000 car drivers and 6000 truck 
+drivers. The probability of an accident 
+involving a scooter, a car and a truck are 0.01, 
+0.03 and 0.15 respectively.  One of the 
+insured persons meets with an accident. What 
+is the probability that he is a scooter driver.
+
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+Given the following events 
+%
+\begin{tabular}{|c|c|}
+\hline 
+&amp; \text{Meaning} \\
+\hline 
+S &amp; \text{Person rides a scooter} \\
+\hline 
+C &amp; \text{Person drives a car} \\
+\hline 
+T &amp; \text{Person drives a truck} \\
+\hline 
+A &amp; \text{Person has an accident} \\
+\hline
+\end{tabular} \\
+\underline\text{which of the following is true}?</context>
+    <image correct='true'>rt-1.svg</image>
+    <image>wt-1.svg</image>
+    <reason>%text
+\textbf{Taking stock of the facts} 
+
+The insurance company has insured a total 
+of \[ 2000 + 4000 + 6000 = 12,000 \] persons. 
+
+And therefore,
+%
+\begin{tabular}{|c|c|c|}
+\hline
+&amp; \text{Meaning} &amp; \text{Probability} \\
+\hline
+P(S) &amp; \text{Rides a scooter} &amp; \frac{2000}{12000} = \frac{1}{6} \\
+\hline
+P(C) &amp; \text{Drives a car} &amp; \frac{4000}{12000} = \frac{1}{3} \\
+\hline 
+P(T) &amp; \text{Drives a truck} &amp; \frac{6000}{12000} = \frac{1}{2} \\
+\hline
+\end{tabular}of 
+%text
+
+We have also been told the probabilities of
+having an accident \underline\text{given} the vehicle type.
+
+Expressed mathematically,  
+%
+\begin{align}
+P(A\vert S) &amp;= 0.01 \\
+P(A\vert C) &amp;= 0.03 \\
+P(A\vert T) &amp;= 0.15 
+\end{align} </reason>
+  </step>
+  <step>
+    <context>%text
+Given the probabilities from Step 1, 
+\underline\text{what probability are we supposed to find}?
+%</context>
+    <tex correct='true'>P(S\vert A) </tex>
+    <tex>P(S\cap A) </tex>
+    <reason>%text
+We have been told that an accident has 
+occurred (unfortunately). 
+
+We need to find the probability that it 
+involves a scooter-rider. 
+
+\underline\text{That probability will be \[ P(S\vert A)\]}
+%</reason>
+  </step>
+  <step>
+    <context>%text
+Given that we need to find $P(S\vert A)$, is the
+following analysis correct? 
+%</context>
+    <tex correct='true'>\begin{align}
+P(S\vert A) &amp;= \dfrac{P(A\vert S)\cdot P(S)}
+{P(A\vert S)\cdot P(S) + P(A\vert C)\cdot P(C) + P(A\vert T)\cdot P(T)}\\
+&amp;= \dfrac{0.01\times\frac{1}{6}}
+{0.01\times \frac{1}{6} + 0.03\times\frac{1}{3} + 0.15\times\frac{1}{2}} = \frac{1}{52}
+\end{align} </tex>
+    <reason>%text
+We know from Bayes' Theorem that 
+
+%
+
+\begin{align}
+P(S\vert A)\cdot P(A) &amp;= P(A\vert S)\cdot P(S) \\ 
+\therefore P(S\vert A) &amp;= \dfrac{P(A\vert S)\cdot P(S)}{P(A)} \\ 
+\text{But }P(A) &amp;= P(A \vert S)\cdot P(S) + \ldots + P(A\vert T)\cdot P(T) \\
+&amp;= 0.01\times\frac{1}{6} + 0.03\times\frac{1}{3} + 0.15\times\frac{1}{2}\\
+\text{So }P(S\vert A) &amp;= \dfrac{0.01\times \frac{1}{3}}
+{0.01\times\frac{1}{6} + 0.03\times\frac{1}{3} + 0.15\times\frac{1}{2}} \\
+&amp;= \frac{1}{52}
+\end{align} </reason>
+  </step>
+  <choices>
+    <tex>\frac{1}{13}</tex>
+    <tex>\frac{1}{104}</tex>
+    <tex correct='true'>\frac{1}{52}</tex>
+    <tex>\frac{1}{26}</tex>
+  </choices>
+</question>
