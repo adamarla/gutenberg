@@ -1,0 +1,208 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+A school wants to award its students for the
+values of Honesty, Regularity and Hard work
+with a total cash award of ₹6000. Three 
+times the award money for Hard work added 
+to that given for honesty amounts to ₹11000.
+The award money given for Honesty and Hard 
+work together is double the one given for 
+Regularity. Represent the above situation 
+algebraically and find the award money for 
+each value, using matrix method. Apart from 
+these values, namely Honesty, Regularity and 
+Hard work, suggest one more value which the 
+school must include for awards.
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+- Total cash award for Honest, Regularity and
+Hard work is ₹6000
+- Three times the award money for Hard work 
+added to that for honesty amounts to ₹11000
+- The award money for Honesty and Hard
+work together is double that for Regularity
+Do the following equations account for above?
+%</context>
+    <tex correct='true'>\qquad\begin{align}
+  &amp;h + r + w = 6000 \\
+  &amp;h + 3w = 11000 \\
+  &amp;h -2r + w = 0
+\end{align} \\
+%text
+where, $h$, $r$ and $w$ are amounts allocated
+for Honesty, Regularity and Hard work.
+%
+</tex>
+    <reason>%text
+Carefully reading the problem statement would
+reveal that,
+%
+\qquad\begin{align}
+  &amp;h + r + w = 6000 \\
+  &amp;h + 3w = 11000 \\
+  &amp;h - 2r + w = 0
+\end{align} \\
+%text
+where, $h$, $r$ and $w$ are amounts allocated
+for Honesty, Regularity and Hard work.
+%
+</reason>
+  </step>
+  <step>
+    <context>\qquad\begin{align}
+  &amp;h + r + w = 6000 \\
+  &amp;h + 3w = 11000 \\
+  &amp;h -2r + w = 0
+\end{align} \\
+%text
+To realize the above equations using
+matrix multiplication, is the following 
+correct?
+%
+</context>
+    <tex correct='true'>\left[\begin{array}{c}  h \\ r \\ w \end{array}\right]\times 
+\left[\begin{array}{ccc}  1 &amp; 1 &amp; 1 \\ 1 &amp; 0 &amp; 3 \\ 1 &amp; -2 &amp; 1 \end{array}\right]=
+\left[\begin{array}{c} 6000 \\ 11000 \\ 0 \end{array}\right]</tex>
+    <tex>\left[\begin{array}{ccc}  h &amp; r &amp; w \end{array}\right]\times 
+\left[\begin{array}{ccc}  1 &amp; 1 &amp; 1 \\ 1 &amp; 0 &amp; 3 \\ 1 &amp; -2 &amp; 1 \end{array}\right]=
+\left[\begin{array}{c} 6000 \\ 11000 \\ 0 \end{array}\right]</tex>
+    <reason>%text
+If $A_{m\times n}$ is a matrix with $m$ rows and $n$ cols
+and $B_{p\times q}$ is a matrix with $p$ rows and $q$ cols, 
+then $A$ and $B$ can only be multipled if $n=p$ 
+such that the product matrix $C_{m\times q}$ has $m$ 
+rows and $q$ cols.
+%
+\qquad\qquad A_{m\times n}\times B_{p\times q}=C_{m\times q}</reason>
+  </step>
+  <step>
+    <context>\overbrace{\left[\begin{array}{c}  h \\ r \\ w \end{array}\right]}^{A}\times 
+\overbrace{\left[\begin{array}{ccc}  1 &amp; 1 &amp; 1 \\ 1 &amp; 0 &amp; 3 \\ 1 &amp; -2 &amp; 1 \end{array}\right]}^{B}=
+\overbrace{\left[\begin{array}{c} 6000 \\ 11000 \\ 0 \end{array}\right]}^{C} \\
+%text
+To solve the above equation for $A$, what
+could we do next?
+%
+</context>
+    <tex correct='true'>%text
+Apply the same transforms to $B$ and $C$
+till $B$ becomes the Identity matrix (I).
+%</tex>
+    <tex>%text
+Apply the same transforms to $B$ and $C$
+till $C$ becomes the Identity matrix (I).
+%</tex>
+    <reason>\begin{align}
+  &amp; A\times B = C \\  
+  &amp; B\rightarrow I \text{ (Identity Matrix)}, C\rightarrow C' \\
+  \implies &amp; A\times I=C' \\
+  \implies &amp; A=C'
+\end{align} \\
+%text
+If we apply the same transforms to $B$ and $C$, 
+then as $B\rightarrow I$, $C\rightarrow C'$ which would then
+be equivalent to $A$.
+%</reason>
+  </step>
+  <step>
+    <context>%text
+Would the following transformations convert
+%
+\left[\begin{array}{ccc}  1 &amp; 1 &amp; 1 \\ 1 &amp; 0 &amp; 3 \\ 1 &amp; -2 &amp; 1 \end{array}\right]
+\text{ to } 
+\left[\begin{array}{ccc}  1 &amp; 0 &amp; 0 \\ 0 &amp; 2 &amp; 2 \\ 0 &amp; 0 &amp; 3 \end{array}\right] \\
+%text
+(in case you are wondering, we are on our
+way to Identity Matrix in the next step)
+%
+</context>
+    <tex correct='true'>\begin{align}
+  R_2 &amp;\rightarrow R_2-R_3 \\
+  R_2 &amp;\rightarrow R_1-0.5R_2 \\
+  R_3 &amp;\rightarrow R_3-R_1 \\
+  R_3 &amp;\rightarrow R_3+R_2
+\end{align}</tex>
+    <reason>\begin{array}{ll}
+\begin{align}
+  &amp;R_2\rightarrow R_2-R_3 \\
+  &amp;R_1\rightarrow R_1-0.5R_2
+\end{align} &amp;
+\left[\begin{array}{ccc}
+  1 &amp; 0 &amp; 0 \\ 0 &amp; 2 &amp; 2 \\ 0 &amp; -2 &amp; 1 
+\end{array}\right] \\
+\begin{align}
+  &amp;R_3\rightarrow R_3-R_1 \\
+  &amp;R_3\rightarrow R_3+R_2
+\end{align} &amp;
+\left[\begin{array}{ccc}
+  1 &amp; 0 &amp; 0 \\ 0 &amp; 2 &amp; 2 \\ 0 &amp; 0 &amp; 3 
+\end{array}\right]
+\end{array} \\
+\text{Applying the corresponding transforms to the} \\
+\text{matrix C from Step 3} \\
+\begin{align}
+&amp;\left[\begin{array}{c} 6000 \\ 11000 \\ 0 \end{array}\right]
+\rightarrow
+\left[\begin{array}{c} 500 \\ 11000 \\ 10500 \end{array}\right]
+\end{align}
+</reason>
+  </step>
+  <step>
+    <context>%text
+Would the following transformations convert
+%
+\left[\begin{array}{ccc}  1 &amp; 0 &amp; 0 \\ 0 &amp; 2 &amp; 2 \\ 0 &amp; 0 &amp; 3 \end{array}\right]
+\text{ to } 
+\left[\begin{array}{ccc}  1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1 \end{array}\right]
+</context>
+    <tex correct='true'>\begin{align}
+  R_2 &amp;\rightarrow 0.5R_2 \\
+  R_3 &amp;\rightarrow 1/3R_3 \\
+  R_2 &amp;\rightarrow R_2-R_3
+\end{align}</tex>
+    <reason>\begin{array}{ll}
+\begin{align}
+  &amp;R_2\rightarrow 0.5R_2 \\
+  &amp;R_3\rightarrow 1/3R_3
+\end{align} &amp;
+\left[\begin{array}{ccc}
+  1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; 1 
+\end{array}\right] \\
+\begin{align}
+  &amp;R_2\rightarrow R_2-R_3
+\end{align} &amp;
+\left[\begin{array}{ccc}
+  1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 1 \\ 0 &amp; 0 &amp; 1 
+\end{array}\right] \\
+\end{array} \\
+\text{Applying the corresponding transforms to the} \\
+\text{matrix C from Step 3} \\
+\begin{align}
+&amp;\left[\begin{array}{c} 500 \\ 11000 \\ 10500 \end{array}\right]
+\rightarrow\left[\begin{array}{c} 500 \\ 2000 \\ 3500 \end{array}\right]
+\end{align}
+</reason>
+  </step>
+  <choices>
+    <tex correct='true'>%text
+Honesty $= ₹500$, Regularity $=₹2000$, 
+Hard work $=₹3500$
+%</tex>
+    <tex>%text
+Honesty $= ₹2500$, Regularity $=₹2000$, 
+Hard work $=₹1500$
+%</tex>
+    <tex>%text
+Honesty $= ₹1000$, Regularity $=₹2000$, 
+Hard work $=₹3000$
+%</tex>
+    <tex>%text
+Honesty $= ₹2500$, Regularity $=₹1000$, 
+Hard work $=₹2500$
+%</tex>
+  </choices>
+</question>
