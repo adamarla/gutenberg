@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
+  <statement>
+    <tex>%text
+If \[ y = \log \left[x + \sqrt{x^2+a^2}\right]\], then show that 
+\[ \qquad\qquad (x^2+a^2)\frac{d^2 y}{dx^2} + x\frac{dy}{dx} = 0 \]
+%</tex>
+  </statement>
+  <step>
+    <context>%text
+We will tell you that 
+\[\quad  y = \log\left[x + \sqrt{x^2+a^2}\right] = \log\left[\tan\phi + \sec\phi \right] + C\]
+\underline{\text{But with what substitution}} is this possible?
+%
+</context>
+    <tex correct='true'>x = a\cdot\tan\phi</tex>
+    <tex>x = a\cdot\sin\phi</tex>
+    <reason>%text
+We would like to get rid of the under-root 
+term - $\sqrt{x^2+a^2}$. The simpler $y$ is, the 
+easier it would be to differentiate. 
+
+That said, \underline\text{when $x=a\cdot\tan\phi$}, then 
+
+%
+\begin{align}
+y &amp;= \log\left[x + \sqrt{x^2+a^2}\right] \\
+&amp;=\log\left[\left(a\tan\phi\right) + \sqrt{\left(a\tan\phi\right)^2+a^2}\right] \\
+&amp;= \log\left[a\tan\phi + \underbrace{a\sec\phi}_{\tan^2\theta + 1 = \sec^2\theta}\right] \\
+&amp;= \underbrace{\log\left[\tan\phi + \sec\phi\right]+\log a}_{\log\left(m\cdot n\right) = \log m + \log n}\\
+&amp;= \log\left[\tan\phi + \sec\phi\right] + C 
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+Given that 
+\[\quad x=a\cdot\tan\phi\text{ and } y = \log\left(\tan\phi + \sec\phi\right)\], 
+\underline{\text{would the following be true}}?
+%</context>
+    <tex correct='true'>\begin{align}
+\frac{d\phi}{dx} &amp;= \frac{\cos^2\phi}{a} \\
+\frac{dy}{dx} &amp;= \frac{\cos\phi}{a}
+\end{align}</tex>
+    <reason>\begin{align}
+x &amp;= a\tan\phi \implies a\sec^2\phi\frac{d\phi}{dx} = 1 \\
+\therefore \frac{d\phi}{dx} &amp;= \frac{1}{a\cdot\sec^2\phi} = \frac{\cos^2\phi}{a} \\
+\text{Also } y &amp;= \log\left(\tan\phi + \sec\phi\right) + C \\
+\therefore\frac{dy}{dx} &amp;= \underbrace{\frac{dy}{d\phi}\cdot\frac{d\phi}{dx}}
+_{\text{Chain Rule}} \\
+&amp;= \underbrace{\frac{\sec^2\phi + \sec\phi\cdot\tan\phi}{\left(\tan\phi + \sec\phi\right)}}_{\frac{dy}{d\phi}}\times \underbrace{\left(\frac{\cos^2\phi}{a}\right)}_{\frac{d\phi}{dx}} \\
+&amp;= \sec\phi\times\left(\frac{\cos^2\phi}{a}\right) = \frac{\cos\phi}{a}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+Given \[ \frac{d\phi}{dx}\] and \[ \frac{dy}{dx}\], which of the
+following is true? 
+%</context>
+    <tex correct='true'>\begin{align}
+\frac{d^2y}{dx^2} &amp;= \frac{d}{d\phi}\left(\frac{d\phi}{dx}\right)\cdot\frac{d\phi}{dx} \\
+&amp;= -\frac{\sin\phi\cdot\cos^2\phi}{a^2}
+\end{align}</tex>
+    <tex>\begin{align}
+\frac{d^2y}{dx^2} &amp;= \left(\frac{dy}{dx}\right)^2 \\
+&amp;= \frac{\cos^2\phi}{a^2}
+\end{align}</tex>
+    <reason>\begin{align}
+\frac{d^2y}{dx^2} &amp;= \underbrace{\frac{d}{dx}\left(\frac{dy}{dx}\right)}_{\text{By definition}} \\
+&amp;= \underbrace{\frac{d}{d\phi}\left(\frac{dy}{dx}\right)\cdot\frac{d\phi}{dx}}_{\text{Chain Rule}}\\
+&amp;= \frac{d}{d\phi}\left(\frac{\cos\phi}{a}\right)\cdot \left(\frac{\cos^2\phi}{a}\right) \\
+&amp;= -\frac{\sin\phi\cdot\cos^2\phi}{a^2}
+\end{align}</reason>
+  </step>
+  <step>
+    <context>%text
+Given that \[ \frac{d^2y}{dx^2} = -\frac{\sin\phi\cdot\cos^2\phi}{a^2}\], is the 
+following analysis correct?
+%</context>
+    <tex correct='true'>\begin{align}
+\frac{d^2y}{dx^2} &amp;= -\frac{\sin\phi\cdot\cos^2\phi}{a^2} \\
+&amp;= -\frac{\sin\phi\cdot\cos\phi}{a}\cdot\frac{dy}{dx} \\
+&amp;= -\frac{\tan\phi}{a\cdot\sec^2\phi}\cdot\frac{dy}{dx} \\
+&amp;= -\frac{x}{\left(x^2+a^2\right)}\cdot\frac{dy}{dx} \\
+\therefore\left(x^2+a^2\right)\frac{d^2y}{dx^2} &amp;+ x\frac{dy}{dx} = 0
+\end{align}</tex>
+    <reason>\begin{align}
+\frac{d^2y}{dx^2} &amp;= -\frac{\sin\phi\cdot\cos^2\phi}{a^2} \\
+&amp;= -\frac{\sin\phi\cdot\cos\phi}{a}\cdot\underbrace{\left(\frac{\cos\phi}{a}\right)}_{\frac{dy}{dx}} \\
+&amp;= -\frac{\sin\phi\cos\phi\cdot\frac{1}{\cos^2\phi}}{a\cdot\frac{1}{\cos^2\phi}}\cdot\frac{dy}{dx} \\
+&amp;= -\dfrac{\tan\phi}{a\cdot\underbrace{ \left(1+\tan^2\phi\right)}_{\sec^2\phi}}\cdot\frac{dy}{dx} \\
+&amp;= -\dfrac{\frac{x}{a}}{a\cdot \left(1+\frac{x^2}{a^2}\right)}\cdot\frac{dy}{dx} \\
+&amp;= -\frac{x}{\left(x^2+a^2\right)}\cdot\frac{dy}{dx} \\
+\therefore\left(x^2 +a^2\right)\frac{d^2y}{dx^2} &amp;+ x\frac{dy}{dx} = 0
+\end{align}</reason>
+  </step>
+</question>
