@@ -7,34 +7,49 @@ x+y+z.</tex>
   </statement>
   <step>
     <context>\text{If }\ora{a}=\vector{x}{2}{-z}\text{ and }\ora{b}=\vector{3}{-y}{1} \\
-\text{is the following sufficient?}</context>
+%text
+for $\ora{a}$ to be equal to $\ora{b}$, is the following 
+sufficient?
+%</context>
     <tex>\vert\ora{a}\vert=\vert\ora{b}\vert
 </tex>
-    <reason>\text{A vector has not only magnitude but also} \\
-\text{direction. For $\ora{a}$ and $\ora{b}$ to be equal, each of} \\
-\text{their $\hat i$, $\hat j$ and $\hat k$ components must be identical.}
+    <reason>%text
+A vector has {\bf magnitude} and{\bf direction}. 
+$|\ora{a}|=|\ora{b}|$ only takes care of the magnitude 
+part. It does not guarantee that the vectors 
+point in the same direction.
+%
 </reason>
   </step>
   <step>
-    <context>\begin{align}
-  \ora{a}&amp;=\vector{x}{2}{-z} \\
-  \ora{b}&amp;=\vector{3}{-y}{1} \\
-\end{align} \\
-\text{and $\ora{a}=\ora{b}$. Is the following correct?}
+    <context>\ora{a}=\vector{x}{2}{-z},\, \ora{b}=\vector{3}{-y}{1} \\
+%text
+If $\ora{a}=\ora{b}$. Is the following correct?
+%
 </context>
     <tex correct='true'>x=3, y=-2, z=-1</tex>
     <tex>x=-3, y=2, z=1</tex>
-    <reason>\begin{align}
+    <reason>%text
+If two vectors are to have the same 
+magnitude and direction, they must
+have identical $\imath$, $\jmath$ and ${\it k}$ components.
+%
+
+\qquad\begin{align}
   \ora{a}&amp;=\vector{x}{2}{-z} \\
   \ora{b}&amp;=\vector{3}{-y}{1} \\
 \end{align} \\
-\text{Since $\ora{a}=\ora{b}$, comparing coefficients of $\hat i$, $\hat j$} \\
-\text{and $\hat k$ we get, }\bf x=3, y=-2, z=-1</reason>
+
+%text
+Comparing coefficients of $\hat i$, $\hat j$
+and $\hat k$ we get, $x=3, y=-2, z=-1$
+%
+\therefore x+y+z=0</reason>
   </step>
   <choices>
-    <tex>x=-3, y=2, z=1</tex>
-    <tex>x=3, y=2, z=1</tex>
-    <tex>x=-3, y=-2, z=-1</tex>
-    <tex correct='true'>x=3, y=-2, z=-1</tex>
+    <tex>x+y+z=6</tex>
+    <tex>x+y+z=5</tex>
+    <tex>x+y+z=1</tex>
+    <tex correct='true'>x+y+z=0</tex>
   </choices>
 </question>
