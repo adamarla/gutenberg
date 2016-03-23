@@ -1,45 +1,86 @@
 <?xml version='1.0' encoding='utf-8'?>
 <question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>\text{Find the differential equation representing the} \\
-\text{curve }y=cx+c^2?</tex>
+    <tex>%text
+Find the differential equation representing
+the curve \[  y = cx + c^2 \]
+%</tex>
   </statement>
   <step>
-    <context>\text{The relationship between a differential equation} \\
-\text{and the curve (function) that it represents is}</context>
-    <tex correct='true'>\dfrac{d}{dx}\, \text{Curve}\Rightarrow\text{Differential Equation}</tex>
-    <tex>\dfrac{d}{dx}\, \text{Differential Equation}\Rightarrow\text{Curve}</tex>
-    <reason>\text{If an equation (curve) is differentiated on both} \\ 
-\text{sides with respect to a variable, the result is a} \\
-\text{differential equation for the family of curves} \\
-\text{that the equation is part of.} \\
-\text{If }y=a\cdot f(x)+b, \text{and }f'(x)=g(x), 
-\text{ then}\\
-\begin{align}
-  &amp;\dfrac{dy}{dx}=a\cdot \dfrac{d}{dx}f(x)+0 \\
-  \implies &amp;\dfrac{dy}{dx}=a\cdot g(x)
-\end{align} \\
-\text{which is the differential equation.}</reason>
+    <context>\textbf{A theoretical question}
+%text
+
+Would we be right if we said the
+following about $y=cx+c^2$? </context>
+    <tex correct='true'>%text
+$y = cx+c^2$ has no $\frac{dy}{dx}, \frac{d^2 y}{dx^2}$ or $\left(\frac{dy}{dx} \right)^2$ type 
+terms. Hence, it is an equation - but not
+a differential equation. 
+%</tex>
+    <tex>%text
+This is a trick question. 
+
+\[ y = cx + c^2\] is both an equation \underline\text{and} a 
+differential equation. 
+%</tex>
+    <reason>%text
+A differential equation - by definition - 
+expresses the relationship between a
+variable and its derivatives $\left[ \frac{dy}{dx}, \frac{d^2 y}{dx^2}\text{ etc.} \right]$ 
+
+$y=cx +c^2$ has no such derivative terms.
+Hence, it is not a differential equation.
+%</reason>
   </step>
   <step>
-    <context>y=cx+c^2, \text{ differentiating} \\
-\text{both sides with respect to x gives}</context>
-    <tex correct='true'>\left(\dfrac{dy}{dx}\right)^2+x\dfrac{dy}{dx}-y=0
-</tex>
-    <tex>\dfrac{d^2y}{dx^2}+x\dfrac{dy}{dx}-y=0</tex>
-    <reason>\begin{align}
-  y &amp;= cx + c^2 \\
-  \dfrac{dy}{dx} &amp;= \dfrac{d}{dx}cx + \dfrac{d}{dx}c^2 \\
-  \dfrac{dy}{dx} &amp;= c
-\end{align} \\
-\text{Substituting c in } y=cx+c^2, \\
-\left(\dfrac{dy}{dx}\right)^2+x\dfrac{dy}{dx}-y=0 \\
-\text{Note: }\left(\dfrac{dy}{dx}\right)^2\neq \dfrac{d^2y}{dx^2}
-</reason>
+    <context>%text
+Given what a differential equation is,
+which of the following differential
+equations represents $y = cx + c^2$? 
+%</context>
+    <tex correct='true'>\begin{align}
+y = cx + c^2 &amp;\implies \frac{dy}{dx} = c \\ 
+\therefore y &amp;= \left( \frac{dy}{dx}\right) x + \left( \frac{dy}{dx} \right)^2 \\
+\text{or } \left( \frac{dy}{dx}\right) x &amp;+ \left( \frac{dy}{dx} \right)^2 - y = 0
+\end{align} </tex>
+    <tex>\begin{align}
+  y &amp;= cx + c^2 \implies \frac{dy}{dx} = c \\ 
+  \therefore \frac{d^2 y}{dx^2} &amp;= \frac{d}{dx}\left(\frac{dy}{dx}\right) = 0 
+\end{align} 
+
+%text
+
+Hence, the required differential equation
+is \[ \frac{d^2 y}{dx^2} = 0 \]
+%</tex>
+    <reason>%text
+\underline\text{If you differentiated $y=cx+c^2$ twice} to
+get \[ \frac{d^2 y}{dx^2} = 0\], then here is the issue 
+
+%
+\begin{align}
+\frac{d^2 y}{dx^2} &amp;= 0 \implies \frac{dy}{dx} = c \text{ (a constant)}\\
+\therefore y &amp;= cx + D 
+\end{align} 
+%text
+
+But $D$ \underline\text{need not be } equal to $c^2$ - as is 
+required in $y = cx + c^2$. 
+
+To meet all conditions, one must therefore
+do the following 
+
+%
+
+\begin{align}
+y = cx + c^2 &amp;\implies \frac{dy}{dx} = c \\ 
+\therefore y &amp;= \left( \frac{dy}{dx}\right) x + \left( \frac{dy}{dx} \right)^2 \\
+\text{or } \left( \frac{dy}{dx}\right) x &amp;+ \left( \frac{dy}{dx} \right)^2 - y = 0
+\end{align} </reason>
   </step>
   <choices>
-    <tex>\dfrac{dy}{dx}=y</tex>
-    <tex>\dfrac{dy}{dx}=x</tex>
+    <tex>\dfrac{d^2 y}{dx^2} = 0 </tex>
+    <tex>\dfrac{dy}{dx}= c </tex>
     <tex correct='true'>\left(\dfrac{dy}{dx}\right)^2+x\dfrac{dy}{dx}-y=0</tex>
     <tex>\dfrac{d^2y}{dx^2}+x\dfrac{dy}{dx}-y=0
 </tex>
