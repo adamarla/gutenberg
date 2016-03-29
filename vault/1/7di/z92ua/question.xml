@@ -1,11 +1,9 @@
-<?xml version="1.0" encoding="utf-8"?>
-<question xmlns="http://www.gradians.com">
+<?xml version='1.0' encoding='utf-8'?>
+<question xmlns='http://www.gradians.com'>
   <statement>
-    <tex>
-			\text{Using integration, find the area of the}\\
+    <tex>\text{Using integration, find the area of the}\\
 			\text{region bounded by the lines}\\
-			\quad y = 2+x, y=2-x\text{ and }x=2.
-		</tex>
+			\quad y = 2+x, y=2-x\text{ and }x=2.</tex>
   </statement>
   <step>
     <context>
@@ -14,7 +12,7 @@
 			\text{lines within which the required area - A}\\
 			\text{is bound.}
 			</context>
-    <image correct="true">right.svg</image>
+    <image correct='true'>right.svg</image>
     <image>wrong.svg</image>
     <reason>
 			\text{The lines }y=2+x\text{ and }y=2-x\text{ will}\\
@@ -28,27 +26,30 @@
   <step>
     <context>
 				\textbf{Right or wrong? } \\
-				\text{The expression for the required area A}\\
+				\text{The expression for the required area $A$}\\
 				\text{will be given by the following.}
 				</context>
-    <tex correct="true">
+    <tex correct='true'>
 				\begin{align}
 				  A &amp;= \int_0^2 (2+x)\cdot dx - \int_0^2 (2-x)\cdot dx
 				\end{align}
 				</tex>
-    <tex correct="false">
+    <tex>
 				\begin{align}
 				  A &amp;= \int_0^2 (2-x)\cdot dx - \int_0^2 (2+x)\cdot dx
 				\end{align}
 				</tex>
-    <reason>
-				\text{The required area lies between }x=0\text{ and } x=2.\\
-				\text{And in this region, }y=x+2\text{ lies above }y = 2-x.\\
-				\text{Hence, }
-				\begin{align}
-				  A &amp;= (\text{Area below } y=x+2) \\
-				  &amp;- (\text{Area below }y=2-x)
-				\end{align}
+    <reason>%text
+The required area lies between $x=0$ and $x=2.
+And in this region, $y = x+2$ \underline\text{lies above}
+$y=2-x$. Hence, the required area $A$ will be 
+%
+\begin{align}
+A &amp;= \text{Area below }y = x+ 2 \\
+&amp;- \text{ Area below } y = 2-x 
+\end{align} 
+
+			
 				</reason>
   </step>
   <step>
@@ -56,10 +57,10 @@
 				\textbf{Right or wrong? } \text{And the required area}\\
 				\text{A equals the following.}
 				</context>
-    <tex correct="true">
+    <tex correct='true'>
 				\qquad A = 4\text{ sq. units}
 				</tex>
-    <tex correct="false">
+    <tex>
 				\qquad A = 8\text{ sq. units}
 				</tex>
     <reason>
@@ -74,7 +75,7 @@
   <choices>
     <tex>1\text{ sq. units}</tex>
     <tex>2\text{ sq. units}</tex>
-    <tex correct="true">4\text{ sq. units}</tex>
+    <tex correct='true'>4\text{ sq. units}</tex>
     <tex>8\text{ sq. units}</tex>
   </choices>
 </question>
