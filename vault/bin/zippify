@@ -1,0 +1,17 @@
+#!/bin/bash 
+
+response=$(curl http://localhost:3000/ziptest) 
+echo $response
+
+target=$(echo $response | jq '.name' | cut -d'"' -f2)
+zips=$(echo $response | jq '.add')
+n=$(($(echo $zips | jq length)-1))
+
+cd $VAULT 
+for i in $(seq 0 $n) ; do 
+  folder=$(echo $zips | jq .[$i] | cut -d'"' -f2)
+  echo $folder 
+
+  zip -r $target.zip $folder/*.tex
+done
+cd -
