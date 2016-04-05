@@ -1,0 +1,21 @@
+#!/bin/bash 
+
+while getopts "lr" opt ; do 
+  case $opt in 
+    r) 
+      url="http://www.gradians.com/sku/recompiled"
+      ;;
+    l)
+      url="http://localhost:3000/sku/recompiled"
+      ;;
+    \?)
+      exit 1 
+      ;;
+  esac 
+done 
+
+if [[ -v url ]] ; then 
+  path=$(pwd | rev | cut -d'/' -f1-3 | rev)
+  ping="$url?path=$path"
+  curl $ping
+fi
