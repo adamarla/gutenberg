@@ -4,7 +4,7 @@ SHELL=/bin/bash
 .PHONY : clean 
 
 last_compiled_on : source.xml 
-	quill -r question.xml
+	quill -r $< 
 	@ping_on_recompile -r
 	@date > $@
 
