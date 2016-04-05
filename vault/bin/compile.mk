@@ -3,7 +3,7 @@ SHELL=/bin/bash
 .ONESHELL : 
 .PHONY : clean 
 
-last_compiled_on : question.xml 
+last_compiled_on : source.xml 
 	quill -r question.xml
 	@ping_on_recompile -r
 	@date > $@
