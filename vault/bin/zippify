@@ -1,17 +1,64 @@
 #!/bin/bash 
 
-response=$(curl http://localhost:3000/ziptest) 
-echo $response
+# Order in which curl requests are issued 
+#   modified/parcels 
+#   modified/zips 
+#   zip/contents 
+#   update/zip 
 
-target=$(echo $response | jq '.name' | cut -d'"' -f2)
-zips=$(echo $response | jq '.add')
-n=$(($(echo $zips | jq length)-1))
+if [[ $1 ]] ; then 
+  case $1 in 
+    -r) server=http://www.gradians.com ;;
+    *) server=http://localhost:3000 ;;
+  esac 
+else 
+  server=http://localhost:3000
+fi 
 
-cd $VAULT 
-for i in $(seq 0 $n) ; do 
-  folder=$(echo $zips | jq .[$i] | cut -d'"' -f2)
-  echo $folder 
+function reprocess_zips_in() { 
+  modified_zips=$(curl "$server/modified/zips?id=$1" | jq '.id')
+  z_last=$(($(echo $modified_zips | jq length)-1))
 
-  zip -r $target.zip $folder/*.tex
-done
-cd -
+  for z in $(seq 0 $z_last) ; do 
+    zid=$(echo $modified_zips | jq .[$z])
+    rezip $zid
+  done 
+} 
+
+function rezip() { 
+  response=$(curl "$server/zip/contents?id=$1")
+  target_zip=$(echo $response | jq '.name'| cut -d'"' -f2).zip
+  # echo $target_zip
+
+  sku_list=$(echo $response | jq '.paths')
+  sku_last=$(($(echo $sku_list | jq length)-1))
+
+  # cd to $VAULT so that zips have relative paths 
+  cd $VAULT 
+
+  for s in $(seq 0 $sku_last) ; do 
+    sku_path=$(echo $sku_list | jq .[$s] | cut -d'"' -f2)
+    zip -r $target_zip $sku_path/{*.xml,*.svg}
+  done 
+
+  # Now that we have a re-generated zip file, it is time to 
+  # inform the server of the zip's new SHASUM
+
+  sha=$(shasum $target_zip | cut -c1-8)
+  curl "$server/update/zip?id=$1&shasum=$sha"
+  mv $target_zip zips/
+
+  # ... and then come back to where you issued zippify command from
+  cd - 
+} 
+
+modified_parcels=$(curl "$server/modified/parcels" | jq '.id') 
+p_last=$(($(echo $modified_parcels | jq length)-1))
+if [ $p_last -lt 0 ] ; then exit 1 ; fi
+
+# Iterate over modified parcels 
+for p in $(seq 0 $p_last) ; do 
+  pid=$(echo $modified_parcels | jq .[$p])
+  reprocess_zips_in $pid 
+done 
+
