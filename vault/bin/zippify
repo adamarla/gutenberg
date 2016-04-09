@@ -27,19 +27,29 @@ function reprocess_zips_in() {
 
 function rezip() { 
   response=$(curl "$server/zip/contents?id=$1")
-  target_zip=$(echo $response | jq '.name'| cut -d'"' -f2).zip
-  # echo $target_zip
+  read zip_name sku_list <<<$(echo $response | jq '.name','.skus')
 
-  sku_list=$(echo $response | jq '.paths')
+  zip_name=$(echo $zip_name | cut -d'"' -f2)
   sku_last=$(($(echo $sku_list | jq length)-1))
+
+  target_zip=$zip_name.zip
+  manifest=$zip_name-manifest.xml
+  # echo $target_zip
 
   # cd to $VAULT so that zips have relative paths 
   cd $VAULT 
+  open_manifest $manifest
 
   for s in $(seq 0 $sku_last) ; do 
-    sku_path=$(echo $sku_list | jq .[$s] | cut -d'"' -f2)
+    sku=$(echo $sku_list | jq .[$s])
+    read path type id <<<$(echo $sku | jq '.path','.type','.id' | cut -d'"' -f2)
+    echo "<sku id=$id type='$type' path='$path' />" >> $manifest
+
     zip -r $target_zip $sku_path/{*.xml,*.svg}
   done 
+
+  close_manifest $manifest
+  zip -r $target_zip $manifest
 
   # Now that we have a re-generated zip file, it is time to 
   # inform the server of the zip's new SHASUM
@@ -50,6 +60,15 @@ function rezip() {
 
   # ... and then come back to where you issued zippify command from
   cd - 
+} 
+
+function open_manifest { 
+  echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>" > $1 
+  echo "<inventory>" >> $1 
+} 
+
+function close_manifest {
+  echo "</inventory>" >> $1 
 } 
 
 modified_parcels=$(curl "$server/modified/parcels" | jq '.id') 
