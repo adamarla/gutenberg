@@ -33,23 +33,23 @@ function rezip() {
   sku_last=$(($(echo $sku_list | jq length)-1))
 
   target_zip=$zip_name.zip
-  manifest=$zip_name-manifest.xml
+  catalog=zip-catalogs/$zip_name.xml
   # echo $target_zip
 
   # cd to $VAULT so that zips have relative paths 
   cd $VAULT 
-  open_manifest $manifest
+  open_catalog $catalog
 
   for s in $(seq 0 $sku_last) ; do 
     sku=$(echo $sku_list | jq .[$s])
     read path type id <<<$(echo $sku | jq '.path','.type','.id' | cut -d'"' -f2)
-    echo "<sku id=$id type='$type' path='$path' />" >> $manifest
+    echo "<sku id=$id type='$type' path='$path' />" >> $catalog
 
     zip -r $target_zip $sku_path/{*.xml,*.svg}
   done 
 
-  close_manifest $manifest
-  zip -r $target_zip $manifest
+  close_catalog $catalog
+  zip -r $target_zip $catalog
 
   # Now that we have a re-generated zip file, it is time to 
   # inform the server of the zip's new SHASUM
@@ -62,13 +62,13 @@ function rezip() {
   cd - 
 } 
 
-function open_manifest { 
+function open_catalog { 
   echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>" > $1 
-  echo "<inventory>" >> $1 
+  echo "<content>" >> $1 
 } 
 
-function close_manifest {
-  echo "</inventory>" >> $1 
+function close_catalog {
+  echo "</content>" >> $1 
 } 
 
 modified_parcels=$(curl "$server/modified/parcels" | jq '.id') 
