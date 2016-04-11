@@ -1,0 +1,17 @@
+#!/bin/bash 
+
+
+fname=$(basename $1 | cut -d'.' -f1)
+latex -halt-on-error $1 
+
+if [ ! -e $fname.dvi ] ; then 
+  echo "[compile]: LaTeX compilation failed ..." 
+  exit 1 
+fi 
+
+dvipdf $fname.dvi 
+pdf2svg $fname.pdf %d.svg all
+for f in `ls *.svg` ; do 
+  svgclip.py $f -o $f 
+done 
+

@@ -1,0 +1,14 @@
+#!/bin/bash 
+
+if [[ $1 ]] ; then 
+  case $1 in 
+    -r) server=http://www.gradians.com ;;
+    *) server=http://localhost:3000 ;;
+  esac 
+else 
+  server=http://localhost:3000
+fi 
+
+path=$(pwd | rev | cut -d'/' -f1-3 | rev)
+ping="$server/sku/recompiled?path=$path"
+curl $ping
