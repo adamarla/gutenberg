@@ -43,7 +43,7 @@ function rezip() {
   for s in $(seq 0 $sku_last) ; do 
     sku=$(echo $sku_list | jq .[$s])
     read path type id <<<$(echo $sku | jq '.path','.type','.id' | cut -d'"' -f2)
-    echo "<sku id=$id type='$type' path='$path' />" >> $catalog
+    echo "<sku id=\"$id\" type=\"$type\" path=\"$path\" />" >> $catalog
 
     zip -r $target_zip $sku_path/{*.xml,*.svg}
   done 
