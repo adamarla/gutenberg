@@ -22,9 +22,9 @@ function write_parcel_info() {
 
     if [ "$type" = "Question" ] ; then 
       read min max <<<$(echo $prc | jq '.min,.max')
-      echo "    <parcel id=$id name=$name type=\"$type\" min=$min max=$max/>" >> syllabus.xml
+      echo "    <parcel id=\"$id\" name=$name type=\"$type\" min=\"$min\" max=\"$max\"/>" >> syllabus.xml
     else 
-      echo "    <parcel id=$id name=$name type=\"$type\"/>" >> syllabus.xml
+      echo "    <parcel id=\"$id\" name=$name type=\"$type\"/>" >> syllabus.xml
     fi 
   done 
 }
@@ -51,7 +51,7 @@ for c in $(seq 0 $c_last) ; do
   name=$(echo $ch | jq '.name')
   id=$(echo $ch | jq '.id')
 
-  echo "  <chapter name=$name id=$id>" >> syllabus.xml
+  echo "  <chapter name=$name id=\"$id\">" >> syllabus.xml
   write_parcel_info $id
   echo "  </chapter>" >> syllabus.xml
 done 
