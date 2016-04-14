@@ -1,6 +1,6 @@
 #!/bin/bash 
 
-# Usage: syllabus -l [middle|secondary|senior] -s [maths|physics|chemistry] 
+# Usage: syllabus -g [middle|secondary|senior] -s [maths|physics|chemistry] 
 
 function open_syllabus() { 
   echo "<?xml version=\"1.0\" encoding=\"utf-8\"?>" > syllabus.xml
@@ -31,9 +31,9 @@ function write_parcel_info() {
 
 # MAIN 
 
-while getopts "l:s:r" option ; do 
+while getopts "g:s:r" option ; do 
   case $option in 
-    l) level=$OPTARG ;; 
+    g) grade=$OPTARG ;; 
     s) subject=$OPTARG ;;
     r) server=http://www.gradians.com ;;
   esac
@@ -41,7 +41,7 @@ done
 
 if [ -z "$server" ] ; then server=http://localhost:3000 ; fi
 
-chapters=$(curl "$server/chapter/list?cmdline=true&level=$level&subject=$subject")
+chapters=$(curl "$server/chapter/list?cmdline=true&level=$grade&subject=$subject")
 c_last=$(($(echo $chapters | jq length)-1))
 
 open_syllabus
