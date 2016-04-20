@@ -9,4 +9,6 @@ last_compiled_on : source.xml
 	@date > $@
 
 clean : 
-	@rm -f {STMT,CTX,CRT,WRNG,RSN,CH}_*.svg PREVIEW.svg last_compiled_on
+	@ls | grep -e [[:digit:]] | xargs rm -f 
+	@rm -f {STMT,CTX,CRT,WRNG,RSN,CH}_*.svg 
+	@rm -f PREVIEW.svg last_compiled_on
