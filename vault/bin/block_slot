@@ -1,0 +1,23 @@
+#!/bin/bash 
+
+# Usage: block_slot -p "q/1/541" OR block_slot -p "snippets/768"  
+
+while getopts "p:" option ; do 
+  case $option in
+    p) folder=$OPTARG ;; 
+  esac 
+done 
+
+if [ -z "$folder" ] ; then 
+  echo "[Error]: Missing -p option" 
+  exit 1
+fi 
+
+cd $VAULT 
+mkdir -p $folder 
+ln -s $VAULT/bin/compile.mk $folder/Makefile 
+cd - 
+
+
+
+
