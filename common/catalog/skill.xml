@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<skill xmlns="http://www.gradians.com">
+    <render>
+        <tex/>
+    </render>
+    <reason>
+        <tex/>
+    </reason>
+</skill>
+

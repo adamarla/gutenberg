@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:tns="http://www.gradians.com"
+	targetNamespace="http://www.gradians.com" 
+	elementFormDefault="qualified">
+	<xsd:element name="skill" type="tns:skillType"/> 
+	<xsd:complexType name="skillType">
+	    <xsd:sequence>
+	        <xsd:element name="render" type="tns:contentType"/>
+	        <xsd:element name="reason" type="tns:contentType"/>
+	    </xsd:sequence>
+	</xsd:complexType>
+        <xsd:complexType name="contentType">
+            <xsd:sequence>
+                <xsd:element name="tex" type="tns:texType" />
+            </xsd:sequence>
+        </xsd:complexType>
+	<xsd:complexType name="texType">
+	    <xsd:simpleContent>
+	        <xsd:extension base="xsd:string">
+	            <xsd:attribute name="correct" type="xsd:boolean" use="optional"/>
+	        </xsd:extension>
+	    </xsd:simpleContent>
+	</xsd:complexType>
+</xsd:schema>
+
