@@ -2,31 +2,21 @@
 
 function main() {
 
-    if [ -z "$1" ] ; then
-        #echo $2
-        usage
-    else 
-        if [[ ! "$1" =~ ^-.* ]] ; then
-            usage
-            return
+    if [ "$1" == "-u" ] ; then
+        update $2
+    else
+        if [ "$1" == "-d" ] ; then
+            download $2
         else
-            if [ "$1" == "-u" ] ; then
-                update $2
-            else
-                if [ "$1" == "-d" ] ; then
-                    download $2
-                else
-                    run_quill $1 $2
-                fi
-            fi
-
+            run_quill $1 $2
         fi
     fi
+
 }
 
 function usage() {
 
-    echo "Usage: quill [-u|-d] | [-p|-r|-e|-t] dir"
+    echo "Usage: quill [-u|-d] | [-r|-e|] dir"
     echo "========================================"
     echo " Download Options:"
     echo "-u update quill (in current dir)"
@@ -34,8 +24,6 @@ function usage() {
     echo "----------------------------------------"
     echo " Run Options:"
     echo "-e Editor edit/modify question"
-    echo "-t Tagger tag folders"
-    echo "-p Preview view generated SVGs"
     echo "-r Render generated SVGs for mobile app"
     echo ""
 }
