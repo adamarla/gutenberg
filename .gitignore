@@ -5,6 +5,9 @@
 #	3. Makefiles ( obviously )
 
 # Generated SVG files
+vault/q/*/*/*.svg
+!vault/q/*/*/img_*.svg
+
 vault/*/*/*/STMT_*.svg
 vault/*/*/*/CH_*.svg
 vault/*/*/*/CTX_*.svg
