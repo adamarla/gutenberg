@@ -4,9 +4,14 @@
 #	2. Any .gnuplot files ( but not generated .table files )
 #	3. Makefiles ( obviously )
 
-# Generated SVG files
+# Generated SVG files and layout.xml
 vault/q/*/*/*.svg
+vault/q/*/*/layout.xml
 !vault/q/*/*/img_*.svg
+vault/skills/*/*.svg
+vault/skills/*/layout.xml
+vault/snippets/*/*.svg
+vault/snippets/*/layout.xml
 
 vault/*/*/*/STMT_*.svg
 vault/*/*/*/CH_*.svg
