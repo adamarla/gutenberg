@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<skill xmlns='http://www.gradians.com' chapterId='3'>
+  <render>
+    <tex>%text
+Meaning of a Relation
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+A relation in sets $A$ and $B$ is an arbitrary
+subset of $A\times B$ which satisfies some condition. 
+Consider the sets 
+$A=\{1,2,3,4\}$, and $B=\{5,6,7\}$.
+%
+\begin{align}
+  A\times B =&amp; \{1,5\}, \{1,6\}, \{1,7\}, \\ 
+    &amp;\{2,5\}, \{2,6\},\{2,7\}, \\
+    &amp;\{3,5\}, \{3,6\},\{3,7\}    
+\end{align} \\
+%text
+If the relation $R$ is defined as 
+$R=\{(a,b):b=a+2\}$, not all the above
+pairs satisfy this condition. For instance,
+%
+\begin{align}
+  \{1,5\} \implies b=a+4 \\
+  \{1,6\}\implies  b=a+5 \\
+  \{1,7\} \implies b=a+6
+\end{align} \\
+%text
+In fact the only pair that satisfies the above 
+equation is $\{3,5\}$ because $5=3+2$. \therefore the
+relation $R$ from $A$ to $B$ is $\{3,5\}$
+%
+
+
+</tex>
+  </reason>
+</skill>
