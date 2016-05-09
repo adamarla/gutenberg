@@ -1,0 +1,7 @@
+#!/bin/bash 
+
+# To be called only from a cronjob 
+cd $VAULT 
+for f in $(ls -d snippets/* skills/*) ; do 
+  make -C $f 
+done 
