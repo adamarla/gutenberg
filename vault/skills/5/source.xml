@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<skill xmlns='http://www.gradians.com' chapterId='14'>
+  <render>
+    <tex>\[ \lim_{x\to a}\left[ f(x)\cdot g(x) \right] = ?\]</tex>
+  </render>
+  <reason>
+    <tex>%text
+If $f(x)$ and $g(x)$ be two functions such that 
+\underline\text{both} $\lim_{x\to a}f(x)$ \underline\text{and} $\lim_{x\to a}g(x)$ exist, then
+the following results hold 
+
+%
+\begin{align}
+\lim_{x\to a}\left[ f(x)\cdot g(x)\right] &amp;= \lim_{x\to a}f(x)\cdot\lim_{x\to a}g(x) \\
+\text{Moreover, if } g(x) &amp;= \alpha \text{ (a constant), then }\\
+\lim_{x\to a}\left[ f(x)\cdot g(x)\right] &amp;= \lim_{x\to a}\left[ \alpha\cdot f(x)\right] \\
+&amp;= \lim_{x\to a}f(x)\cdot\lim_{x\to a}\alpha \\
+&amp;= \alpha\cdot\lim_{x\to a}f(x) 
+\end{align} </tex>
+  </reason>
+</skill>

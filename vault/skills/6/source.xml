@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<skill xmlns='http://www.gradians.com' chapterId='14'>
+  <render>
+    <tex>\[ \lim_{x\to a}\dfrac{f(x)}{g(x)} = ? \]</tex>
+  </render>
+  <reason>
+    <tex>%text
+If $f(x)$ and $g(x)$ be two functions such that
+\underline\text{both} $\lim_{x\to a}f(x)$ and $\lim_{x\to a}g(x)$ exist
+\underline\text{and} $g(x)\neq 0$, then 
+
+%
+\begin{align}
+\lim_{x\to a}\dfrac{f(x)}{g(x)} &amp;= \dfrac{\lim_{x\to a}f(x)}{\lim_{x\to a}g(x)}
+\end{align} </tex>
+  </reason>
+</skill>
