@@ -1,0 +1,25 @@
+#!/bin/bash 
+
+# To be called ** only ** on Linode and from within a cron-job  
+
+leaf_mk=$VAULT/bin/compile.mk
+dive_mk=$VAULT/bin/dive.mk 
+
+cd $VAULT 
+
+# Ensure that each non-leaf folder has a soft-link to dive.mk
+for f in $(ls -d snippets/ skills/ q/ q/*) ; do 
+  if [ ! -d $f -o -e $f/Makefile ] ; then continue ; fi 
+  ln -s $dive_mk $f/Makefile
+done 
+
+# And every **leaf** folder is soft-linked to compile.mk
+for f in $(ls -d snippets/* skills/* q/*/*) ; do 
+  if [ ! -d $f -o -e $f/Makefile ] ; then continue ; fi 
+  ln -s $leaf_mk $f/Makefile
+done
+
+# Lastly, trigger recompile (inside snippets/ and skills/ for now) 
+for f in $(ls -d snippets/ skills/) ; do 
+  make -C $f 
+done 
