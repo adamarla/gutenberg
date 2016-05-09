@@ -16,7 +16,7 @@ function main() {
 
 function usage() {
 
-    echo "Usage: quill [-u|-d] | [-r|-e|] dir"
+    echo "Usage: quill [-u|-d] | [-r|-e|-m]"
     echo "========================================"
     echo " Download Options:"
     echo "-u update quill (in current dir)"
@@ -25,10 +25,19 @@ function usage() {
     echo " Run Options:"
     echo "-e Editor edit/modify question"
     echo "-r Render generated SVGs for mobile app"
+    echo "-m [mode = sandbox | production | display]"
     echo ""
 }
 
 function run_quill() {
+
+  if [ "$1" == "-m" ] ; then
+      if [ -z "$2" ] ; then
+          echo "-m [mode = sandbox | production | display]"
+          return
+      fi
+  fi 
+
   if [ ! -f ~/.quill/location ] ; then 
     echo "[Quill]: Download me first using quill -d" 
     return 
