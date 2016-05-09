@@ -5,7 +5,7 @@ SHELL=/bin/bash
 
 last_compiled_on : source.xml 
 	@ quill -r $$(pwd) 
-	@ ping_on_recompile 
+	@ ping_on_recompile -r 
 	@ date > $@
 
 clean : 
