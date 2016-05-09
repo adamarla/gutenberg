@@ -16,22 +16,27 @@ else
 fi 
 
 function reprocess_zips_in() { 
-  modified_zips=$(curl "$server/modified/zips?id=$1" | jq '.id')
-  z_last=$(($(echo $modified_zips | jq length)-1))
+  local json=p$1.json
+  curl "$server/modified/zips?id=$1" > $json 
+  z_last=$(($(jq length $json)-1))
 
   for z in $(seq 0 $z_last) ; do 
-    zid=$(echo $modified_zips | jq .[$z])
+    zid=$(jq ".id[$z]" $json)
     rezip $zid
   done 
+  rm -f $json
 } 
 
 function rezip() { 
+  local json=z$1.json
+  curl "$server/zip/contents?id=$1" > $json
   response=$(curl "$server/zip/contents?id=$1")
 
   # Extract values from JSON
-  read zip_name chapter type<<<$(echo $response | jq ".name,.chapter,.type" | cut -d'"' -f2)
-  sku_list=$(echo $response | jq '.skus')
-  sku_last=$(($(echo $sku_list | jq length)-1))
+
+  read zip_name chapter type<<<$(jq ".name,.chapter,.type" $json | cut -d'"' -f2)
+  sku_list=$(jq ".skus" $json)
+  sku_last=$(($(jq length $json)-1))
 
   target_zip=$zip_name.zip
   catalog=zip-catalogs/$zip_name.xml
@@ -61,6 +66,7 @@ function rezip() {
 
   # ... and then come back to where you issued zippify command from
   cd - 
+  rm -f $json
 } 
 
 function open_catalog { 
@@ -72,13 +78,16 @@ function close_catalog {
   echo "</content>" >> $1 
 } 
 
-modified_parcels=$(curl "$server/modified/parcels" | jq '.id') 
-p_last=$(($(echo $modified_parcels | jq length)-1))
+
+modified=modified.json
+curl "$server/modified/parcels" > $modified
+p_last=$(($(jq '.id|length' $modified)-1))
+
 if [ $p_last -lt 0 ] ; then exit 1 ; fi
 
 # Iterate over modified parcels 
 for p in $(seq 0 $p_last) ; do 
-  pid=$(echo $modified_parcels | jq .[$p])
+  pid=$(jq ".id[$p]" $modified)
   reprocess_zips_in $pid 
 done 
 

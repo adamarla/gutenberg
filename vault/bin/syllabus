@@ -12,11 +12,12 @@ function close_syllabus() {
 } 
 
 function write_parcel_info() { 
-  parcels=$(curl "$server/chapter/parcels?c=$1") 
-  p_last=$(($(echo $parcels | jq length)-1))
+  json=$1.json
+  curl "$server/chapter/parcels?c=$1" > $json
+  p_last=$(($(jq length $json)-1))
 
   for p in $(seq 0 $p_last) ; do 
-    prc=$(echo $parcels | jq .[$p])
+    prc=$(jq .[$p] $json)
     read name id type <<<$(echo $prc | jq '.name,.id,.type')
     type=$(echo $type | cut -d'"' -f2) # have to remove quotes for strcmp
 
@@ -27,6 +28,8 @@ function write_parcel_info() {
       echo "    <parcel id=\"$id\" name=$name type=\"$type\"/>" >> syllabus.xml
     fi 
   done 
+
+  rm -f $json
 }
 
 # MAIN 
