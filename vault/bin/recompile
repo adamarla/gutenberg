@@ -20,6 +20,10 @@ for f in $(ls -d snippets/* skills/* q/*/*) ; do
 done
 
 # Lastly, trigger recompile (inside snippets/ and skills/ for now) 
-for f in $(ls -d snippets/ skills/) ; do 
-  make -C $f 
-done 
+if [ ! -e .block-cron ] ; then 
+  touch .block-cron 
+  for f in $(ls -d snippets/ skills/) ; do 
+    make -C $f 
+  done 
+  rm -f .block-cron
+fi 
