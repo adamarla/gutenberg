@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<skill xmlns='http://www.gradians.com' chapterId='22'>
+  <render>
+    <tex>%text
+Understanding mathematical notation
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+Mathematical notation might look confusing
+but is nothing more than short-hand. 
+
+Get familiar with at least the basic symbols 
+like $\therefore$ (therefore), $\because$ (because), $\forall$ (for all),
+$\mathbb{R}$ (real numbers), $\mathbb{Z}$ (integers), $\sum$ (sum)
+etc. 
+
+Once you do, you will be able to express 
+complex ideas \underline\text{quickly and precisely}.
+%</tex>
+  </reason>
+</skill>
