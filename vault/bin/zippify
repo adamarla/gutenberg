@@ -83,7 +83,10 @@ modified=modified.json
 curl "$server/modified/parcels" > $modified
 p_last=$(($(jq '.id|length' $modified)-1))
 
-if [ $p_last -lt 0 ] ; then exit 1 ; fi
+if [ $p_last -lt 0 ] ; then 
+  rm -f $modified
+  exit 1 ; 
+fi
 
 # Iterate over modified parcels 
 for p in $(seq 0 $p_last) ; do 
@@ -91,3 +94,4 @@ for p in $(seq 0 $p_last) ; do
   reprocess_zips_in $pid 
 done 
 
+rm -f $modified
