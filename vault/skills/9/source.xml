@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<skill xmlns='http://www.gradians.com' chapterId='14'>
+  <render>
+    <tex>\[ \lim_{x\to a}\dfrac{x^n-a^n}{x-a} = ? \]</tex>
+  </render>
+  <reason>
+    <tex>\[ \qquad \lim_{x\to a}\dfrac{x^n-a^n}{x-a} = n\cdot a^{n-1} \]
+%text
+
+The above results holds under the following
+two conditions 
+
+%
+\begin{tabular}{|c|c|c|}
+\hline 
+ n &amp; a &amp; \text{Example}  \\
+ \hline 
+ n\in\mathbb{Z}^+ &amp; \text{Anything} &amp; \lim_{x\to a}\dfrac{x^5-a^5}{x-a} = 5\cdot a^4\\
+ \hline 
+ n\in\mathbb{Q}&amp; a\gt 0&amp;  \lim_{x\to a}\dfrac{x^{\frac{1}{3}}-a^{\frac{1}{3}}}{x-a} = \frac{1}{3}\cdot a^{-\frac{2}{3}}\\
+ \hline
+\end{tabular}  
+%text
+
+where $\mathbb{Z}^+$ is the set of \underline\text{positive integers}
+and $\mathbb{Q}$ is the set of \underline\text{rational numbers} 
+(things like $\frac{3}{4}, -\frac{7}{5}$ etc.)
+%</tex>
+  </reason>
+</skill>
