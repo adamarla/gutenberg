@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='utf-8'?>
+<skill xmlns='http://www.gradians.com' chapterId='14'>
+  <render>
+    <tex>\[\lim_{x\to 0}\sin Nx = ? \]</tex>
+  </render>
+  <reason>
+    <tex>%text
+\[x\to 0 \implies Nx\to 0 \implies \sin Nx \to 0 \]
+
+Therefore \[ \lim_{x\to 0}\sin Nx = 0 \]
+%</tex>
+  </reason>
+</skill>
