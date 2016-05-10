@@ -2,7 +2,7 @@
 <skill xmlns='http://www.gradians.com' chapterId='3'>
   <render>
     <tex>%text
-Meaning of a Relation
+Meaning of a relation $R$ in sets $A$ and $B$
 %</tex>
   </render>
   <reason>
@@ -10,27 +10,27 @@ Meaning of a Relation
 A relation in sets $A$ and $B$ is an arbitrary
 subset of $A\times B$ which satisfies some condition. 
 Consider the sets 
-$A=\{1,2,3,4\}$, and $B=\{5,6,7\}$.
+$A=\{1,2\}$, and $B=\{5,6,7\}$.
 %
 \begin{align}
-  A\times B =&amp; \{1,5\}, \{1,6\}, \{1,7\}, \\ 
-    &amp;\{2,5\}, \{2,6\},\{2,7\}, \\
-    &amp;\{3,5\}, \{3,6\},\{3,7\}    
+  A\times B =&amp; \{1,5\}, \{1,6\}, \{1,7\}, \{2,5\}, \\ 
+  &amp;\{2,6\},\{2,7\}    
 \end{align} \\
 %text
-If the relation $R$ is defined as 
-$R=\{(a,b):b=a+2\}$, not all the above
+If $R=\{(a,b):b=a+4\}$, not all the above
 pairs satisfy this condition. For instance,
 %
+\qquad
 \begin{align}
-  \{1,5\} \implies b=a+4 \\
-  \{1,6\}\implies  b=a+5 \\
-  \{1,7\} \implies b=a+6
+  \{1,6\}&amp;\implies  b=a+5 \\
+  \{2,5\}&amp;\implies b=a+3
 \end{align} \\
 %text
-In fact the only pair that satisfies the above 
-equation is $\{3,5\}$ because $5=3+2$. \therefore the
-relation $R$ from $A$ to $B$ is $\{3,5\}$
+The only pair that satisfies the condition
+for the relation is $\{3,5\}$ $(\because 5=3+2)$. 
+\therefore the relation $R$ from $A$ to $B$ is $\{3,5\}$.
+Note: A relation can also be in set $A$ alone.
+In this case, it would be a subset of $A\times A$.
 %
 
 
