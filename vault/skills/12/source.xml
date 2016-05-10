@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='utf-8'?>
+<skill xmlns='http://www.gradians.com' chapterId='14'>
+  <render>
+    <tex>\[ \lim_{x\to 0}\cos Nx = ? \]</tex>
+  </render>
+  <reason>
+    <tex>%text
+\[ x\to 0\implies Nx\to 0\implies \cos Nx \to 1 \]
+
+Therefore, \[ \lim_{x\to 0}\cos Nx = 1 \]
+%
+
+</tex>
+  </reason>
+</skill>
