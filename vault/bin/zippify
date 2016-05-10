@@ -28,31 +28,30 @@ function reprocess_zips_in() {
 } 
 
 function rezip() { 
-  local json=z$1.json
-  curl "$server/zip/contents?id=$1" > $json
-  response=$(curl "$server/zip/contents?id=$1")
+  # First, go into vault/ 
+  cd $VAULT 
 
   # Extract values from JSON
+  local json=z$1.json
 
+  curl "$server/zip/contents?id=$1" > $json
   read zip_name chapter type<<<$(jq ".name,.chapter,.type" $json | cut -d'"' -f2)
-  sku_list=$(jq ".skus" $json)
-  sku_last=$(($(jq length $json)-1))
-
   target_zip=$zip_name.zip
   catalog=zip-catalogs/$zip_name.xml
-  # echo $target_zip
 
-  # cd to $VAULT so that zips have relative paths 
-  cd $VAULT 
   open_catalog $catalog
+  jq ".skus" $json > sku_list 
+  sku_last=$(($(jq length sku_list)-1))
 
   for s in $(seq 0 $sku_last) ; do 
-    sku=$(echo $sku_list | jq .[$s])
-    read path id <<<$(echo $sku | jq ".path,.id" | cut -d'"' -f2)
+    read path id<<<$(jq ".[$s]|.path,.id" sku_list | cut -d'"' -f2)
     echo "<sku id=\"$id\" type=\"$type\" path=\"$path\" chapter=\"$chapter\" />" >> $catalog
 
     zip -r $target_zip $path/{layout.xml,*.svg}
   done 
+
+  # Remove temp file 
+  rm -f sku_list
 
   close_catalog $catalog
   zip -r $target_zip $catalog
@@ -65,8 +64,8 @@ function rezip() {
   mv $target_zip zips/
 
   # ... and then come back to where you issued zippify command from
-  cd - 
   rm -f $json
+  cd - 
 } 
 
 function open_catalog { 
