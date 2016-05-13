@@ -5,6 +5,8 @@
   </render>
   <reason>
     <tex>%text
+\textbf{Independent Events}
+
 If the probability of $A$ happening \underline\text{does not}
 change even when $B$ happens \underline\text{and} if the
 probability of $B$ happening does not change 
