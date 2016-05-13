@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<skill xmlns='http://www.gradians.com' chapterId='28'>
+  <render>
+    <tex>\[ P\left( A\,\vert\, B\right) = P(A) \implies ?\]</tex>
+  </render>
+  <reason>
+    <tex>%text
+\textbf{Independent Events}
+
+If the probability of $A$ happening \underline\text{does not}
+change even when $B$ happens \underline\text{and} if the
+probability of $B$ happening does not change 
+after $A$ occurs, then the two events $A$ and $B$
+are said to be \underline\text{independent events}
+
+%
+\text{Independence} \implies \[ \begin{cases}
+P\left( A\,\vert\, B\right) = P(A) \\ 
+P\left( B\,\vert\, A\right) = P(B) 
+\end{cases} \]
+</tex>
+  </reason>
+</skill>

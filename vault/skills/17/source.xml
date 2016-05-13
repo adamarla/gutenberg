@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<skill xmlns='http://www.gradians.com' chapterId='28'>
+  <render>
+    <tex>%text
+Theorem of Total Probability
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+If the set of \underline\text{all possible events}$(S)$ be 
+divided into smaller sets $E_1, E_2, \ldots$
+such that 
+
+%
+\begin{tabular}{|c|l|}
+\hline 
+\text{Condition} &amp; \text{Meaning} \\ 
+\hline 
+E_i\cap E_j = \phi\,(i\neq j) &amp; \text{$E_i$ and $E_j$ are mutually} \\
+&amp;\text{exclusive for any $i$ and $j$} \\
+\hline 
+E_i\cup E_j\cup\ldots E_n = S &amp; \text{$E_i\ldots E_n$ are exhaustive} \\
+\hline 
+E_i \neq \phi\text{ for any $i$} &amp; \text{All $E_i$ have non-zero size} \\
+\hline 
+\end{tabular} 
+%text
+
+then an event $A$ will intersect with \underline\text{some or all}
+of $E_1, E_2,\ldots E_n$. And hence, the probability
+of $A$ occurring can \underline\text{also be expressed} as
+
+\[ \qquad P(A) = \sum_{i=1}^n P(E_i)\cdot P\left( A\,\vert\, E_i\right)\]
+%</tex>
+  </reason>
+</skill>
