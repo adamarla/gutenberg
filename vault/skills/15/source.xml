@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<skill xmlns='http://www.gradians.com' chapterId='28'>
+  <render>
+    <tex>\[ P\left( A\,\vert\,B \right) + P\left( A'\,\vert\, B\right) = ? \]</tex>
+  </render>
+  <reason>
+    <tex>%text
+Let there be two events - $A$ and $B$.
+If \underline\text{event B has already happened}, then
+
+\[\qquad P\left( A\,\vert\,B \right) + P\left( A'\,\vert\, B\right) = 1  \]
+
+The above simply says that if event $B$
+has happened, then \underline\text{event $A$ has also}
+\underline\text{certainly happened or not happened}.
+%</tex>
+  </reason>
+</skill>
