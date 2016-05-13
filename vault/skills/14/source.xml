@@ -2,7 +2,8 @@
 <skill xmlns='http://www.gradians.com' chapterId='28'>
   <render>
     <tex>%text
-Conditional probability / Bayes' Theorem
+Conditional probability \&amp; 
+Bayes' Theorem
 %</tex>
   </render>
   <reason>
