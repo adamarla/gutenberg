@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='utf-8'?>
+<skill xmlns='http://www.gradians.com' chapterId='28'>
+  <render>
+    <tex>%text
+Expected value $(\mu)$ and Variance $(\sigma^2)
+of a random variable
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+\underline\text{Expected Value / Mean}
+The expected value of  a random 
+variable $(X)$ is defined as 
+\[ \qquad\mu = E(X) = \sum_{i=1}^n p_i\cdot x_i\]
+
+\underline\text{Variance}
+The variance of the random variable is
+defined as 
+\[ \qquad \sigma^2 = \sum_{i=1}^n (x_i - \mu)^2\cdot p_i^2\] 
+
+This also means that 
+%
+\begin{align}
+\sigma^2 &amp;= \sum_{i=1}^n (x_i-\mu)^2\cdot p_i \\
+&amp;= \sum_{i=1}^n (x_i^2 - 2\mu x_i + \mu^2)\cdot p_i \\
+&amp;= \sum_{i=1}^n x_i^2\cdot p_i -2\mu\underbrace{\sum_{i=1}^n x_ip_i}_{\mu} + \mu^2\underbrace{\sum_{i=1}^n p_i}_{=1}\\
+&amp;= \sum_{i=1}^n x_i^2\cdot p_i - \mu^2 
+\end{align} </tex>
+  </reason>
+</skill>
