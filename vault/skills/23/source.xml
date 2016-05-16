@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='utf-8'?>
+<skill xmlns='http://www.gradians.com' chapterId='9'>
+  <render>
+    <tex>%text
+The $m-$th term from the end / 
+the middle term(s) 
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+The $m-$th term \underline\text{from the end $(m\geq 1)$} is 
+the $(n-m+2)-$th term \underline\text{from the}
+\underline\text{beginning}, as can be seen from the
+expansion below
+
+\[ (a+b)^n = \overbrace{T_1 + T_2 + \ldots + \underbrace{T_k + \ldots + T_{n+1}}_{m\text{ terms}}}^{n+1 \text{ terms}} \]
+
+%
+
+\begin{tabular}{|c|c|}
+\hline 
+\text{From the end }$(m)$ &amp; \text{From the beginning } $(k)$ \\
+\hline 
+1 &amp; n-1+2 = n+1 \\
+\hline 
+n &amp; n-n+2 = 2 \\
+\hline 
+n+1 &amp; n-(n+1) + 2 = 1 \\
+\hline
+\end{tabular} 
+%text
+
+\underline\text{Middle Terms}
+Similar to finding the $m-$th term from the
+end is the idea of finding the middle terms 
+in an expansion. Note that $k$ is the position
+of the middle terms \underline\text{from the beginning}.
+
+%
+\begin{tabular}{|c|c|c|}
+\hline 
+n &amp; n+ 1\text{ terms} &amp; \text{Middle Term(s)} = k \\ 
+\hline 
+\text{Even} &amp; \text{Odd} &amp; \left( \frac{n}{2}+1\right) \\
+\hline 
+\text{Odd} &amp; \text{Even} &amp; \left( \frac{n+1}{2}\right) \text{ and }\left(\frac{n+3}{2}\right) \\
+\hline 
+\end{tabular} </tex>
+  </reason>
+</skill>

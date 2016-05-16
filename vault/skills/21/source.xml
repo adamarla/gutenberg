@@ -1,0 +1,36 @@
+<?xml version='1.0' encoding='utf-8'?>
+<skill xmlns='http://www.gradians.com' chapterId='9'>
+  <render>
+    <tex>%text
+Basic properties of $(a \pm b)^n,\,n\in\mathbb{Z^+}$
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+For a \underline\text{positive integer $n$}
+
+\[ \qquad (a \pm b)^n = \underbrace{T_1 + T_2 + T_3 + \ldots +T_{n+1}}_{n+1\text{ terms}} \]
+
+where $T_{m+1}$ is the $(m+1)-$th \underline\text{term}.
+
+%
+\begin{tabular}{|c|c|c|} 
+\hline 
+&amp; T_{m+1} &amp; K_{m+1} \\
+\hline 
+(a+b)^n &amp; {^n}C_m\cdot a^{n-m}\cdot b^m &amp; {^n}C_m  \\
+\hline
+(a-b)^n &amp; {^n}C_m\cdot a^{n-m}\cdot (-1)^mb^m &amp; {^n}C_m \\ 
+\hline 
+\end{tabular} 
+%text
+
+Both expansions have $n+1$ terms. And in
+both expansions, the $(m+1)^{th}$ coefficient 
+$(K_{m+1})$ is equal to ${^n}C_m$. 
+
+The only difference is whether or not there
+is a $(-1)^m$ term in $T_{m+1}$. 
+%</tex>
+  </reason>
+</skill>

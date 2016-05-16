@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<skill xmlns='http://www.gradians.com' chapterId='9'>
+  <render>
+    <tex>%text
+Reading / writing binomial expansion
+using $\sum$ 
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+Expressing $(a+b)^n$ using $\sum$ will help 
+you think about what the \underline\text{general term} is.
+Identify the general term and half the 
+battle is won. 
+
+Hence, get comfortable with seeing the
+following expansions expressed using $\sum$
+ 
+%
+\begin{tabular}{|c|c|}
+\hline 
+&amp; \text{Using }\sum \\
+\hline 
+(a+b)^n &amp; \sum_{k=0}^n {^n}C_k\cdot a^{n-k}\cdot b^k \\
+\hline 
+(a-b)^n &amp; \sum_{k=0}^n {^n}C_k\cdot a^{n-k}\cdot(-1)^k\cdot  b^k \\
+\hline 
+(1+x)^n &amp; \sum_{k=0}^n {^n}C_k\cdot x^k  \\
+\hline 
+(1-x)^n &amp; \sum_{k=0}^n {^n}C_k\cdot (-1)^k\cdot x^k  \\
+\hline
+\end{tabular} </tex>
+  </reason>
+</skill>
