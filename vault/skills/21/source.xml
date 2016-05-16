@@ -1,0 +1,16 @@
+<?xml version='1.0' encoding='utf-8'?>
+<skill xmlns='http://www.gradians.com' chapterId='9'>
+  <render>
+    <tex>%text
+Expansion of $(a+b)^n,\, n\in\mathbb{Z^+}$
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+If $n$ is a \underline\text{positive integer} and $a,b\in\mathbb{R}$
+then $(a+b)^n$ expands to the following
+
+\[ (a+b)^n = {^n}C_0 a^n + {^n}C_1 a^{n-1}b^1 + \ldots + {^n}C_na^{0}b^n\] 
+%</tex>
+  </reason>
+</skill>
