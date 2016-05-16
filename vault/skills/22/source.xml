@@ -2,33 +2,23 @@
 <skill xmlns='http://www.gradians.com' chapterId='9'>
   <render>
     <tex>%text
-Reading / writing binomial expansion
-using $\sum$ 
+\textbf{Common Trap} 
+Expansion of $(a-b)^n, (1-x)^n$ etc. 
 %</tex>
   </render>
   <reason>
     <tex>%text
-Expressing $(a+b)^n$ using $\sum$ will help 
-you think about what the \underline\text{general term} is.
-Identify the general term and half the 
-battle is won. 
+A lot of people forget about $(-1)^k$
+while expanding $(a-b)^n$ or $(1-x)^n$. 
 
-Hence, get comfortable with seeing the
-following expansions expressed using $\sum$
- 
+Hence, \underline\text{always remember the following}
+
 %
-\begin{tabular}{|c|c|}
-\hline 
-&amp; \text{Using }\sum \\
-\hline 
-(a+b)^n &amp; \sum_{k=0}^n {^n}C_k\cdot a^{n-k}\cdot b^k \\
-\hline 
-(a-b)^n &amp; \sum_{k=0}^n {^n}C_k\cdot a^{n-k}\cdot(-1)^k\cdot  b^k \\
-\hline 
-(1+x)^n &amp; \sum_{k=0}^n {^n}C_k\cdot x^k  \\
-\hline 
-(1-x)^n &amp; \sum_{k=0}^n {^n}C_k\cdot (-1)^k\cdot x^k  \\
-\hline
-\end{tabular} </tex>
+\begin{align}
+(a-b)^n &amp;= [a + (-b)]^n  \\ 
+&amp;= \sum_{k=0}^n \,{^n}C_k \cdot a^{n-k}\cdot (-1)^k\cdot b^k \\
+(1-x)^n &amp;= [1 + (-x)]^n \\
+&amp;= \sum_{k=0}^n\, {^n}C_k\cdot (-1)^k\cdot x^k 
+\end{align}</tex>
   </reason>
 </skill>
