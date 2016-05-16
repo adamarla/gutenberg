@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<skill xmlns='http://www.gradians.com' chapterId='9'>
+  <render>
+    <tex>%text
+Expansion of $(a-b)^n,\,n\in\mathbb{Z^+}$
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+Just like $(a+b)^n$ \underline\text{except} that $b$ is replaced
+with $-b$. Which means, \[ (a-b)^n = (a+(-b))^n \] 
+
+And hence, for a \underline\text{positive integer} $n$ 
+
+%
+\begin{align}
+(a-b)^n &amp;= {^n}C_0 a^n + {^n}C_1a^{n-1}(-b)^1 + \\
+&amp; {^n}C_2 a^{n-1}(-b)^2 + \ldots + {^n}C_na^0(-b)^n  \\
+&amp;= \sum_{k=1}^n {^n}C_k\cdot a^{n-k}\cdot (-1)^kb^k
+\end{align}
+
+%text
+
+\underline\text{Notice the $(-1)^k$ term in the expansion}.
+Most people forget about this term.
+%</tex>
+  </reason>
+</skill>
