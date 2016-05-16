@@ -2,8 +2,8 @@
 <skill xmlns='http://www.gradians.com' chapterId='9'>
   <render>
     <tex>%text
-The $m-$th term from the end / 
-the middle term(s) 
+The $m-$th term from the end 
+\&amp; the middle term(s) 
 %</tex>
   </render>
   <reason>

@@ -2,35 +2,45 @@
 <skill xmlns='http://www.gradians.com' chapterId='9'>
   <render>
     <tex>%text
-Basic properties of $(a \pm b)^n,\,n\in\mathbb{Z^+}$
+\textbf{Basics}
+Definition \&amp; the General Term
 %</tex>
   </render>
   <reason>
     <tex>%text
-For a \underline\text{positive integer $n$}
+If $a,b\in\mathbb{R}$ and $n\in\mathbb{Z^+}$ (positive integers), then 
+%
+\begin{align}
+(a&amp;+b)^n = \sum_{k=0}^n\, ^{n}C_k \cdot a^{n-k}\cdot b^k \\
+&amp;= \underbrace{^{n}C_0 \cdot a^n b^0 + ^{n}C_1\cdot a^{n-1}b +\ldots+^{n}C_n\cdot a^0b^n}_{n+1\text{ terms}}
+\end{align}
 
-\[ \qquad (a \pm b)^n = \underbrace{T_1 + T_2 + T_3 + \ldots +T_{n+1}}_{n+1\text{ terms}} \]
+%text
 
-where $T_{m+1}$ is the $(m+1)-$th \underline\text{term}.
+
+\underline\text{All other expansions,} like $(a-b)^n, (1+x)^n$ are
+simply different versions of $(a+b)^n$. 
+
+\textbf{General Term \&amp; Coefficient}
 
 %
-\begin{tabular}{|c|c|c|} 
+\begin{tabular}{|c|c|c|}
 \hline 
-&amp; T_{m+1} &amp; K_{m+1} \\
+&amp; \text{Expression} &amp; \text{Notes} \\ 
 \hline 
-(a+b)^n &amp; {^n}C_m\cdot a^{n-m}\cdot b^m &amp; {^n}C_m  \\
-\hline
-(a-b)^n &amp; {^n}C_m\cdot a^{n-m}\cdot (-1)^mb^m &amp; {^n}C_m \\ 
+(m+1)\text{-Term} &amp; {^n}C_m\cdot a^{n-m}\cdot b^m &amp; 0\leq m \leq n \\
+\hline 
+(m+1)\text{-Coeff} &amp; {^n}C_m &amp; 0\leq m \leq n \\
 \hline 
 \end{tabular} 
 %text
 
-Both expansions have $n+1$ terms. And in
-both expansions, the $(m+1)^{th}$ coefficient 
-$(K_{m+1})$ is equal to ${^n}C_m$. 
 
-The only difference is whether or not there
-is a $(-1)^m$ term in $T_{m+1}$. 
+\textbf{Note the following} 
+For the first term, $m=0$ (not $m=1$). 
+For the second term, $m=1$ (not $m=2)$.
+For the last term, $m = n$.
+$^{n}C_{n+1}$ is \underline\text{not} defined. Hence, $m\leq n$. 
 %</tex>
   </reason>
 </skill>
