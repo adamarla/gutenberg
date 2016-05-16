@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='utf-8'?>
+<skill xmlns='http://www.gradians.com' chapterId='9'>
+  <render>
+    <tex>%text
+Finding the \underline\text{largest term numerically}
+in the expansion of $(a+b)^n,\, a,b\gt 0$
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+If $a,b\gt 0$, then every term in the
+expansion of $(a+b)^n$ is also $\gt 0$. 
+
+Now, if $T_{m+1}$ be the $m-$th term and 
+$T_m$ be the $(m-1)-$th term, then as 
+long as \[ \frac{T_{m+1}}{T_m}\geq 1\], the terms are 
+increasing. 
+
+\underline\text{The last $m,\,m\in\mathbb{Z^+}$} for which this
+is true will give us the largest term.
+%</tex>
+  </reason>
+</skill>
