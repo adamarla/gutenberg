@@ -2,15 +2,18 @@
 <skill xmlns='http://www.gradians.com' chapterId='9'>
   <render>
     <tex>%text
-Expansion of $(a+b)^n,\, n\in\mathbb{Z^+}$
+Expansion of $(a+b)^n,\,n\in\mathbb{Z^+}$
 %</tex>
   </render>
   <reason>
     <tex>%text
 If $n$ is a \underline\text{positive integer} and $a,b\in\mathbb{R}$
 then $(a+b)^n$ expands to the following
-
-\[ (a+b)^n = {^n}C_0 a^n + {^n}C_1 a^{n-1}b^1 + \ldots + {^n}C_na^{0}b^n\] 
-%</tex>
+%
+\begin{align}
+ (a+b)^n &amp;= {^n}C_0 a^n + {^n}C_1 a^{n-1}b^1 \\
+ &amp;+ {^n}C_2a^{n-2}b^2 + \ldots + {^n}C_na^{0}b^n \\
+ &amp;= \sum_{k=1}^n\,^{n}C_k\cdot a^{n-k}\cdot b^{k} 
+\end{align} </tex>
   </reason>
 </skill>
