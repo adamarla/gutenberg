@@ -14,6 +14,7 @@ then $(a+b)^n$ expands to the following
  (a+b)^n &amp;= {^n}C_0 a^n + {^n}C_1 a^{n-1}b^1 \\
  &amp;+ {^n}C_2a^{n-2}b^2 + \ldots + {^n}C_na^{0}b^n \\
  &amp;= \sum_{k=1}^n\,^{n}C_k\cdot a^{n-k}\cdot b^{k} 
-\end{align} </tex>
+\end{align} 
+%text</tex>
   </reason>
 </skill>
