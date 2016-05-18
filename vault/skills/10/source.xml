@@ -1,22 +1,29 @@
 <?xml version='1.0' encoding='utf-8'?>
 <skill xmlns='http://www.gradians.com' chapterId='14'>
   <render>
-    <tex>\[ \lim_{x\to 0}\dfrac{\sin x}{x} = ? \text{ and } \lim_{x\to 0}\dfrac{\sin Mx}{Nx} = ?\]</tex>
+    <tex>%text
+\textbf{Basic Trigonometric Limits}
+Featuring $\sin x$ and $\cos x$ only
+%</tex>
   </render>
   <reason>
     <tex>%text
-\[ \lim_{x\to 0}\dfrac{\sin x}{x} = 1.\] This is a standard result.
-
-However, \[ \lim_{x\to 0}\dfrac{\sin Mx}{Nx} = \dfrac{M}{N}.\] The proof
-is as given below 
+The limits given below are the 
+\underline\text{basic building blocks} from which
+you can derieve all other limits 
+involving trigonometric functions
 
 %
-\begin{align}
-\lim_{x\to 0}\dfrac{\sin Mx}{Nx} &amp;= \lim_{x\to 0}\dfrac{\dfrac{\sin Mx}{Mx}}{\dfrac{Nx}{Mx}}
-= \dfrac{M}{N}\cdot\lim_{x\to 0}\dfrac{\sin Mx}{Mx}\\
-\text{Now, if } z &amp;= Mx\text{ then as }x\to 0,z\to 0\\
-\therefore \lim_{x\to 0}\dfrac{\sin Mx}{Mx} &amp;= \lim_{z\to 0}\dfrac{\sin z}{z} = 1 \\
-\therefore \lim_{x\to 0}\dfrac{\sin Mx}{Nx} &amp;= \dfrac{M}{N}\cdot\lim_{x\to 0}\dfrac{\sin Mx}{Mx} = \dfrac{M}{N}
-\end{align}</tex>
+\begin{tabular}{|c|c|} 
+\hline 
+\text{Rule} &amp; \text{Also} \\
+\hline 
+\lim_{x\to 0}\sin x = 0 &amp; \lim_{x\to 0}\sin Nx = 0  \\
+\hline 
+\lim_{x\to 0}\cos x = 1 &amp; \lim_{x\to 0}\cos Nx = 1 \\
+\hline 
+\lim_{x\to 0}\dfrac{\sin x}{x} = 1 &amp; \lim_{x\to 0}\dfrac{\sin Mx}{Nx} = \dfrac{M}{N} \\
+\hline
+\end{tabular} </tex>
   </reason>
 </skill>
