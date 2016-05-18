@@ -2,16 +2,17 @@
 <skill xmlns='http://www.gradians.com' chapterId='14'>
   <render>
     <tex>%text
-$\lim_{x\to a}f(x) = ?$ for a \underline\text{polynomial} $f(x)$
+$\lim_{x\to a}f(x) = ?$ when $f(x)$ is 
+a polynomial
 %</tex>
   </render>
   <reason>
     <tex>%text
-If $f(x)$ be things like $x^2 - 7x + 89$ or $x^5-26x$, 
-that is, a polynomial, then \[  \lim_{x\to a}f(x) = f(a) \].
+If $f(x)$ be a polynomial, then 
+\[\qquad \qquad $\lim_{x\to a}f(x) = f(a) \]
 
-Hence, $\lim_{x\to 1}f(x)$ for the two polynomials
-above would be as follows 
+Below are two examples using two
+polynomials and limits for when $x\to 1$.
 
 %
 \begin{tabular}{|c|c|}
