@@ -26,4 +26,7 @@ if [ ! -e .block-cron ] ; then
     make -C $f 
   done 
   rm -f .block-cron
+
+  # Recreate Zip files in case some SVGs have changed
+  zippify -r 
 fi 
