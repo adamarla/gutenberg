@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippet xmlns="http://www.gradians.com">
+  <render>
+    <tex>\[ \lim_{x\to 0}\dfrac{\tan x}{x} = 1 \]</tex>
+  </render>
+  <reason>
+    <tex>\begin{align}
+\dfrac{\tan x}{x} &amp;= \dfrac{1}{x}\cdot\dfrac{\sin x}{\cos x} = \dfrac{\frac{\sin x}{x}}{\cos x} \\
+\therefore \lim_{x\to 0}\dfrac{\tan x}{x} &amp;= \lim_{x\to 0}\left[ \dfrac{\frac{\sin x}{x}}{\cos x}\right] \\
+&amp;= \dfrac{\overbrace{\lim_{x\to 0}\frac{\sin x}{x}}^{=1}}{\underbrace{\lim_{x\to 0}\cos x}_{=1}} = 1
+\end{align}</tex>
+  </reason>
+</snippet>
