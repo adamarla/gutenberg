@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<snippet xmlns="http://www.gradians.com">
+<snippet xmlns="http://www.gradians.com" chapterId="14">
   <render>
     <tex>\[ \lim_{x\to 0}\dfrac{\tan x}{x} = 1 \]</tex>
   </render>
@@ -10,4 +10,7 @@
 &amp;= \dfrac{\overbrace{\lim_{x\to 0}\frac{\sin x}{x}}^{=1}}{\underbrace{\lim_{x\to 0}\cos x}_{=1}} = 1
 \end{align}</tex>
   </reason>
+  <skills>
+    <skill id="10"/>
+  </skills>
 </snippet>
