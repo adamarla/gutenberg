@@ -85,6 +85,8 @@ p_last=$(($(jq '.id|length' $modified)-1))
 if [ $p_last -lt 0 ] ; then 
   rm -f $modified
   exit 1 ; 
+else 
+  mkdir -p $VAULT/zips $VAULT/zip-catalogs
 fi
 
 # Iterate over modified parcels 
