@@ -1,9 +1,9 @@
-<?xml version='1.0' encoding='utf-8'?>
-<skill xmlns='http://www.gradians.com' chapterId='28'>
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com" chapterId="28">
   <render>
     <tex>%text
-Random variables and their
-probability distribution
+\textcolor{blue}{\text{Random Variables }}
+And their probability distribution
 %</tex>
   </render>
   <reason>
