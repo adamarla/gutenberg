@@ -1,8 +1,8 @@
-<?xml version='1.0' encoding='utf-8'?>
-<skill xmlns='http://www.gradians.com' chapterId='14'>
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com" chapterId="14">
   <render>
     <tex>%text
-\textbf{Basic Trigonometric Limits}
+\textcolor{blue}{\text{Basic Trigonometric Limits}}
 Featuring $\sin x$ and $\cos x$ only
 %</tex>
   </render>
