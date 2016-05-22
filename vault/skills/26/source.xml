@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>%text
+\textcolor{blue}{\text{Problem Visualization}}
+Plotting graphs and/or creating a
+picture from the problem statement
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+A picture is worth a thousand words. 
+
+And therefore, your ability to visualize
+problems and accurately \underline\text{capture the facts}
+of the question on a picture will have a 
+direct impact on your ability to solve 
+problems correctly. 
+%</tex>
+  </reason>
+</skill>
