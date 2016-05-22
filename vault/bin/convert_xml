@@ -1,0 +1,48 @@
+#!/home/abhinavc/.rvm/rubies/ruby-1.9.3-p545/bin/ruby
+
+require 'nokogiri'
+require 'nokogiri-pretty'
+
+@doc = Nokogiri::XML(File.open("test.xml"))
+@doc.remove_namespaces! 
+
+@contexts = @doc.search('context') + @doc.search('reason')
+
+# Move the contents of a <context> or a <reason> within a <tex> 
+#   <context> .... </context> -> <context><tex> .... </tex></context> 
+
+@contexts.each do |ctx|
+  tex_node = Nokogiri::XML::Node.new "tex", @doc 
+  tex_text = ctx.content.strip 
+  ctx.content = nil 
+  ctx.add_child tex_node 
+  tex_node.content = tex_text 
+end 
+
+# Convert all <image> -> <tex isImage='true' src='something.svg' correct='true|false' />
+
+@images = @doc.search 'image' 
+@images.each do |img| 
+  tex_node = Nokogiri::XML::Node.new "tex", @doc 
+  img_src = img.content.strip 
+  tex_node.set_attribute "src", img_src 
+  tex_node.set_attribute "isImage", "true"
+  tex_node.set_attribute("correct", (img.get_attribute("correct") == "true" ? "true" : "false")) 
+  img.add_next_sibling tex_node 
+  img.remove 
+end 
+
+# Move all immediate children of type <tex> within a <step> 
+# inside the (new) <options> node
+
+@steps = @doc.search 'step'
+@steps.each do |step| 
+  options = Nokogiri::XML::Node.new "options", @doc 
+  step.add_child options 
+  floaters = step.xpath "./tex"
+  floaters.each do |turd| 
+    turd.parent = options 
+  end 
+end 
+
+File.write "output.xml", @doc.human
