@@ -3,7 +3,10 @@
 require 'nokogiri'
 require 'nokogiri-pretty'
 
-@doc = Nokogiri::XML(File.open("test.xml"))
+input_file = "source.xml"
+output_file = "source.xml"
+
+@doc = Nokogiri::XML(File.open(input_file))
 @doc.remove_namespaces! 
 
 @contexts = @doc.search('context') + @doc.search('reason')
@@ -45,4 +48,4 @@ end
   end 
 end 
 
-File.write "output.xml", @doc.human
+File.write output_file, @doc.human
