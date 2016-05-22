@@ -1,27 +1,30 @@
-<?xml version='1.0' encoding='utf-8'?>
-<skill xmlns='http://www.gradians.com' chapterId='29'>
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com" chapterId="29">
   <render>
     <tex>%text
-Working with piece-wise functions
+\textcolor{blue}{\text{Piece-wise functions}} \\
+Ability to read, understand and
+work with piece-wise functions
 %</tex>
   </render>
   <reason>
     <tex>%text
-Ordinarily, we work with functions that have 
-the same definition over the entire domain. 
+When a function is defined differently in
+different regions of it's domain, we say
+that the function is  defined in pieces - 
+or \underline\text{piece-wise defined}.
 
-But then, a function may be defined differently
-in different regions of it's domain. Such a 
-function is said to be defined in pieces - or 
-piece-wise defined. 
-
-One such function is $f(x) = \vert x\vert$ - which is 
-defined differently for $x\geq 0$ and $x\lt 0$. 
+For example, $f(x) = \vert x\vert$ is defined as 
 
 %
 \[ \qquad f(x) = \begin{cases} 
 -x, x\lt 0 \\
 x, x\geq 0 
-\end{cases} \]</tex>
+\end{cases} \]
+%text
+
+Notice, the different definitions for 
+$x\geq 0$ and $x\lt 0$
+%</tex>
   </reason>
 </skill>
