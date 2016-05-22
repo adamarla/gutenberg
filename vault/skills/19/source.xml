@@ -3,7 +3,8 @@
   <render>
     <tex>%text
 \textcolor{blue}{\text{Probability Distribution}}
-Finding the mean $(\mu)$ \&amp; variance $(\sigma^2)$
+Finding the mean $(\mu)$ \&amp; 
+variance $(\sigma^2)$
 %</tex>
   </render>
   <reason>
