@@ -10,7 +10,11 @@ function main() {
         if [ "$1" == "-d" ] ; then
             download $2
         else
-            run_quill $1 $2
+            if [ "$1" == "-h" ] ; then
+                usage
+            else
+                run_quill $1 $2
+            fi
         fi
     fi
 
@@ -18,27 +22,22 @@ function main() {
 
 function usage() {
 
-    echo "Usage: quill [-u|-d] | [-r|-e|-m]"
+    echo "Usage: quill [-u|-d|-r|-e|-m|-c]"
     echo "========================================"
     echo " Download Options:"
     echo "-u update quill (in current dir)"
     echo "-d download quill (into current dir)"
     echo "----------------------------------------"
     echo " Run Options:"
-    echo "-e Editor edit/modify question"
-    echo "-r Render generated SVGs for mobile app"
-    echo "-m [mode = sandbox | production | display]"
+    echo "-e path_to_folder (Editor edit/modify question)"
+    echo "-r path_to_folder (Render generated SVGs for mobile app)"
+    echo "-m mode = sandbox | production | display"
+    echo "-c path_to_folder chapterId (Convert question.xml to source.xml)"
     echo ""
+
 }
 
 function run_quill() {
-
-  if [ "$1" == "-m" ] ; then
-      if [ -z "$2" ] ; then
-          echo "-m [mode = sandbox | production | display]"
-          return
-      fi
-  fi 
 
   if [ ! -f ~/.quill/location ] ; then 
     echo "[Quill]: Download me first using quill -d" 
@@ -46,6 +45,7 @@ function run_quill() {
   fi 
   dir=$(cat ~/.quill/location) 
   java -jar $dir/Qquill-all.jar $1 $2
+
 }
 
 function download() {
