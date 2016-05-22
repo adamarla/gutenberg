@@ -1,7 +1,7 @@
-<?xml version='1.0' encoding='utf-8'?>
-<skill xmlns='http://www.gradians.com' chapterId='14'>
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com" chapterId="14">
   <render>
-    <tex>\textbf{Limits: Basic Arithmetic}\\
+    <tex>\textcolor{royalblue}{\text{Limits: Basic Arithmetic}} \\
 \[ \lim_{x\to a}\left[ f(x) + g(x) \right], \lim_{x\to a}\frac{f(x)}{g(x)}\text{ etc.}\]</tex>
   </render>
   <reason>
