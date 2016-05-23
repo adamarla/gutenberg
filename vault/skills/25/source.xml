@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>%text
+\textcolor{blue}{\text{Basic polynomial operations}}
+Factorizing, simplifying \[ \frac{P(x)}{Q(x)} \] etc.
+
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+Expressing one polynomial as the 
+\underline\text{product} of two or more other 
+polynomials is called factorization. 
+
+For example, 
+%
+\begin{align}
+	x^2 - 3x + 2 &amp;= (x-1)\cdot (x-2) \\ 
+	x^3-1 &amp;= (x-1)\cdot (x^2 + x + 1) \\
+	x^4 - 1 &amp;= (x-1)\cdot (x+1)\cdot (x^2 + 1)
+\end{align}
+%text
+
+
+Factorizing is something you will do 
+often in the course of your studies. 
+
+So, it is best if you get comfortable 
+with it.
+%
+</tex>
+  </reason>
+</skill>

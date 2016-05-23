@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippet xmlns="http://www.gradians.com" chapterId="14">
+  <render>
+    <tex correct="false">\[ \lim_{x\to 1} \dfrac{x^2-3x+2}{x^2+3x-4} = \infty\]</tex>
+  </render>
+  <reason>
+    <tex>\begin{align}
+\dfrac{x^2-3x+2}{x^2 + 3x- 4} &amp;= \dfrac{(x-1)\cdot (x-2)}{(x-1)\cdot (x+4)} \\ 
+&amp;= \dfrac{x-2}{x+4} \\ 
+\therefore \lim_{x\to 1} \dfrac{x^2-3x+2}{x^2+3x-4} &amp;= \lim_{x\to 1}\dfrac{x-2}{x+4} \\ 
+&amp;= \dfrac{\lim_{x\to 1} (x-2)}{\lim_{x\to 1}(x+4)} = \dfrac{-1}{5}
+\end{align}</tex>
+  </reason>
+  <skills>
+    <skill id="4"/>
+    <skill id="25"/>
+  </skills>
+</snippet>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>%text
+\textcolor{blue}{\text{Derivative of Sum}}
+\[ \frac{d}{dx}\left[ f(x) \pm g(x)\right] = ? \]
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+Given two functions $f(x)$ and $g(x)$, 
+\underline\text{if their derivatives are defined}, then
+
+%
+\begin{align}
+\frac{d}{dx}\left[ f(x) + g(x)\right] &amp;= \frac{d}{dx}f(x) + \frac{d}{dx}g(x) \\
+\frac{d}{dx}\left[ f(x) - g(x)\right] &amp;= \frac{d}{dx}f(x) - \frac{d}{dx}g(x)
+\end{align}</tex>
+  </reason>
+</skill>
