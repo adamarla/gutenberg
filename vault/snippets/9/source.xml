@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippet xmlns="http://www.gradians.com" chapterId="14">
+  <render>
+    <tex correct="false">\[ \lim_{x\to 1}\dfrac{x^{\frac{1}{3}}-1}{x^{\frac{1}{4}}- 1} = \dfrac{1}{12} \]</tex>
+  </render>
+  <reason>
+    <tex>\begin{align}
+\dfrac{x^{\frac{1}{3}}-1}{x^{\frac{1}{4}}- 1} &amp;= 
+\dfrac{\left(\dfrac{x^{\frac{1}{3}}-1}{x-1}\right)}{\left(\dfrac{x^{\frac{1}{4}}- 1}{x-1}\right)} \\
+\therefore \lim_{x\to 1}\dfrac{x^{\frac{1}{3}}-1}{x^{\frac{1}{4}}- 1} &amp;= 
+\dfrac{\lim_{x\to 1}\left(\dfrac{x^{\frac{1}{3}}-1}{x-1}\right)}{\lim_{x\to 1}\left(\dfrac{x^{\frac{1}{4}}- 1}{x-1}\right)} \\
+&amp;= \dfrac{\frac{1}{3}\cdot 1^{\frac{1}{3}-1}}{\frac{1}{4}\cdot 1^{\frac{1}{4}-1}} = \dfrac{4}{3}
+\end{align}</tex>
+  </reason>
+  <skills>
+    <skill id="4"/>
+    <skill id="9"/>
+  </skills>
+</snippet>
