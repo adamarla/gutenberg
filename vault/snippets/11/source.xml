@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippet xmlns="http://www.gradians.com" chapterId="14">
+  <render>
+    <tex correct="false">\[ \lim_{x\to\frac\pi{2}}\left(\dfrac{\cos x}{x-\frac\pi{2}}\right) = 1 \]</tex>
+  </render>
+  <reason>
+    <tex>\begin{align}
+\text{Let }z = x-\frac\pi{2}&amp;\implies x = z + \frac\pi{2} \\ 
+\text{Also, as }x\to\frac\pi{2} &amp;, z\to 0  \\
+\therefore  \lim_{x\to\frac\pi{2}}\left(\dfrac{\cos x}{x-\frac\pi{2}}\right) &amp;= 
+\lim_{z\to 0}\left[\dfrac{\cos\left( z+\frac\pi{2}\right)}{z}\right] \\
+&amp;= \underbrace{\lim_{z\to 0}\dfrac{-\sin z}{z}}_{\cos\left(\frac\pi{2}+\theta\right) = -\sin\theta} \\
+&amp;= -1\cdot\lim_{z\to 0}\dfrac{\sin z}{z} = -1 
+\end{align}</tex>
+  </reason>
+  <skills>
+    <skill id="10"/>
+    <skill id="32"/>
+  </skills>
+</snippet>
