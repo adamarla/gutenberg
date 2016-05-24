@@ -3,8 +3,8 @@
   <render>
     <tex>%text
 \textcolor{blue}{\text{Conditions for continuity}}
-At a point $x=a$, in an open interval
-$(b,c)$ and closed interval $[b,c]$
+At a point $x=a$;  In open $(b,c)$
+and closed $[b,c]$ intervals 
 %</tex>
   </render>
   <reason>
