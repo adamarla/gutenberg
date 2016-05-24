@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippet xmlns="http://www.gradians.com" chapterId="21">
+  <render>
+    <tex correct="false">f(x) = \begin{cases}
+\dfrac{\tan 2x}{x},\, x\neq 0 \\ 
+a,\, x = 0  
+\end{cases}
+%text
+
+is continuous at $x=0$ if $a = 1$
+%</tex>
+  </render>
+  <reason>
+    <tex>\[\lim_{x\to 0}\dfrac{\tan x}{x} = 1\textbf{ but } \lim_{x\to 0}\dfrac{\tan 2x}{x} = 2 \]
+%text
+
+Therefore, for $f(x)$ to be continuous
+at $x=0$, $ a = \lim_{x\to 0}f(x) = 2$. 
+
+Hence, $a = 2$
+%
+</tex>
+  </reason>
+  <skills>
+    <skill id="34"/>
+    <skill id="10"/>
+    <skill id="13"/>
+  </skills>
+</snippet>

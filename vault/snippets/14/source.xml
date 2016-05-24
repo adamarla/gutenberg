@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippet xmlns="http://www.gradians.com" chapterId="14">
+  <render>
+    <tex>\[ \lim_{x\to 0}x\cdot\cot x = 1 \]</tex>
+  </render>
+  <reason>
+    <tex>\begin{align}
+\lim_{x\to 0}\left( x\cdot \cot x\right) &amp;= \lim_{x\to 0}\left(\dfrac{x}{\tan x}\right) \\
+&amp;= \lim_{x\to 0}\left[ \dfrac{1}{\left(\dfrac{\tan x}{x}\right)}\right] \\
+&amp;= \dfrac{1}{\lim_{x\to 0}\left(\dfrac{\tan x}{x}\right)} = 1
+\end{align}</tex>
+  </reason>
+  <skills>
+    <skill id="10"/>
+  </skills>
+</snippet>
