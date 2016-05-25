@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>%text
+\textcolor{blue}{\text{Understanding the problem}}
+Correctly and fully identifying what
+is being asked in the question
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+In school, you will not do problems
+that don't have an answer. 
+
+That said, to find the answer, you 
+must read the question carefully.
+\underline\text{Not slowly - but carefully}
+
+Take time to take stock of all the 
+facts that have been given. And 
+don't over- or under-interpret 
+the question.
+%</tex>
+  </reason>
+</skill>
