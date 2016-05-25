@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Evaluate the following}\\
+			\qquad\int_0^{\frac{\pi}{2}}\dfrac{2^{\sin x}}{2^{\sin x} + 2^{\cos x}}\cdot dx 
+		</tex>
+      <tex>\\ \text{If }f(x) = \dfrac{2^{\sin x}}{2^{\sin x} + 2^{\cos x}}\text{ and }
+			f(\bar{x}) = \dfrac{2^{\cos x}}{2^{\sin x} + 2^{\cos x}}, \\
+			\text{then what is }\bar{x}\text{ in terms of x?}</tex>
+      <tex>\\ \textbf{Right or wrong? } \\
+				\text{Given }f\left(\frac\pi{2}-x\right) = \dfrac{2^{\cos x}}{2^{\sin x} + 2^{\cos x}} \\
+				A = \int_0^{\frac\pi{2}}\dfrac{2^{\sin x}}{2^{\sin x} + 2^{\cos x}}\cdot dx\text{ will }\\
+				\text{evaluate to the following}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\qquad \bar{x} = \frac{\pi}{2}-x
+			</tex>
+         <tex correct="false">
+			\qquad \bar{x} = \pi - x 
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{If }f(x) = \dfrac{2^{\sin x}}{2^{\sin x} + 2^{\cos x}},\text{ then }\\
+			\begin{align}
+			  f\left(\frac{\pi}{2}-x\right) &amp;= \dfrac{2^{\sin \left(\frac\pi{2}-x\right)}}
+			  {2^{\sin \left(\frac\pi{2}-x\right)} + 2^{\cos \left(\frac\pi{2}-x\right)}} \\
+			  &amp;= \dfrac{2^{\cos x}}{2^{\sin x} + 2^{\cos x}}
+			\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\qquad A = \dfrac\pi{4}
+				</tex>
+         <tex correct="false">
+				\qquad A = \dfrac\pi{2}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{We know that }\\
+				\begin{align}
+				  \int_0^a f(x)\cdot dx &amp;= \int_0^a f(a-x)\cdot dx \\
+				  \therefore A &amp;= \int_0^{\frac\pi{2}}
+				  \underbrace{\dfrac{2^{\sin x}}{2^{\sin x} + 2^{\cos x}}}_{f(x)}\cdot dx  \\
+				  &amp;= \int_0^{\frac\pi{2}} 
+				  \underbrace{\dfrac{2^{\cos x}}{2^{\sin x} + 2^{\cos x}}}_{f(a-x)}\cdot dx \\
+				  \implies A + A &amp;= \int_0^{\frac\pi{2}}
+				  \dfrac{2^{\sin x} + 2^{\cos x}}{2^{\sin x} + 2^{\cos x}}\cdot dx \\
+				  \implies 2A &amp;= \int_0^{\frac\pi{2}} dx = \frac{\pi}{2} \\
+				  \therefore A &amp;= \dfrac{\pi}{4}
+				\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\dfrac{\pi}{2}</tex>
+      <tex correct="true">\dfrac{\pi}{4}</tex>
+      <tex>\pi</tex>
+      <tex>\dfrac{2}{\pi}</tex>
+   </choices>
+</question>

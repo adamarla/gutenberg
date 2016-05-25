@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>%text
+Find the area of the region 
+%
+\[ \lbrace (x,y): x^2+y^2\leq 4, x + y\geq 2 \rbrace \]</tex>
+      <tex>\\ \textbf{What area?}\\
+%text
+In the figure below, is the shaded region
+the required area? 
+%</tex>
+      <tex>\\ %text
+If $R$ be the required area, then is the
+following correct? 
+%</tex>
+      <tex>\\ %text
+What will the value of $R$ be given the 
+expression from Step 2?
+%</tex>
+   </statement>
+   <step>
+      <options>
+         <tex src="right.svg" isImage="true" correct="true"/>
+         <tex src="wrong.svg" isImage="true" correct="false"/>
+      </options>
+      <reason>
+         <tex>\lbrace (x,y): \underbrace{x^2+y^2\leq 4}_{\text{inside the circle}}, \underbrace{x+y\geq 2}_{\text{on or above the line}} \rbrace\\
+%text
+
+If a point $(x,y)$ satisfies $x^2+y^2=4$, then 
+$(x,y)$ is \underline\text{on the circle}. But if $x^2+y^2\lt 4$, 
+then $(x,y)$ is \underline\text{inside} the circle. 
+
+Similarly, if $(x,y)$ satisfies $x+y = 2$, then 
+$(x,y)$ lies on the line. But if $x+y\gt 2$, 
+then $(x,y)$ lies \underline\text{above} the line.
+
+Hence, we are looking for $(x,y)$ that are 
+inside a circle but above a line. 
+%</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\begin{align}
+R &amp;= \int_0^2 \sqrt{4-x^2}\cdot dx + \int_0^2 x\cdot dx - 2\int_0^2 dx
+\end{align} </tex>
+         <tex>\begin{align}
+R &amp;= \int_0^2 \sqrt{4-x^2}\cdot dx - \int_0^2 x\cdot dx + 2\int_0^2 dx
+\end{align}</tex>
+      </options>
+      <reason>
+         <tex>%text
+You can see from the figure in Step 1 that
+$A = (0,2)$ and $B=(2,0)$. 
+
+Or, you could do the following to find the
+\underline\text{points of intersection}
+%
+\begin{align}
+y^2 = \underbrace{4-x^2}_{\text{circle}} &amp;= \underbrace{(2-x)^2}_{\text{line}}\\
+\implies 4-x^2 = 4 + x^2 - 4x &amp;\text{ or } 2x^2-4x = 0 \\
+\implies 2x\cdot(x-2) &amp;= 0 \text{ or } x = 0,2 
+\end{align} 
+%text
+
+The required area, therefore, will be 
+%
+\begin{align}
+R &amp;= \underbrace{\int_0^2 \sqrt{4-x^2}\cdot dx}_{\text{under the circle}} 
+- \underbrace{\int_0^2 (2-x)\cdot dx}_{\text{under the line}} \\
+&amp;= \int_0^2 \sqrt{4-x^2}\cdot dx + \int_0^2 x\cdot dx - 2\int_0^2 dx
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\[ R = \pi - 2\] </tex>
+         <tex>\[ R = \pi - 1\] </tex>
+      </options>
+      <reason>
+         <tex>%text
+If you weren't required to use calculus, then
+you would do the following
+%
+\begin{align}
+R &amp;= \underbrace{\frac{\pi\cdot R^2}{4}}_{\text{First quadrant}} 
+- \underbrace{\frac{1}{2}\cdot\text{Base}\cdot\text{Height}}_{\triangle OAB}\\
+&amp;= \frac{\pi\cdot 2^2}{4} - \frac{1}{2}\cdot 2\cdot 2 = \pi - 2
+\end{align}
+%text
+
+But you have to use calculus. So, here goes
+%
+\begin{align}
+R &amp;= \int_0^2 \sqrt{4-x^2}\cdot dx + \int_0^2 x\cdot dx - 2\int_0^2 dx\\
+&amp;= \underbrace{\frac{1}{2}\cdot\left[ x\sqrt{4-x^2}+2^2\cdot\sin^{-1}\frac{x}{2}\right]_0^2}
+_{\int\sqrt{a^2-x^2}dx = \frac{1}{2}\cdot\left[x\sqrt{a^2-x^2}+a^2\sin^{-1}\frac{x}{a}\right]}\\
+&amp;+\left[\frac{x^2}{2}\right]_0^2 - 2\left[ x\right]_0^2 \\
+&amp;= \frac{4}{2}\underbrace{\sin^{-1}\frac{2}{2}}_{=\frac\pi{2}} + \frac{4}{2} - 2\cdot 2 \\
+&amp;= 2\cdot\frac\pi{2} + 2 - 4 = \pi - 2
+\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">\pi-2</tex>
+      <tex>\pi+2</tex>
+      <tex>\pi + 1</tex>
+      <tex>\pi-1</tex>
+   </choices>
+</question>

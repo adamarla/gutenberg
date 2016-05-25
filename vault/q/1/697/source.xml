@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Is the function given by}\\
+			\quad f(x) = \vert x - 1\vert, x\in\mathbb{R} \\
+			\text{differentiable at }x = 1?
+		</tex>
+      <tex>\\ \textbf{Right or wrong? } f(x)\text{ is effectively}\\
+			\text{equal to the following.}</tex>
+      <tex>\\ \textbf{Right or wrong? } \text{For f(x) to be }\\
+				\text{differentiable at }x = 1,\text{ the following}\\
+				\text{condition must be satisfied.}</tex>
+      <tex>\\ \text{Are the following analysis and}\\
+					\text{conclusion correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\quad \vert x- 1\vert = \begin{cases}
+			    x-1, x\geq 1, \\
+			    -(x-1) = 1-x, x\lt 1
+			  \end{cases}
+			</tex>
+         <tex correct="false">
+			\quad \vert x- 1\vert = \begin{cases}
+			    x-1, x\geq 0, \\
+			    -(x-1) = 1-x, x\lt 0
+			  \end{cases}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{If you let }x' = x - 1,\text{ then }\vert x - 1\vert = \vert x'\vert.\\
+			\text{And as }\vert x'\vert = \begin{cases} 
+			  x', \underbrace{x' \geq 0}_{\text{not x}},  \\
+			  -x', x' \lt 0 
+			  \end{cases} \\
+			  \therefore \vert x-1\vert = \begin{cases}
+			    x-1, x-1\geq 0, \\
+			    -(x-1) = 1-x, x-1\lt 0
+			  \end{cases} \\
+			  = \begin{cases}
+			    x-1, x\geq 1, \\
+			    1-x, x\lt 1
+			  \end{cases}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  \lim_{\delta\to 0}\dfrac{f(1)-f(1-\delta)}{\delta} &amp;= 
+				  \lim_{\delta\to 0}\dfrac{f(1+\delta)-f(1)}{\delta} \\
+				  (\delta &amp;\gt 0)
+				\end{align}
+				</tex>
+         <tex correct="false">
+				\begin{align}
+            \lim_{x\to 1^-}f(x) &amp;= \lim_{x\to 1^+}f(x) 
+				\end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{A function f(x) is differentiable at x=a if}\\
+				\text{the rates of change on either side of x=a are}\\
+				\text{equal. Mathematically, this is expressed as }\\
+				\begin{align}
+				\lim_{\delta\to 0}\dfrac{f(a) - f(a-\delta)}{\delta} &amp;= 
+				\lim_{\delta\to 0}\dfrac{f(a+\delta)-f(a)}{\delta} \\
+				(\delta &amp;\gt 0)
+				\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+					\begin{align}
+					  &amp;\lim_{x\to 1^-}\dfrac{f(1)-f(1-h)}{h} \\
+					  &amp;=\lim_{x\to 1^-}\dfrac{(1-1)-[1-(1-h)]}{h} \\
+ 					  &amp;= \lim_{x\to 1^-}\dfrac{-h}{h} = -1 \\
+					  \text{And, }&amp;\lim_{x\to 1^+}\dfrac{f(1+h)-f(1)}{h} \\ 
+					  &amp;=\lim_{x\to 1^+}\dfrac{(1+h-1)-(1-1)}{h} \\
+					  &amp;= \lim_{x\to 1^+}\dfrac{h}{h} = 1 
+					\end{align}\\
+					\text{As the two limits are not equal, }f(x)\\
+					\text{is not differentiable at x = 1.}
+					</tex>
+      </options>
+      <reason>
+         <tex>\text{The limits we calculated above are nothing}\\
+					\text{more than the rates of change on either side} \\
+					\text{of x = 1. As they are not equal, f(x) is} \\
+					\text{not differentiable at x = 1.}</tex>
+      </reason>
+   </step>
+</question>

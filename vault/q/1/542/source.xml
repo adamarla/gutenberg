@@ -1,79 +1,23 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
-	<statement>
-		<tex>
-			\text{Find the slope of the normal to the curve}\\
-			\quad x = 1-a\sin\theta, y = b\cos^2\theta\text{ at }\theta=\frac{\pi}{2}.
-		</tex>
-	</statement>
-		<step>
-			<context>
-			\text{What do the tangent and normal at}\\
-			\text{a point look like?}
-			</context>
-			<image correct='true'>right.svg</image>
-			<image correct='false'>wrong.svg</image>
-			<reason>
-			\text{The tangent only touches the curve at a point.}\\
-			\text{And the normal is the line }\perp\text{ tangent.}
-			</reason>
-		</step>
-			<step swipe='false'>
-				<context>
-				\text{The slope of the tangent would be}\ldots
-				</context>
-				<tex correct="true">
-				\begin{align}
-				  \dfrac{dy}{dx}&amp;=\dfrac{\frac{dy}{d\theta}}{\frac{dx}{d\theta}}\\
-				  &amp;=\dfrac{2b\cos\theta\cdot(-\sin\theta)}{-a\cdot\cos\theta}\\
-				  &amp;=\dfrac{2b\sin\theta}{a}\implies
-				  \left[\dfrac{dy}{dx}\right]_{\theta=\frac{\pi}{2}}=\dfrac{2b}{a}
-				\end{align}
-				</tex>
-				<tex correct="false">
-				\begin{align}
-				  \dfrac{dy}{d\theta}&amp;= 2b\cdot\cos\theta\cdot(-\sin\theta) \\
-				  \implies\left[\dfrac{dy}{dx}\right]_{\theta=\frac{\pi}{2}}&amp;= 0
-				\end{align}
-				</tex>
-				<reason>
-				\text{The curve is drawn in the x-y plane. Its just}\\
-				\text{that both x and y are expressed in terms of a} \\
-				\text{parameter} -\theta.\text{ The slope is still }\frac{dy}{dx}.
-				</reason>
-			</step>
-				<step>
-					<context>
-					\text{Which means, the slope of the normal is}\ldots ...
-					</context>
-					<tex correct="true">
-					\begin{align}
-					\text{If }m_T &amp;= \text{tangent's slope}\\
-					\text{and }m_N &amp;= \text{normal's slope}\\
-					\text{then }m_T\times m_N &amp;= -1 \\
-					\implies m_N &amp;= -\dfrac{1}{m_T} = -\dfrac{1}{\frac{2b}{a}} = -\frac{a}{2b}
-					\end{align}
+<?xml version="1.0" encoding="ISO-8859-1"?>
 
-					</tex>
-					<tex correct="false">
-					\begin{align}
-					\text{If }m_T &amp;= \text{tangent's slope}\\
-					\text{and }m_N &amp;= \text{normal's slope}\\
-					\text{then }m_T\times m_N &amp;= 1 \\
-					\implies m_N &amp;= \dfrac{1}{m_T} = \dfrac{1}{\frac{2b}{a}} = \frac{a}{2b}
-					\end{align}
-
-					</tex>
-					<reason>
-					\text{This is a standard result} - m_T\times m_N = -1.\\
-					\text{Review if you got it wrong.}
-					</reason>
-				</step>
-				
-					<choices>
-						<tex>\frac{a}{2b}</tex>
-						<tex>\infty </tex>
-						<tex correct='true'>-\frac{a}{2b}</tex>
-						<tex>0</tex>
-					</choices>
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex/>
+      <tex>\\ </tex>
+   </statement>
+   <step>
+      <options>
+         <tex/>
+         <tex correct="false"/>
+      </options>
+      <reason>
+         <tex></tex>
+      </reason>
+   </step>
+   <choices>
+      <tex/>
+      <tex correct="true"/>
+      <tex/>
+      <tex/>
+   </choices>
 </question>

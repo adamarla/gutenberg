@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+		\text{What would the fourth term from the end}\\
+		\text{be if }\left(\frac{4x}{5}-\frac{5}{2x}\right)^9\text{ is expanded so that} \\
+		\text{terms with the highest power of x are}\\
+		\text{written first and those with lowest last?}
+		</tex>
+      <tex>\\ \textbf{Understanding the expansion.}\\
+			\text{If }\left(\frac{4x}{5}-\frac{5}{2x}\right)^9 = T_1 + T_2 + \cdots + T_N,\\
+			\text{then are the following true?}</tex>
+      <tex>\\ \textbf{The m-th term.}\\
+				\text{Given that }T_1\text{ has higher powers of x than }T_2\\
+				\text{and }T_2\text{ has higher powers of x than }T_3\text{, will}\\
+				\text{the m-th term be given by the following?}</tex>
+      <tex>\\ \textbf{Closing the loop.}\\
+				\text{Is the following the value of the fourth term}\\
+				\text{from the end }(T_7)\text{ given that } \\
+				T_m = ^9C_{m-1} \left(\frac{4x}{5}\right)^{10-m}\cdot
+				\left(-\frac{5}{2x}\right)^{m-1}?</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{align}
+			  N &amp;= 10 \\
+			  \text{Required term}&amp;= T_7
+			\end{align}
+			</tex>
+         <tex correct="false">
+			\begin{align}
+			  N &amp;= 9 \\
+			  \text{Required term}&amp;= T_6
+			\end{align}
+			</tex>
+      </options>
+      <reason>
+         <tex>(a+b)^n\text{ has }(n+1)\text{ terms. Similarly,} \\
+			\left(\frac{4x}{5}-\frac{5}{2x}\right)^9\text{has }N = 9+1 = 10\text{ terms.}\\ 
+			\therefore \text{ the fourth term from the end is }T_7\\
+			(T_{10}\to T_9\to T_8\to T_7).</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				T_m &amp;= ^9C_{m-1}\left(\frac{4x}{5}\right)^{10-m}\cdot \left(-\frac{5}{2x}\right)^{m-1}\\
+				&amp;(1\leq m\leq 10)
+				\end{align}
+				</tex>
+         <tex correct="false">
+				\begin{align}
+				T_m &amp;= ^9C_{m-1}\left(\frac{4x}{5}\right)^{m-1}\cdot \left(-\frac{5}{2x}\right)^{10-m}\\
+				&amp;(1\leq m\leq 10)
+				\end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{As }^nC_m = ^nC_{n-m},\text{ therefore }\left(\frac{4x}{5}-\frac{5}{2x}\right)^9\\
+				\begin{align}
+				 &amp;= \overbrace{\sum_{m=1}^9\, ^9C_{m-1} \left(\frac{4x}{5}\right)^{m-1}\cdot 
+				\left(-\frac{5}{2x}\right)^{9-(m-1)}}^{\text{increasing powers of x}} \\
+				&amp;=\overbrace{\sum_{m=1}^9\, ^9C_{m-1} \left(\frac{4x}{5}\right)^{9-(m-1)}\cdot 
+				\left(-\frac{5}{2x}\right)^{m-1}}^{\text{decreasing powers of x}}
+				\end{align} \\
+				\underline{\text{Same expressions, written differently}}. \\
+				\text{But, we want to write it with decreasing}\\
+				\text{powers of x. Which means as}\\
+				\begin{align}
+				  &amp;\sum_{m=1}^9\, ^9C_{m-1} \left(\frac{4x}{5}\right)^{9-(m-1)}\cdot
+				\left(-\frac{5}{2x}\right)^{m-1} \\
+				 &amp;= \sum_{m=1}^9\, ^9C_{m-1} \left(\frac{4x}{5}\right)^{10-m}\cdot
+				\left(-\frac{5}{2x}\right)^{m-1} \\
+				\implies T_m &amp;= ^9C_{m-1} \left(\frac{4x}{5}\right)^{10-m}\cdot
+				\left(-\frac{5}{2x}\right)^{m-1}
+				\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\quad T_7 = \dfrac{10,500}{x^3}
+				</tex>
+         <tex correct="false">
+				\quad T_7 = \dfrac{5400}{x^2}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{Just use the results from steps 2 and 3.}\\
+				\begin{align}
+				  T_7 &amp;= ^9C_{7-1} \left(\frac{4x}{5}\right)^{10-7}\cdot
+				\left(-\frac{5}{2x}\right)^{7-1} \\
+				&amp;= ^9C_6\cdot \left(\frac{4x}{5}\right)^3\cdot \left(-\frac{5}{2x}\right)^6 \\
+				&amp;= \dfrac{10,500}{x^3}
+				\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\frac{5400}{x^2}</tex>
+      <tex>4756\cdot x</tex>
+      <tex correct="true">\frac{10,500}{x^3}</tex>
+      <tex>\frac{2300}{x}</tex>
+   </choices>
+</question>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Find the equation of all lines having} \\
+			\text{slope 2 which are tangent to the curve} \\
+			\qquad y = \dfrac{1}{x-3}, x\neq 3.
+		</tex>
+      <tex>\\ \text{Which of the following correctly gives} \\
+		\text{the slope of the tangent at a point (x,y)?}</tex>
+      <tex>\\ \text{Is the conclusion drawn below correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+		\begin{align}
+		  \dfrac{dy}{dx} &amp;= \text{slope of the tangent} \\
+		  \implies\text{Slope} &amp;= \dfrac{d}{dx}\dfrac{1}{x-3} = -\dfrac{1}{(x-3)^2}, x\neq 3
+		\end{align}
+		</tex>
+         <tex correct="false">
+		\begin{align}
+		  \dfrac{dy}{dx} &amp;= \text{slope of the tangent} \\
+		  \implies\text{Slope} &amp;= \dfrac{d}{dx}\dfrac{1}{x-3} = \dfrac{1}{(x-3)^2}, x\neq 3
+		\end{align}
+		</tex>
+      </options>
+      <reason>
+         <tex>\frac{1}{x-3} = (x-3)^{-1}\implies \frac{d}{dx}\frac{1}{x-3} = -1\cdot(x-3)^{-1-1} \\
+		 = -\frac{1}{(x-3)^2}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{align}
+			  \dfrac{dy}{dx} &amp;= 2 \implies -\dfrac{1}{(x-3)^2} = 2 \\
+			  \implies (x-3)^2&amp;\lt 0
+			\end{align} \\
+			\text{This is not possible for any }x\in\mathbb{R}. \\
+			\text{Hence, no tangent with slope = 2 } \\
+			\text{can exist for }y=\dfrac{1}{x-3}, x\neq 3.
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{As long as }x\in\mathbb{R}, (x-3)^2\gt 0, x\neq 3\\
+			\implies -\frac{1}{(x-3)^2}\lt 0.\text{In other words, }\\
+			\text{this curve has tangents only with negative slopes.}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">\text{No tangent with slope 2 possible.}</tex>
+      <tex>y = 2x - 7</tex>
+      <tex>y = 2x + 13</tex>
+      <tex>y=2x - \frac{1}{15}</tex>
+   </choices>
+</question>

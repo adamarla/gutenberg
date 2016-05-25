@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{If }x-\iota y = \sqrt{\dfrac{a-\iota b}{c-\iota d}},\text{then prove that}\\
+			\qquad (x^2+y^2)^2 = \dfrac{a^2+b^2}{c^2+d^2}
+		</tex>
+      <tex>\\ \text{Let } \\
+			\qquad z_1 = a-\iota b = R_1\cdot e^{\iota\theta_1}\text{ and }\\
+			\qquad z_2 = c-\iota d = R_2\cdot e^{\iota\theta_2}. \\
+			\text{Given this, is the following correct?}</tex>
+      <tex>\\ \textbf{Generally speaking }\text{if }z = x + \iota y = R\cdot e^{\iota\theta},\\
+				\text{then what is }\overline{z}\text{ equal to?}</tex>
+      <tex>\\ \textbf{Given }x-\iota y = \sqrt{\dfrac{R_1}{R_2}}\cdot e^{\left(\frac{\theta_1-\theta_2}{2}\right)\iota},\\
+			\text{is the following analysis correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{align}
+			  R_1 &amp;= \vert z_1\vert = \sqrt{a^2+b^2} \\
+			  R_2 &amp;= \vert z_2\vert = \sqrt{c^2 + d^2} \\
+			  x-\iota y &amp;= \sqrt{\dfrac{a-\iota b}{c-\iota d}} = \sqrt{\dfrac{z_1}{z_2}} \\
+			  &amp;= \sqrt{\dfrac{R_1}{R_2}}\cdot e^{\left(\frac{\theta_1-\theta_2}{2}\right)\iota}
+			\end{align}
+			</tex>
+         <tex correct="false">
+			\begin{align}
+			  R_1 &amp;= \vert z_1\vert = \sqrt{a^2+b^2} \\
+			  R_2 &amp;= \vert z_2\vert = \sqrt{c^2 + d^2} \\
+			  x-\iota y &amp;= \sqrt{\dfrac{a-\iota b}{c-\iota d}} = \sqrt{\dfrac{z_1}{z_2}} \\
+			  &amp;= \sqrt{\dfrac{R_1}{R_2}}\cdot e^{\left(\theta_1-\theta_2\right)\iota}
+			\end{align}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{Manipulating complex numbers is rather easy}\\
+			\text{when one sees them as } z = R\cdot e^{\iota\theta}.\text{That said, }\\
+			R_1=\vert z_1\vert\text{ and }R_2 = \vert z_2\vert\text{ are correct.}\\
+			\text{As for }x-\iota y, \\
+			\begin{align}
+			  x-\iota y &amp;= \sqrt{\dfrac{z_1}{z_2}} = 
+			  \sqrt{\dfrac{R_1\cdot e^{\iota\theta_1}}{R_2\cdot e^{\iota\theta_2}}} \\
+			  &amp;= \underbrace{ 
+			  \dfrac{\sqrt{R_1}\cdot e^{\frac{\iota\theta_1}{2}}}
+			  {\sqrt{R_2}\cdot e^{\frac{\iota\theta_2}{2}}}}_{\sqrt{e^n} = (e^n)^\frac{1}{2} = e^{\frac{n}{2}}}
+			  = \underbrace{\sqrt{\dfrac{R_1}{R_2}}\cdot e^{\left(\frac{\theta_1-\theta_2}{2}\right)\iota}}_
+			  {\frac{e^m}{e^n} = e^{m-n}}
+			\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\qquad \overline{z} = x-\iota y = R\cdot e^{-\iota\theta}
+				</tex>
+         <tex correct="false">
+				\qquad \overline{z} = x-\iota y = R\cdot e^{\left(\frac\pi{2}-\theta\right)\iota}
+				</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+				\text{If }R\cdot e^{\iota\theta} &amp;= z\text{ then } \\
+				R\cdot e^{-\iota\theta} &amp;= R\cdot[\cos(-\theta) + \iota\sin(-\theta)] \\
+				&amp;= \underbrace{R\cdot(\cos\theta - \iota\sin\theta) = \overline{z}}_
+				{\cos(-\theta) = \cos\theta, \sin(-\theta) = -\sin\theta}
+				\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{align}
+			  x-\iota y &amp;= \sqrt{\dfrac{R_1}{R_2}}\cdot e^{\left(\frac{\theta_1-\theta_2}{2}\right)\iota} \\
+			  \implies x+\iota y &amp;= \sqrt{\dfrac{R_1}{R_2}}\cdot 
+			  e^{\left(\frac{\theta_2-\theta_1}{2}\right)\iota} \\
+			  \implies (x-\iota y)\cdot (x+\iota y) &amp;= 
+			  \sqrt{\dfrac{R_1}{R_2}}\cdot e^{\left(\frac{\theta_1-\theta_2}{2}\right)\iota}\\
+			  &amp;\times\sqrt{\dfrac{R_1}{R_2}}\cdot e^{\left(\frac{\theta_2-\theta_1}{2}\right)\iota} \\
+			  &amp;= \dfrac{R_1}{R_2}\cdot e^{\frac{\theta_1-\theta_2+\theta_2-\theta_1}{2}\iota} \\
+			  \implies x^2 + y^2 &amp;= \dfrac{R_1}{R_2} = \sqrt{\dfrac{a^2+b^2}{c^2+d^2}} \\
+			  \implies (x^2+y^2)^2 &amp;= \dfrac{a^2+b^2}{c^2+d^2}
+			\end{align}
+			</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+			(x+\iota y) &amp;= \overline{x-\iota y} \\
+			\text{And if, }x-\iota y &amp;= R\cdot e^{\iota\theta}, \\
+			\text{then }x+\iota y &amp;= \underbrace{R\cdot e^{-\iota\theta}}_{\text{Step 2}}
+			\end{align}\\
+			\text{The rest is simply algebra.}</tex>
+      </reason>
+   </step>
+</question>

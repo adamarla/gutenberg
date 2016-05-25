@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>\text{Differentiate the following} \\ 
+			\qquad f(x) = e^x + e^{x^2} + \ldots + e^{x^5} \\
+			\text{with respect to x.}</tex>
+      <tex>\\ \textbf{Right or wrong? } \\
+  		\text{If }f(x) = a_1(x) + a_2(x) + \ldots + a_n(x) 
+  		= \sum_{k=1}^n a_k(x) \\
+  		\text{then }\dfrac{d}{dx}f(x)\text{ is given by the following.} \\
+  		\textbf{Note: }a_1(x), a_2(x)\text{ etc. are just some functions.}</tex>
+      <tex>\\ \textbf{Right or wrong? } \text{Given Step 1, }\\
+  		\dfrac{d}{dx}f(x)\text{ will evaluate to the following.}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+  		\qquad \dfrac{d}{dx}f(x) = \sum_{k=1}^n\dfrac{d}{dx}a_k(x)
+  		</tex>
+      </options>
+      <reason>
+         <tex>\textbf{Don't be scared of }\sum.\text{ It is only a compact}\\
+  		\text{way of writing the sum of many terms.} \\
+  		\text{That said, }\\
+  		\underbrace{\dfrac{d}{dx}f(x) = \dfrac{d}{dx}\sum_{k=1}^n a_k(x)}_{\text{derivative of sums}}
+  		= \underbrace{\sum_{k=1}^n\dfrac{d}{dx}a_k(x)}_{\text{sum of derivatives}}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+  		\begin{align}
+  		\dfrac{d}{dx}f(x) &amp;= \sum_{k=1}^5 k\cdot x^{k-1}\cdot e^{x^k} \\
+  		&amp;= e^x + 2x\cdot e^{x^2} +\ldots + 5x^4\cdot e^{x^5} 
+  		\end{align}
+  		</tex>
+         <tex correct="false">
+  		\begin{align}
+  		\dfrac{d}{dx}f(x) &amp;= \sum_{k=1}^5  e^{x^k} \\
+  		&amp;= e^x + e^{x^2} +\ldots + e^{x^5} 
+  		\end{align}
+  		</tex>
+      </options>
+      <reason>
+         <tex>\textbf{The k-th term }\text{in f(x) looks like }\\
+  		\begin{align}
+  		a_k(x) &amp;= e^{x^k} \\
+  		\implies \frac{d}{dx}a_k(x) &amp;= \underbrace{\frac{d}{d x^k}e^{x^k}\cdot \frac{d}{dx}x^k}
+  		_{\text{Chain Rule}} \\
+  		&amp;= k x^{k-1}\cdot e^{x^k} \\
+  		\therefore \frac{d}{dx}f(x) &amp;= \sum_{k=1}^5 \frac{d}{dx}a_k(x) \\
+  		&amp;= \sum_{k=1}^5 k\cdot x^{k-1}\cdot e^{x^k} \\
+  		&amp;= e^x + 2x\cdot e^{x^2} +\ldots + 5x^4\cdot e^{x^5}
+  		\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>
+				e^x + 3x^2\cdot e^{x^3}
+			  + 5x^4\cdot e^{x^5}
+				</tex>
+      <tex>
+				e^x + 5x^4\cdot e^{x^5}
+				</tex>
+      <tex>
+				e^x + 3x^2\cdot e^{x^3}
+			  + 4x^3\cdot e^{x^4} + 5x^4\cdot e^{x^5}
+				</tex>
+      <tex correct="true">
+				e^x + 2x\cdot e^{x^2} + 3x^2\cdot e^{x^3}
+			  + 4x^3\cdot e^{x^4} + 5x^4\cdot e^{x^5}
+				</tex>
+   </choices>
+</question>

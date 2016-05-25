@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Find the intervals in which }\\
+			f(x) = (x+1)^3\cdot(x-3)^3\\
+			\text{is strictly increasing or decreasing.}
+		</tex>
+      <tex>\\ \text{What are the conditions for a function}\\
+			\text{to be strictly increasing or decreasing?}</tex>
+      <tex>\\ \text{Are the following calculations correct?}</tex>
+      <tex>\\ \text{Is the following analysis correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{align}
+			  \dfrac{d}{dx}f(x)&amp;\gt 0\text{ (strictly increasing)}\\
+			  \dfrac{d}{dx}f(x)&amp;\lt 0\text{ (strictly decreasing)}
+			\end{align}
+			</tex>
+         <tex correct="false">
+			\begin{align}
+			  \dfrac{d}{dx}f(x)&amp;\geq 0\text{ (strictly increasing)}\\
+			  \dfrac{d}{dx}f(x)&amp;\leq 0\text{ (strictly decreasing)}
+			\end{align}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{A strictly increasing/decreasing function cannot}\\
+			\text{be flat }-f'(x)=0 - \text{anywhere in the interval.}\\
+			\text{Hence, }f'(x)\gt 0\text{ or }f'(x)\lt 0.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  \dfrac{d}{dx}f(x)&amp;= (x+1)^3\cdot\dfrac{d}{dx}(x-3)^3\\
+				  &amp;+(x-3)^3\cdot\dfrac{d}{dx}(x+1)^3\\
+				  &amp;=3\cdot(x+1)^3\cdot (x-3)^2 \\
+				  &amp;+ 3\cdot (x+1)^2\cdot (x-3)^3  \\
+				  &amp;=6\cdot(x+1)^2\cdot(x-3)^2\cdot(x-1)
+				\end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{Apply chain rule }-\dfrac{d}{dx}f\cdot g = f'g + g'f - \text{and simplify.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+					\begin{tabular}{ccccc}
+					\text{If...}&amp; (x+1)^2&amp; (x-3)^2&amp; (x-1)&amp; f'(x)\\
+					x\lt -1&amp; + &amp; + &amp; - &amp; - \\
+					x=-1&amp;0&amp;+&amp;-&amp;0\\
+					-1\lt x\lt 1&amp; + &amp; + &amp; - &amp; -\\
+					1\lt x\lt 3&amp; + &amp; + &amp; + &amp; + \\
+					x=3&amp; + &amp; 0 &amp; + &amp; 0 \\
+					x\gt 3&amp; + &amp; + &amp; + &amp; +
+					\end{tabular}
+					\\ \text{In conclusion} \\
+					\begin{tabular}{cc}
+					\text{strictly decreasing}&amp; x\in \left(-\infty,-1\right)\cup\left(-1,1\right)\\
+					\text{strictly increasing}&amp; x\in \left(1,3\right)\cup\left(3,\infty\right)
+					\end{tabular}
+					</tex>
+      </options>
+      <reason>
+         <tex>&#8226;</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>
+		\text{(strictly decreasing) }x\in \left(-\infty,1\right)\\
+		\text{(strictly increasing) }x\in \left(1,\infty\right)
+		</tex>
+      <tex correct="true">
+		\text{(strictly decreasing) }x\in \left(-\infty,-1\right)\cup\left(-1,1\right)\\
+		\text{(strictly increasing) }x\in \left(1,3\right)\cup\left(3,\infty\right)</tex>
+      <tex>
+		\text{(strictly decreasing) }x\in \left(-\infty,-1\right)\\
+		\text{(strictly increasing) }x\in \left(3,\infty\right)
+		</tex>
+      <tex>
+		\text{(strictly decreasing) }x\in \left(-1,1\right)\\
+		\text{(strictly increasing) }x\in \left(-\infty,-1\right)\cup\left(3,\infty\right)
+		</tex>
+   </choices>
+</question>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Find the values of x for which }\\
+			\quad\quad y = \left[x\cdot(x-2)\right]^2\\
+			\text{is a strictly increasing function.}
+		</tex>
+      <tex>\\ \text{For y to be strictly increasing}\ldots</tex>
+      <tex>\\ \text{Is the mathematics correct?}</tex>
+      <tex>\\ \text{Is the following conclusion correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{align}
+			  \frac{dy}{dx}\gt 0
+			\end{align}
+			</tex>
+         <tex correct="false">
+			\begin{align}
+			  \frac{dy}{dx}&amp;\gt 0 \\
+			  \text{and }y&amp;\gt 0
+			\end{align}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{For a function to be increasing}\\
+			\text{only }\frac{d}{dx}f(x)\gt 0.</tex>
+      </reason>
+   </step>
+   <step swipe="false">
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  y&amp;= \left[x\cdot(x-2)\right]^2 \\
+				  \implies\dfrac{dy}{dx}&amp;= 2\left[x\cdot(x-2)\right]\cdot\frac{d}{dx}(x^2-2x)\\
+				  &amp;=2x\cdot(x-2)\cdot (2x-2) \\
+				  &amp;= 4x\cdot(x-1)\cdot(x-2)
+				\end{align}
+				</tex>
+         <tex correct="false">
+				\begin{align}
+				  y&amp;= \left[x\cdot(x-2)\right]^2 \\
+				  \implies\dfrac{dy}{dx}&amp;= 2\left[x\cdot(x-2)\right]\cdot\frac{d}{dx}(x^2-2x)\\
+				  &amp;=2x\cdot(x-2)\cdot (2x-2) \\
+				  &amp;= 4x\cdot(x-2)^2
+				\end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{See y as }y=g(x)^2,\text{ where }g(x)=x\cdot(x-2).\\
+				\therefore y' = \frac{d}{dg(x)}g(x)^2\cdot\frac{d}{dx}g(x).\\
+				\text{Rest is all calculation - which you can check.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+					\begin{align}
+					  \frac{dy}{dx}&amp;= 4x\cdot(x-1)\cdot (x-2) \\
+					  \text{Hence, }\dfrac{dy}{dx}&amp;\gt 0\text{ when }\\
+					  4x\cdot(x-1)\cdot(x-2)&amp;\gt 0\\
+					  \implies 0\lt x\lt 1&amp;\text{ or } x\gt 2
+					\end{align}
+					</tex>
+      </options>
+      <reason>
+         <tex>\begin{tabular}{ccccc}
+					&amp;x&amp;(x-1)&amp;(x-2)&amp;\frac{dy}{dx}\\
+					x\gt 2&amp;+&amp;+&amp;+&amp;+\\
+					0\lt x\lt 1&amp;+&amp;-&amp;-&amp;+
+					\end{tabular}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>x\lt 0\text{ and }x\gt 2</tex>
+      <tex>x\in (0,2)</tex>
+      <tex>x\in (1,2)</tex>
+      <tex correct="true">x\in (0,1)\text{ and }x\gt 2</tex>
+   </choices>
+</question>

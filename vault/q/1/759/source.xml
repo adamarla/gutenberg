@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Find the points on the curve }y=x^3 \\
+			\text{at which the slope of the tangent is}\\
+			\text{equal to the y-coordinate of the point.}
+		</tex>
+      <tex>\\ \text{Which of the following correctly}\\
+			\text{defines the required condition? }</tex>
+      <tex>\\ \text{Is the following analysis complete and correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\text{Tangent's slope } = \dfrac{dy}{dx} \\
+			\text{Therefore, the condition is}\\
+			\begin{align}
+			  \dfrac{dy}{dx} &amp;= 3x^2 = x^3 
+			\end{align}
+			</tex>
+         <tex correct="false">
+			\text{Tangent's slope } = \dfrac{dy}{dx} \\
+			\text{Therefore, the condition is}\\
+			\begin{align}
+			  \dfrac{dy}{dx} &amp;= 3x^2 = x
+			\end{align}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{Remember, the slope equals the y-coordinate}\\
+			\text{of the point. And therefore, }\frac{dy}{dx} = y = x^3.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  \dfrac{dy}{dx} &amp;= 3x^2 = x^3 \implies x^3-3x^2 = 0\\
+				  \implies x^2\cdot(x-3) &amp;= 0 \implies x = 0,3
+				\end{align} \\
+				\text{Hence, the required points are }\\
+				\left(0,0\right)\text{ and }\left(3,27\right).
+				</tex>
+         <tex correct="false">
+				\begin{align}
+				  \dfrac{dy}{dx} &amp;= 3x^2 = x^3 \implies x^3-3x^2 = 0\\
+				  \implies x &amp;= 3
+				\end{align} \\
+				\text{Hence, the required point is }\left(3,27\right).
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{Notice that }cx^2 = x^3 \text{ is true for }x = 0.\\
+				\text{Which is why, one cannot simply do }\frac{x^3}{x^2} = x = c. \\
+				\text{This operation makes no sense when x = 0.}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\left(0,0\right)</tex>
+      <tex correct="true">\left(0,0,\right)\text{ and }\left(3,27\right)</tex>
+      <tex>\left(3,27\right)</tex>
+      <tex>\text{No such points exist.}</tex>
+   </choices>
+</question>

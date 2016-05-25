@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Is the greatest integer function}\\ 
+			\quad f(x) = \left[x\right],\, 0\lt x \lt 3 \\
+			\text{differentiable at x = 1 and x = 2?}
+		</tex>
+      <tex>\\ \text{Shown below are values for }\left[x\right]\\
+			\text{for some values of x. Are the values correct?}</tex>
+      <tex>\\ \textbf{Right or wrong? } \text{For }f(x) = \left[x\right]\text{ to be}\\
+				\text{differentiable at }x=1\text{ and } x=2 \text{ the }\\
+				\text{following conditions must hold.}</tex>
+      <tex>\\ \text{Are the analysis and conclusion below correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{align}
+			  \left[0.99\right] &amp;= 0 \\
+			  \left[1\right] &amp;= 1 \\
+			  \left[1.5\right] &amp;= 1 \\
+			  \left[2.99\right] &amp;= 2
+			\end{align}
+			</tex>
+         <tex correct="false">
+			\begin{align}
+			  \left[0.99\right] &amp;= 1 \\
+			  \left[1\right] &amp;= 1 \\
+			  \left[1.5\right] &amp;= 2 \\
+			  \left[2.99\right] &amp;= 3
+			\end{align}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{The greatest integer function gives the}\\
+			\textbf{largest}\text{ integer }\textbf{ less than or equal to } x\\
+			\text{ - not the integer closest to x.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  \lim_{\delta\to 0}\dfrac{\left[1\right] - \left[1-\delta\right]}{\delta} 
+				  &amp;= \lim_{\delta\to 0}\dfrac{\left[1+\delta\right]-\left[1\right]}{\delta} \\
+				  \text{and, } \lim_{\delta\to 0}\dfrac{\left[2\right] - \left[2-\delta\right]}{\delta} 
+				  &amp;= \lim_{\delta\to 0}\dfrac{\left[2+\delta\right]-\left[2\right]}{\delta} \\
+				  (\delta &amp;\gt 0)
+				\end{align}
+				</tex>
+         <tex correct="false">
+				\begin{align}
+				  \lim_{x\to 1^-}f(x) &amp;= \lim_{x\to 1^+}f(x) \\
+				  \text{and, }\lim_{x\to 2^-}f(x) &amp;= \lim_{x\to 2^+}f(x)
+				\end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{For a function f(x) to be differentiable}\\
+				\text{at x = a, its rate of change on either side of } \\
+				x = a \text{ should be the same. Mathematically, } \\
+				\begin{align}
+				\lim_{\delta\to 0}\dfrac{f(a)-f(a-\delta)}{\delta} &amp;=
+				\lim_{\delta\to 0}\dfrac{f(a+\delta)-f(a)}{\delta} \\
+				(\delta &amp;\gt 0)				
+				\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+					\text{At x = 1} \\
+					\begin{align}
+					\lim_{x\to 1^-}\dfrac{\left[1\right] - \left[1-\delta\right]}{\delta} 
+					&amp;= \dfrac{1-0}{\delta} = \dfrac{1}{\delta} \\
+					\text{And, }\lim_{x\to 1^+}\dfrac{\left[1+\delta\right]-\left[1\right]}{\delta} 
+					&amp;= \dfrac{1-1}{\delta}= 0
+					\end{align} \\
+					\text{Similarly, at x = 2} \\
+					\begin{align}
+					\lim_{x\to 2^-}\dfrac{\left[2\right] - \left[2-\delta\right]}{\delta} 
+					&amp;= \dfrac{2-1}{\delta} = \dfrac{1}{\delta} \\
+					\text{And, }\lim_{x\to 2^+}\dfrac{\left[2+\delta\right]-\left[2\right]}{\delta} 
+					&amp;= \dfrac{2-2}{\delta}= 0
+					\end{align} \\
+					\text{As at both x = 1 and x = 2, the limits are} \\
+					\text{not equal, f(x) is not differentiable at }\\
+					\text{both of those points.}
+					</tex>
+      </options>
+      <reason>
+         <tex>\text{For a small positive number }\delta \\
+    \begin{tabular}{|c|c|}
+    \hline 
+    x &amp; \left[x\right] \\
+    \hline 
+    1-\delta &amp; 0 \\
+    1+\delta &amp; 1 \\
+    2-\delta &amp; 1 \\
+    2+\delta &amp; 2 \\
+    \hline
+    \end{tabular}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\text{Differentiable at x = 1 but not x = 2.}</tex>
+      <tex correct="true">\text{Not differentiable at x = 1 or x = 2.}</tex>
+      <tex>\text{Differentiable at x = 2, but not x = 1}</tex>
+      <tex>\text{Differentiable at both x = 1 and x = 2.}</tex>
+   </choices>
+</question>

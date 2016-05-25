@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>%text
+Evaluate \[ \int \frac{e^x}{\sqrt{5-4e^x-e^{2x}}}\cdot dx \]
+%</tex>
+      <tex>\\ %text
+We will tell you that 
+\[\int \frac{e^x\cdot dx}{\sqrt{5-4e^x-e^{2x}}} = \int\frac{d\phi}{\sqrt{A^2-(\phi + B)^2}}\]\\
+But what are the \underline\text{values of $A,B$ and $\phi$}?
+%</tex>
+      <tex>\\ %text
+Given that \[ I = \int\frac{d\phi}{\sqrt{3^2-(\phi+2)^2}}\], 
+\underline\text{what will I be in terms of x}?
+%</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">\begin{tabular}{|c|c|c|}
+\hline 
+A &amp; B &amp; \phi \\
+\hline 
+3 &amp; 2 &amp; e^x \\
+\hline
+\end{tabular}</tex>
+         <tex>\begin{tabular}{|c|c|c|}
+\hline 
+A &amp; B &amp; \phi \\
+\hline 
+2 &amp; 1 &amp; e^x \\
+\hline
+\end{tabular}</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+\phi = e^x &amp;\implies e^x\cdot dx = d\phi \\
+\therefore \int\frac{e^x\cdot dx}{\sqrt{5-4e^x-e^{2x}}} &amp;= 
+\underbrace{\int\frac{d\phi}{\sqrt{5-4\phi-\phi^2}}}_{e^{2x} = (e^x)^2 = \phi^2} \\
+\text{Now, }5-4\phi-\phi^2 &amp;= -(\phi^2 + 4\phi - 5) \\ 
+&amp;= -\left[ (\phi + 2)^2 -4 - 5 \right] \\
+&amp;= 9-(\phi+2)^2 \\
+\therefore \int\frac{d\phi}{\sqrt{5-4\phi-\phi^2}} &amp;= 
+\int\frac{d\phi}{\sqrt{3^2 - (\phi+2)^2}} \\
+\implies A = 3&amp;\text{ and }B = 2
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\sin^{-1}\left( \frac{e^x+2}{3}\right) + C</tex>
+         <tex>\cos^{-1}\left( \frac{e^x+2}{3}\right) + C</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+I &amp;= \int\frac{d\phi}{\sqrt{3^2-(\phi+2)^2}} \\ 
+&amp;= \sin^{-1}\left(\frac{\phi+2}{3}\right) + C \\
+&amp;= \sin^{-1}\left( \frac{e^x+2}{3}\right) + C 
+\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\cos^{-1}\left( \frac{e^x+2}{3}\right) + C</tex>
+      <tex>\tan^{-1}\left( \frac{e^x+2}{3}\right) + C</tex>
+      <tex>2\cdot\sqrt{9-(e^x+2)^2} + C</tex>
+      <tex correct="true">\sin^{-1}\left( \frac{e^x+2}{3}\right) + C</tex>
+   </choices>
+</question>

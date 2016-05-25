@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+		\text{Evaluate }\int_\frac{\pi}{6}^\frac{\pi}{3}\dfrac{dx}{1+\sqrt{\cot x}}
+		</tex>
+      <tex>\\ \text{If we told you that }\frac{\pi}{6} + \frac\pi{3} = \frac\pi{2},\\
+			\textbf{then would the following be true?}</tex>
+      <tex>\\ \text{Given that } \\
+				A = \int_\frac{\pi}{6}^\frac{\pi}{3}\dfrac{dx}{1+\sqrt{\cot x}}
+				= \int_\frac{\pi}{6}^\frac{\pi}{3}\dfrac{dx}{1+\sqrt{\tan x}} \\
+				\textbf{would A evaluate to the following?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\quad A = \int_\frac{\pi}{6}^\frac{\pi}{3}\dfrac{dx}{1+\sqrt{\cot x}}
+			= \int_\frac{\pi}{6}^\frac{\pi}{3}\dfrac{dx}{1+\sqrt{\tan x}}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{There is a nice, little standard result that says}\\
+			\begin{align}
+			  \int_a^b f(x)\cdot dx &amp;= \int_a^b f(a+b-x)\cdot dx
+			\end{align} \\
+			\text{This is true because as x goes from }a\to b,\\
+			(a+b-x)\text{ goes in reverse from }b\to a. \\
+			\text{When applied to the given integral, we get}\\
+			\begin{align}
+			  \int_\frac{\pi}{6}^\frac{\pi}{3}\dfrac{dx}{1+\sqrt{\cot x}} &amp;= 
+			  \int_\frac{\pi}{6}^\frac{\pi}{3}\dfrac{dx}{1+\sqrt{\cot \left(\frac\pi{6}+\frac\pi{3} - x\right)}} \\
+			  &amp;= \int_\frac{\pi}{6}^\frac{\pi}{3}\dfrac{dx}{1+\sqrt{\cot \left(\frac\pi{2}-x\right)}} \\
+			  &amp;= \int_\frac{\pi}{6}^\frac{\pi}{3}\dfrac{dx}{1+\sqrt{\tan x}}
+			\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\qquad A = \dfrac\pi{12}
+				</tex>
+         <tex correct="false">
+				\qquad A = \dfrac\pi{6}
+				</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+				A &amp;= \int_\frac{\pi}{6}^\frac{\pi}{3}\dfrac{dx}{1+\sqrt{\cot x}} = 
+				\int_\frac{\pi}{6}^\frac{\pi}{3}\dfrac{dx}{1+\sqrt{\tan x}} \\
+				\therefore A +A &amp;= 
+				\int_\frac{\pi}{6}^\frac{\pi}{3}\dfrac{dx}{1+\frac{1}{\sqrt{\tan x}}}
+				+ \int_\frac{\pi}{6}^\frac{\pi}{3}\dfrac{dx}{1+\sqrt{\tan x}} \\
+				&amp;= \int_\frac{\pi}{6}^\frac{\pi}{3}\dfrac{\sqrt{\tan x}}{1+\sqrt{\tan x}} dx
+				+ \int_\frac{\pi}{6}^\frac{\pi}{3}\dfrac{dx}{1+\sqrt{\tan x}} \\
+				&amp;= \underbrace{\int_\frac{\pi}{6}^\frac{\pi}{3}\dfrac{1+\sqrt{\tan x}}{1+\sqrt{\tan x}}dx}
+				_{\int_a^b f(x)dx + \int_a^b g(x)dx = \int_a^b [f(x) + g(x)]\cdot dx} \\
+				&amp;= \int_\frac{\pi}{6}^\frac{\pi}{3} dx 
+				= \left[\frac\pi{3}-\frac{\pi}{6}\right] = \dfrac{\pi}{6} \\
+				\therefore A &amp;= \dfrac{\pi}{12  }
+				\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\dfrac\sqrt{2}{3}</tex>
+      <tex>\dfrac\pi{6}</tex>
+      <tex correct="true">\dfrac{\pi}{12}</tex>
+      <tex>\dfrac{1}{\pi}</tex>
+   </choices>
+</question>

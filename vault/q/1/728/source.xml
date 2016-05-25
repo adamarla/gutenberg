@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>\text{Differentiate the following}\\
+ f(x) = (\sin x)^{x} + \sin^{-1} {\sqrt x} \\
+\text{with respect to x.}</tex>
+      <tex>\\ \text{Which of the following shows the}\\
+			\text{mathematically correct way to start solving?}</tex>
+      <tex>\\ \text{If }g(x) = (\sin x)^{x},\text{ then which of the following}\\
+\text{shows the correct evaluation of }g'(x)?</tex>
+      <tex>\\ \text{Are the calculations and conclusions below}\\
+\text{correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{align}
+			f(x) &amp; = (\sin x)^{x} + \sin^{-1} {\sqrt x} \\
+			\implies f'(x)&amp;= \frac{d}{dx}(\sin x)^{x} + \frac{d}{dx}(\sin^{-1} {\sqrt x})
+			\end{align}
+			</tex>
+         <tex>
+			\begin{align}					
+			f(x) &amp; = (\sin x)^{x} + \sin^{-1} {\sqrt x} \\
+			\implies \log f(x) &amp; = \log [ (\sin x)^{x}] + \log (\sin^{-1} {\sqrt x}) \\
+			&amp; = x \cdot \log ( \sin x )+ \log (\sin^{-1} {\sqrt x}) \\
+			\end{align}\\			
+\therefore f'(x)  = \frac{d}{dx}x \cdot \log ( \sin x )+ 
+	 \frac{d}{dx}[\log (\sin^{-1} {\sqrt x}) ]
+			
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{Finding }\log f(x) \text{ would have helped had }\\
+                        f(x) = a\cdot b\text{ or }\frac{a}{b}.\text{But it is not. }f(x) = a + b. \\
+                        \text{ Taking its log wouldn't help.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\begin{align}
+g(x) &amp;=  (\sin x)^{x}\\
+ \implies \log g(x) &amp;= x \cdot \log (\sin x) \\ 
+\end{align}\\
+
+
+\therefore \frac{1}{g(x)} g'(x) = \underbrace{\left[ x \frac{d}{dx}\log(\sin x)
++ \log(\sin x) \frac{d}{dx} x\right ]}_{\textbf{Product Rule}} \\
+
+
+
+\quad \quad \, = \left[ \underbrace{x\frac{d \log(\sin x)}{d\sin x }\cdot \frac {d \sin x}{dx}}_{\textbf{Chain Rule}}
+				  + \log (\sin x ) \frac{d}{dx}x\right] \\
+
+\implies g'(x) = (\sin x)^{x} \left[ x \cdot \cot x + \log (\sin x)\right]
+</tex>
+         <tex>\begin{align}
+g(x) &amp;= (\sin x)^{x}\\
+\implies g'(x) &amp;= \underbrace{x\cdot (\sin x)^{x-1}}_{\frac{d}{dx}x^n = nx^{n-1}}
+\end{align}			
+				</tex>
+      </options>
+      <reason>
+         <tex>g'(x) = N\cdot x^{N-1}\text{ is true only when N is a known} \\
+\text{constant. But taking }\log g(x)\text{ when }g(x) = h(x)^{j(x)}\\
+\textbf{ will always work.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\begin{align}
+f(x) &amp;= \underbrace{(\sin x)^{x}}_{g(x)} + \underbrace{\sin^{-1} {\sqrt x}}_{h(x)} \\
+\implies f'(x) &amp;= g'(x) + h'(x) \\
+\text{Now, }h(x) &amp;= \sin^{-1} {\sqrt x}
+\\ \implies\log h(x) &amp;= \log (\sin^{-1} {\sqrt x}) \\
+\implies \frac{1}{h(x)}h'(x) &amp;= \dfrac{1}{\sin^{-1} {\sqrt x}} \cdot \dfrac{1}{\sqrt{1-x}} \cdot \dfrac{1}{2 \sqrt{x}} \\
+\implies h'(x) &amp;=   \dfrac{1}{2\, \sqrt{x - x^2}} \\
+\end{align}\\
+
+\therefore f'(x) = (\sin x)^{x} \left[ x \cdot \cot x + \log (\sin x)\right] + \dfrac{1}{2 \sqrt{x - x^2}}
+
+</tex>
+      </options>
+      <reason>
+         <tex>\text{We found }g'(x) \text{in the last step. We only need}\\
+\text{to find }h'(x)\text{, where }h(x) = \sin^{-1} {\sqrt x} \text{ by taking }\\
+\log h(x)\text{ first.}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>(\sin x)^{x} \left[ x \cdot \tan x + \log (\sin x)\right] + \dfrac{1}{2 \sqrt{x - x^2}}</tex>
+      <tex>(\sin x)^{x} \left[ x \cdot \cot x + \log (\sin x)\right] + \dfrac{1}{ \sqrt{x - x^2}}</tex>
+      <tex>(\sin x)^{x} \left[ x \cdot \cot x + \log (\sin x)\right] + 
+\dfrac{1}{2 \sqrt{1 - x}}</tex>
+      <tex correct="true">(\sin x)^{x} \left[ x \cdot \cot x + \log (\sin x)\right] + \dfrac{1}{2 \sqrt{x - x^2}}</tex>
+   </choices>
+</question>

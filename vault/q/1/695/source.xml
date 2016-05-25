@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Differentiate the following function}\\
+			\text{with respect to x}\\
+			\quad f(x) = \cos\sqrt{x}
+		</tex>
+      <tex>\\ \text{If }\cos\sqrt{x} = f(\, g(x)\,),\text{ then what are f and g?}</tex>
+      <tex>\\ \textbf{Right or wrong? } \text{Given }y = (f\circ g)(x), \\
+					\frac{dy}{dx}\text{ will evaluate to the following.}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			  \begin{tabular}{|c|c|}
+			  \hline
+			  f(x) &amp; g(x) \\ 
+			  \hline
+			  \cos x &amp; \sqrt{x} \\
+			  \hline 
+			  \end{tabular}
+			</tex>
+         <tex correct="false">
+      \begin{tabular}{|c|c|}
+			  \hline
+			  f(x) &amp; g(x) \\ 
+			  \hline
+			  \sqrt{x} &amp; \cos x \\
+			  \hline 
+			  \end{tabular}
+			</tex>
+      </options>
+      <reason>
+         <tex>\begin{tabular}{|c|c|c|c|}
+			\hline
+			f(x) &amp; g(x) &amp; f(\, g(x)\, ) &amp;\text{Notation} \\
+			\hline 
+			\cos x &amp; \sqrt{x} &amp; \cos(\sqrt{x}) &amp; (f\circ g)(x)\\
+			\hline
+			\end{tabular} \\
+			\textbf{And just for fun }\\
+			\begin{tabular}{|c|c|c|c|}
+			\hline
+			f(x) &amp; g(x) &amp; g(\, f(x)\, ) &amp;\text{Notation} \\
+			\hline 
+			\cos x&amp; \sqrt{x} &amp; \sqrt{f(x)} &amp; \\
+			&amp; &amp; = \sqrt{\cos x} &amp; (g\circ f)(x) \\
+			\hline
+			\end{tabular}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+					  \begin{align}
+					  \dfrac{dy}{dx} &amp;= \dfrac{d}{d g(x)}f(\,g(x)\,)\cdot\dfrac{d}{dx}g(x) \\
+					  &amp;= \dfrac{d}{d g(x)}\cos g(x)\cdot \dfrac{d}{dx}\sqrt{x} \\
+					  &amp;= -\sin g(x)\cdot \frac{1}{2\sqrt{x}} \\
+					  &amp;= -\dfrac{\sin\sqrt{x}}{2\cdot\sqrt{x}}
+					  \end{align}
+					</tex>
+      </options>
+      <reason>
+         <tex>\text{If }y = f(\, g(x)\,) = (f\circ g)(x),\text{ then }\\
+					\quad \underbrace{\frac{dy}{dx} = 
+					\frac{d}{d g(x)}f(\, g(x)\,)\cdot\frac{d}{dx}g(x)}_{\textbf{Chain Rule}}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\dfrac{\sin(\sqrt{x})}{2\sqrt{x}}</tex>
+      <tex>-\sin(\sqrt{x})\cdot\sqrt{2x}</tex>
+      <tex correct="true">-\dfrac{\sin(\sqrt{x})}{2\sqrt{x}}</tex>
+      <tex>2\sin(\sqrt{x})\cdot\sqrt{x}</tex>
+   </choices>
+</question>

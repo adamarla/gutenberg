@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Differentiate the following}\\
+			\qquad f(x) = \left(x+\frac{1}{x}\right)^x + x^{\left(x + \frac{1}{x}\right)} \\
+			\text{with respect to x.}
+		</tex>
+      <tex>\\ \text{Which of the following shows the} \\
+			\text{mathematically correct way to start solving?}</tex>
+      <tex>\\ \text{Is the following the right way to go}\\
+						\text{to find g'(x) where } g(x) = \left(x+\frac{1}{x}\right)^x?</tex>
+      <tex>\\ \text{Similarly, is the following valid calculations}\\
+				\text{for finding h'(x) where } h(x) = x^{\left(1+\frac{1}{x}\right)}?</tex>
+      <tex>\\ \text{Put it altogether and }f'(x) = ?</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\text{Given }g(x) = \left(x+\frac{1}{x}\right)^x\text{ and }
+			h(x) = x^{\left(1 + \frac{1}{x}\right)} \\
+ 			\begin{align}
+			  f(x) &amp;= g(x) + h(x) \\ 
+			  \implies f'(x) &amp;= g'(x) + h'(x) 
+			\end{align}
+			</tex>
+         <tex correct="false">
+			\text{Given }g(x) = \left(x+\frac{1}{x}\right)^x\text{ and }
+			h(x) = x^{\left(x + \frac{1}{x}\right)} \\
+			\begin{align}
+			f(x) &amp;= g(x) + h(x) \\ 
+			\implies \log f(x) &amp;= \log g(x) + \log h(x) \\
+			\implies \frac{1}{f(x)}f'(x) &amp;= \frac{1}{g(x)}g'(x) + \frac{1}{h(x)}h'(x)
+			\end{align}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{Finding }\log f(x) \text{ would have helped had }\\
+			f(x) = a\cdot b\text{ or }\frac{a}{b}.\text{But it is not. }f(x) = g + h. \\  
+			\text{Moreover, } f = g+h\nRightarrow \log f = \log g + \log h.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+						\begin{align}
+						  g(x) &amp;= \left(x+\frac{1}{x}\right)^x \\ 
+						  \implies \log g(x) &amp;= x\cdot\log \left(x+\frac{1}{x}\right)
+            \end{align} \\
+            \begin{align}
+						  &amp;\therefore\dfrac{1}{g(x)}g'(x) = 
+						  x\cdot\dfrac{d}{dx}\log \left(x+\frac{1}{x}\right) \\  
+						  &amp;+ \log \left(x+\frac{1}{x}\right)\cdot\dfrac{d}{dx} x \\
+						  &amp;= x\cdot\dfrac{1}{\left(x+\frac{1}{x}\right)}\cdot \left(1-\frac{1}{x^2}\right) 
+						  + \log \left(x+\frac{1}{x}\right) \\ 
+						  &amp;= \log \left(x+\frac{1}{x}\right) + \dfrac{x^2-1}{x^2 + 1}
+						\end{align}
+						</tex>
+      </options>
+      <reason>
+         <tex>\text{One needs to go from } \\ 
+						g(x) \rightarrow \log g(x) \rightarrow \dfrac{1}{g(x)}g'(x).\\
+						\text{Plus, use }\textbf{Chain Rule }\text{ to find } g'(x).</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  h(x) &amp; = x^{\left(1+\frac{1}{x}\right)} \\ 
+				  \implies\log h(x) &amp;= \left(1+\frac{1}{x}\right)\cdot\log x
+				\end{align} \\
+				\begin{align}
+				  &amp;\therefore \dfrac{1}{h(x)}h'(x) = \\
+				  &amp;\left(1+\frac{1}{x}\right)\frac{d}{dx}\log x 
+				  + \log x\cdot\dfrac{d}{dx}\left(1+\frac{1}{x}\right) \\
+				  &amp;= \left(\frac{x+1}{x^2}\right)-\dfrac{\log x}{x^2}
+				\end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{As with g(x), go from } \\
+				h(x)\rightarrow\log h(x)\rightarrow\frac{1}{h(x)}h'(x).</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+					\begin{align}
+					  &amp;f'(x) = g'(x) + h'(x) \\ 
+					  &amp;= \underbrace{\left(x+\frac{1}{x}\right)^x\cdot
+					  \log \left(x+\frac{1}{x}\right) + \dfrac{x^2-1}{x^2 + 1}}_{g'(x)} \\
+					  &amp;+ \underbrace{x^{\left(1+\frac{1}{x}\right)}
+				 \cdot \left[\dfrac{x+1-\log x}{x^2}\right]}_{h'(x)}
+					\end{align}
+					</tex>
+         <tex correct="false">
+					\begin{align}
+					  &amp;f'(x) = g'(x) + h'(x) \\ 
+					  &amp;= \underbrace{
+					  \log \left(x+\frac{1}{x}\right) + \dfrac{x^2-1}{x^2 + 1}}_{g'(x)} \\
+					  &amp;+ \underbrace{\left[\dfrac{x+1-\log x}{x^2}\right]}_{h'(x)}
+					\end{align}
+					</tex>
+      </options>
+      <reason>
+         <tex>\text{Be mindful of your calculations. In Step 2, we} \\
+					\text{found }\frac{g'(x)}{g(x)} - \text{not g'(x). Similarly, in}\\
+					\text{Step 3, we found }\frac{h'(x)}{h(x)}\text{ - not h'(x)}.</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>
+						\log \left(x+\frac{1}{x}\right) + \dfrac{x^2-1}{x^2 + 1} \\ 
+						+ \left[\dfrac{x+1-\log x}{x^2}\right]
+						</tex>
+      <tex>
+						\left(x+\frac{1}{x}\right)^x \log x + 
+						x^{\left(1+\frac{1}{x}\right)}\log\left(x + \frac{1}{x}\right)
+						</tex>
+      <tex>
+						\left(x+\frac{1}{x}\right)^x \log\left(1+\frac{1}{x}\right) + 
+						x^{\left(1+\frac{1}{x}\right)}\log\left(x + \frac{1}{x}\right)
+						</tex>
+      <tex correct="true">
+						\left(x+\frac{1}{x}\right)^x\cdot
+					  \left[\log \left(x+\frac{1}{x}\right) + \dfrac{x^2-1}{x^2 + 1}\right] \\
+					  + x^{\left(1+\frac{1}{x}\right)}\cdot \left[\dfrac{x+1-\log x}{x^2}\right]
+						</tex>
+   </choices>
+</question>

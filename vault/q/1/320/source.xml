@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>%text
+It is standard practice to take a chest
+X-ray of a person suspected of having 
+tuberculosis (TB). The probability of 
+detecting TB in a person actually suffering
+from it is $\dfrac{99}{100}$. However, the probability 
+of a healthy person being diagnosed with 
+TB is $\dfrac{9}{1000}$. In a certain city, 1 in 600 
+people suffers from TB. A person is selected 
+at random and is diagnosed with TB. 
+
+What is the probability that the person 
+actually has TB?
+%</tex>
+   </statement>
+</question>

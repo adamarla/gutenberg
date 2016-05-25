@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>\text{Integrate the following}\\
+\qquad \dfrac{1}{\sqrt{9-25x^2}}</tex>
+      <tex>\\ \int\dfrac{dx}{\sqrt{9-25x^2}}\text{ looks most like }
+\int\dfrac{dt}{\sqrt{a^2-t^2}}.\\
+\text{So, what are }a\text{ and }t?</tex>
+      <tex>\\ \text{Are the calculations below correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">\begin{align}
+a &amp;= 3 \\
+t &amp;= 5x 
+\end{align}</tex>
+         <tex>\begin{align}
+a &amp;= 9 \\
+t &amp;= 25x 
+\end{align}</tex>
+      </options>
+      <reason>
+         <tex>\sqrt{9-25x^2} = \sqrt{3^2-(5x)^2}.\text{ When compared}\\
+\text{with }\sqrt{a^2-t^2}, \text{it is clear that }a = 3, t = 5x.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\begin{align}
+\text{Let } t &amp;= 5x \\
+\implies dt &amp;= 5\cdot dx \implies dx = \dfrac{dt}{5} \\
+\therefore \int\dfrac{dx}{\sqrt{9-25x^2}} &amp;= 
+\dfrac{1}{5}\int\dfrac{dt}{\sqrt{3^2-t^2}} \\
+&amp;= \dfrac{1}{5}\cdot\sin^{-1}\dfrac{t}{3} + C \\
+&amp;= \dfrac{1}{5}\cdot\sin^{-1}\dfrac{5x}{3} + C
+\end{align}</tex>
+      </options>
+      <reason>
+         <tex>\text{Use the standard result }\int\dfrac{dt}{\sqrt{a^2-t^2}} = \sin^{-1}\dfrac{t}{a} + C \\
+\text{But remember,} t = 5x\text{. And so }dx = \dfrac{dt}{5}.</tex>
+      </reason>
+   </step>
+</question>

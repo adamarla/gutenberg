@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Find the intervals in which}\\
+			\quad\quad y = 6-9x-x^2 \\
+			\text{is strictly increasing or decreasing}
+		</tex>
+      <tex>\\ \text{What will you find first?}</tex>
+      <tex>\\ \text{Is the following analysis correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\quad\quad\dfrac{dy}{dx}
+			</tex>
+         <tex correct="false">
+			\quad\text{Roots of the equation}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{To know if y is increasing/decreasing, you }\\
+			\text{need to see its rate of change - }\frac{dy}{dx}.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  \dfrac{d}{dx}y&amp;= \dfrac{d}{dx}(6-9x-x^2)=-(2x+9) \\
+				  &amp;\gt 0\text{ when }2x+9\lt 0\\
+				  &amp;\implies x\lt-\frac{9}{2}\text{ (increasing)}\\
+				  &amp;\lt 0\text{ when }2x+9\gt 0\\
+				  &amp;\implies x\gt-\frac{9}{2}\text{ (decreasing)}			  
+				\end{align}
+				</tex>
+         <tex correct="false">
+				\begin{align}
+					\dfrac{d}{dx}y&amp;= \dfrac{d}{dx}(6-9x-x^2)=-(2x+9) \\
+				  &amp;\gt 0\text{ when }2x+9\gt 0\\
+				  &amp;\implies x\gt-\frac{9}{2}\text{ (increasing)}\\
+				  &amp;\lt 0\text{ when }2x+9\lt 0\\
+				  &amp;\implies x\lt-\frac{9}{2}\text{ (decreasing)}
+				\end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{The only catch in the calculations was that }\\
+				-1\times A\gt 0\implies A\lt 0.\\
+				\text{ Similarly, }-1\times A\lt 0\implies A\gt 0.</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\text{(increasing) }x\lt\frac{9}{2}\\
+		\text{(decreasing) }x\gt \frac{9}{2}</tex>
+      <tex correct="true">\text{(increasing) }x\lt-\frac{9}{2}\\
+		\text{(decreasing) }x\gt -\frac{9}{2}</tex>
+      <tex>\text{(decreasing) }x\lt-\frac{9}{2}\\
+		\text{(increasing) }x\gt -\frac{9}{2}</tex>
+      <tex>\text{(decreasing) }x\lt\frac{9}{2}\\
+		\text{(increasing) }x\gt \frac{9}{2}</tex>
+   </choices>
+</question>

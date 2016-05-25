@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Find all points of discontinuity of } \\
+			\quad f(x) = \begin{cases}
+			                \dfrac{\sin x}{x}, x\lt 0 \\
+			                x+1, x\geq 0
+			             \end{cases}
+		</tex>
+      <tex>\\ \text{Would the following be the condition}\\
+			\text{for continuity?}</tex>
+      <tex>\\ \text{Is the following analysis correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			  \lim_{x\to 0^-}f(x) = \lim_{x\to 0^+}f(x) = f(0)
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{f(x) is one thing for }x\lt 0\text{ and }\\
+			  \text{something else for }x\geq 0.\text{Hence, it is }\\
+			  \text{at x = 0 that we must check for discontinuity.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				  \begin{align}
+				    \lim_{x\to 0^-}f(x) &amp;= \lim_{x\to 0^-}\dfrac{\sin x}{x} = 1 \\
+				    \lim_{x\to 0^+}f(x) &amp;= \lim_{x\to 0^+}(x+1) = 1 \\
+				    f(0) &amp;= 0 + 1 = 1
+				  \end{align}
+				  \\ \text{As all conditions from Step 1 are met, }\\
+				  \text{the function is also continuous at x = 0.} \\
+				  \text{In other words, f(x) is discontinuous nowhere.}
+				</tex>
+         <tex correct="false">
+				\begin{align}
+				    \lim_{x\to 0^-}f(x) &amp;= \lim_{x\to 0^-}\dfrac{\sin x}{x} = \infty \\
+				    \lim_{x\to 0^+}f(x) &amp;= \lim_{x\to 0^+}(x+1) = 1 \\
+				    f(0) &amp;= 0 + 1 = 1
+				  \end{align}
+				  \\ \text{As all conditions from Step 1 are not met, }\\
+				  \text{the function is discontinuous at x = 0.}
+				</tex>
+      </options>
+      <reason>
+         <tex>\lim_{x\to 0}\dfrac{\sin x}{x} = 1.\text{Therefore, }\\
+				\lim_{x\to 0}f(x) = f(0)\implies \text{ continuity at x = 0.}</tex>
+      </reason>
+   </step>
+</question>

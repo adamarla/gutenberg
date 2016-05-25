@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Prove that the function given by }\\
+			\quad\quad f(x)=x^2-x+1 \\
+			\text{is neither strictly increasing nor strictly }\\
+			\text{decreasing on }\left(-1,1\right).
+		</tex>
+      <tex>\\ \text{In the graph below, is the function strictly}\\
+			\text{increasing between points O and C?}</tex>
+      <tex>\\ \text{Is the following analysis correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex src="increasing.svg" isImage="true" correct="false"/>
+      </options>
+      <reason>
+         <tex>f(x)\text{ is increasing between O and C - but not strictly.}\\
+			\quad\quad\dfrac{d}{dx}f(x) = 0\text{ between A and B.}\\
+			\text{In a strictly increasing function, }\dfrac{d}{dx}f(x)\gt 0.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  f(x)&amp;=x^2-x+1 \\
+				  \implies f'(x)&amp;= 2x - 1 \\
+				  \implies f'(x)=0&amp;\text{ when }x=\frac{1}{2}
+				\end{align}
+				\\ \text{As }x=\frac{1}{2}\in \left(-1,1\right), f'(x) = 0\text{ somewhere in}\\
+				\text{the given interval }\implies f(x)\text{ is strictly }\\
+				\text{nothing in }\left(-1,1\right).
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{The key word here is 'strictly'. For a function to be }\\
+				\text{strictly increasing/decreasing, }\\
+				f'(x)\gt 0\text{ or }f'(x)\lt 0\text{ but not } = 0.</tex>
+      </reason>
+   </step>
+</question>

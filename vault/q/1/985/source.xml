@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+		\text{Evaluate the following integral}\\
+		\qquad \int_1^2\dfrac{5x^2}{x^2+4x+3}\cdot dx  
+		</tex>
+      <tex>\\ \dfrac{5x^2}{x^2+4x+3} = A + \dfrac{B}{x+1} + \dfrac{C}{P(x)}. \\
+			\text{What are }A,B,C\text{ and }P(x) = ?</tex>
+      <tex>\\ \text{Has }A = \int_1^2\dfrac{5x^2}{x^2+4x+3}\cdot dx  \\
+  		\text{been re-written correctly below?}</tex>
+      <tex>\\ \text{And therefore, }A = ?</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{tabular}{c|c|c|c}
+			  A &amp; B &amp; C &amp; P(x) \\
+			  \hline
+			  5 &amp; \frac{5}{2} &amp; -\frac{45}{2} &amp; x + 3 \\
+			  \hline
+			\end{tabular}
+			</tex>
+         <tex correct="false">
+			\begin{tabular}{c|c|c|c}
+			  A &amp; B &amp; C &amp; P(x) \\
+			  \hline
+			  5 &amp; -\frac{5}{2} &amp; \frac{45}{2} &amp; x + 3 \\
+			  \hline
+			\end{tabular}
+			</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+			  x^2+4x+3 &amp;= (x+1)\cdot (x+3) \\
+			  \therefore \dfrac{5x^2}{x^2+4x+3} &amp;= A 
+			  + \dfrac{B}{x+1} + \dfrac{C}{\underbrace{x+3}_{P(x)}}
+			\end{align} \\
+			\begin{align}
+			  &amp;\implies 5x^2 = A\cdot(x^2+4x+3) + B\cdot(x+3) \\
+			  &amp;+ C\cdot (x+1) \\
+			  &amp;= Ax^2 + (4A + B + C)\cdot x + (3A+3B+C) 
+			\end{align}\\
+			\text{On comparing coefficients, we get } \\
+			A = 5, 4A + B + C = 0\text{ and }3A+3B+C = 0.\\
+			\text{ Solve to get, }B = \frac{5}{2}, C = -\frac{45}{2}.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+  		\begin{align}
+  		  A &amp;= \int_1^2\dfrac{5x^2}{x^2+4x+3}\cdot dx \\ 
+  		  &amp;= 5\int_1^2 dx +\frac{5}{2}\cdot\int_1^2\dfrac{dx}{x + 1} -\frac{45}{2}\int\dfrac{dx}{x+3}
+  		\end{align}
+  		</tex>
+      </options>
+      <reason>
+         <tex>\text{Plug-in the values of }A,B,C \text{ and }P(x)\text{ that}\\
+  		\text{you found in the previous step.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+          A = 5 -\frac{5}{2}\cdot \left[9\cdot\log\frac{5}{4} - \log\frac{3}{2}\right]
+  			</tex>
+         <tex correct="false">
+  			  A = 5 + \frac{5}{2}\cdot \left[9\cdot\log\frac{5}{4} + \log\frac{3}{2}\right]
+  			</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+  			  A &amp;= 5\int_1^2 dx +\frac{5}{2}\cdot\int_1^2\dfrac{dx}{x + 1} -\frac{45}{2}\int\dfrac{dx}{x+3} \\
+  			  &amp;= 5\cdot \left[x\right]_1^2 + \frac{5}{2}\left[\log (x+1)\right]_1^2 
+  			  -\frac{45}{2}\cdot \left[\log (x+3)\right]_1^2 \\
+  			  &amp;= 5\cdot(2-1) + \frac{5}{2}\cdot \underbrace{(\log 3 - \log 2)}_{\log\frac{3}{2}} \\
+  			  &amp;-\frac{45}{2}\cdot \underbrace{(\log 5 - \log 4)}_{\log\frac{5}{4}} \\
+  			  &amp;= 5 -\frac{5}{2}\cdot \left[9\cdot\log\frac{5}{4} - \log\frac{3}{2}\right]
+  			\end{align}</tex>
+      </reason>
+   </step>
+</question>

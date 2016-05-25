@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+		\text{What is the coefficient of }x^6y^3\text{ in}\\
+		\text{the expansion of }(x+y)^9?
+		</tex>
+      <tex>\\ \textbf{Right or wrong?} \\
+			\text{The m-th term}-T_m-\text{in the expansion is}\ldots</tex>
+      <tex>\\ \textbf{Right or wrong?}\\
+				\text{Given }T_m\text{ from Step 1, the coefficient of }\\
+				x^6y^3\text{ will be the following.}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\qquad T_m = ^9C_m\, x^{m}\cdot y^{9-m}, 0\leq m\leq 9
+			</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+			  (x+y)^9 &amp;= \sum_{m=0}^9\,^9C_m\cdot x^m\cdot y^{9-m}, 0\leq m\leq 9\\
+			  \implies T_m &amp;= ^9C_m\cdot x^m\cdot y^{9-m}
+			\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  \text{Coefficient } &amp;= ^9C_6 = 84
+				\end{align}
+				</tex>
+         <tex correct="false">
+				\begin{align}
+				\text{Coefficient } &amp;= ^9C_3 = 84
+				\end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{Given that }T_m =  ^9C_m\cdot x^m\cdot y^{9-m}\text{, we can see}\\
+				\text{that we will get a }x^6y^3\text{ term when }m=6.\\
+				\text{Hence, we need the coefficient of }T_6 = ^9C_6 = 84.</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">84</tex>
+      <tex>47</tex>
+      <tex>56</tex>
+      <tex>68</tex>
+   </choices>
+</question>

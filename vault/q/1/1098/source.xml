@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>\text{Using integration, find the area of the}\\
+			\text{region bounded by the lines}\\
+			\quad y = 2+x, y=2-x\text{ and }x=2.</tex>
+      <tex>\\ \textbf{Right or wrong? } \\
+			\text{The plot below correctly shows the three}\\
+			\text{lines within which the required area - A}\\
+			\text{is bound.}</tex>
+      <tex>\\ \textbf{Right or wrong? } \\
+				\text{The expression for the required area $A$}\\
+				\text{will be given by the following.}</tex>
+      <tex>\\ \textbf{Right or wrong? } \text{And the required area}\\
+				\text{A equals the following.}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex src="right.svg" isImage="true" correct="true"/>
+         <tex src="wrong.svg" isImage="true" correct="false"/>
+      </options>
+      <reason>
+         <tex>\text{The lines }y=2+x\text{ and }y=2-x\text{ will}\\
+			\text{intersect when }\\
+			\begin{align}
+			  y &amp;= 2 + x = 2-x \implies x = 0
+			\end{align}\\
+			\text{Plus, }x = 2\text{ is a vertical line.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  A &amp;= \int_0^2 (2+x)\cdot dx - \int_0^2 (2-x)\cdot dx
+				\end{align}
+				</tex>
+         <tex>
+				\begin{align}
+				  A &amp;= \int_0^2 (2-x)\cdot dx - \int_0^2 (2+x)\cdot dx
+				\end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>%text
+The required area lies between $x=0$ and $x=2.
+And in this region, $y = x+2$ \underline\text{lies above}
+$y=2-x$. Hence, the required area $A$ will be 
+%
+\begin{align}
+A &amp;= \text{Area below }y = x+ 2 \\
+&amp;- \text{ Area below } y = 2-x 
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\qquad A = 4\text{ sq. units}
+				</tex>
+         <tex>
+				\qquad A = 8\text{ sq. units}
+				</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+				  A &amp;= \int_0^2 (2+x)\cdot dx - \int_0^2 (2-x)\cdot dx \\
+				  &amp;= \int_0^2\left[(2+x)-(2-x)\right]\cdot dx \\
+				  &amp;= \int_0^2 2x\cdot dx = \left[2\cdot\dfrac{x^2}{2}\right]_0^2 \\
+				  &amp;= 4\text{ sq. units}
+				\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>1\text{ sq. units}</tex>
+      <tex>2\text{ sq. units}</tex>
+      <tex correct="true">4\text{ sq. units}</tex>
+      <tex>8\text{ sq. units}</tex>
+   </choices>
+</question>

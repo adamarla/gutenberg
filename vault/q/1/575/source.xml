@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{A balloon, which always remains spherical,}\\
+			\text{has a variable diameter }\\
+			\qquad D = \frac{3}{2}\cdot(2x+1).\\
+			\text{ Find the rate of change of its volume}\\
+			\text{with respect to } x.
+		</tex>
+      <tex>\\ \textbf{Right or wrong? }\text{ - The question is }\\
+			\text{asking us to find the following.}</tex>
+      <tex>\\ \textbf{Right or wrong? }\text{- The following is the}\\
+				\text{volume in terms of the diameter (D).}</tex>
+      <tex>\\ \text{And therefore, is the following correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{align}
+			&amp;\frac{dV}{dx} \\
+			\text{where V} &amp;= \text{balloon's volume.}
+			\end{align}
+			</tex>
+         <tex correct="false">
+						\begin{align}
+			&amp;\frac{dV}{dD} \\
+			\text{where V }&amp;=\text{balloon's volume}\\
+			\text{D} &amp;= \text{it's diameter}
+			\end{align}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{We have to find the rate of change }\\
+			\text{of volume with respect to x }\implies\frac{dV}{dx}. \\
+			\text{And we have not been told what x is. But}\\
+			\text{it could be anything - time, temperature, }\\
+			\text{pressure etc.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\quad V=\frac{4}{3}\pi\cdot \left(\frac{D}{2}\right)^3 = \pi\cdot\frac{D^3}{6}\\
+				\quad\text{where D = diameter}
+				</tex>
+         <tex correct="false">
+				\quad V=\frac{4}{3}\pi\cdot D^3 \\
+				\quad\text{where D = diameter}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{The volume of a sphere is }V=\frac{4}{3}\pi R^3. \\
+				\text{And } R=\frac{D}{2}\implies V = \frac{\pi\cdot D^3}{6}.</tex>
+      </reason>
+   </step>
+   <step swipe="false">
+      <options>
+         <tex correct="true">
+							\begin{align}
+							  V&amp;= \frac{\pi}{6}\times\left[\frac{3}{2}\cdot (2x+1)\right]^3\\
+							  \implies\frac{dV}{dx}&amp;=
+							  \frac{27}{8}\cdot\frac{\pi}{6}\cdot 
+							  \left[3\cdot (2x+1)^2\cdot\frac{d}{dx}(2x+1)\right]\\
+							  &amp;= \frac{27}{8}\pi\cdot (2x+1)^2
+							\end{align}
+							</tex>
+         <tex correct="false">
+							\begin{align}
+							  V&amp;= \frac{\pi}{6}\times\left[\frac{3}{2}\cdot (2x+1)\right]^3\\
+							  \implies\frac{dV}{dx}&amp;=
+							  \frac{\pi}{6}\cdot 
+							  \left[3\cdot (2x+1)^2\cdot\frac{d}{dx}(2x+1)\right]\\
+							  &amp;= \pi\cdot (2x+1)^2
+							\end{align}
+							</tex>
+      </options>
+      <reason>
+         <tex>\text{Check the calculations if you got this wrong.}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\pi\cdot(2x+1)^2</tex>
+      <tex>\frac{3}{2}\pi\cdot(2x+1)^2</tex>
+      <tex>\frac{9}{4}\pi\cdot(2x+1)^2</tex>
+      <tex correct="true">\frac{27}{8}\pi\cdot(2x+1)^2</tex>
+   </choices>
+</question>

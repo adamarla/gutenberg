@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>\text{The radius of a circle is increasing at the rate} \\
+\text{of 0.7 cm/s. What is the rate of increase of} \\
+\text{its circumference?}</tex>
+      <tex>\\ \text{If R be the radius of the circle, then}\\
+\text{we have been told that}\ldots</tex>
+      <tex>\\ \text{If C be the circumference of the circle, then}\ldots</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">\dfrac{dR}{dt} = 0.7\text{ cm/s}</tex>
+         <tex>\dfrac{dR}{dt} = -0.7\text{ cm/s}</tex>
+      </options>
+      <reason>
+         <tex>\text{The radius is increasing. And hence }\dfrac{dR}{dt} &gt; 0.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\begin{align}
+C &amp;= 2\pi\cdot R \\
+\implies\dfrac{dC}{dt} &amp;= 2\pi\cdot\dfrac{dR}{dt}\\
+&amp;= 1.4\pi\text{ cm/s}
+\end{align}</tex>
+         <tex>\begin{align}
+C &amp;= \pi\cdot R \\
+\implies\dfrac{dC}{dt} &amp;= \pi\cdot\dfrac{dR}{dt}\\
+&amp;= 0.7\pi\text{ cm/s}
+\end{align}</tex>
+      </options>
+      <reason>
+         <tex>\text{The circumference of a circle is given by } C = 2\pi\cdot R.\\
+\text{And therefore, }\dfrac{dC}{dt} = 2\pi\dfrac{dR}{dt}.</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>2.8\pi\text{ cm/s}</tex>
+      <tex correct="true">1.4\pi\text{ cm/s}</tex>
+      <tex>0.7\pi\text{ cm/s}</tex>
+      <tex>\pi\text{ cm/s}</tex>
+   </choices>
+</question>

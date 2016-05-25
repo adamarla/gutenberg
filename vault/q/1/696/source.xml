@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Differentiate the following function}\\
+			\text{with respect to x}\\
+			\quad f(x) = \cos x^3\cdot\sin^2 (x^5)
+		</tex>
+      <tex>\\ \textbf{Right or wrong? } \text{If }f(x) = g(x)\cdot h(x)\text{, then }\\
+		\frac{d}{dx}f(x)\text{ is given by the following.}</tex>
+      <tex>\\ \text{Are the following calculations correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+		\begin{align}
+		  \dfrac{d}{dx}f(x) &amp;= h(x)\cdot\frac{d}{dx}g(x) + g(x)\cdot\frac{d}{dx}h(x)
+		\end{align}
+		</tex>
+         <tex correct="false">
+		\begin{align}
+		  \dfrac{d}{dx}f(x) &amp;= \dfrac{d}{dx}g(x)\cdot\dfrac{d}{dx}h(x)
+		\end{align}
+		</tex>
+      </options>
+      <reason>
+         <tex>\text{When differentiating a function of the}\\
+		  \text{form }f(x) = g(x)\cdot h(x),\text{ use the }\textbf{Product Rule.}\\
+		  \qquad \dfrac{d}{dx}f(x) = h(x)\cdot\frac{d}{dx}g(x) + g(x)\cdot\frac{d}{dx}h(x)</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+					\begin{tabular}{|c|c|}
+					  \hline
+					  \text{Function} &amp; \text{Derivative} \\
+					  \hline 
+					  g(x) = \cos x^3 &amp; -3x^2\cdot\sin x^3 \\
+					  \hline 
+					  h(x) = \sin^2 (x^5) &amp; 2\sin x^5\cdot\cos x^5\cdot 5x^4 \\
+					  &amp; =   10x^4\cdot\sin x^5\cdot\cos x^5 \\
+					  \hline
+					\end{tabular} \\
+					
+					\begin{align}
+					  &amp;\therefore f'(x) =  \cos x^3\dfrac{d}{dx}\sin^2 (x^5) 
+					  + \sin^2 (x^5)\dfrac{d}{dx}\cos x^3 \\
+					  &amp;= 10x^4\sin x^5\cos x^5\cos x^3-3x^2 \sin x^3 \sin^2 (x^5) 
+					\end{align}
+					</tex>
+         <tex correct="false">
+					\begin{tabular}{|c|c|}
+					  \hline
+					  \text{Function} &amp; \text{Derivative} \\
+					  \hline 
+					  g(x) = \cos x^3 &amp; -\sin x^3 \\
+					  \hline 
+					  h(x) = \sin^2 (x^5) &amp; 2\sin x^5\cdot\cos x^5 \\
+					  \hline
+					\end{tabular} \\
+					
+					\begin{align}
+					  &amp;\therefore f'(x) =  \cos x^3\dfrac{d}{dx}\sin^2 (x^5) 
+					  + \sin^2 (x^5)\dfrac{d}{dx}\cos x^3 \\
+					  &amp;= \sin x^5\cdot [2\cos x^3\cdot\cos x^5 + \sin x^3\cdot \sin x^5]
+					\end{align}
+					</tex>
+      </options>
+      <reason>
+         <tex>\text{You need to apply the }\textbf{Chain Rule}\text{ when} \\
+					  \text{differentiating the following} \\
+					  \begin{align}
+					    \dfrac{d}{dx}\cos x^3 &amp;= \dfrac{d}{d x^3}\cos x^3\cdot\dfrac{d}{dx} x^3 \\
+					    &amp;= -3x^2\cdot\sin x^3 \\
+					    \dfrac{d}{dx}\sin^2 (x^5) &amp;= \underbrace{\dfrac{d}{d\sin x^5}\sin^2 x^5}_A
+					    \cdot\underbrace{\dfrac{d}{d x^5}\sin x^5}_B
+					    \cdot\underbrace{\dfrac{d}{dx}x^5}_C \\
+					    &amp;= \underbrace{2\sin x^5}_A
+					    \cdot \underbrace{\cos x^5}_B\cdot\underbrace{5x^4}_C \\
+					    &amp;= 10x^4\cdot\sin x^5\cdot\cos x^5
+					  \end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true"> 10x^4\sin x^5\cos x^5\cos x^3 -3x^2 \sin x^3 \sin^2   (x^5)</tex>
+      <tex>\sin 2x^5\cdot\cos x^3 - 3\cos x^3\sin^2 x^5</tex>
+      <tex>5x^4\sin 2x^5\cdot\cos x^3 + \cos x^3\sin^2 x^5</tex>
+      <tex>3x^2\sin 2x^5\cdot\cos x^3 - 5x^4\cos x^3\sin^2 x^5</tex>
+   </choices>
+</question>

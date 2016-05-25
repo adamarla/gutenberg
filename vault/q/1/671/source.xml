@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Find all the points of discontinuity}\\
+			\text{of f defined as }f(x) = \vert x\vert - \vert x+1\vert.
+		</tex>
+      <tex>\\ \text{Which of the following shows the}\\
+			\text{correct definitions for }\vert x\vert\text{ and }\vert x+1\vert ?</tex>
+      <tex>\\ \text{Which of the following correctly shows}\\
+					\text{the definitions of }\vert x\vert\text{ and }\vert x+1\vert\\
+					\text{along the number line?}</tex>
+      <tex>\\ \text{Is the following analysis correct?}</tex>
+      <tex>\\ \text{Is the following conclusion correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{align}
+			  \vert x\vert &amp;= \begin{cases}
+			                          x,x\geq 0, \\
+			                          -x, x\lt 0
+			                      \end{cases} \\
+			  \vert x+1\vert &amp;= \begin{cases}
+			                          x + 1, x\geq -1 \\
+			                          -x-1, x\lt -1
+			                        \end{cases}
+			\end{align}
+			</tex>
+         <tex correct="false">
+			\begin{align}
+			  \vert x\vert &amp;= \begin{cases}
+			                          x,x\geq 0, \\
+			                          -x, x\lt 0
+			                      \end{cases} \\
+			  \vert x+1\vert &amp;= \begin{cases}
+			                          x + 1, x\geq 0\\
+			                          -x-1, x\lt 0
+			                        \end{cases}
+			\end{align}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{The tricky function is }\vert x+1\vert. \\
+			\text{And the trick is to see }\vert x + 1\vert \text{ as }\vert y \vert\\
+			\text{where } y = x + 1.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex src="notrim-right.svg" isImage="true" correct="true"/>
+         <tex src="notrim-wrong.svg" isImage="true" correct="false"/>
+      </options>
+      <reason>
+         <tex>\text{Be careful.} \vert x\vert \text{is defined differently}\\
+					\text{around }x=0.\text{ But }\vert x+1\vert\text{ is defined }\\
+					\text{differently around }x=-1.f(x) = \vertx\vert-\vert x+1\vert \text{must}\\
+					\text{therefore take both }x=0\text{ and }x=-1\text{ into account.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{align}
+			f(x) &amp;= \begin{cases}
+			  x-(x+1), x\geq 0 \\
+			  -x-(x+1), -1\leq x\lt 0 \\
+			  -x + (x+1), x\lt -1
+			\end{cases} \\ 
+			&amp;=\begin{cases}
+			   -1, x\geq 0 \\
+			   -2x-1, -1\leq x\lt 0 \\
+			   1, x\lt -1
+			\end{cases}
+			\end{align}
+			\\ \text{f(x) is therefore continuous everywhere}\\
+			\text{but perhaps not at x=0 and x = -1}.
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{The definition of f(x) follows from the number-line}\\
+			\text{we drew in the previous step. And f(x) is continuous}\\
+			\text{everywhere. But we still have to check at x=0 and x=-1.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\text{At x = -1}\\
+				\begin{align}
+				  \lim_{x\to -1^-}f(x) &amp;= 1 =
+				  \lim_{x\to -1^+}f(x) = -2\cdot(-1) -1 \\
+				  \text{Also, }\lim_{x\to -1} &amp;= f(-1)\implies\text{ continuity at x = -1}
+				\end{align}
+				\\ \text{Similarly, at x = 0} \\
+				\begin{align}
+				  \lim_{x\to 0^-}f(x) &amp;= \lim_{x\to 0^+}f(x) = f(0) \\
+				  &amp;\implies\text{ continuity at x = 0}
+				\end{align}
+				\\ \text{Hence, f(x) is also continuous at x = 0 }\\
+				\text{and x = -1 }\implies\text{ continuous everywhere }\\
+				\implies\text{discontinuous nowhere.}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{From the previous step, we know f(x) is}\\
+				\text{continuous for }x\neq 0\text{ and }x\neq -1.\text{Now, we}\\
+				\text{have shown f(x) is continuous for }x=-1, 0.</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\text{Discontinuous at every integer.}</tex>
+      <tex>\text{Discontinuous at x = -1 and x = 1.}</tex>
+      <tex correct="true">\text{No points of discontinuity.}</tex>
+      <tex>\text{Discontinuous at x = 0.}</tex>
+   </choices>
+</question>

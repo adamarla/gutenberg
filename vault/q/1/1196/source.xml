@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>\text{Differentiate the following}\\
+			\qquad f(x) = (\log x)^x + x^{\log x} \\
+			\text{with respect to x.}</tex>
+      <tex>\\ \text{Given that }f(x) = \underbrace{(\log x)^x}_{g(x)} + 
+  		\underbrace{x^{\log x}}_{h(x)} \\ 
+  		\text{which of the following assertions is true?}</tex>
+      <tex>\\ \textbf{Right or wrong?} \\
+				\text{Given that }g(x) = (\log x)^x,\, \dfrac{d}{dx}g(x)\text{ will}\\
+				\text{evaluate to the following.}</tex>
+      <tex>\\ \textbf{Right or wrong?}\\
+			\text{Similarly, given that }h(x) = x^{\log x},\text{ the}\\
+			\text{following will be true.}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+  		\begin{align}
+  		  f(x) &amp;= g(x) + h(x) \\ 
+  		  \implies f'(x) &amp;= g'(x) + h'(x)
+  		\end{align}
+  		</tex>
+         <tex correct="false">
+  		\begin{align}
+  		  f(x) &amp;= g(x) + h(x) \\ 
+  		  \implies\log f(x) &amp;= \log g(x) + \log h(x) \\ 
+  		  \implies \dfrac{1}{f(x)}\cdot f'(x) &amp;= \dfrac{1}{g(x)}\cdot g'(x)
+  		  + \dfrac{1}{h(x)}\cdot h'(x)
+  		\end{align}
+  		</tex>
+      </options>
+      <reason>
+         <tex>\text{Had }f(x) = g(x)\cdot h(x),\text{ then taking logs would}\\
+  		\text{have helped (for the following reason)} \\
+  		\begin{align}
+  		  f(x) &amp;= g(x)\cdot h(x) \\
+  		  \implies \log f(x) &amp;= \log g(x) + \log h(x) \\
+  		  \implies \dfrac{1}{f(x)}\cdot f'(x) &amp;= \dfrac{1}{g(x)}\cdot g'(x)
+  		  + \dfrac{1}{h(x)}\cdot h'(x)
+  		\end{align} \\
+  		\underline{\text{But } f(x)\neq g(x)\cdot h(x)}.\\
+  		\text{Instead, }f(x) = g(x) + h(x).\\
+  		\text{Hence, only } f'(x) = g'(x) + h'(x)\text{ is true.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  g(x) &amp;= (\log x)^x \\
+				  \implies \log g(x) &amp;= x\cdot \log (\log x) \\
+				  \therefore g'(x) &amp;= (\log x)^{x-1}[ \,1 + (\log x) \cdot \log (\log x)]
+				\end{align}
+				</tex>
+         <tex>
+				\begin{align}
+				  g(x) &amp;= (\log x)^x  \\ 
+				  \implies g'(x) &amp;= \underbrace{x\cdot (\log x)^{x-1}}_{\frac{d}{dx}x^n = nx^{n-1}}
+				\end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>g'(x) = N\cdot x^{N-1}\text{ is true only when N is a known} \\
+				\text{constant. But taking }\log g(x)\text{ when }g(x) = h(x)^{j(x)}\\
+				\textbf{will always work.} \\
+				\text{And therefore, } \\
+				\begin{align}
+				  g(x) &amp;= (\log x)^x  \\ 
+				  \implies \log g(x) &amp;= x\cdot \log(\log x )
+				\end{align} \\
+				
+				\begin{align}
+				
+				  \therefore \frac{1}{g(x)} g'(x) = \underbrace{\left[x\frac{d}{dx}\log (\log x) 
+				  + \log (\log x ) \frac{d}{dx}x\right]}_{\textbf{Product Rule}} \\
+				
+				= \left[ \underbrace{x\frac{d \log(\log x)}{d\log x }\cdot \frac {d \log x}{dx}}_{\textbf{Chain Rule}}
+				  + \log (\log x ) \frac{d}{dx}x\right] \\
+				  \implies g'(x) = (\log x)^{x-1}[ \,1 + (\log x) \cdot \log (\log x)]
+				\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+					\begin{align}
+					  h'(x) &amp;= x^{\log x}\cdot \frac {2}{x}\log x = 2\cdot \log x\cdot x^{(\log x -1)}\\
+					  f'(x) &amp;= g'(x) + h'(x) \\
+					  &amp;= (\log x)^{x-1}[ \,1+(\log x)\cdot \log (\log x)]\\
+					  &amp;+ 2x^{\log x -1}\cdot \log x
+					\end{align} \\
+					
+		</tex>
+         <tex> 
+		  \begin{align}
+					  h'(x) &amp;= \log x\cdot x^{\log x - 1}\\
+					  f'(x) &amp;= g'(x) + h'(x) \\
+					  &amp;= (\log x)^{x-1}[ \,1+(\log x)\cdot \log (\log x)]\\
+					  &amp;+ \log x\cdot x^{\log x - 1}
+					\end{align} \\
+					
+		</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+					f(x) &amp;= \underbrace{(\log x)^x }_{g(x)} + \underbrace{x^{\log x}}_{h(x)} \\
+					  \implies f'(x) &amp;= g'(x) + h'(x) 
+					\end{align}\\
+					\begin{align}
+					  \text{Now, }h(x) &amp;= x^{\log x} \\ 
+					  \implies\log h(x) &amp;= \log x\cdot\log x = (\log x)^2 \\
+					    \implies \frac{1}{h(x)}h'(x) &amp;= \frac {2\cdot\log x}{x}\\
+					  \end{align}\\
+					  \begin{align}
+					   					
+			\implies h'(x)&amp;=x^{\log x}\cdot \frac {2}{x}\log x = 2x^{(\log x -1)}\cdot \log x\\
+			\therefore f'(x) &amp;= \overbrace{(\log x)^{x-1}[ \,1+(\log x)\cdot \log (\log x)]}^{g'(x)}\\
+					     &amp; + \underbrace{2x^{\log x -1}\cdot \log x}_{h'(x)}
+					\end{align}\\</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>(\log x)^{x}[1 + \log x . \log (\log x)] + 2 x^{\log x -1}. \log x</tex>
+      <tex correct="true">(\log x)^{x-1}[1 + \log x . \log (\log x)] + 2 x^{\log x -1}. \log x</tex>
+      <tex>(\log x)^{x-1}[1 + \log (\log x)] + 2 x^{\log x -1}. \log x</tex>
+      <tex>(\log x)^{x-1}[1 + \log x . \log (\log x)] + x^{\log x -1}. \log x</tex>
+   </choices>
+</question>

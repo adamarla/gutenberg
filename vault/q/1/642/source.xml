@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Show that the function defined by }\\
+			f(x) = x-\left[x\right]\\
+			\text{is discontinuous at all integral points.}\\
+			\text{Here }\left[x\right] \text{denotes the greatest integer}\\
+			\text{less than or equal to }x.
+		</tex>
+      <tex>\\ \text{Which of the following shows correct values of }\left[x\right]?</tex>
+      <tex>\\ \text{If M is an integer, then are the following} \\
+				\text{assertions correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{align}
+			\left[-2.5\right]&amp;= -3 \\
+			\left[-1\right]&amp;= -1 \\
+			\left[3.65\right]&amp;= 3 \\
+			\left[7\right]&amp;= 7
+			\end{align}
+			</tex>
+         <tex correct="false">
+			\begin{align}
+			\left[-2.5\right]&amp;= -2 \\
+			\left[-1\right]&amp;= -2 \\
+			\left[3.65\right]&amp;= 3 \\
+			\left[7\right]&amp;= 6
+			\end{align}
+			</tex>
+      </options>
+      <reason>
+         <tex>\left[x\right]\leq x\implies \left[-2.5\right] = -3\text{ but }\\
+			\left[-1\right] = -1\text{ and }\left[7\right] = 7.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				  \begin{align}
+				    \lim_{x\to M^-}\left(x-\left[x\right]\right) &amp;= 1 \\
+				    \lim_{x\to M^+}\left(x-\left[x\right]\right) &amp;= 0 
+				  \end{align}
+				  \\ \text{As the left-hand limit }\neq\text{ right-hand limit}\\
+				  \text{f(x) cannot be continuous at any integer (like M).}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{For an }x\geq M, \left[x\right]=M.\therefore x\to M^+\implies x-\left[x\right]\to 0.\\
+				\text{But for }x\lt M, \left[x\right]=M-1. \therefore x\to M^- \implies x-\left[x\right]\to 1.</tex>
+      </reason>
+   </step>
+</question>

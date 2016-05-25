@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>%text
+If the radius of a sphere is measured as 
+9 cm with an error of 0.03 cm, then find the 
+approximate error in calculating its surface area.
+%</tex>
+      <tex>\\ %text
+If S be the surface area of the sphere and
+R its radius, then which of the following is
+the error in calculating the surface area?
+%</tex>
+      <tex>\\ %text
+Given the expression for $\Delta S$, how much
+will the error be when $R = 9cm\pm 0.03 cm$?
+%</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">\Delta S = \frac{dS}{dR}\cdot\Delta R </tex>
+         <tex>\Delta S = \frac{dS}{dR}</tex>
+      </options>
+      <reason>
+         <tex>%text
+\[ \frac{dS}{dR} \] is the \underline\text{rate of change} of the surface 
+area with respect to the radius - but \underline{not} 
+\underline\text{the actual change}. 
+
+That would be $\Delta S$, which is given by 
+
+%
+\qquad \Delta S = \frac{dS}{dR}\cdot \Delta R</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\Delta S = 2.16\pi\text{ cm}^2</tex>
+         <tex>\Delta S = 0.24\pi\text{ cm}^2</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+\frac{dS}{dR} &amp;= \frac{d}{dR}(4\pi\cdot R^2) = 8\pi R \\
+\text{and }\Delta R &amp;= 0.03\text{ cm} \\
+\therefore [\Delta S]_{R=9cm} &amp;= \frac{dS}{dR}\cdot\Delta R \\ 
+&amp;= 8\pi R\cdot \Delta R \\
+&amp;= 8\pi\cdot (9cm)\cdot (0.03 cm) \\
+&amp;= 2.16\pi\text{ cm}^2
+\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">2.16\pi\text{ cm}^2</tex>
+      <tex>1.56\pi\text{ cm}^2</tex>
+      <tex>0.24\pi\text{ cm}^2</tex>
+      <tex>2.24\pi\text{ cm}^2</tex>
+   </choices>
+</question>

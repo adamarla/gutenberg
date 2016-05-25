@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>\text{An edge of a variable cube is increasing}\\
+    \text{at the rate of 3 cm/s. How fast is the}\\
+    \text{volume of the cube increasing when the}\\
+    \text{edge is 10 cm long?}</tex>
+      <tex>\\ \text{What do we know and what do we need}\\
+  		\text{to find?}</tex>
+      <tex>\\ \text{Does this look right?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+  		  \quad\text{Given: }\frac{dL}{dT} = 3\text{ cm/s} \\
+  		  \quad\text{Find: }\left[\frac{dV}{dT}\right]_{L=10}
+  		</tex>
+         <tex correct="false">
+  		\quad\text{Given: }L=\text{10 cm}\\
+  		\quad\text{Find: }\left[\frac{dL}{dT}\right]_{L=10}
+  		</tex>
+      </options>
+      <reason>
+         <tex>\text{We know }\frac{dL}{dT}.\text{ We need }\frac{dV}{dT}\text{ when L = 10 cm.}</tex>
+      </reason>
+   </step>
+   <step swipe="false">
+      <options>
+         <tex correct="true">
+\begin{align}   
+\dfrac{dV}{dT} &amp;= \dfrac{dV}{dL}\times\dfrac{dL}{dT}\\
+      \text{And given that }\dfrac{dL}{dT} &amp;= 3\frac{cm}{s}\text{ and } V = L^3 \\
+      \left[ \dfrac{dV}{dT}\right]_{L=10} &amp;= \left[3L^2\times\dfrac{dL}{dT}\right]_{L=10}\\
+      \implies\left[\dfrac{dV}{dT}\right]_{L=10} &amp;= 900\frac{cm^3}{s}.
+\end{align}
+    </tex>
+         <tex>
+    \begin{align}
+\dfrac{dV}{dT} &amp;= \dfrac{dV}{dL}\times\dfrac{dL}{dT}\\
+\text{And given that }\dfrac{dL}{dT} &amp;= 3\frac{cm}{s}\text{ and } V = 6L^2 \\
+\left[ \dfrac{dV}{dT}\right]_{L=10} &amp;= \left[12\cdot L\times\dfrac{dL}{dT}\right]_{L=10}\\
+\implies\left[\dfrac{dV}{dT}\right]_{L=10} &amp;= 360\frac{cm^3}{s}.
+\end{align}
+    </tex>
+      </options>
+      <reason>
+         <tex>\text{If V = }L^3\text{, then }\dfrac{dV}{dT} = \dfrac{dV}{dL}\cdot\dfrac{dL}{dT}
+      = 3L^2\cdot\dfrac{dL}{dT}.</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>360\frac{cm^3}{s}</tex>
+      <tex>450\frac{cm^3}{s}</tex>
+      <tex>300\frac{cm^3}{s}</tex>
+      <tex correct="true">900\frac{cm^3}{s}</tex>
+   </choices>
+</question>

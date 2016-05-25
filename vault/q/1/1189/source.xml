@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>%text
+If $x=a\sin t$ and $y=a\cdot \left( \cos t + \log\frac{t}{2}\right)$, 
+then find $\dfrac{d^2y}{dx^2}$
+%</tex>
+      <tex>\\ %text
+\bf{First, a theoretical question}
+
+If $x=t^2$ and $y=t^3$, then is the following true?
+%</tex>
+      <tex>\\ %text
+Given that 
+$x=a\sin t$ and $y=a\cdot\left(\cos t + \log\tan\frac{t}{2} \right)$,
+which of the following shows correct values 
+for $\frac{dx}{dt},\frac{dy}{dt}$ and therefore $\frac{dy}{dx}$?
+%</tex>
+      <tex>\\ %text
+\bf{Right or wrong?}
+
+Given that $\dfrac{dy}{dx} = \cot t, \dfrac{d^2 y}{dx^2}$ will 
+evaluate to the following.
+%</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">\dfrac{d^2y}{dx^2} = \dfrac{d}{dx}\dfrac{dy}{dx} = \dfrac{d}{dt}\left( \dfrac{dy}{dx}\right) \times 
+\dfrac{dt}{dx}</tex>
+         <tex>\dfrac{d^2y}{dx^2} = 
+\dfrac{\left(\dfrac{d^2y}{dt^2}\right)}{\left(\dfrac{d^2 x}{dt^2}\right)}</tex>
+      </options>
+      <reason>
+         <tex>%text
+By definition $\dfrac{d^2y}{dx^2} = \dfrac{d}{dx}\left( \dfrac{dy}{dx}\right)$.  However,
+this also means that 
+%
+\begin{align}
+\dfrac{d^2 y}{dx^2} &amp;= \underbrace{\dfrac{d}{dt}\left(\dfrac{dy}{dx}\right)\times
+\dfrac{dt}{dx}}_{ = \dfrac{d}{dx}\dfrac{dy}{dx}}
+\end{align} 
+
+%text
+
+Hence, when $x=t^2$ and $y=t^3$, then 
+%
+\begin{align}
+\dfrac{dx}{dt} &amp;= 2t \implies\dfrac{dt}{dx} = \dfrac{1}{2t} \\
+\dfrac{dy}{dx} &amp;= 3t^2 \\
+\dfrac{dy}{dx} &amp;= \dfrac{\left( \dfrac{dy}{dt}\right)}{\left( \dfrac{dx}{dt}\right)}
+= \dfrac{3t^2}{2t} = \dfrac{3t}{2} \\
+\dfrac{d^2 y}{dx^2} &amp;= \dfrac{d}{dt}\left(\dfrac{dy}{dx}\right)\cdot\dfrac{dt}{dx}
+= \left(\dfrac{d}{dt}\dfrac{3t}{2}\right)\cdot\dfrac{1}{2t} = \dfrac{3}{4t}
+\end{align} 
+
+%text
+
+Compare this with $ \dfrac{\left( \dfrac{d^2 y}{dt^2}\right)}{\left( \dfrac{d^2 x}{dt^2}\right)}$.
+%
+\begin{align}
+\dfrac{dx}{dt} &amp;= 2t \implies \dfrac{d^2 x}{dt^2} = 2 \\
+\dfrac{dy}{dt} &amp;= 3t^2 \implies \dfrac{d^2 y}{dt^2} = 6t \\
+\dfrac{\left( \dfrac{d^2 y}{dt^2}\right)}{\left( \dfrac{d^2 x}{dt^2}\right)}
+&amp;= \dfrac{6t}{2} = 3t \neq 
+\underbrace{\dfrac{3}{4t}}_{= \frac{d^2y}{dx^2}}
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\begin{tabular}{|c|c|}
+\hline
+\dfrac{dx}{dt} &amp; a\cdot\cos t \\ 
+\hline 
+\dfrac{dy}{dt} &amp; a\cdot\left[ -\sin t + \dfrac{1}{\sin t}\right] = a\cdot\dfrac{\cos^2 t}{\sin t}\\
+\hline
+\dfrac{dy}{dx} &amp; \cot t 
+\hline
+\end{tabular} </tex>
+         <tex>\begin{tabular}{|c|c|}
+\hline
+\dfrac{dx}{dt} &amp; a\cdot\cos t \\ 
+\hline 
+\dfrac{dy}{dt} &amp;  a\cdot\dfrac{\cos t}{\sin t}\\
+\hline
+\dfrac{dy}{dx} &amp; \dfrac{1}{\sin t} = \csc t  
+\hline
+\end{tabular}</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+x &amp;= a\sin t \implies \dfrac{dx}{dt} = a\cos t \\ 
+y &amp;= a\cdot\left( \cos t + \log\tan\frac{t}{2} \right) \\
+\implies\frac{dy}{dt} &amp;= a\cdot\left[ -\sin t + \underbrace{\dfrac{1}{\tan\frac{t}{2}}
+\cdot\sec^2\frac{t}{2}\cdot\frac{1}{2}}_{\text{Chain Rule}}\right]  \\
+&amp;= a\cdot\left[ -\sin t + 
+\frac{1}{2\cdot \frac{\sin\frac{t}{2}}{\cos\frac{t}{2}}\cdot\cos^2\frac{t}{2}}\right] \\
+&amp;= a\cdot \left[-\sin t + \frac{1}{\underbrace{2\cdot\sin\frac{t}{2}\cdot\cos\frac{t}{2}}_{=\sin 2\cdot\frac{t}{2} = \sin t}}
+\right] \\ 
+&amp;= a\cdot\left[ -\sin t + \frac{1}{\sin t}\right] = a\cdot\frac{1-\sin^2 t }{\sin t} \\
+&amp;= a\cdot\frac{\cos^2 t}{\sin t} \\
+\implies \dfrac{dy}{dx} &amp;= \dfrac{\frac{dy}{dt}}{\frac{dx}{dt}} = 
+\dfrac{a\cdot\frac{\cos^2 t}{\sin t}}{a\cdot\cos t} = \cot t
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">-\dfrac{2}{a\cdot\sin t\cdot \sin 2t}</tex>
+         <tex>\dfrac{1}{a\cdot\sin t\cdot \sin 2t}</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+\frac{dy}{dx} &amp;= \cot t \\
+\therefore \frac{d^2 y}{dx^2} &amp;= \frac{d}{dt}\left(\frac{dy}{dx}\right)\cdot\frac{dt}{dx}
+= \frac{d}{dt}\cot t\cdot\frac{1}{a\cdot\cos t} \\
+&amp;= \frac{-\csc^2 t}{a\cdot \cos t} = \underbrace{-\frac{2}{a\cdot 2\sin^2 t\cdot\cos t}}
+_{\text{Multiply and divide by 2}} \\
+&amp;= -\dfrac{2}{a\cdot\sin t\cdot (2\sin t\cdot \cos t)} \\ 
+&amp;= -\dfrac{2}{a\cdot\sin t\cdot \sin 2t}
+\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>-a\cdot\tan t </tex>
+      <tex>\dfrac{2}{a\cdot\sin 2t}</tex>
+      <tex>\dfrac{1}{a\cdot\sin t\cdot \sin 2t}</tex>
+      <tex correct="true">-\dfrac{2}{a\cdot\sin t\cdot \sin 2t}</tex>
+   </choices>
+</question>

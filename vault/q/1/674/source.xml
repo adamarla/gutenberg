@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Find the values of a and b so that}\\
+			\text{the function defined by} \\
+			f(x)=\begin{cases}
+			  5, x\leq 2 \\
+			  ax + b, 2\lt x\lt 10 \\
+			  21, x\geq 10
+			\end{cases}
+			\\ \text{is a continuous function.}
+		</tex>
+      <tex>\\ \text{Which of the following shows correct}\\
+			\text{values for }f(x)?</tex>
+      <tex>\\ \text{Is the following assertion correct?}</tex>
+      <tex>\\ \text{Is the following analysis correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{align}
+			  f(1) &amp;= 2 \\
+			  f(2) &amp;= 2 \\
+			  f(9) &amp;= 9a + b \\
+			  f(10) &amp;= 21 \\
+			  f(999) &amp;= 21
+			\end{align}
+			</tex>
+         <tex correct="false">
+			\begin{align}
+			  f(1) &amp;= 2 \\
+			  f(2) &amp;= 2a + b\\
+			  f(9) &amp;= 9a + b \\
+			  f(10) &amp;= 10a + b \\
+			  f(999) &amp;= 21
+			\end{align}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{Be mindful of how the function is defined.}\\
+			\text{This function is defined in pieces, for}\\
+			x\leq 2, 2\lt x\lt 10\text{ and } x\gt 10.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				f(x)\text{ can be discontinuous at }x=2\text{ and }x=10.\\
+				\text{Hence, for }f(x)\text{ to be continuous, it must be}\\
+				\begin{align}
+				  &amp;\bullet\,\text{Continuous at x=2}\\
+				  &amp;\bullet\,\text{Continuous at x = 10}
+				\end{align}
+				</tex>
+         <tex correct="false">
+				f(x)\text{ can be discontinuous only at }x=10. \\
+				\text{Hence, for }f(x)\text{ to be continuous, it must be}\\
+				\begin{align}
+				  &amp;\bullet\,\text{Continuous at x = 10}
+				\end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{Any point where the definition of a function}\\
+				\text{changes, like x = 2 and x = 10, could be a}\\
+				\text{potential point for discontinuity. Look there first.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+					\text{For continuity at x = 2}\\
+					\begin{align}
+					  \lim_{x\to 2^-}f(x) &amp;= \lim_{x\to 2^+}f(x) = f(2) \\
+					  \implies 5 &amp;= 2a + b = 5
+					\end{align}
+					\\ \text{Similarly, for continuity at x = 10}\\
+					\begin{align}
+					  10 a + b &amp;= 21 
+					\end{align}
+					\\ \text{Which means, for f(x) to be continuous}\\
+					\begin{align}
+					  2a + b &amp;= 5 \\
+					  10 + b &amp;= 21 \implies a = 2, b = 1
+					\end{align}
+					</tex>
+      </options>
+      <reason>
+         <tex>\text{We have simply applied the condition for} \\
+					\text{continuity at x = 2 and x = 10. This gave us two}\\
+					\text{equations - which we solved to get a and b.}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">a=2, b = 1</tex>
+      <tex>a=1, b = 2</tex>
+      <tex>a=-2, b = 1</tex>
+      <tex>a=-1, b = 2</tex>
+   </choices>
+</question>

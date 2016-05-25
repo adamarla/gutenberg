@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Evaluate the following} \\
+			\qquad \int\dfrac{x^3-1}{x^3+x}\cdot dx 
+		</tex>
+      <tex>\\ \textbf{Right or wrong? } \\
+			\dfrac{x^3-1}{x^3+x}\text{ can be re-written as follows.}</tex>
+      <tex>\\ \textbf{Right or wrong? } \\
+				\quad \dfrac{x^3-1}{x^3+x} = A + \dfrac{B}{x} + \dfrac{Cx + D}{x^2+1} \\
+				\text{for the following values of A,B,C and D.}</tex>
+      <tex>\\ \text{Given, }\dfrac{x^3-1}{x^3+x} = 1 -\dfrac{1}{x} + \dfrac{x-1}{x^2+1}\text{ will} \\
+	 		I = \int\dfrac{x^3-1}{x^3+x}\cdot dx\text{ evaluate to the following?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{align}
+			  \dfrac{x^3-1}{x^3+x} &amp;= A + \dfrac{B}{x} + \dfrac{Cx + D}{x^2+1}
+			\end{align}
+			</tex>
+         <tex correct="false">
+			\begin{align}
+			  \dfrac{x^3-1}{x^3+x} &amp;= \dfrac{x^3-1}{x\cdot (x^2+1)} \\
+			  &amp;= \dfrac{B}{x} + \dfrac{Cx + D}{x^2+1}
+			\end{align}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{When you divide two polynomials of the}\\
+			\text{same degree, like }P(x) = x^3-1\text{ and }\\
+			Q(x) = x^3 + x, \text{the result is of the form} \\
+			\frac{P(x)}{Q(x)} = \underbrace{A}_{\text{a constant}} + 
+			\text{other stuff. Which is why} \\
+			\begin{align}
+			  \dfrac{x^3-1}{x^3+x} &amp;= \dfrac{x^3-1}{x\cdot(x^2+1)} \\
+			  &amp;= A + \dfrac{B}{x} + \dfrac{Cx + D}{x^2+1}
+			\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{tabular}{|c|c|c|c|}
+				\hline
+				  A &amp; B &amp; C &amp; D \\
+				  \hline 
+				  1 &amp; -1 &amp; 1 &amp; -1 \\
+				  \hline
+				\end{tabular}
+				</tex>
+         <tex correct="false">
+				\begin{tabular}{|c|c|c|c|}
+				\hline
+				  A &amp; B &amp; C &amp; D \\
+				  \hline 
+				  1 &amp; 1 &amp; 0 &amp; 1 \\
+				  \hline
+				\end{tabular}
+				</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+				  \dfrac{x^3-1}{x^3+x} &amp;= A + \dfrac{B}{x} + \dfrac{Cx + D}{x^2+1} \\
+				  \implies x^3-1 &amp;= A\cdot x(x^2+1)+ B\cdot (x^2+1) \\
+				  &amp;+ (Cx + D)\cdot x \\ 
+				  &amp;= Ax^3 + (B+C)\cdot x^2 \\
+				  &amp;+ (A+D)\cdot x + B
+				\end{align} \\
+				\text{On comparing coefficients, we can see } \\
+				\begin{tabular}{|c|c|c|l|}
+				\hline
+				  &amp; x^3-1 &amp; Ax^3+\ldots + B &amp; \\
+				  \hline
+				  x^3 &amp; 1 &amp; A &amp; A = 1   \\
+				  x^2 &amp; 0 &amp; B+C &amp; B=-C \\
+				  x &amp; 0 &amp; A+D &amp; D = -A = -1 \\
+				  x^0 &amp; -1 &amp; B &amp; B = -1 \\
+				  &amp; &amp; &amp; C = -B = 1 \\
+				  \hline 
+				\end{tabular}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+	 		I = x + \log\left(\dfrac{\sqrt{x^2+1}}{x}\right) - \tan^{-1}x + C 
+	 		</tex>
+         <tex correct="false">
+	 		I = x + \log\left(\dfrac{x^2+1}{x}\right) - \tan^{-1}x + C
+	 		</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+	 		 I &amp;= \int dx -\int\frac{dx}{x} + \int\dfrac{x-1}{x^2+1}\cdot dx \\ 
+	 		 &amp;= x - \log x + \left[\underbrace{\int\dfrac{x}{x^2+1}\cdot dx}_{\text{Put t = x^2+1}} 
+	 		 -\int\dfrac{dx} {x^2+1}\right] \\
+	 		 &amp;= x-\log x + \dfrac{1}{2}\log(x^2 + 1) - \tan^{-1}x + C  \\
+	 		 &amp;= x-\tan^{-1}x + \underbrace{\log\left(\dfrac{\sqrt{x^2+1}}{x}\right)}_
+	 		 {\log a - \log b = \log\frac{a}{b}} + C 
+	 		\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">
+	 		x + \log\left(\dfrac{\sqrt{x^2+1}}{x}\right) - \tan^{-1}x + C 
+	 		</tex>
+      <tex>
+	 		x + \log\left(\dfrac{x^2+1}{x}\right) - \tan^{-1}x + C
+	 		</tex>
+      <tex>
+	 		x - \log\left(\dfrac{x^2+1}{x}\right) + \tan^{-1}x + C
+	 		</tex>
+      <tex>
+	 		x + \dfrac{1}{\sqrt{x^2+1}} - \tan^{-1}x + C
+	 		</tex>
+   </choices>
+</question>

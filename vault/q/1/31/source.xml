@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>%text
+For what value of $n$ are the $n^{th}$ terms of the
+following two arithmetic progressions equal?
+$A=\{63,65,67,...\}$ and $B=\{3,10,17,...\}$
+%</tex>
+      <tex>\\ A=\{63,65,67,...\} \\
+B=\{3,10,17,...\} \\
+%text
+What is the general form for the $n^{th}$ terms of
+the above series?
+%</tex>
+      <tex>\\ a_n=63+(n-1)2,\, b_n=3+(n-1)7 \\
+%text
+If $a_n=b_n$, what is the value of $n$?
+%</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">a_n=63+(n-1)2 \\
+b_n=3+(n-1)7</tex>
+         <tex>a_n=63+(2-1)n \\
+b_n=3+(7-1)n</tex>
+      </options>
+      <reason>
+         <tex>%text
+The generic $n^{th}$ term $a_n$ of an AP is given by
+$a_n=a+(n-1)d$, where $a$ is the first term 
+and $d$ is the common difference between 
+terms. Judging by the terms for given series, 
+%
+\begin{align}
+  &amp;a_1=63, d_a=(65-63)=2 \\
+  \implies &amp;a_n = 63+(n-1)2 \\
+  &amp;b_1=3, d_b=(10-3)=7 \\
+  \implies &amp; b_n=3+(n-1)7
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">n=13</tex>
+         <tex>n=14</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+  a_n=b_n \implies &amp; 63+(n-1)2=3+(n-1)7 \\
+    \implies &amp; 63+2n-2=3+7n-7 \\
+    \implies &amp; 65=5n \implies n=13
+\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">n=13</tex>
+      <tex>n=22</tex>
+      <tex>n=7</tex>
+      <tex>n=14</tex>
+   </choices>
+</question>

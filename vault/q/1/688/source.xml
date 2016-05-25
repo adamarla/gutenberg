@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Differentiate the following } \\
+			\quad f(x) = e^{x^3} \\
+			\text{with respect to x.}\\
+		</tex>
+      <tex>\\ \textbf{Right or wrong? } \text{If }f(x) = e^{g(x)},\text{ then}\\
+			\frac{d}{dx}f(x)\text{ equals the following.}</tex>
+      <tex>\\ \textbf{Right or wrong? } \text{Given }\frac{d}{dx}e^{g(x)},\dfrac{d}{dx}f(x)\\
+			\text{will evaluate to the following.}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\qquad \dfrac{d}{dx}f(x) = e^{g(x)}\cdot\dfrac{d}{dx}g(x)
+			</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+			 \text{If }f(x) &amp;= e^{g(x)},\text{ then }\\
+			 \dfrac{d}{dx}f(x) &amp;= \underbrace{\dfrac{d}{d g(x)}e^{g(x)}\cdot\dfrac{d}{dx}g(x)}_{\text{Chain Rule}}\\
+			 &amp;= e^{g(x)}\cdot\dfrac{d}{dx}g(x)
+			\end{align} \\
+			\textbf{Alternatively, } \\
+			\begin{align}
+			  f(x) = e^{g(x)} \implies \log f(x) &amp;= g(x)\cdot\underbrace{\log e}_{=1} \\
+			  \implies \dfrac{d}{dx}\log f(x) &amp;= \dfrac{d}{dx}g(x) \\
+			  \implies\dfrac{1}{f(x)}\dfrac{d}{dx}f(x) &amp;= \dfrac{d}{dx}g(x) \\
+			  \implies \dfrac{d}{dx}f(x) &amp;= \underbrace{e^{g(x)}}_{ = f(x) }\cdot\dfrac{d}{dx}g(x)
+			\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+			\qquad \dfrac{d}{dx}f(x) = 3x^2\cdot e^{x^3}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{We know from Step 1 that }\\
+			\begin{align}
+			  \dfrac{d}{dx}e^{g(x)} &amp;= e^{g(x)}\cdot\dfrac{d}{dx}g(x) \\
+			  \therefore \dfrac{d}{dx}e^{x^3} &amp;= e^{x^3}\cdot\dfrac{d}{dx}x^3 \\
+			  &amp;= 3x^2\cdot e^{x^3}
+			\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>e^{x^3}</tex>
+      <tex correct="true">3x^2\cdot e^{x^3}</tex>
+      <tex>e^{3x^2}</tex>
+      <tex>x^3\cdot e^{x^3}</tex>
+   </choices>
+</question>

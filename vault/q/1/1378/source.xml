@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>%text
+For what value of k is the following 
+function continuous at $x=2$? 
+
+%
+f(x) = \begin{cases} 
+2x + 1\, ;  x \lt 2 \\
+k \, ;  x = 2 \\
+3x - 1\, ;  x \gt 2
+\end{cases}</tex>
+      <tex>\\ %text
+Your friend says that for a function $f(x)$ to
+be continuous at $x=a$, the following 
+condition is enough. \underline\text{Is your friend correct}?
+%</tex>
+      <tex>\\ %text
+\underline\text{Given the conditions for continuity}, for 
+which of the following values of $k (= f(2))$ 
+will the function be continuous at $x=2$? 
+%</tex>
+   </statement>
+   <step swipe="false">
+      <options>
+         <tex correct="true">\lim_{x\to a^-}f(x) = \lim_{x\to a^+}f(x) = f(a) </tex>
+         <tex>\lim_{x\to a^-}f(x) = \lim_{x\to a^+}f(x)</tex>
+      </options>
+      <reason>
+         <tex>%text
+\[ \lim_{x\to a^-}f(x)  = \lim_{x\to a^+}f(x)\] only ensures that the
+function has a limit, that is, it approaches 
+the same value from the right- and the left.
+
+However, for a function to be continuous 
+at $x=a$, \underline\text{$f(a)$ must exist and $f(a) = \lim_{x\to a}f(x)$}.
+
+%</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">k = 5 </tex>
+         <tex>k = 1</tex>
+      </options>
+      <reason>
+         <tex>%text
+\underline\text{Bear in mind how the function is defined}
+\underline\text{for $x\lt 2$ and $x\gt 2$}.
+
+%
+
+\begin{align}
+\lim_{x\to 2^-} f(x) &amp;= \lim_{x\to 2^-}(2x+1) = 5 \\
+\lim_{x\to 2^+} f(x) &amp;= \lim_{x\to 2^+}(3x-1) = 5 \\
+f(2) &amp;= k 
+\end{align}
+
+%text
+
+It is obvious therefore that \underline\text{if $k=5$} then 
+\[ \qquad \lim_{x\to 2}f(x) = f(2) \implies \text{continuity} \]
+
+Hence $k=5$.
+%</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>k = 1</tex>
+      <tex>k = 3</tex>
+      <tex>k = 4</tex>
+      <tex correct="true">k = 5</tex>
+   </choices>
+</question>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Find the intervals in which the function}\\
+			\quad f(x) = 2x^3-3x^2-36x + 7 \text{ is }\\
+			\text{(a) strictly increasing}\quad\text{(b) strictly decreasing}
+		</tex>
+      <tex>\\ \text{For }f(x)\text{ to be strictly increasing}\ldots</tex>
+      <tex>\\ \text{Is the following analysis correct?}</tex>
+      <tex>\\ \text{And for }f(x)\text{ to be strictly decreasing?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="false">
+			\begin{align}
+			  \frac{d}{dx} f(x) &amp;\gt 0\\
+			  \text{and, }f(x)&amp;\gt 0\text{ in the whole domain}
+			\end{align}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{There is no need for }f(x)\gt 0.\text{What matters is}\\
+			\text{whether }\frac{d}{dx}f(x)\gt 0.\text{If it is, then }f(x)\text{ is}\\
+			\text{increasing, else decreasing.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				  \begin{align}
+				    \frac{d}{dx}f(x)&amp;= \frac{d}{dx}(2x^3 -3x^2-36x +7) \\
+				    &amp;= 6\cdot (x^2-x-6) \\
+				    &amp;= 6\cdot(x+2)\cdot(x-3) \\
+				    \therefore\text{ if }\frac{d}{dx}f(x)&amp;\gt 0\text{ then }\\
+				    6\cdot(x+2)\cdot(x-3)&amp;\gt 0 \implies x\lt -2\text{ and }x\gt 3.
+				  \end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>\begin{tabular}{cccc}
+				&amp;(x+2)&amp;(x-3)&amp;f'(x)\\
+				x\lt -2&amp;-&amp;-&amp;+\\
+				x\gt 3&amp;+&amp;+&amp;+
+				\end{tabular}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+					  \begin{align}
+					    \frac{d}{dx}f(x)&amp;\lt 0 \\
+					    \implies 6\cdot (x+2)\cdot(x-3)&amp;\lt 0 \\
+					    \implies x&amp;\in \left(-2,3\right)
+					  \end{align}
+					</tex>
+      </options>
+      <reason>
+         <tex>\begin{tabular}{cccc}
+				&amp;(x+2)&amp;(x-3)&amp;f'(x)\\
+				-2\lt x\lt 3&amp;+&amp;-&amp;-
+				\end{tabular}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">\text{(a) }\left(-\infty,-2\right)\text{ and }\left(3,\infty\right)\quad\text{(b) }\left(-2,3\right)</tex>
+      <tex>\text{(a) }\left(-\infty,2\right)\text{ and }\left(3,\infty\right)\quad\text{(b) }\left(2,3\right)</tex>
+      <tex>\text{(a) }\left(-3,-2\right)\text{ and }\left(3,\infty\right)\quad\text{(b) }\left(-2,3\right)</tex>
+      <tex>\text{(a) }\left(-\infty,-2\right)\text{ and }\left(2,3\right)\quad\text{(b) }\left(2,3\right)</tex>
+   </choices>
+</question>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Is the function }f(x) = e^{2x}\text{ strictly increasing,}\\
+			\text{decreasing or constant in }\mathbb{R}?
+		</tex>
+      <tex>\\ \text{When is a function strictly increasing?}</tex>
+      <tex>\\ \text{Now, what about }f(x) = e^{2x}?</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{align}
+			   \text{When } x\gt y&amp;\implies f(x)\gt f(y)\\
+			   \implies \frac{d}{dx}f(x)&amp;\gt 0 \forall x\text{ in interval.}
+			\end{align}
+
+			</tex>
+         <tex correct="false">
+			\begin{align}
+			   \text{When }x\lt y&amp;\implies f(x) \gt f(y)\\
+			   \implies \frac{d}{dx}f(x)&amp;\lt 0 \forall x\text{ in interval.}
+			\end{align}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{For a function to be strictly increasing, }f(x)\\
+			\text{must increase as x increases and vice-versa}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  \frac{d}{dx}e^{2x}&amp;= e^{2x}\cdot\frac{d}{dx}2x \\
+				  &amp;= 2\cdot e^{2x}\\
+				  \gt 0&amp;\text{ for all }\,x\,\in\mathbb{R}
+				\end{align}
+				\\ \text{Hence, }e^{2x}\text{ is strictly increasing in }\mathbb{R}.
+				</tex>
+         <tex correct="false">
+				\begin{align}
+				  \frac{d}{dx}e^{2x}&amp;= e^{2x}\cdot\frac{d}{dx}2x \\
+				  &amp;= 2\cdot e^{2x}\\
+				  \gt 0\text{ when }x&amp;\gt 0\text{ and }\lt 0\text{ when }x\lt 0
+				\end{align}
+				\\ \text{Hence, }e^{2x}\text{ is neither strictly increasing}\\
+				\text{nor strictly decreasing in }\mathbb{R}.
+				</tex>
+      </options>
+      <reason>
+         <tex>e^{2x}\text{ can never be }\lt 0.\text{It can be a very small}\\
+				\text{number. But always }\gt 0.</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\text{Strictly increasing}</tex>
+      <tex>\text{Strictly decreasing}</tex>
+      <tex>\text{Increasing when }x\gt 0\text{, decreasing when }x\lt 0</tex>
+      <tex>\text{Of constant value}</tex>
+   </choices>
+</question>

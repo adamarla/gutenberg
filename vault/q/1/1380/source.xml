@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>%text
+Using properties of definite integrals, 
+evaluate the following 
+\[ \qquad \qquad \int_0^\pi\dfrac{x\cdot\tan x}{\sec x + \tan x} \cdot dx \]
+%</tex>
+      <tex>\\ %text
+\underline{\text{Are we right}} in saying the following?
+%</tex>
+      <tex>\\ %text
+Given that \[2A = \pi\int_0^\pi\dfrac{\sin x}{1+\sin x}\cdot dx \], 
+\underline{\text{which of the following is true}}?
+%</tex>
+      <tex>\\ %text
+What will $A_2$ be in the integral below? And
+therefore, what will be the \underline\text{value of A}?
+
+\[ \qquad 2A = \pi\left[\pi-\underbrace{\frac{1}{2}\int_0^\pi\sec^2\left(\frac{\pi}{4}-\frac{x}{2}\right)\cdot dx}_{A_2}\right]\]
+%</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">\begin{align}
+A = &amp;\int_0^\pi \dfrac{x\cdot\tan x}{\tan x + \sec x}dx = 
+\int_0^\pi\dfrac{(\pi-x)\cdot\tan x}{\tan x + \sec x} dx \\
+\therefore 2A &amp;= A + A = \pi\int_0^\pi\dfrac{\sin x}{1 + \sin x}\cdot dx 
+\end{align} </tex>
+      </options>
+      <reason>
+         <tex>%text
+There is a nice little rule that says 
+\[ \qquad \int_0^a f(x)\cdot dx = \int_0^a f(a-x)\cdot dx \] 
+
+When applied to the given integral, we get 
+%
+\begin{align}
+\int_0^\pi \dfrac{x\cdot\tan x}{\tan x + \sec x} dx
+&amp;= \int_0^\pi\dfrac{(\pi -x)\cdot\tan (\pi-x)\cdot dx}{\tan(\pi-x) + \sec(\pi -x)} \\
+&amp;= \underbrace{\int_0^\pi\dfrac{(\pi - x)\cdot \tan x}{\tan x + \sec x}dx}
+_{\tan(\pi-x) = -\tan x, \sec(\pi -x) = -\sec x}
+\end{align}
+
+%text
+
+And hence, 
+%
+\begin{align}
+  A &amp;= \int_0^\pi\dfrac{x\cdot\tan x}{\tan x + \sec x}\cdot dx \\
+  &amp;= \int_0^\pi\dfrac{(\pi - x)\cdot \tan x}{\tan x + \sec x}\cdot dx \\
+  \implies 2A &amp;= A + A = \int_0^\pi\dfrac{\tan x\cdot (x + \pi -x)}{\tan x+\sec x}\cdot dx \\
+  &amp;= \pi\int_0^\pi\underbrace{\dfrac{\tan x}{\tan x + \sec x}\cdot dx}_{\text{Got rid of the x}} \\
+  &amp;= \pi\int_0^\pi\underbrace{\dfrac{\sin x}{\sin x + 1}\cdot dx}_{\tan x =\frac{\sin x}{\cos x}, \sec x=\frac{1}{\cos x}}
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\begin{align}
+2A &amp;=\pi \int_0^\pi\left[1-\dfrac{1}{1+\sin x}\right]\cdot dx \\
+&amp;= \pi\left[\pi - \int_0^\pi\dfrac{1}{1+\cos \left(\frac{\pi}{2}-x\right)}\cdot dx\right] \\
+&amp;= \pi\left[\pi - \frac{1}{2}\int_0^\pi\sec^2\left(\frac{\pi}{4}-\frac{x}{2}\right)\cdot dx\right]
+\end{align}</tex>
+         <tex>\begin{align}
+2A &amp;= \pi\int_0^\pi\left[1-\dfrac{1}{1+\sin x}\right]\cdot dx \\
+&amp;= \pi\left[\pi - \int_0^\pi\dfrac{1}{1+\cos \left(\frac{\pi}{2}-x\right)}\cdot dx\right] \\
+&amp;= \pi\left[\pi - \underbrace{\frac{1}{2}\int_0^\pi\csc^2\left(\frac{\pi}{4}-\frac{x}{2}\right)}_{\csc = \text{cosec}}\cdot dx\right]
+\end{align}</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+2A &amp;= \pi\int_0^\pi\dfrac{1+\sin x-1}{1+\sin x}\cdot dx \\
+&amp;=\pi\int_0^\pi\left[1-\dfrac{1}{1+\sin x}\right]\cdot dx \\
+&amp;= \pi\left[\int_0^\pi dx -\int_0^\pi\dfrac{1}{1+\sin x}\cdot dx\right] \\
+&amp;= \pi\left[\pi - \int_0^\pi\dfrac{1}{\underbrace{1+\cos \left(\frac{\pi}{2}-x\right)}_{\sin x = \cos \left(\frac{\pi}{2}-x\right)}}\cdot dx\right] \\
+&amp;= \pi\left[\pi - \underbrace{\frac{1}{2}\int_0^\pi\sec^2\left(\frac{\pi}{4}-\frac{x}{2}\right)\cdot dx}_
+{\frac{1}{1+\cos\theta} = \frac{1}{2\cos^2\frac{\theta}{2}} = \frac{\sec^2\theta}{2}}\right]
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\begin{align}
+A_2 &amp;= 2 \\
+A &amp;= \dfrac{\pi}{2}\cdot \left(\pi - 2\right)
+\end{align}</tex>
+         <tex>\begin{align}
+A_2 &amp;= -2 \\
+A &amp;= \dfrac{\pi}{2}\cdot \left(\pi + 2\right)
+\end{align}</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+A_2 &amp;= \dfrac{1}{2}\int_0^\pi\sec^2\left(\frac{\pi}{4}-\frac{x}{2}\right)cdot dx \\
+\text{Let } z &amp;= \frac{\pi}{4}-\frac{x}{2}\implies dx = 2\cdot dz \\
+\text{Also } z &amp;= \frac{\pi}{4}\text{ when }x =0\text{ and } z = -\frac{\pi}{4}\text{ when }x=\pi\\
+\therefore A_2 &amp;= -\frac{2}{2}\int_{\frac{\pi}{4}}^{-\frac{\pi}{4}}\sec^2 z\cdot dz \\
+&amp;= -\left[\tan z\right]_{\frac{\pi}{4}}^{-\frac{\pi}{4}} = -\left[-1-1\right] = 2 \\
+\therefore 2A &amp;= \pi\left[\pi - A_2\right] = \pi\cdot(\pi - 2) \\
+\implies A &amp;= \dfrac{\pi}{2}\cdot \left(\pi -2\right)
+\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">\frac\pi{2}\cdot (\pi - 2)</tex>
+      <tex>\dfrac{\pi^2}{4}</tex>
+      <tex>\pi^2 - 2</tex>
+      <tex>\frac\pi{2}\cdot (\pi + 2)</tex>
+   </choices>
+</question>
