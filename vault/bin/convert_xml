@@ -19,7 +19,7 @@ output_file = "source.xml"
 
 @contexts.each do |ctx| 
   tex_node = Nokogiri::XML::Node.new "tex", @doc 
-  tex_node.content = ctx.content.strip 
+  tex_node.content = "\\\\ " + ctx.content.strip 
   @statement.add_child tex_node
   ctx.remove
 end 
