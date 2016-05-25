@@ -3,22 +3,35 @@
 require 'nokogiri'
 require 'nokogiri-pretty'
 
-input_file = "source.xml"
+input_file = "question.xml"
 output_file = "source.xml"
 
 @doc = Nokogiri::XML(File.open(input_file))
 @doc.remove_namespaces! 
 
-@contexts = @doc.search('context') + @doc.search('reason')
+@doc.search('question').first.set_attribute 'xmlns', 'http://www.gradians.com'
 
-# Move the contents of a <context> or a <reason> within a <tex> 
-#   <context> .... </context> -> <context><tex> .... </tex></context> 
+@statement = @doc.search('statement').first 
+@contexts = @doc.search('context') 
 
-@contexts.each do |ctx|
+# Wrap contents of every <context> within a <tex> and 
+# paste resulting <tex> within <statement> 
+
+@contexts.each do |ctx| 
   tex_node = Nokogiri::XML::Node.new "tex", @doc 
-  tex_text = ctx.content.strip 
-  ctx.content = nil 
-  ctx.add_child tex_node 
+  tex_node.content = ctx.content.strip 
+  @statement.add_child tex_node
+  ctx.remove
+end 
+
+# Move the contents of <reason> within a <tex> 
+
+@reasons = @doc.search('reason')
+@reasons.each do |rsn|
+  tex_node = Nokogiri::XML::Node.new "tex", @doc 
+  tex_text = rsn.content.strip 
+  rsn.content = nil 
+  rsn.add_child tex_node 
   tex_node.content = tex_text 
 end 
 
@@ -46,6 +59,9 @@ end
   floaters.each do |turd| 
     turd.parent = options 
   end 
+
+  rsn = step.xpath './reason'
+  step.add_child(rsn.remove) # <reason> is first child. Move it to being the last child 
 end 
 
 File.write output_file, @doc.human
