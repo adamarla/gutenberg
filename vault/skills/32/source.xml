@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com">
   <render>
-    <tex>%text
-Identifying what substitution 
-to make and when
+    <tex>%text 
+Identifying what \underline\text{substitutions}
+to make -- and when
 %</tex>
   </render>
   <reason>
