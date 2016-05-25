@@ -19,10 +19,10 @@ for f in $(ls -d snippets/* skills/* q/*/*) ; do
   ln -s $leaf_mk $f/Makefile
 done
 
-# Lastly, trigger recompile (inside snippets/ and skills/ for now) 
+# Lastly, trigger recompile (inside snippets/, skills/, q/1/ for now) 
 if [ ! -e .block-cron ] ; then 
   touch .block-cron 
-  for f in $(ls -d snippets/ skills/) ; do 
+  for f in $(ls -d snippets/ skills/ q/1/) ; do 
     make -C $f 
   done 
   rm -f .block-cron
