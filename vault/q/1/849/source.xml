@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>\text{Find the equations of the normals to the}\\
+\text{curve } y = x^3 + 2x + 6 \text{ which are parallel}\\
+\text{to the line }x + 14y + 4 = 0</tex>
+      <tex>\\ \text{If }m_L \text{ be the slope of the given line}\\
+\text{and }m_N\text{ and }m_T\text{ the slopes of the}\\
+\text{normal and tangent at a point, then}\ldots</tex>
+      <tex>\\ \text{Is the analysis below correct?}</tex>
+      <tex>\\ \text{To find the equation of the normals}\\
+\text{what would you do next?}</tex>
+      <tex>\\ \text{Would the calculations below give}\\
+\text{you the required normals?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">\qquad 
+\begin{align}
+	m_L &amp;= m_N \\
+	m_N\times m_T &amp;= -1 \\
+	m_T &amp;= \frac{dy}{dx}
+\end{align}</tex>
+         <tex>\qquad 
+\begin{align}
+	m_L &amp;= m_T \\
+	m_N\times m_T &amp;= -1 \\
+	m_T &amp;= \frac{dy}{dx}
+\end{align}</tex>
+      </options>
+      <reason>
+         <tex>\text{The given line is parallel to the normal.}\\
+\text{Which means, }m_L = m_N.\text{ Moreover, as the}\\
+\text{normal is }\perp\text{ to the tangent, }m_T\cdot m_N = -1.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\begin{align}
+x + 14y + 4 &amp;= 0 \implies y = -\frac{x}{14} - \frac{2}{7}\\
+\implies m_L = m_N &amp;= -\frac{1}{14} \\
+\therefore m_T &amp;= -\dfrac{1}{-\frac{1}{14}} = 14.
+\end{align}\\
+\text{Which means, }\\
+\begin{align}
+	\dfrac{dy}{dx} &amp;= m_T = 14 \\ 
+	\text{or, }3x^2 + 2 = 14 \implies x^2 &amp;= 4 \text{ or } x=\pm 2.
+\end{align}\\
+
+\therefore\text{ the points at which }m_N = m_L = -\frac{1}{14}\text{ are}\\
+\begin{tabular}{c|c|c}
+x &amp; y = x^3+2x+6 &amp; (x,y) \\
+\hline 
+-2 &amp; -6 &amp; (-2,-6) \\
+2 &amp; 18 &amp; (2,18) \\
+\hline
+\end{tabular}</tex>
+      </options>
+      <reason>
+         <tex>\textbf{Recap: }\text{We went from }\\
+m_L \rightarrow m_N \rightarrow m_T \rightarrow \frac{dy}{dx}\rightarrow x.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\text{Find the equation of the lines that}\\
+\bullet\text{Pass through }(-2,-6)\text{ with slope = }-\frac{1}{14} \\
+\bullet\text{Pass through }(2,18)\text{ with slope = }-\frac{1}{14} \\</tex>
+         <tex>\text{Find the equation of the line that }\\
+\bullet\text{ Passes through }(-2,-6)\text{ and }(2,18).</tex>
+      </options>
+      <reason>
+         <tex>\text{The two points we found are points where}\\
+\text{the normal is }\parallel x+14y+6=0.\\
+\text{We know the points, we know the slope.}\\
+\text{We can find the lines.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\begin{tabular}{c|c}
+(a,b) &amp; \frac{y-b}{x-a}=-\frac{1}{14}\\
+\hline 
+(-2,-6) &amp; \frac{y+6}{x+2}=-\frac{1}{14}\\
+&amp; \implies x + 14y + 86 = 0 \\
+(2,18) &amp; \frac{y-18}{x-2}=-\frac{1}{14} \\
+&amp;\implies x + 14y - 254 = 0 \\
+\hline
+\end{tabular}</tex>
+      </options>
+      <reason>
+         <tex>\text{The equation of a line passing through}\\
+\text{a point }(a,b)\text{ with slope m is simply} \\
+\frac{y-b}{x-a} = m. \text{Simplify to get it in }\\
+mx + ny + k = 0\text{ form.}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">x + 14y + 86 = 0 \\
+x + 14y - 254 = 0</tex>
+      <tex>14y - x + 254 = 0</tex>
+      <tex>x  - 14y - 86 = 0</tex>
+      <tex>x  - 14y + 254 = 0</tex>
+   </choices>
+</question>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Which of the points - A,B,C or D - in} \\
+			\text{the complex plane below are the roots} \\
+			\text{the equation} \\
+			  \qquad 3x^2 - 4x + \dfrac{20}{3} = 0
+		</tex>
+      <tex src="plot.svg" isImage="true" correct="false"/>
+      <tex>\\ \text{Your friend claims the following} \\
+			\text{about what the roots are.}\\
+			\textbf{Is he/she correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\text{The roots of the equation are} \\
+			\quad A = \left(\dfrac{2}{3} + \dfrac{4}{3}\iota\right)\text{ and }
+			B = \left(\dfrac{2}{3}-\dfrac{4}{3}\iota\right)
+			</tex>
+         <tex correct="false">
+			\text{The roots of the equation are} \\
+			\quad C = \left(-\dfrac{2}{3} + \dfrac{4}{3}\iota\right)\text{ and }
+			D = \left(-\dfrac{2}{3}-\dfrac{4}{3}\iota\right)
+			</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+			  3x^2- 4x + \frac{20}{3} &amp;= 0 \\ 
+			  \implies x &amp;= \underbrace{\dfrac{4\pm\sqrt{16-4\cdot\frac{20}{3}\cdot 3}}{2\times 3}}_{x = \dfrac{-b\pm\sqrt{b^2-4ac}}{2a}} \\
+			  &amp;= \dfrac{4\pm\sqrt{-64}}{6} = \dfrac{4\pm 8\iota}{6} \\
+        &amp;= \dfrac{2}{3}\pm \dfrac{4}{3}\iota\implies\text{A and B}
+			\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\text{C and D}</tex>
+      <tex>\text{B and C}</tex>
+      <tex correct="true">\text{A and B}</tex>
+      <tex>\text{A and D}</tex>
+   </choices>
+</question>

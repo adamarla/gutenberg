@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Find the intervals in which}\\
+			\quad\quad y = x^2+2x-5 \\
+			\text{is strictly increasing or decreasing}
+		</tex>
+      <tex>\\ \text{What will you find first?}</tex>
+      <tex>\\ \text{Is the following analysis correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\quad\quad\dfrac{dy}{dx}
+			</tex>
+         <tex correct="false">
+			\quad\text{Roots of the equation}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{To know if y is increasing/decreasing, you }\\
+			\text{need to see its rate of change - }\frac{dy}{dx}.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  \dfrac{d}{dx}y&amp;= 2x + 2 = 2\cdot(x+1) \\
+				  &amp;\gt 0\text{ when } x\gt -1 \text{ (strictly increasing)} \\
+				  &amp;\lt 0\text{ when } x\lt -1 \text{ (strictly decreasing)} \\
+				\end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{Simply solving inequalities. Check calculations}\\
+				\text{if you got them wrong.}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">x\gt -1\text{ (increasing)}\\
+					x\lt -1\text{ (decreasing)}</tex>
+      <tex>x\gt -1\text{ (decreasing)}\\
+					x\lt -1\text{ (increasing)}</tex>
+      <tex>\text{Always increasing}</tex>
+      <tex>\text{Always decreasing}</tex>
+   </choices>
+</question>

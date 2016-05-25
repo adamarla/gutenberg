@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+		\text{A dealer in rural area wishes to purchase}\\
+		\text{a number of sewing machines. He has only }\\
+		\text{&#8377; 5760 to invest and has space for atmost}\\
+		\text{20 items for storage. An electronic sewing}\\
+		\text{costs him &#8377; 360 and a manually operated}\\
+		\text{sewing machine &#8377; 240. He can sell an electronic}\\
+		\text{sewing machine at a profit of &#8377; 22 and a}\\
+		\text{manually operated machine at a profit of &#8377; 18.}\\
+		\text{Assuming he can sell all the machines that }\\
+		\text{he can buy, how should he invest his money}\\
+		\text{in order to maximize his profit?}\\
+		\textbf{Make it as a LPP and solve it graphically.}
+		</tex>
+      <tex>\\ \text{Does the figure below correctly capture}\\
+			\text{the \bf{storage and budgetary constraints}}\\
+			\text{of the dealer?}</tex>
+      <tex>\\ \textbf{Feasible Region}\\
+				\text{Does the figure below correctly show }\\
+				\text{the feasible region?}</tex>
+      <tex>\\ \text{The dealer thinks he knows what the maximum}\\
+				\text{profit he can make is. And he tells you that}\\
+				\text{it is the number below.}\\
+				\textbf{Has the dealer calculated his profit correctly?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex src="1-right.svg" isImage="true" correct="true"/>
+         <tex src="1-wrong.svg" isImage="true" correct="false"/>
+      </options>
+      <reason>
+         <tex>\text{The dealer has certain constraints, as shown}\\
+			\text{in the table below} \\
+			(\textbf{e = }\text{electronic m/c, }\textbf{m = }\text{ manual m/c.})\\
+			\begin{tabular}{|c|c|c|}
+			\hline 
+			\text{Type} &amp; \text{Constraint} &amp; \text{Line} \\
+			\hline 
+			\text{Budgetary} &amp; 360e + 240m\leq 5760 &amp; 3e + 2m = 48 \\
+			\text{Storage} &amp; e + m \leq 20 &amp; e + m = 20 \\
+			\hline
+			\end{tabular} \\
+			\underline{\text{Spot Check}} \\
+			\begin{align}
+			  e + m &amp;= 20 \implies e = 20-m \\
+			  3e + 2m &amp;= 48 \implies e = 16 - \frac{2}{3}m
+			\end{align} \\
+			\text{The line with the higher y-intercept should}\\
+			\text{therefore be }e + m = 20\text{ - which happens}\\
+			\text{to be the storage constraint line.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex src="2-right.svg" isImage="true" correct="true"/>
+         <tex src="2-wrong.svg" isImage="true" correct="false"/>
+      </options>
+      <reason>
+         <tex>\text{Any feasible region will have to satisfy}\\
+				\text{the following two conditions }\textbf{simultaneously.}\\
+				\quad\bullet\, \text{be below }e + m = 20 \\
+				\quad\bullet\, \text{be below }3e + 2m = 48 \\</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\quad &#8377; 392 
+				</tex>
+         <tex correct="false">
+				\quad &#8377; 360
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{The dealer's objective is to maximize} \\
+				\quad P = 22e + 18m \\
+				\text{And given the feasible region from Step 2, we} \\
+				\text{have the following points to consider}\\
+				\begin{tabular}{|c|c|c|}
+				\hline 
+				\text{Point} &amp; (m,e) &amp; \text{Profit} \\
+				\hline 
+				B &amp; (0,16) &amp; 16\times &#8377;22 = &#8377; 352\\
+				C &amp; (12,8) &amp; 12\times &#8377; 18 + 8\times &#8377; 22 = &#8377; 392\\
+				D &amp; (20,0) &amp; 20\times &#8377; 18 = &#8377; 360 \\
+				\hline
+				\end{tabular} \\
+				\text{Hence, the dealer's maximum profit would be}\\
+				\text{when he sells 12 manual and 8 electronic sewing}\\
+				\text{machines for a total profit of &#8377; 392.}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\text{Max. profit = }&#8377; 360</tex>
+      <tex correct="true">\text{Max. profit = }&#8377; 392</tex>
+      <tex>\text{Max. profit = }&#8377; 298</tex>
+      <tex>\text{Max. profit = }&#8377; 348</tex>
+   </choices>
+</question>

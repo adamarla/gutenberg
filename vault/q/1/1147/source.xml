@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+		\text{A card from a pack of 52 playing cards}\\
+		\text{is lost. From the remaining cards of the}\\
+		\text{pack, three cards are drawn at random}\\
+		\text{(without replacement) and are found to be}\\
+		\text{all spades. Find the probability of the}\\
+		\text{lost card being a spade.}
+		</tex>
+      <tex>\\ \textbf{What probability do we need to find?}\\
+			\text{Use the event definitions given below.}\\
+      \begin{tabular}{|c|c|}
+      \hline
+			\text{Event} &amp; \text{Meaning} \\
+			\hline
+			L &amp; \text{The card lost is a spade.} \\
+			S_3 &amp; \text{Three spades are drawn.} \\
+			\hline
+			\end{tabular}</tex>
+      <tex>\\ \text{Given that } \\
+				\begin{tabular}{|c|c|}
+				  \hline
+				  \text{Event} &amp; \text{Meaning} \\
+				  \hline
+          L &amp; \text{The card lost was a spade}\\
+          \hline
+          \bar{L} &amp; \text{The card lost was not a spade}\\
+          \hline
+          C_N &amp; \text{N-th card drawn is a spade.} \\
+          \hline
+				\end{tabular}\\
+				\text{is the table below correct?}</tex>
+      <tex>\\ \text{Your friend makes the following claims}\\
+					\text{about drawing three successive spades.}\\
+					\textbf{Are his claims correct?}</tex>
+      <tex>\\ \textbf{Putting it all together.}\\
+					\text{Is the work done below correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\quad P(L\vert S_3)
+			</tex>
+         <tex correct="false">
+			\quad P(L\cap S_3)
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{We don't know that the lost card is a spade.}\\
+			\text{That is why we are finding the probability.}\\
+			\textbf{But }\text{we do know that three spades have}\\
+			\text{been drawn. Hence, we need to start thinking }\\
+			\text{about conditional probability - the condition }\\
+			\text{being that }S_3\text{ has occurred. Or, }P(L\vert S_3).</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{tabular}{|c|c|c|} \\
+				\hline
+				N &amp; P(C_N\vert\,L) &amp; P(C_N\vert\,\bar{L}) \\
+				\hline
+				1 &amp; \frac{12}{51} &amp; \frac{13}{51} \\
+				\hline
+				2 &amp; \frac{11}{50} &amp; \frac{12}{50} \\
+				\hline
+				3 &amp; \frac{10}{49} &amp; \frac{11}{49} \\
+				\hline
+				\end{tabular}
+		</tex>
+         <tex correct="false">
+				\begin{tabular}{|c|c|c|} \\
+				\hline
+				N &amp; P(C_N\vert\,L) &amp; P(C_N\vert\,\bar{L}) \\
+				\hline
+				1 &amp; \frac{13}{51}  &amp; \frac{12}{51} \\
+				\hline
+				2 &amp; \frac{12}{50} &amp; \frac{11}{50} \\
+				\hline
+				3 &amp; \frac{11}{49} &amp; \frac{10}{49} \\
+				\hline
+				\end{tabular}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{Once a  card is lost, we would either have}\\
+				\text{12 spades remaining or 13 spades. }\\
+				\text{It is then that we start drawing three cards.}\\
+				\textbf{Remember, }P(C_N\vert\, L)\text{ is the probability that}\\
+				\text{the N-th card drawn is a spade }\textbf{given that}\\
+				\text{the card lost was a spade.}\\
+				\textbf{Similarly, }P(C_N\vert\,\bar{L})\text{ is the probability that}\\
+				\text{the N-th card drawn is a spade }\textbf{given that}\\
+        \text{the card lost was }\textbf{not}\text{ a spade.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+					\begin{tabular}{|c|c|}
+					\hline
+					\text{Event} &amp; \text{Probability} \\
+					\hline
+					P(S_3\vert L) &amp; \frac{12}{51}\cdot\frac{11}{50}\cdot\frac{10}{49} \\
+					\hline
+					P(S_3\vert\bar{L}) &amp; \frac{13}{51}\cdot\frac{12}{50}\cdot\frac{11}{49} \\
+					\hline
+					\end{tabular}
+					</tex>
+         <tex correct="false">
+					\begin{tabular}{|c|c|}
+					\hline
+					\text{Event} &amp; \text{Probability} \\
+					\hline
+					P(S_3\vert L) &amp; \frac{12}{51} + \frac{11}{50} + \frac{10}{49} \\
+					\hline
+					P(S_3\vert\bar{L}) &amp; \frac{13}{51} + \frac{12}{50} + \frac{11}{49} \\
+					\hline
+					\end{tabular}
+					</tex>
+      </options>
+      <reason>
+         <tex>\text{The event }S_3\text{ we defined in Step 1 is really}\\
+					\quad S_3 = C_1\cap C_2\cap C_3.\\
+					\text{Hence, we must multiply the probabilities.}\\
+					\textbf{But }\text{the probabilities we listed in Step 2}\\
+					\text{were }\textbf{conditional}\text{ probabilities.} \\
+					\text{Hence, it is not }P(S_3)\text{ that we know, but }\\
+					\mathbf{P(S_3\vert L)}\text{ and }\mathbf{P(S_3\vert\bar{L}).}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+					\begin{align}
+					  P(L\vert S_3) &amp;= \dfrac{P(S_3\vert L)\cdot P(L)}{P(S_3)} \\
+					  &amp;= \dfrac{P(S_3\vert L)\cdot P(L)}
+					  {P(S_3\vert L)\cdot P(L) + P(S_3\vert \bar{L})\cdot P(\bar{L})} \\
+					  \text{Now }P(L) &amp;= \frac{1}{4}\implies P(\bar{L}) = \frac{3}{4} \\
+					  \therefore P(L\vert S_3) &amp;= 
+					  \dfrac{\left(\frac{12}{51}\cdot\frac{11}{50}\cdot\frac{10}{49}\right)\cdot\frac{1}{4}}
+					  {\left(\frac{12}{51}\cdot\frac{11}{50}\cdot\frac{10}{49}\right)\cdot\frac{1}{4} + 
+					  \left(\frac{13}{51}\cdot\frac{12}{50}\cdot\frac{11}{49}\right)\cdot\frac{3}{4}} \\
+					  &amp;= \dfrac{10}{49}
+					\end{align}
+					</tex>
+      </options>
+      <reason>
+         <tex>\text{In the formula below,}\\
+					\begin{align}
+					P(L\vert S_3) &amp;= \underbrace{\dfrac{P(S_3\vert L)\cdot P(L)}
+					{P(S_3\vert L)\cdot P(L) + P(S_3\vert \bar{L})\cdot P(\bar{L})}}_{\text{Bayes' Theorem}}
+					\end{align} \\
+					\text{we know }P(S_3\vert L)\text{ and }P(S_3\vert\bar{L}).\\
+					\text{But we do not know what }P(L)\text{ and }P(\bar{L})\text{ are.}\\
+					\text{So, remind yourself what event L is.}\\
+					\text{It is the event that the lost card is a spade.}\\
+					\text{So, if a card is lost from a full deck, then the}\\
+					\text{probability that it is a spade is} \\
+					\quad P(L) = \dfrac{13}{52} = \dfrac{1}{4}\implies P(\bar{L}) = \dfrac{3}{4}.</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">\dfrac{10}{49}</tex>
+      <tex>\dfrac{1}{4}</tex>
+      <tex>\dfrac{13}{45}</tex>
+      <tex>\dfrac{4}{13}</tex>
+   </choices>
+</question>

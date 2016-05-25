@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>%text
+Solve the following differential equation 
+\[ \qquad (x^2-y^2)\cdot dx +2xy\cdot dy = 0 \]
+given that $y=1$ when $x=1$
+%</tex>
+      <tex>\\ %text
+The given differential equation can be
+\underline\text{re-written} as follows 
+\[ \qquad \qquad \frac{dy}{dx} = F\left(\frac{y}{x}\right) \]
+\underline\text{But what is the function $F\left( \frac{y}{x}\right)$}?
+%</tex>
+      <tex>\\ %text
+If \[ \frac{y}{x} = v \implies y = vx \], then which of the 
+following is true? 
+%</tex>
+      <tex>\\ %text
+Given that \[ \frac{2v}{1+v^2}\cdot dv = -\frac{dx}{x} \], would 
+the following be true? 
+%</tex>
+      <tex>\\ %text
+Given that \[ (1+v^2)\cdot x = C\], would the following
+be the \underline\text{solution of the differential equation}? 
+%</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">F\left( \frac{y}{x}\right) = \dfrac{\left(\frac{y}{x}\right)^2 - 1}{2\frac{y}{x}}</tex>
+         <tex>F\left( \frac{y}{x}\right) = \dfrac{\left(\frac{y}{x}\right)^2 + 1}{2\frac{y}{x}}</tex>
+      </options>
+      <reason>
+         <tex>%text
+Just a little algebra is required here. 
+
+%
+\begin{align}
+(x^2-y^2)\cdot dx &amp;+2xy\cdot dy = 0 \\
+\therefore 2xy\frac{dy}{dx} &amp;= (y^2-x^2)  \\ 
+\implies \frac{dy}{dx} &amp;= \underbrace{\dfrac{\left[\left( \frac{y}{x}\right)^2 - 1\right]\cdot x^2}{2\frac{y}{x}\cdot x^2}}
+_{\text{Factor out $x^2$}} \\
+\implies \frac{dy}{dx} &amp;= 
+\underbrace{\dfrac{\left(\frac{y}{x}\right)^2 - 1}{2\frac{y}{x}}}_{F\left( \frac{y}{x}\right)}
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\frac{2v}{1+v^2}\cdot dv = -\frac{dx}{x}</tex>
+         <tex>\frac{2v}{1- v^2}\cdot dv = \frac{dx}{x}</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+y &amp;= vx \implies \frac{dy}{dx} = v + x\cdot\frac{dv}{dx} \\
+\therefore  \underbrace{v + x\cdot\frac{dv}{dx}}_{\frac{dy}{dx}} &amp;= F\left(\frac{y}{x}\right) = \frac{v^2-1}{2v} \\
+\implies x\cdot\frac{dv}{dx} &amp;= \frac{v^2-1}{2v}- v = -\frac{1+v^2}{2v} \\
+\therefore \frac{2v}{1+v^2}\cdot dv &amp;= -\frac{dx}{x} 
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">(1+v^2)\cdot x = C \text{ (a constant)}</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+\frac{2v}{1+v^2}\cdot dv &amp;= -\frac{dx}{x} \\
+\text{Let }z &amp;= 1+v^2\implies dz = 2v\cdot dv \\
+\therefore \frac{dz}{z} &amp;= -\frac{dx}{x}\\
+\implies \int\frac{dz}{z} &amp;= -\int\frac{dx}{x} \\
+\text{or }\log \vert z\vert &amp;= -\log\vert x\vert + C_1 \\
+\implies \log\vert z\vert + \log\vert x\vert &amp;= \log\vert z\cdot x\vert = C_1 \\
+\text{or }\underbrace{(1+v^2)}_{ = z}\cdot x &amp;= \underbrace{e^{C_1} = C}_{\log b = a\implies b = e^a}
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">x^2 + y^2 = 2x </tex>
+      </options>
+      <reason>
+         <tex>%text
+\underline\text{Do not forget that $y=1$ when $x=1$}. 
+
+And therefore
+%
+\begin{align}
+(1+v^2)\cdot x &amp;= C \implies \left( 1 + \frac{y^2}{x^2}\right)\cdot x = C\\
+\text{And if }y = 1&amp;\text{ when }x = 1\text{ then } \\
+\left( 1 + \frac{1^2}{1^2}\right)\cdot 1 &amp;= C \implies C = 2 \\
+\therefore \left( 1 + \frac{y^2}{x^2}\right)\cdot x &amp;= 2 \implies x^2 + y^2 = 2x 
+\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true"> x^2 + y^2 = 2x</tex>
+      <tex> y^2 + xy = 2x</tex>
+      <tex>y^2 - x^2  = 2x</tex>
+      <tex> x^2 + y^2 = 4x</tex>
+   </choices>
+</question>

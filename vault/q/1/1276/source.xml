@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>%text
+If the length of three sides of trapezium 
+other than the base is 10cm each, find the 
+area of the trapezium when it is maximum.
+%</tex>
+      <tex>\\ %text
+Would the area $A$ of the required trapezium
+$PQRS$ be as given in the figure below? 
+%</tex>
+      <tex>\\ %text
+\textbf{Right or wrong?}
+Given that \[ A = (x+10)\cdot\sqrt{100-x^2}\], the 
+area (A) will have an \underline\text{extreme} value (maxima
+or minima) when the following is true. 
+%</tex>
+      <tex>\\ %text
+Given that $A$ has an extreme value when 
+$x=5$, which of the following sets of 
+statements is true?
+%</tex>
+   </statement>
+   <step>
+      <options>
+         <tex src="right.svg" isImage="true" correct="true"/>
+         <tex src="wrong.svg" isImage="true" correct="false"/>
+      </options>
+      <reason>
+         <tex>%text
+You can have \underline\text{infinite quadrilaterals} with
+three equal sides. But you can have
+\underline\text{only one trapezium} $(PS\parallel QR)$ with 
+three sides equal. Hence, the required 
+trapezium is a symmetrical figure as shown.
+
+And in this trapezium,
+%
+\begin{align}
+h^2 + x^2 &amp;= 10^2 \implies h = \sqrt{100-x^2} \\ 
+\text{and }A &amp;= \frac{1}{2}\cdot (PS + QR)\cdot h \\
+&amp;= \frac{1}{2}\cdot (10 + (10+2x))\cdot h \\
+&amp;= (x+10)\cdot h
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\begin{align}
+\frac{d}{dx}A^2 &amp;= -4\cdot (x+10)^2\cdot (x-5) = 0 \\
+\implies x &amp;= 5 
+\end{align}</tex>
+         <tex>\begin{align}
+\frac{d}{dx}A^2 &amp;= -4\cdot (x+10)^2\cdot (x-4) = 0 \\
+\implies x &amp;= 4
+\end{align}</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+A = (x+10)\cdot h &amp;= (x+10)\cdot \sqrt{100-x^2} \\
+\implies A^2 &amp;= \underbrace{(x+10)^2\cdot (100-x^2)}_{\text{Easier to work with}}
+\end{align} 
+%text
+
+Now, \underline\text{when $A$ is at its highest or lowest value}, 
+\underline\text{then so is $A^2$}. 
+
+Hence, when $A$ is at an extreme value, then
+%
+
+\begin{align}
+\frac{d}{dx}A^2 = \frac{d}{dx}(x+10)^2\cdot (100-x^2) &amp;= 0 \\
+\text{or }\underbrace{(100-x^2)\cdot 2(x+10) - 2x\cdot (x+10)^2}_{\text{Chain Rule}} &amp;= 0\\
+\text{or }2\cdot(x+10)\cdot(-2x^2-10x+100) &amp;= 0 \\
+\text{or }-4\cdot(x+10)\cdot\underbrace{(x^2 + 5x-50)}_{= (x-5)\cdot (x+10)}&amp;= 0 \\
+\text{or }-4\cdot (x+10)^2\cdot (x-5) &amp;= 0
+\end{align}\\
+%text
+
+Which means that for $\frac{d}{dx}A^2 = 0$, $x=5,-10$. 
+But $x\nless 0$. \underline\text{Therefore, $x=5$}.
+%</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\begin{align}
+\frac{d}{dx^2}A^2 &amp;= -12\cdot (x+10)\cdot x \\
+\implies\left[ \frac{d}{dx^2}A^2\right]_{x=5} &amp;\lt 0\implies\text{ maxima }\\
+\implies A_{max} &amp;= 75\sqrt{3}\text{ sq. units}
+\end{align} </tex>
+         <tex>\begin{align}
+\frac{d}{dx^2}A^2 &amp;= -12\cdot (x^2-10^2) \\
+\implies\left[ \frac{d}{dx^2}A^2\right]_{x=5} &amp;\gt 0\implies\text{ maxima }\\
+\implies A_{max} &amp;= 15\sqrt{5}\text{ sq. units}
+\end{align} </tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+\frac{d}{dx}A^2 &amp;= \underbrace{-4\cdot(x+10)^2\cdot (x-5)}_{\text{from last step}} \\
+\therefore \frac{dA^2}{dx^2} &amp;= -4\underbrace{\left[ (x+10)^2 + 2\cdot(x+10)\cdot(x-5)\right] }_{\text{Chain Rule}}\\
+&amp;= -4\cdot(x+10)^2\left[ (x+10)+2\cdot(x-5)\right] \\
+&amp;= -12\cdot (x+10)^2\cdot x \\
+&amp;\therefore \left[\frac{dA^2}{dx^2}\right]_{x=5} \lt 0 \implies\text{ maxima }\\
+&amp;\text{And, }A_{max} = \left[ (10+x)\cdot \sqrt{100-x^2}\right]_{x=5} \\
+&amp;= 15\cdot\sqrt{100-25} = 15\sqrt{75} \\
+&amp;= 15\sqrt{25\times 3} = 75\sqrt{3}\text{ sq. units}
+\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">75\sqrt{3}\text{ sq. units}</tex>
+      <tex>20\sqrt{5}\text{ sq. units}</tex>
+      <tex>20\sqrt{2}\text{ sq. units}</tex>
+      <tex>15\sqrt{5}\text{ sq. units}</tex>
+   </choices>
+</question>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>\text{The volume of a cube is increasing at the}\\
+      \text{rate of }8\frac{cm^3}{s}.\text{How fast is its surface}\\
+      \text{area increasing when the length of an}\\
+      \text{edge is 12 cm?}</tex>
+      <tex>\\ \text{Given the surface area (A) and length of}\\
+    \text{a side (L) at time T, what do we have to find?}</tex>
+      <tex>\\ \text{And what have we been told?}</tex>
+      <tex>\\ \text{Does this look right?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+      \qquad \left[\dfrac{dA}{dT}\right]_{L=12}
+    </tex>
+         <tex>
+      \qquad \left[\dfrac{dA}{dL}\right]_{L=12}
+    </tex>
+      </options>
+      <reason>
+         <tex>\text{We have to find }\frac{dA}{dT}\text{ when }L=12\text{ cm.}\\
+      \text{In other words, }\left[\frac{dA}{dT}\right]_{L=12}.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+      \begin{align}
+     \dfrac{dV}{dT} &amp;= 8\text{ cm$^3$/s}\\
+     \text{But as } V&amp;= L^3, \frac{dV}{dT} = \frac{d}{dT}L^3 \\
+     &amp;= 3L^2\cdot\frac{dL}{dT} \\ 
+     \implies \left[\dfrac{dL}{dT}\right]_{L=12} &amp;= 
+     \dfrac{8\frac{cm^3}{s}}{3\cdot\text{(12 cm)}^2} = \frac{1}{54}\text{ cm/s}
+\end{align}
+    </tex>
+         <tex>
+      \qquad \dfrac{dV}{dL} = 8\frac{cm^3}{s}\\
+      \qquad\text{where V = cube's volume}.
+    </tex>
+      </options>
+      <reason>
+         <tex>\text{Again, we were given the rate at which the volume}\\
+      \text{was increasing, that is, }\frac{dV}{dT}.\text{And from this, we infer}\frac{dL}{dT}.</tex>
+      </reason>
+   </step>
+   <step swipe="false">
+      <options>
+         <tex correct="true">
+      \begin{align}
+\left[\dfrac{dA}{dT}\right]_{L=12} &amp;= \left[\dfrac{dA}{dL}\times\dfrac{dL}{dT}\right]_{L=12}\\
+      \text{And as }A &amp;= 6\cdot L^2, \dfrac{dA}{dL} = 12\cdot L \\ 
+      \implies\left[ \dfrac{dA}{dT} \right]_{L=12} &amp;= \left[ 12L\cdot\dfrac{dL}{dT} \right]_{L=12}\\
+      \implies\left[ \dfrac{dA}{dT} \right]_{L=12} &amp;= 144 cm\cdot\dfrac{1}{54}\frac{cm}{s} 
+      = \dfrac{8}{3}\frac{cm^2}{s}.
+    \end{align}</tex>
+         <tex>
+   \begin{align}
+ \left[\dfrac{dA}{dT}\right]_{L=12} &amp;= \left[\dfrac{dA}{dL}\times\dfrac{dL}{dT}\right]_{L=12}\\
+      \text{And as }A &amp;= 6\cdot L^2\\ 
+      \left[ \dfrac{dA}{dT} \right]_{L=12} &amp;= \left[ 6L^2\cdot\dfrac{dL}{dT} \right]_{L=12}\\
+      \implies\left[ \dfrac{dA}{dT} \right]_{L=12} &amp;= 6\cdot (12 cm)^2\cdot\dfrac{1}{54}\frac{cm}{s}=16\text{ cm$^3$/s}
+\end{align}
+    </tex>
+      </options>
+      <reason>
+         <tex>\text{You know }\frac{dL}{dT}\text{ from Step #2. And you}\\
+      \text{need }\frac{dA}{dT}.\text{The missing piece is }\frac{dA}{dL}.</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>13\frac{cm^2}{s}</tex>
+      <tex correct="true">\dfrac{8}{3}\frac{cm^2}{s}</tex>
+      <tex>\dfrac{13}{3}\frac{cm^2}{s}</tex>
+      <tex>12\frac{cm^2}{s}</tex>
+   </choices>
+</question>

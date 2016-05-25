@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Show that the function }\\
+			y = \log (1+x) -\dfrac{2x}{2+x},x\gt -1\\
+			\text{is an increasing function throughout its domain.}
+		</tex>
+      <tex>\\ \text{Why is }x\gt -1 \text{ important? }</tex>
+      <tex>\\ \text{What is }\frac{d}{dx}\frac{f(x)}{g(x)}?</tex>
+      <tex>\\ \text{Is the following analysis correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\text{Because }\log (1+x) \text{is defined only if }x\gt -1.
+			</tex>
+      </options>
+      <reason>
+         <tex>\log (1+x) = a\implies 10^a = (1+x). \text{Now, 10 raised to}\\
+			\text{the power anything will only give a positive number.}\\
+			\text{Hence, }(1+x)\gt 0\implies x\gt -1.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  \dfrac{d}{dx}\dfrac{f(x)}{g(x)}&amp;= \dfrac{f'g-fg'}{g^2}
+				\end{align}
+				</tex>
+         <tex correct="false">
+				\begin{align}
+				  \dfrac{d}{dx}\dfrac{f(x)}{g(x)}&amp;= \dfrac{f'g+fg'}{g^2}
+				\end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{This is a standard result. Review if you got it wrong.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+					\begin{align}
+					\dfrac{d}{dx}y&amp;= \dfrac{d}{dx}\log (1+x) -\dfrac{d}{dx}\dfrac{2x}{x+2}\\
+					&amp;=\dfrac{1}{1+x}-\left[\dfrac{2\cdot(x+2)-2x}{(x+2)^2}\right]\\
+					&amp;=\dfrac{(x+2)^2-4\cdot(x+1)}{(x+1)\cdot (x+2)^2} \\
+					&amp;=\dfrac{x^2}{(x+1)\cdot(x+2)^2}\gt 0\text{ if }x\gt -1
+					\end{align}
+					\\ \text{Hence, }\frac{d}{dx}y\gt 0\implies\text{ an increasing function.}
+					</tex>
+      </options>
+      <reason>
+         <tex>x^2 and (x+2)^2 \text{ will always be }\geq 0.\text{Only }(x+1)\\
+					\text{could make the expression }\lt 0.\text{But for }x\gt -1,\\
+				 (x+1)\gt 0\implies \dfrac{x^2}{(x+2)^2\cdot(x+1)}\gt 0</tex>
+      </reason>
+   </step>
+</question>

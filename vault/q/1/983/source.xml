@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Evaluate the following integral}\\
+			\qquad \int_0^\frac\pi{2} \cos^2x\cdot dx 
+		</tex>
+      <tex>\\ \text{Your friend claims that }\\
+			A = \int_0^\frac\pi{2} \cos^2x\cdot dx  = \int_0^\frac\pi{2} \sin^2x\cdot dx .\\
+			\text{Is he/she correct in saying so?}</tex>
+      <tex>\\ \text{Is the following analysis correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\textbf{Yes. }\text{ And because, }\\
+			\begin{align}
+			\sin x &amp;= \cos\left(\frac\pi{2} - x\right) \\
+			\int_0^a f(x)\cdot dx &amp;= \int_0^a f(a-x)\cdot dx
+			\end{align}
+			\qquad 
+			</tex>
+         <tex correct="false">
+			\textbf{No. }\text{And how can it be so? }\\
+			\sin^2 x\text{ and }\cos^2 x\text{ are two completely}\\
+			\text{different functions.}
+			</tex>
+      </options>
+      <reason>
+         <tex>\int_0^a f(x)\cdot dx = \int_0^a f(a-x)\cdot dx\text{ is a known}\\
+			\text{property of integrals. Therefore, }\\
+			\begin{align}
+			  \int_0^\frac\pi{2} \cos^2 x\cdot dx &amp;= 
+			  \int_0^\frac\pi{2} \left[\cos \left(\frac\pi{2}-x\right)\right]^2\cdot dx \\
+			  &amp;= \int_0^\frac\pi{2} \sin^2 x\cdot dx
+			\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  A &amp;= \int_0^\frac\pi{2} \cos^2 x\cdot dx = \int_0^\frac\pi{2}\sin^2 x\cdot dx \\
+				  \implies A + A &amp;= \int_0^\frac\pi{2} (\sin^2x + \cos^2 x)\cdot dx \\ 
+				  &amp;= \int_0^\frac\pi{2} dx = \frac\pi{2} \\
+				  \implies A &amp;= \frac{\pi}{4}
+				\end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{If you see a }\sin^2 x\text{ and a }\cos^2 x\text{, then try}\\
+				\text{and add them. That is what we have done here.} \\
+				\text{We also used the fact that }\\
+				\int_a^b f(x)\cdot dx + \int_a^b g(x) \cdot dx = \int_a^b [f(x) + g(x)] \cdot dx.</tex>
+      </reason>
+   </step>
+</question>

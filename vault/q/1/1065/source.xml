@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Find the domain of the function} \\
+			\qquad f(x) = \dfrac{x^2+2x+1}{x^2-8x+12}
+		</tex>
+      <tex>\\ f(x) = \dfrac{x^2+2x+1}{x^2-8x+12} = \dfrac{(x+1)^2}{(x + A)\cdot (x+B)}\\
+			\text{What are the values of A and B?}</tex>
+      <tex>\\ \text{Given }f(x) = \dfrac{(x+1)^2}{(x-2)\cdot (x-6)},\text{ what would}\\
+				\text{be the domain of f(x)?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			  \qquad A = -2, B = -6 
+			</tex>
+         <tex correct="false">
+			\qquad A = 2, B = -6 
+			</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+			  \dfrac{x^2+2x+1}{x^2-8x+12} &amp;= \dfrac{(x+1)^2}{x^2-2x-6x+12} \\
+			  &amp;= \dfrac{(x+1)^2}{x\cdot (x-2)-6\cdot (x-2)} \\
+			  &amp;= (x-2)\cdot (x-6)
+			\end{align} \\
+			\text{Hence, } A = -2\text{ and }B = -6.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				  \textbf{Domain } = \mathbb{R} - \lbrace 2,6 \rbrace
+				</tex>
+         <tex correct="false">
+				  \textbf{Domain = any real number } = \mathbb{R}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{If f(x) is not defined for some x, then that}\\
+				  \text{x cannot be in the domain.} \\
+				  \text{And note that f(x) is not defined for }x = 2,6. \\
+				  \text{But it is defined for every other x. Hence, }\\
+				  \qquad \textbf{Domain = }\mathbb{R} - \lbrace 2,6 \rbrace</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">
+					  \mathbb{R} - \lbrace 2,6\rbrace
+					</tex>
+      <tex>\mathbb{R} - \lbrace -2,6\rbrace</tex>
+      <tex>\mathbb{R} - \lbrace 2,-6\rbrace</tex>
+      <tex>\mathbb{R} - \lbrace -2,-6\rbrace</tex>
+   </choices>
+</question>

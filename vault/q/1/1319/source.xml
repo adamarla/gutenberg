@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>%text
+A diet food contains at least 80 units of Vit. A
+and 100 units of minerals. Two foods $F_1$ and $F_2$ 
+are available. Food $F_1$ costs &#8377; 4 per unit and 
+$F_2$ costs &#8377; 6 per unit. One unit of food $F_1$ 
+contains 3 units of Vit. A and 4 units of 
+minerals. One unit of food $F_2$ contains 6 units
+of Vit. A and 3 units of minerals. Formulate 
+this as a LPP and find graphically the minimum 
+cost for diet that consists of a mixture of these 
+two foods and also meets the minimum 
+nutritional requirements. 
+%</tex>
+      <tex>\\ %text
+If $N_1$ and $N_2$ units of foods $F_1$ and $F_2$ are 
+required, then given the following 
+%
+\begin{tabular}{|c|c|c|c|}
+\hline 
+&amp; \text{Vit A/unit} &amp; \text{Minerals/unit} &amp; \text{&#8377;/unit} \\
+\hline 
+F_1 &amp; 3 &amp; 4 &amp; 4 \\ 
+\hline 
+F_2 &amp; 6 &amp; 3 &amp; 6 \\
+\hline 
+\end{tabular} 
+%text
+
+\underline\text{is the following true}? 
+%</tex>
+      <tex>\\ %text
+Which of the following shows the \underline\text{correct plots} 
+for the constraints we found in Step 1? 
+%</tex>
+      <tex>\\ %text
+Given the graph from Step 2, which of the
+following correctly shows the \underline\text{feasible region}? 
+%</tex>
+      <tex>\\ %text
+Given the feasible region, what are the 
+\underline\text{feasible points} and what is the 
+\underline\text{minimum cost} for the diet food? 
+
+%</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">\begin{align}
+3N_1 &amp;+ 6N_2 \geq 80 \\ 
+4N_1 &amp;+ 3N_2 \geq 100 \\ 
+\text{Minimize } &amp;4N_1 + 6N_2 
+\end{align} </tex>
+         <tex>\begin{align}
+3N_1 &amp;+ 4N_2 \geq 80 \\ 
+6N_1 &amp;+ 3N_2 \geq 100 \\ 
+\text{Minimize } &amp;4N_1 + 6N_2 
+\end{align} </tex>
+      </options>
+      <reason>
+         <tex>%text
+We need \underline\text{at least} 80 units of Vit. A
+and 100 units of minerals. 
+
+And with $N_1$ units of $F_1$ and $N_2$ units of $F_2$
+
+%
+\begin{tabular}{|c|c|c|}
+\hline 
+&amp; \text{Vit. A} &amp; \text{Minerals} \\
+\hline 
+F_1 &amp; 3N_1 &amp; 4N_1\\
+\hline 
+F_2 &amp; 6N_2 &amp; 3N_2 \\
+\hline 
+\text{Total} &amp; 3N_1 + 6N_2 &amp; 4N_1 + 3N_2 \\ 
+\hline 
+\end{tabular} 
+%text
+
+And these total must satisfy 
+%
+\begin{align}
+3N_1 + 6N_2 &amp;\geq 80 \\ 
+4N_1 + 3N_2 &amp;\geq 100 
+\end{align} 
+%text
+
+\underline\text{while keeping costs $(4N_1 + 6N_2)$ at a minimum}.
+%</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex src="right.svg" isImage="true" correct="true"/>
+         <tex src="wrong.svg" isImage="true" correct="false"/>
+      </options>
+      <reason>
+         <tex>\begin{tabular}{|c|c|}
+\hline 
+\text{Constraint} &amp; \text{Line to draw} \\
+\hline 
+3N_1 + 6N_2 \geq 80 &amp; 3N_1 + 6N_2 = 80 \\
+\hline 
+4N_1 + 3N_2 \geq 100 &amp; 4N_1 + 3N_2 = 100 \\
+\hline
+\end{tabular}
+%text
+
+Plug in \underline{$N_1 = 0$} to get coordinates of \underline\text{$A$ and $B$}.
+Plug in \underline{$N_2 = 0$} to get coordinates of \underline\text{$D$ and $E$}.
+Solve the equations of both lines to get $C$. 
+%</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex src="3-right.svg" isImage="true" correct="true"/>
+         <tex src="3-wrong.svg" isImage="true" correct="false"/>
+      </options>
+      <reason>
+         <tex>%text
+As both constraints require \underline\text{at least} 
+a minimum value, any feasible point must 
+therefore lie \underline\text{above} both the lines. 
+
+Hence, the feasible region will be as shown 
+in the correct option. 
+%</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\begin{tabular}{|c|c|}
+\hline 
+\text{Feasible points} &amp; B,C, E \\
+\hline 
+\text{Min. Cost} &amp; \text{&#8377; 104} \\
+\hline 
+\end{tabular} </tex>
+         <tex>\begin{tabular}{|c|c|}
+\hline 
+\text{Feasible points} &amp; B,C, E \\
+\hline 
+\text{Min. Cost} &amp; \text{&#8377; } 106\frac{2}{3} \\
+\hline 
+\end{tabular} </tex>
+      </options>
+      <reason>
+         <tex>%text
+The points we should consider are $B,C$ and $E$. 
+They lie in the feasible region. 
+And one of  them represents the lowest cost. 
+
+%
+\begin{tabular}{|c|c|c|}
+\hline 
+\text{Point} &amp; (N_1, N_2) &amp; \text{Cost} = 4N_1 + 6N_2 \\ 
+\hline 
+B &amp; (0,\frac{100}{3}) &amp; &#8377; 200 \\ 
+\hline 
+C &amp; (24,\frac{4}{3}) &amp; &#8377; 104 \\ 
+\hline 
+E &amp; (\frac{80}{3},0) &amp; &#8377; 106\frac{2}{3} \\
+\hline
+\end{tabular}
+%text
+
+It can be seen that the \underline\text{lowest cost point} 
+is point C with total cost of &#8377; 104. 
+%</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>&#8377; 102 </tex>
+      <tex correct="true">Rs .104 </tex>
+      <tex>&#8377; 106\frac{2}{3}</tex>
+      <tex>&#8377; 110</tex>
+   </choices>
+</question>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Which of the points - A,B,C or D - in} \\
+			\text{the complex plane below are the roots} \\
+			\text{the equation} \\
+			  \qquad x^2-2x+\frac{3}{2} = 0
+		</tex>
+      <tex src="plot.svg" isImage="true" correct="false"/>
+      <tex>\\ \text{Your friend claims the following} \\
+			\text{about what the roots are.}\\
+			\textbf{Is he/she correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\text{The roots of the equation are} \\
+			\quad A = \left(1 + \dfrac{\iota}{\sqrt{2}}\right)\text{ and }
+			B = \left(1-\dfrac{\iota}{\sqrt{2}}\right)
+			</tex>
+         <tex correct="false">
+			\text{The roots of the equation are} \\
+			\quad C = \left(-1 + \dfrac{\iota}{\sqrt{2}}\right)\text{ and }
+			D = \left(-1-\dfrac{\iota}{\sqrt{2}}\right)
+			</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+			  x^2-2x+\frac{3}{2} &amp;= 0 \\ 
+			  \implies x &amp;= \underbrace{\dfrac{2\pm\sqrt{4-4\cdot\frac{3}{2}\cdot 1}}{2\times 1}}_{x = \dfrac{-b\pm\sqrt{b^2-4ac}}{2a}} \\
+			  &amp;= \dfrac{2\pm\sqrt{-2}}{2} = \dfrac{2\pm \sqrt{2}\iota}{2} \\
+			  &amp;= 1\pm \dfrac{\iota}{\sqrt{2}}\implies\text{A and B}
+			\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">\text{A and B}</tex>
+      <tex>\text{C and D}</tex>
+      <tex>\text{B and C}</tex>
+      <tex>\text{A and D}</tex>
+   </choices>
+</question>

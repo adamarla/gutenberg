@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+		\text{From a lot of 15 bulbs which includes}\\
+		\text{5 defectives, a sample of 4 bulbs is drawn}\\
+		\text{one by one with replacement. Find the}\\
+		\text{probability distribution of number of defective}\\
+		\text{bulbs. Hence find the mean of the distribution.}
+		</tex>
+      <tex>\\ \text{In the table below, }\textit{d = defective bulb}\text{ and }\\
+			\textit{ok = non-defective bulb.}\\
+			\textbf{But what are the probabilities A-E?}\\
+			\begin{tabular}{|c|c|c|}
+        \hline 
+        N &amp; \text{Example Sequence} &amp; P(n=N) \\
+        \hline 
+        0 &amp; \lbrace ok,ok,ok,ok\rbrace &amp; A \\
+        \hline
+        1 &amp; \lbrace ok,d,ok,ok \rbrace &amp; B \\
+        \hline
+        2 &amp; \lbrace ok,d,d,ok \rbrace &amp; C \\
+        \hline
+        3 &amp; \lbrace d,ok,d,d \rbrace &amp; D \\
+        \hline
+        4 &amp; \lbrace d,d,d,d \rbrace &amp; E \\
+        \hline			
+			\end{tabular}</tex>
+      <tex>\\ \text{Given the probability distribution in Step 1,}\\
+				\text{what is the }\textbf{mean of the distribution?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			A &amp; B &amp; C &amp; D &amp; E \\
+			\hline
+			\frac{16}{81} &amp; \frac{32}{81} &amp; \frac{8}{27} &amp; \frac{8}{81} &amp; \frac{1}{81} \\
+			\hline
+			\end{tabular}
+			</tex>
+         <tex correct="false">
+			\begin{tabular}{|c|c|c|c|c|}
+			\hline
+			A &amp; B &amp; C &amp; D &amp; E \\
+			\hline
+			\frac{16}{81} &amp; \frac{8}{27} &amp; \frac{16}{81} &amp; \frac{32}{81} &amp; \frac{1}{81} \\
+			\hline
+			\end{tabular}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{If p = probability of drawn bub being defective}\\
+			\text{and q = probability of it not being defective,} \\
+			\text{then }p=\frac{5}{15} = \frac{1}{3}\text{ and }q = 1-p=\frac{2}{3}.\\
+			\textbf{Remember, the bulbs are drawn with }\\
+			\textbf{replacement}\text{ (they are put back once drawn).}\\
+			\begin{tabular}{|c|c|c|}
+        \hline 
+        N &amp; \text{Example Sequence} &amp; P(n=N) \\
+        \hline 
+        0 &amp; \lbrace ok,ok,ok,ok\rbrace &amp; ^4C_0\cdot p^0q^4 =\frac{16}{81} \\
+        \hline
+        1 &amp; \lbrace ok,d,ok,ok \rbrace &amp; ^4C_1\cdot p^1q^3=\frac{32}{81} \\
+        \hline
+        2 &amp; \lbrace ok,d,d,ok \rbrace &amp; ^4C_2\cdot p^2q^2 =\frac{8}{27} \\
+        \hline
+        3 &amp; \lbrace d,ok,d,d \rbrace &amp; ^4C_3\cdot p^3q = \frac{8}{81} \\
+        \hline
+        4 &amp; \lbrace d,d,d,d \rbrace &amp; ^4C_4\cdot p^4q^0 =\frac{1}{81} \\
+        \hline			
+			\end{tabular}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\quad\text{Mean / expected value } = E(x) = \dfrac{4}{3}
+				</tex>
+         <tex correct="false">
+				\quad\text{Mean / expected value } = E(x) = \dfrac{8}{5}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{The mean - or the expected value - E(x) is}\\
+				\text{given by the following}\\
+				\begin{align}
+				  E(x) &amp;= \sum_{n=1}^N n\cdot P(n) \\
+				  \therefore E(x) &amp;= \left[0\cdot \frac{16}{81} + 1\cdot\frac{32}{81} +
+				  2\cdot \frac{8}{27} + 3\cdot \frac{8}{81} + 4\cdot \frac{1}{81}
+				  \right] \\
+				  &amp;= \dfrac{4}{3}
+				\end{align} \\
+				\text{What this means is that if one were to draw}\\
+				\text{4 bulbs with replacement many times over }\\
+				\text{and count the number of defectives drawn,}\\
+				\text{then the average over all those rounds of }\\
+				\text{drawing would be }\frac{4}{3}.</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\text{Mean = }\dfrac{12}{7}</tex>
+      <tex>\text{Mean = }\dfrac{8}{5}</tex>
+      <tex>\text{Mean = }\dfrac{7}{4}</tex>
+      <tex correct="true">\text{Mean = }\dfrac{4}{3}</tex>
+   </choices>
+</question>

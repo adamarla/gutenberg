@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+		\text{A particle moves along the curve }6y=x^3 +2.\\
+		\text{Find the points on the curve at which the }\\
+		\text{y-coordinate is changing 8 times as fast as}\\
+		\text{the x-coordinate.}
+		</tex>
+      <tex>\\ \text{The points we need are points where}\ldots</tex>
+      <tex>\\ \text{Does the following look right?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{align}
+			  dy = 8\cdot dx \implies \frac{dy}{dx} = 8
+			\end{align}
+			</tex>
+         <tex correct="false">
+			\begin{align}
+			  y = 8\cdot x = \frac{1}{6}\cdot\left(x^3 + 2\right)
+			\end{align}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{The points we need are those where y changes 8 times}\\
+			\text{faster than x, that is, }dy = 8\cdot dx.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				6\frac{dy}{dx}&amp;=3x^2\\
+				\implies\frac{dy}{dx}&amp;=8=\frac{x^2}{2}\implies x=\pm 4
+				\end{align}
+				\\ \therefore\text{ the points are }\left(4,11\right)\text{ and }\left(-4,\frac{-31}{3}\right)
+				</tex>
+         <tex correct="false">
+				\begin{align}
+				6\frac{dy}{dx}&amp;=3x^2\\
+				\implies\frac{dy}{dx}&amp;=8=\frac{x^2}{2}\implies x= 4
+				\end{align}
+				\\ \therefore\text{ the required point is }\left(4,11\right)
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{If you got }x^2=16,\text{ then } x = \pm 4.\\
+				\text{Check calculations if you got anything else.}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">(x,y)=\left(4,11\right)\text{ and }\left(-4,\frac{-31}{3}\right)</tex>
+      <tex>(x,y)=\left(4,11\right)</tex>
+      <tex>(x,y)=\left(-4,11\right)\text{ and }\left(4,\frac{31}{3}\right)</tex>
+      <tex>(x,y)=\left(4,-11\right)\text{ and }\left(-4,\frac{-31}{3}\right)</tex>
+   </choices>
+</question>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Is the function defined by }\\
+			f(x) = x^2-\sin x + 5 \\
+			\text{continuous at }x=\pi?
+		</tex>
+      <tex>\\ \text{What will be the condition for continuity at}x=\pi?</tex>
+      <tex>\\ \text{Is the following conclusion correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			  \lim_{x\to\pi^-}f(x) = \lim_{x\to\pi^+}f(x) = f(\pi)  
+			</tex>
+         <tex correct="false">
+			\lim_{x\to\pi^-}f(x) = f(\pi) 
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{For a function to be continuous at x=a, }\\
+			  \text{f(a) must be defined and the function must }\\
+			  \text{approach f(a) from both sides.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  \lim_{x\to\pi^-}f(x) &amp;= \pi^2-\sin\pi + 5 = \pi^2 + 5\\
+				  \lim_{x\to\pi^+}f(x) &amp;= \pi^2-\sin\pi + 5 = \pi^2 + 5\\
+				  f(\pi)&amp;= \pi^2 - 0 + 5 = \pi^2 + 5
+				\end{align}
+				\\ \text{Hence, f(x) is continuous at }x=\pi
+				</tex>
+      </options>
+      <reason>
+         <tex>f(x) \text{ meets all the requirements mentioned in }\\
+				\text{Step 1. And so, it is continuous. If a function}\\
+				\text{is continuous in a certain domain, then it can be}\\
+				\text{drawn without lifting the pencil in that domain.}</tex>
+      </reason>
+   </step>
+</question>

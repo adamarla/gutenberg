@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+		\text{A balloon, which always remains spherical,}\\
+		\text{has a variable radius. Find the rate at which}\\
+		\text{it's volume is increasing with the radius }\\
+		\text{when the latter is 15 cm.}
+		</tex>
+      <tex>\\ \text{What are we being asked to find?}</tex>
+      <tex>\\ \text{Does the following look right?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\quad\dfrac{dV}{dT}\text{ when R = 15 cm.}\\
+			\quad\text{(V = volume, R = radius)}
+			</tex>
+         <tex correct="false">
+			\quad\dfrac{dV}{dT}\text{ when R = 15 cm.}\\
+			\quad\text{(V = volume, R = radius)}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{Intuitively, we think of rate as change with respect}\\
+			\text{to time. In this questions, it is with respect to radius.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				  \begin{align}
+				    V&amp;=\frac{4}{3}\pi\cdot R^3\\
+				    \implies\frac{dV}{dR}&amp;=\frac{4}{3}\pi\frac{d}{dR}R^3 = 4\pi\cdot R^2\\
+				    \therefore\left[\frac{dV}{dR}\right]_{R=10}&amp;=4\pi\cdot\left(\text{10 cm}\right)^2
+				    = 400\pi\text{ cm$^3$/cm}
+				  \end{align}
+				</tex>
+         <tex correct="false">
+				\begin{align}
+				  V&amp;=4\pi\cdot R^2\\
+				  \implies\left[\frac{dV}{dR}\right]_{R=10}&amp;=4\pi\cdot\frac{d}{dR}R^2 = 8\pi R\\
+				  \therefore\frac{dV}{dR}&amp;=8\pi\left(\text{10 cm}\right) = 80\pi\text{ cm$^2$/cm}
+				\end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{The volume of a sphere is given by }V=\frac{4}{3}\pi R^3.\text{Moreover,}\\
+				\text{the units of }\frac{dV}{dR}\text{ should be cm$^3$/cm.}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">400\pi\text{ cm$^3$/cm}</tex>
+      <tex>200\pi\text{ cm$^3$/cm}</tex>
+      <tex>80\pi\text{ cm$^2$/cm}</tex>
+      <tex>600\pi\text{ cm$^3$/cm}</tex>
+   </choices>
+</question>

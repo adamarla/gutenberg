@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Is the function }f(x) = 3x + 17\text{strictly}\\
+			\text{increasing, decreasing or constant in }\mathbb{R}?
+		</tex>
+      <tex>\\ \text{Is the following logic correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\text{A function is increasing if }\\
+			\quad f(x) &gt; f(y), x\gt y\implies \frac{d}{dx}f(x) \gt 0\\
+			\text{As }\frac{d}{dx}f(x)\gt 0,f(x)\text{ is strictly increasing.}
+			</tex>
+         <tex correct="false">
+			\text{A function is increasing if }\\
+			\quad f(x) &gt; f(y), x\lt y\implies \frac{d}{dx}f(x)\lt 0\\
+			\text{As }\frac{d}{dx}f(x)\nless 0,f(x)\text{ is not increasing.}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{A function is strictly increasing only if }\\
+			f(x)\text{ increases as } x\text{ increases.}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\text{Strictly decreasing}</tex>
+      <tex correct="true">\text{Strictly increasing}</tex>
+      <tex>\text{Constant}</tex>
+      <tex>\text{Sometimes increasing, sometimes decreasing}</tex>
+   </choices>
+</question>

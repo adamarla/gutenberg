@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Find the slope of the tangent to the curve}\\
+			\quad y=\dfrac{x-1}{x-2},x\neq 2\text{ at }x = 10.
+		</tex>
+      <tex>\\ \text{Is the following the correct formula for}\\
+			\quad \dfrac{d}{dx}\dfrac{f(x)}{g(x)}?</tex>
+      <tex>\\ \text{Is the following analysis correct?}</tex>
+      <tex>\\ \textbf{Bonus Question:}\text{Is y differentiable at }x=2?</tex>
+   </statement>
+   <step swipe="false">
+      <options>
+         <tex correct="true">
+			\quad\dfrac{d}{dx}\dfrac{f(x)}{g(x)}=\dfrac{f'g-fg'}{g^2}
+			</tex>
+         <tex correct="false">
+			\quad\dfrac{d}{dx}\dfrac{f(x)}{g(x)}=\dfrac{f'g+fg'}{g^2}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{This is a standard result. Review if you}\\
+			\text{got it wrong.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  \dfrac{d}{dx}\dfrac{x-1}{x-2}&amp;= \dfrac{(x-2)-(x-1)}{(x-2)^2} \\
+				  &amp;= -\dfrac{1}{(x-2)^2}\\
+				  \implies\left[\dfrac{d}{dx}\dfrac{x-1}{x-2}\right]_{x=10}&amp;= -\dfrac{1}{64}.
+				\end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{Apply the standard result from Step #1 with }x=10.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+			\text{No. y is not even continuous at }x=2.\\
+			\text{How can it be differentiable?}
+			</tex>
+         <tex correct="false">
+			\text{Yes. And }\left[\dfrac{d}{dx}\left(\dfrac{x-1}{x-2}\right)\right]_{x=2}=-\infty.
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{If a function is not continuous at a point, then}\\
+			\text{it cannot be differentiable there. And y is not}\\
+			\text{continuous at }x=2\left(\lim_{x\to 2^-}y\neq\lim_{x\to 2^+}y\right).</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">-\frac{1}{64}</tex>
+      <tex>-\frac{1}{100}</tex>
+      <tex>\frac{1}{100}</tex>
+      <tex>\frac{1}{64}</tex>
+   </choices>
+</question>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>%text
+Two messengers $M_A$ and $M_B$ started running 
+towards each other from points $A$ and $B$, 
+$98$ km apart. They met $7$ hours later. On the 
+way back, $M_A$ ran $1$km/h slower than before,
+while $M_B$ ran $1$km/h faster than before, thus
+returning two hours earlier than $M_A$. What 
+were the original speeds of $M_A$ and $M_B$?
+%</tex>
+      <tex>\\ %text
+If the messengers run at speeds $S_A$ and $S_B$
+towards each other and meet after $7$ hours,
+is the following correct?
+%</tex>
+      <tex>\\ %text
+On their return paths $M_A$, running $1$ km/h 
+slower than before, takes two hours longer to
+get back than $M_B$ who is running $1$ km/h 
+faster than before. Does the following 
+equation capture this condition?
+%</tex>
+      <tex>\\ \dfrac{7 S_A}{S_A-1}+2=\dfrac{7 S_B}{S_B+1} \\
+S_A+S_B=14 \\
+%text
+What are $S_A$ and $S_B$?
+%</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">(S_A+S_B)\times 7=98</tex>
+         <tex>(S_A-S_B)\times 7=98</tex>
+      </options>
+      <reason>
+         <tex>%text
+Since the messengers are running towards
+each other, we know that between them they 
+covered the $98$ km stretch in $7$ hours.
+%
+\begin{align}
+  &amp;\therefore
+    \overbrace{S_A(km/h)\times 7(h)}^\text{distance $M_A$}+
+    \overbrace{S_B(km/h)\times 7(h)}^\text{distance $M_B$}=98 \\
+  &amp;\implies (S_A+S_B)\times 7=98 \\
+  &amp;\implies S_A+S_B=14
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\dfrac{7 S_A}{S_A-1}+2=\dfrac{7 S_B}{S_B+1}</tex>
+         <tex>7 S_A+2=7 S_B</tex>
+      </options>
+      <reason>
+         <tex>%text
+Distance covered by $M_A$ running at $S_A$ to
+reach the meeting 7 hr away is $7S_A$. Distance
+covered by $M_B$ to reach the same meeting
+is $7S_B$.
+But $M_A$ running at $(S_A-1)$ km/h took two
+hours longer in getting back than $M_B$ running
+at $(S_B+1)$ km/h did. Putting this in equation
+form,
+%
+\begin{align}
+  &amp;\overbrace{\dfrac{7S_A}{S_A-1}(hr)}^\text{$M_A$ return time}
+  -\overbrace{\dfrac{7S_B}{S_B+1}(hr)}^\text{$M_B$ return time}
+  =\overbrace{2(hr)}^\text{time difference} 
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">%text
+$S_A=8$ km/h, $S_B=6$ km/h
+%</tex>
+         <tex>%text
+$S_A=6$ km/h, $S_B=8$ km/h
+%</tex>
+      </options>
+      <reason>
+         <tex>\dfrac{7 S_A}{S_A-1}+2=\dfrac{7 S_B}{S_B+1} \\
+%text
+can be re-written as,
+%
+\begin{align}
+  &amp;{\small 7S_A(S_B+1)-7S_B(S_A-1)=2(S_A-1)(S_B-1)} \\
+  &amp;\qquad\text{but }S_A+S_B=14, \\
+  &amp;\therefore 14=2(14S_A-S_A^2)+S_A-14+S_A-1) \\
+  &amp;\implies S_A^2-16S_A+64=0 \\
+  &amp;\implies (S_A-8)^2=0 \implies S_A=8 \text{ km/h}
+\end{align} \\
+\therefore S_B=14-8=6\text{ km/h}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>%text
+$S_A=7$ km/h, $S_B=7$ km/h
+%</tex>
+      <tex>%text
+$S_A=6$ km/h, $S_B=8$ km/h
+%</tex>
+      <tex correct="true">%text
+$S_A=8$ km/h, $S_B=6$ km/h
+%</tex>
+      <tex>%text
+$S_A=10$ km/h, $S_B=4$ km/h
+%</tex>
+   </choices>
+</question>

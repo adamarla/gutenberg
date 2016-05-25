@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>%text
+Evaluate \[ \int_0^{\frac\pi{2}}\frac{x + \sin x}{1+\cos x}\cdot dx \]
+%</tex>
+      <tex>\\ %text
+The required integral can be \underline\text{re-written} as 
+\[ \underbrace{\int_0^{\frac\pi{2}}\frac{\sin x}{1+\cos x}\cdot dx}_P + \underbrace{\int_0^{\frac\pi{2}}\frac{x}{1+\cos x}\cdot dx}_Q \]
+\underline\text{But which of the following is true for P}?
+%</tex>
+      <tex>\\ %text
+Which of the following is true for
+\[ \qquad Q = \int_0^{\frac\pi{2}}\frac{x\cdot dx}{1+\cos x} \]
+%</tex>
+      <tex>\\ %text
+What are \underline\text{$A(x)$ and $B(x)$} in the following?
+%
+\begin{align}
+Q &amp;= \frac{1}{2}\int_0^{\frac\pi{2}}x\cdot\sec^2\frac{x}{2}\cdot dx  
+=\left[ \underbrace{x\cdot A(x) + B(x) }_{\text{Integration by parts}}\right]_0^{\frac\pi{2}}
+\end{align}</tex>
+      <tex>\\ %text
+\textbf{Final value? }\underline\text{Given P and Q} (see below)
+\[ \underbrace{\int_0^{\frac\pi{2}}\frac{\sin x}{1+\cos x}\cdot dx}_P + \underbrace{\int_0^{\frac\pi{2}}\frac{x}{1+\cos x}\cdot dx}_Q \]
+\underline\text{what is the value of the original integral}?
+%</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">\begin{align}
+\text{If }\phi &amp;= 1+\cos x \\
+\text{then }P&amp;= \int_1^2\frac{d\phi}\phi = \log 2
+\end{align} </tex>
+         <tex>\begin{align}
+\text{If }\phi &amp;= 1+\cos x \\
+\text{then }P&amp;= \int_2^1\frac{d\phi}\phi = -\log 2
+\end{align} </tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+P &amp;= \int_0^{\frac\pi{2}}\frac{\sin x}{1+\cos x}\cdot dx \\
+\therefore\text{ if }\phi &amp;= 1+\cos x \\
+\text{then }d\phi &amp;= -\sin x\cdot dx\implies \sin x\cdot dx = -d\phi \\
+\text{and }\phi &amp;= 2\to 1\text{ as }x = 0\to\frac\pi{2}\\
+\therefore P &amp;= \underbrace{-\int_2^1\frac{d\phi}\phi = \int_1^2\frac{d\phi}\phi}_{\text{Note the limits}}\\
+&amp;= \left[\log\phi\right]_1^2 = \underbrace{\log 2 - \log 1}_{\log 1 = 0} = \log 2
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">Q = \frac{1}{2}\int_0^{\frac\pi{2}}x\cdot\sec^2\frac{x}{2}\cdot dx </tex>
+         <tex>Q = \int_0^{\frac\pi{2}}x\cdot\sec^2\frac{x}{2}\cdot dx </tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+Q &amp;= \int_0^{\frac\pi{2}}\frac{x\cdot dx}{1+\cos x} 
+= \int_0^{\frac\pi{2}}\frac{x}{2\cos^2\frac{x}{2}}\cdot dx \\
+&amp;= \frac{1}{2}\int_0^{\frac\pi{2}}x\cdot\sec^2\frac{x}{2}\cdot dx 
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\begin{align}
+A(x) &amp;= \tan\frac{x}{2} \\ 
+B(x) &amp;= 2\log\left(\cos\frac{x}{2}\right) \\
+\end{align} </tex>
+         <tex>\begin{align}
+A(x) &amp;= \frac{1}{2}\tan\frac{x}{2} \\ 
+B(x) &amp;= \log\left(\cos\frac{x}{2}\right) \\
+\end{align} </tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+Q &amp;= \frac{1}{2}\int_0^{\frac\pi{2}}x\cdot\sec^2\frac{x}{2}\cdot dx \\
+&amp;= \frac{1}{2}\left[ x\int_0^{\frac\pi{2}}\sec^2\frac{x}{2}
+-\int_0^{\frac\pi{2}}\left(\frac{d}{dx}x\int\sec^2\frac{x}{2}\right)dx\right]\\
+&amp;=\frac{1}{2}\underbrace{\left[ x\cdot\frac{\tan\frac{x}{2}}{\frac{1}{2}}-\int\frac{\tan\frac{x}{2}}{\frac{1}{2}}\cdot dx \right]_0^{\frac\pi{2}}}
+_{\int\sec^2 ax\cdot dx = \frac{\tan ax}{a}} \\
+&amp;= \left[ x\cdot\tan\frac{x}{2} - \int\tan\frac{x}{2}\cdot dx\right]_0^{\frac\pi{2}} \\
+&amp;= \underbrace{\left[ x\cdot\tan\frac{x}{2} + 2\log\left(\cos\frac{x}{2}\right)\right]_0^{\frac\pi{2}}}
+_{\int\tan ax\cdot dx = -\frac{1}{a}\log (\cos ax), a = \frac{1}{2}}
+\end{align}
+%text
+
+\underline\text{On comparing with \[ \left[x\cdot A(x) + B(x)\right]_0^{\frac\pi{2}}\]}, we can
+see that 
+%
+\begin{align}
+A(x) &amp;= \tan\frac{x}{2} \\
+\text{and }B(x) &amp;= 2\log\left( \cos\frac{x}{2}\right)
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\frac\pi{2} </tex>
+         <tex>\frac\pi{2}-\log 2 </tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+A &amp;= \underbrace{\int_0^{\frac\pi{2}}\frac{\sin x}{1+\cos x}\cdot dx}_{P} + \underbrace{\int_0^{\frac\pi{2}}\frac{x}{1+\cos x}\cdot dx}_Q\\
+\end{align} \\
+\begin{align}
+\text{where } P &amp;= \log 2 \\
+\text{and }Q &amp;= \left[ x\cdot\tan\frac{x}{2} + 2\log\left( \cos\frac{x}{2}\right)\right]_0^{\frac\pi{2}}\\
+&amp;= \left[ \left(\frac\pi{2}\cdot\tan\frac\pi{4} + 2\log\cos\frac\pi{4}\right) - 0\right]\\
+&amp;= \frac\pi{2} + 2\log\frac{1}{\sqrt{2}}=\frac\pi{2} + 2\log (2^{-\frac{1}{2}})\\
+&amp;= \frac\pi{2} + 2\cdot\left(-\frac{1}{2}\right)\cdot\log 2 =\frac\pi{2}-\log 2\\
+\therefore A &amp;= P + Q = \log 2 + \left(\frac\pi{2} - \log 2\right) = \frac\pi{2}
+\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\frac\pi{2}-\frac{\log 2 }{2}</tex>
+      <tex>\pi-\frac{\log 2}{2}</tex>
+      <tex correct="true">\frac\pi{2} </tex>
+      <tex>\frac\pi{2}-\log 2 </tex>
+   </choices>
+</question>

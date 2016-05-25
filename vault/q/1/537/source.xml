@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Find the equation of all lines having slope -1}\\
+			\text{that are tangents to the curve}\\
+			\quad y = \dfrac{1}{x-1},x\neq 1.
+		</tex>
+      <tex>\\ \text{In which of the two graphs are points}\\
+			\text{A and B likely to have tangents with slope -1?}</tex>
+      <tex>\\ \text{Is the analysis below complete and correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex src="right.svg" isImage="true" correct="true"/>
+         <tex src="wrong.svg" isImage="true" correct="false"/>
+      </options>
+      <reason>
+         <tex>\text{A line with slope -1 would go from the}\\
+			\text{bottom-right to the top-left corner.}</tex>
+      </reason>
+   </step>
+   <step swipe="false">
+      <options>
+         <tex correct="true">
+				\begin{align}
+				\text{Tangent's slope}=\dfrac{dy}{dx}&amp;=-\dfrac{1}{(x-1)^2} \\
+				\therefore\dfrac{dy}{dx}= -1\implies -\dfrac{1}{(x-1)^2}&amp;=-1\\
+				\implies (x-1)^2=-1\implies x-1&amp;=\pm 1\\
+				\implies x&amp;=0,2
+				\end{align}
+				\\ \text{Hence, the tangents are}\\
+				\begin{tabular}{cccc}
+				x&amp; y&amp; m&amp;\text{Line} \\
+				0&amp; -1&amp; -1&amp; \dfrac{y+1}{x}=-1\implies x+y+1=0\\
+				2&amp; 1&amp; -1&amp; \dfrac{y-1}{x-2}=-1\implies x+y-3=0
+				\end{tabular}
+				</tex>
+         <tex correct="false">
+				\begin{align}
+				\text{Tangent's slope}=\dfrac{dy}{dx}&amp;=-\dfrac{1}{(x-1)^2} \\
+				\therefore\dfrac{dy}{dx}= -1\implies -\dfrac{1}{(x-1)^2}&amp;=-1\\
+				\implies (x-1)^2=-1\implies x-1&amp;= 1\\
+				\implies x&amp;=2
+				\end{align}
+				\\ \text{Hence, the tangents are}\\
+				\begin{tabular}{cccc}
+				x&amp; y&amp; m&amp;\text{Line} \\
+				2&amp; 1&amp; -1&amp; \dfrac{y-1}{x-2}=-1\implies x+y-3=0
+				\end{tabular}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{As }(x-1)^2=1\implies x-1=\pm 1,\\
+				\text{ you should get two tangents.}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\text{Just }x+y-3=0</tex>
+      <tex>\text{Just }x+y+1=0</tex>
+      <tex correct="true">x+y+1=0\text{ and }x+y-3=0</tex>
+      <tex>\text{No tangent with slope = -1 exists.}</tex>
+   </choices>
+</question>

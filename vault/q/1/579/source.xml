@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Find the intervals in which}\\
+			\quad\quad y = 10-6x-2x^2 \\
+			\text{is strictly increasing or decreasing}
+		</tex>
+      <tex>\\ \text{What will you find first?}</tex>
+      <tex>\\ \text{Is the following analysis correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\quad\quad\dfrac{dy}{dx}
+			</tex>
+         <tex correct="false">
+			\quad\text{Roots of the equation}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{To know if y is increasing/decreasing, you }\\
+			\text{need to see its rate of change - }\frac{dy}{dx}.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  \dfrac{dy}{dx}&amp;= -6 -4x = -2\cdot(2x+3) \\
+				  &amp;\gt 0\text{ when }2x+3 \lt 0\implies x\lt -\frac{3}{2}\\
+				  &amp;\lt 0\text{ when }2x + 3\gt 0\implies x\gt -\frac{3}{2}
+				\end{align}
+				\\ 
+        \begin{tabular}{cc}
+				x\lt -\frac{3}{2}&amp;\text{strictly increasing} \\
+				x\gt -\frac{3}{2}&amp;\text{strictly decreasing}
+				\end{tabular}
+				</tex>
+         <tex correct="false">
+				\begin{align}
+				  \dfrac{dy}{dx}&amp;= -6 -4x = -2\cdot(2x+3) \\
+				  &amp;\gt 0\text{ when }2x+3 \gt 0\implies x\gt -\frac{3}{2}\\
+				  &amp;\lt 0\text{ when }2x + 3\lt 0\implies x\lt -\frac{3}{2}
+				\end{align}
+				\\ \begin{tabular}{cc}
+				x\gt-\frac{3}{2}&amp;\text{strictly increasing} \\
+				x\lt-\frac{3}{2}&amp;\text{strictly decreasing}
+				\end{tabular}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{You need to be careful with } - \text{ when solving}\\
+				\text{inequalities.} -2\times A\gt 0\implies 2\times A\lt 0.</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>x\lt -\frac{2}{3}\text{ (increasing)}\\
+					x\gt -\frac{2}{3}\text{ (decreasing) }</tex>
+      <tex>x\gt -\frac{2}{3}\text{ (increasing)}\\
+					x\lt -\frac{2}{3}\text{ (decreasing) }</tex>
+      <tex correct="true">x\lt -\frac{3}{2}\text{ (increasing)}\\
+					x\gt -\frac{3}{2}\text{ (decreasing) }</tex>
+      <tex>x\lt -\frac{3}{2}\text{ (decreasing)}\\
+					x\gt -\frac{3}{2}\text{ (increasing) }</tex>
+   </choices>
+</question>

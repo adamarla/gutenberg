@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Integrate the following} \\
+			\qquad \dfrac{x+2}{\sqrt{4x-x^2}}
+		</tex>
+      <tex>\\ \underbrace{x+2}_{\text{Numerator}} = A\cdot\dfrac{d}{dx}(4x-x^2) + B.\\
+			\text{What are A and B equal to?}</tex>
+      <tex>\\ \text{Which of the following would is the}\\
+				\text{correct way to re-write }\int\dfrac{x+2}{\sqrt{4x-x^2}}dx?</tex>
+      <tex>\\ \text{What will }M = -\frac{1}{2}\int\dfrac{4-2x}{\sqrt{4x-x^2}}dx \\
+  		\text{evaluate to?}</tex>
+      <tex>\\ \text{Has }N = 4\int\dfrac{dx}{\sqrt{4x-x^2}}dx\text{ been evaluated }\\
+  		\text{correctly below?}</tex>
+      <tex>\\ \text{And so, the final answer is }\ldots</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{align}
+			  A &amp;= -\frac{1}{2} \\
+			  B &amp;= 4
+			\end{align}
+			</tex>
+         <tex correct="false">
+			\begin{align}
+			  A &amp;= \frac{1}{2} \\
+			  B &amp;= -4
+			\end{align}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{If }x + 2 = A\cdot\underbrace{4-2x}_{\frac{d}{dx}(4x-x^2)},\text{ then} \\
+			x + 2 = -2Ax + (4A+B)\\
+			\implies -2A = 1 \text{ or }A=-\frac{1}{2}\text{ and } B = 4.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  \int\dfrac{x+2}{\sqrt{4x-x^2}}dx &amp;= 
+				  \underbrace{-\frac{1}{2}\int\dfrac{4-2x}{\sqrt{4x-x^2}}}_{M} \\
+				  &amp;+ \underbrace{4\int\dfrac{dx}{\sqrt{4x-x^2}}_{N}
+				\end{align}
+				</tex>
+         <tex correct="false">
+					\begin{align}
+				  \int\dfrac{x+2}{\sqrt{4x-x^2}}dx &amp;= 
+				  \underbrace{\int\dfrac{4-2x}{\sqrt{4x-x^2}}}_{M} \\
+				  &amp;+ \underbrace{\int\dfrac{dx}{\sqrt{4x-x^2}}}_{N}
+				\end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{We know that }x+2 = -\frac{1}{2}(4-2x) + 4. \\
+				\therefore \int\dfrac{x+2}{\sqrt{4x-x^2}}dx = -\frac{1}{2}\int\dfrac{4-2x}{\sqrt{4x-x^2}}\\
+				+ 4\int\dfrac{dx}{\sqrt{4x-x^2}}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+  		\begin{align}
+  		\text{If } t = 4x-x^2 \text{ then }dt &amp;= (4-2x)\cdot dx \\
+  		\therefore -\frac{1}{2}\int\dfrac{4-2x}{\sqrt{4x-x^2}}dx &amp;= 
+  		-\frac{1}{2}\int\dfrac{dt}{\sqrt{t}} \\
+  		&amp;= -\frac{1}{2}\cdot\frac{1}{\frac{1}{2}}\sqrt{t} + C_1 \\
+  		&amp;= -\sqrt{t} + C_1 \\
+  		&amp;= -\sqrt{4x-x^2} + C_1
+   		\end{align}
+  		</tex>
+         <tex correct="false">
+  		\begin{align}
+  		\text{If } t = 4x-x^2 \text{ then }dt &amp;= (4-2x)\cdot dx \\
+  		\therefore -\frac{1}{2}\int\dfrac{4-2x}{\sqrt{4x-x^2}}dx &amp;= 
+  		-\frac{1}{2}\int\dfrac{dt}{\sqrt{t}} \\
+  		&amp;= -\frac{1}{2}\sqrt{t} + C_1 \\
+  		&amp;= -\frac{\sqrt{t}}{2} + C_1 \\
+  		&amp;= -\frac{\sqrt{4x-x^2}}{2} + C_1
+   		\end{align}
+  		</tex>
+      </options>
+      <reason>
+         <tex>\text{If }t = 4x-x^2,\text{ then }M = -\frac{1}{2}\int\dfrac{dt}{\sqrt{t}} \\
+  		= -\frac{1}{2}\int t^{-\frac{1}{2}}\cdot dt.\text{ Apply }\int t^n dt = \dfrac{t^{n+1}}{n+1} + C \\
+  		\text{ with }n=-\frac{1}{2}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+  		\begin{align}
+  		4x-x^2 &amp;= (4x-x^2 -4) + 4 \\
+  		&amp;= -(x-2)^2 + 4 \\
+  		&amp;= 2^2-(x-2)^2\\
+  		\therefore 4\int\dfrac{dx}{\sqrt{4x-x^2}}dx &amp;= 4\int\dfrac{dx}{\sqrt{2^2-(x-2)^2}} \\
+  		&amp;= 4\sin^{-1}\dfrac{x-2}{2} + C_2
+  		\end{align}
+  		</tex>
+      </options>
+      <reason>
+         <tex>\text{If you can see that }4x-x^2 = 2^2-(x-2)^2,\text{ then } \\
+  		\text{N looks quite like }\int\dfrac{dx}{\sqrt{a^2-x^2}}.\\
+  		\text{ Use that known result.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+  		\begin{align}
+  		\int\dfrac{x+2}{\sqrt{4x-x^2}}dx &amp;= -\frac{\sqrt{4x-x^2}}{2} \\
+  		&amp;+ 4\sin^{-1}\dfrac{x-2}{2} + C
+  		\end{align}
+  		</tex>
+      </options>
+      <reason>
+         <tex>\int\dfrac{x+2}{\sqrt{4x-x^2}}dx = \underbrace{M}_{Step 3} - \underbrace{N}_{Step 4}.\\
+  		\text{Simple as that.}</tex>
+      </reason>
+   </step>
+</question>

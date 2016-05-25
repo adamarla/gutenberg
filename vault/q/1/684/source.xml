@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Differentiate the following function}\\
+			\text{with respect to x}\\
+			\quad f(x) = \cos\sin x 
+		</tex>
+      <tex>\\ \text{If f and g be two functions such that} \\
+			\qquad \cos (\sin x) = f(\, g(x)\, ), \\
+			\text{then what are f and g?}</tex>
+      <tex>\\ \textbf{Right or wrong? } \text{Given } y = (f\circ g)(x), \frac{dy}{dx} \\
+				\text{will evaluate to the following.}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\qquad f(x) = \cos x, g(x) = \sin x 
+			</tex>
+         <tex correct="false">
+			\qquad f(x) = \sin x, g(x) = \cos x
+			</tex>
+      </options>
+      <reason>
+         <tex>\begin{tabular}{|c|c|c|c|}
+			\hline
+			f(x) &amp; g(x) &amp; f(\, g(x)\, ) &amp;\text{Notation} \\
+			\hline 
+			\cos x &amp; \sin x &amp; \cos (\sin x) &amp; (f\circ g)(x) \\
+			\hline
+			\end{tabular}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  \dfrac{d}{dx}y &amp;= \dfrac{d}{d g(x)}f(\, g(x)\,)\cdot\dfrac{d}{dx}g(x) \\
+				  &amp;= \dfrac{d}{d g(x)}\cos g(x)\cdot\dfrac{d}{dx}g(x) \\ 
+				  &amp;= -\sin g(x)\cdot \cos x \\
+				  &amp;= -\sin (\sin x)\cdot \cos x
+				\end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{If }y = f(\, g(x)\,) = (f\circ g)(x),\text{ then }\\
+				\quad \underbrace{\frac{dy}{dx} = 
+				\frac{d}{d g(x)}f(\, g(x)\,)\cdot\frac{d}{dx}g(x)}_{\textbf{Chain Rule}}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">-\sin(\sin x)\cdot \cos x</tex>
+      <tex>-\sin x</tex>
+      <tex>-\sin (\sin x)</tex>
+      <tex>\cos x \cdot \sin x</tex>
+   </choices>
+</question>

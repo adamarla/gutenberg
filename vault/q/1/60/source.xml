@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>%text
+Commander Spock of Star Trek fame would 
+like to invest some money for a period of 2
+\underline\text{Vulcan years} (1 Vulcan year = 2 Earth years)
+
+He can choose one of two banks - Bank E on 
+planet Earth or Bank V on planet Vulcan.
+
+Bank E offers $3\%$ compound interest every
+\underline\text{6 Earth months} while Bank V offers $6\%$ 
+compound interest \underline\text{once every Vulcan year}.
+Which bank should Spock choose to get 
+greater returns? 
+%</tex>
+      <tex>\\ %text
+Over a period of \underline\text{2 Vulcan years}, how many
+times will the money compound in the 
+two banks (Bank E and Bank V) ? 
+%</tex>
+      <tex>\\ %text
+Given the number of compounding periods, 
+which bank will give the \underline\text{larger final amount}
+at the end of 2 Vulcan years? 
+\textbf{Use: } $(1.03)^4 = 1.13, (1.06)^2=1.124$
+%</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">\begin{tabular}{|c|c|}
+\hline 
+&amp; \text{\# times money will compound} \\
+\hline 
+\text{Bank E} &amp; 8 \\
+\hline
+\text{Bank V} &amp; 2 \\
+\hline 
+\end{tabular} </tex>
+         <tex>\begin{tabular}{|c|c|}
+\hline 
+&amp; \text{\# times money will compound} \\
+\hline 
+\text{Bank E} &amp; 4 \\
+\hline
+\text{Bank V} &amp; 2 \\
+\hline 
+\end{tabular} </tex>
+      </options>
+      <reason>
+         <tex>%text
+\underline\text{2 Vulcan years = 4 Earth years} 
+
+As Bank E compounds money \underline\text{twice} every 
+\underline\text{Earth year} (once every 6 Earth months),
+therefore over 4 Earth years, it would have 
+compounded the money $=4\times 2 = 8$ times. 
+
+Similarly, Bank V compounds money \underline\text{once} 
+every \underline\text{1 Vulcan year}. 
+
+Therefore, over 2 Vulcan years, it would 
+compound the money $=2\times 1 = 2$ times. 
+%</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">%text
+\textbf{Bank E}. Spock should put his money with 
+the bank on Earth. 
+%</tex>
+         <tex>%text
+\textbf{Bank V}. Spock should put his money with 
+the bank on Vulcan.. 
+%</tex>
+      </options>
+      <reason>
+         <tex>%text
+If Spock puts in Rs. P initially (the principal), 
+then at the \underline\text{end of 2 vulcan years}, he would
+get the following \underline\text{final amounts}.
+
+%
+
+\begin{tabular}{|c|c|c|c|}
+\hline 
+&amp;  \text{Interest} &amp; \text{Final amount} &amp; \text{Equals} \\
+\hline 
+\text{Bank E} &amp; 3\% &amp; \underbrace{P\cdot\left( 1 + \frac{3}{100}\right)^8}_{(1.03)^8 = (1.03^4)^2 = (1.13)^2} &amp; 1.28P \\
+\hline 
+\text{Bank V}  &amp; 6\% &amp; P\cdot\left( 1+\frac{6}{100}\right)^2 &amp; 1.124P \\
+\hline
+\end{tabular}
+%text
+
+It is obvious that Spock's money will grow 
+more on Earth. And hence, he should invest 
+his money with \underline\text{Bank E}. 
+%</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\text{Either. They will both give the same returns}.</tex>
+      <tex>\text{Bank V on Vulcan}.
+</tex>
+      <tex correct="true">\text{Bank E on Earth}.</tex>
+      <tex>
+</tex>
+   </choices>
+</question>

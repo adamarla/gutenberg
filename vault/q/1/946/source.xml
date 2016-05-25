@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Integrate the following}\\
+			\qquad \tan^{-1}x  \\
+			\text{using integration by parts.}
+		</tex>
+      <tex>\\ \text{Given }\int f(x)g(x) dx = f\cdot\int g dx - \int \left[ f' \cdot\int g dx\right] dx\\
+			\text{which would be the better choice for }f(x)\text{ and }g(x)?</tex>
+      <tex>\\ \text{Given }f(x) = \tan^{-1}x \text{ and }g(x) = 1,\\
+    		\text{has the integral been evaluated correctly below?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{align}
+			  f(x) &amp;= \tan^{-1}x \\
+			  g(x) &amp;= 1
+			\end{align}
+			</tex>
+         <tex correct="false">
+			\begin{align}
+			  f(x) &amp;= 1 \\
+			  g(x) &amp;= \tan^{-1}x
+			\end{align}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{There is a nice rule of thumb - called ILATE} \\ 
+			\text{to help you decide what f(x) and g(x) should be.}\\
+			\text{Basically, f(x) is the function that matches first.}\\
+			\begin{tabular}{c|c|c}
+			I &amp; Inverse Trig &amp; \tan^{-1}x = f(x)\\
+			\hline
+			L &amp; Logarithm &amp; - \\
+			\hline
+			A &amp; Algebra &amp; 1=x^0=g(x) \\
+			\hline
+			T &amp; Trigonometric &amp;  \\
+			\hline
+			E &amp; Exponential &amp; - \\
+			\hline
+			\end{tabular}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+    		\begin{align}
+    		  I &amp;= \int\tan^{-1}x\cdot dx \\
+    		  &amp;= \tan^{-1}x\int 1\cdot dx - \int \left[\frac{d}{dx}\tan^{-1}x\cdot\int dx\right]\cdot dx \\
+    		  &amp;= x\cdot\tan^{-1}x - \underbrace{\int\dfrac{x}{1+x^2}\cdot dx}_{\text{Put }y = 1+x^2}\\
+    		  &amp;= x\cdot\tan^{-1}x -\dfrac{1}{2}\int\dfrac{dy}{y} \\
+    		  &amp;= x\cdot\tan^{-1}x -\frac{1}{2}\cdot\log\vert 1+x^2\vert + C 
+    		\end{align}
+    		</tex>
+      </options>
+      <reason>
+         <tex>\text{Standard stuff. First, expand I using } \\
+    		\int f\cdot g dx = f\int g\cdot dx - \int (f'\cdot\int g\cdot dx)\cdot dx \\
+    		\text{And for evaluating }\int\frac{x}{1+x^2}\cdot dx, \\ 
+    		\text{ let } y=1+x^2 \implies x\cdot dx = \frac{dy}{2}</tex>
+      </reason>
+   </step>
+</question>

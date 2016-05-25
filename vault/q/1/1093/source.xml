@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+		\text{If the function }\\
+		\quad f(x) = 2x^3-9mx^2 + 12m^2x + 1,\\
+		\text{where }m\gt 0\text{ attains its maximum and}\\
+		\text{minimum values at p and q respectively}\\
+		\text{such that }p^2 = q,\text{ then find the value of }m.
+		</tex>
+      <tex>\\ \textbf{At p and q}\\
+			\text{We don't know what the values of p}\\
+			\text{and q are. But nevertheless, would the}\\
+			\text{following be true at p and q?}</tex>
+      <tex>\\ \text{Given }f(x) = 2x^3-9mx^2 + 12m^2x + 1, \\
+      \dfrac{d}{dx}f(x) = 0 \implies ?</tex>
+      <tex>\\ \text{Your friend makes the following claim.}\\
+					\text{Is his claim right or wrong?}</tex>
+      <tex>\\ \textbf{Value of m}\\
+						\text{Given that maxima is at }x=m\text{ and }\\
+						\text{minima at }x = 2m,\text{ m equals the following.}\\
+						\textbf{Right or wrong?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{tabular}{|c|c|c|}
+			 \hline
+			   &amp; \frac{d}{dx}f(x) &amp; \frac{d^2}{dx^2}f(x) \\
+			  \hline 
+			  p &amp; 0 &amp; \lt 0 \\
+			  \hline
+			  q &amp; 0 &amp; \gt 0 \\
+			  \hline
+			\end{tabular}
+			</tex>
+         <tex correct="false">
+			\begin{tabular}{|c|c|c|}
+			 \hline
+			   &amp; \frac{d}{dx}f(x) &amp; \frac{d^2}{dx^2}f(x) \\
+			  \hline 
+			  p &amp; \gt 0 &amp; \lt 0 \\
+			  \hline
+			  q &amp; \lt 0 &amp; \gt 0 \\
+			  \hline
+			\end{tabular}
+			</tex>
+      </options>
+      <reason>
+         <tex>\dfrac{dy}{dx} = 0\text{ will only tell you which points}\\
+			\text{could be maxima or minima. But it}\\
+			\text{wouldn't tell you what exactly they are.}\\
+			\text{For that you need to see }\dfrac{d^2y}{dx^2}.\\
+			
+			\begin{tabular}{|c|c|c|l|}
+			 \hline
+			   &amp; \frac{d}{dx}f(x) &amp; \frac{d^2}{dx^2}f(x) &amp; \text{Why?} \\
+			  \hline 
+			  p &amp; 0 &amp; \lt 0 &amp; \text{Maxima} \\
+			  \hline
+			  q &amp; 0 &amp; \gt 0 &amp; \text{Minima}\\
+			  \hline
+			\end{tabular} \\
+			\textbf{Note: }\frac{dy}{dx} = 0\text{ is no guarantee that}\\
+			\text{the point is a maxima or minima. It could}\\
+			\text{be neither. Think }x = 0\text{ in } y = x^3.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\qquad x = m, 2m
+				</tex>
+         <tex correct="false">
+				\qquad x = -m, 2m
+				</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+				  \dfrac{d}{dx}f(x) &amp;= \dfrac{d}{dx}2x^3-9mx^2 + 12m^2x + 1 \\
+				  &amp;= 6x^2 - 18mx + 12m^2 \\
+				  &amp;= 6\cdot(x^2 - 3mx + 2m) \\
+				  &amp;= 6\cdot (x-m)\cdot (x-2m)
+				\end{align} \\
+				\text{Hence, }\dfrac{d}{dx}f(x) =0 \text{ when } x = m, 2m.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+					\quad\text{Maxima at }x=m,\text{ Minima at }x=2m. 
+					</tex>
+         <tex correct="false">
+					\quad\text{Maxima at }x=2m,\text{ Minima at }x=m. 
+					</tex>
+      </options>
+      <reason>
+         <tex>\text{Find }\dfrac{d^2y}{dx^2}\text{ to know the nature}\\
+					\text{of the extrema (maxima or minima).} \\
+					\begin{align}
+					  \dfrac{df(x)}{dx} &amp;= 6\cdot(x^2 - 3mx + 2m) \\
+					  \implies \dfrac{d^2 y}{dx^2} &amp;= 6\cdot (2x - 3m)
+					\end{align} \\
+					\textbf{Remember, }\text{ we already have two}\\
+					\text{candidate points, }x=m\text{ and } x=2m. \\
+					
+					\begin{tabular}{|c|c|c|}
+					\hline
+					&amp;\text{Condition} &amp;\text{Only if}\ldots \\
+					\hline
+					\text{Maxima} &amp; 2x - 3m\lt 0 &amp; x = m\\
+					\hline
+					\text{Minima} &amp; 2x-3m\gt 0 &amp; x = 2m \\
+					\hline
+					\end{tabular}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+						\qquad m = 2
+						</tex>
+         <tex correct="false">
+						\qquad m =0,2
+						</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+						  \text{Maxima } &amp;= p = m \\
+						  \text{Minima } &amp;= q = p^2 = 2m \\
+						  \implies m^2 &amp;= 2m \implies m\cdot (m-2) = 0 \\ 
+						  \implies m &amp;=0,2
+						\end{align} \\
+						\text{But }m \gt 0.\text{Therefore, only }m=2\text{ is}\\
+						\text{an acceptable solution.}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>0,2</tex>
+      <tex correct="true">2</tex>
+      <tex>1,2</tex>
+      <tex>1,3</tex>
+   </choices>
+</question>

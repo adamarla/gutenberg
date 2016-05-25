@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>\text{A balloon, which always remains spherical }\\
+    \text{on inflation, is being inflated by pumping in}\\
+    \text{gas at 900 cm$^3$/s. Find the rate at which the }\\
+    \text{radius of the balloon is increasing when the}\\
+    \text{radius is 15 cm.}</tex>
+      <tex>\\ \text{What do we know and what are we being asked?}</tex>
+      <tex>\\ \text{Does the following look right?}</tex>
+      <tex>\\ \text{Are the calculations correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+    		\quad\text{Given: }\frac{dV}{dT} = 900\text{ cm$^3$/s} \\
+    		\quad\text{Find: }\left[\frac{dR}{dT}\right]_{R=15}
+    		</tex>
+         <tex correct="false">
+    		\quad\text{Given: R = \text{15 cm}}\\
+    		\quad\text{Find: }\left[\frac{dR}{dT}\right]_{R=15}
+    		</tex>
+      </options>
+      <reason>
+         <tex>\text{We know }\frac{dV}{dT}=900\text{ cm$^3$/s. We need }\frac{dR}{dT}.</tex>
+      </reason>
+   </step>
+   <step swipe="false">
+      <options>
+         <tex correct="true">\begin{align}
+V &amp;= \frac{4}{3}\pi\cdot R^3 \\
+\implies\frac{dV}{dt} &amp;= \frac{4}{3}\pi\cdot
+\left( 3R^2\cdot\frac{dR}{dt} \right) \\
+&amp;= 4\pi r^2\frac{dR}{dt}
+\end{align}</tex>
+         <tex>\begin{align}
+V &amp;= \frac{2}{3}\pi\cdot R^3 \\
+\implies\frac{dV}{dt} &amp;= \frac{2}{3}\pi\cdot
+\left( 3R^2\cdot\frac{dR}{dt} \right) \\
+&amp;= 2\pi r^2\frac{dR}{dt}
+\end{align}</tex>
+      </options>
+      <reason>
+         <tex>\text{The volume of a sphere is given by }V=\frac{4}{3}\pi R^3.\\
+\text{And so, }\frac{dV}{dt} = \frac{4}{3}\pi\cdot 3R^2\cdot\frac{dR}{dt}
+= 4\pi R^2\frac{dR}{dt}</tex>
+      </reason>
+   </step>
+   <step swipe="false">
+      <options>
+         <tex correct="true">\begin{align}
+\left[ \frac{dV}{dt}\right]_{R=15} &amp;= 900\text{ cm$^3$/s}
+=4\pi\cdot (15 cm)^2\cdot\frac{dR}{dt}\\
+\implies\frac{dR}{dt} &amp;= \dfrac{900 cm^3/s}{4\pi\cdot (15 cm)^2} = \frac{1}\pi\text{ cm/s}
+\end{align}</tex>
+         <tex>\begin{align}
+\left[ \frac{dV}{dt}\right]_{R=15} &amp;= 900\text{ cm$^3$/s}
+=4\pi\cdot (15 cm)\cdot\frac{dR}{dt}\\
+\implies\frac{dR}{dt} &amp;= \dfrac{900 cm^3/s}{4\pi\cdot (15 cm)} 
+= \frac{15}\pi\text{ cm$^2$/s}
+\end{align}</tex>
+      </options>
+      <reason>
+         <tex>\text{Check the calculations if you got them wrong. Moreover,}\\
+\text{notice that the units of }\frac{dR}{dt}\text{ should be cm/s.}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\frac{15}{\pi}\text{ cm$^2$/s}</tex>
+      <tex>\text{60 cm/s}</tex>
+      <tex correct="true">\frac{1}{\pi}\text{ cm/s}</tex>
+      <tex>\text{45 cm/s}</tex>
+   </choices>
+</question>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Which of the points - A,B,C or D - in} \\
+			\text{the complex plane below are the roots} \\
+			\text{the equation} \\
+			  \qquad 21x^2-28x+10 = 0
+		</tex>
+      <tex src="plot.svg" isImage="true" correct="false"/>
+      <tex>\\ \text{Your friend claims the following} \\
+			\text{about what the roots are.}\\
+			\textbf{Is he/she correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\text{The roots of the equation are} \\
+			\quad A = \left(\dfrac{2}{3} + \dfrac{\sqrt{14}}{21}\iota\right)\text{ and }
+			B = \left(\dfrac{2}{3}-\dfrac{\sqrt{14}}{21}\iota\right)
+			</tex>
+         <tex correct="false">
+			\text{The roots of the equation are} \\
+			\quad C = \left(-\dfrac{2}{3} + \dfrac{\sqrt{14}}{21}\iota\right)\text{ and }
+			D = \left(-\dfrac{2}{3}-\dfrac{\sqrt{14}}{21}\iota\right)
+			</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+			  21x^2-28x+10 &amp;= 0 \\ 
+			  \implies x &amp;= \underbrace{\dfrac{28\pm\sqrt{784-4\cdot 21\cdot 10}}{2\times 21}}_{x = \dfrac{-b\pm\sqrt{b^2-4ac}}{2a}} \\
+			  &amp;= \dfrac{28\pm\sqrt{-56}}{42} = \dfrac{28\pm 2\sqrt{14}\iota}{42} \\
+			  &amp;= \dfrac{2}{3}\pm \dfrac{\sqrt{14}}{21}\iota\implies\text{A and B}
+			\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\text{C and D}</tex>
+      <tex correct="true">\text{A and B}</tex>
+      <tex>\text{B and C}</tex>
+      <tex>\text{A and D}</tex>
+   </choices>
+</question>

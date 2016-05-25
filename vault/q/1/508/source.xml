@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>%text
+For the following to be true
+\[ \qquad (A-B)\cap (C-B) = A-(B\star C') \] 
+the $\star$ should be replaced with which
+of the following --- \underline\text{$\cup,\cap$ or $-$} ?
+%</tex>
+      <tex>\\ %text
+Which of the figures below correctly 
+shows what $(A-B)\cup (B-C)$ is? 
+%</tex>
+      <tex>\\ %text
+\textbf{Check our work}
+Given the Venn diagram from the 
+last step, \underline\text{is the analysis below correct}?
+%</tex>
+      <tex>\\ \text{Your friend now says, }\\
+					\textit{If you do the following, then you can find}\\
+					\textit{out what }\star\text{ is. }
+					\textbf{But is your friend correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex src="1-right.svg" isImage="true" correct="true"/>
+         <tex src="1-wrong.svg" isImage="true" correct="false"/>
+      </options>
+      <reason>
+         <tex>A-B\text{ is the set of elements that are} \\
+			\underline{\text{exclusively}}\text{ in A. Mathematically,}\\
+			\quad x\in (A-B)\implies x\in A, x\notin B.\\
+			\text{Similarly, }x\in (C-B)\implies x\in C, x\notin B. \\
+			\text{And therefore, }\\
+			x\in (A-B)\cap(C-B)\implies x\in A, x\in C, x\notin B.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\begin{align}
+				  (A-B)\cap (C-B) &amp;= (A\cap B')\cap (C\cap B') \\
+				  &amp;= A\cap (B'\cap B')\cap C \\
+				  &amp;= A\cap (C\cap B')
+				\end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>x\notin B\implies x\in B'.\text{ And therefore,}\\
+				\begin{align}
+				\text{If }x\in (A-B)&amp;\implies x\in A, x\notin B, \text{ then }\\  
+				x\in (A-B)&amp;\implies x\in A, x\in B'\\
+				&amp;\implies x\in A\cap B'.
+				\end{align} \\
+				\text{This is why }\\
+				\begin{align}
+				  A - B &amp;= A\cap B' \text{ and }\\
+				  C-B &amp;= C\cap B'
+				\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+					\begin{align}
+					  (A-B)\cap(C-B) &amp;= A\cap (C\cap B') \\ 
+					  &amp;= A\cap [(C\cap B')']' \\
+					  &amp;= A - (C\cap B')' \\
+					  \implies \star &amp;= \cup
+					\end{align}
+					</tex>
+         <tex>
+					\begin{align}
+					  (A-B)\cap(C-B) &amp;= A\cap (C\cap B') \\ 
+					  &amp;= A\cap [(C\cap B')']' \\
+					  &amp;= A - (C\cap B')' \\
+					  \implies \star &amp;= \cap
+					\end{align}
+					</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+					  (A-B)\cap(C-B) &amp;= A\cap (C\cap B') \to \text{Step 2}\\ 
+					  &amp;= A\cap \underbrace{[\overbrace{(C\cap B')}^{X}\,'\,]\,'}_{X = (X')\,'} \\
+					  &amp;= \underbrace{A - (C\cap B')'}_{A\cap (X')\,' = A-X'} \\
+					  &amp;= A - \underbrace{(C'\cup B)}_{\text{De-Morgan's Law}} \\
+					  &amp;= A - (C'\star B) \\
+					  \implies \star &amp;= \cup
+					\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\star = \cap</tex>
+      <tex correct="true">\star = \cup</tex>
+      <tex>\star = -</tex>
+      <tex>\text{None of the above.}</tex>
+   </choices>
+</question>

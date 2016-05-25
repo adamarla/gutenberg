@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+		\text{A balloon is released at eye-level 23 meters}\\
+		\text{before you. You watch it rise, tracking it with}\\
+		\text{your eyes. The balloon rises at a rate of 2 m/s.}\\
+		\text{After 10 seconds, how fast is your neck} \\
+		\text{tilting back (in radians per second)?}
+		</tex>
+      <tex>\\ \text{If }\theta\text{ be the angle at which your neck is}\\
+			\text{tilted at time T, then is the following true?}</tex>
+      <tex>\\ \textbf{Right or wrong?} \\
+				\text{If }\tan\theta = \dfrac{2T}{23},\text{ then at time }T = 10s, \\
+				\dfrac{d\theta}{dT}\text{ will equal the following.}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\quad \tan\theta = \dfrac{2T}{23}
+			</tex>
+         <tex correct="false">
+			\quad \tan\theta = \dfrac{23}{T}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{If you're at A, the balloon was released}\\
+			  \text{from B and is now at C, then }\\
+			  \begin{align}
+			    AB &amp;= 23\text{ meters } \\
+			    \text{and }BC &amp;= 2m/s\cdot Ts = 2T\text{ meters}\\
+			    \implies\tan\theta &amp;= \dfrac{BC}{AB} = \dfrac{2T}{23}
+			  \end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\quad \left[\dfrac{d\theta}{dT}\right]_{T=10s} = \dfrac{46}{929}\text{ radians/sec.}
+				</tex>
+         <tex correct="false">
+				\quad \left[\dfrac{d\theta}{dT}\right]_{T=10s} = \dfrac{32}{547}\text{ radians/sec.}
+				</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+				  \tan\theta &amp;= \dfrac{2T}{23} \implies \dfrac{d}{dT}\tan\theta = 
+				  \dfrac{2}{23} \\
+				  &amp;=  \sec^2\theta\cdot\dfrac{d\theta}{dT} = (1+\tan^2\theta)\cdot\dfrac{d\theta}{dT} \\
+				  \implies\dfrac{d\theta}{dT} &amp;= \dfrac{2}{23\cdot (1+\tan^2\theta)} \\
+				  &amp;= \dfrac{2}{23}\cdot\dfrac{1}{1+\left(\frac{2T}{23}\right)^2} = \dfrac{46}{529 + 4T^2}\\
+				  \therefore \left[\dfrac{d\theta}{dT}\right]_{T=10s} &amp;= \dfrac{46}{529 + 4\cdot 10^2} 
+				  = \dfrac{46}{929}\text{ rad/sec.}
+				\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\dfrac{32}{547}\text{ radians/sec.}</tex>
+      <tex>\dfrac{37}{529}\text{ radians/sec.}</tex>
+      <tex correct="true">\dfrac{46}{929}\text{ radians/sec.}</tex>
+      <tex>\dfrac{41}{92}\text{ radians/sec.}</tex>
+   </choices>
+</question>

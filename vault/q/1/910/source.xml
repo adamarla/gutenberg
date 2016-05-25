@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>\text{Integrate the following}\\
+\qquad \dfrac{x+3}{(x^2-2x-5)}</tex>
+      <tex>\\ \text{If }\underbrace{x+3}_{\text{Numerator}} = 
+  		A\cdot\dfrac{d}{dx}(x^2-2x-5) + B \\
+  		\text{then what are A and B?}</tex>
+      <tex>\\ \text{Which of the following shows the correct}\\
+  		\text{way to re-write }\int\dfrac{x+3}{(x^2-2x-5)}dx?</tex>
+      <tex>\\ \text{If }M = \frac{1}{2}\int\dfrac{2x-2}{x^2-2x-5}dx, \\
+  		\text{then has M been evaluated correctly below?}</tex>
+      <tex>\\ \text{And if }N = \int\dfrac{dx}{(x^2-2x-5)}dx, \text{then would}\\
+  			\text{N be the following?}</tex>
+      <tex>\\ \text{And so, is this the final answer?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+  		\begin{align}
+  		  A &amp;=\frac{1}{2} \\
+  		  B &amp;= 4
+  		\end{align}
+  		</tex>
+         <tex correct="false">
+  		\begin{align}
+  		  A &amp;= -\frac{1}{2} \\
+  		  B &amp;= 2 
+  		\end{align}
+  		</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+      x+3 &amp;= A\cdot\frac{d}{dx}(x^2-2x-5) + B \\
+      \implies x+3 &amp;= 2Ax + (B-2A) \\
+      \implies 2A=1\text{ or }A&amp;=\frac{1}{2}\text{ and }\therefore B = 4
+      \end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+  			\begin{align}
+  			  \int\dfrac{x+3}{(x^2-2x-5)}dx &amp;= 
+  			  \frac{1}{2}\int\dfrac{2x-2}{x^2-2x-5}dx \\
+  			  &amp;+ 4\int\dfrac{dx}{(x^2-2x-5)}dx
+  			\end{align}
+  			</tex>
+         <tex correct="false">
+  			\begin{align}
+  			  \int\dfrac{x+3}{(x^2-2x-5)}dx &amp;= 
+  			  \int\dfrac{2x-2}{x^2-2x-5}dx \\
+  			  &amp;+ \int\dfrac{dx}{(x^2-2x-5)}dx
+  			\end{align}
+  			</tex>
+      </options>
+      <reason>
+         <tex>\text{We showed that }x+3 = \frac{1}{2}\cdot(2x-2) + 4.\\
+  			\therefore \int\dfrac{x+3}{(x^2-2x-5)}dx = 
+  			\int\dfrac{\frac{1}{2}\cdot(2x-2) + 4}{(x^2-2x-5)}dx \\
+  			= \frac{1}{2}\int\dfrac{2x-2}{x^2-2x-5}dx + 4\int\dfrac{dx}{(x^2-2x-5)}dx</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+  		\begin{align}
+  		  \text{Let }t &amp;= x^2-2x-5 \implies dt = (2x-2)\cdot dx\\
+  		  \therefore M &amp;= \frac{1}{2}\int\dfrac{2x-2}{x^2-2x-5}dx = \frac{1}{2}\int\dfrac{dt}{t}\\
+        &amp;= \frac{1}{2}\log t = \frac{1}{2}\cdot\log\vert x^2-2x-5\vert + C_1
+  		\end{align}
+  		</tex>
+      </options>
+      <reason>
+         <tex>\text{With } t=x^2-2x-5, dt = (2x-2)\cdot dx.\text{ And so,} \\
+      \int\dfrac{2x-2}{x^2-2x-5}dx\rightarrow\int\dfrac{dt}{t}\rightarrow\log\vert t\vert + C_1.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+  			\begin{align}
+  			  x^2-2x-5 &amp;= \left[\left(x-1\right)^2 - 6\right] \\
+  			  &amp;= \left[\left(x-1\right)^2-(\sqrt{6})^2\right] \\
+  			  \therefore N &amp;= 4\int\dfrac{dx}{\left(x-1\right)^2
+  			  -(\sqrt{6})^2 }dx\\  			
+  			  &amp;= \dfrac{4}{2\sqrt{2}}\cdot\log\left| \dfrac{(x-1)-\sqrt{6}}{(x-1) + \sqrt{6}}\right| + C_2\\
+  			  &amp;= \dfrac{2}{\sqrt{6}}\cdot\log\left| \dfrac{(x-1)-\sqrt{6}}{(x-1) + \sqrt{6}}\right| + C_2
+  			\end{align}
+  			</tex>
+      </options>
+      <reason>
+         <tex>\text{As }x^2-2x-5 = (x-1)^2-(\sqrt{6})^2\\
+      \int\dfrac{dx}{(x^2-2x-5)}dx\rightarrow\int\dfrac{dx}{\left(x-1\right)^2-(\sqrt{6})^2 }dx.\\
+      \text{Then use the standard result for, }\int\dfrac{dx}{x^2-a^2}.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+  		\begin{align}
+  		&amp;\int\dfrac{x+3}{(x^2-2x-5)}dx = \dfrac{1}{2}\log\vert x^2-2x-5\vert \\
+  		&amp;+ \dfrac{2}{\sqrt{6}}\cdot\log\left| \dfrac{(x-1)-\sqrt{6}}{(x-1) + \sqrt{6}}\right| + C
+  		\end{align}
+  		</tex>
+      </options>
+      <reason>
+         <tex>\int\dfrac{x+3}{(x^2-2x-5)}dx = \underbrace{M}_{\text{Step 3}} 
+  		+\underbrace{N}_{\text{Step 4}}. \\
+  		\text{Nothing more complicated than that.}</tex>
+      </reason>
+   </step>
+</question>

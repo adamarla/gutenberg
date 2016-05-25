@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>%text
+Evaluate the following 
+\[\qquad \int \dfrac{x+2}{\sqrt{(x-2)\cdot(x-3)}}\cdot dx \]
+%</tex>
+      <tex>\\ \textbf{Completing the squares}\\
+%text
+If \[(x-2)\cdot(x-3) = u^2 - a^2 \], then what
+are \underline\text{'u' and 'a'}?
+%</tex>
+      <tex>\\ %text
+Given the results from Step 1, the integral 
+can be re-written as 
+\[I = \int\frac{x+2}{\sqrt{(x-2)\cdot(x-3)}}dx = \int\frac{u + b}{\sqrt{u^2-a^2}}du\]
+But \underline\text{what is the value of 'b'}?
+%</tex>
+      <tex>\\ %text
+In \[I = \int\frac{u+\frac{9}{2}}{\sqrt{u^2-a^2}}\cdot du \]
+\[= \underbrace{\int\frac{u\cdot du}{\sqrt{u^2-a^2}}}_A + \underbrace{\frac{9}{2}\int\frac{du}{\sqrt{u^2-a^2}}}_B\], 
+what will \underline\text{'A' evaluate to in terms of x}?
+%</tex>
+      <tex>\\ %text
+Similarly, what will \underline\text{'B' evaluate to} in
+\[I = \underbrace{\int\frac{u\cdot du}{\sqrt{u^2-a^2}}}_A + \underbrace{\frac{9}{2}\int\frac{du}{\sqrt{u^2-a^2}}}_B\], 
+%</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">\begin{align}
+u &amp;= \left(x-\frac{5}{2}\right) \\
+a &amp;= \frac{1}{2}
+\end{align}</tex>
+         <tex>\begin{align}
+u &amp;= \left(x+\frac{5}{2}\right) \\
+a &amp;= \frac{1}{4}
+\end{align}</tex>
+      </options>
+      <reason>
+         <tex>%text
+If you see a $\frac{1}{\sqrt{ax^2+bx+c}}$ type term in an
+integral, then try re-writing the term as 
+$\frac{1}{\sqrt{(x-p)^2\pm q^2}}$. Usually, life becomes simpler.
+
+That said,
+%
+\begin{align}
+(x-2)\cdot(x-3) &amp;= x^2-5x + 6 \\
+&amp;= \underbrace{\left( x-\frac{5}{2}\right)^2}_{= x^2-5x + \frac{25}{4}} -\frac{25}{4} + 6 \\
+&amp;= \left(x-\frac{5}{2}\right)^2 -\frac{1}{4} \\
+&amp;=  \left(x-\frac{5}{2}\right)^2 -\left(\frac{1}{2}\right)^2 \\
+\implies u &amp;= \left(x-\frac{5}{2}\right) \\ 
+a &amp;= \frac{1}{2}
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">b = \frac{9}{2}</tex>
+         <tex>b = \frac{7}{2}</tex>
+      </options>
+      <reason>
+         <tex>%text
+In Step 1, we established that 
+%
+\begin{align}
+u = \left(x-\frac{5}{2}\right)&amp;\text{ and }a=\frac{1}{2} \\
+\implies du &amp;= dx  \\
+\text{and }\sqrt{(x-2)\cdot(x-3)} &amp;= \sqrt{u^2-a^2}
+\end{align}\\
+%text
+
+But notice also that
+%
+\begin{align}
+x+2 &amp;= \underbrace{\left(x-\frac{5}{2}\right)}_{u} + \left(\frac{5}{2}+2\right) = u + \frac{9}{2} \\
+\therefore b &amp;= \frac{9}{2}\text{ and } I = \int\frac{u + \frac{9}{2}}{\sqrt{u^2-a^2}}du 
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">A = \sqrt{(x-2)\cdot (x-3)} + C_1 </tex>
+         <tex>A = \frac{1}{\sqrt{(x-2)\cdot (x-3)}} + C_1 </tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+I &amp;= \int\frac{u + \frac{9}{2}}{\sqrt{u^2-a^2}} du \\
+&amp;= \underbrace{\int \frac{u\cdot du}{\sqrt{u^2-a^2}}}_A 
++\frac{9}{2}\cdot\underbrace{\int\frac{du}{\sqrt{u^2-a^2}}}_B 
+\end{align}\\
+\underline{\text{In A, let }u^2-a^2 = z } \\
+\begin{align}
+\therefore 2u\cdot du &amp;= dz\implies u\cdot du = \frac{dz}{2} \\
+\therefore A &amp;= \int\frac{u\cdot du}{\sqrt{u^2-a^2}} = \frac{1}{2}\int\frac{dz}{\sqrt{z}} \\
+&amp;= \frac{1}{2}\cdot\frac{\sqrt{z}}{\frac{1}{2}} = \sqrt{z} = \sqrt{u^2-a^2}\\
+&amp;= \sqrt{(x-2)\cdot(x-3)}
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">B = \frac{9}{2}\log\left\vert\left( x-\frac{5}{2}\right)  + \sqrt{(x-2)\cdot(x-3)}\right\vert  +C_2 </tex>
+         <tex>B = \frac{9}{2}\log\left\vert x+ \sqrt{(x-2)\cdot(x-3)}\right\vert  +C_2 </tex>
+      </options>
+      <reason>
+         <tex>%text
+To find 'B', simply use the \underline\text{standard result}
+%
+\begin{align}
+B &amp;= \frac{9}{2}\int\frac{du}{\sqrt{u^2-a^2}} = \frac{9}{2}\log\vert u + \sqrt{u^2-a^2}\vert  \\
+\text{But }u &amp;= \left(x-\frac{5}{2}\right)\text{ and }\\
+&amp;\sqrt{u^2-a^2}=\sqrt{(x-2)\cdot(x-3)} \\
+\therefore B &amp;= \frac{9}{2}\log\left\vert\left( x-\frac{5}{2}\right)  + \sqrt{(x-2)\cdot(x-3)}\right\vert  
+\end{align} \\
+%text
+
+You now have expressions for both 'A' and 'B'. 
+Hence, you can now write the integral 
+$I = A+B$ in terms of x.
+%</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">\begin{align}
+I &amp;= \sqrt{(x-2)\cdot(x-3)} \\
+&amp;+ \frac{9}{2}\log\left\vert\left( x-\frac{5}{2}\right)  + \sqrt{(x-2)\cdot(x-3)}\right\vert + C
+\end{align}</tex>
+      <tex>\begin{align}
+I &amp;=\frac{1}{\sqrt{(x-2)\cdot (x-3)}}  \\
+&amp;+ \frac{9}{2}\log\left\vert x+ \sqrt{(x-2)\cdot(x-3)}\right\vert + C
+\end{align}</tex>
+      <tex>\begin{align}
+I &amp;=  \frac{1}{\sqrt{(x-2)\cdot (x-3)}} \\
+&amp;+ \frac{9}{2}\log\left\vert\left( x-\frac{5}{2}\right)  + \sqrt{(x-2)\cdot(x-3)}\right\vert + C
+\end{align}</tex>
+      <tex>\begin{align}
+I &amp;= \sqrt{(x-2)\cdot(x-3)} \\
+&amp;+ \frac{9}{2}\log\left\vert x+ \sqrt{(x-2)\cdot(x-3)}\right\vert + C
+\end{align}</tex>
+   </choices>
+</question>

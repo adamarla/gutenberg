@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>%text
+Evaluate \[ \int\frac{\sec^2 x}{3 + \tan x}\cdot dx \]
+%</tex>
+      <tex>\\ %text
+If \[ I = \int\frac{\sec^2 x}{3 + \tan x}\cdot dx = \int \frac{d\phi}\phi \], then
+\underline\text{what is $\phi$ in terms of $x$}?
+%</tex>
+      <tex>\\ %text
+With the substitution done in Step 1, will 
+the integral \underline\text{evaluate to the following}? 
+%</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">\phi = 3 + \tan x </tex>
+         <tex>\phi  = \tan x </tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+\text{If }3 + \tan x &amp;= \phi\text{ then }\sec^2 x\cdot dx = d\phi \\
+\therefore I &amp;= \int\frac{\sec^2 x}{3 + \tan x}\cdot dx = \int \frac{d\phi}\phi
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true"> I = \log\vert 3 + \tan x \vert + C </tex>
+         <tex>I = -\frac{1}{(3+\tan x)^2} + C</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+I &amp;= \int\frac{d\phi}\phi = \log\vert \phi \vert + C \\ 
+\text{But }\phi &amp;= 3 + \tan x \\ 
+\therefore I &amp;= \log \vert 3 + \tan x \vert + C 
+\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\log3\cdot \log \vert \tan x \vert + C </tex>
+      <tex>-\frac{1}{(3+\tan x)^2} + C</tex>
+      <tex correct="true">\log\vert 3 + \tan x \vert + C </tex>
+      <tex>\log\vert \tan x \vert + C </tex>
+   </choices>
+</question>

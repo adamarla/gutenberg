@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Evaluate the following}\\
+			\qquad \left[i^{18} + \left(\dfrac{1}{i}\right)^{25}\right]^3
+		</tex>
+      <tex>\\ \textbf{Right or wrong? } \text{The terms A and B}\\
+			\text{(as shown below) will evaluate to the following.}\\
+			\quad \underbrace{i^{18}}_A + \underbrace{\left(\dfrac{1}{i}\right)^{25}}_B</tex>
+      <tex>\\ \textbf{Right or wrong? } \text{Given the values}\\
+				\text{of }i^{18}\text{ and }\frac{1}{i^{25}}, \left[i^{18} + \left(\dfrac{1}{i}\right)^{25}\right]^3\\
+				\text{will evaluate to the following.}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{tabular}{|c|c|}
+			\hline
+			\text{Term} &amp; \text{Equals} \\
+			  \hline
+			  i^{18} &amp; -1 \\
+			  \hline 
+			  \left(\frac{1}{i}\right)^{25} &amp; -i \\
+			  \hline
+			\end{tabular}
+			</tex>
+         <tex correct="false">
+			\begin{tabular}{|c|c|}
+			\hline
+			  \text{Term} &amp; \text{Equals} \\
+			  \hline
+			  i^{18} &amp; 1 \\
+			  \hline 
+			  \left(\frac{1}{i}\right)^{25} &amp; i \\
+			  \hline
+			\end{tabular}
+			</tex>
+      </options>
+      <reason>
+         <tex>\textbf{Recall that }i^4 = (i^2)^2 = (-1)^2 = 1. \\
+			\text{And more generally, } (i^4)^N = i^{4N} = 1^N = 1.\\
+			\text{Therefore, }\\
+			\begin{tabular}{|c|c|}
+			\hline
+			\text{Term} &amp; \text{Equals} \\
+			\hline
+			  i^{18} &amp; i^{16}\cdot i^2 = 1\cdot i^2 = -1 \\
+			  \hline 
+			  \left(\frac{1}{i}\right)^{25} &amp; 
+			  \dfrac{1}{i^{24}\cdot i } = \dfrac{1}{1\cdot i} = \dfrac{i}{i^2} = -i \\
+			  \hline
+			\end{tabular}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\qquad 2-2i
+				</tex>
+         <tex correct="false">
+				2+ 2i
+				</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+				  &amp;\left[i^{18} + \left(\dfrac{1}{i}\right)^{25}\right]^3 = (-1-i)^3 \\
+				  &amp;= -1^3\cdot (1+i)^3 \\ 
+				  &amp;= -1\cdot\underbrace{( 1^3 + 3\cdot 1^2\cdot i + 3\cdot 1\cdot i^2 + i^3)}_
+				  {(a+b)^3 = a^3+3a^2b + 3ab^2 + b^3} \\
+				  &amp;= -1\cdot (1 + 3i - 3 - i) = 2-2i 
+				\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>-4 - 2i</tex>
+      <tex>2+2i</tex>
+      <tex correct="true">2-2i</tex>
+      <tex>-2-2i</tex>
+   </choices>
+</question>

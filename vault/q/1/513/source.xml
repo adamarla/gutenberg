@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+		\text{If }\lfloor x\rfloor\text{ is the greatest integer function, then} \\
+		\text{for what values of 'x' would the following}\\
+		\text{be true?} \\
+		\qquad \lfloor x\rfloor^2 -9\lfloor x\rfloor + 14 = 0
+		</tex>
+      <tex>\\ \textbf{The greatest integer function.}\\
+			\text{Are the values given below for the greatest}\\
+			\text{integer function correct?}</tex>
+      <tex>\\ \text{Given what }\lfloor x\rfloor\text{ is, would the following}\\
+				\text{values of }\underline{\text{x}}\text{ satisfy the given equation?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{tabular}{|c|c|}
+			\hline 
+			x &amp; \lfloor x\rfloor \\ 
+			\hline
+			-2.4 &amp; -3 \\
+			\hline
+			-0.65 &amp; -1 \\
+			\hline 
+			0.85 &amp; 0 \\
+			\hline
+			2.99 &amp; 2 \\
+			\hline
+			\end{tabular}
+			</tex>
+         <tex correct="false">
+		  \begin{tabular}{|c|c|}
+			\hline 
+			x &amp; \lfloor x\rfloor \\ 
+			\hline
+			-2.4 &amp; -2 \\
+			\hline
+			-0.65 &amp; 0 \\
+			\hline 
+			0.85 &amp; 1 \\
+			\hline
+			2.99 &amp; 3 \\
+			\hline
+			\end{tabular}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{The greatest integer function gives the}\\
+			\underline{\text{largest integer less than}}\text{ the number,}\\
+			\underline{\text{not}}\text{ the integer closest to it.} \\
+			\text{Which is why }
+			\begin{align}
+			  \lfloor 2.99\rfloor &amp;= 2 \text{ (not 3)}\\
+			  \lfloor -2.4\rfloor &amp;= -3 \text{ (not -2)}
+			\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\quad x\in [2,3)\cup [7,8)
+				</tex>
+         <tex correct="false">
+				\quad x = 2,3 
+				</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+				  \lfloor x\rfloor^2 -9\lfloor x\rfloor + 14 &amp;= 0 \\
+				  \implies (\lfloor x \rfloor - 2)\cdot (\lfloor x \rfloor - 7) &amp;= 0 \\
+				  \implies \lfloor x \rfloor &amp;= 2,7
+				\end{align} \\
+				\text{But remember, there are \underline{\text{infinite values of x}}\\
+				\text{for which }\lfloor x \rfloor = 2\text{ and }\lfloor x \rfloor = 7. \\
+				\text{For example, }\\
+				\lfloor 2.4 \rfloor = \lfloor 2 \rfloor = \lfloor 2.99 \rfloor = 2 \\
+				\text{Hence, we can infer that }\\
+				\begin{align}
+				  \lfloor x \rfloor &amp;= 2 \implies x\in [2,3) \\
+				  \lfloor x \rfloor &amp;= 7 \implies x\in [7,8)
+				\end{align} \\
+				\text{Therefore, }x\in [2,3)\cup [7,8).</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>x = 2,7</tex>
+      <tex correct="true">x\in [2,3)\cup [7,8)</tex>
+      <tex>x\in (2,3)\cup (7,8)</tex>
+      <tex>x\in (2,3]\cup (7,8]</tex>
+   </choices>
+</question>

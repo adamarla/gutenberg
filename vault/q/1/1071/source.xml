@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Find the modulus and argument of}\\
+			\text{the complex number }\dfrac{1+2\iota}{1-3\iota}
+		</tex>
+      <tex>\\ \textbf{Right or wrong? } \\
+			\text{When expressed in standard form } \\
+			(z = x+\iota y),\dfrac{1+2\iota}{1-3\iota}\text{ equals the following.}</tex>
+      <tex>\\ \text{Given }z = \dfrac{1+2\iota}{1-3\iota} = -\dfrac{1}{2} + \dfrac{\iota}{2},\\
+				\text{is the following analysis correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\dfrac{1+2\iota}{1-3\iota} = -\frac{1}{2}+ \frac{\iota}{2}
+			</tex>
+         <tex correct="false">
+			\dfrac{1+2\iota}{1-3\iota} = \frac{1}{2} - \frac{\iota}{2}
+			</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+			    \dfrac{1+2\iota}{1-3\iota} &amp;= \dfrac{1+2\iota}{1-3\iota}\cdot\dfrac{1+3\iota}{1+3\iota} \\
+			    &amp;= \dfrac{1 + 5\iota + 6\iota^2}{1^2 + 3^2} \\
+			    &amp;= \dfrac{-5 + 5\iota}{10} = -\dfrac{1}{2} + \dfrac{\iota}{2}
+			\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="false">
+				\begin{align}
+				  z &amp;= -\dfrac{1}{2} + \dfrac{\iota}{2} \\
+				  \implies \vert z\vert &amp;= \sqrt{\left(-\frac{1}{2}\right)^2 + \left(\frac{1}{2}\right)^2} 
+				  = \frac{1}{\sqrt{2}} \\
+				  \text{ and }\tan\underbrace{\theta}_{arg(z)} &amp;= \underbrace{\dfrac{y}{x}}_{z = x+\iota y}
+				  = \dfrac{\frac{1}{2}}{-\frac{1}{2}} = -1 \\
+				  \implies arg(z) &amp;= -\frac{\pi}{4}
+				\end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>\vert z\vert\text{ is correct. But }arg(z)\text{ is not.}\\
+				\text{Here is why. }\\
+				\text{In }z = -\frac{1}{2} + \frac{\iota}{2} = \vert z\vert\cdot(\cos\theta + \iota\sin\theta), \\
+				\begin{align}
+				  -\frac{1}{2} &amp;= \vert z\vert \cos\theta \implies \cos\theta = -\frac{1}{\sqrt{2}} \\
+				  \frac{1}{2} &amp;= \vert z\vert\sin\theta\implies \sin\theta = \frac{1}{\sqrt{2}}
+				\end{align} \\
+				\text{So, we are looking for a }\theta\text{ whose }\\
+				\cos\theta\lt 0\text{ and }\sin\theta\gt 0 \implies\text{ second quadrant.}\\
+				\text{And given that }\tan\theta = -1, \theta = \frac{3\pi}{4}.</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">\text{Modulus} = \frac{1}{\sqrt{2}}, \text{ argument} = \frac{3\pi}{4}</tex>
+      <tex>
+    				\text{Modulus} = \sqrt{2}, \text{ argument} = -\frac{\pi}{4}
+    				</tex>
+      <tex>
+    				\text{Modulus} = \sqrt{2}, \text{ argument} = \frac{3\pi}{4}
+    				</tex>
+      <tex>
+    				\text{Modulus} = \frac{1}{\sqrt{2}}, \text{ argument} = -\frac\pi{4}
+    				</tex>
+   </choices>
+</question>

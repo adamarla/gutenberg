@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>%text
+A cooperative society of farmers has 50 hectares
+of land to grow two crops A and B. The profits
+from crops A and B per hectare are estimated
+as &#8377; 10,500 and &#8377; 9000 respectively. To
+control weeds, a liquid herbicide has to be 
+used for crops A and B at the rate of 20 litres
+and 10 litres per hectare respectively. Further
+not more than 800 litres of herbicide should
+be used in order to protect fish and wildlife 
+using a pond which collects drainage from 
+this land. Keeping in mind that the protection
+and other wildlife is more important than
+earning profit, how much land should be
+allocated to each crop so as to maximize
+the total profit? Form an LPP from the above
+and solve it graphically.
+%</tex>
+      <tex>\\ %text
+Given that 
+%
+\begin{tabular}{|c|c|}
+\hline 
+\text{Symbol} &amp; \text{Meaning} \\
+\hline 
+L_A &amp; \text{Land allocated to crop A} \\
+\hline 
+L_B &amp; \text{Land allocated to crop B} \\
+\hline
+\end{tabular}\\
+%text
+\underline\text{is the following correct?}
+%</tex>
+      <tex>\\ %text
+Does the graph below correctly show the
+constraints we identified in Step 1 and also
+the \underline\text{ feasible region and optimal points}?
+%</tex>
+      <tex>\\ \textbf{Right or wrong?} \\
+%text
+Given the constraints, the maximum 
+possible profit will be as follows. 
+%</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">\begin{tabular}{|c|c|}
+\hline 
+&amp; \text{Constraint} \\ 
+\hline 
+\text{Land} &amp; L_A+L_B \leq 50 \\ 
+\hline 
+\text{Herbicide} &amp; 2L_A + L_B \leq 80 \\
+\hline 
+\end{tabular}\\
+%text
+\underline\text{Maximize} profit $(\pi) = 10,500\cdot L_A + 9000\cdot L_B$
+%</tex>
+         <tex>\begin{tabular}{|c|c|}
+\hline 
+&amp; \text{Constraint} \\ 
+\hline 
+\text{Land} &amp; L_A+L_B \leq 50 \\ 
+\hline 
+\text{Herbicide} &amp; L_A + 2L_B \leq 80 \\
+\hline 
+\end{tabular}\\
+%text
+\underline\text{Maximize} profit $(\pi) = 9000\cdot L_A + 10,500\cdot L_B$
+%</tex>
+      </options>
+      <reason>
+         <tex>%text
+Begin the problem by collecting all the facts. 
+
+\underline{\text{Available land}}\\
+We don't have more than 50 hectares of land. 
+Hence, $L_A + L_B \leq 50$. 
+
+\underline\text{Herbicide}\\
+We would need 20 litres\it{ per hectare} of 
+herbicide for crop A and 10 litres \it{per hectare} 
+for crop B. 
+
+Hence, we would need $20L_A + 10L_B$. But we 
+we cannot use more than 800 litres total.  
+So, $20L_A + 10L_B\leq 800 \implies 2L_A + L_B \leq 80.$
+
+\underline\text{Profit}\\
+And we must maximize profits.
+\[ \text{Profit} = \pi = 10,500\cdot L_A + 9,000\cdot L_B \]
+%</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex src="right.svg" isImage="true" correct="true"/>
+         <tex src="wrong.svg" isImage="true" correct="false"/>
+      </options>
+      <reason>
+         <tex>%text
+If we plot $L_A$ along the x-axis and $L_B$ along
+the y-axis, then the two lines we need are
+%
+\begin{align}
+L_B &amp;= 80 - 2L_A \\ 
+L_B &amp;= 50 - L_A 
+\end{align}
+%text
+
+You can confirm that 
+%
+\begin{tabular}{|c|c|c|c|c|}
+\hline 
+a &amp; b &amp; c &amp; d &amp; e \\ 
+\hline 
+(0,80) &amp; (0,50) &amp; (30,20) &amp; (40,0) &amp; (50,0) \\
+\hline
+\end{tabular} \\
+%text
+Moreover, as we have to satisfy both constraints
+(on land and herbicide use), the feasible region
+has to \underline\text{below points b,c and d}.
+
+Only points in this region are below \underline\text{both}
+the lines. 
+%</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\text{&#8377; 495,000}</tex>
+         <tex>\text{&#8377; 450,000}</tex>
+      </options>
+      <reason>
+         <tex>%text
+We identified three possible optimal
+points in Step 2. We now only have to 
+calculate the profit at each of these 
+points and compare. 
+%
+\begin{tabular}{|c|c|c|}
+\hline 
+\text{Point} &amp; \text{Coordinates }(L_A,L_B) &amp; \text{Profit} \\
+\hline 
+b &amp; (0,50) &amp; &#8377; 450,000 \\
+\hline 
+c &amp; (30,20) &amp; &#8377; 495,000 \\
+\hline
+d &amp; (40,0) &amp; &#8377; 420,000 \\
+\hline 
+\end{tabular} \\
+%text
+It is obvious from the table that with 30 
+hectares given to crop A and 20 hectares
+to crop B, our profits will be maximum.
+%</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>%text
+Crop A: 50 hectares
+Crop B: 0 hectares
+%</tex>
+      <tex>%text
+Crop A: 0 hectares
+Crop B: 40 hectares
+%</tex>
+      <tex>%text
+Crop A: 40 hectares
+Crop B: 10 hectares
+%</tex>
+      <tex correct="true">%text
+Crop A: 30 hectares
+Crop B: 20 hectares
+%</tex>
+   </choices>
+</question>

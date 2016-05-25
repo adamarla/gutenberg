@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Find the slope of the tangent to the curve}\\
+			\quad y = x^3-3x+2 \\
+			\text{at the point whose x-coordinate is 3.}
+		</tex>
+      <tex>\\ \text{Is the following correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{align}
+			  \dfrac{d}{dx}y&amp;= \dfrac{d}{dx}(x^3-3x+2) \\
+			  &amp;= 3x^2 - 3 \\
+			  \implies\left[\dfrac{dy}{dx}\right]_{x=3}&amp;= 3\times 9 - 3 = 24.
+			\end{align}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{Simply differentiate and find value using }x=3.</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>9</tex>
+      <tex correct="true">24</tex>
+      <tex>18</tex>
+      <tex>17</tex>
+   </choices>
+</question>

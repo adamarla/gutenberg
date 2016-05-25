@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Is the function }f(x) = \sin x \text{ strictly }\\
+			\text{increasing, decreasing or neither in }\\
+			\text{(a) }\left(0,\frac{\pi}{2}\right)\quad\text{(b) }\left(\frac{\pi}{2},\pi\right) \\
+			\text{(c) }\left(0,\pi\right)
+		</tex>
+      <tex>\\ \text{When is a function }f(x)\text{ strictly increasing?}</tex>
+      <tex>\\ \text{Is the following true for }f(x)\text{ when }x\in \left(0,\frac{\pi}{2}\right)?</tex>
+      <tex>\\ \text{What about when }x\in \left(\frac{\pi}{2},\pi\right)?</tex>
+      <tex>\\ \text{And what if }x \in \left(0,\pi\right)?</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{align}
+			\text{When }a \gt b&amp;\implies f(a) \gt f(b) \\
+			\implies\frac{d}{dx}f(x)&amp;\gt 0
+			\end{align}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{Similarly, }f(x)\text{ is strictly decreasing if }\\
+			a \lt b \implies f(a)\lt f(b)\implies\frac{d}{dx}f(x)\lt 0.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  \frac{d}{dx}\sin x &amp;= \cos \\
+				  \text{and }\cos x&amp;\gt 0\text{ for }x\in \left(0,\frac{\pi}{2}\right)
+				\end{align}
+				\\ \text{Hence, }f(x)\text{ is strictly increasing in }\left(0,\frac{\pi}{2}\right)
+				</tex>
+         <tex correct="false">
+				\begin{align}
+				  \frac{d}{dx}\sin x &amp;= \cos \\
+				  \text{and }\cos x&amp;\gt 0\text{ for }x\in \left(0,\frac{\pi}{2}\right)
+				\end{align}
+				\\ \text{But }\cos x\text{ decreases from 1 to 0 in }\left(0,\frac{\pi}{2}\right).\\
+				\text{Hence, }\sin x\text{ is decreasing.}
+				</tex>
+      </options>
+      <reason>
+         <tex>\cos x\text{ might be decreasing in }\left(0,\frac{\pi}{2}\right). \text{But its }\\
+				\text{still }\gt 0. \text{Hence, }\sin x \text{ is strictly increasing.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+					\quad\quad\frac{d}{dx}\sin x = \cos \lt 0\text{ for }x\in \left(\frac{\pi}{2},\pi\right)
+					\\ \text{Hence, }\sin x\text{ is strictly decreasing for }
+					x\in \left(\frac{\pi}{2},\pi\right)
+					</tex>
+      </options>
+      <reason>
+         <tex>\text{As before, the only thing that matters is the sign }\\
+					\text{of }\frac{d}{dx}f(x)\text{ in an interval.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+					f(x)=\sin x\text{ increases in }\left(0,\frac{\pi}{2}\right)\text{ but decreases}\\
+					\text{in }\left(\frac{\pi}{2},\pi\right).\text{ Hence, its neither increasing}\\
+					\text{nor decreasing in }\left(0,\pi\right)
+					</tex>
+      </options>
+      <reason>
+         <tex>f(x)=\sin x\text{ both increases and decreases in }\left(0,\pi\right).\\
+					\text{Hence, it can be said to be neither.}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\text{(a) decreasing (b) decreasing (c) increasing}</tex>
+      <tex correct="true">\text{(a) increasing (b) decreasing (c) neither}</tex>
+      <tex>\text{(a) increasing (b) decreasing (c) decreasing}</tex>
+      <tex>\text{(a) increasing (b) increasing (c) neither}</tex>
+   </choices>
+</question>

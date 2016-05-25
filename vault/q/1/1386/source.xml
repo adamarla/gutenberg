@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>%text
+Find $\dfrac{dy}{dx}$ if \[ y = \cot^{-1}\left[ \dfrac{\sqrt{1+\sin x} + \sqrt{1-\sin x}}{\sqrt{1+\sin x} - \sqrt{1-\sin x}}\right] \]
+%</tex>
+      <tex>\\ %text
+\textbf{Picking a line-of-attack}
+Shown below are two possible ways of 
+starting to solve the problem. One of them
+\underline\text{is more elegant} than the other. \underline\text{Which one}?
+%</tex>
+      <tex>\\ %text
+What will be get when we rationalize 
+\[ \qquad P(x) = \left[ \dfrac{\sqrt{1+\sin x} + \sqrt{1-\sin x}}{\sqrt{1+\sin x} - \sqrt{1-\sin x}}\right] \]
+as decided in Step 1? 
+%</tex>
+      <tex>\\ %text
+Given that \[ P(x) = \frac{\sin x}{1-\cos x} \], what will $\frac{dy}{dx}$ be?
+Remember, \[ y = \cot^{-1} P(x) \]
+%</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">%text
+\textbf{Rationalize and simplify }
+
+%
+\begin{align}
+\text{Let }P(x) &amp;= \left[ \dfrac{\sqrt{1+\sin x} + \sqrt{1-\sin x}}{\sqrt{1+\sin x} - \sqrt{1-\sin x}}\right] \\ 
+&amp;= \left[ \dfrac{\sqrt{X} + \sqrt{Y}}{\sqrt{X} - \sqrt{Y}} \right] \\
+&amp;= \left[ \dfrac{\sqrt{X} + \sqrt{Y}}{\sqrt{X} - \sqrt{Y}} \right]\cdot
+\dfrac{\sqrt{X}-\sqrt{Y}}{\sqrt{X}-\sqrt{Y}} \\
+&amp;= \dfrac{X-Y}{(\sqrt{X}-\sqrt{Y})^2}
+\end{align}
+</tex>
+         <tex>\textbf{Start with Chain Rule} \\
+\begin{align}
+ y &amp;= \cot^{-1}\left[ \dfrac{\sqrt{1+\sin x} + \sqrt{1-\sin x}}{\sqrt{1+\sin x} - \sqrt{1-\sin x}}\right] \\
+ \text{or }y &amp;= \cot^{-1} P(x) \\
+ \therefore \frac{dy}{dx} &amp;= \underbrace{\frac{d}{d P(X)}\cot^{-1} P(x)\cdot \frac{d}{dx} P(x) }_{\text{Chain Rule}}
+\end{align}</tex>
+      </options>
+      <reason>
+         <tex>%text
+\[ P(x) =  \left[ \dfrac{\sqrt{1+\sin x} + \sqrt{1-\sin x}}{\sqrt{1+\sin x} - \sqrt{1-\sin x}}\right]\] 
+looks like a complicated expression. 
+
+You can try differentiating it. But the algebra 
+could get very complicated very quickly. 
+
+Hence, try instead to \underline\text{simplify P(x)} using
+rationalization. 
+
+If P(x) can be turned into something simpler, 
+then all subsequent work will also get easier. 
+%</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">P(x) = \dfrac{\sin x}{1-\cos x} </tex>
+         <tex>P(x) = \dfrac{\cos x}{1 + \cos x} </tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+P(x) &amp;= \left[ \dfrac{\sqrt{1+\sin x} + \sqrt{1-\sin x}}{\sqrt{1+\sin x} - \sqrt{1-\sin x}}\right] \\
+&amp;= \underbrace{\left[ \dfrac{\sqrt{X} + \sqrt{Y}}{\sqrt{X} - \sqrt{Y}} \right]\cdot
+\dfrac{\sqrt{X}-\sqrt{Y}}{\sqrt{X}-\sqrt{Y}}}_{\text{See Step 1}} \\
+&amp;= \dfrac{X-Y}{(\sqrt{X} - \sqrt{Y})^2} \\
+&amp;= \dfrac{(1+\sin x) - (1-\sin x)}{\left[ \sqrt{1+\sin x} - \sqrt{1-\sin x}\right]^2} \\
+&amp;= \dfrac{2\sin x}{\underbrace{(1+\sin x) + (1-\sin x) -2\sqrt{1-\sin^2 x}}_{(a-b)^2 = a^2+b^2-2ab}}\\
+&amp;= \dfrac{2\sin x}{2-2\cos x} = \dfrac{\sin x}{1-\cos x}
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\dfrac{dy}{dx} = \frac{1}{2} </tex>
+         <tex>\dfrac{dy}{dx} = 1</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+y &amp;= \cot^{-1} P(x) = \cot^{-1} \dfrac{\sin x}{1-\cos x} \\
+&amp;= \cot^{-1}\left[\dfrac{2\sin\frac{x}{2}\cdot\cos\frac{x}{2}}
+{2\sin^2\frac{x}{2}}\right] \\
+&amp;= \cot^{-1}\left[ \cot\frac{x}{2}\right] = \frac{x}{2} \\
+\therefore y &amp;= \frac{x}{2} \implies \frac{dy}{dx} = \frac{1}{2}
+\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>1</tex>
+      <tex>\frac{1}{\sqrt{1-x^2}}</tex>
+      <tex correct="true">\frac{1}{2}</tex>
+      <tex>\frac{x}{2}</tex>
+   </choices>
+</question>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Differentiate the following } \\
+			\quad f(x) = \log (\cos e^x)\\
+			\text{with respect to x.}\\
+		</tex>
+      <tex>\\ \text{If }\log (\cos  e^x) = f(\, g(\, h(x)\,)\,), \\
+			\text{then what are f,g and h?}</tex>
+      <tex>\\ \text{Given that }y = \log ( \cos  e^x)\text{ is of the form }\\
+		(f\circ g\circ h)(x),\text{ has }\frac{dy}{dx}\text{ been evaluated}\\
+		\text{correctly below?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{tabular}{|c|c|c|}
+			\hline
+			f(x) &amp; g(x) &amp; h(x) \\
+			\hline
+			\log x &amp; \cos x &amp; e^x \\
+			\hline
+      \end{tabular}			 
+			</tex>
+         <tex correct="false">
+			\begin{tabular}{|c|c|c|}
+			\hline
+			f(x) &amp; g(x) &amp; h(x) \\
+			\hline
+			\cos x &amp; e^x &amp; \log x \\
+			\hline
+      \end{tabular}			 
+			</tex>
+      </options>
+      <reason>
+         <tex>\begin{tabular}{|c|c|c|c|}
+			\hline
+			f(x) &amp; g(x) &amp; h(x) &amp; f(\,g(\,h(x)\,)\, ) \\
+			\hline 
+			\log x &amp; \cos x &amp; e^x &amp; f(\,g(e^x)\,)\\
+			&amp; &amp; &amp; = f(\,\cos (e^x )\,) \\
+			&amp; &amp; &amp; = \log(\,\cos  e^x\,) \\
+			\hline
+			\end{tabular} \\
+			f(\,g(\,h(x)\,)\,)\textbf{ is normally written as }(f\circ g\circ h)(x). \\
+			\textbf{And just for fun }\\
+			\begin{tabular}{|c|c|}
+			\hline
+			(g\circ f\circ h)(x) &amp; \cos(\log e^x) \\
+			\hline
+			(h\circ g\circ f)(x) &amp; e^{\cos(\log x)} \\
+			\hline
+			(h\circ f\circ g)(x) &amp; e^{\log (\cos x)} \\
+			\hline
+			\end{tabular}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+		\begin{align}
+		  y &amp;= \log  \cos  e^x = f(\, g(\, h(x)\,)\,) \\
+		  &amp;\implies \dfrac{dy}{dx} = \dfrac{df}{dg}\cdot\dfrac{dg}{dh}\cdot\dfrac{dh}{dx} \\
+		  &amp;= \dfrac{d\log\left(\cos e^x\right)}{d\cos e^x} 
+		  \times\dfrac{d\cos e^x}{de^x}\times \dfrac{d e^x}{dx} \\
+		  &amp;= \dfrac{1}{\cos e^x}\cdot (-\sin e^x ) \cdot e^x = -e^x\cdot\tan e^x
+		\end{align}
+		</tex>
+      </options>
+      <reason>
+         <tex>\text{If }y = f(\, g(x)\,) = (f\circ g)(x),\text{ then }\\
+				\quad \underbrace{\frac{dy}{dx} = 
+				\frac{d}{d g(x)}f(\, g(x)\,)\cdot\frac{d}{dx}g(x)}_{\textbf{Chain Rule}} \\
+				\textbf{In this question, however, } y = f(\, g(\, h(x)\, )\,). \\
+				\text{Hence, the expression for }\frac{dy}{dx}\text{ is a little longer.}\\
+				\text{But the idea is the same. } \\
+				\text{Also note the following}\\
+				\dfrac{d}{d f(x)}\log f(x) = \dfrac{1}{f(x)}\text{ and } \\
+				\dfrac{d}{d f(x)}\cos f(x) = -\sin f(x).</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>e^x\sin (e^x)\cdot\cos (e^x)</tex>
+      <tex>-\dfrac{e^x}{\cos e^x}</tex>
+      <tex>\tan (e^x)</tex>
+      <tex correct="true"> -e^x\tan (e^x)</tex>
+   </choices>
+</question>

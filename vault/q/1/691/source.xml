@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Differentiate the following } \\
+			\qquad f(x) = \log (\log x), x\gt 1 \\
+			\text{with respect to x.}
+		</tex>
+      <tex>\\ \text{Your friend has the following to say}\\
+			\text{about the condition }x\gt 1. \\
+			\textbf{Is he/she correct?}</tex>
+      <tex>\\ \text{Given that f(x) is defined for }x\gt 1, \\
+				\text{will }\frac{d}{dx}f(x)\text{ evaluate to the following?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			x\gt 1\text{ is important because }\log (\log x) \\
+			\text{is defined only if }\log x\gt 0.\\
+			\text{And }\log x\gt 0\text{ only if }x\gt 1.
+			</tex>
+         <tex correct="false">
+			x\gt 1\text{ is probably not important.}\\
+			\text{In fact, as }\log x\text{ is defined for }x\gt 0, \\
+			\text{the only condition should be }x\gt 0.
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{If f(x) is not defined for some x, then how}\\
+			\text{can f'(x) be? That is why it is important to}\\
+			\text{where all f(x) is defined. That said, } \log y\\
+      \text{is defined if }y\gt 0. \\
+			\textbf{But if } y = \log x,\text{ then }\log (\log x)\text{ is defined if}\\
+			\log x\gt 0 \implies x \gt 1.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  \dfrac{d}{dx}\log(\log x) &amp;= \dfrac{d}{d\log x}\log(\log x)
+				  \cdot\dfrac{d}{dx}\log x \\
+				  &amp;= \dfrac{1}{\log x}\cdot\dfrac{1}{x} = \dfrac{1}{x\cdot\log x}, x\gt 1.
+				\end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+				  f(x) &amp;= \log (\log x), x\gt 1 \\
+				  \implies \dfrac{d}{dx}f(x) &amp;= 
+				  \underbrace{\dfrac{d}{d\log x}\log(\log x)
+				  \cdot\dfrac{d}{dx}\log x}_{\text{Chain Rule}}
+				\end{align} \\
+				\text{Also, note the standard result - }\dfrac{d}{dy}\log y = \dfrac{1}{y}.</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\dfrac{1}{x}</tex>
+      <tex>\dfrac{1}{\log x}</tex>
+      <tex correct="true">\dfrac{1}{x\cdot\log x}</tex>
+      <tex>\dfrac{x}{\log x}</tex>
+   </choices>
+</question>

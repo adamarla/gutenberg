@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+    \text{A stone is dropped into a quiet lake and}\\
+    \text{waves move in circles at the speed of}\\
+    \text{5 cm/s. At the instant when radius of the }\\
+    \text{circular wave is 8cm, how fast is the }\\
+    \text{enclosed area increasing?}
+  </tex>
+      <tex>\\ \text{If R = radius of the wave at time = T and}\\
+\text{A = enclosed area, then we have to find?}</tex>
+      <tex>\\ \text{Is the following correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">\qquad\left[\dfrac{dA}{dT}\right]_{R=8\text{ cm}}</tex>
+         <tex>\qquad\dfrac{dR}{dT}</tex>
+      </options>
+      <reason>
+         <tex>\text{We have been given }\frac{dR}{dT}=5\text{ cm/s}.\\
+\text{And we need to find }\frac{dA}{dT}.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\begin{align}
+     A &amp;= \pi\cdot R^2\implies\dfrac{dA}{dT} = 2\pi R\dfrac{dR}{dT}\\
+ \therefore \left[\dfrac{dA}{dT}\right]_{R=8\text{cm}} &amp;= 
+2\pi\cdot 8\text{ cm}\cdot 5\text{ cm/s} \\
+&amp;= 80\pi\text{ cm$^2$/s}
+\end{align}</tex>
+         <tex>\begin{align}
+     A &amp;= 4\pi\cdot R^2\implies\dfrac{dA}{dT} = 8\pi R\dfrac{dR}{dT}\\
+ \therefore \left[\dfrac{dA}{dT}\right]_{R=8\text{cm}} &amp;= 
+8\pi\cdot 8\text{ cm}\cdot 5\text{ cm/s} \\
+&amp;= 320\pi\text{ cm$^2$/s}
+\end{align}</tex>
+      </options>
+      <reason>
+         <tex>\text{The enclosed area would be }A=\pi\cdot R^2.\text{And hence,}\\
+\frac{dA}{dT} = \pi\cdot\frac{d}{dR}R^2\cdot\frac{dR}{dT}=
+2\pi\cdot R\frac{dR}{dT}.</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>320\pi\text{ cm$^2$/s}</tex>
+      <tex>40\pi\text{ cm$^2$/s}</tex>
+      <tex>60\pi\text{ cm$^2$/s}</tex>
+      <tex correct="true">80\pi\text{ cm$^2$/s}</tex>
+   </choices>
+</question>

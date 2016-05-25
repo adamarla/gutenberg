@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>%text
+Show that the height of the cylinder with
+maximum volume that can be inscribed
+in a sphere of radius $R$ is $\dfrac{2R}{\sqrt{3}}$.
+Also find the maximum volume.
+%</tex>
+      <tex>\\ %text
+In the figures below $R_C$ and $H_C$ are
+the radius and height of the cylinder. 
+
+Have the values of $R_C$ and $H_C$ been
+written correctly?
+%</tex>
+      <tex>\\ %text
+If $V$ be the volume of the cylinder, then
+given the figure from Step 1, which of the 
+following sets of statements are correct? 
+%</tex>
+      <tex>\\ \textbf{Maxima or minima?}\\
+%text
+$\theta=\frac\pi{2}$ is a non-sensical solution. But which
+of the following is true for the other extrema, 
+$\theta=\sin^{-1}\frac{1}{\sqrt{3}}$?
+%</tex>
+      <tex>\\ \textbf{Right or wrong?}\\
+%text
+The volume of this \underline{\text{maximum volume }}
+cylinder will therefore be the following.
+%</tex>
+   </statement>
+   <step>
+      <options>
+         <tex src="right.svg" isImage="true" correct="true"/>
+         <tex src="wrong.svg" isImage="true" correct="false"/>
+      </options>
+      <reason>
+         <tex>%text
+We only know the radius $R$ of the sphere,
+but not of the cylinder. 
+
+However, we can see that \underline{\text{for some $\theta$}} as 
+shown in the figure
+%
+\begin{align}
+R_C &amp;= R\cdot\cos\theta
+\end{align} 
+%text
+
+Moreover, half the cylinder lies in one 
+hemisphere and half in the other. And so, 
+%
+\begin{align}
+H_C &amp;= R\sin\theta + R\sin\theta = 2\cdot R\sin\theta
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\begin{align}
+V &amp;= 2\pi\cdot R^3\cdot (\sin\theta - \sin^3\theta) \\ 
+\dfrac{dV}{d\theta} &amp;= 2\pi R^3\cdot\cos\theta\cdot(1-3\sin^2\theta) \\
+\dfrac{dV}{d\theta} &amp;= 0\implies \theta = \frac\pi{2},\sin^{-1}\frac{1}{\sqrt{3}}
+\end{align} </tex>
+         <tex>\begin{align}
+V &amp;= 4\pi\cdot R^3\cdot (\cos\theta - \cos^3\theta) \\ 
+\dfrac{dV}{d\theta} &amp;= 4\pi R^3\cdot\sin\theta\cdot(3\cos^2\theta-1) \\
+\dfrac{dV}{d\theta} &amp;= 0\implies \theta = 0,\cos^{-1}\frac{1}{\sqrt{3}}
+\end{align} </tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+V &amp;= \pi\cdot (R_C)^2\cdot H_C = \pi\cdot (R\cos\theta)^2\cdot (2R\sin\theta) \\ 
+&amp;= (2 \pi R^3)\cdot\cos^2\theta\cdot\sin\theta \\ 
+&amp;= (2\pi R^3)\cdot (1-\sin^2\theta)\cdot \sin\theta \\ 
+&amp;= (2\pi R^3)\cdot (\sin\theta - \sin^3\theta) 
+\end{align}\\
+\begin{align}
+\therefore\dfrac{dV}{d\theta} &amp;= (2\pi\cdot R^3)\cdot (\cos\theta-3\sin^2\theta\cos\theta) \\
+&amp;= (2\pi\cdot R^3)\cdot\cos\theta\cdot(1-3\sin^2\theta) \\
+\dfrac{dV}{d\theta} &amp;= 0 \implies \cos\theta = 0\text{ or }\sin^2\theta=\frac{1}{3} \\
+\implies \theta &amp;= \underbrace{\frac\pi{2}}_{\text{non-sensical}}\text{ or }\sin^{-1}\frac{1}{\sqrt{3}}
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\dfrac{d^2V}{d\theta^2} \lt 0\implies\text{ maxima at }\theta=\sin^{-1}\frac{1}{\sqrt{3}}</tex>
+         <tex>\dfrac{d^2V}{d\theta^2} \gt 0\implies\text{ maxima at }\theta=\sin^{-1}\frac{1}{\sqrt{3}}</tex>
+      </options>
+      <reason>
+         <tex>%text
+If a point is a maxima, then $\frac{dy}{dx}=0$ at the
+maxima and $\lt 0$ for points \underline{\text{after}} the maxima.
+
+Which therefore means that $\frac{d}{dx}\left(\frac{dy}{dx}\right) = \frac{d^2y}{dx^2}\lt 0$
+because $\frac{dy}{dx}$ is going from $0$ to something $\lt 0$.
+
+Now, 
+%
+\begin{align}
+\frac{dV}{d\theta} &amp;= (2\pi\cdot R^3)\cdot\cos\theta\cdot(1-3\sin^2\theta) \\
+\implies\frac{d^2V}{d\theta^2} &amp;= (2\pi R^3)\cdot
+\underbrace{\left[-\sin\theta\cdot(1-3\sin^2\theta) \\
+&amp;+\cos\theta\cdot(-6\sin\theta\cos\theta) \right]}_{\text{Chain Rule}}\\
+&amp;= (2\pi R^3)\cdot\left[(-\sin\theta + 3\sin^3\theta) \\
+&amp;-6\sin\theta\cdot\underbrace{(1-\sin^2\theta)}_{\cos^2\theta} \right] \\
+&amp;= (2\pi R^3)\cdot\sin\theta\cdot(9\sin^2\theta-7) \\
+&amp;\lt 0\text{ when }\sin\theta = \frac{1}{\sqrt{3}}\implies\text{maxima}
+\end{align}\\
+%text
+The resulting cylinder's height $H_C$ is therefore
+\quad $H_C = 2R\sin\theta = \dfrac{2R}{\sqrt{3}}$
+%</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">V = \dfrac{4\pi\cdot R^3}{3\sqrt{3}}</tex>
+         <tex>V = \dfrac{2\pi\cdot R^3}{3}</tex>
+      </options>
+      <reason>
+         <tex>%text
+We know from Step 2 that 
+%
+\begin{align}
+V &amp;= (2\pi R^3)\cdot (1-\sin^2\theta)\cdot \sin\theta \\
+\implies V_{max} &amp;= \underbrace{(2\pi R^3)\cdot\left( 1-\frac{1}{3}\right)\cdot\frac{1}{\sqrt{3}}}_
+{\text{when }\sin\theta=\frac{1}{\sqrt{3}}}\\
+&amp;= \frac{4\pi\cdot R^3}{3\sqrt{3}}
+\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">\text{Maximum volume} = \dfrac{4\pi\cdot R^3}{3\sqrt{3}}</tex>
+      <tex>\text{Maximum volume} = \dfrac{2\pi\cdot R^3}{3\sqrt{3}}</tex>
+      <tex>\text{Maximum volume} = \dfrac{2\pi\cdot R^3}{3}</tex>
+      <tex>\text{Maximum volume} = \dfrac{4\pi\cdot R^3}{9}</tex>
+   </choices>
+</question>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Differentiate the following function}\\
+			\text{with respect to x}\\
+			\quad f(x) = \dfrac{\sin (ax +b)}{\cos (cx + d)} 
+		</tex>
+      <tex>\\ \textbf{Right or wrong? } \text{If }f(x) = \dfrac{g(x)}{h(x)}, \\
+			\text{then}\dfrac{d}{dx}f(x)\text{ is given by the following.}</tex>
+      <tex>\\ \text{Are the following calculations correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{align}
+			  \dfrac{d}{dx}f(x) &amp;= \dfrac{h(x)\cdot\frac{d}{dx}g(x) - g(x)\cdot\frac{d}{dx}h(x)}{h(x)^2}
+			\end{align}
+			</tex>
+         <tex correct="false">
+			\begin{align}
+			  \dfrac{d}{dx}f(x) &amp;= \dfrac{\frac{d}{dx}g(x)}{\frac{d}{dx}h(x)}
+			\end{align}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{When differentiating a function of the form}\\
+			\qquad f(x) = \dfrac{g(x)}{h(x)} \\
+			\text{you need to use the }\textbf{Quotient Rule}.\\
+			\qquad \dfrac{d}{dx}f(x) = \dfrac{h(x)\cdot\frac{d}{dx}g(x) - g(x)\cdot\frac{d}{dx}h(x)}{h(x)^2}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+		\begin{tabular}{|c|c|}
+		\hline 
+		\text{Function} &amp; \text{Derivative} \\
+		\hline
+		g(x) = \sin (ax + b) &amp; g'(x) = a\cdot\cos (ax + b) \\
+		\hline 
+		h(x) = \cos (cx + d) &amp; h'(x) = -c\cdot\sin (cx + d) \\
+		\hline
+		\end{tabular} \\
+		\begin{align}
+		  &amp;\therefore \dfrac{d}{dx}f(x) = \dfrac{h(x)\cdot\frac{d}{dx}g(x) - g(x)\cdot\frac{d}{dx}h(x)}{h(x)^2}\\
+		  &amp;= \dfrac{a\cos(ax+b) + c\sin (ax+b)\cdot\tan(cx + d)}{\cos (cx + d)}
+	  \end{align}
+		</tex>
+         <tex correct="false">
+    \begin{tabular}{|c|c|}
+		\hline 
+		\text{Function} &amp; \text{Derivative} \\
+		\hline
+		g(x) = \sin (ax + b) &amp; g'(x) = \cos (ax + b) \\
+		\hline 
+		h(x) = \cos (cx + d) &amp; h'(x) = -\sin (cx + d) \\
+		\hline
+		\end{tabular} \\
+		\begin{align}
+		  &amp;\therefore \dfrac{d}{dx}f(x) = \dfrac{h(x)\cdot\frac{d}{dx}g(x) - g(x)\cdot\frac{d}{dx}h(x)}{h(x)^2}\\
+		  &amp;= \dfrac{\cos(ax+b)\cdot\cos(cx+d) + \cos(ax+b)\cdot\sin(cx+d)}{\cos^2(cx+d)} \\
+		  &amp;= \dfrac{\cos (ax + b)\cdot [1 + \tan (cx+d)]}{\cos (cx + d)}
+		\end{align}
+		</tex>
+      </options>
+      <reason>
+         <tex>\text{Quotient rule was required to find }f'(x). \\
+		\text{But Chain Rule was required to find the}\\
+		g'(x)\text{ and }h'(x)\text{ that are needed in }f'(x).</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>
+					\sec(cx +d)\cdot \left[a\cos(ax+b) - c\tan(cx+d)\cdot\sin(ax+b)\right]
+					</tex>
+      <tex>
+					\cos(ax+b) + \tan(cx+d)\cdot\sin(ax+b)
+					</tex>
+      <tex>
+					\sec(cx +d)\cdot \left[\cos(ax+b) + \tan(cx+d)\cdot\sin(ax+b)\right]
+					</tex>
+      <tex correct="true">
+					\sec(cx +d)\cdot \left[a\cos(ax+b) + c\tan(cx+d)\cdot\sin(ax+b)\right]
+					</tex>
+   </choices>
+</question>

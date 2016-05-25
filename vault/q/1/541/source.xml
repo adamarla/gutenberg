@@ -1,55 +1,23 @@
-<?xml version='1.0' encoding='utf-8'?>
-<question xmlns='http://www.gradians.com'>
-	<statement>
-		<tex>
-			\text{Find a point on the curve }\\
-			\quad y= (x-2)^2\\
-			\text{at which the tangent is parallel to the}\\
-			\text{chord joining the points (2,0) and (4,4).}
-		</tex>
-	</statement>
-		<step>
-			<context>
-			\text{Which graph best describes the situation?}
-			</context>
-			<image correct='true'>right.svg</image>
-			<image correct='false'>wrong.svg</image>
-			<reason>
-        \text{Both points }A(2,0)\text{ and }B(4,4)\text{ lie on}\\
-        \text{the curve }y=(x-2)^2.\\
-        \text{Moreover, notice that }y\geq 0\text{ for all }x.
-			</reason>
-		</step>
-			<step swipe='false'>
-				<context>
-				\text{Is the analysis below correct?}
-				</context>
-				<tex correct="true">
-				\begin{align}
-				\text{Slope of AB }=m_{AB}&amp;=\dfrac{4-0}{4-2} = 2\\
-				\therefore\text{ tangent's slope} &amp;= \dfrac{dy}{dx} = 2 \\
-				\implies 2\cdot(x-2) &amp; = 2 \implies x = 3 \\
-				\therefore\text{ required point }&amp;= \left(3,1\right)
-				\end{align}
-				</tex>
-				<tex correct="false">
-				\begin{align}
-				\text{Slope of AB }=m_{AB}&amp;=\dfrac{4-2}{4-0} = \frac{1}{2}\\
-				\therefore\text{ tangent's slope} &amp;= \dfrac{dy}{dx} = \frac{1}{2} \\
-				\implies 2\cdot(x-2) &amp; = \frac{1}{2} \implies x = \frac{9}{4} \\
-				\therefore\text{ required point }&amp;= \left(\frac{9}{4},\frac{1}{4}\right)
-				\end{align}
-				</tex>
-				<reason>
-				\text{If the tangent is }\parallel\text{ to AB, then its slope}\\
-				\text{must be }=\dfrac{4-0}{4-2} = 2 = \dfrac{dy}{dx}.\\
-				\text{Solve for x and then y to get the point.}
-				</reason>
-			</step>
-				<choices>
-					<tex>\left(\frac{9}{4},\frac{1}{16}\right)</tex>
-					<tex correct='true'>\left(3,1\right)</tex>
-					<tex>\left(2,0\right)</tex>
-					<tex>\left(4,4\right)</tex>
-				</choices>
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex/>
+      <tex>\\ </tex>
+   </statement>
+   <step>
+      <options>
+         <tex/>
+         <tex correct="false"/>
+      </options>
+      <reason>
+         <tex></tex>
+      </reason>
+   </step>
+   <choices>
+      <tex/>
+      <tex correct="true"/>
+      <tex/>
+      <tex/>
+   </choices>
 </question>

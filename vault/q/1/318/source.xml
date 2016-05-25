@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+		\text{Suppose }f(x) = \sqrt{x^2-1} = (g\circ h)(x).\\
+		\text{If }h(x) = x + 1,\text{ then find }g(x).
+		</tex>
+      <tex>\\ \text{The table below shows }\underline{\text{examples}}\text{ of }\\
+			g(x),h(x)\text{ and }f(x)=(g\circ h)(x).\\
+			\textbf{But is the table correct?}\\
+			\textbf{Has }f(x)=(g\circ h)(x)\textbf{ been written correctly?}</tex>
+      <tex>\\ \textbf{Coming back to the problem.}\\
+				\text{We do not know what }g(x)\text{ is. But would}\\
+				\text{we be right if we said the following?}</tex>
+      <tex>\\ \text{If }f(x) = \sqrt{A\cdot (x+1)^2 + B\cdot (x+1) + C},\text{ then}\\
+					\text{what are the values of A,B and C?}\\
+					\textbf{And hence, what is }g(x)?</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{tabular}{|c|c|c|}
+			\hline
+			g(x) &amp; h(x) &amp; f(x)=(g\circ h)(x) \\
+			\hline
+			x^2 &amp; \frac{x}{2} &amp; \frac{x^2}{4} \\
+			\hline
+			\sqrt{x} &amp; \sin x &amp; \sqrt{\sin x}\\
+			\hline
+			\frac{1}{x} &amp; \frac{1}{x} &amp; x \\
+			\hline
+			\end{tabular}
+			</tex>
+         <tex correct="false">
+			\begin{tabular}{|c|c|c|}
+			\hline
+			g(x) &amp; h(x) &amp; f(x)=(g\circ h)(x) \\
+			\hline
+			x^2 &amp; \frac{x}{2} &amp; \frac{x^2}{2} \\
+			\hline
+			\sqrt{x} &amp; \sin x &amp; \sin\sqrt{x}\\
+			\hline
+			\frac{1}{x} &amp; \frac{1}{x} &amp; \frac{1}{x^2} \\
+			\hline
+			\end{tabular}
+			</tex>
+      </options>
+      <reason>
+         <tex>(g\circ h)(x)\text{ simply means } g(\, h(x)\, ).\text{ And hence, }\\
+			\begin{tabular}{|c|c|c|}
+			\hline
+			g(x) &amp; h(x) &amp; f(x)=(g\circ h)(x) \\
+			\hline
+			x^2 &amp; \frac{x}{2} &amp; g\left(\frac{x}{2}\right) = \left(\frac{x}{2}\right)^2 = \frac{x^2}{4} \\
+			\hline
+			\sqrt{x} &amp; \sin x &amp; g(\sin x) = \sqrt{\sin x}\\
+			\hline
+			\frac{1}{x} &amp; \frac{1}{x} &amp; g\left(\frac{1}{x}\right) = \dfrac{1}{\frac{1}{x}} = x \\
+			\hline
+			\end{tabular} \\
+			\text{The above are examples of what is}\\
+			\text{called }\underline{\text{composition}}.\\
+			\text{Basically, any function can be seen as a }\\
+			\text{combination of other functions. Like f(x)}\\
+			\text{is a combination of g(x) and h(x).}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  f(x) = \sqrt{x^2-1} &amp;= (g\circ h)(x) = g(x+1)
+				\end{align} \\
+				\text{The above is possible if } \\
+				\quad g(x+1) = \sqrt{A\cdot (x+1)^2 + B\cdot (x+1) + C} \\
+				\text{where A,B and C are }\underline{\text{as yet unknown}}\text{ constants.}
+				</tex>
+      </options>
+      <reason>
+         <tex>f(x)=\sqrt{x^2-1}\text{ has a }\sqrt{}\text{ and an }x^2\text{ term.}\\
+				\textbf{But }h(x) = x+1\text{ brings neither to the table.}\\
+				\text{Hence, the }\sqrt{}\text{ and the }x^2\text{ would need to}\\
+				\text{come from g(x).} \\
+				\textbf{Also, }x^2-1\text{ is a quadratic polynomial.}\\
+				\text{Hence, we make the }\underline{\text{calculated guess}}\text{ that } \\
+				f(x) = g(x+1) = \sqrt{\underbrace{A\cdot(x+1)^2+B\cdot(x+1)+C}_{\text{A general quadratic polynomial}}}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+					\begin{tabular}{|c|c|c|c|}
+					\hline
+					A &amp; B &amp; C &amp; g(x) \\
+					\hline
+					1 &amp; -2 &amp; 0 &amp; \sqrt{x^2-2x} \\
+					\hline
+					\end{tabular}
+					</tex>
+         <tex correct="false">
+					\begin{tabular}{|c|c|c|c|}
+					\hline
+					A &amp; B &amp; C &amp; g(x) \\
+					\hline
+					1 &amp; 2 &amp; -1 &amp; \sqrt{x^2 + 2x -1} \\
+					\hline
+					\end{tabular}
+					</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+					\text{If }f(x) &amp;= \sqrt{x^2-1} \\ 
+					&amp;= \sqrt{A\cdot (x+1)^2 + B\cdot (x+1) + C} \\
+					\text{then }f(x) &amp;= \sqrt{Ax^2 + (2A+B) x + (A+B+C)} \\
+					\implies A &amp;= 1, 2A+B= 0\text{ and } A+B+C = -1 \\
+					\text{or } A &amp;= 1, B = -2 \text{ and } C=0 \\
+					\therefore \sqrt{x^2-1} &amp;= \sqrt{(x+1)^2 - 2\cdot (x+1)} \\
+					&amp;= \sqrt{h(x)^2 - 2\cdot h(x)} = g(h(x)) \\
+					\implies g(x) &amp;= \sqrt{x^2-2x}
+					\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">g(x)=\sqrt{x^2-2x}</tex>
+      <tex>g(x)=\sqrt{x^2-x-1}</tex>
+      <tex>g(x)=\sqrt{x^2+2x-1}</tex>
+      <tex>g(x) = \sqrt{x^2+2x}</tex>
+   </choices>
+</question>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Integrate the following}\\
+			\qquad x^2\cdot e^x \\
+			\text{using integration by parts.}
+		</tex>
+      <tex>\\ \text{Which of the following would be easier to}\\
+			\text{evaluate given that }\\
+			\int f(x)g(x)dx = f\cdot\int g dx - \int \left[ f' \cdot\int g dx\right] dx</tex>
+      <tex>\\ \text{Which of the following is }\textbf{I}\text{ after}\\
+  		\text{the last step? }</tex>
+      <tex>\\ \text{What does } B = 2\int\left(x\cdot e^x\right) dx\text{ evaluate to?}</tex>
+      <tex>\\ \text{And so, the original integral }I = ?</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{align}
+			  \text{Let }f(x) &amp;= x^2\text{ and }g(x) = e^x \\
+			  therefore I &amp;= \int x^2\cdot e^x dx \\
+			  &amp;= x^2\int e^x dx - \int\left[ \frac{d}{dx}x^2\int e^x dx\right] dx 
+			\end{align}
+			</tex>
+         <tex correct="false">
+			\begin{align}
+			\text{Let }f(x) &amp;= e^x \text{ and }g(x) = e^x \\
+			\therefore I &amp;= \int e^x\cdot x^2 dx \\
+			&amp;= e^x\int x^2 dx - \int\left[ \frac{d}{dx}e^x\int x^2 dx\right] dx 
+			\end{align}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{If we choose }f(x) = e^x\text{ and }g(x) = x^2,\text{ then} \\
+			\begin{align}
+			I &amp;= e^x\int x^2 dx - \overbrace{\int\left[ \frac{d}{dx}e^x\int x^2 dx\right] dx}^{A} \\
+			  &amp;= e^x\int x^2 dx - \int\left[e^x\cdot\dfrac{x^3}{3}\right] dx
+			\end{align} \\
+			\text{This makes A even more complicated than I to}\\
+			\text{evaluate. Hence, }f(x) = x^2\text{ and }g(x) = e^x \\
+			\text{seems to be the better choice.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+  		\begin{align}
+  		I &amp;= x^2\int e^x dx - \int\left[ \frac{d}{dx}e^x\int x^2 dx\right] dx \\
+  		&amp;= x^2\cdot e^x - \underbrace{2\cdot\int e^x\cdot x dx}_{B}
+  		\end{align}
+  		</tex>
+         <tex correct="false">
+  		\begin{align}
+  		I &amp;= x^2\int e^x dx - \int\left[ \frac{d}{dx}e^x\int x^2 dx\right] dx \\
+  		&amp;= x^2\cdot e^x - \underbrace{\int e^x\cdot x dx}_{B}
+  		\end{align}
+  		</tex>
+      </options>
+      <reason>
+         <tex>\text{We agreed that }f(x) = x^2\text{ and }g(x) = e^x.\\
+  		\text{Therefore, }\\
+  		\begin{align}
+  		  I &amp;= x^2\int e^x dx - \int\left[ \frac{d}{dx}x^2\int e^x dx\right] dx \\
+  		   &amp;= x^2\cdot e^x -\int\left[\dfrac{d}{dx}x^2\int e^x dx \right] dx  \\
+  		   &amp;= x^2\cdot e^x - \underbrace{2\int\left(x\cdot e^x\right) dx}_{B}
+  		\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+  			2\cdot(x-1)\cdot e^x 
+  			</tex>
+         <tex correct="false">
+  			2\cdot x\cdot e^x 
+  			</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+  			  B &amp;= 2\int\left(x\cdot e^x\right) dx \\
+  			  \text{Let }f(x) &amp;= x\text{ and }g(x) = e^x \\
+  			  \therefore B &amp;= 2\left[x\int e^x dx - \int\left(\frac{d}{dx}x\int e^x dx\right) dx\right]\\
+  			  &amp;= 2\left(x\cdot e^x - e^x\right) = 2\cdot (x-1)\cdot e^x 
+  			\end{align}\\
+  			\text{Notice that this time around, we let }f(x) = x\\
+  			\text{and }g(x) = e^x\text{ because }f'(x) = 1\text{ and that makes}\\
+  			\text{evaluating }\int \left[f'(x)\int g(x) dx\right] dx \text{ easier.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+  		  				\begin{align}
+  		  				I &amp;= x^2\cdot e^x - 2\cdot(x-1)\cdot e^x + C \\
+  		  				&amp;= e^x\cdot(x^2-2x+2) + C 
+  		  				\end{align}
+  		  				
+  		  				</tex>
+         <tex correct="false">
+  		  				\begin{align}
+  		  				I &amp;= x^2\cdot e^x - 2\cdot(x-1)\cdot e^x + C \\
+  		  				&amp;= e^x\cdot(x^2+2x-2) + C 
+  		  				\end{align}
+  		  				</tex>
+      </options>
+      <reason>
+         <tex>\text{Simply replace B from the previous step into} \\
+  		  				\text{I from Step 2.}</tex>
+      </reason>
+   </step>
+</question>

@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+		\text{What are the maximum and minimum}\\
+		\text{values of }\\
+		\quad f(\theta) = \sin^4\theta + \cos^4\theta
+		</tex>
+      <tex>\\ \textbf{Right or wrong?}\\
+			\text{Whenever an extreme value occurs, the}\\
+			\text{following will be true.}</tex>
+      <tex>\\ \text{Your friend makes the following claim.}\\
+				\textbf{Is his claim correct?}</tex>
+      <tex>\\ \text{Now your friend makes a second claim. }\\
+					\textbf{Is this claim also correct?}</tex>
+      <tex>\\ \text{Is the following true?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\quad 4\sin\theta\cdot\cos\theta\cdot(\sin^2\theta-\cos^2\theta) = 0.
+			</tex>
+         <tex correct="false">
+			\quad 4\sin\theta\cos\theta(\sin^2\theta + \cos^2\theta) = 4\sin\theta\cos\theta = 0.  
+			</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+			  &amp;y = \sin^4\theta + \cos^4\theta \\
+			  &amp;\implies \dfrac{dy}{d\theta} = \dfrac{d}{d\theta}\sin^4\theta + \dfrac{d}{d\theta}\cos^4\theta \\
+			  &amp;= \underbrace{\left(4\sin^3\theta\cdot\dfrac{d}{d\theta}\sin\theta\right) + 
+			  \left(4\cos^3\theta\cdot\dfrac{d}{d\theta}\cos\theta\right)}_{\text{Chain Rule}}\\
+			  &amp;= 4\sin^3\theta\cos\theta - 4\cos^3\theta\sin\theta \\
+			  &amp;= 4\sin\theta\cdot\cos\theta\cdot(\sin^2\theta - \cos^2\theta)
+			\end{align} \\
+			\text{Hence at any extrema point where }\frac{dy}{d\theta} = 0, \\
+			\quad 4\sin\theta\cdot\cos\theta\cdot(\sin^2\theta - \cos^2\theta) = 0.</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\text{There are }\textbf{infinite values }\text{ of }\theta\text{ at which}\\
+				\text{a maxima or a minima could occur.}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{An extrema would occur when }\dfrac{dy}{d\theta} = 0.\\
+				\text{And that can happen }\textbf{if, }\\
+				\begin{tabular}{|c|c|c|}
+				\hline 
+				\text{Condition} &amp; \theta &amp; \text{Example} \\
+				\hline 
+				\sin\theta = 0 &amp; \theta = n\pi &amp; \theta = 0,\pi \\
+				\hline 
+				\cos\theta = 0 &amp; \theta = (2n+1)\frac{\pi}{2} &amp; \theta=\frac\pi{2} \\
+				\hline
+				\sin^2\theta = \cos^2\theta &amp;\theta = (2n+1)\frac\pi{4} &amp; \theta = -\frac\pi{4},\frac\pi{4}\\
+				\hline
+				\end{tabular}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+					\text{As trigonometric functions are cyclic, there}\\
+					\text{would a finite number of extreme values even}\\
+					\text{though there are infinite extrema points.}
+					</tex>
+         <tex correct="false">
+					\text{As there are infinite extrema points, there}\\
+					\text{would be infinite different extrema values.}
+					</tex>
+      </options>
+      <reason>
+         <tex>\sin^4\theta = (\sin^2\theta)^2\text{ and }\cos^4\theta = (\cos^2\theta)^2.\\
+					\text{But notice also that }\\
+					\begin{align}
+					  \sin^4\theta &amp;= \sin^4 (n\pi-\theta) = \sin^4(n\pi + \theta)\in [0,1] \\
+					  \cos^4\theta &amp;= \cos^4 (n\pi-\theta) = \cos^4(n\pi + \theta)\in [0,1]
+					\end{align} \\
+					\text{What the above means is that if you find }\\
+					f(\theta)\text{ at some }\theta,\text{ then you will get the same }f(\theta)\\
+					\text{if you went }n\pi\text{ radians ahead or behind.} \\
+					\text{Hence, if we find a maximum or a minimum}\\
+					\text{value at some }\theta,\text{ then that is the only}\\
+					\text{maximum or minimum value there can be} \\
+					\text{(as it will only repeat after } \pi\text{ radians).}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+						\begin{tabular}{|c|c|}
+						\hline
+						\text{Type} &amp; \text{Value} \\
+						\hline 
+						\text{Maxima} &amp; 1 \\
+						\hline 
+						\text{Minima} &amp; \dfrac{1}{2} \\
+						\hline
+						\end{tabular}
+						</tex>
+         <tex correct="false">
+						\begin{tabular}{|c|c|}
+						\hline
+						\text{Type} &amp; \text{Value} \\
+						\hline 
+						\text{Maxima} &amp; \dfrac{1}{2} \\
+						\hline 
+						\text{Minima} &amp; 0 \\
+						\hline
+						\end{tabular}
+						</tex>
+      </options>
+      <reason>
+         <tex>\text{At an extrema, }\dfrac{dy}{d\theta} = 0.\text{ Therefore, }\\
+						\begin{tabular}{|c|c|c|}
+				\hline 
+				\text{Extrema when} &amp; \text{Example} &amp; \text{Value} \\
+				\hline 
+				\sin\theta = 0 &amp; \theta = 0 &amp; 1 \\
+				\hline 
+				\cos\theta = 0 &amp;  \theta=\frac\pi{2} &amp; 1 \\
+				\hline
+				\sin^2\theta = \cos^2\theta &amp;\theta = \frac\pi{4} &amp; \dfrac{1}{2}\\
+				\hline
+				\end{tabular} \\
+				\text{And as we showed in Step 3, if it is an extrema}\\
+				\text{at }\theta_1\text{, then it is an extrema for all }\theta.\\
+				\text{Hence, the maximum and minimum values of }\\
+				f(\theta)\text{ are }\underline{1\text{ and }\dfrac{1}{2}}\text{ respectively.}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">\text{Maximum = 1, Minimum = }\dfrac{1}{2}</tex>
+      <tex>\text{Maximum = }\dfrac{1}{2}, \text{ Minimum = }\dfrac{1}{4}</tex>
+      <tex>\text{Maximum = }2, \text{ Minimum = }1</tex>
+      <tex>\text{Maximum = 1, Minimum = }0</tex>
+   </choices>
+</question>

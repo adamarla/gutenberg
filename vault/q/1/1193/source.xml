@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+		\text{Show that the function }f(x) = \vert x - 3\vert, x\in\mathbb{R} \\
+		\text{is continuous but not differentiable at } x = 3.
+		</tex>
+      <tex>\\ \textbf{What does }f(x) = \vert x-3\vert\textbf{ look like?}</tex>
+      <tex>\\ \textbf{Conditions for continuity} \\
+				\text{Is }f(x)\text{ continuous at }A = (3,0)\text{ for the} \\
+				\text{following reason?}</tex>
+      <tex>\\ \textbf{Condition for differentiability} \\
+					f(x)\text{ is not differentiable at }A=(3,0)\\
+					\text{for the following reason. }\textbf{Right or wrong?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex src="right.svg" isImage="true" correct="true"/>
+         <tex src="wrong.svg" isImage="true" correct="false"/>
+      </options>
+      <reason>
+         <tex>\text{First, }f(x) = \vert x - 3\vert \geq 0\text{ for all x.}\\
+			\text{Moreover, } \\ f(x) = 
+			\begin{cases}
+			   x-3\text{ when }x-3\geq 0\implies x\geq 3, \\
+			   3-x\text{ when }x-3\lt 0\implies x\lt 3
+			\end{cases}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{tabular}{|c|c|c|c|}
+				\hline 
+				\lim_{x\to 3^-}f(x) &amp; \lim_{x\to 3^+}f(x) &amp; f(x) &amp; \text{Continuous?} \\
+				\hline
+				0 &amp; 0 &amp; 0 &amp; \text{Yes} \\
+				\hline
+				\end{tabular}
+				</tex>
+         <tex correct="false">
+				\begin{tabular}{|c|c|c|}
+				\hline 
+				\lim_{x\to 3^-}f(x) &amp; \lim_{x\to 3^+}f(x) &amp; \text{Continuous?} \\
+				\hline
+				0 &amp; 0 &amp; \text{Yes} \\
+				\hline
+				\end{tabular}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{For a function to be continuous at a}\\
+				\text{point A, two conditions must be satisfied.} \\
+				\text{First, the function must converge to the}\\
+				\text{same value from either side of A.}\\
+				\qquad \lim_{x\to A^-}f(x) = \lim_{x\to A^+}f(x) \\
+				\text{And this limit must equal the value of the}\\
+				\text{function at that point} \\
+				\qquad \lim_{x\to A}f(x) = f(A)</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+					\left[\dfrac{d}{dx}f(x)\right]_{x\to 3^-}\neq \left[\dfrac{d}{dx}f(x)\right]_{x\to 3^+}
+					</tex>
+         <tex correct="false">
+					\left[\dfrac{d}{dx}f(x)\right]_{x\to 3^-} = \left[\dfrac{d}{dx}f(x)\right]_{x\to 3^+}
+					\neq \lim_{x\to 3}f(x)
+					</tex>
+      </options>
+      <reason>
+         <tex>f(x)\text{ is defined at }A=(3,0). \\
+					\text{But if it has to be differentiable (have a rate}\\
+					\text{of change), then} \\
+					\begin{align}
+					  \left[\dfrac{d}{dx}f(x)\right]_{x\to 3^-} &amp;= \left[\dfrac{d}{dx}f(x)\right]_{x\to 3^+}\\
+					  \text{But }\left[\dfrac{d}{dx}f(x)\right]_{x\to 3^-} &amp;= \dfrac{d}{dx}(3-x) = -1 \\
+					  \text{and }\left[\dfrac{d}{dx}f(x)\right]_{x\to 3^+} &amp;= \dfrac{d}{dx}(x-3) = 1
+					\end{align} \\
+					\text{Hence, }f(x)\text{ is not differentiable at }A= (3,0).\\
+					\text{You can see the same from the graph in Step 1.}</tex>
+      </reason>
+   </step>
+</question>

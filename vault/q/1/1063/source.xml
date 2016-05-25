@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Find the range of the following functions}\\
+			\qquad(a)\, f(x) = 2-3x,x\in\mathbb{R}, x\gt 0 \\
+		  \qquad(b)\,f(x)=x^2+2,x\in\mathbb{R} \\
+			\qquad(c)\,f(x)=x,x\in\mathbb{R}
+		</tex>
+      <tex>\\ \textbf{Right or wrong? }\text{The table below shows valid}\\
+			\text{values for x and }f(x) = 2-3x.</tex>
+      <tex>\\ \text{Is the following assertion true for }f(x) = 2-3x?</tex>
+      <tex>\\ \textbf{Right or wrong? }\text{The minimum, maximum}\\
+			\text{values for }f(x) = x^2 + 2\text{ and hence }\text{the}\\
+			\textbf{range}\text{ will be as follows.}</tex>
+      <tex>\\ \textbf{And lastly, }\text{ is the following true}\\
+				\text{for }f(x) = x, x\in\mathbb{R}?</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{tabular}{|c|c|}
+			\hline
+			x &amp; f(x) \\ 
+			\hline
+			2 &amp; -1 \\
+			\hline
+			0 &amp; 2 \\
+			\hline
+			1 &amp; -1 \\
+			\hline 
+			\frac{2}{3} &amp; 0 \\
+			\hline
+			\end{tabular}
+			</tex>
+         <tex correct="false">
+			\begin{tabular}{|c|c|}
+			\hline
+			x &amp; f(x) \\ 
+			\hline
+			2 &amp; -1 \\
+			\hline
+			0 &amp; 2 \\
+			\hline
+			-1 &amp; 5 \\
+			\hline 
+			\frac{2}{3} &amp; 0 \\
+			\hline
+			\end{tabular}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{For }f(x) = 2-3x,\text{ we did say }x\gt 0, x\in\mathbb{R}.\\
+			\text{Hence, }x = -1\text{ is not allowed. Know the}\\
+			\text{function before you work with it.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+						\begin{tabular}{|c|c|c|}
+						  \hline
+						  \text{Min. value} &amp; \text{Max. value} &amp; \text{Range} \\
+						  \hline 
+						  -\infty &amp; 2 &amp; (-\infty, 2] \\
+						  \hline
+						\end{tabular}
+						</tex>
+         <tex correct="false">
+						\begin{tabular}{|c|c|c|}
+						  \hline
+						  \text{Min. value} &amp; \text{Max. value} &amp; \text{Range} \\
+						  \hline 
+						  -\infty &amp; \infty &amp; (-\infty, \infty) \\
+						  \hline
+						\end{tabular}
+						</tex>
+      </options>
+      <reason>
+         <tex>\text{If x can only be }\gt 0,\text{ then }f(x) = 2-3x\text{ can}\\
+						\text{only decrease as x increases. And there is no}\\
+						\text{limit to how much f(x) can decrease.}\\
+						\text{However, }f(x)\ngtr f(0) = 2\implies\textbf{ range = }(-\infty, 2]</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{tabular}{|c|c|c|}
+			\hline 
+			\text{Min. value} &amp; \text{Max. value} &amp; \text{Range} \\
+			\hline 
+			2 &amp; \infty &amp; [2,\infty ) \\
+			\hline 
+			\end{tabular}
+			</tex>
+         <tex correct="false">
+			\begin{tabular}{|c|c|c|}
+			\hline 
+			\text{Min. value} &amp; \text{Max. value} &amp; \text{Range} \\
+			\hline 
+			-\infty &amp; \infty &amp; (-\infty,\infty ) \\
+			\hline 
+			\end{tabular}
+			</tex>
+      </options>
+      <reason>
+         <tex>x^2\geq 0\text{ for }x\in\mathbb{R}.\text{ Hence, }f(x) = x^2 + 2\gt 0\\
+			\text{for }x\in\mathbb{R}.\text{ And more precisely, }f(x) = x^2+2\geq 2.\\
+			\text{Hence, range } = [2,\infty).</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\qquad\textbf{Range } = \mathbb{R}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{For }f(x) = x,\text{ any value x can take, f(x) can take.}\\
+				\text{And therefore, if }x\in\mathbb{R},\text{ then f(x)'s range } = \mathbb{R}.</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>
+					(a)\, (-\infty,\infty)\quad (b)\, (-\infty,\infty)\quad (c)\,\mathbb{R}
+					</tex>
+      <tex correct="true">(a)\, (-\infty,2]\quad (b)\, [2,\infty)\quad (c)\,\mathbb{R}</tex>
+      <tex>
+					(a)\, (2,\infty)\quad (b)\, (0,\infty)\quad (c)\,\mathbb{R}
+					</tex>
+      <tex>
+					(a)\, (-\infty,\infty)\quad (b)\, (0,\infty)\quad (c)\,\mathbb{R}^+
+					</tex>
+   </choices>
+</question>

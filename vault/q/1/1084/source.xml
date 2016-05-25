@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Evaluate the following} \\
+			\qquad \int_0^{\frac{3}{2}}\vert x\cdot\cos\pi x\vert\cdot dx
+		</tex>
+      <tex>\\ \text{Would we be right if we said that}\\
+			\quad A = \int_0^{\frac{3}{2}}\vert x\cdot\cos\pi x\vert\cdot dx \\
+			\text{equals the following?}</tex>
+      <tex>\\ \textbf{Integrating } x\cos\pi x \\
+				\text{Given that }\\
+				\int f\cdot g dx = f\cdot\int g dx - \int \left[ f' \cdot\int g dx\right] dx \\
+			\text{is the following a good choice for f(x) and g(x)?}</tex>
+      <tex>\\ \text{Will }I = \int x\cdot\cos\pi x\cdot dx\text{ evaluate }\\
+			\text{to the following?}</tex>
+      <tex>\\ \textbf{And therefore, }\text{ will }A=\int_0^{\frac{3}{2}}\vert x\cdot\cos\pi x\vert\cdot dx \\
+				\text{have the following value?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			A = \int_0^{\frac{1}{2}} x\cdot\cos\pi x\cdot dx 
+			- \int_{\frac{1}{2}}^{\frac{3}{2}} x\cdot\cos\pi x\cdot dx
+			</tex>
+         <tex correct="false">
+			A = \int_0^{\frac{1}{2}} x\cdot\cos\pi x\cdot dx 
+			+ \int_{\frac{1}{2}}^{\frac{3}{2}} x\cdot\cos\pi x\cdot dx
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{Note that }\cos\pi x\lt 0\text{ for }\frac{1}{2}\lt x\lt\frac{3}{2}.\\
+			\implies x\cdot\cos\pi x\lt 0 \text{ for }\frac{1}{2}\lt x\lt\frac{3}{2}. \\
+			\vert x\cdot\cos\pi x\vert = \begin{cases}
+			  x\cdot\cos\pi x, 0\lt x\lt\frac{1}{2}, \\
+			  -x\cdot\cos\pi x, \frac{1}{2}\lt x\lt\frac{3}{2}
+			\end{cases} \\
+			\begin{align}
+			  \therefore A &amp;= \int_0^{\frac{1}{2}} x\cdot\cos\pi x\cdot dx 
+			  - \int_{\frac{1}{2}}^{\frac{3}{2}} x\cdot\cos\pi x\cdot dx
+			\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{tabular}{|c|c|}
+				\hline
+				f(x) &amp; x \\
+				\hline
+				g(x) &amp; \cos\pi x \\
+				\hline
+				\end{tabular}
+				</tex>
+         <tex correct="false">
+				\begin{tabular}{|c|c|}
+				\hline
+				f(x) &amp; \cos\pi x \\
+				\hline
+				g(x) &amp; x \\
+				\hline
+				\end{tabular}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{There is a nice rule of thumb - called ILATE}\\
+			\text{that you can use. f(x) is the function that}\\
+			\text{matches first.} \\
+			\begin{tabular}{|c|c|c|}
+			\hline 
+			I &amp; Inverse Trig &amp; -\\
+			\hline
+			L &amp; Logarithm &amp; -\\
+			\hline
+			A &amp; Algebra &amp; x \\
+			\hline
+			T &amp; Trignometric &amp; \cos\pi x \\
+			\hline
+			E &amp; Exponential &amp; - \\
+			\hline
+			\end{tabular}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+			I = x\dfrac{\sin\pi x}{\pi} + \dfrac{\cos\pi x}{\pi^2}
+			</tex>
+         <tex correct="false">
+			I = \dfrac{x\cdot\sin\pi x + \cos\pi x}{\pi}  
+			</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+			  I &amp;= \int x\cdot\cos\pi x\cdot dx \\
+			  &amp;= \underbrace{x\int\cos\pi x\cdot dx - \int \left[\frac{d}{dx}x\cdot\int\cos\pi x dx\right]dx}
+			  _{\text{integration by parts using }f(x)=x,g(x)=\cos\pi x} \\
+			  &amp;= x\dfrac{\sin\pi x}{\pi} - \int\dfrac{\sin\pi x}{\pi}\cdot dx \\
+			  &amp;= x\dfrac{\sin\pi x}{\pi} + \dfrac{\cos\pi x}{\pi^2}
+			\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\qquad A = \dfrac{5\pi-3}{3\pi^2}
+				</tex>
+         <tex correct="false">
+				\qquad A = \dfrac{5\pi -2}{2\pi^2}
+				</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+				  
+				  A &amp;= \int_0^{\frac{1}{2}} x\cdot\cos\pi x\cdot dx 
+			- \int_{\frac{1}{2}}^{\frac{3}{2}} x\cdot\cos\pi x\cdot dx \\
+			    &amp;= \left[x\dfrac{\sin\pi x}{\pi} + \dfrac{\cos\pi x}{\pi^2}\right]_0^{\frac{1}{2}}
+			    - \left[x\dfrac{\sin\pi x}{\pi} + \dfrac{\cos\pi x}{\pi^2}\right]_{\frac{1}{2}}^{\frac{3}{2}} \\
+			    &amp;= \left[\dfrac{1}{2\pi}-\dfrac{1}{\pi^2}\right] -
+			    \left[\dfrac{2}{3\pi}\cdot\sin\dfrac{3\pi}{2}-\dfrac{1}{2\pi}\right] \\
+			    &amp;= \dfrac{1}{\pi}-\dfrac{1}{\pi^2} + \dfrac{2}{3\pi} = \dfrac{5\pi-3}{3\pi^2}
+				\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">\dfrac{5\pi -3}{3\pi^2}</tex>
+      <tex>\dfrac{5\pi -1}{\pi^2}</tex>
+      <tex>\dfrac{3\pi -1}{\pi^2}</tex>
+      <tex>\dfrac{5\pi -2}{2\pi^2}</tex>
+   </choices>
+</question>

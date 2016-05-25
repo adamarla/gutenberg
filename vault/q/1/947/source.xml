@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Integrate the following}\\
+			\qquad x\cdot\sec^2 x \\
+			\text{using integration by parts.}
+		</tex>
+      <tex>\\ \text{Given }\int f(x)g(x) dx = f\cdot\int g dx - \int \left[ f' \cdot\int g dx\right] dx\\
+			\text{which would be the better choice for }f(x)\text{ and }g(x)?</tex>
+      <tex>\\ \text{Given }f(x) =x \text{ and } g(x) = \sec^2 x, \text{ what would }\\
+  		I = \int x\cdot\sec^2 x dx \text{ look like?}</tex>
+      <tex>\\ \text{If } A = \int\tan x \cdot dx, \text{ then what is }A = ?</tex>
+      <tex>\\ \text{Hence, what does the original integral (I)}\\
+  				\text{evaluate to?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{align}
+			  f(x) &amp;= x \\
+			  g(x) &amp;= \sec^2 x
+			\end{align}
+			</tex>
+         <tex correct="false">
+			\begin{align}
+			  f(x) &amp;= \sec^2 x \\
+			  g(x) &amp;= x
+			\end{align}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{There is a nice rule of thumb - called ILATE} \\ 
+			\text{to help you decide what f(x) and g(x) should be.}\\
+			\text{Basically, f(x) is the function that matches first.}\\
+			\begin{tabular}{c|c|c}
+			I &amp; Inverse Trig &amp; - \\
+			\hline
+			L &amp; Logarithm &amp; - \\
+			\hline
+			A &amp; Algebra &amp; x = f(x) \\
+			\hline
+			T &amp; Trignometric &amp; \sec^2 x = g(x) \\
+			\hline
+			E &amp; Exponential &amp; - \\
+			\hline
+			\end{tabular}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+  		\qquad I = x\cdot\tan x - \int\tan x\cdot dx
+  		</tex>
+         <tex correct="false">
+  		\qquad I = x\cdot\tan x + \int\tan x\cdot dx
+  		</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+  		  I &amp;= \int x\cdot\sec^2 x dx \\ 
+  		    &amp;= x\cdot\int\sec^2x dx - \int\left[\frac{d}{dx}x\cdot\int\sec^2x\cdot dx\right]\cdot dx \\
+  		    &amp;= x\cdot\tan x - \int\tan x\cdot dx 
+  		\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+  			\qquad A = -\log\vert\cos x\vert
+  			</tex>
+         <tex correct="false">
+  			\qquad A = \log\vert\sin x\vert 
+  			</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+  			  A &amp;= \int\tan x\cdot dx = \int\dfrac{\sin x}{\cos x}\cdot dx \\ 
+  			  \text{Let }\cos x &amp;= y \implies -\sin x\cdot dx = dy \\
+  			  \therefore A &amp;= \int\dfrac{\sin x}{\cos x}\cdot dx = -\int\dfrac{dy}{y} \\
+  			  &amp;= -\log\vert y\vert = -\log \vert\cos x\vert 
+  			\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+  				\quad I = x\cdot\tan x + \log\vert\cos x\vert + C 
+  				</tex>
+         <tex correct="false">
+  				\qquad I = x\cdot\tan x - \log\vert\cos x\vert + C 
+  				</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+  				  I &amp;= x\cdot\tan x - \underbrace{\int\tan x\cdot dx}_A \\
+  				  &amp;= x\cdot\tan x -\left(-\log\vert \cos x\vert \right) + C \\
+  				  &amp;= x\cdot\tan x + \log\vert\cos x\vert + C 
+  				\end{align}</tex>
+      </reason>
+   </step>
+</question>

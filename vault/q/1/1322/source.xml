@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>%text
+Using the method of integration, find the 
+area of the region bounded by the lines 
+\[ 2x + y = 4, 3x- 2y = 6 \text{ and } x - 3y + 5 = 0  \]
+%</tex>
+      <tex>\\ %text
+See the graph below. Have the three lines 
+been \underline\text{plotted correctly}?
+%</tex>
+      <tex>\\ %text
+What are the \underline\text{coordinates of the vertices} 
+of $\triangle ABC$? 
+%</tex>
+      <tex>\\ %text
+Has the \underline\text{expression for the required area} 
+been written correctly below? 
+%</tex>
+      <tex>\\ %text
+What will the required area \underline\text{evaluate to} 
+given the expression from Step 3? 
+%</tex>
+   </statement>
+   <step swipe="false">
+      <options>
+         <tex src="right.svg" isImage="true" correct="true"/>
+         <tex src="wrong.svg" isImage="true" correct="false"/>
+      </options>
+      <reason>
+         <tex>%text
+First, find out where the three lines 
+\underline\text{cut the x- and the y-axis}. That will 
+give you two points which when joined 
+form the line. 
+
+%
+
+\begin{tabular}{|c|c|c|}
+\hline 
+\text{Line} &amp; \text{When }y=0 &amp; \text{When }x=0 \\
+\hline 
+2x + y =4 &amp; (2,0) &amp; (0,4) \\
+\hline 
+3x-2y=6 &amp; (2,0) &amp; (0,-3) \\
+\hline 
+x-3y+5 = 0 &amp; (-5,0) &amp; (0,\frac{5}{3}) \\
+\hline
+\end{tabular}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\begin{align}
+A &amp;= (2,0) \\ 
+B &amp;= (1,2) \\ 
+C &amp;= (4,3) 
+\end{align} </tex>
+         <tex>\begin{align}
+A &amp;= (1,0) \\ 
+B &amp;= (2,1) \\ 
+C &amp;= (4,4)
+\end{align} </tex>
+      </options>
+      <reason>
+         <tex>%text
+You would have noticed from Step 1
+that $2x+y=4$ and $x-3y+5=0$ cut the 
+x-axis at the same point $A=(2,0)$. 
+
+But even if you didn't, then to find the 
+coordinates of the vertices take pairs of 
+lines and \underline\text{solve for $x$ and $y$}.
+
+%
+\begin{align}
+A: y=4-2x &amp;= \frac{3x}{2}-3\implies x = 2, y = 0 \\
+B: y=4-2x &amp;= \frac{x}{3}+\frac{5}{3} \implies x = 1, y = 2 \\
+C: y = \frac{x}{3}+\frac{5}{3} &amp;= \frac{3x}{2}-3 \implies x = 4,y=3 
+\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\int_1^4 \frac{x+5}{3}dx - \int_1^2 (4-2x)dx - \int_2^4 \left( \frac{3x}{2}-3\right)dx </tex>
+      </options>
+      <reason>
+         <tex>%text
+One can see from the graph that the 
+required area (of the $\triangle$) will be 
+
+%
+\begin{align}
+R &amp;= \underbrace{\text{Under line BC}}_{\text{From B to C}} = \int_1^4 \frac{x+5}{3}dx\\
+&amp;- \underbrace{\text{Under line BA}}_{\text{From B to A}}=\int_1^2 (4-2x)\cdot dx \\ 
+&amp;- \underbrace{\text{Under line AC}}_{\text{From A to C}}=\int_2^4 \left( \frac{3x}{2}-3\right)dx
+\end{align} 
+%text
+
+Hence, the expression. 
+%</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\frac{7}{2}</tex>
+         <tex>\frac{5}{2}</tex>
+      </options>
+      <reason>
+         <tex>\begin{align}
+R &amp;= \int_1^4 \frac{x+5}{3}dx =\frac{1}{3}\left[ \frac{x^2}{2} + 5x \right]_1^4 = \frac{15}{2}\\ 
+&amp;- \left[\int_1^2 (4-2x)\cdot dx = \left[ 4x-x^2\right]_1^2 = 1 \right]\\
+&amp;- \left[\int_2^4 \left( \frac{3x}{2}-3\right)dx = \left[\frac{3x^2}{4}-3x \right]_2^4 = 3 \right] \\
+\therefore R &amp;= \frac{15}{2} - 1 - 3 = \frac{7}{2} 
+\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex>\frac{5}{2}</tex>
+      <tex>4</tex>
+      <tex>\frac{15}{2}</tex>
+      <tex correct="true">\frac{7}{2} </tex>
+   </choices>
+</question>

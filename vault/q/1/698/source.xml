@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{Differentiate the following} \\
+			\qquad f(x) = \dfrac{\cos x}{\log x}\\
+			\text{with respect to x.}
+		</tex>
+      <tex>\\ \textbf{Right or wrong? } f(x)\text{ is defined}\\
+			\text{only under the following conditions.}</tex>
+      <tex>\\ \textbf{Right or wrong? } \\
+	  		\text{If }f(x) = \dfrac{g(x)}{h(x)},\text{ then }\frac{d}{dx}f(x)\text{ is}\\
+	  		\text{given by the following.}</tex>
+      <tex>\\ \text{Given the Quotient Rule, has }\frac{d}{dx}f(x)\\
+				\text{been calculated correctly below?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\qquad x \gt 0, x\neq 1.
+			</tex>
+         <tex correct="false">
+			\qquad\text{ Only if }x\gt 0.
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{If f(x) is not defined at some x, then}\\
+			\text{f'(x) cannot be.} \\
+			\text{That said, }f(x) = \dfrac{\cos x}{\log x}\text{ is defined if} \\
+			\log x\text{ is defined }(x\gt 0)\text{ and }\log x \neq 0\,(x\neq 1).</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+	  		  \quad f(x) = \dfrac{g(x)}{h(x)}\implies \dfrac{d}{dx}f(x) = \dfrac{g'h-gh'}{h^2}
+	  		</tex>
+         <tex correct="false">
+	  		 \quad f(x) = \dfrac{g(x)}{h(x)}\implies \dfrac{d}{dx}f(x) = \dfrac{g'}{h'}
+	  		</tex>
+      </options>
+      <reason>
+         <tex>\dfrac{d}{dx}\dfrac{g(x)}{h(x)} = 
+	  		\underbrace{\dfrac{h(x)\cdot\frac{d}{dx}g(x)-g(x)\cdot\frac{d}{dx}h(x)}{h(x)^2}}_
+	  		{\text{Quotient Rule}}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				  \begin{align}
+				    \dfrac{d}{dx}f(x) &amp;= \dfrac{\log x\cdot\frac{d}{dx}\cos x - \cos x\cdot\frac{d}{dx}\log x}{(\log x)^2} \\
+				    &amp;= -\dfrac{\log x\cdot\sin x + \frac{\cos x}{x}}{(\log x)^2} \\
+				    &amp;= -\dfrac{x\cdot\sin x\cdot\log x + \cos x}{x\cdot(\log x)^2}, x\gt 0, x\neq 1.
+				  \end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{Note the use of the two standard results}\\
+        \frac{d}{d\theta}\cos\theta = -\sin\theta \text{ and }
+				\frac{d}{dy}\log y = \frac{1}{y}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">
+					-\dfrac{x\cdot\sin x\cdot\log x + \cos x}{x\cdot(\log x)^2}, x\gt 0
+					</tex>
+      <tex>
+					\dfrac{\sin x\cdot\log x + \cos x}{(\log x)^2}, x\gt 0
+					</tex>
+      <tex>
+					-\dfrac{\sin x\cdot\log x + \cos x}{x\cdot(\log x)^2}, x\gt 0
+					</tex>
+      <tex>
+					\dfrac{x\cdot\sin x\cdot\log x + \cos x}{(\log x)^2}, x\gt 0
+					</tex>
+   </choices>
+</question>

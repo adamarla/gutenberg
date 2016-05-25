@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+			\text{For any two complex numbers }z_1\text{ and }z_2,\\
+			\text{prove that} \\
+			\quad Re(z_1\cdot z_2) = Re(z_1)\cdot Re(z_2) - Im(z_1)\cdot Im(z_2)
+		</tex>
+      <tex>\\ \text{If }z_1 = a+ ib \text{ and }z_2 = c+id,\text{ then is the}\\
+			\text{table below correct?}</tex>
+      <tex>\\ \text{Given }z_1 = a+ ib \text{ and }z_2 = c+id,\text{ is the}\\
+				\text{work done below correct?}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{tabular}{|c|c|c|c|}
+			\hline
+			Re(z_1) &amp; Re(z_2) &amp; Im(z_1) &amp; Im(z_2) \\
+			\hline
+			a &amp; c &amp; b &amp; d \\
+			\hline
+			\end{tabular}
+			</tex>
+         <tex correct="false">
+			\begin{tabular}{|c|c|c|c|}
+			\hline
+			Re(z_1) &amp; Re(z_2) &amp; Im(z_1) &amp; Im(z_2) \\
+			\hline
+			a &amp; b &amp; c &amp; d \\
+			\hline
+			\end{tabular}
+			</tex>
+      </options>
+      <reason>
+         <tex>Re(z) = \text{real part of complex number } z. \\
+			Im(z) = \text{imaginary part of complex number }z. \\
+			\text{And you can see that } \\
+			\quad Re(z_1)\cdot Re(z_2) - Im(z_1)\cdot Im(z_2) = a\cdot c - b\cdot d</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{align}
+				  Re(z_1\cdot z_2) &amp;= Re[(a+ib)\cdot (c+id)] \\
+				  &amp;= Re[(ac - bd) + i(ad + bc)] \\
+				  &amp;= ac - bd \\
+				  &amp;= Re(z_1)\cdot Re(z_2) - Im(z_1)\cdot Im(z_2)
+				\end{align}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{You only need to multiply the two example}\\
+				\text{numbers (}z_1\text{ and }z_2\text{). Then compare}\\
+				\text{the real part of the result with }\\
+				Re(z_1)\cdot Re(z_2) - Im(z_1)\cdot Im(z_2)</tex>
+      </reason>
+   </step>
+</question>

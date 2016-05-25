@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>
+		\text{Find the equations of the tangent and}\\
+		\text{normal to the curve} \\
+		\quad x = a\sin^3\theta \text{ and }y=a\cos^3\theta \\
+		\text{at }\theta=\frac\pi{4}.
+		</tex>
+      <tex>\\ \textbf{What is }\theta?\textbf{ Where is }\theta?\\
+			\text{If A be a point on the curve }x=a\sin^3\theta\\
+			\text{and }y = a\cos^3\theta\text{, then would }\theta\text{ be as}\\
+			\text{shown in the graph?}</tex>
+      <tex>\\ \text{Let A be the point where the tangent and}\\
+			\text{normal are. Given that, }\textbf{are the values}\\
+			\textbf{in the table below correct?} \\
+			(\mathbf{m_T} = \text{Tangent's slope, }\mathbf{m_N} = \text{Normal's slope.})</tex>
+      <tex>\\ \textbf{Right or wrong?}\\
+				\text{Given }A, m_T\text{ and }m_N\text{, the equations}\\
+				\text{of the tangent and the slope would be}\\
+				\text{as follows.}</tex>
+   </statement>
+   <step>
+      <options>
+         <tex src="1-right.svg" isImage="true" correct="true"/>
+      </options>
+      <reason>
+         <tex>\text{When }x = f(\theta)\text{ and }y=g(\theta),\text{ then the}\\
+			\text{resulting curve is called a parametric curve.}\\
+			\theta\text{ is the parameter.}\\
+			\text{We get the graph by rotating the line L}\\
+			\text{from }0\text{ to }2\pi.\text{At each angle, we then} \\
+			\text{plot the point A given by }A = \left(f(\theta), g(\theta)\right).</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+			\begin{tabular}{|c|c|c|}
+			\hline 
+			A &amp; m_T &amp; m_N \\
+			\hline 
+			\left(\dfrac{a}{2\sqrt{2}},\dfrac{a}{2\sqrt{2}}\right) &amp; -1 &amp; 1 \\
+			\hline
+			\end{tabular}
+			</tex>
+         <tex correct="false">
+			\begin{tabular}{|c|c|c|}
+			\hline 
+			A &amp; m_T &amp; m_N \\
+			\hline 
+			\left(\dfrac{a}{2\sqrt{2}},\dfrac{a}{2\sqrt{2}}\right) &amp; \tan\theta = 1 &amp; -\dfrac{1}{\tan\theta} = -1 \\
+			\hline
+			\end{tabular}
+			</tex>
+      </options>
+      <reason>
+         <tex>\text{The point }A = (x,y)\text{ where we have to find}\\
+			\text{the tangent and the slope is simply}\\
+			\begin{align}
+			  A &amp;= (x,y) = \left(a\sin^3\frac\pi{4}, a\cos^3\frac{\pi}{4}\right) \\
+			  &amp;= \left(\dfrac{a}{2\sqrt{2}},\dfrac{a}{2\sqrt{2}}\right)
+			\end{align} \\
+			\text{The slope of the tangent, however, is}\dfrac{dy}{dx}.\\
+			\begin{align}
+			  m_T &amp;= \dfrac{dy}{dx} = \dfrac{\frac{dy}{d\theta}}{\frac{dx}{d\theta}} 
+			  = \dfrac{\frac{d}{d\theta}a\cos^3\theta}{\frac{d}{d\theta}a\sin^3\theta} \\
+			  &amp;= \dfrac{3a\cos^2\theta\cdot(-\sin\theta)}{3a\sin^2\theta\cdot(\cos\theta)}
+			  = \left[-\cot\theta\right]_{\theta=\frac\pi{4}} = -1.
+			\end{align} \\
+			\text{And as the normal is }\perp\text{ the tangent,}\\
+			\begin{align}
+			  m_T\cdot m_N &amp;= -1 \implies m_N = -\dfrac{1}{m_T} = 1.
+			\end{align}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">
+				\begin{tabular}{|c|c|}
+				\hline
+				\text{Tangent} &amp; x + y = \dfrac{a}{2\sqrt{2}} \\
+				\hline
+				\text{Normal} &amp; y = x \\
+				\hline
+				\end{tabular}
+				</tex>
+         <tex correct="false">
+				\begin{tabular}{|c|c|}
+				\hline
+				\text{Tangent} &amp;  y = x \\
+				\hline
+				\text{Normal} &amp; x + y = \dfrac{a}{2\sqrt{2}}\\
+				\hline
+				\end{tabular}
+				</tex>
+      </options>
+      <reason>
+         <tex>\text{We know }A, m_T\text{ and }m_N.\text{ We therefore,}\\
+				\text{only need to apply }\\
+				\quad \dfrac{y-y_1}{x-x_1} = m \\
+				\begin{align}
+				  \text{Tangent} &amp;: \dfrac{y-\dfrac{a}{2\sqrt{2}}}{x-\dfrac{a}{2\sqrt{2}}} = -1 
+				  \implies x + y = \dfrac{a}{\sqrt{2}} \\
+				  \text{Normal} &amp;: \dfrac{y-\dfrac{a}{2\sqrt{2}}}{x-\dfrac{a}{2\sqrt{2}}} = 1
+				  \implies y = x
+				\end{align}</tex>
+      </reason>
+   </step>
+   <choices>
+      <tex correct="true">
+					\text{Tangent: }x + y = \dfrac{a}{\sqrt{2}} \\
+					\text{Normal: } y=x
+					</tex>
+      <tex>
+					\text{Tangent: }y=\dfrac{x}{\sqrt{2}}\\
+					\text{Normal: } x + y = a
+					</tex>
+      <tex>
+					\text{Tangent: }y= -x\\
+					\text{Normal: } x - y = \dfrac{a}{\sqrt{2}} 
+					</tex>
+      <tex>
+					\text{Tangent: }y - x = 2a\\
+					\text{Normal: } x + y = \sqrt{2}a
+					</tex>
+   </choices>
+</question>

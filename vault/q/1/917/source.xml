@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<question xmlns="http://www.gradians.com">
+   <statement>
+      <tex>\text{Integrate the following}\\
+\qquad \dfrac{x^2}{1-x^6}</tex>
+      <tex>\\ \text{Which of the following would be the smarter}\\
+\text{substitution to make?}</tex>
+      <tex>\\ \text{Is the following the correct integral }\\
+\text{- in terms of x}?</tex>
+   </statement>
+   <step>
+      <options>
+         <tex correct="true">\begin{align}
+\text{Let }t &amp;= x^3 \\
+\therefore dt &amp;= 3x^2\cdot dx \\
+\implies\int\dfrac{x^2}{1-x^6}dx &amp;= 
+\dfrac{1}{3}\int\dfrac{dt}{1-t^2}dt
+\end{align}</tex>
+         <tex>\begin{align}
+\text{Let }t &amp;= x^2\\
+\therefore dt &amp;= 2 \cdot (x\cdot dx) \\
+\implies\int\dfrac{x^2}{1-x^6}dx &amp;= 
+\int\dfrac{x\cdot (x\cdot dx)}{1-x^6} \\
+&amp;= \dfrac{1}{2}\int\dfrac{\sqrt{t}}{1-t^3}dt
+\end{align}</tex>
+      </options>
+      <reason>
+         <tex>\text{When substituting, try and pick a }t = f(x)\\
+\text{so that something that looks like }dt = f'(x) \\
+\text{is in the numerator and something with}\\
+\text{just t = f(x) is in the denominator.}</tex>
+      </reason>
+   </step>
+   <step>
+      <options>
+         <tex correct="true">\begin{align}
+I &amp;= \dfrac{1}{3}\int\dfrac{dt}{1-t^2} \\ 
+&amp;= \dfrac{1}{3}\cdot\left(\dfrac{1}{2}
+\log\left|\dfrac{1+t}{1-t}\right|\right) + C  \\
+&amp;= \dfrac{1}{6}\cdot\log\left| \dfrac{1+x^3}{1-x^3}\right| + C
+\end{align}</tex>
+      </options>
+      <reason>
+         <tex>\text{Use the standard result, }\\ 
+\int\dfrac{dt}{a^2-t^2} = 
+\dfrac{1}{2a}\log\left| \dfrac{a+t}{a-t}\right| + C.\\
+\text{And here, }a = 1\text{ and } t = x^3.</tex>
+      </reason>
+   </step>
+</question>
