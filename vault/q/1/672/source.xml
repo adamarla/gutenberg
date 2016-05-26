@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<question xmlns="http://www.gradians.com" chapterId="0">
+<question xmlns="http://www.gradians.com" chapterId="21">
   <statement>
     <tex>%text
 Examine the continuity of $f(x)$ where
@@ -9,9 +9,7 @@ $f(x)$ is defined as
 \qquad f(x) = \begin{cases}
 			   \sin x - \cos x, x\neq 0 \\
 			   -1, x = 0 
-			\end{cases}
-			
-		\\ \text{What are we being asked in the question?}\\ \text{Is the following assertion correct?}\\ \text{Is the following analysis correct?}</tex>
+			\end{cases}</tex>
   </statement>
   <step>
     <options>
@@ -21,8 +19,7 @@ $f(x)$ is continuous for all $x$ --
 and not just $x=0$ or some 
 other $x$
 %</tex>
-      <tex correct="false">
-				</tex>
+      <tex correct="false"/>
     </options>
     <reason>
       <tex>%text
@@ -34,6 +31,9 @@ about whether $f(x)$ is continuous
 at $x=\pi$ or $x=-10,000$
 %</tex>
     </reason>
+    <skills>
+      <skill id="36"/>
+    </skills>
   </step>
   <step>
     <options>
@@ -44,28 +44,50 @@ $f(x)$ is continuous for all $x\neq 0$
     </options>
     <reason>
       <tex>%text
-$\sin x$ is continuous for all $x$. 
-So is $\cos x$. 
+If two functions $A(x)$ and $B(x)$ 
+are \underline\text{independently} continuous 
+in some domain, then so are 
+$A(x) + B(x)$ and $A(x) - B(x)$. 
+
+And as $\sin x$ and $\cos x$ are both
+\underline\text{continuous for every $x\neq 0$}, 
+therefore so is $f(x) = \sin x - \cos x$. 
 
 
 %</tex>
     </reason>
+    <skills>
+      <skill id="34"/>
+      <skill id="4"/>
+    </skills>
   </step>
   <step>
     <options>
       <tex/>
-      <tex correct="false"/>
+      <tex correct="false">\[ \lim_{x\to 0}f(x) \neq f(0) \]
+%text
+
+Hence, $f(x)$ is continuous 
+only for $x\neq 0$
+%</tex>
     </options>
     <reason>
-      <tex>\text{In Step 2, we proved that f(x) is continuous for}\\
-						x\neq 0.\text{ And here, as }\lim_{x\to 0^-}f(x)=\lim_{x\to 0^+}f(x) = f(0),\\
-						f(x)\text{ is also continuous at }x=0\implies\text{ continuity everywhere.}</tex>
+      <tex>\begin{align}
+\lim_{x\to 0} f(x) &amp;= \lim_{x\to 0}\left(\sin x-\cos x\right)  \\
+&amp;= 0-1 = -1 = f(0) 
+\end{align}
+%text
+
+And as $\lim_{x\to 0}f(x) = f(0)$, therefore
+$f(x)$ is \underline\text{continuous at $x=0$}
+
+Moreover, $f(x)$ is continuous when 
+$x\neq 0$. Therefore, $f(x)$ is continuous
+\underline\text{for all $x$} 
+%</tex>
     </reason>
+    <skills>
+      <skill id="34"/>
+    </skills>
   </step>
-  <choices>
-    <tex>\text{Continuous for all x.}</tex>
-    <tex>\text{Not continuous at }x=0.</tex>
-    <tex>\text{Continuous only at }x=0.</tex>
-    <tex>\text{Continuous only for }x\neq 0.</tex>
-  </choices>
 </question>
