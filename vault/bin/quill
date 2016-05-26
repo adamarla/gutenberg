@@ -32,7 +32,7 @@ function usage() {
     echo "-e path_to_folder (Editor edit/modify question)"
     echo "-r path_to_folder (Render generated SVGs for mobile app)"
     echo "-m mode = sandbox | production | display"
-    echo "-c path_to_folder chapterId (Convert question.xml to source.xml)"
+    echo "-c path_to_folder (Convert question.xml to source.xml)"
     echo ""
 
 }
