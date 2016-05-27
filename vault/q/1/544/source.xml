@@ -50,10 +50,4 @@
         \text{And hence, }\frac{dA}{dR} = \pi\cdot\frac{d}{dR}R^2 = 2\pi R.</tex>
       </reason>
    </step>
-   <choices>
-      <tex>(a)\,24\pi\quad (b)\,32\pi</tex>
-      <tex>(a)\,8\pi\quad (b)\,6\pi</tex>
-      <tex>(a)\,9\pi\quad (b)\,16\pi</tex>
-      <tex correct="true">(a)\,6\pi\quad (b)\,8\pi</tex>
-   </choices>
 </question>

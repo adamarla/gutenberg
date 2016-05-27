@@ -94,10 +94,4 @@
 				\text{machines for a total profit of &#8377; 392.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\text{Max. profit = }&#8377; 360</tex>
-      <tex correct="true">\text{Max. profit = }&#8377; 392</tex>
-      <tex>\text{Max. profit = }&#8377; 298</tex>
-      <tex>\text{Max. profit = }&#8377; 348</tex>
-   </choices>
 </question>

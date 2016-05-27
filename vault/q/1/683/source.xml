@@ -69,10 +69,4 @@
 				\frac{d}{d g(x)}f(\, g(x)\,)\cdot\frac{d}{dx}g(x)}_{\textbf{Chain Rule}}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\sin (ax + b)</tex>
-      <tex>a\cdot\sin (ax +b)</tex>
-      <tex correct="true">a\cos (ax + b)</tex>
-      <tex>\cos (ax + b)</tex>
-   </choices>
 </question>

@@ -118,10 +118,4 @@
 				\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">\dfrac{3}{4}</tex>
-      <tex>\dfrac{1}{2}</tex>
-      <tex>-\dfrac{1}{4}</tex>
-      <tex>\dfrac{2}{3}</tex>
-   </choices>
 </question>

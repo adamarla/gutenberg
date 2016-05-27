@@ -93,14 +93,4 @@ from Steps 2 and 3.
 %</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true"> I = \frac{5}{6}\log\left\vert 1+2x+3x^2\right\vert \\
- -\frac{11}{3\sqrt{2}}\tan^{-1}\left(\frac{3x+1}{\sqrt{2}}\right) + C </tex>
-      <tex> I = \frac{5}{6}\log\left\vert 1+2x+3x^2\right\vert \\
- - \frac{11}{\sqrt{3}}\tan^{-1}\left(\frac{3x-1}{\sqrt{3}}\right)+ C </tex>
-      <tex> I = \frac{5}{6}( 1+2x+3x^2) \\
- -\frac{11}{\sqrt{3}}\tan^{-1}\left(\frac{3x-1}{\sqrt{3}}\right) + C </tex>
-      <tex> I =  \frac{5}{6}( 1+2x+3x^2) \\
- -\frac{11}{3\sqrt{2}}\tan^{-1}\left(\frac{3x+1}{\sqrt{2}}\right) + C </tex>
-   </choices>
 </question>

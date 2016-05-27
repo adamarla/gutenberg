@@ -79,18 +79,4 @@
 	  		x\in (-1,1) = [-1,1]-\lbrace -1,1\rbrace.</tex>
       </reason>
    </step>
-   <choices>
-      <tex>
-				-e^{\sin^{-1}x}\cdot\dfrac{1}{\sqrt{1+x^2}}
-				</tex>
-      <tex correct="true">
-				e^{\sin^{-1}x}\cdot\dfrac{1}{\sqrt{1-x^2}}, x\in \left(-1,1\right)
-				</tex>
-      <tex>
-				e^{x}\sin^{-1}x \cdot\dfrac{1}{\sqrt{1-x^2}}, x\in \left(-1,1\right)
-				</tex>
-      <tex>
-				e^{x}\cdot\dfrac{1}{\sqrt{1-x^2}}, x\in \left(-1,1\right)
-				</tex>
-   </choices>
 </question>

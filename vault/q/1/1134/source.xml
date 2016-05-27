@@ -108,22 +108,4 @@
 				\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">
-					\text{Tangent: }x + y = \dfrac{a}{\sqrt{2}} \\
-					\text{Normal: } y=x
-					</tex>
-      <tex>
-					\text{Tangent: }y=\dfrac{x}{\sqrt{2}}\\
-					\text{Normal: } x + y = a
-					</tex>
-      <tex>
-					\text{Tangent: }y= -x\\
-					\text{Normal: } x - y = \dfrac{a}{\sqrt{2}} 
-					</tex>
-      <tex>
-					\text{Tangent: }y - x = 2a\\
-					\text{Normal: } x + y = \sqrt{2}a
-					</tex>
-   </choices>
 </question>

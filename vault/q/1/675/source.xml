@@ -62,10 +62,4 @@
 					\text{here. Check your calculations if got something else.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>-\dfrac{\pi}{2}</tex>
-      <tex correct="true">-\dfrac{2}{\pi}</tex>
-      <tex>\dfrac{2}{\pi}</tex>
-      <tex>-\dfrac{1}{\pi}</tex>
-   </choices>
 </question>

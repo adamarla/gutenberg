@@ -51,10 +51,4 @@
 			\text{the value of }P(A).</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\dfrac{1}{36}</tex>
-      <tex correct="true">\dfrac{1}{3}</tex>
-      <tex>\dfrac{1}{6}</tex>
-      <tex>\dfrac{1}{2}</tex>
-   </choices>
 </question>

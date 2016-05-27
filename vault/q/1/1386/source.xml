@@ -90,10 +90,4 @@ y &amp;= \cot^{-1} P(x) = \cot^{-1} \dfrac{\sin x}{1-\cos x} \\
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>1</tex>
-      <tex>\frac{1}{\sqrt{1-x^2}}</tex>
-      <tex correct="true">\frac{1}{2}</tex>
-      <tex>\frac{x}{2}</tex>
-   </choices>
 </question>

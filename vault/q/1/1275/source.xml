@@ -150,10 +150,4 @@ Q &amp;= 2\int_0^\sqrt{2}\frac{x^2}{4}\cdot dx = \left[ \frac{x^3}{6}\right]_0^\
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">\frac{9}{4}\sin^{-1}\frac{2\sqrt{2}}{3} + \frac{1}{3\sqrt{2}}</tex>
-      <tex>\frac{9\pi}{4} + \frac{1}{3\sqrt{2}}</tex>
-      <tex>\frac{9\pi}{8}+ \frac{1}{3\sqrt{2}}</tex>
-      <tex>\frac{9\pi}{8} + \frac{1}{\sqrt{6}}</tex>
-   </choices>
 </question>

@@ -104,10 +104,4 @@
     \end{tabular}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\text{Differentiable at x = 1 but not x = 2.}</tex>
-      <tex correct="true">\text{Not differentiable at x = 1 or x = 2.}</tex>
-      <tex>\text{Differentiable at x = 2, but not x = 1}</tex>
-      <tex>\text{Differentiable at both x = 1 and x = 2.}</tex>
-   </choices>
 </question>

@@ -71,18 +71,4 @@
 		g'(x)\text{ and }h'(x)\text{ that are needed in }f'(x).</tex>
       </reason>
    </step>
-   <choices>
-      <tex>
-					\sec(cx +d)\cdot \left[a\cos(ax+b) - c\tan(cx+d)\cdot\sin(ax+b)\right]
-					</tex>
-      <tex>
-					\cos(ax+b) + \tan(cx+d)\cdot\sin(ax+b)
-					</tex>
-      <tex>
-					\sec(cx +d)\cdot \left[\cos(ax+b) + \tan(cx+d)\cdot\sin(ax+b)\right]
-					</tex>
-      <tex correct="true">
-					\sec(cx +d)\cdot \left[a\cos(ax+b) + c\tan(cx+d)\cdot\sin(ax+b)\right]
-					</tex>
-   </choices>
 </question>

@@ -117,10 +117,4 @@
     		\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\dfrac{5}{9}</tex>
-      <tex>\dfrac{2}{9}</tex>
-      <tex>\dfrac{4}{5}</tex>
-      <tex correct="true">\dfrac{2}{5}</tex>
-   </choices>
 </question>

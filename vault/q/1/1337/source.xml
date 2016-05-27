@@ -100,10 +100,4 @@ C &amp;= 280 + 180\cdot (x+y) \\
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>&#8377; 700</tex>
-      <tex>&#8377; 780</tex>
-      <tex>&#8377; 850</tex>
-      <tex correct="true">&#8377; 1000 </tex>
-   </choices>
 </question>

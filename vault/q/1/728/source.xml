@@ -88,11 +88,4 @@ f(x) &amp;= \underbrace{(\sin x)^{x}}_{g(x)} + \underbrace{\sin^{-1} {\sqrt x}}_
 \log h(x)\text{ first.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>(\sin x)^{x} \left[ x \cdot \tan x + \log (\sin x)\right] + \dfrac{1}{2 \sqrt{x - x^2}}</tex>
-      <tex>(\sin x)^{x} \left[ x \cdot \cot x + \log (\sin x)\right] + \dfrac{1}{ \sqrt{x - x^2}}</tex>
-      <tex>(\sin x)^{x} \left[ x \cdot \cot x + \log (\sin x)\right] + 
-\dfrac{1}{2 \sqrt{1 - x}}</tex>
-      <tex correct="true">(\sin x)^{x} \left[ x \cdot \cot x + \log (\sin x)\right] + \dfrac{1}{2 \sqrt{x - x^2}}</tex>
-   </choices>
 </question>

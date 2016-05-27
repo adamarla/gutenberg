@@ -127,22 +127,4 @@ functions that $\frac{dy}{dx}\neq 0$.
 %</tex>
       </reason>
    </step>
-   <choices>
-      <tex>%text
-Increasing when $x\geq 1$
-Decreasing when $x\leq 1$
-%</tex>
-      <tex>%text
-Decreasing when $x\leq -1$ or $x\geq 1$ 
-Increasing when $x\in(-1,1)$
-%</tex>
-      <tex correct="true">%text
-Increasing when $x\leq -1$ or $x\geq 1$ 
-Decreasing when $x\in(-1,1)$
-%</tex>
-      <tex>%text
-Increasing when $x\geq -1$ 
-Decreasing when $x\leq -1$
-%</tex>
-   </choices>
 </question>

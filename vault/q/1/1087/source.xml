@@ -82,10 +82,4 @@
 			\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\dfrac{\alpha}{\beta}\tan t</tex>
-      <tex>\dfrac{\beta}{\alpha}\tan 3t</tex>
-      <tex correct="true">\dfrac{\beta}{\alpha}\tan t</tex>
-      <tex>\dfrac{\alpha}{\beta}\tan 2t</tex>
-   </choices>
 </question>

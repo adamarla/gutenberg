@@ -39,12 +39,4 @@
 				\text{if you got them wrong.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">x\gt -1\text{ (increasing)}\\
-					x\lt -1\text{ (decreasing)}</tex>
-      <tex>x\gt -1\text{ (decreasing)}\\
-					x\lt -1\text{ (increasing)}</tex>
-      <tex>\text{Always increasing}</tex>
-      <tex>\text{Always decreasing}</tex>
-   </choices>
 </question>

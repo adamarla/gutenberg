@@ -55,10 +55,4 @@
 			\text{continuous at }x=2\left(\lim_{x\to 2^-}y\neq\lim_{x\to 2^+}y\right).</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">-\frac{1}{64}</tex>
-      <tex>-\frac{1}{100}</tex>
-      <tex>\frac{1}{100}</tex>
-      <tex>\frac{1}{64}</tex>
-   </choices>
 </question>

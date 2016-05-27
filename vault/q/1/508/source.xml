@@ -89,10 +89,4 @@ last step, \underline\text{is the analysis below correct}?
 					\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\star = \cap</tex>
-      <tex correct="true">\star = \cup</tex>
-      <tex>\star = -</tex>
-      <tex>\text{None of the above.}</tex>
-   </choices>
 </question>

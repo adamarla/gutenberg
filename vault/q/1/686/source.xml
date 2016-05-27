@@ -55,21 +55,4 @@
   		\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>
-				e^x + 3x^2\cdot e^{x^3}
-			  + 5x^4\cdot e^{x^5}
-				</tex>
-      <tex>
-				e^x + 5x^4\cdot e^{x^5}
-				</tex>
-      <tex>
-				e^x + 3x^2\cdot e^{x^3}
-			  + 4x^3\cdot e^{x^4} + 5x^4\cdot e^{x^5}
-				</tex>
-      <tex correct="true">
-				e^x + 2x\cdot e^{x^2} + 3x^2\cdot e^{x^3}
-			  + 4x^3\cdot e^{x^4} + 5x^4\cdot e^{x^5}
-				</tex>
-   </choices>
 </question>

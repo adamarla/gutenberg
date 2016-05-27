@@ -68,10 +68,4 @@ Then, we differentiated - like so
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\frac{y}{x}</tex>
-      <tex correct="true">\frac{y}{x}\left[ \frac{y^2-3x^2}{3y^2-x^2} \right]</tex>
-      <tex>\frac{y + 4x\cdot(x^2+y^2)}{x-4y\cdot(x^2+y^2)}</tex>
-      <tex>\frac{y - 4x\cdot(x^2+y^2)}{x+ 4y\cdot(x^2+y^2)}</tex>
-   </choices>
 </question>

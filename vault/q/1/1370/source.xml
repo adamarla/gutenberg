@@ -92,10 +92,4 @@ we can say that
 %</tex>
       </reason>
    </step>
-   <choices>
-      <tex>y = e^{\tan x}\cdot (\tan x-1) + C </tex>
-      <tex correct="true">y = (\tan x - 1) + \frac{C}{e^{\tan x}} </tex>
-      <tex>y = (\tan x - 1) + C\cdot e^{\tan x}</tex>
-      <tex>y = e^{\tan x}\cdot (\tan x + 1) + C </tex>
-   </choices>
 </question>

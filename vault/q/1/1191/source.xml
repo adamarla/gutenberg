@@ -63,30 +63,4 @@
 				P(3) = 0.005\cdot 3^3 + 0.02\cdot 3^2 + 30\cdot 3 = 90.315.</tex>
       </reason>
    </step>
-   <choices>
-      <tex>
-					\begin{align}
-				\text{Marginal increase } &amp;= 33.12 \\
-				\text{Total pollution} &amp;= 95.83
-				\end{align}
-					</tex>
-      <tex>
-					\begin{align}
-				\text{Marginal increase } &amp;= 31.57 \\
-				\text{Total pollution} &amp;= 93.93
-				\end{align}
-					</tex>
-      <tex>
-					\begin{align}
-				\text{Marginal increase } &amp;= 29.77 \\
-				\text{Total pollution} &amp;= 89.54
-				\end{align}
-					</tex>
-      <tex correct="true">
-					\begin{align}
-				\text{Marginal increase } &amp;= 30.42 \\
-				\text{Total pollution} &amp;= 92.89
-				\end{align}
-					</tex>
-   </choices>
 </question>

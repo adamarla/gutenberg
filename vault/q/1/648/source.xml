@@ -46,10 +46,4 @@
 				\text{f(x), g(x) and h(x).}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\text{None are continuous}</tex>
-      <tex>\text{Only f(x) is continuous}</tex>
-      <tex>\text{Only f(x) and g(x) are continuous}</tex>
-      <tex correct="true">\text{All are continuous}</tex>
-   </choices>
 </question>

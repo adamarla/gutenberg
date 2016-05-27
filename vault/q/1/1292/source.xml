@@ -131,10 +131,4 @@ we know that the following must hold
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">\alpha - \beta = \frac{2}{3}</tex>
-      <tex>\beta - \alpha  = \frac{2}{3}</tex>
-      <tex>\alpha - \beta = \frac{4}{3}</tex>
-      <tex>\beta - \alpha  = \frac{4}{3}</tex>
-   </choices>
 </question>

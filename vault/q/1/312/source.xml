@@ -138,10 +138,4 @@ Hence, the \underline\text{largest term} will be
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\dfrac{3^{14}}{2^3}</tex>
-      <tex>\dfrac{3^{16}}{8}</tex>
-      <tex>2\cdot 3^{13}</tex>
-      <tex correct="true">\dfrac{7\cdot 3^{13}}{2}</tex>
-   </choices>
 </question>

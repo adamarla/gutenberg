@@ -63,10 +63,4 @@ And as $\sin\left( -\frac\pi{6}\right) = -\frac{1}{2}$ and $-\frac\pi{6}\in\left
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>-1</tex>
-      <tex>0</tex>
-      <tex correct="true">1</tex>
-      <tex>\frac{1}{2}</tex>
-   </choices>
 </question>

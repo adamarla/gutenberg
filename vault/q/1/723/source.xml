@@ -87,22 +87,4 @@ f(x) &amp;= \underbrace{x^{x \cos x}}_{g(x)} + \underbrace{\left[ \dfrac{x^2 + 1
 \log h(x)\text{ first.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">\begin{align}
-f'(x) = &amp;x^{x \cos x} \left[\, \cos x \cdot (1 + \log x) - x \sin x \cdot \log x \right] \\
-&amp; -  \dfrac{4 x}{(x^2 -1)^2} 
-\end{align}</tex>
-      <tex>\begin{align}
-f'(x) = &amp;x^{x \cos x} \left[\, \cos x \cdot (1 + \log x) - x \sin x \cdot \log x \right] \\
-&amp; -  \dfrac{4 x}{(x^2 -1)} 
-\end{align}</tex>
-      <tex>\begin{align}
-f'(x) = &amp;x^{x \cos x} \left[\, \cos x \cdot (1 + \log x) - x \sin x \cdot \log x \right] \\
-&amp; +  \dfrac{4 x}{(x^2 -1)^2} 
-\end{align}</tex>
-      <tex>\begin{align}
-f'(x) = &amp;x^{x \cos x} \left[\, \cos x \cdot (1 + \log x) + x \sin x \cdot \log x \right] \\
-&amp; -  \dfrac{4 x}{(x^2 -1)^2} 
-\end{align}</tex>
-   </choices>
 </question>

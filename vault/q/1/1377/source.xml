@@ -41,10 +41,4 @@ And similarly
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">7</tex>
-      <tex>14</tex>
-      <tex>0</tex>
-      <tex>49</tex>
-   </choices>
 </question>

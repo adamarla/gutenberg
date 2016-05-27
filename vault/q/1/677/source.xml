@@ -68,10 +68,4 @@
 						\text{at x = 0. That means, f(x) is continuous for all x.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\text{Continuous only for }x\neq 0</tex>
-      <tex>\text{Continuous only at x = 0.}</tex>
-      <tex correct="true">\text{Continuous for all x.}</tex>
-      <tex>\text{Not continuous at any x.}</tex>
-   </choices>
 </question>

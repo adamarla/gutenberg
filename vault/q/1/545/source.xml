@@ -42,10 +42,4 @@
 				\text{if you got a different answer.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\left(1,-4\right),\left(3,-20\right)</tex>
-      <tex>\left(-1,12\right),\left(2,-15\right)</tex>
-      <tex>\left(1,-4\right),\left(0,7\right)</tex>
-      <tex correct="true">\left(-1,12\right),\left(3,-20\right)</tex>
-   </choices>
 </question>

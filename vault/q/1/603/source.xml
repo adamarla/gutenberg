@@ -60,10 +60,4 @@
 				\text{to }x\cdot(2-x) - \text{ which is }\gt 0\text{ when }x\in \left(0,2\right).</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\left(-\infty,\infty\right)</tex>
-      <tex>\left(-2,0\right)</tex>
-      <tex>\left(2,\infty\right)</tex>
-      <tex correct="true">\left(0,2\right)</tex>
-   </choices>
 </question>

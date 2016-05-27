@@ -120,10 +120,4 @@ P(S\vert A)\cdot P(A) &amp;= P(A\vert S)\cdot P(S) \\
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\frac{1}{13}</tex>
-      <tex>\frac{1}{104}</tex>
-      <tex correct="true">\frac{1}{52}</tex>
-      <tex>\frac{1}{26}</tex>
-   </choices>
 </question>

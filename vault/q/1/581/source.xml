@@ -76,10 +76,4 @@
 					\text{Hence, it can be said to be neither.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\text{(a) decreasing (b) decreasing (c) increasing}</tex>
-      <tex correct="true">\text{(a) increasing (b) decreasing (c) neither}</tex>
-      <tex>\text{(a) increasing (b) decreasing (c) decreasing}</tex>
-      <tex>\text{(a) increasing (b) increasing (c) neither}</tex>
-   </choices>
 </question>

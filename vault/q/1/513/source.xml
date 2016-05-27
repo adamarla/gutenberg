@@ -85,10 +85,4 @@
 				\text{Therefore, }x\in [2,3)\cup [7,8).</tex>
       </reason>
    </step>
-   <choices>
-      <tex>x = 2,7</tex>
-      <tex correct="true">x\in [2,3)\cup [7,8)</tex>
-      <tex>x\in (2,3)\cup (7,8)</tex>
-      <tex>x\in (2,3]\cup (7,8]</tex>
-   </choices>
 </question>

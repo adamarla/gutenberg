@@ -85,10 +85,4 @@ Hence, C is an empty set. That is, \underline{$C = \phi$}.
 %</tex>
       </reason>
    </step>
-   <choices>
-      <tex>C = \lbrace 2,5 \rbrace</tex>
-      <tex>C=\lbrace -2,-5 \rbrace</tex>
-      <tex correct="true">C=\phi</tex>
-      <tex>C = \lbrace -2,5 \rbrace</tex>
-   </choices>
 </question>

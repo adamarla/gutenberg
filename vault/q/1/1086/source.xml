@@ -114,10 +114,4 @@
 				\quad</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\dfrac{5}{6}</tex>
-      <tex correct="true">\dfrac{10}{19}</tex>
-      <tex>\dfrac{7}{13}</tex>
-      <tex>\dfrac{8}{19}</tex>
-   </choices>
 </question>

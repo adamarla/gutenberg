@@ -80,10 +80,4 @@ both expressions.
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>0</tex>
-      <tex>\pi</tex>
-      <tex correct="true">\frac\pi{2} </tex>
-      <tex>2\pi </tex>
-   </choices>
 </question>

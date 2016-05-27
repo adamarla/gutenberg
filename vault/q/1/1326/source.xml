@@ -66,10 +66,4 @@ P(\text{getting a six}) &amp;= p = \frac{1}{6}\\
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\frac{125}{8673}</tex>
-      <tex>\frac{625}{11664}</tex>
-      <tex>\frac{125}{10784}</tex>
-      <tex correct="true">\frac{625}{23328}</tex>
-   </choices>
 </question>

@@ -122,16 +122,4 @@
 				\text{And therefore, if }x\in\mathbb{R},\text{ then f(x)'s range } = \mathbb{R}.</tex>
       </reason>
    </step>
-   <choices>
-      <tex>
-					(a)\, (-\infty,\infty)\quad (b)\, (-\infty,\infty)\quad (c)\,\mathbb{R}
-					</tex>
-      <tex correct="true">(a)\, (-\infty,2]\quad (b)\, [2,\infty)\quad (c)\,\mathbb{R}</tex>
-      <tex>
-					(a)\, (2,\infty)\quad (b)\, (0,\infty)\quad (c)\,\mathbb{R}
-					</tex>
-      <tex>
-					(a)\, (-\infty,\infty)\quad (b)\, (0,\infty)\quad (c)\,\mathbb{R}^+
-					</tex>
-   </choices>
 </question>

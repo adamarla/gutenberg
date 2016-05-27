@@ -93,10 +93,4 @@
 					\text{equations - which we solved to get a and b.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">a=2, b = 1</tex>
-      <tex>a=1, b = 2</tex>
-      <tex>a=-2, b = 1</tex>
-      <tex>a=-1, b = 2</tex>
-   </choices>
 </question>

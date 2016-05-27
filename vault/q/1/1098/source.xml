@@ -72,10 +72,4 @@ A &amp;= \text{Area below }y = x+ 2 \\
 				\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>1\text{ sq. units}</tex>
-      <tex>2\text{ sq. units}</tex>
-      <tex correct="true">4\text{ sq. units}</tex>
-      <tex>8\text{ sq. units}</tex>
-   </choices>
 </question>

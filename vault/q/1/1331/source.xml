@@ -88,10 +88,4 @@ That is all that we need to find its equation.
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">24y = 48x - 23</tex>
-      <tex>12y = 24x + 14 </tex>
-      <tex>6y = 8x - 5</tex>
-      <tex>13y = 26x - 17</tex>
-   </choices>
 </question>

@@ -59,10 +59,4 @@ The two slopes are equal therefore,
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>k=\dfrac{3}{2}</tex>
-      <tex correct="true">k=-\dfrac{3}{2}</tex>
-      <tex>k=\dfrac{4}{3}</tex>
-      <tex>k=-\dfrac{2}{3}</tex>
-   </choices>
 </question>

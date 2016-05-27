@@ -142,18 +142,4 @@ on a \underline\text{normal day} is
 %</tex>
       </reason>
    </step>
-   <choices>
-      <tex>%text
-$4$ hours
-%</tex>
-      <tex>%text
-$2$ hours
-%</tex>
-      <tex correct="true">%text
-$3$ hours
-%</tex>
-      <tex>%text
-$1\frac{1}{2}$ hours
-%</tex>
-   </choices>
 </question>

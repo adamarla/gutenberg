@@ -133,10 +133,4 @@
 				f(\theta)\text{ are }\underline{1\text{ and }\dfrac{1}{2}}\text{ respectively.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">\text{Maximum = 1, Minimum = }\dfrac{1}{2}</tex>
-      <tex>\text{Maximum = }\dfrac{1}{2}, \text{ Minimum = }\dfrac{1}{4}</tex>
-      <tex>\text{Maximum = }2, \text{ Minimum = }1</tex>
-      <tex>\text{Maximum = 1, Minimum = }0</tex>
-   </choices>
 </question>

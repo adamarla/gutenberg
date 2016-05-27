@@ -164,10 +164,4 @@
 					\quad P(L) = \dfrac{13}{52} = \dfrac{1}{4}\implies P(\bar{L}) = \dfrac{3}{4}.</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">\dfrac{10}{49}</tex>
-      <tex>\dfrac{1}{4}</tex>
-      <tex>\dfrac{13}{45}</tex>
-      <tex>\dfrac{4}{13}</tex>
-   </choices>
 </question>

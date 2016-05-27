@@ -89,22 +89,4 @@
 				\end{tabular}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>
-					(a)\quad x\in(-\infty,2)\\
-					(b)\quad  x\in (2,\infty)
-					</tex>
-      <tex>
-					(a)\quad x\in(-\infty,-1)\cup(0,2)\\
-					(b)\quad  x\in (-1,0)\cup(2,\infty)
-					</tex>
-      <tex>
-					(a)\quad x\in(-\infty,-1)\\
-					(b)\quad  x\in (-1,\infty)
-					</tex>
-      <tex correct="true">
-					(a)\quad x\in (-1,0)\cup(2,\infty)\\
-					(b)\quad x\in(-\infty,-1)\cup(0,2)
-					</tex>
-   </choices>
 </question>

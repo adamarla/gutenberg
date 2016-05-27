@@ -47,10 +47,4 @@
 = \dfrac{1}{a}\tan^{-1}\dfrac{t}{a} + C.</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\dfrac{1}{3}\cdot\tan^{-1}\dfrac{x+1}{6} + C</tex>
-      <tex>\dfrac{1}{6}\cdot\tan^{-1}\dfrac{x+1}{2} + C</tex>
-      <tex>\dfrac{1}{2}\cdot\tan^{-1}\dfrac{3x+1}{2} + C</tex>
-      <tex correct="true">\dfrac{1}{6}\cdot\tan^{-1}\dfrac{3x+1}{2} + C</tex>
-   </choices>
 </question>

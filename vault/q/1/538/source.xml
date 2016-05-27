@@ -99,10 +99,4 @@
 		  		\text{find the equation of the line.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>y=2</tex>
-      <tex>y = -\frac{1}{2}</tex>
-      <tex>y = \frac{1}{6}</tex>
-      <tex correct="true">y=\frac{1}{2}</tex>
-   </choices>
 </question>

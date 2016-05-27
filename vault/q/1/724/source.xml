@@ -59,18 +59,4 @@
 				\frac{d}{dx}\log(\log x) = \frac{1}{\log x}\cdot\frac{d}{dx}\log x = \frac{1}{x\cdot\log x}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>
-					(\log x)^{\cos x}\cdot\left[\frac{\cos x}{\log x} - \sin x\cdot\log(\log x)\right]
-					</tex>
-      <tex>
-					(\log x)^{\cos x}\cdot\left[\frac{\cos x}{x\cdot\log x} + \sin x\cdot\log(\log x)\right]
-					</tex>
-      <tex correct="true">
-					(\log x)^{\cos x}\cdot\left[\frac{\cos x}{x\cdot\log x} - \sin x\cdot\log(\log x)\right]
-					</tex>
-      <tex>
-					(\log x)^{\cos x}\cdot\left[\frac{\cos x}{x\cdot\log x}  + \sin x\cdot\log x\right]
-					</tex>
-   </choices>
 </question>

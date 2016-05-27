@@ -64,4 +64,8 @@ end
   step.add_child(rsn.remove) # <reason> is first child. Move it to being the last child 
 end 
 
+# Remove choices - the game is different now ! 
+choices = @doc.search('choices').first
+choices.remove unless choices.nil?
+
 File.write output_file, @doc.human

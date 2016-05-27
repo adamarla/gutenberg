@@ -34,10 +34,4 @@ We have simply used the following two
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">\frac\pi{4}</tex>
-      <tex>\frac\pi{2}</tex>
-      <tex>1</tex>
-      <tex>\frac\pi{8}</tex>
-   </choices>
 </question>

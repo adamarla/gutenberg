@@ -123,10 +123,4 @@ C &amp;= -2
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\log\left\vert y\right\vert  - 2e^\frac{x}{y} = 2 </tex>
-      <tex>\log\vert y\vert  + 2e^\frac{x}{y} = -2</tex>
-      <tex>\log\left\vert y\right\vert  - 2e^\frac{x}{y} = -2</tex>
-      <tex correct="true">\log \vert y\vert + 2e^\frac{x}{y} = 2 </tex>
-   </choices>
 </question>

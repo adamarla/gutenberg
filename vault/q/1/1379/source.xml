@@ -111,10 +111,4 @@ _{\text{As x goes from }0\rightarrow 1,\phi\text{ goes from }0\rightarrow\frac\p
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">\frac\pi{2}-\log 2</tex>
-      <tex>\frac\pi{4}-\frac{1}{2}\log 2</tex>
-      <tex>\frac{1}{2}\log 2</tex>
-      <tex>\frac\pi{2}</tex>
-   </choices>
 </question>

@@ -114,10 +114,4 @@
 					\text{Hence, the domain now is }\lbrace 1,2\rbrace.</tex>
       </reason>
    </step>
-   <choices>
-      <tex>(a)\, \left(-\infty,\frac{5}{2}\right]\quad (b)\,\lbrace x:x\leq 2, x\in\mathbb{N}\rbrace</tex>
-      <tex>(a)\, \left[-\frac{5}{2},\frac{5}{2}\right]\quad (b)\,\lbrace -1,-2,0,1,2\rbrace</tex>
-      <tex>(a)\, \left(0,\frac{5}{2}\right)\quad (b)\,\lbrace 0,1,2\rbrace</tex>
-      <tex correct="true">(a)\, \left[0,\frac{5}{2}\right]\quad (b)\,\lbrace 1,2\rbrace</tex>
-   </choices>
 </question>

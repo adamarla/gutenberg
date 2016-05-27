@@ -72,10 +72,4 @@
 					\text{Review if you got it wrong.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">1</tex>
-      <tex>-2</tex>
-      <tex>\frac{1}{2}</tex>
-      <tex>-1</tex>
-   </choices>
 </question>

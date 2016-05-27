@@ -55,10 +55,4 @@
 				\text{Also, note the standard result - }\dfrac{d}{dy}\log y = \dfrac{1}{y}.</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\dfrac{1}{x}</tex>
-      <tex>\dfrac{1}{\log x}</tex>
-      <tex correct="true">\dfrac{1}{x\cdot\log x}</tex>
-      <tex>\dfrac{x}{\log x}</tex>
-   </choices>
 </question>

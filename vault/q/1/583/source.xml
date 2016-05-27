@@ -26,10 +26,4 @@
 			f(x)\text{ increases as } x\text{ increases.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\text{Strictly decreasing}</tex>
-      <tex correct="true">\text{Strictly increasing}</tex>
-      <tex>\text{Constant}</tex>
-      <tex>\text{Sometimes increasing, sometimes decreasing}</tex>
-   </choices>
 </question>

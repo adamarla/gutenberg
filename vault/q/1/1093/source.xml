@@ -136,10 +136,4 @@
 						\text{an acceptable solution.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>0,2</tex>
-      <tex correct="true">2</tex>
-      <tex>1,2</tex>
-      <tex>1,3</tex>
-   </choices>
 </question>

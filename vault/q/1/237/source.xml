@@ -85,10 +85,4 @@
 					\text{is maximum when }\beta = \dfrac{12}{5}.</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\beta=\dfrac{7}{5}</tex>
-      <tex>\beta = 1</tex>
-      <tex correct="true">\beta=\dfrac{12}{5}</tex>
-      <tex>\beta=\dfrac{1}{2}</tex>
-   </choices>
 </question>

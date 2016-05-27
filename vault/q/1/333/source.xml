@@ -103,10 +103,4 @@
 					\underline{\text{are moving in opposite directions.}}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\frac{3}{2}\text{ m/s.}</tex>
-      <tex correct="true">\frac{16}{3}\text{ m/s.}</tex>
-      <tex>\frac{12}{5}\text{ m/s.}</tex>
-      <tex>\frac{16}{9}\text{ m/s.}</tex>
-   </choices>
 </question>

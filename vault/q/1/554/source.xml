@@ -52,10 +52,4 @@
          <tex>\text{The bubble is a sphere. And hence its volume is }\frac{4}{3}\pi R^3.</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\pi\text{ cm$^3$/s}</tex>
-      <tex correct="true">2\pi\text{ cm$^3$/s}</tex>
-      <tex>\frac\pi{2}\text{ cm$^3$/s}</tex>
-      <tex>3\pi\text{ cm$^3$/s}</tex>
-   </choices>
 </question>

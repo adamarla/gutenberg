@@ -81,10 +81,4 @@
 				\dfrac{d}{d f(x)}\cos f(x) = -\sin f(x).</tex>
       </reason>
    </step>
-   <choices>
-      <tex>e^x\sin (e^x)\cdot\cos (e^x)</tex>
-      <tex>-\dfrac{e^x}{\cos e^x}</tex>
-      <tex>\tan (e^x)</tex>
-      <tex correct="true"> -e^x\tan (e^x)</tex>
-   </choices>
 </question>

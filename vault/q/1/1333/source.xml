@@ -160,10 +160,4 @@ P(B_3\vert A) &amp;= \underbrace{\frac{P(A\vert B_1)}{P(A\vert B_1) + P(A\vert B
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\frac{7}{13}</tex>
-      <tex>\frac{10}{13}</tex>
-      <tex>\frac{8}{13}</tex>
-      <tex correct="true">\frac{5}{17}</tex>
-   </choices>
 </question>

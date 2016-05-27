@@ -103,10 +103,4 @@ A_2 &amp;= \dfrac{1}{2}\int_0^\pi\sec^2\left(\frac{\pi}{4}-\frac{x}{2}\right)cdo
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">\frac\pi{2}\cdot (\pi - 2)</tex>
-      <tex>\dfrac{\pi^2}{4}</tex>
-      <tex>\pi^2 - 2</tex>
-      <tex>\frac\pi{2}\cdot (\pi + 2)</tex>
-   </choices>
 </question>

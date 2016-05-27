@@ -84,18 +84,4 @@
 				\text{least at }x = \pm 3.</tex>
       </reason>
    </step>
-   <choices>
-      <tex>
-  		  \text{Domain }=(-\infty, -3],\text{ Range } = [0,9]
-  		</tex>
-      <tex>
-  		\text{Domain }=(-3,3),\text{ Range } = (0,9)
-  		</tex>
-      <tex correct="true">
-  		\text{Domain }=[-3,3],\text{ Range } = [0,3]
-  		</tex>
-      <tex>
-  		\text{Domain }=(-\infty, \infty), \text{ Range } = (-\infty,\infty)
-  		</tex>
-   </choices>
 </question>

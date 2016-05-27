@@ -57,10 +57,4 @@
 				\text{good reason to ignore it until much later.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\left(1,-5\right)</tex>
-      <tex>\left(-2,19\right)</tex>
-      <tex correct="true">\left(2,-9\right)</tex>
-      <tex>\left(-2,19\right)\text{ and }\left(2,-9\right)</tex>
-   </choices>
 </question>

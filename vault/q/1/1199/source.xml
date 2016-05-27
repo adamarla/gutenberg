@@ -133,10 +133,4 @@ x\cdot\sqrt{2^2-x^2}\right]_1^2}_
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\dfrac{2\pi}{3}</tex>
-      <tex>\dfrac{2\pi}{3}-\sqrt{3}</tex>
-      <tex correct="true">\dfrac{8\pi}{3}-4\sqrt{3}</tex>
-      <tex>\pi</tex>
-   </choices>
 </question>

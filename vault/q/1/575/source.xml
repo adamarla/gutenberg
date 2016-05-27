@@ -80,10 +80,4 @@
          <tex>\text{Check the calculations if you got this wrong.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\pi\cdot(2x+1)^2</tex>
-      <tex>\frac{3}{2}\pi\cdot(2x+1)^2</tex>
-      <tex>\frac{9}{4}\pi\cdot(2x+1)^2</tex>
-      <tex correct="true">\frac{27}{8}\pi\cdot(2x+1)^2</tex>
-   </choices>
 </question>

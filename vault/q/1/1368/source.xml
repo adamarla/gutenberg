@@ -104,10 +104,4 @@ _{\int\sqrt{a^2-x^2}dx = \frac{1}{2}\cdot\left[x\sqrt{a^2-x^2}+a^2\sin^{-1}\frac
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">\pi-2</tex>
-      <tex>\pi+2</tex>
-      <tex>\pi + 1</tex>
-      <tex>\pi-1</tex>
-   </choices>
 </question>

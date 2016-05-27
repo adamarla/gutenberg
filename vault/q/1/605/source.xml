@@ -23,10 +23,4 @@
          <tex>\text{Simply differentiate and find value using }x=2.</tex>
       </reason>
    </step>
-   <choices>
-      <tex>5</tex>
-      <tex>8</tex>
-      <tex correct="true">11</tex>
-      <tex>14</tex>
-   </choices>
 </question>

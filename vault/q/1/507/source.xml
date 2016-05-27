@@ -47,10 +47,4 @@
 				\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\star = -(minus)</tex>
-      <tex>\star = \cap</tex>
-      <tex correct="true">\star = \cup</tex>
-      <tex>\text{None of the above.}</tex>
-   </choices>
 </question>

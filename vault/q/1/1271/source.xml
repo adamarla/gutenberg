@@ -132,10 +132,4 @@ Z &amp;= \int_4^8\left( \frac{3x}{4}-2\right)\cdot dx = \left[ \frac{3x^2}{8}-2x
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>6\text{ sq. units}</tex>
-      <tex>10\text{ sq. units}</tex>
-      <tex>12\text{ sq. units}</tex>
-      <tex correct="true">7\text{ sq. units}</tex>
-   </choices>
 </question>

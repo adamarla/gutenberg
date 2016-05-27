@@ -46,12 +46,4 @@
 				  \qquad \textbf{Domain = }\mathbb{R} - \lbrace 2,6 \rbrace</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">
-					  \mathbb{R} - \lbrace 2,6\rbrace
-					</tex>
-      <tex>\mathbb{R} - \lbrace -2,6\rbrace</tex>
-      <tex>\mathbb{R} - \lbrace 2,-6\rbrace</tex>
-      <tex>\mathbb{R} - \lbrace -2,-6\rbrace</tex>
-   </choices>
 </question>

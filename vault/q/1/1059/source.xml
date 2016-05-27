@@ -99,17 +99,4 @@
 					\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">
-						\dfrac{307}{442} + \dfrac{599}{442}i
-						</tex>
-      <tex>
-						\dfrac{599}{442} + \dfrac{307}{442}i
-						</tex>
-      <tex>
-						\dfrac{307}{221} - \dfrac{599}{221}i</tex>
-      <tex>
-						\dfrac{307}{221} + \dfrac{599}{221}i
-						</tex>
-   </choices>
 </question>

@@ -70,10 +70,4 @@
 					\text{here. Check your calculations if got something else.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>-\dfrac{5}{2}</tex>
-      <tex correct="true">\dfrac{9}{5}</tex>
-      <tex>\dfrac{5}{9}</tex>
-      <tex>-\dfrac{1}{5}</tex>
-   </choices>
 </question>

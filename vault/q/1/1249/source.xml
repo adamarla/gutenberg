@@ -49,10 +49,4 @@ I &amp;= -\frac{1}{4}\int sec^2 t\cdot dt = -\frac{1}{4}\tan t + C \\
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\[ \frac{\tan (7-4x)}{4} + C \]</tex>
-      <tex>\[ -\frac{\tan (7-4x)\cdot\sec (7-4x)}{4} + C \]</tex>
-      <tex correct="true">\[ -\frac{\tan (7-4x)}{4} + C \]</tex>
-      <tex>\[ -\frac{\tan (7-4x)\cdot\sec (7-4x)}{4} + C \]</tex>
-   </choices>
 </question>

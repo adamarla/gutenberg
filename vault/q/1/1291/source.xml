@@ -120,14 +120,4 @@ _{\int\frac{dx}{\sqrt{x^2-a^2}}= \log\vert x + \sqrt{x^2-a^2}\vert} \\
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>3\sqrt{x^2-9x+20} \\
-+ 34\cdot\log\left\vert \left( x-\frac{9}{2}\right) + \sqrt{x^2-9x+20} \right\vert + C</tex>
-      <tex>3\sqrt{x^2-9x+20} \\
-+ 17\cdot\log\left\vert \left( x-\frac{9}{2}\right) + \sqrt{x^2-9x+20} \right\vert  + C</tex>
-      <tex>6\sqrt{x^2-9x+20} \\
-+ 17\cdot\log\left\vert \left( x-\frac{9}{2}\right) + \sqrt{x^2-9x+20} \right\vert  + C</tex>
-      <tex correct="true">6\sqrt{x^2-9x+20} \\
-+ 34\cdot\log\left\vert \left( x-\frac{9}{2}\right) + \sqrt{x^2-9x+20} \right\vert + C</tex>
-   </choices>
 </question>

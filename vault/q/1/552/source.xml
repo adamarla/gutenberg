@@ -66,10 +66,4 @@ V &amp;= \frac{2}{3}\pi\cdot R^3 \\
 \text{notice that the units of }\frac{dR}{dt}\text{ should be cm/s.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\frac{15}{\pi}\text{ cm$^2$/s}</tex>
-      <tex>\text{60 cm/s}</tex>
-      <tex correct="true">\frac{1}{\pi}\text{ cm/s}</tex>
-      <tex>\text{45 cm/s}</tex>
-   </choices>
 </question>

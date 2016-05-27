@@ -49,10 +49,4 @@
       = 3L^2\cdot\dfrac{dL}{dT}.</tex>
       </reason>
    </step>
-   <choices>
-      <tex>360\frac{cm^3}{s}</tex>
-      <tex>450\frac{cm^3}{s}</tex>
-      <tex>300\frac{cm^3}{s}</tex>
-      <tex correct="true">900\frac{cm^3}{s}</tex>
-   </choices>
 </question>

@@ -124,10 +124,4 @@ Given what \[ n\left( P\cup M\cup C \right) \] is (see last step),
   		\underline{\text{could've passed in all three subjects is 14}}.</tex>
       </reason>
    </step>
-   <choices>
-      <tex>10</tex>
-      <tex>12</tex>
-      <tex>17</tex>
-      <tex correct="true">14</tex>
-   </choices>
 </question>

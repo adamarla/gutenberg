@@ -107,18 +107,4 @@
 					\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>
-						\tan x - \cot x + 3x + C
-						</tex>
-      <tex>
-						\cot x + \tan x + \dfrac{\sin 2x}{2} + C
-						</tex>
-      <tex correct="true">
-						\cot x + \tan x - 3x + C 
-						</tex>
-      <tex>
-						\cot x - \tan x - \dfrac{\sin 2x}{2} + C
-						</tex>
-   </choices>
 </question>

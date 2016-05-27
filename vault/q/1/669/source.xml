@@ -70,10 +70,4 @@
 						\text{The rest is only calculations.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\text{No value of k.}</tex>
-      <tex>k=3</tex>
-      <tex correct="true">k=6</tex>
-      <tex>k=9</tex>
-   </choices>
 </question>

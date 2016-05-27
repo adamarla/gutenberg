@@ -61,18 +61,4 @@
  		\text{Hence, the range of }f(x) = [0,\infty).</tex>
       </reason>
    </step>
-   <choices>
-      <tex>
- 			\text{Domain } = \lbrace x:x\geq 1\rbrace,\text{ Range } = [0,\infty)
- 			</tex>
-      <tex>
- 			 \text{Domain } = \mathbb{R},\text{ Range } = [1,\infty)
- 			</tex>
-      <tex correct="true">
- 			  \text{Domain } = \mathbb{R},\text{ Range } = [0,\infty)
- 			</tex>
-      <tex>
- 			\text{Domain } = \lbrace x:x\geq 0\rbrace,\text{ Range } = [0,\infty)
- 			</tex>
-   </choices>
 </question>

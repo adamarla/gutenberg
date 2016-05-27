@@ -55,16 +55,4 @@
 				\text{And given that }\tan\theta = -1, \theta = \frac{3\pi}{4}.</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">\text{Modulus} = \frac{1}{\sqrt{2}}, \text{ argument} = \frac{3\pi}{4}</tex>
-      <tex>
-    				\text{Modulus} = \sqrt{2}, \text{ argument} = -\frac{\pi}{4}
-    				</tex>
-      <tex>
-    				\text{Modulus} = \sqrt{2}, \text{ argument} = \frac{3\pi}{4}
-    				</tex>
-      <tex>
-    				\text{Modulus} = \frac{1}{\sqrt{2}}, \text{ argument} = -\frac\pi{4}
-    				</tex>
-   </choices>
 </question>

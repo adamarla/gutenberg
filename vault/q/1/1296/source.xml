@@ -59,10 +59,4 @@
 				\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\dfrac\sqrt{2}{3}</tex>
-      <tex>\dfrac\pi{6}</tex>
-      <tex correct="true">\dfrac{\pi}{12}</tex>
-      <tex>\dfrac{1}{\pi}</tex>
-   </choices>
 </question>

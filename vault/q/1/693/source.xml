@@ -99,10 +99,4 @@
 					\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>-\dfrac{2x}{\sin (x^2)\cdot \sqrt{\sin (x^2)}}</tex>
-      <tex correct="true">-\dfrac{2\sqrt{2}x}{\sin (x^2)\cdot \sqrt{\sin (2x^2)}}</tex>
-      <tex>\dfrac{\sec x\cdot\tan x}{2\sqrt{x}}</tex>
-      <tex>\dfrac{\sec x\cdot\tan x\cdot \sec^2\sqrt{x}}{2\sqrt{x}}</tex>
-   </choices>
 </question>

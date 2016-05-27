@@ -96,10 +96,4 @@ R &amp;= \int_0^{\frac\pi{2}}\left[ \log \sin x - \log \cos x - \log 2\right]\cd
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">-\log2\cdot\frac\pi{2} </tex>
-      <tex>-2\log2\cdot\frac\pi{2}</tex>
-      <tex>-\frac{\log2}{2}\cdot\frac\pi{2} </tex>
-      <tex>\pi\cdot\log 2</tex>
-   </choices>
 </question>

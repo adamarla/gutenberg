@@ -103,18 +103,4 @@
 				\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>
-					\sqrt{2}\tan^{-1}\left(\dfrac{\tan x}{\sqrt{2}}\right) + C
-					</tex>
-      <tex>
-					2\tan^{-1}\left(\dfrac{\tan x}{\sqrt{2\cdot\tan x}}\right) + C
-					</tex>
-      <tex correct="true">
-					\sqrt{2}\tan^{-1}\left(\dfrac{\tan x - 1}{\sqrt{2\cdot\tan x}}\right) + C
-					</tex>
-      <tex>
-					\sqrt{2}\tan^{-1}\left(\dfrac{\tan x - 1}{\sqrt{2}}\right) + C
-					</tex>
-   </choices>
 </question>

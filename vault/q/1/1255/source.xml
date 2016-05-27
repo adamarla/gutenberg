@@ -161,10 +161,4 @@ of 2 kg of food X and 4 kg of food Y at a
 %</tex>
       </reason>
    </step>
-   <choices>
-      <tex>&#8377; 60</tex>
-      <tex>&#8377; 56</tex>
-      <tex>&#8377; 50 </tex>
-      <tex correct="true">&#8377; 38 </tex>
-   </choices>
 </question>

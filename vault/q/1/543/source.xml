@@ -36,10 +36,4 @@ C &amp;= \pi\cdot R \\
 \text{And therefore, }\dfrac{dC}{dt} = 2\pi\dfrac{dR}{dt}.</tex>
       </reason>
    </step>
-   <choices>
-      <tex>2.8\pi\text{ cm/s}</tex>
-      <tex correct="true">1.4\pi\text{ cm/s}</tex>
-      <tex>0.7\pi\text{ cm/s}</tex>
-      <tex>\pi\text{ cm/s}</tex>
-   </choices>
 </question>

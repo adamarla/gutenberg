@@ -49,10 +49,4 @@
 				\frac{d}{d g(x)}f(\, g(x)\,)\cdot\frac{d}{dx}g(x)}_{\textbf{Chain Rule}}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">-\sin(\sin x)\cdot \cos x</tex>
-      <tex>-\sin x</tex>
-      <tex>-\sin (\sin x)</tex>
-      <tex>\cos x \cdot \sin x</tex>
-   </choices>
 </question>

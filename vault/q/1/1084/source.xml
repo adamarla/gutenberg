@@ -123,10 +123,4 @@
 				\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">\dfrac{5\pi -3}{3\pi^2}</tex>
-      <tex>\dfrac{5\pi -1}{\pi^2}</tex>
-      <tex>\dfrac{3\pi -1}{\pi^2}</tex>
-      <tex>\dfrac{5\pi -2}{2\pi^2}</tex>
-   </choices>
 </question>

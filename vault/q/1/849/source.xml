@@ -96,11 +96,4 @@ m_L \rightarrow m_N \rightarrow m_T \rightarrow \frac{dy}{dx}\rightarrow x.</tex
 mx + ny + k = 0\text{ form.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">x + 14y + 86 = 0 \\
-x + 14y - 254 = 0</tex>
-      <tex>14y - x + 254 = 0</tex>
-      <tex>x  - 14y - 86 = 0</tex>
-      <tex>x  - 14y + 254 = 0</tex>
-   </choices>
 </question>

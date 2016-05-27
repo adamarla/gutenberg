@@ -110,23 +110,4 @@
 					\text{Step 3, we found }\frac{h'(x)}{h(x)}\text{ - not h'(x)}.</tex>
       </reason>
    </step>
-   <choices>
-      <tex>
-						\log \left(x+\frac{1}{x}\right) + \dfrac{x^2-1}{x^2 + 1} \\ 
-						+ \left[\dfrac{x+1-\log x}{x^2}\right]
-						</tex>
-      <tex>
-						\left(x+\frac{1}{x}\right)^x \log x + 
-						x^{\left(1+\frac{1}{x}\right)}\log\left(x + \frac{1}{x}\right)
-						</tex>
-      <tex>
-						\left(x+\frac{1}{x}\right)^x \log\left(1+\frac{1}{x}\right) + 
-						x^{\left(1+\frac{1}{x}\right)}\log\left(x + \frac{1}{x}\right)
-						</tex>
-      <tex correct="true">
-						\left(x+\frac{1}{x}\right)^x\cdot
-					  \left[\log \left(x+\frac{1}{x}\right) + \dfrac{x^2-1}{x^2 + 1}\right] \\
-					  + x^{\left(1+\frac{1}{x}\right)}\cdot \left[\dfrac{x+1-\log x}{x^2}\right]
-						</tex>
-   </choices>
 </question>

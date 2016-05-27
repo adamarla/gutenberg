@@ -102,12 +102,4 @@ his money with \underline\text{Bank E}.
 %</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\text{Either. They will both give the same returns}.</tex>
-      <tex>\text{Bank V on Vulcan}.
-</tex>
-      <tex correct="true">\text{Bank E on Earth}.</tex>
-      <tex>
-</tex>
-   </choices>
 </question>

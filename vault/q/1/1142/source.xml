@@ -100,10 +100,4 @@
 				\text{drawing would be }\frac{4}{3}.</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\text{Mean = }\dfrac{12}{7}</tex>
-      <tex>\text{Mean = }\dfrac{8}{5}</tex>
-      <tex>\text{Mean = }\dfrac{7}{4}</tex>
-      <tex correct="true">\text{Mean = }\dfrac{4}{3}</tex>
-   </choices>
 </question>

@@ -113,10 +113,4 @@ expense as follows.
   		\quad T_H(10) = \dfrac{6}{25}\cdot 10^3 + 480 = &#8377; 720/hr.</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">\text{10 km/hr, &#8377; 720/hour}</tex>
-      <tex>\text{5 km/hr, &#8377; 510/hour}</tex>
-      <tex>\text{15 km/hr, &#8377; 1290/hour}</tex>
-      <tex>\text{20 km/hr, &#8377; 2400/hour}</tex>
-   </choices>
 </question>

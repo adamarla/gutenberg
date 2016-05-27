@@ -143,10 +143,4 @@
   			\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>&#8377; 2100</tex>
-      <tex>&#8377; 1900</tex>
-      <tex>&#8377; 2050</tex>
-      <tex correct="true">&#8377; 2150</tex>
-   </choices>
 </question>

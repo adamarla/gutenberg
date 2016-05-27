@@ -103,10 +103,4 @@ The equation of the tangent will be
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">3y = 2\sqrt{2} x - 2 </tex>
-      <tex>2\sqrt{2}y = 3x -2 </tex>
-      <tex>y = 2\sqrt{2}x + \dfrac{2}{3}</tex>
-      <tex>2y = 3\sqrt{2} x + 2 </tex>
-   </choices>
 </question>

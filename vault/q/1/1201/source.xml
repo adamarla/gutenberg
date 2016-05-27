@@ -122,22 +122,4 @@ m_T &amp;= \left[\frac{dy}{dx}\right]_{P} = \left[ \frac{x_P}{2}\right] = 1 \\
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">%text
-Normal: $x+y=3$
-Tangent: $y = x-1$
-%</tex>
-      <tex>%text
-Normal: $y=x-2$
-Tangent: $x+y=4$
-%</tex>
-      <tex>%text
-Normal: $y=x-1$
-Tangent: $x+y=3$
-%</tex>
-      <tex>%text
-Normal: $x+y=4$
-Tangent: $y=x-2$
-%</tex>
-   </choices>
 </question>
