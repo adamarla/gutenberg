@@ -1,73 +1,97 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="21">
+  <statement>
+    <tex>%text
+For what value of $k$ would 
+%
+\qquad f(x) = \begin{cases}
+kx + 1,\, x\leq 5 \\ 
+3x-5,\, x\gt 5 
+\end{cases}
+%text
 
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>
-			\text{For what value of k would }\\
-			f(x) = \begin{cases}
-			  kx + 1, x\leq 5, \\
-			  3x-5, x\gt 5
-			\end{cases}
-			\\ \text{be continuous at }x=5?
-		</tex>
-      <tex>\\ \text{What are the values of }f(-10), f(5)\text{ and }f(20)?</tex>
-      <tex>\\ \text{What will the condition for}\\
-				\text{continuity at }x = 5\text{ be}?</tex>
-      <tex>\\ \text{Is the following analysis correct?}</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">
-			  \begin{align}
-			    f(-10) &amp;= -10k + 1 \\
-			    f(5) &amp;= 5k + 1 \\
-			    f(20) &amp;= 3\cdot 20 - 5 = 55
-			  \end{align}
-			</tex>
-         <tex correct="false">
-			\begin{align}
-			    f(-10) &amp;= -10k + 1 \\
-			    f(5) &amp;= 3\cdot 5 - 5 = 10\\
-			    f(20) &amp;= 3\cdot 20 - 5 = 55
-			  \end{align}
-			</tex>
-      </options>
-      <reason>
-         <tex>\text{Be mindful of how the function is defined.}\\
-			f(x) = 3x-5\text{ only for }x\gt 5.</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-				\lim_{x\to 5^-}f(x) = \lim_{x\to 5^+}f(x) = f(5)
-				</tex>
-         <tex correct="false">
-				\lim_{x\to 5^-}f(x) = \lim_{x\to 5^+}f(x)
-				</tex>
-      </options>
-      <reason>
-         <tex>\text{For a function to be continuous at }x=a\\
-				\lim_{x\to a^-}f(x) = \lim_{x\to a^+}f(x) = f(a).</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-					\begin{align}
-					  \lim_{x\to 5^-}f(x) &amp;= \lim_{x\to 5^-}kx+1=5k + 1 \\
-					  \lim_{x\to 5^+}f(x) &amp; \lim_{x\to 5^+}3x-5 = 10 \\
-					  f(5) &amp;= 5k + 1
-					\end{align}
-					\\ \text{And hence, for continuity at }x=5 \\
-					\begin{align}
-					  5k + 1&amp;= 10 \implies k = \dfrac{9}{5}
-					\end{align}
-					</tex>
-      </options>
-      <reason>
-         <tex>\text{We have only applied the condition from Step 2}\\
-					\text{here. Check your calculations if got something else.}</tex>
-      </reason>
-   </step>
+be continuous at $x=5$? 
+% </tex>
+  </statement>
+  <step>
+    <options>
+      <tex>%text
+The value of $f(x)$ for $x = 4.9,5,5.1$ 
+would be as follows 
+
+%
+\qquad \begin{tabular}{|c|c|}
+\hline 
+x &amp; f(x) \\ 
+\hline 
+4.9 &amp; 4.9k + 1 \\ 
+\hline 
+5 &amp; 5k + 1 \\ 
+\hline 
+5.1 &amp; 3(5.1) - 5=10.3 \\ 
+\hline 
+\end{tabular} </tex>
+      <tex correct="false">%text
+The value of $f(x)$ for $x = 4.9,5,5.1$ 
+would be as follows 
+
+%
+\qquad \begin{tabular}{|c|c|}
+\hline 
+x &amp; f(x) \\ 
+\hline 
+4.9 &amp; 4.9k + 1 \\ 
+\hline 
+5 &amp; 3(5) - 5 = 10 \\ 
+\hline 
+5.1 &amp; 3(5.1) - 5=10.3 \\ 
+\hline 
+\end{tabular} </tex>
+    </options>
+    <reason>
+      <tex>%text
+For $x\leq 5$, $f(x) = kx + 1$. Hence, even 
+for $x=5, f(x) = kx + 1 = 5k+1$ 
+
+But for $x\gt 5, f(x) = 3x + 1$. 
+Which  is why $f(x) = 3(5.1) - 5 = 10.3$
+for $x = 5.1$. 
+%</tex>
+    </reason>
+    <skills>
+      <skill id="13"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>%text
+For $f(x)$ to be continuous at
+$x = 5$, the following must be true
+
+\[ \qquad 5k + 1 = 10 \implies k = \frac{9}{5} \] 
+%</tex>
+      <tex correct="false"/>
+    </options>
+    <reason>
+      <tex>%text
+For $f(x)$ to be continuous 
+\[ \qquad \lim_{x\to 5^-}f(x) = \lim_{x\to 5^+} f(x) = f(5) \]
+
+Which means, 
+%
+\begin{align}
+\lim_{x\to 5^-} (kx+1) &amp;= \lim_{x\to 5^+} (3x-5) = \underbrace{5k+1}_{f(5)}\\
+\text{or } 5k + 1 &amp;= 3(5) - 5 = 10 \\
+\therefore k &amp;= \frac{10 - 1}{5} = \frac{9}{5}
+\end{align}
+%text
+
+Hence, $f(x)$ is continuous at $x=5$
+if $k = \frac{9}{5}$
+%</tex>
+    </reason>
+    <skills>
+      <skill id="34"/>
+    </skills>
+  </step>
 </question>
