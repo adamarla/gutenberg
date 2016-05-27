@@ -107,10 +107,4 @@ or $(15-x) = 3$  km from the camp (C).
 %</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\text{In the middle - 7.5 km from the camp.}</tex>
-      <tex>\text{12 km from the camp.}</tex>
-      <tex>\text{3 km from the nearest point (A)}</tex>
-      <tex correct="true">\text{3 km from the camp.}</tex>
-   </choices>
 </question>

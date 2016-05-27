@@ -57,18 +57,4 @@
 				\quad \frac{d}{dz} e^z = e^z</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">
-					\sin (\log x + e^x)\cdot \left(\frac{1}{x} + e^x\right), x \gt 0
-					</tex>
-      <tex>
-          -\sin (\log x + e^x), x \gt 0
-					</tex>
-      <tex correct="true">
-					-\sin (\log x + e^x)\cdot \left(\frac{1}{x} + e^x\right), x \gt 0
-					</tex>
-      <tex>
-          \cos (\log x + e^x)\cdot \left(\frac{1}{x} + e^x\right), x \gt 0
-					</tex>
-   </choices>
 </question>

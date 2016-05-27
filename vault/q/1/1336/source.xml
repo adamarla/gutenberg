@@ -106,10 +106,4 @@ y = v\cdot x &amp;\implies \frac{dy}{dx} = v + x\cdot\frac{dv}{dx} \\
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>x = \sin\frac{y}{x} + 1</tex>
-      <tex>\frac\pi{2} x = \cos\frac{y}{x} </tex>
-      <tex>y = x\cdot\left( \cos^{-1}\log\vert x\vert\right) </tex>
-      <tex correct="true">y = x\cdot \cos^{-1}\left(\log\vert x\vert + 1\right) </tex>
-   </choices>
 </question>

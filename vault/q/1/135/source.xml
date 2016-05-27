@@ -68,18 +68,4 @@ of metal remaining we get,
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>%text
-$63$ cm
-%</tex>
-      <tex>%text
-$44$ cm
-%</tex>
-      <tex correct="true">%text
-$50.4$ cm
-%</tex>
-      <tex>%text
-$48.8$ cm
-%</tex>
-   </choices>
 </question>

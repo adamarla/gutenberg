@@ -80,10 +80,4 @@ A &amp;= x\cdot y \\
 \text{Also, the units of }\frac{dA}{dt}\text{ should be cm}^2/min</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\text{(a) 2 cm/min (b) 20 cm$^2$/min}</tex>
-      <tex>\text{(a) 2 cm/min (b) -20 cm$^2$/min}</tex>
-      <tex correct="true">\text{(a) -2 cm/min (b) 2 cm$^2$/min}</tex>
-      <tex>\text{(a) -2 cm/min (b) -2 cm$^2$/min}</tex>
-   </choices>
 </question>

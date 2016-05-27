@@ -39,10 +39,4 @@ I &amp;= \int\frac{d\phi}\phi = \log\vert \phi \vert + C \\
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\log3\cdot \log \vert \tan x \vert + C </tex>
-      <tex>-\frac{1}{(3+\tan x)^2} + C</tex>
-      <tex correct="true">\log\vert 3 + \tan x \vert + C </tex>
-      <tex>\log\vert \tan x \vert + C </tex>
-   </choices>
 </question>

@@ -49,11 +49,4 @@
 		\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\dfrac{e^x}{\cos x}</tex>
-      <tex>\dfrac{e^x\cdot\cos x}{\sin^2 x}, x\neq n\pi, n\in\mathbb{Z}</tex>
-      <tex>\dfrac{x\cdot e^x\cos x}{\sin^2 x}, x\neq n\pi, n\in\mathbb{Z}</tex>
-      <tex correct="true">
-						\dfrac{e^x\cdot (\sin x - \cos x)}{\sin^2 x}, x\neq n\pi, n\in\mathbb{Z}</tex>
-   </choices>
 </question>

@@ -77,10 +77,4 @@
 				\text{Division by zero is not defined.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>(1,2), (-1,-2)</tex>
-      <tex correct="true">(0,0),(-1,-2),(1,2)</tex>
-      <tex>(0,0)</tex>
-      <tex>(0,0),(1,2)</tex>
-   </choices>
 </question>

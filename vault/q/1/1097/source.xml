@@ -74,10 +74,4 @@
 				\text{is simply }2x\sqrt{x} + 2\sqrt{x} = 2\sqrt{x}\cdot(x+1).</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\dfrac{2}{\sqrt{x}} + \sqrt{x}</tex>
-      <tex correct="true">2\sqrt{x}\cdot(x+1)</tex>
-      <tex>\dfrac{3x^2+1}{2x\sqrt{x}}</tex>
-      <tex>2\sqrt{x} + 1</tex>
-   </choices>
 </question>

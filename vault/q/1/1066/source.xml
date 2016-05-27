@@ -65,18 +65,4 @@
 				\text{But }f(x)\leq 0\text{ for all }x\implies\textbf{ range }=(-\infty, 0].</tex>
       </reason>
    </step>
-   <choices>
-      <tex>
-  		  \text{Domain } = \mathbb{R}, \text{ Range } = [0, \infty)
-  		</tex>
-      <tex>
-  		  \text{Domain } = \mathbb{R}, \text{ Range } = (-\infty, \infty)
-  		</tex>
-      <tex>
-  		  \text{Domain } = \mathbb{N}, \text{ Range } = (-\infty, 0]
-  		</tex>
-      <tex correct="true">
-  		  \text{Domain } = \mathbb{R}, \text{ Range } = (-\infty, 0]
-  		</tex>
-   </choices>
 </question>

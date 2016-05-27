@@ -132,10 +132,4 @@ V &amp;= (2\pi R^3)\cdot (1-\sin^2\theta)\cdot \sin\theta \\
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">\text{Maximum volume} = \dfrac{4\pi\cdot R^3}{3\sqrt{3}}</tex>
-      <tex>\text{Maximum volume} = \dfrac{2\pi\cdot R^3}{3\sqrt{3}}</tex>
-      <tex>\text{Maximum volume} = \dfrac{2\pi\cdot R^3}{3}</tex>
-      <tex>\text{Maximum volume} = \dfrac{4\pi\cdot R^3}{9}</tex>
-   </choices>
 </question>

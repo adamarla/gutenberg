@@ -48,10 +48,4 @@ I &amp;= \int d\phi = \phi + C \\
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>I = \cos^{-1} \left( \pi - x \right) + C </tex>
-      <tex>I = \sin^{-1} \left(\frac\pi{2} - x\right) + C </tex>
-      <tex correct="true">I = \sin^{-1} x + C </tex>
-      <tex>I = \cos^{-1} x + C </tex>
-   </choices>
 </question>

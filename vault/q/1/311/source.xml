@@ -121,10 +121,4 @@ all, it is the same binomial expansion.
 					\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">\frac{135}{4}</tex>
-      <tex>\frac{71}{2}</tex>
-      <tex>-\frac{35}{4}</tex>
-      <tex>\frac{48}{7}</tex>
-   </choices>
 </question>

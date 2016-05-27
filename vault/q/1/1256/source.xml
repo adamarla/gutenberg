@@ -103,10 +103,4 @@ A &amp;= 5\int_1^2\frac{x^2}{x^2+4x+3}dx \\
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>A = 5\cdot\left[ 1 + \frac{1}{2}\log\frac{45}{16}\right]</tex>
-      <tex>A = 5\cdot\left[ 1 + \frac{1}{2}\log\frac{3}{2}-\frac{9}{2}\log\frac{5}{4}\right]</tex>
-      <tex>A = 5\cdot\left[ 1 + \frac{1}{2}\log\frac{15}{8}\right]</tex>
-      <tex correct="true">A = 5\cdot\left[ 1 + \frac{1}{2}\log\frac{3}{2}-\frac{9}{2}\log\frac{5}{4}\right]</tex>
-   </choices>
 </question>

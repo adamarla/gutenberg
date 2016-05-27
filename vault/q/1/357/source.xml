@@ -98,10 +98,4 @@
 				\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\frac{5400}{x^2}</tex>
-      <tex>4756\cdot x</tex>
-      <tex correct="true">\frac{10,500}{x^3}</tex>
-      <tex>\frac{2300}{x}</tex>
-   </choices>
 </question>

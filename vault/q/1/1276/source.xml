@@ -110,10 +110,4 @@ But $x\nless 0$. \underline\text{Therefore, $x=5$}.
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">75\sqrt{3}\text{ sq. units}</tex>
-      <tex>20\sqrt{5}\text{ sq. units}</tex>
-      <tex>20\sqrt{2}\text{ sq. units}</tex>
-      <tex>15\sqrt{5}\text{ sq. units}</tex>
-   </choices>
 </question>

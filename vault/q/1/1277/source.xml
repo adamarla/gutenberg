@@ -53,10 +53,4 @@ Because if it is - as in this case - then
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>y= \frac{1}{x^2-1}\cdot\left[ \tan^{-1} x + C\right]</tex>
-      <tex correct="true">y = \frac{1}{x^2-1}\cdot\left[ \frac{1}{2}\log\left\vert \frac{x-1}{x+1}\right\vert + C\right]</tex>
-      <tex>y = \frac{1}{x^2-1}\cdot\left[ x\sqrt{x^2-1} + \sin^{-1}x\right] + C </tex>
-      <tex>y = \frac{1}{x^2-1}\cdot\left[ \log\left\vert \frac{x-1}{x+1}\right\vert + C\right]</tex>
-   </choices>
 </question>

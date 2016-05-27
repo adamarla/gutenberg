@@ -76,18 +76,4 @@
 					\text{find }h'(x)\text{, where }h(x) = 2^{\sin x}\text{ by taking }\log h(x)\text{ first.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">
-						x^x\cdot (1+\log x)-\log 2\cdot\cos x\cdot 2^{\sin x}
-						</tex>
-      <tex>
-						(1+\log x)+\log 2\cdot\cos x\cdot 2^{\sin x}
-						</tex>
-      <tex>
-						x^x\cdot (1+\log x)+\cos x\cdot 2^{\sin x}
-						</tex>
-      <tex>
-						x^x\cdot (1+\log x)+\log 2\cdot\cos x\cdot 2^{\sin x}
-						</tex>
-   </choices>
 </question>

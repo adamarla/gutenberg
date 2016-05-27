@@ -62,18 +62,4 @@
 				\frac{d}{dy}\log y = \frac{1}{y}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">
-					-\dfrac{x\cdot\sin x\cdot\log x + \cos x}{x\cdot(\log x)^2}, x\gt 0
-					</tex>
-      <tex>
-					\dfrac{\sin x\cdot\log x + \cos x}{(\log x)^2}, x\gt 0
-					</tex>
-      <tex>
-					-\dfrac{\sin x\cdot\log x + \cos x}{x\cdot(\log x)^2}, x\gt 0
-					</tex>
-      <tex>
-					\dfrac{x\cdot\sin x\cdot\log x + \cos x}{(\log x)^2}, x\gt 0
-					</tex>
-   </choices>
 </question>

@@ -59,10 +59,4 @@ A = \pi\cdot R^2\implies\dfrac{dA}{dT} &amp;= 2\pi R\cdot\dfrac{dR}{dT}\\
       = 2\pi R\cdot\dfrac{dR}{dT}.</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">60\pi\frac{cm^2}{s}</tex>
-      <tex>20\pi\frac{cm^2}{s}</tex>
-      <tex>30\pi\frac{cm^2}{s}</tex>
-      <tex>40\pi\frac{cm^2}{s}</tex>
-   </choices>
 </question>

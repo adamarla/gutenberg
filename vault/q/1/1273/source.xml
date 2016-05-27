@@ -140,10 +140,4 @@ can make with the given supplies is 30.
 %</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\text{40 cakes}</tex>
-      <tex>\text{25 cakes}</tex>
-      <tex correct="true">\text{30 cakes}</tex>
-      <tex>\text{20 cakes}</tex>
-   </choices>
 </question>

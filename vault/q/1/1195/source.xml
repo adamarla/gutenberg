@@ -84,10 +84,4 @@ B+D &amp;= 1 \text{ and } 9B + 4D = 0 \\
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\frac{1}{5}\cdot\left[ 9\tan^{-1}\frac{x}{3} + 4\tan^{-1}\frac{x}{2}\right] + C</tex>
-      <tex>\frac{1}{5}\cdot\left[ 9\tan^{-1}\frac{x}{3} - 4\tan^{-1}\frac{x}{2}\right] + C</tex>
-      <tex correct="true">\frac{1}{5}\cdot\left[ 3\tan^{-1}\frac{x}{3} - 2\tan^{-1}\frac{x}{2}\right] + C</tex>
-      <tex>\frac{1}{5}\cdot\left[ 3\tan^{-1}\frac{x}{3} + 2\tan^{-1}\frac{x}{2}\right] + C</tex>
-   </choices>
 </question>

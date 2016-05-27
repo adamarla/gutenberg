@@ -81,18 +81,4 @@ $t=21$.
 %</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">%text
-$21$ (min), $28$ (min)
-%</tex>
-      <tex>%text
-$14$ (min), $21$ (min)
-%</tex>
-      <tex>%text
-$20$ (min), $27$ (min)
-%</tex>
-      <tex>%text
-$15$ (min), $22$ (min)
-%</tex>
-   </choices>
 </question>

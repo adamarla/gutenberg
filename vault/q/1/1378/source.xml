@@ -67,10 +67,4 @@ Hence $k=5$.
 %</tex>
       </reason>
    </step>
-   <choices>
-      <tex>k = 1</tex>
-      <tex>k = 3</tex>
-      <tex>k = 4</tex>
-      <tex correct="true">k = 5</tex>
-   </choices>
 </question>

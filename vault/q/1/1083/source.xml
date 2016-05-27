@@ -103,18 +103,4 @@
 	 		\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">
-	 		x + \log\left(\dfrac{\sqrt{x^2+1}}{x}\right) - \tan^{-1}x + C 
-	 		</tex>
-      <tex>
-	 		x + \log\left(\dfrac{x^2+1}{x}\right) - \tan^{-1}x + C
-	 		</tex>
-      <tex>
-	 		x - \log\left(\dfrac{x^2+1}{x}\right) + \tan^{-1}x + C
-	 		</tex>
-      <tex>
-	 		x + \dfrac{1}{\sqrt{x^2+1}} - \tan^{-1}x + C
-	 		</tex>
-   </choices>
 </question>

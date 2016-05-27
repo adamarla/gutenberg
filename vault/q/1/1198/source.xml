@@ -51,10 +51,4 @@ See what happens when we let $\phi = x+a$.
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">(x+a)\cdot\cos 2a - \sin 2a\cdot\log\vert\sin (x+a)\vert + C</tex>
-      <tex>x\cdot\cos 2a + \sin 2a\cdot\log\vert\sin x \vert + C</tex>
-      <tex>(x+a)\cdot\dfrac{\sin 2a}{2a} + \sin 2a\cdot\log\vert\sin x \vert + C</tex>
-      <tex>(x+a)\cdot\dfrac{\cos 2a}{2a} + \dfrac{\sin 2a}{2a}\cdot\log\vert\sin x \vert + C</tex>
-   </choices>
 </question>

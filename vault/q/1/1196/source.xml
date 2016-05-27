@@ -122,10 +122,4 @@
 					\end{align}\\</tex>
       </reason>
    </step>
-   <choices>
-      <tex>(\log x)^{x}[1 + \log x . \log (\log x)] + 2 x^{\log x -1}. \log x</tex>
-      <tex correct="true">(\log x)^{x-1}[1 + \log x . \log (\log x)] + 2 x^{\log x -1}. \log x</tex>
-      <tex>(\log x)^{x-1}[1 + \log (\log x)] + 2 x^{\log x -1}. \log x</tex>
-      <tex>(\log x)^{x-1}[1 + \log x . \log (\log x)] + x^{\log x -1}. \log x</tex>
-   </choices>
 </question>

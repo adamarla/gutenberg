@@ -50,10 +50,4 @@
 				\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">\dfrac{\pi}{12}</tex>
-      <tex>\dfrac\pi{3}</tex>
-      <tex>\dfrac\pi{4}</tex>
-      <tex>\dfrac\pi{24}</tex>
-   </choices>
 </question>

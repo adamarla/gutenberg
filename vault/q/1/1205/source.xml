@@ -161,22 +161,4 @@ to crop B, our profits will be maximum.
 %</tex>
       </reason>
    </step>
-   <choices>
-      <tex>%text
-Crop A: 50 hectares
-Crop B: 0 hectares
-%</tex>
-      <tex>%text
-Crop A: 0 hectares
-Crop B: 40 hectares
-%</tex>
-      <tex>%text
-Crop A: 40 hectares
-Crop B: 10 hectares
-%</tex>
-      <tex correct="true">%text
-Crop A: 30 hectares
-Crop B: 20 hectares
-%</tex>
-   </choices>
 </question>

@@ -51,10 +51,4 @@ x^2+y^2-2x-3&amp;=0\\
 \frac{1}{2\sqrt{g(x)}}\cdot\frac{d}{dx}g(x).</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\text{Only }(1,2)</tex>
-      <tex correct="true">\text{Only }(1,-2)</tex>
-      <tex>\text{No such point exists.}</tex>
-      <tex>(1,\pm 2)</tex>
-   </choices>
 </question>

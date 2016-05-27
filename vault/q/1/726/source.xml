@@ -84,14 +84,4 @@ f(x) &amp;= \underbrace{x^{\sin x}}_{g(x)} + \underbrace{(\sin x) ^{\cos x}}_{h(
 \log h(x)\text{ first.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>x^{\sin x} \left[\, \frac {\sin x}{x}+ (\cos x) \cdot \log x \right] +\\
- (\sin x)^{\cos x} \left[ \cdot \cos x -\sin x \cdot \log (\sin x) \right]</tex>
-      <tex correct="true">x^{\sin x} \left[\, \frac {\sin x}{x}+ (\cos x) \cdot \log x \right] +\\
- (\sin x)^{\cos x} \left[ \cot x \cdot \cos x -\sin x \cdot \log (\sin x) \right]</tex>
-      <tex>x^{\sin x} \left[\, \frac {\sin x}{x}+ (\cos x) \cdot \log x \right] +\\
- (\sin x)^{\cos x} \left[ \tan x \cdot \cos x -\sin x \cdot \log (\sin x) \right]</tex>
-      <tex>x^{\sin x} \left[\, \frac {\sin x}{x}- (\cos x) \cdot \log x \right] +\\
- (\sin x)^{\cos x} \left[ \cot x \cdot \cos x -\sin x \cdot \log (\sin x) \right]</tex>
-   </choices>
 </question>

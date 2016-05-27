@@ -14,10 +14,4 @@
          <tex></tex>
       </reason>
    </step>
-   <choices>
-      <tex/>
-      <tex correct="true"/>
-      <tex/>
-      <tex/>
-   </choices>
 </question>

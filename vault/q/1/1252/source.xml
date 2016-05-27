@@ -123,22 +123,4 @@ $I = A+B$ in terms of x.
 %</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">\begin{align}
-I &amp;= \sqrt{(x-2)\cdot(x-3)} \\
-&amp;+ \frac{9}{2}\log\left\vert\left( x-\frac{5}{2}\right)  + \sqrt{(x-2)\cdot(x-3)}\right\vert + C
-\end{align}</tex>
-      <tex>\begin{align}
-I &amp;=\frac{1}{\sqrt{(x-2)\cdot (x-3)}}  \\
-&amp;+ \frac{9}{2}\log\left\vert x+ \sqrt{(x-2)\cdot(x-3)}\right\vert + C
-\end{align}</tex>
-      <tex>\begin{align}
-I &amp;=  \frac{1}{\sqrt{(x-2)\cdot (x-3)}} \\
-&amp;+ \frac{9}{2}\log\left\vert\left( x-\frac{5}{2}\right)  + \sqrt{(x-2)\cdot(x-3)}\right\vert + C
-\end{align}</tex>
-      <tex>\begin{align}
-I &amp;= \sqrt{(x-2)\cdot(x-3)} \\
-&amp;+ \frac{9}{2}\log\left\vert x+ \sqrt{(x-2)\cdot(x-3)}\right\vert + C
-\end{align}</tex>
-   </choices>
 </question>

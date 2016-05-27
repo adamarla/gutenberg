@@ -93,10 +93,4 @@
 				\textbf{Hence, no solution.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>x = -\sqrt{\dfrac{7}{2}}</tex>
-      <tex>x = \sqrt{\dfrac{7}{2}}</tex>
-      <tex>x = \pm\sqrt{\dfrac{7}{2}}</tex>
-      <tex correct="true">\text{No solution}</tex>
-   </choices>
 </question>

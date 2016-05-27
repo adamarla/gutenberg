@@ -35,10 +35,4 @@
 			\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\text{C and D}</tex>
-      <tex>\text{B and C}</tex>
-      <tex correct="true">\text{A and B}</tex>
-      <tex>\text{A and D}</tex>
-   </choices>
 </question>

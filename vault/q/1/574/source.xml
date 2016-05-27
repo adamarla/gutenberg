@@ -59,10 +59,4 @@
          <tex>\text{For }f(x)\text{ to be decreasing, }\frac{d}{dx}f(x)\lt 0.</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\text{(a) }x\lt\frac{3}{4}\quad\text{(b) }x\gt\frac{3}{4}</tex>
-      <tex>\text{(a) }x\gt\frac{3}{4}\quad\text{(b) Never}</tex>
-      <tex correct="true">\text{(a) }x\gt\frac{3}{4}\quad\text{(b) }x\lt\frac{3}{4}</tex>
-      <tex>\text{(a) }x\gt\frac{4}{3}\quad\text{(b) }x\lt\frac{4}{3}</tex>
-   </choices>
 </question>

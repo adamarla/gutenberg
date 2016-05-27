@@ -72,10 +72,4 @@ Remember, \underline{\phi\text{ is a constant}}. Therefore,
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\frac{1}{\sqrt{1-x^2}}</tex>
-      <tex>\frac{1}{1+x^2}</tex>
-      <tex correct="true">-\frac{1}{\sqrt{1-x^2}}</tex>
-      <tex>-\frac{1}{1+x^2}</tex>
-   </choices>
 </question>

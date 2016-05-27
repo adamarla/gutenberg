@@ -55,10 +55,4 @@ Since width cannot be negative, $w=10$.
 %</tex>
       </reason>
    </step>
-   <choices>
-      <tex>20(ft)</tex>
-      <tex>100(ft)</tex>
-      <tex correct="true">10(ft)</tex>
-      <tex>14(ft)</tex>
-   </choices>
 </question>

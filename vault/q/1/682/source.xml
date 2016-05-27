@@ -82,18 +82,4 @@
 					\text{See, for example, at x = 0.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">
-					\dfrac{e^{\sqrt{x}}}{4\cdot\sqrt{x\cdot e^{\sqrt{x}}}}, x\gt 0
-					</tex>
-      <tex>
-					\dfrac{e^{\sqrt{x}}}{2\cdot\sqrt{e^{\sqrt{x}}}}
-					</tex>
-      <tex>
-					\dfrac{e^{\sqrt{x}}}{4\cdot\sqrt{e^{\sqrt{x}}}}
-					</tex>
-      <tex>
-					\dfrac{e^{\sqrt{x}}}{2\cdot\sqrt{x}}
-					</tex>
-   </choices>
 </question>

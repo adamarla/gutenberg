@@ -51,10 +51,4 @@
 				\text{Check calculations if you got anything else.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">(x,y)=\left(4,11\right)\text{ and }\left(-4,\frac{-31}{3}\right)</tex>
-      <tex>(x,y)=\left(4,11\right)</tex>
-      <tex>(x,y)=\left(-4,11\right)\text{ and }\left(4,\frac{31}{3}\right)</tex>
-      <tex>(x,y)=\left(4,-11\right)\text{ and }\left(-4,\frac{-31}{3}\right)</tex>
-   </choices>
 </question>

@@ -122,10 +122,4 @@ _{\text{Multiply and divide by 2}} \\
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>-a\cdot\tan t </tex>
-      <tex>\dfrac{2}{a\cdot\sin 2t}</tex>
-      <tex>\dfrac{1}{a\cdot\sin t\cdot \sin 2t}</tex>
-      <tex correct="true">-\dfrac{2}{a\cdot\sin t\cdot \sin 2t}</tex>
-   </choices>
 </question>

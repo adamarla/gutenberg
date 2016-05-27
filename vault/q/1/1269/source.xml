@@ -44,10 +44,4 @@ I = \frac{1}{a}\int\phi^3\cdot d\phi &amp;\implies I = \frac{1}{a}\frac{\phi^4}{
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex> \frac{a\cdot (ax+b)^4}{4}</tex>
-      <tex correct="true"> \frac{(ax+b)^4}{4a}</tex>
-      <tex> \frac{3\cdot (ax+b)^2}{a}</tex>
-      <tex> \frac{(ax+b)^4}{a}</tex>
-   </choices>
 </question>

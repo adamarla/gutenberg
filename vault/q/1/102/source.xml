@@ -63,10 +63,4 @@ the height (h) is the following.
 				\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>3\sqrt{6}\text{ cm.}</tex>
-      <tex>4\sqrt{3}\text{ cm.}</tex>
-      <tex>2\sqrt{6}\text{ cm.}</tex>
-      <tex correct="true">6\sqrt{3}\text{ cm.}</tex>
-   </choices>
 </question>

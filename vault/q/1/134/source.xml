@@ -96,18 +96,4 @@ can be re-written as,
 \therefore S_B=14-8=6\text{ km/h}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>%text
-$S_A=7$ km/h, $S_B=7$ km/h
-%</tex>
-      <tex>%text
-$S_A=6$ km/h, $S_B=8$ km/h
-%</tex>
-      <tex correct="true">%text
-$S_A=8$ km/h, $S_B=6$ km/h
-%</tex>
-      <tex>%text
-$S_A=10$ km/h, $S_B=4$ km/h
-%</tex>
-   </choices>
 </question>

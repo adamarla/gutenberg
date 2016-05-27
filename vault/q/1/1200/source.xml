@@ -149,22 +149,4 @@ chances of a heart attack still further.
 %</tex>
       </reason>
    </step>
-   <choices>
-      <tex>%text
-(a) $\dfrac{15}{29}
-(b) The drug is more beneficial.
-%</tex>
-      <tex correct="true">%text
-(a) $\dfrac{14}{29}
-(b) Yoga is more beneficial.
-%</tex>
-      <tex>%text
-(a) $\dfrac{1}{2}
-(b) Yoga and the drug are equally beneficial.
-%</tex>
-      <tex>%text
-(a) $\dfrac{12}{29}
-(b) Yoga is more beneficial.
-%</tex>
-   </choices>
 </question>

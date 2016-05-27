@@ -63,10 +63,4 @@
 				\end{tabular}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">\text{(a) }\left(-\infty,-2\right)\text{ and }\left(3,\infty\right)\quad\text{(b) }\left(-2,3\right)</tex>
-      <tex>\text{(a) }\left(-\infty,2\right)\text{ and }\left(3,\infty\right)\quad\text{(b) }\left(2,3\right)</tex>
-      <tex>\text{(a) }\left(-3,-2\right)\text{ and }\left(3,\infty\right)\quad\text{(b) }\left(-2,3\right)</tex>
-      <tex>\text{(a) }\left(-\infty,-2\right)\text{ and }\left(2,3\right)\quad\text{(b) }\left(2,3\right)</tex>
-   </choices>
 </question>

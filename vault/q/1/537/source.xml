@@ -56,10 +56,4 @@
 				\text{ you should get two tangents.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\text{Just }x+y-3=0</tex>
-      <tex>\text{Just }x+y+1=0</tex>
-      <tex correct="true">x+y+1=0\text{ and }x+y-3=0</tex>
-      <tex>\text{No tangent with slope = -1 exists.}</tex>
-   </choices>
 </question>

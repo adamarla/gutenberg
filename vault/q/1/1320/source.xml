@@ -59,10 +59,4 @@ I &amp;= \int\frac{d\phi}{\sqrt{3^2-(\phi+2)^2}} \\
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\cos^{-1}\left( \frac{e^x+2}{3}\right) + C</tex>
-      <tex>\tan^{-1}\left( \frac{e^x+2}{3}\right) + C</tex>
-      <tex>2\cdot\sqrt{9-(e^x+2)^2} + C</tex>
-      <tex correct="true">\sin^{-1}\left( \frac{e^x+2}{3}\right) + C</tex>
-   </choices>
 </question>

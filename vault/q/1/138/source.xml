@@ -54,10 +54,4 @@ people therefore, $N=42$
 %</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">42</tex>
-      <tex>48</tex>
-      <tex>36</tex>
-      <tex>32</tex>
-   </choices>
 </question>

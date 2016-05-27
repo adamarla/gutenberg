@@ -53,10 +53,4 @@ terms. Judging by the terms for given series,
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">n=13</tex>
-      <tex>n=22</tex>
-      <tex>n=7</tex>
-      <tex>n=14</tex>
-   </choices>
 </question>

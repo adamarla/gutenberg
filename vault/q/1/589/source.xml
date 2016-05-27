@@ -59,10 +59,4 @@ x &amp; \cos x &amp; -100\cdot x^{99} \\
 \implies -100x^{99}\lt -100\implies -100x^{99}\lt -1\lt \cos x.</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\left(0,1\right)</tex>
-      <tex correct="true">\left(0,\frac\pi{2}\right)</tex>
-      <tex>\left(\frac\pi{2},\pi\right)</tex>
-      <tex>\text{None of the above.}</tex>
-   </choices>
 </question>

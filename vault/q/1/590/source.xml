@@ -74,10 +74,4 @@
 					\end{tabular}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>x\lt 0\text{ and }x\gt 2</tex>
-      <tex>x\in (0,2)</tex>
-      <tex>x\in (1,2)</tex>
-      <tex correct="true">x\in (0,1)\text{ and }x\gt 2</tex>
-   </choices>
 </question>

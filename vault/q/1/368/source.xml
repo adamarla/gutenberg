@@ -92,10 +92,4 @@
 					9^{th}\text{ terms are equal.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>m=-2</tex>
-      <tex correct="true">m=1</tex>
-      <tex>m=2</tex>
-      <tex>m=1,-2</tex>
-   </choices>
 </question>

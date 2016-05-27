@@ -51,10 +51,4 @@
 				\text{pick the stricter of the two conditions - }N\gt -2.</tex>
       </reason>
    </step>
-   <choices>
-      <tex>0</tex>
-      <tex>-4</tex>
-      <tex correct="true">-2</tex>
-      <tex>4</tex>
-   </choices>
 </question>

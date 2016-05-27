@@ -62,10 +62,4 @@
 					\text{here. Check your calculations if got something else.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\dfrac{4}{3}</tex>
-      <tex>4</tex>
-      <tex>3</tex>
-      <tex correct="true">\dfrac{3}{4}</tex>
-   </choices>
 </question>

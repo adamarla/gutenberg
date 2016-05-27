@@ -89,10 +89,4 @@
 					\implies\textbf{ range } = \mathbb{R} -\lbrace 2\rbrace.</tex>
       </reason>
    </step>
-   <choices>
-      <tex>f^{-1}(x) = \dfrac{x + 5}{2x + 3}</tex>
-      <tex>f^{-1}(x) = \dfrac{5x - 1}{x+2}</tex>
-      <tex>f^{-1}(x) = \dfrac{2x + 1}{5-x}</tex>
-      <tex correct="true">f^{-1}(x) = \dfrac{5x + 1}{2-x}</tex>
-   </choices>
 </question>

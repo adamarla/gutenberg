@@ -58,18 +58,4 @@
 				\dfrac{d}{dx}\log f(x)  = \dfrac{1}{f(x)}\cdot f'(x).</tex>
       </reason>
    </step>
-   <choices>
-      <tex>
-					(x+3)(x+4)\cdot(x+5)^2\cdot(4x^2-27x + 111)
-					</tex>
-      <tex>
-					(x+3)(x+4)\cdot(x+5)^2\cdot(9x^2-70x - 133)
-					</tex>
-      <tex correct="true">
-					(x+3)(x+4)^2\cdot(x+5)^3\cdot(9x^2+70x+ 133)
-					</tex>
-      <tex>
-          (x+3)(x+4)^2\cdot(x+5)^3\cdot(7x^2 + 79x + 143)
-					</tex>
-   </choices>
 </question>

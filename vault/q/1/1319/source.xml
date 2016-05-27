@@ -174,10 +174,4 @@ is point C with total cost of &#8377; 104.
 %</tex>
       </reason>
    </step>
-   <choices>
-      <tex>&#8377; 102 </tex>
-      <tex correct="true">Rs .104 </tex>
-      <tex>&#8377; 106\frac{2}{3}</tex>
-      <tex>&#8377; 110</tex>
-   </choices>
 </question>

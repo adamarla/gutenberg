@@ -74,10 +74,4 @@ m-th term, \underline\text{what have we been told}?
 				\end{align}.</tex>
       </reason>
    </step>
-   <choices>
-      <tex>n=6</tex>
-      <tex correct="true">n=7</tex>
-      <tex>n=8</tex>
-      <tex>n=9</tex>
-   </choices>
 </question>

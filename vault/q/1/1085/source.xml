@@ -71,10 +71,4 @@
 			\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\dfrac{2}{\sqrt{1-x^2}}</tex>
-      <tex>\dfrac{2}{1+x^2}</tex>
-      <tex>\dfrac{1}{1+x^2}</tex>
-      <tex correct="true">-\dfrac{2}{1+x^2}</tex>
-   </choices>
 </question>

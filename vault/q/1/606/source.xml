@@ -72,21 +72,4 @@
          <tex>&#8226;</tex>
       </reason>
    </step>
-   <choices>
-      <tex>
-		\text{(strictly decreasing) }x\in \left(-\infty,1\right)\\
-		\text{(strictly increasing) }x\in \left(1,\infty\right)
-		</tex>
-      <tex correct="true">
-		\text{(strictly decreasing) }x\in \left(-\infty,-1\right)\cup\left(-1,1\right)\\
-		\text{(strictly increasing) }x\in \left(1,3\right)\cup\left(3,\infty\right)</tex>
-      <tex>
-		\text{(strictly decreasing) }x\in \left(-\infty,-1\right)\\
-		\text{(strictly increasing) }x\in \left(3,\infty\right)
-		</tex>
-      <tex>
-		\text{(strictly decreasing) }x\in \left(-1,1\right)\\
-		\text{(strictly increasing) }x\in \left(-\infty,-1\right)\cup\left(3,\infty\right)
-		</tex>
-   </choices>
 </question>

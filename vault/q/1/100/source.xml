@@ -81,10 +81,4 @@ And the \underline\text{maximum} value is $y = \dfrac{e^2}{2}$.
 				\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\text{Maxima at }x = e^2,y_{MAX} = \dfrac{e^2}{4}.</tex>
-      <tex correct="true">\text{Minima at }x = e,y_{MIN} = \dfrac{e}{2}.</tex>
-      <tex>\text{Maxima at }x = e,y_{MAX} = \dfrac{e^2}{2}.</tex>
-      <tex>\text{Minima at }x = e^2,y_{MIN} = \dfrac{e^2}{4}.</tex>
-   </choices>
 </question>

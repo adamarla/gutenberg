@@ -73,10 +73,4 @@ _{\text{Looks like }\int e^x\cdot [g(x) + g'(x)]\cdot dx = e^x\cdot g(x) + C}\\
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>y = \sin x + C </tex>
-      <tex correct="true">y = \cos x + \frac{C}{e^x}</tex>
-      <tex>y = \cos x + C </tex>
-      <tex>y = \sin x + \frac{C}{e^x}</tex>
-   </choices>
 </question>

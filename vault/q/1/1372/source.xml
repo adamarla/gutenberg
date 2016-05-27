@@ -58,10 +58,4 @@ And therefore
 %</tex>
       </reason>
    </step>
-   <choices>
-      <tex>log\vert 1+x^2\vert + C </tex>
-      <tex>\frac{1}{3}\log x^2  + C </tex>
-      <tex correct="true">\frac{1}{3}\log\vert 1+x^3\vert + C </tex>
-      <tex>\frac{(1+x^3)}{3} + C </tex>
-   </choices>
 </question>

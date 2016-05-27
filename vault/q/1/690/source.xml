@@ -84,10 +84,4 @@
 				\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\dfrac{\tan(\tan\sqrt{x})\cdot\sec^2\sqrt{x}}{2\sqrt{x}}</tex>
-      <tex correct="true">\dfrac{\sec(\tan\sqrt{x})\tan(\tan\sqrt{x})\cdot\sec^2\sqrt{x}}{2\sqrt{x}}</tex>
-      <tex>\dfrac{\sec x\cdot\tan x}{2\sqrt{x}}</tex>
-      <tex>\dfrac{\sec x\cdot\tan x\cdot \sec^2\sqrt{x}}{2\sqrt{x}}</tex>
-   </choices>
 </question>

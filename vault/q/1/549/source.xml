@@ -50,10 +50,4 @@
 				\text{the units of }\frac{dV}{dR}\text{ should be cm$^3$/cm.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">400\pi\text{ cm$^3$/cm}</tex>
-      <tex>200\pi\text{ cm$^3$/cm}</tex>
-      <tex>80\pi\text{ cm$^2$/cm}</tex>
-      <tex>600\pi\text{ cm$^3$/cm}</tex>
-   </choices>
 </question>

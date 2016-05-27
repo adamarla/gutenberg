@@ -55,10 +55,4 @@
 				\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\dfrac{32}{547}\text{ radians/sec.}</tex>
-      <tex>\dfrac{37}{529}\text{ radians/sec.}</tex>
-      <tex correct="true">\dfrac{46}{929}\text{ radians/sec.}</tex>
-      <tex>\dfrac{41}{92}\text{ radians/sec.}</tex>
-   </choices>
 </question>

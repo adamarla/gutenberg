@@ -90,14 +90,4 @@ f(x) &amp;= \underbrace{(x \cos x)^x }_{g(x)} + \underbrace{(x \sin x)^{1/x} }_{
 \log h(x)\text{ first.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>(x \cos x)^{x} \left[ \,1 - x \cdot \tan x + \log (x \cos x)\right] \\
-&amp;- \, (x \sin x)^{1/x} \cdot \left[ \dfrac{x \cdot \cot x + 1 - \log (x \sin x)}{x^2} \right] </tex>
-      <tex>(x \cos x)^{x} \left[ \,1 - x \cdot \tan x + \log (\cos x)\right] \\
-&amp;+\, (x \sin x)^{1/x} \cdot \left[ \dfrac{x \cdot \cot x + 1 - \log (x \sin x)}{x^2} \right] </tex>
-      <tex correct="true">(x \cos x)^{x} \left[ \,1 - x \cdot \tan x + \log (x \cos x)\right] \\
-&amp;+\, (x \sin x)^{1/x} \cdot \left[ \dfrac{x \cdot \cot x + 1 - \log (x \sin x)}{x^2} \right] </tex>
-      <tex>(x \cos x)^{x} \left[ \,1 - \log (x \cos x)\right] \\
-&amp;+\, (x \sin x)^{1/x} \cdot \left[ \dfrac{x \cdot \cot x + 1 - \log (x \sin x)}{x^2} \right] </tex>
-   </choices>
 </question>

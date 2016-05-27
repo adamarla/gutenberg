@@ -173,10 +173,4 @@ Putting it altogether, we get
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\log\vert y^2+xy + x^2\vert =  \frac{1}\sqrt{2}\tan^{-1}\frac{2y+x}{\sqrt{3} x} + C</tex>
-      <tex>\frac{1}{\sqrt{3}}\log\vert y^2+xy + x^2\vert =  \tan^{-1}\frac{2y+x}{\sqrt{3} x} + C</tex>
-      <tex>\log\vert y^2+xy + x^2\vert =  \frac{1}\sqrt{3}\tan^{-1}\frac{2y+x}{\sqrt{3} x} + C</tex>
-      <tex correct="true">\frac{1}{2}\log\vert y^2+xy + x^2\vert =  \frac{1}\sqrt{3}\tan^{-1}\frac{2y+x}{\sqrt{3} x} + C</tex>
-   </choices>
 </question>

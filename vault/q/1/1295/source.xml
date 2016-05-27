@@ -114,10 +114,4 @@ A &amp;= \underbrace{\int_0^{\frac\pi{2}}\frac{\sin x}{1+\cos x}\cdot dx}_{P} + 
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\frac\pi{2}-\frac{\log 2 }{2}</tex>
-      <tex>\pi-\frac{\log 2}{2}</tex>
-      <tex correct="true">\frac\pi{2} </tex>
-      <tex>\frac\pi{2}-\log 2 </tex>
-   </choices>
 </question>

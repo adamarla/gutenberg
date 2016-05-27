@@ -50,14 +50,4 @@ _{\text{Chain Rule}}\\
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\frac{dy}{dx} = x^{\sin x}\cdot\left( \frac{\sin x}{x} + \log x\cdot \cos x\right) \\
-+ (\sin x)^{\cos x}\left[\cos^2 x + \sin^2 x\cdot\log(\sin x) \right]</tex>
-      <tex>\frac{dy}{dx} = \sin x\cdot x^{\sin x - 1} \\
-+ (\sin x)^{\cos x}\left[\cos^2 x + \sin^2 x\cdot\log(\sin x) \right]</tex>
-      <tex correct="true">\frac{dy}{dx} = x^{\sin x}\cdot\left( \frac{\sin x}{x} + \log x\cdot \cos x\right)\\
-+ (\sin x)^{\cos x-1}\left[\cos^2 x - \sin^2 x\cdot\log(\sin x) \right]</tex>
-      <tex>\frac{dy}{dx} = \sin x\cdot x^{\sin x - 1} \\
-+ (\sin x)^{\cos x-1}\left[\cos^2 x - \sin^2 x\cdot\log(\sin x) \right]</tex>
-   </choices>
 </question>

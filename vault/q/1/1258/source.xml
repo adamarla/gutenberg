@@ -42,10 +42,4 @@ Hence, \[ A = \int_{-\frac\pi{2}}^{\frac\pi{2}}\sin^5x\cdot dx = 0 \].
 %</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">0</tex>
-      <tex>1</tex>
-      <tex>2</tex>
-      <tex>4</tex>
-   </choices>
 </question>

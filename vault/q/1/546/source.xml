@@ -70,10 +70,4 @@
       \text{need }\frac{dA}{dT}.\text{The missing piece is }\frac{dA}{dL}.</tex>
       </reason>
    </step>
-   <choices>
-      <tex>13\frac{cm^2}{s}</tex>
-      <tex correct="true">\dfrac{8}{3}\frac{cm^2}{s}</tex>
-      <tex>\dfrac{13}{3}\frac{cm^2}{s}</tex>
-      <tex>12\frac{cm^2}{s}</tex>
-   </choices>
 </question>

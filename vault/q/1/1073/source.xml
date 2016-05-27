@@ -89,10 +89,4 @@
 					\end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex>2\sqrt{2}</tex>
-      <tex>2</tex>
-      <tex correct="true">\sqrt{2}</tex>
-      <tex>4</tex>
-   </choices>
 </question>

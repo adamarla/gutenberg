@@ -49,10 +49,4 @@
 			\text{this curve has tangents only with negative slopes.}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true">\text{No tangent with slope 2 possible.}</tex>
-      <tex>y = 2x - 7</tex>
-      <tex>y = 2x + 13</tex>
-      <tex>y=2x - \frac{1}{15}</tex>
-   </choices>
 </question>

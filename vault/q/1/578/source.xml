@@ -55,10 +55,4 @@
 				\text{number. But always }\gt 0.</tex>
       </reason>
    </step>
-   <choices>
-      <tex>\text{Strictly increasing}</tex>
-      <tex>\text{Strictly decreasing}</tex>
-      <tex>\text{Increasing when }x\gt 0\text{, decreasing when }x\lt 0</tex>
-      <tex>\text{Of constant value}</tex>
-   </choices>
 </question>

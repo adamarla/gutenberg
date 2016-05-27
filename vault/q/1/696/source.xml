@@ -83,10 +83,4 @@
 					  \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true"> 10x^4\sin x^5\cos x^5\cos x^3 -3x^2 \sin x^3 \sin^2   (x^5)</tex>
-      <tex>\sin 2x^5\cdot\cos x^3 - 3\cos x^3\sin^2 x^5</tex>
-      <tex>5x^4\sin 2x^5\cdot\cos x^3 + \cos x^3\sin^2 x^5</tex>
-      <tex>3x^2\sin 2x^5\cdot\cos x^3 - 5x^4\cos x^3\sin^2 x^5</tex>
-   </choices>
 </question>

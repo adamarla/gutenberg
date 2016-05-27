@@ -94,10 +94,4 @@ And therefore
 \end{align}</tex>
       </reason>
    </step>
-   <choices>
-      <tex correct="true"> x^2 + y^2 = 2x</tex>
-      <tex> y^2 + xy = 2x</tex>
-      <tex>y^2 - x^2  = 2x</tex>
-      <tex> x^2 + y^2 = 4x</tex>
-   </choices>
 </question>
