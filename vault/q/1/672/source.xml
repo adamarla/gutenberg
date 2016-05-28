@@ -1,66 +1,90 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="21">
+  <statement>
+    <tex>%text
+Examine the continuity of $f(x)$
+where $f(x)$ is defined as 
 
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>
-			\text{Examine the continuity of f, where}\\
-			\text{f is defined by}\\
-			f(x) = \begin{cases}
-			   \sin x - \cos x, x\neq 0 \\
-			   -1, x = 0 
-			\end{cases}
-		</tex>
-      <tex>\\ \text{What are we being asked in the question?}</tex>
-      <tex>\\ \text{Is the following assertion correct?}</tex>
-      <tex>\\ \text{Is the following analysis correct?}</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">
-				\text{To prove f(x) is continuous for all x.}
-				</tex>
-         <tex correct="false">
-				\text{To prove f(x) is continuous at x = 0.}
-				</tex>
-      </options>
-      <reason>
-         <tex>\text{As no specific domain or point has been}\\
-				\text{specified, we have to prove continuity for all x.}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="false">
-					\begin{align}
-					 \text{Let }A(x)&amp;= \sin x \text{ (continuous for all x)}, \\
-					  \text{and }B(x) &amp;= \cos x \text{ (continuous for all x)}, \\
-					  \implies f(x) &amp;\text{ continuous for all x.}
-					\end{align}
-					</tex>
-      </options>
-      <reason>
-         <tex>\text{Yes, both }\sin x\text{ and }\cos x\text{ are continuous}\\
-					  \text{for all x. But }f(x) = \sin x - \cos x\text{ only for }x\neq 0.\\
-					  \text{Hence, the most you can say right now is that }f(x)\\
-					  \text{is continuous for }x\neq 0.</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-						\begin{align}
-						  \lim_{x\to 0^-}f(x) &amp;= \sin 0 - \cos 0 = -1 \\
-						  \text{and }\lim_{x\to 0+}f(x) &amp;= \sin 0 - \cos 0 = - 1 \\
-						  \text{and }f(0) &amp;= \sin 0 - \cos 0 = -1 
-						\end{align}
-						\\ \text{And hence, }f(x)\text{ is also continuous at }x=0.\\
-						\text{Which means, }f(x)\text{ is continuous for all x.}
-						</tex>
-      </options>
-      <reason>
-         <tex>\text{In Step 2, we proved that f(x) is continuous for}\\
-						x\neq 0.\text{ And here, as }\lim_{x\to 0^-}f(x)=\lim_{x\to 0^+}f(x) = f(0),\\
-						f(x)\text{ is also continuous at }x=0\implies\text{ continuity everywhere.}</tex>
-      </reason>
-   </step>
+%
+\qquad f(x) = \begin{cases}
+  \sin x - \cos x,\, x\neq 0 \\ 
+  -1, \, x = 0 
+\end{cases} 
+</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>%text
+\textcolor{blue}{\text{We have to prove that }\ldots}
+$\ldots f(x)$ is continuous at all $x$
+%</tex>
+      <tex correct="false"/>
+    </options>
+    <reason>
+      <tex>%text
+The question clearly asks to examine
+the \underline\text{continuity of $f(x)$}
+
+Which means \underline\text{all of $f(x)$} - and not
+just at some specific $x$.
+%</tex>
+    </reason>
+    <skills>
+      <skill id="36"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>%text
+$f(x) = \sin x-\cos x$ is continuous 
+for all $x\neq 0$ 
+%</tex>
+      <tex correct="false"/>
+    </options>
+    <reason>
+      <tex>%text
+If two functions $a(x)$ and $b(x)$ are
+continuous in some domain, then 
+so is $a(x) + b(x)$ and $a(x) - b(x)$. 
+
+Now, given that $\sin x$ and $\cos x$ 
+are both continuous for $x\neq 0$, 
+then so must $\sin x-\cos x$ be. 
+%</tex>
+    </reason>
+    <skills>
+      <skill id="34"/>
+      <skill id="4"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex/>
+      <tex correct="false">%text
+\[ \lim_{x\to 0} f(x) \neq f(0) \]. Hence, $f(x)$ is 
+not continuous at $x = 0$
+%</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+\lim_{x\to 0} f(x) &amp;= \lim_{x\to 0}(\sin x-\cos x) \\
+&amp;= 0 - 1 = -1 \\
+\text{Also, }f(0) &amp;= \sin 0 -\cos 0 = - 1
+\end{align}
+%text
+
+
+As \[ \lim_{x\to 0} f(x) = f(0) \], therefore 
+$f(x)$ is \underline\text{also continuous} at $x = 0$. 
+
+Hence, $f(x)$ is continuous for 
+$x\neq 0$ and for $x= 0 \implies f(x)$ 
+is continuous for all $x$
+
+%</tex>
+    </reason>
+    <skills>
+      <skill id="34"/>
+    </skills>
+  </step>
 </question>
