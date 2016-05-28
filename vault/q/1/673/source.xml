@@ -70,7 +70,6 @@ $x = 5$, the following must be true
 
 \[ \qquad 5k + 1 = 10 \implies k = \frac{9}{5} \] 
 %</tex>
-      <tex correct="false"/>
     </options>
     <reason>
       <tex>%text

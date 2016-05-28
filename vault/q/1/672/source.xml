@@ -18,7 +18,6 @@ where $f(x)$ is defined as
 \textcolor{blue}{\text{We have to prove that }\ldots}
 $\ldots f(x)$ is continuous at all $x$
 %</tex>
-      <tex correct="false"/>
     </options>
     <reason>
       <tex>%text
@@ -39,7 +38,6 @@ just at some specific $x$.
 $f(x) = \sin x-\cos x$ is continuous 
 for all $x\neq 0$ 
 %</tex>
-      <tex correct="false"/>
     </options>
     <reason>
       <tex>%text
@@ -59,7 +57,6 @@ then so must $\sin x-\cos x$ be.
   </step>
   <step>
     <options>
-      <tex/>
       <tex correct="false">%text
 \[ \lim_{x\to 0} f(x) \neq f(0) \]. Hence, $f(x)$ is 
 not continuous at $x = 0$
