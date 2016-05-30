@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>%text
+\textcolor{blue}{\text{Conditional Probability Notation}}
+Understanding the difference b/w
+$P\left( A\,\vert\, B\right),P\left( B\,\vert\, A\right)$ and $P\left( A\cap B \right)$
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+The notation used to express conditional 
+probability has a very special -- and a very
+precise -- meaning. 
+
+The table below should help you remember
+\underline\text{when to use which notation}
+
+%
+
+\begin{tabular}{|c|c|c|}
+\hline
+\text{Notation} &amp; \text{What you know} &amp; \text{Probability to find} \\
+\hline 
+P\left( A\,\vert\, B\right) &amp; \text{B has happened} &amp; \text{$A$ happened?}\\
+\hline 
+P\left( B\,\vert\, A\right) &amp; \text{A has happened} &amp; \text{$B$ happened?}\\
+\hline 
+P\left(A\cap B\right) &amp; \text{Nothing} &amp; \text{$A$ and $B$ } \\
+&amp; &amp; \text{happening together} \\
+\hline 
+\end{tabular} </tex>
+  </reason>
+</skill>
