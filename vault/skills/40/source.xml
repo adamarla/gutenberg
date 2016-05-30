@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>%text
+\textcolor{blue}{\text{Property Set \#1}}
+\[ \sin^{-1}(\sin x) = ?, \, \cot^{-1}(\cot x) = ? \] etc.
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+Remember \[ \sin^{-1} (\sin x) \neq \dfrac{1}{\sin}\cdot \sin x\].
+Similarly \[ \tan^{-1}(\tan x) \neq\dfrac{1}{\tan}\cdot\tan x\].
+The above statements are meaningless.
+The ones below are, however, true and
+follow \underline\text{straight from the definition}.
+
+
+%
+\begin{align}
+\sin^{-1}(\sin x) &amp;= x \\ 
+\cos^{-1}(\cos x) &amp;= x \\ 
+\tan^{-1}(\tan x)  &amp;= x \\
+\csc^{-1}(\csc x) &amp;= x \\
+\sec^{-1}(\sec x) &amp;= x \\ 
+\cot^{-1}(\cot x) &amp;= x 
+\end{align}</tex>
+  </reason>
+</skill>
