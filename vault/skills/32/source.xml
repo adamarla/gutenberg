@@ -2,25 +2,23 @@
 <skill xmlns="http://www.gradians.com">
   <render>
     <tex>%text 
-Identifying what \underline\text{substitutions}
-to make -- and when
+\textcolor{blue}{\text{Complicated $\longrightarrow$ Simple expression}
+Using techniques like substitution, 
+factorization, rationalization etc. 
 %</tex>
   </render>
   <reason>
     <tex>%text
-There will be times when you
-will have an equation or expression 
-that \underline\text{looks like - but isn't exactly like}
-something you know. 
+If you see an expression that looks 
+too big or too complicated to work
+with, then it probably is. 
 
-Perhaps it is time to make a 
-substitution and \underline\text{change the form} 
-of the equation. 
+You might therefore want to 
+simplify the expression first. 
 
-\underline\text{There are no standard rules} about
-what substitution to make. 
-
-\underline\text{You will just have to use your intuition }
+There are no rules on what works
+and what doesn't.\underline\text{Just use your}
+\underline\text{intution}
 %</tex>
   </reason>
 </skill>
