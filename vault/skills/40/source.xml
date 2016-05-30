@@ -2,27 +2,39 @@
 <skill xmlns="http://www.gradians.com">
   <render>
     <tex>%text
-\textcolor{blue}{\text{Property Set \#1}}
-\[ \sin^{-1}(\sin x) = ?, \, \cot^{-1}(\cot x) = ? \] etc.
+\textcolor{blue}{\text{Inverse Trig. Function \#1}}
+\[ \sin^{-1}(\sin x) = ? \]
+\[ \cos (\cos^{-1} x) = ? \] 
 %</tex>
   </render>
   <reason>
     <tex>%text
 Remember \[ \sin^{-1} (\sin x) \neq \dfrac{1}{\sin}\cdot \sin x\].
-Similarly \[ \tan^{-1}(\tan x) \neq\dfrac{1}{\tan}\cdot\tan x\].
+Similarly \[ \cos\left( \cos^{-1}x \right) \neq \cos\cdot\dfrac{1}{\cos} x\].
 The above statements are meaningless.
+
+
 The ones below are, however, true and
 follow \underline\text{straight from the definition}.
 
 
 %
-\begin{align}
-\sin^{-1}(\sin x) &amp;= x \\ 
-\cos^{-1}(\cos x) &amp;= x \\ 
-\tan^{-1}(\tan x)  &amp;= x \\
-\csc^{-1}(\csc x) &amp;= x \\
-\sec^{-1}(\sec x) &amp;= x \\ 
-\cot^{-1}(\cot x) &amp;= x 
-\end{align}</tex>
+\begin{tabular}{|c|c|c|} 
+\hline 
+\textbf{If} &amp; \textbf{Then} &amp; \textbf{Also} \\ 
+\hline 
+\sin\theta = x &amp; \sin^{-1}(\sin \theta) = \theta &amp; \sin(\sin^{-1}x) = x \\ 
+\hline 
+\cos\theta = x &amp; \cos^{-1}(\cos \theta) = \theta &amp; \cos(\cos^{-1}x) = x \\ 
+\hline 
+\tan\theta = x &amp; \tan^{-1}(\tan \theta) = \theta &amp; \tan(\tan^{-1}x) = x \\ 
+\hline 
+\csc\theta = x &amp; \csc^{-1}(\csc\theta) = \theta &amp; \csc(\csc^{-1}x) = x \\ 
+\hline 
+\sec\theta = x &amp; \sec^{-1}(\sec \theta) = \theta &amp; \sec(\sec^{-1}x) = x \\ 
+\hline 
+\cot\theta = x &amp; \cot^{-1}(\cot \theta) = \theta &amp; \cot(\cot^{-1}x) = x \\ 
+\hline
+\end{tabular}</tex>
   </reason>
 </skill>
