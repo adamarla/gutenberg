@@ -1,20 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<question xmlns="http://www.gradians.com" chapterId="0">
+<question xmlns="http://www.gradians.com" chapterId="21">
   <statement>
     <tex>%text
 Find \[\dfrac{dy}{dx}\] if \[ y = \cot^{-1}\left[ \dfrac{\sqrt{1+\sin x} + \sqrt{1-\sin x}}{\sqrt{1+\sin x} - \sqrt{1-\sin x}}\right] \]
-%\\ %text
-\textbf{Picking a line-of-attack}
-Shown below are two possible ways of 
-starting to solve the problem. One of them
-\underline\text{is more elegant} than the other. \underline\text{Which one}?
-%\\ %text
-What will be get when we rationalize 
-\[ \qquad P(x) = \left[ \dfrac{\sqrt{1+\sin x} + \sqrt{1-\sin x}}{\sqrt{1+\sin x} - \sqrt{1-\sin x}}\right] \]
-as decided in Step 1? 
-%\\ %text
-Given that \[ P(x) = \frac{\sin x}{1-\cos x} \], what will $\frac{dy}{dx}$ be?
-Remember, \[ y = \cot^{-1} P(x) \]
 %</tex>
   </statement>
   <step>
