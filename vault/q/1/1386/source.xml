@@ -52,6 +52,7 @@ y &amp;= \cot^{-1} P(x) = \cot^{-1} \dfrac{\sin x}{1-\cos x} \\
     <skills>
       <skill id="28"/>
       <skill id="31"/>
+      <skill id="39"/>
     </skills>
   </step>
 </question>
