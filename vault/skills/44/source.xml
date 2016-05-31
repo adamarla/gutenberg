@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>%text
+\textcolor{blue}{\text{Inverse Trig Function \#5}} 
+\[ \tan^{-1}x + \tan^{-1} y = ? \]
+\[2\tan^{-1} x = \sin^{-1}\dfrac{2x}{1+x^2} \] etc. 
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+Below are some other standard
+results. We are not providing the
+proofs. But these are quite easily 
+proven. 
+
+%
+\begin{align}
+\tan^{-1}x + \tan^{-1}y &amp;= \tan^{-1}\left( \dfrac{x+y}{1-xy}\right) \\
+\tan^{-1}x - \tan^{-1}y &amp;= \tan^{-1}\left( \dfrac{x-y}{1+xy}\right) \\
+2\tan^{-1} x &amp;= \sin^{-1}\dfrac{2x}{1+x^2} \\
+2\tan^{-1} x &amp;= \cos^{-1}\dfrac{1-x^2}{1+x^2} \\
+2\tan^{-1} x &amp;= \tan^{-1}\dfrac{2x}{1-x^2} \\
+\end{align}
+
+</tex>
+  </reason>
+</skill>
