@@ -2,7 +2,8 @@
 <question xmlns="http://www.gradians.com" chapterId="21">
   <statement>
     <tex>%text
-Find \[\dfrac{dy}{dx}\] if \[ y = \cot^{-1}\left[ \dfrac{\sqrt{1+\sin x} + \sqrt{1-\sin x}}{\sqrt{1+\sin x} - \sqrt{1-\sin x}}\right] \]
+Find \[\dfrac{dy}{dx}\] given that 
+\[\quad  y = \cot^{-1}\left[ \dfrac{\sqrt{1+\sin x} + \sqrt{1-\sin x}}{\sqrt{1+\sin x} - \sqrt{1-\sin x}}\right] \]
 %</tex>
   </statement>
   <step>
@@ -51,6 +52,7 @@ y &amp;= \cot^{-1} P(x) = \cot^{-1} \dfrac{\sin x}{1-\cos x} \\
     <skills>
       <skill id="28"/>
       <skill id="31"/>
+      <skill id="39"/>
     </skills>
   </step>
 </question>
