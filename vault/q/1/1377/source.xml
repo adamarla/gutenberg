@@ -1,44 +1,45 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="3">
+  <statement>
+    <tex>%text
+What will \[ (f\circ g)(7)\] be if 
+\[ \quad f(x) = x+7 \text{ and } g(x) = x - 7, x\in\mathbb{R} \]
+%</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>\[ (f\circ g)(x) = f\left[ g(x) \right] \]</tex>
+      <tex correct="false">\[ (f\circ g)(x) = f(x)\cdot g(x) \]</tex>
+    </options>
+    <reason>
       <tex>%text
-If \[ f(x) = x + 7 \] and $g(x) = x-7, x\in\mathbb{R},$ 
-then find $(f\circ g)(7)$
-%</tex>
-      <tex>\\ %text
-What does $(f\circ g)(x)$ mean? 
-%</tex>
-      <tex>\\ %text
-Given that $(f\circ g)(x) = f\left( g\left( x\right) \right)$, what will 
-$(f\circ g)(7)$ when $f(x) = x+7$ and $g(x) = x-7$?
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">(f\circ g)(x) = f\left( g\left( x\right)\right) </tex>
-         <tex>(f\circ g)(x) = f(x)\cdot g(x) </tex>
-      </options>
-      <reason>
-         <tex>%text
-$(f\circ g)(x)$ is simply shorthand for $ f\left( g\left( x\right)\right)$.
+$(f\circ g)(x)$ is \underline\text{simply short-hand} 
+for $f\left[ g(x) \right]$. 
 
-And similarly
-\[\qquad (f\circ g\circ h)(x) =  \underbrace{f\left( \underbrace{g\left( h\left(x\right) \right)}_{(g\circ h)(x)}\right)}_{(f\circ g\circ h)(x)}\]
+Also, \[ (f\circ g)(x) \neq f(x)\cdot g(x) \]
 %</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">(f\circ g)(7) = 7 </tex>
-         <tex>(f\circ g)(7) = 0</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-(f\circ g)(x) &amp;= f\left( g\left( x \right) \right) = g(x) + 7 \\
-&amp;= (x-7) + 7 = x \\ 
-\therefore (f\circ g)(7) &amp;= 7
+    </reason>
+    <skills>
+      <skill id="47"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>%text
+When $f(x) = x+7$ and $g(x) = x-7$,
+then \[ (f\circ g)(x) = x \implies (f\circ g)(7) = 7 \]
+%</tex>
+    </options>
+    <reason>
+      <tex>
+\begin{align}
+(f\circ g)(x) &amp;= f\left[ g(x) \right] = g(x) + 7 \\
+&amp;= (x-7) + 7 = x \\
+\therefore (f\circ g)(x) &amp;= x\implies (f\circ g)(7) = 7
 \end{align}</tex>
-      </reason>
-   </step>
+    </reason>
+    <skills>
+      <skill id="47"/>
+    </skills>
+  </step>
 </question>
