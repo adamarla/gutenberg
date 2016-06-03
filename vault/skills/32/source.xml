@@ -2,23 +2,25 @@
 <skill xmlns="http://www.gradians.com">
   <render>
     <tex>%text 
-\textcolor{blue}{\text{Complicated $\longrightarrow$ Simple expression}
-Using techniques like substitution, 
-factorization, rationalization etc. 
+\textcolor{blue}{\text{Simplifying Expression}}
+Using techniques like variable
+substitution, rationalization etc.
 %</tex>
   </render>
   <reason>
     <tex>%text
 If you see an expression that looks 
-too big or too complicated to work
-with, then it probably is. 
+too big or too complicated  \underline\text{OR} 
+looks like something you need but not 
+exactly, then perhaps it is time to 
+\underline\text{change how the expression looks}
 
-You might therefore want to 
-simplify the expression first. 
+There are no rules on what will work.
+It depends on the expression and 
+what you need to do with it. 
 
-There are no rules on what works
-and what doesn't.\underline\text{Just use your}
-\underline\text{intution}
+Hence, get creative and use your 
+intuition. \underline\text{Math isn't just about rules!}
 %</tex>
   </reason>
 </skill>
