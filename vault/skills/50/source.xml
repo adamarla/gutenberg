@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>%text
+\textcolor{blue}{\text{Integration by Parts}}
+\[ \int f(x)\ g(x)\cdot dx = ? \] Applying 
+ILATE to ease integration
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+Differentiation has the \underline\text{product rule}
+\[ \quad \frac{d}{dx}f(x)g(x) = f'(x) g(x) + f(x) g'(x) \]
+
+And integration has \underline\text{integration by parts}
+
+\[ \int f(x)g(x) dx = f(x)\int g(x) dx - \int \left[ f'(x) \int g(x) dx\right] dx \]
+
+\underline\text{But what is $f(x)$ in, say, \[\int x\sin x\cdot dx\]}?
+Is it $f(x) = x$ or $f(x) = \sin x$? 
+
+There is no right or wrong answer. 
+Only better answers. And there is a nice
+\underline\text{rule of thumb -- called ILATE} to help 
+you decide which function to pick as 
+$f(x)$ and which as $g(x)$ 
+
+Simply take the two functions and 
+compare it with the table below. 
+
+\underline\text{The first matching function is $f(x)$}
+\underline\text{and the second is (automatically) $g(x)$}
+
+%
+\begin{tabular}{c|c|c} 
+\hline
+&amp; \text{Meaning} &amp; \text{Example} \\
+\hline 
+I &amp; \text{Inverse Trig. function} &amp; \sin^{-1} x, \tan^{-1}x \\
+\hline 
+L &amp; \text{Logarithmic function} &amp; \log x \\
+\hline 
+A &amp; \text{Algebraic function} &amp; x^2, 4x^7 \\ 
+\hline 
+T &amp; \text{Trigonometric function} &amp; \sin x, \cos x \\
+\hline 
+E &amp; \text{Exponential function} &amp; e^x, 7^x \\
+\hline
+\end{tabular} </tex>
+  </reason>
+</skill>
