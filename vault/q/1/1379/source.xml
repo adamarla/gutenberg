@@ -57,10 +57,10 @@ And therefore,
   <step>
     <options>
       <tex>\begin{align}
-\int_0^1 \cot^{-1}(1-x+x^2)\cdot dx &amp;= \int_0^1\tan^{-1}x\cdot dx \\
-&amp;+ \int_0^1 \tan^{-1}\left( 1-x \right)\cdot dx  \\
-&amp;= 2\int_0^1\tan^{-1} x\cdot dx \\ 
-\because \int_0^1 \tan^{-1}\left(1-x\right)\cdot dx &amp;= \int_0^1\tan^{-1} x\cdot dx
+A = \int_0^1 \cot^{-1}(1-x+x^2)\cdot dx &amp;\\
+= \int_0^1\tan^{-1}x\cdot dx +\int_0^1 \tan^{-1}\left( 1-x \right)\cdot dx  &amp;\\
+= 2\int_0^1\tan^{-1} x\cdot dx &amp;\\ 
+\because \int_0^1 \tan^{-1}\left(1-x\right)\cdot dx = \int_0^1\tan^{-1} x\cdot dx
 \end{align}</tex>
     </options>
     <reason>
