@@ -3,18 +3,19 @@
   <render>
     <tex>%text
 \textcolor{blue}{\text{Standard Integrals \#1}} 
-Easiest to remember 
+Easiest to remember. Mostly 
+of trigonometric functions
 %</tex>
   </render>
   <reason>
     <tex>%text
-Of all the standard integrals you will 
-require, the following should be the 
-easiest to remember. 
-
+If you know the derivatives in the 
+left column, then you can quite 
+easily write the integrals in the 
+right column
 
 %
-\begin{tabular}{c|c}
+\begin{tabular}{l|l}
 \hline 
 \text{Derivative} &amp; \text{Integral} \\ 
 \hline 
@@ -28,6 +29,12 @@ easiest to remember.
 \hline 
 \frac{d}{dx}\tan x = \sec^2 x &amp; \int\sec^2x \cdot dx = \tan x + C \\
 \hline 
+\frac{d}{dx}\cot x = -\csc^2 x &amp; \int\csc^2 x\cdot dx = -\cot x + C \\
+\hline 
+\frac{d}{dx}\sec x = \sec x\tan x &amp; \int\sec x\tan x dx = \sec x + C \\
+\hline 
+\frac{d}{dx}\csc x = -\csc x \cot x &amp; \int \csc x\cot x dx = -\csc x + C \\
+\hline
 \frac{d}{dx}e^x = e^x &amp; \int e^x \cdot dx = e^x + C \\
 \hline 
 \frac{d}{dx}\log \vert x \vert = \frac{1}{x} &amp; \int \frac{dx}{x} = \log\vert x\vert + C \\
