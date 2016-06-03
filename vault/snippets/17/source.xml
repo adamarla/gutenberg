@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippet xmlns="http://www.gradians.com" chapterId="23">
+  <render>
+    <tex>\[ \int_1^2 x^2\cdot dx = \int_1^2 (3-x)^2\cdot dx \]</tex>
+  </render>
+  <reason>
+    <tex>%text
+If you apply the following 
+\[ \int_a^b f(x)\cdot dx = \int_a^b f(a+b-x)\cdot dx \]
+
+then you will see that 
+
+%
+\begin{align}
+a &amp; = 1\text{ and } b = 2 \\
+\therefore \int_1^2 x^2\cdot dx &amp;= \int_1^2 (1+2-x)^2\cdot dx \\
+&amp;= \int_1^2 (3-x)^2 \cdot dx 
+\end{align}</tex>
+  </reason>
+  <skills>
+    <skill id="45"/>
+  </skills>
+</snippet>
