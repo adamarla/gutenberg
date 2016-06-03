@@ -3,7 +3,7 @@
   <render>
     <tex>%text
 \textcolor{blue}{\text{Product and Quotient Rule}}
-\[ \frac{d}{dx}\left[ f(x)\cdot g(x) \right] = ?\] and \[ \frac{d}{dx}\frac{f(x)}{g(x)} = ?\]
+\[ \frac{d}{dx}\left[ f(x)\cdot g(x) \right]\] and \[ \frac{d}{dx}\frac{f(x)}{g(x)}\]
 %</tex>
   </render>
   <reason>
