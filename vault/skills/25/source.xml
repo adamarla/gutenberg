@@ -2,33 +2,35 @@
 <skill xmlns="http://www.gradians.com">
   <render>
     <tex>%text
-\textcolor{blue}{\text{Basic polynomial operations}}
-Factorizing, simplifying \[ \frac{P(x)}{Q(x)} \] etc.
-
+\textcolor{blue}{\text{Simplifying Polynomials}
+Modifying a polynomial so
+that it is easier to work with
 %</tex>
   </render>
   <reason>
     <tex>%text
-Expressing one polynomial as the 
-\underline\text{product} of two or more other 
-polynomials is called factorization. 
+When working with polynomials, 
+it helps to know \underline\text{whether the given}
+\underline\text{polynomial is the product of smaller}
+\underline\text{polynomials}. 
 
-For example, 
+For all you know, the polynomial
+could be written more simply - and 
+hence be easier to work with. 
+
+Knowing the \underline\text{following expansions} 
+should cover you in most cases 
+
 %
 \begin{align}
-	x^2 - 3x + 2 &amp;= (x-1)\cdot (x-2) \\ 
-	x^3-1 &amp;= (x-1)\cdot (x^2 + x + 1) \\
-	x^4 - 1 &amp;= (x-1)\cdot (x+1)\cdot (x^2 + 1)
+(x-a)^2 &amp; = x^2 - 2ax + a^2 \\ 
+(x+a)^2 &amp;= x^2 + 2ax + a^2 \\
+(x^2-a^2) &amp;= (x-a)\cdot (x+a) \\ 
+(x-a)^3 &amp;= x^3 - 3ax^2 + 3a^2 x - a^3 \\
+(x+a)^3 &amp;= x^3 + 3ax^2 + 3a^2 x + a^3 \\
+x^3 - a^3 &amp;= (x-a)\cdot (x^2 + ax + a^2) \\
+x^3 + a^3 &amp;= (x+a)\cdot (x^2 - ax + a^2) 
 \end{align}
-%text
-
-
-Factorizing is something you will do 
-often in the course of your studies. 
-
-So, it is best if you get comfortable 
-with it.
-%
 </tex>
   </reason>
 </skill>
