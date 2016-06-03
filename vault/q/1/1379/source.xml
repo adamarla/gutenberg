@@ -1,82 +1,81 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="23">
+  <statement>
+    <tex>%text
 Evaluate \[ \int_0^1 \cot^{-1}(1-x+x^2)\cdot dx \]
-%</tex>
-      <tex>\\ %text
-\textbf{Changing $\cot^{-1}\longrightarrow\tan^{-1}}
-Can the given integral 
-\[ \qquad A = \int_0^1\cot^{-1}(1-x+x^2)\cdot dx \]
-be \underline\text{re-written} as follows?
-%</tex>
-      <tex>\\ %text
-\textbf{Further simplication}
-\underline\text{What is Z in the expression below}?
-\[ \tan^{-1}\left(\frac{1}{1-x + x^2}\right) = \tan^{-1}x + \tan^{-1} Z \]
-
-%</tex>
-      <tex>\\ %text
-Would the following be true given that 
-\[ \quad A = \int_0^1\tan^{-1}x\cdot dx + \int_0^1\tan^{-1}(1-x)\cdot dx \]
-%</tex>
-      <tex>\\ %text
-What will \[ A = 2\int_0^1\tan^{-1} x\cdot dx \] evaluate to? 
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">A = \int_0^1 \tan^{-1}\left(\dfrac{1}{1-x+x^2}\right)\cdot dx</tex>
-      </options>
-      <reason>
-         <tex>%text
+% 
+</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>\begin{align}
+\cot^{-1}\left( 1-x+x^2\right) = \tan^{-1}&amp;\left( \dfrac{1}{1-x+x^2}\right) 
+\end{align}</tex>
+      <tex correct="false">\begin{align}
+\cot^{-1}\left( 1-x+x^2\right) &amp;= \dfrac{1}{\tan^{-1}(1-x+x^2)}
+\end{align}</tex>
+    </options>
+    <reason>
+      <tex>%text
 Generally speaking, dealing with $\tan\phi$ or 
 $\tan^{-1} x$ is easier than dealing with $\cot\phi$ 
-or $\cot^{-1}x$. Hence, we will \underline\text{try this approach}.
+or $\cot^{-1}x$.  So, let us try to go from 
+$\cot^{-1} x\longrightarrow\tan^{-1}x$ first. 
 
 
-That said,
-%
-\begin{align}
-\cot^{-1} x = \phi \implies &amp;\cot\phi = \frac{1}{\tan\phi} = x \\
-\therefore \tan\phi = \frac{1}{x} \implies &amp;\phi = \tan^{-1}\frac{1}{x}\\
-\implies \phi = \cot^{-1}x &amp;= \tan^{-1}\frac{1}{x}  \\
-\text{And so, }\cot^{-1}(1-x+x^2) &amp;= \tan^{-1}\frac{1}{1-x+x^2}
-\end{align} 
-
-%text
-
-Which is why
-\[ \int_0^1\cot^{-1}(1-x+x^2)dx = \int_0^1\tan^{-1}\left( \frac{1}{1-x+x^2} \right)dx \]
+Now, we know that 
+ \[ \cot^{-1} x = \tan^{-1}\dfrac{1}{x} \neq \dfrac{1}{\tan^{-1} x}\]
+ 
+ Therefore 
+ \[ \cot^{-1}\left( 1-x+x^2\right) = \tan^{-1}\left( \dfrac{1}{1-x+x^2}\right) \]
 %</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">Z = (1-x) </tex>
-         <tex>Z = (1+x )</tex>
-      </options>
-      <reason>
-         <tex>%text
+    </reason>
+    <skills>
+      <skill id="42"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\[ \tan^{-1}\dfrac{1}{1-x+x^2} = \tan^{-1} x + \tan^{-1} \left(1-x\right) \]</tex>
+      <tex correct="false">\[ \tan^{-1}\dfrac{1}{1-x+x^2} = \tan^{-1} x + \tan^{-1} \left(1+x\right) \]</tex>
+    </options>
+    <reason>
+      <tex>%text
 \underline\text{Recall that \[ \tan^{-1} a + \tan^{-1} b = \tan^{-1}\left(\dfrac{a + b}{1-ab}\right) \]}
 
 And therefore, 
 %
 \begin{align}
-\tan^{-1}\left(\frac{1}{1-x + x^2}\right) &amp;= 
-\tan^{-1}\left( \frac{(1-x)+x}{1-x\cdot(1-x)}\right) \\
-&amp;= \tan^{-1} x + \underbrace{\tan^{-1}(1-x)}_{\tan^{-1} Z} \\
-\therefore Z &amp;= (1-x) 
+\tan^{-1}x + \tan^{-1}(1-x) &amp;= \tan^{-1}\left[ \dfrac{x + (1-x)}{1-\lbrace x\cdot(1-x)\rbrace}\right] \\
+&amp;= \tan^{-1}\left[ \dfrac{1}{1-\lbrace x + x^2\rbrace}\right] \\
 \end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">A = 2\int_0^1\tan^{-1} x\cdot dx </tex>
-      </options>
-      <reason>
-         <tex>%text
+    </reason>
+    <skills>
+      <skill id="44"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\begin{align}
+\int_0^1 \cot^{-1}(1-x+x^2)\cdot dx &amp;= \int_0^1\tan^{-1}x\cdot dx \\
+&amp;+ \int_0^1 \tan^{-1}\left( 1-x \right)\cdot dx  \\
+&amp;= 2\int_0^1\tan^{-1} x\cdot dx \\ 
+\because \int_0^1 \tan^{-1}\left(1-x\right)\cdot dx &amp;= \int_0^1\tan^{-1} x\cdot dx
+\end{align}</tex>
+    </options>
+    <reason>
+      <tex>%text
+We have already established that 
+
+%
+\begin{align}
+\cot^{-1}(1-x+x^2) &amp;= \tan^{-1}\dfrac{1}{1-x+x^2} \\
+&amp;= \tan^{-1} x + \tan^{-1}(1-x) \\ 
+\therefore \int_0^1 \cot^{-1}(1-x+x^2) &amp;= \int_0^1\tan^{-1} x \cdot dx \\
+&amp;+ \int_0^1 \tan^{-1}(1-x)\cdot dx
+\end{align}
+%text
+
 Recall that \[ \int_0^a f(x)\cdot dx = \int_0^a f(a-x)\cdot dx \]
 
 And therefore, 
@@ -89,26 +88,59 @@ _{f(x) = 1-x \implies f(1-x) = 1-(1-x) = x}\\
 &amp;= \int_0^1 \tan^{-1}x\cdot dx +  \int_0^1 \tan^{-1}x\cdot dx \\
 &amp;= 2 \int_0^1 \tan^{-1}x\cdot dx
 \end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\frac\pi{2}-\log 2</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
+    </reason>
+    <skills>
+      <skill id="46"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\begin{align}
+A &amp;= 2\int_0^1 \tan^{-1} x\cdot dx  \\
+\therefore \text{if }x &amp;= \tan \phi\text{ then }  \\
+A &amp;= 2\int_0^{\frac\pi{4}}\phi\cdot\sec^2\phi\cdot d\phi
+\end{align}</tex>
+      <tex correct="false">\begin{align}
+A &amp;= 2\int_0^1 \tan^{-1} x\cdot dx  \\
+\therefore \text{if }x &amp;= \tan \phi\text{ then }  \\
+A &amp;= 2\int_0^{\frac\pi{4}}\phi\cdot d\phi
+\end{align}</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
 A &amp;= 2\int_0^1\tan^{-1}x\cdot dx \\
 \text{Let }x &amp;= \tan\phi \implies dx = \sec^2\phi\cdot d\phi \\
 \therefore A &amp;= 2\underbrace{\int_0^{\frac\pi{4}}\phi\cdot\sec^2\phi\cdot d\phi}
-_{\text{As x goes from }0\rightarrow 1,\phi\text{ goes from }0\rightarrow\frac\pi{4} } \\
-&amp;= 2\underbrace{\left[ \phi\tan\phi-\int\left[\frac{d\phi}{d\phi}\int\sec^2\phi\cdot d\phi\right]d\phi\right]_0^{\frac\pi{4}}}_
+_{x = 0\rightarrow 1\implies \phi = 0\rightarrow\frac\pi{4} }
+\end{align}
+</tex>
+    </reason>
+    <skills>
+      <skill id="32"/>
+      <skill id="33"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\begin{align}
+A &amp;= 2\int_0^{\frac\pi{4}}\phi\cdot\sec^2\phi\cdot d\phi \\
+&amp;= 2\left[ \phi\tan\phi + \log \vert \cos \phi \vert \right]_0^{\frac\pi{4}} \\
+&amp;= \frac\pi{2} - \log 2 
+\end{align}</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+A &amp;= 2\underbrace{\left[ \phi\tan\phi-\int\left[\frac{d\phi}{d\phi}\int\sec^2\phi\cdot d\phi\right]d\phi\right]_0^{\frac\pi{4}}}_
 {\text{Integration by parts}} \\
 &amp;= 2\left[ \phi\tan\phi - \int\tan\phi\cdot d\phi \right]_0^{\frac\pi{4}} \\
 &amp;= 2\left[ \phi\tan\phi + \log\vert\cos\phi\vert \right]_0^{\frac\pi{4}}  \\
 &amp;= 2\left[ \left( \frac\pi{4} + \log\frac{1}{\sqrt{2}}\right) - 0 \right] \\
-&amp;= 2\left( \underbrace{\frac\pi{4} -\frac{1}{2}\log 2}_{\log\frac{1}{\sqrt{2}} = \log 2^{-\frac{1}{2}} = -\frac{1}{2}\log 2}\right)
-= \frac\pi{2} - \log 2 
+&amp;= 2\left( \underbrace{\frac\pi{4} -\frac{1}{2}\log 2}_{\log\frac{1}{\sqrt{2}} = \log 2^{-\frac{1}{2}} = -\frac{1}{2}\log 2}\right)\\
+&amp;= \frac\pi{2} - \log 2 
 \end{align}</tex>
-      </reason>
-   </step>
+    </reason>
+    <skills>
+      <skill id="50"/>
+    </skills>
+  </step>
 </question>
