@@ -2,21 +2,24 @@
 <skill xmlns="http://www.gradians.com">
   <render>
     <tex>%text
-\textcolor{blue}{\text{Simplifying Polynomials}
-Modifying a polynomial so
-that it is easier to work with
+\textcolor{blue}{\text{Polynomial Factorization}
+Expressing a polynomial as the 
+\underline\text{product or quotient} of other 
+polynomials
 %</tex>
   </render>
   <reason>
     <tex>%text
-When working with polynomials, 
-it helps to know \underline\text{whether the given}
-\underline\text{polynomial is the product of smaller}
-\underline\text{polynomials}. 
+If you write \[ x = 2 = \frac{4}{2} \], then you
+are not changing the value of $x$ - 
+only how it is written. 
 
-For all you know, the polynomial
-could be written more simply - and 
-hence be easier to work with. 
+Same goes for polynomials. 
+
+Sometimes, the math becomes easier 
+if one simply re-writes the given 
+polynomials as the product or quotient 
+of some other polynomials.
 
 Knowing the \underline\text{following expansions} 
 should cover you in most cases 
