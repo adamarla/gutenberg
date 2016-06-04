@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>%text
+\textcolor{blue}{\text{Solving the Equation}}
+Identifying the appropriate method
+for solving given the equation's type
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+All differential equations are not solved 
+in the same way. 
+
+The most efficient way to solve a differential 
+depends on the \underline\text{type of equation}
+
+For the types you will encounter, the 
+texhniques are summarized below. 
+
+%
+\begin{tabular}{|c|c|}
+\hline 
+\text{Type} &amp; \text{First Step} \\
+\hline 
+\frac{dy}{dx} = g(x)\cdot h(y) &amp;  \frac{dy}{h(y)} = g(x)\cdot dx \\
+&amp; \therefore \int\frac{dy}{h(y)} = \int g(x)\cdot dx \\
+\hline 
+\frac{dy}{dx} = g\left(\frac{y}{x}\right) &amp; \text{Let }y = v\cdot x \\
+&amp; \therefore \frac{dy}{dx} = v + x\frac{dv}{dx} = g(v)\\
+\hline 
+\frac{dy}{dx} + Px = Q &amp; \text{Find the integrating factor} \\
+&amp; j(x) = e^{\int P\cdot dx} \\
+&amp; \text{Multiply both sides with $j(x)$} \\
+\hline 
+\end{tabular} </tex>
+  </reason>
+</skill>
