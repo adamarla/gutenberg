@@ -20,7 +20,7 @@ For $f(x)$ to be continuous at $x=2$
 %</tex>
       <tex correct="false">%text
 For $f(x)$ to be continuous at $x=2$
-\[ \quad \lim_{x\to 2^-}f(x) = \lim_{x\to 2^+}f(x) \]
+\[ \quad \lim_{x\to 2^-}f(x) = \lim_{x\to 2^+}f(x)  \]
 %</tex>
     </options>
     <reason>
