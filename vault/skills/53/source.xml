@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>%text
+\textcolor{blue}{\text{Recognizing the type}}
+Is it an ordinary differential eqn.?
+Is it homogenous or linear? 
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+At school level, you will be asked 
+to solve only the following types of
+differential equations 
+% 
+\begin{align}
+\frac{dy}{dx} &amp;= f(x,y) = g(x)\cdot h(y) \\
+\frac{dy}{dx} &amp;= f(x,y) = g\left(\frac{y}{x}\right) \text{ (homogenous)} \\
+\frac{dy}{dx} + Py &amp;= Q \text{ (first-order linear) }
+\end{align}
+
+%text
+
+
+Notice that all of the above equations
+have \underline\text{order one and degree one}. 
+
+Only when you know the type of the 
+equation can you pick the correct 
+technique for solving it. 
+%</tex>
+  </reason>
+</skill>
