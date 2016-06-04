@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>%text
+\textcolor{blue}{\text{Basic Terminology}} 
+What is an ordinary differential
+equation, its order and its degree?
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+\textbf{Definition}
+
+A differential equation relates a
+function with its derivatives
+
+\[ 3\left(\frac{d^2y }{dx^2}\right)^{37} - \left(\frac{dy}{dx}\right)^{100} + x = 0\] 
+is, for example, a differential equation
+
+
+It is also an \underline\text{ordinary} differential
+equation because it has only $y', y''$
+type terms. There are also partial 
+differential equations. But those are
+taught at university level. 
+
+\textbf{Order} 
+The order of a differential equation is 
+the order of the \underline\text{highest order derivative}
+in the equation
+
+\[ 3\left(\frac{d^2y }{dx^2}\right)^{37} - \left(\frac{dy}{dx}\right)^{100} + x = 0\] 
+has \underline\text{order equal to 2} because of $\left(\frac{d^2y}{dx^2}\right)$
+
+\textbf{Degree}
+The degree of a differential equation is
+the \underline\text{highest power} of the \underline\text{highest order}
+derivative in the equation
+
+\[ 3\left(\frac{d^2y }{dx^2}\right)^{37} - \left(\frac{dy}{dx}\right)^{100} + x = 0\] 
+has \underline\text{degree equal to 37} 
+
+\textbf{Degrees are not always defined!}
+A degree is only defined for differential 
+equations that are \underline\text{polynomial} 
+in $y,y',y"$ etc.
+%</tex>
+  </reason>
+</skill>
