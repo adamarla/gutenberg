@@ -25,7 +25,9 @@ is to the \underline\text{base $e$}
 \begin{align}
 \log (m\cdot n) &amp;= \log m + \log n \\
 \log \frac{m}{n} &amp;= \log m - \log n \\ 
+\log a^b &amp;= b\cdot \log a \\ 
 e^{\log m} &amp;= m \\
+\log e^{n} &amp;= n\cdot\log e = n\,(\because \log e = 1)
 \end{align}</tex>
   </reason>
 </skill>
