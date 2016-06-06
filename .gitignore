@@ -6,11 +6,13 @@
 
 # Generated SVG files and layout.xml
 vault/q/*/*/*.svg
-vault/q/*/*/layout.xml
 !vault/q/*/*/img_*.svg
+vault/q/*/*/layout.xml
 vault/skills/*/*.svg
+!vault/skills/*/img_*.svg
 vault/skills/*/layout.xml
 vault/snippets/*/*.svg
+!vault/snippets/*/img_*.svg
 vault/snippets/*/layout.xml
 
 vault/*/*/*/STMT_*.svg
