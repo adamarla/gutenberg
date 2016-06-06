@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>%text
+\textcolor{blue}{\text{Standard Integrals \#1}} 
+Easiest to remember. Mostly 
+of trigonometric functions
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+If you know the derivatives in the 
+left column, then you can quite 
+easily write the integrals in the 
+right column
+
+%
+\begin{tabular}{l|l}
+\hline 
+\text{Derivative} &amp; \text{Integral} \\ 
+\hline 
+\frac{d}{dx}\frac{x^{n+1}}{n+1} = x^n &amp; \int x^n dx= \frac{x^{n+1}}{n+1}+C \\
+\hline 
+\frac{d}{dx}x = 1 &amp; \int dx = x + C \\
+\hline 
+\dfrac{d}{dx}\sin x = \cos x &amp; \int\cos x\cdot dx = \sin x + C \\
+\hline 
+\frac{d}{dx}(-\cos x ) = \sin x &amp; \int\sin x \cdot dx = -\cos x + C \\
+\hline 
+\frac{d}{dx}\tan x = \sec^2 x &amp; \int\sec^2x \cdot dx = \tan x + C \\
+\hline 
+\frac{d}{dx}\cot x = -\csc^2 x &amp; \int\csc^2 x\cdot dx = -\cot x + C \\
+\hline 
+\frac{d}{dx}\sec x = \sec x\tan x &amp; \int\sec x\tan x dx = \sec x + C \\
+\hline 
+\frac{d}{dx}\csc x = -\csc x \cot x &amp; \int \csc x\cot x dx = -\csc x + C \\
+\hline
+\frac{d}{dx}e^x = e^x &amp; \int e^x \cdot dx = e^x + C \\
+\hline 
+\frac{d}{dx}\log \vert x \vert = \frac{1}{x} &amp; \int \frac{dx}{x} = \log\vert x\vert + C \\
+\hline
+\end{tabular} </tex>
+  </reason>
+</skill>

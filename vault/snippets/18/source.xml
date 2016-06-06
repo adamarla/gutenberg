@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippet xmlns="http://www.gradians.com" chapterId="18">
+  <render>
+    <tex correct="false">\[ \cot^{-1}(x^2 + 1) = \dfrac{1}{\tan^{-1}\left(x^2 + 1\right)}\]</tex>
+  </render>
+  <reason>
+    <tex>%text
+\[ \cot^{-1} z = \tan^{-1}\frac{1}{z} \neq \dfrac{1}{\tan^{-1} z}\]
+
+Hence, 
+\[ \cot^{-1}(x^2 + 1) = \tan^{-1}\frac{1}{1+x^2} \neq \dfrac{1}{\tan^{-1}\left( 1+x^2\right)} \]
+%
+</tex>
+  </reason>
+  <skills>
+    <skill id="42"/>
+  </skills>
+</snippet>

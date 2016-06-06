@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>%text
+\textcolor{blue}{\text{Standard Integrals \#2}}
+Integrals of inverse trigonometric 
+functions 
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+The following integrals follow straight
+the derivatives of inverse trigonometric
+functions 
+
+
+%
+\begin{tabular}{l|l} 
+\hline 
+\text{Derivative} &amp; \text{Integral} \\
+\hline 
+\frac{d}{dx}\sin^{-1}x = \frac{1}{\sqrt{1-x^2}} &amp; \int \frac{dx}{\sqrt{1-x^2}} = \sin^{-1} x + C \\
+\hline 
+\frac{d}{dx}\cos^{-1} x = -\frac{1}{\sqrt{1-x^2}} &amp; \int\frac{dx}{\sqrt{1-x^2}} = -\cos^{-1} x + C \\
+\hline 
+\frac{d}{dx}\tan^{-1}x = \frac{1}{1+x^2} &amp; \int\frac{dx}{1+x^2} = \tan^{-1} x + C \\
+\hline 
+\frac{d}{dx}\cot^{-1} x = \frac{-1}{1+x^2} &amp; \int\frac{dx}{1+x^2} = -\cot^{-1} x + C \\
+\hline 
+\frac{d}{dx}\sec^{-1} x = \frac{1}{x\sqrt{x^2-1}} &amp; \int\frac{dx}{x\sqrt{x^2 - 1}} = \sec^{-1} x + C \\
+\hline 
+\frac{d}{dx}\csc^{-1} x = \frac{-1}{x\sqrt{x^2-1}} &amp; \int\frac{dx}{x\sqrt{x^2 - 1}} = -\csc^{-1} x + C  \\
+\hline
+\end{tabular} </tex>
+  </reason>
+</skill>
