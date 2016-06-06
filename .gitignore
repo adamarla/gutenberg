@@ -1,36 +1,13 @@
 
-# Ignore everything, everywhere EXCEPT files written by the user, namely: 
-#	1. question.tex 
-#	2. Any .gnuplot files ( but not generated .table files )
-#	3. Makefiles ( obviously )
-
 # Generated SVG files and layout.xml
-vault/q/*/*/*.svg
-vault/q/*/*/layout.xml
-!vault/q/*/*/img_*.svg
-vault/skills/*/*.svg
-vault/skills/*/layout.xml
-vault/snippets/*/*.svg
-vault/snippets/*/layout.xml
+# Version 2016 
 
-vault/*/*/*/STMT_*.svg
-vault/*/*/*/CH_*.svg
-vault/*/*/*/CTX_*.svg
-vault/*/*/*/CRT_*.svg
-vault/*/*/*/WRNG_*.svg
-vault/*/*/*/RSN_*.svg
-vault/*/*/*/PREVIEW.svg
+layout.xml
+[[:digit:]]*.svg
+last_compiled_on
+Makefile
 
-# bundle request marker
-vault/*/*/*/bundle.xml
-vault/*/*/*/old_bundle.xml
-vault/*/*/*/*.lbl
-
-# script aids
-vault/*/.all
-vault/*/.pending
-vault/*/.tagged
-vault/*/.written
+### Deprecated clauses 
 
 *.anx
 *.dvi
@@ -62,7 +39,6 @@ old.mk
 
 mint/*
 
-Makefile
 !mint/Makefile
 
 
