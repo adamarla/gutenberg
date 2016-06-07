@@ -112,9 +112,7 @@ Hence, the equation is simply
     </skills>
   </step>
   <step>
-    <options>
-      <tex isImage="true">img_e-1.svg</tex>
-    </options>
+    <options/>
     <reason>
       <tex>%text
 End of question and testing
