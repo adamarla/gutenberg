@@ -1,0 +1,14 @@
+#!/bin/bash 
+
+fname=$(basename $1 | cut -d'.' -f1)
+
+# Generate p-X.ppm files 
+pdftoppm $fname.pdf p
+
+for f in `ls *.ppm` ; do 
+  n=$(basename $f | cut -d'.' -f1 | cut -d'-' -f2)
+  pamcut -top 5 $f > e-$n.ppm 
+  potrace -s --tight --group -r 300 e-$n.ppm 
+  rm -f $f e-$n.ppm 
+done 
+
