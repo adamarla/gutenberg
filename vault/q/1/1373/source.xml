@@ -29,6 +29,9 @@ That is all that we need to find the equation
 of the tangent. 
 %</tex>
     </reason>
+    <skills>
+      <skill id="26"/>
+    </skills>
   </step>
   <step>
     <options>
@@ -52,6 +55,9 @@ will pass through
 &amp;= \dfrac{-2}{-\dfrac{3}{\sqrt{2}}} = \dfrac{2\sqrt{2}}{3}
 \end{align}</tex>
     </reason>
+    <skills>
+      <skill id="51"/>
+    </skills>
   </step>
   <step>
     <options>
@@ -67,6 +73,9 @@ The equation of the tangent will be
 \implies 3y &amp;= 2\sqrt{2}\cdot\left( x - \frac{1}{\sqrt{2}}\right) = 2\sqrt{2}x - 2 
 \end{align}</tex>
     </reason>
+    <skills>
+      <skill id="1"/>
+    </skills>
   </step>
   <step>
     <options>
@@ -77,5 +86,8 @@ The equation of the tangent will be
 End of question and testing
 %</tex>
     </reason>
+    <skills>
+      <skill id="34"/>
+    </skills>
   </step>
 </question>
