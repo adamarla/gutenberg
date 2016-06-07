@@ -38,7 +38,7 @@ A &amp;= \left(\sin 3t, \cos 2t \right)= \left(\sin\frac{3\pi}{4},\cos\frac{2\pi
 \end{align}</tex>
     </reason>
     <skills>
-      <skill id="26"/>
+      <skill id="56"/>
     </skills>
   </step>
   <step>
@@ -70,6 +70,7 @@ m &amp;= \left[\frac{dy}{dx}\right]_{t=\frac\pi{4}} = \left[\frac{dy / dt}{dx / 
     </reason>
     <skills>
       <skill id="51"/>
+      <skill id="56"/>
     </skills>
   </step>
   <step>
@@ -108,18 +109,8 @@ Hence, the equation is simply
 \end{align}</tex>
     </reason>
     <skills>
+      <skill id="57"/>
       <skill id="1"/>
-    </skills>
-  </step>
-  <step>
-    <options/>
-    <reason>
-      <tex>%text
-End of question and testing
-%</tex>
-    </reason>
-    <skills>
-      <skill id="34"/>
     </skills>
   </step>
 </question>
