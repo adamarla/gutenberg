@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>%text
+\textcolor{blue}\text{Parametric Curves}
+What it means ; Coordinates of
+point on it ; Slope of the tangent
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+Ordinarily, we expect curves to
+be of the form $y = f(x)$ 
+
+But if both $x$ and $y$ are expressed
+in terms of a third variable/parameter,
+then we have what is called a 
+\underline\text{parametric curve}
+
+Instead of one $y = f(x)$ type equation,
+we will have two equations in terms 
+of the parameter $(t)$
+
+\[ \quad x = f(t) \text{ and } y = g(t) \]
+
+ \underline\text{The curve is still plotted in $x-y} 
+ It is only expressed in terms of $t$
+
+ \underline\text{Coordinates of a point $A$}
+ A point $A$ on the curve will have 
+ the coordinates 
+ \[ \qquad A = (x,y) = \left(f(t), g(t) \right)\]
+
+ \underline\text{Slope of the tangent at $A$}
+ The slope of the tangent will continue
+ to be $\frac{dy}{dx}$. However, 
+
+ \[ \quad \dfrac{dy}{dx} = \frac{dy / dt}{dx / dt}\]
+ 
+%
+</tex>
+  </reason>
+</skill>
