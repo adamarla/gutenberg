@@ -3,9 +3,14 @@
 # Version 2016 
 
 layout.xml
-[[:digit:]]*.svg
+*.svg
+!img_[[:alnum:]]*.svg
 last_compiled_on
 Makefile
+
+*.lbl
+*.tex
+question.xml
 
 ### Deprecated clauses 
 
@@ -22,14 +27,8 @@ skel
 compiled
 codex.cdx
 
-!vault/common/instruction.tex
 !vault/humor/*/funny.png
-!question.tex
-!shared/replacements/*/*.tex
-!shared/*.tex
-!shared/templates/*.tex
 
-blueprint
 compilation_finished
 shell-script
 gold.*
