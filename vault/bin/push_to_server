@@ -1,0 +1,5 @@
+#!/bin/bash 
+
+cd /home/abhinavc/workspace/gutenberg
+git push origin master
+hub pull-request -b gutenberg:master -m "(`date +\"%b %d,%Y - %r\"`) Edits by `whoami`"
