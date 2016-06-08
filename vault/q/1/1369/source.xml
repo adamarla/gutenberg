@@ -1,66 +1,53 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="0">
+  <statement>
+    <tex>%text
 Evaluate 
 \[ \qquad \sin \left[ \frac\pi{3} - \sin^{-1}\left(-\frac{1}{2} \right) \right] \] 
 %</tex>
-      <tex>\\ %text
-Which of the following assertions is correct? 
-%</tex>
-      <tex>\\ %text
-\textbf{Check the calculations}
-Given the value of $\sin^{-1}\left( -\frac{1}{2}\right)$, has 
-\[ \sin \left[ \frac\pi{3} - \sin^{-1}\left(-\frac{1}{2} \right) \right]\] been calculated 
-correctly below? 
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">%text
-If \[\sin^{-1} x = \phi \] then \[ \phi \in \left[ -\frac\pi{2},\frac\pi{2} \right] \]
-
-And therefore, 
-\[ \qquad \sin^{-1}\left( -\frac{1}{2} \right)  = -\frac\pi{6} \]
-%</tex>
-         <tex>\begin{align}
+  </statement>
+  <step>
+    <options>
+      <tex correct="false">\begin{align}
 \sin\left( \pi + \frac\pi{6}\right) &amp;= \sin\left( \frac{7\pi}{6} \right)  = -\frac{1}{2} \\
 \therefore \sin^{-1}\left( -\frac{1}{2} \right) &amp;= \frac{7\pi}{6} 
 \end{align} </tex>
-      </options>
-      <reason>
-         <tex>%text
-There are \underline\text{infinite} angles $(\phi)$ for which 
-\[ \qquad \qquad \sin\phi = a, \, a \in [-1,1] \] 
+    </options>
+    <reason>
+      <tex>%text
+There are infinite angles for which 
+\[ \qquad \sin\theta = -\frac{1}{2} \]
 
-But when we say \[\sin^{-1} a = \phi \], we have 
-only one of those infinite angles in mind. 
+But when we say \[ \sin^{-1}\left(-\frac{1}{2}\right) = \theta  \], 
+the $\theta$ is an angle in what is called 
+\underline\text{the principal range.} 
 
-Which one? The one that lies in the 
-principal range and is called the 
-\underline\text{principal angle}. 
 
-For sine, that range is $\left[ -\frac\pi{2},\frac\pi{2}\right]$. Hence, 
-\[ \sin^{-1}\left(-\frac{1}{2} \right)  \in \left[ -\frac\pi{2},\frac\pi{2} \right] \]
+For $\sin^{-1} x$, that principal range is \[ \left[-\frac\pi{2},\frac\pi{2}\right]\]
 
-And as $\sin\left( -\frac\pi{6}\right) = -\frac{1}{2}$ and $-\frac\pi{6}\in\left[ -\frac\pi{2},\frac\pi{2}\right]$, so
-\[ \qquad \quad \underline{\sin^{-1}\left( -\frac{1}{2}\right) = -\frac\pi{6}} \]
+And as $\sin\left( -\frac\pi{6}\right) = -\frac{1}{2}$ and $-\frac\pi{6}\in\left[ -\frac\pi{2},\frac\pi{2}\right]$,
+\[ \qquad \therefore \sin^{-1}\left( -\frac{1}{2}\right) = -\frac\pi{6} \]
 %</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\[ \sin \left[ \frac\pi{3} - \sin^{-1}\left(-\frac{1}{2} \right) \right] = 1\]</tex>
-         <tex>\[ \sin \left[ \frac\pi{3} - \sin^{-1}\left(-\frac{1}{2} \right) \right] = \frac{1}{2} \]</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
+    </reason>
+    <skills>
+      <skill id="39"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\[ \sin \left[ \frac\pi{3} - \sin^{-1}\left(-\frac{1}{2} \right) \right] = 1 \]</tex>
+      <tex correct="false">\[ \sin \left[ \frac\pi{3} - \sin^{-1}\left(-\frac{1}{2} \right) \right] = \frac{1}{2} \]</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
 \sin^{-1}\left(-\frac{1}{2}  \right) &amp;= -\frac\pi{6} \\
 \therefore \frac\pi{3} - \sin^{-1}\left(-\frac{1}{2}  \right)  &amp;= \frac\pi{3} - \left( -\frac\pi{6} \right)\\
 &amp;= \frac\pi{2} \\
-\implies \sin \left[ \frac\pi{3} - \sin^{-1}\left(-\frac{1}{2} \right) \right] &amp;= 1 
+\implies \sin \left[ \frac\pi{3} - \sin^{-1}\left(-\frac{1}{2} \right) \right] &amp;= \sin\frac\pi{2}= 1
 \end{align}</tex>
-      </reason>
-   </step>
+    </reason>
+    <skills>
+      <skill id="1"/>
+    </skills>
+  </step>
 </question>
