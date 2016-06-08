@@ -1,37 +1,49 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="23">
+  <statement>
+    <tex>%text
 Evaluate \[ \int_0^1\frac{dx}{1+x^2} \]
 %</tex>
-      <tex>\\ %text
-Is the following correct? 
-%</tex>
-   </statement>
-   <step swipe="false">
-      <options>
-         <tex correct="true">\begin{align}
+  </statement>
+  <step>
+    <options>
+      <tex>\begin{align}
 \int\frac{dx}{1+x^2} &amp;= \tan^{-1}x + C \\ 
 \therefore \int_0^1\frac{dx}{1+x^2} &amp;= \left[ \tan^{-1} x \right]_0^1 = \frac\pi{4} 
 \end{align} </tex>
-         <tex>\begin{align}
+      <tex correct="false">\begin{align}
 \int\frac{dx}{1+x^2} &amp;= \cot^{-1}x + C \\ 
 \therefore \int_0^1\frac{dx}{1+x^2} &amp;= \left[ \cot^{-1} x \right]_0^1 = \frac\pi{4} 
 \end{align} </tex>
-      </options>
-      <reason>
-         <tex>%text
-We have simply used the following two
-\underline\text{standard results}
+    </options>
+    <reason>
+      <tex>%text
+First, note that 
+\[ \int\dfrac{dx}{1+x^2} = \tan^{-1}x + C = -\cot^{-1} x + C \]
+
+
+Therefore, \underline\text{either of the following is fine}
 
 %
 \begin{align}
-   \int\frac{dx}{1+x^2} &amp;= \tan^{-1} x + C \\ 
-   \int_a^b f(x)\cdot dx &amp;= \left[ F(x) \right]_a^b = F(b) - F(a) \\
-   \therefore \int_0^1\frac{dx}{1+x^2} &amp;= \left[ \tan^{-1} x\right]_0^1 \\
-   &amp;= \tan^{-1}1 - \tan^{-1} 0 = \frac\pi{4}
-\end{align}</tex>
-      </reason>
-   </step>
+\int_0^1\frac{dx}{1+x^2} &amp;= \left[\tan^{-1} x \right]_0^1 \\ 
+&amp;= \tan^{-1}1 - \tan^{-1} 0 \\
+&amp;= \frac\pi{4} - 0 = \frac\pi{4} 
+\end{align}
+%text
+
+OR 
+
+%
+\begin{align}
+\int_0^1\frac{dx}{1+x^2} &amp;= \underbrace{-\left[\cot^{-1} x \right]_0^1 = \left[\cot^{-1} x \right]_1^0}_{\text{Notice something?}}\\ 
+&amp;= \cot^{-1}0 - \cot^{-1} 1 \\
+&amp;= \frac\pi{2} - \frac\pi{4} = \frac\pi{4} 
+\end{align}
+</tex>
+    </reason>
+    <skills>
+      <skill id="49"/>
+    </skills>
+  </step>
 </question>
