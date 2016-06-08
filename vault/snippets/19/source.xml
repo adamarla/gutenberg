@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <snippet xmlns="http://www.gradians.com" chapterId="23">
   <render>
-    <tex isImage="true">img_slim.svg</tex>
+    <tex>\[ \int_0^1 \cot^{-1}\left(\dfrac{1}{1-x}\right) \cdot dx = \int_0^1 \tan^{-1} x \cdot dx \]</tex>
   </render>
   <reason>
     <tex>\begin{align}
 \tan^{-1}\frac{1}{z} &amp;= \cot^{-1} z  \\
 \therefore \cot^{-1}\frac{1}{(1-x)} &amp;= \tan^{-1}(1-x) \\  
-\text{Also, } \int_0^a f(x)\cdot dx &amp;= \int_0^1 f(a-x)\cdot dx \\
-\therefore \int_0^1\tan^{-1}(1-x)\cdot dx &amp;= \int_0^1\tan^{-1}\left[ 1-(1-x)\right]\cdot dx\\
-&amp;= \int_0^1\tan^{-1}x\cdot dx 
+\implies \int_0^1 \cot^{-1}\left(\dfrac{1}{1-x}\right) \cdot dx &amp;= \int_0^1 \tan^{-1} (1-x) \cdot dx \\
+\text{But }\int_0^1\tan^{-1}(1-x) \cdot dx &amp;= \int_0^1 \tan^{-1}\left(1-(1-x)\right)\cdot dx\\
+&amp;= \int_0^1 \tan^{-1}\tan^{-1} x \cdot dx
 \end{align}</tex>
   </reason>
   <skills>
