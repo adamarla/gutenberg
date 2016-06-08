@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippet xmlns="http://www.gradians.com" chapterId="23">
+  <render>
+    <tex>\[ \int_0^1\dfrac{dx}{1+x^2} = \left[\cot^{-1} x \right]_1^0 \]</tex>
+  </render>
+  <reason>
+    <tex>\begin{align}
+\int\dfrac{dx}{1+x^2} &amp;= \tan^{-1} x + C = -\cot^{-1} x + C \\
+\therefore \int_0^1\dfrac{dx}{1+x^2} &amp;= \left[-\cot^{-1} x \right]_0^1 = \left[\cot^{-1} x \right]_1^0 \\
+\because \int_a^b f(x)\cdot dx &amp;= -\int_b^a f(x)\cdot dx 
+\end{align}</tex>
+  </reason>
+  <skills>
+    <skill id="49"/>
+    <skill id="45"/>
+  </skills>
+</snippet>
