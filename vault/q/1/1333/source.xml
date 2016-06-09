@@ -1,150 +1,40 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="0">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+      <tex isImage="true" correct="false">img_tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-4.svg</tex>
+    </reason>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-5.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-6.svg</tex>
+    </reason>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-7.svg</tex>
+      <tex isImage="true" correct="false">img_tex-8.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-9.svg</tex>
+    </reason>
+  </step>
+  <step>
+    <options>
+      <tex>P(B_3\vert A) = \frac{7}{13}</tex>
+    </options>
+    <reason>
       <tex>%text
-Three bags contain balls as shown 
-in the table below 
-
-%
-\begin{tabular}{|c|c|c|c|}
-\hline 
-\text{Bag} &amp; \text{# White} &amp; \text{# Black} &amp; \text{# Red} \\
-\hline
-I &amp; 1 &amp; 2 &amp; 3 \\
-\hline 
-II &amp; 2 &amp; 1 &amp; 1 \\
-\hline 
-III &amp; 4 &amp; 3 &amp; 2 \\
-\hline 
-\end{tabular} 
-%text
-
-A bag is chosen at random and two balls 
-are drawn from it. They happen to be 
-white and red. What is the probability 
-that they came from bag III? 
-%</tex>
-      <tex>\\ %text
-\underline\text{What probability do we have to find} 
-given the following events? 
-%
-\begin{tabular}{|c|l|}
-\hline 
-A &amp; \text{Two balls picked - 1 red, 1 white} \\
-\hline 
-B_1 &amp; \text{Bag 1 picked} \\
-\hline 
-B_2 &amp; \text{Bag 2 picked} \\
-\hline 
-B_3 &amp; \text{Bag 3 picked} \\
-\hline 
-\end{tabular}</tex>
-      <tex>\\ %text
-Given that we need to find $P(B_3\vert A)$,
-\underline\text{is the following correct}?
-%</tex>
-      <tex>\\ %text
-What would the \underline\text{values of} $P(A\vert B_1)$, 
-$P(A\vert B_2)$ and $P(A\vert B_3)$ be? 
-
-Refer to the formula in last step. 
-%</tex>
-      <tex>\\ %text
-Given the probabilities of drawing a red 
-and a white ball from each bag, what 
-then is the \underline\text{required probability - $P(B_3\vert A)$}?
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">P\left( B_3 \,\vert A\right) </tex>
-         <tex>P(B_3)</tex>
-      </options>
-      <reason>
-         <tex>%text
-We have already drawn a red and a 
-white ball. But we don't know from 
-which bag. 
-
-Not just that, the question is whether
-the balls came from bag III. 
-
-Hence, the required probability is 
-\[ \qquad P\left( B_3\,\vert\, A\right) = P\left(\text{$B_3$ given A}\right) \]
-%</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-P(B_3\vert A) &amp;= \dfrac{P(A\vert B_3)\cdot P(B_3)}{\sum_{k=1}^3\quad P(A\vert B_k)\cdot P(B_k)}
-\end{align}</tex>
-      </options>
-      <reason>
-         <tex>%text
-This is simply \underline\text{Bayes' Theorem}.
-%
-\begin{align}
-P(B_3\vert A)\cdot P(A) &amp;= P(A\vert B_3)\cdot P(B_3) \\
-\therefore P(B_3\vert A) &amp;= \frac{P(A\vert B_3)\cdot P(B_3)}{P(A)}
-\end{align} \\
-%text
-
-Moreover, in the above formula, 
-%
-\begin{align}
-P(A) &amp;= \underbrace{P(A\vert B_1)\cdot P(B_1) +\ldots + P(A\vert B_3)\cdot P(B_3)}_{\sum_{k=1}^3 \quad P(A\vert B_k)\cdot P(B_k)}
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{tabular}{|c|c|c|}
-\hline 
-P(A\vert B_3) &amp; P(A\vert B_2) &amp; P(A\vert B_3) \\
-\hline 
-\frac{1}{5} &amp; \frac{1}{3} &amp; \frac{2}{9} \\
-\hline 
-\end{tabular} </tex>
-         <tex>\begin{tabular}{|c|c|c|}
-\hline 
-P(A\vert B_3) &amp; P(A\vert B_2) &amp; P(A\vert B_3) \\
-\hline 
-\frac{3}{8} &amp; \frac{1}{4} &amp; \frac{2}{7} \\
-\hline 
-\end{tabular}</tex>
-      </options>
-      <reason>
-         <tex>%text
-$P(A\vert B_1)$ is the probability of drawing a 
-\underline\text{red and a white} ball \underline\text{from bag I}.
-
-Similarly, $P(A\vert B_2)$ and $P(A\vert B_3)$ are the 
-probabilities of drawing a red and a white 
-ball from bags II and III respectively. 
-
-%
-\begin{tabular}{|c|c|c|}
-\hline 
-\text{Bag} &amp; \text{Total balls} &amp; P(A\vert\text{ bag}) \\
-\hline 
-I &amp; 6 &amp; \frac{{^3C_1}\times{^1C_1}}{{^6C_2}} = \frac{1}{5} \\
-\hline 
-II &amp; 4 &amp;  \frac{{^2C_1}\times{^1C_1}}{{^4C_2}} = \frac{1}{3} \\
-\hline 
-III &amp; 9 &amp;  \frac{{^4C_1}\times{^2C_1}}{{^9C_2}} = \frac{2}{9} \\
-\hline 
-\end{tabular}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">P(B_3\vert A) = \frac{5}{17}</tex>
-         <tex>P(B_3\vert A) = \frac{7}{13}</tex>
-      </options>
-      <reason>
-         <tex>%text
 When a bag is picked initially, then each 
 bag has an equal chance of being picked. 
 
@@ -158,6 +48,6 @@ P(B_3\vert A) &amp;= \underbrace{\frac{P(A\vert B_1)}{P(A\vert B_1) + P(A\vert B
 &amp;= \frac{\frac{2}{9}}{\frac{1}{5} + \frac{1}{3} + \frac{2}{9}} \\
 &amp;= \frac{5}{17}
 \end{align}</tex>
-      </reason>
-   </step>
+    </reason>
+  </step>
 </question>
