@@ -10,6 +10,9 @@
     <reason>
       <tex isImage="true">img_tex-3.svg</tex>
     </reason>
+    <skills>
+      <skill id="32"/>
+    </skills>
   </step>
   <step>
     <options>
@@ -19,6 +22,9 @@
     <reason>
       <tex isImage="true">img_tex-6.svg</tex>
     </reason>
+    <skills>
+      <skill id="31"/>
+    </skills>
   </step>
   <step>
     <options>
@@ -28,5 +34,8 @@
     <reason>
       <tex isImage="true">img_tex-9.svg</tex>
     </reason>
+    <skills>
+      <skill id="50"/>
+    </skills>
   </step>
 </question>
