@@ -1,0 +1,35 @@
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{prepwell}[2016/01/01 Common packages and settings for Prepwell]
+
+%%% Base Setup
+
+\RequirePackage{amsfonts}
+\RequirePackage{amsmath}
+\RequirePackage{amssymb}
+\RequirePackage[textwidth=200pt,centering]{geometry}
+\RequirePackage{newfile}
+\RequirePackage{etoolbox}
+\RequirePackage{xcolor}
+
+\renewcommand\sfdefault{cmss}
+\renewcommand\familydefault\sfdefault
+\notag
+\pagenumbering{gobble}
+\setlength\parindent{0pt}
+
+
+\newcommand\card\newpage
+
+%%% Call-backs 
+
+%\AfterEndPreamble{
+%  \newoutputstream{xml}
+%  \openoutputfile{layout.xml}{xml}
+%
+%  \addtostream{xml}{<?xml version='1.0' encoding='utf-8'?>}
+%}
+%
+%\AfterEndDocument {
+%  \closeoutputstream{xml}
+%} 
