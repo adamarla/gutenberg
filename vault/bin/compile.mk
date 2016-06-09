@@ -3,7 +3,7 @@ SHELL=/bin/bash
 .ONESHELL : 
 .PHONY : clean 
 
-last_compiled_on : source.xml 
+last_compiled_on : source.xml img_*.svg
 	@ quill -r $$(pwd) 
 	@ quill -p $$(pwd) 
 	@ ping_on_recompile -r 
