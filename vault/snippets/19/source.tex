@@ -1,0 +1,29 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff
+
+\begin{document}
+\[\int_0^1\cot^{-1}\left(\dfrac{1}{1-x} \right)\cdot dx = \int_0^1\tan^{-1} x\cdot dx \]
+\newcard 
+
+Recall that 
+\[ \qquad \cot^{-1}\dfrac{1}{z} = \tan^{-1} z \]
+
+And therefore 
+\begin{align}
+	\cot^{-1} \left(\dfrac{1}{1-x} \right) &= \tan^{-1} \left(1-x \right)
+\end{align} 
+
+Which means 
+	\[ \int_0^1 \cot^{-1}\left(\dfrac{1}{1-x} \right)\cdot dx =\int_0^1\tan^{-1}(1-x)\cdot dx  \]
+	
+But recall that 
+\begin{align} 
+	\int_0^a f(x)\cdot dx &= \int_0^a f(a-x)\cdot dx  \\[-10pt]
+	\therefore\int_0^1\tan^{-1} x\cdot dx &= \int_0^1 \tan^{-1} \left(1-x \right)\cdot dx
+\end{align}
+
+Hence 
+\[ \int_0^1\cot^{-1}\left(\dfrac{1}{1-x} \right)\cdot dx = \int_0^1\tan^{-1} x\cdot dx\]
+\end{document}
