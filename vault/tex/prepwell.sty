@@ -7,10 +7,11 @@
 \RequirePackage{amsfonts}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
-\RequirePackage[textwidth=6cm,centering]{geometry}
+\RequirePackage[width=6cm,left=2cm]{geometry}
 \RequirePackage{newfile}
 \RequirePackage{etoolbox}
 \RequirePackage{xcolor}
+\RequirePackage{background}
 
 \renewcommand\sfdefault{cmss}
 \renewcommand\familydefault\sfdefault
@@ -21,10 +22,49 @@
 \renewcommand\arraystretch{1.3}
 
 
-\newcommand\card\newpage
+% Vertical blue line to mark the maxium allowed width for a snippet. 
+% Runs the entire length of the page. Switched off when \previewoff
+
+\SetBgScale{1} 
+\SetBgAngle{0} 
+\SetBgColor{blue}
+\SetBgHshift{\the\hoffset}
+
+\newbool{preview}
+
+\newcommand\previewon{
+  \setbool{preview}{true}
+  \SetBgContents{\rule{2pt}{\paperheight}}
+}
+
+\newcommand\previewoff{
+  \setbool{preview}{false}
+  \SetBgContents{}
+}
+
+\newcounter{index}
+\setcounter{index}{1}
+
+\newcommand\newcard{
+  \stepcounter{index}
+
+  \ifbool{preview}{
+    \textcolor{red}{\newline prefab-\theindex.svg \newline} 
+  }{ 
+    \newpage
+  } 
+} 
+
+
 \newcommand\blankline{\vspace{0.3cm}}
 
 %%% Call-backs 
+
+\AtBeginDocument{ 
+  \ifbool{preview}{
+    \textcolor{red}{\newline prefab-\theindex.svg \newline} 
+  }{} 
+} 
 
 %\AfterEndPreamble{
 %  \newoutputstream{xml}
