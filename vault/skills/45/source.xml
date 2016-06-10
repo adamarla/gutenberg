@@ -1,52 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com">
   <render>
-    <tex>%text
-\textcolor{blue}{\text{Definite Integral: Basics}}
-Fundamental Theorems and some
-basic properties. 
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-\textbf{Second Fundamental Theorem}
-We are listing this first because this
-is the formula you will use most often.
-
-If $f(x)$ be a \underline\text{continuous function} 
-\underline\text{in [a,b]} and there be a $F(x)$ such 
-that $\dfrac{d}{dx}F(x) = f(x)$, then 
-
-\[ \quad \int_a^b f(x)\cdot dx = \left[ F(x) \right]_a^b = F(b) - F(a) \] 
-
-\textbf{Basic Properties}
-
-%
-\begin{align}
-\int_a^b f(x)\cdot dx &amp;= -\int_b^a f(x)\cdot dx \\
-\int_a^a f(x)\cdot dx &amp;= 0 \\
-\int_a^c f(x)\cdot dx &amp;= \int_a^c f(x)\cdot dx + \int_c^b f(x)\cdot dx
-\end{align}
-
-%text
-
-
-\textbf{First Fundamental Theorem}
-Let the function $A(x)$ be defined as
-\[ \qquad A(x) = \int_a^x f(x)\cdot dx \]
-
-Basically, $A(x)$ is the \underline\text{area under $f(x)$}
-from $a\longrightarrow x$. 
-
-Given this, the first fundamental theorem
-says that \[ \dfrac{d}{dx} A(x) = f(x) \]
-
-In other words, as one goes from 
-$x\rightarrow (x+\Delta)$, the area -- $A(x)$ -- under 
-the curve \underline\text{increases at the rate of $f(x)}
-
-
-
-%</tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
 </skill>
