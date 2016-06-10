@@ -1,38 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com">
   <render>
-    <tex>%text
-\textcolor{blue}{\text{Conditions for continuity}}
-At a point $x=a$;  In open $(b,c)$
-and closed $[b,c]$ intervals 
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-\textbf{Continuity at $x=a$}
-A function $f(x)$ is continuous at 
-a point $x=a$ if 
-\[ \qquad \lim_{x\to a^-} f(x) = \lim_{x\to a^+}f(x) = f(a)\]
-
-In other words, $f(x)$ is continous at
-$x=a$ if it \underline\text{converges to the value}
-of $f(x)$ at $x=a$ from both the left 
-and the right of $x=a$
-
-\textbf{Continuity in $(b,c)$}
-A function is continuous \underline\text{in an interval}
-$(b,c)$ if it is continuous \underline\text{at every $a\in(b,c)$}
-
-\textbf{Continuity in $[b,c]$}
-$x=b$ and $x=c$ are allowed in a closed
-interval like $[b,c]$. Hence, the condition
-for continuity needs to be modified slightly
-
-$f(x)$ is continuous in $[b,c]$ if 
-
-$\quad\bullet$ $f(x)$ is continuous in $ (b,c)$ 
-$\quad\bullet$ \[ \lim_{x\to b^+} f(x) = f(b) \]
-$\quad\bullet$ \[ \lim_{x\to c^-} f(x) = f(c) \]
-%</tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
 </skill>
