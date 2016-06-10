@@ -1,39 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com">
   <render>
-    <tex>%text
-\textcolor{blue}{\text{Definite Integrals \#2}}
-Other \underline\text{handy properties} ; Odd and
-even functions
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>\begin{align}
-\int_a^b f(x)\cdot dx &amp;= \int_a^b f\left(a + b - x \right)\cdot dx  \\
-\therefore \int_0^a f(x)\cdot dx &amp;= \int_0^a f\left( a-x\right)\cdot dx  \\
-\int_0^{2a}f(x)\cdot dx &amp;= \underbrace{\int_0^a f(x)\cdot dx + \int_0^a f(2a - x)\cdot dx}_{0\rightarrow a\text{ in both integrals}}
-\end{align}
-
-%text
-
-The last property gives rise to the following
-
-%
-\int_0^{2a} f(x)\cdot dx = \begin{cases}
-2\int_0^a f(x)\cdot dx \text{ if } f(2a - x) = f(x) \\
-0\text{ if } f(2a - x) = -f(x) 
-\end{cases} 
-%text
-
-\textbf{Odd and even functions} 
-
-If \[ f(x) = f(-x) \], then $f(x)$ is an even function. 
-And therefore, 
- \[ \qquad \int_{-a}^a f(x) \cdot dx = 2\int_0^a f(x)\cdot dx \]
-
-But if \[ f(-x) = - f(x) \], then $f(x)$ is an odd
-function. In that case 
-\[ \qquad \int_{-a}^a f(x)\cdot dx = 0 \]
-%</tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
 </skill>
