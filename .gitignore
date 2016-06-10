@@ -2,16 +2,19 @@
 # Generated SVG files and layout.xml
 # Version 2016 
 
-layout.xml
 *.svg
 !img_[[:alnum:]]*.svg
+
 last_compiled_on
 Makefile
 
-*.lbl
 *.tex
-question.xml
+!source.tex
 
+*.xml 
+!source.xml
+
+*.lbl
 ### Deprecated clauses 
 
 *.anx
@@ -21,7 +24,6 @@ question.xml
 *.log
 *.table
 *.out
-*.tex
 *.png
 skel
 compiled
