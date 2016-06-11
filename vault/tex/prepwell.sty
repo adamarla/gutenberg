@@ -10,7 +10,7 @@
 \RequirePackage[width=6cm,left=2cm]{geometry}
 \RequirePackage{newfile}
 \RequirePackage{etoolbox}
-\RequirePackage{xcolor}
+\RequirePackage[table]{xcolor}
 \RequirePackage{background}
 \RequirePackage{array}
 
@@ -27,8 +27,12 @@
 \setlength\abovedisplayshortskip{0pt}
 \setlength\belowdisplayshortskip{0pt}
 
-\newcolumntype{m}{>{$}c<{$}}
-\newcolumntype{M}{>{$\displaystyle}c<{$}}
+
+% Table styling 
+\renewcommand\arraystretch{1.5}
+\newcolumntype{M}{>{$}c<{$}}
+\definecolor{beaublue}{rgb}{0.74,0.83,0.9}
+\rowcolors{1}{beaublue}{white}
 
 % Vertical blue line to mark the maxium allowed width for a snippet. 
 % Runs the entire length of the page. Switched off when \previewoff
