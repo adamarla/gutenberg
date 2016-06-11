@@ -1,50 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com">
   <render>
-    <tex>%text
-\textcolor{blue}{\text{Integration by Parts}}
-\[ \int f(x)\ g(x)\cdot dx = ? \] Applying 
-ILATE to ease integration
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-Differentiation has the \underline\text{product rule}
-\[ \quad \frac{d}{dx}f(x)g(x) = f'(x) g(x) + f(x) g'(x) \]
-
-And integration has \underline\text{integration by parts}
-
-\[ \int f\cdot g\cdot dx = f\int g\cdot dx - \int \left[ f' \int g\cdot dx\right] dx \]
-
-\underline\text{But what is $f(x)$ in, say, \[\int x\sin x\cdot dx\]}?
-Is it $f(x) = x$ or $f(x) = \sin x$? 
-
-There are no right or wrong answers. Only
-better ones. 
-
-\underline\text{In the table below, let $f(x)$ be the function}
-\underline\text{that matches first.}
-
-%
-\begin{tabular}{c|c|c} 
-\hline
-&amp; \text{Meaning} &amp; \text{Example} \\
-\hline 
-I &amp; \text{Inverse Trig. function} &amp; \sin^{-1} x, \tan^{-1}x \\
-\hline 
-L &amp; \text{Logarithmic function} &amp; \log x \\
-\hline 
-A &amp; \text{Algebraic function} &amp; x^2, 4x^7 \\ 
-\hline 
-T &amp; \text{Trigonometric function} &amp; \sin x, \cos x \\
-\hline 
-E &amp; \text{Exponential function} &amp; e^x, 7^x \\
-\hline
-\end{tabular} 
-%text
-
-Hence, in \[ \int x\cdot \sin x\cdot dx \]
-\[\qquad \underbrace{f(x) = x}_{A}\implies \underbrace{g(x) = \sin x}_{T}\]
-%</tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
 </skill>
