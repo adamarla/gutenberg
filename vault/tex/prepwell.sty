@@ -12,6 +12,7 @@
 \RequirePackage{etoolbox}
 \RequirePackage{xcolor}
 \RequirePackage{background}
+\RequirePackage{array}
 
 \renewcommand\sfdefault{cmss}
 \renewcommand\familydefault\sfdefault
@@ -26,8 +27,8 @@
 \setlength\abovedisplayshortskip{0pt}
 \setlength\belowdisplayshortskip{0pt}
 
-% \renewcommand\arraystretch{1.3}
-
+\newcolumntype{m}{>{$}c<{$}}
+\newcolumntype{M}{>{$\displaystyle}c<{$}}
 
 % Vertical blue line to mark the maxium allowed width for a snippet. 
 % Runs the entire length of the page. Switched off when \previewoff
