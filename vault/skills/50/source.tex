@@ -1,0 +1,46 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document}
+
+\textcolor{blue}{Integration by Parts:} 
+
+Evaluating $\int f(x)\cdot g(x)\cdot dx$ ; Applying $ILATE$ to ease integration
+
+\newcard 
+
+Differentiation has the \underline{product rule}
+\[ \frac{d}{dx} f(x)\cdot g(x) = f'g + fg ' \]
+And integration has \underline{integration by parts}
+\[ \int f\cdot g\cdot dx = f\underbrace{\int g\cdot dx}_A - \underbrace{\int \overbrace{\left[f'\int g\cdot dx \right]}^B\cdot dx}_{C}\]
+Note that there are \underline{3 separate integrals} to evaluate -- $A,B$ and $C$\newline 
+
+\textbf{ILATE}
+
+But what is $f(x)$ in, say, $\int x\cdot\sin x\cdot dx$?  
+
+There are no right or wrong answers. Only better ones.\newline 
+
+In the table below, let \underline{$f(x)$} be the function that \underline{matches first}
+
+\begin{tabular}{c|c|c}
+\hline
+	 & Meaning & Example\\
+\hline
+	I & Inverse Trig. & $\sin^{-1} x, \tan^{-1} x$ \\
+\hline
+	L & Logarithmic & $\log x$\\
+\hline
+	A & Algebraic & $x^2, 4x^7$ \\
+\hline
+	T & Trigonometric & $\sin x, \cos 3x$ \\
+\hline
+	E & Exponential & $e^x, 7^x$\\
+\hline
+\end{tabular}\newline 
+
+Hence, in $\int x\cdot\sin x\cdot dx$, let 
+\[ \underbrace{f(x) = x}_{\text{A = Algebraic}}\text{ and } \underbrace{g(x) = \sin x}_{\text{T = Trigonometric}} \]
+\end{document}
