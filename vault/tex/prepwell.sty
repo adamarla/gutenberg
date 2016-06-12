@@ -7,26 +7,24 @@
 \RequirePackage{amsfonts}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
-\RequirePackage[width=8cm,left=2cm]{geometry}
-\RequirePackage{newfile}
 \RequirePackage{etoolbox}
 \RequirePackage[table]{xcolor}
-\RequirePackage{background}
 \RequirePackage{array}
 \RequirePackage{booktabs}
+
+\RequirePackage{background}
+\SetBgContents{}
+
+%%%  Later perhaps
+%\RequirePackage{newfile}
 
 \renewcommand\sfdefault{cmss}
 \renewcommand\familydefault\sfdefault
 \notag
 \pagenumbering{gobble}
 
-
 \setlength\parindent{0pt}
 \setlength\mathindent{0cm}
-\setlength\abovedisplayskip{0pt}
-\setlength\belowdisplayskip{0pt}
-\setlength\abovedisplayshortskip{0pt}
-\setlength\belowdisplayshortskip{0pt}
 
 % Custom column types for tabular environment 
 \newcolumntype{M}{>{\small$\displaystyle}l<{$}}
@@ -36,24 +34,16 @@
 
 \definecolor{beaublue}{rgb}{0.74, 0.83, 0.9}
 
-% Vertical blue line to mark the maxium allowed width for a snippet. 
-% Runs the entire length of the page. Switched off when \previewoff
-
-\SetBgScale{1} 
-\SetBgAngle{0} 
-\SetBgColor{blue}
-\SetBgHshift{\the\hoffset}
+%% \previewon / \previewoff
 
 \newbool{preview}
-
 \newcommand\previewon{
   \setbool{preview}{true}
-  \SetBgContents{\rule{2pt}{\paperheight}}
+	\RequirePackage[showframe,width=270px,left=1cm]{geometry}
 }
-
 \newcommand\previewoff{
   \setbool{preview}{false}
-  \SetBgContents{}
+	\RequirePackage[width=270px,left=1cm]{geometry}
 }
 
 \newcounter{index}
