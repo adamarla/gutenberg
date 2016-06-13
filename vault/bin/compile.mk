@@ -7,7 +7,7 @@ last_compiled_on : source.xml img_*.svg
 	@ quill -r $$(pwd) 
 	@ quill -p $$(pwd) 
 	@ ping_on_recompile -r 
-	@ sed -i -e 's/\(src="img_tex-[0-9]*.svg"\)/\1 isTex="true"/g' layout.xml 
+	@ sed -i -e 's/\(src="img_prefab-[0-9]*.svg"\)/\1 isTex="false"/g' layout.xml 
 	@ date > $@
 
 tex2svg : source.pdf 
