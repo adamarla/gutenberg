@@ -5,27 +5,29 @@
 
 \begin{document}
 
+\begin{skill}
 \textcolor{blue}{Definite Integrals \#1}
 
-Basic concepts and most frequently used formulae
+Definition and fundamental properties of integrals 
+\end{skill} 
 
 \newcard 
 
-If $f(x)$ be a \underline{continuous function} in $[a,b]$,
-then 
-\[ \qquad A(x) = \int_a^b f(x)\cdot dx \]
-represents the \underline{area under $f(x)$} between $a$ and $b$. 
+For function $f(x)$ that is \underline{continuous} in $\left[a,b \right]$
+\[ \qquad \qquad A(x) = \int_a^b f(x)\cdot dx \]
+
+represents the \underline{area under $f(x)$} between \\$x=a$ and $x=b$
 
 \begin{align}
-\dfrac{d}{dx} A(x) &= f(x) \\
-\text{If }\int f(x)\cdot dx &= F(x) + C \text{ then } \\[-20pt]
-\int_a^b f(x)\cdot dx &= F(b) - F(a) \\  
+	\dfrac{d}{dx} A(x) &= f(x) \\ 
+	\text{If } \int f(x)\cdot dx &= F(x) + C \text{ then } \\
+	\int_a^b f(x)\cdot dx &= F(b) - F(a) 
 \end{align}
-\textbf{Other Basic Properties} 
+
+\textbf{Other basic properties} 
 \begin{align}
-\int_a^b f(x)\cdot dx &= -\int_b^a f(x)\cdot dx \\[-15pt]
-\int_a^a f(x)\cdot dx &= 0 \\ 
-\int_a^c f(x)\cdot dx &= \int_a^b f(x)\cdot dx \\[-15pt]
-&+ \int_b^c f(x)\cdot dx 
+	\int_a^b f(x)\cdot dx &= -\int_b^a f(x)\cdot dx \\
+	\int_a^a f(x)\cdot dx &= 0 \\
+	\int_a^c f(x)\cdot dx &= \int_a^b f(x)\cdot dx + \int_b^c f(x)\cdot dx 
 \end{align}
 \end{document}

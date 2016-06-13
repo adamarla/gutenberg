@@ -2,19 +2,22 @@
 \RequirePackage{prepwell}
 
 \previewoff
+
 \begin{document}
 
+\begin{skill}
 \textcolor{blue}{Definite Integrals \#2} 
 
-Odd \& even functions ; Other
-\underline{handy properties}
+Odd \& even functions; Other handy properties 
+\end{skill} 
 
 \newcard 
+
 \begin{align}
-	\int_a^b f(x)\cdot dx &= \int_a^b f \left(a+b-x \right)\cdot dt \\[-30pt]
-	\int_0^a f(x)\cdot dx &= \int_0^a f \left(a-x \right)\cdot dx \\[-10pt]
-	\int_0^{2a}f(x)\cdot dx &= \int_0^a f(x)\cdot dx \\[-10pt]
-	&+ \underbrace{\int_0^a f \left(2a-x \right)\cdot dx}_{0\to a \text{ in both integrals}}
+  \int_a^b f(x)\cdot dx &= \int_a^b f \left(a+b-x \right)\cdot dt \\
+  \int_0^a f(x)\cdot dx &= \int_0^a f \left(a-x \right)\cdot dx \\
+  \int_0^{2a}f(x)\cdot dx &= \int_0^a f(x)\cdot dx
+  + \underbrace{\int_0^a f \left(2a-x \right)\cdot dx}_{0\to a \text{ in both integrals}}
 \end{align}
 
 \textbf{Odd functions} 
@@ -27,4 +30,6 @@ For odd functions
 
 If $f(-x) = f(x)$, then $f(x)$ is an even function. For even functions
 \[ \qquad \underbrace{\int_{-a}^a f(x)\cdot dx = 2\int_0^a f(x)\cdot dx}_{\text{Example: }f(x) = \cos x}\]
+
+
 \end{document}
