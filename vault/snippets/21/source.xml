@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippet xmlns="http://www.gradians.com" chapterId="24">
+  <render>
+    <tex isImage="true">img_prefab-1.svg</tex>
+  </render>
+  <reason>
+    <tex isImage="true">img_prefab-2.svg</tex>
+  </reason>
+</snippet>

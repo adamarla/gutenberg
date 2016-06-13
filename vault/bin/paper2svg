@@ -18,14 +18,41 @@ if [[ $author == "TeX" || $author =~ ^dvips ]] ; then
 else
   # Output: prefab-%d.svg 
 
-  pdftoppm $1 p 
+  pdftoppm $1 pdf 
 
-  for f in `ls *.ppm` ; do 
+  for f in `ls pdf-*.ppm` ; do 
     n=$(basename $f | cut -d'.' -f1 | cut -d'-' -f2)
-    pamcut -left 5 -top 5 $f > prefab-$n.ppm 
-    potrace -s --tight --group -r 300 prefab-$n.ppm 
-    rm -f $f prefab-$n.ppm 
+    
+    # First Pass: PDF -> Trimmed PPM 
+
+    potrace -g --tight $f 
+    pgmfile=pdf-$n.pgm
+
+    # Shave off 5% from left, right, top, bottom 
+
+    dimensions=$(head -n3 $pgmfile | tail -n1)
+    width=$(echo $dimensions | cut -d' ' -f1)
+    height=$(echo $dimensions | cut -d' ' -f2)
+
+    # echo $width $height
+
+    let "deltax = $width / 20" 
+    let "deltay = $height / 20" 
+
+    let "left = $deltax" 
+    let "right = $width - $deltax" 
+    let "top = $deltay" 
+    let "bottom = $height - $deltay" 
+
+    pamcut -left $left -right $right -bottom $bottom -top $top $pgmfile > prefab-$n.pgm
+
+    # Second Pass: Run potrace again to get cropped SVG
+
+    potrace -s --tight --group -r 300 prefab-$n.pgm
   done 
+
+  # Clean up 
+  rm -f pdf-*.ppm prefab-*.pgm pdf-*.pgm 
 fi 
 
 
