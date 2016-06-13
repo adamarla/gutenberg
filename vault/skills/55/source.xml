@@ -1,33 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com">
   <render>
-    <tex>%text
-\textcolor{blue}{\text{Logarithm Basics}}
-Definition and elementary
-algebra involving $\log$ terms
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-By definition, \[ \log_b a = c \implies b^c = a \]
-The above expression is read as 
-\underline\text{$\log$ of $a$ to the base $b$ equals $c$}. 
-
-Most of the time, however, we would
-only be writing $\log a = c$. 
-
-It is understood that the logarithm 
-is to the \underline\text{base $e$}
-
-\textbf{Algebra} 
-
-%
-\begin{align}
-\log (m\cdot n) &amp;= \log m + \log n \\
-\log \frac{m}{n} &amp;= \log m - \log n \\ 
-\log a^b &amp;= b\cdot \log a \\ 
-e^{\log m} &amp;= m \\
-\log e^{n} &amp;= n\cdot\log e = n\,(\because \log e = 1)
-\end{align}</tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
 </skill>
