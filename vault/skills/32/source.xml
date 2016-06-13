@@ -1,26 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com">
   <render>
-    <tex>%text 
-\textcolor{blue}{\text{Simplifying Expression}}
-Using techniques like variable
-substitution, rationalization etc.
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-If you see an expression that looks 
-too big or too complicated  \underline\text{OR} 
-looks like something you need but not 
-exactly, then perhaps it is time to 
-\underline\text{change how the expression looks}
-
-There are no rules on what will work.
-It depends on the expression and 
-what you need to do with it. 
-
-Hence, get creative and use your 
-intuition. \underline\text{Math isn't just about rules!}
-%</tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
 </skill>
