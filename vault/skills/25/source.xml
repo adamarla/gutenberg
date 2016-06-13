@@ -1,39 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com">
   <render>
-    <tex>%text
-\textcolor{blue}{\text{Polynomial Factorization}
-Expressing a polynomial as the 
-\underline\text{product or quotient} of other 
-polynomials
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-If you write \[ x = 2 = \frac{4}{2} \], then you
-are not changing the value of $x$ - 
-only how it is written. 
-
-Same goes for polynomials. 
-
-Sometimes, the math becomes easier 
-if one simply re-writes the given 
-polynomials as the product or quotient 
-of some other polynomials.
-
-Knowing the \underline\text{following expansions} 
-should cover you in most cases 
-
-%
-\begin{align}
-(x-a)^2 &amp; = x^2 - 2ax + a^2 \\ 
-(x+a)^2 &amp;= x^2 + 2ax + a^2 \\
-(x^2-a^2) &amp;= (x-a)\cdot (x+a) \\ 
-(x-a)^3 &amp;= x^3 - 3ax^2 + 3a^2 x - a^3 \\
-(x+a)^3 &amp;= x^3 + 3ax^2 + 3a^2 x + a^3 \\
-x^3 - a^3 &amp;= (x-a)\cdot (x^2 + ax + a^2) \\
-x^3 + a^3 &amp;= (x+a)\cdot (x^2 - ax + a^2) 
-\end{align}
-</tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
 </skill>
