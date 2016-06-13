@@ -27,10 +27,7 @@
 \setlength\mathindent{0cm}
 
 % Custom column types for tabular environment 
-\newcolumntype{M}{>{\small$\displaystyle}l<{$}}
-\newcolumntype{C}{>{\small}c<{}}
-\newcolumntype{L}{>{\small}l<{}}
-\newcolumntype{R}{>{\small}r<{}}
+\newcolumntype{M}{>{$\displaystyle}l<{$}}
 
 \definecolor{beaublue}{rgb}{0.74, 0.83, 0.9}
 
@@ -39,11 +36,11 @@
 \newbool{preview}
 \newcommand\previewon{
   \setbool{preview}{true}
-	\RequirePackage[showframe,width=350pt,left=1cm]{geometry}
+	\RequirePackage[showframe,width=250pt,left=1cm]{geometry}
 }
 \newcommand\previewoff{
   \setbool{preview}{false}
-	\RequirePackage[width=350pt,left=1cm]{geometry}
+	\RequirePackage[width=250pt,left=1cm]{geometry}
 }
 
 \newcounter{index}
@@ -59,8 +56,13 @@
   } 
 } 
 
+\newenvironment{skill}{
+	\newgeometry{width=200pt,left=1cm}
+}{
+	\restoregeometry
+} 
 
-\newcommand\blankline{\vspace{0.3cm}}
+
 
 %%% Call-backs 
 
@@ -69,6 +71,12 @@
     \textcolor{red}{\newline tex-\theindex.svg \newline} 
   }{} 
 } 
+
+\AtBeginEnvironment{align}{\small}
+\AtEndEnvironment{align}{\normalsize}
+
+\AtBeginEnvironment{tabular}{\small}
+\AtEndEnvironment{tabular}{\normalsize}
 
 %\AfterEndPreamble{
 %  \newoutputstream{xml}
