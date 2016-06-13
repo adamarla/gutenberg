@@ -1,40 +1,9 @@
-<?xml version='1.0' encoding='utf-8'?>
-<skill xmlns='http://www.gradians.com' chapterId='22'>
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com" chapterId="22">
   <render>
-    <tex>%text
-Comfort with mathematical
-symbols and notations
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-Mathematical symbols allow you to express 
-complex ideas \underline\text{ quickly, compactly and precisely}.
-
-Hence, it would help you to be familiar with 
-at least the basic symbols below. 
-
-%
-\begin{tabular}{|c|c|c|}
-\hline 
-\text{Symbol} &amp; \text{Meaning} &amp; \text{Example} \\ 
-\hline 
-\therefore &amp; \text{Therefore} &amp; \therefore a = b \\ 
-\hline 
-\because &amp; \text{Because} &amp; \frac{1}{x}\lt \frac{1}{y}\because x\gt y \\
-\hline 
-\forall &amp; \text{For all} &amp; \forall\,  x\in [2,9) \\ 
-\hline 
-\mathbb{R} &amp; \text{Real numbers} &amp; \forall\, x\in\mathbb{R} \\
-\hline 
-\mathbb{Z} &amp; \text{Integers} &amp; \forall\, z\in\mathbb{Z} \\
-\hline 
-\sum &amp; \text{Sum} &amp; \frac{1}{x} + \frac{2}{x^2} +\ldots = \sum_{k=1}^\infty\frac{k}{x^k} \\
-\hline 
-\in &amp; \text{Belongs to} &amp; x\in\mathbb{Z}^+ \\
-\hline
-\implies &amp; \text{Implies} &amp; \frac{1}{x}\gt 0\implies x\gt 0 \\
-\hline
- \end{tabular} </tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
 </skill>
