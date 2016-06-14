@@ -1,0 +1,52 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff
+
+\begin{document}
+
+Evaluate the following integral 
+\[ \qquad\qquad \int_0^1 \frac{dx}{1+x^2}\] 
+
+\newcard
+
+\begin{align}
+\int\frac{dx}{1+x^2} &= \tan^{-1}x + C \\ 
+\therefore \int_0^1\frac{dx}{1+x^2} &= \left[ \tan^{-1} x \right]_0^1 = \frac\pi{4} 
+\end{align} 
+
+\newcard
+
+\begin{align}
+\int\frac{dx}{1+x^2} &= \cot^{-1}x + C \\ 
+\therefore \int_0^1\frac{dx}{1+x^2} &= \left[ \cot^{-1} x \right]_0^1 \\
+&= \frac\pi{4} - \frac\pi{2} = -\frac\pi{4}
+\end{align} 
+
+\newcard 
+
+%text
+First, note that 
+\[ \int\dfrac{dx}{1+x^2} = \tan^{-1}x + C = -\cot^{-1} x + C \]
+
+
+Therefore, \underline{either of the following is fine}
+
+%
+\begin{align}
+\int_0^1\frac{dx}{1+x^2} &= \left[\tan^{-1} x \right]_0^1 \\ 
+&= \tan^{-1}1 - \tan^{-1} 0 \\
+&= \frac\pi{4} - 0 = \frac\pi{4} 
+\end{align}
+%text
+
+\underline{Alternatively}
+
+%
+\begin{align}
+\int_0^1\frac{dx}{1+x^2} &= \underbrace{-\left[\cot^{-1} x \right]_0^1 = \left[\cot^{-1} x \right]_1^0}_{\text{Notice how $0\rightarrow 1$ changed to $1\rightarrow 0$}}\\ 
+&= \cot^{-1}0 - \cot^{-1} 1 \\
+&= \frac\pi{2} - \frac\pi{4} = \frac\pi{4} 
+\end{align}
+
+\end{document}
