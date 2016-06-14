@@ -1,10 +1,11 @@
 #!/bin/bash 
 
-while getopts "q:n:k:" option ; do 
+while getopts "qnkj:" option ; do 
   case $option in 
-    q) q_id=$OPTARG ;; 
-    n) snippet_id=$OPTARG ;;
-    k) skill_id=$OPTARG ;;
+    q) type="question" ;; 
+    n) type="snippet" ;;
+    k) type="skill" ;;
+    j) id=$OPTARG ;;
     \?) exit 1 ;;
   esac
 done 
@@ -13,14 +14,19 @@ done
 shift $((OPTIND-1))
 tex_file=$(readlink -e $1)
 
+if [ -z "$id" ] ; then 
+	# If TeX file is named as [\d]+.tex, then perhaps the basename is the ID 
+	id=$(basename $1 | cut -d'.' -f1)
+fi
+
 # Determine the target folder in vault/ 
 
-if [ -n "$q_id" ] ; then 
-  target=$(find $VAULT/q/ -maxdepth 2 -name $q_id) 
-elif [ -n "$snippet_id" ] ; then 
-  target=$(find $VAULT/snippets/ -maxdepth 1 -name $snippet_id)
-elif [ -n "$skill_id" ] ; then 
-  target=$(find $VAULT/skills/ -maxdepth 1 -name $skill_id)
+if [ "$type" == "question" ] ; then 
+  target=$(find $VAULT/q/ -maxdepth 2 -name $id) 
+elif [ "$type" == "snippet" ] ; then 
+  target=$(find $VAULT/snippets/ -maxdepth 1 -name $id)
+elif [ "$type" == "skill" ] ; then 
+  target=$(find $VAULT/skills/ -maxdepth 1 -name $id)
 fi 
 
 if [ -z "$target" ] ; then 
