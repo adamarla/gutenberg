@@ -1,0 +1,51 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff
+
+\begin{document}
+
+Evaluate the following \[ \qquad\qquad\int\frac{x^2}{1+x^3}\cdot dx \]
+
+\newcard 
+
+%text
+\underline{Best approach ?}
+
+\begin{align}
+\dfrac{x^2}{1+x^3} &= \dfrac{x^2}{(1+x)\cdot (x^2-x+1)} \\ 
+&= \dfrac{A}{x+1} + \dfrac{Bx + C}{x^2-x+1} \\
+\therefore I &= \int\dfrac{x^2}{1+x^3}\cdot dx \\
+&= \int\dfrac{A}{x+1}\cdot dx + \int\dfrac{Bx+ C}{x^2 - x + 1}\cdot dx 
+\end{align}
+
+\newcard 
+
+%text
+Breaking the integrand into partial
+sums might work\newline
+
+But it is not the smartest first step. Notice instead that 
+\begin{align}
+\dfrac{d}{dx} \left(1+x^3\right) &= 3x^2 \\
+\text{Hence, if } z &= 1+x^3 \\
+\text{then }dz = 3x^2\cdot dx &\implies x^2\cdot dx = \frac{dz}{z} \\
+\therefore I = \int\dfrac{x^2}{1+x^3}\cdot dx &= \frac{1}{3}\int\dfrac{dz}{z}
+\end{align}
+
+\newcard
+
+\[ I = \frac{1}{3}\int\dfrac{dz}{z} = \frac{1}{3}\log\vert1+x^3\vert + C \]
+
+\newcard
+
+\[ I = \frac{1}{3}\int\dfrac{dz}{z} = \frac{1}{3\cdot (1+x^3)^2} + C \]
+
+\newcard 
+
+\begin{align}
+\text{Recall that } \int\frac{dz}{z} &= \log\vert z\vert + C \\
+\therefore I &= \frac{1}{3}\int\frac{dz}{z} = \frac{1}{3}\log\vert z\vert + C \\
+&= \frac{1}{3}\log\vert1+x^3\vert + C
+\end{align}
+\end{document}

@@ -7,23 +7,17 @@
 \[\int_0^1\cot^{-1}\left(\dfrac{1}{1-x} \right)\cdot dx = \int_0^1\tan^{-1} x\cdot dx \]
 \newcard 
 
-Recall that 
-\[ \qquad \cot^{-1}\dfrac{1}{z} = \tan^{-1} z \]
-
-And therefore 
 \begin{align}
-	\cot^{-1} \left(\dfrac{1}{1-x} \right) &= \tan^{-1} \left(1-x \right)
-\end{align} 
-
-Which means 
-	\[ \int_0^1 \cot^{-1}\left(\dfrac{1}{1-x} \right)\cdot dx =\int_0^1\tan^{-1}(1-x)\cdot dx  \]
+	\cot^{-1} \dfrac{1}{z} &= \tan^{-1} z \\
+	\therefore \cot^{-1} \left(\frac{1}{1-x} \right) &= \tan^{-1} \left(1-x \right) \\
+	\implies \int_0^1 \cot^{-1} \left(\frac{1}{1-x} \right)\cdot dx &= \int_0^1 \tan^{-1} \left(1-x \right)\cdot dx 
+\end{align}
 	
 But recall that 
 \begin{align} 
-	\int_0^a f(x)\cdot dx &= \int_0^a f(a-x)\cdot dx  \\[-10pt]
-	\therefore\int_0^1\tan^{-1} x\cdot dx &= \int_0^1 \tan^{-1} \left(1-x \right)\cdot dx
+	\int_0^a f(x)\cdot dx &= \int_0^a f(a-x)\cdot dx  \\
+	\therefore\int_0^1 \tan^{-1} \left(1-x \right)\cdot dx &= \int_0^1\tan^{-1} \left[1-\left(1-x \right) \right]\cdot dx \\
+	&=\int_0^1\tan^{-1} x\cdot dx  
 \end{align}
 
-Hence 
-\[ \int_0^1\cot^{-1}\left(\dfrac{1}{1-x} \right)\cdot dx = \int_0^1\tan^{-1} x\cdot dx\]
 \end{document}
