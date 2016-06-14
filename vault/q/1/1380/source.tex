@@ -1,0 +1,127 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff
+
+\begin{document}
+
+%text
+Using properties of definite integrals, 
+evaluate the following 
+\[ \qquad \qquad \int_0^\pi\dfrac{x\cdot\tan x}{\sec x + \tan x} \cdot dx \]
+%
+
+\newcard 
+
+\begin{align}
+A &= \int_0^\pi \dfrac{x\cdot\tan x}{\tan x+\sec x}dx \\
+&= \int_0^\pi \dfrac{(\pi-x)\cdot\tan x}{\tan x+\sec x}dx \\
+\implies A + A &= 2A = \pi\int_0^\pi\dfrac{\tan x}{\tan + \sec x}dx 
+\end{align}
+
+\newcard 
+
+%text
+There is a nice little rule that says 
+\[ \qquad \int_0^a f(x)\cdot dx = \int_0^a f(a-x)\cdot dx \] 
+
+When applied to the given integral, we get 
+%
+\begin{align}
+\int_0^\pi \dfrac{x\cdot\tan x}{\tan x + \sec x} dx
+&= \int_0^\pi\dfrac{(\pi -x)\cdot\tan (\pi-x)\cdot dx}{\tan(\pi-x) + \sec(\pi -x)} \\
+&= \underbrace{\int_0^\pi\dfrac{(\pi - x)\cdot \tan x}{\tan x + \sec x}dx}
+_{\tan(\pi-x) = -\tan x, \sec(\pi -x) = -\sec x}
+\end{align}
+
+%text
+
+And hence, 
+%
+\begin{align}
+  A &= \int_0^\pi\dfrac{x\cdot\tan x}{\tan x + \sec x}\cdot dx \\
+  &= \int_0^\pi\dfrac{(\pi - x)\cdot \tan x}{\tan x + \sec x}\cdot dx \\
+  \implies 2A &= A + A = \int_0^\pi\dfrac{\tan x\cdot (x + \pi -x)}{\tan x+\sec x}\cdot dx \\
+  &= \pi\int_0^\pi\underbrace{\dfrac{\tan x}{\tan x + \sec x}\cdot dx}_{\text{Got rid of the x}}
+\end{align}
+
+\newcard 
+
+\begin{align}
+2A &= \pi\int_0^\pi\dfrac{\tan x}{\tan x + \sec x}dx \\ 
+&= \pi\int_0^\pi\left[1-\dfrac{1}{1+\sin x}\right]\cdot dx \\
+&= \pi\left[\pi - \int_0^\pi\dfrac{1}{1+\cos \left(\frac{\pi}{2}-x\right)}\cdot dx\right] \\
+&= \pi\left[\pi - \frac{1}{2}\underbrace{\int_0^\pi\sec^2\left(\frac{\pi}{4}-\frac{x}{2}\right)\cdot dx}_{A_2}\right]
+\end{align}
+
+\newcard 
+
+\begin{align}
+2A &= \pi\int_0^\pi\dfrac{\tan x}{\tan x + \sec x}dx \\ 
+&= \pi\int_0^\pi\left[1+\dfrac{1}{1+\sin x}\right]\cdot dx \\
+&= \pi\left[\pi + \int_0^\pi\dfrac{1}{1+\cos \left(\frac{\pi}{2}-x\right)}\cdot dx\right] \\
+&= \pi\left[\pi + \frac{1}{2}\underbrace{\int_0^\pi\csc^2\left(\frac{\pi}{4}-\frac{x}{2}\right)\cdot dx}_{A_2}\right]
+\end{align}
+
+\newcard 
+
+\begin{align}
+2A &= \pi\int_0^\pi\dfrac{1+\sin x-1}{1+\sin x}\cdot dx \\
+&=\pi\int_0^\pi\left[1-\dfrac{1}{1+\sin x}\right]\cdot dx \\
+&= \pi\left[\int_0^\pi dx -\int_0^\pi\dfrac{1}{1+\sin x}\cdot dx\right] \\
+&= \pi\left[\pi - \int_0^\pi\dfrac{1}{\underbrace{1+\cos \left(\frac{\pi}{2}-x\right)}_{\sin x = \cos \left(\frac{\pi}{2}-x\right)}}\cdot dx\right] \\
+&= \pi\left[\pi - \underbrace{\frac{1}{2}\int_0^\pi\sec^2\left(\frac{\pi}{4}-\frac{x}{2}\right)\cdot dx}_
+{\frac{1}{1+\cos\theta} = \frac{1}{2\cos^2\frac{\theta}{2}} = \frac{\sec^2\theta}{2}}\right]
+\end{align}
+
+\newcard 
+
+%text
+\underline{Evaluating $A_2$ from the previous step}
+
+%
+\begin{align}
+A_2 &= \int_0^\pi\sec^2 \left(\frac\pi{4}-\frac{x}{2} \right)\cdot dx \\
+&= -2\int_{\frac\pi{4}}^{-\frac\pi{4}}\sec^2 z\cdot dz = 2\int_{-\frac\pi{4}}^{\frac\pi{4}}\sec^2 z\cdot dz
+\end{align}
+%text
+
+where \[ \qquad z = \frac\pi{4}-\frac{x}{2} \] 
+%
+
+\newcard 
+
+\begin{align}
+A_2 &= \int_0^\pi\sec^2\left(\frac{\pi}{4}-\frac{x}{2}\right)\cdot dx \\
+\text{Let } z &= \frac{\pi}{4}-\frac{x}{2}\implies dx = -2\cdot dz \\
+\text{Also } x=0\implies z&=\frac\pi{4}\text{ and }x =\frac\pi{4}\implies z = -\frac\pi{4} \\
+\therefore A_2 &= -2\int_{\frac{\pi}{4}}^{-\frac{\pi}{4}}\sec^2 z\cdot dz \\
+&= 2\int_{-\frac{\pi}{4}}^{\frac{\pi}{4}}\sec^2 z\cdot dz 
+\end{align}
+
+\newcard 
+
+\begin{align}
+A_2 &= 2\int_{-\frac\pi{4}}^{\frac\pi{4}}\sec^2 z\cdot dz = 4\\
+\therefore 2A &= \pi\left[ \pi-\frac{1}{2}A_2 \right] \implies 
+A = \frac\pi{2}\cdot(\pi-2) 
+\end{align}
+
+\newcard 
+
+\begin{align}
+A_2 &= 2\int_{-\frac\pi{4}}^{\frac\pi{4}}\sec^2 z\cdot dz = -2\\
+\therefore 2A &= \pi\left[ \pi-\frac{1}{2}A_2 \right] \implies 
+A = \frac\pi{2}\cdot(\pi+ 1) 
+\end{align}
+
+\newcard 
+
+\begin{align}
+A_2 &= 2\int_{-\frac\pi{4}}^{\frac\pi{4}}\sec^2 z\cdot dz = 2\left[\tan z \right]_{-\frac\pi{4}}^{\frac\pi{4}}\\
+&= 2\cdot (1 + 1) = 4 \\
+\therefore 2A &= \pi\left[ \pi-\frac{1}{2}A_2 \right] = \pi\cdot(\pi - 2)\\
+\implies A &= \frac\pi{2}\cdot(\pi-2) 
+\end{align}
+
+\end{document}
