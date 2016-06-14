@@ -24,10 +24,13 @@ represents the \underline{area under $f(x)$} between \\$x=a$ and $x=b$
 	\int_a^b f(x)\cdot dx &= F(b) - F(a) 
 \end{align}
 
-\textbf{Other basic properties} 
+\textbf{Basic properties} 
 \begin{align}
 	\int_a^b f(x)\cdot dx &= -\int_b^a f(x)\cdot dx \\
 	\int_a^a f(x)\cdot dx &= 0 \\
-	\int_a^c f(x)\cdot dx &= \int_a^b f(x)\cdot dx + \int_b^c f(x)\cdot dx 
+	\int_a^c f(x)\cdot dx &= \int_a^b f(x)\cdot dx + \int_b^c f(x)\cdot dx \\
+	\int_a^b f(x)\cdot dx &= \int_a^b f \left(a+b-x \right)\cdot dx \\
+	\int_0^a f(x)\cdot dx &= \int_0^a f \left(a-x \right)\cdot dx \\
+	\int_0^{2a} f(x)\cdot dx &= \underbrace{\int_0^a f(x)\cdot dx + \int_0^a f \left(2a-x \right)\cdot dx}_{\text{Note: It is $0\rightarrow a$ in both integrals}}
 \end{align}
 \end{document}
