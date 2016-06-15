@@ -1,44 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com">
   <render>
-    <tex>%text
-\textcolor{blue}{\text{Inverse Trig. Functions - Basics}}
-Meaning of $\sin^{-1}x,\cos^{-1}x$ etc ;
-domains and principal ranges 
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-A lot of people mistakenly assume 
-that \[ \sin^{-1}x = \dfrac{1}{\sin x} \]. It is not. 
-
-\underline\text{$\sin^{-1} x, \cos^{-1}x$ etc are angles !}
-By definition, \[ \sin\theta = x \implies \sin^{-1} x=\theta \]
-Same goes for $\cos^{-1}x$ or $\tan^{-1}x$. 
-
-$\theta$ in the above equation belongs to what
-is called the \underline\text{principal range}. It is the
-\underline\text{smallest range of angles} that will give 
-all possible values for a trigonometric
-function. These are summarized below.
-
-%
-\begin{tabular}{|c|c|c|}
-\hline
-\text{Function} &amp; x \in &amp; \text{Principal Range} \\
-\hline 
-y = \sin^{-1}x &amp; [-1,1] &amp; \left[ -\frac\pi{2},\frac\pi{2} \right] \\
-\hline 
-y = \cos^{-1} x &amp; [-1,1] &amp; [0,\pi] \\
-\hline 
-y = \tan^{-1} x &amp; \mathbb{R} &amp; \left( -\frac\pi{2},\frac\pi{2} \right) \\ 
-\hline 
-y = \csc^{-1}x  &amp; \mathbb{R}-(-1,1) &amp; \left[ -\frac\pi{2},\frac\pi{2} \right] - \lbrace 0\rbrace \\
-\hline 
-y = \sec^{-1}x  &amp; \mathbb{R}-(-1,1) &amp; \left[ 0,\pi \right] - \lbrace \frac\pi{2}\rbrace \\
-\hline 
-y = \cot^{-1} x &amp; \mathbb{R} &amp; (0,\pi) \\
-\hline
-\end{tabular} </tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
 </skill>
