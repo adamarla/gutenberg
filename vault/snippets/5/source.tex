@@ -1,0 +1,22 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+
+\[ \lim_{x\to 0}\dfrac{\sin 10 x}{x\cdot (1+\cos 2x)} = 5 \]
+
+\newcard 
+
+\begin{align}
+\lim_{x\to 0}\dfrac{\sin 10 x}{x\cdot (1+\cos 2x)} &= \lim_{x\to 0}\left[\dfrac{\dfrac{\sin 10x}{x}}{1+\cos 2x} \right] \\
+&= \dfrac{\lim_{x\to 0}\dfrac{\sin 10x}{x}}{\lim_{x\to 0}(1+\cos 2x)} \\
+&= \dfrac{10}{2} = 5
+\end{align}
+%text
+
+We have used the standard result
+\[ \qquad \lim_{x\to 0}\dfrac{\sin Mx}{Nx} = \dfrac{M}{N} \]
+%
+\end{document} 
