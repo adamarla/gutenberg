@@ -1,0 +1,51 @@
+#!/home/abhinavc/.rvm/rubies/ruby-1.9.3-p545/bin/ruby
+
+require 'nokogiri'
+require 'fileutils'
+
+f = File.new ARGV[0] 
+source_xml = File.absolute_path(f) if File.exists?(f) 
+
+return if source_xml.nil?
+
+tokens = source_xml.split('/') 
+id = tokens.last(2).first 
+
+is_question = tokens.include? "q" 
+is_snippet = is_question ? false : (tokens.include? "snippets")
+is_skill = (is_question || is_snippet) ? false : (tokens.include? "skills")
+
+dest = File.join Dir.home, "tmp" 
+dest = is_question ? File.join(dest, "q") : (is_snippet ? File.join(dest,"snippets") : File.join(dest, "skills"))
+
+FileUtils.mkdir_p dest  
+
+input_xml = File.join dest, "#{id}.xml"
+FileUtils.cp source_xml, input_xml 
+
+# Open and start writing the preamble 
+output_tex = File.open File.join(dest, "#{id}.tex"), "w"
+output_tex.write "\\documentclass[14pt,fleqn]{extarticle}\n" 
+output_tex.write "\\RequirePackage{prepwell}\n"
+output_tex.write "\\previewon\n" 
+output_tex.write "\\begin{document}\n"
+
+# Start reading the XML. Write a \newcard for every <tex> *without* isImage attribute 
+
+@doc = Nokogiri::XML(File.open(source_xml))
+@doc.remove_namespaces! 
+
+@doc.search('tex').each do |tex|
+  next unless tex.get_attribute('isImage').nil? 
+  output_tex.write "\\newcard\n\n" 
+
+  stuff = tex.content.gsub /\\hline/, "\\midrule"
+  stuff = stuff.gsub /\\gt/, ">"
+  stuff = stuff.gsub /\\lt/, "<"
+  output_tex.write "#{stuff}\n\n"
+end 
+
+# End document & close file 
+output_tex.write "\\end{document}" 
+output_tex.close 
+
