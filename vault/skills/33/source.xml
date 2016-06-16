@@ -1,49 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com">
   <render>
-    <tex>%text
-\textcolor{blue}{\text{Common Derivatives}} 
-Derivatives of powers, logarithmic 
-and trigonometric functions etc.
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-You would encounter the following
-derivatives most frequently in 
-your studies. The proofs are easy. 
-But we will just give the result.
-
-\textbf{Note: } In the table below, $\log x$
-is actually \underline\text{$\log$ to the base $e$}
-
-
-%
-\quad 
-\begin{tabular}{|c|c|}
-\hline 
-f(x) &amp; \frac{d}{dx}f(x) \\ 
-\hline 
-x^n,\, n\in\mathbb{R}  &amp; n\cdot x^{n-1} \\
-\hline 
-e^x &amp; e^x \\
-\hline 
-a^x &amp; \log a \cdot a^x \\
-\hline 
-\log x &amp; \frac{1}{x} \\ 
-\hline 
-\sin x &amp; \cos x \\
-\hline 
-\cos x &amp; -\sin x \\ 
-\hline 
-\tan x &amp; \sec^2 x \\
-\hline 
-\sin^{-1} x,\,x\in(-1,1) &amp; \dfrac{1}{\sqrt{1-x^2}} \\
-\hline 
-\cos^{-1} x, \, x\in(-1,1) &amp; -\dfrac{1}{\sqrt{1-x^2}} \\
-\hline 
-\tan^{-1} x &amp; \dfrac{1}{1+x^2} \\
-\hline 
-\end{tabular} </tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
 </skill>
