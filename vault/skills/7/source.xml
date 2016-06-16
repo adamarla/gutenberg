@@ -1,28 +1,9 @@
-<?xml version='1.0' encoding='utf-8'?>
-<skill xmlns='http://www.gradians.com' chapterId='14'>
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com" chapterId="14">
   <render>
-    <tex>%text
-$\lim_{x\to a}f(x) = ?$ when $f(x)$ is 
-a polynomial
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-If $f(x)$ be a polynomial, then 
-\[\qquad \qquad $\lim_{x\to a}f(x) = f(a) \]
-
-Below are two examples using two
-polynomials and limits for when $x\to 1$.
-
-%
-\begin{tabular}{|c|c|}
-\hline
-f(x) &amp; \lim_{x\to 1}f(x) = f(1)  \\
-\hline
-x^2-7x+89 &amp; \lim_{x\to 1}(x^2-7x+89) = 83  \\
-\hline
-x^5-26x&amp; \lim_{x\to 1}(x^5-26x)= -25 \\
-\hline
-\end{tabular} </tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
 </skill>

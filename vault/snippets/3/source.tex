@@ -1,0 +1,18 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+
+\[ \lim_{x\to 1} \dfrac{x^2-3x+2}{x^2+3x-4} = \infty\]
+
+\newcard 
+
+\begin{align}
+\dfrac{x^2-3x+2}{x^2 + 3x- 4} &= \dfrac{(x-1)\cdot (x-2)}{(x-1)\cdot (x+4)} \\ 
+&= \dfrac{x-2}{x+4} \\ 
+\therefore \lim_{x\to 1} \dfrac{x^2-3x+2}{x^2+3x-4} &= \lim_{x\to 1}\dfrac{x-2}{x+4} \\ 
+&= \dfrac{\lim_{x\to 1} (x-2)}{\lim_{x\to 1}(x+4)} = \dfrac{-1}{5}
+\end{align}
+\end{document} 
