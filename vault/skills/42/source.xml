@@ -1,34 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com">
   <render>
-    <tex>%text
-\textcolor{blue}{\text{Inverse Trig Functions \#3}} 
-\[ \sin^{-1}\frac{1}{x} = \csc^{-1} x\] etc. 
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-Let us prove one result 
-\[ \qquad \sin^{-1}\frac{1}{x} = \csc^{-1} x\]
-and then perhaps you can work
-out the others
-
-%
-\begin{align}
-\csc\theta &amp;= x \implies \frac{1}{\sin\theta} =x \\
-\therefore \sin\theta &amp;= \frac{1}{x} 
-\implies \theta = \sin^{-1}\frac{1}{x} \\
-\text{But }\theta &amp;= \csc^{-1} x \\
-\therefore \csc^{-1}x &amp;= \sin^{-1}\frac{1}{x} 
-\end{align}
-%text
-
-Similarly 
-%
-\begin{align}
-\sec^{-1} x &amp;= \cos^{-1}\frac{1}{x} \\ 
-\cot^{-1} x &amp;= \tan^{-1}\frac{1}{x} \quad (x\gt 0) \\
-&amp;= -\pi + \cot^{-1} x \quad (x\lt 0) 
-\end{align}</tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
 </skill>
