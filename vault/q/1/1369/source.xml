@@ -1,33 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <question xmlns="http://www.gradians.com" chapterId="18">
   <statement>
-    <tex>%text
-Evaluate 
-\[ \qquad \sin \left[ \frac\pi{3} - \sin^{-1}\left(-\frac{1}{2} \right) \right] \] 
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </statement>
   <step>
     <options>
-      <tex correct="false">\begin{align}
-\sin\left( \pi + \frac\pi{6}\right) &amp;= \sin\left( \frac{7\pi}{6} \right)  = -\frac{1}{2} \\
-\therefore \sin^{-1}\left( -\frac{1}{2} \right) &amp;= \frac{7\pi}{6} 
-\end{align} </tex>
+      <tex isImage="true" correct="false">img_tex-2.svg</tex>
     </options>
     <reason>
-      <tex>%text
-There are infinite angles for which 
-\[ \qquad \sin\theta = -\frac{1}{2} \]
-
-But when we say \[ \sin^{-1}\left(-\frac{1}{2}\right) = \theta  \], 
-the $\theta$ is an angle in what is called 
-\underline\text{the principal range.} 
-
-
-For $\sin^{-1} x$, that principal range is \[ \left[-\frac\pi{2},\frac\pi{2}\right]\]
-
-And as $\sin\left( -\frac\pi{6}\right) = -\frac{1}{2}$ and $-\frac\pi{6}\in\left[ -\frac\pi{2},\frac\pi{2}\right]$,
-\[ \qquad \therefore \sin^{-1}\left( -\frac{1}{2}\right) = -\frac\pi{6} \]
-%</tex>
+      <tex isImage="true">img_tex-3.svg</tex>
     </reason>
     <skills>
       <skill id="39"/>
@@ -35,16 +16,11 @@ And as $\sin\left( -\frac\pi{6}\right) = -\frac{1}{2}$ and $-\frac\pi{6}\in\left
   </step>
   <step>
     <options>
-      <tex>\[ \sin \left[ \frac\pi{3} - \sin^{-1}\left(-\frac{1}{2} \right) \right] = 1 \]</tex>
-      <tex correct="false">\[ \sin \left[ \frac\pi{3} - \sin^{-1}\left(-\frac{1}{2} \right) \right] = \frac{1}{2} \]</tex>
+      <tex isImage="true">img_tex-4.svg</tex>
+      <tex isImage="true" correct="false">img_tex-5.svg</tex>
     </options>
     <reason>
-      <tex>\begin{align}
-\sin^{-1}\left(-\frac{1}{2}  \right) &amp;= -\frac\pi{6} \\
-\therefore \frac\pi{3} - \sin^{-1}\left(-\frac{1}{2}  \right)  &amp;= \frac\pi{3} - \left( -\frac\pi{6} \right)\\
-&amp;= \frac\pi{2} \\
-\implies \sin \left[ \frac\pi{3} - \sin^{-1}\left(-\frac{1}{2} \right) \right] &amp;= \sin\frac\pi{2}= 1
-\end{align}</tex>
+      <tex isImage="true">img_tex-6.svg</tex>
     </reason>
     <skills>
       <skill id="1"/>
