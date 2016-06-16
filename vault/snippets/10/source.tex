@@ -1,0 +1,18 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+
+\[ \lim_{x\to -2}\left(\dfrac{\frac{1}{x} + \frac{1}{2}}{x^3 + 8}\right) = \dfrac{1}{48}  \]
+
+\newcard 
+
+\begin{align}
+\dfrac{\frac{1}{x} + \frac{1}{2}}{x^3 + 8} &= \dfrac{x+2}{2x\cdot\underbrace{(x+2)\cdot(x^2-2x+4)}_{x^3 + 8}}\\
+\therefore  \lim_{x\to -2}\left(\dfrac{\frac{1}{x} + \frac{1}{2}}{x^3 + 8}\right) &= 
+\lim_{x\to -2}\dfrac{1}{2x\cdot (x^2-2x+4)} \\
+&= \dfrac{1}{-4\times (4 + 4 + 4)} = -\dfrac{1}{48} 
+\end{align}
+\end{document} 

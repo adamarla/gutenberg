@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <snippet xmlns="http://www.gradians.com" chapterId="14">
   <render>
-    <tex>\[ \lim_{x\to a} \dfrac{x\sqrt{x} - a\sqrt{a}}{x-a} = \dfrac{3\sqrt{a}}{2}\]</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>\begin{align}
-\dfrac{x\sqrt{x} - a\sqrt{a}}{x-a} &amp;= \dfrac{x^{\frac{3}{2}} - a^{\frac{3}{2}}}{x-a} \\
-\therefore \lim_{x\to a} \dfrac{x\sqrt{x} - a\sqrt{a}}{x-a} &amp;= \lim_{x\to a}\dfrac{x^{\frac{3}{2}} - a^{\frac{3}{2}}}{x-a} \\
-&amp;= \dfrac{3}{2}\cdot a^{\frac{3}{2}-1} = \dfrac{3\sqrt{a}}{2}
-\end{align}</tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
   <skills>
     <skill id="9"/>

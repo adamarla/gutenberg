@@ -1,18 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <snippet xmlns="http://www.gradians.com" chapterId="14">
   <render>
-    <tex>%text
-Given that \[ e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots \]
-\[\qquad \qquad \lim_{x\to 0}\dfrac{e^x-1}{x} = 1 \]
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>\begin{align}
-e^x - 1 &amp;= \left( 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots\right) - 1 \\ 
-&amp;= x + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots \\
-&amp;= x\cdot\left( 1 + \frac{x}{2!} + \frac{x^2}{3!} + \ldots\right) \\
-\therefore \lim_{x\to 0}\dfrac{e^x-1}{x} &amp;= \lim_{x\to 0}\left( 1 + \frac{x}{2!} + \frac{x^2}{3!} + \ldots\right) = 1
-\end{align}</tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
   <skills>
     <skill id="4"/>
