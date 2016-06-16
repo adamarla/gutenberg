@@ -1,0 +1,18 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+
+\[ \lim_{x\to a} \dfrac{x\sqrt{x} - a\sqrt{a}}{x-a} = \dfrac{3\sqrt{a}}{2}\]
+
+\newcard 
+
+\begin{align}
+\dfrac{x\sqrt{x} - a\sqrt{a}}{x-a} &= \dfrac{x^{\frac{3}{2}} - a^{\frac{3}{2}}}{x-a} \\
+\therefore \lim_{x\to a} \dfrac{x\sqrt{x} - a\sqrt{a}}{x-a} &= \lim_{x\to a}\dfrac{x^{\frac{3}{2}} - a^{\frac{3}{2}}}{x-a} \\
+&= \dfrac{3}{2}\cdot a^{\frac{3}{2}-1} = \dfrac{3\sqrt{a}}{2}
+\end{align}
+
+\end{document} 
