@@ -1,46 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com">
   <render>
-    <tex>%text
-\textcolor{blue}{\text{Inverse Trig Function \#4}}
-\[ \sin^{-1}(-x) = -\sin^{-1} x \] etc. 
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-We will prove one. And if you're 
-so inclined, then you can try and 
-prove the others. 
-
-%
-\begin{align}
-\sin\theta &amp;= x \implies \theta = \sin^{-1}x \\ 
-\text{And }\sin (-\theta) &amp;= -\sin\theta = -x  \\
-\implies -\theta &amp;= \sin^{-1}(-x)  \\
-\text{But }\theta = \sin^{-1} x &amp;\implies -\theta = -\sin^{-1} x \\
-\therefore \sin^{-1} (-x) &amp;= -\sin^{-1} x 
-\end{align}
-%text
-
-Below are all such results 
-
-%
-\begin{tabular}{c|c}
-\hline 
-\textbf{Result} &amp; \textbf{Condition} \\ 
-\hline 
-\sin^{-1}(-x) = -\sin^{-1} x &amp; x\in[-1,1] \\
-\hline 
-\cos^{-1}(-x) = \pi -\cos^{-1}x &amp; x\in[-1,1] \\
-\hline
-\tan^{-1}(- x) = -\tan^{-1}x &amp;x\in\mathbb{R} \\
-\hline 
-\cot^{-1}(-x) = \pi - \cot^{-1}x &amp; x\in\mathbb{R} \\
-\hline 
-\sec^{-1}(-x) = \pi-\sec^{-1}x &amp; x\in\mathbb{R} - (-1,1) \\
-\hline
-\csc^{-1}(-x) = -\csc^{-1}x &amp; x\in\mathbb{R} - (-1,1) \\
-\hline
-\end{tabular} </tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
 </skill>
