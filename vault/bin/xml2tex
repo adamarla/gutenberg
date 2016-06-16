@@ -42,6 +42,10 @@ output_tex.write "\\begin{document}\n"
   stuff = tex.content.gsub /\\hline/, "\\midrule"
   stuff = stuff.gsub /\\gt/, ">"
   stuff = stuff.gsub /\\lt/, "<"
+  stuff = stuff.gsub /\\begin{tabular}/, "\\begin{center}\n\\begin{tabular}"
+  stuff = stuff.gsub /\\end{tabular}/, "\\end{tabular}\n\\end{center}"
+  stuff = stuff.gsub /\t/, "  "
+  stuff = stuff.gsub /\\text{(.*?)}/, '\1' # replace all \text{ written-text } with just written-text
   output_tex.write "#{stuff}\n\n"
 end 
 
@@ -51,3 +55,4 @@ output_tex.close
 
 # Delete input_xml from ~/tmp
 FileUtils.rm input_xml
+puts "[#{id}] ... done"
