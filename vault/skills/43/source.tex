@@ -1,0 +1,51 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff
+
+\begin{document}
+
+\begin{skill}
+\textcolor{blue}{Inverse Trigonometry (Negatives)}
+	
+\small\textbf{Example } $\sin^{-1} \left(-x \right) = \sin^{-1} x$ etc. 
+\end{skill}
+
+\newcard 
+
+%text
+We will prove one. And if you're 
+so inclined, then you can try and 
+prove the others
+
+%
+\begin{align}
+\sin\theta &= x \implies \theta = \sin^{-1}x \\ 
+\text{And }\sin (-\theta) &= -\sin\theta = -x  \\
+\implies -\theta &= \sin^{-1}(-x)  \\
+\text{But }\theta &= \sin^{-1} x \implies -\theta = -\sin^{-1} x \\
+\therefore \sin^{-1} (-x) &= -\sin^{-1} x 
+\end{align}
+%text
+
+Below are other such results\newline
+
+%
+\begin{tabular}{MM}
+\midrule 
+\textbf{Result} & \textbf{Condition} \\ 
+\midrule 
+\sin^{-1}(-x) = -\sin^{-1} x & x\in[-1,1] \\
+\midrule 
+\cos^{-1}(-x) = \pi -\cos^{-1}x & x\in[-1,1] \\
+\midrule
+\tan^{-1}(- x) = -\tan^{-1}x &x\in\mathbb{R} \\
+\midrule 
+\cot^{-1}(-x) = \pi - \cot^{-1}x & x\in\mathbb{R} \\
+\midrule 
+\sec^{-1}(-x) = \pi-\sec^{-1}x & x\in\mathbb{R} - (-1,1) \\
+\midrule
+\csc^{-1}(-x) = -\csc^{-1}x & x\in\mathbb{R} - (-1,1) \\
+\midrule
+\end{tabular} 
+\end{document}
