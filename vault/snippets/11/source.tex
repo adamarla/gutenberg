@@ -1,0 +1,20 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+
+\[ \lim_{x\to\frac\pi{2}}\left(\dfrac{\cos x}{x-\frac\pi{2}}\right) = 1 \]
+
+\newcard 
+
+\begin{align}
+\text{Let }z = x-\frac\pi{2}&\implies x = z + \frac\pi{2} \\ 
+\text{Also, as }x\to\frac\pi{2} &, z\to 0  \\
+\therefore  \lim_{x\to\frac\pi{2}}\left(\dfrac{\cos x}{x-\frac\pi{2}}\right) &= 
+\lim_{z\to 0}\left[\dfrac{\cos\left( z+\frac\pi{2}\right)}{z}\right] \\
+&= \underbrace{\lim_{z\to 0}\dfrac{-\sin z}{z}}_{\cos\left(\frac\pi{2}+\theta\right) = -\sin\theta} \\
+&= -1\cdot\lim_{z\to 0}\dfrac{\sin z}{z} = -1 
+\end{align}
+\end{document} 
