@@ -1,29 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com">
   <render>
-    <tex>%text
-\textcolor{blue}{\text{Product and Quotient Rule}}
-\[ \frac{d}{dx}\left[ f(x)\cdot g(x) \right]\] and \[ \frac{d}{dx}\frac{f(x)}{g(x)}\]
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-Given two functions $f(x)$ and $g(x)$, 
-\underline\text{if their derivatives are defined}, then
-
-%
-\begin{align}
-\frac{d}{dx}\left[ f(x)\cdot g(x) \right] &amp;= f'(x)\cdot g(x) + f(x)\cdot g'(x) \\ 
-\frac{d}{dx}\left[ \frac{f(x)}{g(x)}\right] &amp;= \underbrace{\dfrac{f'(x)\cdot g(x) - f(x)\cdot g'(x) }{g(x)^2}}_{g(x)\neq 0}\\
-\text{where } f'(x) &amp;= \frac{d}{dx}f(x) \\
-\text{and } g'(x) &amp;= \frac{d}{dx} g(x) 
-\end{align}
-%text
-
-The first rule is called the \underline\text{Product Rule} or 
-\underline\text{Leibniz's Rule}. 
-
-The second is called the \underline\text{Quotient Rule}.
-%</tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
 </skill>
