@@ -49,3 +49,5 @@ end
 output_tex.write "\\end{document}" 
 output_tex.close 
 
+# Delete input_xml from ~/tmp
+FileUtils.rm input_xml
