@@ -1,0 +1,29 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff
+
+\begin{document}
+
+\begin{skill}
+\textcolor{blue}{Limits (Basic Arithmetic)} 
+
+\small$\lim_{x\to a}\left[ f(x) + g(x) \right], \lim_{x\to a}\dfrac{f(x)}{g(x)}$\text{ etc.}
+\end{skill}
+
+\newcard 
+%text
+
+Given two functions $f(x)$ and $g(x)$, if
+
+\underline{$\lim_{x\to a}f(x)$ and $\lim_{x\to a}g(x)$ exist}
+independently, then 
+
+%
+\begin{align}
+\lim_{x\to a}\left[ f(x) + g(x)\right] &= \lim_{x\to a}f(x) + \lim_{x\to a}g(x)  \\
+\lim_{x\to a}\left[ f(x) - g(x)\right] &= \lim_{x\to a}f(x) - \lim_{x\to a}g(x) \\
+\lim_{x\to a}\left[ f(x)\cdot g(x)\right] &= \lim_{x\to a}f(x)\cdot\lim_{x\to a}g(x)  \\
+\lim_{x\to a}\frac{f(x)}{g(x)} &= \underbrace{\dfrac{\lim_{x\to a}f(x)}{\lim_{x\to a}g(x)}}_{ \lim_{x\to a}g(x) \neq 0}
+\end{align}  
+\end{document}
