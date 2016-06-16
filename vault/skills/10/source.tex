@@ -1,0 +1,46 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+
+\begin{skill}
+\textcolor{blue}{Limits (Trigonometric)}
+
+Fundamental limits featuting $\sin x$ and $\cos x$ only 
+\end{skill}
+
+\newcard 
+
+%text
+Given below are the \underline{fundamental} limits from which one can 
+derive all other limits involving trigonometric functions
+%
+\begin{center}
+\begin{tabular}{MM} 
+\midrule 
+\text{Rule} & \text{Also} \\
+\midrule 
+\lim_{x\to 0}\sin x = 0 & \lim_{x\to 0}\sin Nx = 0  \\
+\midrule 
+\lim_{x\to 0}\cos x = 1 & \lim_{x\to 0}\cos Nx = 1 \\
+\midrule 
+\lim_{x\to 0}\dfrac{\sin x}{x} = 1 & \lim_{x\to 0}\dfrac{\sin Mx}{Nx} = \dfrac{M}{N} \\
+\midrule
+\end{tabular} 
+\end{center} 
+
+For example, 
+
+\begin{align}
+	\lim_{x\to 0}\frac{\tan x}{x} &= \lim_{x\to 0} \left(\frac{\sin x}{\cos x} \right) \cdot\frac{1}{x} \\
+	&= \lim_{x\to 0} \left(\frac{\sin x}{x} \right)\cdot\frac{1}{\cos x} \\
+	&= \lim_{x\to 0} \left(\frac{\sin x}{x} \right)\cdot \lim_{x\to 0}\frac{1}{\cos x} \\
+	&= 1\times 1 = 1 
+\end{align}
+
+Hence, by knowing just the limits above, we figured out a new limit, namely 
+\[ \qquad\qquad \lim_{x\to 0}\frac{\tan x}{x} = 1 \]
+
+\end{document} 

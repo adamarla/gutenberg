@@ -1,29 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com" chapterId="14">
   <render>
-    <tex>%text
-\textcolor{blue}{\text{Basic Trigonometric Limits}}
-Featuring $\sin x$ and $\cos x$ only
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-The limits given below are the 
-\underline\text{basic building blocks} from which
-you can derieve all other limits 
-involving trigonometric functions
-
-%
-\begin{tabular}{|c|c|} 
-\hline 
-\text{Rule} &amp; \text{Also} \\
-\hline 
-\lim_{x\to 0}\sin x = 0 &amp; \lim_{x\to 0}\sin Nx = 0  \\
-\hline 
-\lim_{x\to 0}\cos x = 1 &amp; \lim_{x\to 0}\cos Nx = 1 \\
-\hline 
-\lim_{x\to 0}\dfrac{\sin x}{x} = 1 &amp; \lim_{x\to 0}\dfrac{\sin Mx}{Nx} = \dfrac{M}{N} \\
-\hline
-\end{tabular} </tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
 </skill>
