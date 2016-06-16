@@ -1,0 +1,19 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+
+\[ \lim_{x\to 0}\left( \dfrac{x\cdot\sin x}{1-\cos x} \right) = 2 \]
+
+\newcard 
+
+\begin{align}
+\dfrac{x\cdot\sin x}{1-\cos x} &= \dfrac{x\cdot 2\sin\frac{x}{2}\cos\frac{x}{2}}{2\sin^2\frac{x}{2}} \\
+&= \underbrace{\dfrac{2\frac{x}{2}\cdot\cos\frac{x}{2}}{\sin\frac{x}{2}} = \dfrac{2z\cdot\cos z}{\sin z}}_{z = \frac{x}{2}}\\
+\therefore \lim_{x\to 0}\left( \dfrac{x\cdot\sin x}{1-\cos x} \right) &= \lim_{z\to 0}\dfrac{2z\cdot\cos z}{\sin z} \\
+&= 2\lim_{z\to 0}\dfrac{\cos z}{\left(\dfrac{\sin z}{z}\right)} \\
+&= 2\left[ \dfrac{\lim_{z\to 0}\cos z}{\lim_{z\to 0}\left( \dfrac{\sin z}{z}\right)}\right] = 2
+\end{align}
+\end{document} 
