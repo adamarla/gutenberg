@@ -1,28 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <question xmlns="http://www.gradians.com" chapterId="21">
   <statement>
-    <tex>%text
-Find \[\dfrac{dy}{dx}\] given that 
-\[\quad  y = \cot^{-1}\left[ \dfrac{\sqrt{1+\sin x} + \sqrt{1-\sin x}}{\sqrt{1+\sin x} - \sqrt{1-\sin x}}\right] \]
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </statement>
   <step>
     <options>
-      <tex>
-\[ \left[ \dfrac{\sqrt{1+\sin x} + \sqrt{1-\sin x}}{\sqrt{1+\sin x} - \sqrt{1-\sin x}}\right] = \dfrac{\sin x}{1-\cos x}\]</tex>
-      <tex correct="false">
-\[ \left[ \dfrac{\sqrt{1+\sin x} + \sqrt{1-\sin x}}{\sqrt{1+\sin x} - \sqrt{1-\sin x}}\right] = \dfrac{\cos x}{1+\cos x}\]</tex>
+      <tex isImage="true">img_tex-2.svg</tex>
+      <tex isImage="true" correct="false">img_tex-3.svg</tex>
     </options>
     <reason>
-      <tex>\begin{align}
-P(x) &amp;= \left[ \dfrac{\sqrt{1+\sin x} + \sqrt{1-\sin x}}{\sqrt{1+\sin x} - \sqrt{1-\sin x}}\right] \\
-&amp;= \underbrace{\left[ \dfrac{\sqrt{X} + \sqrt{Y}}{\sqrt{X} - \sqrt{Y}} \right]\cdot
-\dfrac{\sqrt{X}-\sqrt{Y}}{\sqrt{X}-\sqrt{Y}}}_{\text{See Step 1}} \\
-&amp;= \dfrac{X-Y}{(\sqrt{X} - \sqrt{Y})^2} \\
-&amp;= \dfrac{(1+\sin x) - (1-\sin x)}{\left[ \sqrt{1+\sin x} - \sqrt{1-\sin x}\right]^2} \\
-&amp;= \dfrac{2\sin x}{\underbrace{(1+\sin x) + (1-\sin x) -2\sqrt{1-\sin^2 x}}_{(a-b)^2 = a^2+b^2-2ab}}\\
-&amp;= \dfrac{2\sin x}{2-2\cos x} = \dfrac{\sin x}{1-\cos x}
-\end{align}</tex>
+      <tex isImage="true">img_tex-4.svg</tex>
     </reason>
     <skills>
       <skill id="32"/>
@@ -30,24 +17,11 @@ P(x) &amp;= \left[ \dfrac{\sqrt{1+\sin x} + \sqrt{1-\sin x}}{\sqrt{1+\sin x} - \
   </step>
   <step>
     <options>
-      <tex>\begin{align}
- y &amp;= \cot^{-1}\dfrac{\sin x}{1-\cos x} = \dfrac{x}{2} \\
- \therefore \dfrac{dy}{dx} &amp;= \dfrac{1}{2}
-\end{align}
-</tex>
-      <tex correct="false">\begin{align}
- y &amp;= \cot^{-1}\dfrac{\sin x}{1-\cos x} = \dfrac{x^2}{2} \\
- \therefore \dfrac{dy}{dx} &amp;= \dfrac{2x}{2} = x 
-\end{align}</tex>
+      <tex isImage="true">img_tex-5.svg</tex>
+      <tex isImage="true" correct="false">img_tex-6.svg</tex>
     </options>
     <reason>
-      <tex>\begin{align}
-y &amp;= \cot^{-1} P(x) = \cot^{-1} \dfrac{\sin x}{1-\cos x} \\
-&amp;= \cot^{-1}\left[\dfrac{2\sin\frac{x}{2}\cdot\cos\frac{x}{2}}
-{2\sin^2\frac{x}{2}}\right] \\
-&amp;= \cot^{-1}\left[ \cot\frac{x}{2}\right] = \frac{x}{2} \\
-\therefore y &amp;= \frac{x}{2} \implies \frac{dy}{dx} = \frac{1}{2}
-\end{align}</tex>
+      <tex isImage="true">img_tex-7.svg</tex>
     </reason>
     <skills>
       <skill id="28"/>
