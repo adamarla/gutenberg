@@ -1,0 +1,149 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+%text
+A pair of dice is thrown 4 times. If getting a 
+doublet is considered a success, then find
+the probability distribution of successes
+%
+
+\newcard
+
+If the two die -- $I$ and $II$ -- are thrown, then we would get a doublet if 
+either of the following combinations occur 
+
+\begin{center}
+  \begin{tabular}{N|NNNNNN}
+  \toprule
+   \text{Die} & & & & & & \\
+   \midrule
+   I & 1 & 2 & 3 & 4 & 5 & 6 \\      
+  \midrule 
+   II & 1 & 2 & 3 & 4 & 5 & 6 \\
+   \bottomrule
+  \end{tabular}
+\end{center}
+
+\newcard
+
+If the two die -- $I$ and $II$ -- are thrown, then we would get a doublet if 
+either of the following combinations occur 
+
+\begin{center}
+  \begin{tabular}{N|NNNNNN}
+  \toprule
+   \text{Die} & & & & & & \\
+   \midrule
+   I & 1 & 2 & 3 & 2 & 4 & 6 \\      
+  \midrule 
+   II & 2 & 4 & 6 & 1 & 2 & 3 \\
+   \bottomrule
+  \end{tabular}
+\end{center}
+
+\newcard 
+
+A doublet is when the \underline{same number} occurs on both the die\newline 
+
+Hence, we will get a doublet when 
+
+\begin{center}
+  \begin{tabular}{N|NNNNNN}
+  \toprule
+   \text{Die} & & & & & & \\
+   \midrule
+   I & 1 & 2 & 3 & 4 & 5 & 6 \\      
+  \midrule 
+   II & 1 & 2 & 3 & 4 & 5 & 6 \\
+   \bottomrule
+  \end{tabular}
+\end{center}
+
+\newcard 
+
+If $p$ be the probability of getting a doublet in \underline{a given throw}, then $p= \frac{1}{6}$ 
+
+\newcard 
+
+If you roll a 1 (or a 2, or a 3 $\ldots$) on die $I$, then to get a doublet, die $II$ should also roll to the same number \newline 
+
+Hence, the probability of getting a doublet \underline{on a given throw} is simply 
+\[ \qquad p = P \left(II = I\vert I \right) = \frac{1}{6} \]
+
+\newcard 
+
+The probability of getting \underline{$N$ doublets} in four throws is 
+\[ \qquad P(N) = {^4}C_N \cdot p^N\cdot q^{4-N},\, \left(N \leq 4\right) \]
+
+where $q = 1-p = \frac{5}{6}$ 
+
+\newcard 
+
+The probability of getting \underline{$N$ doublets} in four throws is 
+\[ \qquad P(N) = p^N\cdot q^{4-N},\, \left(N \leq 4\right) \]
+
+where $q = 1-p = \frac{5}{6}$ 
+
+\newcard 
+
+You could get a doublet in first \& second throws or the first \& third throws or in any of the \underline{$^4C_N$ possible combinations} \newline 
+
+Each of these $^4C_N$ combinations, however, represents $N$ successes and $4-N$ failures\newline 
+
+Hence, each of these combinations will occur with a probability of $p^N\cdot q^{4-N}$\newline 
+
+And therefore, the \underline{total probability} of getting $N$ doublets is 
+\[ \qquad P(N) = ^4C_N\cdot p^N\cdot q^{4-N}\, \left(N\leq 4 \right)\]
+
+\newcard
+
+The probability distribution will therefore be as follows 
+
+\begin{center}
+\begin{tabular}{NN}
+\toprule
+\text{\# of doublets} = N & \text{Probability} \\
+\midrule 
+0 & \frac{625}{1296} \\
+\midrule 
+1 & \frac{125}{324} \\
+\midrule 
+2 & \frac{25}{216} \\
+\midrule 
+3 & \frac{5}{324} \\
+\midrule 
+4 & \frac{1}{1296} \\
+\bottomrule
+\end{tabular}
+\end{center} 
+
+\newcard
+
+%text
+We know that the probability of getting $N$ doublets in four throws is 
+\[ \qquad P(N) = ^4C_N \cdot p^N\cdot q^{4-N}\, \left(N\leq 4 \right)\]
+
+The probability distribution table is simply the value of $P(N)$ for $N=0,1,2,3,4$
+%
+
+\begin{center}
+\begin{tabular}{NNN}
+\toprule 
+\text{\# of doublets} & \text{Expression} & \text{Probability} \\
+\midrule 
+0 & ^4C_0\cdot p^0\cdot q^4 & \frac{625}{1296} \\
+\midrule 
+1 & ^4C_1 \cdot p^1\cdot q^3 & \frac{125}{324} \\
+\midrule 
+2 & ^4C_2 \cdot p^2 \cdot q^2 & \frac{25}{216} \\
+\midrule 
+3 & ^4C_3\cdot p^3\cdot q^1 & \frac{5}{324} \\
+\midrule 
+4 & ^4C_4 \cdot p^4\cdot q^0 & \frac{1}{1296} \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\end{document}
