@@ -1,38 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com" chapterId="28">
   <render>
-    <tex>%text
-\textcolor{blue}{\text{Binomial Distribution}}
-Getting $r$ heads in $n$ coin flips
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-Imagine a task (like flipping a coin) that
-could either be a success (getting heads)
-or a failure (getting tails). 
-
-If this task is done $n$ times, then what
-is the probability of getting $r$ successes?
-
-As can be seen from the table below,
-this is \underline\text{also a probability distribtution}. 
-But it has a special name - 
-\underline\text{binomial distribution}
-
-%
-\begin{tabular}{|c|c|c|c|c|}
-\hline 
-r &amp; 0 &amp; 1 &amp; \ldots &amp; n \\
-\hline 
-P(r) &amp; p_0 &amp; p_1 &amp; \ldots &amp; p_n \\
-\hline
-\end{tabular} 
-
-%text
-
-In particular \[ P(r) = ^nC_r\cdot p^r\cdot q^{(n-r)}\]
-where \[ q  = 1-p \] 
-%</tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
 </skill>
