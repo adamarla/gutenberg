@@ -1,0 +1,41 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+%text
+
+\begin{skill}
+\textcolor{blue}{Differentiation (Chain Rule)}
+
+$\dfrac{d}{dx}f(x)$ when $f(x) = \left(g\circ h \right)(x)$ 
+\end{skill}
+
+%
+
+\newcard
+
+%text
+\textbf{Intuition}
+
+Let $A$ run twice as fast as $B$ and 
+$B$ run 3 times as fast as $C$. Then 
+how fast does $A$ run compared to $C$?  \newline 
+
+The answer is simply $6 (= 2\times 3)$\newline 
+
+The idea behind Chain Rule is the same \newline 
+
+If $f(x)$ be a composite function, that is, 
+$\quad f(x) = g\left[ h(x) \right] = (g\circ h)(x)$, then 
+
+\[ \qquad \frac{d}{dx} f(x) = \frac{d}{d h(x)}g(x)\times \frac{d}{dx} h(x) \]
+
+For example, if $f(x) = \sin \left( x^2\right)$ , then 
+
+\begin{align}
+	\frac{d}{dx} f(x) &= \frac{d}{d x^2} \sin \left(x^2 \right)\times \frac{d}{dx} x^2  \\
+	&= \cos \left(x^2 \right)\cdot 2x 
+\end{align}
+%
+
+\end{document}

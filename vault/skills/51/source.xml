@@ -1,34 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com">
   <render>
-    <tex>%text
-\textcolor{blue}{\text{Chain Rule}}
-Differentiating $f(x)$ when 
-$f(x) = (g\circ h)(x)$ 
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-Let $A$ run twice as fast as $B$ and 
-$B$ run 3 times as fast as $C$. Then 
-how fast does $A$ run compared to $C$? 
-
-The answer is simple -- $(2\times 3 = 6)$
-
-That was the Chain Rule. And it 
-works just the same way with 
-functions. 
-
-\textbf{Chain Rule} 
-Let $f(x)$ be a composite function. 
-
-\[ \quad f(x) = g\left[ h(x) \right] = (g\circ h)(x) \] 
-
-In other words, $f(x)$ is made by 
-\underline\text{applying $g(x)$ on $h(x)$}. Then, 
-
-\[\qquad \frac{d}{dx}f(x) = \frac{dg}{dh}\times\dfrac{dh}{dx}  \]
-
-%</tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
 </skill>
