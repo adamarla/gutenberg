@@ -1,49 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com">
   <render>
-    <tex>%text
-\textcolor{blue}{\text{Trigonometric Ratios of Sums}}
-\[ \sin\left(A\pm B\right), \cos\left( A\pm B\right) \] etc
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-\textbf{Basic Identities} 
-
-The following trigonometric identities 
-are fundamental. We are not giving 
-proofs for them here. But you should 
-\underline\text{commit these to memory}.
-
-%
-
-
-\begin{align}
-\sin (A+B) &amp;= \sin A\cdot \cos B + \cos A\cdot \sin B \\ 
-\sin (A-B) &amp;= \sin A\cdot \cos B - \cos A\cdot \sin B  \\
-\cos (A + B) &amp;= \cos A \cdot \cos B - \sin A\cdot \sin B \\
-\cos (A-B) &amp;= \cos A\cdot \cos B + \sin A\cdot \sin B \\ 
-\tan (A+B) &amp;= \dfrac{\tan A + \tan B}{1-\tan A\cdot \tan B} \\
-\tan (A-B) &amp;= \dfrac{\tan A - \tan B}{1+ \tan A\cdot \tan B} 
-\end{align}
-
-%text
-
-
-\textbf{Derieved Identities} 
-
-The following identities are simply 
-\underline\text{specific cases} of the basic identities above
-
-%
-\begin{align}
-\sin 2A &amp;= \sin (A+A) = 2\sin A\cdot \cos A  \\
-\sin 3A &amp;= \sin (2A + A) = 3\sin A - 4\sin^3 A \\ 
-\cos 2A &amp;= \cos (A+A) = \cos^2 A - \sin^2 A  \\
-\cos 3A &amp;= 4\cos^3 A - 3\cos A \\ 
-\tan 2A &amp;= \dfrac{2\tan A}{1-\tan^2 A}  \\
-\tan 3A &amp;= \dfrac{3\tan A - \tan^3 A}{1-3\tan^2 A} 
-\end{align} 
-</tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
 </skill>
