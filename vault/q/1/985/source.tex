@@ -1,0 +1,90 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+
+    Evaluate the following integral
+    \[ \qquad \int_1^2\dfrac{5x^2}{x^2+4x+3}\cdot dx  \]
+    
+
+\newcard 
+
+\[ \frac{5x^2}{x^2 + 4x + 3} = 5 + \frac{5}{2\cdot (x+1)} - \frac{45}{2\cdot (x+3)}\]
+
+\newcard 
+
+\[ \frac{5x^2}{x^2 + 4x + 3} = \frac{5}{x+1} - \frac{1}{x+3}\]
+
+\newcard
+
+First, note that the \underline{degree of $5x^2 (=2)$ } is 
+$\geq$ the \underline{degree of $x^2 + 4x + 3 (=2)$} \newline 
+
+
+Hence, $f(x) = \frac{5x^2}{x^2 + 4x + 3}$ is an \underline{improper} rational function. Which means 
+
+\begin{align}
+        x^2+4x+3 &= (x+1)\cdot (x+3) \\
+        \therefore \dfrac{5x^2}{x^2+4x+3} &= \underbrace{A 
+        + \dfrac{B}{x+1} + \dfrac{C}{x+3}}_{\text{Improper rational function decomposition}}
+      \end{align} \\
+      \begin{align}
+        \implies 5x^2 &= A(x^2+4x+3) + B(x+3) 
+        + C(x+1) \\
+        &= Ax^2 + (4A + B + C)\cdot x + (3A+3B+C) 
+      \end{align}
+      
+      
+      
+\underline{On comparing coefficients}, we get 
+\begin{align}
+	A &= 5 \\
+	4A + B + C &= 0 \implies B + C = -20 \\
+	\text{and }3A+3B+C &= 0 \implies 3B + C = -15 \\
+	\therefore (3B+C) - (B+C) &= -15 + 20 = 5 \\
+	\implies B &= \frac{5}{2}\text{ and } \therefore C = -\frac{45}{2} 
+\end{align} 
+
+\newcard
+
+\begin{align}
+I &= \int \frac{5x^2}{x^2+4x+3}\cdot dx \\
+&= 5x + \frac{5\cdot\log\vert x+1\vert}{2} - \frac{45\cdot \log\vert x+3\vert}{2} + C 	
+\end{align}
+
+
+\newcard 
+
+\underline{Plug-in the values of $A,B$ and $C$} we found in the previous step. And therefore, 
+
+\begin{align}
+I &= \int \frac{5x^2}{x^2+4x+3}\cdot dx \\
+&= \int \left[5 + \frac{5}{2\cdot (x+1)} - \frac{45}{2\cdot (x+3)} \right]\cdot dx \\ 	
+&= 5\int dx + \frac{5}{2}\int \frac{dx}{x+1} - \frac{45}{2}\int \frac{dx}{x+3} \\
+&= \underbrace{5x + \frac{5}{2}\log\vert x+1\vert -\frac{45}{2}\log\vert x+3\vert + C}_{\int\frac{dx}{x+a} = \log\vert x+a\vert + C }
+\end{align}
+\newcard 
+
+          \[\therefore \int_1^2 f(x)\cdot dx  = 5 -\frac{5}{2}\cdot \left[9\cdot\log\frac{5}{4} - \log\frac{3}{2}\right]\]
+          \[\qquad\qquad\small\text{where } f(x) = \frac{5x^2}{x^2+4x+3}\]
+        
+
+\newcard
+          \[\therefore \int_1^2 f(x)\cdot dx = 5 + \frac{5}{2}\cdot \left[9\cdot\log\frac{5}{4} + \log\frac{3}{2}\right]\]
+          \[\qquad\qquad\small\text{where } f(x) = \frac{5x^2}{x^2+4x+3}\]
+        
+
+\newcard
+
+If $X = \int_0^1 f(x)\cdot dx$, then 
+
+\begin{align}
+	X &= \left[5x + \frac{5}{2}\log\vert x+1\vert -\frac{45}{2}\log\vert x+3\vert \right]_1^2 \\
+          &= 5\cdot \left[x\right]_1^2 + \frac{5}{2}\left[\log (x+1)\right]_1^2 
+          -\frac{45}{2}\cdot \left[\log (x+3)\right]_1^2 \\
+          &= 5\cdot(2-1) + \frac{5}{2}\cdot \underbrace{(\log 3 - \log 2)}_{\log\frac{3}{2}}-\frac{45}{2}\cdot \underbrace{(\log 5 - \log 4)}_{\log\frac{5}{4}} \\
+          &= 5 -\frac{5}{2}\cdot \left[9\cdot\log\frac{5}{4} - \log\frac{3}{2}\right]
+        \end{align}
+
+\end{document}
