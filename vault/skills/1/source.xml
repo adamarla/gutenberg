@@ -1,15 +1,9 @@
-<?xml version='1.0' encoding='utf-8'?>
-<skill xmlns='http://www.gradians.com' chapterId='29'>
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com" chapterId="29">
   <render>
-    <tex>%text
-Calculation
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-Be careful while performing calculations. One wrong
-step and all your good work can go to waste.
-After the exam, go back and check your work.
-%</tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
 </skill>
