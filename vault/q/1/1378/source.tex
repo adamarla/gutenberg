@@ -1,0 +1,85 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+%text
+For what value of k is the following 
+function continuous at $x=2$? 
+
+%
+\[\qquad f(x) = \begin{cases} 
+2x + 1\, ;  x < 2 \\
+k \, ;  x = 2 \\
+3x - 1\, ;  x > 2
+\end{cases}\]
+
+\newcard
+
+%text
+For $f(x)$ to be continuous at $x=2$
+\[ \quad \lim_{x\to 2^-}f(x) = \lim_{x\to 2^+}f(x) = k \]
+%
+
+\newcard
+
+%text
+For $f(x)$ to be continuous at $x=2$
+\[ \quad \lim_{x\to 2^-}f(x) = \lim_{x\to 2^+}f(x)  \]
+%
+
+\newcard
+
+%text
+\[ \lim_{x\to 2^-}f(x) = \lim_{x\to 2^+}f(x) \] only ensures
+that $f(x)$ has a limit at $x = 2$\newline 
+
+ But for $f(x)$ to be continuous, there must be \underline{no gap at $x=2$}\newline
+
+ And therefore, 
+ \[ \quad \lim_{x\to 2^-}f(x) = \lim_{x\to 2^+}f(x) = k \]
+
+%
+
+\newcard
+
+\begin{align}
+\lim_{x\to 2^-} f(x) &= \lim_{x\to 2^-}(2x + 1) = 5 \\
+\lim_{x\to 2^+} f(x) &= \lim_{x\to 2^+}(3x - 1) = 5 
+\end{align}
+%text
+
+Therefore, $k = 5$ for $f(x)$ to be 
+continuous at $x = 2$
+%
+
+\newcard
+
+\begin{align}
+\lim_{x\to 2^-} f(x) &= \lim_{x\to 2^-}(3x-1) = 5 \\
+\lim_{x\to 2^+} f(x) &= \lim_{x\to 2^+}(2x+1) = 5 
+\end{align}
+%text
+
+Therefore, $k = 5$ for $f(x)$ to be 
+continuous at $x = 2$
+%
+
+\newcard
+
+%text
+The answer $k = 5$ is correct\newline
+
+But if you got this step wrong, then you didn't \underline{read $f(x)$ properly}\newline
+
+Notice that for $x < 2, f(x) = 2x + 1$.
+And for $x > 2, f(x) = 3x - 1$\newline
+
+Hence, 
+%
+\begin{align}
+\lim_{x\to 2^-} f(x) &= \lim_{x\to 2^-}(2x + 1) = 5 \\
+\lim_{x\to 2^+} f(x) &= \lim_{x\to 2^+}(3x - 1) = 5
+\end{align}
+
+\end{document}

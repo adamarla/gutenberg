@@ -1,25 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com" chapterId="28">
   <render>
-    <tex>%text
-\textcolor{blue}{\text{Bayes' Theorem}} 
-The concept and its mathematical
-formulation
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-The \underline\text{ concept} of conditional probability
-answers the following question
-
-\textit{What is the probability of an event A}
-\textit{happening \underline\text{ given that} event B already has?}
-
-Thomas Bayes was the first to provide
-the following \underline\text{mathematical} formula for 
-evaluating conditional probabilities. 
-
-\[ P\left( A\vert B\right) = \dfrac{P(A\cap B)}{P(B)} = \dfrac{P(B\vert A)\cdot P(A)}{P(B)}  \]
-%</tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
 </skill>

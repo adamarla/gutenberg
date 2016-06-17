@@ -1,31 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com" chapterId="28">
   <render>
-    <tex>%text
-\textcolor{blue}{\text{Probability Distribution}}
-Finding the mean $(\mu)$ \&amp; 
-variance $(\sigma^2)$
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-\underline\text{Expected Value / Mean}
-The expected value of  a random 
-variable $(X)$ is defined as 
-\[ \qquad\mu = E(X) = \sum_{i=1}^n p_i\cdot x_i\]
-
-\underline\text{Variance}
-The variance of the random variable is
-defined as 
-\[ \qquad \sigma^2 = \sum_{i=1}^n (x_i - \mu)^2\cdot p_i^2\] 
-
-With a little algebra, you can prove 
-that \[ \sigma^2 = \left(\sum_{i=1}^n x_i^2\cdot p_i\right)- \mu^2 \] 
-
-\underline\text{Standard Deviation $(\sigma)$}
-As you would have guessed 
-\[\qquad \sigma = \sqrt{\sigma^2} = \sqrt{\text{ Variance }}\]
-%
-</tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
 </skill>

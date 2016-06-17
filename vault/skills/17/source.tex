@@ -1,0 +1,43 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+%text
+Theorem of Total Probability
+%
+
+\newcard
+
+%text
+If the set of \underline{all possible events} $(S)$ be 
+divided into smaller sets $E_1, E_2, \ldots$
+such that 
+
+%
+\begin{center}
+\begin{tabular}{Nc}
+\midrule 
+\text{Condition} & Meaning \\ 
+\midrule 
+E_i\cap E_j = \phi\,(i\neq j) & $E_i$ and $E_j$ are mutually \\
+&exclusive $\forall \left( i, j\right) $ \\
+\midrule 
+E_i\cup E_j\cup\ldots E_n = S & $E_i\ldots E_n$ are exhaustive \\
+\midrule 
+E_i \neq \phi \,\forall\, $i$ & No $E_i$ is empty \\
+\midrule 
+\end{tabular}
+\end{center} 
+%text
+
+then an event $A$ will intersect with \underline{some or all}
+of $E_1, E_2,\ldots E_n$ \newline 
+
+And hence, the \underline{probability of $A$} occurring will be the following 
+
+\[ \qquad P(A) = \sum_{i=1}^n P\left( A\,\vert\, E_i\right)\cdot P(E_i)\]
+
+%
+
+\end{document}

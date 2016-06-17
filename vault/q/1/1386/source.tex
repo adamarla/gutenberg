@@ -1,0 +1,58 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+%text
+Find $\dfrac{dy}{dx}$ given that 
+\[\quad  y = \cot^{-1}\left[ \dfrac{\sqrt{1+\sin x} + \sqrt{1-\sin x}}{\sqrt{1+\sin x} - \sqrt{1-\sin x}}\right] \]
+%
+
+\newcard
+
+
+\[ \left[ \dfrac{\sqrt{1+\sin x} + \sqrt{1-\sin x}}{\sqrt{1+\sin x} - \sqrt{1-\sin x}}\right] = \dfrac{\sin x}{1-\cos x}\]
+
+\newcard
+
+
+\[ \left[ \dfrac{\sqrt{1+\sin x} + \sqrt{1-\sin x}}{\sqrt{1+\sin x} - \sqrt{1-\sin x}}\right] = \dfrac{\cos x}{1+\cos x}\]
+
+\newcard
+
+\begin{align}
+P(x) &= \left[ \dfrac{\sqrt{1+\sin x} + \sqrt{1-\sin x}}{\sqrt{1+\sin x} - \sqrt{1-\sin x}}\right] \\
+&= \underbrace{\left[ \dfrac{\sqrt{X} + \sqrt{Y}}{\sqrt{X} - \sqrt{Y}} \right]\cdot
+\dfrac{\sqrt{X}-\sqrt{Y}}{\sqrt{X}-\sqrt{Y}}}_{\text{See Step 1}} \\
+&= \dfrac{X-Y}{(\sqrt{X} - \sqrt{Y})^2} \\
+&= \dfrac{(1+\sin x) - (1-\sin x)}{\left[ \sqrt{1+\sin x} - \sqrt{1-\sin x}\right]^2} \\
+&= \dfrac{2\sin x}{\underbrace{(1+\sin x) + (1-\sin x) -2\sqrt{1-\sin^2 x}}_{(a-b)^2 = a^2+b^2-2ab}}\\
+&= \dfrac{2\sin x}{2-2\cos x} = \dfrac{\sin x}{1-\cos x}
+\end{align}
+
+\newcard
+
+\begin{align}
+ y = \cot^{-1} \left(  \dfrac{\sin x}{1-\cos x} \right)&= \dfrac{x}{2}  \\
+ \therefore \dfrac{dy}{dx} &= \dfrac{1}{2}
+\end{align}
+
+
+\newcard
+
+\begin{align}
+ y = \cot^{-1} \left(\dfrac{\sin x}{1-\cos x} \right) &= \dfrac{x^2}{2} \\
+ \therefore \dfrac{dy}{dx} &= \dfrac{2x}{2} = x 
+\end{align}
+
+\newcard
+
+\begin{align}
+y = \cot^{-1} P(x) &= \cot^{-1} \left( \dfrac{\sin x}{1-\cos x}\right)  \\
+&= \cot^{-1}\left[\dfrac{2\sin\frac{x}{2}\cdot\cos\frac{x}{2}}
+{2\sin^2\frac{x}{2}}\right] \\
+&= \cot^{-1}\left[ \cot\frac{x}{2}\right] = \frac{x}{2} \\
+\therefore y &= \frac{x}{2} \implies \frac{dy}{dx} = \frac{1}{2}
+\end{align}
+
+\end{document}

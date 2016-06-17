@@ -1,32 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com" chapterId="28">
   <render>
-    <tex>%text
-\textcolor{blue}{\text{Random Variables }}
-And their probability distribution
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-If a random variable $(X)$ can have \underline\text{only} 
-values from the set $\lbrace x_1, x_2, \ldots x_n\rbrace$, then 
-it's \underline\text{probability distribution} is a table
-that lists the values and the probabilties
-of getting those values - as shown below
-
-%
-\begin{tabular}{|c|c|c|c|c|}
-\hline
-X &amp; x_1 &amp; x_2 &amp; \ldots &amp; x_N \\
-\hline 
-P(X=x_i) &amp; p_1 &amp;p_2&amp; \ldots &amp; p_n \\
-\hline 
-\end{tabular} 
-
-%text
-
-\textbf{Moreover, \[ \sum_{i=1}^n p_i = 1 \]}
-
-</tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
 </skill>
