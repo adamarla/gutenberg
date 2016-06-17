@@ -1,32 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <question xmlns="http://www.gradians.com" chapterId="21">
   <statement>
-    <tex>%text
-Examine the continuity of $f(x)$
-where $f(x)$ is defined as 
-
-%
-\qquad f(x) = \begin{cases}
-  \sin x - \cos x,\, x\neq 0 \\ 
-  -1, \, x = 0 
-\end{cases} 
-</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </statement>
   <step>
     <options>
-      <tex>%text
-\textcolor{blue}{\text{We have to prove that }\ldots}
-$\ldots f(x)$ is continuous at all $x$
-%</tex>
+      <tex isImage="true">img_tex-2.svg</tex>
+      <tex isImage="true" correct="false">img_tex-3.svg</tex>
     </options>
     <reason>
-      <tex>%text
-The question clearly asks to examine
-the \underline\text{continuity of $f(x)$}
-
-Which means \underline\text{all of $f(x)$} - and not
-just at some specific $x$.
-%</tex>
+      <tex isImage="true">img_tex-4.svg</tex>
     </reason>
     <skills>
       <skill id="36"/>
@@ -34,21 +17,10 @@ just at some specific $x$.
   </step>
   <step>
     <options>
-      <tex>%text
-$f(x) = \sin x-\cos x$ is continuous 
-for all $x\neq 0$ 
-%</tex>
+      <tex isImage="true">img_tex-5.svg</tex>
     </options>
     <reason>
-      <tex>%text
-If two functions $a(x)$ and $b(x)$ are
-continuous in some domain, then 
-so is $a(x) + b(x)$ and $a(x) - b(x)$. 
-
-Now, given that $\sin x$ and $\cos x$ 
-are both continuous for $x\neq 0$, 
-then so must $\sin x-\cos x$ be. 
-%</tex>
+      <tex isImage="true">img_tex-6.svg</tex>
     </reason>
     <skills>
       <skill id="34"/>
@@ -57,28 +29,10 @@ then so must $\sin x-\cos x$ be.
   </step>
   <step>
     <options>
-      <tex correct="false">%text
-\[ \lim_{x\to 0} f(x) \neq f(0) \]. Hence, $f(x)$ is 
-not continuous at $x = 0$
-%</tex>
+      <tex isImage="true" correct="false">img_tex-7.svg</tex>
     </options>
     <reason>
-      <tex>\begin{align}
-\lim_{x\to 0} f(x) &amp;= \lim_{x\to 0}(\sin x-\cos x) \\
-&amp;= 0 - 1 = -1 \\
-\text{Also, }f(0) &amp;= \sin 0 -\cos 0 = - 1
-\end{align}
-%text
-
-
-As \[ \lim_{x\to 0} f(x) = f(0) \], therefore 
-$f(x)$ is \underline\text{also continuous} at $x = 0$. 
-
-Hence, $f(x)$ is continuous for 
-$x\neq 0$ and for $x= 0 \implies f(x)$ 
-is continuous for all $x$
-
-%</tex>
+      <tex isImage="true">img_tex-8.svg</tex>
     </reason>
     <skills>
       <skill id="34"/>

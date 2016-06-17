@@ -1,0 +1,81 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+%text
+Examine the continuity of $f(x)$
+where $f(x)$ is defined as 
+
+%
+\[\qquad f(x) = \begin{cases}
+  \sin x - \cos x,\, x\neq 0 \\ 
+  -1, \, x = 0 
+\end{cases} \]
+
+
+\newcard
+
+\textcolor{blue}{To Prove}\newline 
+$f(x)$ is continuous \underline{for all $x$} -- including at $x = 10^4, 10^{99}$ etc.
+
+\newcard
+
+\textcolor{blue}{To Prove}\newline 
+$f(x)$ is continuous \underline{for $x$ in and around $0$}\newline --
+but not at, say, $x = 10^4, 10^{99}$ etc.
+
+\newcard 
+
+%text
+The question clearly asks to examine
+the \underline{continuity of $f(x)$}\newline 
+
+Which means \underline{for all $x$} - and not
+just some specific $x$.
+%
+
+\newcard
+
+%text
+$f(x) = \sin x-\cos x$ is continuous 
+for all $x\neq 0$ 
+%
+
+\newcard
+
+%text
+If two functions $a(x)$ and $b(x)$ are
+continuous in some domain, then 
+so is $a(x) + b(x)$ and $a(x) - b(x)$\newline 
+
+Now, given that $\sin x$ and $\cos x$ 
+are both continuous for $x\neq 0$, 
+then so must $\sin x-\cos x$ be
+%
+
+\newcard
+
+%text
+\[ \lim_{x\to 0} f(x) \neq f(0) \]
+
+Hence, $f(x)$ is 
+not continuous at $x = 0$
+%
+
+\newcard
+
+\begin{align}
+\lim_{x\to 0} f(x) &= \lim_{x\to 0}(\sin x-\cos x) \\
+&= 0 - 1 = -1 \\
+\text{Also, } f(0) &= \sin 0 -\cos 0 = - 1 \\
+\therefore \lim_{x\to 0} f(x) &= f(0)\implies\text{ continuity at }x=0
+\end{align}
+%text
+
+
+Hence, $f(x)$ is continuous for 
+$x\neq 0$ and for $x= 0 \implies f(x)$ 
+is continuous for all $x$
+
+\end{document}

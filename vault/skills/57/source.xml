@@ -1,46 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com">
   <render>
-    <tex>%text
-\textcolor{blue}\text{Equation of a Line in $x-y$}
-2-point, slope-intercept etc.
-%</tex>
+    <tex isImage="true">img_tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-Below are two facts about lines in 
-a 2D plane that are the backbone
-of this chapter 
-
-$\quad\bullet$ Only one line can pass through
-two points $A$ and $B$
-$\quad\bullet$ Whilst infinite lines can pass
-through a point, only one of those 
-lines can have a given slope $(m)$
-
-The above two facts give rise to 
-the following equation forms for 
-a line. 
-
-\textbf{Given two points}
-Given two point  $A=(x_A, y_a)$ 
-and $B = (x_B, y_B)$
-
-\[ \qquad \dfrac{y-y_A}{x-x_A} = \underbrace{\dfrac{y_A-y_B}{x_A - x_B}}_{\text{Slope } m}\]
-
-If $A = (x_A, 0)$ and $B = (0,y_B)$ be 
-where the line cuts the $x$ and $y$ axis
-respectively, then 
-
-\[ \qquad \dfrac{x}{x_A} + \dfrac{y}{y_B} = 1 \]
-
-\textbf{One point + Slope}
-If you know only $A$ and $m$ -- but 
-not $B$, then 
-
-\[ \qquad \dfrac{y-y_A}{x - x_A} = m \]
-
-
-%</tex>
+    <tex isImage="true">img_tex-2.svg</tex>
   </reason>
 </skill>
