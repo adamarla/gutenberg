@@ -7,7 +7,7 @@ last_compiled_on : source.xml img_*.svg
 	@ quill -r $$(pwd) 
 	@ quill -p $$(pwd) 
 	@ ping_on_recompile -r 
-	@ sed -i -e 's/\(src="img_prefab-[0-9]*.svg"\)/\1 isTex="false"/g' layout.xml 
+	@ grep 'isImage="true"' layout.xml | grep -v img_tex- | sed -e "s/isImage=\"true\"/isImage=\"true\" isTex=\"false\"/g"
 	@ date > $@
 
 tex2svg : source.pdf 
