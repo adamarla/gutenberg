@@ -7,7 +7,7 @@ last_compiled_on : source.xml img_*.svg
 	@ quill -r $$(pwd) 
 	@ quill -p $$(pwd) 
 	@ ping_on_recompile -r 
-	@ grep 'isImage="true"' layout.xml | grep -v img_tex- | sed -e "s/isImage=\"true\"/isImage=\"true\" isTex=\"false\"/g"
+	@ sed -i -e "s/\(.*\)\(img_tex-[0-9]*\.svg\"\)\(.*\)/\1\2 isTex=\"true\"\3/g" layout.xml 
 	@ date > $@
 
 tex2svg : source.pdf 
