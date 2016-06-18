@@ -20,6 +20,7 @@ source.pdf : source.tex
 	@ git add $<
 
 clean : 
+	@ rm -f source.{aux,dvi,pdf,log,ps}
 	@ ls | grep -e ^[[:digit:]] | xargs rm -f 
 	@ rm -f {STMT,CTX,CRT,WRNG,RSN,CH}_*.svg 
 	@ rm -f PREVIEW.svg last_compiled_on
