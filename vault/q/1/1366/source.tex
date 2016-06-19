@@ -1,0 +1,114 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+%text
+A family has 2 children. Find the probability
+that both are boys, if it is known that 
+
+\begin{itemize}
+\item {at least one of the children is a boy}
+\item {the elder child is a boy}
+\end{itemize}
+
+%
+
+\newcard
+
+If $N_B = $ number of boys in the family and 
+\begin{center}
+  \begin{tabular}{Nc}
+  \toprule
+        \text{Event} & Meaning \\
+   \midrule
+   C_1 & First child is a boy \\ 
+    \midrule 
+    C_2 & Second child is a boy \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+then we have to find 
+\[ P\left( N_B = 2\,\vert\, N_B\geq 1\right)\text{ and } P\left( N_B=2\,\vert\, C_1\right)\]
+
+\newcard
+
+If $N_B = $ number of boys in the family and 
+\begin{center}
+  \begin{tabular}{Nc}
+  \toprule
+        \text{Event} & Meaning \\
+   \midrule
+   C_1 & First child is a boy \\ 
+    \midrule 
+    C_2 & Second child is a boy \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+then we have to find 
+\[ P\left( N_B = 2\cap N_B\geq 1\right)\text{ and } P\left( N_B=2\cap C_1\right)\]
+
+\newcard 
+
+In each of the two cases, we have to find the probability that $N_B=2$\newline 
+
+But in each case, we have been told something. Either that the family has atleast one 
+boy $N_B\geq 1$ or that the first child is a boy $C_1$\newline 
+
+Hence, the probabilities we need to find are \underline{conditional}. And the 
+expressions for these probabilities are simply 
+\[ P\left( N_B=2\,\vert\, N_B\geq 1\right)\text{ and } P\left( N_B=2\,\vert\, C_1\right)\]
+
+\newcard 
+
+\begin{align}
+	\condp{N_B=2}{N_B\geq 1} &= \fcondp{N_B=2}{N_B\geq 1}\\
+	\text{where } P \left(N_B\geq 1 \right) &= \frac{3}{4} \text{ and } P \left(N_B = 2 \right) = \frac{1}{4} \\
+	\therefore \condp{N_B=2}{N_B\geq 1} &= \frac{1}{3} 
+\end{align}
+
+\newcard 
+
+From Baye's Theorem, we know that 
+\small\[ \condp{N_B=2}{N_B\geq 1} = \fcondp{N_B=2}{N_B\geq 1}\]\normalsize 
+
+But in the above expression 
+\begin{align}
+	\condp{N_B\geq 1}{N_B = 2} &= 1 \left( \because N_B = 2\implies N_B \geq 1\right) \\
+	P \left(N_B =2 \right) & = P \left(C_1 \right)\cdot P \left(C_2 \right) \\
+	&= \frac{1}{2}\cdot\frac{1}{2} = \frac{1}{4} \\ 
+	P \left(N_B\geq 1 \right) &= 1- P \left(N_B = 0 \right) \\
+	&= 1- \left[\frac{1}{2}\cdot\frac{1}{2} \right] = \frac{3}{4} 
+\end{align}
+
+And therefore 
+\[ \condp{N_B=2}{N_B \geq 1 } = \frac{1\times\frac{1}{4}}{\frac{3}{4}} = \frac{1}{3} \] 
+
+\newcard 
+
+Similarly $\condp{N_B=2}{C_1}$ will be as follows 
+
+\begin{align}
+\condp{N_B=2}{C_1} &= \fcondp{N_B=2}{C_1}  \\ 
+&= \frac{1}{2} 
+\end{align}
+
+\newcard 
+
+Again, Bayes' Theorem tells us that 
+
+\begin{align}
+	\condp{N_B=2}{C_1} &= \fcondp{N_B=2}{C_1}  \\
+	\text{But } \condp{C_1}{N_B=2} &= 1 \left(\because N_B=2 \implies C_1 \right) \\
+	P \left(N_B=2 \right) &= \frac{1}{2}\cdot\frac{1}{2} = \frac{1}{4} \\
+	P \left(C_1 \right) &= \frac{1}{2}
+\end{align}
+
+And therefore 
+\[ \condp{N_B=2}{C_1} = \dfrac{1\times\frac{1}{4}}{\frac{1}{2}} = \frac{1}{2} \]
+
+
+
+\end{document}
