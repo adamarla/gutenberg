@@ -1,71 +1,42 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-Find \[ \frac{dy}{dx}\] if \[ (x^2+y^2)^2 = xy \]
-%</tex>
-      <tex>\\ %text
-\textbf{Be a detective}\\
-If we told you that \[(x^2+y^2)^2=xy\implies\]
-\[  \frac{2}{x^2+y^2}\left[ 2x + 2y\frac{dy}{dx}\right] = \frac{1}{x} + \frac{1}{y}\frac{dy}{dx} \]
-then \underline\text{which of the following did we do}?
-%</tex>
-      <tex>\\ %text
-What is $\frac{dy}{dx}$ given that 
-\[  \frac{2}{x^2+y^2}\left[ 2x + 2y\frac{dy}{dx}\right] = \frac{1}{x} + \frac{1}{y}\frac{dy}{dx} \]
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-(x^2+y^2)^2 = xy \implies &amp;\log (x^2+y^2)^2 = \log (x\cdot y) \\
-\therefore \frac{d}{dx}\log (x^2+y^2)^2 &amp;= \frac{d}{dx}\log (x\cdot y)
-\end{align} </tex>
-         <tex>\begin{align}
-(x^2+y^2)^2 = xy &amp;\implies \frac{d}{dx}(x^2+y^2)^2 = \frac{d}{dx}(x\cdot y)
-\end{align} </tex>
-      </options>
-      <reason>
-         <tex>%text
-Look at the given expression again. 
-\[\underbrace{\frac{2}{x^2+y^2}}_A\left[ 2x + 2y\frac{dy}{dx}\right] = \underbrace{\frac{1}{x}}_B + \underbrace{\frac{1}{y}}_C\frac{dy}{dx}\]
-
-Each of the terms - A,B and C - is in the 
-\[\frac{1}{f(x)}\] form. And how do we get a \[\frac{1}{f(x)}\] 
-term? By differentiating $\log f(x)$. 
-
-\[ \qquad \frac{d}{dx}\log f(x) = \underbrace{\frac{1}{f(x)}}_{\text{See}}\cdot\frac{d}{dx}f(x) \] 
-
-Hence, the \underline\text{first thing we must have done}
-is take logarithms on both sides. 
-
-Then, we differentiated - like so
-%
-\begin{align}
-\log (x^2+y^2)^2 &amp;= \log (xy)\\
-\implies 2\log (x^2+y^2) &amp;= \log x + \log y  \\
-\therefore \frac{2}{(x^2+y^2)}\frac{d}{dx}(x^2+y^2) &amp;= \frac{1}{x} + \frac{1}{y}\frac{dy}{dx} \\
-\text{or }\frac{2}{(x^2+y^2)}\left[ 2x + 2y\frac{dy}{dx}\right] &amp;= \frac{1}{x} + \frac{1}{y}\frac{dy}{dx}
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\frac{dy}{dx} = \frac{y}{x}\left[ \frac{y^2-3x^2}{3y^2-x^2} \right] </tex>
-         <tex>\frac{dy}{dx} = \frac{y}{x} </tex>
-      </options>
-      <reason>
-         <tex>%text
-\underline\text{It is only algebra in this step}. 
-
-%
-\begin{align}
-\frac{2}{x^2+y^2}\left[ 2x + 2y\frac{dy}{dx}\right] &amp;= \frac{1}{x} + \frac{1}{y}\frac{dy}{dx}\\
-\frac{4x}{x^2+y^2} + \frac{4y}{x^2+y^2}\frac{dy}{dx} &amp;= \frac{1}{x} + \frac{1}{y}\frac{dy}{dx} \\
-\left[ \frac{4y}{x^2+y^2}-\frac{1}{y} \right]\frac{dy}{dx} &amp;= \left[\frac{1}{x}-\frac{4x}{x^2+y^2} \right]\\
-\text{or }\frac{dy}{dx} &amp;= \frac{y}{x}\left[ \frac{y^2-3x^2}{3y^2-x^2} \right]
-\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="21">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+      <tex isImage="true" correct="false">img_tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="55"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-5.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-6.svg</tex>
+    </reason>
+    <skills>
+      <skill id="33"/>
+      <skill id="51"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-7.svg</tex>
+      <tex isImage="true" correct="false">img_tex-8.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-9.svg</tex>
+    </reason>
+    <skills>
+      <skill id="1"/>
+    </skills>
+  </step>
 </question>
