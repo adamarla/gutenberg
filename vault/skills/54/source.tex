@@ -1,0 +1,46 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+\begin{skill}
+\textcolor{blue}{Solving the Equation}
+
+Identifying the appropriate method
+for solving given the equation's type
+\end{skill}
+
+%
+
+\newcard
+
+%text
+All differential equations are not solved 
+in the same way\newline 
+
+The most efficient way to solve a differential 
+depends on the \underline{type of equation}\newline 
+
+For the types you will encounter, the 
+texhniques are summarized below
+
+%
+\begin{center}
+\begin{tabular}{NN}
+\midrule 
+\text{Type} & \text{First Step} \\
+\midrule 
+\frac{dy}{dx} = g(x)\cdot h(y) &  \frac{dy}{h(y)} = g(x)\cdot dx \\
+& \therefore \int\frac{dy}{h(y)} = \int g(x)\cdot dx \\
+\midrule 
+\frac{dy}{dx} = g\left(\frac{y}{x}\right) & \text{Let }y = v\cdot x \\
+& \therefore \frac{dy}{dx} = v + x\frac{dv}{dx} = g(v)\\
+\midrule 
+\frac{dy}{dx} + Px = Q & \text{Find the integrating factor} \\
+& I(x) = e^{\int P\cdot dx} \\
+& \text{Multiply both sides with $I(x)$} \\
+\midrule 
+\end{tabular}
+\end{center} 
+
+\end{document}
