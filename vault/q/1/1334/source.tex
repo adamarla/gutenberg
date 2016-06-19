@@ -1,0 +1,61 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+Evaluate the following integral 
+\[ \quad R = \int_0^{\frac\pi{2}} \left(2\log\sin x - \log\sin 2x \right)\cdot dx \] 
+
+\newcard 
+\begin{align}
+	2\log \left( \sin x \right) - \log \left(\sin 2x \right) &= \log \left(\tan x \right) - \log 2 
+\end{align}
+
+\newcard 
+
+\begin{align}
+	2\log \left( \sin x \right) - \log \left(\sin 2x \right) &= 
+	2\log \left(\sin x \right) \\
+	&-\left[\log 2 + \log \sin x \right] \\ 
+	&= \log \left(\sin x \right) -\log 2 
+\end{align}
+
+\newcard 
+
+Just simple algebra involving $\log$ terms
+\begin{align}
+	2\log \left( \sin x \right) &- \log \left(\sin 2x \right) =\log \left(\sin^2 x \right)-\log \left(\sin 2x \right) \\
+	&= \log \left[\dfrac{\sin^2 x}{\sin 2x} \right] = \log \left[\dfrac{\sin^2 x}{2\sin x \cdot\cos x}\right] \\
+	&= \log \left[\dfrac{\tan x}{2} \right] = \log \left(\tan x \right)-\log 2
+\end{align}
+
+\newcard 
+
+\begin{align}
+R &= \int_0^{\frac\pi{2}} \left[\log \left(\tan x \right) - \log 2 \right]\cdot dx \\
+&= \underbrace{\int_0^{\frac\pi{2}}\log \left(\tan x \right)\cdot dx}_{A} - \int_0^{\frac\pi{2}}\log 2\cdot dx \\
+\text{And } A &= \int_0^{\frac\pi{2}}\log \left(\tan x \right)\cdot dx 
+=\int_0^{\frac\pi{2}}\log \left(\cot x \right)\cdot dx \\
+\therefore A &= 0 \implies R = -\frac\pi{2}\cdot\log 2
+\end{align}
+
+\newcard 
+
+This step is about using the standard result 
+\[\qquad \int_0^a f(x)\cdot dx = \int_0^a f \left(a-x \right)\cdot dx  \]
+
+So, starting with $R$ 
+\begin{align}
+R &= \int_0^{\frac\pi{2}} \left[\log \left(\tan x \right) - \log 2 \right]\cdot dx \\
+&= \underbrace{\int_0^{\frac\pi{2}}\log \left(\tan x \right)\cdot dx}_{A} - \int_0^{\frac\pi{2}}\log 2\cdot dx \\
+\text{But } A &= \int_0^{\frac\pi{2}}\log \left(\tan x \right)\cdot dx 
+\\
+&=\int_0^{\frac\pi{2}}\log \left[\tan \left(\frac\pi{2} - x \right)\right] \cdot dx \\
+&= \int_0^{\frac\pi{2}}\log \left(\cot x \right)\cdot dx  \\
+\therefore A + A  &= \int_0^{\frac\pi{2}} \left[\log \left(\tan x \right) + \log \left(\cot x \right) \right]\cdot dx \\
+&= \int_0^{\frac\pi{2}} \log \left(\tan x\cdot \cot x \right)\cdot dx \\ 
+&= \int_0^{\frac\pi{2}} \log 1\cdot dx = 0 \quad (\because \log 1 = 0) \\
+\text{Hence } R &= A - \log 2\int_0^{\frac\pi{2}} dx = 0 - \log 2\cdot \frac\pi{2} \\
+&= -\frac\pi{2}\cdot \log 2 
+\end{align}
+\end{document}
