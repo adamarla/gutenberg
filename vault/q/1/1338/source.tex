@@ -1,0 +1,74 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+%text
+Find $\dfrac{dy}{dx}$ if $(x^2+y^2)^2 = xy$
+%
+
+\newcard
+
+\begin{align}
+	(x^2+y^2)^2 &= xy \\
+	\therefore 2\log \left(x^2+y^2 \right) &= \log x + \log y 
+\end{align}
+
+\newcard
+
+\begin{align}
+	(x^2+y^2)^2 &= xy \\
+	\therefore 2\log \left(x^2+y^2 \right) &= \log x \cdot \log y 
+\end{align}
+
+\newcard 
+
+Recall that 
+\begin{align}
+	\log a^b = b\cdot\log a \text{ and }&\log \left(a\cdot b \right) = \log a + \log b \\
+	\therefore \log \left(x^2+y^2 \right)^2 &= \log \left(x\cdot y \right) \\
+	\implies 2\log \left(x^2 + y^2 \right) &= \log x + \log y 
+\end{align}
+
+
+\newcard
+
+\begin{align}
+	2\log \left(x^2 + y^2 \right) &= \log x + \log y \\
+	\implies \frac{2}{\left(x^2 + y^2 \right)} \left[2x + 2y\frac{dy}{dx} \right] &= \frac{1}{x} + \frac{1}{y}\frac{dy}{dx}
+\end{align}
+
+\newcard 
+
+This is straight-up differentiation using the following two results 
+\[ \quad\frac{d}{dx}\log y = \frac{1}{y}\frac{dy}{dx}\text{ and } \frac{d}{dx} x^n = n\cdot x^{n-1}\]
+%
+\begin{align}
+2\log (x^2+y^2) &= \log x + \log y  \\
+\therefore 2\frac{d}{dx} \log \left(x^2 + y^2 \right) &= \frac{d}{dx} \left[\log x + \log y \right] \\
+\text{or }\frac{2}{(x^2+y^2)}\frac{d}{dx}(x^2+y^2) &= \frac{1}{x} + \frac{1}{y}\frac{dy}{dx} \\
+\therefore \frac{2}{(x^2+y^2)}\left[ 2x + 2y\frac{dy}{dx}\right] &= \frac{1}{x} + \frac{1}{y}\frac{dy}{dx}
+\end{align}
+
+\newcard
+
+And hence, $\dfrac{dy}{dx} = \dfrac{y}{x}\left[ \dfrac{y^2-3x^2}{3y^2-x^2} \right]$
+
+\newcard
+
+And hence, $\dfrac{dy}{dx} = \dfrac{y}{x}$
+
+\newcard
+
+%text
+It is only some algebra in this step
+
+%
+\begin{align}
+\frac{2}{x^2+y^2}\left[ 2x + 2y\frac{dy}{dx}\right] &= \frac{1}{x} + \frac{1}{y}\frac{dy}{dx}\\
+\frac{4x}{x^2+y^2} + \frac{4y}{x^2+y^2}\frac{dy}{dx} &= \frac{1}{x} + \frac{1}{y}\frac{dy}{dx} \\
+\left[ \frac{4y}{x^2+y^2}-\frac{1}{y} \right]\frac{dy}{dx} &= \left[\frac{1}{x}-\frac{4x}{x^2+y^2} \right]\\
+or \frac{dy}{dx} &= \frac{y}{x}\left[ \frac{y^2-3x^2}{3y^2-x^2} \right]
+\end{align}
+
+\end{document}
