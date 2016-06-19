@@ -1,76 +1,41 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-Solve the differential equation:
-\[ \qquad \frac{dy}{dx} + y = \cos x - \sin x \]
-%</tex>
-      <tex>\\ %text
-\underline\text{What should $f(x)$ be} for the following 
-to be true?
-\[ f(x)\cdot \left[ \frac{dy}{dx} + y \right] = \frac{d}{dx} \left( f(x) \cdot y \right) \] 
-%</tex>
-      <tex>\\ %text
-Given the integrating factor $f(x)$, what 
-equation do we need to solve now?
-%</tex>
-      <tex>\\ %text
-\underline\text{What will y be} given that
-\[ \qquad \frac{d}{dx} (e^x\cdot y) = e^x\cdot (\cos x - \sin x) \]
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">f(x) = e^ x </tex>
-         <tex>f(x) = x </tex>
-      </options>
-      <reason>
-         <tex>%text
-$f(x)$ is what is called the \underline\text{integrating factor}.
-And it makes life simple! Generally speaking,
-$f(x)$ does the following
-
-\[ f(x)\cdot \underbrace{\left[ \frac{dy}{dx} + P(x)\cdot y \right]}_{\text{Differential equation to solve}} \longrightarrow \frac{d}{dx}(f(x)\cdot y) \]
-
-And \underline\text{in this problem},
-%
-\begin{align}
-P(x) = 1 \implies f(x) &amp;= e^{\int P(x)\cdot dx} = e^{\int dx} = e^x \\
-\therefore e^x\cdot \left[ \frac{dy}{dx} + y \right] &amp;= 
-e^x\frac{dy}{dx} + e^x\cdot y = \frac{d}{dx} (e^x\cdot y )
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">e^x \frac{dy}{dx} + e^x\cdot y = \frac{d}{dx} (e^x\cdot y) = e^x\cdot (\cos x - \sin x)</tex>
-         <tex>e^x \frac{dy}{dx} + e^x\cdot y = \frac{d}{dx} (e^x\cdot y) =  (\cos x - \sin x)</tex>
-      </options>
-      <reason>
-         <tex>%text
-Did you remember to \underline\text{multiply both sides}
-by the integrating factor $f(x)$? 
-
-If you multiply one side of an equation with 
-something, then you must also multiply the 
-other side with the same thing. 
-%</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">y = \cos x + \frac{C}{e^x} </tex>
-         <tex>y = \cos x + C </tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-\frac{d}{dx} (e^x\cdot y) &amp;= e^x\cdot (\cos x - \sin x) \\
-\implies e^x\cdot y &amp;= \underbrace{\int e^x\cdot (\cos x -\sin x)\cdot dx}
-_{\text{Looks like }\int e^x\cdot [g(x) + g'(x)]\cdot dx = e^x\cdot g(x) + C}\\
-&amp;= \underbrace{e^x\cdot \cos x + C}_{g(x) = \cos x} \\
-\implies y &amp;= \cos x + \frac{C}{e^x} 
-\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="0">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+      <tex isImage="true" correct="false">img_tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="53"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-5.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-6.svg</tex>
+    </reason>
+    <skills>
+      <skill id="54"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-7.svg</tex>
+      <tex isImage="true" correct="false">img_tex-8.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-9.svg</tex>
+    </reason>
+    <skills>
+      <skill id="50"/>
+    </skills>
+  </step>
 </question>

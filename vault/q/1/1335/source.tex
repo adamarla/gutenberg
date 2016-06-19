@@ -1,0 +1,77 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+%text
+Solve the differential equation
+\[ \qquad \frac{dy}{dx} + y = \cos x - \sin x \]
+%
+
+\newcard
+
+$\dfrac{dy}{dx} + y = \cos x - \sin x$ is a \underline{linear} differential equation 
+
+\newcard 
+
+$\dfrac{dy}{dx} + y = \cos x - \sin x$ is a \underline{homogenous} differential equation
+
+\newcard 
+
+$\dfrac{dy}{dx} + y = \cos x - \sin x$ looks exactly like
+\[ \qquad\qquad \frac{dy}{dx} + y\cdot P(x) = Q(x) \]
+
+which, as you may recall, is a \underline{linear} differential equation \newline 
+
+And therefore, so is $\frac{dy}{dx} + y = \cos x-\sin x$ 
+
+\newcard 
+
+\begin{align}
+	\dfrac{dy}{dx} + y &= \cos x - \sin x \\
+	\implies \frac{d}{dx} \left(e^x\cdot y \right) &= e^x\cdot \left(\cos x - \sin x \right)
+\end{align}
+
+\newcard 
+
+The \underline{integrating factor} $I(x) = e^{\int P(x)\cdot dx}$ , where $P(x) = 1$ (compare with the form of a linear differential equation) \newline 
+
+And hence, $I(x) = e^{\int dx} = e^x$. Which means that when we multiply both sides by $I(x)$, then 
+
+\begin{align}
+e^x\cdot \left[\frac{dy}{dx} + y \right] &= e^x\cdot \left(\cos x - \sin x \right) \\
+e^x\cdot\frac{dy}{dx} + e^x\cdot y &= e^x\cdot \left(\cos x - \sin x \right) \\
+\text{or } \frac{d}{dx} \left(e^x\cdot y \right) &= e^x\cdot \left(\cos x - \sin x \right)
+\end{align}
+
+\newcard 
+\[ \int e^x\cdot \left(\cos x - \sin x \right)\cdot dx = e^x\cdot \cos x + C \]
+
+And therefore, 
+\[ \qquad \qquad y = \cos x + \dfrac{C}{e^x} \]
+
+\newcard 
+\[ \int e^x\cdot \left(\cos x - \sin x \right)\cdot dx = -e^x\cdot \sin x + C \]
+
+And therefore, 
+\[ \qquad \qquad y = -\sin x + \dfrac{C}{e^x} \]
+
+\newcard 
+
+\begin{align}
+\dfrac{d}{dx} \left(e^x\cdot y \right) &= e^x\cdot \left(\cos x - \sin x \right) \\
+\implies e^x\cdot y &= \int e^x\cdot \left(\cos x -\sin x \right)\cdot dx \\
+\text{And so, } y &= \frac{1}{e^x} \left[\int e^x\cdot \left(\cos x - \sin x \right) \cdot dx \right]
+\end{align}
+
+Notice also that $\frac{d}{dx}\cos x = -\sin x$ \newline 
+
+And therefore 
+\begin{align}
+\int e^x\cdot \left[\cos x -\sin x \right]\cdot dx &= e^x\cdot \cos x + C \\ 
+\because \int e^x\cdot \left(f(x) + f'(x) \right)\cdot dx &= e^x \cdot f(x) + C  \\
+\therefore e^x\cdot y &= e^x\cdot \cos x + C  \\
+\implies y &= \cos x + \frac{C}{e^x} 
+\end{align}
+
+\end{document}
