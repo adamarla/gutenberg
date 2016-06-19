@@ -1,0 +1,9 @@
+
+\NeedsTeXFormat{LaTeX2e}[1994/06/01]
+\ProvidesPackage{prepwell-cmds}[2016/01/01 Chapter-wise macros for commonly used formulae]
+
+% Chapter: Probability 
+
+\newcommand\condp[2]{ P\left(#1\,\vert\,#2\right) }
+\newcommand\fcondp[2]{ \frac{\condp{#2}{#1}\cdot P\left(#1\right)}{P\left(#2\right)} }
+
