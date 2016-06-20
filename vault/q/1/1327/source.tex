@@ -1,0 +1,48 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+%text
+Evaluate the following \[\qquad \qquad \int\dfrac{\sec^2 x}{3 + \tan x}\cdot dx \]
+%
+
+\newcard 
+
+If $z = \tan x + 3$, then 
+\[ I = \int \frac{\sec^2 x}{\tan x+3}\cdot dx = \int \frac{dz}{z} \]
+
+\newcard 
+
+If $z = \tan x + 3$, then 
+\begin{align}
+	\tan x &= z-3 \\
+	\therefore \sec^2 x &= \left(1+\tan^2 x \right) = \left[\left(z-3 \right)^2 + 1 \right] \\
+	&= z^2 -6z + 10  \\
+	\therefore I &= \int \frac{\sec^2 x}{\tan x + 3}\cdot dx \\
+	&= \int \frac{z^2-6z + 10}{z}\cdot dz \\ 
+	&= \int z\cdot dz - 6\int dz + 10\int \frac{dz}{z}
+\end{align}
+
+\newcard 
+
+Well, if $z = \tan x + 3$, then $dz = \sec^2 x\cdot dx$\newline 
+
+And therefore 
+\begin{align}
+	I &= \int \frac{\sec^2 x}{\tan x+3}\cdot dx = \int \frac{dz}{z}
+\end{align}
+
+\newcard 
+
+\[ \qquad I = \log \vert \tan x + 3\vert + C \] 
+
+\newcard 
+
+We did the hard part. Now we just apply the standard result 
+
+\begin{align}
+	I &= \int \frac{dz}{z} = \log \vert z\vert  + C \\ 
+	&= \log \vert \tan x + 3\vert + C 
+\end{align}
+\end{document}
