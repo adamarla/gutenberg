@@ -1,53 +1,54 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-Differentiate the following with respect to $x$
-\[ \qquad x^{\sin x} + (\sin x)^{\cos x} \]
-%</tex>
-      <tex>\\ %text
-In \[ y = \underbrace{x^{\sin x}}_A + (\sin x)^{\cos x}\], what is \[\frac{dA}{dx}\]?
-%</tex>
-      <tex>\\ %text
-Similarly, what will \[\frac{dB}{dx}\] be in 
-\[ \qquad y = x^{\sin x} + \underbrace{(\sin x)^{\cos x}}_B ?\]
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">\frac{dA}{dx} = x^{\sin x}\cdot\left( \frac{\sin x}{x} + \log x\cdot \cos x\right)</tex>
-         <tex>\frac{dA}{dx} = \sin x\cdot x^{\sin x - 1}</tex>
-      </options>
-      <reason>
-         <tex>%text
-$\frac{d}{dx}x^N = N\cdot x^{N-1}$ \underline\text{only for constant N}.
-
-\underline\text{But what is always true} is that 
-%
-\begin{align}
-A &amp;= x^{\sin x}\implies \log A = \sin x\cdot \log x \\
-\therefore \frac{d}{dx}\log A &amp;= \frac{1}{A}\frac{dA}{dx} 
-= \underbrace{\frac{\sin x}{x} + \log x\cdot\cos x}_{\text{Chain Rule}}\\
-\therefore \frac{dA}{dx} &amp;= x^{\sin x}\cdot\left( \frac{\sin x}{x} + \log x\cdot \cos x\right) 
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\frac{dB}{dx} = (\sin x)^{\cos x-1}\left[\cos^2 x - \sin^2 x\cdot\log(\sin x) \right]</tex>
-         <tex>\frac{dB}{dx} = (\sin x)^{\cos x}\left[\cos^2 x + \sin^2 x\cdot\log(\sin x) \right]</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-B = &amp;(\sin x)^{\cos x} \implies\log B = \cos x\cdot \log (\sin x) \\
-\therefore \frac{d\log B}{dx} &amp;= 
-\underbrace{\left[ \cos x\left(\frac{\cos x}{\sin x}\right) - \log (\sin x)\cdot \sin x \right]}
-_{\text{Chain Rule}}\\
-\text{or }\frac{1}{B}\frac{dB}{dx} &amp;= \left[ \frac{\cos^2 x - \sin^2 x\cdot\log(\sin x)}{\sin x}\right]\\
-\therefore \frac{dB}{dx} &amp;= (\sin x)^{\cos x}\left[ \frac{\cos^2 x - \sin^2 x\cdot\log(\sin x)}{\sin x}\right] \\
-&amp;=(\sin x)^{\cos x-1}\left[\cos^2 x - \sin^2 x\cdot\log(\sin x) \right]
-\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="0">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true" correct="false">img_prefab-06.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_prefab-05.svg</tex>
+    </reason>
+    <skills>
+      <skill id="55"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_prefab-04.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_prefab-07.svg</tex>
+    </reason>
+    <skills>
+      <skill id="55"/>
+      <skill id="31"/>
+      <skill id="51"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_prefab-01.svg</tex>
+      <tex isImage="true" correct="false">img_prefab-10.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_prefab-02.svg</tex>
+    </reason>
+    <skills>
+      <skill id="51"/>
+      <skill id="31"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_prefab-09.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_prefab-08.svg</tex>
+    </reason>
+    <skills>
+      <skill id="1"/>
+    </skills>
+  </step>
 </question>
