@@ -1,83 +1,28 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-Evaluate \[ \int_0^\pi \frac{e^{\cos x}}{e^{\cos x} + e^{-\cos x}}\cdot dx \] 
-%</tex>
-      <tex>\\ %text
-Your friend makes the following assertion
-\[ \int_0^\pi \frac{e^{\cos x}}{e^{\cos x} + e^{-\cos x}}dx \neq \int_0^\pi \frac{e^{-\cos x}}{e^{-\cos x} + e^{\cos x}}dx\]
-
-\underline\text{Is he/she right? Or is he/she wrong?}
-%</tex>
-      <tex>\\ %text
-\underline\text{Check our logic} 
-Given the results from Step 1, 
-\underline\text{would the following be true}?
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">%text
-\underline\text{No. The friend is wrong. }
-
-%
-\begin{align}
-\int_0^a f(x)\cdot dx &amp;= \int_0^a f(a-x)\cdot dx \\
-\text{and }\cos\left( \pi - x \right) &amp;= -\cos x \\
-\therefore \int_0^\pi \frac{e^{\cos x}\cdot dx}{e^{\cos x} + e^{-\cos x}}
-&amp;= \int_0^\pi \frac{e^{\cos (\pi-x)}\cdot dx}{e^{\cos (\pi-x)} + e^{-\cos (\pi-x)}}\\
-&amp;= \int_0^\pi\frac{e^{-\cos x}\cdot dx}{e^{-\cos x} + e^{\cos x}}
-\end{align} </tex>
-         <tex>%text
-\underline\text{Yes. The friend is correct.}
-
-%
-\begin{align}
-\text{If }f(x) &amp;= \frac{e^{\cos x}}{e^{\cos x} + e^{-\cos x}} \\
-\text{and }g(x) &amp;= \frac{e^{-\cos x}}{e^{-\cos x} + e^{\cos x}} \\
-\text{then as } f(x) &amp;\neq g(x) \\
-\text{so }\int_0^\pi f(x)\cdot dx &amp;\neq \int_0^\pi g(x)\cdot dx 
-\end{align} </tex>
-      </options>
-      <reason>
-         <tex>%text
-In fact 
-\[ \int_0^\pi \frac{e^{\cos x}\cdot dx}{e^{\cos x} + e^{-\cos x}}=\int_0^\pi \frac{e^{-\cos x}\cdot dx}{e^{-\cos x} + e^{\cos x}}\] 
-
-because there is a \underline\text{nice, little rule} that says
-\[ \underbrace{\int_0^a f(x)\cdot dx}_{\text{Going from left to right}} = \underbrace{\int_0^a f(a-x)\cdot dx }_{\text{Going from right to left}} \]
-%</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{align} 
-A &amp;= \int_0^\pi\frac{e^{\cos x}\cdot dx}{e^{\cos x} + e^{-\cos x}} \\
-&amp;= \int_0^\pi\frac{e^{-\cos x}\cdot dx}{e^{-\cos x} + e^{\cos x}} \\
-\therefore A + A &amp;= \int_0^\pi dx = \pi \implies A = \frac\pi{2} 
-\end{align} </tex>
-      </options>
-      <reason>
-         <tex>%text
-We established in the last step that 
-
-%
-\begin{align} 
-A &amp;= \int_0^\pi\frac{e^{\cos x}\cdot dx}{e^{\cos x} + e^{-\cos x}} \\
-&amp;= \int_0^\pi\frac{e^{-\cos x}\cdot dx}{e^{-\cos x} + e^{\cos x}}
-\end{align} \\ 
-
-%text
-
-Notice that the \underline\text{denominator is the same} in 
-both expressions. 
-%
-\begin{align} 
-\text{And }\therefore A + A &amp;= \int_0^\pi\frac{e^{\cos x} + e^{-\cos x}\cdot dx}{e^{\cos x} + e^{-\cos x}}\\
-&amp;= \int_0^\pi dx = \pi \implies A = \frac\pi{2} 
-\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="23">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-3.svg</tex>
+    </reason>
+    <skills>
+      <skill id="45"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-4.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-5.svg</tex>
+    </reason>
+    <skills>
+      <skill id="45"/>
+    </skills>
+  </step>
 </question>

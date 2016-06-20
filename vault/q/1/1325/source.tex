@@ -1,0 +1,46 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+
+\newcommand\ec{e^{\cos x}}
+\newcommand\emc{e^{-\cos x}}
+\newcommand\dnm{\ec + \emc} 
+
+%text
+Evaluate the following \[ \qquad \int_0^\pi \frac{\ec}{\dnm}\cdot dx \]
+%
+
+\newcard
+
+\begin{align}
+	A &= \int_0^\pi \frac{\ec}{\dnm}\cdot dx = \int_0^\pi \frac{\emc}{\dnm}\cdot dx 
+\end{align}
+
+\newcard 
+
+When evaluating definite integrals, we have access to some additional results that don't apply to indefinite integrals \newline 
+
+One of these is \[\qquad \int_0^a f(x)\cdot dx = \int_0^a f \left(a-x \right)\cdot dx\]
+
+When applied to the given integral, we get 
+\begin{align}
+	A &= \int_0^\pi \frac{e^{\cos \left(\pi -x \right)}}{e^{\cos \left(\pi -x \right)} + e^{\cos \left(\pi - x \right)}}\cdot dx  \\
+	&= \int_0^\pi \frac{\emc}{\emc + \ec}\cdot dx 
+\end{align}
+
+\newcard 
+
+\[ \qquad A +A = \pi \implies A = \frac\pi{2} \]
+
+\newcard 
+
+\begin{align}
+A &= \int_0^\pi \frac{\ec}{\dnm}\cdot dx \\ 
+&= \int_0^\pi \frac{\emc}{\dnm}\cdot dx \\
+\therefore A + A &= \int_0^\pi \left[\frac{\ec + \emc}{\dnm} \right]\cdot dx \\
+\implies 2A &= \int_0^\pi dx = \pi \text{ or } A = \frac\pi{2} 
+\end{align}
+
+\end{document}
