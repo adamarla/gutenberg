@@ -5,6 +5,74 @@
 
 \begin{document} 
 
+\newcommand\ft{x^{\sin x}}
+\newcommand\st{\left(\sin x \right)^{\cos x}}
+
 Differentiate the following 
 \[ \qquad x^{\sin x} + \left(\sin x \right)^{\cos x} \] 
+
+\newcard 
+
+\begin{align}
+	y &= \underbrace{\ft}_A + \underbrace{\st}_B \\
+	\therefore \log y &= \log A + \log B  \\
+	\implies \frac{d}{dx}\log y &= \frac{d}{dx}\log A + \frac{d}{dx}\log B \\
+	\text{where } \frac{d}{dx}\log y &= \frac{1}{y}\cdot \frac{dy}{dx}
+\end{align}
+
+And this is how we will find $\frac{dy}{dx}$ 
+
+\newcard 
+
+If $y = A + B$, then $\frac{dy}{dx} = \frac{dA}{dx} + \frac{dB}{dx}$ \newline 
+
+But it does \underline{not} mean that 
+\[ \qquad \log y = \log A + \log B \] 
+
+\newcard 
+
+\begin{align}
+	A &= \ft \implies \log A = \sin x\cdot \left(\log x \right) \\
+	\therefore \frac{1}{A} \frac{dA}{dx} &= \left[\frac{\sin x}{x} + \left(\log x \right)\cdot \cos x  \right] \\
+	\implies \frac{dA}{dx} &= \ft \left[\frac{\sin x}{x} + \log \left(x^{\cos x} \right)\right]
+\end{align}
+
+\newcard 
+
+\begin{align}
+	A &= \ft \implies \frac{dA}{dx} = x^{ \sin x - 1} 
+\end{align}
+
+\newcard 
+
+$\dfrac{d}{dx}x^n = n\cdot x^{n-1}$ is true \underline{only when} $n$ is a constant. If it is anything else, then we must look at taking $\log$. Which is why 
+
+\begin{align}
+	A &= \ft \implies \log A = \sin x\cdot \left(\log x \right) \\
+	\therefore \frac{1}{A} \frac{dA}{dx} &= \left[\frac{\sin x}{x} + \left(\log x \right)\cdot \cos x  \right] \\
+	\implies \frac{dA}{dx} &= \underbrace{\ft \left[\frac{\sin x}{x} + \log \left(x^{\cos x} \right)\right]}_{b\cdot \log a = \log \left(a^b \right)}
+	\end{align} 
+	
+	\newcard 
+	
+	Similarly 
+	\[ \frac{dB}{dx} = \st \left[\frac{\cos^2 x}{\sin x} - \log \left(\sin x \right)^{\sin x} \right]\] 
+	
+	And hence 
+	\begin{align}
+	\frac{dy}{dx} &= \ft \left[\frac{\sin x}{x} + \log \left(x^{\cos x} \right)\right] \\
+	&+ \st \left[\frac{\cos^2 x}{\sin x} - \log \left(\sin x \right)^{\sin x} \right]
+\end{align}
+	
+	\newcard 
+	
+	\begin{align}
+	   B &= \st \implies \log B = \cos x\cdot \left(\log \sin x \right) \\
+	   \therefore \frac{1}{B}\frac{dB}{dx} &= \left[\cos x \frac{d}{dx} \left(\log\sin x \right) + \left(\log \sin x \right)\cdot \frac{d}{dx}\cos x  \right] \\
+	   &= \left[\frac{\cos x}{\sin x}\cdot \cos x - \left(\log \sin x \right)\sin x \right] \\
+	   &= \left[\frac{\cos^2 x}{\sin x} - \log \left(\sin x \right)^{\sin x}\right] \\
+	   \therefore \frac{dB}{dx} &= \st \left[\frac{\cos^2 x}{\sin x} - \log \left(\sin x \right)^{\sin x}\right] \\
+	   \text{and } \frac{dy}{dx} &= \overbrace{\ft \left[\frac{\sin x}{x} + \log \left(x^{\cos x} \right)\right]}^{\frac{dA}{dx}} \\
+	&+ \underbrace{\st \left[\frac{\cos^2 x}{\sin x} - \log \left(\sin x \right)^{\sin x} \right]}_{\frac{dB}{dx}}
+\end{align}
 \end{document} 
