@@ -1,0 +1,53 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+\newcommand\prange{\left[-\frac{\pi}{2}, \frac{\pi}{2} \right]}
+%text
+What will be the principal value of the following? 
+\[\qquad  \sin^{-1}\sin\left(\frac{3\pi}{5}\right) \]
+%
+
+\newcard
+
+\[ \sin^{-1} x \in \prange \]
+
+\newcard 
+\[ \sin^{-1} x \in \left[0,\pi\right] \]
+
+\newcard 
+
+When we say $\sin^{-1} x = \theta$, then $\theta$ belongs to what is called 
+the \underline{principal range} \newline 
+
+It is the smallest range that gives all possible values of $\sin\theta$\newline 
+
+And for $\sin^{-1} x$, this range is $\prange$ 
+
+\newcard 
+
+\begin{align}
+	\sin \left(\frac{3\pi}{5} \right) &= \sin \left(\frac{2\pi}{5} \right) \\
+	\frac{3\pi}{5} \notin \prange &\text{ but } \frac{2\pi}{5}\in \prange \\
+	\therefore \sin^{-1} \left(\sin \frac{3\pi}{5} \right) &= \frac{2\pi}{5}
+\end{align}
+
+\newcard 
+
+\begin{align}
+	\sin^{-1} \left(\sin \frac{3\pi}{5} \right) &= \frac{3\pi}{5} 
+\end{align}
+\newcard 
+
+We established that the principal range of $\sin^{-1} x$ is $\prange$\newline 
+
+However, note that 
+\[ \quad \frac{3\pi}{5}\notin \prange\, \left(\because \frac{3\pi}{5} > \frac{\pi}{2} \right) \] 
+
+Hence, the principal value \underline{cannot} be $\frac{3\pi}{5}$. But given that $\sin \left(\pi - x \right) = \sin x$, we can infer that 
+\[ \qquad \sin \frac{3\pi}{5} = \sin \left[\pi - \frac{3\pi}{5} \right] = \sin \frac{2\pi}{5} \]
+
+And $\frac{2\pi}{5}\in\prange$. Therefore, 
+\[ \qquad \sin^{-1} \left(\sin \frac{3\pi}{5} \right) = \frac{2\pi}{5}\]
+\end{document}

@@ -5,10 +5,10 @@
   </statement>
   <step>
     <options>
-      <tex isImage="true" correct="false">img_prefab-06.svg</tex>
+      <tex isImage="true" correct="false">img_tex-2.svg</tex>
     </options>
     <reason>
-      <tex isImage="true">img_prefab-05.svg</tex>
+      <tex isImage="true">img_tex-3.svg</tex>
     </reason>
     <skills>
       <skill id="55"/>
@@ -16,39 +16,29 @@
   </step>
   <step>
     <options>
-      <tex isImage="true">img_prefab-04.svg</tex>
+      <tex isImage="true">img_tex-4.svg</tex>
+      <tex isImage="true" correct="false">img_tex-5.svg</tex>
     </options>
     <reason>
-      <tex isImage="true">img_prefab-07.svg</tex>
+      <tex isImage="true">img_tex-6.svg</tex>
     </reason>
     <skills>
-      <skill id="55"/>
+      <skill id="33"/>
       <skill id="31"/>
       <skill id="51"/>
     </skills>
   </step>
   <step>
     <options>
-      <tex isImage="true">img_prefab-01.svg</tex>
-      <tex isImage="true" correct="false">img_prefab-10.svg</tex>
+      <tex isImage="true">img_tex-7.svg</tex>
     </options>
     <reason>
-      <tex isImage="true">img_prefab-02.svg</tex>
+      <tex isImage="true">img_tex-8.svg</tex>
     </reason>
     <skills>
       <skill id="51"/>
       <skill id="31"/>
-    </skills>
-  </step>
-  <step>
-    <options>
-      <tex isImage="true">img_prefab-09.svg</tex>
-    </options>
-    <reason>
-      <tex isImage="true">img_prefab-08.svg</tex>
-    </reason>
-    <skills>
-      <skill id="1"/>
+      <skill id="33"/>
     </skills>
   </step>
 </question>
