@@ -36,8 +36,8 @@ else
 
     # echo $width $height
 
-    let "deltax = $width / 20" 
-    let "deltay = $height / 20" 
+    let "deltax = $width / 50" 
+    let "deltay = $height / 50" 
 
     let "left = $deltax" 
     let "right = $width - $deltax" 

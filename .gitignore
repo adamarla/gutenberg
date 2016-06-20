@@ -4,6 +4,7 @@
 
 *.svg
 !img_[[:alnum:]]*.svg
+!vault/svg-library/*.svg
 
 last_compiled_on
 Makefile
