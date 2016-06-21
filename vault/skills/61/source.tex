@@ -1,0 +1,47 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff
+
+\begin{document} 
+\begin{skill}
+\textcolor{blue}{Standard Integrals \#3}
+
+Important integrals like 
+\small\[ \int \tan x \cdot dx, \int \frac{dx}{x^2-a^2}, \int \frac{dx}{\sqrt{x^2+a^2}}\]\normalsize
+\end{skill}
+
+\newcard 
+
+The following integrals are rather important and should be remembered\newline 
+
+The results are being presented without proof. However, with the correct substitution, one can derive all of the following results \newline 
+
+\begin{center}
+  \begin{tabular}{MN}
+  \toprule 
+        \text{Integral} & \text{Evaluates to}  \\
+   \midrule  
+   \int\tan x\cdot dx & \log \vert \sec x \vert + C \\ 
+    \midrule 
+    \int \cot x \cdot dx & \log\vert \sin x \vert + C \\ 
+    \midrule 
+    \int \sec x\cdot dx & \log\vert \sec x + \tan x\vert + C \\ 
+    \midrule 
+    \int \csc x \cdot dx & \log\vert \csc x - \cot x\vert + C \\
+    \midrule 
+    \int \frac{dx}{x^2-a^2} & \frac{1}{2a}\cdot \log \left\vert \frac{x-a}{x+a}\right\vert + C   \\	
+    \midrule
+    \int \frac{dx}{a^2-x^2} & \frac{1}{2a}\cdot \log \left\vert \frac{a-x}{a+x}\right\vert + C \\
+    \midrule 
+    \int \frac{dx}{x^2 + a^2} & \frac{1}{a}\cdot\tan^{-1} \left(\frac{x}{a} \right) + C \\ 
+    \midrule 
+    \int \frac{dx}{\sqrt{x^2-a^2}} & \log \vert x + \sqrt{x^2-a^2} \vert + C  \\
+    \midrule 
+    \int \frac{dx}{\sqrt{x^2+a^2}} & \log \vert x + \sqrt{x^2+a^2} \vert + C  \\
+    \midrule 
+    \int \frac{dx}{\sqrt{a^2-x^2}} & \sin^{-1} \left(\frac{x}{a} \right) + C \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+\end{document} 
