@@ -1,0 +1,32 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{skill}
+\textcolor{blue}{Completing the squares}
+
+Being able to do the following conversion
+\small\[ \quad ax^2 + bx + c \longrightarrow a\cdot \left(x + \alpha \right)^2 \pm \beta^2 \]\normalsize 
+\end{skill}
+
+\newcard 
+
+\underline{Any quadratic polynomial} $ax^2 + bx + c$ can be rewritten as 
+\[ \qquad a\cdot \left(x + \alpha \right)^2 + \beta^2\quad \left(a \neq 0 \right)\] 
+
+Here is how 
+
+\begin{align}
+	ax^2 &+ bx + c = a\cdot \left[x^2 + \frac{b}{a} x + \frac{c}{a} \right] \\
+	&= a\cdot \left[\underbrace{x^2 + 2\cdot \frac{b}{2a} + \left(\frac{b}{2a} \right)^2}_{\text{Look familiar?}} + \left \lbrace \frac{c}{a} - \left(\frac{b}{2a} \right)^2\right\rbrace  \right] \\
+	&= a\cdot \left(x + \frac{b}{2a} \right)^2 + \left(c-\frac{b^2}{4a} \right) \\
+	&\implies \alpha = \left(\frac{b}{2a} \right)\text{ and } \beta = \left(c-\frac{b^2}{4a} \right)
+\end{align}
+
+
+Completing the squares is a \underline{very handy trick}\newline 
+
+You will find it especially useful when evaluating integrals of quadratic polynomials 
+\end{document} 
