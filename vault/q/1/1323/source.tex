@@ -1,0 +1,32 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+%text
+If $\int_0^1 (3x^2 + 2x + k)\cdot dx = 0$, then
+find the value of $k$
+%
+
+\newcard
+
+\begin{align}
+	A &= \int_0^1 \left(3x^2 + 2x +k \right)\cdot dx \\
+	&= \left[x^3+x^2 + kx \right]_0^1 \\
+	\therefore A &= 0 \implies k = -2 
+\end{align}
+
+\newcard 
+
+All that is required is the basic result \[\qquad \int x^n\cdot dx = \frac{x^{n+1}}{n+1}\] 
+
+And we get 
+\begin{align}
+	A &= \int_0^1 \left(3x^2 + 2x +k \right)\cdot dx \\
+	&= \left[3 \frac{x^3}{3} + 2 \frac{x^2}{2} + kx \right]_0^1 \\ 
+	&= \left[x^3+x^2 + kx \right]_0^1 \\
+	\therefore A &= 0 \implies \left(1+1+k \right) = 0 \\
+	\implies k &= -2 
+\end{align}
+
+\end{document}

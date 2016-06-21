@@ -1,114 +1,42 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-If \[ y = 3\cos(\log x) + 4\sin(\log x)\], then show 
-that \[ x\cdot \frac{d^2 y}{dx^2} + x\cdot \frac{dy}{dx} + y = 0 \]
-%</tex>
-      <tex>\\ \textbf{Let's get clever - Part I} \\
-%text
-In which of the figures below are the values
-of \underline\text{$\cos\phi$ and $\sin\phi$} written correctly? 
-%</tex>
-      <tex>\\ %text
-\textbf{Let's get clever - Part II}
-Given an angle $\phi$ such that $\cos\phi = \frac{3}{5}$, 
-\underline\text{which of the following is true}?
-%</tex>
-      <tex>\\ %text
-Given that $y = 5\cdot\cos\left(\log x - \phi\right)$, which of
-the following is true? 
-%</tex>
-      <tex>\\ %text
-\underline\text{Check our work}
-Given $\frac{dy}{dx}$ and $\frac{d^2 y}{dx^2}$ from the last step, 
-is the work done below correct? 
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex src="right.svg" isImage="true" correct="true"/>
-         <tex src="wrong.svg" isImage="true" correct="false"/>
-      </options>
-      <reason>
-         <tex>%text
-In the given \underline\text{right-angled} triangle, the 
-hypotenuse is simply $\sqrt{3^2+4^2} = 5$
-
-Therefore, $\cos\phi = \frac{3}{5}$ and $\sin\phi=\frac{4}{5}$.
-%</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-y &amp;= 3\cos(\log x) + 4\sin(\log x) \\
-&amp;= 5\cdot\left[ \frac{3}{5}\cdot \cos(\log x) + \frac{4}{5}\cdot \sin(\log x)\right]  \\
-&amp;= 5\cdot\cos(\log x - \phi) 
-\end{align} </tex>
-         <tex>\begin{align}
-y &amp;= 3\cos(\log x) + 4\sin(\log x) \\
-&amp;= 5\cdot\left[ \frac{3}{5}\cdot \cos(\log x) + \frac{4}{5}\cdot \sin(\log x)\right]  \\
-&amp;= 5\cdot\cos(\log x + \phi) 
-\end{align} </tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-y &amp;= 3\cos(\log x) + 4\sin(\log x) \\
-&amp;= 5\cdot\left[ \frac{3}{5}\cdot \cos(\log x) + \frac{4}{5}\cdot \sin(\log x)\right]  \\
-&amp;= 5\cdot\left[ \cos\phi\cdot\cos(\log x) + \sin\phi\cdot\sin(\log x)\right] \\ 
-&amp;= 5\cdot\underbrace{\cos\left( \log x - \phi \right)}_{\cos\left(A-B\right) = \cos A\cos B + \sin A\sin B}
-\end{align} \\
-%text
-
-\underline\text{The simpler expression for $y$} should make 
-subsequent work easier. 
-
-And remember, \underline\text{$\phi$ is a constant}!
-%</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-\frac{dy}{dx} &amp;= -\frac{5}{x}\cdot\sin\left(\log x - \phi\right) \\
-\frac{d^2 y}{dx^2} &amp;= \frac{5}{x^2}\sin\left( \log x - \phi\right) -\frac{5}{x^2}\cos\left( \log x -\phi \right) 
-\end{align} </tex>
-         <tex>\begin{align}
-\frac{dy}{dx} &amp;= -5\cdot\sin\left( \log x - \phi \right)  \\
-\frac{d^2 y}{dx^2} &amp;= -\frac{5}{x}\cdot\cos\left( \log x - \phi \right) 
-\end{align} </tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-y &amp;= 5\cdot\cos\left( \log x - \phi \right) \\
-\implies \frac{dy}{dx} &amp;= 5\cdot\underbrace{\left[ -\sin\left(\log x - \phi\right) \cdot \frac{d}{dx}\log x\right]}_{\text{Chain Rule}}\\
-&amp;= -\frac{5}{x}\cdot\sin\left(\log x-\phi \right) \\
-\therefore \frac{d^2 y}{dx^2} = 
--5&amp;\underbrace{\left[ \frac{x\overbrace{\cos(\log x-\phi)\frac{1}{x}}^{\text{Chain Rule}}-\sin(\log x - \phi)}{x^2} \right]}_{\text{Quotient Rule}}\\
-= \frac{5}{x^2}&amp;\sin\left( \log x - \phi\right) -\frac{5}{x^2}\cos\left( \log x -\phi \right)
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-\frac{d^2 y}{dx^2} &amp;= \frac{5}{x^2}\sin\left( \log x - \phi\right) -\frac{5}{x^2}\cos\left( \log x -\phi \right) \\
-&amp;= \frac{1}{x}\underbrace{\frac{5\sin\left( \log x - \phi\right)}{x}}_{= -\frac{dy}{dx}}
-- \frac{1}{x^2}\underbrace{\cos\left( \log x - \phi\right)}_{ = y }\\
-&amp;= -\frac{1}{x}\frac{dy}{dx} - \frac{1}{x^2}y
-\end{align} \\
-\begin{align} 
-\therefore x^2\frac{d^2 y}{dx^2} &amp;= -x\frac{dy}{dx} - y  \\
-\implies x^2\frac{d^2 y}{dx^2} &amp;+ x\frac{dy}{dx} + y = 0
-\end{align} </tex>
-      </options>
-      <reason>
-         <tex>%text
-Look for $y$ and $\frac{dy}{dx}$ in the expression for $\frac{d^2 y}{dx^2}$. 
-The rest is just algebra. 
-%</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="21">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-3.svg</tex>
+    </reason>
+    <skills>
+      <skill id="32"/>
+      <skill id="28"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-4.svg</tex>
+      <tex isImage="true" correct="false">img_tex-5.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-6.svg</tex>
+    </reason>
+    <skills>
+      <skill id="31"/>
+      <skill id="51"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-7.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-8.svg</tex>
+    </reason>
+    <skills>
+      <skill id="32"/>
+    </skills>
+  </step>
 </question>
