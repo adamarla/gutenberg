@@ -1,0 +1,51 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+\newcommand\dnm{5-4e^x-e^{2x}}
+\newcommand\zply{5-4z-z^2}
+\newcommand\psqr{9- \left(z +2 \right)^2}
+
+%text
+Evaluate the following integral \[ \qquad I = \int \frac{e^x}{\sqrt{\dnm}}\cdot dx \]
+%
+
+\newcard
+
+If $z = e^x$, then 
+\begin{align}
+I &= \int \frac{dz}{\sqrt{\zply}} = \int \frac{dz}{\sqrt{\psqr}}
+\end{align}
+
+\newcard 
+
+If $z = e^x$, then 
+\begin{align}
+I &= \int \frac{z\cdot dz}{\sqrt{\zply}} = \int \frac{dz}{\sqrt{6- \left(z+2 \right)^2}}
+\end{align}
+
+\newcard 
+
+\begin{align}
+	\text{If } z &= e^x \text{ then } dz = e^x\cdot dx \\
+	\text{and } \underbrace{\dnm}_{ e^{2x} = \left(e^x \right)^2 = z^2} &= \zply  \\
+	&= 5 - \left[\left(z+2 \right)^2 - 4\right] \\
+	&= 5 - \left(z+2 \right)^2 + 4 \\
+	&= 9 - \left(z+2 \right)^2
+\end{align}
+
+\newcard 
+
+\[ I = \int \frac{dz}{\sqrt{\psqr}} = \sin^{-1} \left(\frac{e^x+2}{3} \right) + C\]
+
+\newcard 
+
+\begin{align}
+I &= \int \frac{dz}{\sqrt{\psqr}} = \int \frac{dz}{\sqrt{3^2 - \left(z+2 \right)^2}} \\ 
+&= \sin^{-1} \left(\frac{z+2}{3} \right) + C = \sin^{-1} \left(\frac{e^x + 2}{3} \right) + C 
+\end{align}
+
+We have used the standard result 
+\[ \qquad \int \frac{dx}{\sqrt{a^2 - x^2}} = \sin^{-1} \left(\frac{x}{a} \right) + C \] 
+\end{document}
