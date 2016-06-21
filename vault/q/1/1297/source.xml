@@ -1,77 +1,30 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-Prove that \[ \frac{4\sin\theta}{(2+\cos\theta)} - \theta\] is an increasing
-function in \[ \left[ 0,\frac\pi{2} \right] \]
-%</tex>
-      <tex>\\ \underline\text{Check our work}
-%text
-
-The given function \[ f(\theta) = \frac{4\sin\theta}{(\cos\theta + 2)} - \theta\] 
-is increasing in \[\left[0,\frac\pi{2}\right]\] \underline\text{because }$\ldots$
-%</tex>
-      <tex>\\ \textbf{Bonus Question}
-%text
-
-Is $f(\theta)$ \underline\text{strictly increasing} in \[\left[ 0,\frac\pi{2}\right]\]?
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-\frac{df}{d\theta} &amp;= \frac{\cos\theta\cdot (4-\cos\theta)}{(\cos\theta + 2)^2}\\
-&amp;\geq 0 \text{ for }\theta\in\left[ 0,\frac\pi{2} \right]\\
-&amp;(\because \cos\theta, (4-\cos\theta)\text{ and }(\cos\theta+2)^2\geq 0)
-\end{align} </tex>
-         <tex>\begin{align}
-\frac{df}{d\theta} &amp;= \frac{\cos\theta\cdot (4-\sin\theta)}{(\cos\theta + 2)^2}\\
-&amp;\geq 0 \text{ for }\theta\in\left[ 0,\frac\pi{2} \right]\\
-&amp;(\because \cos\theta, (4-\sin\theta)\text{ and }(\cos\theta+2)^2\geq 0)
-\end{align} </tex>
-      </options>
-      <reason>
-         <tex>%text
-First, $\because$ = because. 
-
-Now, a function is increasing \underline\text{in an interval} 
-if \[ \frac{df}{d\theta} \geq 0\] \underline\text{in that interval}.
-
-So, we must first find $\frac{df}{d\theta}$.
-%
-\begin{align}
-f(\theta) &amp;= \frac{4\sin\theta}{(\cos\theta + 2)} -\theta  \\
-\therefore\frac{df}{d\theta} &amp;= 
-4\underbrace{\left[ \frac{(\cos\theta + 2)\cdot\cos\theta + \sin^2\theta}{(\cos\theta+2)^2}\right]}_{\text{Quotient Rule}}-1\\
-&amp;= 4\left[ \frac{\overbrace{\cos^2\theta+\sin^2\theta}^{=1} + 2\cos\theta}{(\cos\theta + 2)^2}\right] - 1\\
-&amp;= \frac{4\cdot(1+2\cos\theta) - (\cos\theta+2)^2}{(\cos\theta+2)^2}\\
-&amp;= \frac{\cos\theta\cdot(4-\cos\theta)}{(\cos\theta + 2)^2}\geq 0 \text{ for }\theta\in\left[ 0,\frac\pi{2}\right]\\
-&amp;(\because \cos\theta, (4-\cos\theta)\text{ and }(\cos\theta+2)^2\geq 0)
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">%text
-No. $f(\theta)$ is increasing, but not strictly 
-increasing in \[\left[ 0,\frac\pi{2}\right]\] because \[\frac{df}{d\theta} =0\]
-when $\theta = \frac\pi{2}$
-%</tex>
-         <tex>%text
-Yes. $f(\theta)$ is strictly increasing in \[\left[ 0,\frac\pi{2}\right]\]. We 
-know this because \[ \frac{df}{d\theta}\geq 0 \] when $\theta\in\left[0,\frac\pi{2} \right]$
-%</tex>
-      </options>
-      <reason>
-         <tex>%text
-For a function to be \underline\text{strictly increasing} in an
-interval, $\dfrac{df}{d\theta}\gt 0$. Which means that $\dfrac{df}{d\theta}\neq 0$.
-
-But for the given function - in the given 
-interval - $\dfrac{df}{d\theta} = 0$ when $\theta=\frac\pi{2}$. Hence, while
-$f(\theta)$ is increasing, it is not strictly increasing. 
-%</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="22">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+      <tex isImage="true" correct="false">img_tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="31"/>
+      <skill id="33"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-5.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-6.svg</tex>
+    </reason>
+    <skills>
+      <skill id="63"/>
+    </skills>
+  </step>
 </question>
