@@ -1,0 +1,46 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+%text
+If the radius of a sphere is measured as 
+
+$R=9$ cm with an error of $\Delta R=0.03$ cm, then find the 
+approximate error in calculating its surface area $(S)$
+%
+
+\newcard
+
+If $\Delta S$ be the error in calculating the surface area, then 
+\[ \qquad \Delta S = \frac{dS}{dR}\cdot \Delta R \]
+
+\newcard 
+
+If $\Delta S$ be the error in calculating the surface area, then 
+\[ \qquad \Delta S = \frac{dS}{dR}\]
+
+\newcard 
+
+$\dfrac{dS}{dR}$ is the rate of change of the surface area with respect to the radius\newline 
+
+But the actual change (or error in this case) would be 
+\[ \qquad \Delta S = \frac{dS}{dR}\times \Delta R \]
+
+\newcard 
+
+\[ \Delta S = 2.16\pi\text{ cm}^2 \]
+
+\newcard 
+
+\[ \Delta S = 0.24\pi\text{ cm}^2 \]
+
+\newcard 
+
+\begin{align}
+S &= 4\pi\cdot R^2 \implies \frac{dS}{dR} = 8\pi\cdot R \\
+\therefore \Delta S &= \left(8\pi\cdot R \right)\cdot \Delta R \\
+\implies \left[\Delta S \right]_{R=9} &= \left(8\pi\cdot 9\text{ cm} \right)\cdot 0.03\text{ cm} \\
+&= 2.16\pi\text{ cm}^2
+\end{align}
+\end{document}
