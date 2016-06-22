@@ -1,0 +1,46 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+\newcommand\ea{1 + \sqrt{\tan x}}
+\newcommand\eb{1 + \sqrt{\cot x}}
+\newcommand\ec{\frac{\sqrt{\tan x}}{\ea}}
+\newcommand\intg{\int_{\frac\pi{6}}^{\frac\pi{3}}}
+\newcommand\etan{\sqrt{\tan x}}
+
+Evaluate the following \[\qquad \int_\frac{\pi}{6}^\frac{\pi}{3}\dfrac{dx}{1+\sqrt{\tan x}}\]
+
+\newcard
+
+\[ A = \intg \frac{dx}{\ea} = \intg \frac{dx}{\eb}\]
+
+\newcard 
+
+There is a nice little rule that says 
+\[ \quad \int_a^b f(x)\cdot dx = \int_a^b f \left(a+b-x \right)\cdot dx \] 
+
+When applied to the given integral, we get 
+
+\begin{align}
+	A &= \intg \frac{dx}{\ea} = \intg \frac{dx}{1+\sqrt{\tan \left( \frac\pi{3}+\frac\pi{6} - x\right)}} \\
+	&= \intg \frac{dx}{1 + \sqrt{\tan \left(\frac\pi{2} - x \right)}} = \intg \frac{dx}{1+\sqrt{\cot x}}
+\end{align}
+
+\newcard 
+
+\[ A + A = \intg dx \implies A = \frac{\pi}{12}\]
+
+\newcard 
+
+\begin{align}
+	A &= \intg \frac{dx}{\eb} = \intg \frac{dx}{1 + \frac{1}{\sqrt{\tan x}}} \\
+	&= \intg \frac{\sqrt{\tan{x}}}{1+ \sqrt{\tan x}}\cdot dx  \\
+	\text{Also } A &= \intg \frac{dx}{\ea} \\
+	\therefore A + A &= \intg \left[ \frac{1}{1 + \etan} + \frac{\etan}{1 + \etan}\right]\cdot dx \\
+	&= \intg \frac{1 + \etan}{1+\etan}\cdot dx = \intg dx \\
+	\therefore 2A &= \left[x \right]_{\frac\pi{6}}^{\frac\pi{3}} = \left[\frac\pi{3} - \frac\pi{6} \right] = \frac\pi{6} \\
+	\text{Hence } A &= \frac\pi{12}
+\end{align}
+
+\end{document}

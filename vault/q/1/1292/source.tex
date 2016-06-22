@@ -1,0 +1,50 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+%text
+Find the relationship between $\alpha$ and $\beta$ so
+that the function $f(x)$ defined as
+%
+\[\qquad f(x) = \begin{cases} 
+\alpha x + 1,\quad  x\leq 3 \\
+\beta x + 3,  \quad  x > 3
+\end{cases} \]
+%text
+
+is continuous at $x=3$
+%
+
+\newcard
+
+\[ \qquad f(3) = 3\alpha + 1 \]
+
+\newcard 
+
+\[ \qquad f(3) = 3\beta + 3 \]
+
+\newcard 
+
+See the definition of $f(x)$ again. Only for $x > 3 \implies x\neq 3$ is $f(x) = \beta x + 3$\newline 
+
+But for $x \leq 3$ (that is, including $x=3$), $f(x) = \alpha x + 1$. And so, $f(3) = 3\alpha + 1$
+
+\newcard 
+
+For $f(x)$ to be continuous at $x=3$ 
+\small\[ \quad \lim_{x\to 3^-} f(x) = \lim_{x\to 3^+} f(x) = f(3) \implies \alpha - \beta = \frac{2}{3}\]\normalsize 
+
+\newcard 
+
+For $f(x)$ to be continuous at $x=3$, 
+\[ \qquad \lim_{x\to 3^-} f(x) = \lim_{x\to 3^+} f(x) = f(3) \]
+
+Now, \[\lim_{x\to 3^-} f(x) = \lim_{x\to 3^-} \left(\alpha x + 1 \right) = 3\alpha + 1 = f(3) \]
+
+And 
+\[\lim_{x\to 3^+} f(x) = \lim_{x\to 3^+} \left(\beta x + 3 \right) = 3\beta + 3\]
+
+Therefore  for continuity at $x=3$
+\[ 3\alpha + 1 = 3\beta + 3 \implies \alpha - \beta = \frac{2}{3}\]
+\end{document}
