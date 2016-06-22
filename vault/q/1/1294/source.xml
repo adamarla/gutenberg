@@ -1,67 +1,43 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-Sketch the graph of $y=\vert x + 3\vert$ and evaluate
-the area under the curve $y=\vert x+3\vert$ above 
-x-axis and between $x=-6$ to $x=0$.
-%</tex>
-      <tex>\\ %text
-Which of the following curves is the plot 
-for $y=\vert x+3\vert$ and correctly shows the 
-required area? ($O$ is the origin)
-%</tex>
-      <tex>\\ %text
-\underline\text{Given the defintion of $\vert x+3\vert$} from the last
-step, what will the required area (A) be? 
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex src="right.svg" isImage="true" correct="true"/>
-         <tex src="wrong.svg" isImage="true" correct="false"/>
-      </options>
-      <reason>
-         <tex>%text
-A very \underline\text{common mistake} is to say that 
-\[ \qquad \vert x + 3\vert = \vert x\vert + 3\text{ (the wrong curve)} \]
-
-This is simply not true. 
-
-To see why, \underline\text{let $ z = x + 3$}. Therefore 
-%
-\vert x+3\vert = \vert z\vert = \begin{cases}
--z\text{ if }z\lt 0 \implies  x\lt -3, \\
-z\text{ if }z\geq 0 \implies x\geq -3
-\end{cases} \\
-%text
-
-\underline\text{In summary},
-%
-\vert x + 3\vert = \begin{cases} 
--(x+3)\text{ if } x\lt -3 \\
-(x+3)\text{ if } x\geq -3 
-\end{cases}</tex>
-      </reason>
-   </step>
-   <step>
-      <options/>
-      <reason>
-         <tex>%text
-Recall that 
-%
-\vert x + 3\vert = \begin{cases} 
--(x+3)\text{ if } x\lt -3 \\
-(x+3)\text{ if } x\geq -3 
-\end{cases} \\
-\begin{align}
-\therefore A &amp;= \int_{-6}^{-3}-(x+3)\cdot dx + \int_{-3}^0 (x+3)\cdot dx\\
-&amp;= \underbrace{\int_{-3}^{-6}(x+3)\cdot dx}_{\text{Flipped the limits}} + \int_{-3}^0 (x+3)\cdot dx \\
-&amp;= \left[ \frac{x^2}{2} + 3x\right]_{-3}^{-6} + \left[ \frac{x^2}{2} + 3x\right]_{-3}^{0}\\
-&amp;= \left[ \left(18-18\right) - \left(\frac{9}{2}-9\right) \right] + \left[ 0 -\left(\frac{9}{2}-9\right)\right]\\
-&amp;= 9\text{ sq units}
-\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="24">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_prefab-1.svg</tex>
+      <tex isImage="true" correct="false">img_prefab-2.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-2.svg</tex>
+    </reason>
+    <skills>
+      <skill id="26"/>
+      <skill id="13"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="36"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-5.svg</tex>
+      <tex isImage="true" correct="false">img_tex-6.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-7.svg</tex>
+    </reason>
+    <skills>
+      <skill id="48"/>
+      <skill id="1"/>
+    </skills>
+  </step>
 </question>
