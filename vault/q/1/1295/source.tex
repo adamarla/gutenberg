@@ -1,0 +1,97 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+\newcommand\half{\frac{1}{2}}
+\newcommand\hpi{\frac{\pi}{2}}
+\newcommand\qpi{\frac\pi{4}} 
+\newcommand\intg{\int_0^{\hpi}}
+\newcommand\hx{\frac{x}{2}}
+
+%text
+Evaluate the following \[ \qquad A = \intg\frac{x + \sin x}{1+\cos x}\cdot dx \]
+%
+
+\newcard
+
+Re-writing $A$ as  
+\small\[ A =  \underbrace{\intg \frac{x}{1+\cos x}\cdot dx}_P + \underbrace{\intg \frac{\sin x}{1+\cos x}\cdot dx}_Q \]\normalsize
+
+is a better approach than 
+
+\begin{align}
+	A &= \intg \frac{\left(\hpi - x \right) + \sin \left(\hpi - x \right)}{1+\cos \left(\hpi - x \right)}\cdot dx \\
+	&= \intg \frac{\left(\hpi -x \right) + \cos x}{1+ \sin x}\cdot dx 
+\end{align}
+
+\newcard 
+
+\small\[ A = \intg \frac{x+\sin x}{1+\cos x}\cdot dx = \intg \frac{\left(\hpi -x \right) + \cos x}{1 + \sin x}\cdot dx \]\normalsize
+
+is true -- but is not the best option. Both the numerator and denominator have changed and hence \underline{nothing will cancel out} if we add or subtract the two expressions\newline 
+
+Best therefore to \underline{split the integral}, like so 
+
+\small\[ A =  \underbrace{\intg \frac{x}{1+\cos x}\cdot dx}_P + \underbrace{\intg \frac{\sin x}{1+\cos x}\cdot dx}_Q \]\normalsize
+
+\newcard 
+
+\begin{align}
+P &= \intg \frac{x}{1+\cos x}\cdot dx = \half\intg x\cdot\sec^2 \left(\hx \right)\cdot dx \\
+Q &= \intg \frac{\sin x}{1+\cos x}\cdot dx = \intg \tan \left(\hx \right)\cdot dx 
+\end{align}
+
+\newcard 
+
+\begin{align}
+P &= \intg \frac{x}{1+\cos x}\cdot dx = \underbrace{\intg \frac{x}{2\cdot\cos^2 \left(\hx \right)}\cdot dx}_{1 + \cos 2\theta = 2\cos^2\theta} \\
+&= \half\intg x\cdot\sec^2 \left(\hx \right)\cdot dx 
+\end{align}\newline 
+
+Similarly
+\begin{align}
+Q &= \intg \frac{\sin x}{1+\cos x}\cdot dx = \intg \frac{2\sin\hx\cdot\cos\hx}{2\cos^2 \hx}\cdot dx \\
+&= \intg \tan \left(\hx \right)\cdot dx 
+\end{align}
+
+\newcard 
+
+\[ P = x\cdot\tan \hx - \intg \tan\hx\cdot dx \]
+
+\newcard 
+\[ P = \half \left[ x\cdot\tan \hx - \intg \tan\hx\cdot dx \right] \]
+
+\newcard 
+
+We need \underline{integration by parts} to evaluate $P$ 
+
+\begin{align}
+P &= \half \intg x\cdot\sec^2\hx\cdot dx \\
+&= \half \left[x\int\sec^2 \hx\cdot dx - \int \left[\frac{d}{dx}x\int\sec^2 \hx  dx\right]dx\right]_0^{\hpi}  \\
+&= \half \left[x\cdot \frac{\tan\hx}{\half} - \int\frac{\tan \hx}{\half}\cdot dx \right]_0^{\hpi} \\
+&= \underbrace{\left[x\cdot\tan\hx \right]_0^{\hpi} - \intg\tan\hx\cdot dx }_{\text{The $\half$s cancel out}}
+\end{align}
+
+\newcard 
+
+And hence, $A = P + Q = \dfrac\pi{2}$
+
+\newcard 
+
+And hence, $A = P + Q = \dfrac\pi{4}$
+
+\newcard 
+
+Did you notice that we didn't evaluate $P$ fully but left it instead as 
+\[ \quad P = \left[x\cdot\tan\hx \right]_0^{\hpi} - \intg \tan \hx\cdot dx\]
+
+That is because \[\quad Q = \intg \tan \hx\cdot dx \]
+
+And therefore 
+\begin{align}
+	A &= P + Q = \underbrace{\left[x\tan\hx \right]_0^{\hpi} - Q}_P + Q \\
+	&= \hpi\cdot\tan \left(\frac{\hpi}{2} \right) - 0 = \hpi\quad \left(\because\tan\qpi = 1 \right)
+\end{align}
+
+\end{document}
