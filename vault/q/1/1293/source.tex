@@ -1,0 +1,50 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+%text
+If $x^y = e^{x-y}$, then show that
+\[\qquad \frac{dy}{dx} = \frac{\log x}{\left[\log \left(x\cdot e \right) \right]^2}\]
+%
+
+\newcard
+
+\[ x^y = e^{x-y} \implies y = \frac{x}{\log x + 1}\]
+
+\newcard 
+
+\[ x^y = e^{x-y} \implies y = \frac{x}{\log x - 1}\]
+
+\newcard 
+
+\begin{align}
+	x^y = e^{x-y} \implies y\cdot \log x &= \left(x-y \right)\cdot \underbrace{\log e}_{=1} \\
+	\therefore y\cdot \left(\log x + 1 \right) &= x \\
+	\text{or } y &= \frac{x}{\log x + 1}
+\end{align}
+
+\newcard 
+
+\[ \frac{dy}{dx} = \frac{\log x}{\left(\log x + 1 \right)^2}\]
+
+\newcard 
+
+\begin{align}
+	y &= \frac{x}{\log x + 1} \\ 
+	\implies \frac{dy}{dx} &= \underbrace{\frac{\left(\log x +1 \right)\cdot \frac{d}{dx} x - x \frac{d}{dx}\left(\log x + 1 \right)}{\left(\log x + 1 \right)^2}}_{\text{Quotient Rule}} \\
+	&= \frac{\left(\log x + 1 \right) - x\cdot \frac{1}{x}}{\left(\log x + 1 \right)^2} = \frac{\log x}{\left(\log x + 1 \right)^2}
+\end{align}
+
+\newcard 
+
+\[ \log x + 1 = \log \left(e\cdot x \right) \implies \frac{dy}{dx} = \frac{\log x}{\left[\log \left(e\cdot x \right) \right]^2}\]
+
+\newcard 
+
+\begin{align}
+\log e &= 1 \text{ and } \log a + \log b = \log \left(a\cdot b \right) \\
+\therefore \log x + 1 &= \log x + \log e = \log \left(e\cdot x \right) \\
+\text{And so, } \frac{dy}{dx} &= \frac{\log x}{\left(\log x + 1 \right)^2} = \frac{\log x}{\left[\log \left(e\cdot x \right) \right]^2}
+\end{align}
+\end{document}

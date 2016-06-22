@@ -1,90 +1,40 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-If \[ x^y = e^{x-y}\], then show that
-\[\qquad \frac{dy}{dx} = \frac{\log x}{\lbrace \log (x\cdot e) \rbrace^2}\]
-%</tex>
-      <tex>\\ x^y = e^{x-y}\implies y\cdot\log x = x - y \\
-%text
-\underline\text{What operation must be done} for the 
-above to be true?
-%</tex>
-      <tex>\\ %text
-Given that \[ y\cdot \log x = x-y \], will $\frac{dy}{dx}$
-evaluate to the following? 
-%</tex>
-      <tex>\\ %text
-Is the \underline\text{following line of reasoning correct}?
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">%text
-Take logarithm to the \underline\text{base $e$} on both sides 
-%</tex>
-         <tex>%text
-Take logarithm to the \underline\text{base $10$} on both sides 
-%</tex>
-      </options>
-      <reason>
-         <tex>%text
-Logarithms can be taken on any base $b\gt 0$.
-
-That said, \underline\text{if $b\neq e$}, then 
-%
-\begin{align}
-\log_b x^y &amp;= \log_b e^{x-y} \\ 
-\implies y\cdot\log_b x &amp;= (x-y)\cdot\underbrace{ \log_b e}_{\neq 1}
-\end{align} \\
-%text
-
-However, \underline\text{if $b=e$}, then 
-%
-\begin{align}
-\log_e x^y &amp;= \log_e e^{x-y} \\ 
-\implies y\cdot\log_e x &amp;= (x-y)\cdot\underbrace{ \log_e e}_{= 1} \\
-\implies y\cdot \log x &amp;= (x-y) 
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\frac{dy}{dx} = \frac{\log x }{(\log x + 1)^2}</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-y\cdot\log x = (x-y) &amp;\implies y\cdot (\log x + 1) = x \\
-\therefore y &amp;= \frac{x}{\log x + 1} \\
-\text{Hence, }\frac{dy}{dx} &amp;= 
-\underbrace{\frac{(\log x + 1) - x\cdot\frac{1}{x}}{(\log x + 1)^2}}_{\text{Quotient Rule}} \\
-&amp;= \frac{\log x }{(\log x + 1)^2}
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-\log x + 1 &amp;= \log x + \log e = \log (x\cdot e) \\
-\therefore \frac{dy}{dx} &amp;= \frac{\log x}{\lbrace \log (x\cdot e)\rbrace^2}
-\end{align} </tex>
-      </options>
-      <reason>
-         <tex>%text
-We know that \[ \frac{dy}{dx} = \frac{\log x}{(\log x + 1)^2} \]
-
-But given that we have been taking 
-logarithms \underline\text{to the base $e$}, it also 
-follows that 
-
-%
-\begin{align}
-\log x + 1 &amp;= \log x + \underbrace{\log e}_{=1} 
-= \underbrace{\log (x\cdot e)}_{\log a + \log b = \log (a\cdot b)} \\
-\therefore \frac{dy}{dx} &amp;= \frac{\log x}{(\log x + 1)^2} = 
-\frac{\log x}{\lbrace \log (x\cdot e)\rbrace^2}
-\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="21">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+      <tex isImage="true" correct="false">img_tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="55"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-5.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-6.svg</tex>
+    </reason>
+    <skills>
+      <skill id="31"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-7.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-8.svg</tex>
+    </reason>
+    <skills>
+      <skill id="55"/>
+    </skills>
+  </step>
 </question>
