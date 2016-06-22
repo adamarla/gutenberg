@@ -1,0 +1,45 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{skill}
+\textcolor{blue}{Integrals \#4}
+
+Trickier integrals. For example, 
+
+\small$\int \dfrac{dx}{\sqrt{ax^2+bx+c}}, \int \dfrac{px+q}{ax^2+bx+c}\cdot dx$ \normalsize
+
+\end{skill}
+
+\newcard 
+
+The table below summarizes the strategy to use when one encounters integrals of the following forms 
+
+\begin{center}
+  \begin{tabular}{NN}
+  \toprule 
+        \text{Integral} & \text{Convert to}  \\
+   \midrule 
+   \int \frac{dx}{\sqrt{ax^2+bx+c}}\cdot dx & \int \frac{dx}{\sqrt{\left(x + \alpha \right)^2 \pm \beta^2}}\\
+    \midrule 
+    \int \frac{dx}{ax^2+bx+c}\cdot dx & \int \frac{dx}{\left(x + \alpha \right)^2 \pm \beta^2}\\
+    \midrule 
+    \int\frac{ \left( px+q\right) \cdot dx}{\sqrt{ax^2+bx+c}} & \underbrace{ \int \frac{A f'(x) + B}{\sqrt{f(x)}}\cdot dx}_{f(x) = ax^2+bx+c}\\
+    \midrule
+        \int\frac{ \left( px+q\right) \cdot dx}{ax^2+bx+c} & \underbrace{ \int \frac{A f'(x) + B}{f(x)}\cdot dx}_{f(x) = ax^2+bx+c}\\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+So, these might be four different types of integrals. But they can be solved using jsut two strategies \newline 
+
+\begin{center}
+\begin{itemize}
+\item{Completing the squares, that is, re-writing the \underline{denominator} $f(x) = ax^2+bx+c$ as $ \left(x+\alpha \right)^2 \pm \beta$}
+\item{Re-writing the \underline{numerator} as $Af'(x)+B$, where $f(x)$ is the denominator }
+\end{itemize}
+
+\end{center} 
+\end{document} 

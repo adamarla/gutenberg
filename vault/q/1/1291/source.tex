@@ -1,0 +1,120 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+
+\newcommand\fx{\left(x-4 \right)\cdot \left(x-5 \right)}
+\newcommand\fxe{ \left(x^2-9x +20 \right)}
+\newcommand\intg{\int \frac{6x+7}{\sqrt{\fx}}\cdot dx}
+%text
+Evaluate the following \[ \qquad \int \frac{6x+7}{\sqrt{\fx}}\cdot dx \]
+%
+
+\newcard
+
+\underline{If $f(x) = \fx$}, then the following will \textbf{not} work 
+\[ \quad \frac{6x+7}{\sqrt{f(x)}} = \frac{A}{\sqrt{x-4}} + \frac{B}{\sqrt{x-5}}\]
+
+But \textbf{this will}
+
+\[ \quad \frac{6x+7}{\sqrt{f(x)}} = \frac{A\cdot f'(x) + B}{\sqrt{f(x)}}\]
+
+\newcard 
+
+$f(x) = \fx$ is a polynomial \newline 
+
+But $g(x) = \sqrt{f(x)}$ is not. Hence, we \underline{cannot} do the following 
+\[ \qquad \frac{6x+7}{\sqrt{f(x)}} = \frac{A}{\sqrt{x-4}} + \frac{B}{\sqrt{x-5}}\]
+
+Note also that $f(x) = \fxe$. And therefore, $f'(x)$ will be of the form $Ax+B$ -- just as the numerator is \newline 
+
+Hence, we must look to express the numerator in terms of $f'(x)$
+
+\newcard 
+
+\small\[I = \int \frac{6x+7}{\sqrt{f(x)}}\cdot dx = \int \frac{3\cdot f'(x)  + 34}{\sqrt{f(x)}}\cdot dx\]\normalsize
+
+\newcard 
+\small\[I = \int \frac{6x+7}{\sqrt{f(x)}}\cdot dx = \int \frac{3\cdot f'(x)  -26}{\sqrt{f(x)}}\cdot dx\]\normalsize 
+
+\newcard 
+
+\begin{align}
+f(x) = \fxe &\implies f'(x) = 2x - 9 \\
+\text{Hence, if }6x + 7 &= A\cdot f'(x) + B \\
+\text{then }6x + 7 &= A\cdot (2x-9) + B \\
+&= 2Ax + \left(B-9A \right)
+\end{align}
+
+On comparing coefficients, we get 
+\begin{align}
+2A &= 6 \implies A = 3 \\
+\text{and } B-9A &= 7 \implies B = 7 + 27 = 34 
+\end{align}
+
+Therefore 
+\[ I = \int \frac{6x+7}{\sqrt{f(x)}}\cdot dx = \int \frac{3f'(x) + 34}{\sqrt{f(x)}}\cdot dx\]
+
+\newcard 
+
+In the following statement 
+\small\[ \int \frac{6x+7}{\sqrt{f(x)}}\cdot dx = \underbrace{3\int \frac{f'(x)}{\sqrt{f(x)}}\cdot dx}_A + \underbrace{34\int \frac{dx}{\sqrt{f(x)}}}_B \]\normalsize
+
+\[ \qquad A = 6\sqrt{\fxe} + C_1\]
+
+\newcard 
+
+In the following statement 
+\small\[ \int \frac{6x+7}{\sqrt{f(x)}}\cdot dx = \underbrace{3\int \frac{f'(x)}{\sqrt{f(x)}}\cdot dx}_A + \underbrace{34\int \frac{dx}{\sqrt{f(x)}}}_B \]\normalsize
+
+\[ \qquad A = 3\cdot\log\vert \fxe\vert  + C_1\]
+
+\newcard 
+
+\begin{align}
+A &= 3\int \frac{f'(x)}{\sqrt{f(x)}} \cdot dx \\
+\text{Hence, if } z &= f(x)\text{ then } f'(x)\cdot dx = dz \\
+\implies A  &= 3\int \frac{dz}{\sqrt{z}} = 3 \left[\frac{\sqrt{z}}{\frac{1}{2}} \right] = 6\sqrt{z} + C_1 \\
+&= 6\sqrt{\fxe} + C_1 
+\end{align}
+
+\newcard 
+
+And integral $B$ will be evaluated as follows 
+
+\begin{align}
+B &= 34 \int \frac{dx}{\sqrt{\fxe}}\cdot dx \\
+&= 34\int\frac{dx}{\sqrt{\left(x-\frac{9}{2}\right)^2 -\frac{1}{2^2}}} \\
+&= 34\cdot\log\left\vert \left( x-\frac{9}{2}\right) + \sqrt{x^2-9x+20} \right\vert + C_2 
+\end{align} 
+
+Which means 
+\begin{align}
+	I &= 6\sqrt{\fxe}  \\
+	&+ 34\cdot\log\left\vert \left( x-\frac{9}{2}\right) + \sqrt{x^2-9x+20} \right\vert + C 
+\end{align} 
+
+\newcard 
+
+%text
+To evaluate integrals of the form 
+\[\qquad \int\frac{dx}{\sqrt{cx^2+dx+e}} \] 
+
+the best strategy is to \underline{complete the squares} 
+-- as shown below. 
+%
+\begin{align}
+x^2-9x+20 &= \left(x-\frac{9}{2} \right)^2 -\left(\frac{9}{2}\right)^2 + 20  \\
+&= \left(x-\frac{9}{2}\right)^2 -\frac{1}{4}\\
+&= \left(x-\frac{9}{2}\right)^2 -\left(\frac{1}{2}\right)^2
+\end{align}\\
+\begin{align}
+\therefore B &= 34\int\frac{dx}{\sqrt{x^2-9x+20}} \\
+&= 34\underbrace{\int\frac{dx}{\sqrt{\left(x-\frac{9}{2}\right)^2 -\frac{1}{2^2}}}}
+_{\int\frac{dx}{\sqrt{x^2-a^2}}= \log\vert x + \sqrt{x^2-a^2}\vert} \\
+&= 34\cdot\log\left\vert \left( x-\frac{9}{2}\right) + \sqrt{x^2-9x+20} \right\vert + C_2 
+\end{align}
+
+We now know both $A$ and $B$ can hence write down $I = A+B$
+\end{document}

@@ -1,123 +1,54 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-Evaluate \[ \int \frac{6x+7}{\sqrt{(x-4)\cdot(x-5)}}\cdot dx \]
-%</tex>
-      <tex>\\ %text
-Given an integral \[I =  \int\frac{ax+b}{\sqrt{cx^2+dx+e}}\cdot dx\]
-which of the following ways of \underline\text{re-writing}
-the integral \underline\text{will make it easier to evaluate}? 
-%</tex>
-      <tex>\\ %text
-\underline\text{What are the  values of 'p' and 'q'} given that
-%
-\begin{align}
-I &amp;= \int\frac{6x+7}{\sqrt{(x-4)\cdot(x-5)}}\cdot dx \\
-&amp;= \int\frac{p\cdot\lbrace\frac{d}{dx}(x-4)\cdot(x-5)\rbrace + q}{\sqrt{(x-4)\cdot(x-5)}}\cdot dx
-\end{align}</tex>
-      <tex>\\ %text
-In $I= I_1 + I_2$, \underline\text{what will $I_1$ evaluate to}? 
-\[\underbrace{3\int\frac{2x-9}{\sqrt{x^2-9x+20}}\cdot dx}_{I_1} + \underbrace{34\int\frac{dx}{\sqrt{x^2-9x+20}}}_{I_2}\]
-%</tex>
-      <tex>\\ %text
-Similarly, \underline\text{what will $I_2$ evaluate to}?
-\[I = \underbrace{6\sqrt{x^2-9x+20}}_{I_1} + \underbrace{34\int\frac{dx}{\sqrt{x^2-9x+20}}}_{I_2}\]
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-I &amp;= \int\frac{p\cdot\frac{d}{dx}(cx^2+dx+e) + q}{\sqrt{cx^2+dx+e}}\cdot dx\\
-&amp;= p\cdot\int\frac{\frac{d}{dx}(cx^2+dx+e)}{\sqrt{cx^2+dx+e}}\cdot dx \\
-&amp;+ q\underbrace{\int\frac{dx}{\sqrt{(x+m)^2+n^2}}}_{\text{Complete the squares}}
-\end{align} </tex>
-         <tex>\begin{align}
-I &amp;=\underbrace{ \int\frac{ax+b}{\sqrt{(x+m)^2 + n^2}}\cdot dx}_{\text{Complete the squares}}
-\end{align} </tex>
-      </options>
-      <reason>
-         <tex>%text
-The idea is to express the integral 
-\[ I = \int\frac{ax+b}{\sqrt{cx^2+dx+e}}\cdot dx \]
-\underline\text{in terms of} integrals that we \underline\text{already know}.
-
-And in this case, it is best to do the following 
-
-%
-
-\begin{align}
-I &amp;= p\cdot I_1 + q\cdot I_2 \text{ where } \\
-I_1 &amp;=\underbrace{ \int\frac{\frac{d}{dx}f(x)}{\sqrt{f(x)}}\cdot dx =\int\frac{d\phi}{\sqrt{\phi}}}_{\phi=f(x)\implies f'(x)dx=d\phi}\\
-I_2 &amp;= \int\frac{dx}{\sqrt{(x+m)^2 + n^2}}
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-p &amp;= 3 \\
-q &amp;= 34 
-\end{align} </tex>
-         <tex>\begin{align}
-p &amp;= 4 \\
-q &amp;= -31 
-\end{align} </tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-(x-4)\cdot (x-5) &amp;= x^2-9x + 20 \\
-\implies\frac{d}{dx}(x-4)\cdot(x-5) &amp;= 2x-9 
-\end{align}\\
-\begin{align} 
-\therefore I &amp;= \int\frac{6x+7}{\sqrt{(x-4)\cdot(x-5)}}\cdot dx \\
-&amp;= \int\frac{p\cdot (2x-9) + q}{\sqrt{x^2-9x+20}}\cdot dx \\
-&amp;=\int\frac{2px + (q-9p)}{\sqrt{x^2-9x+20}}\cdot dx \\
-\implies 2p&amp;= 6\text{ and } q-9p = 7 \\
-\text{or }p &amp;= 3\text{ and }q = 7 + 9\cdot 3 = 34 
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">6\sqrt{x^2-9x+20} + C_1 </tex>
-         <tex>3\sqrt{x^2-9x+20} + C_1 </tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-I_1 &amp;= 3\int\frac{2x-9}{\sqrt{x^2-9x+20}}\cdot dx \\
-\text{Let }\phi &amp;= x^2-9x+20\implies (2x-9)\cdot dx = d\phi\\
-\therefore I_1 &amp;= 3\int\frac{d\phi}{\sqrt{\phi}} 
-= 3\cdot\frac{\sqrt\phi}{\frac{1}{2}} + C_1 = 6\sqrt\phi + C_1 \\
-&amp;= 6\sqrt{x^2-9x+20} + C_1 
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">34\cdot\log\left\vert \left( x-\frac{9}{2}\right) + \sqrt{x^2-9x+20} \right\vert  + C_2 </tex>
-         <tex>17\cdot\log\left\vert \left( x-\frac{9}{2}\right) + \sqrt{x^2-9x+20} \right\vert  + C_2</tex>
-      </options>
-      <reason>
-         <tex>%text
-To evaluate integrals of the form 
-\[\qquad \int\frac{dx}{\sqrt{cx^2+dx+e}} \] 
-
-the best strategy is to \underline\text{complete the squares} 
-- as shown below. 
-%
-\begin{align}
-x^2-9x+20 &amp;= \left(x-\frac{9}{2} \right)^2 -\left(\frac{9}{2}\right)^2 + 20  \\
-&amp;= \left(x-\frac{9}{2}\right)^2 -\frac{1}{4}\\
-&amp;= \left(x-\frac{9}{2}\right)^2 -\left(\frac{1}{2}\right)^2
-\end{align}\\
-\begin{align}
-\therefore I_2 &amp;= 34\int\frac{dx}{\sqrt{x^2-9x+20}} \\
-&amp;= 34\underbrace{\int\frac{dx}{\sqrt{\left(x-\frac{9}{2}\right)^2 -\frac{1}{2^2}}}}
-_{\int\frac{dx}{\sqrt{x^2-a^2}}= \log\vert x + \sqrt{x^2-a^2}\vert} \\
-&amp;= 34\cdot\log\left\vert \left( x-\frac{9}{2}\right) + \sqrt{x^2-9x+20} \right\vert 
-\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="23">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-3.svg</tex>
+    </reason>
+    <skills>
+      <skill id="64"/>
+      <skill id="58"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-4.svg</tex>
+      <tex isImage="true" correct="false">img_tex-5.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-6.svg</tex>
+    </reason>
+    <skills>
+      <skill id="33"/>
+      <skill id="1"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-7.svg</tex>
+      <tex isImage="true" correct="false">img_tex-8.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-9.svg</tex>
+    </reason>
+    <skills>
+      <skill id="48"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-10.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-11.svg</tex>
+    </reason>
+    <skills>
+      <skill id="64"/>
+    </skills>
+  </step>
 </question>
