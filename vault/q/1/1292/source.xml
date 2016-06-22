@@ -1,134 +1,29 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-Find the relationship between $\alpha$ and $\beta$ so
-that the function 'f' defined by 
-%
-f(x) = \begin{cases} 
-\alpha x + 1, \text{ if }x\leq 3 \\
-\beta x + 3, \text{ if } x \gt 3
-\end{cases} \\
-%text
-
-is continuous at $x=3$
-%</tex>
-      <tex>\\ %text
-For f(x) to be continuous at $x=3$, 
-\underline\text{what conditions must be satisfied}?
-%</tex>
-      <tex>\\ %text
-Given the conditions for continuity, which 
-of following correctly shows the \underline\text{limits}
-\underline\text{and values} for the function \underline\text{at $x=3$}? 
-%</tex>
-      <tex>\\ %text
-Given the limits and values for the function 
-at $x=3$, can we conclude / infer the 
-following \underline\text{about $\alpha$ and $\beta$}?
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-\lim_{x\to 3^-}f(x) &amp;= \lim_{x\to 3^+}f(x) \\
-\lim_{x\to 3} f(x) &amp;= f(3) 
-\end{align} </tex>
-         <tex>\begin{align}
-\lim_{x\to 3^-}f(x) &amp;= \lim_{x\to 3^+}f(x)
-\end{align} </tex>
-      </options>
-      <reason>
-         <tex>%text
-For a function to be continuous at $x=a$, 
-\underline\text{the following conditions} must be satisfied
-
-(i)  f(a) must exist / be defined. 
-(ii) $\lim_{x\to a}f(x)$ must exist. 
-In other words, $\lim_{x\to a^-}f(x) = \lim_{x\to a^+}f(x) 
-
-(iii) And, $\lim_{x\to a}f(x) = f(a)$.
-
-If all three conditions are satisfied, then 
-the function can be \underline\text{drawn at, and around,}
-\underline\text{$x=a$ without lifting the pencil}. 
-%</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{tabular}{|c|c|}
-\hline 
-&amp; \text{Value} \\ 
-\hline 
-\lim_{x\to 3^-}f(x) &amp; 3\alpha + 1 \\
-\hline 
-\lim_{x\to 3^+}f(x) &amp; 3\beta + 3 \\
-\hline 
-f(3) &amp; 3\alpha + 1 \\
-\hline 
-\end{tabular}</tex>
-         <tex>\begin{tabular}{|c|c|}
-\hline 
-&amp; \text{Value} \\ 
-\hline 
-\lim_{x\to 3^-}f(x) &amp; 3\alpha + 1 \\
-\hline 
-\lim_{x\to 3^+}f(x) &amp; 3\beta + 3 \\
-\hline 
-f(3) &amp; 3\beta + 1 \\
-\hline 
-\end{tabular}</tex>
-      </options>
-      <reason>
-         <tex>%text
-Bear in mind the \underline\text{definition of the function}
-that we were given. 
-%
-f(x) = \begin{cases} 
-\alpha x + 1, \text{ if }x\leq 3 \\
-\beta x + 3, \text{ if } x \gt 3
-\end{cases} \\
-%text
-
-And therefore, 
-%
-\begin{tabular}{|c|c|c|}
-\hline 
-&amp; \text{Meaning} &amp; \text{Value} \\ 
-\hline 
-\lim_{x\to 3^-}f(x) &amp; \text{Left-hand limit} &amp; 3\alpha + 1 \\
-\hline 
-\lim_{x\to 3^+}f(x) &amp; \text{Right-hand limit} &amp;  3\beta + 3 \\
-\hline 
-f(3) &amp; \text{Function's value} &amp; 3\alpha + 1 \\
-\hline 
-\end{tabular}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-\alpha - \beta &amp;= \frac{2}{3}
-\end{align} </tex>
-         <tex>\begin{align}
-\beta - \alpha  &amp;= \frac{2}{3}
-\end{align} </tex>
-      </options>
-      <reason>
-         <tex>%text
-For f(x) to be continuous at $x=3$,
-we know that the following must hold
-
-%
-\begin{align}
-\underbrace{3\alpha + 1}_{\lim_{x\to 3^-}f(x)} 
-&amp;= \underbrace{3\beta + 3}_{\lim_{x\to 3^+}f(x)} 
-= \underbrace{3\alpha + 1}_{f(3)} \\ 
-\implies 3\alpha + 1 &amp;= 3\beta + 3 \\
-\therefore \alpha - \beta &amp;= \frac{2}{3}
-\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="21">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+      <tex isImage="true" correct="false">img_tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="13"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-5.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-6.svg</tex>
+    </reason>
+    <skills>
+      <skill id="34"/>
+    </skills>
+  </step>
 </question>
