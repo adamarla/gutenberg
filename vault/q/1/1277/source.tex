@@ -1,0 +1,77 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+\newcommand\ea{ \left(x^2-1 \right)}
+%text
+Solve the following differential equation
+\[ \quad \ea\frac{dy}{dx} + 2xy = \frac{1}{\ea}, \vert x\vert \neq 1\]
+%
+
+\newcard
+
+\[ \ea\frac{dy}{dx} + 2x\cdot y = \frac{1}{\ea}\]
+is of the form \[ \qquad \frac{dy}{dx} = F \left(\frac{y}{x} \right)\]
+which makes it a \underline{homogenous} differential equation
+\newcard 
+
+\begin{align}
+	\ea \frac{dy}{dx}+ 2xy &= \frac{1}{\ea} \\
+	\implies \frac{dy}{dx} + \frac{2x}{\ea}\cdot y&= \frac{1}{\ea^2}
+\end{align}
+
+The above looks like 
+\[ \qquad \frac{dy}{dx} + P(x)\cdot y = Q(x) \]
+
+And that we know is a \underline{first-order linear} differential equation -- not a homogenous one 
+
+\newcard 
+
+\[ \ea \frac{dy}{dx} + 2x\cdot y = \frac{d}{dx} \left[\ea\cdot y \right]\]
+
+\newcard 
+
+\[ \ea \frac{dy}{dx} + 2x\cdot y \neq \frac{d}{dx} \left[\ea\cdot y \right]\]
+
+\newcard 
+
+We have established that the given differential equation is a linear one\newline 
+
+And so, the logical next step would be to calculate the integrating factor. It would be \underline{perfectly ok} to do that\newline 
+
+But if you can be a little patient, then you will notice that $\frac{d}{dx}\ea = 2x$\newline  
+
+And furthermore 
+\begin{align}
+\frac{d}{dx} \left[\ea\cdot y \right] &= \underbrace{\ea \frac{dy}{dx} + y\cdot \frac{d}{dx}\ea}_{\text{Product Rule}} \\
+&= \underbrace{\ea\cdot \frac{dy}{dx} + 2x\cdot y}_{\text{Our differential equation!}}
+\end{align}
+
+\newcard 
+
+\begin{align}
+	\frac{d}{dx} \ea\cdot y &= \frac{1}{\ea^2} \\
+	\implies y &= \frac{1}{2\ea} \cdot \log \left\vert \frac{x-1}{x+1}\right\vert + C 
+\end{align}
+
+\newcard 
+
+\begin{align}
+	\frac{d}{dx} \ea\cdot y &= \frac{1}{\ea^2} \\
+	\implies y &= \frac{1}{\ea}\cdot\tan^{-1} x + C 
+\end{align} 
+
+\newcard 
+
+In the last step, we established that 
+\[ \qquad \frac{d}{dx} \left[\ea\cdot y \right] = \frac{1}{\ea}\]
+
+And so it follows that 
+
+\begin{align}
+\ea\cdot y &= \int \frac{dx}{x^2-1} \\
+&= \underbrace{\frac{1}{2}\cdot \log \left\vert \frac{x-1}{x+1}\right\vert}_{\text{Standard result}} + C  \\
+\implies y &= \frac{1}{2\ea}\log \left\vert \frac{x-1}{x+1}\right\vert + C 
+\end{align}
+\end{document}
