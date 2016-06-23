@@ -1,0 +1,28 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{skill}
+\textcolor{blue}{Integrals \#5}
+
+Results for  $\int \sqrt{x^2 \pm a^2}\cdot dx$ 
+\end{skill}
+
+\newcard 
+
+\begin{center}
+  \begin{tabular}{NN}
+  \toprule
+        \text{Integral} & \text{Evaluates to}  \\
+   \midrule 
+   \int \sqrt{x^2-a^2}\cdot dx & \frac{x}{2}\sqrt{x^2-a^2} - \frac{a^2}{2}\log\left\vert x + \sqrt{x^2-a^2} \right\vert + C \\ 
+    \midrule 
+    \int \sqrt{x^2+a^2}\cdot dx & \frac{x}{2}\sqrt{x^2+a^2} + \frac{a^2}{2}\log\left\vert x + \sqrt{x^2+a^2} \right\vert + C \\ 
+    \midrule 
+    \int\sqrt{a^2-x^2}\cdot dx & \frac{x}{2}\sqrt{a^2-x^2} + \frac{a^2}{2}\sin^{-1}\frac{x}{a} + C \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+\end{document} 
