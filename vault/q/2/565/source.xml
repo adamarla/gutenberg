@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <question xmlns="http://www.gradians.com" chapterId="27">
   <statement>
-    <tex>\text{Solve this Linear Programming problem}\\
-\text{graphically. Maximise } Z=-x+2y \text{ subject}\\
-\text{to the constraints } x \ge 3,\, x+y \ge 5\\
-x+2y\ge 6\, y \ge 0
-\text{Does this plot correctly represent the } \\
-\text{feasible region given the constraints?}
-\text{What is the value of the maximum} \\
-\text{for the corner points as seen in the graph?}
-\text{Does this represent the open half plane}\\
--x+2y\gt 1\text{ that will help determine if a}\\
-\text{maximum is possible?}
+    <tex>%text
+Solve this Linear Programming problem
+graphically. Maximise $Z=-x+2y$ subject
+to the following four constraints:
+%
+
+\begin{tabular}{ll}
+  x \ge 3 &amp;x+y \ge 5 \\
+  x+2y\ge 6 &amp; y \ge 0
+\end{tabular} \\
 </tex>
   </statement>
   <step>
@@ -20,8 +19,15 @@ x+2y\ge 6\, y \ge 0
       <tex isImage="true" correct="false">1b.svg</tex>
     </options>
     <reason>
-      <tex>x+y\ge 5\implies y\ge -x+5\text{ (area above)}\\
-x+2y\ge 6\implies y\ge -x/2+3\text{ (area above)}</tex>
+      <tex>%text
+The plot that correctly represent the
+feasible region given the constraints is
+%
+
+x+y\ge 5\implies y\ge -x+5 \\
+\text{(area above $y=-x+5$)}\\
+x+2y\ge 6\implies y\ge -x/2+3 \\
+\text{(area above $y=-x/2+3$)}</tex>
     </reason>
   </step>
   <step>
@@ -43,9 +49,11 @@ x+2y\ge 6\implies y\ge -x/2+3\text{ (area above)}</tex>
 \end{align}</tex>
     </options>
     <reason>
-      <tex>\text{Feasible region is unbounded (open),} \\
-\text{therefore we cannot predict the maximum}\\
-\text{based on corner points alone.}</tex>
+      <tex>%text
+Feasible region is unbounded (open),
+therefore we cannot predict the maximum
+based on corner points alone.
+%</tex>
     </reason>
   </step>
   <step>
@@ -54,8 +62,19 @@ x+2y\ge 6\implies y\ge -x/2+3\text{ (area above)}</tex>
       <tex isImage="true" correct="false">3b.svg</tex>
     </options>
     <reason>
-      <tex>-x+2y\gt 1\implies y\gt x/2+1/2\\
-\text{i.e. above line }-x+2y\gt 1</tex>
+      <tex>%text
+The open half plane $-x+2y\gt 1$ will determine 
+if a maximum is possible.
+%
+-x+2y\gt 1\implies y\gt x/2+1/2 \\
+\text{i.e. above line }-x+2y\gt 1 \\
+
+%text
+The open half plane does have points in
+common with the feasible region, therefore
+no maximum is possible!
+%
+</tex>
     </reason>
   </step>
   <choices>
