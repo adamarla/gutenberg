@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="6">
+  <statement>
+    <tex>%text
+Solve $z^2=-4i $
+%</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>%text
+Let $z=x+i y$. It follows that,
+%
+\begin{align}
+  (x+i y)^2&amp;=-4i  \\
+  x^2-y^2+2xyi&amp;=-4i \\  
+\end{align}
+</tex>
+      <tex correct="false">%text
+Let $z=x+i y$. It follows that,
+%
+\begin{align}
+  (x+i y)^2&amp;=-4i \\
+  x^2+y^2+2xyi&amp;=-4i \\  
+\end{align}
+</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  (x+i y)^2 &amp;= x^2+(i y)^2 + 2xyi \\
+  	&amp;= x^2+y^2(i)^2+2xyi \\
+  	&amp;= x^2+y^2(-1)+2xyi \\
+  	&amp;=x^2-y^2+2xyi
+\end{align}</tex>
+    </reason>
+  </step>
+  <step>
+    <options>
+      <tex correct="false">\begin{align}
+  &amp; x^2-y^2+2xyi=-4i \\  
+  \implies &amp;x^2-y^2=0 \text{ and }2xy=-4
+\end{align}
+</tex>
+    </options>
+    <reason>
+      <tex>a+ib=c+id \implies a=c, b=d</tex>
+    </reason>
+  </step>
+  <step>
+    <options>
+      <tex>\begin{align}
+  x^2-y^2=0 &amp;\implies x=\pm y \\
+  2xy=-4 &amp;\implies xy=-2  
+\end{align} \\
+
+x=\sqrt{2}, y=-\sqrt{2}</tex>
+      <tex correct="false">\begin{align}
+  x^2-y^2=0 &amp;\implies x=\pm y \\
+  2xy=-4 &amp;\implies xy=-2  
+\end{align} \\
+x=y=\sqrt{2}i</tex>
+    </options>
+    <reason>
+      <tex>%text
+The original assumption was that since
+$z=x+iy$, therefore $x$ and $y$ $\in \mathbb{R}$. 
+The only possible solution is $x=\sqrt{2}$, $y=-\sqrt{2}$ 
+or $x=-\sqrt{2}$ and $y=\sqrt{2}$.
+%</tex>
+    </reason>
+  </step>
+</question>
