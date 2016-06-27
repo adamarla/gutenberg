@@ -89,7 +89,10 @@
   \ifbool{smallmath}{\small}{\normalsize}
 }
 
-\AtEndEnvironment{align}{\normalsize}
+\AtEndEnvironment{align}{
+  \normalsize
+  \setbool{smallmath}{true} 
+}
 
 \AtBeginEnvironment{tabular}{\small}
 \AtEndEnvironment{tabular}{\normalsize}
