@@ -51,9 +51,7 @@
 
 %% Control the size of math in \begin{align} on a case by case basis 
 \newbool{smallmath}
-\setbool{smallmath}{true} 
-
-\newcommand\normalmath{\setbool{smallmath}{false}}
+\setbool{smallmath}{false} 
 \newcommand\smallmath{\setbool{smallmath}{true}} 
 
 \newcounter{index}
@@ -91,7 +89,7 @@
 
 \AfterEndEnvironment{align}{
   \normalsize
-  \setbool{smallmath}{true} 
+  \setbool{smallmath}{false} 
 }
 
 \AtBeginEnvironment{tabular}{\small}
