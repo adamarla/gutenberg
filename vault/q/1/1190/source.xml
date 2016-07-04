@@ -1,96 +1,64 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-Evaluate \[ \int\frac{5x-2}{1+2x+3x^2}\cdot dx \]
-%</tex>
-      <tex>\\ %text
-Given that \[ 5x-2 = A\cdot(6x+2) + B \], which of 
-the following sets of statements is true? 
-%</tex>
-      <tex>\\ %text
-In \[ I = \int\frac{5x-2}{1+2x+3x^2}dx \]
-\[= \underbrace{\frac{5}{6}\int\frac{6x+2}{1+2x+3x^2}dx}_A-\underbrace{\frac{11}{3}\int\frac{dx}{1+2x+3x^2}dx}_B\]
-\underline\text{will $A$ be the following}?
-%</tex>
-      <tex>\\ %text
-As for \[B =\frac{11}{3}\int\frac{dx}{1+2x+3x^2}dx \], which of 
-the \underline{\text{following sets of statements is true}}?
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-6x + 2 &amp;= \frac{d}{dx}(1+2x+3x^2) \\
-A &amp;= \frac{5}{6} \\
-B &amp;= -\frac{11}{3}
-\end{align}</tex>
-         <tex>\begin{align}
-6x + 2 &amp;= \frac{1+2x+3x^2}{5x-2} \\
-A &amp;= \frac{3}{4} \\
-B &amp;= \frac{7}{5}
-\end{align}</tex>
-      </options>
-      <reason>
-         <tex>%text
-\[ 1 +2x+3x^2 = 0 \] has no real roots. Which 
-means, that \underline\text{\[1+2x+3x^2 \] can't be factorized}.
-
-Hence, let us try a different approach. 
-
-%
-\begin{align}
-\text{Let }5x - 2 &amp;= A\cdot\frac{d}{dx}(1+2x+3x^2) + B \\
-&amp;= A\cdot(6x+2) +B = 6A\cdot x + (2A + B) \\ 
-\implies 6A &amp;= 5 \text{ or } A = \frac{5}{6} \\
-\text{and }2A + B &amp;= -2 \implies B = -2 - 2\cdot \left(\frac{5}{6}\right) = -\frac{11}{3}
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">A = \frac{5}{6}\log\left\vert 1+2x+3x^2\right\vert + C_1</tex>
-      </options>
-      <reason>
-         <tex>%text
-Recall that \[ 6x+2 = \frac{d}{dx}(1+2x+3x^2) \]
-
-%
-\begin{align}
-\therefore z = 1+2x+3x^2 &amp;\implies dz = (6x+2)\cdot dx \\
-\therefore A = \frac{5}{6}\int\frac{6x + 2}{1+2x+3x^2}dx &amp;= \frac{5}{6}\int\frac{dz}{z} \\
-&amp;= \frac{5}{6}\log\left\vert z\right\vert + C_1 \\
-&amp;= \frac{5}{6}\left\vert1+2x+3x^2\right\vert + C_1
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-  \frac{1}{1+2x+3x^2} &amp;= \frac{1}{3\left[\left(x+\frac{1}{3}\right)^2 + \left(\frac{\sqrt{2}}{3}\right)^2\right]} \\
-  B &amp;= \frac{11}{3\sqrt{2}}\tan^{-1}\left(\frac{3x+1}{\sqrt{2}}\right) + C_2
-\end{align}</tex>
-         <tex>\begin{align}
-  \frac{1}{1+2x+3x^2} &amp;= \frac{1}{\left(x-\frac{1}{3}\right)^2 + \left(\frac{1}{\sqrt{3}}\right)^2} \\
-  \therefore B &amp;= \frac{11}{\sqrt{3}}\tan^{-1}\left(\frac{3x-1}{\sqrt{3}}\right) + C_2
-\end{align}</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-  1+2x + 3x^2 &amp;= 3\left(x^2 + \frac{2}{3}x + \frac{1}{3}\right) \\
-  &amp;= 3\left[\underbrace{\left(x+\frac{1}{3}\right)^2}_{ = x^2 + \frac{2}{3}x + \frac{1}{9}} - \frac{1}{9} + \frac{1}{3}\right] \\
-  &amp;= 3\left[\left(x+\frac{1}{3}\right)^2 + \left(\frac{\sqrt{2}}{3}\right)^2\right] \\
-  \therefore B &amp;= \frac{11}{3}\int\frac{dx}{1+2x+3x^2} \\
-  &amp;= \frac{11}{9}\int\frac{dx}{\left(x+\frac{1}{3}\right)^2 + \left(\frac{\sqrt{2}}{3}\right)^2} \\
-  &amp;= \frac{11}{9}\cdot\underbrace{\frac{1}{\frac{\sqrt{2}}{3}}\tan^{-1}\left(\frac{x+\frac{1}{3}}{\frac{\sqrt{2}}{3}}\right)}_{\int\frac{dx}{x^2+a^2} = \frac{1}{a}\tan^{-1}\frac{x}{a}} \\
-  &amp;= \frac{11}{3\sqrt{2}}\tan^{-1}\left(\frac{3x+1}{\sqrt{2}}\right) + C_2
-\end{align} \\
-%text
-
-That is it! \[ I =\int\frac{5x-2}{1+2x+3x^2}dx =  A -B \] 
-from Steps 2 and 3. 
-%</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="0">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-3.svg</tex>
+    </reason>
+    <skills>
+      <skill id="64"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-4.svg</tex>
+      <tex isImage="true" correct="false">img_tex-5.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-6.svg</tex>
+    </reason>
+    <skills>
+      <skill id="1"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-7.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-8.svg</tex>
+    </reason>
+    <skills>
+      <skill id="48"/>
+      <skill id="32"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-9.svg</tex>
+      <tex isImage="true" correct="false">img_tex-10.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-11.svg</tex>
+    </reason>
+    <skills>
+      <skill id="62"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-12.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-13.svg</tex>
+    </reason>
+    <skills>
+      <skill id="48"/>
+    </skills>
+  </step>
 </question>
