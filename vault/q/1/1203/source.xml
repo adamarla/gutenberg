@@ -25,6 +25,9 @@
     <reason>
       <tex isImage="true">img_tex-5.svg</tex>
     </reason>
+    <skills>
+      <skill id="69"/>
+    </skills>
   </step>
   <step>
     <options>
