@@ -1,54 +1,29 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-Evaluate \[ \int\dfrac{\sin (x-a)}{\sin (x+a)} \cdot dx \]
-%</tex>
-      <tex>\\ %text
-We will tell you that 
-\[ \dfrac{\sin (x-a)}{\sin (x+a)} = \cos 2a -\sin 2a\cdot \dfrac{\cos\phi}{\sin\phi} \]
-But what is $\phi$ in terms of $x$?
-%</tex>
-      <tex>\\ %text
-Given $\dfrac{\sin (x-a)}{\sin (x+a)} = \cos 2a - \sin 2a\cdot\dfrac{\cos\phi}{\sin\phi}$,
-what will \[I = \int \dfrac{\sin (x-a)}{\sin (x+a)}\cdot dx\] evaluate to?
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">$\phi = x+a$ </tex>
-         <tex>$\phi = x-a$</tex>
-      </options>
-      <reason>
-         <tex>%text
-See what happens when we let $\phi = x+a$.
-% 
-\begin{align}
-\phi &amp;= x + a\implies x-a = \phi - 2a \\ 
-\therefore \dfrac{\sin(x-a)}{\sin(x+a)} &amp;= \dfrac{\sin (\phi-2a)}{\sin \phi}\\
-&amp;= \dfrac{\sin\phi\cdot\cos 2a - \cos\phi\cdot\sin 2a}{\sin\phi} \\
-&amp;= \cos 2a - \sin 2a\cdot\dfrac{\cos\phi}{\sin\phi}
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">(x+a)\cdot\cos 2a - \sin 2a\cdot\log\vert\sin (x+a)\vert + C </tex>
-         <tex>x\cdot\cos 2a + \sin 2a\cdot\log\vert\sin x \vert + C </tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-&amp;\phi= x + a \implies d\phi = dx \\ 
-&amp;\text{and }\dfrac{\sin (x-a)}{\sin (x+a)} = 
-\cos 2a - \sin 2a\cdot\dfrac{\cos\phi}{\sin\phi} \\
-&amp;\therefore \int \dfrac{\sin (x-a)}{\sin (x+a)}dx = 
-\int \left( \cos 2a -\sin 2a\frac{\cos\phi}{\sin\phi} \right) d\phi \\ 
-&amp;= \cos 2a \cdot\int d\phi -
-\underbrace{\sin 2a\cdot\int\dfrac{\cos\phi}{\sin\phi}d\phi}_{\sin\phi = z \implies \cos\phi\cdot d\phi = dz}\\
-&amp;= \cos 2a\cdot\phi - \sin 2a\cdot \log\vert \sin\phi\vert + C \\ 
-&amp;= \cos 2a \cdot (x+a) - \sin 2a\cdot\log\vert \sin (x+a)\vert + C 
-\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="23">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-3.svg</tex>
+    </reason>
+    <skills>
+      <skill id="32"/>
+      <skill id="28"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-4.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-6.svg</tex>
+    </reason>
+    <skills>
+      <skill id="48"/>
+    </skills>
+  </step>
 </question>
