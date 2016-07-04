@@ -1,232 +1,41 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-$A$ speaks the truth in 60\% of the cases, while 
-$B$ in 90\% of the cases. In what percent of cases 
-are they likely to contradict each other in stating 
-the same fact? In the cases of contradiction do 
-you think, the statement of $B$ will carry more 
-weight as he speaks truth in more number of 
-cases than $A$? 
-%</tex>
-      <tex>\\ %text
-Given the \underline{following} events
-%
-\begin{tabular}{|c|c|}
-\hline
-\text{Event} &amp; \text{Meaning} \\ 
-\hline 
-A &amp; \text{A speaks the truth} \\
-\hline
-B &amp; \text{B speaks the truth} \\ 
-\hline 
-C &amp; \text{A and B contradict} \\
-\hline 
-\end{tabular} 
-%text
-
-are the probabilities below correct?
-%</tex>
-      <tex>\\ %text
-Given the event definitions from Step 1, 
-when will a contradiction occur? And 
-therefore, what will be its probability? 
-%</tex>
-      <tex>\\ \textbf{Whom to believe?}
-%text
-
-Would knowing the following help us 
-decide which of $A$ or $B$ to believe 
-in case of a contradiction (event C)? 
-%</tex>
-      <tex>\\ %text
-Your friend makes the following assertions.
-\textbf{Are his assertions correct?}
-%</tex>
-      <tex>\\ %text
-Is the analysis below correct? 
-And therefore, is also the conclusion? 
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-P(A) &amp;= 0.6 \implies P(\bar{A}) = 1-0.6 = 0.4 \\
-P(B) &amp;= 0.9\implies P(\bar{B}) = 1-0.9 = 0.1
-\end{align} </tex>
-      </options>
-      <reason>
-         <tex>%text
-As a first step, we should take stock of the
-facts that have been given to us. 
-
-Hence, if events are defined as follows, 
-%
-\begin{tabular}{|c|c|}
-\hline
-\text{Event} &amp; \text{Meaning} \\ 
-\hline 
-A &amp; \text{A speaks the truth} \\
-\hline
-B &amp; \text{B speaks the truth} \\ 
-\hline 
-C &amp; \text{A and B contradict} \\
-\hline 
-\end{tabular} 
-%text
-
-then it follows that 
-%
-\begin{align}
-P(A) &amp;= 0.6 \implies P(\bar{A}) = 1-0.6 = 0.4 \\
-P(B) &amp;= 0.9\implies P(\bar{B}) = 1-0.9 = 0.1
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-C &amp;= (A\cap\bar{B})\cup (\bar{A}\cap B) \\
-P(C) &amp;= P(A)\cdot P(\bar{B}) + P(\bar{A})\cdot P(B) \\ 
-&amp;= 0.6\times 0.1 + 0.4\times 0.9 = 0.42 \\
-&amp;\implies \text{ in 42\% of the cases}
-\end{align} </tex>
-         <tex>\begin{align}
-C &amp;= (\bar{A}\cap\bar{B})\cup (\bar{A}\cap B) \\
-P(C) &amp;= P(\bar{A})\cdot P(\bar{B}) + P(\bar{A})\cdot P(B) \\ 
-&amp;= 0.4\times 0.1 + 0.4\times 0.9 = 0.4 \\
-&amp;\implies \text{ in 40\% of the cases}
-\end{align}</tex>
-      </options>
-      <reason>
-         <tex>%text
-If $A$ and $B$ both lie, then there is no 
-contradiction. 
-
-If $A$ and $B$ both speak the truth, then also
-there is no contradiction. 
-
-Only when one lies and the other speaks the
-truth is there a contradiction. Hence, the 
-event $C$ is
-%
-\begin{align}
-C &amp;= \underbrace{(A\cap\bar{B})}_{\text{B lies, A does not}}
-\cup \underbrace{(\bar{A}\cap B)}_{\text{A lies, B does not}} \\
-P(C) &amp;= P(A)\cdot P(\bar{B}) + P(\bar{A})\cdot P(B) \\ 
-&amp;= 0.6\times 0.1 + 0.4\times 0.9 = 0.42 \\
-&amp;\implies \text{ in 42\% of the cases}
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">P(B\,\vert\,C)\gt P(A\,\vert\,C) </tex>
-         <tex>P(C\,\vert\, B) \gt P(C\,\vert\, A)</tex>
-      </options>
-      <reason>
-         <tex>%text
-When $A$ and $B$ say different things, you
-want to know which of them is \underline{\text{more likely}}
-to be speaking the truth. 
-
-Which means, event C (contradiction) has 
-already occurred. Therefore, the probabilities 
-that you should want to find are 
-
-%
-\begin{tabular}{|c|c|}
-\hline 
-&amp; \text{Meaning} \\ 
-\hline 
-P(A\,\vert\,C) &amp; \text{A speaking truth given contradiction} \\
-\hline
-P(B\,\vert\,C) &amp; \text{B speaking truth given contradiction} \\
-\hline 
-\end{tabular} \\
-%text
-Moreover, you also want to know whether
-$P(A\vert C)\gt P(B\vert C)$ or $P(B\vert C)\gt P(A\vert C)$.
-%</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-P(C\vert B) &amp;= P(\bar{A}) \\ 
-P(C\vert A) &amp;= P(\bar{B})
-\end{align}</tex>
-      </options>
-      <reason>
-         <tex>%text
-First, know what $P(C\vert A)$ and $P(C\vert B)$ mean. 
-
-%
-\begin{tabular}{|c|l|}
-\hline 
-\text{Probability} &amp; \text{Meaning} \\ 
-\hline 
-P(C\vert B) &amp; \text{Contradiction occuring given}\\
-&amp;\text{that B is speaking the truth} \\
-\hline
-P(C\vert A) &amp; \text{Contradiction occuring given}\\
-&amp;\text{that A is speaking the truth} \\
-\hline 
-\end{tabular} \\
-%text
-If $A$ is speaking the truth then $B$ must lie
-for contradiction $C$ to occur. 
-
-Similarly, if $B$ is speaking the truth then 
-$A$ must lie for $C$ to occur. 
-
-Mathemtically therefore, 
-%
-\begin{align}
-P(C\vert A) &amp;= P(\bar{B}) \\
-P(C\vert B) &amp;= P(\bar{A})  
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-P(A\vert C) &amp;= \dfrac{P(C\vert A)\cdot P(A)}{P(C)} = 
-\dfrac{P(\bar{B})\cdot P(A)}{P(C)} \\
-&amp;= \dfrac{\left(\frac{1}{10}\cdot\frac{6}{10}\right)}{\frac{42}{100}}
-= \dfrac{1}{7} \\ 
-P(B\vert C) &amp;= \dfrac{P(C\vert B)\cdot P(B)}{P(C)} = 
-\dfrac{P(\bar{A})\cdot P(B)}{P(C)} \\
-&amp;= \dfrac{\left( \frac{4}{10}\cdot\frac{9}{10}\right)}{\frac{42}{100}}
-= \dfrac{6}{7}
-\end{align} \\
-%text
-$P(B\vert C)\gt P(A\vert C)\implies B$ is more believable 
-than $A$ in case of a contradiction.
-%</tex>
-      </options>
-      <reason>
-         <tex>%text
-We estbalished in Step 4 that we need to 
-compare $P(A\vert C)$ and $P(B\vert C)$. Now, it so 
-happens that
-%
-\begin{align}
-P(A\vert C) &amp;= \dfrac{P(C\vert A)\cdot P(A)}{P(C)} \\
-\text{and }P(B\vert C) &amp;=\underbrace{ \dfrac{P(C\vert B)\cdot P(B)}{P(C)}}_{\text{Bayes' Theorem}}
-\end{align} \\
-\text{Moreover, we also know from Step 3 that}\\
-\begin{align}
-P(C\vert A) &amp;= P(\bar{B}) \\
-P(C\vert B) &amp;= P(\bar{A})  
-\end{align} \\
-%text
-Hence, simply plug-in the values and find 
-$P(A\vert C)$ and $P(B\vert C)$. On comparing,
-you will find that $B$ is more believable. 
-%</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="28">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+      <tex isImage="true" correct="false">img_tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="36"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-5.svg</tex>
+      <tex isImage="true" correct="false">img_tex-6.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-7.svg</tex>
+    </reason>
+    <skills>
+      <skill id="38"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-8.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-9.svg</tex>
+    </reason>
+    <skills>
+      <skill id="14"/>
+    </skills>
+  </step>
 </question>
