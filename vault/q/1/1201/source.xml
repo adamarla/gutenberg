@@ -1,125 +1,55 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-Find the equation of the normal at a point
-on the curve $x^2=4y$ which passes
-through the point $(1,2)$. Also, find the
-equation of the corresponding tangent.
-%</tex>
-      <tex>\\ %text
-The figure(s) below show the curve $x^2=4y$
-and the tangent (T) and normal (N) at a 
-point. But where will the point $A=(1,2)$ be?
-%</tex>
-      <tex>\\ %text
-If the required normal touches the parabola
-at point $P=(x_P,y_P)$, then would the 
-following be true (see equation below)? 
-%</tex>
-      <tex>\\ %text
-Given that $\dfrac{y_P - 2}{x_P-1} = -\dfrac{2}{x_P}$, what will the 
-coordinates of point $P$ be? 
-%</tex>
-      <tex>\\ \textbf{Right or wrong?}\\
-%text
-Given that $A=(1,2)$ and $P=(2,1)$, the 
-equations of the required normal and 
-tangent would be as follows.
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex src="right.svg" isImage="true" correct="true"/>
-         <tex src="wrong.svg" isImage="true" correct="false"/>
-      </options>
-      <reason>
-         <tex>%text
-Notice that when $(x,y) = (1,2)$, then 
-$x^2\neq 4y$. In other words, point $A=(1,2)$ 
-\underline\text{cannot be} on the parabola $y = \frac{x^2}{4}$. 
-
-However, $\left( 1,\frac{1^2}{4}\right) = \left(1,\frac{1}{4}\right)$ will be on the
-parabola. And as $A=(1,2)$ \underline\text{lies directly above}
-\left(1,\frac{1}{4}\right), therefore point $A$ will be as shown 
-in the correct option.
-%</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex src="2-right.svg" isImage="true" correct="true"/>
-         <tex src="2-wrong.svg" isImage="true" correct="false"/>
-      </options>
-      <reason>
-         <tex>%text
-If the required normal be $AP$, then 
-%
-\begin{align}
-\frac{y_P - 2}{x_P-1} &amp;= m_N\text{ (normal's slope)} \\
-\text{But }m_N\cdot m_T &amp;= -1 \text{ where }m_T = \left[\frac{dy}{dx}\right]_{x=x_P} \\
-\therefore m_N &amp;= -\frac{1}{\underbrace{\left(\dfrac{x_P}{2}\right)}_{\frac{dy}{dx}}} = -\frac{2}{x_P} \\
-\implies \frac{y_P - 2}{x_P-1} &amp;= -\frac{2}{x_P}
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">P=(2,1)</tex>
-         <tex>P = (3,1)</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-	\frac{y_P - 2}{x_P-1} &amp;= -\frac{2}{x_P} \\
-	\text{But }y_P &amp;= \frac{x_P^2}{4} \\
-	\therefore \frac{\dfrac{x_P^2}{4}-2}{x_P-1} &amp;= -\frac{2}{x_P} \\
-	\implies x_P\cdot (x_P^2-8) &amp;= -8\cdot (x_P-1)\\
-	\implies x_P &amp;= 2\text{ and }y_P = \frac{x_P^2}{4} = 1 \\
-	\text{Hence, } P&amp;= (x_P,y_P) = (2,1)
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{tabular}{|c|c|}
-\hline 
-&amp; \text{Equation} \\
-\hline 
-\text{Normal} &amp; x + y = 3 \\
-\hline 
-\text{Tangent} &amp; y = x - 1 \\
-\hline 
-\end{tabular} </tex>
-         <tex>\begin{tabular}{|c|c|}
-\hline 
-&amp; \text{Equation} \\
-\hline 
-\text{Normal} &amp; y = x - 1 \\
-\hline 
-\text{Tangent} &amp; x + y = 3 \\
-\hline 
-\end{tabular} </tex>
-      </options>
-      <reason>
-         <tex>%text
-We know that $AP$ is the normal and we
-know what $A$ and $P$ are. Hence, finding
-the equation for the normal should be easy. 
-%
-\begin{align}
-\frac{y-y_P}{x-x_P} &amp;= \frac{y_P-y_A}{x_P-x_A} \\
-\implies\frac{y-1}{x-2} &amp;= \frac{1-2}{2-1} = -1 \\
-\therefore y &amp;= -x + 3\text{ or }x + y = 3
-\end{align} \\
-%text
-\underline\text{As for the tangent}, we know that 
-%
-\begin{align}
-m_T &amp;= \left[\frac{dy}{dx}\right]_{P} = \left[ \frac{x_P}{2}\right] = 1 \\
-\therefore \frac{y-y_P}{x-x_P} &amp;= m_T = 1 \\ 
-\implies \frac{y-1}{x-2} &amp;= 1\text{ or }y=x-1
-\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="22">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_right.svg</tex>
+      <tex isImage="true" correct="false">img_wrong.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-2.svg</tex>
+    </reason>
+    <skills>
+      <skill id="26"/>
+      <skill id="66"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-3.svg</tex>
+      <tex isImage="true" correct="false">img_tex-4.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-5.svg</tex>
+    </reason>
+    <skills>
+      <skill id="70"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-6.svg</tex>
+      <tex isImage="true" correct="false">img_tex-7.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-8.svg</tex>
+    </reason>
+    <skills>
+      <skill id="69"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-9.svg</tex>
+      <tex isImage="true" correct="false">img_tex-10.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-11.svg</tex>
+    </reason>
+    <skills>
+      <skill id="57"/>
+    </skills>
+  </step>
 </question>
