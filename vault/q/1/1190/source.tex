@@ -80,17 +80,14 @@ Recall that  $5x-2 = \frac{5}{6}\cdot\ddx f(x) -\frac{11}{3}$
 
 \begin{align}
 	\ea &= 3 \left[ \trma^2  + \trmk^2 \right] \\
-	\therefore Q &= \intgb + C_2 \\
-	\text{and } I &= \intga \\ 
-	&- \intgb 
+	\therefore Q &= \frac{1}{3}\int \frac{dx}{\trma^2 + \trmk^2}
 \end{align}
 
 \newcard 
+
 \begin{align}
 	\ea &= 3 \left[ \left(x-\frac{1}{3} \right)^2  + \left(\frac{1}{\sqrt{3}} \right)^2 \right] \\
-	\therefore Q &= \frac{11}{\sqrt{3}}\tan^{-1} \left(\frac{3x-1}{\sqrt{3}} \right) + C_2 \\
-	\text{and } I &= \intga \\
-	&- \frac{11}{\sqrt{3}}\tan^{-1} \left(\frac{3x-1}{\sqrt{3}} \right) + C  
+	\therefore Q &= \frac{1}{3}\int \frac{dx}{\left(x-\frac{1}{3} \right)^2  + \left(\frac{1}{\sqrt{3}} \right)^2 }
 \end{align}
 
 \newcard 
@@ -106,12 +103,29 @@ This is called \underline{completing the squares}
 	&= 3 \left[\trma^2 + \trmk^2 \right]
 \end{align}
 
-As a result 
+And therefore 
+\begin{align}
+	Q &= \int \frac{dx}{\ea} \\
+	&= \frac{1}{3}\int \frac{dx}{\trma^2 + \trmk^2}
+\end{align}
+
+
+
+\newcard 
+\begin{align}
+	Q &= \intgb \\
+	\text{and } I &= \intga \\
+	&- \intgb + C  
+\end{align}
+
+\newcard 
+
 \begin{align}
 Q &= \frac{11}{3}\cdot \int \frac{dx}{3 \left[\trma^2 + \trmk^2 \right]} \\
 &= \frac{11}{9}\cdot \underbrace{\frac{3}{\sqrt{2}}\tan^{-1} \frac{\trma}{\trmk}}_{\int \frac{dx}{x^2 + a^2} = \frac{1}{a}\tan^{-1} \frac{x}{a}} \\
 &= \intgb \\
-\text{and } I &= \intga  \\
+\text{So, } I &= P - Q \\ 
+&= \intga  \\
 &- \intgb + C 
 \end{align}
 

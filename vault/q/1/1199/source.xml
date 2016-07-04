@@ -1,136 +1,53 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-Using integration, find the area of the region 
-enclosed between the two circles $x^2+y^2=4$
-and $(x-2)^2 + y^2 = 4$.
-%</tex>
-      <tex>\\ \textbf{Where are the circles?} \\
-%text
-Which of the figures below shows the two 
-circles drawn correctly? 
-%</tex>
-      <tex>\\ \textbf{Points of intersection} \\ 
-%text
-What are the coordinates of the points 
-$P$ and $Q$ where the two circles intersect?
-%</tex>
-      <tex>\\ %text
-Your friend makes the following assertions
-(see figure) about the required area $A$.
-\textbf{Are his assertions correct?}
-%</tex>
-      <tex>\\ %text
-In Step 3, we established that 
-\[ A = 4a = 4b=4c=4d \]
-Given this, can we say the following? 
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex src="right.svg" isImage="true" correct="true"/>
-         <tex src="wrong.svg" isImage="true" correct="false"/>
-      </options>
-      <reason>
-         <tex>%text
-A circle centered at $(a,b)$ has the equation 
-\[ (x-a)^2 + (y-b)^2 = R^2 \] 
-
-And so, by this logic 
-%
-\begin{align}
-x^2 + y^2 &amp;= 4 \implies \text{center} = (0,0) \\
-(x-2)^2 + y^2 &amp;= 4 \implies \text{center} = (2,0) \\
-\end{align}  \\
-%text
-Hence, we should have one circle centered
-at the origin $O$ and another circle \underline{\text{to the right}}
-of it (at $(2,0)$).
-%</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{align} 
-P &amp;= (1,\sqrt{3}) \\
-Q &amp;= (1,-\sqrt{3})
-\end{align} </tex>
-         <tex>\begin{align} 
-P &amp;= (1,\sqrt{2}) \\
-Q &amp;= (1,-\sqrt{2})
-\end{align} </tex>
-      </options>
-      <reason>
-         <tex>%text
-The two circles will intersect when 
-%
-\begin{align}
-y^2 &amp;= 4-x^2 = 4-(x-2)^2 \\ 
-\implies x^2 = (x-2)^2 &amp;\text{ or }\underbrace{x^2-(x-2)^2}_{a^2-b^2 = (a-b)\cdot(a+b)} = 0 \\
-\implies [x-(x-2)] &amp;\cdot [x+(x-2)] = 0 \\ 
-\implies 4\cdot (x-1) &amp;= 0\text{ or } x=1 \\
-\therefore \underbrace{P = (1,\sqrt{3})}_{(x,y) = (x,\sqrt{4-x^2})}&amp;\text{ and }Q = (1,-\sqrt{3})
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex src="2-right.svg" isImage="true" correct="true"/>
-      </options>
-      <reason>
-         <tex>\textbf{Look for symmetry} \\
-%text
-The line $PQ\perp$ x-axis. And together they
-divide the required area $A$ into four 
-segments \textit{- a,b,c and d}.
-
-But notice also the symmetry in the figure. 
-
-Both circles have a radius of 2 units. 
-
-The center of both circles lies on the x-axis. 
-
-Each circle passes through the center of 
-the other circle. 
-
-There is therefore \underline{\text{no reason to believe}}
-that $a\neq b\neq c\neq d$. In fact, we can safely
-say that $a=b=c=d$ because of symmetry.
-%</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{align} 
-A &amp;= 4\cdot\int_0^1 \sqrt{4-(x-2)^2}\cdot dx \\ 
-&amp;= 4\cdot \int_1^2 \sqrt{4-x^2}\cdot dx \\ 
-&amp;= \dfrac{8\pi}{3}-4\sqrt{3}
-\end{align} </tex>
-      </options>
-      <reason>
-         <tex>%text
-If you look at the figure in Step 3 again,
-then you will notice that 
-%
-\begin{align}
-A &amp;= 4\cdot\underbrace{\int_0^1 \sqrt{4-(x-2)^2}\cdot dx}_{a} \\ 
-&amp;= 4\cdot \underbrace{\int_1^2 \sqrt{4-x^2}\cdot dx}_{b} \\ 
-\end{align} \\
-%text
-Evaluating \[b=\int_1^2 \sqrt{4-x^2}\cdot dx\] just 
-looks easier. So let us do that now. 
-%
-\begin{align}
-A &amp;= 4\cdot \int_1^2 \underbrace{\sqrt{4-x^2}}_{\sqrt{2^2-x^2}}\cdot dx \\ 
-&amp;= 4\cdot\underbrace{\left[ \dfrac{2^2}{2}\sin^{-1}\dfrac{x}{2} + 
-x\cdot\sqrt{2^2-x^2}\right]_1^2}_
-{\int\sqrt{a^2-x^2}\cdot dx = \frac{a^2}{2}\sin^{-1}\frac{x}{a}+x\cdot\sqrt{a^2-x^2}}\\
-&amp;= 4\cdot \left[ \left( 2\sin^{-1}\frac{2}{2} + 0\right) - \left( 2\sin^{-1}\frac{1}{2}+\sqrt{3}\right) \right]\\
-&amp;= 4\cdot\left[ 2\cdot\frac\pi{2} - 2\frac\pi{6} - \sqrt{3}\right]
-= \frac{8\pi}{3}-4\sqrt{3}
-\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="24">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_right.svg</tex>
+      <tex isImage="true" correct="false">img_wrong.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-2.svg</tex>
+    </reason>
+    <skills>
+      <skill id="65"/>
+      <skill id="26"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="69"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-5.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-6.svg</tex>
+    </reason>
+    <skills>
+      <skill id="26"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-7.svg</tex>
+      <tex isImage="true" correct="false">img_tex-8.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-9.svg</tex>
+    </reason>
+    <skills>
+      <skill id="67"/>
+    </skills>
+  </step>
 </question>
