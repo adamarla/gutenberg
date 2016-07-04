@@ -1,52 +1,30 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-Evaluate \[ \int \sec^2 (7-4x)\cdot dx \]
-%</tex>
-      <tex>\\ %text
-If \[ \int\sec^2 (7-4x)\cdot dx = A\cdot \int\sec^2 t\cdot dt \]
-then what are $t$ and $A$?
-%</tex>
-      <tex>\\ %text
-Given that 
-\[ I = \int\sec^2 (7-4x)\cdot dx = -\frac{1}{4}\int\sec^2 t\cdot dt\]
-what will $I$ evaluate to in terms of $x$?
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-t &amp;= 7-4x \\ 
-A &amp;= -\frac{1}{4}
-\end{align}</tex>
-         <tex>\begin{align}
-t &amp;= 7-4x \\ 
-A &amp;= -4
-\end{align}</tex>
-      </options>
-      <reason>
-         <tex>%text
-If we let $t = 7-4x$ then 
-%
-\begin{align}
-dt = -4\cdot dx &amp;\implies dx = -\frac{dt}{4} \\
-\therefore \int\sec^2 (7-4x)\cdot dx &amp;= -\frac{1}{4}\cdot\int\sec^2 t\cdot dt \\
-\implies A &amp;= -\frac{1}{4}
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\[ -\frac{\tan (7-4x)}{4} + C \]</tex>
-         <tex>\[ -\frac{\tan (7-4x)\cdot\sec (7-4x)}{4} + C \]</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-I &amp;= -\frac{1}{4}\int sec^2 t\cdot dt = -\frac{1}{4}\tan t + C \\ 
-&amp;= -\frac{\tan (7-4x)}{4} + C 
-\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="23">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+      <tex isImage="true" correct="false">img_tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="30"/>
+      <skill id="32"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-5.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-6.svg</tex>
+    </reason>
+    <skills>
+      <skill id="48"/>
+    </skills>
+  </step>
 </question>
