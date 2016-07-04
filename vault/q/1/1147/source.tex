@@ -1,0 +1,144 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+A card from a pack of 52 playing cards is lost. From the remaining 
+cards, three cards are drawn at random without replacement and are found 
+to be all spades. Find the probability of the lost card being a spade 
+
+
+\newcard
+
+\begin{center}
+  \begin{tabular}{NNN}
+   \toprule
+        \text{Event} & \text{Meaning} & \text{Probability}  \\
+   \midrule 
+   L & \text{Card lost is a spade} & \frac{1}{4} \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+\newcard 
+
+There are four suites with 13 cards each in a full deck of 52 cards\newline 
+
+Hence, if a card is lost, then it must belong to one of the four suites\newline 
+
+Which is why $P(L) = \frac{1}{4}$ 
+
+\newcard 
+
+Given the following event 
+\begin{center}
+  \begin{tabular}{Nl}
+   \toprule
+       \text{Event} &  Meaning\\
+   \midrule
+   S_3 & All three cards drawn are spades \\ 
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+we know the following 
+
+\begin{center}
+  \begin{tabular}{NNN}
+   \toprule
+         \condp{S_3}{L}  & \quad & \condp{S_3}{L'} \\
+   \midrule 
+          \frac{12}{51}\cdot \frac{12}{51}\cdot \frac{12}{51} & \quad & 
+          \frac{13}{51}\cdot \frac{13}{51}\cdot \frac{13}{51} \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+\newcard 
+
+Given the following event 
+\begin{center}
+  \begin{tabular}{Nl}
+   \toprule
+       \text{Event} &  Meaning\\
+   \midrule
+   S_3 & All three cards drawn are spades \\ 
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+we know the following 
+
+\begin{center}
+  \begin{tabular}{NNN}
+   \toprule
+         \condp{S_3}{L}  & \quad & \condp{S_3}{L'} \\
+   \midrule 
+          \frac{12}{51}\cdot \frac{11}{50}\cdot \frac{10}{49} & \quad & 
+          \frac{13}{51}\cdot \frac{12}{50}\cdot \frac{11}{49} \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+
+\newcard 
+
+Once a card is lost, we either have 12 spades or 13 spades to start with. This gives 
+rise to two sets of probabilities -- $\condp{S_3}{L}$ and $\condp{S_3}{L'}$ \newline 
+
+Moreover, the cards are drawn without replacement. Which means 
+that with each card drawn, there is one less card the next time \newline 
+
+And that is why the probability of drawing \underline{three successive spades} is as follows 
+
+\begin{center}
+  \begin{tabular}{NNN}
+   \toprule
+         \condp{S_3}{L}  & \quad & \condp{S_3}{L'} \\
+   \midrule 
+          \frac{12}{51}\cdot \frac{11}{50}\cdot \frac{10}{49} & \quad & 
+          \frac{13}{51}\cdot \frac{12}{50}\cdot \frac{11}{49} \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+\newcard 
+
+The required probability is $\condp{L}{S_3}$ 
+
+\newcard 
+
+The required probability is $P \left(L\cap S_3 \right)$ 
+
+\newcard
+
+$S_3$ has already happened. And we want to know the probability of $L$ having happened\newline 
+
+And therefore, the required probability is 
+\[ \qquad \qquad \condp{L}{S_3} \]
+
+\newcard 
+
+\begin{align}
+	\condp{L}{S_3} &= \fcondp{L}{S_3} = \frac{10}{49} 
+\end{align}
+
+\newcard 
+
+As per Bayes' Theorem 
+\begin{align}
+	\condp{L}{S_3} &= \fcondp{L}{S_3}
+\end{align} 
+
+where 
+\[\underbrace{P(S_3) = \condp{S_3}{L}P(L)+ \condp{S_3}{L'}P(L')}_{\text{Theorem of Total Probability}} \]
+
+And therefore, 
+\begin{align}
+	\condp{L}{S_3} &= \dfrac{\left(\frac{12}{51}\cdot\frac{11}{50}\cdot\frac{10}{49}\right)\cdot\frac{1}{4}}
+            {\left(\frac{12}{51}\cdot\frac{11}{50}\cdot\frac{10}{49}\right)\cdot\frac{1}{4} + 
+            \left(\frac{13}{51}\cdot\frac{12}{50}\cdot\frac{11}{49}\right)\cdot\frac{3}{4}} \\
+            &= \dfrac{10}{49}
+\end{align}
+	
+\end{document}

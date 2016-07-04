@@ -1,0 +1,120 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+\newcommand\ea{x^2 + 3x-18} 
+\newcommand\dnm{\sqrt{\ea}}
+
+\newcommand\trma{\left(x+\frac{3}{2} \right)}
+\newcommand\trmk{ \left(\frac{9}{2} \right)}
+
+Evaluate the following integral 
+\[ \qquad I = \int \frac{x-3}{\dnm}\cdot dx \]
+
+\newcard 
+
+If $f(x) = \ea$ then 
+\[ \qquad I = \int \frac{x-3}{\sqrt{f(x)}}\cdot dx \]
+
+The best thing to do is express $I$ as follows 
+\begin{align}
+	I &= \int \frac{A\cdot f'(x) + B}{\sqrt{f(x)}}\cdot dx \\
+	&= A \int \frac{f'(x)}{\sqrt{f(x)}}\cdot dx + B\int \frac{dx}{\sqrt{f(x)}}
+\end{align}
+
+\newcard 
+
+Different integrals require different strategies to solve \newline 
+
+The given integral is of the form 
+\[ \quad I = \int \frac{px+q}{\sqrt{ax^2 + bx + c}}\cdot dx \]
+
+Hence, let $f(x) = ax^2+bx+c$ and express the integral as 
+
+\begin{align}
+	I &= \int \frac{A\cdot f'(x) + B}{\sqrt{f(x)}}\cdot dx \\
+	&= A \int \frac{f'(x)}{\sqrt{f(x)}}\cdot dx + B \int \frac{dx}{\sqrt{f(x)}}
+\end{align}
+
+\newcard 
+
+\begin{align}
+f'(x) &= 2x + 3 \\
+\therefore x-3 &= \frac{1}{2}\cdot \left(2x+3 \right) - \frac{9}{2} \\
+I &= \underbrace{\frac{1}{2}\int \frac{2x+3}{\dnm}\cdot dx}_P \\
+&- \underbrace{\frac{9}{2}\int \frac{dx}{\dnm}}_Q 
+\end{align}
+
+\newcard 
+
+\begin{align}
+f'(x) &= 2x + 3 \\
+\therefore x-3 &= \frac{1}{2}\cdot \left(2x+3 \right) - \frac{7}{2} \\
+I &= \underbrace{\frac{1}{2}\int \frac{2x+3}{\dnm}\cdot dx}_P \\
+&- \underbrace{\frac{7}{2}\int \frac{dx}{\dnm}}_Q 
+\end{align}
+
+\newcard 
+
+\begin{align}
+\text{If }f(x) &= \ea \\
+\text{then }f'(x) &= 2x + 3 \\
+\text{hence }x-3 &= A\cdot \left(2x+3 \right) + B \\ 
+&= 2Ax + \left(3A + B \right) \\
+\therefore 2A &= 1\text{ and } 3A + B = -3 \\
+\text{or } A &= \frac{1}{2}\text{ and } B = -\frac{9}{2}
+\end{align}
+
+Which is why 
+\small\[ I = \underbrace{\frac{1}{2}\int \frac{2x+3}{\dnm}\cdot dx}_P - \underbrace{\frac{9}{2}\int \frac{dx}{\dnm}}_Q \]\normalsize
+
+\newcard 
+
+\[ P = \dnm  + C_1 \]
+
+\newcard 
+
+\[ P = \frac{\left(\ea \right)^{\frac{3}{2}}}{3} + C_1 \]
+
+\newcard 
+
+Recall that $P= A\int \frac{f'(x)}{\sqrt{f(x)}}\cdot dx$. That said 
+
+\begin{align}
+	P &= \frac{1}{2}\int \frac{2x+3}{\dnm}\cdot dx \\
+	\text{If } z &= \ea\text{ then } I = \frac{1}{2}\int \frac{dz}{\sqrt{z}} \\
+	&= \underbrace{\frac{1}{2}\cdot \frac{\sqrt{z}}{\frac{1}{2}}}_{\int x^n\cdot dx = \frac{x^{n+1}}{n+1}} = \sqrt{z} + C_1 \\
+	&= \sqrt{\ea} + C_1 
+\end{align}
+
+\newcard 
+
+\begin{align}
+	Q &= \frac{9}{2}\int \frac{dx}{\dnm} \\
+	&= \frac{9}{2}\cdot \log \left\vert \trma + \dnm \right\vert + C_2
+\end{align}
+
+And hence 
+
+\begin{align}
+I &= P - Q = \dnm \\
+&- \log\left\vert\trma + \dnm\right\vert + C 
+\end{align}
+
+\newcard 
+
+\begin{align}
+	Q &= \frac{9}{2}\int \frac{dx}{\dnm} \\
+	&= \frac{9}{2} \int \frac{dx}{\underbrace{\sqrt{\trma^2 - \trmk^2}}_{\text{Complete the squares}}}\cdot dx \\
+	&= \frac{9}{2}\cdot \underbrace{\log \left\vert \trma + \dnm \right\vert}_{\int \frac{dx}{\sqrt{x^2-a^2}} = \log\vert x + \sqrt{x^2-a^2}\vert +C } + C_2
+\end{align}
+
+And hence 
+
+\begin{align}
+I &= P - Q =  \dnm \\
+&- \log\left\vert\trma + \dnm\right\vert + C 
+\end{align}
+
+\end{document}
