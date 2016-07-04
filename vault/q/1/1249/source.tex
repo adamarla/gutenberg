@@ -1,0 +1,41 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+\newcommand\ea{ \left( 7-4x\right)}
+%text
+Evaluate $\int \sec^2 \left(7-4x \right)\cdot dx$ 
+
+\newcard 
+
+If $z = 7-4x$, then 
+\[ I = \int \sec^2 \ea\cdot dx = -\frac{1}{4}\int \sec^2 z\cdot dz \]
+%
+\newcard 
+
+If $z = 7-4x$, then 
+\[ I = \int \sec^2 \ea\cdot dx = \int \sec^2 z\cdot dz \]
+
+\newcard 
+
+\begin{align}
+	\text{If } z &= \ea\text{ then } dx = -\frac{dz}{4} \\
+	\therefore I &= \int \sec^2 \ea\cdot dx \\
+	&= -\frac{1}{4}\int \sec^2 z \cdot dz 
+\end{align}
+
+\newcard 
+
+\[ I = -\frac{1}{4}\int\sec^2 z\cdot dz = -\frac{\tan \ea}{4} + C \]
+
+\newcard 
+
+The standard result is \[\qquad \int \sec^2 z\cdot dz = \tan z + C\]
+
+And therefore 
+\begin{align}
+	I &= -\frac{1}{4}\int \sec^2 z\cdot dz = -\frac{\tan z}{4} + C \\ 
+	&= -\frac{\tan \ea}{4} + C 
+\end{align}
+\end{document}

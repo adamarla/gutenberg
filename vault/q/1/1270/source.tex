@@ -1,0 +1,40 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+
+%text
+Evaluate the following \[ \qquad \int \frac{dx}{\sqrt{1-x^2}} \]
+%
+
+\newcard
+
+If $x = \sin\phi$ then 
+\[ I = \int \frac{dx}{\sqrt{1-x^2}} = \int d\phi\]
+
+\newcard  
+
+If $x = \sin\phi$ then 
+\[ I = \int \frac{dx}{\sqrt{1-x^2}} = \int \cot\phi\cdot d\phi \]
+
+\newcard 
+
+\begin{align}
+	x = \sin\phi &\implies dx = \cos\phi\cdot d\phi \\
+	\text{Also } \sqrt{1-x^2} &= \sqrt{1-\sin^2\phi} = \cos \phi \\
+	\therefore I = \int \frac{dx}{\sqrt{1-x^2}} &= \int \frac{\cos\phi\cdot d\phi}{\cos\phi} = \int d\phi
+\end{align}
+
+\newcard 
+
+Hence, $I = \sin^{-1}x + C$ 
+
+\newcard 
+
+\begin{align}
+	I = \int d\phi &\implies I = \phi + C \\
+	\text{But } \phi &= \sin^{-1} x \\
+	\therefore I &= \sin^{-1} x + C 
+\end{align}
+\end{document}

@@ -1,47 +1,30 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-Evaluate: \[ \int (ax+b)^3\cdot dx \]
-%</tex>
-      <tex>\\ %text
-If \[ I = \int (ax+b)^3\cdot dx = A\cdot\int\phi^3\cdot d\phi \]
-then what are the \underline\text{values of $A$ and $\phi$}?
-%</tex>
-      <tex>\\ %text
-Given that \[ I = \frac{1}{a}\int\phi^2\cdot d\phi \], what is \textbf{I}
-in \underline\text{terms of x}?
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-\phi &amp;= (ax+b) \\ 
-A &amp;= \frac{1}{a}
-\end{align} </tex>
-         <tex>\begin{align}
-\phi &amp;= (ax+b) \\ 
-A &amp;= a
-\end{align} </tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-\phi &amp;= (ax+b) \implies d\phi = a\cdot dx \\
-\therefore dx &amp;= \frac{d\phi}{a}\\
-\text{And, }I &amp;= \int (ax+b)^3\cdot dx 
-= \underbrace{\frac{1}{a}}_A\int \phi^3 \cdot d\phi
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options/>
-      <reason>
-         <tex>\begin{align}
-I = \frac{1}{a}\int\phi^3\cdot d\phi &amp;\implies I = \frac{1}{a}\frac{\phi^4}{4} + C\\
-\text{But }\phi &amp;= (ax+b) \\
-\therefore I &amp;= \frac{(ax+b)^4}{4a} + C
-\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="23">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+      <tex isImage="true" correct="false">img_tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="33"/>
+      <skill id="32"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-5.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-6.svg</tex>
+    </reason>
+    <skills>
+      <skill id="48"/>
+    </skills>
+  </step>
 </question>

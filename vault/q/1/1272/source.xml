@@ -1,85 +1,41 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-If \[ x = \tan\left( \frac{1}{a}\log y \right) \], then show that
-\[ \qquad (1+x^2)\cdot\frac{d^2 y}{dx^2} + (2x-a)\cdot\frac{dy}{dx} = 0\]
-%</tex>
-      <tex>\\ %text
-Which of the following would give us a
-$(1+x^2)$ term that we see  in 
-\[ \qquad (1+x^2)\cdot\frac{d^2 y}{dx^2} + (2x-a)\cdot\frac{dy}{dx} = 0?\]
-%</tex>
-      <tex>\\ %text
-Given that \[ \tan^{-1}x = \frac{1}{a}\log y \], which of the
-following is true? 
-%</tex>
-      <tex>\\ %text
-Given that \[ \frac{dy}{dx} = \frac{ay}{(1+x^2)} \], is the following 
-correct? \underline\text{You will have to work out the }
-\underline\text{steps to know}
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">\frac{d}{dx}\tan^{-1} x </tex>
-         <tex>\frac{d}{dx}\sec^{-1} x </tex>
-      </options>
-      <reason>
-         <tex>%text
-If the \underline\text{$(1+x^2)$ term} caught your eye, then 
-ask yourself, \underline\text{where have I seen it before}?
-
-Turns out that \[\frac{d}{dx}\tan^{-1} x = \frac{1}{1+x^2} \]. 
-
-Notice also that 
-%
-\begin{align}
-x &amp;= \tan\left( \frac{1}{a}\log y \right) \implies\tan^{-1}x = \frac{1}{a}\log y 
-\end{align}  \\
-%text
-
-\underline\text{It looks like the dots are connecting!}
-%</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\frac{dy}{dx} = \frac{ay}{1+x^2} </tex>
-         <tex>\frac{dy}{dx} = \frac{a}{1+x^2} </tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-\tan^{-1} x &amp;= \frac{1}{a}\log y \\
-\therefore \frac{d}{dx}\tan^{-1}x &amp;= \frac{d}{dx}\left( \frac{1}{a} \log y\right) \\
-\implies \frac{1}{1+x^2} &amp;= \frac{1}{a}\underbrace{\frac{1}{y}\cdot\frac{dy}{dx}}_{\text{Chain Rule}}
-\text{ or } \frac{dy}{dx} = \frac{ay}{1+x^2}
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-\frac{d^2 y}{dx^2} &amp;= \frac{ay\cdot (a-2x)}{(1+x^2)^2} \\
-\implies (1+x^2) \cdot \frac{d^2 y}{dx^2} &amp;= (a-2x)\cdot\frac{dy}{dx} \\
-\therefore (1+x^2) \cdot \frac{d^2 y}{dx^2} &amp;+ (2x-a)\frac{dy}{dx} = 0
-\end{align} </tex>
-      </options>
-      <reason>
-         <tex>%text
-It is a just a little algebra in this step. 
-
-%
-\begin{align}
-\frac{dy}{dx} = \frac{ay}{1+x^2} &amp;\implies \frac{d^2 y}{dx^2} = \frac{d}{dx}\left( \frac{ay}{1+x^2} \right)  \\
-\therefore\frac{d^2 y}{dx^2} &amp;= a\cdot\underbrace{\left[\frac{(1+x^2)\cdot y' - y\cdot 2x}{(1+x^2)^2}\right]}_{\text{Quotient Rule}}\\
-&amp;= \frac{a\cdot y'}{1+x^2} - 
-\underbrace{\frac{ay}{1+x^2}}_{\text{what is this?}}\cdot\frac{2x}{1+x^2}\\
-&amp;= \frac{a\cdot y'}{1+x^2} - y'\cdot \frac{2x}{1+x^2} \\
-&amp;= \frac{y'}{1+x^2}\cdot (a-2x) \\
-\therefore (1+x^2)\cdot\frac{d^2 y}{dx^2} &amp;+ (2x-a)\frac{dy}{dx} = 0
-\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="21">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+      <tex isImage="true" correct="false">img_tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="39"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-5.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-6.svg</tex>
+    </reason>
+    <skills>
+      <skill id="51"/>
+      <skill id="33"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-7.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-8.svg</tex>
+    </reason>
+    <skills>
+      <skill id="31"/>
+    </skills>
+  </step>
 </question>

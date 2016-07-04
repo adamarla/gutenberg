@@ -1,0 +1,37 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+\newcommand\fx{ \left(ax+b \right)}
+
+Evaluate $\int (ax+b)^3\cdot dx$
+
+\newcard
+
+If $z = \fx$, then 
+\[ \quad I = \int \fx^3\cdot dx = \frac{1}{a}\int z^3\cdot dz \]
+
+\newcard 
+
+If $z = \fx$, then 
+\[ \quad I = \int \fx^3\cdot dx = \int z^3\cdot dz \]
+
+\newcard 
+
+\begin{align}
+	\text{If } z = \fx &\text{ then } dx = \frac{dz}{a} \\
+	\therefore I = \int \fx^3\cdot dx &= \frac{1}{a}\int z^3\cdot dz
+\end{align}
+
+\newcard 
+
+And hence $I = \dfrac{\fx^4}{4a} + C $ 
+
+\newcard 
+
+\begin{align}
+	I &= \frac{1}{a}\int z^3\cdot dz = \frac{1}{a}\cdot \frac{z^4}{4} + C \\
+	&= \frac{\fx^4}{4a} + C 
+\end{align}
+\end{document}

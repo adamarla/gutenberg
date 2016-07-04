@@ -1,0 +1,118 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+\newcommand\sq{ \left(v + \frac{1}{2} \right)^2 + \left( \frac{\sqrt{3}}{2}\right)^2} 
+\newcommand\dnm{ \left(v^2 + v + 1\right)}
+
+%text
+Solve the following differential equation 
+\[ \quad \left(x-y \right)\frac{dy}{dx} = x + 2y \]%
+
+\newcard
+
+$\left(x-y \right)\dfrac{dy}{dx} = x + 2y$ is a homogenous differential equation 
+
+\newcard 
+
+$\left(x-y \right)\dfrac{dy}{dx} = x + 2y$ is a first-order linear differential equation 
+
+\newcard 
+
+Before we can solve a differential equation, we must first know what kind of differential equation it is 
+
+\begin{align}
+	\left(x-y \right)\frac{dy}{dx} & = x + 2y \implies \frac{dy}{dx} = \frac{x+2y}{x-y} \\ 
+	&\text{or } \frac{dy}{dx} = \frac{1 + 2\left(\frac{y}{x} \right)}{1- \frac{y}{x}} = F \left(\frac{y}{x} \right) 
+\end{align}
+
+$\frac{dy}{dx} = F \left(\frac{y}{x} \right)$ is what a \underline{homogenous} differential equation looks like. Hence, the given differential equation is homogenous 
+
+\newcard 
+
+If $ y = v\cdot x$, then 
+\[ \qquad \frac{dx}{x} = \frac{1-v}{v^2+v+1}\cdot dv \]
+
+\newcard 
+
+If $ y = v\cdot x$, then 
+\[ \qquad \frac{dx}{x} = \frac{1+v}{v^2+v+1}\cdot dv \]
+
+\newcard 
+
+For homogenous diffrential equations, we set $y = v\cdot x$. And hence, 
+
+\begin{align}
+\frac{dy}{dx} =  \frac{1+2 \left(\frac{y}{x} \right)}{1 - \frac{y}{x}} &\implies \frac{d}{dx} \left(v\cdot x \right) = \frac{1+2v}{1-v} \\
+\text{or } \underbrace{v + x \frac{dv}{dx}}_{\text{Product Rule}} &= \frac{1+2v}{1-v} \\
+x \frac{dv}{dx} &= \frac{1+2v}{1-v} - v = \frac{v^2+v+1}{1-v} \\
+\therefore \frac{dx}{x} &= \frac{1-v}{v^2+v+1}\cdot dv
+\end{align}
+
+\newcard 
+
+\begin{align}
+\text{If } z &= \dnm \text{ then } \\
+\int \frac{dx}{x} &= \int \frac{1-v}{\dnm}\cdot dv \\ 
+&= \int \frac{A\cdot \frac{d}{dx} \dnm + B }{\dnm}\cdot dv  \\
+&= \underbrace{-\frac{1}{2}\int \frac{dz}{z} + \frac{3}{2}\int \frac{dv}{\dnm}}_{A = -\frac{1}{2}\text{ and } B = \frac{3}{2}}
+\end{align}
+
+\newcard 
+
+Notice that the degree of the numerator $(1-v)$ is just \underline{one less} than the degree of the denominator $\dnm$. At such times, it is best to 
+\small\[ \qquad \text{Numerator} = A \frac{d}{dx}\text{(Denominator)} + B \]\normalsize
+
+Which is why 
+\begin{align}
+\int \frac{dx}{x} &= \int \frac{1-v}{v^2+v+1}\cdot dx \\ 
+\text{If } 1 - v &= A\cdot \frac{d}{dv}\dnm + B \\
+\text{then } 1- v &= A\cdot (2v+1) + B \\
+\implies A &= -\frac{1}{2}\text{ and } B = \frac{3}{2}\\
+\therefore I &= \int \frac{1-v}{\dnm}\cdot dv \\
+&= -\frac{1}{2}\int \frac{dz}{z} + \frac{3}{2}\int \frac{dv}{\dnm} \\
+\text{where } z &= \dnm 
+\end{align}
+
+\newcard 
+
+\begin{align}
+\text{In }I &= \underbrace{-\frac{1}{2}\int \frac{dz}{z}}_P + \underbrace{\frac{3}{2}\int \frac{dv}{\dnm}}_Q + C \\
+P &= \log \sqrt{\frac{x^2}{y^2 + xy + x^2}} 
+\end{align}
+
+\newcard 
+
+\begin{align}
+	I &= \underbrace{-\frac{1}{2}\int \frac{dz}{z}}_P + \underbrace{\frac{3}{2}\int \frac{dv}{\dnm}}_Q + C \\
+	P &= -\frac{1}{2}\log \vert z\vert = -\frac{1}{2}\log \vert\dnm\vert \\
+	&= -\frac{1}{2}\log\left\vert \left(\frac{y}{x} \right)^2 + \frac{y}{x} + 1 \right\vert \\
+	&= -\frac{1}{2}\log\left\vert \frac{y^2 + xy + x^2}{x^2}\right\vert  \\
+	&= \underbrace{\frac{1}{2}\log\left\vert \frac{x^2}{y^2+xy+x^2}\right\vert}_{\log \frac{1}{b} = -\log b } \\
+	&= \underbrace{\log \sqrt{\frac{x^2}{y^2+xy+x^2}}}_{ a\log b = \log b^a }
+\end{align}
+
+\newcard 
+
+\begin{align}
+\text{And in }I &= \underbrace{-\frac{1}{2}\int \frac{dz}{z}}_P + \underbrace{\frac{3}{2}\int \frac{dv}{\dnm}}_Q + C \\
+Q &= \sqrt{3}\tan^{-1} \left(\frac{2y+x}{\sqrt{3} x } \right)
+\end{align}
+
+Which gives 
+\small\[ I = \log \sqrt{\frac{x^2}{y^2+xy+x^2}} + \sqrt{3}\tan^{-1} \left(\frac{2y+x}{\sqrt{3} x } \right) + C\]\normalsize
+
+\newcard 
+
+\begin{align}
+Q &= \underbrace{\frac{3}{2}\int \frac{dv}{\dnm} = \frac{3}{2}\int \frac{dv}{\sq}}_{\text{Complete the squares}} \\
+&= \frac{3}{2}\cdot \frac{1}{\frac{\sqrt{3}}{2}}\cdot\tan^{-1} \left(\frac{v+\frac{1}{2}}{\frac{\sqrt{3}}{2}} \right) \\
+&= \sqrt{3}\cdot\tan^{-1} \left(\frac{2v+1}{\sqrt{3}} \right) = 
+\sqrt{3}\tan^{-1} \left(\frac{2y+x}{\sqrt{3} x } \right)
+\end{align}
+
+And therefore 
+\small\[ I = \log \sqrt{\frac{x^2}{y^2+xy+x^2}} + \sqrt{3}\tan^{-1} \left(\frac{2y+x}{\sqrt{3} x } \right) + C \]\normalsize
+
+\end{document}

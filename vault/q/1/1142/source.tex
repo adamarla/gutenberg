@@ -1,0 +1,165 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+\newcard
+
+From a lot of $15$ bulbs of which $5$ are defective, a sample of $4$ 
+bulbs in drawn one by one with replacement\newline 
+
+Find the probability distribution of number of defective bulbs. 
+Hence, find the mean of the distribution 
+
+\newcard
+
+\begin{center}
+  \begin{tabular}{NlN}
+   \toprule
+        \text{Probability} &  Of & \text{Value} \\
+   \midrule 
+   p & Drawing a single  & \frac{1}{3} \\
+   & defective bulb & \\
+    \midrule 
+    q & Drawing a single  & \frac{2}{3} \\
+    &non-defective bulb & \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+\newcard 
+
+\begin{center}
+  \begin{tabular}{NlN}
+   \toprule
+        \text{Probability} &  Of & \text{Value} \\
+   \midrule 
+   p & Drawing a single  & \frac{1}{2} \\
+   & defective bulb & \\
+    \midrule 
+    q & Drawing a single  & \frac{1}{2} \\
+    &non-defective bulb & \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+\newcard 
+
+$5$ out $15$ bulbs are defective. Hence, the probability $p$ 
+of drawing a single defective bulb is $p= \frac{5}{15} = \frac{1}{3}$ \newline 
+
+And therefore, the probability of drawing a non-defective bulb is $q= 1-p = \frac{2}{3}$ 
+
+
+\newcard 
+
+The probability of drawing \underline{exactly one} defective bulb is 
+\[ \qquad P_1 = ^4C_1\cdot p\cdot q^3 \]
+
+Similarly, the probability of drawing \underline{exactly} $N$ defective bulbs is 
+\[ \qquad P_N = ^4C_N\cdot p^N \cdot q^{4-N}\quad (N \leq 4) \]
+
+\newcard 
+
+The probability of drawing \underline{exactly one} defective bulb is 
+\[ \qquad P_1 = p\cdot q^3 \]
+
+Similarly, the probability of drawing \underline{exactly} $N$ defective bulbs is 
+\[ \qquad P_N = p^N \cdot q^{4-N}\quad (N \leq 4) \]
+
+\newcard 
+
+Below are all the ways in which one could draw \underline{exactly one} defective 
+bulb $(X$) in four draws $(I-IV)$ 
+
+\begin{center}
+  \begin{tabular}{NNNN}
+   \toprule
+        I & II & III & IV \\
+   \midrule 
+   X & \checkmark & \checkmark & \checkmark  \\
+   \midrule
+    \checkmark & X & \checkmark & \checkmark  \\
+    \midrule 
+    \checkmark & \checkmark & X & \checkmark  \\
+    \midrule
+    \checkmark & \checkmark & \checkmark & X  \\
+    \bottomrule
+  \end{tabular}
+\end{center} 
+
+Notice that there are $^4C_1$ ways of drawing one defective bulb \newline 
+
+Also, remember that the bulbs are drawn with replacement. Which means the bulb is put back after being drawn -- and hence the probability of drawing a defective bulb in the next draw is the same as before \newline 
+
+And hence the total probability of drawing exactly one defective bulb is 
+\[ \qquad P_1 = ^4C_1\cdot p\cdot q^3 \]
+
+Similarly, the probability of drawing \underline{exactly} $N$ defective bulbs is 
+\[ \qquad P_N = ^4C_N\cdot p^N \cdot q^{4-N}\quad (N \leq 4) \]
+
+\newcard 
+
+The probability distribution of drawing $N$ defective bulbs $(0\leq N\leq 4)$ is therefore 
+
+ \begin{center}
+\begin{tabular}{NNNNN}
+      \toprule
+      P_0 & P_1 & P_2 & P_3 & P_4 \\
+      \midrule
+      \frac{16}{81} & \frac{32}{81} & \frac{8}{27} & \frac{8}{81} & \frac{1}{81} \\
+      \bottomrule
+      \end{tabular}
+\end{center}
+
+\newcard 
+
+The probability distribution table is simply a table that lists the probabilities 
+of all possible outcomes -- in this case the getting $0-4$ defective bulbs 
+
+\begin{center} 
+\begin{tabular}{NN}
+        \midrule 
+        N &  P(n=N) \\
+        \midrule 
+        0 & ^4C_0\cdot p^0q^4 =\frac{16}{81} \\
+        \midrule
+        1 &  ^4C_1\cdot p^1q^3=\frac{32}{81} \\
+        \midrule
+        2 & ^4C_2\cdot p^2q^2 =\frac{8}{27} \\
+        \midrule
+        3 &  ^4C_3\cdot p^3q = \frac{8}{81} \\
+        \midrule
+        4 & ^4C_4\cdot p^4q^0 =\frac{1}{81} \\
+        \midrule      
+      \end{tabular}
+\end{center}
+
+
+\newcard
+
+\[ \text{Expected value} = \sum_{k=0}^4 P_k\cdot k = \frac{4}{3} \]
+
+\newcard
+
+We know the number of defective bulbs we can draw $(0-4)$ and the probabilities of drawing them 
+
+\begin{center}
+\begin{tabular}{cNNNNN}
+      \toprule
+      & k=0 & 1 & 2 & 3 & 4 \\
+      \midrule
+      Probability $(P_k)$ & \frac{16}{81} & \frac{32}{81} & \frac{8}{27} & \frac{8}{81} & \frac{1}{81} \\
+      \midrule 
+      Value $(k)$ & 0 & 1 & 2 & 3 & 4 \\
+      \bottomrule
+      \end{tabular}
+\end{center}
+
+Hence, the expected value $E(x)$ is simply 
+
+\smallmath
+\begin{align}
+E(x) &= 0\cdot \frac{16}{81} + 1\cdot \frac{32}{81} + 2\cdot \frac{8}{27} + 3\cdot\frac{8}{81} + 4\cdot \frac{1}{81}\\
+&= \frac{4}{3}	
+\end{align}
+\end{document}

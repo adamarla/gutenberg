@@ -48,6 +48,12 @@
 	\RequirePackage[width=250pt,left=1cm]{geometry}
 }
 
+
+%% Control the size of math in \begin{align} on a case by case basis 
+\newbool{smallmath}
+\setbool{smallmath}{false} 
+\newcommand\smallmath{\setbool{smallmath}{true}} 
+
 \newcounter{index}
 \setcounter{index}{1}
 
@@ -77,8 +83,14 @@
   }{} 
 } 
 
-\AtBeginEnvironment{align}{\small}
-\AtEndEnvironment{align}{\normalsize}
+\AtBeginEnvironment{align}{
+  \ifbool{smallmath}{\small}{\normalsize}
+}
+
+\AfterEndEnvironment{align}{
+  \normalsize
+  \setbool{smallmath}{false} 
+}
 
 \AtBeginEnvironment{tabular}{\small}
 \AtEndEnvironment{tabular}{\normalsize}

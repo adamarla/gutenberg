@@ -1,0 +1,58 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+\newcommand\dnm{\left(1+x^2 \right)}
+%text
+If $x = \tan\left( \frac{1}{a}\log y \right)$, then show that
+\[ \qquad (1+x^2)\cdot\frac{d^2 y}{dx^2} + (2x-a)\cdot\frac{dy}{dx} = 0\]
+%
+
+\newcard
+
+\[ \log y = a\tan^{-1} x \]
+
+\newcard 
+
+\[ \log y = \tan^{-1} \left(ax \right)\]
+
+\newcard 
+
+\begin{align}
+	x = \tan \left( \frac{1}{a}\log y \right) &\implies \tan^{-1} x = \frac{1}{a}\log y \\
+	\therefore \log y &= a\tan^{-1} x 
+\end{align}
+
+\newcard 
+
+\[ y' = \frac{a\cdot y}{1+x^2}\]
+
+\newcard 
+
+\begin{align}
+	\log y &= a\tan^{-1} x \\
+	\implies \frac{d}{dx}\log y &= \frac{d}{dx} \left(a\cdot\tan^{-1} x \right) \\
+	\text{or } \underbrace{\frac{1}{y}\cdot \frac{dy}{dx}}_{\text{Chain Rule}} &= \frac{a}{1+x^2} \\
+	\implies \frac{dy}{dx} &= \frac{a\cdot y}{\dnm}
+\end{align}
+
+
+\newcard 
+
+\[ y'' = \frac{a\cdot y'}{\dnm} - \frac{2ay}{\dnm}\cdot \frac{x}{\dnm}\]
+which on simplifying gives us 
+\[ y''\cdot\dnm + (2x-a)\cdot y' = 0 \]
+Hence proved 
+\newcard 
+
+
+\begin{align}
+	y'' &= a \underbrace{\left[\frac{\left(1+x^2 \right)\cdot y ' - 2xy}{\left(1+x^2 \right)^2} \right]}_{\text{Quotient Rule}} \\
+	&= \frac{ay'\cdot \dnm}{\dnm^2} - \frac{2axy}{\dnm^2} \\
+	&= \frac{a\cdot y'}{\dnm} - \underbrace{\frac{2ay}{\dnm}}_{ = 2 y'}\cdot \frac{x}{\dnm} \\
+	&= \frac{ay'}{\dnm} - \frac{2x\cdot y'}{\dnm} \\
+	\therefore y'' &+ \frac{y'}{\dnm}\left(2x-a \right) = 0 \\ 
+	\text{or } y''&\dnm  + (2x-a)\cdot y' = 0
+\end{align}
+\end{document}

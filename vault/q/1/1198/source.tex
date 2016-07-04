@@ -1,0 +1,56 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+\newcommand\xma{\left(x-a \right)}
+\newcommand\xpa{\left(x+a \right)}
+\newcommand\pma{ \left(\phi-2a \right)}
+
+%text
+Evaluate the following integral 
+\[ \qquad I = \int \frac{\sin \xma}{\sin \xpa}\cdot dx \]
+%
+
+\newcard
+
+\begin{align}
+	\text{If } \phi &= \xpa \text{ then } \\
+	\frac{\sin\xma}{\sin \xpa} &= \cos 2a - \sin 2a\cdot \frac{\cos\phi}{\sin\phi}
+\end{align}
+
+\newcard 
+
+You might be tempted to expand $\sin\xma$ and $\sin \xpa$ \newline 
+
+Try that. But you will find that the resulting expression is not any easier to work with.  Perhaps, a little creativity is required 
+
+\begin{align}
+	\text{If } \phi = \xpa &\text{ then } \xma = \phi - 2a \\
+	\therefore \frac{\sin\xma}{\sin\xpa} &= \frac{\sin\pma}{\sin\phi} \\
+	&= \frac{\sin\phi\cdot\cos 2a + \cos\phi\cdot\sin 2a}{\sin\phi} \\
+	&= \cos 2a + \sin 2a\cdot \frac{\cos\phi}{\sin\phi}
+\end{align} 
+
+\newcard 
+
+\[ I = \cos 2a\cdot\xpa + \sin 2a\cdot \log \sin \xpa + C \]
+
+\newcard 
+
+\[ I = \cos 2a\cdot\xpa + \frac{\sin 2a}{\sin^2\xpa} + C \]
+
+\newcard 
+
+\begin{align}
+	I &= \int \frac{\sin\xma}{\sin\xpa}\cdot dx \\
+	&= \underbrace{\int \left[\cos 2a + \sin 2a\cdot \frac{\cos\phi}{\sin\phi} \right]\cdot d\phi}_{\text{Note than }d\phi = dx} \\
+	&= \cos 2a\int d\phi + \sin 2a\int \frac{\cos\phi}{\sin\phi}\cdot d\phi \\
+	&= \cos 2a\cdot \phi + \sin 2a \underbrace{\int \frac{dz}{z}}_{\text{Let }z = \sin\phi} \\
+	&= \cos 2a\cdot\phi + \sin 2a\cdot\log \vert z\vert + C \\
+	&= \cos 2a\cdot\xpa + \sin 2a\cdot \log \sin \xpa + C 
+\end{align}
+
+
+
+\end{document}

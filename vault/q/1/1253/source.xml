@@ -1,176 +1,66 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-Show that the differential equation
-\[ \qquad (x-y)\frac{dy}{dx} = x + 2y \]
-is homogenous and solve it. 
-%</tex>
-      <tex>\\ %text
-\textbf{Right or wrong?}
-Given that \[ \frac{dy}{dx} = \frac{x+2y}{x-y} = F(x,y) \], the
-given differential equation is homogenous
-if and only if the following is true. 
-%</tex>
-      <tex>\\ %text
-Given the results of Step 1, can we say that 
-the given differential equation is homogenous?
-%</tex>
-      <tex>\\ \textbf{Setting up the equations} \\
-%text
-If $y = v\cdot x$, then is the following true? 
-%</tex>
-      <tex>\\ %text
-If \[ \int \frac{(1-v)\cdot dv}{v^2+v+1} = A\cdot\int\frac{d\phi}{\phi}+\frac{3}{2}\int\frac{dv}{v^2+v+1} \],
-then what are the values of \underline\text{$A$ and $\phi$}?
-%</tex>
-      <tex>\\ %text
-What are the values of $P$ and $Q$ 
-\underline\text{in terms of x and y} in the following? 
-\[ \log\vert x\vert = \overbrace{\underbrace{-\frac{1}{2}\int\frac{d\phi}{\phi}}_P + \underbrace{\frac{3}{2}\int\frac{dv}{v^2+v+1}}_Q}^{= \int\frac{(1-v) \cdot dv}{v^2+v+1}} \]
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">F(\lambda x, \lambda y) = \lambda^0 \cdot F(x,y) = F(x,y)</tex>
-         <tex>F(\lambda x, \lambda y) = \lambda^n \cdot F(x,y),\text{ where }n\neq 0</tex>
-      </options>
-      <reason>
-         <tex>%text
-Every \underline\text{homogenous function} satisfies the
-following condition 
-\[\qquad F(\lambda x,\lambda y) = \lambda^n\cdot F(x,y) \]
-
-But \underline\text{not every} homogenous function results
-in a \underline\text{homogenous differential equation}.
-
-In fact, for a differential equation to be 
-homogenous, \underline{n=0}. That is 
-
-%
-\begin{align}
-	F(\lambda x,\lambda y) &amp;= \lambda^0\cdot F(x,y) = F(x,y) \\
-	\text{and  }\frac{dy}{dx} &amp;= F(x,y) 
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">%text
-Yes. Because $F(x,y)$ satisfies the condition 
-
-\[\qquad F(\lambda x, \lambda y) = \lambda^0 \cdot F(x,y) = F(x,y)\] 
-%</tex>
-         <tex>%text
-No. Because $F(x,y)$ \underline\text{does not} satisfy 
-the condition 
-
-\[\qquad F(\lambda x, \lambda y) = \lambda^0 \cdot F(x,y) = F(x,y)\] 
-%</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-F(x,y) &amp;= \frac{x+2y}{x-y}\\
-\implies F(\lambda x,\lambda y) &amp;= \frac{\lambda x + 2\lambda y}{\lambda x-\lambda y} 
-= \frac{\lambda\cdot (x+2y)}{\lambda\cdot (x-y)}\\
-&amp;= F(x,y) 
-\end{align}
-%text
-
-And as $F(x,y) = F(\lambda x, \lambda y)$, the given 
-differential is homogenous.
-%</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-\frac{dx}{x} &amp;= \frac{(1-v)\cdot dv}{v^2+v+1} \\ 
-\therefore \log \vert x\vert &amp;= \int\frac{(1-v)\cdot dv}{v^2+v+1}
-\end{align} </tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-	y = v\cdot x &amp;\implies \frac{dy}{dx} = v + x\cdot\frac{dv}{dx} \\
-	\therefore v + x\cdot\frac{dv}{dx} &amp;= \frac{x + 2\cdot vx}{x-v\cdot x}
-	= \frac{1+2v}{1-v} \\
-	\implies x\frac{dv}{dx} &amp;= \frac{1+2v}{1-v}-v \\
-	&amp;= \frac{1+2v - v + v^2}{1-v} \\
-	&amp;= \frac{v^2+v+1}{1-v} \\
-	\therefore \frac{dx}{x} &amp;= \frac{(1-v)\cdot dv}{v^2+v+1} \\
-	\implies \int\frac{dx}{x} &amp;= \int\frac{(1-v)\cdot dv}{v^2+v+1} \\
-	\implies\log\vert x\vert &amp;= \int\frac{(1-v)\cdot dv}{v^2+v+1}
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-A &amp;= -\frac{1}{2} \\ 
-\phi &amp;= v^2 + v + 1 
-\end{align} </tex>
-         <tex>\begin{align}
-A &amp;= \frac{1}{2} \\ 
-\phi &amp;= 2v + 1
-\end{align}</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-&amp;\text{If }\phi = v^2 + v + 1 \text{ then }\frac{d\phi}{dv} = (2v + 1) \\
-&amp;\text{Now, } 1-v = -\frac{1}{2}\cdot (2v+1) + \frac{3}{2} \\
-&amp;\therefore \int\frac{(1-v)\cdot dv}{v^2+v+1} = \int\frac{-\frac{1}{2}(2v+1) + \frac{3}{2}}{v^2+v+1}\cdot dv \\
-&amp;= \underbrace{-\frac{1}{2}}_A\int\frac{\overbrace{(2v+1)\cdot dv}^{d\phi}}{\underbrace{v^2+v+1}_{\phi}} + \frac{3}{2}\int\frac{dv}{v^2+v+1}\\
-&amp;\underline{\text{Hence, }\phi = v^2+v+1\text{ and } A = -\frac{1}{2}}
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-P &amp;= -\frac{1}{2}\cdot\log\left\vert y^2+xy+x^2\right\vert + \log\vert x\vert \\
-Q &amp;= \frac{1}{\sqrt{3}}\tan^{-1}\frac{2y+x}{\sqrt{3} x}
-\end{align} \\
-\textbf{Final answer} \\
-\log\left\vert y^2+xy+x^2\right\vert =  \frac{1}{\sqrt{3}}\tan^{-1}\frac{2y+x}{\sqrt{3} x}+ C</tex>
-      </options>
-      <reason>
-         <tex>%text
-In the last step, we established that 
-%
-\begin{align}
-\int\frac{(1-v)dv}{v^2+v+1} &amp;= \underbrace{-\frac{1}{2}\int\frac{d\phi}{\phi}}_P
-+\underbrace{\frac{3}{2}\int\frac{dv}{v^2+v+1}}_Q
-\end{align} \\
-\begin{align}
-\therefore P &amp;= -\frac{1}{2}\log\phi = -\frac{1}{2}\log\vert v^2+v+1\vert \\
-&amp;= -\frac{1}{2}\log \left\vert \left(\frac{y}{x}\right)^2 + \frac{y}{x} + 1\right\vert  \\
-&amp;= -\frac{1}{2}\log \underbrace{\left\vert \frac{y^2+xy+x^2}{x^2}\right\vert}_{v = \frac{y}{x}} \\
-&amp;= -\frac{1}{2}\left[ \log\vert y^2+xy + x^2\vert - 2\log \vert x\vert \right]\\
-&amp;= -\frac{1}{2}\log\vert y^2+xy + x^2\vert + \log\vert x\vert
-\end{align} \\
-
-%text
-And $Q$ will be 
-
-%
-\begin{align}
-Q &amp;= \frac{3}{2}\int\frac{dv}{v^2+v+1}  \\
-&amp;= \frac{3}{2}\int\frac{dv}{\underbrace{\left( v+\frac{1}{2}\right)^2 + \left(\frac{\sqrt{3}}{2}\right)^2}_{\text{Complete the squares}}}\\
-&amp;= \frac{3}{2}\frac{1}{\frac\sqrt{3}{2}}\tan^{-1}\frac{v+\frac{1}{2}}{\frac\sqrt{3}{2}}
-= \frac{1}\sqrt{3}\tan^{-1}\frac{2\frac{y}{x} + 1}{\sqrt{3}} \\
-&amp;= \frac{1}\sqrt{3}\tan^{-1}\frac{2y+x}{\sqrt{3} x}
-\end{align}  \\
-
-%text
-
-Putting it altogether, we get 
-%
-\begin{align}
-&amp;\log\vert x\vert = -\frac{1}{2}\log\vert y^2+xy + x^2\vert + \log\vert x\vert \\
-&amp; + \frac{1}\sqrt{3}\tan^{-1}\frac{2y+x}{\sqrt{3} x} + C \\
-&amp;\therefore\frac{1}{2}\log\vert y^2+xy + x^2\vert =  \frac{1}\sqrt{3}\tan^{-1}\frac{2y+x}{\sqrt{3} x} + C
-\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="25">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+      <tex isImage="true" correct="false">img_tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="53"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-5.svg</tex>
+      <tex isImage="true" correct="false">img_tex-6.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-7.svg</tex>
+    </reason>
+    <skills>
+      <skill id="54"/>
+      <skill id="31"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-8.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-9.svg</tex>
+    </reason>
+    <skills>
+      <skill id="64"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-10.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-11.svg</tex>
+    </reason>
+    <skills>
+      <skill id="48"/>
+      <skill id="55"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-12.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-13.svg</tex>
+    </reason>
+    <skills>
+      <skill id="62"/>
+      <skill id="48"/>
+    </skills>
+  </step>
 </question>

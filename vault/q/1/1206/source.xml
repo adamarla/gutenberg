@@ -1,126 +1,68 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-Show that the differential equation 
-\[ \qquad 2ye^{\frac{x}{y}}\cdot dx + \left(y-2xe^{\frac{x}{y}}\right)dy = 0\] 
-is homogenous. Find the particular 
-solution of this differential equation 
-given that $x=0$ when $y=1$.
-%</tex>
-      <tex>\\ %text
-For \[ 2ye^{\frac{x}{y}}\cdot dx + \left(y-2xe^{\frac{x}{y}}\right)dy = 0\] to be a 
-\underline{\text{homogenous}} differential equation, \underline\text{which}
-\underline{\text{of the following}} conditions must be true? 
-%</tex>
-      <tex>\\ %text
-If \[ 2ye^{\frac{x}{y}}\cdot dx + \left(y-2xe^{\frac{x}{y}}\right)dy = 0 \implies \frac{dy}{dx} = F\left(\frac{y}{x}\right)\], 
-then \underline{\text{which of the following}} is \[ F\left(\frac{y}{x}\right)\]?
-%</tex>
-      <tex>\\ %text
-If we let \[ z = \frac{y}{x}\], then \underline{\text{which}}
-of the following is true?
-%</tex>
-      <tex>\\ \begin{align}
-\frac{dx}{x} &amp;= \frac{2e^\frac{1}{z}-z}{z^2}\cdot dz \\
-\implies \int\frac{dx}{x} &amp;= \underbrace{2\int\frac{e^\frac{1}{z}}{z^2}dz}_A - \underbrace{\int\frac{dz}{z}}_B
-\end{align}
-%text
-
-Given this, \underline{\text{which of the following}} sets of 
-statements is true?
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">\frac{dy}{dx} = F\left(\frac{y}{x}\right)</tex>
-         <tex>\frac{dy}{dx} = \frac{F(y)}{G(x)}</tex>
-      </options>
-      <reason>
-         <tex>%text
-A differential equation is homogenous if 
-\[\quad\frac{dy}{dx} = N(x,y) \text{ where } N(x,y)\text{ is homogenous. }\]
-
-And $N(x,y)$ is homogenous if 
-\[ \qquad N(\lambda x, \lambda y) = N(x,y) \]
-
-\underline{\text{But is \[ F\left(\frac{y}{x}\right)\] homogenous}}?
-\textbf{Yes}. Notice that if \[ F\left(\frac{y}{x}\right) =  N\left(x,y\right) \], then 
-\[ \qquad N\left(\lambda x,\lambda y\right) = F\left(\frac{\lambda y}{\lambda x}\right) = F\left(\frac{y}{x}\right) = N\left(x,y\right)\]
-
-Hence, as \[F\left(\frac{y}{x}\right)\] is homogenous, therefore 
-\[ \frac{dy}{dx} = F\left(\frac{y}{x}\right)\] is a homogenous differential 
-equation.
-%</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">F\left(\frac{y}{x}\right) = \dfrac{2\cdot\frac{y}{x} e^{\frac{x}{y}}}{\left(2e^{\frac{x}{y}}-\frac{y}{x}\right)}</tex>
-         <tex>F\left(\frac{y}{x}\right) = \dfrac{2 e^{\frac{x}{y}}}{\left(2\cdot x\cdot e^{\frac{x}{y}}+y\right)}</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
- 2ye^{\frac{x}{y}}\cdot dx &amp;+ \left(y-2xe^{\frac{x}{y}}\right)dy = 0 \\
- \implies 2ye^{\frac{x}{y}}\cdot dx &amp;=  \left(2xe^{\frac{x}{y}}-y\right)dy \\
- \therefore \frac{dy}{dx} &amp;= \dfrac{2ye^{\frac{x}{y}}}{\left(2xe^{\frac{x}{y}}-y\right)} \\
- &amp;= \underbrace{\dfrac{2\cdot\frac{y}{x} e^{\frac{x}{y}}}{\left(2e^{\frac{x}{y}}-\frac{y}{x}\right)}}_{\text{Notice the denominator}}
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\dfrac{dx}{x} = \dfrac{2e^\frac{1}{z} - z}{z^2}\cdot dz</tex>
-         <tex>\dfrac{dx}{x} = 2e^\frac{1}{z}\left[\frac{1}{z^2}-\frac{1}{z}\right]\cdot dz</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-\text{If }z = \frac{y}{x},&amp;\text{ then } y = z\cdot x \\
-\implies \frac{dy}{dx} &amp;= \underbrace{z + x\frac{dz}{dx}}_{\text{Chain Rule}} \\
-\therefore \frac{dy}{dx} &amp;= z + x\frac{dz}{dx} = \dfrac{2z\cdot e^{\frac{1}{z}}}{2e^{\frac{1}{z}} - z} \\
-\implies x\frac{dz}{dx} &amp;= \dfrac{2ze^{\frac{1}{z}} - z\cdot\left(2e^{\frac{1}{z}} - z\right)}{2e^\frac{1}{z} - z} = \dfrac{z^2}{2e^\frac{1}{z}-z} \\
-\implies \dfrac{dx}{x} &amp;= \dfrac{2e^\frac{1}{z} - z}{z^2}\cdot dz 
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-A &amp;= -2\cdot e^\frac{x}{y} \\
-B &amp;= \log\left\vert\frac{y}{x}\right\vert \\
-\log x &amp;= -2 e^\frac{x}{y} - \log\left\vert\frac{y}{x}\right\vert + C \\
-\implies \log\vert y\vert &amp;+ 2e^\frac{x}{y} = C \\ 
-C &amp;= 2 
-\end{align}</tex>
-         <tex>\begin{align}
-A &amp;= 2\cdot e^\frac{x}{y} \\
-B &amp;= \log\left\vert\frac{y}{x}\right\vert \\
-\log x &amp;= 2 e^\frac{x}{y} - \log\left\vert\frac{y}{x}\right\vert + C \\
-\implies \log\left\vert y\right\vert &amp; - 2e^\frac{x}{y} = C \\
-C &amp;= -2 
-\end{align}</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-  B = \int\frac{dz}{z}&amp;\implies B = \log z = \log\left\vert \frac{y}{x}\right\vert \\
-  A &amp;= 2\int\frac{e^\frac{1}{z}}{z^2}\cdot dz \\
-  \text{Let }k &amp;= \frac{1}{z}\implies \frac{dz}{z^2} = -dk \\
-  \therefore A = -2\int e^k\cdot dk &amp;= -2\cdot e^k = -2e^\frac{1}{z} = -2e^\frac{x}{y}  \\
-  \implies \log x = A - B &amp;= -2e^\frac{x}{y}-\log\left\vert\frac{y}{x}\right\vert + C \\
-  \text{or }\underbrace{\log \left\vert x\cdot\frac{y}{x}\right\vert}_{\log a + \log b = \log (a\cdot b)} + 2e^\frac{x}{y} &amp;= C\\
-  \implies \log y + 2e^\frac{x}{y} &amp;= C 
-\end{align} \\
-
-%text
-
-\underline\text{But don't forget the initial conditions}!
-%
-\begin{align}
- y = 1 &amp;\text{ when } x = 0 \\
- \therefore \underbrace{\log 1}_{=0} + 2\underbrace{e^\frac{0}{1}}_{=1} &amp;= C \implies C = 2  \\
- \therefore \log y + 2e^\frac{x}{y} &amp;= 2 
-\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="25">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+      <tex isImage="true" correct="false">img_tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="53"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-5.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-6.svg</tex>
+    </reason>
+    <skills>
+      <skill id="31"/>
+      <skill id="54"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-7.svg</tex>
+      <tex isImage="true" correct="false">img_tex-8.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-9.svg</tex>
+    </reason>
+    <skills>
+      <skill id="48"/>
+      <skill id="55"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-10.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-11.svg</tex>
+    </reason>
+    <skills>
+      <skill id="32"/>
+      <skill id="33"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-12.svg</tex>
+      <tex isImage="true" correct="false">img_tex-13.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-14.svg</tex>
+    </reason>
+    <skills>
+      <skill id="36"/>
+      <skill id="1"/>
+    </skills>
+  </step>
 </question>

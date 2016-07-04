@@ -1,45 +1,18 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-Write the value of the following integral:
-\[\qquad\qquad \int_{-\frac\pi{2}}^{\frac\pi{2}}\sin^5 x\cdot dx\]
-%</tex>
-      <tex>\\ %text
-Your friend makes the following claims 
-about $f(x) = \sin^5 x$ and \[ A = \int_{-\frac\pi{2}}^{\frac\pi{2}}\sin^5x\cdot dx\].
-\underline\text{Are his claims correct?}
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">(\Roman{1})\quad f(x)\text{ is an odd function. } \\
-(\Roman{2})\,\therefore A = \int_{-\frac\pi{2}}^{\frac\pi{2}} f(x)\cdot dx = 0</tex>
-         <tex>(\Roman{1})\quad f(x)\text{ is an even function. } \\
-(\Roman{2})\,\therefore A = \int_{-\frac\pi{2}}^{\frac\pi{2}} f(x)\cdot dx = 2\cdot\int_0^{\frac\pi{2}}f(x)\cdot dx = 2</tex>
-      </options>
-      <reason>
-         <tex>%text
-Whenever you see an integral of the form
-\[\quad\quad A = \int_{-a}^{+a}f(x)\cdot dx \] 
-ask yourself whether $f(x)$ is 
-\underline\text{odd or even or neither}. Because if it is 
-odd or even, then life is simpler. 
-
-In this case, notice that 
-%
-\begin{align}
-f(x) &amp;= \sin^5 x = (\sin x)^5 \\ 
-f(-x) &amp;= [\sin (-x)]^5 = \underbrace{(-\sin x)^5}_{\sin(-\theta) = -\sin\theta} \\
-&amp;= -\sin^5 x = -f(x) 
-\end{align} \\
-%text
-As $f(-x) = -f(x), f(x)$ \underline\text{is an odd function}. 
-And we know that for odd functions 
-\[ \quad \int_{-a}^{+a}f(x)\cdot dx = 0 \]
-Hence, \[ A = \int_{-\frac\pi{2}}^{\frac\pi{2}}\sin^5x\cdot dx = 0 \].
-%</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="23">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+      <tex isImage="true" correct="false">img_tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="46"/>
+    </skills>
+  </step>
 </question>

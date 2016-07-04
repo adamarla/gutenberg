@@ -1,135 +1,55 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-Using integration, find the area of the 
-triangle ABC, coordinates of whose vertices
-are $A(4,1), B(6,6)$ and $C(8,4)$.
-%</tex>
-      <tex>\\ %text
-Would $\triangle ABC$ be as shown in the figure below?
-%</tex>
-      <tex>\\ %text
-The \underline\text{equations of the sides} of the triangle
-will be as shown below. \textbf{Right or wrong?} 
-%</tex>
-      <tex>\\ %text
-Given the equations of the sides, what will
-be the \underline\text{expression for the required area}?
-%</tex>
-      <tex>\\ %text
-What will be the values of $X,Y$ and $Z$ (below) 
-and therefore of the required area $R$?
-%
-\begin{align}
-R &amp;= \underbrace{\int_4^6\left( \frac{5x}{2}-9\right)dx}_X + 
-\underbrace{\int_6^8(-x+12)dx}_Y \\
-&amp;-\underbrace{\int_4^8\left( \frac{3x}{4}-2\right)dx}_Z 
-\end{align}</tex>
-   </statement>
-   <step>
-      <options>
-         <tex src="right.svg" isImage="true" correct="true"/>
-         <tex src="wrong.svg" isImage="true" correct="false"/>
-      </options>
-      <reason>
-         <tex>%text
-On seeing the three given coordinates, we 
-can see that 
-(i) B is the highest point (largest y)
-(ii) A is the left-most point (smallest x) 
-(iii) C is the right-most point (largest x) 
-(iv) A is the lowest point (smallest y)
-
-Hence, the coordinates, and therefore 
-$\triangle ABC$, can only be as shown in the 
-correct option. 
-%</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{tabular}{|c|c|}
-\hline 
-\text{Side} &amp; \text{Equation} \\
-\hline
-AB &amp; y=\frac{5}{2}x-9 \\ 
-\hline 
-BC &amp; y=-x+12 \\
-\hline 
-CA &amp; y= \frac{3}{4}x -2 \\
-\hline 
-\end{tabular} </tex>
-      </options>
-      <reason>
-         <tex>%text
-Apply the two-point formula to find the 
-equations of the sides. 
-%
-\begin{align}
-AB: \frac{y-1}{x-4} &amp;= \frac{6-1}{6-4} = \frac{5}{2} \\
-\implies 2y-2 &amp;= 5x-20\implies y = \frac{5}{2}x -9 \\
-BC:\frac{y-6}{x-6} &amp;= \frac{4-6}{8-6} = -1 \\ 
-\implies y-6 &amp;= -x + 6 \implies y = -x + 12 \\
-CA: \frac{y-1}{x-4} &amp;= \frac{4-1}{8-4} = \frac{3}{4} \\
-\implies 4y-4 &amp;= 3x-12 \implies y=\frac{3}{4}x -2 
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-R &amp;= \int_4^6\left( \frac{5x}{2}-9\right)\cdot dx + \int_6^8(-x+12)\cdot dx \\
-&amp;-\int_4^8\left( \frac{3x}{4}-2\right)\cdot dx 
-\end{align}</tex>
-         <tex>\begin{align}
-R &amp;= \int_4^6\left( \frac{5x}{2}-9\right)\cdot dx + \int_6^8(-x+12)\cdot dx 
-\end{align}</tex>
-      </options>
-      <reason>
-         <tex>%text
-From the figure, we can see that the 
-required area is as follows 
-
-%
-\begin{align}
-R &amp;= \text{Area under AB} + \text{Area under BC} \\
-&amp;- \text{ Area under CA} \\
-\therefore R &amp;= \underbrace{\int_4^6\left( \frac{5x}{2}-9\right)\cdot dx}_{\text{Area under AB}} 
-+ \underbrace{\int_6^8(-x+12)\cdot dx}_{\text{Area under BC}} \\
-&amp;- \underbrace{\int_4^8\left( \frac{3x}{4}-2\right)\cdot dx}_{\text{Area under CA}}
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\begin{tabular}{|c|c|c|c|}
-\hline 
-X &amp; Y &amp; Z &amp; R \\
-\hline 
-7 &amp; 10 &amp; 10 &amp; 7 \\
-\hline 
-\end{tabular}</tex>
-         <tex>\begin{tabular}{|c|c|c|c|}
-\hline 
-X &amp; Y &amp; Z &amp; R \\
-\hline 
-8 &amp; 10 &amp; 6 &amp; 12 \\
-\hline 
-\end{tabular}</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-X &amp;= \int_4^6\left(\frac{5x}{2}-9\right)\cdot dx  
-=\left[ \frac{5x^2}{4}-9x \right]_4^6 \\
-&amp;= \left[ \left(45-54\right)-\left(20-36\right) \right] = -9 + 16 = 7 \\
-Y &amp;= \int_6^8(-x+12)\cdot dx = \left[-\frac{x^2}{2}+12x \right]_6^8 \\
-&amp;=  \left[ \left(-32+96\right)-\left(-18+72\right) \right] =10 \\
-Z &amp;= \int_4^8\left( \frac{3x}{4}-2\right)\cdot dx = \left[ \frac{3x^2}{8}-2x\right]_4^8 \\
-&amp;=  \left[ \left(24 -16\right)-\left(6-8\right) \right] = 10 \\
-\therefore R &amp;= X+Y-Z = 7+10-10 = 7\text{ sq. units}
-\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="24">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_right.svg</tex>
+      <tex isImage="true" correct="false">img_wrong.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-2.svg</tex>
+    </reason>
+    <skills>
+      <skill id="26"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-3.svg</tex>
+      <tex isImage="true" correct="false">img_tex-4.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-5.svg</tex>
+    </reason>
+    <skills>
+      <skill id="57"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-6.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-8.svg</tex>
+    </reason>
+    <skills>
+      <skill id="26"/>
+      <skill id="36"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-9.svg</tex>
+      <tex isImage="true" correct="false">img_tex-10.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-11.svg</tex>
+    </reason>
+    <skills>
+      <skill id="48"/>
+      <skill id="1"/>
+    </skills>
+  </step>
 </question>

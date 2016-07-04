@@ -1,0 +1,39 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+\newcommand\fx{\sin^5 x}
+\newcommand\intg{\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}}
+%text
+Write the value of the following integral
+\[\qquad\qquad \int_{-\frac\pi{2}}^{\frac\pi{2}}\sin^5 x\cdot dx\]
+%
+\newcard 
+
+$\fx$ is an odd function. And therefore 
+\[ \qquad\qquad A = \intg \fx\cdot dx = 0 \]
+
+\newcard 
+
+$\fx$ is an even function. And therefore 
+\[ \quad A = \intg \fx\cdot dx = 2\int_0^{\frac\pi{2}} \fx\cdot dx  \]
+
+\newcard
+
+The given integral is of the form \[\qquad \int_{-a}^{+a} f(x)\cdot dx\]
+
+Hence, before attempting to solve it, let us to do a \underline{basic check first} on
+whether or not $f(x)$ is an even or an odd function \newline 
+
+Now, $\sin \left(-x \right) = -\sin x$. And therefore 
+$\sin^5 \left(-x \right) = (-1)^5\sin^5 x = -\sin^5 x$\newline 
+
+This makes $\sin^5 x$ an odd function because $f(-x) = -f(x)$ \newline 
+
+And we also know that for \underline{odd functions}
+\[ \qquad A = \int_a^a f(x)\cdot dx = 0 \]
+
+Hence, the same should also be true for $f(x) = \sin^5 x$. Which means 
+\[ \qquad A = \intg \fx\cdot dx = 0 \] 
+\end{document}

@@ -1,0 +1,162 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+%text
+$A$ speaks the truth in 60\% of the cases, while 
+$B$ in 90\% of the cases. In what percent of cases 
+are they likely to contradict each other in stating 
+the same fact? In the cases of contradiction do 
+you think, the statement of $B$ will carry more 
+weight as he speaks truth in more number of 
+cases than $A$? 
+%
+
+\newcard
+
+Given the following events 
+%
+\begin{center}
+\begin{tabular}{NcN}
+\midrule
+\text{Event} & Meaning & \text{Probability} \\ 
+\midrule 
+A & A speaks the truth & 0.6 \\
+\midrule
+B & B speaks the truth & 0.9 \\ 
+\midrule 
+C & A and B contradict & ? \\
+\midrule 
+\end{tabular}
+\end{center} 
+%
+\[ P(C) = P \left[\left(A\cap B' \right) \cup \left(A'\cap B \right)\right] = 0.42 \]
+
+\newcard
+
+Given the following events 
+%
+\begin{center}
+\begin{tabular}{NcN}
+\midrule
+\text{Event} & Meaning & \text{Probability} \\ 
+\midrule 
+A & A speaks the truth & 0.6 \\
+\midrule
+B & B speaks the truth & 0.9 \\ 
+\midrule 
+C & A and B contradict & ? \\
+\midrule 
+\end{tabular}
+\end{center} 
+%
+\[ P(C) = P \left[\left(A\cap B \right) \cup \left(A'\cap B' \right)\right] = 0.58 \]
+
+
+\newcard
+
+\begin{center}
+  \begin{tabular}{ccc}
+   \toprule
+        $A$& $B$ & Contradiction? \\
+   \midrule
+   Lies & Lies & No \\ 
+    \midrule 
+    Lies & Does not lie & Yes \\ 
+    \midrule 
+    Does not lie & Lies & Yes \\
+    \midrule 
+    Does not lie & Does not lie & No \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+By looking at the table above, we can \underline{define}  the event $C$ 
+\[ \qquad C = \left(A'\cap B \right) \cup \left(A\cap B' \right)\]
+
+And hence 
+\begin{align}
+P(C) &= P \left[ \left(A'\cap B \right) \cup \left(A\cap B' \right)\right] \\
+&= \left[P(A')\cdot P(B) \right] + \left[P(A)\cdot P(B') \right] \\
+&= \underbrace{\left(0.4\times 0.9 \right)}_{P(A') = 1-P(A)} + \underbrace{\left(0.6\times 0.1 \right)}_{P(B') = 1-P(B)} = 0.42
+\end{align}
+
+Hence, $A$ and $B$ \underline{will contradict each other} $42\%$ of the times 
+
+\newcard
+
+In case of a contradiction, $A$ is more reliable than $B$ if 
+\[ \qquad \condp{A}{C} > \condp{B}{C} \]
+Otherwise, $B$ is more reliable  
+
+\newcard
+
+In case of a contradiction, $A$ is more reliable than $B$ if 
+\[ \qquad \condp{C}{A} > \condp{C}{B} \]
+Otherwise, $B$ is more reliable 
+
+\newcard 
+
+\begin{center}
+  \begin{tabular}{Nl}
+   \toprule
+        \text{Probability} & Of  \\
+   \midrule 
+   \condp{A}{C} & $A$ speaking truth given \\
+   & contradiction $C$\\
+    \midrule 
+    \condp{C}{A} & Contradiction $C$ given $A$ \\
+    & speaking the truth \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+Now, if a contradiction has occurred, then what we really want to compare are the probabilities of $A$ and $B$ speaking the truth\newline 
+
+ The one who is more likely to be speaking the truth is more reliable. Hence, we need to do the following comparison 
+
+\[ \qquad \condp{A}{C} > \condp{B}{C} \]
+
+\newcard
+
+\begin{align}
+	\condp{A}{C} &= \fcondp{A}{C} \\
+	&= \frac{0.1\times 0.6}{0.42} = \frac{1}{7} \\
+	\condp{B}{C} &= \fcondp{B}{C} \\
+	&= \frac{0.4\times 0.9}{0.42} = \frac{6}{7}
+\end{align}
+
+As $\condp{B}{C} > \condp{A}{C}$, therefore $B$ is (a whole lot) more reliable than $A$ 
+
+\newcard 
+
+From Bayes' Theorem we know that 
+\begin{align}
+	\condp{A}{C} &= \fcondp{A}{C} \\
+	\text{and }\condp{B}{C} &= \fcondp{B}{C} 
+\end{align}
+
+We know $P(A), P(B)$ and $P(C)$. But what are $\condp{C}{A}$ and $\condp{C}{B}$? 
+
+\begin{center}
+  \begin{tabular}{NlN}
+   \toprule
+        &  What needs to happen & \text{Equals} \\
+   \midrule 
+   \condp{C}{A} & $B$ must lie for contradiction & P(B')\\
+    \midrule 
+    \condp{C}{B} & $A$ must lie for contradiction & P(A') \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+And hence, we can say that 
+\begin{align}
+\condp{A}{C} &= \fcondp{A}{C} \\
+&= \frac{0.1\times 0.6}{0.42} =  \frac{1}{7} \\
+\text{and }\condp{B}{C} &= \fcondp{B}{C}  \\
+&= \frac{0.4\times 0.9}{0.42} = \frac{6}{7} 
+\end{align}
+
+As $\condp{B}{C} > \condp{A}{C}$, therefore $B$ is more reliable than $A$ in case of contradiction (and even otherwise) 
+\end{document}

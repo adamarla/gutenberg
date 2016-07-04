@@ -1,0 +1,81 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+\newcommand\ey{a\cdot \left[\cos t + \log \left(\tan \frac{t}{2} \right) \right]}
+%text
+
+If $x=a\sin t$ and $y=\ey$, 
+then find $\dfrac{d^2y}{dx^2}$
+%
+
+\newcard 
+
+\begin{center}
+  \begin{tabular}{NNN}
+   \toprule
+        \frac{dx}{dt} & \frac{dy}{dt} & \frac{dy}{dx}  \\
+   \midrule 
+   a\cos t & a\cdot \frac{\cos^2 t}{\sin t} & \cot t  \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+\newcard 
+
+What we have here is a \underline{parametric} curve in which both $x$ and $y$ are expressed in terms of a third parameter $t$ \newline 
+
+Moreover, to finf $\doublediff$, we will first need to find $\dydx$
+
+\begin{align}
+ \frac{dx}{dt} &= \frac{d}{dt} \left(a\cdot\sin t  \right) = a\sin t \\
+ \frac{dy}{dt} &= \frac{d}{dt}\left(\ey \right) \\
+ &= a \left[-\sin t + \underbrace{\frac{1}{\tan\frac{t}{2}}\cdot\sec^2 \frac{t}{2}\cdot \frac{1}{2}}_{\text{Chain Rule}}  \right] \\
+ &= \underbrace{a \left[-\sin t + \frac{1}{2\cdot \frac{\sin \frac{t}{2}}{\cos \frac{t}{2}}\cdot \cos^2 \frac{t}{2}} \right]}_{\sin 2\theta = 2\sin\theta\cdot\cos\theta} \\
+ &= a \left[-\sin t + \frac{1}{\sin t} \right] = a \left(\frac{1-\sin^2 t}{\sin t} \right) \\
+ &= a\cdot \left(\frac{\cos^2 t}{\sin t} \right) \\
+ \therefore \frac{dy}{dx} &= \frac{dy/dt}{dx/dt} = \frac{a\cos^2 t}{a\cos t\cdot \sin t} = \cot t 
+\end{align}
+
+\newcard
+
+\begin{align}
+	\doublediff &= \frac{d}{dt} \left(\dydx \right)\cdot \frac{dt}{dx} 
+\end{align}
+
+\newcard
+
+\begin{align}
+	\doublediff &= \frac{d}{dt} \left(\dydx \right)
+\end{align}
+
+\newcard 
+
+By definition \[ \qquad \doublediff = \ddx \left(\dydx \right)\]
+But if $\dydx = f(t)$, as in this question, then 
+\[ \quad \doublediff = \ddx f(t) = \frac{d}{dt} f(t)\cdot \frac{dt}{dx}\]
+This is the same as 
+\[ \qquad \doublediff = \frac{d}{dt} \left(\dydx \right)\cdot \frac{dt}{dx} \]
+
+\newcard 
+
+\begin{align}
+	\doublediff &= -\frac{2}{a\sin t \cdot \sin 2t}
+\end{align}
+
+\newcard
+
+\[\doublediff = \dfrac{1}{a\cdot\sin t\cdot \sin 2t} \]
+
+\newcard
+
+\begin{align}
+\frac{dy}{dx} &= \cot t \\
+\therefore \frac{d^2 y}{dx^2} &= \frac{d}{dt}\cot t\cdot\frac{1}{a\cdot\cos t} = \frac{-\csc^2 t}{a\cdot \cos t} \\
+&= \underbrace{-\left[ \frac{2}{a\cdot 2\sin^2 t\cdot\cos t}\right] }_{\text{Multiply and divide by 2}} \\
+&= -\dfrac{2}{a\cdot\sin t\cdot (2\sin t\cdot \cos t)} \\ 
+&= -\dfrac{2}{a\cdot\sin t\cdot \sin 2t}
+\end{align}
+
+\end{document}

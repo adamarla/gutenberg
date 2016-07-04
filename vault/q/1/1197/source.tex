@@ -1,0 +1,107 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+\newcommand\ea{x+\sqrt{x^2+a^2}}
+\newcommand\eb{\left(\tan\phi + \sec\phi \right)}
+%text
+If $y = \log \left[\ea \right]$, then show that 
+\[ \qquad\qquad (x^2+a^2)\doublediff + x\dydx = 0 \]
+%
+
+\newcard
+
+\begin{align}
+	\text{If } x &= a\tan\phi\text{ then } \\
+	y &= \log a + \log \left(\tan\phi + \sec\phi \right)
+\end{align}
+
+\newcard 
+
+\begin{align}
+	\text{If } x &= a\tan\phi\text{ then } \\
+	y &= \log \left(\tan\phi + \sec\phi \right)
+\end{align}
+
+\newcard 
+
+\begin{align}
+	\text{If } x &= a \tan\phi\text{ then } \\
+	y &= \log \left(a\tan\phi + \sqrt{a^2\tan^2\phi + a^2} \right) \\
+	&= \log \left(a\tan\phi + a\sqrt{\tan^2\phi + 1} \right) \\
+	&= \underbrace{\log \left(a\tan\phi + a\sec\phi \right)}_{\tan^2\phi + 1 = \sec^2\phi} \\
+	&= \log \left[a\cdot \left(\tan\phi + \sec\phi \right) \right] \\
+	&= \log a + \log \left(\tan\phi + \sec\phi \right)
+\end{align}
+
+
+\newcard 
+
+\[ \dydx = \frac{\cos\phi}{a}\]
+
+\newcard 
+
+\[ \dydx = \frac{1}{a}\cdot \frac{\cos^3\phi}{1+\sin\phi} \]
+\newcard 
+
+
+\newcard 
+
+\begin{align}
+\text{If } x = a\tan\phi &\text{ then } dx = a\sec^2\phi\cdot d\phi \\
+\implies \ddx\phi &= \frac{1}{a\sec^2\phi} 
+\end{align} 
+
+And therefore 
+
+\begin{align} 
+\dydx &= \ddx \left[\log a + \log \eb \right] \\
+	&= \underbrace{\frac{1}{\eb}\cdot \left(\sec\phi\tan\phi + \sec^2\phi \right)\cdot \ddx\phi}_{\text{Chain Rule}} \\
+	&= \frac{\sec\phi\cdot\eb}{\eb}\cdot \left(\frac{1}{a\sec^2\phi} \right) \\
+	&= \frac{\cos\phi}{a}
+\end{align}
+
+\newcard
+
+\[ \doublediff = -\frac{\sin\phi\cdot\cos^2\phi}{a^2} \] 
+
+\newcard 
+
+\[ \doublediff = -\frac{\sin\phi}{a} \]
+
+\newcard 
+
+\begin{align}
+	\dydx = \frac{\cos\phi}{a} &\implies \ddx \left(\dydx \right) = \ddx \frac{\cos\phi}{a} \\
+	\therefore \doublediff &= \underbrace{-\frac{\sin\phi}{a}\cdot \ddx \phi}_{\text{Chain Rule again}} \\
+	&= -\frac{\sin\phi}{a}\cdot \frac{1}{a\sec^2\phi} \\
+	&= -\frac{\sin\phi\cdot\cos^2\phi}{a^2}
+\end{align}
+
+\newcard 
+
+\begin{align}
+\doublediff &= -\frac{\sin\phi\cdot\cos^2\phi}{a^2} = -\frac{\sin\phi\cos\phi}{a}\cdot \dydx \\
+&= -\frac{\tan\phi}{a\sec^2\phi} \cdot \dydx = -\frac{x}{x^2+a^2}\cdot \dydx
+\end{align}
+
+And hence 
+\[ \qquad (x^2+a^2)\cdot\doublediff + x\cdot\dydx = 0 \]
+
+\newcard 
+
+A little creativity required here 
+
+\begin{align}
+\doublediff &= -\frac{\sin\phi\cdot\cos^2\phi}{a^2} \\
+&= -\frac{\sin\phi\cos\phi}{a}\cdot \underbrace{\left(\frac{\cos\phi}{a} \right)}_{ = \dydx } \\
+&= \underbrace{-\frac{\tan\phi}{a\sec^2\phi}}_{\text{Divide throughout by $\cos^2\phi$}} \cdot \dydx \\ 
+&= -\frac{\tan\phi}{a\cdot \left(\tan^2\phi + 1 \right)}\cdot\dydx \\
+&= \underbrace{-\frac{\tan\phi}{a\cdot \left(\frac{x^2}{a^2} + 1\right)}}_{x = a\cdot\tan\phi}\cdot\dydx \\
+&= -\frac{a\tan\phi}{x^2+a^2}\cdot \dydx = -\frac{x}{x^2+a^2}\cdot \dydx
+\end{align}
+
+And this is why 
+\[ \qquad (x^2+a^2)\cdot\doublediff + x\cdot\dydx = 0 \]
+\end{document}
