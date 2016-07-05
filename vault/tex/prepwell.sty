@@ -13,14 +13,12 @@
 \RequirePackage{booktabs}
 \RequirePackage{xkeyval}
 \RequirePackage{graphicx}
+\RequirePackage{newfile}
 
 \RequirePackage{prepwell-cmds}
 
 %\RequirePackage{background}
 %\SetBgContents{}
-
-%%%  Later perhaps
-%\RequirePackage{newfile}
 
 \renewcommand\sfdefault{cmss}
 \renewcommand\familydefault\sfdefault
@@ -55,33 +53,84 @@
 \newcommand\smallmath{\setbool{smallmath}{true}} 
 
 \newcounter{index}
-\setcounter{index}{1}
+\newcommand\svg{}
 
-\newcommand\newcard{
+\newcommand\newcard[1][true]{
   \stepcounter{index}
+  \renewcommand\svg{tex-\theindex.svg}
+
+  \ifbool{#1}{
+    \addtostream{xml}{ <tex isImage="true">img_\svg </tex> }
+  }{
+    \addtostream{xml}{ <tex isImage="true" correct="false">img_\svg </tex> }
+  }
 
   \ifbool{preview}{
-    \textcolor{red}{\newline tex-\theindex.svg \newline} 
+    \textcolor{red}{\newline img\_\svg \newline} 
   }{ 
     \newpage
   } 
 } 
 
-\newenvironment{skill}{
+\newcommand\statement{
+  \addtostream{xml}{ <statement> }
+  \newcard
+  \addtostream{xml}{ </statement> }
+} 
+
+\newcommand\reason{
+  \addtostream{xml}{ <reason> }
+  \newcard
+  \addtostream{xml}{ </reason> }
+} 
+
+\newcommand\correct{ \newcard }
+\newcommand\incorrect{ \newcard[false] }
+
+%% Environments 
+
+\newenvironment{narrow}{
 	\newgeometry{width=200pt,left=1cm}
 }{
 	\restoregeometry
 } 
 
 
+\newenvironment{question}{ 
+  \addtostream{xml}{<question xmlns="http://www.gradians.com">} 
+}{ 
+  \addtostream{xml}{</question>} 
+}
+
+\newenvironment{snippet}{ 
+  \addtostream{xml}{<snippet xmlns="http://www.gradians.com">} 
+  \addtostream{xml}{<render>}
+  \newcard 
+  \addtostream{xml}{</render>}
+}{ 
+  \addtostream{xml}{</snippet>} 
+}
+
+\newenvironment{skill}{ 
+  \addtostream{xml}{<skill xmlns="http://www.gradians.com">} 
+  \addtostream{xml}{<render>}
+  \newcard 
+  \addtostream{xml}{</render>}
+}{ 
+  \addtostream{xml}{</skill>} 
+}
+
+\newenvironment{step}{ \addtostream{xml}{<step>} }{ \addtostream{xml}{</step>} }
+\newenvironment{options}{ \addtostream{xml}{<options>} }{ \addtostream{xml}{</options>} }
+
 
 %%% Call-backs 
 
-\AtBeginDocument{ 
-  \ifbool{preview}{
-    \textcolor{red}{\newline tex-\theindex.svg \newline} 
-  }{} 
-} 
+%\AtBeginDocument{ 
+%  \ifbool{preview}{
+%    \textcolor{red}{\newline tex-\theindex.svg \newline} 
+%  }{} 
+%} 
 
 \AtBeginEnvironment{align}{
   \ifbool{smallmath}{\small}{\normalsize}
@@ -98,13 +147,13 @@
 \AtBeginEnvironment{itemize}{\small}
 \AtEndEnvironment{itemize}{\normalsize}
 
-%\AfterEndPreamble{
-%  \newoutputstream{xml}
-%  \openoutputfile{layout.xml}{xml}
-%
-%  \addtostream{xml}{<?xml version='1.0' encoding='utf-8'?>}
-%}
-%
-%\AfterEndDocument {
-%  \closeoutputstream{xml}
-%} 
+\AfterEndPreamble{
+  \newoutputstream{xml}
+  \openoutputfile{source.xml}{xml}
+
+  \addtostream{xml}{<?xml version='1.0' encoding='utf-8'?>}
+}
+
+\AfterEndDocument {
+  \closeoutputstream{xml}
+} 

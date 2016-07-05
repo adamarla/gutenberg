@@ -29,7 +29,7 @@ if [[ $author == "TeX" || $author =~ ^dvips ]] ; then
   pdf2svg $1 $fname-%d.svg all 
   for f in `ls $fname*.svg` ; do 
     n=$(basename $f | cut -d'.' -f1 | cut -d'-' -f2)
-    svgclip.py -o tex-$n.svg $f 
+    svgclip.py -o img_tex-$n.svg $f 
     rm -f $f 
   done 
 else
