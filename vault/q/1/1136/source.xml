@@ -1,95 +1,55 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>
-		\text{Evaluate} \int (x-3)\cdot\sqrt{x^2+3x-18} \cdot dx
-		</tex>
-      <tex>\\ (x-3)\cdot\sqrt{x^2+3x-18} = (x'-A)\cdot\sqrt{x'^2 - A^2} \\
- 		\text{The above is true only if x' and A}\\
- 		\text{equal the following. }\textbf{Right or wrong?}</tex>
-      <tex>\\ \textbf{Right or wrong? }I_1\text{ in the expression below}\\
-  		\text{will evaluate to the following.}\\
-  		\begin{align}
-  		I &amp;= \int (x'-A)\sqrt{x'^2-A^2}\cdot dx \\
-  		&amp;= \underbrace{\int x'\sqrt{x'^2-A^2}dx}_{I_1}
-  		- \underbrace{A\int\sqrt{x'^2-A^2}\cdot dx}_{I_2}
-  		\end{align}</tex>
-      <tex>\\ \textbf{Right or wrong?}\\
-  		\text{And hence, }I = I_1 - I_2 \text{ will evaluate}\\
-  		\text{to the following.}</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">
- 		\quad x' = x+\dfrac{3}{2}, A = \dfrac{9}{2}
- 		</tex>
-         <tex correct="false">
- 		\quad x' = x-\dfrac{3}{2}, A = \dfrac{7}{2}
- 		</tex>
-      </options>
-      <reason>
-         <tex>\text{Just so you know, we tried many approaches} \\
- 		\text{before finding the one given below - integration}\\
- 		\text{by parts, factorizing }x^2+3x-18\text{ etc.} \\
- 		\text{None of them resulted in an expression that was}\\
- 		\text{easy to integrate.}\\
- 		\textbf{Sometimes, you just have to try 2 wrong}\\
- 		\textbf{approaches before finding the one right one.} \\
- 		\begin{align}
- 		  x^2+3x-18 &amp;= \underbrace{x^2 + 2\dfrac{3}{2}x + \dfrac{9}{4}}_{(x+a)^2=x^2+2ax+a^2} - 18-\dfrac{9}{4} \\
- 		  &amp;= \left(x+\dfrac{3}{2}\right)^2 - \dfrac{81}{4}  \\
- 		  &amp;= \left(x+\dfrac{3}{2}\right)^2 - \left(\dfrac{9}{2}\right)^2 \\
- 		  \text{Also }x+3 &amp;= \left(x+\dfrac{3}{2}\right)-\dfrac{9}{2} \\
- 		  \therefore x' &amp;= \left(x+\dfrac{3}{2}\right)\text{ and } A = \dfrac{9}{2}
- 		\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-  		\quad I_1 = \dfrac{(x^2+3x-18)^\frac{3}{2}}{3} + C_1
-  		</tex>
-         <tex correct="false">
-  		\quad I_1 = \dfrac{2\cdot (x^2+3x-18)^\frac{3}{2}}{3} + C_1
-  		</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-  		I_1 &amp;= \int x'\cdot\sqrt{x'^2- A^2}\cdot dx \\
-  		\text{Let }x'^2-A^2 &amp;= z^2 \implies x'\cdot dx' = z\cdot dz \\
-  		\therefore I_1 &amp;= \int \sqrt{z^2} \cdot (z\cdot dz) = \int z^2\cdot dz \\
-  		&amp;= \dfrac{z^3}{3} + C_1 = \dfrac{(x'^2-A^2)^\frac{3}{2}}{3} + C_1 \\
-  		&amp;= \dfrac{(x^2+3x-18)^\frac{3}{2}}{3} + C_1
-  		\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-  		I = \dfrac{(x^2+3x-18)^\frac{3}{2}}{3} - \\ 
-  		 \frac{9}{4}\left[ \left(x+\frac{3}{2}\right)\sqrt{x^2+3x-18} \\
-  		 - \frac{81}{4}\log\left\vert \left(x+\frac{3}{2}\right) + \sqrt{x^2+3x-18}\right\vert
-  		 \right]
-  		</tex>
-      </options>
-      <reason>
-         <tex>\text{We found }I_1\text{ in Step 2. So, we only}\\
-  		\text{need to find }I_2. \\
-  		\begin{align}
-  		 &amp;I_2 = A\int\sqrt{x'^2-A^2}\cdot dx \\ 
-  		 &amp;= \underbrace{ 
-  		 \dfrac{A}{2}\cdot\left[x'\sqrt{x'^2-A^2}-A^2\log\vert x' + \sqrt{x'^2-A^2}\vert\right]}
-  		 _{\int\sqrt{x^2-a^2}dx=\frac{1}{2}\cdot \left[x\sqrt{x^2-a^2} - a^2\log\vert x + \sqrt{x^2-a^2}\vert\right]} + C_2 \\
-  		 &amp;\text{But } x' = \left(x + \frac{3}{2}\right), A = \frac{9}{2} \\
-  		 &amp;\therefore I_2 = \frac{9}{4}\left[ \left(x+\frac{3}{2}\right)\sqrt{x^2+3x-18} \\
-  		 &amp;- \frac{81}{4}\log\left\vert \left(x+\frac{3}{2}\right) + \sqrt{x^2+3x-18}\right\vert
-  		 \right] \\
-  		 &amp;\text{and }I = \dfrac{(x^2+3x-18)^\frac{3}{2}}{3} - \\
-  		 &amp;\frac{9}{4}\left[ \left(x+\frac{3}{2}\right)\sqrt{x^2+3x-18} \\
-  		 &amp;-\frac{81}{4}\log\left\vert \left(x+\frac{3}{2}\right) + \sqrt{x^2+3x-18}\right\vert
-  		 \right] + C
-  		\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="23">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-3.svg</tex>
+    </reason>
+    <skills>
+      <skill id="64"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-4.svg</tex>
+      <tex isImage="true" correct="false">img_tex-5.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-6.svg</tex>
+    </reason>
+    <skills>
+      <skill id="1"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-7.svg</tex>
+      <tex isImage="true" correct="false">img_tex-8.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-9.svg</tex>
+    </reason>
+    <skills>
+      <skill id="48"/>
+      <skill id="32"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-10.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-11.svg</tex>
+    </reason>
+    <skills>
+      <skill id="67"/>
+      <skill id="62"/>
+      <skill id="1"/>
+    </skills>
+  </step>
 </question>
