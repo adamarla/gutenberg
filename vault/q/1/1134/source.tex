@@ -1,0 +1,139 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+
+\newcommand\cx{a\sin^3\theta}
+\newcommand\cy{a\cos^3\theta} 
+
+\newcommand\pta{ \left(\frac{a}{2\sqrt{2}}, \frac{a}{2\sqrt{2}} \right)}
+\begin{document}
+
+\begin{question}
+	\statement 
+    
+    Find the equation of the tangent and normal to the curve 
+    \[ \qquad x = a\sin^3\theta \text{ and } y = a\cos^3\theta \] 
+    at $\theta = \dfrac\pi{4}$
+    
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+     The tangent and normal will pass through the point $A = \pta$
+        
+    \end{options} 
+     \reason 
+     
+     What we have here is a parametric curve in which both $x$ and $y$ are defined in
+     terms of a third parameter $\theta$ \newline 
+     
+     
+     And for $\theta = \frac{\pi}{4}$, the point $A$ on the curve is given by 
+     \[ A = \left(a\sin^3 \frac{\pi}{4}, a\cos^3 \frac{\pi}{4} \right) = \pta \]
+       
+\end{step}
+
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+     If $m_T$ be the slope of the tangent and $m_N$ the slope of the normal at $A$, then 
+     
+     \begin{center}
+  \begin{tabular}{NNN}
+   \toprule
+        & \text{Expression} & \text{Value} \\
+   \midrule 
+   m_T & \frac{dy}{dx} & -1 \\
+    \midrule 
+    m_N & & 1 \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+     \incorrect
+
+     If $m_T$ be the slope of the tangent and $m_N$ the slope of the normal at $A$, then 
+     
+     \begin{center}
+  \begin{tabular}{NNN}
+   \toprule
+        & \text{Expression} & \text{Value} \\
+   \midrule 
+   m_T & \frac{dy}{dx} & 1 \\
+    \midrule 
+    m_N & & -1 \\
+    \bottomrule
+  \end{tabular}
+\end{center}        
+    \end{options} 
+    
+     \reason 
+    
+    It might be a parametric curve. But it is still drawn in the $x-y$ plane \newline 
+    
+    Hence, the slope of the tangent $(m_T)$ at point $A$ is
+    \begin{align}
+	m_T &= \dydx = \left[ \frac{dy / dt}{dx / dt}\right]_{\frac\pi{4}} 
+	= \left[\frac{\frac{d}{dt} \left(\cy \right)}{\frac{d}{dt} \left(\cx \right)} \right]\\
+	&= \underbrace{\left[\frac{3\cos^2\theta\cdot (-\sin\theta)}{3\sin^2\theta\cdot (\cos\theta)} \right]}_{\text{Chain Rule}} = -\cot\theta \\
+	&= -1\text{ when } \theta = \frac\pi{4}
+\end{align}
+
+Morever $m_T\cdot m_N = -1$ as the tangent and normal are perpendicular to each other \newline 
+
+Hence, $m_N = 1$ 
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+     \begin{center}
+  \begin{tabular}{lN}
+   \toprule
+        &  \text{Equation} \\
+   \midrule 
+   Tangent & x + y = \frac{a}{\sqrt{2}}\\
+    \midrule 
+    Normal & x = y \\ 
+    \bottomrule
+  \end{tabular}
+\end{center}
+     \incorrect
+        
+        \begin{center}
+  \begin{tabular}{lN}
+   \toprule
+        &  \text{Equation} \\
+   \midrule 
+   Tangent & x - y = \frac{a}{2\sqrt{2}}\\
+    \midrule 
+    Normal & y = x + \frac{a}{\sqrt{2}} \\ 
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+    \end{options} 
+     \reason 
+     
+     We know that the one point the two lines pass through. And we know their slopes\newline 
+     
+     That is more than enough information to find the equations of the two lines \newline 
+     
+     \begin{center}
+  \begin{tabular}{lNNN}
+   \toprule
+        & \text{Slope} & \text{Setup} & \text{Equation} \\
+   \midrule 
+   Tangent & -1 & \frac{y-\frac{a}{2\sqrt{2}}}{x-\frac{a}{2\sqrt{2}}} = -1 & x + y = \frac{a}{\sqrt{2}} \\
+    \midrule 
+    Normal & 1 & \frac{y- \frac{a}{2\sqrt{2}}}{x- \frac{a}{2\sqrt{2}}} = 1 & x = y \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+       
+\end{step}
+\end{question}     
+\end{document}
