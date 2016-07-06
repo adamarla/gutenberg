@@ -1,0 +1,62 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+
+\newcommand\xmtw{ \left(x-2 \right)}
+\newcommand\xptw{ \left(x + 2 \right)}
+\newcommand\xmth{ \left(x-3 \right)}
+\newcommand\xpth{\left(x+3 \right) }
+\newcommand\xsqtw{ \left(x^2 - 4 \right) }
+\newcommand\xsqth{ \left(x^2 - 9 \right)}
+
+\begin{document}
+
+\begin{question}
+	\statement 
+    
+    Solve the following equation 
+    \[ \tan^{-1} \left(\frac{x-2}{x-3} \right) + \tan^{-1} \left(\frac{x+2}{x+3} \right) = \frac\pi{4} \]
+    given that $x \geq 0$ 
+    
+    \begin{step}
+  \begin{options} 
+     \correct 
+       \small\[ \tan^{-1} \left(\frac{x-2}{x-3} \right) + \tan^{-1} \left(\frac{x+2}{x+3} \right) = \tan^{-1} \left( \frac{2x^2 - 12}{-5}\right)\]
+     \incorrect
+        
+        \[ \tan^{-1} \left(\frac{x-2}{x-3} \right) + \tan^{-1} \left(\frac{x+2}{x+3} \right) = \tan^{-1} \left( \frac{x^2 - 6}{5}\right)\]
+    \end{options} 
+     \reason 
+     
+     \begin{align}
+	&\tan^{-1} A + \tan^{-1} B = \tan^{-1} \left(\frac{A + B}{1-A\cdot B} \right) \\
+	&\therefore \tan^{-1} \left(\frac{x-2}{x-3} \right) + \tan^{-1} \left(\frac{x+2}{x+3} \right) \\
+	&= \tan^{-1} \left[ \frac{\frac{x-2}{x-3} + \frac{x+2}{x+3}}{1- \left(\frac{x-2}{x-3} \right)\cdot \left(\frac{x+2}{x+3} \right)} \right]  \\
+	&= \tan^{-1} \left[ \frac{\frac{\left(x^2+x-6 \right) + \left(x^2 - x - 6 \right)}{\xsqth}}{\frac{\xsqth-\xsqtw}{\xsqth}} \right] \\
+	&= \tan^{-1} \left[\frac{2x^2 - 12}{-5} \right]
+\end{align}
+       
+\end{step}     
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+       \[ \tan^{-1} \left(\frac{2x^2-12}{-5} \right) = \frac\pi{4} \implies x = \frac{\sqrt{7}}{\sqrt{2}} \]
+     \incorrect
+        
+         \[ \tan^{-1} \left(\frac{2x^2-12}{-5} \right) = \frac\pi{4} \implies x = \frac{\sqrt{3}}{\sqrt{2}} \]
+    \end{options} 
+     \reason 
+       
+       \begin{align}
+       \tan^{-1} \left(\frac{2x^2-12}{-5} \right) &= \frac\pi{4} \\ 
+       \therefore \frac{2x^2 - 12}{-5} &= 1 \\ 
+       \implies 2x^2 &= 7\text{ or } x = \pm \frac{\sqrt{7}}{\sqrt{2}}
+\end{align}
+
+But as $x \geq 0$, therefore only $x = \frac{\sqrt{7}}{\sqrt{2}}$ is an acceptable solution 
+\end{step} 
+\end{question} 
+
+\end{document}

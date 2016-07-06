@@ -1,0 +1,132 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+
+\newcommand\fxa{\sqrt{\frac{1+x}{2}}}
+
+
+\begin{document}
+
+\begin{question}
+	\statement 
+    
+     Find the derivative of the following function with respect to $x$ 
+     at $ x = 1$ 
+     \[ \qquad y = \cos^{-1} \left(\sin\fxa \right) + x^x \] 
+     
+     \begin{step}
+  \begin{options} 
+      
+     \correct 
+     
+      To evaluate $\ddx A$ in the equation below       
+	\[ \qquad y = \underbrace{\cos^{-1} \left(\sin\fxa \right)}_A + \underbrace{x^x}_B \]
+	
+	\underline{Strategy $II$ is better} (see below) 
+	
+	\begin{center}
+  \begin{tabular}{ll}
+   \toprule
+        Strategy $I$ & Strategy $II$  \\
+   \midrule 
+   Let $x = \cos 2\theta$ & Use $\cos^{-1} z + \sin^{-1} z = \frac\pi{2}$ \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+     \incorrect
+
+     To evaluate $\ddx A$ in the equation below       
+	\[ \qquad y = \underbrace{\cos^{-1} \left(\sin\fxa \right)}_A + \underbrace{x^x}_B \]
+	
+	\underline{Strategy $I$ is better} (see below) 
+	
+	\begin{center}
+  \begin{tabular}{ll}
+   \toprule
+        Strategy $I$ & Strategy $II$  \\
+   \midrule 
+   Let $x = \cos 2\theta$ & Use $\cos^{-1} z + \sin^{-1} z = \frac\pi{2}$ \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+	
+	
+
+      
+    \end{options} 
+     \reason 
+       
+     You can try Strategy $I$. But it wouldn't make life any easier 
+     \begin{align}
+	   A &= \cos^{-1} \left(\sin \fxa \right) \\
+	   &= \cos^{-1} \left(\sin \sqrt{\frac{1+\cos 2\theta}{2}} \right) \\
+	   &= \cos^{-1} \left(\sin \cos\theta \right)
+\end{align}
+
+This doesn't look very helpful\newline 
+
+So, let us try Strategy $II$ 
+
+\begin{align}
+A &= \cos^{-1} \underbrace{\left(\sin\fxa \right)}_z \\
+&= \frac\pi{2} - \sin^{-1} \left(\sin\fxa \right) \\
+&= \frac\pi{2} - \fxa 
+\end{align}
+
+This is a whole lot simpler 
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+     
+     \begin{center}
+  \begin{tabular}{NN}
+   \toprule
+        \ddx A & \ddx B \\
+   \midrule 
+   \frac{-1}{2\sqrt{2\cdot (1+x)}} & x^x\cdot \left(\log x + 1 \right)\\
+    \bottomrule
+  \end{tabular}
+\end{center}  
+
+Therefore $\ddx y = \frac{3}{4}$ when $x = 1$ 
+
+     \incorrect
+     
+     \begin{center}
+  \begin{tabular}{NN}
+   \toprule
+        \ddx A & \ddx B \\
+   \midrule 
+   \frac{1}{2\sqrt{2\cdot (1+x)}} & x\cdot x^{x-1} = x^x \\
+    \bottomrule
+  \end{tabular}
+\end{center}  
+
+Therefore $\ddx y = \frac{5}{4}$ when $ x = 1$ 
+
+    \end{options} 
+     \reason 
+      
+     \begin{align}
+     y = A + B &\implies \ddx y = \ddx A + \ddx B \\
+	A &= \frac{\pi}{2} - \fxa \\
+	\therefore \ddx A &= 0 - \frac{1}{\sqrt{2}}\cdot \frac{1}{2}\cdot \frac{1}{\sqrt{1+x}} \\
+	\text{And }B &= x^x \implies \log B = x \log x \\
+	\therefore \ddx \log B &= \ddx \left(x\cdot\log x \right) \\
+	\text{or } \frac{1}{B}\ddx B &= \underbrace{\frac{x}{x} + \log x}_{\text{Product Rule}} \\
+	\therefore \ddx B &= x^x\cdot \left(1 + \log x \right)
+\end{align}  
+
+Hence $\ddx y$ at $x = 1$ equals 
+\begin{align}
+\left[\ddx y \right]_{x=1} &= \left[\ddx A + \ddx B \right]_{x=1} \\ 
+&= \left[- \frac{1}{2\sqrt{2\cdot 2}} + 1^1\cdot \left(1 + \log 1 \right)  \right] \\
+&= 1 - \frac{1}{4} = \frac{3}{4}
+\end{align}
+\end{step}
+\end{question} 
+
+\end{document}
