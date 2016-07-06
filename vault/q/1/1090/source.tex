@@ -1,0 +1,96 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+
+\newcommand\tsqx{\tan^2\frac{x}{2}}
+\newcommand\tsqy{\tan^2 \frac{y}{2}}
+\newcommand\ea{\frac{a-b}{a+b}}
+
+
+\begin{document}
+
+\begin{question}
+	\statement 
+    
+     Prove the following 
+     \small\[ 2\tan^{-1} \left(\sqrt{\ea}\cdot\tan \frac{x}{2} \right) = \cos^{-1} \left(\frac{a\cos x + b}{a + b\cos x} \right)\] \normalsize
+     
+     \begin{step}
+  \begin{options} 
+     \correct 
+       
+       Because 
+       \small\[ y = 2\tan^{-1} \left(\sqrt{\ea}\cdot\tan \frac{x}{2} \right) = \cos^{-1} \left(\frac{a\cos x + b}{a + b\cos x} \right)\] \normalsize
+       
+       Therefore 
+       \begin{align}
+	\tan \frac{y}{2} &= \sqrt{\ea}\cdot\tan \frac{x}{2} \\
+	\text{and } \cos y &= \frac{a\cos x + b}{a + b\cos x}
+\end{align}
+
+\incorrect
+ 
+Because 
+       \small\[ y = 2\tan^{-1} \left(\sqrt{\ea}\cdot\tan \frac{x}{2} \right) = \cos^{-1} \left(\frac{a\cos x + b}{a + b\cos x} \right)\] \normalsize
+
+Therefore 
+\[ \tan \frac{y}{2} = \sqrt\ea\cdot\tan \frac{x}{2} = \cos y = \frac{a\cos x + b}{a + b\cos x}\]       
+        
+    \end{options} 
+     \reason 
+     
+     This problem looks scarier than it is. So, let us do the simplest things first 
+     
+     \small\[ y = 2\tan^{-1} \left(\sqrt{\ea}\cdot\tan \frac{x}{2} \right) = \cos^{-1} \left(\frac{a\cos x + b}{a + b\cos x} \right)\] \normalsize
+     
+     And hence 
+     \begin{align}
+     y &= 2\tan^{-1} \left(\sqrt{\ea}\cdot\tan \frac{x}{2} \right) \\
+     \frac{y}{2} &= \tan^{-1} \left(\sqrt\ea\cdot\tan \frac{x}{2} \right) \\
+     \text{or } \tan \frac{x}{2} &= \sqrt\ea\cdot\tan\frac{x}{2}
+\end{align}
+
+Similarly 
+\begin{align}
+y &= \cos^{-1} \left( \frac{a\cos x + b}{a + b\cos x}\right) \\
+	\therefore \cos y &= \frac{a\cos x + b}{a + b\cos x}
+\end{align}
+       
+This \underline{does not} mean that $\tan \frac{y}{2} = \cos y$ (just in case you 
+were wondering) 
+
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+     
+     \begin{align}
+	\cos y &= \frac{1 - \tsqy}{1 + \tsqy} \\
+	&= \left[ \frac{1-\ea\cdot\tsqx}{1 + \ea\cdot\tsqx}\right] \\
+	&= \left[\frac{a\cdot \left(1-\tsqx \right) + b\cdot \left(1+\tsqx \right)}{a\cdot \left(1+\tsqx \right) + b\cdot \left(1-\tsqx \right)} \right] \\
+	&= \frac{a\cdot\cos x + b}{a + b\cdot \cos x}\quad\text{ (hence proved)}
+\end{align}
+
+        
+    \end{options} 
+     \reason 
+
+     We know that 
+     \[ \qquad \cos 2\theta = \frac{1-\tan^2\theta}{1+\tan^2\theta}\]
+     
+     Similarly, 
+     
+     \begin{align}
+	\cos y &= \frac{1 - \tsqy}{1 + \tsqy} \\
+	&= \left[ \frac{1-\ea\cdot\tsqx}{1 + \ea\cdot\tsqx}\right] \\
+	&= \left[\frac{a+b-a\tsqx + b\tsqx}{a+b+a\tsqx - b\tsqx} \right] \\
+	&= \left[\frac{a\cdot \left(1-\tsqx \right) + b\cdot \left(1+\tsqx \right)}{a\cdot \left(1+\tsqx \right) + b\cdot \left(1-\tsqx \right)} \right] \\
+	&= \left[\underbrace{\frac{a\cdot \left( \frac{1-\tsqx}{1+\tsqx}\right) + b}{a + b\cdot \left(\frac{1-\tsqx}{1+\tsqx}\right)}}_{\text{Noticed }\cos x?} \right] \\
+	&= \frac{a\cdot\cos x + b}{a + b\cdot \cos x}\quad\text{ (hence proved)}
+\end{align}
+       
+\end{step}
+\end{question} 
+
+\end{document}
