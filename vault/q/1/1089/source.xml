@@ -1,96 +1,31 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>
-		\text{Solve the following for x}\\
-		\quad \tan^{-1}\dfrac{x-2}{x-3} + \tan^{-1}\dfrac{x+2}{x+3} = \dfrac{\pi}{4},\vert x\vert\lt 1
-		</tex>
-      <tex>\\ \text{Given the equation (see below)}\\
-			\underbrace{\tan^{-1}\dfrac{x-2}{x-3}}_A + 
-			\underbrace{\tan^{-1}\dfrac{x+2}{x+3}}_B = \dfrac{\pi}{4}\\
-			\text{we say the following about A and B.}\\ 
-			\textbf{Are we correct?}</tex>
-      <tex>\\ \textbf{Setting up the equation}\\
-				\text{Is the following correct?}</tex>
-      <tex>\\ \text{Your friend makes the following claim after}\\
-				\text{solving the equation from Step 2.}\\
-				\textbf{Is his claim correct?}</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">
-			\begin{tabular}{|c|c|}
-			\hline
-			&amp; \\ 
-			1 &amp; \tan A = \dfrac{x-2}{x-3} \\
-			\hline
-			2 &amp; \tan B = \dfrac{x+2}{x+3} \\
-			\hline
-			\end{tabular}
-			</tex>
-         <tex correct="false">
-			\begin{tabular}{|c|l|}
-			\hline
-			&amp; \\ 
-			1 &amp; A = \tan^{-1}\dfrac{x-2}{x-3} \\
-			&amp; \implies A = \dfrac{1}{\tan\dfrac{x-2}{x-3}} = \cot\dfrac{x-2}{x-3} \\
-			\hline
-			2 &amp; B = \tan^{-1}\dfrac{x+2}{x+3} \\
-			&amp; \implies B = \dfrac{1}{\tan\dfrac{x+2}{x+3}} = \cot\dfrac{x+2}{x+3} \\
-			\hline
-			\end{tabular}
-			</tex>
-      </options>
-      <reason>
-         <tex>A = \tan^{-1}\dfrac{x-2}{x+3}\text{ is an angle. }\\
-			\text{Same goes for } B = \tan^{-1}\dfrac{x+2}{x+3}. \\
-			\text{Moreover,} \tan^{-1}\alpha = \theta\implies \alpha=\tan\theta \\
-			\begin{align}
-			  \therefore \tan A &amp;= \dfrac{x-2}{x-3} \\
-			  \tan B &amp;= \dfrac{x+2}{x+3}
-			\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-				\begin{align}
-				  \tan\dfrac{\pi}{4} &amp;= \dfrac{\dfrac{x-2}{x-3} + \dfrac{x+2}{x+3}}
-				  {1-\dfrac{x-2}{x-3}\cdot\dfrac{x+2}{x+3}}
-				\end{align}
-				</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-				  A + B &amp;= \dfrac{\pi}{4}\implies\tan (A+B) = \tan\dfrac{\pi}{4} \\
-				  \implies 1 &amp;= \dfrac{\tan A + \tan B}{1-\tan A\cdot\tan B}
-				\end{align} \\
-				\text{And we know what }\tan A\text{ and }\tan B \\
-				\text{are from Step 1.}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-				\text{This equation has no solution that satisfies}\\
-				\text{all conditions.}
-				</tex>
-         <tex correct="false">
-				x = \pm\sqrt{\dfrac{7}{2}}\text{ are the only two valid solutions.}
-				</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-				\dfrac{\dfrac{x-2}{x-3} + \dfrac{x+2}{x+3}}{1-\dfrac{x-2}{x-3}\cdot\dfrac{x+2}{x+3}} &amp;= 1\\
-				\implies \dfrac{(x-2)(x-3)+(x+2)(x+3)}{(x^2-9)-(x^2-4)} &amp;= 1 \\
-				\implies 2x^2 - 12 &amp;= -5 \\
-				\text{ or } x &amp;= \pm\sqrt{\dfrac{7}{2}}
-				\end{align} \\
-				\text{Now }\frac{7}{2}\gt 1\implies\left\vert\sqrt{\dfrac{7}{2}}\right\vert\gt 1. \\
-				\text{But }\vert x\vert \text{ must be }\lt 1. 
-				\text{Not possible if }x=\pm\sqrt{\frac{7}{2}}.\\
-				\textbf{Hence, no solution.}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="18">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+      <tex isImage="true" correct="false">img_tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="44"/>
+      <skill id="1"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-5.svg</tex>
+      <tex isImage="true" correct="false">img_tex-6.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-7.svg</tex>
+    </reason>
+    <skills>
+      <skill id="39"/>
+    </skills>
+  </step>
 </question>
