@@ -1,0 +1,66 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+
+\newcommand\fx{\alpha\sin 2t\cdot \left(1+\cos 2t \right)}
+\newcommand\fy{\beta\cos 2t\cdot \left(1-\cos 2t \right)}
+
+\begin{document}
+
+\begin{question}
+	\statement 
+    
+     Find $\dfrac{dy}{dx}$ if $x = \fx$ and $y=\fy$       
+     
+   \begin{step}
+  \begin{options} 
+     \correct 
+       \[ \qquad x' = 4\alpha\cdot\cos 3t\cdot \cos t \]
+     \incorrect
+        \[ \qquad x' = 2\alpha\cdot\cos 2t\cdot \cos t \]
+    \end{options} 
+     \reason 
+     
+     This is a \underline{parametric curve} in which both $x$ and $y$ are defined 
+     in terms of a third parameter $t$. Which is why
+     
+     \begin{align}
+	 x &= \fx \\
+	 \therefore \frac{dx}{dt} &= \underbrace{\alpha \left[\left(1+\cos 2t \right)\cdot \left(2\cos 2t \right) - 2\sin^2 2t  \right]}_{\text{Product and Chain Rules}} \\
+	 &= \alpha \left[2\cos 2t + 2 \underbrace{\left(\cos^2 2t - \sin^2 2t \right)}_{\cos 2\theta = \cos^2\theta - \sin^2\theta} \right] \\
+	 &= \underbrace{2\alpha \left(\cos 2t + \cos 4t \right)}_{\cos A + \cos B = 2\cos \frac{A+B}{2}\cdot \cos\frac{B-A}{2}} \\
+	 &= 4\alpha\cdot\cos 3t\cdot \cos t
+\end{align}
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       \begin{align}
+	\frac{dy}{dt} &= 4\beta \cdot\cos 3t \cdot \sin t \\
+	\therefore \dydx &= \frac{\beta}{\alpha}\tan t
+\end{align}
+     \incorrect
+        
+        \begin{align}
+	\frac{dy}{dt} &= 4\beta \cdot\sin 3t \cdot \cos t \\
+	\therefore \dydx &= \frac{\beta}{\alpha}\tan 3t
+\end{align}
+
+    \end{options} 
+     \reason 
+       
+       \begin{align}
+	y &= \fy \\
+	\therefore \frac{dy}{dt} &= \beta \left[\cos 2t \left(2\sin 2t \right) - 2 \left(1-\cos 2t \right)\sin 2t \right] \\
+	&= 2\beta \left[2\sin 2t\cos 2t - \sin 2t  \right] \\
+	&= \underbrace{2\beta \cdot \left(\sin 4t - \sin 2t \right)}_{2\sin x\cdot\cos x = \sin 2x } \\
+	&= \underbrace{2\beta\cdot \left(2\cos 3t\cdot\sin t \right)}_{\sin A - \sin B = 2\cos \frac{A+B}{2}\cdot \sin \frac{A-B}{2}} \\
+	&= 4\beta \cdot\cos 3t \cdot \sin t 
+\end{align}
+
+Hence \[ \dydx = \frac{dy / dt}{dx / dt} = \frac{4\beta \cdot\cos 3t \cdot \sin t}{4\alpha\cdot\cos 3t\cdot \cos t} = \frac{\beta}{\alpha}\tan t\]
+\end{step}
+\end{question} 
+\end{document}
