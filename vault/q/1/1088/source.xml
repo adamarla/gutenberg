@@ -1,121 +1,32 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>
-			\text{Find the derivative of the following}\\
-			\text{function with respect to x, at x = 1.} \\
-			\quad y = \cos^{-1}\left[\sin\sqrt{\dfrac{1+x}{2}}\right] + x^x 
-		</tex>
-      <tex>\\ \text{Let }A = \cos^{-1}\left[\sin\sqrt{\dfrac{1+x}{2}}\right].\text{ If A is written}\\
-			\text{as }f(\, g(\, h(\, i(x)\,)\,)\,) = (f\circ g\circ h\circ i)(x),\text{ then}\\
-			\text{are the below definitions of }f(x)\to i(x)\text{ correct?}</tex>
-      <tex>\\ \text{In } y = \underbrace{\cos^{-1}\left[\sin\sqrt{\dfrac{1+x}{2}}\right]}_A + 
-				\underbrace{x^x}_B, \\
-				\text{is }\dfrac{dA}{dx}\text{ as follows?}</tex>
-      <tex>\\ \text{And will }\dfrac{dB}{dx}\text{ evaluate to the following,}\\
-				\text{where } B = x^x?</tex>
-      <tex>\\ \text{Given }\dfrac{dA}{dx}\text{ and }\dfrac{dB}{dx},\text{ what is}\\
-				\dfrac{dy}{dx}\text{ at x = 1?}</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">
-			\begin{tabular}{|c|c|c|c|}
-			  \hline
-			  f(x) &amp; g(x) &amp; h(x) &amp; i(x) \\
-			  \hline 
-			  \cos^{-1}x &amp; \sin x &amp; \sqrt{x} &amp; \dfrac{1+x}{2} \\
-			  \hline 
-			\end{tabular}
-			</tex>
-         <tex correct="false">
-			\begin{tabular}{|c|c|c|c|}
-			  \hline
-			  f(x) &amp; g(x) &amp; h(x) &amp; i(x) \\
-			  \hline 
-			  \sin x &amp; \cos^{-1} x &amp; \dfrac{1+x}{2} &amp; \sqrt{x} \\
-			  \hline 
-			\end{tabular}
-			</tex>
-      </options>
-      <reason>
-         <tex>\text{If you want to find }\frac{dA}{dx},\text{ then you must first}\\
-			\text{decompose A into its constituent functions} \\
-			\text{so that you can apply the Chain Rule.} \\
-			
-			\begin{tabular}{|c|c|c|}
-			  \hline
-			  \text{Argument} &amp; \text{Function} &amp; \text{Result} \\ 
-			  \hline
-			  x &amp; \underbrace{\frac{1+x}{2}}_{i(x)} &amp; \frac{1+x}{2} \\
-			  \hline 
-			  \frac{1+x}{2} &amp; \underbrace{\sqrt{x}}_{h(x)} &amp; \sqrt{\dfrac{1+x}{2}} \\
-			  \hline 
-			  \sqrt{\dfrac{1+x}{2}} &amp; \underbrace{\sin x}_{g(x)} &amp; \sin\sqrt{\dfrac{1+x}{2}} \\
-			  \hline
-			  \sin\sqrt{\dfrac{1+x}{2}} &amp; \underbrace{\cos^{-1} x}_{f(x)} &amp; \cos^{-1}\left[\sin\sqrt{\dfrac{1+x}{2}}\right] \\
-			  \hline
-			\end{tabular}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-				\dfrac{dA}{dx} = \dfrac{1}{2\sqrt{2}\cdot\sqrt{1+x}}
-				</tex>
-         <tex correct="false">
-				\dfrac{dA}{dx} = \dfrac{1}{\sqrt{1+x}}
-				</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-				  &amp;A = \underbrace{(f\circ g\circ h\circ i)(x)}_{\text{Step 1}} \\
-				  &amp;\implies\dfrac{dA}{dx} = \dfrac{df}{dg}\cdot\dfrac{dg}{dh}\cdot\dfrac{dh}{di}\cdot\dfrac{di}{dx} \\
-				  &amp;= \underbrace{-\dfrac{1}{\sqrt{1-\sin^2\sqrt{\dfrac{1+x}{2}}}}}_{\frac{df}{dg}}
-				  \times\underbrace{\cos\sqrt{\dfrac{1+x}{2}}}_{\frac{dg}{dh}} \\
-				  &amp;\times\underbrace{\dfrac{1}{2\sqrt{\dfrac{1+x}{2}}}}_{\frac{dh}{di}}
-				  \times\underbrace{\dfrac{1}{2}}_{\frac{di}{dx}} = -\dfrac{1}{2\sqrt{2}\cdot\sqrt{1+x}}
-				\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-				\dfrac{dB}{dx} = x^x\cdot (1+\log x)
-				</tex>
-         <tex correct="false">
-				\dfrac{dB}{dx} = x\cdot x^{x-1}
-				</tex>
-      </options>
-      <reason>
-         <tex>\dfrac{d}{dx}x^N = N\cdot x^{N-1}\text{ is true only when}\\
-				\text{N is a constant - not a variable like x.}\\
-				\begin{align}
-				  B &amp;= x^x \implies \log B = x\cdot\log x \\
-				  \implies \dfrac{1}{B}\dfrac{dB}{dx} &amp;= \underbrace{x\cdot\dfrac{1}{x} + \log x\cdot 1}
-				  _{\text{Product Rule}} \\
-				  \implies\dfrac{dB}{dx} &amp;= B\cdot (1+\log x) \\
-				  &amp;= x^x\cdot (1+\log x)
-				\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-				\dfrac{dy}{dx} = \dfrac{3}{4}
-				</tex>
-         <tex correct="false">
-				\dfrac{dy}{dx} = \dfrac{1}{2}
-				</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-				  \dfrac{dy}{dx} &amp;= \dfrac{dA}{dx} + \dfrac{dB}{dx} \\
-				  &amp;= -\dfrac{1}{2\sqrt{2}\sqrt{1+x}} + x^x\cdot(1+\log x) \\
-				  \implies\left[\dfrac{dy}{dx}\right]_{x=1} &amp;= -\dfrac{1}{2\sqrt{2}\sqrt{2}} + 1\cdot (1+0) \\
-				  &amp;= \dfrac{3}{4}
-				\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="21">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+      <tex isImage="true" correct="false">img_tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="41"/>
+      <skill id="32"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-5.svg</tex>
+      <tex isImage="true" correct="false">img_tex-6.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-7.svg</tex>
+    </reason>
+    <skills>
+      <skill id="33"/>
+      <skill id="55"/>
+    </skills>
+  </step>
 </question>
