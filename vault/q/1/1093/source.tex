@@ -1,0 +1,141 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+
+\newcommand\fx{2x^3 - 9mx^2 + 12m^2 x + 1}
+
+\begin{document}
+\begin{question}
+	\statement 
+    
+    If the function 
+    \[ \qquad f(x) = \fx \]
+    where $m > 0$ attains its maximum and minimum values at $p$ and $q$ respectively and if $p^2 = q$, then find the value of $m$ 
+    
+    \begin{step}
+  \begin{options} 
+     \correct 
+       
+       \begin{center}
+  \begin{tabular}{NNN}
+   \toprule
+        \text{At} &  f'(x) & f''(x) \\
+   \midrule 
+   p & 0 & < 0 \\
+    \midrule 
+    q & 0 & > 0 \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+     \incorrect
+        
+               \begin{center}
+  \begin{tabular}{NNN}
+   \toprule
+        \text{At} &  f'(x) & f''(x) \\
+   \midrule 
+   p & 0 & > 0 \\
+    \midrule 
+    q & 0 & < 0 \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+    \end{options} 
+     \reason 
+       
+     $p$ and $q$ are extrema points. Which is why $f'(x) = 0$ at $x = p,q$ \newline 
+     
+     And as $p$ is a maxima and $q$ a minima, therefore 
+            \begin{center}
+  \begin{tabular}{NNNc}
+   \toprule
+        \text{At} &  f'(x) & f''(x) & Because \\
+   \midrule 
+   p & 0 & < 0 & Maxima \\
+    \midrule 
+    q & 0 & > 0 & Minima \\
+    \bottomrule
+  \end{tabular}
+\end{center}  
+
+Now that we have a strategy in place, we can start to find $m$ 
+\end{step}  
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+       \begin{align}
+	f'(x) &= 6\cdot \left(x^2 - 3mx + 2m^2 \right) \\
+	\therefore f'(x) &= 0 \text{ when } x = m, 2m 
+\end{align}
+     \incorrect
+        
+        \begin{align}
+	f'(x) &= 6\cdot \left(x^2 - 4mx + 3m^2 \right) \\
+	\therefore f'(x) &= 0 \text{ when } x = m, 3m 
+\end{align}
+    \end{options} 
+     \reason 
+       
+       \begin{align}
+	f'(x) &= \ddx \left(\fx \right) \\
+	&= 6x^2 - 18mx + 12m^2 \\ 
+	&= 6\cdot \left(x^2 - 3mx + 2m^2 \right) \\
+	&= 6\cdot \left(x-m \right)\cdot \left(x-2m \right)
+\end{align}
+
+Therefore, extremas are at $x = m, 2m$
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+       \[ p = m\text{ and } q = 2m \]
+     \incorrect
+        
+        \[ p = 2m\text{ and } q = m \]
+    \end{options} 
+     \reason 
+       
+       Now $f''(x)$ comes into play 
+       
+       \begin{align}
+		f''(x) &= \ddx f'(x) = 6 \ddx \left(x^2 - 3mx + 2m^2 \right) \\
+		&= 6\cdot \left(2x - 3m \right)
+\end{align}
+
+Note also that 
+
+\[ f''(x) = \begin{cases} 
+6\cdot (2m-3m) < 0 \text{ when } x = m \\
+6\cdot (4m - 3m) > 0\text{ when } x = 2m 
+\end{cases} \]
+
+Hence, $\underbrace{p = m}_{\text{Maxima}}$ and $\underbrace{q = 2m}_{\text{Minima}}$ 
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+       \[ p^2 = q \implies m = 2 \]
+        
+    \end{options} 
+     \reason 
+       
+     Every fact in the question has been given for a reason\newline 
+     
+     So, let us use the fact that $p^2 = q$ 
+     
+     \begin{align}
+	p &= m \text{ and } q = 2m \\
+	\text{Also }p^2 &= q \implies m^2 = 2m \\
+	\text{ or } m\cdot(m-2) &= 0\implies m = 0,2 
+\end{align}
+
+But $m > 0$ (not $\geq 0$). Therefore, $m=2$ is the only acceptable solution 
+\end{step}
+\end{question} 
+\end{document}

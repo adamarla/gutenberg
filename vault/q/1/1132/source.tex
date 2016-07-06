@@ -1,0 +1,65 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+\newcommand\intg{\int_{\frac{\pi}{6}}^{\frac{\pi}{3}}}
+\newcommand\ea{ 1 + \sqrt{\cot x}}
+\newcommand\eb{ \frac{\sqrt{\tan x}}{1+\sqrt{\tan x}} }
+\begin{question}
+	\statement 
+    
+     Evaluate the following
+     \[ \qquad A = \intg \frac{dx}{\ea} \]
+     
+     \begin{step}
+  \begin{options} 
+     \correct 
+      
+      Given that $\frac\pi{3} + \frac\pi{6} = \frac\pi{2}$ 
+      \[ \qquad A = \intg \frac{dx}{1+\sqrt{\tan x}} \]
+        
+    \end{options} 
+     \reason 
+     
+     There is a nice little rule that says 
+     \[ \quad \int_a^b f(x)\cdot dx = \int_a^b f \left(a+b-x \right)\cdot dx \]
+     When applied to the given integral 
+     \begin{align}
+	   \intg \frac{dx}{\ea} &= \intg \frac{dx}{1+\sqrt{\cot \left(\frac\pi{6}+\frac\pi{3} -x \right)}} \\
+	   &= \intg \frac{dx}{1 + \sqrt{\cot \left(\frac\pi{2} - x \right)}} \\
+	   &= \intg \frac{dx}{1+\sqrt{\tan x}}
+\end{align}
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+      
+      \begin{align}
+	      A + A &= 2A = \intg dx \implies A = \frac{\pi}{12}
+\end{align}
+     \incorrect
+      
+      \begin{align}
+	A + A &= 2A = \intg \tan x \cdot dx \\
+	&= \left[\log \vert \sec x \vert \right]_{\frac\pi{6}}^{\frac\pi{3}} \\
+	&= \log 2 - \log \frac{2}{\sqrt{3}} = \frac{\log 3}{2} 
+\end{align}  
+    \end{options} 
+     \reason 
+     
+     \begin{align}
+	    A &= \intg \frac{dx}{\ea} = \intg \frac{dx}{1 + \sqrt{\frac{1}{\tan x}}} \\
+	     &= \intg \eb\cdot dx \\
+	     A &= \intg \frac{dx}{1 + \sqrt{\tan x}}\text{ (see previous step) } \\
+	     \therefore A + A &= \intg \eb\cdot dx + \intg \frac{dx}{1+\sqrt{\tan x}} \\
+	     &= \intg \left[\eb + \frac{1}{1+\sqrt{\tan x}} \right]\cdot dx \\
+	     &= \intg dx = \left(\frac\pi{3} - \frac\pi{6} \right) = \frac\pi{6} \\
+	     \therefore A &= \frac\pi{12} 
+\end{align}  
+       
+\end{step}
+\end{question} 
+\end{document}

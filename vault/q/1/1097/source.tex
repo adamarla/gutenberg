@@ -1,0 +1,58 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+
+\newcommand\fx{ \left(3\sqrt{x} + \frac{1}{\sqrt{x}} \right)} 
+\begin{document}
+\begin{question}
+	\statement 
+    
+    Write the anti-derivative of 
+    \[ \qquad\qquad  \fx \] 
+    
+    \begin{step}
+  \begin{options} 
+     \correct 
+       
+     If $F(x)$ be the anti-derivative of $f(x)$, then 
+     \begin{align}
+	     \ddx F(x) &= f(x) \text{ and } \int f(x)\cdot dx = F(x) 
+\end{align}
+     \incorrect
+        
+          
+     If $F(x)$ be the anti-derivative of $f(x)$, then 
+     \begin{align}
+	     \ddx f(x) &= F(x) \text{ and } \int F(x)\cdot dx = f(x) 
+\end{align}
+    \end{options} 
+     \reason 
+     
+     \underline{By definition}, if $F(x)$ be the anti-derivative of a function $f(x)$, then 
+     \[ \qquad \ddx F(x) = f(x) \]
+     
+     Conversely 
+     \[ \qquad \int f(x)\cdot dx = F(x) \]
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+       \[ F(x) = 2\sqrt{x}\cdot \left(x+1 \right) + C  \]
+     \incorrect
+        
+      \[ F(x) = \sqrt{x}\cdot \left(3x + 2 \right) + C  \]
+    \end{options} 
+     \reason 
+       
+       \begin{align}
+	F(x) &= \int \fx\cdot dx \\
+	&= \underbrace{3\int \sqrt{x}\cdot dx + \int \frac{1}{\sqrt{x}}\cdot dx}_{\text{Remember } \sqrt{x} = x^{\frac{1}{2}}\text{ and } \frac{1}{\sqrt{x}}= x^{-\frac{1}{2}}} \\ 
+	&= \underbrace{3 \cdot \frac{x^{\frac{3}{2}}}{\frac{3}{2}} + \frac{\sqrt{x}}{\frac{1}{2}} + C}_{\int x^n \cdot dx = \frac{x^{n+1}}{n+1} + C} \\
+	&= 2\sqrt{x}\cdot \left(x+1 \right) + C 
+\end{align}
+\end{step}
+\end{question} 
+\end{document}

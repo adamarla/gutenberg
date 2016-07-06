@@ -1,0 +1,102 @@
+
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+
+\newcommand\dnm{\sin^2x\cdot \cos^2x} 
+\newcommand\fx{\frac{\sin^6 + \cos^6 x}\dnm}
+
+\begin{document}
+\begin{question}
+	\statement 
+    
+     Evaluate the following integral 
+     \[ \quad I = \int \fx \cdot dx \] 
+     
+     \begin{step}
+  \begin{options} 
+     \correct 
+      
+      \begin{align}
+	I &= \int\fx\cdot dx \\
+	&= \underbrace{\int \frac{\sin^6 x}{\dnm}\cdot dx}_P + \underbrace{\int \frac{\cos^6 x}{\dnm}\cdot dx}_Q 
+\end{align}
+
+\begin{center}
+  \begin{tabular}{NN}
+   \toprule
+       \text{Integral} & \text{Equals} \\
+   \midrule 
+   P & \int \left(\sec^2 x + \cos^2 x - 2 \right) dx \\ 
+    \midrule
+    Q & \int \left(\csc^2 x + \sin^2 x -2 \right)dx \\  
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+        
+    \end{options} 
+     \reason 
+     
+Generally speaking, $\int \left[ f(x) + g(x)\right] \cdot dx$ is easier to 
+evaluate than $\int f(x)\cdot g(x)\cdot dx$ or $\int \frac{f(x)}{g(x)}\cdot dx$ \newline 
+
+ Hence, try the simpler option out first
+
+\begin{align}
+	I &= \int \fx \cdot dx \\
+	&= \underbrace{\int \frac{\sin^6 x}{\dnm}\cdot dx}_P  \\
+	&+ \underbrace{\int \frac{\cos^6 x}{\dnm}\cdot dx }_Q  \\
+	P &= \int \frac{\sin^4 x}{\cos^2 x}\cdot dx = \int \frac{\left(1-\cos^2x \right)^2}{\cos^2 x}\cdot dx \\
+	&= \int \frac{\cos^4 x + 1 - 2\cos^2 x}{\cos^2 x}\cdot dx \\
+	&= \int \left(\sec^2 x + \cos^2 x - 2 \right)\cdot dx \\
+	Q &= \int \frac{\cos^4 x}{\sin^2 x}\cdot dx = \int \frac{\left(1-\sin^2 x \right)^2}{\sin^2 x}\cdot dx \\
+	&= \int \frac{\sin^4 x + 1 - 2\sin^2 x}{\sin^2 x}\cdot dx \\ 
+	&= \int \left(\sin^2 x + \csc^2 x - 2 \right)\cdot dx 
+\end{align}
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+     
+     \begin{align}
+	I &= P + Q = \int \left(\sec^2 x + \csc^2 x - 3 \right)\cdot dx \\
+	&= \tan x + \cot x -3x + C 
+\end{align}
+       
+    \end{options} 
+     \reason 
+     
+     Simply adding the two integrals $P$ and $Q$ back together again to get $I$
+     \begin{align}
+	I &= P + Q \\ 
+	&= \int \left(\sec^2 x + \cos^2 x - 2 \right)\cdot dx \\
+	&+ \int \left(\csc^2 x + \sin^2 x - 2 \right)\cdot dx \\ 
+	&= \int \left(\sec^2 + \csc^2 \right) dx + \int \underbrace{\left(\sin^2x + \cos^2 x\right)}_{=1} dx \\
+	&- 2\int dx - 2\int dx \\
+	&= \int \left(\sec^2 x + \csc^2 x \right)dx + \int dx - 4 \int dx \\
+	&= \int \left(\sec^2 x + \csc^2 x - 3\right)\cdot dx 
+\end{align}
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+       \[ I = \tan x - \cot x - 3x + C \]
+     \incorrect
+        
+         \[ I = \tan x\cdot \sec x +\cot x - 3x + C \]
+    \end{options} 
+     \reason 
+       
+       \begin{align}
+	I &= \int \left(\sec^2x + \csc^2 x - 3 \right)\cdot dx \\ 
+	&= \int \sec^2 x\cdot dx + \int \csc^2 x \cdot dx - 3 \int dx \\
+	&= \tan x - \cot x - 3x + C 
+\end{align}
+\end{step}
+\end{question} 
+\end{document}
