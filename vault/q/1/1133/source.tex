@@ -1,0 +1,170 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+\newcommand\fx{3x^4-4x^3-12x^2 + 5}
+
+\begin{question}
+	\statement 
+    
+         Find the intervals in which the function
+         \[ \qquad f(x) = \fx \]
+         is strictly increasing and decreasing 
+    
+    \begin{step}
+  \begin{options} 
+     \correct 
+
+$f(x) = \fx$ will be strictly increasing/decreasing under the following 
+conditions 
+
+\begin{center}
+  \begin{tabular}{cN}
+   \toprule
+        & \text{Condition} \\
+   \midrule 
+   Strictly increasing & 12 x\cdot (x+1)\cdot (x-2) > 0 \\
+    \midrule 
+    Strictly decreasing & 12 x\cdot (x+1)\cdot (x-2) < 0 \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+       
+     \incorrect
+
+$f(x) = \fx$ will be strictly increasing/decreasing under the following 
+conditions 
+
+\begin{center}
+  \begin{tabular}{cN}
+   \toprule
+        & \text{Condition} \\
+   \midrule 
+   Strictly increasing & 12 x\cdot (x+1)\cdot (x-2) \geq 0 \\
+    \midrule 
+    Strictly decreasing & 12 x\cdot (x+1)\cdot (x-2) \leq 0 \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+        
+    \end{options} 
+     \reason 
+     
+     We are looking for intervals where the function is \underline{strictly} 
+     increasing and decreasing \newline 
+     
+     \begin{center}
+  \begin{tabular}{cNN}
+   \toprule
+        &  & \text{Strictly}\\
+   \midrule 
+   Increasing & f'(x) \geq 0 & f'(x) > 0 \\
+    \midrule 
+    Decreasing & f'(x) \leq 0 & f'(x) < 0 \\
+    \bottomrule
+  \end{tabular}
+\end{center} 
+
+Therefore, $f'(x)$ has to be either $>0$ or $<0$, but never $=0$\newline 
+
+Moreover 
+\begin{align}
+	f'(x) &= \ddx \left(\fx \right) \\
+	&= 12x^3 - 12x^2-24x \\
+	&= 12x\cdot(x^2-x-2)  \\
+	&= 12 x\cdot (x+1)\cdot (x-2) 
+\end{align}
+
+Which is why 
+
+\begin{center}
+  \begin{tabular}{cN}
+   \toprule
+        & \text{Condition} \\
+   \midrule 
+   Strictly increasing & 12 x\cdot (x+1)\cdot (x-2) > 0 \\
+    \midrule 
+    Strictly decreasing & 12 x\cdot (x+1)\cdot (x-2) < 0 \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+      
+      Given that $f'(x) = 12x\cdot (x+1)\cdot (x-2)$
+      
+      \begin{center}
+  \begin{tabular}{lNNNN}
+   \toprule
+        & x < -1 & (-1,0) & (0,2) & > 2 \\
+   \midrule
+   Strictly increasing & & \checkmark & & \checkmark \\ 
+    \midrule 
+    Strictly decreasing & \checkmark & & \checkmark & \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+     \incorrect
+        
+        Given that $f'(x) = 12x\cdot (x+1)\cdot (x-2)$
+      
+      \begin{center}
+  \begin{tabular}{lNNNN}
+   \toprule
+        & x < -1 & (-1,0) & (0,2) & > 2 \\
+   \midrule
+   Strictly increasing & \checkmark & & \checkmark & \\
+   \midrule
+   Strictly decreasing & & \checkmark & & \checkmark \\  
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+    \end{options} 
+     \reason 
+     
+     We have to determine when $f'(x)$ is $>0$ and when it is $<0$, where 
+     \[ \qquad f'(x) = 12x\cdot (x+1)\cdot (x-2) \]
+       
+     There are three terms, $x, x+1$ and $x-2$, that will determine the sign of $f'(x)$ 
+     
+     \begin{center}
+  \begin{tabular}{NNNNN}
+   \toprule
+    & x <-1 & (-1,0) & (0,2) & > 2 \\
+   \midrule 
+   x & - & - & + & + \\
+   \midrule 
+   x+1 & - & + & + & + \\
+    \midrule 
+    x-2 & - & - & - & + \\
+    \midrule
+    f'(x) & - & + & - & + \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+Which is why 
+\begin{center}
+  \begin{tabular}{lN}
+   \toprule
+        & \text{Condition} \\
+     \midrule 
+     Strictly increasing & x\in (-1,0)\cup (2,\infty) \\
+     \midrule 
+     Strictly decreasing & x\in (-\infty,-1)\cup (0,2) \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+
+\end{step}
+\end{question} 
+
+\end{document}

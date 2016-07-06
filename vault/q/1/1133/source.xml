@@ -1,92 +1,30 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>
-		\text{Find the intervals in which the function}\\
-		f(x) = 3x^4-4x^3-12x^2 + 5\text{ is } \\
-		\text{(a) strictly increasing (b) strictly decreasing}		
-		</tex>
-      <tex>\\ \text{Your friend says the following about curves}\\
-			\text{A and B in the graph below.}\textbf{ Is he correct?} \\
-			\begin{tabular}{|c|c|c|}
-			  \hline
-			  \text{Curve} &amp; \text{Type?} &amp; \text{Strictly?} \\
-			  \hline
-			  A &amp; \text{Increasing} &amp; \text{Yes} \\
-			  \hline
-			  B &amp; \text{Decreasing} &amp; \text{Yes} \\
-			  \hline
-			\end{tabular} \\</tex>
-      <tex>\\ \textbf{Is the following correct}\text{ given that}\\
-				\frac{dy}{dx}\gt 0\implies\text{ strictly increasing and}\\
-				\frac{dy}{dx}\lt 0\implies\text{ strictly decreasing}\\</tex>
-   </statement>
-   <step>
-      <options>
-         <tex src="1-wrong.svg" isImage="true" correct="false"/>
-      </options>
-      <reason>
-         <tex>\text{In a strictly increasing/decreasing curve }\dfrac{dy}{dx}\neq 0. \\
-			\text{It can only be }\gt 0\text{ (strictly increasing) or }\lt 0 \\
-			\text{(strictly decreasing) - but never = 0.}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-				\begin{tabular}{|c|c|}
-				\hline
-				&amp; \text{When?} \\
-				\hline
-				\text{Strictly increasing} &amp; x\in (-1,0)\cup(2,\infty) \\
-				\hline
-				\text{Strictly decreasing} &amp; x\in(-\infty,-1)\cup(0,2) \\
-				\hline
-				\end{tabular}
-				</tex>
-         <tex correct="false">
-				\begin{tabular}{|c|c|}
-				\hline
-				&amp; \text{When?} \\
-				\hline
-				\text{Strictly increasing} &amp;  x\in(-\infty,-1)\cup(0,2) \\
-				\hline
-				\text{Strictly decreasing} &amp; x\in (-1,0)\cup(2,\infty)\\
-				\hline
-				\end{tabular}
-				</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-				  \dfrac{dy}{dx} &amp;= \dfrac{d}{dx}(3x^4-4x^3-12x^2 + 5) \\
-				  &amp;= 12x^3-12x^2-24 x \\
-				  &amp;= 12x\cdot(x^2-x-2) \\
-				  &amp;= 12x\cdot (x+1)\cdot (x-2)
-				\end{align} \\
-				\begin{tabular}{|c|c|c|c|c|}
-				\hline
-				&amp; x &amp; x+1 &amp; x-2 &amp; \frac{dy}{dx} \\
-				\hline
-				x\lt -1 &amp; - &amp; - &amp; - &amp; - \\
-				\hline 
-				x\in(-1,0) &amp; - &amp; + &amp; - &amp; + \\
-				\hline 
-				x\in(0,2) &amp; + &amp; +  &amp; - &amp; - \\
-				\hline 
-				x \gt 2 &amp; + &amp; + &amp; + &amp; + \\
-				\hline
-				\end{tabular} \\
-				\text{And hence } \\
-				\begin{tabular}{|c|c|}
-				\hline
-				&amp; \text{When?} \\
-				\hline
-				\text{Strictly increasing} &amp; x\in (-1,0)\cup(2,\infty) \\
-				\hline
-				\text{Strictly decreasing} &amp; x\in(-\infty,-1)\cup(0,2) \\
-				\hline
-				\end{tabular}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="0">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+      <tex isImage="true" correct="false">img_tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="63"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-5.svg</tex>
+      <tex isImage="true" correct="false">img_tex-6.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-7.svg</tex>
+    </reason>
+    <skills>
+      <skill id="73"/>
+    </skills>
+  </step>
 </question>
