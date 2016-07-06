@@ -1,77 +1,28 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>
-			\text{Write the anti-derivative of}\\
-			\quad \left(3\sqrt{x} + \dfrac{1}{\sqrt{x}}\right)
-		</tex>
-      <tex>\\ \textbf{A theoretical question} \\
-			\text{If }f(x)\text{ is the anti-derivative of }g(x)\\
-			\text{then is the following true?}</tex>
-      <tex>\\ \text{Which column in the table below}\textbf{ (A or B)}\\
-				\text{shows the anti-derivatives?}\\
-				\begin{tabular}{|c|c|c|}
-				\hline
-				f(x) &amp; A &amp; B \\
-				\hline
-				3\sqrt{x} &amp; 2x\sqrt{x} &amp; \frac{3}{2}\sqrt{x} \\
-				\hline
-				\frac{1}{\sqrt{x}} &amp; 2\sqrt{x} &amp; -\frac{1}{2x\sqrt{x}} \\
-				\hline
-				\end{tabular}</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">
-			\quad \dfrac{d}{dx}f(x) = g(x)
-			</tex>
-         <tex correct="false">
-			\quad \int f(x)\cdot dx = g(x)
-			</tex>
-      </options>
-      <reason>
-         <tex>\text{The }\textbf{derivative}\text{ of g(x) is a function that}\\
-			\text{represents the rate of change of g(x).} \\
-			\text{But the }\textbf{anti-derivative}\text{ of g(x) is a}\\
-			\text{function whose rate of change is g(x) itself.}\\
-			\implies \dfrac{d}{dx}f(x) = g(x) \text{ or }\int g(x)\cdot dx = f(x)</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-				\begin{tabular}{|c|c|}
-				\hline
-				A &amp; B \\
-				\hline
-				\text{Anti-derivative} &amp; \text{Derivative} \\
-				\hline
-				\end{tabular} \\
-				\text{Hence, anti-derivative of }\left(3\sqrt{x} + \dfrac{1}{\sqrt{x}}\right)\\
-				\text{equals }2\sqrt{x}\cdot(x+1)
-				</tex>
-         <tex correct="false">
-				\begin{tabular}{|c|c|}
-				\hline
-				A &amp; B \\
-				\hline
-				\text{Derivative} &amp; \text{Anti-derivative} \\
-				\hline
-				\end{tabular} \\
-				\text{Hence, anti-derivative of }\left(3\sqrt{x} + \dfrac{1}{\sqrt{x}}\right)\\
-				\text{equals }\dfrac{3x^2+1}{2x\sqrt{x}}
-				</tex>
-      </options>
-      <reason>
-         <tex>\text{Notice that }\\
-				\begin{align}
-				  \dfrac{d}{dx}(2x\sqrt{x}) &amp;= \dfrac{d}{dx}2x^{\frac{3}{2}} = 2\cdot\dfrac{3}{2}\cdot\sqrt{x} = 3\sqrt{x} \\
-				  \text{and }\dfrac{d}{dx}2\sqrt{x} &amp;= 2\cdot\dfrac{1}{2}\dfrac{1}{\sqrt{x}} = \dfrac{1}{\sqrt{x}}
-				\end{align} \\
-				\text{Hence, the anti-derivatives are in }\textbf{column A}.\\
-				\text{And so, the anti-derivative of }\left(3\sqrt{x} + \dfrac{1}{\sqrt{x}}\right) \\
-				\text{is simply }2x\sqrt{x} + 2\sqrt{x} = 2\sqrt{x}\cdot(x+1).</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="23">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+      <tex isImage="true" correct="false">img_tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-4.svg</tex>
+    </reason>
+    <skills/>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-5.svg</tex>
+      <tex isImage="true" correct="false">img_tex-6.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-7.svg</tex>
+    </reason>
+    <skills>
+      <skill id="48"/>
+    </skills>
+  </step>
 </question>
