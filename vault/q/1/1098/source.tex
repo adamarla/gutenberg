@@ -1,0 +1,79 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+
+\begin{question}
+	\statement 
+    
+    Using integration, find the area bounded by the lines 
+    \[\qquad  y = 2 + x, y = 2 - x\text{ and } x = 2 \]
+          
+    \begin{step}
+
+	\begin{options}
+	\end{options} 
+     \reason 
+     
+     From the given equations of the lines, we can infer the following 
+     \begin{center}
+  \begin{tabular}{NNN}
+   \toprule
+       \text{Line} & \text{Cuts $x-$axis at} & \text{Cuts $y-$ axis at}  \\
+   \midrule 
+   y = 2 + x & (-2,0) & (0,2) \\
+    \midrule 
+    y = 2 - x & (2,0) & (0,2) \\
+    \midrule 
+    x = 2 & (2,0) & \text{Never} \\ 
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+Which gives us the following picture. The shaded region is the required area $R$ 
+\begin{center}
+\includegraphics[scale=1.4]{figure.eps}
+\end{center}
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+       \[ R = \int_0^2 \left(x+2 \right)\cdot dx - \int_0^2 \left(2-x \right)\cdot dx \]
+     \incorrect
+\[ R = \int_0^2 \left(2-x \right)\cdot dx - \int_0^2 \left(x+2 \right)\cdot dx \]
+        
+    \end{options} 
+     \reason 
+     
+     Between $x=0$ and $x=2$, the line $y = x+2$ is above the line $y = 2-x$\newline 
+     
+     Hence, the required area $R$ will be
+     \begin{align}
+	R &= \int_0^2 \left(2+x \right)\cdot dx - \int_0^2 \left(2-x \right)\cdot dx 
+\end{align}
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       \[ R = 4\text{ sq. units} \]
+     \incorrect
+        \[ R = 2\text{ sq. units} \]
+    \end{options} 
+     \reason 
+     
+     \begin{align}
+	R &= \int_0^2 \left(x+2 \right)\cdot dx - \int_0^2 \left(2-x \right)\cdot dx\\
+	&= \underbrace{\int_0^2 \left(x+2 - 2 + x \right)\cdot dx }_{\int_a^b f(x) dx + \int_a^b g(x)dx = \int_a^b \left(f(x) + g(x) \right)\cdot dx} \\
+	&= 2 \int_0^2 x\cdot dx = 2 \left[\frac{x^2}{2} \right]_0^2 = 4\text{ sq. units}
+\end{align}
+       
+\end{step}
+\end{question} 
+
+
+\end{document}
