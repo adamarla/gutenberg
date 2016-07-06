@@ -1,103 +1,58 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>
-		\text{Show that the semi-vertical angle of the}\\
-		\text{cone with maximum volume and given slant}\\
-		\text{height is }\cos^{-1}\dfrac{1}{\sqrt{3}}.
-		</tex>
-      <tex>\\ \textbf{Is this what we're being asked?}</tex>
-      <tex>\\ \text{After expressing the volume (V) in terms}\\
-				\text{of }\theta,\text{ would one get the following}\\
-				\textbf{condition for maxima/minima?}</tex>
-      <tex>\\ \text{Your friend makes the following claim?} \\
-					\textbf{Is his claim correct?}</tex>
-   </statement>
-   <step>
-      <options>
-         <tex src="1-right.svg" isImage="true" correct="true"/>
-         <tex src="1-wrong.svg" isImage="true" correct="false"/>
-      </options>
-      <reason>
-         <tex>\text{The slant height - L - of the cone}\\
-			\text{is fixed. But we need to find the }\theta\\
-			\text{that will}\textbf{ maximize }\text{the cone's volume.}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-				\begin{align}
-				\dfrac{dV}{d\theta} &amp;= 2\sin\theta - 3\sin^3\theta \\ 
-				\implies\dfrac{dV}{d\theta} &amp;= 0\text{ when }\sin\theta\cdot(2-3\sin^2\theta) = 0\\
-				\implies \sin\theta &amp;= 0\text{ or }\sin\theta = \sqrt{\dfrac{2}{3}}
-				\end{align} \\
-				\sin\theta = 0\implies \theta = 0\implies\text{ no cone.}\\
-				\therefore\text{ only }\sin\theta = \sqrt{\dfrac{2}{3}}\text{ makes sense.}
-				</tex>
-         <tex correct="false">
-				\begin{align}
-				\dfrac{dV}{d\theta} &amp;= \sin\theta - 3\sin^3\theta \\ 
-				\implies\dfrac{dV}{d\theta} &amp;= 0\text{ when }\sin\theta\cdot(1-3\sin^2\theta) = 0\\
-				\implies \sin\theta &amp;= 0\text{ or }\sin\theta = \sqrt{\dfrac{1}{3}}
-				\end{align} \\
-				\sin\theta = 0\implies \theta = 0\implies\text{ no cone.}\\
-				\therefore\text{ only }\sin\theta = \sqrt{\dfrac{1}{3}}\text{ makes sense.}
-				</tex>
-      </options>
-      <reason>
-         <tex>\text{Refer to the figure in Step 1 to see}\\
-				\begin{align}
-				  V &amp;= \dfrac{1}{3}\pi\cdot R^2\cdot H \\
-				  &amp;= \dfrac{1}{3}\pi\cdot \left(L\sin\theta\right)^2\cdot \left(L\cos\theta\right) \\
-				  &amp;= \dfrac{\pi\cdot L^3}{3}\sin^2\theta\cdot\cos\theta \\
-				  \therefore \dfrac{dV}{d\theta} &amp;= \dfrac{\pi L^3}{3} 
-				  \left[(2\sin\theta\cos\theta)\cos\theta + \sin^2\theta(-\sin\theta)\right] \\
-				  &amp;= \dfrac{\pi L^3}{3}\cdot \sin\theta\cdot 
-				  \left[2\cdot(1-\sin^2\theta - \sin^2\theta\right] \\
-				  &amp;= \dfrac{\pi L^3}{3}\cdot \sin\theta\cdot (2-3\sin^2\theta)
-				\end{align} \\
-				\textbf{Extrema points occur when } \\
-				\begin{align}
-				  \dfrac{dV}{d\theta} &amp;= 0 \implies \sin\theta\cdot(2-3\sin^2\theta) = 0 \\
-				  \implies \sin\theta &amp;= 0\text{ or }\sin\theta = \sqrt{\dfrac{2}{3}}
-				\end{align} \\
-				\sin\theta = 0\implies\implies\text{ no cone.}\therefore \sin\theta = \sqrt{\dfrac{2}{3}}.</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-					\begin{align}
-					  \sin\theta &amp;= \sqrt{\dfrac{2}{3}}\implies\cos\theta=\dfrac{1}{\sqrt{3}} \\
-					  \left[\dfrac{d^2 V}{d\theta^2}\right]_{\sin\theta=\sqrt{\frac{2}{3}}}
-					  &amp;= -\dfrac{4\pi L^3}{3\sqrt{3}}
-					\end{align} \\
-					\text{And }\dfrac{d^2V}{d\theta^2}\lt 0\implies\text{ maxima at }\theta = \cos^{-1}\dfrac{1}{\sqrt{3}}.
-					</tex>
-         <tex correct="false">
-					\begin{align}
-					  \sin\theta &amp;= \sqrt{\dfrac{2}{3}}\implies\cos\theta=\dfrac{1}{\sqrt{3}} \\
-					  \left[\dfrac{d^2 V}{d\theta^2}\right]_{\sin\theta=\sqrt{\frac{2}{3}}}
-					  &amp;= -\dfrac{2\pi L^3}{3}
-					\end{align} \\
-					\text{And }\dfrac{d^2V}{d\theta^2}\lt 0\implies\text{ maxima at }\theta = \cos^{-1}\dfrac{1}{\sqrt{3}}.
-					</tex>
-      </options>
-      <reason>
-         <tex>\sin\theta = \sqrt{\dfrac{2}{3}}\implies\cos\theta=\dfrac{1}{\sqrt{3}}
-					\text{ is correct.} \\ 
-					\text{But one must look at }\dfrac{d^2V}{d\theta^2}\text{ to say for sure}\\
-					\text{that a point is a maxima or a minima.}\\
-					\begin{align}
-					  \dfrac{dV}{d\theta} &amp;= \dfrac{\pi L^3}{3}\cdot(2\sin\theta-3\sin^3\theta)\\
-					  \implies\dfrac{d^2V}{d\theta^2} &amp;= 
-					  \dfrac{\pi L^3}{3}\cdot \left[2\cos\theta-9\sin^2\theta\cos\theta\right] \\
-					  &amp;= \dfrac{\pi L^3}{3}\cdot \cos\theta\cdot (2 - 9\sin^2\theta) \\
-					  &amp;= \dfrac{\pi L^3}{3}\cdot \underbrace{\cos\theta\cdot \left(2-9\cdot\dfrac{2}{3}\right)}_{\lt 0}\\
-					  &amp;= -\dfrac{4\pi L^3}{3\sqrt{3}} \lt 0\implies\text{ maxima. }
-					\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="22">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_right.svg</tex>
+      <tex isImage="true" correct="false">img_wrong.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-2.svg</tex>
+    </reason>
+    <skills>
+      <skill id="36"/>
+      <skill id="26"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-3.svg</tex>
+      <tex isImage="true" correct="false">img_tex-4.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-5.svg</tex>
+    </reason>
+    <skills>
+      <skill id="32"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-6.svg</tex>
+      <tex isImage="true" correct="false">img_tex-7.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-8.svg</tex>
+    </reason>
+    <skills>
+      <skill id="31"/>
+      <skill id="63"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-9.svg</tex>
+      <tex isImage="true" correct="false">img_tex-10.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-11.svg</tex>
+    </reason>
+    <skills>
+      <skill id="63"/>
+      <skill id="31"/>
+      <skill id="1"/>
+    </skills>
+  </step>
 </question>
