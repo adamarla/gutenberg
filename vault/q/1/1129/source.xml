@@ -1,110 +1,40 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>
-		\text{Evaluate }\int\dfrac{\sin^6 x + \cos^6 x}{\sin^2 x\cdot \cos^2 x}dx
-		</tex>
-      <tex>\\ \textbf{What are A and B in the equation below?} \\
-			\begin{align}
-			I &amp;= \int\dfrac{\sin^6 x + \cos^6 x}{\sin^2 x\cdot \cos^2 x}dx \\
-			&amp;= \int\dfrac{(1-A)^2}{\cos^2 x}dx + \int\dfrac{(1-B)^2}{\sin^2 x}dx
-			\end{align}</tex>
-      <tex>\\ \text{If we said that }\\
-				\quad I_1 = \int\dfrac{(1-\cos^2 x)^2}{\cos^2 x}dx \\
-				\text{will evaluate to the following, then would}\\
-				\text{we be right?}</tex>
-      <tex>\\ \text{Your friend now claims that }\\
-					\quad I = I_1 + I_2 = \int\dfrac{\sin^6 x + \cos^6 x}{\sin^2 x\cdot \cos^2 x}dx \\
-					\text{evaluates to the following.}\textbf{Is he correct?}</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">
-			\begin{tabular}{|c|c|}
-			\hline
-			A &amp; \cos^2 x \\
-			\hline
-			B &amp; \sin^2 x \\
-			\hline
-			\end{tabular}
-			</tex>
-         <tex correct="false">
-			\begin{tabular}{|c|c|}
-			\hline
-			A &amp; \cos x \\
-			\hline
-			B &amp; \sin x \\
-			\hline
-			\end{tabular}
-			</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-			  &amp;\int\dfrac{\sin^6 x + \cos^6 x}{\sin^2 x\cdot \cos^2 x}dx = 
-			  \int\dfrac{\sin^4 x}{\cos^2 x}dx + \int\dfrac{\cos^4 x}{\sin^2 x}dx \\
-			  &amp;= \underbrace{\int\dfrac{(1-\cos^2 x)^2}{\cos^2 x}dx}_{A = \cos^2 x}
-			  + \underbrace{\int\dfrac{(1-\sin^2 x)^2}{\sin^2 x}dx}_{B = \sin^2 x}
-			\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-				\begin{align}
-				  I_1 &amp;= \int\sec^2 xdx + \int\cos^2 xdx - 2\int dx \\
-				  &amp;= \tan x + \dfrac{\sin 2x}{4} - \dfrac{3}{2}x + C_1
-				\end{align}
-				</tex>
-         <tex correct="false">
-				\begin{align}
-				  I_1 &amp;= \int\sec^2 xdx + \int\cos^2 xdx - 2\int dx \\
-				  &amp;= \tan x + \dfrac{\sin 2x}{2} - 2x + C_1
-				\end{align}
-				</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-				  I_1 &amp;= \int\dfrac{(1-\cos^2 x)^2}{\cos^2 x}dx  \\
-				  &amp;= \int\dfrac{1+\cos^4 x - 2\cos^2 x}{\cos^2 x}dx \\
-				  &amp;= \int\sec^2 xdx + \int\cos^2 xdx - 2\int dx \\
-				  &amp;= \tan x + 
-				  \underbrace{\int\dfrac{1+\cos 2x}{2}dx}_{\cos^2\theta = \frac{1+\cos 2\theta}{2}}-2x\\
-				  &amp;= \tan x + \int\dfrac{dx}{2} + \int\dfrac{\cos 2x}{2}dx - 2x \\ 
-				  &amp;= \tan x + \underbrace{\dfrac{\sin 2x}{4}}_{\int\cos N\theta d\theta = \frac{\sin N\theta}{N}} -\dfrac{3}{2}x + C_1
-				\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-					\begin{align}
-					I &amp;= \int\dfrac{\sin^6 x + \cos^6 x}{\sin^2 x\cdot \cos^2 x}dx \\
-					 &amp;= \cot x + \tan x - 3x + C 
-					\end{align} 
-					</tex>
-         <tex correct="false">
-					\begin{align}
-					I &amp;= \int\dfrac{\sin^6 x + \cos^6 x}{\sin^2 x\cdot \cos^2 x}dx \\
-					 &amp;= \cot x + \tan x + \dfrac{\sin 2x}{2} + C 
-					\end{align} 
-					</tex>
-      </options>
-      <reason>
-         <tex>\text{Find }I_2\text{ like we found }I_1 \\
-					\begin{align}
-					  I_2 &amp;= \int\dfrac{(1-\sin^2 x)^2}{\sin^2 x}dx \\
-					  &amp;= \int\csc^2 x + \int\dfrac{1-\cos 2x}{2} dx - 2\int dx \\ 
-					  &amp;= \cot x + \dfrac{x}{2}-\dfrac{\sin 2x}{4} -2x + C_2 \\
-					  &amp;= \cot x -\dfrac{\sin 2x}{4} - \dfrac{3}{2}x + C_2
-					\end{align} \\
-					\text{And hence, }\\ 
-					\begin{align}
-					  I &amp;= I_1 + I_2 \\ 
-					  &amp;= \left[\tan x + \dfrac{\sin 2x}{4} - \dfrac{3}{2}x \right]\\
-					  &amp;+ \left[\cot x - \dfrac{\sin 2x}{4} - \dfrac{3}{2}x\right] + C \\
-					  &amp;= \tan x + \cot x - 3x + C 
-					\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="23">
+  <statement>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-2.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-3.svg</tex>
+    </reason>
+    <skills>
+      <skill id="32"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-4.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-5.svg</tex>
+    </reason>
+    <skills>
+      <skill id="1"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">img_tex-6.svg</tex>
+      <tex isImage="true" correct="false">img_tex-7.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">img_tex-8.svg</tex>
+    </reason>
+    <skills>
+      <skill id="48"/>
+    </skills>
+  </step>
 </question>
