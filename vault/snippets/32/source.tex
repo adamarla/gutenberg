@@ -1,0 +1,36 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    \correct
+    
+    \[ f(x) = \begin{cases}
+    \dfrac{\sin x}{\vert x\vert }\text{ if } x \neq 0 \\
+    1\text{ if } x = 0 
+    \end{cases} \]
+    is discontinuous at $ x = 0$ 
+    
+    \reason
+    
+    \[ f(x) = \begin{cases} 
+    \dfrac{\sin x}{-x}\quad \left(x < 0 \right) \\
+    1 \quad \left(x =0 \right) \\
+    \dfrac{\sin x}{x} \quad \left(x > 0 \right)
+    \end{cases} \]
+    
+    Notice however that 
+    \begin{align}
+	\lim_{x\to 0^-} f(x) &= \lim_{x\to 0^-} \left(\frac{\sin x}{-x} \right) \\
+	&= -\lim_{x\to 0^-} \left(\frac{\sin x}{x} \right)= -1 \\
+	\lim_{x\to 0^+} f(x) &= \lim_{x\to 0^+} \left(\frac{\sin x}{x} \right) = 1 \\
+	\implies \lim_{x\to 0^-} f(x) &\neq \lim_{x\to 0^+} f(x) 
+\end{align}
+
+As the limit does not exist for $f(x)$ at $x = 0$, there is no question 
+of it being continuous at $x=0$ 
+    
+\end{snippet} 
+\end{document} 
