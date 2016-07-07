@@ -1,0 +1,37 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    
+    \incorrect
+    $f(x) = \vert x\vert + \vert x - 1\vert$ is discontinuous at $x= 0,1$ 
+    \reason
+    
+    First, know what $f(x)$ is 
+    \[ f(x) = \begin{cases} 
+    -x + (1-x) = 1-2x\text{ for } x < 0 \\
+    x + (1-x) = 1\text{ for } 0\leq x < 1 \\
+    x + (x-1) = 2x - 1 \text{ for } x \geq 1 
+    \end{cases} \]
+    
+    And hence at $x=0$ 
+    \begin{align}
+	\lim_{x\to 0^-} f(x) &= \lim_{x\to 0^-} \left(1-2x \right) = 1 \\
+	\lim_{x\to 0^+} f(x) &= \lim_{x\to 0^+} \left(1 \right) = 1 \\
+\end{align}
+
+$\lim_{x\to 0} f(x) = f(0) = 1$. Therefore, $f(x)$ is continuous at $x=0$ \newline 
+
+Similarly, at $x=1$ 
+\begin{align}
+	\lim_{x\to 1^-} f(x) &= \lim_{x\to 1^-} \left(1\right) = 1 \\
+	\lim_{x\to 1^+} f(x) &= \lim_{x\to 1^+} \left(2x-1 \right) = 1 \\
+\end{align}
+
+Again $\lim_{x\to 1}f(x) = f(1)$. Hence, $f(x)$ is continuous at $x=1$ also 
+
+\end{snippet} 
+\end{document} 
