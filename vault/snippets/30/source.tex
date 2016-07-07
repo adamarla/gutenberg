@@ -1,0 +1,31 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff
+
+\begin{document} 
+\begin{snippet}
+    \correct
+    If $f(x) = 1 + x$ and $g(x) = \sqrt{x}$, then 
+    \[ \qquad\qquad  \frac{d}{dg}f(x) = 2\sqrt{x} \]
+    
+    
+    \reason
+    
+    We want to differentiate $f(x)$ with respect to $g(x)$ -- not $x$
+    \begin{align}
+	\frac{d}{dg} f(x) &= \frac{df / dx}{dg / dx} \\ 
+	&= \left[\frac{\ddx (1+x) }{\ddx \sqrt{x}} \right] = \frac{1}{\frac{1}{2\sqrt{x}}} = 2\sqrt{x} 
+\end{align}
+
+Alternatively, you could have said that 
+\[ \quad g(x) = \sqrt{x} \implies f(x) = 1 + g(x)^2 \]
+And hence, 
+
+\begin{align}
+	\frac{d}{dg}f(x) &= \frac{d}{dg} \left[1 + g(x)^2 \right] \\
+	&= 2g(x) = 2\sqrt{x} 
+\end{align}
+    
+\end{snippet} 
+\end{document} 
