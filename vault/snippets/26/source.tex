@@ -1,0 +1,25 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\fx{\sin^{-1}\sqrt{x}}
+\previewoff 
+
+\begin{document} 
+
+\begin{snippet}
+    \correct
+    
+    \[ \ddx \sin^{-1}\sqrt{x} = \frac{1}{2\sqrt{x\cdot \left(1-x \right)}}\]
+    
+    \reason
+    
+    \begin{align}
+	\text{Let } z &= \sqrt{x} \\
+	\therefore \ddx \fx  &= \underbrace{\frac{d}{dz}\sin^{-1} z\cdot \ddx z}_{\text{Chain Rule}} \\
+	&= \frac{1}{\sqrt{1-z^2}}\cdot \left[\ddx\sqrt{x} \right] \\
+	&= \frac{1}{\sqrt{1-x}}\cdot \left[\frac{1}{2\sqrt{x}} \right] \\
+	&= \frac{1}{2\sqrt{x\cdot \left(1-x \right)}}
+\end{align}
+\end{snippet} 
+
+\end{document}

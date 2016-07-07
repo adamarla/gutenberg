@@ -1,0 +1,27 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\nmr{\sqrt{x}-1}
+\newcommand\dnm{\sqrt{x}+1}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    \correct
+    
+    If $y = \sec^{-1} \left(\dfrac\dnm\nmr \right) + \sin^{-1} \left(\dfrac\nmr\dnm \right)$ then $\dfrac{dy}{dx} = 0$ 
+    
+    \reason
+    
+    This looks a lot more complicated than it is \newline 
+    
+    \begin{align}
+	 &\sec^{-1} \left(\frac\dnm\nmr \right) + \sin^{-1} \left(\frac\nmr\dnm\right) \\
+	 &= \underbrace{\cos^{-1} \left(\frac\nmr\dnm \right) + \sin^{-1} \left(\frac\nmr\dnm \right)}_{\sec^{-1} x = \cos^{-1} \frac{1}{x}} \\
+	 &= \frac\pi{2} \quad (\because \cos^{-1}\theta + \sin^{-1}\theta = \frac\pi{2}) 
+\end{align}
+   
+   Hence, $ y = \dfrac\pi{2}\implies \dfrac{dy}{dx}  = 0$
+\end{snippet} 
+\end{document} 

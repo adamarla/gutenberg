@@ -1,0 +1,22 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    \correct
+    
+    If $f(x) = \sin^2 2x$ then $\dfrac{f'(x)}{2\cos 2x} = 2\sin 2x$
+    
+    \reason
+    
+    \begin{align}
+	f'(x) = \ddx \sin^2 2x &= \underbrace{2\sin 2x\cdot \ddx\sin 2x}_{\text{Chain Rule}} \\ 
+	&= 2\sin 2x\cdot \left(\cos 2x\cdot 2 \right) \\
+	\therefore \frac{f'(x)}{2\cos 2x} &= \frac{4\sin 2x\cdot\cos2x}{2\cos 2x} \\
+	&= 2\sin 2x 
+\end{align}
+    
+\end{snippet} 
+\end{document} 

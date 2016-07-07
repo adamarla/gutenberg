@@ -1,0 +1,28 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    \correct
+    
+    If $f(x) = \vert \cos x - \sin x\vert$ then 
+    \[ \quad f' \left(\frac{\pi}{3} \right) = \left[\sin x + \cos x \right]_{x = \frac{\pi}{3}} = \frac{\sqrt{3}+1}{2} \]
+    
+    \reason
+    
+    For $x > \frac\pi{4}, \sin x > \cos x$. Which is why 
+    \[ \quad f(x) = \begin{cases} 
+    \cos x - \sin x, x \in \left(0, \frac\pi{4} \right) \\
+    \sin x - \cos x, x \in \left(\frac\pi{4}, \frac\pi{2} \right)
+    \end{cases} \]
+    
+    And hence, at $x = \frac{\pi}{3}$ 
+    \begin{align}
+	f'(x) &= \ddx \left(\sin x-\cos x \right) = \cos x + \sin x\\
+	\text{or } f' \left(\frac\pi{3} \right) &= \frac{\sqrt{3} + 1}{2}
+\end{align}
+    
+\end{snippet} 
+\end{document} 
