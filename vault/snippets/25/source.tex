@@ -1,0 +1,34 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    
+    \incorrect
+    \[ \qquad f(x) = x\vert x\vert = \begin{cases}
+    x^2,\quad x \geq 0 \\
+    -x^2,\quad x < 0 
+    \end{cases} \]
+    is not differentiable at $x=0$ 
+    
+    \reason
+    
+    \[ f(x) = x\vert x\vert = \begin{cases}
+    x\cdot x = x^2, \, x \geq 0 \\
+    x\cdot \left(-x \right) = -x^2,\,x < 0
+    \end{cases}  \]
+    
+    So, $f(x)$ has been defined correctly\newline 
+    
+    Moreover
+    \begin{align}
+	\lim_{x\to 0^-} f'(x) &= \lim_{x\to 0^-} \left(-2x \right) = 0 \\
+	\lim_{x\to 0^+} f'(x) &= \lim_{x\to 0^+} \left(2x \right) = 0
+\end{align}
+
+As both the limits are equal, therefore $f(x)$ is differentiable at $x=0$ 
+    
+\end{snippet} 
+\end{document} 
