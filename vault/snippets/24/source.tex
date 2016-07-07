@@ -1,0 +1,19 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    \correct
+    \[ \ddx \sin^{-1} \left(\cos x \right) = \ddx \left(\frac\pi{2} -x \right) = -1\]
+    
+    \reason
+  
+  If $f(x) = \sin^{-1} \left(\cos x \right)$, then note that 
+  \begin{align}
+	f(x) &= \underbrace{\sin^{-1} \left[\sin \left(\frac\pi{2}-x \right) \right] = \frac\pi{2}- x}_{\sin^{-1} \left(\sin\theta \right) = \theta} \\
+	\therefore \ddx f(x) &= \ddx \left(\frac\pi{2}-x \right) = -1
+\end{align}
+\end{snippet} 
+\end{document} 
