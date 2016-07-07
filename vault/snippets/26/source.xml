@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippet xmlns="http://www.gradians.com" chapterId="21">
+  <render>
+    <tex isImage="true">img_tex-1.svg</tex>
+  </render>
+  <reason>
+    <tex isImage="true">img_tex-2.svg</tex>
+  </reason>
+  <skills>
+    <skill id="51"/>
+    <skill id="32"/>
+    <skill id="33"/>
+  </skills>
+</snippet>
