@@ -84,8 +84,25 @@
   \addtostream{xml}{ </reason> }
 } 
 
-\newcommand\correct{ \newcard }
-\newcommand\incorrect{ \newcard[false] }
+\newcommand\correct{ 
+  \ifbool{snippetmode}{
+    \addtostream{xml}{<render>}
+    \newcard 
+    \addtostream{xml}{</render>}
+  }{
+    \newcard 
+  }
+}
+
+\newcommand\incorrect{ 
+  \ifbool{snippetmode}{
+    \addtostream{xml}{<render>}
+    \newcard[false]
+    \addtostream{xml}{</render>}
+  }{
+    \newcard[false] 
+  }
+}
 
 %% Environments 
 
@@ -102,13 +119,13 @@
   \addtostream{xml}{</question>} 
 }
 
+\newbool{snippetmode} 
 \newenvironment{snippet}{ 
   \addtostream{xml}{<snippet xmlns="http://www.gradians.com">} 
-  \addtostream{xml}{<render>}
-  \newcard 
-  \addtostream{xml}{</render>}
+  \setbool{snippetmode}{true}
 }{ 
   \addtostream{xml}{</snippet>} 
+  \setbool{snippetmode}{false}
 }
 
 \newenvironment{skill}{ 
