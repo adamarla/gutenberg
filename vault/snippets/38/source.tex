@@ -1,0 +1,24 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    
+    \incorrect
+    
+    If $y = \dfrac{2x}{1-x^2}$ and $x = \tan\phi$ then 
+    \[ \qquad\qquad \ddx y = \sec^2\phi\cdot \ddx\phi\]
+    
+    \reason
+    
+    We are not asking you to evaluate $\ddx  y$. Only to check the given line
+    \begin{align}
+	x &= \tan\phi\implies y = \frac{2\tan\phi}{1-\tan^2\phi} \\
+	\text{or } y &= \tan 2\phi \\
+	\therefore \ddx y &= \underbrace{\frac{d}{d\phi}y\cdot \ddx \phi}_{\text{Chain Rule}} \\ 
+	&= \sec^2 (2\phi)\cdot \ddx\phi 
+\end{align}
+\end{snippet} 
+\end{document} 

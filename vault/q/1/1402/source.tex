@@ -1,0 +1,70 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\msq{\left(1-x^2 \right)}
+\newcommand\psq{\left(1+x^2 \right)}
+
+\previewoff 
+
+\begin{document} 
+\begin{question}
+	\statement 
+    
+    If $y = \dfrac{2x}{1-x^2}$, then find $\dfrac{d}{dx}y$ 
+    
+    \begin{step}
+  \begin{options} 
+       
+     \incorrect
+     
+     \begin{align}
+	\text{Let } x &= \sin\phi \implies dx = \cos\phi\cdot d \phi \\
+	\text{and } y &= \sin 2\phi \\
+	\therefore \ddx y &= \underbrace{\frac{d}{d\phi} y \cdot \ddx \phi}_{\text{Chain Rule}} = (2\cos2\phi)\cdot \ddx \phi
+\end{align}
+    \end{options} 
+     \reason 
+     
+     $x=\sin\phi$ is the wrong substitution to make \newline 
+     
+     Instead, try $x = \tan\phi$ 
+     \begin{align}
+     x &= \tan\phi \implies dx = \sec^2\phi\cdot d\phi \\
+     \text{and } y &= \frac{2\tan\phi}{1-\tan^2\phi} = \tan 2\phi \\
+     \therefore \ddx y &= \underbrace{\frac{d}{d\phi}y\cdot \ddx \phi}_{\text{Chain Rule}} = (2\sec^2 2\phi)\cdot \ddx\phi 
+\end{align}
+       
+\end{step} 
+
+\begin{step}
+  \begin{options} 
+     \correct 
+
+\begin{align}
+	\ddx y &= 2\cdot \dfrac{\sec^2 2\phi}{\sec^2\phi} \\
+	\therefore \ddx y &= 2 \left[\dfrac{\psq}{\msq^2} \right]
+\end{align}       
+
+     \incorrect
+
+\begin{align}
+	\ddx y &= 2\cdot \dfrac{\sec^2 2\phi}{\sec^2\phi} \\
+	\therefore \ddx y &= 2 \left[\dfrac{\msq^2}{\psq} \right]
+\end{align}
+        
+    \end{options} 
+     \reason 
+       
+     \begin{align}
+	\ddx y &= \underbrace{2 \sec^2 2\phi \cdot \ddx \phi = \frac{2\sec^2 2\phi}{\sec^2\phi}}_{\text{Recall that } dx = \sec^2\phi\cdot d\phi}  \\
+	&= \underbrace{2 \left[\dfrac{1 + \tan^2 2\phi}{1+\tan^2\phi} \right]}_{\sec^2\theta = 1 + \tan^2\theta} \\
+	&= 2 \left[\dfrac{1 + \left(\frac{2\tan\phi}{1-\tan^2\phi} \right)^2}{1 + \tan^2\phi} \right] \\
+	&= 2 \left[\dfrac{1 + \left(\frac{2x}{1-x^2} \right)^2}{1+x^2} \right] \\
+	&= 2 \left[\dfrac{\left(1-x^2 \right)^2 + 4x^2}{\left(1-x^2 \right)^2\cdot \left(1+x^2 \right)} \right] \\
+	&= 2 \left[\dfrac{x^4 + 2x^2 + 1}{\left(1-x^2 \right)^2\cdot \left(1+x^2 \right)} \right] \\
+	&= 2 \left[\dfrac{\left(1+x^2 \right)^2}{\left(1-x^2 \right)^2\cdot \left(1+x^2 \right)} \right] \\
+	&= 2 \left[\dfrac{\left(1+x^2 \right)}{\left(1-x^2 \right)^2} \right]
+\end{align} 
+\end{step}
+\end{question} 
+\end{document} 
