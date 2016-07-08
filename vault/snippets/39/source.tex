@@ -1,0 +1,24 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    
+    \incorrect
+    
+    If $f(x) = x\sin 2x$ then 
+    \[ f'(x) + f(x) + 2 = 2x \cos 2x + \sin 2x + 2 \]
+    \reason
+    
+    \begin{align}
+	f'(x) &= \ddx \left(x\sin 2x \right) \\
+	&= \underbrace{x\ddx \sin 2x + \sin 2x\ddx x}_{\text{Product Rule}} \\
+	&= \underbrace{x\cdot 2\cos 2x}_{\text{Chain Rule}} + \sin 2x \\
+	\therefore f'(x) &+ f(x) + 2  \\
+	&= \left( 2x\cos 2x + \sin 2x\right) + x\sin 2x + 2 \\
+	&= 2x\cos 2x + \left(1+x \right)\sin 2x + 2 
+\end{align}
+\end{snippet} 
+\end{document} 
