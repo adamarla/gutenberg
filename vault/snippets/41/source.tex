@@ -1,0 +1,32 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    
+    \incorrect
+    
+    $f(x) = x - \log x$ is defined for all $x\in\mathbb{R}$ 
+    
+    \reason
+    
+    \begin{center}
+  \begin{tabular}{NNN}
+   \toprule
+        & \text{Not defined if} & \text{Domain} \\
+   \midrule 
+   x & & \mathbb{R} \\
+    \midrule 
+    \log x & x \leq 0 & \mathbb{R}^+ \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+The domain of $f(x)$ is the \underline{stricter} of the two domains listed above\newline 
+
+Hence, the domain is $\mathbb{R}^+ \text{ or } x > 0$
+    
+\end{snippet} 
+\end{document} 
