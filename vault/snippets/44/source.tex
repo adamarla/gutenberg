@@ -1,0 +1,33 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\ea{\left(x-2 \right)} 
+\newcommand\eb{ \left(x-3 \right)} 
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    
+    \incorrect
+
+     $f(x) = \ea^2\cdot\eb^2$ has exactly two critical points at $x=2,3$     
+    
+    \reason
+    
+    One will get critical points when $f'(x) = 0$ \newline 
+    
+    And it certainly looks like $x=2,3$ would be critical points. But looks can be deceptive 
+    
+    \begin{align}
+	f'(x) &= \underbrace{\ea^2\ddx \eb^2  + \eb^2\ddx \ea^2}_{\text{Product Rule}} \\
+	&= 2\ea^2\eb + 2\eb^2\ea\\
+	&= 2\ea\eb \left[\ea + \eb \right]\\
+	&= 2\ea\eb \left(2x-5 \right)
+\end{align}
+
+Hence, $f'(x) = 0$ when $x=2, \frac{5}{2}, 3$. Hence, these are the 
+three critical points 
+    
+\end{snippet} 
+\end{document} 
