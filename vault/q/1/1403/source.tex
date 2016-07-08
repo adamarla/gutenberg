@@ -1,0 +1,85 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{question}
+	\statement 
+    
+    For what value of $k$ would the following function be continuous at $x=0$ ?
+    \[ \qquad f(x) = \begin{cases}
+    \dfrac{x}{\vert x\vert + 2x^2}, &x\neq 0 \\
+    k,& x = 0
+    \end{cases} \] 
+    
+    \begin{step}
+  \begin{options} 
+     \correct 
+     \[f(x) = \begin{cases}
+	\dfrac{x}{-x+2x^2} = \dfrac{1}{2x-1} , & x < 0\\
+	k, & x = 0 \\
+	\dfrac{x}{x+2x^2} = \dfrac{1}{2x+1}, & x > 0 
+	
+\end{cases}\]
+     \incorrect
+        
+           \[f(x) = \begin{cases}
+           \dfrac{x}{x+2x^2} = \dfrac{1}{2x+1}, & x \neq 0 \\
+	k, & x = 0 \\
+	
+	
+\end{cases}\]
+    \end{options} 
+     \reason 
+     
+     Recall that 
+     \[ \qquad \vert x \vert = \begin{cases}
+	-x, & x < 0\\
+	x, & x\geq 0
+\end{cases} \]
+
+And hence 
+     \[f(x) = \begin{cases}
+	\dfrac{x}{-x+2x^2} = \dfrac{1}{2x-1} , & x < 0\\
+	k, & x = 0 \\
+	\dfrac{x}{x+2x^2} = \dfrac{1}{2x+1}, & x > 0 
+	
+\end{cases}\]
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+       \[ \qquad \lim_{x\to 0^-} f(x) \neq \lim_{x\to 0^+} f(x) \]
+       
+       As the limit itself does not exist at $x = 0$, therefore \underline{no value} of $k$ could make $f(x)$ continuous at $x = 0$
+     \incorrect
+     
+     \[ \qquad \lim_{x\to 0^-} f(x) = \lim_{x\to 0^+} f(x) = 1 \]
+       
+      Therefore $f(x)$ would be continuous at $x=0$ if $k =1$ 
+        
+    \end{options} 
+     \reason 
+     
+     \begin{center}
+  \begin{tabular}{NN}
+   \toprule
+        \lim_{x\to 0^-}f(x) & \lim_{x\to 0^+} f(x) \\
+   \midrule
+   \lim_{x\to 0^-} \dfrac{1}{2x-1} = -1 & \lim_{x\to 0^+} \dfrac{1}{2x+1} = 1 \\ 
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+The limits obviously don't match. Hence, there is no way $f(x)$ could be made continuous by any value of $k$ \newline 
+
+Hey, just because we ask for a value does not mean there has to be a value! 
+       
+\end{step}
+
+\end{question} 
+\end{document} 
