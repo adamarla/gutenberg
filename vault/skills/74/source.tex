@@ -1,0 +1,52 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{skill}
+    \begin{narrow}
+         \textcolor{blue}{Non-standard functions}
+         
+         Definitions and meanings of the modulus ($\vert x\vert$), floor ($\lfloor x \rfloor$) and ceiling ($\lceil x\rceil$) functions 
+    \end{narrow}
+    
+    \reason 
+    
+    \textbf{Modulus}
+    
+    The modulus function is defined as follows 
+    \[ \quad \vert x \vert = \begin{cases}
+	-x, &\text{ if }x < 0 \\
+	x, &\text{ if } x \geq 0 
+	\end{cases} \]
+	
+	Note that $\vert x \vert$ is always $\geq 0$, even for $x < 0$ \newline 
+	
+	\textbf{Floor / Greatest Integer Function}
+	
+	Returns the largest integer $\leq x$. Also written as 
+	$[x]$, it is however recommended that one use the modern notation $\lfloor x \rfloor$ \newline 
+	
+	\textbf{Ceiling}
+	
+	Returns the smallest integer $\geq x$ \newline 
+	
+	The following table shows values for various $x$ for the above functions 
+	\begin{center}
+  \begin{tabular}{NNNN}
+   \toprule
+        x & \vert x \vert & \lfloor x\rfloor & \lceil x \rceil \\
+   \midrule 
+       -1 & 1 & -1 & -1 \\
+    \midrule 
+       -1.5 & 1.5 & -2 & -1 \\
+    \midrule 
+       2 & 2 & 2 & 2 \\
+    \midrule 
+       4.3 & 4.3 & 4 & 5 \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+\end{skill}
+\end{document} 
