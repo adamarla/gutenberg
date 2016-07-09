@@ -1,0 +1,27 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\dfx{ \dfrac{x-2}{x-1} }
+\newcommand\ddfx{ \frac{1}{\left(x-1 \right)^2}}
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    \correct
+    
+    If $f'(x) = \dfx$, then $f(x)$ has a local minima at $x = 2$ 
+    
+    
+    \reason
+    
+    \begin{align}
+    f'(x) &= 0 \text{ when } x = 2 \\
+	f''(x) &= \ddx f'(x) = \ddx \left[\dfx \right] \\
+	&= \underbrace{\dfrac{(x-1)\ddx (x-2) - (x-2)\ddx (x-1)}{\left(x-1 \right)^2}}_{\text{Quotient Rule}} \\
+	&= \ddfx > 0 \text{ for all }x \neq 1
+\end{align}
+
+Hence, we have an extrema at $x=2$. And $f''(2) > 0 \implies $minima at $x=2$ 
+    
+\end{snippet} 
+\end{document} 
