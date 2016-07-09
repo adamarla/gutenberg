@@ -1,0 +1,22 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\newcommand\dfx{1-\frac{1}{x}}
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    \correct
+    
+    $f(x) = x - \log x$ decreases in $\left(0,1 \right)$ and increases in $\left(1,\infty \right)$ 
+
+    
+    \reason
+    
+    \begin{align}
+	f(x) = x - \log x &\implies f'(x) = 1 - \frac{1}{x} \\
+	\text{Hence } \underbrace{f'(x) > 0}_{f(x) \text{ increasing}} &\implies \dfx > 0 \text{ or } x > 1 \\
+	\text{and } \underbrace{f'(x) < 0}_{f(x)\text{ decreasing}} &\implies \dfx < 0\text{ or } x < 1 
+\end{align}
+
+\end{snippet} 
+\end{document} 

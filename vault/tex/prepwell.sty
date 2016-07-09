@@ -60,13 +60,13 @@
   \renewcommand\svg{tex-\theindex.svg}
 
   \ifbool{#1}{
-    \addtostream{xml}{ <tex isImage="true">img_\svg </tex> }
+    \addtostream{xml}{ <tex isImage="true">\svg </tex> }
   }{
-    \addtostream{xml}{ <tex isImage="true" correct="false">img_\svg </tex> }
+    \addtostream{xml}{ <tex isImage="true" correct="false">\svg </tex> }
   }
 
   \ifbool{preview}{
-    \textcolor{red}{\newline img\_\svg \newline} 
+    \textcolor{red}{\newline \svg \newline} 
   }{ 
     \newpage
   } 

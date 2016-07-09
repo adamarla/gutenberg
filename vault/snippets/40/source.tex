@@ -1,0 +1,24 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    
+    \incorrect
+    
+    If $f(x) = \dfrac{1}{x}$, then $\dfrac{d}{dx} \left(f\circ f \right)(x) = -\dfrac{1}{x^2}$ 
+    \reason
+    
+    The first question is, what is $\left(f\circ f \right)(x)$? 
+    \begin{align}
+	   \left(f\circ f \right)(x) &= f \left(\, f(x) \,\right) \\
+	   &= f \left(\frac{1}{x} \right) = \dfrac{1}{\frac{1}{x}} = x 
+\end{align}
+
+And so, if $ \left(f\circ f \right)(x) = x$, then 
+\[ \quad\qquad \ddx \left(f\circ f \right)(x) = 1 \]
+    
+\end{snippet} 
+\end{document} 
