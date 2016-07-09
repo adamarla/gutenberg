@@ -1,0 +1,27 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\dfx{ \dfrac{x-1}{x-2} }
+\newcommand\ddfx{ -\frac{1}{\left(x-2 \right)^2}}
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    \correct
+    
+    If $f'(x) = \dfx$, then $f(x)$ has a local maxima at $x = 1$ 
+    
+    
+    \reason
+    
+    \begin{align}
+    f'(x) &= 0 \text{ when } x = 1 \\
+	f''(x) &= \ddx f'(x) = \ddx \left[\dfx \right] \\
+	&= \underbrace{\dfrac{(x-2)\ddx (x-1) - (x-1)\ddx (x-2)}{\left(x-2 \right)^2}}_{\text{Quotient Rule}} \\
+	&= \ddfx < 0 \text{ for all }x \neq 2 
+\end{align}
+
+Hence, we have an extrema at $x=1$. And $f''(1) < 0 \implies $maxima at $x=1$ 
+    
+\end{snippet} 
+\end{document} 
