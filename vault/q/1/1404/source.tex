@@ -1,0 +1,84 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\fx{x\cdot e^x} 
+\newcommand\dfx{\left(x+1 \right)\cdot e^x } 
+\newcommand\ddfx{ \left(x+2 \right)\cdot e^x }
+
+\previewoff 
+
+\begin{document} 
+\begin{question}
+	\statement 
+    
+     Find the minimum (or maximum) value of 
+     \[ \qquad \qquad f(x) = x\cdot e^x \] 
+     
+     \begin{step}
+  \begin{options} 
+     \correct 
+     
+     $f'(x) = \dfx$. And therefore, $f(x)$ has an extrema at $x = -1$
+       
+     \incorrect
+     
+     $f'(x) = \dfx$. And therefore, $f(x)$ has an extrema at $x = 0,-1$   
+        
+    \end{options} 
+     \reason 
+     
+     \begin{align}
+     f'(x) &= \underbrace{x\ddx e^x + e^x \ddx x }_{\text{Product Rule}} \\
+     &= x\cdot e^x + e^x = \dfx 
+\end{align}
+
+Now, $e^x \neq 0$ for all values of $x$. Hence,  
+\[ \qquad\qquad f'(x) = 0 \implies x = -1 \]
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+      
+      \begin{center}
+  \begin{tabular}{NcN}
+   \toprule
+        & Type & \text{Value} \\
+   \midrule 
+   x = -1 & Minima & -\frac{1}{e} \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+     \incorrect
+
+
+      \begin{center}
+  \begin{tabular}{NcN}
+   \toprule
+        & Type & \text{Value} \\
+   \midrule 
+   x = -1 & Minima & -\frac{1}{2e} \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+        
+    \end{options} 
+     \reason 
+       
+     We know that $f'(x) = 0$ at $x=-1$. To know, however, whether it is a maxima or a minima, one must look at $f''(x)$ 
+     
+     \begin{align}
+	f''(x) &= \ddx f'(x) = \ddx \dfx \\
+	&= (x+1)\ddx e^x + e^x\ddx (x+1) \\
+	&= (x+1) \cdot e^x + e^x = \ddfx \\
+	f''(-1) &= e^{-1} = \frac{1}{e} > 0 
+\end{align}  
+
+As $f''(x) > 0$  at $x=-1$, therefore we have a minima at $x=-1$. And the minimum value is 
+\[ \qquad f_{min} = f(-1) = -1\cdot e^{-1} = -\frac{1}{e}\]
+
+\end{step}
+\end{question} 
+\end{document} 
