@@ -1,0 +1,24 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\intg{\int_0^{\frac\pi{2}}}
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    
+    \incorrect
+
+    If $f(x)=\cos^2 x$ and $g(x) = \dfrac{1-\cos 2x}{2}$, then 
+    \[ \qquad A = \intg f(x) \cdot dx + \intg g(x) \cdot dx = 1 \]
+    
+    \reason
+    
+    \begin{align}
+	A &= \intg \left[f(x) + g(x) \right]\cdot dx  \\
+	&= \intg \left[\cos^2 x + \underbrace{\frac{1-\cos2x}{2}}_{=\sin^2 x} \right]\cdot dx \\
+	&= \intg dx = \frac\pi{2} 
+\end{align}
+    
+\end{snippet} 
+\end{document} 
