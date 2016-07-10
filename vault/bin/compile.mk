@@ -3,11 +3,11 @@ SHELL=/bin/bash
 .ONESHELL : 
 .PHONY : clean tex2svg
 
-last_compiled_on : source.xml img_*.svg
+last_compiled_on : source.xml 
 	@ quill -r $$(pwd) 
 	@ quill -p $$(pwd) 
 	@ ping_on_recompile -r 
-	@ sed -i -e "s/\(.*\)\(img_tex-[0-9]*\.svg\"\)\(.*\)/\1\2 isTex=\"true\"\3/g" layout.xml 
+	@ sed -i -e "s/\(.*\)\(tex-[0-9]*\.svg\"\)\(.*\)/\1\2 isTex=\"true\"\3/g" layout.xml 
 	@ date > $@
 
 tex2svg : source.pdf 
