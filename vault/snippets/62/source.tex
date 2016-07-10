@@ -1,0 +1,38 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\intga{\int_{0.5}^1}
+\newcommand\intgb{\int_1^2} 
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    
+    \incorrect
+    
+    The area under the curve $y = \log x$ from $x = 0.5$ to $x = 2$ will be given by 
+    \[ \qquad A = \intga \log x \cdot dx + \intgb \log x\cdot dx \]
+    
+    \reason
+    
+    The value of $\int_{0.5}^2 \log x\cdot dx$ \underline{might not} be the 
+    same as the area under the curve \newline 
+        
+    Note that $\log x < 0$ for $x < 1$. Therefore 
+    \begin{center}
+  \begin{tabular}{NNN}
+   \toprule
+       \text{Range} & f(x)\cdot dx  & \int_a^b f(x)\cdot dx  \\
+   \midrule 
+   0.5\to 1 & < 0 & < 0 \\
+    \midrule
+    1\to 2 & >0  & > 0 \\ 
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+We want the \underline{total area} under the curve -- not the net area. Hence, 
+\[ \quad A = \left\vert \intga \log x\cdot dx\right\vert + \intgb \log x\cdot dx \]
+\end{snippet} 
+\end{document} 
