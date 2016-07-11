@@ -1,7 +1,8 @@
 
 SHELL=/bin/bash
 .ONESHELL : 
-.PHONY : clean tex2svg
+.PHONY : clean 
+.INTERMEDIATE : source.pdf 
 
 last_compiled_on : source.xml 
 	@ quill -r $$(pwd) 
@@ -10,10 +11,7 @@ last_compiled_on : source.xml
 	@ sed -i -e "s/\(.*\)\(tex-[0-9]*\.svg\"\)\(.*\)/\1\2 isTex=\"true\"\3/g" layout.xml 
 	@ date > $@
 
-source.xml : 
-	@ if [ -e source.tex ] ; then $(MAKE) tex2svg ; fi 
-
-tex2svg : source.pdf 
+source.xml : source.pdf  
 	@ rm -f tex*.svg 
 	@ paper2svg $<
 
@@ -21,6 +19,8 @@ source.pdf : source.tex
 	@ git add $<
 	@ sed -i -e "s/\\previewon/\\previewoff/g" $< 
 	@ latex --halt-on-error $< && dvips source.dvi && ps2pdf source.ps 
+
+source.tex : 
 
 clean : 
 	@ rm -f source.{aux,dvi,pdf,log,ps}
