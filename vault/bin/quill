@@ -13,8 +13,7 @@ function main() {
             if [ "$1" == "-h" ] ; then
                 usage
             else
-                check_update
-                if [ $? -ne 0 ] ; then
+                if ! check_update ; then
                   update
                 fi
                 run_quill $1 $2
