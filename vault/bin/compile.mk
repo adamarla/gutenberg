@@ -10,14 +10,17 @@ last_compiled_on : source.xml
 	@ sed -i -e "s/\(.*\)\(tex-[0-9]*\.svg\"\)\(.*\)/\1\2 isTex=\"true\"\3/g" layout.xml 
 	@ date > $@
 
+source.xml : 
+	@ if [ -e source.tex ] ; then $(MAKE) tex2svg ; fi 
+
 tex2svg : source.pdf 
 	@ rm -f tex*.svg 
 	@ paper2svg $<
 
 source.pdf : source.tex
-	@ sed -i -e "s/\\previewon/\\previewoff/g" $<
-	@ latex --halt-on-error $< && dvips source.dvi && ps2pdf source.ps 
 	@ git add $<
+	@ sed -i -e "s/\\previewon/\\previewoff/g" $< 
+	@ latex --halt-on-error $< && dvips source.dvi && ps2pdf source.ps 
 
 clean : 
 	@ rm -f source.{aux,dvi,pdf,log,ps}
