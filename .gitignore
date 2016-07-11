@@ -12,8 +12,8 @@ Makefile
 *.tex
 !source.tex
 
-*.xml 
-!source.xml
+blueprint.xml 
+layout.xml
 
 *.lbl
 ### Deprecated clauses 
