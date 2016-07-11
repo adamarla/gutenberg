@@ -1,24 +1,31 @@
 
 SHELL=/bin/bash
 .ONESHELL : 
-.PHONY : clean 
-.INTERMEDIATE : source.pdf 
+.PHONY : clean svgs xmlforquill
 
 last_compiled_on : source.xml 
+	@ $(MAKE) svgs 
 	@ quill -r $$(pwd) 
-	@ quill -p $$(pwd) 
-	@ ping_on_recompile -r 
+	@ if [ -e ~/.gutenberg ] ; then 
+		quill -p $$(pwd) 
+		ping_on_recompile -r 
+	fi
 	@ sed -i -e "s/\(.*\)\(tex-[0-9]*\.svg\"\)\(.*\)/\1\2 isTex=\"true\"\3/g" layout.xml 
 	@ date > $@
 
-source.xml : source.pdf  
-	@ rm -f tex*.svg 
-	@ paper2svg $<
+xmlforquill : svgs 
+	@ if [ ! -e ~/.gutenberg ] ; then mv blueprint.xml source.xml ; fi 
 
-source.pdf : source.tex
-	@ git add $<
-	@ sed -i -e "s/\\previewon/\\previewoff/g" $< 
-	@ latex --halt-on-error $< && dvips source.dvi && ps2pdf source.ps 
+svgs : source.tex 
+	@ if [ ! -e $< ] ; then 
+		exit 0 
+	else 
+		sed -i -e "s/\\previewon/\\previewoff/g" $< 
+		latex --halt-on-error $< && dvips source.dvi && ps2pdf source.ps 
+		rm -f tex*.svg 
+		paper2svg source.pdf 
+	fi 
+	@ if [ ! -e ~/.gutenberg ] ; then git add $< ; fi
 
 source.tex : 
 

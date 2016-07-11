@@ -35,8 +35,8 @@ if [ -z "$target" ] ; then
   exit 1
 fi 
 
-# Copy tex_file to target folder and call 'make tex2svg' 
+# Copy tex_file to target folder and call 'make xmlforquill' 
 # That will take care of switching preview off and adding source.tex to Git
 
 cp $tex_file $target/source.tex
-make -C $target tex2svg
+make -C $target xmlforquill
