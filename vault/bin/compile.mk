@@ -3,8 +3,7 @@ SHELL=/bin/bash
 .ONESHELL : 
 .PHONY : clean svgs xmlforquill
 
-last_compiled_on : source.xml 
-	@ $(MAKE) svgs 
+last_compiled_on : svgs source.xml 
 	@ quill -r $$(pwd) 
 	@ if [ -e ~/.gutenberg ] ; then 
 		quill -p $$(pwd) 
