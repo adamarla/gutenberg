@@ -3,9 +3,15 @@
 
 \previewoff
 \begin{document}
-\[\int_0^1 \frac{dx}{1+x^2} = \left[\cot^{-1} x \right]_1^0\]
 
-\newcard 
+\begin{snippet}
+    \correct
+
+\[\int_0^1 \frac{dx}{1+x^2} = \left[\cot^{-1} x \right]_1^0\]
+    
+    \incorrect
+    
+    \reason
 
 \begin{align}
 	\int \frac{dx}{1+x^2} = \tan^{-1} &x + C =-\cot^{-1} x + C  \\
@@ -13,4 +19,6 @@
 	&= \left[\cot^{-1} x \right]_1^0 \\
 	\because \int_a^b f(x)\cdot dx &= -\int_b^a f(x)\cdot dx 
 \end{align}
+    
+\end{snippet} 
 \end{document}
