@@ -3,8 +3,7 @@ SHELL=/bin/bash
 .ONESHELL : 
 .PHONY : clean svgs xmlforquill
 
-last_compiled_on : source.xml 
-	@ $(MAKE) svgs 
+last_compiled_on : svgs source.xml 
 	@ quill -r $$(pwd) 
 	@ if [ -e ~/.gutenberg ] ; then 
 		quill -p $$(pwd) 
@@ -25,7 +24,13 @@ svgs : source.tex
 		rm -f tex*.svg 
 		paper2svg source.pdf 
 	fi 
-	@ if [ ! -e ~/.gutenberg ] ; then git add $< ; fi
+	@ if [ ! -e ~/.gutenberg ] ; then 
+		git add $<
+		id=$$(pwd | rev | cut -d'/' -f1-2 | rev)
+		git commit -m "Edited $$id" $<
+	fi
+
+source.xml : 
 
 source.tex : 
 
