@@ -25,7 +25,11 @@ svgs : source.tex
 		rm -f tex*.svg 
 		paper2svg source.pdf 
 	fi 
-	@ if [ ! -e ~/.gutenberg ] ; then git add $< ; fi
+	@ if [ ! -e ~/.gutenberg ] ; then 
+		git add $<
+		id=$$(pwd | rev | cut -d'/' -f1-2 | rev)
+		git commit -m "Edited $$id" $<
+	fi
 
 source.tex : 
 
