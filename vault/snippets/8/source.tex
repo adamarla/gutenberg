@@ -1,16 +1,18 @@
 \documentclass[14pt,fleqn]{extarticle}
 \RequirePackage{prepwell}
 
-\previewoff 
+\previewoff
 
 \begin{document} 
 
-%text
+\begin{snippet}
+    \correct
+
 Given that $ e^x = 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots$
 \[\qquad \qquad \lim_{x\to 0}\dfrac{e^x-1}{x} = 1 \]
-%
+        
+    \reason
 
-\newcard 
 
 \begin{align}
 e^x - 1 &= \left( 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots\right) - 1 \\ 
@@ -18,4 +20,6 @@ e^x - 1 &= \left( 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \ldots\right) - 1 \\
 &= x\cdot\left( 1 + \frac{x}{2!} + \frac{x^2}{3!} + \ldots\right) \\
 \therefore \lim_{x\to 0}\dfrac{e^x-1}{x} &= \lim_{x\to 0}\left( 1 + \frac{x}{2!} + \frac{x^2}{3!} + \ldots\right) = 1
 \end{align}
+    
+\end{snippet} 
 \end{document} 
