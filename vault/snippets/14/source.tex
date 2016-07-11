@@ -1,17 +1,21 @@
 \documentclass[14pt,fleqn]{extarticle}
 \RequirePackage{prepwell}
 
-\previewoff 
+\previewoff
 
 \begin{document} 
 
-\[ \lim_{x\to 0}x\cdot\cot x = 1 \]
-
-\newcard 
+\begin{snippet}
+    \correct
+\[ \lim_{x\to 0}x\cdot\cot x = 1 \]    
+    
+    \reason
 
 \begin{align}
 \lim_{x\to 0}\left( x\cdot \cot x\right) &= \lim_{x\to 0}\left(\dfrac{x}{\tan x}\right) \\
 &= \lim_{x\to 0}\left[ \dfrac{1}{\left(\dfrac{\tan x}{x}\right)}\right] \\
 &= \dfrac{1}{\lim_{x\to 0}\left(\dfrac{\tan x}{x}\right)} = 1
 \end{align}
+    
+\end{snippet} 
 \end{document} 
