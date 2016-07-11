@@ -1,0 +1,61 @@
+\documentclass[12pt]{article}
+\RequirePackage{prepwell}
+
+
+\begin{document}
+Evaluate the following integral 
+\[ \int \dfrac{e^x\cdot (x-4)}{(x-2)^3}\cdot dx \]
+\card 
+\begin{align}
+\frac{(x-4)\cdot e^x}{(x-2)^3} &= \left[\underbrace{\frac{1}{(x-2)^2}}_A+\underbrace{\frac{-2}{(x-2)^3}}_B\right]\cdot e^x 
+\end{align}
+
+\card 
+A little creative algebra required here
+
+\begin{align}
+	\frac{(x-4)\cdot e^x}{(x-2)^3} &= e^x\cdot \left[ \dfrac{(x-2) - 2}{(x-2)^3}\right] \\
+	&= e^x\cdot \left[ \frac{1}{(x-2)^2} - \frac{2}{(x-2)^3}\right]
+\end{align}
+
+\card 
+In the last step
+\begin{align}
+	\frac{dA}{dx} &= B \\ 
+\end{align}
+\card 
+In the last step 
+\begin{align}
+	\frac{dB}{dx} &= A 
+\end{align}
+
+\card 
+\begin{align}
+	\frac{d}{dx}\frac{1}{(x-2)^2} &= \frac{-2}{(x-2)^3} = B \\ 
+	\text{But }\frac{d}{dx} \frac{-2}{(x-2)^3} &= \frac{6}{(x-2)^4} \neq A 
+\end{align}
+
+Hence, we can see that \[ \frac{dA}{dx} = B \]
+\card 
+\begin{align}
+	\int e^x\cdot \left(A + A' \right)\cdot dx &= e^x\cdot A + C \\ 
+	\therefore \int e^x \left[\frac{1}{(x-2)^2}-\frac{2}{(x-2)^3} \right]\cdot dx &= \frac{e^x}{(x-2)^2} + C 
+\end{align}
+\card 
+\begin{align}
+	\int e^x\cdot \left(A + A' \right)\cdot dx &= e^x\cdot A' + C \\ 
+	\therefore \int e^x \left[\frac{1}{(x-2)^2}-\frac{2}{(x-2)^3} \right]\cdot dx &= -\frac{2\cdot e^x}{(x-2)^3} + C 
+\end{align}
+
+\card 
+Recall the \underline{standard result}
+\[ \int e^x\cdot \left[f(x) + f'(x) \right]\cdot dx = e^x\cdot f(x) + C\]
+
+Now, we have shown that 
+\begin{align}
+	\int e^x \left[\frac{1}{(x-2)^2} - \frac{2}{(x-2)^3} \right]\cdot dx &= \int e^x \left[A + A' \right]\cdot dx \\
+	\text{where } A &= \frac{1}{(x-2)^2} \\
+	\therefore \int e^x \left[\frac{(x-4)}{(x-2)^3} \right]\cdot dx &= \dfrac{e^x}{(x-2)^2} + C 
+\end{align}
+\end{document}
+  
