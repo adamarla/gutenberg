@@ -1,17 +1,23 @@
 \documentclass[14pt,fleqn]{extarticle}
 \RequirePackage{prepwell}
 
-\previewoff 
+\previewoff
 
 \begin{document} 
 
-\[ \lim_{x\to 0}\dfrac{\tan x}{x} = 1 \]
+\begin{snippet}
+    \correct
 
-\newcard 
+\[ \lim_{x\to 0}\dfrac{\tan x}{x} = 1 \]    
+
+    
+    \reason
 
 \begin{align}
 \dfrac{\tan x}{x} &= \dfrac{1}{x}\cdot\dfrac{\sin x}{\cos x} = \dfrac{\frac{\sin x}{x}}{\cos x} \\
 \therefore \lim_{x\to 0}\dfrac{\tan x}{x} &= \lim_{x\to 0}\left[ \dfrac{\frac{\sin x}{x}}{\cos x}\right] \\
 &= \dfrac{\overbrace{\lim_{x\to 0}\frac{\sin x}{x}}^{=1}}{\underbrace{\lim_{x\to 0}\cos x}_{=1}} = 1
 \end{align}
+    
+\end{snippet} 
 \end{document} 
