@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <question xmlns="http://www.gradians.com" chapterId="24">
   <statement>
-    <tex isImage="true">img_tex-1.svg</tex>
+    <tex isImage="true">tex-1.svg</tex>
   </statement>
   <step>
     <options>
@@ -9,7 +9,7 @@
       <tex isImage="true" correct="false">img_prefab-2.svg</tex>
     </options>
     <reason>
-      <tex isImage="true">img_tex-2.svg</tex>
+      <tex isImage="true">tex-2.svg</tex>
     </reason>
     <skills>
       <skill id="26"/>
@@ -18,10 +18,10 @@
   </step>
   <step>
     <options>
-      <tex isImage="true">img_tex-3.svg</tex>
+      <tex isImage="true">tex-3.svg</tex>
     </options>
     <reason>
-      <tex isImage="true">img_tex-4.svg</tex>
+      <tex isImage="true">tex-4.svg</tex>
     </reason>
     <skills>
       <skill id="36"/>
@@ -29,11 +29,11 @@
   </step>
   <step>
     <options>
-      <tex isImage="true">img_tex-5.svg</tex>
-      <tex isImage="true" correct="false">img_tex-6.svg</tex>
+      <tex isImage="true">tex-5.svg</tex>
+      <tex isImage="true" correct="false">tex-6.svg</tex>
     </options>
     <reason>
-      <tex isImage="true">img_tex-7.svg</tex>
+      <tex isImage="true">tex-7.svg</tex>
     </reason>
     <skills>
       <skill id="48"/>

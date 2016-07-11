@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <question xmlns="http://www.gradians.com" chapterId="22">
   <statement>
-    <tex isImage="true">img_tex-1.svg</tex>
+    <tex isImage="true">tex-1.svg</tex>
   </statement>
   <step>
     <options>
-      <tex isImage="true">img_tex-2.svg</tex>
-      <tex isImage="true" correct="false">img_tex-3.svg</tex>
+      <tex isImage="true">tex-2.svg</tex>
+      <tex isImage="true" correct="false">tex-3.svg</tex>
     </options>
     <reason>
-      <tex isImage="true">img_tex-4.svg</tex>
+      <tex isImage="true">tex-4.svg</tex>
     </reason>
     <skills>
       <skill id="63"/>
@@ -17,11 +17,11 @@
   </step>
   <step>
     <options>
-      <tex isImage="true">img_tex-5.svg</tex>
-      <tex isImage="true" correct="false">img_tex-6.svg</tex>
+      <tex isImage="true">tex-5.svg</tex>
+      <tex isImage="true" correct="false">tex-6.svg</tex>
     </options>
     <reason>
-      <tex isImage="true">img_tex-7.svg</tex>
+      <tex isImage="true">tex-7.svg</tex>
     </reason>
     <skills>
       <skill id="33"/>
@@ -30,11 +30,11 @@
   </step>
   <step>
     <options>
-      <tex isImage="true">img_tex-8.svg</tex>
-      <tex isImage="true" correct="false">img_tex-9.svg</tex>
+      <tex isImage="true">tex-8.svg</tex>
+      <tex isImage="true" correct="false">tex-9.svg</tex>
     </options>
     <reason>
-      <tex isImage="true">img_tex-10.svg</tex>
+      <tex isImage="true">tex-10.svg</tex>
     </reason>
     <skills>
       <skill id="33"/>
@@ -42,10 +42,10 @@
   </step>
   <step>
     <options>
-      <tex isImage="true">img_tex-11.svg</tex>
+      <tex isImage="true">tex-11.svg</tex>
     </options>
     <reason>
-      <tex isImage="true">img_tex-12.svg</tex>
+      <tex isImage="true">tex-12.svg</tex>
     </reason>
     <skills>
       <skill id="25"/>
