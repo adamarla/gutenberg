@@ -30,6 +30,8 @@ svgs : source.tex
 		git commit -m "Edited $$id" $<
 	fi
 
+source.xml : 
+
 source.tex : 
 
 clean : 
