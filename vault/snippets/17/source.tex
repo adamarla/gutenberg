@@ -4,8 +4,12 @@
 \previewoff
 
 \begin{document}
-\[ \int_1^2 x^2\cdot dx = \int_1^2 (3-x)^2\cdot dx \]
-\newcard 
+\begin{snippet}
+    \correct
+    
+\[ \int_1^2 x^2\cdot dx = \int_1^2 (3-x)^2\cdot dx \]    
+
+    \reason
 
 Recall the following standard result 
 \[ \quad \int_a^b f(x)\cdot dx = \int_a^b f(a+b-x)\cdot dx \]
@@ -15,4 +19,6 @@ When applied to $\int_1^2 x^2\cdot dx$, one can see that
 	\int_1^2 x^2\cdot dx &= \int_1^2 \left(1+2-x \right)^2\cdot dx  \\
 	&= \int_1^2 \left(3-x \right)^2\cdot dx 
 \end{align}
+    
+\end{snippet} 
 \end{document}
