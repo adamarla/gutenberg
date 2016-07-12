@@ -4,6 +4,7 @@ SHELL=/bin/bash
 .PHONY : clean svgs xmlforquill
 
 last_compiled_on : svgs source.xml 
+	@ if [ ! -e source.xml ] ; then exit 0 ; fi 
 	@ quill -r $$(pwd) 
 	@ if [ -e ~/.gutenberg ] ; then 
 		quill -p $$(pwd) 
