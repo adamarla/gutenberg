@@ -4,7 +4,7 @@ SHELL=/bin/bash
 .PHONY : clean svgs xmlforquill
 
 last_compiled_on : svgs source.xml 
-	@ if [ ! -e source.xml ]
+	@ if [ ! -e source.xml ] ; then
 		path=$$(pwd | rev | cut -d'/' -f1-2 | rev)
 		echo "Skipping .... $$path" 
 		exit 0
