@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>%text
+Inverse of a Matrix
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+If you know how to compute the Adjoint of a matrix, then finding inverse is easy,
+%
+\begin{align}
+  A^{-1}=\dfrac{1}{|A|}\cdot Adj(A) \\
+\end{align} \\
+
+%text
+The analysis behind it is,
+%
+
+\begin{align}
+  &amp;|A|\cdot I=A\cdot Adj(A) \\
+  \implies &amp; I=A \left(\dfrac{1}{|A|}Adj(A)\right) \\
+  \implies &amp; A^{-1}=\dfrac{1}{|A|}Adj(A)
+\end{align} \\
+%text
+where $I$ is the identity matrix.
+%</tex>
+  </reason>
+</skill>
