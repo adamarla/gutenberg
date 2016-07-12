@@ -13,6 +13,13 @@ function main() {
             if [ "$1" == "-h" ] ; then
                 usage
             else
+                # check for updates only if user is
+                # running quill with no args
+                if [ -z "$1" ] ; then
+                    if ! check_update ; then
+                        update
+                    fi
+                fi 
                 run_quill $1 $2
             fi
         fi
