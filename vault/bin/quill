@@ -13,9 +13,6 @@ function main() {
             if [ "$1" == "-h" ] ; then
                 usage
             else
-                if ! check_update ; then
-                  update
-                fi
                 run_quill $1 $2
             fi
         fi
