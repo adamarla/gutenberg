@@ -18,18 +18,7 @@ A=\left[\begin{array}{ccc}
 \end{array}\right]
 \end{align} \\
 %text
-Start by constructing the cofactor matrix. Each element in the cofactor matrix is the Determinant remaining when the row and column containing that element are removed from the original matrix, multiplied by $(-1)^\text{row+col}$
-%
-\begin{align}
-CF(a_1)&amp;=(b_2c_3-c_2b_3)(-1)^{(1+1)} \\
-CF(b_1)&amp;=(a_2c_3-c_2a_3)(-1)^{(2+1)} \\
-CF(c_1)&amp;=(a_2b_3-b_2a_3)(-1)^{(3+1)} \\
-...&amp; \\
-CF(c_3)&amp;=(a_1b_2-b_1a_2)(-1)^{(3+3)} \\
-\end{align} \\
-
-%text
-The final cofactor matrix looks like this,
+Start by constructing the Cofactor Matrix (see topic Cofactor Matrix),
 %
 \begin{align}
 CF&amp;=\left[\begin{array}{ccc}
@@ -52,7 +41,7 @@ Adj(A)&amp;=\left[\begin{array}{ccc}
 \end{align} \\
 
 %text
-For a $2\times 2$ matrix, it is even simpler,
+For a $2\times 2$ matrix, it is even simpler. Follow this translation (prove it to yourself as an exercise).
 %
 
 \begin{align}
