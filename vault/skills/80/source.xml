@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com">
   <render>
-    <tex>%text
-Inverse of a Matrix
+    <tex>\textcolor{blue}{\text{Inverse of a Matrix}} \\
+%text
+How to compute the inverse of a Matrix 
 %</tex>
   </render>
   <reason>
