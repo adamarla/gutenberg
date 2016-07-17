@@ -11,7 +11,7 @@ last_compiled_on : blueprint.xml
 	fi
 	if [ -e source.tex ] ; then 
 		cp source.xml layout.xml
-		sed -i -e "s/\(.*\)\(tex-[0-9]*\.svg\"\)\(.*\)/\1\2 isTex=\"true\"\3/g" layout.xml 
+		sed -i -e 's/>\(tex-[0-9]*.svg\)<\/tex>/ src=\"\1\" isTex=\"true\"\/>/g' layout.xml
 	fi
 	if [ -e ~/.gutenberg ] ; then 
 		if [ -e source.tex ] ; then 
@@ -26,6 +26,7 @@ last_compiled_on : blueprint.xml
 xmlforquill : blueprint.xml  
 	@ if [ -e source.tex ] ; then mv blueprint.xml source.xml ; fi 
 
+# Generates required SVGs. blueprint.xml might not be required 
 blueprint.xml : source.tex source.xml 
 	@ if [ -e source.tex ] ; then 
 		sed -i -e "s/\\previewon/\\previewoff/g" source.tex
