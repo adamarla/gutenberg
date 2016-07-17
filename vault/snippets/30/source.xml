@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <snippet xmlns="http://www.gradians.com" chapterId="21">
   <render>
-    <tex isImage="true">img_tex-1.svg</tex>
+    <tex isImage="true">tex-1.svg</tex>
   </render>
   <reason>
-    <tex isImage="true">img_tex-2.svg</tex>
+    <tex isImage="true">tex-2.svg</tex>
   </reason>
   <skills>
     <skill id="36"/>
