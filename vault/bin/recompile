@@ -25,8 +25,10 @@ if [ ! -e .block-cron ] ; then
   for f in $(ls -d snippets/ skills/ q/1/) ; do 
     make -C $f 
   done 
-  rm -f .block-cron
 
   # Recreate Zip files in case some SVGs have changed
   zippify -r 
+
+  # Remove the block on further cron-jobs 
+  rm -f .block-cron
 fi 
