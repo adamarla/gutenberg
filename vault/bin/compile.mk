@@ -12,6 +12,7 @@ last_compiled_on : blueprint.xml
 	if [ -e source.tex ] ; then 
 		cp source.xml layout.xml
 		sed -i -e 's/>\(tex-[0-9]*.svg\)<\/tex>/ src=\"\1\" isTex=\"true\"\/>/g' layout.xml
+		sed -i -e 's/>\(.*\)<\/tex>/ src=\"\1\"\/>/g' layout.xml
 	fi
 	if [ -e ~/.gutenberg ] ; then 
 		if [ -e source.tex ] ; then 
