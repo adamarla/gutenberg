@@ -2,7 +2,7 @@
 \RequirePackage{prepwell}
 
 \newcommand\fx{\log \tan \dfrac{x}{2}}
-\previewoff 
+\previewoff
 
 \begin{document} 
 \begin{snippet}
@@ -14,12 +14,18 @@
     
     \reason
     
-    For $f(x)$ to be defined, $\tan \frac{x}{2} > 0$. And at $x=\dfrac{3\pi}{2}$, we have $\tan\dfrac{3\pi}{4} < 0$\newline 
+    This is a trick question. For $f'(x)$ to be defined, $f(x)$ must also be defined 
+    at that point. But $f(x)$ is not defined at $x=\dfrac{3\pi}{2}$\newline 
     
-    Hence, $f(x) = \fx$ is not defined \newline 
+    Here is why \newline 
     
-    So the question of it's increasing or decreasing does not 
-    arise. Yes, this is what one calls a trick question \newline 
+    $f(x) = \log \left(\tan\frac{x}{2} \right)$. Hence, $\tan\frac{x}{2} > 0$ for $f(x)$ to be defined \newline 
+    
+    But at $x = \frac{3\pi}{2}, \tan\frac{x}{2} = \tan\frac{3\pi}{4} < 0$\newline 
+    
+    Hence, $f(x)$ is not defined. And therefore, neither is $f'(x)$\newline 
+    
+    The question of $f(x)$ increasing or decreasing at $x=\frac{3\pi}{2}$ therefore does not arise  
 
     
     
