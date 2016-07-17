@@ -19,40 +19,38 @@ The shaded portion can therefore be described as
     
     \reason
     
-    You would have noticed that we are working with the parametric forms 
-    of equations of a circle and an ellipse 
+    We have two curves in the figure -- an ellipse and a circle 
     
     \begin{center}
-  \begin{tabular}{lN}
+  \begin{tabular}{NNl}
    \toprule
-        &  \text{Parametric Equation} \\
+        y & x & Curve   \\
    \midrule 
-   Ellipse & x = 2\cos\theta, y = \sin\theta \\
-    \midrule 
-    Circle & x = \cos\theta, y = \sin\theta \\
+   \sin\theta & 2\cos\theta & Ellipse \\
+   \midrule 
+   \sin\theta & \cos\theta & Circle \\
     \bottomrule
   \end{tabular}
 \end{center}
 
-Any point $(x,y)$ in the shaded region satifies the following conditions 
+The conditions have been given to us in set-builder form. 
+And taken together, they mean the following 
 
 \begin{center}
-  \begin{tabular}{NlN}
+  \begin{tabular}{Nl}
    \toprule
-        & Condition & \text{Equation} \\
+        \text{Condition} & Meaning  \\
    \midrule 
-   x & Beyond the circle & x \geq \cos\theta \\
-   & Within ellipse & x \leq 2\cos\theta \\
+   x \leq 2\cos\theta,y =  \sin\theta & Inside the ellipse \\ 
     \midrule 
-    y & Exactly $\sin\theta$ & y = \sin\theta \\
+    x\geq \cos\theta, y = \sin\theta & Outside the circle \\
     \midrule 
-    \theta & First quadrant only & \theta\in \left(0, \frac{\pi}{2} \right) \\
+    0\leq \theta\leq \frac\pi{2} & First quadrant only \\
     \bottomrule
   \end{tabular}
 \end{center}
 
-This gives us 
-    \small\[ \left\lbrace (x,y) : \cos\theta \leq x \leq 2\cos\theta, y = \sin\theta, \theta \in \left(0,\frac\pi{2}  \right)\right\rbrace\]
+Which are points in the shaded region 
     
 \end{snippet} 
 \end{document} 
