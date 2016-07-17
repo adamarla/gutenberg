@@ -12,12 +12,12 @@ Makefile
 *.tex
 !source.tex
 
-blueprint.xml 
-layout.xml
+*.xml
+!source.xml
 
-*.lbl
 ### Deprecated clauses 
 
+*.lbl
 *.anx
 *.dvi
 *.ps
