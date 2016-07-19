@@ -1,9 +1,0 @@
-This folder contains the LaTeX templates for various kinds of reports 
-and documents that can be generated on request 
-
-Broadly, these docs would either be report-cards OR of the "directory-listing"
-type - like list of students, teachers etc 
-
-Report cards can be of two types - CSV/XLS or TeX files. And they can be 
-about anything. Basically, if you can imagine a question - like how
-has a student done on a topic over time - then you can make a report-card for it
