@@ -8,7 +8,7 @@ How to determine the Cofactor Matrix
   </render>
   <reason>
     <tex>%text
-A is a $3\times 3$ matrix we will use as an example to understand how to determine the cofactor matrix
+$A$ is a $3\times 3$ matrix we use as an example to understand how to determine the Cofactor Matrix
 %
 \begin{align}
 A=\left[\begin{array}{ccc}
@@ -18,7 +18,7 @@ A=\left[\begin{array}{ccc}
 \end{array}\right]
 \end{align} \\
 %text
-Each element in the cofactor matrix, also called the minor$(M_{ij})$, is the Determinant of the submatrix remaining when the row $(i)$ and column $(j)$ containing that element are removed from the original matrix,
+Each element in the matrix, has a minor $(M_{ij})$, which is the Determinant of the submatrix remaining when the row $(i)$ and column $(j)$ containing that element are removed from the original matrix. For e.g.,
 %
 \begin{align}
 M_{11}&amp;=(b_2c_3-c_2b_3) \\
@@ -29,7 +29,7 @@ M_{33}&amp;=(a_1b_2-b_1a_2) \\
 \end{align} \\
 
 %text
-Next the cofactor $(CF_{ij})$ for each minor is obtained by multiplying it by $(-1)^\text{i+j}$,
+The final cofactor $(CF_{ij})$ for each minor is obtained by multiplying it by $(-1)^\text{i+j}$,
 %
 \begin{align}
 CF_{11}&amp;=(b_2c_3-c_2b_3)(-1)^{1+1}=b_2c_3-c_2b_3 \\
