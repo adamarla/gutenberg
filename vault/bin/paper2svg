@@ -37,7 +37,6 @@ fi
 # Ensure $dir_tmp exists 
 if [ ! -e $dir_tmp ] ;  then mkdir $dir_tmp ; fi 
 
-
 # Get the last argument = TeX filename 
 shift $((OPTIND-1))
 src_pdf=$dir_tmp/scan.pdf 
