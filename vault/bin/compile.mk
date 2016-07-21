@@ -33,7 +33,7 @@ blueprint.xml : source.tex source.xml
 		sed -i -e "s/\\previewon/\\previewoff/g" source.tex
 		latex --halt-on-error $< && dvips source.dvi && ps2pdf source.ps 
 		rm -f tex*.svg 
-		paper2svg source.pdf 
+		pdf2cards source.pdf 
 		if [ ! -e ~/.gutenberg ] ; then 
 			git add source.tex 
 		fi 
