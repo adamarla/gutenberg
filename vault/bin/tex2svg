@@ -2,9 +2,9 @@
 
 while getopts "qnkj:" option ; do 
   case $option in 
-    q) type="question" ;; 
-    n) type="snippet" ;;
-    k) type="skill" ;;
+    q) type="q" ;; 
+    n) type="snippets" ;;
+    k) type="skills" ;;
     j) id=$OPTARG ;;
     \?) exit 1 ;;
   esac
@@ -14,22 +14,23 @@ done
 shift $((OPTIND-1))
 tex_file=$(readlink -e $1)
 
-if [ -z "$id" ] ; then 
+if [ -z ${type+x} ] ;then 
+  echo "[Error]: Specify a type using -q|-n|-k" 
+  exit 1
+elif [ -z ${id+x} ] ; then 
 	# If TeX file is named as [\d]+.tex, then perhaps the basename is the ID 
 	id=$(basename $1 | cut -d'.' -f1)
-fi
+fi 
 
 # Determine the target folder in vault/ 
 
-if [ "$type" == "question" ] ; then 
-  target=$(find $VAULT/q/ -maxdepth 2 -name $id) 
-elif [ "$type" == "snippet" ] ; then 
-  target=$(find $VAULT/snippets/ -maxdepth 1 -name $id)
-elif [ "$type" == "skill" ] ; then 
-  target=$(find $VAULT/skills/ -maxdepth 1 -name $id)
+if [ $type == "q" ] ; then 
+  dir_vault=$(readlink -f $(ls -d $VAULT/$type/*/$id))
+else 
+  dir_vault=$(readlink -f $(ls -d $VAULT/$type/$id))
 fi 
 
-if [ -z "$target" ] ; then 
+if [ ! -e $dir_vault ] ; then  
   echo "[Error]: Target folder not found!" 
   cd - 
   exit 1
@@ -38,5 +39,5 @@ fi
 # Copy tex_file to target folder and call 'make xmlforquill' 
 # That will take care of switching preview off and adding source.tex to Git
 
-cp $tex_file $target/source.tex
-make -C $target xmlforquill
+cp $tex_file $dir_vault/source.tex
+make -C $dir_vault xmlforquill

@@ -1,19 +1,20 @@
 #!/bin/bash 
 
-while getopts "q:n:k:" option ; do 
+while getopts "qnkj:" option ; do 
   case $option in 
-    q) id=$OPTARG
-       type="q" ;;
-    n) id=$OPTARG
-       type="snippets" ;;
-    k) id=$OPTARG
-       type="skills" ;;
+    q) type="q" ;;
+    n) type="snippets" ;;
+    k) type="skills" ;;
+    j) id=$OPTARG ;;
     \?) exit 1 ;;
   esac
 done
 
-if [ -z ${id+x} ] ; then 
-  echo "[Error]: Specify one of -q|-n|-k <integer-id>" 
+if [ -z ${type+x} ] ;then 
+  echo "[Error]: Specify a type using -q|-n|-k" 
+  exit 1
+elif [ -z ${id+x} ] ; then 
+  echo "[Error]: Specify -j <id> along with -q|-n|-k" 
   exit 1
 fi 
 
