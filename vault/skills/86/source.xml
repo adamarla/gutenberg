@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>\title{Matrix Multiplication} \\
+%text
+How to multiply two matrices
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+For two matrices $A$ and $B$ to be multiplied with each other, the number of columns in $A$ needs to equal the number of rows in $B$.
+%
+\begin{align}
+  A_{m\times n}\times B_{n\times o}=C_{m\times o}
+\end{align} \\
+%text
+The product matrix has as many rows as $A$ and as many columns as $B$. Here is an example,
+%
+\begin{align}
+A&amp;=\left[\begin{array}{ccccc}1 &amp; 2 &amp; 3 &amp; 4 &amp; 5\end{array}\right],\;
+B=\left[\begin{array}{c}1 \\ 2 \\ 3 \\ 4 \\ 5\end{array}\right] \\
+A\times B&amp;=[(1\times 1)+(2\times 2)+(3\times 3)+(4\times 4)+(5\times 5)] \\
+\text{}&amp;=[1+4+9+16+25]=55
+\end{align} \\
+%text
+If $A$ and two or more rows, then so would the product matrix.
+%</tex>
+  </reason>
+</skill>
