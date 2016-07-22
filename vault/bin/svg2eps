@@ -1,0 +1,50 @@
+#!/bin/bash 
+
+while getopts "qnkj:" option ; do 
+  case $option in 
+    q) type="q" ;;
+    n) type="snippets" ;;
+    k) type="skills" ;;
+    j) id=$OPTARG ;;
+    \?) exit 1 ;;
+  esac
+done
+
+if [ -z ${type+x} ] ;then 
+  echo "[Error]: Specify a type using -q|-n|-k" 
+  exit 1
+elif [ -z ${id+x} ] ; then 
+  echo "[Error]: Specify -j <id> along with -q|-n|-k" 
+  exit 1
+fi 
+
+if [ $type == "q" ] ; then 
+  dir_vault=$(readlink -f $(ls -d $VAULT/$type/*/$id))
+  dir_tmp=$HOME/tmp/q/
+else 
+  dir_vault=$(readlink -f $(ls -d $VAULT/$type/$id))
+  dir_tmp=$HOME/tmp/$type/
+fi 
+
+# Ensure $dir_tmp exists 
+if [ ! -e $dir_tmp ] ;  then mkdir $dir_tmp ; fi 
+
+# Get the last argument = SVG filename  
+shift $((OPTIND-1))
+
+# Process the SVG in ~/tmp 
+labels=$(printf "%c" {A..Z})
+let n_prefab=$(ls $dir_tmp/$id-*.eps | wc -l)
+
+echo "Generating ... "
+svg=$(echo $id-${labels:$n_prefab:1}.svg)
+eps_name=$(echo $id-${labels:$n_prefab:1}.eps)
+
+cp $1 $svg 
+svgclip.py -o $svg $svg 
+
+echo "... $eps_name"
+inkscape -E $eps_name $svg  
+cp $eps_name $dir_vault/
+mv $eps_name $dir_tmp/
+rm -f $svg 
