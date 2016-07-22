@@ -17,8 +17,8 @@ last_compiled_on : blueprint.xml
 	if [ -e ~/.gutenberg ] ; then 
 		if [ -e source.tex ] ; then 
 			ping_on_recompile -r 
-		elif [ -e source. xml ] ; then  
-			quill -r $$(pwd) 
+		elif [ -e source.xml ] ; then  
+			quill -p $$(pwd) 
 		fi
 	fi 
 	date > $@
