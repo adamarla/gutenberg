@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="19">
+  <statement>
+    <tex>\text{If }A=\left[\begin{array}{rr} 1 &amp; 0 \\ 3 &amp; 1 \end{array}\right],
+\text{then what is }A^{-1}?</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>A\times A^{-1} = I, \\
+%text
+where $I$ is Identity Matrix.
+%</tex>
+      <tex correct="false">A+ A^{-1} = I, \\
+%text
+where $I$ is Identity Matrix.
+%</tex>
+    </options>
+    <reason>
+      <tex>A\times A^{-1}=A^{-1}\times A=I \\
+%text
+where $I$ is Identity Matrix.
+%</tex>
+    </reason>
+    <skills>
+      <skill id="80"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\text{Let }A^{-1}=\left[\begin{array}{rr} a &amp; b \\ c &amp; d \end{array}\right]
+\text{then } \\
+\left[\begin{array}{cc} 1a+0 &amp; 1b+0 \\ 3a+1c &amp; 3b+1d \end{array}\right]=
+  \left[\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \end{array}\right]</tex>
+    </options>
+    <reason>
+      <tex>\overbrace{\left[\begin{array}{rr}
+  1 &amp; 0 \\
+  3 &amp; 1
+\end{array}\right]}^{A}\times
+\overbrace{\left[\begin{array}{rr}
+  a &amp; b \\
+  c &amp; d
+\end{array}\right]}^{A^{-1}}=
+\left[\begin{array}{cc} 1a+0 &amp; 1b+0 \\ 3a+1c &amp; 3b+1d \end{array}\right] \\
+\text{Since }A\times A^{-1}=\left[\begin{array}{rr} 1 &amp; 0 \\ 0 &amp; 1\end{array}\right] \\
+\therefore
+  \left[\begin{array}{cc} 1a+0 &amp; 1b \\ 3a+1c &amp; 3b+1d \end{array}\right]=
+  \left[\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \end{array}\right]
+</tex>
+    </reason>
+    <skills>
+      <skill id="86"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\begin{align}
+  \left[\begin{array}{cc} 1a+0 &amp; 1b+0 \\ 3a+1c &amp; 3b+1d \end{array}\right]=\left[\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \end{array}\right] \\
+\implies a=1,b=0,c=-3\text{ and }d=1
+\end{align}</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  \text{}&amp;\left[\begin{array}{cc} 1a+0 &amp; 1b+0 \\ 3a+1c &amp; 3b+1d \end{array}\right]=\left[\begin{array}{cc} 1 &amp; 0 \\ 0 &amp; 1 \end{array}\right] \\
+\implies &amp;1a=1, \;1b=0 \\
+\implies &amp;3a+1c=0,\; 3b+1d=1 \\
+\implies &amp;a=1,b=0,c=-3\text{ and }d=1
+\end{align}</tex>
+    </reason>
+    <skills>
+      <skill id="1"/>
+    </skills>
+  </step>
+  <choices>
+    <tex>\left[\begin{array}{cc}
+  1 &amp; 0 \\
+  -3 &amp; 1
+\end{array}\right]
+</tex>
+    <tex correct="false">\left[\begin{array}{cc}
+  1 &amp; 0 \\
+  0 &amp; 1
+\end{array}\right]
+</tex>
+    <tex correct="false">\left[\begin{array}{cc}
+  1 &amp; 9 \\
+  3 &amp; 1
+\end{array}\right]
+</tex>
+    <tex correct="false">\left[\begin{array}{cc}
+  1 &amp; 3 \\
+  3 &amp; 1
+\end{array}\right]
+</tex>
+  </choices>
+</question>

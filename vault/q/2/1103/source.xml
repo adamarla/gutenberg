@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="26">
+  <statement>
+    <tex>%text
+If $\ora{a}=\vector{1}{2}{-1}$, $\ora{b}=\vector{2}{1}{1}$ and $\ora{c}=\vector{5}{-4}{3}$, then find the value of $(\ora{a}+\ora{b})\cdot \ora{c}$.
+%
+</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>\ora{a}+\ora{b}=3\hat\imath+3\hat\jmath</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  \ora{a}+\ora{b}&amp;=\vector{(1+2)}{(2+1)}{(-1+1)} \\
+  &amp;=\vector{3}{3}{}  
+\end{align}</tex>
+    </reason>
+    <skills>
+      <skill id="82"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex correct="false">\begin{align}
+  (\ora{a}+\ora{b})\cdot \ora{c}
+    &amp;=(3\hat\imath+3\hat\jmath)\cdot(5\hat\imath -4\hat\jmath+3\hat{\it k}) \\
+    &amp;=15-12+9+15-12+9 \\
+    &amp;=24
+
+\end{align}
+</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  (\ora{a}+\ora{b})\cdot \ora{c}
+    &amp;=(3\hat\imath+3\hat\jmath)\cdot(5\hat\imath -4\hat\jmath+3\hat{\it k}) \\
+    &amp;=(3\cdot 5)+(3\cdot (-4))+(0\cdot 3) \\
+    &amp;=15-12=3
+
+\end{align}
+</tex>
+    </reason>
+    <skills>
+      <skill id="83"/>
+    </skills>
+  </step>
+  <choices>
+    <tex correct="false">24</tex>
+    <tex correct="false">27</tex>
+    <tex correct="false">30</tex>
+    <tex>3</tex>
+  </choices>
+</question>

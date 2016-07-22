@@ -7,69 +7,67 @@ If $A=\left[\begin{array}{cc} 2 &amp; 3 \\ 5 &amp; -2\end{array}\right]$, write 
   </statement>
   <step>
     <options>
-      <tex>A^{-1}=\dfrac{1}{|A|}\cdot Adj(A)</tex>
-      <tex correct="false">A^{-1}=|A|\cdot Adj(A)</tex>
+      <tex>A=\left[\begin{array}{cc} 2 &amp; 3 \\ 5 &amp; -2\end{array}\right]\implies|A|=-19</tex>
     </options>
     <reason>
       <tex>\begin{align}
-  &amp;|A|\cdot I=A\cdot Adj(A) \\
-  \implies &amp; I=A \left(\dfrac{1}{|A|}Adj(A)\right) \\
-  \implies &amp; A^{-1}=\dfrac{1}{|A|}Adj(A)
-\end{align} \\
-%text
-where $I$ is identity matrix.
-%</tex>
+  A&amp;=\left[\begin{array}{cc} 2 &amp; 3 \\ 5 &amp; -2\end{array}\right] \\
+  \implies|A|&amp;=2\cdot(-2)-5\cdot 3=-19
+\end{align}</tex>
     </reason>
     <skills>
-      <skill id="80"/>
+      <skill id="85"/>
     </skills>
   </step>
   <step>
     <options>
-      <tex>\begin{align}
-A=&amp;\left[\begin{array}{cc} 2 &amp; 3 \\ 5 &amp; -2\end{array}\right] \text{ and }  A^{-1}=\dfrac{1}{|A|}Adj(A) \\
-
-\therefore A^{-1}=&amp;-\dfrac{1}{19}\left[\begin{array}{cc} 
-    -2 &amp; -3 \\ -5 &amp; 2 \end{array}\right]
-\end{align}
-</tex>
       <tex correct="false">\begin{align}
-A=&amp;\left[\begin{array}{cc} 2 &amp; 3 \\ 5 &amp; -2\end{array}\right] \text{ and }  A^{-1}=\dfrac{1}{|A|}Adj(A) \\
-
-\therefore A^{-1}=&amp;-\dfrac{1}{19}\left[\begin{array}{cc} 
-    -2 &amp; 3 \\ 5 &amp; 2 \end{array}\right]
+  A=\left[\begin{array}{cc} 2 &amp; 3 \\ 5 &amp; -2\end{array}\right] \implies
+  Adj(A)=\left[\begin{array}{cc}  -2 &amp; 3 \\ 5 &amp; 2 \end{array}\right]
 \end{align}
 </tex>
     </options>
     <reason>
-      <tex>A=\left[\begin{array}{cc} 2 &amp; 3 \\ 5 &amp; -2\end{array}\right]
-  \therefore |A|= 2\cdot(-2)-5\cdot 3=-19 \\
-\begin{align}
-  CF(A)&amp;=\left[\begin{array}{cc} -2 &amp; -5 \\ -3 &amp; 2 \end{array}\right]
+      <tex>\begin{align}
+  A&amp;=\left[\begin{array}{cc} 2 &amp; 3 \\ 5 &amp; -2\end{array}\right] \\
+  \therefore CF(A)&amp;=\left[\begin{array}{cc} -2 &amp; -5 \\ -3 &amp; 2 \end{array}\right]
     \,\text{(cofactor matrix)}\\
-  Adj(A)&amp;=CF^T \, \text{(transpose of CF)} \\
-    &amp;=\left[\begin{array}{cc} -2 &amp; -3 \\ -5 &amp; 2 \end{array}\right] \\
-  A^{-1}&amp;=-\dfrac{1}{19}\left[\begin{array}{cc} 
-    -2 &amp; -3 \\ -5 &amp; 2 \end{array}\right]
-    =\dfrac{-1}{19}(-A)=\dfrac{A}{19}
-\end{align} \\
-
-%text
-Note: In the case of a $2\times 2$ matrix, you
-can directly compute the inverse like so,
-%
-A=\left[\begin{array}{cc}a &amp; b \\ c &amp; d\end{array}\right]
-  \implies A^{-1}=\dfrac{1}{|A|}\left[\begin{array}{cc} d &amp; -b \\ -c &amp; a \end{array} \right]$
-</tex>
+  \therefore Adj(A)&amp;=CF(A)^T \qquad \text{(transpose of $CF(A)$)} \\
+    \text{}&amp;=\left[\begin{array}{cc} -2 &amp; -3 \\ -5 &amp; 2 \end{array}\right]
+\end{align} \\</tex>
     </reason>
     <skills>
       <skill id="79"/>
     </skills>
   </step>
+  <step>
+    <options>
+      <tex>\begin{align}
+  A^{-1}=\dfrac{1}{|A|}\cdot Adj(A)=
+  \left[\begin{array}{cc}  \dfrac{2}{19} &amp; \dfrac{-3}{19} \\ 
+    \dfrac{5}{19} &amp; \dfrac{2}{19} \end{array}\right]
+\end{align}</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  A^{-1}&amp;=\dfrac{1}{|A|}\cdot Adj(A) \\
+  \text{}&amp;=\dfrac{1}{-19}\left[\begin{array}{cc}  -2 &amp; -3 \\ -5 &amp; 2 \end{array}\right]
+  =\left[\begin{array}{cc}  \dfrac{2}{19} &amp; \dfrac{-3}{19} \\ 
+    \dfrac{5}{19} &amp; \dfrac{2}{19} \end{array}\right]
+\end{align}</tex>
+    </reason>
+    <skills>
+      <skill id="80"/>
+    </skills>
+  </step>
   <choices>
-    <tex correct="false">A^{-1}=-\dfrac{A}{19}</tex>
-    <tex correct="false">A^{-1}=-\dfrac{A'}{19}</tex>
-    <tex correct="false">A^{-1}=\dfrac{A'}{19}</tex>
-    <tex>A^{-1}=\dfrac{A}{19}</tex>
+    <tex>  A^{-1}=
+  \left[\begin{array}{cc}  \dfrac{2}{19} &amp; \dfrac{-3}{19} \\ 
+    \dfrac{5}{19} &amp; \dfrac{2}{19} \end{array}\right]</tex>
+    <tex correct="false">A^{-1}=
+  \left[\begin{array}{cc}  \dfrac{-2}{19} &amp; \dfrac{3}{19} \\ 
+    \dfrac{5}{19} &amp; \dfrac{2}{19} \end{array}\right]</tex>
+    <tex correct="false">A^{-1}=\left[\begin{array}{cc} 2 &amp; 3 \\ 5 &amp; -2\end{array}\right]</tex>
+    <tex correct="false">A^{-1}=\left[\begin{array}{cc} -2 &amp; -3 \\ -5 &amp; 2\end{array}\right]</tex>
   </choices>
 </question>
