@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>\title{Scalar Triple Product} \\
+%text
+Properties and computing the Scalar Triple Product
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+The scalar triple product of three vectors is expressed as $\ora{a}\cdot(\ora{b}\times\ora{c})$. It is computed as shown, 
+%
+\begin{align}
+  \ora{a}&amp;=\vector{a_1}{a_2}{a_3} \\
+  \ora{b}&amp;=\vector{b_1}{b_2}{b_3} \\
+  \ora{c}&amp;=\vector{c_1}{c_2}{c_3} \\
+  \ora{a}\cdot(\ora{b}\times\ora{c})&amp;=
+  \left|\begin{array}{ccc}a_1 &amp; a_2 &amp; a_3 \\ b_1 &amp; b_2 &amp; b_3 \\ 
+    c_1 &amp; c_2 &amp; c_3 \end{array}\right|
+\end{align} \\
+%text
+A key attributes of the vector triple product is circular shift invariance, i.e.,
+%
+\begin{align}
+  \ora{a}\cdot(\ora{b}\times\ora{c})\equiv \ora{c}\cdot(\ora{a}\times\ora{b}) \equiv \ora{b}\cdot(\ora{a}\times\ora{c})
+\end{align}
+</tex>
+  </reason>
+</skill>
