@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>\title{Cartesin and Vector forms of a line} \\
+%text
+Relation between cartesian and vector forms of a line in three dimensionsional space.
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+The cartesian form for the equation of a line passing through the points $x_1$, $y_1$, $z_1$ and having direction ratios $a$, $b$ and $c$ is,
+%
+\begin{align}
+  \dfrac{x-x_1}{a}=\dfrac{y-y_1}{b}=\dfrac{z-z_1}{c}
+\end{align} \\
+%text
+Therefore the coordinates of any point on this line are,
+%
+\begin{align}
+  (a\lambda+x_1), (b\lambda+y_1), (c\lambda+z_1), \text{ where} \lambda\in\mathbb{R}
+\end{align} \\
+%text
+In vector notation, the position vector $\ora{r}$ of any point on this line can be expressed as,
+%
+\begin{align}
+  \ora{r}&amp;=\vector{(x_1+a\lambda)}{(y_1+b\lambda)}{(z_1+c\lambda)} \\
+  &amp;=\vector{x_1}{y_1}{z_1}+\lambda(\vector{a}{b}{c}) \\
+  &amp;=\ora{p}+\lambda\ora{q}
+\end{align} \\
+%text
+where $\ora{p}$ is a known point on the line and $\ora{q}$ is a vector representing the direction (ratios) of the line.
+%
+</tex>
+  </reason>
+</skill>
