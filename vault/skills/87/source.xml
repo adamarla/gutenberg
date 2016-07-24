@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>\title{Vector (Cross) Product} \\
+%text
+Vector multiplication of two vectors
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+The cross-product of two non-zero vectors is a{\bf vector} which is{\bf perpendicular} to the plane containing the original vectors. It is given by the following equation.
+%
+\begin{align}
+  \ora{A}&amp;=\vector{a_1}{a_2}{a_3} \\
+  \ora{B}&amp;=\vector{b_1}{b_2}{b_3} \\
+  \ora{A}\times \ora{B}&amp;=\left|\begin{array}{ccc}\hat i &amp; \hat j &amp; \hat k \\
+  a_1 &amp; a_2 &amp; a_3 \\ b_1 &amp; b_2 &amp; b_3\end{array}\right|
+\end{align} \\
+%text
+If the angle $\theta$ between the vectors is known, then the magnitude of the product can be established by the following equation,
+%
+\begin{align}
+  |\ora{A}\times \ora{B}|=|\ora{A}||\ora{B}|\sin\theta
+\end{align} \\
+%text
+Note: Unlike a vector dot product, the result of a vector cross product is also a vector.
+%</tex>
+  </reason>
+</skill>
