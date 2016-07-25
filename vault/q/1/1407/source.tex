@@ -1,0 +1,56 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\val{\frac{7}{32}}
+\newcommand\angb{\cos^{-1}\val}
+
+\previewoff 
+
+\begin{document} 
+\begin{question}
+	\statement 
+    
+    Evaluate the following 
+    \[\qquad y = \sin \left(\frac{1}{2}\cos^{-1}\val \right)\]
+    
+    \begin{step}
+  \begin{options} 
+     \correct 
+       
+       If $\phi = \cos^{-1} \val$ then $y = \sqrt{\dfrac{1-\cos\phi}{2}}$
+     
+     \incorrect
+     
+     If $\phi = \cos^{-1} \val$ then $y = \sqrt{\dfrac{1+\cos\phi}{2}}$
+    \end{options} 
+     \reason 
+     
+     $\cos^{-1}\val$ is an angle. Let us call it $\phi$. And therefore
+    \begin{align}
+	y &= \sin \left(\frac{1}{2}\angb \right) = \sin \left(\frac{\phi}{2} \right) \\
+	&= \underbrace{\sqrt{\dfrac{1-\cos\phi}{2}}}_{\left(\text{Because } \sqrt{\frac{1-\cos 2\theta}{2}} = \sin\theta \right)}
+\end{align}
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+       \[\therefore y = \frac{5}{8} \]
+        
+    \incorrect 
+    
+    \[\therefore y = \frac{5}{16} \]
+    \end{options} 
+     \reason 
+     
+     \begin{align}
+     y = \sqrt{\dfrac{1-\cos \phi}{2}}&\text{ where } \phi=\angb \\
+     \implies \cos\phi &= \val \\
+     \therefore y &= \sqrt{\dfrac{1-\val}{2}} = \frac{5}{8}
+\end{align}
+       
+\end{step}
+\end{question} 
+\end{document} 
