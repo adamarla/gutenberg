@@ -1,0 +1,29 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    
+    \incorrect
+    
+    \[ \sin^{-1} \left(\sin 3 \right) = 3 \]
+    
+    \reason
+    
+    First, recall that 
+    \[\qquad \sin^{-1} x =\theta \implies \theta\in \left[-\frac\pi{2},\frac{\pi}{2} \right]\]
+    
+    But $ 3 > \frac\pi{2}$. Therefore $\sin^{-1} \left(\sin 3 \right)\neq 3$\newline 
+    
+    Instead, note that 
+    \begin{align}
+	\sin 3 &= \sin \left(\pi -3 \right) \\
+	\text{and } \left(\pi-3 \right) &= \left(3.14-3 \right)\in \left[-\frac\pi{2},\frac\pi{2} \right] \\
+	\therefore\sin^{-1} \left(\sin 3 \right) &= \sin^{-1} \left[\sin \left(\pi-3 \right) \right] \\
+	&= \pi - 3 
+\end{align}
+    
+\end{snippet} 
+\end{document} 
