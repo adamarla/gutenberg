@@ -4,18 +4,26 @@
     <tex>\title{Vector Addition / Subtraction} \\
 
 %text
-Adding / Subtracting two (or more) vectors expressed in component form.
+Adding / Subtracting vectors, Triangle Law
 %</tex>
   </render>
   <reason>
-    <tex>\begin{align}
+    <tex>%text
+Since the components along each unit vector are in the same direction, any two vectors $\ora{A}$ and $\ora{B}$ can be added/subtracted as shown.
+%
+\begin{align}
   \ora{A}&amp;=\vector{a_1}{a_2}{a_3} \\
   \ora{B}&amp;=\vector{b_1}{b_2}{b_3} \\
   \ora{A}\pm\ora{B}&amp;=\vector{(a_1\pm b_1)}{(a_2\pm b_2)}{(a_3\pm b_3)}
 \end{align} \\
 %text
-Since the components along each unit vector are in the same direction, they can be added/subtracted as the case might be.
+Further, their displacement vector $\ora{AB}$ is given by $\ora{B}-\ora{A}$. If $\ora{A}$, $\ora{B}$ and $\ora{C}$ are three vectors then,
 %
-</tex>
+\begin{align}
+  \ora{AB}+\ora{BC}=\ora{AC}
+\end{align} \\
+%text
+This is known as the{\bf triangle law} of vector addition.
+%</tex>
   </reason>
 </skill>
