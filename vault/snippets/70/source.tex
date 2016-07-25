@@ -1,0 +1,26 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+
+\begin{snippet}
+    \correct
+    
+     \[ \qquad \underbrace{\tan 1 > \tan^{-1} 1}_{\text{Angles in radians}}  \]
+
+    
+    \reason
+    
+    Note that 
+    $\dfrac\pi{4} = \dfrac{3.14159\ldots}{4} < 1$\newline 
+    
+    Also note that $\dfrac\pi{4} < 1 < \dfrac\pi{2}$ and therefore 
+    \[ \quad \tan 1 > \tan\frac\pi{4} \implies \tan 1 > 1 \]
+    
+    But $1 > \frac\pi{4} = \tan^{-1} 1$. Therefore 
+    \[ \underbrace{\tan 1 > 1 > \tan^{-1} 1 \implies \tan 1 > \tan^{-1} 1}_{a > b  > c \implies a > c} \]
+    
+\end{snippet} 
+\end{document}
