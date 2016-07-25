@@ -5,6 +5,10 @@
 leaf_mk=$VAULT/bin/compile.mk
 dive_mk=$VAULT/bin/dive.mk 
 
+log_dir=~/.cron-logs/$(date +"%d.%m.%Y")
+log_f=$log_dir/$(date +"%H.%M")
+
+mkdir -p $log_dir 
 cd $VAULT 
 
 # Ensure that each non-leaf folder has a soft-link to dive.mk
@@ -23,11 +27,11 @@ done
 if [ ! -e .block-cron ] ; then 
   touch .block-cron 
   for f in $(ls -d snippets/ skills/ q/1/) ; do 
-    make -C $f 
+    make -C $f >> $log_f
   done 
 
   # Recreate Zip files in case some SVGs have changed
-  zippify -r 
+  zippify -r >> $log_f 
 
   # Remove the block on further cron-jobs 
   rm -f .block-cron
