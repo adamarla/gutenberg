@@ -1,0 +1,32 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\angb{\frac{8\pi}{7}}
+\newcommand\prng{ \left(-\frac\pi{2},\frac\pi{2} \right)} 
+\newcommand\angc{\frac\pi{7}} 
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    \incorrect
+
+\[ \tan^{-1} \left(\tan\angb \right) = \angb \]		
+		    
+    \reason
+    
+    If $\tan^{-1}x = \theta$ then $\theta\in\prng$ - the principal range of $\tan^{-1} x$ \newline 
+    
+    But $\angb > \pi$ and therefore $\angb\notin\prng$ \newline 
+    
+    Recall however that $\tan \left(\pi+\theta \right)=\tan\theta$. Which means 
+    that 
+    \begin{align}
+	\tan \left(\angb \right) &= \tan \left(\pi + \angc \right) = \tan\angc \\
+	\text{Also }\angc&\in \prng \\
+	\therefore \tan^{-1} \left(\tan\angb \right) &= \tan^{-1} \left(\tan\angc \right) \\
+	&= \angc 
+\end{align}
+    
+\end{snippet} 
+\end{document} 
