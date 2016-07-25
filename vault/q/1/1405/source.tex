@@ -1,0 +1,56 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{question}
+	\statement 
+    
+    Find the value of 
+    \[ \qquad y = \sin \left(2\tan^{-1}2 \right)\]
+          
+    \begin{step}
+  \begin{options} 
+     \correct 
+     
+       $\tan^{-1}2$ is an angle. And therefore 
+       \[ \quad \phi = \tan^{-1} 2\implies y = \dfrac{2\tan\phi}{1+\tan^2\phi}\]
+
+     \incorrect
+        
+        $\tan^{-1}2$ is an angle. And therefore 
+       \[ \quad \phi = \tan^{-1} 2\implies y = \dfrac{2\tan\phi}{1-\tan^2\phi}\]
+    \end{options} 
+     \reason 
+     
+     Yes, $\tan^{-1} 2$ is an angle. And if that angle be $\phi$, then 
+     \begin{align}
+	y &= \sin \left(2\phi \right) = 2\sin\phi\cdot\cos\phi \\
+	&= \dfrac{2\sin\phi\cos\phi}{\underbrace{\sin^2\phi + \cos^2\phi}_{=1}} = \underbrace{\dfrac{2\tan\phi}{1+\tan^2\phi}}_{\text{Divide throughout by }\cos^2\phi}
+\end{align}
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+     And hence, $y = \sin \left(2\tan^{-1} 2 \right) = \dfrac{4}{5}$ 
+     \incorrect
+     
+     And hence, $y = \sin \left(2\tan^{-1} 2 \right) = \dfrac{3}{5}$ 
+        
+    \end{options} 
+     \reason 
+     
+     \begin{align}
+     y &= \dfrac{2\tan\phi}{1+\tan^2\phi} \text{ where } \underbrace{\tan\phi = 2}_{\phi = \tan^{-1} 2} \\
+     \therefore y &= \dfrac{2\times 2}{1+2^2} = \dfrac{4}{5}  
+\end{align}
+     
+     
+       
+\end{step}
+\end{question} 
+\end{document} 
