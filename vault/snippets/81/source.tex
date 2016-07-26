@@ -1,0 +1,22 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\intg{\int_1^2 \frac{dx}{x^3}}
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    \incorrect
+    
+    \[ \intg = \left[\frac{-3}{x^2} \right]_1^2 = \frac{9}{4} \]
+    
+    \reason
+    
+    \begin{align}
+	\intg &= \left[ \int_1^2 \left(x^{-3} \right)\cdot dx \right] \\
+	&= \left[\frac{x^{-2}}{-2} \right]_1^2 = \left[-\frac{1}{2x^2} \right]_1^2 \\
+	&= \left[-\frac{1}{4} - \left(-\frac{1}{2} \right) \right] = \frac{3}{8} 
+\end{align}
+    
+\end{snippet} 
+\end{document} 

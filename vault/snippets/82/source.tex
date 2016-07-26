@@ -1,0 +1,23 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\intg{\int_0^{\frac\pi{2}} \sin 2x\cdot dx }
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    
+    
+    \incorrect
+    
+    \[ \intg = 0 \]
+    \reason
+    
+    \begin{align}
+	\intg &= \left[-\frac{\cos 2x}{2} \right]_0^{\frac\pi{2}} \\
+	&= \underbrace{\frac{1}{2} \left[\cos 2x \right]_{\frac\pi{2}}^0 }_{-\int_a^b f(x)\cdot dx = \int_b^a f(x)\cdot dx} \\
+	&= \frac{1}{2} \left[\cos 0 - \cos \pi \right] \\
+	&= \frac{1}{2} \left[1 + 1 \right] = 1
+\end{align}
+\end{snippet} 
+\end{document} 
