@@ -1,0 +1,113 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\fx{\pi\sin \left(\pi x \right) + 2x - 4}
+\newcommand\expb{ \left(x-2 \right)^2 + 2\sin^2 \left(\frac{\pi x}{2} \right)}
+
+\previewoff 
+
+\begin{document} 
+\begin{question}
+	\statement 
+    
+    For what values of $x$ does the anti-derivative of $f(x) = \fx$ which has the value $3$ when $x = 1$ vanish? 
+    
+    \begin{step}
+  \begin{options} 
+     \correct 
+       
+       We have to find $x$ for which 
+       \[ \, F(x) = \int \left[\fx \right]\cdot dx = 0  \]
+     \incorrect
+     
+     We have to find $x$ for which 
+       \[ \quad f(x) = \fx = 0 \]
+        
+    \end{options} 
+     \reason 
+     
+     It is the anti-derivative of $f(x)$ that has to vanish. Which means we have to find the $x$'s where 
+     \[ \qquad F(x) = \int f(x)\cdot dx = 0 \]
+     
+     given that $F(1) = 3$ 
+       
+\end{step} 
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+       If $F(1) = 3$ then 
+       \[\quad F(x) = -\cos \left(\pi x \right) + x^2 - 4x + 5 \]
+       
+     \incorrect
+        
+        If $F(1) = 3$ then 
+       \[\quad F(x) = -\cos \left(\pi x \right) + x^2 - 4x + 7 \]
+    \end{options} 
+     \reason 
+       
+       \begin{align}
+	F(x) &= \int f(x)\cdot dx \\
+	&= \int \left[\fx \right]\cdot dx \\
+	&= \left[\pi\cdot\frac{-\cos \left(\pi x \right)}{\pi} + 2\cdot\frac{x^2}{2} - 4x\right] + C \\
+	&= -\cos \left(\pi x \right)+ x^2 - 4x + C
+\end{align}
+
+But $F(1) = 3$. And therefore 
+\begin{align}
+F(1) = 3 &\implies -\cos \pi + 1^2 - 4 + C = 3 	\\
+\text{or } 3 &= 1 + 1 -4 + C \implies C = 5 
+\end{align}
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       \begin{align}
+	F(x) &= -\cos \left(\pi x \right) + x^2 - 4x + 5 \\
+	&= \left(x-2 \right)^2 + 2\sin^2 \left(\frac{\pi x}{2} \right)
+\end{align}
+
+\incorrect 
+
+ \begin{align}
+	F(x) &= -\cos \left(\pi x \right) + x^2 - 4x + 5 \\
+	&= \left(x-1 \right)^2 + 2\cos^2 \left(\frac{\pi x}{2} \right)
+\end{align}
+        
+    \end{options} 
+     \reason 
+       
+       \begin{align}
+       F(x) &=  -\cos \left(\pi x \right) + \overbrace{x^2 - 4x + 5}^{A} \\
+       &= \underbrace{\left(x^2-4x+4 \right) + 1}_{A} -\cos \left(\pi x \right) \\
+       &= \left(x-2 \right)^2 + \left[1-\cos \left(\pi x \right) \right] \\
+       &= \left(x-2 \right)^2 + \underbrace{2\sin^2 \left(\frac{\pi x}{2} \right)}_{1-\cos 2\theta = 2\sin^2\theta}
+\end{align}
+\end{step}
+
+\begin{step}
+  \begin{options} 
+       
+     \incorrect 
+     
+     If $F(x) = \expb = 0$ then 
+     \[ \qquad \left(x-2 \right)^2 = - 2\sin^2 \left(\frac{\pi x}{2} \right)\]
+       
+     But this can't happen for any value of $x$. Hence, \underline{there is no valid value of $x$} 
+    
+    \end{options} 
+
+ \reason
+     
+     If $F(x) = \expb$ then 
+     \[ \qquad F(x) = 0 \implies \begin{cases} 
+     \left(x-2 \right)^2 = 0 \\
+     2\sin^2 \left(\frac{\pi x}{2} \right) = 0
+     \end{cases} \]
+     This is possible \underline{only if $x = 2$} as at $x=2, \left(x-2 \right)=0$ and $\sin \left(\frac{\pi x}{2} \right) = \sin \pi x = 0$ 
+       
+\end{step}
+\end{question} 
+\end{document} 
