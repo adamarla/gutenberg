@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>\title{Equation of Plane} \\
+%text
+Cartesian and Vector forms of equation a plane in three dimensional space
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+A plane in 3d space is given by,
+%
+\begin{align}
+  ax+by+cz=d
+\end{align} \\
+%text
+The same equation in vector form is expressed as,
+%
+\begin{align}
+  \ora{r}\cdot(\vector{a}{b}{c})=d
+\end{align} \\
+%text
+The constants $a$, $b$ and $c$ represent the direction ratios of the plane. If $l$, $m$ and $n$ represent the direction cosines of the plane then,
+%
+\begin{align}
+  l&amp;=\dfrac{a}{\sqrt{a^2+b^2+c^2}}, \\
+  m&amp;=\dfrac{a}{\sqrt{a^2+b^2+c^2}}, \\
+  n&amp;=\dfrac{a}{\sqrt{a^2+b^2+c^2}}
+\end{align} \\
+%text
+Dividing both sides of the cartesian equation by $\sqrt{a^2+b^2+c^2}$, the equation of the plane becomes,
+%
+\begin{align}
+  lx+my+nz=\dfrac{d}{\sqrt{a^2+b^2+c^2}}
+\end{align} \\
+%text
+The right hand side of the above equation represents the $\perp$ distance from origin to the plane.
+%
+</tex>
+  </reason>
+</skill>

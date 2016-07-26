@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com">
   <render>
-    <tex>\title{Cartesin and Vector forms of a line} \\
+    <tex>\title{Cartesian and Vector forms of a line} \\
 %text
-Relation between cartesian and vector forms of a line in three dimensionsional space.
+Cartesian and Vector forms of a line in three dimensionsional space and their relationship
 %</tex>
   </render>
   <reason>
