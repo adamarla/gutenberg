@@ -6,27 +6,7 @@ Show that the following two lines are coplanar:
 %
 \qquad l_1:\dfrac{x-a+d}{\alpha-\delta}=\dfrac{y-a}{\alpha}=\dfrac{z-a-d}{\alpha+\delta}
 \text{ and} \\
-\qquad l_2:\dfrac{x-b+c}{\beta-\gamma}=\dfrac{y-b}{\beta}=\dfrac{z-b-c}{\beta+\gamma}
-\\
-\text{Let A and B be points on each of the lines} \\
-\text{and let }\ora{d_1} \text{ and }
-  \ora{d_2}
-\text{ be the direction vectors}\\
-\text{of the two lines.}\\
-\text{If the lines are coplaner, then what is}\\
-\ora{AB}\cdot(\ora{d_1}\times 
-  \ora{d_2})?
-\\
-\text{If }\dfrac{x-a+d}{\alpha-\delta}=
-  \dfrac{y-a}{\alpha}=\dfrac{z-a-d}{\alpha+\delta} \\
-\text{passes through A and }\\
-\dfrac{x-b+c}{\beta-\gamma}=
-  \dfrac{y-b}{\beta}=\dfrac{z-b-c}{\beta+\gamma} \\
-\text{passes through B, and $\ora{d_1}$ and $\ora{d_2}=0$ } \\
-\text{are direction vectors, what would prove that} \\ 
-\text{the lines are coplanar?} \\
-\\
-</tex>
+\qquad l_2:\dfrac{x-b+c}{\beta-\gamma}=\dfrac{y-b}{\beta}=\dfrac{z-b-c}{\beta+\gamma}</tex>
   </statement>
   <step>
     <options>
