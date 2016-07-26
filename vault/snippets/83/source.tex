@@ -1,0 +1,24 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\intg{\int_0^\pi}
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    \correct
+    
+    \[ \intg \cos^2 x \cdot dx = \frac\pi{2} \]
+    
+    \reason
+    
+    \begin{align}
+	\intg \cos^2\cdot dx &= \intg \left[\frac{1+\cos 2x}{2} \right]\cdot dx \\
+	&= \frac{1}{2} \left[\intg dx + \intg \cos 2x\cdot dx \right] \\
+	&= \frac{1}{2} \left[x + \frac{\sin 2x}{2} \right]_0^\pi \\
+	&= \frac{1}{2} \left[ \left(\pi + 0 \right) - \left(0 + 0 \right) \right] \\
+	&= \frac\pi{2} 
+\end{align}
+    
+\end{snippet} 
+\end{document} 
