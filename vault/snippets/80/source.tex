@@ -1,0 +1,27 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\newcommand\expa{\sin \left(\frac{x}{2} \right)}
+\newcommand\expb{\cos \left(\frac{x}{2} \right)}
+\newcommand\expc{ \left[\expa + \expb \right]}
+
+\begin{document} 
+\begin{snippet}
+    
+    \incorrect
+    
+    \[ \int \expc^2\cdot dx = x + \sin x + C \]
+    
+    \reason
+    
+    \begin{align}
+	&\int \expc^2\cdot dx \\
+	&= \int \left[\underbrace{\sin^2 \left(\frac{x}{2} \right) + \cos^2 \left(\frac{x}{2} \right)}_{=1} + \underbrace{2\expa\cdot\expb}_{=\sin x}\right]dx \\
+	&= \int \left(1 + \sin x \right)\cdot dx = \int dx + \int \sin x\cdot dx  \\
+	&= x -\cos x + C 
+\end{align}
+    
+\end{snippet} 
+\end{document} 

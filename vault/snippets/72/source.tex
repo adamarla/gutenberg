@@ -1,0 +1,32 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\newcommand\angb{\frac{8\pi}{7}}
+\newcommand\prng{ \left[0,\pi \right]} 
+\newcommand\angc{\frac{6\pi}{7}}
+
+\begin{document} 
+\begin{snippet}
+    
+    \correct
+    
+    \[ \cos^{-1} \left(\cos\frac{8\pi}{7} \right) = \frac{6\pi}{7} \]
+    
+    \reason
+    
+    If $\cos^{-1} x = \theta$ then $\theta \in \left[0,\pi \right]$. But note that $\frac{8}{7} > 1\implies\frac{8\pi}{7} > \pi$ \newline 
+    
+Which means that $\angb\notin\prng$. And hence $\cos^{-1}\left( \cos\angb\right)\neq\angb$ \newline 
+
+Instead, notice that 
+\begin{align}
+\cos \left(\angb \right) &= \cos \left(2\pi-\angb \right) \\
+&= \cos \left(\angc \right) \\
+\text{And }\frac{6}{7} &< 1\implies \angc\in\prng \\
+\therefore \cos^{-1}\left(\cos\angb \right) &= \angc
+\end{align}
+    
+\end{snippet} 
+\end{document} 

@@ -1,0 +1,26 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\anga{\cos^{-1}\frac{1}{2}}
+\newcommand\angb{\sin^{-1}\frac{\sqrt{3}}{2}}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    
+    \incorrect
+    
+    \[ \tan \left(\anga + \angb= \right) = \sqrt{3} \]
+    
+    \reason
+    
+    \begin{align}
+	\anga &= \frac\pi{3} \text{ and } \angb = \frac\pi{3} \\
+	\therefore y &= \tan \left(\anga + \angb \right) \\
+	&= \tan \left(\frac\pi{3} + \frac\pi{3} \right) = \tan\frac{2\pi}{3} \\
+	&= -\sqrt{3} \left(\text{not }\sqrt{3}  \right)
+\end{align}
+    
+\end{snippet} 
+\end{document} 

@@ -1,0 +1,35 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\intga{\int_{-\frac\pi{2}}^{\frac\pi{2}}}
+\newcommand\intgb{2\int_0^{\frac\pi{2}}}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    
+    \incorrect
+    
+    \[ \intga \vert\sin x\vert \cdot dx = 0 \]
+    \reason
+    
+    \[ \vert\sin x\vert = \begin{cases} 
+    \sin x, \, x\in \left[0,\frac\pi{2} \right] \\
+    - \left(\sin \left(-x \right) \right) = \sin x,\, x\in \left(-\frac\pi{2},0 \right)
+    \end{cases} \]
+    
+    In other words, $f(x) = f(-x)$. And hence, $f(x) = \vert\sin x\vert$ is an 
+    \underline{even function}\newline 
+    
+    And we know that for even functions 
+    \[ \quad \int_{-a}^a f(x)\cdot dx = 2\int_0^a f(x)\cdot dx \]
+    
+    And therefore, 
+    \begin{align}
+	\intga \vert\sin x\vert\cdot dx &= \intgb \vert\sin x\vert\cdot dx  \\
+	&= \intgb \sin x\cdot dx \\
+	&= 2\left[-\cos x \right]_0^{\frac\pi{2}} = 2
+\end{align}
+\end{snippet} 
+\end{document} 

@@ -4,7 +4,7 @@ SHELL=/bin/bash
 .PHONY : clean xmlforquill
 
 last_compiled_on : blueprint.xml
-	@ if [ ! -e source.xml ] ; then
+	@ if [ ! -s $< -o ! -e source.xml ] ; then
 		path=$$(pwd | rev | cut -d'/' -f1-2 | rev)
 		echo "Skipping .... $$path" 
 		exit 0
@@ -40,6 +40,8 @@ blueprint.xml : source.tex source.xml
 	elif [ -s source.xml ] ;then 
 		quill -r $$(pwd) 
 		cp source.xml blueprint.xml
+	else 
+		touch $@
 	fi
 
 source.tex : 
