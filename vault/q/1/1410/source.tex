@@ -1,0 +1,55 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\half{\frac{1}{2}}
+\newcommand\intg{\int_0^\pi}
+
+\previewoff 
+
+\begin{document} 
+\begin{question}
+	\statement 
+	
+	Evaluate the following integral 
+	\[ \qquad A = \intg \sin x\cdot \cos 3x\cdot dx \]    
+      
+    \begin{step}
+  \begin{options} 
+     \correct 
+       \[ \sin x\cdot\cos 3x = \frac{1}{2} \left(\sin 4x - \sin 2x \right)\]
+     \incorrect
+        
+        \[ \sin x\cdot \cos 3x = \frac{1}{2} \left(\cos 4x + \cos 2x \right)\]
+    \end{options} 
+     \reason 
+     
+     The standard result is 
+     \[ \sin (A-B) + \sin (A+B) = 2\sin A\cdot \cos B \]
+     
+     Which is why 
+     \begin{align}
+	2\sin x\cos 3x &= \sin (x-3x) + \sin (x+3x)  \\[-20pt]
+	\text{or }\sin x\cdot\cos 3x &= \frac{1}{2} \left(\sin 4x - \sin 2x \right)
+\end{align}
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       \[ \therefore A = \half\intg \left(\sin 4x - \sin 2x \right)\cdot dx = 0 \]
+     \incorrect
+ 
+       \[ \therefore A = \half\intg \left(\sin 4x - \sin 2x \right)\cdot dx = \frac\pi{2} \]       
+    \end{options} 
+     \reason 
+       
+       \begin{align}
+       A &= \half\intg \left(\sin 4x-\sin 2x \right)\cdot dx \\
+       &= \half \underbrace{\left[ -\frac{\cos 4x}{4} + \frac{\cos 2x}{2}\right]_0^\pi}_{\int \sin Nx\cdot dx = -\frac{\cos Nx}{N}} \\
+       &= \half \left[\left(-\frac{1}{4} + \half \right) - \left(-\frac{1}{4}+\half \right) \right] \\
+       &= 0 
+\end{align}
+\end{step}
+\end{question} 
+\end{document} 
