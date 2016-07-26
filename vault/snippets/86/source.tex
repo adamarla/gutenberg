@@ -1,0 +1,30 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    \correct
+    
+    The differential equation $2xy'-y = 3$ represents a family of parabolas 
+    
+    \reason
+    
+    It is not the differential equation but it's solution that will 
+    tell us what family of curves it represents 
+    
+    \begin{align}
+	2xy' - y = 3 &\implies 2x\cdot\dydx = y + 3 \\
+	\therefore \frac{dy}{y+3} &= \frac{dx}{2x} \\
+	\log \left(y+3 \right) &= \underbrace{\frac{1}{2}\log x + C = \log\sqrt{x} + C}_{b\cdot\log a = \log a^b} \\
+	y + 3 &= e^{\log \sqrt{x} + C} = e^{\log \sqrt{x}}\cdot e^C \\
+	&= \underbrace{k\cdot \sqrt{x}}_{e^{\log a} = a} \\
+	\therefore \left(y+3 \right)^2 &= k^2 x = cx 
+\end{align}
+
+This looks like the equation of a parabola $y^2 = cx$. Hence, the differential 
+equation represents a family of parabolas 
+    
+\end{snippet} 
+\end{document} 
