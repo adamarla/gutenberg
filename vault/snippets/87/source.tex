@@ -1,0 +1,22 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    \correct
+    
+    \[ \frac{dx}{x} + \frac{dy}{y} = 0 \implies x\cdot y = C \]
+    
+    \reason
+    
+    \begin{align}
+	\frac{dx}{x} + \frac{dy}{y} = 0 &\implies \frac{dy}{y} = -\frac{dx}{x} \\
+	\therefore \log y &= -\log x + k \\
+	\log y + \log x &= \log \left(x\cdot y \right) = k \\
+	\text{or } x\cdot y &= e^k = C  
+\end{align}
+    
+\end{snippet} 
+\end{document} 
