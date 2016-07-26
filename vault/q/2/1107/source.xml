@@ -3,16 +3,7 @@
   <statement>
     <tex>%text
 Write the value of $\ora{a}\cdot(\ora{b}\times \ora{a})$
-%
-\\
-\text{If the vector cross product }\ora{b}\times\ora{a}=\ora{c}, \\
-\text{are the following true about $\ora{c}$ ?}
-\\
-\ora{c}=(\ora{b}\times\ora{a})
-\text{. If $\ora{c}\perp\ora{a}$, what can we say about} \\
-\ora{a}\cdot\ora{c}?
-\\
-</tex>
+%</tex>
   </statement>
   <step>
     <options>
