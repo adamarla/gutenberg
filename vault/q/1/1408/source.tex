@@ -1,0 +1,89 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{question}
+	\statement 
+    
+    Find the value of 
+    \[ \quad y = \sin \left[\sini{\frac{3}{5}} - \cosi{\frac{3}{5}} \right]\] 
+    
+    \begin{step}
+  \begin{options} 
+       
+     \incorrect
+     
+     $y$ will be an angle like $\sini{\frac{1}{\sqrt{3}}}$ and not a 
+     trigonometric ratio like $\sin\frac{1}{\sqrt{3}}$ 
+    \end{options} 
+    
+     \reason 
+     
+     $ y = \sin \left(\alpha - \beta \right)$. It will therefore be a trigonometric ratio
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+     
+     In $y = \sin \left[ \underbrace{\sini{\frac{3}{5}}}_{\alpha} - \underbrace{\cosi{\frac{3}{5}}}_{\beta}\right]$
+     
+     \begin{center}
+  \begin{tabular}{NNN}
+   \toprule
+        \theta & \sin\theta & \cos\theta \\
+   \midrule 
+   \alpha & \frac{3}{5} & \frac{4}{5} \\
+    \midrule 
+    \beta & \frac{4}{5} & \frac{3}{5} \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+       And therefore $y = -\dfrac{7}{25}$ 
+       
+     \incorrect
+        
+        In $y = \sin \left[ \underbrace{\sini{\frac{3}{5}}}_{\alpha} - \underbrace{\cosi{\frac{3}{5}}}_{\beta}\right]$
+     
+     \begin{center}
+  \begin{tabular}{NNN}
+   \toprule
+        \theta & \sin\theta & \cos\theta \\
+   \midrule 
+   \alpha & \frac{3}{5} & \frac{2}{5} \\
+    \midrule 
+    \beta & \frac{2}{5} & \frac{3}{5} \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+       And therefore $y = \dfrac{1}{5}$ 
+    \end{options} 
+     \reason 
+       
+       $y = \sin \left[ \underbrace{\sini{\frac{3}{5}}}_{\alpha} - \underbrace{\cosi{\frac{3}{5}}}_{\beta}\right]$ where 
+     
+     \begin{center}
+  \begin{tabular}{NNN}
+   \toprule
+        \theta & \sin\theta & \cos\theta \\
+   \midrule 
+   \alpha & \frac{3}{5} & \sqrt{1-\sin^2\theta} = \frac{4}{5} \\
+    \midrule 
+    \beta & \sqrt{1-\cos^2\theta} = \frac{4}{5} & \frac{3}{5} \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+And hence
+\begin{align}
+y &= \sin \left(\alpha - \beta \right) \\
+&= \sin\alpha\cos\beta - \cos\alpha\sin\beta \\
+&= \frac{3}{5}\cdot\frac{3}{5} - \frac{4}{5}\cdot\frac{4}{5} \\
+&=\frac{9}{25} - \frac{16}{25} = -\frac{7}{25} 
+\end{align}
+\end{step}
+\end{question} 
+\end{document} 
