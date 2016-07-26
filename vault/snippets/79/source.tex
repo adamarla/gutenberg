@@ -1,0 +1,28 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\expa{\sin \left(\frac{x}{2} \right)}
+\newcommand\expb{\cos \left(\frac{x}{2} \right)}
+\newcommand\expc{ \left[\expa + \expb \right]}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    \correct
+    
+    \[ y = \left[\expa + \expb \right]^2\implies y' = \cos x\]    
+    
+    \reason
+    
+    \smallmath
+    \begin{align}
+	y &= \left[\expa + \expb \right]^2  \\
+	\ddx{y} &= \underbrace{2\expc\cdot\ddx \expc}_{\text{Chain Rule}} \\
+	&= 2\expc \cdot \left[\frac{\cos\frac{x}{2}}{2} - \frac{\sin\frac{x}{2}}{2} \right] \\
+	&= \left[\expa + \expb \right]\cdot \left[\expb - \expa \right] \\
+	&= \underbrace{\cos^2 \left(\frac{x}{2} \right) - \sin^2 \left(\frac{x}{2} \right) = \cos x}_{\cos 2\theta = \cos^2\theta - \sin^2\theta}
+\end{align}
+    
+\end{snippet} 
+\end{document} 
