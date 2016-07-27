@@ -1,0 +1,30 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\trma{\frac{e^{-2\sqrt{x}}}{\sqrt{x}}}
+\newcommand\trmb{\frac{y}{\sqrt{x}}}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    \correct
+    
+    The integrating factor $(I)$ of the following differential equation 
+    \[ \qquad \left(\trma -\trmb \right)\cdot \frac{dx}{dy} = 1\, (x\neq 0)\]
+    is $I = e^{2\sqrt{x}}$ 
+    
+    \reason
+    
+    \begin{align}
+	\left(\trma - \trmb \right)\cdot \frac{dx}{dy} &= 1 \\
+	\implies \trma - \trmb &= \dydx \\
+	\text{or } \dydx + \underbrace{\trmb}_{P(x)} &= \trma 
+\end{align}
+    
+This looks like a \underline{first-order} linear differential equation with $P(x) = \frac{1}{\sqrt{x}}$ \newline 
+
+Hence $I = e^{\int P(x)\cdot dx} = e^{\int \frac{dx}{\sqrt{x}}} = e^{2\sqrt{x}}$ 
+
+\end{snippet} 
+\end{document} 
