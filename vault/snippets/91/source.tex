@@ -1,0 +1,28 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\trma{\cos \left(\frac{y}{x} \right)}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    
+    
+    \incorrect
+    
+		$F(x,y) = \dfrac{y\cdot \trma + x}{x\cdot\trma}$
+		is \underline{not} a homogenous function 
+		
+    \reason
+    
+    \begin{align}
+	F(x,y) &= \dfrac{y\cdot\trma + x}{x\cdot \trma} \\
+	&= \dfrac{x \left[\frac{y}{x}\cdot \trma + 1 \right]}{x\cdot\trma} \\
+	&= \dfrac{\frac{y}{x}\trma + 1}{\trma} = g \left(\frac{y}{x} \right)
+\end{align}
+
+In other words, $F(x,y)$ is \underline{effectively} also a function of $\dfrac{y}{x}$. And this makes $F(x,y)$ a homogenous function
+    
+\end{snippet} 
+\end{document} 
