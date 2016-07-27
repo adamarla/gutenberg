@@ -5,10 +5,9 @@
 
 \begin{skill}
 \begin{narrow}
-\textcolor{blue}{Recognizing the type}
+\textcolor{blue}{Identifying differential equation type}
 
-Is it an ordinary differential equation?
-Is it homogenous or linear? 
+Is it ordinary, homogenous or first-order linear
 \end{narrow}
 
 %
@@ -19,17 +18,27 @@ Is it homogenous or linear?
 At school level, you will be asked 
 to solve only the following types of
 differential equations 
-% 
-\begin{align}
-\frac{dy}{dx} &= f(x,y) = g(x)\cdot h(y) \\
-\frac{dy}{dx} &= f(x,y) = g\left(\frac{y}{x}\right)\text{ (homogenous)} \\
-\frac{dy}{dx} + Py &= Q  \text{ (first-order linear)}
-\end{align}\newline 
 
-Notice that all of the above equations
+\begin{center}
+  \begin{tabular}{cN}
+   \toprule
+        Type & \text{Looks like} \\
+   \midrule 
+   Ordinary & \dydx = g(x)\cdot h(y) \\
+    \midrule 
+    Homogenous & \dydx = f \left(\frac{y}{x} \right) \\
+    \midrule 
+    First order linear & \dydx + P(x)\cdot y = Q(x) \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+Notice that all of the above differential equations
 have \underline{order one and degree one}\newline 
 
-Only when you know the type of an equation can you pick the correct technique for solving it
+Each of the above equations has a different technique for solving 
+it. Hence, one must first identify the type of the differential 
+equation 
 %
 
 \end{skill}

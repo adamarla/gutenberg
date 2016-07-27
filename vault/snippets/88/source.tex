@@ -1,0 +1,35 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\fx{\dfrac{\sqrt{x^2+y^2}+y}{x}}
+\newcommand\lfx{\dfrac{\sqrt{\left(\lambda x \right)^2  + \left(\lambda y \right)^2} + \left(\lambda y \right)}{\lambda x}}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    
+    \incorrect
+    
+    $F(x,y) = \fx$ is a homogenous function of degree $2$     
+    
+    \reason
+    
+    Two questions need to be answered. Is $F(x,y)$ homogenous? And if yes, then what 
+    is it's degree? \newline 
+    
+    \begin{align}
+    \text{If }F(x,y) &= \fx \\
+    \text{ then } F \left(\lambda x, \lambda y \right) &= \lfx \\
+    &= \dfrac{\lambda\cdot \left(\sqrt{x^2 + y^2} + y\right)}{\lambda x} \\
+    &= \underbrace{\lambda^0}_{=1}\cdot \left[\fx \right] \\
+    &= \lambda^0 \cdot F(x,y) 
+\end{align}
+
+Hence, the fact that $F(\lambda x, \lambda y) = \lambda^n\cdot F(x,y)$ proves 
+that $F(x,y)$ is a homogenous function \newline 
+
+And the fact that $n = 0$ tells us that it is a homogenous function of degree $0$ 
+    
+\end{snippet} 
+\end{document} 
