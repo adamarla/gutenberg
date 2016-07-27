@@ -1,0 +1,25 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    
+    \incorrect
+    
+    \[ y^2\dydx\ + y^2 + 1 = 0 \implies y -x = \tan^{-1} y + C\]
+    \reason
+    
+    \begin{align}
+	y^2 \cdot \dydx + y^2 + 1 &= 0 \\
+	\therefore \frac{y^2}{y^2+1}\cdot\dydx + 1 &= 0 \\
+	\text{or }\dfrac{y^2}{y^2+1}\cdot dy &= -dx  \\
+	\left[1 - \frac{1}{y^2+1} \right] dy &= -dx \\
+	\text{Hence }\int dy - \int \frac{dy}{y^2+1} &= -\int dx \\
+	\text{or } y - \tan^{-1} y &= -x + C \\
+	\implies x + y &= \tan^{-1} y + C 
+\end{align}
+    
+\end{snippet} 
+\end{document} 
