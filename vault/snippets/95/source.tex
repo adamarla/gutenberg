@@ -1,0 +1,36 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff
+
+\begin{document} 
+\begin{snippet}
+    
+    \incorrect
+    
+    The integrating factor $(I)$ of 
+    \[ \qquad \left(1-x^2 \right)\dydx - xy = 1 \]
+    is given by $I = \dfrac{1}{2}\log \left(1-x^2 \right)$ 
+    
+    \reason
+    
+    We are asking for the integrating factor $(I)$. So, this must be a first-order 
+    linear differential equation \newline 
+    
+    But even if we didn't ask for $I$, you would have noticed that 
+    
+    \begin{align}
+	\left(1-x^2 \right)\dydx - xy &= 1 \\
+	\text{or } \dydx + \underbrace{\frac{-x}{1-x^2}}_{P(x)}\cdot y &= \frac{1}{1-x^2}
+\end{align}
+
+Hence, the integrating factor $(I)$ is 
+\begin{align}
+	I = e^{\int P(x)\cdot dx} &= e^{\int \frac{-x}{1-x^2}\cdot dx }\\
+	\text{Now }\int \frac{-x}{1-x^2}\cdot dx &= \frac{1}{2}\int \frac{dz}{z} \\
+	\text{where } z &= 1-x^2 \\
+	\therefore I = e^{\frac{1}{2}\int \frac{dz}{z}} &= e^{\frac{\log z}{2}} \\
+	= \underbrace{e^{\log \sqrt{z}}}_{a\log b = \log b^a} &= \underbrace{\sqrt{z} = \sqrt{1-x^2}}_{e^{\log b} = b} 
+\end{align}
+\end{snippet} 
+\end{document} 
