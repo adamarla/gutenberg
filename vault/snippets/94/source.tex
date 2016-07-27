@@ -1,0 +1,36 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\itanx{\tan^{-1} x}
+\newcommand\itany{\tan^{-1} y}
+
+\newcommand\trma{\left(1+x^2 \right)}
+\newcommand\trmb{ \left(1+y^2 \right)}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    \correct
+    
+    $\itanx + \itany = c$ is the general solution of 
+    \[ \qquad \left(1+x^2 \right)\cdot dy + \left(1+y^2 \right)\cdot dx = 0 \]    
+    
+    \reason
+    
+    If $\itanx + \itany = c$, then 
+    \begin{align}
+	&\ddx \itanx + \ddx \itany = \underbrace{\ddx c = 0}_{\ddx\text{constant} = 0}\\
+	&\implies \frac{1}{1+x^2} + \underbrace{\frac{1}{1+y^2}\cdot \dydx}_{\text{Chain Rule}} = 0 \\
+	&\text{or }\frac{1}{1+y^2}\cdot \dydx = -\frac{1}{1+x^2} \\
+	&\text{or }\trma\cdot dy = -\trmb\cdot dx \\
+	&\text{or }\trma\cdot dy + \trmb\cdot dx = 0 
+\end{align}
+
+In other words, if 
+\[\quad \trma\cdot dy + \trmb\cdot dx = 0\] is the differential equation, then  
+\[ \quad \itanx + \itany = c\]
+is the general solution
+    
+\end{snippet} 
+\end{document} 
