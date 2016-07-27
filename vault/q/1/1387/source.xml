@@ -1,112 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <question xmlns="http://www.gradians.com" chapterId="28">
   <statement>
-    <tex>%text
-An insurance company insured 2000 
-scooter drivers, 4000 car drivers and 
-6000 truck drivers. The probability of 
-an accident involving a scooter, a car 
-and a truck are 0.01, 0.03 and 0.15 
-respectively.  One of the insured persons
-meets with an accident. 
-
-What is the probability that he is 
-a scooter driver?
-%</tex>
+    <tex isImage="true">tex-1.svg</tex>
   </statement>
   <step>
     <options>
-      <tex>%text
-Let the given events be defined
-as follows 
-
-%
-\begin{tabular}{|c|c|c|c|}
-\hline 
-&amp; \text{Meaning} &amp; &amp; \text{Meaning} \\ 
-\hline 
-S &amp; \text{Rides a scooter} &amp; C &amp; \text{Drives a car} \\
-\hline 
-T &amp; \text{Drives a truck} &amp; A &amp; \text{Has an accident} \\
-\hline 
-\end{tabular} 
-
-%text
-
-We have therefore been told that
-
-%
-\begin{tabular}{|c|c|}
-\hline 
-P(S) = \frac{1}{6}&amp;P\left( A\,\vert\, S \right) = 0.01 \\
-\hline 
-P(C) = \frac{1}{3}&amp; P\left( A\,\vert\,C \right) = 0.03  \\
-\hline
-P(T) = \frac{1}{2}&amp;P\left( A\,\vert\, T\right) = 0.15 \\
-\hline 
-
-\end{tabular} </tex>
-      <tex correct="false">%text
-Let the given events be defined
-as follows 
-
-%
-\begin{tabular}{|c|c|c|c|}
-\hline 
-&amp; \text{Meaning} &amp; &amp; \text{Meaning} \\ 
-\hline 
-S &amp; \text{Rides a scooter} &amp; C &amp; \text{Drives a car} \\
-\hline 
-T &amp; \text{Drives a truck} &amp; A &amp; \text{Has an accident} \\
-\hline 
-\end{tabular} 
-
-%text
-
-We have therefore been told that
-
-%
-\begin{tabular}{|c|c|}
-\hline 
-P(S) = \frac{1}{6}&amp;P\left( S\,\vert\, A \right) = 0.01 \\
-\hline 
-P(C) = \frac{1}{3}&amp; P\left( C\,\vert\,A \right) = 0.03  \\
-\hline
-P(T) = \frac{1}{2}&amp;P\left( T\,\vert\, A\right) = 0.15 \\
-\hline 
-
-\end{tabular} </tex>
+      <tex isImage="true">tex-2.svg</tex>
+      <tex isImage="true" correct="false">tex-3.svg</tex>
     </options>
     <reason>
-      <tex>%text
-The insurance company has insured a total 
-of \[ 2000 + 4000 + 6000 = 12,000 \] persons. 
-
-And therefore,
-%
-\begin{tabular}{|c|c|c|}
-\hline
-&amp; \text{Meaning} &amp; \text{Probability} \\
-\hline
-P(S) &amp; \text{Rides a scooter} &amp; \frac{2000}{12000} = \frac{1}{6} \\
-\hline
-P(C) &amp; \text{Drives a car} &amp; \frac{4000}{12000} = \frac{1}{3} \\
-\hline 
-P(T) &amp; \text{Drives a truck} &amp; \frac{6000}{12000} = \frac{1}{2} \\
-\hline
-\end{tabular}
-%text
-
-We have also been told the probabilities of
-having an accident \underline\text{given} the vehicle type.
-
-Expressed mathematically,  
-%
-\begin{align}
-P(A\vert S) &amp;= 0.01 \\
-P(A\vert C) &amp;= 0.03 \\
-P(A\vert T) &amp;= 0.15 
-\end{align}</tex>
+      <tex isImage="true">tex-4.svg</tex>
     </reason>
     <skills>
       <skill id="38"/>
@@ -114,48 +17,27 @@ P(A\vert T) &amp;= 0.15
   </step>
   <step>
     <options>
-      <tex>%text
-We need to find $P\left( S\,\vert\, A\right)$
-%</tex>
-      <tex correct="false">%text
-We need to find $P\left( S\cap A\right)$
-%</tex>
+      <tex isImage="true">tex-5.svg</tex>
+      <tex isImage="true" correct="false">tex-6.svg</tex>
     </options>
     <reason>
-      <tex>%text
-We are \underline\text{not asking} the probability
-of some scooter rider being in an 
-accident sometime in the future.
-
-
-The accident \underline\text{has already happened}.
-We just want to whether it could
-be a scooter rider, that is, $P\left( S\,\vert\, A\right)$.
-%</tex>
+      <tex isImage="true">tex-7.svg</tex>
     </reason>
     <skills>
+      <skill id="38"/>
       <skill id="36"/>
     </skills>
   </step>
   <step>
     <options>
-      <tex>\[ P\left( S\,\vert\, A\right) = \dfrac{P\left( A\,\vert\, S\right)\cdot P(S)}{P(A)} = \frac{1}{52} \]</tex>
+      <tex isImage="true">tex-8.svg</tex>
+      <tex isImage="true" correct="false">tex-9.svg</tex>
     </options>
     <reason>
-      <tex>%text
-As per Bayes' Theorem
-\[\qquad  P\left( S\,\vert\, A\right) = \dfrac{P\left( A\,\vert\, S\right)\cdot P(S)}{P(A)}\]
-%
-
-\begin{align}
-\text{Now, }P(A) &amp;= P(A \vert S)\cdot P(S) + \ldots + P(A\vert T)\cdot P(T) \\
-&amp;= \underbrace{0.01\times\frac{1}{6} + 0.03\times\frac{1}{3} + 0.15\times\frac{1}{2}}_{\text{Theorem of Total Probability}}\\
-\therefore P\left( S\,\vert\, A\right) &amp;= \dfrac{0.01\times \frac{1}{3}}
-{0.01\times\frac{1}{6} + 0.03\times\frac{1}{3} + 0.15\times\frac{1}{2}} \\
-&amp;= \frac{1}{52}
-\end{align}</tex>
+      <tex isImage="true">tex-10.svg</tex>
     </reason>
     <skills>
+      <skill id="17"/>
       <skill id="14"/>
       <skill id="1"/>
     </skills>
