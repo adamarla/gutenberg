@@ -1,0 +1,27 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    
+    \incorrect
+    
+    If ten fair coins are tossed, then the probability of getting 
+    at least $8$ heads is 
+    \[ \qquad P = \combi{10}{8}\cdot \left(\frac{1}{2} \right)^{10} = \frac{45}{1024}\]
+    \reason
+    
+    We need \underline{at least} $8$ heads. Which means $8,9$ or $10$ heads in ten coin tosses \newline 
+
+    Moreover, the coin is fair. Hence, the probability of getting a head $=p=\frac{1}{2}$ and $q = 1-p = \frac{1}{2}$ \newline 
+        
+    Therefore, the required probability is 
+    \begin{align}
+	P &= \combi{10}{8}\cdot p^8\cdot q^2 + \combi{10}{9}\cdot p^9\cdot q + \combi{10}{10}\cdot p^{10} \\[-20pt]
+	&= \left(\frac{1}{2} \right)^{10} \left[\combi{10}{8} + \combi{10}{9} + \combi{10}{10} \right] \\
+	&= \left[ \frac{45+10+1}{1024}\right] = \frac{7}{128}
+\end{align}
+\end{snippet} 
+\end{document} 
