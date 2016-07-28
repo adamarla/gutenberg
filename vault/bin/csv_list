@@ -3,7 +3,14 @@
 json=csv.json 
 csv=contacts.csv
 
-curl "www.gradians.com/users/csv" > $json 
+while getopts "j:" option ; do 
+  case $option in 
+    j) id=$OPTARG ;;
+    \?) exit 1 ;;
+  esac
+done 
+
+curl "www.gradians.com/users/csv?id=$id" > $json 
 last=$(($(jq length $json)-1))
 
 for j in $(seq 0 $last) ; do 
