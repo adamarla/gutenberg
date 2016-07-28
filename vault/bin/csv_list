@@ -10,3 +10,5 @@ for j in $(seq 0 $last) ; do
   read fnm lnm email<<<$(jq ".[$j]|.one,.two,.three" $json | cut -d'"' -f2)
   echo "$fnm,$lnm,$email" >> $csv
 done
+
+rm -f $json
