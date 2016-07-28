@@ -1,0 +1,12 @@
+#!/bin/bash 
+
+json=csv.json 
+csv=contacts.csv
+
+curl "www.gradians.com/users/csv" > $json 
+last=$(($(jq length $json)-1))
+
+for j in $(seq 0 $last) ; do 
+  read fnm lnm email<<<$(jq ".[$j]|.one,.two,.three" $json | cut -d'"' -f2)
+  echo "$fnm,$lnm,$email" >> $csv
+done
