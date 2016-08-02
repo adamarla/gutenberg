@@ -62,18 +62,20 @@ Using the scalar dot product of two vectors,
   <step>
     <options>
       <tex>%text
-Angle between the $y$ axis and the normal to the plane is $\theta$, therefore angle between the $y$ axis and the surface is
+Angle between the $y$ axis and the normal to the plane is $\theta$, therefore angle $\phi$ between the $y$ axis and the surface is
 %
 \begin{align}
-  \pi/2-\theta&amp;=\sin^{-1}\left(\dfrac{4}{3\sqrt{10}}\right)
+  \phi&amp;=\pi/2-\theta=\sin^{-1}\left(\dfrac{4}{3\sqrt{10}}\right)
 \end{align}
 </tex>
     </options>
     <reason>
       <tex>\begin{align}
-  \cos\theta&amp;=-\dfrac{4}{3\sqrt{10}} \\
-  \therefore\sin(\pi/2-\theta)&amp;=\dfrac{4}{3\sqrt{10}}\text{ (acute angle)} \\
-  \pi/2-\theta&amp;=\sin^{-1}\left(\dfrac{4}{3\sqrt{10}}\right)
+  \text{We know that }\phi&amp;=\theta-\pi/2 \quad(\theta\in \text{2nd quadrant}) \\
+  \cos\theta&amp;=-\dfrac{4}{3\sqrt{10}}=-\sin(\theta-\pi/2) \\
+  \therefore\sin(\theta-\pi/2)&amp;=\dfrac{4}{3\sqrt{10}} \\ 
+  \theta-\pi/2&amp;=\sin^{-1}\left(\dfrac{4}{3\sqrt{10}}\right) \\
+  \phi &amp;= \sin^{-1}\left(\dfrac{4}{3\sqrt{10}}\right)
 \end{align}
 </tex>
     </reason>
