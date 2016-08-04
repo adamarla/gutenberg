@@ -1,0 +1,35 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\prob[1]{P \left(#1 \right)}
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    \correct
+    
+    If $\prob{A} = \dfrac{1}{2}, \prob{B} = \dfrac{1}{3}$ and $\prob{A\cap B}=\dfrac{1}{4}$, then $\condp{A'}{B} = \dfrac{1}{4}$ 
+    
+    \reason
+    
+    From Bayes' Theorem, we know that 
+    \[\qquad \condp{A'}{B} = \dfrac{\prob{A'\cap B}}{\prob{B}} \]
+    
+    So, to find $\condp{A'}{B}$, we need to first know that $\prob{A'\cap B}$ is \newline 
+    
+    Hence, the figure below. Notice that 
+    \[\qquad A'\cap B = B - \left(A\cap B \right)\]
+    \begin{center}
+\includegraphics[scale=2]{100-A.eps}
+\end{center}
+
+And therefore 
+\begin{align}
+	\condp{A'}{B} &= \dfrac{\prob{A'\cap B}}{\prob{B}} \\
+	&= \dfrac{\prob{B} - \prob{A\cap B}}{\prob{B}} \\
+	&= 1- \dfrac{\prob{A\cap B}}{\prob{B}} = 1- \dfrac{\frac{1}{4}}{\frac{1}{3}} \\
+	&= 1-\frac{3}{4} = \frac{1}{4} 
+\end{align}
+    
+\end{snippet} 
+\end{document} 

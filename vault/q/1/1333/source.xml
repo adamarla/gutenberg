@@ -11,6 +11,9 @@
     <reason>
       <tex isImage="true">tex-4.svg</tex>
     </reason>
+    <skills>
+      <skill id="38"/>
+    </skills>
   </step>
   <step>
     <options>
@@ -19,6 +22,10 @@
     <reason>
       <tex isImage="true">tex-6.svg</tex>
     </reason>
+    <skills>
+      <skill id="14"/>
+      <skill id="17"/>
+    </skills>
   </step>
   <step>
     <options>
@@ -28,26 +35,20 @@
     <reason>
       <tex isImage="true">tex-9.svg</tex>
     </reason>
+    <skills>
+      <skill id="72"/>
+    </skills>
   </step>
   <step>
     <options>
-      <tex>P(B_3\vert A) = \frac{7}{13}</tex>
+      <tex isImage="true">tex-10.svg</tex>
+      <tex isImage="true" correct="false">tex-11.svg</tex>
     </options>
     <reason>
-      <tex>%text
-When a bag is picked initially, then each 
-bag has an equal chance of being picked. 
-
-Which means $P(B_1) = P(B_2) = P(B_3) = \frac{1}{3} $
-
-And therefore, 
-%
-\begin{align}
-P(B_3\vert A) &amp;= \underbrace{\frac{P(A\vert B_1)}{P(A\vert B_1) + P(A\vert B_2) + P(A\vert B_3)}}_
-{P(B_1), P(B_2)\text{ and }P(B_3)\text{ all cancel out}} \\
-&amp;= \frac{\frac{2}{9}}{\frac{1}{5} + \frac{1}{3} + \frac{2}{9}} \\
-&amp;= \frac{5}{17}
-\end{align}</tex>
+      <tex isImage="true">tex-12.svg</tex>
     </reason>
+    <skills>
+      <skill id="1"/>
+    </skills>
   </step>
 </question>

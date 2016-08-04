@@ -1,0 +1,41 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    \correct
+    
+    A bag has $2$ red and $3$ white balls. If a ball is drawn and then a second 
+    one \underline{without} replacement, then the probability the second 
+    balls is white is 
+    \[ \qquad \prob{W_2} = \left[\frac{3}{4}\cdot\frac{2}{5}  + \frac{2}{4}\cdot\frac{3}{5}\right] = \frac{3}{5} \] 
+    
+    \reason
+    
+    Let us define the following events 
+    \begin{center}
+  \begin{tabular}{Nl}
+   \toprule
+        \text{Event} &  Meaning\\
+   \midrule 
+   R_1 & First ball drawn is red \\
+    \midrule 
+    W_1 & First ball drawn is white \\
+    \midrule 
+    W_2 & Second ball drawn is white \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+Remember, the balls are taken out \underline{without} replacement\newline 
+
+Which means the number of balls reduces from $5$ to $4$ after the first draw. Hence,
+\smallmath\begin{align}
+	\prob{W_2} &= \underbrace{\overbrace{\condp{W_2}{W_1}\cdot \prob{W_1}}^{A} + \overbrace{\condp{W_2}{R_1}\cdot \prob{R_1}}^{B}}_{\text{Theorem of Total Probability}} \\[-15pt]
+	&= \left[\underbrace{\left(\frac{2}{4}\cdot\frac{3}{5} \right)}_A + 
+	\underbrace{\left(\frac{3}{4}\cdot\frac{2}{5} \right)}_B \right] = \frac{3}{5}
+\end{align}    
+\end{snippet} 
+\end{document} 

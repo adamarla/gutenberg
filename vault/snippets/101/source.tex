@@ -1,0 +1,50 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    
+    \incorrect
+    
+    If it is cloudy in the morning, then the probability that it will rain in the afternoon is $0.6$. If it is not cloudy, then the probability of rain is $0.3$\newline 
+    
+    The probability of it being cloudy tomorrow morning is $0.4$. The probability 
+    that it will rain tomorrow is therefore $0.38$ 
+    \reason
+    
+    If we define the following two events 
+    \begin{center}
+  \begin{tabular}{Nl}
+   \toprule
+        \text{Event} & Meaning  \\
+   \midrule 
+   C & Cloudy in the morning \\
+    \midrule 
+    R & Rain in the afternoon \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+then we have been told the following 
+\begin{center}
+  \begin{tabular}{NNl}
+   \toprule
+        &  \text{Value} & Meaning \\
+   \midrule 
+   \prob{C} & 0.4 & Cloudy tomorrow morning \\
+    \midrule 
+    \condp{R}{C} & 0.6 & Rain if cloudy \\
+    \midrule 
+    \condp{R}{C'} & 0.3 & Rain if not cloudy \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+    And we have to find $\prob{R}$ -- which is 
+    \smallmath\begin{align}
+	\prob{R} &= \underbrace{\condp{R}{C}\cdot\prob{C} + \condp{R}{C'}\cdot \prob{C'}}_{\text{Theorem of Total Probability}} \\[-10pt]
+	&= 0.6\times 0,4 + 0.3\times \left(1-0.4 \right) \\
+	&= 0.42 
+\end{align}
+\end{snippet} 
+\end{document} 

@@ -1,0 +1,128 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\psc{\left(\frac{1}{3} \right)}
+\newcommand\pf{ \left(\frac{2}{3} \right)}
+
+\previewoff
+
+\begin{document} 
+\begin{question}
+	\statement 
+    
+    A fair die is tossed $4$ times. If the toss gives a $5$ or a $6$, then we say that the toss was a success. Else it is considered a failure \newline 
+    
+    If this set of $4$ tosses is done many times over, then on an average how many successes should we expect in a given set?       
+    
+    \begin{step}
+  \begin{options} 
+    
+     \incorrect
+     
+     If $N$ be the number of successes in a single set of $4$ tosses, then we need 
+       to 
+       \begin{itemize}
+       \item{Write the \underline{probability distribution} table for a set of $4$ throws}
+       \item{Find the $N$ that has the \underline{highest probability} of occurring}
+       \end{itemize} 
+        
+    \end{options} 
+     \reason 
+     
+     If $N$ be the number of successes in a given set, then $N = 0,1,2,3$ or $4$ \newline 
+     
+     Each of these values would have a certain probability of occurring, as shown in the table below 
+     
+     \begin{center}
+  \begin{tabular}{NNNNNN}
+   \toprule
+        N = & 0 & 1& 2 & 3 & 4  \\
+   \midrule 
+   \text{Probability} & \prob{0} & \prob{1} & \prob{2} & \prob{3} & \prob{4} \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+       This is nothing more than a probability distribution table\newline 
+       
+       And, we need to find the \underline{expected} $N$ -- not the most likely $N$
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+       \begin{center}
+  \begin{tabular}{NNN}
+   \toprule
+        N & \prob{N} & \prob{N}\cdot N  \\
+   \midrule 
+   0 & \combi{4}{0}\psc^0\pf^4 = \frac{16}{81} & 0 \\
+    \midrule 
+    1 & \combi{4}{1}\psc^1\pf^3 = \frac{32}{81} & \frac{32}{81} \\
+    \midrule 
+    2 & \combi{4}{2}\psc^2\pf^2 = \frac{8}{27} & \frac{16}{27} \\
+    \midrule
+    3 & \combi{4}{3}\psc^3\pf^1 = \frac{8}{81} & \frac{24}{81} \\
+    \midrule 
+    4 & \combi{4}{4}\psc^4\pf^0 = \frac{1}{81} & \frac{4}{81} \\
+    \midrule
+    E(N) & & \frac{4}{3} \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+     \incorrect
+     
+     \begin{center}
+  \begin{tabular}{NNN}
+   \toprule
+        N & \prob{N} & \prob{N}\cdot N  \\
+   \midrule 
+   0 & \psc^0\pf^4 = \frac{16}{81} & 0 \\
+    \midrule 
+    1 & \psc^1\pf^3 = \frac{8}{81} & \frac{8}{81} \\
+    \midrule 
+    2 & \psc^2\pf^2 = \frac{4}{81} & \frac{8}{81} \\
+    \midrule
+    3 & \psc^3\pf^1 = \frac{2}{81} & \frac{6}{81} \\
+    \midrule 
+    4 & \psc^4\pf^0 = \frac{1}{81} & \frac{4}{81} \\
+    \midrule
+    E(N) & & \frac{26}{81} \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+        
+    \end{options} 
+     \reason 
+     
+     The probability of a \underline{single} success is 
+     \[ \qquad p = \frac{ \left\lbrace 5,6\right\rbrace}{ \left\lbrace 1,2,3,4,5,6\right\rbrace} = \frac{2}{6} = \frac{1}{3} \]
+     And therefore $q = 1- p = \frac{2}{3}$ \newline 
+     
+     The probability of $N$ successes however is
+     \[ \qquad \prob{N} = \combi{4}{N}\cdot p^n\cdot q^{4-N} \]
+     
+     Which is why 
+     \begin{center}
+  \begin{tabular}{NNN}
+   \toprule
+        N & \prob{N} & \prob{N}\cdot N  \\
+   \midrule 
+   0 & \combi{4}{0}\psc^0\pf^4 = \frac{16}{81} & 0 \\
+    \midrule 
+    1 & \combi{4}{1}\psc^1\pf^3 = \frac{32}{81} & \frac{32}{81} \\
+    \midrule 
+    2 & \combi{4}{2}\psc^2\pf^2 = \frac{8}{27} & \frac{16}{27} \\
+    \midrule
+    3 & \combi{4}{3}\psc^3\pf^1 = \frac{8}{81} & \frac{24}{81} \\
+    \midrule 
+    4 & \combi{4}{4}\psc^4\pf^0 = \frac{1}{81} & \frac{4}{81} \\
+    \midrule
+    E(N) & \sum_{N=1}^4 \prob{N}\cdot N & \frac{4}{3} \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+     
+\end{step}
+\end{question} 
+\end{document} 

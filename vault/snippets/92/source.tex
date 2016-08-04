@@ -1,0 +1,27 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\lx{\lambda x}
+\newcommand\ly{\lambda y} 
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    \correct
+    
+    $F(x,y) = \dfrac{x^2 + y^2}{x-y}$ is a homogenous function of degree 1
+    
+    \reason
+    
+    \begin{align}
+    F(x,y) &= \dfrac{x^2 + y^2}{x-y} \\
+    \therefore F \left(\lx,\ly \right) &= \dfrac{ \left(\lx \right)^2 + \left(\ly \right)^2}{\lx - \ly} \\
+    &= \lambda\cdot\dfrac{x^2 + y^2}{x-y} \\
+    &= \lambda^1\cdot F(x,y) 
+\end{align}
+
+Hence, we can see that as $\lambda^n = \lambda^1$, therefore $n=1\implies$ degree $=1$
+    
+\end{snippet} 
+\end{document} 

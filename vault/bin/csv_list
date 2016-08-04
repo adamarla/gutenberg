@@ -1,0 +1,21 @@
+#!/bin/bash 
+
+json=csv.json 
+csv=contacts.csv
+
+while getopts "j:" option ; do 
+  case $option in 
+    j) id=$OPTARG ;;
+    \?) exit 1 ;;
+  esac
+done 
+
+curl "www.gradians.com/users/csv?id=$id" > $json 
+last=$(($(jq length $json)-1))
+
+for j in $(seq 0 $last) ; do 
+  read fnm lnm email dbid<<<$(jq ".[$j]|.one,.two,.three,.four" $json | cut -d'"' -f2)
+  echo "$fnm,$lnm,$email,$dbid" >> $csv
+done
+
+rm -f $json
