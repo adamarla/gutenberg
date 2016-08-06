@@ -3,7 +3,7 @@
   <render>
     <tex>\title{Matrix Multiplication} \\
 %text
-How to multiply two matrices
+How to multiply with matrices
 %</tex>
   </render>
   <reason>
@@ -18,10 +18,9 @@ For two matrices $A$ and $B$ to be multiplied with each other, the number of col
 The product matrix $C$ above would have as many rows as $A$ and as many columns as $B$. Here is an actual example,
 %
 \begin{align}
-A_{1\times 3}&amp;=\left[\begin{array}{ccc}1 &amp; 2 &amp; 3\end{array}\right],\;
-B_{3\times 1}=\left[\begin{array}{c}1 \\ 2 \\ 3\end{array}\right] \\
-A\times B&amp;=[(1\times 1)+(2\times 2)+(3\times 3)] \\
-\text{}&amp;=[1+4+9+16+25]=[55]
+\left[\begin{array}{ccc}1 &amp; 2 &amp; 3\end{array}\right]\times\left[\begin{array}{c} 4 \\ 5 \\ 6 \end{array}\right]
+=&amp;[(1\times 4)+(2\times 5)+(3\times 6)] \\
+=&amp;[4+10+18]=[32]
 \end{align} \\
 %text
 Here is another example,
@@ -44,6 +43,16 @@ Any generic element $p_{ij}$ in the product matrix of $A_{m\times n}$ and $B_{n\
 %
 \begin{align}
   p_{ij}&amp;=\sum_{k=1}^na_{ik}\times b_{kj}
+\end{align} \\
+%text
+Multiplying a matrix with a scalar $k$ is much simpler. Each element of the matrix gets multiplied by $k$.
+%
+\begin{align}
+  &amp;kA_{m\times n}=k\times[a_{ij}]_{m\times n}=[k(a_{ij})]_{m\times n} \\
+  &amp; k\left[\begin{array}{cc} a &amp; b \\ c &amp; d \\ e &amp; f 
+  \end{array}\right]=
+  \left[\begin{array}{cc} ka &amp; kb \\ kc &amp; kd \\ ke &amp; kf
+  \end{array}\right]
 \end{align}</tex>
   </reason>
 </skill>
