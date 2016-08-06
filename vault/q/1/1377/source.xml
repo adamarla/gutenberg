@@ -8,26 +8,13 @@ What will \[ (f\circ g)(7)\] be if
   </statement>
   <step>
     <options>
-      <tex>\[ (f\circ g)(x) = f\left[ g(x) \right] \]</tex>
-      <tex correct="false">\[ (f\circ g)(x) = f(x)\cdot g(x) \]</tex>
-    </options>
-    <reason>
-      <tex>%text
-$(f\circ g)(x)$ is \underline\text{simply short-hand} 
-for $f\left[ g(x) \right]$. 
-
-Also, \[ (f\circ g)(x) \neq f(x)\cdot g(x) \]
-%</tex>
-    </reason>
-    <skills>
-      <skill id="47"/>
-    </skills>
-  </step>
-  <step>
-    <options>
       <tex>%text
 When $f(x) = x+7$ and $g(x) = x-7$,
 then \[ (f\circ g)(x) = x \implies (f\circ g)(7) = 7 \]
+%</tex>
+      <tex correct="false">%text
+When $f(x) = x+7$ and $g(x) = x-7$,
+then \[ (f\circ g)(x) = (x+7)(x-7) \implies (f\circ g)(7) = 0\]
 %</tex>
     </options>
     <reason>
@@ -42,4 +29,10 @@ then \[ (f\circ g)(x) = x \implies (f\circ g)(7) = 7 \]
       <skill id="47"/>
     </skills>
   </step>
+  <choices>
+    <tex>7</tex>
+    <tex correct="false">0</tex>
+    <tex correct="false">14</tex>
+    <tex correct="false">1</tex>
+  </choices>
 </question>
