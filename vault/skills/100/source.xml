@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>\title{Identity for an operation} \\
+%text
+Identity for a binary operation and how to verify it
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+A few examples before moving to formal a definition
+%
+\begin{align}
+\begin{tabular}{cccc}
+  \hline
+  \text{operation} &amp; \text{on} &amp; \text{Identity} &amp; \text{example} \\
+  \hline
+  + &amp; \mathbb{R} &amp; 0 &amp; 7+0=7=0+7 \\
+  \times &amp; \mathbb{R} &amp; 1 &amp; 15.12\times 1 = 15.12 = 1\times 15.12 \\
+  \hline
+\end{tabular}
+\end{align} \\
+%text
+As the pattern suggests, the $identity$ $e$ is such an element, which if it exists for a binary operator $*:A\times A\rightarrow A$, will result in the following equation holding true,
+
+%
+
+\begin{align}
+  a * e = a = e * a
+\end{align} \\
+
+%text
+
+Standard mathematical operators $-$ and $\div$ \underline\text{do not} have an identity operator due the their inherent asymmetry.
+Note: $*:A\times A\rightarrow A$ simple means an operation between two operands $\in$ $A$ whose result also $\in$ $A$.
+%</tex>
+  </reason>
+</skill>
