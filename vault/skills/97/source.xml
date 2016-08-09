@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>\title{Matrix Addition} \\
+%text
+How to add to matrices
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+The only thing to be mindful of while adding matrices is that
+they have the same order i.e. the same number of rows and columns. To add two matrices, simply add their corresponding elements. For e.g.
+%
+\begin{align}
+\left[\begin{array}{cc}
+  a_{11} &amp; a_{12} \\ a_{21} &amp; a_{22} 
+\end{array}\right]+
+\left[\begin{array}{cc}
+  b_{11} &amp; b_{12} \\ b_{21} &amp; b_{22} 
+\end{array}\right]=
+\left[\begin{array}{cc}
+  a_{11}+b_{11} &amp; a_{12}+b_{12} \\ a_{21}+b_{21} &amp; a_{22}+b_{22} 
+\end{array}\right]
+\end{align} \\
+\begin{align}
+\left[\begin{array}{c} a_{11} \\ a_{21} \end{array}\right]+
+\left[\begin{array}{c} b_{11} \\ b_{21} \end{array}\right]=
+\left[\begin{array}{c}
+  a_{11}+b_{11} \\ a_{21}+b_{21}  
+\end{array}\right]
+\end{align}</tex>
+  </reason>
+</skill>
