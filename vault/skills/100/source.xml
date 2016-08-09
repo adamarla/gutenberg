@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com">
   <render>
-    <tex>\title{Identity for an operation} \\
+    <tex>\title{Identity and Inverse for an operation} \\
 %text
-Identity for a binary operation and how to verify it
+Identity and Inverse elements for a binary operation
 %</tex>
   </render>
   <reason>
@@ -32,6 +32,24 @@ As the pattern suggests, the $identity$ $e$ is such an element, which if it exis
 %text
 
 Standard mathematical operators $-$ and $\div$ \underline\text{do not} have an identity operator due the their inherent asymmetry.
+Inverse for an operator leads from the Identity definition. For any element $a\in A$ which has an identity element $e\in A$, there there may exist an inverse $b\in A$ such that,
+
+%
+\begin{align}
+  a * b = e = b * a
+\end{align} \\
+
+%text
+
+Continuing with $+$ and $\times $ operators as examples,
+%
+\begin{align}
+  a+(-a)=&amp;0=-a+a \\
+  a\times \dfrac{1}{a}=&amp;1=\dfrac{1}{a}\times a
+\end{align}
+
+%text
+
 Note: $*:A\times A\rightarrow A$ simple means an operation between two operands $\in$ $A$ whose result also $\in$ $A$.
 %</tex>
   </reason>
