@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com">
   <render>
-    <tex>\title{Angle between P`lanes} \\
+    <tex>\title{Angle between P
+lanes} \\
 %text
 Angle between two planes in $3$ dimensional space
 %</tex>
