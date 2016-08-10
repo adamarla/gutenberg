@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <snippet xmlns="http://www.gradians.com" chapterId="13">
   <render>
-    <tex>%text
-The $\perp$ distance from origin to the plane $2x+3y+z=14$ is $\sqrt{14}$
+    <tex correct="false">%text
+The $\perp$ distance from origin to the plane $2x+3y+z=14$ is $14$
 %</tex>
   </render>
   <reason>
