@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>\title{Angle between P`lanes} \\
+%text
+Angle between two planes in $3$ dimensional space
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+If $\theta$ is the angle between two planes, then it is also the angle between their respective normals. The angle between the normals of two planes $A_1x+B_1y+C_1z+D_1=0$ and $A_2x+B_2y+C_2z+D_2=0$ is given by,
+%
+\begin{align}
+  \cos\theta &amp;= \left\vert\dfrac{A_1A_2+B_1B_2+C_1C2}
+    {\sqrt{A_1^2+B_1^2+C_1^2}\sqrt{A_1^2+B_1^2+C_1^2}}\right\vert    
+\end{align} \\
+
+%text
+where $A_1$, $B_1$, $C_1$ and $A_2$, $B_2$, $C_2$ are the respective direction ratios of the two planes.
+
+If the planes were described in vector form, $\ora{r}\cdot\ora{n}=d_1$ and $\ora{r}\cdot\ora{n}=d_2$, then the angle between the planes (or their normals) is given by,
+%
+\begin{align}
+  \cos\theta = \left\vert\dfrac{\ora{n_1}\cdot\ora{n_2}}
+    {|\ora{n_1}||\ora{n_2}|} \right\vert
+\end{align}</tex>
+  </reason>
+</skill>
