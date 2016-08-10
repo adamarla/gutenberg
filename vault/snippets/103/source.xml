@@ -7,7 +7,7 @@ The $\perp$ distance from origin to the plane $2x+3y+z=14$ is $14$
   </render>
   <reason>
     <tex>%text
-To get $\perp$ distance we need to rw-write the equation of the plane by dividing throughout by $\sqrt{a^2+b^2+c^2}$, where $a$, $b$ and $c$ are the direction ratios of the normal to the plane. 
+To get $\perp$ distance from origin we need to rewrite the equation of the plane by dividing throughout by $\sqrt{a^2+b^2+c^2}$, where $a$, $b$ and $c$ are the direction ratios of the normal to the plane. 
 %
 
 \begin{align}
@@ -16,7 +16,7 @@ To get $\perp$ distance we need to rw-write the equation of the plane by dividin
     &amp;=\sqrt{4+9+1}=\sqrt{14}
 \end{align} \\
 %text
-Re-write the equation of the plane as,
+Rewrite the equation of the plane as,
 %
 \begin{align}
   \dfrac{2}{\sqrt{14}}x+\dfrac{3}{\sqrt{14}}y+\dfrac{1}{\sqrt{14}}z&amp;=\dfrac{14}{\sqrt{14}} \\  
