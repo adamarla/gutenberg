@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>\title{Equation of Plane - Three point form} \\
+%text
+Equation of a plane that passes through three given points
+%
+</tex>
+  </render>
+  <reason>
+    <tex>%text
+A plane that passes through three points whose vectors are $\ora{a}$, $\ora{b}$ and $\ora{c}$ is given by,
+%
+
+\begin{align}
+  (\ora{r}-\ora{a})\cdot\left[(\ora{c}-\ora{a})\times(\ora{b}-\ora{a})\right]=0
+\end{align} \\
+
+%text
+If $\ora{r}$ is given by $(x,y,z)$ and $\ora{a}$, $\ora{b}$ and $\ora{c}$ are given by $(x_1,y_1,z_1)$, $(x_2, y_2, z_2)$ and $(x_3, y_3, z_3)$ respectively, then the same equation in cartesian form is given by,
+%
+
+\begin{align}
+\left\vert\begin{array}{ccc}
+  x-x_1 &amp; y-y_1 &amp; z-z_1 \\ x_2-x_1 &amp; y_2-y_1 &amp; z_2-z_1 \\
+  x_3-x_1 &amp; y_3-y_1 &amp; z_3-z_1
+\end{array}\right\vert=0
+\end{align} \\
+
+%text
+
+The rationale behind these equations is that since $\ora{a}$, $\ora{b}$, $\ora{c}$ and $\ora{r}$ all lie on the same plane, the cross-product of displacement vectors $(\ora{b}-\ora{a})$ and $(\ora{c}-\ora{a})$ is $\perp$ to vector $(\ora{r}-\ora{a})$.
+%</tex>
+  </reason>
+</skill>
