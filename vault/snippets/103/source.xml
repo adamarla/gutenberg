@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippet xmlns="http://www.gradians.com" chapterId="13">
+  <render>
+    <tex>%text
+The $\perp$ distance from origin to the plane $2x+3y+z=14$ is $\sqrt{14}$
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+To get $\perp$ distance we need to rw-write the equation of the plane by dividing throughout by $\sqrt{a^2+b^2+c^2}$, where $a$, $b$ and $c$ are the direction ratios of the normal to the plane. 
+%
+
+\begin{align}
+  2x+3y+z&amp;=14 \\
+ \therefore\sqrt{a^2+b^2+c^2}&amp;=\sqrt{2^2+3^2+1^2} \\
+    &amp;=\sqrt{4+9+1}=\sqrt{14}
+\end{align} \\
+%text
+Re-write the equation of the plane as,
+%
+\begin{align}
+  \dfrac{2}{\sqrt{14}}x+\dfrac{3}{\sqrt{14}}y+\dfrac{1}{\sqrt{14}}z&amp;=\dfrac{14}{\sqrt{14}} \\  
+  \perp \text{distance from origin} &amp;= \dfrac{14}{\sqrt{14}}=\sqrt{14}
+
+\end{align}
+
+%</tex>
+  </reason>
+  <skills>
+    <skill id="92"/>
+  </skills>
+</snippet>
