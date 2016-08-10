@@ -20,18 +20,19 @@ The same equation in vector form is expressed as,
   \ora{r}\cdot(\vector{a}{b}{c})=d
 \end{align} \\
 %text
-The constants $a$, $b$ and $c$ represent the direction ratios of the plane. If $l$, $m$ and $n$ represent the direction cosines of the plane then,
+The constants $a$, $b$ and $c$ represent the direction ratios of the normal to the plane. If $l$, $m$ and $n$ represent the direction cosines of the normal to the plane then to evaluate these we would do the following,
 %
 \begin{align}
   l&amp;=\dfrac{a}{\sqrt{a^2+b^2+c^2}}, \\
-  m&amp;=\dfrac{a}{\sqrt{a^2+b^2+c^2}}, \\
-  n&amp;=\dfrac{a}{\sqrt{a^2+b^2+c^2}}
+  m&amp;=\dfrac{b}{\sqrt{a^2+b^2+c^2}}, \\
+  n&amp;=\dfrac{c}{\sqrt{a^2+b^2+c^2}}
 \end{align} \\
 %text
 Dividing both sides of the cartesian equation by $\sqrt{a^2+b^2+c^2}$, the equation of the plane becomes,
 %
 \begin{align}
-  lx+my+nz=\dfrac{d}{\sqrt{a^2+b^2+c^2}}
+  lx+my+nz&amp;=\dfrac{d}{\sqrt{a^2+b^2+c^2}} \\
+  lx+my+nz&amp;=d_\perp
 \end{align} \\
 %text
 The right hand side of the above equation represents the $\perp$ distance from origin to the plane.
