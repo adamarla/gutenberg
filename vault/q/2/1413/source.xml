@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="22">
+  <statement>
+    <tex>%text
+Find the maximum value of 
+%
+\begin{align}
+\left\vert\begin{array}{ccc}
+  1 &amp; 1 &amp; 1 \\ 1 &amp; 1+\sin\theta &amp; 1 \\ 1 &amp; 1 &amp; 1+\cos\theta
+\end{array}\right\vert
+\end{align}</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>\begin{align}
+\left\vert\begin{array}{ccc}
+  1 &amp; 1 &amp; 1 \\ 1 &amp; 1+\sin\theta &amp; 1 \\ 1 &amp; 1 &amp; 1+\cos\theta
+\end{array}\right\vert=
+\left\vert\begin{array}{ccc}
+  1 &amp; 1 &amp; 1 \\ 0 &amp; \sin\theta &amp; 0 \\ 0 &amp; 0 &amp; \cos\theta
+\end{array}\right\vert
+\end{align}</tex>
+    </options>
+    <reason>
+      <tex>%text
+Using standard determinant row transforms
+%
+\begin{align}
+{\small\left\vert\begin{array}{ccc}
+  1 &amp; 1 &amp; 1 \\ 1 &amp; 1+\sin\theta &amp; 1 \\ 1 &amp; 1 &amp; 1+\cos\theta
+\end{array}\right\vert}&amp;\xrightarrow{R_2\rightarrow R_2-R_1}
+{\small\left\vert\begin{array}{ccc}
+  1 &amp; 1 &amp; 1 \\ 0 &amp; \sin\theta &amp; 0 \\ 1 &amp; 1 &amp; 1+\cos\theta
+\end{array}\right\vert} \\
+{\small\left\vert\begin{array}{ccc}
+  1 &amp; 1 &amp; 1 \\ 0 &amp; \sin\theta &amp; 0 \\ 1 &amp; 1 &amp; 1+\cos\theta
+\end{array}\right\vert}&amp;\xrightarrow{R_3\rightarrow R_3-R_1}
+\left\vert\begin{array}{ccc}
+  1 &amp; 1 &amp; 1 \\ 0 &amp; \sin\theta &amp; 0 \\ 0 &amp; 0 &amp; \cos\theta
+\end{array}\right\vert
+\end{align}</tex>
+    </reason>
+    <skills>
+      <skill id="90"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex correct="false">\begin{align}
+f(\theta)&amp;=\left\vert\begin{array}{ccc}
+  1 &amp; 1 &amp; 1 \\ 0 &amp; \sin\theta &amp; 0 \\ 0 &amp; 0 &amp; \cos\theta
+\end{array}\right\vert=\sin\theta\cos\theta \\
+\implies f'(\theta)&amp;=-\cos\theta\sin\theta
+\end{align}
+</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+f(\theta)&amp;=\left\vert\begin{array}{ccc}
+  1 &amp; 1 &amp; 1 \\ 0 &amp; \sin\theta &amp; 0 \\ 0 &amp; 0 &amp; \cos\theta
+\end{array}\right\vert=\sin\theta\cos\theta \\
+\implies f'(\theta)&amp;=\sin\theta(-\sin\theta)+\cos\theta\cos\theta \\
+\implies f'(\theta)&amp;=\cos^2\theta-\sin^2\theta=\cos 2\theta
+\end{align}
+</tex>
+    </reason>
+    <skills>
+      <skill id="31"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\begin{align}
+  &amp;f'(\theta)=\cos 2\theta
+  \implies \theta=\dfrac{\pi}{4}\text{ (maxima)} \\
+  \therefore &amp;\text{ max value of }f \left(\dfrac{\pi}{4}\right)=\sin \dfrac{\pi}{4}\cos \dfrac{\pi}{4}=\dfrac{1}{2}
+\end{align}
+</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  f'(\theta)=0 \implies &amp;\cos 2\theta=0 \\
+  \implies&amp; 2\theta = \dfrac{\pi}{2} \\
+  \implies&amp; \theta = \dfrac{\pi}{4}
+\end{align} \\
+%text
+To further confirm that the extrema point at $\theta=\frac{\pi}{4}$ is a maxima and not a minima, we can compute the second derivative and ensure that it is negative.
+%
+\begin{align}
+  f''(\theta)&amp;=-2\sin 2\theta \\
+  f''\left(\dfrac{\pi}{4}\right)&amp;=-2\sin \dfrac{\pi}{2}=-2
+\end{align} \\
+%text
+Therefore the maximum value of the original determinant is
+%
+\begin{align}
+  \sin \dfrac{\pi}{4}\cos \dfrac{\pi}{4}=\dfrac{1}{2}
+\end{align}
+</tex>
+    </reason>
+    <skills>
+      <skill id="63"/>
+    </skills>
+  </step>
+  <choices>
+    <tex>\dfrac{1}{2}</tex>
+    <tex correct="false">\dfrac{1}{4}</tex>
+    <tex correct="false">1</tex>
+    <tex correct="false">0</tex>
+  </choices>
+</question>
