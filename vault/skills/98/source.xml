@@ -14,6 +14,7 @@ A few basic rules regarding matrices
 - A \underline\text{diagonal matrix} is a square matrix whose non-diagonal elements $a_{ij}$ when $i\neq j$ are all $0$
 - A \underline\text{scalar matrix} is a diagonal matrix whose diagonal elements are all equal to some constant $k$
 - An \underline\text{identity matrix} is a square matrix whose diagonal elements are all $1$. It is usually denoted by $I$
+- $M\times I=M$, any matrix multiplied by identity matrix results in that matrix itself
 %</tex>
   </reason>
 </skill>
