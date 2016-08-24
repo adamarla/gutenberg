@@ -1,0 +1,124 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+
+\newcommand\dph{\text{ \$/hour}}
+\newcommand\kmph{\text{ km/h}}
+\newcommand\ph{\text{ /hour}}
+\newcommand\konst{\left( \frac{6s^3}{25} \right)}
+\newcommand\dpk{\text{ \$/km}}
+
+\begin{document}
+\begin{question}
+\statement
+	
+%text
+Fuel expenditure for a steam-ship are
+proportional to the cube of its speed. It is
+known that a speed of 10 km/h, fuel costs
+are \$240/hour. Other expenses (independent
+of speed) amount to \$480 per hour \newline 
+
+At what speed should the ship travel  to keep
+its \underline{total expenses per kilometre} lowest? And 
+what will the total expense \underline{per hour} be at that speed? 
+%
+\begin{step}
+	\begin{options}
+		\correct
+      
+      If $F$ be the fuel-costs per hour and $T$ the total costs per hour, then 
+		
+      \begin{align}
+        F \propto s^3 &\implies F = ks^3 \\
+        &\implies F =  \dfrac{6}{25}\cdot s^3 \dph    \\
+        \therefore T &= \left(\dfrac{6}{25}s^3 + 480\right) \dph 
+      \end{align}
+      
+
+		\incorrect
+
+If $F$ be the fuel-costs per hour and $T$ the total costs per hour, then 
+		
+      \begin{align}
+        F \propto s^3 &\implies F = ks^3 \\
+        &\implies F =  \dfrac{3}{17}\cdot s^3 \dph    \\
+        \therefore T &= \left(\dfrac{3}{17}s^3 + 480\right) \dph 
+      \end{align}
+
+	\end{options}
+	\reason
+
+	We have been told that 
+	\[\qquad F \propto s^3 \implies F =k\cdot s^3  \]
+	Moreover, 
+      \begin{align}
+        F \left(10 \right) &= \underbrace{k\cdot \left(10 \kmph \right)^3 = 240 \dph}_{\text{Fuel costs at 10\kmph}} \\[-10pt]
+        \implies k &= \dfrac{240\dph}{(10 \kmph)^3} = 
+        \konst \frac{\$\cdot \text{h}^2}{\text{km}^3}\\
+        \therefore F &= \konst\dph \\
+        \text{and } T &= \left( F+480\right) \dph \\
+        &=\left(\dfrac{6}{25}s^3 + 480\right) \dph
+      \end{align}
+    
+\end{step}
+\begin{step}
+	\begin{options}
+		\correct
+		
+		If $T_k$ be the total cost \underline{per km}, then 
+		
+      \[\quad T_k = \left(\dfrac{6}{25}s^2 + \dfrac{480}{s}\right)\dpk\]
+      
+
+		\incorrect
+
+		
+      \[\quad T_k = \left(\dfrac{6}{25}s^4 + 480\cdot s\right)\dpk\]
+      
+
+	\end{options}
+	\reason
+	
+	In one hour, the ship would travel $s\text{ km}$ and incur a cost of $T$ dollars. Which means, that \underline{per km}, the ship spent 
+	
+	\begin{align}
+	T_k &= \frac{T}{s}\dpk = \frac{1}{s} \left[\konst + 480 \right]\dpk  \\
+	&= \left[\frac{6s^2}{25} + \frac{480}{s} \right]\dpk
+\end{align}
+	      
+\end{step}
+\begin{step}
+	\begin{options}
+		\correct
+		
+		\begin{align}
+	\frac{d}{ds}T_k &= \left(\frac{12}{25}s - \frac{480}{s^2} \right) \\
+	\frac{d^2}{ds^2}T_k &= \frac{12}{25} + \frac{960}{s^3} > 0
+\end{align}
+Hence, the speed at which total costs \underline{per km} are lowest is 
+$s = 10 \kmph$ \newline 
+
+And at $s = 10\kmph, T = 720 \dph$       
+
+	\end{options}
+	\reason
+
+	
+      \begin{align}
+        T_k &= \left(\dfrac{6}{25}s^2 + \dfrac{480}{s}\right) \\
+        \implies\dfrac{d T_k}{ds} &= \dfrac{12}{25}s - \dfrac{480}{s^2} \\
+        \text{and }\dfrac{d^2 T_k}{ds^2} &= \dfrac{12}{25} + \dfrac{960}{s^3} \\
+        \text{Now, } \dfrac{dT_K}{ds} &= 0 \text{ when }\dfrac{12}{25}s = \dfrac{480}{s^3} \\
+        \implies s^3 &= 1000 \text{ or }  s = 10 \kmph\\
+        \text{Also, }\dfrac{d^2 T_K}{ds^2} &= \left(\frac{12}{25} + \frac{960}{s^3} \right) > 0 \because s > 0 \\
+        &\implies\text{Minima  at } s = 10\kmph 
+      \end{align} \\
+      Hence, the expense per km is minimum at
+      10 km/hour. And at that speed, the
+      \underline{expense per hour} would be 
+      \[\quad T(10) = \dfrac{6}{25}\cdot 10^3 + 480 = 720 \dph\]
+      
+\end{step}
+\end{question}
+\end{document}

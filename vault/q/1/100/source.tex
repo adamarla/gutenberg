@@ -1,0 +1,77 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+\begin{question}
+\statement
+	
+%text
+What is the minimum value (if any) of
+\[ \qquad \qquad y = \dfrac{x}{\ln x^2} \left( x > 0, x\neq 1\right)  \] 
+\textbf{Note: }$\ln = \log_e$ (natural logarithm)
+%
+\begin{step}
+	\begin{options}
+		\correct
+
+		\[\dfrac{dy}{dx} = \dfrac{\ln x - 1}{2\cdot \left(\ln x\right)^2}\]
+		Hence, an extrema occurs when $x = e$ 
+
+		\incorrect
+
+		\[\dfrac{dy}{dx} = \dfrac{\ln x - x}{\left(\ln x\right)^2}\]
+		Hence, an extrema occurs when $x = e^2$ 
+	\end{options}
+	\reason
+
+	\begin{align}
+y &= \dfrac{x}{\ln x^2} = \underbrace{\dfrac{x}{2\cdot\ln x}}_{\log a^b = b\cdot\log a}\\ 
+\implies\dfrac{dy}{dx} &= \underbrace{\dfrac{\ln x - x\cdot\frac{d}{dx}\ln x}
+{2\cdot\left(\ln x\right)^2}}_{\text{Quotient Rule}} = 
+\underbrace{\dfrac{\ln x - 1}{2\cdot \left(\ln x\right)^2}}_{x\cdot\frac{d}{dx}\ln x = x\cdot\frac{1}{x} = 1}
+\end{align}
+
+Recall that $x > 0, x\neq 1$. Hence $\ln x\neq 0$. Which means, that an extrema 
+will occur when 
+\begin{align}
+	\dydx = 0 &\implies \dfrac{\ln x - 1}{2 \left(\ln x \right)^2} = 0 \\
+	\text{or } \ln x -1 &= 0 \implies x = e
+\end{align}
+
+
+\end{step}
+
+\begin{step}
+	\begin{options}
+		\correct
+
+		There is a \underline{minima} at $x = e$ and the minimum value is 
+		$y = \dfrac{e}{2}$ 
+%
+
+		\incorrect
+
+		%text
+There is a \underline{maxima - not minima} - at $x = e$ 
+and the maximum value is $y = \dfrac{e}{2}$.
+
+	\end{options}
+	\reason
+
+	
+        \begin{align}
+          \dfrac{dy}{dx} &= \dfrac{1}{2}\cdot \left[\dfrac{1}{\ln x}-\dfrac{1}{(\ln x)^2}\right]\\
+          \implies\dfrac{d^2 y}{dx^2} &= \dfrac{1}{2}\cdot 
+          \left[-\dfrac{1}{x\cdot (\ln x)^2} + \dfrac{2}{x\cdot (\ln x)^3}\right] \\
+          &= \dfrac{1}{2x\cdot (\ln x)^2}\cdot \left(\dfrac{2}{\ln x} - 1 \right) \\
+          \implies \left[\dfrac{d^2 y}{dx^2}\right]_{x=e} &= 
+          \dfrac{1}{2e\cdot (\ln e)^2}\cdot \left(\dfrac{2}{\ln e} - 1\right) \\
+          &= \dfrac{1}{2e}> 0\implies \text{minima} \\
+          \text{And so, }y_{min} &= \left[\dfrac{x}{\ln x^2}\right]_{x=e} = 
+          \dfrac{e}{\ln \left(e^2 \right)} \\
+          &= \underbrace{\dfrac{e}{2\ln e} = \frac{e}{2}}_{\ln e = 1 }
+        \end{align}
+        
+\end{step}
+\end{question}
+\end{document}

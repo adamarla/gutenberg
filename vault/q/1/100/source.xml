@@ -1,84 +1,32 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-What is the minimum value (if any) of
-\[ \qquad \qquad y = \dfrac{x}{\ln x^2} \] 
-\textbf{Note: }$\ln = \log_e$ (natural logarithm)
-%</tex>
-      <tex>\\ %text
-Given $y = \dfrac{y}{\ln x^2}$, what will $\dfrac{dy}{dx}$ be?
-%</tex>
-      <tex>\\ %text
-Given $\dfrac{dy}{dx}$, which of the following is true?
-%</tex>
-      <tex>\\ %text
-Going further, is the following true at the
-extrema point $x = e$?
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">\dfrac{dy}{dx} = \dfrac{\ln x - 1}{2\cdot \left(\ln x\right)^2}</tex>
-         <tex>\dfrac{dy}{dx} = \dfrac{\ln x - x}{\left(\ln x\right)^2}</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-y &amp;= \dfrac{x}{\ln x^2} = \underbrace{\dfrac{x}{2\cdot\ln x}}_{\log a^b = b\cdot\log a}\\ 
-\implies\dfrac{dy}{dx} &amp;= \underbrace{\dfrac{\ln x - x\cdot\frac{d}{dx}\ln x}
-{2\cdot\left(\ln x\right)^2}}_{\text{Quotient Rule}} = 
-\underbrace{\dfrac{\ln x - 1}{2\cdot \left(\ln x\right)^2}}_{x\cdot\frac{d}{dx}\ln x = x\cdot\frac{1}{x} = 1}
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">%text
-An extreme value occurs when \underline{$x=e$}
-%
-			</tex>
-         <tex>%text
-An extreme value occurs when \underline{$x=e^2$}
-%
-			</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-\dfrac{dy}{dx} &amp;= \dfrac{\ln x - 1}{2\cdot \left(\ln x\right)^2} \\
-\implies \dfrac{dy}{dx} &amp;= 0\text{ when } \ln x - 1 = 0 \\
-\implies \ln x &amp;= 1\implies x = e 
-\end{align}\\
-%text
-
-Therefore, an extrema occurs when $x=e$.
-%</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">%text
-There is a minima at $x = e$.
-And the \underline\text{minimum} value is $y = \dfrac{e}{2}$.
-%</tex>
-         <tex>%text
-There is a maxima - not minima - at $x = e$.
-And the \underline\text{maximum} value is $y = \dfrac{e^2}{2}$.
-%
-				</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-				  \dfrac{dy}{dx} &amp;= \dfrac{1}{2}\cdot \left[\dfrac{1}{\ln x}-\dfrac{1}{(\ln x)^2}\right]\\
-				  \implies\dfrac{d^2 y}{dx^2} &amp;= \dfrac{1}{2}\cdot 
-				  \left[-\dfrac{1}{x\cdot (\ln x)^2} + \dfrac{2}{x\cdot (\ln x)^3}\right] \\
-				  &amp;= \dfrac{1}{2x\cdot (\ln x)^2}\cdot \left(\dfrac{2}{\ln x} - 1 \right) \\
-				  \implies \left[\dfrac{d^2 y}{dx^2}\right]_{x=e} &amp;= 
-				  \dfrac{1}{2e\cdot (\ln e)^2}\cdot \left(\dfrac{2}{\ln e} - 1\right) \\
-				  &amp;= \dfrac{1}{2e}\gt 0\implies\text{ minima.} \\
-				  \text{And so, }y_{MIN} &amp;= \left[\dfrac{x}{\ln x^2}\right]_{x=e} = \dfrac{e}{2\ln e} 
-				  = \dfrac{e}{2}.
-				\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="22">
+  <statement>
+    <tex isImage="true">tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">tex-2.svg</tex>
+      <tex isImage="true" correct="false">tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="63"/>
+      <skill id="31"/>
+      <skill id="33"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">tex-5.svg</tex>
+      <tex isImage="true" correct="false">tex-6.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">tex-7.svg</tex>
+    </reason>
+    <skills>
+      <skill id="63"/>
+    </skills>
+  </step>
 </question>
