@@ -1,116 +1,42 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-Fuel expenditure for a steam-ship are
-proportional to the cube of its speed. It is
-known that a speed of 10 km/h, fuel costs
-are &#8377; 240/hour. Other expenses (independent
-of speed) amount to &#8377; 480 per hour.
-
-At what speed should the ship travel to keep
-its \underline\text{total expenses per kilometre} lowest? And 
-what will the \underline\text{total expense per hour} be?
-%</tex>
-      <tex>\\ %text
-Given the speed (s) of the boat, the fuel 
-expense per hour $(F_H)$ and the total expense
-per hour $(T_H)$, \underline\text{which of the following is true}?
-%</tex>
-      <tex>\\ \textbf{Total expenditure per kilometre?} \\
-  		\text{Given the total expenditure per hour, what}\\
-  		\text{will be the }\underline{\text{total expenditure per km }(T_K)}?</tex>
-      <tex>\\ %text
-Now that the captain of the ship knows the
-formula for total expense per kilometre, he
-calculates the optimal speed and resulting
-expense as follows. 
-\textbf{Has he calculated correctly?}
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">
-			\begin{align}
-			  F_H &amp;= \dfrac{6}{25}\cdot s^3 \text{ &#8377;/hour} \\
-			  T_H &amp;= \left(\dfrac{6}{25}s^3 + 480\right)\text{ &#8377;/hour}
-			\end{align}
-			</tex>
-         <tex>
-			\begin{align}
-			  F_H &amp;= \dfrac{3}{17}\cdot s^3 \text{ &#8377;/hour} \\
-			  T_H &amp;= \left(\dfrac{3}{17}s^3 + 480\right)\text{ &#8377;/hour}
-			\end{align}
-			</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-			  F_H &amp;\propto s^3 \implies F_H = k\cdot s^3 \\
-			  \text{Also, }F_{10} &amp;= k\cdot (10 km/h)^3 = \text{&#8377; 240/hr} \\
-			  \implies k &amp;= \dfrac{\text{&#8377; 240/hr}}{\text{(10 km/h)}^3} = 
-			  \dfrac{6}{25}\dfrac{\text{&#8377;}\cdot hr^2}{km^3} \\
-			  \implies F_H &amp;= \dfrac{6}{25}\cdot s^3\text{&#8377;/hour} \\
-			  T_H &amp;= F_H + 480\text{ &#8377;/hour} \\
-			  &amp;=\left(\dfrac{6}{25}s^3 + 480\right)\text{ &#8377;/hour}
-			\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-  		\quad T_K = \left(\dfrac{6}{25}s^2 + \dfrac{480}{s}\right)\text{ &#8377;/km.}
-  		</tex>
-         <tex>
-  		\quad T_K = \left(\dfrac{6}{25}s^4 + 480\cdot s\right)\text{ &#8377;/km.}
-  		</tex>
-      </options>
-      <reason>
-         <tex>\textbf{Be mindful of the units.} \\
-  		\text{We want to go from &#8377;/hour}\to\text{&#8377;/km.}\\ 
-  		\text{Notice that }\dfrac{&#8377;/hr}{km/hr} = \text{&#8377;/km.} \\
-  		\text{This suggests that }\dfrac{T_H}{s} = T_K. \\
-  		\begin{align}
-  		  T_K &amp;= \dfrac{T_H}{s} = 
-  		  \dfrac{1}{s}\cdot \left(\dfrac{6}{25}s^3 + 480\right)\text{ &#8377;/km.} \\
-  		  &amp;= \left(\dfrac{6}{25}s^2 + \dfrac{480}{s}\right)\text{ &#8377;/km.}
-  		\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-  		\begin{tabular}{|c|c|}
-  		\hline 
-  		\text{Optimal speed} &amp; \text{10 km/hour} \\
-  		\hline
-  		\text{Total expense/hour} &amp; \text{ &#8377; 720/hour} \\ 
-  		\hline
-  		\end{tabular}
-  		</tex>
-         <tex>
-  		\begin{tabular}{|c|c|}
-  		\hline 
-  		\text{Optimal speed} &amp; \text{5 km/hour} \\
-  		\hline
-  		\text{Total expense/hour} &amp; \text{ &#8377; 510/hour} \\ 
-  		\hline
-  		\end{tabular}
-  		</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-  		  T_K &amp;= \left(\dfrac{6}{25}s^2 + \dfrac{480}{s}\right) \\
-  		  \implies\dfrac{d T_K}{ds} &amp;= \dfrac{12}{25}s - \dfrac{480}{s^2} \\
-  		  \text{and }\dfrac{d^2 T_K}{ds^2} &amp;= \dfrac{12}{25} + \dfrac{960}{s^3} \\
-  		  \text{Now }\dfrac{dT_K}{ds} &amp;= 0\text{ when }\dfrac{12}{25}s = \dfrac{480}{s^3} \\
-  		  \implies s^3 &amp;= 1000\text{ or } s = 10\text{ km/h} \\
-  		  \text{Also, }\dfrac{d^2 T_K}{ds^2} &amp;\gt 0\text{ for all }s\gt 0\implies\text{ minima.}
-  		\end{align} \\
-  		\text{Hence, the expense per km is minimum at}\\
-  		\text{10 km/hour. And at that speed, the}\\
-  		\underline{\text{expense per hour}}\text{ would be }\\
-  		\quad T_H(10) = \dfrac{6}{25}\cdot 10^3 + 480 = &#8377; 720/hr.</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="22">
+  <statement>
+    <tex isImage="true">tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">tex-2.svg</tex>
+      <tex isImage="true" correct="false">tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="103"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">tex-5.svg</tex>
+      <tex isImage="true" correct="false">tex-6.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">tex-7.svg</tex>
+    </reason>
+    <skills>
+      <skill id="36"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">tex-8.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">tex-9.svg</tex>
+    </reason>
+    <skills>
+      <skill id="63"/>
+      <skill id="33"/>
+    </skills>
+  </step>
 </question>
