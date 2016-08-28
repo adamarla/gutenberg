@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="26">
+  <statement>
+    <tex>%text
+The two vectors $\vector{1}{1}{}$ and $\vector{3}{-4}{4}$ represent the two sides $AB$ and $AC$, respectively of a $\triangle ABC$. Find the length of the median through $A$. 
+%
+</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">img_1a.svg</tex>
+    </options>
+    <reason>
+      <tex>%text
+The median passing the vertex of any triangle is the line that connects that vertex with the mid-point of the opposite side. In this case the median is the line $AO$.
+%
+</tex>
+    </reason>
+  </step>
+  <step>
+    <options>
+      <tex correct="false">\begin{align}
+  \ora{BC}&amp;=\ora{AB}+\ora{AC}
+\end{align}
+</tex>
+    </options>
+    <reason>
+      <tex>%text
+As per the triangle law of vectors $\ora{AB}+\ora{BC}=\ora{AC}$. Therefore, $\ora{BC}=\ora{AC}-\ora{AB}$
+%
+</tex>
+    </reason>
+    <skills>
+      <skill id="82"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\begin{align}
+  \ora{AO}&amp;=\dfrac{1}{2}\left(\ora{AB}+\ora{AC}\right) \\
+  \therefore |\ora{AO}|&amp;=3
+\end{align}
+</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  \ora{AO}&amp;=\ora{AB}+\ora{BO}\qquad(\text{Triangle Law)} \\
+  &amp;= \ora{AB}+\dfrac{1}{2}\ora{BC} \\
+  &amp;=\ora{AB}+\dfrac{1}{2}\left(\ora{AC}-\ora{AB}\right) \\
+  &amp;=\dfrac{1}{2}\left(\ora{AB}+\ora{AC}\right) \\
+  &amp;=\dfrac{1}{2}\left(3\hat i+5\hat k\right) \\
+  \therefore |\ora{AO}|&amp;=\dfrac{1}{2}\sqrt{3^2+5^2}=3  
+\end{align}
+</tex>
+    </reason>
+    <skills>
+      <skill id="82"/>
+    </skills>
+  </step>
+</question>
