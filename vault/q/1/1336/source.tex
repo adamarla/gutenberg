@@ -1,0 +1,107 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+
+\newcommand\logx{\log\vert x\vert}
+
+\begin{document}
+\begin{question}
+\statement
+	
+%text
+Find the particular solution, satisfying the 
+given condition, for the following differential
+equation
+\[ \quad\frac{dy}{dx} -\frac{y}{x} + \csc\frac{y}{x} = 0 ; y = 0\text{ when }  x = 1 \] 
+Note: $\csc =$ cosec
+%
+\begin{step}
+	\begin{options}
+		\correct
+
+\[ \qquad \frac{dy}{dx} = \underbrace{\frac{y}{x} - \csc\frac{y}{x}}_{F(x,y)}\]
+And as $F \left(\lambda x,\lambda y \right) = F(x,y)$, therefore the given equation is a homogenous differential equation 
+
+		\incorrect
+
+\[ \qquad \frac{dy}{dx} - \frac{1}{x}y =  - \csc\frac{y}{x} \]
+
+The above is of the form 
+\[ \qquad \frac{dy}{dx} + P(x)\cdot\frac{dy}{dx} = Q(x) \]
+Hence, this is a \underline{linear differential equation}
+
+	\end{options}
+	\reason
+	
+	When written as follows
+	\[ \qquad \dydx - \frac{1}{x}y = \underbrace{-\csc\frac{y}{x}}_{Q} \]
+	the given differential equation \underline{may look like} a 
+	first-order linear differential equation\newline 
+	
+	But if it is to be a linear differential equation, then $Q = f(x)$ only - which it is not \newline 
+	
+Instead, $Q = \csc\frac{y}{x} = g \left(x,y \right)$ -  a function of both $x$ and $y$ \newline 
+
+However, when written as 
+\[ \qquad \dydx = \frac{y}{x} - \csc\frac{y}{x} = F \left(x,y \right)\]
+it becomes clear that what we have is a \underline{homogenous} differential equation
+\end{step}
+\begin{step}
+	\begin{options}
+		\correct
+		
+		If $ y = vx$, then 
+		\[\qquad \frac{dx}{x} = -\sin v\cdot dv\]
+
+		\incorrect
+		
+		If $ y = vx$, then 
+		\[\qquad \frac{dv}{dx} - v = -\csc v\]
+
+	\end{options}
+	\reason
+
+If we let $\dfrac{y}{x} = v$, then 
+	\begin{align}
+y = v\cdot x \implies \frac{dy}{dx} &= v + x\cdot\frac{dv}{dx} \\
+\therefore \frac{dy}{dx} - \frac{y}{x} &= -\csc\frac{y}{x}\\[5pt]
+\implies \left(v+x \frac{dv}{dx}\right) -v &= -\csc v \\
+\text{or } x\frac{dv}{dx} &= -\csc v \\[10pt]
+\implies \frac{dx}{x} &= -\sin v\cdot dv 
+\end{align} 
+\end{step}
+
+\begin{step}
+	\begin{options}
+		\correct
+		
+		And therefore, 
+		\begin{align}
+	\logx &= \cos v + C \text{ where } C = -1 \\
+	\implies y &= x\cdot\cos^{-1} \left(\logx + 1 \right)
+\end{align}
+		\incorrect
+		
+		And therefore, 
+		\begin{align}
+	\logx &= \cos v + C \text{ where } C = 0 \\
+	\implies y &= x\cdot \cos^{-1} \left(\logx \right)
+\end{align}
+
+	\end{options}
+	\reason
+
+	\begin{align}
+\frac{dx}{x} &= -\sin v\cdot dv \\
+\implies \int\frac{dx}{x} &= \int -\sin v\cdot dv \\
+\therefore \logx  &= \cos v + C \\
+ \text{or } \log\vert x\vert &= \cos\frac{y}{x} + C \\
+\text{Now } y = 0 & \text{ when }  x = 1 \\
+\therefore \log \vert 1\vert &= \cos 0 + C \\
+\implies 0 &= 1 + C \text{ or } C = -1\\
+\therefore \log\vert x\vert &= \cos\frac{y}{x} - 1\\
+\text{or } y &= x\cdot\cos^{-1}\left(\log\vert x\vert + 1 \right) 
+\end{align} 
+\end{step}
+\end{question}
+\end{document}

@@ -1,109 +1,42 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-Find the particular solution, satisfying the 
-given condition, for the following differential
-equation
-\[ \quad \frac{dy}{dx} -\frac{y}{x} + \csc\frac{y}{x} = 0 ; y = 0 \text{ when } x = 1 \] 
-\underline\text{Note: $\csc = cosec}
-%</tex>
-      <tex>\\ %text
-The given differential equation is of 
-what type - \underline\text{linear or homogenous}? 
-%</tex>
-      <tex>\\ %text
-Given that the given equation is 
-homogenous, \underline\text{setting $y=v\cdot x$} will  
-give us which of the following? 
-%</tex>
-      <tex>\\ %text
-Given that \[ \frac{dx}{x} = -\sin v\cdot dv  \], what will be 
-the \underline\text{particular solution}  $y=f(x)$?
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">\begin{align}
-\frac{dy}{dx} &amp;= \underbrace{\frac{y}{x} - \csc\frac{y}{x}}_{F(x)} \\
-\text{where } F(\lambda x) &amp;= F(x) 
-\end{align} 
-%text
-
-
-Therefore, the given differential equation is 
-\underline\text{homogenous}
-%</tex>
-         <tex>\begin{align}
-\frac{dy}{dx} - \frac{1}{x}y &amp;=  - \csc\frac{y}{x}
-\end{align} 
-%text
-
-
-The above is of the form 
-\[ \qquad \frac{dy}{dx} + P(x)\cdot\frac{dy}{dx} = Q(x) \]
-Hence, it must be a \underline\text{linear} differential equation.
-%</tex>
-      </options>
-      <reason>
-         <tex>%text
-The way to solve a differential equation 
-depends on what type of equation it is. 
-Hence, we must first \underline\text{classify the equation}. 
-
-The given equation is \underline\text{not linear}. For it to
-be linear, \[ \frac{dy}{dx} + P(x)\cdot y = \underbrace{Q(x)}_{\text{a function of x only}} \] 
-
-But \[ \frac{dy}{dx} - \frac{1}{x}y = \underbrace{-\csc\frac{y}{x}}_{\text{function of both x and y}} \]
-
-However, note that 
-%
-
-\begin{align}
-\frac{dy}{dx} &amp;= \underbrace{\frac{y}{x} - \csc\frac{y}{x}}_{F(x)} \\
-\text{where } F(\lambda x) &amp;= F(x) 
-\end{align} 
-
-%text
-
-
-These are the conditions for a \underline\text{homogenous}
-differential equation. Hence, that is what 
-it must be. 
-%</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">\frac{dx}{x} = -\sin v\cdot dv </tex>
-         <tex>\frac{dv}{dx} - v = -\csc v </tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-y = v\cdot x &amp;\implies \frac{dy}{dx} = v + x\cdot\frac{dv}{dx} \\
-\therefore \frac{dy}{dx} - \frac{y}{x} &amp;= -\csc\frac{y}{x}\\
-\implies \left(v+x \frac{dv}{dx}\right) -v &amp;= -\csc v \\
-\text{or }x\frac{dv}{dx} = -\csc v &amp;\implies \frac{dx}{x} = -\sin v\cdot dv 
-\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">y = x\cdot \cos^{-1}\left(\log\vert x\vert + 1\right) </tex>
-         <tex>y = x\cdot\left( \cos^{-1}\log\vert x\vert\right) </tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-\frac{dx}{x} &amp;= -\sin v\cdot dv \\
-\implies \int\frac{dx}{x} &amp;= \int -\sin v\cdot dv \\
-\therefore \log\vert x\vert &amp;= \cos v + C \\
-\text{ or } \log\vert x\vert &amp;= \cos\frac{y}{x} + C \\
-\text{Now }y = 0 &amp;\text{ when } x = 1 \\
-\therefore \log \vert 1\vert &amp;= \cos 0 + C \implies 0 = 1 + C \\
-\text{ or } C &amp;= -1 \implies \log\vert x\vert = \cos\frac{y}{x} - 1\\
-\therefore y &amp;= x\cdot\cos^{-1}\left(\log\vert x\vert + 1 \right) 
-\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="25">
+  <statement>
+    <tex isImage="true">tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">tex-2.svg</tex>
+      <tex isImage="true" correct="false">tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="53"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">tex-5.svg</tex>
+      <tex isImage="true" correct="false">tex-6.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">tex-7.svg</tex>
+    </reason>
+    <skills>
+      <skill id="31"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">tex-8.svg</tex>
+      <tex isImage="true" correct="false">tex-9.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">tex-10.svg</tex>
+    </reason>
+    <skills>
+      <skill id="48"/>
+    </skills>
+  </step>
 </question>
