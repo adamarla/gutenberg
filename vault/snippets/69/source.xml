@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippet xmlns="http://www.gradians.com" chapterId="19">
+  <render>
+    <tex correct="false">\begin{align}
+\text{If }A=\left[\begin{array}{ccc}
+  8 &amp; 0 &amp; 1 \\
+  2 &amp; 1 &amp; 1 \\
+  -1 &amp; 4 &amp; 3
+\end{array}\right]\text{ then,}
+\end{align} \\
+%text 
+row $2$ col $3$ in the cofactor matrix is $CF_{23}=-3$
+%</tex>
+  </render>
+  <reason>
+    <tex>\begin{align}
+M_{23}\text{ (minor)} &amp;= 8\cdot 4-(-1)\cdot 0=32 \\
+CF_{23} &amp;= (-1)^{2+3}(32)=-32
+\end{align}</tex>
+  </reason>
+  <skills>
+    <skill id="81"/>
+  </skills>
+</snippet>

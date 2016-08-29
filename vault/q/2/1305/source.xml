@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="19">
+  <statement>
+    <tex>%text
+If $A=\left[\begin{array}{cc} 2 &amp; 3 \\ 5 &amp; -2\end{array}\right]$, write $A^{-1}$.
+%</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>A=\left[\begin{array}{cc} 2 &amp; 3 \\ 5 &amp; -2\end{array}\right]\implies|A|=-19</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  A&amp;=\left[\begin{array}{cc} 2 &amp; 3 \\ 5 &amp; -2\end{array}\right] \\
+  \implies|A|&amp;=2\cdot(-2)-5\cdot 3=-19
+\end{align}</tex>
+    </reason>
+    <skills>
+      <skill id="85"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex correct="false">\begin{align}
+  A=\left[\begin{array}{cc} 2 &amp; 3 \\ 5 &amp; -2\end{array}\right] \implies
+  Adj(A)=\left[\begin{array}{cc}  -2 &amp; 3 \\ 5 &amp; 2 \end{array}\right]
+\end{align}
+</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  A&amp;=\left[\begin{array}{cc} 2 &amp; 3 \\ 5 &amp; -2\end{array}\right] \\
+  \therefore CF(A)&amp;=\left[\begin{array}{cc} -2 &amp; -5 \\ -3 &amp; 2 \end{array}\right]
+    \,\text{(cofactor matrix)}\\
+  \therefore Adj(A)&amp;=CF(A)^T \qquad \text{(transpose of $CF(A)$)} \\
+    \text{}&amp;=\left[\begin{array}{cc} -2 &amp; -3 \\ -5 &amp; 2 \end{array}\right]
+\end{align} \\</tex>
+    </reason>
+    <skills>
+      <skill id="79"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\begin{align}
+  A^{-1}=\dfrac{1}{|A|}\cdot Adj(A)=
+  \left[\begin{array}{cc}  \dfrac{2}{19} &amp; \dfrac{-3}{19} \\ 
+    \dfrac{5}{19} &amp; \dfrac{2}{19} \end{array}\right]
+\end{align}</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  A^{-1}&amp;=\dfrac{1}{|A|}\cdot Adj(A) \\
+  \text{}&amp;=\dfrac{1}{-19}\left[\begin{array}{cc}  -2 &amp; -3 \\ -5 &amp; 2 \end{array}\right]
+  =\left[\begin{array}{cc}  \dfrac{2}{19} &amp; \dfrac{-3}{19} \\ 
+    \dfrac{5}{19} &amp; \dfrac{2}{19} \end{array}\right]
+\end{align}</tex>
+    </reason>
+    <skills>
+      <skill id="80"/>
+    </skills>
+  </step>
+  <choices>
+    <tex>  A^{-1}=
+  \left[\begin{array}{cc}  \dfrac{2}{19} &amp; \dfrac{-3}{19} \\ 
+    \dfrac{5}{19} &amp; \dfrac{2}{19} \end{array}\right]</tex>
+    <tex correct="false">A^{-1}=
+  \left[\begin{array}{cc}  \dfrac{-2}{19} &amp; \dfrac{3}{19} \\ 
+    \dfrac{5}{19} &amp; \dfrac{2}{19} \end{array}\right]</tex>
+    <tex correct="false">A^{-1}=\left[\begin{array}{cc} 2 &amp; 3 \\ 5 &amp; -2\end{array}\right]</tex>
+    <tex correct="false">A^{-1}=\left[\begin{array}{cc} -2 &amp; -3 \\ -5 &amp; 2\end{array}\right]</tex>
+  </choices>
+</question>

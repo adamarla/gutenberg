@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="19">
+  <statement>
+    <tex>%text
+To raise money for an orphanage. students of three schools $A$, $B$ and $C$ organised an exhibition in their locality, where they sold paper bags, scrap-books and pastel sheets made by them using recycled paper, at the rate of $₹ 20$, $₹ 15$ and $₹ 5$ per unit respectively. School $A$ sold $25$ paper bags, $12$ scrap-books and $34$ pastel sheets. School $B$ sold $22$ paper bags, $15$ scrap-books and $28$ pastel sheets while School $C$ sold $26$ paper bags $18$ scrap-books and $36$ pastel sheets. Using matrices, find the total amount raised by each school.
+%</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>\text{Quantity}\times \text{Rate} = \text{Amount} 
+</tex>
+    </options>
+    <reason>
+      <tex>%text
+Basic reasoning here, nothing specific,
+Quantity (units)$\times$ Rate (₹/unit) $=$ A(₹)
+%</tex>
+    </reason>
+  </step>
+  <step>
+    <options>
+      <tex>\begin{array}{c}
+  A \\
+  B \\
+  C
+\end{array}\overbrace{\left[\begin{array}{ccc}
+  25 &amp; 12 &amp; 34 \\
+  22 &amp; 15 &amp; 28  \\
+  26 &amp; 18 &amp; 36
+\end{array}\right] }^
+  \text{PBag| ScrpBk|PstlSht}
+\times\left[\begin{array}{cc}
+  20 \text{(₹/PBag)} \\
+  15 \text{(₹/ScrpBk)} \\
+  5   \text{(₹/PstlSht)}
+\end{array}\right]
+=\left[\begin{array}{cl}
+  20 &amp; (₹)\\
+  15 &amp; (₹)\\
+  5   &amp; (₹)
+\end{array}\right]</tex>
+      <tex correct="false">\begin{array}{c}
+  A \\
+  B \\
+  C
+\end{array}\overbrace{\left[\begin{array}{ccc}
+  25 &amp; 12 &amp; 34 \\
+  22 &amp; 15 &amp; 28  \\
+  26 &amp; 18 &amp; 36
+\end{array}\right] }^
+  \text{PBag| ScrpBk|PstlSht}
+\times\left[
+  {\small 20 \text{(₹/PBag)}\,
+  15 \text{(₹/ScrpBk)}\,
+  5   \text{(₹/PstlSht)}}
+\right] \\
+\qquad=\left[\begin{array}{cl}
+  20 &amp; (₹)\\
+  15 &amp; (₹)\\
+  5   &amp; (₹)
+\end{array}\right]</tex>
+    </options>
+    <reason>
+      <tex>%text
+There exist a $3\times 3$ Quantity matrix and a $1\times 3$ Amount matrix. We know that $Q\times R=A$. We have $3$ rates, therefore the Rate matrix can be set up either as a $1\times 3$ or a $3\times 1$. As per rules of matrix multiplication, 
+%
+\begin{align}
+\begin{array}{ccc}
+  \hline
+  \text{Matrix A} &amp; \text{Matrix B} &amp; A\times B \\
+  \hline
+  [3\times 3] &amp; [3\times 1] &amp; [3\times 1]  \\
+  [3\times 3] &amp; [1\times 3] &amp; \text{N/A}
+\end{array}
+\end{align} \\
+%text
+In $3\times 1$ configuration, the total amounts raised by each school would be realised correctly as the weighted sum of the amounts raised for each good type.
+%
+</tex>
+    </reason>
+    <skills>
+      <skill id="86"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\left[\begin{array}{ccc}
+  25 &amp; 12 &amp; 34 \\
+  22 &amp; 15 &amp; 28  \\
+  26 &amp; 18 &amp; 36
+\end{array}\right]\times
+\left[\begin{array}{c}20 \\ 15 \\ 5\end{array}\right]
+=\left[850 \quad 805\quad 970\right]</tex>
+      <tex correct="false">\left[\begin{array}{ccc}
+  25 &amp; 12 &amp; 34 \\
+  22 &amp; 15 &amp; 28  \\
+  26 &amp; 18 &amp; 36
+\end{array}\right]\times
+\left[\begin{array}{c}20 \\ 15 \\ 5\end{array}\right]
+=\left[1420 \quad 975\quad 400\right]</tex>
+    </options>
+    <reason>
+      <tex>%text
+Each item in a row of the quantity matrix multiplies with the appropriate rate from rate matrix. When added together, these products represent the total amount raised by a school. Therefore,
+%
+\begin{align}
+\left[\begin{array}{ccc}
+  25 &amp; 12 &amp; 34 \\
+  22 &amp; 15 &amp; 28  \\
+  26 &amp; 18 &amp; 36
+\end{array}\right]\times
+\left[\begin{array}{c}
+  20 \\
+  15 \\
+  5
+\end{array}\right]=\left[A_1 \quad A_2\quad A_3\right]\,
+\end{align} \\
+\text{Where,} \\
+\begin{align}
+A_1=(25\times 20+12\times 15+34\times 5)=₹850 \\
+A_2=(22\times 20+15\times 15+28\times 5)=₹805 \\
+A_3=(26\times 20+18\times 15+36\times 5)=₹970 \\
+\end{align}
+</tex>
+    </reason>
+  </step>
+  <choices>
+    <tex correct="false">A=₹1420, B=₹975, C=₹400</tex>
+    <tex>A=₹850, B=₹805, C=₹970</tex>
+    <tex correct="false">A=₹1420, B=₹975, C=₹970</tex>
+    <tex correct="false">A=₹850, B=₹975, C=₹400</tex>
+  </choices>
+</question>

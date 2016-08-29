@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>\textcolor{blue}{\text{Inverse of a Matrix}} \\
+%text
+Inverse of a Matrix and how to compute it
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+If $A$ is a square matrix (equal rows and columns), $A^{-1}$ is its inverse and $I$ is the Identity matrix then,
+%
+\begin{align}
+{\bf A\times A^{-1}=I}
+\end{align} \\
+
+%text
+If you know how to compute the Adjoint of a matrix, then finding inverse is easy,
+%
+\begin{align}
+  A^{-1}=\dfrac{1}{|A|}\cdot Adj(A) \\
+\end{align} \\
+
+%text
+The analysis behind it is,
+%
+
+\begin{align}
+  \text{}&amp;|A|\cdot I=A\cdot Adj(A) \\
+  \implies &amp; I=A \left(\dfrac{1}{|A|}Adj(A)\right) \\
+  \implies &amp; A\cdot A^{-1}=A \left(\dfrac{1}{|A|}Adj(A)\right) \\
+  \implies &amp; A^{-1}=\dfrac{1}{|A|}Adj(A)
+\end{align}
+</tex>
+  </reason>
+</skill>

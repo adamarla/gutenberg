@@ -1,9 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com">
   <render>
-    <tex isImage="true">tex-1.svg</tex>
+    <tex>\title{Domain of $f(x)$} \\
+%text
+What is a domain and how to find it for a function $f(x)$
+%</tex>
   </render>
   <reason>
-    <tex isImage="true">tex-2.svg</tex>
+    <tex>%text
+The domain of a function $f(x)$ is the set of all values of $x$ for which $f(x)$ is defined. Below are a few example functions and their domains
+%
+
+\begin{align}
+  \begin{tabular}{NNN}
+   \hline
+        f(x) &amp;  \text{Not defined if} &amp; \text{Domain} \\
+   \hline\hline
+   \tfrac{1}{x} &amp; x = 0 &amp; \mathbb{R} - \left\lbrace 0\right\rbrace \\
+    \hline
+    \tfrac{1}{\sqrt{x+2}} &amp; x + 2 \leq 0\text{ or } x \leq -2 &amp; (-2,\infty) \\
+    \hline
+    \tfrac{1}{x^2-1} &amp; (x-1)\cdot(x+1) = 0 &amp; \mathbb{R} - \left\lbrace -1,1\right\rbrace \\
+    \hline
+    \log x &amp; x \leq 0 &amp; \mathbb{R}^+ \\
+    \hline
+  \end{tabular}
+\end{align}
+</tex>
   </reason>
 </skill>

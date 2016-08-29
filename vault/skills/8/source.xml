@@ -1,9 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com">
   <render>
-    <tex isImage="true">tex-1.svg</tex>
+    <tex>\title{Relation Types } \\
+%text
+Meaning of Reflexive, Transitive, Symmetric and Equivalence relations
+%</tex>
   </render>
   <reason>
-    <tex isImage="true">tex-2.svg</tex>
+    <tex>%text
+Best if we just took some examples before reading any definitions. Given a set $A = \left\lbrace 1,2,3\right\rbrace$, let us define the following relations
+%
+\begin{align}
+  \begin{tabular}{NNN}
+   \hline
+        &amp; \text{Definition} &amp; \text{Will give} \\
+   \hline
+   R_1 &amp; \left\lbrace (a,b): a \leq b\right\rbrace &amp; \left\lbrace (1,1),(1,2),(1,3),(2,2), (2,3), (3,3)\right\rbrace \\
+    \hline
+    R_2 &amp; \left\lbrace (a,b): a = b \right\rbrace &amp; \left\lbrace (1,1),(2,2), (3,3)\right\rbrace \\
+    \hline
+    R_3 &amp; \left\lbrace (a,b): a \geq b\right\rbrace &amp; \left\lbrace (1,1), (2,1), (2,2), (3,1), (3,2), (3,3) \right\rbrace\\
+    \hline
+  \end{tabular}
+\end{align} \\
+%text
+The three relations have also been classified below. As you read the table, remember the definitions above
+%
+\begin{align}
+  \begin{tabular}{lMNNN}
+   \hline
+       \text{Type} &amp; \text{Meaning} &amp; R_1 &amp; R_2 &amp; R_3 \\
+   \hline
+   \text{Reflexive} &amp; (a,a)\in R\text{ for all } a &amp; ✓ &amp; ✓ &amp; ✓ \\
+   \hline
+   \text{Symmetric} &amp; (a,b)\in R\implies (b,a)\in R &amp; X &amp; ✓ &amp; X \\
+    \hline
+    \text{Transitive} &amp; (a,b), (b,c)\in R \implies (a,c)\in R &amp; ✓ &amp; ✓ &amp; ✓ \\
+    \hline
+    \text{Equivalence} &amp; \text{Is all three of the above} &amp; X &amp; ✓ &amp; X \\
+    \hline
+  \end{tabular}
+\end{align}
+</tex>
   </reason>
 </skill>

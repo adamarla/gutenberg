@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippet xmlns="http://www.gradians.com" chapterId="13">
+  <render>
+    <tex correct="false">%text
+The vector equation of a plane at a distance of $5$ units from the origin whose normal vector is $\vector{2}{-3}{6}$ is given by,
+%
+\begin{align}
+  &amp;\ora{r}\cdot(\vector{2}{-3}{6})=5
+\end{align}</tex>
+  </render>
+  <reason>
+    <tex>%text
+The vector equation of a plane whose normal is along{\bf unit vector} $\hat n$ and which is at a distance $d$ from the origin, is given by $\ora{r}\cdot\hat{n}=d$. Therefore we must first establish the unit vector in the direction of the given normal,
+%
+\begin{align}
+  \ora{N}&amp;=\vector{2}{-3}{6} \\
+  |\ora{N}|&amp;=\sqrt{2^2+(-3)^2+6^2}=\sqrt{4+9+36}=7 \\
+  \therefore\hat n &amp;=\dfrac{\ora{N}}{|\ora{N}|}= \dfrac{1}{7}\left(\vector{2}{-3}{6}\right)
+\end{align} \\
+%text
+Therefore the equation of the given plane would be,
+%
+\begin{align}
+  \ora{r}\cdot \dfrac{\ora{N}}{|\ora{N}|}= \dfrac{1}{7}\left(\vector{2}{-3}{6}\right)=5
+\end{align}
+
+</tex>
+  </reason>
+  <skills>
+    <skill id="92"/>
+  </skills>
+</snippet>

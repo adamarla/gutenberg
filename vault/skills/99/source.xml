@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>\title{Inverse of a Function} \\
+%text
+Inverse of a function and how to compute it
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+Let us start by using an example to find the inverse of a function.
+%
+\begin{align}
+  y&amp;=2x+3 \\
+  \implies x&amp;=\dfrac{y-3}{2} \\
+\end{align} \\
+%text
+If $y = f(x)$, then $x = f^{-1}(y)$ ($f$ inverse of $y$). But if $f^{-1}(y)$ were expressed using the standard convention for functions - $x$ as the independent variable and $y$ as the dependent variable, it would look like this, 
+%
+\begin{align}
+  f(x) &amp;= 2x + 3 \\
+  f^{-1}(x)  &amp;= \dfrac{x-3}{2}
+\end{align} \\
+%text
+Speaking generally, for any function $y=f(x)$, the inverse may be expressed as $f^{-1}(x)$ by finding $y$ in terms if $x$ and switching the independent variable. Some examples.
+%
+\begin{align}
+\begin{tabular}{ccc}
+  \hline
+  f(x) &amp; f^{-1}(x) \\
+  \hline
+  mx+c &amp; \tfrac{x-c}{m} \\
+  x^2 &amp; \sqrt{x},-\sqrt{x} \\
+  \ln x &amp; e^x \\
+  \sin x\ &amp; \sin^{-1}x
+\end{tabular}
+\end{align}
+</tex>
+  </reason>
+</skill>

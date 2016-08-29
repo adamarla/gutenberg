@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippet xmlns="http://www.gradians.com" chapterId="19">
+  <render>
+    <tex>\begin{align}
+\text{If }A=\left[\begin{array}{cc}
+3 &amp; 2 \\ 7 &amp; 1
+\end{array}\right]\implies
+CF=\left[\begin{array}{cc}
+1 &amp; -7 \\ -2 &amp; 3
+\end{array}\right]
+\end{align} \\
+%text
+where CF refers to Cofactor matrix of $A$
+%</tex>
+  </render>
+  <reason>
+    <tex>\begin{align}
+A=\left[\begin{array}{cc}
+3 &amp; 2 \\ 7 &amp; 1
+\end{array}\right]
+\end{align} \\
+%text
+Minor for each element,
+%
+\begin{align}
+  M_{11}=1,\, M_{12}=7,\, M_{21}=2,\, M_{22}=3
+\end{align} \\
+%text
+Therefore, Cofactor Matrix is,
+%
+\begin{align}
+A=\left[\begin{array}{cc}
+1(-1)^{1+1} &amp; 7(-1)^{1+2} \\ 2(-1)^{2+1} &amp; 3(-1)^{2+2}
+\end{array}\right]=
+\left[\begin{array}{cc}
+1 &amp; -7 \\ -2 &amp; 3
+\end{array}\right]
+\end{align} </tex>
+  </reason>
+  <skills>
+    <skill id="81"/>
+  </skills>
+</snippet>

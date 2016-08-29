@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="26">
+  <statement>
+    <tex>%text
+Write the value of $\ora{a}\cdot(\ora{b}\times \ora{a})$
+%</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>\ora{a}\cdot(\ora{b}\times \ora{a})=\ora{b}\cdot(\ora{a}\times \ora{a})</tex>
+      <tex correct="false">\ora{a}\cdot(\ora{b}\times \ora{a})=-\ora{b}\cdot(\ora{a}\times \ora{a})</tex>
+    </options>
+    <reason>
+      <tex>\ora{a}\cdot(\ora{b}\times \ora{a})=\ora{b}\cdot(\ora{a}\times \ora{a}) \\
+%text
+standard result of scalar triple product
+%</tex>
+    </reason>
+    <skills>
+      <skill id="88"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\ora{b}\cdot(\ora{a}\times \ora{a})=0</tex>
+      <tex correct="false">\ora{b}\cdot(\ora{a}\times \ora{a})=\ora{b}</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  \ora{a}\times \ora{a}&amp;=0 \\
+  \therefore\ora{b}\cdot(\ora{a}\times \ora{a})&amp;=0 \\
+  \therefore\ora{a}\cdot(\ora{b}\times \ora{a})&amp;=0 
+\end{align}</tex>
+    </reason>
+    <skills>
+      <skill id="87"/>
+    </skills>
+  </step>
+  <choices>
+    <tex correct="false">|\ora{a}||\ora{b}|</tex>
+    <tex correct="false">1</tex>
+    <tex>0</tex>
+    <tex correct="false">|\ora{a}|^2|\ora{b}|</tex>
+  </choices>
+</question>

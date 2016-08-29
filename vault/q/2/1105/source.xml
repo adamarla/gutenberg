@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="13">
+  <statement>
+    <tex>%text
+Show that the following two lines are coplanar:
+%
+\qquad l_1:\dfrac{x-a+d}{\alpha-\delta}=\dfrac{y-a}{\alpha}=\dfrac{z-a-d}{\alpha+\delta}
+\text{ and} \\
+\qquad l_2:\dfrac{x-b+c}{\beta-\gamma}=\dfrac{y-b}{\beta}=\dfrac{z-b-c}{\beta+\gamma}</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>%text
+The direction vectors of the two lines $l_1$ and $l_2$ are,
+%
+\begin{align}
+  \ora{d_1}&amp;=\vector{(\alpha-\delta)}{\alpha}{(\alpha+\delta)} \\
+  \ora{d_2}&amp;=\vector{(\beta-\gamma)}{\beta}{(\beta+\gamma)}
+\end{align}</tex>
+      <tex correct="false">%text
+The direction vectors of the two lines $l_1$ and $l_2$ are,
+%
+\begin{align}
+  \ora{d_1}&amp;=\vector{-\delta}{\alpha}{\delta} \\
+  \ora{d_2}&amp;=\vector{-\gamma}{\beta}{+\gamma}
+\end{align}</tex>
+    </options>
+    <reason>
+      <tex>%text
+For $l_1:\dfrac{x-a+d}{\alpha-\delta}=\dfrac{y-a}{\alpha}=\dfrac{z-a-d}{\alpha+\delta}$,
+direction vector $\ora{d_1}=\vector{(\alpha-\delta)}{\alpha}{(\alpha+\delta)}$
+%
+
+%text
+For $l_2:\dfrac{x-b+c}{\beta-\gamma}=\dfrac{y-b}{\beta}=\dfrac{z-b-c}{\beta+\gamma}$,
+direction vector $\ora{d_2}=\vector{(\beta-\gamma)}{\beta}{(\beta+\gamma)}$
+%
+</tex>
+    </reason>
+    <skills>
+      <skill id="89"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>%text
+Vector joining points on each of the two lines is,
+%
+\begin{align}
+  \ora{V}=\vector{(a-d-b+c)}{(a-b)}{(a+d-b-c)}
+\end{align}</tex>
+      <tex correct="false">%text
+Vector joining points on each of the two lines is,
+%
+\begin{align}
+  \ora{V}=\vector{(a-d+b-c)}{(a+b)}{(a+d+b+c)}
+\end{align}</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  \ora{P_1}&amp;=\vector{(a-d)}{a}{(a+d)}\quad(\text{lies on} l_1) \\
+  \ora{P_2}&amp;=\vector{(b-c)}{b}{b+c}\quad(\text{lies on }l_2) \\
+  \ora{V}&amp;=\ora{P_1}-\ora{P_2}\quad\text{(joins $l_1$ and $l_2$)} \\
+    &amp;=\vector{(a-d-b+c)}{(a-b)}{}+(a+d-b-c)\hat{\it k}
+\end{align} \\</tex>
+    </reason>
+    <skills>
+      <skill id="89"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>%text
+For the lines $l_1$ and $l_2$ to be coplanar, the scalar triple product $\ora{V}\cdot(\ora{d_1}\times\ora{d_2})$ must equal $0$. Therefore we have to prove,
+%
+\begin{align}
+  \left\vert\begin{array}{ccc}
+  {\small (a-d-b+c)} &amp; {\small (a-b)} &amp; {\small (a+d-b-c)} \\
+  \alpha-\delta &amp; \alpha &amp; \alpha+\delta \\ \beta-\gamma &amp; \beta &amp; \beta + \gamma 
+  \end{array}\right\vert=0
+\end{align}</tex>
+    </options>
+    <reason>
+      <tex>%text
+If $\ora{d_1}$ and $\ora{d_2}$ are coplanar, then vector $\ora{V}$ joining points on the lines $l_1$ and $l_2$ must also be in the same plane. If three vectors are in the same plane, their scalar triple product is zero. 
+%
+\begin{align}
+  \ora{d_1}=&amp;\vector{(\alpha-\delta)}{\alpha}{(\alpha+\delta)} \\
+  \ora{d_2}=&amp;\vector{(\beta-\gamma)}{\beta}{(\beta+\gamma)} \\
+  \ora{V}=&amp;\vector{(a-d-b+c)}{(a-b)}{(a+d-b-c)} \\
+  \ora{V}\cdot&amp;(\ora{d_1}\times\ora{d_2})=0 \\
+\end{align} \\
+  \therefore \left\vert\begin{array}{ccc}
+  {\small (a-d-b+c)} &amp; {\small (a-b)} &amp; {\small (a+d-b-c)} \\
+  \alpha-\delta &amp; \alpha &amp; \alpha+\delta \\
+  \beta-\gamma &amp; \beta &amp; \beta + \gamma 
+  \end{array}\right\vert=0 \\
+</tex>
+    </reason>
+    <skills>
+      <skill id="88"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\left\vert\begin{array}{ccc}
+  {\small (a-d-b+c)} &amp; {\small (a-b)} &amp; {\small (a+d-b-c)} \\
+  \alpha-\delta &amp; \alpha &amp; \alpha+\delta \\
+  \beta-\gamma &amp; \beta &amp; \beta + \gamma 
+  \end{array}\right\vert \\
+%text
+Use the following elementary transform to reduce this determinant $C_1\rightarrow C_1+C_3$
+%
+</tex>
+      <tex correct="false">\left\vert\begin{array}{ccc}
+  {\small (a-d-b+c)} &amp; {\small (a-b)} &amp; {\small (a+d-b-c)} \\
+  \alpha-\delta &amp; \alpha &amp; \alpha+\delta \\
+  \beta-\gamma &amp; \beta &amp; \beta + \gamma 
+  \end{array}\right\vert \\
+%text
+Use the following elementary transform to reduce this determinant $R_2\rightarrow R_2+R_3$
+%
+</tex>
+    </options>
+    <reason>
+      <tex>%text
+Applying column transformation $C_1\rightarrow C_1+C_3$ results in the following determinant,
+%
+\begin{align}
+  \left\vert\begin{array}{ccc}
+  2(a-b) &amp; {\small (a-b)} &amp; {\small (a+d-b-c)} \\
+  2\alpha &amp; \alpha &amp; \alpha+\delta \\
+  2\beta &amp; \beta &amp; \beta + \gamma 
+  \end{array}\right\vert
+\end{align} \\
+%text
+Since $C_1$ and $C_2$ are proportional, the value of the determinant is zero.
+%</tex>
+    </reason>
+    <skills>
+      <skill id="90"/>
+    </skills>
+  </step>
+</question>

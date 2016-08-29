@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>\title{Scalar (Dot) Product} \\
+%text
+Scalar multiplication of two vectors
+%
+</tex>
+  </render>
+  <reason>
+    <tex>\begin{align}
+  \ora{A}&amp;=\vector{a_1}{a_2}{a_3} \\
+  \ora{B}&amp;=\vector{b_1}{b_2}{b_3} \\
+\end{align} \\
+%text
+Note: The scalar (dot) product of any two vectors $\ora{a}$ and $\ora{b}$ that have an angle $\theta$ between them is $|\ora{a}||\ora{b}|\cos\theta$.
+%
+\begin{align}
+  \ora{A}\cdot\ora{B}&amp;=(\vector{a_1}{a_2}{a_3})\cdot(\vector{b_1}{b_2}{b_3}) \\
+  &amp;={\bf a_1b_1(\hat i\cdot \hat i)}+a_1b_2(\hat i\cdot \hat j)+a_1b_3(\hat i\cdot\hat k) \\
+  &amp;+\; a_2b_1(\hat j\cdot \hat i)+{\bf a_2b_2(\hat j\cdot \hat j)}+a_2b_3(\hat j\cdot\hat k) \\
+  &amp;+\; a_3b_1(\hat k\cdot \hat i)+a_3b_2(\hat k\cdot \hat j)+{\bf a_3b_3(\hat k\cdot\hat k)}
+\end{align} \\
+%text
+All terms, except those in bold, are $0$ since the dot product of mutually perpendicular vectors contains $\cos(\pi/2) = 0$.
+% 
+\begin{align}
+  \therefore (\vector{a_1}{a_2}{a_3})\cdot(\vector{b_1}{b_2}{b_3})=a_1a_2+b_1b_2+c_1_c2
+\end{align}</tex>
+  </reason>
+</skill>

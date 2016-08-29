@@ -15,11 +15,7 @@ last_compiled_on : blueprint.xml
 		sed -i -e 's/>\(.*\)<\/tex>/ src=\"\1\"\/>/g' layout.xml
 	fi
 	if [ -e ~/.gutenberg ] ; then 
-		if [ -s source.tex ] ; then 
-			ping_on_recompile -r 
-		else 
-			quill -p $$(pwd) 
-		fi
+		ping_on_recompile -r 
 	fi 
 	date > $@
 

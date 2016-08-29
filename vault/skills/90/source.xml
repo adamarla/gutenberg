@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>\title{Elementary Transforms} \\
+%text
+Using elementary row or column transforms to reduce or simplify a determinant
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+The following properties of determinants can be useful in simplifying it and thus reducing the calculation required to establish its final value.
+%
+\begin{tabular}{|c|c|}
+\hline
+\text{Interchanging the rows and columns of a} &amp; C_i\leftrightarrow R_i \\
+\text{determinant does not change its value} &amp; |D|=|D| \\
+\hline
+\text{If any two rows (or columns) are inter-} &amp; R_i\leftrightarrow R_j \\
+\text{-changed, the sign of determinant changes} &amp; |D|=-|D| \\
+\hline
+\text{If any two rows (or columns) are identical} &amp; R_i=kR_j \\
+\text{or proportional, determinant is zero} &amp; |D|=0 \\
+\hline 
+\text{If a row (or column) is multiplied by a } &amp; R_i\rightarrow kR_i \\
+\text{constant $k$, its value is multipled by $k$} &amp; |D|=k|D| \\
+\hline 
+\text{If $k$ times a row (or column) is added to} &amp; R_i\rightarrow kR_i\pm R_j \\
+\text{another row (or col), value is the same} &amp; |D|=|D| \\
+\hline 
+\end{tabular} \\</tex>
+  </reason>
+</skill>
