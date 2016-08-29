@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>\title{Matrix Multiplication} \\
+%text
+How to multiply with matrices
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+For two matrices $A$ and $B$ to be multiplied with each other, the number of columns in $A$ needs to equal the number of rows in $B$. 
+%
+\begin{align}
+  A_{m\times n}\times B_{n\times o}=C_{m\times o}
+\end{align} \\
+\textit{($M_{p\times q}$ - a matrix $M$ with $p$ rows and $q$ columns)}\\
+%text
+The product matrix $C$ above would have as many rows as $A$ and as many columns as $B$. Here is an actual example,
+%
+\begin{align}
+\left[\begin{array}{ccc}1 &amp; 2 &amp; 3\end{array}\right]\times\left[\begin{array}{c} 4 \\ 5 \\ 6 \end{array}\right]
+=&amp;[(1\times 4)+(2\times 5)+(3\times 6)] \\
+=&amp;[4+10+18]=[32]
+\end{align} \\
+%text
+Here is another example,
+%
+\begin{align}
+&amp;\left[\begin{array}{ccc}
+  1 &amp; 2 &amp; 3 \\ 4 &amp; 5 &amp; 6 \\ 7 &amp; 8 &amp; 9
+\end{array}\right]\times
+\left[\begin{array}{cc}
+  a &amp; b \\ c &amp; d \\ e &amp; f
+\end{array}\right]\\
+=&amp;\left[\begin{array}{cc}
+  1a+2c+3e &amp; 1b+2d+3f \\
+  4a+5c+6e &amp; 4b+5d+6f \\
+  7a+8c+9e &amp; 7b+8d+9f
+\end{array}\right]
+\end{align}\\
+%text
+Any generic element $p_{ij}$ in the product matrix of $A_{m\times n}$ and $B_{n\times o}$ is given by,
+%
+\begin{align}
+  p_{ij}&amp;=\sum_{k=1}^na_{ik}\times b_{kj}
+\end{align} \\
+%text
+Multiplying a matrix with a scalar $k$ is much simpler. Each element of the matrix gets multiplied by $k$.
+%
+\begin{align}
+  &amp;kA_{m\times n}=k\times[a_{ij}]_{m\times n}=[k(a_{ij})]_{m\times n} \\
+  &amp; k\left[\begin{array}{cc} a &amp; b \\ c &amp; d \\ e &amp; f 
+  \end{array}\right]=
+  \left[\begin{array}{cc} ka &amp; kb \\ kc &amp; kd \\ ke &amp; kf
+  \end{array}\right]
+\end{align}</tex>
+  </reason>
+</skill>

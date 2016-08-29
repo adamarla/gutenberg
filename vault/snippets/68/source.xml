@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippet xmlns="http://www.gradians.com" chapterId="19">
+  <render>
+    <tex>\begin{align}
+\text{If }A=\left[\begin{array}{ccc}
+  0 &amp; -2 &amp; 2 \\
+  1 &amp; 5 &amp; 1 \\
+  7 &amp; 2 &amp; 3
+\end{array}\right]\text{ then,}
+\end{align} \\
+%text 
+row $1$ col $2$ in the cofactor matrix is $CF_{12}=4$
+%</tex>
+  </render>
+  <reason>
+    <tex>\begin{align}
+M_{12}\text{ (minor)} &amp;= 1\cdot 3-7\cdot 1=-4 \\
+CF_{12} &amp;= (-1)^{1+2}(-4)=4
+\end{align}</tex>
+  </reason>
+  <skills>
+    <skill id="81"/>
+  </skills>
+</snippet>

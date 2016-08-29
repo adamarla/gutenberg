@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="13">
+  <statement>
+    <tex>%text
+Find the acute angle between the plane $5x-4y+7z=13$  and the y-axis.
+%
+</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>%text
+Vector equation of the plane is $\ora{r}\cdot(\vector{5}{-4}{7})=13$</tex>
+      <tex correct="false">%text
+Vector equation of the plane is $\ora{r}\cdot(\vector{5}{-4}{7})=\dfrac{13}{3\sqrt{10}}$</tex>
+    </options>
+    <reason>
+      <tex>%text
+$5x-4y+7z=13$ is equivalent to the vector equation,
+%
+\begin{align}
+  \ora{r}\cdot(\vector{5}{-4}{7})=13
+\end{align} \\
+%text
+where $a$, $b$ and $c$ are the direction ratios normal to the plane
+%</tex>
+    </reason>
+    <skills>
+      <skill id="92"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>%text
+If angle between the normal to the plane and the $y$ axis is $\theta$,
+%
+\begin{align}
+\cos\theta=-\dfrac{4}{3\sqrt{10}}
+\end{align}
+</tex>
+      <tex correct="false">%text
+If angle between the normal to the plane and the $y$ axis is $\theta$,
+%
+\begin{align}
+\cos\theta=\dfrac{3}{4}
+\end{align}
+</tex>
+    </options>
+    <reason>
+      <tex>%text
+Using the scalar dot product of two vectors,
+%
+\begin{align}
+  (\vector{5}{-4}{7})\cdot\hat j&amp;=|\vector{5}{-4}{7}|\cos\theta \\
+    \therefore -4&amp;=3\sqrt{10}\cos\theta\\
+  \therefore \cos\theta&amp;=-\dfrac{4}{3\sqrt{10}}
+\end{align}</tex>
+    </reason>
+    <skills>
+      <skill id="83"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>%text
+Angle between the $y$ axis and the normal to the plane is $\theta$, therefore angle $\phi$ between the $y$ axis and the surface is
+%
+\begin{align}
+  \phi&amp;=\pi/2-\theta=\sin^{-1}\left(\dfrac{4}{3\sqrt{10}}\right)
+\end{align}
+</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  \text{We know that }\phi&amp;=\theta-\pi/2 \quad(\theta\in \text{2nd quadrant}) \\
+  \cos\theta&amp;=-\dfrac{4}{3\sqrt{10}}=-\sin(\theta-\pi/2) \\
+  \therefore\sin(\theta-\pi/2)&amp;=\dfrac{4}{3\sqrt{10}} \\ 
+  \theta-\pi/2&amp;=\sin^{-1}\left(\dfrac{4}{3\sqrt{10}}\right) \\
+  \phi &amp;= \sin^{-1}\left(\dfrac{4}{3\sqrt{10}}\right)
+\end{align}
+</tex>
+    </reason>
+  </step>
+  <choices>
+    <tex>\sin^{-1}\left(\dfrac{4}{3\sqrt{10}}\right)</tex>
+    <tex correct="false">\cos^{-1}\left(\dfrac{4}{3\sqrt{10}}\right)</tex>
+    <tex correct="false">\pi-\sin^{-1}\left(\dfrac{4}{3\sqrt{10}}\right)</tex>
+    <tex correct="false">\pi-\cos^{-1}\left(\dfrac{4}{3\sqrt{10}}\right)</tex>
+  </choices>
+</question>

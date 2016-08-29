@@ -13,6 +13,13 @@ function main() {
             if [ "$1" == "-h" ] ; then
                 usage
             else
+                # check for updates only if user is
+                # running quill with no args
+                if [ -z "$1" ] ; then
+                    if ! check_update ; then
+                        update
+                    fi
+                fi 
                 run_quill $1 $2
             fi
         fi
@@ -62,6 +69,27 @@ function download() {
     echo $dir > ~/.quill/location
 }
 
+function check_update() {
+  if [ ! -f ~/.quill/location ] ; then 
+    echo "[Quill]: Not downloaded me? How mean!" 
+    return 
+  fi 
+
+  dir=$(cat ~/.quill/location) 
+
+  # if Qquill.jar does not exist, simply download it
+  # otherwise compare sha1sum with remote jar
+  if [ ! -f $dir/Qquill.jar ] ; then
+    echo "Qquill.jar does not exist"
+    return 1
+  else
+    scp $quill_download_dir/sha1sum.txt $dir/
+    cd $dir
+    sha1sum $dir/Qquill.jar | cut -d' ' -f1 | diff sha1sum.txt - > /dev/null
+    return $?
+  fi
+}
+
 function update() {
   if [ ! -f ~/.quill/location ] ; then 
     echo "[Quill]: Not downloaded me? How mean!" 
@@ -81,7 +109,7 @@ function update() {
   rm Qquill-all.jar
   rm -rf com/gradians
 
-  mv ../Qquill.jar .
+  cp ../Qquill.jar .
   jar xf Qquill.jar
   rm Qquill.jar
 

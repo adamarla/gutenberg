@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>\title{Matrix Basics} \\
+%text
+A few basic rules regarding matrices
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+- A matrix is an ordered array of numbers or functions
+- A matrix having $m$ rows and $n$ columns is called a matrix of order $m\times n$
+- If $m=n$ an $m\times n$ matrix is called a \underline\text{square matrix}
+- A \underline\text{symmetric matrix} is a square matrix whose non-diagonal elements ($i\neq j$) satisfy $a_{ij}=a_{ji}$
+- A \underline\text{diagonal matrix} is a square matrix whose non-diagonal elements $a_{ij}$ when $i\neq j$ are all $0$
+- A \underline\text{scalar matrix} is a diagonal matrix whose diagonal elements are all equal to some constant $k$
+- An \underline\text{identity matrix} is a square matrix whose diagonal elements are all $1$. It is usually denoted by $I$
+- $M\times I=M$, any matrix multiplied by Identity matrix results in that matrix itself
+%</tex>
+  </reason>
+</skill>

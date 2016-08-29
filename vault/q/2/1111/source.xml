@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="3">
+  <statement>
+    <tex>%text
+If the function $f:\mathbb{R} \rightarrow \mathbb{R}$ be defined by $f(x)=2x-3$ and $g:\mathbb{R}\rightarrow \mathbb{R}$ by $g(x)=x^3+5$, then find the value of $(f\circ g)^{-1}\left(x\right)$.
+%
+</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>\begin{align}
+  f: \mathbb{R}\rightarrow \mathbb{R} &amp;= 2x-3 \\
+  g: \mathbb{R}\rightarrow \mathbb{R} &amp;= x^3+5 \\
+  \therefore(f\circ g)\left(x \right)&amp;=2x^3 + 7
+\end{align}
+</tex>
+      <tex correct="false">\begin{align}
+  f: \mathbb{R}\rightarrow \mathbb{R} &amp;= 2x-3 \\
+  g: \mathbb{R}\rightarrow \mathbb{R} &amp;= x^3+5   \\
+  \therefore(f\circ g)\left(x \right)&amp;=2x^4-3x^3+10x-15
+\end{align}</tex>
+    </options>
+    <reason>
+      <tex>%text
+$\underline{(f\circ g)\left(x \right)}$ is shorthand for $\underline{f\left(g\left((x\right)\right)}$. And hence, 
+%
+
+\begin{align}
+  f(x) &amp;= 2x-3 \\
+  \implies (f\circ g)\left(x\right) &amp;= f(g(x)) = 2(g(x))-3 \\
+    &amp;= 2(x^3+5)-3 \\
+    &amp;= 2x^3+10-3 \\
+  \implies (f\circ g)\left(x \right) &amp;= 2x^3+7
+\end{align}
+</tex>
+    </reason>
+    <skills>
+      <skill id="47"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>(f\circ g)^{-1}\left(x\right) = \sqrt[3]\dfrac{x-7}{2}</tex>
+      <tex correct="false">(f\circ g)^{-1}\left(x\right)=\dfrac{1}{(f\circ g)(x)} = \dfrac{1}{2x^3+7}</tex>
+    </options>
+    <reason>
+      <tex>%text
+If $y = f(x)$, then $x = f^{-1}(y)$ and not $\dfrac{1}{f(y)}$.
+And hence, 
+%
+
+\begin{align}
+(f\circ g)\left( x\right)&amp;=y= 2x^3 + 7 \\
+\implies (f\circ g)^{-1}(y)&amp;=x=\sqrt[3]\dfrac{y-7}{2} \\
+\end{align} \\
+
+%text
+But \underline\text{the convention} is to write $x$ as the independent variable and $y$ as the dependent variable therefore,
+%
+\begin{align}
+(f\circ g)^{-1}(x) = \sqrt[3]\dfrac{x-7}{2}
+\end{align}</tex>
+    </reason>
+  </step>
+  <choices>
+    <tex correct="false">2x^3 + 7</tex>
+    <tex correct="false">\sqrt[3]\dfrac{x + 7}{2}</tex>
+    <tex correct="false">\dfrac{1}{2x^3 + 7}</tex>
+    <tex>\sqrt[3]{\dfrac{x-7}{2}}</tex>
+  </choices>
+</question>

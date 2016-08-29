@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippet xmlns="http://www.gradians.com" chapterId="19">
+  <render>
+    <tex correct="false">A=\left[\begin{array}{cc}
+1 &amp; 2 \\ 3 &amp; 4
+\end{array}\right] \implies
+Adj(A)=\left[\begin{array}{cc}
+2 &amp; 4 \\ 1 &amp; 3
+\end{array}\right]</tex>
+  </render>
+  <reason>
+    <tex>\begin{align}
+A=\left[\begin{array}{cc}
+1 &amp; 2 \\ 3 &amp; 4
+\end{array}\right] 
+\therefore \text{Cofactor Matrix }A_{CF}=
+\left[\begin{array}{cc}
+4 &amp; -3 \\ -2 &amp; 1
+\end{array}\right]\\ 
+Adj(A)=A_{CF}^T=\left[\begin{array}{cc}
+4 &amp; -2 \\ -3 &amp; 1
+\end{array}\right]
+\end{align}
+
+
+</tex>
+  </reason>
+  <skills>
+    <skill id="79"/>
+  </skills>
+</snippet>

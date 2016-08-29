@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="3">
+  <statement>
+    <tex>%text
+Let $A=Q\times Q$, where $Q$ is the set of all rational numbers, and $*$ be a binary operation defined on A by
+%
+\begin{align}
+  (a, b)*(c, d)=(ac, b+ad), \forall \left(a, b\right)\left(c, d\right) \in A
+\end{align} \\
+%text
+Find
+(i) the identity element in A.
+(ii) the invertible element of A.
+%
+</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>%text
+If the identity element is the pair $I(i, j) \in A$, then by definition of identity element,
+%
+\begin{align}
+  (a, b)*(i, j) &amp;= (a, b) = (i, j)*(a, b) \\
+  \therefore I(i,j)&amp;=(1,0)
+\end{align} \\
+</tex>
+    </options>
+    <reason>
+      <tex>%text
+By definition an identity element $I(i, j) \in A$ is such that,
+%
+\begin{align}
+  (a, b)*(i, j) = (a, b) = (i, j)*(a, b). \\
+\end{align} \\
+ \\
+\begin{align}
+  &amp;(a, b)*(i, j) = (a, b) \\
+  \implies &amp;(ai, b+aj) = (a, b) \\
+  \implies &amp;ai = a, b+aj=b \\
+  \implies &amp;i=1, j=0 
+\end{align} \\
+\begin{align}
+  &amp;(i, j)*(a, b) = (a, b) \\
+  \implies &amp;(ia, j+ib) = (a, b) \\
+  \implies &amp;ia = a \text{ and } j+ib=b \\
+  \implies &amp;i=1, j=0 
+\end{align}</tex>
+    </reason>
+    <skills>
+      <skill id="100"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>%text
+If the invertible element is the pair $L (l, m) \in A$, and identity element is $(1,0)$ then,
+%
+\begin{align}
+  &amp;(a, b)*(l, m) = (1, 0) = (l, m)*(a, b) \\
+  \implies &amp;(l,m)=\left(\dfrac{1}{a}, -\dfrac{b}{a}\right)
+\end{align}
+</tex>
+      <tex correct="false">%text
+If the invertible element is the pair $L (l, m) \in A$, and identity element is $(1,0)$ then,
+%
+\begin{align}
+  &amp;(a, b)*(l, m) = (1, 0) = (l, m)*(a, b) \\
+  \implies &amp;(l,m)=\left(\dfrac{b}{a}, -b\right)
+\end{align}
+</tex>
+    </options>
+    <reason>
+      <tex>%text
+By definition an invertible element $L(l, m) \in A$ is such that,
+%
+\begin{align}
+  &amp;(a, b)*(l, m) = (1, 0) = (l, m)*(a, b) \\
+  \implies &amp;(al, b+am)=(1, 0) \text{ and } (la, m+lb)=(1, 0) \\
+  \implies &amp;la=1, b+am=0, m+lb=0 \\
+  \implies &amp;l=\dfrac{1}{a},m=-\dfrac{b}{a}
+\end{align}</tex>
+    </reason>
+    <skills>
+      <skill id="100"/>
+    </skills>
+  </step>
+  <choices>
+    <tex>(i) \left(1, 0\right) \\
+(ii) \left(\dfrac{1}{a}, -\dfrac{b}{a}\right)</tex>
+    <tex correct="false">(i) \left(0, 1\right) \\
+(ii) \left(-a, \dfrac{b}{a}\right)</tex>
+    <tex correct="false">(i) \left(-1, 0\right) \\
+(ii) \left(\dfrac{1}{a}, \dfrac{b}{a}\right)</tex>
+    <tex correct="false">(i) \left(0, 1\right) \\
+(ii) \left(a, \dfrac{1}{a}\right)</tex>
+  </choices>
+</question>

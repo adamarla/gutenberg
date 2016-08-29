@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>\title{Direction Cosines and Ratios} \\
+%text
+Direction cosines $(l,m,n)$ and ratios $(a,b,c)$ of a line
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+A line in three dimensional geometry may be expressed as,
+%
+\begin{align}
+  \dfrac{x-x_1}{a}=\dfrac{y-y_1}{b}=\dfrac{z-z_1}{c}
+\end{align} \\
+%text
+For such a line, the{\bf direction ratios} are $a$, $b$ and $c$. The{\bf direction cosines} $(l,m,n)$ on the other hand can be established as shown.
+%
+\begin{align}
+  l &amp;= \dfrac{a}{\sqrt{a^2+b^2+c^2}} \\
+  m &amp;= \dfrac{b}{\sqrt{a^2+b^2+c^2}} \\
+  n &amp;= \dfrac{c}{\sqrt{a^2+b^2+c^2}}
+\end{align} \\
+%text
+Sometimes a line may be perpendicular to one or more of the axes, in which case the expressions above change. For example,
+%
+\begin{align}
+\begin{tabular}{|c|c|c|}
+  \hline
+  \text{Equation} &amp; \text{Type of line} &amp; (l, m, n) \\
+  \hline
+  x=2,y=4 &amp;\text{parallel to $z$ axis} &amp; (1,1,0) \\
+  &amp; \text{$\perp$ to $x$ and $y$ axes} &amp;\\
+  \hline
+  \dfrac{x-1}{3}=\dfrac{y+3}{2}, z=9 &amp; \text{$\perp$ to $z$ axis} &amp; \small{\left(\frac{3}{\sqrt{13}},\frac{2}{\sqrt{13}},0\right)} \\
+  \hline
+  \dfrac{x-9}{2}=\dfrac{z+1}{1}, y=4 &amp; \text{$\perp$ to $y$ axis} &amp; \small{\left(\frac{2}{\sqrt{5}},0,\frac{1}{\sqrt{5}}\right)}\\
+  \hline
+\end{tabular}
+\end{align}
+
+</tex>
+  </reason>
+</skill>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com">
+  <render>
+    <tex>\textcolor{blue}{\text{Cofactor Matrix}} \\
+%text
+How to determine the Cofactor Matrix
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+$A$ is a $3\times 3$ matrix we use as an example to understand how to determine the Cofactor Matrix
+%
+\begin{align}
+A=\left[\begin{array}{ccc}
+  a_1 &amp; a_2 &amp; a_3 \\
+  b_1 &amp; b_2 &amp; b_3 \\
+  c_1 &amp; c_2 &amp; c_3
+\end{array}\right]
+\end{align} \\
+%text
+Each element in the matrix, has a minor $(M_{ij})$, which is the Determinant of the submatrix remaining when the row $(i)$ and column $(j)$ containing that element are removed from the original matrix. For e.g.,
+%
+\begin{align}
+M_{11}&amp;=(b_2c_3-c_2b_3) \\
+M_{21}&amp;=(a_2c_3-c_2a_3) \\
+M_{31}&amp;=(a_2b_3-b_2a_3) \\
+...&amp; \\
+M_{33}&amp;=(a_1b_2-b_1a_2) \\
+\end{align} \\
+
+%text
+The final cofactor $(CF_{ij})$ for each minor is obtained by multiplying it by $(-1)^\text{i+j}$,
+%
+\begin{align}
+CF_{11}&amp;=(b_2c_3-c_2b_3)(-1)^{1+1}=b_2c_3-c_2b_3 \\
+CF_{21}&amp;=(a_2c_3-c_2a_3)(-1)^{2+1}=c_2a_3-a_2c_3 \\
+...&amp; \\
+CF_{33}&amp;=(a_1b_2-b_1a_2)(-1)^{3+3}=a_1b_2-b_1a_2 \\
+\end{align} \\
+%text
+The Cofactor Matrix looks like this,
+%
+\begin{align}
+CF&amp;=\left[\begin{array}{ccc}
+  b_2c_3-c_2b_3 &amp; c_1b_3-b_1c_3 &amp; b_1c_2-c_1b_2 \\
+  c_2a_3-a_2c_3 &amp; a_1c_3-c_1a_3 &amp; c_1a_2-a_1c_2 \\
+  a_2b_3-b_2a_3 &amp; b_1a_3-a_1b_3 &amp; a_1b_2-b_1a_2
+\end{array}\right]
+\end{align} \\
+</tex>
+  </reason>
+</skill>

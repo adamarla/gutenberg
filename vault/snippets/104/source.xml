@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippet xmlns="http://www.gradians.com" chapterId="13">
+  <render>
+    <tex>%text
+These two equations represent $\perp$ planes
+%
+\begin{align}
+  x+2y-z&amp;=6 \\
+  \ora{r}\cdot(\vector{2}{1}{4})&amp;=12
+\end{align}</tex>
+  </render>
+  <reason>
+    <tex>%text
+For the two planes to be $\perp$, the direction ratios of their respective normals should satisfy the following condition
+%
+\begin{align}
+  &amp;a_1a_2+b_1b_2+c_1c_2=0
+\end{align} \\
+%text
+Examining the given equations $x+2y-z=6$ and 
+$\ora{r}\cdot(\vector{2}{1}{4})=12$ we have,
+%
+\begin{align}
+  &amp; a_1=1, b_1=2, c_1=-1 \\
+  &amp; a_2=2,b_2=1, c_2=4 \\
+  \therefore a_1a_2+b_1b_2+c_1c_2&amp;=1\times 2+2\times 1 +(-1)\times 4 \\
+  &amp;=2+2-4=0
+\end{align}
+
+</tex>
+  </reason>
+  <skills>
+    <skill id="101"/>
+  </skills>
+</snippet>

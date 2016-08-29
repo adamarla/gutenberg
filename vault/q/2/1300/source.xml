@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="13">
+  <statement>
+    <tex>%text
+Write the direction-cosines of the line 
+joining the points $(1,0,0)$ and $(0,1,1)$.
+%
+</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>%text
+The direction ratios of the line joining $(1,0,0)$ and $(0,1,1)$ are $a=-1$, $b=1$ and $c=1$.
+%
+</tex>
+    </options>
+    <reason>
+      <tex>%text
+Direction ratios of a line joining points $(x_1, y_1, z_1)$ and $(x_2, y_2, z_2)$ are given by $(x_2-x_2)$, $(y_2-y_1)$ and $(z_2-z_1)$. Therefore, for the given line the direction ratios would be $-1$, $1$ and $1$ (or even $1$, $-1$ and $-1$). It doesn't matter which point's coordinate is subtracted from which!
+%</tex>
+    </reason>
+    <skills>
+      <skill id="84"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex correct="false">%text
+Given the set of direction ratios $-1$, $1$ and $1$, the direction cosines would be $-\sqrt{3}, \sqrt{3}, \sqrt{3}$.
+%</tex>
+    </options>
+    <reason>
+      <tex>%text
+The distance between the points $(1,0,0)$ and $(0,1,1)$ is
+%
+\begin{align}
+  d &amp;= \sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2} \\
+    &amp;=\sqrt{(0-1)^2+(1-0)^2+(1-0)^2}=\sqrt{3}
+\end{align} \\
+%text
+If the direction ratios $a$, $b$ and $c$ are $-1$, $1$ and $1$ respectively, the direction cosines $l$, $m$ and $n$ are,
+%
+\begin{align}
+  l  &amp;=\dfrac{a}{d}=\dfrac{-1}{\sqrt{3}} \\
+  m&amp;=\dfrac{b}{d}=\dfrac{1}{\sqrt{3}} \\
+  n &amp;= \dfrac{c}{d}=\dfrac{1}{\sqrt{3}}
+\end{align}
+</tex>
+    </reason>
+    <skills>
+      <skill id="84"/>
+    </skills>
+  </step>
+  <choices>
+    <tex correct="false">\dfrac{1}{\sqrt{3}}, \dfrac{-1}{\sqrt{3}}, \dfrac{1}{\sqrt{3}}</tex>
+    <tex correct="false">\dfrac{1}{\sqrt{3}}, \dfrac{1}{\sqrt{3}}, \dfrac{1}{\sqrt{3}}</tex>
+    <tex>\dfrac{-1}{\sqrt{3}}, \dfrac{1}{\sqrt{3}}, \dfrac{1}{\sqrt{3}}</tex>
+    <tex correct="false">\dfrac{-1}{\sqrt{3}}, \dfrac{-1}{\sqrt{3}}, \dfrac{-1}{\sqrt{3}}</tex>
+  </choices>
+</question>

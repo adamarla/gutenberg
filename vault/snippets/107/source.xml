@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippet xmlns="http://www.gradians.com" chapterId="19">
+  <render>
+    <tex>%text
+If $A$ is a square matrix such that $A^2=I$ (Identity matrix) then,
+%
+\begin{align}
+  (A-I)^3+(A+I)^3-7A=A
+\end{align}</tex>
+  </render>
+  <reason>
+    <tex>\begin{align}
+  &amp;(A-I)^3+(A+I)^3-7A \\
+  =&amp;2A^3+6AI^2-7A \\
+  =&amp;2A+6AI^2-7A \quad (\because A^2=I) \\
+  =&amp;2A+6A-7A \quad(\because MI=M) \\
+  =&amp;A
+\end{align}</tex>
+  </reason>
+  <skills>
+    <skill id="98"/>
+  </skills>
+</snippet>
