@@ -1,0 +1,20 @@
+#!/bin/bash 
+
+json=csv.json 
+csv=inventory.csv
+
+rm -f $csv # remove any prior copy 
+curl "http://www.gradians.com/chapter/inventory" > $json 
+last=$(($(jq length $json)-1))
+
+for j in $(seq 0 $last) ; do 
+  # read name id grade q sn sk<<<$(jq ".[$j]|.one,.two,.three,.four,.five,.six" $json | cut -d'"' -f2)
+  # echo "$name,$id,$grade,$q,$sn,$sk" >> $csv
+
+  read name<<<$(jq ".[$j]|.one" $json | cut -d'"' -f2)
+  read id grade q sn sk<<<$(jq ".[$j]|.two,.three,.four,.five,.six" $json)
+  echo "$name,$id,$grade,$q,$sn,$sk" >> $csv 
+done
+
+# rm -f $json
+

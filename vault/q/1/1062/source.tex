@@ -1,0 +1,93 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+
+\newcommand\fx{\vert x-1\vert}
+
+\begin{document}
+\begin{question}
+\statement
+	
+
+      Find the domain and range of the
+      following function 
+      \[ \qquad f(x) = \fx \]
+    
+\begin{step}
+	\begin{options}
+		\correct
+		
+		$f(x) = \fx$ is defined for all $x \in\mathbb{R}$. Hence, its domain 
+		is $\mathbb{R}$ 
+		
+		\incorrect
+		
+		$f(x) = \fx$ is defined \underline{only for} $x > 1$. Hence, its domain 
+		is $(1,\infty)$
+	\end{options}
+	\reason
+	
+	Had $f(x) = \dfrac{1}{\fx}$, then yes, one would have to worry about 
+	the deonominator turning $0$ (at $x=1$) \newline 
+	
+	But if $f(x) = \fx$, then there is no such problem. In fact, $f(x)$ is defined for any $x\in\mathbb{R}$. Therefore the domain is $\mathbb{R}$ 
+      
+\end{step}
+\begin{step}
+	\begin{options}
+		\correct
+		
+		\begin{center}
+  \begin{tabular}{NNN}
+   \toprule
+       f(x) & \text{At} & \text{Value} \\
+   \midrule 
+   \text{Minimum} & x=1 & 0 \\
+    \midrule 
+    \text{Maximum} & x = -\infty, \infty & \infty \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+Hence, the \underline{range of $f(x)$} is $[0,\infty)$  
+     
+
+		\incorrect
+		
+		\begin{center}
+  \begin{tabular}{NNN}
+   \toprule
+        f(x) & \text{At} & \text{Value} \\
+   \midrule 
+   \text{Minimum} & x=0 & 1 \\
+    \midrule 
+    \text{Maximum} & x = -\infty, \infty & \infty \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+Hence, the range of $f(x)$ is $[1,\infty)$ 
+
+
+	\end{options}
+	\reason
+
+$f(x) = \fx > 0$ for all $x$. But more specifically, 
+	\begin{align}
+	f(x) = \vert x-1\vert &= \begin{cases}
+       -(x-1), x< 1 \\
+       (x-1), x\geq 1
+     \end{cases} \\
+     &= \begin{cases}
+       1-x, x< 1 \\
+       x-1, x\geq 1
+     \end{cases} 
+\end{align}
+     
+     And as one can see, $f(x)$ is minimum when $x=1$ with $f(1) = 0$\newline
+     
+     Hence, the range of $f(x)$ is $[0,\infty)$
+     
+\end{step}
+\end{question}
+\end{document}

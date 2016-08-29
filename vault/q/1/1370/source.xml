@@ -1,34 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <question xmlns="http://www.gradians.com" chapterId="25">
   <statement>
-    <tex>%text
-Solve the differential equation 
-\[ \qquad \cos^2 x\cdot \frac{dy}{dx} + y = \tan x \]
-%</tex>
+    <tex isImage="true">tex-1.svg</tex>
   </statement>
   <step>
     <options>
-      <tex>%text
-\[\cos^2 x\cdot \frac{dy}{dx} + y = \tan x \] is a 
-\underline\text{linear differential equation}
-%</tex>
-      <tex correct="false">%text
-\[\cos^2 x\cdot \frac{dy}{dx} + y = \tan x \] is of the 
-form \[ \frac{dy}{dx} = F \left(\frac{y}{x}\right) \]. Therefore, it is a
-\underline\text{homogeneous differential equation}
-%</tex>
+      <tex isImage="true">tex-2.svg</tex>
+      <tex isImage="true" correct="false">tex-3.svg</tex>
     </options>
     <reason>
-      <tex>\begin{align}
-\cos^2 x \cdot\frac{dy}{dx} + y  &amp;= \tan x \\
-\therefore \frac{dy}{dx} + y\cdot \sec^2 x &amp;= \tan x\cdot\sec^2 x 
-\end{align}
-%text
-
-
-This looks exactly like \[ \frac{dy}{dx} + P(x)\cdot y = Q(x) \]
--- which is a \underline\text{linear differential equation}
-%</tex>
+      <tex isImage="true">tex-4.svg</tex>
     </reason>
     <skills>
       <skill id="53"/>
@@ -36,44 +17,11 @@ This looks exactly like \[ \frac{dy}{dx} + P(x)\cdot y = Q(x) \]
   </step>
   <step>
     <options>
-      <tex>%text
-\underline\text{Integrating Factor} = \[ e^{\int \sec^2 x\cdot dx} = e^{\tan x} \]
-
-And therefore, 
-
-%
-\begin{align}
-e^{\tan x}\left[\frac{dy}{dx} + \sec^2 x \cdot y\right] &amp;= e^{\tan x}\cdot\tan x\cdot \sec^2x\\
-\implies\dfrac{d}{dx}\left(e^{\tan x}\cdot y\right) &amp;= e^{\tan x}\cdot\tan x\cdot \sec^2x
-\end{align}</tex>
-      <tex correct="false">%text
-\underline\text{Integrating Factor} = \[ \int \sec^2 x\cdot dx = \tan x \]
-
-And therefore, 
-
-%
-\begin{align}
-\tan x\left[\frac{dy}{dx} + \sec^2 x \cdot y\right] &amp;= \tan x\cdot\tan x\cdot \sec^2x\\
-\implies\dfrac{d}{dx}\left(\tan x\cdot y\right) &amp;= \tan^2 x\cdot \sec^2x
-\end{align}</tex>
+      <tex isImage="true">tex-5.svg</tex>
+      <tex isImage="true" correct="false">tex-6.svg</tex>
     </options>
     <reason>
-      <tex>%text
-In a linear differential equation 
-\[ \qquad \dfrac{dy}{dx} + P(x)\cdot y = Q(x) \]
-
-the integrating factor is given by \[ e^{\int P(x)\cdot dx} \]
-In this case, that would be \[ e^{\int \sec^2\cdot dx} = e^{\tan x} \]
-
-Notice that when we \underline\text{multiply both sides}
-by the integrating factor, then 
-
-%
-\begin{align}
-e^{\tan x}\dfrac{dy}{dx} + e^{\tan x}\sec^2 x\cdot y &amp;= e^{\tan x}\tan x\cdot\sec^2 x \\
-\implies \dfrac{d}{dx}\left(e^{\tan x}\cdot y\right) &amp;= e^{\tan x}\tan x\cdot\sec^2 x
-\end{align}
-</tex>
+      <tex isImage="true">tex-7.svg</tex>
     </reason>
     <skills>
       <skill id="54"/>
@@ -81,32 +29,11 @@ e^{\tan x}\dfrac{dy}{dx} + e^{\tan x}\sec^2 x\cdot y &amp;= e^{\tan x}\tan x\cdo
   </step>
   <step>
     <options>
-      <tex>\begin{align}
-\frac{d}{dx}\left(e^{\tan x}\cdot y\right) &amp;= e^{\tan x}\cdot\sec^2 x\cdot \tan x \\
-\implies e^{\tan x} y &amp;= \int e^{\tan x}\cdot\sec^2 x\cdot \tan x \cdot dx  \\
-&amp;= \int e^z\cdot z \cdot dz \\ 
-\text{where } z &amp;= \tan x 
-\end{align}</tex>
+      <tex isImage="true">tex-8.svg</tex>
+      <tex isImage="true" correct="false">tex-9.svg</tex>
     </options>
     <reason>
-      <tex>\begin{align}
-\frac{d}{dx}\left(e^{\tan x}\cdot y\right) &amp;= e^{\tan x}\cdot\sec^2 x\cdot \tan x \\
-\implies e^{\tan x} y &amp;= \int e^{\tan x}\cdot\sec^2 x\cdot \tan x \cdot dx 
-\end{align}
-%text
-
-The above is pretty straight forward. 
-
-We need to now think about solving
-\[ \qquad \int e^{\tan x}\cdot \sec^2 x\cdot \tan x \cdot dx \]
-
-Now, if \[ z = \tan x \], then \[ dz = \sec^2 x \cdot dx \]
-And therefore 
-
-%
-\begin{align}
-\int e^{\tan x}\cdot \sec^2 x\cdot \tan x \cdot dx &amp;= \int e^z\cdot z\cdot dz 
-\end{align}</tex>
+      <tex isImage="true">tex-10.svg</tex>
     </reason>
     <skills>
       <skill id="32"/>
@@ -114,26 +41,10 @@ And therefore
   </step>
   <step>
     <options>
-      <tex>\begin{align}
-\int e^{z}\cdot z\cdot dz &amp;= (z-1)\cdot e^z + C \\
-\therefore y\cdot e^{\tan x} &amp;= \left(\tan x - 1\right)\cdot e^{\tan x} + C \\
-\implies y &amp;= \left(\tan x - 1\right) + \dfrac{C}{e^{\tan x}}
-\end{align}</tex>
+      <tex isImage="true">tex-11.svg</tex>
     </options>
     <reason>
-      <tex>\begin{align}
-\int e^zz\cdot dz &amp;= \underbrace{z\int e^z\cdot dz - \int\left[ \frac{d}{dz}z\int e^z\cdot dz \right]dz}_{\text{Integration by parts}}\\
-&amp;= z\cdot e^z - \int \left(\int e^z\cdot dz\right)\cdot dz \\
-&amp;= z\cdot e^z - \int e^z\cdot dz = (z-1)\cdot e^z + C  \\
-&amp;= \underbrace{(\tan x - 1)\cdot e^{\tan x}}_{z = \tan x} + C \\
-\end{align} 
-%text
-
-And given that 
-\[ e^{\tan x}\cdot y = \int e^z\cdot z\cdot dz = (\tan x - 1)\cdot e^{\tan x} + C\]
-we can say that 
-\[ \qquad y = (\tan x - 1) + \frac{C}{e^{\tan x}}  \]
-%</tex>
+      <tex isImage="true">tex-12.svg</tex>
     </reason>
     <skills>
       <skill id="50"/>

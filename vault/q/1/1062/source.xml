@@ -1,64 +1,30 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>
-			\text{Find the domain and range of the }\\
-			\text{following function} \\ 
-			\qquad f(x) = \vert x - 1\vert 
-		</tex>
-      <tex>\\ \text{Is the following assertion correct?}</tex>
-      <tex>\\ \textbf{Right or wrong? } \text{The minimum and maximum}\\
- 		\text{values of f(x) - and so it's range - are as follows.}</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">
-			f(x) = \vert x - 1\vert\text{ is defined for }\textbf{all x.}
-			</tex>
-         <tex correct="false">
-			f(x)=\vert x-1\vert\text{ is defined }\textbf{only for }x\geq 1.
-			</tex>
-      </options>
-      <reason>
-         <tex>\vert x-1\vert \text{ can be evaluated for any x.}\\
-			\text{But had }f(x) = \frac{1}{\vert x-1\vert}\text{ or } \sqrt{x-1},\text{ then yes,}\\
-			\text{one would have to think about what x can be.}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
- 		\begin{tabular}{|c|c|c|}
- 		  \hline 
- 		  \text{Min. Value} &amp; \text{Max. Value} &amp; \text{Range} \\
- 		  \hline 
- 		  0 &amp; \infty &amp; [0,\infty) \\
- 		  \hline
- 		\end{tabular}
- 		</tex>
-         <tex correct="false">
- 		\begin{tabular}{|c|c|c|}
- 		  \hline 
- 		  \text{Min. Value} &amp; \text{Max. Value} &amp; \text{Range} \\
- 		  \hline 
- 		  1 &amp; \infty &amp; [1,\infty) \\
- 		  \hline
- 		\end{tabular}
- 		</tex>
-      </options>
-      <reason>
-         <tex>f(x) = \vert x-1\vert = \begin{cases}
- 		  -(x-1), x\lt 1 \\
- 		  (x-1), \underbrace{x\geq 1}_{\textbf{very important}}
- 		\end{cases}\\
- 		= \begin{cases}
- 		  1-x, x\lt 1 \\
- 		  x-1, x\geq 1
- 		\end{cases} \\
- 		\text{So, }\vert x-1\vert \gt 0\text{ for all x.} \\
- 		\textbf{But, }\text{its minimum value will be } = 0\text{ at x = 1.}\\
- 		\text{Hence, the range of }f(x) = [0,\infty).</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="3">
+  <statement>
+    <tex isImage="true">tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">tex-2.svg</tex>
+      <tex isImage="true" correct="false">tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="75"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">tex-5.svg</tex>
+      <tex isImage="true" correct="false">tex-6.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">tex-7.svg</tex>
+    </reason>
+    <skills>
+      <skill id="13"/>
+    </skills>
+  </step>
 </question>

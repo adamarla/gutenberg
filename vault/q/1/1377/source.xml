@@ -1,38 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <question xmlns="http://www.gradians.com" chapterId="3">
   <statement>
-    <tex>%text
-What will \[ (f\circ g)(7)\] be if 
-\[ \quad f(x) = x+7 \text{ and } g(x) = x - 7, x\in\mathbb{R} \]
-%</tex>
+    <tex isImage="true">tex-1.svg</tex>
   </statement>
   <step>
     <options>
-      <tex>%text
-When $f(x) = x+7$ and $g(x) = x-7$,
-then \[ (f\circ g)(x) = x \implies (f\circ g)(7) = 7 \]
-%</tex>
-      <tex correct="false">%text
-When $f(x) = x+7$ and $g(x) = x-7$,
-then \[ (f\circ g)(x) = (x+7)(x-7) \implies (f\circ g)(7) = 0\]
-%</tex>
+      <tex isImage="true">tex-2.svg</tex>
+      <tex isImage="true" correct="false">tex-3.svg</tex>
     </options>
     <reason>
-      <tex>
-\begin{align}
-(f\circ g)(x) &amp;= f\left[ g(x) \right] = g(x) + 7 \\
-&amp;= (x-7) + 7 = x \\
-\therefore (f\circ g)(x) &amp;= x\implies (f\circ g)(7) = 7
-\end{align}</tex>
+      <tex isImage="true">tex-4.svg</tex>
     </reason>
     <skills>
       <skill id="47"/>
     </skills>
   </step>
-  <choices>
-    <tex>7</tex>
-    <tex correct="false">0</tex>
-    <tex correct="false">14</tex>
-    <tex correct="false">1</tex>
-  </choices>
+  <step>
+    <options>
+      <tex isImage="true">tex-5.svg</tex>
+      <tex isImage="true" correct="false">tex-6.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">tex-7.svg</tex>
+    </reason>
+    <skills>
+      <skill id="47"/>
+    </skills>
+  </step>
 </question>

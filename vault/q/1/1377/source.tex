@@ -1,0 +1,51 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+\begin{question}
+\statement
+	
+%text
+If $f(x) = x + 7$ and $g(x) = x-7, x\in\mathbb{R},$ 
+then find $(f\circ g)(7)$
+%
+\begin{step}
+	\begin{options}
+		\correct
+
+		\[(f\circ g)(x) = f\left( g\left( x\right)\right) \]
+
+		\incorrect
+
+		\[(f\circ g)(x) = f(x)\cdot g(x) \]
+
+	\end{options}
+	\reason
+
+	%text
+$(f\circ g)(x)$ is simply shorthand for $ f\left( g\left( x\right)\right)$.
+And similarly $\left(g\circ f \right)(x) = g \left( f \left(x \right) \right)$\newline 
+
+And note that $ f \left(g(x) \right)\neq g \left(f(x) \right)$
+\end{step}
+\begin{step}
+	\begin{options}
+		\correct
+
+		\[\therefore (f\circ g)(7) = 7 \]
+
+		\incorrect
+
+		\[\therefore (f\circ g)(7) = 0\]
+
+	\end{options}
+	\reason
+
+	\begin{align}
+(f\circ g)(x) &= f\left( g\left( x \right) \right) = g(x) + 7 \\
+&= (x-7) + 7 = x \\ 
+\therefore (f\circ g)(7) &= 7
+\end{align} 
+\end{step}
+\end{question}
+\end{document}

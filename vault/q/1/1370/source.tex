@@ -1,0 +1,147 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+
+\newcommand\intgf{e^{\tan x}}
+\newcommand\expa{\tan x\cdot\sec^2 x}
+
+\begin{document}
+\begin{question}
+\statement
+	
+%text
+Solve the differential equation 
+\[ \qquad \cos^2 x\cdot \frac{dy}{dx} + y = \tan x \]
+%
+
+\begin{step}
+  \begin{options} 
+     \correct 
+     \[ \qquad \cos^2 x\cdot \dydx + y = \tan  x\]
+     is a first-order linear differential equation        
+     \incorrect
+        
+        \begin{align}
+	\cos^2 x\cdot\dydx + y &= \tan x \\ 
+	\implies \dydx &= \dfrac{\tan x - y}{\cos^2 x} 
+\end{align}
+
+Hence, the given differential equation is homogenous
+    \end{options} 
+     \reason 
+     
+     \begin{align}
+	\cos^2 x\cdot\dydx + y &= \tan x \\
+	\implies \dydx + \sec^2 x\cdot y &= \expa 
+\end{align}  
+
+This equation is of the form 
+\[ \qquad \dydx + P(x)\cdot y = Q(x) \]
+which we know is a \underline{first-order linear} differential equation
+\end{step}
+
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       \begin{align}
+	\dydx + \sec^2x\cdot y &= \tan x\cdot\sec^2 x \\
+	\implies \ddx \left(\intgf\cdot y \right) &= \intgf \left(\expa \right)
+\end{align}
+     \incorrect
+        
+        \begin{align}
+	\dydx + \sec^2x\cdot y &= \tan x\cdot\sec^2 x \\
+	\implies \ddx \left(e^{\sec x}\cdot y \right) &= e^{\sec x} \left(\expa \right)
+\end{align}
+    \end{options} 
+     \reason 
+     
+     As this is a first-order linear differential equation, we first need to find the integrating factor $(I)$\newline 
+     
+     \begin{align}
+     I &= e^{\int P(x)\cdot dx} = e^{\int \sec^2\cdot dx} = \intgf 
+\end{align}
+
+On multiplying throughout with $I$, we get 
+\smallmath\begin{align}
+\intgf \dydx + \intgf \left(\sec^2x \cdot y \right) &= \intgf \left(\expa \right) \\[-20pt]
+\overbrace{\ddx \left(\intgf\cdot y \right)}^{\uparrow} &= \intgf \left(\expa \right)
+\end{align}
+
+This is the point of the integrating factor. It takes an equation of the form 
+\[ \qquad \dydx + P(x)\cdot y = Q(x) \]
+and converts it into 
+\[ \qquad \ddx \left[I(x)\cdot y \right] = G(x) \]
+which makes it easier for us to find $y$ 
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+       \begin{align}
+	\ddx \left(\intgf \cdot y \right) &= \intgf \left(\expa \right) \\
+	\therefore \intgf\cdot y &= \int \intgf \left(\expa \right)\cdot dx 
+\end{align}
+
+\underline{To evaluate the integral}, we must do the following substitution 
+\[ \qquad \qquad z = \tan x \]
+
+     \incorrect
+     
+     \begin{align}
+	\ddx \left(\intgf \cdot y \right) &= \intgf \left(\expa \right) \\
+	\therefore \intgf\cdot y &= \int \intgf \left(\expa \right)\cdot dx 
+\end{align}
+
+\underline{To evaluate the integral}, we must do the following substitution 
+\[ \qquad \qquad z = \sec x \]
+        
+    \end{options} 
+     \reason 
+     
+     \begin{align}
+	\ddx \left(\intgf \cdot y \right) &= \intgf \left(\expa \right) \\
+	\therefore \intgf\cdot y &= \int \intgf \left(\expa \right)\cdot dx 
+\end{align}
+
+So far, so good. But notice also that 
+\[ \qquad \ddx \tan x = \sec^2 x\]
+
+And hence, if we let $z = \tan x$, then $dz = \sec^2x\cdot dx$ and 
+\begin{align}
+\int \intgf \left(\expa \right)\cdot dx &= \int e^z\cdot z \cdot dz 
+\end{align}
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+     \begin{align}
+	y\cdot \intgf &= \int e^z z\cdot dz = \left(z-1 \right)\cdot e^z + C \\[-20pt]
+	\therefore y &= \left(\tan x -1 \right) + \frac{C}{\intgf} 
+\end{align}
+        
+    \end{options} 
+     \reason 
+     
+     \begin{align}
+     A &= y\cdot\intgf = \int e^z z\cdot dz \\
+     &= \underbrace{z\int e^z\cdot dz - \int \left[ \frac{d}{dz}z\int e^z\cdot dz\right] \cdot dz}_{\text{Integration by parts}} \\
+     &= ze^z - \int \left[\int e^z\cdot dz \right]\cdot dz \\
+     &= ze^z - \int e^z\cdot dz = ze^z - e^z + C \\
+     &= \left(z-1 \right)\cdot e^z + C \\
+     &= \left(\tan x - 1 \right)\cdot \intgf + C 
+\end{align}
+
+And hence, 
+\begin{align}
+y\cdot\intgf &= \left(\tan x -1 \right)\cdot \intgf + C \\
+\text{or } y &= \left(\tan x - 1 \right) + \frac{C}{\intgf} 
+\end{align}
+\end{step}
+
+\end{question}
+\end{document}
