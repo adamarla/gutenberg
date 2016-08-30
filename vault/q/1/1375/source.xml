@@ -1,53 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <question xmlns="http://www.gradians.com" chapterId="25">
   <statement>
-    <tex>%text
-Solve the following differential equation 
-\[ \qquad (x^2-y^2)\cdot dx +2xy\cdot dy = 0 \]
-given that $y=1$ when $x=1$
-%</tex>
+    <tex isImage="true">tex-1.svg</tex>
   </statement>
   <step>
     <options>
-      <tex>\begin{align}
-(x^2-y^2)\cdot dx &amp;+2xy\cdot dy = 0 \\
-\implies \frac{dy}{dx} &amp;= 
-\dfrac{\left(\frac{y}{x}\right)^2 - 1}{2\frac{y}{x}}
-\end{align}
-%text
-
-The equation is of the form 
-\[\quad  \frac{dy}{dx} = F\left( \frac{y}{x}\right) \implies \text{ homogenous equation} \]
-%</tex>
-      <tex correct="false">%text
-The given equation 
-\[\quad  (x^2-y^2)\cdot dx +2xy\cdot dy = 0\] 
-
-is of the form 
-
-\[ \frac{dy}{dx} + Px = Q \implies\text{ first-order linear equation}\]
-%
-</tex>
+      <tex isImage="true">tex-2.svg</tex>
+      <tex isImage="true" correct="false">tex-3.svg</tex>
     </options>
     <reason>
-      <tex>%text
-Just a little algebra is required here. 
-
-%
-\begin{align}
-(x^2-y^2)\cdot dx &amp;+2xy\cdot dy = 0 \\
-\therefore 2xy\frac{dy}{dx} &amp;= (y^2-x^2)  \\ 
-\implies \frac{dy}{dx} &amp;= \underbrace{\dfrac{\left[\left( \frac{y}{x}\right)^2 - 1\right]\cdot x^2}{2\frac{y}{x}\cdot x^2}}
-_{\text{Factor out $x^2$}} \\
-\implies \frac{dy}{dx} &amp;= 
-\underbrace{\dfrac{\left(\frac{y}{x}\right)^2 - 1}{2\frac{y}{x}}}_{F\left( \frac{y}{x}\right)}
-\end{align}
-%text
-
-As we can see, \[ \frac{dy}{dx} = F\left( \frac{y}{x}\right) \]. 
-This is what \underline\text{homogenous} differential
-equations look like. 
-%</tex>
+      <tex isImage="true">tex-4.svg</tex>
     </reason>
     <skills>
       <skill id="53"/>
@@ -55,114 +17,38 @@ equations look like.
   </step>
   <step>
     <options>
-      <tex>%text
-Let \[ y = v\cdot x \implies \frac{dy}{dx} = v + x\frac{dv}{dx} \]
- 
-%
-</tex>
+      <tex isImage="true">tex-5.svg</tex>
+      <tex isImage="true" correct="false">tex-6.svg</tex>
     </options>
     <reason>
-      <tex>%text
-We know that it is a homogenous
-differential equation. 
-
-The first step is therefore to let 
-\[ \qquad y = v\cdot x \] 
-
-And hence 
-\[ \qquad \frac{dy}{dx} = v + x\frac{dv}{dx} \]
-%</tex>
+      <tex isImage="true">tex-7.svg</tex>
     </reason>
     <skills>
-      <skill id="54"/>
+      <skill id="31"/>
     </skills>
   </step>
   <step>
     <options>
-      <tex>%text
-With \[ y = v\cdot x \]
-%
-\begin{align}
- F\left( \frac{y}{x} \right) =F(v) &amp;= \frac{v^2-1}{2v}  \\
- \therefore v + x\frac{dv}{dx} &amp;= \frac{v^2 - 1}{2v} \\
- \implies \int\frac{2v}{1+v^2}\cdot dv &amp;= -\int\frac{dx}{x} \\ 
-\end{align}</tex>
-      <tex correct="false">%text
-With \[ y = v\cdot x \]
-%
-\begin{align}
- F\left( \frac{y}{x} \right) =F(v) &amp;= \frac{v^2-1}{2v}  \\
- \therefore v + x\frac{dv}{dx} &amp;= \frac{v^2 - 1}{2v} \\
- \implies \int\frac{2v}{1+v^2}\cdot dv &amp;= \int \frac{dx}{x} \\ 
-\end{align}</tex>
+      <tex isImage="true">tex-8.svg</tex>
     </options>
     <reason>
-      <tex>\begin{align}
-\underbrace{v + x\cdot\frac{dv}{dx}}_{\frac{dy}{dx}} &amp;= F\left(\frac{y}{x}\right) = \frac{v^2-1}{2v} \\
-\implies x\cdot\frac{dv}{dx} &amp;= \frac{v^2-1}{2v}- v = -\frac{1+v^2}{2v} \\
-\therefore \frac{2v}{1+v^2}\cdot dv &amp;= -\frac{dx}{x} \\
-\implies \int\frac{2v}{1+v^2} \cdot dv &amp;= -\int \frac{dx}{x} 
-\end{align}
-</tex>
+      <tex isImage="true">tex-9.svg</tex>
     </reason>
     <skills>
-      <skill id="1"/>
-    </skills>
-  </step>
-  <step>
-    <options>
-      <tex>\[ \int \dfrac{2v}{1+v^2} \cdot dv = \log\vert 1+v^2\vert  +A \]</tex>
-      <tex correct="false">\[ \int \dfrac{2v}{1+v^2} \cdot dv = \tan^{-1} (1+v^2) +A \]</tex>
-    </options>
-    <reason>
-      <tex>\begin{align}
-z = 1+v^2&amp;\implies dz = 2v\cdot dv \\
-\therefore \int\frac{2v}{1+v^2}\cdot dv &amp;= \int\frac{dz}{z} \\ 
-&amp;= \log\vert z\vert + A \\
-&amp;= \log\vert 1+v^2\vert +A
-\end{align}
-
-</tex>
-    </reason>
-    <skills>
+      <skill id="48"/>
       <skill id="32"/>
-      <skill id="48"/>
     </skills>
   </step>
   <step>
     <options>
-      <tex>\begin{align}
-\int\frac{2v}{1+v^2}\cdot dv &amp;= -\int\frac{dx}{x} \\
-\implies (1+v^2)\cdot x &amp;= \left( 1+\frac{y^2}{x^2} \right)\cdot x = C \\
-\text{As }y =1\text{ when } &amp;x = 1, \text{ so } C = 2 \\
-\therefore x^2 + y^2 &amp;= 2x \text{ (final answer) }
-\end{align}</tex>
+      <tex isImage="true">tex-10.svg</tex>
     </options>
     <reason>
-      <tex>\begin{align}
-\int\frac{2v}{1+v^2}\cdot dv &amp;= -\int\frac{dx}{x} \\ 
-\implies \log \vert 1+v^2\vert  &amp;= -\log \vert x \vert + B \\ 
-\text{or }\log \vert 1+v^2\vert  + \log\vert  x\vert  &amp;= B \\
-\implies \underbrace{\log\vert (1+v^2)\cdot x\vert}_{\log a + \log b = \log (a\cdot b)} &amp;= B  \\
-\implies (1+v^2)\cdot x &amp; = e^B = C 
-\end{align}
-
-%text
-
-
-\underline\text{But do not forget that $y=1$ when $x=1$}. 
-And therefore
-%
-\begin{align}
-(1+v^2)\cdot x &amp;= C \implies \left( 1 + \frac{y^2}{x^2}\right)\cdot x = C\\
-\text{And if }y = 1&amp;\text{ when }x = 1\text{ then } \\
-\left( 1 + \frac{1^2}{1^2}\right)\cdot 1 &amp;= C \implies C = 2 \\
-\therefore \left( 1 + \frac{y^2}{x^2}\right)\cdot x &amp;= 2 \implies x^2 + y^2 = 2x 
-\end{align}</tex>
+      <tex isImage="true">tex-11.svg</tex>
     </reason>
     <skills>
-      <skill id="55"/>
-      <skill id="48"/>
+      <skill id="36"/>
+      <skill id="1"/>
     </skills>
   </step>
 </question>

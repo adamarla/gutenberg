@@ -1,0 +1,29 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\expa{ \left(\frac{d^2 y}{dx^2} \right)^2}
+\newcommand\expb{ \left(\dydx \right)^4 }
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    
+    \incorrect
+    
+    The following differential equation 
+    \[ \qquad x^3 \expa + x\expb = 0 \]
+    is of \underline{order 3 and degree 4}
+    
+    \reason
+    
+    $\dfrac{d^2y}{dx^2}$ is the most $y$ has been differentiated with respect to $x$. Hence, the \underline{order} of the differential equation is $2$ \newline 
+    
+    The degree of the equation \underline{will also} come from this highest-order 
+    differential term \newline 
+    
+    Notice that in $\expa, \frac{d^2 y}{dx^2}$ has been raised to the power $2$. Hence, the \underline{degree} is also $2$ \newline 
+    
+    Every other term, like $\expb$, \underline{is irrelevant}
+\end{snippet} 
+\end{document} 
