@@ -1,0 +1,115 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+\begin{question}
+\statement
+	
+%text
+Solve the following differential equation 
+\[ \qquad (x^2-y^2)\cdot dx +2xy\cdot dy = 0 \]
+given that $y=1$ when $x=1$
+%
+\begin{step}
+	\begin{options}
+		\correct
+
+		\[\dydx = F\left( \frac{y}{x}\right) = \dfrac{\left(\frac{y}{x}\right)^2 - 1}{2\frac{y}{x}} \]
+		And hence, this is a \underline{homogenous} differential equation
+
+		\incorrect
+		
+		\begin{align}
+		\left(x^2-y^2 \right) dx + 2xy\cdot dy &= 0  \\
+		\implies 2xy\cdot\dydx - y^2 &= -x^2 
+\end{align}
+
+And hence, this is a \underline{first-order linear} differential equation
+
+	\end{options}
+	\reason
+
+	%text
+Just a little algebra is required here. 
+
+%
+\begin{align}
+(x^2-y^2)\cdot dx &+2xy\cdot dy = 0 \\
+\therefore 2xy\frac{dy}{dx} &= (y^2-x^2)  \\ 
+\implies \frac{dy}{dx} &= \underbrace{\dfrac{\left[\left( \frac{y}{x}\right)^2 - 1\right]\cdot x^2}{2\frac{y}{x}\cdot x^2}}_{\text{Factor out $x^2$}}\\
+\implies \frac{dy}{dx} &= 
+\underbrace{\dfrac{\left(\frac{y}{x}\right)^2 - 1}{2\frac{y}{x}}}_{F\left( \frac{y}{x}\right)}
+\end{align}
+
+The fact that $\dydx = F \left(\frac{y}{x} \right)$ makes this a 
+\underline{homogenous} differential equation
+
+\end{step}
+\begin{step}
+	\begin{options}
+		\correct
+
+		\[\text{If } y = vx\text{ then } \frac{2v}{1+v^2}\cdot dv = -\frac{dx}{x}\]
+
+		\incorrect
+
+		\[\text{If } y = vx\text{ then }\frac{2v}{1- v^2}\cdot dv = \frac{dx}{x}\]
+
+	\end{options}
+	\reason
+
+	\begin{align}
+y = vx &\implies \frac{dy}{dx} = v + x\cdot\frac{dv}{dx} \\[5pt]
+\therefore  \underbrace{v + x\cdot\frac{dv}{dx}}_{\frac{dy}{dx}} &= F\left(\frac{y}{x}\right) = \frac{v^2-1}{2v} \\
+\implies x\cdot\frac{dv}{dx} &= \frac{v^2-1}{2v}- v = -\frac{1+v^2}{2v} \\
+\therefore \frac{2v}{1+v^2}\cdot dv &= -\frac{dx}{x} 
+\end{align} 
+\end{step}
+\begin{step}
+	\begin{options}
+		\correct
+		
+		\begin{align}
+	\frac{2v}{1+v^2} \cdot dv &= -\frac{dx}{x} \\ 
+	\implies \int \frac{2v}{1+v^2} \cdot dv &= -\int \frac{dx}{x} \\[5pt]
+	\therefore \left(1+v^2 \right)\cdot x &= C \text{ (a constant) }
+\end{align}
+
+	\end{options}
+	\reason
+
+	\begin{align}
+\frac{2v}{1+v^2}\cdot dv &= -\frac{dx}{x} \\
+\text{Let } z &= 1+v^2\\
+\implies dz &= 2v\cdot dv \\[5pt]
+\therefore \frac{dz}{z} &= -\frac{dx}{x}\\
+\implies \int\frac{dz}{z} &= -\int\frac{dx}{x} \\
+\text{or } \log \vert z\vert &= -\log\vert x\vert + C_1 \\
+\implies \log\vert z\vert + \log\vert x\vert &= \log\vert z\cdot x\vert = C_1 \\
+\text{or } \underbrace{(1+v^2)}_{ = z}\cdot x &= \underbrace{e^{C_1} = C}_{\log b = a\implies b = e^a}
+\end{align} 
+\end{step}
+\begin{step}
+	\begin{options}
+		\correct
+		
+		And therefore, the \underline{specific} solution of the given differential equation is  
+		\[\qquad\qquad x^2 + y^2 = 2x \]
+
+	\end{options}
+	\reason
+
+	%text
+\underline{Do not forget that $y=1$ when $x=1$}
+
+\begin{align}
+(1+v^2)\cdot x &= C \\
+\implies \left( 1 + \frac{y^2}{x^2}\right)\cdot x &= C\\
+\text{And if }y = 1& \text{ when }x = 1 \text{ then}  \\
+\left( 1 + \frac{1^2}{1^2}\right)\cdot 1 &= C \implies C = 2 \\
+\therefore \left( 1 + \frac{y^2}{x^2}\right)\cdot x &= 2 \\[10pt]
+\text{or }x^2 + y^2 &= 2x 
+\end{align} 
+\end{step}
+\end{question}
+\end{document}
