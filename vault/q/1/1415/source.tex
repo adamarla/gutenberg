@@ -1,0 +1,105 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\pt{\left(1,\frac\pi{4} \right)}
+\newcommand\yx{\frac{y}{x}}
+\newcommand\dvdx{\frac{dv}{dx}}
+
+\previewoff
+
+\begin{document} 
+\begin{question}
+	\statement 
+    
+    Find the equation of the curve passing through $\pt$ if the slope of the
+    tangent of the curve at any point $P(x,y)$ is $\yx -\cos^2\yx$ 
+    
+    \begin{step}
+  \begin{options} 
+     \correct 
+       
+       We have been told that 
+       \[ \qquad \dydx = \yx - \cos^2 \yx \]
+     \incorrect
+        
+       We have been told that 
+       \[ \qquad P(x,y) = \yx - \cos^2\yx \] 
+    \end{options} 
+     \reason 
+     
+     It is some curve in the $x-y$ plane. We don't know what it looks like. But we have been told the \underline{slope of the tangent} at any point\newline 
+     
+     In other words, we have been told what $\dydx$ is. And it is, 
+     
+     \[ \qquad\qquad  \dydx = \yx - \cos^2\yx \]
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+      
+      \[ \qquad \underbrace{\dydx = \yx - \cos^2\yx}_{\text{Homogenous differential equation}}\]
+      
+      And hence, if $ y = vx$, then 
+      \[ \qquad \sec^2 v \cdot dv = -\frac{dx}{x} \]
+     \incorrect
+     
+      \[ \qquad \underbrace{\dydx = \yx - \cos^2\yx}_{\text{Homogenous differential equation}}\]
+      
+      And hence, if $ y = vx$, then 
+      \[ \qquad \tan^2 v \cdot dv = -\frac{dx}{x} \]
+        
+    \end{options} 
+     \reason 
+     
+     \[ \qquad \dydx = \yx - \cos^2\yx = F \left(\yx \right)\]
+     Hence, this is obviously a \underline{homogenous} differential equation \newline 
+     
+     And to solve such a differential equation, we let $y = vx$. Hence, 
+     \begin{align}
+     y = vx &\implies \underbrace{\dydx = v + x\dvdx}_{\text{Product Rule}} \\
+     \therefore v + x\dvdx &= \yx - \cos^2\yx = v - \cos^2 v \\
+     \frac{dv}{\cos^2 v} &= -\frac{dx}{x} \text{ or } \sec^2 v\cdot dv = -\frac{dx}{x}
+\end{align}
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+      
+      \[ \qquad \sec^2v \cdot dv = -\frac{dx}{x}\quad \left(v = \yx \right) \] 
+      And as the curve passes through $\pt$, therefore the required curve is 
+      \[ \qquad \tan\yx + \log x = 1 \]
+       
+     \incorrect
+     
+     \[ \qquad \sec^2v \cdot dv = -\frac{dx}{x}\quad \left(v = \yx \right) \] 
+      And as the curve passes through $\pt$, therefore the required curve is 
+      \[ \qquad \tan\yx = -\log x \]
+        
+    \end{options} 
+     \reason 
+     
+     \begin{align}
+	\sec^2 v\cdot dv &= -\frac{dx}{x} \\
+	\implies \int \sec^2v\cdot dv &= -\int \frac{dx}{x}\\
+	\text{or } \tan v &= -\log x + C \\
+	\text{or }\tan\yx + \log x &= C \quad \left(\because v = \yx \right) \\
+\end{align}\\[-40pt]
+    
+    But as the curve passes through $\pt$, therefore
+    \begin{align}
+    \tan \left(\dfrac{\frac\pi{4}}{1} \right) + \log 1 &= C \\
+    \implies C &= \tan\frac\pi{4} = 1 
+\end{align}
+
+    And hence, the required curve is 
+    \[ \qquad \tan\yx + \log x = 1 \]
+       
+\end{step}
+
+          
+\end{question} 
+\end{document} 

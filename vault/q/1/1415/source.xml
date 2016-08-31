@@ -12,7 +12,7 @@
       <tex isImage="true">tex-4.svg</tex>
     </reason>
     <skills>
-      <skill id="53"/>
+      <skill id="36"/>
     </skills>
   </step>
   <step>
@@ -24,31 +24,20 @@
       <tex isImage="true">tex-7.svg</tex>
     </reason>
     <skills>
+      <skill id="53"/>
       <skill id="31"/>
     </skills>
   </step>
   <step>
     <options>
       <tex isImage="true">tex-8.svg</tex>
+      <tex isImage="true" correct="false">tex-9.svg</tex>
     </options>
     <reason>
-      <tex isImage="true">tex-9.svg</tex>
+      <tex isImage="true">tex-10.svg</tex>
     </reason>
     <skills>
       <skill id="48"/>
-      <skill id="32"/>
-    </skills>
-  </step>
-  <step>
-    <options>
-      <tex isImage="true">tex-10.svg</tex>
-    </options>
-    <reason>
-      <tex isImage="true">tex-11.svg</tex>
-    </reason>
-    <skills>
-      <skill id="36"/>
-      <skill id="1"/>
     </skills>
   </step>
 </question>
