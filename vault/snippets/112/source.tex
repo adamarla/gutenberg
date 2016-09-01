@@ -1,0 +1,29 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    \correct
+    
+    The integrating factor of the following differential equation is $\dfrac{1}{x}$
+    \[\qquad\quad x\dydx - y = x^4 - 3x \]
+
+    
+    \reason
+    
+    \begin{align}
+	x\dydx - y &= x^4 - 3x \implies \dydx - \frac{y}{x} = x^3 - 3 
+\end{align}
+
+This looks like $\dfrac{dy}{dx} +P(x)\cdot y = Q(x)$ where $P(x) = -\dfrac{1}{x}$ \newline 
+
+And hence, the integrating factor is 
+\begin{align}
+I &= e^{\int P(x)\cdot dx} = e^{\int -\frac{dx}{x}} \\
+&= \underbrace{e^{-\log x} = \frac{1}{e^{\log x}} = \frac{1}{x}}_{a^{-b} = \frac{1}{a^b}\text{ and } e^{\log a} = a}
+\end{align}
+    
+\end{snippet} 
+\end{document} 
