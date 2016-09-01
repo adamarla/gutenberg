@@ -1,0 +1,33 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\fx{A\cdot\cos\alpha x + B\cdot\sin\alpha x}
+\newcommand\dfx{-\alpha A\cdot\sin\alpha x + \alpha B\cdot\cos\alpha x}
+
+\previewoff 
+
+\begin{document} 
+\begin{snippet}
+    \correct
+    
+    The differential equation for 
+    \[ \qquad y = \fx \]
+    where $A$ and $B$ are arbitrary constants is 
+    \[ \qquad \frac{d^2y}{dx^2} + \alpha^2 y = 0 \]
+    \reason
+    
+    We need to find the \underline{general} differential equation which when solved gives the \underline{specific} solution $y = \fx$ \newline 
+    
+    Hence, we need to get rid off $A$ and $B$
+    
+    \begin{align}
+	y &= \fx \\
+	\therefore \dydx &= \dfx \\
+	\text{and } \frac{d^2y}{dx^2} &= -\alpha^2 A \cos\alpha x - \alpha^2 B\sin\alpha x \\
+	&= -\alpha^2 \left[\fx \right] \\
+	&= -\alpha^2 \cdot y \\
+	\implies\frac{d^2 y}{dx^2} &+ \alpha^2 y = 0 \quad\text{ (answer) }
+\end{align}
+
+\end{snippet} 
+\end{document} 
