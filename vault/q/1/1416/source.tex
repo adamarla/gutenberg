@@ -1,0 +1,146 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\yx{\left(\frac{y}{x} \right)}
+\newcommand\ymx{\left(y-x \right)}
+
+\previewoff
+
+\begin{document} 
+\begin{question}
+	\statement 
+    
+     Find the equation of the curve passing through origin if the slope of the 
+     tangent to the curve at any point $(x,y)$ is equal to the square 
+     of the difference of the abscissa and ordinate of the point 
+     
+     \begin{step}
+  \begin{options} 
+     \correct 
+      
+     The required curve satisfies the following condition
+     \[ \qquad\quad \dydx = (y-x)^2 \]
+     
+     \incorrect
+     
+     The required curve satisfies the following condition
+     \[ \qquad\quad \dydx = y^2 - x^2 \]
+        
+    \end{options} 
+     \reason 
+     
+     Abscissa and ordinate are \underline{fancy words} for $x$ and $y$ respectively 
+     (as shown below) 
+     \[ \qquad\qquad (\overbrace{x}^{\text{Abscissa}}, \overbrace{y}^{\text{Ordinate}} )\]
+     
+     And hence, as per the problem, the required curve satisfies the following the condition 
+     \[ \qquad \underbrace{\dydx = (y-x)^2 \text{ or } \dydx = (x-y)^2}_{\text{Either is fine}}\]
+       
+\end{step} 
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+     Of the following three strategies, \underline{strategy $III$} is the best
+     
+     \begin{center}
+  \begin{tabular}{NNl}
+   \toprule
+         & \text{Re-write as} & Solve using \\
+   \midrule 
+   I & \dydx + 2yx = y^2 + x^2 & Integrating factor \\
+    \midrule 
+    II & \dydx = x^2 \left[\yx^2 - 2\yx + 1 \right] & $ y = vx$ \\
+    \midrule 
+    III & \dydx = (y-x)^2 & Let $z = y-x$ \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+     \incorrect
+     
+     Of the following three strategies, \underline{strategy $II$} is the best
+     
+     \begin{center}
+  \begin{tabular}{NNl}
+   \toprule
+         & \text{Re-write as} & Solve using \\
+   \midrule 
+   I & \dydx + 2yx = y^2 + x^2 & Integrating factor \\
+    \midrule 
+    II & \dydx = x^2 \left[\yx^2 - 2\yx + 1 \right] & $ y = vx$ \\
+    \midrule 
+    III & \dydx = (y-x)^2 & Let $z = y-x$ \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+        
+    \end{options} 
+     \reason
+
+The table below summarizes why the given differential equation \underline{is not} a linear or a homogenous differential equation. Hence, it \underline{cannot} be solved as those 
+\begin{center}
+  \begin{tabular}{NlN}
+   \toprule
+        \text{If written as} & Looks like & \text{Is not because}  \\
+   \midrule 
+   \dydx + 2xy = x^2 + y^2 & Linear & \dydx + 2xy \neq F(x) \\
+    \midrule 
+    \dydx = x^2 \left[\yx^2 - 2\yx + 1 \right] & Homogenous & \dydx \neq F\yx \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+    
+    Which leaves \underline{strategy $III$} as the best option. So, let us 
+    try and work with that 
+
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+     If $z = y-x$ then 
+     \begin{align}
+	\frac{dz}{z^2-1} = dx &\implies \int \frac{dz}{z^2-1} = \int dx \\
+	\text{or } x &= \frac{1}{2}\log\left\vert \frac{y-x-1}{y-x+1}\right\vert + C
+\end{align}
+
+But as $y = 0$ when $x=0$, therefore $C = 0$. Hence, 
+\[ \quad \underbrace{y = e^{2x}\cdot \left(y-x+1 \right) + (x+1)}_{\text{Answer}}\]
+     \incorrect
+     
+     If $z = y-x$ then 
+     \begin{align}
+	\frac{dz}{z^2-1} &= dx \implies \int \frac{dz}{z^2-1} = \int dx \\
+	\text{or } x &= \log\left\vert \ymx + \sqrt{\ymx^2 + 1}\right\vert + C
+\end{align}
+
+But as $y = 0$ when $x=0$, therefore $C = 0$. Hence, 
+\[ \quad \underbrace{e^x = \ymx + \sqrt{\ymx^2 + 1}}_{\text{Answer}}\]   
+    \end{options} 
+     \reason 
+     
+     \begin{align}
+     z = y -x &\implies \frac{dz}{dx} = \dydx - 1\\
+     \therefore \frac{dz}{dx} + 1 &= \ymx^2 = z^2  \\
+     \implies \frac{dz}{z^2 - 1} &= dx \text{ or } \int \frac{dz}{z^2 - 1} = \int dx \\
+     \implies x &= \frac{1}{2} \log \left\vert \dfrac{z-1}{z + 1}\right\vert + C \\
+     &= \frac{1}{2}\log \left\vert \dfrac{\ymx - 1}{\ymx+ 1} \right\vert + C 
+\end{align}
+
+But the curve \underline{passes through the origin}. Hence,
+\begin{align}
+0 &= \underbrace{\frac{1}{2}\log \left\vert\dfrac{(0-0) - 1}{(0-0) + 1} \right\vert + C \implies C = 0}_{\log 1 = 0}
+\end{align}
+
+And so, 
+\begin{align}
+x &= \frac{1}{2}\log\left\vert \dfrac{\ymx - 1}{\ymx + 1}\right\vert  \\
+\implies e^{2x} &= \underbrace{\dfrac{\ymx - 1}{\ymx + 1}}_{\log a = b \implies a = e^b} \\
+\text{or } y &= e^{2x} \left[\ymx+1 \right] + \left(x+1 \right)
+\end{align}
+       
+\end{step}
+\end{question} 
+\end{document} 
