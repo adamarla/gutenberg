@@ -1,0 +1,142 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\yx{\frac{y}{x}}
+\previewoff 
+
+\begin{document} 
+\begin{question}
+	\statement 
+    
+     Solve the following 
+     \[ \qquad x\dydx = y \left(\log y - \log x + 1 \right)\] 
+     
+    \begin{step}
+  \begin{options} 
+     \correct 
+       
+     \[ \qquad x\dydx = y \left(\log y - \log x + 1 \right)\]
+     is a \underline{homogenous} differential equation 
+        
+    \end{options} 
+     \reason 
+     
+     \begin{align}
+	x\dydx &= y \left(\log y - \log x + 1 \right) \\
+	&= \underbrace{y \left(\log \yx + 1 \right)}_{\log a - \log b = \log \frac{a}{b}} \\
+	\therefore \dydx &= \yx\cdot \left(\log\yx + 1 \right) = F \left(\yx \right)
+\end{align}
+
+And when $\dydx = F \left(\yx \right)$, then it is a homogenous differential equation
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+      If $y = vx$, then 
+      \[ \qquad \frac{dv}{v\cdot\log v} = \frac{dx}{x} \] 
+     \incorrect
+     
+     If $y = vx$, then 
+      \[ \qquad \frac{dv}{v\cdot\log v + 1} = \frac{dx}{x} \] 
+        
+    \end{options} 
+     \reason 
+     
+     To solve a homogenous differential equation, we let $v = \yx$ or $y = vx$ 
+     
+     \begin{align}
+     y = vx &\implies \dydx = \underbrace{v + x\frac{dv}{dx}}_{\text{Product Rule}} \\
+     \therefore v + x\frac{dv}{dx} &= \yx \left(\log\yx + 1 \right) \\
+     &= v\cdot \left(\log v + 1 \right) \\
+     \implies x\frac{dv}{dx} &= v\cdot\log v \\[10pt]
+     \text{or } \frac{dv}{v\cdot\log v} &= \frac{dx}{x} 
+\end{align}
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+     
+     \[\frac{dv}{v\cdot\log v} = \frac{dx}{x} \implies \underbrace{\int \frac{dv}{v\cdot\log v}}_{A} = \int \frac{dx}{x} \]
+     
+     Of the following two strategies for evaluating $A$, \underline{Strategy $II$ is better}
+     
+     \begin{center}
+  \begin{tabular}{NN}
+   \toprule
+        &  \text{Strategy} \\
+   \midrule
+   I & \underbrace{A = \frac{1}{\log v}\int\frac{dv}{v} - \int\left[\frac{d}{dv}\frac{1}{\log v}\int\frac{dv}{v} \right]dv}_{\text{Integration by parts}} \\ 
+    \midrule 
+    II & \text{Let } z = \log v \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+       
+     \incorrect
+        
+      \[\frac{dv}{v\cdot\log v} = \frac{dx}{x} \implies \underbrace{\int \frac{dv}{v\cdot\log v}}_{A} = \int \frac{dx}{x} \]
+     
+     Of the following two strategies for evaluating $A$, \underline{Strategy $I$ is better}
+     
+     \begin{center}
+  \begin{tabular}{NN}
+   \toprule
+        &  \text{Strategy} \\
+   \midrule
+   I & \underbrace{A = \frac{1}{\log v}\int\frac{dv}{v} - \int\left[\frac{d}{dv}\frac{1}{\log v}\int\frac{dv}{v} \right]dv}_{\text{Integration by parts}} \\ 
+    \midrule 
+    II & \text{Let } z = \log v \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+    \end{options} 
+     \reason 
+     
+     You can try Strategy $I$ (integration by parts)\newline 
+     
+     But you will find that it gives the following valid - but not very useful - result 
+     \[ \qquad\qquad 1 = 1 \]
+     
+     Instead, if we let $z = \log v$, then 
+     \begin{align}
+     z = \log v &\implies dz = \frac{dv}{v} \\
+     \therefore A &= \int \frac{dv}{v\cdot\log v} = \int \frac{dz}{z} 
+\end{align}  
+
+And hence, 
+\[\qquad\int\frac{dx}{x} = \int\frac{dv}{v\cdot\log v} = \int\frac{dz}{z} \]
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+       \[ \int\frac{dx}{x} = \int\frac{dz}{z} \implies y = x e^{Cx} \]
+     \incorrect
+     
+     \[ \int\frac{dx}{x} = \int\frac{dz}{z} \implies y = C\cdot x e^{x} \]
+        
+    \end{options} 
+     \reason 
+     
+     \begin{align}
+	\int \frac{dx}{x} = \int \frac{dz}{z} &\implies \log x = \log z + C_1 \\
+	\therefore \log z - \log x &= C_2 \implies\log \left(\frac{z}{x} \right) = C_2 \\[-10pt]
+	\text{or } \frac{z}{x} &= e^{C_2} = C \\
+	\text{But }z &= \log v = \log \yx \\
+	\therefore \log \yx &= C\cdot x \\
+	\implies y &= x\cdot e^{Cx}
+\end{align}
+       
+     By the way, $e^{Cx} \neq e^C\cdot e^x$. It is an easy trap to fall into
+\end{step}
+
+
+\end{question} 
+\end{document} 
