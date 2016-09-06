@@ -1,0 +1,164 @@
+
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff
+
+\newcommand\va{2}
+\SQUARE\va\vb
+\MULTIPLY\va{2}\vc
+\MULTIPLY\vb{4}\vd
+\MULTIPLY\vc{2}\ve
+
+\newcommand\limit{\lim_{r\to 0^+}}
+
+\newcommand\xq{\frac{r^2}{4}}
+\newcommand\yq{\frac{r}{4}\sqrt{16-r^2}}
+\newcommand\rx{\frac{r^2}{4-\sqrt{16-r^2}}}
+
+\begin{document} 
+
+\begin{question}
+	\statement 
+
+The figure below shows a \underline{fixed circle} $C_1$ with equation $(x-\va)^2 + y^2 = \vb$ and a \underline{shrinking circle} $C_2$ with radius $r$ centered at the origin. $P$ is the point $(0,r)$, $Q$ is the upper point of intersection of the two circles and $R$ is where the line $PQ$ intersects the $x-$axis. Where will the point $R$ be as $C_2$ shrinks to a point? 
+
+\begin{center}
+\includegraphics[scale=0.3]{470-G.eps}
+\end{center}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+      
+     If the point $R = \left(R_x,0 \right)$, then given the radius $(r)$ of $C_2$, we have to find 
+     \[ \qquad\qquad \limit R_x \]
+        
+    \end{options} 
+     \reason 
+     
+     $R$ lies on the \xaxis. Hence, it must be of the form $\left(R_x,0 \right)$ \newline
+     
+     Now, as $C_2$ shrinks, it's radius $(r)$ reduces. Which means, both $P$ and $Q$ also change. And therefore, so does the line $PQ$ and the point $R$ where it intersects the \xaxis \newline 
+     
+     Hence, what we need to evaluate is 
+     \[ \qquad\qquad \limit R_x = ? \]
+     
+     Now that we know what we have to find, we can start doing the Math  
+\end{step}
+          
+\begin{step}
+  \begin{options} 
+     \correct 
+      
+      Points $P$ and $Q$ will be as follows 
+      
+      \begin{center}
+  \begin{tabular}{NN}
+   \toprule
+        P & Q \\
+   \midrule 
+   \left(0,r \right) & \left(\xq,\yq \right) \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+       
+     \incorrect
+
+Points $P$ and $Q$ will be as follows 
+      
+      \begin{center}
+  \begin{tabular}{NN}
+   \toprule
+        P & Q \\
+   \midrule 
+   \left(0,r \right) & \left(\frac{r^2}{2},\frac{r}{2}\sqrt{4-r^2} \right) \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+        
+    \end{options} 
+     \reason 
+     
+     Point $P$ will always be $(0,r)$ \newline 
+     
+     However, point $Q$ is where the circles intersect. And at point $Q$ 
+     \begin{align}
+     y^2 = r^2 - x^2 &= 4 - (x-2)^2 \\
+     \implies r^2 - x^2 &= 4 - \left[x^2 - 4x + 4 \right] \\
+     \text{or } r^2 &= 4x \implies x = \frac{r^2}{4} \\
+     \text{and } y^2 &= r^2 - \left(\frac{r^2}{4} \right)^2 \\
+     \implies y &= \yq 
+\end{align}
+
+Hence, the \underline{coordinates of point $Q$} are 
+\[ \qquad\qquad Q = \left(\xq,\yq \right)\]
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+       \begin{align}
+	\frac{r-0}{0-R_x} &= \frac{r-\yq}{0-\xq} \\
+	\therefore R_x &= \frac{r^2}{4-\sqrt{16-r^2}}
+\end{align}
+
+        
+    \end{options} 
+     \reason 
+     
+     $P,Q$ and $R$ lie on the same line. Hence, irrespective of which two points on the line we pick, the \underline{slope will be the same}
+     
+     \begin{align}
+     \underbrace{\frac{r-0}{0-R_x}}_{\text{Points $P$ and $R$}} &= 
+     \underbrace{\frac{r-\yq}{0-\xq}}_{\text{Points $Q$ and $R$}} \\
+     \therefore R_x &= \left[\dfrac{\frac{r^3}{4}}{r\cdot \left(1-\frac{\sqrt{16-x^2}}{4} \right)} \right] \\
+     &= \rx
+\end{align}
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+     And therefore 
+     \[ \qquad \limit\rx = 8 \]
+     
+     Which means, that as $C_2$ shrinks to a point, $R$ will move closer and closer to $(8,0)$, that is, $R \to (8,0)$
+     \incorrect
+        
+          
+     And therefore 
+     \[ \qquad \limit\rx = 4 \]
+     
+     Which means, that as $C_2$ shrinks to a point, $R$ will move closer and closer to $(4,0)$, that is, $R \to (4,0)$
+    \end{options} 
+     \reason 
+     
+     \begin{align}
+     R_x &= \rx \\
+     \therefore \limit R_x &= \limit\rx 
+\end{align}
+
+If you plug-in $r =0$ now, then you will get 
+\[\qquad \limit R_x = \frac{0}{0} = \text{non-sensical answer}\]
+Hence, we must do something else 
+\smallmath\begin{align}
+\limit R_x &= \limit \rx \\
+&= \limit \left[\rx \right]\cdot \left[\frac{4+\sqrt{16-r^2}}{4+\sqrt{16-r^2}} \right] \\
+&= \limit \left[\frac{r^2\cdot \left(4+\sqrt{16-r^2} \right)}{4^2-\left(16-r^2 \right)} \right] \\
+&= \limit \left[\frac{r^2\cdot \left(4+\sqrt{16-r^2} \right)}{r^2} \right] \\
+&= \limit \left(4+\sqrt{16-r^2} \right) = 8
+\end{align}
+
+Hence, as $C_2$ shrinks 
+\[ \qquad\qquad \limit R \to \left(8,0 \right)\]
+       
+\end{step}
+
+\end{question} 
+\end{document} 
