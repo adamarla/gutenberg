@@ -1,0 +1,105 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+
+\newcommand\nextrd{\frac{4}{9}}
+\newcommand\bwins{\frac{2}{9}}
+\newcommand\expa{ \left(\nextrd \right) }
+
+\begin{document}
+\begin{question}
+\statement
+	
+
+      $A$ and $B$ throw a die alternatively till one
+      of them gets a number greater than $4$ and
+      wins the game. If $A$ starts the game, then
+      what is the probability of $B$ winning?
+
+\begin{step}
+  \begin{options} 
+     \correct 
+     
+     Let a round be defined as a single roll of the dice by $A$ followed by a single roll of dice by $B$. Given this \newline 
+     
+     \begin{center}
+  \begin{tabular}{cN}
+   \toprule
+       Event & \text{Probability} \\
+   \midrule 
+   No one wins in a round & \nextrd \\
+    \midrule 
+    $B$ wins in the $N-$th round & \left(\nextrd \right)^{N-1}\cdot\bwins \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+       
+     \incorrect
+     
+     Let a round be defined as a single roll of the dice by $A$ followed by a single roll of dice by $B$. Given this \newline 
+     
+     \begin{center}
+  \begin{tabular}{cN}
+   \toprule
+       Event & \text{Probability} \\
+   \midrule 
+   No one wins in a round & \frac{2}{9} \\
+    \midrule 
+    $B$ wins in the $N-$th round & \left(\frac{2}{9} \right)^{N-1}\cdot\frac{2}{3} \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+        
+    \end{options} 
+     \reason 
+       
+     For $B$ to win, $A$ should \underline{not} already have won the game by getting a number $> 4$\newline 
+     
+     Hence, for $B$ to win \underline{in the $N-$th round}, no one should
+     have won in the \underline{preceding} $N-1$ rounds\newline 
+    
+    \begin{center}
+  \begin{tabular}{cN}
+   \toprule
+        Event & \text{Probability} \\
+   \midrule 
+   Single dice roll $> 4$ & \frac{2}{6} = \frac{1}{3} \\
+    \midrule 
+    Single dice roll $\leq 4$ & 1-\frac{1}{3} = \frac{2}{3} \\
+    \midrule 
+    No one wins in a round & \frac{2}{3}\cdot\frac{2}{3} = \nextrd\\
+    \midrule
+    $B$ wins in a round & \underbrace{\frac{2}{3}\cdot\frac{1}{3} = \bwins}_{\text{$A$ doesn't win but $B$ does}} \\ 
+    \midrule
+    $B$ wins in the $N-$th round & \left(\nextrd \right)^{N-1}\cdot\frac{2}{9} \\
+    \bottomrule
+  \end{tabular}
+\end{center} 
+    
+\end{step}    
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+      The probability that $B$ wins is therefore 
+      \[ \qquad P = \sum_{N=1}^\infty \left(\nextrd \right)^{N-1}\cdot\bwins = \frac{2}{5} \]
+        
+    \end{options} 
+     \reason 
+     
+     $B$ could win in the $1-$st round or the $100-$th round or the $1000-$th round. 
+     Hence, the \underline{total probability} of $B$ winning is 
+     
+     \begin{align}
+     P &= \expa^0\bwins + \expa^1\bwins + \expa^2\bwins + \cdots \infty \\[-10pt]
+     &= \sum_{N=1}^\infty\expa^{N-1}\cdot\bwins \\
+     &= \bwins \left[\dfrac{1}{1-\nextrd} \right] = \bwins\cdot\frac{9}{5} = \frac{2}{5}
+\end{align}
+
+Notice that $B$ only has a $40\%$ chance of winning compared to $A$'s $60\%$ simply because $A$ rolls first 
+       
+\end{step}
+
+\end{question}
+\end{document}
