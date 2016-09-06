@@ -1,106 +1,40 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>
-		\text{A, B and C are three trains on three separate}\\
-		\text{tracks (see figure). }T_2\parallel T_3\text{ and } T_1\perp\text{ to both}\\
-		T_2\text{ and }T_3.\text{ Train A has developed engine trouble} \\
-		\text{and is therefore being towards M by B using}\\
-		\text{an iron-chain welded to the two trains. But }\\
-		\text{when B is 30 meters from N (and 40 meters }\\
-		\text{from N), it too develops engine trouble. So}\\
-		\text{now, train B is attached to train C and is pulled}\\
-		\text{towards N. If C is moving at 3 m/s and the two}\\
-		\text{chains (AB and BC) are 50 m. long, }\\
-		\underline{\text{then how fast is A moving}}?
-		</tex>
-      <tex src="fig.svg" isImage="true" correct="false"/>
-      <tex>\\ \textbf{How are the trains moving?}\\
-			\text{Have the directions in which the trains}\\
-			\text{are moving been marked properly below?}</tex>
-      <tex>\\ \text{Looking at the track diagram and how the}\\
-				\text{trains are connected, your friend makes the}\\
-				\text{following assertions. }\\
-				\textbf{Are his assertions correct?}</tex>
-      <tex>\\ \textbf{Speed of Train A.} \\
-					\text{Given the results from Step 2, your friend now}\\
-					\text{claims that train A is travelling }\underline{\text{towards M}}\text{ at}\\
-					\text{the following speed. }\textbf{Is he correct?}</tex>
-   </statement>
-   <step>
-      <options>
-         <tex src="1-right.svg" isImage="true" correct="true"/>
-         <tex src="1-wrong.svg" isImage="true" correct="false"/>
-      </options>
-      <reason>
-         <tex>\text{Train A is being pulled towards M.} \\
-			\text{Hence, train B must be moving towards N}\\
-			\text{and train C away from N.}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-				\begin{tabular}{|c|c|}
-				\hline
-				\textbf{Because} &amp; \textbf{Therefore} \\
-				\hline 
-				AM^2 + BM^2 = 50^2 &amp; \frac{d}{dT}AM = -\frac{4}{3}\frac{d}{dT}BM \\
-				\hline
-				BM + BN=70 &amp; \frac{d}{dT}BM = -\frac{d}{dT}BN \\
-				\hline 
-				\end{tabular}
-				</tex>
-         <tex correct="false">
-				\begin{tabular}{|c|c|}
-				\hline
-				\textbf{Because} &amp; \textbf{Therefore} \\
-				\hline 
-				AM^2 + BM^2 = 50^2 &amp; \frac{d}{dT}AM = \frac{4}{3}\frac{d}{dT}BM \\
-				\hline
-				BM + BN=70 &amp; \frac{d}{dT}BM = -\frac{d}{dT}BN \\
-				\hline 
-				\end{tabular}
-				</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-				  BM + BN &amp;= 70\implies\dfrac{d}{dT}BM + \dfrac{d}{dT}BN = 0 \\
-				  \therefore \dfrac{d}{dT}BM &amp;= -\dfrac{d}{dT}BN \to (1)\\
-				   AB^2 &amp;= 50^2 = AM^2 + BM^2 \\
-				  \therefore \dfrac{d}{dT}AB^2 &amp;= 0 = 2\cdot AM\dfrac{d}{dT}AM+2\cdot BM\dfrac{d}{dT}BM\\
-				  \therefore \dfrac{d}{dT}AM &amp;= -\dfrac{BM}{AM}\cdot\dfrac{d}{dT}BM \\
-				  &amp;= -\dfrac{40}{\sqrt{50^2-40^2}}\cdot\dfrac{d}{dT}BM \\
-				  &amp;= -\dfrac{4}{3}\dfrac{d}{dT} BM \to (2)
-				\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-					\quad \text{Speed of Train A } = \dfrac{16}{3}\text{ m/s.}
-					</tex>
-         <tex correct="false">
-					\quad \text{Speed of Train A } = \frac{3}{2}\text{ m/s.}
-					</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-					BC^2 &amp;= 50^2 = BN^2 + CN^2 \\
-				  \therefore \dfrac{d}{dT}BC^2 &amp;= 0 = 2\cdot CN\dfrac{d}{dT}CN+2\cdot BN\dfrac{d}{dT}BN\\
-				  \therefore \dfrac{d}{dT}CN &amp;= -\dfrac{BN}{CN}\cdot\dfrac{d}{dT}BN \\
-				  &amp;= -\dfrac{30}{\sqrt{50^2-30^2}}\cdot\dfrac{d}{dT}BN \\
-				  &amp;= -\dfrac{3}{4}\dfrac{d}{dT} BN 
-				  = \underbrace{\dfrac{3}{4}\dfrac{d}{dT}BM}_{\frac{d}{dT}BM = -\frac{d}{dT}BN}\\
-				  &amp;= \dfrac{3}{4}\cdot \underbrace{\left(-\dfrac{3}{4}\dfrac{d}{dT}AM\right)}
-				  _{\frac{d}{dT}AM = -\frac{4}{3}\frac{d}{dT} BM} = -\dfrac{9}{16}\dfrac{d}{dT}AM \\
-				  \therefore \underbrace{\dfrac{d}{dT}AM}_{\text{A's speed}} &amp;= 
-				  -\dfrac{16}{9}\underbrace{\dfrac{d}{dT}CN}_{\text{C's speed}} \\
-				  &amp;= -\dfrac{16}{9}\times\text{ 3 m/s} = -\dfrac{16}{3}\text{ m/s.}
-					\end{align}  \\
-					\underline{\text{The negative sign only means that A and C}} \\
-					\underline{\text{are moving in opposite directions.}}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="22">
+  <statement>
+    <tex isImage="true">tex-1.svg</tex>
+  </statement>
+  <step>
+    <options/>
+    <reason>
+      <tex isImage="true">tex-2.svg</tex>
+    </reason>
+    <skills>
+      <skill id="26"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">tex-3.svg</tex>
+      <tex isImage="true" correct="false">tex-4.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">tex-5.svg</tex>
+    </reason>
+    <skills>
+      <skill id="51"/>
+      <skill id="36"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">tex-6.svg</tex>
+      <tex isImage="true" correct="false">tex-7.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">tex-8.svg</tex>
+    </reason>
+    <skills>
+      <skill id="51"/>
+    </skills>
+  </step>
 </question>

@@ -26,7 +26,7 @@ done
 # Lastly, trigger recompile (inside snippets/, skills/, q/1/ for now) 
 if [ ! -e .block-cron ] ; then 
   touch .block-cron 
-  for f in $(ls -d snippets/ skills/ q/1/) ; do 
+  for f in $(ls -d snippets/ skills/ q/{1,2}/) ; do 
     make -C $f >> $log_f
   done 
 

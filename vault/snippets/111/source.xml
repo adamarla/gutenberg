@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<skill xmlns="http://www.gradians.com" chapterId="3">
+<snippet xmlns="http://www.gradians.com" chapterId="25">
   <render>
     <tex isImage="true">tex-1.svg</tex>
   </render>
   <reason>
     <tex isImage="true">tex-2.svg</tex>
   </reason>
-</skill>
+  <skills>
+    <skill id="52"/>
+  </skills>
+</snippet>
