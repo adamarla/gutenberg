@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="26">
+  <statement>
+    <tex>%text
+If $\ora{a}=\vector{1}{1}{1}$ and $\ora{b}=\vector{}{1}{-1}$, find a vector $\ora{c}$ such that $\ora{a}\times \ora{c}=\ora{b}$ and  $\ora{a}\cdot \ora{c}=3$
+%</tex>
+  </statement>
+  <step>
+    <options>
+      <tex correct="false">\begin{align}
+  \ora{c}&amp;=\vector{x}{y}{z} \text{ (say)}\\
+  \ora{a}&amp;=\vector{1}{1}{1} \text{ (given)} \\ 
+  \text{and }\ora{a}\cdot \ora{c}&amp;=3 \text{ (given)} \\
+  \therefore x+y+z&amp;=9
+\end{align}
+</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  \ora{a}&amp;=\vector{1}{1}{1} \\
+  \ora{c}&amp;=\vector{x}{y}{z} \\
+  \ora{a}\cdot \ora{c}&amp;=x(1)+y(1)+z(1) \\
+    &amp;=x+y+z \\
+  \therefore x+y+z&amp;=3
+\end{align}\\
+
+</tex>
+    </reason>
+    <skills>
+      <skill id="83"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\begin{align}
+  \ora{c}&amp;=\vector{x}{y}{z} \\
+  \ora{a}&amp;=\vector{1}{1}{1} \\
+  \ora{b}&amp;=\vector{}{1}{-1} \\
+\end{align} \\
+
+\begin{align}
+  \ora{a}\times\ora{c}=\ora{b}
+    \implies &amp;z-y=0, \\ &amp;x-z=1, \\ &amp;y-x=-1
+\end{align}
+
+
+
+
+</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  \ora{a}=\vector{1}{1}{1},\, \ora{c}&amp;=\vector{x}{y}{z},\, \ora{b}=\vector{}{1}{-1} \\
+  \ora{a}\times\ora{c}=\left\vert \begin{array}{ccc}
+  \imath &amp; \jmath &amp; {\it k} \\ 1 &amp; 1 &amp; 1 \\ x &amp; y &amp; z
+  \end{array}\right\vert &amp;=\vector{(z-y)}{(x-z)}{(y-z)}\\
+  \therefore \vector{}{1}{-1}&amp;=\vector{(z-y)}{(x-z)}{(y-z)} \\
+  \implies z-y&amp;=0,\\ x-z&amp;=1,\\ y-x&amp;=-1
+\end{align}
+
+</tex>
+    </reason>
+    <skills>
+      <skill id="87"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\begin{align}
+x+y+z&amp;=3 \\ z-y&amp;=0 \\ x-z&amp;=1 \\ y-x&amp;=-1\\
+\implies \ora{c}&amp;=\dfrac{1}{3}\left(\vector{5}{2}{2}\right)
+\end{align} \\
+
+</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  z-y=0 &amp;\implies z=y \\
+  z-x=3 &amp;\implies z=3+x \\
+  y-z=-1 &amp;\implies y=z-1 \\
+  x+y+z=0 &amp; \implies x+3+x+3+x=3 \\ 
+    &amp;\implies x=\dfrac{3}{2} \\
+    \therefore x&amp;=\dfrac{3}{2}, y=z=\dfrac{2}{3} \\ 
+    \implies \ora{c}&amp;=\dfrac{1}{3}\left(\vector{5}{2}{2}\right)
+\end{align} \\
+</tex>
+    </reason>
+  </step>
+  <choices>
+    <tex correct="false">\ora{c}=\dfrac{1}{3}\left(\vector{-5}{2}{2}\right)</tex>
+    <tex>\ora{c}=\dfrac{1}{3}\left(\vector{5}{2}{2}\right)</tex>
+    <tex correct="false">\ora{c}=\vector{5}{2}{2}</tex>
+    <tex correct="false">\ora{c}=\vector{7}{2}{2}</tex>
+  </choices>
+</question>
