@@ -1,0 +1,42 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff
+
+\begin{document} 
+\begin{skill}
+    \begin{narrow}
+         \textcolor{blue}{Geometric Sequence and Series}
+         
+         What is a geometric sequence. Standard results for the sum of first $N$ 
+         terms of a geometric series 
+    \end{narrow}
+    
+    \reason 
+    
+    A geometric sequence is a \underline{sequence} of numbers where each term is found by multiplying the previous one with a \underline{fixed, non-zero} constant called the \underline{common ratio}\newline 
+    
+    If $a$ be the first term and $r$ the common ratio, then the sequence 
+    will look like 
+    \[ \qquad a, ar,ar^2, ar^3,\ldots ar^{n-1}\quad \left(a,r\neq 0 \right)\]
+    
+    Notice that the $n-$th term is 
+    \[ \qquad a_n = a\cdot r^{n-1}\text{ (not $a\cdot r^n$)} \]
+    The correpoding series is simply 
+    \[ \qquad S_n = a + ar + ar^2 + \cdots + ar^{n-1} \]
+    \textbf{Standard Results} 
+    \begin{center}
+  \begin{tabular}{NN}
+   \toprule
+        \text{Result} & \text{Constraints}  \\
+   \midrule 
+   S_n = \sum_{k=1}^n ar^{k-1} = \dfrac{a \left(1-r^n \right)}{1-r} &  r \neq 1 \\
+    \midrule 
+    S_{mn} = \sum_{k=m}^n ar^{k-1} = \dfrac{a \left(r^m-r^{n+1} \right)}{1-r} & r \neq 1 \\
+    \midrule 
+    \underbrace{S_\infty = \sum_{k=1}^\infty ar^{k-1} = \dfrac{a}{1-r} = C}_{\text{$S_\infty$ will converge to a constant $C$ only if $\vert r\vert < 1$}} & \vert r\vert < 1 \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+\end{skill}
+\end{document} 
