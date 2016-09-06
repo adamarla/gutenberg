@@ -1,0 +1,108 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+\begin{document}
+\begin{question}
+\statement
+	
+%text
+A die is thrown again and again until three 
+sixes are obtained. Find the probability of 
+obtaining the third six in the sixth throw 
+of the dice.
+%
+\begin{step}
+	\begin{options}
+	
+	\correct 
+	
+	Below is an \underline{example of a favourable outcome}
+	
+	\begin{center}
+\includegraphics[scale=1.3]{1326-A.eps}
+\end{center}
+
+    \incorrect
+    
+    Below is an \underline{example of a favourable outcome}
+    \begin{center}
+\includegraphics[scale=1.2]{1326-B.eps}
+\end{center}
+	
+	\end{options}
+	\reason
+
+	\underline{Any favourable outcome} will meet the following three conditions
+	
+	\begin{center}
+  \begin{tabular}{Nl}
+   \toprule
+        & Condition \\
+   \midrule 
+   1 & Three 6's total \\
+    \midrule 
+    2 & A 6 on the last (sixth) throw \\
+    \midrule 
+    3 & Exactly two 6's in throws 1-5 \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+Which means, a favourable outcome will look like the following
+\begin{center}
+\includegraphics[scale=1.3]{1326-A.eps}
+\end{center}
+
+Of course, there are many other such possibilities
+
+\end{step}
+\begin{step}
+	\begin{options}
+		\correct
+
+        The required probability is therefore 
+		\[P = \left[^5C_2\cdot\left(\frac{1}{6} \right)^2\cdot\left(\frac{5}{6}\right)^3\right]\times\frac{1}{6}=\frac{625}{23328} \]
+
+		\incorrect
+
+        The required probability is therefore 
+		\[\quad P = {^6C_3}\cdot\left(\frac{1}{6} \right)^3\cdot\left(\frac{5}{6}\right)^3=\frac{625}{11664}\]
+
+	\end{options}
+	\reason
+
+	%text
+From the previous step, we know that a favourable outcome will satisfy the 
+following conditions
+
+%
+\begin{center}
+\begin{tabular}{NcN}
+\midrule 
+\text{Throws} & Condition & \text{\# of ways} \\
+\midrule 
+1-5 & Exactly two sixes & {^5C_2} \\
+\midrule 
+6 & A six & 1 \\
+\midrule 
+\end{tabular}
+\end{center} 
+%text
+
+Moreover, \underline{in a single throw}
+\begin{align}
+P(\text{getting a six}) &= p = \frac{1}{6}\\
+\implies P(\text{not getting a six}) &= q = \frac{5}{6}	
+\end{align}
+
+Hence, the \underline{required probability} will be 
+%
+\begin{align}
+\therefore P &= \underbrace{^5C_2\cdot p^2\cdot q^3}_{\text{Throws 1-5}}\times\underbrace{p}_{\text{Last throw}} \\
+\implies P &= \left[^5C_2\cdot\left(\frac{1}{6} \right)^2\cdot\left(\frac{5}{6}\right)^3\right]&\times\frac{1}{6}\\
+&= \frac{625}{23328}
+\end{align} 
+
+\end{step}
+\end{question}
+\end{document}
