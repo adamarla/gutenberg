@@ -2,9 +2,7 @@
 <question xmlns="http://www.gradians.com" chapterId="26">
   <statement>
     <tex>%text
-If $\ora{a}=\vector{1}{1}{1}$ and $\ora{b}=\vector{}{1}{-1}$, find
-a vector $\ora{c}$ such that $\ora{a}\times \ora{c}=\ora{b}$ and 
-$\ora{a}\cdot \ora{c}=3$
+If $\ora{a}=\vector{1}{1}{1}$ and $\ora{b}=\vector{}{1}{-1}$, find a vector $\ora{c}$ such that $\ora{a}\times \ora{c}=\ora{b}$ and  $\ora{a}\cdot \ora{c}=3$
 %</tex>
   </statement>
   <step>
