@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="20">
+  <statement>
+    <tex>%text
+Using properties of determinants, prove the
+following:
+%
+\begin{align}
+  \left\vert \begin{array}{ccc}
+  a+b+2c &amp; a &amp; b \\ c &amp; b+c+2a &amp; b \\ c &amp; a &amp; c+a+2b
+  \end{array}\right\vert= 2(a+b+c)^3
+\end{align}</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>%text
+Applying $C_1 \rightarrow C_1+C_2+C_3$ and factoring out $2(a+b+c)$ results in
+%
+\begin{align}
+2(a+b+c)\left\vert \begin{array}{ccc}
+  1 &amp; a &amp; b \\ 1 &amp; b+c+2a &amp; b \\  1 &amp; a &amp; c+a+2b
+\end{array}\right\vert
+\end{align}</tex>
+      <tex correct="false">%text
+Applying $C_1 \rightarrow C_1+C_2+C_3$ and factoring out $2(a+b+c)$ results in
+%
+\begin{align}
+2(a+b+c)\left\vert \begin{array}{ccc}
+  1 &amp; \tfrac{a}{a+b+c} &amp; \tfrac{b}{a+b+c} \\ 1 &amp; \tfrac{b+c+2a}{a+b+c} &amp; \tfrac{b}{a+b+c} \\  
+  1 &amp; \tfrac{a}{a+b+c} &amp; \tfrac{c+a+2b}{a+b+c}\end{array}\right\vert
+\end{align}</tex>
+    </options>
+    <reason>
+      <tex>%text
+For the given matrix the result of performing
+operation $C_1\rightarrow C_1+C_2+C_3$ is,
+%
+\begin{align}
+\left\vert \begin{array}{ccc}
+  2(a+b+c) &amp; a &amp; b \\ 2(a+b+c) &amp; b+c+2a &amp; b \\ 
+    2(a+b+c) &amp; a &amp; c+a+2b
+\end{array}\right\vert
+\end{align} \\
+%text
+from which $2(a+b+c)$ may be factored out from column $C_1$ to leave,
+%
+\begin{align}
+2(a+b+c)\left\vert \begin{array}{ccc}
+  1 &amp; a &amp; b \\ 1 &amp; b+c+2a &amp; b \\  1 &amp; a &amp; c+a+2b
+\end{array}\right\vert
+\end{align}</tex>
+    </reason>
+    <skills>
+      <skill id="90"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\begin{align}
+&amp;{\small\left\vert \begin{array}{ccc}
+  1 &amp; a &amp; b \\ 1 &amp; b+c+2a &amp; b \\  1 &amp; a &amp; c+a+2b
+\end{array}\right\vert } \\
+R_2\rightarrow &amp;R_2-R_1,\, R_3\rightarrow R_3-R_1  \\
+&amp;{\small \left\vert \begin{array}{ccc}
+  1 &amp; a &amp; b \\ 0 &amp; b+c+a &amp; 0 \\  0 &amp; 0 &amp; c+a+b
+\end{array}\right\vert}
+\end{align}\\
+
+</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+\left\vert \begin{array}{ccc}
+  1 &amp; a &amp; b \\ 1 &amp; b+c+2a &amp; b \\  1 &amp; a &amp; c+a+2b
+\end{array}\right\vert \\
+R_2\rightarrow R_2-R_1\qquad \\
+\left\vert \begin{array}{ccc}
+  1 &amp; a &amp; b \\ 0 &amp; b+c+a &amp; 0 \\  1 &amp; a &amp; c+a+2b
+\end{array}\right\vert \\
+R_3\rightarrow R_3-R_1\qquad \\
+\left\vert \begin{array}{ccc}
+  1 &amp; a &amp; b \\ 0 &amp; b+c+a &amp; 0 \\  0 &amp; 0 &amp; c+a+b
+\end{array}\right\vert
+\end{align}\\
+</tex>
+    </reason>
+    <skills>
+      <skill id="90"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex correct="false">%text
+Expanding along column $C_1,
+%
+\begin{align}
+&amp;2(a+b+c)\left\vert \begin{array}{ccc}
+  1 &amp; a &amp; b \\ 0 &amp; b+c+a &amp; 0 \\  0 &amp; 0 &amp; c+a+b
+\end{array}\right\vert \\
+ =&amp;2(a+b+c)\left[1(a)(b)-\left(b+c+a\right)\left(c+a+b\right)\right]
+\end{align}\\
+</tex>
+    </options>
+    <reason>
+      <tex>%text
+Expanding along column $C_1,
+%
+\begin{align}
+&amp;2(a+b+c)\left\vert \begin{array}{ccc}
+  1 &amp; a &amp; b \\ 0 &amp; b+c+a &amp; 0 \\  0 &amp; 0 &amp; c+a+b
+\end{array}\right\vert \\
+ =&amp;2(a+b+c)\left[1(\left(b+c+a\right)\left(c+a+b\right)-0)\right] \\
+ =&amp;2(a+b+c)^3
+\end{align}\\
+</tex>
+    </reason>
+    <skills>
+      <skill id="85"/>
+    </skills>
+  </step>
+</question>
