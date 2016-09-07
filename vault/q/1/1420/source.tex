@@ -1,0 +1,163 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\pa{\frac{1}{7}}
+\newcommand\pb{\frac{2}{7}}
+\newcommand\pc{\frac{4}{7}}
+
+\previewoff
+
+\begin{document} 
+\begin{question}
+	\statement 
+	
+    Three persons $A,B$ and $C$ apply for the job of a Manager in a Private Company. Chances of their selection are in the ratio $1:2:4$. The probabilities that $A,B$ and $C$ can introduce changes to improve the profits of the company are 
+    $0.8,0.5$ and $0.3$ respectively\newline 
+    
+    If the change does not take place, then find the probability that it 
+    is due to the appointment of $C$ 
+      
+   \begin{step}
+  \begin{options} 
+     \correct 
+      
+      If we define the following events $\ldots$ 
+      \begin{center}
+  \begin{tabular}{NlNl}
+   \toprule
+   \text{Event} & Meaning & \text{Event} & Meaning \\
+   \midrule
+        A & $A$ is hired & B & $B$ is hired \\
+   \midrule
+   C & $C$ is hired & I & Profits improve \\ 
+    \bottomrule
+  \end{tabular}
+\end{center} 
+
+$\ldots$ then we know the following 
+\begin{center}
+  \begin{tabular}{NNN}
+   \toprule
+        \prob{A} = \frac{1}{7} & \prob{B} = \frac{2}{7} & \prob{C} = \frac{4}{7} \\
+   \midrule 
+        \condp{I}{A} = 0.8 & \condp{I}{B} = 0.5 & \condp{I}{C} = 0.3 \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+     \incorrect
+     
+     If we define the following events $\ldots$ 
+      \begin{center}
+  \begin{tabular}{NlNl}
+   \toprule
+   \text{Event} & Meaning & \text{Event} & Meaning \\
+   \midrule
+        A & $A$ is hired & B & $B$ is hired \\
+   \midrule
+   C & $C$ is hired & I & Profits improve \\ 
+    \bottomrule
+  \end{tabular}
+\end{center} 
+
+$\ldots$ then we know the following 
+\begin{center}
+  \begin{tabular}{NNN}
+   \toprule
+        \prob{A} = \frac{1}{7} & \prob{B} = \frac{2}{7} & \prob{C} = \frac{4}{7} \\
+   \midrule 
+        \prob{I\cap A} = 0.8 & \prob{I\cap B} = 0.5 & \prob{I\cap C} = 0.3 \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+        
+    \end{options} 
+     \reason 
+     
+     It is not said explicitly in the question, but is understood, that one of $A,B$ or $C$ is \underline{definitely} hired. Therefore,
+     \begin{align}
+     \text{If }\prob{A} =x &\text{ then } \prob{B}= 2x\\
+     &\text{ and }\prob{C} = 4x \\
+     \implies x + 2x + 4x &= 1 \text{ or } x = \frac{1}{7} 
+\end{align}\\[-25pt]
+\[ \text{Hence, }\prob{A} = \pa, \prob{B} = \pb, \prob{C} = \pc \]
+Moreover, we have been told the probabilities of profits improving \underline{given that} a certain person is hired\newline 
+
+Hence $\condp{I}{A}$ --- and not $\prob{I\cap A}$ \newline 
+
+These, we have been told, are 
+\begin{center}
+  \begin{tabular}{NlN}
+   \toprule
+        \text{Expression} & Meaning & \text{Value}  \\
+   \midrule 
+   \condp{I}{A} & Improvement if $A$ hired & 0.8 \\
+    \midrule 
+    \condp{I}{B} & Improvement if $B$ hired & 0.5 \\
+    \midrule
+    \condp{I}{C} & Improvement if $C$ hired & 0.3 \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+      
+      And we have to find $\condp{C}{I'}$ 
+     \incorrect
+     
+     And we have to find $\condp{I'}{C}$ 
+        
+    \end{options} 
+     \reason 
+       
+     Someone was hired --- and the profits \underline{didn't} improve. We want to know 
+     the probability that $C$ was hired \newline 
+     
+     In other words, we want to know $\condp{C}{I'}$    
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+      
+      \begin{align}
+	\condp{C}{I'} &= \fcondp{C}{I'} \\[5pt]
+	&= \dfrac{\condp{I'}{C}\cdot\prob{C}}{\sum_{X = A}^C \condp{I'}{X}\cdot\prob{X}} \\
+	\text{where } \condp{I'}{A} &= 0.2, \condp{I'}{B} = 0.5 \\[-10pt]
+	\text{and }\condp{I'}{C} &= 0.7  \\[10pt]
+	\therefore \condp{C}{I'} &= \frac{7}{10} 
+\end{align} 
+
+Hence, if profits didn't improve, then there is a $70\%$ chance that $C$ was hired 
+     
+    \end{options} 
+     \reason 
+     
+     Bayes' Theorem tells us that 
+     \begin{align}
+     \condp{C}{I'} &= \fcondp{C}{I'} \\[5pt]
+     &= \dfrac{\condp{I'}{C}\cdot\prob{C}}{\underbrace{\sum_{X=A}^C\condp{I'}{X}\cdot\prob{X}}_{=\condp{I'}{A}\prob{A} + \ldots + \condp{I'}{C}\prob{C}}}
+\end{align}
+
+But we will need $\condp{I'}{A}$ etc. to find the above value. And given that 
+\[ \qquad \condp{I}{X} + \condp{I'}{X} = 1 \] 
+Therefore
+\begin{align}
+\condp{I'}{A} &= 1-\condp{I}{A} = 0.2 \\
+\condp{I'}{B} &= 1-\condp{I}{B} = 0.5 \\
+\condp{I'}{C} &= 1-\condp{I}{C} = 0.7 
+\end{align}
+
+And hence, 
+\begin{align}
+\condp{C}{I'} &= \dfrac{\condp{I'}{C}\cdot\prob{C}}{\sum_{X=A}^C\condp{I'}{X}\cdot\prob{X}} \\[10pt]
+&= \dfrac{\frac{7}{10}\cdot\pc}{\left[\frac{2}{10}\cdot\pa + \frac{1}{2}\cdot\pb + \frac{7}{10}\cdot\pc \right]} \\[10pt]
+&= \frac{7}{10} 
+\end{align}
+       
+\end{step}
+\end{question} 
+\end{document} 
