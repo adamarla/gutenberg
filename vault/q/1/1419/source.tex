@@ -1,0 +1,86 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\fxe{1+\frac{x}{2} + \frac{x^2}{4} + \frac{x^3}{8} + \cdots}
+\newcommand\intg{\int_0^1 f(x)\cdot dx}
+
+\previewoff 
+
+\begin{document} 
+\begin{question}
+	\statement 
+    
+    Find the value of $\sqrt{e^{\int_0^1 f(x)\cdot dx}}$ where 
+    \[ f(x) = \fxe,\, \vert x\vert \leq 1  \]
+    
+    \textit{(This question looks tougher than it is)}
+
+	\begin{step}
+  \begin{options} 
+     \correct 
+       
+     $f(x)$ is a geometric series. And therefore 
+     \[ \qquad\qquad f(x) = \frac{2}{2-x} \]
+        
+    \end{options} 
+     \reason 
+     
+     Notice that each term in $f(x)$ is of the form 
+     \[ \qquad\qquad a_n = \frac{x^n}{2^n},\, \left(n\geq 0 \right)\]
+     Which means 
+     \begin{align}
+     a_{n+1} = \frac{x^{n+1}}{2^{n+1}} &= \frac{x^n}{2^n}\cdot\frac{x}{2} = a_n\cdot\frac{x}{2} \\[10pt]
+     \implies r &= \frac{x}{2}\,\text{ (common ratio)} \\
+     \therefore f(x) &= \fxe \\[-5pt]
+     &= \underbrace{\frac{1}{1-\frac{x}{2}} = \frac{2}{2-x}}_{\text{Sum of infinite series}}
+\end{align}
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+     
+     \[ \int_0^1 f(x)\cdot dx = \log 2^2 = \log 4 \]
+       
+     \incorrect
+     
+     \[ \int_0^1 f(x)\cdot dx = \log 2 \]
+    \end{options} 
+     \reason
+     
+     \begin{align}
+     f(x) &= \frac{2}{2-x} \\
+     \therefore \int_0^1 f(x)\cdot dx &= \int_0^1\frac{2}{2-x}\cdot dx \\
+     \text{Let } z = 2-x &\implies dx = -dz  \\
+     \therefore \int_0^1 f(x)\cdot dx &= \underbrace{-2\int_2^1\frac{dz}{z}}_{z = 2\text{ when } x = 0} = 2\int_1^2\frac{dz}{z} \\
+     \therefore \int_0^1 f(x)\cdot dx &= 2 \left[\log z \right]_1^2 \\ 
+     &= 2 \left[\log 2 - \log 1 \right] \\
+     &= 2\log 2 = \log 2^2 
+\end{align} 
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+     \[ \text{Therefore } \sqrt{e^{\int_0^1 f(x)\cdot dx}} = 2 \]  
+     \incorrect
+     
+     \[ \text{Therefore } \sqrt{e^{\int_0^1 f(x)\cdot dx}} = \sqrt{2\log 2} \]
+       
+        
+    \end{options} 
+     \reason 
+     
+     \begin{align}
+     \intg &= \log 2^2 = \log 4 \\
+	 \therefore e^{\intg} &= \underbrace{e^{\log 4} = 4}_{e^{\log a} = a}\\
+	 \implies \sqrt{e^{\intg}} &= \sqrt{4} = 2 
+\end{align}
+       
+\end{step}
+      
+\end{question} 
+\end{document} 
