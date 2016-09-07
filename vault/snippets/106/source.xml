@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<snippet xmlns="http://www.gradians.com" chapterId="13">
+<snippet xmlns="http://www.gradians.com" chapterId="30">
   <render>
     <tex correct="false">%text
 The lines $\ora{r}=\ora{a_1}+k\ora{b_1}$ and $\ora{r}=\ora{a_2}+k\ora{b_2}$ are coplanar (in the same plane) as long as $(\ora{a_2}-\ora{a_1})$ is parallel to $(\ora{b_1}\times\ora{b_2})$

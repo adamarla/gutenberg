@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="26">
+  <statement>
+    <tex>%text
+Find the angle between the vectors $\ora{a}=\vector{1}{-1}{1}$ and $\ora{b}=\vector{1}{1}{-1}$.
+%</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>%text
+If $\theta$ is the angle between $\ora{a}$ and $\ora{b}$, then 
+%
+\begin{align}
+  \cos\theta &amp;= \dfrac{\ora{a}\cdot \ora{b}}{|\ora{a}||\ora{b}|}
+\end{align}\\</tex>
+      <tex correct="false">%text
+If $\theta$ is the angle between $\ora{a}$ and $\ora{b}$, then 
+%
+\begin{align}
+  \cos\theta &amp;= \dfrac{|\ora{a}||\ora{b}|}{\sqrt{|\ora{a}|^2+|\ora{b}|^2}
+\end{align}\\</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  \ora{a}\cdot \ora{b}&amp;=|\ora{a}||\ora{b}|\cos\theta \\
+  \therefore\cos\theta &amp;= \dfrac{\ora{a}\cdot \ora{b}}{|\ora{a}||\ora{b}|}
+\end{align}</tex>
+    </reason>
+    <skills>
+      <skill id="83"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\begin{align}
+  \ora{a}&amp;=\vector{1}{-1}{1} \\
+  \ora{b}&amp;=\vector{1}{1}{-1} \\
+  \therefore\cos\theta&amp;=\dfrac{\ora{a}\cdot\ora{b}}{|\ora{a}||\ora{b}|}=\dfrac{-1}{\sqrt{3}\sqrt{3}}=-\dfrac{1}{3} \\
+    \implies \theta&amp;=\cos^{-1}\left(-\dfrac{1}{3}\right)
+\end{align}
+</tex>
+      <tex correct="false">\begin{align}
+  \ora{a}&amp;=\vector{1}{-1}{1} \\
+  \ora{b}&amp;=\vector{1}{1}{-1} \\
+  \therefore\cos\theta&amp;=\dfrac{\ora{a}\cdot\ora{b}}{|\ora{a}||\ora{b}|}=\dfrac{0}{\sqrt{3}\sqrt{3}}=0 \\
+    \implies \theta&amp;=\cos^{-1}\left(0\right)
+\end{align}
+</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  \ora{a}&amp;=\vector{1}{-1}{1}, \ora{b}=\vector{1}{1}{-1} \\
+  \ora{a}\cdot\ora{b} &amp;= (1\cdot 1)+(-1\cdot 1)+(1\cdot -1)=-1 \\
+  |\ora{a}| &amp;= \sqrt{(1)^2+(-1)^2+(1)^2}=\sqrt{3} \\
+  |\ora{b}| &amp;= \sqrt{(1)^2+(1)^2+(-1)^2}=\sqrt{3} \\
+  \therefore\cos\theta&amp;=\dfrac{-1}{\sqrt{3}\sqrt{3}}=-\dfrac{1}{3}
+    \implies \theta=\cos^{-1}\left(-\dfrac{1}{3}\right)
+\end{align}
+</tex>
+    </reason>
+    <skills>
+      <skill id="83"/>
+    </skills>
+  </step>
+  <choices>
+    <tex>\cos^{-1}\left(-\dfrac{1}{3}\right)</tex>
+    <tex correct="false">\cos^{-1}\left(-\dfrac{1}{\sqrt{3}}\right)</tex>
+    <tex correct="false">\cos^{-1}\left(-\dfrac{1}{2\sqrt{3}}\right)</tex>
+    <tex correct="false">\cos^{-1}\left(0\right)</tex>
+  </choices>
+</question>

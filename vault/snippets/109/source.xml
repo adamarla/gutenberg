@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<snippet xmlns="http://www.gradians.com" chapterId="13">
+<snippet xmlns="http://www.gradians.com" chapterId="30">
   <render>
     <tex correct="false">%text
 The vector equation of a plane at a distance of $5$ units from the origin whose normal vector is $\vector{2}{-3}{6}$ is given by,
