@@ -1,0 +1,15 @@
+#!/bin/bash 
+
+cd $VAULT 
+
+# Remove any zero-size source.{tex,xml} generated during build 
+for f in source.{tex,xml} ; do 
+  for j in `find . -name $f` ; do 
+    if [ -s $j ] ; then continue ; fi 
+    rm -f $j 
+  done 
+done 
+
+# Then, pull from github 
+git pull upstream master 
+
