@@ -1,0 +1,146 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\agrade{$A-$grade }
+\previewoff
+\begin{document}
+\begin{question}
+\statement
+	
+
+      $40\%$ students of a college reside in hostel
+      and the remaining reside outside. At the
+      end of the year, $50\%$ of the hostlers got
+      \agrade while from outside students, only
+      $30\%$ got \agrade in the examination.
+      At the end of the year, a student of the
+      college was chosen at random and was
+      found to have gotten \agrade\newline
+      
+      What is the probability that the selected
+      student was a hostler?      
+    
+\begin{step}
+	\begin{options}
+		\correct
+		
+		If we define the following events $\ldots$ 
+		\begin{center}
+  \begin{tabular}{Nl}
+   \toprule
+        \text{Event} & Meaning \\
+   \midrule 
+   A & Student gets an \agrade \\
+    \midrule 
+    H & Student is a hostler \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+$\ldots$ then we have been told the following 
+\begin{center}
+  \begin{tabular}{NN}
+   \toprule
+       \prob{H} = 0.4 & \prob{H'} = 0.6  \\
+   \midrule 
+   \condp{A}{H} = 0.5 & \condp{A}{H'} = 0.3 \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+And we have to find 
+\[ \qquad\qquad \condp{H}{A} = ? \]
+      
+
+		\incorrect
+		
+		If we define the following events $\ldots$ 
+		\begin{center}
+  \begin{tabular}{Nl}
+   \toprule
+        \text{Event} & Meaning \\
+   \midrule 
+   A & Student gets an \agrade \\
+    \midrule 
+    H & Student is a hostler \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+$\ldots$ then we have been told the following 
+\begin{center}
+  \begin{tabular}{NN}
+   \toprule
+       \prob{H} = 0.4 & \prob{H'} = 0.6  \\
+   \midrule 
+   \condp{H}{A} = 0.5 & \condp{H'}{A} = 0.3 \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+And we have to find 
+\[ \qquad\qquad \prob{H\cap A} = ? \]
+
+      
+
+	\end{options}
+	\reason
+
+	$40\%$ of the students are hostlers. Therefore $\prob{H} = 0.4$ \newline 
+	
+	A student is either a hostler or is not. Hence 
+	$\prob{H'} = 1-\prob{H} = 0.6$ \newline 
+	
+	If the student is a hostler, then there is a $50\%$ chance that he would get 
+	an \agrade $\implies \condp{A}{H} = 0.5$ \newline 
+	
+	But if he is not a hostler, then there is a $30\%$ chance that he would get 
+	an \agrade $\implies \condp{A}{H'} =0.3$ \newline 
+	
+	Which is why 
+      \begin{center}
+\begin{tabular}{NlN}
+        \toprule
+        \text{Expression} & Meaning & \text{Value} \\
+        \midrule
+        \prob{H} & Is a hostler & 0.4 \\
+        \midrule
+        \condp{A}{H}&\agrade given hostler & 0.5 \\
+        \midrule
+        \condp{A}{H'} &\agrade given not hostler & 0.3 \\
+        \midrule
+        \prob{H'} & Not a hostler & 0.6 \\
+        \bottomrule
+      \end{tabular}
+\end{center}
+But what we \underline{want to know} is the probability that a student 
+is a hostler \underline{given that} he has got an \agrade, that is, 
+\[ \qquad \qquad \condp{H}{A} = ? \]
+      
+\end{step}
+
+\begin{step}
+	\begin{options}
+		\correct
+		
+		\[\condp{H}{A} = \fcondp{H}{A} = \frac{10}{19} \]
+        
+        \incorrect
+        
+        \[\condp{H}{A} = \fcondp{H}{A} = \frac{7}{13} \]
+
+	\end{options}
+	\reason
+	
+	From Bayes' Theorem, we know that 
+	\begin{align}
+          \condp{H}{A} &= \dfrac{\prob{H\cap A}}{\prob{A}} \\
+          &= \underbrace{\fcondp{H}{A}}_{\text{Bayes' Theorem}}
+        \end{align} 
+        
+        Where 
+        \[\underbrace{\prob{A} = \condp{A}{H}\prob{H} + \condp{A}{H'}\prob{H'}}_{\text{Theorem of Total Probability}} \]
+        And therefore
+        \begin{align}
+          \condp{H}{A} &= \dfrac{\frac{5}{10}\cdot\frac{4}{10}}
+          {\frac{5}{10}\cdot\frac{4}{10} + \frac{3}{10}\cdot\frac{6}{10} } = \dfrac{10}{19}
+        \end{align}    
+\end{step}
+\end{question}
+\end{document}

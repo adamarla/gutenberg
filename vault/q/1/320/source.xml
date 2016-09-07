@@ -1,20 +1,32 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-It is standard practice to take a chest
-X-ray of a person suspected of having 
-tuberculosis (TB). The probability of 
-detecting TB in a person actually suffering
-from it is $\dfrac{99}{100}$. However, the probability 
-of a healthy person being diagnosed with 
-TB is $\dfrac{9}{1000}$. In a certain city, 1 in 600 
-people suffers from TB. A person is selected 
-at random and is diagnosed with TB. 
-
-What is the probability that the person 
-actually has TB?
-%</tex>
-   </statement>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="28">
+  <statement>
+    <tex isImage="true">tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">tex-2.svg</tex>
+      <tex isImage="true" correct="false">tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="36"/>
+      <skill id="38"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">tex-5.svg</tex>
+      <tex isImage="true" correct="false">tex-6.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">tex-7.svg</tex>
+    </reason>
+    <skills>
+      <skill id="14"/>
+      <skill id="17"/>
+    </skills>
+  </step>
 </question>
