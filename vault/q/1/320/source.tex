@@ -1,0 +1,132 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+
+\newcommand\xtb{\frac{99}{100}}
+\newcommand\xntb{\frac{9}{1000}}
+\newcommand\xray{$X-$ray }
+
+\begin{document}
+\begin{question}
+\statement
+	
+%text
+It is standard practice to take a chest
+\xray of a person suspected of having 
+tuberculosis $(TB)$. The probability of 
+detecting $TB$ in a person actually suffering
+from it is $\frac{99}{100}$. However, the probability 
+of a healthy person being diagnosed with 
+$TB$ is $\xntb$\newline 
+
+In a certain city, 1 in 600 people suffers from $TB$. A person is selected 
+at random and is diagnosed with $TB$. What is the probability that the person 
+actually has the disease?
+%
+
+\begin{step}
+  \begin{options} 
+     \correct 
+      
+      If we define the following two events $\ldots$ 
+      \begin{center}
+  \begin{tabular}{Nl}
+   \toprule
+        \text{Event} & Meaning  \\
+   \midrule 
+      X & \xray says person has $TB$ \\
+    \midrule 
+    TB & Person actually has $TB$ \\
+    \bottomrule
+  \end{tabular}
+\end{center} 
+
+$\ldots$ then 
+
+\begin{center}
+  \begin{tabular}{NN}
+   \toprule
+        \text{What we know} & \text{What we have to find} \\
+   \midrule 
+   \prob{TB} = \frac{1}{600} & \condp{TB}{X} = ? \\
+    \midrule 
+    \condp{X}{TB} = \xtb & \\
+    \midrule
+    \condp{X}{\overline{TB}} = \xntb & \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+       
+     \incorrect
+     
+      If we define the following two events $\ldots$ 
+      \begin{center}
+  \begin{tabular}{Nl}
+   \toprule
+        \text{Event} & Meaning  \\
+   \midrule 
+      X & \xray says person has $TB$ \\
+    \midrule 
+    TB & Person actually has $TB$ \\
+    \bottomrule
+  \end{tabular}
+\end{center} 
+
+$\ldots$ then 
+
+\begin{center}
+  \begin{tabular}{NN}
+   \toprule
+        \text{What we know} & \text{What we have to find} \\
+   \midrule 
+    \condp{TB}{X} = \xtb & \prob{TB} = ? \\
+    \midrule
+    \condp{\overline{TB}}{X} = \xntb & \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+        
+    \end{options} 
+     \reason 
+     
+     The \xray is a \underline{seemingly reliable} way to detect $TB$. But it is obviously not perfect     
+     \[ \qquad \underbrace{\condp{X}{TB} = \xtb}_{\text{\xray says $TB$ and the person actually has $TB$}}\]
+     
+     As we have been told, it is entirely possible that the \xray says a person has $TB$ when he actually does not     
+     \[ \qquad \underbrace{\condp{X}{\overline{TB}}= \xntb}_{\text{\xray says $TB$ for a healthy person}} \]
+     Moreover, in this town, 1 in every 600 people has $TB$
+     \[ \qquad \therefore \prob{TB} = \frac{1}{600} \]
+     And what we would like to know is that \underline{if the \xray says $TB$} then does the person \underline{actually have it}
+     \[ \qquad \condp{TB}{X} = ? \]
+     
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+       \[ \condp{TB}{X} = \fcondp{TB}{X} = \frac{110}{709} \]
+     \incorrect
+     
+            \[ \condp{TB}{X} = \fcondp{TB}{X} = \frac{410}{837} \]
+        
+    \end{options} 
+     \reason 
+     
+     From Bayes' Theorem, we know that 
+     \begin{align}
+	\condp{TB}{X} &= \fcondp{TB}{X} \\[-20pt]
+	\text{where } \prob{X} &= \condp{X}{TB}\prob{TB} \\
+	&+ \condp{X}{\overline{TB}}\prob{\overline{TB}} \\
+	&= \underbrace{\xtb\cdot\frac{1}{600} + \xntb\cdot\frac{599}{600}}_{\text{Rule of Total Probability}} \\[-10pt]
+	&= \left[ \frac{6381}{600\times 1000}\right] \\[10pt]
+	\therefore \condp{TB}{X} &= \dfrac{\xtb\cdot\frac{1}{600}}{\frac{6381}{600\cdot 1000}} = \frac{990}{6381} = \frac{110}{709} 
+\end{align}
+
+This is a surprisingly low number. If a person is known to have $TB$, then there is a $99\%$ chance that his \xray will confirm the disease \newline 
+
+But, the converse is not true. If a person's \xray shows $TB$, then there is only about a $15.6\% = \frac{110}{709}$ chance that he actually does have $TB$
+\end{step}
+\end{question}
+\end{document}
