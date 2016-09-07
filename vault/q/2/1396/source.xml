@@ -2,17 +2,8 @@
 <question xmlns="http://www.gradians.com" chapterId="26">
   <statement>
     <tex>%text
-Find the angle between the vectors
-$\ora{a}=\vector{1}{-1}{1}$ and $\ora{b}=\vector{1}{1}{-1}$.
-%
-\\
-\ora{a}=\vector{1}{-1}{1}, \ora{b}=\vector{1}{1}{-1} \\
-%text
-If $\theta$ is the angle between $\ora{a}$ and
-$\ora{b}$, what is is $\cos\theta$?
-%
-\\
-</tex>
+Find the angle between the vectors $\ora{a}=\vector{1}{-1}{1}$ and $\ora{b}=\vector{1}{1}{-1}$.
+%</tex>
   </statement>
   <step>
     <options>
