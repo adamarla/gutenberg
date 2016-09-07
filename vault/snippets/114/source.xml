@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippet xmlns="http://www.gradians.com" chapterId="26">
+  <render>
+    <tex correct="false">%text
+If $\ora{a}$ and $\ora{b}$ are two vectors such that $\theta$ is the angle between them, then
+%
+\begin{align}
+  \ora{a}\cdot \ora{b}-\ora{b}\cdot \ora{a}=2|\ora{a}||\ora{b}|\cos\theta
+\end{align}</tex>
+  </render>
+  <reason>
+    <tex>\begin{align}
+  \ora{a}\cdot \ora{b}&amp;=|\ora{a}|\cos\theta\times|\ora{b}|
+    =|\ora{a}||\ora{b}|\cos\theta \\
+  \ora{b}\cdot \ora{a}&amp;=|\ora{b}|\cos\theta\times|\ora{a}|
+    =|\ora{a}||\ora{b}|\cos\theta \\    
+  \therefore  &amp;\ora{a}\cdot \ora{b}- \ora{b}\cdot \ora{a}=0
+\end{align}</tex>
+  </reason>
+  <skills>
+    <skill id="83"/>
+  </skills>
+</snippet>
