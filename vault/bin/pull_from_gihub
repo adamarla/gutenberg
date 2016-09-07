@@ -1,0 +1,20 @@
+#!/bin/bash 
+
+# Strictly speaking, for use only on Linode.
+# But can be called locally also if
+#  1. $VAULT is defined
+#  2. A remote branch called upstream is defined
+
+cd $VAULT 
+
+# Remove any zero-size source.{tex,xml} generated during build 
+for f in source.{tex,xml} ; do 
+  for j in `find . -name $f` ; do 
+    if [ -s $j ] ; then continue ; fi 
+    rm -f $j 
+  done 
+done 
+
+# Then, pull from github 
+git pull upstream master 
+
