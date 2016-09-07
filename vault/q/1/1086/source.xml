@@ -1,117 +1,32 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>
-			\text{40\% students of a college reside in hostel}\\
-			\text{and the remaining reside outside. At the}\\
-			\text{end of the year, 50\% of the hostlers got}\\
-			\text{A-grade while from outside students, only}\\
-			\text{30\% got A-grade in the examination.}\\
-			\text{At the end of the year, a student of the}\\
-			\text{college was chosen at random and was}\\
-			\text{found to have gotten A-grade.}\\
-			\text{What is the probability that the selected}\\
-			\text{student was a hostler?}			
-		</tex>
-      <tex>\\ \textbf{Right or wrong? } \\
-			\text{Given the following two events} \\
-			\begin{tabular}{|c|c|}
-			  \hline
-			  H &amp; \text{Student is a hostler} \\ 
-			  \hline
-        A &amp; \text{Student got an A-grade} \\
-			  \hline
-			\end{tabular} \\
-			\text{does the table below correctly summarize}\\
-			\textbf{what we know}?</tex>
-      <tex>\\ \textbf{Right or wrong? }\text{And we have to}\\
-				\text{find the following probability.}</tex>
-      <tex>\\ \text{Are the calculations below correct?}</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">
-			\begin{tabular}{|c|c|}
-			  \hline
-			  P(H) &amp; 0.4 \\
-			  \hline
-			  P(A\vert H) &amp; 0.5 \\
-			  \hline
-			  P(A\vert \bar{H}) &amp; 0.3 \\
-			  \hline
-			  P(\bar{H}) &amp; 0.6 \\
-			  \hline
-			\end{tabular}
-			</tex>
-         <tex correct="false">
-			\begin{tabular}{|c|c|}
-			  \hline
-			  P(H) &amp; 0.6 \\
-			  \hline
-			  P(H\vert A) &amp; 0.5 \\
-			  \hline
-			  P(\bar{H}\vert A) &amp; 0.3 \\
-			  \hline
-			  P(\bar{H}) &amp; 0.4 \\
-			  \hline
-			\end{tabular}
-			</tex>
-      </options>
-      <reason>
-         <tex>\begin{tabular}{|c|l|c|}
-			  \hline
-			  \text{Expr} &amp; \text{Meaning} &amp; \text{Value} \\
-			  \hline
-			  P(H) &amp; \text{Is a hostler} &amp; 0.4 \\
-			  \hline
-			  P(A\vert H)&amp;\text{A-grade given hostler} &amp; 0.5 \\
-			  \hline
-			  P(A\vert \bar{H}) &amp;\text{A-grade given not hostler} &amp; 0.3 \\
-			  \hline
-			  P(\bar{H}) &amp;\text{Not a hostler} &amp; 0.6 \\
-			  \hline
-			\end{tabular}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-				\qquad P(H\vert A)
-				</tex>
-         <tex correct="false">
-				\qquad P(H\vert\bar{A})
-				</tex>
-      </options>
-      <reason>
-         <tex>\text{The randomly selected student is known}\\
-				\text{to have gotten an A-grade. So event A}\\
-				\text{has already occurred. We need to find}\\
-				\text{the probability that this student is a}\\
-				\text{hostler}\implies P(H\vert A).</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-				\begin{align}
-				  P(H\vert A) &amp;= \dfrac{P(H\cap A)}{P(A)} \\
-				  &amp;= \underbrace{\dfrac{P(A\vert H)\cdot P(H)}{P(A\vert H)\cdot P(H) 
-				  + P(A\vert\bar{H})\cdot P(\bar{H})}}_{\text{Bayes' Theorem}} \\
-				  &amp;= \dfrac{\frac{5}{10}\cdot\frac{4}{10}}
-				  {\frac{5}{10}\cdot\frac{4}{10} + \frac{3}{10}\cdot\frac{6}{10} } = \dfrac{10}{19}
-				\end{align}
-				</tex>
-      </options>
-      <reason>
-         <tex>\text{As per Bayes' Theorem}\\
-				\begin{align}
-				&amp;P(A\vert H)\cdot P(H) = P(H\vert A)\cdot P(A) \\
-				&amp;\implies P(H\vert A) = \dfrac{P(A\vert H)\cdot P(H)}{P(A)} \\
-				&amp;\text{where }P(A) = P(\text{random student gets A-grade})\\
-				&amp;=P(A\vert H)\cdot P(H) + P(A\vert\bar{H})\cdot P(\bar{H})
-				\end{align}
-				\quad</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="28">
+  <statement>
+    <tex isImage="true">tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">tex-2.svg</tex>
+      <tex isImage="true" correct="false">tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="38"/>
+      <skill id="36"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">tex-5.svg</tex>
+      <tex isImage="true" correct="false">tex-6.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">tex-7.svg</tex>
+    </reason>
+    <skills>
+      <skill id="14"/>
+      <skill id="17"/>
+    </skills>
+  </step>
 </question>
