@@ -1,69 +1,31 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>%text
-A die is thrown again and again until three 
-sixes are obtained. Find the probability of 
-obtaining the third six in the sixth throw 
-of the dice.
-%</tex>
-      <tex>\\ %text
-Which of the following is an example of a 
-favourable outcome?
-%</tex>
-      <tex>\\ %text
-Given what a favourable outcome looks 
-like, what will be the required probability? 
-%</tex>
-   </statement>
-   <step>
-      <options>
-         <tex src="right-1.svg" isImage="true" correct="true"/>
-         <tex src="wrong-1.svg" isImage="true" correct="false"/>
-      </options>
-      <reason>
-         <tex>%text
-Any favourable outcome will have the 
-following two characteristics 
-$\qquad (i)$ Three sixes total. 
-$\qquad (ii)$ A six on the last (sixth) throw. 
-$\qquad$ Which means, two sixes in throws 1-5. 
-%</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">P = \left[^5C_2\cdot\left(\frac{1}{6} \right)^2\cdot\left(\frac{5}{6}\right)^3\right]\times\frac{1}{6}=\frac{625}{23328}</tex>
-         <tex>P = {^6C_3}\cdot\left(\frac{1}{6} \right)^3\cdot\left(\frac{5}{6}\right)^3=\frac{625}{11664}</tex>
-      </options>
-      <reason>
-         <tex>%text
-We established in Step 1 that any 
-\underline\text{favourable outcome} will be like 
-the following 
-
-%
-\begin{tabular}{|c|c|c|}
-\hline 
-\text{Throws} &amp; \text{Requirement} &amp; \text{# of ways} \\
-\hline 
-1-5 &amp; \text{Exactly two sixes} &amp; {^5C_2} \\
-\hline 
-6 &amp; \text{A six} &amp; 1 \\
-\hline 
-\end{tabular} 
-%text
-
-Hence, the \underline\text{required probability} will be 
-%
-\begin{align}
-P(\text{getting a six}) &amp;= p = \frac{1}{6}\\
-\implies P(\text{not getting a six}) &amp;= q = \frac{5}{6} \\
-\therefore P_{\text{reqd}} = \underbrace{^5C_2\cdot p^2\cdot q^3}_{\text{Throws 1-5}}&amp;\times\underbrace{p}_{\text{Last throw}} \\
-\implies P_{\text{reqd}} = \left[^5C_2\cdot\left(\frac{1}{6} \right)^2\cdot\left(\frac{5}{6}\right)^3\right]&amp;\times\frac{1}{6}\\
-&amp;= \frac{625}{23328}
-\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="28">
+  <statement>
+    <tex isImage="true">tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">tex-2.svg</tex>
+      <tex isImage="true" correct="false">tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">tex-4.svg</tex>
+    </reason>
+    <skills>
+      <skill id="26"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">tex-5.svg</tex>
+      <tex isImage="true" correct="false">tex-6.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">tex-7.svg</tex>
+    </reason>
+    <skills>
+      <skill id="20"/>
+      <skill id="16"/>
+    </skills>
+  </step>
 </question>

@@ -1,120 +1,26 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
-
-<question xmlns="http://www.gradians.com">
-   <statement>
-      <tex>
-			\text{A and B throw a die alternatively till one}\\
-			\text{of them gets a number greater than 4 and}\\
-			\text{wins the game. If A starts the game, then}\\
-			\text{what is the probability of B winning?}
-		</tex>
-      <tex>\\ \textbf{Winning on a throw}\\ 
-			\text{What is the probability that a player (A or B)}\\
-			\text{throws a number greater than 4?}</tex>
-      <tex>\\ \textbf{Winning in a round}\\ 
-  		\text{If a single throw by A and a single throw}\\
-  		\text{by B makes up one round of throwing,}\\
-  		\text{then are the following probabilities correct?}</tex>
-      <tex>\\ \textbf{Winning in the n-th round}\\ 
-  			\text{If }B_n = \text{ event that B wins in the n-th round,}\\
-  			\text{then would }P(B_n)\text{ equal the following?}</tex>
-      <tex>\\ \textbf{Winning the game.}\\ 
-    		\text{The probability that B wins the game}\\
-    		\text{is therefore the following.}
-    		\textbf{ Right or wrong? } \\</tex>
-   </statement>
-   <step>
-      <options>
-         <tex correct="true">
-			\qquad \dfrac{1}{3}
-			</tex>
-         <tex correct="false">
-			\qquad \dfrac{1}{2}
-			</tex>
-      </options>
-      <reason>
-         <tex>\text{To win, one must get an }N\gt 4.\\
-			\text{Which means, }N\in\lbrace 5,6 \rbrace. \\
-			\text{So, probability } = \dfrac{n(\lbrace 5,6\rbrace)}{n(\lbrace 1,2,3,4,5,6 \rbrace)} = \dfrac{1}{3}.</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-  		\begin{tabular}{|c|c|c|}
-  		\hline
-  		\text{Event} &amp; \text{Meaning} &amp; \text{Value} \\
-  		\hline 
-  	  p &amp; \text{B wins in this round} &amp; \frac{2}{9} \\
-  		\hline
-  		q &amp; \text{A and B play next round} &amp; \frac{4}{9}\\
-  		\hline
-  		\end{tabular}
-  		</tex>
-         <tex correct="false">
-  		\begin{tabular}{|c|c|c|}
-  		\hline
-  		\text{Event} &amp; \text{Meaning} &amp; \text{Value} \\
-  		\hline 
-  		p &amp; \text{B wins in this round} &amp; \frac{1}{9} \\
-  		\hline
-  		q &amp; \text{A and B play next round} &amp; \frac{2}{9}\\
-  		\hline
-  		\end{tabular}
-  		</tex>
-      </options>
-      <reason>
-         <tex>\text{For B to win in a round, A should not win first.}\\
-  		\text{Which means, } \\
-  		\begin{align}
-  		p &amp;= P(\text{A throws }\lt 4)\cdot P(\text{B throws }\gt 4)  \\
-  		&amp;= \frac{2}{3}\cdot\frac{1}{3} = \frac{2}{9}
-  		\end{align} \\
-  		\text{For A and B to play a next round, no one}\\
-  		\text{should win in this round.} \\
-  		\begin{align}
-  		  q &amp;= P(\text{A throws }\lt 4)\cdot P(\text{B throws }\lt 4) \\
-  		  &amp;= \frac{2}{3}\cdot\frac{2}{3} = \frac{4}{9}
-  		\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-  			\qquad P(B_n) = \left(\dfrac{4}{9}\right)^{n-1}\cdot \dfrac{2}{9}
-  			</tex>
-         <tex correct="false">
-  			\qquad P(B_n) = \left(\dfrac{4}{9}\right)^{n}\cdot \dfrac{2}{9}
-  			</tex>
-      </options>
-      <reason>
-         <tex>\begin{align}
-  			  B_n &amp;= \underbrace{q\cdot q\cdots q}_{n-1\text{ rounds}}\times 
-  			  \underbrace{p}_{\text{B wins in this round}} \\
-  			  \therefore P(B_n) &amp;= q^{n-1}\cdot p \\
-  			  &amp;= \left(\dfrac{4}{9}\right)^{n-1}\cdot \dfrac{2}{9}
-  			\end{align}</tex>
-      </reason>
-   </step>
-   <step>
-      <options>
-         <tex correct="true">
-    		\begin{align}
-    		  P(B) &amp;= \sum_{n=1}^\infty P(B_n) = 
-    		  \sum_{n=1}^\infty\left(\dfrac{4}{9}\right)^{n-1}\cdot\dfrac{2}{9} \\
-    		  &amp;= \dfrac{2}{9}\cdot\dfrac{1}{1-\frac{4}{9}} = \dfrac{2}{5}
-    		\end{align}
-    		</tex>
-      </options>
-      <reason>
-         <tex>\text{B could win in the first round or the}\\
-    		\text{second round or the third round - and so on.}\\
-    		\begin{align}
-    		  P(B) &amp;= P(B_1) + P(B_2) + \ldots + P(B_n) + \ldots\infty\\
-    		  &amp;= \sum_{n=1}^\infty P(B_n) = \sum_{n=1}^\infty\left(\dfrac{4}{9}\right)^{n-1}\cdot\dfrac{2}{9}\\
-    		  &amp;=\dfrac{2}{9}\cdot \left[1 + \frac{4}{9} + \left(\frac{4}{9}\right)^2 + \ldots\infty \right] \\
-    		  &amp;= \dfrac{2}{9}\cdot\dfrac{1}{1-\frac{4}{9}} = \dfrac{2}{5}
-    		\end{align}</tex>
-      </reason>
-   </step>
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="28">
+  <statement>
+    <tex isImage="true">tex-1.svg</tex>
+  </statement>
+  <step>
+    <options>
+      <tex isImage="true">tex-2.svg</tex>
+      <tex isImage="true" correct="false">tex-3.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">tex-4.svg</tex>
+    </reason>
+  </step>
+  <step>
+    <options>
+      <tex isImage="true">tex-5.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">tex-6.svg</tex>
+    </reason>
+    <skills>
+      <skill id="137"/>
+    </skills>
+  </step>
 </question>
