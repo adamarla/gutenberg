@@ -1,0 +1,99 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\intga{\int\dfrac{dz}{\sqrt{a^3-z^2}}}
+\newcommand\intgb{\int\dfrac{dz}{\sqrt{b^2-z^2}}}
+\newcommand\expa{\sin^{-1} \left(\frac{x}{a} \right)^{\frac{3}{2}}}
+
+\newcommand\xa{x^{\frac{3}{2}}}
+\newcommand\ab{a^{\frac{3}{2}}}
+
+\previewoff 
+
+\begin{document} 
+\begin{question}
+	\statement 
+    
+     Evaluate the following 
+     \[ \qquad I = \int\dfrac{\sqrt{x}}{\sqrt{a^3-x^3}}\cdot dx \]
+     
+     \begin{step}
+  \begin{options} 
+     \correct 
+     
+     Given below are \underline{three possible strategies} on how to attack the problem
+     \begin{center}
+  \begin{tabular}{NN}
+   \toprule
+        \text{Strategy} & \text{First step} \\
+   \midrule 
+   A & I = \int\dfrac{\sqrt{x}}{\sqrt{\left(a-x \right)\left(a^2+x^2 + ax \right)}}\cdot dx  \\
+    \midrule 
+    B & \text{Let } z = x^{\frac{3}{2}} \\
+    \midrule
+    C & \text{Let } x = a\sin\theta \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+Of these, \underline{Strategy $B$} is the best way forward 
+     \incorrect
+     
+          
+     Given below are \underline{three possible strategies} on how to attack the problem
+     \begin{center}
+  \begin{tabular}{NN}
+   \toprule
+        \text{Strategy} & \text{First step} \\
+   \midrule 
+   A & I = \int\dfrac{\sqrt{x}}{\sqrt{\left(a-x \right)\left(a^2+x^2 + ax \right)}}\cdot dx  \\
+    \midrule 
+    B & \text{Let } z = x^{\frac{3}{2}} \\
+    \midrule 
+    C & \text{Let } x = a\sin\theta \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+Of these, \underline{Strategy $A$} is the best way forward 
+        
+    \end{options} 
+     \reason 
+     
+     Sometimes, you will just have to try multiple options before finding the one that 
+     makes life easiest\newline 
+     
+     Notice however the $\sqrt{x}$ in the numerator 
+     \begin{align}
+     \text{If }z = x^{\frac{3}{2}} &\text{ then } \frac{dz}{dx} = \frac{3}{2}\sqrt{x} \\
+     \implies \sqrt{x}\cdot dx &= \frac{2}{3} dz \\[10pt]
+     \text{and } I &= \frac{2}{3}\int\dfrac{dz}{\sqrt{a^3 - z^2}}
+\end{align}
+
+\underline{This looks a lot more manageable!}
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       \begin{align}
+       I &= \frac{2}{3}\intga \\[10pt]
+       \implies I &= \frac{2}{3}\expa + C
+\end{align}
+        
+    \end{options} 
+     \reason
+     
+     If $z = x^{\frac{3}{2}}$, then why can't $b = a^{\frac{3}{2}}$
+     \begin{align}
+     \text{Hence, if } b &= a^{\frac{3}{2}}\text{ then } \\
+     I &= \frac{2}{3}\intgb \\[10pt]
+     \therefore I &= \frac{2}{3}\sin^{-1} \left(\frac{z}{b} \right) + C \\
+     &= \frac{2}{3}\sin^{-1} \left(\dfrac{\xa}{\ab} \right) + C \\
+     &= \frac{2}{3}\expa + C 
+\end{align} 
+       
+\end{step}
+\end{question} 
+\end{document} 
