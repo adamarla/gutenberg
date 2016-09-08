@@ -1,14 +1,14 @@
 
 SHELL=/bin/bash
 .ONESHELL : 
-.PHONY : clean xmlforquill
+.PHONY : clean xml_for_quill
 
-last_compiled_on : blueprint.xml
-	@ if [ ! -s $< -o ! -e source.xml ] ; then
+last_compiled_on : blueprint.xml source.xml  
+	@ if [ ! -s blueprint.xml -o ! -s source.xml ] ; then 
 		path=$$(pwd | rev | cut -d'/' -f1-2 | rev)
 		echo "Skipping .... $$path" 
 		exit 0
-	fi
+	fi 
 	if [ -s source.tex ] ; then 
 		cp source.xml layout.xml
 		sed -i -e 's/>\(tex-[0-9]*.svg\)<\/tex>/ src=\"\1\" isTex=\"true\"\/>/g' layout.xml
@@ -19,13 +19,13 @@ last_compiled_on : blueprint.xml
 	fi 
 	date > $@
 
-# Orthogonal target. To be called from within tex2svg only  
-xmlforquill : blueprint.xml  
-	@ if [ -s source.tex ] ; then mv blueprint.xml source.xml ; fi 
+# Orthogonal target. To be called from within 'tex2svg' ONLY !!! 
+xml_for_quill : blueprint.xml 
+	@ if [ ! -s $< ] ; then exit 0 ; fi 
+	mv $< source.xml
 
-# Generates required SVGs. blueprint.xml might not be required 
-blueprint.xml : source.tex source.xml 
-	@ if [ -s source.tex ] ; then 
+blueprint.xml : source.tex 
+	@ if [ ! -e $< -o ! -s $< ] ; then exit 0 ; fi
 		sed -i -e "s/\\previewon/\\previewoff/g" source.tex
 		latex --halt-on-error $< && dvips source.dvi && ps2pdf source.ps 
 		rm -f tex*.svg 
@@ -33,18 +33,12 @@ blueprint.xml : source.tex source.xml
 		if [ ! -e ~/.gutenberg ] ; then 
 			git add source.tex 
 		fi 
-	elif [ -s source.xml ] ;then 
+
+source.xml : 
+	@ if [ -s source.tex ] ; then exit 0 ; fi 
 		quill -r $$(pwd) 
-		cp source.xml blueprint.xml
-	else 
-		touch $@
-	fi
 
 source.tex : 
-	@ touch $@
-
-source.xml :
-	@ touch $@
 
 clean : 
 	@ rm -f blueprint.xml 
@@ -53,4 +47,3 @@ clean :
 	@ ls | grep -e ^[[:digit:]] | xargs rm -f 
 	@ rm -f {STMT,CTX,CRT,WRNG,RSN,CH}_*.svg 
 	@ rm -f PREVIEW.svg
-
