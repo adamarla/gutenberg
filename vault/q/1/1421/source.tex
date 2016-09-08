@@ -1,0 +1,181 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\nextrd{\frac{55}{72}}
+\newcommand\bwins{\frac{5}{72}}
+\newcommand\expa{ \left(\nextrd \right)}
+
+\previewoff 
+
+\begin{document} 
+\begin{question}
+	\statement 
+    
+    $A$ and $B$ throw a pair of dice alternately. 
+    $A$ wins the game if he gets a total of $7$ and $B$ wins the game if 
+    he gets a total of $10$. If $A$ starts the game, then find the 
+    probability that $B$ wins
+
+    \begin{step}
+  \begin{options} 
+     \correct 
+      
+      Favourable outcomes for $A$ and $B$ are as follows where 
+      $\left(a,b \right)$ are the 
+      values on the first and second die respectively 
+      
+      \begin{center}
+  \begin{tabular}{NN}
+   \toprule
+        A & B \\
+   \midrule 
+   \left(1,6 \right) & \left(4,6 \right) \\
+    \midrule 
+    \left(2,5 \right) & \left(5,5 \right) \\
+    \midrule 
+    \left(3,4 \right) & \left(6,4 \right) \\
+    \midrule
+    \left(6,1 \right) & \\
+    \midrule
+    \left(5,2 \right) & \\
+    \midrule
+    \left(4,3 \right) & \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+     \incorrect
+     
+     Favourable outcomes for $A$ and $B$ are as follows where 
+      $\left(a,b \right)$ are the 
+      values on the first and second die respectively 
+      
+      \begin{center}
+  \begin{tabular}{NN}
+   \toprule
+        A & B \\
+   \midrule 
+   \left(1,6 \right) & \left(4,6 \right) \\
+    \midrule 
+    \left(2,5 \right) & \left(5,5 \right) \\
+    \midrule 
+    \left(3,4 \right) & \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+        
+    \end{options} 
+     \reason 
+     
+     There are two ways of rolling a sum of $a+b$ with two dice -- $\left(a,b \right)$ or $\left(b,a \right)$\newline 
+     
+     Given this, below are the ways in which one can roll a total of $7$ ($A$ wins) or $10$ ($B$ wins) 
+     
+     \begin{center}
+  \begin{tabular}{NN}
+   \toprule
+        A & B \\
+   \midrule 
+   \left(1,6 \right) & \left(4,6 \right) \\
+    \midrule 
+    \left(2,5 \right) & \left(5,5 \right) \\
+    \midrule 
+    \left(3,4 \right) & \left(6,4 \right) \\
+    \midrule
+    \left(6,1 \right) & \\
+    \midrule
+    \left(5,2 \right) & \\
+    \midrule
+    \left(4,3 \right) & \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+\end{step}  
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+      Let a round be defined as $A$ rolling the pair of dice first followed by $B$ doing the same\newline 
+      
+     Given this
+     \begin{center}
+  \begin{tabular}{cN}
+   \toprule
+       Event & \text{Probability} \\
+   \midrule 
+   No one wins in a round & \nextrd \\
+    \midrule 
+    $B$ wins in the $N-$th round & \left(\nextrd \right)^{N-1}\cdot\bwins \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+     \incorrect
+     
+     Let a round be defined as $A$ rolling the pair of dice first followed by $B$ doing the same\newline 
+      
+     Given this
+     \begin{center}
+  \begin{tabular}{cN}
+   \toprule
+       Event & \text{Probability} \\
+   \midrule 
+   No one wins in a round & \nextrd \\
+    \midrule 
+    $B$ wins in the $N-$th round & \left(\nextrd\right)^{N-1}\cdot\frac{1}{12}\\
+    \bottomrule
+  \end{tabular}
+\end{center}
+        
+    \end{options} 
+     \reason 
+     
+     For $B$ to win, $A$ should \underline{not} already have won the game by rolling a 
+     total of $7$ \newline 
+     
+     Hence, for $B$ to win \underline{in the $N-$th round}, no one should
+     have won in the \underline{preceding} $N-1$ rounds\newline 
+    
+    \begin{center}
+  \begin{tabular}{cN}
+   \toprule
+        Event & \text{Probability} \\
+   \midrule 
+   $A$ rolls $7$ & \frac{6}{36} = \frac{1}{6} \\
+    \midrule 
+    $B$ rolls $10$ & \frac{3}{36} = \frac{1}{12} \\
+    \midrule 
+    No one wins in a round & \underbrace{\frac{5}{6}\cdot\frac{11}{12} = \nextrd}_{\left(1-\frac{1}{6} \right)\cdot \left(1-\frac{1}{12} \right)}\\
+    \midrule
+    $B$ wins in a round & \underbrace{\frac{5}{6}\cdot\frac{1}{12} = \bwins}_{\text{$A$ doesn't win but $B$ does}} \\ 
+    \midrule
+    $B$ wins in the $N-$th round & \left(\nextrd \right)^{N-1}\cdot\bwins \\
+    \bottomrule
+  \end{tabular}
+\end{center} 
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+      
+     The probability that $B$ wins is therefore 
+     \[ \quad\prob{B} = \sum_{N=1}^\infty \left(\nextrd \right)^{N-1}\cdot\bwins = \frac{5}{17}\]
+        
+    \end{options} 
+     \reason 
+     
+     $B$ could win in the $1-$st round or the $100-$th round or the $1000-$th round. 
+     Hence, the \underline{total probability} of $B$ winning is 
+     
+     \begin{align}
+     P &= \expa^0\bwins + \expa^1\bwins + \cdots \infty \\[10pt]
+     &= \frac{5}{72}\underbrace{\sum_{N=1}^\infty\expa^{N-1}}_{\text{Infinite geometric series}} \\[5pt]
+     &= \bwins \left[\dfrac{1}{1-\nextrd} \right] = \bwins\cdot\frac{72}{17} = \frac{5}{17} 
+     \end{align}
+
+\end{step}
+\end{question} 
+\end{document} 
