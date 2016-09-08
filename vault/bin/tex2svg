@@ -36,8 +36,8 @@ if [ ! -e $dir_vault ] ; then
   exit 1
 fi 
 
-# Copy tex_file to target folder and call 'make xmlforquill' 
+# Copy tex_file to target folder and call 'make xml_for_quill' 
 # That will take care of switching preview off and adding source.tex to Git
 
 cp $tex_file $dir_vault/source.tex
-make -C $dir_vault xmlforquill
+make -C $dir_vault xml_for_quill
