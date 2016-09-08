@@ -35,7 +35,7 @@ blueprint.xml : source.tex
 		fi 
 
 source.xml : 
-	@ if [ -s source.tex ] ; then exit 0 ; fi 
+	@ if [ -s source.tex -o ! -e $@ ] ; then exit 0 ; fi 
 		quill -r $$(pwd) 
 
 source.tex : 
