@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<skill xmlns="http://www.gradians.com" chapterId="30">
+  <render>
+    <tex>\title{Types of lines in 3D} \\
+%text
+Intersectiong, Parallel and Skew
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+A pair of lines in $3D$ space may be classified as Intersecting, Parallel or Skew (non-intersecting and non-parallel). 
+Here is the meaning of each with examples:
+%
+
+\begin{align}
+  L_1:&amp;\dfrac{x-4}{3}=\dfrac{y-3}{7}=\dfrac{z-1}{1}  \\
+  L_2:&amp;\dfrac{x+1}{6}=\dfrac{y}{14}=\dfrac{z+3}{2}  \\
+  L_3:&amp;\dfrac{x-8}{2}=\dfrac{y-9}{8}=\dfrac{z}{3}  \\
+\end{align} \\
+\begin{align}
+\begin{tabular}{lll}
+  \hline
+  \text{Condition} &amp; \text{Lines that...} &amp; \text{Example} \\
+  \hline
+  \text{Intersecting} &amp; \text{meet at a point in space} &amp; L_1,L_3 \\
+  \text{Parallel} &amp; \text{are always a constant distance apart} &amp; L_1, L_2 \\
+  \text{Skew} &amp; \text{neither intersect nor are parallel} &amp; L_2, L_3 \\
+  \hline 
+\end{tabular}
+\end{align} \\
+%text
+Notes:
+$L_1$ and $L_3$ meet at $(10,17,3)$
+Direction ratios of $L_1$ and $L_2$ are $3:6=7:14=1:2$
+%</tex>
+  </reason>
+</skill>
