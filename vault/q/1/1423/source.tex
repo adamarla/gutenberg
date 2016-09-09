@@ -1,0 +1,133 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\expa{\left(x^3-x \right)}
+\newcommand\expb{ \left[\frac{x^4}{4} - \frac{x^2}{2} \right]}
+\newcommand\expc{ \left[\frac{x^2}{2} - \frac{x^4}{4} \right]}
+
+\newcommand\fx{\vert\, x^3 - x\,\vert}
+\newcommand\intg{\int_{-1}^2 } 
+
+\previewoff 
+
+\begin{document} 
+\begin{question}
+	\statement 
+    
+     Evaluate the following 
+     \[ \qquad \intg\fx\cdot dx  \]  
+     
+     \begin{step}
+  \begin{options} 
+     \correct 
+       
+     From $-\infty\to\infty, f(x) = \expa$ behaves as follows 
+     \begin{center}
+  \begin{tabular}{NNNNN}
+   \toprule
+        &  x<-1 & x\in \left[-1,0 \right) & x\in \left[0,1 \right] & x > 1 \\
+   \midrule 
+   f(x) & < 0 & \geq 0 & \leq 0 & > 0 \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+       
+     \incorrect
+     
+      From $-\infty\to\infty, f(x) = \expa$ behaves as follows 
+     \begin{center}
+  \begin{tabular}{NNNNN}
+   \toprule
+        &  x<-1 & x\in \left[-1,0 \right) & x\in \left[0,1 \right] & x > 1 \\
+   \midrule 
+   f(x) & < 0 & \leq 0 & \geq 0 & > 0 \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+        
+    \end{options} 
+     \reason 
+     
+     \begin{align}
+     f(x) &= \expa = x\cdot (x^2-1) \\
+     &= x\cdot (x-1)\cdot (x+1) 
+\end{align}
+ 
+By looking at how each \underline{individual term} is in \underline{different intervals}, we can know how $f(x)$ behaves in those intervals 
+\begin{center}
+  \begin{tabular}{NNNNN}
+   \toprule
+        &  x & x-1 & x+1 & f(x) = \expa \\
+   \midrule 
+   x < -1 & - & - & - & - \\
+    \midrule 
+    x\in \left[-1,0\right) & - & - & + & + \\
+    \midrule 
+    x\in \left[0,1 \right] & + & - & + & - \\
+    \midrule 
+    x > 1 & + & + & + & + \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+     
+     And therefore 
+     \begin{align}
+	A &= \intg \fx\cdot dx \\[10pt]
+	&= \int_{-1}^0 \expa\cdot dx + \int_0^1 \left(x-x^3 \right)\cdot dx \\[-10pt]
+	&+ \int_1^2 \expa\cdot dx 
+\end{align}
+        
+    \end{options} 
+     \reason 
+     
+     We established in the last step that 
+     \begin{center}
+  \begin{tabular}{NNNNN}
+   \toprule
+        &  x < -1 & x\in \left[-1,0 \right) & x\in \left[0,1 \right] & x > 1\\
+   \midrule 
+   \expa & - & + & - & + \\
+    \midrule 
+    \fx & x-x^3 & x^3 - x & x-x^3 & x^3 - x \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+Which is why 
+\begin{align}
+	A &= \intg \fx\cdot dx \\[10pt]
+	&= \int_{-1}^0 \expa\cdot dx + \int_0^1 \left(x-x^3 \right)\cdot dx \\[-10pt]
+	&+ \int_1^2 \expa\cdot dx 
+\end{align}
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+     
+     Which gives $A = \dfrac{7}{2} $   
+       
+     \incorrect
+     
+     Which gives $A = \dfrac{5}{2}$
+        
+    \end{options} 
+     \reason 
+     
+     \smallmath\begin{align}
+	A &= \int_{-1}^0 \expa\cdot dx + \int_0^1 \left(x-x^3 \right)\cdot dx \\
+	&+ \int_1^2 \expa\cdot dx \\
+	&= \expb_{-1}^0  + \expc_0^1 + \expb_1^2 \\
+	&= \left[0-\left(-\frac{1}{2} \right) \right] + \left[\left(\frac{1}{2} \right)-0 \right] + \left[2- \left(-\frac{1}{2} \right) \right] \\
+	&= \frac{7}{2}
+\end{align}
+       
+\end{step}
+\end{question} 
+\end{document} 
