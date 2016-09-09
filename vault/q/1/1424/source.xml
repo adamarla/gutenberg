@@ -29,4 +29,15 @@
       <skill id="48"/>
     </skills>
   </step>
+  <step>
+    <options>
+      <tex isImage="true">tex-8.svg</tex>
+    </options>
+    <reason>
+      <tex isImage="true">tex-9.svg</tex>
+    </reason>
+    <skills>
+      <skill id="55"/>
+    </skills>
+  </step>
 </question>
