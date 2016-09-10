@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippet xmlns="http://www.gradians.com" chapterId="26">
+  <render>
+    <tex>%text
+If $\ora{c}=2 \ora{a}$, $\ora{a}\cdot(\ora{b}\times\ora{c})=0$
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+As per the circular shift invariance exhibited by scalar triple product,
+%
+\begin{align}
+  \ora{a}\cdot(\ora{b}\times\ora{c})&amp;=\ora{b}\cdot(\ora{c}\times\ora{a}) \\
+  &amp;=2\ora{b}\cdot(\ora{a}\times \ora{a}) \\
+  &amp;=0
+\end{align} \\
+%text
+Any expression that has a cross product of a vector with itself is $0$ as, 
+%
+\begin{align}
+  |\ora{a}\times\ora{a}|=|\ora{a}||\ora{a}|\sin 0=0
+\end{align}
+
+</tex>
+  </reason>
+  <skills>
+    <skill id="83"/>
+  </skills>
+</snippet>

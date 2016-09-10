@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<skill xmlns="http://www.gradians.com">
+<skill xmlns="http://www.gradians.com" chapterId="26">
   <render>
     <tex>\title{Scalar Triple Product} \\
 %text
@@ -22,7 +22,7 @@ The scalar triple product of three vectors is expressed as $\ora{a}\cdot(\ora{b}
 A key attributes of the vector triple product is circular shift invariance, i.e.,
 %
 \begin{align}
-  \ora{a}\cdot(\ora{b}\times\ora{c})\equiv \ora{c}\cdot(\ora{a}\times\ora{b}) \equiv \ora{b}\cdot(\ora{a}\times\ora{c})
+  \ora{a}\cdot(\ora{b}\times\ora{c})= \ora{c}\cdot(\ora{a}\times\ora{b}) = \ora{b}\cdot(\ora{c}\times\ora{a})
 \end{align}
 </tex>
   </reason>
