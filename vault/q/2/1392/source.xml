@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="3">
+  <statement>
+    <tex>%text
+Is the binary operation * defined on set $\mathbb{N}$, given by $a*b=\dfrac{a+b}{2}\,\forall\, a, b \in\mathbb{N}$,
+  (i) commutative?
+  (ii) associative?
+%
+\\
+%text
+Does the following prove that binary
+operator '$*$' is commutative?
+%
+\\
+%text
+If $a*b=\dfrac{a+b}{2}$ what is $a*b-b*a$?
+%
+\\
+%text
+Does the following prove that binary operator
+* is associative?
+%
+\\
+%text
+If $a*b=\dfrac{a+b}{2}$ what is
+%
+a*(b*c)-(a*b)*c?
+\\
+</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>\begin{align}
+  a*b &amp;= \dfrac{a+b}{2} \\
+  b*a&amp;= \dfrac{b+a}{2} \\
+  \implies a*b&amp;=b*a\, \forall\, a,b \in \mathbb{N}
+\end{align}\\
+%text
+Therefore the operator $*$ is commutative.
+%
+</tex>
+      <tex correct="false">\begin{align}
+  a*b &amp;= \dfrac{a+b}{2} \\
+  b*a&amp;= -\dfrac{b+a}{2} \\
+  \implies a*b&amp;\neq b*a\, \forall\, a,b \in \mathbb{N}
+\end{align}\\
+%text
+Therefore the operator $*$ is \underline{not} commutative.
+%
+</tex>
+    </options>
+    <reason>
+      <tex>%text
+By definition of commutativity, binary operator $*$ is commutative if $a*b=b*a$ for any $a,b\in N$. 
+%
+\begin{align}
+  a*b-b*a &amp;= \dfrac{a+b}{2}-\dfrac{b+a}{2}=0 \\ 
+  \therefore a*b&amp;=b*a
+\end{align}\\
+%text
+Therefore, the binary operator $*$ is commutative.
+%
+</tex>
+    </reason>
+  </step>
+  <step>
+    <options>
+      <tex>\begin{align}
+  a*(b*c) &amp;= \dfrac{a+\left(\dfrac{b+c}{2}\right)}{2}=\dfrac{2a+b+c}{4} \\
+  (a*b)*c &amp;= \dfrac{\left(\dfrac{a+b}{2}\right)+c}{2}=\dfrac{a+b+2c}{4} \\
+\end{align}\\
+%text
+$a*(b*c)\neq (a*b)*c$ therefore the binary operator $*$ is not associative
+%</tex>
+      <tex correct="false">\begin{align}
+  a*(b*c) &amp;= \dfrac{a+\left(\dfrac{b+c}{2}\right)}{2}=\dfrac{2a+b+c}{4} \\
+  a*(c*b) &amp;= \dfrac{a+\left(\dfrac{c+b}{2}\right)}{2}=\dfrac{2a+c+b}{4} \\
+\end{align}\\
+%text
+$a*(b*c)=a*(c*b)$ therefore the binary operator $*$ is associative
+%</tex>
+    </options>
+    <reason>
+      <tex>%text
+By definition of associativity, binary operator $*$ is associative if $a*(b*c)=(a*b)*c$ for any $a,b,c\in N$.
+%
+\begin{align}
+  a*(b*c)-(a*b)*c&amp;=\dfrac{a+\left(\dfrac{b+c}{2}\right)}{2}
+    -\dfrac{\left(\dfrac{a+b}{2}\right)+c}{2} \\  
+    =\dfrac{2a+b+c}{4}&amp;-\dfrac{a+b+2c}{4}=\dfrac{a-c}{4}\neq 0 \\
+    a*(b*c)&amp;\neq(a*b)*c
+\end{align}\\
+%text
+Therefore, the binary operator $*$ is \underline{not} associatative.
+%</tex>
+    </reason>
+  </step>
+</question>
