@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="19">
+  <statement>
+    <tex>\text{If }
+A=\left[\begin{array}{ccc}
+  1 &amp; 2 &amp; 2 \\ 2 &amp; 1 &amp; 2 \\ 2 &amp; 2 &amp; 1
+\end{array}\right],
+%text
+verify that $A^2-4A-5I=0$.
+%</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>A=\left[\begin{array}{ccc}
+  1 &amp; 2 &amp; 2 \\ 2 &amp; 1 &amp; 2 \\ 2 &amp; 2 &amp; 1
+\end{array}\right]\implies
+A^2=\left[\begin{array}{ccc}
+  9 &amp; 8 &amp; 8 \\ 8 &amp; 9 &amp; 8 \\ 8 &amp; 8 &amp; 9
+\end{array}\right]</tex>
+      <tex correct="false">A=\left[\begin{array}{ccc}
+  1 &amp; 2 &amp; 2 \\ 2 &amp; 1 &amp; 2 \\ 2 &amp; 2 &amp; 1
+\end{array}\right]\implies
+A^2=\left[\begin{array}{ccc}
+  1 &amp; 4 &amp; 4 \\ 4 &amp; 1 &amp; 4 \\ 4 &amp; 4 &amp; 1
+\end{array}\right]</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+A^2=A\cdot A&amp;=\left[\begin{array}{ccc}
+  1 &amp; 2 &amp; 2 \\
+  2 &amp; 1 &amp; 2 \\
+  2 &amp; 2 &amp; 1
+\end{array}\right]\cdot
+\left[\begin{array}{ccc}
+  1 &amp; 2 &amp; 2 \\
+  2 &amp; 1 &amp; 2 \\
+  2 &amp; 2 &amp; 1
+\end{array}\right] \\
+&amp;=\left[\begin{array}{ccc}
+  1+4+4 &amp; 2+2+4 &amp; 2+4+2 \\
+  2+2+4 &amp; 4+1+4 &amp; 4+2+2 \\
+  2+4+2 &amp; 4+2+2 &amp; 4+4+1
+\end{array}\right] \\
+&amp;=\left[\begin{array}{ccc}
+  9 &amp; 8 &amp; 8 \\ 8 &amp; 9 &amp; 8 \\ 8 &amp; 8 &amp; 9
+\end{array}\right]
+\end{align}
+</tex>
+    </reason>
+    <skills>
+      <skill id="86"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\begin{align}
+A^2-4A&amp;=\left[\begin{array}{ccc}
+  9 &amp; 8 &amp; 8 \\ 8 &amp; 9 &amp; 8 \\ 8 &amp; 8 &amp; 9
+\end{array}\right]-4\left[\begin{array}{ccc}
+  1 &amp; 2 &amp; 2 \\ 2 &amp; 1 &amp; 2 \\ 2 &amp; 2 &amp; 1
+\end{array}\right] \\
+  &amp;=\left[\begin{array}{ccc}
+  5 &amp; 0 &amp; 0 \\ 0 &amp; 5 &amp; 0 \\ 0 &amp; 0 &amp; 5
+\end{array}\right]
+\end{align}\\
+</tex>
+      <tex correct="false">\begin{align}
+A^2-4A&amp;=\left[\begin{array}{ccc}
+  9 &amp; 8 &amp; 8 \\ 8 &amp; 9 &amp; 8 \\ 8 &amp; 8 &amp; 9
+\end{array}\right]-4\left[\begin{array}{ccc}
+  1 &amp; 2 &amp; 2 \\ 2 &amp; 1 &amp; 2 \\ 2 &amp; 2 &amp; 1
+\end{array}\right] \\
+  &amp;=\left[\begin{array}{ccc}
+  5 &amp; 0 &amp; 0 \\ 6 &amp; 8 &amp; 6 \\ 6 &amp; 6 &amp; 8
+\end{array}\right]
+\end{align}\\
+</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+A^2-4A&amp;=\left[\begin{array}{ccc}
+  9 &amp; 8 &amp; 8 \\ 8 &amp; 9 &amp; 8 \\ 8 &amp; 8 &amp; 9
+\end{array}\right]-4\left[\begin{array}{ccc}
+  1 &amp; 2 &amp; 2 \\ 2 &amp; 1 &amp; 2 \\ 2 &amp; 2 &amp; 1
+\end{array}\right] \\
+&amp;=\left[\begin{array}{ccc}
+  9 &amp; 8 &amp; 8 \\ 8 &amp; 9 &amp; 8 \\ 8 &amp; 8 &amp; 9
+\end{array}\right]-\left[\begin{array}{ccc}
+  4 &amp; 8 &amp; 8 \\ 8 &amp; 4 &amp; 8 \\ 8 &amp; 8 &amp; 4
+\end{array}\right] \\
+  &amp;=\left[\begin{array}{ccc}
+  5 &amp; 0 &amp; 0 \\ 0 &amp; 5 &amp; 0 \\ 0 &amp; 0 &amp; 5
+\end{array}\right]
+\end{align}\\
+</tex>
+    </reason>
+    <skills>
+      <skill id="86"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\begin{align}
+  (A^2-4A)-5I&amp;=\left[\begin{array}{ccc}
+  5 &amp; 0 &amp; 0 \\ 0 &amp; 5 &amp; 0 \\ 0 &amp; 0 &amp; 5
+\end{array}\right]-5\left[\begin{array}{ccc}
+    1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1
+  \end{array}\right]=0
+\end{align}</tex>
+      <tex correct="false">\begin{align}
+  (A^2-4A)-5I&amp;=\left[\begin{array}{ccc}
+  5 &amp; 0 &amp; 0 \\ 0 &amp; 5 &amp; 0 \\ 0 &amp; 0 &amp; 5
+\end{array}\right]-5\left[\begin{array}{ccc}
+    1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1 \\ 1 &amp; 1 &amp; 1
+  \end{array}\right]=0
+\end{align}</tex>
+    </options>
+    <reason>
+      <tex>%text
+The identity matrix $I$ is a square matrix whose non-diagonal elements are $0$s and diagonal elements are $1$s. 
+%
+\begin{align}
+  (A^2-4A)-5I&amp;=\left[\begin{array}{ccc}
+  5 &amp; 0 &amp; 0 \\ 0 &amp; 5 &amp; 0 \\ 0 &amp; 0 &amp; 5
+\end{array}\right]-5\overbrace{\left[\begin{array}{ccc}
+    1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1
+  \end{array}\right]}^\text{Identity Matrix} \\
+  &amp;=\left[\begin{array}{ccc}
+  5 &amp; 0 &amp; 0 \\ 0 &amp; 5 &amp; 0 \\ 0 &amp; 0 &amp; 5
+\end{array}\right]-\left[\begin{array}{ccc}
+    5 &amp; 0 &amp; 0 \\ 0 &amp; 5 &amp; 0 \\ 0 &amp; 0 &amp; 5
+  \end{array}\right]=0
+\end{align}
+</tex>
+    </reason>
+    <skills>
+      <skill id="97"/>
+    </skills>
+  </step>
+</question>
