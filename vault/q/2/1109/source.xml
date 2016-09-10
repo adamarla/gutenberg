@@ -100,7 +100,8 @@ A^2-5A&amp;=\left[\begin{array}{ccc}
 &amp;=\left[\begin{array}{ccc}
   -5 &amp; -1 &amp; -3 \\ -1 &amp; -7 &amp; -10 \\ -5 &amp; 4 &amp; -2
 \end{array}\right]
-\end{align}
+\end{align} \\
+
 </tex>
     </reason>
     <skills>
@@ -134,49 +135,15 @@ A^2-5A&amp;=\left[\begin{array}{ccc}
   1 &amp; 0 &amp; 0 \\ 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 1
 \end{array}\right]}^\text{Identity Matrix}\\
 &amp;=\left[\begin{array}{ccc}
-  -5 &amp; -1 &amp; -3 \\ -1 &amp; -7 &amp; -10 \\ -5 &amp; 4 &amp; -2
-\end{array}\right]+\left[\begin{array}{ccc}
-  16 &amp; 0 &amp; 0 \\ 0 &amp; 16 &amp; 0 \\ 0 &amp; 0 &amp; 16
-\end{array}\right]
-\end{align}
-</tex>
-    </reason>
-    <skills>
-      <skill id="98"/>
-    </skills>
-  </step>
-  <step>
-    <options>
-      <tex>\begin{align}
-A^2-5A+16I &amp;=\left[\begin{array}{ccc}
-  -5 &amp; -1 &amp; -3 \\ -1 &amp; -7 &amp; -10 \\ -5 &amp; 4 &amp; -2
-\end{array}\right]+\left[\begin{array}{ccc}
-  16 &amp; 0 &amp; 0 \\ 0 &amp; 16 &amp; 0 \\ 0 &amp; 0 &amp; 16
-\end{array}\right] \\
-&amp;=\left[\begin{array}{ccc}
-  11 &amp; -1 &amp; -3 \\ -1 &amp; 9 &amp; -10 \\ -5 &amp; 4 &amp; 14
-\end{array}\right]
-\end{align}
-</tex>
-    </options>
-    <reason>
-      <tex>\begin{align}
-&amp;\left[\begin{array}{ccc}
-  -5 &amp; -1 &amp; -3 \\ -1 &amp; -7 &amp; -10 \\ -5 &amp; 4 &amp; -2
-\end{array}\right]+\left[\begin{array}{ccc}
-  16 &amp; 0 &amp; 0 \\ 0 &amp; 16 &amp; 0 \\ 0 &amp; 0 &amp; 16
-\end{array}\right] \\
-=&amp;\left[\begin{array}{ccc}
   -5+16 &amp; -1+0 &amp; -3+0 \\ -1+0 &amp; -7+16 &amp; -10+0 \\ -5+0 &amp; 4+0 &amp; -2+16
 \end{array}\right] \\
 =&amp;\left[\begin{array}{ccc}
   11 &amp; -1 &amp; -3 \\ -1 &amp; 9 &amp; -10 \\ -5 &amp; 4 &amp; 14
 \end{array}\right]
-\end{align}
-</tex>
+\end{align}</tex>
     </reason>
     <skills>
-      <skill id="97"/>
+      <skill id="98"/>
     </skills>
   </step>
   <choices>
