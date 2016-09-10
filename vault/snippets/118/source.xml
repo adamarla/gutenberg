@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snippet xmlns="http://www.gradians.com" chapterId="26">
+  <render>
+    <tex correct="false">%text
+$\vector{3}{2}{}$, $\vector{-1}{1}{}$ and $\vector{-5}{12}{}$ are colinear
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+To verify whether if a set of three points $\ora{A}$, $\ora{B}$ and $\ora{C}$, are colinear, check that their pairwise displacement vectors are scalar multiples of each other. That is $\ora{AB}=k\ora{BC}$, where $k$ is a scalar.
+%
+\begin{align}
+  (\vector{3}{2}{})-(\vector{-1}{1}{})&amp;=\vector{4}{-5}{}   \\
+  (\vector{-1}{1}{})-(\vector{-5}{12}{})&amp;=\vector{8}{-11}{}  
+\end{align}\\
+%text
+The displacement vectors $\vector{4}{-5}{}$ and $\vector{8}{-11}{}$ are not scalar multiples of each other and therefore not in the same direction. Hence the points are not colinear.
+%</tex>
+  </reason>
+  <skills>
+    <skill id="82"/>
+  </skills>
+</snippet>
