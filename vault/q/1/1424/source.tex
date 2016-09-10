@@ -1,0 +1,134 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\fx{ \left(1 + \log x \right)}
+\newcommand\fy{ \left(1-y^2 \right)}
+\newcommand\elogx{\left(e^{\log x} \right)} 
+
+\previewoff 
+
+\begin{document} 
+\begin{question}
+	\statement 
+    
+    Find the particular solution of the differential equation 
+    \[ \fy\fx\cdot dx + 2xy\cdot dy = 0\]
+    given that $ y = 0$ when $x = 1$           
+    
+    \begin{step}
+  \begin{options} 
+     \correct 
+      
+     Given below are \underline{two possible strategies}
+     \begin{center}
+  \begin{tabular}{NN}
+   \toprule
+        & \text{Re-write as}  \\
+   \midrule
+   A & \underbrace{\left(\frac{1}{x^2}-\frac{y^2}{x^2} \right)\fx dx + 2\frac{y}{x} dy = 0}_{\text{Solve as a homogenous differential equation}} \\ 
+    \midrule 
+    B & \underbrace{-\frac{2y}{\fy}dy = \frac{\fx}{x}dx}_{\text{Solve by separating variables}}\\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+Of these, only \underline{Strategy $B$ is valid}
+       
+     \incorrect
+     
+     Given below are \underline{two possible strategies}
+     \begin{center}
+  \begin{tabular}{NN}
+   \toprule
+        & \text{Re-write as}  \\
+   \midrule
+   A & \underbrace{\left(\frac{1}{x^2}-\frac{y^2}{x^2} \right)\fx dx + 2\frac{y}{x} dy = 0}_{\text{Solve as a homogenous differential equation}} \\ 
+    \midrule 
+    B & \underbrace{-\frac{2y}{\fy}dy = \frac{\fx}{x}dx}_{\text{Solve by separating variables}}\\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+Of these, only \underline{Strategy $A$ is valid}
+        
+    \end{options} 
+     \reason 
+     
+     \begin{align}
+	\fy&\fx dx + 2xy\cdot dy = 0 \\[-50pt]
+	\implies\dydx &= \frac{-2xy}{\fy\cdot\fx} \\[5pt]
+	&= \underbrace{-\dfrac{2\frac{y}{x}}{\left(\frac{1}{x^2}-\frac{y^2}{x^2} \right)\fx}}_{\text{Divide throughtout by }x^2} \\[5pt]
+	&\neq F \left(\frac{y}{x} \right)
+\end{align}
+
+Hence, Strategy $A$ \underline{is not valid}. However 
+\begin{align}
+-2xy\cdot dx &= \fy\cdot\fx\cdot dx \\[-20pt]
+\text{or } \frac{-2y}{\fy}\cdot dy &= \frac{\fx}{x}\cdot dx 
+\end{align}
+
+The variables have separated cleanly. And hence, Strategy $B$ suggests a way forward
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+     If $w = \fx$ and $z = \fy$, then
+     \begin{align}
+     \int \frac{dz}{z} &= \int w\cdot dw \\
+     \therefore \log z &= \frac{w^2}{2} + C \\
+     \implies \fy^2 &= k\cdot e^{\fx^2}
+\end{align}
+     \incorrect
+     
+     If $w = \fx$ and $z = \fy$, then
+     \begin{align}
+     \int \frac{dz}{z} &= \int \frac{dw}{w}\\
+     \therefore \log z &= \log w + C  \\
+     \implies \frac{\fy}{\fx} &= k 
+\end{align}
+        
+    \end{options} 
+     \reason 
+       
+     \begin{align}
+     w = \fx &\implies dw = \frac{dx}{x} \\
+     z = \fy &\implies dz = -2y\cdot dy\\[5pt]
+     \therefore \frac{-2y}{\fy}\cdot dy &= \frac{\fx}{x}\cdot dx \\
+     \implies \frac{dz}{z} &= w\cdot dw \\
+     \text{or }\int \frac{dz}{z} &= \int w\cdot dw \\
+     \implies \log z &= \frac{w^2}{2} + C_1 \\
+     \text{or } 2\log z &= \log z^2 = w^2 + C \\
+     \implies z^2 &= e^{w^2 + C} \\
+     &= e^C\cdot e^{w^2} = k\cdot e^{w^2}\\[10pt]
+     \therefore \fy^2 &= k\cdot e^{\fx^2} 
+\end{align}  
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+     
+     \begin{align}
+     k\cdot e^{\fx^2} &= k\cdot e\cdot x^2\cdot x^{\log x} \\
+     \therefore \fy^2 &= k_2\cdot x^{ \left(\log x + 2 \right)}
+\end{align}
+        
+    \end{options} 
+     \reason 
+       
+     \begin{align}
+     k\cdot e^{\fx^2} &= k\cdot e^{\left(1+2\log x + \left(\log x \right)^2 \right)} \\
+     &= k\cdot \left[ e^1\cdot e^{2\log x}\cdot e^{\log x\cdot \log x}\right] \\[-10pt]
+     &= \underbrace{k\cdot \left[e^1\cdot \elogx^2\cdot \elogx^{\log x} \right]}_{a^{bc} = \left(a^b \right)^c} \\[-10pt]
+     &= \underbrace{k_2 \cdot \left(x\right)^2\cdot \left(x \right)^{\log x}}_{e^{\log x} = x} \\[10pt]
+     &= k_2\cdot x^{\left( \log x + 2\right)}
+\end{align}  
+
+And hence, the \underline{final answer} is
+\[\qquad\qquad \fy^2 = k_2 \cdot x^{\left(\log x + 2 \right)}\]
+\end{step}
+\end{question} 
+\end{document} 
