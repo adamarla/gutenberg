@@ -13,15 +13,15 @@ path=$(pwd | rev | cut -d'/' -f1-3 | rev)
 cid=$(grep -oP 'chapterId="\K[^"]*' source.xml)
 
 if [ -z "$cid" ] ; then 
-  ping="$server/sku/recompiled?path=$path"
+  first_ping="$server/sku/recompiled?path=$path"
 else 
-  ping="$server/sku/recompiled?path=$path&c=$cid"
+  first_ping="$server/sku/recompiled?path=$path&c=$cid"
 fi 
 
 # Mark as recompiled 
-curl $ping
+curl $first_ping
 
 # Now, tag underlying asset with any skills set in source.xml 
 ids=$(grep "<skill " source.xml | sed -e 's/.*"\(.*\)".*/\1/g')
-second_ping="$server/sku/set_skills?path=$path&skills='$ids'"
+second_ping="$server/sku/set_skills?path=$path&skills=$(echo ${ids[@]} | tr ' ' ,)"
 curl $second_ping 
