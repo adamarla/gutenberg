@@ -18,4 +18,10 @@ else
   ping="$server/sku/recompiled?path=$path&c=$cid"
 fi 
 
+# Mark as recompiled 
 curl $ping
+
+# Now, tag underlying asset with any skills set in source.xml 
+ids=$(grep "<skill " source.xml | sed -e 's/.*"\(.*\)".*/\1/g')
+second_ping="$server/sku/set_skills?path=$path&skills='$ids'"
+curl $second_ping 
