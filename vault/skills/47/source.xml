@@ -1,33 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<skill xmlns="http://www.gradians.com">
+<skill xmlns="http://www.gradians.com" chapterId="3">
   <render>
-    <tex>\title{Function Composition}  \\
-%text
-The meaning of $ \left(f\circ g\right)(x)$
-%</tex>
+    <tex isImage="true">tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-Function composition is the act of applying one function $f(x)$ on another function $g(x)$ to produce a third function $h(x)$. Mathematically, this is written as:
-%
-\begin{align}
-h(x) = f\left[ g(x) \right] = (f\circ g)(x)
-\end{align} \\
-%text
-Note: $(f\circ g)(x) \neq (g\circ f)(x)$.
-A couple of examples should help clarify the concept
-%
-\begin{align}
-\begin{tabular}{NNNN}
-\hline
-f(x) &amp; g(x) &amp; (f\circ g)(x) &amp; (g\circ f)(x) \\
-\hline\hline
-x^2 &amp; \sin x &amp; f \left(\sin x \right) = \sin^2 x &amp; g \left(x^2 \right) = \sin x^2 \\
-\hline
-\tan x &amp; \sqrt{x} &amp; f \left(\sqrt{x} \right) = \tan\sqrt{x} &amp; g \left(\tan x\right) = \sqrt{\tan x} \\
-\hline
-\end{tabular}
-\end{align}
-</tex>
+    <tex isImage="true">tex-2.svg</tex>
   </reason>
 </skill>

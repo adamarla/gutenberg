@@ -1,0 +1,57 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+\previewoff
+
+
+\begin{document}
+\begin{skill}
+    \begin{narrow}
+         \textcolor{blue}{Relation Types}
+         
+         Meaning of reflexive, transitive, symmetric and 
+         equivalent relations 
+    \end{narrow}
+    
+    \reason 
+    
+    Best if we just took some examples before reading any definitions\newline 
+    
+    Given a set $A = \left\lbrace 1,2,3\right\rbrace$, let us define the following 
+    relations 
+    
+    \begin{center}
+  \begin{tabular}{NNN}
+   \toprule
+        & \text{Recipe} & \text{Will give} \\
+   \midrule 
+   R_1 & \left\lbrace (a,b): a \leq b\right\rbrace & \left\lbrace (1,1),(1,2),(1,3),(2,2), (2,3), (3,3)\right\rbrace \\
+    \midrule 
+    R_2 & \left\lbrace (a,b): a = b \right\rbrace & \left\lbrace (1,1),(2,2), (3,3)\right\rbrace \\
+    \midrule 
+    R_3 & \left\lbrace (a,b): a \geq b\right\rbrace & \left\lbrace (1,1), (2,1), (2,2), (3,1), (3,2), (3,3) \right\rbrace\\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+The three relations have also been classified below. As you read the table, remember the "recipes" we defined above 
+\begin{center}
+  \begin{tabular}{lMNNN}
+   \toprule
+       Type & \text{Meaning} & R_1 & R_2 & R_3 \\
+   \midrule 
+   Reflexive & (a,a)\in R\text{ for all } a & \checkmark & \checkmark & \checkmark \\ 
+   \midrule 
+   Symmetric & (a,b)\in R\implies (b,a)\in R & X & \checkmark & X \\ 
+    \midrule 
+    Transitive & (a,b), (b,c)\in R \implies (a,c)\in R & \checkmark & \checkmark & \checkmark \\
+    \midrule 
+    Equivalent & \text{Is all three of the above} & X & \checkmark & X \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+Note that these are \underline{not either-or} conditions\newline 
+
+A relation can be transitive but not reflexive or reflexive but not symmetric. 
+It comes down to what the relation is 
+\end{skill}
+\end{document}
