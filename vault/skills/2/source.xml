@@ -1,40 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <skill xmlns="http://www.gradians.com" chapterId="3">
   <render>
-    <tex>\title{Relation Meaning} \\
-%text
-Meaning of a relation $R$ in sets $A$ and $B$
-%</tex>
+    <tex isImage="true">tex-1.svg</tex>
   </render>
   <reason>
-    <tex>%text
-A relation in sets $A$ and $B$ is an arbitrary
-subset of $A\times B$ which satisfies some condition. 
-Consider the sets 
-$A=\{1,2\}$, and $B=\{5,6,7\}$.
-%
-\begin{align}
-  A\times B =&amp; \{1,5\}, \{1,6\}, \{1,7\}, \{2,5\}, \\ 
-  &amp;\{2,6\},\{2,7\}    
-\end{align} \\
-%text
-If $R=\{(a,b):b=a+4\}$, not all the above
-pairs satisfy this condition. For instance,
-%
-\qquad
-\begin{align}
-  \{1,6\}&amp;\implies  b=a+5 \\
-  \{2,5\}&amp;\implies b=a+3
-\end{align} \\
-%text
-The only pair that satisfies the condition
-for the relation is $\{3,5\}$ $(\because 5=3+2)$. 
-\therefore the relation $R$ from $A$ to $B$ is $\{3,5\}$.
-Note: A relation can also be in set $A$ alone.
-In this case, it would be a subset of $A\times A$.
-%
-
-
-</tex>
+    <tex isImage="true">tex-2.svg</tex>
   </reason>
 </skill>

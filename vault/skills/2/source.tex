@@ -1,0 +1,32 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{skill}
+    \begin{narrow}
+         \textcolor{blue}{Relation Basics}
+         
+         What is a relation? And how is it different from a function? 
+    \end{narrow}
+    
+    \reason 
+    
+    A relation $R$ between two sets $A$ and $B$ is \underline{another set}. It is a set composed of ordered pairs $(a,b)$ where $a\in A$ and $b\in B$\newline 
+    
+    Both $A$ and $B$ must be non-empty. However, $R$ can be empty. But whatever $R$ may be, $R\subset A\times B$\newline 
+    
+    $R$ can be expressed in either set-builder form or roster notation (just as sets) \newline 
+    
+    For example, given two sets $A = \left\lbrace 1,2\right\rbrace$ and $B = \left\lbrace 1,2,3\right\rbrace$, if we define 
+    \[ \quad R = \left\lbrace (a,b) : b=a^2, a\in A, b\in B\right\rbrace\]
+    then $R = \left\lbrace (1,1) \right\rbrace$ only\newline 
+    
+    Notice that $(2,4) \notin R$ because $4\notin B$. Similarly, $(3,9)\notin R$ because $9\notin B$\newline 
+    
+    A relation is a function \underline{only if} for every $a\in A$ there is only one $b\in B$\newline 
+    
+    Remember, every function is a relation but every relation is not a function
+\end{skill}
+\end{document}
