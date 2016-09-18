@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="30">
+  <statement>
+    <tex>%text
+Find the shortest distance between the following lines: 
+%
+\begin{align}
+\dfrac{x-3}{1}=\dfrac{y-5}{-2}=\dfrac{z-7}{1} \text{ and }\dfrac{x+1}{7}=\dfrac{y+1}{-6}=\dfrac{z+1}{1}
+\end{align}</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>%text
+Expressed in vector notation, 
+%
+\begin{align}
+  \dfrac{x-3}{1}=\dfrac{y-5}{-2}=\dfrac{z-7}{1}&amp;\equiv \ora{r}=(\vector{3}{5}{7})+\lambda (\vector{1}{-2}{1}) \\
+  \dfrac{x+1}{7}=\dfrac{y+1}{-6}=\dfrac{z+1}{1} &amp;\equiv\ora{r}=(\vector{-1}{-1}{-1})+\lambda (\vector{7}{-6}{1})
+\end{align}</tex>
+      <tex correct="false">%text
+Expressed in vector notation, 
+%
+\begin{align}
+  \dfrac{x-3}{1}=\dfrac{y-5}{-2}=\dfrac{z-7}{1}&amp;\equiv \ora{r}=(\vector{1}{-2}{1})+\lambda (\vector{3}{5}{7}) \\
+  \dfrac{x+1}{7}=\dfrac{y+1}{-6}=\dfrac{z+1}{1} &amp;\equiv\ora{r}=(\vector{7}{-6}{1})+\lambda (\vector{-1}{-1}{-1})
+\end{align}</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  \text{If }&amp;\dfrac{x-3}{1}=\dfrac{y-5}{-2}=\dfrac{z-7}{1}=\lambda \\
+  \implies &amp;x=\lambda+3, y=-2\lambda+5,z=\lambda+7 \\
+  \implies &amp;(x,y,z)=(\lambda+3,-2\lambda+5,\lambda+7) \\
+  \implies &amp;\ora{r}=\vector{(\lambda+3)}{(-2\lambda+5)}{(\lambda+7)} \\
+  \implies &amp;\ora{r}=(\vector{3}{5}{7})+\lambda(\vector{1}{-2}{1})
+\end{align} \\
+\begin{align}
+  \text{Similarly, if }&amp;\dfrac{x+1}{7}=\dfrac{y+1}{-6}=\dfrac{z+1}{1}=\lambda \\
+  \implies &amp;\ora{r}=(\vector{-1}{-1}{-1})+\lambda(\vector{7}{-6}{1})
+\end{align}</tex>
+    </reason>
+    <skills>
+      <skill id="89"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>%text
+The line representing the shortest distance between two non-intersecting lines in 3d space is perpendicular to both the lines.
+%
+</tex>
+      <tex correct="false">%text
+The line representing the shortest distance between two non-intersecting lines in 3d space can be perpendicular to either one of the lines.
+%</tex>
+    </options>
+    <reason>
+      <tex>%text
+The line representing the shortest distance between any two Skew (non-intersecting and not parallel) lines is perpendicular to both the lines.
+%
+</tex>
+    </reason>
+    <skills>
+      <skill id="139"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\begin{align}
+  \ora{r}&amp;=(\vector{3}{5}{7})+\lambda (\vector{1}{-2}{1}) \\
+  \ora{r}&amp;=(\vector{-1}{-1}{-1})+\lambda (\vector{7}{-6}{1})
+\end{align} \\
+%text
+The unit vector $\perp$ to the above lines is given by,
+%
+\begin{align}
+  \hat n_\perp &amp;= \dfrac{(\vector{1}{-2}{1})\times(\vector{7}{-6}{1})}{\left|(\vector{1}{-2}{1})\times(\vector{7}{-6}{1})\right|}
+\end{align}
+</tex>
+      <tex correct="false">\begin{align}
+  \ora{r}&amp;=(\vector{3}{5}{7})+\lambda (\vector{1}{-2}{1}) \\
+  \ora{r}&amp;=(\vector{-1}{-1}{-1})+\lambda (\vector{7}{-6}{1})
+\end{align} \\
+%text
+The unit vector $\perp$ to the above lines is given by,
+%
+\begin{align}
+  \hat n_\perp &amp;= \dfrac{(\vector{3}{5}{7})\times(\vector{-1}{-1}{-1})}{\left|(\vector{3}{5}{7})\times(\vector{-1}{-1}{-1})\right|}
+\end{align}
+</tex>
+    </options>
+    <reason>
+      <tex>%text
+For lines $\ora{r}=\ora{a_1}+\lambda\ora{b_1}$ and $\ora{r}=\ora{a_2}+\lambda\ora{b_2}$ the vector $\perp$ to both is $(\ora{b_1}\times\ora{b_2})$.
+Therefore unit vector $\perp$ to both $(\vector{1}{-2}{1})$ and $(\vector{7}{-6}{1})$  is,
+%
+\begin{align}
+  \hat n_\perp &amp;= \dfrac{(\vector{1}{-2}{1})\times(\vector{7}{-6}{1})}{\left|(\vector{1}{-2}{1})\times(\vector{7}{-6}{1})\right|}
+\end{align}
+
+</tex>
+    </reason>
+    <skills>
+      <skill id="87"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>%text
+The shortest distance between the two lines is given by
+%
+\begin{align}
+  \left[(\vector{3}{5}{7})-(\vector{-1}{-1}{-1})\right]\cdot \hat n_\perp
+\end{align}\\
+%text
+where $n_\perp$ is the unit vector perpendicular to both lines.
+%</tex>
+      <tex correct="false">%text
+The shortest distance between the two lines is given by
+%
+\begin{align}
+  \left[(\vector{3}{5}{7})-(\vector{-1}{-1}{-1})\right]\cdot \hat n_\perp
+\end{align}\\
+%text
+where $n_\perp$ is the unit vector perpendicular to both lines.
+%</tex>
+    </options>
+    <reason>
+      <tex>%text
+If $\ora{r}=\ora{a_1}+\lambda\ora{b_1}$ and $\ora{r}=\ora{a_2}+\lambda\ora{b_2}$ are two lines then they each pass through $\ora{a_1}$ and $\ora{a_2}$ respectively, $(\ora{a_2}-\ora{a_1})$ is their displacement vector. However, the shortest distance $d$ is the projection of $(\ora{a_2}-\ora{a_1})$ along the $\perp$ to both lines. Therefore,
+%
+\begin{align}
+  d&amp;=(\ora{a_2}-\ora{a_1})\cdot\left(\dfrac{\ora{b_1}\times\ora{b_2}}{|\ora{b_1}\times \ora{b_2|}}\right) \\
+  &amp;=\left[(\vector{3}{5}{7})-(\vector{-1}{-1}{-1})\right]\cdot \hat n_\perp
+\end{align}\\
+</tex>
+    </reason>
+    <skills>
+      <skill id="83"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\begin{align}
+  d&amp;=\left[(\vector{3}{5}{7})-(\vector{-1}{-1}{-1})\right]\cdot 
+    \dfrac{(\vector{1}{-2}{1})\times(\vector{7}{-6}{1})}
+             {\left|(\vector{1}{-2}{1})\times(\vector{7}{-6}{1})\right|} \\
+     &amp;=\sqrt{116}                     
+\end{align}</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  d&amp;=\left[(\vector{3}{5}{7})-(\vector{-1}{-1}{-1})\right]\cdot 
+    \dfrac{(\vector{1}{-2}{1})\times(\vector{7}{-6}{1})}
+             {\left|(\vector{1}{-2}{1})\times(\vector{7}{-6}{1})\right|} 
+\end{align} \\
+%text
+Attack the calculation by breaking it up into pieces,
+%
+\begin{align}
+  \left[\vector{3}{5}{7}-(\vector{-1}{-1}{-1})\right]&amp;=\vector{4}{6}{8} \\
+  \left[(\vector{1}{-2}{1})\times(\vector{7}{-6}{1})\right]&amp;=\left\vert \begin{array}{ccc}
+      \imath &amp; \jmath &amp; {\it k} \\ 1 &amp; -2 &amp; 1 \\ 7 &amp; -6 &amp; 1
+    \end{array}\right\vert \\
+    &amp;=\vector{4}{6}{8} \\
+\end{align} \\
+%text
+Putting it all together,
+%
+\begin{align}
+d&amp;=(\vector{4}{6}{8})\cdot\dfrac{(\vector{4}{6}{8})}{|\vector{4}{6}{8}|} \\
+    &amp;=\dfrac{16+36+64}{\sqrt{16+36+64}}=\sqrt{116}
+\end{align}
+  </tex>
+    </reason>
+  </step>
+  <choices>
+    <tex correct="false">\sqrt{112}</tex>
+    <tex correct="false">\sqrt{111}</tex>
+    <tex>\sqrt{116}</tex>
+    <tex correct="false">\sqrt{109}</tex>
+  </choices>
+</question>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="26">
+  <statement>
+    <tex>%text
+For what value of $\lambda$ are the vectors $\ora{a}=\vector{2}{\lambda}{1}$ and $\ora{b}=\vector{1}{-2}{3}$ perpendicular to each other?
+%</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>\ora{v_1}\perp\ora{v_2}\implies\ora{v_1}\cdot\ora{v_2}=0</tex>
+      <tex correct="false">\ora{v_1}\perp\ora{v_2}\implies\ora{v_1}\cdot\ora{v_2}=|\ora{v_1}||\ora{v_2}|
+%</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  \ora{v_1}\perp\ora{v_2}\implies\ora{v_1}\cdot\ora{v_2}=0
+\end{align} \\
+%text
+Since $\ora{v_1}\cdot\ora{v_2}=|\ora{v_1}||\ora{v_2}|\cos \theta$ where $\theta$ is the angle between the two vectors, therefore when the vectors are $\perp$ $(\theta=\pi/2)$, $\cos\theta=0$ and therefore $\ora{v_1}\cdot\ora{v_2}=0$
+%</tex>
+    </reason>
+    <skills>
+      <skill id="83"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\begin{align}
+  (\vector{2}{\lambda}{1})\cdot(\vector{1}{-2}{3})&amp;=0 \implies \lambda=\dfrac{5}{2}
+\end{align}</tex>
+      <tex correct="false">\begin{align}
+  (\vector{2}{\lambda}{1})\cdot(\vector{1}{-2}{3})&amp;=0 \implies \lambda=-\dfrac{1}{2}
+\end{align}</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  &amp;(\vector{2}{\lambda}{1})\cdot(\vector{1}{-2}{3})=0 \\
+  \implies &amp; 2 +\lambda(-2)+3=0 \implies \lambda=\dfrac{5}{2}
+\end{align}</tex>
+    </reason>
+  </step>
+  <choices>
+    <tex correct="false">\lambda=\dfrac{3}{2}</tex>
+    <tex correct="false">\lambda=-1</tex>
+    <tex correct="false">\lambda=\dfrac{1}{2}</tex>
+    <tex>\lambda=\dfrac{5}{2}</tex>
+  </choices>
+</question>

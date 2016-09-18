@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="30">
+  <statement>
+    <tex>%text
+Find the point on the line $\dfrac{x+2}{3}=\dfrac{y+1}{2}=\dfrac{z-3}{2}$ at a distance $\sqrt{5}$ units from the point $(1,2,3)$.
+%</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>%text
+The co-ordinates of a point on line $\dfrac{x+2}{3}=\dfrac{y+1}{2}=\dfrac{z-3}{2}$ are $(3k-2, 2k-1, 2k+3)$ where $k\in \mathbb{R}$
+%</tex>
+      <tex correct="false">%text
+The co-ordinates of a point on line $\dfrac{x+2}{3}=\dfrac{y+1}{2}=\dfrac{z-3}{2}$ are $(3k+2, 2k+1, 2k-3)$ where $k\in \mathbb{R}$
+%</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  &amp;\dfrac{x+2}{3}=\dfrac{y+1}{2}=\dfrac{z-3}{2}=k\,\text{(say)} \\
+  &amp;\dfrac{x+2}{3}=k\implies x=3k-2 \\
+  &amp;\dfrac{y+1}{2}=k\implies y=2k-1 \\
+  &amp;\dfrac{z-3}{2}=k\implies z=2k+3
+\end{align} \\
+%text
+Therefore, any point on the given line has coordinates 
+$(3k-2,2k-1,2k+3)$ where $k\in \mathbb{R}$.
+%</tex>
+    </reason>
+    <skills>
+      <skill id="89"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>%text
+Since distance between $(3k-2, 2k-1, 2k+3)$ and $(1,2,3)$ equal $\sqrt{5}$, therefore,
+%
+\begin{align}
+  &amp;\sqrt{(3k-3)^2+(2k-3)^2+(2k)^2}=\sqrt{5} \\
+  &amp;\implies k=1,\,\dfrac{13}{17}
+\end{align}\\
+</tex>
+      <tex correct="false">%text
+Since distance between $(3k-2, 2k-1, 2k+3)$ and $(1,2,3)$ equal $\sqrt{5}$, therefore,
+%
+\begin{align}
+  &amp;\sqrt{(3k-2)^2-1^2+(2k-1)^2-2^2+(2k-3)^2-3^2}=\sqrt{5} \\
+  &amp;\implies k=\dfrac{16}{17},\,\dfrac{-4}{17}
+\end{align}\\
+</tex>
+    </options>
+    <reason>
+      <tex>%text
+Distance between any two points $(x_1,y_1,z_1)$ and $(x_2, y_2, z_2)$ is given by,
+%
+\begin{align}
+\sqrt{(x_2-x_1)^2+(y_2-y_1)^2+(z_2-z_1)^2}
+\end{align} \\
+%text
+Therefore, if distance between $(1,2,3)$  and $(3k-2, 2k-1, 2k+3)$ is $\sqrt{5}$ then,
+%
+\begin{align}
+  &amp;\sqrt{(3k-2)^2+(2k-3)^2+(2k)^2}=\sqrt{5} \\
+  \implies &amp;17k^2-30k+13=0 \\
+  \implies &amp;k=1,\dfrac{13}{17}
+\end{align}\\
+
+%text
+The co-ordinates of the point for which the distance between the two points is $\sqrt{5}$ are,
+%
+\begin{align}
+\begin{tabular}{|l|c|}
+  \hline
+  \text{For }k=1 &amp; (1, 1, 5) \\
+  \hline
+  \text{For }k=\dfrac{13}{17} &amp; \left(\tfrac{5}{17},\tfrac{9}{17},\tfrac{77}{17}\right) \\
+  \hline
+\end{tabular}
+\end{align}</tex>
+    </reason>
+  </step>
+  <choices>
+    <tex correct="false">%text
+$(1,7,3)$ and $(1,2,8)$
+%</tex>
+    <tex correct="false">%text
+$(3,2,2)$
+%</tex>
+    <tex correct="false">%text
+$(3,6,7)$ and $\left(\tfrac{1}{7},\tfrac{2}{7},\tfrac{-4}{7}\right)$
+%</tex>
+    <tex>%text
+$(1,1,5)$ and $\left(\tfrac{5}{17},\tfrac{9}{17},\tfrac{77}{17}\right)$
+%</tex>
+  </choices>
+</question>
