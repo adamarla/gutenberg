@@ -25,10 +25,11 @@ Now consider two vectors $\ora{A}$ and $\ora{B}$ such that,
 \end{align} \\
 \begin{align}
   \ora{A}\cdot\ora{B}&amp;=(\vector{a_1}{a_2}{a_3})\cdot(\vector{b_1}{b_2}{b_3}) \\
-  &amp;={\bf a_1b_1(\hat i\cdot \hat i)}+a_1b_2(\hat i\cdot \hat j)+a_1b_3(\hat i\cdot\hat k) \\
-  &amp;+\, a_2b_1(\hat j\cdot \hat i)+{\bf a_2b_2(\hat j\cdot \hat j)}+a_2b_3(\hat j\cdot\hat k) \\
-  &amp;+\, a_3b_1(\hat k\cdot \hat i)+a_3b_2(\hat k\cdot \hat j)+{\bf a_3b_3(\hat k\cdot\hat k)} \\
-  &amp;=a_1b_1+a_2b_2+a_3b_3
-\end{align}</tex>
+  &amp;=a_1b_1(\underbrace{\hat i\cdot \hat i}_1)+a_1b_2(\underbrace{\hat i\cdot \hat j}_0)+a_1b_3(\underbrace{\hat i\cdot\hat k}_0) \\
+  &amp;+\, a_2b_1(\underbrace{\hat j\cdot \hat i}_0)+a_2b_2(\underbrace{\hat j\cdot \hat j}_1)+a_2b_3(\underbrace{\hat j\cdot\hat k}_0) \\
+  &amp;+\, a_3b_1(\underbrace{\hat k\cdot \hat i}_0)+a_3b_2(\underbrace{\hat k\cdot \hat j}_0)+a_3b_3(\underbrace{\hat k\cdot\hat k}_1) \\
+  &amp;=a_1b_1+a_2b_2+a_3b_3 \\ 
+\end{align} \\
+</tex>
   </reason>
 </skill>
