@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="26">
+  <statement>
+    <tex>%text
+If $\ora{a}+\ora{b}+\ora{c}=0$ and $|\ora{a}|=3$, $|\ora{b}|=5$ and $|\ora{c}|=7$. Show that the angle $\theta$ between $\ora{a}$ and $\ora{b}$ equals $60^\circ$.
+%
+</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>\begin{align}
+  &amp;\ora{a}+\ora{b} = -\ora{c} \\
+  \implies &amp;|\ora{a}|^2+|\ora{b}|^2 +2|\ora{a}||\ora{b}|\cos\theta= |\ora{c}|^2
+\end{align}\\
+</tex>
+      <tex correct="false">\begin{align}
+  &amp;\ora{a}+\ora{b} = -\ora{c} \\
+  \implies &amp;|\ora{a}|^2+|\ora{b}|^2 +2|\ora{a}||\ora{b}|= |\ora{c}|^2
+\end{align}\\
+</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  &amp;\ora{a}+\ora{b}=-\ora{c} \\
+  \implies&amp;(\ora{a}+\ora{b})\cdot(\ora{a}+\ora{b})=(-\ora{c})\cdot(-\ora{c}) \\
+  \implies &amp;\ora{a}\cdot\ora{a}+\ora{b}\cdot\ora{b}+2(\ora{a}\cdot\ora{b})=\ora{c}\cdot\ora{c} \\
+  \implies &amp;|\ora{a}|^2+|\ora{b}|^2+2|\ora{a}||\ora{b}|\cos\theta=|\ora{c}|^2
+\end{align} \\
+</tex>
+    </reason>
+    <skills>
+      <skill id="83"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\begin{align}
+  &amp;|\ora{a}|^2+|\ora{b}|^2+2|\ora{a}||\ora{b}|\cos\theta=|\ora{c}|^2 \\
+  \implies &amp;3^2+5^2+2(3)(5)\cos\theta=7^2 \\
+  \implies&amp;\theta=\cos^{-1}\left(\dfrac{7^2-(3^2+5^2)}{2(3)(5)}\right)=60^\circ
+\end{align}
+</tex>
+      <tex correct="false">\begin{align}
+  &amp;|\ora{a}|^2+|\ora{b}|^2+2|\ora{a}||\ora{b}|\cos\theta=|\ora{c}|^2 \\
+  \implies &amp;3^2+5^2+2(3)(5)\cos\theta=7^2 \\
+  \implies&amp;\theta=\cos^{-1}\left(\dfrac{7^2-(3^2+5^2)}{2(3)(5)}\right)=30^\circ
+\end{align}
+</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  &amp;|\ora{a}|^2+|\ora{b}|^2+2|\ora{a}||\ora{b}|\cos\theta=|\ora{c}|^2 \\
+  \implies&amp;\cos\theta=\dfrac{|\ora{c}|^2-(|\ora{a}|^2+|\ora{b}|^2)}{2|\ora{a}||\ora{b}|} \\
+  \implies&amp;\cos\theta=\dfrac{7^2-(3^2+5^2)}{2(3)(5)}=\dfrac{1}{2} \\
+  \implies&amp;\theta=\cos^{-1}\dfrac{1}{2}=60^\circ
+\end{align}</tex>
+    </reason>
+  </step>
+</question>
