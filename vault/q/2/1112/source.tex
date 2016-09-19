@@ -1,0 +1,133 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\Q{\mathbb{Q}}
+
+\previewoff 
+
+\begin{document} 
+\begin{question}
+	\statement 
+    
+    Let $A = \Q\times\Q$, where $\Q$ is the set of rational numbers, and $*$ be a binary operation defined on $A$ as 
+    \[ \quad \left(a,b \right) * \left(c,d \right) = \left(a c,b + a d \right)\] where $\left(a,b \right), \left(c,d \right)\in A$. Given this, find 
+    \begin{itemize}
+    \item{ the identity element in $A$} 
+    \item{ the inverse of some $(a,b)\in A$}
+    \end{itemize}
+    
+    \begin{step}
+  \begin{options} 
+     \correct 
+       
+     As per the question, 
+     \begin{align}
+	   \left(a,b \right), \left(c,d \right)&\in A = \Q\times\Q \\
+	   \implies a,b,c,d &\in \Q 
+\end{align}
+       
+     \incorrect
+        
+      As per the question 
+     \begin{align}
+	   \left(a,b \right), \left(c,d \right)&\in A = \Q\times\Q \\
+	   \implies a,b,c,d &\in A 
+\end{align}
+    \end{options} 
+     \reason
+     
+     Nothing in the problem statement is written without a reason. 
+     Which is why it is important to understand every bit of it \newline 
+     
+     $A = \Q\times\Q \implies A$ is the \underline{Cartesian product} of 
+     two $\Q$ sets \newline 
+     
+     Hence, $A$ will be made up of elements like $\left(x,y \right)$ where both 
+     $x,y\in\Q$ \newline 
+     
+     Had $A = \Q\times\Q\times\Q$, then $A$ would have been composed of 
+     elements like $\left(x,y,z \right)$ where $x,y,z\in\Q$. See the pattern? \newline 
+     
+     
+     And therefore, in this question 
+     \[ \quad \left(a,b \right), \left(c,d \right)\in A\text{ but } a,b,c,d\in\Q \]
+      
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+     If $I = (i,j)$ be the identity element, then 
+     \begin{align}
+	I * (a,b) &= (a,b)*I = (a,b) \\
+	\therefore I &= (1,0) 
+\end{align}
+
+     \incorrect
+        
+             If $I = (i,j)$ be the identity element, then 
+     \begin{align}
+	I * (a,b) &= (a,b)*I = (a,b) \\
+	\therefore I &= (0,1) 
+\end{align}
+    \end{options} 
+     \reason 
+     
+     If $I$ be the identity element, then all of the following conditions are true for $I$
+     \begin{center}
+  \begin{tabular}{N}
+   \toprule
+        \text{Condition}  \\
+   \midrule 
+   I\text{ is an element like }\left(i,j \right)\text{ where }i,j\in\Q \\
+    \midrule 
+    I \in A \\
+    \midrule 
+    \left(a,b \right)*\underbrace{\left(i,j \right)}_I = \left(i,j \right)* \left(a,b \right) = \left(a,b \right) \\
+    \bottomrule
+  \end{tabular}
+\end{center}  
+
+Using the last condition, 
+\begin{align}
+	(a,b) * (i,j) &= \left(ai, b + aj \right) = (a,b) \\ 
+	\implies ai &= a \text{ and } b + aj = b \\
+	\therefore i &= 1 \text{ and } j = 0 \\
+	\text{or } I &= (i,j) = (1,0) \in A 
+\end{align}
+
+Notice also that 
+\begin{align}
+I * (a,b) &= (1,0)*(a,b) \\
+&= (a, 0 + b) = (a,b) 
+\end{align}
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+     If $X = (x,y) = (a,b)^{-1}$, then 
+     \[ \qquad X = \left(\frac{1}{a}, -\frac{b}{a} \right),\, a \neq 0\]
+     
+    Therefore, the inverse of $(a,b)$ is $\left(\dfrac{1}{a}, -\dfrac{b}{a} \right)$ as long as $a\neq 0$ 
+    \end{options} 
+     \reason 
+      
+      If $X = (x,y) = (a,b)^{-1}$, then 
+      \begin{align}
+      (a,b) * (x,y) &= I = (1,0) \\
+	\implies \left(ax, b + ay \right) &= (1,0) \\
+	\text{or } ax &= 1 \text{ and } b + ay = 0 \\[-10pt]
+	\therefore x &= \frac{1}{a} \text{ and } y = \frac{-b}{a}
+\end{align} 
+
+Hence, the \underline{inverse element} of $(a,b)$ is  
+\[\qquad X = \left(\dfrac{1}{a},-\dfrac{b}{a} \right), a \neq 0\]
+
+Notice that any element with $a=0$, like $(0,3)$, has \underline{no inverse element}
+\end{step}
+\end{question} 
+\end{document} 
