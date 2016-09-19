@@ -1,0 +1,46 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\previewoff 
+
+\begin{document} 
+\begin{skill}
+    \begin{narrow}
+         \textcolor{blue}{The Identity Element}
+         
+         What is it? 
+    \end{narrow}
+    
+    \reason 
+    
+Let a binary operation $*$ on some \underline{non-empty} set $A$ be defined as 
+$a*b$\newline 
+
+The \underline{identity element $e$} is an element - or elements - in $A$ $(e\in A)$ such that for \underline{every} $a\in A$ 
+\[ \qquad\quad a * e = a = e* a \text{ for all }a\in A \]
+
+Once again, $e\in A$. And the same $e$ satisfies the above condition for all $a\in A$\newline 
+
+\underline{As far as your syllabus is concerned}, the above definition is enough. But it gets a little more interesting\newline 
+
+It is possible that $a*e = a$ but $e*a \neq a$. Or that $e*a = a$ but $a*e \neq a$. Or, that there is no $e$. Below are some examples 
+
+\begin{center}
+  \begin{tabular}{NNNN}
+   \toprule
+        a * b & e & a * e = a & e * b = b  \\
+   \midrule 
+   a + (b-1)\cdot(b-2) & 1,2 & \checkmark & \times \\
+    \midrule 
+    a\cdot (a^2-1) + b & 0,1,-1 & \times & \checkmark \\
+    \midrule 
+    ab + 1 & \left\lbrace \phi\right\rbrace & \times & \times \\
+    \midrule 
+    a + b & 0 & \checkmark & \checkmark \\
+    \bottomrule
+  \end{tabular}
+\end{center}
+
+\end{skill}
+
+\end{document} 
