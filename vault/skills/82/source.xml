@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<skill xmlns="http://www.gradians.com">
+<skill xmlns="http://www.gradians.com" chapterId="26">
   <render>
     <tex>\title{Vector Basics, Addition / Subtraction} \\
 
@@ -8,7 +8,8 @@ Position, displacelement, addition, subtraction, Triangle Law
 %</tex>
   </render>
   <reason>
-    <tex>%text
+    <tex>\title{Position and Displacement Vectors} \\
+%text
 A position vector connects Origin $(0,0)$ to a given point. A displacement vector connects any two vectors. For two point $A(a_1,a_2)$ and $B(b_1, b_2)$, their position and displacement vectors are are given by, 
 %
 
@@ -18,14 +19,15 @@ A position vector connects Origin $(0,0)$ to a given point. A displacement vecto
   \ora{AB}= $\ora{B}-\ora{A}$&amp;=\vector{(b_1-a_1)}{(b_2-a_2)}{}
 \end{align} \\
 
+\title{Addition and Subtraction} \\
 %text
 Since the components along each unit vector are in the same direction, any two vectors $\ora{A}$ and $\ora{B}$ can be added/subtracted as shown.
 %
 \begin{align}
-  \ora{P}&amp;=\vector{a}{b}{c} \\
-  \ora{Q}&amp;=\vector{d}{e}{f} \\
-  \ora{P}\pm\ora{Q}&amp;=\vector{(a\pm d)}{(b\pm e)}{(c\pm f)}
+  \ora{A}\pm\ora{B}&amp;=\vector{(a_1\pm b_1)}{(a_2\pm b_2)}{}
 \end{align} \\
+
+\title{Triangle Law} \\
 %text
 For any three vectors $\ora{A}$, $\ora{B}$ and $\ora{C}$,
 %
