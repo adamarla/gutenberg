@@ -1,0 +1,72 @@
+\documentclass[14pt,fleqn]{extarticle}
+\RequirePackage{prepwell}
+
+\newcommand\R{\mathbb{R}}
+\newcommand\fgx{\left(f\circ g \right)\left(x \right)}
+\newcommand\ifgy{\left(f\circ g \right)^{-1}\left(y \right)}
+\newcommand\ifgx{\left(f\circ g \right)^{-1} \left(x \right)}
+
+\previewoff
+
+\begin{document}
+\begin{question}
+\statement
+
+If the function $f:\R\to\R$ be defined as $f(x) = 2x-3$ and $g:\R\to\R$ be defined as $g(x) = x^3 + 5$, then find the value of 
+\[ \qquad\qquad \ifgx \]	
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+       \begin{align}
+	\text{If } f(x) = 2x - 3 &\text{ and } g(x) = x^3 + 5 \\
+	\text{then } \fgx &= 2x^3 + 7 
+\end{align}
+
+     \incorrect
+
+       \begin{align}
+	\text{If } f(x) = 2x - 3 &\text{ and } g(x) = x^3 + 5 \\
+	\text{then } \fgx &= 2x^4 - 3x^3 + 10x + 15  
+\end{align}
+        
+    \end{options} 
+     \reason 
+     
+     $\fgx$ is \underline{simply shorthand} for $f \left(g(x) \right)$
+     \begin{align}
+     \therefore \fgx &= f \left( g(x) \right) = 2g(x) - 3 \\
+     &= 2 \left(x^3 + 5\right) - 3 \\
+     &= 2x^3 + 7 
+\end{align}
+       
+\end{step}
+
+\begin{step}
+  \begin{options} 
+     \correct 
+       
+       \[ \therefore \ifgx = \sqrt[3]{\dfrac{x-7}{2}} \]
+     \incorrect
+     
+     \[ \therefore \ifgx = \dfrac{1}{2x^3 + 7} \]
+        
+    \end{options} 
+     \reason 
+
+In $ y= \fgx$, we know $x$ (independent variable) and use $\fgx$ to find $y$ (dependent variable)\newline 
+
+But to \underline{find $x$ given $y$}, we need the inverse function $\ifgy$ which we can find as follows 
+\begin{align}
+y = 2x^3 + 7 &\implies x = \sqrt[3]{\dfrac{y-7}{2}} \\
+\therefore \left(f\circ g \right)^{-1}(y) &= x = \sqrt[3]{\dfrac{y-7}{2}}
+\end{align}
+
+But \underline{by convention}, the \underline{independent} variable is 
+written as $x$ and the \underline{dependent} variable as $y$. Hence, 
+\[ \qquad \ifgx = \sqrt[3]{\dfrac{x-7}{2}} \]
+       
+\end{step}
+\end{question}
+\end{document}
