@@ -1,0 +1,25 @@
+#!/bin/bash 
+
+json=csv.json 
+output_csv="daily-usage.csv"
+
+while getopts "l:" option ; do 
+  case $option in 
+    l) days=$OPTARG ;;
+    \?) exit 1 ;;
+  esac
+done 
+
+curl "www.gradians.com/usage/daily?last=$days" > $json 
+last=$(($(jq length $json)-1))
+
+# Clear any old output CSVs 
+rm -f $output_csv
+
+for j in $(seq 0 $last) ; do 
+  read date nsnp nq tsnp tq tst eng<<<$(jq ".[$j]|.one,.two,.three,.four,.five,.six,.seven" $json | cut -d'"' -f2)
+  echo "$date,$nsnp,$nq,$tsnp,$tq,$tst,$eng" >> $output_csv
+done
+
+# Remove JSON output file 
+rm -f $json
