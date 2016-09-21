@@ -3,7 +3,14 @@
 json=csv.json 
 output_csv="daily-usage.csv"
 
-curl "www.gradians.com/usage/daily" > $json 
+while getopts "l:" option ; do 
+  case $option in 
+    l) days=$OPTARG ;;
+    \?) exit 1 ;;
+  esac
+done 
+
+curl "www.gradians.com/usage/daily?last=$days" > $json 
 last=$(($(jq length $json)-1))
 
 # Clear any old output CSVs 
