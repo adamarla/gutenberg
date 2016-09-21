@@ -1,0 +1,18 @@
+#!/bin/bash 
+
+json=csv.json 
+output_csv="daily-usage.csv"
+
+curl "www.gradians.com/usage/daily" > $json 
+last=$(($(jq length $json)-1))
+
+# Clear any old output CSVs 
+rm -f $output_csv
+
+for j in $(seq 0 $last) ; do 
+  read date nsnp nq tsnp tq tst eng<<<$(jq ".[$j]|.one,.two,.three,.four,.five,.six,.seven" $json | cut -d'"' -f2)
+  echo "$date,$nsnp,$nq,$tsnp,$tq,$tst,$eng" >> $output_csv
+done
+
+# Remove JSON output file 
+rm -f $json
