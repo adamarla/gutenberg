@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<question xmlns="http://www.gradians.com" chapterId="30">
+  <statement>
+    <tex>%text
+Find the equation of the plane passing through the point $(-1,3,2)$ and perpendicular to each of the planes $x+2y+3z=5$ and $3x+3y+z=0$.
+%
+</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>%text
+Let the equation of the plane be $ax+by+cz+d=0$. Since this plane is perpendicular to $x+2y+3z=5$ and $3x+3y+z=0$ therefore,
+%
+\begin{align}
+  a+2b+3c=3a+3b+c=0
+\end{align}</tex>
+      <tex correct="false">%text
+Let the equation of the plane be $ax+by+cz+d=0$. Since this plane is perpendicular to $x+2y+3z=5$ and $3x+3y+z=0$ therefore,
+%
+\begin{align}
+  a+2b+3c=3a+3b+c=-1
+\end{align}</tex>
+    </options>
+    <reason>
+      <tex>%text
+If two planes having direction rations $(a_1,b_1,c_1)$ and $(a_2,b_2,c_2)$ are $\perp$, the normals to the planes are also $\perp$ and their direction ratios bear the relationship,
+%
+\begin{align}
+  a_1a_2+b_1b_2+c_1c_2=0
+\end{align}\\
+</tex>
+    </reason>
+    <skills>
+      <skill id="101"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>%text
+Since $(-1,3,2)$ lies on the plane $ax+by+cz+d=0$, it must satisfy the equation of the plane,
+%
+\begin{align}
+  \therefore -a+3b+2c+d=0
+\end{align}\\
+</tex>
+    </options>
+    <reason>
+      <tex>%text
+It is trivially true that any point satisfying the equation of a geometric function must satisfy the said equation. Therefore since $(-1,3,2)$ lies on the plane $ax+by+cz+d=0$,
+%
+\begin{align}
+  -a+3b+2c+d=0
+\end{align}\\
+</tex>
+    </reason>
+    <skills>
+      <skill id="92"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>%text
+So far we have gathered the following equations.
+%
+\begin{align}
+  &amp;a+2b+3c=0 \\
+  &amp;3a+3b+c=0 \\
+  &amp;a-3b-2c-d=0
+\end{align} \\
+%text
+Given the above equations, working out the relative values of $a$, $b$, $c$ and $d$, we get the resulting equation for the plane represented by $ax+by+cz+d=0$ as,
+%
+\begin{align}
+  7x-8y+3z+25=0
+\end{align}
+</tex>
+      <tex correct="false">%text
+So far we have gathered the following equations.
+%
+\begin{align}
+  &amp;a+2b+3c=0 \\
+  &amp;3a+3b+c=0 \\
+  &amp;a-3b-2c-d=0
+\end{align} \\
+%text
+Given the above equations, working out the individual values of $a$, $b$, $c$ and $d$ is not possible, therefore we cannot get the equation for the plane represented by $ax+by+cz+d=0$.
+%
+</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  a+2b+3c=0 &amp;\quad (1) \\
+  3a+3b+c=0 &amp;\quad (2) \\
+  a-3b-2c-d=0 &amp;\quad (3) 
+\end{align} \\
+%text
+Using $(1)$ and $(2)$ to get $a$, $b$ in terms of $c$ we get, 
+%
+\begin{align}
+  a=\dfrac{7c}{3}, b=-\dfrac{8c}{3}&amp; \quad (4)
+\end{align}\\
+%text
+Substituting results from $(4)$ into $(3)$, we get, 
+%
+\begin{align}
+  &amp;\dfrac{7c}{3}-3\left(-\dfrac{8c}{3}\right)-2c-d=0 \\
+  \implies &amp;7c+24c-6c=d \implies d=\dfrac{25c}{3}\quad (5)
+\end{align} \\
+%text
+Using results $(4)$ and $(5)$ and substituting the values of $a$, $b$ and $d$ into $ax+by+cz+d=0$ (equation of the plane) we get,
+%
+\begin{align}
+  &amp;\dfrac{7c}{3}x-\dfrac{8c}{3}y+cz+\dfrac{25c}{3}=0 \\
+  \implies &amp;7x-8y+3z+25=0
+\end{align}
+</tex>
+    </reason>
+  </step>
+  <choices>
+    <tex>7x-8y+3z+25=0</tex>
+    <tex correct="false">5x-6y+3z+25=0</tex>
+    <tex correct="false">6x-7y+3z+23=0</tex>
+    <tex correct="false">7x-8y+z+25=0</tex>
+  </choices>
+</question>
