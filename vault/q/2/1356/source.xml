@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?><question xmlns="http://www.gradians.com" chapterId="19">
+  <statement>
+    <tex>%text
+Using matrices, solve the following system of equations:
+%
+\begin{align}
+  &amp; 2x-3y+5z=11 \\
+  &amp; 3x+2y-4z=-5 \\
+  &amp; x+y-2z=-3
+\end{align}\\
+</tex>
+  </statement>
+  <step>
+    <options>
+      <tex>%text
+The given system of equations can be represented by the following matrix multiplicaton:
+%
+\begin{align}
+  \overbrace{\left[\begin{array}{rrr}
+    2 &amp; -3 &amp; 5 \\ 3 &amp; 2 &amp; -4 \\ 1 &amp; 1 &amp; -2
+  \end{array}\right]}^A\times
+  \overbrace{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}^X=
+  \overbrace{\left[\begin{array}{c} 11 \\ -5 \\ -3 \end{array}\right]}^B
+\end{align}
+
+</tex>
+      <tex correct="false">%text
+The given system of equations can be represented by the following matrix multiplicaton:
+%
+\begin{align}
+  \overbrace{\left[\begin{array}{rrr}
+    2 &amp; 3 &amp; 1 \\ -3 &amp; 2 &amp; 1 \\ 5 &amp; -4 &amp; -2
+  \end{array}\right]}^A\times
+  \overbrace{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}^X=
+  \overbrace{\left[\begin{array}{c} 11 \\ -5 \\ -3 \end{array}\right]}^B
+\end{align}
+
+</tex>
+    </options>
+    <reason>
+      <tex>%text
+By the rules of matrix multiplication,
+%
+
+\begin{align}
+\overbrace{\left[\begin{array}{rrr}
+  2 &amp; -3 &amp; 5 \\ 3 &amp; 2 &amp; -4 \\ 1 &amp; 1 &amp; -2
+\end{array}\right]}^A\times
+\overbrace{\left[\begin{array}{c} x \\ y \\ z \end{array}\right]}^X&amp;=
+\overbrace{\left[\begin{array}{c}
+  2x-3y+5z \\ 3x+2y-4z \\ x+y-2z
+\end{array}\right]}^{AX} \\
+\end{align} \\
+%text
+Therefore, the following matrix multiplication represents the system of equations that needs to be solved:
+%
+\begin{align}
+\therefore
+  \left[\begin{array}{rrr}
+    2 &amp; -3 &amp; 5 \\ 3 &amp; 2 &amp; -4 \\ 1 &amp; 1 &amp; -2
+  \end{array}\right]\times
+  \left[\begin{array}{c} x \\ y \\ z \end{array}\right]&amp;=
+  \left[\begin{array}{c} 11 \\ -5 \\ -3 \end{array}\right]
+\end{align}
+</tex>
+    </reason>
+    <skills>
+      <skill id="86"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>%text
+Since $X$, $A$ and $B$ are matrices such that $A\times X=B$,
+%
+\begin{align}
+  \therefore X=A^{-1}\times B
+\end{align}
+
+</tex>
+      <tex correct="false">%text
+Since $X$, $A$ and $B$ are matrices such that $A\times X=B$,
+%
+\begin{align}
+  \therefore X=B\times A^{-1}
+\end{align}
+</tex>
+    </options>
+    <reason>
+      <tex>%text
+Unlike regular algebraic multiplication, Matrix multiplication is not commutative. I.e. if $M$ and $N$ are two matrices then $M\times N$ may not be equal to $N\times M$.
+%
+\begin{tabular}{rr}
+  &amp;A\times X=B\quad\qquad \\
+  \therefore &amp;A^{-1}\times (A\times X)=A^{-1}\times (B) \\
+  \implies &amp;A^{-1}\times A\times X = A^{-1}\times (B) \\
+  \implies &amp;I\times X = A^{-1}\times (B) \\
+  \implies &amp;X=A^{-1}\times (B)
+  
+\end{tabular}
+</tex>
+    </reason>
+    <skills>
+      <skill id="98"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex>\begin{align}
+A=\left[\begin{array}{rrr}
+  2 &amp; -3 &amp; 5 \\ 3 &amp; 2 &amp; -4 \\ 1 &amp; 1 &amp; -2
+\end{array}\right] \implies
+A^{-1}=\left[\begin{array}{ccc}
+  0 &amp; -1 &amp; 2 \\ 2 &amp; -9 &amp; 23 \\ 1 &amp; -5 &amp; 13
+\end{array}\right]
+\end{align}
+</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  A&amp;=\left[\begin{array}{rrr} 2 &amp; -3 &amp; 5 \\ 3 &amp; 2 &amp; -4 \\ 1 &amp; 1 &amp; -2 \end{array}\right] \\
+  |A|&amp;=2(-4+4)+3(-6+4)+5(3-2)=-1 \\
+\end{align} \\
+
+%text
+Next, the cofactors, $c_{ij}=Det_{ij}\times (-1)^{i+j}$
+%
+\begin{align}
+\begin{array}{lll}
+  c_{11}=0 &amp; c_{12}=2 &amp; c_{13}=1 \\
+  c_{21}=-1 &amp; c_{22}=-9 &amp; c_{23}=-5 \\
+  c_{31}=2 &amp; c_{32}=-5 &amp; c_{33}=13
+\end{array} \\
+\end{align}\\
+\begin{align}
+{\small Adj(A)=CF(A)^T=\left[\begin{array}{rrr}
+  0 &amp; -1 &amp; 2 \\ 2 &amp; -9 &amp; 23 \\ 1 &amp; -5 &amp; 13
+\end{array}\right]} \\
+\end{align}\\
+\begin{align}
+  A^{-1}&amp;=\dfrac{1}{Det(A)}\times Adj(A) \\
+    &amp;=\dfrac{1}{-1}\left[\begin{array}{rrr} 0 &amp; -1 &amp; 2 \\ 2 &amp; -9 &amp; 23 \\ 1 &amp; -5 &amp; 13 \end{array}\right]
+    = \left[\begin{array}{rrr} 0 &amp; 1 &amp; -2 \\ -2 &amp; 9 &amp; -23 \\ -1 &amp; 5 &amp; -13 \end{array}\right]
+\end{align}
+</tex>
+    </reason>
+    <skills>
+      <skill id="80"/>
+    </skills>
+  </step>
+  <step>
+    <options>
+      <tex correct="false">\begin{align}
+  X&amp;=A^{-1}\times B \\
+  \therefore X&amp;=\left[\begin{array}{c} 12 \\ 9 \\ -23 \end{array}\right] \\
+  \therefore x&amp;=12, y=9, z=-23
+\end{align}
+</tex>
+    </options>
+    <reason>
+      <tex>\begin{align}
+  X&amp;=A^{-1}B \\
+    &amp;=\left[\begin{array}{rrr} 0 &amp; 1 &amp; -2 \\ -2 &amp; 9 &amp; -23 \\ -1 &amp; 5 &amp; -13 \end{array}\right]
+      \left[\begin{array}{r} 11 \\ -5 \\ -3 \end{array}\right] \\
+    &amp;=\left[\begin{array}{c} 0(11)+1(-5)+2(-3) \\ -2(11)+9(-5)-23(-3) \\ -1(11)+5(-5)-13(-3)
+      \end{array}\right]
+      =\left[\begin{array}{c} 1 \\ 2 \\ 3 \end{array}\right] \\
+  \therefore x&amp;=1, y=2, z=3    
+\end{align}
+</tex>
+    </reason>
+    <skills>
+      <skill id="86"/>
+    </skills>
+  </step>
+  <choices>
+    <tex correct="false">x=3,y=2,z=6</tex>
+    <tex>x=1,y=2,z=3</tex>
+    <tex correct="false">x=3,y=2,z=\dfrac{9}{2}</tex>
+    <tex correct="false">x=5,y=4,z=3</tex>
+  </choices>
+</question>
