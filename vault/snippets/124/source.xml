@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?><snippet xmlns="http://www.gradians.com" chapterId="20">
+  <render>
+    <tex>\begin{align}
+\left\vert \begin{array}{cc}
+  a+ib &amp; c+id \\ -c+id &amp; a-ib
+\end{array}\right\vert=a^2+b^2+c^2+d^2
+\end{align} \\
+%text
+Where $i=\sqrt[3]{-1}$
+%</tex>
+  </render>
+  <reason>
+    <tex>\begin{align}
+  \left\vert \begin{array}{cc} a+ib &amp; c+id \\ -c+id &amp; a-ib \end{array}\right\vert=
+     &amp; (a+ib)(a-ib)-(-c+id)(c+id) \\
+  =&amp; a^2+b^2-(-d^2-c^2) \qquad(\because i^2=-1) \\
+  =&amp; a^2+b^2+d^2+c^2
+\end{align}</tex>
+  </reason>
+  <skills>
+    <skill id="85"/>
+  </skills>
+</snippet>

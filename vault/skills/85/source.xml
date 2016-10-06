@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<skill xmlns="http://www.gradians.com">
+<?xml version="1.0" encoding="UTF-8"?><skill xmlns="http://www.gradians.com" chapterId="20">
   <render>
     <tex>\title{Compute the Determinant} \\
 %text
@@ -21,8 +20,8 @@ A determinant is a collection of elements arranged in equal numbers of rows and 
     2 &amp; {\bf 1} &amp; {\bf 0} \\ 2 &amp; {\bf 1} &amp; {\bf 2} \end{array}\right|
     \\
     \implies|C|&amp;=     
-    {\bf 3\cdot D_{11}}(-1)^{(1+1)}+4\cdot D_{12}(-1)^{1+2}
-    +1\cdot D_{13}(-1)^{1+3}\\
+    {\bf 3\times D_{11}}(-1)^{(1+1)}+4\times D_{12}(-1)^{1+2}
+    +1\times D_{13}(-1)^{1+3}\\
     \text{}&amp;=3\times \left|\begin{array}{cc}1 &amp; 0 \\ 1 &amp; 2\end{array}\right|
     -4\times\left|\begin{array}{cc}2 &amp; 0 \\ 2 &amp; 2\end{array} \right|
     +1\times\left|\begin{array}{cc}2 &amp; 1 \\ 2 &amp; 1\end{array} \right| \\
