@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?><snippet xmlns="http://www.gradians.com" chapterId="19">
+  <render>
+    <tex correct="false">\begin{align}
+&amp;2\left[\begin{array}{cc} 1 &amp; 3 \\ 0 &amp; x \end{array}\right]
++\left[\begin{array}{cc} y &amp; 0 \\ 1 &amp; 2 \end{array}\right]
+=\left[\begin{array}{cc} 5 &amp; 6 \\ 1 &amp; 8 \end{array}\right] \\
+\implies &amp;x=2, y=4
+\end{align}\\</tex>
+  </render>
+  <reason>
+    <tex>\begin{align}
+&amp;2\left[\begin{array}{cc} 1 &amp; 3 \\ 0 &amp; x \end{array}\right]
++\left[\begin{array}{cc} y &amp; 0 \\ 1 &amp; 2 \end{array}\right]
+=\left[\begin{array}{cc} 5 &amp; 6 \\ 1 &amp; 8 \end{array}\right] \\
+\implies &amp;\left[\begin{array}{cc} 2 &amp; 6 \\ 0 &amp; 2x \end{array}\right]
++\left[\begin{array}{cc} y &amp; 0 \\ 1 &amp; 2 \end{array}\right]
+=\left[\begin{array}{cc} 5 &amp; 6 \\ 1 &amp; 8 \end{array}\right] \\
+\implies &amp;\left[\begin{array}{cc} 2+y &amp; 6 \\ 1 &amp; 2x+2 \end{array}\right] 
+=\left[\begin{array}{cc} 5 &amp; 6 \\ 1 &amp; 8 \end{array}\right] \\
+\implies&amp; 2+y=5,\,2x+2=8 \\
+\implies&amp; y=3,\, x=3
+\end{align}
+</tex>
+  </reason>
+  <skills>
+    <skill id="97"/>
+  </skills>
+</snippet>
