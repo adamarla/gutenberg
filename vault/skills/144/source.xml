@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><skill xmlns="http://www.gradians.com" chapterId="26">
+  <render>
+    <tex>\title{Vector Basics} \\
+%text
+What is a Vector
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+A Vector is a measurable entity which not only has a magnitude (or quantity) but also a direction. 
+An example would be{\bf speed, in a particular direction} e.g. $13(km/h)$ headed north by north-west. 
+In a coordinate system, a vector in $3D$ space is expressed like this,
+%
+\begin{align}
+  \ora{A}=\vector{3}{-1}{2}
+\end{align}\\
+%text
+Vector $\ora{A}$, when broken into components is $3$ units along the x-axis, $1$ unit along the negative y-axis and 2 units along the z-axis where $i$, $j$ and $k$ are $1$ unit vectors along the three axes. 
+The magnitude of vector $\ora{A}$ is given by,
+%
+\begin{align}
+  |\ora{A}|=\sqrt{3^2+(-1)^2+2^2}=\sqrt{14}
+\end{align}\\
+%text
+The magnitude of a vector is always a positive value even if the vector itself may be negative, for e.g.$\ora{a}=\vector{-5}{}{}$, but $|\ora{a}|=5$. A{\bf unit vector} always has magnitude $1$.
+%
+</tex>
+  </reason>
+</skill>

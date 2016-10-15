@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><snippet xmlns="http://www.gradians.com" chapterId="26">
+  <render>
+    <tex correct="false">%text
+A unit vector in the direction of $\ora{a}=\vector{3}{-2}{6}$ is:
+%
+\begin{align}
+  \dfrac{1}{\sqrt{7}}(\vector{3}{-2}{6})
+\end{align}\\</tex>
+  </render>
+  <reason>
+    <tex>\begin{align}
+  \hat{A}&amp;=\dfrac{\ora{A}}{|\ora{A}|}
+    =\dfrac{\vector{3}{-2}{6}}{\sqrt{3^2+(-2)^2+6^2}} \\
+    &amp;=\dfrac{1}{7}(\vector{3}{-2}{6})
+\end{align}
+</tex>
+  </reason>
+  <skills>
+    <skill id="144"/>
+  </skills>
+</snippet>

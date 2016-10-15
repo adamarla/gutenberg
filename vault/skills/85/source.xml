@@ -8,24 +8,35 @@ How to compute the value of a determinant
   </render>
   <reason>
     <tex>%text
-A determinant is a collection of elements arranged in equal numbers of rows and columns. It could be $1\times 1$ (1 row, 1 column), $2\times 2$, $3\times 3$ or $n\times n$. Examples for how to compute the value of a determinant.
+A determinant is a collection of elements arranged in equal numbers of rows and columns. It could be $1\times 1$ (1 row, 1 column), $2\times 2$, $3\times 3$ or $n\times n$ (or order $n$). 
+Examples for how to compute the value of a determinant.
 %
 \begin{align}
   A&amp;=\left|9\right|\implies |A|=9 \\
+\end{align} \\
+%text
+Simple enough, now on to $2\times 2$,
+%
+\begin{align}
   B&amp;=\left|\begin{array}{cc}3 &amp; 4 \\ 1 &amp; 2\end{array}\right|
     \implies|B|=(3\times 2)-(1\times 4)=2 \\
-  C&amp;=\left|\begin{array}{ccc}3 &amp; 4 &amp; 1 \\
-    2 &amp; 1 &amp; 0 \\ 2 &amp; 1 &amp; 2\end{array}\right| 
-    =\left|\begin{array}{ccc}{\bf 3} &amp; 4 &amp; 1 \\
+\end{align} \\
+%text
+For higher order determinants, pick a row (or column) along which to proceed. In this example it is Row 1.
+For each element of Row 1, consider only the items that remain on eliminating the row and column containing that element, while simultaneously computing $(-1)^{i+j}$ for sign.
+%
+\begin{align}
+  C&amp;=\left|\begin{array}{ccc}{\bf 3} &amp; 4 &amp; 1 \\
     2 &amp; {\bf 1} &amp; {\bf 0} \\ 2 &amp; {\bf 1} &amp; {\bf 2} \end{array}\right|
     \\
-    \implies|C|&amp;=     
-    {\bf 3\times D_{11}}(-1)^{(1+1)}+4\times D_{12}(-1)^{1+2}
-    +1\times D_{13}(-1)^{1+3}\\
-    \text{}&amp;=3\times \left|\begin{array}{cc}1 &amp; 0 \\ 1 &amp; 2\end{array}\right|
+    \therefore|C|&amp;=
+    3\overbrace{(-1)^{1+1}\times \left|\begin{array}{cc}1 &amp; 0 \\ 1 &amp; 2\end{array}\right|}^\text{cofactor $a_{11}$}
+    +4(-1)^{1+2}\times\left|\begin{array}{cc}2 &amp; 0 \\ 2 &amp; 2\end{array} \right|\\
+    &amp;\qquad+1(-1)^{1+3}\times\left|\begin{array}{cc}2 &amp; 1 \\ 2 &amp; 1\end{array} \right| \\
+    &amp;=3\times \left|\begin{array}{cc}1 &amp; 0 \\ 1 &amp; 2\end{array}\right|
     -4\times\left|\begin{array}{cc}2 &amp; 0 \\ 2 &amp; 2\end{array} \right|
     +1\times\left|\begin{array}{cc}2 &amp; 1 \\ 2 &amp; 1\end{array} \right| \\
-    \text{}&amp;=3\times 3-4\times 4 +1 \times 0 = -7 \\ 
+    &amp;=3\times 3-4\times 4 +1 \times 0 = -7 \\ 
 \end{align} \\
 %text
 For larger determinants, continue along the same pattern.
