@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?><snippet xmlns="http://www.gradians.com" chapterId="20">
+  <render>
+    <tex correct="false">\begin{align}
+\left\vert\begin{array}{rrr}
+  2 &amp; -3 &amp; 5 \\ 6 &amp; 0 &amp; 4 \\ 1 &amp; 5 &amp; -7
+\end{array}\right\vert
+\end{align} \\
+%text
+The co-factor of element $a_{12}$ in the above determinant is $46$
+%</tex>
+  </render>
+  <reason>
+    <tex>%text
+Co-factor of $a_{ij}$ is $(-1)^{i+j}$ times the minor (sub-determinant) remaining when the $i^{th}$ row and $j^{th}$ column are eliminated,
+%
+
+\begin{align}
+  a_{12}&amp;=\left\vert\begin{array}{rrr}\st{2} &amp; -\st{3} &amp; \st{5} \\ 
+    6 &amp; \st{0} &amp; 4 \\ 1 &amp; \st{5} &amp; -7\end{array}\right\vert \\
+    &amp;= \left\vert\begin{array}{rr}
+    6 &amp; 4 \\ 1 &amp; -7\end{array}\right\vert=-42-4=-46 \\
+  \text{Co-factor($a_{12}$)}&amp;=(-1)^{(1+2)}\times a_{12}=-1\times -46=46
+\end{align}
+</tex>
+  </reason>
+  <skills>
+    <skill id="85"/>
+  </skills>
+</snippet>
