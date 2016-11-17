@@ -27,7 +27,7 @@ xml_for_quill : blueprint.xml
 blueprint.xml : source.tex 
 	@ if [ ! -e $< -o ! -s $< ] ; then exit 0 ; fi
 		sed -i -e "s/\\previewon/\\previewoff/g" source.tex
-		latex --halt-on-error $< && dvips source.dvi && ps2pdf source.ps 
+		xelatex --halt-on-error $< 
 		rm -f tex*.svg 
 		pdf2cards source.pdf 
 		if [ ! -e ~/.gutenberg ] ; then 
