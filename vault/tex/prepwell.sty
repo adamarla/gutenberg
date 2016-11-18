@@ -4,6 +4,7 @@
 
 %%% Base Setup
 
+\RequirePackage[width=250pt,left=1cm]{geometry}
 \RequirePackage{amsfonts}
 \RequirePackage{amsmath}
 \RequirePackage{amssymb}
@@ -38,11 +39,11 @@
 \newbool{preview}
 \newcommand\previewon{
   \setbool{preview}{true}
-	\RequirePackage[showframe,width=250pt,left=1cm]{geometry}
+  \Gm@setbool{showframe}{true} % Internal boolean in geometry.sty
 }
 \newcommand\previewoff{
   \setbool{preview}{false}
-	\RequirePackage[width=250pt,left=1cm]{geometry}
+  \Gm@setbool{showframe}{false}
 }
 
 
@@ -106,9 +107,9 @@
 %% Environments 
 
 \newenvironment{narrow}{
-	\newgeometry{width=200pt,left=1cm}
+  \newgeometry{width=200pt,left=1cm}
 }{
-	\restoregeometry
+  \restoregeometry
 } 
 
 
