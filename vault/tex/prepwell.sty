@@ -16,15 +16,24 @@
 \RequirePackage{graphicx}
 \RequirePackage{newfile}
 \RequirePackage{calculator}
+\RequirePackage{polyglossia} % for multi-language support 
 \RequirePackage{prepwell-cmds}
 
 % Standard Math font across *all* language packages 
 \RequirePackage{unicode-math}
 \setmathfont{xits-math.otf}
 
+% Let English be the other languuage in all packages.
+% To write a bit of English within a document in another 
+% language, use \textenglish{ .... }
+
+\setotherlanguage{english}
+\newfontfamily\englishfont{Droid Sans}
+
+% Other common settings 
+
 \notag
 \pagenumbering{gobble}
-
 \setlength\parindent{0pt}
 \setlength\mathindent{0cm}
 
@@ -66,7 +75,7 @@
   }
 
   \ifbool{preview}{
-    \textcolor{red}{\newline \svg \newline} 
+    \textcolor{red}{\newline \textenglish{\svg} \newline} 
   }{ 
     \newpage
   } 
