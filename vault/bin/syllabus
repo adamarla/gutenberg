@@ -13,7 +13,7 @@ function close_syllabus() {
 
 function write_parcel_info() { 
   json=$1.json
-  curl "$server/chapter/parcels?c=$1" > $json
+  curl "$server/chapter/parcels?c=$1&skill=$2" > $json
   p_last=$(($(jq length $json)-1))
 
   for p in $(seq 0 $p_last) ; do 
@@ -21,9 +21,14 @@ function write_parcel_info() {
     read name id type <<<$(echo $prc | jq '.name,.id,.type')
     type=$(echo $type | cut -d'"' -f2) # have to remove quotes for strcmp
 
-    if [ "$type" = "Question" ] ; then 
-      read min max <<<$(echo $prc | jq '.min,.max')
-      echo "    <parcel id=\"$id\" name=$name type=\"$type\" min=\"$min\" max=\"$max\"/>" >> syllabus.xml
+    if [ "$type" != "Skill" ] ; then 
+      read skill <<<$(echo $prc | jq '.skill')
+      if [ "$type" = "Question" ] ; then 
+        read min max <<<$(echo $prc | jq '.min,.max')
+        echo "    <parcel id=\"$id\" name=$name type=\"$type\" min=\"$min\" max=\"$max\" skill=\"$skill\"/>" >> syllabus.xml
+      else 
+        echo "    <parcel id=\"$id\" name=$name type=\"$type\" skill=\"$skill\"/>" >> syllabus.xml
+      fi 
     else 
       echo "    <parcel id=\"$id\" name=$name type=\"$type\"/>" >> syllabus.xml
     fi 
@@ -34,17 +39,20 @@ function write_parcel_info() {
 
 # MAIN 
 
-while getopts "g:s:r" option ; do 
+while getopts "g:s:rk" option ; do 
   case $option in 
     g) grade=$OPTARG ;; 
     s) subject=$OPTARG ;;
     r) server=http://www.gradians.com ;;
+    k) skill_specific=true ;;
   esac
 done 
 
 if [ -z "$server" ] ; then server=http://localhost:3000 ; fi
+if [ -z "$skill_specific" ] ; then skill_specific=false ; fi
 
-chapters=$(curl "$server/chapter/list?cmdline=true&level=$grade&subject=$subject")
+chapters=$(curl "$server/chapter/list?level=$grade&subject=$subject")
+echo $chapters
 c_last=$(($(echo $chapters | jq length)-1))
 
 open_syllabus
@@ -55,7 +63,7 @@ for c in $(seq 0 $c_last) ; do
   id=$(echo $ch | jq '.id')
 
   echo "  <chapter name=$name id=\"$id\">" >> syllabus.xml
-  write_parcel_info $id
+  write_parcel_info $id $skill_specific
   echo "  </chapter>" >> syllabus.xml
 done 
 
