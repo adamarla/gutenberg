@@ -18,19 +18,24 @@ function write_parcel_info() {
 
   for p in $(seq 0 $p_last) ; do 
     prc=$(jq .[$p] $json)
-    read name id type <<<$(echo $prc | jq '.name,.id,.type')
+    read name id type chapter <<<$(echo $prc | jq '.name,.id,.type,.chapter_id')
     type=$(echo $type | cut -d'"' -f2) # have to remove quotes for strcmp
+
+    attrs="id=\"$id\" name=$name type=\"$type\" chapter_id=\"$chapter\""
 
     if [ "$type" != "Skill" ] ; then 
       read skill <<<$(echo $prc | jq '.skill')
       if [ "$type" = "Question" ] ; then 
         read min max <<<$(echo $prc | jq '.min,.max')
-        echo "    <parcel id=\"$id\" name=$name type=\"$type\" min=\"$min\" max=\"$max\" skill=\"$skill\"/>" >> syllabus.xml
+        echo "    <parcel $attrs min=\"$min\" max=\"$max\" skill=\"$skill\"/>" >> syllabus.xml
+        # echo "    <parcel id=\"$id\" name=$name type=\"$type\" min=\"$min\" max=\"$max\" skill=\"$skill\"/>" >> syllabus.xml
       else 
-        echo "    <parcel id=\"$id\" name=$name type=\"$type\" skill=\"$skill\"/>" >> syllabus.xml
+        #echo "    <parcel id=\"$id\" name=$name type=\"$type\" skill=\"$skill\"/>" >> syllabus.xml
+        echo "    <parcel $attrs skill=\"$skill\"/>" >> syllabus.xml
       fi 
     else 
-      echo "    <parcel id=\"$id\" name=$name type=\"$type\"/>" >> syllabus.xml
+      # echo "    <parcel id=\"$id\" name=$name type=\"$type\"/>" >> syllabus.xml
+      echo "    <parcel $attrs/>" >> syllabus.xml
     fi 
   done 
 
@@ -61,8 +66,9 @@ for c in $(seq 0 $c_last) ; do
   ch=$(echo $chapters | jq .[$c])
   name=$(echo $ch | jq '.name')
   id=$(echo $ch | jq '.id')
+  friend=$(echo $ch | jq '.friend_id')
 
-  echo "  <chapter name=$name id=\"$id\">" >> syllabus.xml
+  echo "  <chapter name=$name id=\"$id\" friend_id=\"$friend\">" >> syllabus.xml
   write_parcel_info $id $skill_specific
   echo "  </chapter>" >> syllabus.xml
 done 
